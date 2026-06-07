@@ -6,6 +6,7 @@ import { Button, Card, EmptyState, Field, Modal, PageHeader, ProgressBar } from 
 import { apiClient } from "../../services/apiClient";
 import { leaderboardService } from "../../services/leaderboardService";
 import { lessonService } from "../../services/lessonService";
+import { practiceService, type PracticeExercise, type PracticeType } from "../../services/practiceService";
 import { progressService } from "../../services/progressService";
 import { vocabularyService, type VocabularyWord } from "../../services/vocabularyService";
 import { selectCurrentUser, useAppStore } from "../../store/useAppStore";
@@ -491,20 +492,207 @@ function VocabularyScreen() {
 }
 
 function PracticeScreen() {
-  const { data, user, progress, completePractice } = useStudentData();
+  const { data, user, progress, finishPracticeSession } = useStudentData();
   const { t } = useT();
+  const navigate = useNavigate();
+
+  const [phase, setPhase] = useState<"landing" | "session" | "results">("landing");
+  const [sessionCount, setSessionCount] = useState<5 | 10 | 15>(10);
+  const [types, setTypes] = useState<Set<PracticeType>>(() => new Set<PracticeType>(["translation"]));
+  const [timerEnabled, setTimerEnabled] = useState(false);
+  const [exercises, setExercises] = useState<PracticeExercise[]>([]);
+  const [index, setIndex] = useState(0);
+  const [answer, setAnswer] = useState<string | string[]>("");
+  const [feedback, setFeedback] = useState<"correct" | "wrong" | null>(null);
+  const [countdown, setCountdown] = useState(20);
+  const [sessionAnswers, setSessionAnswers] = useState<{ wordId: string; correct: boolean }[]>([]);
+  const feedbackRef = useRef<"correct" | "wrong" | null>(null);
+  const timerIdRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => { feedbackRef.current = feedback; }, [feedback]);
+
+  useEffect(() => {
+    if (!timerEnabled || phase !== "session") return;
+    setCountdown(20);
+    timerIdRef.current = setInterval(() => {
+      setCountdown((n) => {
+        if (n <= 1) {
+          if (timerIdRef.current) { clearInterval(timerIdRef.current); timerIdRef.current = null; }
+          if (feedbackRef.current === null) {
+            setSessionAnswers((sa) => [...sa, { wordId: exercises[index]?.wordId ?? "", correct: false }]);
+            setFeedback("wrong");
+          }
+          return 0;
+        }
+        return n - 1;
+      });
+    }, 1000);
+    return () => { if (timerIdRef.current) { clearInterval(timerIdRef.current); timerIdRef.current = null; } };
+  }, [index, timerEnabled, phase, exercises]);
+
   if (!user || !progress) return null;
-  const weakWords = vocabularyService.build(data.lessons, data.userWords[user.id]).filter((word) => word.status === "practicing" || word.mistakeCount > 0);
+
+  const allWords = vocabularyService.build(data.lessons, data.userWords[user.id]);
+  const weakWords = allWords.filter((w) => w.status === "practicing" || w.mistakeCount > 0);
+  const topicGroups = vocabularyService.group(weakWords, "topic");
+
+  function toggleType(type: PracticeType) {
+    setTypes((prev) => {
+      if (prev.has(type) && prev.size === 1) return prev;
+      const next = new Set(prev);
+      if (next.has(type)) next.delete(type); else next.add(type);
+      return next;
+    });
+  }
+
+  function startSession() {
+    const ex = practiceService.generate(weakWords, allWords, sessionCount, types);
+    setExercises(ex);
+    setIndex(0);
+    setSessionAnswers([]);
+    setAnswer("");
+    setFeedback(null);
+    setPhase("session");
+  }
+
+  // ── LANDING ────────────────────────────────────────────────────────────────
+  if (phase === "landing") {
+    const practiceCount = Math.min(sessionCount, weakWords.length * types.size);
+    return (
+      <main className="page-content">
+        <PageHeader title={t("student.practice.title")} subtitle={`${weakWords.length} ${t("student.practice.words_count")}`} />
+        {weakWords.length === 0 ? (
+          <EmptyState title={t("student.practice.empty_title")} text={t("student.practice.empty_text")} />
+        ) : (
+          <>
+            <Card>
+              <h3>{t("student.practice.settings_title")}</h3>
+              <div className="practice-settings">
+                <div className="practice-settings-row">
+                  <label>{t("student.practice.count_label")}</label>
+                  <div className="filter-row">
+                    {([5, 10, 15] as const).map((n) => (
+                      <button key={n} type="button" className={`chip chip--sm ${sessionCount === n ? "active" : ""}`} onClick={() => setSessionCount(n)}>{n}</button>
+                    ))}
+                  </div>
+                </div>
+                <div className="practice-settings-row">
+                  <label>{t("student.practice.types_label")}</label>
+                  <div className="filter-row">
+                    {(["translation", "reverse", "typing"] as const).map((type) => (
+                      <button key={type} type="button" className={`chip chip--sm ${types.has(type) ? "active" : ""}`} onClick={() => toggleType(type)}>
+                        {t(`student.practice.type_${type}`)}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <label className="toggle-row">
+                  <span>{t("student.practice.timer_label")}</span>
+                  <input type="checkbox" checked={timerEnabled} onChange={(e) => setTimerEnabled(e.target.checked)} />
+                </label>
+              </div>
+            </Card>
+
+            {topicGroups.map(({ label, words }) => (
+              <div key={label}>
+                <div className="word-group-header">{label}</div>
+                <div className="word-mini-list">
+                  {words.map((w) => <span key={w.id}>{w.sk} — {w.uk}</span>)}
+                </div>
+              </div>
+            ))}
+
+            <Button onClick={startSession}>
+              {t("student.practice.start_btn").replace("{count}", String(practiceCount))}
+            </Button>
+          </>
+        )}
+      </main>
+    );
+  }
+
+  // ── SESSION ────────────────────────────────────────────────────────────────
+  if (phase === "session") {
+    const practiceEx = exercises[index];
+    if (!practiceEx) return null;
+    const { exercise } = practiceEx;
+    const isLast = index === exercises.length - 1;
+    const percent = Math.round((index / exercises.length) * 100);
+    const wordTopic = allWords.find((w) => w.id === practiceEx.wordId)?.topic ?? "";
+
+    function check() {
+      if (timerIdRef.current) { clearInterval(timerIdRef.current); timerIdRef.current = null; }
+      const correct = progressService.check(exercise, answer);
+      setSessionAnswers((prev) => [...prev, { wordId: practiceEx.wordId, correct }]);
+      setFeedback(correct ? "correct" : "wrong");
+    }
+
+    function next() {
+      if (isLast) {
+        finishPracticeSession(sessionAnswers);
+        setPhase("results");
+      } else {
+        setIndex((i) => i + 1);
+        setAnswer("");
+        setFeedback(null);
+      }
+    }
+
+    return (
+      <main className="lesson-screen">
+        <div className="lesson-top">
+          <button type="button" onClick={() => setPhase("landing")}><ChevronLeft /></button>
+          <ProgressBar value={percent} />
+          {timerEnabled && <span className="practice-timer">{countdown}</span>}
+        </div>
+        <Card className="exercise-card">
+          <p className="lesson-topic">{wordTopic}</p>
+          <h1>{exercise.question}</h1>
+          <ExerciseView exercise={exercise} answer={answer} setAnswer={setAnswer} t={t} />
+        </Card>
+        <div className={`lesson-feedback ${feedback ?? ""}`}>
+          {feedback === "correct" && t("student.lesson.correct")}
+          {feedback === "wrong" && `${t("student.lesson.wrong_prefix")} ${Array.isArray(exercise.correctAnswer) ? exercise.correctAnswer.join(", ") : exercise.correctAnswer}.`}
+        </div>
+        <div className="lesson-bottom">
+          {!feedback
+            ? <Button disabled={!answer || (Array.isArray(answer) && !answer.length)} onClick={check}>{t("student.lesson.check")}</Button>
+            : <Button onClick={next}>{isLast ? t("student.lesson.finish") : t("student.lesson.next")}</Button>
+          }
+        </div>
+      </main>
+    );
+  }
+
+  // ── RESULTS ────────────────────────────────────────────────────────────────
+  const correctCount = sessionAnswers.filter((a) => a.correct).length;
+  const total = sessionAnswers.length;
+
   return (
     <main className="page-content">
-      <PageHeader title={t("student.practice.title")} subtitle={t("student.practice.subtitle")} />
-      {!weakWords.length ? <EmptyState title={t("student.practice.empty_title")} text={t("student.practice.empty_text")} /> : (
-        <Card>
-          <h2>{weakWords.length} {t("student.practice.words_count")}</h2>
-          <div className="word-mini-list">{weakWords.slice(0, 8).map((word) => <span key={word.id}>{word.sk} - {word.uk}</span>)}</div>
-          <Button onClick={completePractice}>{t("student.practice.start")}</Button>
-        </Card>
-      )}
+      <PageHeader title={t("student.practice.results_title")} />
+      <Card className="result-card">
+        <Trophy size={48} color="var(--yellow-strong)" />
+        <h2>+5 XP</h2>
+        <p>{correctCount} / {total} {t("student.practice.results_correct")}</p>
+      </Card>
+      <Card>
+        <h3>{t("student.practice.results_words")}</h3>
+        <div className="practice-results-list">
+          {sessionAnswers.map(({ wordId, correct }, i) => {
+            const word = allWords.find((w) => w.id === wordId);
+            return (
+              <div key={`${wordId}-${i}`} className="practice-result-word">
+                <span className={correct ? "correct-mark" : "wrong-mark"}>{correct ? "✓" : "✗"}</span>
+                <span>{word?.sk}</span>
+                <span className="word-meta">{word?.uk}</span>
+              </div>
+            );
+          })}
+        </div>
+      </Card>
+      <Button onClick={() => setPhase("landing")}>{t("student.practice.results_repeat")}</Button>
+      <Button variant="ghost" onClick={() => navigate("/app/path")}>{t("student.practice.results_home")}</Button>
     </main>
   );
 }

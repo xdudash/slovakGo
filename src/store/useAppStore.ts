@@ -23,7 +23,7 @@ interface AppStore {
   completeLesson: (lesson: Lesson, answers: AnswerRecord[]) => void;
   recordWrongAnswer: (lesson: Lesson, exerciseId: string, answer: string) => void;
   toggleFavorite: (wordId: string) => void;
-  completePractice: () => void;
+  finishPracticeSession: (results: { wordId: string; correct: boolean }[]) => void;
   restoreHearts: () => void;
   upsertLesson: (lesson: Lesson) => void;
   deleteLesson: (lessonId: string) => void;
@@ -230,13 +230,21 @@ export const useAppStore = create<AppStore>((set, get) => ({
     set({ data });
   },
 
-  completePractice() {
+  finishPracticeSession(results) {
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     const progress = progressService.practiceDone(get().data.progress[currentUserId]);
-    let data: AppData = { ...get().data, progress: { ...get().data.progress, [currentUserId]: progress } };
+    const userWords = results.reduce<UserWord[]>(
+      (words, { wordId, correct }) => progressService.touchWord(currentUserId, wordId, words, correct),
+      get().data.userWords[currentUserId] || []
+    );
+    let data: AppData = {
+      ...get().data,
+      progress: { ...get().data.progress, [currentUserId]: progress },
+      userWords: { ...get().data.userWords, [currentUserId]: userWords },
+    };
     data = { ...data, leaderboard: leaderboardService.recalculate(data.leaderboard, data.users, data.progress) };
-    data = withSync(data, "practice.complete", { xpGain: 5 });
+    data = withSync(data, "practice.complete", { results: results as unknown as Record<string, unknown> });
     save(data);
     set({ data });
   },
