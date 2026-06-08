@@ -60,10 +60,10 @@ export function EmptyState({ title, text }: { title: string; text: string }) {
   );
 }
 
-export function Modal({ children }: { children: ReactNode }) {
+export function Modal({ children, onClose }: { children: ReactNode; onClose?: () => void }) {
   return createPortal(
-    <div className="modal-overlay" role="dialog" aria-modal={true}>
-      <div className="modal-dialog">{children}</div>
+    <div className="modal-overlay" role="dialog" aria-modal={true} onClick={onClose}>
+      <div className="modal-dialog" onClick={(e) => e.stopPropagation()}>{children}</div>
     </div>,
     document.body
   );

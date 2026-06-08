@@ -13,6 +13,7 @@ interface AppStore {
   currentUserId?: string;
   authError?: string;
   syncMessage?: string;
+  lastSyncedAt?: string;
   login: (email: string, password: string) => User | null;
   register: (payload: { name: string; email: string; password: string; goal?: string }) => User | null;
   logout: () => void;
@@ -114,10 +115,12 @@ export const useAppStore = create<AppStore>((set, get) => ({
       progress: { ...get().data.progress, [user.id]: createProgress(user.id, "A0") },
       userWords: { ...get().data.userWords, [user.id]: [] }
     };
-    data = withSync(data, "auth.register", { user });
     save(data);
     localStorage.setItem(sessionKey, user.id);
-    apiClient.login(payload.email, payload.password).catch(() => undefined);
+    // Register on server so the session cookie is set for subsequent sync pushes.
+    // Fire-and-forget — the mutation queue will re-sync any pending actions once
+    // the user comes online.
+    apiClient.register(user.id, user.name, payload.email, payload.password, user.goal).catch(() => undefined);
     set({ data, currentUserId: user.id, authError: undefined });
     return user;
   },
@@ -183,7 +186,8 @@ export const useAppStore = create<AppStore>((set, get) => ({
   completeLesson(lesson, answers) {
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
-    const progress = progressService.completeLesson(get().data.progress[currentUserId], lesson, answers);
+    const subStatus = get().data.users.find((u) => u.id === currentUserId)?.subscriptionStatus;
+    const progress = progressService.completeLesson(get().data.progress[currentUserId], lesson, answers, subStatus);
     const userWords = lesson.words.reduce<UserWord[]>((words, word) => progressService.touchWord(currentUserId, word.id, words, true), get().data.userWords[currentUserId] || []);
     let data: AppData = {
       ...get().data,
@@ -233,7 +237,8 @@ export const useAppStore = create<AppStore>((set, get) => ({
   finishPracticeSession(results) {
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
-    const progress = progressService.practiceDone(get().data.progress[currentUserId]);
+    const subStatus = get().data.users.find((u) => u.id === currentUserId)?.subscriptionStatus;
+    const progress = progressService.practiceDone(get().data.progress[currentUserId], subStatus);
     const userWords = results.reduce<UserWord[]>(
       (words, { wordId, correct }) => progressService.touchWord(currentUserId, wordId, words, correct),
       get().data.userWords[currentUserId] || []
@@ -286,7 +291,9 @@ export const useAppStore = create<AppStore>((set, get) => ({
     const data = await syncService.drain(get().data);
     if (data !== get().data) {
       save(data);
-      set({ data, syncMessage: "Дані синхронізовано" });
+      const now = new Date().toISOString();
+      set({ data, syncMessage: "✓ Синхронізовано", lastSyncedAt: now });
+      setTimeout(() => set({ syncMessage: undefined }), 3000);
     }
   },
 

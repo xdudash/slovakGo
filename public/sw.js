@@ -1,6 +1,7 @@
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const STATIC_CACHE = `slovak-life-static-${CACHE_VERSION}`;
 const API_CACHE    = `slovak-life-api-${CACHE_VERSION}`;
+const AUDIO_CACHE  = `slovak-life-audio-${CACHE_VERSION}`;
 
 const PRECACHE_URLS = [
   '/',
@@ -9,7 +10,7 @@ const PRECACHE_URLS = [
   '/favicon.svg'
 ];
 
-// Install: precache app shell, wait for explicit activation signal
+// Install: precache app shell
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(STATIC_CACHE).then((cache) => cache.addAll(PRECACHE_URLS))
@@ -24,7 +25,7 @@ self.addEventListener('activate', (event) => {
       .then((keys) =>
         Promise.all(
           keys
-            .filter((k) => k !== STATIC_CACHE && k !== API_CACHE)
+            .filter((k) => k !== STATIC_CACHE && k !== API_CACHE && k !== AUDIO_CACHE)
             .map((k) => caches.delete(k))
         )
       )
@@ -42,6 +43,15 @@ self.addEventListener('fetch', (event) => {
   // API: network-first with cached fallback
   if (url.pathname.includes('/api/')) {
     event.respondWith(networkFirst(request, API_CACHE));
+    return;
+  }
+
+  // Audio files: cache-first for offline vocabulary playback
+  if (
+    request.destination === 'audio' ||
+    /\.(mp3|ogg|wav|webm|aac)(\?|$)/i.test(url.pathname)
+  ) {
+    event.respondWith(cacheFirst(request, AUDIO_CACHE));
     return;
   }
 

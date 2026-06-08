@@ -1,17 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams } from "react-router-dom";
-import { AlertCircle, BookOpen, CheckCircle2, ChevronLeft, Flame, Heart, Lock, Medal, Search, Settings, Star, Trophy, Volume2, Zap } from "lucide-react";
+import { AlertCircle, BookOpen, Camera, CheckCircle2, ChevronLeft, Flame, Heart, Lock, Medal, Search, Settings, Star, Trophy, Volume2, Zap } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, EmptyState, Field, Modal, PageHeader, ProgressBar } from "../../components/ui";
 import { apiClient } from "../../services/apiClient";
 import { leaderboardService } from "../../services/leaderboardService";
 import { lessonService } from "../../services/lessonService";
 import { practiceService, type PracticeExercise, type PracticeType } from "../../services/practiceService";
+import { srService } from "../../services/spacedRepetitionService";
 import { progressService } from "../../services/progressService";
 import { vocabularyService, type VocabularyWord } from "../../services/vocabularyService";
 import { selectCurrentUser, useAppStore } from "../../store/useAppStore";
 import { useT } from "../../i18n";
-import type { AnswerRecord, Exercise, UserLevel } from "../../types";
+import type { AnswerRecord, Exercise, LeaderboardEntry, UserLevel } from "../../types";
 import { formatWeekTimer, secondsUntilWeekEnd } from "../../utils/date";
 
 function useWeekTimer(): number {
@@ -532,9 +533,13 @@ function PracticeScreen() {
 
   if (!user || !progress) return null;
 
+  const isPlus = user.subscriptionStatus === "plus";
+  const xpEarned = isPlus ? 8 : 5;
   const allWords = vocabularyService.build(data.lessons, data.userWords[user.id]);
-  const weakWords = allWords.filter((w) => w.status === "practicing" || w.mistakeCount > 0);
-  const topicGroups = vocabularyService.group(weakWords, "topic");
+  const dueCount = srService.dueCount(allWords);
+  const dueWords = allWords.filter(
+    (w) => w.status !== "mastered" && w.nextReviewAt != null && w.nextReviewAt.slice(0, 10) <= new Date().toISOString().slice(0, 10)
+  );
 
   function toggleType(type: PracticeType) {
     setTypes((prev) => {
@@ -546,7 +551,9 @@ function PracticeScreen() {
   }
 
   function startSession() {
-    const ex = practiceService.generate(weakWords, allWords, sessionCount, types);
+    // SR-ordered word selection: due/overdue first, then mistakes, then new
+    const adaptiveWords = srService.selectWords(allWords, sessionCount);
+    const ex = practiceService.generate(adaptiveWords, allWords, sessionCount, types);
     setExercises(ex);
     setIndex(0);
     setSessionAnswers([]);
@@ -557,14 +564,40 @@ function PracticeScreen() {
 
   // ── LANDING ────────────────────────────────────────────────────────────────
   if (phase === "landing") {
-    const practiceCount = Math.min(sessionCount, weakWords.length * types.size);
+    const practiceCount = Math.min(sessionCount, allWords.length > 0 ? sessionCount : 0);
+    const topicGroups = vocabularyService.group(
+      dueWords.length > 0 ? dueWords : allWords.filter((w) => w.status !== "mastered").slice(0, 20),
+      "topic"
+    );
+
     return (
       <main className="page-content">
-        <PageHeader title={t("student.practice.title")} subtitle={`${weakWords.length} ${t("student.practice.words_count")}`} />
-        {weakWords.length === 0 ? (
+        <PageHeader
+          title={t("student.practice.title")}
+          subtitle={`${allWords.length} ${t("student.practice.words_count")}`}
+        />
+
+        {allWords.length === 0 ? (
           <EmptyState title={t("student.practice.empty_title")} text={t("student.practice.empty_text")} />
         ) : (
           <>
+            {/* Due-today banner */}
+            {dueCount > 0 && (
+              <div className="sr-due-banner">
+                <span className="sr-due-icon">⏰</span>
+                <strong>{dueCount}</strong>
+                <span>{t("student.practice.due_today")}</span>
+              </div>
+            )}
+
+            {/* Plus XP bonus card */}
+            {isPlus && (
+              <div className="plus-xp-banner">
+                <Zap size={16} />
+                <span>{t("student.practice.plus_bonus")}</span>
+              </div>
+            )}
+
             <Card>
               <h3>{t("student.practice.settings_title")}</h3>
               <div className="practice-settings">
@@ -597,7 +630,11 @@ function PracticeScreen() {
               <div key={label}>
                 <div className="word-group-header">{label}</div>
                 <div className="word-mini-list">
-                  {words.map((w) => <span key={w.id}>{w.sk} — {w.uk}</span>)}
+                  {words.map((w) => (
+                    <span key={w.id} className={w.nextReviewAt && w.nextReviewAt.slice(0, 10) <= new Date().toISOString().slice(0, 10) ? "sr-due-word" : ""}>
+                      {w.sk} — {w.uk}
+                    </span>
+                  ))}
                 </div>
               </div>
             ))}
@@ -667,25 +704,32 @@ function PracticeScreen() {
   // ── RESULTS ────────────────────────────────────────────────────────────────
   const correctCount = sessionAnswers.filter((a) => a.correct).length;
   const total = sessionAnswers.length;
+  const accuracy = total > 0 ? Math.round((correctCount / total) * 100) : 0;
 
   return (
     <main className="page-content">
       <PageHeader title={t("student.practice.results_title")} />
       <Card className="result-card">
         <Trophy size={48} color="var(--yellow-strong)" />
-        <h2>+5 XP</h2>
-        <p>{correctCount} / {total} {t("student.practice.results_correct")}</p>
+        <div className="result-xp-row">
+          <h2>+{xpEarned} XP</h2>
+          {isPlus && <span className="plus-xp-chip">{t("student.practice.plus_bonus")}</span>}
+        </div>
+        <p>{correctCount} / {total} {t("student.practice.results_correct")} · {accuracy}%</p>
       </Card>
       <Card>
         <h3>{t("student.practice.results_words")}</h3>
         <div className="practice-results-list">
           {sessionAnswers.map(({ wordId, correct }, i) => {
             const word = allWords.find((w) => w.id === wordId);
+            const nextReview = data.userWords[user.id]?.find((w) => w.wordId === wordId)?.nextReviewAt;
+            const nextDay = nextReview ? new Date(nextReview).toLocaleDateString("uk-UA", { month: "short", day: "numeric" }) : null;
             return (
               <div key={`${wordId}-${i}`} className="practice-result-word">
                 <span className={correct ? "correct-mark" : "wrong-mark"}>{correct ? "✓" : "✗"}</span>
                 <span>{word?.sk}</span>
                 <span className="word-meta">{word?.uk}</span>
+                {nextDay && <span className="sr-next-date">{nextDay}</span>}
               </div>
             );
           })}
@@ -702,40 +746,205 @@ function LeaderboardScreen() {
   const { t } = useT();
   const weekSeconds = useWeekTimer();
   const leaderboard = leaderboardService.recalculate(data.leaderboard, data.users, data.progress);
-  const current = user ? leaderboard.entries.find((entry) => entry.userId === user.id) : undefined;
+  const [tab, setTab] = useState<"all" | "ua" | "history">("all");
+  const [flashIds, setFlashIds] = useState<Map<string, "up" | "down">>(new Map());
+  const prevWeekIdRef = useRef<string | null>(null);
+
+  // Flash rows that moved when week transitions
+  useEffect(() => {
+    if (prevWeekIdRef.current !== null && prevWeekIdRef.current !== leaderboard.weekId) {
+      const map = new Map<string, "up" | "down">();
+      leaderboard.entries.forEach((e) => {
+        if (e.movement === "up" || e.movement === "down") map.set(e.userId, e.movement);
+      });
+      setFlashIds(map);
+      const tid = setTimeout(() => setFlashIds(new Map()), 1200);
+      return () => clearTimeout(tid);
+    }
+    prevWeekIdRef.current = leaderboard.weekId;
+  }, [leaderboard.weekId, leaderboard.entries]);
+
+  const userXp = progress?.xpWeekly ?? 0;
+  const userLeague = leaderboardService.leagueFor(userXp);
+  const xpToNext = leaderboardService.xpToNextLeague(userXp);
+  const leagueProgress = leaderboardService.progressInLeague(userXp);
+
+  const filtered = tab === "ua"
+    ? leaderboard.entries.filter((e) => e.country === "UA")
+    : leaderboard.entries;
+
+  const top3 = filtered.slice(0, 3);
+  const podiumOrder = [top3[1], top3[0], top3[2]].filter((e): e is LeaderboardEntry => !!e);
+  const rest = filtered.slice(3);
+
+  function leaderRow(entry: LeaderboardEntry, showLeagueChange = true) {
+    const flash = flashIds.get(entry.userId);
+    return (
+      <div
+        key={entry.userId}
+        className={`leader-row${entry.userId === user?.id ? " me" : ""}${flash ? ` movement-flash--${flash}` : ""}`}
+      >
+        <span className="leader-rank">{entry.rank}</span>
+        <div className="leader-avatar">{(entry.avatar ?? entry.name).slice(0, 2).toUpperCase()}</div>
+        <span className="leader-name">
+          {entry.name}
+          {entry.country === "UA" && <span className="country-flag"> 🇺🇦</span>}
+        </span>
+        <span className="leader-xp">{entry.xpWeekly} XP</span>
+        {showLeagueChange && entry.leagueChange
+          ? <span className={`league-change league-change--${entry.leagueChange}`}>{t(`student.leaderboard.${entry.leagueChange}`)}</span>
+          : entry.movement && (
+            <span className={`leader-movement movement--${entry.movement}`}>
+              {entry.movement === "up" ? "↑" : entry.movement === "down" ? "↓" : "→"}
+            </span>
+          )
+        }
+      </div>
+    );
+  }
+
   return (
     <main className="page-content">
-      <PageHeader title={t("student.leaderboard.title")} subtitle={`${t(`student.league.${leaderboard.league}`)} · ${t("student.leaderboard.timer_prefix")} ${formatWeekTimer(weekSeconds)}`} />
-      <Card className="leader-header">
-        <span>{t("student.leaderboard.your_rank")} {current?.rank || "-"}</span>
-        <span>{progress?.xpWeekly || 0} {t("student.leaderboard.weekly_xp")}</span>
+      <PageHeader title={t("student.leaderboard.title")} subtitle={`${t(`student.league.${userLeague}`)} · ${formatWeekTimer(weekSeconds)} ${t("student.leaderboard.timer_prefix")}`} />
+
+      <Card className="league-card">
+        <div className="league-card-top">
+          <span className={`league-badge league-badge--${userLeague.toLowerCase()}`}>{t(`student.league.${userLeague}`)}</span>
+          <span className="leader-header-xp">{userXp} {t("student.leaderboard.weekly_xp")}</span>
+        </div>
+        <div className="league-bar-wrap">
+          <div className="league-bar" style={{ width: `${leagueProgress}%` }} />
+        </div>
+        <p className="league-hint">
+          {xpToNext !== null ? `${t("student.leaderboard.league_up")}: ${xpToNext} XP` : t("student.leaderboard.league_top")}
+        </p>
       </Card>
-      <div className="podium">
-        {leaderboard.entries.slice(0, 3).map((entry) => <Card key={entry.userId} className={`podium-card rank-${entry.rank}`}><Medal /><strong>{entry.rank}. {entry.name}</strong><span>{entry.xpWeekly} XP</span></Card>)}
+
+      {/* Tabs */}
+      <div className="leader-tabs">
+        {(["all", "ua", "history"] as const).map((key) => (
+          <button key={key} className={`chip${tab === key ? " chip--active" : ""}`} onClick={() => setTab(key)}>
+            {t(`student.leaderboard.tab_${key}`)}
+          </button>
+        ))}
       </div>
-      <Card>
-        {leaderboard.entries.map((entry) => <div className={`leader-row ${entry.userId === user?.id ? "me" : ""}`} key={entry.userId}><span>{entry.rank}</span><strong>{entry.name}</strong><span>{entry.xpWeekly} XP</span></div>)}
-      </Card>
+
+      {tab === "history" ? (
+        <>
+          {leaderboard.history && leaderboard.history.length > 0
+            ? [...leaderboard.history].reverse().map((snapshot) => (
+              <details key={snapshot.weekId} className="history-week">
+                <summary className="history-week-summary">
+                  {snapshot.weekId} · {snapshot.entries.length} учасників
+                </summary>
+                <Card>
+                  {snapshot.entries.slice(0, 5).map((entry) => (
+                    <div className={`leader-row${entry.userId === user?.id ? " me" : ""}`} key={entry.userId}>
+                      <span className="leader-rank">{entry.rank}</span>
+                      <div className="leader-avatar">{(entry.avatar ?? entry.name).slice(0, 2).toUpperCase()}</div>
+                      <span className="leader-name">{entry.name}</span>
+                      <span className="leader-xp">{entry.xpWeekly} XP</span>
+                      {entry.movement && (
+                        <span className={`leader-movement movement--${entry.movement}`}>
+                          {entry.movement === "up" ? "↑" : entry.movement === "down" ? "↓" : "→"}
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </Card>
+              </details>
+            ))
+            : <EmptyState title={t("student.leaderboard.history_empty_title")} text={t("student.leaderboard.history_empty_text")} />
+          }
+        </>
+      ) : (
+        <>
+          {/* Podium top 3 */}
+          <div className="podium">
+            {podiumOrder.map((entry) => (
+              <Card key={entry.userId} className={`podium-card rank-${entry.rank}${entry.userId === user?.id ? " me" : ""}`}>
+                <div className={`podium-medal medal--${entry.rank === 1 ? "gold" : entry.rank === 2 ? "silver" : "bronze"}`}><Medal size={22} /></div>
+                <div className="podium-avatar">{(entry.avatar ?? entry.name).slice(0, 2).toUpperCase()}</div>
+                <strong className="podium-name">{entry.name}</strong>
+                <span className="podium-xp">{entry.xpWeekly} XP</span>
+                {entry.leagueChange && (
+                  <span className={`league-change league-change--${entry.leagueChange}`}>{t(`student.leaderboard.${entry.leagueChange}`)}</span>
+                )}
+              </Card>
+            ))}
+          </div>
+
+          {/* List 4+ */}
+          {rest.length > 0 && <Card>{rest.map((entry) => leaderRow(entry))}</Card>}
+        </>
+      )}
     </main>
   );
 }
 
+function buildDailyXp(xpDailyHistory: Record<string, number> | undefined): { label: string; value: number }[] {
+  return Array.from({ length: 7 }, (_, i) => {
+    const d = new Date();
+    d.setDate(d.getDate() - (6 - i));
+    const key = d.toISOString().slice(0, 10);
+    const label = d.toLocaleDateString("uk-UA", { weekday: "short" });
+    return { label, value: xpDailyHistory?.[key] ?? 0 };
+  });
+}
+
 function ProfileScreen() {
   const navigate = useNavigate();
-  const { user, progress, data, logout } = useStudentData();
+  const { user, progress, data, logout, updateUser, restoreHearts } = useStudentData();
   const { t } = useT();
+  const [modal, setModal] = useState<"streak" | "hearts" | "avatar" | "logout" | null>(null);
+  const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
+  const fileRef = useRef<HTMLInputElement>(null);
   if (!user || !progress) return null;
   const words = vocabularyService.build(data.lessons, data.userWords[user.id]);
+  const masteredCount = words.filter((w) => w.status === "mastered").length;
+  const dailyXp = buildDailyXp(progress.xpDailyHistory);
+  const maxXp = Math.max(...dailyXp.map((d) => d.value), 1);
+
+  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        canvas.width = 128; canvas.height = 128;
+        const ctx = canvas.getContext("2d")!;
+        const side = Math.min(img.naturalWidth, img.naturalHeight);
+        const sx = (img.naturalWidth - side) / 2;
+        const sy = (img.naturalHeight - side) / 2;
+        ctx.drawImage(img, sx, sy, side, side, 0, 0, 128, 128);
+        setAvatarPreview(canvas.toDataURL("image/jpeg", 0.85));
+        setModal("avatar");
+      };
+      img.src = ev.target?.result as string;
+    };
+    reader.readAsDataURL(file);
+    e.target.value = "";
+  }
+
   return (
     <>
       <div className="profile-hero">
         <div className="profile-hero-info">
-          <div className="avatar">{user.avatar || user.name.slice(0, 2).toUpperCase()}</div>
+          <button className="avatar-wrap" type="button" onClick={() => fileRef.current?.click()} aria-label={t("student.profile.avatar_title")}>
+            {user.avatar?.startsWith("data:") || user.avatar?.startsWith("http")
+              ? <img className="avatar avatar--photo" src={user.avatar} alt={user.name} />
+              : <div className="avatar">{(user.avatar || user.name).slice(0, 2).toUpperCase()}</div>
+            }
+            <span className="avatar-edit"><Camera size={13} /></span>
+          </button>
+          <input ref={fileRef} type="file" accept="image/*" className="sr-only" onChange={handleFileChange} />
           <div>
             <h2>{user.name}</h2>
             <div className="profile-hero-meta">
               <span className="status-pill">{user.level}</span>
-              <span className="status-pill">{t(`student.subscription.${user.subscriptionStatus}`)}</span>
+              <span className={`sub-badge sub-badge--${user.subscriptionStatus}`}>{t(`student.subscription.${user.subscriptionStatus}`)}</span>
             </div>
           </div>
         </div>
@@ -743,49 +952,342 @@ function ProfileScreen() {
           <Settings size={20} />
         </button>
       </div>
+
       <div className="page-content">
         <div className="stats-grid">
-          <Card><Flame /><strong>{progress.streakDays}</strong><span>{t("student.profile.stat_streak")}</span></Card>
-          <Card><Heart /><strong>{progress.hearts}</strong><span>{t("student.profile.stat_hearts")}</span></Card>
-          <Card><Zap /><strong>{progress.xpTotal}</strong><span>{t("student.profile.stat_xp")}</span></Card>
-          <Card><BookOpen /><strong>{progress.completedLessons.length}</strong><span>{t("student.profile.stat_lessons")}</span></Card>
-          <Card><Star /><strong>{words.filter((word) => word.status === "mastered").length}</strong><span>{t("student.profile.stat_words")}</span></Card>
+          <Card className="stat-card" onClick={() => setModal("streak")}>
+            <Flame size={22} color="var(--orange)" />
+            <strong>{progress.streakDays}</strong>
+            <span>{t("student.profile.stat_streak")}</span>
+          </Card>
+          <Card className="stat-card" onClick={() => setModal("hearts")}>
+            <Heart size={22} color="var(--red)" />
+            <strong>{progress.hearts}/{progress.maxHearts}</strong>
+            <span>{t("student.profile.stat_hearts")}</span>
+          </Card>
+          <Card className="stat-card" onClick={() => navigate("/app/path")}>
+            <BookOpen size={22} color="var(--purple)" />
+            <strong>{progress.completedLessons.length}</strong>
+            <span>{t("student.profile.stat_lessons")}</span>
+          </Card>
+          <Card className="stat-card" onClick={() => navigate("/app/vocabulary")}>
+            <Star size={22} color="var(--yellow-strong)" />
+            <strong>{masteredCount}</strong>
+            <span>{t("student.profile.stat_words")}</span>
+          </Card>
         </div>
-        <Card>
-          <p>{t("student.profile.goal_label")} {user.goal || t("student.profile.goal_empty")}</p>
+
+        <Card className="xp-chart-card">
+          <div className="xp-chart-header">
+            <div className="xp-chart-title"><Zap size={18} color="var(--purple)" /><strong>{progress.xpTotal}</strong><span>{t("student.profile.stat_xp")}</span></div>
+            <span className="xp-week-label">{progress.xpWeekly} {t("student.profile.stat_xp_weekly")}</span>
+          </div>
+          <div className="xp-chart">
+            {dailyXp.map((day, i) => (
+              <div key={i} className="xp-bar-col">
+                <div className="xp-bar-wrap">
+                  <div className="xp-bar" style={{ height: `${Math.round(day.value / maxXp * 100)}%` }} />
+                </div>
+                <span className="xp-bar-label">{day.label}</span>
+              </div>
+            ))}
+          </div>
         </Card>
+
+        <Card className="sub-card">
+          <div className="sub-row">
+            <div className="sub-info">
+              <p className="sub-goal">{user.goal || t("student.profile.goal_empty")}</p>
+              <div className="sub-meta">
+                <span className={`sub-badge sub-badge--${user.subscriptionStatus}`}>{t(`student.subscription.${user.subscriptionStatus}`)}</span>
+                {user.subscriptionStatus === "trial" && user.trialEndsAt && (
+                  <span className="sub-date">до {new Date(user.trialEndsAt).toLocaleDateString("uk-UA")}</span>
+                )}
+              </div>
+            </div>
+            {user.subscriptionStatus !== "plus" && (
+              <Button variant="secondary" onClick={() => navigate("/app/shop")}>Plus →</Button>
+            )}
+          </div>
+        </Card>
+
         <div className="form-stack">
           <Button variant="secondary" onClick={() => navigate("/placement-test")}>{t("student.profile.btn_placement")}</Button>
           <Button variant="secondary" onClick={() => navigate("/app/levels")}>{t("student.profile.btn_levels")}</Button>
           <Button variant="secondary" onClick={() => navigate("/app/shop")}>{t("student.profile.btn_shop")}</Button>
-          <Button variant="danger" onClick={logout}>{t("student.profile.btn_logout")}</Button>
+          <Button variant="danger" onClick={() => setModal("logout")}>{t("student.profile.btn_logout")}</Button>
         </div>
       </div>
+
+      {modal === "streak" && (
+        <Modal onClose={() => setModal(null)}>
+          <Card className="profile-modal">
+            <Flame size={44} color="var(--orange)" />
+            <strong className="modal-big-num">{progress.streakDays}</strong>
+            <p>{t("student.profile.streak_modal_text")}</p>
+            <Button variant="ghost" onClick={() => setModal(null)}>{t("student.profile.avatar_cancel")}</Button>
+          </Card>
+        </Modal>
+      )}
+
+      {modal === "hearts" && (
+        <Modal onClose={() => setModal(null)}>
+          <Card className="profile-modal">
+            <Heart size={44} color="var(--red)" />
+            <strong className="modal-big-num">{progress.hearts}/{progress.maxHearts}</strong>
+            <p>{t("student.profile.hearts_modal_title")}</p>
+            {progress.hearts < progress.maxHearts && (
+              <Button onClick={() => { restoreHearts(); setModal(null); }}>{t("student.profile.hearts_restore")}</Button>
+            )}
+            <Button variant="ghost" onClick={() => setModal(null)}>{t("student.profile.avatar_cancel")}</Button>
+          </Card>
+        </Modal>
+      )}
+
+      {modal === "avatar" && avatarPreview && (
+        <Modal onClose={() => { setModal(null); setAvatarPreview(null); }}>
+          <Card className="profile-modal">
+            <h2>{t("student.profile.avatar_title")}</h2>
+            <img className="avatar-preview" src={avatarPreview} alt="preview" />
+            <Button onClick={() => { updateUser({ avatar: avatarPreview }); setModal(null); setAvatarPreview(null); }}>
+              {t("student.profile.avatar_save")}
+            </Button>
+            <Button variant="ghost" onClick={() => { setModal(null); setAvatarPreview(null); }}>
+              {t("student.profile.avatar_cancel")}
+            </Button>
+          </Card>
+        </Modal>
+      )}
+
+      {modal === "logout" && (
+        <Modal onClose={() => setModal(null)}>
+          <Card className="profile-modal">
+            <h2>{t("student.profile.logout_confirm_title")}</h2>
+            <p>{t("student.profile.logout_confirm_text")}</p>
+            <Button variant="danger" onClick={logout}>{t("student.profile.logout_confirm_btn")}</Button>
+            <Button variant="ghost" onClick={() => setModal(null)}>{t("student.profile.logout_cancel")}</Button>
+          </Card>
+        </Modal>
+      )}
     </>
   );
 }
 
 function SettingsScreen() {
-  const { user, updateUser } = useStudentData();
+  const { user, updateUser, logout } = useStudentData();
   const { t } = useT();
   const [name, setName] = useState(user?.name || "");
+  const [email, setEmail] = useState(user?.email || "");
   const [goal, setGoal] = useState(user?.goal || "");
-  const [phone, setPhone] = useState(user?.settings.phone || "");
+  const [notifications, setNotifications] = useState(user?.settings.notificationsEnabled ?? true);
+  const [sound, setSound] = useState(user?.settings.soundEnabled ?? true);
+  const [haptics, setHaptics] = useState(user?.settings.hapticsEnabled ?? true);
+  const [profileSaved, setProfileSaved] = useState(false);
+  const [emailError, setEmailError] = useState("");
+  const [emailSaved, setEmailSaved] = useState(false);
+  const [pwExpanded, setPwExpanded] = useState(false);
+  const [currentPw, setCurrentPw] = useState("");
+  const [newPw, setNewPw] = useState("");
+  const [confirmPw, setConfirmPw] = useState("");
+  const [pwError, setPwError] = useState("");
+  const [pwSuccess, setPwSuccess] = useState(false);
+  const [pwLoading, setPwLoading] = useState(false);
+  const [modal, setModal] = useState<"deactivate" | "delete" | null>(null);
+  const [deleteEmail, setDeleteEmail] = useState("");
+  const [actionLoading, setActionLoading] = useState(false);
+  const [actionError, setActionError] = useState("");
+
   if (!user) return null;
+  const lang = (user.settings.language || "uk") as "uk" | "sk" | "en";
+
+  async function saveProfile() {
+    const trimmedEmail = email.trim().toLowerCase();
+    if (trimmedEmail !== user!.email.toLowerCase()) {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
+        setEmailError(t("student.settings.email_invalid"));
+        return;
+      }
+      try {
+        await apiClient.changeEmail(trimmedEmail);
+        setEmailSaved(true);
+        setEmailError("");
+        setTimeout(() => setEmailSaved(false), 2500);
+        updateUser({ email: trimmedEmail, name, goal, settings: { ...user!.settings, notificationsEnabled: notifications, soundEnabled: sound, hapticsEnabled: haptics } });
+      } catch (err: unknown) {
+        const e = err as { status?: number };
+        setEmailError(e.status === 409 ? t("student.settings.email_taken") : t("student.settings.email_invalid"));
+        return;
+      }
+    } else {
+      updateUser({ name, goal, settings: { ...user!.settings, notificationsEnabled: notifications, soundEnabled: sound, hapticsEnabled: haptics } });
+      setProfileSaved(true);
+      setTimeout(() => setProfileSaved(false), 2500);
+    }
+  }
+
+  function changeLanguage(code: "uk" | "sk" | "en") {
+    updateUser({ settings: { ...user!.settings, language: code } });
+  }
+
+  async function submitPasswordChange() {
+    if (newPw !== confirmPw) { setPwError(t("student.settings.password_mismatch")); return; }
+    if (newPw.length < 8) { setPwError(t("student.settings.password_short")); return; }
+    setPwError(""); setPwLoading(true);
+    try {
+      await apiClient.changePassword(currentPw, newPw);
+      setPwSuccess(true);
+      setCurrentPw(""); setNewPw(""); setConfirmPw("");
+      setTimeout(() => { setPwSuccess(false); setPwExpanded(false); }, 2500);
+    } catch (err: unknown) {
+      const e = err as { status?: number; message?: string };
+      setPwError(e.status === 401 ? t("student.settings.password_wrong") : (e.message || "Помилка"));
+    } finally {
+      setPwLoading(false);
+    }
+  }
+
+  async function handleDeactivate() {
+    setActionLoading(true); setActionError("");
+    try {
+      await apiClient.deactivateAccount();
+      logout();
+    } catch (err: unknown) {
+      setActionError((err as { message?: string }).message || "Помилка");
+      setActionLoading(false);
+    }
+  }
+
+  async function handleDelete() {
+    if (deleteEmail.trim().toLowerCase() !== user!.email.toLowerCase()) {
+      setActionError(t("student.settings.email_invalid"));
+      return;
+    }
+    setActionLoading(true); setActionError("");
+    try {
+      await apiClient.deleteAccount(deleteEmail.trim());
+      logout();
+    } catch (err: unknown) {
+      setActionError((err as { message?: string }).message || "Помилка");
+      setActionLoading(false);
+    }
+  }
+
   return (
-    <main className="page-content">
-      <PageHeader title={t("student.settings.title")} subtitle={t("student.settings.subtitle")} />
-      <Card className="form-stack">
-        <Field label={t("student.settings.name")} value={name} onChange={(event) => setName(event.target.value)} />
-        <Field label={t("student.settings.goal")} value={goal} onChange={(event) => setGoal(event.target.value)} />
-        <Field label={t("student.settings.phone")} value={phone} onChange={(event) => setPhone(event.target.value)} />
-        <label className="toggle-row"><input type="checkbox" defaultChecked={user.settings.notificationsEnabled} /> {t("student.settings.notifications")}</label>
-        <label className="toggle-row"><input type="checkbox" defaultChecked={user.settings.soundEnabled} /> {t("student.settings.sound")}</label>
-        <label className="toggle-row"><input type="checkbox" defaultChecked={user.settings.hapticsEnabled} /> {t("student.settings.haptics")}</label>
-        <Button onClick={() => updateUser({ name, goal, settings: { ...user.settings, phone } })}>{t("student.settings.save")}</Button>
-        <Button variant="secondary" disabled>{t("student.settings.install")}</Button>
-        <Button variant="danger" disabled>{t("student.settings.delete_account")}</Button>
-      </Card>
+    <main className="page-content settings-page">
+      <PageHeader title={t("student.settings.title")} />
+
+      <section className="settings-section">
+        <h3 className="settings-section-title">{t("student.settings.section_profile")}</h3>
+        <Card className="form-stack">
+          <Field label={t("student.settings.name")} value={name} onChange={(e) => setName(e.target.value)} />
+          <div>
+            <Field label={t("student.settings.email")} value={email} onChange={(e) => { setEmail(e.target.value); setEmailError(""); setEmailSaved(false); }} />
+            {emailError && <p className="field-error">{emailError}</p>}
+            {emailSaved && <p className="field-success">{t("student.settings.email_saved")}</p>}
+          </div>
+          <Field label={t("student.settings.goal")} value={goal} onChange={(e) => setGoal(e.target.value)} />
+          <Button onClick={saveProfile}>
+            {profileSaved ? t("student.settings.saved") : t("student.settings.save")}
+          </Button>
+        </Card>
+      </section>
+
+      <section className="settings-section">
+        <h3 className="settings-section-title">{t("student.settings.section_language")}</h3>
+        <Card>
+          <div className="lang-picker">
+            {(["uk", "sk", "en"] as const).map((code) => (
+              <button
+                key={code}
+                type="button"
+                className={`lang-btn${lang === code ? " lang-btn--active" : ""}`}
+                onClick={() => changeLanguage(code)}
+              >
+                {t(`student.settings.lang_${code}`)}
+              </button>
+            ))}
+          </div>
+        </Card>
+      </section>
+
+      <section className="settings-section">
+        <h3 className="settings-section-title">{t("student.settings.section_notifications")}</h3>
+        <Card className="form-stack">
+          <label className="toggle-row">
+            <input type="checkbox" checked={notifications} onChange={(e) => setNotifications(e.target.checked)} />
+            {t("student.settings.notifications")}
+          </label>
+          <label className="toggle-row">
+            <input type="checkbox" checked={sound} onChange={(e) => setSound(e.target.checked)} />
+            {t("student.settings.sound")}
+          </label>
+          <label className="toggle-row">
+            <input type="checkbox" checked={haptics} onChange={(e) => setHaptics(e.target.checked)} />
+            {t("student.settings.haptics")}
+          </label>
+        </Card>
+      </section>
+
+      <section className="settings-section">
+        <h3 className="settings-section-title">{t("student.settings.section_password")}</h3>
+        <Card className="form-stack">
+          {pwSuccess && <p className="field-success">{t("student.settings.password_success")}</p>}
+          {!pwExpanded && !pwSuccess && (
+            <Button variant="secondary" onClick={() => setPwExpanded(true)}>
+              {t("student.settings.password_change")}
+            </Button>
+          )}
+          {pwExpanded && !pwSuccess && (
+            <>
+              <Field label={t("student.settings.password_current")} type="password" value={currentPw} onChange={(e) => { setCurrentPw(e.target.value); setPwError(""); }} />
+              <Field label={t("student.settings.password_new")} type="password" value={newPw} onChange={(e) => { setNewPw(e.target.value); setPwError(""); }} />
+              <Field label={t("student.settings.password_confirm")} type="password" value={confirmPw} onChange={(e) => { setConfirmPw(e.target.value); setPwError(""); }} />
+              {pwError && <p className="field-error">{pwError}</p>}
+              <div className="btn-row">
+                <Button onClick={submitPasswordChange} disabled={pwLoading}>{t("student.settings.password_change")}</Button>
+                <Button variant="ghost" onClick={() => { setPwExpanded(false); setPwError(""); }}>{t("student.settings.cancel")}</Button>
+              </div>
+            </>
+          )}
+        </Card>
+      </section>
+
+      <section className="settings-section settings-danger">
+        <h3 className="settings-section-title settings-section-title--danger">{t("student.settings.danger_zone")}</h3>
+        <Card className="form-stack">
+          <Button variant="secondary" onClick={() => { setModal("deactivate"); setActionError(""); }}>
+            {t("student.settings.deactivate")}
+          </Button>
+          <Button variant="danger" onClick={() => { setModal("delete"); setDeleteEmail(""); setActionError(""); }}>
+            {t("student.settings.delete")}
+          </Button>
+        </Card>
+      </section>
+
+      {modal === "deactivate" && (
+        <Modal onClose={() => setModal(null)}>
+          <Card className="profile-modal">
+            <h2>{t("student.settings.deactivate_title")}</h2>
+            <p>{t("student.settings.deactivate_text")}</p>
+            {actionError && <p className="field-error">{actionError}</p>}
+            <Button variant="danger" onClick={handleDeactivate} disabled={actionLoading}>{t("student.settings.deactivate_confirm")}</Button>
+            <Button variant="ghost" onClick={() => setModal(null)}>{t("student.settings.cancel")}</Button>
+          </Card>
+        </Modal>
+      )}
+
+      {modal === "delete" && (
+        <Modal onClose={() => setModal(null)}>
+          <Card className="profile-modal">
+            <h2>{t("student.settings.delete_title")}</h2>
+            <p>{t("student.settings.delete_text")}</p>
+            <Field label={t("student.settings.email")} placeholder={t("student.settings.delete_placeholder")} value={deleteEmail} onChange={(e) => { setDeleteEmail(e.target.value); setActionError(""); }} />
+            {actionError && <p className="field-error">{actionError}</p>}
+            <Button variant="danger" onClick={handleDelete} disabled={actionLoading || !deleteEmail.trim()}>{t("student.settings.delete_confirm")}</Button>
+            <Button variant="ghost" onClick={() => setModal(null)}>{t("student.settings.cancel")}</Button>
+          </Card>
+        </Modal>
+      )}
     </main>
   );
 }

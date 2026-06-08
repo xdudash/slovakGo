@@ -17,6 +17,7 @@ export class ApiError extends Error {
 export async function apiRequest<T>(path: string, init: RequestInit = {}): Promise<T> {
   const headers = new Headers(init.headers);
   headers.set("Content-Type", "application/json");
+  headers.set("X-Requested-With", "XMLHttpRequest");
 
   const response = await fetch(`${API_BASE_URL}${path}`, {
     ...init,
@@ -32,6 +33,13 @@ export async function apiRequest<T>(path: string, init: RequestInit = {}): Promi
 }
 
 export const apiClient = {
+  register(id: string, name: string, email: string, password: string, goal?: string) {
+    return apiRequest<{ ok: boolean; user: unknown }>("/auth/register", {
+      method: "POST",
+      body: JSON.stringify({ id, name, email, password, goal })
+    });
+  },
+
   login(email: string, password: string) {
     return apiRequest<{ ok: boolean; user: unknown }>("/auth/login", {
       method: "POST",
@@ -56,5 +64,30 @@ export const apiClient = {
 
   syncPull(since: number) {
     return apiRequest<unknown>(`/sync/pull?since=${since}`);
+  },
+
+  changeEmail(newEmail: string) {
+    return apiRequest<{ ok: boolean }>("/user/email", {
+      method: "POST",
+      body: JSON.stringify({ email: newEmail })
+    });
+  },
+
+  changePassword(currentPassword: string, newPassword: string) {
+    return apiRequest<{ ok: boolean }>("/user/password", {
+      method: "POST",
+      body: JSON.stringify({ currentPassword, newPassword })
+    });
+  },
+
+  deleteAccount(confirmEmail: string) {
+    return apiRequest<{ ok: boolean }>("/auth/delete", {
+      method: "POST",
+      body: JSON.stringify({ confirmEmail })
+    });
+  },
+
+  deactivateAccount() {
+    return apiRequest<{ ok: boolean }>("/auth/deactivate", { method: "POST" });
   }
 };

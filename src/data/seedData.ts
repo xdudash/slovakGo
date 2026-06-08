@@ -440,11 +440,33 @@ export const seedLeaderboard: Leaderboard = {
   weekId: "2026-W23",
   league: "Bronze",
   entries: [
-    { userId: "fake-1", name: "Марія", xpWeekly: 320, rank: 1, movement: "up" },
-    { userId: "fake-2", name: "Андрій", xpWeekly: 260, rank: 2, movement: "same" },
-    { userId: "fake-3", name: "Оксана", xpWeekly: 210, rank: 3, movement: "up" },
-    { userId: "user-student", name: "Студент", xpWeekly: 75, rank: 4, movement: "same" },
-    { userId: "fake-4", name: "Ірина", xpWeekly: 60, rank: 5, movement: "down" }
+    { userId: "fake-1",  name: "Марія",   xpWeekly: 320, rank: 1,  movement: "up",   country: "UA" },
+    { userId: "fake-2",  name: "Андрій",  xpWeekly: 260, rank: 2,  movement: "same", country: "UA" },
+    { userId: "fake-3",  name: "Оксана",  xpWeekly: 210, rank: 3,  movement: "up",   country: "UA" },
+    { userId: "fake-5",  name: "Дмитро",  xpWeekly: 185, rank: 4,  movement: "up",   country: "UA" },
+    { userId: "fake-6",  name: "Петро",   xpWeekly: 150, rank: 5,  movement: "same", country: "UA" },
+    { userId: "fake-7",  name: "Софія",   xpWeekly: 130, rank: 6,  movement: "down", country: "UA" },
+    { userId: "user-student", name: "Студент", xpWeekly: 75, rank: 7, movement: "same", country: "UA" },
+    { userId: "fake-8",  name: "Marek",   xpWeekly: 65,  rank: 8,  movement: "up",   country: "SK" },
+    { userId: "fake-4",  name: "Ірина",   xpWeekly: 60,  rank: 9,  movement: "down", country: "UA" },
+    { userId: "fake-9",  name: "Tomáš",   xpWeekly: 40,  rank: 10, movement: "down", country: "SK" }
+  ],
+  history: [
+    {
+      weekId: "2026-W22",
+      entries: [
+        { userId: "fake-2",  name: "Андрій",  xpWeekly: 290, rank: 1, movement: "up",   country: "UA" },
+        { userId: "fake-1",  name: "Марія",   xpWeekly: 270, rank: 2, movement: "down", country: "UA" },
+        { userId: "fake-5",  name: "Дмитро",  xpWeekly: 195, rank: 3, movement: "up",   country: "UA" },
+        { userId: "fake-3",  name: "Оксана",  xpWeekly: 180, rank: 4, movement: "down", country: "UA" },
+        { userId: "fake-6",  name: "Петро",   xpWeekly: 140, rank: 5, movement: "same", country: "UA" },
+        { userId: "user-student", name: "Студент", xpWeekly: 90, rank: 6, movement: "same", country: "UA" },
+        { userId: "fake-7",  name: "Софія",   xpWeekly: 85,  rank: 7, movement: "up",   country: "UA" },
+        { userId: "fake-8",  name: "Marek",   xpWeekly: 55,  rank: 8, movement: "same", country: "SK" },
+        { userId: "fake-4",  name: "Ірина",   xpWeekly: 50,  rank: 9, movement: "down", country: "UA" },
+        { userId: "fake-9",  name: "Tomáš",   xpWeekly: 30,  rank: 10,movement: "down", country: "SK" }
+      ]
+    }
   ]
 };
 

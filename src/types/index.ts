@@ -20,6 +20,7 @@ export interface User {
   avatar?: string;
   level: UserLevel;
   goal?: string;
+  country?: string;
   createdAt: string;
   lastActiveAt?: string;
   subscriptionStatus: SubscriptionStatus;
@@ -145,6 +146,7 @@ export interface Progress {
   coins: number;
   mistakes: Mistake[];
   achievements: Achievement[];
+  xpDailyHistory?: Record<string, number>;
   updatedAt: string;
 }
 
@@ -163,15 +165,23 @@ export interface LeaderboardEntry {
   userId: string;
   name: string;
   avatar?: string;
+  country?: string;
   xpWeekly: number;
   rank: number;
   movement?: "up" | "down" | "same";
+  leagueChange?: "promoted" | "demoted";
+}
+
+export interface LeaderboardSnapshot {
+  weekId: string;
+  entries: LeaderboardEntry[];
 }
 
 export interface Leaderboard {
   weekId: string;
   league: "Bronze" | "Silver" | "Gold" | "Platinum" | "Diamond";
   entries: LeaderboardEntry[];
+  history?: LeaderboardSnapshot[];
 }
 
 export interface SyncMutation {

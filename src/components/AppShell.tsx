@@ -1,8 +1,9 @@
 import { BookOpen, Dumbbell, House, Medal, Settings, ShoppingBag, Trophy, UserRound, UsersRound } from "lucide-react";
 import { NavLink, Outlet, Routes, Route } from "react-router-dom";
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import type { UserRole } from "../types";
 import { useT } from "../i18n";
+import { useAppStore } from "../store/useAppStore";
 
 const navConfig = {
   student: [
@@ -30,8 +31,28 @@ const navConfig = {
 export function AppShell({ role, children }: { role: UserRole; children?: ReactNode }) {
   const { t } = useT();
   const items = navConfig[role];
+  const syncMessage = useAppStore((s) => s.syncMessage);
+  const pendingCount = useAppStore((s) => s.data.syncQueue.length);
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+
+  useEffect(() => {
+    const on = () => setIsOnline(true);
+    const off = () => setIsOnline(false);
+    window.addEventListener("online", on);
+    window.addEventListener("offline", off);
+    return () => {
+      window.removeEventListener("online", on);
+      window.removeEventListener("offline", off);
+    };
+  }, []);
+
   return (
     <div className="app-frame">
+      {!isOnline && (
+        <div className="offline-banner">
+          Офлайн{pendingCount > 0 ? ` · ${pendingCount} дій в черзі` : ""}
+        </div>
+      )}
       <main className="app-main">{children || <Outlet />}</main>
       <nav className="bottom-nav" aria-label={t("nav.aria")}>
         {items.map((item) => {
@@ -44,6 +65,7 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
           );
         })}
       </nav>
+      {syncMessage && <div className="sync-toast">{syncMessage}</div>}
     </div>
   );
 }

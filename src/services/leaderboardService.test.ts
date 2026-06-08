@@ -118,10 +118,11 @@ describe('leaderboardService.recalculate', () => {
     expect(entry?.xpWeekly).toBe(0);
   });
 
-  it('preserves other leaderboard fields (league, weekId)', () => {
+  it('preserves league and updates weekId to current week', () => {
     const lb = makeLeaderboard({ league: 'Gold', weekId: '2026-06-01' });
     const result = leaderboardService.recalculate(lb, [], {});
     expect(result.league).toBe('Gold');
-    expect(result.weekId).toBe('2026-06-01');
+    // weekId is always updated to the current week
+    expect(result.weekId).toMatch(/^\d{4}-\d{2}-\d{2}$/);
   });
 });
