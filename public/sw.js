@@ -10,12 +10,11 @@ const PRECACHE_URLS = [
   '/favicon.svg'
 ];
 
-// Install: precache app shell
+// Install: precache app shell; wait in 'installed' state until client sends SKIP_WAITING
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(STATIC_CACHE).then((cache) => cache.addAll(PRECACHE_URLS))
   );
-  self.skipWaiting();
 });
 
 // Activate: delete stale caches from previous versions, claim clients immediately

@@ -1,10 +1,35 @@
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { resolve } from 'path';
+
+/** Replaces %%VITE_FIREBASE_*%% placeholders in the built firebase-messaging-sw.js */
+function injectFcmConfig() {
+  return {
+    name: 'inject-fcm-config',
+    closeBundle() {
+      const swPath = resolve(process.cwd(), 'dist/firebase-messaging-sw.js');
+      if (!existsSync(swPath)) return;
+      const keys = [
+        'VITE_FIREBASE_API_KEY',
+        'VITE_FIREBASE_AUTH_DOMAIN',
+        'VITE_FIREBASE_PROJECT_ID',
+        'VITE_FIREBASE_STORAGE_BUCKET',
+        'VITE_FIREBASE_MESSAGING_SENDER_ID',
+        'VITE_FIREBASE_APP_ID',
+      ] as const;
+      let content = readFileSync(swPath, 'utf-8');
+      for (const key of keys) {
+        content = content.replaceAll(`%%${key}%%`, process.env[key] ?? '');
+      }
+      writeFileSync(swPath, content);
+    },
+  };
+}
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), injectFcmConfig()],
   server: {
-    // In dev, proxy /api/* to a local PHP server (e.g. `php -S localhost:8080 -t dist`)
     proxy: {
       '/api': {
         target: 'http://localhost:8080',

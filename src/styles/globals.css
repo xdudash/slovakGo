@@ -1603,3 +1603,78 @@ textarea:focus,
 .btn-row .btn {
   flex: 1;
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   SW update banner (injected by main.tsx outside React)
+═══════════════════════════════════════════════════════════════════ */
+
+.sw-update-banner {
+  position: fixed;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 72px); /* above bottom nav */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  z-index: 9999;
+  white-space: nowrap;
+  animation: slide-up 0.25s ease;
+}
+
+.sw-update-btn {
+  padding: 5px 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--purple);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   In-app push notification toast (foreground, injected by main.tsx)
+═══════════════════════════════════════════════════════════════════ */
+
+.push-toast {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 18px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  z-index: 9998;
+  max-width: min(340px, 90vw);
+  animation: slide-up 0.25s ease;
+  pointer-events: none;
+}
+
+.push-toast strong {
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.push-toast em {
+  font-style: normal;
+  opacity: 0.8;
+  font-size: 0.84rem;
+}

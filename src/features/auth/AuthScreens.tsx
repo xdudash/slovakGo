@@ -26,28 +26,26 @@ export function Login() {
   const navigate = useNavigate();
   const { login, authError } = useAppStore();
   const { t } = useT();
-  const [email, setEmail] = useState("student@slovaklife.local");
-  const [password, setPassword] = useState("password123");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  function submit(event: FormEvent) {
+  async function submit(event: FormEvent) {
     event.preventDefault();
-    const user = login(email, password);
+    setLoading(true);
+    const user = await login(email, password);
+    setLoading(false);
     if (user) navigate(roleHome(user.role), { replace: true });
   }
 
   return (
     <AuthShell title={t("auth.login_title")} text={t("auth.login_subtitle")}>
       <form onSubmit={submit} className="form-stack" noValidate>
-        <Field label={t("auth.email")} type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
-        <Field label={t("auth.password")} type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
+        <Field label={t("auth.email")} type="email" value={email} autoComplete="email" onChange={(event) => setEmail(event.target.value)} />
+        <Field label={t("auth.password")} type="password" value={password} autoComplete="current-password" onChange={(event) => setPassword(event.target.value)} />
         {authError ? <p className="error-text">{authError}</p> : null}
-        <Button type="submit">{t("auth.sign_in")}</Button>
+        <Button type="submit" disabled={loading}>{loading ? "…" : t("auth.sign_in")}</Button>
       </form>
-      <div className="test-accounts">
-        <button type="button" onClick={() => setEmail("student@slovaklife.local")}>student</button>
-        <button type="button" onClick={() => setEmail("teacher@slovaklife.local")}>teacher</button>
-        <button type="button" onClick={() => setEmail("admin@slovaklife.local")}>admin</button>
-      </div>
       <p className="auth-link">{t("auth.no_account")} <Link to="/register">{t("auth.register_link")}</Link></p>
     </AuthShell>
   );

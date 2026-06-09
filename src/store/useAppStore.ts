@@ -14,7 +14,7 @@ interface AppStore {
   authError?: string;
   syncMessage?: string;
   lastSyncedAt?: string;
-  login: (email: string, password: string) => User | null;
+  login: (email: string, password: string) => Promise<User | null>;
   register: (payload: { name: string; email: string; password: string; goal?: string }) => User | null;
   logout: () => void;
   updateUser: (patch: Partial<User>) => void;
@@ -33,7 +33,6 @@ interface AppStore {
   resetLocal: () => void;
 }
 
-const PASSWORD = "password123";
 const sessionKey = "slovak-life.current-user";
 
 function initialUserId(): string | undefined {
@@ -57,24 +56,55 @@ export const useAppStore = create<AppStore>((set, get) => ({
   data: storageService.load(),
   currentUserId: initialUserId(),
 
-  login(email, password) {
+  async login(email, password) {
     if (!email.trim()) {
       set({ authError: "Введіть email" });
       return null;
     }
-    if (password !== PASSWORD) {
-      set({ authError: "Невірний email або пароль" });
+    set({ authError: undefined });
+    try {
+      const { user: raw } = await apiClient.login(email, password);
+      const serverUser = raw as User;
+      // Ensure settings has all required fields
+      const defaults = { language: "uk" as const, notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true };
+      const merged: User = { ...serverUser, settings: { ...defaults, ...serverUser.settings } };
+
+      const users = get().data.users;
+      const existing = users.find((u) => u.id === merged.id)
+                    ?? users.find((u) => u.email.toLowerCase() === email.toLowerCase());
+      let data = get().data;
+      let userId: string;
+
+      if (existing) {
+        // Update local record with authoritative server fields
+        userId = existing.id;
+        data = { ...data, users: users.map((u) => u.id === userId ? { ...u, ...merged, id: userId } : u) };
+      } else {
+        // First login on this device — bootstrap from server data
+        userId = merged.id;
+        data = {
+          ...data,
+          users: [...users, merged],
+          progress: { ...data.progress, [userId]: createProgress(userId, merged.level ?? "A0") },
+          userWords: { ...data.userWords, [userId]: [] }
+        };
+      }
+
+      save(data);
+      localStorage.setItem(sessionKey, userId);
+      set({ data, currentUserId: userId, authError: undefined });
+      // Pull server state in background to restore full progress on new devices
+      get().drainSync().catch(() => undefined);
+      return data.users.find((u) => u.id === userId) ?? null;
+    } catch (err: unknown) {
+      const e = err as { status?: number; message?: string };
+      if (e.status === 401 || e.status === 422 || e.status === 404) {
+        set({ authError: "Невірний email або пароль" });
+      } else {
+        set({ authError: "Сервер недоступний. Перевір з'єднання." });
+      }
       return null;
     }
-    const user = get().data.users.find((item) => item.email.toLowerCase() === email.toLowerCase());
-    if (!user || user.isBlocked) {
-      set({ authError: "Невірний email або пароль" });
-      return null;
-    }
-    localStorage.setItem(sessionKey, user.id);
-    apiClient.login(email, password).catch(() => undefined);
-    set({ currentUserId: user.id, authError: undefined });
-    return user;
   },
 
   register(payload) {
@@ -186,6 +216,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
   completeLesson(lesson, answers) {
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
+    const prevCompleted = get().data.progress[currentUserId].completedLessons;
     const subStatus = get().data.users.find((u) => u.id === currentUserId)?.subscriptionStatus;
     const progress = progressService.completeLesson(get().data.progress[currentUserId], lesson, answers, subStatus);
     const userWords = lesson.words.reduce<UserWord[]>((words, word) => progressService.touchWord(currentUserId, word.id, words, true), get().data.userWords[currentUserId] || []);
@@ -198,6 +229,14 @@ export const useAppStore = create<AppStore>((set, get) => ({
     data = withSync(data, "lesson.complete", { lessonId: lesson.id, answers });
     save(data);
     set({ data });
+    // Request FCM permission after the user's very first lesson — unobtrusive timing
+    if (!prevCompleted.includes(lesson.id) && prevCompleted.length === 0) {
+      import("../services/fcmService").then(({ requestFcmToken }) => {
+        requestFcmToken().then((token) => {
+          if (token) apiClient.saveFcmToken(token).catch(() => undefined);
+        }).catch(() => undefined);
+      });
+    }
   },
 
   recordWrongAnswer(lesson, exerciseId, answer) {

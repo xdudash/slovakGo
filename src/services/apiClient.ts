@@ -89,5 +89,12 @@ export const apiClient = {
 
   deactivateAccount() {
     return apiRequest<{ ok: boolean }>("/auth/deactivate", { method: "POST" });
+  },
+
+  saveFcmToken(token: string) {
+    return apiRequest<{ ok: boolean }>("/user/fcm-token", {
+      method: "POST",
+      body: JSON.stringify({ token, platform: "web" })
+    });
   }
 };

@@ -1214,7 +1214,21 @@ function SettingsScreen() {
         <h3 className="settings-section-title">{t("student.settings.section_notifications")}</h3>
         <Card className="form-stack">
           <label className="toggle-row">
-            <input type="checkbox" checked={notifications} onChange={(e) => setNotifications(e.target.checked)} />
+            <input
+              type="checkbox"
+              checked={notifications}
+              onChange={(e) => {
+                const enabled = e.target.checked;
+                setNotifications(enabled);
+                if (enabled) {
+                  import("../../services/fcmService").then(({ requestFcmToken }) =>
+                    requestFcmToken().then((tok) => { if (tok) apiClient.saveFcmToken(tok).catch(() => undefined); })
+                  );
+                } else {
+                  import("../../services/fcmService").then(({ revokeFcmToken }) => revokeFcmToken());
+                }
+              }}
+            />
             {t("student.settings.notifications")}
           </label>
           <label className="toggle-row">

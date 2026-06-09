@@ -191,6 +191,13 @@ function migrate(SQLite3 $db): void
             type         TEXT NOT NULL,
             processed_at TEXT NOT NULL
         );
+        CREATE TABLE IF NOT EXISTS fcm_tokens (
+            token       TEXT PRIMARY KEY,
+            user_id     TEXT NOT NULL,
+            platform    TEXT NOT NULL DEFAULT 'web',
+            created_at  TEXT NOT NULL
+        );
+        CREATE INDEX IF NOT EXISTS idx_fcm_user     ON fcm_tokens(user_id);
         CREATE INDEX IF NOT EXISTS idx_synclog_user ON sync_log(user_id);
         CREATE INDEX IF NOT EXISTS idx_uwords_user  ON user_words(user_id);
     SQL);
@@ -304,6 +311,8 @@ elseif  ($meth === 'POST' && $path === '/user/email')                  { handle_
 elseif  ($meth === 'POST' && $path === '/user/password')               { handle_user_password($db); }
 elseif  ($meth === 'POST' && $path === '/auth/delete')                 { handle_auth_delete($db); }
 elseif  ($meth === 'POST' && $path === '/auth/deactivate')             { handle_auth_deactivate($db); }
+elseif  ($meth === 'POST' && $path === '/user/fcm-token')              { handle_user_fcm_token($db); }
+elseif  ($meth === 'GET'  && $path === '/cron/push')                   { handle_cron_push($db); }
 else    fail("Маршрут не знайдено: $path", 404);
 
 // ══════════════════════════════════════════════════════════════════
@@ -1057,6 +1066,154 @@ function db_get_all_lessons(SQLite3 $db): array
         if (is_array($l)) $lessons[] = $l;
     }
     return $lessons;
+}
+
+// ── FCM token endpoint ────────────────────────────────────────────
+
+function handle_user_fcm_token(SQLite3 $db): never
+{
+    init_session();
+    $uid   = require_auth();
+    $token = trim((string)(body()['token'] ?? ''));
+    if ($token === '') fail('Token required', 422);
+    $plat  = trim((string)(body()['platform'] ?? 'web'));
+
+    $stmt = $db->prepare(
+        'INSERT INTO fcm_tokens (token, user_id, platform, created_at)
+         VALUES (?, ?, ?, ?)
+         ON CONFLICT(token) DO UPDATE SET user_id = excluded.user_id, created_at = excluded.created_at'
+    );
+    $stmt->bindValue(1, $token);
+    $stmt->bindValue(2, $uid);
+    $stmt->bindValue(3, $plat);
+    $stmt->bindValue(4, now_iso());
+    $stmt->execute();
+    respond(['ok' => true]);
+}
+
+// ── Daily push cron ───────────────────────────────────────────────
+// Set up cron on shared hosting: GET https://yourdomain.com/api/index.php/cron/push?key=YOUR_CRON_SECRET
+// Run at 20:00 UTC daily.
+
+function handle_cron_push(SQLite3 $db): never
+{
+    $key      = trim((string)($_GET['key'] ?? ''));
+    $expected = (string)(getenv('CRON_SECRET') ?: '');
+    if ($expected === '' || !hash_equals($expected, $key)) fail('Unauthorized', 401);
+
+    $today = today_key();
+    $sent  = 0;
+
+    $res = $db->query(
+        'SELECT u.id, u.name_text, u.sub_status, u.trial_ends, u.settings_j,
+                ft.token
+         FROM users u
+         JOIN fcm_tokens ft ON ft.user_id = u.id
+         WHERE u.is_blocked = 0'
+    );
+    if (!$res) respond(['ok' => true, 'sent' => 0]);
+
+    while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
+        $settings = json_decode((string)$row['settings_j'], true) ?? [];
+        if (empty($settings['notificationsEnabled'])) continue;
+
+        $prog         = $db->querySingle("SELECT last_prac FROM progress WHERE user_id = '{$row['id']}'", true);
+        $last_prac    = (string)($prog['last_prac'] ?? '');
+        $token        = (string)$row['token'];
+
+        // Streak at risk: practiced before but not today
+        if ($last_prac !== '' && $last_prac < $today) {
+            fcm_send($token, '🔥 Серія під загрозою!',
+                'Не переривай серію — відкрий Slovak Life.', ['tag' => 'streak']);
+            $sent++;
+            continue; // one notification per user per day
+        }
+
+        // Trial ending ≤3 days
+        if ($row['sub_status'] === 'trial' && !empty($row['trial_ends'])) {
+            $days = (int)round((strtotime((string)$row['trial_ends']) - time()) / 86400);
+            if ($days >= 0 && $days <= 3) {
+                $d = $days === 1 ? '1 день' : "$days дні";
+                fcm_send($token, '⏳ Пробний доступ закінчується',
+                    "Залишилось $d. Переходь на Plus!", ['tag' => 'trial']);
+                $sent++;
+            }
+        }
+    }
+    respond(['ok' => true, 'sent' => $sent]);
+}
+
+// ── FCM HTTP v1 helpers ───────────────────────────────────────────
+
+function b64u(string $data): string
+{
+    return rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
+}
+
+function fcm_access_token(): ?string
+{
+    $sa_path = (string)(getenv('FIREBASE_SA_JSON') ?: '');
+    if ($sa_path === '' || !file_exists($sa_path)) return null;
+
+    $sa = json_decode((string)file_get_contents($sa_path), true);
+    if (empty($sa['client_email']) || empty($sa['private_key'])) return null;
+
+    $now    = time();
+    $header = b64u((string)json_encode(['alg' => 'RS256', 'typ' => 'JWT']));
+    $claim  = b64u((string)json_encode([
+        'iss'   => $sa['client_email'],
+        'sub'   => $sa['client_email'],
+        'aud'   => 'https://oauth2.googleapis.com/token',
+        'iat'   => $now,
+        'exp'   => $now + 3600,
+        'scope' => 'https://www.googleapis.com/auth/firebase.messaging',
+    ]));
+    $input = "$header.$claim";
+    $key   = openssl_pkey_get_private((string)$sa['private_key']);
+    if (!$key) return null;
+    openssl_sign($input, $sig, $key, OPENSSL_ALGO_SHA256);
+
+    $jwt  = "$input." . b64u($sig);
+    $ch   = curl_init('https://oauth2.googleapis.com/token');
+    curl_setopt_array($ch, [
+        CURLOPT_POST           => true,
+        CURLOPT_POSTFIELDS     => http_build_query(['grant_type' => 'urn:ietf:params:oauth:grant-type:jwt-bearer', 'assertion' => $jwt]),
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT        => 10,
+    ]);
+    $resp = json_decode((string)curl_exec($ch), true);
+    curl_close($ch);
+    return $resp['access_token'] ?? null;
+}
+
+function fcm_send(string $token, string $title, string $body, array $data = []): void
+{
+    $project = (string)(getenv('FIREBASE_PROJECT_ID') ?: '');
+    if ($project === '') return;
+    $at = fcm_access_token();
+    if ($at === null) return;
+
+    $msg = json_encode([
+        'message' => [
+            'token'        => $token,
+            'notification' => ['title' => $title, 'body' => $body],
+            'data'         => array_map('strval', $data),
+            'webpush'      => [
+                'notification' => ['icon' => '/favicon.svg', 'tag' => $data['tag'] ?? 'slovaklife'],
+                'fcm_options'  => ['link' => '/app/path'],
+            ],
+        ],
+    ]);
+    $ch = curl_init("https://fcm.googleapis.com/v1/projects/{$project}/messages:send");
+    curl_setopt_array($ch, [
+        CURLOPT_POST           => true,
+        CURLOPT_POSTFIELDS     => $msg,
+        CURLOPT_HTTPHEADER     => ["Authorization: Bearer $at", 'Content-Type: application/json'],
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT        => 10,
+    ]);
+    curl_exec($ch);
+    curl_close($ch);
 }
 
 function row_to_user(array $row): array

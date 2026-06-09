@@ -13,10 +13,23 @@ createRoot(document.getElementById("root")!).render(
   </StrictMode>
 );
 
+function showInAppPush(title: string, body: string) {
+  const el = document.createElement("div");
+  el.className = "push-toast";
+  el.innerHTML = `<strong>${title}</strong>${body ? `<em>${body}</em>` : ""}`;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 5000);
+}
+
 window.addEventListener("load", async () => {
+  // Foreground push notification handler (when app is open in browser)
+  import("./services/fcmService").then(({ listenForeground }) => {
+    listenForeground(showInAppPush);
+  });
+
   const store = useAppStore.getState();
 
-  // Recover any mutations left in IDB from previous sessions
+  // Recover any mutations written to IDB in previous sessions but lost from in-memory queue
   const orphaned = await syncService.recover(store.data.syncQueue);
   if (orphaned.length > 0) {
     useAppStore.setState((state) => ({
@@ -24,7 +37,7 @@ window.addEventListener("load", async () => {
     }));
   }
 
-  // Auto-drain: whenever the queue grows while online, push immediately
+  // Drain immediately after queue mutations are added while online
   useAppStore.subscribe(
     (state) => state.data.syncQueue.length,
     (length) => {
@@ -43,17 +56,50 @@ window.addEventListener("load", async () => {
 
   if ("serviceWorker" in navigator && import.meta.env.PROD) {
     try {
+      // Snapshot before registration — if already controlled, a later controllerchange is an update
+      const hadController = !!navigator.serviceWorker.controller;
+
       const reg = await navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`);
 
+      // Reload only on SW update (not on first install)
       navigator.serviceWorker.addEventListener("controllerchange", () => {
-        window.location.reload();
+        if (hadController) window.location.reload();
       });
 
-      // SW background sync fires SYNC_REQUESTED → drain
+      // SW background sync fires SYNC_REQUESTED → drain queue
       navigator.serviceWorker.addEventListener("message", (event: MessageEvent) => {
         if ((event.data as { type?: string })?.type === "SYNC_REQUESTED") {
           useAppStore.getState().drainSync();
         }
+      });
+
+      // Show update banner when a new SW is waiting (installed but not yet active)
+      function showUpdateBanner(registration: ServiceWorkerRegistration) {
+        if (document.querySelector(".sw-update-banner")) return; // already shown
+        const banner = document.createElement("div");
+        banner.className = "sw-update-banner";
+        banner.innerHTML =
+          '<span>Нова версія доступна</span>' +
+          '<button class="sw-update-btn">Оновити</button>';
+        (banner.querySelector(".sw-update-btn") as HTMLButtonElement).onclick = () => {
+          registration.waiting?.postMessage("SKIP_WAITING");
+          banner.remove();
+        };
+        document.body.appendChild(banner);
+      }
+
+      // A new SW may already be waiting right after registration (e.g. page reload during update)
+      if (reg.waiting) showUpdateBanner(reg);
+
+      // Watch for future updates found while the page is open
+      reg.addEventListener("updatefound", () => {
+        const next = reg.installing;
+        if (!next) return;
+        next.addEventListener("statechange", () => {
+          if (next.state === "installed" && reg.waiting) {
+            showUpdateBanner(reg);
+          }
+        });
       });
 
       // Coming back online: register BG sync tag + drain directly as fallback
