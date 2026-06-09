@@ -1678,3 +1678,98 @@ textarea:focus,
   opacity: 0.8;
   font-size: 0.84rem;
 }
+
+/* ── Scenario card (PathScreen) ──────────────────────────────────── */
+.scenario-card {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.scenario-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scenario-badge {
+  background: var(--purple);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+
+.scenario-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.scenario-phrases {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.scenario-phrase {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 6px 10px;
+  background: var(--surface);
+  border-radius: 8px;
+}
+
+.phrase-sk {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--purple);
+}
+
+.phrase-uk {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* ── Certificate card (ProfileScreen) ───────────────────────────── */
+.certificate-card {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+  border: 1.5px solid #c4b5fd;
+}
+
+.certificate-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.certificate-info > div {
+  min-width: 0;
+}
+
+.certificate-info strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--purple);
+}
+
+.certificate-info p {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}

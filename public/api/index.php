@@ -313,6 +313,7 @@ elseif  ($meth === 'POST' && $path === '/auth/delete')                 { handle_
 elseif  ($meth === 'POST' && $path === '/auth/deactivate')             { handle_auth_deactivate($db); }
 elseif  ($meth === 'POST' && $path === '/user/fcm-token')              { handle_user_fcm_token($db); }
 elseif  ($meth === 'GET'  && $path === '/cron/push')                   { handle_cron_push($db); }
+elseif  ($meth === 'GET'  && $path === '/cron/weekly')                 { handle_cron_weekly($db); }
 else    fail("Маршрут не знайдено: $path", 404);
 
 // ══════════════════════════════════════════════════════════════════
@@ -1137,10 +1138,122 @@ function handle_cron_push(SQLite3 $db): never
                 fcm_send($token, '⏳ Пробний доступ закінчується',
                     "Залишилось $d. Переходь на Plus!", ['tag' => 'trial']);
                 $sent++;
+                continue;
             }
+        }
+
+        // Scenario of the day: send a relevant phrase based on user goal
+        $goal  = strtolower(trim((string)($settings['goal'] ?? '')));
+        $phrase = scenario_phrase_for_goal($goal);
+        if ($phrase) {
+            fcm_send($token, '📚 Фраза дня', $phrase, ['tag' => 'scenario']);
+            $sent++;
         }
     }
     respond(['ok' => true, 'sent' => $sent]);
+}
+
+// ── Weekly report push cron ───────────────────────────────────────
+// Set up cron on shared hosting: GET https://yourdomain.com/api/index.php/cron/weekly?key=YOUR_CRON_SECRET
+// Run every Sunday at 18:00 UTC: 0 18 * * 0
+
+function handle_cron_weekly(SQLite3 $db): never
+{
+    $key      = trim((string)($_GET['key'] ?? ''));
+    $expected = (string)(getenv('CRON_SECRET') ?: '');
+    if ($expected === '' || !hash_equals($expected, $key)) fail('Unauthorized', 401);
+
+    $sent = 0;
+
+    $res = $db->query(
+        'SELECT u.id, u.name_text, u.settings_j,
+                p.xp_weekly, p.streak_days, p.completed_j,
+                ft.token
+         FROM users u
+         JOIN fcm_tokens ft ON ft.user_id = u.id
+         JOIN progress p ON p.user_id = u.id
+         WHERE u.is_blocked = 0'
+    );
+    if (!$res) respond(['ok' => true, 'sent' => 0]);
+
+    while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
+        $settings = json_decode((string)$row['settings_j'], true) ?? [];
+        if (empty($settings['notificationsEnabled'])) continue;
+
+        $xpWeekly   = (int)$row['xp_weekly'];
+        $streak     = (int)$row['streak_days'];
+        $completed  = json_decode((string)$row['completed_j'], true) ?? [];
+        $lessonsNum = count($completed);
+        $name       = (string)$row['name_text'];
+        $token      = (string)$row['token'];
+
+        if ($xpWeekly === 0) continue; // user was inactive — skip
+
+        $body = "{$name}, цього тижня: {$xpWeekly} XP, {$lessonsNum} уроків, серія {$streak} днів 🎉";
+        fcm_send($token, '📊 Твій тижневий звіт', $body, ['tag' => 'weekly']);
+        $sent++;
+    }
+    respond(['ok' => true, 'sent' => $sent]);
+}
+
+// ── Scenario helpers ──────────────────────────────────────────────
+
+function scenario_phrase_for_goal(string $goal): ?string
+{
+    $map = [
+        'лікар'     => ['Mám bolesti brucha. — У мене болить живіт.',
+                        'Kde je lekáreň? — Де аптека?',
+                        'Potrebujem recept. — Мені потрібен рецепт.'],
+        'doctor'    => ['Mám bolesti brucha. — У мене болить живіт.',
+                        'Kde je lekáreň? — Де аптека?',
+                        'Potrebujem recept. — Мені потрібен рецепт.'],
+        'документ'  => ['Kde je cudzinecká polícia? — Де міграційна поліція?',
+                        'Potrebujem predĺžiť povolenie. — Мені потрібно продовжити дозвіл.',
+                        'Kedy bude hotové? — Коли буде готово?'],
+        'documents' => ['Kde je cudzinecká polícia? — Де міграційна поліція?',
+                        'Potrebujem predĺžiť povolenie. — Мені потрібно продовжити дозвіл.',
+                        'Kedy bude hotové? — Коли буде готово?'],
+        'робот'     => ['Hľadám prácu. — Я шукаю роботу.',
+                        'Kedy dostanem výplatu? — Коли я отримаю зарплату?',
+                        'Potrebujem dovolenku. — Мені потрібна відпустка.'],
+        'work'      => ['Hľadám prácu. — Я шукаю роботу.',
+                        'Kedy dostanem výplatu? — Коли я отримаю зарплату?',
+                        'Potrebujem dovolenku. — Мені потрібна відпустка.'],
+        'оренд'     => ['Hľadám byt na prenájom. — Я шукаю квартиру для оренди.',
+                        'Koľko stojí nájom? — Скільки коштує оренда?',
+                        'Kedy môžem nastúpiť? — Коли я можу заселитися?'],
+        'rent'      => ['Hľadám byt na prenájom. — Я шукаю квартиру для оренди.',
+                        'Koľko stojí nájom? — Скільки коштує оренда?',
+                        'Kedy môžem nastúpiť? — Коли я можу заселитися?'],
+        'транспорт' => ['Kde je zastávka autobusu? — Де зупинка автобуса?',
+                        'Koľko stojí lístok? — Скільки коштує квиток?',
+                        'Meškáme. — Ми запізнюємося.'],
+        'transport' => ['Kde je zastávka autobusu? — Де зупинка автобуса?',
+                        'Koľko stojí lístok? — Скільки коштує квиток?',
+                        'Meškáme. — Ми запізнюємося.'],
+        'школ'      => ['Kde je základná škola? — Де початкова школа?',
+                        'Kedy začína škola? — Коли починається школа?',
+                        'Aké doklady treba? — Які документи потрібні?'],
+        'school'    => ['Kde je základná škola? — Де початкова школа?',
+                        'Kedy začína škola? — Коли починається школа?',
+                        'Aké doklady treba? — Які документи потрібні?'],
+    ];
+
+    $phrases = null;
+    foreach ($map as $keyword => $list) {
+        if (str_contains($goal, $keyword)) {
+            $phrases = $list;
+            break;
+        }
+    }
+    if (!$phrases) {
+        $phrases = ['Dobrý deň! — Добрий день!',
+                    'Ďakujem. — Дякую.',
+                    'Nerozumiem. — Я не розумію.'];
+    }
+
+    $dayNum = (int)floor(time() / 86400);
+    return $phrases[$dayNum % count($phrases)];
 }
 
 // ── FCM HTTP v1 helpers ───────────────────────────────────────────

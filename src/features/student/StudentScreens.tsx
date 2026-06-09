@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams } from "react-router-dom";
-import { AlertCircle, BookOpen, Camera, CheckCircle2, ChevronLeft, Flame, Heart, Lock, Medal, Search, Settings, Star, Trophy, Volume2, Zap } from "lucide-react";
+import { AlertCircle, BookOpen, Camera, CheckCircle2, ChevronLeft, Download, Flame, Heart, Lock, Medal, Search, Settings, Star, Trophy, Volume2, Zap } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, EmptyState, Field, Modal, PageHeader, ProgressBar } from "../../components/ui";
 import { apiClient } from "../../services/apiClient";
@@ -13,6 +13,8 @@ import { vocabularyService, type VocabularyWord } from "../../services/vocabular
 import { selectCurrentUser, useAppStore } from "../../store/useAppStore";
 import { useT } from "../../i18n";
 import type { AnswerRecord, Exercise, LeaderboardEntry, UserLevel } from "../../types";
+import { getDailyPhrases, getScenarioForGoal } from "../../data/scenarios";
+import { downloadCertificate } from "../../services/certificateService";
 import { formatWeekTimer, secondsUntilWeekEnd } from "../../utils/date";
 
 function useWeekTimer(): number {
@@ -176,6 +178,8 @@ function PathScreen() {
   const levelLessons = lessonService.byLevel(data.lessons, progress.currentLevel);
   const levelProgress = lessonService.levelProgress(data.lessons, progress, progress.currentLevel);
   const current = levelLessons.find((lesson) => lessonService.status(lesson, data.lessons, progress) === "current") || levelLessons.find((lesson) => lessonService.status(lesson, data.lessons, progress) === "available") || levelLessons[0];
+  const scenario = getScenarioForGoal(user.goal);
+  const dailyPhrases = getDailyPhrases(user.goal, 3);
 
   return (
     <main className="page-content">
@@ -187,6 +191,20 @@ function PathScreen() {
         </div>
         <ProgressBar value={levelProgress} />
         {current ? <Link className="btn btn-primary" to={`/app/lesson/${current.id}`}>{t("student.path.continue")}</Link> : null}
+      </Card>
+      <Card className="scenario-card">
+        <div className="scenario-header">
+          <span className="scenario-badge">{t("student.path.scenario_label")}</span>
+          <span className="scenario-title">{scenario.title}</span>
+        </div>
+        <ul className="scenario-phrases">
+          {dailyPhrases.map((p, i) => (
+            <li key={i} className="scenario-phrase">
+              <span className="phrase-sk">{p.sk}</span>
+              <span className="phrase-uk">{p.uk}</span>
+            </li>
+          ))}
+        </ul>
       </Card>
       <div className="lesson-list">
         {levelLessons.map((lesson) => {
@@ -901,6 +919,8 @@ function ProfileScreen() {
   const fileRef = useRef<HTMLInputElement>(null);
   if (!user || !progress) return null;
   const words = vocabularyService.build(data.lessons, data.userWords[user.id]);
+  const levelLessons = lessonService.byLevel(data.lessons, user.level);
+  const isLevelComplete = levelLessons.length > 0 && levelLessons.every((l) => progress.completedLessons.includes(l.id));
   const masteredCount = words.filter((w) => w.status === "mastered").length;
   const dailyXp = buildDailyXp(progress.xpDailyHistory);
   const maxXp = Math.max(...dailyXp.map((d) => d.value), 1);
@@ -1010,6 +1030,22 @@ function ProfileScreen() {
             )}
           </div>
         </Card>
+
+        {isLevelComplete && (
+          <Card className="certificate-card">
+            <div className="certificate-info">
+              <Medal size={28} color="var(--purple)" />
+              <div>
+                <strong>{t("student.profile.certificate_title")}</strong>
+                <p>{t("student.profile.certificate_hint").replace("{level}", user.level)}</p>
+              </div>
+            </div>
+            <Button variant="secondary" onClick={() => downloadCertificate(user.name, user.level)}>
+              <Download size={16} />
+              {t("student.profile.certificate_btn")}
+            </Button>
+          </Card>
+        )}
 
         <div className="form-stack">
           <Button variant="secondary" onClick={() => navigate("/placement-test")}>{t("student.profile.btn_placement")}</Button>
