@@ -96,5 +96,21 @@ export const apiClient = {
       method: "POST",
       body: JSON.stringify({ token, platform: "web" })
     });
+  },
+
+  getAdminStats() {
+    return apiRequest<{
+      ok: boolean;
+      summary: {
+        totalUsers: number;
+        active24h: number;
+        active7d: number;
+        plusUsers: number;
+        avgXP: number;
+        avgStreak: number;
+      };
+      levels: Record<string, number>;
+      dailyRegistrations: Array<{ date: string; count: number }>;
+    }>("/admin/stats");
   }
 };

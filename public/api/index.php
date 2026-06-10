@@ -312,6 +312,7 @@ elseif  ($meth === 'POST' && $path === '/user/password')               { handle_
 elseif  ($meth === 'POST' && $path === '/auth/delete')                 { handle_auth_delete($db); }
 elseif  ($meth === 'POST' && $path === '/auth/deactivate')             { handle_auth_deactivate($db); }
 elseif  ($meth === 'POST' && $path === '/user/fcm-token')              { handle_user_fcm_token($db); }
+elseif  ($meth === 'GET'  && $path === '/admin/stats')                 { handle_admin_stats($db); }
 elseif  ($meth === 'GET'  && $path === '/cron/push')                   { handle_cron_push($db); }
 elseif  ($meth === 'GET'  && $path === '/cron/weekly')                 { handle_cron_weekly($db); }
 else    fail("Маршрут не знайдено: $path", 404);
@@ -324,6 +325,58 @@ function handle_ping(SQLite3 $db): never
 {
     $count = (int)$db->querySingle('SELECT COUNT(*) FROM users');
     respond(['ok' => true, 'users' => $count, 'updatedAt' => now_iso()]);
+}
+
+// ── Admin Stats ───────────────────────────────────────────────────
+
+function handle_admin_stats(SQLite3 $db): never
+{
+    $uid = require_auth();
+    require_role($db, $uid, 'admin');
+
+    $now = time();
+    $dayAgo = gmdate('Y-m-d\TH:i:s\Z', $now - 86400);
+    $weekAgo = gmdate('Y-m-d\TH:i:s\Z', $now - 7 * 86400);
+
+    // Basic counts
+    $totalUsers    = (int)$db->querySingle('SELECT COUNT(*) FROM users');
+    $active24h     = (int)$db->querySingle("SELECT COUNT(*) FROM users WHERE updated_at > '$dayAgo'");
+    $active7d      = (int)$db->querySingle("SELECT COUNT(*) FROM users WHERE updated_at > '$weekAgo'");
+    $plusUsers     = (int)$db->querySingle("SELECT COUNT(*) FROM users WHERE sub_status = 'plus'");
+
+    // Level distribution
+    $levels = [];
+    $lres = $db->query('SELECT level, COUNT(*) as cnt FROM users GROUP BY level');
+    while ($row = $lres->fetchArray(SQLITE3_ASSOC)) {
+        $levels[$row['level']] = (int)$row['cnt'];
+    }
+
+    // Average progress
+    $avgXP = (float)$db->querySingle('SELECT AVG(xp_total) FROM progress');
+    $avgStreak = (float)$db->querySingle('SELECT AVG(streak_days) FROM progress');
+
+    // Recent activity (registrations per day for last 7 days)
+    $dailyRegs = [];
+    for ($i = 6; $i >= 0; $i--) {
+        $d = gmdate('Y-m-d', $now - $i * 86400);
+        $cnt = (int)$db->querySingle("SELECT COUNT(*) FROM users WHERE created_at LIKE '$d%'");
+        $dailyRegs[] = ['date' => $d, 'count' => $cnt];
+    }
+
+    respond([
+        'ok' => true,
+        'summary' => [
+            'totalUsers' => $totalUsers,
+            'active24h'  => $active24h,
+            'active7d'   => $active7d,
+            'plusUsers'  => $plusUsers,
+            'avgXP'      => round($avgXP, 1),
+            'avgStreak'  => round($avgStreak, 1),
+        ],
+        'levels' => $levels,
+        'dailyRegistrations' => $dailyRegs,
+        'updatedAt' => now_iso()
+    ]);
 }
 
 // ── Register ──────────────────────────────────────────────────────

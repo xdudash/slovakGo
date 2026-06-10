@@ -1,6 +1,8 @@
+import { useEffect, useState } from "react";
 import { Route, Routes, useParams } from "react-router-dom";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, PageHeader } from "../../components/ui";
+import { apiClient } from "../../services/apiClient";
 import { selectCurrentUser, useAppStore } from "../../store/useAppStore";
 import { useT } from "../../i18n";
 import type { UserRole } from "../../types";
@@ -117,15 +119,67 @@ function Subscriptions() {
   );
 }
 
+interface AdminStats {
+  summary: {
+    totalUsers: number;
+    active24h: number;
+    active7d: number;
+    plusUsers: number;
+    avgXP: number;
+    avgStreak: number;
+  };
+  levels: Record<string, number>;
+  dailyRegistrations: Array<{ date: string; count: number }>;
+}
+
 function Stats() {
-  const { data } = useAdminData();
   const { t } = useT();
-  const byLevel = ["A0", "A1", "A2", "B1", "B2", "C1"].map((level) => ({ level, count: data.users.filter((user) => user.level === level).length }));
+  const [stats, setStats] = useState<AdminStats | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    apiClient.getAdminStats()
+      .then((res) => setStats(res))
+      .catch(() => undefined)
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) return <main className="page-content"><PageHeader title={t("admin.stats.title")} /><p>Завантаження...</p></main>;
+  if (!stats) return <main className="page-content"><PageHeader title={t("admin.stats.title")} /><p>Помилка завантаження даних</p></main>;
+
+  const { summary, levels, dailyRegistrations } = stats;
+
   return (
     <main className="page-content">
       <PageHeader title={t("admin.stats.title")} />
+      
+      <div className="stats-grid" style={{ marginBottom: "2rem" }}>
+        <Card><strong>{summary.totalUsers}</strong><span>Всього користувачів</span></Card>
+        <Card><strong>{summary.active24h}</strong><span>Активні (24г)</span></Card>
+        <Card><strong>{summary.active7d}</strong><span>Активні (7д)</span></Card>
+        <Card><strong>{summary.plusUsers}</strong><span>Plus підписки</span></Card>
+        <Card><strong>{summary.avgXP}</strong><span>Сер. XP</span></Card>
+        <Card><strong>{summary.avgStreak}</strong><span>Сер. серія</span></Card>
+      </div>
+
+      <h3 style={{ marginBottom: "1rem" }}>Розподіл за рівнями</h3>
+      <Card style={{ marginBottom: "2rem" }}>
+        {["A0", "A1", "A2", "B1", "B2", "C1"].map((level) => (
+          <div className="leader-row" key={level}>
+            <strong>{level}</strong>
+            <span>{levels[level] || 0} користувачів</span>
+          </div>
+        ))}
+      </Card>
+
+      <h3 style={{ marginBottom: "1rem" }}>Реєстрації за тиждень</h3>
       <Card>
-        {byLevel.map((row) => <div className="leader-row" key={row.level}><strong>{row.level}</strong><span>{row.count} {t("admin.stats.users_suffix")}</span></div>)}
+        {dailyRegistrations.map((row) => (
+          <div className="leader-row" key={row.date}>
+            <strong>{row.date}</strong>
+            <span>+{row.count} нових</span>
+          </div>
+        ))}
       </Card>
     </main>
   );

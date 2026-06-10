@@ -139,7 +139,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
       onboardingDone: false,
       settings: { language: "uk", notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true, dailyGoal: 10, theme: "default" }
     };
-    let data: AppData = {
+    const data: AppData = {
       ...get().data,
       users: [...get().data.users, user],
       progress: { ...get().data.progress, [user.id]: createProgress(user.id, "A0") },

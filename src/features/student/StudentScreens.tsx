@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams } from "react-router-dom";
-import { AlertCircle, BookOpen, Camera, CheckCircle2, ChevronLeft, Download, Flame, Heart, Lock, Medal, Search, Settings, Star, Trophy, Volume2, Zap } from "lucide-react";
+import { AlertCircle, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, Download, Flame, Heart, Lock, Medal, Play, Search, Settings, Star, Trophy, Volume2, Zap } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, EmptyState, Field, Modal, PageHeader, ProgressBar } from "../../components/ui";
 import { apiClient } from "../../services/apiClient";
@@ -53,11 +53,11 @@ function TopStats() {
   if (!user || !progress) return null;
   return (
     <div className="sticky-stats">
-      <span>{progress.currentLevel}</span>
-      <span><Zap size={16} /> {progress.xpTotal} XP</span>
-      <span><Heart size={16} /> {progress.hearts}/{progress.maxHearts}</span>
-      <span><Flame size={16} /> {progress.streakDays}</span>
-      <Link to="/app/levels">{t("student.top_stats_level")}</Link>
+      <div className="level-badge">{progress.currentLevel}</div>
+      <div className="stat-chip xp"><Zap size={14} /> {progress.xpTotal} XP</div>
+      <div className="stat-chip hearts"><Heart size={14} /> {progress.hearts}/{progress.maxHearts}</div>
+      <div className="stat-chip streak"><Flame size={14} /> {progress.streakDays}</div>
+      <Link to="/app/levels" className="stat-chip level-link">{t("student.top_stats_level")}</Link>
     </div>
   );
 }
@@ -174,24 +174,80 @@ export function PlacementTest() {
 function PathScreen() {
   const { data, user, progress } = useStudentData();
   const { t } = useT();
+  const navigate = useNavigate();
   if (!user || !progress) return null;
+
   const levelLessons = lessonService.byLevel(data.lessons, progress.currentLevel);
   const levelProgress = lessonService.levelProgress(data.lessons, progress, progress.currentLevel);
-  const current = levelLessons.find((lesson) => lessonService.status(lesson, data.lessons, progress) === "current") || levelLessons.find((lesson) => lessonService.status(lesson, data.lessons, progress) === "available") || levelLessons[0];
+  const current = levelLessons.find((l) => lessonService.status(l, data.lessons, progress) === "current")
+    || levelLessons.find((l) => lessonService.status(l, data.lessons, progress) === "available")
+    || levelLessons[0];
   const scenario = getScenarioForGoal(user.goal);
   const dailyPhrases = getDailyPhrases(user.goal, 3);
 
   return (
     <main className="page-content">
-      <PageHeader title={t("student.path.title")} subtitle={`${progress.currentLevel} · ${t(`student.level_desc.${progress.currentLevel}`)}`} />
-      <Card className="level-card">
-        <div>
-          <h2>{progress.currentLevel}: {current?.topic || t("student.path.default_topic")}</h2>
-          <p>{levelProgress}{t("student.path.progress_pct")}</p>
+      <PageHeader
+        title={t("student.path.title")}
+        subtitle={`${progress.currentLevel} · ${t(`student.level_desc.${progress.currentLevel}`)}`}
+      />
+
+      {/* Unit section header */}
+      <div className="unit-card">
+        <span className="progress-pill">{levelProgress}%</span>
+        <h2>{progress.currentLevel}: {current?.topic || t("student.path.default_topic")}</h2>
+        <p>{levelLessons.filter((l) => lessonService.status(l, data.lessons, progress) === "completed").length}/{levelLessons.length} {t("student.path.progress_pct")}</p>
+      </div>
+
+      {/* Visual lesson node path */}
+      <div className="learning-path">
+        {levelLessons.map((lesson, index) => {
+          const status = lessonService.status(lesson, data.lessons, progress);
+          const nodeClass = status === "current" ? "active" : status;
+          const prevStatus = index > 0 ? lessonService.status(levelLessons[index - 1], data.lessons, progress) : null;
+          const connectorClass = prevStatus === "completed" && status !== "locked" ? "done"
+            : prevStatus === "completed" ? "next"
+            : "";
+
+          return (
+            <div key={lesson.id} style={{ display: "contents" }}>
+              {index > 0 && <div className={`connector${connectorClass ? ` ${connectorClass}` : ""}`} />}
+              <div className="lesson-node-wrap">
+                <button
+                  type="button"
+                  className={`lesson-node ${nodeClass}`}
+                  onClick={() => status !== "locked" && navigate(`/app/lesson/${lesson.id}`)}
+                  aria-label={lesson.title}
+                >
+                  {status === "completed" ? <CheckCircle2 size={22} />
+                    : status === "locked" ? <Lock size={20} />
+                    : <Play size={20} style={{ fill: "currentColor" }} />}
+                </button>
+                <div className={`lesson-node-label${status === "locked" ? " locked-label" : ""}`}>
+                  <h3>{lesson.title}</h3>
+                  <p>{lesson.topic} · {lesson.xpReward} XP · {lesson.estimatedMinutes} хв</p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Floating lesson CTA */}
+      {current && (
+        <div className="floating-lesson">
+          <div className="icon-circle"><BookOpen size={20} /></div>
+          <div className="info">
+            <h4>{current.title}</h4>
+            <p>{current.topic} · {current.xpReward} XP</p>
+          </div>
+          <button type="button" className="btn-go" onClick={() => navigate(`/app/lesson/${current.id}`)}>
+            {t("student.path.continue")}
+          </button>
         </div>
-        <ProgressBar value={levelProgress} />
-        {current ? <Link className="btn btn-primary" to={`/app/lesson/${current.id}`}>{t("student.path.continue")}</Link> : null}
-      </Card>
+      )}
+
+      {/* Daily scenario phrases */}
       <Card className="scenario-card">
         <div className="scenario-header">
           <span className="scenario-badge">{t("student.path.scenario_label")}</span>
@@ -206,21 +262,6 @@ function PathScreen() {
           ))}
         </ul>
       </Card>
-      <div className="lesson-list">
-        {levelLessons.map((lesson) => {
-          const status = lessonService.status(lesson, data.lessons, progress);
-          return (
-            <Card key={lesson.id} className={`lesson-card ${status}`}>
-              <div className="lesson-icon">{status === "completed" ? <CheckCircle2 /> : status === "locked" ? <Lock /> : <BookOpen />}</div>
-              <div className="lesson-copy">
-                <h3>{lesson.title}</h3>
-                <p>{lesson.topic} · {lesson.level} · {lesson.xpReward} XP · {lesson.estimatedMinutes} хв</p>
-              </div>
-              {status === "locked" ? <span className="status-pill">{t("student.path.locked")}</span> : <Link className="btn btn-secondary" to={`/app/lesson/${lesson.id}`}>{status === "completed" ? t("student.path.repeat") : t("student.path.lesson_start")}</Link>}
-            </Card>
-          );
-        })}
-      </div>
     </main>
   );
 }
@@ -273,6 +314,7 @@ function LessonScreen() {
   const exercise = activeLesson.exercises[index];
   if (!exercise) return <Navigate to="/app/path" replace />;
   const percent = Math.round((index / activeLesson.exercises.length) * 100);
+  const questionLabel = `${index + 1} / ${activeLesson.exercises.length}`;
 
   function check() {
     const correct = progressService.check(exercise, answer);
@@ -297,9 +339,12 @@ function LessonScreen() {
   return (
     <main className="lesson-screen">
       <div className="lesson-top">
-        <button type="button" onClick={() => navigate("/app/path")}><ChevronLeft /></button>
+        <button type="button" onClick={() => navigate("/app/path")} aria-label="Назад"><ChevronLeft /></button>
         <ProgressBar value={percent} />
-        <span><Heart size={18} /> {progress.hearts}</span>
+        <div className="lesson-top-right">
+          <span className="question-counter">{questionLabel}</span>
+          <span className="lesson-hearts-chip"><Heart size={15} /> {progress.hearts}</span>
+        </div>
       </div>
       <Card className="exercise-card">
         <p className="lesson-topic">{lesson.topic}</p>
@@ -311,7 +356,10 @@ function LessonScreen() {
         {feedback === "wrong" ? `${t("student.lesson.wrong_prefix")} ${Array.isArray(exercise.correctAnswer) ? exercise.correctAnswer.join(", ") : exercise.correctAnswer}. ${exercise.explanation || ""}` : null}
       </div>
       <div className="lesson-bottom">
-        {!feedback ? <Button disabled={!answer || (Array.isArray(answer) && !answer.length)} onClick={check}>{t("student.lesson.check")}</Button> : <Button onClick={next}>{index + 1 >= lesson.exercises.length ? t("student.lesson.finish") : t("student.lesson.next")}</Button>}
+        {!feedback
+          ? <Button disabled={!answer || (Array.isArray(answer) && !answer.length)} onClick={check}>{t("student.lesson.check")}</Button>
+          : <Button autoFocus onClick={next}>{index + 1 >= lesson.exercises.length ? t("student.lesson.finish") : t("student.lesson.next")}</Button>
+        }
       </div>
       {progress.hearts <= 0 ? (
         <Modal>
@@ -338,6 +386,7 @@ function VocabularyScreen() {
   const [sort, setSort] = useState<"alpha" | "level" | "topic" | "date">("alpha");
   const [groupBy, setGroupBy] = useState<"none" | "topic" | "level">("none");
   const [selectedWord, setSelectedWord] = useState<VocabularyWord | null>(null);
+  const [showAdvanced, setShowAdvanced] = useState(false);
   const [visibleCount, setVisibleCount] = useState(30);
   const [playingId, setPlayingId] = useState<string | null>(null);
   const sentinelRef = useRef<HTMLDivElement>(null);
@@ -431,20 +480,33 @@ function VocabularyScreen() {
             </button>
           ))}
         </div>
-        <div className="filter-row">
-          {sortKeys.map((s) => (
-            <button className={`chip chip--sm ${sort === s ? "active" : ""}`} type="button" key={s} onClick={() => setSort(s)}>
-              {t(`student.vocabulary.sort_${s}`)}
-            </button>
-          ))}
-        </div>
-        <div className="filter-row">
-          {groupKeys.map((g) => (
-            <button className={`chip chip--sm ${groupBy === g ? "active" : ""}`} type="button" key={g} onClick={() => setGroupBy(g)}>
-              {t(`student.vocabulary.group_${g}`)}
-            </button>
-          ))}
-        </div>
+        <button
+          type="button"
+          className="filter-advanced-btn"
+          onClick={() => setShowAdvanced((v) => !v)}
+          aria-expanded={showAdvanced}
+        >
+          <span>{t(`student.vocabulary.sort_${sort}`)} · {t(`student.vocabulary.group_${groupBy}`)}</span>
+          <ChevronDown size={13} className={showAdvanced ? "icon-rotate" : ""} />
+        </button>
+        {showAdvanced && (
+          <>
+            <div className="filter-row">
+              {sortKeys.map((s) => (
+                <button className={`chip chip--sm ${sort === s ? "active" : ""}`} type="button" key={s} onClick={() => setSort(s)}>
+                  {t(`student.vocabulary.sort_${s}`)}
+                </button>
+              ))}
+            </div>
+            <div className="filter-row">
+              {groupKeys.map((g) => (
+                <button className={`chip chip--sm ${groupBy === g ? "active" : ""}`} type="button" key={g} onClick={() => setGroupBy(g)}>
+                  {t(`student.vocabulary.group_${g}`)}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
       </div>
 
       {sorted.length === 0 && (
@@ -644,22 +706,26 @@ function PracticeScreen() {
               </div>
             </Card>
 
-            {topicGroups.map(({ label, words }) => (
-              <div key={label}>
-                <div className="word-group-header">{label}</div>
-                <div className="word-mini-list">
-                  {words.map((w) => (
-                    <span key={w.id} className={w.nextReviewAt && w.nextReviewAt.slice(0, 10) <= new Date().toISOString().slice(0, 10) ? "sr-due-word" : ""}>
-                      {w.sk} — {w.uk}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-
             <Button onClick={startSession}>
               {t("student.practice.start_btn").replace("{count}", String(practiceCount))}
             </Button>
+
+            {topicGroups.length > 0 && (
+              <div className="practice-preview-section">
+                {topicGroups.map(({ label, words }) => (
+                  <div key={label}>
+                    <div className="word-group-header">{label}</div>
+                    <div className="word-mini-list">
+                      {words.map((w) => (
+                        <span key={w.id} className={w.nextReviewAt && w.nextReviewAt.slice(0, 10) <= new Date().toISOString().slice(0, 10) ? "sr-due-word" : ""}>
+                          {w.sk} — {w.uk}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </>
         )}
       </main>
