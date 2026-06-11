@@ -41,7 +41,7 @@ export function Login() {
   return (
     <AuthShell title={t("auth.login_title")} text={t("auth.login_subtitle")}>
       <form onSubmit={submit} className="form-stack" noValidate>
-        <Field label={t("auth.email")} type="email" value={email} autoComplete="email" onChange={(event) => setEmail(event.target.value)} />
+        <Field label={t("auth.email")} type="email" value={email} autoComplete="email" autoFocus onChange={(event) => setEmail(event.target.value)} />
         <Field label={t("auth.password")} type="password" value={password} autoComplete="current-password" onChange={(event) => setPassword(event.target.value)} />
         {authError ? <p className="error-text">{authError}</p> : null}
         <Button type="submit" disabled={loading}>{loading ? "…" : t("auth.sign_in")}</Button>

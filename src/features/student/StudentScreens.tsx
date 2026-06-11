@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams } from "react-router-dom";
-import { AlertCircle, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, Download, Flame, Heart, Lock, Medal, Play, Search, Settings, Star, Trophy, Volume2, Zap } from "lucide-react";
+import { AlertCircle, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, Download, Flame, Heart, Layers, Lock, LogOut, Medal, Play, Search, Settings, ShoppingBag, Star, Trophy, Volume2, Zap } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, EmptyState, Field, Modal, PageHeader, ProgressBar } from "../../components/ui";
 import { apiClient } from "../../services/apiClient";
@@ -119,7 +119,21 @@ export function Onboarding() {
     </Card>
   ];
 
-  return <main className="auth-screen onboarding-screen">{cards[step]}</main>;
+  return (
+    <main className="auth-screen onboarding-screen">
+      <div className="onboarding-nav">
+        {step > 0 && (
+          <button type="button" className="back-btn" onClick={() => setStep((s) => s - 1)} aria-label="Назад">
+            <ChevronLeft size={18} />
+          </button>
+        )}
+        <div className="step-dots">
+          {cards.map((_, i) => <span key={i} className={`step-dot${i === step ? " active" : i < step ? " done" : ""}`} />)}
+        </div>
+      </div>
+      {cards[step]}
+    </main>
+  );
 }
 
 export function PlacementTest() {
@@ -759,12 +773,17 @@ function PracticeScreen() {
       }
     }
 
+    const practiceLabel = `${index + 1} / ${exercises.length}`;
+
     return (
       <main className="lesson-screen">
         <div className="lesson-top">
-          <button type="button" onClick={() => setPhase("landing")}><ChevronLeft /></button>
+          <button type="button" onClick={() => setPhase("landing")} aria-label="Назад"><ChevronLeft /></button>
           <ProgressBar value={percent} />
-          {timerEnabled && <span className="practice-timer">{countdown}</span>}
+          <div className="lesson-top-right">
+            <span className="question-counter">{practiceLabel}</span>
+            {timerEnabled && <span className="practice-timer-chip">{countdown}</span>}
+          </div>
         </div>
         <Card className="exercise-card">
           <p className="lesson-topic">{wordTopic}</p>
@@ -778,7 +797,7 @@ function PracticeScreen() {
         <div className="lesson-bottom">
           {!feedback
             ? <Button disabled={!answer || (Array.isArray(answer) && !answer.length)} onClick={check}>{t("student.lesson.check")}</Button>
-            : <Button onClick={next}>{isLast ? t("student.lesson.finish") : t("student.lesson.next")}</Button>
+            : <Button autoFocus onClick={next}>{isLast ? t("student.lesson.finish") : t("student.lesson.next")}</Button>
           }
         </div>
       </main>
@@ -1113,11 +1132,11 @@ function ProfileScreen() {
           </Card>
         )}
 
-        <div className="form-stack">
-          <Button variant="secondary" onClick={() => navigate("/placement-test")}>{t("student.profile.btn_placement")}</Button>
-          <Button variant="secondary" onClick={() => navigate("/app/levels")}>{t("student.profile.btn_levels")}</Button>
-          <Button variant="secondary" onClick={() => navigate("/app/shop")}>{t("student.profile.btn_shop")}</Button>
-          <Button variant="danger" onClick={() => setModal("logout")}>{t("student.profile.btn_logout")}</Button>
+        <div className="profile-actions-grid">
+          <Button variant="secondary" onClick={() => navigate("/placement-test")}><CheckCircle2 size={16} />{t("student.profile.btn_placement")}</Button>
+          <Button variant="secondary" onClick={() => navigate("/app/levels")}><Layers size={16} />{t("student.profile.btn_levels")}</Button>
+          <Button variant="secondary" onClick={() => navigate("/app/shop")}><ShoppingBag size={16} />{t("student.profile.btn_shop")}</Button>
+          <Button variant="danger" onClick={() => setModal("logout")}><LogOut size={16} />{t("student.profile.btn_logout")}</Button>
         </div>
       </div>
 
@@ -1276,7 +1295,14 @@ function SettingsScreen() {
 
   return (
     <main className="page-content settings-page">
-      <PageHeader title={t("student.settings.title")} />
+      <PageHeader
+        title={t("student.settings.title")}
+        action={
+          <button type="button" className="back-btn" onClick={() => navigate("/app/profile")} aria-label="Назад">
+            <ChevronLeft size={20} />
+          </button>
+        }
+      />
 
       <section className="settings-section">
         <h3 className="settings-section-title">{t("student.settings.section_profile")}</h3>
