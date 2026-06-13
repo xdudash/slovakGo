@@ -3,6 +3,7 @@ import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams } fr
 import { AlertCircle, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, Download, Flame, Heart, Layers, Lock, LogOut, Medal, Play, Search, Settings, ShoppingBag, Star, Trophy, Volume2, Zap } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, EmptyState, Field, Modal, PageHeader, ProgressBar } from "../../components/ui";
+import { PageSkeleton } from "../../components/Skeleton";
 import { apiClient } from "../../services/apiClient";
 import { leaderboardService } from "../../services/leaderboardService";
 import { lessonService } from "../../services/lessonService";
@@ -51,12 +52,18 @@ function TopStats() {
   const { user, progress } = useStudentData();
   const { t } = useT();
   if (!user || !progress) return null;
+  const today = new Date().toISOString().slice(0, 10);
+  const todayXp = progress.xpDailyHistory?.[today] ?? 0;
+  const streakAtRisk = progress.streakDays > 0 && todayXp === 0;
   return (
     <div className="sticky-stats">
       <div className="level-badge">{progress.currentLevel}</div>
       <div className="stat-chip xp"><Zap size={14} /> {progress.xpTotal} XP</div>
       <div className="stat-chip hearts"><Heart size={14} /> {progress.hearts}/{progress.maxHearts}</div>
-      <div className="stat-chip streak"><Flame size={14} /> {progress.streakDays}</div>
+      <div className={`stat-chip streak${streakAtRisk ? " at-risk" : ""}`}>
+        <Flame size={14} /> {progress.streakDays}
+        {progress.streakFreezeCount > 0 && <span className="freeze-badge">❄</span>}
+      </div>
       <Link to="/app/levels" className="stat-chip level-link">{t("student.top_stats_level")}</Link>
     </div>
   );
@@ -189,7 +196,7 @@ function PathScreen() {
   const { data, user, progress } = useStudentData();
   const { t } = useT();
   const navigate = useNavigate();
-  if (!user || !progress) return null;
+  if (!user || !progress) return <PageSkeleton />;
 
   const levelLessons = lessonService.byLevel(data.lessons, progress.currentLevel);
   const levelProgress = lessonService.levelProgress(data.lessons, progress, progress.currentLevel);
@@ -198,6 +205,13 @@ function PathScreen() {
     || levelLessons[0];
   const scenario = getScenarioForGoal(user.goal);
   const dailyPhrases = getDailyPhrases(user.goal, 3);
+
+  const today = new Date().toISOString().slice(0, 10);
+  const todayXp = progress.xpDailyHistory?.[today] ?? 0;
+  const dailyGoal = 20;
+  const goalPct = Math.min(100, Math.round(todayXp / dailyGoal * 100));
+  const goalDone = todayXp >= dailyGoal;
+  const streakAtRisk = progress.streakDays > 0 && todayXp === 0;
 
   return (
     <main className="page-content">
@@ -212,6 +226,31 @@ function PathScreen() {
         <h2>{progress.currentLevel}: {current?.topic || t("student.path.default_topic")}</h2>
         <p>{levelLessons.filter((l) => lessonService.status(l, data.lessons, progress) === "completed").length}/{levelLessons.length} {t("student.path.progress_pct")}</p>
       </div>
+
+      {/* Daily goal bar */}
+      <div className={`daily-goal${goalDone ? " daily-goal--done" : ""}`}>
+        <div className="daily-goal-label">
+          <Zap size={13} />
+          <span>{goalDone ? "Ціль дня досягнута! 🎯" : `${todayXp} / ${dailyGoal} XP сьогодні`}</span>
+        </div>
+        <div className="daily-goal-track">
+          <div className="daily-goal-fill" style={{ width: `${goalPct}%` }} />
+        </div>
+      </div>
+
+      {/* Streak at-risk warning */}
+      {streakAtRisk && (
+        <div className="streak-risk-banner">
+          <Flame size={16} />
+          <div className="streak-risk-text">
+            <strong>{progress.streakDays}-денний стрік під загрозою!</strong>
+            {progress.streakFreezeCount > 0
+              ? <span>Є заморозка ×{progress.streakFreezeCount} — пройди урок до кінця дня</span>
+              : <span>Пройди будь-який урок щоб зберегти стрік</span>
+            }
+          </div>
+        </div>
+      )}
 
       {/* Visual lesson node path */}
       <div className="learning-path">
@@ -419,7 +458,7 @@ function VocabularyScreen() {
     return () => observer.disconnect();
   }, [groupBy, filter, query, sort]);
 
-  if (!user) return null;
+  if (!user) return <PageSkeleton />;
 
   function playWord(word: VocabularyWord) {
     if (!user?.settings.soundEnabled || !word.audioUrl) return;
@@ -625,7 +664,7 @@ function PracticeScreen() {
     return () => { if (timerIdRef.current) { clearInterval(timerIdRef.current); timerIdRef.current = null; } };
   }, [index, timerEnabled, phase, exercises]);
 
-  if (!user || !progress) return null;
+  if (!user || !progress) return <PageSkeleton />;
 
   const isPlus = user.subscriptionStatus === "plus";
   const xpEarned = isPlus ? 8 : 5;
@@ -985,6 +1024,33 @@ function LeaderboardScreen() {
   );
 }
 
+function StudyHeatmap({ xpHistory }: { xpHistory: Record<string, number> | undefined }) {
+  const today = new Date();
+  const cells = Array.from({ length: 56 }, (_, i) => {
+    const d = new Date(today);
+    d.setDate(d.getDate() - (55 - i));
+    const key = d.toISOString().slice(0, 10);
+    const xp = xpHistory?.[key] ?? 0;
+    const level = xp === 0 ? 0 : xp < 10 ? 1 : xp < 25 ? 2 : xp < 50 ? 3 : 4;
+    return { key, xp, level };
+  });
+  return (
+    <Card className="heatmap-card">
+      <div className="heatmap-header">
+        <strong>Активність (8 тижнів)</strong>
+        <span className="heatmap-legend">
+          {[0, 1, 2, 3, 4].map((l) => <span key={l} className={`heatmap-cell level-${l}`} />)}
+        </span>
+      </div>
+      <div className="heatmap-grid">
+        {cells.map(({ key, xp, level }) => (
+          <div key={key} className={`heatmap-cell level-${level}`} title={`${key}: ${xp} XP`} />
+        ))}
+      </div>
+    </Card>
+  );
+}
+
 function buildDailyXp(xpDailyHistory: Record<string, number> | undefined): { label: string; value: number }[] {
   return Array.from({ length: 7 }, (_, i) => {
     const d = new Date();
@@ -1002,7 +1068,7 @@ function ProfileScreen() {
   const [modal, setModal] = useState<"streak" | "hearts" | "avatar" | "logout" | null>(null);
   const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
-  if (!user || !progress) return null;
+  if (!user || !progress) return <PageSkeleton />;
   const words = vocabularyService.build(data.lessons, data.userWords[user.id]);
   const levelLessons = lessonService.byLevel(data.lessons, user.level);
   const isLevelComplete = levelLessons.length > 0 && levelLessons.every((l) => progress.completedLessons.includes(l.id));
@@ -1098,6 +1164,8 @@ function ProfileScreen() {
             ))}
           </div>
         </Card>
+
+        <StudyHeatmap xpHistory={progress.xpDailyHistory} />
 
         <Card className="sub-card">
           <div className="sub-row">
@@ -1218,7 +1286,7 @@ function SettingsScreen() {
   const [actionLoading, setActionLoading] = useState(false);
   const [actionError, setActionError] = useState("");
 
-  if (!user) return null;
+  if (!user) return <PageSkeleton />;
   const lang = (user.settings.language || "uk") as "uk" | "sk" | "en";
 
   async function saveProfile() {
@@ -1438,7 +1506,7 @@ function LevelsScreen() {
   const { data, progress, setLevel } = useStudentData();
   const { t } = useT();
   const [pending, setPending] = useState<UserLevel | null>(null);
-  if (!progress) return null;
+  if (!progress) return <PageSkeleton />;
   return (
     <main className="page-content">
       <PageHeader title={t("student.levels.title")} subtitle={t("student.levels.subtitle")} />

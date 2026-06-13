@@ -2479,3 +2479,262 @@ textarea:focus,
   transition: transform 140ms ease;
 }
 .btn-go:active { transform: scale(0.97); }
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   Page transition animations
+═══════════════════════════════════════════════════════════════════ */
+
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-from-right {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.page-content {
+  animation: page-enter 270ms cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+.lesson-screen {
+  animation: slide-from-right 240ms cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+.auth-screen {
+  animation: page-enter 300ms cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Skeleton loaders
+═══════════════════════════════════════════════════════════════════ */
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+.skeleton-block,
+.skeleton-line {
+  border-radius: 12px;
+  background: linear-gradient(
+    90deg,
+    #eeebff 0%,
+    #ddd8ff 50%,
+    #eeebff 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease infinite;
+}
+
+.skeleton-line {
+  height: 16px;
+  border-radius: 8px;
+}
+
+.skeleton-header {
+  display: grid;
+  gap: 8px;
+  padding: 4px 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Error boundary
+═══════════════════════════════════════════════════════════════════ */
+
+.error-boundary {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: var(--bg);
+}
+
+.error-boundary-card {
+  max-width: 400px;
+  width: 100%;
+  display: grid;
+  gap: 14px;
+  text-align: center;
+  justify-items: center;
+  background: #fff;
+  border-radius: var(--radius-card);
+  padding: 32px 24px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+
+.error-boundary-icon {
+  font-size: 2.8rem;
+  line-height: 1;
+}
+
+.error-boundary-card h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.error-boundary-msg {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  word-break: break-word;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Daily goal bar
+═══════════════════════════════════════════════════════════════════ */
+
+.daily-goal {
+  display: grid;
+  gap: 7px;
+  padding: 12px 14px;
+  background: #fff;
+  border-radius: var(--radius-card);
+  border: 1.5px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.daily-goal-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.84rem;
+  font-weight: 750;
+  color: var(--muted);
+}
+
+.daily-goal-track {
+  height: 7px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.daily-goal-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent) 0%, #b388ff 100%);
+  border-radius: 999px;
+  transition: width 700ms cubic-bezier(0.34, 1.3, 0.64, 1);
+  min-width: 0;
+}
+
+.daily-goal--done .daily-goal-label {
+  color: var(--success);
+  font-weight: 850;
+}
+.daily-goal--done .daily-goal-fill {
+  background: linear-gradient(90deg, var(--success) 0%, #52d99a 100%);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Streak freeze / at-risk warning
+═══════════════════════════════════════════════════════════════════ */
+
+.stat-chip.streak.at-risk {
+  background: rgba(255, 90, 46, 0.15);
+  color: var(--orange);
+  animation: pulse-streak 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse-streak {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 90, 46, 0); }
+  50%       { box-shadow: 0 0 0 4px rgba(255, 90, 46, 0.20); }
+}
+
+.freeze-badge {
+  font-size: 0.68rem;
+  line-height: 1;
+  margin-left: 1px;
+}
+
+.streak-risk-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-card);
+  background: linear-gradient(135deg, #fff3ee 0%, #fff7f2 100%);
+  border: 1.5px solid rgba(255, 90, 46, 0.28);
+  box-shadow: 0 3px 0 rgba(255, 90, 46, 0.12), 0 6px 14px rgba(255, 90, 46, 0.07);
+  color: var(--orange);
+}
+
+.streak-risk-banner > svg { flex-shrink: 0; margin-top: 1px; }
+
+.streak-risk-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.streak-risk-text strong {
+  font-size: 0.88rem;
+  font-weight: 850;
+  line-height: 1.3;
+}
+
+.streak-risk-text span {
+  font-size: 0.79rem;
+  color: #b84000;
+  line-height: 1.4;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Study heatmap
+═══════════════════════════════════════════════════════════════════ */
+
+.heatmap-card {
+  display: grid;
+  gap: 10px;
+}
+
+.heatmap-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heatmap-header strong {
+  font-size: 0.92rem;
+  font-weight: 850;
+}
+
+.heatmap-legend {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.heatmap-legend .heatmap-cell {
+  width: 11px;
+  height: 11px;
+}
+
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-rows: repeat(7, minmax(0, 1fr));
+  grid-auto-flow: column;
+  gap: 3px;
+  aspect-ratio: 8 / 7;
+  width: 100%;
+}
+
+.heatmap-cell {
+  border-radius: 3px;
+  background: #eeeaff;
+  transition: opacity 120ms;
+  cursor: default;
+}
+
+.heatmap-cell.level-0 { background: #eeeaff; }
+.heatmap-cell.level-1 { background: rgba(111, 87, 232, 0.22); }
+.heatmap-cell.level-2 { background: rgba(111, 87, 232, 0.45); }
+.heatmap-cell.level-3 { background: rgba(111, 87, 232, 0.70); }
+.heatmap-cell.level-4 { background: var(--accent); box-shadow: 0 0 4px rgba(111, 87, 232, 0.4); }
+.heatmap-cell:hover   { opacity: 0.75; }
