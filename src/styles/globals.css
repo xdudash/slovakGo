@@ -2738,3 +2738,162 @@ textarea:focus,
 .heatmap-cell.level-3 { background: rgba(111, 87, 232, 0.70); }
 .heatmap-cell.level-4 { background: var(--accent); box-shadow: 0 0 4px rgba(111, 87, 232, 0.4); }
 .heatmap-cell:hover   { opacity: 0.75; }
+
+/* ── Lesson celebration overlay ─────────────────────────────────── */
+.lesson-celebrate {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(33, 25, 70, 0.72);
+  backdrop-filter: blur(8px);
+  padding: 24px;
+}
+
+.celebrate-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 36px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 340px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 20px 60px rgba(33, 25, 70, 0.28);
+}
+
+.celebrate-icon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.celebrate-xp {
+  font-size: 2.8rem;
+  font-weight: 850;
+  color: var(--accent);
+  animation: xp-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.celebrate-sub {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+@keyframes xp-pop {
+  0%   { transform: scale(0.4); opacity: 0; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+/* Confetti pieces */
+.confetti-piece {
+  position: fixed;
+  top: -14px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: confetti-fall var(--dur, 1.6s) ease-in var(--delay, 0s) forwards;
+}
+
+@keyframes confetti-fall {
+  0%   { transform: translateY(0)     rotate(0deg);   opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translateY(105vh) rotate(600deg); opacity: 0; }
+}
+
+/* ── Mistake review mode ─────────────────────────────────────────── */
+.mistake-mode-card {
+  border: 2px solid rgba(233, 61, 69, 0.35);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(233, 61, 69, 0.04);
+  cursor: pointer;
+  transition: background 120ms;
+  width: 100%;
+  text-align: left;
+}
+
+.mistake-mode-card:hover { background: rgba(233, 61, 69, 0.09); }
+
+.mistake-mode-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(233, 61, 69, 0.12);
+  color: var(--red);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.mistake-mode-info { flex: 1; min-width: 0; }
+.mistake-mode-info strong { display: block; font-size: 0.9rem; }
+.mistake-mode-info span  { font-size: 0.78rem; color: var(--muted); }
+
+/* ── Offline banner (enhanced slide-in) ──────────────────────────── */
+.offline-banner {
+  animation: offline-slide-in 0.3s ease both;
+}
+
+@keyframes offline-slide-in {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(0); }
+}
+
+/* ── Star / favorite icon fill when saved ────────────────────────── */
+.icon-button.active svg {
+  fill: var(--fg);
+}
+
+/* ── Reminder time picker row ────────────────────────────────────── */
+.reminder-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 0;
+}
+
+.reminder-label {
+  font-size: 0.92rem;
+  color: var(--fg);
+}
+
+.reminder-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reminder-time-input {
+  height: 36px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 0 10px;
+  font-size: 0.92rem;
+  font-family: inherit;
+  color: var(--fg);
+  background: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 120ms;
+}
+
+.reminder-time-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.reminder-off   { font-size: 0.78rem; color: var(--muted); }
+.reminder-saved { font-size: 0.78rem; color: var(--success); font-weight: 700; }

@@ -10,6 +10,7 @@ export interface UserSettings {
   phone?: string;
   dailyGoal?: number;
   theme?: "default";
+  reminderTime?: string;
 }
 
 export interface User {

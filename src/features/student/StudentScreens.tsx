@@ -352,6 +352,8 @@ function ExerciseView({ exercise, answer, setAnswer, t }: { exercise: Exercise; 
   );
 }
 
+const CONFETTI_COLORS = ["#6f57e8", "#ffd21f", "#2fba7f", "#e93d45", "#ff5a2e", "#3b82f6", "#a855f7"];
+
 function LessonScreen() {
   const navigate = useNavigate();
   const { lessonId } = useParams();
@@ -362,12 +364,13 @@ function LessonScreen() {
   const [answer, setAnswer] = useState<string | string[]>("");
   const [feedback, setFeedback] = useState<"correct" | "wrong" | null>(null);
   const [records, setRecords] = useState<AnswerRecord[]>([]);
+  const [celebration, setCelebration] = useState<{ xp: number; correct: number; total: number } | null>(null);
   if (!user || !progress || !lesson) return <Navigate to="/app/path" replace />;
   const activeLesson = lesson;
   const exercise = activeLesson.exercises[index];
-  if (!exercise) return <Navigate to="/app/path" replace />;
-  const percent = Math.round((index / activeLesson.exercises.length) * 100);
-  const questionLabel = `${index + 1} / ${activeLesson.exercises.length}`;
+  if (!exercise && !celebration) return <Navigate to="/app/path" replace />;
+  const percent = exercise ? Math.round((index / activeLesson.exercises.length) * 100) : 100;
+  const questionLabel = exercise ? `${index + 1} / ${activeLesson.exercises.length}` : "";
 
   function check() {
     const correct = progressService.check(exercise, answer);
@@ -379,9 +382,14 @@ function LessonScreen() {
 
   function next() {
     const nextIndex = index + 1;
+    const finalRecords = [...records.filter((item) => item.exerciseId !== exercise.id), { exerciseId: exercise.id, answer, correct: feedback === "correct", answeredAt: new Date().toISOString() }];
     if (nextIndex >= activeLesson.exercises.length) {
-      completeLesson(activeLesson, records);
-      navigate("/app/path");
+      completeLesson(activeLesson, finalRecords);
+      const alreadyDone = progress.completedLessons.includes(activeLesson.id);
+      const base = alreadyDone ? Math.max(3, Math.round(activeLesson.xpReward * 0.25)) : activeLesson.xpReward;
+      const xp = user.subscriptionStatus === "plus" ? Math.round(base * 1.5) : base;
+      const correct = finalRecords.filter((r) => r.correct).length;
+      setCelebration({ xp, correct, total: finalRecords.length });
       return;
     }
     setIndex(nextIndex);
@@ -426,6 +434,28 @@ function LessonScreen() {
           </Card>
         </Modal>
       ) : null}
+      {celebration && (
+        <div className="lesson-celebrate">
+          {Array.from({ length: 22 }, (_, i) => (
+            <span
+              key={i}
+              className="confetti-piece"
+              style={{
+                left: `${(i / 22) * 100}%`,
+                background: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
+                "--delay": `${(i * 0.07).toFixed(2)}s`,
+                "--dur": `${1.4 + (i % 5) * 0.18}s`,
+              } as React.CSSProperties}
+            />
+          ))}
+          <div className="celebrate-card">
+            <div className="celebrate-icon">🎉</div>
+            <div className="celebrate-xp">+{celebration.xp} XP</div>
+            <p className="celebrate-sub">{celebration.correct} / {celebration.total} правильно</p>
+            <Button autoFocus onClick={() => navigate("/app/path")}>Продовжити</Button>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
@@ -527,11 +557,14 @@ function VocabularyScreen() {
       </div>
       <div className="vocab-controls">
         <div className="filter-row">
-          {Object.keys(filterLabels).map((item) => (
-            <button className={`chip ${filter === item ? "active" : ""}`} type="button" key={item} onClick={() => setFilter(item)}>
-              {filterLabels[item]}
-            </button>
-          ))}
+          {Object.keys(filterLabels).map((item) => {
+            const savedCount = item === "favorite" ? allWords.filter((w) => w.favorite).length : 0;
+            return (
+              <button className={`chip ${filter === item ? "active" : ""}`} type="button" key={item} onClick={() => setFilter(item)}>
+                {filterLabels[item]}{item === "favorite" && savedCount > 0 ? ` · ${savedCount}` : ""}
+              </button>
+            );
+          })}
         </div>
         <button
           type="button"
@@ -563,7 +596,10 @@ function VocabularyScreen() {
       </div>
 
       {sorted.length === 0 && (
-        <EmptyState title={t("student.vocabulary.empty_title")} text={t("student.vocabulary.empty_text")} />
+        <EmptyState
+          title={filter === "favorite" ? t("student.vocabulary.empty_saved_title") : t("student.vocabulary.empty_title")}
+          text={filter === "favorite" ? t("student.vocabulary.empty_saved_text") : t("student.vocabulary.empty_text")}
+        />
       )}
 
       <div className="word-grid">
@@ -683,11 +719,36 @@ function PracticeScreen() {
     });
   }
 
+  // Build mistake exercises from recent wrong answers
+  const recentMistakeExercises: PracticeExercise[] = (() => {
+    const seen = new Set<string>();
+    const result: PracticeExercise[] = [];
+    const sorted = [...progress.mistakes].sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+    for (const m of sorted) {
+      if (seen.has(m.exerciseId)) continue;
+      seen.add(m.exerciseId);
+      const lesson = data.lessons.find((l) => l.id === m.lessonId);
+      const exercise = lesson?.exercises.find((e) => e.id === m.exerciseId);
+      if (exercise) result.push({ exercise, wordId: exercise.wordIds?.[0] ?? "" });
+      if (result.length >= 15) break;
+    }
+    return result;
+  })();
+
   function startSession() {
     // SR-ordered word selection: due/overdue first, then mistakes, then new
     const adaptiveWords = srService.selectWords(allWords, sessionCount);
     const ex = practiceService.generate(adaptiveWords, allWords, sessionCount, types);
     setExercises(ex);
+    setIndex(0);
+    setSessionAnswers([]);
+    setAnswer("");
+    setFeedback(null);
+    setPhase("session");
+  }
+
+  function startMistakeSession() {
+    setExercises(recentMistakeExercises);
     setIndex(0);
     setSessionAnswers([]);
     setAnswer("");
@@ -721,6 +782,17 @@ function PracticeScreen() {
                 <strong>{dueCount}</strong>
                 <span>{t("student.practice.due_today")}</span>
               </div>
+            )}
+
+            {/* Mistake review card */}
+            {recentMistakeExercises.length > 0 && (
+              <button type="button" className="mistake-mode-card" onClick={startMistakeSession}>
+                <div className="mistake-mode-icon"><AlertCircle size={20} /></div>
+                <div className="mistake-mode-info">
+                  <strong>Повтори помилки</strong>
+                  <span>{recentMistakeExercises.length} вправ де ти помилявся</span>
+                </div>
+              </button>
             )}
 
             {/* Plus XP bonus card */}
@@ -1271,6 +1343,8 @@ function SettingsScreen() {
   const [notifications, setNotifications] = useState(user?.settings.notificationsEnabled ?? true);
   const [sound, setSound] = useState(user?.settings.soundEnabled ?? true);
   const [haptics, setHaptics] = useState(user?.settings.hapticsEnabled ?? true);
+  const [reminderTime, setReminderTime] = useState(user?.settings.reminderTime ?? "");
+  const [reminderSaved, setReminderSaved] = useState(false);
   const [profileSaved, setProfileSaved] = useState(false);
   const [emailError, setEmailError] = useState("");
   const [emailSaved, setEmailSaved] = useState(false);
@@ -1427,6 +1501,28 @@ function SettingsScreen() {
             />
             {t("student.settings.notifications")}
           </label>
+          {notifications && (
+            <div className="reminder-row">
+              <span className="reminder-label">{t("student.settings.reminder_label")}</span>
+              <div className="reminder-control">
+                <input
+                  type="time"
+                  className="reminder-time-input"
+                  value={reminderTime}
+                  onChange={async (e) => {
+                    const time = e.target.value;
+                    setReminderTime(time);
+                    updateUser({ settings: { ...user!.settings, reminderTime: time || undefined } });
+                    apiClient.saveReminder(time || null).catch(() => undefined);
+                    setReminderSaved(true);
+                    setTimeout(() => setReminderSaved(false), 2000);
+                  }}
+                />
+                {!reminderTime && <span className="reminder-off">{t("student.settings.reminder_off")}</span>}
+                {reminderSaved && <span className="reminder-saved">✓ {t("student.settings.reminder_saved")}</span>}
+              </div>
+            </div>
+          )}
           <label className="toggle-row">
             <input type="checkbox" checked={sound} onChange={(e) => setSound(e.target.checked)} />
             {t("student.settings.sound")}

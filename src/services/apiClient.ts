@@ -98,6 +98,13 @@ export const apiClient = {
     });
   },
 
+  saveReminder(time: string | null) {
+    return apiRequest<{ ok: boolean }>("/user/reminder", {
+      method: "POST",
+      body: JSON.stringify({ time })
+    });
+  },
+
   getAdminStats() {
     return apiRequest<{
       ok: boolean;
