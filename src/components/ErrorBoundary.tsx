@@ -1,4 +1,5 @@
 import { Component, type ErrorInfo, type ReactNode } from "react";
+import { apiClient } from "../services/apiClient";
 
 interface Props { children: ReactNode; }
 interface State { error: Error | null; }
@@ -12,6 +13,11 @@ export class ErrorBoundary extends Component<Props, State> {
 
   componentDidCatch(error: Error, info: ErrorInfo) {
     console.error("[ErrorBoundary]", error, info.componentStack);
+    apiClient.reportError({
+      message: error.message,
+      stack: `${error.stack ?? ""}\n\nComponent:\n${info.componentStack ?? ""}`,
+      url: window.location.href,
+    }).catch(() => undefined);
   }
 
   render() {

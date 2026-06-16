@@ -29,6 +29,9 @@ declare(strict_types=1);
     header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
     header('Access-Control-Allow-Headers: Content-Type, X-Requested-With');
     header('Content-Type: application/json; charset=utf-8');
+    header('X-Content-Type-Options: nosniff');
+    header('X-Frame-Options: DENY');
+    header('Referrer-Policy: strict-origin-when-cross-origin');
 })();
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -68,6 +71,15 @@ function body(): array
     $parsed = json_decode($raw, true);
     if (!is_array($parsed)) fail('Некоректний JSON');
     return $parsed;
+}
+
+function client_ip(): string
+{
+    // Trust X-Forwarded-For only when running behind a known reverse proxy
+    if (getenv('TRUSTED_PROXY') && isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        return trim(explode(',', (string)$_SERVER['HTTP_X_FORWARDED_FOR'])[0]);
+    }
+    return (string)($_SERVER['REMOTE_ADDR'] ?? '0.0.0.0');
 }
 
 function now_iso(): string
@@ -202,6 +214,42 @@ function migrate(SQLite3 $db): void
         CREATE INDEX IF NOT EXISTS idx_uwords_user  ON user_words(user_id);
     SQL);
 
+    $db->exec(<<<SQL
+        CREATE TABLE IF NOT EXISTS password_resets (
+            token_hash  TEXT PRIMARY KEY,
+            user_id     TEXT NOT NULL,
+            created_at  TEXT NOT NULL,
+            used        INTEGER NOT NULL DEFAULT 0
+        );
+        CREATE INDEX IF NOT EXISTS idx_pw_resets_user ON password_resets(user_id);
+
+        CREATE TABLE IF NOT EXISTS login_attempts (
+            ip           TEXT NOT NULL,
+            attempted_at TEXT NOT NULL
+        );
+        CREATE INDEX IF NOT EXISTS idx_la_ip ON login_attempts(ip, attempted_at);
+
+        CREATE TABLE IF NOT EXISTS client_errors (
+            id          TEXT PRIMARY KEY,
+            user_id     TEXT,
+            message     TEXT NOT NULL,
+            stack       TEXT,
+            url         TEXT,
+            user_agent  TEXT,
+            ip          TEXT,
+            created_at  TEXT NOT NULL
+        );
+        CREATE INDEX IF NOT EXISTS idx_cerr_time ON client_errors(created_at);
+    SQL);
+
+    // Additive migrations for new columns (safe to run every boot)
+    foreach ([
+        "ALTER TABLE progress ADD COLUMN last_reminder_date TEXT NOT NULL DEFAULT ''",
+        "ALTER TABLE users    ADD COLUMN referred_by         TEXT NOT NULL DEFAULT ''",
+    ] as $ddl) {
+        try { $db->exec($ddl); } catch (\Exception $e) { /* column already exists — ignore */ }
+    }
+
     // Seed dev accounts (pw_hash = 'DEV:skip' accepts any password)
     $now = now_iso();
     $def = json_encode(['language' => 'uk', 'notificationsEnabled' => true, 'soundEnabled' => true, 'hapticsEnabled' => true]);
@@ -311,7 +359,15 @@ elseif  ($meth === 'POST' && $path === '/user/email')                  { handle_
 elseif  ($meth === 'POST' && $path === '/user/password')               { handle_user_password($db); }
 elseif  ($meth === 'POST' && $path === '/auth/delete')                 { handle_auth_delete($db); }
 elseif  ($meth === 'POST' && $path === '/auth/deactivate')             { handle_auth_deactivate($db); }
+elseif  ($meth === 'POST' && $path === '/auth/forgot')                 { handle_auth_forgot($db); }
+elseif  ($meth === 'POST' && $path === '/auth/reset')                  { handle_auth_reset($db); }
+elseif  ($meth === 'POST' && $path === '/errors')                      { handle_post_errors($db); }
+elseif  ($meth === 'GET'  && $path === '/admin/errors')                { handle_admin_errors($db); }
+elseif  ($meth === 'GET'  && $path === '/cron/backup')                 { handle_cron_backup($db); }
 elseif  ($meth === 'POST' && $path === '/user/fcm-token')              { handle_user_fcm_token($db); }
+elseif  ($meth === 'POST' && $path === '/user/reminder')               { handle_user_reminder($db); }
+elseif  ($meth === 'POST' && $path === '/user/referral')               { handle_user_referral($db); }
+elseif  ($meth === 'POST' && $path === '/admin/notify')                { handle_admin_notify($db); }
 elseif  ($meth === 'GET'  && $path === '/admin/stats')                 { handle_admin_stats($db); }
 elseif  ($meth === 'GET'  && $path === '/cron/push')                   { handle_cron_push($db); }
 elseif  ($meth === 'GET'  && $path === '/cron/weekly')                 { handle_cron_weekly($db); }
@@ -437,9 +493,29 @@ function handle_register(SQLite3 $db): never
 
 // ── Login ─────────────────────────────────────────────────────────
 
+const LOGIN_MAX_ATTEMPTS  = 10;   // per IP
+const LOGIN_WINDOW_SEC    = 900;  // 15 minutes
+const LOGIN_LOCKOUT_SEC   = 900;  // 15 minutes
+
 function handle_login(SQLite3 $db): never
 {
     init_session();
+    $ip = client_ip();
+
+    // Purge stale attempts (keeps table small)
+    $db->exec("DELETE FROM login_attempts WHERE attempted_at < datetime('now', '-" . LOGIN_WINDOW_SEC . " seconds')");
+
+    // Count recent attempts from this IP
+    $cnt = (int)$db->querySingle(
+        "SELECT COUNT(*) FROM login_attempts WHERE ip = '" . SQLite3::escapeString($ip) . "'
+         AND attempted_at > datetime('now', '-" . LOGIN_WINDOW_SEC . " seconds')"
+    );
+    if ($cnt >= LOGIN_MAX_ATTEMPTS) {
+        http_response_code(429);
+        header('Retry-After: ' . LOGIN_LOCKOUT_SEC);
+        respond(['ok' => false, 'error' => 'Занадто багато спроб. Спробуй через 15 хвилин.', 'retryAfter' => LOGIN_LOCKOUT_SEC], 429);
+    }
+
     $b      = body();
     $email  = strtolower(trim((string)($b['email']    ?? '')));
     $passwd = (string)($b['password'] ?? '');
@@ -450,8 +526,18 @@ function handle_login(SQLite3 $db): never
     $row = $res ? $res->fetchArray(SQLITE3_ASSOC) : false;
 
     if (!$row || !verify_password($passwd, (string)$row['pw_hash'])) {
+        // Record failed attempt
+        $ins = $db->prepare('INSERT INTO login_attempts (ip, attempted_at) VALUES (?, ?)');
+        $ins->bindValue(1, $ip);
+        $ins->bindValue(2, now_iso());
+        $ins->execute();
         fail('Невірний email або пароль', 401);
     }
+
+    // Success — clear attempts for this IP
+    $del = $db->prepare('DELETE FROM login_attempts WHERE ip = ?');
+    $del->bindValue(1, $ip);
+    $del->execute();
 
     $_SESSION['user_id'] = $row['id'];
     respond(['ok' => true, 'user' => row_to_user($row)]);
@@ -512,7 +598,10 @@ function handle_user_password(SQLite3 $db): never
 
     if (strlen($new) < 8) fail('Пароль занадто короткий', 422);
 
-    $row = $db->querySingle("SELECT pw_hash FROM users WHERE id = '$uid'", true);
+    $stmt = $db->prepare('SELECT pw_hash FROM users WHERE id = ? LIMIT 1');
+    $stmt->bindValue(1, $uid);
+    $res  = $stmt->execute();
+    $row  = $res ? $res->fetchArray(SQLITE3_ASSOC) : false;
     if (!$row) fail('Користувача не знайдено', 404);
 
     if (!verify_password($cur, (string)$row['pw_hash'])) {
@@ -537,7 +626,10 @@ function handle_auth_delete(SQLite3 $db): never
     $b     = body();
     $email = strtolower(trim((string)($b['confirmEmail'] ?? '')));
 
-    $row = $db->querySingle("SELECT email FROM users WHERE id = '$uid'", true);
+    $stmt = $db->prepare('SELECT email FROM users WHERE id = ? LIMIT 1');
+    $stmt->bindValue(1, $uid);
+    $res  = $stmt->execute();
+    $row  = $res ? $res->fetchArray(SQLITE3_ASSOC) : false;
     if (!$row) fail('Користувача не знайдено', 404);
     if ($email !== strtolower((string)$row['email'])) {
         fail('Email не співпадає', 422);
@@ -583,6 +675,231 @@ function handle_auth_deactivate(SQLite3 $db): never
     }
     session_destroy();
     respond(['ok' => true]);
+}
+
+// ── Forgot password ───────────────────────────────────────────────
+
+function handle_auth_forgot(SQLite3 $db): never
+{
+    $email = strtolower(trim((string)(body()['email'] ?? '')));
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) fail('Некоректний email', 422);
+
+    // Always return OK — prevents email enumeration
+    $esc = SQLite3::escapeString($email);
+    $row = $db->querySingle("SELECT id, name_text FROM users WHERE email = '$esc' AND is_blocked = 0 LIMIT 1", true);
+    if (!$row) respond(['ok' => true]);
+
+    // Delete previous unused tokens for this user
+    $del = $db->prepare('DELETE FROM password_resets WHERE user_id = ?');
+    $del->bindValue(1, (string)$row['id']);
+    $del->execute();
+
+    // Generate cryptographically secure token; store only its hash
+    $token     = bin2hex(random_bytes(32));
+    $tokenHash = hash('sha256', $token);
+
+    $ins = $db->prepare('INSERT INTO password_resets (token_hash, user_id, created_at, used) VALUES (?, ?, ?, 0)');
+    $ins->bindValue(1, $tokenHash);
+    $ins->bindValue(2, (string)$row['id']);
+    $ins->bindValue(3, now_iso());
+    $ins->execute();
+
+    $appUrl   = rtrim((string)(getenv('APP_URL') ?: 'https://slovaklife.app'), '/');
+    $resetUrl = "{$appUrl}/reset-password?token={$token}";
+    $name     = (string)$row['name_text'];
+
+    $subject = '=?UTF-8?B?' . base64_encode('Відновлення пароля — Slovak Life') . '?=';
+    $message = "Привіт, {$name}!\r\n\r\n"
+        . "Ми отримали запит на відновлення пароля для твого акаунта Slovak Life.\r\n\r\n"
+        . "Перейди за посиланням щоб встановити новий пароль:\r\n{$resetUrl}\r\n\r\n"
+        . "Посилання дійсне 1 годину.\r\n\r\n"
+        . "Якщо ти не надсилав цей запит — просто ігноруй цього листа.\r\n\r\n"
+        . "— Slovak Life";
+
+    $from    = (string)(getenv('MAIL_FROM') ?: 'noreply@slovaklife.app');
+    $headers = implode("\r\n", [
+        "From: Slovak Life <{$from}>",
+        "Reply-To: {$from}",
+        'MIME-Version: 1.0',
+        'Content-Type: text/plain; charset=UTF-8',
+        'Content-Transfer-Encoding: 8bit',
+        'X-Mailer: PHP/' . PHP_VERSION,
+    ]);
+
+    @mail($email, $subject, $message, $headers);
+    respond(['ok' => true]);
+}
+
+// ── Reset password ────────────────────────────────────────────────
+
+function handle_auth_reset(SQLite3 $db): never
+{
+    $b        = body();
+    $token    = trim((string)($b['token']    ?? ''));
+    $password = (string)($b['password'] ?? '');
+
+    if ($token === '')        fail('token обовʼязковий', 422);
+    if (strlen($password) < 8) fail('Пароль занадто короткий (мін. 8 символів)', 422);
+
+    $tokenHash = hash('sha256', $token);
+    $esc       = SQLite3::escapeString($tokenHash);
+    $row       = $db->querySingle("SELECT * FROM password_resets WHERE token_hash = '$esc' AND used = 0 LIMIT 1", true);
+
+    if (!$row) fail('Посилання недійсне або вже використане', 400);
+
+    // 1-hour expiry
+    $created = strtotime((string)$row['created_at']);
+    if ($created === false || (time() - $created) > 3600) {
+        fail('Посилання застаріло. Запроси нове.', 400);
+    }
+
+    // Update password and mark token used in one transaction
+    $db->exec('BEGIN');
+    try {
+        $hash = password_hash($password, PASSWORD_BCRYPT, ['cost' => 11]);
+        $upd  = $db->prepare('UPDATE users SET pw_hash = ?, updated_at = ? WHERE id = ?');
+        $upd->bindValue(1, $hash);
+        $upd->bindValue(2, now_iso());
+        $upd->bindValue(3, (string)$row['user_id']);
+        $upd->execute();
+
+        $mark = $db->prepare('UPDATE password_resets SET used = 1 WHERE token_hash = ?');
+        $mark->bindValue(1, $tokenHash);
+        $mark->execute();
+
+        $db->exec('COMMIT');
+    } catch (\Exception $e) {
+        $db->exec('ROLLBACK');
+        fail('Помилка при зміні пароля', 500);
+    }
+
+    respond(['ok' => true]);
+}
+
+// ── Client error reporting ────────────────────────────────────────
+
+function handle_post_errors(SQLite3 $db): never
+{
+    $ip = client_ip();
+
+    // Rate limit: max 10 reports per IP per minute
+    $recent = (int)$db->querySingle(
+        "SELECT COUNT(*) FROM client_errors WHERE ip = '" . SQLite3::escapeString($ip) . "'
+         AND created_at > datetime('now', '-60 seconds')"
+    );
+    if ($recent >= 10) respond(['ok' => true]); // silently drop excess
+
+    $b       = body();
+    $message = substr(trim((string)($b['message'] ?? '')), 0, 500);
+    if ($message === '') respond(['ok' => true]);
+
+    $stack = substr(trim((string)($b['stack']   ?? '')), 0, 4000);
+    $url   = substr(trim((string)($b['url']     ?? '')), 0, 500);
+    $ua    = substr((string)($_SERVER['HTTP_USER_AGENT'] ?? ''), 0, 300);
+    $uid   = current_uid();
+
+    $stmt = $db->prepare(
+        'INSERT INTO client_errors (id, user_id, message, stack, url, user_agent, ip, created_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
+    );
+    $stmt->bindValue(1, gen_uuid());
+    $stmt->bindValue(2, $uid, $uid === null ? SQLITE3_NULL : SQLITE3_TEXT);
+    $stmt->bindValue(3, $message);
+    $stmt->bindValue(4, $stack !== '' ? $stack : null, $stack !== '' ? SQLITE3_TEXT : SQLITE3_NULL);
+    $stmt->bindValue(5, $url   !== '' ? $url   : null, $url   !== '' ? SQLITE3_TEXT : SQLITE3_NULL);
+    $stmt->bindValue(6, $ua    !== '' ? $ua    : null, $ua    !== '' ? SQLITE3_TEXT : SQLITE3_NULL);
+    $stmt->bindValue(7, $ip);
+    $stmt->bindValue(8, now_iso());
+    $stmt->execute();
+
+    // Keep only most recent 500 errors
+    $db->exec(
+        "DELETE FROM client_errors WHERE id NOT IN
+         (SELECT id FROM client_errors ORDER BY created_at DESC LIMIT 500)"
+    );
+
+    respond(['ok' => true]);
+}
+
+// ── Admin: list client errors ─────────────────────────────────────
+
+function handle_admin_errors(SQLite3 $db): never
+{
+    $uid = require_auth();
+    require_role($db, $uid, 'admin');
+
+    $limit = min((int)($_GET['limit'] ?? 50), 200);
+
+    $res  = $db->query(
+        "SELECT id, user_id, message, stack, url, user_agent, ip, created_at
+         FROM client_errors ORDER BY created_at DESC LIMIT $limit"
+    );
+    $rows = [];
+    while ($res && ($row = $res->fetchArray(SQLITE3_ASSOC))) {
+        $rows[] = [
+            'id'        => $row['id'],
+            'userId'    => $row['user_id'],
+            'message'   => $row['message'],
+            'stack'     => $row['stack'],
+            'url'       => $row['url'],
+            'userAgent' => $row['user_agent'],
+            'ip'        => $row['ip'],
+            'createdAt' => $row['created_at'],
+        ];
+    }
+
+    $total = (int)$db->querySingle('SELECT COUNT(*) FROM client_errors');
+    respond(['ok' => true, 'errors' => $rows, 'total' => $total]);
+}
+
+// ── SQLite backup cron ────────────────────────────────────────────
+// Schedule: daily at 03:00 UTC  →  0 3 * * *
+// GET https://yourdomain.com/api/index.php/cron/backup?key=YOUR_CRON_SECRET
+// Keeps 7 rolling daily backups alongside the main DB file.
+
+function handle_cron_backup(SQLite3 $db): never
+{
+    $key      = trim((string)($_GET['key'] ?? ''));
+    $expected = (string)(getenv('CRON_SECRET') ?: '');
+    if ($expected === '' || !hash_equals($expected, $key)) fail('Unauthorized', 401);
+
+    // Locate the live DB file
+    $candidates = [
+        dirname(__DIR__, 2) . '/private/slovak-life.sqlite',
+        __DIR__ . '/storage/slovak-life.sqlite',
+    ];
+    $dbPath = null;
+    foreach ($candidates as $cand) {
+        if (file_exists($cand)) { $dbPath = $cand; break; }
+    }
+    if ($dbPath === null) fail('DB file not found', 500);
+
+    $backupDir = dirname($dbPath) . '/backups';
+    if (!is_dir($backupDir) && !@mkdir($backupDir, 0750, true)) {
+        fail('Cannot create backup directory', 500);
+    }
+
+    // Flush WAL into the main file before copying
+    $db->exec('PRAGMA wal_checkpoint(TRUNCATE)');
+
+    $date       = gmdate('Y-m-d');
+    $backupPath = "{$backupDir}/slovak-life-{$date}.sqlite";
+
+    if (!copy($dbPath, $backupPath)) fail('copy() failed', 500);
+
+    // Retain only the 7 most recent daily backups
+    $files = glob("{$backupDir}/slovak-life-*.sqlite") ?: [];
+    rsort($files); // newest first
+    foreach (array_slice($files, 7) as $stale) {
+        @unlink($stale);
+    }
+
+    respond([
+        'ok'      => true,
+        'file'    => basename($backupPath),
+        'bytes'   => filesize($backupPath),
+        'backups' => count(glob("{$backupDir}/slovak-life-*.sqlite") ?: []),
+    ]);
 }
 
 // ── Sync push ─────────────────────────────────────────────────────
@@ -1145,9 +1462,134 @@ function handle_user_fcm_token(SQLite3 $db): never
     respond(['ok' => true]);
 }
 
+// ── Save reminder time ────────────────────────────────────────────
+
+function handle_user_reminder(SQLite3 $db): never
+{
+    init_session();
+    $uid  = require_auth();
+    $b    = body();
+    $time = isset($b['time']) ? trim((string)$b['time']) : null;
+
+    if ($time !== null && $time !== '' && !preg_match('/^\d{2}:\d{2}$/', $time)) {
+        fail('Невірний формат часу (очікується HH:MM)', 422);
+    }
+
+    $row = $db->querySingle("SELECT settings_j FROM users WHERE id = '" . SQLite3::escapeString($uid) . "'", true);
+    if (!$row) fail('Користувача не знайдено', 404);
+
+    $settings = json_decode((string)$row['settings_j'], true) ?? [];
+    if ($time === null || $time === '') {
+        unset($settings['reminderTime']);
+    } else {
+        $settings['reminderTime'] = $time;
+    }
+
+    $stmt = $db->prepare('UPDATE users SET settings_j = ?, updated_at = ? WHERE id = ?');
+    $stmt->bindValue(1, json_encode($settings, JSON_UNESCAPED_UNICODE));
+    $stmt->bindValue(2, now_iso());
+    $stmt->bindValue(3, $uid);
+    $stmt->execute();
+    respond(['ok' => true]);
+}
+
+// ── Process referral ──────────────────────────────────────────────
+
+function handle_user_referral(SQLite3 $db): never
+{
+    init_session();
+    $uid        = require_auth();
+    $referrerId = trim((string)(body()['referrerId'] ?? ''));
+
+    if ($referrerId === '' || $referrerId === $uid) respond(['ok' => true]);
+
+    // Only honour first referral per user
+    $cur = $db->querySingle("SELECT referred_by FROM users WHERE id = '" . SQLite3::escapeString($uid) . "'", true);
+    if (!$cur || (string)$cur['referred_by'] !== '') respond(['ok' => true]);
+
+    // Verify referrer exists and is active
+    $esc = SQLite3::escapeString($referrerId);
+    $ref = $db->querySingle("SELECT id, name_text FROM users WHERE id = '$esc' AND is_blocked = 0 LIMIT 1", true);
+    if (!$ref) respond(['ok' => true]);
+
+    // Mark this user as referred
+    $stmt = $db->prepare('UPDATE users SET referred_by = ?, updated_at = ? WHERE id = ?');
+    $stmt->bindValue(1, $referrerId);
+    $stmt->bindValue(2, now_iso());
+    $stmt->bindValue(3, $uid);
+    $stmt->execute();
+
+    // Award +1 streak freeze to the referrer
+    $stmt2 = $db->prepare('UPDATE progress SET freeze_cnt = freeze_cnt + 1, updated_at = ? WHERE user_id = ?');
+    $stmt2->bindValue(1, now_iso());
+    $stmt2->bindValue(2, $referrerId);
+    $stmt2->execute();
+
+    // Notify the referrer via push (best-effort)
+    $tokenRow = $db->querySingle("SELECT token FROM fcm_tokens WHERE user_id = '$esc' ORDER BY created_at DESC LIMIT 1", true);
+    if ($tokenRow && !empty($tokenRow['token'])) {
+        $newUser = $db->querySingle("SELECT name_text FROM users WHERE id = '" . SQLite3::escapeString($uid) . "'", true);
+        $name    = $newUser ? (string)$newUser['name_text'] : 'Новий учень';
+        fcm_send(
+            (string)$tokenRow['token'],
+            '🎉 Друг приєднався!',
+            "$name почав вивчати словацьку. Ти отримав ❄️ заморозку серії!",
+            ['tag' => 'referral']
+        );
+    }
+
+    respond(['ok' => true]);
+}
+
+// ── Admin broadcast push ──────────────────────────────────────────
+
+function handle_admin_notify(SQLite3 $db): never
+{
+    init_session();
+    $uid = require_auth();
+    require_role($db, $uid, 'admin');
+
+    $b      = body();
+    $title  = trim((string)($b['title']  ?? ''));
+    $body   = trim((string)($b['body']   ?? ''));
+    $target = trim((string)($b['target'] ?? 'all'));
+
+    if ($title === '' || $body === '') fail('title і body обовʼязкові', 422);
+
+    // Build parameterised query depending on audience
+    $allowedStatic = ['students' => "u.role = 'student'", 'plus' => "u.sub_status = 'plus'", 'all' => '1=1'];
+
+    if (array_key_exists($target, $allowedStatic)) {
+        $res = $db->query(
+            "SELECT ft.token FROM users u
+             JOIN fcm_tokens ft ON ft.user_id = u.id
+             WHERE u.is_blocked = 0 AND {$allowedStatic[$target]}"
+        );
+    } elseif (str_starts_with($target, 'level:')) {
+        $level = substr($target, 6);
+        $stmt  = $db->prepare(
+            'SELECT ft.token FROM users u
+             JOIN fcm_tokens ft ON ft.user_id = u.id
+             WHERE u.is_blocked = 0 AND u.level = ?'
+        );
+        $stmt->bindValue(1, $level);
+        $res = $stmt->execute();
+    } else {
+        fail('Невідомий target', 422);
+    }
+
+    $sent = 0;
+    while ($res && ($row = $res->fetchArray(SQLITE3_ASSOC))) {
+        fcm_send((string)$row['token'], $title, $body, ['tag' => 'admin']);
+        $sent++;
+    }
+    respond(['ok' => true, 'sent' => $sent]);
+}
+
 // ── Daily push cron ───────────────────────────────────────────────
-// Set up cron on shared hosting: GET https://yourdomain.com/api/index.php/cron/push?key=YOUR_CRON_SECRET
-// Run at 20:00 UTC daily.
+// Cron: run EVERY HOUR  →  0 * * * *
+// e.g.  GET https://yourdomain.com/api/index.php/cron/push?key=YOUR_CRON_SECRET
+// Each user is notified only once per day, at the hour matching their reminderTime setting.
 
 function handle_cron_push(SQLite3 $db): never
 {
@@ -1155,14 +1597,17 @@ function handle_cron_push(SQLite3 $db): never
     $expected = (string)(getenv('CRON_SECRET') ?: '');
     if ($expected === '' || !hash_equals($expected, $key)) fail('Unauthorized', 401);
 
-    $today = today_key();
-    $sent  = 0;
+    $today   = today_key();
+    $nowHour = gmdate('H'); // "09", "14", etc. — UTC
+    $sent    = 0;
 
     $res = $db->query(
         'SELECT u.id, u.name_text, u.sub_status, u.trial_ends, u.settings_j,
+                p.last_prac, p.streak_days, p.last_reminder_date,
                 ft.token
          FROM users u
-         JOIN fcm_tokens ft ON ft.user_id = u.id
+         JOIN fcm_tokens ft  ON ft.user_id  = u.id
+         JOIN progress    p  ON p.user_id   = u.id
          WHERE u.is_blocked = 0'
     );
     if (!$res) respond(['ok' => true, 'sent' => 0]);
@@ -1171,39 +1616,69 @@ function handle_cron_push(SQLite3 $db): never
         $settings = json_decode((string)$row['settings_j'], true) ?? [];
         if (empty($settings['notificationsEnabled'])) continue;
 
-        $prog         = $db->querySingle("SELECT last_prac FROM progress WHERE user_id = '{$row['id']}'", true);
-        $last_prac    = (string)($prog['last_prac'] ?? '');
+        $reminderTime = trim((string)($settings['reminderTime'] ?? ''));
         $token        = (string)$row['token'];
+        $lastPrac     = (string)($row['last_prac'] ?? '');
+        $lastReminder = (string)($row['last_reminder_date'] ?? '');
 
-        // Streak at risk: practiced before but not today
-        if ($last_prac !== '' && $last_prac < $today) {
-            fcm_send($token, '🔥 Серія під загрозою!',
-                'Не переривай серію — відкрий Slovak Life.', ['tag' => 'streak']);
-            $sent++;
-            continue; // one notification per user per day
-        }
+        // Skip users who haven't set a reminder time
+        if ($reminderTime === '') continue;
 
-        // Trial ending ≤3 days
-        if ($row['sub_status'] === 'trial' && !empty($row['trial_ends'])) {
+        // Already sent today — skip
+        if ($lastReminder === $today) continue;
+
+        // Check whether the reminder hour matches current UTC hour
+        $remHour = substr($reminderTime, 0, 2);
+        if ($remHour !== $nowHour) continue;
+
+        // Determine message (priority: streak > trial > daily lesson)
+        $title = '';
+        $body  = '';
+        $tag   = 'reminder';
+
+        if ($lastPrac !== '' && $lastPrac < $today) {
+            // Streak at risk
+            $streak = (int)$row['streak_days'];
+            $title  = '🔥 Серія під загрозою!';
+            $body   = "Серія $streak " . plural_days($streak) . " закінчиться опівночі. Не переривай!";
+            $tag    = 'streak';
+        } elseif ($row['sub_status'] === 'trial' && !empty($row['trial_ends'])) {
             $days = (int)round((strtotime((string)$row['trial_ends']) - time()) / 86400);
             if ($days >= 0 && $days <= 3) {
-                $d = $days === 1 ? '1 день' : "$days дні";
-                fcm_send($token, '⏳ Пробний доступ закінчується',
-                    "Залишилось $d. Переходь на Plus!", ['tag' => 'trial']);
-                $sent++;
-                continue;
+                $d     = $days === 1 ? '1 день' : "$days дні";
+                $title = '⏳ Пробний доступ закінчується';
+                $body  = "Залишилось $d. Переходь на Plus щоб не втратити прогрес!";
+                $tag   = 'trial';
             }
         }
 
-        // Scenario of the day: send a relevant phrase based on user goal
-        $goal  = strtolower(trim((string)($settings['goal'] ?? '')));
-        $phrase = scenario_phrase_for_goal($goal);
-        if ($phrase) {
-            fcm_send($token, '📚 Фраза дня', $phrase, ['tag' => 'scenario']);
-            $sent++;
+        if ($title === '') {
+            $name  = (string)$row['name_text'];
+            $title = '📚 Час вчити словацьку!';
+            $body  = "$name, твій щоденний урок чекає.";
         }
+
+        fcm_send($token, $title, $body, ['tag' => $tag, 'click_action' => '/app/path']);
+
+        // Mark reminder as sent so we don't duplicate within the same day
+        $mark = $db->prepare('UPDATE progress SET last_reminder_date = ? WHERE user_id = ?');
+        $mark->bindValue(1, $today);
+        $mark->bindValue(2, (string)$row['id']);
+        $mark->execute();
+
+        $sent++;
     }
     respond(['ok' => true, 'sent' => $sent]);
+}
+
+function plural_days(int $n): string
+{
+    $n = abs($n) % 100;
+    $n1 = $n % 10;
+    if ($n >= 11 && $n <= 19) return 'днів';
+    if ($n1 === 1) return 'день';
+    if ($n1 >= 2 && $n1 <= 4) return 'дні';
+    return 'днів';
 }
 
 // ── Weekly report push cron ───────────────────────────────────────

@@ -1,0 +1,306 @@
+{
+  "lessons": [
+    {
+      "id": "lesson-101-a1",
+      "level": "A1",
+      "title": "Робота і документи",
+      "topic": "Офіційне спілкування",
+      "description": "Практичний урок для ситуацій на роботі та в держустановах.",
+      "order": 101,
+      "xpReward": 15,
+      "estimatedMinutes": 8,
+      "isPublished": true,
+      "intro": "Вивчи слова які потрібні для роботи і документів.",
+      "completionMessage": "Відмінно! Слова додані до твого словника.",
+      "updatedAt": "2026-06-16T12:00:00.000Z",
+
+      "words": [
+        {
+          "id": "lesson-101-a1-word-1",
+          "sk": "práca",
+          "uk": "робота",
+          "exampleSk": "Hľadám prácu v Bratislave.",
+          "exampleUk": "Я шукаю роботу в Братиславі.",
+          "level": "A1",
+          "topic": "Офіційне спілкування",
+          "tags": ["робота", "документи"]
+        },
+        {
+          "id": "lesson-101-a1-word-2",
+          "sk": "zmluva",
+          "uk": "договір",
+          "exampleSk": "Podpíšem zmluvu zajtra.",
+          "exampleUk": "Підпишу договір завтра.",
+          "level": "A1",
+          "topic": "Офіційне спілкування",
+          "tags": ["документи"]
+        },
+        {
+          "id": "lesson-101-a1-word-3",
+          "sk": "plat",
+          "uk": "зарплата",
+          "exampleSk": "Aký je môj plat?",
+          "exampleUk": "Яка моя зарплата?",
+          "level": "A1",
+          "topic": "Офіційне спілкування",
+          "tags": ["робота"]
+        },
+        {
+          "id": "lesson-101-a1-word-4",
+          "sk": "dovolenka",
+          "uk": "відпустка",
+          "exampleSk": "Chcem dovolenku v júli.",
+          "exampleUk": "Хочу відпустку в липні.",
+          "level": "A1",
+          "topic": "Офіційне спілкування",
+          "tags": ["робота"]
+        },
+        {
+          "id": "lesson-101-a1-word-5",
+          "sk": "úrad",
+          "uk": "установа / управління",
+          "exampleSk": "Idem na úrad práce.",
+          "exampleUk": "Іду до управління праці.",
+          "level": "A1",
+          "topic": "Офіційне спілкування",
+          "tags": ["документи", "офіційне"]
+        }
+      ],
+
+      "exercises": [
+        {
+          "id": "lesson-101-a1-ex-1",
+          "lessonId": "lesson-101-a1",
+          "type": "multiple_choice_translation",
+          "question": "Що означає «práca»?",
+          "options": ["робота", "зарплата", "договір", "відпустка"],
+          "correctAnswer": "робота",
+          "explanation": "Hľadám prácu — Я шукаю роботу.",
+          "wordIds": ["lesson-101-a1-word-1"],
+          "order": 1,
+          "difficulty": "easy"
+        },
+        {
+          "id": "lesson-101-a1-ex-2",
+          "lessonId": "lesson-101-a1",
+          "type": "reverse_translation",
+          "question": "Як по-словацьки «договір»?",
+          "options": ["práca", "zmluva", "plat", "úrad"],
+          "correctAnswer": "zmluva",
+          "explanation": "Podpíšem zmluvu — Підпишу договір.",
+          "wordIds": ["lesson-101-a1-word-2"],
+          "order": 2,
+          "difficulty": "easy"
+        },
+        {
+          "id": "lesson-101-a1-ex-3",
+          "lessonId": "lesson-101-a1",
+          "type": "true_false",
+          "question": "«Plat» означає «зарплата».",
+          "options": ["Правильно", "Неправильно"],
+          "correctAnswer": "Правильно",
+          "explanation": "Aký je môj plat? — Яка моя зарплата?",
+          "wordIds": ["lesson-101-a1-word-3"],
+          "order": 3,
+          "difficulty": "easy"
+        },
+        {
+          "id": "lesson-101-a1-ex-4",
+          "lessonId": "lesson-101-a1",
+          "type": "fill_blank",
+          "question": "Chcem ___ v júli. (відпустку)",
+          "correctAnswer": "dovolenku",
+          "explanation": "Chcem dovolenku v júli. — Хочу відпустку в липні.",
+          "wordIds": ["lesson-101-a1-word-4"],
+          "order": 4,
+          "difficulty": "medium"
+        },
+        {
+          "id": "lesson-101-a1-ex-5",
+          "lessonId": "lesson-101-a1",
+          "type": "sentence_ordering",
+          "question": "Збери речення: «Іду до управління праці.»",
+          "options": ["Idem", "na", "úrad", "práce"],
+          "correctAnswer": ["Idem", "na", "úrad", "práce"],
+          "explanation": "Звертай увагу: у словацькому «úrad práce» — управління праці.",
+          "wordIds": ["lesson-101-a1-word-5"],
+          "order": 5,
+          "difficulty": "medium"
+        },
+        {
+          "id": "lesson-101-a1-ex-6",
+          "lessonId": "lesson-101-a1",
+          "type": "match_pairs",
+          "question": "З'єднай слова з перекладами.",
+          "options": ["práca", "робота", "zmluva", "договір", "plat", "зарплата", "dovolenka", "відпустка"],
+          "correctAnswer": ["práca|робота", "zmluva|договір", "plat|зарплата", "dovolenka|відпустка"],
+          "wordIds": [
+            "lesson-101-a1-word-1",
+            "lesson-101-a1-word-2",
+            "lesson-101-a1-word-3",
+            "lesson-101-a1-word-4"
+          ],
+          "order": 6,
+          "difficulty": "medium"
+        },
+        {
+          "id": "lesson-101-a1-ex-7",
+          "lessonId": "lesson-101-a1",
+          "type": "typing",
+          "question": "Напиши по-словацьки: «установа / управління»",
+          "correctAnswer": "úrad",
+          "explanation": "Idem na úrad práce. — Іду до управління праці.",
+          "wordIds": ["lesson-101-a1-word-5"],
+          "order": 7,
+          "difficulty": "hard"
+        }
+      ]
+    },
+
+    {
+      "id": "lesson-102-a1",
+      "level": "A1",
+      "title": "Медицина і здоров'я",
+      "topic": "Лікар / аптека",
+      "description": "Слова для лікаря, аптеки та опису симптомів.",
+      "order": 102,
+      "xpReward": 15,
+      "estimatedMinutes": 8,
+      "isPublished": true,
+      "intro": "Навчись описати свій стан здоров'я по-словацьки.",
+      "completionMessage": "Урок завершено. Ці слова можуть врятувати!",
+      "updatedAt": "2026-06-16T12:00:00.000Z",
+
+      "words": [
+        {
+          "id": "lesson-102-a1-word-1",
+          "sk": "lekár",
+          "uk": "лікар",
+          "exampleSk": "Potrebujem lekára.",
+          "exampleUk": "Мені потрібен лікар.",
+          "level": "A1",
+          "topic": "Лікар / аптека",
+          "tags": ["медицина"]
+        },
+        {
+          "id": "lesson-102-a1-word-2",
+          "sk": "bolí ma",
+          "uk": "у мене болить",
+          "exampleSk": "Bolí ma hlava.",
+          "exampleUk": "У мене болить голова.",
+          "level": "A1",
+          "topic": "Лікар / аптека",
+          "tags": ["медицина", "симптоми"]
+        },
+        {
+          "id": "lesson-102-a1-word-3",
+          "sk": "poistenie",
+          "uk": "страховка",
+          "exampleSk": "Mám zdravotné poistenie.",
+          "exampleUk": "У мене є медична страховка.",
+          "level": "A1",
+          "topic": "Лікар / аптека",
+          "tags": ["медицина", "документи"]
+        },
+        {
+          "id": "lesson-102-a1-word-4",
+          "sk": "ambulancia",
+          "uk": "кабінет / амбулаторія",
+          "exampleSk": "Kde je ambulancia?",
+          "exampleUk": "Де кабінет?",
+          "level": "A1",
+          "topic": "Лікар / аптека",
+          "tags": ["медицина"]
+        },
+        {
+          "id": "lesson-102-a1-word-5",
+          "sk": "alergia",
+          "uk": "алергія",
+          "exampleSk": "Mám alergiu na penicilín.",
+          "exampleUk": "У мене алергія на пеніцилін.",
+          "level": "A1",
+          "topic": "Лікар / аптека",
+          "tags": ["медицина", "симптоми"]
+        }
+      ],
+
+      "exercises": [
+        {
+          "id": "lesson-102-a1-ex-1",
+          "lessonId": "lesson-102-a1",
+          "type": "multiple_choice_translation",
+          "question": "Що означає «lekár»?",
+          "options": ["лікар", "аптека", "страховка", "алергія"],
+          "correctAnswer": "лікар",
+          "explanation": "Potrebujem lekára — Мені потрібен лікар.",
+          "wordIds": ["lesson-102-a1-word-1"],
+          "order": 1,
+          "difficulty": "easy"
+        },
+        {
+          "id": "lesson-102-a1-ex-2",
+          "lessonId": "lesson-102-a1",
+          "type": "fill_blank",
+          "question": "___ hlava. (У мене болить голова.)",
+          "correctAnswer": "Bolí ma",
+          "explanation": "Bolí ma hlava. — У мене болить голова.",
+          "wordIds": ["lesson-102-a1-word-2"],
+          "order": 2,
+          "difficulty": "medium"
+        },
+        {
+          "id": "lesson-102-a1-ex-3",
+          "lessonId": "lesson-102-a1",
+          "type": "reverse_translation",
+          "question": "Як по-словацьки «страховка»?",
+          "options": ["lekár", "alergia", "poistenie", "ambulancia"],
+          "correctAnswer": "poistenie",
+          "explanation": "Mám zdravotné poistenie — У мене є медична страховка.",
+          "wordIds": ["lesson-102-a1-word-3"],
+          "order": 3,
+          "difficulty": "easy"
+        },
+        {
+          "id": "lesson-102-a1-ex-4",
+          "lessonId": "lesson-102-a1",
+          "type": "true_false",
+          "question": "«Ambulancia» означає «швидка допомога».",
+          "options": ["Правильно", "Неправильно"],
+          "correctAnswer": "Неправильно",
+          "explanation": "Ambulancia — це кабінет або амбулаторія, не швидка. Швидка — záchranná služba.",
+          "wordIds": ["lesson-102-a1-word-4"],
+          "order": 4,
+          "difficulty": "medium"
+        },
+        {
+          "id": "lesson-102-a1-ex-5",
+          "lessonId": "lesson-102-a1",
+          "type": "sentence_ordering",
+          "question": "Збери речення: «У мене алергія на пеніцилін.»",
+          "options": ["Mám", "alergiu", "na", "penicilín"],
+          "correctAnswer": ["Mám", "alergiu", "na", "penicilín"],
+          "explanation": "Важливо вміти сказати про алергію лікарю.",
+          "wordIds": ["lesson-102-a1-word-5"],
+          "order": 5,
+          "difficulty": "medium"
+        },
+        {
+          "id": "lesson-102-a1-ex-6",
+          "lessonId": "lesson-102-a1",
+          "type": "match_pairs",
+          "question": "З'єднай слова з перекладами.",
+          "options": ["lekár", "лікар", "poistenie", "страховка", "alergia", "алергія", "ambulancia", "кабінет / амбулаторія"],
+          "correctAnswer": ["lekár|лікар", "poistenie|страховка", "alergia|алергія", "ambulancia|кабінет / амбулаторія"],
+          "wordIds": [
+            "lesson-102-a1-word-1",
+            "lesson-102-a1-word-3",
+            "lesson-102-a1-word-5",
+            "lesson-102-a1-word-4"
+          ],
+          "order": 6,
+          "difficulty": "medium"
+        }
+      ]
+    }
+  ]
+}

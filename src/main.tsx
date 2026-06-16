@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { App } from "./app/App";
 import { ErrorBoundary } from "./components/ErrorBoundary";
+import { apiClient } from "./services/apiClient";
 import { syncService } from "./services/syncService";
 import { useAppStore } from "./store/useAppStore";
 
@@ -16,10 +17,39 @@ createRoot(document.getElementById("root")!).render(
   </StrictMode>
 );
 
+// Global error reporter — catches JS errors outside React tree (network errors, promise rejections, etc.)
+// Throttled to max 1 report per 5 s to prevent flooding the server.
+let _lastReportedAt = 0;
+function reportGlobalError(message: string, stack?: string) {
+  if (!message || import.meta.env.DEV) return; // skip in dev
+  const now = Date.now();
+  if (now - _lastReportedAt < 5000) return;
+  _lastReportedAt = now;
+  apiClient.reportError({ message, stack, url: window.location.href }).catch(() => undefined);
+}
+
+window.onerror = (_msg, _src, _line, _col, error) => {
+  reportGlobalError(error?.message ?? String(_msg), error?.stack);
+  return false; // don't suppress default browser logging
+};
+
+window.addEventListener("unhandledrejection", (event) => {
+  const err = event.reason;
+  const message = err instanceof Error ? err.message : String(err ?? "Unhandled rejection");
+  reportGlobalError(message, err instanceof Error ? err.stack : undefined);
+});
+
 function showInAppPush(title: string, body: string) {
   const el = document.createElement("div");
   el.className = "push-toast";
-  el.innerHTML = `<strong>${title}</strong>${body ? `<em>${body}</em>` : ""}`;
+  const strong = document.createElement("strong");
+  strong.textContent = title;
+  el.appendChild(strong);
+  if (body) {
+    const em = document.createElement("em");
+    em.textContent = body;
+    el.appendChild(em);
+  }
   document.body.appendChild(el);
   setTimeout(() => el.remove(), 5000);
 }

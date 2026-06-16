@@ -105,6 +105,45 @@ export const apiClient = {
     });
   },
 
+  broadcastPush(title: string, body: string, target: string) {
+    return apiRequest<{ ok: boolean; sent: number }>("/admin/notify", {
+      method: "POST",
+      body: JSON.stringify({ title, body, target })
+    });
+  },
+
+  reportError(data: { message: string; stack?: string; url?: string }) {
+    return apiRequest<{ ok: boolean }>("/errors", {
+      method: "POST",
+      body: JSON.stringify(data)
+    });
+  },
+
+  getAdminErrors(limit = 50) {
+    return apiRequest<{ ok: boolean; errors: Array<{ id: string; userId: string | null; message: string; stack: string | null; url: string | null; userAgent: string | null; ip: string | null; createdAt: string }>; total: number }>(`/admin/errors?limit=${limit}`);
+  },
+
+  forgotPassword(email: string) {
+    return apiRequest<{ ok: boolean }>("/auth/forgot", {
+      method: "POST",
+      body: JSON.stringify({ email })
+    });
+  },
+
+  resetPassword(token: string, password: string) {
+    return apiRequest<{ ok: boolean }>("/auth/reset", {
+      method: "POST",
+      body: JSON.stringify({ token, password })
+    });
+  },
+
+  claimReferral(referrerId: string) {
+    return apiRequest<{ ok: boolean }>("/user/referral", {
+      method: "POST",
+      body: JSON.stringify({ referrerId })
+    });
+  },
+
   getAdminStats() {
     return apiRequest<{
       ok: boolean;

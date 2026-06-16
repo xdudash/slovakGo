@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams } from "react-router-dom";
-import { AlertCircle, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, Download, Flame, Heart, Layers, Lock, LogOut, Medal, Play, Search, Settings, ShoppingBag, Star, Trophy, Volume2, Zap } from "lucide-react";
+import { AlertCircle, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, Download, Flame, Heart, Layers, Link2, Lock, LogOut, Medal, Play, Search, Settings, Share2, ShoppingBag, Star, Trophy, Users, Volume2, Zap } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, EmptyState, Field, Modal, PageHeader, ProgressBar } from "../../components/ui";
 import { PageSkeleton } from "../../components/Skeleton";
@@ -16,6 +16,7 @@ import { useT } from "../../i18n";
 import type { AnswerRecord, Exercise, LeaderboardEntry, UserLevel } from "../../types";
 import { getDailyPhrases, getScenarioForGoal } from "../../data/scenarios";
 import { downloadCertificate } from "../../services/certificateService";
+import { generateShareCard, shareOrDownloadCard } from "../../services/shareService";
 import { formatWeekTimer, secondsUntilWeekEnd } from "../../utils/date";
 
 function useWeekTimer(): number {
@@ -365,6 +366,7 @@ function LessonScreen() {
   const [feedback, setFeedback] = useState<"correct" | "wrong" | null>(null);
   const [records, setRecords] = useState<AnswerRecord[]>([]);
   const [celebration, setCelebration] = useState<{ xp: number; correct: number; total: number } | null>(null);
+  const [sharing, setSharing] = useState(false);
   if (!user || !progress || !lesson) return <Navigate to="/app/path" replace />;
   const activeLesson = lesson;
   const exercise = activeLesson.exercises[index];
@@ -452,6 +454,20 @@ function LessonScreen() {
             <div className="celebrate-icon">🎉</div>
             <div className="celebrate-xp">+{celebration.xp} XP</div>
             <p className="celebrate-sub">{celebration.correct} / {celebration.total} правильно</p>
+            <button
+              type="button"
+              className="celebrate-share-btn"
+              disabled={sharing}
+              onClick={async () => {
+                setSharing(true);
+                try {
+                  const blob = await generateShareCard({ xp: celebration.xp, label: "в цьому уроці", streakDays: progress.streakDays, userName: user.name, correctCount: celebration.correct, totalCount: celebration.total });
+                  await shareOrDownloadCard(blob, `Я щойно пройшов урок у Slovak Life! +${celebration.xp} XP`);
+                } finally { setSharing(false); }
+              }}
+            >
+              <Share2 size={16} /> {sharing ? "…" : "Поділитись"}
+            </button>
             <Button autoFocus onClick={() => navigate("/app/path")}>Продовжити</Button>
           </div>
         </div>
@@ -1139,6 +1155,8 @@ function ProfileScreen() {
   const { t } = useT();
   const [modal, setModal] = useState<"streak" | "hearts" | "avatar" | "logout" | null>(null);
   const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
+  const [referralCopied, setReferralCopied] = useState(false);
+  const [sharingProgress, setSharingProgress] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
   if (!user || !progress) return <PageSkeleton />;
   const words = vocabularyService.build(data.lessons, data.userWords[user.id]);
@@ -1255,6 +1273,56 @@ function ProfileScreen() {
             )}
           </div>
         </Card>
+
+        <Card className="referral-card">
+          <div className="referral-card-header">
+            <div className="referral-card-icon"><Users size={20} /></div>
+            <div>
+              <div className="referral-card-title">{t("student.profile.referral_title")}</div>
+              <div className="referral-card-text">{t("student.profile.referral_text")}</div>
+            </div>
+          </div>
+          <div className="referral-link-row">
+            <span className="referral-link-url">{`${window.location.origin}/register?ref=${user.id}`}</span>
+            {referralCopied
+              ? <span className="referral-copied">{t("student.profile.referral_copied")}</span>
+              : <button type="button" className="referral-copy-btn" onClick={async () => {
+                  try { await navigator.clipboard.writeText(`${window.location.origin}/register?ref=${user.id}`); } catch {}
+                  setReferralCopied(true);
+                  setTimeout(() => setReferralCopied(false), 2000);
+                }}>
+                  <Link2 size={13} /> {t("student.profile.referral_copy")}
+                </button>
+            }
+          </div>
+          <button type="button" className="referral-share-btn" onClick={() => {
+            const url = `${window.location.origin}/register?ref=${user.id}`;
+            if (navigator.share) {
+              navigator.share({ title: "Slovak Life", text: t("student.profile.referral_share_text"), url }).catch(() => undefined);
+            } else {
+              navigator.clipboard.writeText(url).catch(() => undefined);
+              setReferralCopied(true);
+              setTimeout(() => setReferralCopied(false), 2000);
+            }
+          }}>
+            <Share2 size={15} /> {t("student.profile.referral_share_link")}
+          </button>
+        </Card>
+
+        <button
+          type="button"
+          className="share-progress-btn"
+          disabled={sharingProgress}
+          onClick={async () => {
+            setSharingProgress(true);
+            try {
+              const blob = await generateShareCard({ xp: progress.xpWeekly, label: "цього тижня", streakDays: progress.streakDays, userName: user.name });
+              await shareOrDownloadCard(blob, `Я вивчаю словацьку у Slovak Life! ${progress.xpWeekly} XP цього тижня`);
+            } finally { setSharingProgress(false); }
+          }}
+        >
+          <Share2 size={16} /> {sharingProgress ? "…" : t("student.profile.share_progress")}
+        </button>
 
         {isLevelComplete && (
           <Card className="certificate-card">
