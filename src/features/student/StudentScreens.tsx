@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { AlertCircle, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, Download, Flame, Heart, Layers, Link2, Lock, LogOut, Medal, Play, Search, Settings, Share2, ShoppingBag, Star, Trophy, Users, Volume2, Zap } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, EmptyState, Field, Modal, PageHeader, ProgressBar } from "../../components/ui";
@@ -1684,16 +1684,67 @@ function LevelsScreen() {
 }
 
 function ShopScreen() {
-  const { t } = useT();
+  const { t, ta } = useT();
+  const { user } = useStudentData();
+  const [searchParams] = useSearchParams();
+  const [loading, setLoading] = useState(false);
+
+  const isPlus = user?.subscriptionStatus === "plus";
+  const didSubscribe = searchParams.get("subscribed") === "1";
+
+  async function handleSubscribe() {
+    setLoading(true);
+    try {
+      const { url } = await apiClient.createCheckoutSession();
+      window.location.href = url;
+    } catch {
+      setLoading(false);
+    }
+  }
+
+  async function handlePortal() {
+    setLoading(true);
+    try {
+      const { url } = await apiClient.openCustomerPortal();
+      window.location.href = url;
+    } catch {
+      setLoading(false);
+    }
+  }
+
+  const features = ta("student.shop.features");
+
   return (
     <main className="page-content">
       <PageHeader title={t("student.shop.title")} subtitle={t("student.shop.subtitle")} />
+
+      {didSubscribe && (
+        <Card className="shop-success-card">
+          <CheckCircle2 size={32} color="var(--green)" />
+          <h3>{t("student.shop.success_title")}</h3>
+          <p>{t("student.shop.success_text")}</p>
+        </Card>
+      )}
+
       <Card className="shop-card">
         <Trophy size={38} />
         <h2>{t("student.shop.product")}</h2>
         <p>{t("student.shop.desc")}</p>
-        <Button disabled>{t("student.shop.payment_disabled")}</Button>
-        <p className="hint-text">{t("student.shop.payment_hint")}</p>
+        {features.length > 0 && (
+          <ul className="shop-features">
+            {features.map((f) => (
+              <li key={f}><CheckCircle2 size={14} /> {f}</li>
+            ))}
+          </ul>
+        )}
+        {isPlus
+          ? <Button variant="secondary" disabled={loading} onClick={handlePortal}>
+              {loading ? t("student.shop.btn_loading") : t("student.shop.btn_manage")}
+            </Button>
+          : <Button variant="primary" disabled={loading} onClick={handleSubscribe}>
+              {loading ? t("student.shop.btn_loading") : t("student.shop.btn_subscribe")}
+            </Button>
+        }
       </Card>
     </main>
   );

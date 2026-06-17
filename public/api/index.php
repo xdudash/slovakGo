@@ -13,6 +13,25 @@
  */
 declare(strict_types=1);
 
+// Load .env.local from project root (two levels up from public/api/).
+// On production, set env vars via cPanel / server config instead.
+(static function (): void {
+    $envFile = dirname(__DIR__, 2) . '/.env.local';
+    if (!is_file($envFile)) return;
+    foreach (file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
+        $line = trim($line);
+        if ($line === '' || str_starts_with($line, '#')) continue;
+        if (!str_contains($line, '=')) continue;
+        [$key, $val] = explode('=', $line, 2);
+        $key = trim($key);
+        $val = trim($val, " \t\"'");
+        if ($key !== '' && getenv($key) === false) {   // don't override real server env
+            putenv("$key=$val");
+            $_ENV[$key] = $val;
+        }
+    }
+})();
+
 // ══════════════════════════════════════════════════════════════════
 // CORS  (runs before everything so OPTIONS pre-flight works)
 // ══════════════════════════════════════════════════════════════════
@@ -244,8 +263,10 @@ function migrate(SQLite3 $db): void
 
     // Additive migrations for new columns (safe to run every boot)
     foreach ([
-        "ALTER TABLE progress ADD COLUMN last_reminder_date TEXT NOT NULL DEFAULT ''",
-        "ALTER TABLE users    ADD COLUMN referred_by         TEXT NOT NULL DEFAULT ''",
+        "ALTER TABLE progress ADD COLUMN last_reminder_date  TEXT NOT NULL DEFAULT ''",
+        "ALTER TABLE users    ADD COLUMN referred_by          TEXT NOT NULL DEFAULT ''",
+        "ALTER TABLE users    ADD COLUMN stripe_customer_id   TEXT NOT NULL DEFAULT ''",
+        "ALTER TABLE users    ADD COLUMN stripe_sub_id        TEXT NOT NULL DEFAULT ''",
     ] as $ddl) {
         try { $db->exec($ddl); } catch (\Exception $e) { /* column already exists — ignore */ }
     }
@@ -343,7 +364,9 @@ $path = route_path();
 $meth = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 
 // CSRF: require X-Requested-With on all mutating requests (SameSite=Lax + this = defense-in-depth)
-if ($meth === 'POST') {
+// /billing/webhook is exempted — Stripe sends raw HTTP POST without browser headers;
+// it is verified instead by HMAC signature inside handle_billing_webhook().
+if ($meth === 'POST' && $path !== '/billing/webhook') {
     if (($_SERVER['HTTP_X_REQUESTED_WITH'] ?? '') !== 'XMLHttpRequest') {
         fail('Forbidden', 403);
     }
@@ -371,6 +394,9 @@ elseif  ($meth === 'POST' && $path === '/admin/notify')                { handle_
 elseif  ($meth === 'GET'  && $path === '/admin/stats')                 { handle_admin_stats($db); }
 elseif  ($meth === 'GET'  && $path === '/cron/push')                   { handle_cron_push($db); }
 elseif  ($meth === 'GET'  && $path === '/cron/weekly')                 { handle_cron_weekly($db); }
+elseif  ($meth === 'POST' && $path === '/billing/checkout')            { handle_billing_checkout($db); }
+elseif  ($meth === 'POST' && $path === '/billing/portal')              { handle_billing_portal($db); }
+elseif  ($meth === 'POST' && $path === '/billing/webhook')             { handle_billing_webhook($db); }
 else    fail("Маршрут не знайдено: $path", 404);
 
 // ══════════════════════════════════════════════════════════════════
@@ -1875,4 +1901,126 @@ function row_to_user(array $row): array
         'createdAt'          => $row['created_at'],
         'updatedAt'          => $row['updated_at'],
     ];
+}
+
+// ══════════════════════════════════════════════════════════════════
+// Stripe billing
+// ══════════════════════════════════════════════════════════════════
+
+function stripe_load(): void
+{
+    $autoload = dirname(__DIR__, 2) . '/vendor/autoload.php';
+    if (!file_exists($autoload)) {
+        fail('Stripe SDK не встановлено. Виконайте: composer require stripe/stripe-php', 503);
+    }
+    require_once $autoload;
+    \Stripe\Stripe::setApiKey((string)getenv('STRIPE_SECRET_KEY'));
+}
+
+// POST /billing/checkout — creates Stripe Checkout session, returns redirect URL
+function handle_billing_checkout(SQLite3 $db): never
+{
+    stripe_load();
+    $uid  = require_auth();
+    $stmt = $db->prepare('SELECT email, stripe_customer_id FROM users WHERE id = ? LIMIT 1');
+    $stmt->bindValue(1, $uid);
+    $res  = $stmt->execute();
+    $row  = $res ? $res->fetchArray(SQLITE3_ASSOC) : false;
+    if (!$row) fail('Користувача не знайдено', 404);
+
+    $priceId = (string)getenv('STRIPE_PRICE_ID');
+    if ($priceId === '') fail('STRIPE_PRICE_ID не налаштовано', 503);
+
+    $appUrl = rtrim((string)(getenv('APP_URL') ?: 'http://localhost:5173'), '/');
+    $params = [
+        'mode'                  => 'subscription',
+        'client_reference_id'   => $uid,
+        'line_items'            => [['price' => $priceId, 'quantity' => 1]],
+        'success_url'           => $appUrl . '/app/shop?subscribed=1',
+        'cancel_url'            => $appUrl . '/app/shop',
+        'allow_promotion_codes' => true,
+    ];
+    $customerId = (string)($row['stripe_customer_id'] ?? '');
+    if ($customerId !== '') {
+        $params['customer'] = $customerId;
+    } else {
+        $params['customer_email'] = (string)$row['email'];
+    }
+
+    $session = \Stripe\Checkout\Session::create($params);
+    respond(['url' => $session->url]);
+}
+
+// POST /billing/portal — opens Stripe Customer Portal (manage/cancel subscription)
+function handle_billing_portal(SQLite3 $db): never
+{
+    stripe_load();
+    $uid  = require_auth();
+    $stmt = $db->prepare('SELECT stripe_customer_id FROM users WHERE id = ? LIMIT 1');
+    $stmt->bindValue(1, $uid);
+    $res  = $stmt->execute();
+    $row  = $res ? $res->fetchArray(SQLITE3_ASSOC) : false;
+    $customerId = (string)($row['stripe_customer_id'] ?? '');
+    if ($customerId === '') fail('Білінговий акаунт не знайдено', 404);
+
+    $appUrl  = rtrim((string)(getenv('APP_URL') ?: 'http://localhost:5173'), '/');
+    $session = \Stripe\BillingPortal\Session::create([
+        'customer'   => $customerId,
+        'return_url' => $appUrl . '/app/shop',
+    ]);
+    respond(['url' => $session->url]);
+}
+
+// POST /billing/webhook — called by Stripe, verified via HMAC signature (no session auth)
+function handle_billing_webhook(SQLite3 $db): never
+{
+    stripe_load();
+    $payload = (string)(file_get_contents('php://input') ?: '');
+    $sig     = $_SERVER['HTTP_STRIPE_SIGNATURE'] ?? '';
+    $secret  = (string)getenv('STRIPE_WEBHOOK_SECRET');
+
+    try {
+        $event = \Stripe\Webhook::constructEvent($payload, $sig, $secret);
+    } catch (\Exception) {
+        http_response_code(400);
+        echo json_encode(['error' => 'Invalid signature']);
+        exit;
+    }
+
+    $type = $event->type;
+    $obj  = $event->data->object;
+
+    if ($type === 'checkout.session.completed') {
+        $uid        = (string)($obj->client_reference_id ?? '');
+        $customerId = (string)($obj->customer ?? '');
+        $subId      = (string)($obj->subscription ?? '');
+        if ($uid === '') respond(['ok' => true]);
+
+        $ends = date('Y-m-d H:i:s', strtotime('+1 month'));
+        $stmt = $db->prepare(
+            'UPDATE users SET sub_status = ?, trial_ends = ?, stripe_customer_id = ?, stripe_sub_id = ?, updated_at = ? WHERE id = ?'
+        );
+        $stmt->bindValue(1, 'plus');
+        $stmt->bindValue(2, $ends);
+        $stmt->bindValue(3, $customerId);
+        $stmt->bindValue(4, $subId);
+        $stmt->bindValue(5, date('Y-m-d H:i:s'));
+        $stmt->bindValue(6, $uid);
+        $stmt->execute();
+    }
+
+    if ($type === 'customer.subscription.deleted') {
+        $customerId = (string)($obj->customer ?? '');
+        if ($customerId !== '') {
+            $stmt = $db->prepare(
+                'UPDATE users SET sub_status = ?, updated_at = ? WHERE stripe_customer_id = ?'
+            );
+            $stmt->bindValue(1, 'free');
+            $stmt->bindValue(2, date('Y-m-d H:i:s'));
+            $stmt->bindValue(3, $customerId);
+            $stmt->execute();
+        }
+    }
+
+    respond(['ok' => true]);
 }

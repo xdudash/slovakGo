@@ -137,6 +137,14 @@ export const apiClient = {
     });
   },
 
+  createCheckoutSession() {
+    return apiRequest<{ url: string }>('/billing/checkout', { method: 'POST' });
+  },
+
+  openCustomerPortal() {
+    return apiRequest<{ url: string }>('/billing/portal', { method: 'POST' });
+  },
+
   claimReferral(referrerId: string) {
     return apiRequest<{ ok: boolean }>("/user/referral", {
       method: "POST",

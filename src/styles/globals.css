@@ -1009,6 +1009,35 @@ textarea:focus,
   justify-items: center;
 }
 
+.shop-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+  display: grid;
+  gap: 8px;
+}
+.shop-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+.shop-features li svg { color: var(--green); flex-shrink: 0; }
+
+.shop-success-card {
+  display: grid;
+  gap: 8px;
+  text-align: center;
+  justify-items: center;
+  background: #f0fdf6;
+  border: 1.5px solid var(--green);
+}
+.shop-success-card h3 { margin: 0; color: var(--green); }
+.shop-success-card p  { margin: 0; font-size: 0.9rem; color: var(--muted); }
+
 .empty {
   display: grid;
   gap: 10px;
