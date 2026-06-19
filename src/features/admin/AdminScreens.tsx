@@ -127,8 +127,19 @@ function validateExercise(raw: Record<string, unknown>, lessonId: string, idx: n
     "multiple_choice_translation","reverse_translation","audio_choice","match_pairs",
     "true_false","fill_blank","sentence_ordering","typing","mistake_review",
   ];
-  const type = String(raw.type ?? "multiple_choice_translation");
+  
+  let type = String(raw.type ?? "multiple_choice_translation");
+  
+  // Backward compatibility for old JSON exports
+  if (type === "multiple_choice" || type === "multiple_choice_reading") {
+    type = "multiple_choice_translation";
+  } else if (type === "mini_situation") {
+    // Treat old mini situations as fill_blank or translation depending on the data
+    type = "multiple_choice_translation";
+  }
+  
   if (!VALID_TYPES.includes(type)) throw new Error(`Вправа #${idx + 1}: невідомий тип "${type}"`);
+  
   return {
     id:            String(raw.id      ?? `${lessonId}-ex-${idx + 1}`),
     lessonId,
@@ -680,9 +691,12 @@ interface AdminStats {
   summary: { totalUsers: number; active24h: number; active7d: number; plusUsers: number; avgXP: number; avgStreak: number };
   levels: Record<string, number>;
   dailyRegistrations: Array<{ date: string; count: number }>;
+  mistakeHeatmap: Record<string, { total: number; exercises: Record<string, number> }>;
+  retention: Record<string, { total: number; d1: number; d7: number; d30: number }>;
 }
 
 function Stats() {
+  const { data } = useAdminData();
   const [stats,   setStats]   = useState<AdminStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [error,   setError]   = useState(false);
@@ -697,10 +711,13 @@ function Stats() {
   if (loading) return <main className="page-content"><PageHeader title="Статистика" /><p style={{ color: "var(--muted)" }}>Завантаження…</p></main>;
   if (error || !stats) return <main className="page-content"><PageHeader title="Статистика" /><p style={{ color: "var(--red)" }}>Не вдалося завантажити дані з сервера.</p></main>;
 
-  const { summary, levels, dailyRegistrations } = stats;
+  const { summary, levels, dailyRegistrations, mistakeHeatmap, retention } = stats;
+
   return (
     <main className="page-content">
-      <PageHeader title="Статистика" />
+      <PageHeader title="Статистика 2.0" subtitle="Глибока аналітика" />
+      
+      {/* Key Metrics */}
       <div className="admin-stats-grid">
         <Card className="admin-stat-card"><strong>{summary.totalUsers}</strong><span>Всього</span></Card>
         <Card className="admin-stat-card"><strong>{summary.active24h}</strong><span>Активні (24г)</span></Card>
@@ -709,29 +726,96 @@ function Stats() {
         <Card className="admin-stat-card"><strong>{summary.avgXP}</strong><span>Сер. XP</span></Card>
         <Card className="admin-stat-card"><strong>{summary.avgStreak}</strong><span>Сер. серія</span></Card>
       </div>
-      <h3 className="admin-section-title">За рівнями</h3>
-      <Card>
-        {["A0","A1","A2","B1","B2","C1"].map((lvl) => (
-          <div key={lvl} className="admin-detail-row">
-            <LevelPill level={lvl as UserLevel} />
-            <div className="admin-bar-wrap">
-              <div className="admin-bar" style={{ width: `${Math.round(((levels[lvl] || 0) / (summary.totalUsers || 1)) * 100)}%` }} />
-            </div>
-            <span>{levels[lvl] || 0}</span>
-          </div>
-        ))}
+
+      {/* Retention Cohorts */}
+      <h3 className="admin-section-title">Retention (когорти за місяцем)</h3>
+      <Card className="admin-table-card">
+        <table className="admin-retention-table">
+          <thead>
+            <tr>
+              <th>Місяць</th>
+              <th>Юзерів</th>
+              <th>D1</th>
+              <th>D7</th>
+              <th>D30</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.entries(retention).reverse().map(([month, row]) => (
+              <tr key={month}>
+                <td><strong>{month}</strong></td>
+                <td>{row.total}</td>
+                <td className={getRetentionClass(row.d1 / row.total)}>{Math.round((row.d1 / row.total) * 100)}%</td>
+                <td className={getRetentionClass(row.d7 / row.total)}>{Math.round((row.d7 / row.total) * 100)}%</td>
+                <td className={getRetentionClass(row.d30 / row.total)}>{Math.round((row.d30 / row.total) * 100)}%</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </Card>
-      <h3 className="admin-section-title">Реєстрації за тиждень</h3>
-      <Card>
-        {dailyRegistrations.map((row) => (
-          <div key={row.date} className="admin-detail-row">
-            <span>{row.date}</span>
-            <strong>+{row.count}</strong>
-          </div>
-        ))}
-      </Card>
+
+      {/* Mistake Heatmap */}
+      <h3 className="admin-section-title">Карта помилок (найскладніші уроки)</h3>
+      <div className="admin-heatmap">
+        {Object.entries(mistakeHeatmap).map(([lid, info]) => {
+          const lesson = data.lessons.find((l) => l.id === lid);
+          return (
+            <Card key={lid} className="heatmap-card">
+              <div className="heatmap-header">
+                <strong>{lesson?.title || lid}</strong>
+                <span className="heatmap-total">{info.total} помилок</span>
+              </div>
+              <div className="heatmap-bar-stack">
+                {Object.entries(info.exercises).slice(0, 5).map(([eid, count]) => (
+                  <div key={eid} className="heatmap-bar-wrap" title={`Вправа ${eid}: ${count} помилок`}>
+                    <div 
+                      className="heatmap-bar" 
+                      style={{ height: `${Math.min(100, (count / info.total) * 300)}%` }} 
+                    />
+                  </div>
+                ))}
+              </div>
+              <span className="heatmap-meta">{lesson?.topic} · {lesson?.level}</span>
+            </Card>
+          );
+        })}
+      </div>
+
+      <div className="admin-stats-columns">
+        <div className="stats-col">
+          <h3 className="admin-section-title">За рівнями</h3>
+          <Card>
+            {["A0","A1","A2","B1","B2","C1"].map((lvl) => (
+              <div key={lvl} className="admin-detail-row">
+                <LevelPill level={lvl as UserLevel} />
+                <div className="admin-bar-wrap">
+                  <div className="admin-bar" style={{ width: `${Math.round(((levels[lvl] || 0) / (summary.totalUsers || 1)) * 100)}%` }} />
+                </div>
+                <span>{levels[lvl] || 0}</span>
+              </div>
+            ))}
+          </Card>
+        </div>
+        <div className="stats-col">
+          <h3 className="admin-section-title">Реєстрації за тиждень</h3>
+          <Card>
+            {dailyRegistrations.map((row) => (
+              <div key={row.date} className="admin-detail-row">
+                <span>{row.date}</span>
+                <strong>+{row.count}</strong>
+              </div>
+            ))}
+          </Card>
+        </div>
+      </div>
     </main>
   );
+}
+
+function getRetentionClass(rate: number): string {
+  if (rate >= 0.4) return "retention-high";
+  if (rate >= 0.2) return "retention-mid";
+  return "retention-low";
 }
 
 // ── ERRORS ───────────────────────────────────────────────────────────────────

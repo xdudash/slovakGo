@@ -65,36 +65,32 @@ export const useAppStore = create<AppStore>((set, get) => ({
     try {
       const { user: raw } = await apiClient.login(email, password);
       const serverUser = raw as User;
-      // Ensure settings has all required fields
       const defaults = { language: "uk" as const, notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true };
       const merged: User = { ...serverUser, settings: { ...defaults, ...serverUser.settings } };
+      let userId = merged.id;
 
-      const users = get().data.users;
-      const existing = users.find((u) => u.id === merged.id)
-                    ?? users.find((u) => u.email.toLowerCase() === email.toLowerCase());
+      // Now pull the full state (progress, words, lessons) for this user
+      const fullState = await apiClient.syncPull(0) as { user: User; progress: Progress; userWords: UserWord[]; lessons: Lesson[] };
+      
       let data = get().data;
-      let userId: string;
-
-      if (existing) {
-        // Update local record with authoritative server fields
-        userId = existing.id;
-        data = { ...data, users: users.map((u) => u.id === userId ? { ...u, ...merged, id: userId } : u) };
-      } else {
-        // First login on this device — bootstrap from server data
-        userId = merged.id;
-        data = {
-          ...data,
-          users: [...users, merged],
-          progress: { ...data.progress, [userId]: createProgress(userId, merged.level ?? "A0") },
-          userWords: { ...data.userWords, [userId]: [] }
-        };
-      }
+      const users = data.users.filter(u => u.id !== userId);
+      
+      data = {
+        ...data,
+        users: [...users, { ...fullState.user, settings: { ...defaults, ...fullState.user.settings } }],
+        progress: { ...data.progress, [userId]: fullState.progress },
+        userWords: { ...data.userWords, [userId]: fullState.userWords },
+        // We also want to merge in new lessons from the server
+        lessons: fullState.lessons || data.lessons 
+      };
 
       save(data);
       localStorage.setItem(sessionKey, userId);
       set({ data, currentUserId: userId, authError: undefined });
-      // Pull server state in background to restore full progress on new devices
+      
+      // Also drain any local queue just in case
       get().drainSync().catch(() => undefined);
+      
       return data.users.find((u) => u.id === userId) ?? null;
     } catch (err: unknown) {
       const e = err as { status?: number; message?: string };
@@ -199,7 +195,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
     let data: AppData = {
       ...get().data,
       users: get().data.users.map((user) => (user.id === currentUserId ? { ...user, level } : user)),
-      progress: { ...get().data.progress, [currentUserId]: { ...progress, currentLevel: level, currentLessonId } }
+      progress: { ...get().data.progress, [currentUserId]: { ...progress, currentLevel: level, currentLessonId, updatedAt: new Date().toISOString() } }
     };
     data = withSync(data, "profile.update", { level });
     save(data);
@@ -345,6 +341,12 @@ export const useAppStore = create<AppStore>((set, get) => ({
 
 export function selectCurrentUser(data: AppData, currentUserId?: string) {
   return data.users.find((user) => user.id === currentUserId);
+}
+
+export function selectIsPlus(data: AppData, currentUserId?: string): boolean {
+  const user = selectCurrentUser(data, currentUserId);
+  if (!user) return false;
+  return user.subscriptionStatus === "plus" || user.subscriptionStatus === "trial";
 }
 
 export function roleHome(role: UserRole): string {

@@ -11,7 +11,7 @@ import { practiceService, type PracticeExercise, type PracticeType } from "../..
 import { srService } from "../../services/spacedRepetitionService";
 import { progressService } from "../../services/progressService";
 import { vocabularyService, type VocabularyWord } from "../../services/vocabularyService";
-import { selectCurrentUser, useAppStore } from "../../store/useAppStore";
+import { selectCurrentUser, selectIsPlus, useAppStore } from "../../store/useAppStore";
 import { useT } from "../../i18n";
 import type { AnswerRecord, Exercise, LeaderboardEntry, UserLevel } from "../../types";
 import { getDailyPhrases, getScenarioForGoal } from "../../data/scenarios";
@@ -46,7 +46,8 @@ function useStudentData() {
   const store = useAppStore();
   const user = selectCurrentUser(store.data, store.currentUserId);
   const progress = user ? store.data.progress[user.id] : undefined;
-  return { ...store, user, progress };
+  const isPlus = selectIsPlus(store.data, store.currentUserId);
+  return { ...store, user, progress, isPlus };
 }
 
 function TopStats() {
@@ -100,30 +101,65 @@ export function Onboarding() {
   const [goal, setGoal] = useState(user?.goal || goals[0]);
   if (!user) return <Navigate to="/login" replace />;
 
+  const handleNotifications = async () => {
+    if ("Notification" in window) {
+      await Notification.requestPermission();
+    }
+    setStep(3);
+  };
+
   const cards = [
-    <Card className="onboarding-card" key="welcome">
-      <h1>{t("student.onboarding.welcome_title")}</h1>
-      <p>{t("student.onboarding.welcome_text")}</p>
-      <Button onClick={() => setStep(1)}>{t("student.onboarding.welcome_btn")}</Button>
-    </Card>,
-    <Card className="onboarding-card" key="goal">
-      <h1>{t("student.onboarding.goal_title")}</h1>
-      <div className="chip-grid">
-        {goals.map((item) => <button className={`chip ${goal === item ? "active" : ""}`} key={item} type="button" onClick={() => setGoal(item)}>{item}</button>)}
+    <Card className="onboarding-card onboarding-card-anim" key="welcome">
+      <div className="onboarding-icon-wrap">
+        <MessageSquare size={32} color="var(--accent)" />
       </div>
-      <Button onClick={() => setStep(2)}>{t("student.onboarding.next")}</Button>
+      <h1>{t("student.onboarding.welcome_title")}</h1>
+      <p className="onboarding-text">{t("student.onboarding.welcome_text")}</p>
+      <Button className="onboarding-btn-primary" onClick={() => setStep(1)}>{t("student.onboarding.welcome_btn")}</Button>
     </Card>,
-    <Card className="onboarding-card" key="mechanics">
-      <h1>{t("student.onboarding.mechanics_title")}</h1>
-      <div className="mechanics-grid">
+    <Card className="onboarding-card onboarding-card-anim" key="goal">
+      <div className="onboarding-icon-wrap">
+        <Trophy size={32} color="var(--yellow-dark)" />
+      </div>
+      <h1>{t("student.onboarding.goal_title")}</h1>
+      <div className="onboarding-chip-list">
+        {goals.map((item) => (
+          <button 
+            className={`onboarding-chip ${goal === item ? "active" : ""}`} 
+            key={item} 
+            type="button" 
+            onClick={() => { setGoal(item); setTimeout(() => setStep(2), 300); }}
+          >
+            <CheckCircle2 size={18} className="check-icon" />
+            <span>{item}</span>
+          </button>
+        ))}
+      </div>
+    </Card>,
+    <Card className="onboarding-card onboarding-card-anim" key="mechanics">
+      <div className="onboarding-icon-wrap">
+        <Bell size={32} color="var(--orange)" />
+      </div>
+      <h1>Залишаємось на зв'язку 🔔</h1>
+      <p className="onboarding-text">Я нагадуватиму тобі про коротке тренування щодня, щоб не втратити прогрес і серця.</p>
+      <div className="mechanics-grid" style={{ marginBottom: 16 }}>
         {ta("student.onboarding.mechanics_items").map((item) => <span key={item}>{item}</span>)}
       </div>
-      <Button onClick={() => setStep(3)}>{t("student.onboarding.mechanics_ok")}</Button>
+      <Button className="onboarding-btn-primary" onClick={handleNotifications}>Дозволити сповіщення</Button>
+      <Button variant="ghost" onClick={() => setStep(3)}>Можливо пізніше</Button>
     </Card>,
-    <Card className="onboarding-card" key="start">
+    <Card className="onboarding-card onboarding-card-anim" key="start">
+      <div className="onboarding-icon-wrap">
+        <Zap size={32} color="var(--green)" />
+      </div>
       <h1>{t("student.onboarding.start_title")}</h1>
-      <Button onClick={() => { completeOnboarding(goal, "A0"); navigate("/app/path", { replace: true }); }}>{t("student.onboarding.start_a0")}</Button>
-      <Button variant="secondary" onClick={() => navigate("/placement-test")}>{t("student.onboarding.placement")}</Button>
+      <p className="onboarding-text">Не хвилюйся, рівень можна буде змінити в налаштуваннях.</p>
+      <Button className="onboarding-btn-primary" onClick={() => { completeOnboarding(goal, "A0"); navigate("/app/path", { replace: true }); }}>
+        {t("student.onboarding.start_a0")}
+      </Button>
+      <Button variant="secondary" onClick={() => navigate("/placement-test")}>
+        {t("student.onboarding.placement")}
+      </Button>
     </Card>
   ];
 
@@ -1667,16 +1703,20 @@ function SettingsScreen() {
 }
 
 function LevelsScreen() {
-  const { data, progress, setLevel } = useStudentData();
+  const { data, progress, setLevel, user } = useStudentData();
   const { t } = useT();
   const [pending, setPending] = useState<UserLevel | null>(null);
-  if (!progress) return <PageSkeleton />;
+  
+  // If an admin tries to view this, ensure we render safely even if progress is missing 
+  // (though ensure_progress on backend should have created it)
+  if (!progress || !user) return <PageSkeleton />;
+
   return (
     <main className="page-content">
       <PageHeader title={t("student.levels.title")} subtitle={t("student.levels.subtitle")} />
       {lessonService.levels.map((level) => {
         const percent = lessonService.levelProgress(data.lessons, progress, level);
-        return <Card key={level} className="level-row"><div><h2>{level}</h2><p>{t(`student.level_desc.${level}`)}</p><ProgressBar value={percent} /></div><Button variant={progress.currentLevel === level ? "primary" : "secondary"} onClick={() => setPending(level)}>{progress.currentLevel === level ? t("student.levels.current") : t("student.levels.change")}</Button></Card>;
+        return <Card key={level} className="level-row"><div><h2>{level}</h2><p>{t(`student.level_desc.${level}`)}</p><ProgressBar value={percent} /></div><Button variant={user.level === level ? "primary" : "secondary"} onClick={() => setPending(level)}>{user.level === level ? t("student.levels.current") : t("student.levels.change")}</Button></Card>;
       })}
       {pending ? <div className="bottom-sheet"><Card><h2>{t("student.levels.confirm_title")}</h2><p>{t("student.levels.confirm_text")}</p><Button onClick={() => { setLevel(pending); setPending(null); }}>{t("student.levels.confirm")}</Button><Button variant="ghost" onClick={() => setPending(null)}>{t("student.levels.cancel")}</Button></Card></div> : null}
     </main>
@@ -1685,29 +1725,33 @@ function LevelsScreen() {
 
 function ShopScreen() {
   const { t, ta } = useT();
-  const { user } = useStudentData();
+  const { data, currentUserId, user, isPlus } = useStudentData();
   const [searchParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const isPlus = user?.subscriptionStatus === "plus";
   const didSubscribe = searchParams.get("subscribed") === "1";
 
   async function handleSubscribe() {
     setLoading(true);
+    setError(null);
     try {
       const { url } = await apiClient.createCheckoutSession();
       window.location.href = url;
-    } catch {
+    } catch (err: any) {
+      setError(err.message || "Не вдалося почати оформлення підписки. Спробуйте пізніше.");
       setLoading(false);
     }
   }
 
   async function handlePortal() {
     setLoading(true);
+    setError(null);
     try {
       const { url } = await apiClient.openCustomerPortal();
       window.location.href = url;
-    } catch {
+    } catch (err: any) {
+      setError(err.message || "Не вдалося відкрити кабінет. Спробуйте пізніше.");
       setLoading(false);
     }
   }
@@ -1715,37 +1759,83 @@ function ShopScreen() {
   const features = ta("student.shop.features");
 
   return (
-    <main className="page-content">
+    <main className="page-content shop-page">
       <PageHeader title={t("student.shop.title")} subtitle={t("student.shop.subtitle")} />
 
       {didSubscribe && (
         <Card className="shop-success-card">
           <CheckCircle2 size={32} color="var(--green)" />
-          <h3>{t("student.shop.success_title")}</h3>
-          <p>{t("student.shop.success_text")}</p>
+          <div className="shop-success-text">
+            <h3>{t("student.shop.success_title")}</h3>
+            <p>{t("student.shop.success_text")}</p>
+          </div>
         </Card>
       )}
 
-      <Card className="shop-card">
-        <Trophy size={38} />
+      {error && (
+        <div className="shop-error-banner">
+          <AlertCircle size={18} />
+          <span>{error}</span>
+        </div>
+      )}
+
+      <Card className="shop-card shop-card--main">
+        <div className="shop-card-header">
+          <Trophy size={48} className="shop-icon-main" />
+          <div className="shop-price-tag">€9.99<span>/міс</span></div>
+        </div>
         <h2>{t("student.shop.product")}</h2>
         <p>{t("student.shop.desc")}</p>
-        {features.length > 0 && (
-          <ul className="shop-features">
-            {features.map((f) => (
-              <li key={f}><CheckCircle2 size={14} /> {f}</li>
-            ))}
-          </ul>
-        )}
+        
+        <div className="shop-comparison">
+          <div className="shop-comp-header">
+            <span></span>
+            <span className="comp-free">Free</span>
+            <span className="comp-plus">Plus</span>
+          </div>
+          <div className="shop-comp-row">
+            <span>Серця</span>
+            <span>Обмежено</span>
+            <span className="comp-check"><CheckCircle2 size={14} /> Безліміт</span>
+          </div>
+          <div className="shop-comp-row">
+            <span>Реклама</span>
+            <span>Є</span>
+            <span className="comp-check"><CheckCircle2 size={14} /> Відсутня</span>
+          </div>
+          <div className="shop-comp-row">
+            <span>Офлайн режим</span>
+            <span>Ні</span>
+            <span className="comp-check"><CheckCircle2 size={14} /> Так</span>
+          </div>
+          <div className="shop-comp-row">
+            <span>Статистика</span>
+            <span>Базова</span>
+            <span className="comp-check"><CheckCircle2 size={14} /> Повна</span>
+          </div>
+        </div>
+
         {isPlus
-          ? <Button variant="secondary" disabled={loading} onClick={handlePortal}>
-              {loading ? t("student.shop.btn_loading") : t("student.shop.btn_manage")}
-            </Button>
-          : <Button variant="primary" disabled={loading} onClick={handleSubscribe}>
+          ? <div className="shop-active-status">
+              <div className="status-label">
+                <Star size={16} fill="var(--yellow-strong)" color="var(--yellow-strong)" />
+                <span>У тебе активований Plus</span>
+              </div>
+              <Button variant="secondary" disabled={loading} onClick={handlePortal}>
+                {loading ? t("student.shop.btn_loading") : t("student.shop.btn_manage")}
+              </Button>
+            </div>
+          : <Button variant="primary" disabled={loading} onClick={handleSubscribe} className="shop-btn-buy">
               {loading ? t("student.shop.btn_loading") : t("student.shop.btn_subscribe")}
             </Button>
         }
       </Card>
+
+      <div className="shop-faq">
+        <p className="muted text-center sm">
+          Ти можеш скасувати підписку в будь-який момент через кабінет Stripe.
+        </p>
+      </div>
     </main>
   );
 }

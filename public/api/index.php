@@ -62,9 +62,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 // Config
 // ══════════════════════════════════════════════════════════════════
 
-const SESSION_COOKIE  = 'sl_session';
-const MAX_HEARTS      = 5;
-const XP_PER_PRACTICE = 5;
+const SESSION_COOKIE      = 'sl_session';
+const MAX_HEARTS          = 5;
+const XP_PER_PRACTICE     = 5;
+const LOGIN_MAX_ATTEMPTS  = 10;   // per IP
+const LOGIN_WINDOW_SEC    = 900;  // 15 minutes
+const LOGIN_LOCKOUT_SEC   = 900;  // 15 minutes
 
 // ══════════════════════════════════════════════════════════════════
 // Pure helpers
@@ -363,6 +366,9 @@ $db   = open_db();
 $path = route_path();
 $meth = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 
+require_once __DIR__ . '/StripeService.php';
+$stripeService = new StripeService($db);
+
 // CSRF: require X-Requested-With on all mutating requests (SameSite=Lax + this = defense-in-depth)
 // /billing/webhook is exempted — Stripe sends raw HTTP POST without browser headers;
 // it is verified instead by HMAC signature inside handle_billing_webhook().
@@ -437,12 +443,48 @@ function handle_admin_stats(SQLite3 $db): never
     $avgXP = (float)$db->querySingle('SELECT AVG(xp_total) FROM progress');
     $avgStreak = (float)$db->querySingle('SELECT AVG(streak_days) FROM progress');
 
-    // Recent activity (registrations per day for last 7 days)
+    // Recent activity
     $dailyRegs = [];
     for ($i = 6; $i >= 0; $i--) {
         $d = gmdate('Y-m-d', $now - $i * 86400);
         $cnt = (int)$db->querySingle("SELECT COUNT(*) FROM users WHERE created_at LIKE '$d%'");
         $dailyRegs[] = ['date' => $d, 'count' => $cnt];
+    }
+
+    // --- New: Mistake Heatmap ---
+    $mistakeMap = []; // lesson_id => [exercise_id => count]
+    $mres = $db->query('SELECT mistakes_j FROM progress');
+    while ($row = $mres->fetchArray(SQLITE3_ASSOC)) {
+        $list = json_decode((string)$row['mistakes_j'], true);
+        if (!is_array($list)) continue;
+        foreach ($list as $m) {
+            $lid = (string)($m['lessonId'] ?? 'unknown');
+            $eid = (string)($m['exerciseId'] ?? 'unknown');
+            if (!isset($mistakeMap[$lid])) $mistakeMap[$lid] = ['total' => 0, 'exercises' => []];
+            $mistakeMap[$lid]['total']++;
+            $mistakeMap[$lid]['exercises'][$eid] = ($mistakeMap[$lid]['exercises'][$eid] ?? 0) + 1;
+        }
+    }
+    // Sort and slice top difficult lessons
+    uasort($mistakeMap, fn($a, $b) => $b['total'] - $a['total']);
+    $mistakeHeatmap = array_slice($mistakeMap, 0, 10, true);
+
+    // --- New: Retention Cohorts ---
+    // We group by registration month
+    $retention = [];
+    $cres = $db->query("SELECT strftime('%Y-%m', created_at) as month, created_at, updated_at FROM users");
+    while ($row = $cres->fetchArray(SQLITE3_ASSOC)) {
+        $m = $row['month'];
+        if (!isset($retention[$m])) $retention[$m] = ['total' => 0, 'd1' => 0, 'd7' => 0, 'd30' => 0];
+        $retention[$m]['total']++;
+        
+        $regTs = strtotime($row['created_at']);
+        $actTs = strtotime($row['updated_at']);
+        $diff  = $actTs - $regTs;
+
+        if ($diff >= 86400)      $retention[$m]['d1']++;
+        if ($diff >= 7 * 86400)  $retention[$m]['d7']++;
+        if ($diff >= 30 * 86400) $retention[$m]['d30']++;
     }
 
     respond([
@@ -457,6 +499,8 @@ function handle_admin_stats(SQLite3 $db): never
         ],
         'levels' => $levels,
         'dailyRegistrations' => $dailyRegs,
+        'mistakeHeatmap' => $mistakeHeatmap,
+        'retention' => $retention,
         'updatedAt' => now_iso()
     ]);
 }
@@ -518,10 +562,6 @@ function handle_register(SQLite3 $db): never
 }
 
 // ── Login ─────────────────────────────────────────────────────────
-
-const LOGIN_MAX_ATTEMPTS  = 10;   // per IP
-const LOGIN_WINDOW_SEC    = 900;  // 15 minutes
-const LOGIN_LOCKOUT_SEC   = 900;  // 15 minutes
 
 function handle_login(SQLite3 $db): never
 {
@@ -1907,120 +1947,39 @@ function row_to_user(array $row): array
 // Stripe billing
 // ══════════════════════════════════════════════════════════════════
 
-function stripe_load(): void
-{
-    $autoload = dirname(__DIR__, 2) . '/vendor/autoload.php';
-    if (!file_exists($autoload)) {
-        fail('Stripe SDK не встановлено. Виконайте: composer require stripe/stripe-php', 503);
-    }
-    require_once $autoload;
-    \Stripe\Stripe::setApiKey((string)getenv('STRIPE_SECRET_KEY'));
-}
-
 // POST /billing/checkout — creates Stripe Checkout session, returns redirect URL
 function handle_billing_checkout(SQLite3 $db): never
 {
-    stripe_load();
-    $uid  = require_auth();
-    $stmt = $db->prepare('SELECT email, stripe_customer_id FROM users WHERE id = ? LIMIT 1');
-    $stmt->bindValue(1, $uid);
-    $res  = $stmt->execute();
-    $row  = $res ? $res->fetchArray(SQLITE3_ASSOC) : false;
-    if (!$row) fail('Користувача не знайдено', 404);
-
-    $priceId = (string)getenv('STRIPE_PRICE_ID');
-    if ($priceId === '') fail('STRIPE_PRICE_ID не налаштовано', 503);
-
-    $appUrl = rtrim((string)(getenv('APP_URL') ?: 'http://localhost:5173'), '/');
-    $params = [
-        'mode'                  => 'subscription',
-        'client_reference_id'   => $uid,
-        'line_items'            => [['price' => $priceId, 'quantity' => 1]],
-        'success_url'           => $appUrl . '/app/shop?subscribed=1',
-        'cancel_url'            => $appUrl . '/app/shop',
-        'allow_promotion_codes' => true,
-    ];
-    $customerId = (string)($row['stripe_customer_id'] ?? '');
-    if ($customerId !== '') {
-        $params['customer'] = $customerId;
-    } else {
-        $params['customer_email'] = (string)$row['email'];
+    global $stripeService;
+    try {
+        $uid = require_auth();
+        $url = $stripeService->createCheckoutSession($uid);
+        respond(['url' => $url]);
+    } catch (Exception $e) {
+        fail($e->getMessage(), (int)$e->getCode() ?: 400);
     }
-
-    $session = \Stripe\Checkout\Session::create($params);
-    respond(['url' => $session->url]);
 }
 
 // POST /billing/portal — opens Stripe Customer Portal (manage/cancel subscription)
 function handle_billing_portal(SQLite3 $db): never
 {
-    stripe_load();
-    $uid  = require_auth();
-    $stmt = $db->prepare('SELECT stripe_customer_id FROM users WHERE id = ? LIMIT 1');
-    $stmt->bindValue(1, $uid);
-    $res  = $stmt->execute();
-    $row  = $res ? $res->fetchArray(SQLITE3_ASSOC) : false;
-    $customerId = (string)($row['stripe_customer_id'] ?? '');
-    if ($customerId === '') fail('Білінговий акаунт не знайдено', 404);
-
-    $appUrl  = rtrim((string)(getenv('APP_URL') ?: 'http://localhost:5173'), '/');
-    $session = \Stripe\BillingPortal\Session::create([
-        'customer'   => $customerId,
-        'return_url' => $appUrl . '/app/shop',
-    ]);
-    respond(['url' => $session->url]);
+    global $stripeService;
+    try {
+        $uid = require_auth();
+        $url = $stripeService->createPortalSession($uid);
+        respond(['url' => $url]);
+    } catch (Exception $e) {
+        fail($e->getMessage(), (int)$e->getCode() ?: 400);
+    }
 }
 
 // POST /billing/webhook — called by Stripe, verified via HMAC signature (no session auth)
 function handle_billing_webhook(SQLite3 $db): never
 {
-    stripe_load();
+    global $stripeService;
     $payload = (string)(file_get_contents('php://input') ?: '');
     $sig     = $_SERVER['HTTP_STRIPE_SIGNATURE'] ?? '';
-    $secret  = (string)getenv('STRIPE_WEBHOOK_SECRET');
 
-    try {
-        $event = \Stripe\Webhook::constructEvent($payload, $sig, $secret);
-    } catch (\Exception) {
-        http_response_code(400);
-        echo json_encode(['error' => 'Invalid signature']);
-        exit;
-    }
-
-    $type = $event->type;
-    $obj  = $event->data->object;
-
-    if ($type === 'checkout.session.completed') {
-        $uid        = (string)($obj->client_reference_id ?? '');
-        $customerId = (string)($obj->customer ?? '');
-        $subId      = (string)($obj->subscription ?? '');
-        if ($uid === '') respond(['ok' => true]);
-
-        $ends = date('Y-m-d H:i:s', strtotime('+1 month'));
-        $stmt = $db->prepare(
-            'UPDATE users SET sub_status = ?, trial_ends = ?, stripe_customer_id = ?, stripe_sub_id = ?, updated_at = ? WHERE id = ?'
-        );
-        $stmt->bindValue(1, 'plus');
-        $stmt->bindValue(2, $ends);
-        $stmt->bindValue(3, $customerId);
-        $stmt->bindValue(4, $subId);
-        $stmt->bindValue(5, date('Y-m-d H:i:s'));
-        $stmt->bindValue(6, $uid);
-        $stmt->execute();
-    }
-
-    if ($type === 'customer.subscription.deleted') {
-        $customerId = (string)($obj->customer ?? '');
-        if ($customerId !== '') {
-            $stmt = $db->prepare(
-                'UPDATE users SET sub_status = ?, updated_at = ? WHERE stripe_customer_id = ?'
-            );
-            $stmt->bindValue(1, 'free');
-            $stmt->bindValue(2, date('Y-m-d H:i:s'));
-            $stmt->bindValue(3, $customerId);
-            $stmt->execute();
-        }
-    }
-
+    $stripeService->handleWebhook($payload, $sig);
     respond(['ok' => true]);
 }
