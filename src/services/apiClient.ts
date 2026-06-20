@@ -1,7 +1,7 @@
 import type { SyncMutation } from "../types";
 
 const configuredBase = import.meta.env.VITE_API_BASE_URL as string | undefined;
-export const API_BASE_URL = (configuredBase || `${import.meta.env.BASE_URL}api/index.php`).replace(/\/$/, "");
+export const API_BASE_URL = (configuredBase || `${import.meta.env.BASE_URL}api`).replace(/\/$/, "");
 
 export class ApiError extends Error {
   status: number;
