@@ -36,6 +36,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   if (request.method !== 'GET') return;
+  if (!request.url.startsWith('http')) return;
 
   const url = new URL(request.url);
 
