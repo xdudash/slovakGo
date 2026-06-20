@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen, CheckCircle2, Globe, Heart, MessageSquare, ShieldCheck, Smartphone, Star, Trophy, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Globe, Heart, MessageSquare, Smartphone, Zap } from "lucide-react";
 import { useAppStore, selectCurrentUser } from "../../store/useAppStore";
 import "../../styles/globals.css";
 

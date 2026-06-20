@@ -72,7 +72,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
       let userId = merged.id;
 
       // Now pull the full state (progress, words, lessons) for this user
-      const fullState = await apiClient.syncPull(0) as { user: User; progress: Progress; userWords: UserWord[]; lessons: Lesson[] };
+      const fullState = await apiClient.syncPull(0) as { user: User; progress: AppData["progress"][string]; userWords: UserWord[]; lessons: Lesson[] };
       
       let data = get().data;
       const users = data.users.filter(u => u.id !== userId);

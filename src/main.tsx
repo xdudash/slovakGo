@@ -71,14 +71,11 @@ window.addEventListener("load", async () => {
   }
 
   // Drain immediately after queue mutations are added while online
-  useAppStore.subscribe(
-    (state) => state.data.syncQueue.length,
-    (length) => {
-      if (length > 0 && navigator.onLine) {
-        useAppStore.getState().drainSync();
-      }
+  useAppStore.subscribe((state, prev) => {
+    if (state.data.syncQueue.length > prev.data.syncQueue.length && navigator.onLine) {
+      useAppStore.getState().drainSync();
     }
-  );
+  });
 
   // Drain when user returns to the tab
   document.addEventListener("visibilitychange", () => {
@@ -137,7 +134,7 @@ window.addEventListener("load", async () => {
 
       // Coming back online: register BG sync tag + drain directly as fallback
       window.addEventListener("online", () => {
-        reg.sync?.register("sync-mutations").catch(() => undefined);
+        (reg as unknown as { sync?: { register: (tag: string) => Promise<void> } }).sync?.register("sync-mutations").catch(() => undefined);
         useAppStore.getState().drainSync();
       });
     } catch {

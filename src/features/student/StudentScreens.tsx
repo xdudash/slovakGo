@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { AlertCircle, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, Download, Flame, Heart, Layers, Link2, Lock, LogOut, Medal, Play, Search, Settings, Share2, ShoppingBag, Star, Trophy, Users, Volume2, Zap } from "lucide-react";
+import { AlertCircle, Bell, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, Download, Flame, Heart, Layers, Link2, Lock, LogOut, Medal, MessageSquare, Play, Search, Settings, Share2, ShoppingBag, Star, Trophy, Users, Volume2, Zap } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, EmptyState, Field, Modal, PageHeader, ProgressBar } from "../../components/ui";
 import { PageSkeleton } from "../../components/Skeleton";
@@ -479,9 +479,9 @@ function LessonScreen() {
     const finalRecords = [...records.filter((item) => item.exerciseId !== exercise.id), { exerciseId: exercise.id, answer, correct: feedback === "correct", answeredAt: new Date().toISOString() }];
     if (nextIndex >= activeLesson.exercises.length) {
       completeLesson(activeLesson, finalRecords);
-      const alreadyDone = progress.completedLessons.includes(activeLesson.id);
+      const alreadyDone = progress!.completedLessons.includes(activeLesson.id);
       const base = alreadyDone ? Math.max(3, Math.round(activeLesson.xpReward * 0.25)) : activeLesson.xpReward;
-      const xp = user.subscriptionStatus === "plus" ? Math.round(base * 1.5) : base;
+      const xp = user!.subscriptionStatus === "plus" ? Math.round(base * 1.5) : base;
       const correct = finalRecords.filter((r) => r.correct).length;
       setCelebration({ xp, correct, total: finalRecords.length });
       return;
@@ -1526,6 +1526,7 @@ function ProfileScreen() {
 
 function SettingsScreen() {
   const { user, updateUser, logout } = useStudentData();
+  const navigate = useNavigate();
   const { t } = useT();
   const [name, setName] = useState(user?.name || "");
   const [email, setEmail] = useState(user?.email || "");
@@ -1810,8 +1811,8 @@ function LevelsScreen() {
 }
 
 function ShopScreen() {
-  const { t, ta } = useT();
-  const { data, currentUserId, user, isPlus } = useStudentData();
+  const { t } = useT();
+  const { isPlus } = useStudentData();
   const [searchParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -1841,8 +1842,6 @@ function ShopScreen() {
       setLoading(false);
     }
   }
-
-  const features = ta("student.shop.features");
 
   return (
     <main className="page-content shop-page">

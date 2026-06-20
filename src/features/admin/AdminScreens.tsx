@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Route, Routes, useNavigate, useParams } from "react-router-dom";
 import {
   AlertCircle, Bell, BookOpen, ChevronRight, Crown, Download,
-  Eye, EyeOff, House, Medal, Search, Send, Trash2, Upload, UserRound, Users
+  Eye, EyeOff, Medal, Search, Send, Trash2, Upload, UserRound, Users
 } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, Field, Modal, PageHeader } from "../../components/ui";
@@ -706,7 +706,7 @@ function Stats() {
 
   useEffect(() => {
     apiClient.getAdminStats()
-      .then(setStats)
+      .then((d) => setStats(d as unknown as AdminStats))
       .catch(() => setError(true))
       .finally(() => setLoading(false));
   }, []);
