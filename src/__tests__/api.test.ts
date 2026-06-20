@@ -321,14 +321,12 @@ describe("GET /sync/pull", () => {
 // ─── Sync push / mutations ────────────────────────────────────────────────────
 describe("POST /sync/push", () => {
   let cookie: string;
-  let uid: string;
 
   beforeAll(async () => {
-    const { body, headers } = await call("POST", ["auth", "register"], {
+    const { headers } = await call("POST", ["auth", "register"], {
       body: { email: "push-test@example.com", password: "secret123", name: "Push" },
     });
     cookie = String(headers["Set-Cookie"] ?? "").split(";")[0];
-    uid = (body.user as Record<string, unknown>).id as string;
   });
 
   it("returns 401 without auth", async () => {

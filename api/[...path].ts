@@ -188,7 +188,7 @@ async function handlePing(res: VercelResponse): Promise<void> {
 }
 
 // POST /auth/register
-async function handleRegister(req: VercelRequest, res: VercelResponse, body: Record<string, unknown>): Promise<void> {
+async function handleRegister(_req: VercelRequest, res: VercelResponse, body: Record<string, unknown>): Promise<void> {
   const email    = String(body.email ?? "").toLowerCase().trim();
   const password = String(body.password ?? "");
   const name     = String(body.name ?? "Студент").trim();

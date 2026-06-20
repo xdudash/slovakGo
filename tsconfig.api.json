@@ -8,7 +8,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "outDir": ".vercel/output/functions/api",
-    "types": ["node"]
+    "types": ["node"],
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
   },
   "include": ["api", "scripts"]
 }
