@@ -2934,7 +2934,7 @@ textarea:focus,
 /* Stats grid */
 .admin-stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
   gap: 10px;
   margin-bottom: 20px;
 }
@@ -3443,6 +3443,7 @@ textarea:focus,
 
 .referral-link-url {
   flex: 1;
+  min-width: 0;
   font-size: 0.75rem;
   color: var(--muted);
   overflow: hidden;
@@ -4442,5 +4443,139 @@ textarea:focus,
 
 .onboarding-chip.active .check-icon {
   color: var(--yellow-dark);
+}
+
+/* ── ADMIN PREVIEW BANNER ───────────────────────────────────────────────── */
+.admin-preview-banner {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 0.82rem;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.01em;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.admin-preview-banner strong {
+  color: #ffd21f;
+}
+
+/* ── MATCH PAIRS EXERCISE ────────────────────────────────────────────────── */
+.match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+}
+.match-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.match-item {
+  min-height: 46px;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  background: #fff;
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 6px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 120ms, background 120ms;
+  word-break: break-word;
+  hyphens: auto;
+}
+.match-item:disabled {
+  cursor: default;
+}
+.match-item.active {
+  border-color: var(--accent);
+  background: var(--accent-soft, #ede9fe);
+}
+.match-item.matched {
+  border-color: var(--green);
+  background: #f0fdf6;
+  color: var(--green);
+}
+.match-item.wrong {
+  border-color: var(--red);
+  background: #fff0f0;
+  animation: match-shake 0.4s ease;
+}
+@keyframes match-shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60%  { transform: translateX(-5px); }
+  40%, 80%  { transform: translateX(5px); }
+}
+
+/* ── LESSON INTRO / VOCABULARY PHASE ────────────────────────────────────── */
+.lesson-intro-card {
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: var(--shadow, 0 2px 12px rgba(0,0,0,.08));
+  align-self: stretch;
+}
+.lesson-intro-text {
+  font-size: 0.97rem;
+  line-height: 1.65;
+  color: var(--fg);
+  margin-bottom: 16px;
+}
+.lesson-words-list {
+  display: flex;
+  flex-direction: column;
+}
+.lesson-word-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border, #e8e8ef);
+}
+.lesson-word-item:last-child {
+  border-bottom: none;
+}
+.lesson-word-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+.lesson-word-sk {
+  font-size: 1.2rem;
+  font-weight: 850;
+  color: var(--ink);
+}
+.lesson-word-uk {
+  font-size: 0.95rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+.lesson-word-example {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+/* ── MOBILE OVERRIDES ────────────────────────────────────────────────────── */
+@media (max-width: 420px) {
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .match-item {
+    font-size: 0.8rem;
+    padding: 5px 6px;
+    min-height: 40px;
+  }
+  .lesson-word-sk {
+    font-size: 1.05rem;
+  }
 }
 

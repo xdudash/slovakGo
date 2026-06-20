@@ -1,5 +1,5 @@
 import { BookOpen, Dumbbell, House, Medal, Settings, ShoppingBag, Trophy, UserRound, UsersRound } from "lucide-react";
-import { NavLink, Outlet, Routes, Route } from "react-router-dom";
+import { NavLink, Outlet, Routes, Route, useNavigate } from "react-router-dom";
 import { useEffect, useState, type ReactNode } from "react";
 import type { UserRole } from "../types";
 import { useT } from "../i18n";
@@ -29,12 +29,19 @@ const navConfig = {
   ]
 };
 
+const adminReturnKey = "slovak-life.admin-return";
+
 export function AppShell({ role, children }: { role: UserRole; children?: ReactNode }) {
   const { t } = useT();
   const items = navConfig[role];
   const syncMessage = useAppStore((s) => s.syncMessage);
   const pendingCount = useAppStore((s) => s.data.syncQueue.length);
+  const currentUserId = useAppStore((s) => s.currentUserId);
+  const users = useAppStore((s) => s.data.users);
+  const returnToAdmin = useAppStore((s) => s.returnToAdmin);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
+  const [adminReturnId, setAdminReturnId] = useState<string | null>(() => localStorage.getItem(adminReturnKey));
+  const navigate = useNavigate();
 
   useEffect(() => {
     const on = () => setIsOnline(true);
@@ -47,8 +54,22 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
     };
   }, []);
 
+  useEffect(() => {
+    setAdminReturnId(localStorage.getItem(adminReturnKey));
+  }, [currentUserId]);
+
+  const currentUserName = users.find((u) => u.id === currentUserId)?.name ?? "";
+
   return (
     <div className="app-frame">
+      {adminReturnId && (
+        <button
+          className="admin-preview-banner"
+          onClick={() => { returnToAdmin(); navigate("/admin"); }}
+        >
+          Перегляд як <strong>{currentUserName}</strong> — Повернутися в адмінку →
+        </button>
+      )}
       {!isOnline && (
         <div className="offline-banner">
           Офлайн{pendingCount > 0 ? ` · ${pendingCount} дій в черзі` : ""}

@@ -512,7 +512,7 @@ function UsersScreen() {
 // ── USER DETAIL ──────────────────────────────────────────────────────────────
 function UserDetail() {
   const { userId } = useParams();
-  const { data, adminUpdateUser } = useAdminData();
+  const { data, adminUpdateUser, loginAsUser } = useAdminData();
   const navigate = useNavigate();
   const u = data.users.find((x) => x.id === userId);
   const p = u ? data.progress[u.id] : undefined;
@@ -625,6 +625,9 @@ function UserDetail() {
       {/* Actions */}
       <h3 className="admin-section-title">Керування</h3>
       <div className="admin-detail-actions">
+        <Button variant="secondary" onClick={() => { loginAsUser(u.id); navigate("/app/path"); }}>
+          <UserRound size={15} /> Увійти як {u.name}
+        </Button>
         <Button variant="secondary" onClick={() => adminUpdateUser(u.id, { role: u.role === "student" ? "teacher" : "student" })}>
           Роль → {u.role === "student" ? "teacher" : "student"}
         </Button>

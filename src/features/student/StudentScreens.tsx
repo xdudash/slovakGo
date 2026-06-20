@@ -356,16 +356,70 @@ function PathScreen() {
   );
 }
 
+function MatchPairsExercise({ exercise, setAnswer }: { exercise: Exercise; setAnswer: (value: string[]) => void }) {
+  const pairs = (exercise.correctAnswer as string[]).map((p) => {
+    const sep = p.indexOf("|");
+    return { left: p.slice(0, sep), right: p.slice(sep + 1) };
+  });
+  const [rightItems] = useState(() => [...pairs.map((p) => p.right)].sort(() => Math.random() - 0.5));
+  const [selectedLeft, setSelectedLeft] = useState<string | null>(null);
+  const [matched, setMatched] = useState<string[]>([]);
+  const [wrongRight, setWrongRight] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (matched.length === pairs.length && pairs.length > 0) setAnswer(matched);
+  }, [matched, pairs.length, setAnswer]);
+
+  function handleLeft(left: string) {
+    if (matched.some((m) => m.startsWith(left + "|"))) return;
+    setSelectedLeft((prev) => (prev === left ? null : left));
+  }
+
+  function handleRight(right: string) {
+    if (!selectedLeft || matched.some((m) => m.endsWith("|" + right))) return;
+    const expectedRight = pairs.find((p) => p.left === selectedLeft)?.right;
+    if (expectedRight === right) {
+      setMatched((prev) => [...prev, `${selectedLeft}|${right}`]);
+      setSelectedLeft(null);
+    } else {
+      setWrongRight(right);
+      setTimeout(() => { setWrongRight(null); setSelectedLeft(null); }, 500);
+    }
+  }
+
+  return (
+    <div className="match-grid">
+      <div className="match-col">
+        {pairs.map(({ left }) => {
+          const isMatched = matched.some((m) => m.startsWith(left + "|"));
+          return (
+            <button key={left} type="button"
+              className={`match-item${isMatched ? " matched" : selectedLeft === left ? " active" : ""}`}
+              onClick={() => handleLeft(left)} disabled={isMatched}>
+              {left}
+            </button>
+          );
+        })}
+      </div>
+      <div className="match-col">
+        {rightItems.map((right) => {
+          const isMatched = matched.some((m) => m.endsWith("|" + right));
+          return (
+            <button key={right} type="button"
+              className={`match-item${isMatched ? " matched" : wrongRight === right ? " wrong" : ""}`}
+              onClick={() => handleRight(right)} disabled={isMatched}>
+              {right}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function ExerciseView({ exercise, answer, setAnswer, t }: { exercise: Exercise; answer: string | string[]; setAnswer: (value: string | string[]) => void; t: (key: string) => string }) {
   if (exercise.type === "match_pairs") {
-    const selected = Array.isArray(answer) ? answer : [];
-    return (
-      <div className="chip-grid">
-        {(exercise.correctAnswer as string[]).map((pair) => (
-          <button key={pair} type="button" className={`chip ${selected.includes(pair) ? "active" : ""}`} onClick={() => setAnswer(selected.includes(pair) ? selected.filter((item) => item !== pair) : [...selected, pair])}>{pair.replace("|", " - ")}</button>
-        ))}
-      </div>
-    );
+    return <MatchPairsExercise key={exercise.id} exercise={exercise} setAnswer={(v) => setAnswer(v)} />;
   }
   if (exercise.type === "fill_blank" || exercise.type === "typing") {
     return <Field label={t("student.lesson.answer_label")} value={String(answer || "")} onChange={(event) => setAnswer(event.target.value)} />;
@@ -403,12 +457,14 @@ function LessonScreen() {
   const [records, setRecords] = useState<AnswerRecord[]>([]);
   const [celebration, setCelebration] = useState<{ xp: number; correct: number; total: number } | null>(null);
   const [sharing, setSharing] = useState(false);
+  const hasIntro = !!(lesson?.intro || (lesson?.words?.length ?? 0) > 0);
+  const [phase, setPhase] = useState<"intro" | "exercise">(() => hasIntro ? "intro" : "exercise");
   if (!user || !progress || !lesson) return <Navigate to="/app/path" replace />;
   const activeLesson = lesson;
   const exercise = activeLesson.exercises[index];
-  if (!exercise && !celebration) return <Navigate to="/app/path" replace />;
-  const percent = exercise ? Math.round((index / activeLesson.exercises.length) * 100) : 100;
-  const questionLabel = exercise ? `${index + 1} / ${activeLesson.exercises.length}` : "";
+  if (!exercise && !celebration && phase === "exercise") return <Navigate to="/app/path" replace />;
+  const percent = phase === "intro" ? 0 : (exercise ? Math.round((index / activeLesson.exercises.length) * 100) : 100);
+  const questionLabel = phase === "intro" ? `${lesson.words.length} слів` : (exercise ? `${index + 1} / ${activeLesson.exercises.length}` : "");
 
   function check() {
     const correct = progressService.check(exercise, answer);
@@ -445,21 +501,51 @@ function LessonScreen() {
           <span className="lesson-hearts-chip"><Heart size={15} /> {progress.hearts}</span>
         </div>
       </div>
-      <Card className="exercise-card">
-        <p className="lesson-topic">{lesson.topic}</p>
-        <h1>{exercise.question}</h1>
-        <ExerciseView exercise={exercise} answer={answer} setAnswer={setAnswer} t={t} />
-      </Card>
-      <div className={`lesson-feedback ${feedback || ""}`}>
-        {feedback === "correct" ? t("student.lesson.correct") : null}
-        {feedback === "wrong" ? `${t("student.lesson.wrong_prefix")} ${Array.isArray(exercise.correctAnswer) ? exercise.correctAnswer.join(", ") : exercise.correctAnswer}. ${exercise.explanation || ""}` : null}
-      </div>
-      <div className="lesson-bottom">
-        {!feedback
-          ? <Button disabled={!answer || (Array.isArray(answer) && !answer.length)} onClick={check}>{t("student.lesson.check")}</Button>
-          : <Button autoFocus onClick={next}>{index + 1 >= lesson.exercises.length ? t("student.lesson.finish") : t("student.lesson.next")}</Button>
-        }
-      </div>
+
+      {phase === "intro" ? (
+        <>
+          <div className="lesson-intro-card">
+            {lesson.intro && <p className="lesson-intro-text">{lesson.intro}</p>}
+            {lesson.words.length > 0 && (
+              <div className="lesson-words-list">
+                {lesson.words.map((word) => (
+                  <div key={word.id} className="lesson-word-item">
+                    <div className="lesson-word-row">
+                      <span className="lesson-word-sk">{word.sk}</span>
+                      <span className="lesson-word-uk">{word.uk}</span>
+                    </div>
+                    {word.exampleSk && (
+                      <div className="lesson-word-example">{word.exampleSk} — {word.exampleUk}</div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+          <div className="lesson-feedback" />
+          <div className="lesson-bottom">
+            <Button onClick={() => setPhase("exercise")}>Почати урок →</Button>
+          </div>
+        </>
+      ) : (
+        <>
+          <Card className="exercise-card">
+            <p className="lesson-topic">{lesson.topic}</p>
+            <h1>{exercise?.question}</h1>
+            <ExerciseView key={exercise?.id} exercise={exercise!} answer={answer} setAnswer={setAnswer} t={t} />
+          </Card>
+          <div className={`lesson-feedback ${feedback || ""}`}>
+            {feedback === "correct" ? t("student.lesson.correct") : null}
+            {feedback === "wrong" ? `${t("student.lesson.wrong_prefix")} ${Array.isArray(exercise?.correctAnswer) ? (exercise!.correctAnswer as string[]).join(", ") : exercise?.correctAnswer}. ${exercise?.explanation || ""}` : null}
+          </div>
+          <div className="lesson-bottom">
+            {!feedback
+              ? <Button disabled={!answer || (Array.isArray(answer) && !answer.length)} onClick={check}>{t("student.lesson.check")}</Button>
+              : <Button autoFocus onClick={next}>{index + 1 >= lesson.exercises.length ? t("student.lesson.finish") : t("student.lesson.next")}</Button>
+            }
+          </div>
+        </>
+      )}
       {progress.hearts <= 0 ? (
         <Modal>
           <Card className="modal-card">

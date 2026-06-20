@@ -29,6 +29,8 @@ interface AppStore {
   upsertLesson: (lesson: Lesson) => void;
   deleteLesson: (lessonId: string) => void;
   adminUpdateUser: (userId: string, patch: Partial<User>) => void;
+  loginAsUser: (userId: string) => void;
+  returnToAdmin: () => void;
   drainSync: () => Promise<void>;
   resetLocal: () => void;
 }
@@ -320,6 +322,23 @@ export const useAppStore = create<AppStore>((set, get) => ({
     data = withSync(data, "admin.user.update", { userId, ...patch });
     save(data);
     set({ data });
+  },
+
+  loginAsUser(userId) {
+    const adminReturnKey = "slovak-life.admin-return";
+    const current = get().currentUserId;
+    if (current) localStorage.setItem(adminReturnKey, current);
+    localStorage.setItem(sessionKey, userId);
+    set({ currentUserId: userId });
+  },
+
+  returnToAdmin() {
+    const adminReturnKey = "slovak-life.admin-return";
+    const adminId = localStorage.getItem(adminReturnKey);
+    if (!adminId) return;
+    localStorage.setItem(sessionKey, adminId);
+    localStorage.removeItem(adminReturnKey);
+    set({ currentUserId: adminId });
   },
 
   async drainSync() {
