@@ -21,11 +21,15 @@ const JWT_COOKIE = "sl_session";
 export const config = { api: { bodyParser: false } };
 
 // ─── DB ───────────────────────────────────────────────────────────────────────
+let _db: ReturnType<typeof createClient> | null = null;
 function getDb() {
-  return createClient({
-    url:       process.env.TURSO_DATABASE_URL ?? "file:./private/slovak-life.sqlite",
-    authToken: process.env.TURSO_AUTH_TOKEN,
-  });
+  if (!_db) {
+    _db = createClient({
+      url:       process.env.TURSO_DATABASE_URL ?? "file:./private/slovak-life.sqlite",
+      authToken: process.env.TURSO_AUTH_TOKEN,
+    });
+  }
+  return _db;
 }
 
 type Arg = InValue;
@@ -272,13 +276,26 @@ async function handleForgot(res: VercelResponse, body: Record<string, unknown>):
   const from     = process.env.MAIL_FROM ?? "noreply@slovaklife.app";
 
   if (process.env.RESEND_API_KEY) {
-    await fetch("https://api.resend.com/emails", {
+    const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"></head>
+<body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f7ff;margin:0;padding:40px 20px;">
+<div style="max-width:480px;margin:0 auto;background:#ffffff;border-radius:16px;padding:40px;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+  <h1 style="font-size:22px;font-weight:800;color:#1a1040;margin:0 0 4px;">Slovak Life</h1>
+  <p style="color:#9ca3af;margin:0 0 32px;font-size:13px;">Вивчення словацької мови</p>
+  <h2 style="font-size:18px;font-weight:700;color:#1a1040;margin:0 0 12px;">Скидання пароля</h2>
+  <p style="color:#374151;line-height:1.6;margin:0 0 24px;">Натисни кнопку нижче, щоб встановити новий пароль. Посилання дійсне <strong>30 хвилин</strong>.</p>
+  <a href="${resetUrl}" style="display:inline-block;background:#6c47ff;color:#ffffff;text-decoration:none;padding:14px 28px;border-radius:10px;font-weight:700;font-size:15px;">Скинути пароль →</a>
+  <p style="color:#9ca3af;font-size:12px;margin:28px 0 0;line-height:1.5;">Якщо ти не запитував скидання пароля — просто ігноруй цей лист. Твій пароль залишиться без змін.</p>
+  <hr style="border:none;border-top:1px solid #e5e7eb;margin:24px 0;">
+  <p style="color:#d1d5db;font-size:11px;margin:0;">© 2026 Slovak Life</p>
+</div></body></html>`;
+    const r = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ from, to: email, subject: "Скидання пароля — Slovak Life", html: `<p><a href="${resetUrl}">Скинути пароль</a> (дійсне 30 хв)</p>` }),
+      body: JSON.stringify({ from, to: email, subject: "Скидання пароля — Slovak Life", html }),
     });
+    if (!r.ok) console.error("[resend] email send failed:", r.status, await r.text().catch(() => ""));
   } else {
-    console.log("[password-reset]", resetUrl);
+    console.error("[password-reset] RESEND_API_KEY not set — reset URL:", resetUrl);
   }
   respond(res, { ok: true });
 }
@@ -334,8 +351,17 @@ async function handleSyncPull(req: VercelRequest, res: VercelResponse): Promise<
   const uid = await requireUid(req, res);
   if (!uid) return;
 
-  const row = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [uid]);
+  let row = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [uid]);
   if (!row) return fail(res, "Користувача не знайдено", 404);
+
+  // Auto-downgrade expired trials to free
+  if (String(row.sub_status) === "trial" && row.trial_ends) {
+    if (Date.now() > new Date(String(row.trial_ends)).getTime()) {
+      await exec("UPDATE users SET sub_status = 'free', updated_at = ? WHERE id = ?", [nowIso(), uid]);
+      row = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [uid]);
+      if (!row) return fail(res, "Користувача не знайдено", 404);
+    }
+  }
 
   const prog  = await ensureProgress(uid);
   const words = await getUserWords(uid);
@@ -703,7 +729,31 @@ async function handleAdminNotify(req: VercelRequest, res: VercelResponse, body: 
   else if (target.startsWith("level:")) { sql += " AND u.level = ?"; args.push(target.slice(6)); }
 
   const rows = await query(sql, args);
-  respond(res, { ok: true, sent: rows.length });
+  if (!rows.length) return respond(res, { ok: true, sent: 0 });
+
+  const serverKey = process.env.FIREBASE_SERVER_KEY;
+  if (!serverKey) {
+    console.error("[admin-notify] FIREBASE_SERVER_KEY not set — push not sent");
+    return respond(res, { ok: true, sent: 0, warning: "Push not configured (FIREBASE_SERVER_KEY missing)" });
+  }
+
+  const tokens = rows.map(r => String(r.token));
+  let sent = 0;
+  for (let i = 0; i < tokens.length; i += 500) {
+    const chunk = tokens.slice(i, i + 500);
+    const r = await fetch("https://fcm.googleapis.com/fcm/send", {
+      method: "POST",
+      headers: { Authorization: `key=${serverKey}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        registration_ids: chunk,
+        notification: { title, body: msg },
+        data: { type: "admin_broadcast" },
+      }),
+    });
+    if (r.ok) { const d = await r.json() as { success?: number }; sent += d.success ?? 0; }
+    else console.error("[fcm] chunk failed:", r.status, await r.text().catch(() => ""));
+  }
+  respond(res, { ok: true, sent });
 }
 
 async function handlePostErrors(req: VercelRequest, res: VercelResponse, body: unknown): Promise<void> {
