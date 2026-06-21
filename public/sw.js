@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'v3';
+const CACHE_VERSION = 'v4';
 const STATIC_CACHE = `slovak-life-static-${CACHE_VERSION}`;
 const API_CACHE    = `slovak-life-api-${CACHE_VERSION}`;
 const AUDIO_CACHE  = `slovak-life-audio-${CACHE_VERSION}`;
