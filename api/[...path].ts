@@ -804,12 +804,21 @@ async function handleBillingPortal(req: VercelRequest, res: VercelResponse): Pro
 }
 
 async function handleBillingWebhook(req: VercelRequest, res: VercelResponse, rawBody: Buffer): Promise<void> {
-  const secret = process.env.STRIPE_WEBHOOK_SECRET ?? "";
+  const secret     = process.env.STRIPE_WEBHOOK_SECRET ?? "";
+  const thinSecret = process.env.STRIPE_WEBHOOK_SECRET_THIN ?? "";
   if (!secret) return fail(res, "Webhook secret not configured", 503);
   const sig = (req.headers["stripe-signature"] as string) ?? "";
   let event: Stripe.Event;
-  try { event = getStripe().webhooks.constructEvent(rawBody, sig, secret); }
-  catch { return fail(res, "Invalid signature", 400); }
+  try {
+    event = getStripe().webhooks.constructEvent(rawBody, sig, secret);
+  } catch {
+    // Try thin-payload destination secret (same URL, different signing key)
+    if (thinSecret) {
+      try { getStripe().webhooks.constructEvent(rawBody, sig, thinSecret); return respond(res, { ok: true }); }
+      catch { /* fall through to 400 */ }
+    }
+    return fail(res, "Invalid signature", 400);
+  }
 
   if (event.type === "checkout.session.completed") {
     const s = event.data.object as Stripe.Checkout.Session;
