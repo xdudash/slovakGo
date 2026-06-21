@@ -62,20 +62,22 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
 
   return (
     <div className="app-frame">
-      {adminReturnId && (
-        <button
-          className="admin-preview-banner"
-          onClick={() => { returnToAdmin(); navigate("/admin"); }}
-        >
-          Перегляд як <strong>{currentUserName}</strong> — Повернутися в адмінку →
-        </button>
-      )}
       {!isOnline && (
         <div className="offline-banner">
           Офлайн{pendingCount > 0 ? ` · ${pendingCount} дій в черзі` : ""}
         </div>
       )}
-      <main className="app-main">{children || <Outlet />}</main>
+      <div className="app-content">
+        {adminReturnId && (
+          <button
+            className="admin-preview-banner"
+            onClick={() => { returnToAdmin(); navigate("/admin"); }}
+          >
+            Перегляд як <strong>{currentUserName}</strong> — Повернутися в адмінку →
+          </button>
+        )}
+        <main className="app-main">{children || <Outlet />}</main>
+      </div>
       <nav className="bottom-nav" aria-label={t("nav.aria")}>
         {items.map((item) => {
           const Icon = item.icon;

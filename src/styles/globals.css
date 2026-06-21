@@ -126,6 +126,13 @@ a {
   box-shadow: 0 0 0 1px rgba(33, 25, 70, 0.04);
 }
 
+.app-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
 .app-main {
   min-height: 100dvh;
   padding-bottom: calc(98px + env(safe-area-inset-bottom));
@@ -1894,19 +1901,104 @@ textarea:focus,
     opacity: 0.92;
   }
 
+  /* ── Desktop app shell: sidebar + scrollable content ── */
   .app-frame {
+    max-width: 940px;
+    height: calc(100dvh - 36px);
     margin-top: 18px;
     margin-bottom: 18px;
-    min-height: calc(100dvh - 36px);
     border-radius: 28px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 16px 64px rgba(33, 25, 70, 0.18), 0 0 0 1px rgba(33, 25, 70, 0.08);
   }
 
+  /* Content column: banner + scrollable main */
+  .app-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  /* Content area scrolls within the frame */
   .app-main {
-    min-height: calc(100dvh - 36px);
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+    scrollbar-width: none;
+  }
+  .app-main::-webkit-scrollbar { display: none; }
+
+  /* Sidebar: left column, vertical nav */
+  .bottom-nav {
+    order: -1;
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 200px;
+    flex-shrink: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 2px;
+    padding: 24px 10px;
+    border-top: none;
+    border-right: 1px solid var(--border);
+    border-radius: 0;
+    background: #ffffff;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    grid-template-columns: unset;
+    z-index: auto;
   }
 
-  .bottom-nav {
-    border-radius: 22px 22px 0 0;
+  /* Brand name at top of sidebar */
+  .bottom-nav::before {
+    content: "Slovak Life";
+    display: block;
+    font-size: 1rem;
+    font-weight: 850;
+    color: var(--fg);
+    padding: 0 14px 18px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  /* Nav items: icon-left, text-right in sidebar */
+  .bottom-nav-item {
+    min-height: unset;
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    place-items: unset;
+    align-content: unset;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 11px;
+    padding: 0 14px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .bottom-nav-item.active {
+    background: var(--accent-soft);
+    color: var(--accent);
+    box-shadow: none;
+  }
+
+  .bottom-nav-item.active svg {
+    color: var(--accent);
   }
 }
 
