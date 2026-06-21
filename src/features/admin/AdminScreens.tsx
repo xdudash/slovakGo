@@ -45,7 +45,7 @@ function Dashboard() {
 
   return (
     <main className="page-content">
-      <PageHeader title="Адмін-панель" subtitle="Slovak Life MVP" />
+      <PageHeader title="Адмін-панель" subtitle="SlovakGO MVP" />
       <div className="admin-stats-grid">
         <Card className="admin-stat-card">
           <Users size={22} color="var(--accent)" />

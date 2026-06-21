@@ -39,7 +39,7 @@ export async function generateShareCard(data: ShareCardData): Promise<Blob> {
   // App name
   ctx.font = `bold 48px ${family}`;
   ctx.fillStyle = "rgba(255,255,255,0.65)";
-  ctx.fillText("Slovak Life", 80, 110);
+  ctx.fillText("SlovakGO", 80, 110);
 
   // XP number — dynamic size by digit count
   const xpStr = `+${data.xp}`;
@@ -71,7 +71,7 @@ export async function generateShareCard(data: ShareCardData): Promise<Blob> {
   // App URL
   ctx.font = `36px ${family}`;
   ctx.fillStyle = "rgba(255,255,255,0.35)";
-  ctx.fillText("slovaklife.app", 80, 980);
+  ctx.fillText("slovakgo.sk", 80, 980);
 
   return new Promise<Blob>((resolve, reject) => {
     canvas.toBlob((blob) => {
@@ -82,14 +82,14 @@ export async function generateShareCard(data: ShareCardData): Promise<Blob> {
 }
 
 export async function shareOrDownloadCard(blob: Blob, shareText: string): Promise<void> {
-  const file = new File([blob], "slovak-life-progress.png", { type: "image/png" });
+  const file = new File([blob], "slovakgo-progress.png", { type: "image/png" });
   if (navigator.share && navigator.canShare?.({ files: [file] })) {
     await navigator.share({ files: [file], text: shareText });
   } else {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "slovak-life-progress.png";
+    a.download = "slovakgo-progress.png";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

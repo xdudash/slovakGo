@@ -12,7 +12,7 @@ function AuthShell({ title, text, children }: { title: string; text: string; chi
     <main className="auth-screen">
       <section className="brand-panel">
         <div className="logo-mark"><GraduationCap size={34} /></div>
-        <h1>Slovak Life</h1>
+        <h1>SlovakGO</h1>
         <p>{text}</p>
       </section>
       <Card className="auth-card">

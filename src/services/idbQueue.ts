@@ -1,6 +1,6 @@
 import type { SyncMutation } from '../types';
 
-const DB_NAME = 'slovak-life';
+const DB_NAME = 'slovakgo';
 const STORE_NAME = 'sync-queue';
 const DB_VERSION = 1;
 

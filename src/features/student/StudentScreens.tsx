@@ -584,7 +584,7 @@ function LessonScreen() {
                 setSharing(true);
                 try {
                   const blob = await generateShareCard({ xp: celebration.xp, label: "в цьому уроці", streakDays: progress.streakDays, userName: user.name, correctCount: celebration.correct, totalCount: celebration.total });
-                  await shareOrDownloadCard(blob, `Я щойно пройшов урок у Slovak Life! +${celebration.xp} XP`);
+                  await shareOrDownloadCard(blob, `Я щойно пройшов урок у SlovakGO! +${celebration.xp} XP`);
                 } finally { setSharing(false); }
               }}
             >
@@ -1420,7 +1420,7 @@ function ProfileScreen() {
           <button type="button" className="referral-share-btn" onClick={() => {
             const url = `${window.location.origin}/register?ref=${user.id}`;
             if (navigator.share) {
-              navigator.share({ title: "Slovak Life", text: t("student.profile.referral_share_text"), url }).catch(() => undefined);
+              navigator.share({ title: "SlovakGO", text: t("student.profile.referral_share_text"), url }).catch(() => undefined);
             } else {
               navigator.clipboard.writeText(url).catch(() => undefined);
               setReferralCopied(true);
@@ -1439,7 +1439,7 @@ function ProfileScreen() {
             setSharingProgress(true);
             try {
               const blob = await generateShareCard({ xp: progress.xpWeekly, label: "цього тижня", streakDays: progress.streakDays, userName: user.name });
-              await shareOrDownloadCard(blob, `Я вивчаю словацьку у Slovak Life! ${progress.xpWeekly} XP цього тижня`);
+              await shareOrDownloadCard(blob, `Я вивчаю словацьку у SlovakGO! ${progress.xpWeekly} XP цього тижня`);
             } finally { setSharingProgress(false); }
           }}
         >

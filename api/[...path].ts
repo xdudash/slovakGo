@@ -1,5 +1,5 @@
 /**
- * Slovak Life — Vercel Serverless API
+ * SlovakGO — Vercel Serverless API
  * Replaces public/api/index.php
  * Database: Turso (libsql, SQLite-compatible) via TURSO_DATABASE_URL + TURSO_AUTH_TOKEN
  * Auth: JWT in HttpOnly cookie (replaces PHP sessions)
@@ -25,7 +25,7 @@ let _db: ReturnType<typeof createClient> | null = null;
 function getDb() {
   if (!_db) {
     _db = createClient({
-      url:       process.env.TURSO_DATABASE_URL ?? "file:./private/slovak-life.sqlite",
+      url:       process.env.TURSO_DATABASE_URL ?? "file:./private/slovakgo.sqlite",
       authToken: process.env.TURSO_AUTH_TOKEN,
     });
   }
@@ -273,25 +273,25 @@ async function handleForgot(res: VercelResponse, body: Record<string, unknown>):
 
   const appUrl   = String(process.env.APP_URL ?? "http://localhost:5173").replace(/\/$/, "");
   const resetUrl = `${appUrl}/reset-password?token=${token}`;
-  const from     = process.env.MAIL_FROM ?? "noreply@slovaklife.app";
+  const from     = process.env.MAIL_FROM ?? "noreply@slovakgo.sk";
 
   if (process.env.RESEND_API_KEY) {
     const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"></head>
 <body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f7ff;margin:0;padding:40px 20px;">
 <div style="max-width:480px;margin:0 auto;background:#ffffff;border-radius:16px;padding:40px;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
-  <h1 style="font-size:22px;font-weight:800;color:#1a1040;margin:0 0 4px;">Slovak Life</h1>
+  <h1 style="font-size:22px;font-weight:800;color:#1a1040;margin:0 0 4px;">SlovakGO</h1>
   <p style="color:#9ca3af;margin:0 0 32px;font-size:13px;">Вивчення словацької мови</p>
   <h2 style="font-size:18px;font-weight:700;color:#1a1040;margin:0 0 12px;">Скидання пароля</h2>
   <p style="color:#374151;line-height:1.6;margin:0 0 24px;">Натисни кнопку нижче, щоб встановити новий пароль. Посилання дійсне <strong>30 хвилин</strong>.</p>
   <a href="${resetUrl}" style="display:inline-block;background:#6c47ff;color:#ffffff;text-decoration:none;padding:14px 28px;border-radius:10px;font-weight:700;font-size:15px;">Скинути пароль →</a>
   <p style="color:#9ca3af;font-size:12px;margin:28px 0 0;line-height:1.5;">Якщо ти не запитував скидання пароля — просто ігноруй цей лист. Твій пароль залишиться без змін.</p>
   <hr style="border:none;border-top:1px solid #e5e7eb;margin:24px 0;">
-  <p style="color:#d1d5db;font-size:11px;margin:0;">© 2026 Slovak Life</p>
+  <p style="color:#d1d5db;font-size:11px;margin:0;">© 2026 SlovakGO</p>
 </div></body></html>`;
     const r = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ from, to: email, subject: "Скидання пароля — Slovak Life", html }),
+      body: JSON.stringify({ from, to: email, subject: "Скидання пароля — SlovakGO", html }),
     });
     if (!r.ok) console.error("[resend] email send failed:", r.status, await r.text().catch(() => ""));
   } else {

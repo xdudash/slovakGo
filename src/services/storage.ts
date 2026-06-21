@@ -1,7 +1,7 @@
 import { seedData } from "../data/seedData";
 import type { AppData } from "../types";
 
-const STORAGE_KEY = "slovak-life.mvp.state.v1";
+const STORAGE_KEY = "slovakgo.state.v1";
 
 function cloneSeed(): AppData {
   return JSON.parse(JSON.stringify(seedData)) as AppData;

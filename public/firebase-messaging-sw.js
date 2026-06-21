@@ -19,11 +19,11 @@ if (_FCM.apiKey && _FCM.apiKey.indexOf('%%') === -1) {
   _msg.onBackgroundMessage(function (payload) {
     var n = payload.notification || {};
     var d = payload.data        || {};
-    self.registration.showNotification(n.title || 'Slovak Life', {
+    self.registration.showNotification(n.title || 'SlovakGO', {
       body:    n.body  || '',
       icon:    n.icon  || '/favicon.svg',
       badge:   '/favicon.svg',
-      tag:     d.tag   || 'slovaklife',
+      tag:     d.tag   || 'slovakgo',
       data:    { url: d.click_action || '/app/path', ...d },
       actions: [{ action: 'open', title: 'Відкрити' }],
     });

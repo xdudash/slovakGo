@@ -54,7 +54,7 @@ export function listenForeground(handler: (title: string, body: string) => void)
   if (!isConfigured()) return;
   try {
     onMessage(getMessaging(app()), (payload) => {
-      handler(payload.notification?.title || 'Slovak Life', payload.notification?.body || '');
+      handler(payload.notification?.title || 'SlovakGO', payload.notification?.body || '');
     });
   } catch { /* Firebase not configured or messaging not supported */ }
 }

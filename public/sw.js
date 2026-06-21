@@ -1,7 +1,7 @@
-const CACHE_VERSION = 'v4';
-const STATIC_CACHE = `slovak-life-static-${CACHE_VERSION}`;
-const API_CACHE    = `slovak-life-api-${CACHE_VERSION}`;
-const AUDIO_CACHE  = `slovak-life-audio-${CACHE_VERSION}`;
+const CACHE_VERSION = 'v5';
+const STATIC_CACHE = `slovakgo-static-${CACHE_VERSION}`;
+const API_CACHE    = `slovakgo-api-${CACHE_VERSION}`;
+const AUDIO_CACHE  = `slovakgo-audio-${CACHE_VERSION}`;
 
 const PRECACHE_URLS = [
   '/',

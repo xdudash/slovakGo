@@ -2,7 +2,7 @@ import { apiClient } from "./apiClient";
 import { idbDelete, idbGetAll, idbPut } from "./idbQueue";
 import type { AppData, SyncMutation } from "../types";
 
-const CLIENT_KEY = "slovak-life.client-id";
+const CLIENT_KEY = "slovakgo.client-id";
 
 function clientId(): string {
   let id = localStorage.getItem(CLIENT_KEY);

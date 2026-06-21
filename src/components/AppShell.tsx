@@ -29,7 +29,7 @@ const navConfig = {
   ]
 };
 
-const adminReturnKey = "slovak-life.admin-return";
+const adminReturnKey = "slovakgo.admin-return";
 
 export function AppShell({ role, children }: { role: UserRole; children?: ReactNode }) {
   const { t } = useT();

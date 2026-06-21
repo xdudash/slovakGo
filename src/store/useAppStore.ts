@@ -35,7 +35,7 @@ interface AppStore {
   resetLocal: () => void;
 }
 
-const sessionKey = "slovak-life.current-user";
+const sessionKey = "slovakgo.current-user";
 
 function initialUserId(): string | undefined {
   return localStorage.getItem(sessionKey) || undefined;
@@ -325,7 +325,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
   },
 
   loginAsUser(userId) {
-    const adminReturnKey = "slovak-life.admin-return";
+    const adminReturnKey = "slovakgo.admin-return";
     const current = get().currentUserId;
     if (current) localStorage.setItem(adminReturnKey, current);
     localStorage.setItem(sessionKey, userId);
@@ -333,7 +333,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
   },
 
   returnToAdmin() {
-    const adminReturnKey = "slovak-life.admin-return";
+    const adminReturnKey = "slovakgo.admin-return";
     const adminId = localStorage.getItem(adminReturnKey);
     if (!adminId) return;
     localStorage.setItem(sessionKey, adminId);

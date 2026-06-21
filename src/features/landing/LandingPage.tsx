@@ -13,8 +13,8 @@ export function LandingPage() {
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "@id": "https://slovaklife.app/#app",
-        "name": "Slovak Life",
+        "@id": "https://www.slovakgo.sk/#app",
+        "name": "SlovakGO",
         "applicationCategory": "EducationApplication",
         "operatingSystem": "Web, Android, iOS",
         "inLanguage": ["uk", "sk", "en"],
@@ -23,17 +23,17 @@ export function LandingPage() {
       },
       {
         "@type": "Organization",
-        "@id": "https://slovaklife.app/#organization",
-        "name": "Slovak Life",
-        "url": "https://slovaklife.app/",
-        "logo": "https://slovaklife.app/favicon.svg",
+        "@id": "https://www.slovakgo.sk/#organization",
+        "name": "SlovakGO",
+        "url": "https://www.slovakgo.sk/",
+        "logo": "https://www.slovakgo.sk/favicon.svg",
         "sameAs": [
-          "https://www.facebook.com/slovaklife",
-          "https://www.instagram.com/slovaklife"
+          "https://www.facebook.com/slovakgo",
+          "https://www.instagram.com/slovakgo"
         ],
         "contactPoint": {
           "@type": "ContactPoint",
-          "email": "hello@slovaklife.app",
+          "email": "hello@slovakgo.sk",
           "contactType": "customer support",
           "availableLanguage": ["Ukrainian", "Slovak"]
         }
@@ -41,7 +41,7 @@ export function LandingPage() {
       {
         "@type": "Service",
         "serviceType": "Language Integration",
-        "provider": { "@id": "https://slovaklife.app/#organization" },
+        "provider": { "@id": "https://www.slovakgo.sk/#organization" },
         "areaServed": [
           { "@type": "City", "name": "Bratislava", "sameAs": "https://www.wikidata.org/wiki/Q1780" },
           { "@type": "City", "name": "Košice", "sameAs": "https://www.wikidata.org/wiki/Q1892" },
@@ -72,7 +72,7 @@ export function LandingPage() {
         <div className="nav-container">
           <div className="landing-logo">
             <div className="logo-icon-sm">SL</div>
-            <span>Slovak Life</span>
+            <span>SlovakGO</span>
           </div>
           <div className="nav-actions">
             {user ? (
@@ -116,7 +116,7 @@ export function LandingPage() {
         <div className="hero-visual">
           <div className="phone-mockup">
             <div className="mockup-screen">
-              <img src="/slovak-life-preview.png" alt="App Preview" />
+              <img src="/slovakgo-preview.png" alt="App Preview" />
             </div>
           </div>
         </div>
@@ -125,7 +125,7 @@ export function LandingPage() {
       {/* ── Features Grid ───────────────────────────────────────────── */}
       <section className="features-section">
         <div className="section-header">
-          <h2>Чому Slovak Life?</h2>
+          <h2>Чому SlovakGO?</h2>
           <p>Ми не просто вчимо слова, ми готуємо тебе до життя в новій країні.</p>
         </div>
         
@@ -228,7 +228,7 @@ export function LandingPage() {
           <p>Приєднуйся до спільноти українців, які вже вільно почуваються в Словаччині.</p>
           <Link to="/register" className="btn btn-primary btn-lg">Зареєструватися безкоштовно</Link>
           <div className="footer-links">
-            <span>© 2026 Slovak Life</span>
+            <span>© 2026 SlovakGO</span>
             <div className="socials">
               <Smartphone size={18} />
               <Globe size={18} />

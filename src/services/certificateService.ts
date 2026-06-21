@@ -36,7 +36,7 @@ export function downloadCertificate(name: string, level: string): void {
   ctx.fillStyle = "#7c3aed";
   ctx.font = "bold 18px sans-serif";
   ctx.textAlign = "center";
-  ctx.fillText("Slovak Life", W / 2, 78);
+  ctx.fillText("SlovakGO", W / 2, 78);
 
   // Certificate title
   ctx.fillStyle = "#4c1d95";
@@ -86,11 +86,11 @@ export function downloadCertificate(name: string, level: string): void {
   // Footer
   ctx.fillStyle = "#c4b5fd";
   ctx.font = "12px sans-serif";
-  ctx.fillText("slovaklife.app", W / 2, 510);
+  ctx.fillText("slovakgo.sk", W / 2, 510);
 
   const dataUrl = canvas.toDataURL("image/png");
   const a = document.createElement("a");
   a.href = dataUrl;
-  a.download = `SlovakLife_Certificate_${level}.png`;
+  a.download = `SlovakGO_Certificate_${level}.png`;
   a.click();
 }

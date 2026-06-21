@@ -11,7 +11,7 @@ import { config } from "dotenv";
 config({ path: ".env.local" });
 
 const db = createClient({
-  url:       process.env.TURSO_DATABASE_URL ?? "file:./private/slovak-life.sqlite",
+  url:       process.env.TURSO_DATABASE_URL ?? "file:./private/slovakgo.sqlite",
   authToken: process.env.TURSO_AUTH_TOKEN,
 });
 
@@ -126,7 +126,7 @@ CREATE INDEX IF NOT EXISTS idx_fcm_tokens_user      ON fcm_tokens(user_id);
 `;
 
 async function run() {
-  console.log("Running migrations against:", process.env.TURSO_DATABASE_URL ?? "file:./private/slovak-life.sqlite");
+  console.log("Running migrations against:", process.env.TURSO_DATABASE_URL ?? "file:./private/slovakgo.sqlite");
 
   for (const stmt of schema.split(";").map(s => s.trim()).filter(Boolean)) {
     await db.execute(stmt + ";");
