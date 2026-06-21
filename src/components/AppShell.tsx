@@ -79,6 +79,10 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
         <main className="app-main">{children || <Outlet />}</main>
       </div>
       <nav className="bottom-nav" aria-label={t("nav.aria")}>
+        <div className="nav-brand">
+          <img src="/logosk.jpg" alt="SlovakGO" className="nav-logo" />
+          <span>SlovakGO</span>
+        </div>
         {items.map((item) => {
           const Icon = item.icon;
           return (

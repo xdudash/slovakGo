@@ -26,7 +26,7 @@ export function LandingPage() {
         "@id": "https://www.slovakgo.sk/#organization",
         "name": "SlovakGO",
         "url": "https://www.slovakgo.sk/",
-        "logo": "https://www.slovakgo.sk/favicon.svg",
+        "logo": "https://www.slovakgo.sk/logosk.jpg",
         "sameAs": [
           "https://www.facebook.com/slovakgo",
           "https://www.instagram.com/slovakgo"
@@ -71,7 +71,7 @@ export function LandingPage() {
       <nav className="landing-nav">
         <div className="nav-container">
           <div className="landing-logo">
-            <div className="logo-icon-sm">SL</div>
+            <img src="/logosk.jpg" alt="SlovakGO" className="logo-icon-sm" />
             <span>SlovakGO</span>
           </div>
           <div className="nav-actions">

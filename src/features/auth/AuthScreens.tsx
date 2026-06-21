@@ -1,7 +1,6 @@
 import { useState } from "react";
 import type { FormEvent, ReactNode } from "react";
 import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
-import { GraduationCap } from "lucide-react";
 import { Button, Card, Field } from "../../components/ui";
 import { roleHome, useAppStore } from "../../store/useAppStore";
 import { apiClient } from "../../services/apiClient";
@@ -11,7 +10,7 @@ function AuthShell({ title, text, children }: { title: string; text: string; chi
   return (
     <main className="auth-screen">
       <section className="brand-panel">
-        <div className="logo-mark"><GraduationCap size={34} /></div>
+        <img src="/logosk.jpg" alt="SlovakGO" className="logo-mark" />
         <h1>SlovakGO</h1>
         <p>{text}</p>
       </section>
