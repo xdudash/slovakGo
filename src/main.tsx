@@ -39,6 +39,26 @@ window.addEventListener("unhandledrejection", (event) => {
   reportGlobalError(message, err instanceof Error ? err.stack : undefined);
 });
 
+// PWA install lifecycle — registered at module level so beforeinstallprompt
+// is never missed even if it fires before the "load" event completes.
+// TODO: replace console.log calls with your analytics provider (Plausible, PostHog, Mixpanel…)
+interface BeforeInstallPromptEvent extends Event {
+  readonly platforms: string[];
+  prompt(): Promise<void>;
+  readonly userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
+}
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  const event = e as BeforeInstallPromptEvent;
+  // TODO: analytics.track("pwa_install_prompted", { platforms: event.platforms })
+  console.log("[PWA] beforeinstallprompt — user eligible for install", { platforms: event.platforms });
+});
+
+window.addEventListener("appinstalled", () => {
+  // TODO: analytics.track("pwa_installed")
+  console.log("[PWA] appinstalled — user installed the PWA");
+});
+
 function showInAppPush(title: string, body: string) {
   const el = document.createElement("div");
   el.className = "push-toast";
