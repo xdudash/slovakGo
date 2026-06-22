@@ -1097,24 +1097,37 @@ function LeaderboardScreen() {
   const { data, user, progress } = useStudentData();
   const { t } = useT();
   const weekSeconds = useWeekTimer();
-  const leaderboard = leaderboardService.recalculate(data.leaderboard, data.users, data.progress);
   const [tab, setTab] = useState<"all" | "ua" | "history">("all");
   const [flashIds, setFlashIds] = useState<Map<string, "up" | "down">>(new Map());
   const prevWeekIdRef = useRef<string | null>(null);
+  const [serverEntries, setServerEntries] = useState<LeaderboardEntry[] | null>(null);
+  const [serverWeekId, setServerWeekId] = useState<string | null>(null);
+
+  useEffect(() => {
+    apiClient.getLeaderboard()
+      .then((d) => {
+        setServerEntries(d.entries);
+        setServerWeekId(d.weekId);
+      })
+      .catch(() => undefined);
+  }, []);
+
+  const entries = serverEntries ?? [];
+  const weekId = serverWeekId ?? data.leaderboard.weekId;
 
   // Flash rows that moved when week transitions
   useEffect(() => {
-    if (prevWeekIdRef.current !== null && prevWeekIdRef.current !== leaderboard.weekId) {
+    if (prevWeekIdRef.current !== null && prevWeekIdRef.current !== weekId) {
       const map = new Map<string, "up" | "down">();
-      leaderboard.entries.forEach((e) => {
+      entries.forEach((e) => {
         if (e.movement === "up" || e.movement === "down") map.set(e.userId, e.movement);
       });
       setFlashIds(map);
       const tid = setTimeout(() => setFlashIds(new Map()), 1200);
       return () => clearTimeout(tid);
     }
-    prevWeekIdRef.current = leaderboard.weekId;
-  }, [leaderboard.weekId, leaderboard.entries]);
+    prevWeekIdRef.current = weekId;
+  }, [weekId, entries]);
 
   const userXp = progress?.xpWeekly ?? 0;
   const userLeague = leaderboardService.leagueFor(userXp);
@@ -1122,8 +1135,8 @@ function LeaderboardScreen() {
   const leagueProgress = leaderboardService.progressInLeague(userXp);
 
   const filtered = tab === "ua"
-    ? leaderboard.entries.filter((e) => e.country === "UA")
-    : leaderboard.entries;
+    ? entries.filter((e) => e.country === "UA")
+    : entries;
 
   const top3 = filtered.slice(0, 3);
   const podiumOrder = [top3[1], top3[0], top3[2]].filter((e): e is LeaderboardEntry => !!e);
@@ -1183,8 +1196,8 @@ function LeaderboardScreen() {
 
       {tab === "history" ? (
         <>
-          {leaderboard.history && leaderboard.history.length > 0
-            ? [...leaderboard.history].reverse().map((snapshot) => (
+          {data.leaderboard.history && data.leaderboard.history.length > 0
+            ? [...data.leaderboard.history].reverse().map((snapshot) => (
               <details key={snapshot.weekId} className="history-week">
                 <summary className="history-week-summary">
                   {snapshot.weekId} · {snapshot.entries.length} учасників

@@ -417,6 +417,12 @@ async function handleSyncPush(req: VercelRequest, res: VercelResponse, body: Rec
       [mutId, uid, String(mut.type ?? ""), nowIso()]);
     applied++;
   }
+  // Fire-and-forget prune of old sync_log entries (~5% of pushes to avoid per-request overhead)
+  if (applied > 0 && Math.random() < 0.05) {
+    const cutoff = new Date(Date.now() - 30 * 86400_000).toISOString().replace(/\.\d{3}Z$/, "Z");
+    exec("DELETE FROM sync_log WHERE processed_at < ?", [cutoff]).catch(() => undefined);
+  }
+
   respond(res, { ok: true, applied });
 }
 
@@ -768,6 +774,145 @@ async function handleAdminNotify(req: VercelRequest, res: VercelResponse, body: 
   respond(res, { ok: true, sent });
 }
 
+// ─── Admin user CRUD ──────────────────────────────────────────────────────────
+
+// GET /admin/users[?search=&role=&sub=&limit=100&offset=0]
+async function handleAdminUsers(req: VercelRequest, res: VercelResponse): Promise<void> {
+  const uid = await requireUid(req, res); if (!uid) return;
+  if (!(await checkRole(uid, "admin"))) return fail(res, "Недостатньо прав", 403);
+
+  const search = String(req.query.search ?? "").trim();
+  const role   = String(req.query.role ?? "");
+  const sub    = String(req.query.sub ?? "");
+  const limit  = Math.min(Number(req.query.limit ?? 100), 500);
+  const offset = Number(req.query.offset ?? 0);
+
+  const clauses: string[] = [];
+  const args: Arg[] = [];
+  if (search) { clauses.push("(u.name_text LIKE ? OR u.email LIKE ?)"); args.push(`%${search}%`, `%${search}%`); }
+  if (role && role !== "all") { clauses.push("u.role = ?"); args.push(role); }
+  if (sub  && sub  !== "all") { clauses.push("u.sub_status = ?"); args.push(sub); }
+  const where = clauses.length ? "WHERE " + clauses.join(" AND ") : "";
+
+  const [rows, totalRow] = await Promise.all([
+    query(
+      `SELECT u.id, u.email, u.name_text, u.role, u.level, u.avatar,
+              u.sub_status, u.is_blocked, u.created_at, u.updated_at,
+              COALESCE(p.xp_total, 0)    AS xp_total,
+              COALESCE(p.streak_days, 0) AS streak_days,
+              COALESCE(p.completed_j, '[]') AS completed_j
+       FROM users u LEFT JOIN progress p ON p.user_id = u.id
+       ${where} ORDER BY u.created_at DESC LIMIT ? OFFSET ?`,
+      [...args, limit, offset]
+    ),
+    queryOne(`SELECT COUNT(*) AS c FROM users u ${where}`, args),
+  ]);
+
+  respond(res, {
+    ok: true,
+    total: Number(totalRow?.c ?? 0),
+    users: rows.map(r => ({
+      id:                 String(r.id),
+      email:              String(r.email),
+      name:               String(r.name_text),
+      role:               String(r.role),
+      level:              String(r.level),
+      avatar:             r.avatar ? String(r.avatar) : null,
+      subscriptionStatus: String(r.sub_status),
+      isBlocked:          Boolean(r.is_blocked),
+      createdAt:          String(r.created_at),
+      updatedAt:          String(r.updated_at),
+      xpTotal:            Number(r.xp_total),
+      streakDays:         Number(r.streak_days),
+      completedCount:     safeJson<string[]>(String(r.completed_j), []).length,
+    })),
+  });
+}
+
+// GET /admin/users/:id
+async function handleAdminUserDetail(req: VercelRequest, res: VercelResponse, targetId: string): Promise<void> {
+  const uid = await requireUid(req, res); if (!uid) return;
+  if (!(await checkRole(uid, "admin"))) return fail(res, "Недостатньо прав", 403);
+
+  const row = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [targetId]);
+  if (!row) return fail(res, "Користувача не знайдено", 404);
+  const prog = await ensureProgress(targetId);
+
+  respond(res, {
+    ok: true,
+    user: rowToUser(row),
+    progress: {
+      xpTotal:           Number(prog.xp_total),
+      xpWeekly:          Number(prog.xp_weekly),
+      xpDailyHistory:    safeJson<Record<string, number>>(String(prog.xp_daily_j ?? "{}"), {}),
+      streakDays:        Number(prog.streak_days),
+      completedLessons:  safeJson<string[]>(String(prog.completed_j ?? "[]"), []),
+      mistakes:          safeJson<unknown[]>(String(prog.mistakes_j ?? "[]"), []),
+      hearts:            Number(prog.hearts),
+      maxHearts:         Number(prog.max_hearts),
+      lastPracticeDate:  prog.last_prac || null,
+      streakFreezeCount: Number(prog.freeze_cnt),
+    },
+  });
+}
+
+// POST /admin/users/:id  — direct update, bypasses sync queue
+async function handleAdminUserPatch(req: VercelRequest, res: VercelResponse, targetId: string, body: Record<string, unknown>): Promise<void> {
+  const uid = await requireUid(req, res); if (!uid) return;
+  if (!(await checkRole(uid, "admin"))) return fail(res, "Недостатньо прав", 403);
+
+  const sets: string[] = []; const vals: Arg[] = [];
+  if ("role" in body)               { sets.push("role = ?");       vals.push(String(body.role)); }
+  if ("isBlocked" in body)          { sets.push("is_blocked = ?"); vals.push(body.isBlocked ? 1 : 0); }
+  if ("subscriptionStatus" in body) { sets.push("sub_status = ?"); vals.push(String(body.subscriptionStatus)); }
+  if ("level" in body)              { sets.push("level = ?");      vals.push(String(body.level)); }
+  if (!sets.length) return respond(res, { ok: true });
+
+  sets.push("updated_at = ?"); vals.push(nowIso(), targetId);
+  await exec(`UPDATE users SET ${sets.join(", ")} WHERE id = ?`, vals);
+  const updated = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [targetId]);
+  respond(res, { ok: true, user: updated ? rowToUser(updated) : null });
+}
+
+// ─── Leaderboard ──────────────────────────────────────────────────────────────
+
+// GET /leaderboard  — top-50 real users by xp_weekly + current user's rank
+async function handleLeaderboard(req: VercelRequest, res: VercelResponse): Promise<void> {
+  const uid = await requireUid(req, res); if (!uid) return;
+  const weekId = currentWeekId();
+
+  const rows = await query(
+    `SELECT u.id, u.name_text, u.avatar, u.country, p.xp_weekly, p.week_id
+     FROM progress p JOIN users u ON u.id = p.user_id
+     WHERE u.is_blocked = 0 AND u.role = 'student'
+     ORDER BY p.xp_weekly DESC LIMIT 50`
+  );
+
+  const entries = rows.map((r, idx) => ({
+    userId:   String(r.id),
+    name:     String(r.name_text),
+    avatar:   r.avatar ? String(r.avatar) : null,
+    country:  r.country ? String(r.country) : null,
+    xpWeekly: String(r.week_id) === weekId ? Number(r.xp_weekly) : 0,
+    rank:     idx + 1,
+  }));
+
+  // Own rank when outside top 50
+  let myRank: number | null = entries.find(e => e.userId === uid)?.rank ?? null;
+  if (myRank === null) {
+    const myProg  = await queryOne("SELECT xp_weekly, week_id FROM progress WHERE user_id = ?", [uid]);
+    const myXp    = myProg && String(myProg.week_id) === weekId ? Number(myProg.xp_weekly) : 0;
+    const rankRow = await queryOne(
+      `SELECT COUNT(*) + 1 AS rank FROM progress p JOIN users u ON u.id = p.user_id
+       WHERE u.is_blocked = 0 AND u.role = 'student' AND p.xp_weekly > ?`,
+      [myXp]
+    );
+    myRank = Number(rankRow?.rank ?? 0);
+  }
+
+  respond(res, { ok: true, entries, weekId, myRank });
+}
+
 async function handlePostErrors(req: VercelRequest, res: VercelResponse, body: unknown): Promise<void> {
   const uid  = await getUid(req);
   const errs = Array.isArray(body) ? body : Array.isArray((body as Record<string, unknown>)?.errors) ? (body as Record<string, unknown[]>).errors : [body];
@@ -877,9 +1022,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "POST" && route === "/user/fcm-token")    return await handleFcmToken(req, res, body);
     if (meth === "POST" && route === "/user/reminder")     return await handleUserReminder(req, res, body);
     if (meth === "POST" && route === "/user/referral")     return await handleUserReferral(req, res, body);
-    if (meth === "GET"  && route === "/admin/stats")       return await handleAdminStats(req, res);
-    if (meth === "GET"  && route === "/admin/errors")      return await handleAdminErrors(req, res);
-    if (meth === "POST" && route === "/admin/notify")      return await handleAdminNotify(req, res, body);
+    if (meth === "GET"  && route === "/admin/stats")            return await handleAdminStats(req, res);
+    if (meth === "GET"  && route === "/admin/errors")           return await handleAdminErrors(req, res);
+    if (meth === "POST" && route === "/admin/notify")           return await handleAdminNotify(req, res, body);
+    if (meth === "GET"  && route === "/admin/users")            return await handleAdminUsers(req, res);
+    if (meth === "GET"  && route.startsWith("/admin/users/"))   return await handleAdminUserDetail(req, res, route.slice("/admin/users/".length));
+    if (meth === "POST" && route.startsWith("/admin/users/"))   return await handleAdminUserPatch(req, res, route.slice("/admin/users/".length), body);
+    if (meth === "GET"  && route === "/leaderboard")            return await handleLeaderboard(req, res);
     if (meth === "POST" && route === "/errors")            return await handlePostErrors(req, res, isJson ? body : safeJson(rawBody.toString(), {}));
     if (meth === "POST" && route === "/billing/checkout")  return await handleBillingCheckout(req, res);
     if (meth === "POST" && route === "/billing/portal")    return await handleBillingPortal(req, res);

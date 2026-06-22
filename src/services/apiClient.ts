@@ -166,5 +166,60 @@ export const apiClient = {
       levels: Record<string, number>;
       dailyRegistrations: Array<{ date: string; count: number }>;
     }>("/admin/stats");
-  }
+  },
+
+  getAdminUsers(opts: { search?: string; role?: string; sub?: string; page?: number; limit?: number } = {}) {
+    const p = new URLSearchParams();
+    if (opts.search) p.set("search", opts.search);
+    if (opts.role)   p.set("role",   opts.role);
+    if (opts.sub)    p.set("sub",    opts.sub);
+    if (opts.page)   p.set("page",   String(opts.page));
+    if (opts.limit)  p.set("limit",  String(opts.limit));
+    const qs = p.toString();
+    return apiRequest<{
+      ok: boolean;
+      total: number;
+      users: Array<{
+        id: string; email: string; name: string; avatar: string | null;
+        role: string; level: string; country: string;
+        subscriptionStatus: string; isBlocked: boolean;
+        createdAt: string; lastSeenAt: string | null;
+        xpTotal: number; streakDays: number; completedCount: number;
+      }>;
+    }>(`/admin/users${qs ? "?" + qs : ""}`);
+  },
+
+  getAdminUser(id: string) {
+    return apiRequest<{
+      ok: boolean;
+      user: {
+        id: string; email: string; name: string; avatar: string | null;
+        role: string; level: string; country: string;
+        subscriptionStatus: string; isBlocked: boolean;
+        createdAt: string; lastSeenAt: string | null;
+      };
+      progress: {
+        xpTotal: number; xpWeekly: number; xpDailyHistory: Record<string, number>;
+        streakDays: number; completedLessons: string[]; mistakes: string[];
+        hearts: number; maxHearts: number; lastPracticeDate: string | null;
+        streakFreezeCount: number;
+      };
+    }>(`/admin/users/${id}`);
+  },
+
+  directAdminUpdateUser(id: string, patch: { role?: string; isBlocked?: boolean; subscriptionStatus?: string; level?: string }) {
+    return apiRequest<{ ok: boolean; user: { id: string; role: string; isBlocked: boolean; subscriptionStatus: string; level: string } }>(
+      `/admin/users/${id}`,
+      { method: "POST", body: JSON.stringify(patch) }
+    );
+  },
+
+  getLeaderboard() {
+    return apiRequest<{
+      ok: boolean;
+      weekId: string;
+      myRank: number | null;
+      entries: Array<{ userId: string; name: string; avatar: string | null; country: string; xpWeekly: number; rank: number }>;
+    }>("/leaderboard");
+  },
 };

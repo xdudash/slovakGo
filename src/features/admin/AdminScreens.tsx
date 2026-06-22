@@ -8,7 +8,7 @@ import { AppShell } from "../../components/AppShell";
 import { Button, Card, Field, Modal, PageHeader } from "../../components/ui";
 import { apiClient } from "../../services/apiClient";
 import { selectCurrentUser, useAppStore } from "../../store/useAppStore";
-import type { Exercise, Lesson, Progress, User, UserLevel, UserRole, Word } from "../../types";
+import type { Exercise, Lesson, UserLevel, UserRole, Word } from "../../types";
 
 export function AdminLayout() {
   return (
@@ -37,11 +37,14 @@ function useAdminData() {
 function Dashboard() {
   const { data } = useAdminData();
   const navigate = useNavigate();
-  const students = data.users.filter((u) => u.role === "student");
-  const teachers = data.users.filter((u) => u.role === "teacher");
-  const plus     = data.users.filter((u) => u.subscriptionStatus === "plus");
   const published = data.lessons.filter((l) => l.isPublished);
-  const allAttempts = Object.values(data.progress).flatMap((p) => p.lessonAttempts);
+  const [summary, setSummary] = useState<{ totalUsers: number; active7d: number; plusUsers: number } | null>(null);
+
+  useEffect(() => {
+    apiClient.getAdminStats()
+      .then((d) => setSummary({ totalUsers: d.summary.totalUsers, active7d: d.summary.active7d, plusUsers: d.summary.plusUsers }))
+      .catch(() => undefined);
+  }, []);
 
   return (
     <main className="page-content">
@@ -49,33 +52,23 @@ function Dashboard() {
       <div className="admin-stats-grid">
         <Card className="admin-stat-card">
           <Users size={22} color="var(--accent)" />
-          <strong>{data.users.length}</strong>
+          <strong>{summary?.totalUsers ?? "…"}</strong>
           <span>Користувачів</span>
         </Card>
         <Card className="admin-stat-card">
           <UserRound size={22} color="var(--success)" />
-          <strong>{students.length}</strong>
-          <span>Студентів</span>
+          <strong>{summary?.active7d ?? "…"}</strong>
+          <span>Активні (7д)</span>
         </Card>
         <Card className="admin-stat-card">
           <Crown size={22} color="var(--yellow-dark)" />
-          <strong>{plus.length}</strong>
+          <strong>{summary?.plusUsers ?? "…"}</strong>
           <span>Plus</span>
         </Card>
         <Card className="admin-stat-card">
           <BookOpen size={22} color="var(--orange)" />
           <strong>{published.length} / {data.lessons.length}</strong>
           <span>Уроків (опубл.)</span>
-        </Card>
-        <Card className="admin-stat-card">
-          <Medal size={22} color="var(--red)" />
-          <strong>{allAttempts.length}</strong>
-          <span>Спроб уроків</span>
-        </Card>
-        <Card className="admin-stat-card">
-          <UserRound size={22} color="var(--muted)" />
-          <strong>{teachers.length}</strong>
-          <span>Викладачів</span>
         </Card>
       </div>
 
@@ -210,24 +203,28 @@ function exportJson(lessons: Lesson[]) {
   URL.revokeObjectURL(url);
 }
 
-function exportUsersCSV(users: User[], progress: Record<string, Progress>) {
+interface AdminServerUser {
+  id: string; email: string; name: string; avatar: string | null;
+  role: string; level: string; country: string;
+  subscriptionStatus: string; isBlocked: boolean;
+  createdAt: string; lastSeenAt: string | null;
+  xpTotal: number; streakDays: number; completedCount: number;
+}
+
+function exportUsersCSV(users: AdminServerUser[]) {
   const BOM = "﻿";
-  const headers = ["Ім'я", "Email", "Роль", "Рівень", "Підписка", "XP", "Серія", "Уроків завершено", "Помилок", "Остання активність"];
-  const rows = users.map((u) => {
-    const p = progress[u.id];
-    return [
-      `"${u.name.replace(/"/g, '""')}"`,
-      u.email,
-      u.role,
-      u.level,
-      u.subscriptionStatus,
-      p?.xpTotal ?? 0,
-      p?.streakDays ?? 0,
-      p?.completedLessons.length ?? 0,
-      p?.mistakes.length ?? 0,
-      u.lastActiveAt ? new Date(u.lastActiveAt).toLocaleDateString("uk-UA") : "—",
-    ].join(",");
-  });
+  const headers = ["Ім'я", "Email", "Роль", "Рівень", "Підписка", "XP", "Серія", "Уроків завершено", "Остання активність"];
+  const rows = users.map((u) => [
+    `"${u.name.replace(/"/g, '""')}"`,
+    u.email,
+    u.role,
+    u.level,
+    u.subscriptionStatus,
+    u.xpTotal,
+    u.streakDays,
+    u.completedCount,
+    u.lastSeenAt ? new Date(u.lastSeenAt).toLocaleDateString("uk-UA") : "—",
+  ].join(","));
   const csv = BOM + [headers.join(","), ...rows].join("\n");
   const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
   const url  = URL.createObjectURL(blob);
@@ -424,33 +421,43 @@ function LessonsScreen() {
 
 // ── USERS SCREEN ─────────────────────────────────────────────────────────────
 function UsersScreen() {
-  const { data, adminUpdateUser } = useAdminData();
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [roleFilter, setRoleFilter] = useState<UserRole | "all">("all");
+  const [users, setUsers] = useState<AdminServerUser[]>([]);
+  const [total, setTotal] = useState(0);
+  const [loading, setLoading] = useState(true);
 
-  const users = data.users
-    .filter((u) => roleFilter === "all" || u.role === roleFilter)
-    .filter((u) => !search ||
-      u.name.toLowerCase().includes(search.toLowerCase()) ||
-      u.email.toLowerCase().includes(search.toLowerCase())
-    );
+  function fetchUsers() {
+    setLoading(true);
+    apiClient.getAdminUsers({ search, role: roleFilter === "all" ? undefined : roleFilter, limit: 200 })
+      .then((d) => { setUsers(d.users); setTotal(d.total); })
+      .catch(() => undefined)
+      .finally(() => setLoading(false));
+  }
 
-  function cycleRole(current: UserRole): UserRole {
+  useEffect(() => { fetchUsers(); }, [search, roleFilter]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  async function patchUser(id: string, patch: Parameters<typeof apiClient.directAdminUpdateUser>[1]) {
+    await apiClient.directAdminUpdateUser(id, patch).catch(() => undefined);
+    fetchUsers();
+  }
+
+  function cycleRole(current: string): UserRole {
     const roles: UserRole[] = ["student", "teacher", "admin"];
-    return roles[(roles.indexOf(current) + 1) % roles.length];
+    return roles[(roles.indexOf(current as UserRole) + 1) % roles.length];
   }
 
   return (
     <main className="page-content">
-      <PageHeader title="Користувачі" subtitle={`${data.users.length} акаунтів`} />
+      <PageHeader title="Користувачі" subtitle={loading ? "…" : `${total} акаунтів`} />
       <div className="admin-toolbar">
         <div className="admin-search-box">
           <Search size={15} />
           <input placeholder="Пошук за ім'ям або email…" value={search} onChange={(e) => setSearch(e.target.value)} />
         </div>
         <div className="admin-toolbar-right">
-          <Button variant="secondary" onClick={() => exportUsersCSV(users, data.progress)}>
+          <Button variant="secondary" onClick={() => exportUsersCSV(users)}>
             <Download size={15} /> Експорт CSV
           </Button>
         </div>
@@ -464,46 +471,44 @@ function UsersScreen() {
         ))}
       </div>
 
+      {loading && <p style={{ color: "var(--muted)" }}>Завантаження…</p>}
       <div className="admin-user-list">
-        {users.map((u) => {
-          const progress = data.progress[u.id];
-          return (
-            <div key={u.id} className="admin-user-row" onClick={() => navigate(`/admin/users/${u.id}`)} role="button" tabIndex={0}
-              onKeyDown={(e) => e.key === "Enter" && navigate(`/admin/users/${u.id}`)}>
-              <div className="admin-user-avatar">{u.avatar || u.name.slice(0, 2).toUpperCase()}</div>
-              <div className="admin-user-info">
-                <strong>{u.name}</strong>
-                <span>{u.email}</span>
-              </div>
-              <div className="admin-user-badges">
-                <span className={`admin-role-badge role-${u.role}`}>{u.role}</span>
-                {u.subscriptionStatus === "plus" && <Crown size={14} color="var(--yellow-dark)" />}
-                {u.isBlocked && <span className="admin-blocked-badge">заблок.</span>}
-              </div>
-              <div className="admin-user-stats">
-                <span>{progress?.xpTotal ?? 0} XP</span>
-                <span>{progress?.streakDays ?? 0}🔥</span>
-              </div>
-              <div className="admin-user-actions" onClick={(e) => e.stopPropagation()}>
-                <button type="button" className="chip chip--sm"
-                  onClick={() => adminUpdateUser(u.id, { role: cycleRole(u.role) })}
-                  title="Змінити роль">
-                  {u.role}
-                </button>
-                <button type="button" className={`chip chip--sm ${u.subscriptionStatus === "plus" ? "active" : ""}`}
-                  onClick={() => adminUpdateUser(u.id, { subscriptionStatus: u.subscriptionStatus === "plus" ? "free" : "plus" })}
-                  title="Перемкнути Plus">
-                  <Crown size={12} /> Plus
-                </button>
-                <button type="button" className={`chip chip--sm ${u.isBlocked ? "active" : ""}`}
-                  onClick={() => adminUpdateUser(u.id, { isBlocked: !u.isBlocked })}
-                  title="Блокування">
-                  {u.isBlocked ? "Розблок." : "Блок."}
-                </button>
-              </div>
+        {users.map((u) => (
+          <div key={u.id} className="admin-user-row" onClick={() => navigate(`/admin/users/${u.id}`)} role="button" tabIndex={0}
+            onKeyDown={(e) => e.key === "Enter" && navigate(`/admin/users/${u.id}`)}>
+            <div className="admin-user-avatar">{u.avatar || u.name.slice(0, 2).toUpperCase()}</div>
+            <div className="admin-user-info">
+              <strong>{u.name}</strong>
+              <span>{u.email}</span>
             </div>
-          );
-        })}
+            <div className="admin-user-badges">
+              <span className={`admin-role-badge role-${u.role}`}>{u.role}</span>
+              {u.subscriptionStatus === "plus" && <Crown size={14} color="var(--yellow-dark)" />}
+              {u.isBlocked && <span className="admin-blocked-badge">заблок.</span>}
+            </div>
+            <div className="admin-user-stats">
+              <span>{u.xpTotal} XP</span>
+              <span>{u.streakDays}🔥</span>
+            </div>
+            <div className="admin-user-actions" onClick={(e) => e.stopPropagation()}>
+              <button type="button" className="chip chip--sm"
+                onClick={() => patchUser(u.id, { role: cycleRole(u.role) })}
+                title="Змінити роль">
+                {u.role}
+              </button>
+              <button type="button" className={`chip chip--sm ${u.subscriptionStatus === "plus" ? "active" : ""}`}
+                onClick={() => patchUser(u.id, { subscriptionStatus: u.subscriptionStatus === "plus" ? "free" : "plus" })}
+                title="Перемкнути Plus">
+                <Crown size={12} /> Plus
+              </button>
+              <button type="button" className={`chip chip--sm ${u.isBlocked ? "active" : ""}`}
+                onClick={() => patchUser(u.id, { isBlocked: !u.isBlocked })}
+                title="Блокування">
+                {u.isBlocked ? "Розблок." : "Блок."}
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </main>
   );
@@ -512,35 +517,52 @@ function UsersScreen() {
 // ── USER DETAIL ──────────────────────────────────────────────────────────────
 function UserDetail() {
   const { userId } = useParams();
-  const { data, adminUpdateUser, loginAsUser } = useAdminData();
+  const { data, loginAsUser } = useAdminData();
   const navigate = useNavigate();
-  const u = data.users.find((x) => x.id === userId);
-  const p = u ? data.progress[u.id] : undefined;
 
-  if (!u) return (
+  type ServerUser = Awaited<ReturnType<typeof apiClient.getAdminUser>>;
+  const [detail, setDetail] = useState<ServerUser | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  function fetchDetail() {
+    if (!userId) return;
+    setLoading(true);
+    apiClient.getAdminUser(userId)
+      .then(setDetail)
+      .catch(() => setDetail(null))
+      .finally(() => setLoading(false));
+  }
+
+  useEffect(() => { fetchDetail(); }, [userId]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  async function patchUser(patch: Parameters<typeof apiClient.directAdminUpdateUser>[1]) {
+    if (!userId) return;
+    await apiClient.directAdminUpdateUser(userId, patch).catch(() => undefined);
+    fetchDetail();
+  }
+
+  if (loading) return (
+    <main className="page-content">
+      <PageHeader title="…" action={<button type="button" className="back-btn" onClick={() => navigate("/admin/users")}>←</button>} />
+    </main>
+  );
+
+  if (!detail) return (
     <main className="page-content">
       <PageHeader title="Користувач не знайдений" action={<button type="button" className="back-btn" onClick={() => navigate("/admin/users")}>←</button>} />
     </main>
   );
 
-  // Lesson completion rate
-  const totalLessons = data.lessons.filter((l) => l.isPublished && l.level === u.level).length;
-  const completionPct = totalLessons > 0 ? Math.round(((p?.completedLessons.length ?? 0) / totalLessons) * 100) : 0;
+  const { user: u, progress: p } = detail;
 
-  // Avg score from attempts
-  const attempts = p?.lessonAttempts ?? [];
-  const completedAttempts = attempts.filter((a) => a.completed);
-  const avgScore = completedAttempts.length > 0
-    ? Math.round(completedAttempts.reduce((s, a) => s + a.score, 0) / completedAttempts.length)
-    : 0;
-  const avgXpPerLesson = completedAttempts.length > 0
-    ? Math.round(completedAttempts.reduce((s, a) => s + a.xpEarned, 0) / completedAttempts.length)
-    : 0;
+  // Lesson completion rate vs published lessons at user's level
+  const totalLessons = data.lessons.filter((l) => l.isPublished && l.level === u.level).length;
+  const completionPct = totalLessons > 0 ? Math.round((p.completedLessons.length / totalLessons) * 100) : 0;
 
   // Most mistakes by lesson
   const mistakesByLesson: Record<string, number> = {};
-  for (const m of p?.mistakes ?? []) {
-    mistakesByLesson[m.lessonId] = (mistakesByLesson[m.lessonId] ?? 0) + 1;
+  for (const m of p.mistakes as Array<{ lessonId?: string }>) {
+    if (m.lessonId) mistakesByLesson[m.lessonId] = (mistakesByLesson[m.lessonId] ?? 0) + 1;
   }
   const topMistakeLessons = Object.entries(mistakesByLesson)
     .sort(([, a], [, b]) => b - a)
@@ -553,7 +575,7 @@ function UserDetail() {
     const d = new Date(today);
     d.setDate(d.getDate() - (6 - i));
     const key = d.toISOString().slice(0, 10);
-    return { day: key.slice(5), xp: p?.xpDailyHistory?.[key] ?? 0 };
+    return { day: key.slice(5), xp: (p.xpDailyHistory as Record<string, number>)?.[key] ?? 0 };
   });
   const maxXp = Math.max(...last7.map((d) => d.xp), 1);
 
@@ -567,12 +589,12 @@ function UserDetail() {
 
       {/* Key metrics */}
       <div className="admin-stats-grid">
-        <Card className="admin-stat-card"><strong>{p?.xpTotal ?? 0}</strong><span>XP всього</span></Card>
-        <Card className="admin-stat-card"><strong>{p?.streakDays ?? 0}🔥</strong><span>Серія</span></Card>
-        <Card className="admin-stat-card"><strong>{p?.completedLessons.length ?? 0}</strong><span>Уроків</span></Card>
+        <Card className="admin-stat-card"><strong>{p.xpTotal}</strong><span>XP всього</span></Card>
+        <Card className="admin-stat-card"><strong>{p.streakDays}🔥</strong><span>Серія</span></Card>
+        <Card className="admin-stat-card"><strong>{p.completedLessons.length}</strong><span>Уроків</span></Card>
         <Card className="admin-stat-card"><strong>{completionPct}%</strong><span>Прогрес рівня</span></Card>
-        <Card className="admin-stat-card"><strong>{avgScore}%</strong><span>Сер. результат</span></Card>
-        <Card className="admin-stat-card"><strong>{p?.mistakes.length ?? 0}</strong><span>Помилок</span></Card>
+        <Card className="admin-stat-card"><strong>{p.hearts}/{p.maxHearts}</strong><span>Серця</span></Card>
+        <Card className="admin-stat-card"><strong>{(p.mistakes as unknown[]).length}</strong><span>Помилок</span></Card>
       </div>
 
       {/* XP bar chart — last 7 days */}
@@ -595,16 +617,13 @@ function UserDetail() {
       <h3 className="admin-section-title">Профіль</h3>
       <Card>
         <div className="admin-detail-row"><span>Роль</span><strong>{u.role}</strong></div>
-        <div className="admin-detail-row"><span>Рівень</span><LevelPill level={u.level} /></div>
+        <div className="admin-detail-row"><span>Рівень</span><LevelPill level={u.level as UserLevel} /></div>
         <div className="admin-detail-row"><span>Підписка</span><strong>{u.subscriptionStatus}</strong></div>
-        <div className="admin-detail-row"><span>Ціль</span><strong>{u.goal || "—"}</strong></div>
         <div className="admin-detail-row"><span>Країна</span><strong>{u.country || "—"}</strong></div>
         <div className="admin-detail-row"><span>Реєстрація</span><strong>{new Date(u.createdAt).toLocaleDateString("uk-UA")}</strong></div>
-        <div className="admin-detail-row"><span>Остання активність</span><strong>{u.lastActiveAt ? new Date(u.lastActiveAt).toLocaleDateString("uk-UA") : "—"}</strong></div>
+        <div className="admin-detail-row"><span>Остання активність</span><strong>{u.lastSeenAt ? new Date(u.lastSeenAt).toLocaleDateString("uk-UA") : "—"}</strong></div>
         <div className="admin-detail-row"><span>Заблокований</span><strong>{u.isBlocked ? "Так" : "Ні"}</strong></div>
-        {completedAttempts.length > 0 && (
-          <div className="admin-detail-row"><span>Сер. XP за урок</span><strong>{avgXpPerLesson}</strong></div>
-        )}
+        <div className="admin-detail-row"><span>Остання практика</span><strong>{p.lastPracticeDate || "—"}</strong></div>
       </Card>
 
       {/* Top mistake lessons */}
@@ -628,13 +647,13 @@ function UserDetail() {
         <Button variant="secondary" onClick={() => { loginAsUser(u.id); navigate("/app/path"); }}>
           <UserRound size={15} /> Увійти як {u.name}
         </Button>
-        <Button variant="secondary" onClick={() => adminUpdateUser(u.id, { role: u.role === "student" ? "teacher" : "student" })}>
+        <Button variant="secondary" onClick={() => patchUser({ role: u.role === "student" ? "teacher" : "student" })}>
           Роль → {u.role === "student" ? "teacher" : "student"}
         </Button>
-        <Button variant="secondary" onClick={() => adminUpdateUser(u.id, { subscriptionStatus: u.subscriptionStatus === "plus" ? "free" : "plus" })}>
+        <Button variant="secondary" onClick={() => patchUser({ subscriptionStatus: u.subscriptionStatus === "plus" ? "free" : "plus" })}>
           <Crown size={15} /> {u.subscriptionStatus === "plus" ? "Скасувати Plus" : "Видати Plus"}
         </Button>
-        <Button variant={u.isBlocked ? "secondary" : "danger"} onClick={() => adminUpdateUser(u.id, { isBlocked: !u.isBlocked })}>
+        <Button variant={u.isBlocked ? "secondary" : "danger"} onClick={() => patchUser({ isBlocked: !u.isBlocked })}>
           {u.isBlocked ? "Розблокувати" : "Заблокувати"}
         </Button>
       </div>
@@ -644,15 +663,32 @@ function UserDetail() {
 
 // ── SUBSCRIPTIONS ────────────────────────────────────────────────────────────
 function Subscriptions() {
-  const { data, adminUpdateUser } = useAdminData();
   const [search, setSearch] = useState("");
+  const [allUsers, setAllUsers] = useState<AdminServerUser[]>([]);
+  const [loading, setLoading] = useState(true);
   const SUB_ORDER = ["plus", "trial", "free", "expired", "cancelled"];
-  const users = data.users
+
+  function fetchUsers() {
+    setLoading(true);
+    apiClient.getAdminUsers({ limit: 500 })
+      .then((d) => setAllUsers(d.users))
+      .catch(() => undefined)
+      .finally(() => setLoading(false));
+  }
+
+  useEffect(() => { fetchUsers(); }, []);
+
+  async function patchUser(id: string, patch: Parameters<typeof apiClient.directAdminUpdateUser>[1]) {
+    await apiClient.directAdminUpdateUser(id, patch).catch(() => undefined);
+    fetchUsers();
+  }
+
+  const users = allUsers
     .filter((u) => !search || u.name.toLowerCase().includes(search.toLowerCase()) || u.email.toLowerCase().includes(search.toLowerCase()))
     .sort((a, b) => SUB_ORDER.indexOf(a.subscriptionStatus) - SUB_ORDER.indexOf(b.subscriptionStatus));
 
   const counts = { plus: 0, trial: 0, free: 0, other: 0 };
-  for (const u of data.users) {
+  for (const u of allUsers) {
     if (u.subscriptionStatus === "plus") counts.plus++;
     else if (u.subscriptionStatus === "trial") counts.trial++;
     else if (u.subscriptionStatus === "free") counts.free++;
@@ -663,10 +699,10 @@ function Subscriptions() {
     <main className="page-content">
       <PageHeader title="Підписки" />
       <div className="admin-stats-grid">
-        <Card className="admin-stat-card"><Crown size={20} color="var(--yellow-dark)" /><strong>{counts.plus}</strong><span>Plus</span></Card>
-        <Card className="admin-stat-card"><strong>{counts.trial}</strong><span>Пробний</span></Card>
-        <Card className="admin-stat-card"><strong>{counts.free}</strong><span>Безкоштовний</span></Card>
-        <Card className="admin-stat-card"><strong>{counts.other}</strong><span>Інші</span></Card>
+        <Card className="admin-stat-card"><Crown size={20} color="var(--yellow-dark)" /><strong>{loading ? "…" : counts.plus}</strong><span>Plus</span></Card>
+        <Card className="admin-stat-card"><strong>{loading ? "…" : counts.trial}</strong><span>Пробний</span></Card>
+        <Card className="admin-stat-card"><strong>{loading ? "…" : counts.free}</strong><span>Безкоштовний</span></Card>
+        <Card className="admin-stat-card"><strong>{loading ? "…" : counts.other}</strong><span>Інші</span></Card>
       </div>
       <div className="admin-toolbar">
         <div className="admin-search-box">
@@ -679,7 +715,7 @@ function Subscriptions() {
             <div className="admin-user-avatar">{u.avatar || u.name.slice(0, 2).toUpperCase()}</div>
             <div className="admin-user-info"><strong>{u.name}</strong><span>{u.email}</span></div>
             <span className={`sub-badge sub-badge--${u.subscriptionStatus}`}>{u.subscriptionStatus}</span>
-            <Button variant="secondary" onClick={() => adminUpdateUser(u.id, { subscriptionStatus: u.subscriptionStatus === "plus" ? "free" : "plus" })}>
+            <Button variant="secondary" onClick={() => patchUser(u.id, { subscriptionStatus: u.subscriptionStatus === "plus" ? "free" : "plus" })}>
               {u.subscriptionStatus === "plus" ? "Скасувати" : "Дати Plus"}
             </Button>
           </div>
@@ -909,12 +945,7 @@ function NotifyScreen() {
   const [result,  setResult]  = useState<{ sent: number } | null>(null);
   const [error,   setError]   = useState("");
 
-  const audience = data.users.filter((u) => {
-    if (target === "students") return u.role === "student" && !u.isBlocked;
-    if (target === "plus")     return u.subscriptionStatus === "plus" && !u.isBlocked;
-    if (target === "level")    return u.level === level && !u.isBlocked;
-    return !u.isBlocked;
-  });
+  // audience count is resolved server-side at send time
 
   const TEMPLATES = [
     { label: "🔥 Стрік",      title: "Не забудь про стрік!",       body: "Пройди урок сьогодні, щоб зберегти свою серію 🔥" },
@@ -986,7 +1017,7 @@ function NotifyScreen() {
         )}
         <div className="notify-audience-info">
           <UserRound size={14} />
-          <span>~{audience.length} отримувачів</span>
+          <span>Кількість отримувачів визначається на сервері</span>
         </div>
       </Card>
 
