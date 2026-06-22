@@ -1,0 +1,53 @@
+---
+/**
+ * FaqBlock — single source of truth for FAQ content.
+ *
+ * Renders the same `items` array as:
+ *   1. JSON-LD FAQPage structured data (inline <script>, valid in <body> per Google)
+ *   2. Visible HTML accordion using <details>/<summary> — zero JS
+ *
+ * Usage:
+ *   import FaqBlock from '../components/FaqBlock.astro';
+ *   import faqs    from '../content/faq.json';
+ *   <FaqBlock items={faqs} />
+ *   <FaqBlock items={faqs.slice(0, 5)} />   // subset
+ */
+
+interface FaqItem {
+  question: string;
+  answer: string;  // may contain HTML tags (<strong>, <em>, etc.)
+}
+
+interface Props {
+  items: FaqItem[];
+}
+
+const { items } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": items.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      // Strip HTML tags for plain-text JSON-LD value
+      "text": item.answer.replace(/<[^>]+>/g, ''),
+    },
+  })),
+};
+---
+
+<!-- JSON-LD: Google accepts structured data in <body> -->
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<!-- Visible HTML accordion -->
+<div class="faq-accordion" role="list">
+  {items.map(item => (
+    <details class="faq-accordion-item" role="listitem">
+      <summary>{item.question}</summary>
+      <div class="faq-answer" set:html={item.answer} />
+    </details>
+  ))}
+</div>

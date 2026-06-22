@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import faqs from '../data/faq.json';
 
 const schema = {
   "@context": "https://schema.org",
@@ -12,20 +13,21 @@ const schema = {
       "inLanguage": "uk",
     },
     {
-      "@type": "SoftwareApplication",
+      "@type": "MobileApplication",
       "@id": "https://www.slovakgo.sk/#app",
       "name": "SlovakGO",
-      "applicationCategory": "EducationApplication",
-      "operatingSystem": "Web, Android, iOS",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": ["Android", "iOS", "Web"],
       "inLanguage": ["uk", "sk"],
       "description": "SlovakGO — безкоштовний додаток для вивчення словацької мови для українців у Словаччині. Практичні уроки для реальних ситуацій: оренда житла, лікар, Cudzinecká polícia, робота.",
+      "url": "https://app.slovakgo.sk",
       "datePublished": "2026-01-01",
       "dateModified": "2026-06-22",
       "offers": {
-        "@type": "AggregateOffer",
-        "lowPrice": "0",
-        "highPrice": "9.99",
+        "@type": "Offer",
+        "price": "0",
         "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
       },
       "provider": { "@id": "https://www.slovakgo.sk/#organization" },
     },
@@ -46,23 +48,14 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Скільки часу потрібно, щоб вивчити базову словацьку мову?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Більшість учнів досягають рівня A2 за 3–4 місяці при 15 хвилинах щоденних занять. Українськомовні учні засвоюють словацьку приблизно на 30% швидше завдяки спільним слов'янським кореням." }
+      "mainEntity": faqs.slice(0, 6).map(f => ({
+        "@type": "Question",
+        "name": f.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": f.answer.replace(/<[^>]+>/g, ''),
         },
-        {
-          "@type": "Question",
-          "name": "Чи схожа словацька на українську?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Так, обидві мови належать до слов'янської групи та мають 30–40% спільної базової лексики. Слова як voda (вода), mesto (місто), sestra (сестра) легко впізнаються. Основні відмінності — у вимові та деяких граматичних формах." }
-        },
-        {
-          "@type": "Question",
-          "name": "Який рівень словацької потрібен для роботи в Словаччині?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Для виробничих позицій достатньо A2. Для офісної роботи потрібен B1–B2. Рівні CEFR: A1 (початковий) → A2 (виживання) → B1 (робочий) → B2 (вільний)." }
-        },
-      ],
+      })),
     },
   ],
 };
@@ -278,30 +271,12 @@ const schema = {
         <p>Відповіді на найпопулярніші питання від українців у Словаччині. <a href="/faq" style="color:var(--accent);font-weight:700">Всі питання →</a></p>
       </div>
       <div class="faq-grid">
-        <div class="faq-item">
-          <h3>Скільки часу займає вивчення словацької з нуля?</h3>
-          <p>Більшість учнів досягають рівня <strong>A2</strong> за 3–4 місяці при заняттях 15 хвилин на день. Для рівня <strong>B1</strong> потрібно 6–9 місяців. Українськомовним учням легше — спільна слов'янська база прискорює засвоєння.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Чи схожа словацька мова на українську?</h3>
-          <p>Так — обидві є слов'янськими мовами. Такі слова як <em>voda</em> (вода), <em>mesto</em> (місто), <em>dobrý</em> (добрий) українці розуміють без перекладу. Загалом словацька є однією з найлегших мов для українців.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Який рівень словацької потрібен для роботи у Словаччині?</h3>
-          <p>Для більшості виробничих позицій достатньо рівня <strong>A2–B1</strong>. Для офісної роботи або позицій з клієнтами потрібен <strong>B2</strong>. Úrad práce може запропонувати безкоштовні курси для зареєстрованих шукачів роботи.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Як зареєструватися в Словаччині як громадянин України?</h3>
-          <p>Потрібно звернутися до <strong>Cudzinecká polícia</strong> (Відділу у справах іноземців) за місцем проживання. Необхідні: паспорт, договір оренди та заповнена анкета. SlovakGO має спеціальний урок з лексикою для цього процесу.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Чи можна вчити словацьку без інтернету?</h3>
-          <p>Так — користувачі SlovakGO Plus можуть завантажувати уроки для офлайн вивчення. Зручно під час поїздок потягом Bratislava–Košice або в районах зі слабким сигналом. Прогрес синхронізується автоматично.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Чи потрібна словацька для медичного обслуговування?</h3>
-          <p>Більшість лікарів у великих містах Словаччини розуміють базову англійську, проте знання словацьких медичних термінів пришвидшує візит. SlovakGO містить урок <strong>"У лікаря"</strong> з фразами для опису симптомів та розуміння рецепту в аптеці (<em>lekáreň</em>).</p>
-        </div>
+        {faqs.slice(0, 6).map(faq => (
+          <div class="faq-item">
+            <h3>{faq.question}</h3>
+            <p set:html={faq.answer} />
+          </div>
+        ))}
       </div>
     </div>
   </section>
