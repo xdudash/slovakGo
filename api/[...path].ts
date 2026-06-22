@@ -94,10 +94,14 @@ function clearCookie(res: VercelResponse): void {
 }
 
 // ─── CORS / response ──────────────────────────────────────────────────────────
+const PROD_ORIGINS = ["https://www.slovakgo.sk", "https://slovakgo.sk", "https://slovak-go.vercel.app"];
+
 function setCors(req: VercelRequest, res: VercelResponse): void {
   const origin  = (req.headers.origin as string) ?? "";
-  const allowed = (process.env.ALLOWED_ORIGINS ?? "http://localhost:5173,http://localhost:4173").split(",").map(s => s.trim());
-  if (allowed.includes(origin) || (isProd && origin.startsWith("https://"))) {
+  const devOrigins = isProd ? [] : ["http://localhost:5173", "http://localhost:4173"];
+  const envOrigins = (process.env.ALLOWED_ORIGINS ?? "").split(",").map(s => s.trim()).filter(Boolean);
+  const allowed = [...PROD_ORIGINS, ...devOrigins, ...envOrigins];
+  if (allowed.includes(origin)) {
     res.setHeader("Access-Control-Allow-Origin", origin);
     res.setHeader("Access-Control-Allow-Credentials", "true");
   }
@@ -265,7 +269,11 @@ async function handleForgot(res: VercelResponse, body: Record<string, unknown>):
   const row   = await queryOne("SELECT id FROM users WHERE email = ? LIMIT 1", [email]);
   if (!row) return respond(res, { ok: true }); // don't leak existence
 
-  const uid   = String(row.id);
+  const uid     = String(row.id);
+  const fiveMin = new Date(Date.now() - 5 * 60_000).toISOString().replace(/\.\d{3}Z$/, "Z");
+  const recent  = await queryOne("SELECT 1 FROM password_resets WHERE user_id = ? AND used = 0 AND created_at > ? LIMIT 1", [uid, fiveMin]);
+  if (recent) return respond(res, { ok: true }); // silent rate-limit — don't leak timing
+
   const token = randomBytes(32).toString("hex");
   const hash  = createHash("sha256").update(token).digest("hex");
   await exec("DELETE FROM password_resets WHERE user_id = ?", [uid]);
@@ -445,8 +453,8 @@ async function mutAuthRegister(p: Record<string, unknown>): Promise<void> {
   await exec(
     `INSERT OR IGNORE INTO users (id, email, name_text, role, level, goal, sub_status, ob_done, settings_j, created_at, updated_at)
      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-    [id, String(u.email).toLowerCase().trim(), String(u.name ?? ""), String(u.role ?? "student"),
-     String(u.level ?? "A0"), u.goal ? String(u.goal) : null, String(u.subscriptionStatus ?? "trial"),
+    [id, String(u.email).toLowerCase().trim(), String(u.name ?? ""), "student",
+     String(u.level ?? "A0"), u.goal ? String(u.goal) : null, "trial",
      u.onboardingDone ? 1 : 0, JSON.stringify(u.settings ?? {}), now, now]
   );
   await ensureProgress(id);
@@ -457,7 +465,11 @@ async function mutProfileUpdate(uid: string, p: Record<string, unknown>): Promis
   if ("name" in p)           { sets.push("name_text = ?");  vals.push(String(p.name ?? "").trim()); }
   if ("goal" in p)           { sets.push("goal = ?");       vals.push(p.goal ? String(p.goal) : null); }
   if ("level" in p)          { sets.push("level = ?");      vals.push(String(p.level)); }
-  if ("avatar" in p)         { sets.push("avatar = ?");     vals.push(String(p.avatar)); }
+  if ("avatar" in p) {
+    // Only allow short identifiers (emoji, icon names, UUIDs) — no URLs
+    const av = String(p.avatar ?? "").slice(0, 100);
+    if (!av || !/https?:|data:|javascript:/i.test(av)) { sets.push("avatar = ?"); vals.push(av || null); }
+  }
   if ("country" in p)        { sets.push("country = ?");    vals.push(String(p.country)); }
   if ("onboardingDone" in p) { sets.push("ob_done = ?");    vals.push(p.onboardingDone ? 1 : 0); }
   if ("settings" in p)       { sets.push("settings_j = ?"); vals.push(JSON.stringify(p.settings)); }
@@ -771,7 +783,8 @@ async function handlePostErrors(req: VercelRequest, res: VercelResponse, body: u
 }
 
 // ─── Stripe ───────────────────────────────────────────────────────────────────
-const getStripe = () => new Stripe(process.env.STRIPE_SECRET_KEY ?? "", { apiVersion: "2025-05-28.basil" as Stripe.LatestApiVersion });
+let _stripe: Stripe | null = null;
+const getStripe = () => _stripe ??= new Stripe(process.env.STRIPE_SECRET_KEY ?? "", { apiVersion: "2025-05-28.basil" as Stripe.LatestApiVersion });
 
 async function handleBillingCheckout(req: VercelRequest, res: VercelResponse): Promise<void> {
   const uid = await requireUid(req, res); if (!uid) return;
