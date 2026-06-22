@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Globe, Heart, MessageSquare, Smartphone, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Globe, Smartphone, Zap } from "lucide-react";
 import { useAppStore, selectCurrentUser } from "../../store/useAppStore";
 import "../../styles/globals.css";
 
@@ -170,36 +170,37 @@ export function LandingPage() {
 
       {/* ── Hero Section ────────────────────────────────────────────── */}
       <header className="hero-section">
-        <div className="hero-content">
-          <div className="hero-badge">
-            <Zap size={14} fill="var(--yellow)" />
-            <span>Додаток для українців у Словаччині</span>
-          </div>
-          <h1>Вивчай словацьку через <span>реальні ситуації</span></h1>
-          <p>
-            SlovakGO — безкоштовний додаток для вивчення словацької мови (Slovenčina),
-            створений спеціально для українців, які живуть або планують переїхати до Словаччини.
-            Від алфавіту до вільного спілкування в аптеці, на пошті чи під час пошуку житла —
-            усього за 15 хвилин на день.
-          </p>
-          <div className="hero-cta">
-            <Link to="/register" className="btn btn-primary btn-lg">
-              Почати вчити <ArrowRight size={20} />
-            </Link>
-            <div className="hero-stats">
-              <div className="mini-avatars">
-                <div className="avatar-m" style={{background: '#fecaca'}}>О</div>
-                <div className="avatar-m" style={{background: '#fed7aa'}}>М</div>
-                <div className="avatar-m" style={{background: '#bbf7d0'}}>А</div>
+        <div className="hero-inner">
+          <div className="hero-content">
+            <div className="hero-badge">
+              <Zap size={13} fill="var(--yellow)" color="var(--yellow)" />
+              <span>Для українців у Словаччині</span>
+            </div>
+            <h1>Вивчай словацьку через <span>реальні ситуації</span></h1>
+            <p>
+              SlovakGO — безкоштовний додаток словацької мови (Slovenčina) для українців.
+              Від нуля до впевненої розмови в аптеці, на роботі й у лікаря —
+              за 15 хвилин на день.
+            </p>
+            <div className="hero-cta">
+              <Link to="/register" className="btn btn-primary btn-lg">
+                Почати безкоштовно <ArrowRight size={18} />
+              </Link>
+              <div className="hero-stats">
+                <div className="mini-avatars">
+                  <div className="avatar-m" style={{background: '#fecaca'}}>О</div>
+                  <div className="avatar-m" style={{background: '#a5f3fc'}}>М</div>
+                  <div className="avatar-m" style={{background: '#bbf7d0'}}>А</div>
+                </div>
+                <span>500+ українців вже з нами</span>
               </div>
-              <span>Вже з нами 500+ українців у Словаччині</span>
             </div>
           </div>
-        </div>
-        <div className="hero-visual">
-          <div className="phone-mockup">
-            <div className="mockup-screen">
-              <img src="/slovakgo-preview.png" alt="SlovakGO — екран уроку словацької мови" loading="lazy" />
+          <div className="hero-visual">
+            <div className="phone-mockup">
+              <div className="mockup-screen">
+                <img src="/slovakgo-preview.png" alt="SlovakGO — екран уроку словацької мови" loading="lazy" />
+              </div>
             </div>
           </div>
         </div>
@@ -210,32 +211,35 @@ export function LandingPage() {
         <div className="section-header">
           <h2>Чому SlovakGO вчить словацьку швидше</h2>
           <p>
-            Стандартні курси мови вчать граматику та словниковий запас у відриві від реального
-            життя. SlovakGO навпаки — кожен урок побудований навколо конкретної ситуації,
-            з якою стикається кожен українець у Словаччині в перші місяці.
+            Стандартні курси вчать граматику у відриві від реального життя.
+            SlovakGO — кожен урок навколо конкретної ситуації,
+            з якою стикається кожен українець у перші місяці в Словаччині.
           </p>
         </div>
-
         <div className="features-grid">
           <FeatureCard
-            icon={<MessageSquare className="icon-p" />}
-            title="Сценарії виживання"
-            desc="Уроки за темами: оренда квартири, візит до Cudzinecká polícia (Відділу у справах іноземців), школа чи дитячий садок. Вчиш саме те, що потрібно завтра."
+            color="var(--accent)"
+            label="Виживання"
+            title="Сценарії з реального життя"
+            desc="Оренда квартири, Cudzinecká polícia, школа — вчиш саме те, що потрібно вже завтра, а не абстрактну граматику."
           />
           <FeatureCard
-            icon={<Zap className="icon-y" />}
-            title="Для роботи та документів"
-            desc="Підготовка до співбесіди та заповнення заяв у Úrad práce (Центр зайнятості) чи Sociálna poisťovňa (Соціальна страхова). Реальні слова, реальні ситуації."
+            color="var(--yellow-dark)"
+            label="Кар'єра"
+            title="Робота та документи"
+            desc="Співбесіда, Úrad práce, Sociálna poisťovňa — реальні фрази для реальних українських ситуацій у Словаччині."
           />
           <FeatureCard
-            icon={<Heart className="icon-r" />}
-            title="Ігрова механіка Duolingo-стилю"
-            desc="Збирай XP-бали, тримай серію днів та змагайся в тижневих лігах. Більшість учнів займаються щодня — середня серія становить 12 днів."
+            color="var(--success)"
+            label="Прогрес"
+            title="XP, серії та ліги"
+            desc="Збирай бали, тримай серію — середня серія учнів SlovakGO 12 днів. Щоденна звичка формується за 2 тижні."
           />
           <FeatureCard
-            icon={<Globe className="icon-b" />}
-            title="Локальний словацький контекст"
-            desc="Слова та вирази, які реально використовують словаки у Братиславі (Bratislava), Кошице (Košice) та інших містах — не книжна мова, а жива розмовна."
+            color="var(--blue)"
+            label="Контекст"
+            title="Жива розмовна мова"
+            desc="Слова які реально вживають у Bratislava, Košice, Prešov — не книжна норма, а те що почуєш на вулиці."
           />
         </div>
       </section>
@@ -429,10 +433,12 @@ export function LandingPage() {
   );
 }
 
-function FeatureCard({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
+function FeatureCard({ color, label, title, desc }: { color: string; label: string; title: string; desc: string }) {
   return (
     <div className="f-card">
-      <div className="f-icon">{icon}</div>
+      <div className="f-card-marker" style={{ color }}>
+        <span>●</span> {label}
+      </div>
       <h3>{title}</h3>
       <p>{desc}</p>
     </div>
