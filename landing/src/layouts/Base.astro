@@ -1,0 +1,124 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  schema?: object | object[];
+  bodyClass?: string;
+}
+
+const {
+  title,
+  description,
+  image = 'https://www.slovakgo.sk/og-slovakgo.png',
+  schema,
+  bodyClass = '',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const currentPath  = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content={canonicalURL} />
+  <meta property="og:title"       content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image"       content={image} />
+  <meta property="og:locale"      content="uk_UA" />
+  <meta property="og:site_name"   content="SlovakGO" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image"       content={image} />
+
+  <!-- Fonts — preconnect first, then stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Rubik:wght@400;500;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/logosk.jpg" type="image/jpeg" />
+
+  <!-- Google Search Console verification -->
+  <meta name="google-site-verification" content="your-verification-token" />
+
+  <!-- JSON-LD structured data -->
+  {schema && (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  )}
+</head>
+<body class={bodyClass}>
+
+  <!-- ── Navigation ───────────────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Головна навігація">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="SlovakGO — на головну">
+        <img src="/logosk.jpg" alt="SlovakGO логотип" width="32" height="32" />
+        <span>SlovakGO</span>
+      </a>
+
+      <div class="nav-links" role="list">
+        <a href="/blog"    role="listitem" aria-current={currentPath.startsWith('/blog') ? 'page' : undefined}>Блог</a>
+        <a href="/faq"     role="listitem" aria-current={currentPath === '/faq' ? 'page' : undefined}>FAQ</a>
+        <a href="/#about"  role="listitem">Про нас</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="https://app.slovakgo.sk/login"    class="nav-login" rel="noopener">Увійти</a>
+        <a href="https://app.slovakgo.sk/register" class="btn btn-primary btn-sm" rel="noopener">
+          Почати безкоштовно
+        </a>
+      </div>
+
+      <!-- Mobile nav (CSS-only via details/summary) -->
+      <details class="nav-mobile">
+        <summary aria-label="Відкрити меню">☰</summary>
+        <div class="nav-mobile-menu">
+          <a href="/blog">Блог</a>
+          <a href="/faq">FAQ</a>
+          <a href="/#about">Про нас</a>
+          <a href="https://app.slovakgo.sk/login"    rel="noopener">Увійти</a>
+          <a href="https://app.slovakgo.sk/register" class="btn btn-primary btn-sm" rel="noopener">
+            Почати безкоштовно
+          </a>
+        </div>
+      </details>
+    </div>
+  </nav>
+
+  <!-- ── Page content ─────────────────────────────────────────────── -->
+  <slot />
+
+  <!-- ── Site footer ──────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© 2026 SlovakGO</span>
+      <div class="footer-meta">
+        <a href="/blog">Блог</a>
+        <a href="/faq">FAQ</a>
+        <a href="mailto:hello@slovakgo.sk">hello@slovakgo.sk</a>
+        <span>Оновлено: Червень 2026</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

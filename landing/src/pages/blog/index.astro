@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('uk-UA', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<Base
+  title="Блог SlovakGO — статті про вивчення словацької мови"
+  description="Статті та поради для українців, які вивчають словацьку мову у Словаччині: план навчання, порівняння мов, вимоги до знань для роботи."
+>
+  <main>
+    <div class="container">
+      <div class="blog-page">
+        <header class="blog-page-header">
+          <h1>Блог SlovakGO</h1>
+          <p>Статті та практичні поради для українців, що вивчають словацьку і адаптуються до життя у Словаччині.</p>
+        </header>
+
+        <div class="blog-grid">
+          {posts.map(post => (
+            <a href={`/blog/${post.slug}`} class="blog-card">
+              <time datetime={post.data.pubDate.toISOString()}>
+                {formatDate(post.data.pubDate)}
+              </time>
+              <h2>{post.data.title}</h2>
+              <p>{post.data.description}</p>
+              <span class="blog-card-read">
+                Читати <span class="arrow">→</span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </main>
+</Base>

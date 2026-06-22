@@ -1,0 +1,350 @@
+---
+import Base from '../layouts/Base.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.slovakgo.sk/#website",
+      "url": "https://www.slovakgo.sk/",
+      "name": "SlovakGO",
+      "inLanguage": "uk",
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.slovakgo.sk/#app",
+      "name": "SlovakGO",
+      "applicationCategory": "EducationApplication",
+      "operatingSystem": "Web, Android, iOS",
+      "inLanguage": ["uk", "sk"],
+      "description": "SlovakGO — безкоштовний додаток для вивчення словацької мови для українців у Словаччині. Практичні уроки для реальних ситуацій: оренда житла, лікар, Cudzinecká polícia, робота.",
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-06-22",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "0",
+        "highPrice": "9.99",
+        "priceCurrency": "EUR",
+      },
+      "provider": { "@id": "https://www.slovakgo.sk/#organization" },
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.slovakgo.sk/#organization",
+      "name": "SlovakGO",
+      "url": "https://www.slovakgo.sk/",
+      "logo": "https://www.slovakgo.sk/logosk.jpg",
+      "foundingDate": "2026",
+      "areaServed": { "@type": "Country", "name": "Slovakia" },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@slovakgo.sk",
+        "contactType": "customer support",
+        "availableLanguage": ["Ukrainian", "Slovak"],
+      },
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Скільки часу потрібно, щоб вивчити базову словацьку мову?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Більшість учнів досягають рівня A2 за 3–4 місяці при 15 хвилинах щоденних занять. Українськомовні учні засвоюють словацьку приблизно на 30% швидше завдяки спільним слов'янським кореням." }
+        },
+        {
+          "@type": "Question",
+          "name": "Чи схожа словацька на українську?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Так, обидві мови належать до слов'янської групи та мають 30–40% спільної базової лексики. Слова як voda (вода), mesto (місто), sestra (сестра) легко впізнаються. Основні відмінності — у вимові та деяких граматичних формах." }
+        },
+        {
+          "@type": "Question",
+          "name": "Який рівень словацької потрібен для роботи в Словаччині?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Для виробничих позицій достатньо A2. Для офісної роботи потрібен B1–B2. Рівні CEFR: A1 (початковий) → A2 (виживання) → B1 (робочий) → B2 (вільний)." }
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Base
+  title="SlovakGO — додаток для вивчення словацької мови для українців"
+  description="SlovakGO — безкоштовний додаток для вивчення словацької мови для українців у Словаччині. 50+ уроків з реальних ситуацій: лікар, Cudzinecká polícia, оренда, робота."
+  schema={schema}
+>
+
+  <!-- ── Hero ─────────────────────────────────────────────────────── -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--yellow)" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Для українців у Словаччині
+        </div>
+
+        <h1>Вивчай словацьку через <span>реальні ситуації</span></h1>
+
+        <p>
+          SlovakGO — безкоштовний додаток словацької мови (Slovenčina) для українців.
+          Від нуля до впевненої розмови в аптеці, на роботі й у лікаря —
+          за 15 хвилин на день.
+        </p>
+
+        <div class="hero-cta">
+          <a href="https://app.slovakgo.sk/register" class="btn btn-primary btn-lg" rel="noopener">
+            Почати безкоштовно
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <div class="hero-stats">
+            <div class="mini-avatars" aria-hidden="true">
+              <div class="avatar-m" style="background:#fecaca">О</div>
+              <div class="avatar-m" style="background:#a5f3fc">М</div>
+              <div class="avatar-m" style="background:#bbf7d0">А</div>
+            </div>
+            <span>500+ українців вже з нами</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="phone-mockup">
+          <div class="mockup-screen">
+            <img
+              src="/slovakgo-preview.png"
+              alt="Екран уроку SlovakGO"
+              width="220"
+              height="440"
+              loading="eager"
+              onerror="this.parentElement.classList.add('mockup-placeholder-fallback')"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Features ──────────────────────────────────────────────────── -->
+  <section class="features-section" aria-labelledby="features-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="features-heading">Чому SlovakGO вчить словацьку швидше</h2>
+        <p>
+          Стандартні курси вчать граматику у відриві від реального життя.
+          SlovakGO — кожен урок навколо конкретної ситуації,
+          з якою стикається кожен українець у Словаччині.
+        </p>
+      </div>
+      <div class="features-grid">
+        <div class="f-card">
+          <div class="f-card-marker" style="color:var(--accent)"><span aria-hidden="true">●</span> Виживання</div>
+          <h3>Сценарії з реального життя</h3>
+          <p>Оренда квартири, Cudzinecká polícia, школа — вчиш саме те, що потрібно вже завтра, а не абстрактну граматику.</p>
+        </div>
+        <div class="f-card">
+          <div class="f-card-marker" style="color:var(--yellow-dark)"><span aria-hidden="true">●</span> Кар'єра</div>
+          <h3>Робота та документи</h3>
+          <p>Співбесіда, Úrad práce, Sociálna poisťovňa — реальні фрази для реальних українських ситуацій у Словаччині.</p>
+        </div>
+        <div class="f-card">
+          <div class="f-card-marker" style="color:var(--success)"><span aria-hidden="true">●</span> Прогрес</div>
+          <h3>XP, серії та ліги</h3>
+          <p>Збирай бали, тримай серію — середня серія учнів SlovakGO 12 днів. Щоденна звичка формується за 2 тижні.</p>
+        </div>
+        <div class="f-card">
+          <div class="f-card-marker" style="color:var(--blue)"><span aria-hidden="true">●</span> Контекст</div>
+          <h3>Жива розмовна мова</h3>
+          <p>Слова які реально вживають у Bratislava, Košice, Prešov — не книжна норма, а те що почуєш на вулиці.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Slovak vs Ukrainian ───────────────────────────────────────── -->
+  <section class="advantage-section" aria-labelledby="advantage-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="advantage-heading">Словацька та українська — ближче, ніж ти думаєш</h2>
+        <p>
+          Обидві мови належать до слов'янської групи та мають спільні корені.
+          Близько 30–40% базової лексики словацької (Slovenčina) впізнається
+          українськомовним читачем без жодної підготовки.
+        </p>
+      </div>
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Українська</th>
+              <th>Словацька (Slovenčina)</th>
+              <th>Різниця</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>вода</td><td>voda</td><td>однакова</td></tr>
+            <tr><td>місто</td><td>mesto</td><td>однакова</td></tr>
+            <tr><td>хліб</td><td>chlieb</td><td>схожа</td></tr>
+            <tr><td>добрий</td><td>dobrý</td><td>схожа</td></tr>
+            <tr><td>сестра</td><td>sestra</td><td>однакова</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Learning path ─────────────────────────────────────────────── -->
+  <section class="path-section section" aria-labelledby="path-heading">
+    <div class="container">
+      <span class="path-label">Твій шлях за рівнями CEFR</span>
+      <h2 id="path-heading">Від A0 до вільного B2 словацькою</h2>
+      <p class="path-subtitle">
+        CEFR (Загальноєвропейські рекомендації з мовної освіти) — міжнародна шкала рівнів
+        від A1 (початковий) до C2 (досконалий). SlovakGO охоплює весь шлях.
+      </p>
+      <div class="path-steps">
+        <div class="p-step active">
+          <div class="p-num" aria-hidden="true">1</div>
+          <div class="p-info">
+            <h4>A0–A1: Старт</h4>
+            <p>Алфавіт, вимова, базові фрази для виживання. Більшість учнів проходять за 3–4 тижні.</p>
+          </div>
+        </div>
+        <div class="p-step active">
+          <div class="p-num" aria-hidden="true">2</div>
+          <div class="p-info">
+            <h4>A2: Виживання</h4>
+            <p>Магазин, транспорт, оренда житла. Достатньо для щоденного життя. Ціль — 2–3 місяці.</p>
+          </div>
+        </div>
+        <div class="p-step">
+          <div class="p-num" aria-hidden="true">3</div>
+          <div class="p-info">
+            <h4>B1: Адаптація</h4>
+            <p>Робота, лікарі, документи в Cudzinecká polícia. Потрібно для більшості робочих місць.</p>
+          </div>
+        </div>
+        <div class="p-step">
+          <div class="p-num" aria-hidden="true">4</div>
+          <div class="p-info">
+            <h4>B2: Свобода</h4>
+            <p>Вільні дискусії, професійна лексика, переговори. Відкриває офісні та управлінські позиції.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Pricing ───────────────────────────────────────────────────── -->
+  <section class="pricing-section" aria-labelledby="pricing-heading">
+    <div class="container">
+      <div class="pricing-header">
+        <h2 id="pricing-heading">Безкоштовне вивчення словацької — без кредитної картки</h2>
+        <p>SlovakGO безкоштовний для всіх рівнів від A0 до B2. Plus-план для тих, хто хоче більше.</p>
+      </div>
+      <div class="pricing-cards">
+        <div class="price-card free">
+          <h3>Basic — Безкоштовно</h3>
+          <div class="price-tag">€0<span>/міс</span></div>
+          <ul>
+            <li><span class="check" aria-hidden="true">✓</span> Всі рівні A0–B2</li>
+            <li><span class="check" aria-hidden="true">✓</span> 50+ уроків з реальних ситуацій</li>
+            <li><span class="check" aria-hidden="true">✓</span> Система XP та серій</li>
+            <li><span class="check" aria-hidden="true">✓</span> Таблиця лідерів</li>
+          </ul>
+          <a href="https://app.slovakgo.sk/register" class="btn btn-ghost" rel="noopener">Спробувати безкоштовно</a>
+        </div>
+
+        <div class="price-card plus">
+          <div class="badge">Рекомендовано</div>
+          <h3>Plus — €9.99/міс</h3>
+          <div class="price-tag">€9.99<span>/міс</span></div>
+          <ul>
+            <li><span class="check" aria-hidden="true">✓</span> Безлімітні серця</li>
+            <li><span class="check" aria-hidden="true">✓</span> Офлайн доступ до уроків</li>
+            <li><span class="check" aria-hidden="true">✓</span> Розширена аналітика прогресу</li>
+            <li><span class="check" aria-hidden="true">✓</span> Пріоритетна підтримка</li>
+          </ul>
+          <a href="https://app.slovakgo.sk/register" class="btn btn-primary" rel="noopener">Стати Plus</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ──────────────────────────────────────────────────────── -->
+  <section class="faq-section" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="faq-heading">Часті запитання про вивчення словацької</h2>
+        <p>Відповіді на найпопулярніші питання від українців у Словаччині. <a href="/faq" style="color:var(--accent);font-weight:700">Всі питання →</a></p>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Скільки часу займає вивчення словацької з нуля?</h3>
+          <p>Більшість учнів досягають рівня <strong>A2</strong> за 3–4 місяці при заняттях 15 хвилин на день. Для рівня <strong>B1</strong> потрібно 6–9 місяців. Українськомовним учням легше — спільна слов'янська база прискорює засвоєння.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Чи схожа словацька мова на українську?</h3>
+          <p>Так — обидві є слов'янськими мовами. Такі слова як <em>voda</em> (вода), <em>mesto</em> (місто), <em>dobrý</em> (добрий) українці розуміють без перекладу. Загалом словацька є однією з найлегших мов для українців.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Який рівень словацької потрібен для роботи у Словаччині?</h3>
+          <p>Для більшості виробничих позицій достатньо рівня <strong>A2–B1</strong>. Для офісної роботи або позицій з клієнтами потрібен <strong>B2</strong>. Úrad práce може запропонувати безкоштовні курси для зареєстрованих шукачів роботи.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Як зареєструватися в Словаччині як громадянин України?</h3>
+          <p>Потрібно звернутися до <strong>Cudzinecká polícia</strong> (Відділу у справах іноземців) за місцем проживання. Необхідні: паспорт, договір оренди та заповнена анкета. SlovakGO має спеціальний урок з лексикою для цього процесу.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Чи можна вчити словацьку без інтернету?</h3>
+          <p>Так — користувачі SlovakGO Plus можуть завантажувати уроки для офлайн вивчення. Зручно під час поїздок потягом Bratislava–Košice або в районах зі слабким сигналом. Прогрес синхронізується автоматично.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Чи потрібна словацька для медичного обслуговування?</h3>
+          <p>Більшість лікарів у великих містах Словаччини розуміють базову англійську, проте знання словацьких медичних термінів пришвидшує візит. SlovakGO містить урок <strong>"У лікаря"</strong> з фразами для опису симптомів та розуміння рецепту в аптеці (<em>lekáreň</em>).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About ─────────────────────────────────────────────────────── -->
+  <section class="about-section" id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-content">
+        <h2 id="about-heading">Про SlovakGO</h2>
+        <p>
+          SlovakGO створений щоб допомогти українцям швидко адаптуватися до життя у Словаччині
+          через мову. Кожен урок побудований на реальних сценаріях, які збирали безпосередньо
+          від українців у <strong>Братиславі (Bratislava — столиці Словаччини)</strong>,
+          Кошице (Košice), Пряшеві (Prešov) та інших містах.
+        </p>
+        <p>
+          Наш підхід: <strong>10–15 хвилин на день</strong> замість годинних лекцій.
+          Уроки охоплюють рівні від <strong>A0 до B2 за шкалою CEFR</strong> — від першого
+          слова до вільної розмови. Додаток доступний у браузері та як PWA на Android і iOS.
+        </p>
+        <p>
+          Контакт: <a href="mailto:hello@slovakgo.sk">hello@slovakgo.sk</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer CTA ────────────────────────────────────────────────── -->
+  <section class="footer-cta" aria-labelledby="cta-heading">
+    <div class="container">
+      <h2 id="cta-heading">Готовий почати розмовляти словацькою?</h2>
+      <p>
+        Приєднуйся до 500+ українців, які вже вивчають словацьку через SlovakGO
+        і впевнено почуваються в Братиславі, Кошице та інших містах Словаччини.
+      </p>
+      <a href="https://app.slovakgo.sk/register" class="btn btn-primary btn-lg" rel="noopener">
+        Зареєструватися безкоштовно
+      </a>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .hero-content h1 span { color: var(--yellow); }
+</style>

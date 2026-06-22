@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "TZ=UTC vitest run",
     "test:watch": "TZ=UTC vitest",
-    "test:coverage": "TZ=UTC vitest run --coverage"
+    "test:coverage": "TZ=UTC vitest run --coverage",
+    "sitemap": "node generate-sitemap.js"
   },
   "dependencies": {
     "@libsql/client": "^0.14.0",

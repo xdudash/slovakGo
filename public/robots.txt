@@ -1,24 +1,30 @@
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /app/
 Disallow: /admin/
-Disallow: /teacher/
+Disallow: /api/
 
-# AI search engine crawlers — explicitly allowed for GEO
+# Googlebot — explicit allow (already covered by * above, listed for clarity)
+User-agent: Googlebot
+Allow: /
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+
+# AI crawlers — explicitly permitted for GEO indexing
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: PerplexityBot
-Allow: /
-
 User-agent: ClaudeBot
 Allow: /
 
 User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
 Allow: /
 
 User-agent: Google-Extended

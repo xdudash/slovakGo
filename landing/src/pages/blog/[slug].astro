@@ -1,0 +1,63 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props:  { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const { title, description, pubDate, updatedDate } = post.data;
+
+const dateStr = pubDate.toLocaleDateString('uk-UA', {
+  year: 'numeric', month: 'long', day: 'numeric',
+});
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "datePublished": pubDate.toISOString(),
+  "dateModified": (updatedDate ?? pubDate).toISOString(),
+  "author": {
+    "@type": "Organization",
+    "name": "SlovakGO",
+    "url": "https://www.slovakgo.sk",
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SlovakGO",
+    "logo": { "@type": "ImageObject", "url": "https://www.slovakgo.sk/logosk.jpg" },
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://www.slovakgo.sk/blog/${post.slug}`,
+  },
+};
+---
+
+<Base title={`${title} — SlovakGO`} {description} schema={schema}>
+  <main>
+    <div class="container">
+      <article class="post-page">
+        <a href="/blog" class="post-back">← Всі статті</a>
+
+        <header class="post-header">
+          <time datetime={pubDate.toISOString()}>{dateStr}</time>
+          <h1>{title}</h1>
+          <p class="post-desc">{description}</p>
+        </header>
+
+        <div class="prose">
+          <Content />
+        </div>
+      </article>
+    </div>
+  </main>
+</Base>
