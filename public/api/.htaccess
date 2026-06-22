@@ -1,8 +1,0 @@
-Options -Indexes
-# Block direct browser access to the SQLite database file
-RewriteEngine On
-RewriteRule ^storage/.*\.sqlite$ - [F,L]
-RewriteRule ^storage/ - [F,L]
-# Pass PATH_INFO through to index.php (needed for route detection)
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.php [QSA,L]
