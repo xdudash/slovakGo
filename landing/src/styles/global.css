@@ -1251,6 +1251,60 @@ details.faq-accordion-item[open] summary::after {
 .faq-answer strong { color: var(--fg); }
 .faq-answer em { font-style: italic; }
 
+/* ─── Post CTA ───────────────────────────────────────────────────────────── */
+.post-cta {
+  margin-top: 64px;
+  border-radius: var(--radius-card);
+  background: linear-gradient(135deg, var(--accent) 0%, #5040c8 100%);
+  padding: 48px 40px;
+  text-align: center;
+}
+
+.post-cta-inner {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.post-cta-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 12px;
+}
+
+.post-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.post-cta p {
+  color: rgba(255,255,255,0.85);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.post-cta .btn-primary {
+  background: var(--yellow);
+  color: var(--fg);
+  border-color: var(--yellow);
+}
+
+.post-cta .btn-primary:hover {
+  background: #ffe045;
+  border-color: #ffe045;
+}
+
+@media (max-width: 600px) {
+  .post-cta { padding: 36px 24px; }
+}
+
 /* ─── Utilities ──────────────────────────────────────────────────────────── */
 .sr-only {
   position: absolute;

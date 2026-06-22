@@ -7,6 +7,7 @@ interface Props {
   image?: string;
   schema?: object | object[];
   bodyClass?: string;
+  keywords?: string[];
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   image = 'https://www.slovakgo.sk/og-slovakgo.png',
   schema,
   bodyClass = '',
+  keywords,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -29,6 +31,9 @@ const currentPath  = Astro.url.pathname;
 
   <title>{title}</title>
   <meta name="description" content={description} />
+  {keywords && keywords.length > 0 && (
+    <meta name="keywords" content={keywords.join(', ')} />
+  )}
   <link rel="canonical" href={canonicalURL} />
 
   <!-- Open Graph -->

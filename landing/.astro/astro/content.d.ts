@@ -155,6 +155,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"test-article.md": {
+	id: "test-article.md";
+  slug: "cudzinecka-politia-reyestratsia";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "yak-vyvchaty-slovatsku-z-nulya.md": {
 	id: "yak-vyvchaty-slovatsku-z-nulya.md";
   slug: "yak-vyvchaty-slovatsku-z-nulya";
