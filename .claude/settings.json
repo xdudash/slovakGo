@@ -4,7 +4,9 @@
       "Bash(find /Users/keno/.claude/skills/impeccable -name \"*.json\" -o -name \"*.mjs\" | head -20 && find /Users/keno/Downloads/slovak-life-mvp-clean -name \".impeccable*\" -o -name \"impeccable.config*\" 2>/dev/null | head -10)",
       "Read(//Users/keno/.claude/skills/impeccable/**)",
       "Bash(sqlite3 /Users/keno/Downloads/slovak-life-mvp-clean/private/slovak-life.sqlite \".tables\")",
-      "Bash(sqlite3 /Users/keno/Downloads/slovak-life-mvp-clean/private/slovak-life.sqlite \".schema\")"
+      "Bash(sqlite3 /Users/keno/Downloads/slovak-life-mvp-clean/private/slovak-life.sqlite \".schema\")",
+      "Bash(/Users/keno/.turso/turso db *)",
+      "Bash(node -e ' *)"
     ]
   }
 }
