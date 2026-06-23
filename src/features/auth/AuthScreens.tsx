@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { FormEvent, ReactNode } from "react";
 import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import { Button, Card, Field } from "../../components/ui";
 import { roleHome, useAppStore } from "../../store/useAppStore";
 import { apiClient } from "../../services/apiClient";
+import { storageService } from "../../services/storage";
 import { useT } from "../../i18n";
+import type { AppData, Lesson, User, UserWord } from "../../types";
 
 function AuthShell({ title, text, children }: { title: string; text: string; children: ReactNode }) {
   return (
@@ -46,6 +48,11 @@ export function Login() {
         {authError ? <p className="error-text">{authError}</p> : null}
         <Button type="submit" disabled={loading}>{loading ? "…" : t("auth.sign_in")}</Button>
       </form>
+      <div className="auth-divider"><span>або</span></div>
+      <button type="button" className="btn btn-google" onClick={() => { window.location.href = "/api/auth/google/start"; }}>
+        <GoogleIcon />
+        Увійти через Google
+      </button>
       <p className="auth-link">{t("auth.no_account")} <Link to="/register">{t("auth.register_link")}</Link></p>
       <p className="auth-link"><Link to="/forgot-password" className="auth-forgot-link">{t("auth.forgot_link")}</Link></p>
     </AuthShell>
@@ -59,10 +66,13 @@ export function Register() {
   const [searchParams] = useSearchParams();
   const refParam = searchParams.get("ref");
   const [form, setForm] = useState({ name: "", email: "", password: "", goal: "" });
+  const [loading, setLoading] = useState(false);
 
-  function submit(event: FormEvent) {
+  async function submit(event: FormEvent) {
     event.preventDefault();
-    const user = register(form);
+    setLoading(true);
+    const user = await register(form);
+    setLoading(false);
     if (user) {
       if (refParam) apiClient.claimReferral(refParam).catch(() => undefined);
       navigate("/onboarding", { replace: true });
@@ -82,8 +92,13 @@ export function Register() {
         <Field label={t("auth.password")} type="password" value={form.password} onChange={(event) => setForm({ ...form, password: event.target.value })} />
         <Field label={t("auth.goal_label")} value={form.goal} onChange={(event) => setForm({ ...form, goal: event.target.value })} placeholder={t("auth.goal_placeholder")} />
         {authError ? <p className="error-text">{authError}</p> : null}
-        <Button type="submit">{t("auth.create_account")}</Button>
+        <Button type="submit" disabled={loading}>{loading ? "…" : t("auth.create_account")}</Button>
       </form>
+      <div className="auth-divider"><span>або</span></div>
+      <button type="button" className="btn btn-google" onClick={() => { window.location.href = "/api/auth/google/start"; }}>
+        <GoogleIcon />
+        Зареєструватися через Google
+      </button>
       <p className="auth-link">{t("auth.has_account")} <Link to="/login">{t("auth.sign_in")}</Link></p>
     </AuthShell>
   );
@@ -175,5 +190,63 @@ export function ResetPassword() {
         <Button type="submit" disabled={password.length < 8 || loading}>{loading ? t("auth.reset_loading") : t("auth.reset_btn")}</Button>
       </form>
     </AuthShell>
+  );
+}
+
+function GoogleIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+    </svg>
+  );
+}
+
+export function GoogleDone() {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const isNew = searchParams.get("new") === "1";
+
+  useEffect(() => {
+    const defaults = { language: "uk" as const, notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true };
+
+    apiClient.syncPull(0).then((raw) => {
+      const full = raw as { user: User; progress: AppData["progress"][string]; userWords: UserWord[]; lessons: Lesson[] };
+      const userId = full.user.id;
+      const { data } = useAppStore.getState();
+      const users = data.users.filter((u) => u.id !== userId);
+
+      const merged: AppData = {
+        ...data,
+        users: [...users, { ...full.user, settings: { ...defaults, ...full.user.settings } }],
+        progress:  { ...data.progress,  [userId]: full.progress },
+        userWords: { ...data.userWords, [userId]: full.userWords },
+        lessons: full.lessons || data.lessons,
+      };
+
+      storageService.save(merged);
+      localStorage.setItem("slovakgo.current-user", userId);
+      useAppStore.setState({ data: merged, currentUserId: userId, authError: undefined });
+
+      if (isNew || !full.user.onboardingDone) {
+        navigate("/onboarding", { replace: true });
+      } else {
+        navigate(roleHome(full.user.role), { replace: true });
+      }
+    }).catch(() => {
+      navigate("/login?error=google_failed", { replace: true });
+    });
+  }, []);
+
+  return (
+    <main className="auth-screen">
+      <section className="brand-panel">
+        <img src="/logosk.jpg" alt="SlovakGO" className="logo-mark" />
+        <h1>SlovakGO</h1>
+      </section>
+      <p style={{ textAlign: "center", color: "var(--muted)", fontWeight: 600 }}>Завантаження…</p>
+    </main>
   );
 }

@@ -29,7 +29,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; connect-src 'self' https://fcm.googleapis.com https://firebase.googleapis.com https://www.googleapis.com https://firebaseinstallations.googleapis.com https://fcmregistrations.googleapis.com https://*.turso.io wss://*.turso.io https://*.turso.tech wss://*.turso.tech; frame-src https://checkout.stripe.com https://billing.stripe.com; frame-ancestors 'none'; worker-src 'self' blob:; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self' https://checkout.stripe.com https://billing.stripe.com;"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; connect-src 'self' https://fcm.googleapis.com https://firebase.googleapis.com https://www.googleapis.com https://firebaseinstallations.googleapis.com https://fcmregistrations.googleapis.com https://*.turso.io wss://*.turso.io https://*.turso.tech wss://*.turso.tech https://fonts.googleapis.com https://accounts.google.com https://oauth2.googleapis.com; frame-src https://checkout.stripe.com https://billing.stripe.com; frame-ancestors 'none'; worker-src 'self' blob:; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'self' https://checkout.stripe.com https://billing.stripe.com https://accounts.google.com;"
         }
       ]
     }

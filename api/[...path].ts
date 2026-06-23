@@ -94,7 +94,7 @@ function clearCookie(res: VercelResponse): void {
 }
 
 // ─── CORS / response ──────────────────────────────────────────────────────────
-const PROD_ORIGINS = ["https://www.slovakgo.sk", "https://slovakgo.sk", "https://slovak-go.vercel.app"];
+const PROD_ORIGINS = ["https://www.slovakgo.sk", "https://slovakgo.sk", "https://app.slovakgo.sk", "https://slovak-go.vercel.app"];
 
 function setCors(req: VercelRequest, res: VercelResponse): void {
   const origin  = (req.headers.origin as string) ?? "";
@@ -204,7 +204,8 @@ async function handleRegister(_req: VercelRequest, res: VercelResponse, body: Re
   const cliId    = String(body.id ?? "").trim();
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail(res, "Некоректний email", 422);
-  if (password.length < 6) return fail(res, "Пароль занадто короткий", 422);
+  if (password.length < 8 || !/[A-ZА-ЯІЇЄҐ]/.test(password) || !/[a-zа-яіїєґ]/.test(password) || !/\d/.test(password))
+    return fail(res, "Пароль має містити мінімум 8 символів, велику та малу літеру і цифру", 422);
 
   if (await queryOne("SELECT id FROM users WHERE email = ? LIMIT 1", [email]))
     return fail(res, "Email вже зареєстрований", 409);
@@ -245,6 +246,7 @@ async function handleLogin(req: VercelRequest, res: VercelResponse, body: Record
   const password = String(body.password ?? "");
   const row      = await queryOne("SELECT * FROM users WHERE email = ? AND is_blocked = 0 LIMIT 1", [email]);
   const hash     = String(row?.pw_hash ?? "");
+  if (row && hash === "") return fail(res, "Цей акаунт використовує вхід через Google", 401);
   const valid    = row && (hash === "DEV:skip" || await bcrypt.compare(password, hash));
 
   if (!valid) {
@@ -312,7 +314,8 @@ async function handleForgot(res: VercelResponse, body: Record<string, unknown>):
 async function handleReset(res: VercelResponse, body: Record<string, unknown>): Promise<void> {
   const token    = String(body.token ?? "");
   const password = String(body.password ?? "");
-  if (!token || password.length < 6) return fail(res, "Невалідний запит", 422);
+  if (!token || password.length < 8 || !/[A-ZА-ЯІЇЄҐ]/.test(password) || !/[a-zа-яіїєґ]/.test(password) || !/\d/.test(password))
+    return fail(res, "Пароль має містити мінімум 8 символів, велику та малу літеру і цифру", 422);
 
   const hash = createHash("sha256").update(token).digest("hex");
   const row  = await queryOne("SELECT * FROM password_resets WHERE token_hash = ? AND used = 0 LIMIT 1", [hash]);
@@ -992,6 +995,97 @@ async function handleBillingWebhook(req: VercelRequest, res: VercelResponse, raw
   respond(res, { ok: true });
 }
 
+// ─── Google OAuth ─────────────────────────────────────────────────────────────
+
+// GET /auth/google/start — redirect to Google consent screen
+async function handleGoogleStart(_req: VercelRequest, res: VercelResponse): Promise<void> {
+  const clientId = process.env.GOOGLE_CLIENT_ID;
+  if (!clientId) { fail(res, "Google OAuth не налаштовано", 503); return; }
+  const appUrl = String(process.env.APP_URL ?? "http://localhost:5173").replace(/\/$/, "");
+  const params = new URLSearchParams({
+    client_id:     clientId,
+    redirect_uri:  `${appUrl}/api/auth/google/callback`,
+    response_type: "code",
+    scope:         "email profile",
+    access_type:   "online",
+    prompt:        "select_account",
+  });
+  res.writeHead(302, { Location: `https://accounts.google.com/o/oauth2/v2/auth?${params}` });
+  res.end();
+}
+
+// GET /auth/google/callback — exchange code, find or create user, set cookie
+async function handleGoogleCallback(req: VercelRequest, res: VercelResponse): Promise<void> {
+  const appUrl   = String(process.env.APP_URL ?? "http://localhost:5173").replace(/\/$/, "");
+  const code     = String(req.query.code ?? "");
+  const errParam = String(req.query.error ?? "");
+
+  if (!code || errParam) {
+    res.writeHead(302, { Location: `${appUrl}/login?error=google_cancelled` });
+    res.end(); return;
+  }
+
+  try {
+    const clientId     = process.env.GOOGLE_CLIENT_ID ?? "";
+    const clientSecret = process.env.GOOGLE_CLIENT_SECRET ?? "";
+    const redirectUri  = `${appUrl}/api/auth/google/callback`;
+
+    // Exchange auth code for access token
+    const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
+      method:  "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body:    new URLSearchParams({ code, client_id: clientId, client_secret: clientSecret, redirect_uri: redirectUri, grant_type: "authorization_code" }),
+    });
+    if (!tokenRes.ok) throw new Error(`token_exchange_failed:${tokenRes.status}`);
+    const tokens = await tokenRes.json() as { access_token: string };
+
+    // Get Google user profile
+    const profileRes = await fetch("https://www.googleapis.com/oauth2/v2/userinfo", {
+      headers: { Authorization: `Bearer ${tokens.access_token}` },
+    });
+    if (!profileRes.ok) throw new Error("profile_fetch_failed");
+    const gUser = await profileRes.json() as { id: string; email: string; name: string; picture?: string };
+
+    const email = gUser.email.toLowerCase();
+
+    // Add google_sub column if it doesn't exist yet (idempotent migration)
+    try { await exec("ALTER TABLE users ADD COLUMN google_sub TEXT"); } catch { /* already exists */ }
+
+    // Find existing user by email or google_sub
+    const row = await queryOne("SELECT * FROM users WHERE email = ? OR google_sub = ? LIMIT 1", [email, gUser.id]);
+
+    if (row) {
+      // Link Google sub to existing account if not already linked
+      if (!row.google_sub) {
+        await exec("UPDATE users SET google_sub = ?, updated_at = ? WHERE id = ?", [gUser.id, nowIso(), String(row.id)]);
+      }
+      setCookie(res, await signToken(String(row.id)));
+      res.writeHead(302, { Location: `${appUrl}/auth/google/done` });
+    } else {
+      // Create new user
+      const id    = `user-${randomUUID()}`;
+      const now   = nowIso();
+      const trial = new Date(Date.now() + 14 * 86400_000).toISOString().replace(/\.\d{3}Z$/, "Z");
+      const defS  = JSON.stringify({ language: "uk", notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true });
+      const name  = gUser.name || email.split("@")[0];
+
+      await exec(
+        `INSERT INTO users (id, email, pw_hash, name_text, role, level, goal, sub_status, trial_ends, ob_done, settings_j, google_sub, created_at, updated_at)
+         VALUES (?, ?, '', ?, 'student', 'A0', NULL, 'trial', ?, 0, ?, ?, ?, ?)`,
+        [id, email, name, trial, defS, gUser.id, now, now]
+      );
+      await ensureProgress(id);
+      setCookie(res, await signToken(id));
+      res.writeHead(302, { Location: `${appUrl}/auth/google/done?new=1` });
+    }
+    res.end();
+  } catch (err) {
+    console.error("[Google OAuth]", err);
+    res.writeHead(302, { Location: `${appUrl}/login?error=google_failed` });
+    res.end();
+  }
+}
+
 // ─── Main router ──────────────────────────────────────────────────────────────
 export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   setCors(req, res);
@@ -1015,6 +1109,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "POST" && route === "/auth/reset")        return await handleReset(res, body);
     if (meth === "POST" && route === "/auth/delete")       return await handleDeleteAccount(req, res, body);
     if (meth === "POST" && route === "/auth/deactivate")   return await handleDeactivate(req, res);
+    if (meth === "GET"  && route === "/auth/google/start")    return await handleGoogleStart(req, res);
+    if (meth === "GET"  && route === "/auth/google/callback") return await handleGoogleCallback(req, res);
     if (meth === "GET"  && route === "/sync/pull")         return await handleSyncPull(req, res);
     if (meth === "POST" && route === "/sync/push")         return await handleSyncPush(req, res, body);
     if (meth === "POST" && route === "/user/email")        return await handleUserEmail(req, res, body);

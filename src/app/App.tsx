@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { AdminLayout } from "../features/admin/AdminScreens";
-import { ForgotPassword, Login, Register, ResetPassword } from "../features/auth/AuthScreens";
+import { ForgotPassword, GoogleDone, Login, Register, ResetPassword } from "../features/auth/AuthScreens";
 import { LandingPage } from "../features/landing/LandingPage";
 import { Onboarding, PlacementTest, StudentLayout } from "../features/student/StudentScreens";
 import { TeacherLayout } from "../features/teacher/TeacherScreens";
@@ -34,6 +34,7 @@ export function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />
+      <Route path="/auth/google/done" element={<GoogleDone />} />
       <Route path="/onboarding" element={<Onboarding />} />
       <Route path="/placement-test" element={<PlacementTest />} />
       <Route

@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import { createProgress } from "../data/seedData";
 import { leaderboardService } from "../services/leaderboardService";
 import { lessonService } from "../services/lessonService";
 import { progressService } from "../services/progressService";
@@ -15,7 +14,7 @@ interface AppStore {
   syncMessage?: string;
   lastSyncedAt?: string;
   login: (email: string, password: string) => Promise<User | null>;
-  register: (payload: { name: string; email: string; password: string; goal?: string }) => User | null;
+  register: (payload: { name: string; email: string; password: string; goal?: string }) => Promise<User | null>;
   logout: () => void;
   updateUser: (patch: Partial<User>) => void;
   completeOnboarding: (goal: string, level: UserLevel) => void;
@@ -105,7 +104,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
     }
   },
 
-  register(payload) {
+  async register(payload) {
     if (!payload.name.trim()) {
       set({ authError: "Введіть ім'я" });
       return null;
@@ -114,43 +113,53 @@ export const useAppStore = create<AppStore>((set, get) => ({
       set({ authError: "Введіть коректний email" });
       return null;
     }
-    if (payload.password.length < 8 || !/[a-zа-яіїєґ]/i.test(payload.password) || !/\d/.test(payload.password)) {
-      set({ authError: "Пароль має містити мінімум 8 символів, букви і цифри" });
+    if (
+      payload.password.length < 8 ||
+      !/[A-ZА-ЯІЇЄҐ]/.test(payload.password) ||
+      !/[a-zа-яіїєґ]/.test(payload.password) ||
+      !/\d/.test(payload.password)
+    ) {
+      set({ authError: "Пароль має містити мінімум 8 символів, велику та малу літеру і цифру" });
       return null;
     }
-    if (get().data.users.some((user) => user.email.toLowerCase() === payload.email.toLowerCase())) {
-      set({ authError: "Email вже зареєстрований" });
+    set({ authError: undefined });
+
+    const tentativeId = `user-${crypto.randomUUID()}`;
+    const defaults = { language: "uk" as const, notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true };
+
+    try {
+      await apiClient.register(tentativeId, payload.name.trim(), payload.email, payload.password, payload.goal);
+
+      const fullState = await apiClient.syncPull(0) as { user: User; progress: AppData["progress"][string]; userWords: UserWord[]; lessons: Lesson[] };
+      const userId = fullState.user.id;
+
+      let data = get().data;
+      const users = data.users.filter(u => u.id !== userId);
+      data = {
+        ...data,
+        users: [...users, { ...fullState.user, settings: { ...defaults, ...fullState.user.settings } }],
+        progress:  { ...data.progress,  [userId]: fullState.progress },
+        userWords: { ...data.userWords, [userId]: fullState.userWords },
+        lessons: fullState.lessons || data.lessons,
+      };
+
+      save(data);
+      localStorage.setItem(sessionKey, userId);
+      set({ data, currentUserId: userId, authError: undefined });
+
+      get().drainSync().catch(() => undefined);
+      return data.users.find((u) => u.id === userId) ?? null;
+    } catch (err: unknown) {
+      const e = err as { status?: number; message?: string };
+      if (e.status === 409) {
+        set({ authError: "Email вже зареєстрований" });
+      } else if (e.status === 422) {
+        set({ authError: e.message || "Перевір введені дані" });
+      } else {
+        set({ authError: "Не вдалося зареєструватися. Перевір з'єднання." });
+      }
       return null;
     }
-    const user: User = {
-      id: `user-${crypto.randomUUID()}`,
-      name: payload.name,
-      email: payload.email.toLowerCase(),
-      role: "student",
-      avatar: payload.name.slice(0, 2).toUpperCase(),
-      level: "A0",
-      goal: payload.goal,
-      createdAt: new Date().toISOString(),
-      lastActiveAt: new Date().toISOString(),
-      subscriptionStatus: "trial",
-      trialEndsAt: new Date(Date.now() + 14 * 86400_000).toISOString(),
-      onboardingDone: false,
-      settings: { language: "uk", notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true, dailyGoal: 10, theme: "default" }
-    };
-    const data: AppData = {
-      ...get().data,
-      users: [...get().data.users, user],
-      progress: { ...get().data.progress, [user.id]: createProgress(user.id, "A0") },
-      userWords: { ...get().data.userWords, [user.id]: [] }
-    };
-    save(data);
-    localStorage.setItem(sessionKey, user.id);
-    // Register on server so the session cookie is set for subsequent sync pushes.
-    // Fire-and-forget — the mutation queue will re-sync any pending actions once
-    // the user comes online.
-    apiClient.register(user.id, user.name, payload.email, payload.password, user.goal).catch(() => undefined);
-    set({ data, currentUserId: user.id, authError: undefined });
-    return user;
   },
 
   logout() {
