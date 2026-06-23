@@ -936,7 +936,6 @@ function Errors() {
 type NotifyTarget = "students" | "plus" | "all" | "level";
 
 function NotifyScreen() {
-  const { data } = useAdminData();
   const [title,   setTitle]   = useState("");
   const [body,    setBody]    = useState("");
   const [target,  setTarget]  = useState<NotifyTarget>("students");
@@ -1038,7 +1037,7 @@ function NotifyScreen() {
       {result && <div className="notify-result-banner">✅ Відправлено на {result.sent} пристроїв</div>}
 
       <Button onClick={send} disabled={sending || !title.trim() || !body.trim()}>
-        <Send size={15} /> {sending ? "Надсилаємо…" : `Надіслати (${audience.length})`}
+        <Send size={15} /> {sending ? "Надсилаємо…" : "Надіслати"}
       </Button>
     </main>
   );

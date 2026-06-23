@@ -1106,7 +1106,7 @@ function LeaderboardScreen() {
   useEffect(() => {
     apiClient.getLeaderboard()
       .then((d) => {
-        setServerEntries(d.entries);
+        setServerEntries(d.entries.map(e => ({ ...e, avatar: e.avatar ?? undefined })));
         setServerWeekId(d.weekId);
       })
       .catch(() => undefined);
