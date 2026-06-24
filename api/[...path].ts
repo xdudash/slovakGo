@@ -1095,9 +1095,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   const isJson   = (req.headers["content-type"] ?? "").includes("application/json");
   const body: Record<string, unknown> = isJson && rawBody.length ? safeJson(rawBody.toString(), {}) : {};
 
-  const slugParam = req.query.path;
-  const slug  = Array.isArray(slugParam) ? slugParam : (slugParam ? [String(slugParam)] : []);
-  const route = "/" + slug.join("/");
+  // Parse route from URL directly — more reliable than req.query.path
+  // which breaks when Vite framework generates single-segment-only routing
+  const reqUrl = typeof req.url === "string" ? req.url : "/";
+  const route = ("/" + reqUrl.replace(/^\/api/, "").split("?")[0].replace(/^\//, "")) || "/";
   const meth  = req.method ?? "GET";
 
   try {
