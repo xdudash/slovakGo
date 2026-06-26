@@ -52,7 +52,7 @@ export function PWAInstallBanner() {
   }
 
   return (
-    <Card className="pwa-install-banner" style={{ position: "relative", marginBottom: "16px", paddingRight: "36px" }}>
+    <section className="card pwa-install-banner" style={{ position: "relative", marginBottom: "16px", paddingRight: "36px" }}>
       <button 
         type="button" 
         onClick={handleDismiss} 
@@ -105,6 +105,6 @@ export function PWAInstallBanner() {
           </ol>
         </div>
       )}
-    </Card>
+    </section>
   );
 }
