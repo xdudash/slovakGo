@@ -24,8 +24,7 @@ const navConfig = {
     { to: "/admin/users", key: "nav.admin.users", icon: UsersRound },
     { to: "/admin/lessons", key: "nav.admin.lessons", icon: BookOpen },
     { to: "/admin/subscriptions", key: "nav.admin.subscriptions", icon: ShoppingBag },
-    { to: "/admin/stats", key: "nav.admin.stats", icon: Medal },
-    { to: "/app/levels", key: "Змінити свій рівень", icon: Trophy }
+    { to: "/admin/stats", key: "nav.admin.stats", icon: Medal }
   ]
 };
 
