@@ -1385,11 +1385,15 @@ textarea:focus,
   align-items: center;
   justify-content: space-between;
   gap: 14px;
-  padding: calc(14px + env(safe-area-inset-top)) 18px 16px;
+  padding: calc(14px + env(safe-area-inset-top)) 16px 16px;
   background: rgba(255, 255, 255, 0.90);
   border-bottom: 1px solid rgba(33, 25, 70, 0.06);
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
+}
+
+.profile-hero + .page-content {
+  padding-top: 12px;
 }
 
 .profile-hero-info {
@@ -2046,6 +2050,10 @@ textarea:focus,
 
   .bottom-nav-item.active svg {
     color: var(--accent);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -2887,9 +2895,11 @@ textarea:focus,
   grid-template-columns: repeat(8, minmax(0, 1fr));
   grid-template-rows: repeat(7, minmax(0, 1fr));
   grid-auto-flow: column;
-  gap: 3px;
+  gap: 4px;
   aspect-ratio: 8 / 7;
   width: 100%;
+  max-width: 280px;
+  margin: 8px auto 0;
 }
 
 .heatmap-cell {
@@ -4680,6 +4690,10 @@ textarea:focus,
 
 /* Mobile padding fixes to prevent content from hitting screen edges */
 @media (max-width: 480px) {
+  .profile-hero {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
   .page-content {
     padding-left: 12px;
     padding-right: 12px;
