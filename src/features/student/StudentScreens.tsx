@@ -74,9 +74,18 @@ function TopStats() {
 
 export function StudentLayout() {
   const location = useLocation();
+  const { user } = useStudentData();
+
+  if (user && user.role === "student" && user.subscriptionStatus === "free") {
+    const allowed = ["/app/profile", "/app/settings", "/app/paywall"];
+    if (!allowed.includes(location.pathname)) {
+      return <Navigate to="/app/paywall" replace />;
+    }
+  }
+
   return (
     <AppShell role="student">
-      {location.pathname !== "/app/profile" ? <TopStats /> : null}
+      {location.pathname !== "/app/profile" && location.pathname !== "/app/paywall" ? <TopStats /> : null}
       <Routes>
         <Route path="/" element={<Navigate to="path" replace />} />
         <Route path="path" element={<PathScreen />} />
@@ -88,6 +97,7 @@ export function StudentLayout() {
         <Route path="profile" element={<ProfileScreen />} />
         <Route path="settings" element={<SettingsScreen />} />
         <Route path="levels" element={<LevelsScreen />} />
+        <Route path="paywall" element={<PaywallScreen />} />
       </Routes>
     </AppShell>
   );
@@ -155,7 +165,7 @@ export function Onboarding() {
       </div>
       <h1>{t("student.onboarding.start_title")}</h1>
       <p className="onboarding-text">Не хвилюйся, рівень можна буде змінити в налаштуваннях.</p>
-      <Button className="onboarding-btn-primary" onClick={() => { completeOnboarding(goal, "A0"); navigate("/app/path", { replace: true }); }}>
+      <Button className="onboarding-btn-primary" onClick={() => { completeOnboarding(goal, "A0"); navigate("/app/paywall", { replace: true }); }}>
         {t("student.onboarding.start_a0")}
       </Button>
       <Button variant="secondary" onClick={() => navigate("/placement-test")}>
@@ -222,7 +232,7 @@ export function PlacementTest() {
       ) : (
         <Card className="result-card">
           <h2>{t("student.placement.result_title")} {result}</h2>
-          <Button onClick={() => { completeOnboarding(user.goal || goals[0], result); navigate("/app/path", { replace: true }); }}>{t("student.placement.start_level")}</Button>
+          <Button onClick={() => { completeOnboarding(user.goal || goals[0], result); navigate("/app/paywall", { replace: true }); }}>{t("student.placement.start_level")}</Button>
           <Button variant="secondary" onClick={() => navigate("/app/levels")}>{t("student.placement.choose_level")}</Button>
         </Card>
       )}
@@ -1865,6 +1875,120 @@ function SettingsScreen() {
           </Card>
         </Modal>
       )}
+    </main>
+  );
+}
+
+export function PaywallScreen() {
+  const { user, isPlus } = useStudentData();
+  const navigate = useNavigate();
+  const { t } = useT();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  if (!user) return <PageSkeleton />;
+
+  if (isPlus) {
+    return <Navigate to="/app/path" replace />;
+  }
+
+  async function handleSubscribe() {
+    setLoading(true);
+    setError(null);
+    try {
+      const { url } = await apiClient.createCheckoutSession();
+      window.location.href = url;
+    } catch (err: any) {
+      setError(err.message || "Не вдалося почати оформлення підписки.");
+      setLoading(false);
+    }
+  }
+
+  return (
+    <main className="page-content paywall-page" style={{ maxWidth: "420px", margin: "0 auto", padding: "24px 16px" }}>
+      <div style={{ textAlign: "center", marginBottom: "24px" }}>
+        <img src="/logosk.jpg" alt="SlovakGO" style={{ width: "80px", height: "80px", borderRadius: "20px", marginBottom: "16px" }} />
+        <h1 style={{ fontSize: "1.8rem", fontWeight: 900, color: "var(--fg)", marginBottom: "8px" }}>
+          SlovakGO Plus 🚀
+        </h1>
+        <p style={{ color: "var(--muted)", fontSize: "0.95rem", margin: 0 }}>
+          Отримайте повний доступ до вивчення словацької мови для життя та роботи в Словаччині.
+        </p>
+      </div>
+
+      {error && (
+        <div style={{ display: "flex", gap: "10px", alignItems: "center", padding: "12px", background: "rgba(239, 68, 68, 0.08)", borderRadius: "12px", border: "1px solid rgba(239, 68, 68, 0.2)", marginBottom: "16px", color: "var(--red)", fontSize: "0.85rem" }}>
+          <AlertCircle size={18} />
+          <span>{error}</span>
+        </div>
+      )}
+
+      <section className="card" style={{ marginBottom: "24px", padding: "20px" }}>
+        <h3 style={{ margin: "0 0 12px 0", fontSize: "1rem", fontWeight: 700 }}>Що входить у підписку:</h3>
+        <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px", fontSize: "0.9rem" }}>
+          <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <CheckCircle2 size={16} color="var(--green)" />
+            <span><strong>Безлімітні серця</strong> — вчися без зупинок</span>
+          </li>
+          <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <CheckCircle2 size={16} color="var(--green)" />
+            <span><strong>Практичні теми</strong> — оренда житла, робота, лікар, поліція</span>
+          </li>
+          <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <CheckCircle2 size={16} color="var(--green)" />
+            <span><strong>Офлайн режим</strong> — вчи мову навіть без інтернету</span>
+          </li>
+          <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <CheckCircle2 size={16} color="var(--green)" />
+            <span><strong>Детальна статистика</strong> — відстежуй свій прогрес</span>
+          </li>
+        </ul>
+      </section>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+        {user.subscriptionStatus === "trial" ? (
+          <>
+            <Button onClick={() => navigate("/app/path")} disabled={loading} style={{ width: "100%" }}>
+              Розпочати 7 днів безкоштовно
+            </Button>
+            <Button variant="secondary" onClick={handleSubscribe} disabled={loading} style={{ width: "100%" }}>
+              Оплатити підписку (€9.99/міс)
+            </Button>
+          </>
+        ) : (
+          <>
+            <div style={{ textAlign: "center", padding: "12px", background: "rgba(239, 68, 68, 0.08)", borderRadius: "12px", border: "1px solid rgba(239, 68, 68, 0.2)", marginBottom: "8px", fontSize: "0.85rem", color: "var(--red)" }}>
+              🔒 <strong>Пробний період завершився.</strong> Будь ласка, оформіть підписку, щоб продовжити навчання.
+            </div>
+            <Button onClick={handleSubscribe} disabled={loading} style={{ width: "100%" }}>
+              Оплатити підписку (€9.99/міс)
+            </Button>
+          </>
+        )}
+      </div>
+
+      <div style={{ textAlign: "center", marginTop: "24px" }}>
+        <p style={{ fontSize: "0.8rem", color: "var(--muted)", margin: "0 0 16px 0" }}>
+          Підписка €9.99/місяць. Скасувати можна в будь-який момент через кабінет Stripe.
+        </p>
+        <div style={{ display: "flex", justifyContent: "center", gap: "16px" }}>
+          <button 
+            type="button" 
+            onClick={() => navigate("/app/profile")} 
+            style={{ background: "none", border: "none", color: "var(--purple)", cursor: "pointer", fontSize: "0.85rem", fontWeight: 600 }}
+          >
+            Профіль
+          </button>
+          <span style={{ color: "var(--line)" }}>|</span>
+          <button 
+            type="button" 
+            onClick={() => { useAppStore.getState().logout(); navigate("/login"); }} 
+            style={{ background: "none", border: "none", color: "var(--red)", cursor: "pointer", fontSize: "0.85rem", fontWeight: 600 }}
+          >
+            Вийти з акаунта
+          </button>
+        </div>
+      </div>
     </main>
   );
 }

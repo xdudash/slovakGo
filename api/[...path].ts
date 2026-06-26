@@ -212,7 +212,7 @@ async function handleRegister(_req: VercelRequest, res: VercelResponse, body: Re
 
   const id    = cliId || `user-${randomUUID()}`;
   const now   = nowIso();
-  const trial = new Date(Date.now() + 14 * 86400_000).toISOString().replace(/\.\d{3}Z$/, "Z");
+  const trial = new Date(Date.now() + 7 * 86400_000).toISOString().replace(/\.\d{3}Z$/, "Z");
   const hash  = await bcrypt.hash(password, 11);
   const defS  = JSON.stringify({ language: "uk", notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true });
 
@@ -1099,7 +1099,7 @@ async function handleGoogleCallback(req: VercelRequest, res: VercelResponse): Pr
       // Create new user
       const id    = `user-${randomUUID()}`;
       const now   = nowIso();
-      const trial = new Date(Date.now() + 14 * 86400_000).toISOString().replace(/\.\d{3}Z$/, "Z");
+      const trial = new Date(Date.now() + 7 * 86400_000).toISOString().replace(/\.\d{3}Z$/, "Z");
       const defS  = JSON.stringify({ language: "uk", notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true });
       const name  = gUser.name || email.split("@")[0];
 
