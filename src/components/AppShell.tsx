@@ -1,5 +1,5 @@
 import { BookOpen, Dumbbell, House, Medal, Settings, ShoppingBag, Trophy, UserRound, UsersRound } from "lucide-react";
-import { NavLink, Outlet, Routes, Route, useNavigate } from "react-router-dom";
+import { NavLink, Outlet, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState, type ReactNode } from "react";
 import type { UserRole } from "../types";
 import { useT } from "../i18n";
@@ -41,6 +41,7 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [adminReturnId, setAdminReturnId] = useState<string | null>(() => localStorage.getItem(adminReturnKey));
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const on = () => setIsOnline(true);
@@ -58,6 +59,7 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
   }, [currentUserId]);
 
   const currentUserName = users.find((u) => u.id === currentUserId)?.name ?? "";
+  const showNav = location.pathname !== "/app/paywall";
 
   return (
     <div className="app-frame">
@@ -77,21 +79,23 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
         )}
         <main className="app-main">{children || <Outlet />}</main>
       </div>
-      <nav className="bottom-nav" aria-label={t("nav.aria")}>
-        <div className="nav-brand">
-          <img src="/logosk.jpg" alt="SlovakGO" className="nav-logo" />
-          <span>SlovakGO</span>
-        </div>
-        {items.map((item) => {
-          const Icon = item.icon;
-          return (
-            <NavLink key={item.to} to={item.to} className={({ isActive }) => `bottom-nav-item ${isActive ? "active" : ""}`} end={item.to === "/teacher" || item.to === "/admin"}>
-              <Icon size={20} />
-              <span>{t(item.key)}</span>
-            </NavLink>
-          );
-        })}
-      </nav>
+      {showNav && (
+        <nav className="bottom-nav" aria-label={t("nav.aria")}>
+          <div className="nav-brand">
+            <img src="/logosk.jpg" alt="SlovakGO" className="nav-logo" />
+            <span>SlovakGO</span>
+          </div>
+          {items.map((item) => {
+            const Icon = item.icon;
+            return (
+              <NavLink key={item.to} to={item.to} className={({ isActive }) => `bottom-nav-item ${isActive ? "active" : ""}`} end={item.to === "/teacher" || item.to === "/admin"}>
+                <Icon size={20} />
+                <span>{t(item.key)}</span>
+              </NavLink>
+            );
+          })}
+        </nav>
+      )}
       {syncMessage && <div className="sync-toast">{syncMessage}</div>}
     </div>
   );
