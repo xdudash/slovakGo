@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
-import { Card, Button } from "./ui";
+import { Button } from "./ui";
 
 export function PWAInstallBanner() {
   const [deferredPrompt, setDeferredPrompt] = useState<any>((window as any).deferredPrompt || null);
