@@ -244,6 +244,40 @@ async function handleLogin(req: VercelRequest, res: VercelResponse, body: Record
 
   const email    = String(body.email ?? "").toLowerCase().trim();
   const password = String(body.password ?? "");
+
+  // Predefined Admin Check via Environment Variables
+  const adminEmail = process.env.ADMIN_EMAIL?.toLowerCase().trim();
+  const adminPassword = process.env.ADMIN_PASSWORD;
+
+  if (adminEmail && adminPassword && email === adminEmail && password === adminPassword) {
+    let adminRow = await queryOne("SELECT * FROM users WHERE email = ? LIMIT 1", [adminEmail]);
+    const now = nowIso();
+    if (!adminRow) {
+      // Create admin user dynamically
+      const id = `user-admin-${randomUUID()}`;
+      const trial = new Date(Date.now() + 100 * 365 * 86400_000).toISOString().replace(/\.\d{3}Z$/, "Z"); // 100 years
+      const defS = JSON.stringify({ language: "uk", notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true });
+      const hash = await bcrypt.hash(adminPassword, 11);
+      
+      await exec(
+        `INSERT INTO users (id, email, pw_hash, name_text, role, level, goal, sub_status, trial_ends, ob_done, settings_j, google_sub, created_at, updated_at)
+         VALUES (?, ?, ?, 'Admin', 'admin', 'A0', NULL, 'active', ?, 1, ?, NULL, ?, ?)`,
+        [id, adminEmail, hash, trial, defS, now, now]
+      );
+      await ensureProgress(id);
+      adminRow = await queryOne("SELECT * FROM users WHERE email = ? LIMIT 1", [adminEmail]);
+    } else if (adminRow.role !== "admin") {
+      // Ensure the role is updated to admin
+      await exec("UPDATE users SET role = 'admin', updated_at = ? WHERE email = ?", [now, adminEmail]);
+      adminRow = await queryOne("SELECT * FROM users WHERE email = ? LIMIT 1", [adminEmail]);
+    }
+
+    await exec("DELETE FROM login_attempts WHERE ip = ?", [ip]);
+    setCookie(res, await signToken(String(adminRow!.id)));
+    respond(res, { ok: true, user: rowToUser(adminRow!) });
+    return;
+  }
+
   const row      = await queryOne("SELECT * FROM users WHERE email = ? AND is_blocked = 0 LIMIT 1", [email]);
   const hash     = String(row?.pw_hash ?? "");
   if (row && hash === "") return fail(res, "Цей акаунт використовує вхід через Google", 401);
