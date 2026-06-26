@@ -1882,7 +1882,6 @@ function SettingsScreen() {
 export function PaywallScreen() {
   const { user, isPlus } = useStudentData();
   const navigate = useNavigate();
-  const { t } = useT();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
