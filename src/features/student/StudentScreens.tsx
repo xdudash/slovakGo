@@ -4,6 +4,7 @@ import { AlertCircle, Bell, BookOpen, Camera, CheckCircle2, ChevronDown, Chevron
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, EmptyState, Field, Modal, PageHeader, ProgressBar } from "../../components/ui";
 import { PageSkeleton } from "../../components/Skeleton";
+import { PWAInstallBanner } from "../../components/PWAInstallBanner";
 import { apiClient } from "../../services/apiClient";
 import { leaderboardService } from "../../services/leaderboardService";
 import { lessonService } from "../../services/lessonService";
@@ -256,6 +257,7 @@ function PathScreen() {
         title={t("student.path.title")}
         subtitle={`${progress.currentLevel} · ${t(`student.level_desc.${progress.currentLevel}`)}`}
       />
+      <PWAInstallBanner />
 
       {/* Unit section header */}
       <div className="unit-card">
@@ -1564,6 +1566,37 @@ function SettingsScreen() {
   const [actionLoading, setActionLoading] = useState(false);
   const [actionError, setActionError] = useState("");
 
+  const [deferredPrompt, setDeferredPrompt] = useState<any>((window as any).deferredPrompt || null);
+  const [isIOS, setIsIOS] = useState(false);
+  const [isStandalone, setIsStandalone] = useState(false);
+
+  useEffect(() => {
+    const userAgent = window.navigator.userAgent;
+    const ios = /Macintosh/i.test(userAgent) && navigator.maxTouchPoints > 0 || /iPad|iPhone|iPod/.test(userAgent);
+    setIsIOS(ios);
+
+    const standalone = window.matchMedia("(display-mode: standalone)").matches || (window.navigator as any).standalone;
+    setIsStandalone(standalone);
+
+    const handlePrompt = () => {
+      setDeferredPrompt((window as any).deferredPrompt);
+    };
+
+    window.addEventListener("pwa-install-available", handlePrompt);
+    return () => {
+      window.removeEventListener("pwa-install-available", handlePrompt);
+    };
+  }, []);
+
+  async function handleInstallPWA() {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log(`[PWA] User choice in Settings: ${outcome}`);
+    (window as any).deferredPrompt = null;
+    setDeferredPrompt(null);
+  }
+
   if (!user) return <PageSkeleton />;
   const lang = (user.settings.language || "uk") as "uk" | "sk" | "en";
 
@@ -1737,6 +1770,40 @@ function SettingsScreen() {
           </label>
         </Card>
       </section>
+
+      {(!isStandalone && (deferredPrompt || isIOS)) && (
+        <section className="settings-section">
+          <h3 className="settings-section-title">{t("student.settings.install")}</h3>
+          <Card className="form-stack">
+            {deferredPrompt && (
+              <>
+                <p style={{ margin: 0, fontSize: "0.85rem", color: "var(--muted)" }}>
+                  Додайте SlovakGO на головний екран для швидкого запуску.
+                </p>
+                <Button onClick={handleInstallPWA}>
+                  {t("student.settings.install")}
+                </Button>
+              </>
+            )}
+            {isIOS && (
+              <div className="ios-install-instructions" style={{ fontSize: "0.85rem", color: "var(--fg)" }}>
+                <p style={{ fontWeight: 600, margin: "0 0 8px 0" }}>Встановлення на iPhone / iPad:</p>
+                <ol style={{ paddingLeft: "16px", margin: 0, display: "flex", flexDirection: "column", gap: "6px" }}>
+                  <li>
+                    Якщо ви відкрили цей сайт через <strong>Telegram, Viber або Instagram</strong>: натисніть значок у кутку та виберіть <strong>«Відкрити в Safari»</strong>.
+                  </li>
+                  <li>
+                    У Safari натисніть кнопку <strong>«Поділитися»</strong> (квадрат зі стрілкою вгору: <span style={{ fontSize: "1.1rem", verticalAlign: "middle" }}>📤</span>) внизу екрана.
+                  </li>
+                  <li>
+                    У списку виберіть <strong>«Додати на початковий екран»</strong> (або <strong>«На екран "Домой"»</strong> / <strong>Add to Home Screen</strong> <span style={{ fontSize: "1.1rem", verticalAlign: "middle" }}>➕</span>).
+                  </li>
+                </ol>
+              </div>
+            )}
+          </Card>
+        </section>
+      )}
 
       <section className="settings-section">
         <h3 className="settings-section-title">{t("student.settings.section_password")}</h3>

@@ -50,11 +50,16 @@ interface BeforeInstallPromptEvent extends Event {
 
 window.addEventListener("beforeinstallprompt", (e) => {
   const event = e as BeforeInstallPromptEvent;
+  e.preventDefault(); // Prevent the default browser install banner
+  (window as any).deferredPrompt = event;
+  window.dispatchEvent(new CustomEvent("pwa-install-available"));
   // TODO: analytics.track("pwa_install_prompted", { platforms: event.platforms })
   console.log("[PWA] beforeinstallprompt — user eligible for install", { platforms: event.platforms });
 });
 
 window.addEventListener("appinstalled", () => {
+  (window as any).deferredPrompt = null;
+  window.dispatchEvent(new CustomEvent("pwa-install-available"));
   // TODO: analytics.track("pwa_installed")
   console.log("[PWA] appinstalled — user installed the PWA");
 });
