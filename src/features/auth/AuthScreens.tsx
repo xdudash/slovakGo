@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import type { FormEvent, ReactNode } from "react";
+import type { FormEvent, ReactNode, InputHTMLAttributes } from "react";
 import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
+import { Eye, EyeOff, User as UserIcon, Mail as MailIcon, Lock as LockIcon } from "lucide-react";
 import { Button, Card, Field } from "../../components/ui";
 import { roleHome, useAppStore } from "../../store/useAppStore";
 import { apiClient } from "../../services/apiClient";
@@ -59,17 +60,65 @@ export function Login() {
   );
 }
 
+function AuthField({
+  label,
+  error,
+  icon: Icon,
+  rightElement,
+  ...props
+}: InputHTMLAttributes<HTMLInputElement> & { label: string; error?: string; icon?: any; rightElement?: ReactNode }) {
+  return (
+    <div className="field auth-field-wrapper">
+      <span>{label}</span>
+      <div className="input-with-icon-wrapper">
+        {Icon && <Icon className="input-icon-left" size={18} />}
+        <input className={`${Icon ? "has-icon-left" : ""} ${error ? "has-error" : ""}`} {...props} />
+        {rightElement && <div className="input-element-right">{rightElement}</div>}
+      </div>
+      {error ? <small className="error-text">{error}</small> : null}
+    </div>
+  );
+}
+
 export function Register() {
   const navigate = useNavigate();
   const { register, authError } = useAppStore();
-  const { t } = useT();
+  const { t, ta } = useT();
   const [searchParams] = useSearchParams();
   const refParam = searchParams.get("ref");
   const [form, setForm] = useState({ name: "", email: "", password: "", goal: "" });
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   async function submit(event: FormEvent) {
     event.preventDefault();
+
+    // Client-side validation
+    const newErrors: Record<string, string> = {};
+    if (!form.name.trim()) {
+      newErrors.name = "Будь ласка, введіть ім'я";
+    }
+    if (!form.email.trim()) {
+      newErrors.email = "Будь ласка, введіть email";
+    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
+      newErrors.email = "Некоректний формат email";
+    }
+    if (!form.password) {
+      newErrors.password = "Будь ласка, введіть пароль";
+    } else if (form.password.length < 8) {
+      newErrors.password = "Пароль має бути не менше 8 символів";
+    }
+    if (!form.goal) {
+      newErrors.goal = "Будь ласка, оберіть ціль навчання";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+    setErrors({});
+
     setLoading(true);
     const user = await register(form);
     setLoading(false);
@@ -79,6 +128,8 @@ export function Register() {
     }
   }
 
+  const goals = ta("student.goals");
+
   return (
     <AuthShell title={t("auth.register_title")} text={t("auth.register_subtitle")}>
       {refParam && (
@@ -87,10 +138,75 @@ export function Register() {
         </div>
       )}
       <form onSubmit={submit} className="form-stack" noValidate>
-        <Field label={t("auth.name")} value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} />
-        <Field label={t("auth.email")} type="email" value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} />
-        <Field label={t("auth.password")} type="password" value={form.password} onChange={(event) => setForm({ ...form, password: event.target.value })} />
-        <Field label={t("auth.goal_label")} value={form.goal} onChange={(event) => setForm({ ...form, goal: event.target.value })} placeholder={t("auth.goal_placeholder")} />
+        <AuthField
+          label={t("auth.name")}
+          value={form.name}
+          icon={UserIcon}
+          error={errors.name}
+          onChange={(event) => {
+            setForm({ ...form, name: event.target.value });
+            if (errors.name) setErrors({ ...errors, name: "" });
+          }}
+          placeholder="Введіть ваше ім'я"
+        />
+        <AuthField
+          label={t("auth.email")}
+          type="email"
+          value={form.email}
+          icon={MailIcon}
+          error={errors.email}
+          onChange={(event) => {
+            setForm({ ...form, email: event.target.value });
+            if (errors.email) setErrors({ ...errors, email: "" });
+          }}
+          placeholder="your.email@example.com"
+        />
+        <AuthField
+          label={t("auth.password")}
+          type={showPassword ? "text" : "password"}
+          value={form.password}
+          icon={LockIcon}
+          error={errors.password}
+          onChange={(event) => {
+            setForm({ ...form, password: event.target.value });
+            if (errors.password) setErrors({ ...errors, password: "" });
+          }}
+          placeholder="Мінімум 8 символів"
+          rightElement={
+            <button
+              type="button"
+              className="password-toggle-btn"
+              onClick={() => setShowPassword(!showPassword)}
+              aria-label={showPassword ? "Приховати пароль" : "Показати пароль"}
+            >
+              {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+            </button>
+          }
+        />
+
+        <div className="goal-selection-field">
+          <span className="field-label">{t("auth.goal_label")}</span>
+          <div className="goal-chips">
+            {goals.map((g) => {
+              const isSelected = form.goal === g;
+              return (
+                <button
+                  key={g}
+                  type="button"
+                  className={`goal-chip ${isSelected ? "selected" : ""}`}
+                  onClick={() => {
+                    setForm({ ...form, goal: g });
+                    if (errors.goal) setErrors({ ...errors, goal: "" });
+                  }}
+                >
+                  {g}
+                </button>
+              );
+            })}
+          </div>
+          {errors.goal ? <small className="error-text">{errors.goal}</small> : null}
+        </div>
+
         {authError ? <p className="error-text">{authError}</p> : null}
         <Button type="submit" disabled={loading}>{loading ? "…" : t("auth.create_account")}</Button>
       </form>
