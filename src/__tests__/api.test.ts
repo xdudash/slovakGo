@@ -113,6 +113,7 @@ function makeReq(
   const bodyBuf = opts.body ? Buffer.from(JSON.stringify(opts.body)) : null;
   const req = {
     method,
+    url: "/api/" + path.join("/"),
     query: { path, ...(opts.query ?? {}) },
     headers: {
       "content-type": opts.body ? "application/json" : "text/plain",
@@ -194,7 +195,7 @@ describe("Health", () => {
 describe("POST /auth/register", () => {
   it("creates user and returns 201 with cookie", async () => {
     const { status, body, headers } = await call("POST", ["auth", "register"], {
-      body: { email: "new@example.com", password: "secret123", name: "Тест", goal: "A1" },
+      body: { email: "new@example.com", password: "Secret123", name: "Тест", goal: "A1" },
     });
     expect(status).toBe(201);
     expect(body.ok).toBe(true);
@@ -209,7 +210,7 @@ describe("POST /auth/register", () => {
   });
 
   it("returns 409 for duplicate email", async () => {
-    const opts = { body: { email: "dup@example.com", password: "secret123", name: "A" } };
+    const opts = { body: { email: "dup@example.com", password: "Secret123", name: "A" } };
     await call("POST", ["auth", "register"], opts);
     const { status, body } = await call("POST", ["auth", "register"], opts);
     expect(status).toBe(409);
@@ -218,7 +219,7 @@ describe("POST /auth/register", () => {
 
   it("returns 422 for invalid email", async () => {
     const { status, body } = await call("POST", ["auth", "register"], {
-      body: { email: "not-an-email", password: "secret123" },
+      body: { email: "not-an-email", password: "Secret123" },
     });
     expect(status).toBe(422);
     expect(body.ok).toBe(false);
@@ -233,7 +234,7 @@ describe("POST /auth/register", () => {
 
   it("accepts pre-generated client id", async () => {
     const { status, body } = await call("POST", ["auth", "register"], {
-      body: { id: "client-generated-id-1", email: "withid@example.com", password: "secret123" },
+      body: { id: "client-generated-id-1", email: "withid@example.com", password: "Secret123" },
     });
     expect(status).toBe(201);
     expect((body.user as Record<string, unknown>).id).toBe("client-generated-id-1");
@@ -242,7 +243,7 @@ describe("POST /auth/register", () => {
 
 describe("POST /auth/login", () => {
   const email = "login-test@example.com";
-  const password = "loginpass1";
+  const password = "Loginpass1";
 
   beforeAll(async () => {
     await call("POST", ["auth", "register"], { body: { email, password, name: "Логін" } });
@@ -259,7 +260,7 @@ describe("POST /auth/login", () => {
 
   it("returns 401 on wrong password", async () => {
     const { status, body } = await call("POST", ["auth", "login"], {
-      body: { email, password: "wrongpassword" },
+      body: { email, password: "Wrongpassword1" },
     });
     expect(status).toBe(401);
     expect(body.ok).toBe(false);
@@ -267,7 +268,7 @@ describe("POST /auth/login", () => {
 
   it("returns 401 for unknown email", async () => {
     const { status } = await call("POST", ["auth", "login"], {
-      body: { email: "nobody@example.com", password: "whatever" },
+      body: { email: "nobody@example.com", password: "Whatever123" },
     });
     expect(status).toBe(401);
   });
@@ -293,7 +294,7 @@ describe("GET /sync/pull", () => {
   it("returns full user + progress + lessons for authenticated user", async () => {
     // Register a fresh user
     const { body: regBody, headers: regHeaders } = await call("POST", ["auth", "register"], {
-      body: { email: "pull-test@example.com", password: "secret123", name: "Pull" },
+      body: { email: "pull-test@example.com", password: "Secret123", name: "Pull" },
     });
     const cookie = String(regHeaders["Set-Cookie"] ?? "").split(";")[0];
     const uid = (regBody.user as Record<string, unknown>).id as string;
@@ -324,7 +325,7 @@ describe("POST /sync/push", () => {
 
   beforeAll(async () => {
     const { headers } = await call("POST", ["auth", "register"], {
-      body: { email: "push-test@example.com", password: "secret123", name: "Push" },
+      body: { email: "push-test@example.com", password: "Secret123", name: "Push" },
     });
     cookie = String(headers["Set-Cookie"] ?? "").split(";")[0];
   });
@@ -483,7 +484,7 @@ describe("POST /user/password", () => {
 
   beforeAll(async () => {
     const { headers } = await call("POST", ["auth", "register"], {
-      body: { email: "pwchange@example.com", password: "oldpass1", name: "PwChange" },
+      body: { email: "pwchange@example.com", password: "Oldpass1", name: "PwChange" },
     });
     cookie = String(headers["Set-Cookie"] ?? "").split(";")[0];
   });
@@ -491,7 +492,7 @@ describe("POST /user/password", () => {
   it("returns 422 on wrong current password", async () => {
     const { status, body } = await call("POST", ["user", "password"], {
       cookie,
-      body: { currentPassword: "wrongoldpass", newPassword: "newpass123" },
+      body: { currentPassword: "Wrongoldpass1", newPassword: "Newpass123" },
     });
     expect(status).toBe(422);
     expect(body.ok).toBe(false);
@@ -500,20 +501,20 @@ describe("POST /user/password", () => {
   it("changes password with correct current password", async () => {
     const { status, body } = await call("POST", ["user", "password"], {
       cookie,
-      body: { currentPassword: "oldpass1", newPassword: "newpass123" },
+      body: { currentPassword: "Oldpass1", newPassword: "Newpass123" },
     });
     expect(status).toBe(200);
     expect(body.ok).toBe(true);
 
     // Old password no longer works
     const { status: s401 } = await call("POST", ["auth", "login"], {
-      body: { email: "pwchange@example.com", password: "oldpass1" },
+      body: { email: "pwchange@example.com", password: "Oldpass1" },
     });
     expect(s401).toBe(401);
 
     // New password works
     const { status: s200 } = await call("POST", ["auth", "login"], {
-      body: { email: "pwchange@example.com", password: "newpass123" },
+      body: { email: "pwchange@example.com", password: "Newpass123" },
     });
     expect(s200).toBe(200);
   });
@@ -524,7 +525,7 @@ describe("POST /user/email", () => {
 
   beforeAll(async () => {
     const { headers } = await call("POST", ["auth", "register"], {
-      body: { email: "emailchange@example.com", password: "secret123", name: "EmailChange" },
+      body: { email: "emailchange@example.com", password: "Secret123", name: "EmailChange" },
     });
     cookie = String(headers["Set-Cookie"] ?? "").split(";")[0];
   });
@@ -553,7 +554,7 @@ describe("POST /user/email", () => {
 describe("POST /user/fcm-token", () => {
   it("saves FCM token for authenticated user", async () => {
     const { headers } = await call("POST", ["auth", "register"], {
-      body: { email: "fcm@example.com", password: "secret123", name: "FCM" },
+      body: { email: "fcm@example.com", password: "Secret123", name: "FCM" },
     });
     const cookie = String(headers["Set-Cookie"] ?? "").split(";")[0];
 
@@ -588,7 +589,7 @@ describe("POST /errors", () => {
 describe("GET /admin/stats", () => {
   it("returns 403 for non-admin user", async () => {
     const { headers } = await call("POST", ["auth", "register"], {
-      body: { email: "student-admin-check@example.com", password: "secret123", name: "S" },
+      body: { email: "student-admin-check@example.com", password: "Secret123", name: "S" },
     });
     const cookie = String(headers["Set-Cookie"] ?? "").split(";")[0];
 
