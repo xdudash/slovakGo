@@ -1124,6 +1124,75 @@ async function handleGoogleCallback(req: VercelRequest, res: VercelResponse): Pr
   }
 }
 
+// ─── Admin: bulk lesson import ────────────────────────────────────────────────
+async function handleAdminImportLessons(req: VercelRequest, res: VercelResponse, body: Record<string, unknown>): Promise<void> {
+  const uid = await requireUid(req, res); if (!uid) return;
+  if (!(await checkRole(uid, "admin"))) return fail(res, "Недостатньо прав", 403);
+
+  const mode    = String(body.mode ?? "skip") as "skip" | "overwrite";
+  const rawArr  = body.lessons;
+  if (!Array.isArray(rawArr)) return fail(res, "lessons має бути масивом", 422);
+  if (rawArr.length > 100) return fail(res, "Максимум 100 уроків за раз", 422);
+
+  // Validate all lessons up-front; reject the whole batch if any are malformed
+  type ParsedLesson = Record<string, unknown>;
+  const validated: ParsedLesson[] = [];
+  const parseErrors: Array<{ id: string; error: string }> = [];
+
+  for (let i = 0; i < rawArr.length; i++) {
+    const raw = rawArr[i] as Record<string, unknown>;
+    const id = raw?.id ? String(raw.id) : `#${i + 1}`;
+    try {
+      if (!raw.id)    throw new Error("відсутній id");
+      if (!raw.title) throw new Error("відсутній title");
+      if (!raw.level) throw new Error("відсутній level");
+      validated.push(raw);
+    } catch (err) {
+      parseErrors.push({ id, error: (err as Error).message });
+    }
+  }
+
+  if (parseErrors.length > 0) {
+    return fail(res, `Помилки валідації: ${parseErrors.map((e) => `${e.id}: ${e.error}`).join("; ")}`, 422);
+  }
+
+  // Check which IDs already exist
+  const ids = validated.map((l) => String(l.id));
+  const existing = new Set<string>();
+  for (const id of ids) {
+    const row = await queryOne("SELECT id FROM lessons WHERE id = ? LIMIT 1", [id]);
+    if (row) existing.add(id);
+  }
+
+  // Process in batches of 10
+  let imported = 0;
+  let skipped  = 0;
+  const errors: Array<{ id: string; error: string }> = [];
+
+  for (let i = 0; i < validated.length; i += 10) {
+    const batch = validated.slice(i, i + 10);
+    for (const lesson of batch) {
+      const lid = String(lesson.id);
+      try {
+        if (existing.has(lid) && mode === "skip") {
+          skipped++;
+          continue;
+        }
+        await exec(
+          `INSERT INTO lessons (id, data_json, published, created_by, updated_at) VALUES (?, ?, ?, ?, ?)
+           ON CONFLICT(id) DO UPDATE SET data_json = excluded.data_json, published = excluded.published, updated_at = excluded.updated_at`,
+          [lid, JSON.stringify(lesson), lesson.isPublished ? 1 : 0, uid, nowIso()]
+        );
+        imported++;
+      } catch (err) {
+        errors.push({ id: lid, error: (err as Error).message });
+      }
+    }
+  }
+
+  respond(res, { ok: true, imported, skipped, errors });
+}
+
 // ─── Main router ──────────────────────────────────────────────────────────────
 export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   setCors(req, res);
@@ -1160,6 +1229,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "GET"  && route === "/admin/stats")            return await handleAdminStats(req, res);
     if (meth === "GET"  && route === "/admin/errors")           return await handleAdminErrors(req, res);
     if (meth === "POST" && route === "/admin/notify")           return await handleAdminNotify(req, res, body);
+    if (meth === "POST" && route === "/admin/lessons/import")   return await handleAdminImportLessons(req, res, body);
     if (meth === "GET"  && route === "/admin/users")            return await handleAdminUsers(req, res);
     if (meth === "GET"  && route.startsWith("/admin/users/"))   return await handleAdminUserDetail(req, res, route.slice("/admin/users/".length));
     if (meth === "POST" && route.startsWith("/admin/users/"))   return await handleAdminUserPatch(req, res, route.slice("/admin/users/".length), body);

@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Route, Routes, useNavigate, useParams } from "react-router-dom";
 import {
-  AlertCircle, Bell, BookOpen, ChevronRight, Crown, Download,
-  Eye, EyeOff, Medal, Search, Send, Trash2, Upload, UserRound, Users
+  AlertCircle, Bell, BookOpen, CheckCircle2, ChevronRight, Crown, Download,
+  Eye, EyeOff, FileJson, Medal, RefreshCw, Search, Send, Trash2, Upload, UserRound, Users, X
 } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, Field, Modal, PageHeader } from "../../components/ui";
@@ -18,6 +18,7 @@ export function AdminLayout() {
         <Route path="users"         element={<UsersScreen />} />
         <Route path="users/:userId" element={<UserDetail />} />
         <Route path="lessons"       element={<LessonsScreen />} />
+        <Route path="import"        element={<ImportScreen />} />
         <Route path="subscriptions" element={<Subscriptions />} />
         <Route path="stats"         element={<Stats />} />
         <Route path="errors"        element={<Errors />} />
@@ -75,11 +76,12 @@ function Dashboard() {
       <h3 className="admin-section-title">Швидкий доступ</h3>
       <div className="admin-quick-links">
         {[
-          { icon: BookOpen, label: "Уроки та імпорт",       to: "/admin/lessons" },
-          { icon: Users,    label: "Користувачі",            to: "/admin/users" },
-          { icon: Crown,    label: "Підписки",               to: "/admin/subscriptions" },
-          { icon: Bell,     label: "Push-сповіщення",        to: "/admin/notify" },
-          { icon: Medal,    label: "Статистика (сервер)",    to: "/admin/stats" },
+          { icon: BookOpen,  label: "Уроки",                  to: "/admin/lessons" },
+          { icon: Upload,    label: "Масовий імпорт",          to: "/admin/import" },
+          { icon: Users,     label: "Користувачі",             to: "/admin/users" },
+          { icon: Crown,     label: "Підписки",                to: "/admin/subscriptions" },
+          { icon: Bell,      label: "Push-сповіщення",         to: "/admin/notify" },
+          { icon: Medal,     label: "Статистика (сервер)",     to: "/admin/stats" },
         ].map(({ icon: Icon, label, to }) => (
           <button key={to} type="button" className="admin-quick-link" onClick={() => navigate(to)}>
             <Icon size={20} />
@@ -414,6 +416,265 @@ function LessonsScreen() {
             <Button variant="ghost" onClick={() => setDeleteId(null)}>Скасувати</Button>
           </Card>
         </Modal>
+      )}
+    </main>
+  );
+}
+
+// ── BULK IMPORT SCREEN ───────────────────────────────────────────────────────
+type BulkImportPhase =
+  | { phase: "idle" }
+  | { phase: "preview"; files: Array<{ name: string; lessons: Lesson[]; errors: string[] }> }
+  | { phase: "importing"; done: number; total: number }
+  | { phase: "done"; imported: number; skipped: number; errors: Array<{ id: string; error: string }> };
+
+function ImportScreen() {
+  const { data, upsertLesson } = useAdminData();
+  const [state,    setState]   = useState<BulkImportPhase>({ phase: "idle" });
+  const [mode,     setMode]    = useState<"skip" | "overwrite">("skip");
+  const [dragging, setDragging] = useState(false);
+  const fileRef = useRef<HTMLInputElement>(null);
+
+  const processFiles = useCallback((files: FileList | File[]) => {
+    const arr = Array.from(files).filter((f) => f.name.endsWith(".json") || f.type === "application/json");
+    if (!arr.length) return;
+
+    const results: Array<{ name: string; lessons: Lesson[]; errors: string[] }> = [];
+    let done = 0;
+
+    for (const file of arr) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const { lessons: parsed, errors } = parseImportJson(e.target?.result as string);
+        results.push({ name: file.name, lessons: parsed, errors });
+        done++;
+        if (done === arr.length) {
+          setState({ phase: "preview", files: results });
+        }
+      };
+      reader.readAsText(file);
+    }
+  }, []);
+
+  const onDrop = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    setDragging(false);
+    processFiles(e.dataTransfer.files);
+  }, [processFiles]);
+
+  const allLessons = state.phase === "preview" ? state.files.flatMap((f) => f.lessons) : [];
+  const allErrors  = state.phase === "preview" ? state.files.flatMap((f) => f.errors) : [];
+  const totalCount = allLessons.length;
+
+  async function runImport() {
+    if (!allLessons.length) return;
+    setState({ phase: "importing", done: 0, total: totalCount });
+
+    // Optimistic local upsert for all
+    for (const lesson of allLessons) upsertLesson(lesson);
+
+    // Server import in batches of 10
+    const batchSize = 10;
+    let imported = 0, skipped = 0;
+    const errors: Array<{ id: string; error: string }> = [];
+
+    for (let i = 0; i < allLessons.length; i += batchSize) {
+      const batch = allLessons.slice(i, i + batchSize);
+      try {
+        const res = await apiClient.importLessons(batch, mode);
+        imported += res.imported;
+        skipped  += res.skipped;
+        errors.push(...res.errors);
+      } catch {
+        for (const l of batch) errors.push({ id: l.id, error: "Помилка мережі" });
+      }
+      setState({ phase: "importing", done: Math.min(i + batchSize, allLessons.length), total: totalCount });
+    }
+
+    setState({ phase: "done", imported, skipped, errors });
+  }
+
+  async function retryErrors() {
+    if (state.phase !== "done" || !state.errors.length) return;
+    const failedIds = new Set(state.errors.map((e) => e.id));
+    const retryLessons = allLessons.filter((l) => failedIds.has(l.id));
+    if (!retryLessons.length) return;
+    setState({ phase: "importing", done: 0, total: retryLessons.length });
+    let imported = 0, skipped = 0;
+    const errors: Array<{ id: string; error: string }> = [];
+    for (let i = 0; i < retryLessons.length; i += 10) {
+      const batch = retryLessons.slice(i, i + 10);
+      try {
+        const res = await apiClient.importLessons(batch, "overwrite");
+        imported += res.imported; skipped += res.skipped; errors.push(...res.errors);
+      } catch {
+        for (const l of batch) errors.push({ id: l.id, error: "Помилка мережі" });
+      }
+      setState({ phase: "importing", done: Math.min(i + 10, retryLessons.length), total: retryLessons.length });
+    }
+    setState({ phase: "done", imported, skipped, errors });
+  }
+
+  return (
+    <main className="page-content">
+      <PageHeader title="Масовий імпорт уроків" subtitle="JSON, до 100 уроків за раз" />
+
+      {/* Mode selector */}
+      <div className="import-mode-row">
+        <span className="import-mode-label">Дублікати:</span>
+        <button type="button" className={`chip chip--sm ${mode === "skip" ? "active" : ""}`} onClick={() => setMode("skip")}>
+          Пропустити
+        </button>
+        <button type="button" className={`chip chip--sm ${mode === "overwrite" ? "active" : ""}`} onClick={() => setMode("overwrite")}>
+          Перезаписати
+        </button>
+      </div>
+
+      {/* Drop zone */}
+      {(state.phase === "idle" || state.phase === "preview") && (
+        <div
+          className={`import-dropzone ${dragging ? "dragging" : ""}`}
+          onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
+          onDragLeave={() => setDragging(false)}
+          onDrop={onDrop}
+          onClick={() => fileRef.current?.click()}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => e.key === "Enter" && fileRef.current?.click()}
+        >
+          <FileJson size={36} className="import-dropzone-icon" />
+          <strong>Перетягни JSON-файли сюди</strong>
+          <span>або натисни, щоб вибрати · підтримуються кілька файлів</span>
+          <input
+            ref={fileRef}
+            type="file"
+            accept=".json,application/json"
+            multiple
+            style={{ display: "none" }}
+            onChange={(e) => { if (e.target.files) { processFiles(e.target.files); e.target.value = ""; } }}
+          />
+        </div>
+      )}
+
+      {/* Preview */}
+      {state.phase === "preview" && (
+        <>
+          {allErrors.length > 0 && (
+            <div className="import-errors">
+              <AlertCircle size={15} />
+              <div>{allErrors.map((e, i) => <p key={i}>{e}</p>)}</div>
+            </div>
+          )}
+
+          {allLessons.length > 0 && (
+            <>
+              <p className="import-summary">
+                <strong>{allLessons.length}</strong> уроків з <strong>{state.files.length}</strong> {state.files.length === 1 ? "файлу" : "файлів"} · режим: <strong>{mode === "skip" ? "пропустити дублікати" : "перезаписати"}</strong>
+              </p>
+              <div className="import-table-wrap">
+                <table className="import-table">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Назва</th>
+                      <th>Рівень</th>
+                      <th>Тема</th>
+                      <th>Слова</th>
+                      <th>Вправи</th>
+                      <th>Статус</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {allLessons.map((l) => {
+                      const isExisting = data.lessons.some((x) => x.id === l.id);
+                      return (
+                        <tr key={l.id}>
+                          <td><code className="import-id">{l.id}</code></td>
+                          <td>{l.title}</td>
+                          <td><LevelPill level={l.level} /></td>
+                          <td>{l.topic || "—"}</td>
+                          <td>{l.words.length}</td>
+                          <td>{l.exercises.length}</td>
+                          <td>
+                            {isExisting
+                              ? <span className="import-tag import-tag--update">оновлення</span>
+                              : <span className="import-tag import-tag--new">новий</span>}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+              <div className="import-actions">
+                <Button onClick={runImport} disabled={allLessons.length === 0}>
+                  <Upload size={15} /> Імпортувати {allLessons.length} уроків
+                </Button>
+                <Button variant="ghost" onClick={() => setState({ phase: "idle" })}>
+                  <X size={15} /> Скасувати
+                </Button>
+              </div>
+            </>
+          )}
+
+          {allLessons.length === 0 && allErrors.length > 0 && (
+            <Button variant="ghost" onClick={() => setState({ phase: "idle" })}>Почати знову</Button>
+          )}
+        </>
+      )}
+
+      {/* Progress */}
+      {state.phase === "importing" && (
+        <div className="import-progress-wrap">
+          <div className="import-progress-label">
+            Імпорт… {state.done} / {state.total}
+          </div>
+          <div className="import-progress-bar">
+            <div className="import-progress-fill" style={{ width: `${state.total > 0 ? Math.round((state.done / state.total) * 100) : 0}%` }} />
+          </div>
+        </div>
+      )}
+
+      {/* Done */}
+      {state.phase === "done" && (
+        <div className="import-result">
+          <div className="import-result-header">
+            <CheckCircle2 size={28} color="var(--success)" />
+            <h3>Імпорт завершено</h3>
+          </div>
+          <div className="import-result-stats">
+            <div className="import-result-stat">
+              <strong>{state.imported}</strong>
+              <span>Додано</span>
+            </div>
+            <div className="import-result-stat">
+              <strong>{state.skipped}</strong>
+              <span>Пропущено</span>
+            </div>
+            <div className="import-result-stat import-result-stat--error">
+              <strong>{state.errors.length}</strong>
+              <span>Помилок</span>
+            </div>
+          </div>
+
+          {state.errors.length > 0 && (
+            <>
+              <div className="import-errors" style={{ marginTop: 12 }}>
+                <AlertCircle size={15} />
+                <div>
+                  {state.errors.map((e) => <p key={e.id}><code>{e.id}</code>: {e.error}</p>)}
+                </div>
+              </div>
+              <Button variant="secondary" onClick={retryErrors}>
+                <RefreshCw size={14} /> Повторити помилки ({state.errors.length})
+              </Button>
+            </>
+          )}
+
+          <Button variant="ghost" onClick={() => setState({ phase: "idle" })}>
+            Новий імпорт
+          </Button>
+        </div>
       )}
     </main>
   );

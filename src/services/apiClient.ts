@@ -222,4 +222,16 @@ export const apiClient = {
       entries: Array<{ userId: string; name: string; avatar: string | null; country: string; xpWeekly: number; rank: number }>;
     }>("/leaderboard");
   },
+
+  importLessons(lessons: unknown[], mode: "skip" | "overwrite") {
+    return apiRequest<{
+      ok: boolean;
+      imported: number;
+      skipped: number;
+      errors: Array<{ id: string; error: string }>;
+    }>("/admin/lessons/import", {
+      method: "POST",
+      body: JSON.stringify({ lessons, mode })
+    });
+  },
 };
