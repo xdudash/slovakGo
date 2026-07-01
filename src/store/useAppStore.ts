@@ -226,6 +226,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
     const prevCompleted = get().data.progress[currentUserId].completedLessons;
     const subStatus = get().data.users.find((u) => u.id === currentUserId)?.subscriptionStatus;
     const progress = progressService.completeLesson(get().data.progress[currentUserId], lesson, answers, subStatus);
+    const xpEarned = progress.lessonAttempts[progress.lessonAttempts.length - 1]?.xpEarned ?? 0;
     const userWords = lesson.words.reduce<UserWord[]>((words, word) => progressService.touchWord(currentUserId, word.id, words, true), get().data.userWords[currentUserId] || []);
     let data: AppData = {
       ...get().data,
@@ -233,9 +234,11 @@ export const useAppStore = create<AppStore>((set, get) => ({
       userWords: { ...get().data.userWords, [currentUserId]: userWords }
     };
     data = { ...data, leaderboard: leaderboardService.recalculate(data.leaderboard, data.users, data.progress) };
-    data = withSync(data, "lesson.complete", { lessonId: lesson.id, answers });
+    data = withSync(data, "lesson.complete", { lessonId: lesson.id, answers, xpEarned });
     save(data);
     set({ data });
+    // Push to server immediately — don't wait for next login
+    get().drainSync().catch(() => undefined);
     // Request FCM permission after the user's very first lesson — unobtrusive timing
     if (!prevCompleted.includes(lesson.id) && prevCompleted.length === 0) {
       import("../services/fcmService").then(({ requestFcmToken }) => {

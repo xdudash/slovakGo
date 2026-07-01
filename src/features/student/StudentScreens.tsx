@@ -467,7 +467,10 @@ function LessonScreen() {
   const [answer, setAnswer] = useState<string | string[]>("");
   const [feedback, setFeedback] = useState<"correct" | "wrong" | null>(null);
   const [records, setRecords] = useState<AnswerRecord[]>([]);
-  const [celebration, setCelebration] = useState<{ xp: number; correct: number; total: number } | null>(null);
+  const [celebration, setCelebration] = useState<{
+    xp: number; correct: number; total: number;
+    wrong: Array<{ question: string; userAnswer: string; correctAnswer: string }>;
+  } | null>(null);
   const [sharing, setSharing] = useState(false);
   const hasIntro = !!(lesson?.intro || (lesson?.words?.length ?? 0) > 0);
   const [phase, setPhase] = useState<"intro" | "exercise">(() => hasIntro ? "intro" : "exercise");
@@ -495,7 +498,19 @@ function LessonScreen() {
       const base = alreadyDone ? Math.max(3, Math.round(activeLesson.xpReward * 0.25)) : activeLesson.xpReward;
       const xp = user!.subscriptionStatus === "plus" ? Math.round(base * 1.5) : base;
       const correct = finalRecords.filter((r) => r.correct).length;
-      setCelebration({ xp, correct, total: finalRecords.length });
+      const wrong = finalRecords
+        .filter((r) => !r.correct)
+        .map((r) => {
+          const ex = activeLesson.exercises.find((e) => e.id === r.exerciseId);
+          return {
+            question: ex?.question ?? "",
+            userAnswer: Array.isArray(r.answer) ? r.answer.join(", ") : String(r.answer),
+            correctAnswer: Array.isArray(ex?.correctAnswer)
+              ? (ex!.correctAnswer as string[]).join(", ")
+              : String(ex?.correctAnswer ?? ""),
+          };
+        });
+      setCelebration({ xp, correct, total: finalRecords.length, wrong });
       return;
     }
     setIndex(nextIndex);
@@ -585,9 +600,24 @@ function LessonScreen() {
             />
           ))}
           <div className="celebrate-card">
-            <div className="celebrate-icon">🎉</div>
+            <div className="celebrate-icon">{celebration.wrong.length === 0 ? "🏆" : "🎉"}</div>
             <div className="celebrate-xp">+{celebration.xp} XP</div>
-            <p className="celebrate-sub">{celebration.correct} / {celebration.total} правильно</p>
+            <p className="celebrate-sub">
+              {celebration.correct} / {celebration.total} правильно
+              {celebration.wrong.length === 0 && " · Ідеально!"}
+            </p>
+            {celebration.wrong.length > 0 && (
+              <div className="celebrate-mistakes">
+                <p className="celebrate-mistakes-title">Помилки:</p>
+                {celebration.wrong.map((w, i) => (
+                  <div key={i} className="celebrate-mistake-row">
+                    <span className="celebrate-mistake-q">{w.question}</span>
+                    <span className="celebrate-mistake-wrong">{w.userAnswer}</span>
+                    <span className="celebrate-mistake-correct">→ {w.correctAnswer}</span>
+                  </div>
+                ))}
+              </div>
+            )}
             <button
               type="button"
               className="celebrate-share-btn"

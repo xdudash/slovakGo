@@ -525,7 +525,11 @@ async function mutLessonComplete(uid: string, p: Record<string, unknown>): Promi
   const lessonId = String(p.lessonId ?? "");
   const answers  = Array.isArray(p.answers) ? p.answers as Record<string, unknown>[] : [];
   const wrong    = answers.filter(a => !a.correct).length;
-  const xpEarned = Math.max(10, answers.length > 0 ? answers.length * 5 - wrong * 3 : 10);
+  // Prefer client-computed XP (uses lesson.xpReward correctly); cap at 500 to prevent tampering
+  const clientXp = typeof p.xpEarned === "number" && p.xpEarned > 0 ? p.xpEarned : null;
+  const xpEarned = clientXp !== null
+    ? Math.min(clientXp, 500)
+    : Math.max(10, answers.length > 0 ? answers.length * 5 - wrong * 3 : 10);
 
   const prog   = await ensureProgress(uid);
   const today  = todayKey();
