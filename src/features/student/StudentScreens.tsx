@@ -246,10 +246,18 @@ function PathScreen() {
   const navigate = useNavigate();
   if (!user || !progress) return <PageSkeleton />;
 
-  const levelLessons = lessonService.byLevel(data.lessons, progress.currentLevel);
+  const isAdmin = user.role === "admin";
+  const LEVEL_ORDER_SORT = ["A0","A1","A2","B1","B2","C1"] as const;
+  const levelLessons = isAdmin
+    ? data.lessons
+        .filter((l) => l.level === progress.currentLevel)
+        .sort((a, b) => LEVEL_ORDER_SORT.indexOf(a.level as typeof LEVEL_ORDER_SORT[number]) - LEVEL_ORDER_SORT.indexOf(b.level as typeof LEVEL_ORDER_SORT[number]) || a.order - b.order)
+    : lessonService.byLevel(data.lessons, progress.currentLevel);
   const levelProgress = lessonService.levelProgress(data.lessons, progress, progress.currentLevel);
-  const current = levelLessons.find((l) => lessonService.status(l, data.lessons, progress) === "current")
-    || levelLessons.find((l) => lessonService.status(l, data.lessons, progress) === "available")
+  const adminStatus = (l: typeof levelLessons[number]) =>
+    progress.completedLessons.includes(l.id) ? "completed" as const : "available" as const;
+  const current = levelLessons.find((l) => (isAdmin ? adminStatus(l) : lessonService.status(l, data.lessons, progress)) === "current")
+    || levelLessons.find((l) => (isAdmin ? adminStatus(l) : lessonService.status(l, data.lessons, progress)) === "available")
     || levelLessons[0];
   const scenario = getScenarioForGoal(user.goal);
   const dailyPhrases = getDailyPhrases(user.goal, 3);
@@ -304,9 +312,11 @@ function PathScreen() {
       {/* Visual lesson node path */}
       <div className="learning-path">
         {levelLessons.map((lesson, index) => {
-          const status = lessonService.status(lesson, data.lessons, progress);
+          const status = isAdmin ? adminStatus(lesson) : lessonService.status(lesson, data.lessons, progress);
           const nodeClass = status === "current" ? "active" : status;
-          const prevStatus = index > 0 ? lessonService.status(levelLessons[index - 1], data.lessons, progress) : null;
+          const prevStatus = index > 0
+            ? (isAdmin ? adminStatus(levelLessons[index - 1]) : lessonService.status(levelLessons[index - 1], data.lessons, progress))
+            : null;
           const connectorClass = prevStatus === "completed" && status !== "locked" ? "done"
             : prevStatus === "completed" ? "next"
             : "";
@@ -318,15 +328,14 @@ function PathScreen() {
                 <button
                   type="button"
                   className={`lesson-node ${nodeClass}`}
-                  onClick={() => status !== "locked" && navigate(`/app/lesson/${lesson.id}`)}
+                  onClick={() => navigate(`/app/lesson/${lesson.id}`)}
                   aria-label={lesson.title}
                 >
                   {status === "completed" ? <CheckCircle2 size={22} />
-                    : status === "locked" ? <Lock size={20} />
                     : <Play size={20} style={{ fill: "currentColor" }} />}
                 </button>
-                <div className={`lesson-node-label${status === "locked" ? " locked-label" : ""}`}>
-                  <h3>{lesson.title}</h3>
+                <div className="lesson-node-label">
+                  <h3>{lesson.title}{!lesson.isPublished && isAdmin && <span style={{ fontSize: "0.65rem", marginLeft: 4, color: "var(--muted)", fontWeight: 400 }}>чернетка</span>}</h3>
                   <p>{lesson.topic} · {lesson.xpReward} XP · {lesson.estimatedMinutes} хв</p>
                 </div>
               </div>
@@ -475,11 +484,31 @@ function LessonScreen() {
   const hasIntro = !!(lesson?.intro || (lesson?.words?.length ?? 0) > 0);
   const [phase, setPhase] = useState<"intro" | "exercise">(() => hasIntro ? "intro" : "exercise");
   if (!user || !progress || !lesson) return <Navigate to="/app/path" replace />;
+  const isAdmin = user.role === "admin";
   const activeLesson = lesson;
   const exercise = activeLesson.exercises[index];
   if (!exercise && !celebration && phase === "exercise") return <Navigate to="/app/path" replace />;
   const percent = phase === "intro" ? 0 : (exercise ? Math.round((index / activeLesson.exercises.length) * 100) : 100);
   const questionLabel = phase === "intro" ? `${lesson.words.length} слів` : (exercise ? `${index + 1} / ${activeLesson.exercises.length}` : "");
+
+  function skipExercise() {
+    const correctAnswer = Array.isArray(exercise.correctAnswer) ? exercise.correctAnswer : String(exercise.correctAnswer);
+    const record = { exerciseId: exercise.id, answer: correctAnswer, correct: true, answeredAt: new Date().toISOString() };
+    const updatedRecords = [...records.filter((r) => r.exerciseId !== exercise.id), record];
+    const nextIndex = index + 1;
+    if (nextIndex >= activeLesson.exercises.length) {
+      completeLesson(activeLesson, updatedRecords);
+      const alreadyDone = progress!.completedLessons.includes(activeLesson.id);
+      const base = alreadyDone ? Math.max(3, Math.round(activeLesson.xpReward * 0.25)) : activeLesson.xpReward;
+      const xp = user!.subscriptionStatus === "plus" ? Math.round(base * 1.5) : base;
+      setCelebration({ xp, correct: updatedRecords.filter((r) => r.correct).length, total: updatedRecords.length, wrong: [] });
+      return;
+    }
+    setRecords(updatedRecords);
+    setIndex(nextIndex);
+    setAnswer("");
+    setFeedback(null);
+  }
 
   function check() {
     const correct = progressService.check(exercise, answer);
@@ -567,7 +596,10 @@ function LessonScreen() {
           </div>
           <div className="lesson-bottom">
             {!feedback
-              ? <Button disabled={!answer || (Array.isArray(answer) && !answer.length)} onClick={check}>{t("student.lesson.check")}</Button>
+              ? <>
+                  <Button disabled={!answer || (Array.isArray(answer) && !answer.length)} onClick={check}>{t("student.lesson.check")}</Button>
+                  {isAdmin && <Button variant="ghost" onClick={skipExercise}>Пропустити →</Button>}
+                </>
               : <Button autoFocus onClick={next}>{index + 1 >= lesson.exercises.length ? t("student.lesson.finish") : t("student.lesson.next")}</Button>
             }
           </div>
