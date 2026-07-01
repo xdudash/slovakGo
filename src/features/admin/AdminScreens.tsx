@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Route, Routes, useNavigate, useParams } from "react-router-dom";
 import {
   AlertCircle, Bell, BookOpen, CheckCircle2, ChevronRight, Crown, Download,
-  Eye, EyeOff, FileJson, Medal, RefreshCw, Search, Send, Trash2, Upload, UserRound, Users, X
+  Eye, EyeOff, FileJson, Medal, Play, RefreshCw, Search, Send, Trash2, Upload, UserRound, Users, X
 } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, Field, Modal, PageHeader } from "../../components/ui";
@@ -245,6 +245,7 @@ function LevelPill({ level }: { level: UserLevel }) {
 
 function LessonsScreen() {
   const { data, upsertLesson, deleteLesson } = useAdminData();
+  const navigate = useNavigate();
   const [search,     setSearch]     = useState("");
   const [filterLvl,  setFilterLvl]  = useState<UserLevel | "all">("all");
   const [filterPub,  setFilterPub]  = useState<"all" | "published" | "draft">("all");
@@ -339,6 +340,10 @@ function LessonsScreen() {
               <span>{lesson.topic} · {lesson.words.length} слів · {lesson.exercises.length} вправ · {lesson.xpReward} XP</span>
             </div>
             <div className="admin-lesson-actions">
+              <button type="button" className="admin-icon-btn" title="Відкрити урок"
+                onClick={() => navigate(`/app/lesson/${lesson.id}`)}>
+                <Play size={16} />
+              </button>
               <button
                 type="button"
                 className={`admin-icon-btn ${lesson.isPublished ? "published" : "draft"}`}
