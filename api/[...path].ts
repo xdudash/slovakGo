@@ -1132,7 +1132,6 @@ async function handleAdminImportLessons(req: VercelRequest, res: VercelResponse,
   const mode    = String(body.mode ?? "skip") as "skip" | "overwrite";
   const rawArr  = body.lessons;
   if (!Array.isArray(rawArr)) return fail(res, "lessons має бути масивом", 422);
-  if (rawArr.length > 100) return fail(res, "Максимум 100 уроків за раз", 422);
 
   // Validate all lessons up-front; reject the whole batch if any are malformed
   type ParsedLesson = Record<string, unknown>;
