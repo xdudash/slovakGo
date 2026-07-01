@@ -434,7 +434,7 @@ type BulkImportPhase =
   | { phase: "done"; imported: number; skipped: number; errors: Array<{ id: string; error: string }> };
 
 function ImportScreen() {
-  const { data, upsertLesson } = useAdminData();
+  const { data, bulkSetLessons } = useAdminData();
   const [state,    setState]   = useState<BulkImportPhase>({ phase: "idle" });
   const [mode,     setMode]    = useState<"skip" | "overwrite">("skip");
   const [dragging, setDragging] = useState(false);
@@ -475,8 +475,8 @@ function ImportScreen() {
     if (!allLessons.length) return;
     setState({ phase: "importing", done: 0, total: totalCount });
 
-    // Optimistic local upsert for all
-    for (const lesson of allLessons) upsertLesson(lesson);
+    // Update local store in one shot (no syncQueue mutations)
+    bulkSetLessons(allLessons);
 
     // Server import in batches of 10
     const batchSize = 10;

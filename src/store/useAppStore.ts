@@ -26,6 +26,7 @@ interface AppStore {
   finishPracticeSession: (results: { wordId: string; correct: boolean }[]) => void;
   restoreHearts: () => void;
   upsertLesson: (lesson: Lesson) => void;
+  bulkSetLessons: (lessons: Lesson[]) => void;
   deleteLesson: (lessonId: string) => void;
   adminUpdateUser: (userId: string, patch: Partial<User>) => void;
   loginAsUser: (userId: string) => void;
@@ -81,9 +82,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
         users: [...users, { ...fullState.user, settings: { ...defaults, ...fullState.user.settings } }],
         progress: { ...data.progress, [userId]: fullState.progress },
         userWords: { ...data.userWords, [userId]: fullState.userWords },
-        // We also want to merge in new lessons from the server
-        lessons: fullState.lessons || data.lessons 
-      };
+        lessons: fullState.lessons?.length ? fullState.lessons : data.lessons,
 
       save(data);
       localStorage.setItem(sessionKey, userId);
@@ -140,7 +139,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
         users: [...users, { ...fullState.user, settings: { ...defaults, ...fullState.user.settings } }],
         progress:  { ...data.progress,  [userId]: fullState.progress },
         userWords: { ...data.userWords, [userId]: fullState.userWords },
-        lessons: fullState.lessons || data.lessons,
+        lessons: fullState.lessons?.length ? fullState.lessons : data.lessons,
       };
 
       save(data);
@@ -318,6 +317,14 @@ export const useAppStore = create<AppStore>((set, get) => ({
     lessons = lessons.some((item) => item.id === lesson.id) ? lessons.map((item) => (item.id === lesson.id ? lesson : item)) : [...lessons, lesson];
     let data = { ...get().data, lessons };
     data = withSync(data, "lesson.upsert", { lesson });
+    save(data);
+    set({ data });
+  },
+
+  bulkSetLessons(incoming) {
+    const map = new Map(get().data.lessons.map((l) => [l.id, l]));
+    for (const l of incoming) map.set(l.id, l);
+    const data = { ...get().data, lessons: [...map.values()] };
     save(data);
     set({ data });
   },
