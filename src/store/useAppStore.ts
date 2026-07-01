@@ -83,6 +83,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
         progress: { ...data.progress, [userId]: fullState.progress },
         userWords: { ...data.userWords, [userId]: fullState.userWords },
         lessons: fullState.lessons?.length ? fullState.lessons : data.lessons,
+      };
 
       save(data);
       localStorage.setItem(sessionKey, userId);
