@@ -1,4 +1,5 @@
 {
+  "id": "https://app.slovakgo.sk/",
   "name": "SlovakGO",
   "short_name": "SlovakGO",
   "description": "Короткі уроки словацької для життя в Словаччині.",
@@ -11,14 +12,24 @@
   "theme_color": "#211946",
   "icons": [
     {
-      "src": "/apple-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    },
-    {
       "src": "/icon1.png",
       "sizes": "96x96",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon0.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
-  ]
+  ],
+  "screenshots": [],
+  "categories": ["education"]
 }
