@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { AlertCircle, Bell, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, Download, Flame, Heart, Layers, Link2, Lock, LogOut, Medal, MessageSquare, Play, Search, Settings, Share2, ShoppingBag, Star, Trophy, Users, Volume2, Zap } from "lucide-react";
+import { AlertCircle, Bell, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, Download, Flame, Heart, Layers, Link2, LogOut, Medal, MessageSquare, Play, Search, Settings, Share2, ShoppingBag, Star, Trophy, Users, Volume2, Zap } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, EmptyState, Field, Modal, PageHeader, ProgressBar } from "../../components/ui";
 import { PageSkeleton } from "../../components/Skeleton";
