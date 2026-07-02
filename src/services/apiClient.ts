@@ -19,12 +19,26 @@ export async function apiRequest<T>(path: string, init: RequestInit = {}): Promi
   headers.set("Content-Type", "application/json");
   headers.set("X-Requested-With", "XMLHttpRequest");
 
-  const response = await fetch(`${API_BASE_URL}${path}`, {
-    ...init,
-    headers,
-    credentials: "include",
-    cache: "no-store"
-  });
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 20_000);
+
+  let response: Response;
+  try {
+    response = await fetch(`${API_BASE_URL}${path}`, {
+      ...init,
+      headers,
+      credentials: "include",
+      cache: "no-store",
+      signal: controller.signal,
+    });
+  } catch (err) {
+    if ((err as Error).name === "AbortError") {
+      throw new ApiError("Сервер не відповідає. Перевір з'єднання.", 408);
+    }
+    throw err;
+  } finally {
+    clearTimeout(timer);
+  }
   const payload = await response.json().catch(() => ({}));
   if (!response.ok) {
     throw new ApiError(payload.error || "Помилка сервера", response.status, payload);

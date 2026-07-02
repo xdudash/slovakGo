@@ -35,9 +35,12 @@ export function Login() {
   async function submit(event: FormEvent) {
     event.preventDefault();
     setLoading(true);
-    const user = await login(email, password);
-    setLoading(false);
-    if (user) navigate(roleHome(user.role), { replace: true });
+    try {
+      const user = await login(email, password);
+      if (user) navigate(roleHome(user.role), { replace: true });
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
