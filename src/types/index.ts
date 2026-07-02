@@ -71,6 +71,60 @@ export interface Exercise {
   difficulty?: "easy" | "medium" | "hard";
 }
 
+export interface TheoryExample {
+  sk: string;
+  uk: string;
+}
+
+export interface AlphabetGroup {
+  title: string;
+  letters: string[];
+  note?: string;
+}
+
+export interface TheoryScreen {
+  id: string;
+  screenType: "theory";
+  order: number;
+  title?: string;
+  text?: string;
+  examples?: TheoryExample[];
+  focusPoints?: string[];
+  alphabetRows?: string[][];
+  alphabetGroups?: AlphabetGroup[];
+  shortRule?: string;
+  button?: string;
+}
+
+export interface LessonStartScreen {
+  screenType: "lesson_start";
+  title?: string;
+  subtitle?: string;
+  iconEmoji?: string;
+  button?: string;
+}
+
+export interface FinalSituation {
+  screenType: "final_life_situation";
+  scenario: string;
+  question: string;
+  options: string[];
+  correctAnswer: string;
+}
+
+export interface NowYouKnowWord {
+  sk: string;
+  uk: string;
+}
+
+export interface LessonResultScreen {
+  screenType: "lesson_result";
+  result?: string;
+  newWordsCount?: number;
+  exercisesCompleted?: number;
+  nowYouKnow?: NowYouKnowWord[];
+}
+
 export interface Lesson {
   id: string;
   level: UserLevel;
@@ -88,6 +142,10 @@ export interface Lesson {
   exercises: Exercise[];
   completionMessage?: string;
   updatedAt: string;
+  startScreen?: LessonStartScreen;
+  theoryScreens?: TheoryScreen[];
+  finalSituation?: FinalSituation;
+  resultScreen?: LessonResultScreen;
 }
 
 export interface AnswerRecord {

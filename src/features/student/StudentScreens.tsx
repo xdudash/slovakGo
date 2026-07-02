@@ -14,7 +14,7 @@ import { progressService } from "../../services/progressService";
 import { vocabularyService, type VocabularyWord } from "../../services/vocabularyService";
 import { selectCurrentUser, selectIsPlus, useAppStore } from "../../store/useAppStore";
 import { useT } from "../../i18n";
-import type { AnswerRecord, Exercise, LeaderboardEntry, UserLevel } from "../../types";
+import type { AnswerRecord, Exercise, LeaderboardEntry, TheoryScreen, UserLevel } from "../../types";
 import { getDailyPhrases, getScenarioForGoal } from "../../data/scenarios";
 import { downloadCertificate } from "../../services/certificateService";
 import { generateShareCard, shareOrDownloadCard } from "../../services/shareService";
@@ -442,6 +442,15 @@ function ExerciseView({ exercise, answer, setAnswer, t }: { exercise: Exercise; 
   if (exercise.type === "match_pairs") {
     return <MatchPairsExercise key={exercise.id} exercise={exercise} setAnswer={(v) => setAnswer(v)} />;
   }
+  if (exercise.type === "fill_blank" && (exercise.options?.length ?? 0) > 0) {
+    return (
+      <div className="option-list">
+        {(exercise.options || []).map((option) => (
+          <button className={`option ${answer === option ? "active" : ""}`} type="button" key={option} onClick={() => setAnswer(option)}>{option}</button>
+        ))}
+      </div>
+    );
+  }
   if (exercise.type === "fill_blank" || exercise.type === "typing") {
     return <Field label={t("student.lesson.answer_label")} value={String(answer || "")} onChange={(event) => setAnswer(event.target.value)} />;
   }
@@ -466,48 +475,151 @@ function ExerciseView({ exercise, answer, setAnswer, t }: { exercise: Exercise; 
 
 const CONFETTI_COLORS = ["#6f57e8", "#ffd21f", "#2fba7f", "#e93d45", "#ff5a2e", "#3b82f6", "#a855f7"];
 
+type LessonPhase = "start" | "theory" | "exercise" | "final" | "result";
+type WrongItem = { question: string; userAnswer: string; correctAnswer: string };
+type CompletionData = { xp: number; correct: number; total: number; wrong: WrongItem[] };
+
+function TheoryView({ screen, onNext }: { screen: TheoryScreen; onNext: () => void }) {
+  return (
+    <div className="theory-body">
+      {screen.title && <h2 className="theory-title">{screen.title}</h2>}
+      {screen.text && <p className="theory-text">{screen.text}</p>}
+      {(screen.examples?.length ?? 0) > 0 && (
+        <div className="theory-examples">
+          {screen.examples!.map((ex, i) => (
+            <div key={i} className="theory-example">
+              <span className="theory-ex-sk">{ex.sk}</span>
+              <span className="theory-ex-uk">{ex.uk}</span>
+            </div>
+          ))}
+        </div>
+      )}
+      {(screen.focusPoints?.length ?? 0) > 0 && (
+        <ul className="theory-focus-points">
+          {screen.focusPoints!.map((pt, i) => <li key={i}>{pt}</li>)}
+        </ul>
+      )}
+      {(screen.alphabetRows?.length ?? 0) > 0 && (
+        <div className="theory-alphabet-grid">
+          {screen.alphabetRows!.map((row, ri) => (
+            <div key={ri} className="theory-alphabet-row">
+              {row.map((letter, li) => <span key={li} className="theory-letter">{letter}</span>)}
+            </div>
+          ))}
+        </div>
+      )}
+      {(screen.alphabetGroups?.length ?? 0) > 0 && (
+        <div className="theory-groups">
+          {screen.alphabetGroups!.map((group, gi) => (
+            <div key={gi} className="theory-group">
+              <p className="theory-group-title">{group.title}</p>
+              <div className="theory-alphabet-row">
+                {group.letters.map((l, li) => <span key={li} className="theory-letter">{l}</span>)}
+              </div>
+              {group.note && <p className="theory-group-note">{group.note}</p>}
+            </div>
+          ))}
+        </div>
+      )}
+      {screen.shortRule && <div className="theory-short-rule">{screen.shortRule}</div>}
+      <div className="lesson-bottom">
+        <Button onClick={onNext}>{screen.button ?? "Далі →"}</Button>
+      </div>
+    </div>
+  );
+}
+
 function LessonScreen() {
   const navigate = useNavigate();
   const { lessonId } = useParams();
   const { data, user, progress, completeLesson, recordWrongAnswer, restoreHearts } = useStudentData();
   const { t } = useT();
   const lesson = data.lessons.find((item) => item.id === lessonId);
+
+  const theories = (lesson?.theoryScreens ?? []).slice().sort((a, b) => a.order - b.order);
+  const hasNewFormat = !!(lesson?.startScreen || theories.length > 0 || lesson?.finalSituation || lesson?.resultScreen);
+  const hasLegacyIntro = !hasNewFormat && !!(lesson?.intro || (lesson?.words?.length ?? 0) > 0);
+
   const [index, setIndex] = useState(0);
+  const [theoryIndex, setTheoryIndex] = useState(0);
   const [answer, setAnswer] = useState<string | string[]>("");
   const [feedback, setFeedback] = useState<"correct" | "wrong" | null>(null);
   const [records, setRecords] = useState<AnswerRecord[]>([]);
-  const [celebration, setCelebration] = useState<{
-    xp: number; correct: number; total: number;
-    wrong: Array<{ question: string; userAnswer: string; correctAnswer: string }>;
-  } | null>(null);
+  const [finalAnswer, setFinalAnswer] = useState<string>("");
+  const [finalFeedback, setFinalFeedback] = useState<"correct" | "wrong" | null>(null);
+  const [celebration, setCelebration] = useState<CompletionData | null>(null);
+  const [completionData, setCompletionData] = useState<CompletionData | null>(null);
   const [sharing, setSharing] = useState(false);
-  const hasIntro = !!(lesson?.intro || (lesson?.words?.length ?? 0) > 0);
-  const [phase, setPhase] = useState<"intro" | "exercise">(() => hasIntro ? "intro" : "exercise");
+  const [phase, setPhase] = useState<LessonPhase>(() => {
+    if (!lesson) return "exercise";
+    if (lesson.startScreen) return "start";
+    if ((lesson.theoryScreens?.length ?? 0) > 0) return "theory";
+    if (lesson.intro || (lesson.words?.length ?? 0) > 0) return "start";
+    return "exercise";
+  });
+
   if (!user || !progress || !lesson) return <Navigate to="/app/path" replace />;
+
   const isAdmin = user.role === "admin";
-  const activeLesson = lesson;
-  const exercise = activeLesson.exercises[index];
-  if (!exercise && !celebration && phase === "exercise") return <Navigate to="/app/path" replace />;
-  const percent = phase === "intro" ? 0 : (exercise ? Math.round((index / activeLesson.exercises.length) * 100) : 100);
-  const questionLabel = phase === "intro" ? `${lesson.words.length} слів` : (exercise ? `${index + 1} / ${activeLesson.exercises.length}` : "");
+  const exercise = lesson.exercises[index];
+  const alreadyDone = progress.completedLessons.includes(lesson.id);
+
+  if (!exercise && !celebration && !completionData && phase === "exercise") return <Navigate to="/app/path" replace />;
+
+  function computeXp(): number {
+    const base = alreadyDone ? Math.max(3, Math.round(lesson!.xpReward * 0.25)) : lesson!.xpReward;
+    return user!.subscriptionStatus === "plus" ? Math.round(base * 1.5) : base;
+  }
+
+  function buildWrong(recs: AnswerRecord[]): WrongItem[] {
+    return recs.filter((r) => !r.correct).map((r) => {
+      const ex = lesson!.exercises.find((e) => e.id === r.exerciseId);
+      return {
+        question: ex?.question ?? "",
+        userAnswer: Array.isArray(r.answer) ? r.answer.join(", ") : String(r.answer),
+        correctAnswer: Array.isArray(ex?.correctAnswer) ? (ex!.correctAnswer as string[]).join(", ") : String(ex?.correctAnswer ?? ""),
+      };
+    });
+  }
+
+  function finishLesson(finalRecords: AnswerRecord[]) {
+    completeLesson(lesson!, finalRecords);
+    const xp = computeXp();
+    const correct = finalRecords.filter((r) => r.correct).length;
+    const cd: CompletionData = { xp, correct, total: finalRecords.length, wrong: buildWrong(finalRecords) };
+    if (lesson!.resultScreen) {
+      setCompletionData(cd);
+      setPhase("result");
+    } else {
+      setCelebration(cd);
+    }
+  }
+
+  function advanceFromStart() {
+    if (theories.length > 0) { setTheoryIndex(0); setPhase("theory"); return; }
+    if (lesson.exercises.length > 0) { setPhase("exercise"); return; }
+    if (lesson.finalSituation) { setPhase("final"); return; }
+    finishLesson([]);
+  }
+
+  function advanceFromTheory() {
+    if (theoryIndex + 1 < theories.length) { setTheoryIndex((i) => i + 1); return; }
+    if (lesson.exercises.length > 0) { setPhase("exercise"); return; }
+    if (lesson.finalSituation) { setPhase("final"); return; }
+    finishLesson([]);
+  }
 
   function skipExercise() {
     const correctAnswer = Array.isArray(exercise.correctAnswer) ? exercise.correctAnswer : String(exercise.correctAnswer);
     const record = { exerciseId: exercise.id, answer: correctAnswer, correct: true, answeredAt: new Date().toISOString() };
     const updatedRecords = [...records.filter((r) => r.exerciseId !== exercise.id), record];
     const nextIndex = index + 1;
-    if (nextIndex >= activeLesson.exercises.length) {
-      completeLesson(activeLesson, updatedRecords);
-      const alreadyDone = progress!.completedLessons.includes(activeLesson.id);
-      const base = alreadyDone ? Math.max(3, Math.round(activeLesson.xpReward * 0.25)) : activeLesson.xpReward;
-      const xp = user!.subscriptionStatus === "plus" ? Math.round(base * 1.5) : base;
-      setCelebration({ xp, correct: updatedRecords.filter((r) => r.correct).length, total: updatedRecords.length, wrong: [] });
+    if (nextIndex >= lesson.exercises.length) {
+      if (lesson.finalSituation) { setRecords(updatedRecords); setPhase("final"); return; }
+      finishLesson(updatedRecords);
       return;
     }
-    setRecords(updatedRecords);
-    setIndex(nextIndex);
-    setAnswer("");
-    setFeedback(null);
+    setRecords(updatedRecords); setIndex(nextIndex); setAnswer(""); setFeedback(null);
   }
 
   function check() {
@@ -515,37 +627,42 @@ function LessonScreen() {
     const record = { exerciseId: exercise.id, answer, correct, answeredAt: new Date().toISOString() };
     setRecords((items) => [...items.filter((item) => item.exerciseId !== exercise.id), record]);
     setFeedback(correct ? "correct" : "wrong");
-    if (!correct) recordWrongAnswer(activeLesson, exercise.id, String(answer));
+    if (!correct) recordWrongAnswer(lesson, exercise.id, String(answer));
   }
 
   function next() {
     const nextIndex = index + 1;
     const finalRecords = [...records.filter((item) => item.exerciseId !== exercise.id), { exerciseId: exercise.id, answer, correct: feedback === "correct", answeredAt: new Date().toISOString() }];
-    if (nextIndex >= activeLesson.exercises.length) {
-      completeLesson(activeLesson, finalRecords);
-      const alreadyDone = progress!.completedLessons.includes(activeLesson.id);
-      const base = alreadyDone ? Math.max(3, Math.round(activeLesson.xpReward * 0.25)) : activeLesson.xpReward;
-      const xp = user!.subscriptionStatus === "plus" ? Math.round(base * 1.5) : base;
-      const correct = finalRecords.filter((r) => r.correct).length;
-      const wrong = finalRecords
-        .filter((r) => !r.correct)
-        .map((r) => {
-          const ex = activeLesson.exercises.find((e) => e.id === r.exerciseId);
-          return {
-            question: ex?.question ?? "",
-            userAnswer: Array.isArray(r.answer) ? r.answer.join(", ") : String(r.answer),
-            correctAnswer: Array.isArray(ex?.correctAnswer)
-              ? (ex!.correctAnswer as string[]).join(", ")
-              : String(ex?.correctAnswer ?? ""),
-          };
-        });
-      setCelebration({ xp, correct, total: finalRecords.length, wrong });
+    if (nextIndex >= lesson.exercises.length) {
+      if (lesson.finalSituation) { setRecords(finalRecords); setIndex(nextIndex); setAnswer(""); setFeedback(null); setPhase("final"); return; }
+      finishLesson(finalRecords);
       return;
     }
-    setIndex(nextIndex);
-    setAnswer("");
-    setFeedback(null);
+    setIndex(nextIndex); setAnswer(""); setFeedback(null);
   }
+
+  function checkFinal() {
+    const sit = lesson.finalSituation!;
+    const correctIdx = parseInt(sit.correctAnswer, 10) - 1;
+    setFinalFeedback(finalAnswer === sit.options[correctIdx] ? "correct" : "wrong");
+  }
+
+  const totalSteps = theories.length + lesson.exercises.length + (lesson.finalSituation ? 1 : 0);
+  const percent = (() => {
+    if (phase === "start") return 0;
+    if (phase === "theory") return totalSteps > 0 ? Math.round((theoryIndex / totalSteps) * 100) : 0;
+    if (phase === "exercise") return totalSteps > 0 ? Math.round(((theories.length + index) / totalSteps) * 100) : Math.round((index / Math.max(1, lesson.exercises.length)) * 100);
+    if (phase === "final") return 96;
+    return 100;
+  })();
+
+  const questionLabel = (() => {
+    if (phase === "start") return hasLegacyIntro ? `${lesson.words.length} слів` : "";
+    if (phase === "theory") return `${theoryIndex + 1} / ${theories.length}`;
+    if (phase === "exercise") return exercise ? `${index + 1} / ${lesson.exercises.length}` : "";
+    if (phase === "final") return "Ситуація";
+    return "";
+  })();
 
   return (
     <main className="lesson-screen">
@@ -558,41 +675,57 @@ function LessonScreen() {
         </div>
       </div>
 
-      {phase === "intro" ? (
-        <>
-          <div className="lesson-intro-card">
-            {lesson.intro && <p className="lesson-intro-text">{lesson.intro}</p>}
-            {lesson.words.length > 0 && (
-              <div className="lesson-words-list">
-                {lesson.words.map((word) => (
-                  <div key={word.id} className="lesson-word-item">
-                    <div className="lesson-word-row">
-                      <span className="lesson-word-sk">{word.sk}</span>
-                      <span className="lesson-word-uk">{word.uk}</span>
+      {phase === "start" && (
+        lesson.startScreen ? (
+          <div className="lesson-start-card">
+            {lesson.startScreen.iconEmoji && <div className="lesson-start-icon">{lesson.startScreen.iconEmoji}</div>}
+            <h1 className="lesson-start-title">{lesson.startScreen.title ?? lesson.title}</h1>
+            {lesson.startScreen.subtitle && <p className="lesson-start-subtitle">{lesson.startScreen.subtitle}</p>}
+            <div className="lesson-feedback" />
+            <div className="lesson-bottom">
+              <Button onClick={advanceFromStart}>{lesson.startScreen.button ?? "Почати →"}</Button>
+            </div>
+          </div>
+        ) : (
+          <>
+            <div className="lesson-intro-card">
+              {lesson.intro && <p className="lesson-intro-text">{lesson.intro}</p>}
+              {lesson.words.length > 0 && (
+                <div className="lesson-words-list">
+                  {lesson.words.map((word) => (
+                    <div key={word.id} className="lesson-word-item">
+                      <div className="lesson-word-row">
+                        <span className="lesson-word-sk">{word.sk}</span>
+                        <span className="lesson-word-uk">{word.uk}</span>
+                      </div>
+                      {word.exampleSk && <div className="lesson-word-example">{word.exampleSk} — {word.exampleUk}</div>}
                     </div>
-                    {word.exampleSk && (
-                      <div className="lesson-word-example">{word.exampleSk} — {word.exampleUk}</div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-          <div className="lesson-feedback" />
-          <div className="lesson-bottom">
-            <Button onClick={() => setPhase("exercise")}>Почати урок →</Button>
-          </div>
-        </>
-      ) : (
+                  ))}
+                </div>
+              )}
+            </div>
+            <div className="lesson-feedback" />
+            <div className="lesson-bottom">
+              <Button onClick={advanceFromStart}>Почати урок →</Button>
+            </div>
+          </>
+        )
+      )}
+
+      {phase === "theory" && theories.length > 0 && (
+        <TheoryView key={`theory-${theoryIndex}`} screen={theories[theoryIndex]} onNext={advanceFromTheory} />
+      )}
+
+      {phase === "exercise" && exercise && (
         <>
           <Card className="exercise-card">
             <p className="lesson-topic">{lesson.topic}</p>
-            <h1>{exercise?.question}</h1>
-            <ExerciseView key={exercise?.id} exercise={exercise!} answer={answer} setAnswer={setAnswer} t={t} />
+            <h1>{exercise.question}</h1>
+            <ExerciseView key={exercise.id} exercise={exercise} answer={answer} setAnswer={setAnswer} t={t} />
           </Card>
           <div className={`lesson-feedback ${feedback || ""}`}>
             {feedback === "correct" ? t("student.lesson.correct") : null}
-            {feedback === "wrong" ? `${t("student.lesson.wrong_prefix")} ${Array.isArray(exercise?.correctAnswer) ? (exercise!.correctAnswer as string[]).join(", ") : exercise?.correctAnswer}. ${exercise?.explanation || ""}` : null}
+            {feedback === "wrong" ? `${t("student.lesson.wrong_prefix")} ${Array.isArray(exercise.correctAnswer) ? (exercise.correctAnswer as string[]).join(", ") : exercise.correctAnswer}. ${exercise.explanation || ""}` : null}
           </div>
           <div className="lesson-bottom">
             {!feedback
@@ -605,6 +738,81 @@ function LessonScreen() {
           </div>
         </>
       )}
+
+      {phase === "final" && lesson.finalSituation && (
+        <>
+          <div className="final-situation-card">
+            <div className="final-situation-scenario">{lesson.finalSituation.scenario}</div>
+            <h2 className="final-situation-question">{lesson.finalSituation.question}</h2>
+            <div className="option-list">
+              {lesson.finalSituation.options.map((option, oi) => {
+                const correctIdx = parseInt(lesson.finalSituation!.correctAnswer, 10) - 1;
+                return (
+                  <button
+                    key={option}
+                    type="button"
+                    className={`option ${finalAnswer === option ? "active" : ""}${finalFeedback && oi === correctIdx ? " option--correct" : ""}${finalFeedback && finalAnswer === option && oi !== correctIdx ? " option--wrong" : ""}`}
+                    onClick={() => !finalFeedback && setFinalAnswer(option)}
+                    disabled={!!finalFeedback}
+                  >
+                    {option}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+          <div className={`lesson-feedback ${finalFeedback || ""}`}>
+            {finalFeedback === "correct" ? t("student.lesson.correct") : null}
+            {finalFeedback === "wrong" ? `${t("student.lesson.wrong_prefix")} ${lesson.finalSituation.options[parseInt(lesson.finalSituation.correctAnswer, 10) - 1]}` : null}
+          </div>
+          <div className="lesson-bottom">
+            {!finalFeedback
+              ? <Button disabled={!finalAnswer} onClick={checkFinal}>{t("student.lesson.check")}</Button>
+              : <Button autoFocus onClick={() => finishLesson(records)}>{t("student.lesson.finish")}</Button>
+            }
+          </div>
+        </>
+      )}
+
+      {phase === "result" && completionData && lesson.resultScreen && (
+        <div className="lesson-result-screen">
+          <div className="lesson-result-header">
+            <div className="lesson-result-emoji">{completionData.wrong.length === 0 ? "🏆" : "🎉"}</div>
+            <div className="lesson-result-xp">+{completionData.xp} XP</div>
+            <div className="lesson-result-stats">
+              <div className="lesson-result-stat">
+                <span className="lesson-result-stat-n">{lesson.resultScreen.newWordsCount ?? lesson.words.length}</span>
+                <span className="lesson-result-stat-l">нових слів</span>
+              </div>
+              <div className="lesson-result-stat">
+                <span className="lesson-result-stat-n">{lesson.resultScreen.exercisesCompleted ?? lesson.exercises.length}</span>
+                <span className="lesson-result-stat-l">вправ</span>
+              </div>
+              <div className="lesson-result-stat">
+                <span className="lesson-result-stat-n">{completionData.correct}/{completionData.total}</span>
+                <span className="lesson-result-stat-l">правильно</span>
+              </div>
+            </div>
+          </div>
+          {(lesson.resultScreen.nowYouKnow?.length ?? 0) > 0 && (
+            <div className="lesson-result-words">
+              <h3>Тепер ти знаєш</h3>
+              {lesson.resultScreen.nowYouKnow!.map((w, i) => (
+                <div key={i} className="lesson-result-word">
+                  <span className="lesson-result-word-sk">{w.sk}</span>
+                  <span className="lesson-result-word-uk">{w.uk}</span>
+                </div>
+              ))}
+            </div>
+          )}
+          <div className="lesson-result-actions">
+            <Button autoFocus onClick={() => navigate("/app/path")}>Продовжити</Button>
+            <Button variant="secondary" onClick={() => { setIndex(0); setTheoryIndex(0); setRecords([]); setFinalAnswer(""); setFinalFeedback(null); setCompletionData(null); setPhase(lesson.startScreen ? "start" : theories.length > 0 ? "theory" : "exercise"); }}>Повторити урок</Button>
+            {completionData.wrong.length > 0 && <Button variant="ghost" onClick={() => navigate("/app/practice")}>Тренувати помилки</Button>}
+          </div>
+        </div>
+      )}
+
       {progress.hearts <= 0 ? (
         <Modal>
           <Card className="modal-card">
