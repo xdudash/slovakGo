@@ -597,15 +597,15 @@ function LessonScreen() {
 
   function advanceFromStart() {
     if (theories.length > 0) { setTheoryIndex(0); setPhase("theory"); return; }
-    if (lesson.exercises.length > 0) { setPhase("exercise"); return; }
-    if (lesson.finalSituation) { setPhase("final"); return; }
+    if (lesson!.exercises.length > 0) { setPhase("exercise"); return; }
+    if (lesson!.finalSituation) { setPhase("final"); return; }
     finishLesson([]);
   }
 
   function advanceFromTheory() {
     if (theoryIndex + 1 < theories.length) { setTheoryIndex((i) => i + 1); return; }
-    if (lesson.exercises.length > 0) { setPhase("exercise"); return; }
-    if (lesson.finalSituation) { setPhase("final"); return; }
+    if (lesson!.exercises.length > 0) { setPhase("exercise"); return; }
+    if (lesson!.finalSituation) { setPhase("final"); return; }
     finishLesson([]);
   }
 
@@ -614,8 +614,8 @@ function LessonScreen() {
     const record = { exerciseId: exercise.id, answer: correctAnswer, correct: true, answeredAt: new Date().toISOString() };
     const updatedRecords = [...records.filter((r) => r.exerciseId !== exercise.id), record];
     const nextIndex = index + 1;
-    if (nextIndex >= lesson.exercises.length) {
-      if (lesson.finalSituation) { setRecords(updatedRecords); setPhase("final"); return; }
+    if (nextIndex >= lesson!.exercises.length) {
+      if (lesson!.finalSituation) { setRecords(updatedRecords); setPhase("final"); return; }
       finishLesson(updatedRecords);
       return;
     }
@@ -627,14 +627,14 @@ function LessonScreen() {
     const record = { exerciseId: exercise.id, answer, correct, answeredAt: new Date().toISOString() };
     setRecords((items) => [...items.filter((item) => item.exerciseId !== exercise.id), record]);
     setFeedback(correct ? "correct" : "wrong");
-    if (!correct) recordWrongAnswer(lesson, exercise.id, String(answer));
+    if (!correct) recordWrongAnswer(lesson!, exercise.id, String(answer));
   }
 
   function next() {
     const nextIndex = index + 1;
     const finalRecords = [...records.filter((item) => item.exerciseId !== exercise.id), { exerciseId: exercise.id, answer, correct: feedback === "correct", answeredAt: new Date().toISOString() }];
-    if (nextIndex >= lesson.exercises.length) {
-      if (lesson.finalSituation) { setRecords(finalRecords); setIndex(nextIndex); setAnswer(""); setFeedback(null); setPhase("final"); return; }
+    if (nextIndex >= lesson!.exercises.length) {
+      if (lesson!.finalSituation) { setRecords(finalRecords); setIndex(nextIndex); setAnswer(""); setFeedback(null); setPhase("final"); return; }
       finishLesson(finalRecords);
       return;
     }
@@ -642,22 +642,22 @@ function LessonScreen() {
   }
 
   function checkFinal() {
-    const sit = lesson.finalSituation!;
+    const sit = lesson!.finalSituation!;
     const correctIdx = parseInt(sit.correctAnswer, 10) - 1;
     setFinalFeedback(finalAnswer === sit.options[correctIdx] ? "correct" : "wrong");
   }
 
-  const totalSteps = theories.length + lesson.exercises.length + (lesson.finalSituation ? 1 : 0);
+  const totalSteps = theories.length + lesson!.exercises.length + (lesson!.finalSituation ? 1 : 0);
   const percent = (() => {
     if (phase === "start") return 0;
     if (phase === "theory") return totalSteps > 0 ? Math.round((theoryIndex / totalSteps) * 100) : 0;
-    if (phase === "exercise") return totalSteps > 0 ? Math.round(((theories.length + index) / totalSteps) * 100) : Math.round((index / Math.max(1, lesson.exercises.length)) * 100);
+    if (phase === "exercise") return totalSteps > 0 ? Math.round(((theories.length + index) / totalSteps) * 100) : Math.round((index / Math.max(1, lesson!.exercises.length)) * 100);
     if (phase === "final") return 96;
     return 100;
   })();
 
   const questionLabel = (() => {
-    if (phase === "start") return hasLegacyIntro ? `${lesson.words.length} слів` : "";
+    if (phase === "start") return hasLegacyIntro ? `${lesson!.words.length} слів` : "";
     if (phase === "theory") return `${theoryIndex + 1} / ${theories.length}`;
     if (phase === "exercise") return exercise ? `${index + 1} / ${lesson.exercises.length}` : "";
     if (phase === "final") return "Ситуація";
