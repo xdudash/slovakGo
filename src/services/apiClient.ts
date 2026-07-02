@@ -234,4 +234,11 @@ export const apiClient = {
       body: JSON.stringify({ lessons, mode })
     });
   },
+
+  sendSupportMessage(topic: string, message: string) {
+    return apiRequest<{ ok: boolean }>("/support/send", {
+      method: "POST",
+      body: JSON.stringify({ topic, message, appVersion: (import.meta.env.VITE_APP_VERSION as string | undefined) ?? "—" }),
+    });
+  },
 };

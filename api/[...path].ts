@@ -1261,6 +1261,79 @@ async function handleAdminImportLessons(req: VercelRequest, res: VercelResponse,
   respond(res, { ok: true, imported, skipped, errors });
 }
 
+// ─── Support ──────────────────────────────────────────────────────────────────
+
+async function handleSupportSend(req: VercelRequest, res: VercelResponse, body: Record<string, unknown>): Promise<void> {
+  const uid   = await requireUid(req, res); if (!uid) return;
+  const topic = String(body.topic   ?? "").slice(0, 100).trim();
+  const msg   = String(body.message ?? "").slice(0, 5000).trim();
+  if (!topic || !msg) return fail(res, "Вкажи тему та повідомлення", 422);
+
+  const row = await queryOne("SELECT email, name_text FROM users WHERE id = ? LIMIT 1", [uid]);
+  if (!row) return fail(res, "Користувача не знайдено", 404);
+
+  const userEmail  = String(row.email);
+  const userName   = String(row.name_text ?? "Користувач");
+  const appVersion = String(body.appVersion ?? "—");
+  const userAgent  = String(req.headers["user-agent"] ?? "—");
+  const fromAddr   = process.env.MAIL_FROM ?? "noreply@slovakgo.sk";
+  const supportTo  = process.env.SUPPORT_EMAIL ?? "support@slovakgo.sk";
+  const resendKey  = process.env.RESEND_API_KEY ?? "";
+
+  if (!resendKey) return fail(res, "Email не налаштовано", 503);
+
+  const topicLabels: Record<string, string> = {
+    bug: "Баг", question: "Питання", other: "Інше",
+  };
+  const topicLabel = topicLabels[topic] ?? topic;
+  const subject    = `[SlovakGO Support] ${topicLabel} від ${userName}`;
+
+  const inHtml = `<!DOCTYPE html><html><head><meta charset="utf-8"></head>
+<body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f7ff;margin:0;padding:32px 16px;">
+<div style="max-width:560px;margin:0 auto;background:#fff;border-radius:14px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+  <h2 style="margin:0 0 20px;font-size:18px;color:#1a1040;">${subject}</h2>
+  <table style="border-collapse:collapse;font-size:14px;color:#374151;margin-bottom:24px;">
+    <tr><td style="padding:4px 12px 4px 0;color:#9ca3af;white-space:nowrap;">Від</td><td>${userName} &lt;${userEmail}&gt;</td></tr>
+    <tr><td style="padding:4px 12px 4px 0;color:#9ca3af;white-space:nowrap;">User ID</td><td><code>${uid}</code></td></tr>
+    <tr><td style="padding:4px 12px 4px 0;color:#9ca3af;white-space:nowrap;">Тема</td><td>${topicLabel}</td></tr>
+    <tr><td style="padding:4px 12px 4px 0;color:#9ca3af;white-space:nowrap;">Версія</td><td>${appVersion}</td></tr>
+    <tr><td style="padding:4px 12px 4td 0;color:#9ca3af;white-space:nowrap;">User Agent</td><td style="word-break:break-all;font-size:12px;">${userAgent}</td></tr>
+  </table>
+  <div style="background:#f3f4f6;border-radius:8px;padding:16px;font-size:15px;line-height:1.6;white-space:pre-wrap;color:#1f2937;">${msg.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div>
+  <p style="margin:20px 0 0;font-size:12px;color:#d1d5db;">Надіслано через форму підтримки SlovakGO</p>
+</div></body></html>`;
+
+  const replyHtml = `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"></head>
+<body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f7ff;margin:0;padding:40px 20px;">
+<div style="max-width:480px;margin:0 auto;background:#fff;border-radius:16px;padding:40px 32px;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+  <h1 style="font-size:22px;font-weight:800;color:#1a1040;margin:0 0 4px;">SlovakGO</h1>
+  <p style="color:#9ca3af;margin:0 0 32px;font-size:13px;">Підтримка</p>
+  <h2 style="font-size:18px;font-weight:700;color:#1a1040;margin:0 0 12px;">Ми отримали твоє звернення!</h2>
+  <p style="color:#374151;line-height:1.6;margin:0 0 16px;">Привіт, ${userName}! Дякуємо за повідомлення — ми відповімо протягом 24 годин.</p>
+  <div style="background:#f3f4f6;border-radius:8px;padding:14px 16px;font-size:14px;color:#6b7280;margin-bottom:24px;">
+    <strong>Тема:</strong> ${topicLabel}<br>
+    <strong>Повідомлення:</strong> ${msg.replace(/</g, "&lt;").replace(/>/g, "&gt;").slice(0, 200)}${msg.length > 200 ? "…" : ""}
+  </div>
+  <hr style="border:none;border-top:1px solid #e5e7eb;margin:0 0 20px;">
+  <p style="color:#d1d5db;font-size:11px;margin:0;">© 2026 SlovakGO · <a href="https://slovakgo.sk" style="color:#9ca3af;">slovakgo.sk</a></p>
+</div></body></html>`;
+
+  await Promise.all([
+    fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${resendKey}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ from: fromAddr, to: supportTo, reply_to: userEmail, subject, html: inHtml }),
+    }).then(r => { if (!r.ok) r.text().then(t => console.error("[support] inbound send failed:", t)); }),
+    fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${resendKey}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ from: fromAddr, to: userEmail, subject: "Ми отримали твоє звернення — SlovakGO", html: replyHtml }),
+    }).then(r => { if (!r.ok) r.text().then(t => console.error("[support] auto-reply failed:", t)); }),
+  ]);
+
+  respond(res, { ok: true });
+}
+
 // ─── Main router ──────────────────────────────────────────────────────────────
 export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   setCors(req, res);
@@ -1306,6 +1379,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "POST" && route === "/billing/checkout")  return await handleBillingCheckout(req, res);
     if (meth === "POST" && route === "/billing/portal")    return await handleBillingPortal(req, res);
     if (meth === "POST" && route === "/billing/webhook")   return await handleBillingWebhook(req, res, rawBody);
+    if (meth === "POST" && route === "/support/send")      return await handleSupportSend(req, res, body);
     res.status(404).json({ ok: false, error: "Not found" });
   } catch (err) {
     console.error("[API Error]", route, err);

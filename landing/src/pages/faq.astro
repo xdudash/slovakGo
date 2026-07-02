@@ -18,9 +18,15 @@ import faqs from '../data/faq.json';
 
         <FaqBlock items={faqs} />
 
-        <div style="margin-top:64px; padding-top:48px; border-top:1px solid var(--border);">
-          <p style="color:var(--muted); margin-bottom:16px;">Не знайшли відповідь?</p>
-          <a href="mailto:hello@slovakgo.sk" class="btn btn-ghost">Написати нам</a>
+        <div class="faq-contact-block">
+          <h2 class="faq-contact-title">Не знайшов відповідь?</h2>
+          <p class="faq-contact-text">Напиши нам — відповідаємо протягом 24 годин.</p>
+          <a href="mailto:support@slovakgo.sk" class="btn btn-primary">
+            Написати в підтримку
+          </a>
+          <p class="faq-contact-email">
+            або одразу на <a href="mailto:support@slovakgo.sk">support@slovakgo.sk</a>
+          </p>
         </div>
       </div>
     </div>

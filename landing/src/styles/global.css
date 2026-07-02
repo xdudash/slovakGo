@@ -1315,3 +1315,36 @@ details.faq-accordion-item[open] summary::after {
   white-space: nowrap;
   border: 0;
 }
+
+/* ── FAQ contact block ──────────────────────────────────────── */
+.faq-contact-block {
+  margin-top: 64px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.faq-contact-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--fg);
+  margin: 0;
+}
+.faq-contact-text {
+  color: var(--muted);
+  margin: 0;
+  font-size: 1rem;
+}
+.faq-contact-email {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin: 0;
+}
+.faq-contact-email a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.faq-contact-email a:hover { text-decoration: underline; }

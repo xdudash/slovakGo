@@ -1869,6 +1869,13 @@ function SettingsScreen() {
   const [actionLoading, setActionLoading] = useState(false);
   const [actionError, setActionError] = useState("");
 
+  const [supportOpen, setSupportOpen]       = useState(false);
+  const [supportTopic, setSupportTopic]     = useState("question");
+  const [supportMsg, setSupportMsg]         = useState("");
+  const [supportLoading, setSupportLoading] = useState(false);
+  const [supportSent, setSupportSent]       = useState(false);
+  const [supportError, setSupportError]     = useState("");
+
   const [deferredPrompt, setDeferredPrompt] = useState<any>((window as any).deferredPrompt || null);
   const [isIOS, setIsIOS] = useState(false);
   const [isStandalone, setIsStandalone] = useState(false);
@@ -1946,6 +1953,20 @@ function SettingsScreen() {
       setPwError(e.status === 401 ? t("student.settings.password_wrong") : (e.message || "Помилка"));
     } finally {
       setPwLoading(false);
+    }
+  }
+
+  async function submitSupport() {
+    if (!supportMsg.trim()) { setSupportError("Напиши повідомлення"); return; }
+    setSupportLoading(true); setSupportError("");
+    try {
+      await apiClient.sendSupportMessage(supportTopic, supportMsg.trim());
+      setSupportSent(true);
+      setTimeout(() => { setSupportOpen(false); setSupportSent(false); setSupportMsg(""); setSupportTopic("question"); }, 3000);
+    } catch (err: unknown) {
+      setSupportError((err as { message?: string }).message || "Не вдалося надіслати. Спробуй пізніше.");
+    } finally {
+      setSupportLoading(false);
     }
   }
 
@@ -2132,6 +2153,18 @@ function SettingsScreen() {
         </Card>
       </section>
 
+      <section className="settings-section">
+        <h3 className="settings-section-title">Підтримка</h3>
+        <Card>
+          <p style={{ margin: "0 0 12px", fontSize: "0.875rem", color: "var(--muted)", lineHeight: 1.5 }}>
+            Виник баг або є питання? Напиши нам — відповідаємо протягом 24 год.
+          </p>
+          <Button variant="secondary" onClick={() => { setSupportOpen(true); setSupportSent(false); setSupportError(""); }}>
+            <MessageSquare size={16} /> Написати в підтримку
+          </Button>
+        </Card>
+      </section>
+
       <section className="settings-section settings-danger">
         <h3 className="settings-section-title settings-section-title--danger">{t("student.settings.danger_zone")}</h3>
         <Card className="form-stack">
@@ -2165,6 +2198,56 @@ function SettingsScreen() {
             {actionError && <p className="field-error">{actionError}</p>}
             <Button variant="danger" onClick={handleDelete} disabled={actionLoading || !deleteEmail.trim()}>{t("student.settings.delete_confirm")}</Button>
             <Button variant="ghost" onClick={() => setModal(null)}>{t("student.settings.cancel")}</Button>
+          </Card>
+        </Modal>
+      )}
+
+      {supportOpen && (
+        <Modal onClose={() => { setSupportOpen(false); setSupportSent(false); setSupportError(""); }}>
+          <Card className="profile-modal support-modal">
+            <h2 className="support-modal-title">
+              <MessageSquare size={20} />
+              Написати в підтримку
+            </h2>
+            {supportSent ? (
+              <div className="support-sent">
+                <CheckCircle2 size={36} color="var(--green)" />
+                <p>Повідомлення надіслано! Перевір свою пошту — ми надіслали підтвердження.</p>
+              </div>
+            ) : (
+              <>
+                <div className="support-field">
+                  <label className="support-label">Тема</label>
+                  <select
+                    className="support-select"
+                    value={supportTopic}
+                    onChange={e => setSupportTopic(e.target.value)}
+                  >
+                    <option value="bug">🐛 Баг / помилка</option>
+                    <option value="question">❓ Питання</option>
+                    <option value="other">💬 Інше</option>
+                  </select>
+                </div>
+                <div className="support-field">
+                  <label className="support-label">Повідомлення</label>
+                  <textarea
+                    className="support-textarea"
+                    rows={5}
+                    placeholder="Опиши своє питання або проблему..."
+                    value={supportMsg}
+                    onChange={e => { setSupportMsg(e.target.value); setSupportError(""); }}
+                  />
+                  <span className="support-char-count">{supportMsg.length}/2000</span>
+                </div>
+                {supportError && <p className="field-error">{supportError}</p>}
+                <Button onClick={submitSupport} disabled={supportLoading || !supportMsg.trim()}>
+                  {supportLoading ? "Надсилаємо…" : "Надіслати"}
+                </Button>
+                <Button variant="ghost" onClick={() => { setSupportOpen(false); setSupportError(""); }}>
+                  Скасувати
+                </Button>
+              </>
+            )}
           </Card>
         </Modal>
       )}
