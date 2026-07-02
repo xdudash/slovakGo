@@ -26,6 +26,7 @@ export interface User {
   lastActiveAt?: string;
   subscriptionStatus: SubscriptionStatus;
   trialEndsAt?: string;
+  subExpiresAt?: string;
   onboardingDone: boolean;
   settings: UserSettings;
   isBlocked?: boolean;

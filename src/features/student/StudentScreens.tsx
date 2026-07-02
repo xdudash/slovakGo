@@ -1700,11 +1700,17 @@ function ProfileScreen() {
                 {user.subscriptionStatus === "trial" && user.trialEndsAt && (
                   <span className="sub-date">до {new Date(user.trialEndsAt).toLocaleDateString("uk-UA")}</span>
                 )}
+                {user.subscriptionStatus === "plus" && user.subExpiresAt && (
+                  <span className="sub-date">до {new Date(user.subExpiresAt).toLocaleDateString("uk-UA", { day: "2-digit", month: "2-digit", year: "numeric" })}</span>
+                )}
               </div>
             </div>
-            {user.subscriptionStatus !== "plus" && (
-              <Button variant="secondary" onClick={() => navigate("/app/shop")}>Plus →</Button>
-            )}
+            {user.subscriptionStatus === "plus"
+              ? <Button variant="secondary" onClick={async () => {
+                  try { const { url } = await apiClient.openCustomerPortal(); window.location.href = url; } catch {}
+                }}>Управляти</Button>
+              : <Button variant="secondary" onClick={() => navigate("/app/shop")}>Plus →</Button>
+            }
           </div>
         </Card>
 
@@ -2303,11 +2309,21 @@ function LevelsScreen() {
 function ShopScreen() {
   const { t } = useT();
   const { isPlus } = useStudentData();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const refreshUser = useAppStore(s => s.refreshUser);
 
   const didSubscribe = searchParams.get("subscribed") === "1";
+
+  useEffect(() => {
+    if (didSubscribe) {
+      refreshUser().catch(() => undefined);
+      // Clean up the query param without a re-render loop
+      setSearchParams(p => { p.delete("subscribed"); return p; }, { replace: true });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   async function handleSubscribe() {
     setLoading(true);
@@ -2410,6 +2426,48 @@ function ShopScreen() {
         <p className="muted text-center sm">
           Ти можеш скасувати підписку в будь-який момент через кабінет Stripe.
         </p>
+      </div>
+    </main>
+  );
+}
+
+export function PaymentSuccess() {
+  const navigate = useNavigate();
+  const refreshUser = useAppStore(s => s.refreshUser);
+
+  useEffect(() => {
+    refreshUser().catch(() => undefined);
+  }, [refreshUser]);
+
+  return (
+    <main className="payment-page payment-page--success">
+      <div className="payment-card">
+        <div className="payment-icon payment-icon--success">
+          <CheckCircle2 size={48} />
+        </div>
+        <h1 className="payment-title">Підписку активовано!</h1>
+        <p className="payment-text">Ласкаво просимо до SlovakGO Plus. Тепер у тебе безлімітні серця, офлайн-режим та повна статистика.</p>
+        <Button variant="primary" onClick={() => navigate("/app/path")}>Почати навчання →</Button>
+      </div>
+    </main>
+  );
+}
+
+export function PaymentCancel() {
+  const navigate = useNavigate();
+
+  return (
+    <main className="payment-page payment-page--cancel">
+      <div className="payment-card">
+        <div className="payment-icon payment-icon--cancel">
+          <AlertCircle size={48} />
+        </div>
+        <h1 className="payment-title">Оплату скасовано</h1>
+        <p className="payment-text">Нічого страшного — ти можеш повернутися і підписатися у зручний час.</p>
+        <div className="payment-actions">
+          <Button variant="primary" onClick={() => navigate("/app/shop")}>Спробувати ще раз</Button>
+          <Button variant="ghost" onClick={() => navigate("/app/path")}>Продовжити безкоштовно</Button>
+        </div>
       </div>
     </main>
   );

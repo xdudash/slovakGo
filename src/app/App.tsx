@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { AdminLayout } from "../features/admin/AdminScreens";
 import { ForgotPassword, GoogleDone, Login, Register, ResetPassword } from "../features/auth/AuthScreens";
-import { Onboarding, PlacementTest, StudentLayout } from "../features/student/StudentScreens";
+import { Onboarding, PaymentCancel, PaymentSuccess, PlacementTest, StudentLayout } from "../features/student/StudentScreens";
 import { TeacherLayout } from "../features/teacher/TeacherScreens";
 import { roleHome, selectCurrentUser, useAppStore } from "../store/useAppStore";
 import type { ReactNode } from "react";
@@ -34,6 +34,8 @@ export function App() {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/auth/google/done" element={<GoogleDone />} />
+      <Route path="/payment/success" element={<PaymentSuccess />} />
+      <Route path="/payment/cancel" element={<PaymentCancel />} />
       <Route path="/onboarding" element={<Onboarding />} />
       <Route path="/placement-test" element={<PlacementTest />} />
       <Route

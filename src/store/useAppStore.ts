@@ -31,6 +31,7 @@ interface AppStore {
   adminUpdateUser: (userId: string, patch: Partial<User>) => void;
   loginAsUser: (userId: string) => void;
   returnToAdmin: () => void;
+  refreshUser: () => Promise<void>;
   drainSync: () => Promise<void>;
   resetLocal: () => void;
 }
@@ -89,7 +90,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
       data = {
         ...data,
         users: [...users, { ...fullState.user, settings: { ...defaults, ...fullState.user.settings } }],
-        progress: { ...data.progress, [userId]: fullState.progress },
+        progress: { ...data.progress, [userId]: { ...fullState.progress, lessonAttempts: data.progress[userId]?.lessonAttempts ?? [] } },
         userWords: { ...data.userWords, [userId]: fullState.userWords },
         lessons: fullState.lessons?.length ? fullState.lessons : data.lessons,
       };
@@ -143,7 +144,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
       data = {
         ...data,
         users: [...users, { ...fullState.user, settings: { ...defaults, ...fullState.user.settings } }],
-        progress:  { ...data.progress,  [userId]: fullState.progress },
+        progress:  { ...data.progress,  [userId]: { ...fullState.progress, lessonAttempts: data.progress[userId]?.lessonAttempts ?? [] } },
         userWords: { ...data.userWords, [userId]: fullState.userWords },
         lessons: fullState.lessons?.length ? fullState.lessons : data.lessons,
       };
@@ -164,6 +165,28 @@ export const useAppStore = create<AppStore>((set, get) => ({
         set({ authError: "Не вдалося зареєструватися. Перевір з'єднання." });
       }
       return null;
+    }
+  },
+
+  async refreshUser() {
+    const currentUserId = get().currentUserId;
+    if (!currentUserId) return;
+    try {
+      const fullState = await apiClient.syncPull(0) as { user: User; progress: AppData["progress"][string]; userWords: UserWord[]; lessons: Lesson[] };
+      const defaults = { language: "uk" as const, notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true };
+      let data = get().data;
+      const users = data.users.filter(u => u.id !== currentUserId);
+      data = {
+        ...data,
+        users: [...users, { ...fullState.user, settings: { ...defaults, ...fullState.user.settings } }],
+        progress: { ...data.progress, [currentUserId]: { ...fullState.progress, lessonAttempts: data.progress[currentUserId]?.lessonAttempts ?? [] } },
+        userWords: { ...data.userWords, [currentUserId]: fullState.userWords },
+        lessons: fullState.lessons?.length ? fullState.lessons : data.lessons,
+      };
+      save(data);
+      set({ data });
+    } catch {
+      // non-fatal — store remains as-is
     }
   },
 

@@ -5223,7 +5223,7 @@ textarea:focus,
 }
 .theory-short-rule {
   background: var(--yellow-soft);
-  border-left: 3px solid var(--yellow-dark);
+  border: 1.5px solid var(--yellow-dark);
   border-radius: 10px;
   padding: 12px 14px;
   font-size: 0.9rem;
@@ -5408,3 +5408,62 @@ textarea:focus,
   gap: 10px;
 }
 
+
+/* ─── Payment pages ──────────────────────────────────────────────────────── */
+.payment-page {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background: var(--bg);
+}
+.payment-card {
+  max-width: 420px;
+  width: 100%;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+.payment-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+.payment-icon--success {
+  background: var(--green-soft, oklch(0.94 0.06 145));
+  color: var(--green, oklch(0.5 0.15 145));
+}
+.payment-icon--cancel {
+  background: oklch(0.96 0.03 25);
+  color: oklch(0.55 0.18 25);
+}
+.payment-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--fg);
+  margin: 0;
+}
+.payment-text {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 340px;
+}
+.payment-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}

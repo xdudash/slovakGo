@@ -44,6 +44,9 @@ async function queryOne(sql: string, args: Arg[] = []): Promise<Row | null> {
 async function exec(sql: string, args: Arg[] = []): Promise<void> {
   await getDb().execute({ sql, args });
 }
+async function ensureCol(table: string, col: string, type: string): Promise<void> {
+  try { await exec(`ALTER TABLE ${table} ADD COLUMN ${col} ${type}`); } catch { /* already exists */ }
+}
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 const nowIso  = () => new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
@@ -165,6 +168,7 @@ function rowToUser(r: Row): Record<string, unknown> {
     country:            r.country ?? null,
     subscriptionStatus: String(r.sub_status),
     trialEndsAt:        r.trial_ends ?? null,
+    subExpiresAt:       r.sub_expires_at ?? null,
     onboardingDone:     Boolean(r.ob_done),
     settings:           safeJson(String(r.settings_j ?? "{}"), {}),
     createdAt:          String(r.created_at),
@@ -402,6 +406,14 @@ async function handleSyncPull(req: VercelRequest, res: VercelResponse): Promise<
   // Auto-downgrade expired trials to free
   if (String(row.sub_status) === "trial" && row.trial_ends) {
     if (Date.now() > new Date(String(row.trial_ends)).getTime()) {
+      await exec("UPDATE users SET sub_status = 'free', updated_at = ? WHERE id = ?", [nowIso(), uid]);
+      row = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [uid]);
+      if (!row) return fail(res, "Користувача не знайдено", 404);
+    }
+  }
+  // Auto-downgrade expired Plus (safety net when webhook missed)
+  if (String(row.sub_status) === "plus" && row.sub_expires_at) {
+    if (Date.now() > new Date(String(row.sub_expires_at)).getTime()) {
       await exec("UPDATE users SET sub_status = 'free', updated_at = ? WHERE id = ?", [nowIso(), uid]);
       row = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [uid]);
       if (!row) return fail(res, "Користувача не знайдено", 404);
@@ -976,14 +988,20 @@ async function handleBillingCheckout(req: VercelRequest, res: VercelResponse): P
   const uid = await requireUid(req, res); if (!uid) return;
   const priceId = process.env.STRIPE_PRICE_ID ?? "";
   if (!priceId) return fail(res, "STRIPE_PRICE_ID not configured", 503);
+  await ensureCol("users", "sub_expires_at", "TEXT");
+  await ensureCol("users", "stripe_customer_id", "TEXT");
+  await ensureCol("users", "stripe_sub_id", "TEXT");
   const row = await queryOne("SELECT email, stripe_customer_id FROM users WHERE id = ? LIMIT 1", [uid]);
   if (!row) return fail(res, "User not found", 404);
   const appUrl = String(process.env.APP_URL ?? "http://localhost:5173").replace(/\/$/, "");
   const params: Stripe.Checkout.SessionCreateParams = {
-    mode: "subscription", client_reference_id: uid,
+    mode: "subscription",
+    client_reference_id: uid,
     line_items: [{ price: priceId, quantity: 1 }],
-    success_url: `${appUrl}/app/shop?subscribed=1`, cancel_url: `${appUrl}/app/shop`,
-    allow_promotion_codes: true, metadata: { app_user_id: uid },
+    success_url: `${appUrl}/payment/success`,
+    cancel_url:  `${appUrl}/payment/cancel`,
+    allow_promotion_codes: true,
+    metadata: { app_user_id: uid },
   };
   const cusId = String(row.stripe_customer_id ?? "");
   if (cusId) (params as Record<string, unknown>).customer = cusId;
@@ -1019,17 +1037,68 @@ async function handleBillingWebhook(req: VercelRequest, res: VercelResponse, raw
     return fail(res, "Invalid signature", 400);
   }
 
+  // checkout.session.completed — new subscription created
   if (event.type === "checkout.session.completed") {
     const s = event.data.object as Stripe.Checkout.Session;
-    if (s.client_reference_id)
-      await exec("UPDATE users SET sub_status = 'plus', stripe_customer_id = ?, stripe_sub_id = ?, updated_at = ? WHERE id = ?",
-        [String(s.customer ?? ""), String(s.subscription ?? ""), nowIso(), s.client_reference_id]);
+    if (s.client_reference_id && s.subscription) {
+      const sub = await getStripe().subscriptions.retrieve(String(s.subscription));
+      const expiresAt = new Date(sub.current_period_end * 1000).toISOString();
+      await exec(
+        "UPDATE users SET sub_status = 'plus', stripe_customer_id = ?, stripe_sub_id = ?, sub_expires_at = ?, updated_at = ? WHERE id = ?",
+        [String(s.customer ?? ""), String(s.subscription), expiresAt, nowIso(), s.client_reference_id]
+      );
+    }
   }
+
+  // customer.subscription.updated — renewal or plan change; keep sub_expires_at current
+  if (event.type === "customer.subscription.updated") {
+    const sub = event.data.object as Stripe.Subscription;
+    const expiresAt = new Date(sub.current_period_end * 1000).toISOString();
+    const status = (sub.status === "active" || sub.status === "trialing") ? "plus" : "free";
+    await exec(
+      "UPDATE users SET sub_status = ?, sub_expires_at = ?, updated_at = ? WHERE stripe_customer_id = ?",
+      [status, expiresAt, nowIso(), String(sub.customer)]
+    );
+  }
+
+  // customer.subscription.deleted — subscription cancelled/expired
   if (event.type === "customer.subscription.deleted") {
-    const s = event.data.object as Stripe.Subscription;
-    await exec("UPDATE users SET sub_status = 'free', stripe_sub_id = '', updated_at = ? WHERE stripe_customer_id = ?",
-      [nowIso(), String(s.customer)]);
+    const sub = event.data.object as Stripe.Subscription;
+    await exec(
+      "UPDATE users SET sub_status = 'free', stripe_sub_id = '', sub_expires_at = NULL, updated_at = ? WHERE stripe_customer_id = ?",
+      [nowIso(), String(sub.customer)]
+    );
   }
+
+  // invoice.payment_failed — notify user via email
+  if (event.type === "invoice.payment_failed") {
+    const inv = event.data.object as Stripe.Invoice;
+    const row = await queryOne(
+      "SELECT email, name_text FROM users WHERE stripe_customer_id = ? LIMIT 1",
+      [String(inv.customer)]
+    );
+    if (row && process.env.RESEND_API_KEY) {
+      const from    = process.env.MAIL_FROM ?? "noreply@slovakgo.sk";
+      const appUrl  = String(process.env.APP_URL ?? "https://app.slovakgo.sk").replace(/\/$/, "");
+      const html    = `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"></head>
+<body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f7ff;margin:0;padding:40px 20px;">
+<div style="max-width:480px;margin:0 auto;background:#fff;border-radius:16px;padding:40px;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+  <h1 style="font-size:22px;font-weight:800;color:#1a1040;margin:0 0 4px;">SlovakGO</h1>
+  <p style="color:#9ca3af;margin:0 0 32px;font-size:13px;">Вивчення словацької мови</p>
+  <h2 style="font-size:18px;font-weight:700;color:#e93d45;margin:0 0 12px;">Помилка оплати підписки</h2>
+  <p style="color:#374151;line-height:1.6;margin:0 0 24px;">Привіт, ${String(row.name_text)}! Не вдалося списати кошти за підписку SlovakGO Plus. Будь ласка, перевір або оновіть платіжні дані.</p>
+  <a href="${appUrl}/app/shop" style="display:inline-block;background:#6c47ff;color:#fff;text-decoration:none;padding:14px 28px;border-radius:10px;font-weight:700;font-size:15px;">Оновити дані оплати →</a>
+  <hr style="border:none;border-top:1px solid #e5e7eb;margin:24px 0;">
+  <p style="color:#d1d5db;font-size:11px;margin:0;">© 2026 SlovakGO</p>
+</div></body></html>`;
+      await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
+        body: JSON.stringify({ from, to: String(row.email), subject: "Помилка оплати — SlovakGO Plus", html }),
+      }).catch(err => console.error("[resend] billing email failed:", err));
+    }
+  }
+
   respond(res, { ok: true });
 }
 
