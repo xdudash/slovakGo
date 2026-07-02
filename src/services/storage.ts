@@ -7,6 +7,21 @@ function cloneSeed(): AppData {
   return JSON.parse(JSON.stringify(seedData)) as AppData;
 }
 
+function trimHeavyData(data: AppData): AppData {
+  const cutoff = new Date(Date.now() - 90 * 86400_000).toISOString();
+  const progress = Object.fromEntries(
+    Object.entries(data.progress).map(([uid, p]) => [uid, {
+      ...p,
+      lessonAttempts: (p.lessonAttempts ?? []).slice(-20),
+      mistakes:       (p.mistakes       ?? []).filter(m => !m.resolvedAt).slice(-100),
+      xpDailyHistory: p.xpDailyHistory
+        ? Object.fromEntries(Object.entries(p.xpDailyHistory).filter(([d]) => d >= cutoff.slice(0, 10)))
+        : p.xpDailyHistory,
+    }])
+  );
+  return { ...data, progress, syncQueue: [] };
+}
+
 export const storageService = {
   load(): AppData {
     try {
@@ -24,7 +39,24 @@ export const storageService = {
   },
 
   save(data: AppData): void {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...data, updatedAt: new Date().toISOString() }));
+    const payload = { ...data, updatedAt: new Date().toISOString() };
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+    } catch {
+      // localStorage full — trim heavy arrays and retry
+      const trimmed = trimHeavyData(payload);
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(trimmed));
+      } catch {
+        // last resort: save only users + auth-critical slice
+        const minimal = { ...trimmed };
+        for (const uid of Object.keys(minimal.progress)) {
+          minimal.progress[uid] = { ...minimal.progress[uid], lessonAttempts: [], mistakes: [] };
+        }
+        minimal.syncQueue = [];
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(minimal)); } catch { /* give up */ }
+      }
+    }
   },
 
   reset(): AppData {
