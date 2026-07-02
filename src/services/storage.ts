@@ -19,7 +19,7 @@ function trimHeavyData(data: AppData): AppData {
         : p.xpDailyHistory,
     }])
   );
-  return { ...data, progress, syncQueue: [] };
+  return { ...data, progress };
 }
 
 export const storageService = {
@@ -39,23 +39,17 @@ export const storageService = {
   },
 
   save(data: AppData): void {
-    const payload = { ...data, updatedAt: new Date().toISOString() };
+    // Always trim before saving — prevents quota from filling up in the first place
+    const payload = trimHeavyData({ ...data, updatedAt: new Date().toISOString() });
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
     } catch {
-      // localStorage full — trim heavy arrays and retry
-      const trimmed = trimHeavyData(payload);
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(trimmed));
-      } catch {
-        // last resort: save only users + auth-critical slice
-        const minimal = { ...trimmed };
-        for (const uid of Object.keys(minimal.progress)) {
-          minimal.progress[uid] = { ...minimal.progress[uid], lessonAttempts: [], mistakes: [] };
-        }
-        minimal.syncQueue = [];
-        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(minimal)); } catch { /* give up */ }
+      // Still full after trim — last resort: drop attempts and mistakes entirely
+      const minimal = { ...payload };
+      for (const uid of Object.keys(minimal.progress)) {
+        minimal.progress[uid] = { ...minimal.progress[uid], lessonAttempts: [], mistakes: [] };
       }
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(minimal)); } catch { /* give up */ }
     }
   },
 
