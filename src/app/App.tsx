@@ -1,4 +1,6 @@
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { AdminLayout } from "../features/admin/AdminScreens";
 import { ForgotPassword, GoogleDone, Login, Register, ResetPassword } from "../features/auth/AuthScreens";
 import { Onboarding, PaymentCancel, PaymentSuccess, PlacementTest, StudentLayout } from "../features/student/StudentScreens";
@@ -27,6 +29,9 @@ function EntryRedirect() {
 
 export function App() {
   return (
+    <>
+    <Analytics />
+    <SpeedInsights />
     <Routes>
       <Route path="/" element={<EntryRedirect />} />
       <Route path="/login" element={<Login />} />
@@ -64,5 +69,6 @@ export function App() {
       />
       <Route path="*" element={<EntryRedirect />} />
     </Routes>
+    </>
   );
 }
