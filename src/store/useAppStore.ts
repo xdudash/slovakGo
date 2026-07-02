@@ -64,37 +64,13 @@ export const useAppStore = create<AppStore>((set, get) => ({
       return null;
     }
     set({ authError: undefined });
+
+    let serverUser: User;
     try {
       const { user: raw } = await apiClient.login(email, password);
-      const serverUser = raw as User;
-      const defaults = { language: "uk" as const, notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true };
-      const merged: User = { ...serverUser, settings: { ...defaults, ...serverUser.settings } };
-      let userId = merged.id;
-
-      // Now pull the full state (progress, words, lessons) for this user
-      const fullState = await apiClient.syncPull(0) as { user: User; progress: AppData["progress"][string]; userWords: UserWord[]; lessons: Lesson[] };
-      
-      let data = get().data;
-      const users = data.users.filter(u => u.id !== userId);
-      
-      data = {
-        ...data,
-        users: [...users, { ...fullState.user, settings: { ...defaults, ...fullState.user.settings } }],
-        progress: { ...data.progress, [userId]: fullState.progress },
-        userWords: { ...data.userWords, [userId]: fullState.userWords },
-        lessons: fullState.lessons?.length ? fullState.lessons : data.lessons,
-      };
-
-      save(data);
-      localStorage.setItem(sessionKey, userId);
-      set({ data, currentUserId: userId, authError: undefined });
-      
-      // Also drain any local queue just in case
-      get().drainSync().catch(() => undefined);
-      
-      return data.users.find((u) => u.id === userId) ?? null;
+      serverUser = raw as User;
     } catch (err: unknown) {
-      const e = err as { status?: number; message?: string };
+      const e = err as { status?: number };
       if (e.status === 401 || e.status === 422 || e.status === 404) {
         set({ authError: "Невірний email або пароль" });
       } else {
@@ -102,6 +78,35 @@ export const useAppStore = create<AppStore>((set, get) => ({
       }
       return null;
     }
+
+    const defaults = { language: "uk" as const, notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true };
+    const userId = serverUser.id;
+    let data = get().data;
+
+    try {
+      const fullState = await apiClient.syncPull(0) as { user: User; progress: AppData["progress"][string]; userWords: UserWord[]; lessons: Lesson[] };
+      const users = data.users.filter(u => u.id !== userId);
+      data = {
+        ...data,
+        users: [...users, { ...fullState.user, settings: { ...defaults, ...fullState.user.settings } }],
+        progress: { ...data.progress, [userId]: fullState.progress },
+        userWords: { ...data.userWords, [userId]: fullState.userWords },
+        lessons: fullState.lessons?.length ? fullState.lessons : data.lessons,
+      };
+    } catch {
+      // syncPull failed — log in with local data so a server hiccup doesn't block the user
+      const users = data.users.filter(u => u.id !== userId);
+      data = {
+        ...data,
+        users: [...users, { ...serverUser, settings: { ...defaults, ...serverUser.settings } }],
+      };
+    }
+
+    save(data);
+    localStorage.setItem(sessionKey, userId);
+    set({ data, currentUserId: userId, authError: undefined });
+    get().drainSync().catch(() => undefined);
+    return data.users.find((u) => u.id === userId) ?? null;
   },
 
   async register(payload) {
