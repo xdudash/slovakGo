@@ -5262,6 +5262,36 @@ textarea:focus,
   margin: 0;
   max-width: 28ch;
 }
+.lesson-start-outcomes {
+  text-align: left;
+  margin: 4px 0 0;
+  padding: 0 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: 340px;
+}
+.lesson-start-outcomes li {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.lesson-start-meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4px;
+}
+.lesson-start-meta span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
 
 /* ── Final life situation ─────────────────────────────────── */
 .final-situation-card {
@@ -5365,23 +5395,13 @@ textarea:focus,
   margin: 0 0 12px;
 }
 .lesson-result-word {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 8px;
-  padding: 8px 0;
+  font-size: 0.9rem;
+  color: var(--fg);
+  line-height: 1.4;
+  padding: 7px 0;
   border-bottom: 1px solid var(--border);
 }
 .lesson-result-word:last-child { border-bottom: none; }
-.lesson-result-word-sk {
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--fg);
-}
-.lesson-result-word-uk {
-  font-size: 0.88rem;
-  color: var(--muted);
-}
 .lesson-result-actions {
   display: flex;
   flex-direction: column;

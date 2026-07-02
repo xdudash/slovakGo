@@ -680,7 +680,27 @@ function LessonScreen() {
           <div className="lesson-start-card">
             {lesson.startScreen.iconEmoji && <div className="lesson-start-icon">{lesson.startScreen.iconEmoji}</div>}
             <h1 className="lesson-start-title">{lesson.startScreen.title ?? lesson.title}</h1>
-            {lesson.startScreen.subtitle && <p className="lesson-start-subtitle">{lesson.startScreen.subtitle}</p>}
+            {(lesson.startScreen.shortDescription || lesson.startScreen.subtitle) && (
+              <p className="lesson-start-subtitle">{lesson.startScreen.shortDescription ?? lesson.startScreen.subtitle}</p>
+            )}
+            {(lesson.startScreen.outcomes?.length ?? 0) > 0 && (
+              <ul className="lesson-start-outcomes">
+                {lesson.startScreen.outcomes!.map((o, i) => <li key={i}>{o}</li>)}
+              </ul>
+            )}
+            {((lesson.startScreen.newWords?.length ?? 0) > 0 || lesson.startScreen.exercisesCount || lesson.startScreen.reward) && (
+              <div className="lesson-start-meta">
+                {(lesson.startScreen.newWords?.length ?? 0) > 0 && (
+                  <span>{lesson.startScreen.newWords!.length} нових слів</span>
+                )}
+                {lesson.startScreen.exercisesCount && (
+                  <span>{lesson.startScreen.exercisesCount} вправ</span>
+                )}
+                {lesson.startScreen.reward && (
+                  <span>{lesson.startScreen.reward}</span>
+                )}
+              </div>
+            )}
             <div className="lesson-feedback" />
             <div className="lesson-bottom">
               <Button onClick={advanceFromStart}>{lesson.startScreen.button ?? "Почати →"}</Button>
@@ -798,10 +818,7 @@ function LessonScreen() {
             <div className="lesson-result-words">
               <h3>Тепер ти знаєш</h3>
               {lesson.resultScreen.nowYouKnow!.map((w, i) => (
-                <div key={i} className="lesson-result-word">
-                  <span className="lesson-result-word-sk">{w.sk}</span>
-                  <span className="lesson-result-word-uk">{w.uk}</span>
-                </div>
+                <div key={i} className="lesson-result-word">{w}</div>
               ))}
             </div>
           )}

@@ -100,6 +100,11 @@ export interface LessonStartScreen {
   screenType: "lesson_start";
   title?: string;
   subtitle?: string;
+  shortDescription?: string;
+  outcomes?: string[];
+  newWords?: string[];
+  exercisesCount?: number;
+  reward?: string;
   iconEmoji?: string;
   button?: string;
 }
@@ -112,17 +117,12 @@ export interface FinalSituation {
   correctAnswer: string;
 }
 
-export interface NowYouKnowWord {
-  sk: string;
-  uk: string;
-}
-
 export interface LessonResultScreen {
   screenType: "lesson_result";
   result?: string;
   newWordsCount?: number;
   exercisesCompleted?: number;
-  nowYouKnow?: NowYouKnowWord[];
+  nowYouKnow?: string[];
 }
 
 export interface Lesson {
