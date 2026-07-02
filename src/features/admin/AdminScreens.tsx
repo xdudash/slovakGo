@@ -178,6 +178,10 @@ function validateLesson(raw: unknown): Lesson {
     words,
     exercises,
     updatedAt:          String(r.updatedAt ?? new Date().toISOString()),
+    startScreen:        r.startScreen    ? (r.startScreen    as Lesson["startScreen"])    : undefined,
+    theoryScreens:      Array.isArray(r.theoryScreens) ? (r.theoryScreens as Lesson["theoryScreens"]) : undefined,
+    finalSituation:     r.finalSituation ? (r.finalSituation as Lesson["finalSituation"]) : undefined,
+    resultScreen:       r.resultScreen   ? (r.resultScreen   as Lesson["resultScreen"])   : undefined,
   };
 }
 
