@@ -5540,3 +5540,55 @@ textarea:focus,
   font-size: 0.95rem;
   line-height: 1.5;
 }
+
+/* Lesson Engine 2.0 Styles */
+.theory-main-example { margin: 16px 0; padding: 12px; background: var(--blue-10); border-radius: 12px; text-align: center; }
+.theory-main-sk { font-size: 1.2rem; font-weight: 700; color: var(--blue); }
+.theory-main-uk { font-size: 0.95rem; color: var(--muted); margin-top: 4px; }
+
+.theory-pronunciation-table { display: flex; flex-direction: column; gap: 8px; margin: 16px 0; }
+.theory-pr-header { display: grid; grid-template-columns: 60px 100px 1fr; font-size: 0.8rem; text-transform: uppercase; color: var(--muted); padding-bottom: 4px; border-bottom: 1px solid var(--border); }
+.theory-pr-row { display: grid; grid-template-columns: 60px 100px 1fr; align-items: center; padding: 8px 0; border-bottom: 1px dashed var(--border); }
+.theory-pr-letter { font-weight: 700; font-size: 1.1rem; color: var(--accent); }
+.theory-pr-read { font-weight: 500; }
+.theory-pr-example { display: flex; flex-direction: column; font-size: 0.9rem; }
+.theory-pr-example .sk { font-weight: 600; }
+.theory-pr-example .uk { color: var(--muted); font-size: 0.85rem; }
+
+.theory-signs { display: flex; flex-direction: column; gap: 12px; margin: 16px 0; }
+.theory-sign-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: 12px; padding: 12px; }
+.theory-sign-top { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.theory-sign-char { font-size: 1.4rem; font-weight: 800; color: var(--red); background: var(--red-10); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+.theory-sign-name { font-weight: 700; font-size: 1.1rem; }
+.theory-sign-meaning { font-size: 0.95rem; color: var(--fg); margin: 0 0 4px; }
+.theory-sign-examples { font-size: 0.85rem; color: var(--muted); margin: 0; }
+
+.theory-mistakes { display: flex; flex-direction: column; gap: 8px; margin: 16px 0; background: var(--surface); padding: 16px; border-radius: 16px; border: 1.5px solid var(--border); }
+.theory-mistake-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 0.95rem; }
+.theory-mistake-wrong { color: var(--red); text-decoration: line-through; }
+.theory-mistake-correct { color: var(--green); font-weight: 600; }
+
+.theory-dialogue { display: flex; flex-direction: column; gap: 16px; margin: 16px 0; }
+.theory-dialogue-line { display: flex; flex-direction: column; gap: 4px; }
+.theory-dialogue-speaker { font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--muted); }
+.theory-dialogue-texts { background: var(--surface); padding: 12px; border-radius: 12px; border: 1.5px solid var(--border); border-top-left-radius: 2px; }
+.theory-dialogue-sk { display: block; font-weight: 600; margin-bottom: 2px; }
+.theory-dialogue-uk { display: block; font-size: 0.9rem; color: var(--muted); }
+
+.fill-blank-exercise { display: flex; flex-direction: column; gap: 16px; }
+.full-sentence-hint { font-size: 1.1rem; text-align: center; font-weight: 500; color: var(--muted); background: var(--surface); padding: 12px; border-radius: 12px; }
+
+.lesson-words-screen { padding: 24px 20px; display: flex; flex-direction: column; min-height: 80vh; }
+.words-screen-title { font-size: 1.4rem; font-weight: 800; margin: 0 0 8px; }
+.words-screen-desc { font-size: 0.95rem; color: var(--muted); margin: 0 0 24px; line-height: 1.5; }
+.words-screen-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: auto; }
+.words-screen-item { background: var(--surface); border: 1.5px solid var(--border); border-radius: 16px; padding: 16px; }
+.ws-item-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+.ws-item-sk { font-size: 1.15rem; font-weight: 700; }
+.ws-item-uk { font-size: 0.95rem; color: var(--muted); }
+.ws-item-pron { font-size: 0.85rem; color: var(--accent); margin-bottom: 8px; font-family: monospace; }
+.ws-item-example { background: var(--bg); padding: 10px; border-radius: 8px; display: flex; flex-direction: column; gap: 2px; font-size: 0.9rem; }
+.ws-item-example .sk { font-weight: 600; }
+.ws-item-example .uk { color: var(--muted); }
+
+.final-situation-translation, .final-situation-explanation { font-size: 0.9rem; margin-top: 8px; padding: 12px; border-radius: 8px; background: rgba(0,0,0,0.05); }

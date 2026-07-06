@@ -456,7 +456,12 @@ function ExerciseView({ exercise, answer, setAnswer, t }: { exercise: Exercise; 
     );
   }
   if (exercise.type === "fill_blank" || exercise.type === "typing") {
-    return <Field label={t("student.lesson.answer_label")} value={String(answer || "")} onChange={(event) => setAnswer(event.target.value)} />;
+    return (
+      <div className="fill-blank-exercise">
+        {exercise.fullSentence && <p className="full-sentence-hint">{exercise.fullSentence.replace("______", "___")}</p>}
+        <Field label={t("student.lesson.answer_label")} value={String(answer || "")} onChange={(event) => setAnswer(event.target.value)} />
+      </div>
+    );
   }
   if (exercise.type === "sentence_ordering") {
     const selected = Array.isArray(answer) ? answer : [];
@@ -479,7 +484,7 @@ function ExerciseView({ exercise, answer, setAnswer, t }: { exercise: Exercise; 
 
 const CONFETTI_COLORS = ["#6f57e8", "#ffd21f", "#2fba7f", "#e93d45", "#ff5a2e", "#3b82f6", "#a855f7"];
 
-type LessonPhase = "start" | "theory" | "exercise" | "final" | "result";
+type LessonPhase = "start" | "theory" | "words" | "exercise" | "final" | "result";
 type WrongItem = { question: string; userAnswer: string; correctAnswer: string };
 type CompletionData = { xp: number; correct: number; total: number; wrong: WrongItem[] };
 
@@ -488,6 +493,12 @@ function TheoryView({ screen, onNext }: { screen: TheoryScreen; onNext: () => vo
     <div className="theory-body">
       {screen.title && <h2 className="theory-title">{screen.title}</h2>}
       {screen.text && <p className="theory-text">{screen.text}</p>}
+      {(screen.exampleSk || screen.exampleUk) && (
+        <div className="theory-main-example">
+          {screen.exampleSk && <div className="theory-main-sk">{screen.exampleSk}</div>}
+          {screen.exampleUk && <div className="theory-main-uk">{screen.exampleUk}</div>}
+        </div>
+      )}
       {(screen.examples?.length ?? 0) > 0 && (
         <div className="theory-examples">
           {screen.examples!.map((ex, i) => (
@@ -520,7 +531,61 @@ function TheoryView({ screen, onNext }: { screen: TheoryScreen; onNext: () => vo
               <div className="theory-alphabet-row">
                 {group.letters.map((l, li) => <span key={li} className="theory-letter">{l}</span>)}
               </div>
-              {group.note && <p className="theory-group-note">{group.note}</p>}
+              {(group.note || group.noteUk) && <p className="theory-group-note">{group.noteUk || group.note}</p>}
+            </div>
+          ))}
+        </div>
+      )}
+      {(screen.pronunciationRows?.length ?? 0) > 0 && (
+        <div className="theory-pronunciation-table">
+          <div className="theory-pr-header">
+            <span>Літера</span><span>Читання</span><span>Приклад</span>
+          </div>
+          {screen.pronunciationRows!.map((r, i) => (
+            <div key={i} className="theory-pr-row">
+              <div className="theory-pr-letter">{r.letter}</div>
+              <div className="theory-pr-read">{r.readUk}</div>
+              <div className="theory-pr-example">
+                <span className="sk">{r.exampleSk}</span>
+                <span className="uk">{r.exampleUk}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+      {(screen.signs?.length ?? 0) > 0 && (
+        <div className="theory-signs">
+          {screen.signs!.map((s, i) => (
+            <div key={i} className="theory-sign-card">
+              <div className="theory-sign-top">
+                <span className="theory-sign-char">{s.sign}</span>
+                <span className="theory-sign-name">{s.nameSk}</span>
+              </div>
+              <p className="theory-sign-meaning">{s.meaningUk}</p>
+              <p className="theory-sign-examples">Напр: {s.examples.join(", ")}</p>
+            </div>
+          ))}
+        </div>
+      )}
+      {(screen.commonMistakes?.length ?? 0) > 0 && (
+        <div className="theory-mistakes">
+          {screen.commonMistakes!.map((m, i) => (
+            <div key={i} className="theory-mistake-row">
+              <div className="theory-mistake-wrong">❌ {m.mistake}</div>
+              <div className="theory-mistake-correct">✅ {m.correct}</div>
+            </div>
+          ))}
+        </div>
+      )}
+      {(screen.dialogue?.length ?? 0) > 0 && (
+        <div className="theory-dialogue">
+          {screen.dialogue!.map((d, i) => (
+            <div key={i} className="theory-dialogue-line">
+              <span className="theory-dialogue-speaker">{d.speaker}:</span>
+              <div className="theory-dialogue-texts">
+                <span className="theory-dialogue-sk">{d.sk}</span>
+                <span className="theory-dialogue-uk">{d.uk}</span>
+              </div>
             </div>
           ))}
         </div>
@@ -558,6 +623,7 @@ function LessonScreen() {
     if (!lesson) return "exercise";
     if (lesson.startScreen) return "start";
     if ((lesson.theoryScreens?.length ?? 0) > 0) return "theory";
+    if (lesson.wordsScreen) return "words";
     if (lesson.intro || (lesson.words?.length ?? 0) > 0) return "start";
     return "exercise";
   });
@@ -601,6 +667,7 @@ function LessonScreen() {
 
   function advanceFromStart() {
     if (theories.length > 0) { setTheoryIndex(0); setPhase("theory"); return; }
+    if (lesson!.wordsScreen) { setPhase("words"); return; }
     if (lesson!.exercises.length > 0) { setPhase("exercise"); return; }
     if (lesson!.finalSituation) { setPhase("final"); return; }
     finishLesson([]);
@@ -608,6 +675,13 @@ function LessonScreen() {
 
   function advanceFromTheory() {
     if (theoryIndex + 1 < theories.length) { setTheoryIndex((i) => i + 1); return; }
+    if (lesson!.wordsScreen) { setPhase("words"); return; }
+    if (lesson!.exercises.length > 0) { setPhase("exercise"); return; }
+    if (lesson!.finalSituation) { setPhase("final"); return; }
+    finishLesson([]);
+  }
+
+  function advanceFromWords() {
     if (lesson!.exercises.length > 0) { setPhase("exercise"); return; }
     if (lesson!.finalSituation) { setPhase("final"); return; }
     finishLesson([]);
@@ -651,18 +725,28 @@ function LessonScreen() {
     setFinalFeedback(finalAnswer === sit.options[correctIdx] ? "correct" : "wrong");
   }
 
-  const totalSteps = theories.length + lesson!.exercises.length + (lesson!.finalSituation ? 1 : 0);
+  const totalSteps = theories.length + (lesson!.wordsScreen ? 1 : 0) + lesson!.exercises.length + (lesson!.finalSituation ? 1 : 0);
   const percent = (() => {
     if (phase === "start") return 0;
-    if (phase === "theory") return totalSteps > 0 ? Math.round((theoryIndex / totalSteps) * 100) : 0;
-    if (phase === "exercise") return totalSteps > 0 ? Math.round(((theories.length + index) / totalSteps) * 100) : Math.round((index / Math.max(1, lesson!.exercises.length)) * 100);
-    if (phase === "final") return 96;
-    return 100;
+    let stepCount = 0;
+    if (phase === "theory") {
+      stepCount = theoryIndex;
+    } else if (phase === "words") {
+      stepCount = theories.length;
+    } else if (phase === "exercise") {
+      stepCount = theories.length + (lesson!.wordsScreen ? 1 : 0) + index;
+    } else if (phase === "final") {
+      return 96;
+    } else if (phase === "result") {
+      return 100;
+    }
+    return totalSteps > 0 ? Math.round((stepCount / totalSteps) * 100) : 0;
   })();
 
   const questionLabel = (() => {
     if (phase === "start") return hasLegacyIntro ? `${lesson!.words.length} слів` : "";
     if (phase === "theory") return `${theoryIndex + 1} / ${theories.length}`;
+    if (phase === "words") return "Слова";
     if (phase === "exercise") return exercise ? `${index + 1} / ${lesson.exercises.length}` : "";
     if (phase === "final") return "Ситуація";
     return "";
@@ -740,6 +824,33 @@ function LessonScreen() {
         <TheoryView key={`theory-${theoryIndex}`} screen={theories[theoryIndex]} onNext={advanceFromTheory} />
       )}
 
+      {phase === "words" && lesson.wordsScreen && (
+        <div className="lesson-words-screen">
+          {lesson.wordsScreen.title && <h2 className="words-screen-title">{lesson.wordsScreen.title}</h2>}
+          {lesson.wordsScreen.description && <p className="words-screen-desc">{lesson.wordsScreen.description}</p>}
+          <div className="words-screen-list">
+            {lesson.wordsScreen.items.map((item, i) => (
+              <div key={i} className="words-screen-item">
+                <div className="ws-item-top">
+                  <span className="ws-item-sk">{item.sk}</span>
+                  <span className="ws-item-uk">{item.uk}</span>
+                </div>
+                {item.pronunciationUk && <div className="ws-item-pron">[{item.pronunciationUk}]</div>}
+                {item.exampleSk && (
+                  <div className="ws-item-example">
+                    <span className="sk">{item.exampleSk}</span>
+                    <span className="uk">{item.exampleUk}</span>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="lesson-bottom">
+            <Button onClick={advanceFromWords}>{lesson.wordsScreen.button ?? "Почати вправи →"}</Button>
+          </div>
+        </div>
+      )}
+
       {phase === "exercise" && exercise && (
         <>
           <Card className="exercise-card">
@@ -788,10 +899,12 @@ function LessonScreen() {
           <div className={`lesson-feedback ${finalFeedback || ""}`}>
             {finalFeedback === "correct" ? t("student.lesson.correct") : null}
             {finalFeedback === "wrong" ? `${t("student.lesson.wrong_prefix")} ${lesson.finalSituation.options[parseInt(lesson.finalSituation.correctAnswer, 10) - 1]}` : null}
+            {finalFeedback && lesson.finalSituation.translation && <div className="final-situation-translation">{lesson.finalSituation.translation}</div>}
+            {finalFeedback && lesson.finalSituation.explanation && <div className="final-situation-explanation">{lesson.finalSituation.explanation}</div>}
           </div>
           <div className="lesson-bottom">
             {!finalFeedback
-              ? <Button disabled={!finalAnswer} onClick={checkFinal}>{t("student.lesson.check")}</Button>
+              ? <Button disabled={!finalAnswer} onClick={checkFinal}>{lesson.finalSituation.button ?? t("student.lesson.check")}</Button>
               : <Button autoFocus onClick={() => finishLesson(records)}>{t("student.lesson.finish")}</Button>
             }
           </div>
@@ -802,6 +915,8 @@ function LessonScreen() {
         <div className="lesson-result-screen">
           <div className="lesson-result-header">
             <div className="lesson-result-emoji">{completionData.wrong.length === 0 ? "🏆" : "🎉"}</div>
+            {lesson.resultScreen.title ? <h2 className="lesson-result-title">{lesson.resultScreen.title}</h2> : null}
+            {lesson.resultScreen.text ? <p className="lesson-result-text">{lesson.resultScreen.text}</p> : null}
             <div className="lesson-result-xp">+{completionData.xp} XP</div>
             <div className="lesson-result-stats">
               <div className="lesson-result-stat">
@@ -826,10 +941,16 @@ function LessonScreen() {
               ))}
             </div>
           )}
+          {lesson.resultScreen.nextLesson && (
+            <div className="lesson-result-next">
+              <p>Наступний урок:</p>
+              <h4>{lesson.resultScreen.nextLesson}</h4>
+            </div>
+          )}
           <div className="lesson-result-actions">
-            <Button autoFocus onClick={() => navigate("/app/path")}>Продовжити</Button>
-            <Button variant="secondary" onClick={() => { setIndex(0); setTheoryIndex(0); setRecords([]); setFinalAnswer(""); setFinalFeedback(null); setCompletionData(null); setPhase(lesson.startScreen ? "start" : theories.length > 0 ? "theory" : "exercise"); }}>Повторити урок</Button>
-            {completionData.wrong.length > 0 && <Button variant="ghost" onClick={() => navigate("/app/practice")}>Тренувати помилки</Button>}
+            <Button autoFocus onClick={() => navigate("/app/path")}>{lesson.resultScreen.buttons?.[0] ?? "Продовжити"}</Button>
+            <Button variant="secondary" onClick={() => { setIndex(0); setTheoryIndex(0); setRecords([]); setFinalAnswer(""); setFinalFeedback(null); setCompletionData(null); setPhase(lesson.startScreen ? "start" : theories.length > 0 ? "theory" : "wordsScreen" in lesson && lesson.wordsScreen ? "words" : "exercise"); }}>{lesson.resultScreen.buttons?.[1] ?? "Повторити урок"}</Button>
+            {completionData.wrong.length > 0 && <Button variant="ghost" onClick={() => navigate("/app/practice")}>{lesson.resultScreen.mistakesMessage ?? lesson.resultScreen.buttons?.[2] ?? "Тренувати помилки"}</Button>}
           </div>
         </div>
       )}

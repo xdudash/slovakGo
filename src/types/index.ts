@@ -45,6 +45,7 @@ export interface Word {
   audioUrl?: string;
   transcription?: string;
   tags?: string[];
+  pronunciationUk?: string;
 }
 
 export type ExerciseType =
@@ -71,6 +72,7 @@ export interface Exercise {
   imageUrl?: string;
   order: number;
   difficulty?: "easy" | "medium" | "hard";
+  fullSentence?: string;
 }
 
 export interface TheoryExample {
@@ -82,6 +84,32 @@ export interface AlphabetGroup {
   title: string;
   letters: string[];
   note?: string;
+  noteUk?: string;
+}
+
+export interface PronunciationRow {
+  letter: string;
+  readUk: string;
+  exampleSk: string;
+  exampleUk: string;
+}
+
+export interface SignRow {
+  nameSk: string;
+  sign: string;
+  meaningUk: string;
+  examples: string[];
+}
+
+export interface CommonMistake {
+  mistake: string;
+  correct: string;
+}
+
+export interface DialogueLine {
+  speaker: string;
+  sk: string;
+  uk: string;
 }
 
 export interface TheoryScreen {
@@ -94,6 +122,12 @@ export interface TheoryScreen {
   focusPoints?: string[];
   alphabetRows?: string[][];
   alphabetGroups?: AlphabetGroup[];
+  pronunciationRows?: PronunciationRow[];
+  signs?: SignRow[];
+  commonMistakes?: CommonMistake[];
+  dialogue?: DialogueLine[];
+  exampleSk?: string;
+  exampleUk?: string;
   shortRule?: string;
   button?: string;
 }
@@ -111,20 +145,45 @@ export interface LessonStartScreen {
   button?: string;
 }
 
+export interface LessonWordsScreenItem {
+  wordId?: string;
+  sk: string;
+  uk: string;
+  pronunciationUk?: string;
+  exampleSk?: string;
+  exampleUk?: string;
+}
+
+export interface LessonWordsScreen {
+  screenType: "lesson_words";
+  title?: string;
+  description?: string;
+  items: LessonWordsScreenItem[];
+  button?: string;
+}
+
 export interface FinalSituation {
   screenType: "final_life_situation";
   scenario: string;
   question: string;
   options: string[];
   correctAnswer: string;
+  translation?: string;
+  explanation?: string;
+  button?: string;
 }
 
 export interface LessonResultScreen {
   screenType: "lesson_result";
+  title?: string;
+  text?: string;
   result?: string;
   newWordsCount?: number;
   exercisesCompleted?: number;
   nowYouKnow?: string[];
+  mistakesMessage?: string;
+  buttons?: string[];
+  nextLesson?: string;
 }
 
 export interface Lesson {
@@ -146,6 +205,7 @@ export interface Lesson {
   updatedAt: string;
   startScreen?: LessonStartScreen;
   theoryScreens?: TheoryScreen[];
+  wordsScreen?: LessonWordsScreen;
   finalSituation?: FinalSituation;
   resultScreen?: LessonResultScreen;
 }
