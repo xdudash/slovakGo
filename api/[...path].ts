@@ -1018,7 +1018,7 @@ async function handlePostErrors(req: VercelRequest, res: VercelResponse, body: u
 
 // ─── Stripe ───────────────────────────────────────────────────────────────────
 let _stripe: Stripe | null = null;
-const getStripe = () => _stripe ??= new Stripe(process.env.STRIPE_SECRET_KEY ?? "", { apiVersion: "2025-05-28.basil" as Stripe.LatestApiVersion });
+const getStripe = () => _stripe ??= new Stripe(process.env.STRIPE_SECRET_KEY ?? "", { apiVersion: "2026-06-24.dahlia" as Stripe.LatestApiVersion });
 
 async function handleBillingCheckout(req: VercelRequest, res: VercelResponse): Promise<void> {
   const uid = await requireUid(req, res); if (!uid) return;
