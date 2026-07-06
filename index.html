@@ -51,6 +51,21 @@
     <meta property="twitter:image" content="%BASE_URL%slovakgo-preview.png" />
   </head>
   <body>
+    <!-- Rescue script for PWA caching issues -->
+    <script>
+      window.addEventListener('error', function(e) {
+        var msg = e.message || '';
+        if (msg.includes('Unexpected token') || msg.includes('SyntaxError') || msg.includes('dynamically imported module')) {
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(regs) {
+              var unregistered = false;
+              for(var i=0; i<regs.length; i++) { regs[i].unregister(); unregistered = true; }
+              if (unregistered) { setTimeout(function(){ window.location.reload(); }, 500); }
+            });
+          }
+        }
+      });
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

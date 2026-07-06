@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'slovakgo-v6';
+const CACHE_VERSION = 'slovakgo-v7';
 const STATIC_CACHE  = `${CACHE_VERSION}-static`;
 const API_CACHE     = `${CACHE_VERSION}-api`;
 const AUDIO_CACHE   = `${CACHE_VERSION}-audio`;
