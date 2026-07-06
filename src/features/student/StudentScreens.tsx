@@ -1437,13 +1437,13 @@ function LeaderboardScreen() {
   const xpToNext = leaderboardService.xpToNextLeague(userXp);
   const leagueProgress = leaderboardService.progressInLeague(userXp);
 
-  const filtered = tab === "ua"
-    ? entries.filter((e) => e.country === "UA")
-    : entries;
-
-  const top3 = filtered.slice(0, 3);
-  const podiumOrder = [top3[1], top3[0], top3[2]].filter((e): e is LeaderboardEntry => !!e);
-  const rest = filtered.slice(3);
+  const { filtered, podiumOrder, rest } = useMemo(() => {
+    const f = tab === "ua" ? entries.filter((e) => e.country === "UA") : entries;
+    const t3 = f.slice(0, 3);
+    const po = [t3[1], t3[0], t3[2]].filter((e): e is LeaderboardEntry => !!e);
+    const r = f.slice(3);
+    return { filtered: f, podiumOrder: po, rest: r };
+  }, [tab, entries]);
 
   function leaderRow(entry: LeaderboardEntry, showLeagueChange = true) {
     const flash = flashIds.get(entry.userId);
