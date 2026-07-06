@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { AlertCircle, Bell, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, Download, Flame, Heart, Layers, Link2, LogOut, Medal, MessageSquare, Play, Search, Settings, Share2, ShoppingBag, Star, Trophy, Users, Volume2, Zap } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
@@ -247,18 +247,22 @@ function PathScreen() {
   if (!user || !progress) return <PageSkeleton />;
 
   const isAdmin = user.role === "admin";
-  const LEVEL_ORDER_SORT = ["A0","A1","A2","B1","B2","C1"] as const;
-  const levelLessons = isAdmin
-    ? data.lessons
-        .filter((l) => l.level === progress.currentLevel)
-        .sort((a, b) => LEVEL_ORDER_SORT.indexOf(a.level as typeof LEVEL_ORDER_SORT[number]) - LEVEL_ORDER_SORT.indexOf(b.level as typeof LEVEL_ORDER_SORT[number]) || a.order - b.order)
-    : lessonService.byLevel(data.lessons, progress.currentLevel);
-  const levelProgress = lessonService.levelProgress(data.lessons, progress, progress.currentLevel);
-  const adminStatus = (l: typeof levelLessons[number]) =>
+  const adminStatus = (l: { id: string }) =>
     progress.completedLessons.includes(l.id) ? "completed" as const : "available" as const;
-  const current = levelLessons.find((l) => (isAdmin ? adminStatus(l) : lessonService.status(l, data.lessons, progress)) === "current")
-    || levelLessons.find((l) => (isAdmin ? adminStatus(l) : lessonService.status(l, data.lessons, progress)) === "available")
-    || levelLessons[0];
+
+  const { levelLessons, levelProgress, current } = useMemo(() => {
+    const LEVEL_ORDER_SORT = ["A0","A1","A2","B1","B2","C1"] as const;
+    const lLessons = isAdmin
+      ? data.lessons
+          .filter((l) => l.level === progress.currentLevel)
+          .sort((a, b) => LEVEL_ORDER_SORT.indexOf(a.level as typeof LEVEL_ORDER_SORT[number]) - LEVEL_ORDER_SORT.indexOf(b.level as typeof LEVEL_ORDER_SORT[number]) || a.order - b.order)
+      : lessonService.byLevel(data.lessons, progress.currentLevel);
+    const lProgress = lessonService.levelProgress(data.lessons, progress, progress.currentLevel);
+    const curr = lLessons.find((l) => (isAdmin ? adminStatus(l) : lessonService.status(l, data.lessons, progress)) === "current")
+      || lLessons.find((l) => (isAdmin ? adminStatus(l) : lessonService.status(l, data.lessons, progress)) === "available")
+      || lLessons[0];
+    return { levelLessons: lLessons, levelProgress: lProgress, current: curr };
+  }, [data.lessons, progress, isAdmin]);
   const scenario = getScenarioForGoal(user.goal);
   const dailyPhrases = getDailyPhrases(user.goal, 3);
 
@@ -937,9 +941,9 @@ function VocabularyScreen() {
     audio.onended = () => setPlayingId(null);
   }
 
-  const allWords = vocabularyService.build(data.lessons, data.userWords[user.id]);
-  const filtered = vocabularyService.filter(allWords, filter, query);
-  const sorted = vocabularyService.sort(filtered, sort);
+  const allWords = useMemo(() => vocabularyService.build(data.lessons, data.userWords[user.id]), [data.lessons, data.userWords, user.id]);
+  const filtered = useMemo(() => vocabularyService.filter(allWords, filter, query), [allWords, filter, query]);
+  const sorted = useMemo(() => vocabularyService.sort(filtered, sort), [filtered, sort]);
 
   const filterLabels: Record<string, string> = {
     all: t("student.vocabulary.filter_all"),
