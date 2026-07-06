@@ -66,7 +66,7 @@ export const apiClient = {
   },
 
   serverTime() {
-    return apiRequest<{ ok: boolean; updatedAt: string }>("/");
+    return apiRequest<{ ok: boolean; updatedAt: string }>("/ping");
   },
 
   syncPush(clientId: string, mutations: SyncMutation[]) {

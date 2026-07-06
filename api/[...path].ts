@@ -70,7 +70,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   const meth  = req.method ?? "GET";
 
   try {
-    if (meth === "GET"  && route === "/")                  return await handlePing(res);
+    if (meth === "GET"  && (route === "/" || route === "/ping")) return await handlePing(res);
     
     // Auth Routes
     if (meth === "POST" && route === "/auth/register")     return await handleRegister(req, res, body);
