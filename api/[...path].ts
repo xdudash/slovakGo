@@ -171,6 +171,7 @@ function rowToUser(r: Row): Record<string, unknown> {
     subExpiresAt:       r.sub_expires_at ?? null,
     onboardingDone:     Boolean(r.ob_done),
     settings:           safeJson(String(r.settings_j ?? "{}"), {}),
+    hasUsedTrial:       Boolean(r.stripe_customer_id),
     createdAt:          String(r.created_at),
     updatedAt:          String(r.updated_at),
   };
@@ -200,14 +201,27 @@ async function handlePing(res: VercelResponse): Promise<void> {
 }
 
 // POST /auth/register
-async function handleRegister(_req: VercelRequest, res: VercelResponse, body: Record<string, unknown>): Promise<void> {
-  const email    = String(body.email ?? "").toLowerCase().trim();
-  const password = String(body.password ?? "");
-  const name     = String(body.name ?? "Студент").trim();
-  const goal     = String(body.goal ?? "").trim();
-  const cliId    = String(body.id ?? "").trim();
+async function handleRegister(req: VercelRequest, res: VercelResponse, body: Record<string, unknown>): Promise<void> {
+  const ip  = clientIp(req);
+  const win = new Date(Date.now() - LOGIN_WINDOW_SEC * 1000).toISOString().replace(/\.\d{3}Z$/, "Z");
+  await exec("DELETE FROM login_attempts WHERE attempted_at < ?", [win]);
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail(res, "Некоректний email", 422);
+  const attempts = Number((await queryOne("SELECT COUNT(*) as c FROM login_attempts WHERE ip = ? AND attempted_at > ?", [ip, win]))?.c ?? 0);
+  if (attempts >= LOGIN_MAX_ATTEMPTS) {
+    res.setHeader("Retry-After", String(LOGIN_WINDOW_SEC));
+    return fail(res, "Занадто багато спроб. Спробуй через 15 хвилин.", 429);
+  }
+
+  const email    = String(body.email ?? "").toLowerCase().trim().slice(0, 150);
+  const password = String(body.password ?? "").slice(0, 150);
+  const name     = String(body.name ?? "Студент").trim().slice(0, 100);
+  const goal     = String(body.goal ?? "").trim().slice(0, 200);
+  const cliId    = String(body.id ?? "").trim().slice(0, 50);
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    await exec("INSERT INTO login_attempts (ip, attempted_at) VALUES (?, ?)", [ip, nowIso()]);
+    return fail(res, "Некоректний email", 422);
+  }
   if (password.length < 8 || !/[A-ZА-ЯІЇЄҐ]/.test(password) || !/[a-zа-яіїєґ]/.test(password) || !/\d/.test(password))
     return fail(res, "Пароль має містити мінімум 8 символів, велику та малу літеру і цифру", 422);
 
@@ -216,14 +230,13 @@ async function handleRegister(_req: VercelRequest, res: VercelResponse, body: Re
 
   const id    = cliId || `user-${randomUUID()}`;
   const now   = nowIso();
-  const trial = new Date(Date.now() + 7 * 86400_000).toISOString().replace(/\.\d{3}Z$/, "Z");
   const hash  = await bcrypt.hash(password, 11);
   const defS  = JSON.stringify({ language: "uk", notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true });
 
   await exec(
     `INSERT INTO users (id, email, pw_hash, name_text, role, level, goal, sub_status, trial_ends, ob_done, settings_j, created_at, updated_at)
-     VALUES (?, ?, ?, ?, 'student', 'A0', ?, 'trial', ?, 0, ?, ?, ?)`,
-    [id, email, hash, name, goal || null, trial, defS, now, now]
+     VALUES (?, ?, ?, ?, 'student', 'A0', ?, 'free', NULL, 0, ?, ?, ?)`,
+    [id, email, hash, name, goal || null, defS, now, now]
   );
   await ensureProgress(id);
 
@@ -304,8 +317,19 @@ async function handleLogout(res: VercelResponse): Promise<void> {
 }
 
 // POST /auth/forgot
-async function handleForgot(res: VercelResponse, body: Record<string, unknown>): Promise<void> {
-  const email = String(body.email ?? "").toLowerCase().trim();
+async function handleForgot(req: VercelRequest, res: VercelResponse, body: Record<string, unknown>): Promise<void> {
+  const ip  = clientIp(req);
+  const win = new Date(Date.now() - LOGIN_WINDOW_SEC * 1000).toISOString().replace(/\.\d{3}Z$/, "Z");
+  await exec("DELETE FROM login_attempts WHERE attempted_at < ?", [win]);
+
+  const attempts = Number((await queryOne("SELECT COUNT(*) as c FROM login_attempts WHERE ip = ? AND attempted_at > ?", [ip, win]))?.c ?? 0);
+  if (attempts >= LOGIN_MAX_ATTEMPTS) {
+    res.setHeader("Retry-After", String(LOGIN_WINDOW_SEC));
+    return fail(res, "Занадто багато спроб. Спробуй через 15 хвилин.", 429);
+  }
+  await exec("INSERT INTO login_attempts (ip, attempted_at) VALUES (?, ?)", [ip, nowIso()]);
+
+  const email = String(body.email ?? "").toLowerCase().trim().slice(0, 150);
   const row   = await queryOne("SELECT id FROM users WHERE email = ? LIMIT 1", [email]);
   if (!row) return respond(res, { ok: true }); // don't leak existence
 
@@ -349,11 +373,23 @@ async function handleForgot(res: VercelResponse, body: Record<string, unknown>):
 }
 
 // POST /auth/reset
-async function handleReset(res: VercelResponse, body: Record<string, unknown>): Promise<void> {
-  const token    = String(body.token ?? "");
-  const password = String(body.password ?? "");
-  if (!token || password.length < 8 || !/[A-ZА-ЯІЇЄҐ]/.test(password) || !/[a-zа-яіїєґ]/.test(password) || !/\d/.test(password))
+async function handleReset(req: VercelRequest, res: VercelResponse, body: Record<string, unknown>): Promise<void> {
+  const ip  = clientIp(req);
+  const win = new Date(Date.now() - LOGIN_WINDOW_SEC * 1000).toISOString().replace(/\.\d{3}Z$/, "Z");
+  await exec("DELETE FROM login_attempts WHERE attempted_at < ?", [win]);
+
+  const attempts = Number((await queryOne("SELECT COUNT(*) as c FROM login_attempts WHERE ip = ? AND attempted_at > ?", [ip, win]))?.c ?? 0);
+  if (attempts >= LOGIN_MAX_ATTEMPTS) {
+    res.setHeader("Retry-After", String(LOGIN_WINDOW_SEC));
+    return fail(res, "Занадто багато спроб. Спробуй через 15 хвилин.", 429);
+  }
+
+  const token    = String(body.token ?? "").slice(0, 200);
+  const password = String(body.password ?? "").slice(0, 150);
+  if (!token || password.length < 8 || !/[A-ZА-ЯІЇЄҐ]/.test(password) || !/[a-zа-яіїєґ]/.test(password) || !/\d/.test(password)) {
+    await exec("INSERT INTO login_attempts (ip, attempted_at) VALUES (?, ?)", [ip, nowIso()]);
     return fail(res, "Пароль має містити мінімум 8 символів, велику та малу літеру і цифру", 422);
+  }
 
   const hash = createHash("sha256").update(token).digest("hex");
   const row  = await queryOne("SELECT * FROM password_resets WHERE token_hash = ? AND used = 0 LIMIT 1", [hash]);
@@ -517,8 +553,8 @@ async function mutAuthRegister(p: Record<string, unknown>): Promise<void> {
 
 async function mutProfileUpdate(uid: string, p: Record<string, unknown>): Promise<void> {
   const sets: string[] = []; const vals: Arg[] = [];
-  if ("name" in p)           { sets.push("name_text = ?");  vals.push(String(p.name ?? "").trim()); }
-  if ("goal" in p)           { sets.push("goal = ?");       vals.push(p.goal ? String(p.goal) : null); }
+  if ("name" in p)           { sets.push("name_text = ?");  vals.push(String(p.name ?? "").trim().slice(0, 100)); }
+  if ("goal" in p)           { sets.push("goal = ?");       vals.push(p.goal ? String(p.goal).trim().slice(0, 200) : null); }
   if ("level" in p)          { sets.push("level = ?");      vals.push(String(p.level)); }
   if ("avatar" in p) {
     // Only allow short identifiers (emoji, icon names, UUIDs) — no URLs
@@ -1004,8 +1040,14 @@ async function handleBillingCheckout(req: VercelRequest, res: VercelResponse): P
     metadata: { app_user_id: uid },
   };
   const cusId = String(row.stripe_customer_id ?? "");
-  if (cusId) (params as Record<string, unknown>).customer = cusId;
-  else params.customer_email = String(row.email);
+  if (cusId) {
+    (params as Record<string, unknown>).customer = cusId;
+  } else {
+    params.customer_email = String(row.email);
+    params.subscription_data = {
+      trial_period_days: 7,
+    };
+  }
   const session = await getStripe().checkout.sessions.create(params);
   respond(res, { url: session.url });
 }
@@ -1172,14 +1214,13 @@ async function handleGoogleCallback(req: VercelRequest, res: VercelResponse): Pr
       // Create new user
       const id    = `user-${randomUUID()}`;
       const now   = nowIso();
-      const trial = new Date(Date.now() + 7 * 86400_000).toISOString().replace(/\.\d{3}Z$/, "Z");
       const defS  = JSON.stringify({ language: "uk", notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true });
       const name  = gUser.name || email.split("@")[0];
 
       await exec(
         `INSERT INTO users (id, email, pw_hash, name_text, role, level, goal, sub_status, trial_ends, ob_done, settings_j, google_sub, created_at, updated_at)
-         VALUES (?, ?, '', ?, 'student', 'A0', NULL, 'trial', ?, 0, ?, ?, ?, ?)`,
-        [id, email, name, trial, defS, gUser.id, now, now]
+         VALUES (?, ?, '', ?, 'student', 'A0', NULL, 'free', NULL, 0, ?, ?, ?, ?)`,
+        [id, email, name, defS, gUser.id, now, now]
       );
       await ensureProgress(id);
       setCookie(res, await signToken(id));
@@ -1354,8 +1395,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "POST" && route === "/auth/register")     return await handleRegister(req, res, body);
     if (meth === "POST" && route === "/auth/login")        return await handleLogin(req, res, body);
     if (meth === "POST" && route === "/auth/logout")       return await handleLogout(res);
-    if (meth === "POST" && route === "/auth/forgot")       return await handleForgot(res, body);
-    if (meth === "POST" && route === "/auth/reset")        return await handleReset(res, body);
+    if (meth === "POST" && route === "/auth/forgot")       return await handleForgot(req, res, body);
+    if (meth === "POST" && route === "/auth/reset")        return await handleReset(req, res, body);
     if (meth === "POST" && route === "/auth/delete")       return await handleDeleteAccount(req, res, body);
     if (meth === "POST" && route === "/auth/deactivate")   return await handleDeactivate(req, res);
     if (meth === "GET"  && route === "/auth/google/start")    return await handleGoogleStart(req, res);

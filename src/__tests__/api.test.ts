@@ -203,7 +203,7 @@ describe("POST /auth/register", () => {
     expect(user.email).toBe("new@example.com");
     expect(user.name).toBe("Тест");
     expect(user.role).toBe("student");
-    expect(user.subscriptionStatus).toBe("trial");
+    expect(user.subscriptionStatus).toBe("free");
     const setCookie = String(headers["Set-Cookie"] ?? "");
     expect(setCookie).toContain("sl_session=");
     expect(setCookie).toContain("HttpOnly");

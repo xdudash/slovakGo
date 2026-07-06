@@ -3,8 +3,8 @@ const STATIC_CACHE  = `${CACHE_VERSION}-static`;
 const API_CACHE     = `${CACHE_VERSION}-api`;
 const AUDIO_CACHE   = `${CACHE_VERSION}-audio`;
 
-// Never cache auth or billing — these must always be fresh
-const NO_CACHE_PATHS = ['/api/auth/', '/api/billing/', '/api/stripe/'];
+// Never cache auth, billing or Vercel analytics — these must always be fresh or handled directly by the browser
+const NO_CACHE_PATHS = ['/api/auth/', '/api/billing/', '/api/stripe/', '/_vercel/'];
 
 const PRECACHE_URLS = [
   '/',

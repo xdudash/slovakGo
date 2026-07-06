@@ -30,6 +30,7 @@ export interface User {
   onboardingDone: boolean;
   settings: UserSettings;
   isBlocked?: boolean;
+  hasUsedTrial: boolean;
 }
 
 export interface Word {

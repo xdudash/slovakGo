@@ -387,6 +387,7 @@ export const seedUsers: User[] = [
     subscriptionStatus: "trial",
     trialEndsAt: addDays(now, 14),
     onboardingDone: true,
+    hasUsedTrial: true,
     settings: { language: "uk", notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true, dailyGoal: 10, theme: "default" }
   },
   {
@@ -399,6 +400,7 @@ export const seedUsers: User[] = [
     createdAt: now.toISOString(),
     subscriptionStatus: "plus",
     onboardingDone: true,
+    hasUsedTrial: true,
     settings: { language: "uk", notificationsEnabled: false, soundEnabled: true, hapticsEnabled: false, theme: "default" }
   },
   {
@@ -411,6 +413,7 @@ export const seedUsers: User[] = [
     createdAt: now.toISOString(),
     subscriptionStatus: "plus",
     onboardingDone: true,
+    hasUsedTrial: true,
     settings: { language: "uk", notificationsEnabled: false, soundEnabled: false, hapticsEnabled: false, theme: "default" }
   }
 ];

@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS users (
   trial_ends          TEXT,
   stripe_customer_id  TEXT,
   stripe_sub_id       TEXT,
+  sub_expires_at      TEXT,
   ob_done             INTEGER NOT NULL DEFAULT 0,
   is_blocked          INTEGER NOT NULL DEFAULT 0,
   referred_by         TEXT,

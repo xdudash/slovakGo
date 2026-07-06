@@ -1377,19 +1377,20 @@ textarea:focus,
   margin: 0;
 }
 
+.profile-page {
+  max-width: 560px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 .profile-hero {
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 14px;
-  padding: calc(14px + env(safe-area-inset-top)) 16px 16px;
-  background: rgba(255, 255, 255, 0.90);
-  border-bottom: 1px solid rgba(33, 25, 70, 0.06);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
+  padding: calc(20px + env(safe-area-inset-top)) 16px 16px;
+  background: transparent;
 }
 
 .profile-hero + .page-content {

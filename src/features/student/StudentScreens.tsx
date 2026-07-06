@@ -1624,7 +1624,7 @@ function ProfileScreen() {
   }
 
   return (
-    <>
+    <div className="profile-page">
       <div className="profile-hero">
         <div className="profile-hero-info">
           <button className="avatar-wrap" type="button" onClick={() => fileRef.current?.click()} aria-label={t("student.profile.avatar_title")}>
@@ -1838,7 +1838,7 @@ function ProfileScreen() {
           </Card>
         </Modal>
       )}
-    </>
+    </div>
   );
 }
 
@@ -2321,22 +2321,22 @@ export function PaywallScreen() {
       </section>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-        {user.subscriptionStatus === "trial" ? (
+        {!user.hasUsedTrial ? (
           <>
-            <Button onClick={() => navigate("/app/path")} disabled={loading} style={{ width: "100%" }}>
-              Розпочати 7 днів безкоштовно
+            <Button onClick={handleSubscribe} disabled={loading} style={{ width: "100%" }}>
+              {loading ? "Завантаження…" : "Розпочати 7 днів безкоштовно"}
             </Button>
-            <Button variant="secondary" onClick={handleSubscribe} disabled={loading} style={{ width: "100%" }}>
-              Оплатити підписку (€9.99/міс)
-            </Button>
+            <div style={{ textAlign: "center", fontSize: "0.8rem", color: "var(--muted)", marginTop: "4px" }}>
+              💳 Потрібна карта. Оплата почнеться автоматично через 7 днів, якщо ви не скасуєте підписку.
+            </div>
           </>
         ) : (
           <>
             <div style={{ textAlign: "center", padding: "12px", background: "rgba(239, 68, 68, 0.08)", borderRadius: "12px", border: "1px solid rgba(239, 68, 68, 0.2)", marginBottom: "8px", fontSize: "0.85rem", color: "var(--red)" }}>
-              🔒 <strong>Пробний період завершився.</strong> Будь ласка, оформіть підписку, щоб продовжити навчання.
+              🔒 <strong>Пробний період завершився або був використаний.</strong> Будь ласка, оформіть підписку, щоб продовжити навчання.
             </div>
             <Button onClick={handleSubscribe} disabled={loading} style={{ width: "100%" }}>
-              Оплатити підписку (€9.99/міс)
+              {loading ? "Завантаження…" : "Оплатити підписку (€9.99/міс)"}
             </Button>
           </>
         )}
@@ -2391,7 +2391,7 @@ function LevelsScreen() {
 
 function ShopScreen() {
   const { t } = useT();
-  const { isPlus } = useStudentData();
+  const { user, isPlus } = useStudentData();
   const [searchParams, setSearchParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -2500,7 +2500,11 @@ function ShopScreen() {
               </Button>
             </div>
           : <Button variant="primary" disabled={loading} onClick={handleSubscribe} className="shop-btn-buy">
-              {loading ? t("student.shop.btn_loading") : t("student.shop.btn_subscribe")}
+              {loading 
+                ? t("student.shop.btn_loading") 
+                : (user?.hasUsedTrial 
+                    ? t("student.shop.btn_subscribe") 
+                    : "Спробувати 7 днів безкоштовно")}
             </Button>
         }
       </Card>

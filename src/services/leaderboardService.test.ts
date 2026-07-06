@@ -27,6 +27,7 @@ function makeUser(id: string, role: User['role'] = 'student'): User {
     createdAt: '',
     subscriptionStatus: 'trial',
     onboardingDone: true,
+    hasUsedTrial: false,
     settings: { language: 'uk', notificationsEnabled: false, soundEnabled: false, hapticsEnabled: false },
   };
 }
