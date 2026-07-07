@@ -38,6 +38,26 @@ export async function requestFcmToken(): Promise<{ token?: string; error?: strin
     
     // Narrow scope keeps this SW from intercepting fetches while still receiving push events
     const swReg = await navigator.serviceWorker.register(FCM_SW_URL, { scope: FCM_SW_SCOPE });
+    
+    // Force update to ensure we have the latest SW
+    await swReg.update().catch(() => undefined);
+
+    // Wait until the service worker is fully ACTIVE before subscribing to PushManager
+    await new Promise<void>((resolve) => {
+      if (swReg.active && swReg.active.state === "activated") {
+        resolve();
+      } else {
+        const worker = swReg.installing || swReg.waiting || swReg.active;
+        if (worker) {
+          worker.addEventListener("statechange", () => {
+            if (worker.state === "activated") resolve();
+          });
+        } else {
+          resolve(); // Fallback if worker is somehow null
+        }
+      }
+    });
+
     const token = await getToken(getMessaging(app()), { vapidKey: VAPID_KEY, serviceWorkerRegistration: swReg });
     
     if (token) return { token };
