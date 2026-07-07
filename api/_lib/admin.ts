@@ -96,32 +96,74 @@ export async function handleAdminNotify(req: VercelRequest, res: VercelResponse,
   else if (target.startsWith("level:")) { sql += " AND u.level = ?"; args.push(target.slice(6)); }
 
   const rows = await query(sql, args);
-  if (!rows.length) return respond(res, { ok: true, sent: 0 });
+  if (!rows.length) return respond(res, { ok: true, sent: 0, warning: "No FCM tokens found" });
 
-  const serverKey = process.env.FIREBASE_SERVER_KEY;
-  if (!serverKey) {
-    console.error("[admin-notify] FIREBASE_SERVER_KEY not set — push not sent");
-    return respond(res, { ok: true, sent: 0, warning: "Push not configured (FIREBASE_SERVER_KEY missing)" });
+  // FCM V1 API with Service Account
+  const saJson = (process.env.FIREBASE_SERVICE_ACCOUNT_JSON ?? "").trim();
+  if (!saJson) {
+    console.error("[admin-notify] FIREBASE_SERVICE_ACCOUNT_JSON not set");
+    return respond(res, { ok: true, sent: 0, warning: "Push not configured (FIREBASE_SERVICE_ACCOUNT_JSON missing)" });
   }
 
+  let sa: { project_id: string; client_email: string; private_key: string };
+  try { sa = JSON.parse(saJson); } catch {
+    return respond(res, { ok: true, sent: 0, warning: "Invalid FIREBASE_SERVICE_ACCOUNT_JSON" });
+  }
+
+  // Get OAuth2 access token
+  const { createSign } = await import("crypto");
+  function base64url(buf: Buffer | string) {
+    const b = typeof buf === "string" ? Buffer.from(buf) : buf;
+    return b.toString("base64").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  }
+  const now = Math.floor(Date.now() / 1000);
+  const header  = base64url(JSON.stringify({ alg: "RS256", typ: "JWT" }));
+  const payload = base64url(JSON.stringify({
+    iss: sa.client_email, scope: "https://www.googleapis.com/auth/firebase.messaging",
+    aud: "https://oauth2.googleapis.com/token", iat: now, exp: now + 3600,
+  }));
+  const unsigned = `${header}.${payload}`;
+  const sign = createSign("RSA-SHA256"); sign.update(unsigned);
+  const jwt = `${unsigned}.${base64url(sign.sign(sa.private_key))}`;
+
+  const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: `grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer&assertion=${jwt}`,
+  });
+  const tokenData = await tokenRes.json() as { access_token?: string };
+  if (!tokenData.access_token) {
+    console.error("[admin-notify] Failed to get FCM access token");
+    return respond(res, { ok: true, sent: 0, warning: "Could not authenticate with Firebase" });
+  }
+
+  const accessToken = tokenData.access_token;
+  const fcmUrl = `https://fcm.googleapis.com/v1/projects/${sa.project_id}/messages:send`;
   const tokens = rows.map(r => String(r.token));
   let sent = 0;
-  for (let i = 0; i < tokens.length; i += 500) {
-    const chunk = tokens.slice(i, i + 500);
-    const r = await fetch("https://fcm.googleapis.com/fcm/send", {
-      method: "POST",
-      headers: { Authorization: `key=${serverKey}`, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        registration_ids: chunk,
-        notification: { title, body: msg },
-        data: { type: "admin_broadcast" },
-      }),
-    });
-    if (r.ok) { const d = await r.json() as { success?: number }; sent += d.success ?? 0; }
-    else console.error("[fcm] chunk failed:", r.status, await r.text().catch(() => ""));
-  }
+
+  await Promise.all(tokens.map(async (token) => {
+    try {
+      const r = await fetch(fcmUrl, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${accessToken}`, "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: {
+            token,
+            notification: { title, body: msg },
+            data: { type: "admin_broadcast" },
+            webpush: { notification: { icon: "/logosk.jpg" } },
+          },
+        }),
+      });
+      if (r.ok) sent++;
+      else console.warn("[fcm-v1] failed token:", token.slice(0, 10), r.status, await r.text().catch(() => ""));
+    } catch (e) { console.error("[fcm-v1] error:", e); }
+  }));
+
   respond(res, { ok: true, sent });
 }
+
 
 export async function handleAdminUsers(req: VercelRequest, res: VercelResponse): Promise<void> {
   const uid = await requireUid(req, res); if (!uid) return;
