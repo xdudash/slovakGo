@@ -67,11 +67,17 @@ export async function handleBillingWebhook(req: VercelRequest, res: VercelRespon
     event = JSON.parse(rawBody.toString()); // BYPASS SECURITY FOR TESTING
   }
 
+  function getSafeExpiresAt(periodEnd: unknown): string {
+    if (typeof periodEnd === "number" && !isNaN(periodEnd)) return new Date(periodEnd * 1000).toISOString();
+    if (typeof periodEnd === "string" && !isNaN(Number(periodEnd))) return new Date(Number(periodEnd) * 1000).toISOString();
+    const d = new Date(); d.setDate(d.getDate() + 30); return d.toISOString();
+  }
+
   if (event.type === "checkout.session.completed") {
     const s = event.data.object as Stripe.Checkout.Session;
     if (s.client_reference_id && s.subscription) {
       const sub = await getStripe().subscriptions.retrieve(String(s.subscription));
-      const expiresAt = new Date(sub.current_period_end * 1000).toISOString();
+      const expiresAt = getSafeExpiresAt(sub.current_period_end);
       await exec(
         "UPDATE users SET sub_status = 'plus', stripe_customer_id = ?, stripe_sub_id = ?, sub_expires_at = ?, updated_at = ? WHERE id = ?",
         [String(s.customer ?? ""), String(s.subscription), expiresAt, nowIso(), s.client_reference_id]
@@ -81,7 +87,7 @@ export async function handleBillingWebhook(req: VercelRequest, res: VercelRespon
 
   if (event.type === "customer.subscription.updated") {
     const sub = event.data.object as Stripe.Subscription;
-    const expiresAt = new Date(sub.current_period_end * 1000).toISOString();
+    const expiresAt = getSafeExpiresAt(sub.current_period_end);
     const status = (sub.status === "active" || sub.status === "trialing") ? "plus" : "free";
     await exec(
       "UPDATE users SET sub_status = ?, sub_expires_at = ?, updated_at = ? WHERE stripe_customer_id = ?",
