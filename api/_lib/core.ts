@@ -77,7 +77,8 @@ export async function verifyToken(token: string): Promise<string | null> {
   catch { return null; }
 }
 export function setCookie(res: VercelResponse, token: string): void {
-  res.setHeader("Set-Cookie", `${JWT_COOKIE}=${token}; HttpOnly; SameSite=Lax; Path=/; Max-Age=${30 * 86400}${isProd ? "; Secure" : ""}`);
+  const exp = new Date(Date.now() + 30 * 86400 * 1000).toUTCString();
+  res.setHeader("Set-Cookie", `${JWT_COOKIE}=${token}; HttpOnly; SameSite=Lax; Path=/; Max-Age=${30 * 86400}; Expires=${exp}${isProd ? "; Secure" : ""}`);
 }
 export function clearCookie(res: VercelResponse): void {
   res.setHeader("Set-Cookie", `${JWT_COOKIE}=; HttpOnly; SameSite=Lax; Path=/; Max-Age=0`);
