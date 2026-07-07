@@ -105,7 +105,7 @@ export const apiClient = {
     return apiRequest<{ ok: boolean }>("/auth/deactivate", { method: "POST" });
   },
 
-  saveFcmToken(token: string) {
+  saveFcmToken(token: string | null) {
     return apiRequest<{ ok: boolean }>("/user/fcm-token", {
       method: "POST",
       body: JSON.stringify({ token, platform: "web" })

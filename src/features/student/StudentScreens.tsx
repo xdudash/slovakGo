@@ -1346,7 +1346,7 @@ function PracticeScreen() {
   const recentMistakeExercises: PracticeExercise[] = (() => {
     const seen = new Set<string>();
     const result: PracticeExercise[] = [];
-    const sorted = [...progress.mistakes].sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+    const sorted = [...(progress.mistakes || [])].sort((a, b) => (b.createdAt || "").localeCompare(a.createdAt || ""));
     for (const m of sorted) {
       if (seen.has(m.exerciseId)) continue;
       seen.add(m.exerciseId);
@@ -2238,7 +2238,10 @@ function SettingsScreen() {
                 const enabled = e.target.checked;
                 if (!enabled) {
                   setNotifications(false);
-                  import("../../services/fcmService").then(({ revokeFcmToken }) => revokeFcmToken());
+                  updateUser({ settings: { ...user!.settings, notificationsEnabled: false } });
+                  apiClient.saveFcmToken(null).catch(() => undefined);
+                  // We don't have revokeFcmToken anymore, just ignoring it on the client is enough
+                  // since we removed it from the backend via saveFcmToken(null).
                   return;
                 }
 
@@ -2250,16 +2253,30 @@ function SettingsScreen() {
                 }
 
                 try {
+                  const permission = await Notification.requestPermission();
+                  
+                  if (permission !== "granted") {
+                    setNotifications(false);
+                    e.target.checked = false;
+                    alert("Сповіщення заблоковані. Будь ласка, дозвольте їх у налаштуваннях браузера або телефону.");
+                    return;
+                  }
+
+                  // Permission granted! Now load FCM and get token
+                  setNotifications(true);
+                  updateUser({ settings: { ...user!.settings, notificationsEnabled: true } });
                   const result = await requestFcmToken();
                   
                   if (result && result.token) {
                     await apiClient.saveFcmToken(result.token).catch(() => undefined);
                   } else {
                     setNotifications(false);
+                    updateUser({ settings: { ...user!.settings, notificationsEnabled: false } });
                     alert(result?.error || "Не вдалося підключити пуш-повідомлення до сервера.");
                   }
                 } catch (err) {
                   setNotifications(false);
+                  updateUser({ settings: { ...user!.settings, notificationsEnabled: false } });
                   alert("Помилка при налаштуванні сповіщень.");
                 }
               }}

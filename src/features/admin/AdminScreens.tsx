@@ -1145,7 +1145,7 @@ function Errors() {
   }, []);
 
   const mistakes = Object.values(data.progress).flatMap((p) => p.mistakes)
-    .sort((a, b) => b.createdAt.localeCompare(a.createdAt))
+    .sort((a, b) => (b.createdAt || "").localeCompare(a.createdAt || ""))
     .slice(0, 100);
   const byExercise: Record<string, { correct: string; wrongs: string[]; count: number }> = {};
   for (const m of mistakes) {
