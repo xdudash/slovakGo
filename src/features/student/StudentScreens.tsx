@@ -2173,15 +2173,47 @@ function SettingsScreen() {
             <input
               type="checkbox"
               checked={notifications}
-              onChange={(e) => {
+              onChange={async (e) => {
                 const enabled = e.target.checked;
-                setNotifications(enabled);
-                if (enabled) {
-                  import("../../services/fcmService").then(({ requestFcmToken }) =>
-                    requestFcmToken().then((tok) => { if (tok) apiClient.saveFcmToken(tok).catch(() => undefined); })
-                  );
-                } else {
+                if (!enabled) {
+                  setNotifications(false);
                   import("../../services/fcmService").then(({ revokeFcmToken }) => revokeFcmToken());
+                  return;
+                }
+
+                // Check if Notifications are supported
+                if (!("Notification" in window)) {
+                  alert("Цей браузер не підтримує пуш-повідомлення. На iPhone/iPad потрібно додати додаток на 'Екран Домівка' (через кнопку Поділитися).");
+                  e.target.checked = false;
+                  return;
+                }
+
+                try {
+                  // Request permission IMMEDIATELY inside the event handler (before any async imports)
+                  // This is required by browsers to recognize it as a direct user action.
+                  const permission = await Notification.requestPermission();
+                  
+                  if (permission !== "granted") {
+                    setNotifications(false);
+                    e.target.checked = false;
+                    alert("Сповіщення заблоковані. Будь ласка, дозвольте їх у налаштуваннях браузера або телефону.");
+                    return;
+                  }
+
+                  // Permission granted! Now load FCM and get token
+                  setNotifications(true);
+                  const { requestFcmToken } = await import("../../services/fcmService");
+                  const tok = await requestFcmToken();
+                  
+                  if (tok) {
+                    await apiClient.saveFcmToken(tok).catch(() => undefined);
+                  } else {
+                    setNotifications(false);
+                    alert("Не вдалося підключити пуш-повідомлення до сервера.");
+                  }
+                } catch (err) {
+                  setNotifications(false);
+                  alert("Помилка при налаштуванні сповіщень.");
                 }
               }}
             />

@@ -2,6 +2,7 @@ import { seedData } from "../data/seedData";
 import type { AppData } from "../types";
 
 const STORAGE_KEY = "slovakgo.state.v1";
+const SEED_USER_IDS = ["user-student", "user-teacher", "user-admin"];
 
 function cloneSeed(): AppData {
   return JSON.parse(JSON.stringify(seedData)) as AppData;
@@ -32,7 +33,15 @@ export const storageService = {
         return data;
       }
       const parsed = JSON.parse(raw) as AppData;
-      return { ...cloneSeed(), ...parsed };
+      // Strip seed/demo users — keep only real registered users
+      const realUsers = (parsed.users ?? []).filter(u => !SEED_USER_IDS.includes(u.id));
+      const base = cloneSeed();
+      if (realUsers.length > 0) {
+        // Real users exist — use parsed data but replace users with only real ones
+        return { ...base, ...parsed, users: realUsers };
+      }
+      // No real users — return full parsed (might be dev/demo mode)
+      return { ...base, ...parsed };
     } catch {
       return cloneSeed();
     }
