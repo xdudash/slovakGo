@@ -251,7 +251,7 @@ function PathScreen() {
   const adminStatus = (l: { id: string }) =>
     progress.completedLessons.includes(l.id) ? "completed" as const : "available" as const;
 
-  const { levelLessons, levelProgress, current } = useMemo(() => {
+  const { levelLessons, levelProgress, current, groupedTopics } = useMemo(() => {
     const LEVEL_ORDER_SORT = ["A0","A1","A2","B1","B2","C1"] as const;
     const lLessons = isAdmin
       ? data.lessons
@@ -262,8 +262,45 @@ function PathScreen() {
     const curr = lLessons.find((l) => (isAdmin ? adminStatus(l) : lessonService.status(l, data.lessons, progress)) === "current")
       || lLessons.find((l) => (isAdmin ? adminStatus(l) : lessonService.status(l, data.lessons, progress)) === "available")
       || lLessons[0];
-    return { levelLessons: lLessons, levelProgress: lProgress, current: curr };
-  }, [data.lessons, progress, isAdmin]);
+
+    type TopicStatus = "completed" | "current" | "locked";
+    type GroupedTopic = { topicName: string; lessons: typeof lLessons; status: TopicStatus };
+
+    const groups: GroupedTopic[] = [];
+    let currentTopicName = "";
+    let currentTopicLessons: typeof lLessons = [];
+
+    for (const l of lLessons) {
+      const tName = l.topic || t("student.path.default_topic");
+      if (tName !== currentTopicName) {
+        if (currentTopicLessons.length > 0) {
+          groups.push({ topicName: currentTopicName, lessons: currentTopicLessons, status: "locked" });
+        }
+        currentTopicName = tName;
+        currentTopicLessons = [l];
+      } else {
+        currentTopicLessons.push(l);
+      }
+    }
+    if (currentTopicLessons.length > 0) {
+      groups.push({ topicName: currentTopicName, lessons: currentTopicLessons, status: "locked" });
+    }
+
+    for (const group of groups) {
+      const firstStatus = isAdmin ? adminStatus(group.lessons[0]) : lessonService.status(group.lessons[0], data.lessons, progress);
+      const lastStatus = isAdmin ? adminStatus(group.lessons[group.lessons.length - 1]) : lessonService.status(group.lessons[group.lessons.length - 1], data.lessons, progress);
+      
+      if (lastStatus === "completed") {
+        group.status = "completed";
+      } else if (firstStatus === "locked") {
+        group.status = "locked";
+      } else {
+        group.status = "current";
+      }
+    }
+
+    return { levelLessons: lLessons, levelProgress: lProgress, current: curr, groupedTopics: groups };
+  }, [data.lessons, progress, isAdmin, t]);
   const scenario = getScenarioForGoal(user.goal);
   const dailyPhrases = getDailyPhrases(user.goal, 3);
 
@@ -316,33 +353,56 @@ function PathScreen() {
 
       {/* Visual lesson node path */}
       <div className="learning-path">
-        {levelLessons.map((lesson, index) => {
-          const status = isAdmin ? adminStatus(lesson) : lessonService.status(lesson, data.lessons, progress);
-          const nodeClass = status === "current" ? "active" : status;
-          const prevStatus = index > 0
-            ? (isAdmin ? adminStatus(levelLessons[index - 1]) : lessonService.status(levelLessons[index - 1], data.lessons, progress))
-            : null;
-          const connectorClass = prevStatus === "completed" && status !== "locked" ? "done"
-            : prevStatus === "completed" ? "next"
-            : "";
+        {groupedTopics.map((group, groupIndex) => {
+          if (group.status === "locked") {
+            const prevGroup = groupedTopics[groupIndex - 1];
+            return (
+              <div key={group.topicName + groupIndex} className="topic-group topic-locked-overlay">
+                <div className="topic-header">
+                  <h3>{group.topicName}</h3>
+                  <p>🔒 Пройдіть тему «{prevGroup ? prevGroup.topicName : "попередню"}», щоб відкрити цю.</p>
+                </div>
+              </div>
+            );
+          }
 
           return (
-            <div key={lesson.id} style={{ display: "contents" }}>
-              {index > 0 && <div className={`connector${connectorClass ? ` ${connectorClass}` : ""}`} />}
-              <div className="lesson-node-wrap">
-                <button
-                  type="button"
-                  className={`lesson-node ${nodeClass}`}
-                  onClick={() => navigate(`/app/lesson/${lesson.id}`)}
-                  aria-label={lesson.title}
-                >
-                  {status === "completed" ? <CheckCircle2 size={22} />
-                    : <Play size={20} style={{ fill: "currentColor" }} />}
-                </button>
-                <div className="lesson-node-label">
-                  <h3>{lesson.title}{!lesson.isPublished && isAdmin && <span style={{ fontSize: "0.65rem", marginLeft: 4, color: "var(--muted)", fontWeight: 400 }}>чернетка</span>}</h3>
-                  <p>{lesson.topic} · {lesson.xpReward} XP · {lesson.estimatedMinutes} хв</p>
-                </div>
+            <div key={group.topicName + groupIndex} className="topic-group">
+              <div className="topic-header">
+                <h3>{group.topicName}</h3>
+              </div>
+              <div className="topic-lessons">
+                {group.lessons.map((lesson, index) => {
+                  const status = isAdmin ? adminStatus(lesson) : lessonService.status(lesson, data.lessons, progress);
+                  const nodeClass = status === "current" ? "active" : status;
+                  const prevStatus = index > 0
+                    ? (isAdmin ? adminStatus(group.lessons[index - 1]) : lessonService.status(group.lessons[index - 1], data.lessons, progress))
+                    : null;
+                  const connectorClass = prevStatus === "completed" && status !== "locked" ? "done"
+                    : prevStatus === "completed" ? "next"
+                    : "";
+
+                  return (
+                    <div key={lesson.id} style={{ display: "contents" }}>
+                      {index > 0 && <div className={`connector${connectorClass ? ` ${connectorClass}` : ""}`} />}
+                      <div className="lesson-node-wrap">
+                        <button
+                          type="button"
+                          className={`lesson-node ${nodeClass}`}
+                          onClick={() => navigate(`/app/lesson/${lesson.id}`)}
+                          aria-label={lesson.title}
+                        >
+                          {status === "completed" ? <CheckCircle2 size={22} />
+                            : <Play size={20} style={{ fill: "currentColor" }} />}
+                        </button>
+                        <div className="lesson-node-label">
+                          <h3>{lesson.title}{!lesson.isPublished && isAdmin && <span style={{ fontSize: "0.65rem", marginLeft: 4, color: "var(--muted)", fontWeight: 400 }}>чернетка</span>}</h3>
+                          <p>{lesson.xpReward} XP · {lesson.estimatedMinutes} хв</p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           );
