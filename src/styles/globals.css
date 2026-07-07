@@ -2058,7 +2058,8 @@ textarea:focus,
   }
 }
 
-@media (max-width: 420px) {
+/* Apply mobile layout tweaks to all devices below the desktop breakpoint */
+@media (max-width: 759px) {
   .page-header h1 {
     font-size: 1.75rem;
   }
@@ -4778,7 +4779,7 @@ textarea:focus,
 ═══════════════════════════════════════════════════════════════════ */
 
 /* Mobile padding fixes to prevent content from hitting screen edges */
-@media (max-width: 480px) {
+@media (max-width: 759px) {
   .profile-hero {
     padding-left: 12px;
     padding-right: 12px;
@@ -5011,7 +5012,7 @@ textarea:focus,
 }
 
 /* ── MOBILE OVERRIDES ────────────────────────────────────────────────────── */
-@media (max-width: 420px) {
+@media (max-width: 759px) {
   .admin-stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
