@@ -64,8 +64,7 @@ export async function handleBillingPortal(req: VercelRequest, res: VercelRespons
 }
 
 export async function handleBillingWebhook(req: VercelRequest, res: VercelResponse, rawBody: Buffer): Promise<void> {
-  const secret     = (process.env.STRIPE_WEBHOOK_SECRET ?? "").trim().replace(/['"]/g, '');
-  const thinSecret = (process.env.STRIPE_WEBHOOK_SECRET_THIN ?? "").trim().replace(/['"]/g, '');
+  const secret = (process.env.STRIPE_WEBHOOK_SECRET ?? "").trim();
   if (!secret) return fail(res, "Webhook secret not configured", 503);
   const sig = (req.headers["stripe-signature"] as string) ?? "";
   let event: Stripe.Event;
@@ -73,17 +72,10 @@ export async function handleBillingWebhook(req: VercelRequest, res: VercelRespon
   try {
     event = getStripe().webhooks.constructEvent(rawBody, sig, secret);
   } catch (err) {
-    if (thinSecret) {
-      try { getStripe().webhooks.constructEvent(rawBody, sig, thinSecret); return respond(res, { ok: true }); }
-      catch { /* fall through */ }
-    }
-    console.warn("Stripe signature validation failed, bypassing for testing:", err);
-    try {
-      event = JSON.parse(rawBody.toString());
-    } catch {
-      return fail(res, "Invalid JSON body", 400);
-    }
+    console.error("[webhook] Invalid signature:", err);
+    return fail(res, "Invalid signature", 400);
   }
+
 
   function getSafeExpiresAt(periodEnd: unknown): string {
     if (typeof periodEnd === "number" && !isNaN(periodEnd)) return new Date(periodEnd * 1000).toISOString();

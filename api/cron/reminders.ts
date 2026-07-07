@@ -5,9 +5,12 @@
  *   2. Have not yet practiced today
  *   3. Have not already received a reminder today
  *   4. Have at least one FCM token registered
+ *
+ * Uses FCM V1 API with Service Account authentication.
  */
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { createClient, type InValue } from "@libsql/client";
+import { createSign } from "crypto";
 
 type Arg = InValue;
 
@@ -32,42 +35,126 @@ function safeJson<T>(s: string, fallback: T): T {
 }
 const nowIso = () => new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
 
-async function sendFcm(tokens: string[], title: string, body: string): Promise<number> {
-  const serverKey = process.env.FIREBASE_SERVER_KEY;
-  if (!serverKey || !tokens.length) return 0;
+// ─── FCM V1 Auth ──────────────────────────────────────────────────────────────
 
+interface ServiceAccount {
+  project_id: string;
+  client_email: string;
+  private_key: string;
+}
+
+function base64url(buf: Buffer | string): string {
+  const b = typeof buf === "string" ? Buffer.from(buf) : buf;
+  return b.toString("base64").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+
+function makeJwt(sa: ServiceAccount): string {
+  const now = Math.floor(Date.now() / 1000);
+  const header = base64url(JSON.stringify({ alg: "RS256", typ: "JWT" }));
+  const payload = base64url(JSON.stringify({
+    iss:   sa.client_email,
+    scope: "https://www.googleapis.com/auth/firebase.messaging",
+    aud:   "https://oauth2.googleapis.com/token",
+    iat:   now,
+    exp:   now + 3600,
+  }));
+  const unsigned = `${header}.${payload}`;
+  const sign = createSign("RSA-SHA256");
+  sign.update(unsigned);
+  const sig = base64url(sign.sign(sa.private_key));
+  return `${unsigned}.${sig}`;
+}
+
+let _accessToken: string | null = null;
+let _tokenExpiry = 0;
+
+async function getAccessToken(sa: ServiceAccount): Promise<string | null> {
+  if (_accessToken && Date.now() < _tokenExpiry) return _accessToken;
+  try {
+    const jwt = makeJwt(sa);
+    const r = await fetch("https://oauth2.googleapis.com/token", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer&assertion=${jwt}`,
+    });
+    const d = await r.json() as { access_token?: string; expires_in?: number };
+    if (!d.access_token) return null;
+    _accessToken = d.access_token;
+    _tokenExpiry = Date.now() + ((d.expires_in ?? 3600) - 60) * 1000;
+    return _accessToken;
+  } catch (err) {
+    console.error("[fcm] Failed to get access token:", err);
+    return null;
+  }
+}
+
+async function sendFcmV1(tokens: string[], title: string, body: string, projectId: string, accessToken: string): Promise<number> {
+  if (!tokens.length) return 0;
   let sent = 0;
-  for (let i = 0; i < tokens.length; i += 500) {
-    const chunk = tokens.slice(i, i + 500);
+  const url = `https://fcm.googleapis.com/v1/projects/${projectId}/messages:send`;
+
+  // FCM V1 sends one message per token
+  await Promise.all(tokens.map(async (token) => {
     try {
-      const r = await fetch("https://fcm.googleapis.com/fcm/send", {
-        method:  "POST",
-        headers: { Authorization: `key=${serverKey}`, "Content-Type": "application/json" },
-        body:    JSON.stringify({
-          registration_ids: chunk,
-          notification:     { title, body },
-          data:             { type: "reminder" },
+      const r = await fetch(url, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: {
+            token,
+            notification: { title, body },
+            data: { type: "reminder" },
+            webpush: {
+              notification: { icon: "/logosk.jpg", badge: "/logosk.jpg" },
+            },
+          },
         }),
       });
-      if (r.ok) {
-        const d = await r.json() as { success?: number };
-        sent += d.success ?? 0;
+      if (r.ok) sent++;
+      else {
+        const err = await r.json();
+        console.warn(`[fcm] Failed for token ${token.slice(0, 10)}...:`, err);
       }
-    } catch { /* non-fatal */ }
-  }
+    } catch (e) {
+      console.error("[fcm] send error:", e);
+    }
+  }));
+
   return sent;
 }
 
+// ─── Handler ──────────────────────────────────────────────────────────────────
+
 export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   // Vercel injects Authorization: Bearer <CRON_SECRET> on cron invocations.
-  // In dev (no secret set) we allow the call through so it can be tested manually.
   const cronSecret = process.env.CRON_SECRET;
   if (cronSecret && req.headers["authorization"] !== `Bearer ${cronSecret}`) {
     res.status(401).json({ ok: false, error: "Unauthorized" });
     return;
   }
 
-  // Current hour in Europe/Bratislava (CET = UTC+1, CEST = UTC+2)
+  // Load Service Account
+  const saJson = process.env.FIREBASE_SERVICE_ACCOUNT_JSON ?? "";
+  if (!saJson) {
+    res.status(200).json({ ok: true, skipped: "FIREBASE_SERVICE_ACCOUNT_JSON not configured" });
+    return;
+  }
+  const sa = saJson ? safeJson<ServiceAccount>(saJson, {} as ServiceAccount) : null;
+  if (!sa?.private_key || !sa?.client_email) {
+    res.status(200).json({ ok: true, skipped: "Invalid service account JSON" });
+    return;
+  }
+
+  const accessToken = await getAccessToken(sa);
+  if (!accessToken) {
+    res.status(200).json({ ok: false, error: "Could not get FCM access token" });
+    return;
+  }
+
+  // Current hour in Europe/Bratislava
   const bratislavaHour = Number(
     new Intl.DateTimeFormat("en-US", {
       timeZone: "Europe/Bratislava",
@@ -106,10 +193,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     const tokens = tokenRows.map(t => String(t.token));
     if (!tokens.length) continue;
 
-    const sent = await sendFcm(
+    const sent = await sendFcmV1(
       tokens,
       "SlovakGO — час практики! 🇸🇰",
-      "Не забудь про свій урок сьогодні — тримай серію! 🔥"
+      "Не забудь про свій урок сьогодні — тримай серію! 🔥",
+      sa.project_id,
+      accessToken,
     );
 
     if (sent > 0) {
