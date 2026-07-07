@@ -270,8 +270,8 @@ export const useAppStore = create<AppStore>((set, get) => ({
     // Request FCM permission after the user's very first lesson — unobtrusive timing
     if (!prevCompleted.includes(lesson.id) && prevCompleted.length === 0) {
       import("../services/fcmService").then(({ requestFcmToken }) => {
-        requestFcmToken().then((token) => {
-          if (token) apiClient.saveFcmToken(token).catch(() => undefined);
+        requestFcmToken().then((res) => {
+          if (res && res.token) apiClient.saveFcmToken(res.token).catch(() => undefined);
         }).catch(() => undefined);
       });
     }
