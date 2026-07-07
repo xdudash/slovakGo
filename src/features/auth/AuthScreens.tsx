@@ -26,11 +26,26 @@ function AuthShell({ title, text, children }: { title: string; text: string; chi
 
 export function Login() {
   const navigate = useNavigate();
-  const { login, authError } = useAppStore();
+  const { login, autoRestoreSession, authError } = useAppStore();
   const { t } = useT();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [checking, setChecking] = useState(true);
+
+  useEffect(() => {
+    autoRestoreSession().then((restored) => {
+      if (restored) {
+        const { data, currentUserId } = useAppStore.getState();
+        const user = data.users.find((u) => u.id === currentUserId);
+        if (user) {
+          navigate(roleHome(user.role), { replace: true });
+          return;
+        }
+      }
+      setChecking(false);
+    });
+  }, [autoRestoreSession, navigate]);
 
   async function submit(event: FormEvent) {
     event.preventDefault();
@@ -41,6 +56,10 @@ export function Login() {
     } finally {
       setLoading(false);
     }
+  }
+
+  if (checking) {
+    return <div style={{ display: "flex", height: "100vh", alignItems: "center", justifyContent: "center", color: "#6b7280" }}>Відновлення сесії...</div>;
   }
 
   return (

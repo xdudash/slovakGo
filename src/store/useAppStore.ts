@@ -33,6 +33,7 @@ interface AppStore {
   returnToAdmin: () => void;
   refreshUser: () => Promise<void>;
   drainSync: () => Promise<void>;
+  autoRestoreSession: () => Promise<boolean>;
   resetLocal: () => void;
 }
 
@@ -108,6 +109,32 @@ export const useAppStore = create<AppStore>((set, get) => ({
     set({ data, currentUserId: userId, authError: undefined });
     get().drainSync().catch(() => undefined);
     return data.users.find((u) => u.id === userId) ?? null;
+  },
+
+  async autoRestoreSession() {
+    try {
+      const fullState = await apiClient.syncPull(0) as { user: User; progress: AppData["progress"][string]; userWords: UserWord[]; lessons: Lesson[] };
+      const userId = fullState.user.id;
+      const defaults = { language: "uk" as const, notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true };
+      
+      let data = get().data;
+      const users = data.users.filter(u => u.id !== userId);
+      data = {
+        ...data,
+        users: [...users, { ...fullState.user, settings: { ...defaults, ...fullState.user.settings } }],
+        progress: { ...data.progress, [userId]: { ...fullState.progress, lessonAttempts: data.progress[userId]?.lessonAttempts ?? [] } },
+        userWords: { ...data.userWords, [userId]: fullState.userWords },
+        lessons: fullState.lessons?.length ? fullState.lessons : data.lessons,
+      };
+
+      save(data);
+      localStorage.setItem(sessionKey, userId);
+      set({ data, currentUserId: userId, authError: undefined });
+      get().drainSync().catch(() => undefined);
+      return true;
+    } catch {
+      return false;
+    }
   },
 
   async register(payload) {
