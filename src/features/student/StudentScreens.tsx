@@ -2203,13 +2203,13 @@ function SettingsScreen() {
                   // Permission granted! Now load FCM and get token
                   setNotifications(true);
                   const { requestFcmToken } = await import("../../services/fcmService");
-                  const tok = await requestFcmToken();
+                  const result = await requestFcmToken();
                   
-                  if (tok) {
-                    await apiClient.saveFcmToken(tok).catch(() => undefined);
+                  if (result && result.token) {
+                    await apiClient.saveFcmToken(result.token).catch(() => undefined);
                   } else {
                     setNotifications(false);
-                    alert("Не вдалося підключити пуш-повідомлення до сервера.");
+                    alert(result?.error || "Не вдалося підключити пуш-повідомлення до сервера.");
                   }
                 } catch (err) {
                   setNotifications(false);

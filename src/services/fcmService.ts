@@ -27,19 +27,27 @@ function app() {
  * Registers firebase-messaging-sw.js at /fcm/ scope so it coexists with the main sw.js.
  * Returns null if Firebase is not configured or permission is denied.
  */
-export async function requestFcmToken(): Promise<string | null> {
-  if (!isConfigured() || !('Notification' in window) || !('serviceWorker' in navigator)) return null;
+export async function requestFcmToken(): Promise<{ token?: string; error?: string }> {
+  if (!isConfigured()) return { error: "Firebase ключі не знайдено (перевірте Vercel env та зробіть Redeploy)" };
+  if (!('Notification' in window)) return { error: "Браузер не підтримує Notification API" };
+  if (!('serviceWorker' in navigator)) return { error: "Браузер не підтримує Service Workers" };
+
   try {
     const permission = await Notification.requestPermission();
-    if (permission !== 'granted') return null;
+    if (permission !== 'granted') return { error: "Дозвіл не надано користувачем" };
+    
     // Narrow scope keeps this SW from intercepting fetches while still receiving push events
     const swReg = await navigator.serviceWorker.register(FCM_SW_URL, { scope: FCM_SW_SCOPE });
     const token = await getToken(getMessaging(app()), { vapidKey: VAPID_KEY, serviceWorkerRegistration: swReg });
-    return token || null;
-  } catch {
-    return null;
+    
+    if (token) return { token };
+    return { error: "Firebase повернув порожній токен" };
+  } catch (err: any) {
+    console.error("[FCM Error]:", err);
+    return { error: `Помилка Firebase: ${err?.message || "невідома помилка"}` };
   }
 }
+
 
 /** Unsubscribes from push notifications (called when user disables notifications in settings). */
 export async function revokeFcmToken(): Promise<void> {
