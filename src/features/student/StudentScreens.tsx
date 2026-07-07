@@ -19,6 +19,7 @@ import { getDailyPhrases, getScenarioForGoal } from "../../data/scenarios";
 import { downloadCertificate } from "../../services/certificateService";
 import { generateShareCard, shareOrDownloadCard } from "../../services/shareService";
 import { formatWeekTimer, secondsUntilWeekEnd } from "../../utils/date";
+import { requestFcmToken } from "../../services/fcmService";
 
 function useWeekTimer(): number {
   const [seconds, setSeconds] = useState(() => secondsUntilWeekEnd());
@@ -2189,20 +2190,6 @@ function SettingsScreen() {
                 }
 
                 try {
-                  // Request permission IMMEDIATELY inside the event handler (before any async imports)
-                  // This is required by browsers to recognize it as a direct user action.
-                  const permission = await Notification.requestPermission();
-                  
-                  if (permission !== "granted") {
-                    setNotifications(false);
-                    e.target.checked = false;
-                    alert("Сповіщення заблоковані. Будь ласка, дозвольте їх у налаштуваннях браузера або телефону.");
-                    return;
-                  }
-
-                  // Permission granted! Now load FCM and get token
-                  setNotifications(true);
-                  const { requestFcmToken } = await import("../../services/fcmService");
                   const result = await requestFcmToken();
                   
                   if (result && result.token) {
