@@ -12,6 +12,19 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, info: ErrorInfo) {
+    const msg = error.message || "";
+    if (msg.includes("Failed to fetch dynamically imported module") || msg.includes("Importing a module script failed")) {
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.getRegistrations().then((regs) => {
+          for (const reg of regs) reg.unregister();
+          window.location.reload();
+        }).catch(() => window.location.reload());
+      } else {
+        window.location.reload();
+      }
+      return; // Do not report chunk errors to server
+    }
+
     console.error("[ErrorBoundary]", error, info.componentStack);
     apiClient.reportError({
       message: error.message,
