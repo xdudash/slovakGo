@@ -8,7 +8,7 @@ function injectFcmConfig() {
   return {
     name: 'inject-fcm-config',
     closeBundle() {
-      const swPath = resolve(process.cwd(), 'dist/firebase-messaging-sw.js');
+      const swPath = resolve(process.cwd(), 'dist/sw.js');
       if (!existsSync(swPath)) return;
       const keys = [
         'VITE_FIREBASE_API_KEY',
