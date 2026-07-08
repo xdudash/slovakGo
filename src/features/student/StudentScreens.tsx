@@ -136,10 +136,10 @@ export function Onboarding() {
       <h1>{t("student.onboarding.goal_title")}</h1>
       <div className="onboarding-chip-list">
         {goals.map((item) => (
-          <button 
-            className={`onboarding-chip ${goal === item ? "active" : ""}`} 
-            key={item} 
-            type="button" 
+          <button
+            className={`onboarding-chip ${goal === item ? "active" : ""}`}
+            key={item}
+            type="button"
             onClick={() => { setGoal(item); setTimeout(() => setStep(2), 300); }}
           >
             <CheckCircle2 size={18} className="check-icon" />
@@ -252,11 +252,11 @@ function PathScreen() {
     progress.completedLessons.includes(l.id) ? "completed" as const : "available" as const;
 
   const { levelLessons, levelProgress, current, groupedTopics } = useMemo(() => {
-    const LEVEL_ORDER_SORT = ["A0","A1","A2","B1","B2","C1"] as const;
+    const LEVEL_ORDER_SORT = ["A0", "A1", "A2", "B1", "B2", "C1"] as const;
     const lLessons = isAdmin
       ? data.lessons
-          .filter((l) => l.level === progress.currentLevel)
-          .sort((a, b) => LEVEL_ORDER_SORT.indexOf(a.level as typeof LEVEL_ORDER_SORT[number]) - LEVEL_ORDER_SORT.indexOf(b.level as typeof LEVEL_ORDER_SORT[number]) || a.order - b.order)
+        .filter((l) => l.level === progress.currentLevel)
+        .sort((a, b) => LEVEL_ORDER_SORT.indexOf(a.level as typeof LEVEL_ORDER_SORT[number]) - LEVEL_ORDER_SORT.indexOf(b.level as typeof LEVEL_ORDER_SORT[number]) || a.order - b.order)
       : lessonService.byLevel(data.lessons, progress.currentLevel);
     const lProgress = lessonService.levelProgress(data.lessons, progress, progress.currentLevel);
     const curr = lLessons.find((l) => (isAdmin ? adminStatus(l) : lessonService.status(l, data.lessons, progress)) === "current")
@@ -289,7 +289,7 @@ function PathScreen() {
     for (const group of groups) {
       const firstStatus = isAdmin ? adminStatus(group.lessons[0]) : lessonService.status(group.lessons[0], data.lessons, progress);
       const lastStatus = isAdmin ? adminStatus(group.lessons[group.lessons.length - 1]) : lessonService.status(group.lessons[group.lessons.length - 1], data.lessons, progress);
-      
+
       if (lastStatus === "completed") {
         group.status = "completed";
       } else if (firstStatus === "locked") {
@@ -380,7 +380,7 @@ function PathScreen() {
                     : null;
                   const connectorClass = prevStatus === "completed" && status !== "locked" ? "done"
                     : prevStatus === "completed" ? "next"
-                    : "";
+                      : "";
 
                   return (
                     <div key={lesson.id} style={{ display: "contents" }}>
@@ -926,9 +926,9 @@ function LessonScreen() {
           <div className="lesson-bottom">
             {!feedback
               ? <>
-                  <Button disabled={!answer || (Array.isArray(answer) && !answer.length)} onClick={check}>{t("student.lesson.check")}</Button>
-                  {isAdmin && <Button variant="ghost" onClick={skipExercise}>Пропустити →</Button>}
-                </>
+                <Button disabled={!answer || (Array.isArray(answer) && !answer.length)} onClick={check}>{t("student.lesson.check")}</Button>
+                {isAdmin && <Button variant="ghost" onClick={skipExercise}>Пропустити →</Button>}
+              </>
               : <Button autoFocus onClick={next}>{index + 1 >= lesson.exercises.length ? t("student.lesson.finish") : t("student.lesson.next")}</Button>
             }
           </div>
@@ -1893,8 +1893,8 @@ function ProfileScreen() {
             </div>
             {user.subscriptionStatus === "plus"
               ? <Button variant="secondary" onClick={async () => {
-                  try { const { url } = await apiClient.openCustomerPortal(); window.location.href = url; } catch {}
-                }}>Управляти</Button>
+                try { const { url } = await apiClient.openCustomerPortal(); window.location.href = url; } catch { }
+              }}>Управляти</Button>
               : <Button variant="secondary" onClick={() => navigate("/app/shop")}>Plus →</Button>
             }
           </div>
@@ -1913,12 +1913,12 @@ function ProfileScreen() {
             {referralCopied
               ? <span className="referral-copied">{t("student.profile.referral_copied")}</span>
               : <button type="button" className="referral-copy-btn" onClick={async () => {
-                  try { await navigator.clipboard.writeText(`${window.location.origin}/register?ref=${user.id}`); } catch {}
-                  setReferralCopied(true);
-                  setTimeout(() => setReferralCopied(false), 2000);
-                }}>
-                  <Link2 size={13} /> {t("student.profile.referral_copy")}
-                </button>
+                try { await navigator.clipboard.writeText(`${window.location.origin}/register?ref=${user.id}`); } catch { }
+                setReferralCopied(true);
+                setTimeout(() => setReferralCopied(false), 2000);
+              }}>
+                <Link2 size={13} /> {t("student.profile.referral_copy")}
+              </button>
             }
           </div>
           <button type="button" className="referral-share-btn" onClick={() => {
@@ -2055,12 +2055,12 @@ function SettingsScreen() {
   const [actionLoading, setActionLoading] = useState(false);
   const [actionError, setActionError] = useState("");
 
-  const [supportOpen, setSupportOpen]       = useState(false);
-  const [supportTopic, setSupportTopic]     = useState("question");
-  const [supportMsg, setSupportMsg]         = useState("");
+  const [supportOpen, setSupportOpen] = useState(false);
+  const [supportTopic, setSupportTopic] = useState("question");
+  const [supportMsg, setSupportMsg] = useState("");
   const [supportLoading, setSupportLoading] = useState(false);
-  const [supportSent, setSupportSent]       = useState(false);
-  const [supportError, setSupportError]     = useState("");
+  const [supportSent, setSupportSent] = useState(false);
+  const [supportError, setSupportError] = useState("");
 
   const [deferredPrompt, setDeferredPrompt] = useState<any>((window as any).deferredPrompt || null);
   const [isIOS, setIsIOS] = useState(false);
@@ -2254,7 +2254,7 @@ function SettingsScreen() {
 
                 try {
                   const permission = await Notification.requestPermission();
-                  
+
                   if (permission !== "granted") {
                     setNotifications(false);
                     e.target.checked = false;
@@ -2266,7 +2266,7 @@ function SettingsScreen() {
                   setNotifications(true);
                   updateUser({ settings: { ...user!.settings, notificationsEnabled: true } });
                   const result = await requestFcmToken();
-                  
+
                   if (result && result.token) {
                     await apiClient.saveFcmToken(result.token).catch(() => undefined);
                   } else {
@@ -2568,17 +2568,17 @@ export function PaywallScreen() {
           Підписка €9.99/місяць. Скасувати можна в будь-який момент через кабінет Stripe.
         </p>
         <div style={{ display: "flex", justifyContent: "center", gap: "16px" }}>
-          <button 
-            type="button" 
-            onClick={() => navigate("/app/profile")} 
+          <button
+            type="button"
+            onClick={() => navigate("/app/profile")}
             style={{ background: "none", border: "none", color: "var(--purple)", cursor: "pointer", fontSize: "0.85rem", fontWeight: 600 }}
           >
             Профіль
           </button>
           <span style={{ color: "var(--line)" }}>|</span>
-          <button 
-            type="button" 
-            onClick={() => { useAppStore.getState().logout(); navigate("/login"); }} 
+          <button
+            type="button"
+            onClick={() => { useAppStore.getState().logout(); navigate("/login"); }}
             style={{ background: "none", border: "none", color: "var(--red)", cursor: "pointer", fontSize: "0.85rem", fontWeight: 600 }}
           >
             Вийти з акаунта
@@ -2593,7 +2593,7 @@ function LevelsScreen() {
   const { data, progress, setLevel, user } = useStudentData();
   const { t } = useT();
   const [pending, setPending] = useState<UserLevel | null>(null);
-  
+
   // If an admin tries to view this, ensure we render safely even if progress is missing 
   // (though ensure_progress on backend should have created it)
   if (!progress || !user) return <PageSkeleton />;
@@ -2626,7 +2626,7 @@ function ShopScreen() {
       // Clean up the query param without a re-render loop
       setSearchParams(p => { p.delete("subscribed"); return p; }, { replace: true });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function handleSubscribe() {
@@ -2681,7 +2681,7 @@ function ShopScreen() {
         </div>
         <h2>{t("student.shop.product")}</h2>
         <p>{t("student.shop.desc")}</p>
-        
+
         <div className="shop-comparison">
           <div className="shop-comp-header">
             <span></span>
@@ -2712,21 +2712,21 @@ function ShopScreen() {
 
         {isPlus
           ? <div className="shop-active-status">
-              <div className="status-label">
-                <Star size={16} fill="var(--yellow-strong)" color="var(--yellow-strong)" />
-                <span>У тебе активований Plus</span>
-              </div>
-              <Button variant="secondary" disabled={loading} onClick={handlePortal}>
-                {loading ? t("student.shop.btn_loading") : t("student.shop.btn_manage")}
-              </Button>
+            <div className="status-label">
+              <Star size={16} fill="var(--yellow-strong)" color="var(--yellow-strong)" />
+              <span>У тебе активований Plus</span>
             </div>
-          : <Button variant="primary" disabled={loading} onClick={handleSubscribe} className="shop-btn-buy">
-              {loading 
-                ? t("student.shop.btn_loading") 
-                : (user?.hasUsedTrial 
-                    ? t("student.shop.btn_subscribe") 
-                    : "Спробувати 7 днів безкоштовно")}
+            <Button variant="secondary" disabled={loading} onClick={handlePortal}>
+              {loading ? t("student.shop.btn_loading") : t("student.shop.btn_manage")}
             </Button>
+          </div>
+          : <Button variant="primary" disabled={loading} onClick={handleSubscribe} className="shop-btn-buy">
+            {loading
+              ? t("student.shop.btn_loading")
+              : (user?.hasUsedTrial
+                ? t("student.shop.btn_subscribe")
+                : "Спробувати 7 днів безкоштовно")}
+          </Button>
         }
       </Card>
 
@@ -2747,10 +2747,10 @@ export function PaymentSuccess() {
   useEffect(() => {
     // Негайно даємо доступ на фронтенді, не чекаючи бекенд вебхука
     updateUser({ subscriptionStatus: "plus" });
-    
+
     // Запускаємо оновлення з бекенду (може не відразу підтягнути plus, якщо webhook ще летить)
     refreshUser().catch(() => undefined);
-    
+
     // Повторюємо запит через 3 секунди, щоб підтягнути точний статус
     const timer = setTimeout(() => refreshUser().catch(() => undefined), 3000);
     return () => clearTimeout(timer);
