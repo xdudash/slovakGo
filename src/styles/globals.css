@@ -3736,12 +3736,18 @@ textarea:focus,
 }
 
 /* ── Referral card ─────────────────────────── */
-.referral-card { display: grid; gap: 12px; }
+.referral-card {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  max-width: 100%;
+}
 
 .referral-card-header {
   display: flex;
   align-items: flex-start;
   gap: 12px;
+  min-width: 0;
 }
 
 .referral-card-icon {
@@ -3756,7 +3762,7 @@ textarea:focus,
 }
 
 .referral-card-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 3px; }
-.referral-card-text { font-size: 0.82rem; color: var(--muted); }
+.referral-card-text { font-size: 0.82rem; color: var(--muted); overflow-wrap: anywhere; }
 
 .referral-link-row {
   display: flex;
@@ -3766,6 +3772,8 @@ textarea:focus,
   border-radius: 10px;
   padding: 8px 10px;
   border: 1.5px solid var(--line);
+  min-width: 0;
+  max-width: 100%;
 }
 
 .referral-link-url {
@@ -3819,6 +3827,23 @@ textarea:focus,
 }
 
 .referral-share-btn:hover { background: rgba(111, 87, 232, 0.06); }
+
+@media (max-width: 420px) {
+  .referral-link-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .referral-link-url {
+    width: 100%;
+  }
+
+  .referral-copy-btn,
+  .referral-copied {
+    width: 100%;
+    justify-content: center;
+  }
+}
 
 /* ── Share progress button (ProfileScreen) ── */
 .share-progress-btn {
