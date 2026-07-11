@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useCallback, useEffect, useRef, useState, useMemo } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { AlertCircle, Bell, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, Download, Flame, Heart, Layers, Link2, LogOut, Medal, MessageSquare, Play, Search, Settings, Share2, ShoppingBag, Star, Trophy, Users, Volume2, Zap } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
@@ -245,13 +245,17 @@ function PathScreen() {
   const { data, user, progress } = useStudentData();
   const { t } = useT();
   const navigate = useNavigate();
-  if (!user || !progress) return <PageSkeleton />;
 
-  const isAdmin = user.role === "admin";
-  const adminStatus = (l: { id: string }) =>
-    progress.completedLessons.includes(l.id) ? "completed" as const : "available" as const;
+  const isAdmin = user?.role === "admin";
+  const adminStatus = useCallback((l: { id: string }) =>
+    progress?.completedLessons.includes(l.id) ? "completed" as const : "available" as const,
+    [progress?.completedLessons]
+  );
 
   const { levelLessons, levelProgress, current, groupedTopics } = useMemo(() => {
+    if (!progress) {
+      return { levelLessons: [], levelProgress: 0, current: undefined, groupedTopics: [] };
+    }
     const LEVEL_ORDER_SORT = ["A0", "A1", "A2", "B1", "B2", "C1"] as const;
     const lLessons = isAdmin
       ? data.lessons
@@ -300,9 +304,11 @@ function PathScreen() {
     }
 
     return { levelLessons: lLessons, levelProgress: lProgress, current: curr, groupedTopics: groups };
-  }, [data.lessons, progress, isAdmin, t]);
-  const scenario = getScenarioForGoal(user.goal);
-  const dailyPhrases = getDailyPhrases(user.goal, 3);
+  }, [data.lessons, progress, isAdmin, adminStatus, t]);
+  const scenario = getScenarioForGoal(user?.goal);
+  const dailyPhrases = getDailyPhrases(user?.goal, 3);
+
+  if (!user || !progress) return <PageSkeleton />;
 
   const today = new Date().toISOString().slice(0, 10);
   const todayXp = progress.xpDailyHistory?.[today] ?? 0;
@@ -1111,8 +1117,6 @@ function VocabularyScreen() {
     return () => observer.disconnect();
   }, [groupBy, filter, query, sort]);
 
-  if (!user) return <PageSkeleton />;
-
   function playWord(word: VocabularyWord) {
     if (!user?.settings.soundEnabled || !word.audioUrl) return;
     audioRef.current?.pause();
@@ -1123,9 +1127,11 @@ function VocabularyScreen() {
     audio.onended = () => setPlayingId(null);
   }
 
-  const allWords = useMemo(() => vocabularyService.build(data.lessons, data.userWords[user.id]), [data.lessons, data.userWords, user.id]);
+  const allWords = useMemo(() => vocabularyService.build(data.lessons, user ? data.userWords[user.id] : []), [data.lessons, data.userWords, user]);
   const filtered = useMemo(() => vocabularyService.filter(allWords, filter, query), [allWords, filter, query]);
   const sorted = useMemo(() => vocabularyService.sort(filtered, sort), [filtered, sort]);
+
+  if (!user) return <PageSkeleton />;
 
   const filterLabels: Record<string, string> = {
     all: t("student.vocabulary.filter_all"),
@@ -1597,7 +1603,7 @@ function LeaderboardScreen() {
       .catch(() => undefined);
   }, []);
 
-  const entries = serverEntries ?? [];
+  const entries = useMemo(() => serverEntries ?? [], [serverEntries]);
   const weekId = serverWeekId ?? data.leaderboard.weekId;
 
   // Flash rows that moved when week transitions
@@ -1893,7 +1899,7 @@ function ProfileScreen() {
             </div>
             {user.subscriptionStatus === "plus"
               ? <Button variant="secondary" onClick={async () => {
-                try { const { url } = await apiClient.openCustomerPortal(); window.location.href = url; } catch { }
+                try { const { url } = await apiClient.openCustomerPortal(); window.location.href = url; } catch { return; }
               }}>Управляти</Button>
               : <Button variant="secondary" onClick={() => navigate("/app/shop")}>Plus →</Button>
             }
@@ -1913,7 +1919,7 @@ function ProfileScreen() {
             {referralCopied
               ? <span className="referral-copied">{t("student.profile.referral_copied")}</span>
               : <button type="button" className="referral-copy-btn" onClick={async () => {
-                try { await navigator.clipboard.writeText(`${window.location.origin}/register?ref=${user.id}`); } catch { }
+                try { await navigator.clipboard.writeText(`${window.location.origin}/register?ref=${user.id}`); } catch { return; }
                 setReferralCopied(true);
                 setTimeout(() => setReferralCopied(false), 2000);
               }}>
@@ -2274,7 +2280,7 @@ function SettingsScreen() {
                     updateUser({ settings: { ...user!.settings, notificationsEnabled: false } });
                     alert(result?.error || "Не вдалося підключити пуш-повідомлення до сервера.");
                   }
-                } catch (err) {
+                } catch {
                   setNotifications(false);
                   updateUser({ settings: { ...user!.settings, notificationsEnabled: false } });
                   alert("Помилка при налаштуванні сповіщень.");

@@ -27,7 +27,6 @@ vi.mock("stripe", () => ({
 }));
 
 // Handler is imported AFTER env vars are set
-// @ts-ignore
 import handler from "../../api/index";
 
 // ─── Schema ───────────────────────────────────────────────────────────────────

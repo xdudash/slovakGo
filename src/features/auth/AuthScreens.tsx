@@ -264,7 +264,7 @@ export function GoogleDone() {
     }).catch(() => {
       navigate("/login?error=google_failed", { replace: true });
     });
-  }, []);
+  }, [isNew, navigate]);
 
   return (
     <main className="auth-screen">

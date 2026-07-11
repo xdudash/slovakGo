@@ -69,9 +69,7 @@ export function downloadCertificate(name: string, level: string): void {
   // Level badge
   ctx.fillStyle = "#7c3aed";
   ctx.beginPath();
-  (ctx as CanvasRenderingContext2D & { roundRect?: (x: number, y: number, w: number, h: number, r: number) => void }).roundRect?.(
-    W / 2 - 55, 340, 110, 54, 12
-  ) ?? ctx.rect(W / 2 - 55, 340, 110, 54);
+  ctx.roundRect(W / 2 - 55, 340, 110, 54, 12);
   ctx.fill();
   ctx.fillStyle = "#ffffff";
   ctx.font = "bold 28px sans-serif";
