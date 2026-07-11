@@ -103,6 +103,7 @@ function Editor() {
   const [wordSk, setWordSk] = useState("");
   const [wordUk, setWordUk] = useState("");
   const [json, setJson] = useState(JSON.stringify(original || lesson, null, 2));
+  const [jsonError, setJsonError] = useState<string | null>(null);
 
   function addWord() {
     if (!wordSk.trim() || !wordUk.trim()) return;
@@ -138,6 +139,20 @@ function Editor() {
     });
   }
 
+  function importJson() {
+    try {
+      const parsed = JSON.parse(json) as Partial<Lesson>;
+      if (!parsed || typeof parsed !== "object" || !parsed.id || !parsed.title || !parsed.level || !Array.isArray(parsed.words) || !Array.isArray(parsed.exercises)) {
+        setJsonError("JSON має містити урок з id, title, level, words та exercises.");
+        return;
+      }
+      setLesson(parsed as Lesson);
+      setJsonError(null);
+    } catch {
+      setJsonError("Невалідний JSON. Перевір синтаксис і спробуй ще раз.");
+    }
+  }
+
   return (
     <main className="page-content">
       <PageHeader title={original ? t("teacher.editor.title_edit") : t("teacher.editor.title_new")} />
@@ -164,8 +179,9 @@ function Editor() {
       </Card>
       <Card className="form-stack">
         <h2>{t("teacher.editor.json_heading")}</h2>
-        <textarea value={json} onChange={(event) => setJson(event.target.value)} />
-        <Button variant="secondary" onClick={() => setLesson(JSON.parse(json) as Lesson)}>{t("teacher.editor.import_json")}</Button>
+        <textarea value={json} onChange={(event) => { setJson(event.target.value); setJsonError(null); }} />
+        {jsonError && <p className="error-text">{jsonError}</p>}
+        <Button variant="secondary" onClick={importJson}>{t("teacher.editor.import_json")}</Button>
       </Card>
       <Button onClick={() => { upsertLesson({ ...lesson, updatedAt: new Date().toISOString() }); navigate("/teacher/lessons"); }}>{t("teacher.editor.save")}</Button>
     </main>

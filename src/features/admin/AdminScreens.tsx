@@ -40,16 +40,21 @@ function Dashboard() {
   const navigate = useNavigate();
   const published = data.lessons.filter((l) => l.isPublished);
   const [summary, setSummary] = useState<{ totalUsers: number; active7d: number; plusUsers: number } | null>(null);
+  const [summaryError, setSummaryError] = useState(false);
 
   useEffect(() => {
     apiClient.getAdminStats()
-      .then((d) => setSummary({ totalUsers: d.summary.totalUsers, active7d: d.summary.active7d, plusUsers: d.summary.plusUsers }))
-      .catch(() => undefined);
+      .then((d) => {
+        setSummary({ totalUsers: d.summary.totalUsers, active7d: d.summary.active7d, plusUsers: d.summary.plusUsers });
+        setSummaryError(false);
+      })
+      .catch(() => setSummaryError(true));
   }, []);
 
   return (
     <main className="page-content">
       <PageHeader title="Адмін-панель" subtitle="SlovakGO MVP" />
+      {summaryError && <p className="error-text">Не вдалося завантажити серверну статистику.</p>}
       <div className="admin-stats-grid">
         <Card className="admin-stat-card">
           <Users size={22} color="var(--accent)" />
@@ -697,19 +702,27 @@ function UsersScreen() {
   const [users, setUsers] = useState<AdminServerUser[]>([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   function fetchUsers() {
     setLoading(true);
+    setError(null);
     apiClient.getAdminUsers({ search, role: roleFilter === "all" ? undefined : roleFilter, limit: 200 })
-      .then((d) => { setUsers(d.users); setTotal(d.total); })
-      .catch(() => undefined)
+      .then((d) => { setUsers(d.users); setTotal(d.total); setError(null); })
+      .catch(() => { setUsers([]); setTotal(0); setError("Не вдалося завантажити користувачів."); })
       .finally(() => setLoading(false));
   }
 
   useEffect(() => { fetchUsers(); }, [search, roleFilter]); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function patchUser(id: string, patch: Parameters<typeof apiClient.directAdminUpdateUser>[1]) {
-    await apiClient.directAdminUpdateUser(id, patch).catch(() => undefined);
+    setError(null);
+    try {
+      await apiClient.directAdminUpdateUser(id, patch);
+    } catch {
+      setError("Не вдалося оновити користувача.");
+      return;
+    }
     fetchUsers();
   }
 
@@ -720,7 +733,7 @@ function UsersScreen() {
 
   return (
     <main className="page-content">
-      <PageHeader title="Користувачі" subtitle={loading ? "…" : `${total} акаунтів`} />
+      <PageHeader title="Користувачі" subtitle={loading ? "…" : error ? "Помилка завантаження" : `${total} акаунтів`} />
       <div className="admin-toolbar">
         <div className="admin-search-box">
           <Search size={15} />
@@ -742,6 +755,12 @@ function UsersScreen() {
       </div>
 
       {loading && <p style={{ color: "var(--muted)" }}>Завантаження…</p>}
+      {error && (
+        <Card className="form-stack">
+          <p className="error-text">{error}</p>
+          <Button variant="secondary" onClick={fetchUsers}>Повторити</Button>
+        </Card>
+      )}
       <div className="admin-user-list">
         {users.map((u) => (
           <div key={u.id} className="admin-user-row" onClick={() => navigate(`/admin/users/${u.id}`)} role="button" tabIndex={0}
@@ -936,20 +955,28 @@ function Subscriptions() {
   const [search, setSearch] = useState("");
   const [allUsers, setAllUsers] = useState<AdminServerUser[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const SUB_ORDER = ["plus", "trial", "free", "expired", "cancelled"];
 
   function fetchUsers() {
     setLoading(true);
+    setError(null);
     apiClient.getAdminUsers({ limit: 500 })
-      .then((d) => setAllUsers(d.users))
-      .catch(() => undefined)
+      .then((d) => { setAllUsers(d.users); setError(null); })
+      .catch(() => { setAllUsers([]); setError("Не вдалося завантажити підписки."); })
       .finally(() => setLoading(false));
   }
 
   useEffect(() => { fetchUsers(); }, []);
 
   async function patchUser(id: string, patch: Parameters<typeof apiClient.directAdminUpdateUser>[1]) {
-    await apiClient.directAdminUpdateUser(id, patch).catch(() => undefined);
+    setError(null);
+    try {
+      await apiClient.directAdminUpdateUser(id, patch);
+    } catch {
+      setError("Не вдалося оновити підписку.");
+      return;
+    }
     fetchUsers();
   }
 
@@ -979,6 +1006,12 @@ function Subscriptions() {
           <Search size={15} /><input placeholder="Пошук…" value={search} onChange={(e) => setSearch(e.target.value)} />
         </div>
       </div>
+      {error && (
+        <Card className="form-stack">
+          <p className="error-text">{error}</p>
+          <Button variant="secondary" onClick={fetchUsers}>Повторити</Button>
+        </Card>
+      )}
       <div className="admin-user-list">
         {users.map((u) => (
           <div key={u.id} className="admin-user-row">
@@ -1135,12 +1168,13 @@ function Errors() {
   const [jsErrors, setJsErrors] = useState<JsError[]>([]);
   const [jsTotal, setJsTotal] = useState(0);
   const [jsLoading, setJsLoading] = useState(true);
+  const [jsError, setJsError] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => {
     apiClient.getAdminErrors(50)
-      .then((r) => { setJsErrors(r.errors); setJsTotal(r.total); })
-      .catch(() => undefined)
+      .then((r) => { setJsErrors(r.errors); setJsTotal(r.total); setJsError(false); })
+      .catch(() => setJsError(true))
       .finally(() => setJsLoading(false));
   }, []);
 
@@ -1163,9 +1197,11 @@ function Errors() {
       <Card>
         {jsLoading
           ? <p style={{ color: "var(--muted)", textAlign: "center", padding: "12px 0" }}>Завантаження…</p>
-          : jsErrors.length === 0
-            ? <p style={{ color: "var(--muted)", textAlign: "center", padding: "12px 0" }}>JS-помилок немає</p>
-            : jsErrors.map((e) => (
+          : jsError
+            ? <p className="error-text" style={{ textAlign: "center", padding: "12px 0" }}>Не вдалося завантажити JS-помилки.</p>
+            : jsErrors.length === 0
+              ? <p style={{ color: "var(--muted)", textAlign: "center", padding: "12px 0" }}>JS-помилок немає</p>
+              : jsErrors.map((e) => (
                 <div key={e.id} className="js-error-row" onClick={() => setExpanded(expanded === e.id ? null : e.id)}>
                   <div className="js-error-main">
                     <code className="js-error-msg">{e.message}</code>
@@ -1179,7 +1215,7 @@ function Errors() {
                     <pre className="js-error-stack">{e.stack.slice(0, 800)}</pre>
                   )}
                 </div>
-              ))
+                ))
         }
       </Card>
 

@@ -34,6 +34,10 @@ export function Login() {
   const [checking, setChecking] = useState(true);
 
   useEffect(() => {
+    if (!localStorage.getItem("slovakgo.current-user")) {
+      setChecking(false);
+      return;
+    }
     autoRestoreSession().then((restored) => {
       if (restored) {
         const { data, currentUserId } = useAppStore.getState();

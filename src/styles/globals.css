@@ -130,11 +130,13 @@ a {
   display: flex;
   flex-direction: column;
   flex: 1;
+  min-width: 0;
   min-height: 0;
 }
 
 .app-main {
   min-height: 100dvh;
+  min-width: 0;
   padding-bottom: calc(98px + env(safe-area-inset-bottom));
 }
 
@@ -143,6 +145,13 @@ a {
   gap: 16px;
   padding: 16px;
   padding-top: 18px;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.page-content > * {
+  min-width: 0;
 }
 
 .page-header {
@@ -151,6 +160,11 @@ a {
   justify-content: space-between;
   gap: 14px;
   padding: 4px 2px;
+  min-width: 0;
+}
+
+.page-header > div {
+  min-width: 0;
 }
 
 .page-header h1,
@@ -599,6 +613,15 @@ textarea:focus,
   color: #655e83;
   font-size: 0.74rem;
   font-weight: 850;
+  min-width: 0;
+}
+
+.bottom-nav-item span {
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .bottom-nav-item.active {
@@ -1955,7 +1978,8 @@ textarea:focus,
 
   /* ── Desktop app shell: sidebar + scrollable content ── */
   .app-frame {
-    max-width: 940px;
+    width: min(calc(100vw - 36px), 1180px);
+    max-width: none;
     height: calc(100dvh - 36px);
     margin-top: 18px;
     margin-bottom: 18px;
@@ -2066,8 +2090,18 @@ textarea:focus,
 
 /* Apply mobile layout tweaks to all devices below the desktop breakpoint */
 @media (max-width: 759px) {
+  .app-frame,
+  .app-main,
+  .page-content {
+    overflow-x: clip;
+  }
+
   .page-header h1 {
     font-size: 1.75rem;
+  }
+
+  .page-header {
+    flex-wrap: wrap;
   }
 
   .lesson-card,
@@ -2088,6 +2122,55 @@ textarea:focus,
 
   .admin-row .btn {
     width: 100%;
+  }
+
+  .bottom-nav {
+    gap: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .bottom-nav-item {
+    font-size: 0.67rem;
+    padding: 0 2px;
+  }
+
+  .admin-toolbar {
+    align-items: stretch;
+  }
+
+  .admin-search-box,
+  .admin-toolbar-right {
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: 0;
+    margin-left: 0;
+  }
+
+  .admin-toolbar-right .btn {
+    flex: 1 1 130px;
+    min-width: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .filter-row,
+  .import-mode-row {
+    max-width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 3px;
+    scrollbar-width: none;
+  }
+
+  .filter-row::-webkit-scrollbar,
+  .import-mode-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-row .chip,
+  .import-mode-row .chip {
+    flex: 0 0 auto;
   }
 }
 
@@ -3233,9 +3316,10 @@ textarea:focus,
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 12px;
+  min-width: 0;
 }
 
-.admin-toolbar-right { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+.admin-toolbar-right { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; min-width: 0; }
 
 .admin-search-box {
   display: flex;
@@ -3248,6 +3332,7 @@ textarea:focus,
   height: 40px;
   min-width: 200px;
   flex: 1;
+  max-width: 100%;
 }
 
 .admin-search-box input {
@@ -3262,7 +3347,7 @@ textarea:focus,
 .admin-search-box svg { color: var(--muted); flex-shrink: 0; }
 
 /* Filter row */
-.admin-filter-row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.admin-filter-row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; min-width: 0; }
 
 /* Lesson list */
 .admin-lesson-list { display: flex; flex-direction: column; gap: 6px; }

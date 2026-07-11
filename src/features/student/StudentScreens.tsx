@@ -2477,14 +2477,14 @@ function SettingsScreen() {
 }
 
 export function PaywallScreen() {
-  const { user, isPlus } = useStudentData();
+  const { user } = useStudentData();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   if (!user) return <PageSkeleton />;
 
-  if (isPlus) {
+  if (user.subscriptionStatus === "plus") {
     return <Navigate to="/app/path" replace />;
   }
 
@@ -2742,19 +2742,15 @@ function ShopScreen() {
 export function PaymentSuccess() {
   const navigate = useNavigate();
   const refreshUser = useAppStore(s => s.refreshUser);
-  const updateUser = useAppStore(s => s.updateUser);
 
   useEffect(() => {
-    // Негайно даємо доступ на фронтенді, не чекаючи бекенд вебхука
-    updateUser({ subscriptionStatus: "plus" });
-
     // Запускаємо оновлення з бекенду (може не відразу підтягнути plus, якщо webhook ще летить)
     refreshUser().catch(() => undefined);
 
     // Повторюємо запит через 3 секунди, щоб підтягнути точний статус
     const timer = setTimeout(() => refreshUser().catch(() => undefined), 3000);
     return () => clearTimeout(timer);
-  }, [refreshUser, updateUser]);
+  }, [refreshUser]);
 
   return (
     <main className="payment-page payment-page--success">
