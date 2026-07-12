@@ -132,7 +132,10 @@ export const useAppStore = create<AppStore>((set, get) => ({
       set({ data, currentUserId: userId, authError: undefined });
       get().drainSync().catch(() => undefined);
       return true;
-    } catch {
+    } catch (err: unknown) {
+      if (err && typeof err === "object" && "status" in err && (err as { status: unknown }).status === 401) {
+        get().logout();
+      }
       return false;
     }
   },

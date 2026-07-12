@@ -2,7 +2,7 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { roleHome, selectCurrentUser, useAppStore } from "../store/useAppStore";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import type { UserRole } from "../types";
 import "../styles/globals.css";
@@ -38,6 +38,19 @@ function EntryRedirect() {
 }
 
 export function App() {
+  const [restoring, setRestoring] = useState(true);
+  const autoRestoreSession = useAppStore((s) => s.autoRestoreSession);
+
+  useEffect(() => {
+    autoRestoreSession().finally(() => {
+      setRestoring(false);
+    });
+  }, [autoRestoreSession]);
+
+  if (restoring) {
+    return <div style={{ display: "flex", height: "100vh", alignItems: "center", justifyContent: "center", color: "#6b7280" }}>Відновлення сесії...</div>;
+  }
+
   return (
     <>
     <Analytics />
