@@ -48,7 +48,8 @@ const SCHEMA_STMTS = [
     max_hearts INTEGER NOT NULL DEFAULT 5, streak_days INTEGER NOT NULL DEFAULT 0,
     last_prac TEXT, freeze_cnt INTEGER NOT NULL DEFAULT 0,
     coins INTEGER NOT NULL DEFAULT 0, completed_j TEXT NOT NULL DEFAULT '[]',
-    mistakes_j TEXT NOT NULL DEFAULT '[]', updated_at TEXT NOT NULL
+    mistakes_j TEXT NOT NULL DEFAULT '[]', hearts_restored_at TEXT,
+    practice_awarded_at TEXT, updated_at TEXT NOT NULL
   )`,
   `CREATE TABLE IF NOT EXISTS lessons (
     id TEXT PRIMARY KEY, data_json TEXT NOT NULL,
@@ -89,6 +90,8 @@ interface MockRes {
   status(code: number): MockRes;
   json(data: unknown): void;
   setHeader(key: string, value: string | string[]): void;
+  getHeader(key: string): string | string[] | undefined;
+  writeHead(code: number, headers?: Record<string, string>): void;
   end(): void;
 }
 
@@ -100,6 +103,8 @@ function makeRes(): MockRes {
     status(code) { res._status = code; return res; },
     json(data)   { res._body = data; },
     setHeader(k, v) { res._headers[k] = v; },
+    getHeader(k) { return res._headers[k]; },
+    writeHead(code, headers) { res._status = code; Object.assign(res._headers, headers ?? {}); },
     end()        {},
   };
   return res;
@@ -291,6 +296,15 @@ describe("GET /sync/pull", () => {
     expect(body.ok).toBe(false);
   });
 
+  it("rejects an existing blocked user's session", async () => {
+    const db = createClient({ url: `file:${TEST_DB}` });
+    await db.execute(`INSERT INTO users (id, email, name_text, is_blocked, created_at, updated_at)
+      VALUES ('blocked-1', 'blocked@example.com', 'Blocked', 1, datetime('now'), datetime('now'))`);
+    const { status, headers } = await call("GET", ["sync", "pull"], { cookie: await makeCookie("blocked-1") });
+    expect(status).toBe(401);
+    expect(String(headers["Set-Cookie"] ?? "")).toContain("Max-Age=0");
+  });
+
   it("returns full user + progress + lessons for authenticated user", async () => {
     // Register a fresh user
     const { body: regBody, headers: regHeaders } = await call("POST", ["auth", "register"], {
@@ -335,6 +349,14 @@ describe("POST /sync/push", () => {
       body: { mutations: [] },
     });
     expect(status).toBe(401);
+  });
+
+  it("rejects auth.register through sync", async () => {
+    const { status } = await call("POST", ["sync", "push"], {
+      cookie,
+      body: { mutations: [{ id: "forged-register", type: "auth.register", payload: { id: "forged", email: "forged@example.com" } }] },
+    });
+    expect(status).toBe(422);
   });
 
   it("applies profile.update mutation", async () => {
@@ -533,7 +555,7 @@ describe("POST /user/email", () => {
   it("changes email to a new unique address", async () => {
     const { status, body } = await call("POST", ["user", "email"], {
       cookie,
-      body: { email: "newemail@example.com" },
+      body: { email: "newemail@example.com", currentPassword: "Secret123" },
     });
     expect(status).toBe(200);
     expect(body.ok).toBe(true);
@@ -546,6 +568,14 @@ describe("POST /user/email", () => {
     const { status } = await call("POST", ["user", "email"], {
       cookie,
       body: { email: "not-valid" },
+    });
+    expect(status).toBe(422);
+  });
+
+  it("requires the current password", async () => {
+    const { status } = await call("POST", ["user", "email"], {
+      cookie,
+      body: { email: "another@example.com", currentPassword: "wrong" },
     });
     expect(status).toBe(422);
   });

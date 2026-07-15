@@ -9,7 +9,12 @@ import {
 export async function handleUserEmail(req: VercelRequest, res: VercelResponse, body: Record<string, unknown>): Promise<void> {
   const uid = await requireUid(req, res); if (!uid) return;
   const email = String(body.email ?? "").toLowerCase().trim();
+  const password = String(body.currentPassword ?? "");
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail(res, "Некоректний email", 422);
+  const current = await queryOne("SELECT pw_hash FROM users WHERE id = ? LIMIT 1", [uid]);
+  const hash = String(current?.pw_hash ?? "");
+  if (!hash || (hash !== "DEV:skip" && !(await bcrypt.compare(password, hash))))
+    return fail(res, "Невірний поточний пароль", 422);
   if (await queryOne("SELECT id FROM users WHERE email = ? AND id != ? LIMIT 1", [email, uid]))
     return fail(res, "Email вже використовується", 409);
   await exec("UPDATE users SET email = ?, updated_at = ? WHERE id = ?", [email, nowIso(), uid]);
@@ -20,7 +25,8 @@ export async function handleUserPassword(req: VercelRequest, res: VercelResponse
   const uid = await requireUid(req, res); if (!uid) return;
   const cur  = String(body.currentPassword ?? body.current ?? "");
   const next = String(body.newPassword ?? body.password ?? "");
-  if (next.length < 6) return fail(res, "Пароль занадто короткий", 422);
+  if (next.length < 8 || !/[A-ZА-ЯІЇЄҐ]/.test(next) || !/[a-zа-яіїєґ]/.test(next) || !/\d/.test(next))
+    return fail(res, "Пароль має містити мінімум 8 символів, велику та малу літеру і цифру", 422);
   const row  = await queryOne("SELECT pw_hash FROM users WHERE id = ? LIMIT 1", [uid]);
   if (!row) return fail(res, "Користувача не знайдено", 404);
   const h = String(row.pw_hash);
@@ -32,7 +38,10 @@ export async function handleUserPassword(req: VercelRequest, res: VercelResponse
 export async function handleFcmToken(req: VercelRequest, res: VercelResponse, body: Record<string, unknown>): Promise<void> {
   const uid = await requireUid(req, res); if (!uid) return;
   const token = String(body.token ?? "").trim();
-  if (!token) return fail(res, "Token required", 422);
+  if (!token) {
+    await exec("DELETE FROM fcm_tokens WHERE user_id = ?", [uid]);
+    return respond(res, { ok: true });
+  }
   await exec(
     "INSERT INTO fcm_tokens (token, user_id, platform, created_at) VALUES (?, ?, ?, ?) ON CONFLICT(token) DO UPDATE SET user_id = excluded.user_id, created_at = excluded.created_at",
     [token, uid, String(body.platform ?? "web"), nowIso()]

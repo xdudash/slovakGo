@@ -25,6 +25,12 @@ dist-ssr
 .vercel
 .env*
 
+# Local databases and their WAL files must never be committed.
+private/*.sqlite
+private/*.sqlite-wal
+private/*.sqlite-shm
+backups/
+
 # AI Assistants & Code Generators
 .adal/
 .agents/

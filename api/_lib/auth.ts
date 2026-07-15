@@ -1,11 +1,11 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import bcrypt from "bcryptjs";
-import { createHash, randomBytes, randomUUID } from "node:crypto";
+import { createHash, randomBytes, randomUUID, timingSafeEqual } from "node:crypto";
 import {
   LOGIN_WINDOW_SEC, LOGIN_MAX_ATTEMPTS,
   exec, queryOne, nowIso, clientIp, signToken, setCookie,
   respond, fail, rowToUser, ensureProgress, clearCookie,
-  requireUid
+  requireUid, parseCookies
 } from "./core";
 
 export async function handleRegister(req: VercelRequest, res: VercelResponse, body: Record<string, unknown>): Promise<void> {
@@ -227,10 +227,15 @@ export async function handleDeactivate(req: VercelRequest, res: VercelResponse):
   respond(res, { ok: true });
 }
 
+const OAUTH_STATE_COOKIE = "sl_oauth_state";
+
 export async function handleGoogleStart(_req: VercelRequest, res: VercelResponse): Promise<void> {
   const clientId = process.env.GOOGLE_CLIENT_ID;
   if (!clientId) { fail(res, "Google OAuth не налаштовано", 503); return; }
   const appUrl = String(process.env.APP_URL ?? "http://localhost:5173").replace(/\/$/, "");
+  const state = randomBytes(32).toString("hex");
+  const secure = process.env.NODE_ENV === "production" ? "; Secure" : "";
+  res.setHeader("Set-Cookie", `${OAUTH_STATE_COOKIE}=${state}; HttpOnly; SameSite=Lax; Path=/api/auth/google; Max-Age=600${secure}`);
   const params = new URLSearchParams({
     client_id:     clientId,
     redirect_uri:  `${appUrl}/api/auth/google/callback`,
@@ -238,6 +243,7 @@ export async function handleGoogleStart(_req: VercelRequest, res: VercelResponse
     scope:         "email profile",
     access_type:   "online",
     prompt:        "select_account",
+    state,
   });
   res.writeHead(302, { Location: `https://accounts.google.com/o/oauth2/v2/auth?${params}` });
   res.end();
@@ -247,8 +253,13 @@ export async function handleGoogleCallback(req: VercelRequest, res: VercelRespon
   const appUrl   = String(process.env.APP_URL ?? "http://localhost:5173").replace(/\/$/, "");
   const code     = String(req.query.code ?? "");
   const errParam = String(req.query.error ?? "");
+  const state = String(req.query.state ?? "");
+  const expectedState = parseCookies(req.headers.cookie ?? "")[OAUTH_STATE_COOKIE] ?? "";
+  const stateValid = state.length === expectedState.length && state.length > 0 &&
+    timingSafeEqual(Buffer.from(state), Buffer.from(expectedState));
+  res.setHeader("Set-Cookie", `${OAUTH_STATE_COOKIE}=; HttpOnly; SameSite=Lax; Path=/api/auth/google; Max-Age=0`);
 
-  if (!code || errParam) {
+  if (!code || errParam || !stateValid) {
     res.writeHead(302, { Location: `${appUrl}/login?error=google_cancelled` });
     res.end(); return;
   }

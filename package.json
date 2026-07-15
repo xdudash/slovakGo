@@ -11,6 +11,8 @@
     "test": "TZ=UTC vitest run",
     "test:watch": "TZ=UTC vitest",
     "test:coverage": "TZ=UTC vitest run --coverage",
+    "backup:lessons": "tsx scripts/backup-lessons.ts",
+    "migrate": "tsx scripts/migrate.ts",
     "sitemap": "node generate-sitemap.js"
   },
   "dependencies": {

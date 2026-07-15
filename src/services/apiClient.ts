@@ -80,10 +80,10 @@ export const apiClient = {
     return apiRequest<unknown>(`/sync/pull?since=${since}`);
   },
 
-  changeEmail(newEmail: string) {
+  changeEmail(newEmail: string, currentPassword: string) {
     return apiRequest<{ ok: boolean }>("/user/email", {
       method: "POST",
-      body: JSON.stringify({ email: newEmail })
+      body: JSON.stringify({ email: newEmail, currentPassword })
     });
   },
 

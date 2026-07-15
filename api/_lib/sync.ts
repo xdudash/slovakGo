@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { Arg } from "./core";
 import {
   XP_PER_PRACTICE,
-  exec, queryOne, nowIso, todayKey, currentWeekId, safeJson,
+  exec, queryOne, nowIso, todayKey, currentWeekId, safeJson, getDb, ensureCol,
   requireUid, respond, fail, rowToUser, ensureProgress,
   getUserWords, getLessons, checkRole
 } from "./core";
@@ -63,16 +63,22 @@ export async function handleSyncPush(req: VercelRequest, res: VercelResponse, bo
   const uid  = await requireUid(req, res);
   if (!uid) return;
   const muts = Array.isArray(body.mutations) ? body.mutations as Record<string, unknown>[] : [];
+  if (muts.length > 100) return fail(res, "Забагато мутацій", 413);
+  const supported = new Set(["profile.update", "lesson.complete", "exercise.wrong", "word.update", "practice.complete", "hearts.restore", "lesson.upsert", "lesson.delete", "admin.user.update"]);
+  if (muts.some(mut => !supported.has(String(mut.type ?? "")))) return fail(res, "Непідтримувана мутація", 422);
   let applied = 0;
 
   for (const mut of muts) {
     if (!mut.id) continue;
-    const mutId = String(mut.id);
-    if (await queryOne("SELECT 1 FROM sync_log WHERE mutation_id = ? LIMIT 1", [mutId])) continue;
-    await processMutation(uid, mut);
-    await exec("INSERT OR IGNORE INTO sync_log (mutation_id, user_id, type, processed_at) VALUES (?, ?, ?, ?)",
-      [mutId, uid, String(mut.type ?? ""), nowIso()]);
-    applied++;
+    const mutId = String(mut.id).slice(0, 200);
+    const logId = `${uid}:${mutId}`;
+    const claim = await getDb().execute({
+      sql: "INSERT OR IGNORE INTO sync_log (mutation_id, user_id, type, processed_at) VALUES (?, ?, ?, ?)",
+      args: [logId, uid, String(mut.type ?? "").slice(0, 100), nowIso()],
+    });
+    if (claim.rowsAffected === 0) continue;
+    try { await processMutation(uid, mut); applied++; }
+    catch (err) { await exec("DELETE FROM sync_log WHERE mutation_id = ? AND user_id = ?", [logId, uid]); throw err; }
   }
   
   if (applied > 0 && Math.random() < 0.05) {
@@ -88,38 +94,36 @@ async function processMutation(uid: string, mut: Record<string, unknown>): Promi
   const p    = (typeof mut.payload === "object" && mut.payload) ? mut.payload as Record<string, unknown> : {};
 
   switch (type) {
-    case "auth.register":     await mutAuthRegister(p); break;
     case "profile.update":    await mutProfileUpdate(uid, p); break;
     case "lesson.complete":   await mutLessonComplete(uid, p); break;
     case "exercise.wrong":    await mutExerciseWrong(uid, p); break;
     case "word.update":       await mutWordUpdate(uid, p); break;
     case "practice.complete": await mutPracticeComplete(uid, p); break;
-    case "hearts.restore":    await exec("UPDATE progress SET hearts = max_hearts, updated_at = ? WHERE user_id = ?", [nowIso(), uid]); break;
+    case "hearts.restore":    await mutRestoreHearts(uid); break;
     case "lesson.upsert":
-      if (await checkRole(uid, "teacher", "admin")) await mutLessonUpsert(uid, p);
+      if (!(await checkRole(uid, "teacher", "admin"))) throw new Error("Insufficient role");
+      await mutLessonUpsert(uid, p);
       break;
     case "lesson.delete":
-      if (await checkRole(uid, "teacher", "admin") && p.lessonId)
-        await exec("DELETE FROM lessons WHERE id = ?", [String(p.lessonId)]);
+      if (!(await checkRole(uid, "teacher", "admin"))) throw new Error("Insufficient role");
+      if (p.lessonId) await exec("DELETE FROM lessons WHERE id = ?", [String(p.lessonId)]);
       break;
     case "admin.user.update":
-      if (await checkRole(uid, "admin")) await mutAdminUserUpdate(p);
+      if (!(await checkRole(uid, "admin"))) throw new Error("Insufficient role");
+      await mutAdminUserUpdate(p);
       break;
+    default: throw new Error(`Unsupported sync mutation: ${type}`);
   }
 }
 
-async function mutAuthRegister(p: Record<string, unknown>): Promise<void> {
-  const u = (typeof p.user === "object" && p.user) ? p.user as Record<string, unknown> : p;
-  if (!u.id || !u.email) return;
-  const id = String(u.id); const now = nowIso();
+async function mutRestoreHearts(uid: string): Promise<void> {
+  await ensureCol("progress", "hearts_restored_at", "TEXT");
+  const now = nowIso();
   await exec(
-    `INSERT OR IGNORE INTO users (id, email, name_text, role, level, goal, sub_status, ob_done, settings_j, created_at, updated_at)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-    [id, String(u.email).toLowerCase().trim(), String(u.name ?? ""), "student",
-     String(u.level ?? "A0"), u.goal ? String(u.goal) : null, "trial",
-     u.onboardingDone ? 1 : 0, JSON.stringify(u.settings ?? {}), now, now]
+    `UPDATE progress SET hearts = max_hearts, hearts_restored_at = ?, updated_at = ?
+     WHERE user_id = ? AND (hearts_restored_at IS NULL OR substr(hearts_restored_at, 1, 10) < ?)`,
+    [now, now, uid, todayKey()]
   );
-  await ensureProgress(id);
 }
 
 async function mutProfileUpdate(uid: string, p: Record<string, unknown>): Promise<void> {
@@ -141,12 +145,13 @@ async function mutProfileUpdate(uid: string, p: Record<string, unknown>): Promis
 
 async function mutLessonComplete(uid: string, p: Record<string, unknown>): Promise<void> {
   const lessonId = String(p.lessonId ?? "");
-  const answers  = Array.isArray(p.answers) ? p.answers as Record<string, unknown>[] : [];
+  const lessonRow = lessonId ? await queryOne("SELECT data_json FROM lessons WHERE id = ? AND published = 1 LIMIT 1", [lessonId]) : null;
+  if (!lessonRow) throw new Error("Unknown or unpublished lesson");
+  const lesson = safeJson<Record<string, unknown>>(String(lessonRow.data_json), {});
+  const exerciseCount = Array.isArray(lesson.exercises) ? lesson.exercises.length : 0;
+  const answers = (Array.isArray(p.answers) ? p.answers as Record<string, unknown>[] : []).slice(0, exerciseCount || 100);
   const wrong    = answers.filter(a => !a.correct).length;
-  const clientXp = typeof p.xpEarned === "number" && p.xpEarned > 0 ? p.xpEarned : null;
-  const xpEarned = clientXp !== null
-    ? Math.min(clientXp, 500)
-    : Math.max(10, answers.length > 0 ? answers.length * 5 - wrong * 3 : 10);
+  const xpEarned = Math.max(10, answers.length > 0 ? answers.length * 5 - wrong * 3 : 10);
 
   const prog   = await ensureProgress(uid);
   const today  = todayKey();
@@ -163,7 +168,8 @@ async function mutLessonComplete(uid: string, p: Record<string, unknown>): Promi
   const xpDaily: Record<string, number> = safeJson(String(prog.xp_daily_j ?? "{}"), {});
   xpDaily[today] = (xpDaily[today] ?? 0) + xpEarned;
   const completed: string[] = safeJson(String(prog.completed_j ?? "[]"), []);
-  if (lessonId && !completed.includes(lessonId)) completed.push(lessonId);
+  if (completed.includes(lessonId)) return;
+  completed.push(lessonId);
 
   await exec(
     `UPDATE progress SET xp_total = xp_total + ?, xp_weekly = ?, xp_daily_j = ?, week_id = ?,
@@ -195,6 +201,9 @@ async function mutWordUpdate(uid: string, p: Record<string, unknown>): Promise<v
 async function mutPracticeComplete(uid: string, p: Record<string, unknown>): Promise<void> {
   const results = Array.isArray(p.results) ? p.results as Record<string, unknown>[] : [];
   const prog    = await ensureProgress(uid);
+  await ensureCol("progress", "practice_awarded_at", "TEXT");
+  const lastAward = prog.practice_awarded_at ? new Date(String(prog.practice_awarded_at)).getTime() : 0;
+  if (Date.now() - lastAward < 30_000) return;
   const today   = todayKey(); const weekId = currentWeekId();
   const xpW     = String(prog.week_id) === weekId ? Number(prog.xp_weekly) : 0;
   const lastP   = String(prog.last_prac ?? "");
@@ -210,8 +219,8 @@ async function mutPracticeComplete(uid: string, p: Record<string, unknown>): Pro
 
   await exec(
     `UPDATE progress SET xp_total = xp_total + ?, xp_weekly = ?, xp_daily_j = ?, week_id = ?,
-       streak_days = ?, last_prac = ?, updated_at = ? WHERE user_id = ?`,
-    [XP_PER_PRACTICE, xpW + XP_PER_PRACTICE, JSON.stringify(xpDaily), weekId, streak, today, nowIso(), uid]
+       streak_days = ?, last_prac = ?, practice_awarded_at = ?, updated_at = ? WHERE user_id = ?`,
+    [XP_PER_PRACTICE, xpW + XP_PER_PRACTICE, JSON.stringify(xpDaily), weekId, streak, today, nowIso(), nowIso(), uid]
   );
 
   for (const r of results) {

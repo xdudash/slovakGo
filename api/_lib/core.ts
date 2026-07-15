@@ -11,6 +11,9 @@ export const JWT_COOKIE = "sl_session";
 let _db: ReturnType<typeof createClient> | null = null;
 export function getDb() {
   if (!_db) {
+    if (!process.env.TURSO_DATABASE_URL && process.env.NODE_ENV === "production") {
+      throw new Error("TURSO_DATABASE_URL is required in production");
+    }
     _db = createClient({
       url:       process.env.TURSO_DATABASE_URL ?? "file:./private/slovakgo.sqlite",
       authToken: process.env.TURSO_AUTH_TOKEN,
@@ -66,7 +69,11 @@ export function safeJson<T>(s: string, fallback: T): T {
 }
 
 // ─── JWT / Cookie ─────────────────────────────────────────────────────────────
-const jwtKey = () => new TextEncoder().encode(process.env.JWT_SECRET ?? "dev-secret-CHANGE-ME");
+const jwtKey = () => {
+  const secret = process.env.JWT_SECRET;
+  if (!secret && process.env.NODE_ENV === "production") throw new Error("JWT_SECRET is required in production");
+  return new TextEncoder().encode(secret ?? "dev-secret-CHANGE-ME");
+};
 const isProd  = process.env.NODE_ENV === "production";
 
 export async function signToken(uid: string): Promise<string> {
@@ -78,10 +85,15 @@ export async function verifyToken(token: string): Promise<string | null> {
 }
 export function setCookie(res: VercelResponse, token: string): void {
   const exp = new Date(Date.now() + 30 * 86400 * 1000).toUTCString();
-  res.setHeader("Set-Cookie", `${JWT_COOKIE}=${token}; HttpOnly; SameSite=Lax; Path=/; Max-Age=${30 * 86400}; Expires=${exp}${isProd ? "; Secure" : ""}`);
+  appendCookie(res, `${JWT_COOKIE}=${token}; HttpOnly; SameSite=Lax; Path=/; Max-Age=${30 * 86400}; Expires=${exp}${isProd ? "; Secure" : ""}`);
 }
 export function clearCookie(res: VercelResponse): void {
-  res.setHeader("Set-Cookie", `${JWT_COOKIE}=; HttpOnly; SameSite=Lax; Path=/; Max-Age=0`);
+  appendCookie(res, `${JWT_COOKIE}=; HttpOnly; SameSite=Lax; Path=/; Max-Age=0`);
+}
+function appendCookie(res: VercelResponse, cookie: string): void {
+  const current = res.getHeader("Set-Cookie");
+  const values = current === undefined ? [] : Array.isArray(current) ? current.map(String) : [String(current)];
+  res.setHeader("Set-Cookie", [...values, cookie]);
 }
 
 // ─── response ─────────────────────────────────────────────────────────────────
@@ -100,6 +112,12 @@ export async function getUid(req: VercelRequest): Promise<string | null> {
 export async function requireUid(req: VercelRequest, res: VercelResponse): Promise<string | null> {
   const uid = await getUid(req);
   if (!uid) { fail(res, "Необхідна авторизація", 401); return null; }
+  const user = await queryOne("SELECT is_blocked FROM users WHERE id = ? LIMIT 1", [uid]);
+  if (!user || Boolean(user.is_blocked)) {
+    clearCookie(res);
+    fail(res, "Сесію завершено", 401);
+    return null;
+  }
   return uid;
 }
 export async function checkRole(uid: string, ...roles: string[]): Promise<boolean> {

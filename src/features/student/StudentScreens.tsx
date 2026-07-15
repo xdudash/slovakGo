@@ -2049,6 +2049,7 @@ function SettingsScreen() {
   const [profileSaved, setProfileSaved] = useState(false);
   const [emailError, setEmailError] = useState("");
   const [emailSaved, setEmailSaved] = useState(false);
+  const [emailPassword, setEmailPassword] = useState("");
   const [pwExpanded, setPwExpanded] = useState(false);
   const [currentPw, setCurrentPw] = useState("");
   const [newPw, setNewPw] = useState("");
@@ -2110,9 +2111,11 @@ function SettingsScreen() {
         return;
       }
       try {
-        await apiClient.changeEmail(trimmedEmail);
+        if (!emailPassword) { setEmailError(t("student.settings.password_current")); return; }
+        await apiClient.changeEmail(trimmedEmail, emailPassword);
         setEmailSaved(true);
         setEmailError("");
+        setEmailPassword("");
         setTimeout(() => setEmailSaved(false), 2500);
         updateUser({ email: trimmedEmail, name, goal, settings: { ...user!.settings, notificationsEnabled: notifications, soundEnabled: sound, hapticsEnabled: haptics } });
       } catch (err: unknown) {
@@ -2205,6 +2208,9 @@ function SettingsScreen() {
           <Field label={t("student.settings.name")} value={name} onChange={(e) => setName(e.target.value)} />
           <div>
             <Field label={t("student.settings.email")} value={email} onChange={(e) => { setEmail(e.target.value); setEmailError(""); setEmailSaved(false); }} />
+            {email.trim().toLowerCase() !== user.email.toLowerCase() && (
+              <Field type="password" label={t("student.settings.password_current")} value={emailPassword} onChange={(e) => setEmailPassword(e.target.value)} />
+            )}
             {emailError && <p className="field-error">{emailError}</p>}
             {emailSaved && <p className="field-success">{t("student.settings.email_saved")}</p>}
           </div>

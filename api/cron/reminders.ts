@@ -17,8 +17,9 @@ type Arg = InValue;
 let _db: ReturnType<typeof createClient> | null = null;
 function getDb() {
   if (!_db) {
+    if (!process.env.TURSO_DATABASE_URL) throw new Error("TURSO_DATABASE_URL is required");
     _db = createClient({
-      url:       process.env.TURSO_DATABASE_URL ?? "file:../../private/slovakgo.sqlite",
+      url:       process.env.TURSO_DATABASE_URL,
       authToken: process.env.TURSO_AUTH_TOKEN,
     });
   }
@@ -131,7 +132,11 @@ async function sendFcmV1(tokens: string[], title: string, body: string, projectI
 export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   // Vercel injects Authorization: Bearer <CRON_SECRET> on cron invocations.
   const cronSecret = process.env.CRON_SECRET;
-  if (cronSecret && req.headers["authorization"] !== `Bearer ${cronSecret}`) {
+  if (!cronSecret) {
+    res.status(503).json({ ok: false, error: "CRON_SECRET not configured" });
+    return;
+  }
+  if (req.headers["authorization"] !== `Bearer ${cronSecret}`) {
     res.status(401).json({ ok: false, error: "Unauthorized" });
     return;
   }

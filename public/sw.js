@@ -31,11 +31,10 @@ if (_FCM.apiKey && _FCM.apiKey.indexOf('%%') === -1) {
 
 const CACHE_VERSION = 'slovakgo-v8'; // Bumped cache version
 const STATIC_CACHE  = `${CACHE_VERSION}-static`;
-const API_CACHE     = `${CACHE_VERSION}-api`;
 const AUDIO_CACHE   = `${CACHE_VERSION}-audio`;
 
 // Never cache auth, billing or Vercel analytics — these must always be fresh or handled directly by the browser
-const NO_CACHE_PATHS = ['/api/auth/', '/api/billing/', '/api/stripe/', '/_vercel/'];
+const NO_CACHE_PATHS = ['/api/', '/_vercel/'];
 
 const PRECACHE_URLS = [
   '/',
@@ -60,7 +59,7 @@ self.addEventListener('activate', (event) => {
       .then((keys) =>
         Promise.all(
           keys
-            .filter((k) => k !== STATIC_CACHE && k !== API_CACHE && k !== AUDIO_CACHE)
+            .filter((k) => k !== STATIC_CACHE && k !== AUDIO_CACHE)
             .map((k) => caches.delete(k))
         )
       )
@@ -79,12 +78,6 @@ self.addEventListener('fetch', (event) => {
   // ── Auth & billing: always network-only, never cache ──────────────────────
   if (NO_CACHE_PATHS.some((p) => url.pathname.startsWith(p))) {
     // Let the browser handle it natively — no SW interception
-    return;
-  }
-
-  // ── API: network-first with cached fallback ────────────────────────────────
-  if (url.pathname.startsWith('/api/')) {
-    event.respondWith(networkFirst(request, API_CACHE));
     return;
   }
 
@@ -130,17 +123,6 @@ async function cacheFirst(request, cacheName) {
     return response;
   } catch {
     return Response.error();
-  }
-}
-
-async function networkFirst(request, cacheName) {
-  try {
-    const response = await fetch(request);
-    if (response.ok) cachePut(cacheName, request, response.clone());
-    return response;
-  } catch {
-    const cached = await caches.match(request);
-    return cached ?? Response.error();
   }
 }
 

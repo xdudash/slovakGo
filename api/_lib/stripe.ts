@@ -91,8 +91,8 @@ export async function handleBillingWebhook(req: VercelRequest, res: VercelRespon
         const sub = await getStripe().subscriptions.retrieve(String(s.subscription));
         expiresAt = getSafeExpiresAt(sub.current_period_end);
       } catch (err) {
-        console.error("Failed to retrieve sub in webhook (Invalid API Key?):", err);
-        expiresAt = getSafeExpiresAt(null); // запасний варіант (30 днів)
+        console.error("Failed to retrieve subscription in webhook:", err);
+        throw err;
       }
       
       await exec(

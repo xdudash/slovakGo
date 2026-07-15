@@ -10,8 +10,13 @@ import { config } from "dotenv";
 
 config({ path: ".env.local" });
 
+const databaseUrl = process.env.TURSO_DATABASE_URL;
+if (!databaseUrl) {
+  throw new Error("TURSO_DATABASE_URL is required. Refusing to migrate an implicit local database.");
+}
+
 const db = createClient({
-  url:       process.env.TURSO_DATABASE_URL ?? "file:./private/slovakgo.sqlite",
+  url:       databaseUrl,
   authToken: process.env.TURSO_AUTH_TOKEN,
 });
 
@@ -35,6 +40,7 @@ CREATE TABLE IF NOT EXISTS users (
   is_blocked          INTEGER NOT NULL DEFAULT 0,
   referred_by         TEXT,
   settings_j          TEXT NOT NULL DEFAULT '{}',
+  google_sub          TEXT,
   created_at          TEXT NOT NULL,
   updated_at          TEXT NOT NULL
 );
@@ -53,6 +59,9 @@ CREATE TABLE IF NOT EXISTS progress (
   coins         INTEGER NOT NULL DEFAULT 0,
   completed_j   TEXT    NOT NULL DEFAULT '[]',
   mistakes_j    TEXT    NOT NULL DEFAULT '[]',
+  hearts_restored_at TEXT,
+  practice_awarded_at TEXT,
+  last_reminder_date TEXT,
   updated_at    TEXT    NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users(id)
 );
@@ -127,10 +136,23 @@ CREATE INDEX IF NOT EXISTS idx_fcm_tokens_user      ON fcm_tokens(user_id);
 `;
 
 async function run() {
-  console.log("Running migrations against:", process.env.TURSO_DATABASE_URL ?? "file:./private/slovakgo.sqlite");
+  console.log("Running additive migrations against:", databaseUrl);
+
+  let lessonsBefore: bigint | number = 0;
+  try {
+    lessonsBefore = (await db.execute("SELECT COUNT(*) AS c FROM lessons")).rows[0]?.c as bigint | number ?? 0;
+  } catch { /* lessons table may not exist on a new database */ }
 
   for (const stmt of schema.split(";").map(s => s.trim()).filter(Boolean)) {
     await db.execute(stmt + ";");
+  }
+  for (const sql of [
+    "ALTER TABLE users ADD COLUMN google_sub TEXT",
+    "ALTER TABLE progress ADD COLUMN hearts_restored_at TEXT",
+    "ALTER TABLE progress ADD COLUMN practice_awarded_at TEXT",
+    "ALTER TABLE progress ADD COLUMN last_reminder_date TEXT",
+  ]) {
+    try { await db.execute(sql); } catch { /* column already exists */ }
   }
 
   console.log("✓ Schema applied");
@@ -140,6 +162,9 @@ async function run() {
     db.execute("SELECT COUNT(*) as c FROM lessons"),
   ]);
   console.log(`  users: ${counts[0].rows[0].c}  lessons: ${counts[1].rows[0].c}`);
+  if (Number(counts[1].rows[0].c) < Number(lessonsBefore)) {
+    throw new Error(`Lesson safety check failed: before=${lessonsBefore}, after=${counts[1].rows[0].c}`);
+  }
 }
 
 run().catch(err => { console.error(err); process.exit(1); });
