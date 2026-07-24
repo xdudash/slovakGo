@@ -6,6 +6,7 @@ import { Suspense, lazy, useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import type { UserRole } from "../types";
 import "../styles/globals.css";
+import { demoService } from "../services/demoService";
 
 const AdminLayout = lazy(() => import("../features/admin/AdminScreens").then(m => ({ default: m.AdminLayout })));
 const ForgotPassword = lazy(() => import("../features/auth/AuthScreens").then(m => ({ default: m.ForgotPassword })));
@@ -19,6 +20,7 @@ const PaymentSuccess = lazy(() => import("../features/student/StudentScreens").t
 const PlacementTest = lazy(() => import("../features/student/StudentScreens").then(m => ({ default: m.PlacementTest })));
 const StudentLayout = lazy(() => import("../features/student/StudentScreens").then(m => ({ default: m.StudentLayout })));
 const TeacherLayout = lazy(() => import("../features/teacher/TeacherScreens").then(m => ({ default: m.TeacherLayout })));
+const DemoLesson = lazy(() => import("../features/student/DemoLesson").then(m => ({ default: m.DemoLesson })));
 
 function RequireRole({ roles, children }: { roles: UserRole[]; children: ReactNode }) {
   const location = useLocation();
@@ -33,7 +35,9 @@ function EntryRedirect() {
   const { data, currentUserId } = useAppStore();
   const user = selectCurrentUser(data, currentUserId);
   if (!user) return <Navigate to="/login" replace />;
-  if (user.role === "student" && !user.onboardingDone) return <Navigate to="/onboarding" replace />;
+  if (user.role === "student" && !user.onboardingDone) {
+    return <Navigate to={demoService.isPending() ? "/demo" : "/onboarding"} replace />;
+  }
   return <Navigate to={roleHome(user.role)} replace />;
 }
 
@@ -63,6 +67,14 @@ export function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/auth/google/done" element={<GoogleDone />} />
+        <Route
+          path="/demo"
+          element={
+            <RequireRole roles={["student", "admin"]}>
+              <DemoLesson />
+            </RequireRole>
+          }
+        />
         <Route path="/payment/success" element={<PaymentSuccess />} />
         <Route path="/payment/cancel" element={<PaymentCancel />} />
         <Route path="/onboarding" element={<Onboarding />} />

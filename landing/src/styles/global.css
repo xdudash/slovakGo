@@ -498,7 +498,114 @@ p { margin: 0; }
   .hero-badge { margin: 0 auto 20px; }
   .hero-content p { margin: 0 auto 32px; }
   .hero-cta { justify-content: center; }
-  .hero-visual { display: none; }
+  .hero-visual { display: flex; }
+  .phone-mockup { width: min(220px, 66vw); }
+}
+
+/* ─── Real product screenshots ───────────────────────────────────────────── */
+.product-preview-section {
+  padding: 88px 0 96px;
+  overflow: hidden;
+  background: #f7f5ff;
+}
+
+.product-preview-copy {
+  max-width: 620px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.product-preview-copy h2 {
+  margin: 0 0 14px;
+  color: var(--fg);
+  font-size: clamp(1.8rem, 4vw, 2.65rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.product-preview-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.product-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 230px));
+  justify-content: center;
+  align-items: center;
+  gap: clamp(18px, 4vw, 44px);
+}
+
+.product-shot {
+  margin: 0;
+  text-align: center;
+}
+
+.product-shot-frame {
+  overflow: hidden;
+  border: 8px solid #1a1235;
+  border-radius: 32px;
+  background: white;
+  box-shadow: 0 30px 65px rgba(25, 17, 57, 0.2);
+}
+
+.product-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.product-shot--side {
+  transform: scale(0.9);
+  opacity: 0.92;
+}
+
+.product-shot--primary {
+  position: relative;
+  z-index: 1;
+}
+
+.product-shot figcaption {
+  margin-top: 18px;
+  color: var(--fg);
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+@media (max-width: 680px) {
+  .product-preview-section {
+    padding: 64px 0 72px;
+  }
+
+  .product-preview-copy {
+    margin-bottom: 34px;
+    padding-inline: 8px;
+  }
+
+  .product-preview-grid {
+    grid-template-columns: repeat(3, minmax(0, 72vw));
+    justify-content: start;
+    gap: 18px;
+    overflow-x: auto;
+    margin-inline: -24px;
+    padding: 8px 24px 30px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .product-preview-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .product-shot,
+  .product-shot--side {
+    transform: none;
+    opacity: 1;
+    scroll-snap-align: center;
+  }
 }
 
 /* ─── Features section ───────────────────────────────────────────────────── */

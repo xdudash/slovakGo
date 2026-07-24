@@ -5,8 +5,16 @@ import { Button, Card, Field } from "../../components/ui";
 import { roleHome, useAppStore } from "../../store/useAppStore";
 import { apiClient } from "../../services/apiClient";
 import { storageService } from "../../services/storage";
+import { demoService } from "../../services/demoService";
 import { useT } from "../../i18n";
 import type { AppData, Lesson, User, UserWord } from "../../types";
+
+function postAuthRoute(user: User): string {
+  if (user.role === "student" && !user.onboardingDone) {
+    return demoService.isPending() ? "/demo" : "/onboarding";
+  }
+  return roleHome(user.role);
+}
 
 function AuthShell({ title, text, children }: { title: string; text: string; children: ReactNode }) {
   return (
@@ -37,7 +45,7 @@ export function Login() {
       const { data } = useAppStore.getState();
       const user = data.users.find((u) => u.id === currentUserId);
       if (user) {
-        navigate(roleHome(user.role), { replace: true });
+        navigate(postAuthRoute(user), { replace: true });
       }
     }
   }, [currentUserId, navigate]);
@@ -47,7 +55,7 @@ export function Login() {
     setLoading(true);
     try {
       const user = await login(email, password);
-      if (user) navigate(roleHome(user.role), { replace: true });
+      if (user) navigate(postAuthRoute(user), { replace: true });
     } finally {
       setLoading(false);
     }
@@ -88,7 +96,8 @@ export function Register() {
     setLoading(false);
     if (user) {
       if (refParam) apiClient.claimReferral(refParam).catch(() => undefined);
-      navigate("/onboarding", { replace: true });
+      demoService.markPending();
+      navigate("/demo", { replace: true });
     }
   }
 
@@ -243,7 +252,10 @@ export function GoogleDone() {
       localStorage.setItem("slovakgo.current-user", userId);
       useAppStore.setState({ data: merged, currentUserId: userId, authError: undefined });
 
-      if (isNew || !full.user.onboardingDone) {
+      if (isNew) {
+        demoService.markPending();
+        navigate("/demo", { replace: true });
+      } else if (!full.user.onboardingDone) {
         navigate("/onboarding", { replace: true });
       } else {
         navigate(roleHome(full.user.role), { replace: true });
