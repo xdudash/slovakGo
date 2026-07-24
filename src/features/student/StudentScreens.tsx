@@ -2515,7 +2515,7 @@ export function PaywallScreen() {
   return (
     <main className="page-content paywall-page" style={{ maxWidth: "420px", margin: "0 auto", padding: "24px 16px" }}>
       <div style={{ textAlign: "center", marginBottom: "24px" }}>
-        <img src="/logosk.jpg" alt="SlovakGO" style={{ width: "80px", height: "80px", borderRadius: "20px", marginBottom: "16px" }} />
+        <img src="/apple-icon.png" alt="SlovakGO" style={{ width: "80px", height: "80px", borderRadius: "20px", marginBottom: "16px" }} />
         <h1 style={{ fontSize: "1.8rem", fontWeight: 900, color: "var(--fg)", marginBottom: "8px" }}>
           SlovakGO Plus 🚀
         </h1>

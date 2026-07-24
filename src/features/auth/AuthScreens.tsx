@@ -20,7 +20,7 @@ function AuthShell({ title, text, children }: { title: string; text: string; chi
   return (
     <main className="auth-screen">
       <section className="brand-panel">
-        <img src="/logosk.jpg" alt="SlovakGO" className="logo-mark" />
+        <img src="/apple-icon.png" alt="SlovakGO" className="logo-mark" />
         <h1>SlovakGO</h1>
         <p>{text}</p>
       </section>
@@ -268,7 +268,7 @@ export function GoogleDone() {
   return (
     <main className="auth-screen">
       <section className="brand-panel">
-        <img src="/logosk.jpg" alt="SlovakGO" className="logo-mark" />
+        <img src="/apple-icon.png" alt="SlovakGO" className="logo-mark" />
         <h1>SlovakGO</h1>
       </section>
       <p style={{ textAlign: "center", color: "var(--muted)", fontWeight: 600 }}>Завантаження…</p>

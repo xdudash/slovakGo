@@ -46,7 +46,7 @@ export function LandingPage() {
         "@id": "https://www.slovakgo.sk/#organization",
         "name": "SlovakGO",
         "url": "https://www.slovakgo.sk/",
-        "logo": "https://www.slovakgo.sk/logosk.jpg",
+        "logo": "https://www.slovakgo.sk/apple-icon.png",
         "foundingDate": "2026",
         "description": "SlovakGO helps Ukrainian speakers adapt to life in Slovakia through short, practical Slovak language lessons.",
         "areaServed": { "@type": "Country", "name": "Slovakia" },
@@ -152,7 +152,7 @@ export function LandingPage() {
       <nav className="landing-nav">
         <div className="nav-container">
           <div className="landing-logo">
-            <img src="/logosk.jpg" alt="SlovakGO логотип" className="logo-icon-sm" />
+            <img src="/apple-icon.png" alt="SlovakGO логотип" className="logo-icon-sm" />
             <span>SlovakGO</span>
           </div>
           <div className="nav-actions">

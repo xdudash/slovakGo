@@ -82,7 +82,7 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
       {showNav && (
         <nav className="bottom-nav" aria-label={t("nav.aria")}>
           <div className="nav-brand">
-            <img src="/logosk.jpg" alt="SlovakGO" className="nav-logo" />
+            <img src="/apple-icon.png" alt="SlovakGO" className="nav-logo" />
             <span>SlovakGO</span>
           </div>
           {items.map((item) => {
