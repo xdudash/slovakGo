@@ -1,0 +1,2102 @@
+{
+  "test": {
+    "id": "slovak-placement-ua-v1",
+    "version": "1.0.0",
+    "language": "sk",
+    "interfaceLanguage": "uk",
+    "title_ua": "Діагностичний тест зі словацької мови",
+    "subtitle_ua": "Визнач свій орієнтовний письмовий рівень від A0 до C2",
+    "estimatedMinutes": {
+      "min": 15,
+      "max": 25
+    },
+    "structureSummary": {
+      "routingQuestions": 8,
+      "branchQuestions": 12,
+      "closedQuestionsPerAttempt": 20,
+      "writingTasksPerAttempt": 1,
+      "totalClosedQuestionsInBank": 44,
+      "totalWritingTasksInBank": 6
+    },
+    "disclaimer_ua": "Тест визначає орієнтовний письмовий рівень. Він не оцінює вимову, говоріння та розуміння усної мови.",
+    "startScreen": {
+      "title_ua": "Визнач свій рівень словацької мови",
+      "body_ua": [
+        "Ти виконаєш 20 коротких завдань і одне письмове завдання.",
+        "Тест перевіряє граматику, лексику, розуміння тексту, природність мовлення та прихований зміст.",
+        "Складність наступних завдань залежатиме від твоїх відповідей.",
+        "Не користуйся перекладачем, словником або підказками.",
+        "Коли не знаєш відповіді, обери «Не знаю»."
+      ],
+      "primaryButton_ua": "Почати тест"
+    },
+    "globalSettings": {
+      "allowUnknown": true,
+      "unknownOptionId": "unknown",
+      "unknownLabel_ua": "Не знаю",
+      "unknownCountsAsIncorrect": true,
+      "showCorrectAnswerDuringTest": false,
+      "showExplanationDuringTest": false,
+      "showReviewAfterCompletion": true,
+      "shuffleOptions": true,
+      "saveProgress": true,
+      "allowBackNavigation": false,
+      "recommendedTimeLimitMinutes": 25,
+      "hardTimeLimitEnabled": false
+    },
+    "levels": [
+      {
+        "id": "A0",
+        "cefrEquivalent": "Pre-A1",
+        "label_ua": "A0 — початковий рівень"
+      },
+      {
+        "id": "A1",
+        "label_ua": "A1 — базовий рівень"
+      },
+      {
+        "id": "A2",
+        "label_ua": "A2 — елементарний рівень"
+      },
+      {
+        "id": "B1",
+        "label_ua": "B1 — середній рівень"
+      },
+      {
+        "id": "B2",
+        "label_ua": "B2 — вище середнього"
+      },
+      {
+        "id": "C1",
+        "label_ua": "C1 — просунутий рівень"
+      },
+      {
+        "id": "C2",
+        "label_ua": "C2 — вільне володіння"
+      }
+    ],
+    "skills": [
+      {
+        "id": "reading",
+        "label_ua": "Розуміння тексту"
+      },
+      {
+        "id": "grammar",
+        "label_ua": "Граматика"
+      },
+      {
+        "id": "vocabulary",
+        "label_ua": "Словниковий запас"
+      },
+      {
+        "id": "pragmatics",
+        "label_ua": "Прихований зміст і тон"
+      },
+      {
+        "id": "interaction",
+        "label_ua": "Комунікація"
+      },
+      {
+        "id": "register",
+        "label_ua": "Стиль і регістр"
+      },
+      {
+        "id": "cohesion",
+        "label_ua": "Логіка і зв’язність"
+      },
+      {
+        "id": "language_use",
+        "label_ua": "Точність слововживання"
+      }
+    ],
+    "routing": {
+      "questionIds": [
+        "R001",
+        "R002",
+        "R003",
+        "R004",
+        "R005",
+        "R006",
+        "R007",
+        "R008"
+      ],
+      "basicQuestionIds": [
+        "R001",
+        "R002",
+        "R003",
+        "R004"
+      ],
+      "advancedQuestionIds": [
+        "R005",
+        "R006",
+        "R007",
+        "R008"
+      ],
+      "rules": [
+        {
+          "priority": 1,
+          "branchId": "low",
+          "condition": {
+            "basicCorrectMax": 2
+          }
+        },
+        {
+          "priority": 2,
+          "branchId": "high",
+          "condition": {
+            "basicCorrectMin": 3,
+            "advancedCorrectMin": 3
+          }
+        },
+        {
+          "priority": 3,
+          "branchId": "middle",
+          "condition": {
+            "fallback": true
+          }
+        }
+      ]
+    },
+    "branches": {
+      "low": {
+        "id": "low",
+        "label_ua": "Гілка A0–A2",
+        "questionIds": [
+          "L001",
+          "L002",
+          "L003",
+          "L004",
+          "L005",
+          "L006",
+          "L007",
+          "L008",
+          "L009",
+          "L010",
+          "L011",
+          "L012"
+        ],
+        "blocks": [
+          {
+            "id": "pre_a1",
+            "level": "A0",
+            "questionIds": [
+              "L001",
+              "L002",
+              "L003",
+              "L004"
+            ]
+          },
+          {
+            "id": "a1",
+            "level": "A1",
+            "questionIds": [
+              "L005",
+              "L006",
+              "L007",
+              "L008"
+            ]
+          },
+          {
+            "id": "a2",
+            "level": "A2",
+            "questionIds": [
+              "L009",
+              "L010",
+              "L011",
+              "L012"
+            ]
+          }
+        ],
+        "closedScoringRules": [
+          {
+            "priority": 1,
+            "result": "A0",
+            "condition": {
+              "pre_a1Max": 2
+            }
+          },
+          {
+            "priority": 2,
+            "result": "A0",
+            "condition": {
+              "a1Max": 1
+            }
+          },
+          {
+            "priority": 3,
+            "result": "A2",
+            "condition": {
+              "pre_a1Min": 3,
+              "a1Min": 3,
+              "a2Min": 3
+            }
+          },
+          {
+            "priority": 4,
+            "result": "A1+",
+            "condition": {
+              "pre_a1Min": 3,
+              "a1Min": 3,
+              "a2Equals": 2
+            }
+          },
+          {
+            "priority": 5,
+            "result": "A1",
+            "condition": {
+              "fallback": true
+            }
+          }
+        ]
+      },
+      "middle": {
+        "id": "middle",
+        "label_ua": "Гілка A2–B2",
+        "questionIds": [
+          "M001",
+          "M002",
+          "M003",
+          "M004",
+          "M005",
+          "M006",
+          "M007",
+          "M008",
+          "M009",
+          "M010",
+          "M011",
+          "M012"
+        ],
+        "blocks": [
+          {
+            "id": "a2",
+            "level": "A2",
+            "questionIds": [
+              "M001",
+              "M002",
+              "M003",
+              "M004"
+            ]
+          },
+          {
+            "id": "b1",
+            "level": "B1",
+            "questionIds": [
+              "M005",
+              "M006",
+              "M007",
+              "M008"
+            ]
+          },
+          {
+            "id": "b2",
+            "level": "B2",
+            "questionIds": [
+              "M009",
+              "M010",
+              "M011",
+              "M012"
+            ]
+          }
+        ],
+        "closedScoringRules": [
+          {
+            "priority": 1,
+            "result": "A2",
+            "condition": {
+              "a2Max": 2
+            }
+          },
+          {
+            "priority": 2,
+            "result": "A2",
+            "condition": {
+              "b1Max": 1
+            }
+          },
+          {
+            "priority": 3,
+            "result": "B2",
+            "condition": {
+              "a2Min": 3,
+              "b1Min": 3,
+              "b2Min": 3
+            }
+          },
+          {
+            "priority": 4,
+            "result": "B1+",
+            "condition": {
+              "a2Min": 3,
+              "b1Min": 3,
+              "b2Equals": 2
+            }
+          },
+          {
+            "priority": 5,
+            "result": "B1",
+            "condition": {
+              "fallback": true
+            }
+          }
+        ]
+      },
+      "high": {
+        "id": "high",
+        "label_ua": "Гілка B2–C2",
+        "questionIds": [
+          "H001",
+          "H002",
+          "H003",
+          "H004",
+          "H005",
+          "H006",
+          "H007",
+          "H008",
+          "H009",
+          "H010",
+          "H011",
+          "H012"
+        ],
+        "blocks": [
+          {
+            "id": "b2",
+            "level": "B2",
+            "questionIds": [
+              "H001",
+              "H002",
+              "H003",
+              "H004"
+            ]
+          },
+          {
+            "id": "c1",
+            "level": "C1",
+            "questionIds": [
+              "H005",
+              "H006",
+              "H007",
+              "H008"
+            ]
+          },
+          {
+            "id": "c2",
+            "level": "C2",
+            "questionIds": [
+              "H009",
+              "H010",
+              "H011",
+              "H012"
+            ]
+          }
+        ],
+        "closedScoringRules": [
+          {
+            "priority": 1,
+            "result": "B2",
+            "condition": {
+              "b2Max": 2
+            }
+          },
+          {
+            "priority": 2,
+            "result": "B2",
+            "condition": {
+              "c1Max": 1
+            }
+          },
+          {
+            "priority": 3,
+            "result": "C2_candidate",
+            "condition": {
+              "b2Min": 3,
+              "c1Min": 3,
+              "c2Min": 3
+            }
+          },
+          {
+            "priority": 4,
+            "result": "C1+",
+            "condition": {
+              "b2Min": 3,
+              "c1Min": 3,
+              "c2Equals": 2
+            }
+          },
+          {
+            "priority": 5,
+            "result": "C1",
+            "condition": {
+              "fallback": true
+            }
+          }
+        ]
+      }
+    },
+    "questions": [
+      {
+        "id": "R001",
+        "sectionId": "routing",
+        "blockId": "routing_basic",
+        "level": "A0",
+        "skill": "reading",
+        "type": "intent",
+        "question_ua": "На дверях аптеки написано: «Dnes otvorené do 18.00.» Що це означає?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Аптека сьогодні працює до 18:00."
+          },
+          {
+            "id": "b",
+            "text": "Аптека сьогодні відкриється о 18:00."
+          },
+          {
+            "id": "c",
+            "text": "Аптека сьогодні не працює."
+          },
+          {
+            "id": "d",
+            "text": "Аптека працює лише після 18:00."
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "«Otvorené do 18.00» означає, що заклад сьогодні відкритий до 18:00.",
+        "isPublished": true,
+        "prompt_sk": "Dnes otvorené do 18.00."
+      },
+      {
+        "id": "R002",
+        "sectionId": "routing",
+        "blockId": "routing_basic",
+        "level": "A1",
+        "skill": "grammar",
+        "type": "grammar_in_context",
+        "question_ua": "Доповни речення: «Zajtra ___ k lekárovi o deviatej.»",
+        "options": [
+          {
+            "id": "a",
+            "text": "idem"
+          },
+          {
+            "id": "b",
+            "text": "išiel som"
+          },
+          {
+            "id": "c",
+            "text": "chodiť"
+          },
+          {
+            "id": "d",
+            "text": "prišiel"
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "Для запланованої дії в найближчому майбутньому природно використати форму «idem».",
+        "isPublished": true,
+        "prompt_sk": "Zajtra ___ k lekárovi o deviatej."
+      },
+      {
+        "id": "R003",
+        "sectionId": "routing",
+        "blockId": "routing_basic",
+        "level": "A2",
+        "skill": "reading",
+        "type": "intent",
+        "question_ua": "Тобі написали: «Pošlite dokument najneskôr do piatka.» Коли потрібно надіслати документ?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Тільки в п’ятницю після завершення робочого дня."
+          },
+          {
+            "id": "b",
+            "text": "Не пізніше п’ятниці."
+          },
+          {
+            "id": "c",
+            "text": "Не раніше п’ятниці."
+          },
+          {
+            "id": "d",
+            "text": "Через п’ять днів."
+          }
+        ],
+        "correctOptionId": "b",
+        "explanation_ua": "«Najneskôr do piatka» встановлює крайній строк: документ потрібно подати не пізніше п’ятниці.",
+        "isPublished": true,
+        "prompt_sk": "Pošlite dokument najneskôr do piatka."
+      },
+      {
+        "id": "R004",
+        "sectionId": "routing",
+        "blockId": "routing_basic",
+        "level": "A2",
+        "skill": "grammar",
+        "type": "grammar_in_context",
+        "question_ua": "Доповни речення: «Čakám ___ odpoveď už tri dni.»",
+        "options": [
+          {
+            "id": "a",
+            "text": "za"
+          },
+          {
+            "id": "b",
+            "text": "na"
+          },
+          {
+            "id": "c",
+            "text": "o"
+          },
+          {
+            "id": "d",
+            "text": "pri"
+          }
+        ],
+        "correctOptionId": "b",
+        "explanation_ua": "У словацькій мові використовується конструкція «čakať na niečo»: «čakám na odpoveď».",
+        "isPublished": true,
+        "prompt_sk": "Čakám ___ odpoveď už tri dni."
+      },
+      {
+        "id": "R005",
+        "sectionId": "routing",
+        "blockId": "routing_advanced",
+        "level": "B1",
+        "skill": "pragmatics",
+        "type": "hidden_meaning",
+        "question_ua": "Тобі пишуть: «Termín vám zatiaľ neviem potvrdiť, čakám na vyjadrenie kolegu.» Що це реально означає?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Термін уже підтверджений, але його не хочуть повідомляти."
+          },
+          {
+            "id": "b",
+            "text": "Термін ще не підтверджений, оскільки очікують відповідь колеги."
+          },
+          {
+            "id": "c",
+            "text": "Зустріч остаточно скасована."
+          },
+          {
+            "id": "d",
+            "text": "Тобі потрібно самому домовитися з колегою."
+          }
+        ],
+        "correctOptionId": "b",
+        "explanation_ua": "Слово «zatiaľ» і фраза «neviem potvrdiť» означають, що остаточного підтвердження ще немає.",
+        "isPublished": true,
+        "prompt_sk": "Termín vám zatiaľ neviem potvrdiť, čakám na vyjadrenie kolegu."
+      },
+      {
+        "id": "R006",
+        "sectionId": "routing",
+        "blockId": "routing_advanced",
+        "level": "B1",
+        "skill": "pragmatics",
+        "type": "tone",
+        "question_ua": "У п’ятницю тобі обіцяли повідомити результат, але в понеділок відповіді ще немає. Яке повідомлення звучить професійно?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Dobrý deň, v piatok ste spomínali, že sa mi ozvete. Chcel by som sa informovať, či už máte nové informácie."
+          },
+          {
+            "id": "b",
+            "text": "Dobrý deň, sľúbili ste odpoveď a stále ste nič neposlali."
+          },
+          {
+            "id": "c",
+            "text": "Dobrý deň, odpoveď ste mali poslať v piatok, preto ju pošlite okamžite."
+          },
+          {
+            "id": "d",
+            "text": "Keďže ste sa neozvali, považujem vec za vybavenú v môj prospech."
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "Професійне нагадування посилається на попередню домовленість і нейтрально уточнює статус без звинувачень чи тиску.",
+        "isPublished": true
+      },
+      {
+        "id": "R007",
+        "sectionId": "routing",
+        "blockId": "routing_advanced",
+        "level": "B2",
+        "skill": "reading",
+        "type": "reading_inference",
+        "question_ua": "Прочитай умову. Хто може втратити право на безкоштовне скасування?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Клієнт, який ще не почав користуватися послугою."
+          },
+          {
+            "id": "b",
+            "text": "Клієнт, якому послугу повністю надали за його згодою до завершення 14 днів."
+          },
+          {
+            "id": "c",
+            "text": "Клієнт, який подав заяву на скасування першого дня."
+          },
+          {
+            "id": "d",
+            "text": "Клієнт, який лише переглянув умови договору."
+          }
+        ],
+        "correctOptionId": "b",
+        "explanation_ua": "Виняток стосується послуги, яку повністю надали до завершення строку за прямою згодою клієнта.",
+        "isPublished": true,
+        "prompt_sk": "Zákazník môže zmluvu zrušiť bez poplatku do 14 dní. Toto právo sa nevzťahuje na službu, ktorá bola s jeho výslovným súhlasom úplne poskytnutá pred uplynutím tejto lehoty."
+      },
+      {
+        "id": "R008",
+        "sectionId": "routing",
+        "blockId": "routing_advanced",
+        "level": "C1",
+        "skill": "reading",
+        "type": "nuance",
+        "question_ua": "Прочитай речення. Яке тлумачення найточніше?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Результати остаточно доводять причинно-наслідковий зв’язок."
+          },
+          {
+            "id": "b",
+            "text": "Між явищами немає жодного зв’язку."
+          },
+          {
+            "id": "c",
+            "text": "Результати вказують на можливий зв’язок, але не доводять пряму причину."
+          },
+          {
+            "id": "d",
+            "text": "Результати не мають жодної практичної цінності."
+          }
+        ],
+        "correctOptionId": "c",
+        "explanation_ua": "Автор розрізняє кореляцію та причинність: дані можуть указувати на зв’язок, але не доводять прямої причини.",
+        "isPublished": true,
+        "prompt_sk": "Výsledky nemožno interpretovať jednoznačne; skôr naznačujú súvislosť, než by dokazovali priamu príčinu."
+      },
+      {
+        "id": "L001",
+        "sectionId": "branch_low",
+        "blockId": "pre_a1",
+        "level": "A0",
+        "skill": "reading",
+        "type": "intent",
+        "question_ua": "Що означає напис «Východ»?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Вхід"
+          },
+          {
+            "id": "b",
+            "text": "Вихід"
+          },
+          {
+            "id": "c",
+            "text": "Ліфт"
+          },
+          {
+            "id": "d",
+            "text": "Каса"
+          }
+        ],
+        "correctOptionId": "b",
+        "explanation_ua": "Слово «Východ» у позначенні приміщень означає вихід.",
+        "isPublished": true,
+        "prompt_sk": "Východ"
+      },
+      {
+        "id": "L002",
+        "sectionId": "branch_low",
+        "blockId": "pre_a1",
+        "level": "A0",
+        "skill": "interaction",
+        "type": "dialogue",
+        "question_ua": "Тебе запитують: «Ako sa voláte?» Яка відповідь правильна?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Volám sa Anna."
+          },
+          {
+            "id": "b",
+            "text": "Bývam Anna."
+          },
+          {
+            "id": "c",
+            "text": "Mám Anna."
+          },
+          {
+            "id": "d",
+            "text": "Som volať Anna."
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "На запитання про ім’я відповідають конструкцією «Volám sa…».",
+        "isPublished": true,
+        "prompt_sk": "Ako sa voláte?"
+      },
+      {
+        "id": "L003",
+        "sectionId": "branch_low",
+        "blockId": "pre_a1",
+        "level": "A0",
+        "skill": "reading",
+        "type": "intent",
+        "question_ua": "Зустріч призначена «o pol tretej». О котрій годині?",
+        "options": [
+          {
+            "id": "a",
+            "text": "02:15"
+          },
+          {
+            "id": "b",
+            "text": "02:30"
+          },
+          {
+            "id": "c",
+            "text": "03:30"
+          },
+          {
+            "id": "d",
+            "text": "03:15"
+          }
+        ],
+        "correctOptionId": "b",
+        "explanation_ua": "У словацькій «o pol tretej» означає половина третьої, тобто 02:30.",
+        "isPublished": true,
+        "prompt_sk": "o pol tretej"
+      },
+      {
+        "id": "L004",
+        "sectionId": "branch_low",
+        "blockId": "pre_a1",
+        "level": "A0",
+        "skill": "grammar",
+        "type": "grammar_in_context",
+        "question_ua": "Доповни речення: «Som z Ukrajiny, ale teraz ___ v Bratislave.»",
+        "options": [
+          {
+            "id": "a",
+            "text": "bývam"
+          },
+          {
+            "id": "b",
+            "text": "volám"
+          },
+          {
+            "id": "c",
+            "text": "mám"
+          },
+          {
+            "id": "d",
+            "text": "idem"
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "Для повідомлення про місце проживання використовується дієслово «bývať»: «bývam v Bratislave».",
+        "isPublished": true,
+        "prompt_sk": "Som z Ukrajiny, ale teraz ___ v Bratislave."
+      },
+      {
+        "id": "L005",
+        "sectionId": "branch_low",
+        "blockId": "a1",
+        "level": "A1",
+        "skill": "reading",
+        "type": "reading_detail",
+        "question_ua": "Прочитай повідомлення. Коли людина прийде?",
+        "options": [
+          {
+            "id": "a",
+            "text": "У понеділок о 17:00."
+          },
+          {
+            "id": "b",
+            "text": "У вівторок о 17:00."
+          },
+          {
+            "id": "c",
+            "text": "У понеділок вранці."
+          },
+          {
+            "id": "d",
+            "text": "У середу о 17:00."
+          }
+        ],
+        "correctOptionId": "b",
+        "explanation_ua": "У повідомленні прямо сказано, що людина прийде у вівторок о 17:00, а в понеділок не може.",
+        "isPublished": true,
+        "prompt_sk": "Ahoj, prídem v utorok o 17.00. V pondelok nemôžem."
+      },
+      {
+        "id": "L006",
+        "sectionId": "branch_low",
+        "blockId": "a1",
+        "level": "A1",
+        "skill": "grammar",
+        "type": "grammar_in_context",
+        "question_ua": "Доповни речення: «Včera som ___ celý deň doma.»",
+        "options": [
+          {
+            "id": "a",
+            "text": "bol"
+          },
+          {
+            "id": "b",
+            "text": "budem"
+          },
+          {
+            "id": "c",
+            "text": "byť"
+          },
+          {
+            "id": "d",
+            "text": "som"
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "Після допоміжного «som» у минулому часі потрібна форма «bol»: «Včera som bol doma».",
+        "isPublished": true,
+        "prompt_sk": "Včera som ___ celý deň doma."
+      },
+      {
+        "id": "L007",
+        "sectionId": "branch_low",
+        "blockId": "a1",
+        "level": "A1",
+        "skill": "interaction",
+        "type": "situation",
+        "question_ua": "Ти хочеш купити один кілограм яблук. Що сказати продавцю?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Prosím si kilo jabĺk."
+          },
+          {
+            "id": "b",
+            "text": "Prosím, ja byť kilo jablká."
+          },
+          {
+            "id": "c",
+            "text": "Mám kilo z jabĺk."
+          },
+          {
+            "id": "d",
+            "text": "Dajte jablká jeden kilogramy."
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "Природне прохання в магазині: «Prosím si kilo jabĺk».",
+        "isPublished": true
+      },
+      {
+        "id": "L008",
+        "sectionId": "branch_low",
+        "blockId": "a1",
+        "level": "A1",
+        "skill": "grammar",
+        "type": "grammar_in_context",
+        "question_ua": "Доповни речення: «Bývam ___ Slovensku už jeden rok.»",
+        "options": [
+          {
+            "id": "a",
+            "text": "v"
+          },
+          {
+            "id": "b",
+            "text": "na"
+          },
+          {
+            "id": "c",
+            "text": "do"
+          },
+          {
+            "id": "d",
+            "text": "zo"
+          }
+        ],
+        "correctOptionId": "b",
+        "explanation_ua": "З назвою країни «Slovensko» в цьому значенні використовується «na Slovensku».",
+        "isPublished": true,
+        "prompt_sk": "Bývam ___ Slovensku už jeden rok."
+      },
+      {
+        "id": "L009",
+        "sectionId": "branch_low",
+        "blockId": "a2",
+        "level": "A2",
+        "skill": "reading",
+        "type": "intent",
+        "question_ua": "Людина пише: «Môžete prísť ktorýkoľvek deň okrem stredy.» Коли не можна прийти?",
+        "options": [
+          {
+            "id": "a",
+            "text": "У понеділок."
+          },
+          {
+            "id": "b",
+            "text": "У вівторок."
+          },
+          {
+            "id": "c",
+            "text": "У середу."
+          },
+          {
+            "id": "d",
+            "text": "У четвер."
+          }
+        ],
+        "correctOptionId": "c",
+        "explanation_ua": "«Okrem stredy» означає за винятком середи.",
+        "isPublished": true,
+        "prompt_sk": "Môžete prísť ktorýkoľvek deň okrem stredy."
+      },
+      {
+        "id": "L010",
+        "sectionId": "branch_low",
+        "blockId": "a2",
+        "level": "A2",
+        "skill": "reading",
+        "type": "nuance",
+        "question_ua": "В оголошенні написано: «Byt je voľný od 1. júna.» Що це означає?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Квартира доступна тільки до 1 червня."
+          },
+          {
+            "id": "b",
+            "text": "У квартиру можна заселитися починаючи з 1 червня."
+          },
+          {
+            "id": "c",
+            "text": "Квартиру потрібно звільнити 1 червня."
+          },
+          {
+            "id": "d",
+            "text": "Квартира доступна через один місяць."
+          }
+        ],
+        "correctOptionId": "b",
+        "explanation_ua": "Прийменник «od» позначає початок періоду: квартира доступна починаючи з 1 червня.",
+        "isPublished": true,
+        "prompt_sk": "Byt je voľný od 1. júna."
+      },
+      {
+        "id": "L011",
+        "sectionId": "branch_low",
+        "blockId": "a2",
+        "level": "A2",
+        "skill": "grammar",
+        "type": "grammar_in_context",
+        "question_ua": "Доповни речення: «Keď prídem domov, ___ vám správu.»",
+        "options": [
+          {
+            "id": "a",
+            "text": "pošlem"
+          },
+          {
+            "id": "b",
+            "text": "poslal som"
+          },
+          {
+            "id": "c",
+            "text": "posielal"
+          },
+          {
+            "id": "d",
+            "text": "posielať"
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "Після майбутньої умови потрібна майбутня дія: «Keď prídem, pošlem vám správu».",
+        "isPublished": true,
+        "prompt_sk": "Keď prídem domov, ___ vám správu."
+      },
+      {
+        "id": "L012",
+        "sectionId": "branch_low",
+        "blockId": "a2",
+        "level": "A2",
+        "skill": "pragmatics",
+        "type": "tone",
+        "question_ua": "Ти не можеш прийти на сьогоднішній прийом і хочеш домовитися про інший час. Яке повідомлення найкраще?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Dobrý deň, ospravedlňujem sa, dnešný termín musím zrušiť. Mohli by sme si dohodnúť náhradný termín?"
+          },
+          {
+            "id": "b",
+            "text": "Dnes neprídem. Dajte mi iný termín."
+          },
+          {
+            "id": "c",
+            "text": "Termín ruším a prídem inokedy bez objednania."
+          },
+          {
+            "id": "d",
+            "text": "Dnes nemôžem, preto termín už nepotrebujem nikdy."
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "Найкраще повідомлення ввічливо скасовує поточний термін і просить домовитися про новий.",
+        "isPublished": true
+      },
+      {
+        "id": "M001",
+        "sectionId": "branch_middle",
+        "blockId": "a2",
+        "level": "A2",
+        "skill": "grammar",
+        "type": "grammar_in_context",
+        "question_ua": "Доповни речення: «Teším sa ___ naše stretnutie.»",
+        "options": [
+          {
+            "id": "a",
+            "text": "na"
+          },
+          {
+            "id": "b",
+            "text": "za"
+          },
+          {
+            "id": "c",
+            "text": "od"
+          },
+          {
+            "id": "d",
+            "text": "pri"
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "Правильна конструкція — «tešiť sa na niečo»: «Teším sa na naše stretnutie».",
+        "isPublished": true,
+        "prompt_sk": "Teším sa ___ naše stretnutie."
+      },
+      {
+        "id": "M002",
+        "sectionId": "branch_middle",
+        "blockId": "a2",
+        "level": "A2",
+        "skill": "reading",
+        "type": "intent",
+        "question_ua": "Людина пише: «Dám vám vedieť do konca týždňa.» Коли очікувати відповідь?",
+        "options": [
+          {
+            "id": "a",
+            "text": "До завершення цього тижня."
+          },
+          {
+            "id": "b",
+            "text": "Рівно через сім днів."
+          },
+          {
+            "id": "c",
+            "text": "На початку наступного місяця."
+          },
+          {
+            "id": "d",
+            "text": "Тільки в суботу вранці."
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "«Do konca týždňa» означає до завершення поточного тижня, без точної години або дня.",
+        "isPublished": true,
+        "prompt_sk": "Dám vám vedieť do konca týždňa."
+      },
+      {
+        "id": "M003",
+        "sectionId": "branch_middle",
+        "blockId": "a2",
+        "level": "A2",
+        "skill": "reading",
+        "type": "reading_detail",
+        "question_ua": "В оголошенні написано: «Cena zahŕňa energie, internet si nájomca platí osobitne.» Що правильне?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Енергії та інтернет включені у вказану ціну."
+          },
+          {
+            "id": "b",
+            "text": "Енергії включені, але інтернет оплачується окремо."
+          },
+          {
+            "id": "c",
+            "text": "Інтернет включений, але енергії оплачуються окремо."
+          },
+          {
+            "id": "d",
+            "text": "Енергії та інтернет оплачуються окремо."
+          }
+        ],
+        "correctOptionId": "b",
+        "explanation_ua": "Фраза «zahŕňa energie» включає енергії, а «internet ... osobitne» відокремлює оплату інтернету.",
+        "isPublished": true,
+        "prompt_sk": "Cena zahŕňa energie, internet si nájomca platí osobitne."
+      },
+      {
+        "id": "M004",
+        "sectionId": "branch_middle",
+        "blockId": "a2",
+        "level": "A2",
+        "skill": "interaction",
+        "type": "natural_phrase",
+        "question_ua": "Ти не зрозумів пояснення. Яка фраза звучить природно?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Mohli by ste mi to, prosím, vysvetliť ešte raz?"
+          },
+          {
+            "id": "b",
+            "text": "Vysvetľujte to znova, ja nerozumieť."
+          },
+          {
+            "id": "c",
+            "text": "Povedzte to ešte, pretože som bez rozumenia."
+          },
+          {
+            "id": "d",
+            "text": "Musíte opakovať všetko od začiatku."
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "Природне й ввічливе прохання: «Mohli by ste mi to, prosím, vysvetliť ešte raz?»",
+        "isPublished": true
+      },
+      {
+        "id": "M005",
+        "sectionId": "branch_middle",
+        "blockId": "b1",
+        "level": "B1",
+        "skill": "reading",
+        "type": "reading_inference",
+        "question_ua": "Прочитай опис. Який висновок найточніший?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Квартира розташована далеко від центру."
+          },
+          {
+            "id": "b",
+            "text": "Через центральне розташування у квартирі дуже шумно."
+          },
+          {
+            "id": "c",
+            "text": "Квартира розташована в центрі, але всередині може бути відносно тихо."
+          },
+          {
+            "id": "d",
+            "text": "У квартирі немає вікон."
+          }
+        ],
+        "correctOptionId": "c",
+        "explanation_ua": "Вікна виходять у внутрішній двір, тому навіть у центрі транспортний шум майже не чути.",
+        "isPublished": true,
+        "prompt_sk": "Hoci sa byt nachádza v centre, okná smerujú do vnútrobloku a dopravu takmer nepočuť."
+      },
+      {
+        "id": "M006",
+        "sectionId": "branch_middle",
+        "blockId": "b1",
+        "level": "B1",
+        "skill": "pragmatics",
+        "type": "tone",
+        "question_ua": "Тобі запропонували зустріч о 14:00, але ти можеш лише після 16:00. Яка відповідь найкраща?",
+        "options": [
+          {
+            "id": "a",
+            "text": "O 14.00 nemôžem. Vyhovoval by vám, prosím, termín po 16.00?"
+          },
+          {
+            "id": "b",
+            "text": "O 14.00 neprídem. Zmeňte čas."
+          },
+          {
+            "id": "c",
+            "text": "Prídem o 14.00, ale až po 16.00."
+          },
+          {
+            "id": "d",
+            "text": "Termín mi nevyhovuje, preto stretnutie ruším."
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "Коректна відповідь відхиляє конкретний час і пропонує реалістичну альтернативу без тиску.",
+        "isPublished": true
+      },
+      {
+        "id": "M007",
+        "sectionId": "branch_middle",
+        "blockId": "b1",
+        "level": "B1",
+        "skill": "grammar",
+        "type": "grammar_in_context",
+        "question_ua": "Доповни речення: «Keby som o tom vedel, ___ skôr.»",
+        "options": [
+          {
+            "id": "a",
+            "text": "prišiel by som"
+          },
+          {
+            "id": "b",
+            "text": "prídem"
+          },
+          {
+            "id": "c",
+            "text": "prišiel som"
+          },
+          {
+            "id": "d",
+            "text": "budem prichádzať"
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "У нереальній умові минулого потрібен умовний спосіб: «Keby som vedel, prišiel by som skôr».",
+        "isPublished": true,
+        "prompt_sk": "Keby som o tom vedel, ___ skôr."
+      },
+      {
+        "id": "M008",
+        "sectionId": "branch_middle",
+        "blockId": "b1",
+        "level": "B1",
+        "skill": "pragmatics",
+        "type": "author_intent",
+        "question_ua": "Людина каже: «Nechcem tvrdiť, že návrh je zlý, ale pred rozhodnutím by sme mali zvážiť aj náklady.» Яка її позиція?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Вона повністю підтримує пропозицію без зауважень."
+          },
+          {
+            "id": "b",
+            "text": "Вона категорично відкидає пропозицію."
+          },
+          {
+            "id": "c",
+            "text": "Вона не відкидає пропозицію, але бачить ризик, який потрібно оцінити."
+          },
+          {
+            "id": "d",
+            "text": "Вона не зрозуміла зміст пропозиції."
+          }
+        ],
+        "correctOptionId": "c",
+        "explanation_ua": "Автор не відкидає пропозицію, але додає важливе застереження щодо витрат.",
+        "isPublished": true,
+        "prompt_sk": "Nechcem tvrdiť, že návrh je zlý, ale pred rozhodnutím by sme mali zvážiť aj náklady."
+      },
+      {
+        "id": "M009",
+        "sectionId": "branch_middle",
+        "blockId": "b2",
+        "level": "B2",
+        "skill": "pragmatics",
+        "type": "tone",
+        "question_ua": "Ти вже двічі повідомляв компанії про проблему, але її не вирішили. Який лист звучить професійно й наполегливо?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Dobrý deň, na problém som vás upozornil už dvakrát, naposledy 12. mája. Prosím o informáciu, kedy bude odstránený, a o potvrdenie ďalšieho postupu."
+          },
+          {
+            "id": "b",
+            "text": "Dobrý deň, vaša firma nič nerobí a už ma to nebaví."
+          },
+          {
+            "id": "c",
+            "text": "Ak problém nevyriešite dnes, prestanem platiť všetky faktúry."
+          },
+          {
+            "id": "d",
+            "text": "Problém stále trvá, ale nebudem vám vysvetľovať, o čo ide."
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "Професійний лист фіксує попередні звернення, називає дату та просить конкретний строк і наступний крок.",
+        "isPublished": true
+      },
+      {
+        "id": "M010",
+        "sectionId": "branch_middle",
+        "blockId": "b2",
+        "level": "B2",
+        "skill": "language_use",
+        "type": "paraphrase",
+        "question_ua": "Яке речення зберігає значення фрази «Hoci mal málo času, úlohu dokončil.»?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Úlohu nedokončil, pretože mal málo času."
+          },
+          {
+            "id": "b",
+            "text": "Napriek nedostatku času úlohu dokončil."
+          },
+          {
+            "id": "c",
+            "text": "Úlohu dokončil až vtedy, keď dostal viac času."
+          },
+          {
+            "id": "d",
+            "text": "Úlohu dokončil, pretože mal dostatok času."
+          }
+        ],
+        "correctOptionId": "b",
+        "explanation_ua": "«Hoci» виражає поступку. Точний перефраз — «Napriek nedostatku času úlohu dokončil».",
+        "isPublished": true,
+        "prompt_sk": "Hoci mal málo času, úlohu dokončil."
+      },
+      {
+        "id": "M011",
+        "sectionId": "branch_middle",
+        "blockId": "b2",
+        "level": "B2",
+        "skill": "cohesion",
+        "type": "text_order",
+        "question_ua": "Визнач правильний порядок речень.",
+        "options": [
+          {
+            "id": "a",
+            "text": "A–B–D–C"
+          },
+          {
+            "id": "b",
+            "text": "B–A–C–D"
+          },
+          {
+            "id": "c",
+            "text": "C–D–B–A"
+          },
+          {
+            "id": "d",
+            "text": "B–C–A–D"
+          }
+        ],
+        "correctOptionId": "b",
+        "explanation_ua": "Спочатку формуляр уже відправили, потім помітили помилку, звернулися до підтримки, отримали нове посилання й виправили дані.",
+        "isPublished": true,
+        "context_ua": "A. Keď som si všimol chybu, kontaktoval som podporu.\nB. Predtým som však formulár už odoslal.\nC. Pracovník mi následne poslal nový odkaz.\nD. Vďaka nemu som údaje opravil.",
+        "sequenceItems": [
+          {
+            "id": "A",
+            "text": "Keď som si všimol chybu, kontaktoval som podporu."
+          },
+          {
+            "id": "B",
+            "text": "Predtým som však formulár už odoslal."
+          },
+          {
+            "id": "C",
+            "text": "Pracovník mi následne poslal nový odkaz."
+          },
+          {
+            "id": "D",
+            "text": "Vďaka nemu som údaje opravil."
+          }
+        ]
+      },
+      {
+        "id": "M012",
+        "sectionId": "branch_middle",
+        "blockId": "b2",
+        "level": "B2",
+        "skill": "vocabulary",
+        "type": "collocation",
+        "question_ua": "Яке словосполучення є природним у формальному тексті?",
+        "options": [
+          {
+            "id": "a",
+            "text": "prijať opatrenia"
+          },
+          {
+            "id": "b",
+            "text": "vyrobiť opatrenia"
+          },
+          {
+            "id": "c",
+            "text": "spraviť si opatrenie"
+          },
+          {
+            "id": "d",
+            "text": "postaviť opatrenia"
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "У формальному стилі природне словосполучення — «prijať opatrenia».",
+        "isPublished": true
+      },
+      {
+        "id": "H001",
+        "sectionId": "branch_high",
+        "blockId": "b2",
+        "level": "B2",
+        "skill": "reading",
+        "type": "reading_detail",
+        "question_ua": "Прочитай правило. Хто може не дотримуватися загального режиму?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Будь-який працівник, який усно повідомив колегу."
+          },
+          {
+            "id": "b",
+            "text": "Працівник, якому керівник письмово погодив індивідуальний режим."
+          },
+          {
+            "id": "c",
+            "text": "Усі працівники, які працюють у відділі більше року."
+          },
+          {
+            "id": "d",
+            "text": "Працівник, який сам вирішив змінити графік."
+          }
+        ],
+        "correctOptionId": "b",
+        "explanation_ua": "Виняток діє лише для працівника, якому керівник відділу письмово схвалив індивідуальний режим.",
+        "isPublished": true,
+        "prompt_sk": "Opatrenie platí pre všetkých zamestnancov s výnimkou tých, ktorým vedúci oddelenia písomne schváli individuálny režim."
+      },
+      {
+        "id": "H002",
+        "sectionId": "branch_high",
+        "blockId": "b2",
+        "level": "B2",
+        "skill": "pragmatics",
+        "type": "tone",
+        "question_ua": "Яка відповідь висловлює незгоду професійно й без конфлікту?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Rozumiem vášmu argumentu, no na základe dostupných údajov sa prikláňam k inému záveru."
+          },
+          {
+            "id": "b",
+            "text": "Váš názor je nesprávny a nemá zmysel o ňom diskutovať."
+          },
+          {
+            "id": "c",
+            "text": "Súhlasím s vami, aj keď si myslím presný opak."
+          },
+          {
+            "id": "d",
+            "text": "Nebudem reagovať, pretože váš argument nepovažujem za dôležitý."
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "Професійна незгода визнає аргумент співрозмовника й спокійно пояснює інший висновок.",
+        "isPublished": true
+      },
+      {
+        "id": "H003",
+        "sectionId": "branch_high",
+        "blockId": "b2",
+        "level": "B2",
+        "skill": "grammar",
+        "type": "grammar_in_context",
+        "question_ua": "Яке речення граматично й стилістично правильне?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Bez toho, aby sme poznali príčinu, nemôžeme navrhnúť spoľahlivé riešenie."
+          },
+          {
+            "id": "b",
+            "text": "Bez toho, že poznáme príčinu, nemôžeme navrhli riešenie."
+          },
+          {
+            "id": "c",
+            "text": "Bez poznávať príčinu nemôžeme spoľahlivo navrhovať sa."
+          },
+          {
+            "id": "d",
+            "text": "Bez aby sme príčinu poznali, riešenie nemôže navrhnuté."
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "Нормативна конструкція — «bez toho, aby sme…» з умовним способом у підрядній частині.",
+        "isPublished": true
+      },
+      {
+        "id": "H004",
+        "sectionId": "branch_high",
+        "blockId": "b2",
+        "level": "B2",
+        "skill": "language_use",
+        "type": "paraphrase",
+        "question_ua": "Яке речення найточніше передає зміст «Hoci návrh znižuje náklady, môže zhoršiť dostupnosť služby.»?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Návrh znižuje náklady bez akýchkoľvek negatívnych dôsledkov."
+          },
+          {
+            "id": "b",
+            "text": "Návrh môže znížiť náklady, zároveň však predstavuje riziko horšej dostupnosti."
+          },
+          {
+            "id": "c",
+            "text": "Dostupnosť služby sa zlepší, pretože náklady sa zvýšia."
+          },
+          {
+            "id": "d",
+            "text": "Návrh je nevhodný iba preto, že neznižuje náklady."
+          }
+        ],
+        "correctOptionId": "b",
+        "explanation_ua": "Точний перефраз зберігає і перевагу зниження витрат, і ризик погіршення доступності.",
+        "isPublished": true,
+        "prompt_sk": "Hoci návrh znižuje náklady, môže zhoršiť dostupnosť služby."
+      },
+      {
+        "id": "H005",
+        "sectionId": "branch_high",
+        "blockId": "c1",
+        "level": "C1",
+        "skill": "reading",
+        "type": "author_intent",
+        "question_ua": "Прочитай уривок. Яка позиція автора?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Автор повністю підтримує зміну."
+          },
+          {
+            "id": "b",
+            "text": "Автор заперечує можливість будь-якої економії."
+          },
+          {
+            "id": "c",
+            "text": "Автор визнає можливу користь, але сумнівається в повноті розрахунків."
+          },
+          {
+            "id": "d",
+            "text": "Автор вважає, що якість послуги гарантовано зросте."
+          }
+        ],
+        "correctOptionId": "c",
+        "explanation_ua": "Автор допускає короткострокову економію, але ставить під сумнів повноту врахованих витрат і ризиків.",
+        "isPublished": true,
+        "prompt_sk": "Navrhovaná zmena môže priniesť krátkodobé úspory. Nie je však jasné, či sa do výpočtu zahrnuli náklady na zaškolenie, prechodné obdobie a možné zníženie kvality služby."
+      },
+      {
+        "id": "H006",
+        "sectionId": "branch_high",
+        "blockId": "c1",
+        "level": "C1",
+        "skill": "register",
+        "type": "register",
+        "question_ua": "Який варіант найкраще підходить для офіційного звіту замість розмовної фрази «Táto vec sa nám fakt nepodarila a musíme to nejako napraviť.»?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Realizácia nepriniesla očakávaný výsledok, preto je potrebné prijať nápravné opatrenia."
+          },
+          {
+            "id": "b",
+            "text": "Toto nám fakt nevyšlo, takže s tým musíme niečo spraviť."
+          },
+          {
+            "id": "c",
+            "text": "Celé to dopadlo zle a niekto to musí opraviť."
+          },
+          {
+            "id": "d",
+            "text": "Vec bola zlá, preto ju treba nejako dať do poriadku."
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "Офіційний варіант використовує нейтральну лексику, точний опис результату та формальне словосполучення «prijať nápravné opatrenia».",
+        "isPublished": true,
+        "prompt_sk": "Táto vec sa nám fakt nepodarila a musíme to nejako napraviť."
+      },
+      {
+        "id": "H007",
+        "sectionId": "branch_high",
+        "blockId": "c1",
+        "level": "C1",
+        "skill": "register",
+        "type": "natural_phrase",
+        "question_ua": "Яке речення найкраще відповідає формальному стилю?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Vzhľadom na nedostatok údajov nemožno dospieť k jednoznačnému záveru."
+          },
+          {
+            "id": "b",
+            "text": "Kvôli tomu, že nemáme dosť vecí, nevieme povedať, ako to je."
+          },
+          {
+            "id": "c",
+            "text": "Nie sú údaje, takže záver nejako nevychádza."
+          },
+          {
+            "id": "d",
+            "text": "Keďže toho veľa nevieme, radšej nič nepovieme."
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "Перший варіант є точним, нейтральним і стилістично відповідним офіційному тексту.",
+        "isPublished": true
+      },
+      {
+        "id": "H008",
+        "sectionId": "branch_high",
+        "blockId": "c1",
+        "level": "C1",
+        "skill": "cohesion",
+        "type": "grammar_in_context",
+        "question_ua": "Обери правильний сполучник: «Argument znie presvedčivo. ___ vychádza z predpokladu, ktorý text nijako nedokladá.»",
+        "options": [
+          {
+            "id": "a",
+            "text": "Preto"
+          },
+          {
+            "id": "b",
+            "text": "Napriek tomu"
+          },
+          {
+            "id": "c",
+            "text": "Napríklad"
+          },
+          {
+            "id": "d",
+            "text": "Následne"
+          }
+        ],
+        "correctOptionId": "b",
+        "explanation_ua": "«Napriek tomu» вводить контраст між переконливим звучанням аргументу та його недоведеною основою.",
+        "isPublished": true,
+        "prompt_sk": "Argument znie presvedčivo. ___ vychádza z predpokladu, ktorý text nijako nedokladá."
+      },
+      {
+        "id": "H009",
+        "sectionId": "branch_high",
+        "blockId": "c2",
+        "level": "C2",
+        "skill": "vocabulary",
+        "type": "nuance",
+        "question_ua": "Що означає слово «nezanedbateľný» у реченні «Projekt prináša nezanedbateľné riziko dodatočných nákladov.»?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Ризик настільки малий, що його можна повністю ігнорувати."
+          },
+          {
+            "id": "b",
+            "text": "Ризик не можна вважати незначним."
+          },
+          {
+            "id": "c",
+            "text": "Ризик гарантовано призведе до банкрутства."
+          },
+          {
+            "id": "d",
+            "text": "Ризику фактично не існує."
+          }
+        ],
+        "correctOptionId": "b",
+        "explanation_ua": "«Nezanedbateľný» означає такий, який не можна знехтувати або вважати незначним.",
+        "isPublished": true,
+        "prompt_sk": "Projekt prináša nezanedbateľné riziko dodatočných nákladov."
+      },
+      {
+        "id": "H010",
+        "sectionId": "branch_high",
+        "blockId": "c2",
+        "level": "C2",
+        "skill": "pragmatics",
+        "type": "irony",
+        "question_ua": "Прочитай речення. Який справжній намір автора?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Щиро похвалити організацію додаткової наради."
+          },
+          {
+            "id": "b",
+            "text": "Нейтрально повідомити про тривалість наради."
+          },
+          {
+            "id": "c",
+            "text": "Іронічно розкритикувати рішення проводити ще одну довгу нараду."
+          },
+          {
+            "id": "d",
+            "text": "Запропонувати проводити такі наради щодня."
+          }
+        ],
+        "correctOptionId": "c",
+        "explanation_ua": "Фраза формально звучить позитивно, але контекст запізнення проєкту створює очевидну іронічну критику.",
+        "isPublished": true,
+        "prompt_sk": "Samozrejme, ďalšia hodinová porada bola presne to, čo projekt potreboval, keď už aj tak meškal."
+      },
+      {
+        "id": "H011",
+        "sectionId": "branch_high",
+        "blockId": "c2",
+        "level": "C2",
+        "skill": "cohesion",
+        "type": "ambiguity_resolution",
+        "question_ua": "Відомо, що йдеться про пропозицію колеги. Яке речення найточніше усуває двозначність?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Manažér povedal kolegovi: „Váš návrh treba prepracovať.“"
+          },
+          {
+            "id": "b",
+            "text": "Manažér povedal kolegovi, že jeho návrh treba prepracovať."
+          },
+          {
+            "id": "c",
+            "text": "Manažér povedal, že návrh je jeho a kolega ho prepracuje."
+          },
+          {
+            "id": "d",
+            "text": "Návrh treba prepracovať, povedal jeho manažér kolegovi."
+          }
+        ],
+        "correctOptionId": "a",
+        "explanation_ua": "Пряма мова з формою «Váš návrh» однозначно показує, що йдеться про пропозицію колеги.",
+        "isPublished": true,
+        "prompt_sk": "Manažér povedal kolegovi, že jeho návrh treba prepracovať."
+      },
+      {
+        "id": "H012",
+        "sectionId": "branch_high",
+        "blockId": "c2",
+        "level": "C2",
+        "skill": "reading",
+        "type": "synthesis",
+        "question_ua": "Прочитай дві позиції. Яке резюме найточніше?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Обидва тексти стверджують, що дистанційна робота не має жодних недоліків."
+          },
+          {
+            "id": "b",
+            "text": "Перший текст відкидає гнучкість, а другий пропонує повністю офісну роботу."
+          },
+          {
+            "id": "c",
+            "text": "Обидва тексти визнають цінність гнучкості, а другий пропонує гібридний режим як спосіб частково зменшити комунікаційні ризики."
+          },
+          {
+            "id": "d",
+            "text": "Другий текст доводить, що планування в гібридному режимі не потрібне."
+          }
+        ],
+        "correctOptionId": "c",
+        "explanation_ua": "Обидві позиції визнають гнучкість, але друга пропонує гібридний компроміс із регулярним особистим контактом.",
+        "isPublished": true,
+        "context_ua": "Текст A: Práca na diaľku zvyšuje flexibilitu, môže však oslabiť neformálnu komunikáciu a výmenu skúseností v tíme.\n\nТекст B: Hybridný režim zachováva časť flexibility a zároveň umožňuje pravidelný osobný kontakt. Vyžaduje však presné plánovanie spoločných dní."
+      }
+    ],
+    "writingTasks": [
+      {
+        "id": "W0",
+        "targetLevels": [
+          "A0",
+          "A1"
+        ],
+        "title_ua": "Коротко розкажи про себе",
+        "instruction_ua": "Напиши словацькою 20–40 слів.",
+        "requirements_ua": [
+          "як тебе звати",
+          "звідки ти",
+          "де ти зараз живеш",
+          "коли ти маєш вільний час",
+          "постав одне просте запитання"
+        ],
+        "minWords": 20,
+        "maxWords": 40
+      },
+      {
+        "id": "W2",
+        "targetLevels": [
+          "A2"
+        ],
+        "title_ua": "Повідомлення власнику квартири",
+        "instruction_ua": "Напиши словацькою 50–80 слів. Ти орендуєш квартиру. Опалення не працює вже другий день.",
+        "requirements_ua": [
+          "опиши проблему",
+          "скажи, коли вона почалася",
+          "напиши, що ти вже перевірив",
+          "попроси організувати ремонт",
+          "повідом, коли ти будеш удома"
+        ],
+        "minWords": 50,
+        "maxWords": 80
+      },
+      {
+        "id": "W3",
+        "targetLevels": [
+          "B1"
+        ],
+        "title_ua": "Рекламація інтернет-замовлення",
+        "instruction_ua": "Напиши словацькою 90–130 слів. Ти замовив товар через інтернет, але отримав іншу модель.",
+        "requirements_ua": [
+          "коли ти зробив замовлення",
+          "що саме отримав",
+          "чим товар відрізняється",
+          "яке рішення ти очікуєш",
+          "попроси повідомити подальший порядок дій"
+        ],
+        "minWords": 90,
+        "maxWords": 130
+      },
+      {
+        "id": "W4",
+        "targetLevels": [
+          "B2"
+        ],
+        "title_ua": "Аргументована відповідь",
+        "instruction_ua": "Напиши словацькою 140–190 слів. Твоя мовна школа хоче повністю перейти на онлайн-навчання.",
+        "requirements_ua": [
+          "назви переваги онлайн-навчання",
+          "поясни можливі недоліки",
+          "порівняй онлайн-формат з очним",
+          "запропонуй власне рішення",
+          "обґрунтуй позицію"
+        ],
+        "minWords": 140,
+        "maxWords": 190
+      },
+      {
+        "id": "W5",
+        "targetLevels": [
+          "C1"
+        ],
+        "title_ua": "Офіційний коментар",
+        "instruction_ua": "Напиши словацькою 180–240 слів. Місто планує обмежити рух автомобілів у центрі.",
+        "requirements_ua": [
+          "коротко опиши проблему",
+          "наведи аргументи на підтримку обмеження",
+          "назви можливі негативні наслідки",
+          "запропонуй компроміс",
+          "сформулюй чіткий висновок"
+        ],
+        "minWords": 180,
+        "maxWords": 240
+      },
+      {
+        "id": "W6",
+        "targetLevels": [
+          "C2"
+        ],
+        "title_ua": "Аналітичний текст",
+        "instruction_ua": "Напиши словацькою 220–300 слів для професійної аудиторії.",
+        "sourceTexts_sk": [
+          "Digitalizácia verejných služieb zrýchľuje vybavovanie žiadostí a znižuje administratívne náklady.",
+          "Úplný prechod na digitálne služby môže znevýhodniť starších ľudí, osoby so zdravotným obmedzením a ľudí bez dostatočných technických zručností."
+        ],
+        "requirements_ua": [
+          "синтезуй обидві позиції",
+          "не переказуй їх окремо",
+          "визнач основний конфлікт",
+          "оціни ризики",
+          "запропонуй збалансовану модель",
+          "сформулюй переконливий висновок"
+        ],
+        "minWords": 220,
+        "maxWords": 300
+      }
+    ],
+    "writingRubric": {
+      "maxTotalScore": 20,
+      "criteria": [
+        {
+          "id": "task_completion",
+          "label_ua": "Виконання завдання",
+          "maxScore": 4,
+          "descriptors_ua": {
+            "0": "Відповідь не стосується завдання.",
+            "1": "Виконано лише один обов’язковий пункт.",
+            "2": "Виконано приблизно половину пунктів.",
+            "3": "Виконано майже всі пункти.",
+            "4": "Усі пункти розкриті повністю."
+          }
+        },
+        {
+          "id": "coherence",
+          "label_ua": "Логіка та зв’язність",
+          "maxScore": 4,
+          "descriptors_ua": {
+            "0": "Окремі незв’язані слова.",
+            "1": "Зв’язок між частинами дуже слабкий.",
+            "2": "Простий, але зрозумілий текст.",
+            "3": "Логічна структура й достатня зв’язність.",
+            "4": "Гнучкий, послідовний і добре організований текст."
+          }
+        },
+        {
+          "id": "vocabulary",
+          "label_ua": "Словниковий запас",
+          "maxScore": 4,
+          "descriptors_ua": {
+            "0": "Майже немає самостійного тексту.",
+            "1": "Лише найпростіші слова та повтори.",
+            "2": "Словника достатньо для простої ситуації.",
+            "3": "Широкий і здебільшого точний словник.",
+            "4": "Дуже широкий словник із точними відтінками."
+          }
+        },
+        {
+          "id": "grammar",
+          "label_ua": "Граматика",
+          "maxScore": 4,
+          "descriptors_ua": {
+            "0": "Текст практично неможливо зрозуміти.",
+            "1": "Багато системних помилок.",
+            "2": "Помилки є, але основний зміст зрозумілий.",
+            "3": "Використовуються складніші конструкції з незначними помилками.",
+            "4": "Точне й гнучке використання граматики."
+          }
+        },
+        {
+          "id": "style_and_naturalness",
+          "label_ua": "Стиль, орфографія та природність",
+          "maxScore": 4,
+          "descriptors_ua": {
+            "0": "Текст практично не словацькою.",
+            "1": "Сильний вплив української або машинного перекладу.",
+            "2": "Загалом зрозуміло, але часто неприродно.",
+            "3": "Природний стиль із незначними неточностями.",
+            "4": "Стиль повністю відповідає ситуації та аудиторії."
+          }
+        }
+      ],
+      "scoreBands": [
+        {
+          "min": 0,
+          "max": 4,
+          "level": "A0"
+        },
+        {
+          "min": 5,
+          "max": 7,
+          "level": "A1"
+        },
+        {
+          "min": 8,
+          "max": 10,
+          "level": "A2"
+        },
+        {
+          "min": 11,
+          "max": 13,
+          "level": "B1"
+        },
+        {
+          "min": 14,
+          "max": 16,
+          "level": "B2"
+        },
+        {
+          "min": 17,
+          "max": 18,
+          "level": "C1"
+        },
+        {
+          "min": 19,
+          "max": 20,
+          "level": "C2"
+        }
+      ]
+    },
+    "resultCombining": {
+      "scale": [
+        "A0",
+        "A1",
+        "A1+",
+        "A2",
+        "A2+",
+        "B1",
+        "B1+",
+        "B2",
+        "B2+",
+        "C1",
+        "C1+",
+        "C2"
+      ],
+      "rules": [
+        {
+          "id": "confirm_c2",
+          "condition": {
+            "closedResult": "C2_candidate",
+            "writingLevel": "C2"
+          },
+          "finalResult": "C2",
+          "confidence": "high"
+        },
+        {
+          "id": "unconfirmed_c2",
+          "condition": {
+            "closedResult": "C2_candidate",
+            "writingLevelMax": "C1"
+          },
+          "finalResult": "C1+",
+          "confidence": "medium"
+        },
+        {
+          "id": "writing_two_or_more_levels_lower",
+          "condition": {
+            "writingGapFullLevelsMin": 2
+          },
+          "action": "lowerClosedResultByOneFullLevel",
+          "confidence": "medium"
+        },
+        {
+          "id": "writing_same_or_adjacent",
+          "condition": {
+            "writingGapFullLevelsMax": 1
+          },
+          "action": "keepClosedResult",
+          "confidence": "high"
+        },
+        {
+          "id": "writing_higher",
+          "condition": {
+            "writingHigherThanClosed": true
+          },
+          "action": "doNotRaiseMoreThanOnePlusMarker",
+          "confidence": "medium"
+        }
+      ]
+    },
+    "resultScreen": {
+      "title_ua": "Твій результат",
+      "fields": [
+        "overallLevel",
+        "readingLevel",
+        "grammarLevel",
+        "vocabularyLevel",
+        "pragmaticsLevel",
+        "writingLevel",
+        "probableRange",
+        "confidence",
+        "weakSkills",
+        "recommendedCourseLevel"
+      ],
+      "buttons_ua": {
+        "startCourse": "Почати навчання",
+        "reviewMistakes": "Переглянути мої помилки",
+        "retakeLater": "Пройти тест повторно пізніше"
+      }
+    }
+  }
+}

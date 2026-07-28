@@ -50,6 +50,8 @@ export interface Word {
 
 export type ExerciseType =
   | "multiple_choice_translation"
+  | "multiple_choice_context"
+  | "choose_response"
   | "reverse_translation"
   | "audio_choice"
   | "match_pairs"
@@ -73,6 +75,7 @@ export interface Exercise {
   order: number;
   difficulty?: "easy" | "medium" | "hard";
   fullSentence?: string;
+  button?: string;
 }
 
 export interface TheoryExample {

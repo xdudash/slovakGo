@@ -192,55 +192,6 @@ export function Onboarding() {
   );
 }
 
-export function PlacementTest() {
-  const navigate = useNavigate();
-  const { submitPlacement, completeOnboarding, user } = useStudentData();
-  const { t, ta } = useT();
-  const goals = ta("student.goals");
-  const [answers, setAnswers] = useState<Record<number, boolean>>({});
-  const [result, setResult] = useState<UserLevel | null>(null);
-  const questions: Array<[string, string, boolean]> = [
-    ["Dobrý deň", "добрий день", true],
-    ["chlieb", "договір", false],
-    ["Môžem platiť kartou?", "Можна оплатити карткою?", true],
-    ["Kde je stanica?", "Де школа?", false],
-    ["Je cena vrátane energií?", "Ціна включає комунальні?", true],
-    ["Mám termín u lekára.", "У мене прийом у лікаря.", true],
-    ["Žiadam o informáciu.", "Я прошу інформацію.", true],
-    ["S pozdravom", "Без договору", false],
-    ["Nesúhlasím s tým.", "Я не погоджуюся з цим.", true],
-    ["Prikladám dokument.", "Я додаю документ.", true]
-  ];
-  if (!user) return <Navigate to="/login" replace />;
-  const correct = Object.values(answers).filter(Boolean).length;
-
-  return (
-    <main className="page-content">
-      <PageHeader title={t("student.placement.title")} subtitle={t("student.placement.subtitle")} />
-      {!result ? (
-        <Card>
-          {questions.map(([sk, uk, ok], index) => (
-            <div className="question-row" key={sk}>
-              <p>{sk} = {uk}</p>
-              <div>
-                <button type="button" className={answers[index] === ok ? "chip active" : "chip"} onClick={() => setAnswers({ ...answers, [index]: ok })}>{t("student.placement.yes")}</button>
-                <button type="button" className={answers[index] === !ok ? "chip active" : "chip"} onClick={() => setAnswers({ ...answers, [index]: !ok })}>{t("student.placement.no")}</button>
-              </div>
-            </div>
-          ))}
-          <Button onClick={() => setResult(submitPlacement(correct, questions.length))}>{t("student.placement.show_result")}</Button>
-        </Card>
-      ) : (
-        <Card className="result-card">
-          <h2>{t("student.placement.result_title")} {result}</h2>
-          <Button onClick={() => { completeOnboarding(user.goal || goals[0], result); navigate("/app/paywall", { replace: true }); }}>{t("student.placement.start_level")}</Button>
-          <Button variant="secondary" onClick={() => navigate("/app/levels")}>{t("student.placement.choose_level")}</Button>
-        </Card>
-      )}
-    </main>
-  );
-}
-
 function PathScreen() {
   const { data, user, progress } = useStudentData();
   const { t } = useT();
@@ -509,7 +460,7 @@ function MatchPairsExercise({ exercise, setAnswer }: { exercise: Exercise; setAn
   );
 }
 
-function ExerciseView({ exercise, answer, setAnswer, t }: { exercise: Exercise; answer: string | string[]; setAnswer: (value: string | string[]) => void; t: (key: string) => string }) {
+function ExerciseView({ exercise, answer, setAnswer, t, disabled = false }: { exercise: Exercise; answer: string | string[]; setAnswer: (value: string | string[]) => void; t: (key: string) => string; disabled?: boolean }) {
   if (exercise.type === "match_pairs") {
     return <MatchPairsExercise key={exercise.id} exercise={exercise} setAnswer={(v) => setAnswer(v)} />;
   }
@@ -517,7 +468,7 @@ function ExerciseView({ exercise, answer, setAnswer, t }: { exercise: Exercise; 
     return (
       <div className="option-list">
         {(exercise.options || []).map((option) => (
-          <button className={`option ${answer === option ? "active" : ""}`} type="button" key={option} onClick={() => setAnswer(option)}>{option}</button>
+          <button className={`option ${answer === option ? "active" : ""}`} type="button" key={option} onClick={() => setAnswer(option)} disabled={disabled}>{option}</button>
         ))}
       </div>
     );
@@ -526,7 +477,7 @@ function ExerciseView({ exercise, answer, setAnswer, t }: { exercise: Exercise; 
     return (
       <div className="fill-blank-exercise">
         {exercise.fullSentence && <p className="full-sentence-hint">{exercise.fullSentence.replace("______", "___")}</p>}
-        <Field label={t("student.lesson.answer_label")} value={String(answer || "")} onChange={(event) => setAnswer(event.target.value)} />
+        <Field label={t("student.lesson.answer_label")} value={String(answer || "")} disabled={disabled} onChange={(event) => setAnswer(event.target.value)} />
       </div>
     );
   }
@@ -536,14 +487,27 @@ function ExerciseView({ exercise, answer, setAnswer, t }: { exercise: Exercise; 
       <>
         <div className="answer-build">{selected.join(" ") || t("student.lesson.select_words")}</div>
         <div className="chip-grid">
-          {(exercise.options || []).map((option) => <button className="chip" key={option} type="button" onClick={() => setAnswer([...selected, option])}>{option}</button>)}
+          {(exercise.options || []).map((option) => <button className="chip" key={option} type="button" disabled={disabled} onClick={() => setAnswer([...selected, option])}>{option}</button>)}
         </div>
       </>
     );
   }
+  const isContextChoice = exercise.type === "multiple_choice_context";
+  const isResponseChoice = exercise.type === "choose_response";
   return (
-    <div className="option-list">
-      {(exercise.options || []).map((option) => <button className={`option ${answer === option ? "active" : ""}`} type="button" key={option} onClick={() => setAnswer(option)}>{option}</button>)}
+    <div className={`option-list${isContextChoice ? " option-list--context" : ""}${isResponseChoice ? " option-list--responses" : ""}`}>
+      {(exercise.options || []).map((option, optionIndex) => (
+        <button
+          className={`option ${answer === option ? "active" : ""}`}
+          type="button"
+          key={option}
+          disabled={disabled}
+          onClick={() => setAnswer(option)}
+        >
+          {(isContextChoice || isResponseChoice) && <span className="option-marker">{String.fromCharCode(65 + optionIndex)}</span>}
+          <span className="option-copy">{option}</span>
+        </button>
+      ))}
       {exercise.type === "audio_choice" && <p className="hint-text">{t("student.lesson.audio_hint")}</p>}
     </div>
   );
@@ -922,8 +886,20 @@ function LessonScreen() {
         <>
           <Card className="exercise-card">
             <p className="lesson-topic">{lesson.topic}</p>
+            {exercise.type === "multiple_choice_context" && (
+              <div className="exercise-mode exercise-mode--context">
+                <MessageSquare size={18} aria-hidden="true" />
+                <span><strong>Зрозумій намір</strong> · обери значення репліки в контексті</span>
+              </div>
+            )}
+            {exercise.type === "choose_response" && (
+              <div className="exercise-mode exercise-mode--response">
+                <MessageSquare size={18} aria-hidden="true" />
+                <span><strong>Обери репліку</strong> · знайди найприроднішу відповідь для ситуації</span>
+              </div>
+            )}
             <h1>{exercise.question}</h1>
-            <ExerciseView key={exercise.id} exercise={exercise} answer={answer} setAnswer={setAnswer} t={t} />
+            <ExerciseView key={exercise.id} exercise={exercise} answer={answer} setAnswer={setAnswer} t={t} disabled={feedback !== null} />
           </Card>
           <div className={`lesson-feedback ${feedback || ""}`}>
             {feedback === "correct" ? t("student.lesson.correct") : null}
@@ -935,7 +911,7 @@ function LessonScreen() {
                 <Button disabled={!answer || (Array.isArray(answer) && !answer.length)} onClick={check}>{t("student.lesson.check")}</Button>
                 {isAdmin && <Button variant="ghost" onClick={skipExercise}>Пропустити →</Button>}
               </>
-              : <Button autoFocus onClick={next}>{index + 1 >= lesson.exercises.length ? t("student.lesson.finish") : t("student.lesson.next")}</Button>
+              : <Button autoFocus onClick={next}>{index + 1 >= lesson.exercises.length ? t("student.lesson.finish") : exercise.button ?? t("student.lesson.next")}</Button>
             }
           </div>
         </>

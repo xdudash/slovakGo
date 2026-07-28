@@ -124,7 +124,8 @@ function validateWord(raw: Record<string, unknown>, lessonId: string, idx: numbe
 
 function validateExercise(raw: Record<string, unknown>, lessonId: string, idx: number): Exercise {
   const VALID_TYPES = [
-    "multiple_choice_translation","reverse_translation","audio_choice","match_pairs",
+    "multiple_choice_translation","multiple_choice_context","choose_response",
+    "reverse_translation","audio_choice","match_pairs",
     "true_false","fill_blank","sentence_ordering","typing","mistake_review",
   ];
   
@@ -155,6 +156,8 @@ function validateExercise(raw: Record<string, unknown>, lessonId: string, idx: n
     imageUrl:      raw.imageUrl    ? String(raw.imageUrl)     : undefined,
     order:         Number(raw.order ?? idx + 1),
     difficulty:    raw.difficulty ? (raw.difficulty as Exercise["difficulty"]) : undefined,
+    fullSentence:  raw.fullSentence ? String(raw.fullSentence) : undefined,
+    button:        raw.button ? String(raw.button) : undefined,
   };
 }
 
