@@ -96,7 +96,7 @@ export function PlacementTest() {
       navigate("/app/path", { replace: true });
     } else {
       completeOnboarding(user!.goal || "Життя у Словаччині", attempt.result.recommendedCourseLevel);
-      navigate("/app/paywall", { replace: true });
+      navigate("/app/path", { replace: true });
     }
   }
 

@@ -5255,6 +5255,34 @@ textarea:focus,
   margin-bottom: 8px;
 }
 
+.onboarding-product-shot {
+  width: min(100%, 340px);
+  height: 190px;
+  overflow: hidden;
+  position: relative;
+  background: #ece8ff;
+  border: 1px solid #d9d2ff;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(49, 36, 112, 0.14);
+}
+
+.onboarding-product-shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+  transform: translateY(-3%);
+}
+
+.onboarding-product-shot--progress img {
+  transform: translateY(-12%);
+}
+
+.onboarding-product-shot--start img {
+  transform: translateY(-7%);
+}
+
 .onboarding-card-anim h1 {
   font-size: 1.8rem;
   margin: 0;
@@ -5317,6 +5345,128 @@ textarea:focus,
 
 .onboarding-chip.active .check-icon {
   color: var(--yellow-dark);
+}
+
+.preview-access-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  color: #3b2b83;
+  background: #f1eeff;
+  border: 1px solid #d8d0ff;
+  border-radius: var(--radius-card);
+}
+
+.preview-access-banner > div {
+  display: grid;
+  gap: 3px;
+}
+
+.preview-access-banner strong {
+  font-size: 0.95rem;
+}
+
+.preview-access-banner span {
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.preview-access-progress {
+  flex: 0 0 auto;
+  min-width: 48px;
+  min-height: 38px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 12px;
+  font-weight: 850;
+}
+
+.preview-locked-page {
+  max-width: 430px;
+  min-height: calc(100dvh - 88px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.preview-locked-page h1 {
+  margin: 20px 0 8px;
+  font-size: 1.65rem;
+}
+
+.preview-locked-page > p {
+  margin: 0 auto 18px;
+  max-width: 36ch;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.preview-locked-visual {
+  width: 210px;
+  height: 150px;
+  overflow: hidden;
+  align-self: center;
+  background: #ece8ff;
+  border: 1px solid #d8d0ff;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(49, 36, 112, 0.14);
+}
+
+.preview-locked-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: translateY(-7%);
+}
+
+.preview-locked-counter {
+  margin-bottom: 18px;
+  padding: 11px 14px;
+  color: #3b2b83;
+  background: #f1eeff;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.bottom-nav-item.locked {
+  color: #8d88a3;
+}
+
+.bottom-nav-item.locked svg {
+  opacity: 0.72;
+}
+
+/* Long lesson collections render only near the viewport. */
+.topic-group,
+.word-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 160px;
+}
+
+@media (max-width: 480px) {
+  .onboarding-product-shot {
+    height: 168px;
+  }
+
+  .preview-access-banner {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .onboarding-card-anim {
+    animation: none;
+  }
+
+  .onboarding-product-shot img {
+    transform: none;
+  }
 }
 
 /* ── ADMIN PREVIEW BANNER ───────────────────────────────────────────────── */

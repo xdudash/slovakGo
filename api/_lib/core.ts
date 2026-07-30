@@ -150,7 +150,7 @@ export function rowToUser(r: Row): Record<string, unknown> {
     subExpiresAt:       r.sub_expires_at ?? null,
     onboardingDone:     Boolean(r.ob_done),
     settings:           safeJson(String(r.settings_j ?? "{}"), {}),
-    hasUsedTrial:       Boolean(r.stripe_customer_id),
+    hasUsedTrial:       Boolean(r.trial_used) || Boolean(r.stripe_customer_id),
     createdAt:          String(r.created_at),
     updatedAt:          String(r.updated_at),
   };

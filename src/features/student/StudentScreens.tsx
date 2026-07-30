@@ -20,6 +20,7 @@ import { downloadCertificate } from "../../services/certificateService";
 import { generateShareCard, shareOrDownloadCard } from "../../services/shareService";
 import { formatWeekTimer, secondsUntilWeekEnd } from "../../utils/date";
 import { requestFcmToken } from "../../services/fcmService";
+import { accessService } from "../../services/accessService";
 
 function useWeekTimer(): number {
   const [seconds, setSeconds] = useState(() => secondsUntilWeekEnd());
@@ -75,11 +76,15 @@ function TopStats() {
 
 export function StudentLayout() {
   const location = useLocation();
-  const { user } = useStudentData();
+  const { data, user, progress } = useStudentData();
 
-  if (user && user.role === "student" && user.subscriptionStatus === "free") {
-    const allowed = ["/app/profile", "/app/settings", "/app/paywall"];
-    if (!allowed.includes(location.pathname)) {
+  if (user && progress && user.role === "student" && !accessService.hasFullAccess(user.subscriptionStatus)) {
+    const alwaysAllowed = ["/app/profile", "/app/paywall"];
+    const isPath = location.pathname === "/app" || location.pathname === "/app/path";
+    const lessonId = location.pathname.startsWith("/app/lesson/") ? location.pathname.slice("/app/lesson/".length) : "";
+    const canPreview = accessService.canUsePreview(data.lessons, progress, user.subscriptionStatus);
+    const canOpenPreviewLesson = lessonId && accessService.canOpenLesson(lessonId, data.lessons, progress, user.subscriptionStatus);
+    if (!alwaysAllowed.includes(location.pathname) && !(canPreview && isPath) && !canOpenPreviewLesson) {
       return <Navigate to="/app/paywall" replace />;
     }
   }
@@ -122,8 +127,8 @@ export function Onboarding() {
 
   const cards = [
     <Card className="onboarding-card onboarding-card-anim" key="welcome">
-      <div className="onboarding-icon-wrap">
-        <MessageSquare size={32} color="var(--accent)" />
+      <div className="onboarding-product-shot onboarding-product-shot--welcome">
+        <img src="/app-exercise.png" alt="Вправа SlovakGO з реального застосунку" width="390" height="844" decoding="async" fetchPriority="high" />
       </div>
       <h1>{t("student.onboarding.welcome_title")}</h1>
       <p className="onboarding-text">{t("student.onboarding.welcome_text")}</p>
@@ -149,24 +154,24 @@ export function Onboarding() {
       </div>
     </Card>,
     <Card className="onboarding-card onboarding-card-anim" key="mechanics">
-      <div className="onboarding-icon-wrap">
-        <Bell size={32} color="var(--orange)" />
+      <div className="onboarding-product-shot onboarding-product-shot--progress">
+        <img src="/slovakgo-preview.png" alt="Навчальний шлях і прогрес у SlovakGO" width="390" height="844" loading="lazy" decoding="async" />
       </div>
-      <h1>Залишаємось на зв'язку 🔔</h1>
-      <p className="onboarding-text">Я нагадуватиму тобі про коротке тренування щодня, щоб не втратити прогрес і серця.</p>
+      <h1>Твій перший розділ уже відкритий</h1>
+      <p className="onboarding-text">Пройди справжні уроки свого рівня, відчуй формат і лише потім вирішуй, чи продовжувати з повним доступом.</p>
       <div className="mechanics-grid" style={{ marginBottom: 16 }}>
         {ta("student.onboarding.mechanics_items").map((item) => <span key={item}>{item}</span>)}
       </div>
-      <Button className="onboarding-btn-primary" onClick={handleNotifications}>Дозволити сповіщення</Button>
-      <Button variant="ghost" onClick={() => setStep(3)}>Можливо пізніше</Button>
+      <Button className="onboarding-btn-primary" onClick={() => setStep(3)}>Продовжити</Button>
+      <Button variant="ghost" onClick={handleNotifications}><Bell size={16} /> Дозволити нагадування</Button>
     </Card>,
     <Card className="onboarding-card onboarding-card-anim" key="start">
-      <div className="onboarding-icon-wrap">
-        <Zap size={32} color="var(--green)" />
+      <div className="onboarding-product-shot onboarding-product-shot--start">
+        <img src="/app-demo.png" alt="Демо-урок SlovakGO" width="390" height="844" loading="lazy" decoding="async" />
       </div>
       <h1>{t("student.onboarding.start_title")}</h1>
-      <p className="onboarding-text">Не хвилюйся, рівень можна буде змінити в налаштуваннях.</p>
-      <Button className="onboarding-btn-primary" onClick={() => { completeOnboarding(goal, "A0"); navigate("/app/paywall", { replace: true }); }}>
+      <p className="onboarding-text">Спочатку отримай результат: перший розділ доступний без оплати. Повний доступ запропонуємо лише після його завершення.</p>
+      <Button className="onboarding-btn-primary" onClick={() => { completeOnboarding(goal, "A0"); navigate("/app/path", { replace: true }); }}>
         {t("student.onboarding.start_a0")}
       </Button>
       <Button variant="secondary" onClick={() => navigate("/placement-test")}>
@@ -267,6 +272,9 @@ function PathScreen() {
   const goalPct = Math.min(100, Math.round(todayXp / dailyGoal * 100));
   const goalDone = todayXp >= dailyGoal;
   const streakAtRisk = progress.streakDays > 0 && todayXp === 0;
+  const previewMode = user.role === "student" && accessService.canUsePreview(data.lessons, progress, user.subscriptionStatus);
+  const previewLessons = accessService.firstSection(data.lessons, progress.currentLevel);
+  const previewCompleted = previewLessons.filter((lesson) => progress.completedLessons.includes(lesson.id)).length;
 
   return (
     <main className="page-content">
@@ -275,6 +283,16 @@ function PathScreen() {
         subtitle={`${progress.currentLevel} · ${t(`student.level_desc.${progress.currentLevel}`)}`}
       />
       <PWAInstallBanner />
+
+      {previewMode && (
+        <div className="preview-access-banner">
+          <div>
+            <strong>Перший розділ — без оплати</strong>
+            <span>Пройди {previewLessons.length} справжніх уроків, а потім відкрий два місяці повного доступу.</span>
+          </div>
+          <span className="preview-access-progress">{previewCompleted}/{previewLessons.length}</span>
+        </div>
+      )}
 
       {/* Unit section header */}
       <div className="unit-card">
@@ -664,12 +682,15 @@ function LessonScreen() {
   const isAdmin = user.role === "admin";
   const exercise = lesson.exercises[index];
   const alreadyDone = progress.completedLessons.includes(lesson.id);
+  const opensTrialAfterLesson = user.role === "student"
+    && accessService.isFinalPreviewLesson(lesson.id, data.lessons, progress, user.subscriptionStatus);
+  const completionDestination = opensTrialAfterLesson ? "/app/paywall" : "/app/path";
 
   if (!exercise && !celebration && !completionData && phase === "exercise") return <Navigate to="/app/path" replace />;
 
   function computeXp(): number {
     const base = alreadyDone ? Math.max(3, Math.round(lesson!.xpReward * 0.25)) : lesson!.xpReward;
-    return user!.subscriptionStatus === "plus" ? Math.round(base * 1.5) : base;
+    return accessService.hasFullAccess(user!.subscriptionStatus) ? Math.round(base * 1.5) : base;
   }
 
   function buildWrong(recs: AnswerRecord[]): WrongItem[] {
@@ -991,7 +1012,9 @@ function LessonScreen() {
             </div>
           )}
           <div className="lesson-result-actions">
-            <Button autoFocus onClick={() => navigate("/app/path")}>{lesson.resultScreen.buttons?.[0] ?? "Продовжити"}</Button>
+            <Button autoFocus onClick={() => navigate(completionDestination)}>
+              {opensTrialAfterLesson ? "Відкрити повний доступ →" : lesson.resultScreen.buttons?.[0] ?? "Продовжити"}
+            </Button>
             <Button variant="secondary" onClick={() => { setIndex(0); setTheoryIndex(0); setRecords([]); setFinalAnswer(""); setFinalFeedback(null); setCompletionData(null); setPhase(lesson.startScreen ? "start" : theories.length > 0 ? "theory" : "wordsScreen" in lesson && lesson.wordsScreen ? "words" : "exercise"); }}>{lesson.resultScreen.buttons?.[1] ?? "Повторити урок"}</Button>
             {completionData.wrong.length > 0 && <Button variant="ghost" onClick={() => navigate("/app/practice")}>{lesson.resultScreen.mistakesMessage ?? lesson.resultScreen.buttons?.[2] ?? "Тренувати помилки"}</Button>}
           </div>
@@ -1057,7 +1080,9 @@ function LessonScreen() {
             >
               <Share2 size={16} /> {sharing ? "…" : "Поділитись"}
             </button>
-            <Button autoFocus onClick={() => navigate("/app/path")}>Продовжити</Button>
+            <Button autoFocus onClick={() => navigate(completionDestination)}>
+              {opensTrialAfterLesson ? "Відкрити повний доступ →" : "Продовжити"}
+            </Button>
           </div>
         </div>
       )}
@@ -2465,15 +2490,32 @@ function SettingsScreen() {
 }
 
 export function PaywallScreen() {
-  const { user } = useStudentData();
+  const { data, user, progress } = useStudentData();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  if (!user) return <PageSkeleton />;
+  if (!user || !progress) return <PageSkeleton />;
 
-  if (user.subscriptionStatus === "plus") {
+  if (accessService.hasFullAccess(user.subscriptionStatus)) {
     return <Navigate to="/app/path" replace />;
+  }
+
+  if (accessService.canUsePreview(data.lessons, progress, user.subscriptionStatus)) {
+    const section = accessService.firstSection(data.lessons, progress.currentLevel);
+    const completed = section.filter((lesson) => progress.completedLessons.includes(lesson.id)).length;
+    return (
+      <main className="page-content preview-locked-page">
+        <div className="preview-locked-visual">
+          <img src="/app-exercise.png" alt="Вправа першого розділу SlovakGO" width="390" height="844" decoding="async" />
+        </div>
+        <h1>Спочатку заверши перший розділ</h1>
+        <p>Ми запропонуємо два пробні місяці лише після того, як ти перевіриш SlovakGO на справжніх уроках.</p>
+        <div className="preview-locked-counter">{completed} з {section.length} уроків уже пройдено</div>
+        <Button onClick={() => navigate("/app/path")}>Продовжити перший розділ</Button>
+        <Button variant="ghost" onClick={() => navigate("/app/profile")}>Профіль</Button>
+      </main>
+    );
   }
 
   async function handleSubscribe() {
@@ -2493,10 +2535,10 @@ export function PaywallScreen() {
       <div style={{ textAlign: "center", marginBottom: "24px" }}>
         <img src="/apple-icon.png" alt="SlovakGO" style={{ width: "80px", height: "80px", borderRadius: "20px", marginBottom: "16px" }} />
         <h1 style={{ fontSize: "1.8rem", fontWeight: 900, color: "var(--fg)", marginBottom: "8px" }}>
-          SlovakGO Plus 🚀
+          Перший розділ пройдено 🎉
         </h1>
         <p style={{ color: "var(--muted)", fontSize: "0.95rem", margin: 0 }}>
-          Отримайте повний доступ до вивчення словацької мови для життя та роботи в Словаччині.
+          Ти вже спробував SlovakGO на практиці. Тепер відкрий усі рівні та функції на два місяці.
         </p>
       </div>
 
@@ -2533,10 +2575,10 @@ export function PaywallScreen() {
         {!user.hasUsedTrial ? (
           <>
             <Button onClick={handleSubscribe} disabled={loading} style={{ width: "100%" }}>
-              {loading ? "Завантаження…" : "Розпочати 7 днів безкоштовно"}
+              {loading ? "Завантаження…" : "Почати 2 місяці пробного доступу"}
             </Button>
             <div style={{ textAlign: "center", fontSize: "0.8rem", color: "var(--muted)", marginTop: "4px" }}>
-              💳 Потрібна карта. Оплата почнеться автоматично через 7 днів, якщо ви не скасуєте підписку.
+              💳 Потрібна картка. Через 60 днів підписка продовжиться за €9,99/місяць, якщо її не скасувати.
             </div>
           </>
         ) : (
@@ -2545,7 +2587,7 @@ export function PaywallScreen() {
               🔒 <strong>Пробний період завершився або був використаний.</strong> Будь ласка, оформіть підписку, щоб продовжити навчання.
             </div>
             <Button onClick={handleSubscribe} disabled={loading} style={{ width: "100%" }}>
-              {loading ? "Завантаження…" : "Оплатити підписку (€9.99/міс)"}
+              {loading ? "Завантаження…" : "Оформити підписку (€9,99/міс)"}
             </Button>
           </>
         )}
@@ -2553,7 +2595,7 @@ export function PaywallScreen() {
 
       <div style={{ textAlign: "center", marginTop: "24px" }}>
         <p style={{ fontSize: "0.8rem", color: "var(--muted)", margin: "0 0 16px 0" }}>
-          Підписка €9.99/місяць. Скасувати можна в будь-який момент через кабінет Stripe.
+          Після пробного періоду — €9,99/місяць. Скасувати можна в будь-який момент через кабінет Stripe.
         </p>
         <div style={{ display: "flex", justifyContent: "center", gap: "16px" }}>
           <button
@@ -2665,7 +2707,7 @@ function ShopScreen() {
       <Card className="shop-card shop-card--main">
         <div className="shop-card-header">
           <Trophy size={48} className="shop-icon-main" />
-          <div className="shop-price-tag">€9.99<span>/міс</span></div>
+          <div className="shop-price-tag">€9,99<span>/міс</span></div>
         </div>
         <h2>{t("student.shop.product")}</h2>
         <p>{t("student.shop.desc")}</p>
@@ -2673,21 +2715,21 @@ function ShopScreen() {
         <div className="shop-comparison">
           <div className="shop-comp-header">
             <span></span>
-            <span className="comp-free">Free</span>
+            <span className="comp-free">Перший розділ</span>
             <span className="comp-plus">Plus</span>
           </div>
           <div className="shop-comp-row">
-            <span>Серця</span>
-            <span>Обмежено</span>
-            <span className="comp-check"><CheckCircle2 size={14} /> Безліміт</span>
+            <span>Уроки</span>
+            <span>1 розділ</span>
+            <span className="comp-check"><CheckCircle2 size={14} /> Усі рівні</span>
           </div>
           <div className="shop-comp-row">
-            <span>Реклама</span>
-            <span>Є</span>
-            <span className="comp-check"><CheckCircle2 size={14} /> Відсутня</span>
+            <span>Практика</span>
+            <span>Ні</span>
+            <span className="comp-check"><CheckCircle2 size={14} /> Так</span>
           </div>
           <div className="shop-comp-row">
-            <span>Офлайн режим</span>
+            <span>Словник</span>
             <span>Ні</span>
             <span className="comp-check"><CheckCircle2 size={14} /> Так</span>
           </div>
@@ -2713,7 +2755,7 @@ function ShopScreen() {
               ? t("student.shop.btn_loading")
               : (user?.hasUsedTrial
                 ? t("student.shop.btn_subscribe")
-                : "Спробувати 7 днів безкоштовно")}
+                : "Спробувати 2 місяці")}
           </Button>
         }
       </Card>
@@ -2746,8 +2788,8 @@ export function PaymentSuccess() {
         <div className="payment-icon payment-icon--success">
           <CheckCircle2 size={48} />
         </div>
-        <h1 className="payment-title">Підписку активовано!</h1>
-        <p className="payment-text">Ласкаво просимо до SlovakGO Plus. Тепер у тебе безлімітні серця, офлайн-режим та повна статистика.</p>
+        <h1 className="payment-title">Повний доступ активовано!</h1>
+        <p className="payment-text">Твої два пробні місяці почалися. Усі рівні, практика, словник і статистика вже відкриті.</p>
         <Button variant="primary" onClick={() => navigate("/app/path")}>Почати навчання →</Button>
       </div>
     </main>
@@ -2767,7 +2809,7 @@ export function PaymentCancel() {
         <p className="payment-text">Нічого страшного — ти можеш повернутися і підписатися у зручний час.</p>
         <div className="payment-actions">
           <Button variant="primary" onClick={() => navigate("/app/shop")}>Спробувати ще раз</Button>
-          <Button variant="ghost" onClick={() => navigate("/app/path")}>Продовжити безкоштовно</Button>
+          <Button variant="ghost" onClick={() => navigate("/app/profile")}>Повернутися в профіль</Button>
         </div>
       </div>
     </main>

@@ -1,9 +1,10 @@
-import { BookOpen, Dumbbell, House, Medal, Settings, ShoppingBag, Trophy, UserRound, UsersRound } from "lucide-react";
+import { BookOpen, Dumbbell, House, LockKeyhole, Medal, Settings, ShoppingBag, Trophy, UserRound, UsersRound } from "lucide-react";
 import { NavLink, Outlet, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState, type ReactNode } from "react";
 import type { UserRole } from "../types";
 import { useT } from "../i18n";
 import { useAppStore } from "../store/useAppStore";
+import { accessService } from "../services/accessService";
 
 const navConfig = {
   student: [
@@ -36,7 +37,8 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
   const syncMessage = useAppStore((s) => s.syncMessage);
   const pendingCount = useAppStore((s) => s.data.syncQueue.length);
   const currentUserId = useAppStore((s) => s.currentUserId);
-  const users = useAppStore((s) => s.data.users);
+  const data = useAppStore((s) => s.data);
+  const users = data.users;
   const returnToAdmin = useAppStore((s) => s.returnToAdmin);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [adminReturnId, setAdminReturnId] = useState<string | null>(() => localStorage.getItem(adminReturnKey));
@@ -59,6 +61,15 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
   }, [currentUserId]);
 
   const currentUserName = users.find((u) => u.id === currentUserId)?.name ?? "";
+  const currentUser = users.find((u) => u.id === currentUserId);
+  const currentProgress = currentUserId ? data.progress[currentUserId] : undefined;
+  const previewOpen = !!(currentUser && currentProgress && accessService.canUsePreview(data.lessons, currentProgress, currentUser.subscriptionStatus));
+  const shouldLockStudentItem = (to: string) =>
+    role === "student"
+    && !!currentUser
+    && !accessService.hasFullAccess(currentUser.subscriptionStatus)
+    && to !== "/app/profile"
+    && !(to === "/app/path" && previewOpen);
   const showNav = location.pathname !== "/app/paywall";
 
   return (
@@ -87,9 +98,17 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
           </div>
           {items.map((item) => {
             const Icon = item.icon;
+            const locked = shouldLockStudentItem(item.to);
+            const destination = locked ? "/app/paywall" : item.to;
             return (
-              <NavLink key={item.to} to={item.to} className={({ isActive }) => `bottom-nav-item ${isActive ? "active" : ""}`} end={item.to === "/teacher" || item.to === "/admin"}>
-                <Icon size={20} />
+              <NavLink
+                key={item.to}
+                to={destination}
+                className={({ isActive }) => `bottom-nav-item ${isActive && !locked ? "active" : ""}${locked ? " locked" : ""}`}
+                end={item.to === "/teacher" || item.to === "/admin"}
+                aria-label={locked ? `${t(item.key)} — доступно після активації` : undefined}
+              >
+                {locked ? <LockKeyhole size={18} /> : <Icon size={20} />}
                 <span>{t(item.key)}</span>
               </NavLink>
             );

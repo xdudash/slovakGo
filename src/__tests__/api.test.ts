@@ -35,7 +35,7 @@ const SCHEMA_STMTS = [
     id TEXT PRIMARY KEY, email TEXT UNIQUE NOT NULL, pw_hash TEXT NOT NULL DEFAULT '',
     name_text TEXT NOT NULL DEFAULT '', role TEXT NOT NULL DEFAULT 'student',
     level TEXT NOT NULL DEFAULT 'A0', goal TEXT, avatar TEXT, country TEXT,
-    sub_status TEXT NOT NULL DEFAULT 'trial', trial_ends TEXT,
+    sub_status TEXT NOT NULL DEFAULT 'trial', trial_ends TEXT, trial_used INTEGER NOT NULL DEFAULT 0,
     stripe_customer_id TEXT, stripe_sub_id TEXT,
     ob_done INTEGER NOT NULL DEFAULT 0, is_blocked INTEGER NOT NULL DEFAULT 0,
     referred_by TEXT, settings_j TEXT NOT NULL DEFAULT '{}',

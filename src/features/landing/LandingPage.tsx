@@ -29,7 +29,7 @@ export function LandingPage() {
         "applicationCategory": "EducationApplication",
         "operatingSystem": "Web, Android, iOS",
         "inLanguage": ["uk", "sk", "en"],
-        "description": "SlovakGO is a free Slovak language learning app for Ukrainian speakers living in Slovakia. It teaches practical vocabulary for daily life scenarios: renting apartments, visiting doctors, navigating the Cudzinecká polícia (Foreigners' Police), and applying for jobs.",
+        "description": "SlovakGO is a Slovak language learning app for Ukrainian speakers living in Slovakia. The first section is available before the two-month full-access trial.",
         "datePublished": "2026-01-01",
         "dateModified": "2026-06-22",
         "offers": {
@@ -115,10 +115,10 @@ export function LandingPage() {
           },
           {
             "@type": "Question",
-            "name": "Як безкоштовно вивчити словацьку онлайн?",
+            "name": "Як спробувати SlovakGO перед оформленням підписки?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "SlovakGO пропонує безкоштовний базовий план з доступом до всіх рівнів навчання від A0 до B2. Щоденні короткі уроки (10–15 хвилин) доступні без оплати. Безкоштовний план включає систему серій та XP-прогресію. Платний план Plus (€9.99/міс) додає офлайн доступ та безлімітні серця."
+              "text": "Спочатку користувач проходить перший розділ свого рівня без оплати. Після нього можна активувати два місяці повного доступу з карткою. Далі підписка коштує €9,99 на місяць."
             }
           },
           {
@@ -161,7 +161,7 @@ export function LandingPage() {
             ) : (
               <>
                 <Link to="/login" className="nav-link">Увійти</Link>
-                <Link to="/register" className="btn btn-primary btn-sm">Почати безкоштовно</Link>
+                <Link to="/register" className="btn btn-primary btn-sm">Почати навчання</Link>
               </>
             )}
           </div>
@@ -178,13 +178,13 @@ export function LandingPage() {
             </div>
             <h1>Вивчай словацьку через <span>реальні ситуації</span></h1>
             <p>
-              SlovakGO — безкоштовний додаток словацької мови (Slovenčina) для українців.
+              SlovakGO — додаток словацької мови (Slovenčina) для українців.
               Від нуля до впевненої розмови в аптеці, на роботі й у лікаря —
               за 15 хвилин на день.
             </p>
             <div className="hero-cta">
               <Link to="/register" className="btn btn-primary btn-lg">
-                Почати безкоштовно <ArrowRight size={18} />
+                Пройти перший розділ <ArrowRight size={18} />
               </Link>
               <div className="hero-stats">
                 <div className="mini-avatars">
@@ -295,33 +295,21 @@ export function LandingPage() {
       {/* ── Pricing ─────────────────────────────────────────────────── */}
       <section className="pricing-section">
         <div className="pricing-header">
-          <h2>Безкоштовне вивчення словацької — без кредитної картки</h2>
-          <p>SlovakGO безкоштовний для всіх рівнів від A0 до B2. Plus-план для тих, хто хоче більше.</p>
+          <h2>Спочатку спробуй навчання на практиці</h2>
+          <p>Перший розділ доступний без оплати. Потім — два місяці повного доступу та €9,99/місяць після trial.</p>
         </div>
         <div className="pricing-cards">
-          <div className="price-card free">
-            <h3>Basic — Безкоштовно</h3>
-            <div className="price">€0<span>/міс</span></div>
-            <ul>
-              <li><CheckCircle2 size={16} /> Всі рівні A0–B2</li>
-              <li><CheckCircle2 size={16} /> 50+ уроків з реальних ситуацій</li>
-              <li><CheckCircle2 size={16} /> Система XP та серій</li>
-              <li><CheckCircle2 size={16} /> Таблиця лідерів</li>
-            </ul>
-            <Link to="/register" className="btn btn-ghost">Спробувати безкоштовно</Link>
-          </div>
-
           <div className="price-card plus">
-            <div className="badge">Рекомендовано</div>
-            <h3>Plus — €9.99/міс</h3>
-            <div className="price">€9.99<span>/міс</span></div>
+            <div className="badge">2 місяці пробного доступу</div>
+            <h3>Повний доступ до SlovakGO</h3>
+            <div className="price">€9,99<span>/міс</span></div>
             <ul>
               <li><CheckCircle2 size={16} /> Безлімітні серця</li>
               <li><CheckCircle2 size={16} /> Офлайн доступ до уроків</li>
               <li><CheckCircle2 size={16} /> Розширена аналітика прогресу</li>
               <li><CheckCircle2 size={16} /> Пріоритетна підтримка</li>
             </ul>
-            <Link to="/register" className="btn btn-primary">Стати Plus</Link>
+            <Link to="/register" className="btn btn-primary">Почати з першого розділу</Link>
           </div>
         </div>
       </section>
@@ -418,7 +406,7 @@ export function LandingPage() {
             Приєднуйся до 500+ українців, які вже вивчають словацьку через SlovakGO
             і впевнено почуваються в Братиславі, Кошице та інших містах Словаччини.
           </p>
-          <Link to="/register" className="btn btn-primary btn-lg">Зареєструватися безкоштовно</Link>
+          <Link to="/register" className="btn btn-primary btn-lg">Почати навчання</Link>
           <div className="footer-links">
             <span>© 2026 SlovakGO · <a href="mailto:hello@slovakgo.sk">hello@slovakgo.sk</a></span>
             <span style={{color: 'var(--muted)', fontSize: '0.8rem'}}>Оновлено: Червень 2026</span>

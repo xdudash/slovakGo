@@ -33,6 +33,7 @@ CREATE TABLE IF NOT EXISTS users (
   country             TEXT,
   sub_status          TEXT NOT NULL DEFAULT 'trial',
   trial_ends          TEXT,
+  trial_used          INTEGER NOT NULL DEFAULT 0,
   stripe_customer_id  TEXT,
   stripe_sub_id       TEXT,
   sub_expires_at      TEXT,

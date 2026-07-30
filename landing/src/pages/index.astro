@@ -19,13 +19,13 @@ const schema = {
       "applicationCategory": "EducationalApplication",
       "operatingSystem": ["Android", "iOS", "Web"],
       "inLanguage": ["uk", "sk"],
-      "description": "SlovakGO — додаток для вивчення словацької мови для українців у Словаччині з 7-денним безкоштовним періодом. Практичні уроки для реальних ситуацій: оренда житла, лікар, Cudzinecká polícia, робота.",
+      "description": "SlovakGO — додаток для вивчення словацької мови для українців у Словаччині. Перший розділ доступний без оплати, після нього — два місяці пробного доступу.",
       "url": "https://app.slovakgo.sk",
       "datePublished": "2026-01-01",
       "dateModified": "2026-06-22",
       "offers": {
         "@type": "Offer",
-        "price": "10",
+        "price": "9.99",
         "priceCurrency": "EUR",
         "availability": "https://schema.org/InStock",
       },
@@ -63,7 +63,7 @@ const schema = {
 
 <Base
   title="SlovakGO — додаток для вивчення словацької мови для українців"
-  description="SlovakGO — додаток для вивчення словацької мови для українців у Словаччині. Спробуйте 7 днів безкоштовно, далі — €10/міс. Практичні уроки з реальних ситуацій."
+  description="SlovakGO — додаток для українців у Словаччині. Пройдіть перший розділ без оплати, потім отримайте два місяці повного доступу. Далі — €9,99/міс."
   schema={schema}
 >
 
@@ -80,13 +80,13 @@ const schema = {
 
         <p>
           SlovakGO — додаток словацької мови (Slovenčina) для українців.
-          Спробуйте 7 днів безкоштовно, далі — €10/місяць. Від нуля до впевненої розмови
+          Пройдіть перший розділ без оплати, а потім відкрийте два місяці повного доступу. Далі — €9,99/місяць. Від нуля до впевненої розмови
           в аптеці, на роботі й у лікаря — за 15 хвилин на день.
         </p>
 
         <div class="hero-cta">
           <a href="https://app.slovakgo.sk/register" class="btn btn-primary btn-lg" rel="noopener">
-            Спробувати 7 днів безкоштовно
+            Пройти перший розділ
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
           <div class="hero-stats">
@@ -109,6 +109,8 @@ const schema = {
               width="390"
               height="844"
               loading="eager"
+              fetchpriority="high"
+              decoding="async"
               onerror="this.parentElement.classList.add('mockup-placeholder-fallback')"
             />
           </div>
@@ -127,7 +129,7 @@ const schema = {
       <div class="product-preview-grid">
         <figure class="product-shot product-shot--side">
           <div class="product-shot-frame">
-            <img src="/app-register.png" alt="Екран реєстрації SlovakGO" width="390" height="844" loading="lazy" />
+            <img src="/app-register.png" alt="Екран реєстрації SlovakGO" width="390" height="844" loading="lazy" decoding="async" />
           </div>
           <figcaption>Створи профіль</figcaption>
         </figure>
@@ -262,13 +264,13 @@ const schema = {
     <div class="container">
       <div class="pricing-header">
         <h2 id="pricing-heading">Простий та прозорий тариф</h2>
-        <p>Спробуйте всі можливості SlovakGO безкоштовно протягом перших 7 днів.</p>
+        <p>Спочатку пройдіть справжній розділ свого рівня. Після нього відкрийте два місяці повного доступу.</p>
       </div>
       <div class="pricing-cards" style="display: flex; justify-content: center;">
         <div class="price-card plus" style="max-width: 420px; width: 100%;">
-          <div class="badge">7 днів безкоштовно</div>
+          <div class="badge">2 місяці пробного доступу</div>
           <h3>Повний доступ до SlovakGO</h3>
-          <div class="price-tag">€10<span>/міс</span></div>
+          <div class="price-tag">€9,99<span>/міс</span></div>
           <ul>
             <li><span class="check" aria-hidden="true">✓</span> Всі рівні A0–B2 та 50+ практичних уроків</li>
             <li><span class="check" aria-hidden="true">✓</span> Реальні сценарії: оренда, лікар, робота, поліція</li>
@@ -276,9 +278,9 @@ const schema = {
             <li><span class="check" aria-hidden="true">✓</span> Офлайн доступ до уроків</li>
             <li><span class="check" aria-hidden="true">✓</span> Система XP, серій та таблиця лідерів</li>
           </ul>
-          <a href="https://app.slovakgo.sk/register" class="btn btn-primary" rel="noopener">Спробувати 7 днів безкоштовно</a>
+          <a href="https://app.slovakgo.sk/register" class="btn btn-primary" rel="noopener">Почати з першого розділу</a>
           <p style="text-align: center; font-size: 0.85rem; color: var(--muted); margin-top: 16px; margin-bottom: 0;">
-            Перші 7 днів безкоштовно, далі — €10/місяць. Скасувати підписку можна в будь-який момент.
+            Спочатку — перший розділ без оплати. Потім 60 днів повного доступу, далі — €9,99/місяць. Потрібна картка; скасувати можна будь-коли.
           </p>
         </div>
       </div>
@@ -335,7 +337,7 @@ const schema = {
         і впевнено почуваються в Братиславі, Кошице та інших містах Словаччини.
       </p>
       <a href="https://app.slovakgo.sk/register" class="btn btn-primary btn-lg" rel="noopener">
-        Спробувати 7 днів безкоштовно
+        Пройти перший розділ
       </a>
     </div>
   </section>

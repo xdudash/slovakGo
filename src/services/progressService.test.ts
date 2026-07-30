@@ -105,6 +105,12 @@ describe('completeLesson XP reward', () => {
     expect(result.xpWeekly).toBe(80 + expected);
   });
 
+  it('applies the full-access XP bonus during trial', () => {
+    const p = makeProgress({ completedLessons: [] });
+    const result = progressService.completeLesson(p, BASE_LESSON, [], "trial");
+    expect(result.xpWeekly).toBe(80 + Math.round(12 * 1.5));
+  });
+
   it('records the lesson as completed on first try', () => {
     const p = makeProgress({ completedLessons: [] });
     const result = progressService.completeLesson(p, BASE_LESSON, []);

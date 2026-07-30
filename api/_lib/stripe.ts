@@ -16,9 +16,10 @@ export async function handleBillingCheckout(req: VercelRequest, res: VercelRespo
   await ensureCol("users", "sub_expires_at", "TEXT");
   await ensureCol("users", "stripe_customer_id", "TEXT");
   await ensureCol("users", "stripe_sub_id", "TEXT");
+  await ensureCol("users", "trial_used", "INTEGER NOT NULL DEFAULT 0");
   
   const row = await queryOne(
-    "SELECT email, stripe_customer_id, sub_status, stripe_sub_id FROM users WHERE id = ? LIMIT 1",
+    "SELECT email, stripe_customer_id, sub_status, stripe_sub_id, trial_used FROM users WHERE id = ? LIMIT 1",
     [uid]
   );
   if (!row) return fail(res, "User not found", 404);
@@ -36,16 +37,17 @@ export async function handleBillingCheckout(req: VercelRequest, res: VercelRespo
   
   const cusId = String(row.stripe_customer_id ?? "");
   const hasActiveSub = String(row.stripe_sub_id ?? "") !== "";
+  const hasUsedTrial = Boolean(row.trial_used) || Boolean(cusId);
   
   if (cusId) {
     (params as Record<string, unknown>).customer = cusId;
     // Даємо тріал тільки якщо у юзера ще ніколи не було підписки
-    if (!hasActiveSub) {
-      params.subscription_data = { trial_period_days: 7 };
+    if (!hasActiveSub && !hasUsedTrial) {
+      params.subscription_data = { trial_period_days: 60 };
     }
   } else {
     params.customer_email = String(row.email);
-    params.subscription_data = { trial_period_days: 7 };
+    if (!hasUsedTrial) params.subscription_data = { trial_period_days: 60 };
   }
   
   const session = await getStripe().checkout.sessions.create(params);
@@ -76,6 +78,8 @@ export async function handleBillingWebhook(req: VercelRequest, res: VercelRespon
     return fail(res, "Invalid signature", 400);
   }
 
+  await ensureCol("users", "trial_used", "INTEGER NOT NULL DEFAULT 0");
+
 
   function getSafeExpiresAt(periodEnd: unknown): string {
     if (typeof periodEnd === "number" && !isNaN(periodEnd)) return new Date(periodEnd * 1000).toISOString();
@@ -87,17 +91,23 @@ export async function handleBillingWebhook(req: VercelRequest, res: VercelRespon
     const s = event.data.object as Stripe.Checkout.Session;
     if (s.client_reference_id && s.subscription) {
       let expiresAt: string;
+      let trialEndsAt: string | null = null;
+      let subscriptionStatus = "plus";
       try {
         const sub = await getStripe().subscriptions.retrieve(String(s.subscription));
         expiresAt = getSafeExpiresAt(sub.current_period_end);
+        if (sub.status === "trialing") {
+          subscriptionStatus = "trial";
+          trialEndsAt = sub.trial_end ? new Date(sub.trial_end * 1000).toISOString() : expiresAt;
+        }
       } catch (err) {
         console.error("Failed to retrieve subscription in webhook:", err);
         throw err;
       }
       
       await exec(
-        "UPDATE users SET sub_status = 'plus', stripe_customer_id = ?, stripe_sub_id = ?, sub_expires_at = ?, updated_at = ? WHERE id = ?",
-        [String(s.customer ?? ""), String(s.subscription), expiresAt, nowIso(), s.client_reference_id]
+        "UPDATE users SET sub_status = ?, stripe_customer_id = ?, stripe_sub_id = ?, trial_ends = ?, trial_used = 1, sub_expires_at = ?, updated_at = ? WHERE id = ?",
+        [subscriptionStatus, String(s.customer ?? ""), String(s.subscription), trialEndsAt, expiresAt, nowIso(), s.client_reference_id]
       );
     }
   }
@@ -105,17 +115,22 @@ export async function handleBillingWebhook(req: VercelRequest, res: VercelRespon
   if (event.type === "customer.subscription.updated") {
     const sub = event.data.object as Stripe.Subscription;
     const expiresAt = getSafeExpiresAt(sub.current_period_end);
-    const status = (sub.status === "active" || sub.status === "trialing") ? "plus" : "free";
+    const status = sub.status === "trialing" ? "trial"
+      : sub.status === "active" ? "plus"
+        : sub.status === "canceled" ? "cancelled" : "expired";
+    const trialEndsAt = sub.status === "trialing" && sub.trial_end
+      ? new Date(sub.trial_end * 1000).toISOString()
+      : null;
     await exec(
-      "UPDATE users SET sub_status = ?, sub_expires_at = ?, updated_at = ? WHERE stripe_customer_id = ?",
-      [status, expiresAt, nowIso(), String(sub.customer)]
+      "UPDATE users SET sub_status = ?, trial_ends = ?, trial_used = 1, sub_expires_at = ?, updated_at = ? WHERE stripe_customer_id = ?",
+      [status, trialEndsAt, expiresAt, nowIso(), String(sub.customer)]
     );
   }
 
   if (event.type === "customer.subscription.deleted") {
     const sub = event.data.object as Stripe.Subscription;
     await exec(
-      "UPDATE users SET sub_status = 'free', stripe_sub_id = '', sub_expires_at = NULL, updated_at = ? WHERE stripe_customer_id = ?",
+      "UPDATE users SET sub_status = 'cancelled', stripe_sub_id = '', trial_ends = NULL, sub_expires_at = NULL, updated_at = ? WHERE stripe_customer_id = ?",
       [nowIso(), String(sub.customer)]
     );
   }

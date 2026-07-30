@@ -16,14 +16,14 @@ export async function handleSyncPull(req: VercelRequest, res: VercelResponse): P
 
   if (String(row.sub_status) === "trial" && row.trial_ends) {
     if (Date.now() > new Date(String(row.trial_ends)).getTime()) {
-      await exec("UPDATE users SET sub_status = 'free', updated_at = ? WHERE id = ?", [nowIso(), uid]);
+      await exec("UPDATE users SET sub_status = 'expired', updated_at = ? WHERE id = ?", [nowIso(), uid]);
       row = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [uid]);
       if (!row) return fail(res, "Користувача не знайдено", 404);
     }
   }
   if (String(row.sub_status) === "plus" && row.sub_expires_at) {
     if (Date.now() > new Date(String(row.sub_expires_at)).getTime()) {
-      await exec("UPDATE users SET sub_status = 'free', updated_at = ? WHERE id = ?", [nowIso(), uid]);
+      await exec("UPDATE users SET sub_status = 'expired', updated_at = ? WHERE id = ?", [nowIso(), uid]);
       row = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [uid]);
       if (!row) return fail(res, "Користувача не знайдено", 404);
     }
