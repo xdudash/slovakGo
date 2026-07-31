@@ -136,6 +136,39 @@ function clampScore(score: number): number {
   return Math.max(0, Math.min(4, Math.round(score)));
 }
 
+const slovakFunctionWords = new Set([
+  "a", "aby", "aj", "ale", "ako", "by", "do", "ho", "ich", "je", "k", "keď",
+  "ktorý", "ktorá", "ktoré", "má", "na", "nie", "o", "od", "po", "pre", "pri",
+  "sa", "si", "som", "sú", "sme", "tak", "to", "v", "vo", "z", "za", "že"
+]);
+
+const taskKeywordGroups: Record<string, string[][]> = {
+  W0: [["volám", "meno", "som"], ["ukrajiny", "ukrajinec", "pochádzam", "odkiaľ"], ["bývam", "žijem"], ["voľno", "čas"], ["?"]],
+  W2: [["kúrenie", "radiátor", "teplo", "nefunguje"], ["deň", "včera", "začalo"], ["skontroloval", "skontrolovala", "overil", "overila"], ["oprava", "opraviť", "technik"], ["doma", "byte", "budem"]],
+  W3: [["objednal", "objednala", "objednávka"], ["dostal", "dostala", "prišiel", "model"], ["iný", "odliš", "nespráv"], ["výmena", "vrátiť", "refund", "riešenie"], ["postup", "informujte", "odpoveď"]],
+  W4: [["online", "dištanč"], ["výhod", "flexibil", "pohodl"], ["nevýhod", "problém", "kontakt"], ["prezenč", "osobn", "tradič"], ["navrh", "riešen", "hybrid"], ["myslím", "podľa", "preto"]],
+  W5: [["auto", "áut", "automobil", "doprava", "premáv"], ["centrum", "mesto"], ["obmedz", "zákaz"], ["výhod", "podpor"], ["nevýhod", "násled"], ["kompromis", "riešen", "navrh"], ["záver", "preto"]],
+  W6: [["digitaliz", "digitáln"], ["služb"], ["starš", "senior"], ["znevýhod", "rizik"], ["model", "riešen", "navrh"], ["záver", "preto"]]
+};
+
+function includesStem(text: string, stem: string): boolean {
+  return stem === "?" ? text.includes("?") : text.includes(stem);
+}
+
+function writingSignals(text: string, words: string[], task: PlacementWritingTask) {
+  const normalized = text.toLocaleLowerCase("sk");
+  const lowerWords = words.map((word) => word.toLocaleLowerCase("sk"));
+  const slovakFunctionCount = lowerWords.filter((word) => slovakFunctionWords.has(word)).length;
+  const slovakDiacritics = (normalized.match(/[áäčďéíĺľňóôŕšťúýž]/gu) ?? []).length;
+  const latinPlaceholder = /\b(lorem|ipsum|dolor|amet|consectetur|adipiscing|elit)\b/iu.test(normalized);
+  const groups = taskKeywordGroups[task.id] ?? [];
+  const matchedGroups = groups.filter((group) => group.some((stem) => includesStem(normalized, stem))).length;
+  const relevance = groups.length ? matchedGroups / groups.length : 0;
+  const slovakRatio = words.length ? slovakFunctionCount / words.length : 0;
+  const isProbablySlovak = !latinPlaceholder && (slovakRatio >= 0.035 || (slovakFunctionCount >= 3 && slovakDiacritics >= 2));
+  return { relevance, isProbablySlovak, latinPlaceholder, slovakDiacritics };
+}
+
 export function wordCount(text: string): number {
   return text.trim() ? text.trim().split(/\s+/u).length : 0;
 }
@@ -190,23 +223,30 @@ export function evaluateWriting(text: string, task: PlacementWritingTask): {
   const sentences = text.split(/[.!?]+/u).filter((part) => part.trim().length > 2).length;
   const uniqueRatio = count ? new Set(words.map((word) => word.toLocaleLowerCase("sk"))).size / count : 0;
   const connectors = (text.match(/\b(a|ale|preto|pretože|keď|ak|hoci|napriek|zatiaľ|teda|avšak|pričom|ktorý|ktorá|ktoré)\b/giu) ?? []).length;
-  const slovakSignals = (text.match(/[áäčďéíĺľňóôŕšťúýž]/giu) ?? []).length;
+  const signals = writingSignals(text, words, task);
+  const slovakSignals = signals.slovakDiacritics;
   const targetRatio = count / Math.max(1, task.minWords);
 
-  const taskCompletion = clampScore(targetRatio >= 1 ? 4 : targetRatio >= 0.75 ? 3 : targetRatio >= 0.5 ? 2 : targetRatio > 0 ? 1 : 0);
+  const lengthScore = targetRatio >= 1 ? 4 : targetRatio >= 0.75 ? 3 : targetRatio >= 0.5 ? 2 : targetRatio > 0 ? 1 : 0;
+  const relevanceScore = signals.relevance >= 0.8 ? 4 : signals.relevance >= 0.55 ? 3 : signals.relevance >= 0.3 ? 2 : signals.relevance > 0 ? 1 : 0;
+  const taskCompletion = signals.isProbablySlovak ? Math.min(lengthScore, relevanceScore) : 0;
   const coherence = clampScore(sentences >= 5 && connectors >= 4 ? 4 : sentences >= 3 && connectors >= 2 ? 3 : sentences >= 2 ? 2 : count >= 5 ? 1 : 0);
   const vocabulary = clampScore(count >= 180 && uniqueRatio >= 0.62 ? 4 : count >= 90 && uniqueRatio >= 0.55 ? 3 : count >= 35 && uniqueRatio >= 0.45 ? 2 : count >= 8 ? 1 : 0);
   const grammar = clampScore(sentences >= 5 && connectors >= 5 && slovakSignals >= 8 ? 4 : sentences >= 3 && connectors >= 2 && slovakSignals >= 4 ? 3 : sentences >= 2 && slovakSignals >= 2 ? 2 : count >= 5 ? 1 : 0);
   const style = clampScore(slovakSignals >= 10 && sentences >= 5 ? 4 : slovakSignals >= 5 && sentences >= 3 ? 3 : slovakSignals >= 2 ? 2 : count >= 5 ? 1 : 0);
-  const scores = {
+  const scores: PlacementWritingScores = {
     task_completion: taskCompletion,
-    coherence,
-    vocabulary,
-    grammar,
-    style_and_naturalness: style
+    coherence: signals.isProbablySlovak ? coherence : 0,
+    vocabulary: signals.isProbablySlovak ? vocabulary : 0,
+    grammar: signals.isProbablySlovak ? grammar : 0,
+    style_and_naturalness: signals.isProbablySlovak ? style : 0
   };
   const total = Object.values(scores).reduce((sum, score) => sum + score, 0);
-  const level = test.writingRubric.scoreBands.find((band) => total >= band.min && total <= band.max)?.level ?? "A0";
+  const rawLevel = test.writingRubric.scoreBands.find((band) => total >= band.min && total <= band.max)?.level ?? "A0";
+  const rawIndex = fullLevels.indexOf(rawLevel);
+  const relevanceCap = signals.relevance === 0 ? "A2" : signals.relevance < 0.3 ? "B1" : rawLevel;
+  const capIndex = fullLevels.indexOf(relevanceCap);
+  const level = (signals.isProbablySlovak ? fullLevels[Math.min(rawIndex, capIndex)] : "A0") as UserLevel | "C2";
   return { scores, total, level };
 }
 

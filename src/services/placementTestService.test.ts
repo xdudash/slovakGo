@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   combineResults,
+  evaluateWriting,
   routeBranch,
   scoreClosed,
   selectWritingTask,
@@ -66,5 +67,29 @@ describe("writing and combined result", () => {
     expect(combineResults("C2_candidate", "C2")).toBe("C2");
     expect(combineResults("C2_candidate", "C1")).toBe("C1+");
     expect(toCourseLevel("C2")).toBe("C1");
+  });
+
+  it("does not award a language level for lorem ipsum", () => {
+    const task = selectWritingTask("B2");
+    const lorem = Array.from({ length: 18 }, () => "Lorem ipsum dolor sit amet, consectetur adipiscing elit.").join(" ");
+    expect(evaluateWriting(lorem, task).level).toBe("A0");
+  });
+
+  it("caps a fluent but unrelated Slovak news text", () => {
+    const task = selectWritingTask("B2");
+    const news = Array.from({ length: 10 }, () =>
+      "Vláda dnes rokovala o novom zákone, ktorý má zmeniť pravidlá v zdravotníctve. Minister povedal, že opatrenie je dôležité, ale opozícia s návrhom nesúhlasí."
+    ).join(" ");
+    expect(evaluateWriting(news, task).level).toBe("A2");
+    expect(evaluateWriting(news, task).scores.task_completion).toBe(0);
+  });
+
+  it("recognizes a relevant Slovak response to the selected task", () => {
+    const task = selectWritingTask("B2");
+    const response = Array.from({ length: 7 }, () =>
+      "Online vyučovanie má výhody, pretože je flexibilné, ale nevýhodou je slabší osobný kontakt. Prezenčné štúdium je prirodzenejšie. Podľa mňa je najlepším riešením hybridný model."
+    ).join(" ");
+    expect(evaluateWriting(response, task).scores.task_completion).toBeGreaterThanOrEqual(3);
+    expect(evaluateWriting(response, task).level).not.toBe("A0");
   });
 });
