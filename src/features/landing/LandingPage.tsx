@@ -29,7 +29,7 @@ export function LandingPage() {
         "applicationCategory": "EducationApplication",
         "operatingSystem": "Web, Android, iOS",
         "inLanguage": ["uk", "sk", "en"],
-        "description": "SlovakGO is a Slovak language learning app for Ukrainian speakers living in Slovakia. The first section is available before the two-month full-access trial.",
+        "description": "SlovakGO is a Slovak language learning app for Ukrainian speakers living in Slovakia. The first section is available before the 7-day full-access trial.",
         "datePublished": "2026-01-01",
         "dateModified": "2026-06-22",
         "offers": {
@@ -118,7 +118,7 @@ export function LandingPage() {
             "name": "Як спробувати SlovakGO перед оформленням підписки?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Спочатку користувач проходить перший розділ свого рівня без оплати. Після нього можна активувати два місяці повного доступу з карткою. Далі підписка коштує €9,99 на місяць."
+              "text": "Спочатку користувач проходить перший розділ свого рівня без оплати. Після нього можна активувати тиждень повного доступу з карткою. Далі підписка коштує €9,99 на місяць."
             }
           },
           {
@@ -296,11 +296,11 @@ export function LandingPage() {
       <section className="pricing-section">
         <div className="pricing-header">
           <h2>Спочатку спробуй навчання на практиці</h2>
-          <p>Перший розділ доступний без оплати. Потім — два місяці повного доступу та €9,99/місяць після trial.</p>
+          <p>Перший розділ доступний без оплати. Потім — 7 днів повного доступу та €9,99/місяць після trial.</p>
         </div>
         <div className="pricing-cards">
           <div className="price-card plus">
-            <div className="badge">2 місяці пробного доступу</div>
+            <div className="badge">7 днів пробного доступу</div>
             <h3>Повний доступ до SlovakGO</h3>
             <div className="price">€9,99<span>/міс</span></div>
             <ul>

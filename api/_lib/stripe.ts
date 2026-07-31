@@ -1,12 +1,23 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import Stripe from "stripe";
 import {
-  exec, queryOne, nowIso,
+  exec, queryOne, nowIso, logEvent,
   requireUid, respond, fail, ensureCol
 } from "./core";
+import { appUrl, renderEmail, sendEmail } from "./mail";
 
 let _stripe: Stripe | null = null;
 const getStripe = () => _stripe ??= new Stripe(process.env.STRIPE_SECRET_KEY ?? "", { apiVersion: "2026-06-24.dahlia" as Stripe.LatestApiVersion });
+
+/**
+ * Free days granted once per user on their first subscription.
+ * Changing this also means changing the copy in the app (PaywallScreen, ShopScreen,
+ * PathScreen, PaymentSuccess) and in the separate landing site under `landing/`.
+ */
+export const TRIAL_DAYS = 7;
+
+/** Free Plus days the referrer earns when an invited learner actually pays. */
+export const REFERRAL_BONUS_DAYS = 14;
 
 export async function handleBillingCheckout(req: VercelRequest, res: VercelResponse): Promise<void> {
   const uid = await requireUid(req, res); if (!uid) return;
@@ -24,13 +35,13 @@ export async function handleBillingCheckout(req: VercelRequest, res: VercelRespo
   );
   if (!row) return fail(res, "User not found", 404);
   
-  const appUrl = String(process.env.APP_URL ?? "http://localhost:5173").replace(/\/$/, "");
+  const base = appUrl();
   const params: Stripe.Checkout.SessionCreateParams = {
     mode: "subscription",
     client_reference_id: uid,
     line_items: [{ price: priceId, quantity: 1 }],
-    success_url: `${appUrl}/payment/success`,
-    cancel_url:  `${appUrl}/payment/cancel`,
+    success_url: `${base}/payment/success`,
+    cancel_url:  `${base}/payment/cancel`,
     allow_promotion_codes: true,
     metadata: { app_user_id: uid },
   };
@@ -43,11 +54,11 @@ export async function handleBillingCheckout(req: VercelRequest, res: VercelRespo
     (params as Record<string, unknown>).customer = cusId;
     // Даємо тріал тільки якщо у юзера ще ніколи не було підписки
     if (!hasActiveSub && !hasUsedTrial) {
-      params.subscription_data = { trial_period_days: 60 };
+      params.subscription_data = { trial_period_days: TRIAL_DAYS };
     }
   } else {
     params.customer_email = String(row.email);
-    if (!hasUsedTrial) params.subscription_data = { trial_period_days: 60 };
+    if (!hasUsedTrial) params.subscription_data = { trial_period_days: TRIAL_DAYS };
   }
   
   const session = await getStripe().checkout.sessions.create(params);
@@ -60,8 +71,7 @@ export async function handleBillingPortal(req: VercelRequest, res: VercelRespons
   const cusId = String(row?.stripe_customer_id ?? "");
   if (!cusId) return fail(res, "Billing account not found", 404);
   
-  const appUrl  = String(process.env.APP_URL ?? "http://localhost:5173").replace(/\/$/, "");
-  const session = await getStripe().billingPortal.sessions.create({ customer: cusId, return_url: `${appUrl}/app/shop` });
+  const session = await getStripe().billingPortal.sessions.create({ customer: cusId, return_url: `${appUrl()}/app/shop` });
   respond(res, { url: session.url });
 }
 
@@ -109,6 +119,36 @@ export async function handleBillingWebhook(req: VercelRequest, res: VercelRespon
         "UPDATE users SET sub_status = ?, stripe_customer_id = ?, stripe_sub_id = ?, trial_ends = ?, trial_used = 1, sub_expires_at = ?, updated_at = ? WHERE id = ?",
         [subscriptionStatus, String(s.customer ?? ""), String(s.subscription), trialEndsAt, expiresAt, nowIso(), s.client_reference_id]
       );
+      await logEvent(s.client_reference_id, subscriptionStatus === "trial" ? "trial_start" : "paid", { source: "checkout" });
+    }
+  }
+
+  // Stripe fires this 3 days before a trial converts. With a 7-day trial that is
+  // day 4 — early enough that nobody is surprised by the first charge.
+  if (event.type === "customer.subscription.trial_will_end") {
+    const sub = event.data.object as Stripe.Subscription;
+    const row = await queryOne(
+      "SELECT email, name_text FROM users WHERE stripe_customer_id = ? LIMIT 1",
+      [String(sub.customer)]
+    );
+    if (row) {
+      const endsAt = sub.trial_end
+        ? new Date(sub.trial_end * 1000).toLocaleDateString("uk-UA", { day: "numeric", month: "long" })
+        : "найближчими днями";
+      await sendEmail(
+        String(row.email),
+        "Пробний період закінчується — SlovakGO Plus",
+        renderEmail({
+          title: "Через 3 дні почнеться підписка",
+          paragraphs: [
+            `Привіт, ${String(row.name_text)}! Твій пробний доступ до SlovakGO Plus закінчується ${endsAt}.`,
+            "Після цього ми спишемо €9,99 за перший місяць, і всі рівні, практика та словник залишаться відкритими.",
+            "Якщо продовжувати не плануєш — скасуй підписку в кабінеті, це займе хвилину і жодних списань не буде.",
+          ],
+          ctaText: "Керувати підпискою",
+          ctaUrl: `${appUrl()}/app/shop`,
+        })
+      );
     }
   }
 
@@ -117,7 +157,10 @@ export async function handleBillingWebhook(req: VercelRequest, res: VercelRespon
     const expiresAt = getSafeExpiresAt(sub.current_period_end);
     const status = sub.status === "trialing" ? "trial"
       : sub.status === "active" ? "plus"
-        : sub.status === "canceled" ? "cancelled" : "expired";
+        // Stripe is still retrying — keep access open instead of locking the user
+        // out on the first failed charge (most of these recover).
+        : sub.status === "past_due" ? "past_due"
+          : sub.status === "canceled" ? "cancelled" : "expired";
     const trialEndsAt = sub.status === "trialing" && sub.trial_end
       ? new Date(sub.trial_end * 1000).toISOString()
       : null;
@@ -133,30 +176,75 @@ export async function handleBillingWebhook(req: VercelRequest, res: VercelRespon
       "UPDATE users SET sub_status = 'cancelled', stripe_sub_id = '', trial_ends = NULL, sub_expires_at = NULL, updated_at = ? WHERE stripe_customer_id = ?",
       [nowIso(), String(sub.customer)]
     );
+    const churned = await queryOne("SELECT id FROM users WHERE stripe_customer_id = ? LIMIT 1", [String(sub.customer)]);
+    if (churned) await logEvent(String(churned.id), "churn", { reason: "subscription_deleted" });
+  }
+
+  // Referral payout. Deliberately tied to a real payment rather than to signup:
+  // rewarding at registration (the old behaviour) is farmable with throwaway accounts.
+  if (event.type === "invoice.payment_succeeded" || event.type === "invoice.paid") {
+    const inv = event.data.object as Stripe.Invoice;
+    if (Number(inv.amount_paid ?? 0) > 0) {
+      await ensureCol("users", "referral_rewarded", "INTEGER NOT NULL DEFAULT 0");
+      await ensureCol("users", "bonus_until", "TEXT");
+
+      const invitee = await queryOne(
+        "SELECT id, name_text, referred_by, referral_rewarded FROM users WHERE stripe_customer_id = ? LIMIT 1",
+        [String(inv.customer)]
+      );
+      const referrerId = String(invitee?.referred_by ?? "");
+      if (invitee && referrerId && !Number(invitee.referral_rewarded ?? 0)) {
+        const referrer = await queryOne(
+          "SELECT email, name_text, bonus_until FROM users WHERE id = ? AND is_blocked = 0 LIMIT 1",
+          [referrerId]
+        );
+        if (referrer) {
+          // Extend from the current bonus end when it is still in the future, so
+          // several successful invites stack instead of overwriting each other.
+          const current = String(referrer.bonus_until ?? "");
+          const from = current && Date.parse(current) > Date.now() ? new Date(current) : new Date();
+          from.setDate(from.getDate() + REFERRAL_BONUS_DAYS);
+          const until = from.toISOString().replace(/\.\d{3}Z$/, "Z");
+
+          await exec("UPDATE users SET bonus_until = ?, updated_at = ? WHERE id = ?", [until, nowIso(), referrerId]);
+          await exec("UPDATE users SET referral_rewarded = 1, updated_at = ? WHERE id = ?", [nowIso(), String(invitee.id)]);
+
+          await sendEmail(
+            String(referrer.email),
+            `+${REFERRAL_BONUS_DAYS} днів Plus — дякуємо за запрошення`,
+            renderEmail({
+              title: `Тобі нараховано ${REFERRAL_BONUS_DAYS} днів Plus`,
+              paragraphs: [
+                `${String(referrer.name_text)}, друг, якого ти запросив, оформив підписку SlovakGO Plus.`,
+                `Твій повний доступ подовжено до ${new Date(until).toLocaleDateString("uk-UA", { day: "numeric", month: "long", year: "numeric" })}.`,
+                "Запрошуй далі — кожна оплата від запрошеного додає ще днів.",
+              ],
+              ctaText: "Продовжити навчання",
+              ctaUrl: `${appUrl()}/app/path`,
+            })
+          );
+        }
+      }
+    }
   }
 
   if (event.type === "invoice.payment_failed") {
     const inv = event.data.object as Stripe.Invoice;
     const row = await queryOne("SELECT email, name_text FROM users WHERE stripe_customer_id = ? LIMIT 1", [String(inv.customer)]);
-    if (row && process.env.RESEND_API_KEY) {
-      const from    = process.env.MAIL_FROM ?? "noreply@slovakgo.sk";
-      const appUrl  = String(process.env.APP_URL ?? "https://app.slovakgo.sk").replace(/\/$/, "");
-      const html    = `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"></head>
-<body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f7ff;margin:0;padding:40px 20px;">
-<div style="max-width:480px;margin:0 auto;background:#fff;border-radius:16px;padding:40px;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
-  <h1 style="font-size:22px;font-weight:800;color:#1a1040;margin:0 0 4px;">SlovakGO</h1>
-  <p style="color:#9ca3af;margin:0 0 32px;font-size:13px;">Вивчення словацької мови</p>
-  <h2 style="font-size:18px;font-weight:700;color:#e93d45;margin:0 0 12px;">Помилка оплати підписки</h2>
-  <p style="color:#374151;line-height:1.6;margin:0 0 24px;">Привіт, ${String(row.name_text)}! Не вдалося списати кошти за підписку SlovakGO Plus. Будь ласка, перевір або оновіть платіжні дані.</p>
-  <a href="${appUrl}/app/shop" style="display:inline-block;background:#6c47ff;color:#fff;text-decoration:none;padding:14px 28px;border-radius:10px;font-weight:700;font-size:15px;">Оновити дані оплати →</a>
-  <hr style="border:none;border-top:1px solid #e5e7eb;margin:24px 0;">
-  <p style="color:#d1d5db;font-size:11px;margin:0;">© 2026 SlovakGO</p>
-</div></body></html>`;
-      await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
-        body: JSON.stringify({ from, to: String(row.email), subject: "Помилка оплати — SlovakGO Plus", html }),
-      }).catch(err => console.error("[resend] billing email failed:", err));
+    if (row) {
+      await sendEmail(
+        String(row.email),
+        "Помилка оплати — SlovakGO Plus",
+        renderEmail({
+          title: "Помилка оплати підписки",
+          accent: "#e93d45",
+          paragraphs: [
+            `Привіт, ${String(row.name_text)}! Не вдалося списати кошти за підписку SlovakGO Plus. Будь ласка, перевір або онови платіжні дані.`,
+          ],
+          ctaText: "Оновити дані оплати",
+          ctaUrl: `${appUrl()}/app/shop`,
+        })
+      );
     }
   }
 

@@ -1,7 +1,10 @@
 import type { Lesson, Progress, SubscriptionStatus, UserLevel } from "../types";
 import { lessonService } from "./lessonService";
 
-const unrestrictedStatuses: SubscriptionStatus[] = ["trial", "plus"];
+// `past_due` keeps full access on purpose: Stripe is still retrying the card and
+// most of those payments recover. Locking a paying learner out on the first
+// failed charge loses the subscription that would have renewed by itself.
+const unrestrictedStatuses: SubscriptionStatus[] = ["trial", "plus", "past_due"];
 
 function firstSectionForLevel(lessons: Lesson[], level: UserLevel): Lesson[] {
   const levelLessons = lessonService.byLevel(lessons, level);
@@ -39,8 +42,17 @@ export const accessService = {
   canOpenLesson(lessonId: string, lessons: Lesson[], progress: Progress, status: SubscriptionStatus): boolean {
     if (this.hasFullAccess(status)) return true;
     if (status !== "free") return false;
+    const previewLesson = lessonService.levels
+      .flatMap((level) => firstSectionForLevel(lessons, level))
+      .find((lesson) => lesson.id === lessonId);
+    if (!previewLesson) return false;
+
+    // Keep an already completed preview lesson mounted long enough to show its
+    // result screen. This also lets a learner repeat the section they already
+    // earned, while the path and every paid feature remain locked.
+    if (progress.completedLessons.includes(lessonId)) return true;
     if (this.hasCompletedFirstSectionAtAnyLevel(lessons, progress)) return false;
-    return firstSectionForLevel(lessons, progress.currentLevel).some((lesson) => lesson.id === lessonId);
+    return previewLesson.level === progress.currentLevel;
   },
 
   isFinalPreviewLesson(lessonId: string, lessons: Lesson[], progress: Progress, status: SubscriptionStatus): boolean {

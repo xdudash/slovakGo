@@ -68,7 +68,8 @@ export async function generateShareCard(data: ShareCardData): Promise<Blob> {
   ctx.fillStyle = "rgba(255,255,255,0.5)";
   ctx.fillText(data.userName, 80, 870);
 
-  // App URL
+  // App URL. The referral link goes into the share text instead of onto the image
+  // — a user id is too long to retype from a picture, and there it stays clickable.
   ctx.font = `36px ${family}`;
   ctx.fillStyle = "rgba(255,255,255,0.35)";
   ctx.fillText("slovakgo.sk", 80, 980);

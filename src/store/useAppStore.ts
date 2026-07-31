@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { accessService } from "../services/accessService";
 import { leaderboardService } from "../services/leaderboardService";
 import { lessonService } from "../services/lessonService";
 import { progressService } from "../services/progressService";
@@ -281,7 +282,6 @@ export const useAppStore = create<AppStore>((set, get) => ({
   completeLesson(lesson, answers) {
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
-    const prevCompleted = get().data.progress[currentUserId].completedLessons;
     const subStatus = get().data.users.find((u) => u.id === currentUserId)?.subscriptionStatus;
     const progress = progressService.completeLesson(get().data.progress[currentUserId], lesson, answers, subStatus);
     const xpEarned = progress.lessonAttempts[progress.lessonAttempts.length - 1]?.xpEarned ?? 0;
@@ -297,14 +297,9 @@ export const useAppStore = create<AppStore>((set, get) => ({
     set({ data });
     // Push to server immediately — don't wait for next login
     get().drainSync().catch(() => undefined);
-    // Request FCM permission after the user's very first lesson — unobtrusive timing
-    if (!prevCompleted.includes(lesson.id) && prevCompleted.length === 0) {
-      import("../services/fcmService").then(({ requestFcmToken }) => {
-        requestFcmToken().then((res) => {
-          if (res && res.token) apiClient.saveFcmToken(res.token).catch(() => undefined);
-        }).catch(() => undefined);
-      });
-    }
+    // Notification permission is requested from the lesson result screen
+    // (ReminderOptIn), so the learner taps an in-app card before the system
+    // dialog appears instead of getting it unannounced here.
   },
 
   recordWrongAnswer(lesson, exerciseId, answer) {
@@ -443,7 +438,7 @@ export function selectCurrentUser(data: AppData, currentUserId?: string) {
 export function selectIsPlus(data: AppData, currentUserId?: string): boolean {
   const user = selectCurrentUser(data, currentUserId);
   if (!user) return false;
-  return user.subscriptionStatus === "plus" || user.subscriptionStatus === "trial";
+  return accessService.hasFullAccess(user.subscriptionStatus);
 }
 
 export function roleHome(role: UserRole): string {

@@ -1,6 +1,10 @@
 export type UserRole = "student" | "teacher" | "admin";
 export type UserLevel = "A0" | "A1" | "A2" | "B1" | "B2" | "C1";
-export type SubscriptionStatus = "free" | "trial" | "plus" | "expired" | "cancelled";
+/**
+ * `past_due` is a grace state: Stripe is still retrying the payment, so access
+ * stays open. It becomes `expired`/`cancelled` only once Stripe gives up.
+ */
+export type SubscriptionStatus = "free" | "trial" | "plus" | "past_due" | "expired" | "cancelled";
 
 export interface UserSettings {
   language: "uk" | "sk" | "en";
@@ -27,6 +31,8 @@ export interface User {
   subscriptionStatus: SubscriptionStatus;
   trialEndsAt?: string;
   subExpiresAt?: string;
+  /** End of referral bonus access, if any. While in the future, access is full. */
+  bonusUntil?: string;
   onboardingDone: boolean;
   settings: UserSettings;
   isBlocked?: boolean;

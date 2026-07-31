@@ -21,6 +21,7 @@ import { generateShareCard, shareOrDownloadCard } from "../../services/shareServ
 import { formatWeekTimer, secondsUntilWeekEnd } from "../../utils/date";
 import { requestFcmToken } from "../../services/fcmService";
 import { accessService } from "../../services/accessService";
+import { track } from "../../services/analytics";
 
 function useWeekTimer(): number {
   const [seconds, setSeconds] = useState(() => secondsUntilWeekEnd());
@@ -118,65 +119,96 @@ export function Onboarding() {
   const [goal, setGoal] = useState(user?.goal || goals[0]);
   if (!user) return <Navigate to="/login" replace />;
 
-  const handleNotifications = async () => {
-    if ("Notification" in window) {
-      await Notification.requestPermission();
-    }
-    setStep(3);
-  };
+  // Notification permission is deliberately NOT requested here. Asking before the
+  // learner has seen any value gets a permanent "Block", which also kills the
+  // well-timed request that runs after the first finished lesson (useAppStore.completeLesson).
 
   const cards = [
     <Card className="onboarding-card onboarding-card-anim" key="welcome">
-      <div className="onboarding-product-shot onboarding-product-shot--welcome">
-        <img src="/app-exercise.png" alt="Вправа SlovakGO з реального застосунку" width="390" height="844" decoding="async" fetchPriority="high" />
+      <div className="onboarding-visual onboarding-visual--welcome">
+        <div className="onboarding-product-shot onboarding-product-shot--welcome">
+          <img src="/app-exercise.png" alt="Вправа SlovakGO з реального застосунку" width="390" height="844" decoding="async" fetchPriority="high" />
+        </div>
       </div>
-      <h1>{t("student.onboarding.welcome_title")}</h1>
-      <p className="onboarding-text">{t("student.onboarding.welcome_text")}</p>
-      <Button className="onboarding-btn-primary" onClick={() => setStep(1)}>{t("student.onboarding.welcome_btn")}</Button>
+      <div className="onboarding-content">
+        <div className="onboarding-copy">
+          <span className="onboarding-step-label">Словацька для реального життя</span>
+          <h1>{t("student.onboarding.welcome_title")}</h1>
+          <p className="onboarding-text">{t("student.onboarding.welcome_text")}</p>
+        </div>
+        <div className="onboarding-actions">
+          <Button className="onboarding-btn-primary" onClick={() => setStep(1)}>{t("student.onboarding.welcome_btn")}</Button>
+        </div>
+      </div>
     </Card>,
     <Card className="onboarding-card onboarding-card-anim" key="goal">
-      <div className="onboarding-icon-wrap">
-        <Trophy size={32} color="var(--yellow-dark)" />
+      <div className="onboarding-visual onboarding-visual--goal">
+        <div className="onboarding-product-shot onboarding-product-shot--goal">
+          <img src="/app-demo.png" alt="Практичний урок SlovakGO" width="390" height="844" loading="lazy" decoding="async" />
+        </div>
+        <div className="onboarding-visual-badge"><Trophy size={22} /> Твоя ціль</div>
       </div>
-      <h1>{t("student.onboarding.goal_title")}</h1>
-      <div className="onboarding-chip-list">
-        {goals.map((item) => (
-          <button
-            className={`onboarding-chip ${goal === item ? "active" : ""}`}
-            key={item}
-            type="button"
-            onClick={() => { setGoal(item); setTimeout(() => setStep(2), 300); }}
-          >
-            <CheckCircle2 size={18} className="check-icon" />
-            <span>{item}</span>
-          </button>
-        ))}
+      <div className="onboarding-content">
+        <div className="onboarding-copy">
+          <span className="onboarding-step-label">Навчання під тебе</span>
+          <h1>{t("student.onboarding.goal_title")}</h1>
+        </div>
+        <div className="onboarding-chip-list">
+          {goals.map((item) => (
+            <button
+              className={`onboarding-chip ${goal === item ? "active" : ""}`}
+              key={item}
+              type="button"
+              onClick={() => { setGoal(item); setTimeout(() => setStep(2), 300); }}
+            >
+              <CheckCircle2 size={18} className="check-icon" />
+              <span>{item}</span>
+            </button>
+          ))}
+        </div>
       </div>
     </Card>,
     <Card className="onboarding-card onboarding-card-anim" key="mechanics">
-      <div className="onboarding-product-shot onboarding-product-shot--progress">
-        <img src="/slovakgo-preview.png" alt="Навчальний шлях і прогрес у SlovakGO" width="390" height="844" loading="lazy" decoding="async" />
+      <div className="onboarding-visual onboarding-visual--progress">
+        <div className="onboarding-product-shot onboarding-product-shot--progress">
+          <img src="/slovakgo-preview.png" alt="Навчальний шлях і прогрес у SlovakGO" width="390" height="844" loading="lazy" decoding="async" />
+        </div>
       </div>
-      <h1>Твій перший розділ уже відкритий</h1>
-      <p className="onboarding-text">Пройди справжні уроки свого рівня, відчуй формат і лише потім вирішуй, чи продовжувати з повним доступом.</p>
-      <div className="mechanics-grid" style={{ marginBottom: 16 }}>
-        {ta("student.onboarding.mechanics_items").map((item) => <span key={item}>{item}</span>)}
+      <div className="onboarding-content">
+        <div className="onboarding-copy">
+          <span className="onboarding-step-label">Спробуй перед підпискою</span>
+          <h1>Твій перший розділ уже відкритий</h1>
+          <p className="onboarding-text">Пройди справжні уроки свого рівня, відчуй формат і лише потім вирішуй, чи продовжувати з повним доступом.</p>
+        </div>
+        <div className="mechanics-grid">
+          {ta("student.onboarding.mechanics_items").map((item) => <span key={item}>{item}</span>)}
+        </div>
+        <div className="onboarding-actions">
+          <Button className="onboarding-btn-primary" onClick={() => setStep(3)}>Продовжити</Button>
+        </div>
       </div>
-      <Button className="onboarding-btn-primary" onClick={() => setStep(3)}>Продовжити</Button>
-      <Button variant="ghost" onClick={handleNotifications}><Bell size={16} /> Дозволити нагадування</Button>
     </Card>,
     <Card className="onboarding-card onboarding-card-anim" key="start">
-      <div className="onboarding-product-shot onboarding-product-shot--start">
-        <img src="/app-demo.png" alt="Демо-урок SlovakGO" width="390" height="844" loading="lazy" decoding="async" />
+      <div className="onboarding-visual onboarding-visual--start">
+        <div className="onboarding-product-shot onboarding-product-shot--start">
+          <img src="/app-demo.png" alt="Демо-урок SlovakGO" width="390" height="844" loading="lazy" decoding="async" />
+        </div>
       </div>
-      <h1>{t("student.onboarding.start_title")}</h1>
-      <p className="onboarding-text">Спочатку отримай результат: перший розділ доступний без оплати. Повний доступ запропонуємо лише після його завершення.</p>
-      <Button className="onboarding-btn-primary" onClick={() => { completeOnboarding(goal, "A0"); navigate("/app/path", { replace: true }); }}>
-        {t("student.onboarding.start_a0")}
-      </Button>
-      <Button variant="secondary" onClick={() => navigate("/placement-test")}>
-        {t("student.onboarding.placement")}
-      </Button>
+      <div className="onboarding-content">
+        <div className="onboarding-copy">
+          <span className="onboarding-step-label">Обери свій старт</span>
+          <h1>{t("student.onboarding.start_title")}</h1>
+          <p className="onboarding-text">Спочатку отримай результат: перший розділ доступний без оплати. Повний доступ запропонуємо лише після його завершення.</p>
+        </div>
+        <div className="onboarding-actions">
+          <Button className="onboarding-btn-primary" onClick={() => { track("onboarding_done", { goal, start: "A0" }); completeOnboarding(goal, "A0"); navigate("/app/path", { replace: true }); }}>
+            {t("student.onboarding.start_a0")}
+          </Button>
+          <Button variant="secondary" onClick={() => navigate("/placement-test")}>
+            {t("student.onboarding.placement")}
+          </Button>
+        </div>
+      </div>
     </Card>
   ];
 
@@ -288,7 +320,7 @@ function PathScreen() {
         <div className="preview-access-banner">
           <div>
             <strong>Перший розділ — без оплати</strong>
-            <span>Пройди {previewLessons.length} справжніх уроків, а потім відкрий два місяці повного доступу.</span>
+            <span>Пройди {previewLessons.length} справжніх уроків, а потім відкрий тиждень повного доступу.</span>
           </div>
           <span className="preview-access-progress">{previewCompleted}/{previewLessons.length}</span>
         </div>
@@ -533,6 +565,12 @@ function ExerciseView({ exercise, answer, setAnswer, t, disabled = false }: { ex
 
 const CONFETTI_COLORS = ["#6f57e8", "#ffd21f", "#2fba7f", "#e93d45", "#ff5a2e", "#3b82f6", "#a855f7"];
 
+/** Keep in sync with DEFAULT_REMINDER_TIME in api/_lib/core.ts (set at registration). */
+const DEFAULT_REMINDER_TIME = "19:00";
+
+/** Invite link. `?ref` is claimed on registration (AuthScreens → apiClient.claimReferral). */
+const referralUrl = (userId: string) => `${window.location.origin}/register?ref=${userId}`;
+
 type LessonPhase = "start" | "theory" | "words" | "exercise" | "final" | "result";
 type WrongItem = { question: string; userAnswer: string; correctAnswer: string };
 type CompletionData = { xp: number; correct: number; total: number; wrong: WrongItem[] };
@@ -647,6 +685,57 @@ function TheoryView({ screen, onNext }: { screen: TheoryScreen; onNext: () => vo
   );
 }
 
+/**
+ * Soft ask for notification permission, shown once on the result screen of the
+ * very first finished lesson. The browser dialog only opens after the learner
+ * taps here — a system prompt they did not expect is answered with "Block", and
+ * a blocked origin can never be asked again.
+ */
+function ReminderOptIn() {
+  const { user, updateUser } = useStudentData();
+  const [state, setState] = useState<"idle" | "pending" | "done" | "failed">("idle");
+
+  // Once granted, `Notification.permission` is no longer "default" — so the
+  // confirmation branch has to be checked before the support/permission guard.
+  const supported = typeof Notification !== "undefined";
+  if (state !== "done" && (!supported || Notification.permission !== "default" || state === "failed")) return null;
+
+  async function enable() {
+    setState("pending");
+    const result = await requestFcmToken();
+    if (!result.token) { setState("failed"); track("notifications_enabled", { granted: false }); return; }
+    await apiClient.saveFcmToken(result.token).catch(() => undefined);
+    track("notifications_enabled", { granted: true });
+    const time = user!.settings.reminderTime ?? DEFAULT_REMINDER_TIME;
+    if (!user!.settings.reminderTime) {
+      updateUser({ settings: { ...user!.settings, reminderTime: time } });
+      apiClient.saveReminder(time).catch(() => undefined);
+    }
+    setState("done");
+  }
+
+  if (state === "done") {
+    return (
+      <div className="reminder-optin reminder-optin--done">
+        <Bell size={16} /> Нагадаємо о {user!.settings.reminderTime ?? DEFAULT_REMINDER_TIME} — змінити можна в налаштуваннях.
+      </div>
+    );
+  }
+
+  return (
+    <div className="reminder-optin">
+      <Bell size={18} className="reminder-optin-icon" />
+      <div className="reminder-optin-text">
+        <strong>Не втрать серію</strong>
+        <span>Нагадаємо о {DEFAULT_REMINDER_TIME}, коли час для наступного уроку.</span>
+      </div>
+      <Button variant="secondary" disabled={state === "pending"} onClick={enable}>
+        {state === "pending" ? "…" : "Увімкнути"}
+      </Button>
+    </div>
+  );
+}
+
 function LessonScreen() {
   const navigate = useNavigate();
   const { lessonId } = useParams();
@@ -668,6 +757,11 @@ function LessonScreen() {
   const [celebration, setCelebration] = useState<CompletionData | null>(null);
   const [completionData, setCompletionData] = useState<CompletionData | null>(null);
   const [sharing, setSharing] = useState(false);
+  useEffect(() => {
+    if (lesson) track("lesson_start", { lessonId: lesson.id, level: lesson.level });
+    // Only on entering a lesson, not on every re-render inside it.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lessonId]);
   const [phase, setPhase] = useState<LessonPhase>(() => {
     if (!lesson) return "exercise";
     if (lesson.startScreen) return "start";
@@ -705,9 +799,13 @@ function LessonScreen() {
   }
 
   function finishLesson(finalRecords: AnswerRecord[]) {
+    const isFirst = progress!.completedLessons.length === 0;
     completeLesson(lesson!, finalRecords);
     const xp = computeXp();
     const correct = finalRecords.filter((r) => r.correct).length;
+    track("lesson_complete", { lessonId: lesson!.id, level: lesson!.level, first: isFirst, correct, total: finalRecords.length });
+    // The free preview ends here — this is the conversion moment worth watching.
+    if (opensTrialAfterLesson) track("section_complete", { level: lesson!.level });
     const cd: CompletionData = { xp, correct, total: finalRecords.length, wrong: buildWrong(finalRecords) };
     if (lesson!.resultScreen) {
       setCompletionData(cd);
@@ -1011,6 +1109,7 @@ function LessonScreen() {
               <h4>{lesson.resultScreen.nextLesson}</h4>
             </div>
           )}
+          {progress.completedLessons.length === 1 && <ReminderOptIn />}
           <div className="lesson-result-actions">
             <Button autoFocus onClick={() => navigate(completionDestination)}>
               {opensTrialAfterLesson ? "Відкрити повний доступ →" : lesson.resultScreen.buttons?.[0] ?? "Продовжити"}
@@ -1074,12 +1173,13 @@ function LessonScreen() {
                 setSharing(true);
                 try {
                   const blob = await generateShareCard({ xp: celebration.xp, label: "в цьому уроці", streakDays: progress.streakDays, userName: user.name, correctCount: celebration.correct, totalCount: celebration.total });
-                  await shareOrDownloadCard(blob, `Я щойно пройшов урок у SlovakGO! +${celebration.xp} XP`);
+                  await shareOrDownloadCard(blob, `Я щойно пройшов урок у SlovakGO! +${celebration.xp} XP ${referralUrl(user.id)}`);
                 } finally { setSharing(false); }
               }}
             >
               <Share2 size={16} /> {sharing ? "…" : "Поділитись"}
             </button>
+            {progress.completedLessons.length === 1 && <ReminderOptIn />}
             <Button autoFocus onClick={() => navigate(completionDestination)}>
               {opensTrialAfterLesson ? "Відкрити повний доступ →" : "Продовжити"}
             </Button>
@@ -1916,11 +2016,11 @@ function ProfileScreen() {
             </div>
           </div>
           <div className="referral-link-row">
-            <span className="referral-link-url">{`${window.location.origin}/register?ref=${user.id}`}</span>
+            <span className="referral-link-url">{referralUrl(user.id)}</span>
             {referralCopied
               ? <span className="referral-copied">{t("student.profile.referral_copied")}</span>
               : <button type="button" className="referral-copy-btn" onClick={async () => {
-                try { await navigator.clipboard.writeText(`${window.location.origin}/register?ref=${user.id}`); } catch { return; }
+                try { await navigator.clipboard.writeText(referralUrl(user.id)); } catch { return; }
                 setReferralCopied(true);
                 setTimeout(() => setReferralCopied(false), 2000);
               }}>
@@ -1929,7 +2029,7 @@ function ProfileScreen() {
             }
           </div>
           <button type="button" className="referral-share-btn" onClick={() => {
-            const url = `${window.location.origin}/register?ref=${user.id}`;
+            const url = referralUrl(user.id);
             if (navigator.share) {
               navigator.share({ title: "SlovakGO", text: t("student.profile.referral_share_text"), url }).catch(() => undefined);
             } else {
@@ -1950,7 +2050,7 @@ function ProfileScreen() {
             setSharingProgress(true);
             try {
               const blob = await generateShareCard({ xp: progress.xpWeekly, label: "цього тижня", streakDays: progress.streakDays, userName: user.name });
-              await shareOrDownloadCard(blob, `Я вивчаю словацьку у SlovakGO! ${progress.xpWeekly} XP цього тижня`);
+              await shareOrDownloadCard(blob, `Я вивчаю словацьку у SlovakGO! ${progress.xpWeekly} XP цього тижня ${referralUrl(user.id)}`);
             } finally { setSharingProgress(false); }
           }}
         >
@@ -2495,6 +2595,15 @@ export function PaywallScreen() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // The paywall has two other branches (redirect, "finish the section first"), so
+  // only count a view when the offer itself is on screen.
+  const showsOffer = !!user && !!progress
+    && !accessService.hasFullAccess(user.subscriptionStatus)
+    && !accessService.canUsePreview(data.lessons, progress, user.subscriptionStatus);
+  useEffect(() => {
+    if (showsOffer) track("paywall_view", { status: user!.subscriptionStatus, usedTrial: user!.hasUsedTrial });
+  }, [showsOffer, user]);
+
   if (!user || !progress) return <PageSkeleton />;
 
   if (accessService.hasFullAccess(user.subscriptionStatus)) {
@@ -2510,7 +2619,7 @@ export function PaywallScreen() {
           <img src="/app-exercise.png" alt="Вправа першого розділу SlovakGO" width="390" height="844" decoding="async" />
         </div>
         <h1>Спочатку заверши перший розділ</h1>
-        <p>Ми запропонуємо два пробні місяці лише після того, як ти перевіриш SlovakGO на справжніх уроках.</p>
+        <p>Ми запропонуємо тиждень пробного доступу лише після того, як ти перевіриш SlovakGO на справжніх уроках.</p>
         <div className="preview-locked-counter">{completed} з {section.length} уроків уже пройдено</div>
         <Button onClick={() => navigate("/app/path")}>Продовжити перший розділ</Button>
         <Button variant="ghost" onClick={() => navigate("/app/profile")}>Профіль</Button>
@@ -2522,6 +2631,7 @@ export function PaywallScreen() {
     setLoading(true);
     setError(null);
     try {
+      track("checkout_start", { from: "paywall" });
       const { url } = await apiClient.createCheckoutSession();
       window.location.href = url;
     } catch (err: any) {
@@ -2538,7 +2648,7 @@ export function PaywallScreen() {
           Перший розділ пройдено 🎉
         </h1>
         <p style={{ color: "var(--muted)", fontSize: "0.95rem", margin: 0 }}>
-          Ти вже спробував SlovakGO на практиці. Тепер відкрий усі рівні та функції на два місяці.
+          Ти вже спробував SlovakGO на практиці. Тепер відкрий усі рівні та функції на тиждень.
         </p>
       </div>
 
@@ -2575,10 +2685,10 @@ export function PaywallScreen() {
         {!user.hasUsedTrial ? (
           <>
             <Button onClick={handleSubscribe} disabled={loading} style={{ width: "100%" }}>
-              {loading ? "Завантаження…" : "Почати 2 місяці пробного доступу"}
+              {loading ? "Завантаження…" : "Почати 7 днів пробного доступу"}
             </Button>
             <div style={{ textAlign: "center", fontSize: "0.8rem", color: "var(--muted)", marginTop: "4px" }}>
-              💳 Потрібна картка. Через 60 днів підписка продовжиться за €9,99/місяць, якщо її не скасувати.
+              💳 Потрібна картка. Через 7 днів підписка продовжиться за €9,99/місяць, якщо її не скасувати.
             </div>
           </>
         ) : (
@@ -2663,6 +2773,7 @@ function ShopScreen() {
     setLoading(true);
     setError(null);
     try {
+      track("checkout_start", { from: "shop" });
       const { url } = await apiClient.createCheckoutSession();
       window.location.href = url;
     } catch (err: any) {
@@ -2755,7 +2866,7 @@ function ShopScreen() {
               ? t("student.shop.btn_loading")
               : (user?.hasUsedTrial
                 ? t("student.shop.btn_subscribe")
-                : "Спробувати 2 місяці")}
+                : "Спробувати 7 днів")}
           </Button>
         }
       </Card>
@@ -2789,7 +2900,7 @@ export function PaymentSuccess() {
           <CheckCircle2 size={48} />
         </div>
         <h1 className="payment-title">Повний доступ активовано!</h1>
-        <p className="payment-text">Твої два пробні місяці почалися. Усі рівні, практика, словник і статистика вже відкриті.</p>
+        <p className="payment-text">Твій пробний тиждень почався. Усі рівні, практика, словник і статистика вже відкриті.</p>
         <Button variant="primary" onClick={() => navigate("/app/path")}>Почати навчання →</Button>
       </div>
     </main>

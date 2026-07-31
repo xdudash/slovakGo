@@ -32,6 +32,11 @@ describe("preview access", () => {
     expect(accessService.canOpenLesson("a0-3", lessons, completed, "free")).toBe(false);
   });
 
+  it("keeps completed preview lessons available for their result screen and replay", () => {
+    const completed = progress(["a0-1", "a0-2"]);
+    expect(accessService.canOpenLesson("a0-2", lessons, completed, "free")).toBe(true);
+  });
+
   it("cannot be bypassed by changing the current level", () => {
     const completed = progress(["a0-1", "a0-2"], "B1");
     expect(accessService.canOpenLesson("b1-1", lessons, completed, "free")).toBe(false);
@@ -44,5 +49,17 @@ describe("preview access", () => {
 
   it("does not reopen the preview after a subscription expires", () => {
     expect(accessService.canOpenLesson("a0-1", lessons, progress([]), "expired")).toBe(false);
+  });
+
+  it("keeps access open while Stripe retries a failed payment", () => {
+    // past_due is a grace state — locking the user out on the first failed charge
+    // loses subscriptions that Stripe's retries would have recovered.
+    expect(accessService.hasFullAccess("past_due")).toBe(true);
+    expect(accessService.canOpenLesson("a0-3", lessons, progress([]), "past_due")).toBe(true);
+  });
+
+  it("still locks access once Stripe gives up and cancels", () => {
+    expect(accessService.hasFullAccess("cancelled")).toBe(false);
+    expect(accessService.canOpenLesson("a0-3", lessons, progress([]), "cancelled")).toBe(false);
   });
 });
