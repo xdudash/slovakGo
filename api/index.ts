@@ -21,7 +21,7 @@ import { handleBillingCheckout, handleBillingPortal, handleBillingWebhook } from
 
 import {
   handleUserEmail, handleUserPassword, handleFcmToken, handleUserReminder,
-  handleUserReferral, handleLeaderboard, handlePostErrors, handleSupportSend
+  handleUserReferral, handleLeaderboard, handlePostErrors, handlePostEvents, handleSupportSend
 } from "./_lib/user";
 
 export const config = { api: { bodyParser: false } };
@@ -96,6 +96,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "GET"  && route === "/leaderboard")       return await handleLeaderboard(req, res);
     if (meth === "POST" && route === "/support/send")      return await handleSupportSend(req, res, body);
     if (meth === "POST" && route === "/errors")            return await handlePostErrors(req, res, isJson ? body : safeJson(rawBody.toString(), {}));
+    if (meth === "POST" && route === "/events")            return await handlePostEvents(req, res, isJson ? body : safeJson(rawBody.toString(), {}));
     
     // Stripe Routes
     if (meth === "POST" && route === "/billing/checkout")  return await handleBillingCheckout(req, res);

@@ -4,8 +4,11 @@ import { BrowserRouter } from "react-router-dom";
 import { App } from "./app/App";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { apiClient } from "./services/apiClient";
+import { initAnalytics } from "./services/analytics";
 import { syncService } from "./services/syncService";
 import { useAppStore } from "./store/useAppStore";
+
+initAnalytics();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

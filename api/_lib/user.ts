@@ -69,8 +69,10 @@ export async function handleUserReferral(req: VercelRequest, res: VercelResponse
   if (!cur || String(cur.referred_by ?? "") !== "") return respond(res, { ok: true });
   if (!(await queryOne("SELECT id FROM users WHERE id = ? AND is_blocked = 0 LIMIT 1", [referrerId])))
     return respond(res, { ok: true });
+  // Only record the link here. The reward is paid out in the Stripe webhook once
+  // the invited learner actually pays — granting it at signup was farmable with
+  // throwaway accounts, and a streak freeze was worth nothing anyway.
   await exec("UPDATE users SET referred_by = ?, updated_at = ? WHERE id = ?", [referrerId, nowIso(), uid]);
-  await exec("UPDATE progress SET freeze_cnt = freeze_cnt + 1, updated_at = ? WHERE user_id = ?", [nowIso(), referrerId]);
   respond(res, { ok: true });
 }
 
@@ -107,6 +109,37 @@ export async function handleLeaderboard(req: VercelRequest, res: VercelResponse)
   }
 
   respond(res, { ok: true, entries, weekId, myRank });
+}
+
+/**
+ * Funnel events. Accepts a single event or a batch (the client flushes on
+ * pagehide), and stores them unauthenticated too — signup and paywall views
+ * happen before or around the point where a session exists.
+ */
+export async function handlePostEvents(req: VercelRequest, res: VercelResponse, body: unknown): Promise<void> {
+  const uid = await getUid(req);
+  const raw = Array.isArray(body)
+    ? body
+    : Array.isArray((body as Record<string, unknown>)?.events)
+      ? (body as Record<string, unknown[]>).events
+      : [body];
+
+  await exec(
+    `CREATE TABLE IF NOT EXISTS events (
+       id INTEGER PRIMARY KEY AUTOINCREMENT,
+       user_id TEXT, name TEXT NOT NULL,
+       props_j TEXT NOT NULL DEFAULT '{}', created_at TEXT NOT NULL)`
+  );
+
+  for (const e of (raw as Record<string, unknown>[]).slice(0, 20)) {
+    const name = String(e?.name ?? "").trim();
+    if (!name || name.length > 60) continue;
+    await exec(
+      "INSERT INTO events (user_id, name, props_j, created_at) VALUES (?, ?, ?, ?)",
+      [uid ?? null, name, JSON.stringify(e?.props ?? {}).slice(0, 1000), nowIso()]
+    );
+  }
+  respond(res, { ok: true });
 }
 
 export async function handlePostErrors(req: VercelRequest, res: VercelResponse, body: unknown): Promise<void> {

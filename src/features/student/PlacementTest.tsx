@@ -3,6 +3,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { CheckCircle2, Clock3, FileText, RotateCcw, ShieldCheck } from "lucide-react";
 import { Button, Card, ProgressBar } from "../../components/ui";
 import { selectCurrentUser, useAppStore } from "../../store/useAppStore";
+import { track } from "../../services/analytics";
 import {
   createAttempt,
   placementTestService,
@@ -91,11 +92,14 @@ export function PlacementTest() {
 
   function startCourse() {
     if (!attempt) return;
+    const level = attempt.result.recommendedCourseLevel;
+    track("placement_test_done", { level });
     if (user!.onboardingDone) {
-      setLevel(attempt.result.recommendedCourseLevel);
+      setLevel(level);
       navigate("/app/path", { replace: true });
     } else {
-      completeOnboarding(user!.goal || "Життя у Словаччині", attempt.result.recommendedCourseLevel);
+      track("onboarding_done", { goal: user!.goal, start: level, via: "placement" });
+      completeOnboarding(user!.goal || "Життя у Словаччині", level);
       navigate("/app/path", { replace: true });
     }
   }

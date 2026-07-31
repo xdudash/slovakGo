@@ -4,6 +4,7 @@ import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import { Button, Card, Field } from "../../components/ui";
 import { roleHome, useAppStore } from "../../store/useAppStore";
 import { apiClient } from "../../services/apiClient";
+import { track } from "../../services/analytics";
 import { storageService } from "../../services/storage";
 import { demoService } from "../../services/demoService";
 import { useT } from "../../i18n";
@@ -96,6 +97,7 @@ export function Register() {
     setLoading(false);
     if (user) {
       if (refParam) apiClient.claimReferral(refParam).catch(() => undefined);
+      track("register", { referred: Boolean(refParam) });
       demoService.markPending();
       navigate("/demo", { replace: true });
     }
