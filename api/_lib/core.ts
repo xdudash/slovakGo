@@ -7,6 +7,20 @@ export const LOGIN_MAX_ATTEMPTS = 10;
 export const LOGIN_WINDOW_SEC = 900;
 export const JWT_COOKIE = "sl_session";
 
+/**
+ * Default settings for a freshly created user.
+ * `reminderTime` must have a value here: the reminder cron only picks up users
+ * who have one, so leaving it empty means they never get a push at all.
+ */
+export const DEFAULT_REMINDER_TIME = "19:00";
+export const defaultSettingsJson = () => JSON.stringify({
+  language: "uk",
+  notificationsEnabled: true,
+  soundEnabled: true,
+  hapticsEnabled: true,
+  reminderTime: DEFAULT_REMINDER_TIME,
+});
+
 // ─── DB ───────────────────────────────────────────────────────────────────────
 let _db: ReturnType<typeof createClient> | null = null;
 export function getDb() {
@@ -36,6 +50,28 @@ export async function exec(sql: string, args: Arg[] = []): Promise<void> {
 }
 export async function ensureCol(table: string, col: string, type: string): Promise<void> {
   try { await exec(`ALTER TABLE ${table} ADD COLUMN ${col} ${type}`); } catch { /* already exists */ }
+}
+
+/**
+ * Records a funnel event server-side. Used for the money end of the funnel
+ * (trial_start / paid / churn), which arrives via Stripe webhooks and must not
+ * depend on the learner having a browser tab open.
+ */
+export async function logEvent(userId: string | null, name: string, props: Record<string, unknown> = {}): Promise<void> {
+  try {
+    await exec(
+      `CREATE TABLE IF NOT EXISTS events (
+         id INTEGER PRIMARY KEY AUTOINCREMENT,
+         user_id TEXT, name TEXT NOT NULL,
+         props_j TEXT NOT NULL DEFAULT '{}', created_at TEXT NOT NULL)`
+    );
+    await exec(
+      "INSERT INTO events (user_id, name, props_j, created_at) VALUES (?, ?, ?, ?)",
+      [userId, name, JSON.stringify(props).slice(0, 1000), nowIso()]
+    );
+  } catch (err) {
+    console.error("[events] insert failed:", err);
+  }
 }
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -135,6 +171,19 @@ export async function ensureProgress(uid: string): Promise<Row> {
   return row!;
 }
 
+/**
+ * Referral bonus days live in their own column so they never fight the Stripe
+ * webhook, which overwrites sub_status/sub_expires_at on every invoice. While the
+ * bonus is running the user is reported as "plus" to the app; the stored
+ * sub_status stays truthful for the admin panel.
+ */
+function effectiveSubStatus(r: Row): string {
+  const stored = String(r.sub_status);
+  if (stored === "plus" || stored === "trial" || stored === "past_due") return stored;
+  const bonusUntil = String(r.bonus_until ?? "");
+  return bonusUntil && Date.parse(bonusUntil) > Date.now() ? "plus" : stored;
+}
+
 export function rowToUser(r: Row): Record<string, unknown> {
   return {
     id:                 String(r.id),
@@ -145,7 +194,8 @@ export function rowToUser(r: Row): Record<string, unknown> {
     goal:               r.goal ?? null,
     avatar:             r.avatar ?? null,
     country:            r.country ?? null,
-    subscriptionStatus: String(r.sub_status),
+    subscriptionStatus: effectiveSubStatus(r),
+    bonusUntil:         r.bonus_until ?? null,
     trialEndsAt:        r.trial_ends ?? null,
     subExpiresAt:       r.sub_expires_at ?? null,
     onboardingDone:     Boolean(r.ob_done),

@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import bcrypt from "bcryptjs";
 import { createHash, randomBytes, randomUUID, timingSafeEqual } from "node:crypto";
 import {
-  LOGIN_WINDOW_SEC, LOGIN_MAX_ATTEMPTS,
+  LOGIN_WINDOW_SEC, LOGIN_MAX_ATTEMPTS, defaultSettingsJson,
   exec, queryOne, nowIso, clientIp, signToken, setCookie,
   respond, fail, rowToUser, ensureProgress, clearCookie,
   requireUid, parseCookies
@@ -38,7 +38,7 @@ export async function handleRegister(req: VercelRequest, res: VercelResponse, bo
   const id    = cliId || `user-${randomUUID()}`;
   const now   = nowIso();
   const hash  = await bcrypt.hash(password, 11);
-  const defS  = JSON.stringify({ language: "uk", notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true });
+  const defS  = defaultSettingsJson();
 
   await exec(
     `INSERT INTO users (id, email, pw_hash, name_text, role, level, goal, sub_status, trial_ends, ob_done, settings_j, created_at, updated_at)
@@ -77,7 +77,7 @@ export async function handleLogin(req: VercelRequest, res: VercelResponse, body:
     if (!adminRow) {
       const id = `user-admin-${randomUUID()}`;
       const trial = new Date(Date.now() + 100 * 365 * 86400_000).toISOString().replace(/\.\d{3}Z$/, "Z");
-      const defS = JSON.stringify({ language: "uk", notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true });
+      const defS = defaultSettingsJson();
       const hash = await bcrypt.hash(adminPassword, 11);
       
       await exec(
@@ -298,7 +298,7 @@ export async function handleGoogleCallback(req: VercelRequest, res: VercelRespon
     } else {
       const id    = `user-${randomUUID()}`;
       const now   = nowIso();
-      const defS  = JSON.stringify({ language: "uk", notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true });
+      const defS  = defaultSettingsJson();
       const name  = gUser.name || email.split("@")[0];
 
       await exec(

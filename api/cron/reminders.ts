@@ -1,10 +1,14 @@
 /**
- * Vercel Cron — fires every hour.
- * Sends a reminder push notification to users who:
- *   1. Have `settings.reminderTime` set (HH:MM, treated as Europe/Bratislava time)
- *   2. Have not yet practiced today
- *   3. Have not already received a reminder today
- *   4. Have at least one FCM token registered
+ * Vercel Cron — reminder push notifications.
+ *
+ * Runs in one of two modes, because hourly crons need a Vercel Pro plan:
+ *   • CRON_HOURLY=1 — schedule the job `0 * * * *` and each user is reminded at
+ *     their own `settings.reminderTime` (HH:MM, Europe/Bratislava).
+ *   • otherwise     — schedule the job once in the evening; everyone eligible is
+ *     reminded in that single run, regardless of their preferred hour.
+ *
+ * A user is eligible when they have notifications on, have not practiced today,
+ * have not already been reminded today, and have at least one FCM token.
  *
  * Uses FCM V1 API with Service Account authentication.
  */
@@ -35,6 +39,31 @@ function safeJson<T>(s: string, fallback: T): T {
   try { return JSON.parse(s) as T; } catch { return fallback; }
 }
 const nowIso = () => new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
+
+// ─── Recipient selection (pure, unit-tested) ─────────────────────────────────
+
+export interface ReminderSettings {
+  notificationsEnabled?: boolean;
+  reminderTime?: string;
+}
+
+/**
+ * Decides whether a candidate (already filtered by SQL to "not practiced and not
+ * reminded today") should get a push in this run.
+ *
+ * In daily mode `reminderTime` is only a preference we cannot honour — a user
+ * without one must still be reminded, otherwise the single daily run reaches
+ * nobody. That was the original bug: the hour-matching filter ran against a
+ * once-a-day schedule, so only users who had manually picked the cron's hour
+ * ever received anything.
+ */
+export function shouldRemind(settings: ReminderSettings, currentHour: number, hourly: boolean): boolean {
+  if (!settings.notificationsEnabled) return false;
+  if (!hourly) return true;
+  if (!settings.reminderTime) return false;
+  const hour = Number(settings.reminderTime.split(":")[0]);
+  return Number.isInteger(hour) && hour === currentHour;
+}
 
 // ─── FCM V1 Auth ──────────────────────────────────────────────────────────────
 
@@ -179,15 +208,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     [today, today]
   );
 
-  // Filter by matching reminder hour in Bratislava timezone
-  const toRemind = candidates.filter(r => {
-    const s = safeJson<{ notificationsEnabled?: boolean; reminderTime?: string }>(
-      String(r.settings_j ?? "{}"), {}
-    );
-    if (!s.notificationsEnabled || !s.reminderTime) return false;
-    const [h] = s.reminderTime.split(":").map(Number);
-    return h === bratislavaHour;
-  });
+  // Hourly mode honours each user's own reminder time; daily mode reminds everyone.
+  const hourly = process.env.CRON_HOURLY === "1";
+  const toRemind = candidates.filter(r =>
+    shouldRemind(safeJson<ReminderSettings>(String(r.settings_j ?? "{}"), {}), bratislavaHour, hourly)
+  );
 
   let totalSent = 0;
   let usersNotified = 0;
@@ -218,8 +243,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
   res.status(200).json({
     ok: true,
+    mode: hourly ? "hourly" : "daily",
     bratislavaHour,
     candidates: candidates.length,
+    eligible: toRemind.length,
     usersNotified,
     totalSent,
   });
