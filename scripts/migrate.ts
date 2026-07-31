@@ -127,6 +127,24 @@ CREATE TABLE IF NOT EXISTS client_errors (
   created_at TEXT NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS email_log (
+  user_id TEXT NOT NULL,
+  kind    TEXT NOT NULL,
+  sent_at TEXT NOT NULL,
+  PRIMARY KEY (user_id, kind),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE IF NOT EXISTS events (
+  id         INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id    TEXT,
+  name       TEXT NOT NULL,
+  props_j    TEXT NOT NULL DEFAULT '{}',
+  created_at TEXT NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_events_name_date     ON events(name, created_at);
+CREATE INDEX IF NOT EXISTS idx_events_user          ON events(user_id);
 CREATE INDEX IF NOT EXISTS idx_users_email          ON users(email);
 CREATE INDEX IF NOT EXISTS idx_users_sub_status     ON users(sub_status);
 CREATE INDEX IF NOT EXISTS idx_users_updated_at     ON users(updated_at);
@@ -152,11 +170,25 @@ async function run() {
     "ALTER TABLE progress ADD COLUMN hearts_restored_at TEXT",
     "ALTER TABLE progress ADD COLUMN practice_awarded_at TEXT",
     "ALTER TABLE progress ADD COLUMN last_reminder_date TEXT",
+    "ALTER TABLE users ADD COLUMN bonus_until TEXT",
+    "ALTER TABLE users ADD COLUMN referral_rewarded INTEGER NOT NULL DEFAULT 0",
   ]) {
     try { await db.execute(sql); } catch { /* column already exists */ }
   }
 
   console.log("✓ Schema applied");
+
+  // Backfill: users created before reminderTime had a default never received a
+  // reminder push, because the cron only selects users who have one set.
+  const backfill = await db.execute({
+    sql: `UPDATE users
+          SET settings_j = json_set(settings_j, '$.reminderTime', '19:00'),
+              updated_at = ?
+          WHERE json_extract(settings_j, '$.reminderTime') IS NULL
+            AND json_extract(settings_j, '$.notificationsEnabled') = 1`,
+    args: [new Date().toISOString().replace(/\.\d{3}Z$/, "Z")],
+  });
+  console.log(`✓ reminderTime backfilled for ${backfill.rowsAffected} user(s)`);
 
   const counts = await Promise.all([
     db.execute("SELECT COUNT(*) as c FROM users"),
