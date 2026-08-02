@@ -144,7 +144,7 @@ export function Onboarding() {
     <Card className="onboarding-card onboarding-card-anim" key="goal">
       <div className="onboarding-visual onboarding-visual--goal">
         <div className="onboarding-product-shot onboarding-product-shot--goal">
-          <img src="/app-demo.png" alt="Практичний урок SlovakGO" width="390" height="844" loading="lazy" decoding="async" />
+          <img src="/app-onboarding.png" alt="Налаштування навчального шляху SlovakGO" width="390" height="844" loading="lazy" decoding="async" />
         </div>
         <div className="onboarding-visual-badge"><Trophy size={22} /> Твоя ціль</div>
       </div>
@@ -191,7 +191,7 @@ export function Onboarding() {
     <Card className="onboarding-card onboarding-card-anim" key="start">
       <div className="onboarding-visual onboarding-visual--start">
         <div className="onboarding-product-shot onboarding-product-shot--start">
-          <img src="/app-demo.png" alt="Демо-урок SlovakGO" width="390" height="844" loading="lazy" decoding="async" />
+          <img src="/app-exercise.png" alt="Повноцінна вправа першого розділу SlovakGO" width="390" height="844" loading="lazy" decoding="async" />
         </div>
       </div>
       <div className="onboarding-content">

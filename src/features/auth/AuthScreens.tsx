@@ -6,13 +6,12 @@ import { roleHome, useAppStore } from "../../store/useAppStore";
 import { apiClient } from "../../services/apiClient";
 import { track } from "../../services/analytics";
 import { storageService } from "../../services/storage";
-import { demoService } from "../../services/demoService";
 import { useT } from "../../i18n";
 import type { AppData, Lesson, User, UserWord } from "../../types";
 
 function postAuthRoute(user: User): string {
   if (user.role === "student" && !user.onboardingDone) {
-    return demoService.isPending() ? "/demo" : "/onboarding";
+    return "/onboarding";
   }
   return roleHome(user.role);
 }
@@ -98,8 +97,7 @@ export function Register() {
     if (user) {
       if (refParam) apiClient.claimReferral(refParam).catch(() => undefined);
       track("register", { referred: Boolean(refParam) });
-      demoService.markPending();
-      navigate("/demo", { replace: true });
+      navigate("/onboarding", { replace: true });
     }
   }
 
@@ -255,8 +253,7 @@ export function GoogleDone() {
       useAppStore.setState({ data: merged, currentUserId: userId, authError: undefined });
 
       if (isNew) {
-        demoService.markPending();
-        navigate("/demo", { replace: true });
+        navigate("/onboarding", { replace: true });
       } else if (!full.user.onboardingDone) {
         navigate("/onboarding", { replace: true });
       } else {
