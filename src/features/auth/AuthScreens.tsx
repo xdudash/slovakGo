@@ -83,10 +83,13 @@ export function Login() {
 export function Register() {
   const navigate = useNavigate();
   const { register, currentUserId, authError } = useAppStore();
-  const { t } = useT();
+  const { t, lang } = useT();
   const [searchParams] = useSearchParams();
   const refParam = searchParams.get("ref");
-  const [form, setForm] = useState({ name: "", email: "", password: "", goal: "" });
+  const demoDoneParam = searchParams.get("demoDone") === "true";
+  const isRu = lang === "ru";
+
+  const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -100,8 +103,39 @@ export function Register() {
     event.preventDefault();
     setLoading(true);
     try {
-      const user = await register(form);
+      const defaultName = form.email.split("@")[0] || "Студент";
+      const user = await register({
+        name: defaultName,
+        email: form.email,
+        password: form.password,
+      });
+
       if (user) {
+        const savedDemoXp = localStorage.getItem("slovakgo.demo-xp");
+        if (savedDemoXp) {
+          const addXp = parseInt(savedDemoXp, 10) || 50;
+          const { data } = useAppStore.getState();
+          const progress = data.progress[user.id];
+          if (progress) {
+            useAppStore.setState((state) => ({
+              data: {
+                ...state.data,
+                progress: {
+                  ...state.data.progress,
+                  [user.id]: {
+                    ...progress,
+                    xpTotal: progress.xpTotal + addXp,
+                    xpWeekly: progress.xpWeekly + addXp,
+                    streakDays: Math.max(progress.streakDays, 1),
+                  },
+                },
+              },
+            }));
+          }
+          localStorage.removeItem("slovakgo.demo-xp");
+          localStorage.removeItem("slovakgo.demo-streak");
+        }
+
         if (refParam) apiClient.claimReferral(refParam).catch(() => undefined);
         track("register", { referred: Boolean(refParam) });
         navigate("/onboarding", { replace: true });
@@ -112,24 +146,38 @@ export function Register() {
   }
 
   return (
-    <AuthShell title={t("auth.register_title")} text={t("auth.register_subtitle")}>
+    <AuthShell
+      title={isRu ? "Сохранить прогресс" : t("auth.register_title")}
+      text={isRu ? "Создайте профиль за 10 секунд, чтобы сохранить 50 XP и продолжить." : "Створи профіль за 10 секунд, щоб зберегти свій результат."}
+    >
+      {demoDoneParam && (
+        <div className="referred-banner" style={{ background: "#ecfdf5", border: "1px solid #10b981", color: "#065f46" }}>
+          🎉 {isRu ? "Демо-урок пройден (+50 XP)! Введите email и пароль, чтобы сохранить результат." : "Демо-урок пройдено (+50 XP)! Введи email та пароль, щоб зберегти свій результат."}
+        </div>
+      )}
       {refParam && (
         <div className="referred-banner">
           👋 {t("auth.referred_banner")}
         </div>
       )}
       <form onSubmit={submit} className="form-stack" noValidate>
-        <Field label={t("auth.name")} value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} />
-        <Field label={t("auth.email")} type="email" value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} />
+        <Field label={t("auth.email")} type="email" value={form.email} autoFocus onChange={(event) => setForm({ ...form, email: event.target.value })} />
         <Field label={t("auth.password")} type="password" value={form.password} onChange={(event) => setForm({ ...form, password: event.target.value })} />
-        <Field label={t("auth.goal_label")} value={form.goal} onChange={(event) => setForm({ ...form, goal: event.target.value })} placeholder={t("auth.goal_placeholder")} />
         {authError ? <p className="error-text">{authError}</p> : null}
-        <Button type="submit" loading={loading}>{loading ? "Створюємо акаунт…" : t("auth.create_account")}</Button>
+        <Button type="submit" disabled={loading} loading={loading}>
+          {loading
+            ? (isRu ? "Создаем аккаунт…" : "Створюємо акаунт…")
+            : (demoDoneParam
+                ? (isRu ? "Сохранить прогресс и продолжить" : "Зберегти прогрес та продовжити")
+                : t("auth.create_account")
+              )
+          }
+        </Button>
       </form>
-      <div className="auth-divider"><span>або</span></div>
+      <div className="auth-divider"><span>{isRu ? "или" : "або"}</span></div>
       <button type="button" className="btn btn-google" onClick={() => { window.location.href = "/api/auth/google/start"; }}>
         <GoogleIcon />
-        Зареєструватися через Google
+        {isRu ? "Войти через Google" : "Зареєструватися через Google"}
       </button>
       <p className="auth-link">{t("auth.has_account")} <Link to="/login">{t("auth.sign_in")}</Link></p>
     </AuthShell>

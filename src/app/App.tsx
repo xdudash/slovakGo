@@ -19,6 +19,8 @@ const PaymentSuccess = lazy(() => import("../features/student/StudentScreens").t
 const PlacementTest = lazy(() => import("../features/student/PlacementTest").then(m => ({ default: m.PlacementTest })));
 const StudentLayout = lazy(() => import("../features/student/StudentScreens").then(m => ({ default: m.StudentLayout })));
 const TeacherLayout = lazy(() => import("../features/teacher/TeacherScreens").then(m => ({ default: m.TeacherLayout })));
+const LandingPage = lazy(() => import("../features/landing/LandingPage").then(m => ({ default: m.LandingPage })));
+const DemoLesson = lazy(() => import("../features/landing/DemoLesson").then(m => ({ default: m.DemoLesson })));
 
 function RequireRole({ roles, children }: { roles: UserRole[]; children: ReactNode }) {
   const location = useLocation();
@@ -32,7 +34,7 @@ function RequireRole({ roles, children }: { roles: UserRole[]; children: ReactNo
 function EntryRedirect() {
   const { data, currentUserId } = useAppStore();
   const user = selectCurrentUser(data, currentUserId);
-  if (!user) return <Navigate to="/login" replace />;
+  if (!user) return <LandingPage />;
   if (user.role === "student" && !user.onboardingDone) {
     return <Navigate to="/onboarding" replace />;
   }
@@ -63,7 +65,7 @@ export function App() {
     });
   }, [autoRestoreSession]);
 
-  const isPublicAuthRoute = ["/login", "/register", "/forgot-password", "/reset-password"].includes(location.pathname);
+  const isPublicAuthRoute = ["/", "/demo", "/login", "/register", "/forgot-password", "/reset-password"].includes(location.pathname);
 
   if (restoring && !isPublicAuthRoute) {
     return <AppLoadingScreen />;
@@ -76,6 +78,7 @@ export function App() {
     <Suspense fallback={<AppLoadingScreen message="Відкриваємо SlovakGO…" />}>
       <Routes>
         <Route path="/" element={<EntryRedirect />} />
+        <Route path="/demo" element={<DemoLesson />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
