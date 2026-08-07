@@ -34,11 +34,21 @@ interface AppStore {
   returnToAdmin: () => void;
   refreshUser: () => Promise<void>;
   drainSync: () => Promise<void>;
+  refreshLessons: () => Promise<void>;
   autoRestoreSession: () => Promise<boolean>;
   resetLocal: () => void;
 }
 
 const sessionKey = "slovakgo.current-user";
+const defaultSettings = { language: "uk" as const, notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true };
+
+type RemoteState = {
+  user: User;
+  progress: AppData["progress"][string];
+  userWords: UserWord[];
+  lessons?: Lesson[];
+  lessonVersion?: string;
+};
 
 function initialUserId(): string | undefined {
   return localStorage.getItem(sessionKey) || undefined;
@@ -55,6 +65,18 @@ function withSync(data: AppData, type: string, payload: Record<string, unknown>)
 
 function nextLessonId(lessons: Lesson[], completed: string[], level: UserLevel): string | undefined {
   return lessonService.byLevel(lessons, level).find((lesson) => !completed.includes(lesson.id))?.id;
+}
+
+function mergeRemoteState(data: AppData, remote: RemoteState): AppData {
+  const userId = remote.user.id;
+  const users = data.users.filter((user) => user.id !== userId);
+  return {
+    ...data,
+    users: [...users, { ...remote.user, settings: { ...defaultSettings, ...remote.user.settings } }],
+    progress: { ...data.progress, [userId]: { ...remote.progress, lessonAttempts: data.progress[userId]?.lessonAttempts ?? [] } },
+    userWords: { ...data.userWords, [userId]: remote.userWords },
+    lessons: remote.lessons?.length ? remote.lessons : data.lessons,
+  };
 }
 
 export const useAppStore = create<AppStore>((set, get) => ({
@@ -82,55 +104,39 @@ export const useAppStore = create<AppStore>((set, get) => ({
       return null;
     }
 
-    const defaults = { language: "uk" as const, notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true };
     const userId = serverUser.id;
     let data = get().data;
 
     try {
-      const fullState = await apiClient.syncPull(0) as { user: User; progress: AppData["progress"][string]; userWords: UserWord[]; lessons: Lesson[] };
-      const users = data.users.filter(u => u.id !== userId);
-      data = {
-        ...data,
-        users: [...users, { ...fullState.user, settings: { ...defaults, ...fullState.user.settings } }],
-        progress: { ...data.progress, [userId]: { ...fullState.progress, lessonAttempts: data.progress[userId]?.lessonAttempts ?? [] } },
-        userWords: { ...data.userWords, [userId]: fullState.userWords },
-        lessons: fullState.lessons?.length ? fullState.lessons : data.lessons,
-      };
+      const fullState = await apiClient.syncPull(0, false) as RemoteState;
+      data = mergeRemoteState(data, fullState);
     } catch {
       // syncPull failed — log in with local data so a server hiccup doesn't block the user
       const users = data.users.filter(u => u.id !== userId);
       data = {
         ...data,
-        users: [...users, { ...serverUser, settings: { ...defaults, ...serverUser.settings } }],
+        users: [...users, { ...serverUser, settings: { ...defaultSettings, ...serverUser.settings } }],
       };
     }
 
     save(data);
     localStorage.setItem(sessionKey, userId);
     set({ data, currentUserId: userId, authError: undefined });
+    get().refreshLessons().catch(() => undefined);
     get().drainSync().catch(() => undefined);
     return data.users.find((u) => u.id === userId) ?? null;
   },
 
   async autoRestoreSession() {
     try {
-      const fullState = await apiClient.syncPull(0) as { user: User; progress: AppData["progress"][string]; userWords: UserWord[]; lessons: Lesson[] };
+      const fullState = await apiClient.syncPull(0, false) as RemoteState;
       const userId = fullState.user.id;
-      const defaults = { language: "uk" as const, notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true };
-      
-      let data = get().data;
-      const users = data.users.filter(u => u.id !== userId);
-      data = {
-        ...data,
-        users: [...users, { ...fullState.user, settings: { ...defaults, ...fullState.user.settings } }],
-        progress: { ...data.progress, [userId]: { ...fullState.progress, lessonAttempts: data.progress[userId]?.lessonAttempts ?? [] } },
-        userWords: { ...data.userWords, [userId]: fullState.userWords },
-        lessons: fullState.lessons?.length ? fullState.lessons : data.lessons,
-      };
+      const data = mergeRemoteState(get().data, fullState);
 
       save(data);
       localStorage.setItem(sessionKey, userId);
       set({ data, currentUserId: userId, authError: undefined });
+      get().refreshLessons().catch(() => undefined);
       get().drainSync().catch(() => undefined);
       return true;
     } catch (err: unknown) {
@@ -162,28 +168,18 @@ export const useAppStore = create<AppStore>((set, get) => ({
     set({ authError: undefined });
 
     const tentativeId = `user-${crypto.randomUUID()}`;
-    const defaults = { language: "uk" as const, notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true };
-
     try {
       await apiClient.register(tentativeId, payload.name.trim(), payload.email, payload.password, payload.goal);
 
-      const fullState = await apiClient.syncPull(0) as { user: User; progress: AppData["progress"][string]; userWords: UserWord[]; lessons: Lesson[] };
+      const fullState = await apiClient.syncPull(0, false) as RemoteState;
       const userId = fullState.user.id;
-
-      let data = get().data;
-      const users = data.users.filter(u => u.id !== userId);
-      data = {
-        ...data,
-        users: [...users, { ...fullState.user, settings: { ...defaults, ...fullState.user.settings } }],
-        progress:  { ...data.progress,  [userId]: { ...fullState.progress, lessonAttempts: data.progress[userId]?.lessonAttempts ?? [] } },
-        userWords: { ...data.userWords, [userId]: fullState.userWords },
-        lessons: fullState.lessons?.length ? fullState.lessons : data.lessons,
-      };
+      const data = mergeRemoteState(get().data, fullState);
 
       save(data);
       localStorage.setItem(sessionKey, userId);
       set({ data, currentUserId: userId, authError: undefined });
 
+      get().refreshLessons().catch(() => undefined);
       get().drainSync().catch(() => undefined);
       return data.users.find((u) => u.id === userId) ?? null;
     } catch (err: unknown) {
@@ -203,21 +199,29 @@ export const useAppStore = create<AppStore>((set, get) => ({
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     try {
-      const fullState = await apiClient.syncPull(0) as { user: User; progress: AppData["progress"][string]; userWords: UserWord[]; lessons: Lesson[] };
-      const defaults = { language: "uk" as const, notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true };
-      let data = get().data;
-      const users = data.users.filter(u => u.id !== currentUserId);
-      data = {
-        ...data,
-        users: [...users, { ...fullState.user, settings: { ...defaults, ...fullState.user.settings } }],
-        progress: { ...data.progress, [currentUserId]: { ...fullState.progress, lessonAttempts: data.progress[currentUserId]?.lessonAttempts ?? [] } },
-        userWords: { ...data.userWords, [currentUserId]: fullState.userWords },
-        lessons: fullState.lessons?.length ? fullState.lessons : data.lessons,
-      };
+      const fullState = await apiClient.syncPull(0, false) as RemoteState;
+      const data = mergeRemoteState(get().data, fullState);
       save(data);
       set({ data });
+      get().refreshLessons().catch(() => undefined);
     } catch {
       // non-fatal — store remains as-is
+    }
+  },
+
+  async refreshLessons() {
+    if (!get().currentUserId) return;
+    try {
+      const currentVersion = storageService.getLessonVersion();
+      const response = await apiClient.lessonsPull(currentVersion);
+      if (response.unchanged) return;
+      const lessons = response.lessons as Lesson[] | undefined;
+      if (!lessons?.length) return;
+      const data = save({ ...get().data, lessons });
+      storageService.setLessonVersion(response.version);
+      set({ data });
+    } catch {
+      // Cached lessons remain available when the background refresh fails.
     }
   },
 

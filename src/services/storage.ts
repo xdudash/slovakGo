@@ -2,6 +2,7 @@ import { seedData } from "../data/seedData";
 import type { AppData } from "../types";
 
 const STORAGE_KEY = "slovakgo.state.v1";
+const LESSON_VERSION_KEY = "slovakgo.lessons.version.v1";
 const SEED_USER_IDS = ["user-student", "user-teacher", "user-admin"];
 
 function cloneSeed(): AppData {
@@ -62,7 +63,16 @@ export const storageService = {
     }
   },
 
+  getLessonVersion(): string | undefined {
+    return localStorage.getItem(LESSON_VERSION_KEY) || undefined;
+  },
+
+  setLessonVersion(version: string): void {
+    localStorage.setItem(LESSON_VERSION_KEY, version);
+  },
+
   reset(): AppData {
+    localStorage.removeItem(LESSON_VERSION_KEY);
     const data = cloneSeed();
     this.save(data);
     return data;

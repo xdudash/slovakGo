@@ -14,13 +14,13 @@ export class ApiError extends Error {
   }
 }
 
-export async function apiRequest<T>(path: string, init: RequestInit = {}): Promise<T> {
+export async function apiRequest<T>(path: string, init: RequestInit = {}, timeoutMs = 10_000): Promise<T> {
   const headers = new Headers(init.headers);
   headers.set("Content-Type", "application/json");
   headers.set("X-Requested-With", "XMLHttpRequest");
 
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 20_000);
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
 
   let response: Response;
   try {
@@ -76,8 +76,13 @@ export const apiClient = {
     });
   },
 
-  syncPull(since: number) {
-    return apiRequest<unknown>(`/sync/pull?since=${since}`);
+  syncPull(since: number, includeLessons = true) {
+    return apiRequest<unknown>(`/sync/pull?since=${since}&includeLessons=${includeLessons ? "1" : "0"}`);
+  },
+
+  lessonsPull(version?: string) {
+    const query = version ? `?version=${encodeURIComponent(version)}` : "";
+    return apiRequest<{ ok: boolean; unchanged: boolean; version: string; lessons?: unknown[] }>(`/lessons${query}`, {}, 20_000);
   },
 
   changeEmail(newEmail: string, currentPassword: string) {

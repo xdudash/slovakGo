@@ -31,7 +31,11 @@ export async function handleSyncPull(req: VercelRequest, res: VercelResponse): P
 
   const prog  = await ensureProgress(uid);
   const words = await getUserWords(uid);
-  const lessons = await getLessons(String(row.role));
+  const url = new URL(req.url ?? "/sync/pull", "http://localhost");
+  const includeLessonsParam = typeof req.query.includeLessons === "string" ? req.query.includeLessons : url.searchParams.get("includeLessons");
+  const includeLessons = includeLessonsParam !== "0";
+  const lessonVersion = await getLessonVersion(String(row.role));
+  const lessons = includeLessons ? await getLessons(String(row.role)) : undefined;
 
   respond(res, {
     ok: true,
@@ -54,9 +58,36 @@ export async function handleSyncPull(req: VercelRequest, res: VercelResponse): P
       updatedAt:         String(prog.updated_at),
     },
     userWords: words,
-    lessons,
+    ...(lessons ? { lessons } : {}),
+    lessonVersion,
     updatedAt: nowIso(),
   });
+}
+
+export async function handleLessonsPull(req: VercelRequest, res: VercelResponse): Promise<void> {
+  const uid = await requireUid(req, res);
+  if (!uid) return;
+
+  const row = await queryOne("SELECT role FROM users WHERE id = ? LIMIT 1", [uid]);
+  if (!row) return fail(res, "Користувача не знайдено", 404);
+
+  const role = String(row.role);
+  const version = await getLessonVersion(role);
+  const url = new URL(req.url ?? "/lessons", "http://localhost");
+  const currentVersion = typeof req.query.version === "string" ? req.query.version : url.searchParams.get("version");
+
+  if (currentVersion === version) {
+    return respond(res, { ok: true, unchanged: true, version });
+  }
+
+  respond(res, { ok: true, unchanged: false, version, lessons: await getLessons(role) });
+}
+
+async function getLessonVersion(role: string): Promise<string> {
+  const privileged = role === "teacher" || role === "admin";
+  const where = privileged ? "" : " WHERE published = 1";
+  const row = await queryOne(`SELECT COUNT(*) AS count, MAX(updated_at) AS updated_at FROM lessons${where}`);
+  return `${privileged ? "all" : "published"}:${Number(row?.count ?? 0)}:${String(row?.updated_at ?? "empty")}`;
 }
 
 export async function handleSyncPush(req: VercelRequest, res: VercelResponse, body: Record<string, unknown>): Promise<void> {

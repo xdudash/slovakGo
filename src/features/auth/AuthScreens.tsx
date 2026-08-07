@@ -82,22 +82,32 @@ export function Login() {
 
 export function Register() {
   const navigate = useNavigate();
-  const { register, authError } = useAppStore();
+  const { register, currentUserId, authError } = useAppStore();
   const { t } = useT();
   const [searchParams] = useSearchParams();
   const refParam = searchParams.get("ref");
   const [form, setForm] = useState({ name: "", email: "", password: "", goal: "" });
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    if (!currentUserId) return;
+    const { data } = useAppStore.getState();
+    const user = data.users.find((item) => item.id === currentUserId);
+    if (user) navigate(postAuthRoute(user), { replace: true });
+  }, [currentUserId, navigate]);
+
   async function submit(event: FormEvent) {
     event.preventDefault();
     setLoading(true);
-    const user = await register(form);
-    setLoading(false);
-    if (user) {
-      if (refParam) apiClient.claimReferral(refParam).catch(() => undefined);
-      track("register", { referred: Boolean(refParam) });
-      navigate("/onboarding", { replace: true });
+    try {
+      const user = await register(form);
+      if (user) {
+        if (refParam) apiClient.claimReferral(refParam).catch(() => undefined);
+        track("register", { referred: Boolean(refParam) });
+        navigate("/onboarding", { replace: true });
+      }
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -114,7 +124,7 @@ export function Register() {
         <Field label={t("auth.password")} type="password" value={form.password} onChange={(event) => setForm({ ...form, password: event.target.value })} />
         <Field label={t("auth.goal_label")} value={form.goal} onChange={(event) => setForm({ ...form, goal: event.target.value })} placeholder={t("auth.goal_placeholder")} />
         {authError ? <p className="error-text">{authError}</p> : null}
-        <Button type="submit" disabled={loading}>{loading ? "…" : t("auth.create_account")}</Button>
+        <Button type="submit" loading={loading}>{loading ? "Створюємо акаунт…" : t("auth.create_account")}</Button>
       </form>
       <div className="auth-divider"><span>або</span></div>
       <button type="button" className="btn btn-google" onClick={() => { window.location.href = "/api/auth/google/start"; }}>
@@ -234,8 +244,8 @@ export function GoogleDone() {
   useEffect(() => {
     const defaults = { language: "uk" as const, notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true };
 
-    apiClient.syncPull(0).then((raw) => {
-      const full = raw as { user: User; progress: AppData["progress"][string]; userWords: UserWord[]; lessons: Lesson[] };
+    apiClient.syncPull(0, false).then((raw) => {
+      const full = raw as { user: User; progress: AppData["progress"][string]; userWords: UserWord[]; lessons?: Lesson[] };
       const userId = full.user.id;
       const { data } = useAppStore.getState();
       const users = data.users.filter((u) => u.id !== userId);
@@ -245,12 +255,13 @@ export function GoogleDone() {
         users: [...users, { ...full.user, settings: { ...defaults, ...full.user.settings } }],
         progress:  { ...data.progress,  [userId]: full.progress },
         userWords: { ...data.userWords, [userId]: full.userWords },
-        lessons: full.lessons || data.lessons,
+        lessons: full.lessons?.length ? full.lessons : data.lessons,
       };
 
       storageService.save(merged);
       localStorage.setItem("slovakgo.current-user", userId);
       useAppStore.setState({ data: merged, currentUserId: userId, authError: undefined });
+      useAppStore.getState().refreshLessons().catch(() => undefined);
 
       if (isNew) {
         navigate("/onboarding", { replace: true });

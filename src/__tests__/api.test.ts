@@ -331,6 +331,36 @@ describe("GET /sync/pull", () => {
     expect((body.lessons as unknown[]).length).toBeGreaterThanOrEqual(1);
     expect(Array.isArray(body.userWords)).toBe(true);
   });
+
+  it("can restore a session without sending the lesson catalog", async () => {
+    const { headers } = await call("POST", ["auth", "register"], {
+      body: { email: "quick-pull@example.com", password: "Secret123", name: "Quick" },
+    });
+    const cookie = String(headers["Set-Cookie"] ?? "").split(";")[0];
+    const { status, body } = await call("GET", ["sync", "pull"], { cookie, query: { includeLessons: "0" } });
+
+    expect(status).toBe(200);
+    expect(body.lessons).toBeUndefined();
+    expect(typeof body.lessonVersion).toBe("string");
+    expect(body.user).toBeTruthy();
+    expect(body.progress).toBeTruthy();
+  });
+
+  it("only returns lessons when their version changed", async () => {
+    const cookie = await makeCookie("admin-1");
+    const first = await call("GET", ["lessons"], { cookie });
+    expect(first.status).toBe(200);
+    expect(first.body.unchanged).toBe(false);
+    expect(Array.isArray(first.body.lessons)).toBe(true);
+
+    const second = await call("GET", ["lessons"], {
+      cookie,
+      query: { version: String(first.body.version) },
+    });
+    expect(second.status).toBe(200);
+    expect(second.body.unchanged).toBe(true);
+    expect(second.body.lessons).toBeUndefined();
+  });
 });
 
 // ─── Sync push / mutations ────────────────────────────────────────────────────

@@ -39,7 +39,21 @@ function EntryRedirect() {
   return <Navigate to={roleHome(user.role)} replace />;
 }
 
+function AppLoadingScreen({ message = "Готуємо твій навчальний шлях…" }: { message?: string }) {
+  return (
+    <main className="app-loading-screen" role="status" aria-live="polite">
+      <div className="app-loading-brand">
+        <img src="/apple-icon.png" alt="" className="app-loading-logo" />
+        <strong>SlovakGO</strong>
+      </div>
+      <div className="app-loading-bar" aria-hidden="true"><span /></div>
+      <p>{message}</p>
+    </main>
+  );
+}
+
 export function App() {
+  const location = useLocation();
   const [restoring, setRestoring] = useState(true);
   const autoRestoreSession = useAppStore((s) => s.autoRestoreSession);
 
@@ -49,15 +63,17 @@ export function App() {
     });
   }, [autoRestoreSession]);
 
-  if (restoring) {
-    return <div style={{ display: "flex", height: "100vh", alignItems: "center", justifyContent: "center", color: "#6b7280" }}>Відновлення сесії...</div>;
+  const isPublicAuthRoute = ["/login", "/register", "/forgot-password", "/reset-password"].includes(location.pathname);
+
+  if (restoring && !isPublicAuthRoute) {
+    return <AppLoadingScreen />;
   }
 
   return (
     <>
     <Analytics />
     <SpeedInsights />
-    <Suspense fallback={<div style={{ display: "flex", height: "100vh", alignItems: "center", justifyContent: "center", color: "#6b7280" }}>Завантаження...</div>}>
+    <Suspense fallback={<AppLoadingScreen message="Відкриваємо SlovakGO…" />}>
       <Routes>
         <Route path="/" element={<EntryRedirect />} />
         <Route path="/login" element={<Login />} />

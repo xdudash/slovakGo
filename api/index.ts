@@ -10,7 +10,7 @@ import {
   handleDeleteAccount, handleDeactivate, handleGoogleStart, handleGoogleCallback
 } from "./_lib/auth";
 
-import { handleSyncPull, handleSyncPush } from "./_lib/sync";
+import { handleLessonsPull, handleSyncPull, handleSyncPush } from "./_lib/sync";
 
 import {
   handleAdminStats, handleAdminErrors, handleAdminNotify, handleAdminUsers,
@@ -86,6 +86,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     // Sync Routes
     if (meth === "GET"  && route === "/sync/pull")         return await handleSyncPull(req, res);
     if (meth === "POST" && route === "/sync/push")         return await handleSyncPush(req, res, body);
+    if (meth === "GET"  && route === "/lessons")           return await handleLessonsPull(req, res);
     
     // User Routes
     if (meth === "POST" && route === "/user/email")        return await handleUserEmail(req, res, body);
