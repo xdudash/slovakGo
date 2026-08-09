@@ -156,8 +156,11 @@ export const apiClient = {
     });
   },
 
-  createCheckoutSession() {
-    return apiRequest<{ url: string }>('/billing/checkout', { method: 'POST' });
+  createCheckoutSession(planType: "monthly" | "yearly" = "monthly") {
+    return apiRequest<{ url: string }>('/billing/checkout', { 
+      method: 'POST',
+      body: JSON.stringify({ planType })
+    });
   },
 
   openCustomerPortal() {

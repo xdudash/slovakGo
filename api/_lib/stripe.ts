@@ -19,10 +19,11 @@ export const TRIAL_DAYS = 7;
 /** Free Plus days the referrer earns when an invited learner actually pays. */
 export const REFERRAL_BONUS_DAYS = 14;
 
-export async function handleBillingCheckout(req: VercelRequest, res: VercelResponse): Promise<void> {
+export async function handleBillingCheckout(req: VercelRequest, res: VercelResponse, body: any): Promise<void> {
   const uid = await requireUid(req, res); if (!uid) return;
-  const priceId = process.env.STRIPE_PRICE_ID ?? "";
-  if (!priceId) return fail(res, "STRIPE_PRICE_ID not configured", 503);
+  const planType = body?.planType === "yearly" ? "yearly" : "monthly";
+  const priceId = planType === "yearly" ? process.env.STRIPE_PRICE_ID_YEARLY : process.env.STRIPE_PRICE_ID;
+  if (!priceId) return fail(res, `Stripe price ID for ${planType} not configured`, 503);
   
   await ensureCol("users", "sub_expires_at", "TEXT");
   await ensureCol("users", "stripe_customer_id", "TEXT");

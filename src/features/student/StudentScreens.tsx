@@ -2769,12 +2769,12 @@ function ShopScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  async function handleSubscribe() {
+  async function handleSubscribe(planType: "monthly" | "yearly" = "monthly") {
     setLoading(true);
     setError(null);
     try {
-      track("checkout_start", { from: "shop" });
-      const { url } = await apiClient.createCheckoutSession();
+      track("checkout_start", { from: "shop", planType });
+      const { url } = await apiClient.createCheckoutSession(planType);
       window.location.href = url;
     } catch (err: any) {
       setError(err.message || "Не вдалося почати оформлення підписки. Спробуйте пізніше.");
@@ -2861,13 +2861,18 @@ function ShopScreen() {
               {loading ? t("student.shop.btn_loading") : t("student.shop.btn_manage")}
             </Button>
           </div>
-          : <Button variant="primary" disabled={loading} onClick={handleSubscribe} className="shop-btn-buy">
-            {loading
-              ? t("student.shop.btn_loading")
-              : (user?.hasUsedTrial
-                ? t("student.shop.btn_subscribe")
-                : "Спробувати 7 днів")}
-          </Button>
+          : <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "24px" }}>
+              <Button variant="primary" disabled={loading} onClick={() => handleSubscribe("yearly")} className="shop-btn-buy">
+                {loading
+                  ? t("student.shop.btn_loading")
+                  : (user?.hasUsedTrial
+                    ? "Річний тариф (€59,88/рік)"
+                    : "Спробувати 7 днів безкоштовно")}
+              </Button>
+              <Button variant="secondary" disabled={loading} onClick={() => handleSubscribe("monthly")} className="shop-btn-buy">
+                {loading ? t("student.shop.btn_loading") : "Щомісячний тариф (€9,99/міс)"}
+              </Button>
+            </div>
         }
       </Card>
 

@@ -100,7 +100,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "POST" && route === "/events")            return await handlePostEvents(req, res, isJson ? body : safeJson(rawBody.toString(), {}));
     
     // Stripe Routes
-    if (meth === "POST" && route === "/billing/checkout")  return await handleBillingCheckout(req, res);
+    if (meth === "POST" && route === "/billing/checkout")  return await handleBillingCheckout(req, res, body);
     if (meth === "POST" && route === "/billing/portal")    return await handleBillingPortal(req, res);
     if (meth === "POST" && (route === "/billing/webhook" || route === "/stripe/webhook")) return await handleBillingWebhook(req, res, rawBody);
     
