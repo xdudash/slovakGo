@@ -98,20 +98,20 @@ export function DemoLesson() {
       <header className="demo-header">
         <div className="demo-header-inner">
           <div className="demo-logo" onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
-            <img src="/apple-icon.png" alt="SlovakGO" className="logo-icon-sm" />
+            <img src="/apple-icon.png" alt="SlovakGO" className="logo-icon-sm" width={34} height={34} />
             <span>SlovakGO</span>
-            <span className="demo-badge">{isRu ? "Демо-урок" : "Демо-урок"}</span>
+            <span className="demo-badge">Демо-урок</span>
           </div>
 
           <div className="demo-lang-toggle">
             <button
-              className={`lang-btn ${lang === "uk" ? "active" : ""}`}
+              className={`lang-btn ${lang === "uk" ? "lang-btn--active" : ""}`}
               onClick={() => handleLangChange("uk")}
             >
               UA
             </button>
             <button
-              className={`lang-btn ${lang === "ru" ? "active" : ""}`}
+              className={`lang-btn ${lang === "ru" ? "lang-btn--active" : ""}`}
               onClick={() => handleLangChange("ru")}
             >
               RU
@@ -215,8 +215,8 @@ export function DemoLesson() {
               </div>
               <p>
                 {isRu
-                  ? "Сохраните результат за 10 секунд, чтобы открыть полный доступ к 7 дням бесплатного обучения."
-                  : "Збережи результат за 10 секунд, щоб відкрити 7 днів безкоштовного навчання."
+                  ? "Сохраните результат за 10 секунд, чтобы открыть полный доступ к 3 дням бесплатного обучения."
+                  : "Збережи результат за 10 секунд, щоб відкрити 3 дні безкоштовного навчання."
                 }
               </p>
               <button className="btn btn-primary btn-xl full-width-btn" onClick={handleSaveProgress}>

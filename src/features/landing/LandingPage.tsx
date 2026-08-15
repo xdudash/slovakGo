@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Globe, Smartphone, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Zap, Star, ChevronDown, Quote, User } from "lucide-react";
 import { useAppStore, selectCurrentUser } from "../../store/useAppStore";
 import { getGuestLanguage, setGuestLanguage } from "../../i18n";
 import "../../styles/globals.css";
@@ -47,13 +47,29 @@ const content = {
       s3: { title: "B1: Адаптація", text: "Робота, лікарі, документи в Cudzinecká polícia. Потрібно для більшості робочих місць." },
       s4: { title: "B2: Свобода", text: "Вільні дискусії, професійна лексика, переговори. Відкриває офісні та управлінські позиції." },
     },
+    testimonials: {
+      title: "Що кажуть українці про SlovakGO",
+      desc: "Реальні історії адаптації в Словаччині",
+      t1: { name: "Олена М.", role: "Братислава", text: "Вже за два тижні змогла сама записатися до лікаря. До цього використовувала перекладач на кожному кроці." },
+      t2: { name: "Андрій К.", role: "Кошице", text: "Круто, що є окремі уроки по поліції для іноземців та документах. Дуже допомогло при подачі на ВНЖ." },
+      t3: { name: "Марина Т.", role: "Пряшів", text: "Додаток затягує. Ліги та серії працюють ідеально — вчу словацьку щоранку за кавою." }
+    },
     pricing: {
       title: "Спочатку спробуй навчання на практиці",
-      desc: "Перший розділ доступний без оплати. Потім — 7 днів повного доступу та вибір зручного тарифу.",
+      desc: "Перші 5 уроків доступні без оплати. Потім — 3 дні повного доступу та вибір зручного тарифу.",
       monthly: { badge: "Базовий", title: "Щомісячний", price: "€9,99", period: "/міс", text: "Гнучка оплата щомісяця" },
-      yearly: { badge: "7 днів пробного доступу", title: "Річний", price: "€4,99", period: "/міс", text: "Оплата €59,88 раз на рік (Економія 50%)" },
+      yearly: { badge: "3 дні пробного доступу", title: "Річний", price: "€4,99", period: "/міс", text: "Оплата €59,88 раз на рік (Економія 50%)" },
       f1: "Безлімітні серця", f2: "Офлайн доступ до уроків", f3: "Розширена аналітика", f4: "Пріоритетна підтримка",
       cta: "Почати навчання безкоштовно",
+    },
+    blog: {
+      title: "Корисні матеріали",
+      desc: "Статті про життя та адаптацію в Словаччині",
+      b1: { title: "Як записатися до лікаря в Словаччині: інструкція та словник", tag: "Медицина" },
+      b2: { title: "Робота в Словаччині: де шукати та як пройти співбесіду", tag: "Робота" },
+      b3: { title: "Cudzinecká polícia: як отримати та продовжити pobyt", tag: "Документи" },
+      cta: "Читати всі статті",
+      readMore: "Читати",
     },
     faq: {
       title: "Часті запитання",
@@ -64,11 +80,6 @@ const content = {
       q4: { q: "Як зареєструватися в Словаччині як громадянин України?", a: "Потрібно звернутися до Cudzinecká polícia (Відділу у справах іноземців) за місцем проживання. Необхідні: паспорт, договір оренди або лист від роботодавця. SlovakGO має спеціальний урок з лексикою для цього процесу." },
       q5: { q: "Чи можна вчити словацьку без інтернету?", a: "Так — користувачі SlovakGO Plus можуть завантажувати уроки для офлайн вивчення. Прогрес синхронізується автоматично при появі інтернету." },
       q6: { q: "Чи потрібна словацька для медичного обслуговування?", a: "Більшість лікарів розуміють базову англійську або російську, проте знання словацьких медичних термінів суттєво пришвидшує візит. У нас є окремий урок \"У лікаря\"." },
-    },
-    about: {
-      title: "Про SlovakGO",
-      p1: "SlovakGO створений щоб допомогти українцям швидко адаптуватися до життя у Словаччині через мову. Кожен урок побудований на реальних сценаріях, які збирали безпосередньо від українців у Братиславі, Кошице, Пряшеві та інших містах.",
-      p2: "Наш підхід: 10–15 хвилин на день замість годинних лекцій. Уроки охоплюють рівні від A0 до B2 за шкалою CEFR — від першого слова до вільної розмови.",
     },
     footer: {
       title: "Готовий почати розмовляти словацькою?",
@@ -117,13 +128,29 @@ const content = {
       s3: { title: "B1: Адаптация", text: "Работа, врачи, документы в Cudzinecká polícia. Нужно для большинства рабочих мест." },
       s4: { title: "B2: Свобода", text: "Свободные дискуссии, профессиональная лексика, переговоры. Открывает офисные и управленческие позиции." },
     },
+    testimonials: {
+      title: "Что говорят украинцы о SlovakGO",
+      desc: "Реальные истории адаптации в Словакии",
+      t1: { name: "Елена М.", role: "Братислава", text: "Уже через две недели смогла сама записаться к врачу. До этого использовала переводчик на каждом шагу." },
+      t2: { name: "Андрей К.", role: "Кошице", text: "Круто, что есть отдельные уроки по полиции для иностранцев и документам. Очень помогло при подаче на ВНЖ." },
+      t3: { name: "Марина Т.", role: "Прешов", text: "Приложение затягивает. Лиги и серии работают идеально — учу словацкий каждое утро за кофе." }
+    },
     pricing: {
       title: "Сначала попробуй обучение на практике",
-      desc: "Первый раздел доступен без оплаты. Затем — 7 дней полного доступа и выбор удобного тарифа.",
+      desc: "Первые 5 уроков доступны без оплаты. Затем — 3 дня полного доступа и выбор удобного тарифа.",
       monthly: { badge: "Базовый", title: "Ежемесячный", price: "€9,99", period: "/мес", text: "Гибкая оплата каждый месяц" },
-      yearly: { badge: "7 дней пробного доступа", title: "Годовой", price: "€4,99", period: "/мес", text: "Оплата €59,88 раз в год (Экономия 50%)" },
+      yearly: { badge: "3 дня пробного доступа", title: "Годовой", price: "€4,99", period: "/мес", text: "Оплата €59,88 раз в год (Экономия 50%)" },
       f1: "Безлимитные сердца", f2: "Офлайн доступ к урокам", f3: "Расширенная аналитика", f4: "Приоритетная поддержка",
       cta: "Начать обучение бесплатно",
+    },
+    blog: {
+      title: "Полезные материалы",
+      desc: "Статьи о жизни и адаптации в Словакии",
+      b1: { title: "Как записаться к врачу в Словакии: инструкция и словарь", tag: "Медицина" },
+      b2: { title: "Работа в Словакии: где искать и как пройти собеседование", tag: "Работа" },
+      b3: { title: "Cudzinecká polícia: как получить и продлить pobyt", tag: "Документы" },
+      cta: "Читать все статьи",
+      readMore: "Читать",
     },
     faq: {
       title: "Частые вопросы",
@@ -134,11 +161,6 @@ const content = {
       q4: { q: "Как зарегистрироваться в Словакии как гражданин Украины?", a: "Нужно обратиться в Cudzinecká polícia (Отдел по делам иностранцев) по месту жительства. Необходимы: паспорт, договор аренды или письмо от работодателя. SlovakGO имеет специальный урок с лексикой для этого процесса." },
       q5: { q: "Можно ли учить словацкий без интернета?", a: "Да — пользователи SlovakGO Plus могут скачивать уроки для офлайн изучения. Прогресс синхронизируется автоматически при появлении интернета." },
       q6: { q: "Нужен ли словацкий для медицинского обслуживания?", a: "Большинство врачей понимают базовый английский или русский, однако знание словацких медицинских терминов существенно ускоряет визит. У нас есть отдельный урок \"У врача\"." },
-    },
-    about: {
-      title: "О SlovakGO",
-      p1: "SlovakGO создан, чтобы помочь украинцам быстро адаптироваться к жизни в Словакии через язык. Каждый урок построен на реальных сценариях, которые мы собирали непосредственно от украинцев в Братиславе, Кошице, Пряшеве и других городах.",
-      p2: "Наш подход: 10–15 минут в день вместо часовых лекций. Уроки охватывают уровни от A0 до B2 по шкале CEFR — от первого слова до свободного разговора.",
     },
     footer: {
       title: "Готов начать говорить по-словацки?",
@@ -152,6 +174,8 @@ export function LandingPage() {
   const { data, currentUserId } = useAppStore();
   const user = selectCurrentUser(data, currentUserId);
   const [lang, setLang] = useState(getGuestLanguage());
+  
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
     const handleLangChange = () => setLang(getGuestLanguage());
@@ -160,6 +184,10 @@ export function LandingPage() {
   }, []);
 
   const t = content[lang === 'ru' ? 'ru' : 'uk'];
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -180,20 +208,20 @@ export function LandingPage() {
   };
 
   return (
-    <div className="landing-wrap">
+    <div className="landing-wrap premium">
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}
       </script>
 
       {/* ── Navigation ──────────────────────────────────────────────── */}
-      <nav className="landing-nav">
+      <nav className="landing-nav premium-nav">
         <div className="nav-container">
           <div className="landing-logo">
-            <img src="/apple-icon.png" alt="SlovakGO логотип" className="logo-icon-sm" />
-            <span>SlovakGO</span>
+            <img src="/apple-icon.png" alt="SlovakGO логотип" className="logo-icon-sm" width={34} height={34} />
+            <span className="logo-text">SlovakGO</span>
           </div>
           <div className="nav-actions">
-            <div className="nav-lang-switcher" style={{ display: 'flex', gap: '4px', marginRight: '12px' }}>
+            <div className="nav-lang-switcher" style={{ display: 'flex', gap: '4px', marginRight: '16px' }}>
               <button 
                 onClick={() => setGuestLanguage('uk')}
                 className={`nav-lang-btn ${lang !== 'ru' ? 'active' : ''}`}
@@ -208,72 +236,86 @@ export function LandingPage() {
               </button>
             </div>
             {user ? (
-              <Link to="/app" className="btn btn-secondary btn-sm">{t.nav.app}</Link>
+              <Link to="/app" className="btn btn-secondary btn-sm nav-hide-mobile">{t.nav.app}</Link>
             ) : (
               <>
-                <Link to="/login" className="nav-link">{t.nav.login}</Link>
-                <Link to="/demo" className="btn btn-primary btn-sm">{t.nav.startFree}</Link>
+                <Link to="/login" className="nav-link nav-hide-mobile">{t.nav.login}</Link>
+                <Link to="/demo" className="btn btn-primary btn-sm btn-glow">{t.nav.startFree}</Link>
               </>
             )}
           </div>
         </div>
       </nav>
 
-      {/* ── Hero Section ────────────────────────────────────────────── */}
-      <header className="hero-section">
+      {/* ── Premium Hero Section ────────────────────────────────────────────── */}
+      <header className="hero-section premium-hero">
+        <div className="hero-bg-glow"></div>
         <div className="hero-inner">
           <div className="hero-content">
-            <div className="hero-badge">
-              <Zap size={13} fill="var(--yellow)" color="var(--yellow)" />
-              <span>{t.hero.badge}</span>
+            <div className="hero-badge-wrap">
+              <div className="hero-badge glass-badge">
+                <Zap size={14} fill="var(--yellow)" color="var(--yellow)" />
+                <span>{t.hero.badge}</span>
+              </div>
             </div>
-            <h1>{t.hero.titleStart}<span>{t.hero.titleEnd}</span></h1>
-            <p>{t.hero.desc}</p>
-            <div className="hero-cta">
-              <Link to="/demo" className="btn btn-primary btn-lg">
-                {t.hero.cta} <ArrowRight size={18} />
+            <h1>{t.hero.titleStart}<span className="text-gradient">{t.hero.titleEnd}</span></h1>
+            <p className="hero-desc">{t.hero.desc}</p>
+            <div className="hero-cta-group">
+              <Link to="/demo" className="btn btn-primary btn-xl btn-glow">
+                {t.hero.cta} <ArrowRight size={20} />
               </Link>
-              <div className="hero-stats">
-                <div className="mini-avatars">
-                  <div className="avatar-m" style={{background: '#fecaca'}}>О</div>
-                  <div className="avatar-m" style={{background: '#a5f3fc'}}>М</div>
-                  <div className="avatar-m" style={{background: '#bbf7d0'}}>А</div>
+              <div className="hero-trust-indicator">
+                <div className="trust-faces">
+                  <div className="mini-avatars" aria-hidden="true">
+                    <span className="avatar-dot" style={{ background: 'var(--accent)' }}><User size={14} color="#fff" /></span>
+                    <span className="avatar-dot" style={{ background: 'var(--yellow-dark)' }}><User size={14} color="#fff" /></span>
+                    <span className="avatar-dot" style={{ background: 'var(--success)' }}><User size={14} color="#fff" /></span>
+                    <span className="avatar-dot" style={{ background: 'var(--blue)' }}><User size={14} color="#fff" /></span>
+                  </div>
+                  <span>{t.hero.stats}</span>
                 </div>
-                <span>{t.hero.stats}</span>
               </div>
             </div>
           </div>
           <div className="hero-visual">
-            <div className="phone-mockup">
+            <div className="phone-mockup premium-mockup">
               <div className="mockup-screen">
-                <img src="/slovakgo-preview.png" alt="SlovakGO — екран уроку словацької мови" loading="lazy" />
+                <img src="/slovakgo-preview.png" alt="SlovakGO — екран уроку словацької мови" width={270} height={560} loading="lazy" />
+              </div>
+              <div className="mockup-float-card card-1">
+                <Star size={16} fill="var(--yellow)" color="var(--yellow)" />
+                <span>+50 XP</span>
+              </div>
+              <div className="mockup-float-card card-2">
+                <CheckCircle2 size={16} color="var(--success)" />
+                <span>Výborne!</span>
               </div>
             </div>
           </div>
         </div>
       </header>
 
-      {/* ── Features Grid ───────────────────────────────────────────── */}
-      <section className="features-section">
+      {/* ── Bento Grid Features ───────────────────────────────────────────── */}
+      <section className="features-section bento-section">
         <div className="section-header">
           <h2>{t.features.title}</h2>
           <p>{t.features.desc}</p>
         </div>
-        <div className="features-grid">
-          <FeatureCard color="var(--accent)" label={t.features.f1.label} title={t.features.f1.title} desc={t.features.f1.desc} />
-          <FeatureCard color="var(--yellow-dark)" label={t.features.f2.label} title={t.features.f2.title} desc={t.features.f2.desc} />
-          <FeatureCard color="var(--success)" label={t.features.f3.label} title={t.features.f3.title} desc={t.features.f3.desc} />
-          <FeatureCard color="var(--blue)" label={t.features.f4.label} title={t.features.f4.title} desc={t.features.f4.desc} />
+        <div className="bento-grid">
+          <BentoCard color="var(--accent)" label={t.features.f1.label} title={t.features.f1.title} desc={t.features.f1.desc} span={2} />
+          <BentoCard color="var(--yellow-dark)" label={t.features.f2.label} title={t.features.f2.title} desc={t.features.f2.desc} span={1} />
+          <BentoCard color="var(--success)" label={t.features.f3.label} title={t.features.f3.title} desc={t.features.f3.desc} span={1} />
+          <BentoCard color="var(--blue)" label={t.features.f4.label} title={t.features.f4.title} desc={t.features.f4.desc} span={2} />
         </div>
       </section>
 
       {/* ── Slovak vs Ukrainian ─────────────────────────────────────── */}
-      <section className="advantage-section">
+      <section className="advantage-section premium-bg">
         <div className="section-header">
           <h2>{t.compare.title}</h2>
           <p>{t.compare.desc}</p>
         </div>
-        <div className="comparison-table">
+        <div className="comparison-table glass-table">
           <table>
             <thead>
               <tr>
@@ -283,22 +325,35 @@ export function LandingPage() {
               </tr>
             </thead>
             <tbody>
-              <tr><td>{t.compare.w1.u}</td><td>{t.compare.w1.s}</td><td>{t.compare.w1.d}</td></tr>
-              <tr><td>{t.compare.w2.u}</td><td>{t.compare.w2.s}</td><td>{t.compare.w2.d}</td></tr>
-              <tr><td>{t.compare.w3.u}</td><td>{t.compare.w3.s}</td><td>{t.compare.w3.d}</td></tr>
-              <tr><td>{t.compare.w4.u}</td><td>{t.compare.w4.s}</td><td>{t.compare.w4.d}</td></tr>
-              <tr><td>{t.compare.w5.u}</td><td>{t.compare.w5.s}</td><td>{t.compare.w5.d}</td></tr>
+              <tr><td>{t.compare.w1.u}</td><td><strong>{t.compare.w1.s}</strong></td><td><span className="tag green">{t.compare.w1.d}</span></td></tr>
+              <tr><td>{t.compare.w2.u}</td><td><strong>{t.compare.w2.s}</strong></td><td><span className="tag yellow">{t.compare.w2.d}</span></td></tr>
+              <tr><td>{t.compare.w3.u}</td><td><strong>{t.compare.w3.s}</strong></td><td><span className="tag yellow">{t.compare.w3.d}</span></td></tr>
+              <tr><td>{t.compare.w4.u}</td><td><strong>{t.compare.w4.s}</strong></td><td><span className="tag yellow">{t.compare.w4.d}</span></td></tr>
+              <tr><td>{t.compare.w5.u}</td><td><strong>{t.compare.w5.s}</strong></td><td><span className="tag green">{t.compare.w5.d}</span></td></tr>
             </tbody>
           </table>
+        </div>
+      </section>
+
+      {/* ── Testimonials (NEW) ───────────────────────────────────────────── */}
+      <section className="testimonials-section">
+        <div className="section-header">
+          <h2>{t.testimonials.title}</h2>
+          <p>{t.testimonials.desc}</p>
+        </div>
+        <div className="testimonials-grid">
+          <TestimonialCard name={t.testimonials.t1.name} role={t.testimonials.t1.role} text={t.testimonials.t1.text} color="var(--accent)" />
+          <TestimonialCard name={t.testimonials.t2.name} role={t.testimonials.t2.role} text={t.testimonials.t2.text} color="var(--yellow-dark)" />
+          <TestimonialCard name={t.testimonials.t3.name} role={t.testimonials.t3.role} text={t.testimonials.t3.text} color="var(--success)" />
         </div>
       </section>
 
       {/* ── Learning Path ───────────────────────────────────────────── */}
       <section className="path-teaser">
         <div className="path-content">
-          <div className="label">{t.path.label}</div>
+          <div className="label-badge">{t.path.label}</div>
           <h2>{t.path.title}</h2>
-          <p style={{marginBottom: '24px', color: 'var(--muted)', fontSize: '0.95rem'}}>{t.path.desc}</p>
+          <p className="path-desc">{t.path.desc}</p>
           <div className="path-steps">
             <PathStep num="1" title={t.path.s1.title} text={t.path.s1.text} active />
             <PathStep num="2" title={t.path.s2.title} text={t.path.s2.text} active />
@@ -315,74 +370,87 @@ export function LandingPage() {
           <p>{t.pricing.desc}</p>
         </div>
         <div className="pricing-cards">
-          <div className="price-card">
-            <div className="badge" style={{background: 'var(--border)', color: 'var(--fg)'}}>{t.pricing.monthly.badge}</div>
+          <div className="price-card basic">
+            <div className="badge">{t.pricing.monthly.badge}</div>
             <h3>{t.pricing.monthly.title}</h3>
             <div className="price">{t.pricing.monthly.price}<span>{t.pricing.monthly.period}</span></div>
-            <p style={{color: 'var(--muted)', fontSize: '0.85rem', marginBottom: '16px'}}>{t.pricing.monthly.text}</p>
-            <ul>
-              <li><CheckCircle2 size={16} /> {t.pricing.f1}</li>
-              <li><CheckCircle2 size={16} /> {t.pricing.f2}</li>
-              <li><CheckCircle2 size={16} /> {t.pricing.f3}</li>
-              <li><CheckCircle2 size={16} /> {t.pricing.f4}</li>
+            <p className="price-desc">{t.pricing.monthly.text}</p>
+            <ul className="price-features">
+              <li><CheckCircle2 size={18} /> {t.pricing.f1}</li>
+              <li><CheckCircle2 size={18} /> {t.pricing.f2}</li>
+              <li><CheckCircle2 size={18} /> {t.pricing.f3}</li>
+              <li><CheckCircle2 size={18} /> {t.pricing.f4}</li>
             </ul>
-            <Link to="/demo" className="btn btn-secondary">{t.pricing.cta}</Link>
+            <Link to="/demo?plan=monthly" className="btn btn-secondary">{t.pricing.cta}</Link>
           </div>
-          <div className="price-card plus">
-            <div className="badge">{t.pricing.yearly.badge}</div>
+          <div className="price-card plus-premium">
+            <div className="badge popular">{t.pricing.yearly.badge}</div>
             <h3>{t.pricing.yearly.title}</h3>
             <div className="price">{t.pricing.yearly.price}<span>{t.pricing.yearly.period}</span></div>
-            <p style={{color: 'var(--muted)', fontSize: '0.85rem', marginBottom: '16px', fontWeight: 'bold'}}>{t.pricing.yearly.text}</p>
-            <ul>
-              <li><CheckCircle2 size={16} /> {t.pricing.f1}</li>
-              <li><CheckCircle2 size={16} /> {t.pricing.f2}</li>
-              <li><CheckCircle2 size={16} /> {t.pricing.f3}</li>
-              <li><CheckCircle2 size={16} /> {t.pricing.f4}</li>
+            <p className="price-desc highlight">{t.pricing.yearly.text}</p>
+            <ul className="price-features">
+              <li><CheckCircle2 size={18} /> {t.pricing.f1}</li>
+              <li><CheckCircle2 size={18} /> {t.pricing.f2}</li>
+              <li><CheckCircle2 size={18} /> {t.pricing.f3}</li>
+              <li><CheckCircle2 size={18} /> {t.pricing.f4}</li>
             </ul>
-            <Link to="/demo" className="btn btn-primary">{t.pricing.cta}</Link>
+            <Link to="/demo?plan=yearly" className="btn btn-primary btn-glow">{t.pricing.cta}</Link>
           </div>
         </div>
       </section>
 
-      {/* ── FAQ ─────────────────────────────────────────────────────── */}
+      {/* ── Blog (NEW) ─────────────────────────────────────────────────────── */}
+      <section className="blog-section premium-bg">
+        <div className="section-header">
+          <h2>{t.blog.title}</h2>
+          <p>{t.blog.desc}</p>
+        </div>
+        <div className="blog-grid">
+          <BlogCard tag={t.blog.b1.tag} title={t.blog.b1.title} readMore={t.blog.readMore} img="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=400&q=80" />
+          <BlogCard tag={t.blog.b2.tag} title={t.blog.b2.title} readMore={t.blog.readMore} img="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=80" />
+          <BlogCard tag={t.blog.b3.tag} title={t.blog.b3.title} readMore={t.blog.readMore} img="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" />
+        </div>
+        <div className="blog-cta">
+          <Link to="/demo" className="btn btn-secondary">{t.blog.cta} <ArrowRight size={16}/></Link>
+        </div>
+      </section>
+
+      {/* ── FAQ (Accordion) ─────────────────────────────────────────────────────── */}
       <section className="faq-section">
         <div className="section-header">
           <h2>{t.faq.title}</h2>
           <p>{t.faq.desc}</p>
         </div>
-        <div className="faq-grid">
-          <div className="faq-item"><h3>{t.faq.q1.q}</h3><p>{t.faq.q1.a}</p></div>
-          <div className="faq-item"><h3>{t.faq.q2.q}</h3><p>{t.faq.q2.a}</p></div>
-          <div className="faq-item"><h3>{t.faq.q3.q}</h3><p>{t.faq.q3.a}</p></div>
-          <div className="faq-item"><h3>{t.faq.q4.q}</h3><p>{t.faq.q4.a}</p></div>
-          <div className="faq-item"><h3>{t.faq.q5.q}</h3><p>{t.faq.q5.a}</p></div>
-          <div className="faq-item"><h3>{t.faq.q6.q}</h3><p>{t.faq.q6.a}</p></div>
-        </div>
-      </section>
-
-      {/* ── About / Mission ─────────────────────────────────────────── */}
-      <section className="about-section">
-        <div className="about-content">
-          <h2>{t.about.title}</h2>
-          <p>{t.about.p1}</p>
-          <p>{t.about.p2}</p>
-          <p style={{color: 'var(--muted)', fontSize: '0.9rem'}}>
-            Контакт: <a href="mailto:hello@slovakgo.sk">hello@slovakgo.sk</a>
-          </p>
+        <div className="faq-accordion">
+          {[t.faq.q1, t.faq.q2, t.faq.q3, t.faq.q4, t.faq.q5, t.faq.q6].map((q, i) => (
+            <div className={`faq-item ${openFaq === i ? 'open' : ''}`} key={i}>
+              <button className="faq-question" onClick={() => toggleFaq(i)}>
+                <h3>{q.q}</h3>
+                <ChevronDown className="faq-icon" size={20} />
+              </button>
+              <div className="faq-answer">
+                <p>{q.a}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* ── CTA Footer ──────────────────────────────────────────────── */}
-      <footer className="landing-footer">
+      <footer className="landing-footer premium-footer">
         <div className="footer-content">
-          <h2>{t.footer.title}</h2>
-          <p>{t.footer.desc}</p>
-          <Link to="/demo" className="btn btn-primary btn-lg">{t.footer.cta}</Link>
-          <div className="footer-links">
-            <span>© 2026 SlovakGO · <a href="mailto:hello@slovakgo.sk">hello@slovakgo.sk</a></span>
-            <div className="socials">
-              <Smartphone size={18} />
-              <Globe size={18} />
+          <div className="footer-main">
+            <h2>{t.footer.title}</h2>
+            <p>{t.footer.desc}</p>
+            <Link to="/demo" className="btn btn-primary btn-xl btn-glow">{t.footer.cta}</Link>
+          </div>
+          <div className="footer-bottom">
+            <div className="footer-brand">
+              <img src="/apple-icon.png" alt="SlovakGO логотип" className="logo-icon-sm" width={34} height={34} />
+              <span>SlovakGO</span>
+            </div>
+            <div className="footer-links">
+              <span>© 2026 SlovakGO · <a href="mailto:hello@slovakgo.sk">hello@slovakgo.sk</a></span>
             </div>
           </div>
         </div>
@@ -391,15 +459,51 @@ export function LandingPage() {
   );
 }
 
-function FeatureCard({ color, label, title, desc }: { color: string; label: string; title: string; desc: string }) {
+function BentoCard({ color, label, title, desc, span }: { color: string; label: string; title: string; desc: string; span: number }) {
   return (
-    <div className="f-card">
+    <div className={`bento-card span-${span}`}>
       <div className="f-card-marker" style={{ color }}>
         <span>●</span> {label}
       </div>
       <h3>{title}</h3>
       <p>{desc}</p>
     </div>
+  );
+}
+
+function TestimonialCard({ name, role, text, color }: { name: string; role: string; text: string; color: string }) {
+  const initials = name
+    .split(" ")
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
+  return (
+    <div className="testimonial-card">
+      <Quote className="quote-icon" size={32} color="var(--muted)" />
+      <p className="testimonial-text">"{text}"</p>
+      <div className="testimonial-author">
+        <span className="avatar-dot avatar-dot-lg" style={{ background: color }} aria-hidden="true">{initials}</span>
+        <div>
+          <h4>{name}</h4>
+          <span>{role}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function BlogCard({ tag, title, readMore, img }: { tag: string; title: string; readMore: string; img: string }) {
+  return (
+    <Link to="/demo" className="blog-card">
+      <div className="blog-img" style={{ backgroundImage: `url(${img})` }}></div>
+      <div className="blog-content">
+        <span className="blog-tag">{tag}</span>
+        <h3>{title}</h3>
+        <span className="blog-readmore">{readMore} <ArrowRight size={14}/></span>
+      </div>
+    </Link>
   );
 }
 

@@ -14,7 +14,7 @@ const getStripe = () => _stripe ??= new Stripe(process.env.STRIPE_SECRET_KEY ?? 
  * Changing this also means changing the copy in the app (PaywallScreen, ShopScreen,
  * PathScreen, PaymentSuccess) and in the separate landing site under `landing/`.
  */
-export const TRIAL_DAYS = 7;
+export const TRIAL_DAYS = 3;
 
 /** Free Plus days the referrer earns when an invited learner actually pays. */
 export const REFERRAL_BONUS_DAYS = 14;
@@ -124,8 +124,8 @@ export async function handleBillingWebhook(req: VercelRequest, res: VercelRespon
     }
   }
 
-  // Stripe fires this 3 days before a trial converts. With a 7-day trial that is
-  // day 4 — early enough that nobody is surprised by the first charge.
+  // Stripe fires this 3 days before a trial converts. With a 3-day trial that is
+  // practically immediately after signup (or it might not fire at all for short trials).
   if (event.type === "customer.subscription.trial_will_end") {
     const sub = event.data.object as Stripe.Subscription;
     const row = await queryOne(

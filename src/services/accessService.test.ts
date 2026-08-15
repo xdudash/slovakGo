@@ -28,7 +28,7 @@ describe("preview access", () => {
 
   it("locks learning after the first section is complete", () => {
     const completed = progress(["a0-1", "a0-2"]);
-    expect(accessService.hasCompletedFirstSectionAtAnyLevel(lessons, completed)).toBe(true);
+    expect(accessService.hasCompletedPreviewAtAnyLevel(lessons, completed)).toBe(true);
     expect(accessService.canOpenLesson("a0-3", lessons, completed, "free")).toBe(false);
   });
 

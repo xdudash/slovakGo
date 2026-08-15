@@ -30,7 +30,12 @@ export function getGuestLanguage(): Locale {
 
 export function setGuestLanguage(lang: Locale) {
   localStorage.setItem('slovakgo.guest-lang', lang);
+  document.documentElement.lang = lang;
   window.dispatchEvent(new Event('languagechange'));
+}
+
+if (typeof document !== 'undefined') {
+  document.documentElement.lang = getGuestLanguage();
 }
 
 export function useT() {

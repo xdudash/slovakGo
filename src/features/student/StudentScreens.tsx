@@ -177,7 +177,7 @@ export function Onboarding() {
       <div className="onboarding-content">
         <div className="onboarding-copy">
           <span className="onboarding-step-label">Спробуй перед підпискою</span>
-          <h1>Твій перший розділ уже відкритий</h1>
+          <h1>Твої перші 5 уроків уже відкриті</h1>
           <p className="onboarding-text">Пройди справжні уроки свого рівня, відчуй формат і лише потім вирішуй, чи продовжувати з повним доступом.</p>
         </div>
         <div className="mechanics-grid">
@@ -191,14 +191,14 @@ export function Onboarding() {
     <Card className="onboarding-card onboarding-card-anim" key="start">
       <div className="onboarding-visual onboarding-visual--start">
         <div className="onboarding-product-shot onboarding-product-shot--start">
-          <img src="/app-exercise.png" alt="Повноцінна вправа першого розділу SlovakGO" width="390" height="844" loading="lazy" decoding="async" />
+          <img src="/app-exercise.png" alt="Повноцінна вправа словацької мови SlovakGO" width="390" height="844" loading="lazy" decoding="async" />
         </div>
       </div>
       <div className="onboarding-content">
         <div className="onboarding-copy">
           <span className="onboarding-step-label">Обери свій старт</span>
           <h1>{t("student.onboarding.start_title")}</h1>
-          <p className="onboarding-text">Спочатку отримай результат: перший розділ доступний без оплати. Повний доступ запропонуємо лише після його завершення.</p>
+          <p className="onboarding-text">Спочатку отримай результат: перші 5 уроків доступні без оплати. Повний доступ запропонуємо лише після їх завершення.</p>
         </div>
         <div className="onboarding-actions">
           <Button className="onboarding-btn-primary" onClick={() => { track("onboarding_done", { goal, start: "A0" }); completeOnboarding(goal, "A0"); navigate("/app/path", { replace: true }); }}>
@@ -305,7 +305,7 @@ function PathScreen() {
   const goalDone = todayXp >= dailyGoal;
   const streakAtRisk = progress.streakDays > 0 && todayXp === 0;
   const previewMode = user.role === "student" && accessService.canUsePreview(data.lessons, progress, user.subscriptionStatus);
-  const previewLessons = accessService.firstSection(data.lessons, progress.currentLevel);
+  const previewLessons = accessService.firstPreviewLessons(data.lessons, progress.currentLevel);
   const previewCompleted = previewLessons.filter((lesson) => progress.completedLessons.includes(lesson.id)).length;
 
   return (
@@ -319,7 +319,7 @@ function PathScreen() {
       {previewMode && (
         <div className="preview-access-banner">
           <div>
-            <strong>Перший розділ — без оплати</strong>
+            <strong>Перші 5 уроків — без оплати</strong>
             <span>Пройди {previewLessons.length} справжніх уроків, а потім відкрий тиждень повного доступу.</span>
           </div>
           <span className="preview-access-progress">{previewCompleted}/{previewLessons.length}</span>
@@ -2042,6 +2042,14 @@ function ProfileScreen() {
           </button>
         </Card>
 
+        <Card className="settings-section support-section-card">
+          <h3 className="settings-section-title" style={{ marginTop: 0, marginBottom: "12px", fontSize: "1.1rem" }}>Підтримка</h3>
+          <p style={{ margin: "0 0 16px", fontSize: "0.875rem", color: "var(--muted)", lineHeight: 1.5 }}>
+            Виник баг або є питання? Напиши нам — відповідаємо протягом 24 год.
+          </p>
+          <SupportWidget />
+        </Card>
+
         <button
           type="button"
           className="share-progress-btn"
@@ -2135,6 +2143,87 @@ function ProfileScreen() {
   );
 }
 
+function SupportWidget({ variant = "secondary" }: { variant?: "primary" | "secondary" | "ghost" }) {
+  const [supportOpen, setSupportOpen] = useState(false);
+  const [supportTopic, setSupportTopic] = useState("question");
+  const [supportMsg, setSupportMsg] = useState("");
+  const [supportLoading, setSupportLoading] = useState(false);
+  const [supportSent, setSupportSent] = useState(false);
+  const [supportError, setSupportError] = useState("");
+
+  async function submitSupport() {
+    if (!supportMsg.trim()) { setSupportError("Напиши повідомлення"); return; }
+    setSupportLoading(true); setSupportError("");
+    try {
+      await apiClient.sendSupportMessage(supportTopic, supportMsg.trim());
+      setSupportSent(true);
+      setTimeout(() => { setSupportOpen(false); setSupportSent(false); setSupportMsg(""); setSupportTopic("question"); }, 3000);
+    } catch (err: unknown) {
+      setSupportError((err as { message?: string }).message || "Не вдалося надіслати. Спробуй пізніше.");
+    } finally {
+      setSupportLoading(false);
+    }
+  }
+
+  return (
+    <>
+      <Button variant={variant} onClick={() => { setSupportOpen(true); setSupportSent(false); setSupportError(""); }}>
+        <MessageSquare size={16} /> Написати в підтримку
+      </Button>
+
+      {supportOpen && (
+        <Modal onClose={() => { setSupportOpen(false); setSupportSent(false); setSupportError(""); }}>
+          <Card className="profile-modal support-modal">
+            <h2 className="support-modal-title">
+              <MessageSquare size={20} />
+              Написати в підтримку
+            </h2>
+            {supportSent ? (
+              <div className="support-sent">
+                <CheckCircle2 size={36} color="var(--green)" />
+                <p>Повідомлення надіслано! Перевір свою пошту — ми надіслали підтвердження.</p>
+              </div>
+            ) : (
+              <>
+                <div className="support-field">
+                  <label className="support-label">Тема</label>
+                  <select
+                    className="support-select"
+                    value={supportTopic}
+                    onChange={e => setSupportTopic(e.target.value)}
+                  >
+                    <option value="bug">🐛 Баг / помилка</option>
+                    <option value="question">❓ Питання</option>
+                    <option value="other">💬 Інше</option>
+                  </select>
+                </div>
+                <div className="support-field">
+                  <label className="support-label">Повідомлення</label>
+                  <textarea
+                    className="support-textarea"
+                    rows={5}
+                    placeholder="Опиши своє питання або проблему..."
+                    value={supportMsg}
+                    onChange={e => { setSupportMsg(e.target.value); setSupportError(""); }}
+                  />
+                  <span className="support-char-count">{supportMsg.length}/2000</span>
+                </div>
+                {supportError && <p className="field-error">{supportError}</p>}
+                <Button onClick={submitSupport} disabled={supportLoading || !supportMsg.trim()}>
+                  {supportLoading ? "Надсилаємо…" : "Надіслати"}
+                </Button>
+                <Button variant="ghost" onClick={() => { setSupportOpen(false); setSupportError(""); }}>
+                  Скасувати
+                </Button>
+              </>
+            )}
+          </Card>
+        </Modal>
+      )}
+    </>
+  );
+}
+
 function SettingsScreen() {
   const { user, updateUser, logout } = useStudentData();
   const navigate = useNavigate();
@@ -2162,13 +2251,6 @@ function SettingsScreen() {
   const [deleteEmail, setDeleteEmail] = useState("");
   const [actionLoading, setActionLoading] = useState(false);
   const [actionError, setActionError] = useState("");
-
-  const [supportOpen, setSupportOpen] = useState(false);
-  const [supportTopic, setSupportTopic] = useState("question");
-  const [supportMsg, setSupportMsg] = useState("");
-  const [supportLoading, setSupportLoading] = useState(false);
-  const [supportSent, setSupportSent] = useState(false);
-  const [supportError, setSupportError] = useState("");
 
   const [deferredPrompt, setDeferredPrompt] = useState<any>((window as any).deferredPrompt || null);
   const [isIOS, setIsIOS] = useState(false);
@@ -2252,19 +2334,7 @@ function SettingsScreen() {
     }
   }
 
-  async function submitSupport() {
-    if (!supportMsg.trim()) { setSupportError("Напиши повідомлення"); return; }
-    setSupportLoading(true); setSupportError("");
-    try {
-      await apiClient.sendSupportMessage(supportTopic, supportMsg.trim());
-      setSupportSent(true);
-      setTimeout(() => { setSupportOpen(false); setSupportSent(false); setSupportMsg(""); setSupportTopic("question"); }, 3000);
-    } catch (err: unknown) {
-      setSupportError((err as { message?: string }).message || "Не вдалося надіслати. Спробуй пізніше.");
-    } finally {
-      setSupportLoading(false);
-    }
-  }
+
 
   async function handleDeactivate() {
     setActionLoading(true); setActionError("");
@@ -2493,9 +2563,7 @@ function SettingsScreen() {
           <p style={{ margin: "0 0 12px", fontSize: "0.875rem", color: "var(--muted)", lineHeight: 1.5 }}>
             Виник баг або є питання? Напиши нам — відповідаємо протягом 24 год.
           </p>
-          <Button variant="secondary" onClick={() => { setSupportOpen(true); setSupportSent(false); setSupportError(""); }}>
-            <MessageSquare size={16} /> Написати в підтримку
-          </Button>
+          <SupportWidget />
         </Card>
       </section>
 
@@ -2536,55 +2604,7 @@ function SettingsScreen() {
         </Modal>
       )}
 
-      {supportOpen && (
-        <Modal onClose={() => { setSupportOpen(false); setSupportSent(false); setSupportError(""); }}>
-          <Card className="profile-modal support-modal">
-            <h2 className="support-modal-title">
-              <MessageSquare size={20} />
-              Написати в підтримку
-            </h2>
-            {supportSent ? (
-              <div className="support-sent">
-                <CheckCircle2 size={36} color="var(--green)" />
-                <p>Повідомлення надіслано! Перевір свою пошту — ми надіслали підтвердження.</p>
-              </div>
-            ) : (
-              <>
-                <div className="support-field">
-                  <label className="support-label">Тема</label>
-                  <select
-                    className="support-select"
-                    value={supportTopic}
-                    onChange={e => setSupportTopic(e.target.value)}
-                  >
-                    <option value="bug">🐛 Баг / помилка</option>
-                    <option value="question">❓ Питання</option>
-                    <option value="other">💬 Інше</option>
-                  </select>
-                </div>
-                <div className="support-field">
-                  <label className="support-label">Повідомлення</label>
-                  <textarea
-                    className="support-textarea"
-                    rows={5}
-                    placeholder="Опиши своє питання або проблему..."
-                    value={supportMsg}
-                    onChange={e => { setSupportMsg(e.target.value); setSupportError(""); }}
-                  />
-                  <span className="support-char-count">{supportMsg.length}/2000</span>
-                </div>
-                {supportError && <p className="field-error">{supportError}</p>}
-                <Button onClick={submitSupport} disabled={supportLoading || !supportMsg.trim()}>
-                  {supportLoading ? "Надсилаємо…" : "Надіслати"}
-                </Button>
-                <Button variant="ghost" onClick={() => { setSupportOpen(false); setSupportError(""); }}>
-                  Скасувати
-                </Button>
-              </>
-            )}
-          </Card>
-        </Modal>
-      )}
+
     </main>
   );
 }
@@ -2611,17 +2631,17 @@ export function PaywallScreen() {
   }
 
   if (accessService.canUsePreview(data.lessons, progress, user.subscriptionStatus)) {
-    const section = accessService.firstSection(data.lessons, progress.currentLevel);
+    const section = accessService.firstPreviewLessons(data.lessons, progress.currentLevel);
     const completed = section.filter((lesson) => progress.completedLessons.includes(lesson.id)).length;
     return (
       <main className="page-content preview-locked-page">
         <div className="preview-locked-visual">
-          <img src="/app-exercise.png" alt="Вправа першого розділу SlovakGO" width="390" height="844" decoding="async" />
+          <img src="/app-exercise.png" alt="Вправа SlovakGO" width="390" height="844" decoding="async" />
         </div>
-        <h1>Спочатку заверши перший розділ</h1>
+        <h1>Спочатку заверши перші 5 уроків</h1>
         <p>Ми запропонуємо тиждень пробного доступу лише після того, як ти перевіриш SlovakGO на справжніх уроках.</p>
         <div className="preview-locked-counter">{completed} з {section.length} уроків уже пройдено</div>
-        <Button onClick={() => navigate("/app/path")}>Продовжити перший розділ</Button>
+        <Button onClick={() => navigate("/app/path")}>Продовжити навчання</Button>
         <Button variant="ghost" onClick={() => navigate("/app/profile")}>Профіль</Button>
       </main>
     );
@@ -2645,7 +2665,7 @@ export function PaywallScreen() {
       <div style={{ textAlign: "center", marginBottom: "24px" }}>
         <img src="/apple-icon.png" alt="SlovakGO" style={{ width: "80px", height: "80px", borderRadius: "20px", marginBottom: "16px" }} />
         <h1 style={{ fontSize: "1.8rem", fontWeight: 900, color: "var(--fg)", marginBottom: "8px" }}>
-          Перший розділ пройдено 🎉
+          Перші 5 уроків пройдено 🎉
         </h1>
         <p style={{ color: "var(--muted)", fontSize: "0.95rem", margin: 0 }}>
           Ти вже спробував SlovakGO на практиці. Тепер відкрий усі рівні та функції на тиждень.
@@ -2685,10 +2705,10 @@ export function PaywallScreen() {
         {!user.hasUsedTrial ? (
           <>
             <Button onClick={handleSubscribe} disabled={loading} style={{ width: "100%" }}>
-              {loading ? "Завантаження…" : "Почати 7 днів пробного доступу"}
+              {loading ? "Завантаження…" : "Почати 3 дні пробного доступу"}
             </Button>
             <div style={{ textAlign: "center", fontSize: "0.8rem", color: "var(--muted)", marginTop: "4px" }}>
-              💳 Потрібна картка. Через 7 днів підписка продовжиться за €9,99/місяць, якщо її не скасувати.
+              💳 Потрібна картка. Через 3 дні підписка продовжиться за €9,99/місяць, якщо її не скасувати.
             </div>
           </>
         ) : (
@@ -2826,12 +2846,12 @@ function ShopScreen() {
         <div className="shop-comparison">
           <div className="shop-comp-header">
             <span></span>
-            <span className="comp-free">Перший розділ</span>
+            <span className="comp-free">Перші 5 уроків</span>
             <span className="comp-plus">Plus</span>
           </div>
           <div className="shop-comp-row">
             <span>Уроки</span>
-            <span>1 розділ</span>
+            <span>5 уроків</span>
             <span className="comp-check"><CheckCircle2 size={14} /> Усі рівні</span>
           </div>
           <div className="shop-comp-row">
@@ -2867,7 +2887,7 @@ function ShopScreen() {
                   ? t("student.shop.btn_loading")
                   : (user?.hasUsedTrial
                     ? "Річний тариф (€59,88/рік)"
-                    : "Спробувати 7 днів безкоштовно")}
+                    : "Спробувати 3 дні безкоштовно")}
               </Button>
               <Button variant="secondary" disabled={loading} onClick={() => handleSubscribe("monthly")} className="shop-btn-buy">
                 {loading ? t("student.shop.btn_loading") : "Щомісячний тариф (€9,99/міс)"}
