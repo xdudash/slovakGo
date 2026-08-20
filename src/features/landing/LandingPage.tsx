@@ -280,7 +280,7 @@ export function LandingPage() {
           <div className="hero-visual">
             <div className="phone-mockup premium-mockup">
               <div className="mockup-screen">
-                <img src="/slovakgo-preview.png" alt="SlovakGO — екран уроку словацької мови" width={270} height={560} loading="lazy" />
+                <img src="/slovakgo-preview.png" alt="SlovakGO — екран уроку словацької мови" width={270} height={560} fetchPriority="high" />
               </div>
               <div className="mockup-float-card card-1">
                 <Star size={16} fill="var(--yellow)" color="var(--yellow)" />

@@ -7,7 +7,11 @@ import { lessonService } from "./lessonService";
 const unrestrictedStatuses: SubscriptionStatus[] = ["trial", "plus", "past_due"];
 
 function firstPreviewLessons(lessons: Lesson[], level: UserLevel): Lesson[] {
-  return lessonService.byLevel(lessons, level).slice(0, 5);
+  const levelLessons = lessonService.byLevel(lessons, level);
+  if (!levelLessons.length) return [];
+  const firstTopic = levelLessons[0].topic;
+  const sectionLessons = levelLessons.filter((l) => l.topic === firstTopic);
+  return sectionLessons.slice(0, 5);
 }
 
 export const accessService = {

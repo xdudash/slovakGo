@@ -6,7 +6,7 @@ import { roleHome, useAppStore } from "../../store/useAppStore";
 import { apiClient } from "../../services/apiClient";
 import { track } from "../../services/analytics";
 import { storageService } from "../../services/storage";
-import { useT } from "../../i18n";
+import { setGuestLanguage, useT } from "../../i18n";
 import type { AppData, Lesson, User, UserWord } from "../../types";
 
 function postAuthRoute(user: User): string {
@@ -17,6 +17,14 @@ function postAuthRoute(user: User): string {
 }
 
 function AuthShell({ title, text, children }: { title: string; text: string; children: ReactNode }) {
+  const { lang } = useT();
+  const langOptions = [
+    { code: "uk", label: "UA" },
+    { code: "ru", label: "RU" },
+    { code: "sk", label: "SK" },
+    { code: "en", label: "EN" },
+  ] as const;
+
   return (
     <main className="auth-screen">
       <section className="brand-panel">
@@ -25,7 +33,30 @@ function AuthShell({ title, text, children }: { title: string; text: string; chi
         <p>{text}</p>
       </section>
       <Card className="auth-card">
-        <h2>{title}</h2>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
+          <h2 style={{ margin: 0 }}>{title}</h2>
+          <div style={{ display: "flex", gap: "0.25rem" }}>
+            {langOptions.map((opt) => (
+              <button
+                key={opt.code}
+                type="button"
+                onClick={() => setGuestLanguage(opt.code)}
+                style={{
+                  padding: "0.2rem 0.5rem",
+                  fontSize: "0.75rem",
+                  fontWeight: lang === opt.code ? "bold" : "normal",
+                  borderRadius: "6px",
+                  border: lang === opt.code ? "1px solid var(--color-primary, #2563eb)" : "1px solid var(--color-border, #e5e7eb)",
+                  background: lang === opt.code ? "var(--color-primary-light, #eff6ff)" : "transparent",
+                  color: lang === opt.code ? "var(--color-primary, #2563eb)" : "inherit",
+                  cursor: "pointer"
+                }}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
+        </div>
         {children}
       </Card>
     </main>
@@ -111,6 +142,7 @@ export function Register() {
       });
 
       if (user) {
+        useAppStore.getState().updateUser({ settings: { ...user.settings, language: lang } });
         const savedDemoXp = localStorage.getItem("slovakgo.demo-xp");
         if (savedDemoXp) {
           const addXp = parseInt(savedDemoXp, 10) || 50;

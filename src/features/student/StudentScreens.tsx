@@ -159,12 +159,20 @@ export function Onboarding() {
               className={`onboarding-chip ${goal === item ? "active" : ""}`}
               key={item}
               type="button"
-              onClick={() => { setGoal(item); setTimeout(() => setStep(2), 300); }}
+              onClick={() => {
+                setGoal(item);
+                setStep(2);
+              }}
             >
               <CheckCircle2 size={18} className="check-icon" />
               <span>{item}</span>
             </button>
           ))}
+        </div>
+        <div className="onboarding-actions" style={{ marginTop: "1.5rem" }}>
+          <Button className="onboarding-btn-primary" onClick={() => setStep(2)}>
+            {t("student.onboarding.next")}
+          </Button>
         </div>
       </div>
     </Card>,
@@ -2284,7 +2292,7 @@ function SettingsScreen() {
   }
 
   if (!user) return <PageSkeleton />;
-  const lang = (user.settings.language || "uk") as "uk" | "sk" | "en";
+  const lang = (user.settings.language || "uk") as "uk" | "ru" | "sk" | "en";
 
   async function saveProfile() {
     const trimmedEmail = email.trim().toLowerCase();
@@ -2313,7 +2321,7 @@ function SettingsScreen() {
     }
   }
 
-  function changeLanguage(code: "uk" | "sk" | "en") {
+  function changeLanguage(code: "uk" | "ru" | "sk" | "en") {
     updateUser({ settings: { ...user!.settings, language: code } });
   }
 
@@ -2396,7 +2404,7 @@ function SettingsScreen() {
         <h3 className="settings-section-title">{t("student.settings.section_language")}</h3>
         <Card>
           <div className="lang-picker">
-            {(["uk", "sk", "en"] as const).map((code) => (
+            {(["uk", "ru", "sk", "en"] as const).map((code) => (
               <button
                 key={code}
                 type="button"
