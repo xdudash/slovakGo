@@ -7,7 +7,7 @@ export type UserLevel = "A0" | "A1" | "A2" | "B1" | "B2" | "C1";
 export type SubscriptionStatus = "free" | "trial" | "plus" | "past_due" | "expired" | "cancelled";
 
 export interface UserSettings {
-  language: "uk" | "sk" | "en";
+  language: "uk" | "ru" | "sk" | "en";
   notificationsEnabled: boolean;
   soundEnabled: boolean;
   hapticsEnabled: boolean;
