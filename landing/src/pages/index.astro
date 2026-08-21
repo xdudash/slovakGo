@@ -1,6 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
+import CheckIcon from '../components/CheckIcon.astro';
 import faqs from '../data/faq.json';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 3);
 
 const schema = {
   "@context": "https://schema.org",
@@ -19,10 +25,10 @@ const schema = {
       "applicationCategory": "EducationalApplication",
       "operatingSystem": ["Android", "iOS", "Web"],
       "inLanguage": ["uk", "sk"],
-      "description": "SlovakGO — додаток для вивчення словацької мови для українців у Словаччині. Перший розділ доступний без оплати, після нього — 7 днів пробного доступу.",
+      "description": "SlovakGO — додаток для вивчення словацької мови для українців у Словаччині. Перший розділ доступний без оплати, після нього — 3 дні пробного доступу.",
       "url": "https://app.slovakgo.sk",
       "datePublished": "2026-01-01",
-      "dateModified": "2026-06-22",
+      "dateModified": "2026-08-20",
       "offers": {
         "@type": "Offer",
         "price": "9.99",
@@ -63,162 +69,182 @@ const schema = {
 
 <Base
   title="SlovakGO — додаток для вивчення словацької мови для українців"
-  description="SlovakGO — додаток для українців у Словаччині. Пройдіть перший розділ без оплати, потім отримайте 7 днів повного доступу. Далі — €9,99/міс."
+  description="SlovakGO — додаток для українців у Словаччині. Пройдіть перший розділ без оплати, потім отримайте 3 дні повного доступу. Далі — €9,99/міс."
   schema={schema}
 >
 
+<div class="landing-wrap premium">
+
   <!-- ── Hero ─────────────────────────────────────────────────────── -->
-  <header class="hero">
+  <header class="hero-section premium-hero">
+    <div class="hero-bg-glow" aria-hidden="true"></div>
     <div class="hero-inner">
       <div class="hero-content">
-        <div class="hero-badge">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--yellow)" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          Для українців у Словаччині
+        <div class="hero-badge-wrap">
+          <div class="hero-badge glass-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--yellow-dark)" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span>Для українців у Словаччині</span>
+          </div>
         </div>
 
-        <h1>Вивчай словацьку через <span>реальні ситуації</span></h1>
+        <h1>Словацька від <span class="text-gradient">0 до B2</span></h1>
 
-        <p>
-          SlovakGO — додаток словацької мови (Slovenčina) для українців.
-          Пройдіть перший розділ без оплати, а потім відкрийте 7 днів повного доступу. Далі — €9,99/місяць. Від нуля до впевненої розмови
-          в аптеці, на роботі й у лікаря — за 15 хвилин на день.
+        <p class="hero-desc">
+          Від першого слова до впевненої розмови в аптеці, на роботі й у лікаря — за 15 хвилин на день.
+          Перший розділ — без оплати. Просто спробуй.
         </p>
 
-        <div class="hero-cta">
-          <a href="https://app.slovakgo.sk/register" class="btn btn-primary btn-lg" rel="noopener">
-            Пройти перший розділ
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        <div class="hero-cta-group">
+          <a href="https://app.slovakgo.sk/demo" class="btn btn-primary btn-xl btn-glow" rel="noopener">
+            Почати навчання безкоштовно
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
-          <div class="hero-stats">
-            <div class="mini-avatars" aria-hidden="true">
-              <div class="avatar-m" style="background:#fecaca">О</div>
-              <div class="avatar-m" style="background:#a5f3fc">М</div>
-              <div class="avatar-m" style="background:#bbf7d0">А</div>
+          <div class="hero-trust-indicator">
+            <div class="trust-faces">
+              <div class="mini-avatars" aria-hidden="true">
+                <span class="avatar-dot" style="background:var(--accent)">О</span>
+                <span class="avatar-dot" style="background:var(--yellow-dark)">М</span>
+                <span class="avatar-dot" style="background:var(--success)">А</span>
+                <span class="avatar-dot" style="background:var(--blue)">Т</span>
+              </div>
+              <span>500+ українців вже з нами</span>
             </div>
-            <span>500+ українців вже з нами</span>
           </div>
         </div>
       </div>
 
       <div class="hero-visual" aria-hidden="true">
-        <div class="phone-mockup">
+        <div class="phone-mockup premium-mockup">
           <div class="mockup-screen">
             <img
-              src="/app-exercise.png"
-              alt="Реальна вправа в застосунку SlovakGO"
-              width="390"
-              height="844"
+              src="/slovakgo-preview.png"
+              alt="SlovakGO — екран уроку словацької мови"
+              width="270"
+              height="560"
               loading="eager"
               fetchpriority="high"
               decoding="async"
-              onerror="this.parentElement.classList.add('mockup-placeholder-fallback')"
             />
+          </div>
+          <div class="mockup-float-card card-1">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--yellow)" aria-hidden="true"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9 12 2"/></svg>
+            <span>+50 XP</span>
+          </div>
+          <div class="mockup-float-card card-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="8 12.5 10.8 15 16 9"/></svg>
+            <span>Výborne!</span>
           </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- ── Real product preview ─────────────────────────────────────── -->
-  <section class="product-preview-section" aria-labelledby="product-preview-heading">
-    <div class="container">
-      <div class="product-preview-copy">
-        <h2 id="product-preview-heading">Ось так виглядає навчання насправді</h2>
-        <p>Реальні екрани SlovakGO: від налаштування шляху до першого повноцінного розділу.</p>
+  <!-- ── Bento Grid Features ──────────────────────────────────────── -->
+  <section class="features-section bento-section" aria-labelledby="features-heading">
+    <div class="section-header">
+      <h2 id="features-heading">Чому SlovakGO вчить словацьку швидше</h2>
+      <p>
+        Стандартні курси вчать граматику у відриві від реального життя.
+        SlovakGO — кожен урок навколо конкретної ситуації, з якою стикається
+        кожен українець у перші місяці в Словаччині.
+      </p>
+    </div>
+    <div class="bento-grid">
+      <div class="bento-card span-2">
+        <div class="f-card-marker" style="color:var(--accent)"><span aria-hidden="true">●</span> Виживання</div>
+        <h3>Сценарії з реального життя</h3>
+        <p>Оренда квартири, Cudzinecká polícia, школа — вчиш саме те, що потрібно вже завтра, а не абстрактну граматику.</p>
       </div>
-      <div class="product-preview-grid">
-        <figure class="product-shot product-shot--side">
-          <div class="product-shot-frame">
-            <img src="/app-onboarding.png" alt="Онбординг SlovakGO з налаштуванням навчання" width="390" height="844" loading="lazy" />
-          </div>
-          <figcaption>Налаштуй свій шлях</figcaption>
-        </figure>
-        <figure class="product-shot product-shot--primary">
-          <div class="product-shot-frame">
-            <img src="/app-exercise.png" alt="Повноцінна вправа першого розділу SlovakGO" width="390" height="844" loading="lazy" />
-          </div>
-          <figcaption>Пройди перший розділ</figcaption>
-        </figure>
+      <div class="bento-card span-1">
+        <div class="f-card-marker" style="color:var(--yellow-dark)"><span aria-hidden="true">●</span> Кар'єра</div>
+        <h3>Робота та документи</h3>
+        <p>Співбесіда, Úrad práce, Sociálna poisťovňa — реальні фрази для реальних українських ситуацій у Словаччині.</p>
+      </div>
+      <div class="bento-card span-1">
+        <div class="f-card-marker" style="color:var(--success)"><span aria-hidden="true">●</span> Прогрес</div>
+        <h3>XP, серії та ліги</h3>
+        <p>Збирай бали, тримай серію — середня серія учнів SlovakGO 12 днів. Щоденна звичка формується за 2 тижні.</p>
+      </div>
+      <div class="bento-card span-2">
+        <div class="f-card-marker" style="color:var(--blue)"><span aria-hidden="true">●</span> Контекст</div>
+        <h3>Жива розмовна мова</h3>
+        <p>Слова які реально вживають у Bratislava, Košice, Prešov — не книжна норма, а те що почуєш на вулиці.</p>
       </div>
     </div>
   </section>
 
-  <!-- ── Features ──────────────────────────────────────────────────── -->
-  <section class="features-section" aria-labelledby="features-heading">
-    <div class="container">
-      <div class="section-header">
-        <h2 id="features-heading">Чому SlovakGO вчить словацьку швидше</h2>
-        <p>
-          Стандартні курси вчать граматику у відриві від реального життя.
-          SlovakGO — кожен урок навколо конкретної ситуації,
-          з якою стикається кожен українець у Словаччині.
-        </p>
-      </div>
-      <div class="features-grid">
-        <div class="f-card">
-          <div class="f-card-marker" style="color:var(--accent)"><span aria-hidden="true">●</span> Виживання</div>
-          <h3>Сценарії з реального життя</h3>
-          <p>Оренда квартири, Cudzinecká polícia, школа — вчиш саме те, що потрібно вже завтра, а не абстрактну граматику.</p>
-        </div>
-        <div class="f-card">
-          <div class="f-card-marker" style="color:var(--yellow-dark)"><span aria-hidden="true">●</span> Кар'єра</div>
-          <h3>Робота та документи</h3>
-          <p>Співбесіда, Úrad práce, Sociálna poisťovňa — реальні фрази для реальних українських ситуацій у Словаччині.</p>
-        </div>
-        <div class="f-card">
-          <div class="f-card-marker" style="color:var(--success)"><span aria-hidden="true">●</span> Прогрес</div>
-          <h3>XP, серії та ліги</h3>
-          <p>Збирай бали, тримай серію — середня серія учнів SlovakGO 12 днів. Щоденна звичка формується за 2 тижні.</p>
-        </div>
-        <div class="f-card">
-          <div class="f-card-marker" style="color:var(--blue)"><span aria-hidden="true">●</span> Контекст</div>
-          <h3>Жива розмовна мова</h3>
-          <p>Слова які реально вживають у Bratislava, Košice, Prešov — не книжна норма, а те що почуєш на вулиці.</p>
-        </div>
-      </div>
+  <!-- ── Slovak vs Ukrainian ──────────────────────────────────────── -->
+  <section class="advantage-section premium-bg" aria-labelledby="advantage-heading">
+    <div class="section-header">
+      <h2 id="advantage-heading">Словацька та українська — ближче, ніж ти думаєш</h2>
+      <p>
+        Обидві мови належать до слов'янської групи та мають спільні корені.
+        Близько 30–40% базової лексики словацької (Slovenčina) впізнається
+        українськомовним читачем без жодної підготовки.
+      </p>
+    </div>
+    <div class="comparison-table glass-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Українська</th>
+            <th>Словацька (Slovenčina)</th>
+            <th>Різниця</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>вода</td><td><strong>voda</strong></td><td><span class="tag green">однакова</span></td></tr>
+          <tr><td>місто</td><td><strong>mesto</strong></td><td><span class="tag yellow">майже однакова</span></td></tr>
+          <tr><td>хліб</td><td><strong>chlieb</strong></td><td><span class="tag yellow">схожа</span></td></tr>
+          <tr><td>добрий</td><td><strong>dobrý</strong></td><td><span class="tag yellow">схожа</span></td></tr>
+          <tr><td>мати</td><td><strong>mať</strong></td><td><span class="tag green">однакова</span></td></tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
-  <!-- ── Slovak vs Ukrainian ───────────────────────────────────────── -->
-  <section class="advantage-section" aria-labelledby="advantage-heading">
-    <div class="container">
-      <div class="section-header">
-        <h2 id="advantage-heading">Словацька та українська — ближче, ніж ти думаєш</h2>
-        <p>
-          Обидві мови належать до слов'янської групи та мають спільні корені.
-          Близько 30–40% базової лексики словацької (Slovenčina) впізнається
-          українськомовним читачем без жодної підготовки.
-        </p>
+  <!-- ── Testimonials ─────────────────────────────────────────────── -->
+  <section class="testimonials-section" aria-labelledby="testimonials-heading">
+    <div class="section-header">
+      <h2 id="testimonials-heading">Що кажуть українці про SlovakGO</h2>
+      <p>Реальні історії адаптації в Словаччині</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <span class="quote-icon" aria-hidden="true">"</span>
+        <p class="testimonial-text">Вже за два тижні змогла сама записатися до лікаря. До цього використовувала перекладач на кожному кроці.</p>
+        <div class="testimonial-author">
+          <span class="avatar-dot avatar-dot-lg" style="background:var(--accent)" aria-hidden="true">ОМ</span>
+          <div><h4>Олена М.</h4><span>Братислава</span></div>
+        </div>
       </div>
-      <div class="comparison-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Українська</th>
-              <th>Словацька (Slovenčina)</th>
-              <th>Різниця</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>вода</td><td>voda</td><td>однакова</td></tr>
-            <tr><td>місто</td><td>mesto</td><td>однакова</td></tr>
-            <tr><td>хліб</td><td>chlieb</td><td>схожа</td></tr>
-            <tr><td>добрий</td><td>dobrý</td><td>схожа</td></tr>
-            <tr><td>сестра</td><td>sestra</td><td>однакова</td></tr>
-          </tbody>
-        </table>
+      <div class="testimonial-card">
+        <span class="quote-icon" aria-hidden="true">"</span>
+        <p class="testimonial-text">Круто, що є окремі уроки по поліції для іноземців та документах. Дуже допомогло при подачі на ВНЖ.</p>
+        <div class="testimonial-author">
+          <span class="avatar-dot avatar-dot-lg" style="background:var(--yellow-dark)" aria-hidden="true">АК</span>
+          <div><h4>Андрій К.</h4><span>Кошице</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <span class="quote-icon" aria-hidden="true">"</span>
+        <p class="testimonial-text">Додаток затягує. Ліги та серії працюють ідеально — вчу словацьку щоранку за кавою.</p>
+        <div class="testimonial-author">
+          <span class="avatar-dot avatar-dot-lg" style="background:var(--success)" aria-hidden="true">МТ</span>
+          <div><h4>Марина Т.</h4><span>Пряшів</span></div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ── Learning path ─────────────────────────────────────────────── -->
-  <section class="path-section section" aria-labelledby="path-heading">
-    <div class="container">
-      <span class="path-label">Твій шлях за рівнями CEFR</span>
-      <h2 id="path-heading">Від A0 до вільного B2 словацькою</h2>
-      <p class="path-subtitle">
+  <section class="path-teaser" aria-labelledby="path-heading">
+    <div class="path-content">
+      <span class="label-badge">Твій шлях за рівнями CEFR</span>
+      <h2 id="path-heading">Від A0 до вільного B2 за словацькою мовою</h2>
+      <p class="path-desc">
         CEFR (Загальноєвропейські рекомендації з мовної освіти) — міжнародна шкала рівнів
-        від A1 (початковий) до C2 (досконалий). SlovakGO охоплює весь шлях.
+        знання мови від A1 (початковий) до C2 (досконалий).
       </p>
       <div class="path-steps">
         <div class="p-step active">
@@ -255,89 +281,113 @@ const schema = {
 
   <!-- ── Pricing ───────────────────────────────────────────────────── -->
   <section class="pricing-section" aria-labelledby="pricing-heading">
-    <div class="container">
-      <div class="pricing-header">
-        <h2 id="pricing-heading">Простий та прозорий тариф</h2>
-        <p>Спочатку пройдіть справжній розділ свого рівня. Після нього відкрийте 7 днів повного доступу.</p>
+    <div class="pricing-header">
+      <h2 id="pricing-heading">Спочатку спробуй навчання на практиці</h2>
+      <p>Перші уроки доступні без оплати. Потім — 3 дні повного доступу та вибір зручного тарифу.</p>
+    </div>
+    <div class="pricing-cards">
+      <div class="price-card basic">
+        <div class="badge">Базовий</div>
+        <h3>Щомісячний</h3>
+        <div class="price">€9,99<span>/міс</span></div>
+        <p class="price-desc">Гнучка оплата щомісяця</p>
+        <ul class="price-features">
+          <li><CheckIcon /> Безлімітні серця</li>
+          <li><CheckIcon /> Офлайн доступ до уроків</li>
+          <li><CheckIcon /> Розширена аналітика</li>
+          <li><CheckIcon /> Пріоритетна підтримка</li>
+        </ul>
+        <a href="https://app.slovakgo.sk/demo?plan=monthly" class="btn btn-secondary" rel="noopener">Почати навчання безкоштовно</a>
       </div>
-      <div class="pricing-cards" style="display: flex; justify-content: center;">
-        <div class="price-card plus" style="max-width: 420px; width: 100%;">
-          <div class="badge">7 днів пробного доступу</div>
-          <h3>Повний доступ до SlovakGO</h3>
-          <div class="price-tag">€9,99<span>/міс</span></div>
-          <ul>
-            <li><span class="check" aria-hidden="true">✓</span> Всі рівні A0–B2 та 50+ практичних уроків</li>
-            <li><span class="check" aria-hidden="true">✓</span> Реальні сценарії: оренда, лікар, робота, поліція</li>
-            <li><span class="check" aria-hidden="true">✓</span> Безлімітні серця та робота над помилками</li>
-            <li><span class="check" aria-hidden="true">✓</span> Офлайн доступ до уроків</li>
-            <li><span class="check" aria-hidden="true">✓</span> Система XP, серій та таблиця лідерів</li>
-          </ul>
-          <a href="https://app.slovakgo.sk/register" class="btn btn-primary" rel="noopener">Почати з першого розділу</a>
-          <p style="text-align: center; font-size: 0.85rem; color: var(--muted); margin-top: 16px; margin-bottom: 0;">
-            Спочатку — перший розділ без оплати. Потім 7 днів повного доступу, далі — €9,99/місяць. Потрібна картка; скасувати можна будь-коли.
-          </p>
-        </div>
+      <div class="price-card plus-premium">
+        <div class="badge popular">3 дні пробного доступу</div>
+        <h3>Річний</h3>
+        <div class="price">€4,99<span>/міс</span></div>
+        <p class="price-desc highlight">Оплата €59,88 раз на рік (Економія 50%)</p>
+        <ul class="price-features">
+          <li><CheckIcon /> Безлімітні серця</li>
+          <li><CheckIcon /> Офлайн доступ до уроків</li>
+          <li><CheckIcon /> Розширена аналітика</li>
+          <li><CheckIcon /> Пріоритетна підтримка</li>
+        </ul>
+        <a href="https://app.slovakgo.sk/demo?plan=yearly" class="btn btn-primary btn-glow" rel="noopener">Почати навчання безкоштовно</a>
       </div>
     </div>
   </section>
 
-  <!-- ── FAQ ──────────────────────────────────────────────────────── -->
-  <section class="faq-section" aria-labelledby="faq-heading">
-    <div class="container">
+  <!-- ── Blog teaser ──────────────────────────────────────────────── -->
+  {posts.length > 0 && (
+    <section class="blog-section premium-bg" aria-labelledby="blog-heading">
       <div class="section-header">
-        <h2 id="faq-heading">Часті запитання про вивчення словацької</h2>
-        <p>Відповіді на найпопулярніші питання від українців у Словаччині. <a href="/faq" style="color:var(--accent);font-weight:700">Всі питання →</a></p>
+        <h2 id="blog-heading">Корисні матеріали</h2>
+        <p>Статті про життя та адаптацію в Словаччині</p>
       </div>
-      <div class="faq-grid">
-        {faqs.slice(0, 6).map(faq => (
-          <div class="faq-item">
-            <h3>{faq.question}</h3>
-            <p set:html={faq.answer} />
-          </div>
+      <div class="blog-teaser-grid">
+        {posts.map(post => (
+          <a href={`/blog/${post.slug}`} class="blog-teaser-card">
+            <div class="blog-teaser-content">
+              <span class="blog-teaser-tag">Блог</span>
+              <h3>{post.data.title}</h3>
+              <span class="blog-teaser-readmore">
+                Читати
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+            </div>
+          </a>
         ))}
       </div>
+      <div class="blog-teaser-cta">
+        <a href="/blog" class="btn btn-secondary">Читати всі статті</a>
+      </div>
+    </section>
+  )}
+
+  <!-- ── FAQ (accordion) ──────────────────────────────────────────── -->
+  <section class="faq-section" aria-labelledby="faq-heading">
+    <div class="section-header">
+      <h2 id="faq-heading">Часті запитання про вивчення словацької</h2>
+      <p>Відповіді на найпопулярніші питання від українців у Словаччині. <a href="/faq" style="color:var(--accent);font-weight:700">Всі питання →</a></p>
+    </div>
+    <div class="faq-accordion" id="landing-faq">
+      {faqs.slice(0, 6).map((faq, i) => (
+        <div class="faq-item" data-faq-item>
+          <button type="button" class="faq-question" data-faq-toggle aria-expanded="false">
+            <h3>{faq.question}</h3>
+            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" set:html={faq.answer} />
+        </div>
+      ))}
     </div>
   </section>
 
-  <!-- ── About ─────────────────────────────────────────────────────── -->
-  <section class="about-section" id="about" aria-labelledby="about-heading">
-    <div class="container">
-      <div class="about-content">
-        <h2 id="about-heading">Про SlovakGO</h2>
+  <!-- ── Footer CTA ───────────────────────────────────────────────── -->
+  <section class="premium-footer" aria-labelledby="cta-heading" id="about">
+    <div class="footer-content">
+      <div class="footer-main">
+        <h2 id="cta-heading">Готовий почати розмовляти словацькою?</h2>
         <p>
-          SlovakGO створений щоб допомогти українцям швидко адаптуватися до життя у Словаччині
-          через мову. Кожен урок побудований на реальних сценаріях, які збирали безпосередньо
-          від українців у <strong>Братиславі (Bratislava — столиці Словаччини)</strong>,
-          Кошице (Košice), Пряшеві (Prešov) та інших містах.
+          Приєднуйся до 500+ українців, які вже вивчають словацьку через SlovakGO
+          і впевнено почуваються в Братиславі, Кошице та інших містах Словаччини.
         </p>
-        <p>
-          Наш підхід: <strong>10–15 хвилин на день</strong> замість годинних лекцій.
-          Уроки охоплюють рівні від <strong>A0 до B2 за шкалою CEFR</strong> — від першого
-          слова до вільної розмови. Додаток доступний у браузері та як PWA на Android і iOS.
-        </p>
-        <p>
-          Контакт: <a href="mailto:support@slovakgo.sk">support@slovakgo.sk</a>
-        </p>
+        <a href="https://app.slovakgo.sk/demo" class="btn btn-primary btn-xl btn-glow" rel="noopener">
+          Почати навчання безкоштовно
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ── Footer CTA ────────────────────────────────────────────────── -->
-  <section class="footer-cta" aria-labelledby="cta-heading">
-    <div class="container">
-      <h2 id="cta-heading">Готовий почати розмовляти словацькою?</h2>
-      <p>
-        Приєднуйся до 500+ українців, які вже вивчають словацьку через SlovakGO
-        і впевнено почуваються в Братиславі, Кошице та інших містах Словаччини.
-      </p>
-      <a href="https://app.slovakgo.sk/register" class="btn btn-primary btn-lg" rel="noopener">
-        Пройти перший розділ
-      </a>
-    </div>
-  </section>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-faq-toggle]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('[data-faq-item]');
+      if (!item) return;
+      const isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
+</script>
 
 </Base>
-
-<style>
-  .hero-content h1 span { color: var(--yellow); }
-</style>
