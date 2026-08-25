@@ -671,19 +671,10 @@ p { margin: 0; }
 }
 
 /* ─── Advantage / comparison section ────────────────────────────────────── */
-.advantage-section {
-  padding: 80px 0;
-  background: var(--fg);
-  color: #fff;
-}
-
-.advantage-section .section-header h2 {
-  color: #fff;
-}
-
-.advantage-section .section-header p {
-  color: rgba(255,255,255,0.65);
-}
+/* Background/text color for this section now come from `.premium-bg` and the
+   shared `.section-header` rules below — this used to force a dark background
+   with white text here, which fought the premium (light) treatment and left
+   the heading/paragraph invisible (white-on-white). */
 
 .comparison-table {
   max-width: 600px;
