@@ -14,7 +14,7 @@ import { progressService } from "../../services/progressService";
 import { vocabularyService, type VocabularyWord } from "../../services/vocabularyService";
 import { selectCurrentUser, selectIsPlus, useAppStore } from "../../store/useAppStore";
 import { useT } from "../../i18n";
-import type { AnswerRecord, Exercise, LeaderboardEntry, TheoryScreen, UserLevel } from "../../types";
+import type { AnswerRecord, Exercise, ExerciseType, LeaderboardEntry, Lesson, LocalizedText, TheoryScreen, UserLevel } from "../../types";
 import { getDailyPhrases, getScenarioForGoal } from "../../data/scenarios";
 import { downloadCertificate } from "../../services/certificateService";
 import { generateShareCard, shareOrDownloadCard } from "../../services/shareService";
@@ -22,6 +22,32 @@ import { formatWeekTimer, secondsUntilWeekEnd } from "../../utils/date";
 import { requestFcmToken } from "../../services/fcmService";
 import { accessService } from "../../services/accessService";
 import { track } from "../../services/analytics";
+import { resolveText } from "../../utils/lessonLocale";
+import { useLessonLocale } from "../../hooks/useLessonLocale";
+import { formatCorrectAnswer } from "../../services/exerciseChecking";
+import { OptionListExercise } from "./exercises/OptionListExercise";
+import { TrueFalseExercise } from "./exercises/TrueFalseExercise";
+import { BlankFillExercise } from "./exercises/BlankFillExercise";
+import { MatchingExercise } from "./exercises/MatchingExercise";
+import { CategorySortExercise } from "./exercises/CategorySortExercise";
+import { SentenceBuilderExercise } from "./exercises/SentenceBuilderExercise";
+import { DialogueOrderExercise } from "./exercises/DialogueOrderExercise";
+import { BranchingDialogueExercise } from "./exercises/BranchingDialogueExercise";
+import { TextEditExercise } from "./exercises/TextEditExercise";
+import { ListeningExercise } from "./exercises/ListeningExercise";
+import { StructuredContentExercise } from "./exercises/StructuredContentExercise";
+
+/** New-format (35-type) exercise types that route to a family component instead of the legacy inline UI. */
+const NEW_FORMAT_TYPES = new Set<ExerciseType>([
+  "single_choice", "multiple_select", "dialogue_choose_reply", "meaning_in_context",
+  "natural_phrase", "tone", "register", "hidden_meaning", "real_document", "real_schedule", "real_message",
+  "true_false_list", "dropdown_blank", "cloze_text", "word_bank", "drag_to_blank",
+  "matching", "collocation", "image_match", "drag_to_category",
+  "sentence_builder", "sentence_order", "dialogue_order", "branching_dialogue",
+  "find_error", "correct_error", "transformation",
+  "listen_choice", "listen_true_false", "listen_fill", "dictation",
+  "reading_comprehension", "real_menu",
+]);
 
 function useWeekTimer(): number {
   const [seconds, setSeconds] = useState(() => secondsUntilWeekEnd());
@@ -239,7 +265,7 @@ export function Onboarding() {
 
 function PathScreen() {
   const { data, user, progress } = useStudentData();
-  const { t } = useT();
+  const { t, lang } = useT();
   const navigate = useNavigate();
 
   const isAdmin = user?.role === "admin";
@@ -271,7 +297,7 @@ function PathScreen() {
     let currentTopicLessons: typeof lLessons = [];
 
     for (const l of lLessons) {
-      const tName = l.topic || t("student.path.default_topic");
+      const tName = resolveText(l.topic, lang) || t("student.path.default_topic");
       if (tName !== currentTopicName) {
         if (currentTopicLessons.length > 0) {
           groups.push({ topicName: currentTopicName, lessons: currentTopicLessons, status: "locked" });
@@ -300,7 +326,7 @@ function PathScreen() {
     }
 
     return { levelLessons: lLessons, levelProgress: lProgress, current: curr, groupedTopics: groups };
-  }, [data.lessons, progress, isAdmin, adminStatus, t]);
+  }, [data.lessons, progress, isAdmin, adminStatus, t, lang]);
   const scenario = getScenarioForGoal(user?.goal);
   const dailyPhrases = getDailyPhrases(user?.goal, 3);
 
@@ -337,7 +363,7 @@ function PathScreen() {
       {/* Unit section header */}
       <div className="unit-card">
         <span className="progress-pill">{levelProgress}%</span>
-        <h2>{progress.currentLevel}: {current?.topic || t("student.path.default_topic")}</h2>
+        <h2>{progress.currentLevel}: {resolveText(current?.topic, lang) || t("student.path.default_topic")}</h2>
         <p>{levelLessons.filter((l) => lessonService.status(l, data.lessons, progress) === "completed").length}/{levelLessons.length} {t("student.path.progress_pct")}</p>
       </div>
 
@@ -405,13 +431,13 @@ function PathScreen() {
                           type="button"
                           className={`lesson-node ${nodeClass}`}
                           onClick={() => navigate(`/app/lesson/${lesson.id}`)}
-                          aria-label={lesson.title}
+                          aria-label={resolveText(lesson.title, lang)}
                         >
                           {status === "completed" ? <CheckCircle2 size={22} />
                             : <Play size={20} style={{ fill: "currentColor" }} />}
                         </button>
                         <div className="lesson-node-label">
-                          <h3>{lesson.title}{!lesson.isPublished && isAdmin && <span style={{ fontSize: "0.65rem", marginLeft: 4, color: "var(--muted)", fontWeight: 400 }}>чернетка</span>}</h3>
+                          <h3>{resolveText(lesson.title, lang)}{!lesson.isPublished && isAdmin && <span style={{ fontSize: "0.65rem", marginLeft: 4, color: "var(--muted)", fontWeight: 400 }}>чернетка</span>}</h3>
                           <p>{lesson.xpReward} XP · {lesson.estimatedMinutes} хв</p>
                         </div>
                       </div>
@@ -429,8 +455,8 @@ function PathScreen() {
         <div className="floating-lesson">
           <div className="icon-circle"><BookOpen size={20} /></div>
           <div className="info">
-            <h4>{current.title}</h4>
-            <p>{current.topic} · {current.xpReward} XP</p>
+            <h4>{resolveText(current.title, lang)}</h4>
+            <p>{resolveText(current.topic, lang)} · {current.xpReward} XP</p>
           </div>
           <button type="button" className="btn-go" onClick={() => navigate(`/app/lesson/${current.id}`)}>
             {t("student.path.continue")}
@@ -518,14 +544,20 @@ function MatchPairsExercise({ exercise, setAnswer }: { exercise: Exercise; setAn
   );
 }
 
-function ExerciseView({ exercise, answer, setAnswer, t, disabled = false }: { exercise: Exercise; answer: string | string[]; setAnswer: (value: string | string[]) => void; t: (key: string) => string; disabled?: boolean }) {
+function ExerciseView({ exercise, lesson, answer, setAnswer, t, disabled = false, soundEnabled = false }: { exercise: Exercise; lesson?: Lesson; answer: string | string[]; setAnswer: (value: string | string[]) => void; t: (key: string) => string; disabled?: boolean; soundEnabled?: boolean }) {
   if (exercise.type === "match_pairs") {
     return <MatchPairsExercise key={exercise.id} exercise={exercise} setAnswer={(v) => setAnswer(v)} />;
   }
-  if (exercise.type === "fill_blank" && (exercise.options?.length ?? 0) > 0) {
+
+  const isNewFillBlank = exercise.type === "fill_blank" && (exercise.sentence !== undefined || exercise.acceptedAnswers !== undefined);
+  if (isNewFillBlank) {
+    return <BlankFillExercise exercise={exercise} lesson={lesson!} answer={answer} setAnswer={setAnswer} disabled={disabled} />;
+  }
+  if (exercise.type === "fill_blank" && ((exercise.options as string[] | undefined)?.length ?? 0) > 0) {
+    const legacyOptions = exercise.options as string[];
     return (
       <div className="option-list">
-        {(exercise.options || []).map((option) => (
+        {legacyOptions.map((option) => (
           <button className={`option ${answer === option ? "active" : ""}`} type="button" key={option} onClick={() => setAnswer(option)} disabled={disabled}>{option}</button>
         ))}
       </div>
@@ -540,21 +572,59 @@ function ExerciseView({ exercise, answer, setAnswer, t, disabled = false }: { ex
     );
   }
   if (exercise.type === "sentence_ordering") {
+    const legacyOptions = (exercise.options as string[] | undefined) ?? [];
     const selected = Array.isArray(answer) ? answer : [];
     return (
       <>
         <div className="answer-build">{selected.join(" ") || t("student.lesson.select_words")}</div>
         <div className="chip-grid">
-          {(exercise.options || []).map((option) => <button className="chip" key={option} type="button" disabled={disabled} onClick={() => setAnswer([...selected, option])}>{option}</button>)}
+          {legacyOptions.map((option) => <button className="chip" key={option} type="button" disabled={disabled} onClick={() => setAnswer([...selected, option])}>{option}</button>)}
         </div>
       </>
     );
   }
+
+  const isNewTrueFalse = exercise.type === "true_false" && exercise.statement !== undefined;
+  if (isNewTrueFalse || exercise.type === "true_false_list") {
+    return <TrueFalseExercise exercise={exercise} lesson={lesson!} answer={answer} setAnswer={setAnswer} disabled={disabled} />;
+  }
+  if (exercise.type === "dropdown_blank" || exercise.type === "cloze_text" || exercise.type === "word_bank" || exercise.type === "drag_to_blank") {
+    return <BlankFillExercise exercise={exercise} lesson={lesson!} answer={answer} setAnswer={setAnswer} disabled={disabled} />;
+  }
+  if (exercise.type === "matching" || exercise.type === "collocation" || exercise.type === "image_match") {
+    return <MatchingExercise exercise={exercise} lesson={lesson!} answer={answer} setAnswer={setAnswer} disabled={disabled} />;
+  }
+  if (exercise.type === "drag_to_category") {
+    return <CategorySortExercise exercise={exercise} lesson={lesson!} answer={answer} setAnswer={setAnswer} disabled={disabled} />;
+  }
+  if (exercise.type === "sentence_builder" || exercise.type === "sentence_order") {
+    return <SentenceBuilderExercise exercise={exercise} lesson={lesson!} setAnswer={setAnswer} disabled={disabled} />;
+  }
+  if (exercise.type === "dialogue_order") {
+    return <DialogueOrderExercise exercise={exercise} setAnswer={setAnswer} disabled={disabled} />;
+  }
+  if (exercise.type === "branching_dialogue") {
+    return <BranchingDialogueExercise exercise={exercise} setAnswer={setAnswer} disabled={disabled} />;
+  }
+  if (exercise.type === "find_error" || exercise.type === "correct_error" || exercise.type === "transformation") {
+    return <TextEditExercise exercise={exercise} lesson={lesson!} answer={answer} setAnswer={setAnswer} disabled={disabled} />;
+  }
+  if (exercise.type === "listen_choice" || exercise.type === "listen_true_false" || exercise.type === "listen_fill" || exercise.type === "dictation") {
+    return <ListeningExercise exercise={exercise} lesson={lesson!} answer={answer} setAnswer={setAnswer} disabled={disabled} soundEnabled={soundEnabled} />;
+  }
+  if (exercise.type === "reading_comprehension" || exercise.type === "real_menu" || exercise.type === "real_document" || exercise.type === "real_schedule" || exercise.type === "real_message") {
+    return <StructuredContentExercise exercise={exercise} lesson={lesson!} answer={answer} setAnswer={setAnswer} disabled={disabled} />;
+  }
+  if (NEW_FORMAT_TYPES.has(exercise.type)) {
+    return <OptionListExercise exercise={exercise} lesson={lesson!} answer={answer} setAnswer={setAnswer} disabled={disabled} />;
+  }
+
+  const legacyOptions = (exercise.options as string[] | undefined) ?? [];
   const isContextChoice = exercise.type === "multiple_choice_context";
   const isResponseChoice = exercise.type === "choose_response";
   return (
     <div className={`option-list${isContextChoice ? " option-list--context" : ""}${isResponseChoice ? " option-list--responses" : ""}`}>
-      {(exercise.options || []).map((option, optionIndex) => (
+      {legacyOptions.map((option, optionIndex) => (
         <button
           className={`option ${answer === option ? "active" : ""}`}
           type="button"
@@ -583,11 +653,15 @@ type LessonPhase = "start" | "theory" | "words" | "exercise" | "final" | "result
 type WrongItem = { question: string; userAnswer: string; correctAnswer: string };
 type CompletionData = { xp: number; correct: number; total: number; wrong: WrongItem[] };
 
-function TheoryView({ screen, onNext }: { screen: TheoryScreen; onNext: () => void }) {
+function isInteractiveFinal(sit: Lesson["finalSituation"]): sit is Extract<NonNullable<Lesson["finalSituation"]>, { type: "interactive_scenario" }> {
+  return !!sit && "type" in sit && sit.type === "interactive_scenario";
+}
+
+function TheoryView({ screen, onNext, tx }: { screen: TheoryScreen; onNext: () => void; tx: (v: LocalizedText | undefined) => string }) {
   return (
     <div className="theory-body">
-      {screen.title && <h2 className="theory-title">{screen.title}</h2>}
-      {screen.text && <p className="theory-text">{screen.text}</p>}
+      {screen.title && <h2 className="theory-title">{tx(screen.title)}</h2>}
+      {(screen.text || screen.body) && <p className="theory-text">{tx(screen.text ?? screen.body)}</p>}
       {(screen.exampleSk || screen.exampleUk) && (
         <div className="theory-main-example">
           {screen.exampleSk && <div className="theory-main-sk">{screen.exampleSk}</div>}
@@ -599,7 +673,7 @@ function TheoryView({ screen, onNext }: { screen: TheoryScreen; onNext: () => vo
           {screen.examples!.map((ex, i) => (
             <div key={i} className="theory-example">
               <span className="theory-ex-sk">{ex.sk}</span>
-              <span className="theory-ex-uk">{ex.uk}</span>
+              <span className="theory-ex-uk">{ex.uk ?? tx(ex.translation)}</span>
             </div>
           ))}
         </div>
@@ -685,7 +759,7 @@ function TheoryView({ screen, onNext }: { screen: TheoryScreen; onNext: () => vo
           ))}
         </div>
       )}
-      {screen.shortRule && <div className="theory-short-rule">{screen.shortRule}</div>}
+      {screen.shortRule && <div className="theory-short-rule">{tx(screen.shortRule)}</div>}
       <div className="lesson-bottom">
         <Button onClick={onNext}>{screen.button ?? "Далі →"}</Button>
       </div>
@@ -750,6 +824,7 @@ function LessonScreen() {
   const { data, user, progress, completeLesson, recordWrongAnswer, restoreHearts } = useStudentData();
   const { t } = useT();
   const lesson = data.lessons.find((item) => item.id === lessonId);
+  const { tx, asset } = useLessonLocale(lesson);
 
   const theories = (lesson?.theoryScreens ?? []).slice().sort((a, b) => a.order - b.order);
   const hasNewFormat = !!(lesson?.startScreen || theories.length > 0 || lesson?.finalSituation || lesson?.resultScreen);
@@ -762,6 +837,8 @@ function LessonScreen() {
   const [records, setRecords] = useState<AnswerRecord[]>([]);
   const [finalAnswer, setFinalAnswer] = useState<string>("");
   const [finalFeedback, setFinalFeedback] = useState<"correct" | "wrong" | null>(null);
+  const [finalStepIndex, setFinalStepIndex] = useState(0);
+  const [finalStepResults, setFinalStepResults] = useState<boolean[]>([]);
   const [celebration, setCelebration] = useState<CompletionData | null>(null);
   const [completionData, setCompletionData] = useState<CompletionData | null>(null);
   const [sharing, setSharing] = useState(false);
@@ -799,9 +876,9 @@ function LessonScreen() {
     return recs.filter((r) => !r.correct).map((r) => {
       const ex = lesson!.exercises.find((e) => e.id === r.exerciseId);
       return {
-        question: ex?.question ?? "",
+        question: ex ? tx(ex.question ?? ex.instruction ?? ex.prompt) : "",
         userAnswer: Array.isArray(r.answer) ? r.answer.join(", ") : String(r.answer),
-        correctAnswer: Array.isArray(ex?.correctAnswer) ? (ex!.correctAnswer as string[]).join(", ") : String(ex?.correctAnswer ?? ""),
+        correctAnswer: ex ? formatCorrectAnswer(ex) : "",
       };
     });
   }
@@ -846,7 +923,7 @@ function LessonScreen() {
   }
 
   function skipExercise() {
-    const correctAnswer = Array.isArray(exercise.correctAnswer) ? exercise.correctAnswer : String(exercise.correctAnswer);
+    const correctAnswer = Array.isArray(exercise.correctAnswer) ? exercise.correctAnswer : formatCorrectAnswer(exercise);
     const record = { exerciseId: exercise.id, answer: correctAnswer, correct: true, answeredAt: new Date().toISOString() };
     const updatedRecords = [...records.filter((r) => r.exerciseId !== exercise.id), record];
     const nextIndex = index + 1;
@@ -879,8 +956,30 @@ function LessonScreen() {
 
   function checkFinal() {
     const sit = lesson!.finalSituation!;
+    if (isInteractiveFinal(sit)) {
+      const step = sit.steps[finalStepIndex];
+      const chosen = step.options.find((o) => (o.sk ?? tx(o.text)) === finalAnswer);
+      setFinalFeedback(chosen?.correct ? "correct" : "wrong");
+      return;
+    }
     const correctIdx = parseInt(sit.correctAnswer, 10) - 1;
     setFinalFeedback(finalAnswer === sit.options[correctIdx] ? "correct" : "wrong");
+  }
+
+  function advanceFinal() {
+    const sit = lesson!.finalSituation!;
+    if (isInteractiveFinal(sit)) {
+      const results = [...finalStepResults, finalFeedback === "correct"];
+      setFinalStepResults(results);
+      const nextStep = finalStepIndex + 1;
+      if (nextStep < sit.steps.length) {
+        setFinalStepIndex(nextStep);
+        setFinalAnswer("");
+        setFinalFeedback(null);
+        return;
+      }
+    }
+    finishLesson(records);
   }
 
   const totalSteps = theories.length + (lesson!.wordsScreen ? 1 : 0) + lesson!.exercises.length + (lesson!.finalSituation ? 1 : 0);
@@ -924,10 +1023,14 @@ function LessonScreen() {
       {phase === "start" && (
         lesson.startScreen ? (
           <div className="lesson-start-card">
+            {lesson.startScreen.imageRef && asset(lesson.startScreen.imageRef, "images") && (
+              <img className="lesson-start-image" src={asset(lesson.startScreen.imageRef, "images")!.src} alt={asset(lesson.startScreen.imageRef, "images")!.alt ?? ""} loading="lazy" />
+            )}
             {lesson.startScreen.iconEmoji && <div className="lesson-start-icon">{lesson.startScreen.iconEmoji}</div>}
-            <h1 className="lesson-start-title">{lesson.startScreen.title ?? lesson.title}</h1>
-            {(lesson.startScreen.shortDescription || lesson.startScreen.subtitle) && (
-              <p className="lesson-start-subtitle">{lesson.startScreen.shortDescription ?? lesson.startScreen.subtitle}</p>
+            {lesson.startScreen.eyebrow && <span className="badge">{tx(lesson.startScreen.eyebrow)}</span>}
+            <h1 className="lesson-start-title">{tx(lesson.startScreen.title) || tx(lesson.title)}</h1>
+            {(lesson.startScreen.shortDescription || lesson.startScreen.subtitle || lesson.startScreen.goal) && (
+              <p className="lesson-start-subtitle">{tx(lesson.startScreen.shortDescription ?? lesson.startScreen.subtitle ?? lesson.startScreen.goal)}</p>
             )}
             {(lesson.startScreen.outcomes?.length ?? 0) > 0 && (
               <ul className="lesson-start-outcomes">
@@ -955,7 +1058,7 @@ function LessonScreen() {
         ) : (
           <>
             <div className="lesson-intro-card">
-              {lesson.intro && <p className="lesson-intro-text">{lesson.intro}</p>}
+              {lesson.intro && <p className="lesson-intro-text">{tx(lesson.intro)}</p>}
               {lesson.words.length > 0 && (
                 <div className="lesson-words-list">
                   {lesson.words.map((word) => (
@@ -979,29 +1082,45 @@ function LessonScreen() {
       )}
 
       {phase === "theory" && theories.length > 0 && (
-        <TheoryView key={`theory-${theoryIndex}`} screen={theories[theoryIndex]} onNext={advanceFromTheory} />
+        <TheoryView key={`theory-${theoryIndex}`} screen={theories[theoryIndex]} onNext={advanceFromTheory} tx={tx} />
       )}
 
       {phase === "words" && lesson.wordsScreen && (
         <div className="lesson-words-screen">
-          {lesson.wordsScreen.title && <h2 className="words-screen-title">{lesson.wordsScreen.title}</h2>}
-          {lesson.wordsScreen.description && <p className="words-screen-desc">{lesson.wordsScreen.description}</p>}
+          {lesson.wordsScreen.title && <h2 className="words-screen-title">{tx(lesson.wordsScreen.title)}</h2>}
+          {(lesson.wordsScreen.description || lesson.wordsScreen.subtitle) && <p className="words-screen-desc">{tx(lesson.wordsScreen.description ?? lesson.wordsScreen.subtitle)}</p>}
           <div className="words-screen-list">
-            {lesson.wordsScreen.items.map((item, i) => (
-              <div key={i} className="words-screen-item">
-                <div className="ws-item-top">
-                  <span className="ws-item-sk">{item.sk}</span>
-                  <span className="ws-item-uk">{item.uk}</span>
-                </div>
-                {item.pronunciationUk && <div className="ws-item-pron">[{item.pronunciationUk}]</div>}
-                {item.exampleSk && (
-                  <div className="ws-item-example">
-                    <span className="sk">{item.exampleSk}</span>
-                    <span className="uk">{item.exampleUk}</span>
+            {lesson.wordsScreen.items
+              ? lesson.wordsScreen.items.map((item, i) => (
+                <div key={i} className="words-screen-item">
+                  <div className="ws-item-top">
+                    <span className="ws-item-sk">{item.sk}</span>
+                    <span className="ws-item-uk">{item.uk}</span>
                   </div>
-                )}
-              </div>
-            ))}
+                  {item.pronunciationUk && <div className="ws-item-pron">[{item.pronunciationUk}]</div>}
+                  {item.exampleSk && (
+                    <div className="ws-item-example">
+                      <span className="sk">{item.exampleSk}</span>
+                      <span className="uk">{item.exampleUk}</span>
+                    </div>
+                  )}
+                </div>
+              ))
+              : lesson.words.map((word) => (
+                <div key={word.id} className="words-screen-item">
+                  <div className="ws-item-top">
+                    <span className="ws-item-sk">{word.sk}</span>
+                    <span className="ws-item-uk">{word.translation ? tx(word.translation) : word.uk}</span>
+                  </div>
+                  {word.partOfSpeech && <div className="ws-item-pron">{word.partOfSpeech}</div>}
+                  {(word.example?.sk ?? word.exampleSk) && (
+                    <div className="ws-item-example">
+                      <span className="sk">{word.example?.sk ?? word.exampleSk}</span>
+                      <span className="uk">{word.example ? tx(word.example.translation) : word.exampleUk}</span>
+                    </div>
+                  )}
+                </div>
+              ))}
           </div>
           <div className="lesson-bottom">
             <Button onClick={advanceFromWords}>{lesson.wordsScreen.button ?? "Почати вправи →"}</Button>
@@ -1012,7 +1131,7 @@ function LessonScreen() {
       {phase === "exercise" && exercise && (
         <>
           <Card className="exercise-card">
-            <p className="lesson-topic">{lesson.topic}</p>
+            <p className="lesson-topic">{tx(lesson.topic)}</p>
             {exercise.type === "multiple_choice_context" && (
               <div className="exercise-mode exercise-mode--context">
                 <MessageSquare size={18} aria-hidden="true" />
@@ -1025,12 +1144,13 @@ function LessonScreen() {
                 <span><strong>Обери репліку</strong> · знайди найприроднішу відповідь для ситуації</span>
               </div>
             )}
-            <h1>{exercise.question}</h1>
-            <ExerciseView key={exercise.id} exercise={exercise} answer={answer} setAnswer={setAnswer} t={t} disabled={feedback !== null} />
+            <h1>{tx(exercise.question ?? exercise.instruction)}</h1>
+            {exercise.imageUrl && <img src={exercise.imageUrl} alt="" loading="lazy" className="exercise-image" />}
+            <ExerciseView key={exercise.id} exercise={exercise} lesson={lesson} answer={answer} setAnswer={setAnswer} t={t} disabled={feedback !== null} soundEnabled={!!user.settings.soundEnabled} />
           </Card>
           <div className={`lesson-feedback ${feedback || ""}`}>
             {feedback === "correct" ? t("student.lesson.correct") : null}
-            {feedback === "wrong" ? `${t("student.lesson.wrong_prefix")} ${Array.isArray(exercise.correctAnswer) ? (exercise.correctAnswer as string[]).join(", ") : exercise.correctAnswer}. ${exercise.explanation || ""}` : null}
+            {feedback === "wrong" ? `${t("student.lesson.wrong_prefix")} ${formatCorrectAnswer(exercise)}. ${tx(exercise.explanation)}` : null}
           </div>
           <div className="lesson-bottom">
             {!feedback
@@ -1044,14 +1164,55 @@ function LessonScreen() {
         </>
       )}
 
-      {phase === "final" && lesson.finalSituation && (
+      {phase === "final" && lesson.finalSituation && isInteractiveFinal(lesson.finalSituation) && (() => {
+        const sit = lesson.finalSituation;
+        const step = sit.steps[finalStepIndex];
+        return (
+          <>
+            <div className="final-situation-card">
+              <span className="badge">Крок {finalStepIndex + 1} / {sit.steps.length}</span>
+              <h2 className="final-situation-question">{tx(step.prompt)}</h2>
+              <div className="option-list">
+                {step.options.map((option, oi) => {
+                  const label = option.sk ?? tx(option.text);
+                  return (
+                    <button
+                      key={oi}
+                      type="button"
+                      className={`option ${finalAnswer === label ? "active" : ""}${finalFeedback && option.correct ? " option--correct" : ""}${finalFeedback && finalAnswer === label && !option.correct ? " option--wrong" : ""}`}
+                      onClick={() => !finalFeedback && setFinalAnswer(label)}
+                      disabled={!!finalFeedback}
+                    >
+                      {label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+            <div className={`lesson-feedback ${finalFeedback || ""}`}>
+              {finalFeedback === "correct" ? t("student.lesson.correct") : null}
+              {finalFeedback === "wrong" ? `${t("student.lesson.wrong_prefix")} ${step.options.find((o) => o.correct)?.sk ?? tx(step.options.find((o) => o.correct)?.text)}` : null}
+            </div>
+            <div className="lesson-bottom">
+              {!finalFeedback
+                ? <Button disabled={!finalAnswer} onClick={checkFinal}>{t("student.lesson.check")}</Button>
+                : <Button autoFocus onClick={advanceFinal}>{finalStepIndex + 1 >= sit.steps.length ? t("student.lesson.finish") : t("student.lesson.next")}</Button>
+              }
+            </div>
+          </>
+        );
+      })()}
+
+      {phase === "final" && lesson.finalSituation && !isInteractiveFinal(lesson.finalSituation) && (() => {
+        const sit = lesson.finalSituation as Exclude<Lesson["finalSituation"], undefined | { type: "interactive_scenario" }>;
+        return (
         <>
           <div className="final-situation-card">
-            <div className="final-situation-scenario">{lesson.finalSituation.scenario}</div>
-            <h2 className="final-situation-question">{lesson.finalSituation.question}</h2>
+            <div className="final-situation-scenario">{sit.scenario}</div>
+            <h2 className="final-situation-question">{sit.question}</h2>
             <div className="option-list">
-              {lesson.finalSituation.options.map((option, oi) => {
-                const correctIdx = parseInt(lesson.finalSituation!.correctAnswer, 10) - 1;
+              {sit.options.map((option, oi) => {
+                const correctIdx = parseInt(sit.correctAnswer, 10) - 1;
                 return (
                   <button
                     key={option}
@@ -1068,25 +1229,26 @@ function LessonScreen() {
           </div>
           <div className={`lesson-feedback ${finalFeedback || ""}`}>
             {finalFeedback === "correct" ? t("student.lesson.correct") : null}
-            {finalFeedback === "wrong" ? `${t("student.lesson.wrong_prefix")} ${lesson.finalSituation.options[parseInt(lesson.finalSituation.correctAnswer, 10) - 1]}` : null}
-            {finalFeedback && lesson.finalSituation.translation && <div className="final-situation-translation">{lesson.finalSituation.translation}</div>}
-            {finalFeedback && lesson.finalSituation.explanation && <div className="final-situation-explanation">{lesson.finalSituation.explanation}</div>}
+            {finalFeedback === "wrong" ? `${t("student.lesson.wrong_prefix")} ${sit.options[parseInt(sit.correctAnswer, 10) - 1]}` : null}
+            {finalFeedback && sit.translation && <div className="final-situation-translation">{sit.translation}</div>}
+            {finalFeedback && sit.explanation && <div className="final-situation-explanation">{sit.explanation}</div>}
           </div>
           <div className="lesson-bottom">
             {!finalFeedback
-              ? <Button disabled={!finalAnswer} onClick={checkFinal}>{lesson.finalSituation.button ?? t("student.lesson.check")}</Button>
+              ? <Button disabled={!finalAnswer} onClick={checkFinal}>{sit.button ?? t("student.lesson.check")}</Button>
               : <Button autoFocus onClick={() => finishLesson(records)}>{t("student.lesson.finish")}</Button>
             }
           </div>
         </>
-      )}
+        );
+      })()}
 
       {phase === "result" && completionData && lesson.resultScreen && (
         <div className="lesson-result-screen">
           <div className="lesson-result-header">
             <div className="lesson-result-emoji">{completionData.wrong.length === 0 ? "🏆" : "🎉"}</div>
-            {lesson.resultScreen.title ? <h2 className="lesson-result-title">{lesson.resultScreen.title}</h2> : null}
-            {lesson.resultScreen.text ? <p className="lesson-result-text">{lesson.resultScreen.text}</p> : null}
+            {lesson.resultScreen.title ? <h2 className="lesson-result-title">{tx(lesson.resultScreen.title)}</h2> : null}
+            {(lesson.resultScreen.text || lesson.resultScreen.subtitle) ? <p className="lesson-result-text">{tx(lesson.resultScreen.text ?? lesson.resultScreen.subtitle)}</p> : null}
             <div className="lesson-result-xp">+{completionData.xp} XP</div>
             <div className="lesson-result-stats">
               <div className="lesson-result-stat">
@@ -1114,7 +1276,7 @@ function LessonScreen() {
           {lesson.resultScreen.nextLesson && (
             <div className="lesson-result-next">
               <p>Наступний урок:</p>
-              <h4>{lesson.resultScreen.nextLesson}</h4>
+              <h4>{typeof lesson.resultScreen.nextLesson === "string" ? lesson.resultScreen.nextLesson : tx(lesson.resultScreen.nextLesson.title) || lesson.resultScreen.nextLesson.id}</h4>
             </div>
           )}
           {progress.completedLessons.length === 1 && <ReminderOptIn />}
@@ -1122,7 +1284,7 @@ function LessonScreen() {
             <Button autoFocus onClick={() => navigate(completionDestination)}>
               {opensTrialAfterLesson ? "Відкрити повний доступ →" : lesson.resultScreen.buttons?.[0] ?? "Продовжити"}
             </Button>
-            <Button variant="secondary" onClick={() => { setIndex(0); setTheoryIndex(0); setRecords([]); setFinalAnswer(""); setFinalFeedback(null); setCompletionData(null); setPhase(lesson.startScreen ? "start" : theories.length > 0 ? "theory" : "wordsScreen" in lesson && lesson.wordsScreen ? "words" : "exercise"); }}>{lesson.resultScreen.buttons?.[1] ?? "Повторити урок"}</Button>
+            <Button variant="secondary" onClick={() => { setIndex(0); setTheoryIndex(0); setRecords([]); setFinalAnswer(""); setFinalFeedback(null); setFinalStepIndex(0); setFinalStepResults([]); setCompletionData(null); setPhase(lesson.startScreen ? "start" : theories.length > 0 ? "theory" : "wordsScreen" in lesson && lesson.wordsScreen ? "words" : "exercise"); }}>{lesson.resultScreen.buttons?.[1] ?? "Повторити урок"}</Button>
             {completionData.wrong.length > 0 && <Button variant="ghost" onClick={() => navigate("/app/practice")}>{lesson.resultScreen.mistakesMessage ?? lesson.resultScreen.buttons?.[2] ?? "Тренувати помилки"}</Button>}
           </div>
         </div>
@@ -1401,7 +1563,7 @@ function VocabularyScreen() {
 
 function PracticeScreen() {
   const { data, user, progress, finishPracticeSession } = useStudentData();
-  const { t } = useT();
+  const { t, lang } = useT();
   const navigate = useNavigate();
 
   const [phase, setPhase] = useState<"landing" | "session" | "results">("landing");
@@ -1636,12 +1798,12 @@ function PracticeScreen() {
         </div>
         <Card className="exercise-card">
           <p className="lesson-topic">{wordTopic}</p>
-          <h1>{exercise.question}</h1>
+          <h1>{resolveText(exercise.question, lang)}</h1>
           <ExerciseView exercise={exercise} answer={answer} setAnswer={setAnswer} t={t} />
         </Card>
         <div className={`lesson-feedback ${feedback ?? ""}`}>
           {feedback === "correct" && t("student.lesson.correct")}
-          {feedback === "wrong" && `${t("student.lesson.wrong_prefix")} ${Array.isArray(exercise.correctAnswer) ? exercise.correctAnswer.join(", ") : exercise.correctAnswer}.`}
+          {feedback === "wrong" && `${t("student.lesson.wrong_prefix")} ${formatCorrectAnswer(exercise)}.`}
         </div>
         <div className="lesson-bottom">
           {!feedback

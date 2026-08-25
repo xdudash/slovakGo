@@ -3,8 +3,9 @@ import ruData from './locales/ru.json';
 import skData from './locales/sk.json';
 import enData from './locales/en.json';
 import { useAppStore } from './store/useAppStore';
+import type { Locale } from './types';
 
-type Locale = 'uk' | 'ru' | 'sk' | 'en';
+export type { Locale };
 
 const locales: Record<Locale, Record<string, unknown>> = {
   uk: ukData as Record<string, unknown>,

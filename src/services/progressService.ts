@@ -1,8 +1,9 @@
 import type { AnswerRecord, Exercise, Lesson, Progress, SubscriptionStatus, UserWord } from "../types";
 import { currentWeekId, isToday, isYesterday, todayKey } from "../utils/date";
 import { srService } from "./spacedRepetitionService";
+import { checkNewExercise, formatCorrectAnswer } from "./exerciseChecking";
 
-function sameAnswer(expected: string | string[], answer: string | string[]): boolean {
+function sameAnswer(expected: string | string[] | boolean | undefined, answer: string | string[]): boolean {
   const normalize = (value: string) => value.trim().toLowerCase().replace(/[.!?]/g, "");
   if (Array.isArray(expected)) {
     if (!Array.isArray(answer)) return false;
@@ -45,6 +46,8 @@ function xpWithBonus(base: number, subscriptionStatus?: SubscriptionStatus): num
 
 export const progressService = {
   check(exercise: Exercise, answer: string | string[]): boolean {
+    const newResult = checkNewExercise(exercise, answer);
+    if (newResult !== undefined) return newResult;
     return sameAnswer(exercise.correctAnswer, answer);
   },
 
@@ -62,7 +65,7 @@ export const progressService = {
           exerciseId: exercise.id,
           wordId,
           wrongAnswer: answer,
-          correctAnswer: Array.isArray(exercise.correctAnswer) ? exercise.correctAnswer.join(", ") : exercise.correctAnswer,
+          correctAnswer: formatCorrectAnswer(exercise),
           createdAt: new Date().toISOString(),
           repeatCount: 1
         }

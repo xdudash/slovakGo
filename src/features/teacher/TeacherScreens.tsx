@@ -5,6 +5,7 @@ import { Button, Card, Field, PageHeader } from "../../components/ui";
 import { selectCurrentUser, useAppStore } from "../../store/useAppStore";
 import { useT } from "../../i18n";
 import type { Lesson, UserLevel } from "../../types";
+import { toPlainText } from "../../utils/lessonLocale";
 
 export function TeacherLayout() {
   return (
@@ -58,12 +59,12 @@ function Lessons() {
         {data.lessons.map((lesson) => (
           <Card key={lesson.id} className="lesson-card">
             <div className="lesson-copy">
-              <h3>{lesson.title}</h3>
-              <p>{lesson.level} · {lesson.topic} · {lesson.words.length} {t("teacher.lessons.words")} · {lesson.exercises.length} {t("teacher.lessons.exercises")}</p>
+              <h3>{toPlainText(lesson.title)}</h3>
+              <p>{lesson.level} · {toPlainText(lesson.topic)} · {lesson.words.length} {t("teacher.lessons.words")} · {lesson.exercises.length} {t("teacher.lessons.exercises")}</p>
             </div>
             <span className="status-pill">{lesson.isPublished ? t("teacher.lessons.published") : t("teacher.lessons.draft")}</span>
             <Button variant="secondary" onClick={() => navigate(`/teacher/lessons/${lesson.id}/edit`)}>{t("teacher.lessons.edit")}</Button>
-            <Button variant="ghost" onClick={() => upsertLesson({ ...lesson, id: `${lesson.id}-copy-${Date.now()}`, title: `${lesson.title} ${t("teacher.lessons.copy")}`, order: data.lessons.length + 1 })}>{t("teacher.lessons.copy")}</Button>
+            <Button variant="ghost" onClick={() => upsertLesson({ ...lesson, id: `${lesson.id}-copy-${Date.now()}`, title: `${toPlainText(lesson.title)} ${t("teacher.lessons.copy")}`, order: data.lessons.length + 1 })}>{t("teacher.lessons.copy")}</Button>
             <Button variant="ghost" onClick={() => upsertLesson({ ...lesson, isPublished: !lesson.isPublished })}>{lesson.isPublished ? t("teacher.lessons.unpublish") : t("teacher.lessons.publish")}</Button>
             <Button variant="danger" onClick={() => deleteLesson(lesson.id)}>{t("teacher.lessons.delete")}</Button>
           </Card>
@@ -111,7 +112,7 @@ function Editor() {
       ...lesson,
       words: [
         ...lesson.words,
-        { id: `${lesson.id}-word-${lesson.words.length + 1}`, sk: wordSk, uk: wordUk, level: lesson.level, topic: lesson.topic, lessonId: lesson.id }
+        { id: `${lesson.id}-word-${lesson.words.length + 1}`, sk: wordSk, uk: wordUk, level: lesson.level, topic: toPlainText(lesson.topic), lessonId: lesson.id }
       ]
     });
     setWordSk("");
@@ -157,9 +158,9 @@ function Editor() {
     <main className="page-content">
       <PageHeader title={original ? t("teacher.editor.title_edit") : t("teacher.editor.title_new")} />
       <Card className="form-stack">
-        <Field label={t("teacher.editor.field_title")} value={lesson.title} onChange={(event) => setLesson({ ...lesson, title: event.target.value })} />
-        <Field label={t("teacher.editor.field_desc")} value={lesson.description} onChange={(event) => setLesson({ ...lesson, description: event.target.value })} />
-        <Field label={t("teacher.editor.field_topic")} value={lesson.topic} onChange={(event) => setLesson({ ...lesson, topic: event.target.value })} />
+        <Field label={t("teacher.editor.field_title")} value={toPlainText(lesson.title)} onChange={(event) => setLesson({ ...lesson, title: event.target.value })} />
+        <Field label={t("teacher.editor.field_desc")} value={toPlainText(lesson.description)} onChange={(event) => setLesson({ ...lesson, description: event.target.value })} />
+        <Field label={t("teacher.editor.field_topic")} value={toPlainText(lesson.topic)} onChange={(event) => setLesson({ ...lesson, topic: event.target.value })} />
         <label className="field"><span>{t("teacher.editor.field_level")}</span><select value={lesson.level} onChange={(event) => setLesson({ ...lesson, level: event.target.value as UserLevel })}>{["A0", "A1", "A2", "B1", "B2", "C1"].map((level) => <option key={level}>{level}</option>)}</select></label>
         <label className="toggle-row"><input type="checkbox" checked={lesson.isPublished} onChange={(event) => setLesson({ ...lesson, isPublished: event.target.checked })} /> {t("teacher.editor.field_published")}</label>
       </Card>
@@ -199,7 +200,7 @@ function Stats() {
     <main className="page-content">
       <PageHeader title={t("teacher.stats.title")} />
       <Card>
-        {rows.map(({ lesson, attempts }) => <div className="leader-row" key={lesson.id}><strong>{lesson.title}</strong><span>{attempts.length} {t("teacher.stats.attempts")}</span><span>{lesson.exercises.length} {t("teacher.stats.exercises")}</span></div>)}
+        {rows.map(({ lesson, attempts }) => <div className="leader-row" key={lesson.id}><strong>{toPlainText(lesson.title)}</strong><span>{attempts.length} {t("teacher.stats.attempts")}</span><span>{lesson.exercises.length} {t("teacher.stats.exercises")}</span></div>)}
       </Card>
     </main>
   );
