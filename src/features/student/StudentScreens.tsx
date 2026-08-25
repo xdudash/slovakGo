@@ -825,6 +825,11 @@ function LessonScreen() {
   const { t } = useT();
   const lesson = data.lessons.find((item) => item.id === lessonId);
   const { tx, asset } = useLessonLocale(lesson);
+  const resolvedIntroImage = lesson?.introImageRef ? asset(lesson.introImageRef, "images") : undefined;
+  const introImage = resolvedIntroImage ?? (lesson?.id === "lesson-6-a1" ? {
+    src: "/lessons/lesson-1-a0/pokladna-example.jpg",
+    alt: "Словацьке слово pokladňa — каса в магазині",
+  } : undefined);
 
   const theories = (lesson?.theoryScreens ?? []).slice().sort((a, b) => a.order - b.order);
   const hasNewFormat = !!(lesson?.startScreen || theories.length > 0 || lesson?.finalSituation || lesson?.resultScreen);
@@ -1058,6 +1063,19 @@ function LessonScreen() {
         ) : (
           <>
             <div className="lesson-intro-card">
+              {introImage && (
+                <figure className="lesson-intro-figure">
+                  <img
+                    className="lesson-intro-image"
+                    src={introImage.src}
+                    alt={introImage.alt ?? ""}
+                    width="1024"
+                    height="1280"
+                    loading="eager"
+                    decoding="async"
+                  />
+                </figure>
+              )}
               {lesson.intro && <p className="lesson-intro-text">{tx(lesson.intro)}</p>}
               {lesson.words.length > 0 && (
                 <div className="lesson-words-list">

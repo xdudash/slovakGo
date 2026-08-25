@@ -366,6 +366,17 @@ export const seedLessons: Lesson[] = topics.map((spec, index) => {
     isPublished: true,
     createdBy: "user-teacher",
     intro: "Коротко потренуй слова, фрази і реальні відповіді.",
+    ...([0, 5].includes(index) ? {
+      introImageRef: "first-lesson-example",
+      assets: {
+        images: {
+          "first-lesson-example": {
+            src: "/lessons/lesson-1-a0/pokladna-example.jpg",
+            alt: "Словацьке слово pokladňa — каса в магазині"
+          }
+        }
+      }
+    } : {}),
     words,
     exercises: makeExercises(lessonId, words),
     completionMessage: "Урок завершено. Слова додані до словника.",

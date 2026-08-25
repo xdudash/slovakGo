@@ -420,6 +420,8 @@ export interface Lesson {
   isLocked?: boolean;
   createdBy?: string;
   intro?: LocalizedText;
+  /** Optional repository-hosted image shown above the legacy lesson intro. */
+  introImageRef?: string;
   words: Word[];
   exercises: Exercise[];
   completionMessage?: LocalizedText;

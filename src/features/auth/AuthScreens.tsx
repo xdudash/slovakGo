@@ -65,7 +65,7 @@ function AuthShell({ title, text, children }: { title: string; text: string; chi
 
 export function Login() {
   const navigate = useNavigate();
-  const { login, currentUserId, authError } = useAppStore();
+  const { login, loginAsUser, resetLocal, currentUserId, authError } = useAppStore();
   const { t } = useT();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -94,6 +94,18 @@ export function Login() {
 
   return (
     <AuthShell title={t("auth.login_title")} text={t("auth.login_subtitle")}>
+      {import.meta.env.DEV && (
+        <Button
+          type="button"
+          onClick={() => {
+            resetLocal();
+            loginAsUser("user-student");
+            window.location.assign(`${import.meta.env.BASE_URL}app/lesson/lesson-1-a0`);
+          }}
+        >
+          Открыть первый урок
+        </Button>
+      )}
       <form onSubmit={submit} className="form-stack" noValidate>
         <Field label={t("auth.email")} type="email" value={email} autoComplete="email" autoFocus onChange={(event) => setEmail(event.target.value)} />
         <Field label={t("auth.password")} type="password" value={password} autoComplete="current-password" onChange={(event) => setPassword(event.target.value)} />
