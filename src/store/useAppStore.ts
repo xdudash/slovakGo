@@ -67,6 +67,18 @@ function nextLessonId(lessons: Lesson[], completed: string[], level: UserLevel):
   return lessonService.byLevel(lessons, level).find((lesson) => !completed.includes(lesson.id))?.id;
 }
 
+function isCachedLessonCatalogComplete(version: string | undefined, data: AppData, role: UserRole | undefined): boolean {
+  if (!version || !role) return false;
+  const match = /^(all|published):(\d+):/.exec(version);
+  if (!match) return false;
+  const expectedScope = role === "teacher" || role === "admin" ? "all" : "published";
+  if (match[1] !== expectedScope) return false;
+  const localCount = expectedScope === "all"
+    ? data.lessons.length
+    : data.lessons.filter((lesson) => lesson.isPublished).length;
+  return localCount === Number(match[2]);
+}
+
 function mergeRemoteState(data: AppData, remote: RemoteState): AppData {
   const userId = remote.user.id;
   const users = data.users.filter((user) => user.id !== userId);
@@ -210,9 +222,17 @@ export const useAppStore = create<AppStore>((set, get) => ({
   },
 
   async refreshLessons() {
-    if (!get().currentUserId) return;
+    const { currentUserId, data: currentData } = get();
+    if (!currentUserId) return;
     try {
-      const currentVersion = storageService.getLessonVersion();
+      const role = currentData.users.find((user) => user.id === currentUserId)?.role;
+      const storedVersion = storageService.getLessonVersion();
+      // The version key and lesson payload live in separate localStorage writes.
+      // If the payload was truncated/reset, force a full catalog response instead
+      // of accepting an "unchanged" response for an incomplete local catalog.
+      const currentVersion = isCachedLessonCatalogComplete(storedVersion, currentData, role)
+        ? storedVersion
+        : undefined;
       const response = await apiClient.lessonsPull(currentVersion);
       if (response.unchanged) return;
       const lessons = response.lessons as Lesson[] | undefined;

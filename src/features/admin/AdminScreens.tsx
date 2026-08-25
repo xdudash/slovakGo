@@ -156,14 +156,30 @@ function LevelPill({ level }: { level: UserLevel }) {
 }
 
 function LessonsScreen() {
-  const { data, upsertLesson, deleteLesson } = useAdminData();
+  const { data, upsertLesson, deleteLesson, refreshLessons } = useAdminData();
   const navigate = useNavigate();
   const [search,     setSearch]     = useState("");
   const [filterLvl,  setFilterLvl]  = useState<UserLevel | "all">("all");
   const [filterPub,  setFilterPub]  = useState<"all" | "published" | "draft">("all");
   const [importState, setImportState] = useState<ImportState>({ phase: "idle" });
   const [deleteId,   setDeleteId]   = useState<string | null>(null);
+  const [refreshing, setRefreshing] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
+
+  // The lesson list is served from a browser-cached delta sync (see
+  // useAppStore.refreshLessons) that only runs after login/register — opening
+  // this screen mid-session could otherwise keep showing a stale, smaller set
+  // than what's actually in the DB. Force a refresh on mount.
+  useEffect(() => {
+    refreshLessons();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  async function handleRefresh() {
+    setRefreshing(true);
+    await refreshLessons();
+    setRefreshing(false);
+  }
 
   const lessons = data.lessons
     .filter((l) => filterLvl === "all" || l.level === filterLvl)
@@ -206,6 +222,9 @@ function LessonsScreen() {
           <input placeholder="Пошук за назвою або темою…" value={search} onChange={(e) => setSearch(e.target.value)} />
         </div>
         <div className="admin-toolbar-right">
+          <Button variant="ghost" onClick={handleRefresh} disabled={refreshing}>
+            <RefreshCw size={15} className={refreshing ? "spin" : ""} /> Оновити
+          </Button>
           <Button variant="secondary" onClick={() => fileRef.current?.click()}>
             <Upload size={15} /> Імпорт JSON
           </Button>

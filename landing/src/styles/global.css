@@ -1451,6 +1451,9 @@ details.faq-accordion-item[open] summary::after {
    Landing Page Styles (Premium)
 ═══════════════════════════════════════════════════════════════════ */
 
+/* Keep the homepage redesign from overriding the shared blog/FAQ styles. */
+@scope (body.home-page) {
+
 @keyframes heroFadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -2320,4 +2323,5 @@ details.faq-accordion-item[open] summary::after {
     flex-direction: column;
     gap: 20px;
   }
+}
 }

@@ -29,7 +29,7 @@ if (_FCM.apiKey && _FCM.apiKey.indexOf('%%') === -1) {
   });
 }
 
-const CACHE_VERSION = 'slovakgo-v8'; // Bumped cache version
+const CACHE_VERSION = 'slovakgo-v9';
 const STATIC_CACHE  = `${CACHE_VERSION}-static`;
 const AUDIO_CACHE   = `${CACHE_VERSION}-audio`;
 
@@ -47,7 +47,9 @@ const PRECACHE_URLS = [
 // Precache app shell; stay in 'installed' state until SKIP_WAITING message
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(STATIC_CACHE).then((cache) => cache.addAll(PRECACHE_URLS))
+    caches.open(STATIC_CACHE)
+      .then((cache) => cache.addAll(PRECACHE_URLS))
+      .then(() => self.skipWaiting())
   );
 });
 
