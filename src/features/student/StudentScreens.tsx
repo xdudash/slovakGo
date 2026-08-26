@@ -25,6 +25,7 @@ import { track } from "../../services/analytics";
 import { resolveText } from "../../utils/lessonLocale";
 import { useLessonLocale } from "../../hooks/useLessonLocale";
 import { formatCorrectAnswer } from "../../services/exerciseChecking";
+import { soundService } from "../../services/soundService";
 import { OptionListExercise } from "./exercises/OptionListExercise";
 import { TrueFalseExercise } from "./exercises/TrueFalseExercise";
 import { BlankFillExercise } from "./exercises/BlankFillExercise";
@@ -897,6 +898,7 @@ function LessonScreen() {
     // The free preview ends here — this is the conversion moment worth watching.
     if (opensTrialAfterLesson) track("section_complete", { level: lesson!.level });
     const cd: CompletionData = { xp, correct, total: finalRecords.length, wrong: buildWrong(finalRecords) };
+    soundService.play("complete", user!.settings.soundEnabled);
     if (lesson!.resultScreen) {
       setCompletionData(cd);
       setPhase("result");
@@ -945,6 +947,7 @@ function LessonScreen() {
     const record = { exerciseId: exercise.id, answer, correct, answeredAt: new Date().toISOString() };
     setRecords((items) => [...items.filter((item) => item.exerciseId !== exercise.id), record]);
     setFeedback(correct ? "correct" : "wrong");
+    soundService.play(correct ? "correct" : "wrong", user!.settings.soundEnabled);
     if (!correct) recordWrongAnswer(lesson!, exercise.id, String(answer));
   }
 
@@ -964,11 +967,15 @@ function LessonScreen() {
     if (isInteractiveFinal(sit)) {
       const step = sit.steps[finalStepIndex];
       const chosen = step.options.find((o) => (o.sk ?? tx(o.text)) === finalAnswer);
-      setFinalFeedback(chosen?.correct ? "correct" : "wrong");
+      const correct = !!chosen?.correct;
+      setFinalFeedback(correct ? "correct" : "wrong");
+      soundService.play(correct ? "correct" : "wrong", user!.settings.soundEnabled);
       return;
     }
     const correctIdx = parseInt(sit.correctAnswer, 10) - 1;
-    setFinalFeedback(finalAnswer === sit.options[correctIdx] ? "correct" : "wrong");
+    const correct = finalAnswer === sit.options[correctIdx];
+    setFinalFeedback(correct ? "correct" : "wrong");
+    soundService.play(correct ? "correct" : "wrong", user!.settings.soundEnabled);
   }
 
   function advanceFinal() {
@@ -1063,6 +1070,7 @@ function LessonScreen() {
         ) : (
           <>
             <div className="lesson-intro-card">
+              <h1 className="lesson-intro-title">{tx(lesson.title)}</h1>
               {introImage && (
                 <figure className="lesson-intro-figure">
                   <img
@@ -2117,7 +2125,7 @@ function ProfileScreen() {
           </button>
           <input ref={fileRef} type="file" accept="image/*" className="sr-only" onChange={handleFileChange} />
           <div>
-            <h2>{user.name}</h2>
+            <h1>{user.name}</h1>
             <div className="profile-hero-meta">
               <span className="status-pill">{user.level}</span>
               <span className={`sub-badge sub-badge--${user.subscriptionStatus}`}>{t(`student.subscription.${user.subscriptionStatus}`)}</span>

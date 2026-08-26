@@ -37,6 +37,7 @@
   --shadow:       var(--shadow-md);
   --radius:       12px;
   --orange:       #ff5a2e;
+  --orange-ink:   #9b341d;
   --blue:         #3d6dde;
 }
 
@@ -69,6 +70,11 @@ textarea {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+}
+
+:where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
 }
 
 a {
@@ -330,7 +336,7 @@ textarea,
 
 .field input::placeholder,
 .search-box input::placeholder {
-  color: #b0abc8;
+  color: #65607f;
 }
 
 textarea {
@@ -458,7 +464,7 @@ textarea:focus,
 .test-accounts button,
 .chip,
 .icon-button {
-  min-height: 42px;
+  min-height: 44px;
   border: 1.5px solid var(--border);
   border-radius: var(--radius-pill);
   background: linear-gradient(180deg, #ffffff 0%, #fafaff 100%);
@@ -934,6 +940,31 @@ textarea:focus,
   line-height: 1.5;
 }
 
+.lesson-intro-title {
+  margin: 0 0 12px;
+  color: var(--fg);
+  font-size: 1.45rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.stat-chip.level-link,
+.lesson-top button,
+.btn-go {
+  min-height: 44px;
+}
+
+.lesson-top button {
+  width: 44px;
+  height: 44px;
+}
+
+.streak-risk-banner,
+.streak-risk-banner strong {
+  color: var(--orange-ink);
+}
+
 .lesson-words-list {
   display: grid;
   gap: 10px;
@@ -1325,8 +1356,8 @@ textarea:focus,
 .word-detail-stats span:last-child  { color: var(--red); }
 
 .icon-button {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -1521,7 +1552,7 @@ textarea:focus,
   min-width: 0;
 }
 
-.profile-hero-info h2 {
+.profile-hero-info h1 {
   font-size: 1.2rem;
   margin: 0;
   white-space: nowrap;
@@ -2571,27 +2602,16 @@ textarea:focus,
 .unit-card {
   border-radius: var(--radius-card);
   padding: 22px 20px;
-  background: linear-gradient(135deg, var(--accent) 0%, #8b74f0 100%);
+  background: var(--accent);
   color: #fff;
   display: grid;
   gap: 6px;
   position: relative;
   overflow: hidden;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.20),
-    0 6px 0 #4a38c0,
-    0 12px 30px rgba(74, 56, 192, 0.30);
+  box-shadow: 0 8px 22px rgba(74, 56, 192, 0.18);
 }
 .unit-card::after {
-  content: "";
-  position: absolute;
-  right: -20px;
-  top: -20px;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  pointer-events: none;
+  content: none;
 }
 .unit-card h2 {
   margin: 0;
@@ -2729,13 +2749,9 @@ textarea:focus,
 
 /* ── Completed: green 3D ── */
 .lesson-node.completed {
-  background: linear-gradient(155deg, #52d99a 0%, #1a9660 100%);
+  background: var(--success);
   color: #fff;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.35),
-    inset 0 -2px 0 rgba(0, 0, 0, 0.12),
-    0 5px 0 #0d7040,
-    0 8px 20px rgba(13, 112, 64, 0.35);
+  box-shadow: 0 5px 14px rgba(13, 112, 64, 0.22);
 }
 .lesson-node.completed:active {
   box-shadow:
@@ -2747,13 +2763,9 @@ textarea:focus,
 
 /* ── Active/current: yellow 3D ── */
 .lesson-node.active {
-  background: linear-gradient(155deg, #ffe55c 0%, #edb000 100%);
+  background: var(--yellow);
   color: var(--fg);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.55),
-    inset 0 -2px 0 rgba(0, 0, 0, 0.08),
-    0 5px 0 #b88500,
-    0 8px 24px rgba(184, 133, 0, 0.42);
+  box-shadow: 0 5px 16px rgba(184, 133, 0, 0.24);
 }
 .lesson-node.active:active {
   box-shadow:
@@ -2765,12 +2777,9 @@ textarea:focus,
 
 /* ── Available: white/purple 3D ── */
 .lesson-node.available {
-  background: linear-gradient(155deg, #ffffff 0%, #f0edff 100%);
+  background: var(--surface);
   color: var(--accent);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.95),
-    0 5px 0 #c9bffd,
-    0 8px 20px rgba(111, 87, 232, 0.22);
+  box-shadow: 0 5px 14px rgba(111, 87, 232, 0.16);
 }
 .lesson-node.available:active {
   box-shadow:
@@ -2781,13 +2790,10 @@ textarea:focus,
 
 /* ── Locked: muted 3D ── */
 .lesson-node.locked {
-  background: linear-gradient(155deg, #f5f3ff 0%, #e8e3f8 100%);
+  background: #efedf7;
   color: #c0b8d8;
   cursor: default;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.70),
-    0 4px 0 #d6d0f0,
-    0 6px 12px rgba(33, 25, 70, 0.08);
+  box-shadow: none;
 }
 .lesson-node.locked:active { transform: none; }
 
@@ -2871,7 +2877,7 @@ textarea:focus,
 
 /* Go / start button */
 .btn-go {
-  min-height: 40px;
+  min-height: 44px;
   padding: 0 18px;
   border-radius: var(--radius-pill);
   background: var(--yellow);
@@ -3880,7 +3886,8 @@ textarea:focus,
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 5px 11px;
+  min-height: 44px;
+  padding: 9px 13px;
   border-radius: 8px;
   background: var(--purple);
   color: #fff;
@@ -3903,7 +3910,8 @@ textarea:focus,
   align-items: center;
   justify-content: center;
   gap: 7px;
-  padding: 10px;
+  min-height: 44px;
+  padding: 10px 14px;
   border-radius: 10px;
   background: transparent;
   border: 1.5px solid var(--purple);
@@ -3940,9 +3948,10 @@ textarea:focus,
   align-items: center;
   justify-content: center;
   gap: 7px;
-  padding: 12px;
+  min-height: 44px;
+  padding: 12px 14px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #6f57e8, #8b74f0);
+  background: var(--accent);
   color: #fff;
   border: none;
   cursor: pointer;
@@ -5777,6 +5786,35 @@ textarea:focus,
   .theory-pr-row { grid-template-columns: 44px 72px minmax(0, 1fr); padding-inline: 9px; font-size: 0.86rem; }
   .lesson-result-stats { grid-template-columns: 1fr; }
   .reminder-optin { align-items: flex-start; flex-wrap: wrap; }
+}
+
+@media (pointer: coarse) {
+  .bottom-nav-item,
+  .stat-chip,
+  .btn-go,
+  .lesson-top button,
+  .icon-button,
+  .chip {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@media (forced-colors: active) {
+  :where(button, a, input, select, textarea, [tabindex]):focus-visible {
+    outline: 3px solid Highlight;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 .badge {

@@ -56,7 +56,8 @@ function AppLoadingScreen({ message = "Готуємо твій навчальн�
 
 export function App() {
   const location = useLocation();
-  const [restoring, setRestoring] = useState(true);
+  // Cached sessions render immediately; the server refresh stays a background task.
+  const [restoring, setRestoring] = useState(() => !useAppStore.getState().currentUserId);
   const autoRestoreSession = useAppStore((s) => s.autoRestoreSession);
 
   useEffect(() => {
