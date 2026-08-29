@@ -31,7 +31,7 @@ export function OptionListExercise({ exercise, lesson, answer, setAnswer, disabl
   }
 
   return (
-    <div className="option-list">
+    <div className={`option-list${isMulti ? " option-list--multi" : ""}`}>
       {options.map((option) => {
         const label = option.sk ?? tx(option.text);
         const isChosen = chosen.includes(option.id);

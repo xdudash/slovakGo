@@ -225,6 +225,21 @@ export function checkNewExercise(exercise: Exercise, answer: string | string[]):
   return checker ? checker(exercise, answer) : undefined;
 }
 
+/**
+ * Whether a legacy option-list label counts as a correct answer.
+ *
+ * Legacy exercises grade through `sameAnswer` in progressService, which compares
+ * the raw `correctAnswer` field under the same normalization as `normalize`
+ * here. Reusing that rule keeps the post-check highlight from ever contradicting
+ * the grade the learner was just given.
+ */
+export function isLegacyCorrectOption(exercise: Exercise, option: string): boolean {
+  const expected = exercise.correctAnswer;
+  if (expected === undefined) return false;
+  if (Array.isArray(expected)) return expected.some((entry) => normalizedEquals(String(entry), option));
+  return normalizedEquals(String(expected), option);
+}
+
 /** Human-readable "correct answer" for mistake review / wrong-answer summaries. */
 export function formatCorrectAnswer(exercise: Exercise): string {
   if (isNewStyleTrueFalse(exercise)) {

@@ -48,9 +48,9 @@ export function TrueFalseExercise({ exercise, lesson, answer, setAnswer, disable
     <div>
       {exercise.text && <div className="card exercise-text-block">{tx(exercise.text)}</div>}
       <div className="sk exercise-statement">{tx(exercise.statement)}</div>
-      <div className="option-list">
-        <button type="button" className={`option${chosen === "true" ? " active" : ""}`} disabled={disabled} onClick={() => setAnswer("true")}>Pravda</button>
-        <button type="button" className={`option${chosen === "false" ? " active" : ""}`} disabled={disabled} onClick={() => setAnswer("false")}>Nepravda</button>
+      <div className="option-list option-list--binary">
+        <button type="button" className={`option option--true${chosen === "true" ? " active" : ""}`} disabled={disabled} onClick={() => setAnswer("true")}>Pravda</button>
+        <button type="button" className={`option option--false${chosen === "false" ? " active" : ""}`} disabled={disabled} onClick={() => setAnswer("false")}>Nepravda</button>
       </div>
     </div>
   );

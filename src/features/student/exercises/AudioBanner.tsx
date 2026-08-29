@@ -16,10 +16,13 @@ export function AudioBanner({ lesson, audioRef, soundEnabled }: Props) {
   const resolved = asset(audioRef, "audio");
   if (!resolved) return null;
 
+  const isPlaying = playingSrc === resolved.src;
+
   return (
-    <button type="button" className={`audio-banner${playingSrc === resolved.src ? " playing" : ""}`} onClick={() => play(resolved.src)}>
-      <Volume2 size={18} />
-      <span>{playingSrc === resolved.src ? "Відтворення…" : "Прослухати"}</span>
+    <button type="button" className={`audio-banner${isPlaying ? " playing" : ""}`} onClick={() => play(resolved.src)}>
+      <Volume2 size={20} aria-hidden="true" />
+      <span>{isPlaying ? "Відтворення…" : "Прослухати"}</span>
+      <span className="audio-bars" aria-hidden="true"><i /><i /><i /><i /></span>
     </button>
   );
 }

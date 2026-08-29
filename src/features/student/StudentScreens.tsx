@@ -24,7 +24,7 @@ import { accessService } from "../../services/accessService";
 import { track } from "../../services/analytics";
 import { resolveText } from "../../utils/lessonLocale";
 import { useLessonLocale } from "../../hooks/useLessonLocale";
-import { formatCorrectAnswer } from "../../services/exerciseChecking";
+import { formatCorrectAnswer, isLegacyCorrectOption } from "../../services/exerciseChecking";
 import { soundService } from "../../services/soundService";
 import { OptionListExercise } from "./exercises/OptionListExercise";
 import { TrueFalseExercise } from "./exercises/TrueFalseExercise";
@@ -545,6 +545,18 @@ function MatchPairsExercise({ exercise, setAnswer }: { exercise: Exercise; setAn
   );
 }
 
+/**
+ * Post-check colouring for the legacy option lists, matching what
+ * OptionListExercise already does for the new formats: the right answer turns
+ * green, and a wrong pick turns red. Driven purely by `disabled` (which the
+ * lesson screen flips once an answer is graded) plus the exercise itself.
+ */
+function legacyRevealClass(exercise: Exercise, option: string, answer: string | string[], disabled: boolean): string {
+  if (!disabled) return "";
+  if (isLegacyCorrectOption(exercise, option)) return " option--correct";
+  return answer === option ? " option--wrong" : "";
+}
+
 function ExerciseView({ exercise, lesson, answer, setAnswer, t, disabled = false, soundEnabled = false }: { exercise: Exercise; lesson?: Lesson; answer: string | string[]; setAnswer: (value: string | string[]) => void; t: (key: string) => string; disabled?: boolean; soundEnabled?: boolean }) {
   if (exercise.type === "match_pairs") {
     return <MatchPairsExercise key={exercise.id} exercise={exercise} setAnswer={(v) => setAnswer(v)} />;
@@ -559,7 +571,7 @@ function ExerciseView({ exercise, lesson, answer, setAnswer, t, disabled = false
     return (
       <div className="option-list">
         {legacyOptions.map((option) => (
-          <button className={`option ${answer === option ? "active" : ""}`} type="button" key={option} onClick={() => setAnswer(option)} disabled={disabled}>{option}</button>
+          <button className={`option ${answer === option ? "active" : ""}${legacyRevealClass(exercise, option, answer, disabled)}`} type="button" key={option} onClick={() => setAnswer(option)} disabled={disabled}>{option}</button>
         ))}
       </div>
     );
@@ -627,7 +639,7 @@ function ExerciseView({ exercise, lesson, answer, setAnswer, t, disabled = false
     <div className={`option-list${isContextChoice ? " option-list--context" : ""}${isResponseChoice ? " option-list--responses" : ""}`}>
       {legacyOptions.map((option, optionIndex) => (
         <button
-          className={`option ${answer === option ? "active" : ""}`}
+          className={`option ${answer === option ? "active" : ""}${legacyRevealClass(exercise, option, answer, disabled)}`}
           type="button"
           key={option}
           disabled={disabled}
