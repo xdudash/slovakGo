@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { Arg } from "./core";
 import {
-  exec, query, queryOne, nowIso, safeJson,
+  exec, query, queryOne, nowIso, safeJson, ensureCol,
   requireUid, respond, fail, rowToUser, ensureProgress, checkRole
 } from "./core";
 
@@ -250,7 +250,17 @@ export async function handleAdminUserPatch(req: VercelRequest, res: VercelRespon
   const sets: string[] = []; const vals: Arg[] = [];
   if ("role" in body)               { sets.push("role = ?");       vals.push(String(body.role)); }
   if ("isBlocked" in body)          { sets.push("is_blocked = ?"); vals.push(body.isBlocked ? 1 : 0); }
-  if ("subscriptionStatus" in body) { sets.push("sub_status = ?"); vals.push(String(body.subscriptionStatus)); }
+  if ("subscriptionStatus" in body) {
+    const nextStatus = String(body.subscriptionStatus);
+    sets.push("sub_status = ?"); vals.push(nextStatus);
+    await ensureCol("users", "sub_expires_at", "TEXT");
+    // A manual grant has no Stripe subscription behind it. If the learner ever
+    // had one that lapsed, the stale sub_expires_at is still in the row, and
+    // handleSyncPull knocks a "plus" with an expired date straight back to
+    // "expired" — so the admin sees the grant applied while the learner stays
+    // locked out. Clear the date along with the grant.
+    if (nextStatus === "plus") sets.push("sub_expires_at = NULL");
+  }
   if ("level" in body)              { sets.push("level = ?");      vals.push(String(body.level)); }
   if (!sets.length) return respond(res, { ok: true });
 

@@ -148,6 +148,13 @@ async function makeCookie(uid: string) {
   return `sl_session=${token}`;
 }
 
+/** The IP rate limiter is global to the suite; clear it so a test's own auth
+ *  calls are not refused because of how many ran before it. */
+async function resetRateLimit() {
+  const db = createClient({ url: `file:${TEST_DB}` });
+  await db.execute("DELETE FROM login_attempts");
+}
+
 // ─── Global setup / teardown ─────────────────────────────────────────────────
 beforeAll(async () => {
   const db = createClient({ url: `file:${TEST_DB}` });
@@ -676,6 +683,78 @@ describe("GET /admin/stats", () => {
     expect(typeof summary.avgXP).toBe("number");
     expect(Array.isArray(body.dailyRegistrations)).toBe(true);
     expect(typeof body.levels).toBe("object");
+  });
+});
+
+describe("POST /admin/users/:id", () => {
+  /**
+   * Regression: the admin panel granted Plus by writing sub_status alone. A
+   * learner whose Stripe subscription had lapsed still carried a past
+   * sub_expires_at, and handleSyncPull knocks a "plus" with an expired date
+   * back to "expired" — so the grant looked applied in the panel while the
+   * learner stayed locked out.
+   */
+  it("keeps a manually granted Plus alive through the next sync pull", async () => {
+    const adminCookie = await makeCookie("admin-1");
+    await resetRateLimit();
+
+    const { headers } = await call("POST", ["auth", "register"], {
+      body: { email: "lapsed@example.com", password: "Secret123", name: "Lapsed" },
+    });
+    const userCookie = String(headers["Set-Cookie"] ?? "").split(";")[0];
+
+    const db = createClient({ url: `file:${TEST_DB}` });
+    const row = await db.execute({
+      sql: "SELECT id FROM users WHERE email = ? LIMIT 1",
+      args: ["lapsed@example.com"],
+    });
+    const targetId = String(row.rows[0].id);
+
+    // Simulate the lapsed subscription the panel trips over.
+    await db.execute("ALTER TABLE users ADD COLUMN sub_expires_at TEXT").catch(() => { /* exists */ });
+    await db.execute({
+      sql: "UPDATE users SET sub_status = 'expired', sub_expires_at = ? WHERE id = ?",
+      args: ["2020-01-01T00:00:00Z", targetId],
+    });
+
+    const patch = await call("POST", ["admin", "users", targetId], {
+      cookie: adminCookie,
+      body: { subscriptionStatus: "plus" },
+    });
+    expect(patch.status).toBe(200);
+
+    const pull = await call("GET", ["sync", "pull"], { cookie: userCookie, query: { includeLessons: "0" } });
+    expect(pull.status).toBe(200);
+    expect((pull.body.user as Record<string, unknown>).subscriptionStatus).toBe("plus");
+  });
+
+  it("still applies an unblock", async () => {
+    const adminCookie = await makeCookie("admin-1");
+    await resetRateLimit();
+
+    const registered = await call("POST", ["auth", "register"], {
+      body: { email: "unblock-flow@example.com", password: "Secret123", name: "Blocked" },
+    });
+    expect(registered.status).toBe(201);
+
+    const db = createClient({ url: `file:${TEST_DB}` });
+    const row = await db.execute({
+      sql: "SELECT id FROM users WHERE email = ? LIMIT 1",
+      args: ["unblock-flow@example.com"],
+    });
+    const targetId = String(row.rows[0].id);
+
+    await call("POST", ["admin", "users", targetId], { cookie: adminCookie, body: { isBlocked: true } });
+    const blocked = await call("POST", ["auth", "login"], {
+      body: { email: "unblock-flow@example.com", password: "Secret123" },
+    });
+    expect(blocked.status).toBeGreaterThanOrEqual(400);
+
+    await call("POST", ["admin", "users", targetId], { cookie: adminCookie, body: { isBlocked: false } });
+    const restored = await call("POST", ["auth", "login"], {
+      body: { email: "unblock-flow@example.com", password: "Secret123" },
+    });
+    expect(restored.status).toBe(200);
   });
 });
 

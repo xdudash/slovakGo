@@ -3626,6 +3626,23 @@ textarea:focus,
 
 .admin-user-actions { display: flex; gap: 6px; flex-shrink: 0; flex-wrap: wrap; }
 
+/* The row packs avatar + identity + badges + stats + three action chips into a
+   single non-shrinking line. Below ~720px that overflows the viewport and the
+   action chips end up off-screen with no way to reach them, so the row folds:
+   identity on the first line, controls on their own full-width line. */
+@media (max-width: 720px) {
+  .admin-user-row {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    row-gap: 10px;
+  }
+  .admin-user-avatar  { order: 1; }
+  .admin-user-info    { order: 2; flex: 1 1 auto; }
+  .admin-user-badges  { order: 3; flex-wrap: wrap; justify-content: flex-end; }
+  .admin-user-stats   { order: 4; flex-direction: row; align-items: center; gap: 10px; }
+  .admin-user-actions { order: 5; flex: 1 1 100%; }
+}
+
 /* User detail */
 .admin-detail-row {
   display: flex;
