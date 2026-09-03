@@ -5,9 +5,15 @@ import { checkNewExercise, formatCorrectAnswer } from "./exerciseChecking";
 
 function sameAnswer(expected: string | string[] | boolean | undefined, answer: string | string[]): boolean {
   const normalize = (value: string) => value.trim().toLowerCase().replace(/[.!?]/g, "");
+  if (expected === undefined || expected === null) return false;
   if (Array.isArray(expected)) {
-    if (!Array.isArray(answer)) return false;
-    return expected.map(normalize).sort().join("|") === answer.map(normalize).sort().join("|");
+    if (Array.isArray(answer)) {
+      return expected.map(normalize).sort().join("|") === answer.map(normalize).sort().join("|");
+    }
+    return expected.some((item) => normalize(String(item)) === normalize(String(answer)));
+  }
+  if (Array.isArray(answer)) {
+    return answer.length === 1 && normalize(String(answer[0])) === normalize(String(expected));
   }
   return normalize(String(answer)) === normalize(String(expected));
 }

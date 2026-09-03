@@ -66,7 +66,16 @@ function checkBlanks(exercise: Exercise, answer: string | string[]): boolean {
     case "fill_blank":
     case "listen_fill": {
       const chosen = Array.isArray(answer) ? answer[0] : answer;
-      return (exercise.acceptedAnswers ?? []).some((a) => normalizedEquals(a, chosen ?? ""));
+      if (exercise.acceptedAnswers && exercise.acceptedAnswers.length > 0) {
+        return exercise.acceptedAnswers.some((a) => normalizedEquals(a, chosen ?? ""));
+      }
+      if (exercise.correctAnswer !== undefined) {
+        if (Array.isArray(exercise.correctAnswer)) {
+          return exercise.correctAnswer.some((a) => normalizedEquals(String(a), chosen ?? ""));
+        }
+        return normalizedEquals(String(exercise.correctAnswer), chosen ?? "");
+      }
+      return false;
     }
     case "drag_to_blank": {
       const chosen = Array.isArray(answer) ? answer[0] : answer;
@@ -219,8 +228,18 @@ export function isNewStyleTrueFalse(exercise: Exercise): boolean {
   return exercise.type === "true_false" && exercise.statement !== undefined;
 }
 
+/** New-format `fill_blank` (has structured sentence or acceptedAnswers). */
+export function isNewStyleFillBlank(exercise: Exercise): boolean {
+  return (
+    exercise.type === "fill_blank" &&
+    (exercise.sentence !== undefined || (Array.isArray(exercise.acceptedAnswers) && exercise.acceptedAnswers.length > 0))
+  );
+}
+
 export function checkNewExercise(exercise: Exercise, answer: string | string[]): boolean | undefined {
   if (isNewStyleTrueFalse(exercise)) return checkTrueFalse(exercise, answer);
+  if (exercise.type === "true_false") return undefined;
+  if (exercise.type === "fill_blank" && !isNewStyleFillBlank(exercise)) return undefined;
   const checker = exerciseCheckers[exercise.type];
   return checker ? checker(exercise, answer) : undefined;
 }
@@ -259,7 +278,14 @@ export function formatCorrectAnswer(exercise: Exercise): string {
     case "real_message":
     case "listen_choice": {
       const options = (exercise.options ?? []) as ExerciseOption[];
-      return options.filter((o) => o.correct).map(optionLabel).join(", ");
+      const correct = options.filter((o) => o.correct).map(optionLabel);
+      if (correct.length > 0) return correct.join(", ");
+      if (exercise.correctAnswer !== undefined) {
+        return Array.isArray(exercise.correctAnswer)
+          ? exercise.correctAnswer.join(", ")
+          : String(exercise.correctAnswer);
+      }
+      return "";
     }
     case "true_false_list":
       return (exercise.statements ?? []).map((s) => `${s.sk}: ${s.correct ? "Pravda" : "Nepravda"}`).join("; ");
@@ -267,8 +293,17 @@ export function formatCorrectAnswer(exercise: Exercise): string {
     case "listen_fill":
     case "dictation":
     case "correct_error":
-    case "transformation":
-      return (exercise.acceptedAnswers ?? []).join(", ");
+    case "transformation": {
+      if (exercise.acceptedAnswers && exercise.acceptedAnswers.length > 0) {
+        return exercise.acceptedAnswers.join(", ");
+      }
+      if (exercise.correctAnswer !== undefined) {
+        return Array.isArray(exercise.correctAnswer)
+          ? exercise.correctAnswer.join(", ")
+          : String(exercise.correctAnswer);
+      }
+      return "";
+    }
     case "drag_to_blank":
       return exercise.correct ?? "";
     case "dropdown_blank":

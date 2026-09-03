@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { isLegacyCorrectOption } from './exerciseChecking';
+import { formatCorrectAnswer, isLegacyCorrectOption } from './exerciseChecking';
 import { progressService } from './progressService';
 import type { Exercise } from '../types';
 
@@ -50,5 +50,34 @@ describe('isLegacyCorrectOption', () => {
     for (const option of ex.options as string[]) {
       expect(isLegacyCorrectOption(ex, option)).toBe(progressService.check(ex, option));
     }
+  });
+
+  it('agrees with the grader on legacy fill_blank options and formats the answer', () => {
+    const ex = legacyExercise({
+      type: 'fill_blank',
+      options: ['idem pešo', 'idem do práce', 'ráno idem do práce', 'nejdem do práce'],
+      correctAnswer: 'idem pešo',
+    });
+    expect(progressService.check(ex, 'idem pešo')).toBe(true);
+    expect(progressService.check(ex, 'idem do práce')).toBe(false);
+    for (const option of ex.options as string[]) {
+      expect(isLegacyCorrectOption(ex, option)).toBe(progressService.check(ex, option));
+    }
+    expect(formatCorrectAnswer(ex)).toBe('idem pešo');
+  });
+
+  it('agrees with the grader when correctAnswer is an array of acceptable answers', () => {
+    const ex = legacyExercise({
+      type: 'fill_blank',
+      options: ['káva', 'čaj', 'voda'],
+      correctAnswer: ['káva', 'čaj'],
+    });
+    expect(progressService.check(ex, 'čaj')).toBe(true);
+    expect(progressService.check(ex, 'káva')).toBe(true);
+    expect(progressService.check(ex, 'voda')).toBe(false);
+    for (const option of ex.options as string[]) {
+      expect(isLegacyCorrectOption(ex, option)).toBe(progressService.check(ex, option));
+    }
+    expect(formatCorrectAnswer(ex)).toBe('káva, čaj');
   });
 });

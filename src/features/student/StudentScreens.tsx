@@ -1188,7 +1188,12 @@ function LessonScreen() {
           </Card>
           <div className={`lesson-feedback ${feedback || ""}`}>
             {feedback === "correct" ? t("student.lesson.correct") : null}
-            {feedback === "wrong" ? `${t("student.lesson.wrong_prefix")} ${formatCorrectAnswer(exercise)}. ${tx(exercise.explanation)}` : null}
+            {feedback === "wrong" ? (
+              [
+                formatCorrectAnswer(exercise) ? `${t("student.lesson.wrong_prefix")} ${formatCorrectAnswer(exercise)}.` : null,
+                exercise.explanation ? tx(exercise.explanation) : null
+              ].filter(Boolean).join(" ") || t("student.lesson.wrong_prefix")
+            ) : null}
           </div>
           <div className="lesson-bottom">
             {!feedback
