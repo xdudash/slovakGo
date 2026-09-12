@@ -2,9 +2,10 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://slovakgo.local/schema/lesson.schema.json",
   "title": "SlovakGO Universal Lesson",
-  "description": "Universal import contract for SlovakGO lessons A1-C2. Pedagogical rules and mechanic definitions are in LESSON_JSON_CONTRACT.md.",
+  "description": "Mandatory import contract for SlovakGO lessons A1-C2. This schema validates the data shape consumed by the application; pedagogical rules live in LESSON_JSON_CONTRACT.md.",
   "type": "object",
   "required": ["lessons"],
+  "additionalProperties": false,
   "properties": {
     "lessons": {
       "type": "array",
@@ -12,12 +13,17 @@
       "items": { "$ref": "#/$defs/lesson" }
     }
   },
-  "additionalProperties": false,
   "$defs": {
     "localized": {
       "type": "object",
       "minProperties": 1,
       "additionalProperties": { "type": "string" }
+    },
+    "localizedText": {
+      "oneOf": [
+        { "type": "string" },
+        { "$ref": "#/$defs/localized" }
+      ]
     },
     "lesson": {
       "type": "object",
@@ -27,151 +33,206 @@
         "startScreen", "theoryScreens", "wordsScreen", "words", "exercises",
         "finalSituation", "resultScreen"
       ],
+      "additionalProperties": true,
       "properties": {
         "id": { "type": "string", "minLength": 1 },
         "sectionId": { "type": "string", "minLength": 1 },
         "level": { "enum": ["A1", "A2", "B1", "B2", "C1", "C2"] },
-        "title": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
-        "topic": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
-        "description": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "title": { "$ref": "#/$defs/localizedText" },
+        "topic": { "$ref": "#/$defs/localizedText" },
+        "description": { "$ref": "#/$defs/localizedText" },
         "order": { "type": "integer", "minimum": 1 },
         "xpReward": { "type": "number", "minimum": 0 },
         "estimatedMinutes": { "type": "number", "exclusiveMinimum": 0 },
         "isPublished": { "type": "boolean" },
-        "intro": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
-        "completionMessage": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
-        "updatedAt": { "type": "string" },
-        "localization": { "$ref": "#/$defs/localization" },
+        "intro": { "$ref": "#/$defs/localizedText" },
+        "completionMessage": { "$ref": "#/$defs/localizedText" },
+        "updatedAt": { "type": "string", "minLength": 1 },
+        "localization": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "uiLanguages": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+            "targetLanguage": { "type": "string", "minLength": 1 },
+            "fallbackUiLanguage": { "type": "string", "minLength": 1 }
+          }
+        },
         "assets": { "$ref": "#/$defs/assets" },
         "startScreen": { "$ref": "#/$defs/startScreen" },
-        "theoryScreens": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/theory" } },
-        "wordsScreen": { "type": "object" },
-        "words": { "type": "array", "items": { "$ref": "#/$defs/word" } },
-        "exercises": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/exercise" } },
-        "finalSituation": { "type": "object", "minProperties": 1 },
-        "resultScreen": { "type": "object", "minProperties": 1 }
-      },
-      "additionalProperties": true
-    },
-    "localization": {
-      "type": "object",
-      "properties": {
-        "uiLanguages": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
-        "targetLanguage": { "type": "string", "minLength": 1 },
-        "fallbackUiLanguage": { "type": "string", "minLength": 1 }
-      },
-      "additionalProperties": false
+        "theoryScreens": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/theory" }
+        },
+        "wordsScreen": { "$ref": "#/$defs/wordsScreen" },
+        "words": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/word" }
+        },
+        "exercises": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/exercise" }
+        },
+        "finalSituation": { "$ref": "#/$defs/finalSituation" },
+        "resultScreen": { "$ref": "#/$defs/resultScreen" }
+      }
     },
     "assets": {
       "type": "object",
+      "additionalProperties": true,
       "properties": {
-        "images": { "type": "object", "additionalProperties": { "$ref": "#/$defs/imageAsset" } },
-        "audio": { "type": "object", "additionalProperties": { "$ref": "#/$defs/audioAsset" } }
-      },
-      "additionalProperties": true
+        "images": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/imageAsset" }
+        },
+        "audio": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/audioAsset" }
+        }
+      }
     },
     "imageAsset": {
       "type": "object",
       "required": ["src"],
+      "additionalProperties": true,
       "properties": {
         "src": { "type": "string", "minLength": 1 },
-        "alt": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] }
-      },
-      "additionalProperties": true
+        "alt": { "$ref": "#/$defs/localizedText" }
+      }
     },
     "audioAsset": {
       "type": "object",
       "required": ["src"],
+      "additionalProperties": true,
       "properties": {
         "src": { "type": "string", "minLength": 1 },
         "transcript": { "type": "string" }
-      },
-      "additionalProperties": true
+      }
     },
     "startScreen": {
       "type": "object",
+      "additionalProperties": true,
       "properties": {
         "screenType": { "type": "string" },
         "imageRef": { "type": "string" },
-        "eyebrow": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
-        "title": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
-        "shortDescription": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
-        "goal": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
-        "outcomes": { "type": "array", "items": { "type": "string" } },
+        "eyebrow": { "$ref": "#/$defs/localizedText" },
+        "title": { "$ref": "#/$defs/localizedText" },
+        "shortDescription": { "$ref": "#/$defs/localizedText" },
+        "subtitle": { "$ref": "#/$defs/localizedText" },
+        "goal": { "$ref": "#/$defs/localizedText" },
+        "outcomes": { "type": "array", "items": { "$ref": "#/$defs/localizedText" } },
         "newWords": { "type": "array", "items": { "type": "string" } },
         "exercisesCount": { "type": "integer", "minimum": 0 },
         "reward": { "type": ["string", "number"] },
         "estimatedMinutes": { "type": "number", "minimum": 0 },
         "button": { "type": "string" }
-      },
-      "additionalProperties": true
+      }
     },
     "theory": {
       "type": "object",
       "required": ["title"],
+      "additionalProperties": true,
       "properties": {
         "id": { "type": "string" },
         "screenType": { "type": "string" },
         "order": { "type": "integer", "minimum": 1 },
-        "title": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
-        "text": { "type": "string" },
-        "body": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
-        "examples": { "type": "array", "items": { "type": "object" } },
+        "title": { "$ref": "#/$defs/localizedText" },
+        "text": { "$ref": "#/$defs/localizedText" },
+        "body": { "$ref": "#/$defs/localizedText" },
+        "examples": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "sk": { "type": "string" },
+              "uk": { "type": "string" },
+              "translation": { "$ref": "#/$defs/localizedText" }
+            }
+          }
+        },
         "exampleSk": { "type": "string" },
         "exampleUk": { "type": "string" },
-        "shortRule": { "type": "string" },
+        "shortRule": { "$ref": "#/$defs/localizedText" },
         "button": { "type": "string" }
-      },
-      "additionalProperties": true
+      }
     },
     "word": {
       "type": "object",
-      "required": ["id", "sk"],
+      "required": ["id", "sk", "uk"],
+      "additionalProperties": true,
       "properties": {
         "id": { "type": "string", "minLength": 1 },
         "sk": { "type": "string", "minLength": 1 },
-        "uk": { "type": "string" },
+        "uk": { "type": "string", "minLength": 1 },
         "partOfSpeech": { "type": "string" },
-        "translation": { "$ref": "#/$defs/localized" },
+        "translation": { "$ref": "#/$defs/localizedText" },
         "pronunciationUk": { "type": "string" },
         "exampleSk": { "type": "string" },
         "exampleUk": { "type": "string" },
-        "example": { "type": "object" },
+        "example": {
+          "type": "object",
+          "required": ["sk"],
+          "additionalProperties": true,
+          "properties": {
+            "sk": { "type": "string", "minLength": 1 },
+            "translation": { "$ref": "#/$defs/localizedText" }
+          }
+        },
         "level": { "type": "string" },
         "topic": { "type": "string" },
         "tags": { "type": "array", "items": { "type": "string" } }
-      },
-      "additionalProperties": true
+      }
+    },
+    "wordsScreenItem": {
+      "type": "object",
+      "required": ["sk", "uk"],
+      "additionalProperties": true,
+      "properties": {
+        "wordId": { "type": "string", "minLength": 1 },
+        "sk": { "type": "string", "minLength": 1 },
+        "uk": { "type": "string", "minLength": 1 },
+        "pronunciationUk": { "type": "string" },
+        "exampleSk": { "type": "string" },
+        "exampleUk": { "type": "string" }
+      }
+    },
+    "wordsScreen": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "screenType": { "type": "string" },
+        "title": { "$ref": "#/$defs/localizedText" },
+        "description": { "$ref": "#/$defs/localizedText" },
+        "subtitle": { "$ref": "#/$defs/localizedText" },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/wordsScreenItem" }
+        },
+        "button": { "type": "string" }
+      }
     },
     "option": {
       "type": "object",
+      "required": ["id", "correct"],
+      "additionalProperties": true,
       "properties": {
-        "id": { "type": "string" },
+        "id": { "type": "string", "minLength": 1 },
         "sk": { "type": "string" },
-        "text": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "text": { "$ref": "#/$defs/localizedText" },
         "correct": { "type": "boolean" }
-      },
-      "required": ["correct"],
-      "additionalProperties": true
-    },
-    "skill": {
-      "type": "array",
-      "items": {
-        "enum": [
-          "vocabulary", "grammar", "listening", "reading", "writing", "dialogue",
-          "real_life", "register", "nuance", "pragmatics", "natural_language",
-          "numbers", "time"
-        ]
       }
-    },
-    "instruction": {
-      "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }]
     },
     "exercise": {
       "type": "object",
-      "required": ["id", "type"],
+      "required": ["id", "lessonId", "type", "order"],
+      "additionalProperties": true,
       "properties": {
         "id": { "type": "string", "minLength": 1 },
+        "lessonId": { "type": "string", "minLength": 1 },
         "type": {
           "enum": [
             "single_choice", "multiple_select", "true_false", "true_false_list",
@@ -185,171 +246,137 @@
             "match_pairs"
           ]
         },
-        "skill": { "$ref": "#/$defs/skill" },
-        "instruction": { "$ref": "#/$defs/instruction" },
-        "question": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
-        "prompt": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
-        "options": { "type": "array", "items": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/option" }] } },
+        "skill": { "type": "array", "items": { "type": "string" } },
+        "instruction": { "$ref": "#/$defs/localizedText" },
+        "question": { "$ref": "#/$defs/localizedText" },
+        "prompt": { "$ref": "#/$defs/localizedText" },
+        "options": {
+          "type": "array",
+          "items": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/option" }] }
+        },
         "correctAnswer": {},
         "acceptedAnswers": { "type": "array", "minItems": 1, "items": { "type": "string" } },
-        "explanation": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
-        "hint": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "explanation": { "$ref": "#/$defs/localizedText" },
+        "hint": { "$ref": "#/$defs/localizedText" },
         "wordIds": { "type": "array", "items": { "type": "string" } },
         "order": { "type": "integer", "minimum": 1 },
         "difficulty": { "enum": ["easy", "medium", "hard"] },
         "button": { "type": "string" },
         "fullSentence": { "type": "string" },
-        "text": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
-        "statement": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
-        "statements": { "type": "array", "items": { "type": "object" } },
-        "sentence": { "type": "object" },
-        "sentenceParts": { "type": "array", "items": { "type": "object" } },
-        "textParts": { "type": "array", "items": { "type": "object" } },
+        "text": { "$ref": "#/$defs/localizedText" },
+        "statement": { "$ref": "#/$defs/localizedText" },
+        "statements": {
+          "type": "array",
+          "items": { "type": "object", "required": ["sk", "correct"], "additionalProperties": true, "properties": { "sk": { "type": "string" }, "correct": { "type": "boolean" } } }
+        },
+        "sentence": { "$ref": "#/$defs/localizedText" },
+        "sentenceParts": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+        "textParts": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
         "wordBank": { "type": "array", "items": { "type": "string" } },
-        "items": { "type": "array", "items": { "type": "object" } },
+        "items": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
         "extraWords": { "type": "array", "items": { "type": "string" } },
         "draggable": { "type": "array", "items": { "type": "string" } },
         "correct": {},
-        "categories": { "type": "array", "items": { "type": "object" } },
-        "pairs": { "type": "array", "items": { "type": "object" } },
+        "categories": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+        "pairs": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
         "tokens": { "type": "array", "items": { "type": "string" } },
         "correctSentence": { "type": "string" },
-        "correctOrder": { "type": "array" },
-        "lines": { "type": "array", "items": { "type": "object" } },
-        "dialogue": { "type": "array", "items": { "type": "object" } },
+        "correctOrder": { "type": "array", "items": { "type": "string" } },
+        "lines": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+        "dialogue": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
         "startNode": { "type": "string" },
         "nodes": { "type": "object" },
-        "successMessage": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
-        "source": { "type": "object" },
+        "successMessage": { "$ref": "#/$defs/localizedText" },
+        "source": { "$ref": "#/$defs/localizedText" },
         "audioRef": { "type": "string" },
-        "displaySentence": { "type": "object" },
+        "audioUrl": { "type": "string" },
+        "displaySentence": { "$ref": "#/$defs/localizedText" },
         "ignoreCase": { "type": "boolean" },
         "ignoreTerminalPunctuation": { "type": "boolean" },
-        "questions": { "type": "array", "items": { "type": "object" } },
-        "context": { "type": "object" },
-        "target": { "type": "object" },
-        "situation": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
-        "phrase": { "type": "object" },
-        "document": { "type": "object" },
-        "message": { "type": "object" },
+        "questions": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+        "context": { "$ref": "#/$defs/localizedText" },
+        "target": { "$ref": "#/$defs/localizedText" },
+        "situation": { "$ref": "#/$defs/localizedText" },
+        "phrase": { "$ref": "#/$defs/localizedText" },
+        "document": { "type": "object", "additionalProperties": true },
+        "message": { "type": "object", "additionalProperties": true },
         "imageRef": { "type": "string" },
-        "menuData": { "type": "array", "items": { "type": "object" } },
-        "schedule": { "type": "object" },
+        "imageUrl": { "type": "string" },
+        "menuData": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+        "schedule": { "type": "object", "additionalProperties": true },
         "errorToken": { "type": "string" },
-        "correctToken": { "type": "string" },
-        "audio": { "type": "object" }
-      },
-      "additionalProperties": true,
-      "allOf": [
+        "correctToken": { "type": "string" }
+      }
+    },
+    "finalSituation": {
+      "oneOf": [
         {
-          "if": { "properties": { "type": { "const": "multiple_select" } } },
-          "then": { "required": ["options"] }
+          "type": "object",
+          "required": ["screenType", "scenario", "question", "options", "correctAnswer"],
+          "additionalProperties": true,
+          "properties": {
+            "screenType": { "const": "final_life_situation" },
+            "scenario": { "type": "string" },
+            "question": { "type": "string" },
+            "options": { "type": "array", "minItems": 2, "items": { "type": "string" } },
+            "correctAnswer": { "type": "string" },
+            "translation": { "type": "string" },
+            "explanation": { "type": "string" },
+            "button": { "type": "string" }
+          }
         },
         {
-          "if": { "properties": { "type": { "enum": ["single_choice", "multiple_choice_translation", "reverse_translation", "natural_phrase", "register", "meaning_in_context", "hidden_meaning", "tone", "listen_choice", "real_document", "real_message", "real_schedule"] } } },
-          "then": { "required": ["options"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "true_false" } } },
-          "then": { "required": ["statement", "correctAnswer"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "true_false_list" } } },
-          "then": { "required": ["statements"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "fill_blank" } } },
-          "then": { "anyOf": [{ "required": ["acceptedAnswers"] }, { "required": ["options", "correctAnswer"] }] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "dropdown_blank" } } },
-          "then": { "required": ["sentenceParts"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "cloze_text" } } },
-          "then": { "required": ["textParts"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "word_bank" } } },
-          "then": { "required": ["wordBank", "items"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "drag_to_blank" } } },
-          "then": { "required": ["draggable", "correct"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "drag_to_category" } } },
-          "then": { "required": ["categories", "items"] }
-        },
-        {
-          "if": { "properties": { "type": { "enum": ["matching", "match_pairs", "collocation"] } } },
-          "then": { "required": ["pairs"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "image_match" } } },
-          "then": { "required": ["items"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "sentence_builder" } } },
-          "then": { "required": ["tokens", "correctSentence"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "sentence_order" } } },
-          "then": { "required": ["tokens", "correctOrder"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "dialogue_order" } } },
-          "then": { "required": ["lines", "correctOrder"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "dialogue_choose_reply" } } },
-          "then": { "required": ["dialogue", "options"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "branching_dialogue" } } },
-          "then": { "required": ["startNode", "nodes"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "find_error" } } },
-          "then": { "required": ["sentence", "errorToken", "correctToken"] }
-        },
-        {
-          "if": { "properties": { "type": { "enum": ["correct_error", "transformation"] } } },
-          "then": { "required": ["acceptedAnswers"] }
-        },
-        {
-          "if": { "properties": { "type": { "enum": ["listen_choice", "listen_true_false", "listen_fill", "dictation"] } } },
-          "then": { "required": ["audioRef"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "listen_fill" } } },
-          "then": { "required": ["acceptedAnswers"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "dictation" } } },
-          "then": { "required": ["acceptedAnswers"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "reading_comprehension" } } },
-          "then": { "required": ["text", "questions"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "real_document" } } },
-          "then": { "required": ["document", "question", "options"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "real_message" } } },
-          "then": { "required": ["message", "options"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "real_menu" } } },
-          "then": { "required": ["menuData", "questions"] }
-        },
-        {
-          "if": { "properties": { "type": { "const": "real_schedule" } } },
-          "then": { "required": ["schedule", "question", "options"] }
+          "type": "object",
+          "required": ["type", "steps"],
+          "additionalProperties": true,
+          "properties": {
+            "type": { "const": "interactive_scenario" },
+            "title": { "$ref": "#/$defs/localizedText" },
+            "description": { "$ref": "#/$defs/localizedText" },
+            "imageRef": { "type": "string" },
+            "steps": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": ["id", "prompt", "options"],
+                "additionalProperties": true,
+                "properties": {
+                  "id": { "type": "string" },
+                  "prompt": { "$ref": "#/$defs/localizedText" },
+                  "options": {
+                    "type": "array",
+                    "minItems": 2,
+                    "items": { "type": "object", "required": ["correct"], "additionalProperties": true, "properties": { "sk": { "type": "string" }, "text": { "$ref": "#/$defs/localizedText" }, "correct": { "type": "boolean" } } }
+                  }
+                }
+              }
+            },
+            "passRequirement": { "type": "string" },
+            "successMessage": { "$ref": "#/$defs/localizedText" }
+          }
         }
       ]
+    },
+    "resultScreen": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": true,
+      "properties": {
+        "screenType": { "type": "string" },
+        "title": { "$ref": "#/$defs/localizedText" },
+        "subtitle": { "$ref": "#/$defs/localizedText" },
+        "text": { "$ref": "#/$defs/localizedText" },
+        "result": { "type": "string" },
+        "newWordsCount": { "type": "integer", "minimum": 0 },
+        "exercisesCompleted": { "type": "integer", "minimum": 0 },
+        "nowYouKnow": { "type": "array", "items": { "type": "string" } },
+        "mistakesMessage": { "$ref": "#/$defs/localizedText" },
+        "buttons": { "type": "array", "items": { "type": "string" } },
+        "nextLesson": { "oneOf": [{ "type": "string" }, { "type": "object", "required": ["id"], "additionalProperties": true }] },
+        "xpReward": { "type": "number" },
+        "skills": { "type": "array", "items": { "type": "object", "required": ["id", "label", "weight"], "additionalProperties": true, "properties": { "id": { "type": "string" }, "label": { "$ref": "#/$defs/localizedText" }, "weight": { "type": "number", "minimum": 0 } } } }
+      }
     }
   }
 }
