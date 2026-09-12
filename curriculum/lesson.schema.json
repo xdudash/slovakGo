@@ -1,0 +1,355 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://slovakgo.local/schema/lesson.schema.json",
+  "title": "SlovakGO Universal Lesson",
+  "description": "Universal import contract for SlovakGO lessons A1-C2. Pedagogical rules and mechanic definitions are in LESSON_JSON_CONTRACT.md.",
+  "type": "object",
+  "required": ["lessons"],
+  "properties": {
+    "lessons": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/lesson" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "localized": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "type": "string" }
+    },
+    "lesson": {
+      "type": "object",
+      "required": [
+        "id", "sectionId", "level", "title", "topic", "description", "order",
+        "xpReward", "estimatedMinutes", "isPublished", "intro", "completionMessage",
+        "startScreen", "theoryScreens", "wordsScreen", "words", "exercises",
+        "finalSituation", "resultScreen"
+      ],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "sectionId": { "type": "string", "minLength": 1 },
+        "level": { "enum": ["A1", "A2", "B1", "B2", "C1", "C2"] },
+        "title": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "topic": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "description": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "order": { "type": "integer", "minimum": 1 },
+        "xpReward": { "type": "number", "minimum": 0 },
+        "estimatedMinutes": { "type": "number", "exclusiveMinimum": 0 },
+        "isPublished": { "type": "boolean" },
+        "intro": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "completionMessage": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "updatedAt": { "type": "string" },
+        "localization": { "$ref": "#/$defs/localization" },
+        "assets": { "$ref": "#/$defs/assets" },
+        "startScreen": { "$ref": "#/$defs/startScreen" },
+        "theoryScreens": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/theory" } },
+        "wordsScreen": { "type": "object" },
+        "words": { "type": "array", "items": { "$ref": "#/$defs/word" } },
+        "exercises": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/exercise" } },
+        "finalSituation": { "type": "object", "minProperties": 1 },
+        "resultScreen": { "type": "object", "minProperties": 1 }
+      },
+      "additionalProperties": true
+    },
+    "localization": {
+      "type": "object",
+      "properties": {
+        "uiLanguages": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "targetLanguage": { "type": "string", "minLength": 1 },
+        "fallbackUiLanguage": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "assets": {
+      "type": "object",
+      "properties": {
+        "images": { "type": "object", "additionalProperties": { "$ref": "#/$defs/imageAsset" } },
+        "audio": { "type": "object", "additionalProperties": { "$ref": "#/$defs/audioAsset" } }
+      },
+      "additionalProperties": true
+    },
+    "imageAsset": {
+      "type": "object",
+      "required": ["src"],
+      "properties": {
+        "src": { "type": "string", "minLength": 1 },
+        "alt": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] }
+      },
+      "additionalProperties": true
+    },
+    "audioAsset": {
+      "type": "object",
+      "required": ["src"],
+      "properties": {
+        "src": { "type": "string", "minLength": 1 },
+        "transcript": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "startScreen": {
+      "type": "object",
+      "properties": {
+        "screenType": { "type": "string" },
+        "imageRef": { "type": "string" },
+        "eyebrow": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "title": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "shortDescription": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "goal": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "outcomes": { "type": "array", "items": { "type": "string" } },
+        "newWords": { "type": "array", "items": { "type": "string" } },
+        "exercisesCount": { "type": "integer", "minimum": 0 },
+        "reward": { "type": ["string", "number"] },
+        "estimatedMinutes": { "type": "number", "minimum": 0 },
+        "button": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "theory": {
+      "type": "object",
+      "required": ["title"],
+      "properties": {
+        "id": { "type": "string" },
+        "screenType": { "type": "string" },
+        "order": { "type": "integer", "minimum": 1 },
+        "title": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "text": { "type": "string" },
+        "body": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "examples": { "type": "array", "items": { "type": "object" } },
+        "exampleSk": { "type": "string" },
+        "exampleUk": { "type": "string" },
+        "shortRule": { "type": "string" },
+        "button": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "word": {
+      "type": "object",
+      "required": ["id", "sk"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "sk": { "type": "string", "minLength": 1 },
+        "uk": { "type": "string" },
+        "partOfSpeech": { "type": "string" },
+        "translation": { "$ref": "#/$defs/localized" },
+        "pronunciationUk": { "type": "string" },
+        "exampleSk": { "type": "string" },
+        "exampleUk": { "type": "string" },
+        "example": { "type": "object" },
+        "level": { "type": "string" },
+        "topic": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": true
+    },
+    "option": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "sk": { "type": "string" },
+        "text": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "correct": { "type": "boolean" }
+      },
+      "required": ["correct"],
+      "additionalProperties": true
+    },
+    "skill": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "vocabulary", "grammar", "listening", "reading", "writing", "dialogue",
+          "real_life", "register", "nuance", "pragmatics", "natural_language",
+          "numbers", "time"
+        ]
+      }
+    },
+    "instruction": {
+      "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }]
+    },
+    "exercise": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": {
+          "enum": [
+            "single_choice", "multiple_select", "true_false", "true_false_list",
+            "fill_blank", "dropdown_blank", "cloze_text", "word_bank", "drag_to_blank",
+            "drag_to_category", "matching", "image_match", "sentence_builder", "sentence_order",
+            "dialogue_order", "dialogue_choose_reply", "branching_dialogue", "find_error",
+            "correct_error", "transformation", "listen_choice", "listen_true_false", "listen_fill",
+            "dictation", "reading_comprehension", "meaning_in_context", "natural_phrase", "tone",
+            "register", "hidden_meaning", "collocation", "real_document", "real_message",
+            "real_menu", "real_schedule", "multiple_choice_translation", "reverse_translation",
+            "match_pairs"
+          ]
+        },
+        "skill": { "$ref": "#/$defs/skill" },
+        "instruction": { "$ref": "#/$defs/instruction" },
+        "question": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "prompt": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "options": { "type": "array", "items": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/option" }] } },
+        "correctAnswer": {},
+        "acceptedAnswers": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "explanation": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "hint": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "wordIds": { "type": "array", "items": { "type": "string" } },
+        "order": { "type": "integer", "minimum": 1 },
+        "difficulty": { "enum": ["easy", "medium", "hard"] },
+        "button": { "type": "string" },
+        "fullSentence": { "type": "string" },
+        "text": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "statement": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "statements": { "type": "array", "items": { "type": "object" } },
+        "sentence": { "type": "object" },
+        "sentenceParts": { "type": "array", "items": { "type": "object" } },
+        "textParts": { "type": "array", "items": { "type": "object" } },
+        "wordBank": { "type": "array", "items": { "type": "string" } },
+        "items": { "type": "array", "items": { "type": "object" } },
+        "extraWords": { "type": "array", "items": { "type": "string" } },
+        "draggable": { "type": "array", "items": { "type": "string" } },
+        "correct": {},
+        "categories": { "type": "array", "items": { "type": "object" } },
+        "pairs": { "type": "array", "items": { "type": "object" } },
+        "tokens": { "type": "array", "items": { "type": "string" } },
+        "correctSentence": { "type": "string" },
+        "correctOrder": { "type": "array" },
+        "lines": { "type": "array", "items": { "type": "object" } },
+        "dialogue": { "type": "array", "items": { "type": "object" } },
+        "startNode": { "type": "string" },
+        "nodes": { "type": "object" },
+        "successMessage": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "source": { "type": "object" },
+        "audioRef": { "type": "string" },
+        "displaySentence": { "type": "object" },
+        "ignoreCase": { "type": "boolean" },
+        "ignoreTerminalPunctuation": { "type": "boolean" },
+        "questions": { "type": "array", "items": { "type": "object" } },
+        "context": { "type": "object" },
+        "target": { "type": "object" },
+        "situation": { "oneOf": [{ "type": "string" }, { "$ref": "#/$defs/localized" }] },
+        "phrase": { "type": "object" },
+        "document": { "type": "object" },
+        "message": { "type": "object" },
+        "imageRef": { "type": "string" },
+        "menuData": { "type": "array", "items": { "type": "object" } },
+        "schedule": { "type": "object" },
+        "errorToken": { "type": "string" },
+        "correctToken": { "type": "string" },
+        "audio": { "type": "object" }
+      },
+      "additionalProperties": true,
+      "allOf": [
+        {
+          "if": { "properties": { "type": { "const": "multiple_select" } } },
+          "then": { "required": ["options"] }
+        },
+        {
+          "if": { "properties": { "type": { "enum": ["single_choice", "multiple_choice_translation", "reverse_translation", "natural_phrase", "register", "meaning_in_context", "hidden_meaning", "tone", "listen_choice", "real_document", "real_message", "real_schedule"] } } },
+          "then": { "required": ["options"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "true_false" } } },
+          "then": { "required": ["statement", "correctAnswer"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "true_false_list" } } },
+          "then": { "required": ["statements"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "fill_blank" } } },
+          "then": { "anyOf": [{ "required": ["acceptedAnswers"] }, { "required": ["options", "correctAnswer"] }] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "dropdown_blank" } } },
+          "then": { "required": ["sentenceParts"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "cloze_text" } } },
+          "then": { "required": ["textParts"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "word_bank" } } },
+          "then": { "required": ["wordBank", "items"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "drag_to_blank" } } },
+          "then": { "required": ["draggable", "correct"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "drag_to_category" } } },
+          "then": { "required": ["categories", "items"] }
+        },
+        {
+          "if": { "properties": { "type": { "enum": ["matching", "match_pairs", "collocation"] } } },
+          "then": { "required": ["pairs"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "image_match" } } },
+          "then": { "required": ["items"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "sentence_builder" } } },
+          "then": { "required": ["tokens", "correctSentence"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "sentence_order" } } },
+          "then": { "required": ["tokens", "correctOrder"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "dialogue_order" } } },
+          "then": { "required": ["lines", "correctOrder"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "dialogue_choose_reply" } } },
+          "then": { "required": ["dialogue", "options"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "branching_dialogue" } } },
+          "then": { "required": ["startNode", "nodes"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "find_error" } } },
+          "then": { "required": ["sentence", "errorToken", "correctToken"] }
+        },
+        {
+          "if": { "properties": { "type": { "enum": ["correct_error", "transformation"] } } },
+          "then": { "required": ["acceptedAnswers"] }
+        },
+        {
+          "if": { "properties": { "type": { "enum": ["listen_choice", "listen_true_false", "listen_fill", "dictation"] } } },
+          "then": { "required": ["audioRef"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "listen_fill" } } },
+          "then": { "required": ["acceptedAnswers"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "dictation" } } },
+          "then": { "required": ["acceptedAnswers"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "reading_comprehension" } } },
+          "then": { "required": ["text", "questions"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "real_document" } } },
+          "then": { "required": ["document", "question", "options"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "real_message" } } },
+          "then": { "required": ["message", "options"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "real_menu" } } },
+          "then": { "required": ["menuData", "questions"] }
+        },
+        {
+          "if": { "properties": { "type": { "const": "real_schedule" } } },
+          "then": { "required": ["schedule", "question", "options"] }
+        }
+      ]
+    }
+  }
+}
