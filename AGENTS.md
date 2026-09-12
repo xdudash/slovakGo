@@ -5,10 +5,11 @@
 For lesson creation and editing, the agent MUST use:
 
 1. `curriculum/LESSON_JSON_CONTRACT.md` — mandatory human/authoring contract, including exercise mechanics and methodology.
-2. `curriculum/lesson.schema.json` — mandatory machine-readable structural schema.
-3. The applicable level/section `LESSON_PLAN.md` — defines the lesson topic, contents and planned new words/phrases.
-4. Existing working lessons — reference examples only; they do not override the canonical contract.
-5. The real application types/renderers/checkers in `src/types`, `src/features/student/exercises`, and `src/services/exerciseChecking.ts` — runtime behavior is the implementation contract and must not be contradicted by lesson JSON.
+2. `curriculum/LESSON_RUNTIME_CONTRACT.md` — mandatory runtime contract derived from the real application renderer/checkers.
+3. `curriculum/lesson.schema.json` — mandatory machine-readable structural schema.
+4. The applicable level/section `LESSON_PLAN.md` — defines the lesson topic, contents and planned new words/phrases.
+5. Existing working lessons — reference examples only; they do not override the canonical contract.
+6. The real application types/renderers/checkers in `src/types`, `src/features/student/exercises`, and `src/services/exerciseChecking.ts` — runtime behavior is the implementation contract and must not be contradicted by lesson JSON.
 
 ## 2. Lesson generation rule
 
