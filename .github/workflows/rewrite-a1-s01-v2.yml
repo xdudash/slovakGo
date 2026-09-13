@@ -1,0 +1,36 @@
+name: Rewrite A1 Section 01 v2
+on:
+  push:
+    paths:
+      - '.rewrite-a1-s01-v2'
+permissions:
+  contents: write
+jobs:
+  rewrite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate lessons from canonical rewrite script
+        run: |
+          awk '/node <<'"'"'NODE'"'"'/{flag=1;next}/^          NODE$/{flag=0}flag' .github/workflows/rewrite-a1-s01.yml > /tmp/rewrite.cjs
+          node /tmp/rewrite.cjs
+          python3 - <<'PY'
+          import json,glob
+          for p in glob.glob('lessons/a1/a1-s01-l0[1-6].json'):
+              root=json.load(open(p,encoding='utf-8'))
+              for e in root['lessons'][0]['exercises']:
+                  if e['type']=='sentence_builder': e['correctSentence']=e.get('correctAnswer') or ' '.join(e['tokens'])
+              json.dump(root,open(p,'w',encoding='utf-8'),ensure_ascii=False,indent=2); open(p,'a',encoding='utf-8').write('\n')
+          PY
+      - name: Validate and QA
+        run: |
+          npm ci
+          npm run qa:lessons -- lessons/a1/a1-s01-l01.json lessons/a1/a1-s01-l02.json lessons/a1/a1-s01-l03.json lessons/a1/a1-s01-l04.json lessons/a1/a1-s01-l05.json lessons/a1/a1-s01-l06.json
+          npx --yes ajv-cli validate -s curriculum/lesson.schema.json -d 'lessons/a1/*.json' --spec=draft2020
+      - name: Commit lessons
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add lessons/a1/a1-s01-l0{1,2,3,4,5,6}.json
+          git commit -m 'Rewrite A1 Section 01 lessons' || exit 0
+          git push
