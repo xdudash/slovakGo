@@ -1,0 +1,15 @@
+name: Temporary lesson QA
+on:
+  push:
+    branches: [main]
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run qa:lessons -- lessons/a1/a1-s01-l01.json lessons/a1/a1-s01-l02.json lessons/a1/a1-s01-l03.json lessons/a1/a1-s01-l04.json lessons/a1/a1-s01-l05.json lessons/a1/a1-s01-l06.json
