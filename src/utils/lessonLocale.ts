@@ -28,6 +28,30 @@ export function resolveTextArray(
   return values.map((v) => resolveText(v, lang, fallbackLang));
 }
 
+type LessonTx = (value: LocalizedText | undefined) => string;
+
+type LocalizedWordLike = {
+  uk?: string;
+  translation?: LocalizedText;
+  exampleUk?: string;
+  example?: { sk?: string; translation?: LocalizedText };
+};
+
+export function resolveWordTranslation(word: LocalizedWordLike, tx: LessonTx): string {
+  return word.translation ? tx(word.translation) : word.uk ?? "";
+}
+
+export function resolveWordExampleTranslation(word: LocalizedWordLike, tx: LessonTx): string {
+  return word.example?.translation ? tx(word.example.translation) : word.exampleUk ?? "";
+}
+
+export function resolveStatementText(
+  statement: { sk?: string; text?: LocalizedText },
+  tx: LessonTx
+): string {
+  return statement.text ? tx(statement.text) : statement.sk ?? "";
+}
+
 /**
  * Locale-agnostic best-effort text extraction for internal (admin/teacher)
  * screens that don't have a per-user language to resolve against.
