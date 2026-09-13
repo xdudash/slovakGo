@@ -46,7 +46,7 @@ export function resolveWordExampleTranslation(word: LocalizedWordLike, tx: Lesso
 }
 
 export function resolveStatementText(
-  statement: { sk?: string; text?: LocalizedText },
+  statement: { sk?: string; text?: LocalizedText; correct?: boolean },
   tx: LessonTx
 ): string {
   return statement.text ? tx(statement.text) : statement.sk ?? "";
