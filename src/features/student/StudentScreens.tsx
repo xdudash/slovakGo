@@ -22,7 +22,7 @@ import { formatWeekTimer, secondsUntilWeekEnd } from "../../utils/date";
 import { requestFcmToken } from "../../services/fcmService";
 import { accessService } from "../../services/accessService";
 import { track } from "../../services/analytics";
-import { resolveText } from "../../utils/lessonLocale";
+import { resolveText, resolveWordExampleTranslation, resolveWordTranslation } from "../../utils/lessonLocale";
 import { useLessonLocale } from "../../hooks/useLessonLocale";
 import { formatCorrectAnswer, isLegacyCorrectOption } from "../../services/exerciseChecking";
 import { soundService } from "../../services/soundService";
@@ -670,7 +670,7 @@ function isInteractiveFinal(sit: Lesson["finalSituation"]): sit is Extract<NonNu
   return !!sit && "type" in sit && sit.type === "interactive_scenario";
 }
 
-function TheoryView({ screen, onNext, tx }: { screen: TheoryScreen; onNext: () => void; tx: (v: LocalizedText | undefined) => string }) {
+function TheoryView({ screen, onNext, tx, t }: { screen: TheoryScreen; onNext: () => void; tx: (v: LocalizedText | undefined) => string; t: (key: string) => string }) {
   return (
     <div className="theory-body">
       {screen.title && <h2 className="theory-title">{tx(screen.title)}</h2>}
@@ -774,7 +774,7 @@ function TheoryView({ screen, onNext, tx }: { screen: TheoryScreen; onNext: () =
       )}
       {screen.shortRule && <div className="theory-short-rule">{tx(screen.shortRule)}</div>}
       <div className="lesson-bottom">
-        <Button onClick={onNext}>{screen.button ?? "Далі →"}</Button>
+        <Button onClick={onNext}>{screen.button ?? `${t("student.lesson.next")} →`}</Button>
       </div>
     </div>
   );
@@ -1027,9 +1027,9 @@ function LessonScreen() {
   const questionLabel = (() => {
     if (phase === "start") return hasLegacyIntro ? `${lesson!.words.length} слів` : "";
     if (phase === "theory") return `${theoryIndex + 1} / ${theories.length}`;
-    if (phase === "words") return "Слова";
+    if (phase === "words") return t("student.lesson.words");
     if (phase === "exercise") return exercise ? `${index + 1} / ${lesson.exercises.length}` : "";
-    if (phase === "final") return "Ситуація";
+    if (phase === "final") return t("student.lesson.situation");
     return "";
   })();
 
@@ -1058,16 +1058,16 @@ function LessonScreen() {
             )}
             {(lesson.startScreen.outcomes?.length ?? 0) > 0 && (
               <ul className="lesson-start-outcomes">
-                {lesson.startScreen.outcomes!.map((o, i) => <li key={i}>{o}</li>)}
+                {lesson.startScreen.outcomes!.map((o, i) => <li key={i}>{tx(o as unknown as LocalizedText)}</li>)}
               </ul>
             )}
             {((lesson.startScreen.newWords?.length ?? 0) > 0 || lesson.startScreen.exercisesCount || lesson.startScreen.reward) && (
               <div className="lesson-start-meta">
                 {(lesson.startScreen.newWords?.length ?? 0) > 0 && (
-                  <span>{lesson.startScreen.newWords!.length} нових слів</span>
+                  <span>{lesson.startScreen.newWords!.length} {t("student.lesson.new_words")}</span>
                 )}
                 {lesson.startScreen.exercisesCount && (
-                  <span>{lesson.startScreen.exercisesCount} вправ</span>
+                  <span>{lesson.startScreen.exercisesCount} {t("student.lesson.exercises_label")}</span>
                 )}
                 {lesson.startScreen.reward && (
                   <span>{lesson.startScreen.reward}</span>
@@ -1076,7 +1076,7 @@ function LessonScreen() {
             )}
             <div className="lesson-feedback" />
             <div className="lesson-bottom">
-              <Button onClick={advanceFromStart}>{lesson.startScreen.button ?? "Почати →"}</Button>
+              <Button onClick={advanceFromStart}>{lesson.startScreen.button ?? `${t("student.lesson.start")} →`}</Button>
             </div>
           </div>
         ) : (
@@ -1103,9 +1103,9 @@ function LessonScreen() {
                     <div key={word.id} className="lesson-word-item">
                       <div className="lesson-word-row">
                         <span className="lesson-word-sk">{word.sk}</span>
-                        <span className="lesson-word-uk">{word.uk}</span>
+                        <span className="lesson-word-uk">{resolveWordTranslation(word, tx)}</span>
                       </div>
-                      {word.exampleSk && <div className="lesson-word-example">{word.exampleSk} — {word.exampleUk}</div>}
+                      {(word.example?.sk ?? word.exampleSk) && <div className="lesson-word-example">{word.example?.sk ?? word.exampleSk} — {resolveWordExampleTranslation(word, tx)}</div>}
                     </div>
                   ))}
                 </div>
@@ -1113,14 +1113,14 @@ function LessonScreen() {
             </div>
             <div className="lesson-feedback" />
             <div className="lesson-bottom">
-              <Button onClick={advanceFromStart}>Почати урок →</Button>
+              <Button onClick={advanceFromStart}>{t("student.lesson.start_lesson")} →</Button>
             </div>
           </>
         )
       )}
 
       {phase === "theory" && theories.length > 0 && (
-        <TheoryView key={`theory-${theoryIndex}`} screen={theories[theoryIndex]} onNext={advanceFromTheory} tx={tx} />
+        <TheoryView key={`theory-${theoryIndex}`} screen={theories[theoryIndex]} onNext={advanceFromTheory} tx={tx} t={t} />
       )}
 
       {phase === "words" && lesson.wordsScreen && (
@@ -1161,7 +1161,7 @@ function LessonScreen() {
               ))}
           </div>
           <div className="lesson-bottom">
-            <Button onClick={advanceFromWords}>{lesson.wordsScreen.button ?? "Почати вправи →"}</Button>
+            <Button onClick={advanceFromWords}>{lesson.wordsScreen.button ?? `${t("student.lesson.start_exercises")} →`}</Button>
           </div>
         </div>
       )}
@@ -1213,7 +1213,7 @@ function LessonScreen() {
         return (
           <>
             <div className="final-situation-card">
-              <span className="badge">Крок {finalStepIndex + 1} / {sit.steps.length}</span>
+              <span className="badge">{t("student.lesson.step")} {finalStepIndex + 1} / {sit.steps.length}</span>
               <h2 className="final-situation-question">{tx(step.prompt)}</h2>
               <div className="option-list">
                 {step.options.map((option, oi) => {
@@ -1296,21 +1296,21 @@ function LessonScreen() {
             <div className="lesson-result-stats">
               <div className="lesson-result-stat">
                 <span className="lesson-result-stat-n">{lesson.resultScreen.newWordsCount ?? lesson.words.length}</span>
-                <span className="lesson-result-stat-l">нових слів</span>
+                <span className="lesson-result-stat-l">{t("student.lesson.new_words")}</span>
               </div>
               <div className="lesson-result-stat">
                 <span className="lesson-result-stat-n">{lesson.resultScreen.exercisesCompleted ?? lesson.exercises.length}</span>
-                <span className="lesson-result-stat-l">вправ</span>
+                <span className="lesson-result-stat-l">{t("student.lesson.exercises_label")}</span>
               </div>
               <div className="lesson-result-stat">
                 <span className="lesson-result-stat-n">{completionData.correct}/{completionData.total}</span>
-                <span className="lesson-result-stat-l">правильно</span>
+                <span className="lesson-result-stat-l">{t("student.lesson.correct_label")}</span>
               </div>
             </div>
           </div>
           {(lesson.resultScreen.nowYouKnow?.length ?? 0) > 0 && (
             <div className="lesson-result-words">
-              <h3>Тепер ти знаєш</h3>
+              <h3>{t("student.lesson.now_you_know")}</h3>
               {lesson.resultScreen.nowYouKnow!.map((w, i) => (
                 <div key={i} className="lesson-result-word">{w}</div>
               ))}
@@ -1318,17 +1318,17 @@ function LessonScreen() {
           )}
           {lesson.resultScreen.nextLesson && (
             <div className="lesson-result-next">
-              <p>Наступний урок:</p>
+              <p>{t("student.lesson.next_lesson")}:</p>
               <h4>{typeof lesson.resultScreen.nextLesson === "string" ? lesson.resultScreen.nextLesson : tx(lesson.resultScreen.nextLesson.title) || lesson.resultScreen.nextLesson.id}</h4>
             </div>
           )}
           {progress.completedLessons.length === 1 && <ReminderOptIn />}
           <div className="lesson-result-actions">
             <Button autoFocus onClick={() => navigate(completionDestination)}>
-              {opensTrialAfterLesson ? "Відкрити повний доступ →" : lesson.resultScreen.buttons?.[0] ?? "Продовжити"}
+              {opensTrialAfterLesson ? `${t("student.lesson.open_full_access")} →` : lesson.resultScreen.buttons?.[0] ?? t("student.lesson.continue")}
             </Button>
-            <Button variant="secondary" onClick={() => { setIndex(0); setTheoryIndex(0); setRecords([]); setFinalAnswer(""); setFinalFeedback(null); setFinalStepIndex(0); setFinalStepResults([]); setCompletionData(null); setPhase(lesson.startScreen ? "start" : theories.length > 0 ? "theory" : "wordsScreen" in lesson && lesson.wordsScreen ? "words" : "exercise"); }}>{lesson.resultScreen.buttons?.[1] ?? "Повторити урок"}</Button>
-            {completionData.wrong.length > 0 && <Button variant="ghost" onClick={() => navigate("/app/practice")}>{lesson.resultScreen.mistakesMessage ?? lesson.resultScreen.buttons?.[2] ?? "Тренувати помилки"}</Button>}
+            <Button variant="secondary" onClick={() => { setIndex(0); setTheoryIndex(0); setRecords([]); setFinalAnswer(""); setFinalFeedback(null); setFinalStepIndex(0); setFinalStepResults([]); setCompletionData(null); setPhase(lesson.startScreen ? "start" : theories.length > 0 ? "theory" : "wordsScreen" in lesson && lesson.wordsScreen ? "words" : "exercise"); }}>{lesson.resultScreen.buttons?.[1] ?? t("student.lesson.repeat_lesson")}</Button>
+            {completionData.wrong.length > 0 && <Button variant="ghost" onClick={() => navigate("/app/practice")}>{lesson.resultScreen.mistakesMessage ?? lesson.resultScreen.buttons?.[2] ?? t("student.lesson.practice_mistakes")}</Button>}
           </div>
         </div>
       )}
@@ -1363,12 +1363,12 @@ function LessonScreen() {
             <div className="celebrate-icon">{celebration.wrong.length === 0 ? "🏆" : "🎉"}</div>
             <div className="celebrate-xp">+{celebration.xp} XP</div>
             <p className="celebrate-sub">
-              {celebration.correct} / {celebration.total} правильно
-              {celebration.wrong.length === 0 && " · Ідеально!"}
+              {celebration.correct} / {celebration.total} {t("student.lesson.correct_label")}
+              {celebration.wrong.length === 0 && ` · ${t("student.lesson.perfect")}`}
             </p>
             {celebration.wrong.length > 0 && (
               <div className="celebrate-mistakes">
-                <p className="celebrate-mistakes-title">Помилки:</p>
+                <p className="celebrate-mistakes-title">{t("student.lesson.mistakes")}:</p>
                 {celebration.wrong.map((w, i) => (
                   <div key={i} className="celebrate-mistake-row">
                     <span className="celebrate-mistake-q">{w.question}</span>
@@ -1390,11 +1390,11 @@ function LessonScreen() {
                 } finally { setSharing(false); }
               }}
             >
-              <Share2 size={16} /> {sharing ? "…" : "Поділитись"}
+              <Share2 size={16} /> {sharing ? "…" : t("student.lesson.share")}
             </button>
             {progress.completedLessons.length === 1 && <ReminderOptIn />}
             <Button autoFocus onClick={() => navigate(completionDestination)}>
-              {opensTrialAfterLesson ? "Відкрити повний доступ →" : "Продовжити"}
+              {opensTrialAfterLesson ? `${t("student.lesson.open_full_access")} →` : t("student.lesson.continue")}
             </Button>
           </div>
         </div>
