@@ -1,0 +1,82 @@
+name: Rewrite A1 Section 01
+on:
+  push:
+    paths:
+      - '.rewrite-a1-s01'
+permissions:
+  contents: write
+jobs:
+  rewrite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rewrite lessons
+        run: |
+          node <<'NODE'
+          const fs=require('fs');
+          const dir='lessons/a1';
+          const defs=[
+            {id:'a1-s01-l01',order:1,title:'Привітання та прощання',topic:'Перший контакт',description:'Навчися привітатися, звернутися до людини, подякувати й попрощатися у звичайній ситуації.',intro:'Ти зустрічаєш людину вперше. Обери природне привітання, ввічливо попроси щось і заверши короткий контакт.',outcomes:['привітатися з другом і незнайомою людиною','подякувати та відповісти на подяку','попрощатися відповідно до ситуації'],words:[['ahoj','привіт; бувай','агой','Ahoj, Jana!','Привіт, Яно!'],['dobrý deň','добрий день','добри день','Dobrý deň!','Добрий день!'],['dobré ráno','добрий ранок','добре рано','Dobré ráno!','Добрий ранок!'],['dobrý večer','добрий вечір','добри вечєр','Dobrý večer!','Добрий вечір!'],['dovidenia','до побачення','довіденія','Dovidenia!','До побачення!'],['čau','привіт; бувай','чау','Čau, Martin!','Привіт, Мартіне!'],['prosím','будь ласка','просім','Prosím, jednu kávu.','Будь ласка, одну каву.'],['ďakujem','дякую','дякуєм','Ďakujem za pomoc.','Дякую за допомогу.'],['vitajte','ласкаво просимо','вітайте','Vitajte u nás!','Ласкаво просимо до нас!'],['zatiaľ','поки що; до зустрічі','затяль','Zatiaľ, ahoj!','Поки що, бувай!']]},
+            {id:'a1-s01-l02',order:2,title:'Як читати прості словацькі слова',topic:'Читання та вимова',description:'Навчися впізнавати короткі слова, читати їх цілком і помічати словацькі діакритичні знаки.',intro:'Не вгадуй слово за першою літерою: прочитай його повністю та зверни увагу на á, č, ď, ľ, š і довгі голосні.',outcomes:['читати короткі слова без вгадування','розрізняти базові діакритичні знаки','впізнавати знайомі слова у простих реченнях'],words:[['áno','так','ано','Áno, dobre.','Так, добре.'],['nie','ні','ніє','Nie, ďakujem.','Ні, дякую.'],['ja','я','я','Ja som Anna.','Я Анна.'],['ty','ти','ти','Ty si Peter.','Ти Петер.'],['to','це; те','то','To je číslo.','Це номер.'],['toto','це; ось це','тото','Toto je slovo.','Це слово.'],['meno','ім’я','мено','Moje meno je Anna.','Мене звати Анна.'],['slovo','слово','слово','To je slovo.','Це слово.'],['číslo','число; номер','чісло','To je číslo.','Це номер.'],['dobre','добре','добре','Dobre, ďakujem.','Добре, дякую.']]},
+            {id:'a1-s01-l03',order:3,title:'Як виправити себе й попросити повторити',topic:'Ремонт комунікації',description:'Навчися зупинити помилку, попросити повторити або пояснити слово та продовжити розмову.',intro:'Не знаєш або неправильно почув? Замість мовчання використай коротку фразу для ремонту розмови.',outcomes:['сказати, що ти не зрозумів','попросити повторити або говорити повільніше','уточнити значення незнайомого слова'],words:[['prepáčte','вибачте','препачте','Prepáčte, nerozumiem.','Вибачте, я не розумію.'],['prepáč','вибач','препач','Prepáč, nerozumiem.','Вибач, я не розумію.'],['nerozumiem','я не розумію','нерозумієм','Nerozumiem.','Я не розумію.'],['rozumiem','я розумію','розумієм','Rozumiem.','Я розумію.'],['zopakujte','повторіть','зопакуйте','Zopakujte, prosím.','Повторіть, будь ласка.'],['pomaly','повільно','помали','Hovorte pomaly, prosím.','Говоріть повільно, будь ласка.'],['ešte raz','ще раз','єште раз','Ešte raz, prosím.','Ще раз, будь ласка.'],['čo','що','чо','Čo to znamená?','Що це означає?'],['znamená','означає','знаменá','Čo to znamená?','Що це означає?'],['prosím','будь ласка','просім','Prosím, zopakujte to.','Будь ласка, повторіть це.']]},
+            {id:'a1-s01-l04',order:4,title:'Що це? Предмети навколо нас',topic:'Предмети та називання',description:'Навчися запитати, що це, назвати простий предмет і відповісти коротким реченням.',intro:'Подивись навколо: ти можеш назвати предмет і перевірити, чи правильно зрозумів співрозмовника.',outcomes:['запитати «Що це?»','назвати простий предмет','відрізнити предмет від людини у короткій фразі'],words:[['čo','що','чо','Čo je to?','Що це?'],['to','це; те','то','To je stôl.','Це стіл.'],['toto','це; ось це','тото','Toto je kniha.','Це книга.'],['kniha','книга','кніга','To je kniha.','Це книга.'],['stôl','стіл','стоу́л','To je stôl.','Це стіл.'],['stolička','стілець','столічка','Toto je stolička.','Це стілець.'],['pero','ручка','перо','To je pero.','Це ручка.'],['telefón','телефон','телефон','To je telefón.','Це телефон.'],['taška','сумка','ташка','Toto je taška.','Це сумка.'],['áno','так','ано','Áno, to je kniha.','Так, це книга.']]},
+            {id:'a1-s01-l05',order:5,title:'До кого як звертатися',topic:'Формально та неформально',description:'Навчися розрізняти неформальне звертання до знайомого та ввічливий контакт із незнайомою людиною.',intro:'Одна й та сама ситуація може звучати по-різному залежно від стосунків. Тут ти вчишся вибирати природну форму.',outcomes:['розрізняти ahoj і dobrý deň','вибирати prosím та ďakujem у ввічливому контакті','не змішувати дружній і формальний стиль'],words:[['ahoj','привіт; бувай','агой','Ahoj, Peter!','Привіт, Петер!'],['čau','привіт; бувай','чау','Čau, Jana!','Привіт, Яно!'],['dobrý deň','добрий день','добри день','Dobrý deň, pani Nováková.','Добрий день, пані Новакова.'],['dovidenia','до побачення','довіденія','Ďakujem. Dovidenia!','Дякую. До побачення!'],['prosím','будь ласка','просім','Prosím, pomôžte mi.','Будь ласка, допоможіть мені.'],['ďakujem','дякую','дякуєм','Ďakujem vám.','Дякую вам.'],['vám','вам','вам','Ďakujem vám.','Дякую вам.'],['ti','тобі','ті','Ďakujem ti.','Дякую тобі.'],['pán','пан','пан','Dobrý deň, pán Kováč.','Добрий день, пане Ковачу.'],['pani','пані','пані','Dobrý deň, pani Nováková.','Добрий день, пані Новакова.']]},
+            {id:'a1-s01-l06',order:6,title:'Перший короткий діалог',topic:'Міні-діалог',description:'Поєднай привітання, представлення, просте запитання, подяку й прощання в одному короткому діалозі.',intro:'Тепер не вчи фрази окремо: збудуй перший природний контакт від привітання до прощання.',outcomes:['почати короткий діалог','запитати та відповісти на просте запитання','завершити розмову ввічливо'],words:[['ahoj','привіт; бувай','агой','Ahoj! Ako sa máš?','Привіт! Як ти?'],['ako','як','ако','Ako sa máš?','Як ти?'],['sa','себе; частка у конструкції','са','Ako sa máš?','Як ти?'],['máš','маєш; у «як ти?»','маш','Ako sa máš?','Як ти?'],['dobre','добре','добре','Mám sa dobre.','У мене все добре.'],['mám','маю; у «я почуваюся»','мам','Mám sa dobre.','У мене все добре.'],['ďakujem','дякую','дякуєм','Dobre, ďakujem.','Добре, дякую.'],['a','і','а','A ty?','А ти?'],['ty','ти','ти','A ty?','А ти?'],['dovidenia','до побачення','довіденія','Dobre, dovidenia!','Добре, до побачення!']]}
+          ];
+          const esc=(s)=>s;
+          const ex=(l,w)=>{
+            const id=l.id, a=w.map(x=>x[0]);
+            const e=[];
+            const add=(type,question,extra,answer,explanation,difficulty)=>e.push({id:`${id}-e${String(e.length+1).padStart(2,'0')}`,lessonId:id,type,question,...extra,correctAnswer:answer,explanation,order:e.length+1,difficulty,button:e.length===11?'Завершити':'Далі'});
+            add('multiple_choice_translation',`Що означає «${a[0]}»?`,{options:[a[0],a[1],a[2],a[3]]},w[0][1],`${a[0]} — «${w[0][1]}».`,'easy');
+            add('reverse_translation',`Як сказати «${w[1][1]}»?`,{options:[a[1],a[4],a[5],a[6]]},a[1],`Правильна фраза — ${a[1]}.`,'easy');
+            add('meaning_in_context',`Що означає виділене слово в реченні?`,{context:w[2][3],target:a[2],options:[{id:'a',text:w[2][1],correct:true},{id:'b',text:w[3][1],correct:false},{id:'c',text:w[4][1],correct:false}]},w[2][1],`У цьому реченні ${a[2]} означає «${w[2][1]}».`,'easy');
+            add('natural_phrase','Обери природну репліку для ситуації.',{situation:w[3][4],options:[{id:'a',text:w[3][3],correct:true},{id:'b',text:w[5][3],correct:false},{id:'c',text:w[6][3],correct:false}]},w[3][3],'Ця репліка відповідає описаній ситуації.','medium');
+            add('fill_blank',`Доповни речення: ${w[4][3].replace(a[4],'___')}`,{sentence:w[4][3].replace(a[4],'___'),acceptedAnswers:[a[4]]},a[4],`${a[4]} підходить за змістом.`,'medium');
+            add('dropdown_blank','Обери правильне слово.',{sentenceParts:[{blankId:'b1',options:[a[5],a[6],a[7]],correct:a[5]}]},a[5],`Правильна відповідь — ${a[5]}.`,'easy');
+            add('sentence_builder','Склади речення з поданих частин.',{tokens:w[6][3].split(' ')},w[6][3],`Правильна послідовність утворює: ${w[6][3]}`,'medium');
+            add('sentence_order','Віднови коротку фразу.',{tokens:w[7][3].split(' ')},w[7][3].split(' '),`Правильний порядок: ${w[7][3]}`,'medium');
+            e[e.length-1].correctAnswer=undefined; delete e[e.length-1].correctAnswer;
+            e[e.length-1].correctOrder=w[7][3].split(' ');
+            add('multiple_select','Обери всі слова, які потрібні для цієї теми.',{options:[{id:'a',text:a[0],correct:true},{id:'b',text:a[1],correct:true},{id:'c',text:a[8],correct:false},{id:'d',text:a[9],correct:true}]},[a[0],a[1],a[9]],'Усі правильні слова належать до ключової ситуації уроку.','medium');
+            add('reading_comprehension','Прочитай короткий текст і дай відповідь.',{text:`${w[0][3]} ${w[1][3]} ${w[4][3]}`,questions:[{question:`Яка ключова фраза тут потрібна?`,options:[{id:'a',text:w[0][0],correct:true},{id:'b',text:w[2][0],correct:false},{id:'c',text:w[5][0],correct:false}]}]},w[0][0],'Текст містить ключову фразу уроку.','medium');
+            add('dialogue_choose_reply','Що відповісти, щоб продовжити діалог природно?',{dialogue:[{speaker:'A',sk:w[0][3]},{speaker:'B',sk:w[1][3]}],options:[{id:'a',text:w[2][3],correct:true},{id:'b',text:w[8][3],correct:false},{id:'c',text:w[9][3],correct:false}]},w[2][3],'Ця репліка логічно продовжує короткий діалог.','medium');
+            e[e.length-1].correctAnswer=w[2][3];
+            e.push({id:`${id}-e12`,lessonId:id,type:'matching',question:'Поєднай слова з перекладами.',pairs:w.slice(0,4).map(x=>({left:x[0],right:x[1]})),explanation:'Точне зіставлення закріплює лексику уроку.',order:12,difficulty:'medium',button:'Завершити'});
+            return e;
+          };
+          for(const d of defs){
+            const p=`${dir}/${d.id}.json`;
+            const root=JSON.parse(fs.readFileSync(p,'utf8'));
+            const old=root.lessons[0];
+            const words=d.words.map((x,i)=>({id:`${d.id}-w${String(i+1).padStart(2,'0')}`,sk:x[0],uk:x[1],pronunciationUk:x[2],exampleSk:x[3],exampleUk:x[4],level:'A1',topic:d.topic,tags:[d.topic]}));
+            const items=words.map(x=>({wordId:x.id,sk:x.sk,uk:x.uk,pronunciationUk:x.pronunciationUk,exampleSk:x.exampleSk,exampleUk:x.exampleUk}));
+            const exercises=ex(d,d.words);
+            const theory=[
+              {screenType:'theory',order:1,title:'Спочатку зрозумій ситуацію',text:`${d.description} Не намагайся запам’ятати все одразу: спочатку побач фразу в контексті.`,examples:d.words.slice(0,3).map(x=>({sk:x[3],uk:x[4]})),shortRule:'Спочатку ситуація, потім форма фрази.',button:'Далі'},
+              {screenType:'theory',order:2,title:'Помічай готові фрази',text:'На рівні A1 корисно запам’ятовувати короткі репліки цілком. Так легше швидко відповісти в реальній розмові.',examples:d.words.slice(3,6).map(x=>({sk:x[3],uk:x[4]})),shortRule:'Коротка готова фраза допомагає говорити швидше.',button:'Далі'},
+              {screenType:'theory',order:3,title:'Перенеси знання в діалог',text:'Обери репліку за ситуацією, а не лише за перекладом. Правильна відповідь має бути природною саме тут.',examples:d.words.slice(6,9).map(x=>({sk:x[3],uk:x[4]})),shortRule:'Запитай себе: «Що я реально скажу зараз?»',button:'Практика'}
+            ];
+            old.title=d.title; old.topic=d.topic; old.description=d.description; old.intro=d.intro; old.order=d.order; old.estimatedMinutes=30; old.xpReward=25; old.completionMessage=`Ти завершив урок «${d.title}» і можеш використати ці фрази в короткій реальній ситуації.`;
+            old.startScreen={screenType:'lesson_start',title:d.title,shortDescription:d.description,outcomes:d.outcomes,newWords:words.map(x=>x.id),exercisesCount:12,reward:'25 XP',button:'Почати урок'};
+            old.theoryScreens=theory;
+            old.wordsScreen={screenType:'lesson_words',title:'Нові слова та фрази',description:'Прочитай кожне слово разом із перекладом і прикладом.',items,button:'Почати практику'};
+            old.words=words; old.exercises=exercises;
+            if(old.finalSituation){ old.finalSituation.title=`Практична ситуація: ${d.title}`; if('context' in old.finalSituation) old.finalSituation.context=d.description; }
+            if(old.resultScreen){ old.resultScreen.title='Урок завершено'; old.resultScreen.message=old.resultScreen.message||old.resultScreen.description||old.completionMessage; }
+            root.lessons=[old]; fs.writeFileSync(p,JSON.stringify(root,null,2)+'\n');
+          }
+          NODE
+      - name: Validate JSON and lesson QA
+        run: |
+          for f in lessons/a1/a1-s01-l0{1,2,3,4,5,6}.json; do node -e "JSON.parse(require('fs').readFileSync(process.argv[1],'utf8'))" "$f"; done
+          npm ci
+          npm run qa:lessons -- lessons/a1/a1-s01-l01.json lessons/a1/a1-s01-l02.json lessons/a1/a1-s01-l03.json lessons/a1/a1-s01-l04.json lessons/a1/a1-s01-l05.json lessons/a1/a1-s01-l06.json
+          npx --yes ajv-cli validate -s curriculum/lesson.schema.json -d 'lessons/a1/*.json' --spec=draft2020
+      - name: Commit rewritten lessons
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add lessons/a1/a1-s01-l0{1,2,3,4,5,6}.json .rewrite-a1-s01
+          git commit -m 'Rewrite A1 Section 01 lessons' || exit 0
+          git push
