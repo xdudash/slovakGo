@@ -20,7 +20,13 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: node scripts/patch-lesson-i18n.mjs
+      - name: Materialize renderer repair if needed
+        run: |
+          if grep -q 'student.lesson.new_words' src/features/student/StudentScreens.tsx; then
+            echo 'Renderer patch already materialized'
+          else
+            node scripts/patch-lesson-i18n.mjs
+          fi
       - run: npx vitest run src/utils/lessonLocale.test.ts
       - run: npm run build
       - name: Commit verified renderer repair
