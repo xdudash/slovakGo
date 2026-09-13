@@ -3,18 +3,9 @@ name: Verify multilingual lesson UI
 on:
   push:
     branches: [lesson-content-i18n]
-    paths:
-      - .github/workflows/lesson-i18n.yml
-      - src/utils/lessonLocale.ts
-      - src/utils/lessonLocale.test.ts
-      - src/types/index.ts
-      - src/features/student/StudentScreens.tsx
-      - src/features/student/exercises/TrueFalseExercise.tsx
-      - src/locales/*.json
-      - curriculum/lesson.schema.json
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   test:
@@ -23,10 +14,23 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: lesson-content-i18n
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: node scripts/patch-lesson-i18n.mjs
       - run: npx vitest run src/utils/lessonLocale.test.ts
       - run: npm run build
+      - name: Commit verified renderer repair
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/features/student/StudentScreens.tsx src/locales/*.json
+          if git diff --cached --quiet; then
+            echo "No renderer changes to commit"
+          else
+            git commit -m "fix: render lesson content in active UI language"
+            git push origin HEAD:lesson-content-i18n
+          fi
