@@ -1,0 +1,32 @@
+name: Verify multilingual lesson UI
+
+on:
+  push:
+    branches: [lesson-content-i18n]
+    paths:
+      - .github/workflows/lesson-i18n.yml
+      - src/utils/lessonLocale.ts
+      - src/utils/lessonLocale.test.ts
+      - src/types/index.ts
+      - src/features/student/StudentScreens.tsx
+      - src/features/student/exercises/TrueFalseExercise.tsx
+      - src/locales/*.json
+      - curriculum/lesson.schema.json
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: lesson-content-i18n
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx vitest run src/utils/lessonLocale.test.ts
+      - run: npm run build
