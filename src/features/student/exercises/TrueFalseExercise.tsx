@@ -1,5 +1,6 @@
-import type { Exercise, Lesson } from "../../../types";
+import type { Exercise, Lesson, LocalizedText } from "../../../types";
 import { useLessonLocale } from "../../../hooks/useLessonLocale";
+import { resolveStatementText } from "../../../utils/lessonLocale";
 
 interface Props {
   exercise: Exercise;
@@ -29,9 +30,10 @@ export function TrueFalseExercise({ exercise, lesson, answer, setAnswer, disable
         {exercise.text && <div className="card exercise-text-block">{tx(exercise.text)}</div>}
         {exercise.statements.map((s, idx) => {
           const chosenValue = map.get(String(idx));
+          const localized = s as typeof s & { text?: LocalizedText };
           return (
             <div key={idx} className="tf-list-row">
-              <span className="tf-list-statement">{s.sk}</span>
+              <span className="tf-list-statement">{resolveStatementText(localized, tx)}</span>
               <div className="tf-toggle">
                 <button type="button" className={`chip${chosenValue === "true" ? " active" : ""}`} disabled={disabled} onClick={() => pick(idx, true)}>Pravda</button>
                 <button type="button" className={`chip${chosenValue === "false" ? " active" : ""}`} disabled={disabled} onClick={() => pick(idx, false)}>Nepravda</button>
