@@ -10,5 +10,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
       - run: npm ci
-      - run: node -e "const fs=require('fs'); for(const f of ['lessons/a1/a1-s01-l01.json','lessons/a1/a1-s01-l02.json','lessons/a1/a1-s01-l03.json','lessons/a1/a1-s01-l04.json','lessons/a1/a1-s01-l05.json','lessons/a1/a1-s01-l06.json']){const s=fs.readFileSync(f,'utf8');try{JSON.parse(s);console.log(f+' PASS')}catch(e){const p=Number((e.message.match(/position (\\d+)/)||[])[1]);console.log(f+' FAIL '+e.message);console.log(s.slice(Math.max(0,p-120),p+120));}}"
+      - run: npm run qa:lessons -- lessons/a1/a1-s01-l01.json lessons/a1/a1-s01-l02.json lessons/a1/a1-s01-l03.json lessons/a1/a1-s01-l04.json lessons/a1/a1-s01-l05.json lessons/a1/a1-s01-l06.json
