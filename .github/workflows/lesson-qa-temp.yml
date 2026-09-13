@@ -14,12 +14,14 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Repair generated JSON envelopes
+      - name: Verify lesson JSON
         run: |
           node - <<'NODE'
           const fs=require('fs');
           const files=['lessons/a1/a1-s01-l01.json','lessons/a1/a1-s01-l02.json','lessons/a1/a1-s01-l03.json','lessons/a1/a1-s01-l04.json','lessons/a1/a1-s01-l05.json','lessons/a1/a1-s01-l06.json'];
-          for(const f of files){let s=fs.readFileSync(f,'utf8');try{JSON.parse(s);continue}catch(e){} s=s.replace(/[}\]]+$/,'}}}]}'); try{JSON.parse(s)}catch(e){throw new Error(f+': '+e.message)} fs.writeFileSync(f,s);console.log('repaired '+f)}
+          for(const f of files){JSON.parse(fs.readFileSync(f,'utf8'));console.log(f+': JSON parse PASS')}
           NODE
-          if git diff --quiet; then echo 'No repair needed'; else git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'; git add lessons/a1/*.json; git commit -m 'Auto-repair Section 01 JSON envelopes'; git push; fi
-      - run: npm run qa:lessons -- lessons/a1/a1-s01-l01.json lessons/a1/a1-s01-l02.json lessons/a1/a1-s01-l03.json lessons/a1/a1-s01-l04.json lessons/a1/a1-s01-l05.json lessons/a1/a1-s01-l06.json
+      - name: Schema QA
+        run: npx --yes ajv-cli validate -s curriculum/lesson.schema.json -d 'lessons/a1/*.json' --spec=draft2020
+      - name: Runtime QA
+        run: npm run qa:lessons -- lessons/a1/a1-s01-l01.json lessons/a1/a1-s01-l02.json lessons/a1/a1-s01-l03.json lessons/a1/a1-s01-l04.json lessons/a1/a1-s01-l05.json lessons/a1/a1-s01-l06.json
