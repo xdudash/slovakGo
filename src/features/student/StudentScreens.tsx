@@ -1229,8 +1229,8 @@ function LessonScreen() {
                 <span><strong>Обери репліку</strong> · знайди найприроднішу відповідь для ситуації</span>
               </div>
             )}
-            <h1>{tx(exercise.question ?? exercise.instruction)}</h1>
-            <ExerciseContent exercise={exercise} lesson={lesson} />
+            <h1>{tx(exercise.instruction ?? exercise.question)}</h1>
+            <ExerciseContent exercise={exercise} lesson={lesson} soundEnabled={!!user.settings.soundEnabled} />
             {exercise.imageUrl && <img src={exercise.imageUrl} alt="" loading="lazy" className="exercise-image" />}
             <ExerciseView key={exercise.id} exercise={exercise} lesson={lesson} answer={answer} setAnswer={setAnswer} t={t} disabled={feedback !== null} soundEnabled={!!user.settings.soundEnabled} />
           </Card>
