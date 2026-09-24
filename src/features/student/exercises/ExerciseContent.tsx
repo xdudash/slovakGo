@@ -1,17 +1,21 @@
 import type { Exercise, Lesson } from "../../../types";
 import { useLessonLocale } from "../../../hooks/useLessonLocale";
+import { AudioBanner } from "./AudioBanner";
 
 interface Props {
   exercise: Exercise;
   lesson: Lesson;
+  soundEnabled?: boolean;
 }
 
 /**
  * Renders semantic/context fields that describe what the learner is answering.
  * Answer-family components stay focused on interaction mechanics.
  */
-export function ExerciseContent({ exercise, lesson }: Props) {
-  const { tx } = useLessonLocale(lesson);
+export function ExerciseContent({ exercise, lesson, soundEnabled = false }: Props) {
+  const { tx, asset } = useLessonLocale(lesson);
+  const image = asset(exercise.imageRef, "images");
+  const hasDedicatedAudioRenderer = exercise.type.startsWith("listen_") || exercise.type === "dictation";
   const context = tx(exercise.context);
   const target = tx(exercise.target);
   const phrase = tx(exercise.phrase);
@@ -26,6 +30,10 @@ export function ExerciseContent({ exercise, lesson }: Props) {
 
       {exercise.prompt && <div className="card exercise-text-block exercise-prompt">{tx(exercise.prompt)}</div>}
       {exercise.situation && <div className="card exercise-text-block exercise-situation">{tx(exercise.situation)}</div>}
+      {image && <img src={image.src} alt={image.alt ?? ""} loading="lazy" className="exercise-image" />}
+      {exercise.audioRef && !hasDedicatedAudioRenderer && (
+        <AudioBanner lesson={lesson} audioRef={exercise.audioRef} soundEnabled={soundEnabled} />
+      )}
 
       {exercise.dialogue?.length ? (
         <div className="card theory-dialogue exercise-dialogue">
