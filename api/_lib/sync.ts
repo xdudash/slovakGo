@@ -180,7 +180,14 @@ async function mutLessonComplete(uid: string, p: Record<string, unknown>): Promi
   if (!lessonRow) throw new Error("Unknown or unpublished lesson");
   const lesson = safeJson<Record<string, unknown>>(String(lessonRow.data_json), {});
   const exerciseCount = Array.isArray(lesson.exercises) ? lesson.exercises.length : 0;
-  const answers = (Array.isArray(p.answers) ? p.answers as Record<string, unknown>[] : []).slice(0, exerciseCount || 100);
+  const finalSituation = (typeof lesson.finalSituation === "object" && lesson.finalSituation)
+    ? lesson.finalSituation as Record<string, unknown>
+    : null;
+  const finalStepCount = finalSituation?.type === "interactive_scenario" && Array.isArray(finalSituation.steps)
+    ? finalSituation.steps.length
+    : 0;
+  const expectedAnswerCount = exerciseCount + finalStepCount;
+  const answers = (Array.isArray(p.answers) ? p.answers as Record<string, unknown>[] : []).slice(0, expectedAnswerCount || 100);
   const wrong    = answers.filter(a => !a.correct).length;
   const xpEarned = Math.max(10, answers.length > 0 ? answers.length * 5 - wrong * 3 : 10);
 

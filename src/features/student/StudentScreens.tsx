@@ -1229,8 +1229,8 @@ function LessonScreen() {
                 <span><strong>Обери репліку</strong> · знайди найприроднішу відповідь для ситуації</span>
               </div>
             )}
-            <h1>{tx(exercise.question ?? exercise.instruction)}</h1>
-            <ExerciseContent exercise={exercise} lesson={lesson} />
+            <h1>{tx(exercise.instruction ?? exercise.question)}</h1>
+            <ExerciseContent exercise={exercise} lesson={lesson} soundEnabled={!!user.settings.soundEnabled} />
             {exercise.imageUrl && <img src={exercise.imageUrl} alt="" loading="lazy" className="exercise-image" />}
             <ExerciseView key={exercise.id} exercise={exercise} lesson={lesson} answer={answer} setAnswer={setAnswer} t={t} disabled={feedback !== null} soundEnabled={!!user.settings.soundEnabled} />
           </Card>
@@ -1258,8 +1258,16 @@ function LessonScreen() {
       {phase === "final" && lesson.finalSituation && isInteractiveFinal(lesson.finalSituation) && (() => {
         const sit = lesson.finalSituation;
         const step = sit.steps[finalStepIndex];
+        const finalImage = sit.imageRef ? asset(sit.imageRef, "images") : undefined;
         return (
           <>
+            {(sit.title || sit.description || finalImage) && (
+              <div className="final-situation-intro">
+                {finalImage && <img className="exercise-image" src={finalImage.src} alt={finalImage.alt ?? ""} loading="lazy" />}
+                {sit.title && <h2 className="final-situation-title">{tx(sit.title)}</h2>}
+                {sit.description && <p className="final-situation-description">{tx(sit.description)}</p>}
+              </div>
+            )}
             {finalAttemptFailed && (
               <div className="lesson-feedback wrong">
                 {sit.passRequirement ? `Потрібно виконати щонайменше ${sit.passRequirement} кроків правильно. Спробуй фінальну ситуацію ще раз.` : "Спробуй фінальну ситуацію ще раз."}

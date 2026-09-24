@@ -151,6 +151,10 @@ describe("new 35-type lesson format", () => {
     expect(isExerciseComplete(matching, ["0|0"])).toBe(false);
     expect(isExerciseComplete(matching, deriveCorrectAnswer(matching))).toBe(true);
 
+    const sentenceBuilder = lesson.exercises.find((exercise) => exercise.type === "sentence_builder")!;
+    expect(isExerciseComplete(sentenceBuilder, [sentenceBuilder.tokens![0]])).toBe(false);
+    expect(isExerciseComplete(sentenceBuilder, deriveCorrectAnswer(sentenceBuilder))).toBe(true);
+
     const reading = lesson.exercises.find((exercise) => exercise.type === "reading_comprehension")!;
     expect(isExerciseComplete(reading, [String((deriveCorrectAnswer(reading) as string[])[0])])).toBe(false);
     expect(isExerciseComplete(reading, deriveCorrectAnswer(reading))).toBe(true);
