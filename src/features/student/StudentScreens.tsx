@@ -1286,7 +1286,9 @@ function LessonScreen() {
               </div>
             </div>
             <div className={`lesson-feedback ${finalFeedback || ""}`}>
-              {finalFeedback === "correct" ? t("student.lesson.correct") : null}
+              {finalFeedback === "correct"
+                ? (finalStepIndex + 1 >= sit.steps.length && sit.successMessage ? tx(sit.successMessage) : t("student.lesson.correct"))
+                : null}
               {finalFeedback === "wrong" ? `${t("student.lesson.wrong_prefix")} ${step.options.find((o) => o.correct)?.sk ?? tx(step.options.find((o) => o.correct)?.text)}` : null}
             </div>
             <div className="lesson-bottom">
