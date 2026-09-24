@@ -37,6 +37,8 @@ import { BranchingDialogueExercise } from "./exercises/BranchingDialogueExercise
 import { TextEditExercise } from "./exercises/TextEditExercise";
 import { ListeningExercise } from "./exercises/ListeningExercise";
 import { StructuredContentExercise } from "./exercises/StructuredContentExercise";
+import { ExerciseContent } from "./exercises/ExerciseContent";
+import { finalSituationPassed, isExerciseComplete } from "../../utils/exerciseCompletion";
 
 /** New-format (35-type) exercise types that route to a family component instead of the legacy inline UI. */
 const NEW_FORMAT_TYPES = new Set<ExerciseType>([
@@ -617,7 +619,7 @@ function ExerciseView({ exercise, lesson, answer, setAnswer, t, disabled = false
     return <DialogueOrderExercise exercise={exercise} setAnswer={setAnswer} disabled={disabled} />;
   }
   if (exercise.type === "branching_dialogue") {
-    return <BranchingDialogueExercise exercise={exercise} setAnswer={setAnswer} disabled={disabled} />;
+    return <BranchingDialogueExercise exercise={exercise} lesson={lesson!} setAnswer={setAnswer} disabled={disabled} />;
   }
   if (exercise.type === "find_error" || exercise.type === "correct_error" || exercise.type === "transformation") {
     return <TextEditExercise exercise={exercise} lesson={lesson!} answer={answer} setAnswer={setAnswer} disabled={disabled} />;
@@ -857,6 +859,8 @@ function LessonScreen() {
   const [finalFeedback, setFinalFeedback] = useState<"correct" | "wrong" | null>(null);
   const [finalStepIndex, setFinalStepIndex] = useState(0);
   const [finalStepResults, setFinalStepResults] = useState<boolean[]>([]);
+  const [finalStepAnswers, setFinalStepAnswers] = useState<string[]>([]);
+  const [finalAttemptFailed, setFinalAttemptFailed] = useState(false);
   const [celebration, setCelebration] = useState<CompletionData | null>(null);
   const [completionData, setCompletionData] = useState<CompletionData | null>(null);
   const [sharing, setSharing] = useState(false);
@@ -893,10 +897,29 @@ function LessonScreen() {
   function buildWrong(recs: AnswerRecord[]): WrongItem[] {
     return recs.filter((r) => !r.correct).map((r) => {
       const ex = lesson!.exercises.find((e) => e.id === r.exerciseId);
+      if (ex) {
+        return {
+          question: tx(ex.question ?? ex.instruction ?? ex.prompt),
+          userAnswer: Array.isArray(r.answer) ? r.answer.join(", ") : String(r.answer),
+          correctAnswer: formatCorrectAnswer(ex),
+        };
+      }
+
+      const sit = lesson!.finalSituation;
+      if (r.exerciseId.startsWith("final:") && isInteractiveFinal(sit)) {
+        const stepId = r.exerciseId.slice("final:".length);
+        const step = sit.steps.find((item) => item.id === stepId);
+        return {
+          question: step ? tx(step.prompt) : "",
+          userAnswer: Array.isArray(r.answer) ? r.answer.join(", ") : String(r.answer),
+          correctAnswer: step ? (step.options.find((option) => option.correct)?.sk ?? tx(step.options.find((option) => option.correct)?.text)) : "",
+        };
+      }
+
       return {
-        question: ex ? tx(ex.question ?? ex.instruction ?? ex.prompt) : "",
+        question: "",
         userAnswer: Array.isArray(r.answer) ? r.answer.join(", ") : String(r.answer),
-        correctAnswer: ex ? formatCorrectAnswer(ex) : "",
+        correctAnswer: "",
       };
     });
   }
@@ -980,6 +1003,7 @@ function LessonScreen() {
       const step = sit.steps[finalStepIndex];
       const chosen = step.options.find((o) => (o.sk ?? tx(o.text)) === finalAnswer);
       const correct = !!chosen?.correct;
+      setFinalAttemptFailed(false);
       setFinalFeedback(correct ? "correct" : "wrong");
       soundService.play(correct ? "correct" : "wrong", user!.settings.soundEnabled);
       return;
@@ -994,7 +1018,10 @@ function LessonScreen() {
     const sit = lesson!.finalSituation!;
     if (isInteractiveFinal(sit)) {
       const results = [...finalStepResults, finalFeedback === "correct"];
+      const answers = [...finalStepAnswers, finalAnswer];
       setFinalStepResults(results);
+      setFinalStepAnswers(answers);
+
       const nextStep = finalStepIndex + 1;
       if (nextStep < sit.steps.length) {
         setFinalStepIndex(nextStep);
@@ -1002,6 +1029,26 @@ function LessonScreen() {
         setFinalFeedback(null);
         return;
       }
+
+      if (!finalSituationPassed(sit, results)) {
+        setFinalAttemptFailed(true);
+        setFinalStepIndex(0);
+        setFinalStepResults([]);
+        setFinalStepAnswers([]);
+        setFinalAnswer("");
+        setFinalFeedback(null);
+        return;
+      }
+
+      const answeredAt = new Date().toISOString();
+      const finalRecords: AnswerRecord[] = sit.steps.map((step, stepIndex) => ({
+        exerciseId: `final:${step.id}`,
+        answer: answers[stepIndex] ?? "",
+        correct: results[stepIndex] ?? false,
+        answeredAt,
+      }));
+      finishLesson([...records, ...finalRecords]);
+      return;
     }
     finishLesson(records);
   }
@@ -1183,6 +1230,7 @@ function LessonScreen() {
               </div>
             )}
             <h1>{tx(exercise.question ?? exercise.instruction)}</h1>
+            <ExerciseContent exercise={exercise} lesson={lesson} />
             {exercise.imageUrl && <img src={exercise.imageUrl} alt="" loading="lazy" className="exercise-image" />}
             <ExerciseView key={exercise.id} exercise={exercise} lesson={lesson} answer={answer} setAnswer={setAnswer} t={t} disabled={feedback !== null} soundEnabled={!!user.settings.soundEnabled} />
           </Card>
@@ -1198,7 +1246,7 @@ function LessonScreen() {
           <div className="lesson-bottom">
             {!feedback
               ? <>
-                <Button disabled={!answer || (Array.isArray(answer) && !answer.length)} onClick={check}>{t("student.lesson.check")}</Button>
+                <Button disabled={!isExerciseComplete(exercise, answer)} onClick={check}>{t("student.lesson.check")}</Button>
                 {isAdmin && <Button variant="ghost" onClick={skipExercise}>Пропустити →</Button>}
               </>
               : <Button autoFocus onClick={next}>{index + 1 >= lesson.exercises.length ? t("student.lesson.finish") : exercise.button ?? t("student.lesson.next")}</Button>
@@ -1212,6 +1260,11 @@ function LessonScreen() {
         const step = sit.steps[finalStepIndex];
         return (
           <>
+            {finalAttemptFailed && (
+              <div className="lesson-feedback wrong">
+                {sit.passRequirement ? `Потрібно виконати щонайменше ${sit.passRequirement} кроків правильно. Спробуй фінальну ситуацію ще раз.` : "Спробуй фінальну ситуацію ще раз."}
+              </div>
+            )}
             <div className="final-situation-card">
               <span className="badge">{t("student.lesson.step")} {finalStepIndex + 1} / {sit.steps.length}</span>
               <h2 className="final-situation-question">{tx(step.prompt)}</h2>
@@ -1327,7 +1380,7 @@ function LessonScreen() {
             <Button autoFocus onClick={() => navigate(completionDestination)}>
               {opensTrialAfterLesson ? `${t("student.lesson.open_full_access")} →` : lesson.resultScreen.buttons?.[0] ?? t("student.lesson.continue")}
             </Button>
-            <Button variant="secondary" onClick={() => { setIndex(0); setTheoryIndex(0); setRecords([]); setFinalAnswer(""); setFinalFeedback(null); setFinalStepIndex(0); setFinalStepResults([]); setCompletionData(null); setPhase(lesson.startScreen ? "start" : theories.length > 0 ? "theory" : "wordsScreen" in lesson && lesson.wordsScreen ? "words" : "exercise"); }}>{lesson.resultScreen.buttons?.[1] ?? t("student.lesson.repeat_lesson")}</Button>
+            <Button variant="secondary" onClick={() => { setIndex(0); setTheoryIndex(0); setRecords([]); setFinalAnswer(""); setFinalFeedback(null); setFinalStepIndex(0); setFinalStepResults([]); setFinalStepAnswers([]); setFinalAttemptFailed(false); setCompletionData(null); setPhase(lesson.startScreen ? "start" : theories.length > 0 ? "theory" : "wordsScreen" in lesson && lesson.wordsScreen ? "words" : "exercise"); }}>{lesson.resultScreen.buttons?.[1] ?? t("student.lesson.repeat_lesson")}</Button>
             {completionData.wrong.length > 0 && <Button variant="ghost" onClick={() => navigate("/app/practice")}>{lesson.resultScreen.mistakesMessage ?? lesson.resultScreen.buttons?.[2] ?? t("student.lesson.practice_mistakes")}</Button>}
           </div>
         </div>
