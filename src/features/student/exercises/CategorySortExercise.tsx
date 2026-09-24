@@ -43,7 +43,20 @@ export function CategorySortExercise({ exercise, lesson, answer, setAnswer, disa
           <div key={cat.id} className="category-bucket" onClick={() => place(cat.id)}>
             <div className="category-bucket-title">{tx(cat.title)}</div>
             <div className="category-bucket-items">
-              {items.map((item, idx) => map.get(String(idx)) === cat.id ? <span key={idx} className="chip chip--placed">{item.sk}</span> : null)}
+              {items.map((item, idx) => map.get(String(idx)) === cat.id ? (
+                <button
+                  key={idx}
+                  type="button"
+                  className={`chip chip--placed${activeItem === idx ? " active" : ""}`}
+                  disabled={disabled}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setActiveItem(idx);
+                  }}
+                >
+                  {item.sk}
+                </button>
+              ) : null)}
             </div>
           </div>
         ))}

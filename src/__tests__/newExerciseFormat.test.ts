@@ -5,6 +5,7 @@ import { dirname, join } from "node:path";
 import { parseImportJson } from "../services/lessonImport";
 import { checkNewExercise } from "../services/exerciseChecking";
 import { resolveAsset, resolveText } from "../utils/lessonLocale";
+import { finalSituationPassed, isExerciseComplete, requiredFinalCorrect } from "../utils/exerciseCompletion";
 import type { Exercise, ExerciseOption, Lesson } from "../types";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -102,6 +103,16 @@ describe("new 35-type lesson format", () => {
     expect(lesson.exercises).toHaveLength(35);
   });
 
+  it("preserves semantic fields used by the exercise presentation layer", () => {
+    expect(lesson.exercises.some((exercise) => exercise.prompt)).toBe(true);
+    expect(lesson.exercises.some((exercise) => exercise.dialogue?.length)).toBe(true);
+    expect(lesson.exercises.some((exercise) => exercise.context)).toBe(true);
+    expect(lesson.exercises.some((exercise) => exercise.target)).toBe(true);
+    expect(lesson.exercises.some((exercise) => exercise.situation)).toBe(true);
+    expect(lesson.exercises.some((exercise) => exercise.phrase)).toBe(true);
+    expect(lesson.exercises.some((exercise) => exercise.skill?.length)).toBe(true);
+  });
+
   it("resolves every declared image asset", () => {
     const refs = new Set<string>();
     for (const ex of lesson.exercises) {
@@ -129,5 +140,32 @@ describe("new 35-type lesson format", () => {
 
     const matching = lesson.exercises.find((e) => e.id === "ex11")!;
     expect(checkNewExercise(matching, ["0|1"])).toBe(false);
+  });
+
+  it("does not allow partial multi-part exercises to be submitted", () => {
+    const trueFalseList = lesson.exercises.find((exercise) => exercise.type === "true_false_list")!;
+    expect(isExerciseComplete(trueFalseList, ["0:true"])).toBe(false);
+    expect(isExerciseComplete(trueFalseList, deriveCorrectAnswer(trueFalseList))).toBe(true);
+
+    const matching = lesson.exercises.find((exercise) => exercise.type === "matching")!;
+    expect(isExerciseComplete(matching, ["0|0"])).toBe(false);
+    expect(isExerciseComplete(matching, deriveCorrectAnswer(matching))).toBe(true);
+
+    const reading = lesson.exercises.find((exercise) => exercise.type === "reading_comprehension")!;
+    expect(isExerciseComplete(reading, [String((deriveCorrectAnswer(reading) as string[])[0])])).toBe(false);
+    expect(isExerciseComplete(reading, deriveCorrectAnswer(reading))).toBe(true);
+  });
+
+  it("enforces interactive final passRequirement against all final steps", () => {
+    const situation = lesson.finalSituation;
+    expect(situation && "type" in situation && situation.type === "interactive_scenario").toBe(true);
+    if (!situation || !("type" in situation) || situation.type !== "interactive_scenario") return;
+
+    expect(requiredFinalCorrect(situation)).toBeGreaterThan(0);
+    const passing = situation.steps.map((_, index) => index < requiredFinalCorrect(situation));
+    const failing = situation.steps.map(() => false);
+    expect(finalSituationPassed(situation, passing)).toBe(true);
+    expect(finalSituationPassed(situation, failing)).toBe(false);
+    expect(finalSituationPassed(situation, passing.slice(0, -1))).toBe(false);
   });
 });
