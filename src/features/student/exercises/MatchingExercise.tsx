@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { Exercise, Lesson } from "../../../types";
 import { useLessonLocale } from "../../../hooks/useLessonLocale";
 
@@ -30,34 +30,39 @@ export function MatchingExercise({ exercise, lesson, answer, setAnswer, disabled
     }
     return idx;
   });
-
   const [selectedLeft, setSelectedLeft] = useState<number | null>(null);
-  const [matched, setMatched] = useState<string[]>([]);
-  const [wrongRight, setWrongRight] = useState<number | null>(null);
 
   const chosen = Array.isArray(answer) ? answer : [];
-  useEffect(() => {
-    if (matched.length > 0) setAnswer(matched);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [matched]);
+  const pairMap = new Map<number, number>(
+    chosen.map((entry) => {
+      const [leftIdx, rightIdx] = entry.split("|").map(Number);
+      return [leftIdx, rightIdx];
+    })
+  );
+  const matchedRight = new Set(pairMap.values());
 
-  const matchedLeft = new Set(chosen.map((p) => Number(p.split("|")[0])));
-  const matchedRight = new Set(chosen.map((p) => Number(p.split("|")[1])));
+  function removeLeftPair(leftIdx: number): string[] {
+    return chosen.filter((entry) => Number(entry.split("|")[0]) !== leftIdx);
+  }
 
   function pickLeft(idx: number) {
-    if (disabled || matchedLeft.has(idx)) return;
+    if (disabled) return;
+    if (pairMap.has(idx)) {
+      setAnswer(removeLeftPair(idx));
+    }
     setSelectedLeft((prev) => (prev === idx ? null : idx));
   }
 
   function pickRight(idx: number) {
-    if (disabled || matchedRight.has(idx) || selectedLeft == null) return;
-    if (selectedLeft === idx) {
-      setMatched((prev) => [...prev, `${selectedLeft}|${idx}`]);
-      setSelectedLeft(null);
-    } else {
-      setWrongRight(idx);
-      setTimeout(() => { setWrongRight(null); setSelectedLeft(null); }, 500);
-    }
+    if (disabled || selectedLeft == null) return;
+
+    // A right-side item belongs to only one pair. If it was already paired,
+    // remove the old pair before assigning it to the currently selected left.
+    const withoutLeft = removeLeftPair(selectedLeft);
+    const next = withoutLeft.filter((entry) => Number(entry.split("|")[1]) !== idx);
+    next.push(`${selectedLeft}|${idx}`);
+    setAnswer(next);
+    setSelectedLeft(null);
   }
 
   return (
@@ -67,9 +72,9 @@ export function MatchingExercise({ exercise, lesson, answer, setAnswer, disabled
           <button
             key={idx}
             type="button"
-            className={`match-item${matchedLeft.has(idx) ? " matched" : selectedLeft === idx ? " active" : ""}`}
+            className={`match-item${pairMap.has(idx) ? " matched" : selectedLeft === idx ? " active" : ""}`}
             onClick={() => pickLeft(idx)}
-            disabled={disabled || matchedLeft.has(idx)}
+            disabled={disabled}
           >
             {label}
           </button>
@@ -82,9 +87,9 @@ export function MatchingExercise({ exercise, lesson, answer, setAnswer, disabled
             <button
               key={idx}
               type="button"
-              className={`match-item${matchedRight.has(idx) ? " matched" : wrongRight === idx ? " wrong" : ""}`}
+              className={`match-item${matchedRight.has(idx) ? " matched" : ""}`}
               onClick={() => pickRight(idx)}
-              disabled={disabled || matchedRight.has(idx)}
+              disabled={disabled || selectedLeft == null}
             >
               {isImageMatch
                 ? (img ? <img src={img.src} alt={img.alt ?? ""} loading="lazy" className="match-item-image" /> : rightRaw[idx])
