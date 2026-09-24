@@ -1,8 +1,10 @@
 import { useState } from "react";
-import type { Exercise } from "../../../types";
+import type { Exercise, Lesson } from "../../../types";
+import { useLessonLocale } from "../../../hooks/useLessonLocale";
 
 interface Props {
   exercise: Exercise;
+  lesson: Lesson;
   setAnswer: (value: string | string[]) => void;
   disabled?: boolean;
 }
@@ -12,7 +14,8 @@ interface Props {
  * choice routes to a dead-end node with a "try again" reset; only a fully
  * "best"-quality path is submitted as the answer.
  */
-export function BranchingDialogueExercise({ exercise, setAnswer, disabled }: Props) {
+export function BranchingDialogueExercise({ exercise, lesson, setAnswer, disabled }: Props) {
+  const { tx } = useLessonLocale(lesson);
   const nodes = exercise.nodes ?? {};
   const startNode = exercise.startNode ?? Object.keys(nodes)[0];
   const [currentNodeId, setCurrentNodeId] = useState(startNode);
@@ -48,7 +51,7 @@ export function BranchingDialogueExercise({ exercise, setAnswer, disabled }: Pro
   }
 
   if (succeeded) {
-    return <div className="card branching-success">{exercise.successMessage ? String(exercise.successMessage) : "Діалог пройдено правильно."}</div>;
+    return <div className="card branching-success">{exercise.successMessage ? tx(exercise.successMessage) : "Діалог пройдено правильно."}</div>;
   }
 
   if (failed) {
