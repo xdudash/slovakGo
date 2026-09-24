@@ -12,6 +12,9 @@ interface Props {
  */
 export function ExerciseContent({ exercise, lesson }: Props) {
   const { tx } = useLessonLocale(lesson);
+  const context = tx(exercise.context);
+  const target = tx(exercise.target);
+  const phrase = tx(exercise.phrase);
 
   return (
     <div className="exercise-content">
@@ -35,11 +38,11 @@ export function ExerciseContent({ exercise, lesson }: Props) {
         </div>
       ) : null}
 
-      {exercise.context && exercise.type !== "sentence_builder" && exercise.type !== "sentence_order" ? (
-        <div className="card exercise-text-block exercise-context">{tx(exercise.context)}</div>
+      {context && exercise.type !== "sentence_builder" && exercise.type !== "sentence_order" ? (
+        <div className="card exercise-text-block exercise-context">{context}</div>
       ) : null}
-      {exercise.target && <div className="card exercise-text-block exercise-target">{tx(exercise.target)}</div>}
-      {exercise.phrase && <div className="card exercise-text-block exercise-phrase">{tx(exercise.phrase)}</div>}
+      {target && target !== context && <div className="card exercise-text-block exercise-target">{target}</div>}
+      {phrase && phrase !== context && phrase !== target && <div className="card exercise-text-block exercise-phrase">{phrase}</div>}
     </div>
   );
 }
