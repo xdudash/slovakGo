@@ -28,8 +28,6 @@ export function isExerciseComplete(exercise: Exercise, answer: string | string[]
       return answers.length === (exercise.pairs?.length ?? 0) && answers.length > 0;
     case "image_match":
       return answers.length === ((exercise.items as unknown[] | undefined)?.length ?? 0) && answers.length > 0;
-    case "sentence_builder":
-      return answers.length === (exercise.tokens?.length ?? 0) && answers.length > 0;
     case "sentence_order":
       return answers.length === (exercise.correctOrder?.length ?? exercise.tokens?.length ?? 0) && answers.length > 0;
     case "dialogue_order":
