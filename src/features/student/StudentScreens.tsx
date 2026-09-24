@@ -1170,48 +1170,100 @@ function LessonScreen() {
         <TheoryView key={`theory-${theoryIndex}`} screen={theories[theoryIndex]} onNext={advanceFromTheory} tx={tx} t={t} />
       )}
 
-      {phase === "words" && lesson.wordsScreen && (
+      {phase === "words" && lesson.wordsScreen && (() => {
+        const canonicalWords = lesson.words.map((word) => ({
+          key: word.id,
+          sk: word.sk,
+          translation: resolveWordTranslation(word, tx),
+          pronunciation: word.partOfSpeech ?? word.pronunciationUk,
+          exampleSk: word.example?.sk ?? word.exampleSk,
+          exampleTranslation: resolveWordExampleTranslation(word, tx),
+        }));
+
+        const rawItems = Array.isArray(lesson.wordsScreen.items)
+          ? lesson.wordsScreen.items as unknown[]
+          : [];
+
+        const resolvedItems = rawItems.map((raw, i) => {
+          const obj = raw && typeof raw === "object" ? raw as Record<string, unknown> : undefined;
+          const refId = typeof raw === "string"
+            ? raw
+            : typeof obj?.wordId === "string"
+              ? obj.wordId
+              : typeof obj?.id === "string"
+                ? obj.id
+                : undefined;
+
+          const linkedWord = refId ? lesson.words.find((word) => word.id === refId) : undefined;
+          if (linkedWord) {
+            return {
+              key: linkedWord.id,
+              sk: linkedWord.sk,
+              translation: resolveWordTranslation(linkedWord, tx),
+              pronunciation: linkedWord.partOfSpeech ?? linkedWord.pronunciationUk,
+              exampleSk: linkedWord.example?.sk ?? linkedWord.exampleSk,
+              exampleTranslation: resolveWordExampleTranslation(linkedWord, tx),
+            };
+          }
+
+          if (!obj || typeof obj.sk !== "string" || !obj.sk.trim()) return null;
+          const example = obj.example && typeof obj.example === "object"
+            ? obj.example as Record<string, unknown>
+            : undefined;
+          const translation = tx((obj.translation ?? obj.uk) as LocalizedText | undefined);
+          const exampleTranslation = tx((example?.translation ?? obj.exampleUk) as LocalizedText | undefined);
+
+          return {
+            key: refId ?? `words-screen-${i}`,
+            sk: obj.sk,
+            translation,
+            pronunciation: typeof obj.partOfSpeech === "string"
+              ? obj.partOfSpeech
+              : typeof obj.pronunciationUk === "string"
+                ? obj.pronunciationUk
+                : undefined,
+            exampleSk: typeof example?.sk === "string"
+              ? example.sk
+              : typeof obj.exampleSk === "string"
+                ? obj.exampleSk
+                : undefined,
+            exampleTranslation,
+          };
+        }).filter((item): item is NonNullable<typeof item> => item !== null);
+
+        // A malformed/non-displayable wordsScreen.items array must never hide
+        // the canonical lesson vocabulary. This is what produced blank pills.
+        const displayWords = rawItems.length > 0 && resolvedItems.length === rawItems.length
+          ? resolvedItems
+          : canonicalWords;
+
+        return (
         <div className="lesson-words-screen">
           {lesson.wordsScreen.title && <h2 className="words-screen-title">{tx(lesson.wordsScreen.title)}</h2>}
           {(lesson.wordsScreen.description || lesson.wordsScreen.subtitle) && <p className="words-screen-desc">{tx(lesson.wordsScreen.description ?? lesson.wordsScreen.subtitle)}</p>}
           <div className="words-screen-list">
-            {lesson.wordsScreen.items
-              ? lesson.wordsScreen.items.map((item, i) => (
-                <div key={i} className="words-screen-item">
-                  <div className="ws-item-top">
-                    <span className="ws-item-sk">{item.sk}</span>
-                    <span className="ws-item-uk">{item.uk}</span>
-                  </div>
-                  {item.pronunciationUk && <div className="ws-item-pron">[{item.pronunciationUk}]</div>}
-                  {item.exampleSk && (
-                    <div className="ws-item-example">
-                      <span className="sk">{item.exampleSk}</span>
-                      <span className="uk">{item.exampleUk}</span>
-                    </div>
-                  )}
+            {displayWords.map((item) => (
+              <div key={item.key} className="words-screen-item">
+                <div className="ws-item-top">
+                  <span className="ws-item-sk">{item.sk}</span>
+                  <span className="ws-item-uk">{item.translation}</span>
                 </div>
-              ))
-              : lesson.words.map((word) => (
-                <div key={word.id} className="words-screen-item">
-                  <div className="ws-item-top">
-                    <span className="ws-item-sk">{word.sk}</span>
-                    <span className="ws-item-uk">{word.translation ? tx(word.translation) : word.uk}</span>
+                {item.pronunciation && <div className="ws-item-pron">{item.pronunciation}</div>}
+                {item.exampleSk && (
+                  <div className="ws-item-example">
+                    <span className="sk">{item.exampleSk}</span>
+                    <span className="uk">{item.exampleTranslation}</span>
                   </div>
-                  {word.partOfSpeech && <div className="ws-item-pron">{word.partOfSpeech}</div>}
-                  {(word.example?.sk ?? word.exampleSk) && (
-                    <div className="ws-item-example">
-                      <span className="sk">{word.example?.sk ?? word.exampleSk}</span>
-                      <span className="uk">{word.example ? tx(word.example.translation) : word.exampleUk}</span>
-                    </div>
-                  )}
-                </div>
-              ))}
+                )}
+              </div>
+            ))}
           </div>
           <div className="lesson-bottom">
             <Button onClick={advanceFromWords}>{lesson.wordsScreen.button ?? `${t("student.lesson.start_exercises")} →`}</Button>
           </div>
         </div>
-      )}
+        );
+      })()}
 
       {phase === "exercise" && exercise && (
         <>
