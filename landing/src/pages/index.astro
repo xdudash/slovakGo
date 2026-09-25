@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import CheckIcon from '../components/CheckIcon.astro';
 import faqs from '../data/faq.json';
+import '../styles/home.css';
 
 const schema = {
   "@context": "https://schema.org",
@@ -24,7 +25,7 @@ const schema = {
       "url": "https://app.slovakgo.sk",
       "offers": {
         "@type": "Offer",
-        "price": "9.99",
+        "price": "3.00",
         "priceCurrency": "EUR",
       },
       "provider": { "@id": "https://www.slovakgo.sk/#organization" },
@@ -34,7 +35,7 @@ const schema = {
       "@id": "https://www.slovakgo.sk/#organization",
       "name": "SlovakGO",
       "url": "https://www.slovakgo.sk/",
-      "logo": "https://www.slovakgo.sk/apple-icon.png",
+      "logo": "https://www.slovakgo.sk/logo-mark.svg",
       "areaServed": { "@type": "Country", "name": "Slovakia" },
       "contactPoint": {
         "@type": "ContactPoint",
@@ -45,7 +46,7 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      "mainEntity": faqs.slice(0, 6).map(f => ({
+      "mainEntity": faqs.slice(0, 5).map(f => ({
         "@type": "Question",
         "name": f.question,
         "acceptedAnswer": {
@@ -62,244 +63,169 @@ const schema = {
   title="SlovakGO — словацька для життя в Словаччині"
   description="Короткі практичні уроки словацької для роботи, побуту, документів і реальних розмов. Перші уроки безкоштовно, далі 3 дні повного доступу."
   schema={schema}
-  bodyClass="home-page mobile-rebrand"
+  bodyClass="home-mobile-v2"
 >
-  <main class="mkt">
-    <section class="mkt-hero">
-      <div class="mkt-shell mkt-hero-grid">
-        <div class="mkt-hero-copy">
-          <div class="mkt-kicker">🇺🇦 Словацька для життя в Словаччині</div>
-          <h1>Словацька, яка потрібна <span>щодня</span></h1>
-          <p class="mkt-lead">
-            Короткі уроки на 10–15 хвилин: робота, житло, лікар, документи та розмови,
-            які трапляються у реальному житті.
-          </p>
-          <div class="mkt-hero-actions">
-            <a href="https://app.slovakgo.sk/demo" class="mkt-btn mkt-btn-primary" rel="noopener">
-              Почати безкоштовно
-              <span aria-hidden="true">→</span>
-            </a>
-            <a href="#how" class="mkt-text-link">Як це працює</a>
-          </div>
-          <div class="mkt-trustline">
-            <span>✓ Перші уроки без оплати</span>
-            <span>✓ 3 дні повного доступу</span>
-            <span>✓ Скасування будь-коли</span>
-          </div>
+  <main class="homev2">
+    <section class="homev2-hero">
+      <div class="homev2-wrap">
+        <p class="homev2-overline">Практична словацька для життя в Словаччині</p>
+        <h1>Говори по-словацьки <span>з перших днів.</span></h1>
+        <p class="homev2-lead">Короткі уроки, живі діалоги та фрази для роботи, житла, лікаря, документів і звичайного дня.</p>
+
+        <a class="homev2-cta" href="https://app.slovakgo.sk/demo" rel="noopener">
+          Почати безкоштовно <span>→</span>
+        </a>
+        <div class="homev2-meta">
+          <span>Перші уроки без оплати</span>
+          <span>3 дні повного доступу</span>
         </div>
 
-        <div class="mkt-device-stage" aria-label="Приклад застосунку SlovakGO">
-          <div class="mkt-orbit mkt-orbit-a"></div>
-          <div class="mkt-orbit mkt-orbit-b"></div>
-          <div class="mkt-bubble mkt-bubble-one"><strong>Dobrý deň!</strong><small>Добрий день!</small></div>
-          <div class="mkt-bubble mkt-bubble-two"><strong>Kde je autobus?</strong><small>Де автобус?</small></div>
-          <div class="mkt-phone">
-            <div class="mkt-phone-notch"></div>
-            <img src="/slovakgo-preview.png" alt="Екран уроку SlovakGO" width="270" height="560" loading="eager" fetchpriority="high" />
-          </div>
+        <div class="homev2-product">
+          <div class="homev2-product-label">Твій урок — прямо в телефоні</div>
+          <img src="/slovakgo-preview.png" width="270" height="560" alt="Урок SlovakGO на телефоні" loading="eager" fetchpriority="high" />
         </div>
       </div>
     </section>
 
-    <section class="mkt-proof">
-      <div class="mkt-shell mkt-proof-grid">
-        <article>
-          <div class="mkt-icon">💬</div>
-          <h2>Реальні ситуації</h2>
-          <p>Фрази для магазину, роботи, оренди, лікаря та установ.</p>
-        </article>
-        <article>
-          <div class="mkt-icon">🧠</div>
-          <h2>Розумні повторення</h2>
-          <p>SRS повертає слова саме тоді, коли їх час повторити.</p>
-        </article>
-        <article>
-          <div class="mkt-icon">⚡</div>
-          <h2>Короткі уроки</h2>
-          <p>10–15 хвилин на день без перевантаження теорією.</p>
-        </article>
-        <article>
-          <div class="mkt-icon">📈</div>
-          <h2>Видимий прогрес</h2>
-          <p>XP, серії, рівні та статистика тримають темп навчання.</p>
-        </article>
+    <section class="homev2-strip">
+      <div class="homev2-wrap homev2-strip-inner">
+        <div><strong>10–15 хв</strong><span>на один урок</span></div>
+        <div><strong>A0 → B2</strong><span>послідовний шлях</span></div>
+        <div><strong>SRS</strong><span>повторення слів</span></div>
       </div>
     </section>
 
-    <section class="mkt-section" id="how">
-      <div class="mkt-shell">
-        <div class="mkt-section-head">
-          <span>Як це працює</span>
-          <h2>Простий шлях до впевненої мови</h2>
-          <p>Без довгих лекцій. Ти одразу вчиш те, що можна використати сьогодні.</p>
-        </div>
+    <section class="homev2-section" id="how">
+      <div class="homev2-wrap">
+        <p class="homev2-overline">Як це працює</p>
+        <h2>Ніякої магії. Просто правильний порядок.</h2>
 
-        <div class="mkt-steps">
-          <article class="mkt-step">
-            <div class="mkt-step-num">1</div>
+        <div class="homev2-timeline">
+          <article>
+            <div class="homev2-num">01</div>
             <div>
-              <h3>Обираєш свою ціль</h3>
-              <p>Робота, навчання, переїзд, документи або повсякденне спілкування.</p>
+              <h3>Обираєш ціль</h3>
+              <p>Робота, переїзд, навчання, документи або повсякденне спілкування.</p>
             </div>
           </article>
-          <article class="mkt-step">
-            <div class="mkt-step-num">2</div>
+          <article>
+            <div class="homev2-num">02</div>
             <div>
-              <h3>Проходиш короткі уроки</h3>
-              <p>Слова, діалоги, слухання та інтерактивні вправи в одному сценарії.</p>
+              <h3>Проходиш короткий урок</h3>
+              <p>Діалог, слова, слухання та вправи без довгої теорії.</p>
             </div>
           </article>
-          <article class="mkt-step">
-            <div class="mkt-step-num">3</div>
+          <article>
+            <div class="homev2-num">03</div>
             <div>
-              <h3>Повторюєш і говориш</h3>
-              <p>Система повертає складне, поки потрібні слова не стають автоматичними.</p>
+              <h3>Повторюєш у потрібний момент</h3>
+              <p>Складні слова повертаються автоматично, поки не закріпляться.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="mkt-showcase">
-      <div class="mkt-shell mkt-showcase-grid">
-        <div class="mkt-showcase-copy">
-          <span class="mkt-eyebrow">Продукт, а не підручник</span>
-          <h2>Навчання, яке відчувається як застосунок</h2>
-          <p>
-            Уроки, словник, практика та прогрес зібрані в одному місці.
-            Відкрив — зробив кілька вправ — закрив із відчутним результатом.
-          </p>
-          <ul>
-            <li><CheckIcon /> вправи з миттєвим фідбеком</li>
-            <li><CheckIcon /> словник із персональними повтореннями</li>
-            <li><CheckIcon /> статистика рівня, XP та серії</li>
-            <li><CheckIcon /> адаптація під телефон</li>
-          </ul>
-        </div>
-        <div class="mkt-screens">
-          <figure class="mkt-screen mkt-screen-left">
-            <img src="/app-onboarding.png" alt="Онбординг SlovakGO" loading="lazy" />
-          </figure>
-          <figure class="mkt-screen mkt-screen-main">
-            <img src="/app-exercise.png" alt="Вправа SlovakGO" loading="lazy" />
-          </figure>
-          <figure class="mkt-screen mkt-screen-right">
-            <img src="/app-demo.png" alt="Демо SlovakGO" loading="lazy" />
-          </figure>
+    <section class="homev2-section homev2-real">
+      <div class="homev2-wrap">
+        <p class="homev2-overline">Реальні теми</p>
+        <h2>Вчиш те, що реально знадобиться.</h2>
+        <p class="homev2-copy">Не “урок 7: абстрактна граматика”, а ситуації, в яких треба щось сказати вже сьогодні.</p>
+
+        <div class="homev2-topics">
+          <article><span>01</span><h3>У кафе</h3><p>Замовити, уточнити, оплатити.</p></article>
+          <article><span>02</span><h3>На роботі</h3><p>Колеги, задачі, короткі діалоги.</p></article>
+          <article><span>03</span><h3>Житло</h3><p>Оренда, власник, побутові питання.</p></article>
+          <article><span>04</span><h3>Документи</h3><p>Установи, анкети, офіційні фрази.</p></article>
+          <article><span>05</span><h3>Лікар</h3><p>Симптоми, запис, аптека.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="mkt-section mkt-section-soft">
-      <div class="mkt-shell">
-        <div class="mkt-section-head">
-          <span>Що ти отримуєш</span>
-          <h2>Не просто “вивчав”. А реально можеш сказати.</h2>
+    <section class="homev2-section homev2-app">
+      <div class="homev2-wrap">
+        <p class="homev2-overline">Всередині SlovakGO</p>
+        <h2>Менше екранів. Більше навчання.</h2>
+
+        <div class="homev2-shots" aria-label="Екрани SlovakGO">
+          <figure><img src="/app-onboarding.png" alt="Онбординг SlovakGO" loading="lazy" /></figure>
+          <figure><img src="/app-exercise.png" alt="Вправа SlovakGO" loading="lazy" /></figure>
+          <figure><img src="/app-demo.png" alt="Демо SlovakGO" loading="lazy" /></figure>
         </div>
-        <div class="mkt-benefits">
-          <article>
-            <strong>01</strong>
-            <h3>Менше страху говорити</h3>
-            <p>Ти бачиш і повторюєш готові фрази в контексті, а не складаєш їх з нуля під стресом.</p>
-          </article>
-          <article>
-            <strong>02</strong>
-            <h3>Слова залишаються в пам’яті</h3>
-            <p>Повторення плануються автоматично — без ручних списків і хаотичних карток.</p>
-          </article>
-          <article>
-            <strong>03</strong>
-            <h3>Зрозуміло, що робити далі</h3>
-            <p>Шлях від A0 до B2 розбитий на маленькі кроки, тому не треба самому будувати програму.</p>
-          </article>
+
+        <div class="homev2-features">
+          <div><strong>Практика</strong><span>миттєва перевірка вправ</span></div>
+          <div><strong>Словник</strong><span>персональні повторення</span></div>
+          <div><strong>Прогрес</strong><span>XP, серії та рівні</span></div>
         </div>
       </div>
     </section>
 
-    <section class="mkt-section mkt-testimonials">
-      <div class="mkt-shell">
-        <div class="mkt-section-head">
-          <span>Для життя в Словаччині</span>
-          <h2>Теми, які потрібні не “колись”, а зараз</h2>
-        </div>
-        <div class="mkt-topic-row" role="list">
-          <div role="listitem">🏠 Оренда житла</div>
-          <div role="listitem">💼 Робота</div>
-          <div role="listitem">🏥 Лікар та аптека</div>
-          <div role="listitem">🧾 Документи</div>
-          <div role="listitem">🚌 Транспорт</div>
-          <div role="listitem">🛒 Покупки</div>
-        </div>
-      </div>
-    </section>
+    <section class="homev2-section homev2-pricing" id="pricing">
+      <div class="homev2-wrap">
+        <p class="homev2-overline">Тарифи</p>
+        <h2>Спочатку спробуй. Потім вирішуй.</h2>
+        <p class="homev2-copy">Новий користувач отримує 3 дні повного доступу. Скасувати можна будь-коли.</p>
 
-    <section class="mkt-section" id="pricing">
-      <div class="mkt-shell">
-        <div class="mkt-section-head">
-          <span>Тарифи</span>
-          <h2>Спочатку спробуй. Потім вирішуй.</h2>
-          <p>Перші уроки доступні без оплати. Для нового користувача — 3 дні повного доступу.</p>
-        </div>
-        <div class="mkt-pricing">
-          <article class="mkt-price-card">
-            <div class="mkt-price-label">Гнучкий</div>
-            <h3>Щомісячний</h3>
-            <div class="mkt-price">€9,99 <small>/ міс</small></div>
+        <div class="homev2-price-list">
+          <article>
+            <div>
+              <span class="homev2-plan">Щомісячний</span>
+              <strong>€3 <small>/ місяць</small></strong>
+            </div>
             <ul>
               <li><CheckIcon /> усі рівні та уроки</li>
-              <li><CheckIcon /> практика та SRS</li>
+              <li><CheckIcon /> практика і SRS</li>
               <li><CheckIcon /> словник і прогрес</li>
-              <li><CheckIcon /> скасування будь-коли</li>
             </ul>
-            <a href="https://app.slovakgo.sk/demo?plan=monthly" class="mkt-btn mkt-btn-ghost" rel="noopener">Спробувати</a>
+            <a href="https://app.slovakgo.sk/demo?plan=monthly" rel="noopener">Почати безкоштовно →</a>
           </article>
-          <article class="mkt-price-card mkt-price-card-featured">
-            <div class="mkt-price-topline">
-              <div class="mkt-price-label">Найвигідніший</div>
-              <div class="mkt-save">−50%</div>
+
+          <article class="homev2-price-best">
+            <div class="homev2-price-head">
+              <div>
+                <span class="homev2-plan">Річний</span>
+                <strong>€20 <small>/ рік</small></strong>
+              </div>
+              <span class="homev2-save">вигідніше</span>
             </div>
-            <h3>Річний</h3>
-            <div class="mkt-price">€59,88 <small>/ рік</small></div>
-            <p class="mkt-price-note">≈ €4,99 на місяць</p>
+            <p>≈ €1,67 на місяць</p>
             <ul>
               <li><CheckIcon /> усі рівні та уроки</li>
-              <li><CheckIcon /> практика та SRS</li>
+              <li><CheckIcon /> практика і SRS</li>
               <li><CheckIcon /> словник і прогрес</li>
-              <li><CheckIcon /> 3 дні пробного доступу</li>
             </ul>
-            <a href="https://app.slovakgo.sk/demo?plan=yearly" class="mkt-btn mkt-btn-primary" rel="noopener">Почати безкоштовно</a>
+            <a href="https://app.slovakgo.sk/demo?plan=yearly" rel="noopener">Почати безкоштовно →</a>
           </article>
         </div>
-        <p class="mkt-billing-note">Картка потрібна для пробного періоду. Скасувати можна в будь-який момент через Stripe.</p>
       </div>
     </section>
 
-    <section class="mkt-section mkt-faq">
-      <div class="mkt-shell">
-        <div class="mkt-section-head">
-          <span>FAQ</span>
-          <h2>Перед стартом</h2>
-        </div>
-        <div class="mkt-faq-list">
+    <section class="homev2-section homev2-faq">
+      <div class="homev2-wrap">
+        <p class="homev2-overline">FAQ</p>
+        <h2>Коротко про головне.</h2>
+        <div class="homev2-faq-list">
           {faqs.slice(0, 5).map((faq) => (
             <details>
               <summary>{faq.question}</summary>
-              <div class="mkt-faq-answer" set:html={faq.answer} />
+              <div class="homev2-answer" set:html={faq.answer} />
             </details>
           ))}
         </div>
       </div>
     </section>
 
-    <section class="mkt-final" id="about">
-      <div class="mkt-shell mkt-final-inner">
-        <div>
-          <span>SlovakGO</span>
-          <h2>Почни говорити словацькою впевненіше вже сьогодні.</h2>
-          <p>Один короткий урок — і ти вже знаєш більше, ніж 15 хвилин тому.</p>
-        </div>
-        <a href="https://app.slovakgo.sk/demo" class="mkt-btn mkt-btn-light" rel="noopener">Почати безкоштовно →</a>
+    <section class="homev2-bottom">
+      <div class="homev2-wrap">
+        <p>SlovakGO</p>
+        <h2>Почни з одного короткого уроку.</h2>
+        <a href="https://app.slovakgo.sk/demo" rel="noopener">Почати безкоштовно →</a>
       </div>
     </section>
+
+    <div class="homev2-sticky">
+      <a href="https://app.slovakgo.sk/demo" rel="noopener">Почати безкоштовно <span>→</span></a>
+    </div>
   </main>
 </Base>
