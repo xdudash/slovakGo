@@ -11,8 +11,10 @@ export async function handleUserEmail(req: VercelRequest, res: VercelResponse, b
   const email = String(body.email ?? "").toLowerCase().trim();
   const password = String(body.currentPassword ?? "");
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail(res, "Некоректний email", 422);
-  const current = await queryOne("SELECT pw_hash FROM users WHERE id = ? LIMIT 1", [uid]);
+  const current = await queryOne("SELECT pw_hash, google_sub FROM users WHERE id = ? LIMIT 1", [uid]);
   const hash = String(current?.pw_hash ?? "");
+  if (!hash && current?.google_sub)
+    return fail(res, "Email Google-акаунта керується через Google", 409);
   if (!hash || (hash !== "DEV:skip" && !(await bcrypt.compare(password, hash))))
     return fail(res, "Невірний поточний пароль", 422);
   if (await queryOne("SELECT id FROM users WHERE email = ? AND id != ? LIMIT 1", [email, uid]))
@@ -27,10 +29,13 @@ export async function handleUserPassword(req: VercelRequest, res: VercelResponse
   const next = String(body.newPassword ?? body.password ?? "");
   if (next.length < 8 || !/[A-ZА-ЯІЇЄҐ]/.test(next) || !/[a-zа-яіїєґ]/.test(next) || !/\d/.test(next))
     return fail(res, "Пароль має містити мінімум 8 символів, велику та малу літеру і цифру", 422);
-  const row  = await queryOne("SELECT pw_hash FROM users WHERE id = ? LIMIT 1", [uid]);
+  const row  = await queryOne("SELECT pw_hash, google_sub FROM users WHERE id = ? LIMIT 1", [uid]);
   if (!row) return fail(res, "Користувача не знайдено", 404);
-  const h = String(row.pw_hash);
-  if (h !== "DEV:skip" && !(await bcrypt.compare(cur, h))) return fail(res, "Невірний поточний пароль", 422);
+  const h = String(row.pw_hash ?? "");
+  const googleOnly = !h && Boolean(row.google_sub);
+  if (!googleOnly && h !== "DEV:skip" && !(await bcrypt.compare(cur, h))) {
+    return fail(res, "Невірний поточний пароль", 422);
+  }
   await exec("UPDATE users SET pw_hash = ?, updated_at = ? WHERE id = ?", [await bcrypt.hash(next, 11), nowIso(), uid]);
   respond(res, { ok: true });
 }
@@ -190,7 +195,7 @@ export async function handleSupportSend(req: VercelRequest, res: VercelResponse,
     <tr><td style="padding:4px 12px 4px 0;color:#9ca3af;white-space:nowrap;">User ID</td><td><code>${uid}</code></td></tr>
     <tr><td style="padding:4px 12px 4px 0;color:#9ca3af;white-space:nowrap;">Тема</td><td>${topicLabel}</td></tr>
     <tr><td style="padding:4px 12px 4px 0;color:#9ca3af;white-space:nowrap;">Версія</td><td>${appVersion}</td></tr>
-    <tr><td style="padding:4px 12px 4td 0;color:#9ca3af;white-space:nowrap;">User Agent</td><td style="word-break:break-all;font-size:12px;">${userAgent}</td></tr>
+    <tr><td style="padding:4px 12px 4px 0;color:#9ca3af;white-space:nowrap;">User Agent</td><td style="word-break:break-all;font-size:12px;">${userAgent}</td></tr>
   </table>
   <div style="background:#f3f4f6;border-radius:8px;padding:16px;font-size:15px;line-height:1.6;white-space:pre-wrap;color:#1f2937;">${msg.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div>
   <p style="margin:20px 0 0;font-size:12px;color:#d1d5db;">Надіслано через форму підтримки SlovakGO</p>
