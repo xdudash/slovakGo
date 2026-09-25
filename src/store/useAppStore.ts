@@ -59,8 +59,17 @@ function save(data: AppData): AppData {
   return data;
 }
 
-function withSync(data: AppData, type: string, payload: Record<string, unknown>) {
-  return syncService.enqueue(data, type, payload);
+function withSync(data: AppData, userId: string, type: string, payload: Record<string, unknown>) {
+  return syncService.enqueue(data, userId, type, payload);
+}
+
+async function recoverSyncForUser(data: AppData, userId: string): Promise<AppData> {
+  const recovered = await syncService.recover(data.syncQueue, userId);
+  return recovered.length ? { ...data, syncQueue: [...data.syncQueue, ...recovered] } : data;
+}
+
+function isAdminPreview(): boolean {
+  return Boolean(localStorage.getItem("slovakgo.admin-return"));
 }
 
 function nextLessonId(lessons: Lesson[], completed: string[], level: UserLevel): string | undefined {
@@ -122,6 +131,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
     try {
       const fullState = await apiClient.syncPull(0, false) as RemoteState;
       data = mergeRemoteState(data, fullState);
+      data = await recoverSyncForUser(data, userId);
     } catch {
       // syncPull failed — log in with local data so a server hiccup doesn't block the user
       const users = data.users.filter(u => u.id !== userId);
@@ -143,7 +153,8 @@ export const useAppStore = create<AppStore>((set, get) => ({
     try {
       const fullState = await apiClient.syncPull(0, false) as RemoteState;
       const userId = fullState.user.id;
-      const data = mergeRemoteState(get().data, fullState);
+      let data = mergeRemoteState(get().data, fullState);
+      data = await recoverSyncForUser(data, userId);
 
       save(data);
       localStorage.setItem(sessionKey, userId);
@@ -185,7 +196,8 @@ export const useAppStore = create<AppStore>((set, get) => ({
 
       const fullState = await apiClient.syncPull(0, false) as RemoteState;
       const userId = fullState.user.id;
-      const data = mergeRemoteState(get().data, fullState);
+      let data = mergeRemoteState(get().data, fullState);
+      data = await recoverSyncForUser(data, userId);
 
       save(data);
       localStorage.setItem(sessionKey, userId);
@@ -252,18 +264,20 @@ export const useAppStore = create<AppStore>((set, get) => ({
   },
 
   updateUser(patch) {
+    if (isAdminPreview()) return;
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     let data: AppData = {
       ...get().data,
       users: get().data.users.map((user) => (user.id === currentUserId ? { ...user, ...patch, lastActiveAt: new Date().toISOString() } : user))
     };
-    data = withSync(data, "profile.update", patch as Record<string, unknown>);
+    data = withSync(data, currentUserId, "profile.update", patch as Record<string, unknown>);
     save(data);
     set({ data });
   },
 
   completeOnboarding(goal, level) {
+    if (isAdminPreview()) return;
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     const progress = get().data.progress[currentUserId];
@@ -276,12 +290,13 @@ export const useAppStore = create<AppStore>((set, get) => ({
         [currentUserId]: { ...progress, currentLevel: level, currentLessonId, updatedAt: new Date().toISOString() }
       }
     };
-    data = withSync(data, "profile.update", { goal, level, onboardingDone: true });
+    data = withSync(data, currentUserId, "profile.update", { goal, level, onboardingDone: true });
     save(data);
     set({ data });
   },
 
   setLevel(level) {
+    if (isAdminPreview()) return;
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     const progress = get().data.progress[currentUserId];
@@ -291,7 +306,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
       users: get().data.users.map((user) => (user.id === currentUserId ? { ...user, level } : user)),
       progress: { ...get().data.progress, [currentUserId]: { ...progress, currentLevel: level, currentLessonId, updatedAt: new Date().toISOString() } }
     };
-    data = withSync(data, "profile.update", { level });
+    data = withSync(data, currentUserId, "profile.update", { level });
     save(data);
     set({ data });
   },
@@ -304,6 +319,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
   },
 
   completeLesson(lesson, answers) {
+    if (isAdminPreview()) return;
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     const subStatus = get().data.users.find((u) => u.id === currentUserId)?.subscriptionStatus;
@@ -316,7 +332,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
       userWords: { ...get().data.userWords, [currentUserId]: userWords }
     };
     data = { ...data, leaderboard: leaderboardService.recalculate(data.leaderboard, data.users, data.progress) };
-    data = withSync(data, "lesson.complete", { lessonId: lesson.id, answers, xpEarned });
+    data = withSync(data, currentUserId, "lesson.complete", { lessonId: lesson.id, answers, xpEarned });
     save(data);
     set({ data });
     // Push to server immediately — don't wait for next login
@@ -327,6 +343,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
   },
 
   recordWrongAnswer(lesson, exerciseId, answer) {
+    if (isAdminPreview()) return;
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     const exercise = lesson.exercises.find((item) => item.id === exerciseId);
@@ -338,12 +355,13 @@ export const useAppStore = create<AppStore>((set, get) => ({
       progress: { ...get().data.progress, [currentUserId]: progress },
       userWords: { ...get().data.userWords, [currentUserId]: userWords }
     };
-    data = withSync(data, "exercise.wrong", { lessonId: lesson.id, exerciseId, answer });
+    data = withSync(data, currentUserId, "exercise.wrong", { lessonId: lesson.id, exerciseId, answer });
     save(data);
     set({ data });
   },
 
   toggleFavorite(wordId) {
+    if (isAdminPreview()) return;
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     const words = get().data.userWords[currentUserId] || [];
@@ -355,12 +373,13 @@ export const useAppStore = create<AppStore>((set, get) => ({
       ...get().data,
       userWords: { ...get().data.userWords, [currentUserId]: [...words.filter((word) => word.wordId !== wordId), next] }
     };
-    data = withSync(data, "word.update", { wordId, favorite: next.favorite });
+    data = withSync(data, currentUserId, "word.update", { wordId, favorite: next.favorite });
     save(data);
     set({ data });
   },
 
   finishPracticeSession(results) {
+    if (isAdminPreview()) return;
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     const subStatus = get().data.users.find((u) => u.id === currentUserId)?.subscriptionStatus;
@@ -375,26 +394,29 @@ export const useAppStore = create<AppStore>((set, get) => ({
       userWords: { ...get().data.userWords, [currentUserId]: userWords },
     };
     data = { ...data, leaderboard: leaderboardService.recalculate(data.leaderboard, data.users, data.progress) };
-    data = withSync(data, "practice.complete", { results: results as unknown as Record<string, unknown> });
+    data = withSync(data, currentUserId, "practice.complete", { results: results as unknown as Record<string, unknown> });
     save(data);
     set({ data });
   },
 
   restoreHearts() {
+    if (isAdminPreview()) return;
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     const progress = progressService.restoreHearts(get().data.progress[currentUserId]);
     let data = { ...get().data, progress: { ...get().data.progress, [currentUserId]: progress } };
-    data = withSync(data, "hearts.restore", {});
+    data = withSync(data, currentUserId, "hearts.restore", {});
     save(data);
     set({ data });
   },
 
   upsertLesson(lesson) {
+    const currentUserId = get().currentUserId;
+    if (!currentUserId) return;
     let lessons = get().data.lessons;
     lessons = lessons.some((item) => item.id === lesson.id) ? lessons.map((item) => (item.id === lesson.id ? lesson : item)) : [...lessons, lesson];
     let data = { ...get().data, lessons };
-    data = withSync(data, "lesson.upsert", { lesson });
+    data = withSync(data, currentUserId, "lesson.upsert", { lesson });
     save(data);
     set({ data });
   },
@@ -408,15 +430,19 @@ export const useAppStore = create<AppStore>((set, get) => ({
   },
 
   deleteLesson(lessonId) {
+    const currentUserId = get().currentUserId;
+    if (!currentUserId) return;
     let data = { ...get().data, lessons: get().data.lessons.filter((lesson) => lesson.id !== lessonId) };
-    data = withSync(data, "lesson.delete", { lessonId });
+    data = withSync(data, currentUserId, "lesson.delete", { lessonId });
     save(data);
     set({ data });
   },
 
   adminUpdateUser(userId, patch) {
+    const currentUserId = get().currentUserId;
+    if (!currentUserId) return;
     let data = { ...get().data, users: get().data.users.map((user) => (user.id === userId ? { ...user, ...patch } : user)) };
-    data = withSync(data, "admin.user.update", { userId, ...patch });
+    data = withSync(data, currentUserId, "admin.user.update", { userId, ...patch });
     save(data);
     set({ data });
   },
@@ -439,7 +465,10 @@ export const useAppStore = create<AppStore>((set, get) => ({
   },
 
   async drainSync() {
-    const data = await syncService.drain(get().data);
+    if (isAdminPreview()) return;
+    const currentUserId = get().currentUserId;
+    if (!currentUserId) return;
+    const data = await syncService.drain(get().data, currentUserId);
     if (data !== get().data) {
       save(data);
       const now = new Date().toISOString();
