@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import CheckIcon from '../components/CheckIcon.astro';
-import '../styles/home-v5.css';
+import '../styles/home-v6.css';
 
 const schema = {
   "@context": "https://schema.org",
@@ -18,192 +18,176 @@ const schema = {
 ---
 
 <Base
-  title="SlovakGO — словацкий для реальной жизни"
+  title="SlovakGO — словацкий, который пригодится в жизни"
   description="Практический словацкий для работы, врача, жилья, документов и повседневных разговоров в Словакии."
   schema={schema}
-  bodyClass="home-v5"
+  bodyClass="home-v6"
   lang="ru"
 >
-  <main class="sg">
-    <header class="sg-nav">
-      <div class="sg-shell sg-nav-inner">
-        <a class="sg-brand" href="/" aria-label="SlovakGO">
+  <main class="go">
+    <header class="go-header">
+      <div class="go-shell go-header-inner">
+        <a href="/" class="go-logo" aria-label="SlovakGO">
           <img src="/slovakgo-logo.svg" alt="SlovakGO" width="154" height="34" />
         </a>
 
-        <div class="sg-nav-actions">
-          <a class="sg-login" href="https://app.slovakgo.sk/login" rel="noopener" data-i18n="login">Войти</a>
-          <nav class="sg-lang" aria-label="Language">
-            <button type="button" data-lang="sk">SK</button>
-            <button type="button" data-lang="uk">UA</button>
-            <button type="button" data-lang="ru">RU</button>
-            <button type="button" data-lang="en">EN</button>
-          </nav>
+        <div class="go-header-right">
+          <a class="go-signin" href="https://app.slovakgo.sk/login" rel="noopener" data-i18n="signin">Войти</a>
+          <details class="go-language">
+            <summary><span id="go-current-lang">RU</span><b>⌄</b></summary>
+            <div class="go-language-menu">
+              <button type="button" data-lang="sk">SK</button>
+              <button type="button" data-lang="uk">UA</button>
+              <button type="button" data-lang="ru">RU</button>
+              <button type="button" data-lang="en">EN</button>
+            </div>
+          </details>
         </div>
       </div>
     </header>
 
-    <section class="sg-hero">
-      <div class="sg-shell sg-hero-grid">
-        <div class="sg-hero-copy">
-          <p class="sg-eyebrow" data-i18n="heroEyebrow">Практический словацкий для жизни в Словакии</p>
-          <h1 data-i18n="heroTitle">Словацкий для реальных разговоров.</h1>
-          <p class="sg-hero-punch" data-i18n="heroPunch">Не нужно говорить идеально. Нужно знать, что сказать дальше.</p>
-          <p class="sg-hero-lead" data-i18n="heroLead">Работа, врач, жильё, документы и обычные разговоры — короткие уроки по тем ситуациям, которые действительно случаются.</p>
+    <section class="go-hero">
+      <div class="go-shell">
+        <div class="go-hero-copy">
+          <p class="go-overline" data-i18n="heroOverline">Словацкий для жизни в Словакии</p>
+          <h1 data-i18n="heroTitle">Словацкий, который ты действительно будешь использовать.</h1>
+          <p class="go-hero-lead" data-i18n="heroLead">Практикуй разговоры до того, как они понадобятся — на работе, у врача, с арендодателем или в учреждении.</p>
 
-          <div class="sg-hero-cta">
-            <a class="sg-btn sg-btn-primary" href="https://app.slovakgo.sk/demo" rel="noopener">
-              <span data-i18n="heroCta">Попробовать реальный урок</span><b>→</b>
+          <div class="go-hero-actions">
+            <a class="go-primary" href="https://app.slovakgo.sk/demo?plan=monthly" rel="noopener">
+              <span data-i18n="heroCta">Начать 3 дня бесплатно</span><b>→</b>
             </a>
-            <a class="sg-btn sg-btn-link" href="/survival-pack">
-              <span data-i18n="packCtaShort">Бесплатные фразы для старта</span><b>→</b>
+            <a class="go-text-link" href="/survival-pack">
+              <span data-i18n="leadMagnetCta">Забрать 16 полезных фраз</span><b>↗</b>
             </a>
           </div>
 
-          <p class="sg-trial-line">
-            <strong data-i18n="trialLine">3 дня полного доступа</strong>
-            <span>·</span>
-            <span data-i18n="afterTrial">затем €3/месяц</span>
-            <span>·</span>
-            <span data-i18n="cancel">отмена в любой момент</span>
+          <p class="go-meta">
+            <span data-i18n="metaTrial">3 дня полного доступа</span>
+            <i>·</i>
+            <span data-i18n="metaPrice">затем €3/месяц</span>
+            <i>·</i>
+            <span data-i18n="metaCancel">отмена в любой момент</span>
           </p>
         </div>
+      </div>
 
-        <div class="sg-hero-visual" aria-label="SlovakGO lesson preview">
-          <div class="sg-phone">
-            <img src="/slovakgo-preview.png" alt="Real SlovakGO lesson screen" width="270" height="560" loading="eager" fetchpriority="high" />
-          </div>
-          <div class="sg-visual-note sg-note-one">
-            <span data-i18n="visualLabel1">Реальная фраза</span>
-            <strong>Kde je autobusová stanica?</strong>
-          </div>
-          <div class="sg-visual-note sg-note-two">
-            <span data-i18n="visualLabel2">Короткий урок</span>
-            <strong>10–15 min</strong>
-          </div>
+      <div class="go-phrase-rail" aria-label="Useful Slovak phrases">
+        <div class="go-phrase-track">
+          <span>Prosím, hovorte pomalšie.</span><i>•</i>
+          <span>Kedy môžem začať?</span><i>•</i>
+          <span>Čo vás bolí?</span><i>•</i>
+          <span>Kde to mám podpísať?</span><i>•</i>
+          <span>Koľko to stojí mesačne?</span><i>•</i>
+          <span>Môžete mi pomôcť?</span>
         </div>
       </div>
     </section>
 
-    <section class="sg-section sg-situations" id="topics">
-      <div class="sg-shell">
-        <div class="sg-section-intro">
-          <p class="sg-eyebrow" data-i18n="situationsEyebrow">Начни не с грамматики, а с ситуации</p>
-          <h2 data-i18n="situationsTitle">Какой разговор тебе нужен первым?</h2>
-          <p data-i18n="situationsLead">Выбери то, что пригодится уже на этой неделе.</p>
+    <section class="go-section go-usecases" id="topics">
+      <div class="go-shell">
+        <div class="go-section-head">
+          <p class="go-overline" data-i18n="useOverline">Начни с того, что нужно сейчас</p>
+          <h2 data-i18n="useTitle">Какой разговор ждёт тебя следующим?</h2>
+          <p data-i18n="useLead">Не проходи абстрактные темы. Выбери ситуацию и выучи именно те фразы, которые пригодятся.</p>
         </div>
 
-        <div class="sg-situation-grid">
+        <div class="go-usecase-list">
           <a href="https://app.slovakgo.sk/demo?topic=doctor" rel="noopener">
-            <span class="sg-situation-index">01</span>
-            <div>
-              <strong data-i18n="doctor">Врач</strong>
-              <span>Čo vás bolí?</span>
-              <small data-i18n="doctorPhrase">Что у вас болит?</small>
-            </div>
+            <span class="go-index">01</span>
+            <div><strong data-i18n="doctor">Врач</strong><small>Čo vás bolí?</small></div>
+            <span data-i18n="doctorSub">Симптомы, запись, аптека</span>
             <b>→</b>
           </a>
           <a href="https://app.slovakgo.sk/demo?topic=work" rel="noopener">
-            <span class="sg-situation-index">02</span>
-            <div>
-              <strong data-i18n="work">Работа</strong>
-              <span>Kedy môžem začať?</span>
-              <small data-i18n="workPhrase">Когда я могу начать?</small>
-            </div>
+            <span class="go-index">02</span>
+            <div><strong data-i18n="work">Работа</strong><small>Kedy môžem začať?</small></div>
+            <span data-i18n="workSub">Коллеги, условия, собеседование</span>
             <b>→</b>
           </a>
           <a href="https://app.slovakgo.sk/demo?topic=housing" rel="noopener">
-            <span class="sg-situation-index">03</span>
-            <div>
-              <strong data-i18n="housing">Жильё</strong>
-              <span>Koľko to stojí mesačne?</span>
-              <small data-i18n="housingPhrase">Сколько это стоит в месяц?</small>
-            </div>
+            <span class="go-index">03</span>
+            <div><strong data-i18n="housing">Жильё</strong><small>Koľko to stojí mesačne?</small></div>
+            <span data-i18n="housingSub">Аренда, договор, хозяин</span>
             <b>→</b>
           </a>
           <a href="https://app.slovakgo.sk/demo?topic=documents" rel="noopener">
-            <span class="sg-situation-index">04</span>
-            <div>
-              <strong data-i18n="documents">Документы</strong>
-              <span>Kde to mám podpísať?</span>
-              <small data-i18n="documentsPhrase">Где мне это подписать?</small>
-            </div>
+            <span class="go-index">04</span>
+            <div><strong data-i18n="documents">Документы</strong><small>Kde to mám podpísať?</small></div>
+            <span data-i18n="documentsSub">Учреждения, формы, разрешения</span>
             <b>→</b>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="sg-proof">
-      <div class="sg-shell sg-proof-grid">
-        <div class="sg-proof-copy">
-          <p class="sg-eyebrow" data-i18n="proofEyebrow">Не учи всё подряд</p>
-          <h2 data-i18n="proofTitle">Учишь сегодня. Используешь завтра.</h2>
-          <p data-i18n="proofLead">SlovakGO строит обучение вокруг конкретной ситуации: сначала нужная фраза, потом аудио, практика и повторение.</p>
+    <section class="go-product">
+      <div class="go-shell go-product-grid">
+        <div class="go-product-copy">
+          <p class="go-overline" data-i18n="productOverline">Как это работает</p>
+          <h2 data-i18n="productTitle">Сначала нужная фраза. Потом практика. Потом реальная жизнь.</h2>
+          <p data-i18n="productLead">Короткий урок занимает 10–15 минут. Ты слушаешь, отвечаешь, повторяешь — и возвращаешься к словам тогда, когда их пора повторить.</p>
+
+          <ol class="go-process">
+            <li><span>01</span><strong data-i18n="step1">Выбери ситуацию</strong></li>
+            <li><span>02</span><strong data-i18n="step2">Пройди короткий урок</strong></li>
+            <li><span>03</span><strong data-i18n="step3">Используй в разговоре</strong></li>
+          </ol>
         </div>
 
-        <div class="sg-proof-flow">
-          <div><span>1</span><strong data-i18n="flow1">Ситуация</strong><small data-i18n="flow1s">Выбираешь нужный разговор</small></div>
-          <i>→</i>
-          <div><span>2</span><strong data-i18n="flow2">Практика</strong><small data-i18n="flow2s">Слушаешь и отвечаешь</small></div>
-          <i>→</i>
-          <div><span>3</span><strong data-i18n="flow3">Жизнь</strong><small data-i18n="flow3s">Используешь без ступора</small></div>
+        <div class="go-product-shot">
+          <img src="/app-exercise.png" alt="Real SlovakGO exercise screen" loading="lazy" />
         </div>
       </div>
     </section>
 
-    <section class="sg-pack" id="survival-pack">
-      <div class="sg-shell sg-pack-grid">
-        <div class="sg-pack-copy">
-          <p class="sg-eyebrow" data-i18n="packEyebrow">Бесплатно</p>
-          <h2 data-i18n="packTitle">Slovak Survival Pack</h2>
-          <p data-i18n="packLead">16 фраз, которые реально пригодятся в первые недели в Словакии. Открой на телефоне перед нужным разговором.</p>
-          <a class="sg-btn sg-btn-light" href="/survival-pack">
-            <span data-i18n="packOpen">Открыть бесплатный набор</span><b>→</b>
+    <section class="go-pack" id="survival-pack">
+      <div class="go-shell go-pack-grid">
+        <div>
+          <p class="go-overline" data-i18n="packOverline">Бесплатный набор</p>
+          <h2 data-i18n="packTitle">16 фраз, которые стоит сохранить в телефон.</h2>
+          <p data-i18n="packLead">Для первых недель в Словакии: врач, работа, жильё, документы и обычные бытовые ситуации.</p>
+          <a class="go-pack-link" href="/survival-pack">
+            <span data-i18n="packCta">Открыть Slovak Survival Pack</span><b>→</b>
           </a>
         </div>
 
-        <div class="sg-pack-phrases" aria-label="Phrase examples">
-          <p><span>Dobrý deň.</span><small data-i18n="packHello">Здравствуйте.</small></p>
-          <p><span>Prosím, hovorte pomalšie.</span><small data-i18n="packSlow">Пожалуйста, говорите медленнее.</small></p>
-          <p><span>Nerozumiem.</span><small data-i18n="packUnderstand">Я не понимаю.</small></p>
-          <p><span>Môžete mi pomôcť?</span><small data-i18n="packHelp">Можете мне помочь?</small></p>
+        <div class="go-pack-lines">
+          <p><strong>Prosím, hovorte pomalšie.</strong><span data-i18n="pack1">Пожалуйста, говорите медленнее.</span></p>
+          <p><strong>Nerozumiem.</strong><span data-i18n="pack2">Я не понимаю.</span></p>
+          <p><strong>Môžete mi pomôcť?</strong><span data-i18n="pack3">Можете мне помочь?</span></p>
         </div>
       </div>
     </section>
 
-    <section class="sg-section sg-sprint">
-      <div class="sg-shell">
-        <div class="sg-section-intro">
-          <p class="sg-eyebrow" data-i18n="sprintEyebrow">3-Day Slovak Sprint</p>
-          <h2 data-i18n="sprintTitle">Три дня, чтобы перестать зависать в простых разговорах.</h2>
-          <p data-i18n="sprintLead">Твой Sprint начинается только после активации. За три дня ты проходишь три практические темы и сразу применяешь фразы.</p>
+    <section class="go-section go-sprint">
+      <div class="go-shell">
+        <div class="go-section-head go-sprint-head">
+          <p class="go-overline">3-Day Slovak Sprint</p>
+          <h2 data-i18n="sprintTitle">Три дня. Три полезные темы. Один понятный старт.</h2>
+          <p data-i18n="sprintLead">Sprint начинается только после активации — никакого искусственного таймера. За три дня ты проходишь базовые ситуации и понимаешь, подходит ли тебе формат.</p>
         </div>
 
-        <div class="sg-days">
+        <div class="go-days">
           <div><span>Day 1</span><strong data-i18n="day1">Работа и знакомства</strong></div>
           <div><span>Day 2</span><strong data-i18n="day2">Врач и документы</strong></div>
           <div><span>Day 3</span><strong data-i18n="day3">Жильё и повседневная жизнь</strong></div>
         </div>
-
-        <a class="sg-btn sg-btn-primary sg-sprint-cta" href="https://app.slovakgo.sk/demo" rel="noopener">
-          <span data-i18n="sprintCta">Начать свой 3-дневный Sprint</span><b>→</b>
-        </a>
       </div>
     </section>
 
-    <section class="sg-section sg-pricing" id="pricing">
-      <div class="sg-shell sg-pricing-grid">
-        <div class="sg-pricing-copy">
-          <p class="sg-eyebrow" data-i18n="pricingEyebrow">Простая подписка</p>
-          <h2 data-i18n="pricingTitle">€3 в месяц. Без долгих обязательств.</h2>
-          <p data-i18n="pricingLead">Полный доступ ко всем урокам, аудио, практике и повторениям. Начни с 3 бесплатных дней.</p>
+    <section class="go-section go-pricing" id="pricing">
+      <div class="go-shell go-pricing-grid">
+        <div class="go-section-head">
+          <p class="go-overline" data-i18n="priceOverline">Простая подписка</p>
+          <h2 data-i18n="priceTitle">€3 в месяц.</h2>
+          <p data-i18n="priceLead">Полный доступ ко всем урокам, аудио, практике и повторениям. Сначала — 3 дня полного доступа.</p>
         </div>
 
-        <div class="sg-price-card">
-          <div class="sg-price-head">
+        <div class="go-price-box">
+          <div class="go-price-top">
             <div>
-              <span data-i18n="monthly">Месячная подписка</span>
+              <span data-i18n="monthly">Месячная</span>
               <strong>€3 <small data-i18n="perMonth">/ месяц</small></strong>
             </div>
             <em data-i18n="mainPlan">Основной план</em>
@@ -216,27 +200,28 @@ const schema = {
             <li><CheckIcon /><span data-i18n="cancelAnytime">Отмена в любой момент</span></li>
           </ul>
 
-          <a class="sg-btn sg-btn-primary" href="https://app.slovakgo.sk/demo?plan=monthly" rel="noopener">
+          <a class="go-primary" href="https://app.slovakgo.sk/demo?plan=monthly" rel="noopener">
             <span data-i18n="priceCta">Начать 3 дня бесплатно</span><b>→</b>
           </a>
-          <p class="sg-price-note" data-i18n="priceNote">После пробного периода — €3/месяц. Для активации нужна карта.</p>
 
-          <div class="sg-yearly">
+          <p class="go-price-note" data-i18n="priceNote">После пробного периода — €3/месяц. Для активации нужна карта.</p>
+
+          <div class="go-yearly">
             <span><b data-i18n="yearly">Годовая</b> · €20 <small data-i18n="perYear">/ год</small></span>
-            <a href="https://app.slovakgo.sk/demo?plan=yearly" rel="noopener" data-i18n="yearlyCta">Сэкономить €16 →</a>
+            <a href="https://app.slovakgo.sk/demo?plan=yearly" rel="noopener" data-i18n="yearCta">Сэкономить €16 →</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="sg-section sg-faq" id="faq">
-      <div class="sg-shell sg-faq-grid">
-        <div class="sg-section-intro">
-          <p class="sg-eyebrow">FAQ</p>
+    <section class="go-section go-faq" id="faq">
+      <div class="go-shell go-faq-grid">
+        <div class="go-section-head">
+          <p class="go-overline">FAQ</p>
           <h2 data-i18n="faqTitle">Перед стартом.</h2>
         </div>
 
-        <div class="sg-faq-list">
+        <div class="go-faq-list">
           <details>
             <summary data-i18n="faq1q">Что входит в 3 бесплатных дня?</summary>
             <p data-i18n="faq1a">Полный доступ к урокам и функциям SlovakGO. После пробного периода действует выбранная подписка.</p>
@@ -257,28 +242,29 @@ const schema = {
       </div>
     </section>
 
-    <footer class="sg-footer">
-      <div class="sg-shell sg-footer-grid">
-        <div>
-          <img src="/slovakgo-logo.svg" alt="SlovakGO" width="154" height="34" />
-          <h2 data-i18n="footerTitle">Следующий разговор не будет ждать.</h2>
-          <p data-i18n="footerLead">Подготовься к нему сейчас.</p>
+    <footer class="go-footer">
+      <div class="go-shell">
+        <div class="go-footer-top">
+          <div>
+            <p class="go-overline" data-i18n="footerOverline">Следующий разговор не будет ждать</p>
+            <h2 data-i18n="footerTitle">Подготовься к нему сейчас.</h2>
+          </div>
+          <a class="go-primary" href="https://app.slovakgo.sk/demo?plan=monthly" rel="noopener">
+            <span data-i18n="heroCta">Начать 3 дня бесплатно</span><b>→</b>
+          </a>
         </div>
 
-        <a class="sg-btn sg-btn-primary" href="https://app.slovakgo.sk/demo" rel="noopener">
-          <span data-i18n="heroCta">Попробовать реальный урок</span><b>→</b>
-        </a>
-
-        <div class="sg-footer-bottom">
+        <div class="go-footer-bottom">
+          <img src="/slovakgo-logo.svg" alt="SlovakGO" width="145" height="32" />
           <span>© 2026 SlovakGO</span>
           <a href="mailto:support@slovakgo.sk">support@slovakgo.sk</a>
         </div>
       </div>
     </footer>
 
-    <div class="sg-sticky">
+    <div class="go-sticky">
       <a href="https://app.slovakgo.sk/demo?plan=monthly" rel="noopener">
-        <span><b data-i18n="stickyCta">Начать бесплатно</b><small data-i18n="stickySub">3 дня · затем €3/месяц</small></span>
+        <span><b data-i18n="stickyTitle">Начать бесплатно</b><small data-i18n="stickySub">3 дня · затем €3/месяц</small></span>
         <strong>→</strong>
       </a>
     </div>
@@ -287,100 +273,72 @@ const schema = {
   <script is:inline>
     const I18N = {
       ru: {
-        login:"Войти",
-        heroEyebrow:"Практический словацкий для жизни в Словакии",
-        heroTitle:"Словацкий для реальных разговоров.",
-        heroPunch:"Не нужно говорить идеально. Нужно знать, что сказать дальше.",
-        heroLead:"Работа, врач, жильё, документы и обычные разговоры — короткие уроки по тем ситуациям, которые действительно случаются.",
-        heroCta:"Попробовать реальный урок",packCtaShort:"Бесплатные фразы для старта",
-        trialLine:"3 дня полного доступа",afterTrial:"затем €3/месяц",cancel:"отмена в любой момент",
-        visualLabel1:"Реальная фраза",visualLabel2:"Короткий урок",
-        situationsEyebrow:"Начни не с грамматики, а с ситуации",situationsTitle:"Какой разговор тебе нужен первым?",situationsLead:"Выбери то, что пригодится уже на этой неделе.",
-        doctor:"Врач",doctorPhrase:"Что у вас болит?",work:"Работа",workPhrase:"Когда я могу начать?",housing:"Жильё",housingPhrase:"Сколько это стоит в месяц?",documents:"Документы",documentsPhrase:"Где мне это подписать?",
-        proofEyebrow:"Не учи всё подряд",proofTitle:"Учишь сегодня. Используешь завтра.",proofLead:"SlovakGO строит обучение вокруг конкретной ситуации: сначала нужная фраза, потом аудио, практика и повторение.",
-        flow1:"Ситуация",flow1s:"Выбираешь нужный разговор",flow2:"Практика",flow2s:"Слушаешь и отвечаешь",flow3:"Жизнь",flow3s:"Используешь без ступора",
-        packEyebrow:"Бесплатно",packTitle:"Slovak Survival Pack",packLead:"16 фраз, которые реально пригодятся в первые недели в Словакии. Открой на телефоне перед нужным разговором.",packOpen:"Открыть бесплатный набор",
-        packHello:"Здравствуйте.",packSlow:"Пожалуйста, говорите медленнее.",packUnderstand:"Я не понимаю.",packHelp:"Можете мне помочь?",
-        sprintEyebrow:"3-Day Slovak Sprint",sprintTitle:"Три дня, чтобы перестать зависать в простых разговорах.",sprintLead:"Твой Sprint начинается только после активации. За три дня ты проходишь три практические темы и сразу применяешь фразы.",
-        day1:"Работа и знакомства",day2:"Врач и документы",day3:"Жильё и повседневная жизнь",sprintCta:"Начать свой 3-дневный Sprint",
-        pricingEyebrow:"Простая подписка",pricingTitle:"€3 в месяц. Без долгих обязательств.",pricingLead:"Полный доступ ко всем урокам, аудио, практике и повторениям. Начни с 3 бесплатных дней.",
-        monthly:"Месячная подписка",perMonth:"/ месяц",mainPlan:"Основной план",allLessons:"Все уроки",audio:"Аудио и разговорная практика",review:"Умные повторения",cancelAnytime:"Отмена в любой момент",
-        priceCta:"Начать 3 дня бесплатно",priceNote:"После пробного периода — €3/месяц. Для активации нужна карта.",yearly:"Годовая",perYear:"/ год",yearlyCta:"Сэкономить €16 →",
+        signin:"Войти",
+        heroOverline:"Словацкий для жизни в Словакии",
+        heroTitle:"Словацкий, который ты действительно будешь использовать.",
+        heroLead:"Практикуй разговоры до того, как они понадобятся — на работе, у врача, с арендодателем или в учреждении.",
+        heroCta:"Начать 3 дня бесплатно",leadMagnetCta:"Забрать 16 полезных фраз",
+        metaTrial:"3 дня полного доступа",metaPrice:"затем €3/месяц",metaCancel:"отмена в любой момент",
+        useOverline:"Начни с того, что нужно сейчас",useTitle:"Какой разговор ждёт тебя следующим?",useLead:"Не проходи абстрактные темы. Выбери ситуацию и выучи именно те фразы, которые пригодятся.",
+        doctor:"Врач",doctorSub:"Симптомы, запись, аптека",work:"Работа",workSub:"Коллеги, условия, собеседование",housing:"Жильё",housingSub:"Аренда, договор, хозяин",documents:"Документы",documentsSub:"Учреждения, формы, разрешения",
+        productOverline:"Как это работает",productTitle:"Сначала нужная фраза. Потом практика. Потом реальная жизнь.",productLead:"Короткий урок занимает 10–15 минут. Ты слушаешь, отвечаешь, повторяешь — и возвращаешься к словам тогда, когда их пора повторить.",step1:"Выбери ситуацию",step2:"Пройди короткий урок",step3:"Используй в разговоре",
+        packOverline:"Бесплатный набор",packTitle:"16 фраз, которые стоит сохранить в телефон.",packLead:"Для первых недель в Словакии: врач, работа, жильё, документы и обычные бытовые ситуации.",packCta:"Открыть Slovak Survival Pack",pack1:"Пожалуйста, говорите медленнее.",pack2:"Я не понимаю.",pack3:"Можете мне помочь?",
+        sprintTitle:"Три дня. Три полезные темы. Один понятный старт.",sprintLead:"Sprint начинается только после активации — никакого искусственного таймера. За три дня ты проходишь базовые ситуации и понимаешь, подходит ли тебе формат.",day1:"Работа и знакомства",day2:"Врач и документы",day3:"Жильё и повседневная жизнь",
+        priceOverline:"Простая подписка",priceTitle:"€3 в месяц.",priceLead:"Полный доступ ко всем урокам, аудио, практике и повторениям. Сначала — 3 дня полного доступа.",monthly:"Месячная",perMonth:"/ месяц",mainPlan:"Основной план",allLessons:"Все уроки",audio:"Аудио и разговорная практика",review:"Умные повторения",cancelAnytime:"Отмена в любой момент",priceCta:"Начать 3 дня бесплатно",priceNote:"После пробного периода — €3/месяц. Для активации нужна карта.",yearly:"Годовая",perYear:"/ год",yearCta:"Сэкономить €16 →",
         faqTitle:"Перед стартом.",faq1q:"Что входит в 3 бесплатных дня?",faq1a:"Полный доступ к урокам и функциям SlovakGO. После пробного периода действует выбранная подписка.",faq2q:"Нужна ли банковская карта?",faq2a:"Да, для активации пробного периода. Подписку можно отменить в любой момент.",faq3q:"Подойдёт ли новичку?",faq3a:"Да. Можно начать с базовых фраз и простых жизненных ситуаций.",faq4q:"Как выбирается язык сайта?",faq4a:"По языку устройства, если он поддерживается. Иначе открывается русский. Язык всегда можно переключить вручную.",
-        footerTitle:"Следующий разговор не будет ждать.",footerLead:"Подготовься к нему сейчас.",stickyCta:"Начать бесплатно",stickySub:"3 дня · затем €3/месяц"
+        footerOverline:"Следующий разговор не будет ждать",footerTitle:"Подготовься к нему сейчас.",stickyTitle:"Начать бесплатно",stickySub:"3 дня · затем €3/месяц"
       },
       uk: {
-        login:"Увійти",
-        heroEyebrow:"Практична словацька для життя у Словаччині",
-        heroTitle:"Словацька для реальних розмов.",
-        heroPunch:"Не треба говорити ідеально. Треба знати, що сказати далі.",
-        heroLead:"Робота, лікар, житло, документи й звичайні розмови — короткі уроки для ситуацій, які справді трапляються.",
-        heroCta:"Спробувати реальний урок",packCtaShort:"Безкоштовні фрази для старту",
-        trialLine:"3 дні повного доступу",afterTrial:"потім €3/місяць",cancel:"скасувати можна будь-коли",
-        visualLabel1:"Реальна фраза",visualLabel2:"Короткий урок",
-        situationsEyebrow:"Почни не з граматики, а з ситуації",situationsTitle:"Яка розмова потрібна тобі першою?",situationsLead:"Обери те, що стане в пригоді вже цього тижня.",
-        doctor:"Лікар",doctorPhrase:"Що у вас болить?",work:"Робота",workPhrase:"Коли я можу почати?",housing:"Житло",housingPhrase:"Скільки це коштує на місяць?",documents:"Документи",documentsPhrase:"Де мені це підписати?",
-        proofEyebrow:"Не вчи все підряд",proofTitle:"Вчиш сьогодні. Використовуєш завтра.",proofLead:"SlovakGO будує навчання навколо конкретної ситуації: спочатку потрібна фраза, потім аудіо, практика й повторення.",
-        flow1:"Ситуація",flow1s:"Обираєш потрібну розмову",flow2:"Практика",flow2s:"Слухаєш і відповідаєш",flow3:"Життя",flow3s:"Використовуєш без ступору",
-        packEyebrow:"Безкоштовно",packTitle:"Slovak Survival Pack",packLead:"16 фраз, які реально знадобляться в перші тижні у Словаччині. Відкрий на телефоні перед потрібною розмовою.",packOpen:"Відкрити безкоштовний набір",
-        packHello:"Добрий день.",packSlow:"Будь ласка, говоріть повільніше.",packUnderstand:"Я не розумію.",packHelp:"Можете мені допомогти?",
-        sprintEyebrow:"3-Day Slovak Sprint",sprintTitle:"Три дні, щоб перестати зависати у простих розмовах.",sprintLead:"Твій Sprint починається лише після активації. За три дні ти проходиш три практичні теми й одразу застосовуєш фрази.",
-        day1:"Робота та знайомства",day2:"Лікар і документи",day3:"Житло й повсякденне життя",sprintCta:"Почати свій 3-денний Sprint",
-        pricingEyebrow:"Проста підписка",pricingTitle:"€3 на місяць. Без довгих зобов’язань.",pricingLead:"Повний доступ до всіх уроків, аудіо, практики й повторень. Почни з 3 безкоштовних днів.",
-        monthly:"Місячна підписка",perMonth:"/ місяць",mainPlan:"Основний план",allLessons:"Усі уроки",audio:"Аудіо та розмовна практика",review:"Розумні повторення",cancelAnytime:"Скасувати можна будь-коли",
-        priceCta:"Почати 3 дні безкоштовно",priceNote:"Після пробного періоду — €3/місяць. Для активації потрібна картка.",yearly:"Річна",perYear:"/ рік",yearlyCta:"Заощадити €16 →",
+        signin:"Увійти",
+        heroOverline:"Словацька для життя у Словаччині",
+        heroTitle:"Словацька, якою ти справді будеш користуватися.",
+        heroLead:"Потренуй розмови до того, як вони знадобляться — на роботі, у лікаря, з орендодавцем або в установі.",
+        heroCta:"Почати 3 дні безкоштовно",leadMagnetCta:"Забрати 16 корисних фраз",
+        metaTrial:"3 дні повного доступу",metaPrice:"потім €3/місяць",metaCancel:"скасувати можна будь-коли",
+        useOverline:"Почни з того, що потрібно зараз",useTitle:"Яка розмова чекає на тебе наступною?",useLead:"Не проходь абстрактні теми. Обери ситуацію й вивчи саме ті фрази, які знадобляться.",
+        doctor:"Лікар",doctorSub:"Симптоми, запис, аптека",work:"Робота",workSub:"Колеги, умови, співбесіда",housing:"Житло",housingSub:"Оренда, договір, власник",documents:"Документи",documentsSub:"Установи, форми, дозволи",
+        productOverline:"Як це працює",productTitle:"Спочатку потрібна фраза. Потім практика. Потім реальне життя.",productLead:"Короткий урок займає 10–15 хвилин. Ти слухаєш, відповідаєш, повторюєш і повертаєшся до слів тоді, коли їх час повторити.",step1:"Обери ситуацію",step2:"Пройди короткий урок",step3:"Використай у розмові",
+        packOverline:"Безкоштовний набір",packTitle:"16 фраз, які варто зберегти в телефон.",packLead:"Для перших тижнів у Словаччині: лікар, робота, житло, документи й звичайні побутові ситуації.",packCta:"Відкрити Slovak Survival Pack",pack1:"Будь ласка, говоріть повільніше.",pack2:"Я не розумію.",pack3:"Можете мені допомогти?",
+        sprintTitle:"Три дні. Три корисні теми. Один зрозумілий старт.",sprintLead:"Sprint починається лише після активації — без штучного таймера. За три дні ти проходиш базові ситуації й розумієш, чи підходить тобі формат.",day1:"Робота та знайомства",day2:"Лікар і документи",day3:"Житло й повсякденне життя",
+        priceOverline:"Проста підписка",priceTitle:"€3 на місяць.",priceLead:"Повний доступ до всіх уроків, аудіо, практики й повторень. Спочатку — 3 дні повного доступу.",monthly:"Місячна",perMonth:"/ місяць",mainPlan:"Основний план",allLessons:"Усі уроки",audio:"Аудіо та розмовна практика",review:"Розумні повторення",cancelAnytime:"Скасувати можна будь-коли",priceCta:"Почати 3 дні безкоштовно",priceNote:"Після пробного періоду — €3/місяць. Для активації потрібна картка.",yearly:"Річна",perYear:"/ рік",yearCta:"Заощадити €16 →",
         faqTitle:"Перед стартом.",faq1q:"Що входить у 3 безкоштовні дні?",faq1a:"Повний доступ до уроків і функцій SlovakGO. Після пробного періоду діє обрана підписка.",faq2q:"Чи потрібна банківська картка?",faq2a:"Так, для активації пробного періоду. Підписку можна скасувати будь-коли.",faq3q:"Чи підійде новачку?",faq3a:"Так. Можна почати з базових фраз і простих життєвих ситуацій.",faq4q:"Як обирається мова сайту?",faq4a:"За мовою пристрою, якщо вона підтримується. Інакше відкривається російська. Мову завжди можна змінити вручну.",
-        footerTitle:"Наступна розмова не чекатиме.",footerLead:"Підготуйся до неї зараз.",stickyCta:"Почати безкоштовно",stickySub:"3 дні · потім €3/місяць"
+        footerOverline:"Наступна розмова не чекатиме",footerTitle:"Підготуйся до неї зараз.",stickyTitle:"Почати безкоштовно",stickySub:"3 дні · потім €3/місяць"
       },
       sk: {
-        login:"Prihlásiť sa",
-        heroEyebrow:"Praktická slovenčina pre život na Slovensku",
-        heroTitle:"Slovenčina pre skutočné rozhovory.",
-        heroPunch:"Nemusíte hovoriť dokonale. Potrebujete vedieť, čo povedať ďalej.",
-        heroLead:"Práca, lekár, bývanie, dokumenty a bežné rozhovory — krátke lekcie pre situácie, ktoré sa naozaj dejú.",
-        heroCta:"Vyskúšať reálnu lekciu",packCtaShort:"Bezplatné frázy na začiatok",
-        trialLine:"3 dni plného prístupu",afterTrial:"potom €3/mesiac",cancel:"zrušiť môžete kedykoľvek",
-        visualLabel1:"Reálna fráza",visualLabel2:"Krátka lekcia",
-        situationsEyebrow:"Začnite situáciou, nie gramatikou",situationsTitle:"Ktorý rozhovor potrebujete ako prvý?",situationsLead:"Vyberte si to, čo využijete už tento týždeň.",
-        doctor:"Lekár",doctorPhrase:"Čo vás bolí?",work:"Práca",workPhrase:"Kedy môžem začať?",housing:"Bývanie",housingPhrase:"Koľko to stojí mesačne?",documents:"Dokumenty",documentsPhrase:"Kde to mám podpísať?",
-        proofEyebrow:"Neučte sa všetko naraz",proofTitle:"Naučíte sa dnes. Použijete zajtra.",proofLead:"SlovakGO stavia učenie okolo konkrétnej situácie: najprv užitočná fráza, potom audio, prax a opakovanie.",
-        flow1:"Situácia",flow1s:"Vyberiete si rozhovor",flow2:"Prax",flow2s:"Počúvate a odpovedáte",flow3:"Život",flow3s:"Použijete to bez stresu",
-        packEyebrow:"Bezplatne",packTitle:"Slovak Survival Pack",packLead:"16 fráz, ktoré sa vám naozaj zídu počas prvých týždňov na Slovensku. Otvorte si ich v telefóne pred rozhovorom.",packOpen:"Otvoriť bezplatný balíček",
-        packHello:"Dobrý deň.",packSlow:"Prosím, hovorte pomalšie.",packUnderstand:"Nerozumiem.",packHelp:"Môžete mi pomôcť?",
-        sprintEyebrow:"3-Day Slovak Sprint",sprintTitle:"Tri dni, aby ste sa prestali zasekávať v jednoduchých rozhovoroch.",sprintLead:"Váš Sprint začne až po aktivácii. Za tri dni prejdete tri praktické témy a frázy hneď použijete.",
-        day1:"Práca a zoznamovanie",day2:"Lekár a dokumenty",day3:"Bývanie a každodenný život",sprintCta:"Začať svoj 3-dňový Sprint",
-        pricingEyebrow:"Jednoduché predplatné",pricingTitle:"€3 mesačne. Bez dlhého záväzku.",pricingLead:"Plný prístup ku všetkým lekciám, audiu, praxi a opakovaniu. Začnite 3 bezplatnými dňami.",
-        monthly:"Mesačné predplatné",perMonth:"/ mesiac",mainPlan:"Hlavný plán",allLessons:"Všetky lekcie",audio:"Audio a konverzačný tréning",review:"Inteligentné opakovanie",cancelAnytime:"Zrušiť môžete kedykoľvek",
-        priceCta:"Začať 3 dni zadarmo",priceNote:"Po skúšobnej dobe — €3/mesiac. Na aktiváciu je potrebná karta.",yearly:"Ročné",perYear:"/ rok",yearlyCta:"Ušetriť €16 →",
-        faqTitle:"Pred začiatkom.",faq1q:"Čo obsahujú 3 bezplatné dni?",faq1a:"Plný prístup k lekciám a funkciám SlovakGO. Po skúšobnej dobe pokračuje vybrané predplatné.",faq2q:"Potrebujem platobnú kartu?",faq2a:"Áno, na aktiváciu skúšobnej doby. Predplatné môžete kedykoľvek zrušiť.",faq3q:"Je to vhodné pre začiatočníka?",faq3a:"Áno. Môžete začať základnými frázami a jednoduchými situáciami.",faq4q:"Ako sa vyberá jazyk stránky?",faq4a:"Podľa jazyka zariadenia, ak je podporovaný. Inak sa otvorí ruština. Jazyk môžete vždy zmeniť ručne.",
-        footerTitle:"Ďalší rozhovor nebude čakať.",footerLead:"Pripravte sa naň teraz.",stickyCta:"Začať zadarmo",stickySub:"3 dni · potom €3/mesiac"
+        signin:"Prihlásiť sa",
+        heroOverline:"Slovenčina pre život na Slovensku",
+        heroTitle:"Slovenčina, ktorú budete naozaj používať.",
+        heroLead:"Precvičte si rozhovory skôr, než ich budete potrebovať — v práci, u lekára, s prenajímateľom alebo na úrade.",
+        heroCta:"Začať 3 dni zadarmo",leadMagnetCta:"Získať 16 užitočných fráz",
+        metaTrial:"3 dni plného prístupu",metaPrice:"potom €3/mesiac",metaCancel:"zrušiť môžete kedykoľvek",
+        useOverline:"Začnite tým, čo potrebujete teraz",useTitle:"Ktorý rozhovor vás čaká ako ďalší?",useLead:"Nestrácajte čas abstraktnými témami. Vyberte si situáciu a naučte sa frázy, ktoré využijete.",
+        doctor:"Lekár",doctorSub:"Príznaky, objednanie, lekáreň",work:"Práca",workSub:"Kolegovia, podmienky, pohovor",housing:"Bývanie",housingSub:"Nájom, zmluva, prenajímateľ",documents:"Dokumenty",documentsSub:"Úrady, formuláre, povolenia",
+        productOverline:"Ako to funguje",productTitle:"Najprv užitočná fráza. Potom prax. Potom skutočný život.",productLead:"Krátka lekcia trvá 10–15 minút. Počúvate, odpovedáte, opakujete a k slovám sa vraciate vtedy, keď je čas ich zopakovať.",step1:"Vyberte si situáciu",step2:"Prejdite krátkou lekciou",step3:"Použite to v rozhovore",
+        packOverline:"Bezplatný balíček",packTitle:"16 fráz, ktoré sa oplatí uložiť do telefónu.",packLead:"Na prvé týždne na Slovensku: lekár, práca, bývanie, dokumenty a bežné každodenné situácie.",packCta:"Otvoriť Slovak Survival Pack",pack1:"Prosím, hovorte pomalšie.",pack2:"Nerozumiem.",pack3:"Môžete mi pomôcť?",
+        sprintTitle:"Tri dni. Tri užitočné témy. Jeden jasný začiatok.",sprintLead:"Sprint začne až po aktivácii — bez umelého odpočítavania. Za tri dni prejdete základné situácie a zistíte, či vám tento formát vyhovuje.",day1:"Práca a zoznamovanie",day2:"Lekár a dokumenty",day3:"Bývanie a každodenný život",
+        priceOverline:"Jednoduché predplatné",priceTitle:"€3 mesačne.",priceLead:"Plný prístup ku všetkým lekciám, audiu, praxi a opakovaniu. Najprv — 3 dni plného prístupu.",monthly:"Mesačné",perMonth:"/ mesiac",mainPlan:"Hlavný plán",allLessons:"Všetky lekcie",audio:"Audio a konverzačný tréning",review:"Inteligentné opakovanie",cancelAnytime:"Zrušiť môžete kedykoľvek",priceCta:"Začať 3 dni zadarmo",priceNote:"Po skúšobnej dobe — €3/mesiac. Na aktiváciu je potrebná karta.",yearly:"Ročné",perYear:"/ rok",yearCta:"Ušetriť €16 →",
+        faqTitle:"Pred začiatkom.",faq1q:"Čo obsahujú 3 bezplatné dni?",faq1a:"Plný prístup k lekciám a funkciám SlovakGO. Po skúšobnej dobe pokračuje vybrané predplatné.",faq2q:"Potrebujem platobnú kartu?",faq2a:"Áno, na aktiváciu skúšobnej doby. Predplatné môžete kedykoľvek zrušiť.",faq3q:"Je to vhodné pre začiatočníka?",faq3a:"Áno. Môžete začať základnými frázami a jednoduchými životnými situáciami.",faq4q:"Ako sa vyberá jazyk stránky?",faq4a:"Podľa jazyka zariadenia, ak je podporovaný. Inak sa otvorí ruština. Jazyk môžete vždy zmeniť ručne.",
+        footerOverline:"Ďalší rozhovor nebude čakať",footerTitle:"Pripravte sa naň teraz.",stickyTitle:"Začať zadarmo",stickySub:"3 dni · potom €3/mesiac"
       },
       en: {
-        login:"Sign in",
-        heroEyebrow:"Practical Slovak for life in Slovakia",
-        heroTitle:"Slovak for real conversations.",
-        heroPunch:"You don’t need perfect Slovak. You need to know what to say next.",
-        heroLead:"Work, doctors, housing, documents and everyday conversations — short lessons for situations that actually happen.",
-        heroCta:"Try a real lesson",packCtaShort:"Free phrases to get started",
-        trialLine:"3 days full access",afterTrial:"then €3/month",cancel:"cancel anytime",
-        visualLabel1:"Real phrase",visualLabel2:"Short lesson",
-        situationsEyebrow:"Start with a situation, not grammar",situationsTitle:"Which conversation do you need first?",situationsLead:"Pick what you are likely to use this week.",
-        doctor:"Doctor",doctorPhrase:"What hurts?",work:"Work",workPhrase:"When can I start?",housing:"Housing",housingPhrase:"How much is it per month?",documents:"Documents",documentsPhrase:"Where should I sign this?",
-        proofEyebrow:"Don’t learn everything at once",proofTitle:"Learn today. Use it tomorrow.",proofLead:"SlovakGO builds learning around a specific situation: first the useful phrase, then audio, practice and review.",
-        flow1:"Situation",flow1s:"Pick the conversation",flow2:"Practice",flow2s:"Listen and answer",flow3:"Real life",flow3s:"Use it without freezing",
-        packEyebrow:"Free",packTitle:"Slovak Survival Pack",packLead:"16 phrases you’ll genuinely use during your first weeks in Slovakia. Keep them on your phone for the conversation you need.",packOpen:"Open the free pack",
-        packHello:"Good day.",packSlow:"Please speak more slowly.",packUnderstand:"I don’t understand.",packHelp:"Can you help me?",
-        sprintEyebrow:"3-Day Slovak Sprint",sprintTitle:"Three days to stop freezing in simple conversations.",sprintLead:"Your Sprint starts only when you activate it. In three days you complete three practical topics and use the phrases right away.",
-        day1:"Work & introductions",day2:"Doctor & documents",day3:"Housing & everyday life",sprintCta:"Start your 3-Day Sprint",
-        pricingEyebrow:"Simple subscription",pricingTitle:"€3 a month. No long commitment.",pricingLead:"Full access to every lesson, audio, practice and review. Start with 3 free days.",
-        monthly:"Monthly subscription",perMonth:"/ month",mainPlan:"Main plan",allLessons:"All lessons",audio:"Audio and speaking practice",review:"Smart review",cancelAnytime:"Cancel anytime",
-        priceCta:"Start 3 days free",priceNote:"After the trial — €3/month. A card is required to activate it.",yearly:"Yearly",perYear:"/ year",yearlyCta:"Save €16 →",
+        signin:"Sign in",
+        heroOverline:"Slovak for life in Slovakia",
+        heroTitle:"Slovak you’ll actually use.",
+        heroLead:"Practice the conversations before you need them — at work, at the doctor, with a landlord or at an office.",
+        heroCta:"Start 3 days free",leadMagnetCta:"Get 16 useful phrases",
+        metaTrial:"3 days full access",metaPrice:"then €3/month",metaCancel:"cancel anytime",
+        useOverline:"Start with what you need now",useTitle:"Which conversation is coming up next?",useLead:"Skip abstract topics. Pick a situation and learn the phrases you are actually likely to use.",
+        doctor:"Doctor",doctorSub:"Symptoms, appointments, pharmacy",work:"Work",workSub:"Colleagues, conditions, interviews",housing:"Housing",housingSub:"Rent, contracts, landlords",documents:"Documents",documentsSub:"Offices, forms, permits",
+        productOverline:"How it works",productTitle:"First the useful phrase. Then practice. Then real life.",productLead:"A short lesson takes 10–15 minutes. You listen, answer, repeat, and revisit words when it is time to review them.",step1:"Pick a situation",step2:"Take a short lesson",step3:"Use it in conversation",
+        packOverline:"Free pack",packTitle:"16 phrases worth keeping on your phone.",packLead:"For your first weeks in Slovakia: doctors, work, housing, documents and everyday situations.",packCta:"Open the Slovak Survival Pack",pack1:"Please speak more slowly.",pack2:"I don’t understand.",pack3:"Can you help me?",
+        sprintTitle:"Three days. Three useful topics. One clear start.",sprintLead:"Your Sprint starts only when you activate it — no fake countdown. In three days you cover the basics and see whether the format works for you.",day1:"Work & introductions",day2:"Doctor & documents",day3:"Housing & everyday life",
+        priceOverline:"Simple subscription",priceTitle:"€3 a month.",priceLead:"Full access to every lesson, audio, practice and review. First — 3 days of full access.",monthly:"Monthly",perMonth:"/ month",mainPlan:"Main plan",allLessons:"All lessons",audio:"Audio and speaking practice",review:"Smart review",cancelAnytime:"Cancel anytime",priceCta:"Start 3 days free",priceNote:"After the trial — €3/month. A card is required to activate it.",yearly:"Yearly",perYear:"/ year",yearCta:"Save €16 →",
         faqTitle:"Before you start.",faq1q:"What is included in the 3 free days?",faq1a:"Full access to SlovakGO lessons and features. After the trial, your selected subscription applies.",faq2q:"Do I need a bank card?",faq2a:"Yes, to activate the trial. You can cancel the subscription at any time.",faq3q:"Is it good for beginners?",faq3a:"Yes. You can start with basic phrases and simple real-life situations.",faq4q:"How is the site language selected?",faq4a:"By your device language when supported. Otherwise it opens in Russian. You can always switch it manually.",
-        footerTitle:"The next conversation won’t wait.",footerLead:"Prepare for it now.",stickyCta:"Start free",stickySub:"3 days · then €3/month"
+        footerOverline:"The next conversation won’t wait",footerTitle:"Prepare for it now.",stickyTitle:"Start free",stickySub:"3 days · then €3/month"
       }
     };
 
-    const supported = ["sk","uk","ru","en"];
+    const supported = ["sk", "uk", "ru", "en"];
     const queryLang = new URLSearchParams(location.search).get("lang");
     const savedLang = localStorage.getItem("slovakgo-site-lang");
     const browser = (navigator.languages?.[0] || navigator.language || "").toLowerCase();
@@ -394,10 +352,14 @@ const schema = {
       : supported.includes(savedLang) ? savedLang
       : deviceLang;
 
+    const codeLabel = { sk: "SK", uk: "UA", ru: "RU", en: "EN" };
+
     function applyLanguage(lang, persist = true) {
       const next = supported.includes(lang) ? lang : "ru";
       const dict = I18N[next];
       document.documentElement.lang = next;
+      const current = document.getElementById("go-current-lang");
+      if (current) current.textContent = codeLabel[next];
 
       if (persist) localStorage.setItem("slovakgo-site-lang", next);
 
@@ -418,7 +380,11 @@ const schema = {
     }
 
     document.querySelectorAll("[data-lang]").forEach((button) => {
-      button.addEventListener("click", () => applyLanguage(button.getAttribute("data-lang") || "ru"));
+      button.addEventListener("click", () => {
+        applyLanguage(button.getAttribute("data-lang") || "ru");
+        const details = button.closest("details");
+        if (details) details.removeAttribute("open");
+      });
     });
 
     applyLanguage(initialLang, false);
