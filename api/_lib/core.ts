@@ -207,6 +207,7 @@ export function rowToUser(r: Row): Record<string, unknown> {
     hasUsedTrial:       Boolean(r.trial_used) || Boolean(r.stripe_customer_id),
     authProvider:       r.google_sub && !String(r.pw_hash ?? "") ? "google" : "password",
     createdAt:          String(r.created_at),
+    lastActiveAt:       String(r.updated_at),
     updatedAt:          String(r.updated_at),
   };
 }
