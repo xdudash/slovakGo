@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { Arg } from "./core";
+import { normalizeLessonPayload } from "./lessonValidation";
 import {
   XP_PER_PRACTICE,
   exec, queryOne, nowIso, todayKey, currentWeekId, safeJson, getDb, ensureCol,
@@ -345,12 +346,12 @@ async function mutPracticeComplete(uid: string, p: Record<string, unknown>): Pro
   }
 }
 async function mutLessonUpsert(uid: string, p: Record<string, unknown>): Promise<void> {
-  const lesson = (typeof p.lesson === "object" && p.lesson) ? p.lesson as Record<string, unknown> : p;
-  if (!lesson.id) return;
+  const rawLesson = (typeof p.lesson === "object" && p.lesson) ? p.lesson : p;
+  const lesson = normalizeLessonPayload(rawLesson);
   await exec(
     `INSERT INTO lessons (id, data_json, published, created_by, updated_at) VALUES (?, ?, ?, ?, ?)
      ON CONFLICT(id) DO UPDATE SET data_json = excluded.data_json, published = excluded.published, updated_at = excluded.updated_at`,
-    [String(lesson.id), JSON.stringify(lesson), lesson.isPublished ? 1 : 0, uid, nowIso()]
+    [lesson.id, JSON.stringify(lesson), lesson.isPublished ? 1 : 0, uid, nowIso()]
   );
 }
 
