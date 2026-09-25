@@ -124,3 +124,73 @@
   .v4-sprint .v4-primary{width:fit-content;min-width:260px}.v4-price-main{max-width:560px}.v4-price-alt{max-width:560px}
   .v4-sticky{display:none}
 }
+
+
+/* Desktop refinement: keep the mobile conversion hierarchy without oversized editorial scaling. */
+@media (min-width: 900px){
+  .v4-header-inner{height:68px}
+  .v4-hero{padding:64px 0 72px}
+  .v4-hero-grid{
+    grid-template-columns:minmax(0,560px) minmax(320px,420px);
+    justify-content:space-between;
+    gap:64px;
+    align-items:center;
+  }
+  .v4-hero-copy{padding:18px 0}
+  .v4-hero h1{
+    max-width:11ch;
+    font-size:clamp(3.35rem,5vw,4.65rem);
+    line-height:.97;
+    letter-spacing:-.055em;
+  }
+  .v4-lead{max-width:34rem;font-size:1rem;line-height:1.6}
+  .v4-cta-stack{max-width:340px}
+  .v4-primary{min-height:50px}
+  .v4-secondary{min-height:46px}
+  .v4-product-proof{
+    min-height:490px;
+    margin:0;
+    border:1px solid var(--line);
+    border-radius:24px;
+    background:#f4f1eb;
+    overflow:hidden;
+  }
+  .v4-real-shot{
+    width:252px;
+    right:36px;
+    top:28px;
+    padding:6px;
+    transform:none;
+    border-radius:34px;
+    background:#111;
+    box-shadow:0 24px 54px rgba(17,18,20,.16);
+  }
+  .v4-real-shot img{border-radius:27px}
+  .v4-proof-copy{
+    left:28px;
+    bottom:30px;
+    width:245px;
+    padding:16px 18px;
+    border:1px solid var(--line);
+    border-radius:16px;
+    background:rgba(255,255,255,.96);
+    color:var(--ink);
+    box-shadow:0 12px 30px rgba(17,24,39,.08);
+  }
+  .v4-proof-copy span{color:var(--orange)}
+  .v4-proof-copy strong{font-size:1rem;line-height:1.22}
+  .v4-proof-copy small{color:var(--muted)}
+  .v4-section,.v4-pack,.v4-sprint,.v4-final{padding:76px 0}
+  .v4-section h2,.v4-pack h2,.v4-sprint h2,.v4-final h2{
+    font-size:clamp(2.6rem,4vw,3.55rem);
+    line-height:1.02;
+    max-width:14ch;
+  }
+  .v4-scenario-list{margin-top:26px}
+  .v4-scenario-list a{min-height:124px}
+}
+@media (min-width: 1180px){
+  .v4-wrap{width:min(calc(100% - 80px),1040px)}
+  .v4-hero-grid{grid-template-columns:560px 390px;gap:72px}
+  .v4-hero h1{font-size:4.55rem}
+}
