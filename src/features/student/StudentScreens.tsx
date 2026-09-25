@@ -1865,7 +1865,7 @@ function PracticeScreen() {
             )}
 
             {/* Plus XP bonus card */}
-            {isPlus && (
+            {hasXpBonus && (
               <div className="plus-xp-banner">
                 <Zap size={16} />
                 <span>{t("student.practice.plus_bonus")}</span>
@@ -1996,7 +1996,7 @@ function PracticeScreen() {
         <Trophy size={48} color="var(--yellow-strong)" />
         <div className="result-xp-row">
           <h2>+{xpEarned} XP</h2>
-          {isPlus && <span className="plus-xp-chip">{t("student.practice.plus_bonus")}</span>}
+          {hasXpBonus && <span className="plus-xp-chip">{t("student.practice.plus_bonus")}</span>}
         </div>
         <p>{correctCount} / {total} {t("student.practice.results_correct")} · {accuracy}%</p>
       </Card>
