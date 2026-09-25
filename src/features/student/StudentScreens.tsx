@@ -2621,6 +2621,10 @@ function SettingsScreen() {
 
   async function saveProfile() {
     const trimmedEmail = email.trim().toLowerCase();
+    if (user!.authProvider === "google" && trimmedEmail !== user!.email.toLowerCase()) {
+      setEmailError("Email Google-акаунта змінюється в налаштуваннях Google.");
+      return;
+    }
     if (trimmedEmail !== user!.email.toLowerCase()) {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
         setEmailError(t("student.settings.email_invalid"));
@@ -2661,7 +2665,7 @@ function SettingsScreen() {
       setTimeout(() => { setPwSuccess(false); setPwExpanded(false); }, 2500);
     } catch (err: unknown) {
       const e = err as { status?: number; message?: string };
-      setPwError(e.status === 401 ? t("student.settings.password_wrong") : (e.message || "Помилка"));
+      setPwError(e.status === 422 ? t("student.settings.password_wrong") : (e.message || "Помилка"));
     } finally {
       setPwLoading(false);
     }
@@ -2711,8 +2715,14 @@ function SettingsScreen() {
         <Card className="form-stack">
           <Field label={t("student.settings.name")} value={name} onChange={(e) => setName(e.target.value)} />
           <div>
-            <Field label={t("student.settings.email")} value={email} onChange={(e) => { setEmail(e.target.value); setEmailError(""); setEmailSaved(false); }} />
-            {email.trim().toLowerCase() !== user.email.toLowerCase() && (
+            <Field
+              label={t("student.settings.email")}
+              value={email}
+              disabled={user.authProvider === "google"}
+              onChange={(e) => { setEmail(e.target.value); setEmailError(""); setEmailSaved(false); }}
+            />
+            {user.authProvider === "google" && <p className="muted sm">Email керується через Google.</p>}
+            {user.authProvider !== "google" && email.trim().toLowerCase() !== user.email.toLowerCase() && (
               <Field type="password" label={t("student.settings.password_current")} value={emailPassword} onChange={(e) => setEmailPassword(e.target.value)} />
             )}
             {emailError && <p className="field-error">{emailError}</p>}
