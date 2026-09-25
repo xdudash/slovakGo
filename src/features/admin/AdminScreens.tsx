@@ -849,7 +849,7 @@ function UserDetail() {
         <div className="admin-detail-row"><span>Підписка</span><strong>{u.subscriptionStatus}</strong></div>
         <div className="admin-detail-row"><span>Країна</span><strong>{u.country || "—"}</strong></div>
         <div className="admin-detail-row"><span>Реєстрація</span><strong>{new Date(u.createdAt).toLocaleDateString("uk-UA")}</strong></div>
-        <div className="admin-detail-row"><span>Остання активність</span><strong>{u.lastSeenAt ? new Date(u.lastSeenAt).toLocaleDateString("uk-UA") : "—"}</strong></div>
+        <div className="admin-detail-row"><span>Остання активність</span><strong>{u.lastActiveAt ? new Date(u.lastActiveAt).toLocaleDateString("uk-UA") : "—"}</strong></div>
         <div className="admin-detail-row"><span>Заблокований</span><strong>{u.isBlocked ? "Так" : "Ні"}</strong></div>
         <div className="admin-detail-row"><span>Остання практика</span><strong>{p.lastPracticeDate || "—"}</strong></div>
       </Card>
