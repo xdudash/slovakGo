@@ -29,7 +29,7 @@ if (_FCM.apiKey && _FCM.apiKey.indexOf('%%') === -1) {
   });
 }
 
-const CACHE_VERSION = 'slovakgo-v9';
+const CACHE_VERSION = 'slovakgo-v10';
 const STATIC_CACHE  = `${CACHE_VERSION}-static`;
 const AUDIO_CACHE   = `${CACHE_VERSION}-audio`;
 
@@ -105,6 +105,10 @@ self.addEventListener('fetch', (event) => {
         .catch(async () => {
           const cached = await caches.match(request);
           if (cached) return cached;
+          // SPA routes such as /app/path are not individually precached. Reuse
+          // the cached root shell so React Router can restore the requested route.
+          const shell = await caches.match('/');
+          if (shell) return shell;
           return caches.match('/offline.html').then((r) => r ?? Response.error());
         })
     );
