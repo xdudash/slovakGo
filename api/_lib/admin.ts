@@ -224,22 +224,31 @@ export async function handleAdminUserDetail(req: VercelRequest, res: VercelRespo
   const row = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [targetId]);
   if (!row) return fail(res, "Користувача не знайдено", 404);
   const prog = await ensureProgress(targetId);
+  const userWords = await getUserWords(targetId);
 
   respond(res, {
     ok: true,
     user: rowToUser(row),
     progress: {
+      userId:            targetId,
+      currentLevel:      String(row.level),
+      completedLessons:  safeJson<string[]>(String(prog.completed_j ?? "[]"), []),
+      lessonAttempts:    [],
       xpTotal:           Number(prog.xp_total),
       xpWeekly:          Number(prog.xp_weekly),
+      weekId:            String(prog.week_id ?? ""),
       xpDailyHistory:    safeJson<Record<string, number>>(String(prog.xp_daily_j ?? "{}"), {}),
-      streakDays:        Number(prog.streak_days),
-      completedLessons:  safeJson<string[]>(String(prog.completed_j ?? "[]"), []),
-      mistakes:          safeJson<unknown[]>(String(prog.mistakes_j ?? "[]"), []),
       hearts:            Number(prog.hearts),
       maxHearts:         Number(prog.max_hearts),
-      lastPracticeDate:  prog.last_prac || null,
+      streakDays:        Number(prog.streak_days),
+      lastPracticeDate:  prog.last_prac || undefined,
       streakFreezeCount: Number(prog.freeze_cnt),
+      coins:             Number(prog.coins),
+      mistakes:          safeJson<unknown[]>(String(prog.mistakes_j ?? "[]"), []),
+      achievements:      [],
+      updatedAt:         String(prog.updated_at),
     },
+    userWords,
   });
 }
 
