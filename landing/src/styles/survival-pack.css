@@ -1,0 +1,22 @@
+.survival-pack-page{background:#fbfaf7;color:#111827}
+.survival-pack-page .site-nav,.survival-pack-page .site-footer{display:none!important}
+.pack-page{width:min(calc(100% - 32px),720px);margin:0 auto;padding-bottom:60px}
+.pack-header{height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #e8e4de}
+.pack-header img{width:138px;height:auto}
+.pack-header nav{display:flex;gap:2px;padding:3px;border:1px solid #e8e4de;background:#fff;border-radius:999px}
+.pack-header button{width:34px;height:30px;border:0;background:transparent;border-radius:999px;color:#707780;font-size:.72rem;font-weight:800}
+.pack-header button.is-active{background:#ff5b13;color:#fff}
+.pack-hero{padding:44px 0 34px;border-bottom:1px solid #e8e4de}
+.pack-kicker{margin:0 0 10px;color:#ff5b13;font-size:.72rem;font-weight:850;text-transform:uppercase;letter-spacing:.06em}
+.pack-hero h1{margin:0;font-family:var(--font-body);font-size:clamp(2.6rem,12vw,4.6rem);line-height:.98;letter-spacing:-.055em}
+.pack-hero p:not(.pack-kicker){margin:18px 0 0;color:#646b73;line-height:1.6}
+.pack-hero a,.pack-bottom a{display:flex;margin-top:22px;min-height:52px;align-items:center;justify-content:center;border-radius:13px;background:#ff5b13;color:#fff;font-weight:850;text-align:center;padding:0 16px}
+.pack-list{padding:10px 0 0}
+.pack-list h2{margin:34px 0 8px;font-family:var(--font-body);font-size:1.4rem;letter-spacing:-.035em}
+.pack-list article{padding:14px 0;border-bottom:1px solid #e8e4de;display:grid;gap:4px}
+.pack-list strong{font-size:.98rem}
+.pack-list span{color:#646b73;font-size:.84rem}
+.pack-bottom{margin-top:40px;padding:24px;border-radius:18px;background:#111;color:#fff}
+.pack-bottom p{margin:0;color:#c5c8cc;line-height:1.55;font-size:.9rem}
+.pack-bottom a{box-shadow:none}
+@media(min-width:700px){.pack-page{padding-bottom:90px}.pack-header{height:72px}.pack-hero{padding:66px 0 44px}.pack-bottom{padding:32px}}
