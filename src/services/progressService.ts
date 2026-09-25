@@ -47,7 +47,9 @@ function updateStreak(progress: Progress): Progress {
 }
 
 function xpWithBonus(base: number, subscriptionStatus?: SubscriptionStatus): number {
-  return subscriptionStatus === "plus" || subscriptionStatus === "trial" ? Math.round(base * 1.5) : base;
+  return subscriptionStatus === "plus" || subscriptionStatus === "trial" || subscriptionStatus === "past_due"
+    ? Math.round(base * 1.5)
+    : base;
 }
 
 export const progressService = {
@@ -90,6 +92,9 @@ export const progressService = {
     const alreadyCompleted = p.completedLessons.includes(lesson.id);
     const correct = answers.filter((answer) => answer.correct).length;
     const mistakes = answers.length - correct;
+    const heartsLost = answers.filter(
+      (answer) => !answer.correct && !answer.exerciseId.startsWith("final:")
+    ).length;
     const baseXp = alreadyCompleted ? Math.max(3, Math.round(lesson.xpReward * 0.25)) : lesson.xpReward;
     const xpEarned = xpWithBonus(baseXp, subscriptionStatus);
     const updated = addDailyXp(updateStreak(p), xpEarned);
@@ -109,7 +114,7 @@ export const progressService = {
           finishedAt: new Date().toISOString(),
           score: answers.length ? Math.round((correct / answers.length) * 100) : 0,
           mistakesCount: mistakes,
-          heartsLost: mistakes,
+          heartsLost,
           xpEarned,
           answers,
           completed: true

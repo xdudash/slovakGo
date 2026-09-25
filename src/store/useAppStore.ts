@@ -30,7 +30,7 @@ interface AppStore {
   bulkSetLessons: (lessons: Lesson[]) => void;
   deleteLesson: (lessonId: string) => void;
   adminUpdateUser: (userId: string, patch: Partial<User>) => void;
-  loginAsUser: (userId: string) => void;
+  loginAsUser: (userId: string) => Promise<boolean>;
   returnToAdmin: () => void;
   refreshUser: () => Promise<void>;
   drainSync: () => Promise<void>;
@@ -59,8 +59,17 @@ function save(data: AppData): AppData {
   return data;
 }
 
-function withSync(data: AppData, type: string, payload: Record<string, unknown>) {
-  return syncService.enqueue(data, type, payload);
+function withSync(data: AppData, userId: string, type: string, payload: Record<string, unknown>) {
+  return syncService.enqueue(data, userId, type, payload);
+}
+
+async function recoverSyncForUser(data: AppData, userId: string): Promise<AppData> {
+  const recovered = await syncService.recover(data.syncQueue, userId);
+  return recovered.length ? { ...data, syncQueue: [...data.syncQueue, ...recovered] } : data;
+}
+
+function isAdminPreview(): boolean {
+  return Boolean(localStorage.getItem("slovakgo.admin-return"));
 }
 
 function nextLessonId(lessons: Lesson[], completed: string[], level: UserLevel): string | undefined {
@@ -82,12 +91,21 @@ function isCachedLessonCatalogComplete(version: string | undefined, data: AppDat
 function mergeRemoteState(data: AppData, remote: RemoteState): AppData {
   const userId = remote.user.id;
   const users = data.users.filter((user) => user.id !== userId);
+  const localProgress = data.progress[userId];
+  const progress = {
+    ...remote.progress,
+    lessonAttempts: localProgress?.lessonAttempts ?? [],
+    achievements: progressService.achievements(
+      remote.progress.streakDays,
+      localProgress?.achievements ?? remote.progress.achievements ?? []
+    ),
+  };
   return {
     ...data,
     users: [...users, { ...remote.user, settings: { ...defaultSettings, ...remote.user.settings } }],
-    progress: { ...data.progress, [userId]: { ...remote.progress, lessonAttempts: data.progress[userId]?.lessonAttempts ?? [] } },
+    progress: { ...data.progress, [userId]: progress },
     userWords: { ...data.userWords, [userId]: remote.userWords },
-    lessons: remote.lessons?.length ? remote.lessons : data.lessons,
+    lessons: remote.lessons !== undefined ? remote.lessons : data.lessons,
   };
 }
 
@@ -122,13 +140,22 @@ export const useAppStore = create<AppStore>((set, get) => ({
     try {
       const fullState = await apiClient.syncPull(0, false) as RemoteState;
       data = mergeRemoteState(data, fullState);
+      data = await recoverSyncForUser(data, userId);
     } catch {
-      // syncPull failed — log in with local data so a server hiccup doesn't block the user
+      // Only fall back to an existing cached progress snapshot. Entering the app
+      // with a user object but no progress leaves the student UI in a permanent
+      // loading state and risks overwriting server progress with empty local data.
+      if (!data.progress[userId]) {
+        await apiClient.logout().catch(() => undefined);
+        set({ authError: "Не вдалося завантажити прогрес. Спробуй увійти ще раз." });
+        return null;
+      }
       const users = data.users.filter(u => u.id !== userId);
       data = {
         ...data,
         users: [...users, { ...serverUser, settings: { ...defaultSettings, ...serverUser.settings } }],
       };
+      data = await recoverSyncForUser(data, userId);
     }
 
     save(data);
@@ -143,7 +170,8 @@ export const useAppStore = create<AppStore>((set, get) => ({
     try {
       const fullState = await apiClient.syncPull(0, false) as RemoteState;
       const userId = fullState.user.id;
-      const data = mergeRemoteState(get().data, fullState);
+      let data = mergeRemoteState(get().data, fullState);
+      data = await recoverSyncForUser(data, userId);
 
       save(data);
       localStorage.setItem(sessionKey, userId);
@@ -181,11 +209,44 @@ export const useAppStore = create<AppStore>((set, get) => ({
 
     const tentativeId = `user-${crypto.randomUUID()}`;
     try {
-      await apiClient.register(tentativeId, payload.name.trim(), payload.email, payload.password, payload.goal);
+      const { user: raw } = await apiClient.register(tentativeId, payload.name.trim(), payload.email, payload.password, payload.goal);
+      const registeredUser = raw as User;
+      const userId = registeredUser.id;
+      let data = get().data;
 
-      const fullState = await apiClient.syncPull(0, false) as RemoteState;
-      const userId = fullState.user.id;
-      const data = mergeRemoteState(get().data, fullState);
+      try {
+        const fullState = await apiClient.syncPull(0, false) as RemoteState;
+        data = mergeRemoteState(data, fullState);
+      } catch {
+        const now = new Date().toISOString();
+        const users = data.users.filter((user) => user.id !== userId);
+        data = {
+          ...data,
+          users: [...users, { ...registeredUser, settings: { ...defaultSettings, ...registeredUser.settings } }],
+          progress: {
+            ...data.progress,
+            [userId]: {
+              userId,
+              currentLevel: registeredUser.level ?? "A0",
+              completedLessons: [],
+              lessonAttempts: [],
+              xpTotal: 0,
+              xpWeekly: 0,
+              hearts: 5,
+              maxHearts: 5,
+              streakDays: 0,
+              streakFreezeCount: 0,
+              coins: 0,
+              mistakes: [],
+              achievements: [],
+              xpDailyHistory: {},
+              updatedAt: now,
+            },
+          },
+          userWords: { ...data.userWords, [userId]: [] },
+        };
+      }
+      data = await recoverSyncForUser(data, userId);
 
       save(data);
       localStorage.setItem(sessionKey, userId);
@@ -236,7 +297,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
       const response = await apiClient.lessonsPull(currentVersion);
       if (response.unchanged) return;
       const lessons = response.lessons as Lesson[] | undefined;
-      if (!lessons?.length) return;
+      if (lessons === undefined) return;
       const data = save({ ...get().data, lessons });
       storageService.setLessonVersion(response.version);
       set({ data });
@@ -252,18 +313,21 @@ export const useAppStore = create<AppStore>((set, get) => ({
   },
 
   updateUser(patch) {
+    if (isAdminPreview()) return;
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     let data: AppData = {
       ...get().data,
       users: get().data.users.map((user) => (user.id === currentUserId ? { ...user, ...patch, lastActiveAt: new Date().toISOString() } : user))
     };
-    data = withSync(data, "profile.update", patch as Record<string, unknown>);
+    data = withSync(data, currentUserId, "profile.update", patch as Record<string, unknown>);
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   completeOnboarding(goal, level) {
+    if (isAdminPreview()) return;
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     const progress = get().data.progress[currentUserId];
@@ -276,12 +340,14 @@ export const useAppStore = create<AppStore>((set, get) => ({
         [currentUserId]: { ...progress, currentLevel: level, currentLessonId, updatedAt: new Date().toISOString() }
       }
     };
-    data = withSync(data, "profile.update", { goal, level, onboardingDone: true });
+    data = withSync(data, currentUserId, "profile.update", { goal, level, onboardingDone: true });
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   setLevel(level) {
+    if (isAdminPreview()) return;
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     const progress = get().data.progress[currentUserId];
@@ -291,9 +357,10 @@ export const useAppStore = create<AppStore>((set, get) => ({
       users: get().data.users.map((user) => (user.id === currentUserId ? { ...user, level } : user)),
       progress: { ...get().data.progress, [currentUserId]: { ...progress, currentLevel: level, currentLessonId, updatedAt: new Date().toISOString() } }
     };
-    data = withSync(data, "profile.update", { level });
+    data = withSync(data, currentUserId, "profile.update", { level });
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   submitPlacement(correct, total) {
@@ -304,6 +371,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
   },
 
   completeLesson(lesson, answers) {
+    if (isAdminPreview()) return;
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     const subStatus = get().data.users.find((u) => u.id === currentUserId)?.subscriptionStatus;
@@ -316,7 +384,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
       userWords: { ...get().data.userWords, [currentUserId]: userWords }
     };
     data = { ...data, leaderboard: leaderboardService.recalculate(data.leaderboard, data.users, data.progress) };
-    data = withSync(data, "lesson.complete", { lessonId: lesson.id, answers, xpEarned });
+    data = withSync(data, currentUserId, "lesson.complete", { lessonId: lesson.id, answers, xpEarned });
     save(data);
     set({ data });
     // Push to server immediately — don't wait for next login
@@ -327,6 +395,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
   },
 
   recordWrongAnswer(lesson, exerciseId, answer) {
+    if (isAdminPreview()) return;
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     const exercise = lesson.exercises.find((item) => item.id === exerciseId);
@@ -338,12 +407,14 @@ export const useAppStore = create<AppStore>((set, get) => ({
       progress: { ...get().data.progress, [currentUserId]: progress },
       userWords: { ...get().data.userWords, [currentUserId]: userWords }
     };
-    data = withSync(data, "exercise.wrong", { lessonId: lesson.id, exerciseId, answer });
+    data = withSync(data, currentUserId, "exercise.wrong", { lessonId: lesson.id, exerciseId, answer });
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   toggleFavorite(wordId) {
+    if (isAdminPreview()) return;
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     const words = get().data.userWords[currentUserId] || [];
@@ -355,12 +426,14 @@ export const useAppStore = create<AppStore>((set, get) => ({
       ...get().data,
       userWords: { ...get().data.userWords, [currentUserId]: [...words.filter((word) => word.wordId !== wordId), next] }
     };
-    data = withSync(data, "word.update", { wordId, favorite: next.favorite });
+    data = withSync(data, currentUserId, "word.update", { wordId, favorite: next.favorite });
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   finishPracticeSession(results) {
+    if (isAdminPreview()) return;
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     const subStatus = get().data.users.find((u) => u.id === currentUserId)?.subscriptionStatus;
@@ -375,28 +448,34 @@ export const useAppStore = create<AppStore>((set, get) => ({
       userWords: { ...get().data.userWords, [currentUserId]: userWords },
     };
     data = { ...data, leaderboard: leaderboardService.recalculate(data.leaderboard, data.users, data.progress) };
-    data = withSync(data, "practice.complete", { results: results as unknown as Record<string, unknown> });
+    data = withSync(data, currentUserId, "practice.complete", { results: results as unknown as Record<string, unknown> });
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   restoreHearts() {
+    if (isAdminPreview()) return;
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     const progress = progressService.restoreHearts(get().data.progress[currentUserId]);
     let data = { ...get().data, progress: { ...get().data.progress, [currentUserId]: progress } };
-    data = withSync(data, "hearts.restore", {});
+    data = withSync(data, currentUserId, "hearts.restore", {});
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   upsertLesson(lesson) {
+    const currentUserId = get().currentUserId;
+    if (!currentUserId) return;
     let lessons = get().data.lessons;
     lessons = lessons.some((item) => item.id === lesson.id) ? lessons.map((item) => (item.id === lesson.id ? lesson : item)) : [...lessons, lesson];
     let data = { ...get().data, lessons };
-    data = withSync(data, "lesson.upsert", { lesson });
+    data = withSync(data, currentUserId, "lesson.upsert", { lesson });
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   bulkSetLessons(incoming) {
@@ -408,25 +487,47 @@ export const useAppStore = create<AppStore>((set, get) => ({
   },
 
   deleteLesson(lessonId) {
+    const currentUserId = get().currentUserId;
+    if (!currentUserId) return;
     let data = { ...get().data, lessons: get().data.lessons.filter((lesson) => lesson.id !== lessonId) };
-    data = withSync(data, "lesson.delete", { lessonId });
+    data = withSync(data, currentUserId, "lesson.delete", { lessonId });
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   adminUpdateUser(userId, patch) {
+    const currentUserId = get().currentUserId;
+    if (!currentUserId) return;
     let data = { ...get().data, users: get().data.users.map((user) => (user.id === userId ? { ...user, ...patch } : user)) };
-    data = withSync(data, "admin.user.update", { userId, ...patch });
+    data = withSync(data, currentUserId, "admin.user.update", { userId, ...patch });
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
-  loginAsUser(userId) {
+  async loginAsUser(userId) {
     const adminReturnKey = "slovakgo.admin-return";
     const current = get().currentUserId;
-    if (current) localStorage.setItem(adminReturnKey, current);
-    localStorage.setItem(sessionKey, userId);
-    set({ currentUserId: userId });
+    if (!current || current === userId) return false;
+
+    try {
+      const detail = await apiClient.getAdminUser(userId);
+      const users = get().data.users.filter((user) => user.id !== userId);
+      const data = save({
+        ...get().data,
+        users: [...users, { ...detail.user, settings: { ...defaultSettings, ...detail.user.settings } }],
+        progress: { ...get().data.progress, [userId]: detail.progress },
+        userWords: { ...get().data.userWords, [userId]: detail.userWords },
+      });
+
+      localStorage.setItem(adminReturnKey, current);
+      localStorage.setItem(sessionKey, userId);
+      set({ data, currentUserId: userId });
+      return true;
+    } catch {
+      return false;
+    }
   },
 
   returnToAdmin() {
@@ -439,13 +540,33 @@ export const useAppStore = create<AppStore>((set, get) => ({
   },
 
   async drainSync() {
-    const data = await syncService.drain(get().data);
-    if (data !== get().data) {
-      save(data);
-      const now = new Date().toISOString();
-      set({ data, syncMessage: "✓ Синхронізовано", lastSyncedAt: now });
-      setTimeout(() => set({ syncMessage: undefined }), 3000);
-    }
+    if (isAdminPreview()) return;
+    const currentUserId = get().currentUserId;
+    if (!currentUserId) return;
+
+    const snapshot = get().data;
+    const result = await syncService.drain(snapshot, currentUserId);
+    if (result === snapshot) return;
+
+    const remainingIds = new Set(result.syncQueue.map((mutation) => mutation.id));
+    const removedIds = new Set(
+      snapshot.syncQueue
+        .filter((mutation) => !remainingIds.has(mutation.id))
+        .map((mutation) => mutation.id)
+    );
+    if (!removedIds.size) return;
+
+    // A new mutation may have been enqueued while the network request was in
+    // flight. Only remove mutations confirmed as drained from the latest store;
+    // never replace the rest of AppData with the old snapshot.
+    const latest = get().data;
+    const data = save({
+      ...latest,
+      syncQueue: latest.syncQueue.filter((mutation) => !removedIds.has(mutation.id)),
+    });
+    const now = new Date().toISOString();
+    set({ data, syncMessage: "✓ Синхронізовано", lastSyncedAt: now });
+    setTimeout(() => set({ syncMessage: undefined }), 3000);
   },
 
   resetLocal() {

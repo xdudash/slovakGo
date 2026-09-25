@@ -17,10 +17,16 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-function distractors(pool: VocabularyWord[], excludeId: string, field: "sk" | "uk", count: number): string[] {
-  return shuffle(pool.filter((w) => w.id !== excludeId))
-    .slice(0, count)
-    .map((w) => w[field]);
+function distractors(
+  pool: VocabularyWord[],
+  excludeId: string,
+  valueOf: (word: VocabularyWord) => string,
+  count: number
+): string[] {
+  return shuffle(pool.filter((word) => word.id !== excludeId))
+    .map(valueOf)
+    .filter((value, index, values) => value && values.indexOf(value) === index)
+    .slice(0, count);
 }
 
 export const practiceService = {
@@ -28,13 +34,15 @@ export const practiceService = {
     words: VocabularyWord[],
     allWords: VocabularyWord[],
     count: number,
-    types: Set<PracticeType>
+    types: Set<PracticeType>,
+    translationOf: (word: VocabularyWord) => string = (word) => word.uk
   ): PracticeExercise[] {
     const candidates: PracticeExercise[] = [];
 
     for (const word of words) {
+      const translation = translationOf(word) || word.uk;
       if (types.has("translation")) {
-        const opts = shuffle([word.uk, ...distractors(allWords, word.id, "uk", 3)]);
+        const opts = shuffle([translation, ...distractors(allWords, word.id, translationOf, 3)]);
         candidates.push({
           wordId: word.id,
           exercise: {
@@ -42,7 +50,7 @@ export const practiceService = {
             lessonId: "practice",
             type: "multiple_choice_translation",
             question: word.sk,
-            correctAnswer: word.uk,
+            correctAnswer: translation,
             options: opts,
             wordIds: [word.id],
             order: 0,
@@ -50,14 +58,14 @@ export const practiceService = {
         });
       }
       if (types.has("reverse")) {
-        const opts = shuffle([word.sk, ...distractors(allWords, word.id, "sk", 3)]);
+        const opts = shuffle([word.sk, ...distractors(allWords, word.id, (item) => item.sk, 3)]);
         candidates.push({
           wordId: word.id,
           exercise: {
             id: crypto.randomUUID(),
             lessonId: "practice",
             type: "reverse_translation",
-            question: word.uk,
+            question: translation,
             correctAnswer: word.sk,
             options: opts,
             wordIds: [word.id],
@@ -73,7 +81,7 @@ export const practiceService = {
             lessonId: "practice",
             type: "typing",
             question: word.sk,
-            correctAnswer: word.uk,
+            correctAnswer: translation,
             wordIds: [word.id],
             order: 0,
           },

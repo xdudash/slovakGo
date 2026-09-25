@@ -172,7 +172,7 @@ beforeAll(async () => {
   );
   await db.execute(
     `INSERT INTO lessons (id, data_json, published, updated_at)
-     VALUES ('lesson-1', '{"id":"lesson-1","title":"Test Lesson","exercises":[]}', 1, datetime('now'))`
+     VALUES ('lesson-1', '{"id":"lesson-1","level":"A1","title":"Test Lesson","topic":"Test","description":"","xpReward":12,"estimatedMinutes":5,"isPublished":true,"updatedAt":"2026-09-25T00:00:00Z","words":[{"id":"lesson-word","sk":"ahoj","uk":"привет"}],"exercises":[{"id":"ex-1","lessonId":"lesson-1","type":"single_choice","order":1,"options":[{"id":"a","text":"a","correct":true}]},{"id":"ex-2","lessonId":"lesson-1","type":"single_choice","order":2,"options":[{"id":"a","text":"a","correct":true}]},{"id":"ex-3","lessonId":"lesson-1","type":"single_choice","order":3,"options":[{"id":"a","text":"a","correct":true}]}]}', 1, datetime('now'))`
   );
 });
 
@@ -396,6 +396,15 @@ describe("POST /sync/push", () => {
     expect(status).toBe(422);
   });
 
+  it("rejects a mutation owned by a different user", async () => {
+    const { status, body } = await call("POST", ["sync", "push"], {
+      cookie,
+      body: { mutations: [{ id: "wrong-owner", userId: "someone-else", type: "profile.update", payload: { goal: "B2" } }] },
+    });
+    expect(status).toBe(403);
+    expect(body.ok).toBe(false);
+  });
+
   it("applies profile.update mutation", async () => {
     const { body } = await call("POST", ["sync", "push"], {
       cookie,
@@ -438,9 +447,35 @@ describe("POST /sync/push", () => {
 
     const { body: pullBody } = await call("GET", ["sync", "pull"], { cookie });
     const progress = pullBody.progress as Record<string, unknown>;
-    expect(Number(progress.xpTotal)).toBeGreaterThan(0);
+    expect(Number(progress.xpTotal)).toBe(12);
     expect(Number(progress.streakDays)).toBe(1);
     expect((progress.completedLessons as string[])).toContain("lesson-1");
+    expect(String(progress.weekId)).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+
+    const lessonWord = (pullBody.userWords as Record<string, unknown>[]).find((word) => word.wordId === "lesson-word");
+    expect(lessonWord?.status).toBe("practicing");
+    expect(lessonWord?.correctCount).toBe(1);
+    expect(typeof lessonWord?.nextReviewAt).toBe("string");
+  });
+
+  it("awards reduced XP when repeating an already completed lesson", async () => {
+    const { body: before } = await call("GET", ["sync", "pull"], { cookie });
+    const xpBefore = Number((before.progress as Record<string, unknown>).xpTotal);
+
+    const { body } = await call("POST", ["sync", "push"], {
+      cookie,
+      body: {
+        mutations: [{
+          id: "mut-lesson-repeat",
+          type: "lesson.complete",
+          payload: { lessonId: "lesson-1", answers: [] },
+        }],
+      },
+    });
+    expect(body.applied).toBe(1);
+
+    const { body: after } = await call("GET", ["sync", "pull"], { cookie });
+    expect(Number((after.progress as Record<string, unknown>).xpTotal)).toBe(xpBefore + 3);
   });
 
   it("applies exercise.wrong — decrements hearts", async () => {
@@ -618,6 +653,26 @@ describe("POST /user/email", () => {
   });
 });
 
+describe("POST /user/demo-complete", () => {
+  it("awards 50 XP exactly once", async () => {
+    const { headers } = await call("POST", ["auth", "register"], {
+      body: { email: "demo-reward@example.com", password: "Secret123", name: "Demo" },
+    });
+    const cookie = String(headers["Set-Cookie"] ?? "").split(";")[0];
+
+    const first = await call("POST", ["user", "demo-complete"], { cookie });
+    expect(first.status).toBe(200);
+    expect(first.body.awarded).toBe(true);
+    const afterFirst = await call("GET", ["sync", "pull"], { cookie, query: { includeLessons: "0" } });
+    expect(Number((afterFirst.body.progress as Record<string, unknown>).xpTotal)).toBe(50);
+
+    const second = await call("POST", ["user", "demo-complete"], { cookie });
+    expect(second.body.awarded).toBe(false);
+    const afterSecond = await call("GET", ["sync", "pull"], { cookie, query: { includeLessons: "0" } });
+    expect(Number((afterSecond.body.progress as Record<string, unknown>).xpTotal)).toBe(50);
+  });
+});
+
 describe("POST /user/fcm-token", () => {
   it("saves FCM token for authenticated user", async () => {
     const { headers } = await call("POST", ["auth", "register"], {
@@ -653,6 +708,51 @@ describe("POST /errors", () => {
 });
 
 // ─── Admin ────────────────────────────────────────────────────────────────────
+describe("GET /teacher/stats", () => {
+  it("returns real aggregates for a teacher and rejects students", async () => {
+    const db = createClient({ url: `file:${TEST_DB}` });
+    await db.execute(
+      `INSERT INTO users (id, email, pw_hash, name_text, role, sub_status, created_at, updated_at)
+       VALUES ('teacher-1', 'teacher@test.com', 'DEV:skip', 'Teacher', 'teacher', 'free', datetime('now'), datetime('now'))`
+    );
+    await db.execute("INSERT INTO progress (user_id, updated_at) VALUES ('teacher-1', datetime('now'))");
+
+    const teacherCookie = await makeCookie("teacher-1");
+    const ok = await call("GET", ["teacher", "stats"], { cookie: teacherCookie });
+    expect(ok.status).toBe(200);
+    expect((ok.body.summary as Record<string, unknown>).students).toBeGreaterThan(0);
+    expect(Array.isArray(ok.body.lessons)).toBe(true);
+
+    const student = await call("POST", ["auth", "register"], {
+      body: { email: "teacher-denied@example.com", password: "Secret123", name: "NoTeacher" },
+    });
+    const studentCookie = String(student.headers["Set-Cookie"] ?? "").split(";")[0];
+    expect((await call("GET", ["teacher", "stats"], { cookie: studentCookie })).status).toBe(403);
+  });
+});
+
+describe("POST /admin/lessons/import", () => {
+  it("rejects invalid exercise mechanics server-side", async () => {
+    const adminCookie = await makeCookie("admin-1");
+    const { status, body } = await call("POST", ["admin", "lessons", "import"], {
+      cookie: adminCookie,
+      body: {
+        mode: "overwrite",
+        lessons: [{
+          id: "broken-lesson",
+          level: "A1",
+          title: "Broken",
+          words: [],
+          exercises: [{ id: "x", type: "not-a-real-type" }],
+        }],
+      },
+    });
+    expect(status).toBe(422);
+    expect(body.ok).toBe(false);
+    expect(String(body.error)).toContain("broken-lesson");
+  });
+});
+
 describe("GET /admin/stats", () => {
   it("returns 403 for non-admin user", async () => {
     const { headers } = await call("POST", ["auth", "register"], {

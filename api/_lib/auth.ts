@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import bcrypt from "bcryptjs";
 import { createHash, randomBytes, randomUUID, timingSafeEqual } from "node:crypto";
+import { cancelBillingForDeletedUser } from "./stripe";
 import {
   LOGIN_WINDOW_SEC, LOGIN_MAX_ATTEMPTS, defaultSettingsJson,
   exec, queryOne, nowIso, clientIp, signToken, setCookie,
@@ -82,7 +83,7 @@ export async function handleLogin(req: VercelRequest, res: VercelResponse, body:
       
       await exec(
         `INSERT INTO users (id, email, pw_hash, name_text, role, level, goal, sub_status, trial_ends, ob_done, settings_j, google_sub, created_at, updated_at)
-         VALUES (?, ?, ?, 'Admin', 'admin', 'A0', NULL, 'active', ?, 1, ?, NULL, ?, ?)`,
+         VALUES (?, ?, ?, 'Admin', 'admin', 'A0', NULL, 'plus', ?, 1, ?, NULL, ?, ?)`,
         [id, adminEmail, hash, trial, defS, now, now]
       );
       await ensureProgress(id);
@@ -208,6 +209,13 @@ export async function handleDeleteAccount(req: VercelRequest, res: VercelRespons
   const email = String(body.email ?? body.confirmEmail ?? "").toLowerCase().trim();
   const row   = await queryOne("SELECT email FROM users WHERE id = ? LIMIT 1", [uid]);
   if (!row || String(row.email) !== email) return fail(res, "Email не співпадає", 422);
+
+  try {
+    await cancelBillingForDeletedUser(uid);
+  } catch (err) {
+    console.error("[account-delete] Stripe cancellation failed:", err);
+    return fail(res, "Не вдалося скасувати активну підписку. Спробуй ще раз або звернися в підтримку.", 502);
+  }
 
   await exec("DELETE FROM user_words WHERE user_id = ?", [uid]);
   await exec("DELETE FROM progress WHERE user_id = ?", [uid]);

@@ -196,15 +196,32 @@ function LessonsScreen() {
     reader.readAsText(file);
   }
 
-  function confirmImport() {
-    if (importState.phase !== "preview") return;
-    const existing = new Set(data.lessons.map((l) => l.id));
-    let imported = 0, updated = 0;
-    for (const lesson of importState.lessons) {
-      if (existing.has(lesson.id)) updated++; else imported++;
-      upsertLesson(lesson);
+  async function confirmImport() {
+    if (importState.phase !== "preview" || importState.errors.length > 0) return;
+    const lessonsToImport = importState.lessons;
+    const existing = new Set(data.lessons.map((lesson) => lesson.id));
+    const imported = lessonsToImport.filter((lesson) => !existing.has(lesson.id)).length;
+    const updated = lessonsToImport.length - imported;
+
+    try {
+      const response = await apiClient.importLessons(lessonsToImport, "overwrite");
+      if (response.errors.length > 0) {
+        setImportState({
+          phase: "preview",
+          lessons: lessonsToImport,
+          errors: response.errors.map((item) => `${item.id}: ${item.error}`),
+        });
+        return;
+      }
+      await refreshLessons();
+      setImportState({ phase: "done", imported, updated });
+    } catch (err) {
+      setImportState({
+        phase: "preview",
+        lessons: lessonsToImport,
+        errors: [(err as { message?: string }).message || "Не вдалося імпортувати уроки на сервер."],
+      });
     }
-    setImportState({ phase: "done", imported, updated });
   }
 
   function confirmDelete() {
@@ -832,7 +849,7 @@ function UserDetail() {
         <div className="admin-detail-row"><span>Підписка</span><strong>{u.subscriptionStatus}</strong></div>
         <div className="admin-detail-row"><span>Країна</span><strong>{u.country || "—"}</strong></div>
         <div className="admin-detail-row"><span>Реєстрація</span><strong>{new Date(u.createdAt).toLocaleDateString("uk-UA")}</strong></div>
-        <div className="admin-detail-row"><span>Остання активність</span><strong>{u.lastSeenAt ? new Date(u.lastSeenAt).toLocaleDateString("uk-UA") : "—"}</strong></div>
+        <div className="admin-detail-row"><span>Остання активність</span><strong>{u.lastActiveAt ? new Date(u.lastActiveAt).toLocaleDateString("uk-UA") : "—"}</strong></div>
         <div className="admin-detail-row"><span>Заблокований</span><strong>{u.isBlocked ? "Так" : "Ні"}</strong></div>
         <div className="admin-detail-row"><span>Остання практика</span><strong>{p.lastPracticeDate || "—"}</strong></div>
       </Card>
@@ -855,8 +872,11 @@ function UserDetail() {
       {/* Actions */}
       <h3 className="admin-section-title">Керування</h3>
       <div className="admin-detail-actions">
-        <Button variant="secondary" onClick={() => { loginAsUser(u.id); navigate("/app/path"); }}>
-          <UserRound size={15} /> Увійти як {u.name}
+        <Button variant="secondary" onClick={async () => {
+          const opened = await loginAsUser(u.id);
+          if (opened) navigate("/app/path");
+        }}>
+          <UserRound size={15} /> Переглянути як {u.name}
         </Button>
         <Button variant="secondary" onClick={() => patchUser({ role: u.role === "student" ? "teacher" : "student" })}>
           Роль → {u.role === "student" ? "teacher" : "student"}

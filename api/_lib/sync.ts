@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { Arg } from "./core";
+import { normalizeLessonPayload } from "./lessonValidation";
 import {
   XP_PER_PRACTICE,
   exec, queryOne, nowIso, todayKey, currentWeekId, safeJson, getDb, ensureCol,
@@ -46,6 +47,7 @@ export async function handleSyncPull(req: VercelRequest, res: VercelResponse): P
       completedLessons:  safeJson(String(prog.completed_j ?? "[]"), []),
       xpTotal:           Number(prog.xp_total),
       xpWeekly:          Number(prog.xp_weekly),
+      weekId:            String(prog.week_id ?? ""),
       xpDailyHistory:    safeJson(String(prog.xp_daily_j ?? "{}"), {}),
       hearts:            Number(prog.hearts),
       maxHearts:         Number(prog.max_hearts),
@@ -97,6 +99,9 @@ export async function handleSyncPush(req: VercelRequest, res: VercelResponse, bo
   if (muts.length > 100) return fail(res, "Забагато мутацій", 413);
   const supported = new Set(["profile.update", "lesson.complete", "exercise.wrong", "word.update", "practice.complete", "hearts.restore", "lesson.upsert", "lesson.delete", "admin.user.update"]);
   if (muts.some(mut => !supported.has(String(mut.type ?? "")))) return fail(res, "Непідтримувана мутація", 422);
+  if (muts.some(mut => mut.userId !== undefined && String(mut.userId) !== uid)) {
+    return fail(res, "Мутація належить іншому користувачу", 403);
+  }
   let applied = 0;
 
   for (const mut of muts) {
@@ -147,6 +152,45 @@ async function processMutation(uid: string, mut: Record<string, unknown>): Promi
   }
 }
 
+const REVIEW_INTERVAL_DAYS = [1, 3, 7, 14, 30] as const;
+
+function nextReviewDate(correctCount: number, afterMistake: boolean): string {
+  const days = afterMistake
+    ? REVIEW_INTERVAL_DAYS[0]
+    : REVIEW_INTERVAL_DAYS[Math.min(correctCount, REVIEW_INTERVAL_DAYS.length - 1)];
+  const d = new Date();
+  d.setDate(d.getDate() + days);
+  return d.toISOString();
+}
+
+async function touchServerWord(uid: string, wordId: string, correct: boolean): Promise<void> {
+  if (!wordId) return;
+  await ensureCol("user_words", "next_review", "TEXT");
+  const existing = await queryOne(
+    "SELECT status, mistakes, corrects, favorite FROM user_words WHERE user_id = ? AND word_id = ? LIMIT 1",
+    [uid, wordId]
+  );
+  const previousCorrect = Number(existing?.corrects ?? 0);
+  const previousMistakes = Number(existing?.mistakes ?? 0);
+  const nextCorrect = correct ? previousCorrect + 1 : Math.max(0, previousCorrect - 1);
+  const nextMistakes = Math.max(0, previousMistakes + (correct ? -1 : 1));
+  const status = correct && nextCorrect >= 5 ? "mastered" : "practicing";
+  const now = nowIso();
+  const nextReview = nextReviewDate(nextCorrect, !correct);
+
+  await exec(
+    `INSERT INTO user_words (user_id, word_id, status, mistakes, corrects, favorite, last_seen, next_review)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+     ON CONFLICT(user_id, word_id) DO UPDATE SET
+       status = excluded.status,
+       mistakes = excluded.mistakes,
+       corrects = excluded.corrects,
+       last_seen = excluded.last_seen,
+       next_review = excluded.next_review`,
+    [uid, wordId, status, nextMistakes, nextCorrect, Number(existing?.favorite ?? 0), now, nextReview]
+  );
+}
+
 async function mutRestoreHearts(uid: string): Promise<void> {
   await ensureCol("progress", "hearts_restored_at", "TEXT");
   const now = nowIso();
@@ -178,6 +222,7 @@ async function mutLessonComplete(uid: string, p: Record<string, unknown>): Promi
   const lessonId = String(p.lessonId ?? "");
   const lessonRow = lessonId ? await queryOne("SELECT data_json FROM lessons WHERE id = ? AND published = 1 LIMIT 1", [lessonId]) : null;
   if (!lessonRow) throw new Error("Unknown or unpublished lesson");
+
   const lesson = safeJson<Record<string, unknown>>(String(lessonRow.data_json), {});
   const exerciseCount = Array.isArray(lesson.exercises) ? lesson.exercises.length : 0;
   const finalSituation = (typeof lesson.finalSituation === "object" && lesson.finalSituation)
@@ -187,35 +232,55 @@ async function mutLessonComplete(uid: string, p: Record<string, unknown>): Promi
     ? finalSituation.steps.length
     : 0;
   const expectedAnswerCount = exerciseCount + finalStepCount;
-  const answers = (Array.isArray(p.answers) ? p.answers as Record<string, unknown>[] : []).slice(0, expectedAnswerCount || 100);
-  const wrong    = answers.filter(a => !a.correct).length;
-  const xpEarned = Math.max(10, answers.length > 0 ? answers.length * 5 - wrong * 3 : 10);
+  const submittedAnswers = Array.isArray(p.answers) ? p.answers as Record<string, unknown>[] : [];
+  if (submittedAnswers.length > (expectedAnswerCount || 100)) {
+    throw new Error("Too many lesson answers");
+  }
 
-  const prog   = await ensureProgress(uid);
-  const today  = todayKey();
+  const prog = await ensureProgress(uid);
+  const userRow = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [uid]);
+  if (!userRow) throw new Error("Unknown user");
+
+  const completed: string[] = safeJson(String(prog.completed_j ?? "[]"), []);
+  const alreadyCompleted = completed.includes(lessonId);
+  const reward = Math.max(0, Number(lesson.xpReward ?? 10) || 10);
+  const baseXp = alreadyCompleted ? Math.max(3, Math.round(reward * 0.25)) : reward;
+  const status = String(rowToUser(userRow).subscriptionStatus ?? "");
+  const xpEarned = status === "plus" || status === "trial" || status === "past_due" ? Math.round(baseXp * 1.5) : baseXp;
+
+  const today = todayKey();
   const weekId = currentWeekId();
-  const xpW    = String(prog.week_id) === weekId ? Number(prog.xp_weekly) : 0;
-  const lastP  = String(prog.last_prac ?? "");
-  let streak   = Number(prog.streak_days);
+  const xpW = String(prog.week_id) === weekId ? Number(prog.xp_weekly) : 0;
+  const lastP = String(prog.last_prac ?? "");
+  let streak = Number(prog.streak_days);
+  let freeze = Number(prog.freeze_cnt);
 
   if (lastP !== today) {
-    if (!lastP) streak = 1;
-    else { const yest = new Date(Date.now() - 86400_000).toISOString().slice(0, 10); streak = lastP === yest ? streak + 1 : 1; }
+    if (!lastP) {
+      streak = 1;
+    } else {
+      const yest = new Date(Date.now() - 86400_000).toISOString().slice(0, 10);
+      if (lastP === yest) streak += 1;
+      else if (freeze > 0) freeze -= 1;
+      else streak = 1;
+    }
   }
 
   const xpDaily: Record<string, number> = safeJson(String(prog.xp_daily_j ?? "{}"), {});
   xpDaily[today] = (xpDaily[today] ?? 0) + xpEarned;
-  const completed: string[] = safeJson(String(prog.completed_j ?? "[]"), []);
-  if (completed.includes(lessonId)) return;
-  completed.push(lessonId);
+  if (!alreadyCompleted) completed.push(lessonId);
 
   await exec(
     `UPDATE progress SET xp_total = xp_total + ?, xp_weekly = ?, xp_daily_j = ?, week_id = ?,
-       streak_days = ?, last_prac = ?, completed_j = ?, updated_at = ? WHERE user_id = ?`,
-    [xpEarned, xpW + xpEarned, JSON.stringify(xpDaily), weekId, streak, today, JSON.stringify(completed), nowIso(), uid]
+       streak_days = ?, last_prac = ?, freeze_cnt = ?, completed_j = ?, updated_at = ? WHERE user_id = ?`,
+    [xpEarned, xpW + xpEarned, JSON.stringify(xpDaily), weekId, streak, today, freeze, JSON.stringify(completed), nowIso(), uid]
   );
-}
 
+  const words = Array.isArray(lesson.words) ? lesson.words as Record<string, unknown>[] : [];
+  for (const word of words) {
+    if (word?.id) await touchServerWord(uid, String(word.id), true);
+  }
+}
 async function mutExerciseWrong(uid: string, p: Record<string, unknown>): Promise<void> {
   const prog     = await ensureProgress(uid);
   const mistakes: unknown[] = safeJson(String(prog.mistakes_j ?? "[]"), []);
@@ -238,51 +303,55 @@ async function mutWordUpdate(uid: string, p: Record<string, unknown>): Promise<v
 
 async function mutPracticeComplete(uid: string, p: Record<string, unknown>): Promise<void> {
   const results = Array.isArray(p.results) ? p.results as Record<string, unknown>[] : [];
-  const prog    = await ensureProgress(uid);
+  const prog = await ensureProgress(uid);
+  const userRow = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [uid]);
+  if (!userRow) throw new Error("Unknown user");
+
   await ensureCol("progress", "practice_awarded_at", "TEXT");
-  const lastAward = prog.practice_awarded_at ? new Date(String(prog.practice_awarded_at)).getTime() : 0;
-  if (Date.now() - lastAward < 30_000) return;
-  const today   = todayKey(); const weekId = currentWeekId();
-  const xpW     = String(prog.week_id) === weekId ? Number(prog.xp_weekly) : 0;
-  const lastP   = String(prog.last_prac ?? "");
-  let streak    = Number(prog.streak_days);
+  const status = String(rowToUser(userRow).subscriptionStatus ?? "");
+  const xpEarned = status === "plus" || status === "trial" || status === "past_due"
+    ? Math.round(XP_PER_PRACTICE * 1.5)
+    : XP_PER_PRACTICE;
+
+  const today = todayKey();
+  const weekId = currentWeekId();
+  const xpW = String(prog.week_id) === weekId ? Number(prog.xp_weekly) : 0;
+  const lastP = String(prog.last_prac ?? "");
+  let streak = Number(prog.streak_days);
+  let freeze = Number(prog.freeze_cnt);
 
   if (lastP !== today) {
-    if (!lastP) streak = 1;
-    else { const yest = new Date(Date.now() - 86400_000).toISOString().slice(0, 10); streak = lastP === yest ? streak + 1 : 1; }
+    if (!lastP) {
+      streak = 1;
+    } else {
+      const yest = new Date(Date.now() - 86400_000).toISOString().slice(0, 10);
+      if (lastP === yest) streak += 1;
+      else if (freeze > 0) freeze -= 1;
+      else streak = 1;
+    }
   }
 
   const xpDaily: Record<string, number> = safeJson(String(prog.xp_daily_j ?? "{}"), {});
-  xpDaily[today] = (xpDaily[today] ?? 0) + XP_PER_PRACTICE;
+  xpDaily[today] = (xpDaily[today] ?? 0) + xpEarned;
 
   await exec(
     `UPDATE progress SET xp_total = xp_total + ?, xp_weekly = ?, xp_daily_j = ?, week_id = ?,
-       streak_days = ?, last_prac = ?, practice_awarded_at = ?, updated_at = ? WHERE user_id = ?`,
-    [XP_PER_PRACTICE, xpW + XP_PER_PRACTICE, JSON.stringify(xpDaily), weekId, streak, today, nowIso(), nowIso(), uid]
+       streak_days = ?, last_prac = ?, freeze_cnt = ?, practice_awarded_at = ?, updated_at = ? WHERE user_id = ?`,
+    [xpEarned, xpW + xpEarned, JSON.stringify(xpDaily), weekId, streak, today, freeze, nowIso(), nowIso(), uid]
   );
 
   for (const r of results) {
     if (!r.wordId) continue;
-    const correct = r.correct ? 1 : 0;
-    await exec(
-      `INSERT INTO user_words (user_id, word_id, corrects, mistakes, last_seen) VALUES (?, ?, ?, ?, ?)
-       ON CONFLICT(user_id, word_id) DO UPDATE SET
-         corrects = corrects + excluded.corrects, mistakes = mistakes + excluded.mistakes,
-         last_seen = excluded.last_seen,
-         status = CASE WHEN (corrects + excluded.corrects) >= 5 THEN 'mastered'
-                       WHEN (corrects + excluded.corrects) >= 2 THEN 'practicing' ELSE status END`,
-      [uid, String(r.wordId), correct, 1 - correct, nowIso()]
-    );
+    await touchServerWord(uid, String(r.wordId), Boolean(r.correct));
   }
 }
-
 async function mutLessonUpsert(uid: string, p: Record<string, unknown>): Promise<void> {
-  const lesson = (typeof p.lesson === "object" && p.lesson) ? p.lesson as Record<string, unknown> : p;
-  if (!lesson.id) return;
+  const rawLesson = (typeof p.lesson === "object" && p.lesson) ? p.lesson : p;
+  const lesson = normalizeLessonPayload(rawLesson);
   await exec(
     `INSERT INTO lessons (id, data_json, published, created_by, updated_at) VALUES (?, ?, ?, ?, ?)
      ON CONFLICT(id) DO UPDATE SET data_json = excluded.data_json, published = excluded.published, updated_at = excluded.updated_at`,
-    [String(lesson.id), JSON.stringify(lesson), lesson.isPublished ? 1 : 0, uid, nowIso()]
+    [lesson.id, JSON.stringify(lesson), lesson.isPublished ? 1 : 0, uid, nowIso()]
   );
 }
 

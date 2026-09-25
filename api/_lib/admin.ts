@@ -1,9 +1,50 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { Arg } from "./core";
+import { normalizeLessonPayload } from "./lessonValidation";
 import {
   exec, query, queryOne, nowIso, safeJson, ensureCol,
-  requireUid, respond, fail, rowToUser, ensureProgress, checkRole
+  requireUid, respond, fail, rowToUser, ensureProgress, getUserWords, checkRole
 } from "./core";
+
+export async function handleTeacherStats(req: VercelRequest, res: VercelResponse): Promise<void> {
+  const uid = await requireUid(req, res); if (!uid) return;
+  if (!(await checkRole(uid, "teacher", "admin"))) return fail(res, "Недостатньо прав", 403);
+
+  const [studentRow, progressRows, lessonRows] = await Promise.all([
+    queryOne("SELECT COUNT(*) AS c FROM users WHERE role = 'student' AND is_blocked = 0"),
+    query("SELECT completed_j, mistakes_j FROM progress p JOIN users u ON u.id = p.user_id WHERE u.role = 'student' AND u.is_blocked = 0"),
+    query("SELECT id, data_json FROM lessons ORDER BY rowid"),
+  ]);
+
+  const completions = new Map<string, number>();
+  let mistakes = 0;
+  for (const row of progressRows) {
+    const completed = safeJson<string[]>(String(row.completed_j ?? "[]"), []);
+    for (const lessonId of completed) completions.set(lessonId, (completions.get(lessonId) ?? 0) + 1);
+    mistakes += safeJson<unknown[]>(String(row.mistakes_j ?? "[]"), []).length;
+  }
+
+  const lessons = lessonRows.map((row) => {
+    const lesson = safeJson<Record<string, unknown>>(String(row.data_json ?? "{}"), {});
+    return {
+      id: String(row.id),
+      title: lesson.title ?? String(row.id),
+      exercises: Array.isArray(lesson.exercises) ? lesson.exercises.length : 0,
+      completions: completions.get(String(row.id)) ?? 0,
+    };
+  });
+
+  respond(res, {
+    ok: true,
+    summary: {
+      students: Number(studentRow?.c ?? 0),
+      completions: Array.from(completions.values()).reduce((sum, value) => sum + value, 0),
+      mistakes,
+      lessons: lessonRows.length,
+    },
+    lessons,
+  });
+}
 
 export async function handleAdminStats(req: VercelRequest, res: VercelResponse): Promise<void> {
   const uid = await requireUid(req, res); if (!uid) return;
@@ -184,7 +225,7 @@ export async function handleAdminUsers(req: VercelRequest, res: VercelResponse):
 
   const [rows, totalRow] = await Promise.all([
     query(
-      `SELECT u.id, u.email, u.name_text, u.role, u.level, u.avatar,
+      `SELECT u.id, u.email, u.name_text, u.role, u.level, u.avatar, u.country,
               u.sub_status, u.is_blocked, u.created_at, u.updated_at,
               COALESCE(p.xp_total, 0)    AS xp_total,
               COALESCE(p.streak_days, 0) AS streak_days,
@@ -206,9 +247,11 @@ export async function handleAdminUsers(req: VercelRequest, res: VercelResponse):
       role:               String(r.role),
       level:              String(r.level),
       avatar:             r.avatar ? String(r.avatar) : null,
+      country:            r.country ? String(r.country) : "",
       subscriptionStatus: String(r.sub_status),
       isBlocked:          Boolean(r.is_blocked),
       createdAt:          String(r.created_at),
+      lastSeenAt:         String(r.updated_at),
       updatedAt:          String(r.updated_at),
       xpTotal:            Number(r.xp_total),
       streakDays:         Number(r.streak_days),
@@ -224,22 +267,31 @@ export async function handleAdminUserDetail(req: VercelRequest, res: VercelRespo
   const row = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [targetId]);
   if (!row) return fail(res, "Користувача не знайдено", 404);
   const prog = await ensureProgress(targetId);
+  const userWords = await getUserWords(targetId);
 
   respond(res, {
     ok: true,
     user: rowToUser(row),
     progress: {
+      userId:            targetId,
+      currentLevel:      String(row.level),
+      completedLessons:  safeJson<string[]>(String(prog.completed_j ?? "[]"), []),
+      lessonAttempts:    [],
       xpTotal:           Number(prog.xp_total),
       xpWeekly:          Number(prog.xp_weekly),
+      weekId:            String(prog.week_id ?? ""),
       xpDailyHistory:    safeJson<Record<string, number>>(String(prog.xp_daily_j ?? "{}"), {}),
-      streakDays:        Number(prog.streak_days),
-      completedLessons:  safeJson<string[]>(String(prog.completed_j ?? "[]"), []),
-      mistakes:          safeJson<unknown[]>(String(prog.mistakes_j ?? "[]"), []),
       hearts:            Number(prog.hearts),
       maxHearts:         Number(prog.max_hearts),
-      lastPracticeDate:  prog.last_prac || null,
+      streakDays:        Number(prog.streak_days),
+      lastPracticeDate:  prog.last_prac || undefined,
       streakFreezeCount: Number(prog.freeze_cnt),
+      coins:             Number(prog.coins),
+      mistakes:          safeJson<unknown[]>(String(prog.mistakes_j ?? "[]"), []),
+      achievements:      [],
+      updatedAt:         String(prog.updated_at),
     },
+    userWords,
   });
 }
 
@@ -286,10 +338,7 @@ export async function handleAdminImportLessons(req: VercelRequest, res: VercelRe
     const raw = rawArr[i] as Record<string, unknown>;
     const id = raw?.id ? String(raw.id) : `#${i + 1}`;
     try {
-      if (!raw.id)    throw new Error("відсутній id");
-      if (!raw.title) throw new Error("відсутній title");
-      if (!raw.level) throw new Error("відсутній level");
-      validated.push(raw);
+      validated.push(normalizeLessonPayload(raw) as unknown as ParsedLesson);
     } catch (err) {
       parseErrors.push({ id, error: (err as Error).message });
     }

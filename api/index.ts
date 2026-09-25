@@ -13,7 +13,7 @@ import {
 import { handleLessonsPull, handleSyncPull, handleSyncPush } from "./_lib/sync";
 
 import {
-  handleAdminStats, handleAdminErrors, handleAdminNotify, handleAdminUsers,
+  handleAdminStats, handleTeacherStats, handleAdminErrors, handleAdminNotify, handleAdminUsers,
   handleAdminUserDetail, handleAdminUserPatch, handleAdminImportLessons
 } from "./_lib/admin";
 
@@ -21,7 +21,7 @@ import { handleBillingCheckout, handleBillingPortal, handleBillingWebhook } from
 
 import {
   handleUserEmail, handleUserPassword, handleFcmToken, handleUserReminder,
-  handleUserReferral, handleLeaderboard, handlePostErrors, handlePostEvents, handleSupportSend
+  handleUserReferral, handleDemoComplete, handleLeaderboard, handlePostErrors, handlePostEvents, handleSupportSend
 } from "./_lib/user";
 
 export const config = { api: { bodyParser: false } };
@@ -94,6 +94,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "POST" && route === "/user/fcm-token")    return await handleFcmToken(req, res, body);
     if (meth === "POST" && route === "/user/reminder")     return await handleUserReminder(req, res, body);
     if (meth === "POST" && route === "/user/referral")     return await handleUserReferral(req, res, body);
+    if (meth === "POST" && route === "/user/demo-complete") return await handleDemoComplete(req, res);
     if (meth === "GET"  && route === "/leaderboard")       return await handleLeaderboard(req, res);
     if (meth === "POST" && route === "/support/send")      return await handleSupportSend(req, res, body);
     if (meth === "POST" && route === "/errors")            return await handlePostErrors(req, res, isJson ? body : safeJson(rawBody.toString(), {}));
@@ -105,6 +106,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "POST" && (route === "/billing/webhook" || route === "/stripe/webhook")) return await handleBillingWebhook(req, res, rawBody);
     
     // Admin Routes
+    if (meth === "GET"  && route === "/teacher/stats")          return await handleTeacherStats(req, res);
     if (meth === "GET"  && route === "/admin/stats")            return await handleAdminStats(req, res);
     if (meth === "GET"  && route === "/admin/errors")           return await handleAdminErrors(req, res);
     if (meth === "POST" && route === "/admin/notify")           return await handleAdminNotify(req, res, body);

@@ -40,21 +40,26 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
   const data = useAppStore((s) => s.data);
   const users = data.users;
   const returnToAdmin = useAppStore((s) => s.returnToAdmin);
+  const drainSync = useAppStore((s) => s.drainSync);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [adminReturnId, setAdminReturnId] = useState<string | null>(() => localStorage.getItem(adminReturnKey));
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    const on = () => setIsOnline(true);
+    const on = () => {
+      setIsOnline(true);
+      drainSync().catch(() => undefined);
+    };
     const off = () => setIsOnline(false);
     window.addEventListener("online", on);
     window.addEventListener("offline", off);
+    if (navigator.onLine) drainSync().catch(() => undefined);
     return () => {
       window.removeEventListener("online", on);
       window.removeEventListener("offline", off);
     };
-  }, []);
+  }, [drainSync]);
 
   useEffect(() => {
     setAdminReturnId(localStorage.getItem(adminReturnKey));
@@ -85,7 +90,7 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
             className="admin-preview-banner"
             onClick={() => { returnToAdmin(); navigate("/admin"); }}
           >
-            Перегляд як <strong>{currentUserName}</strong> — Повернутися в адмінку →
+            Перегляд як <strong>{currentUserName}</strong> · лише читання — Повернутися в адмінку →
           </button>
         )}
         <main className="app-main">{children || <Outlet />}</main>

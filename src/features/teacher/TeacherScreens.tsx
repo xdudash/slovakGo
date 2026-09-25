@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Route, Routes, useNavigate, useParams } from "react-router-dom";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, Field, PageHeader } from "../../components/ui";
@@ -6,6 +6,7 @@ import { selectCurrentUser, useAppStore } from "../../store/useAppStore";
 import { useT } from "../../i18n";
 import type { Lesson, UserLevel } from "../../types";
 import { toPlainText } from "../../utils/lessonLocale";
+import { apiClient } from "../../services/apiClient";
 
 export function TeacherLayout() {
   return (
@@ -32,17 +33,21 @@ function Dashboard() {
   const { data } = useTeacherData();
   const { t } = useT();
   const published = data.lessons.filter((lesson) => lesson.isPublished).length;
-  const attempts = Object.values(data.progress).flatMap((progress) => progress.lessonAttempts);
-  const mistakes = Object.values(data.progress).flatMap((progress) => progress.mistakes);
+  const [serverStats, setServerStats] = useState<Awaited<ReturnType<typeof apiClient.getTeacherStats>> | null>(null);
+
+  useEffect(() => {
+    apiClient.getTeacherStats().then(setServerStats).catch(() => setServerStats(null));
+  }, []);
+
   return (
     <main className="page-content">
       <PageHeader title={t("teacher.dashboard.title")} subtitle={t("teacher.dashboard.subtitle")} />
       <div className="stats-grid">
         <Card><strong>{data.lessons.length}</strong><span>{t("teacher.dashboard.stat_lessons")}</span></Card>
         <Card><strong>{published}</strong><span>{t("teacher.dashboard.stat_published")}</span></Card>
-        <Card><strong>{data.users.filter((user) => user.role === "student").length}</strong><span>{t("teacher.dashboard.stat_students")}</span></Card>
-        <Card><strong>{attempts.length}</strong><span>{t("teacher.dashboard.stat_attempts")}</span></Card>
-        <Card><strong>{mistakes.length}</strong><span>{t("teacher.dashboard.stat_mistakes")}</span></Card>
+        <Card><strong>{serverStats?.summary.students ?? "…"}</strong><span>{t("teacher.dashboard.stat_students")}</span></Card>
+        <Card><strong>{serverStats?.summary.completions ?? "…"}</strong><span>{t("teacher.dashboard.stat_attempts")}</span></Card>
+        <Card><strong>{serverStats?.summary.mistakes ?? "…"}</strong><span>{t("teacher.dashboard.stat_mistakes")}</span></Card>
       </div>
     </main>
   );
@@ -190,17 +195,26 @@ function Editor() {
 }
 
 function Stats() {
-  const { data } = useTeacherData();
   const { t } = useT();
-  const rows = data.lessons.map((lesson) => {
-    const attempts = Object.values(data.progress).flatMap((progress) => progress.lessonAttempts).filter((attempt) => attempt.lessonId === lesson.id);
-    return { lesson, attempts };
-  });
+  const [serverStats, setServerStats] = useState<Awaited<ReturnType<typeof apiClient.getTeacherStats>> | null>(null);
+
+  useEffect(() => {
+    apiClient.getTeacherStats().then(setServerStats).catch(() => setServerStats(null));
+  }, []);
+
   return (
     <main className="page-content">
       <PageHeader title={t("teacher.stats.title")} />
       <Card>
-        {rows.map(({ lesson, attempts }) => <div className="leader-row" key={lesson.id}><strong>{toPlainText(lesson.title)}</strong><span>{attempts.length} {t("teacher.stats.attempts")}</span><span>{lesson.exercises.length} {t("teacher.stats.exercises")}</span></div>)}
+        {(serverStats?.lessons ?? []).map((row) => (
+          <div className="leader-row" key={row.id}>
+            <strong>{toPlainText(row.title as Lesson["title"]) || row.id}</strong>
+            <span>{row.completions} {t("teacher.stats.attempts")}</span>
+            <span>{row.exercises} {t("teacher.stats.exercises")}</span>
+          </div>
+        ))}
+        {serverStats && serverStats.lessons.length === 0 && <p className="muted">Немає уроків для статистики.</p>}
+        {!serverStats && <p className="muted">Завантаження статистики…</p>}
       </Card>
     </main>
   );

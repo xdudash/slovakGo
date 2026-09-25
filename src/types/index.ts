@@ -40,6 +40,7 @@ export interface User {
   settings: UserSettings;
   isBlocked?: boolean;
   hasUsedTrial: boolean;
+  authProvider?: "password" | "google";
 }
 
 export interface Word {
@@ -541,6 +542,8 @@ export interface Leaderboard {
 
 export interface SyncMutation {
   id: string;
+  /** Owner of this mutation. Required for safe multi-account/offline sync. */
+  userId: string;
   type: string;
   payload: Record<string, unknown>;
   createdAt: string;

@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import bcrypt from "bcryptjs";
 import { randomUUID } from "node:crypto";
 import {
-  exec, query, queryOne, nowIso, safeJson, clientIp, currentWeekId,
+  exec, query, queryOne, nowIso, safeJson, clientIp, currentWeekId, ensureCol,
   requireUid, getUid, respond, fail
 } from "./core";
 
@@ -11,8 +11,11 @@ export async function handleUserEmail(req: VercelRequest, res: VercelResponse, b
   const email = String(body.email ?? "").toLowerCase().trim();
   const password = String(body.currentPassword ?? "");
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail(res, "Некоректний email", 422);
-  const current = await queryOne("SELECT pw_hash FROM users WHERE id = ? LIMIT 1", [uid]);
+  await ensureCol("users", "google_sub", "TEXT");
+  const current = await queryOne("SELECT pw_hash, google_sub FROM users WHERE id = ? LIMIT 1", [uid]);
   const hash = String(current?.pw_hash ?? "");
+  if (!hash && current?.google_sub)
+    return fail(res, "Email Google-акаунта керується через Google", 409);
   if (!hash || (hash !== "DEV:skip" && !(await bcrypt.compare(password, hash))))
     return fail(res, "Невірний поточний пароль", 422);
   if (await queryOne("SELECT id FROM users WHERE email = ? AND id != ? LIMIT 1", [email, uid]))
@@ -27,10 +30,14 @@ export async function handleUserPassword(req: VercelRequest, res: VercelResponse
   const next = String(body.newPassword ?? body.password ?? "");
   if (next.length < 8 || !/[A-ZА-ЯІЇЄҐ]/.test(next) || !/[a-zа-яіїєґ]/.test(next) || !/\d/.test(next))
     return fail(res, "Пароль має містити мінімум 8 символів, велику та малу літеру і цифру", 422);
-  const row  = await queryOne("SELECT pw_hash FROM users WHERE id = ? LIMIT 1", [uid]);
+  await ensureCol("users", "google_sub", "TEXT");
+  const row  = await queryOne("SELECT pw_hash, google_sub FROM users WHERE id = ? LIMIT 1", [uid]);
   if (!row) return fail(res, "Користувача не знайдено", 404);
-  const h = String(row.pw_hash);
-  if (h !== "DEV:skip" && !(await bcrypt.compare(cur, h))) return fail(res, "Невірний поточний пароль", 422);
+  const h = String(row.pw_hash ?? "");
+  const googleOnly = !h && Boolean(row.google_sub);
+  if (!googleOnly && h !== "DEV:skip" && !(await bcrypt.compare(cur, h))) {
+    return fail(res, "Невірний поточний пароль", 422);
+  }
   await exec("UPDATE users SET pw_hash = ?, updated_at = ? WHERE id = ?", [await bcrypt.hash(next, 11), nowIso(), uid]);
   respond(res, { ok: true });
 }
@@ -61,6 +68,42 @@ export async function handleUserReminder(req: VercelRequest, res: VercelResponse
   respond(res, { ok: true });
 }
 
+export async function handleDemoComplete(req: VercelRequest, res: VercelResponse): Promise<void> {
+  const uid = await requireUid(req, res); if (!uid) return;
+  await ensureCol("progress", "demo_awarded", "INTEGER NOT NULL DEFAULT 0");
+  const prog = await queryOne("SELECT * FROM progress WHERE user_id = ? LIMIT 1", [uid]);
+  if (!prog) return fail(res, "Прогрес не знайдено", 404);
+  if (Number(prog.demo_awarded ?? 0)) return respond(res, { ok: true, awarded: false });
+
+  const reward = 50;
+  const today = new Date().toISOString().slice(0, 10);
+  const weekId = currentWeekId();
+  const xpWeekly = String(prog.week_id) === weekId ? Number(prog.xp_weekly) : 0;
+  const daily = safeJson<Record<string, number>>(String(prog.xp_daily_j ?? "{}"), {});
+  daily[today] = (daily[today] ?? 0) + reward;
+
+  const last = String(prog.last_prac ?? "");
+  let streak = Number(prog.streak_days);
+  let freeze = Number(prog.freeze_cnt);
+  if (last !== today) {
+    if (!last) streak = 1;
+    else {
+      const yesterday = new Date(Date.now() - 86400_000).toISOString().slice(0, 10);
+      if (last === yesterday) streak += 1;
+      else if (freeze > 0) freeze -= 1;
+      else streak = 1;
+    }
+  }
+
+  await exec(
+    `UPDATE progress SET xp_total = xp_total + ?, xp_weekly = ?, xp_daily_j = ?, week_id = ?,
+       streak_days = ?, freeze_cnt = ?, last_prac = ?, demo_awarded = 1, updated_at = ?
+     WHERE user_id = ?`,
+    [reward, xpWeekly + reward, JSON.stringify(daily), weekId, streak, freeze, today, nowIso(), uid]
+  );
+  respond(res, { ok: true, awarded: true });
+}
+
 export async function handleUserReferral(req: VercelRequest, res: VercelResponse, body: Record<string, unknown>): Promise<void> {
   const uid = await requireUid(req, res); if (!uid) return;
   const referrerId = String(body.referrerId ?? "").trim();
@@ -84,7 +127,9 @@ export async function handleLeaderboard(req: VercelRequest, res: VercelResponse)
     `SELECT u.id, u.name_text, u.avatar, u.country, p.xp_weekly, p.week_id
      FROM progress p JOIN users u ON u.id = p.user_id
      WHERE u.is_blocked = 0 AND u.role = 'student'
-     ORDER BY p.xp_weekly DESC LIMIT 50`
+     ORDER BY CASE WHEN p.week_id = ? THEN p.xp_weekly ELSE 0 END DESC, u.id ASC
+     LIMIT 50`,
+    [weekId]
   );
 
   const entries = rows.map((r, idx) => ({
@@ -102,8 +147,9 @@ export async function handleLeaderboard(req: VercelRequest, res: VercelResponse)
     const myXp    = myProg && String(myProg.week_id) === weekId ? Number(myProg.xp_weekly) : 0;
     const rankRow = await queryOne(
       `SELECT COUNT(*) + 1 AS rank FROM progress p JOIN users u ON u.id = p.user_id
-       WHERE u.is_blocked = 0 AND u.role = 'student' AND p.xp_weekly > ?`,
-      [myXp]
+       WHERE u.is_blocked = 0 AND u.role = 'student'
+         AND (CASE WHEN p.week_id = ? THEN p.xp_weekly ELSE 0 END) > ?`,
+      [weekId, myXp]
     );
     myRank = Number(rankRow?.rank ?? 0);
   }
@@ -190,7 +236,7 @@ export async function handleSupportSend(req: VercelRequest, res: VercelResponse,
     <tr><td style="padding:4px 12px 4px 0;color:#9ca3af;white-space:nowrap;">User ID</td><td><code>${uid}</code></td></tr>
     <tr><td style="padding:4px 12px 4px 0;color:#9ca3af;white-space:nowrap;">Тема</td><td>${topicLabel}</td></tr>
     <tr><td style="padding:4px 12px 4px 0;color:#9ca3af;white-space:nowrap;">Версія</td><td>${appVersion}</td></tr>
-    <tr><td style="padding:4px 12px 4td 0;color:#9ca3af;white-space:nowrap;">User Agent</td><td style="word-break:break-all;font-size:12px;">${userAgent}</td></tr>
+    <tr><td style="padding:4px 12px 4px 0;color:#9ca3af;white-space:nowrap;">User Agent</td><td style="word-break:break-all;font-size:12px;">${userAgent}</td></tr>
   </table>
   <div style="background:#f3f4f6;border-radius:8px;padding:16px;font-size:15px;line-height:1.6;white-space:pre-wrap;color:#1f2937;">${msg.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div>
   <p style="margin:20px 0 0;font-size:12px;color:#d1d5db;">Надіслано через форму підтримки SlovakGO</p>

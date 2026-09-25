@@ -5,9 +5,8 @@ import { Button, Card, Field } from "../../components/ui";
 import { roleHome, useAppStore } from "../../store/useAppStore";
 import { apiClient } from "../../services/apiClient";
 import { track } from "../../services/analytics";
-import { storageService } from "../../services/storage";
 import { setGuestLanguage, useT } from "../../i18n";
-import type { AppData, Lesson, User, UserWord } from "../../types";
+import type { User } from "../../types";
 
 function postAuthRoute(user: User): string {
   if (user.role === "student" && !user.onboardingDone) {
@@ -157,25 +156,8 @@ export function Register() {
         useAppStore.getState().updateUser({ settings: { ...user.settings, language: lang } });
         const savedDemoXp = localStorage.getItem("slovakgo.demo-xp");
         if (savedDemoXp) {
-          const addXp = parseInt(savedDemoXp, 10) || 50;
-          const { data } = useAppStore.getState();
-          const progress = data.progress[user.id];
-          if (progress) {
-            useAppStore.setState((state) => ({
-              data: {
-                ...state.data,
-                progress: {
-                  ...state.data.progress,
-                  [user.id]: {
-                    ...progress,
-                    xpTotal: progress.xpTotal + addXp,
-                    xpWeekly: progress.xpWeekly + addXp,
-                    streakDays: Math.max(progress.streakDays, 1),
-                  },
-                },
-              },
-            }));
-          }
+          await apiClient.claimDemoCompletion().catch(() => undefined);
+          await useAppStore.getState().refreshUser();
           localStorage.removeItem("slovakgo.demo-xp");
           localStorage.removeItem("slovakgo.demo-streak");
         }
@@ -219,7 +201,10 @@ export function Register() {
         </Button>
       </form>
       <div className="auth-divider"><span>{isRu ? "или" : "або"}</span></div>
-      <button type="button" className="btn btn-google" onClick={() => { window.location.href = "/api/auth/google/start"; }}>
+      <button type="button" className="btn btn-google" onClick={() => {
+        if (refParam) localStorage.setItem("slovakgo.pending-referral", refParam);
+        window.location.href = "/api/auth/google/start";
+      }}>
         <GoogleIcon />
         {isRu ? "Войти через Google" : "Зареєструватися через Google"}
       </button>
@@ -332,40 +317,49 @@ export function GoogleDone() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const isNew = searchParams.get("new") === "1";
+  const autoRestoreSession = useAppStore((state) => state.autoRestoreSession);
 
   useEffect(() => {
-    const defaults = { language: "uk" as const, notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true };
+    let cancelled = false;
 
-    apiClient.syncPull(0, false).then((raw) => {
-      const full = raw as { user: User; progress: AppData["progress"][string]; userWords: UserWord[]; lessons?: Lesson[] };
-      const userId = full.user.id;
-      const { data } = useAppStore.getState();
-      const users = data.users.filter((u) => u.id !== userId);
+    async function finishGoogleLogin() {
+      const restored = await autoRestoreSession();
+      if (!restored || cancelled) {
+        if (!cancelled) navigate("/login?error=google_failed", { replace: true });
+        return;
+      }
 
-      const merged: AppData = {
-        ...data,
-        users: [...users, { ...full.user, settings: { ...defaults, ...full.user.settings } }],
-        progress:  { ...data.progress,  [userId]: full.progress },
-        userWords: { ...data.userWords, [userId]: full.userWords },
-        lessons: full.lessons?.length ? full.lessons : data.lessons,
-      };
+      const pendingReferral = localStorage.getItem("slovakgo.pending-referral");
+      if (pendingReferral) {
+        await apiClient.claimReferral(pendingReferral).catch(() => undefined);
+        localStorage.removeItem("slovakgo.pending-referral");
+      }
 
-      storageService.save(merged);
-      localStorage.setItem("slovakgo.current-user", userId);
-      useAppStore.setState({ data: merged, currentUserId: userId, authError: undefined });
-      useAppStore.getState().refreshLessons().catch(() => undefined);
+      if (localStorage.getItem("slovakgo.demo-xp")) {
+        await apiClient.claimDemoCompletion().catch(() => undefined);
+        await useAppStore.getState().refreshUser();
+        localStorage.removeItem("slovakgo.demo-xp");
+        localStorage.removeItem("slovakgo.demo-streak");
+      }
 
-      if (isNew) {
-        navigate("/onboarding", { replace: true });
-      } else if (!full.user.onboardingDone) {
+      if (cancelled) return;
+      const state = useAppStore.getState();
+      const user = state.data.users.find((item) => item.id === state.currentUserId);
+      if (!user) {
+        navigate("/login?error=google_failed", { replace: true });
+        return;
+      }
+
+      if (isNew || !user.onboardingDone) {
         navigate("/onboarding", { replace: true });
       } else {
-        navigate(roleHome(full.user.role), { replace: true });
+        navigate(roleHome(user.role), { replace: true });
       }
-    }).catch(() => {
-      navigate("/login?error=google_failed", { replace: true });
-    });
-  }, [isNew, navigate]);
+    }
+
+    finishGoogleLogin();
+    return () => { cancelled = true; };
+  }, [autoRestoreSession, isNew, navigate]);
 
   return (
     <main className="auth-screen">

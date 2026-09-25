@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState, useMemo } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { AlertCircle, Bell, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, Download, Flame, Heart, Layers, Link2, LogOut, Medal, MessageSquare, Play, Search, Settings, Share2, ShoppingBag, Star, Trophy, Users, Volume2, Zap } from "lucide-react";
+import { AlertCircle, Bell, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, Download, Flame, Heart, Layers, Link2, LogOut, Medal, MessageSquare, Play, RefreshCw, Search, Settings, Share2, ShoppingBag, Star, Trophy, Users, Volume2, Zap } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, EmptyState, Field, Modal, PageHeader, ProgressBar } from "../../components/ui";
 import { PageSkeleton } from "../../components/Skeleton";
@@ -107,6 +107,11 @@ function TopStats() {
 export function StudentLayout() {
   const location = useLocation();
   const { data, user, progress } = useStudentData();
+  const adminPreview = Boolean(localStorage.getItem("slovakgo.admin-return"));
+
+  if (adminPreview && ["/app/shop", "/app/profile", "/app/settings", "/app/paywall"].includes(location.pathname)) {
+    return <Navigate to="/app/path" replace />;
+  }
 
   if (user && progress && user.role === "student" && !accessService.hasFullAccess(user.subscriptionStatus)) {
     const alwaysAllowed = ["/app/profile", "/app/paywall"];
@@ -357,7 +362,7 @@ function PathScreen() {
         <div className="preview-access-banner">
           <div>
             <strong>Перші 5 уроків — без оплати</strong>
-            <span>Пройди {previewLessons.length} справжніх уроків, а потім відкрий тиждень повного доступу.</span>
+            <span>Пройди {previewLessons.length} справжніх уроків, а потім відкрий 3 дні повного доступу.</span>
           </div>
           <span className="preview-access-progress">{previewCompleted}/{previewLessons.length}</span>
         </div>
@@ -1760,8 +1765,8 @@ function PracticeScreen() {
 
   if (!user || !progress) return <PageSkeleton />;
 
-  const isPlus = user.subscriptionStatus === "plus";
-  const xpEarned = isPlus ? 8 : 5;
+  const hasXpBonus = ["trial", "plus", "past_due"].includes(user.subscriptionStatus);
+  const xpEarned = hasXpBonus ? 8 : 5;
   const allWords = vocabularyService.build(data.lessons, data.userWords[user.id]);
   const dueCount = srService.dueCount(allWords);
   const dueWords = allWords.filter(
@@ -1796,7 +1801,13 @@ function PracticeScreen() {
   function startSession() {
     // SR-ordered word selection: due/overdue first, then mistakes, then new
     const adaptiveWords = srService.selectWords(allWords, sessionCount);
-    const ex = practiceService.generate(adaptiveWords, allWords, sessionCount, types);
+    const ex = practiceService.generate(
+      adaptiveWords,
+      allWords,
+      sessionCount,
+      types,
+      (word) => resolveText(word.translation, lang, "uk") || word.uk
+    );
     setExercises(ex);
     setIndex(0);
     setSessionAnswers([]);
@@ -1854,7 +1865,7 @@ function PracticeScreen() {
             )}
 
             {/* Plus XP bonus card */}
-            {isPlus && (
+            {hasXpBonus && (
               <div className="plus-xp-banner">
                 <Zap size={16} />
                 <span>{t("student.practice.plus_bonus")}</span>
@@ -1985,7 +1996,7 @@ function PracticeScreen() {
         <Trophy size={48} color="var(--yellow-strong)" />
         <div className="result-xp-row">
           <h2>+{xpEarned} XP</h2>
-          {isPlus && <span className="plus-xp-chip">{t("student.practice.plus_bonus")}</span>}
+          {hasXpBonus && <span className="plus-xp-chip">{t("student.practice.plus_bonus")}</span>}
         </div>
         <p>{correctCount} / {total} {t("student.practice.results_correct")} · {accuracy}%</p>
       </Card>
@@ -2616,6 +2627,10 @@ function SettingsScreen() {
 
   async function saveProfile() {
     const trimmedEmail = email.trim().toLowerCase();
+    if (user!.authProvider === "google" && trimmedEmail !== user!.email.toLowerCase()) {
+      setEmailError("Email Google-акаунта змінюється в налаштуваннях Google.");
+      return;
+    }
     if (trimmedEmail !== user!.email.toLowerCase()) {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
         setEmailError(t("student.settings.email_invalid"));
@@ -2656,7 +2671,7 @@ function SettingsScreen() {
       setTimeout(() => { setPwSuccess(false); setPwExpanded(false); }, 2500);
     } catch (err: unknown) {
       const e = err as { status?: number; message?: string };
-      setPwError(e.status === 401 ? t("student.settings.password_wrong") : (e.message || "Помилка"));
+      setPwError(e.status === 422 ? t("student.settings.password_wrong") : (e.message || "Помилка"));
     } finally {
       setPwLoading(false);
     }
@@ -2706,8 +2721,14 @@ function SettingsScreen() {
         <Card className="form-stack">
           <Field label={t("student.settings.name")} value={name} onChange={(e) => setName(e.target.value)} />
           <div>
-            <Field label={t("student.settings.email")} value={email} onChange={(e) => { setEmail(e.target.value); setEmailError(""); setEmailSaved(false); }} />
-            {email.trim().toLowerCase() !== user.email.toLowerCase() && (
+            <Field
+              label={t("student.settings.email")}
+              value={email}
+              disabled={user.authProvider === "google"}
+              onChange={(e) => { setEmail(e.target.value); setEmailError(""); setEmailSaved(false); }}
+            />
+            {user.authProvider === "google" && <p className="muted sm">Email керується через Google.</p>}
+            {user.authProvider !== "google" && email.trim().toLowerCase() !== user.email.toLowerCase() && (
               <Field type="password" label={t("student.settings.password_current")} value={emailPassword} onChange={(e) => setEmailPassword(e.target.value)} />
             )}
             {emailError && <p className="field-error">{emailError}</p>}
@@ -2967,7 +2988,7 @@ export function PaywallScreen() {
           <img src="/app-exercise.png" alt="Вправа SlovakGO" width="390" height="844" decoding="async" />
         </div>
         <h1>Спочатку заверши перші 5 уроків</h1>
-        <p>Ми запропонуємо тиждень пробного доступу лише після того, як ти перевіриш SlovakGO на справжніх уроках.</p>
+        <p>Ми запропонуємо 3 дні пробного доступу лише після того, як ти перевіриш SlovakGO на справжніх уроках.</p>
         <div className="preview-locked-counter">{completed} з {section.length} уроків уже пройдено</div>
         <Button onClick={() => navigate("/app/path")}>Продовжити навчання</Button>
         <Button variant="ghost" onClick={() => navigate("/app/profile")}>Профіль</Button>
@@ -2996,7 +3017,7 @@ export function PaywallScreen() {
           Перші 5 уроків пройдено 🎉
         </h1>
         <p style={{ color: "var(--muted)", fontSize: "0.95rem", margin: 0 }}>
-          Ти вже спробував SlovakGO на практиці. Тепер відкрий усі рівні та функції на тиждень.
+          Ти вже спробував SlovakGO на практиці. Тепер відкрий усі рівні та функції на 3 дні.
         </p>
       </div>
 
@@ -3235,26 +3256,75 @@ function ShopScreen() {
 
 export function PaymentSuccess() {
   const navigate = useNavigate();
-  const refreshUser = useAppStore(s => s.refreshUser);
+  const refreshUser = useAppStore((state) => state.refreshUser);
+  const { user } = useStudentData();
+  const [checks, setChecks] = useState(0);
+  const [checking, setChecking] = useState(true);
 
   useEffect(() => {
-    // Запускаємо оновлення з бекенду (може не відразу підтягнути plus, якщо webhook ще летить)
-    refreshUser().catch(() => undefined);
+    let cancelled = false;
+    let timer: ReturnType<typeof setTimeout> | undefined;
 
-    // Повторюємо запит через 3 секунди, щоб підтягнути точний статус
-    const timer = setTimeout(() => refreshUser().catch(() => undefined), 3000);
-    return () => clearTimeout(timer);
+    async function verify(attempt: number) {
+      await refreshUser().catch(() => undefined);
+      if (cancelled) return;
+      setChecks(attempt);
+      const current = useAppStore.getState();
+      const refreshedUser = selectCurrentUser(current.data, current.currentUserId);
+      if (refreshedUser && accessService.hasFullAccess(refreshedUser.subscriptionStatus)) {
+        setChecking(false);
+        return;
+      }
+      if (attempt < 5) {
+        timer = setTimeout(() => verify(attempt + 1), 2000);
+      } else {
+        setChecking(false);
+      }
+    }
+
+    verify(1);
+    return () => {
+      cancelled = true;
+      if (timer) clearTimeout(timer);
+    };
   }, [refreshUser]);
+
+  if (!user) return <Navigate to="/login" replace />;
+  const active = accessService.hasFullAccess(user.subscriptionStatus);
 
   return (
     <main className="payment-page payment-page--success">
       <div className="payment-card">
         <div className="payment-icon payment-icon--success">
-          <CheckCircle2 size={48} />
+          {active ? <CheckCircle2 size={48} /> : <RefreshCw size={48} className={checking ? "spin" : ""} />}
         </div>
-        <h1 className="payment-title">Повний доступ активовано!</h1>
-        <p className="payment-text">Твій пробний тиждень почався. Усі рівні, практика, словник і статистика вже відкриті.</p>
-        <Button variant="primary" onClick={() => navigate("/app/path")}>Почати навчання →</Button>
+        {active ? (
+          <>
+            <h1 className="payment-title">Повний доступ активовано!</h1>
+            <p className="payment-text">
+              {user.subscriptionStatus === "trial"
+                ? "Твій 3-денний пробний доступ почався. Усі рівні, практика, словник і статистика вже відкриті."
+                : "Підписка SlovakGO Plus активна. Усі рівні, практика, словник і статистика відкриті."}
+            </p>
+            <Button variant="primary" onClick={() => navigate("/app/path")}>Почати навчання →</Button>
+          </>
+        ) : (
+          <>
+            <h1 className="payment-title">{checking ? "Підтверджуємо оплату…" : "Оплата ще обробляється"}</h1>
+            <p className="payment-text">
+              {checking
+                ? "Stripe уже повернув тебе в SlovakGO. Чекаємо підтвердження підписки від сервера."
+                : "Підтвердження може зайняти трохи більше часу. Ми не будемо показувати доступ активним, доки сервер його не підтвердить."}
+            </p>
+            {!checking && (
+              <Button variant="primary" onClick={() => { setChecking(true); setChecks((value) => value + 1); refreshUser().finally(() => setChecking(false)); }}>
+                Перевірити ще раз
+              </Button>
+            )}
+            <Button variant="ghost" onClick={() => navigate("/app/shop")}>До підписки</Button>
+            <span className="muted sm">Перевірок: {checks}</span>
+          </>
+        )}
       </div>
     </main>
   );
