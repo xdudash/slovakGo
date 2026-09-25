@@ -174,6 +174,14 @@ export const apiClient = {
     });
   },
 
+  getTeacherStats() {
+    return apiRequest<{
+      ok: boolean;
+      summary: { students: number; completions: number; mistakes: number; lessons: number };
+      lessons: Array<{ id: string; title: unknown; exercises: number; completions: number }>;
+    }>("/teacher/stats");
+  },
+
   getAdminStats() {
     return apiRequest<{
       ok: boolean;
