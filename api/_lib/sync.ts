@@ -231,7 +231,10 @@ async function mutLessonComplete(uid: string, p: Record<string, unknown>): Promi
     ? finalSituation.steps.length
     : 0;
   const expectedAnswerCount = exerciseCount + finalStepCount;
-  const answers = (Array.isArray(p.answers) ? p.answers as Record<string, unknown>[] : []).slice(0, expectedAnswerCount || 100);
+  const submittedAnswers = Array.isArray(p.answers) ? p.answers as Record<string, unknown>[] : [];
+  if (submittedAnswers.length > (expectedAnswerCount || 100)) {
+    throw new Error("Too many lesson answers");
+  }
 
   const prog = await ensureProgress(uid);
   const userRow = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [uid]);
