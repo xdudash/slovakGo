@@ -362,7 +362,7 @@ function PathScreen() {
         <div className="preview-access-banner">
           <div>
             <strong>Перші 5 уроків — без оплати</strong>
-            <span>Пройди {previewLessons.length} справжніх уроків, а потім відкрий тиждень повного доступу.</span>
+            <span>Пройди {previewLessons.length} справжніх уроків, а потім відкрий 3 дні повного доступу.</span>
           </div>
           <span className="preview-access-progress">{previewCompleted}/{previewLessons.length}</span>
         </div>
@@ -2982,7 +2982,7 @@ export function PaywallScreen() {
           <img src="/app-exercise.png" alt="Вправа SlovakGO" width="390" height="844" decoding="async" />
         </div>
         <h1>Спочатку заверши перші 5 уроків</h1>
-        <p>Ми запропонуємо тиждень пробного доступу лише після того, як ти перевіриш SlovakGO на справжніх уроках.</p>
+        <p>Ми запропонуємо 3 дні пробного доступу лише після того, як ти перевіриш SlovakGO на справжніх уроках.</p>
         <div className="preview-locked-counter">{completed} з {section.length} уроків уже пройдено</div>
         <Button onClick={() => navigate("/app/path")}>Продовжити навчання</Button>
         <Button variant="ghost" onClick={() => navigate("/app/profile")}>Профіль</Button>
@@ -3011,7 +3011,7 @@ export function PaywallScreen() {
           Перші 5 уроків пройдено 🎉
         </h1>
         <p style={{ color: "var(--muted)", fontSize: "0.95rem", margin: 0 }}>
-          Ти вже спробував SlovakGO на практиці. Тепер відкрий усі рівні та функції на тиждень.
+          Ти вже спробував SlovakGO на практиці. Тепер відкрий усі рівні та функції на 3 дні.
         </p>
       </div>
 
@@ -3268,7 +3268,7 @@ export function PaymentSuccess() {
           <CheckCircle2 size={48} />
         </div>
         <h1 className="payment-title">Повний доступ активовано!</h1>
-        <p className="payment-text">Твій пробний тиждень почався. Усі рівні, практика, словник і статистика вже відкриті.</p>
+        <p className="payment-text">Твій 3-денний пробний доступ почався. Усі рівні, практика, словник і статистика вже відкриті.</p>
         <Button variant="primary" onClick={() => navigate("/app/path")}>Почати навчання →</Button>
       </div>
     </main>
