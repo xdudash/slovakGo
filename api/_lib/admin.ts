@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { Arg } from "./core";
+import { normalizeLessonPayload } from "./lessonValidation";
 import {
   exec, query, queryOne, nowIso, safeJson, ensureCol,
   requireUid, respond, fail, rowToUser, ensureProgress, getUserWords, checkRole
@@ -337,10 +338,7 @@ export async function handleAdminImportLessons(req: VercelRequest, res: VercelRe
     const raw = rawArr[i] as Record<string, unknown>;
     const id = raw?.id ? String(raw.id) : `#${i + 1}`;
     try {
-      if (!raw.id)    throw new Error("відсутній id");
-      if (!raw.title) throw new Error("відсутній title");
-      if (!raw.level) throw new Error("відсутній level");
-      validated.push(raw);
+      validated.push(normalizeLessonPayload(raw) as unknown as ParsedLesson);
     } catch (err) {
       parseErrors.push({ id, error: (err as Error).message });
     }
