@@ -78,11 +78,15 @@ export async function logEvent(userId: string | null, name: string, props: Recor
 export const nowIso  = () => new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
 export const todayKey = () => new Date().toISOString().slice(0, 10);
 
-export function currentWeekId(): string {
-  const d = new Date();
-  const jan1 = new Date(d.getFullYear(), 0, 1);
-  const week = Math.ceil(((d.getTime() - jan1.getTime()) / 86400000 + jan1.getDay() + 1) / 7);
-  return `${d.getFullYear()}-W${String(week).padStart(2, "0")}`;
+export function currentWeekId(now = new Date()): string {
+  const d = new Date(now);
+  d.setHours(0, 0, 0, 0);
+  const day = d.getDay() || 7;
+  d.setDate(d.getDate() + 1 - day);
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${dd}`;
 }
 
 export function parseCookies(h: string): Record<string, string> {
@@ -212,6 +216,7 @@ export async function getUserWords(uid: string): Promise<unknown[]> {
     userId: uid, wordId: String(r.word_id), status: String(r.status),
     mistakeCount: Number(r.mistakes), correctCount: Number(r.corrects),
     favorite: Boolean(r.favorite), lastSeenAt: r.last_seen ?? null,
+    nextReviewAt: r.next_review ?? undefined,
   }));
 }
 
