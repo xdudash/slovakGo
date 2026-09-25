@@ -747,9 +747,9 @@ describe("POST /admin/lessons/import", () => {
         }],
       },
     });
-    expect(status).toBe(200);
-    expect((body.errors as unknown[]).length).toBe(1);
-    expect(body.imported).toBe(0);
+    expect(status).toBe(422);
+    expect(body.ok).toBe(false);
+    expect(String(body.error)).toContain("broken-lesson");
   });
 });
 
