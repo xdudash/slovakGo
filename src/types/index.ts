@@ -40,6 +40,7 @@ export interface User {
   settings: UserSettings;
   isBlocked?: boolean;
   hasUsedTrial: boolean;
+  authProvider?: "password" | "google";
 }
 
 export interface Word {
