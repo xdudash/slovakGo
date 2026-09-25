@@ -396,6 +396,15 @@ describe("POST /sync/push", () => {
     expect(status).toBe(422);
   });
 
+  it("rejects a mutation owned by a different user", async () => {
+    const { status, body } = await call("POST", ["sync", "push"], {
+      cookie,
+      body: { mutations: [{ id: "wrong-owner", userId: "someone-else", type: "profile.update", payload: { goal: "B2" } }] },
+    });
+    expect(status).toBe(403);
+    expect(body.ok).toBe(false);
+  });
+
   it("applies profile.update mutation", async () => {
     const { body } = await call("POST", ["sync", "push"], {
       cookie,
