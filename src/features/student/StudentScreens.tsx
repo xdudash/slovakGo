@@ -107,6 +107,11 @@ function TopStats() {
 export function StudentLayout() {
   const location = useLocation();
   const { data, user, progress } = useStudentData();
+  const adminPreview = Boolean(localStorage.getItem("slovakgo.admin-return"));
+
+  if (adminPreview && ["/app/shop", "/app/profile", "/app/settings", "/app/paywall"].includes(location.pathname)) {
+    return <Navigate to="/app/path" replace />;
+  }
 
   if (user && progress && user.role === "student" && !accessService.hasFullAccess(user.subscriptionStatus)) {
     const alwaysAllowed = ["/app/profile", "/app/paywall"];
