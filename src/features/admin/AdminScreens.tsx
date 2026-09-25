@@ -855,8 +855,11 @@ function UserDetail() {
       {/* Actions */}
       <h3 className="admin-section-title">Керування</h3>
       <div className="admin-detail-actions">
-        <Button variant="secondary" onClick={() => { loginAsUser(u.id); navigate("/app/path"); }}>
-          <UserRound size={15} /> Увійти як {u.name}
+        <Button variant="secondary" onClick={async () => {
+          const opened = await loginAsUser(u.id);
+          if (opened) navigate("/app/path");
+        }}>
+          <UserRound size={15} /> Переглянути як {u.name}
         </Button>
         <Button variant="secondary" onClick={() => patchUser({ role: u.role === "student" ? "teacher" : "student" })}>
           Роль → {u.role === "student" ? "teacher" : "student"}
