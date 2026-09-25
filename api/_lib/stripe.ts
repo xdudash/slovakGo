@@ -19,6 +19,18 @@ export const TRIAL_DAYS = 3;
 /** Free Plus days the referrer earns when an invited learner actually pays. */
 export const REFERRAL_BONUS_DAYS = 14;
 
+export async function cancelBillingForDeletedUser(uid: string): Promise<void> {
+  await ensureCol("users", "stripe_sub_id", "TEXT");
+  const row = await queryOne("SELECT stripe_sub_id FROM users WHERE id = ? LIMIT 1", [uid]);
+  const subscriptionId = String(row?.stripe_sub_id ?? "").trim();
+  if (!subscriptionId) return;
+
+  // Account deletion must not leave a chargeable Stripe subscription behind.
+  // Fail the deletion if Stripe cannot confirm cancellation so the learner can
+  // retry instead of losing access to the account while still being billed.
+  await getStripe().subscriptions.cancel(subscriptionId);
+}
+
 export async function handleBillingCheckout(req: VercelRequest, res: VercelResponse, body: any): Promise<void> {
   const uid = await requireUid(req, res); if (!uid) return;
   const planType = body?.planType === "yearly" ? "yearly" : "monthly";
@@ -50,6 +62,16 @@ export async function handleBillingCheckout(req: VercelRequest, res: VercelRespo
   const cusId = String(row.stripe_customer_id ?? "");
   const hasActiveSub = String(row.stripe_sub_id ?? "") !== "";
   const hasUsedTrial = Boolean(row.trial_used) || Boolean(cusId);
+
+  if (hasActiveSub && cusId) {
+    // Never create a second subscription for the same account. Existing
+    // subscribers should manage/cancel/resume through Stripe's portal.
+    const portal = await getStripe().billingPortal.sessions.create({
+      customer: cusId,
+      return_url: `${base}/app/shop`,
+    });
+    return respond(res, { url: portal.url, existingSubscription: true });
+  }
   
   if (cusId) {
     (params as Record<string, unknown>).customer = cusId;
