@@ -405,6 +405,48 @@ describe("POST /sync/push", () => {
     expect(body.ok).toBe(false);
   });
 
+  it("skips a stale lesson completion without blocking the rest of the sync batch", async () => {
+    const { status, body } = await call("POST", ["sync", "push"], {
+      cookie,
+      body: {
+        mutations: [
+          {
+            id: "mut-stale-lesson-1",
+            type: "lesson.complete",
+            payload: { lessonId: "deleted-or-unpublished-lesson", answers: [] },
+          },
+          {
+            id: "mut-after-stale-1",
+            type: "profile.update",
+            payload: { goal: "B2" },
+          },
+        ],
+      },
+    });
+
+    expect(status).toBe(200);
+    expect(body.ok).toBe(true);
+    expect(body.applied).toBe(1);
+    expect(body.skipped).toBe(1);
+
+    const { body: pullBody } = await call("GET", ["sync", "pull"], { cookie });
+    expect((pullBody.user as Record<string, unknown>).goal).toBe("B2");
+    expect((pullBody.progress as Record<string, unknown>).completedLessons).not.toContain("deleted-or-unpublished-lesson");
+
+    const replay = await call("POST", ["sync", "push"], {
+      cookie,
+      body: {
+        mutations: [{
+          id: "mut-stale-lesson-1",
+          type: "lesson.complete",
+          payload: { lessonId: "deleted-or-unpublished-lesson", answers: [] },
+        }],
+      },
+    });
+    expect(replay.status).toBe(200);
+    expect(replay.body.applied).toBe(0);
+  });
+
   it("applies profile.update mutation", async () => {
     const { body } = await call("POST", ["sync", "push"], {
       cookie,
