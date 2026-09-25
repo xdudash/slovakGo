@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { Arg } from "./core";
 import {
   exec, query, queryOne, nowIso, safeJson, ensureCol,
-  requireUid, respond, fail, rowToUser, ensureProgress, checkRole
+  requireUid, respond, fail, rowToUser, ensureProgress, getUserWords, checkRole
 } from "./core";
 
 export async function handleAdminStats(req: VercelRequest, res: VercelResponse): Promise<void> {
