@@ -47,7 +47,9 @@ function updateStreak(progress: Progress): Progress {
 }
 
 function xpWithBonus(base: number, subscriptionStatus?: SubscriptionStatus): number {
-  return subscriptionStatus === "plus" || subscriptionStatus === "trial" ? Math.round(base * 1.5) : base;
+  return subscriptionStatus === "plus" || subscriptionStatus === "trial" || subscriptionStatus === "past_due"
+    ? Math.round(base * 1.5)
+    : base;
 }
 
 export const progressService = {
