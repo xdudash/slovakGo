@@ -3250,26 +3250,75 @@ function ShopScreen() {
 
 export function PaymentSuccess() {
   const navigate = useNavigate();
-  const refreshUser = useAppStore(s => s.refreshUser);
+  const refreshUser = useAppStore((state) => state.refreshUser);
+  const { user } = useStudentData();
+  const [checks, setChecks] = useState(0);
+  const [checking, setChecking] = useState(true);
 
   useEffect(() => {
-    // Запускаємо оновлення з бекенду (може не відразу підтягнути plus, якщо webhook ще летить)
-    refreshUser().catch(() => undefined);
+    let cancelled = false;
+    let timer: ReturnType<typeof setTimeout> | undefined;
 
-    // Повторюємо запит через 3 секунди, щоб підтягнути точний статус
-    const timer = setTimeout(() => refreshUser().catch(() => undefined), 3000);
-    return () => clearTimeout(timer);
+    async function verify(attempt: number) {
+      await refreshUser().catch(() => undefined);
+      if (cancelled) return;
+      setChecks(attempt);
+      const current = useAppStore.getState();
+      const refreshedUser = selectCurrentUser(current.data, current.currentUserId);
+      if (refreshedUser && accessService.hasFullAccess(refreshedUser.subscriptionStatus)) {
+        setChecking(false);
+        return;
+      }
+      if (attempt < 5) {
+        timer = setTimeout(() => verify(attempt + 1), 2000);
+      } else {
+        setChecking(false);
+      }
+    }
+
+    verify(1);
+    return () => {
+      cancelled = true;
+      if (timer) clearTimeout(timer);
+    };
   }, [refreshUser]);
+
+  if (!user) return <Navigate to="/login" replace />;
+  const active = accessService.hasFullAccess(user.subscriptionStatus);
 
   return (
     <main className="payment-page payment-page--success">
       <div className="payment-card">
         <div className="payment-icon payment-icon--success">
-          <CheckCircle2 size={48} />
+          {active ? <CheckCircle2 size={48} /> : <RefreshCw size={48} className={checking ? "spin" : ""} />}
         </div>
-        <h1 className="payment-title">Повний доступ активовано!</h1>
-        <p className="payment-text">Твій 3-денний пробний доступ почався. Усі рівні, практика, словник і статистика вже відкриті.</p>
-        <Button variant="primary" onClick={() => navigate("/app/path")}>Почати навчання →</Button>
+        {active ? (
+          <>
+            <h1 className="payment-title">Повний доступ активовано!</h1>
+            <p className="payment-text">
+              {user.subscriptionStatus === "trial"
+                ? "Твій 3-денний пробний доступ почався. Усі рівні, практика, словник і статистика вже відкриті."
+                : "Підписка SlovakGO Plus активна. Усі рівні, практика, словник і статистика відкриті."}
+            </p>
+            <Button variant="primary" onClick={() => navigate("/app/path")}>Почати навчання →</Button>
+          </>
+        ) : (
+          <>
+            <h1 className="payment-title">{checking ? "Підтверджуємо оплату…" : "Оплата ще обробляється"}</h1>
+            <p className="payment-text">
+              {checking
+                ? "Stripe уже повернув тебе в SlovakGO. Чекаємо підтвердження підписки від сервера."
+                : "Підтвердження може зайняти трохи більше часу. Ми не будемо показувати доступ активним, доки сервер його не підтвердить."}
+            </p>
+            {!checking && (
+              <Button variant="primary" onClick={() => { setChecking(true); setChecks((value) => value + 1); refreshUser().finally(() => setChecking(false)); }}>
+                Перевірити ще раз
+              </Button>
+            )}
+            <Button variant="ghost" onClick={() => navigate("/app/shop")}>До підписки</Button>
+            <span className="muted sm">Перевірок: {checks}</span>
+          </>
+        )}
       </div>
     </main>
   );
