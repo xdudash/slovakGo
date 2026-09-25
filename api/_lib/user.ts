@@ -91,7 +91,9 @@ export async function handleLeaderboard(req: VercelRequest, res: VercelResponse)
     `SELECT u.id, u.name_text, u.avatar, u.country, p.xp_weekly, p.week_id
      FROM progress p JOIN users u ON u.id = p.user_id
      WHERE u.is_blocked = 0 AND u.role = 'student'
-     ORDER BY p.xp_weekly DESC LIMIT 50`
+     ORDER BY CASE WHEN p.week_id = ? THEN p.xp_weekly ELSE 0 END DESC, u.id ASC
+     LIMIT 50`,
+    [weekId]
   );
 
   const entries = rows.map((r, idx) => ({
@@ -109,8 +111,9 @@ export async function handleLeaderboard(req: VercelRequest, res: VercelResponse)
     const myXp    = myProg && String(myProg.week_id) === weekId ? Number(myProg.xp_weekly) : 0;
     const rankRow = await queryOne(
       `SELECT COUNT(*) + 1 AS rank FROM progress p JOIN users u ON u.id = p.user_id
-       WHERE u.is_blocked = 0 AND u.role = 'student' AND p.xp_weekly > ?`,
-      [myXp]
+       WHERE u.is_blocked = 0 AND u.role = 'student'
+         AND (CASE WHEN p.week_id = ? THEN p.xp_weekly ELSE 0 END) > ?`,
+      [weekId, myXp]
     );
     myRank = Number(rankRow?.rank ?? 0);
   }
