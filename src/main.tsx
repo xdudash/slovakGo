@@ -90,12 +90,15 @@ window.addEventListener("load", async () => {
 
   const store = useAppStore.getState();
 
-  // Recover any mutations written to IDB in previous sessions but lost from in-memory queue
-  const orphaned = await syncService.recover(store.data.syncQueue);
-  if (orphaned.length > 0) {
-    useAppStore.setState((state) => ({
-      data: { ...state.data, syncQueue: [...state.data.syncQueue, ...orphaned] }
-    }));
+  // Recover only mutations owned by the restored account. Ownerless legacy
+  // records are discarded by syncService to prevent cross-account replay.
+  if (store.currentUserId) {
+    const orphaned = await syncService.recover(store.data.syncQueue, store.currentUserId);
+    if (orphaned.length > 0) {
+      useAppStore.setState((state) => ({
+        data: { ...state.data, syncQueue: [...state.data.syncQueue, ...orphaned] }
+      }));
+    }
   }
 
   // Drain immediately after queue mutations are added while online
