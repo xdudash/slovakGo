@@ -246,7 +246,7 @@ async function mutLessonComplete(uid: string, p: Record<string, unknown>): Promi
   const reward = Math.max(0, Number(lesson.xpReward ?? 10) || 10);
   const baseXp = alreadyCompleted ? Math.max(3, Math.round(reward * 0.25)) : reward;
   const status = String(rowToUser(userRow).subscriptionStatus ?? "");
-  const xpEarned = status === "plus" || status === "trial" ? Math.round(baseXp * 1.5) : baseXp;
+  const xpEarned = status === "plus" || status === "trial" || status === "past_due" ? Math.round(baseXp * 1.5) : baseXp;
 
   const today = todayKey();
   const weekId = currentWeekId();
@@ -309,7 +309,7 @@ async function mutPracticeComplete(uid: string, p: Record<string, unknown>): Pro
 
   await ensureCol("progress", "practice_awarded_at", "TEXT");
   const status = String(rowToUser(userRow).subscriptionStatus ?? "");
-  const xpEarned = status === "plus" || status === "trial"
+  const xpEarned = status === "plus" || status === "trial" || status === "past_due"
     ? Math.round(XP_PER_PRACTICE * 1.5)
     : XP_PER_PRACTICE;
 
