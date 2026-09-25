@@ -82,7 +82,7 @@ export async function handleLogin(req: VercelRequest, res: VercelResponse, body:
       
       await exec(
         `INSERT INTO users (id, email, pw_hash, name_text, role, level, goal, sub_status, trial_ends, ob_done, settings_j, google_sub, created_at, updated_at)
-         VALUES (?, ?, ?, 'Admin', 'admin', 'A0', NULL, 'active', ?, 1, ?, NULL, ?, ?)`,
+         VALUES (?, ?, ?, 'Admin', 'admin', 'A0', NULL, 'plus', ?, 1, ?, NULL, ?, ?)`,
         [id, adminEmail, hash, trial, defS, now, now]
       );
       await ensureProgress(id);
