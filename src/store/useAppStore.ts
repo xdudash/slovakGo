@@ -30,7 +30,7 @@ interface AppStore {
   bulkSetLessons: (lessons: Lesson[]) => void;
   deleteLesson: (lessonId: string) => void;
   adminUpdateUser: (userId: string, patch: Partial<User>) => void;
-  loginAsUser: (userId: string) => void;
+  loginAsUser: (userId: string) => Promise<boolean>;
   returnToAdmin: () => void;
   refreshUser: () => Promise<void>;
   drainSync: () => Promise<void>;
@@ -447,12 +447,28 @@ export const useAppStore = create<AppStore>((set, get) => ({
     set({ data });
   },
 
-  loginAsUser(userId) {
+  async loginAsUser(userId) {
     const adminReturnKey = "slovakgo.admin-return";
     const current = get().currentUserId;
-    if (current) localStorage.setItem(adminReturnKey, current);
-    localStorage.setItem(sessionKey, userId);
-    set({ currentUserId: userId });
+    if (!current || current === userId) return false;
+
+    try {
+      const detail = await apiClient.getAdminUser(userId);
+      const users = get().data.users.filter((user) => user.id !== userId);
+      const data = save({
+        ...get().data,
+        users: [...users, { ...detail.user, settings: { ...defaultSettings, ...detail.user.settings } }],
+        progress: { ...get().data.progress, [userId]: detail.progress },
+        userWords: { ...get().data.userWords, [userId]: detail.userWords },
+      });
+
+      localStorage.setItem(adminReturnKey, current);
+      localStorage.setItem(sessionKey, userId);
+      set({ data, currentUserId: userId });
+      return true;
+    } catch {
+      return false;
+    }
   },
 
   returnToAdmin() {
