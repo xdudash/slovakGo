@@ -196,15 +196,32 @@ function LessonsScreen() {
     reader.readAsText(file);
   }
 
-  function confirmImport() {
-    if (importState.phase !== "preview") return;
-    const existing = new Set(data.lessons.map((l) => l.id));
-    let imported = 0, updated = 0;
-    for (const lesson of importState.lessons) {
-      if (existing.has(lesson.id)) updated++; else imported++;
-      upsertLesson(lesson);
+  async function confirmImport() {
+    if (importState.phase !== "preview" || importState.errors.length > 0) return;
+    const lessonsToImport = importState.lessons;
+    const existing = new Set(data.lessons.map((lesson) => lesson.id));
+    const imported = lessonsToImport.filter((lesson) => !existing.has(lesson.id)).length;
+    const updated = lessonsToImport.length - imported;
+
+    try {
+      const response = await apiClient.importLessons(lessonsToImport, "overwrite");
+      if (response.errors.length > 0) {
+        setImportState({
+          phase: "preview",
+          lessons: lessonsToImport,
+          errors: response.errors.map((item) => `${item.id}: ${item.error}`),
+        });
+        return;
+      }
+      await refreshLessons();
+      setImportState({ phase: "done", imported, updated });
+    } catch (err) {
+      setImportState({
+        phase: "preview",
+        lessons: lessonsToImport,
+        errors: [(err as { message?: string }).message || "Не вдалося імпортувати уроки на сервер."],
+      });
     }
-    setImportState({ phase: "done", imported, updated });
   }
 
   function confirmDelete() {
