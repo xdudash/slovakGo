@@ -167,6 +167,10 @@ export const apiClient = {
     return apiRequest<{ url: string }>('/billing/portal', { method: 'POST' });
   },
 
+  claimDemoCompletion() {
+    return apiRequest<{ ok: boolean; awarded: boolean }>("/user/demo-complete", { method: "POST" });
+  },
+
   claimReferral(referrerId: string) {
     return apiRequest<{ ok: boolean }>("/user/referral", {
       method: "POST",
