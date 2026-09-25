@@ -157,25 +157,8 @@ export function Register() {
         useAppStore.getState().updateUser({ settings: { ...user.settings, language: lang } });
         const savedDemoXp = localStorage.getItem("slovakgo.demo-xp");
         if (savedDemoXp) {
-          const addXp = parseInt(savedDemoXp, 10) || 50;
-          const { data } = useAppStore.getState();
-          const progress = data.progress[user.id];
-          if (progress) {
-            useAppStore.setState((state) => ({
-              data: {
-                ...state.data,
-                progress: {
-                  ...state.data.progress,
-                  [user.id]: {
-                    ...progress,
-                    xpTotal: progress.xpTotal + addXp,
-                    xpWeekly: progress.xpWeekly + addXp,
-                    streakDays: Math.max(progress.streakDays, 1),
-                  },
-                },
-              },
-            }));
-          }
+          await apiClient.claimDemoCompletion().catch(() => undefined);
+          await useAppStore.getState().refreshUser();
           localStorage.removeItem("slovakgo.demo-xp");
           localStorage.removeItem("slovakgo.demo-streak");
         }
@@ -219,7 +202,10 @@ export function Register() {
         </Button>
       </form>
       <div className="auth-divider"><span>{isRu ? "или" : "або"}</span></div>
-      <button type="button" className="btn btn-google" onClick={() => { window.location.href = "/api/auth/google/start"; }}>
+      <button type="button" className="btn btn-google" onClick={() => {
+        if (refParam) localStorage.setItem("slovakgo.pending-referral", refParam);
+        window.location.href = "/api/auth/google/start";
+      }}>
         <GoogleIcon />
         {isRu ? "Войти через Google" : "Зареєструватися через Google"}
       </button>
@@ -354,6 +340,19 @@ export function GoogleDone() {
       localStorage.setItem("slovakgo.current-user", userId);
       useAppStore.setState({ data: merged, currentUserId: userId, authError: undefined });
       useAppStore.getState().refreshLessons().catch(() => undefined);
+
+      const pendingReferral = localStorage.getItem("slovakgo.pending-referral");
+      if (pendingReferral) {
+        apiClient.claimReferral(pendingReferral).finally(() => localStorage.removeItem("slovakgo.pending-referral"));
+      }
+      if (localStorage.getItem("slovakgo.demo-xp")) {
+        apiClient.claimDemoCompletion()
+          .then(() => useAppStore.getState().refreshUser())
+          .finally(() => {
+            localStorage.removeItem("slovakgo.demo-xp");
+            localStorage.removeItem("slovakgo.demo-streak");
+          });
+      }
 
       if (isNew) {
         navigate("/onboarding", { replace: true });
