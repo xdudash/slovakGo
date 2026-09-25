@@ -1765,8 +1765,8 @@ function PracticeScreen() {
 
   if (!user || !progress) return <PageSkeleton />;
 
-  const isPlus = user.subscriptionStatus === "plus";
-  const xpEarned = isPlus ? 8 : 5;
+  const hasXpBonus = ["trial", "plus", "past_due"].includes(user.subscriptionStatus);
+  const xpEarned = hasXpBonus ? 8 : 5;
   const allWords = vocabularyService.build(data.lessons, data.userWords[user.id]);
   const dueCount = srService.dueCount(allWords);
   const dueWords = allWords.filter(
