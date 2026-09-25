@@ -41,12 +41,21 @@ export const syncService = {
       return validQueue.length === data.syncQueue.length ? data : { ...data, syncQueue: validQueue };
     }
 
+    const sentIds = new Set<string>();
     try {
-      await apiClient.syncPush(clientId(), owned);
-      await Promise.all(owned.map((m) => idbDelete(m.id).catch(() => undefined)));
+      for (let i = 0; i < owned.length; i += 100) {
+        const batch = owned.slice(i, i + 100);
+        await apiClient.syncPush(clientId(), batch);
+        for (const mutation of batch) sentIds.add(mutation.id);
+        await Promise.all(batch.map((m) => idbDelete(m.id).catch(() => undefined)));
+      }
       return { ...data, syncQueue: others };
     } catch {
-      return validQueue.length === data.syncQueue.length ? data : { ...data, syncQueue: validQueue };
+      const remainingOwned = owned.filter((mutation) => !sentIds.has(mutation.id));
+      const nextQueue = [...others, ...remainingOwned];
+      const unchanged = nextQueue.length === data.syncQueue.length
+        && nextQueue.every((mutation, index) => mutation.id === data.syncQueue[index]?.id);
+      return unchanged ? data : { ...data, syncQueue: nextQueue };
     }
   },
 
