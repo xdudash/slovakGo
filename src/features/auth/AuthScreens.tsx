@@ -5,9 +5,8 @@ import { Button, Card, Field } from "../../components/ui";
 import { roleHome, useAppStore } from "../../store/useAppStore";
 import { apiClient } from "../../services/apiClient";
 import { track } from "../../services/analytics";
-import { storageService } from "../../services/storage";
 import { setGuestLanguage, useT } from "../../i18n";
-import type { AppData, Lesson, User, UserWord } from "../../types";
+import type { User } from "../../types";
 
 function postAuthRoute(user: User): string {
   if (user.role === "student" && !user.onboardingDone) {
