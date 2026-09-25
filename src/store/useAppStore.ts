@@ -323,6 +323,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
     data = withSync(data, currentUserId, "profile.update", patch as Record<string, unknown>);
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   completeOnboarding(goal, level) {
@@ -342,6 +343,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
     data = withSync(data, currentUserId, "profile.update", { goal, level, onboardingDone: true });
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   setLevel(level) {
@@ -358,6 +360,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
     data = withSync(data, currentUserId, "profile.update", { level });
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   submitPlacement(correct, total) {
@@ -407,6 +410,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
     data = withSync(data, currentUserId, "exercise.wrong", { lessonId: lesson.id, exerciseId, answer });
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   toggleFavorite(wordId) {
@@ -425,6 +429,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
     data = withSync(data, currentUserId, "word.update", { wordId, favorite: next.favorite });
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   finishPracticeSession(results) {
@@ -446,6 +451,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
     data = withSync(data, currentUserId, "practice.complete", { results: results as unknown as Record<string, unknown> });
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   restoreHearts() {
@@ -457,6 +463,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
     data = withSync(data, currentUserId, "hearts.restore", {});
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   upsertLesson(lesson) {
@@ -468,6 +475,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
     data = withSync(data, currentUserId, "lesson.upsert", { lesson });
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   bulkSetLessons(incoming) {
@@ -485,6 +493,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
     data = withSync(data, currentUserId, "lesson.delete", { lessonId });
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   adminUpdateUser(userId, patch) {
@@ -494,6 +503,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
     data = withSync(data, currentUserId, "admin.user.update", { userId, ...patch });
     save(data);
     set({ data });
+    get().drainSync().catch(() => undefined);
   },
 
   async loginAsUser(userId) {
@@ -533,13 +543,30 @@ export const useAppStore = create<AppStore>((set, get) => ({
     if (isAdminPreview()) return;
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
-    const data = await syncService.drain(get().data, currentUserId);
-    if (data !== get().data) {
-      save(data);
-      const now = new Date().toISOString();
-      set({ data, syncMessage: "✓ Синхронізовано", lastSyncedAt: now });
-      setTimeout(() => set({ syncMessage: undefined }), 3000);
-    }
+
+    const snapshot = get().data;
+    const result = await syncService.drain(snapshot, currentUserId);
+    if (result === snapshot) return;
+
+    const remainingIds = new Set(result.syncQueue.map((mutation) => mutation.id));
+    const removedIds = new Set(
+      snapshot.syncQueue
+        .filter((mutation) => !remainingIds.has(mutation.id))
+        .map((mutation) => mutation.id)
+    );
+    if (!removedIds.size) return;
+
+    // A new mutation may have been enqueued while the network request was in
+    // flight. Only remove mutations confirmed as drained from the latest store;
+    // never replace the rest of AppData with the old snapshot.
+    const latest = get().data;
+    const data = save({
+      ...latest,
+      syncQueue: latest.syncQueue.filter((mutation) => !removedIds.has(mutation.id)),
+    });
+    const now = new Date().toISOString();
+    set({ data, syncMessage: "✓ Синхронізовано", lastSyncedAt: now });
+    setTimeout(() => set({ syncMessage: undefined }), 3000);
   },
 
   resetLocal() {
