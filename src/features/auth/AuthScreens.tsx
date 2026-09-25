@@ -318,53 +318,49 @@ export function GoogleDone() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const isNew = searchParams.get("new") === "1";
+  const autoRestoreSession = useAppStore((state) => state.autoRestoreSession);
 
   useEffect(() => {
-    const defaults = { language: "uk" as const, notificationsEnabled: true, soundEnabled: true, hapticsEnabled: true };
+    let cancelled = false;
 
-    apiClient.syncPull(0, false).then((raw) => {
-      const full = raw as { user: User; progress: AppData["progress"][string]; userWords: UserWord[]; lessons?: Lesson[] };
-      const userId = full.user.id;
-      const { data } = useAppStore.getState();
-      const users = data.users.filter((u) => u.id !== userId);
-
-      const merged: AppData = {
-        ...data,
-        users: [...users, { ...full.user, settings: { ...defaults, ...full.user.settings } }],
-        progress:  { ...data.progress,  [userId]: full.progress },
-        userWords: { ...data.userWords, [userId]: full.userWords },
-        lessons: full.lessons?.length ? full.lessons : data.lessons,
-      };
-
-      storageService.save(merged);
-      localStorage.setItem("slovakgo.current-user", userId);
-      useAppStore.setState({ data: merged, currentUserId: userId, authError: undefined });
-      useAppStore.getState().refreshLessons().catch(() => undefined);
+    async function finishGoogleLogin() {
+      const restored = await autoRestoreSession();
+      if (!restored || cancelled) {
+        if (!cancelled) navigate("/login?error=google_failed", { replace: true });
+        return;
+      }
 
       const pendingReferral = localStorage.getItem("slovakgo.pending-referral");
       if (pendingReferral) {
-        apiClient.claimReferral(pendingReferral).finally(() => localStorage.removeItem("slovakgo.pending-referral"));
-      }
-      if (localStorage.getItem("slovakgo.demo-xp")) {
-        apiClient.claimDemoCompletion()
-          .then(() => useAppStore.getState().refreshUser())
-          .finally(() => {
-            localStorage.removeItem("slovakgo.demo-xp");
-            localStorage.removeItem("slovakgo.demo-streak");
-          });
+        await apiClient.claimReferral(pendingReferral).catch(() => undefined);
+        localStorage.removeItem("slovakgo.pending-referral");
       }
 
-      if (isNew) {
-        navigate("/onboarding", { replace: true });
-      } else if (!full.user.onboardingDone) {
+      if (localStorage.getItem("slovakgo.demo-xp")) {
+        await apiClient.claimDemoCompletion().catch(() => undefined);
+        await useAppStore.getState().refreshUser();
+        localStorage.removeItem("slovakgo.demo-xp");
+        localStorage.removeItem("slovakgo.demo-streak");
+      }
+
+      if (cancelled) return;
+      const state = useAppStore.getState();
+      const user = state.data.users.find((item) => item.id === state.currentUserId);
+      if (!user) {
+        navigate("/login?error=google_failed", { replace: true });
+        return;
+      }
+
+      if (isNew || !user.onboardingDone) {
         navigate("/onboarding", { replace: true });
       } else {
-        navigate(roleHome(full.user.role), { replace: true });
+        navigate(roleHome(user.role), { replace: true });
       }
-    }).catch(() => {
-      navigate("/login?error=google_failed", { replace: true });
-    });
-  }, [isNew, navigate]);
+    }
+
+    finishGoogleLogin();
+    return () => { cancelled = true; };
+  }, [autoRestoreSession, isNew, navigate]);
 
   return (
     <main className="auth-screen">
