@@ -5,6 +5,46 @@ import {
   requireUid, respond, fail, rowToUser, ensureProgress, getUserWords, checkRole
 } from "./core";
 
+export async function handleTeacherStats(req: VercelRequest, res: VercelResponse): Promise<void> {
+  const uid = await requireUid(req, res); if (!uid) return;
+  if (!(await checkRole(uid, "teacher", "admin"))) return fail(res, "Недостатньо прав", 403);
+
+  const [studentRow, progressRows, lessonRows] = await Promise.all([
+    queryOne("SELECT COUNT(*) AS c FROM users WHERE role = 'student' AND is_blocked = 0"),
+    query("SELECT completed_j, mistakes_j FROM progress p JOIN users u ON u.id = p.user_id WHERE u.role = 'student' AND u.is_blocked = 0"),
+    query("SELECT id, data_json FROM lessons ORDER BY rowid"),
+  ]);
+
+  const completions = new Map<string, number>();
+  let mistakes = 0;
+  for (const row of progressRows) {
+    const completed = safeJson<string[]>(String(row.completed_j ?? "[]"), []);
+    for (const lessonId of completed) completions.set(lessonId, (completions.get(lessonId) ?? 0) + 1);
+    mistakes += safeJson<unknown[]>(String(row.mistakes_j ?? "[]"), []).length;
+  }
+
+  const lessons = lessonRows.map((row) => {
+    const lesson = safeJson<Record<string, unknown>>(String(row.data_json ?? "{}"), {});
+    return {
+      id: String(row.id),
+      title: lesson.title ?? String(row.id),
+      exercises: Array.isArray(lesson.exercises) ? lesson.exercises.length : 0,
+      completions: completions.get(String(row.id)) ?? 0,
+    };
+  });
+
+  respond(res, {
+    ok: true,
+    summary: {
+      students: Number(studentRow?.c ?? 0),
+      completions: Array.from(completions.values()).reduce((sum, value) => sum + value, 0),
+      mistakes,
+      lessons: lessonRows.length,
+    },
+    lessons,
+  });
+}
+
 export async function handleAdminStats(req: VercelRequest, res: VercelResponse): Promise<void> {
   const uid = await requireUid(req, res); if (!uid) return;
   if (!(await checkRole(uid, "admin"))) return fail(res, "Недостатньо прав", 403);
