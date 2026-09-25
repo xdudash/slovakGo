@@ -8,6 +8,7 @@ interface Props {
   schema?: object | object[];
   bodyClass?: string;
   keywords?: string[];
+  lang?: string;
 }
 
 const {
@@ -17,6 +18,7 @@ const {
   schema,
   bodyClass = '',
   keywords,
+  lang = 'uk',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -24,7 +26,7 @@ const currentPath  = Astro.url.pathname;
 ---
 
 <!doctype html>
-<html lang="uk">
+<html lang={lang}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
