@@ -2325,3 +2325,677 @@ details.faq-accordion-item[open] summary::after {
   }
 }
 }
+
+
+/* ========================================================================
+   2026 mobile-first marketing rebrand
+   Keeps the rest of the landing/blog/FAQ styles intact while giving the
+   homepage a dedicated, conversion-focused visual system.
+   ======================================================================== */
+
+.mobile-rebrand {
+  --mkt-ink: #17151f;
+  --mkt-muted: #6f6b75;
+  --mkt-orange: #ff5a18;
+  --mkt-orange-2: #ff7a28;
+  --mkt-orange-soft: #fff1e7;
+  --mkt-cream: #fffaf5;
+  --mkt-line: #ece6df;
+  --mkt-card: #ffffff;
+  --mkt-green: #1fb66a;
+  background: var(--mkt-cream);
+  color: var(--mkt-ink);
+}
+
+.mobile-rebrand .site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 250, 245, .92);
+  border-bottom: 1px solid rgba(236, 230, 223, .9);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.mobile-rebrand .nav-inner {
+  height: 62px;
+  padding: 0 16px;
+}
+
+.mobile-rebrand .nav-logo {
+  color: var(--mkt-ink);
+  font-family: var(--font-display);
+  font-size: .95rem;
+  letter-spacing: -.03em;
+}
+
+.mobile-rebrand .nav-logo img {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+}
+
+.mobile-rebrand .nav-links { display: none; }
+.mobile-rebrand .nav-actions .btn { display: none; }
+.mobile-rebrand .nav-actions .nav-login {
+  display: inline-flex;
+  color: var(--mkt-ink);
+  border: 1px solid var(--mkt-line);
+  background: #fff;
+}
+
+.mobile-rebrand .nav-mobile { display: block; }
+.mobile-rebrand .nav-mobile summary {
+  border: 1px solid var(--mkt-line);
+  background: #fff;
+  color: var(--mkt-ink);
+}
+
+.mobile-rebrand .site-footer {
+  background: #17151f;
+  padding: 26px 0;
+}
+
+.mkt { overflow: clip; }
+.mkt-shell {
+  width: min(100% - 32px, 1120px);
+  margin-inline: auto;
+}
+
+.mkt-hero {
+  position: relative;
+  padding: 34px 0 46px;
+  background:
+    radial-gradient(circle at 82% 12%, rgba(255, 90, 24, .12), transparent 30%),
+    linear-gradient(180deg, #fffdfa 0%, #fff8f1 100%);
+}
+
+.mkt-hero-grid {
+  display: grid;
+  gap: 34px;
+}
+
+.mkt-kicker,
+.mkt-eyebrow,
+.mkt-section-head > span {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: var(--mkt-orange-soft);
+  color: #b94410;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .01em;
+}
+
+.mkt-hero h1 {
+  margin-top: 16px;
+  max-width: 12ch;
+  font-family: var(--font-display);
+  font-size: clamp(2.35rem, 11vw, 4.8rem);
+  line-height: .98;
+  letter-spacing: -.055em;
+  color: var(--mkt-ink);
+}
+
+.mkt-hero h1 span {
+  display: block;
+  color: var(--mkt-orange);
+}
+
+.mkt-lead {
+  margin-top: 18px;
+  max-width: 38rem;
+  color: var(--mkt-muted);
+  font-size: 1rem;
+  line-height: 1.62;
+}
+
+.mkt-hero-actions {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.mkt-btn {
+  min-height: 52px;
+  padding: 14px 20px;
+  border-radius: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+}
+
+.mkt-btn:hover { transform: translateY(-1px); }
+.mkt-btn-primary {
+  background: linear-gradient(135deg, var(--mkt-orange), var(--mkt-orange-2));
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(255, 90, 24, .25);
+}
+.mkt-btn-ghost {
+  background: #fff;
+  color: var(--mkt-ink);
+  border: 1px solid var(--mkt-line);
+}
+.mkt-btn-light {
+  background: #fff;
+  color: var(--mkt-orange);
+}
+
+.mkt-text-link {
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mkt-ink);
+  font-weight: 800;
+}
+
+.mkt-trustline {
+  margin-top: 17px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 13px;
+  color: #817b83;
+  font-size: .78rem;
+  font-weight: 600;
+}
+
+.mkt-device-stage {
+  min-height: 430px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.mkt-phone {
+  width: min(236px, 68vw);
+  padding: 9px;
+  border-radius: 34px;
+  background: #17151f;
+  border: 1px solid #3a3540;
+  box-shadow: 0 26px 70px rgba(31, 24, 20, .25);
+  transform: rotate(4deg);
+  position: relative;
+  z-index: 3;
+}
+
+.mkt-phone-notch {
+  width: 42%;
+  height: 17px;
+  border-radius: 0 0 14px 14px;
+  background: #17151f;
+  position: absolute;
+  top: 7px;
+  left: 29%;
+  z-index: 2;
+}
+
+.mkt-phone img {
+  width: 100%;
+  border-radius: 26px;
+  display: block;
+}
+
+.mkt-bubble {
+  position: absolute;
+  z-index: 5;
+  min-width: 138px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(236,230,223,.9);
+  box-shadow: 0 14px 34px rgba(41, 32, 27, .12);
+  transform: rotate(-5deg);
+}
+
+.mkt-bubble strong,
+.mkt-bubble small { display: block; }
+.mkt-bubble strong { font-size: .9rem; }
+.mkt-bubble small { margin-top: 2px; color: var(--mkt-muted); font-size: .72rem; }
+.mkt-bubble-one { left: 1%; top: 12%; }
+.mkt-bubble-two { right: -1%; bottom: 16%; transform: rotate(6deg); }
+
+.mkt-orbit {
+  position: absolute;
+  border: 2px solid rgba(255, 90, 24, .48);
+  border-radius: 50%;
+}
+.mkt-orbit-a { width: 330px; height: 160px; transform: rotate(-18deg); }
+.mkt-orbit-b { width: 270px; height: 300px; border-style: dashed; opacity: .35; transform: rotate(16deg); }
+
+.mkt-proof {
+  padding: 18px 0 54px;
+  background: #fff;
+}
+
+.mkt-proof-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.mkt-proof article,
+.mkt-benefits article {
+  padding: 20px;
+  border: 1px solid var(--mkt-line);
+  border-radius: 22px;
+  background: var(--mkt-card);
+  box-shadow: 0 8px 24px rgba(34, 26, 20, .04);
+}
+
+.mkt-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: var(--mkt-orange-soft);
+  font-size: 1.1rem;
+}
+
+.mkt-proof h2,
+.mkt-benefits h3 {
+  margin-top: 13px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--mkt-ink);
+}
+
+.mkt-proof p,
+.mkt-benefits p {
+  margin-top: 7px;
+  color: var(--mkt-muted);
+  font-size: .88rem;
+  line-height: 1.55;
+}
+
+.mkt-section {
+  padding: 64px 0;
+  background: #fff;
+}
+
+.mkt-section-soft { background: #fff8f1; }
+
+.mkt-section-head {
+  margin-bottom: 30px;
+}
+
+.mkt-section-head h2,
+.mkt-showcase-copy h2,
+.mkt-final h2 {
+  margin-top: 13px;
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 8vw, 3.7rem);
+  line-height: 1.05;
+  letter-spacing: -.045em;
+  color: var(--mkt-ink);
+}
+
+.mkt-section-head p {
+  margin-top: 12px;
+  max-width: 40rem;
+  color: var(--mkt-muted);
+  line-height: 1.65;
+}
+
+.mkt-steps {
+  display: grid;
+  gap: 12px;
+}
+
+.mkt-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--mkt-line);
+}
+
+.mkt-step:last-child { border-bottom: 0; }
+
+.mkt-step-num {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--mkt-orange-soft);
+  color: var(--mkt-orange);
+  font-weight: 900;
+}
+
+.mkt-step h3 {
+  font-size: 1rem;
+  color: var(--mkt-ink);
+}
+
+.mkt-step p {
+  margin-top: 5px;
+  color: var(--mkt-muted);
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+.mkt-showcase {
+  padding: 62px 0 74px;
+  background: #17151f;
+  color: #fff;
+}
+
+.mkt-showcase-grid { display: grid; gap: 38px; }
+.mkt-showcase-copy h2 { color: #fff; }
+.mkt-showcase-copy > p {
+  margin-top: 14px;
+  color: #c8c2c6;
+  line-height: 1.65;
+}
+
+.mkt-showcase-copy ul,
+.mkt-price-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mkt-showcase-copy ul {
+  margin: 22px 0 0;
+  display: grid;
+  gap: 11px;
+}
+
+.mkt-showcase-copy li,
+.mkt-price-card li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.mkt-showcase-copy li { color: #f6f0ed; font-size: .9rem; }
+
+.mkt-screens {
+  min-height: 390px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.mkt-screen {
+  width: 160px;
+  position: absolute;
+  margin: 0;
+  padding: 6px;
+  border-radius: 27px;
+  background: #29242c;
+  box-shadow: 0 18px 50px rgba(0,0,0,.38);
+}
+
+.mkt-screen img {
+  border-radius: 22px;
+  width: 100%;
+}
+
+.mkt-screen-main { z-index: 3; transform: scale(1.08); }
+.mkt-screen-left { transform: translateX(-78px) rotate(-8deg) scale(.88); opacity: .78; }
+.mkt-screen-right { transform: translateX(78px) rotate(8deg) scale(.88); opacity: .78; }
+
+.mkt-benefits {
+  display: grid;
+  gap: 12px;
+}
+
+.mkt-benefits strong {
+  color: var(--mkt-orange);
+  font-size: .78rem;
+  letter-spacing: .08em;
+}
+
+.mkt-topic-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.mkt-topic-row div {
+  padding: 16px 14px;
+  border-radius: 17px;
+  border: 1px solid var(--mkt-line);
+  background: #fff;
+  font-weight: 800;
+  font-size: .9rem;
+}
+
+.mkt-pricing {
+  display: grid;
+  gap: 14px;
+}
+
+.mkt-price-card {
+  padding: 24px;
+  border: 1px solid var(--mkt-line);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(31, 24, 20, .05);
+}
+
+.mkt-price-card-featured {
+  border: 2px solid var(--mkt-orange);
+  box-shadow: 0 18px 42px rgba(255, 90, 24, .12);
+}
+
+.mkt-price-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mkt-price-label {
+  color: var(--mkt-orange);
+  font-size: .76rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.mkt-save {
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #ffe7da;
+  color: #c7420c;
+  font-size: .75rem;
+  font-weight: 900;
+}
+
+.mkt-price-card h3 {
+  margin-top: 12px;
+  color: var(--mkt-ink);
+  font-size: 1.05rem;
+}
+
+.mkt-price {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  color: var(--mkt-ink);
+  font-size: 2rem;
+  letter-spacing: -.04em;
+}
+
+.mkt-price small {
+  font-family: var(--font-body);
+  color: var(--mkt-muted);
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.mkt-price-note {
+  margin-top: 4px;
+  color: var(--mkt-orange);
+  font-size: .84rem;
+  font-weight: 700;
+}
+
+.mkt-price-card ul {
+  margin: 20px 0 22px;
+  display: grid;
+  gap: 10px;
+}
+
+.mkt-price-card li {
+  color: #49444c;
+  font-size: .9rem;
+}
+
+.mkt-price-card li .check,
+.mkt-showcase-copy li .check {
+  color: var(--mkt-green);
+  flex-shrink: 0;
+}
+
+.mkt-price-card .mkt-btn { width: 100%; }
+
+.mkt-billing-note {
+  margin: 16px auto 0;
+  max-width: 38rem;
+  text-align: center;
+  color: var(--mkt-muted);
+  font-size: .78rem;
+  line-height: 1.5;
+}
+
+.mkt-faq { background: #fff8f1; }
+.mkt-faq-list { display: grid; gap: 9px; }
+.mkt-faq-list details {
+  background: #fff;
+  border: 1px solid var(--mkt-line);
+  border-radius: 16px;
+  padding: 0 16px;
+}
+.mkt-faq-list summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 17px 28px 17px 0;
+  position: relative;
+  font-weight: 800;
+  color: var(--mkt-ink);
+}
+.mkt-faq-list summary::-webkit-details-marker { display: none; }
+.mkt-faq-list summary::after {
+  content: '+';
+  position: absolute;
+  top: 15px;
+  right: 0;
+  color: var(--mkt-orange);
+  font-size: 1.35rem;
+}
+.mkt-faq-list details[open] summary::after { content: '−'; }
+.mkt-faq-answer {
+  padding: 0 0 17px;
+  color: var(--mkt-muted);
+  line-height: 1.6;
+  font-size: .9rem;
+}
+
+.mkt-final {
+  padding: 56px 0;
+  background: linear-gradient(135deg, #ff5717, #ff7d2a);
+  color: #fff;
+}
+
+.mkt-final-inner { display: grid; gap: 22px; }
+.mkt-final span {
+  font-size: .78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  opacity: .8;
+}
+.mkt-final h2 { color: #fff; }
+.mkt-final p {
+  margin-top: 12px;
+  max-width: 36rem;
+  color: rgba(255,255,255,.83);
+}
+.mkt-final .mkt-btn { width: 100%; }
+
+@media (min-width: 560px) {
+  .mkt-shell { width: min(100% - 48px, 1120px); }
+  .mkt-hero-actions { display: flex; align-items: center; }
+  .mkt-btn { width: auto; }
+  .mkt-proof-grid { grid-template-columns: 1fr 1fr; }
+  .mkt-benefits { grid-template-columns: repeat(3, 1fr); }
+  .mkt-topic-row { grid-template-columns: repeat(3, 1fr); }
+  .mkt-pricing { grid-template-columns: 1fr 1fr; align-items: stretch; }
+  .mkt-final .mkt-btn { width: fit-content; }
+}
+
+@media (min-width: 820px) {
+  .mobile-rebrand .nav-inner { height: 70px; padding: 0 24px; }
+  .mobile-rebrand .nav-links { display: flex; }
+  .mobile-rebrand .nav-actions .btn { display: inline-flex; }
+  .mobile-rebrand .nav-mobile { display: none; }
+
+  .mkt-hero { padding: 72px 0 80px; }
+  .mkt-hero-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(380px, .95fr);
+    align-items: center;
+    gap: 64px;
+  }
+  .mkt-hero h1 { font-size: clamp(3.5rem, 6.4vw, 5.4rem); }
+  .mkt-lead { font-size: 1.1rem; }
+  .mkt-device-stage { min-height: 540px; }
+  .mkt-phone { width: 286px; }
+  .mkt-bubble-one { left: 0; }
+  .mkt-bubble-two { right: 0; }
+
+  .mkt-proof { padding: 26px 0 80px; }
+  .mkt-proof-grid { grid-template-columns: repeat(4, 1fr); }
+  .mkt-proof article { min-height: 190px; }
+
+  .mkt-section { padding: 96px 0; }
+  .mkt-steps { grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .mkt-step {
+    grid-template-columns: 1fr;
+    border: 0;
+    padding: 0;
+  }
+
+  .mkt-showcase { padding: 96px 0; }
+  .mkt-showcase-grid {
+    grid-template-columns: .85fr 1.15fr;
+    align-items: center;
+    gap: 74px;
+  }
+  .mkt-screens { min-height: 560px; }
+  .mkt-screen { width: 220px; }
+  .mkt-screen-left { transform: translateX(-118px) rotate(-8deg) scale(.86); }
+  .mkt-screen-right { transform: translateX(118px) rotate(8deg) scale(.86); }
+
+  .mkt-topic-row { grid-template-columns: repeat(6, 1fr); }
+  .mkt-topic-row div { min-height: 100px; display: flex; align-items: flex-end; }
+
+  .mkt-pricing { max-width: 760px; margin: 0 auto; }
+  .mkt-price-card { padding: 30px; }
+
+  .mkt-final { padding: 72px 0; }
+  .mkt-final-inner {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 54px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .mkt-proof article { padding: 24px; }
+  .mkt-benefits article { padding: 26px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mkt-btn { transition: none; }
+}
