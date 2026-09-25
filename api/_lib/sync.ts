@@ -92,6 +92,13 @@ async function getLessonVersion(role: string): Promise<string> {
   return `${privileged ? "all" : "published"}:${Number(row?.count ?? 0)}:${String(row?.updated_at ?? "empty")}`;
 }
 
+class StaleMutationError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "StaleMutationError";
+  }
+}
+
 export async function handleSyncPush(req: VercelRequest, res: VercelResponse, body: Record<string, unknown>): Promise<void> {
   const uid  = await requireUid(req, res);
   if (!uid) return;
@@ -103,6 +110,7 @@ export async function handleSyncPush(req: VercelRequest, res: VercelResponse, bo
     return fail(res, "Мутація належить іншому користувачу", 403);
   }
   let applied = 0;
+  let skipped = 0;
 
   for (const mut of muts) {
     if (!mut.id) continue;
@@ -113,16 +121,29 @@ export async function handleSyncPush(req: VercelRequest, res: VercelResponse, bo
       args: [logId, uid, String(mut.type ?? "").slice(0, 100), nowIso()],
     });
     if (claim.rowsAffected === 0) continue;
-    try { await processMutation(uid, mut); applied++; }
-    catch (err) { await exec("DELETE FROM sync_log WHERE mutation_id = ? AND user_id = ?", [logId, uid]); throw err; }
+    try {
+      await processMutation(uid, mut);
+      applied++;
+    } catch (err) {
+      if (err instanceof StaleMutationError) {
+        // The client may have queued a lesson completion while offline and the
+        // lesson may have been unpublished/deleted before the queue drains.
+        // Keep the mutation claimed so it is idempotently discarded and allow
+        // the rest of the batch to continue instead of poisoning the queue.
+        skipped++;
+        continue;
+      }
+      await exec("DELETE FROM sync_log WHERE mutation_id = ? AND user_id = ?", [logId, uid]);
+      throw err;
+    }
   }
   
-  if (applied > 0 && Math.random() < 0.05) {
+  if ((applied > 0 || skipped > 0) && Math.random() < 0.05) {
     const cutoff = new Date(Date.now() - 30 * 86400_000).toISOString().replace(/\.\d{3}Z$/, "Z");
     exec("DELETE FROM sync_log WHERE processed_at < ?", [cutoff]).catch(() => undefined);
   }
 
-  respond(res, { ok: true, applied });
+  respond(res, { ok: true, applied, skipped });
 }
 
 async function processMutation(uid: string, mut: Record<string, unknown>): Promise<void> {
@@ -221,7 +242,7 @@ async function mutProfileUpdate(uid: string, p: Record<string, unknown>): Promis
 async function mutLessonComplete(uid: string, p: Record<string, unknown>): Promise<void> {
   const lessonId = String(p.lessonId ?? "");
   const lessonRow = lessonId ? await queryOne("SELECT data_json FROM lessons WHERE id = ? AND published = 1 LIMIT 1", [lessonId]) : null;
-  if (!lessonRow) throw new Error("Unknown or unpublished lesson");
+  if (!lessonRow) throw new StaleMutationError("Unknown or unpublished lesson");
 
   const lesson = safeJson<Record<string, unknown>>(String(lessonRow.data_json), {});
   const exerciseCount = Array.isArray(lesson.exercises) ? lesson.exercises.length : 0;
