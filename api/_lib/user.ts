@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import bcrypt from "bcryptjs";
 import { randomUUID } from "node:crypto";
 import {
-  exec, query, queryOne, nowIso, safeJson, clientIp, currentWeekId,
+  exec, query, queryOne, nowIso, safeJson, clientIp, currentWeekId, ensureCol,
   requireUid, getUid, respond, fail
 } from "./core";
 
@@ -11,6 +11,7 @@ export async function handleUserEmail(req: VercelRequest, res: VercelResponse, b
   const email = String(body.email ?? "").toLowerCase().trim();
   const password = String(body.currentPassword ?? "");
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail(res, "Некоректний email", 422);
+  await ensureCol("users", "google_sub", "TEXT");
   const current = await queryOne("SELECT pw_hash, google_sub FROM users WHERE id = ? LIMIT 1", [uid]);
   const hash = String(current?.pw_hash ?? "");
   if (!hash && current?.google_sub)
@@ -29,6 +30,7 @@ export async function handleUserPassword(req: VercelRequest, res: VercelResponse
   const next = String(body.newPassword ?? body.password ?? "");
   if (next.length < 8 || !/[A-ZА-ЯІЇЄҐ]/.test(next) || !/[a-zа-яіїєґ]/.test(next) || !/\d/.test(next))
     return fail(res, "Пароль має містити мінімум 8 символів, велику та малу літеру і цифру", 422);
+  await ensureCol("users", "google_sub", "TEXT");
   const row  = await queryOne("SELECT pw_hash, google_sub FROM users WHERE id = ? LIMIT 1", [uid]);
   if (!row) return fail(res, "Користувача не знайдено", 404);
   const h = String(row.pw_hash ?? "");
