@@ -91,12 +91,21 @@ function isCachedLessonCatalogComplete(version: string | undefined, data: AppDat
 function mergeRemoteState(data: AppData, remote: RemoteState): AppData {
   const userId = remote.user.id;
   const users = data.users.filter((user) => user.id !== userId);
+  const localProgress = data.progress[userId];
+  const progress = {
+    ...remote.progress,
+    lessonAttempts: localProgress?.lessonAttempts ?? [],
+    achievements: progressService.achievements(
+      remote.progress.streakDays,
+      localProgress?.achievements ?? remote.progress.achievements ?? []
+    ),
+  };
   return {
     ...data,
     users: [...users, { ...remote.user, settings: { ...defaultSettings, ...remote.user.settings } }],
-    progress: { ...data.progress, [userId]: { ...remote.progress, lessonAttempts: data.progress[userId]?.lessonAttempts ?? [] } },
+    progress: { ...data.progress, [userId]: progress },
     userWords: { ...data.userWords, [userId]: remote.userWords },
-    lessons: remote.lessons?.length ? remote.lessons : data.lessons,
+    lessons: remote.lessons !== undefined ? remote.lessons : data.lessons,
   };
 }
 
@@ -133,12 +142,20 @@ export const useAppStore = create<AppStore>((set, get) => ({
       data = mergeRemoteState(data, fullState);
       data = await recoverSyncForUser(data, userId);
     } catch {
-      // syncPull failed — log in with local data so a server hiccup doesn't block the user
+      // Only fall back to an existing cached progress snapshot. Entering the app
+      // with a user object but no progress leaves the student UI in a permanent
+      // loading state and risks overwriting server progress with empty local data.
+      if (!data.progress[userId]) {
+        await apiClient.logout().catch(() => undefined);
+        set({ authError: "Не вдалося завантажити прогрес. Спробуй увійти ще раз." });
+        return null;
+      }
       const users = data.users.filter(u => u.id !== userId);
       data = {
         ...data,
         users: [...users, { ...serverUser, settings: { ...defaultSettings, ...serverUser.settings } }],
       };
+      data = await recoverSyncForUser(data, userId);
     }
 
     save(data);
@@ -192,11 +209,43 @@ export const useAppStore = create<AppStore>((set, get) => ({
 
     const tentativeId = `user-${crypto.randomUUID()}`;
     try {
-      await apiClient.register(tentativeId, payload.name.trim(), payload.email, payload.password, payload.goal);
+      const { user: raw } = await apiClient.register(tentativeId, payload.name.trim(), payload.email, payload.password, payload.goal);
+      const registeredUser = raw as User;
+      const userId = registeredUser.id;
+      let data = get().data;
 
-      const fullState = await apiClient.syncPull(0, false) as RemoteState;
-      const userId = fullState.user.id;
-      let data = mergeRemoteState(get().data, fullState);
+      try {
+        const fullState = await apiClient.syncPull(0, false) as RemoteState;
+        data = mergeRemoteState(data, fullState);
+      } catch {
+        const now = new Date().toISOString();
+        const users = data.users.filter((user) => user.id !== userId);
+        data = {
+          ...data,
+          users: [...users, { ...registeredUser, settings: { ...defaultSettings, ...registeredUser.settings } }],
+          progress: {
+            ...data.progress,
+            [userId]: {
+              userId,
+              currentLevel: registeredUser.level ?? "A0",
+              completedLessons: [],
+              lessonAttempts: [],
+              xpTotal: 0,
+              xpWeekly: 0,
+              hearts: 5,
+              maxHearts: 5,
+              streakDays: 0,
+              streakFreezeCount: 0,
+              coins: 0,
+              mistakes: [],
+              achievements: [],
+              xpDailyHistory: {},
+              updatedAt: now,
+            },
+          },
+          userWords: { ...data.userWords, [userId]: [] },
+        };
+      }
       data = await recoverSyncForUser(data, userId);
 
       save(data);
@@ -248,7 +297,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
       const response = await apiClient.lessonsPull(currentVersion);
       if (response.unchanged) return;
       const lessons = response.lessons as Lesson[] | undefined;
-      if (!lessons?.length) return;
+      if (lessons === undefined) return;
       const data = save({ ...get().data, lessons });
       storageService.setLessonVersion(response.version);
       set({ data });
