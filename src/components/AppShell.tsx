@@ -85,7 +85,7 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
             className="admin-preview-banner"
             onClick={() => { returnToAdmin(); navigate("/admin"); }}
           >
-            Перегляд як <strong>{currentUserName}</strong> — Повернутися в адмінку →
+            Перегляд як <strong>{currentUserName}</strong> · лише читання — Повернутися в адмінку →
           </button>
         )}
         <main className="app-main">{children || <Outlet />}</main>
