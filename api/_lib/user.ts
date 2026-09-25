@@ -68,6 +68,42 @@ export async function handleUserReminder(req: VercelRequest, res: VercelResponse
   respond(res, { ok: true });
 }
 
+export async function handleDemoComplete(req: VercelRequest, res: VercelResponse): Promise<void> {
+  const uid = await requireUid(req, res); if (!uid) return;
+  await ensureCol("progress", "demo_awarded", "INTEGER NOT NULL DEFAULT 0");
+  const prog = await queryOne("SELECT * FROM progress WHERE user_id = ? LIMIT 1", [uid]);
+  if (!prog) return fail(res, "Прогрес не знайдено", 404);
+  if (Number(prog.demo_awarded ?? 0)) return respond(res, { ok: true, awarded: false });
+
+  const reward = 50;
+  const today = new Date().toISOString().slice(0, 10);
+  const weekId = currentWeekId();
+  const xpWeekly = String(prog.week_id) === weekId ? Number(prog.xp_weekly) : 0;
+  const daily = safeJson<Record<string, number>>(String(prog.xp_daily_j ?? "{}"), {});
+  daily[today] = (daily[today] ?? 0) + reward;
+
+  const last = String(prog.last_prac ?? "");
+  let streak = Number(prog.streak_days);
+  let freeze = Number(prog.freeze_cnt);
+  if (last !== today) {
+    if (!last) streak = 1;
+    else {
+      const yesterday = new Date(Date.now() - 86400_000).toISOString().slice(0, 10);
+      if (last === yesterday) streak += 1;
+      else if (freeze > 0) freeze -= 1;
+      else streak = 1;
+    }
+  }
+
+  await exec(
+    `UPDATE progress SET xp_total = xp_total + ?, xp_weekly = ?, xp_daily_j = ?, week_id = ?,
+       streak_days = ?, freeze_cnt = ?, last_prac = ?, demo_awarded = 1, updated_at = ?
+     WHERE user_id = ?`,
+    [reward, xpWeekly + reward, JSON.stringify(daily), weekId, streak, freeze, today, nowIso(), uid]
+  );
+  respond(res, { ok: true, awarded: true });
+}
+
 export async function handleUserReferral(req: VercelRequest, res: VercelResponse, body: Record<string, unknown>): Promise<void> {
   const uid = await requireUid(req, res); if (!uid) return;
   const referrerId = String(body.referrerId ?? "").trim();
