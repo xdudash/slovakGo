@@ -1,4 +1,4 @@
-import type { SyncMutation } from "../types";
+import type { Progress, SyncMutation, User, UserWord } from "../types";
 
 const configuredBase = import.meta.env.VITE_API_BASE_URL as string | undefined;
 export const API_BASE_URL = (configuredBase || `${import.meta.env.BASE_URL}api`).replace(/\/$/, "");
@@ -214,18 +214,9 @@ export const apiClient = {
   getAdminUser(id: string) {
     return apiRequest<{
       ok: boolean;
-      user: {
-        id: string; email: string; name: string; avatar: string | null;
-        role: string; level: string; country: string;
-        subscriptionStatus: string; isBlocked: boolean;
-        createdAt: string; lastSeenAt: string | null;
-      };
-      progress: {
-        xpTotal: number; xpWeekly: number; xpDailyHistory: Record<string, number>;
-        streakDays: number; completedLessons: string[]; mistakes: string[];
-        hearts: number; maxHearts: number; lastPracticeDate: string | null;
-        streakFreezeCount: number;
-      };
+      user: User;
+      progress: Progress;
+      userWords: UserWord[];
     }>(`/admin/users/${id}`);
   },
 
