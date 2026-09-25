@@ -224,7 +224,7 @@ export async function handleAdminUsers(req: VercelRequest, res: VercelResponse):
 
   const [rows, totalRow] = await Promise.all([
     query(
-      `SELECT u.id, u.email, u.name_text, u.role, u.level, u.avatar,
+      `SELECT u.id, u.email, u.name_text, u.role, u.level, u.avatar, u.country,
               u.sub_status, u.is_blocked, u.created_at, u.updated_at,
               COALESCE(p.xp_total, 0)    AS xp_total,
               COALESCE(p.streak_days, 0) AS streak_days,
@@ -246,9 +246,11 @@ export async function handleAdminUsers(req: VercelRequest, res: VercelResponse):
       role:               String(r.role),
       level:              String(r.level),
       avatar:             r.avatar ? String(r.avatar) : null,
+      country:            r.country ? String(r.country) : "",
       subscriptionStatus: String(r.sub_status),
       isBlocked:          Boolean(r.is_blocked),
       createdAt:          String(r.created_at),
+      lastSeenAt:         String(r.updated_at),
       updatedAt:          String(r.updated_at),
       xpTotal:            Number(r.xp_total),
       streakDays:         Number(r.streak_days),
