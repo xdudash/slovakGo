@@ -97,6 +97,9 @@ export async function handleSyncPush(req: VercelRequest, res: VercelResponse, bo
   if (muts.length > 100) return fail(res, "Забагато мутацій", 413);
   const supported = new Set(["profile.update", "lesson.complete", "exercise.wrong", "word.update", "practice.complete", "hearts.restore", "lesson.upsert", "lesson.delete", "admin.user.update"]);
   if (muts.some(mut => !supported.has(String(mut.type ?? "")))) return fail(res, "Непідтримувана мутація", 422);
+  if (muts.some(mut => mut.userId !== undefined && String(mut.userId) !== uid)) {
+    return fail(res, "Мутація належить іншому користувачу", 403);
+  }
   let applied = 0;
 
   for (const mut of muts) {
