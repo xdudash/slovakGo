@@ -1801,7 +1801,13 @@ function PracticeScreen() {
   function startSession() {
     // SR-ordered word selection: due/overdue first, then mistakes, then new
     const adaptiveWords = srService.selectWords(allWords, sessionCount);
-    const ex = practiceService.generate(adaptiveWords, allWords, sessionCount, types);
+    const ex = practiceService.generate(
+      adaptiveWords,
+      allWords,
+      sessionCount,
+      types,
+      (word) => resolveText(word.translation, lang, "uk") || word.uk
+    );
     setExercises(ex);
     setIndex(0);
     setSessionAnswers([]);
