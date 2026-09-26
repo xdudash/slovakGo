@@ -36,6 +36,10 @@ export function setGuestLanguage(lang: Locale) {
 }
 
 if (typeof document !== 'undefined') {
+  const requestedLanguage = new URLSearchParams(window.location.search).get('lang');
+  if (requestedLanguage && ['uk', 'ru', 'en', 'sk'].includes(requestedLanguage)) {
+    try { localStorage.setItem('slovakgo.guest-lang', requestedLanguage); } catch { /* Storage may be disabled. */ }
+  }
   document.documentElement.lang = getGuestLanguage();
 }
 

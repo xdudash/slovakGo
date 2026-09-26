@@ -57,8 +57,8 @@ const content = {
     pricing: {
       title: "Спочатку спробуй навчання на практиці",
       desc: "Перші 5 уроків доступні без оплати. Потім — 3 дні повного доступу та вибір зручного тарифу.",
-      monthly: { badge: "Базовий", title: "Щомісячний", price: "€9,99", period: "/міс", text: "Гнучка оплата щомісяця" },
-      yearly: { badge: "3 дні пробного доступу", title: "Річний", price: "€4,99", period: "/міс", text: "Оплата €59,88 раз на рік (Економія 50%)" },
+      monthly: { badge: "Базовий", title: "Щомісячний", price: "€3", period: "/міс", text: "Гнучка оплата щомісяця" },
+      yearly: { badge: "3 дні пробного доступу", title: "Річний", price: "€20", period: "/рік", text: "Оплата €20 раз на рік" },
       f1: "Безлімітні серця", f2: "Офлайн доступ до уроків", f3: "Розширена аналітика", f4: "Пріоритетна підтримка",
       cta: "Почати навчання безкоштовно",
     },
@@ -138,8 +138,8 @@ const content = {
     pricing: {
       title: "Сначала попробуй обучение на практике",
       desc: "Первые 5 уроков доступны без оплаты. Затем — 3 дня полного доступа и выбор удобного тарифа.",
-      monthly: { badge: "Базовый", title: "Ежемесячный", price: "€9,99", period: "/мес", text: "Гибкая оплата каждый месяц" },
-      yearly: { badge: "3 дня пробного доступа", title: "Годовой", price: "€4,99", period: "/мес", text: "Оплата €59,88 раз в год (Экономия 50%)" },
+      monthly: { badge: "Базовый", title: "Ежемесячный", price: "€3", period: "/мес", text: "Гибкая оплата каждый месяц" },
+      yearly: { badge: "3 дня пробного доступа", title: "Годовой", price: "€20", period: "/год", text: "Оплата €20 раз в год" },
       f1: "Безлимитные сердца", f2: "Офлайн доступ к урокам", f3: "Расширенная аналитика", f4: "Приоритетная поддержка",
       cta: "Начать обучение бесплатно",
     },
@@ -370,7 +370,7 @@ export function LandingPage() {
           <p>{t.pricing.desc}</p>
         </div>
         <div className="pricing-cards">
-          <div className="price-card basic">
+          <div className="price-card plus-premium">
             <div className="badge">{t.pricing.monthly.badge}</div>
             <h3>{t.pricing.monthly.title}</h3>
             <div className="price">{t.pricing.monthly.price}<span>{t.pricing.monthly.period}</span></div>
@@ -381,10 +381,10 @@ export function LandingPage() {
               <li><CheckCircle2 size={18} /> {t.pricing.f3}</li>
               <li><CheckCircle2 size={18} /> {t.pricing.f4}</li>
             </ul>
-            <Link to="/demo?plan=monthly" className="btn btn-secondary">{t.pricing.cta}</Link>
+            <Link to="/register" className="btn btn-primary">{t.pricing.cta}</Link>
           </div>
-          <div className="price-card plus-premium">
-            <div className="badge popular">{t.pricing.yearly.badge}</div>
+          <div className="price-card basic">
+            <div className="badge">{t.pricing.yearly.badge}</div>
             <h3>{t.pricing.yearly.title}</h3>
             <div className="price">{t.pricing.yearly.price}<span>{t.pricing.yearly.period}</span></div>
             <p className="price-desc highlight">{t.pricing.yearly.text}</p>
@@ -394,7 +394,7 @@ export function LandingPage() {
               <li><CheckCircle2 size={18} /> {t.pricing.f3}</li>
               <li><CheckCircle2 size={18} /> {t.pricing.f4}</li>
             </ul>
-            <Link to="/demo?plan=yearly" className="btn btn-primary btn-glow">{t.pricing.cta}</Link>
+            <Link to="/register" className="btn btn-secondary">{t.pricing.cta}</Link>
           </div>
         </div>
       </section>

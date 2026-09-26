@@ -3057,7 +3057,7 @@ export function PaywallScreen() {
               {loading ? "Завантаження…" : "Почати 3 дні пробного доступу"}
             </Button>
             <div style={{ textAlign: "center", fontSize: "0.8rem", color: "var(--muted)", marginTop: "4px" }}>
-              💳 Потрібна картка. Через 3 дні підписка продовжиться за €9,99/місяць, якщо її не скасувати.
+              💳 Потрібна картка. Через 3 дні підписка продовжиться за €3/місяць, якщо її не скасувати.
             </div>
           </>
         ) : (
@@ -3066,7 +3066,7 @@ export function PaywallScreen() {
               🔒 <strong>Пробний період завершився або був використаний.</strong> Будь ласка, оформіть підписку, щоб продовжити навчання.
             </div>
             <Button onClick={handleSubscribe} disabled={loading} style={{ width: "100%" }}>
-              {loading ? "Завантаження…" : "Оформити підписку (€9,99/міс)"}
+              {loading ? "Завантаження…" : "Оформити підписку (€3/міс)"}
             </Button>
           </>
         )}
@@ -3074,7 +3074,7 @@ export function PaywallScreen() {
 
       <div style={{ textAlign: "center", marginTop: "24px" }}>
         <p style={{ fontSize: "0.8rem", color: "var(--muted)", margin: "0 0 16px 0" }}>
-          Після пробного періоду — €9,99/місяць. Скасувати можна в будь-який момент через кабінет Stripe.
+          Після пробного періоду — €3/місяць. Скасувати можна в будь-який момент через кабінет Stripe.
         </p>
         <div style={{ display: "flex", justifyContent: "center", gap: "16px" }}>
           <button
@@ -3187,7 +3187,7 @@ function ShopScreen() {
       <Card className="shop-card shop-card--main">
         <div className="shop-card-header">
           <Trophy size={48} className="shop-icon-main" />
-          <div className="shop-price-tag">€9,99<span>/міс</span></div>
+          <div className="shop-price-tag">€3<span>/міс</span></div>
         </div>
         <h2>{t("student.shop.product")}</h2>
         <p>{t("student.shop.desc")}</p>
@@ -3231,16 +3231,13 @@ function ShopScreen() {
             </Button>
           </div>
           : <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "24px" }}>
-              <Button variant="primary" disabled={loading} onClick={() => handleSubscribe("yearly")} className="shop-btn-buy">
-                {loading
-                  ? t("student.shop.btn_loading")
-                  : (user?.hasUsedTrial
-                    ? "Річний тариф (€59,88/рік)"
-                    : "Спробувати 3 дні безкоштовно")}
+              <Button variant="primary" disabled={loading} onClick={() => handleSubscribe("monthly")} className="shop-btn-buy">
+                {loading ? t("student.shop.btn_loading") : t(user?.hasUsedTrial ? "student.shop.monthly_plan" : "student.shop.trial_monthly")}
               </Button>
-              <Button variant="secondary" disabled={loading} onClick={() => handleSubscribe("monthly")} className="shop-btn-buy">
-                {loading ? t("student.shop.btn_loading") : "Щомісячний тариф (€9,99/міс)"}
+              <Button variant="secondary" disabled={loading} onClick={() => handleSubscribe("yearly")} className="shop-btn-buy">
+                {loading ? t("student.shop.btn_loading") : t("student.shop.yearly_plan")}
               </Button>
+              <p className="muted text-center sm">{t("student.shop.trial_terms")}</p>
             </div>
         }
       </Card>

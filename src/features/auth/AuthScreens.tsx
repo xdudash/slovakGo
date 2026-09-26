@@ -129,7 +129,6 @@ export function Register() {
   const [searchParams] = useSearchParams();
   const refParam = searchParams.get("ref");
   const demoDoneParam = searchParams.get("demoDone") === "true";
-  const isRu = lang === "ru";
 
   const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
@@ -173,12 +172,12 @@ export function Register() {
 
   return (
     <AuthShell
-      title={isRu ? "Сохранить прогресс" : t("auth.register_title")}
-      text={isRu ? "Создайте профиль за 10 секунд, чтобы сохранить 50 XP и продолжить." : "Створи профіль за 10 секунд, щоб зберегти свій результат."}
+      title={t("auth.register_title")}
+      text={t("auth.register_subtitle")}
     >
       {demoDoneParam && (
         <div className="referred-banner" style={{ background: "#ecfdf5", border: "1px solid #10b981", color: "#065f46" }}>
-          🎉 {isRu ? "Демо-урок пройден (+50 XP)! Введите email и пароль, чтобы сохранить результат." : "Демо-урок пройдено (+50 XP)! Введи email та пароль, щоб зберегти свій результат."}
+          🎉 {t("auth.demo_completed")}
         </div>
       )}
       {refParam && (
@@ -192,21 +191,21 @@ export function Register() {
         {authError ? <p className="error-text">{authError}</p> : null}
         <Button type="submit" disabled={loading} loading={loading}>
           {loading
-            ? (isRu ? "Создаем аккаунт…" : "Створюємо акаунт…")
+            ? t("auth.creating")
             : (demoDoneParam
-                ? (isRu ? "Сохранить прогресс и продолжить" : "Зберегти прогрес та продовжити")
+                ? t("auth.save_continue")
                 : t("auth.create_account")
               )
           }
         </Button>
       </form>
-      <div className="auth-divider"><span>{isRu ? "или" : "або"}</span></div>
+      <div className="auth-divider"><span>{t("auth.or")}</span></div>
       <button type="button" className="btn btn-google" onClick={() => {
         if (refParam) localStorage.setItem("slovakgo.pending-referral", refParam);
         window.location.href = "/api/auth/google/start";
       }}>
         <GoogleIcon />
-        {isRu ? "Войти через Google" : "Зареєструватися через Google"}
+        {t("auth.google_register")}
       </button>
       <p className="auth-link">{t("auth.has_account")} <Link to="/login">{t("auth.sign_in")}</Link></p>
     </AuthShell>
