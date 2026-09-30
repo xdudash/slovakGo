@@ -1,0 +1,812 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u01-l10-citame-mesto",
+      "sectionId": "a0-u01",
+      "level": "A0",
+      "title": "Підсумок: читаю місто",
+      "topic": "Абетка і звуки",
+      "description": "Підсумковий урок розділу: читаємо назви важливих місць і застосовуємо всі правила вимови.",
+      "order": 10,
+      "xpReward": 15,
+      "estimatedMinutes": 20,
+      "isPublished": true,
+      "intro": "Упевнено читати назви місць у місті й повторити всі звуки розділу.",
+      "completionMessage": "Розділ «Абетка і звуки» завершено! Ти читаєш словацьку. Далі — привітання та ввічливість.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Абетка і звуки",
+        "title": "Підсумок: читаю місто",
+        "shortDescription": "Упевнено читати назви місць у місті й повторити всі звуки розділу.",
+        "outcomes": [
+          "читати назви аптеки, пошти, продуктового магазину",
+          "застосовувати всі правила вимови",
+          "розуміти короткі написи в місті"
+        ],
+        "newWords": [
+          "lekáreň",
+          "potraviny",
+          "pošta",
+          "zastávka",
+          "námestie",
+          "centrum"
+        ],
+        "exercisesCount": 13,
+        "reward": "+15 XP",
+        "estimatedMinutes": 20,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Місця в місті",
+          "text": "Ці слова ти побачиш на вивісках у будь-якому словацькому місті. Прочитай їх, застосовуючи правила: ch = х, c = ц, ô = уо, ie = іє, довгі голосні.",
+          "examples": [
+            {
+              "sk": "lekáreň",
+              "uk": "аптека"
+            },
+            {
+              "sk": "potraviny",
+              "uk": "продукти"
+            },
+            {
+              "sk": "pošta",
+              "uk": "пошта"
+            },
+            {
+              "sk": "zastávka",
+              "uk": "зупинка"
+            },
+            {
+              "sk": "námestie",
+              "uk": "площа"
+            },
+            {
+              "sk": "centrum",
+              "uk": "центр"
+            }
+          ],
+          "shortRule": "Читай за правилами — і назва відкриється.",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Повторюємо пастки",
+          "text": "Найчастіші помилки українців: читати h як «х», y як «и», c як «к», e як «є». Перевір себе.",
+          "examples": [
+            {
+              "sk": "hotel",
+              "uk": "готель"
+            },
+            {
+              "sk": "cesta",
+              "uk": "дорога"
+            },
+            {
+              "sk": "syr",
+              "uk": "сир"
+            }
+          ],
+          "shortRule": "h = г, c = ц, y = і, e = е",
+          "commonMistakes": [
+            {
+              "mistake": "hotel як «хотел»",
+              "correct": "hotel = «готел»"
+            },
+            {
+              "mistake": "syr як «сир» з «и»",
+              "correct": "syr = «сір»"
+            },
+            {
+              "mistake": "cesta як «кеста»",
+              "correct": "cesta = «цеста»"
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Коротко: що ти вже вмієш",
+          "text": "Ти знаєш усі літери, довгі та м’які звуки, дифтонги, числа 0–10 і найважливіші написи. Цього достатньо, щоб прочитати будь-яку вивіску.",
+          "examples": [
+            {
+              "sk": "Lekáreň je otvorená.",
+              "uk": "Аптека відчинена."
+            },
+            {
+              "sk": "Pošta je zatvorená.",
+              "uk": "Пошта зачинена."
+            }
+          ],
+          "shortRule": "Ти вже читаєш словацьку!",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u01-l10-citame-mesto-w01",
+            "sk": "lekáreň",
+            "uk": "аптека",
+            "pronunciationUk": "лєка:рень",
+            "exampleSk": "Lekáreň je za rohom.",
+            "exampleUk": "Аптека за рогом."
+          },
+          {
+            "wordId": "a0-u01-l10-citame-mesto-w02",
+            "sk": "potraviny",
+            "uk": "продуктовий магазин",
+            "pronunciationUk": "потравіні",
+            "exampleSk": "Idem do potravín.",
+            "exampleUk": "Я йду в продуктовий."
+          },
+          {
+            "wordId": "a0-u01-l10-citame-mesto-w03",
+            "sk": "pošta",
+            "uk": "пошта",
+            "pronunciationUk": "пошта",
+            "exampleSk": "Pošta je na námestí.",
+            "exampleUk": "Пошта на площі."
+          },
+          {
+            "wordId": "a0-u01-l10-citame-mesto-w04",
+            "sk": "zastávka",
+            "uk": "зупинка",
+            "pronunciationUk": "заста:вка",
+            "exampleSk": "Zastávka je oproti.",
+            "exampleUk": "Зупинка навпроти."
+          },
+          {
+            "wordId": "a0-u01-l10-citame-mesto-w05",
+            "sk": "námestie",
+            "uk": "площа",
+            "pronunciationUk": "на:местіє",
+            "exampleSk": "Stretneme sa na námestí.",
+            "exampleUk": "Зустрінемося на площі."
+          },
+          {
+            "wordId": "a0-u01-l10-citame-mesto-w06",
+            "sk": "centrum",
+            "uk": "центр",
+            "pronunciationUk": "центрум",
+            "exampleSk": "Bývam v centre.",
+            "exampleUk": "Я живу в центрі."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u01-l10-citame-mesto-w01",
+          "sk": "lekáreň",
+          "uk": "аптека",
+          "pronunciationUk": "лєка:рень",
+          "exampleSk": "Lekáreň je za rohom.",
+          "exampleUk": "Аптека за рогом.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l10-citame-mesto-w02",
+          "sk": "potraviny",
+          "uk": "продуктовий магазин",
+          "pronunciationUk": "потравіні",
+          "exampleSk": "Idem do potravín.",
+          "exampleUk": "Я йду в продуктовий.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l10-citame-mesto-w03",
+          "sk": "pošta",
+          "uk": "пошта",
+          "pronunciationUk": "пошта",
+          "exampleSk": "Pošta je na námestí.",
+          "exampleUk": "Пошта на площі.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l10-citame-mesto-w04",
+          "sk": "zastávka",
+          "uk": "зупинка",
+          "pronunciationUk": "заста:вка",
+          "exampleSk": "Zastávka je oproti.",
+          "exampleUk": "Зупинка навпроти.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l10-citame-mesto-w05",
+          "sk": "námestie",
+          "uk": "площа",
+          "pronunciationUk": "на:местіє",
+          "exampleSk": "Stretneme sa na námestí.",
+          "exampleUk": "Зустрінемося на площі.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l10-citame-mesto-w06",
+          "sk": "centrum",
+          "uk": "центр",
+          "pronunciationUk": "центрум",
+          "exampleSk": "Bývam v centre.",
+          "exampleUk": "Я живу в центрі.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u01-l10-citame-mesto-ex01",
+          "lessonId": "a0-u01-l10-citame-mesto",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай вивіску з перекладом.",
+          "pairs": [
+            {
+              "left": "lekáreň",
+              "right": "аптека"
+            },
+            {
+              "left": "potraviny",
+              "right": "продукти"
+            },
+            {
+              "left": "pošta",
+              "right": "пошта"
+            },
+            {
+              "left": "zastávka",
+              "right": "зупинка"
+            },
+            {
+              "left": "námestie",
+              "right": "площа"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a0-u01-l10-citame-mesto-w01",
+            "a0-u01-l10-citame-mesto-w02",
+            "a0-u01-l10-citame-mesto-w03",
+            "a0-u01-l10-citame-mesto-w04",
+            "a0-u01-l10-citame-mesto-w05"
+          ]
+        },
+        {
+          "id": "a0-u01-l10-citame-mesto-ex02",
+          "lessonId": "a0-u01-l10-citame-mesto",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Як правильно прочитати «lekáreň»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "ЛЕ-ка-рен твердо",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "ЛЄ-ка:-рень",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "ле-КА-рен",
+              "correct": false
+            }
+          ],
+          "explanation": "le — м’яко «лє», á — довге, ň — м’яке «нь», наголос на першому складі.",
+          "order": 2
+        },
+        {
+          "id": "a0-u01-l10-citame-mesto-ex03",
+          "lessonId": "a0-u01-l10-citame-mesto",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Де купити ліки?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "potraviny",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "zastávka",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "pošta",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "lekáreň",
+              "correct": true
+            }
+          ],
+          "explanation": "lekáreň — аптека.",
+          "order": 3,
+          "wordIds": [
+            "a0-u01-l10-citame-mesto-w01",
+            "a0-u01-l10-citame-mesto-w02",
+            "a0-u01-l10-citame-mesto-w03",
+            "a0-u01-l10-citame-mesto-w04"
+          ]
+        },
+        {
+          "id": "a0-u01-l10-citame-mesto-ex04",
+          "lessonId": "a0-u01-l10-citame-mesto",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Idem do potravín»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Я йду в продуктовий магазин",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Я йду на пошту",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Я йду на зупинку",
+              "correct": false
+            }
+          ],
+          "explanation": "potraviny — продуктовий магазин (у формі do potravín).",
+          "order": 4
+        },
+        {
+          "id": "a0-u01-l10-citame-mesto-ex05",
+          "lessonId": "a0-u01-l10-citame-mesto",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і оціни кожне твердження.",
+          "text": "Pošta je na námestí. Lekáreň je za rohom. Zastávka je oproti pošte. Potraviny sú dnes zatvorené.",
+          "statements": [
+            {
+              "sk": "Пошта на площі.",
+              "correct": true
+            },
+            {
+              "sk": "Аптека на площі.",
+              "correct": false
+            },
+            {
+              "sk": "Зупинка навпроти пошти.",
+              "correct": true
+            },
+            {
+              "sk": "Продуктовий сьогодні відчинений.",
+              "correct": false
+            }
+          ],
+          "order": 5,
+          "wordIds": [
+            "a0-u01-l10-citame-mesto-w01",
+            "a0-u01-l10-citame-mesto-w02",
+            "a0-u01-l10-citame-mesto-w03",
+            "a0-u01-l10-citame-mesto-w04",
+            "a0-u01-l10-citame-mesto-w05"
+          ]
+        },
+        {
+          "id": "a0-u01-l10-citame-mesto-ex06",
+          "lessonId": "a0-u01-l10-citame-mesto",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що тут можна зробити?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Купити"
+            },
+            {
+              "id": "c2",
+              "title": "Поїхати"
+            },
+            {
+              "id": "c3",
+              "title": "Відправити лист"
+            }
+          ],
+          "items": [
+            {
+              "sk": "lekáreň",
+              "category": "c1"
+            },
+            {
+              "sk": "potraviny",
+              "category": "c1"
+            },
+            {
+              "sk": "zastávka",
+              "category": "c2"
+            },
+            {
+              "sk": "stanica",
+              "category": "c2"
+            },
+            {
+              "sk": "trh",
+              "category": "c1"
+            },
+            {
+              "sk": "pošta",
+              "category": "c3"
+            }
+          ],
+          "explanation": "Співвіднеси місце з дією.",
+          "order": 6,
+          "wordIds": [
+            "a0-u01-l10-citame-mesto-w01",
+            "a0-u01-l10-citame-mesto-w02",
+            "a0-u01-l10-citame-mesto-w03",
+            "a0-u01-l10-citame-mesto-w04"
+          ]
+        },
+        {
+          "id": "a0-u01-l10-citame-mesto-ex07",
+          "lessonId": "a0-u01-l10-citame-mesto",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери слова, де h читається як «г».",
+          "options": [
+            {
+              "id": "a",
+              "sk": "chyba",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "hudba",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "hotel",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "hora",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "chata",
+              "correct": false
+            },
+            {
+              "id": "f",
+              "sk": "chlieb",
+              "correct": false
+            }
+          ],
+          "explanation": "h = «г»; ch = «х».",
+          "order": 7
+        },
+        {
+          "id": "a0-u01-l10-citame-mesto-ex08",
+          "lessonId": "a0-u01-l10-citame-mesto",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Ти бачиш «PRÁČOVŇA». Прочитай за правилами: як звучить «č»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "ч",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "к",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "ц",
+              "correct": false
+            }
+          ],
+          "explanation": "č із гачком — «ч». (Práčovňa — пральня.)",
+          "order": 8
+        },
+        {
+          "id": "a0-u01-l10-citame-mesto-ex09",
+          "lessonId": "a0-u01-l10-citame-mesto",
+          "type": "drag_to_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильне написання.",
+          "sentence": "Kde je ______?",
+          "draggable": [
+            "lékaren",
+            "lekaren",
+            "lekáreň"
+          ],
+          "correct": "lekáreň",
+          "explanation": "lekáreň: довге á на другому складі й м’яке ň у кінці.",
+          "order": 9,
+          "wordIds": [
+            "a0-u01-l10-citame-mesto-w01"
+          ]
+        },
+        {
+          "id": "a0-u01-l10-citame-mesto-ex10",
+          "lessonId": "a0-u01-l10-citame-mesto",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильне місце.",
+          "sentenceParts": [
+            {
+              "text": "Na autobus čakám na "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "lekárni",
+                "pošte",
+                "zastávke"
+              ],
+              "correct": "zastávke"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "На автобус чекають на зупинці — na zastávke.",
+          "order": 10,
+          "wordIds": [
+            "a0-u01-l10-citame-mesto-w01",
+            "a0-u01-l10-citame-mesto-w03",
+            "a0-u01-l10-citame-mesto-w04"
+          ]
+        },
+        {
+          "id": "a0-u01-l10-citame-mesto-ex11",
+          "lessonId": "a0-u01-l10-citame-mesto",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Табличка «LEKÁREŇ – OTVORENÉ 24 HODÍN». Що це означає?",
+          "options": [
+            {
+              "id": "a",
+              "text": "аптека зачинена",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "аптека відчиняється о 24:00",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "аптека працює цілодобово",
+              "correct": true
+            }
+          ],
+          "explanation": "otvorené 24 hodín — відчинено 24 години, цілодобово.",
+          "order": 11
+        },
+        {
+          "id": "a0-u01-l10-citame-mesto-ex12",
+          "lessonId": "a0-u01-l10-citame-mesto",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Námestie» — це площа в центрі міста.",
+          "correctAnswer": true,
+          "explanation": "námestie — площа. Stretneme sa na námestí — зустрінемося на площі.",
+          "order": 12,
+          "wordIds": [
+            "a0-u01-l10-citame-mesto-w05"
+          ]
+        },
+        {
+          "id": "a0-u01-l10-citame-mesto-ex13",
+          "lessonId": "a0-u01-l10-citame-mesto",
+          "type": "sentence_builder",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Склади речення зі слів.",
+          "tokens": [
+            "na",
+            "námestí",
+            ".",
+            "Pošta",
+            "je"
+          ],
+          "correctSentence": "Pošta je na námestí.",
+          "explanation": "Базовий порядок: хто/що — je — де.",
+          "order": 13,
+          "wordIds": [
+            "a0-u01-l10-citame-mesto-w03",
+            "a0-u01-l10-citame-mesto-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перша прогулянка містом",
+        "description": "Ти орієнтуєшся в новому місті лише за вивісками. Знайди потрібні місця.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Тобі потрібні ліки. Яку вивіску шукаєш?",
+            "options": [
+              {
+                "text": "POŠTA",
+                "correct": false
+              },
+              {
+                "text": "POTRAVINY",
+                "correct": false
+              },
+              {
+                "text": "LEKÁREŇ",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Треба купити хліб і молоко. Куди йти?",
+            "options": [
+              {
+                "text": "LEKÁREŇ",
+                "correct": false
+              },
+              {
+                "text": "ZASTÁVKA",
+                "correct": false
+              },
+              {
+                "text": "POTRAVINY",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Знайомий пише: «Čakám ťa na zastávke». Де він?",
+            "options": [
+              {
+                "text": "на зупинці",
+                "correct": true
+              },
+              {
+                "text": "на площі",
+                "correct": false
+              },
+              {
+                "text": "на пошті",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти хочеш відправити посилку додому. Куди підеш?",
+            "options": [
+              {
+                "text": "NÁMESTIE",
+                "correct": false
+              },
+              {
+                "text": "POŠTA",
+                "correct": true
+              },
+              {
+                "text": "CENTRUM",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Розділ «Абетка і звуки» завершено! Ти читаєш словацьку. Далі — привітання та ввічливість."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Розділ «Абетка і звуки» завершено! Ти читаєш словацьку. Далі — привітання та ввічливість.",
+        "nowYouKnow": [
+          "lekáreň, potraviny, pošta, zastávka, námestie, centrum",
+          "читаю будь-яку вивіску",
+          "уникаю пасток h, c, y, e"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 13,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ]
+      }
+    }
+  ]
+}
