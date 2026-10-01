@@ -1,0 +1,782 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u04-l05-kolko-je-hodin",
+      "sectionId": "a0-u04",
+      "level": "A0",
+      "title": "Котра година?",
+      "topic": "Числа, ціни, час",
+      "description": "Як запитати й назвати час: je jedna hodina, sú dve hodiny, je päť hodín, о котрій — o ôsmej.",
+      "order": 35,
+      "xpReward": 15,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Розуміти й називати час і домовлятися «о котрій».",
+      "completionMessage": "Тепер ти орієнтуєшся в часі. Далі — дні тижня.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Числа, ціни, час",
+        "title": "Котра година?",
+        "shortDescription": "Розуміти й називати час і домовлятися «о котрій».",
+        "outcomes": [
+          "питати Koľko je hodín?",
+          "відповідати Je jedna / Sú dve / Je päť hodín",
+          "казати «о котрій»: o ôsmej",
+          "розуміти 24-годинний формат"
+        ],
+        "newWords": [
+          "hodina",
+          "Koľko je hodín?",
+          "O koľkej?",
+          "minúta",
+          "o ôsmej",
+          "teraz"
+        ],
+        "exercisesCount": 12,
+        "reward": "+15 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Koľko je hodín?",
+          "text": "Відповідь залежить від числа: «Je jedna hodina» (1), «Sú dve / tri / štyri hodiny» (2–4), «Je päť / šesť… hodín» (5+). Хвилини: «Je desať hodín dvadsať (minút)».",
+          "examples": [
+            {
+              "sk": "Je jedna hodina.",
+              "uk": "Перша година."
+            },
+            {
+              "sk": "Sú tri hodiny.",
+              "uk": "Третя година."
+            },
+            {
+              "sk": "Je osem hodín.",
+              "uk": "Восьма година."
+            }
+          ],
+          "shortRule": "je hodina / sú hodiny / je hodín",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "O koľkej?",
+          "text": "«О котрій?» — «O koľkej?». Відповідь — порядковий числівник жіночого роду: o jednej, o druhej, o tretej, o štvrtej, o piatej, o šiestej, o siedmej, o ôsmej, o deviatej, o desiatej, o jedenástej, o dvanástej.",
+          "examples": [
+            {
+              "sk": "O koľkej začína práca? — O siedmej.",
+              "uk": "О котрій починається робота? — О сьомій."
+            },
+            {
+              "sk": "Príďte o deviatej.",
+              "uk": "Приходьте о дев’ятій."
+            }
+          ],
+          "shortRule": "o + -ej",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Офіційний час",
+          "text": "У розкладах і на вивісках використовують 24-годинний формат: 17:30 = «sedemnásť tridsať». У розмові частіше кажуть «o pol šiestej» (о пів на шосту), але це — наступний рівень. Поки досить: «o piatej tridsať».",
+          "examples": [
+            {
+              "sk": "17:30",
+              "uk": "sedemnásť tridsať"
+            },
+            {
+              "sk": "9:15",
+              "uk": "deväť pätnásť"
+            }
+          ],
+          "shortRule": "У розкладі — 24 години.",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u04-l05-kolko-je-hodin-w01",
+            "sk": "hodina",
+            "uk": "година",
+            "pronunciationUk": "година",
+            "exampleSk": "Mám hodinu čas.",
+            "exampleUk": "У мене є година часу."
+          },
+          {
+            "wordId": "a0-u04-l05-kolko-je-hodin-w02",
+            "sk": "Koľko je hodín?",
+            "uk": "Котра година?",
+            "pronunciationUk": "кольо є годзі:н",
+            "exampleSk": "Prepáčte, koľko je hodín?",
+            "exampleUk": "Перепрошую, котра година?"
+          },
+          {
+            "wordId": "a0-u04-l05-kolko-je-hodin-w03",
+            "sk": "O koľkej?",
+            "uk": "О котрій?",
+            "pronunciationUk": "о кольокей",
+            "exampleSk": "O koľkej sa stretneme?",
+            "exampleUk": "О котрій зустрінемося?"
+          },
+          {
+            "wordId": "a0-u04-l05-kolko-je-hodin-w04",
+            "sk": "minúta",
+            "uk": "хвилина",
+            "pronunciationUk": "мінута",
+            "exampleSk": "Počkajte minútu.",
+            "exampleUk": "Зачекайте хвилину."
+          },
+          {
+            "wordId": "a0-u04-l05-kolko-je-hodin-w05",
+            "sk": "o ôsmej",
+            "uk": "о восьмій",
+            "pronunciationUk": "о уосмей",
+            "exampleSk": "Pracujem od ôsmej.",
+            "exampleUk": "Я працюю з восьмої."
+          },
+          {
+            "wordId": "a0-u04-l05-kolko-je-hodin-w06",
+            "sk": "teraz",
+            "uk": "зараз",
+            "pronunciationUk": "терас",
+            "exampleSk": "Teraz nemám čas.",
+            "exampleUk": "Зараз я не маю часу."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u04-l05-kolko-je-hodin-w01",
+          "sk": "hodina",
+          "uk": "година",
+          "pronunciationUk": "година",
+          "exampleSk": "Mám hodinu čas.",
+          "exampleUk": "У мене є година часу.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l05-kolko-je-hodin-w02",
+          "sk": "Koľko je hodín?",
+          "uk": "Котра година?",
+          "pronunciationUk": "кольо є годзі:н",
+          "exampleSk": "Prepáčte, koľko je hodín?",
+          "exampleUk": "Перепрошую, котра година?",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l05-kolko-je-hodin-w03",
+          "sk": "O koľkej?",
+          "uk": "О котрій?",
+          "pronunciationUk": "о кольокей",
+          "exampleSk": "O koľkej sa stretneme?",
+          "exampleUk": "О котрій зустрінемося?",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l05-kolko-je-hodin-w04",
+          "sk": "minúta",
+          "uk": "хвилина",
+          "pronunciationUk": "мінута",
+          "exampleSk": "Počkajte minútu.",
+          "exampleUk": "Зачекайте хвилину.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l05-kolko-je-hodin-w05",
+          "sk": "o ôsmej",
+          "uk": "о восьмій",
+          "pronunciationUk": "о уосмей",
+          "exampleSk": "Pracujem od ôsmej.",
+          "exampleUk": "Я працюю з восьмої.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l05-kolko-je-hodin-w06",
+          "sk": "teraz",
+          "uk": "зараз",
+          "pronunciationUk": "терас",
+          "exampleSk": "Teraz nemám čas.",
+          "exampleUk": "Зараз я не маю часу.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u04-l05-kolko-je-hodin-ex01",
+          "lessonId": "a0-u04-l05-kolko-je-hodin",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Sú "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "jedna",
+                "tri",
+                "päť"
+              ],
+              "correct": "tri"
+            },
+            {
+              "text": " hodiny."
+            }
+          ],
+          "explanation": "Sú … hodiny — для 2, 3, 4.",
+          "order": 1,
+          "wordIds": [
+            "a0-u04-l05-kolko-je-hodin-w01"
+          ]
+        },
+        {
+          "id": "a0-u04-l05-kolko-je-hodin-ex02",
+          "lessonId": "a0-u04-l05-kolko-je-hodin",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Je sedem "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "hodín",
+                "hodina",
+                "hodiny"
+              ],
+              "correct": "hodín"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "5+ → hodín.",
+          "order": 2,
+          "wordIds": [
+            "a0-u04-l05-kolko-je-hodin-w01",
+            "a0-u04-l05-kolko-je-hodin-w02"
+          ]
+        },
+        {
+          "id": "a0-u04-l05-kolko-je-hodin-ex03",
+          "lessonId": "a0-u04-l05-kolko-je-hodin",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "o jednej",
+              "right": "о першій"
+            },
+            {
+              "left": "o tretej",
+              "right": "о третій"
+            },
+            {
+              "left": "o piatej",
+              "right": "о п’ятій"
+            },
+            {
+              "left": "o ôsmej",
+              "right": "о восьмій"
+            },
+            {
+              "left": "o desiatej",
+              "right": "о десятій"
+            }
+          ],
+          "order": 3,
+          "wordIds": [
+            "a0-u04-l05-kolko-je-hodin-w01",
+            "a0-u04-l05-kolko-je-hodin-w05"
+          ]
+        },
+        {
+          "id": "a0-u04-l05-kolko-je-hodin-ex04",
+          "lessonId": "a0-u04-l05-kolko-je-hodin",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Príďte o deviatej»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Приходьте о дев’ятій",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Приходьте через дев’ять хвилин",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Приходьте дев’ятого",
+              "correct": false
+            }
+          ],
+          "explanation": "o deviatej — о дев’ятій.",
+          "order": 4,
+          "wordIds": [
+            "a0-u04-l05-kolko-je-hodin-w01"
+          ]
+        },
+        {
+          "id": "a0-u04-l05-kolko-je-hodin-ex05",
+          "lessonId": "a0-u04-l05-kolko-je-hodin",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Je päť hodín» означає «П’ята година».",
+          "correctAnswer": true,
+          "explanation": "Je päť hodín — 5:00 (або 17:00).",
+          "order": 5,
+          "wordIds": [
+            "a0-u04-l05-kolko-je-hodin-w01",
+            "a0-u04-l05-kolko-je-hodin-w02"
+          ]
+        },
+        {
+          "id": "a0-u04-l05-kolko-je-hodin-ex06",
+          "lessonId": "a0-u04-l05-kolko-je-hodin",
+          "type": "real_schedule",
+          "skill": [
+            "reading",
+            "real_life",
+            "time"
+          ],
+          "instruction": "Подивись на розклад і обери відповідь.",
+          "schedule": {
+            "title": "Pošta – otváracie hodiny",
+            "rows": [
+              {
+                "day": "Pondelok – Piatok",
+                "hours": "8:00 – 18:00"
+              },
+              {
+                "day": "Sobota",
+                "hours": "8:00 – 12:00"
+              },
+              {
+                "day": "Nedeľa",
+                "hours": "zatvorené"
+              }
+            ]
+          },
+          "question": "О котрій пошта зачиняється в суботу?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "о вісімнадцятій",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "не відчиняється",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "о дванадцятій",
+              "correct": true
+            }
+          ],
+          "explanation": "Sobota: 8:00 – 12:00.",
+          "order": 6,
+          "wordIds": [
+            "a0-u04-l05-kolko-je-hodin-w01"
+          ]
+        },
+        {
+          "id": "a0-u04-l05-kolko-je-hodin-ex07",
+          "lessonId": "a0-u04-l05-kolko-je-hodin",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши питання.",
+          "sentence": "O ______ začína film?",
+          "acceptedAnswers": [
+            "koľkej"
+          ],
+          "hint": "О котрій?",
+          "explanation": "O koľkej — о котрій.",
+          "order": 7,
+          "wordIds": [
+            "a0-u04-l05-kolko-je-hodin-w01",
+            "a0-u04-l05-kolko-je-hodin-w02",
+            "a0-u04-l05-kolko-je-hodin-w03"
+          ]
+        },
+        {
+          "id": "a0-u04-l05-kolko-je-hodin-ex08",
+          "lessonId": "a0-u04-l05-kolko-je-hodin",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kolega",
+              "sk": "Koľko je hodín?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Desať hodiny.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "O desiatej.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Je desať hodín.",
+              "correct": true
+            }
+          ],
+          "explanation": "На «котра година» — Je … hodín. «O desiatej» — відповідь на «о котрій».",
+          "order": 8,
+          "wordIds": [
+            "a0-u04-l05-kolko-je-hodin-w01",
+            "a0-u04-l05-kolko-je-hodin-w02",
+            "a0-u04-l05-kolko-je-hodin-w03"
+          ]
+        },
+        {
+          "id": "a0-u04-l05-kolko-je-hodin-ex09",
+          "lessonId": "a0-u04-l05-kolko-je-hodin",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Lekárka",
+              "sk": "O koľkej vám to vyhovuje?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Tri hodín.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "O tretej, prosím.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Sú tri hodiny.",
+              "correct": false
+            }
+          ],
+          "explanation": "O koľkej — o tretej.",
+          "order": 9,
+          "wordIds": [
+            "a0-u04-l05-kolko-je-hodin-w01",
+            "a0-u04-l05-kolko-je-hodin-w02",
+            "a0-u04-l05-kolko-je-hodin-w03"
+          ]
+        },
+        {
+          "id": "a0-u04-l05-kolko-je-hodin-ex10",
+          "lessonId": "a0-u04-l05-kolko-je-hodin",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "«Котра година?» чи «О котрій?»",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Котра година"
+            },
+            {
+              "id": "c2",
+              "title": "О котрій"
+            }
+          ],
+          "items": [
+            {
+              "sk": "Sú dve hodiny.",
+              "category": "c1"
+            },
+            {
+              "sk": "Je jedna hodina.",
+              "category": "c1"
+            },
+            {
+              "sk": "o jednej",
+              "category": "c2"
+            },
+            {
+              "sk": "o druhej",
+              "category": "c2"
+            },
+            {
+              "sk": "Je šesť hodín.",
+              "category": "c1"
+            },
+            {
+              "sk": "o šiestej",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Je/sú … hodín — зараз; o …-ej — о котрій.",
+          "order": 10,
+          "wordIds": [
+            "a0-u04-l05-kolko-je-hodin-w01",
+            "a0-u04-l05-kolko-je-hodin-w02"
+          ]
+        },
+        {
+          "id": "a0-u04-l05-kolko-je-hodin-ex11",
+          "lessonId": "a0-u04-l05-kolko-je-hodin",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що робота починається о сьомій.",
+          "tokens": [
+            "o",
+            "Práca",
+            "siedmej",
+            "začína",
+            "."
+          ],
+          "correctOrder": [
+            "Práca",
+            "začína",
+            "o",
+            "siedmej",
+            "."
+          ],
+          "explanation": "o siedmej — о сьомій.",
+          "order": 11,
+          "wordIds": [
+            "a0-u04-l05-kolko-je-hodin-w01"
+          ]
+        },
+        {
+          "id": "a0-u04-l05-kolko-je-hodin-ex12",
+          "lessonId": "a0-u04-l05-kolko-je-hodin",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти хочеш перепитати перехожого, котра година.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Čau, hodina?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Koľko stojí hodina?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Prepáčte, koľko je hodín?",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "O koľkej je hodín?",
+              "correct": false
+            }
+          ],
+          "explanation": "Prepáčte + Koľko je hodín?",
+          "order": 12,
+          "wordIds": [
+            "a0-u04-l05-kolko-je-hodin-w01",
+            "a0-u04-l05-kolko-je-hodin-w02",
+            "a0-u04-l05-kolko-je-hodin-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Запис на прийом",
+        "description": "Ти телефонуєш до перукарні, щоб записатися.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Kedy chcete prísť?» (о четвертій)",
+            "options": [
+              {
+                "sk": "Štyri hodín.",
+                "correct": false
+              },
+              {
+                "sk": "Sú štyri hodiny.",
+                "correct": false
+              },
+              {
+                "sk": "O štvrtej.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«O štvrtej nemáme voľno, môže byť o piatej?» Що пропонують?",
+            "options": [
+              {
+                "sk": "прийти п’ятого числа",
+                "correct": false
+              },
+              {
+                "sk": "прийти о п’ятій",
+                "correct": true
+              },
+              {
+                "sk": "прийти через п’ять хвилин",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти погоджуєшся.",
+            "options": [
+              {
+                "sk": "Je päť hodín.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, o piatej mi to vyhovuje.",
+                "correct": true
+              },
+              {
+                "sk": "Nie, päť hodín.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти хочеш дізнатися, котра година зараз.",
+            "options": [
+              {
+                "sk": "Hodina je kde?",
+                "correct": false
+              },
+              {
+                "sk": "O koľkej je teraz?",
+                "correct": false
+              },
+              {
+                "sk": "Koľko je teraz hodín?",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тепер ти орієнтуєшся в часі. Далі — дні тижня."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тепер ти орієнтуєшся в часі. Далі — дні тижня.",
+        "nowYouKnow": [
+          "Koľko je hodín? — Je jedna / Sú dve / Je päť hodín",
+          "O koľkej? — o ôsmej",
+          "24-годинний формат у розкладах",
+          "teraz"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u04-l06-dni-v-tyzdni",
+          "title": "Дні тижня"
+        }
+      }
+    }
+  ]
+}

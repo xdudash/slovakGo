@@ -1,0 +1,788 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u04-l04-kolko-to-stoji",
+      "sectionId": "a0-u04",
+      "level": "A0",
+      "title": "Скільки це коштує?",
+      "topic": "Числа, ціни, час",
+      "description": "Купівля: питати ціну, просити кількість, платити карткою чи готівкою.",
+      "order": 34,
+      "xpReward": 15,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Купити товар: запитати ціну, назвати кількість, обрати оплату.",
+      "completionMessage": "Ти вмієш купувати! Далі — котра година.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Числа, ціни, час",
+        "title": "Скільки це коштує?",
+        "shortDescription": "Купити товар: запитати ціну, назвати кількість, обрати оплату.",
+        "outcomes": [
+          "питати Koľko to stojí? / Koľko stoja?",
+          "просити: Dám si… / Prosím si…",
+          "казати platím kartou / v hotovosti",
+          "розуміти Ešte niečo?"
+        ],
+        "newWords": [
+          "stáť",
+          "Prosím si",
+          "kartou",
+          "v hotovosti",
+          "To je všetko.",
+          "bloček"
+        ],
+        "exercisesCount": 12,
+        "reward": "+15 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Koľko to stojí?",
+          "text": "Однина: «Koľko stojí tento chlieb?» Множина: «Koľko stoja jablká?» Узагалі: «Koľko to stojí?»",
+          "examples": [
+            {
+              "sk": "Koľko stojí káva?",
+              "uk": "Скільки коштує кава?"
+            },
+            {
+              "sk": "Koľko stoja paradajky?",
+              "uk": "Скільки коштують помідори?"
+            }
+          ],
+          "shortRule": "stojí (одне) / stoja (багато)",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Як попросити",
+          "text": "«Prosím si…» або «Dám si…» + знахідний відмінок: Prosím si chlieb. Dám si dve kávy. Також: «Chcel(a) by som…» — я хотів(ла) б.",
+          "examples": [
+            {
+              "sk": "Prosím si dva rožky.",
+              "uk": "Два рогалики, будь ласка."
+            },
+            {
+              "sk": "Dám si kávu.",
+              "uk": "Я візьму каву."
+            }
+          ],
+          "shortRule": "Prosím si… / Dám si…",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Оплата",
+          "text": "«Platím kartou» — плачу карткою. «V hotovosti» — готівкою. «Môžem platiť kartou?» Продавець може спитати «Ešte niečo?» (ще щось?) — «Nie, to je všetko» (ні, це все). «Bločik?» — чек?",
+          "examples": [
+            {
+              "sk": "Môžem platiť kartou?",
+              "uk": "Можна карткою?"
+            },
+            {
+              "sk": "To je všetko.",
+              "uk": "Це все."
+            }
+          ],
+          "shortRule": "kartou / v hotovosti",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u04-l04-kolko-to-stoji-w01",
+            "sk": "stáť",
+            "uk": "коштувати",
+            "pronunciationUk": "ста:ть",
+            "exampleSk": "Koľko stojí lístok?",
+            "exampleUk": "Скільки коштує квиток?"
+          },
+          {
+            "wordId": "a0-u04-l04-kolko-to-stoji-w02",
+            "sk": "Prosím si",
+            "uk": "мені, будь ласка (прохання)",
+            "pronunciationUk": "просі:м сі",
+            "exampleSk": "Prosím si jeden rožok.",
+            "exampleUk": "Мені один рогалик, будь ласка."
+          },
+          {
+            "wordId": "a0-u04-l04-kolko-to-stoji-w03",
+            "sk": "kartou",
+            "uk": "карткою",
+            "pronunciationUk": "картоу",
+            "exampleSk": "Platím kartou.",
+            "exampleUk": "Я плачу карткою."
+          },
+          {
+            "wordId": "a0-u04-l04-kolko-to-stoji-w04",
+            "sk": "v hotovosti",
+            "uk": "готівкою",
+            "pronunciationUk": "ф готовості",
+            "exampleSk": "Dá sa platiť v hotovosti?",
+            "exampleUk": "Можна платити готівкою?"
+          },
+          {
+            "wordId": "a0-u04-l04-kolko-to-stoji-w05",
+            "sk": "To je všetko.",
+            "uk": "Це все.",
+            "pronunciationUk": "то є фшетко",
+            "exampleSk": "Ďakujem, to je všetko.",
+            "exampleUk": "Дякую, це все."
+          },
+          {
+            "wordId": "a0-u04-l04-kolko-to-stoji-w06",
+            "sk": "bloček",
+            "uk": "чек",
+            "pronunciationUk": "блочек",
+            "exampleSk": "Chcete bloček?",
+            "exampleUk": "Вам потрібен чек?"
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u04-l04-kolko-to-stoji-w01",
+          "sk": "stáť",
+          "uk": "коштувати",
+          "pronunciationUk": "ста:ть",
+          "exampleSk": "Koľko stojí lístok?",
+          "exampleUk": "Скільки коштує квиток?",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l04-kolko-to-stoji-w02",
+          "sk": "Prosím si",
+          "uk": "мені, будь ласка (прохання)",
+          "pronunciationUk": "просі:м сі",
+          "exampleSk": "Prosím si jeden rožok.",
+          "exampleUk": "Мені один рогалик, будь ласка.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l04-kolko-to-stoji-w03",
+          "sk": "kartou",
+          "uk": "карткою",
+          "pronunciationUk": "картоу",
+          "exampleSk": "Platím kartou.",
+          "exampleUk": "Я плачу карткою.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l04-kolko-to-stoji-w04",
+          "sk": "v hotovosti",
+          "uk": "готівкою",
+          "pronunciationUk": "ф готовості",
+          "exampleSk": "Dá sa platiť v hotovosti?",
+          "exampleUk": "Можна платити готівкою?",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l04-kolko-to-stoji-w05",
+          "sk": "To je všetko.",
+          "uk": "Це все.",
+          "pronunciationUk": "то є фшетко",
+          "exampleSk": "Ďakujem, to je všetko.",
+          "exampleUk": "Дякую, це все.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l04-kolko-to-stoji-w06",
+          "sk": "bloček",
+          "uk": "чек",
+          "pronunciationUk": "блочек",
+          "exampleSk": "Chcete bloček?",
+          "exampleUk": "Вам потрібен чек?",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u04-l04-kolko-to-stoji-ex01",
+          "lessonId": "a0-u04-l04-kolko-to-stoji",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Koľko "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "stojí",
+                "stoja"
+              ],
+              "correct": "stoja"
+            },
+            {
+              "text": " jablká?"
+            }
+          ],
+          "explanation": "jablká — множина → stoja.",
+          "order": 1
+        },
+        {
+          "id": "a0-u04-l04-kolko-to-stoji-ex02",
+          "lessonId": "a0-u04-l04-kolko-to-stoji",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Koľko "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "stoja",
+                "stojí"
+              ],
+              "correct": "stojí"
+            },
+            {
+              "text": " tento chlieb?"
+            }
+          ],
+          "explanation": "chlieb — однина → stojí.",
+          "order": 2
+        },
+        {
+          "id": "a0-u04-l04-kolko-to-stoji-ex03",
+          "lessonId": "a0-u04-l04-kolko-to-stoji",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Predavačka",
+              "sk": "Ešte niečo?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Áno, dovidenia.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Nie, ďakujem, to je všetko.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Koľko je hodín?",
+              "correct": false
+            }
+          ],
+          "explanation": "To je všetko — це все.",
+          "order": 3,
+          "wordIds": [
+            "a0-u04-l04-kolko-to-stoji-w05"
+          ]
+        },
+        {
+          "id": "a0-u04-l04-kolko-to-stoji-ex04",
+          "lessonId": "a0-u04-l04-kolko-to-stoji",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Pokladník",
+              "sk": "Kartou alebo v hotovosti?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Kartou, prosím.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Prosím si kartu.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Áno, hotovosť je.",
+              "correct": false
+            }
+          ],
+          "explanation": "Обери спосіб оплати.",
+          "order": 4,
+          "wordIds": [
+            "a0-u04-l04-kolko-to-stoji-w02",
+            "a0-u04-l04-kolko-to-stoji-w03",
+            "a0-u04-l04-kolko-to-stoji-w04"
+          ]
+        },
+        {
+          "id": "a0-u04-l04-kolko-to-stoji-ex05",
+          "lessonId": "a0-u04-l04-kolko-to-stoji",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "Koľko to stojí?",
+              "right": "Скільки це коштує?"
+            },
+            {
+              "left": "Platím kartou.",
+              "right": "Плачу карткою."
+            },
+            {
+              "left": "v hotovosti",
+              "right": "готівкою"
+            },
+            {
+              "left": "To je všetko.",
+              "right": "Це все."
+            },
+            {
+              "left": "bloček",
+              "right": "чек"
+            }
+          ],
+          "order": 5,
+          "wordIds": [
+            "a0-u04-l04-kolko-to-stoji-w03",
+            "a0-u04-l04-kolko-to-stoji-w04",
+            "a0-u04-l04-kolko-to-stoji-w05",
+            "a0-u04-l04-kolko-to-stoji-w06"
+          ]
+        },
+        {
+          "id": "a0-u04-l04-kolko-to-stoji-ex06",
+          "lessonId": "a0-u04-l04-kolko-to-stoji",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Попроси дві кави.",
+          "tokens": [
+            "kávy",
+            "dve",
+            ".",
+            "Prosím",
+            "si"
+          ],
+          "correctOrder": [
+            "Prosím",
+            "si",
+            "dve",
+            "kávy",
+            "."
+          ],
+          "explanation": "Prosím si + що.",
+          "order": 6,
+          "wordIds": [
+            "a0-u04-l04-kolko-to-stoji-w02"
+          ]
+        },
+        {
+          "id": "a0-u04-l04-kolko-to-stoji-ex07",
+          "lessonId": "a0-u04-l04-kolko-to-stoji",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Môžem platiť ______? (карткою)",
+          "acceptedAnswers": [
+            "kartou"
+          ],
+          "explanation": "kartou — карткою.",
+          "order": 7,
+          "wordIds": [
+            "a0-u04-l04-kolko-to-stoji-w03"
+          ]
+        },
+        {
+          "id": "a0-u04-l04-kolko-to-stoji-ex08",
+          "lessonId": "a0-u04-l04-kolko-to-stoji",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Ešte niečo?» означає «Це все?» або «Ще щось?».",
+          "correctAnswer": true,
+          "explanation": "Так, продавець питає, чи ти хочеш ще щось.",
+          "order": 8
+        },
+        {
+          "id": "a0-u04-l04-kolko-to-stoji-ex09",
+          "lessonId": "a0-u04-l04-kolko-to-stoji",
+          "type": "dialogue_order",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Віднови порядок реплік у діалозі.",
+          "lines": [
+            {
+              "id": "l1",
+              "sk": "Zákazník: Dobrý deň, prosím si dva rožky."
+            },
+            {
+              "id": "l4",
+              "sk": "Predavačka: Tridsať centov."
+            },
+            {
+              "id": "l3",
+              "sk": "Zákazník: Nie, to je všetko. Koľko to stojí?"
+            },
+            {
+              "id": "l2",
+              "sk": "Predavačka: Nech sa páči. Ešte niečo?"
+            }
+          ],
+          "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4"
+          ],
+          "explanation": "Прохання → «ще щось?» → «це все, скільки?» → ціна.",
+          "order": 9,
+          "wordIds": [
+            "a0-u04-l04-kolko-to-stoji-w02",
+            "a0-u04-l04-kolko-to-stoji-w05"
+          ]
+        },
+        {
+          "id": "a0-u04-l04-kolko-to-stoji-ex10",
+          "lessonId": "a0-u04-l04-kolko-to-stoji",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти хочеш дізнатися ціну черешень (множина).",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Koľko stoja čerešne?",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Koľko stojí čerešne?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Koľko čerešne?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Čerešne stojí koľko?",
+              "correct": false
+            }
+          ],
+          "explanation": "Множина — stoja.",
+          "order": 10
+        },
+        {
+          "id": "a0-u04-l04-kolko-to-stoji-ex11",
+          "lessonId": "a0-u04-l04-kolko-to-stoji",
+          "type": "branching_dialogue",
+          "skill": [
+            "dialogue",
+            "real_life"
+          ],
+          "instruction": "Пройди діалог: обирай доречні відповіді.",
+          "successMessage": "Покупку зроблено!",
+          "startNode": "n1",
+          "nodes": {
+            "n1": {
+              "speaker": "Predavač",
+              "sk": "Dobrý deň, prosím?",
+              "choices": [
+                {
+                  "id": "n1c3",
+                  "sk": "Koľko je hodín?",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c1",
+                  "sk": "Dobrý deň, prosím si kilo jabĺk.",
+                  "next": "n2",
+                  "quality": "best"
+                },
+                {
+                  "id": "n1c2",
+                  "sk": "Ahoj, jablká!",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n2": {
+              "speaker": "Predavač",
+              "sk": "Nech sa páči. Ešte niečo?",
+              "choices": [
+                {
+                  "id": "n2c3",
+                  "sk": "Dobrú chuť.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c2",
+                  "sk": "Áno, dovidenia.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c1",
+                  "sk": "Nie, ďakujem, to je všetko.",
+                  "next": "n3",
+                  "quality": "best"
+                }
+              ]
+            },
+            "n3": {
+              "speaker": "Predavač",
+              "sk": "Dve eurá dvadsať. Kartou?",
+              "choices": [
+                {
+                  "id": "n3c3",
+                  "sk": "Prepáčte, nerozumiem nič.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c1",
+                  "sk": "Nie, v hotovosti. Nech sa páči.",
+                  "next": "success",
+                  "quality": "best"
+                },
+                {
+                  "id": "n3c2",
+                  "sk": "Áno, hotovosť kartou.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            }
+          },
+          "order": 11,
+          "wordIds": [
+            "a0-u04-l04-kolko-to-stoji-w02",
+            "a0-u04-l04-kolko-to-stoji-w03",
+            "a0-u04-l04-kolko-to-stoji-w04",
+            "a0-u04-l04-kolko-to-stoji-w05"
+          ]
+        },
+        {
+          "id": "a0-u04-l04-kolko-to-stoji-ex12",
+          "lessonId": "a0-u04-l04-kolko-to-stoji",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Касирка показує на термінал і каже: «Môžete priložiť kartu.» Що треба зробити?",
+          "options": [
+            {
+              "id": "a",
+              "text": "прикласти картку до терміналу",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "показати паспорт",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "дати готівку",
+              "correct": false
+            }
+          ],
+          "explanation": "priložiť kartu — прикласти картку.",
+          "order": 12,
+          "wordIds": [
+            "a0-u04-l04-kolko-to-stoji-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "На ринку в Банській Бистриці",
+        "description": "Ти купуєш овочі на ринку.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти питаєш ціну помідорів (paradajky).",
+            "options": [
+              {
+                "sk": "Koľko stojí paradajky?",
+                "correct": false
+              },
+              {
+                "sk": "Koľko stoja paradajky?",
+                "correct": true
+              },
+              {
+                "sk": "Paradajky sú koľko hodín?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Продавчиня: «Dve eurá kilo.» Ти береш кілограм.",
+            "options": [
+              {
+                "sk": "To je drahé, ahoj.",
+                "correct": false
+              },
+              {
+                "sk": "Dám si dve eurá.",
+                "correct": false
+              },
+              {
+                "sk": "Prosím si jedno kilo.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Ešte niečo?»",
+            "options": [
+              {
+                "sk": "Ďakujem, áno nie.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, to je všetko.",
+                "correct": false
+              },
+              {
+                "sk": "Nie, ďakujem, to je všetko.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Platíte kartou?» У неї тільки готівка — ти платиш готівкою.",
+            "options": [
+              {
+                "sk": "Áno, kartou nie.",
+                "correct": false
+              },
+              {
+                "sk": "Kartou v hotovosti.",
+                "correct": false
+              },
+              {
+                "sk": "Nie, v hotovosti.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш купувати! Далі — котра година."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш купувати! Далі — котра година.",
+        "nowYouKnow": [
+          "Koľko to stojí? / Koľko stoja…?",
+          "Prosím si… / Dám si…",
+          "kartou / v hotovosti",
+          "Ešte niečo? — To je všetko."
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u04-l05-kolko-je-hodin",
+          "title": "Котра година?"
+        }
+      }
+    }
+  ]
+}
