@@ -1,0 +1,763 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u05-l04-toalety",
+      "sectionId": "a0-u05",
+      "level": "A0",
+      "title": "Туалети й корисні дрібниці",
+      "topic": "Виживання в місті",
+      "description": "Як знайти туалет, розрізняти «чоловічий / жіночий», «зайнято / вільно» і попросити необхідне.",
+      "order": 44,
+      "xpReward": 15,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Знайти туалет і зрозуміти пов’язані написи.",
+      "completionMessage": "Тепер ти орієнтуєшся навіть у делікатних ситуаціях. Далі — квитки й транспорт.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Виживання в місті",
+        "title": "Туалети й корисні дрібниці",
+        "shortDescription": "Знайти туалет і зрозуміти пов’язані написи.",
+        "outcomes": [
+          "питати Kde sú toalety?",
+          "розуміти muži / ženy, páni / dámy",
+          "розуміти obsadené / voľné",
+          "розуміти платні туалети"
+        ],
+        "newWords": [
+          "toaleta",
+          "muži",
+          "ženy",
+          "obsadené",
+          "voľné",
+          "nefunguje"
+        ],
+        "exercisesCount": 12,
+        "reward": "+15 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Туалет",
+          "text": "Найчастіше: toalety, WC (vé-cé), záchod (розмовно). На дверях: MUŽI / ŽENY або PÁNI / DÁMY. Ввічливо: «Prepáčte, kde sú toalety?»",
+          "examples": [
+            {
+              "sk": "Kde je tu WC?",
+              "uk": "Де тут туалет?"
+            },
+            {
+              "sk": "Páni",
+              "uk": "Чоловіки"
+            },
+            {
+              "sk": "Dámy",
+              "uk": "Жінки"
+            }
+          ],
+          "shortRule": "WC читається «ве-це».",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Зайнято чи вільно",
+          "text": "На кабінці: OBSADENÉ (зайнято) — червоне, VOĽNÉ (вільно) — зелене. Іноді туалет платний: «Poplatok 0,50 €» (плата 50 центів).",
+          "examples": [
+            {
+              "sk": "Je obsadené.",
+              "uk": "Зайнято."
+            },
+            {
+              "sk": "Je voľné?",
+              "uk": "Вільно?"
+            }
+          ],
+          "shortRule": "obsadené ≠ voľné",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Корисні слова",
+          "text": "mydlo (мило), toaletný papier (туалетний папір), umývadlo (умивальник), «nefunguje» (не працює). «Došiel papier» — закінчився папір.",
+          "examples": [
+            {
+              "sk": "Na toalete nie je papier.",
+              "uk": "У туалеті немає паперу."
+            },
+            {
+              "sk": "Umývadlo nefunguje.",
+              "uk": "Умивальник не працює."
+            }
+          ],
+          "shortRule": "nefunguje = не працює",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u05-l04-toalety-w01",
+            "sk": "toaleta",
+            "uk": "туалет",
+            "pronunciationUk": "тоалета",
+            "exampleSk": "Toaleta je na konci chodby.",
+            "exampleUk": "Туалет у кінці коридору."
+          },
+          {
+            "wordId": "a0-u05-l04-toalety-w02",
+            "sk": "muži",
+            "uk": "чоловіки (напис)",
+            "pronunciationUk": "мужі",
+            "exampleSk": "Muži – vľavo, ženy – vpravo.",
+            "exampleUk": "Чоловіки — ліворуч, жінки — праворуч."
+          },
+          {
+            "wordId": "a0-u05-l04-toalety-w03",
+            "sk": "ženy",
+            "uk": "жінки (напис)",
+            "pronunciationUk": "жени",
+            "exampleSk": "Ženy sú na druhom poschodí.",
+            "exampleUk": "Жіночий туалет на другому поверсі."
+          },
+          {
+            "wordId": "a0-u05-l04-toalety-w04",
+            "sk": "obsadené",
+            "uk": "зайнято",
+            "pronunciationUk": "обсадзене:",
+            "exampleSk": "Prepáčte, je obsadené.",
+            "exampleUk": "Вибачте, зайнято."
+          },
+          {
+            "wordId": "a0-u05-l04-toalety-w05",
+            "sk": "voľné",
+            "uk": "вільно",
+            "pronunciationUk": "вольне:",
+            "exampleSk": "Je tu voľné?",
+            "exampleUk": "Тут вільно?"
+          },
+          {
+            "wordId": "a0-u05-l04-toalety-w06",
+            "sk": "nefunguje",
+            "uk": "не працює",
+            "pronunciationUk": "нефунґує",
+            "exampleSk": "Výťah nefunguje.",
+            "exampleUk": "Ліфт не працює."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u05-l04-toalety-w01",
+          "sk": "toaleta",
+          "uk": "туалет",
+          "pronunciationUk": "тоалета",
+          "exampleSk": "Toaleta je na konci chodby.",
+          "exampleUk": "Туалет у кінці коридору.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l04-toalety-w02",
+          "sk": "muži",
+          "uk": "чоловіки (напис)",
+          "pronunciationUk": "мужі",
+          "exampleSk": "Muži – vľavo, ženy – vpravo.",
+          "exampleUk": "Чоловіки — ліворуч, жінки — праворуч.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l04-toalety-w03",
+          "sk": "ženy",
+          "uk": "жінки (напис)",
+          "pronunciationUk": "жени",
+          "exampleSk": "Ženy sú na druhom poschodí.",
+          "exampleUk": "Жіночий туалет на другому поверсі.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l04-toalety-w04",
+          "sk": "obsadené",
+          "uk": "зайнято",
+          "pronunciationUk": "обсадзене:",
+          "exampleSk": "Prepáčte, je obsadené.",
+          "exampleUk": "Вибачте, зайнято.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l04-toalety-w05",
+          "sk": "voľné",
+          "uk": "вільно",
+          "pronunciationUk": "вольне:",
+          "exampleSk": "Je tu voľné?",
+          "exampleUk": "Тут вільно?",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l04-toalety-w06",
+          "sk": "nefunguje",
+          "uk": "не працює",
+          "pronunciationUk": "нефунґує",
+          "exampleSk": "Výťah nefunguje.",
+          "exampleUk": "Ліфт не працює.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u05-l04-toalety-ex01",
+          "lessonId": "a0-u05-l04-toalety",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "muži",
+              "right": "чоловіки"
+            },
+            {
+              "left": "ženy",
+              "right": "жінки"
+            },
+            {
+              "left": "obsadené",
+              "right": "зайнято"
+            },
+            {
+              "left": "voľné",
+              "right": "вільно"
+            },
+            {
+              "left": "nefunguje",
+              "right": "не працює"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a0-u05-l04-toalety-w01",
+            "a0-u05-l04-toalety-w02",
+            "a0-u05-l04-toalety-w03",
+            "a0-u05-l04-toalety-w04",
+            "a0-u05-l04-toalety-w05",
+            "a0-u05-l04-toalety-w06"
+          ]
+        },
+        {
+          "id": "a0-u05-l04-toalety-ex02",
+          "lessonId": "a0-u05-l04-toalety",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Для кого цей напис?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Для чоловіків"
+            },
+            {
+              "id": "c2",
+              "title": "Для жінок"
+            }
+          ],
+          "items": [
+            {
+              "sk": "ŽENY",
+              "category": "c2"
+            },
+            {
+              "sk": "PÁNI",
+              "category": "c1"
+            },
+            {
+              "sk": "DÁMY",
+              "category": "c2"
+            },
+            {
+              "sk": "MUŽI",
+              "category": "c1"
+            }
+          ],
+          "explanation": "páni — панове, dámy — пані.",
+          "order": 2,
+          "wordIds": [
+            "a0-u05-l04-toalety-w01",
+            "a0-u05-l04-toalety-w02",
+            "a0-u05-l04-toalety-w03"
+          ]
+        },
+        {
+          "id": "a0-u05-l04-toalety-ex03",
+          "lessonId": "a0-u05-l04-toalety",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "На дверях кабінки червоний напис «OBSADENÉ». Що це означає?",
+          "options": [
+            {
+              "id": "a",
+              "text": "вільно",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "не працює",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "зайнято",
+              "correct": true
+            }
+          ],
+          "explanation": "obsadené — зайнято.",
+          "order": 3,
+          "wordIds": [
+            "a0-u05-l04-toalety-w01"
+          ]
+        },
+        {
+          "id": "a0-u05-l04-toalety-ex04",
+          "lessonId": "a0-u05-l04-toalety",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти в ресторані й шукаєш туалет.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Prepáčte, kde sú toalety?",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Toaleta, prosím, jedna.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Kde je muži?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Obsadené kde?",
+              "correct": false
+            }
+          ],
+          "explanation": "Prepáčte, kde sú toalety?",
+          "order": 4,
+          "wordIds": [
+            "a0-u05-l04-toalety-w01",
+            "a0-u05-l04-toalety-w02",
+            "a0-u05-l04-toalety-w04"
+          ]
+        },
+        {
+          "id": "a0-u05-l04-toalety-ex05",
+          "lessonId": "a0-u05-l04-toalety",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Напис «Poplatok 0,50 €» означає, що туалет платний.",
+          "correctAnswer": true,
+          "explanation": "poplatok — плата.",
+          "order": 5,
+          "wordIds": [
+            "a0-u05-l04-toalety-w01"
+          ]
+        },
+        {
+          "id": "a0-u05-l04-toalety-ex06",
+          "lessonId": "a0-u05-l04-toalety",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Prepáčte, ______ sú toalety?",
+          "acceptedAnswers": [
+            "kde"
+          ],
+          "explanation": "Kde sú toalety?",
+          "order": 6,
+          "wordIds": [
+            "a0-u05-l04-toalety-w01"
+          ]
+        },
+        {
+          "id": "a0-u05-l04-toalety-ex07",
+          "lessonId": "a0-u05-l04-toalety",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Ty",
+              "sk": "Je tu voľné?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Dobrý večer, áno nie.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Áno, nech sa páči.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Ďakujem, zaplatím.",
+              "correct": false
+            }
+          ],
+          "explanation": "Nech sa páči — прошу (заходьте).",
+          "order": 7,
+          "wordIds": [
+            "a0-u05-l04-toalety-w01",
+            "a0-u05-l04-toalety-w05"
+          ]
+        },
+        {
+          "id": "a0-u05-l04-toalety-ex08",
+          "lessonId": "a0-u05-l04-toalety",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що в туалеті немає паперу.",
+          "tokens": [
+            "nie",
+            ".",
+            "Na",
+            "papier",
+            "je",
+            "toalete"
+          ],
+          "correctOrder": [
+            "Na",
+            "toalete",
+            "nie",
+            "je",
+            "papier",
+            "."
+          ],
+          "explanation": "nie je — немає.",
+          "order": 8,
+          "wordIds": [
+            "a0-u05-l04-toalety-w01"
+          ]
+        },
+        {
+          "id": "a0-u05-l04-toalety-ex09",
+          "lessonId": "a0-u05-l04-toalety",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «WC» словацькою вимовою?",
+          "options": [
+            {
+              "id": "a",
+              "text": "ве-це",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "ва-це",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "дабл-ю-сі",
+              "correct": false
+            }
+          ],
+          "explanation": "W = vé, C = cé: WC = «ве-це».",
+          "order": 9,
+          "wordIds": [
+            "a0-u05-l04-toalety-w01"
+          ]
+        },
+        {
+          "id": "a0-u05-l04-toalety-ex10",
+          "lessonId": "a0-u05-l04-toalety",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Výťah "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "nefunguje",
+                "nepracuje",
+                "nejde voľné"
+              ],
+              "correct": "nefunguje"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Про техніку — nefunguje (не працює).",
+          "order": 10,
+          "wordIds": [
+            "a0-u05-l04-toalety-w01",
+            "a0-u05-l04-toalety-w05",
+            "a0-u05-l04-toalety-w06"
+          ]
+        },
+        {
+          "id": "a0-u05-l04-toalety-ex11",
+          "lessonId": "a0-u05-l04-toalety",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Прибиральниця каже: «Momentálne je zatvorené, choďte na druhé poschodie.» Що робити?",
+          "options": [
+            {
+              "id": "a",
+              "text": "заплатити",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "почекати тут",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "піти в туалет на другому поверсі",
+              "correct": true
+            }
+          ],
+          "explanation": "Тут зачинено — на іншому поверсі відчинено.",
+          "order": 11,
+          "wordIds": [
+            "a0-u05-l04-toalety-w01"
+          ]
+        },
+        {
+          "id": "a0-u05-l04-toalety-ex12",
+          "lessonId": "a0-u05-l04-toalety",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери всі написи, які стосуються туалету.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "OBSADENÉ",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "POKLADŇA",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "DÁMY",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "WC",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "VCHOD",
+              "correct": false
+            }
+          ],
+          "explanation": "WC, dámy, obsadené.",
+          "order": 12,
+          "wordIds": [
+            "a0-u05-l04-toalety-w01",
+            "a0-u05-l04-toalety-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "На вокзалі перед поїздкою",
+        "description": "У тебе 10 хвилин до потяга, треба в туалет.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти питаєш працівника вокзалу.",
+            "options": [
+              {
+                "sk": "WC koľko?",
+                "correct": false
+              },
+              {
+                "sk": "Kde je dámy toaleta?",
+                "correct": false
+              },
+              {
+                "sk": "Prepáčte, kde sú toalety?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Na konci haly, vľavo. Poplatok štyridsať centov.» Скільки платити?",
+            "options": [
+              {
+                "sk": "0,14 €",
+                "correct": false
+              },
+              {
+                "sk": "4 €",
+                "correct": false
+              },
+              {
+                "sk": "0,40 €",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "На кабінці «OBSADENÉ». Що робиш?",
+            "options": [
+              {
+                "sk": "заходжу",
+                "correct": false
+              },
+              {
+                "sk": "шукаю касу",
+                "correct": false
+              },
+              {
+                "sk": "чекаю",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "У кабінці немає паперу. Як повідомиш?",
+            "options": [
+              {
+                "sk": "Toaleta nefunguje papier.",
+                "correct": false
+              },
+              {
+                "sk": "Papier je obsadený.",
+                "correct": false
+              },
+              {
+                "sk": "Prepáčte, na toalete nie je papier.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тепер ти орієнтуєшся навіть у делікатних ситуаціях. Далі — квитки й транспорт."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тепер ти орієнтуєшся навіть у делікатних ситуаціях. Далі — квитки й транспорт.",
+        "nowYouKnow": [
+          "toalety, WC",
+          "muži / ženy, páni / dámy",
+          "obsadené / voľné",
+          "nefunguje, poplatok"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u05-l05-listok-doprava",
+          "title": "Квиток і транспорт"
+        }
+      }
+    }
+  ]
+}

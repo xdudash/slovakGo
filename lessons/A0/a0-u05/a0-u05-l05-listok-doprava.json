@@ -1,0 +1,776 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u05-l05-listok-doprava",
+      "sectionId": "a0-u05",
+      "level": "A0",
+      "title": "Квиток і транспорт",
+      "topic": "Виживання в місті",
+      "description": "Основи міського транспорту: autobus, električka, vlak; купити квиток, зайти й вийти.",
+      "order": 45,
+      "xpReward": 15,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Купити квиток і зрозуміти основні дії в транспорті.",
+      "completionMessage": "Тепер ти можеш їздити містом. Далі — що тобі потрібно.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Виживання в місті",
+        "title": "Квиток і транспорт",
+        "shortDescription": "Купити квиток і зрозуміти основні дії в транспорті.",
+        "outcomes": [
+          "називати види транспорту",
+          "купувати квиток: Jeden lístok, prosím",
+          "розуміти nastúpiť / vystúpiť",
+          "знати, що квиток треба відмітити"
+        ],
+        "newWords": [
+          "lístok",
+          "autobus",
+          "električka",
+          "vlak",
+          "nastúpiť",
+          "vystúpiť"
+        ],
+        "exercisesCount": 12,
+        "reward": "+15 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Транспорт у місті",
+          "text": "autobus (автобус), električka (трамвай), trolejbus (тролейбус), vlak (поїзд), MHD (міський громадський транспорт). «Idem autobusom» — їду автобусом.",
+          "examples": [
+            {
+              "sk": "Do práce idem električkou.",
+              "uk": "На роботу я їду трамваєм."
+            },
+            {
+              "sk": "Vlak ide do Žiliny.",
+              "uk": "Поїзд іде в Жиліну."
+            }
+          ],
+          "shortRule": "MHD = громадський транспорт",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Квиток",
+          "text": "«Jeden lístok, prosím» — один квиток, будь ласка. Квиток на 30 або 60 хвилин, «prestupný» — з пересадками. Паперовий квиток треба «označiť» (компостувати) у транспорті. Часто квиток купують у додатку чи SMS.",
+          "examples": [
+            {
+              "sk": "Kde kúpim lístok?",
+              "uk": "Де купити квиток?"
+            },
+            {
+              "sk": "Lístok si treba označiť.",
+              "uk": "Квиток треба закомпостувати."
+            }
+          ],
+          "shortRule": "Без квитка — штраф (pokuta)!",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Зайти й вийти",
+          "text": "«Nastúpiť» — зайти (в транспорт), «vystúpiť» — вийти. «Vystupujete?» — ви виходите? (питають у тісноті). «Na znamenie» — зупинка на вимогу (натисни кнопку).",
+          "examples": [
+            {
+              "sk": "Kde mám vystúpiť?",
+              "uk": "Де мені вийти?"
+            },
+            {
+              "sk": "Vystupujete na ďalšej?",
+              "uk": "Ви виходите на наступній?"
+            }
+          ],
+          "shortRule": "nastúpiť — зайти, vystúpiť — вийти",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u05-l05-listok-doprava-w01",
+            "sk": "lístok",
+            "uk": "квиток",
+            "pronunciationUk": "лі:сток",
+            "exampleSk": "Kúpil som si lístok v aplikácii.",
+            "exampleUk": "Я купив квиток у додатку."
+          },
+          {
+            "wordId": "a0-u05-l05-listok-doprava-w02",
+            "sk": "autobus",
+            "uk": "автобус",
+            "pronunciationUk": "аутобус",
+            "exampleSk": "Autobus ide každých desať minút.",
+            "exampleUk": "Автобус ходить кожні десять хвилин."
+          },
+          {
+            "wordId": "a0-u05-l05-listok-doprava-w03",
+            "sk": "električka",
+            "uk": "трамвай",
+            "pronunciationUk": "електрічка",
+            "exampleSk": "Električka číslo štyri ide na stanicu.",
+            "exampleUk": "Трамвай номер чотири їде на вокзал."
+          },
+          {
+            "wordId": "a0-u05-l05-listok-doprava-w04",
+            "sk": "vlak",
+            "uk": "поїзд",
+            "pronunciationUk": "влак",
+            "exampleSk": "Vlak mešká desať minút.",
+            "exampleUk": "Поїзд запізнюється на десять хвилин."
+          },
+          {
+            "wordId": "a0-u05-l05-listok-doprava-w05",
+            "sk": "nastúpiť",
+            "uk": "зайти (у транспорт)",
+            "pronunciationUk": "насту:піть",
+            "exampleSk": "Nastúpte, prosím.",
+            "exampleUk": "Заходьте, будь ласка."
+          },
+          {
+            "wordId": "a0-u05-l05-listok-doprava-w06",
+            "sk": "vystúpiť",
+            "uk": "вийти (з транспорту)",
+            "pronunciationUk": "висту:піть",
+            "exampleSk": "Vystúpim pri nemocnici.",
+            "exampleUk": "Я вийду біля лікарні."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u05-l05-listok-doprava-w01",
+          "sk": "lístok",
+          "uk": "квиток",
+          "pronunciationUk": "лі:сток",
+          "exampleSk": "Kúpil som si lístok v aplikácii.",
+          "exampleUk": "Я купив квиток у додатку.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l05-listok-doprava-w02",
+          "sk": "autobus",
+          "uk": "автобус",
+          "pronunciationUk": "аутобус",
+          "exampleSk": "Autobus ide každých desať minút.",
+          "exampleUk": "Автобус ходить кожні десять хвилин.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l05-listok-doprava-w03",
+          "sk": "električka",
+          "uk": "трамвай",
+          "pronunciationUk": "електрічка",
+          "exampleSk": "Električka číslo štyri ide na stanicu.",
+          "exampleUk": "Трамвай номер чотири їде на вокзал.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l05-listok-doprava-w04",
+          "sk": "vlak",
+          "uk": "поїзд",
+          "pronunciationUk": "влак",
+          "exampleSk": "Vlak mešká desať minút.",
+          "exampleUk": "Поїзд запізнюється на десять хвилин.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l05-listok-doprava-w05",
+          "sk": "nastúpiť",
+          "uk": "зайти (у транспорт)",
+          "pronunciationUk": "насту:піть",
+          "exampleSk": "Nastúpte, prosím.",
+          "exampleUk": "Заходьте, будь ласка.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l05-listok-doprava-w06",
+          "sk": "vystúpiť",
+          "uk": "вийти (з транспорту)",
+          "pronunciationUk": "висту:піть",
+          "exampleSk": "Vystúpim pri nemocnici.",
+          "exampleUk": "Я вийду біля лікарні.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u05-l05-listok-doprava-ex01",
+          "lessonId": "a0-u05-l05-listok-doprava",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "lístok",
+              "right": "квиток"
+            },
+            {
+              "left": "električka",
+              "right": "трамвай"
+            },
+            {
+              "left": "vlak",
+              "right": "поїзд"
+            },
+            {
+              "left": "nastúpiť",
+              "right": "зайти"
+            },
+            {
+              "left": "vystúpiť",
+              "right": "вийти"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a0-u05-l05-listok-doprava-w01",
+            "a0-u05-l05-listok-doprava-w03",
+            "a0-u05-l05-listok-doprava-w04",
+            "a0-u05-l05-listok-doprava-w05",
+            "a0-u05-l05-listok-doprava-w06"
+          ]
+        },
+        {
+          "id": "a0-u05-l05-listok-doprava-ex02",
+          "lessonId": "a0-u05-l05-listok-doprava",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "«Električka» — це…",
+          "options": [
+            {
+              "id": "a",
+              "text": "електричка (приміський поїзд)",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "електросамокат",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "трамвай",
+              "correct": true
+            }
+          ],
+          "explanation": "Хибний друг: električka — трамвай!",
+          "order": 2
+        },
+        {
+          "id": "a0-u05-l05-listok-doprava-ex03",
+          "lessonId": "a0-u05-l05-listok-doprava",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти купуєш квиток у водія.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Dobrú noc, lístok.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Jeden lístok, prosím.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Jeden vlak, prosím.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Lístok je kde vystúpiť?",
+              "correct": false
+            }
+          ],
+          "explanation": "Jeden lístok, prosím.",
+          "order": 3,
+          "wordIds": [
+            "a0-u05-l05-listok-doprava-w01",
+            "a0-u05-l05-listok-doprava-w04",
+            "a0-u05-l05-listok-doprava-w06"
+          ]
+        },
+        {
+          "id": "a0-u05-l05-listok-doprava-ex04",
+          "lessonId": "a0-u05-l05-listok-doprava",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Pani v električke",
+              "sk": "Vystupujete na ďalšej?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Nie, nech sa páči.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Dobrý deň, električka.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Áno, lístok.",
+              "correct": false
+            }
+          ],
+          "explanation": "Ти не виходиш — пропускаєш її.",
+          "order": 4,
+          "wordIds": [
+            "a0-u05-l05-listok-doprava-w01",
+            "a0-u05-l05-listok-doprava-w03"
+          ]
+        },
+        {
+          "id": "a0-u05-l05-listok-doprava-ex05",
+          "lessonId": "a0-u05-l05-listok-doprava",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Паперовий квиток у словацькому транспорті треба закомпостувати.",
+          "correctAnswer": true,
+          "explanation": "označiť lístok — закомпостувати.",
+          "order": 5
+        },
+        {
+          "id": "a0-u05-l05-listok-doprava-ex06",
+          "lessonId": "a0-u05-l05-listok-doprava",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши питання.",
+          "sentence": "Kde mám ______? (вийти)",
+          "acceptedAnswers": [
+            "vystúpiť"
+          ],
+          "explanation": "vystúpiť — вийти.",
+          "order": 6,
+          "wordIds": [
+            "a0-u05-l05-listok-doprava-w06"
+          ]
+        },
+        {
+          "id": "a0-u05-l05-listok-doprava-ex07",
+          "lessonId": "a0-u05-l05-listok-doprava",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Do práce idem "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "električka",
+                "električkou",
+                "na električku"
+              ],
+              "correct": "električkou"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Їхати чим — орудний відмінок: električkou.",
+          "order": 7,
+          "wordIds": [
+            "a0-u05-l05-listok-doprava-w03"
+          ]
+        },
+        {
+          "id": "a0-u05-l05-listok-doprava-ex08",
+          "lessonId": "a0-u05-l05-listok-doprava",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Зайти чи вийти?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Зайти"
+            },
+            {
+              "id": "c2",
+              "title": "Вийти"
+            }
+          ],
+          "items": [
+            {
+              "sk": "vystúpiť",
+              "category": "c2"
+            },
+            {
+              "sk": "nastúpiť",
+              "category": "c1"
+            },
+            {
+              "sk": "vystupujem",
+              "category": "c2"
+            },
+            {
+              "sk": "Nastúpte!",
+              "category": "c1"
+            },
+            {
+              "sk": "Vystupujete?",
+              "category": "c2"
+            },
+            {
+              "sk": "nastupujem",
+              "category": "c1"
+            }
+          ],
+          "explanation": "nastúpiť / vystúpiť.",
+          "order": 8,
+          "wordIds": [
+            "a0-u05-l05-listok-doprava-w05",
+            "a0-u05-l05-listok-doprava-w06"
+          ]
+        },
+        {
+          "id": "a0-u05-l05-listok-doprava-ex09",
+          "lessonId": "a0-u05-l05-listok-doprava",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Запитай, де купити квиток.",
+          "tokens": [
+            "kúpim",
+            "?",
+            "Kde",
+            "lístok"
+          ],
+          "correctOrder": [
+            "Kde",
+            "kúpim",
+            "lístok",
+            "?"
+          ],
+          "explanation": "Kde kúpim + що?",
+          "order": 9,
+          "wordIds": [
+            "a0-u05-l05-listok-doprava-w01"
+          ]
+        },
+        {
+          "id": "a0-u05-l05-listok-doprava-ex10",
+          "lessonId": "a0-u05-l05-listok-doprava",
+          "type": "real_schedule",
+          "skill": [
+            "reading",
+            "real_life",
+            "time"
+          ],
+          "instruction": "Подивись на розклад і обери відповідь.",
+          "schedule": {
+            "title": "Linka 31 – zastávka Hlavná stanica",
+            "rows": [
+              {
+                "day": "Pracovné dni",
+                "hours": "každých 10 minút"
+              },
+              {
+                "day": "Sobota",
+                "hours": "každých 20 minút"
+              },
+              {
+                "day": "Nedeľa",
+                "hours": "každých 30 minút"
+              }
+            ]
+          },
+          "question": "Як часто ходить автобус у суботу?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "кожні 20 хвилин",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "кожні 10 хвилин",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "не ходить",
+              "correct": false
+            }
+          ],
+          "explanation": "Sobota: každých 20 minút.",
+          "order": 10
+        },
+        {
+          "id": "a0-u05-l05-listok-doprava-ex11",
+          "lessonId": "a0-u05-l05-listok-doprava",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Контролер каже: «Váš lístok nie je označený, platíte pokutu.» Що сталося?",
+          "options": [
+            {
+              "id": "a",
+              "text": "квиток прострочений на день",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "ти сів не в той трамвай",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "квиток не закомпостовано — штраф",
+              "correct": true
+            }
+          ],
+          "explanation": "pokuta — штраф.",
+          "order": 11,
+          "wordIds": [
+            "a0-u05-l05-listok-doprava-w01"
+          ]
+        },
+        {
+          "id": "a0-u05-l05-listok-doprava-ex12",
+          "lessonId": "a0-u05-l05-listok-doprava",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери всі види транспорту.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "lístok",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "električka",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "autobus",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "križovatka",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "zastávka",
+              "correct": false
+            },
+            {
+              "id": "f",
+              "sk": "vlak",
+              "correct": true
+            }
+          ],
+          "explanation": "lístok і zastávka — не транспорт.",
+          "order": 12,
+          "wordIds": [
+            "a0-u05-l05-listok-doprava-w01",
+            "a0-u05-l05-listok-doprava-w02",
+            "a0-u05-l05-listok-doprava-w03",
+            "a0-u05-l05-listok-doprava-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Їдемо до лікарні трамваєм",
+        "description": "Ти їдеш трамваєм до лікарні вперше.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "На зупинці ти питаєш, який трамвай.",
+            "options": [
+              {
+                "sk": "Električka nemocnica koľko?",
+                "correct": false
+              },
+              {
+                "sk": "Kde je nemocnica električka?",
+                "correct": false
+              },
+              {
+                "sk": "Prepáčte, ktorá električka ide k nemocnici?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти купуєш квиток в автоматі, потім…",
+            "options": [
+              {
+                "sk": "nič, lístok stačí",
+                "correct": false
+              },
+              {
+                "sk": "idem k vodičovi",
+                "correct": false
+              },
+              {
+                "sk": "označím si lístok v električke",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти питаєш сусіда, де виходити.",
+            "options": [
+              {
+                "sk": "Prosím vás, kde mám vystúpiť k nemocnici?",
+                "correct": true
+              },
+              {
+                "sk": "Vystupujete nemocnica?",
+                "correct": false
+              },
+              {
+                "sk": "Kde mám nastúpiť nemocnica?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Na ďalšej zastávke.» Коли виходиш?",
+            "options": [
+              {
+                "sk": "через дві зупинки",
+                "correct": false
+              },
+              {
+                "sk": "на кінцевій",
+                "correct": false
+              },
+              {
+                "sk": "на наступній зупинці",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тепер ти можеш їздити містом. Далі — що тобі потрібно."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тепер ти можеш їздити містом. Далі — що тобі потрібно.",
+        "nowYouKnow": [
+          "autobus, električka, vlak, MHD",
+          "Jeden lístok, prosím.",
+          "označiť lístok",
+          "nastúpiť / vystúpiť"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u05-l06-potrebujem",
+          "title": "Мені потрібно…"
+        }
+      }
+    }
+  ]
+}
