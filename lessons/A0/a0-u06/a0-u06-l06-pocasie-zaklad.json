@@ -1,0 +1,730 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u06-l06-pocasie-zaklad",
+      "sectionId": "a0-u06",
+      "level": "A0",
+      "title": "Погода",
+      "topic": "Перші потреби",
+      "description": "Прості фрази про погоду: prší, sneží, svieti slnko, je zima, je horúco.",
+      "order": 56,
+      "xpReward": 15,
+      "estimatedMinutes": 18,
+      "isPublished": true,
+      "intro": "Описати погоду й зрозуміти короткий прогноз.",
+      "completionMessage": "Ти можеш говорити про погоду — улюблену тему для small talk. Далі — у кав’ярні.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Перші потреби",
+        "title": "Погода",
+        "shortDescription": "Описати погоду й зрозуміти короткий прогноз.",
+        "outcomes": [
+          "питати Aké je počasie?",
+          "казати prší, sneží, svieti slnko",
+          "казати je zima / je teplo / je horúco",
+          "розуміти температуру в прогнозі"
+        ],
+        "newWords": [
+          "počasie",
+          "prší",
+          "sneží",
+          "slnko",
+          "zima",
+          "horúco"
+        ],
+        "exercisesCount": 11,
+        "reward": "+15 XP",
+        "estimatedMinutes": 18,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Яка погода?",
+          "text": "«Aké je dnes počasie?» — яка сьогодні погода? «Prší» — іде дощ, «sneží» — іде сніг, «svieti slnko» — світить сонце, «je zamračené» — хмарно, «fúka vietor» — дме вітер.",
+          "examples": [
+            {
+              "sk": "Dnes prší.",
+              "uk": "Сьогодні йде дощ."
+            },
+            {
+              "sk": "Svieti slnko.",
+              "uk": "Світить сонце."
+            }
+          ],
+          "shortRule": "prší, sneží — одне дієслово",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Холодно чи жарко",
+          "text": "«Je zima» — холодно (так, zima — і зима, і холод!), «je chladno» — прохолодно, «je teplo» — тепло, «je horúco» — спекотно. Про себе: «Je mi zima» — мені холодно.",
+          "examples": [
+            {
+              "sk": "Vonku je zima.",
+              "uk": "Надворі холодно."
+            },
+            {
+              "sk": "Je mi horúco.",
+              "uk": "Мені спекотно."
+            }
+          ],
+          "shortRule": "je zima = холодно",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Температура",
+          "text": "«Koľko je stupňov?» — скільки градусів? «Je dvadsať stupňov» — двадцять градусів. «Mínus päť» — мінус п’ять.",
+          "examples": [
+            {
+              "sk": "Zajtra bude tridsať stupňov.",
+              "uk": "Завтра буде тридцять градусів."
+            },
+            {
+              "sk": "V noci mínus dva.",
+              "uk": "Уночі мінус два."
+            }
+          ],
+          "shortRule": "stupeň = градус",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u06-l06-pocasie-zaklad-w01",
+            "sk": "počasie",
+            "uk": "погода",
+            "pronunciationUk": "почасіє",
+            "exampleSk": "Aké bude počasie cez víkend?",
+            "exampleUk": "Яка буде погода на вихідних?"
+          },
+          {
+            "wordId": "a0-u06-l06-pocasie-zaklad-w02",
+            "sk": "prší",
+            "uk": "іде дощ",
+            "pronunciationUk": "прші:",
+            "exampleSk": "Vonku prší, vezmi si dáždnik.",
+            "exampleUk": "Надворі дощ, візьми парасольку."
+          },
+          {
+            "wordId": "a0-u06-l06-pocasie-zaklad-w03",
+            "sk": "sneží",
+            "uk": "іде сніг",
+            "pronunciationUk": "снежі:",
+            "exampleSk": "V horách sneží.",
+            "exampleUk": "У горах іде сніг."
+          },
+          {
+            "wordId": "a0-u06-l06-pocasie-zaklad-w04",
+            "sk": "slnko",
+            "uk": "сонце",
+            "pronunciationUk": "слнко",
+            "exampleSk": "Svieti slnko, ideme von.",
+            "exampleUk": "Світить сонце, ідемо гуляти."
+          },
+          {
+            "wordId": "a0-u06-l06-pocasie-zaklad-w05",
+            "sk": "zima",
+            "uk": "холод; зима",
+            "pronunciationUk": "зіма",
+            "exampleSk": "Dnes je veľká zima.",
+            "exampleUk": "Сьогодні дуже холодно."
+          },
+          {
+            "wordId": "a0-u06-l06-pocasie-zaklad-w06",
+            "sk": "horúco",
+            "uk": "спекотно",
+            "pronunciationUk": "гору:цо",
+            "exampleSk": "V lete je v Bratislave horúco.",
+            "exampleUk": "Улітку в Братиславі спекотно."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u06-l06-pocasie-zaklad-w01",
+          "sk": "počasie",
+          "uk": "погода",
+          "pronunciationUk": "почасіє",
+          "exampleSk": "Aké bude počasie cez víkend?",
+          "exampleUk": "Яка буде погода на вихідних?",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l06-pocasie-zaklad-w02",
+          "sk": "prší",
+          "uk": "іде дощ",
+          "pronunciationUk": "прші:",
+          "exampleSk": "Vonku prší, vezmi si dáždnik.",
+          "exampleUk": "Надворі дощ, візьми парасольку.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l06-pocasie-zaklad-w03",
+          "sk": "sneží",
+          "uk": "іде сніг",
+          "pronunciationUk": "снежі:",
+          "exampleSk": "V horách sneží.",
+          "exampleUk": "У горах іде сніг.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l06-pocasie-zaklad-w04",
+          "sk": "slnko",
+          "uk": "сонце",
+          "pronunciationUk": "слнко",
+          "exampleSk": "Svieti slnko, ideme von.",
+          "exampleUk": "Світить сонце, ідемо гуляти.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l06-pocasie-zaklad-w05",
+          "sk": "zima",
+          "uk": "холод; зима",
+          "pronunciationUk": "зіма",
+          "exampleSk": "Dnes je veľká zima.",
+          "exampleUk": "Сьогодні дуже холодно.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l06-pocasie-zaklad-w06",
+          "sk": "horúco",
+          "uk": "спекотно",
+          "pronunciationUk": "гору:цо",
+          "exampleSk": "V lete je v Bratislave horúco.",
+          "exampleUk": "Улітку в Братиславі спекотно.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u06-l06-pocasie-zaklad-ex01",
+          "lessonId": "a0-u06-l06-pocasie-zaklad",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "prší",
+              "right": "іде дощ"
+            },
+            {
+              "left": "sneží",
+              "right": "іде сніг"
+            },
+            {
+              "left": "svieti slnko",
+              "right": "світить сонце"
+            },
+            {
+              "left": "je horúco",
+              "right": "спекотно"
+            },
+            {
+              "left": "je zima",
+              "right": "холодно"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a0-u06-l06-pocasie-zaklad-w02",
+            "a0-u06-l06-pocasie-zaklad-w03",
+            "a0-u06-l06-pocasie-zaklad-w04",
+            "a0-u06-l06-pocasie-zaklad-w05",
+            "a0-u06-l06-pocasie-zaklad-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l06-pocasie-zaklad-ex02",
+          "lessonId": "a0-u06-l06-pocasie-zaklad",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Je mi zima»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "у мене зима",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "мені холодно",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "я люблю зиму",
+              "correct": false
+            }
+          ],
+          "explanation": "Je mi zima — про відчуття холоду.",
+          "order": 2
+        },
+        {
+          "id": "a0-u06-l06-pocasie-zaklad-ex03",
+          "lessonId": "a0-u06-l06-pocasie-zaklad",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Тепло чи холодно?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Тепло"
+            },
+            {
+              "id": "c2",
+              "title": "Холодно"
+            }
+          ],
+          "items": [
+            {
+              "sk": "mínus päť stupňov",
+              "category": "c2"
+            },
+            {
+              "sk": "je horúco",
+              "category": "c1"
+            },
+            {
+              "sk": "sneží",
+              "category": "c2"
+            },
+            {
+              "sk": "svieti slnko",
+              "category": "c1"
+            },
+            {
+              "sk": "je zima",
+              "category": "c2"
+            },
+            {
+              "sk": "je teplo",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Розподіли за температурою.",
+          "order": 3,
+          "wordIds": [
+            "a0-u06-l06-pocasie-zaklad-w03",
+            "a0-u06-l06-pocasie-zaklad-w04",
+            "a0-u06-l06-pocasie-zaklad-w05",
+            "a0-u06-l06-pocasie-zaklad-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l06-pocasie-zaklad-ex04",
+          "lessonId": "a0-u06-l06-pocasie-zaklad",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Sneží» означає «іде дощ».",
+          "correctAnswer": false,
+          "explanation": "sneží — іде сніг, prší — іде дощ.",
+          "order": 4,
+          "wordIds": [
+            "a0-u06-l06-pocasie-zaklad-w03"
+          ]
+        },
+        {
+          "id": "a0-u06-l06-pocasie-zaklad-ex05",
+          "lessonId": "a0-u06-l06-pocasie-zaklad",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Aké je dnes ______?",
+          "acceptedAnswers": [
+            "počasie"
+          ],
+          "explanation": "Aké je počasie?",
+          "order": 5,
+          "wordIds": [
+            "a0-u06-l06-pocasie-zaklad-w01"
+          ]
+        },
+        {
+          "id": "a0-u06-l06-pocasie-zaklad-ex06",
+          "lessonId": "a0-u06-l06-pocasie-zaklad",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Susedka",
+              "sk": "Hrozná zima dnes, však?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Áno, je horúco.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Nie, sneží teplo.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Áno, je mínus desať.",
+              "correct": true
+            }
+          ],
+          "explanation": "Погоджуєшся й уточнюєш.",
+          "order": 6,
+          "wordIds": [
+            "a0-u06-l06-pocasie-zaklad-w03",
+            "a0-u06-l06-pocasie-zaklad-w05",
+            "a0-u06-l06-pocasie-zaklad-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l06-pocasie-zaklad-ex07",
+          "lessonId": "a0-u06-l06-pocasie-zaklad",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що надворі йде дощ.",
+          "tokens": [
+            ".",
+            "prší",
+            "Vonku"
+          ],
+          "correctOrder": [
+            "Vonku",
+            "prší",
+            "."
+          ],
+          "explanation": "vonku — надворі.",
+          "order": 7,
+          "wordIds": [
+            "a0-u06-l06-pocasie-zaklad-w02"
+          ]
+        },
+        {
+          "id": "a0-u06-l06-pocasie-zaklad-ex08",
+          "lessonId": "a0-u06-l06-pocasie-zaklad",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення й обери правильний висновок.",
+          "message": {
+            "sender": "Počasie.sk",
+            "body": "Zajtra: ráno hmla, doobeda zamračené, poobede dážď. Teploty 8 až 12 °C."
+          },
+          "question": "Що взяти з собою завтра після обіду?",
+          "options": [
+            {
+              "id": "a",
+              "text": "лижі",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "сонцезахисні окуляри",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "парасольку",
+              "correct": true
+            }
+          ],
+          "explanation": "poobede dážď — після обіду дощ.",
+          "order": 8,
+          "wordIds": [
+            "a0-u06-l06-pocasie-zaklad-w01"
+          ]
+        },
+        {
+          "id": "a0-u06-l06-pocasie-zaklad-ex09",
+          "lessonId": "a0-u06-l06-pocasie-zaklad",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "V lete je tu "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "zima",
+                "sneží",
+                "horúco"
+              ],
+              "correct": "horúco"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Улітку — спекотно.",
+          "order": 9,
+          "wordIds": [
+            "a0-u06-l06-pocasie-zaklad-w03",
+            "a0-u06-l06-pocasie-zaklad-w05",
+            "a0-u06-l06-pocasie-zaklad-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l06-pocasie-zaklad-ex10",
+          "lessonId": "a0-u06-l06-pocasie-zaklad",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Колега питає, чому ти в куртці в офісі.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Mám zimu bundu.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Je mi zima.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Je zima mi som.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Sneží mi.",
+              "correct": false
+            }
+          ],
+          "explanation": "Je mi zima.",
+          "order": 10,
+          "wordIds": [
+            "a0-u06-l06-pocasie-zaklad-w03",
+            "a0-u06-l06-pocasie-zaklad-w05"
+          ]
+        },
+        {
+          "id": "a0-u06-l06-pocasie-zaklad-ex11",
+          "lessonId": "a0-u06-l06-pocasie-zaklad",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери фрази про погану погоду.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Prší.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Svieti slnko.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Fúka silný vietor.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Je krásne.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Je zamračené.",
+              "correct": true
+            }
+          ],
+          "explanation": "Дощ, вітер, хмари.",
+          "order": 11,
+          "wordIds": [
+            "a0-u06-l06-pocasie-zaklad-w02",
+            "a0-u06-l06-pocasie-zaklad-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Плани на вихідні",
+        "description": "Ви з другом плануєте поїздку в гори.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Друг: «Aké bude počasie v sobotu?» Прогноз: сонце, 22 °C.",
+            "options": [
+              {
+                "sk": "Bude pršať, mínus dva.",
+                "correct": false
+              },
+              {
+                "sk": "Bude svietiť slnko, dvadsaťdva stupňov.",
+                "correct": true
+              },
+              {
+                "sk": "Sneží horúco.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«A v nedeľu?» Прогноз: дощ.",
+            "options": [
+              {
+                "sk": "V nedeľu bude slnko.",
+                "correct": false
+              },
+              {
+                "sk": "V nedeľu bude pršať.",
+                "correct": true
+              },
+              {
+                "sk": "V nedeľu horúco sneží.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Тоді краще їхати…",
+            "options": [
+              {
+                "sk": "v noci v nedeľu",
+                "correct": false
+              },
+              {
+                "sk": "v nedeľu",
+                "correct": false
+              },
+              {
+                "sk": "v sobotu",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Vezmi si bundu, v horách je zima.» Що радить друг?",
+            "options": [
+              {
+                "sk": "не їхати в гори",
+                "correct": false
+              },
+              {
+                "sk": "не брати куртку",
+                "correct": false
+              },
+              {
+                "sk": "узяти куртку, бо в горах холодно",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти можеш говорити про погоду — улюблену тему для small talk. Далі — у кав’ярні."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти можеш говорити про погоду — улюблену тему для small talk. Далі — у кав’ярні.",
+        "nowYouKnow": [
+          "Aké je počasie?",
+          "prší, sneží, svieti slnko, je zamračené",
+          "je zima / teplo / horúco",
+          "stupne"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 11,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u06-l07-v-kaviarni-zaklad",
+          "title": "У кав’ярні"
+        }
+      }
+    }
+  ]
+}

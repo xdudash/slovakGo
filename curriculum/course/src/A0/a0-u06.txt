@@ -1,0 +1,443 @@
+@unit a0-u06 | Перші потреби | Prvé potreby
+
+@lesson zakladne-potraviny | Базові продукти | Základné potraviny
+desc: Найпотрібніші продукти на щодень: rožok, maslo, vajcia, ovocie, zelenina, cukor — і як їх купити.
+goal: Назвати базові продукти й купити їх у магазині.
+out: називати базові продукти ;; розуміти, що rožok — типова словацька булочка ;; казати Kúpim… / Potrebujem kúpiť… ;; розрізняти ovocie і zelenina
+done: Тепер ти складеш список покупок словацькою. Далі — кольори.
+T: Хліб і сніданок || Словацький сніданок часто: chlieb alebo rožok (рогалик — найпопулярніша булочка), maslo (масло), syr (сир), vajcia (яйця), čaj alebo káva. || Na raňajky mám rožok s maslom. = На сніданок у мене рогалик із маслом. ;; Kúpim desať vajec. = Я куплю десять яєць. || rožok — словацька «класика»
+T: Овочі та фрукти || «Ovocie» — фрукти (збірне, однина!), «zelenina» — овочі (теж однина). Jablko (яблуко), banán, paradajka (помідор), uhorka (огірок), zemiaky (картопля). || Ovocie je zdravé. = Фрукти корисні. ;; Zelenina je lacná. = Овочі дешеві. || ovocie, zelenina — однина!
+T: Купуємо || «Kúpim…» — я куплю… «Potrebujem kúpiť…» — мені треба купити… «Máte…?» — у вас є…? «Je to čerstvé?» — це свіже? || Máte čerstvé rožky? = У вас є свіжі рогалики? ;; Potrebujem kúpiť cukor. = Мені треба купити цукор. || Kúpim / Potrebujem kúpiť…
+W: rožok | рогалик (булочка) | рожок | Kúpim dva rožky. | Я куплю два рогалики.
+W: maslo | масло | масло | Maslo je v chladničke. | Масло в холодильнику.
+W: vajcia | яйця | вайця | Potrebujem šesť vajec. | Мені потрібно шість яєць.
+W: ovocie | фрукти | овоціє | Deti jedia veľa ovocia. | Діти їдять багато фруктів.
+W: zelenina | овочі | зеленіна | Zelenina z trhu je čerstvá. | Овочі з ринку свіжі.
+W: cukor | цукор | цукор | Kávu pijem bez cukru. | Каву я п’ю без цукру.
+X mt: З’єднай. | rožok = рогалик ;; maslo = масло ;; vajcia = яйця ;; ovocie = фрукти ;; zelenina = овочі ;; cukor = цукор
+X cat: Фрукти чи овочі? | ovocie: jablko, banán, hruška ;; zelenina: paradajka, uhorka, zemiaky
+= ovocie — фрукти, zelenina — овочі.
+X tf: - | - | «Ovocie» — це однина (збірне слово), як «зелень». | T
+= Ovocie je zdravé — дієслово в однині.
+X sc~: Що таке «rožok»? | - | *популярна словацька булочка-рогалик ;; ріжок для взуття ;; ріг вулиці
+= rožok — щоденна булочка.
+X dd: Обери. | Kávu pijem bez [*cukru/cukor/cukrom].
+= bez + родовий: cukor → bez cukru.
+X fb: Допиши. | Na raňajky mám rožok s ___. (маслом) | maslom |
+= s maslom — з маслом.
+X so: - | Скажи, що тобі треба купити цукор. | Potrebujem kúpiť cukor.
+= Potrebujem kúpiť + що.
+X np: Ти хочеш дізнатися, чи є свіжі рогалики. | *Máte čerstvé rožky? ;; Rožok je čerstvý máte? ;; Čerstvý rožky kde? ;; Kúpim máte rožky.
+= Máte + що?
+X menu: Подивись на акційний листок. | Pečivo: rožok = 0,12 € ;; Mliečne výrobky: maslo 250 g = 2,29 € ;; Vajcia: 10 ks = 2,49 € ;; Ovocie: banány 1 kg = 1,29 €
+q~: Скільки коштують 10 яєць? | *2,49 € ;; 2,29 € ;; 1,29 €
+q~: Що найдешевше? | *rožok ;; maslo ;; banány
+X ms: Обери всі продукти зі сніданку. | - | *rožok ;; *maslo ;; *vajcia ;; benzín ;; lístok
+= Benzín і lístok — не їжа.
+X sc~: Що означає «Je to čerstvé?»? | - | *Це свіже? ;; Це дешеве? ;; Це смачне?
+= čerstvý — свіжий.
+X dr: - | Predavačka: Čo si želáte? | *Desať vajec a maslo, prosím. ;; Želám si dobrý deň. ;; Vajcia sú čerstvé?
+= Čo si želáte? — що бажаєте? Назви покупку.
+F: Список від сусідки || Сусідка захворіла й попросила тебе купити продукти.
+S: У списку «rožky – 4». Що купити? | *4 рогалики ;; 4 ріжки морозива ;; 4 батони
+S: «maslo, vajcia». Що це? | *масло, яйця ;; молоко, яблука ;; м’ясо, вода
+S: Продавчиня: «Vajcia nemáme, prídu zajtra.» Що це означає? | *яєць немає, будуть завтра ;; яйця несвіжі ;; яйця дорогі
+S: Ти питаєш, чи є фрукти зі знижкою. | *Je ovocie v akcii? ;; Ovocie je zelenina? ;; Máte ovocie čerstvé áno?
+R: rožok, maslo, vajcia, ovocie, zelenina, cukor ;; ovocie, zelenina — однина ;; Kúpim… / Potrebujem kúpiť… ;; Máte…? Je to čerstvé?
+
+@lesson farby | Кольори | Farby
+desc: Основні кольори й узгодження з родом: červený / červená / červené.
+goal: Назвати колір предмета й узгодити його з іменником.
+out: називати основні кольори ;; узгоджувати колір з родом іменника ;; питати Akú farbu? ;; описувати речі за кольором
+done: Світ став кольоровим! Далі — родина.
+T: Основні кольори || červený (червоний), modrý (синій), zelený (зелений), žltý (жовтий), biely (білий), čierny (чорний), sivý (сірий), hnedý (коричневий). || červené auto = червона машина ;; modrá taška = синя сумка || -ý — базова форма
+T: Узгодження з родом || Чоловічий рід: -ý (čierny kabát), жіночий: -á (čierna taška), середній: -é (čierne auto). Так само, як в українській «чорний / чорна / чорне». || biely dom = білий будинок ;; biela stena = біла стіна ;; biele okno = біле вікно || -ý / -á / -é
+T: Яка це барва? || «Akú farbu má…?» — якого кольору…? «Aká je to farba?» — що це за колір? «Svetlý / tmavý» — світлий / темний: svetlomodrý (блакитний). || Akú farbu má tvoje auto? = Якого кольору твоя машина? ;; Je tmavomodré. = Темно-синя. || svetlo- / tmavo-
+W: červený | червоний | червені: | Kúpila som červené šaty. | Я купила червону сукню.
+W: modrý | синій | модрі: | Mám modrú bundu. | У мене синя куртка.
+W: zelený | зелений | зелені: | Na semafore svieti zelená. | На світлофорі горить зелене.
+W: žltý | жовтий | жлті: | Autobus je žltý. | Автобус жовтий.
+W: biely | білий | біелі | Biele víno, prosím. | Біле вино, будь ласка.
+W: čierny | чорний | чєрні | Čierna káva bez cukru. | Чорна кава без цукру.
+W: farba | колір; фарба | фарба | Aká je tvoja obľúbená farba? | Який твій улюблений колір?
+X mt: З’єднай. | červený = червоний ;; modrý = синій ;; zelený = зелений ;; žltý = жовтий ;; čierny = чорний
+X dd: Обери форму. | Mám [*modrú/modrý/modré] tašku.
+= taška — жін. рід, у знахідному: modrú.
+X dd: Обери форму. | To je [*biele/biela/biely] auto.
+= auto — середній рід: biele.
+X dd: Обери форму. | Môj kabát je [*čierny/čierna/čierne].
+= kabát — чол. рід: čierny.
+X cat: Яка форма підходить? | -ý (чол.): dom, kabát, stôl ;; -á (жін.): taška, bunda, stena ;; -é (сер.): auto, okno, víno
+= Рід іменника визначає закінчення.
+X sc~: Що означає «svetlomodrý»? | - | *блакитний ;; темно-синій ;; бірюзовий
+= svetlo- — світло-; svetlomodrý — блакитний.
+X tf: - | - | «Zelená» на світлофорі означає, що можна йти. | T
+= Zelená — зелене світло.
+X fb: Допиши. | Akú ___ má tvoje auto? | farbu | Знахідний відмінок від farba.
+= Akú farbu…?
+X so: - | Скажи, що маєш чорну каву без цукру. | Mám čiernu kávu bez cukru.
+= čierna → čiernu (знахідний).
+X np: Ти загубив(ла) у кафе сумку. Яка вона? Червона. | *Stratila som tašku. Je červená. ;; Taška je červený. ;; Mám červené taška. ;; Červená stratila.
+= taška — červená.
+X fe: - | Kúpil som si [biela>bielu] bundu.
+= bunda (жін.), знахідний: bielu.
+X ms: Обери правильні словосполучення. | - | *zelené jablko ;; *žltý banán ;; *čierna mačka ;; modrý taška ;; biela auto
+= jablko — сер. рід (zelené), taška — жін. (modrá), auto — сер. (biele).
+F: Бюро знахідок || Ти загубив(ла) речі в поїзді й описуєш їх працівниці.
+S: «Akú farbu má taška?» (чорна) | *Je čierna. ;; Je čierny. ;; Je čierne.
+S: «A dáždnik?» (синій) | *Je modrý. ;; Je modrá. ;; Je modré.
+S: «Máme tu zelenú tašku a čiernu tašku.» Яку взяти? | *čiernu ;; zelenú ;; obe
+S: «Tu je, nech sa páči.» | *Ďakujem veľmi pekne! ;; Nech sa páči. ;; Je čierna.
+R: červený, modrý, zelený, žltý, biely, čierny ;; -ý / -á / -é ;; Akú farbu má…? ;; svetlo- / tmavo-
+
+@lesson rodina-zaklad | Моя родина | Moja rodina
+desc: Найближчі родичі: mama, otec, brat, sestra, syn, dcéra — і як сказати «мій / моя».
+goal: Назвати членів родини й розповісти, хто в тебе є.
+out: називати найближчих родичів ;; казати môj / moja ;; казати Mám brata / sestru ;; розуміти розмовні mamina, ocko
+done: Тепер ти можеш розповісти про родину. Далі — тіло й біль.
+T: Найближчі родичі || mama (мама), otec (батько), brat (брат), sestra (сестра), syn (син), dcéra (донька). Розмовно: mamina, ocko / tato. || To je moja mama. = Це моя мама. ;; Môj otec je lekár. = Мій батько — лікар. || dcéra — донька (не «дочка»)
+T: Môj, moja, moje || Чоловічий рід — môj (môj brat), жіночий — moja (moja sestra), середній — moje (moje dieťa). || môj syn = мій син ;; moja dcéra = моя донька ;; moje dieťa = моя дитина || môj / moja / moje
+T: Mám brata || Після «mám» — знахідний відмінок. Чоловічий рід (живі істоти) отримує -a: brat → brata, syn → syna. Жіночий: sestra → sestru, dcéra → dcéru. || Mám dvoch bratov. = У мене двоє братів. ;; Mám sestru a brata. = У мене є сестра й брат. || brat → brata, sestra → sestru
+W: mama | мама | мама | Moja mama býva na Ukrajine. | Моя мама живе в Україні.
+W: otec | батько | отец | Otec pracuje na stavbe. | Батько працює на будові.
+W: brat | брат | брат | Môj brat má dvadsať rokov. | Моєму братові двадцять років.
+W: sestra | сестра | сестра | Sestra je študentka. | Сестра — студентка.
+W: syn | син | сін | Syn chodí do škôlky. | Син ходить у садок.
+W: dcéra | донька | дцера | Dcéra má päť rokov. | Доньці п’ять років.
+X mt: З’єднай. | mama = мама ;; otec = батько ;; brat = брат ;; sestra = сестра ;; syn = син ;; dcéra = донька
+X dd: Обери. | To je [*moja/môj/moje] sestra.
+= sestra — жін. рід: moja.
+X dd: Обери. | [*Môj/Moja/Moje] otec je kuchár.
+= otec — чол. рід: môj.
+X dd: Обери форму. | Mám [*brata/brat/bratom].
+= Mám + знахідний: brat → brata.
+X cat: Чоловік чи жінка? | Чоловік: otec, brat, syn ;; Жінка: mama, sestra, dcéra
+= Розподіли за статтю.
+X sc~: Що означає «ocko»? | - | *тато (пестливо) ;; дідусь ;; дядько
+= ocko — пестливе «тато».
+X tf: - | - | «Dcéra» означає «донька». | T
+= dcéra — донька.
+X fb: Допиши. | Mám jednu ___. (доньку) | dcéru | Знахідний: -a → -u.
+= dcéra → dcéru.
+X so: - | Скажи, що твоя мама живе в Україні. | Moja mama býva na Ukrajine.
+= moja mama + býva.
+X rc: - | Volám sa Iryna. Mám manžela Olega a dve deti – syna Maksyma a dcéru Sofiu. Moja mama býva v Kyjeve, otec už nežije. Mám aj brata, býva v Poľsku.
+q~: Скільки в Ірини дітей? | *двоє ;; одна ;; троє
+q~: Де живе її брат? | *у Польщі ;; у Києві ;; у Словаччині
+X np: Колега питає, чи в тебе є діти. У тебе є син. | *Áno, mám syna. ;; Áno, mám syn. ;; Áno, môj syn mám. ;; Áno, synovi.
+= Mám syna.
+X ms: Обери правильні фрази. | - | *môj brat ;; *moja dcéra ;; *Mám sestru. ;; môj mama ;; Mám sestra.
+= moja mama; Mám sestru.
+F: Фото на телефоні || Колега на перерві розпитує про фото на твоєму телефоні.
+S: «Kto je to?» (твоя мама) | *To je moja mama. ;; To je môj mama. ;; To je mama moja je.
+S: «A ten chlapec?» (твій син) | *To je môj syn. ;; To je moja syn. ;; Mám syna je.
+S: «Máš aj súrodencov?» (у тебе є сестра) | *Áno, mám sestru. ;; Áno, mám sestra. ;; Áno, moja sestru.
+S: «Kde býva?» (у Варшаві) | *Býva vo Varšave. ;; Býva z Varšavy. ;; Je Varšava.
+R: mama, otec, brat, sestra, syn, dcéra ;; môj / moja / moje ;; Mám brata / sestru / syna / dcéru
+
+@lesson telo-bolest | Тіло і «болить» | Telo a bolesť
+desc: Частини тіла й ключова конструкція «Bolí ma…» — щоб пояснити, що болить.
+goal: Сказати, що в тебе болить, і зрозуміти просте питання лікаря.
+out: називати частини тіла ;; казати Bolí ma hlava / Bolia ma zuby ;; казати Mám horúčku ;; розуміти Kde vás to bolí?
+done: Тепер ти можеш пояснити, що болить. Далі — частини доби.
+T: Частини тіла || Уже знаєш: hlava, noha, krk, prst. Нові: ruka (рука), brucho (живіт), zub (зуб), chrbát (спина), oko (око), ucho (вухо). || Bolí ma ruka. = Болить рука. ;; Bolí ma brucho. = Болить живіт. || ruka — і рука, і кисть
+T: Bolí ma… || Конструкція як «мене болить»: «Bolí ma hlava» (однина), «Bolia ma zuby» (множина). Питання лікаря: «Čo vás bolí?» / «Kde vás to bolí?» || Bolí ma chrbát. = Болить спина. ;; Bolia ma oči. = Болять очі. || bolí (одне) / bolia (багато)
+T: Інші симптоми || «Mám horúčku» — у мене температура. «Je mi zle» — мені погано. «Som chorý / chorá» — я хворий / хвора. «Kašlem» — я кашляю. || Mám horúčku 38. = У мене температура 38. ;; Je mi zle. = Мені погано. || horúčka = температура (жар)
+W: ruka | рука | рука | Bolí ma pravá ruka. | Болить права рука.
+W: brucho | живіт | бруxо | Dieťa má bolesti brucha. | У дитини болить живіт.
+W: zub | зуб | зуб | Bolí ma zub, potrebujem zubára. | Болить зуб, мені потрібен стоматолог.
+W: chrbát | спина | хрба:т | Po práci ma bolí chrbát. | Після роботи болить спина.
+W: oko | око | око | Mám červené oko. | У мене червоне око.
+W: horúčka | температура, жар | гору:чка | Syn má horúčku. | У сина температура.
+X mt: З’єднай. | ruka = рука ;; brucho = живіт ;; zub = зуб ;; chrbát = спина ;; oko = око
+X dd: Обери форму. | [*Bolí/Bolia] ma hlava.
+= hlava — однина → bolí.
+X dd: Обери форму. | [*Bolia/Bolí] ma zuby.
+= zuby — множина → bolia.
+X dr: - | Lekárka: Čo vás bolí? | *Bolí ma brucho. ;; Mám brucho. ;; Brucho je zle.
+= Bolí ma + що.
+X sc~: Що означає «Mám horúčku»? | - | *У мене температура ;; Мені гаряче на вулиці ;; Я поспішаю
+= horúčka — температура.
+X cat: Що болить? Однина чи множина? | Bolí ma…: hlava, chrbát, brucho ;; Bolia ma…: zuby, oči, nohy
+= bolí — одна річ, bolia — кілька.
+X tf: - | - | «Je mi zle» означає «Мені погано». | T
+= Je mi zle — мені погано (самопочуття).
+X fb: Допиши. | Bolí ma ___. (спина) | chrbát |
+= chrbát — спина.
+X so: - | Скажи, що в доньки температура. | Dcéra má horúčku.
+= má horúčku.
+X np: Ти телефонуєш на роботу: тобі погано, ти хвора. | *Dobrý deň, som chorá, je mi zle. ;; Som chorý, mám dobre. ;; Bolí ma práca. ;; Dobrý deň, horúčka je mi.
+= Som chorá (жін.) + je mi zle.
+X ms: Обери частини тіла. | - | *ruka ;; *oko ;; *chrbát ;; horúčka ;; zubár
+= horúčka — симптом, zubár — стоматолог.
+X hm: Лікарка каже: «Ukážte mi, kde presne.» Чого вона хоче? | *щоб ти показав(ла), де саме болить ;; щоб ти показав(ла) документ ;; щоб ти пішов(пішла)
+= ukážte — покажіть.
+F: Дзвінок до педіатра || Твоя донька захворіла, ти телефонуєш у дитячу амбулаторію.
+S: «Čo sa deje?» (у доньки температура) | *Dcéra má horúčku. ;; Dcéra je horúčka. ;; Mám dcéru horúčku.
+S: «Bolí ju niečo?» (живіт) | *Áno, bolí ju brucho. ;; Áno, brucho má. ;; Bolia ju brucho.
+S: «Koľko má rokov?» (6) | *Šesť rokov. ;; Šesť roky. ;; Šiesta.
+S: «Príďte o desiatej.» О котрій? | *о 10:00 ;; о 12:00 ;; через 10 хвилин
+R: ruka, brucho, zub, chrbát, oko ;; Bolí ma… / Bolia ma… ;; Mám horúčku. Je mi zle. ;; Čo vás bolí?
+
+@lesson casti-dna | Частини доби | Časti dňa
+desc: Ráno, doobeda, obed, popoludnie, večer, noc — і як сказати «зранку», «увечері».
+goal: Називати частини доби й прив’язувати до них події.
+out: називати частини доби ;; казати ráno, večer, v noci ;; розуміти doobeda / poobede ;; будувати прості фрази про розклад
+done: Ти вже вмієш говорити про свій день. Далі — погода.
+T: Від ранку до ночі || ráno (ранок), doobeda (до обіду, перша половина дня), obed (обід), popoludnie / poobede (після обіду), večer (вечір), noc (ніч). || Ráno pijem kávu. = Зранку я п’ю каву. ;; Večer som doma. = Увечері я вдома. || ráno, obed, večer, noc
+T: Коли? || «Ráno» і «večer» працюють і як прислівник: ráno (зранку), večer (увечері). Але «v noci» (уночі), «na obed» (на обід), «poobede» (після обіду). || V noci spím. = Уночі я сплю. ;; Poobede mám kurz. = Після обіду в мене курс. || v noci, poobede
+T: Сьогодні, завтра + частина доби || «Dnes večer» — сьогодні ввечері, «zajtra ráno» — завтра зранку, «včera v noci» — учора вночі. || Zajtra ráno idem k lekárovi. = Завтра зранку я йду до лікаря. ;; Dnes večer sme doma. = Сьогодні ввечері ми вдома. || dnes / zajtra + ráno / večer
+W: ráno | ранок; зранку | ра:но | Ráno vstávam o šiestej. | Зранку я встаю о шостій.
+W: doobeda | до обіду | добеда | Doobeda pracujem v kancelárii. | До обіду я працюю в офісі.
+W: obed | обід | обед | Na obed mám polievku. | На обід у мене суп.
+W: poobede | після обіду | победе | Poobede idem s deťmi do parku. | Після обіду я йду з дітьми в парк.
+W: večer | вечір; увечері | вечер | Večer čítam knihu. | Увечері я читаю книжку.
+W: noc | ніч | ноц | V noci prší. | Уночі йде дощ.
+X mt: З’єднай. | ráno = зранку ;; doobeda = до обіду ;; poobede = після обіду ;; večer = увечері ;; v noci = уночі
+X do: - | Ráno vstávam a pijem kávu. ;; Doobeda pracujem. ;; Na obed jem polievku. ;; Poobede idem do obchodu. ;; Večer pozerám film.
+= Розклад дня від ранку до вечора.
+X dd: Обери. | [*V noci/Noc/Na noc] spím.
+= Уночі — v noci.
+X sc~: Що означає «zajtra ráno»? | - | *завтра зранку ;; сьогодні зранку ;; учора зранку
+= zajtra + ráno.
+X cat: Перша чи друга половина дня? | Перша: ráno, doobeda ;; Друга: poobede, večer, noc
+= obed — межа.
+X tf: - | - | «Poobede» означає «до обіду». | F
+= poobede — після обіду; doobeda — до обіду.
+X fb: Допиши. | Na ___ mám polievku. (обід) | obed |
+= na obed — на обід.
+X so: - | Скажи, що сьогодні ввечері ти вдома. | Dnes večer som doma.
+= dnes večer.
+X sch: - | Kurz slovenčiny – rozvrh | Pondelok = doobeda 9:00 – 11:00 ;; Streda = poobede 15:00 – 17:00 ;; Piatok = večer 18:00 – 20:00 | Коли курс у середу? | *після обіду, 15:00–17:00 ;; до обіду, 9:00–11:00 ;; увечері, 18:00–20:00
+= Streda — poobede.
+X np: Колега пропонує зустріч завтра. Тобі підходить ранок. | *Zajtra ráno sa mi to hodí. ;; Ráno zajtra hodí. ;; Zajtra noc áno. ;; Večer ráno.
+= Zajtra ráno + hodí sa mi.
+X ms: Обери всі правильні фрази. | - | *v noci ;; *dnes večer ;; *na obed ;; v ráno ;; na noci
+= Без прийменника: ráno, večer; але v noci, na obed.
+F: Розклад на завтра || Ти домовляєшся з бебіситеркою про завтрашній день.
+S: «Kedy mám prísť?» (зранку о 7:30) | *Zajtra ráno o pol ôsmej, teda 7:30. ;; Zajtra v noci. ;; Včera ráno.
+S: «A kedy prídete domov?» (після обіду) | *Poobede, okolo štvrtej. ;; Doobeda. ;; V noci, o štvrtej.
+S: «Mám dať deťom obed?» | *Áno, obed je v chladničke. ;; Áno, obed je večer. ;; Nie, noc.
+S: «Dobre. Dovidenia zajtra ráno!» | *Dovidenia, ďakujem! ;; Dobrú noc ráno! ;; Dobré ráno včera!
+R: ráno, doobeda, obed, poobede, večer, noc ;; v noci, na obed ;; dnes večer, zajtra ráno
+
+@lesson pocasie-zaklad | Погода | Počasie
+desc: Прості фрази про погоду: prší, sneží, svieti slnko, je zima, je horúco.
+goal: Описати погоду й зрозуміти короткий прогноз.
+out: питати Aké je počasie? ;; казати prší, sneží, svieti slnko ;; казати je zima / je teplo / je horúco ;; розуміти температуру в прогнозі
+done: Ти можеш говорити про погоду — улюблену тему для small talk. Далі — у кав’ярні.
+T: Яка погода? || «Aké je dnes počasie?» — яка сьогодні погода? «Prší» — іде дощ, «sneží» — іде сніг, «svieti slnko» — світить сонце, «je zamračené» — хмарно, «fúka vietor» — дме вітер. || Dnes prší. = Сьогодні йде дощ. ;; Svieti slnko. = Світить сонце. || prší, sneží — одне дієслово
+T: Холодно чи жарко || «Je zima» — холодно (так, zima — і зима, і холод!), «je chladno» — прохолодно, «je teplo» — тепло, «je horúco» — спекотно. Про себе: «Je mi zima» — мені холодно. || Vonku je zima. = Надворі холодно. ;; Je mi horúco. = Мені спекотно. || je zima = холодно
+T: Температура || «Koľko je stupňov?» — скільки градусів? «Je dvadsať stupňov» — двадцять градусів. «Mínus päť» — мінус п’ять. || Zajtra bude tridsať stupňov. = Завтра буде тридцять градусів. ;; V noci mínus dva. = Уночі мінус два. || stupeň = градус
+W: počasie | погода | почасіє | Aké bude počasie cez víkend? | Яка буде погода на вихідних?
+W: prší | іде дощ | прші: | Vonku prší, vezmi si dáždnik. | Надворі дощ, візьми парасольку.
+W: sneží | іде сніг | снежі: | V horách sneží. | У горах іде сніг.
+W: slnko | сонце | слнко | Svieti slnko, ideme von. | Світить сонце, ідемо гуляти.
+W: zima | холод; зима | зіма | Dnes je veľká zima. | Сьогодні дуже холодно.
+W: horúco | спекотно | гору:цо | V lete je v Bratislave horúco. | Улітку в Братиславі спекотно.
+X mt: З’єднай. | prší = іде дощ ;; sneží = іде сніг ;; svieti slnko = світить сонце ;; je horúco = спекотно ;; je zima = холодно
+X sc~: Що означає «Je mi zima»? | - | *мені холодно ;; у мене зима ;; я люблю зиму
+= Je mi zima — про відчуття холоду.
+X cat: Тепло чи холодно? | Тепло: je teplo, je horúco, svieti slnko ;; Холодно: je zima, sneží, mínus päť stupňov
+= Розподіли за температурою.
+X tf: - | - | «Sneží» означає «іде дощ». | F
+= sneží — іде сніг, prší — іде дощ.
+X fb: Допиши. | Aké je dnes ___? | počasie |
+= Aké je počasie?
+X dr: - | Susedka: Hrozná zima dnes, však? | *Áno, je mínus desať. ;; Áno, je horúco. ;; Nie, sneží teplo.
+= Погоджуєшся й уточнюєш.
+X so: - | Скажи, що надворі йде дощ. | Vonku prší.
+= vonku — надворі.
+X msg: - | Počasie.sk | Zajtra: ráno hmla, doobeda zamračené, poobede dážď. Teploty 8 až 12 °C. | Що взяти з собою завтра після обіду? | *парасольку ;; сонцезахисні окуляри ;; лижі
+= poobede dážď — після обіду дощ.
+X dd: Обери. | V lete je tu [*horúco/zima/sneží].
+= Улітку — спекотно.
+X np: Колега питає, чому ти в куртці в офісі. | *Je mi zima. ;; Je zima mi som. ;; Mám zimu bundu. ;; Sneží mi.
+= Je mi zima.
+X ms: Обери фрази про погану погоду. | - | *Prší. ;; *Fúka silný vietor. ;; *Je zamračené. ;; Svieti slnko. ;; Je krásne.
+= Дощ, вітер, хмари.
+F: Плани на вихідні || Ви з другом плануєте поїздку в гори.
+S: Друг: «Aké bude počasie v sobotu?» Прогноз: сонце, 22 °C. | *Bude svietiť slnko, dvadsaťdva stupňov. ;; Bude pršať, mínus dva. ;; Sneží horúco.
+S: «A v nedeľu?» Прогноз: дощ. | *V nedeľu bude pršať. ;; V nedeľu bude slnko. ;; V nedeľu horúco sneží.
+S: Тоді краще їхати… | *v sobotu ;; v nedeľu ;; v noci v nedeľu
+S: «Vezmi si bundu, v horách je zima.» Що радить друг? | *узяти куртку, бо в горах холодно ;; не брати куртку ;; не їхати в гори
+R: Aké je počasie? ;; prší, sneží, svieti slnko, je zamračené ;; je zima / teplo / horúco ;; stupne
+
+@lesson v-kaviarni-zaklad | У кав’ярні | V kaviarni
+desc: Перше замовлення: kaviareň, minerálka, džús, koláč, čašník, účet.
+goal: Замовити напій і десерт та попросити рахунок.
+out: замовляти Prosím si… / Dám si… ;; розуміти Čo si dáte? ;; просити рахунок: Účet, prosím ;; розрізняти minerálka perlivá / neperlivá
+done: Ти вже замовляєш у кафе. Далі — аптека.
+T: Замовлення || Офіціант: «Čo si dáte?» (що будете?). Ти: «Dám si kávu» або «Prosím si čaj». Ввічливіше: «Chcel(a) by som…». || Dám si cappuccino. = Я візьму капучино. ;; Prosím si koláč. = Мені пиріжне, будь ласка. || Dám si… / Prosím si…
+T: Напої || minerálka — мінеральна вода: «perlivá» (з газом) чи «neperlivá» (без газу). džús — сік, čaj — чай, káva — кава (espresso, cappuccino, latte). || Minerálku neperlivú, prosím. = Мінералку без газу, будь ласка. ;; Pomarančový džús. = Апельсиновий сік. || perlivá — з газом
+T: Рахунок || «Účet, prosím» або «Zaplatím, prosím» — рахунок, будь ласка. «Spolu alebo zvlášť?» — разом чи окремо? Чайові зазвичай 5–10 %. || Platíme spolu. = Платимо разом. ;; Zvlášť, prosím. = Окремо, будь ласка. || spolu / zvlášť
+W: kaviareň | кав’ярня | каварень | Stretneme sa v kaviarni na rohu. | Зустрінемося в кав’ярні на розі.
+W: minerálka | мінеральна вода | мінера:лка | Jednu minerálku, prosím. | Одну мінералку, будь ласка.
+W: džús | сік | джу:с | Deti chcú jablkový džús. | Діти хочуть яблучний сік.
+W: koláč | пиріжне, пиріг | кола:ч | Tento koláč je domáci. | Цей пиріг домашній.
+W: čašník | офіціант | чашні:к | Čašník, prosím! | Офіціанте, будь ласка!
+W: účet | рахунок | у:чет | Môžem dostať účet? | Можна мені рахунок?
+X mt: З’єднай. | minerálka = мінеральна вода ;; džús = сік ;; koláč = пиріжне ;; čašník = офіціант ;; účet = рахунок
+X dr: - | Čašníčka: Dobrý deň, čo si dáte? | *Dám si kávu a koláč, prosím. ;; Účet je koláč. ;; Dobrý deň, áno.
+= Dám si + замовлення.
+X dr: - | Čašník: Perlivú alebo neperlivú? | *Neperlivú, prosím. ;; Áno, prosím. ;; Minerálku.
+= Обери: з газом чи без.
+X sc~: Що означає «Spolu alebo zvlášť?»? | - | *Разом чи окремо (платити)? ;; З цукром чи без? ;; Тут чи з собою?
+= spolu — разом, zvlášť — окремо.
+X so: - | Попроси рахунок. | Účet, prosím.
+= Účet + prosím.
+X dd: Обери. | Prosím si [*minerálku/minerálka/minerálkou] bez bubliniek.
+= Prosím si + знахідний: minerálku.
+X tf: - | - | «Perlivá» вода — це вода з газом. | T
+= perlivá — газована.
+X np: Ти хочеш покликати офіціанта. | *Prepáčte, môžem si objednať? ;; Čašník, ty! ;; Hej, účet! ;; Pst, pst!
+= Ввічливе звертання.
+X bd: - | Замовлення зроблено!
+> Čašník: Dobrý deň, čo si dáte na pitie? | *Prosím si cappuccino. ;; Mám cappuccino. ;; Cappuccino je drahé.
+> Čašník: A niečo sladké? | *Áno, jeden čokoládový koláč. ;; Nie, sladké je zlé, dovidenia. ;; Áno, účet.
+> Čašník: Ešte niečo? | *Nie, to je všetko, ďakujem. ;; Áno, nič. ;; Dobrú chuť.
+X fb: Допиши. | Môžem dostať ___? (рахунок) | účet |
+= účet — рахунок.
+X hm: Друг каже офіціантові: «Tento koláč platím ja, zvyšok zvlášť.» Що він має на увазі? | *він платить за пиріг, решта — окремо ;; він не платить ;; він платить за все
+= zvyšok — решта, zvlášť — окремо.
+X ms: Обери всі напої. | - | *minerálka ;; *džús ;; *čaj ;; koláč ;; účet
+= Koláč і účet — не напої.
+F: Кава з колегою || Ти з колегою в кав’ярні після роботи.
+S: Офіціантка: «Čo si dáte?» | *Dám si čaj s citrónom. ;; Mám čaj s citrónom. ;; Čaj je citrón.
+S: Колега питає: «Dáš si aj koláč?» | *Áno, rád(a). ;; Áno, účet. ;; Nie, koláč.
+S: Ти хочеш заплатити. | *Účet, prosím. ;; Koláč, prosím. ;; Dobrú chuť, prosím.
+S: «Spolu alebo zvlášť?» Ти платиш за обох. | *Spolu, prosím. ;; Zvlášť, prosím. ;; Áno, zvlášť spolu.
+R: Dám si… / Prosím si… ;; minerálka (perlivá / neperlivá), džús, koláč ;; Účet, prosím. ;; spolu / zvlášť
+
+@lesson v-lekarni-zaklad | В аптеці | V lekárni
+desc: Купити ліки від болю чи застуди: liek, tabletky, recept, sirup, náplasť.
+goal: Пояснити фармацевту проблему й купити потрібні ліки.
+out: просити Potrebujem niečo na… ;; розуміти na predpis / bez predpisu ;; розуміти дозування: dvakrát denne ;; називати базові аптечні товари
+done: Тепер ти впораєшся в аптеці. Далі — найважливіші дієслова.
+T: Niečo na… || Найпростіше: «Potrebujem niečo na bolesť hlavy» — мені потрібно щось від головного болю. «Na kašeľ» — від кашлю, «na horúčku» — від температури, «na nádchu» — від нежиті. || Máte niečo na kašeľ? = У вас є щось від кашлю? ;; Niečo na bolesť zubov. = Щось від зубного болю. || niečo na… = щось від…
+T: Рецепт || «Recept» — рецепт лікаря. «Na predpis» — за рецептом, «bez predpisu» — без рецепта. Антибіотики продають лише за рецептом. || Tento liek je len na predpis. = Ці ліки лише за рецептом. ;; Mám recept od lekára. = У мене є рецепт від лікаря. || recept = рецепт лікаря
+T: Як приймати || «Užívajte dvakrát denne» — приймайте двічі на день. «Po jedle» — після їди, «pred jedlom» — до їди, «jednu tabletku» — одну таблетку. || Jednu tabletku trikrát denne po jedle. = Одну таблетку тричі на день після їди. || dvakrát / trikrát denne
+W: liek | ліки | ліек | Tento liek je veľmi silný. | Ці ліки дуже сильні.
+W: tabletka | таблетка | таблетка | Zoberte si jednu tabletku. | Прийміть одну таблетку.
+W: recept | рецепт (лікаря) | рецепт | Bez receptu to nedostanete. | Без рецепта ви цього не отримаєте.
+W: sirup | сироп | сіруп | Sirup na kašeľ pre deti. | Сироп від кашлю для дітей.
+W: náplasť | пластир | на:пласть | Potrebujem náplasť, porezal som sa. | Мені потрібен пластир, я порізався.
+W: kašeľ | кашель | кашель | Mám silný kašeľ. | У мене сильний кашель.
+X mt: З’єднай. | liek = ліки ;; tabletka = таблетка ;; recept = рецепт ;; sirup = сироп ;; náplasť = пластир
+X np: Тебе болить голова. Що скажеш фармацевту? | *Potrebujem niečo na bolesť hlavy. ;; Potrebujem hlavu. ;; Bolí ma lekáreň. ;; Hlava, liek, dovidenia.
+= Potrebujem niečo na bolesť hlavy.
+X dr: - | Lekárnička: Máte recept? | *Nie, je to bez predpisu? ;; Áno, recept je bolesť. ;; Mám kašeľ recept nie.
+= Уточни, чи можна без рецепта.
+X sc~: Що означає «trikrát denne po jedle»? | - | *тричі на день після їди ;; три дні до їди ;; три таблетки одразу
+= trikrát denne — тричі на день.
+X cat: За рецептом чи без? (зазвичай) | Na predpis: antibiotiká, silné lieky na spanie ;; Bez predpisu: náplasť, sirup na kašeľ, vitamín C
+= Антибіотики — лише за рецептом.
+X tf: - | - | «Recept» в аптеці означає кулінарний рецепт. | F
+= recept — рецепт лікаря.
+X fb: Допиши. | Máte niečo na ___? (кашель) | kašeľ |
+= na kašeľ — від кашлю.
+X so: - | Попроси пластир. | Potrebujem náplasť, prosím.
+= Potrebujem + náplasť.
+X doc: Прочитай інструкцію. | Paralen 500 mg | Dávkovanie: 1 tabletka ;; Ako často: najviac 4-krát denne ;; Odstup: aspoň 4 hodiny ;; Deti: od 12 rokov | Скільки максимум таблеток на день? | *4 ;; 1 ;; 12
+= najviac 4-krát denne — максимум 4 рази на день.
+X dd: Обери. | Sirup je pre [*deti/dieťa/detí] od troch rokov.
+= pre + знахідний мн.: deti.
+X hm: Фармацевтка каже: «Tento je silnejší, ale je len na predpis.» Що це означає? | *ці ліки сильніші, але потрібен рецепт ;; ці ліки дешевші ;; ці ліки закінчилися
+= len na predpis — лише за рецептом.
+X ms: Обери симптоми. | - | *kašeľ ;; *horúčka ;; *bolesť hlavy ;; náplasť ;; sirup
+= Náplasť і sirup — засоби, не симптоми.
+F: Застуда в неділю || У неділю в тебе кашель і температура, лікар не працює. Ти йдеш до чергової аптеки.
+S: «Dobrý deň, čo potrebujete?» | *Mám kašeľ a horúčku. Máte niečo bez predpisu? ;; Kašeľ je lekáreň. ;; Potrebujem recept na obed.
+S: «Tento sirup na kašeľ a tabletky na horúčku.» Що тобі пропонують? | *сироп від кашлю й таблетки від температури ;; антибіотики ;; пластир
+S: «Tabletky najviac trikrát denne.» Як приймати таблетки? | *максимум тричі на день ;; три таблетки одразу ;; три дні
+S: «Ak to nepomôže, choďte k lekárovi.» Що радять? | *якщо не допоможе, іти до лікаря ;; пити більше кави ;; прийти завтра в аптеку
+R: Potrebujem niečo na… ;; liek, tabletka, sirup, náplasť ;; recept, na predpis / bez predpisu ;; dvakrát denne, po jedle
+
+@lesson mozem-viem | Можу, знаю, розумію | Môžem, viem, rozumiem
+desc: Найважливіші модальні та базові дієслова: môcť, vedieť, rozumieť, robiť, ísť, vidieť.
+goal: Сказати, що ти можеш, умієш і розумієш, і запитати дозволу.
+out: питати дозволу: Môžem…? ;; казати viem / neviem (знаю, вмію) ;; розрізняти môcť і vedieť ;; використовувати robiť, ísť, vidieť
+done: З цими дієсловами ти вже будуєш десятки речень. Далі — великий підсумок A0.
+T: Môcť — могти (мати змогу, дозвіл) || môžem, môžeš, môže, môžeme, môžete, môžu. «Môžem tu sedieť?» — можна тут сісти? «Nemôžem prísť» — не можу прийти. || Môžem platiť kartou? = Можна оплатити карткою? ;; Môžete mi pomôcť? = Можете мені допомогти? || Môžem…? = Можна…?
+T: Vedieť — знати, вміти || viem, vieš, vie, vieme, viete, vedia. «Viem, kde je pošta» — я знаю, де пошта. «Viem plávať» — я вмію плавати. Не плутай: môžem (мені дозволено / є можливість), viem (умію). || Neviem po slovensky dobre. = Я не дуже добре знаю словацьку. ;; Vieš šoférovať? = Ти вмієш водити? || viem = знаю / вмію
+T: Rozumieť, robiť, ísť, vidieť || rozumiem (розумію), robím (роблю), idem (іду), vidím (бачу). «Čo robíš?» — що робиш? «Kam ideš?» — куди йдеш? || Rozumiete? — Áno, rozumiem. = Розумієте? — Так, розумію. ;; Vidíš ten autobus? = Бачиш той автобус? || idem — іду (зараз)
+W: môcť | могти | муоцть | Môžem vám pomôcť? | Можу вам допомогти?
+W: vedieť | знати; вміти | ведієть | Viem trochu po slovensky. | Я трохи знаю словацьку.
+W: rozumieť | розуміти | розуміеть | Rozumiem, ďakujem. | Розумію, дякую.
+W: robiť | робити | робіть | Čo robíš večer? | Що робиш увечері?
+W: ísť | іти, їхати | і:сть | Kam ideš? | Куди йдеш?
+W: vidieť | бачити | відзієть | Vidím zastávku. | Я бачу зупинку.
+X mt: З’єднай. | môžem = можу ;; viem = знаю / вмію ;; rozumiem = розумію ;; robím = роблю ;; vidím = бачу
+X sc~: «Viem plávať» означає… | - | *Я вмію плавати ;; Мені можна плавати ;; Я хочу плавати
+= vedieť + інфінітив — уміти.
+X dd: Обери. | [*Môžem/Viem] tu fajčiť? (питаєш дозволу)
+= Дозвіл — môžem.
+X dd: Обери. | [*Viem/Môžem] dobre variť. (уміння)
+= Уміння — viem.
+X np: Ти хочеш сісти на вільне місце в потязі. | *Prepáčte, môžem si sadnúť? ;; Viem si sadnúť? ;; Sadnúť môžete ja? ;; Idem sedieť, dovidenia.
+= Môžem…? — прохання про дозвіл.
+X dr: - | Kolega: Vieš, kde je kancelária pani Novej? | *Nie, neviem, prepáč. ;; Nie, nemôžem. ;; Áno, rozumiem nie.
+= Vieš? — Neviem.
+X fb: Допиши. | Kam ___? (ти йдеш) | ideš | ísť → ideš.
+= Kam ideš?
+X tf: - | - | «Môžem» і «viem» означають одне й те саме. | F
+= môžem — дозвіл/можливість, viem — знання/вміння.
+X so: - | Попроси допомоги ввічливо. | Môžete mi pomôcť, prosím?
+= Môžete + pomôcť.
+X fe: - | Oni [môže>môžu] prísť zajtra ráno.
+= oni → môžu.
+X cat: Дозвіл/можливість чи знання/вміння? | Môcť: Môžem ísť?, Nemôžem prísť., Môžete platiť kartou. ;; Vedieť: Viem variť., Neviem, kde je., Vieš šoférovať?
+= môcť / vedieť.
+X sc: Як сказати «Я тебе не розумію»? | - | *Nerozumiem ti. ;; Neviem ti. ;; Nemôžem ti. ;; Nevidím ti.
+= rozumieť — розуміти.
+F: Новий сусід по квартирі || До тебе підселився новий сусід по квартирі, Marek.
+S: Marek: «Môžem si zobrať tvoju nabíjačku?» Ти не проти. | *Áno, jasné, môžeš. ;; Áno, viem. ;; Nie, rozumiem.
+S: «Vieš, kde je tu najbližší obchod?» Ти знаєш. | *Áno, viem, je za rohom. ;; Áno, môžem, je za rohom. ;; Áno, vidím obchod.
+S: «Ideš večer von?» Ти не можеш, бо працюєш. | *Nemôžem, večer pracujem. ;; Neviem, večer pracujem. ;; Nerozumiem, večer.
+S: Marek говорить швидко. | *Prepáč, nerozumiem, môžeš pomalšie? ;; Prepáč, neviem pomalšie. ;; Prepáč, nevidím.
+R: môžem… / Môžem…? ;; viem — знаю / вмію ;; rozumiem, robím, idem, vidím ;; môcť ≠ vedieť
+
+@lesson a0-zaver | Підсумок A0: я вже можу! | Záverečné opakovanie A0
+desc: Великий підсумок рівня A0: знайомство, числа, місто, покупки, здоров’я — в одному дні.
+goal: Впевнено використати все, що вивчено на рівні A0, у реальних ситуаціях.
+out: прочитати й зрозуміти короткі тексти ;; провести 5–6 типових побутових діалогів ;; уникати найчастіших помилок A0 ;; бути готовим до рівня A1
+done: Вітаємо! Рівень A0 завершено. Попереду A1 — граматика й повноцінні розмови.
+T: Що ти вже вмієш || Читати словацьку; вітатися й прощатися; знайомитися; числа, ціни, час, дати; орієнтуватися в місті й транспорті; купувати продукти; пояснити, що болить; замовити в кафе; сказати, що хочеш, можеш і знаєш. || Volám sa… Som z… Bývam v… = Мене звати… Я з… Я живу в… ;; Koľko to stojí? Kde je…? = Скільки коштує? Де…? || A0 — фундамент.
+T: Найчастіші помилки A0 || Ahoj незнайомим → Dobrý deň; «v Slovensku» → na Slovensku; «dva kávy» → dve kávy; «bolí ma zuby» → bolia ma zuby; «chcem» в ресторані → chcel(a) by som. || Idem na poštu, do banky. = Іду на пошту, у банк. ;; Dve eurá, päť eur. = Два євро, п’ять євро. || Перевір себе!
+mis: Ahoj, pán doktor. => Dobrý deň, pán doktor. ;; Bývam v Slovensku. => Bývam na Slovensku. ;; Bolí ma zuby. => Bolia ma zuby. ;; Tri eur. => Tri eurá.
+T: Корисні слова для навчання || slovo (слово), otázka (питання), odpoveď (відповідь), rozhovor (розмова). «Mám otázku» — у мене питання. «Aká je správna odpoveď?» — яка правильна відповідь? || Neviem toto slovo. = Я не знаю цього слова. ;; Mám jednu otázku. = У мене одне питання. || otázka — odpoveď
+W: slovo | слово | слово | Čo znamená toto slovo? | Що означає це слово?
+W: otázka | питання | ота:зка | Môžem mať otázku? | Можна питання?
+W: odpoveď | відповідь | одповедь | Tvoja odpoveď je správna. | Твоя відповідь правильна.
+W: rozhovor | розмова | розговор | Rozhovor bol krátky. | Розмова була короткою.
+X rc: - | Ahoj, volám sa Nadiia. Som z Ukrajiny, z Kharkova, a na Slovensku žijem rok. Bývam v Nitre na sídlisku. Pracujem ako predavačka v potravinách od pondelka do piatku. Ráno vstávam o šiestej. V sobotu chodím na trh a v nedeľu oddychujem. Mám syna, má osem rokov.
+q~: Ким працює Надія? | *продавчинею ;; кухаркою ;; лікаркою
+q~: Що вона робить у неділю? | *відпочиває ;; іде на ринок ;; працює
+q~: Скільки років її синові? | *8 ;; 6 ;; 18
+X wb: - | Dobrý deň, [prosím] si dva rožky. ;; Koľko to [stojí]? ;; [Bolí] ma hlava. ;; Prepáčte, kde je [zastávka]? | ďakujem ;; bolia
+X fe: - | Bývam [v>na] Slovensku dva roky.
+= na Slovensku.
+X ce: Виправ фразу для лікаря. | Ahoj, bolí ma zuby. | Dobrý deň, bolia ma zuby. ;; Dobrý deň, bolia ma zuby
+= Dobrý deň + bolia (множина).
+X tr: Зроби прохання ввічливішим (говорить жінка). | Chcem kávu. | Chcela by som kávu. ;; Chcela by som kávu, prosím. ;; Chcela by som kávu prosím
+= chcela by som — ввічливо.
+X dd: Обери. | Lístok stojí [*dve eurá/dva eurá/dve eur].
+= dve eurá.
+X cat: Яка ситуація? | V obchode: Koľko to stojí?, Platím kartou. ;; U lekára: Bolí ma chrbát., Mám horúčku. ;; Na ulici: Kde je zastávka?, Choďte rovno.
+= Співвіднеси фрази з місцем.
+X bd: - | Неймовірно! Ти пройшов(ла) цілий день словацькою.
+> Susedka: Dobré ráno! Ako sa máte? | *Dobré ráno, dobre, ďakujem. A vy? ;; Ahoj, dobre. ;; Dobrú noc.
+> Susedka: Aj ja. Idete do práce? | *Nie, dnes idem k lekárovi. Bolí ma chrbát. ;; Áno, mám horúčku chrbát. ;; Idem pošta.
+> Susedka: To ma mrzí. Viete, kde je ambulancia? | *Áno, viem, oproti lekárni. ;; Áno, môžem, oproti lekárni. ;; Nie, rozumiem.
+> Susedka: Tak veľa šťastia! | *Ďakujem, pekný deň! ;; Nech sa páči. ;; Niet za čo, dobrú chuť.
+X mt: З’єднай питання з відповіддю. | Koľko to stojí? = Dve eurá. ;; Kde je pošta? = Za rohom. ;; O koľkej? = O piatej. ;; Odkiaľ ste? = Z Ukrajiny. ;; Čo vás bolí? = Hlava.
+X np: Ти не знаєш слова «objednávka» і хочеш запитати. | *Prepáčte, čo znamená slovo „objednávka“? ;; Objednávka je odpoveď? ;; Mám otázku objednávka. ;; Neviem, dovidenia.
+= Čo znamená slovo…?
+X ms: Обери всі правильні речення. | - | *Bývam na Slovensku. ;; *Bolia ma zuby. ;; *Idem na poštu. ;; Dva kávy, prosím. ;; Ahoj, pán doktor.
+= Повтори типові помилки A0.
+F: Мій день словацькою || Цілий день ти обходишся лише словацькою.
+S: 8:00. Пекарня. | *Dobré ráno, prosím si dva rožky. ;; Ahoj, chcem rožok dva. ;; Dobrú noc, rožky.
+S: 10:00. Ти шукаєш пошту. | *Prepáčte, kde je pošta? ;; Kde sú pošta? ;; Pošta, čau?
+S: 13:00. Аптека: болить голова. | *Potrebujem niečo na bolesť hlavy. ;; Bolí ma lekáreň. ;; Hlava je liek.
+S: 19:00. Кав’ярня з другом, платиш ти. | *Účet, prosím, platím spolu. ;; Koláč, zvlášť, ahoj. ;; Účet je dobrý večer.
+R: читаю й розумію прості тексти ;; веду базові діалоги ;; знаю типові помилки A0 ;; готовий(а) до A1

@@ -1,0 +1,739 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u06-l04-telo-bolest",
+      "sectionId": "a0-u06",
+      "level": "A0",
+      "title": "Тіло і «болить»",
+      "topic": "Перші потреби",
+      "description": "Частини тіла й ключова конструкція «Bolí ma…» — щоб пояснити, що болить.",
+      "order": 54,
+      "xpReward": 15,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Сказати, що в тебе болить, і зрозуміти просте питання лікаря.",
+      "completionMessage": "Тепер ти можеш пояснити, що болить. Далі — частини доби.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Перші потреби",
+        "title": "Тіло і «болить»",
+        "shortDescription": "Сказати, що в тебе болить, і зрозуміти просте питання лікаря.",
+        "outcomes": [
+          "називати частини тіла",
+          "казати Bolí ma hlava / Bolia ma zuby",
+          "казати Mám horúčku",
+          "розуміти Kde vás to bolí?"
+        ],
+        "newWords": [
+          "ruka",
+          "brucho",
+          "zub",
+          "chrbát",
+          "oko",
+          "horúčka"
+        ],
+        "exercisesCount": 12,
+        "reward": "+15 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Частини тіла",
+          "text": "Уже знаєш: hlava, noha, krk, prst. Нові: ruka (рука), brucho (живіт), zub (зуб), chrbát (спина), oko (око), ucho (вухо).",
+          "examples": [
+            {
+              "sk": "Bolí ma ruka.",
+              "uk": "Болить рука."
+            },
+            {
+              "sk": "Bolí ma brucho.",
+              "uk": "Болить живіт."
+            }
+          ],
+          "shortRule": "ruka — і рука, і кисть",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Bolí ma…",
+          "text": "Конструкція як «мене болить»: «Bolí ma hlava» (однина), «Bolia ma zuby» (множина). Питання лікаря: «Čo vás bolí?» / «Kde vás to bolí?»",
+          "examples": [
+            {
+              "sk": "Bolí ma chrbát.",
+              "uk": "Болить спина."
+            },
+            {
+              "sk": "Bolia ma oči.",
+              "uk": "Болять очі."
+            }
+          ],
+          "shortRule": "bolí (одне) / bolia (багато)",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Інші симптоми",
+          "text": "«Mám horúčku» — у мене температура. «Je mi zle» — мені погано. «Som chorý / chorá» — я хворий / хвора. «Kašlem» — я кашляю.",
+          "examples": [
+            {
+              "sk": "Mám horúčku 38.",
+              "uk": "У мене температура 38."
+            },
+            {
+              "sk": "Je mi zle.",
+              "uk": "Мені погано."
+            }
+          ],
+          "shortRule": "horúčka = температура (жар)",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u06-l04-telo-bolest-w01",
+            "sk": "ruka",
+            "uk": "рука",
+            "pronunciationUk": "рука",
+            "exampleSk": "Bolí ma pravá ruka.",
+            "exampleUk": "Болить права рука."
+          },
+          {
+            "wordId": "a0-u06-l04-telo-bolest-w02",
+            "sk": "brucho",
+            "uk": "живіт",
+            "pronunciationUk": "бруxо",
+            "exampleSk": "Dieťa má bolesti brucha.",
+            "exampleUk": "У дитини болить живіт."
+          },
+          {
+            "wordId": "a0-u06-l04-telo-bolest-w03",
+            "sk": "zub",
+            "uk": "зуб",
+            "pronunciationUk": "зуб",
+            "exampleSk": "Bolí ma zub, potrebujem zubára.",
+            "exampleUk": "Болить зуб, мені потрібен стоматолог."
+          },
+          {
+            "wordId": "a0-u06-l04-telo-bolest-w04",
+            "sk": "chrbát",
+            "uk": "спина",
+            "pronunciationUk": "хрба:т",
+            "exampleSk": "Po práci ma bolí chrbát.",
+            "exampleUk": "Після роботи болить спина."
+          },
+          {
+            "wordId": "a0-u06-l04-telo-bolest-w05",
+            "sk": "oko",
+            "uk": "око",
+            "pronunciationUk": "око",
+            "exampleSk": "Mám červené oko.",
+            "exampleUk": "У мене червоне око."
+          },
+          {
+            "wordId": "a0-u06-l04-telo-bolest-w06",
+            "sk": "horúčka",
+            "uk": "температура, жар",
+            "pronunciationUk": "гору:чка",
+            "exampleSk": "Syn má horúčku.",
+            "exampleUk": "У сина температура."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u06-l04-telo-bolest-w01",
+          "sk": "ruka",
+          "uk": "рука",
+          "pronunciationUk": "рука",
+          "exampleSk": "Bolí ma pravá ruka.",
+          "exampleUk": "Болить права рука.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l04-telo-bolest-w02",
+          "sk": "brucho",
+          "uk": "живіт",
+          "pronunciationUk": "бруxо",
+          "exampleSk": "Dieťa má bolesti brucha.",
+          "exampleUk": "У дитини болить живіт.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l04-telo-bolest-w03",
+          "sk": "zub",
+          "uk": "зуб",
+          "pronunciationUk": "зуб",
+          "exampleSk": "Bolí ma zub, potrebujem zubára.",
+          "exampleUk": "Болить зуб, мені потрібен стоматолог.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l04-telo-bolest-w04",
+          "sk": "chrbát",
+          "uk": "спина",
+          "pronunciationUk": "хрба:т",
+          "exampleSk": "Po práci ma bolí chrbát.",
+          "exampleUk": "Після роботи болить спина.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l04-telo-bolest-w05",
+          "sk": "oko",
+          "uk": "око",
+          "pronunciationUk": "око",
+          "exampleSk": "Mám červené oko.",
+          "exampleUk": "У мене червоне око.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l04-telo-bolest-w06",
+          "sk": "horúčka",
+          "uk": "температура, жар",
+          "pronunciationUk": "гору:чка",
+          "exampleSk": "Syn má horúčku.",
+          "exampleUk": "У сина температура.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u06-l04-telo-bolest-ex01",
+          "lessonId": "a0-u06-l04-telo-bolest",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "ruka",
+              "right": "рука"
+            },
+            {
+              "left": "brucho",
+              "right": "живіт"
+            },
+            {
+              "left": "zub",
+              "right": "зуб"
+            },
+            {
+              "left": "chrbát",
+              "right": "спина"
+            },
+            {
+              "left": "oko",
+              "right": "око"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a0-u06-l04-telo-bolest-w01",
+            "a0-u06-l04-telo-bolest-w02",
+            "a0-u06-l04-telo-bolest-w03",
+            "a0-u06-l04-telo-bolest-w04",
+            "a0-u06-l04-telo-bolest-w05"
+          ]
+        },
+        {
+          "id": "a0-u06-l04-telo-bolest-ex02",
+          "lessonId": "a0-u06-l04-telo-bolest",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "blankId": "b1",
+              "options": [
+                "Bolia",
+                "Bolí"
+              ],
+              "correct": "Bolí"
+            },
+            {
+              "text": " ma hlava."
+            }
+          ],
+          "explanation": "hlava — однина → bolí.",
+          "order": 2
+        },
+        {
+          "id": "a0-u06-l04-telo-bolest-ex03",
+          "lessonId": "a0-u06-l04-telo-bolest",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "blankId": "b1",
+              "options": [
+                "Bolia",
+                "Bolí"
+              ],
+              "correct": "Bolia"
+            },
+            {
+              "text": " ma zuby."
+            }
+          ],
+          "explanation": "zuby — множина → bolia.",
+          "order": 3,
+          "wordIds": [
+            "a0-u06-l04-telo-bolest-w03"
+          ]
+        },
+        {
+          "id": "a0-u06-l04-telo-bolest-ex04",
+          "lessonId": "a0-u06-l04-telo-bolest",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Lekárka",
+              "sk": "Čo vás bolí?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Mám brucho.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Brucho je zle.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Bolí ma brucho.",
+              "correct": true
+            }
+          ],
+          "explanation": "Bolí ma + що.",
+          "order": 4,
+          "wordIds": [
+            "a0-u06-l04-telo-bolest-w02"
+          ]
+        },
+        {
+          "id": "a0-u06-l04-telo-bolest-ex05",
+          "lessonId": "a0-u06-l04-telo-bolest",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Mám horúčku»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Мені гаряче на вулиці",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Я поспішаю",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "У мене температура",
+              "correct": true
+            }
+          ],
+          "explanation": "horúčka — температура.",
+          "order": 5
+        },
+        {
+          "id": "a0-u06-l04-telo-bolest-ex06",
+          "lessonId": "a0-u06-l04-telo-bolest",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що болить? Однина чи множина?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Bolí ma…"
+            },
+            {
+              "id": "c2",
+              "title": "Bolia ma…"
+            }
+          ],
+          "items": [
+            {
+              "sk": "hlava",
+              "category": "c1"
+            },
+            {
+              "sk": "oči",
+              "category": "c2"
+            },
+            {
+              "sk": "chrbát",
+              "category": "c1"
+            },
+            {
+              "sk": "nohy",
+              "category": "c2"
+            },
+            {
+              "sk": "brucho",
+              "category": "c1"
+            },
+            {
+              "sk": "zuby",
+              "category": "c2"
+            }
+          ],
+          "explanation": "bolí — одна річ, bolia — кілька.",
+          "order": 6,
+          "wordIds": [
+            "a0-u06-l04-telo-bolest-w02",
+            "a0-u06-l04-telo-bolest-w03",
+            "a0-u06-l04-telo-bolest-w04"
+          ]
+        },
+        {
+          "id": "a0-u06-l04-telo-bolest-ex07",
+          "lessonId": "a0-u06-l04-telo-bolest",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Je mi zle» означає «Мені погано».",
+          "correctAnswer": true,
+          "explanation": "Je mi zle — мені погано (самопочуття).",
+          "order": 7
+        },
+        {
+          "id": "a0-u06-l04-telo-bolest-ex08",
+          "lessonId": "a0-u06-l04-telo-bolest",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Bolí ma ______. (спина)",
+          "acceptedAnswers": [
+            "chrbát"
+          ],
+          "explanation": "chrbát — спина.",
+          "order": 8,
+          "wordIds": [
+            "a0-u06-l04-telo-bolest-w04"
+          ]
+        },
+        {
+          "id": "a0-u06-l04-telo-bolest-ex09",
+          "lessonId": "a0-u06-l04-telo-bolest",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що в доньки температура.",
+          "tokens": [
+            "Dcéra",
+            "horúčku",
+            "má",
+            "."
+          ],
+          "correctOrder": [
+            "Dcéra",
+            "má",
+            "horúčku",
+            "."
+          ],
+          "explanation": "má horúčku.",
+          "order": 9,
+          "wordIds": [
+            "a0-u06-l04-telo-bolest-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l04-telo-bolest-ex10",
+          "lessonId": "a0-u06-l04-telo-bolest",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти телефонуєш на роботу: тобі погано, ти хвора.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Dobrý deň, horúčka je mi.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Som chorý, mám dobre.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Bolí ma práca.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Dobrý deň, som chorá, je mi zle.",
+              "correct": true
+            }
+          ],
+          "explanation": "Som chorá (жін.) + je mi zle.",
+          "order": 10,
+          "wordIds": [
+            "a0-u06-l04-telo-bolest-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l04-telo-bolest-ex11",
+          "lessonId": "a0-u06-l04-telo-bolest",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери частини тіла.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "horúčka",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "ruka",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "zubár",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "oko",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "chrbát",
+              "correct": true
+            }
+          ],
+          "explanation": "horúčka — симптом, zubár — стоматолог.",
+          "order": 11,
+          "wordIds": [
+            "a0-u06-l04-telo-bolest-w01",
+            "a0-u06-l04-telo-bolest-w03",
+            "a0-u06-l04-telo-bolest-w04",
+            "a0-u06-l04-telo-bolest-w05",
+            "a0-u06-l04-telo-bolest-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l04-telo-bolest-ex12",
+          "lessonId": "a0-u06-l04-telo-bolest",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Лікарка каже: «Ukážte mi, kde presne.» Чого вона хоче?",
+          "options": [
+            {
+              "id": "a",
+              "text": "щоб ти показав(ла) документ",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "щоб ти показав(ла), де саме болить",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "щоб ти пішов(пішла)",
+              "correct": false
+            }
+          ],
+          "explanation": "ukážte — покажіть.",
+          "order": 12
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Дзвінок до педіатра",
+        "description": "Твоя донька захворіла, ти телефонуєш у дитячу амбулаторію.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Čo sa deje?» (у доньки температура)",
+            "options": [
+              {
+                "sk": "Dcéra je horúčka.",
+                "correct": false
+              },
+              {
+                "sk": "Dcéra má horúčku.",
+                "correct": true
+              },
+              {
+                "sk": "Mám dcéru horúčku.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Bolí ju niečo?» (живіт)",
+            "options": [
+              {
+                "sk": "Bolia ju brucho.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, brucho má.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, bolí ju brucho.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Koľko má rokov?» (6)",
+            "options": [
+              {
+                "sk": "Šiesta.",
+                "correct": false
+              },
+              {
+                "sk": "Šesť rokov.",
+                "correct": true
+              },
+              {
+                "sk": "Šesť roky.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Príďte o desiatej.» О котрій?",
+            "options": [
+              {
+                "sk": "о 12:00",
+                "correct": false
+              },
+              {
+                "sk": "через 10 хвилин",
+                "correct": false
+              },
+              {
+                "sk": "о 10:00",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тепер ти можеш пояснити, що болить. Далі — частини доби."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тепер ти можеш пояснити, що болить. Далі — частини доби.",
+        "nowYouKnow": [
+          "ruka, brucho, zub, chrbát, oko",
+          "Bolí ma… / Bolia ma…",
+          "Mám horúčku. Je mi zle.",
+          "Čo vás bolí?"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u06-l05-casti-dna",
+          "title": "Частини доби"
+        }
+      }
+    }
+  ]
+}

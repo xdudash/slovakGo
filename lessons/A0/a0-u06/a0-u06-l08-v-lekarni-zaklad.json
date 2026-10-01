@@ -1,0 +1,770 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u06-l08-v-lekarni-zaklad",
+      "sectionId": "a0-u06",
+      "level": "A0",
+      "title": "В аптеці",
+      "topic": "Перші потреби",
+      "description": "Купити ліки від болю чи застуди: liek, tabletky, recept, sirup, náplasť.",
+      "order": 58,
+      "xpReward": 15,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Пояснити фармацевту проблему й купити потрібні ліки.",
+      "completionMessage": "Тепер ти впораєшся в аптеці. Далі — найважливіші дієслова.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Перші потреби",
+        "title": "В аптеці",
+        "shortDescription": "Пояснити фармацевту проблему й купити потрібні ліки.",
+        "outcomes": [
+          "просити Potrebujem niečo na…",
+          "розуміти na predpis / bez predpisu",
+          "розуміти дозування: dvakrát denne",
+          "називати базові аптечні товари"
+        ],
+        "newWords": [
+          "liek",
+          "tabletka",
+          "recept",
+          "sirup",
+          "náplasť",
+          "kašeľ"
+        ],
+        "exercisesCount": 12,
+        "reward": "+15 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Niečo na…",
+          "text": "Найпростіше: «Potrebujem niečo na bolesť hlavy» — мені потрібно щось від головного болю. «Na kašeľ» — від кашлю, «na horúčku» — від температури, «na nádchu» — від нежиті.",
+          "examples": [
+            {
+              "sk": "Máte niečo na kašeľ?",
+              "uk": "У вас є щось від кашлю?"
+            },
+            {
+              "sk": "Niečo na bolesť zubov.",
+              "uk": "Щось від зубного болю."
+            }
+          ],
+          "shortRule": "niečo na… = щось від…",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Рецепт",
+          "text": "«Recept» — рецепт лікаря. «Na predpis» — за рецептом, «bez predpisu» — без рецепта. Антибіотики продають лише за рецептом.",
+          "examples": [
+            {
+              "sk": "Tento liek je len na predpis.",
+              "uk": "Ці ліки лише за рецептом."
+            },
+            {
+              "sk": "Mám recept od lekára.",
+              "uk": "У мене є рецепт від лікаря."
+            }
+          ],
+          "shortRule": "recept = рецепт лікаря",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Як приймати",
+          "text": "«Užívajte dvakrát denne» — приймайте двічі на день. «Po jedle» — після їди, «pred jedlom» — до їди, «jednu tabletku» — одну таблетку.",
+          "examples": [
+            {
+              "sk": "Jednu tabletku trikrát denne po jedle.",
+              "uk": "Одну таблетку тричі на день після їди."
+            }
+          ],
+          "shortRule": "dvakrát / trikrát denne",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u06-l08-v-lekarni-zaklad-w01",
+            "sk": "liek",
+            "uk": "ліки",
+            "pronunciationUk": "ліек",
+            "exampleSk": "Tento liek je veľmi silný.",
+            "exampleUk": "Ці ліки дуже сильні."
+          },
+          {
+            "wordId": "a0-u06-l08-v-lekarni-zaklad-w02",
+            "sk": "tabletka",
+            "uk": "таблетка",
+            "pronunciationUk": "таблетка",
+            "exampleSk": "Zoberte si jednu tabletku.",
+            "exampleUk": "Прийміть одну таблетку."
+          },
+          {
+            "wordId": "a0-u06-l08-v-lekarni-zaklad-w03",
+            "sk": "recept",
+            "uk": "рецепт (лікаря)",
+            "pronunciationUk": "рецепт",
+            "exampleSk": "Bez receptu to nedostanete.",
+            "exampleUk": "Без рецепта ви цього не отримаєте."
+          },
+          {
+            "wordId": "a0-u06-l08-v-lekarni-zaklad-w04",
+            "sk": "sirup",
+            "uk": "сироп",
+            "pronunciationUk": "сіруп",
+            "exampleSk": "Sirup na kašeľ pre deti.",
+            "exampleUk": "Сироп від кашлю для дітей."
+          },
+          {
+            "wordId": "a0-u06-l08-v-lekarni-zaklad-w05",
+            "sk": "náplasť",
+            "uk": "пластир",
+            "pronunciationUk": "на:пласть",
+            "exampleSk": "Potrebujem náplasť, porezal som sa.",
+            "exampleUk": "Мені потрібен пластир, я порізався."
+          },
+          {
+            "wordId": "a0-u06-l08-v-lekarni-zaklad-w06",
+            "sk": "kašeľ",
+            "uk": "кашель",
+            "pronunciationUk": "кашель",
+            "exampleSk": "Mám silný kašeľ.",
+            "exampleUk": "У мене сильний кашель."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u06-l08-v-lekarni-zaklad-w01",
+          "sk": "liek",
+          "uk": "ліки",
+          "pronunciationUk": "ліек",
+          "exampleSk": "Tento liek je veľmi silný.",
+          "exampleUk": "Ці ліки дуже сильні.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l08-v-lekarni-zaklad-w02",
+          "sk": "tabletka",
+          "uk": "таблетка",
+          "pronunciationUk": "таблетка",
+          "exampleSk": "Zoberte si jednu tabletku.",
+          "exampleUk": "Прийміть одну таблетку.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l08-v-lekarni-zaklad-w03",
+          "sk": "recept",
+          "uk": "рецепт (лікаря)",
+          "pronunciationUk": "рецепт",
+          "exampleSk": "Bez receptu to nedostanete.",
+          "exampleUk": "Без рецепта ви цього не отримаєте.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l08-v-lekarni-zaklad-w04",
+          "sk": "sirup",
+          "uk": "сироп",
+          "pronunciationUk": "сіруп",
+          "exampleSk": "Sirup na kašeľ pre deti.",
+          "exampleUk": "Сироп від кашлю для дітей.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l08-v-lekarni-zaklad-w05",
+          "sk": "náplasť",
+          "uk": "пластир",
+          "pronunciationUk": "на:пласть",
+          "exampleSk": "Potrebujem náplasť, porezal som sa.",
+          "exampleUk": "Мені потрібен пластир, я порізався.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l08-v-lekarni-zaklad-w06",
+          "sk": "kašeľ",
+          "uk": "кашель",
+          "pronunciationUk": "кашель",
+          "exampleSk": "Mám silný kašeľ.",
+          "exampleUk": "У мене сильний кашель.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u06-l08-v-lekarni-zaklad-ex01",
+          "lessonId": "a0-u06-l08-v-lekarni-zaklad",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "liek",
+              "right": "ліки"
+            },
+            {
+              "left": "tabletka",
+              "right": "таблетка"
+            },
+            {
+              "left": "recept",
+              "right": "рецепт"
+            },
+            {
+              "left": "sirup",
+              "right": "сироп"
+            },
+            {
+              "left": "náplasť",
+              "right": "пластир"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a0-u06-l08-v-lekarni-zaklad-w01",
+            "a0-u06-l08-v-lekarni-zaklad-w02",
+            "a0-u06-l08-v-lekarni-zaklad-w03",
+            "a0-u06-l08-v-lekarni-zaklad-w04",
+            "a0-u06-l08-v-lekarni-zaklad-w05"
+          ]
+        },
+        {
+          "id": "a0-u06-l08-v-lekarni-zaklad-ex02",
+          "lessonId": "a0-u06-l08-v-lekarni-zaklad",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Тебе болить голова. Що скажеш фармацевту?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Potrebujem hlavu.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Potrebujem niečo na bolesť hlavy.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Bolí ma lekáreň.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Hlava, liek, dovidenia.",
+              "correct": false
+            }
+          ],
+          "explanation": "Potrebujem niečo na bolesť hlavy.",
+          "order": 2,
+          "wordIds": [
+            "a0-u06-l08-v-lekarni-zaklad-w01"
+          ]
+        },
+        {
+          "id": "a0-u06-l08-v-lekarni-zaklad-ex03",
+          "lessonId": "a0-u06-l08-v-lekarni-zaklad",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Lekárnička",
+              "sk": "Máte recept?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Nie, je to bez predpisu?",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Áno, recept je bolesť.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Mám kašeľ recept nie.",
+              "correct": false
+            }
+          ],
+          "explanation": "Уточни, чи можна без рецепта.",
+          "order": 3,
+          "wordIds": [
+            "a0-u06-l08-v-lekarni-zaklad-w03",
+            "a0-u06-l08-v-lekarni-zaklad-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l08-v-lekarni-zaklad-ex04",
+          "lessonId": "a0-u06-l08-v-lekarni-zaklad",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «trikrát denne po jedle»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "три таблетки одразу",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "тричі на день після їди",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "три дні до їди",
+              "correct": false
+            }
+          ],
+          "explanation": "trikrát denne — тричі на день.",
+          "order": 4
+        },
+        {
+          "id": "a0-u06-l08-v-lekarni-zaklad-ex05",
+          "lessonId": "a0-u06-l08-v-lekarni-zaklad",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "За рецептом чи без? (зазвичай)",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Na predpis"
+            },
+            {
+              "id": "c2",
+              "title": "Bez predpisu"
+            }
+          ],
+          "items": [
+            {
+              "sk": "vitamín C",
+              "category": "c2"
+            },
+            {
+              "sk": "antibiotiká",
+              "category": "c1"
+            },
+            {
+              "sk": "sirup na kašeľ",
+              "category": "c2"
+            },
+            {
+              "sk": "silné lieky na spanie",
+              "category": "c1"
+            },
+            {
+              "sk": "náplasť",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Антибіотики — лише за рецептом.",
+          "order": 5,
+          "wordIds": [
+            "a0-u06-l08-v-lekarni-zaklad-w01",
+            "a0-u06-l08-v-lekarni-zaklad-w04",
+            "a0-u06-l08-v-lekarni-zaklad-w05",
+            "a0-u06-l08-v-lekarni-zaklad-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l08-v-lekarni-zaklad-ex06",
+          "lessonId": "a0-u06-l08-v-lekarni-zaklad",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Recept» в аптеці означає кулінарний рецепт.",
+          "correctAnswer": false,
+          "explanation": "recept — рецепт лікаря.",
+          "order": 6,
+          "wordIds": [
+            "a0-u06-l08-v-lekarni-zaklad-w03"
+          ]
+        },
+        {
+          "id": "a0-u06-l08-v-lekarni-zaklad-ex07",
+          "lessonId": "a0-u06-l08-v-lekarni-zaklad",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Máte niečo na ______? (кашель)",
+          "acceptedAnswers": [
+            "kašeľ"
+          ],
+          "explanation": "na kašeľ — від кашлю.",
+          "order": 7,
+          "wordIds": [
+            "a0-u06-l08-v-lekarni-zaklad-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l08-v-lekarni-zaklad-ex08",
+          "lessonId": "a0-u06-l08-v-lekarni-zaklad",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Попроси пластир.",
+          "tokens": [
+            "náplasť",
+            "prosím",
+            "Potrebujem",
+            ",",
+            "."
+          ],
+          "correctOrder": [
+            "Potrebujem",
+            "náplasť",
+            ",",
+            "prosím",
+            "."
+          ],
+          "explanation": "Potrebujem + náplasť.",
+          "order": 8,
+          "wordIds": [
+            "a0-u06-l08-v-lekarni-zaklad-w05"
+          ]
+        },
+        {
+          "id": "a0-u06-l08-v-lekarni-zaklad-ex09",
+          "lessonId": "a0-u06-l08-v-lekarni-zaklad",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай інструкцію.",
+          "document": {
+            "title": "Paralen 500 mg",
+            "fields": [
+              {
+                "label": "Dávkovanie",
+                "value": "1 tabletka"
+              },
+              {
+                "label": "Ako často",
+                "value": "najviac 4-krát denne"
+              },
+              {
+                "label": "Odstup",
+                "value": "aspoň 4 hodiny"
+              },
+              {
+                "label": "Deti",
+                "value": "od 12 rokov"
+              }
+            ]
+          },
+          "question": "Скільки максимум таблеток на день?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "12",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "1",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "4",
+              "correct": true
+            }
+          ],
+          "explanation": "najviac 4-krát denne — максимум 4 рази на день.",
+          "order": 9,
+          "wordIds": [
+            "a0-u06-l08-v-lekarni-zaklad-w02"
+          ]
+        },
+        {
+          "id": "a0-u06-l08-v-lekarni-zaklad-ex10",
+          "lessonId": "a0-u06-l08-v-lekarni-zaklad",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Sirup je pre "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "detí",
+                "deti",
+                "dieťa"
+              ],
+              "correct": "deti"
+            },
+            {
+              "text": " od troch rokov."
+            }
+          ],
+          "explanation": "pre + знахідний мн.: deti.",
+          "order": 10,
+          "wordIds": [
+            "a0-u06-l08-v-lekarni-zaklad-w04"
+          ]
+        },
+        {
+          "id": "a0-u06-l08-v-lekarni-zaklad-ex11",
+          "lessonId": "a0-u06-l08-v-lekarni-zaklad",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Фармацевтка каже: «Tento je silnejší, ale je len na predpis.» Що це означає?",
+          "options": [
+            {
+              "id": "a",
+              "text": "ці ліки дешевші",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "ці ліки закінчилися",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "ці ліки сильніші, але потрібен рецепт",
+              "correct": true
+            }
+          ],
+          "explanation": "len na predpis — лише за рецептом.",
+          "order": 11
+        },
+        {
+          "id": "a0-u06-l08-v-lekarni-zaklad-ex12",
+          "lessonId": "a0-u06-l08-v-lekarni-zaklad",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери симптоми.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "bolesť hlavy",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "horúčka",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "náplasť",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "sirup",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "kašeľ",
+              "correct": true
+            }
+          ],
+          "explanation": "Náplasť і sirup — засоби, не симптоми.",
+          "order": 12,
+          "wordIds": [
+            "a0-u06-l08-v-lekarni-zaklad-w04",
+            "a0-u06-l08-v-lekarni-zaklad-w05",
+            "a0-u06-l08-v-lekarni-zaklad-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Застуда в неділю",
+        "description": "У неділю в тебе кашель і температура, лікар не працює. Ти йдеш до чергової аптеки.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Dobrý deň, čo potrebujete?»",
+            "options": [
+              {
+                "sk": "Mám kašeľ a horúčku. Máte niečo bez predpisu?",
+                "correct": true
+              },
+              {
+                "sk": "Kašeľ je lekáreň.",
+                "correct": false
+              },
+              {
+                "sk": "Potrebujem recept na obed.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Tento sirup na kašeľ a tabletky na horúčku.» Що тобі пропонують?",
+            "options": [
+              {
+                "sk": "сироп від кашлю й таблетки від температури",
+                "correct": true
+              },
+              {
+                "sk": "пластир",
+                "correct": false
+              },
+              {
+                "sk": "антибіотики",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Tabletky najviac trikrát denne.» Як приймати таблетки?",
+            "options": [
+              {
+                "sk": "три таблетки одразу",
+                "correct": false
+              },
+              {
+                "sk": "максимум тричі на день",
+                "correct": true
+              },
+              {
+                "sk": "три дні",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Ak to nepomôže, choďte k lekárovi.» Що радять?",
+            "options": [
+              {
+                "sk": "прийти завтра в аптеку",
+                "correct": false
+              },
+              {
+                "sk": "якщо не допоможе, іти до лікаря",
+                "correct": true
+              },
+              {
+                "sk": "пити більше кави",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тепер ти впораєшся в аптеці. Далі — найважливіші дієслова."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тепер ти впораєшся в аптеці. Далі — найважливіші дієслова.",
+        "nowYouKnow": [
+          "Potrebujem niečo na…",
+          "liek, tabletka, sirup, náplasť",
+          "recept, na predpis / bez predpisu",
+          "dvakrát denne, po jedle"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u06-l09-mozem-viem",
+          "title": "Можу, знаю, розумію"
+        }
+      }
+    }
+  ]
+}
