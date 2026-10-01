@@ -376,6 +376,8 @@ def build_exercise(kind: str, body: str, extra: list[str], ex_id: str, lesson_id
         if not m:
             raise SourceError("find_error needs [wrong>right]")
         wrong, right = m.group(1).strip(), m.group(2).strip()
+        if wrong == right or "—" in f[1] or "иправ" in f[1]:
+            raise SourceError("find_error placeholder / identical tokens")
         after = f[1][m.end():m.end() + 1]
         if after and after not in " .!?":
             raise SourceError(f"find_error token must not be glued to punctuation {after!r}")

@@ -1,0 +1,783 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u07-l03-pol-stvrt",
+      "sectionId": "a1-u07",
+      "level": "A1",
+      "title": "Пів, чверть, без чверті",
+      "topic": "Мій день",
+      "description": "Розмовний час: štvrť na osem, pol ôsmej, trištvrte na osem — і слова presne, okolo, neskoro.",
+      "order": 63,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Розуміти й називати час у розмовному форматі.",
+      "completionMessage": "Розмовний час підкорено. Далі — дорога на роботу.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Мій день",
+        "title": "Пів, чверть, без чверті",
+        "shortDescription": "Розуміти й називати час у розмовному форматі.",
+        "outcomes": [
+          "розуміти štvrť na… (7:15)",
+          "розуміти pol… (7:30)",
+          "розуміти trištvrte na… (7:45)",
+          "казати presne, okolo, neskoro"
+        ],
+        "newWords": [
+          "pol",
+          "štvrť",
+          "trištvrte",
+          "presne",
+          "okolo",
+          "neskoro"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Чверть і пів",
+          "text": "Словаки рахують до наступної години: 7:15 = «štvrť na osem» (чверть на восьму), 7:30 = «pol ôsmej» (пів восьмої), 7:45 = «trištvrte na osem» (три чверті на восьму).",
+          "examples": [
+            {
+              "sk": "štvrť na osem",
+              "uk": "7:15"
+            },
+            {
+              "sk": "pol ôsmej",
+              "uk": "7:30"
+            },
+            {
+              "sk": "trištvrte na osem",
+              "uk": "7:45"
+            }
+          ],
+          "shortRule": "Рахуй до наступної години!",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "О котрій?",
+          "text": "«O štvrť na osem», «o pol ôsmej», «o trištvrte na osem». Пам’ятка: pol + родовий (pol deviatej = 8:30), štvrť / trištvrte na + знахідний (štvrť na deväť = 8:15).",
+          "examples": [
+            {
+              "sk": "Príď o pol deviatej.",
+              "uk": "Приходь о пів на дев’яту (8:30)."
+            },
+            {
+              "sk": "Vlak ide o trištvrte na päť.",
+              "uk": "Поїзд о 4:45."
+            }
+          ],
+          "shortRule": "pol deviatej = 8:30",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Точність",
+          "text": "«Presne o ôsmej» — рівно о восьмій. «Okolo ôsmej» — близько восьмої. «Neskoro» — пізно, «skoro» — рано, «včas» — вчасно.",
+          "examples": [
+            {
+              "sk": "Prídem okolo šiestej.",
+              "uk": "Прийду близько шостої."
+            },
+            {
+              "sk": "Je už neskoro.",
+              "uk": "Уже пізно."
+            }
+          ],
+          "shortRule": "presne / okolo",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u07-l03-pol-stvrt-w01",
+            "sk": "pol",
+            "uk": "пів, половина",
+            "pronunciationUk": "пол",
+            "exampleSk": "Je pol tretej.",
+            "exampleUk": "Пів на третю (2:30)."
+          },
+          {
+            "wordId": "a1-u07-l03-pol-stvrt-w02",
+            "sk": "štvrť",
+            "uk": "чверть",
+            "pronunciationUk": "штврть",
+            "exampleSk": "Je štvrť na päť.",
+            "exampleUk": "Чверть на п’яту (4:15)."
+          },
+          {
+            "wordId": "a1-u07-l03-pol-stvrt-w03",
+            "sk": "trištvrte",
+            "uk": "три чверті",
+            "pronunciationUk": "тріштвртє",
+            "exampleSk": "Je trištvrte na sedem.",
+            "exampleUk": "Без чверті сьома (6:45)."
+          },
+          {
+            "wordId": "a1-u07-l03-pol-stvrt-w04",
+            "sk": "presne",
+            "uk": "точно, рівно",
+            "pronunciationUk": "пресне",
+            "exampleSk": "Začíname presne o deviatej.",
+            "exampleUk": "Починаємо рівно о дев’ятій."
+          },
+          {
+            "wordId": "a1-u07-l03-pol-stvrt-w05",
+            "sk": "okolo",
+            "uk": "близько, приблизно",
+            "pronunciationUk": "около",
+            "exampleSk": "Prídem okolo piatej.",
+            "exampleUk": "Я прийду близько п’ятої."
+          },
+          {
+            "wordId": "a1-u07-l03-pol-stvrt-w06",
+            "sk": "neskoro",
+            "uk": "пізно",
+            "pronunciationUk": "нєскоро",
+            "exampleSk": "Je už neskoro, idem spať.",
+            "exampleUk": "Уже пізно, я йду спати."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u07-l03-pol-stvrt-w01",
+          "sk": "pol",
+          "uk": "пів, половина",
+          "pronunciationUk": "пол",
+          "exampleSk": "Je pol tretej.",
+          "exampleUk": "Пів на третю (2:30).",
+          "level": "A1",
+          "topic": "Мій день",
+          "tags": [
+            "a1-u07",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u07-l03-pol-stvrt-w02",
+          "sk": "štvrť",
+          "uk": "чверть",
+          "pronunciationUk": "штврть",
+          "exampleSk": "Je štvrť na päť.",
+          "exampleUk": "Чверть на п’яту (4:15).",
+          "level": "A1",
+          "topic": "Мій день",
+          "tags": [
+            "a1-u07",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u07-l03-pol-stvrt-w03",
+          "sk": "trištvrte",
+          "uk": "три чверті",
+          "pronunciationUk": "тріштвртє",
+          "exampleSk": "Je trištvrte na sedem.",
+          "exampleUk": "Без чверті сьома (6:45).",
+          "level": "A1",
+          "topic": "Мій день",
+          "tags": [
+            "a1-u07",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u07-l03-pol-stvrt-w04",
+          "sk": "presne",
+          "uk": "точно, рівно",
+          "pronunciationUk": "пресне",
+          "exampleSk": "Začíname presne o deviatej.",
+          "exampleUk": "Починаємо рівно о дев’ятій.",
+          "level": "A1",
+          "topic": "Мій день",
+          "tags": [
+            "a1-u07",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u07-l03-pol-stvrt-w05",
+          "sk": "okolo",
+          "uk": "близько, приблизно",
+          "pronunciationUk": "около",
+          "exampleSk": "Prídem okolo piatej.",
+          "exampleUk": "Я прийду близько п’ятої.",
+          "level": "A1",
+          "topic": "Мій день",
+          "tags": [
+            "a1-u07",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u07-l03-pol-stvrt-w06",
+          "sk": "neskoro",
+          "uk": "пізно",
+          "pronunciationUk": "нєскоро",
+          "exampleSk": "Je už neskoro, idem spať.",
+          "exampleUk": "Уже пізно, я йду спати.",
+          "level": "A1",
+          "topic": "Мій день",
+          "tags": [
+            "a1-u07",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u07-l03-pol-stvrt-ex01",
+          "lessonId": "a1-u07-l03-pol-stvrt",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "štvrť na osem",
+              "right": "7:15"
+            },
+            {
+              "left": "pol ôsmej",
+              "right": "7:30"
+            },
+            {
+              "left": "trištvrte na osem",
+              "right": "7:45"
+            },
+            {
+              "left": "pol deviatej",
+              "right": "8:30"
+            },
+            {
+              "left": "štvrť na deväť",
+              "right": "8:15"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u07-l03-pol-stvrt-w01",
+            "a1-u07-l03-pol-stvrt-w02",
+            "a1-u07-l03-pol-stvrt-w03"
+          ]
+        },
+        {
+          "id": "a1-u07-l03-pol-stvrt-ex02",
+          "lessonId": "a1-u07-l03-pol-stvrt",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Котра година «pol tretej»?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "3:30",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "2:15",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "2:30",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "3:15",
+              "correct": false
+            }
+          ],
+          "explanation": "pol tretej — половина третьої, тобто 2:30.",
+          "order": 2,
+          "wordIds": [
+            "a1-u07-l03-pol-stvrt-w01"
+          ]
+        },
+        {
+          "id": "a1-u07-l03-pol-stvrt-ex03",
+          "lessonId": "a1-u07-l03-pol-stvrt",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Як сказати 5:45?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "trištvrte na šesť",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "trištvrte na päť",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "štvrť na šesť",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "pol šiestej",
+              "correct": false
+            }
+          ],
+          "explanation": "5:45 — три чверті на шосту.",
+          "order": 3,
+          "wordIds": [
+            "a1-u07-l03-pol-stvrt-w01",
+            "a1-u07-l03-pol-stvrt-w02",
+            "a1-u07-l03-pol-stvrt-w03"
+          ]
+        },
+        {
+          "id": "a1-u07-l03-pol-stvrt-ex04",
+          "lessonId": "a1-u07-l03-pol-stvrt",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Pol ôsmej» — це 8:30.",
+          "correctAnswer": false,
+          "explanation": "pol ôsmej — 7:30 (половина восьмої години).",
+          "order": 4,
+          "wordIds": [
+            "a1-u07-l03-pol-stvrt-w01"
+          ]
+        },
+        {
+          "id": "a1-u07-l03-pol-stvrt-ex05",
+          "lessonId": "a1-u07-l03-pol-stvrt",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Prídem ______ piatej. (близько)",
+          "acceptedAnswers": [
+            "okolo"
+          ],
+          "explanation": "okolo piatej.",
+          "order": 5,
+          "wordIds": [
+            "a1-u07-l03-pol-stvrt-w01",
+            "a1-u07-l03-pol-stvrt-w05"
+          ]
+        },
+        {
+          "id": "a1-u07-l03-pol-stvrt-ex06",
+          "lessonId": "a1-u07-l03-pol-stvrt",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що починаєте рівно о дев’ятій.",
+          "tokens": [
+            "Začíname",
+            "presne",
+            ".",
+            "deviatej",
+            "o"
+          ],
+          "correctOrder": [
+            "Začíname",
+            "presne",
+            "o",
+            "deviatej",
+            "."
+          ],
+          "explanation": "presne o + порядкове.",
+          "order": 6,
+          "wordIds": [
+            "a1-u07-l03-pol-stvrt-w01",
+            "a1-u07-l03-pol-stvrt-w04"
+          ]
+        },
+        {
+          "id": "a1-u07-l03-pol-stvrt-ex07",
+          "lessonId": "a1-u07-l03-pol-stvrt",
+          "type": "real_schedule",
+          "skill": [
+            "reading",
+            "real_life",
+            "time"
+          ],
+          "instruction": "Подивись на розклад і обери відповідь.",
+          "schedule": {
+            "title": "Vlak Žilina – Bratislava",
+            "rows": [
+              {
+                "day": "Odchod",
+                "hours": "6:45"
+              },
+              {
+                "day": "Príchod",
+                "hours": "9:15"
+              }
+            ]
+          },
+          "question": "Як сказати час відправлення розмовно?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "pol siedmej",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "trištvrte na sedem",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "trištvrte na šesť",
+              "correct": false
+            }
+          ],
+          "explanation": "6:45 = trištvrte na sedem.",
+          "order": 7,
+          "wordIds": [
+            "a1-u07-l03-pol-stvrt-w01",
+            "a1-u07-l03-pol-stvrt-w02",
+            "a1-u07-l03-pol-stvrt-w03"
+          ]
+        },
+        {
+          "id": "a1-u07-l03-pol-stvrt-ex08",
+          "lessonId": "a1-u07-l03-pol-stvrt",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Je už "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "neskoro",
+                "skoro",
+                "presne"
+              ],
+              "correct": "neskoro"
+            },
+            {
+              "text": ", deti musia spať."
+            }
+          ],
+          "explanation": "neskoro — пізно.",
+          "order": 8,
+          "wordIds": [
+            "a1-u07-l03-pol-stvrt-w01",
+            "a1-u07-l03-pol-stvrt-w04",
+            "a1-u07-l03-pol-stvrt-w06"
+          ]
+        },
+        {
+          "id": "a1-u07-l03-pol-stvrt-ex09",
+          "lessonId": "a1-u07-l03-pol-stvrt",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Перша чи друга половина години?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "До пів"
+            },
+            {
+              "id": "c2",
+              "title": "Після пів"
+            }
+          ],
+          "items": [
+            {
+              "sk": "štvrť na osem",
+              "category": "c1"
+            },
+            {
+              "sk": "trištvrte na osem",
+              "category": "c2"
+            },
+            {
+              "sk": "štvrť na deväť",
+              "category": "c1"
+            },
+            {
+              "sk": "trištvrte na deväť",
+              "category": "c2"
+            }
+          ],
+          "explanation": "štvrť — :15, trištvrte — :45.",
+          "order": 9,
+          "wordIds": [
+            "a1-u07-l03-pol-stvrt-w01",
+            "a1-u07-l03-pol-stvrt-w02",
+            "a1-u07-l03-pol-stvrt-w03"
+          ]
+        },
+        {
+          "id": "a1-u07-l03-pol-stvrt-ex10",
+          "lessonId": "a1-u07-l03-pol-stvrt",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kamarátka",
+              "sk": "O koľkej sa stretneme?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Pol šiesta.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "O pol šesť hodín.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "O pol šiestej, pred kinom.",
+              "correct": true
+            }
+          ],
+          "explanation": "o pol + родовий.",
+          "order": 10,
+          "wordIds": [
+            "a1-u07-l03-pol-stvrt-w01"
+          ]
+        },
+        {
+          "id": "a1-u07-l03-pol-stvrt-ex11",
+          "lessonId": "a1-u07-l03-pol-stvrt",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти запізнишся приблизно о сьомій. Пишеш другу.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Prídem až okolo siedmej.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Prídem presne sedem.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Okolo sedem hodiny.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Neskoro o sedem.",
+              "correct": false
+            }
+          ],
+          "explanation": "okolo + родовий.",
+          "order": 11,
+          "wordIds": [
+            "a1-u07-l03-pol-stvrt-w01",
+            "a1-u07-l03-pol-stvrt-w04",
+            "a1-u07-l03-pol-stvrt-w05",
+            "a1-u07-l03-pol-stvrt-w06"
+          ]
+        },
+        {
+          "id": "a1-u07-l03-pol-stvrt-ex12",
+          "lessonId": "a1-u07-l03-pol-stvrt",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні вирази для 8:30.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "pol ôsmej",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "štvrť na deväť",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "pol deviatej",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "osem tridsať",
+              "correct": true
+            }
+          ],
+          "explanation": "8:30 — pol deviatej або osem tridsať.",
+          "order": 12,
+          "wordIds": [
+            "a1-u07-l03-pol-stvrt-w01",
+            "a1-u07-l03-pol-stvrt-w02"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Запис до перукаря",
+        "description": "Перукарка пропонує час телефоном.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Môže byť štvrť na štyri?» Котра це?",
+            "options": [
+              {
+                "sk": "16:15",
+                "correct": false
+              },
+              {
+                "sk": "15:45",
+                "correct": false
+              },
+              {
+                "sk": "15:15",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Тобі незручно. Ти пропонуєш 16:30.",
+            "options": [
+              {
+                "sk": "O pol štvrtej?",
+                "correct": false
+              },
+              {
+                "sk": "O štyri tridsať pol?",
+                "correct": false
+              },
+              {
+                "sk": "Mohlo by byť o pol piatej?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Dobre, o pol piatej. Ale príďte presne.» Що просять?",
+            "options": [
+              {
+                "sk": "прийти раніше",
+                "correct": false
+              },
+              {
+                "sk": "прийти точно вчасно",
+                "correct": true
+              },
+              {
+                "sk": "прийти близько тієї години",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти запізнюєшся на 10 хвилин і пишеш.",
+            "options": [
+              {
+                "sk": "Prepáčte, budem tam štvrť na štyri.",
+                "correct": false
+              },
+              {
+                "sk": "Prepáčte, budem tam okolo trištvrte na päť.",
+                "correct": true
+              },
+              {
+                "sk": "Som neskoro presne.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Розмовний час підкорено. Далі — дорога на роботу."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Розмовний час підкорено. Далі — дорога на роботу.",
+        "nowYouKnow": [
+          "štvrť na… (:15), pol… (:30), trištvrte na… (:45)",
+          "pol + родовий",
+          "presne, okolo",
+          "neskoro, skoro, včas"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u07-l04-cesta-do-prace",
+          "title": "Дорога на роботу"
+        }
+      }
+    }
+  ]
+}
