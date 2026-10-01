@@ -1,0 +1,864 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u16-l09-vypredaj",
+      "sectionId": "a1-u16",
+      "level": "A1",
+      "title": "Розпродаж",
+      "topic": "Одяг і покупки",
+      "description": "Розпродажі й знижки на одяг: zľava 30 %, pôvodná a znížená cena, za polovicu ceny, posledné kusy.",
+      "order": 159,
+      "xpReward": 25,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Зрозуміти цінники на розпродажі й порахувати, скільки заплатиш.",
+      "completionMessage": "Ти орієнтуєшся на розпродажі. Далі — підсумок розділу.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Одяг і покупки",
+        "title": "Розпродаж",
+        "shortDescription": "Зрозуміти цінники на розпродажі й порахувати, скільки заплатиш.",
+        "outcomes": [
+          "читати й казати відсотки: jedno percento, tri percentá, dvadsať percent",
+          "розрізняти pôvodná / znížená cena",
+          "розуміти za polovicu ceny, posledné kusy",
+          "питати Platí zľava aj na…?"
+        ],
+        "newWords": [
+          "percento",
+          "pôvodný",
+          "znížený",
+          "polovica",
+          "posledný"
+        ],
+        "exercisesCount": 14,
+        "reward": "+25 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Percentá",
+          "text": "«Výpredaj» і «zľava» ти вже знаєш. Знижку дають у відсотках — «percento». 1 — percento, 2–4 — percentá, 5 і більше — percent: «zľava dvadsať percent» (–20 %). «O 30 % lacnejšie» — на 30 % дешевше.",
+          "examples": [
+            {
+              "sk": "Všetko je so zľavou 50 %.",
+              "uk": "Усе зі знижкою 50 %."
+            },
+            {
+              "sk": "Kabáty sú o 30 % lacnejšie.",
+              "uk": "Пальта на 30 % дешевші."
+            }
+          ],
+          "shortRule": "1 percento, 3 percentá, 20 percent",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Pôvodná a znížená cena",
+          "text": "На цінниках: «pôvodná cena» — початкова ціна (часто закреслена), «znížená cena» — знижена ціна. «Za polovicu ceny» — за півціни. «Druhý kus za polovicu ceny» — друга річ за півціни.",
+          "examples": [
+            {
+              "sk": "Pôvodná cena: 60 €, teraz: 42 €.",
+              "uk": "Початкова ціна 60 €, тепер 42 €."
+            }
+          ],
+          "shortRule": "pôvodná → znížená",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Posledné kusy",
+          "text": "«Posledné kusy!» — останні речі, залишилося мало. «Platí zľava aj na…?» — знижка діє і на…? «Zľava sa odpočíta pri pokladni» — знижку віднімуть на касі.",
+          "examples": [
+            {
+              "sk": "Platí zľava aj na obuv?",
+              "uk": "Знижка діє і на взуття?"
+            },
+            {
+              "sk": "Zľava sa odpočíta pri pokladni.",
+              "uk": "Знижку віднімуть на касі."
+            }
+          ],
+          "shortRule": "posledné kusy; zľava platí na…",
+          "commonMistakes": [
+            {
+              "mistake": "dvadsať percentá",
+              "correct": "dvadsať percent"
+            },
+            {
+              "mistake": "tri percent",
+              "correct": "tri percentá"
+            },
+            {
+              "mistake": "za polovica ceny",
+              "correct": "za polovicu ceny"
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u16-l09-vypredaj-w01",
+            "sk": "percento",
+            "uk": "відсоток",
+            "pronunciationUk": "перценто",
+            "exampleSk": "Zľava je tridsať percent.",
+            "exampleUk": "Знижка — тридцять відсотків."
+          },
+          {
+            "wordId": "a1-u16-l09-vypredaj-w02",
+            "sk": "pôvodný",
+            "uk": "початковий",
+            "pronunciationUk": "пуоводні:",
+            "exampleSk": "Pôvodná cena bola sto eur.",
+            "exampleUk": "Початкова ціна була сто євро."
+          },
+          {
+            "wordId": "a1-u16-l09-vypredaj-w03",
+            "sk": "znížený",
+            "uk": "знижений",
+            "pronunciationUk": "зніжені:",
+            "exampleSk": "Znížená cena platí do nedele.",
+            "exampleUk": "Знижена ціна діє до неділі."
+          },
+          {
+            "wordId": "a1-u16-l09-vypredaj-w04",
+            "sk": "polovica",
+            "uk": "половина",
+            "pronunciationUk": "половіца",
+            "exampleSk": "Kabát som kúpila za polovicu ceny.",
+            "exampleUk": "Я купила пальто за півціни."
+          },
+          {
+            "wordId": "a1-u16-l09-vypredaj-w05",
+            "sk": "posledný",
+            "uk": "останній",
+            "pronunciationUk": "последні:",
+            "exampleSk": "Toto je posledný kus.",
+            "exampleUk": "Це остання річ."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u16-l09-vypredaj-w01",
+          "sk": "percento",
+          "uk": "відсоток",
+          "pronunciationUk": "перценто",
+          "exampleSk": "Zľava je tridsať percent.",
+          "exampleUk": "Знижка — тридцять відсотків.",
+          "level": "A1",
+          "topic": "Одяг і покупки",
+          "tags": [
+            "a1-u16",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u16-l09-vypredaj-w02",
+          "sk": "pôvodný",
+          "uk": "початковий",
+          "pronunciationUk": "пуоводні:",
+          "exampleSk": "Pôvodná cena bola sto eur.",
+          "exampleUk": "Початкова ціна була сто євро.",
+          "level": "A1",
+          "topic": "Одяг і покупки",
+          "tags": [
+            "a1-u16",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u16-l09-vypredaj-w03",
+          "sk": "znížený",
+          "uk": "знижений",
+          "pronunciationUk": "зніжені:",
+          "exampleSk": "Znížená cena platí do nedele.",
+          "exampleUk": "Знижена ціна діє до неділі.",
+          "level": "A1",
+          "topic": "Одяг і покупки",
+          "tags": [
+            "a1-u16",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u16-l09-vypredaj-w04",
+          "sk": "polovica",
+          "uk": "половина",
+          "pronunciationUk": "половіца",
+          "exampleSk": "Kabát som kúpila za polovicu ceny.",
+          "exampleUk": "Я купила пальто за півціни.",
+          "level": "A1",
+          "topic": "Одяг і покупки",
+          "tags": [
+            "a1-u16",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u16-l09-vypredaj-w05",
+          "sk": "posledný",
+          "uk": "останній",
+          "pronunciationUk": "последні:",
+          "exampleSk": "Toto je posledný kus.",
+          "exampleUk": "Це остання річ.",
+          "level": "A1",
+          "topic": "Одяг і покупки",
+          "tags": [
+            "a1-u16",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u16-l09-vypredaj-ex01",
+          "lessonId": "a1-u16-l09-vypredaj",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "percento",
+              "right": "відсоток"
+            },
+            {
+              "left": "pôvodný",
+              "right": "початковий"
+            },
+            {
+              "left": "znížený",
+              "right": "знижений"
+            },
+            {
+              "left": "polovica",
+              "right": "половина"
+            },
+            {
+              "left": "posledný",
+              "right": "останній"
+            },
+            {
+              "left": "výpredaj",
+              "right": "розпродаж"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u16-l09-vypredaj-w01",
+            "a1-u16-l09-vypredaj-w02",
+            "a1-u16-l09-vypredaj-w03",
+            "a1-u16-l09-vypredaj-w04",
+            "a1-u16-l09-vypredaj-w05"
+          ]
+        },
+        {
+          "id": "a1-u16-l09-vypredaj-ex02",
+          "lessonId": "a1-u16-l09-vypredaj",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Zľava je dvadsať "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "percentá",
+                "percento",
+                "percent"
+              ],
+              "correct": "percent"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "5 і більше — percent.",
+          "order": 2,
+          "wordIds": [
+            "a1-u16-l09-vypredaj-w01"
+          ]
+        },
+        {
+          "id": "a1-u16-l09-vypredaj-ex03",
+          "lessonId": "a1-u16-l09-vypredaj",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Je to len o tri "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "percentá",
+                "percent",
+                "percento"
+              ],
+              "correct": "percentá"
+            },
+            {
+              "text": " lacnejšie."
+            }
+          ],
+          "explanation": "2–4 — percentá.",
+          "order": 3,
+          "wordIds": [
+            "a1-u16-l09-vypredaj-w01"
+          ]
+        },
+        {
+          "id": "a1-u16-l09-vypredaj-ex04",
+          "lessonId": "a1-u16-l09-vypredaj",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Druhý kus za polovicu ceny»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "дві речі за ціною однієї",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "половина речей безкоштовно",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "друга річ за півціни",
+              "correct": true
+            }
+          ],
+          "explanation": "druhý kus — друга річ, za polovicu ceny — за півціни.",
+          "order": 4
+        },
+        {
+          "id": "a1-u16-l09-vypredaj-ex05",
+          "lessonId": "a1-u16-l09-vypredaj",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Якщо pôvodná cena — 80 €, а zľava — 50 %, то znížená cena — 40 €.",
+          "correctAnswer": true,
+          "explanation": "Половина від 80 — 40.",
+          "order": 5,
+          "wordIds": [
+            "a1-u16-l09-vypredaj-w02",
+            "a1-u16-l09-vypredaj-w03"
+          ]
+        },
+        {
+          "id": "a1-u16-l09-vypredaj-ex06",
+          "lessonId": "a1-u16-l09-vypredaj",
+          "type": "real_menu",
+          "skill": [
+            "reading",
+            "real_life",
+            "numbers"
+          ],
+          "instruction": "Подивись на цінники на розпродажі.",
+          "menuData": [
+            {
+              "category": "Výpredaj",
+              "item": "vlnený kabát (pôvodne 120 €)",
+              "price": "60 €"
+            },
+            {
+              "category": "Výpredaj",
+              "item": "kožená bunda (pôvodne 150 €)",
+              "price": "105 €"
+            },
+            {
+              "category": "Výpredaj",
+              "item": "bavlnené tričko (pôvodne 20 €)",
+              "price": "10 €"
+            },
+            {
+              "category": "Nová kolekcia",
+              "item": "tenisky",
+              "price": "79 €"
+            }
+          ],
+          "questions": [
+            {
+              "question": "Яка знижка на шкіряну куртку?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "30 %",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "45 %",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "50 %",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "На що немає знижки?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "tenisky",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "tričko",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "kabát",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 6,
+          "wordIds": [
+            "a1-u16-l09-vypredaj-w02"
+          ]
+        },
+        {
+          "id": "a1-u16-l09-vypredaj-ex07",
+          "lessonId": "a1-u16-l09-vypredaj",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Toto je ______ kus. (останній)",
+          "acceptedAnswers": [
+            "posledný"
+          ],
+          "explanation": "kus — чоловічий рід: posledný.",
+          "order": 7,
+          "wordIds": [
+            "a1-u16-l09-vypredaj-w05"
+          ]
+        },
+        {
+          "id": "a1-u16-l09-vypredaj-ex08",
+          "lessonId": "a1-u16-l09-vypredaj",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Všetky svetre sú so zľavou štyridsať percentá.",
+          "errorToken": "percentá",
+          "correctToken": "percent",
+          "explanation": "40 — percent.",
+          "order": 8,
+          "wordIds": [
+            "a1-u16-l09-vypredaj-w01"
+          ]
+        },
+        {
+          "id": "a1-u16-l09-vypredaj-ex09",
+          "lessonId": "a1-u16-l09-vypredaj",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Спитай, чи знижка діє і на взуття.",
+          "tokens": [
+            "aj",
+            "Platí",
+            "obuv",
+            "zľava",
+            "?",
+            "na"
+          ],
+          "correctOrder": [
+            "Platí",
+            "zľava",
+            "aj",
+            "na",
+            "obuv",
+            "?"
+          ],
+          "explanation": "Platí zľava aj na…?",
+          "order": 9
+        },
+        {
+          "id": "a1-u16-l09-vypredaj-ex10",
+          "lessonId": "a1-u16-l09-vypredaj",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Veľký letný výpredaj v obchodnom dome Centrum! Od pondelka do nedele má všetko dámske a pánske oblečenie zľavu 30 %. Topánky a tenisky: druhý pár za polovicu ceny. Detské oblečenie: zľava 20 %. Posledné kusy letných šiat až do –70 %! Zľava sa odpočíta pri pokladni.",
+          "questions": [
+            {
+              "question": "Яка знижка на жіночий одяг?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "20 %",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "70 %",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "30 %",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Ти купуєш дві пари взуття. Що буде з другою парою?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "вона за півціни",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "вона безкоштовна",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "на неї немає знижки",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Коли віднімуть знижку?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "на сайті",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "на касі",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "при поверненні",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "a1-u16-l09-vypredaj-w04",
+            "a1-u16-l09-vypredaj-w05"
+          ]
+        },
+        {
+          "id": "a1-u16-l09-vypredaj-ex11",
+          "lessonId": "a1-u16-l09-vypredaj",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Predavačka",
+              "sk": "Tento kabát je posledný kus."
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Aký je teraz cenu?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Posledný kus som.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Aká je teraz cena?",
+              "correct": true
+            }
+          ],
+          "explanation": "cena — жіночий рід: Aká je cena?",
+          "order": 11,
+          "wordIds": [
+            "a1-u16-l09-vypredaj-w05"
+          ]
+        },
+        {
+          "id": "a1-u16-l09-vypredaj-ex12",
+          "lessonId": "a1-u16-l09-vypredaj",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти питаєш, скільки пальто коштувало спочатку.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Pôvodná cena bola je?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Koľko pôvodne cena?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Aký bol pôvodný cena?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Aká bola pôvodná cena?",
+              "correct": true
+            }
+          ],
+          "explanation": "pôvodná cena — початкова ціна.",
+          "order": 12,
+          "wordIds": [
+            "a1-u16-l09-vypredaj-w02"
+          ]
+        },
+        {
+          "id": "a1-u16-l09-vypredaj-ex13",
+          "lessonId": "a1-u16-l09-vypredaj",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "На вітрині напис: «Výpredaj do vypredania zásob!»",
+          "target": "do vypredania zásob",
+          "options": [
+            {
+              "id": "a",
+              "text": "до кінця місяця",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "поки товар не закінчиться",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "лише для постійних клієнтів",
+              "correct": false
+            }
+          ],
+          "explanation": "vypredať — розпродати, zásoby — запаси.",
+          "order": 13
+        },
+        {
+          "id": "a1-u16-l09-vypredaj-ex14",
+          "lessonId": "a1-u16-l09-vypredaj",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні форми.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "jedno percento",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "dve percent",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "desať percentá",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "päťdesiat percent",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "tri percentá",
+              "correct": true
+            }
+          ],
+          "explanation": "1 percento, 2–4 percentá, 5+ percent.",
+          "order": 14,
+          "wordIds": [
+            "a1-u16-l09-vypredaj-w01"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Зимовий розпродаж",
+        "description": "Ти шукаєш тепле пальто на розпродажі.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти бачиш цінник «–40 %» і питаєш, чи це на всі пальта.",
+            "options": [
+              {
+                "sk": "Zľava kabáty všetky je?",
+                "correct": false
+              },
+              {
+                "sk": "Platí zľava na všetky kabát?",
+                "correct": false
+              },
+              {
+                "sk": "Platí zľava na všetky kabáty?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Áno, pôvodná cena je 100 €, teraz 60 €.» Скільки ти заплатиш?",
+            "options": [
+              {
+                "sk": "40 €",
+                "correct": false
+              },
+              {
+                "sk": "60 €",
+                "correct": true
+              },
+              {
+                "sk": "100 €",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Tento vlnený je posledný kus vo veľkosti M.» Що це означає?",
+            "options": [
+              {
+                "sk": "пальта розміру M привезуть завтра",
+                "correct": false
+              },
+              {
+                "sk": "це останнє вовняне пальто розміру M",
+                "correct": true
+              },
+              {
+                "sk": "це перше пальто нової колекції",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Пальто тобі підходить, ти його береш.",
+            "options": [
+              {
+                "sk": "Dobre, beriem ju.",
+                "correct": false
+              },
+              {
+                "sk": "Dobre, beriem ho.",
+                "correct": true
+              },
+              {
+                "sk": "Dobre, beriem to je.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти орієнтуєшся на розпродажі. Далі — підсумок розділу."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти орієнтуєшся на розпродажі. Далі — підсумок розділу.",
+        "nowYouKnow": [
+          "1 percento, 3 percentá, 20 percent",
+          "pôvodná / znížená cena",
+          "za polovicu ceny, posledné kusy",
+          "Platí zľava aj na…?"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 14,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u16-l10-oblecenie-opakovanie",
+          "title": "Підсумок: одяг і покупки"
+        }
+      }
+    }
+  ]
+}

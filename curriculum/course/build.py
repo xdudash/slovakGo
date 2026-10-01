@@ -81,6 +81,13 @@ class SourceError(Exception):
     pass
 
 
+def relpath(p: Path) -> str:
+    try:
+        return str(p.relative_to(ROOT))
+    except ValueError:
+        return str(p)
+
+
 def rng_for(key: str) -> random.Random:
     return random.Random(int(hashlib.sha256(key.encode()).hexdigest()[:12], 16))
 
@@ -589,7 +596,7 @@ def parse_file(path: Path) -> dict:
             else:
                 raise SourceError(f"unknown line: {s[:60]}")
         except (SourceError, IndexError, ValueError) as e:
-            raise SourceError(f"{path.relative_to(ROOT)}:{ln}: {type(e).__name__}: {e}") from None
+            raise SourceError(f"{relpath(path)}:{ln}: {type(e).__name__}: {e}") from None
     if unit is None:
         raise SourceError(f"{path}: missing @unit")
     return {"unit": unit, "lessons": lessons}
@@ -623,7 +630,7 @@ def assemble(units: list[dict]) -> list[dict]:
             try:
                 built.append(assemble_lesson(unit, L, lid, li))
             except SourceError as e:
-                errors.append(f"{unit['file'].relative_to(ROOT)} [{L['slug']}]: {e}")
+                errors.append(f"{relpath(unit['file'])} [{L['slug']}]: {e}")
     if errors:
         raise SourceError("\n".join(errors))
     return built

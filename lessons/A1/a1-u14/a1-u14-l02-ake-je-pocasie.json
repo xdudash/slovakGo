@@ -1,0 +1,838 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u14-l02-ake-je-pocasie",
+      "sectionId": "a1-u14",
+      "level": "A1",
+      "title": "Яка сьогодні погода?",
+      "topic": "Погода і пори року",
+      "description": "Описуємо погоду: je jasno, je oblačno, je slnečno, svieti slnko, fúka vietor, je hmla, je búrka.",
+      "order": 132,
+      "xpReward": 25,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Описати погоду за вікном і зрозуміти, як її описують інші.",
+      "completionMessage": "Ти описуєш погоду. Далі — температура.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Погода і пори року",
+        "title": "Яка сьогодні погода?",
+        "shortDescription": "Описати погоду за вікном і зрозуміти, як її описують інші.",
+        "outcomes": [
+          "питати Aké je dnes počasie?",
+          "казати je jasno / oblačno / slnečno",
+          "казати svieti slnko, fúka vietor",
+          "розуміти hmla і búrka"
+        ],
+        "newWords": [
+          "jasno",
+          "oblačno",
+          "slnečno",
+          "fúkať",
+          "hmla",
+          "búrka"
+        ],
+        "exercisesCount": 14,
+        "reward": "+25 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Je + прислівник",
+          "text": "Погоду описуємо безособово: «Je jasno» — ясно, «Je slnečno» — сонячно, «Je oblačno» — хмарно, «Je zamračené» — похмуро. Підмета немає, як в українському «Сьогодні хмарно». У минулому — «bolo»: «Ráno bolo oblačno».",
+          "examples": [
+            {
+              "sk": "Dnes je slnečno.",
+              "uk": "Сьогодні сонячно."
+            },
+            {
+              "sk": "Ráno bolo oblačno.",
+              "uk": "Зранку було хмарно."
+            }
+          ],
+          "shortRule": "je / bolo + jasno, oblačno, slnečno",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Дієслова погоди",
+          "text": "«Svieti slnko» — світить сонце, «fúka vietor» — дме вітер, «prší» — іде дощ, «sneží» — іде сніг. Зверни увагу: українське «іде дощ» — словацькою одне слово «prší», без «ide».",
+          "examples": [
+            {
+              "sk": "Fúka studený vietor.",
+              "uk": "Дме холодний вітер."
+            },
+            {
+              "sk": "Svieti slnko.",
+              "uk": "Світить сонце."
+            }
+          ],
+          "shortRule": "svieti, fúka, prší, sneží",
+          "commonMistakes": [
+            {
+              "mistake": "Je slnko.",
+              "correct": "Svieti slnko."
+            },
+            {
+              "mistake": "Dnes je oblačný.",
+              "correct": "Dnes je oblačno."
+            },
+            {
+              "mistake": "Ide dážď.",
+              "correct": "Prší."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Hmla a búrka",
+          "text": "«Hmla» — туман: «Ráno je hmla». «Búrka» — гроза: «Blíži sa búrka» — наближається гроза. Загальна оцінка: «pekné počasie» — гарна погода, «škaredé počasie» — погана погода.",
+          "examples": [
+            {
+              "sk": "V noci bola búrka.",
+              "uk": "Уночі була гроза."
+            },
+            {
+              "sk": "Na diaľnici je hustá hmla.",
+              "uk": "На автостраді густий туман."
+            }
+          ],
+          "shortRule": "hmla, búrka",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u14-l02-ake-je-pocasie-w01",
+            "sk": "jasno",
+            "uk": "ясно, безхмарно",
+            "pronunciationUk": "ясно",
+            "exampleSk": "Dnes je jasno a teplo.",
+            "exampleUk": "Сьогодні ясно й тепло."
+          },
+          {
+            "wordId": "a1-u14-l02-ake-je-pocasie-w02",
+            "sk": "oblačno",
+            "uk": "хмарно",
+            "pronunciationUk": "облачно",
+            "exampleSk": "Ráno bolo oblačno.",
+            "exampleUk": "Зранку було хмарно."
+          },
+          {
+            "wordId": "a1-u14-l02-ake-je-pocasie-w03",
+            "sk": "slnečno",
+            "uk": "сонячно",
+            "pronunciationUk": "слнечно",
+            "exampleSk": "V Košiciach je dnes slnečno.",
+            "exampleUk": "У Кошицях сьогодні сонячно."
+          },
+          {
+            "wordId": "a1-u14-l02-ake-je-pocasie-w04",
+            "sk": "fúkať",
+            "uk": "дути",
+            "pronunciationUk": "фу:кат",
+            "exampleSk": "Vonku fúka silný vietor.",
+            "exampleUk": "Надворі дме сильний вітер."
+          },
+          {
+            "wordId": "a1-u14-l02-ake-je-pocasie-w05",
+            "sk": "hmla",
+            "uk": "туман",
+            "pronunciationUk": "гмла",
+            "exampleSk": "Ráno bola na ceste hmla.",
+            "exampleUk": "Зранку на дорозі був туман."
+          },
+          {
+            "wordId": "a1-u14-l02-ake-je-pocasie-w06",
+            "sk": "búrka",
+            "uk": "гроза",
+            "pronunciationUk": "бу:рка",
+            "exampleSk": "V noci bola silná búrka.",
+            "exampleUk": "Уночі була сильна гроза."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-w01",
+          "sk": "jasno",
+          "uk": "ясно, безхмарно",
+          "pronunciationUk": "ясно",
+          "exampleSk": "Dnes je jasno a teplo.",
+          "exampleUk": "Сьогодні ясно й тепло.",
+          "level": "A1",
+          "topic": "Погода і пори року",
+          "tags": [
+            "a1-u14",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-w02",
+          "sk": "oblačno",
+          "uk": "хмарно",
+          "pronunciationUk": "облачно",
+          "exampleSk": "Ráno bolo oblačno.",
+          "exampleUk": "Зранку було хмарно.",
+          "level": "A1",
+          "topic": "Погода і пори року",
+          "tags": [
+            "a1-u14",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-w03",
+          "sk": "slnečno",
+          "uk": "сонячно",
+          "pronunciationUk": "слнечно",
+          "exampleSk": "V Košiciach je dnes slnečno.",
+          "exampleUk": "У Кошицях сьогодні сонячно.",
+          "level": "A1",
+          "topic": "Погода і пори року",
+          "tags": [
+            "a1-u14",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-w04",
+          "sk": "fúkať",
+          "uk": "дути",
+          "pronunciationUk": "фу:кат",
+          "exampleSk": "Vonku fúka silný vietor.",
+          "exampleUk": "Надворі дме сильний вітер.",
+          "level": "A1",
+          "topic": "Погода і пори року",
+          "tags": [
+            "a1-u14",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-w05",
+          "sk": "hmla",
+          "uk": "туман",
+          "pronunciationUk": "гмла",
+          "exampleSk": "Ráno bola na ceste hmla.",
+          "exampleUk": "Зранку на дорозі був туман.",
+          "level": "A1",
+          "topic": "Погода і пори року",
+          "tags": [
+            "a1-u14",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-w06",
+          "sk": "búrka",
+          "uk": "гроза",
+          "pronunciationUk": "бу:рка",
+          "exampleSk": "V noci bola silná búrka.",
+          "exampleUk": "Уночі була сильна гроза.",
+          "level": "A1",
+          "topic": "Погода і пори року",
+          "tags": [
+            "a1-u14",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-ex01",
+          "lessonId": "a1-u14-l02-ake-je-pocasie",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "jasno",
+              "right": "ясно"
+            },
+            {
+              "left": "oblačno",
+              "right": "хмарно"
+            },
+            {
+              "left": "slnečno",
+              "right": "сонячно"
+            },
+            {
+              "left": "fúkať",
+              "right": "дути"
+            },
+            {
+              "left": "hmla",
+              "right": "туман"
+            },
+            {
+              "left": "búrka",
+              "right": "гроза"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u14-l02-ake-je-pocasie-w01",
+            "a1-u14-l02-ake-je-pocasie-w02",
+            "a1-u14-l02-ake-je-pocasie-w03",
+            "a1-u14-l02-ake-je-pocasie-w04",
+            "a1-u14-l02-ake-je-pocasie-w05",
+            "a1-u14-l02-ake-je-pocasie-w06"
+          ]
+        },
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-ex02",
+          "lessonId": "a1-u14-l02-ake-je-pocasie",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Dnes je "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "oblak",
+                "oblačno",
+                "oblačný"
+              ],
+              "correct": "oblačno"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Безособово: je oblačno.",
+          "order": 2,
+          "wordIds": [
+            "a1-u14-l02-ake-je-pocasie-w02"
+          ]
+        },
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-ex03",
+          "lessonId": "a1-u14-l02-ake-je-pocasie",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Vonku "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "fúka",
+                "fúkajú",
+                "fúkam"
+              ],
+              "correct": "fúka"
+            },
+            {
+              "text": " vietor."
+            }
+          ],
+          "explanation": "vietor — він: fúka.",
+          "order": 3,
+          "wordIds": [
+            "a1-u14-l02-ake-je-pocasie-w04"
+          ]
+        },
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-ex04",
+          "lessonId": "a1-u14-l02-ake-je-pocasie",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Blíži sa búrka»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Гроза вже минула",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Наближається гроза",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Сьогодні гроза не буде",
+              "correct": false
+            }
+          ],
+          "explanation": "blížiť sa — наближатися.",
+          "order": 4
+        },
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-ex05",
+          "lessonId": "a1-u14-l02-ake-je-pocasie",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Je oblačno» означає, що на небі багато хмар.",
+          "correctAnswer": true,
+          "explanation": "oblačno — хмарно.",
+          "order": 5,
+          "wordIds": [
+            "a1-u14-l02-ake-je-pocasie-w02"
+          ]
+        },
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-ex06",
+          "lessonId": "a1-u14-l02-ake-je-pocasie",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Ráno ______ slnko. (світить)",
+          "acceptedAnswers": [
+            "svieti"
+          ],
+          "explanation": "svietiť → svieti slnko.",
+          "order": 6
+        },
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-ex07",
+          "lessonId": "a1-u14-l02-ake-je-pocasie",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Dnes je slnečný a teplo.",
+          "errorToken": "slnečný",
+          "correctToken": "slnečno",
+          "explanation": "Безособово: je slnečno.",
+          "order": 7,
+          "wordIds": [
+            "a1-u14-l02-ake-je-pocasie-w03"
+          ]
+        },
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-ex08",
+          "lessonId": "a1-u14-l02-ake-je-pocasie",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Je + слово чи дієслово?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Je + слово"
+            },
+            {
+              "id": "c2",
+              "title": "Дієслово"
+            }
+          ],
+          "items": [
+            {
+              "sk": "svieti slnko",
+              "category": "c2"
+            },
+            {
+              "sk": "prší",
+              "category": "c2"
+            },
+            {
+              "sk": "jasno",
+              "category": "c1"
+            },
+            {
+              "sk": "oblačno",
+              "category": "c1"
+            },
+            {
+              "sk": "hmla",
+              "category": "c1"
+            },
+            {
+              "sk": "sneží",
+              "category": "c2"
+            },
+            {
+              "sk": "slnečno",
+              "category": "c1"
+            },
+            {
+              "sk": "fúka vietor",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Je jasno, je hmla — але prší, fúka vietor.",
+          "order": 8,
+          "wordIds": [
+            "a1-u14-l02-ake-je-pocasie-w01",
+            "a1-u14-l02-ake-je-pocasie-w02",
+            "a1-u14-l02-ake-je-pocasie-w03",
+            "a1-u14-l02-ake-je-pocasie-w04",
+            "a1-u14-l02-ake-je-pocasie-w05"
+          ]
+        },
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-ex09",
+          "lessonId": "a1-u14-l02-ake-je-pocasie",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що надворі дме холодний вітер.",
+          "tokens": [
+            ".",
+            "Vonku",
+            "studený",
+            "vietor",
+            "fúka"
+          ],
+          "correctOrder": [
+            "Vonku",
+            "fúka",
+            "studený",
+            "vietor",
+            "."
+          ],
+          "explanation": "Vonku + fúka + studený vietor.",
+          "order": 9,
+          "wordIds": [
+            "a1-u14-l02-ake-je-pocasie-w04"
+          ]
+        },
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-ex10",
+          "lessonId": "a1-u14-l02-ake-je-pocasie",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення.",
+          "message": {
+            "sender": "Jana (kolegyňa)",
+            "body": "Ahoj! Tu v Tatrách je dnes hmla a fúka silný vietor. Aké je počasie u vás v Trnave?"
+          },
+          "question": "Яка погода в Татрах?",
+          "options": [
+            {
+              "id": "a",
+              "text": "іде сніг",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "сонячно й тихо",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "туман і сильний вітер",
+              "correct": true
+            }
+          ],
+          "explanation": "hmla — туман, fúka silný vietor — дме сильний вітер.",
+          "order": 10,
+          "wordIds": [
+            "a1-u14-l02-ake-je-pocasie-w04",
+            "a1-u14-l02-ake-je-pocasie-w05"
+          ]
+        },
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-ex11",
+          "lessonId": "a1-u14-l02-ake-je-pocasie",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Sused",
+              "sk": "Aké je dnes počasie?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Je oblačno a fúka vietor.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Je oblačný a fúka vietor.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Počasie je fúka.",
+              "correct": false
+            }
+          ],
+          "explanation": "je oblačno + fúka vietor.",
+          "order": 11,
+          "wordIds": [
+            "a1-u14-l02-ake-je-pocasie-w02",
+            "a1-u14-l02-ake-je-pocasie-w04"
+          ]
+        },
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-ex12",
+          "lessonId": "a1-u14-l02-ake-je-pocasie",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти дивишся у вікно: на небі жодної хмаринки. Що скажеш?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Dnes je jasno.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Dnes jasno je počasie.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Dnes ide jasno.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Dnes je jasný.",
+              "correct": false
+            }
+          ],
+          "explanation": "Безхмарно — je jasno.",
+          "order": 12,
+          "wordIds": [
+            "a1-u14-l02-ake-je-pocasie-w01"
+          ]
+        },
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-ex13",
+          "lessonId": "a1-u14-l02-ake-je-pocasie",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери речення про гарну погоду.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Je hmla a prší.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Blíži sa búrka.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Svieti slnko.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Dnes je pekné počasie.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Je jasno a teplo.",
+              "correct": true
+            }
+          ],
+          "explanation": "Сонце, ясно, гарна погода.",
+          "order": 13,
+          "wordIds": [
+            "a1-u14-l02-ake-je-pocasie-w01",
+            "a1-u14-l02-ake-je-pocasie-w05",
+            "a1-u14-l02-ake-je-pocasie-w06"
+          ]
+        },
+        {
+          "id": "a1-u14-l02-ake-je-pocasie-ex14",
+          "lessonId": "a1-u14-l02-ake-je-pocasie",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Vonku prší a fúka silný vietor. Kolega pozerá z okna: „No, to je ale krásne počasie!“",
+          "options": [
+            {
+              "id": "a",
+              "text": "він хоче піти гуляти",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "він іронізує: погода жахлива",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "він щиро радіє погоді",
+              "correct": false
+            }
+          ],
+          "explanation": "За вікном дощ і вітер, тож «krásne počasie» — іронія.",
+          "order": 14,
+          "wordIds": [
+            "a1-u14-l02-ake-je-pocasie-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Ранкова розмова",
+        "description": "Уранці на роботі колеги говорять про погоду.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Aké je dnes vonku počasie?» (хмарно й туман)",
+            "options": [
+              {
+                "sk": "Je oblačno a je hmla.",
+                "correct": true
+              },
+              {
+                "sk": "Je oblačný a je hmlu.",
+                "correct": false
+              },
+              {
+                "sk": "Oblačno hmla je.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Колега: «Večer sa blíži búrka.» Що він каже?",
+            "options": [
+              {
+                "text": "увечері буде ясно",
+                "correct": false
+              },
+              {
+                "text": "увечері наближається гроза",
+                "correct": true
+              },
+              {
+                "text": "гроза вже минула",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти кажеш, що в Україні зараз сонячно.",
+            "options": [
+              {
+                "sk": "Na Ukrajine je teraz slnečno.",
+                "correct": true
+              },
+              {
+                "sk": "Na Ukrajine je teraz slnečný.",
+                "correct": false
+              },
+              {
+                "sk": "Ukrajina slnečno teraz je.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти помічаєш, що дме сильний вітер.",
+            "options": [
+              {
+                "sk": "Fúka silný vietor.",
+                "correct": true
+              },
+              {
+                "sk": "Ide silný vietor.",
+                "correct": false
+              },
+              {
+                "sk": "Fúka silná vietor.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти описуєш погоду. Далі — температура."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти описуєш погоду. Далі — температура.",
+        "nowYouKnow": [
+          "Aké je dnes počasie?",
+          "je jasno / oblačno / slnečno",
+          "svieti slnko, fúka vietor, prší",
+          "hmla, búrka"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u14-l03-teplota",
+          "title": "Температура"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,830 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u14-l04-predpoved",
+      "sectionId": "a1-u14",
+      "level": "A1",
+      "title": "Прогноз погоди",
+      "topic": "Погода і пори року",
+      "description": "Розуміємо прогноз: zajtra bude…, bude pršať, polojasno, zrážky, oteplenie, ochladenie.",
+      "order": 134,
+      "xpReward": 25,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Зрозуміти простий прогноз погоди і переказати його.",
+      "completionMessage": "Ти розумієш прогноз погоди. Далі — одяг за погодою.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Погода і пори року",
+        "title": "Прогноз погоди",
+        "shortDescription": "Зрозуміти простий прогноз погоди і переказати його.",
+        "outcomes": [
+          "казати Zajtra bude teplo / bude pršať",
+          "розуміти polojasno і zrážky",
+          "розуміти oteplenie / ochladenie",
+          "питати Aké bude zajtra počasie?"
+        ],
+        "newWords": [
+          "predpoveď",
+          "polojasno",
+          "zrážky",
+          "oteplenie",
+          "ochladenie"
+        ],
+        "exercisesCount": 14,
+        "reward": "+25 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Bude…",
+          "text": "Про майбутню погоду кажемо «bude»: «Zajtra bude slnečno» — завтра буде сонячно, «Bude teplo». З дієсловами — bude + інфінітив: «bude pršať», «bude snežiť», «bude fúkať». Питання: «Aké bude zajtra počasie?»",
+          "examples": [
+            {
+              "sk": "Zajtra bude pršať.",
+              "uk": "Завтра йтиме дощ."
+            },
+            {
+              "sk": "V noci bude snežiť.",
+              "uk": "Уночі йтиме сніг."
+            }
+          ],
+          "shortRule": "bude + slnečno / pršať",
+          "commonMistakes": [
+            {
+              "mistake": "Zajtra je pršať.",
+              "correct": "Zajtra bude pršať."
+            },
+            {
+              "mistake": "Zajtra bude prší.",
+              "correct": "Zajtra bude pršať."
+            },
+            {
+              "mistake": "Bude slnečný.",
+              "correct": "Bude slnečno."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Мова прогнозу",
+          "text": "«Predpoveď počasia» — прогноз погоди. «Polojasno» — мінлива хмарність (і сонце, і хмари), «zrážky» — опади, «bez zrážok» — без опадів. «Cez deň» — удень, «v noci» — уночі. «Najvyššia denná teplota» — максимальна денна температура.",
+          "examples": [
+            {
+              "sk": "Cez deň polojasno, bez zrážok.",
+              "uk": "Удень мінлива хмарність, без опадів."
+            }
+          ],
+          "shortRule": "predpoveď, polojasno, zrážky",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Oteplenie a ochladenie",
+          "text": "«Oteplenie» — потепління, «ochladenie» — похолодання. «Teploty stúpnu» — температура підніметься, «klesnú» — знизиться. «Podľa predpovede…» — за прогнозом… «Čaká sa…» — очікується…",
+          "examples": [
+            {
+              "sk": "Podľa predpovede príde ochladenie.",
+              "uk": "За прогнозом прийде похолодання."
+            },
+            {
+              "sk": "Na víkend sa čaká oteplenie.",
+              "uk": "На вихідні очікують потепління."
+            }
+          ],
+          "shortRule": "oteplenie ↔ ochladenie",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u14-l04-predpoved-w01",
+            "sk": "predpoveď",
+            "uk": "прогноз",
+            "pronunciationUk": "предповєдь",
+            "exampleSk": "Pozerám predpoveď počasia v mobile.",
+            "exampleUk": "Я дивлюся прогноз погоди в телефоні."
+          },
+          {
+            "wordId": "a1-u14-l04-predpoved-w02",
+            "sk": "polojasno",
+            "uk": "мінлива хмарність",
+            "pronunciationUk": "полоясно",
+            "exampleSk": "Zajtra bude polojasno a teplo.",
+            "exampleUk": "Завтра буде мінлива хмарність і тепло."
+          },
+          {
+            "wordId": "a1-u14-l04-predpoved-w03",
+            "sk": "zrážky",
+            "uk": "опади",
+            "pronunciationUk": "зра:жкі",
+            "exampleSk": "Na horách sa čakajú zrážky.",
+            "exampleUk": "У горах очікуються опади."
+          },
+          {
+            "wordId": "a1-u14-l04-predpoved-w04",
+            "sk": "oteplenie",
+            "uk": "потепління",
+            "pronunciationUk": "отєплєніє",
+            "exampleSk": "Po víkende príde oteplenie.",
+            "exampleUk": "Після вихідних прийде потепління."
+          },
+          {
+            "wordId": "a1-u14-l04-predpoved-w05",
+            "sk": "ochladenie",
+            "uk": "похолодання",
+            "pronunciationUk": "охладєніє",
+            "exampleSk": "V piatok príde ochladenie.",
+            "exampleUk": "У п’ятницю прийде похолодання."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u14-l04-predpoved-w01",
+          "sk": "predpoveď",
+          "uk": "прогноз",
+          "pronunciationUk": "предповєдь",
+          "exampleSk": "Pozerám predpoveď počasia v mobile.",
+          "exampleUk": "Я дивлюся прогноз погоди в телефоні.",
+          "level": "A1",
+          "topic": "Погода і пори року",
+          "tags": [
+            "a1-u14",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u14-l04-predpoved-w02",
+          "sk": "polojasno",
+          "uk": "мінлива хмарність",
+          "pronunciationUk": "полоясно",
+          "exampleSk": "Zajtra bude polojasno a teplo.",
+          "exampleUk": "Завтра буде мінлива хмарність і тепло.",
+          "level": "A1",
+          "topic": "Погода і пори року",
+          "tags": [
+            "a1-u14",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u14-l04-predpoved-w03",
+          "sk": "zrážky",
+          "uk": "опади",
+          "pronunciationUk": "зра:жкі",
+          "exampleSk": "Na horách sa čakajú zrážky.",
+          "exampleUk": "У горах очікуються опади.",
+          "level": "A1",
+          "topic": "Погода і пори року",
+          "tags": [
+            "a1-u14",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u14-l04-predpoved-w04",
+          "sk": "oteplenie",
+          "uk": "потепління",
+          "pronunciationUk": "отєплєніє",
+          "exampleSk": "Po víkende príde oteplenie.",
+          "exampleUk": "Після вихідних прийде потепління.",
+          "level": "A1",
+          "topic": "Погода і пори року",
+          "tags": [
+            "a1-u14",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u14-l04-predpoved-w05",
+          "sk": "ochladenie",
+          "uk": "похолодання",
+          "pronunciationUk": "охладєніє",
+          "exampleSk": "V piatok príde ochladenie.",
+          "exampleUk": "У п’ятницю прийде похолодання.",
+          "level": "A1",
+          "topic": "Погода і пори року",
+          "tags": [
+            "a1-u14",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u14-l04-predpoved-ex01",
+          "lessonId": "a1-u14-l04-predpoved",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "predpoveď",
+              "right": "прогноз"
+            },
+            {
+              "left": "polojasno",
+              "right": "мінлива хмарність"
+            },
+            {
+              "left": "zrážky",
+              "right": "опади"
+            },
+            {
+              "left": "oteplenie",
+              "right": "потепління"
+            },
+            {
+              "left": "ochladenie",
+              "right": "похолодання"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u14-l04-predpoved-w01",
+            "a1-u14-l04-predpoved-w02",
+            "a1-u14-l04-predpoved-w03",
+            "a1-u14-l04-predpoved-w04",
+            "a1-u14-l04-predpoved-w05"
+          ]
+        },
+        {
+          "id": "a1-u14-l04-predpoved-ex02",
+          "lessonId": "a1-u14-l04-predpoved",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Zajtra "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "bude",
+                "budú",
+                "je"
+              ],
+              "correct": "bude"
+            },
+            {
+              "text": " pršať."
+            }
+          ],
+          "explanation": "Майбутнє: bude + pršať.",
+          "order": 2,
+          "wordIds": [
+            "a1-u14-l04-predpoved-w01"
+          ]
+        },
+        {
+          "id": "a1-u14-l04-predpoved-ex03",
+          "lessonId": "a1-u14-l04-predpoved",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "V noci bude "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "snežilo",
+                "snežiť",
+                "sneží"
+              ],
+              "correct": "snežiť"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Після bude — інфінітив: snežiť.",
+          "order": 3,
+          "wordIds": [
+            "a1-u14-l04-predpoved-w01"
+          ]
+        },
+        {
+          "id": "a1-u14-l04-predpoved-ex04",
+          "lessonId": "a1-u14-l04-predpoved",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Cez deň polojasno, bez zrážok»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Удень ясно, але з дощем",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Уночі хмарно, без вітру",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Удень мінлива хмарність, без опадів",
+              "correct": true
+            }
+          ],
+          "explanation": "polojasno — мінлива хмарність, bez zrážok — без опадів.",
+          "order": 4,
+          "wordIds": [
+            "a1-u14-l04-predpoved-w01"
+          ]
+        },
+        {
+          "id": "a1-u14-l04-predpoved-ex05",
+          "lessonId": "a1-u14-l04-predpoved",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Ochladenie» означає, що стане тепліше.",
+          "correctAnswer": false,
+          "explanation": "Ochladenie — похолодання; тепліше — oteplenie.",
+          "order": 5,
+          "wordIds": [
+            "a1-u14-l04-predpoved-w01",
+            "a1-u14-l04-predpoved-w05"
+          ]
+        },
+        {
+          "id": "a1-u14-l04-predpoved-ex06",
+          "lessonId": "a1-u14-l04-predpoved",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Aké ______ zajtra počasie? (буде)",
+          "acceptedAnswers": [
+            "bude"
+          ],
+          "explanation": "Майбутнє: Aké bude…?",
+          "order": 6,
+          "wordIds": [
+            "a1-u14-l04-predpoved-w01"
+          ]
+        },
+        {
+          "id": "a1-u14-l04-predpoved-ex07",
+          "lessonId": "a1-u14-l04-predpoved",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Podľa predpovede bude zajtra prší celý deň.",
+          "errorToken": "prší",
+          "correctToken": "pršať",
+          "explanation": "bude + інфінітив: pršať.",
+          "order": 7,
+          "wordIds": [
+            "a1-u14-l04-predpoved-w01"
+          ]
+        },
+        {
+          "id": "a1-u14-l04-predpoved-ex08",
+          "lessonId": "a1-u14-l04-predpoved",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перетвори на прогноз: почни зі «Zajtra».",
+          "source": "Dnes prší.",
+          "acceptedAnswers": [
+            "Zajtra bude pršať."
+          ],
+          "explanation": "prší → bude pršať.",
+          "order": 8,
+          "wordIds": [
+            "a1-u14-l04-predpoved-w01"
+          ]
+        },
+        {
+          "id": "a1-u14-l04-predpoved-ex09",
+          "lessonId": "a1-u14-l04-predpoved",
+          "type": "real_schedule",
+          "skill": [
+            "reading",
+            "real_life",
+            "time"
+          ],
+          "instruction": "Подивись прогноз.",
+          "schedule": {
+            "title": "Predpoveď počasia — Žilina",
+            "rows": [
+              {
+                "day": "Piatok",
+                "hours": "slnečno, 24 °C"
+              },
+              {
+                "day": "Sobota",
+                "hours": "polojasno, 21 °C"
+              },
+              {
+                "day": "Nedeľa",
+                "hours": "búrky, 17 °C"
+              }
+            ]
+          },
+          "question": "Якого дня очікують грози?",
+          "options": [
+            {
+              "id": "a",
+              "text": "у неділю",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "у п’ятницю",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "у суботу",
+              "correct": false
+            }
+          ],
+          "explanation": "Nedeľa — búrky.",
+          "order": 9,
+          "wordIds": [
+            "a1-u14-l04-predpoved-w01",
+            "a1-u14-l04-predpoved-w02"
+          ]
+        },
+        {
+          "id": "a1-u14-l04-predpoved-ex10",
+          "lessonId": "a1-u14-l04-predpoved",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Predpoveď počasia na víkend. V sobotu bude na celom Slovensku slnečno a teplo, najvyššia denná teplota bude dvadsaťšesť stupňov. V nedeľu príde od západu ochladenie. Cez deň bude oblačno, popoludní sa čakajú zrážky a na horách aj búrky. Teploty klesnú na sedemnásť stupňov. V pondelok bude polojasno, bez zrážok.",
+          "questions": [
+            {
+              "question": "Яка буде максимальна температура в суботу?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "16 °C",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "26 °C",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "17 °C",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що очікують у неділю після обіду?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "сонце й спеку",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "опади, а в горах — грози",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "сніг",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Яка погода буде в понеділок?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "ясно й спекотно",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "гроза",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "мінлива хмарність без опадів",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "a1-u14-l04-predpoved-w01",
+            "a1-u14-l04-predpoved-w02",
+            "a1-u14-l04-predpoved-w03",
+            "a1-u14-l04-predpoved-w05"
+          ]
+        },
+        {
+          "id": "a1-u14-l04-predpoved-ex11",
+          "lessonId": "a1-u14-l04-predpoved",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Manželka",
+              "sk": "Aké bude zajtra počasie?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Podľa predpovede bude polojasno a teplo.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Predpoveď bude teplý.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Podľa predpovede je polojasno zajtra bude.",
+              "correct": false
+            }
+          ],
+          "explanation": "Podľa predpovede + bude…",
+          "order": 11,
+          "wordIds": [
+            "a1-u14-l04-predpoved-w01",
+            "a1-u14-l04-predpoved-w02"
+          ]
+        },
+        {
+          "id": "a1-u14-l04-predpoved-ex12",
+          "lessonId": "a1-u14-l04-predpoved",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти хочеш попередити колегу, що завтра буде дощ.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Zajtra bude pršať, vezmi si dáždnik.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Zajtra prší bude, vezmi dáždnik.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Zajtra pršať, dáždnik.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Zajtra je dážď bude.",
+              "correct": false
+            }
+          ],
+          "explanation": "bude pršať + порада.",
+          "order": 12,
+          "wordIds": [
+            "a1-u14-l04-predpoved-w01"
+          ]
+        },
+        {
+          "id": "a1-u14-l04-predpoved-ex13",
+          "lessonId": "a1-u14-l04-predpoved",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що завтра буде мінлива хмарність.",
+          "tokens": [
+            "bude",
+            ".",
+            "Zajtra",
+            "polojasno"
+          ],
+          "correctOrder": [
+            "Zajtra",
+            "bude",
+            "polojasno",
+            "."
+          ],
+          "explanation": "Zajtra + bude + polojasno.",
+          "order": 13,
+          "wordIds": [
+            "a1-u14-l04-predpoved-w01",
+            "a1-u14-l04-predpoved-w02"
+          ]
+        },
+        {
+          "id": "a1-u14-l04-predpoved-ex14",
+          "lessonId": "a1-u14-l04-predpoved",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери слова, які чуєш у прогнозі погоди.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "vstupné",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "polojasno",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "ochladenie",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "pokladňa",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "zrážky",
+              "correct": true
+            }
+          ],
+          "explanation": "zrážky, polojasno, ochladenie — мова прогнозу.",
+          "order": 14,
+          "wordIds": [
+            "a1-u14-l04-predpoved-w01",
+            "a1-u14-l04-predpoved-w02",
+            "a1-u14-l04-predpoved-w03",
+            "a1-u14-l04-predpoved-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Плани на суботу",
+        "description": "Ви з родиною хочете на вихідних поїхати за місто.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Донька: «Aké bude v sobotu počasie?» (сонячно)",
+            "options": [
+              {
+                "sk": "Bude slnečný.",
+                "correct": false
+              },
+              {
+                "sk": "Bude slnečno.",
+                "correct": true
+              },
+              {
+                "sk": "Je slnečno bude.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Чоловік читає: «V nedeľu príde ochladenie a zrážky.» Що буде в неділю?",
+            "options": [
+              {
+                "text": "похолодання й опади",
+                "correct": true
+              },
+              {
+                "text": "туман без опадів",
+                "correct": false
+              },
+              {
+                "text": "потепління й сонце",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти пропонуєш поїхати в суботу, бо в неділю буде дощ.",
+            "options": [
+              {
+                "sk": "Poďme v sobotu, v nedeľu bude pršať.",
+                "correct": true
+              },
+              {
+                "sk": "Poďme v sobotu, v nedeľu je pršať.",
+                "correct": false
+              },
+              {
+                "sk": "Sobota poďme, nedeľa prší bude.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти питаєш, скільки буде градусів.",
+            "options": [
+              {
+                "sk": "Koľko stupňov je bude?",
+                "correct": false
+              },
+              {
+                "sk": "Koľko bude stupňov?",
+                "correct": true
+              },
+              {
+                "sk": "Koľko budú stupne?",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш прогноз погоди. Далі — одяг за погодою."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш прогноз погоди. Далі — одяг за погодою.",
+        "nowYouKnow": [
+          "Zajtra bude…, bude pršať / snežiť",
+          "predpoveď, polojasno, zrážky",
+          "oteplenie / ochladenie",
+          "podľa predpovede"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 14,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u14-l05-oblecenie-podla-pocasia",
+          "title": "Одяг за погодою"
+        }
+      }
+    }
+  ]
+}

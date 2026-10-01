@@ -1,0 +1,499 @@
+@unit a1-u16 | Одяг і покупки | Oblečenie a nákupy
+
+@lesson oblecenie | Одяг | Oblečenie
+desc: Основний одяг: tričko, košeľa, sveter, kabát, nohavice, sukňa, šaty — і як сказати, що на тобі вдягнено.
+goal: Назвати основні речі гардеробу й описати, що на тобі сьогодні.
+out: називати сім основних речей одягу ;; розуміти слова лише в множині: nohavice, šaty ;; казати Mám na sebe… ;; казати Oblečiem si… / Vyzlečte si…
+done: Ти називаєш одяг. Далі — розміри.
+T: Що ми носимо? || «Oblečenie» — одяг. Верх: «tričko» (футболка), «košeľa» (сорочка), «sveter» (светр), «kabát» (пальто). Низ: «nohavice» (штани), «sukňa» (спідниця). Увага: «sukňa» звучить як українська «сукня», але це спідниця! Сукня — «šaty». Куртку «bunda» ти вже знаєш. || Na leto potrebujem nové tričko. = На літо мені потрібна нова футболка. ;; Sveter je v skrini. = Светр у шафі. || sukňa = спідниця, šaty = сукня
+T: Лише множина || «Nohavice» і «šaty» — тільки множина, навіть коли це одна річ: «Tie nohavice sú nové» — ці штани нові. «Tie šaty sú krásne» — ця сукня гарна. Так само «rifle» — джинси. || Kde sú moje šaty? = Де моя сукня? ;; Nohavice sú krátke. = Штани короткі. || nohavice, šaty, rifle + sú
+T: Mám na sebe… || «Mám na sebe sveter» — на мені светр. «Obliecť si» — вдягнути щось: «Oblečiem si kabát». «Vyzliecť si» — зняти: «Vyzlečte si kabát». Річ стоїть у знахідному відмінку: sukňa → sukňu, košeľa → košeľu. || Dnes mám na sebe modrú košeľu. = Сьогодні на мені синя сорочка. ;; Obleč si sveter, je zima. = Вдягни светр, холодно. || mám na sebe + знахідний
+mis: Nohavice je nová. => Nohavice sú nové. ;; Mám na sebe košeľa. => Mám na sebe košeľu. ;; Moje šaty je pekná. => Moje šaty sú pekné.
+W: tričko | футболка | трічко | Mám na sebe biele tričko. | На мені біла футболка.
+W: košeľa | сорочка | кошеля | Do práce nosí košeľu. | На роботу він носить сорочку.
+W: blúzka | блузка | блу:зка | Do kancelárie nosím bielu blúzku. | В офіс я ношу білу блузку.
+W: rifle | джинси | ріфле | Tie rifle sú mi dlhé. | Ці джинси мені довгі.
+W: nohavice | штани | ногавіце | Tie nohavice sú mi dlhé. | Ці штани мені довгі.
+W: sukňa | спідниця | сукня | Sestra má novú sukňu. | Сестра має нову спідницю.
+W: šaty | сукня | шаті | Na svadbu si kúpim šaty. | На весілля куплю собі сукню.
+X mt: З’єднай. | tričko = футболка ;; košeľa = сорочка ;; blúzka = блузка ;; rifle = джинси ;; sukňa = спідниця ;; šaty = сукня
+X sc~: Що означає словацьке «sukňa»? | - | *спідниця ;; сукня ;; сорочка
+= Хибний друг: sukňa — спідниця, а сукня — šaty.
+X dd: Обери. | Tie nohavice [*sú/je/som] nové.
+= nohavice — тільки множина: sú.
+X dd: Обери. | Dnes mám na sebe bielu [*košeľu/košeľa/košeli].
+= mám na sebe + знахідний: košeľu.
+X cat: Верх чи низ? | Hore: tričko, košeľa, sveter ;; Dole: nohavice, sukňa, rifle
+= Верхній і нижній одяг.
+X tf: - | - | «Tie šaty sú krásne» може означати одну сукню. | T
+= šaty — тільки множина, навіть про одну сукню.
+X fb: Допиши. | Je zima, obleč si ___. (светр) | sveter |
+= sveter у знахідному не змінюється.
+X fe: - | Moje nové šaty [je>sú] v skrini.
+= šaty — множина: sú.
+X so: - | Скажи, що на тобі чорні штани. | Mám na sebe čierne nohavice.
+= mám na sebe + čierne nohavice (множина).
+X msg: Прочитай повідомлення. | Mama | Ahoj! Zajtra bude zima, okolo nuly. Obleč si teplý sveter a kabát, nie iba tričko! | Що радить мама? | *вдягнути теплий светр і пальто ;; вдягнути лише футболку ;; купити нове пальто
+= Obleč si… — вдягни.
+X dr: - | Kolegyňa: Čo nosíš do práce? | *Väčšinou nohavice a košeľu. ;; Väčšinou nohavice a košeľa je. ;; Nohavice nosím je košeľu.
+= nosiť + знахідний: košeľu.
+X np: Гість заходить у квартиру. Ти пропонуєш йому зняти пальто. | *Vyzlečte si kabát, prosím. ;; Vyzlečte kabát sa, prosím. ;; Obliecť kabát, prosím. ;; Kabát je vyzliecť.
+= vyzliecť si — зняти.
+X ms: Обери слова, які вживаються лише в множині. | - | *nohavice ;; *šaty ;; *rifle ;; sukňa ;; košeľa
+= nohavice, šaty, rifle — завжди множина.
+X wb: Склади. | Mám na sebe novú [sukňu]. ;; Tie nohavice [sú] krátke. | sukňa ;; je
+= Знахідний відмінок і множина.
+F: Ранок перед школою || На вулиці холодно, ти допомагаєш дітям зібратися.
+S: Син питає: «Mami, čo si mám obliecť?» (теплий светр) | *Obleč si teplý sveter. ;; Obleč si teplá sveter. ;; Sveter obliecť teplý je.
+S: «A môžem ísť iba v tričku?» Ти відмовляєш: надворі холодно. | *Nie, vonku je zima. ;; Nie, vonku je zimná. ;; Nie, zima vonku som.
+S: Донька каже: «Moje šaty sú špinavé.» Що сталося? | *її сукня брудна ;; її спідниця нова ;; її сукня в шафі
+S: Ти питаєш, де твоє пальто. | *Kde je môj kabát? ;; Kde sú môj kabát? ;; Kabát kde môj je?
+R: tričko, košeľa, sveter, kabát ;; nohavice, sukňa, šaty ;; nohavice / šaty — sú ;; Mám na sebe… / obliecť si / vyzliecť si
+
+@lesson velkosti | Розміри | Veľkosti
+desc: Розміри одягу: veľkosť S / M / L, Je mi to tesné, Potrebujem väčšiu veľkosť, o číslo väčšie.
+goal: Сказати свій розмір і пояснити, що річ мала чи велика.
+out: питати й казати Akú veľkosť nosíte? ;; казати Je mi to malé / veľké / tesné ;; просити väčšiu / menšiu veľkosť ;; розуміти široký і úzky
+done: Ти говориш про розміри. Далі — кольори й матеріали.
+T: Akú veľkosť nosíte? || «Veľkosť» — розмір. Літерні розміри: S, M, L, XL. Числові: 38, 40, 42 — «Nosím štyridsaťdva». Продавець питає: «Akú veľkosť nosíte?» — який розмір ви носите? || Nosím veľkosť M. = Я ношу розмір M. ;; Máte to vo veľkosti L? = У вас є це в розмірі L? || veľkosť S, M, L, XL
+T: Je mi to malé || Як сидить річ: «Je mi to malé / veľké» — мені це мале / велике. «Tesný» — тісний, «voľný» — вільний, «široký» — широкий, «úzky» — вузький. Прикметник узгоджується з річчю: «Košeľa je mi tesná», «Nohavice sú mi úzke». || Sveter je mi veľký. = Светр мені великий. ;; Tie nohavice sú mi široké. = Ці штани мені широкі. || mi = мені
+T: Väčšia alebo menšia? || «Väčší» — більший, «menší» — менший: «Potrebujem väčšiu veľkosť» — мені потрібен більший розмір. Дуже часто кажуть: «Máte to o číslo väčšie?» — у вас є це на розмір більше? || Máte menšiu veľkosť? = У вас є менший розмір? ;; Dajte mi o číslo menšie. = Дайте мені на розмір менше. || väčší / menší
+mis: Košeľa je mi tesný. => Košeľa je mi tesná. ;; Potrebujem väčší veľkosť. => Potrebujem väčšiu veľkosť. ;; Ja nosiť M. => Nosím M.
+W: veľkosť | розмір | вельк'ость | Akú veľkosť nosíte? | Який розмір ви носите?
+W: tesný | тісний | тесні: | Kabát je mi trochu tesný. | Пальто мені трохи тісне.
+W: široký | широкий | шірокі: | Tie nohavice sú príliš široké. | Ці штани надто широкі.
+W: úzky | вузький | у:скі | Tá sukňa je príliš úzka. | Ця спідниця надто вузька.
+W: väčší | більший | вечші: | Potrebujem väčšiu veľkosť. | Мені потрібен більший розмір.
+W: menší | менший | менші: | Máte aj menšie tričko? | У вас є менша футболка?
+X mt: З’єднай. | veľkosť = розмір ;; tesný = тісний ;; široký = широкий ;; úzky = вузький ;; väčší = більший ;; menší = менший
+X dd: Обери. | Košeľa je mi [*tesná/tesný/tesné].
+= košeľa — жіночий рід: tesná.
+X dd: Обери. | Potrebujem [*väčšiu/väčší/väčšie] veľkosť.
+= veľkosť — жіночий рід, знахідний: väčšiu.
+X sc~: Що означає «Máte to o číslo väčšie?» | - | *У вас є це на розмір більше? ;; У вас є інший номер телефону? ;; Скільки це коштує?
+= o číslo väčšie — на розмір більше.
+X tf: - | - | «Tie nohavice sú mi úzke» означає, що штани вільні. | F
+= úzke — вузькі.
+X fb: Допиши. | ___ veľkosť nosíte? (який) | Akú |
+= veľkosť — жіночий рід: Akú?
+X col: З’єднай протилежності. | veľký = malý ;; väčší = menší ;; široký = úzky ;; tesný = voľný
+X so: - | Скажи, що носиш розмір M. | Nosím veľkosť M.
+= nosiť veľkosť…
+X fe: - | Tie nohavice sú mi [veľký>veľké].
+= nohavice — множина: veľké.
+X do: Склади діалог. | Predavačka: Dobrý deň, akú veľkosť nosíte? ;; Zákazník: Zvyčajne L. ;; Predavačka: Nech sa páči, tu je L. ;; Zákazník: Ďakujem. Hm, je mi to trochu tesné. ;; Predavačka: Môžem vám dať XL. ;; Zákazník: Áno, prosím.
+= Розмір → примірка → більший розмір.
+X doc: Подивись на таблицю розмірів. | Tabuľka veľkostí — dámske tričká | S: 36 – 38 ;; M: 40 – 42 ;; L: 44 – 46 ;; XL: 48 – 50 | Ти носиш 42. Який розмір тобі потрібен? | *M ;; S ;; L
+= 40 – 42 — це M.
+X dr: - | Predavač: Je vám ten sveter dobrý? | *Je mi trochu veľký. Máte menší? ;; Je mi trochu veľká. Máte menšia? ;; Sveter mi je veľa.
+= sveter — чоловічий рід: veľký, menší.
+X np: Штани тобі вузькі. Ти просиш на розмір більші. | *Sú mi úzke. Máte ich o číslo väčšie? ;; Sú mi úzky. Máte o číslo väčší? ;; Úzke sú. Väčšie číslo mať. ;; Nohavice úzka.
+= úzke (множина) + o číslo väčšie.
+X ms: Обери правильні речення. | - | *Sukňa je mi tesná. ;; *Sveter je mi veľký. ;; *Nohavice sú mi široké. ;; Sukňa je mi tesný. ;; Nohavice je mi široké.
+= Прикметник узгоджується з річчю.
+F: Робочий одяг || Бригадир видає новим працівникам робочі куртки.
+S: «Akú veľkosť nosíte?» (L) | *Nosím veľkosť L. ;; Nosím veľký L. ;; Veľkosť som L.
+S: Ти приміряв(ла) куртку — вона тісна. | *Bunda je mi tesná. ;; Bunda je mi tesný. ;; Bunda tesno mi je.
+S: «Dobre, dám vám o číslo väčšiu.» Що він зробить? | *дасть куртку на розмір більшу ;; дасть меншу куртку ;; поміняє куртку на штани
+S: Нова куртка підходить. Ти дякуєш. | *Táto je dobrá, ďakujem. ;; Táto je dobrý, ďakujem. ;; Dobrá je táto ďakujem je.
+R: veľkosť S, M, L, XL; Akú veľkosť nosíte? ;; Je mi to malé / veľké / tesné ;; široký / úzky ;; väčší / menší, o číslo väčšie
+
+@lesson farby-a-materialy | Кольори й матеріали | Farby a materiály
+desc: Ще кольори (sivý, hnedý, ružový, béžový), відтінки tmavo- / svetlo- і матеріали: bavlnený, vlnený, kožený.
+goal: Описати річ за кольором і матеріалом.
+out: називати нові кольори ;; узгоджувати колір із річчю ;; казати tmavomodrý / svetlosivý ;; називати матеріал: bavlnený, vlnený, kožený
+done: Ти описуєш колір і матеріал. Далі — у магазині одягу.
+T: Ще кольори || Ти вже знаєш biely, čierny, červený, modrý, zelený, žltý. Нові: «sivý» — сірий, «hnedý» — коричневий, «ružový» — рожевий, «béžový» — бежевий. Колір — прикметник, тому узгоджується з річчю: hnedý kabát, hnedá sukňa, hnedé tričko, hnedé nohavice. || Mám sivý sveter. = У мене сірий светр. ;; Kúpila som ružové šaty. = Я купила рожеву сукню. || -ý / -á / -é
+T: Tmavo- і svetlo- || «Tmavomodrý» — темно-синій, «svetlomodrý» — блакитний, світло-синій. Пишеться разом: «tmavosivá bunda», «svetlohnedé nohavice». Питання: «Akú farbu hľadáte?» — якого кольору шукаєте? || Hľadám tmavomodrú košeľu. = Я шукаю темно-синю сорочку. || tmavo- / svetlo- + колір (разом)
+T: Z čoho je to? || Матеріал: «bavlna» (бавовна) → «bavlnený», «vlna» (вовна) → «vlnený», «koža» (шкіра) → «kožený». Можна й так: «Sveter je z vlny» — светр із вовни (z + родовий). На етикетці: «100 % bavlna». || Vlnený sveter je teplý. = Вовняний светр теплий. ;; Bunda je z kože. = Куртка зі шкіри. || bavlna → bavlnený; z + родовий
+mis: hnedý sukňa => hnedá sukňa ;; tmavo modrý => tmavomodrý ;; sveter z vlna => sveter z vlny
+W: sivý | сірий | сіві: | Má sivý kabát. | У нього сіре пальто.
+W: hnedý | коричневий | гнеді: | Hnedá bunda je na vešiaku. | Коричнева куртка на вішалці.
+W: ružový | рожевий | ружові: | Dcéra chce ružové šaty. | Донька хоче рожеву сукню.
+W: béžový | бежевий | бе:жові: | Béžové nohavice sa ľahko zašpinia. | Бежеві штани легко забруднюються.
+W: bavlnený | бавовняний | бавлнені: | V lete nosím bavlnené tričká. | Улітку я ношу бавовняні футболки.
+W: vlnený | вовняний | влнені: | Babka mi pletie vlnený sveter. | Бабуся в’яже мені вовняний светр.
+W: kožený | шкіряний | кожені: | Kožená bunda je drahá. | Шкіряна куртка дорога.
+X mt: З’єднай. | sivý = сірий ;; hnedý = коричневий ;; ružový = рожевий ;; béžový = бежевий ;; vlnený = вовняний ;; kožený = шкіряний
+X dd: Обери. | Mám [*hnedú/hnedý/hnedé] sukňu.
+= sukňu — жіночий рід, знахідний: hnedú.
+X dd: Обери. | Kúpila som [*ružové/ružová/ružový] šaty.
+= šaty — множина: ružové.
+X sc~: Що означає «tmavomodrý»? | - | *темно-синій ;; світло-синій ;; синьо-зелений
+= tmavo- — темно-.
+X cat: Колір чи матеріал? | Farba: sivý, hnedý, ružový, béžový ;; Materiál: bavlnený, vlnený, kožený
+= Кольори й матеріали.
+X tf: - | - | Слово «tmavomodrý» пишеться разом. | T
+= tmavo- / svetlo- пишуться разом із кольором.
+X fb: Допиши. | Sveter je z ___. (вовни) | vlny |
+= z + родовий: vlna → vlny.
+X fe: - | Mám nový [hnedá>hnedý] kabát.
+= kabát — чоловічий рід: hnedý.
+X doc: Прочитай етикетку. | Pánska košeľa | Materiál: 100 % bavlna ;; Farba: svetlomodrá ;; Pranie: 40 °C ;; Veľkosť: L | З чого ця сорочка? | *з бавовни ;; з вовни ;; зі шкіри
+= bavlna — бавовна.
+X tr: Скажи інакше — прикметником. | Sveter je z vlny. | Sveter je vlnený. ;; Je to vlnený sveter.
+= z vlny → vlnený.
+X so: - | Скажи, що шукаєш темно-синю сорочку. | Hľadám tmavomodrú košeľu.
+= košeľu — знахідний: tmavomodrú.
+X dr: - | Predavačka: Akú farbu hľadáte? | *Niečo sivé alebo béžové. ;; Niečo sivá alebo béžová. ;; Farbu sivý hľadám je.
+= niečo + середній рід: sivé, béžové.
+X np: Ти хочеш спитати, з чого цей светр. | *Z čoho je tento sveter? ;; Čo je z tento sveter? ;; Z čo je sveter? ;; Sveter z čoho je to je?
+= Z čoho je…?
+X ms: Обери правильні словосполучення. | - | *sivý kabát ;; *ružová sukňa ;; *béžové nohavice ;; hnedý sukňa ;; vlnená sveter
+= Колір узгоджується за родом і числом.
+F: Загублена куртка || Ти забув(ла) куртку в роздягальні спортзалу й описуєш її на рецепції.
+S: «Akú farbu má vaša bunda?» (темно-сіра) | *Je tmavosivá. ;; Je tmavo sivý. ;; Má farbu tmavosivý.
+S: «Z čoho je?» (шкіряна) | *Je kožená. ;; Je kožený. ;; Je z koža.
+S: Рецепціоністка: «Máme tu jednu hnedú a jednu tmavosivú.» Що в них є? | *коричнева й темно-сіра куртки ;; дві темно-сірі куртки ;; коричнева і сіра сумки
+S: Ти бачиш свою куртку. | *Tá tmavosivá je moja. ;; Ten tmavosivý je moja. ;; Moja je tá tmavosivé.
+R: sivý, hnedý, ružový, béžový ;; hnedý kabát / hnedá sukňa / hnedé šaty ;; tmavomodrý, svetlosivý ;; bavlnený, vlnený, kožený; z vlny
+
+@lesson v-obchode-s-oblecenim | У магазині одягу | V obchode s oblečením
+desc: Розмова з продавцем: Môžem vám pomôcť? Len sa pozerám. Hľadám… Máte to aj v inej farbe? Відділи: dámske, pánske, detské.
+goal: Знайти потрібний відділ і пояснити продавцеві, що шукаєш.
+out: відповідати Ďakujem, len sa pozerám ;; казати Hľadám… ;; питати Máte to aj v inej farbe / veľkosti? ;; розуміти dámske / pánske / detské oddelenie
+done: Ти спілкуєшся з продавцем. Далі — примірювальна кабінка.
+T: Môžem vám pomôcť? || Продавець часто питає: «Môžem vám nejako pomôcť?» — можу вам якось допомогти? Відповіді: «Áno, hľadám…» — так, шукаю… або «Ďakujem, len sa pozerám» — дякую, я тільки дивлюся. «Predajňa» — магазин (трохи офіційніше, ніж obchod). || Hľadám čiernu sukňu. = Я шукаю чорну спідницю. ;; Ďakujem, len sa pozerám. = Дякую, я просто дивлюся. || Hľadám + знахідний
+T: Відділи й поверхи || «Dámske oblečenie» — жіночий одяг, «pánske» — чоловічий, «detské» — дитячий. «Kde je pánske oddelenie?» — де чоловічий відділ? «Na prízemí» — на першому поверсі, «na prvom poschodí» — на другому (за українським рахунком). || Dámske oddelenie je na prvom poschodí. = Жіночий відділ на другому поверсі. || prízemie = 1-й поверх, 1. poschodie = 2-й поверх
+T: Máte to aj…? || «Máte to aj v inej farbe?» — у вас це є і в іншому кольорі? «…aj vo veľkosti M?» — і в розмірі M? «Tento model» — ця модель. «Môžete mi poradiť?» — можете мені порадити? || Tento model máme aj v čiernej. = Ця модель у нас є і в чорному. ;; Poradíte mi? = Порадите мені? || v inej farbe, vo veľkosti…
+W: predajňa | магазин, торгова точка | предайня | Predajňa je otvorená do ôsmej. | Магазин відкритий до восьмої.
+W: dámsky | жіночий | да:мскі | Dámske oblečenie je hore. | Жіночий одяг нагорі.
+W: pánsky | чоловічий | па:нскі | Hľadám pánsku košeľu. | Я шукаю чоловічу сорочку.
+W: detský | дитячий | детскі: | Detské oddelenie je na prízemí. | Дитячий відділ на першому поверсі.
+W: model | модель (одягу, товару) | модел | Tento model je veľmi populárny. | Ця модель дуже популярна.
+W: poradiť | порадити | порадіть | Môžete mi poradiť? | Можете мені порадити?
+X mt: З’єднай. | predajňa = магазин ;; dámsky = жіночий ;; pánsky = чоловічий ;; detský = дитячий ;; model = модель ;; poradiť = порадити
+X sc~: Що означає «Ďakujem, len sa pozerám»? | - | *Дякую, я тільки дивлюся ;; Дякую, я вже йду ;; Дякую, я шукаю продавця
+= len sa pozerám — просто дивлюся.
+X dd: Обери. | Hľadám [*pánsku/pánsky/pánske] košeľu.
+= košeľu — жіночий рід, знахідний: pánsku.
+X dd: Обери. | Máte to aj v inej [*farbe/farba/farbu]?
+= v + місцевий: farbe.
+X tf: - | - | «Na prvom poschodí» у Словаччині — це другий поверх за українським рахунком. | T
+= prízemie — перший поверх, prvé poschodie — другий.
+X fb: Допиши. | Môžem vám nejako ___? (допомогти) | pomôcť |
+= Môžem vám pomôcť?
+X cat: Хто це каже? | Predavač: Môžem vám pomôcť?, Tento model máme aj v čiernej, Kabínky sú vzadu ;; Zákazník: Len sa pozerám, Hľadám sveter, Máte to aj v M?
+= Продавець пропонує, покупець шукає.
+X so: - | Спитай, чи є ця модель і в розмірі S. | Máte tento model aj vo veľkosti S?
+= Máte… aj vo veľkosti…?
+X fe: - | Detské oddelenie je na [prvý>prvom] poschodí.
+= na + місцевий: prvom.
+X sch: Подивись на інформаційну табличку. | Obchodný dom — poschodia | prízemie = dámske oblečenie ;; 1. poschodie = pánske oblečenie ;; 2. poschodie = detské oblečenie a hračky ;; 3. poschodie = šport a kaviareň | Куди йти за светром для сина-першокласника? | *na 2. poschodie ;; na prízemie ;; na 1. poschodie
+= Detské oblečenie — 2. poschodie.
+X rc: - | V sobotu idem s mužom do obchodného domu. Muž potrebuje novú košeľu do práce, ja hľadám teplý sveter. Pánske oddelenie je na prízemí, dámske je na prvom poschodí. Predavačka je veľmi milá a poradí mi. Sivý sveter je mi malý, ale tento model majú aj vo veľkosti L. Ten je dobrý!
+q~: Що шукає чоловік? | *сорочку на роботу ;; теплий светр ;; штани
+q~: Де жіночий відділ? | *на другому поверсі ;; на першому поверсі ;; у підвалі
+q~: Яка проблема із сірим светром? | *він малий ;; він дорогий ;; у нього не той колір
+X dr: - | Predavačka: Dobrý deň, môžem vám nejako pomôcť? | *Áno, hľadám sivý sveter. ;; Áno, hľadám sivá sveter. ;; Áno, sveter hľadať sivý.
+= Hľadám + знахідний: sivý sveter.
+X np: Тобі подобається сорочка, але ти хочеш її в іншому кольорі. | *Máte túto košeľu aj v inej farbe? ;; Máte túto košeľa v iná farba? ;; Košeľu inú farbu máte je? ;; Iná farba košeľa?
+= Máte… aj v inej farbe?
+X ms: Обери правильні речення. | - | *Hľadám dámsku bundu. ;; *Máte to aj v inej farbe? ;; *Poradíte mi? ;; Hľadám dámsky bundu. ;; Máte to aj v iná farba?
+= bundu — dámsku; v + місцевий: v inej farbe.
+F: У торговому центрі || Ти шукаєш зимову куртку для доньки.
+S: Продавчиня: «Môžem vám pomôcť?» (шукаєш дитячу куртку) | *Áno, hľadám detskú bundu. ;; Áno, hľadám detský bunda. ;; Áno, bundu detská hľadať.
+S: «Detské oblečenie je na druhom poschodí.» Куди йти? | *на третій поверх за українським рахунком ;; на другий поверх за українським рахунком ;; у підвал
+S: Куртка гарна, але рожева. Ти питаєш про інший колір. | *Máte ju aj v inej farbe? ;; Máte ju aj v iná farba? ;; Inú farbu máte ju?
+S: «Tento model máme aj v tmavomodrej.» Що каже продавчиня? | *ця модель є і в темно-синьому кольорі ;; цієї моделі більше немає ;; ця модель лише рожева
+R: Môžem vám pomôcť? — Len sa pozerám / Hľadám… ;; dámske, pánske, detské oddelenie; prízemie, 1. poschodie ;; Máte to aj v inej farbe / vo veľkosti M? ;; predajňa, model, poradiť
+
+@lesson skusobna-kabinka | Примірювальна кабінка | Skúšobná kabínka
+desc: Приміряємо одяг: Môžem si to vyskúšať? Sedí vám to? Pristane vám to. Деталі одягу: rukáv, zips, gombík.
+goal: Попросити приміряти річ і сказати, як вона сидить.
+out: питати Môžem si to vyskúšať? ;; розуміти правила кабінки: maximálne tri kusy ;; казати Sedí mi to / Nesedí mi to ;; називати rukáv, zips, gombík
+done: Ти вмієш приміряти одяг. Далі — як сказати, що річ подобається.
+T: Môžem si to vyskúšať? || «Vyskúšať si» — приміряти: «Môžem si vyskúšať tieto nohavice?» «Si» стоїть одразу після першого слова: «Môžem si…». «Skúšobná kabínka» (або просто «kabínka») — примірювальна кабінка. Часто є правило: «Maximálne tri kusy» — максимум три речі. || Kde sú skúšobné kabínky? = Де примірювальні кабінки? ;; Môžem si to vyskúšať? = Можна це приміряти? || Môžem si + vyskúšať
+T: Sedí? Pristane? || «Sedí mi to» — мені це добре сидить. «Nesedí mi to» — погано сидить. Про кілька речей — «sedia». «Pristane ti to» — тобі це личить: «Tá farba ti pristane». Продавчиня може спитати: «Ako vám to sedí?» || Sveter mi sedí perfektne. = Светр сидить на мені ідеально. ;; Tá košeľa ti veľmi pristane. = Ця сорочка тобі дуже личить. || sedí / sedia / pristane + mi, ti, vám
+T: Деталі || «Rukáv» — рукав: «Rukávy sú dlhé». «Zips» — блискавка (застібка), «gombík» — ґудзик: «Chýba tu gombík» — тут бракує ґудзика. «Zips nejde» — блискавка не застібається. || Rukávy sú mi krátke. = Рукави мені короткі. ;; Na kabáte chýba gombík. = На пальті бракує ґудзика. || rukáv, zips, gombík
+mis: Môžem vyskúšať si? => Môžem si to vyskúšať? ;; Sedí ma to. => Sedí mi to. ;; Tá farba ti pristaneš. => Tá farba ti pristane.
+W: skúšobná kabínka | примірювальна кабінка | ску:шобна: кабі:нка | Skúšobná kabínka je obsadená. | Примірювальна кабінка зайнята.
+W: vyskúšať si | приміряти | віску:шать сі | Chcem si vyskúšať tie šaty. | Я хочу приміряти цю сукню.
+W: pristať | личити, пасувати | прістать | Tá sukňa ti pristane. | Ця спідниця тобі личить.
+W: rukáv | рукав | рука:в | Rukávy sú príliš dlhé. | Рукави надто довгі.
+W: zips | блискавка (застібка) | зіпс | Zips na bunde nejde. | Блискавка на куртці не застібається.
+W: gombík | ґудзик | ґомбі:к | Prišijem ti gombík. | Я пришию тобі ґудзик.
+X mt: З’єднай. | skúšobná kabínka = примірювальна кабінка ;; vyskúšať si = приміряти ;; pristať = личити ;; rukáv = рукав ;; zips = блискавка ;; gombík = ґудзик
+X sc~: Що означає «Tá farba ti pristane»? | - | *Цей колір тобі личить ;; Цей колір тобі набрид ;; Цей колір — останній
+= pristať — личити.
+X dd: Обери. | Môžem si to [*vyskúšať/vyskúšam/vyskúša]?
+= Після môžem — інфінітив.
+X dd: Обери. | Sveter mi [*sedí/sedím/sedia] perfektne.
+= sveter — він: sedí.
+X tf: - | - | Напис «Maximálne tri kusy» означає, що в кабінку можна взяти не більше трьох речей. | T
+= maximálne — максимум, kus — річ.
+X fb: Допиши. | Na kabáte chýba ___. (ґудзик) | gombík |
+= gombík — ґудзик.
+X so: - | Спитай, де примірювальні кабінки. | Kde sú skúšobné kabínky?
+= Kde sú + множина.
+X fe: - | Tie nohavice mi veľmi dobre [sedí>sedia].
+= nohavice — множина: sedia.
+X do: Склади діалог. | Zákazníčka: Prepáčte, môžem si vyskúšať tieto šaty? ;; Predavačka: Samozrejme. Kabínky sú vzadu vpravo. ;; Zákazníčka: Koľko kusov si môžem zobrať? ;; Predavačka: Maximálne tri. ;; Predavačka: Tak čo, ako vám sedia? ;; Zákazníčka: Perfektne, beriem ich.
+= Прохання → де кабінки → правило → результат.
+X tfl: - | Sveter je mi dobrý, ale rukávy sú trochu dlhé. Nohavice mi nesedia, sú úzke. Košeľa mi sedí perfektne a tá farba mi pristane. | *Сорочка сидить добре. ;; Штани широкі. ;; *Рукави светра трохи довгі. ;; Колір сорочки не личить.
+X dr: - | Predavačka: Ako vám to sedí? | *Nesedí mi to, je mi to veľké. ;; Nesedím to, je mi veľký. ;; Sedí ma to veľké.
+= Nesedí mi to — погано сидить.
+X np: Ти хочеш приміряти ці штани. | *Môžem si vyskúšať tieto nohavice? ;; Môžem vyskúšať si tieto nohavice? ;; Môžem si vyskúšam tieto nohavice? ;; Nohavice skúšať?
+= si — одразу після môžem; далі інфінітив.
+X hm: Подруга виходить із кабінки. Ти довго мовчиш, а потім кажеш: «Hm… skús ešte tie modré.» Що ти маєш на увазі? | *ця річ їй не дуже личить ;; ця річ ідеальна ;; вам уже треба йти
+= «Спробуй ще інші» — м’який спосіб сказати, що ця не дуже.
+X ce: Виправ речення. | Tá farba ti pristaneš. | Tá farba ti pristane.
+= farba — вона: pristane.
+F: Сукня на весілля || Ти приміряєш сукню в магазині.
+S: Ти питаєш продавчиню, чи можна приміряти сукню. | *Môžem si vyskúšať tieto šaty? ;; Môžem si vyskúšať táto šaty? ;; Šaty vyskúšať môžem si je?
+S: «Kabínka číslo dva je voľná.» Що каже продавчиня? | *друга кабінка вільна ;; дві кабінки зайняті ;; кабінка коштує два євро
+S: Продавчиня: «Ako vám sedia?» (сидить ідеально) | *Sedia mi perfektne. ;; Sedí ma perfektne. ;; Sedím perfektne.
+S: Подруга каже: «Tá farba ti veľmi pristane!» Що вона думає? | *колір тобі дуже личить ;; колір надто яскравий ;; треба інший колір
+R: skúšobná kabínka, Môžem si to vyskúšať? ;; Sedí mi to / Nesedí mi to; sedia ;; Pristane ti to ;; rukáv, zips, gombík
+
+@lesson paci-sa-mi | Мені подобається | Páči sa mi
+desc: Як сказати, що річ подобається: páči sa mi / páčia sa mi, nepáči sa mi, Ako sa ti páči? — і оцінки: pohodlný, elegantný, módny.
+goal: Висловити думку про одяг і спитати думку інших.
+out: казати Páči sa mi tá sukňa / Páčia sa mi tie nohavice ;; вживати mi, ti, mu, jej, nám, vám, im ;; питати Ako sa ti páči? ;; оцінювати: pohodlný, elegantný, módny
+done: Ти висловлюєш думку про одяг. Далі — взуття.
+T: Páči sa mi || «Páčiť sa» — подобатися. Як в українській: те, що подобається, — підмет, а той, кому подобається, — у давальному. «Páči sa mi tá sukňa» — мені подобається ця спідниця. Множина: «Páčia sa mi tie nohavice». Заперечення: «Nepáči sa mi». || Páči sa mi tvoja košeľa. = Мені подобається твоя сорочка. ;; Tie šaty sa mi nepáčia. = Ця сукня мені не подобається. || páči sa (одне) / páčia sa (множина)
+T: Komu? || mi — мені, ti — тобі, mu — йому, jej — їй, nám — нам, vám — вам, im — їм. Питання: «Páči sa ti to?» — тобі подобається? «Ako sa ti páči…?» — як тобі…? З наголосом: «Mne sa to páči» — а мені подобається. || Páči sa jej tá farba. = Їй подобається цей колір. ;; Ako sa vám páči tento kabát? = Як вам це пальто? || mi, ti, mu, jej, nám, vám, im
+T: Чому подобається? || «Pohodlný» — зручний, «elegantný» — елегантний, «módny» — модний, «štýl» — стиль, «vkus» — смак: «Máš dobrý vkus!» — у тебе гарний смак! Páčiť sa — враження від конкретної речі, mať rád — любити загалом: «Mám rád pohodlné oblečenie». || Tieto nohavice sú veľmi pohodlné. = Ці штани дуже зручні. ;; Máš pekný štýl. = У тебе гарний стиль. || pohodlný, elegantný, módny
+mis: Ja páčim tá sukňa. => Páči sa mi tá sukňa. ;; Páči sa mi tie nohavice. => Páčia sa mi tie nohavice. ;; Páči sa ma to. => Páči sa mi to.
+W: páčiť sa | подобатися | па:чіть са | Páči sa mi tvoj nový kabát. | Мені подобається твоє нове пальто.
+W: pohodlný | зручний | погодлні: | Tento sveter je veľmi pohodlný. | Цей светр дуже зручний.
+W: elegantný | елегантний | елеґантні: | Na svadbu chcem elegantné šaty. | На весілля хочу елегантну сукню.
+W: módny | модний | мо:дні: | Široké nohavice sú teraz módne. | Широкі штани зараз модні.
+W: vkus | смак (естетичний) | вкус | Moja sestra má dobrý vkus. | Моя сестра має гарний смак.
+W: štýl | стиль | шті:л | Páči sa mi tvoj štýl. | Мені подобається твій стиль.
+X mt: З’єднай. | páčiť sa = подобатися ;; pohodlný = зручний ;; elegantný = елегантний ;; módny = модний ;; vkus = смак ;; štýl = стиль
+X mt: З’єднай займенники. | mi = мені ;; ti = тобі ;; mu = йому ;; jej = їй ;; vám = вам ;; im = їм
+X dd: Обери. | [*Páči/Páčia/Páčim] sa mi tá košeľa.
+= Одна річ — páči.
+X dd: Обери. | [*Páčia/Páči/Páčiš] sa mi tie nohavice.
+= nohavice — множина: páčia.
+X sc~: Що означає «Máš dobrý vkus»? | - | *У тебе гарний смак ;; У тебе смачна їжа ;; Ти гарно виглядаєш
+= vkus — естетичний смак.
+X tf: - | - | У реченні «Páči sa mi tá sukňa» підмет — sukňa. | T
+= Те, що подобається, — підмет.
+X fb: Допиши. | Ako sa ___ páči môj nový kabát? (тобі) | ti |
+= ti — тобі.
+X fe: - | Tie šaty sa mi veľmi [páči>páčia].
+= šaty — множина: páčia.
+X so: - | Скажи подрузі, що в неї гарний смак. | Máš dobrý vkus.
+= mať dobrý vkus.
+X tr: Скажи те саме про кілька спідниць. | Páči sa mi tá sukňa. | Páčia sa mi tie sukne. ;; Tie sukne sa mi páčia.
+= Множина: páčia sa, tie sukne.
+X msg: Прочитай повідомлення. | Katka | Ahoj! Som v obchode, posielam fotku. Páčia sa ti tie čierne šaty? Sú elegantné, ale nie sú veľmi pohodlné. Neviem… | Що Катка думає про сукню? | *вона елегантна, але не дуже зручна ;; вона зручна, але не модна ;; вона їй зовсім не подобається
+= elegantné — елегантна, nie sú pohodlné — не зручна.
+X dr: - | Kamarátka: Ako sa ti páči môj nový kabát? | *Veľmi sa mi páči, je elegantný. ;; Veľmi sa ma páči, je elegantná. ;; Páčim sa kabát.
+= sa mi páči; kabát — elegantný.
+X np: Ти питаєш колегу, чи подобається йому твій новий светр. | *Páči sa ti môj nový sveter? ;; Páčiš sa môj nový sveter? ;; Páči ti sa môj nový sveter? ;; Môj sveter páči?
+= Páči sa ti…?
+X ms: Обери правильні речення. | - | *Páči sa mi tvoj štýl. ;; *Páčia sa mu tie nohavice. ;; *Jej sa to nepáči. ;; Páčim sa mi tvoj štýl. ;; Páči sa mu tie nohavice.
+= páči (одне) / páčia (множина) + давальний.
+F: Покупки з подругою || Ви з подругою Ланою вибираєте одяг.
+S: Лана: «Ako sa ti páčia tieto nohavice?» (подобаються, зручні) | *Páčia sa mi, sú pohodlné. ;; Páči sa mi, sú pohodlný. ;; Páčim ich, pohodlné.
+S: Лана приміряє рожеву сукню. Тобі не подобається колір. | *Tá farba sa mi nepáči. ;; Tá farba ma nepáči. ;; Farba nepáčim sa.
+S: Лана: «Mne sa páči, je módna!» Що вона каже? | *їй подобається, бо це модно ;; їй не подобається, бо це не модно ;; вона хоче інший розмір
+S: Ти кажеш, що в неї гарний стиль. | *Máš pekný štýl! ;; Máš pekná štýl! ;; Štýl máš je pekný!
+R: páči sa mi / páčia sa mi; nepáči sa mi ;; mi, ti, mu, jej, nám, vám, im ;; Ako sa ti páči? ;; pohodlný, elegantný, módny, vkus, štýl
+
+@lesson obuv | Взуття | Obuv
+desc: Взуття: topánky, tenisky, čižmy, sandále, papuče. Розмір взуття — číslo. І словацький звичай: vyzuť sa.
+goal: Купити взуття свого розміру й зрозуміти звичаї щодо взуття в гостях.
+out: називати види взуття ;; питати й казати Aké číslo nosíte? ;; казати Tlačia ma ;; розуміти Vyzujte sa, prosím
+done: Ти купуєш взуття. Далі — повернення товару.
+T: Obuv || «Obuv» — взуття (загальне слово, як на вивісці магазину). «Topánky» — черевики, туфлі, «tenisky» — кросівки, «čižmy» — чоботи, «sandále» — сандалі, «papuče» — капці. Зазвичай вони в множині: «Tie tenisky sú nové». || Potrebujem nové čižmy na zimu. = Мені потрібні нові чоботи на зиму. ;; Tenisky sú v akcii. = Кросівки за акцією. || obuv — загальне слово; topánky — множина
+T: Aké číslo? || Розмір взуття — «číslo»: «Aké číslo nosíte?» — який розмір взуття ви носите? «Nosím tridsaťosem» — ношу 38. Якщо тисне: «Tlačia ma» — мені тиснуть. || Máte tieto tenisky v čísle 42? = У вас є ці кросівки 42-го розміру? ;; Topánky ma tlačia. = Черевики мені тиснуть. || číslo (взуття), veľkosť (одяг)
+T: Vyzujte sa! || У словацьких домівках узуття знімають у передпокої: «Vyzujte sa, prosím» — роззуйтеся, будь ласка. Господарі часто дають «papuče». Протилежне — «obuť sa» / «obuť si»: «Obuj si čižmy» — взуй чоботи. || Mám sa vyzuť? = Мені роззутися? ;; Tu máš papuče. = Ось тобі капці. || vyzuť sa ↔ obuť sa
+mis: Topánky ma tlačí. => Topánky ma tlačia. ;; Tenisky je nové. => Tenisky sú nové. ;; Mám vyzuť sa? => Mám sa vyzuť?
+W: obuv | взуття | обув | Obuv je na prízemí. | Взуття на першому поверсі.
+W: topánky | черевики, туфлі | топа:нкі | Tieto topánky sú pohodlné. | Ці черевики зручні.
+W: tenisky | кросівки | тенискі | Do posilňovne nosím tenisky. | У спортзал я ношу кросівки.
+W: šnúrky | шнурки | шну:ркі | Zaviaž si šnúrky! | Зав’яжи шнурки!
+W: sandále | сандалі | санда:ле | V lete chodím v sandáloch. | Улітку я ходжу в сандалях.
+W: papuče | капці | папуче | Doma nosím papuče. | Удома я ношу капці.
+W: vyzuť sa | роззутися | візуть са | Vyzujte sa, prosím. | Роззуйтеся, будь ласка.
+X mt: З’єднай. | obuv = взуття ;; topánky = черевики ;; tenisky = кросівки ;; šnúrky = шнурки ;; sandále = сандалі ;; papuče = капці
+X sc~: Що означає «Topánky ma tlačia»? | - | *Черевики мені тиснуть ;; Черевики мені великі ;; Черевики брудні
+= tlačiť — тиснути.
+X dd: Обери. | Tie tenisky [*sú/je/som] nové.
+= tenisky — множина: sú.
+X dd: Обери. | Vonku je sneh, obujem si [*čižmy/sandále/papuče].
+= Сніг — чоботи.
+X tf: - | - | Розмір взуття словацькою зазвичай називають «číslo». | T
+= Aké číslo nosíte?
+X cat: Взуття чи одяг? | Obuv: tenisky, čižmy, sandále, papuče ;; Oblečenie: sveter, sukňa, košeľa, kabát
+= Тематичні групи.
+X fb: Допиши. | Nosím ___ štyridsaťdva. (розмір взуття) | číslo |
+= Для взуття — číslo.
+X fe: - | Tieto topánky ma veľmi [tlačí>tlačia].
+= topánky — множина: tlačia.
+X so: - | Спитай, чи є ці кросівки 39-го розміру. | Máte tieto tenisky v čísle 39?
+= v čísle + номер.
+X hm: Ти приходиш у гості. Господиня дивиться на твоє взуття й каже: «Tu máš papuče.» Що вона має на увазі? | *варто роззутися й узути капці ;; їй не подобається твоє взуття ;; треба взутися, бо ви йдете гуляти
+= У словацьких домівках роззуваються.
+X menu: Подивись на цінники у взуттєвому магазині. | Pánska obuv: kožené topánky = 89 € ;; Pánska obuv: tenisky = 59 € ;; Dámska obuv: čižmy = 120 € ;; Dámska obuv: sandále = 35 €
+q~: Що найдорожче? | *čižmy ;; tenisky ;; sandále
+q~: Скільки коштують шкіряні черевики? | *89 € ;; 59 € ;; 35 €
+X dr: - | Predavač: Aké číslo nosíte? | *Zvyčajne štyridsaťtri. ;; Zvyčajne veľkosť L. ;; Nosím číslo topánka.
+= Розмір взуття — число.
+X np: Ти в гостях і питаєш, чи треба роззутися. | *Mám sa vyzuť? ;; Mám vyzuť sa? ;; Vyzujem ma? ;; Mám sa obuť?
+= Mám sa vyzuť? — sa одразу після mám.
+X ms: Обери правильні речення. | - | *Tenisky sú pohodlné. ;; *Topánky ma tlačia. ;; *Doma nosím papuče. ;; Tenisky je pohodlná. ;; Topánky ma tlačí.
+= Взуття — множина: sú, tlačia.
+F: Кросівки для сина || Ти купуєш синові кросівки на фізкультуру.
+S: Продавець: «Aké číslo nosí syn?» (33) | *Nosí tridsaťtri. ;; Nosí veľkosť M. ;; Nosím tridsaťtri syn.
+S: Син приміряє й каже: «Mami, tlačia ma.» Що сталося? | *кросівки йому тиснуть ;; кросівки йому великі ;; кросівки йому подобаються
+S: Ти просиш на розмір більші. | *Máte ich o číslo väčšie? ;; Máte ich o číslo väčší? ;; Máte väčšie číslo ich je?
+S: Удома ти просиш сина роззутися в передпокої. | *Vyzuj sa, prosím. ;; Obuj sa, prosím. ;; Vyzuj ťa, prosím.
+R: obuv: topánky, tenisky, čižmy, sandále, papuče ;; Aké číslo nosíte? — Nosím 38 ;; Tlačia ma ;; vyzuť sa / obuť sa
+
+@lesson vratenie-tovaru | Повернення товару | Vrátenie tovaru
+desc: Повертаємо або обмінюємо одяг: vrátenie peňazí, výmena za inú veľkosť, lehota 30 dní, visačka, diera.
+goal: Повернути або обміняти річ і пояснити причину.
+out: казати Chcela by som to vrátiť / vymeniť ;; пояснювати причину: nesedí mi, je tam diera ;; розуміти lehota a podmienky ;; розрізняти vrátenie, výmena, reklamácia
+done: Ти вмієш повернути річ. Далі — розпродаж.
+T: Vrátiť alebo vymeniť? || Дієслова «vrátiť», «vymeniť» і «reklamovať» ти вже знаєш. Іменники: «vrátenie» — повернення (гроші назад — «vrátenie peňazí»), «výmena» — обмін (інша річ або інший розмір): «výmena za inú veľkosť». || Chcela by som to vrátiť. = Я хотіла б це повернути. ;; Môžem to vymeniť za menšie? = Можна обміняти на менше? || vrátenie peňazí, výmena za…
+T: Podmienky || Умови: «lehota» — строк: «Lehota na vrátenie je 30 dní». Річ має бути не ношена, «s visačkou» (з биркою) і з чеком (bloček, pokladničný doklad). Покупку в інтернеті за законом можна повернути протягом 14 днів. || Tovar musí mať visačku. = Товар повинен мати бирку. ;; Lehota je 14 dní. = Строк — 14 днів. || lehota, visačka, bloček
+T: Čo je zlé? || Причина: «Nesedí mi to» — погано сидить, «Je mi to malé» — мені це мале, «Je tam diera» — там дірка, «Zips je chybný» — блискавка з дефектом. Брак — це вже «reklamácia», а не просте повернення. || Na svetri je diera. = На светрі дірка. ;; Tovar je chybný. = Товар бракований. || nesedí → vrátenie / výmena; chybný → reklamácia
+mis: Chcela by som vrátiť. => Chcela by som to vrátiť. ;; výmena na inú veľkosť => výmena za inú veľkosť ;; Má to diera. => Má to dieru.
+W: vrátenie | повернення | вра:теніє | Vrátenie peňazí trvá päť dní. | Повернення грошей триває п’ять днів.
+W: výmena | обмін | ві:мена | Výmena je možná do tridsiatich dní. | Обмін можливий протягом тридцяти днів.
+W: lehota | строк | легота | Lehota na vrátenie je štrnásť dní. | Строк повернення — чотирнадцять днів.
+W: visačka | бирка (з ціною) | вісачка | Visačka je ešte na tričku. | Бирка ще на футболці.
+W: diera | дірка | дієра | Na rukáve je diera. | На рукаві дірка.
+W: chybný | бракований, з дефектом | хібні: | Chybný tovar môžete reklamovať. | На бракований товар можна подати рекламацію.
+X mt: З’єднай. | vrátenie = повернення ;; výmena = обмін ;; lehota = строк ;; visačka = бирка ;; diera = дірка ;; chybný = бракований
+X sc~: Що означає «Môžem to vymeniť za menšiu veľkosť?» | - | *Можна обміняти на менший розмір? ;; Можна повернути гроші? ;; Чи є менший розмір у продажу?
+= vymeniť za… — обміняти на…
+X dd: Обери. | Na svetri je [*diera/dieru/diery].
+= je + називний: diera.
+X dd: Обери. | Chcem to vymeniť [*za/na/do] inú veľkosť.
+= vymeniť za + знахідний.
+X cat: Повернення чи рекламація? | Vrátenie alebo výmena: nesedí mi, je mi to malé, nepáči sa mi farba ;; Reklamácia: diera na rukáve, chybný zips, chýba gombík
+= Не підійшло — повернення; брак — рекламація.
+X tf: - | - | Покупку в інтернеті в Словаччині можна повернути протягом 14 днів. | T
+= Закон дає 14 днів.
+X doc: Прочитай умови магазину. | Podmienky vrátenia tovaru | Lehota: 30 dní od nákupu ;; Tovar: nenosený, s visačkou ;; Doklad: pokladničný doklad ;; Peniaze: vrátime na kartu do 5 dní | Як тобі повернуть гроші? | *на картку протягом 5 днів ;; готівкою одразу ;; подарунковим сертифікатом
+= vrátime na kartu do 5 dní.
+X fb: Допиши. | Lehota na ___ je 30 dní. (повернення) | vrátenie |
+= lehota na vrátenie — строк повернення.
+X fe: - | Chcela by som to vymeniť za [iný>inú] veľkosť.
+= veľkosť — жіночий рід: inú.
+X bd: - | Ти успішно обміняла штани!
+> Predavačka: Dobrý deň, čo pre vás môžem urobiť? | *Dobrý deň, chcela by som vymeniť tieto nohavice. ;; Dobrý deň, chcem vymeniť nohavice je. ;; Nohavice vymeniť ja.
+> Predavačka: Čo je s nimi? | *Sú mi malé. Máte väčšie? ;; Sú mi malý. Máte väčší? ;; Malé nohavice som.
+> Predavačka: Máte bloček? | *Áno, nech sa páči. ;; Áno, nech sa páčiš. ;; Bloček je mať.
+> Predavačka: Tu sú o číslo väčšie. | *Ďakujem, tieto mi sedia. ;; Ďakujem, tieto mi sedí. ;; Sedím, ďakujem.
+X dr: - | Predavač: Prečo chcete tovar vrátiť? | *Nesedí mi to a nepáči sa mi farba. ;; Nesedím to a nepáčim farba. ;; Vrátiť je farba.
+= Nesedí mi to; nepáči sa mi.
+X np: Ти купила футболку, а вдома побачила дірку. Ти пояснюєш у магазині. | *Na tričku je diera. Chcem to reklamovať. ;; Tričko diera má je. ;; Na tričko je dieru. ;; Chcem vrátenie tričko diera.
+= Брак — reklamácia.
+X ce: Виправ речення. | Chcem vymeniť na väčší veľkosť. | Chcem vymeniť za väčšiu veľkosť. ;; Chcem to vymeniť za väčšiu veľkosť.
+= vymeniť za; veľkosť — väčšiu.
+X ms: Обери типові умови повернення одягу. | - | *tovar s visačkou ;; *pokladničný doklad ;; *lehota 30 dní ;; nosený tovar ;; tovar bez dokladu
+= Не ношена річ, бирка, чек, строк.
+F: Подарунок не підійшов || Чоловікові подарували светр, але він замалий. Ти йдеш у магазин.
+S: Продавчиня: «Dobrý deň, prosím?» Ти пояснюєш. | *Dobrý deň, chcela by som vymeniť tento sveter. ;; Dobrý deň, chcela by som vymeniť táto sveter. ;; Sveter vymeniť by som.
+S: «Aký je problém?» (чоловікові малий) | *Je mu malý. ;; Je mu malá. ;; Je ho malý.
+S: «Máte pokladničný doklad? Lehota je 30 dní.» Що потрібно? | *чек, строк — 30 днів ;; паспорт, строк — 30 днів ;; чек, строк — 3 дні
+S: Більшого розміру немає. Ти просиш повернути гроші. | *Tak mi, prosím, vráťte peniaze. ;; Tak mi, prosím, vrátiť peniaze. ;; Peniaze vrátenie prosím mi.
+R: vrátenie peňazí / výmena za inú veľkosť ;; lehota, visačka, pokladničný doklad ;; diera, chybný → reklamácia ;; Chcela by som to vrátiť / vymeniť
+
+@lesson vypredaj | Розпродаж | Výpredaj
+desc: Розпродажі й знижки на одяг: zľava 30 %, pôvodná a znížená cena, za polovicu ceny, posledné kusy.
+goal: Зрозуміти цінники на розпродажі й порахувати, скільки заплатиш.
+out: читати й казати відсотки: jedno percento, tri percentá, dvadsať percent ;; розрізняти pôvodná / znížená cena ;; розуміти za polovicu ceny, posledné kusy ;; питати Platí zľava aj na…?
+done: Ти орієнтуєшся на розпродажі. Далі — підсумок розділу.
+T: Percentá || «Výpredaj» і «zľava» ти вже знаєш. Знижку дають у відсотках — «percento». 1 — percento, 2–4 — percentá, 5 і більше — percent: «zľava dvadsať percent» (–20 %). «O 30 % lacnejšie» — на 30 % дешевше. || Všetko je so zľavou 50 %. = Усе зі знижкою 50 %. ;; Kabáty sú o 30 % lacnejšie. = Пальта на 30 % дешевші. || 1 percento, 3 percentá, 20 percent
+T: Pôvodná a znížená cena || На цінниках: «pôvodná cena» — початкова ціна (часто закреслена), «znížená cena» — знижена ціна. «Za polovicu ceny» — за півціни. «Druhý kus za polovicu ceny» — друга річ за півціни. || Pôvodná cena: 60 €, teraz: 42 €. = Початкова ціна 60 €, тепер 42 €. || pôvodná → znížená
+T: Posledné kusy || «Posledné kusy!» — останні речі, залишилося мало. «Platí zľava aj na…?» — знижка діє і на…? «Zľava sa odpočíta pri pokladni» — знижку віднімуть на касі. || Platí zľava aj na obuv? = Знижка діє і на взуття? ;; Zľava sa odpočíta pri pokladni. = Знижку віднімуть на касі. || posledné kusy; zľava platí na…
+mis: dvadsať percentá => dvadsať percent ;; tri percent => tri percentá ;; za polovica ceny => za polovicu ceny
+W: percento | відсоток | перценто | Zľava je tridsať percent. | Знижка — тридцять відсотків.
+W: pôvodný | початковий | пуоводні: | Pôvodná cena bola sto eur. | Початкова ціна була сто євро.
+W: znížený | знижений | зніжені: | Znížená cena platí do nedele. | Знижена ціна діє до неділі.
+W: polovica | половина | половіца | Kabát som kúpila za polovicu ceny. | Я купила пальто за півціни.
+W: posledný | останній | последні: | Toto je posledný kus. | Це остання річ.
+X mt: З’єднай. | percento = відсоток ;; pôvodný = початковий ;; znížený = знижений ;; polovica = половина ;; posledný = останній ;; výpredaj = розпродаж
+X dd: Обери. | Zľava je dvadsať [*percent/percentá/percento].
+= 5 і більше — percent.
+X dd: Обери. | Je to len o tri [*percentá/percent/percento] lacnejšie.
+= 2–4 — percentá.
+X sc~: Що означає «Druhý kus za polovicu ceny»? | - | *друга річ за півціни ;; дві речі за ціною однієї ;; половина речей безкоштовно
+= druhý kus — друга річ, za polovicu ceny — за півціни.
+X tf: - | - | Якщо pôvodná cena — 80 €, а zľava — 50 %, то znížená cena — 40 €. | T
+= Половина від 80 — 40.
+X menu: Подивись на цінники на розпродажі. | Výpredaj: vlnený kabát (pôvodne 120 €) = 60 € ;; Výpredaj: kožená bunda (pôvodne 150 €) = 105 € ;; Výpredaj: bavlnené tričko (pôvodne 20 €) = 10 € ;; Nová kolekcia: tenisky = 79 €
+q~: Яка знижка на шкіряну куртку? | *30 % ;; 50 % ;; 45 %
+q~: На що немає знижки? | *tenisky ;; kabát ;; tričko
+X fb: Допиши. | Toto je ___ kus. (останній) | posledný |
+= kus — чоловічий рід: posledný.
+X fe: - | Všetky svetre sú so zľavou štyridsať [percentá>percent].
+= 40 — percent.
+X so: - | Спитай, чи знижка діє і на взуття. | Platí zľava aj na obuv?
+= Platí zľava aj na…?
+X rc: - | Veľký letný výpredaj v obchodnom dome Centrum! Od pondelka do nedele má všetko dámske a pánske oblečenie zľavu 30 %. Topánky a tenisky: druhý pár za polovicu ceny. Detské oblečenie: zľava 20 %. Posledné kusy letných šiat až do –70 %! Zľava sa odpočíta pri pokladni.
+q~: Яка знижка на жіночий одяг? | *30 % ;; 20 % ;; 70 %
+q~: Ти купуєш дві пари взуття. Що буде з другою парою? | *вона за півціни ;; вона безкоштовна ;; на неї немає знижки
+q~: Коли віднімуть знижку? | *на касі ;; на сайті ;; при поверненні
+X dr: - | Predavačka: Tento kabát je posledný kus. | *Aká je teraz cena? ;; Aký je teraz cenu? ;; Posledný kus som.
+= cena — жіночий рід: Aká je cena?
+X np: Ти питаєш, скільки пальто коштувало спочатку. | *Aká bola pôvodná cena? ;; Aký bol pôvodný cena? ;; Pôvodná cena bola je? ;; Koľko pôvodne cena?
+= pôvodná cena — початкова ціна.
+X mic: - | На вітрині напис: «Výpredaj do vypredania zásob!» | do vypredania zásob | *поки товар не закінчиться ;; до кінця місяця ;; лише для постійних клієнтів
+= vypredať — розпродати, zásoby — запаси.
+X ms: Обери правильні форми. | - | *jedno percento ;; *tri percentá ;; *päťdesiat percent ;; dve percent ;; desať percentá
+= 1 percento, 2–4 percentá, 5+ percent.
+F: Зимовий розпродаж || Ти шукаєш тепле пальто на розпродажі.
+S: Ти бачиш цінник «–40 %» і питаєш, чи це на всі пальта. | *Platí zľava na všetky kabáty? ;; Platí zľava na všetky kabát? ;; Zľava kabáty všetky je?
+S: «Áno, pôvodná cena je 100 €, teraz 60 €.» Скільки ти заплатиш? | *60 € ;; 40 € ;; 100 €
+S: «Tento vlnený je posledný kus vo veľkosti M.» Що це означає? | *це останнє вовняне пальто розміру M ;; це перше пальто нової колекції ;; пальта розміру M привезуть завтра
+S: Пальто тобі підходить, ти його береш. | *Dobre, beriem ho. ;; Dobre, beriem ju. ;; Dobre, beriem to je.
+R: 1 percento, 3 percentá, 20 percent ;; pôvodná / znížená cena ;; za polovicu ceny, posledné kusy ;; Platí zľava aj na…?
+
+@lesson oblecenie-opakovanie | Підсумок: одяг і покупки | Opakovanie: oblečenie a nákupy
+desc: Підсумок розділу: одяг і взуття, розміри, кольори й матеріали, примірка, páči sa mi, повернення й розпродаж.
+goal: Самостійно купити одяг — від вибору до каси — і за потреби повернути його.
+out: описувати одяг за кольором, розміром і матеріалом ;; приміряти й оцінювати: sedí mi, páči sa mi ;; купувати взуття за číslom ;; повертати й обмінювати товар, розуміти знижки
+done: Розділ «Одяг і покупки» завершено! Далі — минулий час: як розповісти, що було вчора.
+T: Ще трохи одягу || «Oblek» — костюм (чоловічий), «kravata» — краватка, «opasok» — ремінь, пасок, «móda» — мода: «Je to v móde» — це в моді. || Na pohovor si oblečiem oblek. = На співбесіду вдягну костюм. ;; K obleku patrí kravata. = До костюма пасує краватка. || oblek, kravata, opasok, móda
+T: Покупка крок за кроком || Hľadám… → Máte to vo veľkosti M / v inej farbe? → Môžem si to vyskúšať? → Sedí mi to. Páči sa mi. → Beriem to. → Platí zľava? → Chcem to vymeniť / vrátiť. || Beriem tú tmavomodrú košeľu. = Я беру ту темно-синю сорочку. || від вибору до повернення
+T: Шпаргалка || nohavice, šaty — sú; veľkosť (одяг) / číslo (взуття); hnedý kabát / hnedá sukňa / hnedé šaty; páči sa mi / páčia sa mi; mi, ti, mu, jej; 1 percento, 3 percentá, 5 percent; vrátenie / výmena / reklamácia. || Tie čižmy sa mi páčia, ale tlačia ma. = Ці чоботи мені подобаються, але тиснуть. || Головне
+W: oblek | костюм (чоловічий) | облек | Na svadbu si manžel oblečie oblek. | На весілля чоловік вдягне костюм.
+W: kravata | краватка | кравата | Manžel nerád nosí kravatu. | Чоловік не любить носити краватку.
+W: opasok | ремінь, пасок | опасок | Nohavice sú mi veľké, potrebujem opasok. | Штани мені великі, потрібен ремінь.
+W: móda | мода | мо:да | Široké nohavice sú v móde. | Широкі штани в моді.
+X rc: - | Je sobota a Olena je v obchodnom dome. Hľadá elegantné šaty na svadbu sestry. Na prvom poschodí je výpredaj: všetky šaty majú zľavu 30 %. Olena si vyskúša tmavomodré šaty vo veľkosti M, ale sú jej tesné. Predavačka jej dá o číslo väčšie. Tie jej sedia perfektne a farba jej pristane. Pôvodná cena je 80 €, so zľavou zaplatí 56 €. Ešte si kúpi béžové topánky v čísle 38.
+q~: Навіщо Олені сукня? | *на весілля сестри ;; на роботу ;; на співбесіду
+q~: Яка проблема з першою сукнею? | *вона тісна ;; вона завелика ;; їй не подобається колір
+q~: Скільки Олена заплатить за сукню? | *56 € ;; 80 € ;; 30 €
+X cz: - | Tie nohavice {sú} mi úzke. Máte ich o číslo {väčšie}? A tá košeľa sa mi veľmi {páči}. | Узгодження з річчю.
+X mt: З’єднай. | oblek = костюм ;; kravata = краватка ;; opasok = ремінь ;; móda = мода
+X fe: - | Moja nová sukňa je [hnedý>hnedá] a veľmi pohodlná.
+= sukňa — жіночий рід: hnedá.
+X ce: Виправ речення. | Tie šaty je mi tesný. | Tie šaty sú mi tesné.
+= šaty — множина: sú, tesné.
+X bd: - | Ти успішно купив(ла) куртку!
+> Predavač: Dobrý deň, môžem vám pomôcť? | *Áno, hľadám zimnú bundu. ;; Áno, hľadám zimný bundu. ;; Bunda hľadať zima.
+> Predavač: Akú veľkosť nosíte? | *Zvyčajne M. Môžem si ju vyskúšať? ;; Zvyčajne M. Môžem vyskúšať si ju? ;; Číslo štyridsaťdva topánky.
+> Predavač: Ako vám sedí? | *Sedí mi dobre a farba sa mi páči. ;; Sedím dobre a farba ma páči. ;; Sedí ma dobre.
+> Predavač: Dnes je na bundy zľava 20 %. | *Super, tak ju beriem. ;; Super, tak ho beriem. ;; Zľava beriem je.
+X so: - | Скажи, що широкі штани в моді. | Široké nohavice sú v móde.
+= byť v móde — бути в моді.
+X dd: Обери. | Hľadám [*vlnený/vlnená/vlnené] šál.
+= šál — чоловічий рід: vlnený.
+X tf: - | - | Про взуття зазвичай питають «Aké číslo nosíte?», а про одяг — «Akú veľkosť nosíte?» | T
+= číslo — взуття, veľkosť — одяг.
+X np: Ти (жінка) хочеш повернути цю шапку. | *Chcela by som vrátiť túto čiapku. ;; Chcela by som vrátiť tento čiapku. ;; Čiapka vrátiť chcem by. ;; Chcela by som vrátenie čiapka.
+= čiapka — жіночий рід: túto čiapku.
+X wb: Склади. | Tá farba ti [pristane]. ;; Zľava je dvadsať [percent]. | pristaneš ;; percentá
+= farba — pristane; 20 — percent.
+X dr: - | Kamarátka: Ako sa ti páčia moje nové čižmy? | *Veľmi sa mi páčia, sú elegantné. ;; Veľmi sa mi páči, sú elegantný. ;; Páčim ich veľmi.
+= čižmy — множина: páčia sa, elegantné.
+X msg: Прочитай повідомлення. | ModaShop | Dobrý deň, vaša žiadosť o výmenu je prijatá. Nové tenisky v čísle 41 vám pošleme do troch dní. Staré tenisky nám pošlite späť zadarmo. | Що зробить магазин? | *надішле нові кросівки 41-го розміру протягом трьох днів ;; поверне гроші протягом трьох днів ;; надішле ті самі кросівки ще раз
+= výmena — обмін: нові кросівки іншого розміру.
+X ms: Обери правильні речення. | - | *Mám na sebe sivý sveter. ;; *Tie nohavice sú mi široké. ;; *Platí zľava aj na obuv? ;; Mám na sebe sivá sveter. ;; Tie nohavice je mi široké.
+= Узгодження й множина.
+F: Співбесіда в понеділок || Тобі потрібен костюм на співбесіду, і ти йдеш у магазин.
+S: Продавець: «Čo hľadáte?» (чоловічий костюм) | *Hľadám pánsky oblek. ;; Hľadám pánska oblek. ;; Oblek hľadať pánsky.
+S: «Akú farbu?» (темно-сірий) | *Tmavosivý, prosím. ;; Tmavo sivá, prosím. ;; Farbu tmavosivú je.
+S: «Na obleky je teraz zľava 25 %. Pôvodná cena je 200 €.» Скільки коштує костюм зараз? | *150 € ;; 175 € ;; 225 €
+S: Костюм сидить і подобається тобі. | *Sedí mi a páči sa mi. Beriem ho. ;; Sedím a páčim sa. Beriem ho. ;; Sedí ma, páči ma, beriem.
+R: oblečenie, obuv, oblek, kravata, opasok ;; veľkosť / číslo; Sedí mi to ;; páči sa mi / páčia sa mi ;; vrátenie, výmena, zľava 20 percent

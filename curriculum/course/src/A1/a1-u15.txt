@@ -1,0 +1,501 @@
+@unit a1-u15 | Здоров’я | Zdravie
+
+@lesson telo | Тіло людини | Ľudské telo
+desc: Частини тіла детальніше: hrdlo, žalúdok, pľúca, lakeť, členok, koža; множина oči, uši; ліва й права сторона.
+goal: Точно назвати частину тіла, зокрема ліву чи праву.
+out: називати нові частини тіла ;; розрізняти krk і hrdlo ;; утворювати oči, uši, ruky, nohy ;; казати ľavá ruka / pravé koleno
+done: Ти точно називаєш частини тіла. Далі — як описати біль.
+T: Від голови до ніг || Ти вже знаєш hlava, ruka, noha, brucho, chrbát. Тепер детальніше: «tvár» — обличчя, «hrdlo» — горло, «plece» — плече, «lakeť» — лікоть, «hrudník» — грудна клітка, «žalúdok» — шлунок, «členok» — щиколотка, «koža» — шкіра. Увага: «krk» — це шия, а горло всередині — «hrdlo». || Bolí ma hrdlo. = Болить горло. ;; Mám suchú kožu. = У мене суха шкіра. || krk = шия, hrdlo = горло
+T: Двоє очей, двоє вух || Деякі слова мають неправильну множину: oko → «oči», ucho → «uši». Інші — регулярно: ruka → ruky, noha → nohy, zub → zuby. «Pľúca» (легені) мають лише множину: «Pľúca sú zdravé». || Mám modré oči. = У мене блакитні очі. ;; Bolia ma uši. = Болять вуха. || oko → oči, ucho → uši
+T: Ľavý alebo pravý? || «Ľavý» — лівий, «pravý» — правий. Вони узгоджуються з родом: «ľavý lakeť» (ч.), «ľavá ruka» (ж.), «ľavé koleno» (с.). У знахідному відмінку: «Udrel som si pravú ruku» — я вдарив праву руку. || Bolí ma pravé koleno. = Болить праве коліно. ;; Ľavé oko je červené. = Ліве око червоне. || ľavý / ľavá / ľavé
+mis: Bolia ma oká. => Bolia ma oči. ;; Bolí ma ľavý ruka. => Bolí ma ľavá ruka. ;; Pľúca je zdravá. => Pľúca sú zdravé.
+W: hrdlo | горло | грдло | Bolí ma hrdlo a mám kašeľ. | Болить горло, і в мене кашель.
+W: žalúdok | шлунок | жалу:док | Mám citlivý žalúdok. | У мене чутливий шлунок.
+W: pľúca | легені | пльу:ца | Lekár počúva pľúca. | Лікар слухає легені.
+W: lakeť | лікоть | лакеть | Udrel som si lakeť o stôl. | Я вдарився ліктем об стіл.
+W: členok | щиколотка | членок | Pri behu som si vyvrtol členok. | Під час бігу я підвернув щиколотку.
+W: koža | шкіра | кожа | V zime mám suchú kožu. | Узимку в мене суха шкіра.
+X mt: З’єднай. | hrdlo = горло ;; žalúdok = шлунок ;; pľúca = легені ;; lakeť = лікоть ;; členok = щиколотка ;; koža = шкіра
+X dd: Обери. | Mám hnedé [*oči/oká/oko].
+= oko → oči (множина).
+X dd: Обери. | Bolí ma [*ľavé/ľavý/ľavá] koleno.
+= koleno — середній рід: ľavé.
+X sc~: Що означає «Bolí ma hrdlo»? | - | *Болить горло ;; Болить шия ;; Болить голова
+= hrdlo — горло, а krk — шия.
+X tf: - | - | Слово «pľúca» має лише форму множини. | T
+= Pľúca sú zdravé — дієслово в множині.
+X cat: Де це? | Hlava a krk: oko, ucho, hrdlo, tvár ;; Ruka: lakeť, prst ;; Noha: koleno, členok
+= Частини голови, руки й ноги.
+X fb: Допиши. | Bolia ma ___. (вуха) | uši |
+= ucho → uši.
+X so: - | Скажи, що в тебе болить праве коліно. | Bolí ma pravé koleno.
+= koleno — с. р.: pravé.
+X fe: - | Moja dcéra má krásne modré [oká>oči] po otcovi.
+= Очі — oči.
+X dr: - | Lekárka: Ktorá ruka vás bolí? | *Ľavá, hlavne lakeť. ;; Ľavý, hlavne lakťa. ;; Ruka ľavé.
+= ruka — жіночий рід: ľavá.
+X np: Ти пояснюєш лікарю, що під час бігу підвернув щиколотку. | *Pri behu som si vyvrtol členok. ;; Pri behu členok som bolí. ;; Beh členok vyvrtnúť. ;; Členok mám beh.
+= vyvrtnúť si členok — підвернути щиколотку.
+X ms: Обери слова у множині. | - | *oči ;; *uši ;; *pľúca ;; žalúdok ;; lakeť
+= oči, uši, pľúca — множина.
+X wb: Склади. | V zime mám suchú [kožu]. ;; Mám citlivý [žalúdok]. | hrdlo ;; pľúca
+= suchú kožu (ж. р.), citlivý žalúdok (ч. р.).
+X rc: - | Pani Olena pracuje v sklade. Celý deň dvíha ťažké krabice. Večer ju bolí chrbát a pravé plece. Minulý týždeň si pri práci udrela ľavý lakeť. Lakeť ju už nebolí, ale plece áno. Zajtra ide k lekárovi.
+q~: Що болить Олену ввечері? | *спина і праве плече ;; спина і лівий лікоть ;; живіт і праве плече
+q~: Що сталося минулого тижня? | *вона вдарила лівий лікоть ;; вона підвернула щиколотку ;; вона захворіла
+q~: Що вона робить завтра? | *іде до лікаря ;; іде на роботу ;; іде в аптеку
+F: Після падіння || Ти (чоловік) послизнувся на сходах і прийшов до лікаря.
+S: Лікар: «Čo sa stalo?» (ти впав на сходах) | *Spadol som na schodoch. ;; Spadla som na schodoch. ;; Spadnúť schody.
+S: «Čo vás bolí?» (ліва щиколотка) | *Ľavý členok. ;; Ľavá členok. ;; Ľavé členok.
+S: «Ukážte mi aj ruky. Lakeť je v poriadku?» Що питає лікар? | *чи все гаразд із ліктем ;; чи болить коліно ;; чи можеш ти ходити
+S: Ти кажеш, що ще болить праве плече. | *Bolí ma aj pravé plece. ;; Bolí ma aj pravý plece. ;; Plece pravé bolia.
+R: hrdlo, žalúdok, pľúca, lakeť, členok, koža ;; krk — шия, hrdlo — горло ;; oko → oči, ucho → uši ;; ľavý / ľavá / ľavé
+
+@lesson ako-to-boli | Що болить і як | Čo a ako bolí
+desc: Описуємо біль детальніше: кого болить (ma, ho, ju), відколи, як сильно; інші відчуття: pichá, svrbí, točí sa mi hlava.
+goal: Описати лікарю свій біль чи біль дитини: де, відколи і як сильно.
+out: казати Bolí ho / ju / ich ;; казати od včera, už tri dni ;; описувати pichá ma, svrbí ma ;; казати Točí sa mi hlava
+done: Ти детально описуєш біль. Далі — візит до лікаря.
+T: Koho to bolí? || «Bolí ma» — мене болить. Інші особи: ťa (тебе), ho (його), ju (її), nás, vás, ich. З іменем — знахідний відмінок: «Syna bolí ucho», «Mamu bolí hlava». Питання: «Čo ťa bolí?» — що в тебе болить? || Bolí ho zub. = У нього болить зуб. ;; Dcéru bolí brucho. = У доньки болить живіт. || ma, ťa, ho, ju, nás, vás, ich
+T: Odkedy a ako veľmi? || Відколи: «od včera» — з учора, «od rána» — із ранку, «už tri dni» — уже три дні. Як сильно: «trochu» — трохи, «veľmi» — дуже, «strašne» — страшенно. Іменник «bolesť» — біль: «Mám silné bolesti» — у мене сильний біль. || Bolí ma to od rána. = Болить із ранку. ;; Hlava ma bolí už dva dni. = Голова болить уже два дні. || od včera, už … dni
+T: Iné pocity || «Pichá ma v boku» — колить у боці. «Svrbí ma ruka» — свербить рука. «Točí sa mi hlava» — паморочиться в голові. «Mám opuchnutú nohu» — у мене набрякла нога. «Závrat» — запаморочення. || Svrbí ma koža. = Свербить шкіра. ;; Točí sa mi hlava. = У мене паморочиться в голові. || pichá ma, svrbí ma, točí sa mi
+mis: Syn bolí ucho. => Syna bolí ucho. ;; Bolí mi hlava. => Bolí ma hlava. ;; Točí ma hlava. => Točí sa mi hlava.
+W: bolesť | біль | болесть | Mám silnú bolesť v hrudi. | У мене сильний біль у грудях.
+W: pichať | колоти | піхат | Pichá ma v boku, keď bežím. | Коли біжу, у мене колить у боці.
+W: svrbieť | свербіти | сврбієт | Svrbí ma celé telo. | У мене свербить усе тіло.
+W: opuchnutý | набряклий, опухлий | опухнуті: | Členok je opuchnutý a modrý. | Щиколотка набрякла й синя.
+W: závrat | запаморочення | за:врат | Ráno som mal silný závrat. | Зранку в мене було сильне запаморочення.
+X mt: З’єднай. | bolesť = біль ;; pichať = колоти ;; svrbieť = свербіти ;; opuchnutý = набряклий ;; závrat = запаморочення
+X dd: Обери. | [*Syna/Syn/Synovi] bolí ucho.
+= Кого болить — знахідний: syna.
+X dd: Обери (про дружину). | Bolí [*ju/ho/ich] hlava.
+= Вона — ju.
+X fb: Допиши. | Bolí ma to ___ včera. (з) | od |
+= od včera — з учора.
+X sc~: Що означає «Točí sa mi hlava»? | - | *У мене паморочиться в голові ;; У мене болить голова ;; Я повертаю голову
+= točiť sa — крутитися.
+X tf: - | - | Правильно казати «Bolí mi hlava». | F
+= Правильно: Bolí ma hlava — особа в знахідному.
+X cat: Відколи чи як сильно? | Odkedy: od včera, od rána, už tri dni ;; Ako veľmi: trochu, veľmi, strašne
+= Час і сила болю.
+X so: - | Скажи, що в нього болить зуб. | Bolí ho zub.
+= ho — його.
+X fe: - | Môjho [syn>syna] bolí ucho od rána.
+= Знахідний: môjho syna.
+X ce: Виправ речення. | Bolí mi hlava od rána. | Bolí ma hlava od rána. ;; Od rána ma bolí hlava.
+= Bolí ma, а не bolí mi.
+X dr: - | Lekár: Odkedy vás to bolí? | *Už tri dni. ;; Už tri dňa. ;; Tri dni už od.
+= už tri dni — уже три дні.
+X np: Ти кажеш лікарю, що в тебе колить у боці й паморочиться в голові. | *Pichá ma v boku a točí sa mi hlava. ;; Pichám v boku a točím hlavu. ;; Bok pichá a hlava točí ma. ;; Mám pichanie a hlava sa točí mi.
+= pichá ma + točí sa mi hlava.
+X msg: Прочитай повідомлення. | Škôlka Slnečnica | Dobrý deň, pani Kovalenko, Maxima od obeda bolí hlava a má teplotu 38,2. Prosím, príďte si poňho čo najskôr. | Що сталося? | *у Максима болить голова й температура ;; Максим упав і вдарився головою ;; Максим не хоче їсти
+= Maxima bolí hlava — у Максима болить голова.
+X ms: Обери правильні речення. | - | *Bolí ma hrdlo. ;; *Syna bolí ucho. ;; *Svrbí ma koža. ;; Bolí mi hrdlo. ;; Syn bolí ucho.
+= Особа — у знахідному відмінку.
+F: Дзвінок лікарці || Твій чоловік захворів, і ти розповідаєш лікарці по телефону.
+S: Лікарка: «Čo manžela bolí?» (голова й горло) | *Bolí ho hlava a hrdlo. ;; Bolí ju hlava a hrdlo. ;; Bolí mu hlava a hrdlo.
+S: «Odkedy?» (з учора) | *Od včera. ;; Do včera. ;; Včera od.
+S: «Točí sa mu hlava?» Що питає лікарка? | *чи паморочиться в нього в голові ;; чи болить у нього голова ;; чи може він повернути голову
+S: Ти додаєш, що в нього ще свербить шкіра. | *Áno, a svrbí ho koža. ;; Áno, a svrbí mu koža. ;; Áno, a koža svrbí ho je.
+R: Bolí ma / ho / ju; Syna bolí… ;; od včera, od rána, už tri dni ;; pichá ma, svrbí ma, točí sa mi hlava ;; bolesť, opuchnutý, závrat
+
+@lesson u-lekara | У лікаря | U lekára
+desc: Візит до сімейного лікаря: ambulancia, pacient, preukaz poistenca, vyšetrenie; k lekárovi чи u lekára; команди лікаря.
+goal: Пройти прийом у лікаря: показати документ, пояснити проблему й зрозуміти вказівки.
+out: розрізняти ísť k lekárovi / byť u lekára ;; показувати preukaz poistenca ;; відповідати на Čo vás trápi? ;; розуміти команди Dýchajte zhlboka, Vyzlečte sa
+done: Ти впораєшся на прийомі. Далі — як записатися до лікаря.
+T: K lekárovi, u lekára || Рух до людини — «k» + давальний: «Idem k lekárovi» (до лікаря), «k zubárovi», «k doktorke». Місце — «u» + родовий: «Som u lekára» (у лікаря). «Všeobecný lekár» — сімейний лікар: спершу йдуть до нього, а до спеціаліста — з направленням («výmenný lístok»). || Zajtra idem k lekárovi. = Завтра я йду до лікаря. ;; Bola som u zubára. = Я була в стоматолога. || k + давальний / u + родовий
+T: V ambulancii || «Ambulancia» — кабінет лікаря, амбулаторія. Медсестра просить «preukaz poistenca» — картку медичного страхування, її показують при кожному візиті. Лікар питає: «Čo vás trápi?» — що вас турбує? «Odkedy máte ťažkosti?» — відколи у вас проблеми? || Váš preukaz poistenca, prosím. = Вашу картку страхування, будь ласка. ;; Čo vás trápi? = Що вас турбує? || preukaz poistenca = картка медичного страхування
+T: Pokyny lekára || Лікар говорить наказовим способом на «vy»: «Vyzlečte sa do pása» — роздягніться до пояса. «Dýchajte zhlboka» — дихайте глибоко. «Nedýchajte» — не дихайте. «Otvorte ústa» — відкрийте рот. «Ľahnite si» — ляжте. «Oblečte sa» — одягніться. || Otvorte ústa a povedzte „á“. = Відкрийте рот і скажіть «а». || vyzlečte sa, dýchajte, ľahnite si
+mis: Idem u lekára. => Idem k lekárovi. ;; Som k lekárovi. => Som u lekára.
+W: všeobecný lekár | сімейний лікар | всеобецні: лека:р | Môj všeobecný lekár ordinuje do obeda. | Мій сімейний лікар приймає до обіду.
+W: ambulancia | амбулаторія, кабінет лікаря | амбуланція | Ambulancia je hneď vedľa lekárne. | Амбулаторія одразу біля аптеки.
+W: pacient | пацієнт | пацієнт | Pred ambulanciou čaká päť pacientov. | Під кабінетом чекають п’ятеро пацієнтів.
+W: preukaz poistenca | картка медичного страхування | преуказ поістенца | Nezabudnite si preukaz poistenca. | Не забудьте картку страхування.
+W: vyšetrenie | обстеження, огляд | вишетреніє | Vyšetrenie trvá desať minút. | Огляд триває десять хвилин.
+W: dýchať | дихати | ді:хат | Dýchajte zhlboka, prosím. | Дихайте глибоко, будь ласка.
+W: trápiť | турбувати, мучити | тра:піт | Čo vás trápi? | Що вас турбує?
+X mt: З’єднай. | všeobecný lekár = сімейний лікар ;; ambulancia = амбулаторія ;; pacient = пацієнт ;; vyšetrenie = огляд ;; dýchať = дихати ;; trápiť = турбувати
+X dd: Обери. | Zajtra idem [*k/u/do] lekárovi.
+= Рух до людини — k + давальний.
+X dd: Обери. | Včera som bola u [*zubára/zubárovi/zubár].
+= u + родовий: zubára.
+X sc~: Що означає «Čo vás trápi?» | - | *Що вас турбує? ;; Що ви робите? ;; Що вам треба купити?
+= trápiť — турбувати.
+X tf: - | - | «Vyzlečte sa do pása» означає «Одягніться». | F
+= Vyzlečte sa — роздягніться; одягніться — oblečte sa.
+X col: З’єднай команди лікаря. | Dýchajte = zhlboka ;; Otvorte = ústa ;; Vyzlečte sa = do pása ;; Ľahnite si = na lehátko
+X fb: Допиши. | Váš preukaz ___, prosím. | poistenca |
+= preukaz poistenca — картка страхування.
+X so: - | Скажи як лікар: роздягніться до пояса. | Vyzlečte sa do pása.
+= vyzliecť sa — роздягтися.
+X fe: - | Zajtra ráno idem [u>k] lekárovi.
+= Рух — k lekárovi.
+X do: Склади діалог. | Sestra: Dobrý deň, váš preukaz poistenca, prosím. ;; Pacient: Nech sa páči. ;; Lekárka: Čo vás trápi? ;; Pacient: Od včera ma bolí hrdlo a kašlem. ;; Lekárka: Otvorte ústa, prosím. ;; Pacient: Á…
+= Документ → проблема → огляд.
+X dr: - | Lekár: Odkedy máte tie ťažkosti? | *Asi týždeň. ;; Asi týždne. ;; Týždeň asi od mám.
+= asi týždeň — приблизно тиждень.
+X np: Ти не зрозумів(-ла) лікаря й просиш повторити повільніше. | *Prepáčte, môžete to zopakovať pomalšie? ;; Prepáčte, zopakovať pomaly vy? ;; Pomalšie, opakujte ma. ;; Nerozumieť, prosím.
+= Ввічливе прохання повторити.
+X doc: Прочитай документ. | Ambulancia všeobecného lekára — MUDr. Peter Horák | Pacient: Andrii Melnyk ;; Dátum: 14. 10. ;; Diagnóza: akútny zápal hrdla ;; Odporúčanie: kontrola o 7 dní | Коли треба прийти знову? | *через 7 днів ;; через 14 днів ;; завтра
+= kontrola o 7 dní — контроль через 7 днів.
+X ms: Обери команди лікаря. | - | *Dýchajte zhlboka. ;; *Otvorte ústa. ;; *Ľahnite si. ;; Dobrú chuť. ;; Šťastnú cestu.
+= Команди — наказовий спосіб.
+F: Перший візит || Ти вперше прийшов (прийшла) до сімейного лікаря у Словаччині.
+S: Медсестра: «Máte preukaz poistenca?» | *Áno, nech sa páči. ;; Áno, preukaz je poistenca. ;; Mám poistenec.
+S: Лікар: «Čo vás trápi?» (уже тиждень болить спина) | *Už týždeň ma bolí chrbát. ;; Už týždeň mi bolí chrbát. ;; Chrbát bolí ma týždeň už je.
+S: «Vyzlečte sa do pása a ľahnite si.» Що треба зробити? | *роздягтися до пояса й лягти ;; одягтися й сісти ;; роззутися й постояти
+S: Лікар каже «Ľahnite si na lehátko», а ти не знаєш слова. | *Prepáčte, čo znamená „lehátko“? ;; Prepáčte, čo je znamená lehátko? ;; Lehátko čo je to znamená?
+R: ísť k lekárovi / byť u lekára ;; preukaz poistenca, ambulancia, vyšetrenie ;; Čo vás trápi? ;; Vyzlečte sa, dýchajte zhlboka, ľahnite si
+
+@lesson objednanie | Запис до лікаря | Objednanie k lekárovi
+desc: Як записатися до лікаря телефоном: objednať sa, voľný termín, ordinačné hodiny, akútne prípady, odber krvi nalačno; як скасувати візит.
+goal: Записатися до лікаря, зрозуміти години прийому й за потреби скасувати візит.
+out: казати Chcel(a) by som sa objednať ;; розуміти ordinačné hodiny ;; розуміти akútne prípady і nalačno ;; скасовувати: Musím zrušiť termín
+done: Ти вмієш записатися до лікаря. Далі — аптека детальніше.
+T: Objednať sa || «Objednať» — замовити (піцу), а «objednať sa» — записатися (до лікаря, до перукаря): «Chcel by som sa objednať k pani doktorke Novákovej». «Máte voľný termín?» — у вас є вільний час? «Najbližší termín je v stredu o deviatej» — найближчий вільний запис у середу о дев’ятій. || Chcela by som sa objednať na vyšetrenie. = Я хотіла б записатися на огляд. ;; Máte voľný termín tento týždeň? = У вас є вільний запис цього тижня? || objednať sa = записатися
+T: Ordinačné hodiny || «Ordinačné hodiny» — години прийому. Часто бачиш: «7:00 – 10:00 akútni pacienti» — пацієнти з гострими станами (без запису), «10:00 – 13:00 objednaní pacienti» — пацієнти за записом. «Ordinovať» — приймати пацієнтів. || Pani doktorka ordinuje v pondelok od siedmej. = Лікарка приймає в понеділок із сьомої. ;; S akútnymi ťažkosťami príďte ráno. = З гострими проблемами приходьте зранку. || ordinačné hodiny = години прийому
+T: Odber krvi a zrušenie || «Odber krvi» — забір крові (аналіз). «Príďte nalačno» — приходьте натщесерце (зранку нічого не їжте). Якщо не можете прийти: «Musím zrušiť termín» — мушу скасувати запис, «Môžem sa preobjednať?» — можу перезаписатися? || Na odber krvi príďte nalačno. = На забір крові приходьте натщесерце. ;; Prepáčte, musím zrušiť zajtrajší termín. = Вибачте, мушу скасувати завтрашній запис. || nalačno = натщесерце
+mis: Chcem objednať k lekárovi. => Chcem sa objednať k lekárovi. ;; Musím zrušiť termína. => Musím zrušiť termín.
+W: objednať sa | записатися (на прийом) | об’єднат са | Musím sa objednať k zubárovi. | Мені треба записатися до стоматолога.
+W: ordinačné hodiny | години прийому (лікаря) | ордіначне: годіни | Ordinačné hodiny sú na dverách. | Години прийому написані на дверях.
+W: akútny | гострий (про стан, хворобу) | аку:тні: | Akútni pacienti nemusia byť objednaní. | Пацієнтам у гострому стані не треба записуватися.
+W: odber krvi | забір крові | одбер крві | Odber krvi je od siedmej do ôsmej. | Забір крові — із сьомої до восьмої.
+W: nalačno | натщесерце | налачно | Ráno príďte nalačno. | Зранку приходьте натщесерце.
+W: zrušiť | скасувати | зрушит | Musím zrušiť termín u zubára. | Мушу скасувати запис до стоматолога.
+X mt: З’єднай. | objednať sa = записатися ;; ordinačné hodiny = години прийому ;; akútny = гострий ;; odber krvi = забір крові ;; nalačno = натщесерце ;; zrušiť = скасувати
+X dd: Обери. | Chcel by som [*sa/si/seba] objednať k lekárke.
+= Записатися — objednať sa.
+X sc~: Що означає «Najbližší voľný termín je v piatok»? | - | *Найближчий вільний запис — у п’ятницю ;; Лікар приймає лише в п’ятницю ;; Запис закінчується в п’ятницю
+= najbližší voľný termín — найближчий вільний час.
+X sch: Подивись години прийому. | MUDr. Jana Kováčová — ordinačné hodiny | pondelok = 7:00 – 10:00 akútni, 10:00 – 13:00 objednaní ;; utorok = 12:00 – 18:00 ;; streda = 7:00 – 13:00 ;; štvrtok = 7:00 – 8:00 odber krvi, 8:00 – 13:00 ;; piatok = 7:00 – 12:00 | Коли можна прийти на забір крові? | *у четвер із 7:00 до 8:00 ;; у понеділок із 7:00 до 10:00 ;; у вівторок із 12:00
+= štvrtok — odber krvi 7:00 – 8:00.
+X msg: Прочитай SMS. | Ambulancia MUDr. Kováčovej | Pripomíname Vám termín: štvrtok 16. 10. o 7:15 – odber krvi. Príďte nalačno. Ak nemôžete prísť, termín zrušte telefonicky. | Що треба зробити перед візитом? | *зранку нічого не їсти ;; випити ліки ;; принести направлення
+= nalačno — натщесерце.
+X tf: - | - | «Nalačno» означає, що зранку перед аналізом не можна їсти. | T
+= nalačno — натщесерце.
+X fb: Допиши. | Prepáčte, musím ___ zajtrajší termín. (скасувати) | zrušiť |
+= zrušiť termín — скасувати запис.
+X so: - | Скажи (ти — жінка), що хочеш записатися на огляд. | Chcela by som sa objednať na vyšetrenie.
+= chcela by som sa objednať — ввічливе прохання.
+X fe: - | Chcela by som [si>sa] objednať na odber krvi.
+= Записатися — objednať sa.
+X do: Склади діалог. | Sestra: Ambulancia, dobrý deň. ;; Ivan: Dobrý deň, chcel by som sa objednať k pani doktorke. ;; Sestra: Čo vás trápi? ;; Ivan: Už týždeň ma bolí chrbát. ;; Sestra: Najbližší termín je v stredu o desiatej. ;; Ivan: Dobre, ďakujem, prídem.
+= Привітання → прохання → причина → термін → згода.
+X dr: - | Sestra: V utorok o ôsmej vám to vyhovuje? | *Áno, vyhovuje, ďakujem. ;; Áno, vyhovujem, ďakujem. ;; Áno, to ma vyhovuje.
+= Vyhovuje mi — мені підходить.
+X np: Ти хочеш перенести візит на інший день. | *Môžem sa preobjednať na iný deň? ;; Môžem preobjednať iný deň sa? ;; Iný deň termín môžem? ;; Preobjednať ma deň.
+= preobjednať sa — перезаписатися.
+X cat: Запис чи скасування? | Objednanie: voľný termín, objednať sa, najbližší termín ;; Zrušenie: zrušiť termín, nemôžem prísť, ospravedlňujem sa
+= Фрази для запису й для скасування.
+X ms: Обери, що кажуть, щоб записатися. | - | *Chcel by som sa objednať. ;; *Máte voľný termín? ;; *Kedy ordinuje pani doktorka? ;; Musím zrušiť termín. ;; Chcel by som si objednať pizzu.
+= Перші три — про запис.
+F: Телефон в амбулаторію || У тебе вже тиждень кашель, і ти (жінка) телефонуєш, щоб записатися.
+S: Медсестра: «Ambulancia, dobrý deň.» | *Dobrý deň, chcela by som sa objednať. ;; Dobrý deň, chcela by som objednať. ;; Dobrý deň, objednať sa chcem by.
+S: «Najbližší termín je v piatok o 7:30, na odber krvi. Príďte nalačno.» Що треба зробити? | *прийти в п’ятницю о 7:30, не снідаючи ;; прийти в п’ятницю о 7:30 після сніданку ;; прийти сьогодні ввечері
+S: У п’ятницю ти працюєш. Ти питаєш про інший день. | *V piatok nemôžem. Máte iný termín? ;; V piatok nemôžem. Máte iná termín? ;; Piatok nie môžem termín.
+S: «V pondelok o 8:00?» Тобі підходить. | *Áno, to mi vyhovuje. ;; Áno, to ma vyhovuje. ;; Áno, vyhovujem to.
+R: objednať sa k lekárovi, voľný termín ;; ordinačné hodiny, akútni pacienti ;; odber krvi nalačno ;; zrušiť termín, preobjednať sa
+
+@lesson v-lekarni | В аптеці: форми ліків | V lekárni
+desc: Аптека глибше: мазь, краплі, спрей; ліки за рецептом і без нього, e-рецепт, доплата, інструкція до ліків.
+goal: Купити потрібну форму ліків, зрозуміти доплату й попросити поради фармацевта.
+out: називати masť, kvapky, sprej ;; розрізняти na predpis і voľnopredajný ;; розуміти doplatok і eRecept ;; питати Čo mi odporúčate?
+done: Ти впевнено почуваєшся в аптеці. Далі — як правильно приймати ліки.
+T: Forma lieku || Ти вже знаєш tabletka, sirup, náplasť. Ще: «masť» — мазь, «kvapky» — краплі («kvapky do nosa / do očí / do uší»), «sprej» — спрей, «pastilky» — льодяники (від горла). || Potrebujem kvapky do nosa. = Мені потрібні краплі в ніс. ;; Máte masť na bolesť chrbta? = У вас є мазь від болю в спині? || kvapky do + родовий
+T: Recept a doplatok || «Voľnopredajný liek» — ліки без рецепта, а «na predpis» — за рецептом. Лікар зазвичай виписує «eRecept» — в аптеці достатньо показати картку страхування. Частину ціни платить страхова, а ти платиш «doplatok» — доплату. || Máte eRecept? = У вас е-рецепт? ;; Doplatok je dve eurá. = Доплата — два євро. || na predpis / voľnopredajný
+T: Poradiť sa || Фармацевт — «lekárnik / lekárnička». Можна спитати: «Čo mi odporúčate na…?» — що порадите від…? «Je to vhodné pre deti?» — це підходить дітям? «Príbalový leták» — інструкція в упаковці. || Čo mi odporúčate na nádchu? = Що порадите від нежиті? ;; Prečítajte si príbalový leták. = Прочитайте інструкцію. || Čo mi odporúčate na…?
+W: masť | мазь | масть | Masť natierajte na koleno dvakrát denne. | Мазь наносьте на коліно двічі на день.
+W: kvapky | краплі | квапкі | Dieťa potrebuje kvapky do uší. | Дитині потрібні краплі у вуха.
+W: lekárnik | фармацевт, аптекар | лека:рнік | Opýtajte sa lekárnika. | Запитайте фармацевта.
+W: voľnopredajný | безрецептурний | вольнопреда:йні: | Tento liek je voľnopredajný. | Ці ліки безрецептурні.
+W: doplatok | доплата | доплаток | Doplatok za liek je tri eurá. | Доплата за ліки — три євро.
+W: príbalový leták | інструкція до ліків | при:балові: лета:к | Dávkovanie nájdete v príbalovom letáku. | Дозування знайдете в інструкції.
+X mt: З’єднай. | masť = мазь ;; kvapky = краплі ;; lekárnik = фармацевт ;; voľnopredajný = безрецептурний ;; doplatok = доплата ;; príbalový leták = інструкція до ліків
+X dd: Обери. | Potrebujem kvapky [*do/na/v] očí.
+= kvapky do + родовий: do očí.
+X dd: Обери. | Máte niečo [*na/do/od] nádchu?
+= niečo na + знахідний.
+X sc~: Що означає «Tento liek je len na predpis»? | - | *Ці ліки — лише за рецептом ;; Ці ліки можна купити без рецепта ;; Ці ліки лише для дітей
+= na predpis — за рецептом.
+X tf: - | - | «Doplatok» — це частина ціни, яку платить пацієнт. | T
+= Решту платить страхова.
+X cat: За рецептом чи без? | Na predpis: antibiotiká, inzulín, lieky na tlak ;; Bez predpisu: vitamíny, náplasť, pastilky na hrdlo
+= Сильні ліки — за рецептом.
+X fb: Допиши. | Čo mi ___ na kašeľ? (порадите) | odporúčate |
+= odporúčať — радити.
+X so: - | Спитай, чи це підходить дітям. | Je to vhodné pre deti?
+= vhodné pre — підходить для.
+X fe: - | Potrebujem kvapky do [nos>nosa] pre syna.
+= do + родовий: nosa.
+X doc: Прочитай інструкцію. | Nosový sprej — príbalový leták | Pre koho: dospelí a deti od 6 rokov ;; Dávkovanie: 1 – 2 vstreky do každej nosovej dierky 3-krát denne ;; Užívanie: najviac 7 dní za sebou | Скільки днів поспіль максимум можна використовувати спрей? | *7 днів ;; 6 днів ;; 3 дні
+= najviac 7 dní — щонайбільше 7 днів.
+X dr: - | Lekárnička: Máte eRecept? | *Áno, tu je môj preukaz poistenca. ;; Áno, tu je moja preukaz poistenca. ;; Áno, eRecept som.
+= preukaz — чоловічий рід: môj.
+X np: Тобі потрібна мазь від болю в спині. | *Máte nejakú masť na bolesť chrbta? ;; Máte masť na chrbát bolieť? ;; Masť chrbta bolí mám? ;; Dajte chrbát masť.
+= masť na bolesť chrbta.
+X hm: - | Lekárnik: Bez receptu vám to, žiaľ, nemôžem dať. | *ці ліки продають лише за рецептом ;; ці ліки закінчилися ;; фармацевт радить інші ліки
+= bez receptu nemôžem dať — лише за рецептом.
+X ms: Обери форми ліків. | - | *masť ;; *kvapky ;; *sprej ;; doplatok ;; lekárnik
+= Мазь, краплі, спрей — форми ліків.
+F: В аптеці з дитиною || У сина болить вухо, лікарка виписала е-рецепт.
+S: Фармацевтка: «Dobrý deň, čo si želáte?» | *Dobrý deň, mám eRecept na kvapky do uší. ;; Dobrý deň, mám eRecept na kvapky do ucho. ;; Kvapky uši recept.
+S: «Doplatok je 2,40 €.» Що це означає? | *тобі треба доплатити 2,40 € ;; ліки коштують 2,40 € без рецепта ;; тобі повернуть 2,40 €
+S: Ти просиш ще щось від нежиті без рецепта. | *A máte aj niečo na nádchu bez predpisu? ;; A máte aj niečo na nádcha bez predpis? ;; Nádcha bez predpisu máte?
+S: «Prečítajte si príbalový leták.» Що порадила фармацевтка? | *прочитати інструкцію ;; зберегти чек ;; прийти завтра
+R: masť, kvapky, sprej ;; na predpis / voľnopredajný, eRecept ;; doplatok ;; Čo mi odporúčate? príbalový leták
+
+@lesson uzivanie-liekov | Як приймати ліки | Užívanie liekov
+desc: Дозування і правила: užívať, dávka, každých osem hodín, pred spaním, zapiť vodou; антибіотики, алергія, побічні дії.
+goal: Зрозуміти, як приймати ліки, і сказати лікарю про алергію.
+out: розуміти užívajte… každých 8 hodín ;; розуміти dávka, zapiť vodou ;; казати Som alergický na… ;; розуміти vedľajší účinok
+done: Ти розумієш, як приймати ліки. Далі — назви хвороб.
+T: Ako užívať? || «Užívať» — приймати (ліки). Ти вже знаєш «dvakrát denne, po jedle». Ще: «každých osem hodín» — кожні вісім годин, «pred spaním» — перед сном, «zapiť vodou» — запити водою, «prehltnúť celú» — проковтнути цілою. || Užívajte jednu tabletku každých osem hodín. = Приймайте одну таблетку кожні вісім годин. ;; Tabletku zapite pohárom vody. = Запийте таблетку склянкою води. || každých päť / osem / dvanásť hodín
+T: Dávka a antibiotiká || «Dávka» — доза. «Neprekračujte dávku» — не перевищуйте дозу. Антибіотики приймають до кінця: «Užívajte celé balenie» — навіть коли вже краще. З антибіотиками — без алкоголю. || Antibiotikum užívajte sedem dní. = Антибіотик приймайте сім днів. ;; Neprekračujte odporúčanú dávku. = Не перевищуйте рекомендовану дозу. || celé balenie = до кінця упаковки
+T: Alergia || «Som alergický / alergická na…» + знахідний: «na penicilín», «na peľ» (пилок). Лікар питає: «Máte nejaké alergie?» «Vedľajší účinok» — побічна дія: «Ak máte vedľajšie účinky, prestaňte liek užívať a zavolajte lekára». || Som alergická na penicilín. = У мене алергія на пеніцилін. ;; Máte nejaké alergie? = У вас є якась алергія? || alergický na + знахідний
+mis: Užívajte každé osem hodín. => Užívajte každých osem hodín. ;; Som alergický od penicilínu. => Som alergický na penicilín.
+W: užívať | приймати (ліки) | ужи:ват | Užívate nejaké lieky? | Ви приймаєте якісь ліки?
+W: dávka | доза | да:вка | Dávka pre deti je polovičná. | Доза для дітей — половина.
+W: antibiotikum | антибіотик | антібіотікум | Lekár mi predpísal antibiotikum. | Лікар виписав мені антибіотик.
+W: alergia | алергія | алерґія | Mám alergiu na orechy. | У мене алергія на горіхи.
+W: vedľajší účinok | побічна дія | ведлєйші: у:чінок | Tento liek nemá veľa vedľajších účinkov. | Ці ліки мають небагато побічних дій.
+W: prehltnúť | проковтнути | преглтну:т | Tabletku prehltnite celú. | Таблетку проковтніть цілою.
+X mt: З’єднай. | užívať = приймати (ліки) ;; dávka = доза ;; antibiotikum = антибіотик ;; alergia = алергія ;; vedľajší účinok = побічна дія ;; prehltnúť = проковтнути
+X dd: Обери. | Užívajte jednu tabletku [*každých/každé/každý] osem hodín.
+= každých + родовий множини: osem hodín.
+X dd: Обери. | Som alergický na [*penicilín/penicilínu/penicilínom].
+= na + знахідний: penicilín.
+X sc~: Що означає «Užívajte celé balenie»? | - | *Приймайте ліки до кінця упаковки ;; Купіть велику упаковку ;; Не відкривайте упаковку
+= celé balenie — уся упаковка.
+X tf: - | - | Антибіотики можна перестати приймати, щойно стане трохи краще. | F
+= Užívajte celé balenie — до кінця.
+X fb: Допиши. | Máte nejaké ___? (алергії) | alergie |
+= alergia → alergie (множина).
+X so: - | Скажи (ти — жінка), що в тебе алергія на пеніцилін. | Som alergická na penicilín.
+= alergická na + знахідний.
+X fe: - | Tabletku zapite pohárom [voda>vody] po jedle.
+= pohár + родовий: vody.
+X doc: Прочитай. | Dávkovanie lieku | Liek: Amoxicilín 500 mg ;; Dávka: 1 tableta každých 8 hodín ;; Dĺžka liečby: 7 dní ;; Upozornenie: užívajte celé balenie, nepite alkohol | Скільки таблеток на добу? | *3 ;; 8 ;; 1
+= Кожні 8 годин — тричі на добу.
+X rc: - | Lekárka: Pán Bondarenko, predpíšem vám antibiotikum. Užívajte ho ráno a večer po jedle, desať dní. Tabletku prehltnite celú a zapite vodou. Počas liečby nepite alkohol. Ak sa objaví vyrážka alebo hnačka, prestaňte liek užívať a zavolajte mi.
+q~: Як довго приймати антибіотик? | *десять днів ;; два дні ;; поки не стане краще
+q~: Чого не можна робити під час лікування? | *пити алкоголь ;; їсти після шостої ;; пити воду
+q~: Що робити, якщо з’явиться висип? | *припинити приймати ліки й подзвонити лікарці ;; випити дві таблетки ;; прийти на контроль через десять днів
+X dr: - | Lekár: Užívate nejaké lieky? | *Áno, každé ráno jednu tabletku na tlak. ;; Áno, každé ráno jednu tabletka tlak. ;; Áno, ráno užívať tlak.
+= jednu tabletku na tlak — знахідний.
+X np: Лікар виписує ліки. Ти питаєш, приймати їх до їди чи після. | *Mám to užívať pred jedlom alebo po jedle? ;; Mám užívať pred jedlo alebo po jedlo? ;; Jedlo pred alebo po užívam? ;; Pred jedlom alebo jesť?
+= pred jedlom / po jedle.
+X cat: Що робити, а чого ні? | Robte: zapiť vodou, užívať celé balenie, prečítať príbalový leták ;; Nerobte: prekročiť dávku, piť alkohol s antibiotikami
+= Правила прийому ліків.
+X ms: Обери правильні речення. | - | *Som alergická na peľ. ;; *Užívajte liek každých osem hodín. ;; *Tabletku zapite vodou. ;; Som alergická na peľu. ;; Užívajte liek každé osem hodín.
+= na + знахідний; každých + родовий.
+F: Нові ліки || Лікар виписує тобі (чоловікові) антибіотик і ставить питання.
+S: «Ste alergický na nejaké lieky?» (так, на пеніцилін) | *Áno, som alergický na penicilín. ;; Áno, som alergická na penicilín. ;; Áno, alergia penicilínom som.
+S: «Dobre, dám vám iné antibiotikum. Užívajte ho každých dvanásť hodín.» Як часто? | *двічі на добу ;; дванадцять разів на день ;; раз на добу
+S: Ти питаєш, як довго його приймати. | *Ako dlho ho mám užívať? ;; Ako dlho ho mám užívam? ;; Dlho ako užívať?
+S: «Ak budete mať vedľajšie účinky, zavolajte mi.» Що це означає? | *якщо будуть побічні дії, треба подзвонити ;; якщо стане краще, треба подзвонити ;; треба приходити щодня
+R: užívať, každých … hodín, pred spaním ;; dávka, celé balenie ;; Som alergický na… ;; vedľajší účinok, prehltnúť
+
+@lesson choroby | Хвороби | Choroby
+desc: Найчастіші хвороби: prechladnutie, chrípka, nádcha, angína; тривалі: vysoký tlak, cukrovka. Mať chrípku, byť prechladnutý, ochorieť.
+goal: Сказати, на що ти хворієш або хворів(-ла), і зрозуміти діагноз.
+out: називати prechladnutie, chrípka, angína ;; казати Mám chrípku / Som prechladnutý ;; говорити про тривалі хвороби ;; казати Ochorel som
+done: Ти називаєш хвороби. Далі — поради лікаря.
+T: Prechladnutie a chrípka || «Prechladnutie» — застуда: «Som prechladnutý / prechladnutá». «Chrípka» — грип (висока температура, болить усе тіло). «Nádcha» — нежить, «angína» — ангіна. Конструкція «mať + знахідний»: «Mám chrípku», «Mám nádchu». || Syn má angínu. = У сина ангіна. ;; Som trochu prechladnutá. = Я (ж.) трохи застуджена. || mať chrípku, byť prechladnutý
+T: Dlhodobé choroby || Тривалі (хронічні) хвороби: «vysoký tlak» — високий тиск, «cukrovka» — цукровий діабет, «astma» — астма. Лікареві кажуть: «Mám vysoký tlak», «Liečim sa na cukrovku» — лікуюся від діабету. || Otec má vysoký tlak. = У тата високий тиск. ;; Mama sa lieči na cukrovku. = Мама лікується від діабету. || liečiť sa na + знахідний
+T: Ochorieť || «Ochorieť» — захворіти: «Ochorel som» (ч.), «Ochorela som» (ж.). «Je to nákazlivé?» — це заразно? Хворому бажають: «Rýchlo sa uzdrav!» — швидше одужуй! || Celá rodina ochorela na chrípku. = Уся родина захворіла на грип. ;; Je to nákazlivé? = Це заразно? || ochorieť na + знахідний
+mis: Mám chrípka. => Mám chrípku. ;; Som prechladnutie. => Som prechladnutý.
+W: chrípka | грип | хрі:пка | V zime má veľa ľudí chrípku. | Узимку багато людей хворіє на грип.
+W: prechladnutie | застуда | прехладнутіє | Na prechladnutie pomáha čaj s medom. | Від застуди допомагає чай із медом.
+W: nádcha | нежить | на:дха | Mám nádchu a nemôžem dýchať nosom. | У мене нежить, і я не можу дихати носом.
+W: angína | ангіна | анґі:на | Angínu lieči lekár antibiotikami. | Ангіну лікар лікує антибіотиками.
+W: cukrovka | цукровий діабет | цукровка | Dedko má cukrovku. | У дідуся цукровий діабет.
+W: tlak | тиск (кров’яний) | тлак | Sestra mi zmerala tlak. | Медсестра виміряла мені тиск.
+W: ochorieť | захворіти | охорієт | Minulý týždeň som ochorel. | Минулого тижня я захворів.
+X mt: З’єднай. | chrípka = грип ;; prechladnutie = застуда ;; nádcha = нежить ;; angína = ангіна ;; cukrovka = цукровий діабет ;; tlak = тиск
+X dd: Обери. | Mám [*chrípku/chrípka/chrípke].
+= mať + знахідний: chrípku.
+X dd: Обери (говорить жінка). | Som [*prechladnutá/prechladnutý/prechladnutie].
+= Жінка — prechladnutá.
+X sc~: Що означає «Je to nákazlivé?» | - | *Це заразно? ;; Це небезпечно? ;; Це надовго?
+= nákazlivý — заразний.
+X tf: - | - | «Liečim sa na tlak» означає, що в мене проблеми з тиском. | T
+= liečiť sa na — лікуватися від.
+X cat: Короткочасна чи тривала хвороба? | Akútne: angína, chrípka, prechladnutie ;; Dlhodobé: cukrovka, vysoký tlak, astma
+= Гострі й хронічні хвороби.
+X fb: Допиши (говорить жінка). | Minulý týždeň som ___ na chrípku. (захворіла) | ochorela |
+= Жінка — ochorela.
+X so: - | Скажи, що в тата високий тиск. | Otec má vysoký tlak.
+= mať vysoký tlak.
+X fe: - | Celá rodina ochorela na [chrípka>chrípku] v januári.
+= na + знахідний: chrípku.
+X rc: - | Ahoj Zuzka, dnes neprídem na kurz. Od včera mám vysokú teplotu a bolí ma celé telo. Lekárka povedala, že je to chrípka, nie obyčajné prechladnutie. Musím byť doma aspoň päť dní. Chrípka je nákazlivá, tak ma radšej nenavštevuj. Pošleš mi úlohy mailom? Oksana
+q~: Що в Оксани? | *грип ;; звичайна застуда ;; ангіна
+q~: Скільки днів вона має бути вдома? | *щонайменше п’ять ;; два ;; десять
+q~: Чому Зузці не варто приходити? | *грип заразний ;; Оксана спить ;; Оксана поїхала до лікарки
+X dr: - | Kolega: Vyzeráš zle. Si v poriadku? | *Asi som prechladnutý, mám nádchu. ;; Asi som prechladnutie, mám nádcha. ;; Prechladnutý nádcha asi.
+= som prechladnutý + mám nádchu.
+X np: Колега захворів. Ти пишеш йому коротке побажання (на «ти»). | *Rýchlo sa uzdrav! ;; Rýchlo uzdraviť! ;; Uzdrav rýchlo ma! ;; Buď chorý!
+= Rýchlo sa uzdrav! — швидше одужуй!
+X ce: Виправ речення. | Syn má angína. | Syn má angínu.
+= mať + знахідний: angínu.
+X ms: Обери правильні речення. | - | *Mám nádchu. ;; *Otec sa lieči na cukrovku. ;; *Ochorela som. ;; Mám nádcha. ;; Som chrípka.
+= mať + знахідний; ochorieť.
+F: Розмова з лікаркою || Ти прийшов (прийшла) до лікарки з високою температурою.
+S: «Čo vás trápi?» (з учора висока температура й болить усе тіло) | *Od včera mám vysokú teplotu a bolí ma celé telo. ;; Od včera mám vysoká teplota a bolí mi celé telo. ;; Teplota včera telo bolí.
+S: «Je to chrípka. Máte nejaké dlhodobé choroby?» (так, астма) | *Áno, mám astmu. ;; Áno, mám astma. ;; Áno, som astma.
+S: Ти питаєш, чи це заразно. | *Je to nákazlivé? ;; Je to nákazlivá? ;; To nákaza je?
+S: «Áno. Zostaňte doma, kým nebudete mať normálnu teplotu.» Що порадила лікарка? | *залишатися вдома, поки температура не стане нормальною ;; іти на роботу ;; прийти завтра на аналізи
+R: chrípka, prechladnutie, nádcha, angína ;; Mám chrípku / Som prechladnutý ;; vysoký tlak, cukrovka, liečiť sa na ;; ochorieť, nákazlivé, Rýchlo sa uzdrav!
+
+@lesson rady-lekara | Поради лікаря | Rady lekára
+desc: Наказовий спосіб (vy) у порадах лікаря: pite, ležte, oddychujte, nefajčite; musíte / nesmiete / mali by ste; контроль.
+goal: Зрозуміти поради лікаря й переказати їх.
+out: розуміти Pite veľa tekutín, Ležte ;; розуміти заборони Nefajčite, Nechoďte ;; розрізняти musíte / nesmiete / mali by ste ;; розуміти Príďte na kontrolu
+done: Ти розумієш поради лікаря. Далі — лікарняний (PN).
+T: Rozkazovací spôsob || Лікар говорить із пацієнтом на «vy»: форма на -te. «Pite veľa tekutín» — пийте багато рідини, «Ležte» — лежіть, «Oddychujte» — відпочивайте, «Jedzte ľahké jedlá» — їжте легку їжу. Заперечення — ne- разом: «Nefajčite», «Nechoďte do práce». || Pite čaj s citrónom. = Пийте чай із лимоном. ;; Nechoďte von, kým máte teplotu. = Не виходьте надвір, поки маєте температуру. || pite, ležte / nepite, nechoďte
+T: Musíte, nesmiete, mali by ste || «Musíte ležať» — ви мусите лежати. «Nesmiete fajčiť» — вам не можна палити. «Mali by ste sa šetriť» — вам варто берегти себе (м’яка порада). Увага: «nemusíte» — не обов’язково, а «nesmiete» — заборонено! || Nesmiete dvíhať ťažké veci. = Вам не можна піднімати важкі речі. ;; Nemusíte prísť zajtra. = Вам не обов’язково приходити завтра. || nemusíte ≠ nesmiete
+T: Kontrola || «Kontrola» — повторний огляд: «Príďte na kontrolu o týždeň». «Ak sa to nezlepší, príďte znova» — якщо не покращиться, приходьте знову. «Pokoj na lôžku» — постільний режим. || Odporúčam vám pokoj na lôžku. = Раджу вам постільний режим. ;; Na kontrolu príďte v piatok. = На контроль приходьте в п’ятницю. || kontrola = повторний огляд
+mis: Nefajčujte. => Nefajčite. ;; Pijte veľa vody. => Pite veľa vody. ;; Nemusíte fajčiť (як заборона). => Nesmiete fajčiť.
+W: tekutiny | рідина (напої) | текутіни | Pri horúčke pite veľa tekutín. | При температурі пийте багато рідини.
+W: kontrola | контроль, повторний огляд | контрола | Na kontrolu príďte o desať dní. | На контроль приходьте через десять днів.
+W: fajčiť | палити (курити) | файчіт | Mali by ste prestať fajčiť. | Вам варто кинути палити.
+W: pokoj na lôžku | постільний режим | покой на луожку | Pri chrípke je dôležitý pokoj na lôžku. | При грипі важливий постільний режим.
+W: šetriť sa | берегти себе, не перевантажуватися | шетріт са | Po chrípke sa ešte týždeň šetrite. | Після грипу ще тиждень бережіть себе.
+W: zlepšiť sa | покращитися | злепшіт са | Ak sa to nezlepší, zavolajte mi. | Якщо не покращиться, зателефонуйте мені.
+X mt: З’єднай. | tekutiny = рідина ;; kontrola = повторний огляд ;; fajčiť = палити ;; pokoj na lôžku = постільний режим ;; šetriť sa = берегти себе ;; zlepšiť sa = покращитися
+X dd: Обери (лікар говорить пацієнтові на «vy»). | Pri horúčke [*pite/pi/piť] veľa tekutín.
+= vy → pite.
+X dd: Обери (це заборона). | S chrbtom [*nesmiete/nemusíte/nechcete] dvíhať ťažké veci.
+= Заборона — nesmiete.
+X sc~: Що означає «Mali by ste sa šetriť»? | - | *Вам варто берегти себе ;; Вам треба заощаджувати гроші ;; Ви мали б працювати більше
+= šetriť sa — берегти себе.
+X tf: - | - | «Nemusíte prísť» і «Nesmiete prísť» означають те саме. | F
+= nemusíte — не обов’язково, nesmiete — заборонено.
+X tr: Перетвори на заборону. | Choďte do práce. | Nechoďte do práce.
+= ne- + choďte.
+X fb: Допиши. | Ak sa to ___, príďte znova. (не покращиться) | nezlepší |
+= zlepšiť sa → nezlepší sa.
+X so: - | Скажи як лікар: вам не можна піднімати важкі речі. | Nesmiete dvíhať ťažké veci.
+= nesmiete + інфінітив.
+X fe: - | Pri chrípke [nefajčujte>nefajčite] a pite veľa čaju.
+= fajčiť → nefajčite.
+X cat: Мусите чи не можна? | Musíte: ležať, piť veľa tekutín, oddychovať ;; Nesmiete: fajčiť, piť alkohol, dvíhať ťažké veci
+= Обов’язок і заборона.
+X bd: - | Ти все зрозумів(-ла) й правильно перепитав(-ла)!
+> Lekárka: Máte zápal priedušiek. Tri dni ležte. | *Rozumiem. Môžem chodiť do práce? ;; Rozumiem. Môžem chodiť práca? ;; Ležte, dobre.
+> Lekárka: Nie, do práce nesmiete. Potrebujete pokoj na lôžku. | *Dobre. Čo mám piť? ;; Dobre. Čo mám pijem? ;; Pokoj lôžko pite.
+> Lekárka: Pite veľa tekutín, napríklad čaj. | *A kedy mám prísť na kontrolu? ;; A kedy prísť kontrola mám? ;; Kontrola kedy je ja?
+> Lekárka: O týždeň, v pondelok. | *Ďakujem, dovidenia. ;; Ďakujem, čau. ;; Pondelok týždeň.
+X np: Ти хочеш спитати лікаря, чи можна займатися спортом. | *Môžem športovať? ;; Môžem športujem? ;; Športovať môcť? ;; Mám šport?
+= môžem + інфінітив.
+X hm: - | Lekár: Fajčiť, samozrejme, môžete, ak chcete mať o desať rokov problémy s pľúcami. | *лікар іронізує: палити не варто ;; лікар дозволяє палити ;; лікар не знає, чи пацієнт палить
+= Іронія: насправді це застереження.
+X doc: Прочитай рекомендації. | Odporúčania lekára | Režim: pokoj na lôžku 3 dni ;; Tekutiny: aspoň 2 litre denne ;; Zákaz: alkohol, fajčenie, šport ;; Kontrola: 24. 11. o 9:00 | Скільки рідини треба пити? | *щонайменше 2 літри на день ;; 3 літри за 3 дні ;; 2 склянки на день
+= aspoň 2 litre denne — щонайменше 2 літри на день.
+F: Після прийому || Лікар дав тобі (чоловікові) поради, і ти переказуєш їх дружині.
+S: Лікар: «Tri dni ležte a pite veľa tekutín.» Що робити? | *три дні лежати й пити багато рідини ;; три дні нічого не пити ;; три дні ходити на роботу
+S: Дружина: «Čo povedal lekár?» | *Musím ležať a piť veľa tekutín. ;; Musím ležím a pijem veľa tekutín. ;; Musím ležať a piť veľa tekutina.
+S: Дружина: «A smieš fajčiť?» (ні) | *Nie, nesmiem. ;; Nie, nemusím. ;; Nie, nesmieš.
+S: «Kedy máš kontrolu?» (у понеділок о 10:00) | *V pondelok o desiatej. ;; V pondelok o desať. ;; Pondelok desiata.
+R: pite, ležte, oddychujte / nefajčite, nechoďte ;; musíte, nesmiete, mali by ste; nemusíte ≠ nesmiete ;; kontrola, pokoj na lôžku ;; tekutiny, šetriť sa, zlepšiť sa
+
+@lesson pn | Лікарняний (PN) | PN — práceneschopnosť
+desc: Що робити, коли захворів і не можеш працювати: PN та ePN, повідомлення роботодавцю, nemocenské, OČR для догляду за дитиною.
+goal: Повідомити роботодавця, що ти на лікарняному, і зрозуміти основні правила.
+out: казати Som na PN ;; повідомляти роботодавця: Musím vám oznámiť… ;; розуміти nemocenské і ePN ;; розуміти OČR і ošetrovné
+done: Ти знаєш основи лікарняного. Далі — підсумок розділу.
+T: Čo je PN? || «PN» — práceneschopnosť, лікарняний (розмовно — «péenka»). Його дає лікар: «Dám vám PN na týždeň». Тепер лікар оформлює «ePN» — електронно, паперового бланка вже немає. Але роботодавцю треба повідомити самому й одразу. Кажуть: «Som na PN» — я на лікарняному. || Lekár mi dal PN na týždeň. = Лікар дав мені лікарняний на тиждень. ;; Som na PN do piatku. = Я на лікарняному до п’ятниці. || byť na PN
+T: Oznámiť zamestnávateľovi || «Oznámiť» — повідомити (кому? — давальний). Подзвони або напиши керівникові ще зранку: «Musím vám oznámiť, že som chorý». Якщо ти лише пропустив кілька годин через лікаря, потрібне «potvrdenie o návšteve lekára» — довідка про відвідування лікаря. || Musím vám oznámiť, že som chorá. = Мушу вам повідомити, що я хвора. ;; Potrebujem potvrdenie o návšteve lekára. = Мені потрібна довідка про відвідування лікаря. || oznámiť + давальний
+T: Nemocenské a OČR || Перші 10 днів лікарняного платить роботодавець, далі «Sociálna poisťovňa» виплачує «nemocenské». Коли хворіє дитина і ти доглядаєш її вдома — «OČR» (ošetrovanie člena rodiny), виплата — «ošetrovné». || Syn je chorý, som na OČR. = Син хворий, я вдома на догляді (OČR). ;; Od jedenásteho dňa platí nemocenské Sociálna poisťovňa. = З одинадцятого дня лікарняні платить Соціальна страхова. || PN — хворий ти, OČR — хворий член родини
+mis: Som v PN. => Som na PN. ;; Musím oznámiť šéf. => Musím to oznámiť šéfovi.
+W: PN | лікарняний | пе: ен | Lekár mi dal PN na desať dní. | Лікар дав мені лікарняний на десять днів.
+W: práceneschopnosť | непрацездатність | пра:ценесхопность | Práceneschopnosť trvala dva týždne. | Непрацездатність тривала два тижні.
+W: oznámiť | повідомити | озна:міт | Musím to oznámiť šéfovi. | Мушу повідомити про це шефові.
+W: potvrdenie | довідка, підтвердження | потврденіє | V práci chcú potvrdenie od lekára. | На роботі хочуть довідку від лікаря.
+W: nemocenské | лікарняні (виплата) | немоценске: | Nemocenské vypláca Sociálna poisťovňa. | Лікарняні виплачує Соціальна страхова.
+W: ošetrovné | виплата по догляду за хворим членом родини | ошетровне: | Keď je dieťa choré, môžete dostať ošetrovné. | Коли дитина хвора, ви можете отримати виплату по догляду.
+X mt: З’єднай. | PN = лікарняний ;; práceneschopnosť = непрацездатність ;; oznámiť = повідомити ;; potvrdenie = довідка ;; nemocenské = лікарняні (виплата) ;; ošetrovné = виплата по догляду
+X dd: Обери. | Som [*na/v/pri] PN.
+= byť na PN.
+X dd: Обери. | Musím to oznámiť [*zamestnávateľovi/zamestnávateľ/zamestnávateľa].
+= oznámiť komu — давальний.
+X sc~: Що означає «Som na OČR»? | - | *Я вдома доглядаю хворого члена родини ;; Я сам хворий ;; Я у відпустці
+= OČR — ošetrovanie člena rodiny.
+X tf: - | - | Перші дні лікарняного оплачує роботодавець, а пізніше — Sociálna poisťovňa. | T
+= Перші 10 днів — роботодавець.
+X cat: PN чи OČR? | PN: mám chrípku, som chorý, zlomil som si ruku ;; OČR: syn má horúčku, dcéra má angínu, starám sa o chorú mamu
+= Хворий ти — PN, хворий член родини — OČR.
+X fb: Допиши. | Lekár mi dal ___ na týždeň. (лікарняний) | PN ;; PN-ku |
+= PN — лікарняний.
+X so: - | Скажи, що тобі потрібна довідка про відвідування лікаря. | Potrebujem potvrdenie o návšteve lekára.
+= potvrdenie o návšteve lekára.
+X fe: - | Môj syn je chorý, preto som [v>na] OČR.
+= byť na OČR.
+X msg: Прочитай повідомлення. | Oksana | Dobrý deň, pán Kováč, dnes nemôžem prísť do práce. Dcéra má vysokú horúčku a lekárka mi vystavila OČR do piatku. Ospravedlňujem sa. | Чому Оксана не прийде? | *доглядає хвору доньку до п’ятниці ;; сама хворіє на грип ;; має відпустку до п’ятниці
+= OČR — догляд за хворою дитиною.
+X dr: - | Šéf: Ako dlho budete na PN? | *Lekár mi dal PN do budúceho piatku. ;; Lekár mi dal PN do budúci piatok. ;; PN piatok budúci do.
+= do + родовий: do budúceho piatku.
+X np: Ти (чоловік) телефонуєш керівникові: ти захворів, лікар дав лікарняний на тиждень. | *Dobrý deň, som chorý. Lekár mi dal PN na týždeň. ;; Dobrý deň, som choroba. Lekár mi dal PN týždeň. ;; Som chorá, PN týždeň mám. ;; Dobrý deň, PN je ja.
+= som chorý + PN na týždeň.
+X doc: Прочитай довідку. | Potvrdenie o návšteve lekára | Meno: Mykola Shevchuk ;; Dátum: 3. 11. ;; Čas: 8:00 – 10:30 ;; Lekár: MUDr. Eva Malá, všeobecná lekárka | Навіщо ця довідка? | *показати роботодавцю, що ти був у лікаря ;; отримати ліки в аптеці ;; записатися на огляд
+= potvrdenie o návšteve lekára — для роботи.
+X ms: Обери правильні речення. | - | *Som na PN. ;; *Syn je chorý, som na OČR. ;; *Musím to oznámiť šéfovi. ;; Som v PN. ;; Musím to oznámiť šéf.
+= na PN, na OČR; oznámiť komu.
+F: Захворіла перед зміною || Уранці в тебе (жінки) висока температура, і ти не можеш іти на зміну.
+S: Ти телефонуєш майстрові. | *Dobrý deň, som chorá, dnes nemôžem prísť. ;; Dobrý deň, som chorý, dnes nemôžem prísť. ;; Chorá som, prísť nemôžem dnes je.
+S: Майстер: «Dobre. Idete k lekárovi?» | *Áno, idem k lekárke o deviatej. ;; Áno, idem u lekárky o deviatej. ;; Áno, lekárka deviata.
+S: Лікарка: «Dám vám PN do piatku. Je elektronická, ale zamestnávateľovi to oznámte.» Що треба зробити? | *самій повідомити роботодавця ;; віднести роботодавцю паперовий лікарняний ;; нічого не робити
+S: Через тиждень захворів син. Що кажеш майстрові? | *Syn je chorý, budem na OČR. ;; Syn je chorý, budem na PN. ;; Syn chorý, OČR som.
+R: PN, práceneschopnosť, ePN ;; oznámiť zamestnávateľovi, potvrdenie o návšteve lekára ;; nemocenské, Sociálna poisťovňa ;; OČR, ošetrovné
+
+@lesson zdravie-opakovanie | Підсумок: здоров’я | Opakovanie: zdravie
+desc: Підсумок розділу: тіло, біль, лікар, запис, аптека, ліки, хвороби, поради, PN — а ще профілактичний огляд і невідкладна допомога.
+goal: Пройти весь шлях: від болю до лікаря, аптеки й лікарняного.
+out: описати біль і симптоми ;; записатися й пройти огляд ;; купити й правильно приймати ліки ;; оформити PN і повідомити роботодавця
+done: Розділ «Здоров’я» завершено! Далі — одяг і покупки.
+T: Zdravie a prevencia || «Zdravie» — здоров’я. «Zdravotná poisťovňa» — медична страхова компанія (VšZP, Dôvera, Union). «Preventívna prehliadka» — профілактичний огляд: у сімейного лікаря раз на два роки, без доплати. || Raz za dva roky choďte na preventívnu prehliadku. = Раз на два роки ходіть на профілактичний огляд. ;; Som poistený vo VšZP. = Я застрахований у VšZP. || prevencia = профілактика
+T: Pohotovosť || Уночі й на вихідних, коли амбулаторія зачинена, — «pohotovosť» (черговий медичний пункт). У небезпечній ситуації — «záchranka»: номер 155 або 112. || Kde je najbližšia pohotovosť? = Де найближчий черговий пункт? ;; Volajte 155! = Дзвоніть 155! || pohotovosť / 155 / 112
+T: Шпаргалка || Bolí ma… / Syna bolí… od včera. Idem k lekárovi / som u lekára. Chcel(a) by som sa objednať. Masť, kvapky, doplatok. Užívajte každých 8 hodín. Mám chrípku. Pite, ležte, nesmiete fajčiť. Som na PN. || Od včera ma bolí hrdlo, idem k lekárovi. = Із учора болить горло, іду до лікаря. || Головне
+W: zdravie | здоров’я | здравіє | Zdravie je najdôležitejšie. | Здоров’я — найважливіше.
+W: zdravotná poisťovňa | медична страхова компанія | здравотна: поістьовня | Zdravotná poisťovňa mi poslala nový preukaz. | Страхова надіслала мені нову картку.
+W: preventívna prehliadka | профілактичний огляд | превенті:вна прегліадка | Na preventívnu prehliadku sa treba objednať. | На профілактичний огляд треба записатися.
+W: pohotovosť | черговий медичний пункт | поготовость | V noci sme išli s dcérou na pohotovosť. | Уночі ми з донькою їздили в черговий медпункт.
+X rc: - | Volám sa Taras a pracujem v Košiciach na stavbe. Minulý týždeň ma začal bolieť chrbát a mal som vysokú teplotu. Zavolal som do ambulancie a objednal som sa na utorok. Lekárka ma vyšetrila a povedala, že je to chrípka. Dala mi PN na týždeň a predpísala lieky. V lekárni som zaplatil doplatok tri eurá. Šéfovi som to hneď oznámil. Teraz musím ležať a piť veľa tekutín. Na kontrolu idem v pondelok.
+q~: Що сказала лікарка? | *що це грип ;; що це ангіна ;; що все гаразд
+q~: Скільки Тарас доплатив в аптеці? | *три євро ;; тридцять євро ;; нічого
+q~: Коли він іде на контроль? | *у понеділок ;; у вівторок ;; через місяць
+X mt: З’єднай. | zdravie = здоров’я ;; zdravotná poisťovňa = медична страхова ;; preventívna prehliadka = профілактичний огляд ;; pohotovosť = черговий медичний пункт
+X cz: - | Bolí {ma} hrdlo. Zajtra idem {k} lekárovi. Lekár mi dal {PN} na týždeň. | особа, прийменник руху, лікарняний
+= ma, k, PN.
+X fe: - | Dcéru [bolia>bolí] ucho od rána.
+= ucho — однина: bolí.
+X ce: Виправ речення. | Chcem objednať u lekár. | Chcem sa objednať k lekárovi. ;; Chcem sa objednať u lekára. ;; Chcel by som sa objednať k lekárovi. ;; Chcela by som sa objednať k lekárovi.
+= objednať sa k lekárovi.
+X bd: - | Ти впорався(-лася): від аптеки до запису до лікаря!
+> Lekárnička: Dobrý deň, čo si želáte? | *Potrebujem niečo na hrdlo, veľmi ma bolí. ;; Potrebujem hrdlo, veľmi mi bolí. ;; Hrdlo liek bolia.
+> Lekárnička: Máte aj teplotu? | *Áno, od včera 38,5. ;; Áno, do včera 38,5. ;; Áno, včera od teplota.
+> Lekárnička: S teplotou by ste mali ísť k lekárovi. | *Dobre, objednám sa ešte dnes. ;; Dobre, objednám ešte dnes. ;; Dobre, objednať sa dnes som.
+> Lekárnička: Zatiaľ vám dám pastilky. Užívajte ich každé tri hodiny. | *Ďakujem, rozumiem. ;; Ďakujem, rozumiem si. ;; Pastilky ja.
+X dd: Обери. | Lekár: Tri dni [*ležte/ležíte/ležať] a pite čaj.
+= Порада лікаря — наказовий спосіб: ležte.
+X sc~: Що означає «Nesmiete dvíhať ťažké veci»? | - | *Вам не можна піднімати важкі речі ;; Вам не обов’язково піднімати важкі речі ;; Ви не можете знайти важкі речі
+= nesmiete — заборона.
+X tf: - | - | Номер швидкої допомоги у Словаччині — 155. | T
+= 155 — záchranka, 112 — загальний екстрений номер.
+X np: Ти питаєш перехожого, де найближчий черговий медпункт. | *Prepáčte, kde je najbližšia pohotovosť? ;; Prepáčte, kde je najbližší pohotovosť? ;; Pohotovosť kde najbližšia je? ;; Kde pohotovosť bolí?
+= pohotovosť — жіночий рід: najbližšia.
+X so: - | Скажи, що в сина болить вухо. | Syna bolí ucho.
+= Знахідний: syna.
+X cat: Куди піти? | Lekáreň: kvapky do nosa, masť, náplasť ;; Ambulancia: preventívna prehliadka, odber krvi, PN
+= Ліки — в аптеці, огляд і PN — у лікаря.
+X wb: Склади. | Mám [alergiu] na penicilín. ;; Na odber krvi príďte [nalačno]. | doplatok ;; kontrolu
+= alergia na…; nalačno.
+X ms: Обери правильні речення. | - | *Idem k lekárovi. ;; *Mám chrípku. ;; *Som na PN. ;; Idem u lekára. ;; Mám chrípka.
+= Повторення розділу.
+F: Важкий тиждень || Ти (чоловік) захворів і проходиш увесь шлях: лікар, аптека, робота.
+S: Медсестра по телефону: «Ste objednaný?» (ні, але маєш гострий біль) | *Nie, ale mám akútne bolesti. ;; Nie, ale som akútny bolesť. ;; Nie, objednaný bolí.
+S: Лікар: «Užívajte to každých osem hodín, celé balenie.» Як приймати? | *кожні 8 годин, до кінця упаковки ;; 8 разів на день, поки не стане краще ;; раз на 8 днів
+S: Ти повідомляєш шефові. | *Dobrý deň, som chorý a mám PN do piatku. ;; Dobrý deň, som choroba a mám PN do piatok. ;; Chorý PN piatok.
+S: Шеф: «Dobre, rýchlo sa uzdravte!» Що він тобі побажав? | *швидше одужати ;; швидше повернутися на роботу ;; більше ніколи не хворіти
+R: Bolí ma… od včera; idem k lekárovi ;; objednať sa, preukaz poistenca, ordinačné hodiny ;; dávka, doplatok, každých … hodín ;; PN, OČR, pohotovosť, 155

@@ -1,0 +1,783 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u17-l04-mnozne-cislo",
+      "sectionId": "a1-u17",
+      "level": "A1",
+      "title": "Множина",
+      "topic": "Минулий час",
+      "description": "Минулий час у множині: boli sme, robili ste, deti hrali; ввічливе «vy»: Kde ste pracovali?",
+      "order": 164,
+      "xpReward": 25,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Розповісти, що ви робили з родиною чи друзями, і ввічливо спитати про минуле.",
+      "completionMessage": "Ти говориш про минуле в множині. Далі — заперечення.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Минулий час",
+        "title": "Множина",
+        "shortDescription": "Розповісти, що ви робили з родиною чи друзями, і ввічливо спитати про минуле.",
+        "outcomes": [
+          "казати robili sme / robili ste / robili",
+          "знати, що -li — для всіх родів",
+          "питати ввічливо Kedy ste prišli?",
+          "говорити про переїзд і свято"
+        ],
+        "newWords": [
+          "presťahovať sa",
+          "oslava",
+          "oslavovať",
+          "zabaviť sa",
+          "priniesť"
+        ],
+        "exercisesCount": 14,
+        "reward": "+25 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Множина -li",
+          "text": "my — robili sme, vy — robili ste, oni / ony — robili. Одна форма -li для всіх родів: «Chlapci hrali», «Dievčatá hrali», «Deti hrali».",
+          "examples": [
+            {
+              "sk": "Boli sme v kine.",
+              "uk": "Ми були в кіно."
+            },
+            {
+              "sk": "Deti hrali futbal.",
+              "uk": "Діти грали у футбол."
+            }
+          ],
+          "shortRule": "-li — для всіх родів",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Vy — ввічливо",
+          "text": "«Vy» — це і кілька людей, і ввічлива форма до однієї людини: «Kedy ste prišli na Slovensko?» — коли ви приїхали до Словаччини? Навіть до жінки кажемо «boli ste», «prišli ste».",
+          "examples": [
+            {
+              "sk": "Pani doktorka, kde ste pracovali predtým?",
+              "uk": "Пані лікарко, де ви працювали раніше?"
+            },
+            {
+              "sk": "Kedy ste prišli?",
+              "uk": "Коли ви прийшли (приїхали)?"
+            }
+          ],
+          "shortRule": "vy + -li + ste",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Переїзд і свято",
+          "text": "«Presťahovali sme sa» — ми переїхали (в інше житло, місто, країну). «Oslava» — свято, вечірка; «oslavovať» — святкувати. «Zabavili sme sa» — ми добре розважилися. Зверни увагу: sme стоїть перед sa.",
+          "examples": [
+            {
+              "sk": "Presťahovali sme sa na Slovensko v roku 2022.",
+              "uk": "Ми переїхали до Словаччини у 2022 році."
+            },
+            {
+              "sk": "Na oslave sme sa výborne zabavili.",
+              "uk": "На святі ми чудово розважилися."
+            }
+          ],
+          "shortRule": "sme + sa",
+          "commonMistakes": [
+            {
+              "mistake": "My sme bol doma.",
+              "correct": "Boli sme doma."
+            },
+            {
+              "mistake": "Deti hrala.",
+              "correct": "Deti hrali."
+            },
+            {
+              "mistake": "Presťahovali sa sme.",
+              "correct": "Presťahovali sme sa."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u17-l04-mnozne-cislo-w01",
+            "sk": "presťahovať sa",
+            "uk": "переїхати",
+            "pronunciationUk": "престяговат са",
+            "exampleSk": "Vlani sme sa presťahovali do Žiliny.",
+            "exampleUk": "Торік ми переїхали до Жиліни."
+          },
+          {
+            "wordId": "a1-u17-l04-mnozne-cislo-w02",
+            "sk": "oslava",
+            "uk": "свято, вечірка",
+            "pronunciationUk": "ослава",
+            "exampleSk": "Oslava bola u Petra doma.",
+            "exampleUk": "Вечірка була в Петра вдома."
+          },
+          {
+            "wordId": "a1-u17-l04-mnozne-cislo-w03",
+            "sk": "oslavovať",
+            "uk": "святкувати",
+            "pronunciationUk": "ославоват",
+            "exampleSk": "Včera sme oslavovali narodeniny syna.",
+            "exampleUk": "Учора ми святкували день народження сина."
+          },
+          {
+            "wordId": "a1-u17-l04-mnozne-cislo-w04",
+            "sk": "zabaviť sa",
+            "uk": "розважитися, добре провести час",
+            "pronunciationUk": "забавіт са",
+            "exampleSk": "Na svadbe sme sa výborne zabavili.",
+            "exampleUk": "На весіллі ми чудово розважилися."
+          },
+          {
+            "wordId": "a1-u17-l04-mnozne-cislo-w05",
+            "sk": "priniesť",
+            "uk": "принести",
+            "pronunciationUk": "прінієст",
+            "exampleSk": "Hostia priniesli víno a koláč.",
+            "exampleUk": "Гості принесли вино й пиріг."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u17-l04-mnozne-cislo-w01",
+          "sk": "presťahovať sa",
+          "uk": "переїхати",
+          "pronunciationUk": "престяговат са",
+          "exampleSk": "Vlani sme sa presťahovali do Žiliny.",
+          "exampleUk": "Торік ми переїхали до Жиліни.",
+          "level": "A1",
+          "topic": "Минулий час",
+          "tags": [
+            "a1-u17",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u17-l04-mnozne-cislo-w02",
+          "sk": "oslava",
+          "uk": "свято, вечірка",
+          "pronunciationUk": "ослава",
+          "exampleSk": "Oslava bola u Petra doma.",
+          "exampleUk": "Вечірка була в Петра вдома.",
+          "level": "A1",
+          "topic": "Минулий час",
+          "tags": [
+            "a1-u17",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u17-l04-mnozne-cislo-w03",
+          "sk": "oslavovať",
+          "uk": "святкувати",
+          "pronunciationUk": "ославоват",
+          "exampleSk": "Včera sme oslavovali narodeniny syna.",
+          "exampleUk": "Учора ми святкували день народження сина.",
+          "level": "A1",
+          "topic": "Минулий час",
+          "tags": [
+            "a1-u17",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u17-l04-mnozne-cislo-w04",
+          "sk": "zabaviť sa",
+          "uk": "розважитися, добре провести час",
+          "pronunciationUk": "забавіт са",
+          "exampleSk": "Na svadbe sme sa výborne zabavili.",
+          "exampleUk": "На весіллі ми чудово розважилися.",
+          "level": "A1",
+          "topic": "Минулий час",
+          "tags": [
+            "a1-u17",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u17-l04-mnozne-cislo-w05",
+          "sk": "priniesť",
+          "uk": "принести",
+          "pronunciationUk": "прінієст",
+          "exampleSk": "Hostia priniesli víno a koláč.",
+          "exampleUk": "Гості принесли вино й пиріг.",
+          "level": "A1",
+          "topic": "Минулий час",
+          "tags": [
+            "a1-u17",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u17-l04-mnozne-cislo-ex01",
+          "lessonId": "a1-u17-l04-mnozne-cislo",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "presťahovať sa",
+              "right": "переїхати"
+            },
+            {
+              "left": "oslava",
+              "right": "свято"
+            },
+            {
+              "left": "oslavovať",
+              "right": "святкувати"
+            },
+            {
+              "left": "zabaviť sa",
+              "right": "розважитися"
+            },
+            {
+              "left": "priniesť",
+              "right": "принести"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u17-l04-mnozne-cislo-w01",
+            "a1-u17-l04-mnozne-cislo-w02",
+            "a1-u17-l04-mnozne-cislo-w03",
+            "a1-u17-l04-mnozne-cislo-w04",
+            "a1-u17-l04-mnozne-cislo-w05"
+          ]
+        },
+        {
+          "id": "a1-u17-l04-mnozne-cislo-ex02",
+          "lessonId": "a1-u17-l04-mnozne-cislo",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "My "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "sú",
+                "sme",
+                "ste"
+              ],
+              "correct": "sme"
+            },
+            {
+              "text": " boli na oslave."
+            }
+          ],
+          "explanation": "my → sme.",
+          "order": 2,
+          "wordIds": [
+            "a1-u17-l04-mnozne-cislo-w02"
+          ]
+        },
+        {
+          "id": "a1-u17-l04-mnozne-cislo-ex03",
+          "lessonId": "a1-u17-l04-mnozne-cislo",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Deti "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "hral",
+                "hrala",
+                "hrali"
+              ],
+              "correct": "hrali"
+            },
+            {
+              "text": " na dvore."
+            }
+          ],
+          "explanation": "deti — множина: hrali.",
+          "order": 3
+        },
+        {
+          "id": "a1-u17-l04-mnozne-cislo-ex04",
+          "lessonId": "a1-u17-l04-mnozne-cislo",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Kedy ______ prišli na Slovensko? (ви)",
+          "acceptedAnswers": [
+            "ste"
+          ],
+          "explanation": "vy → prišli ste.",
+          "order": 4
+        },
+        {
+          "id": "a1-u17-l04-mnozne-cislo-ex05",
+          "lessonId": "a1-u17-l04-mnozne-cislo",
+          "type": "cloze_text",
+          "skill": [
+            "grammar",
+            "reading"
+          ],
+          "instruction": "Заповни пропуски в тексті.",
+          "textParts": [
+            {
+              "text": "Vlani "
+            },
+            {
+              "blankId": "b1",
+              "acceptedAnswers": [
+                "sme"
+              ]
+            },
+            {
+              "text": " sa presťahovali do Žiliny. Susedia nás "
+            },
+            {
+              "blankId": "b2",
+              "acceptedAnswers": [
+                "pozvali"
+              ]
+            },
+            {
+              "text": " na oslavu. Deti "
+            },
+            {
+              "blankId": "b3",
+              "acceptedAnswers": [
+                "tancovali"
+              ]
+            },
+            {
+              "text": " a my "
+            },
+            {
+              "blankId": "b4",
+              "acceptedAnswers": [
+                "sme"
+              ]
+            },
+            {
+              "text": " sa dobre zabavili."
+            }
+          ],
+          "hint": "sme / pozvať / tancovať",
+          "order": 5,
+          "wordIds": [
+            "a1-u17-l04-mnozne-cislo-w01",
+            "a1-u17-l04-mnozne-cislo-w02",
+            "a1-u17-l04-mnozne-cislo-w04"
+          ]
+        },
+        {
+          "id": "a1-u17-l04-mnozne-cislo-ex06",
+          "lessonId": "a1-u17-l04-mnozne-cislo",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "«Pani Kováčová, kde ste pracovali predtým?» Кому це питання?",
+          "options": [
+            {
+              "id": "a",
+              "text": "дитині",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "одній жінці, ввічливо",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "кільком подругам, по-дружньому",
+              "correct": false
+            }
+          ],
+          "explanation": "Ввічливе vy + -li, навіть до однієї людини.",
+          "order": 6
+        },
+        {
+          "id": "a1-u17-l04-mnozne-cislo-ex07",
+          "lessonId": "a1-u17-l04-mnozne-cislo",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "У реченнях «Chlapci hrali» і «Dievčatá hrali» форма дієслова однакова.",
+          "correctAnswer": true,
+          "explanation": "-li — для всіх родів.",
+          "order": 7
+        },
+        {
+          "id": "a1-u17-l04-mnozne-cislo-ex08",
+          "lessonId": "a1-u17-l04-mnozne-cislo",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Hostia priniesol víno.",
+          "errorToken": "priniesol",
+          "correctToken": "priniesli",
+          "explanation": "hostia — множина: priniesli.",
+          "order": 8,
+          "wordIds": [
+            "a1-u17-l04-mnozne-cislo-w05"
+          ]
+        },
+        {
+          "id": "a1-u17-l04-mnozne-cislo-ex09",
+          "lessonId": "a1-u17-l04-mnozne-cislo",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Зміни на «ми».",
+          "source": "Bol som na oslave.",
+          "acceptedAnswers": [
+            "Boli sme na oslave."
+          ],
+          "explanation": "bol som → boli sme.",
+          "order": 9,
+          "wordIds": [
+            "a1-u17-l04-mnozne-cislo-w02"
+          ]
+        },
+        {
+          "id": "a1-u17-l04-mnozne-cislo-ex10",
+          "lessonId": "a1-u17-l04-mnozne-cislo",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що ви добре розважилися.",
+          "tokens": [
+            ".",
+            "Zabavili",
+            "sa",
+            "sme"
+          ],
+          "correctOrder": [
+            "Zabavili",
+            "sme",
+            "sa",
+            "."
+          ],
+          "explanation": "sme — перед sa.",
+          "order": 10,
+          "wordIds": [
+            "a1-u17-l04-mnozne-cislo-w04"
+          ]
+        },
+        {
+          "id": "a1-u17-l04-mnozne-cislo-ex11",
+          "lessonId": "a1-u17-l04-mnozne-cislo",
+          "type": "dialogue_order",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Склади діалог.",
+          "lines": [
+            {
+              "id": "l3",
+              "sk": "Lucia: Super! Čo ste tam robili?"
+            },
+            {
+              "id": "l6",
+              "sk": "Oksana: Áno, výborne!"
+            },
+            {
+              "id": "l5",
+              "sk": "Lucia: Zabavili ste sa?"
+            },
+            {
+              "id": "l1",
+              "sk": "Lucia: Ahoj, kde ste boli v sobotu?"
+            },
+            {
+              "id": "l2",
+              "sk": "Oksana: Boli sme na oslave u susedov."
+            },
+            {
+              "id": "l4",
+              "sk": "Oksana: Jedli sme, tancovali a spievali."
+            }
+          ],
+          "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5",
+            "l6"
+          ],
+          "explanation": "Питання → місце → що робили → враження.",
+          "order": 11,
+          "wordIds": [
+            "a1-u17-l04-mnozne-cislo-w02",
+            "a1-u17-l04-mnozne-cislo-w04"
+          ]
+        },
+        {
+          "id": "a1-u17-l04-mnozne-cislo-ex12",
+          "lessonId": "a1-u17-l04-mnozne-cislo",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Šéf",
+              "sk": "Kedy ste prišli s rodinou na Slovensko?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Prišli sme v roku 2022.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Sme prišli v roku 2022.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Prišiel sme v roku 2022.",
+              "correct": false
+            }
+          ],
+          "explanation": "my → prišli sme.",
+          "order": 12
+        },
+        {
+          "id": "a1-u17-l04-mnozne-cislo-ex13",
+          "lessonId": "a1-u17-l04-mnozne-cislo",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти розповідаєш, що сусіди запросили вас на вечерю.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Susedia nás pozvalo na večeru.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Susedia nás pozval na večeru.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Susedia sme nás pozvali na večeru.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Susedia nás pozvali na večeru.",
+              "correct": true
+            }
+          ],
+          "explanation": "susedia — 3-я особа множини: pozvali, без sme.",
+          "order": 13
+        },
+        {
+          "id": "a1-u17-l04-mnozne-cislo-ex14",
+          "lessonId": "a1-u17-l04-mnozne-cislo",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні речення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Boli sme doma.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Kde ste boli?",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Oni boli sme doma.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Deti spala.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Deti spali.",
+              "correct": true
+            }
+          ],
+          "explanation": "-li у множині; у 3-й особі без допоміжного.",
+          "order": 14
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Нова квартира",
+        "description": "Ви з чоловіком нещодавно переїхали. Сусідка-словачка приходить познайомитися.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Kedy ste sa presťahovali?» (минулого тижня)",
+            "options": [
+              {
+                "sk": "Presťahoval sme sa minulý týždeň.",
+                "correct": false
+              },
+              {
+                "sk": "Presťahovali sa sme minulý týždeň.",
+                "correct": false
+              },
+              {
+                "sk": "Presťahovali sme sa minulý týždeň.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«A kde ste bývali predtým?» (у Кошицях)",
+            "options": [
+              {
+                "sk": "Predtým sme býval v Košiciach.",
+                "correct": false
+              },
+              {
+                "sk": "Predtým bývali sme v Košiciach.",
+                "correct": false
+              },
+              {
+                "sk": "Predtým sme bývali v Košiciach.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Сусідка: «Minulý rok sme mali v dome veľkú oslavu.» Що вона розповіла?",
+            "options": [
+              {
+                "sk": "цього року буде велике свято",
+                "correct": false
+              },
+              {
+                "sk": "у будинку щороку святкують",
+                "correct": false
+              },
+              {
+                "sk": "торік у будинку було велике свято",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти розповідаєш, що вчора приїхали твої батьки.",
+            "options": [
+              {
+                "sk": "Včera prišli moji rodičia.",
+                "correct": true
+              },
+              {
+                "sk": "Včera prišli sme moji rodičia.",
+                "correct": false
+              },
+              {
+                "sk": "Včera prišiel moji rodičia.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти говориш про минуле в множині. Далі — заперечення."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти говориш про минуле в множині. Далі — заперечення.",
+        "nowYouKnow": [
+          "robili sme, robili ste, oni robili",
+          "-li для всіх родів",
+          "ввічливо: Kde ste boli? Kedy ste prišli?",
+          "presťahovať sa, oslava, oslavovať, zabaviť sa, priniesť"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 14,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u17-l05-zapor",
+          "title": "Заперечення"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,904 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u16-l08-vratenie-tovaru",
+      "sectionId": "a1-u16",
+      "level": "A1",
+      "title": "Повернення товару",
+      "topic": "Одяг і покупки",
+      "description": "Повертаємо або обмінюємо одяг: vrátenie peňazí, výmena za inú veľkosť, lehota 30 dní, visačka, diera.",
+      "order": 158,
+      "xpReward": 25,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Повернути або обміняти річ і пояснити причину.",
+      "completionMessage": "Ти вмієш повернути річ. Далі — розпродаж.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Одяг і покупки",
+        "title": "Повернення товару",
+        "shortDescription": "Повернути або обміняти річ і пояснити причину.",
+        "outcomes": [
+          "казати Chcela by som to vrátiť / vymeniť",
+          "пояснювати причину: nesedí mi, je tam diera",
+          "розуміти lehota a podmienky",
+          "розрізняти vrátenie, výmena, reklamácia"
+        ],
+        "newWords": [
+          "vrátenie",
+          "výmena",
+          "lehota",
+          "visačka",
+          "diera",
+          "chybný"
+        ],
+        "exercisesCount": 14,
+        "reward": "+25 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Vrátiť alebo vymeniť?",
+          "text": "Дієслова «vrátiť», «vymeniť» і «reklamovať» ти вже знаєш. Іменники: «vrátenie» — повернення (гроші назад — «vrátenie peňazí»), «výmena» — обмін (інша річ або інший розмір): «výmena za inú veľkosť».",
+          "examples": [
+            {
+              "sk": "Chcela by som to vrátiť.",
+              "uk": "Я хотіла б це повернути."
+            },
+            {
+              "sk": "Môžem to vymeniť za menšie?",
+              "uk": "Можна обміняти на менше?"
+            }
+          ],
+          "shortRule": "vrátenie peňazí, výmena za…",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Podmienky",
+          "text": "Умови: «lehota» — строк: «Lehota na vrátenie je 30 dní». Річ має бути не ношена, «s visačkou» (з биркою) і з чеком (bloček, pokladničný doklad). Покупку в інтернеті за законом можна повернути протягом 14 днів.",
+          "examples": [
+            {
+              "sk": "Tovar musí mať visačku.",
+              "uk": "Товар повинен мати бирку."
+            },
+            {
+              "sk": "Lehota je 14 dní.",
+              "uk": "Строк — 14 днів."
+            }
+          ],
+          "shortRule": "lehota, visačka, bloček",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Čo je zlé?",
+          "text": "Причина: «Nesedí mi to» — погано сидить, «Je mi to malé» — мені це мале, «Je tam diera» — там дірка, «Zips je chybný» — блискавка з дефектом. Брак — це вже «reklamácia», а не просте повернення.",
+          "examples": [
+            {
+              "sk": "Na svetri je diera.",
+              "uk": "На светрі дірка."
+            },
+            {
+              "sk": "Tovar je chybný.",
+              "uk": "Товар бракований."
+            }
+          ],
+          "shortRule": "nesedí → vrátenie / výmena; chybný → reklamácia",
+          "commonMistakes": [
+            {
+              "mistake": "Chcela by som vrátiť.",
+              "correct": "Chcela by som to vrátiť."
+            },
+            {
+              "mistake": "výmena na inú veľkosť",
+              "correct": "výmena za inú veľkosť"
+            },
+            {
+              "mistake": "Má to diera.",
+              "correct": "Má to dieru."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u16-l08-vratenie-tovaru-w01",
+            "sk": "vrátenie",
+            "uk": "повернення",
+            "pronunciationUk": "вра:теніє",
+            "exampleSk": "Vrátenie peňazí trvá päť dní.",
+            "exampleUk": "Повернення грошей триває п’ять днів."
+          },
+          {
+            "wordId": "a1-u16-l08-vratenie-tovaru-w02",
+            "sk": "výmena",
+            "uk": "обмін",
+            "pronunciationUk": "ві:мена",
+            "exampleSk": "Výmena je možná do tridsiatich dní.",
+            "exampleUk": "Обмін можливий протягом тридцяти днів."
+          },
+          {
+            "wordId": "a1-u16-l08-vratenie-tovaru-w03",
+            "sk": "lehota",
+            "uk": "строк",
+            "pronunciationUk": "легота",
+            "exampleSk": "Lehota na vrátenie je štrnásť dní.",
+            "exampleUk": "Строк повернення — чотирнадцять днів."
+          },
+          {
+            "wordId": "a1-u16-l08-vratenie-tovaru-w04",
+            "sk": "visačka",
+            "uk": "бирка (з ціною)",
+            "pronunciationUk": "вісачка",
+            "exampleSk": "Visačka je ešte na tričku.",
+            "exampleUk": "Бирка ще на футболці."
+          },
+          {
+            "wordId": "a1-u16-l08-vratenie-tovaru-w05",
+            "sk": "diera",
+            "uk": "дірка",
+            "pronunciationUk": "дієра",
+            "exampleSk": "Na rukáve je diera.",
+            "exampleUk": "На рукаві дірка."
+          },
+          {
+            "wordId": "a1-u16-l08-vratenie-tovaru-w06",
+            "sk": "chybný",
+            "uk": "бракований, з дефектом",
+            "pronunciationUk": "хібні:",
+            "exampleSk": "Chybný tovar môžete reklamovať.",
+            "exampleUk": "На бракований товар можна подати рекламацію."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-w01",
+          "sk": "vrátenie",
+          "uk": "повернення",
+          "pronunciationUk": "вра:теніє",
+          "exampleSk": "Vrátenie peňazí trvá päť dní.",
+          "exampleUk": "Повернення грошей триває п’ять днів.",
+          "level": "A1",
+          "topic": "Одяг і покупки",
+          "tags": [
+            "a1-u16",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-w02",
+          "sk": "výmena",
+          "uk": "обмін",
+          "pronunciationUk": "ві:мена",
+          "exampleSk": "Výmena je možná do tridsiatich dní.",
+          "exampleUk": "Обмін можливий протягом тридцяти днів.",
+          "level": "A1",
+          "topic": "Одяг і покупки",
+          "tags": [
+            "a1-u16",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-w03",
+          "sk": "lehota",
+          "uk": "строк",
+          "pronunciationUk": "легота",
+          "exampleSk": "Lehota na vrátenie je štrnásť dní.",
+          "exampleUk": "Строк повернення — чотирнадцять днів.",
+          "level": "A1",
+          "topic": "Одяг і покупки",
+          "tags": [
+            "a1-u16",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-w04",
+          "sk": "visačka",
+          "uk": "бирка (з ціною)",
+          "pronunciationUk": "вісачка",
+          "exampleSk": "Visačka je ešte na tričku.",
+          "exampleUk": "Бирка ще на футболці.",
+          "level": "A1",
+          "topic": "Одяг і покупки",
+          "tags": [
+            "a1-u16",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-w05",
+          "sk": "diera",
+          "uk": "дірка",
+          "pronunciationUk": "дієра",
+          "exampleSk": "Na rukáve je diera.",
+          "exampleUk": "На рукаві дірка.",
+          "level": "A1",
+          "topic": "Одяг і покупки",
+          "tags": [
+            "a1-u16",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-w06",
+          "sk": "chybný",
+          "uk": "бракований, з дефектом",
+          "pronunciationUk": "хібні:",
+          "exampleSk": "Chybný tovar môžete reklamovať.",
+          "exampleUk": "На бракований товар можна подати рекламацію.",
+          "level": "A1",
+          "topic": "Одяг і покупки",
+          "tags": [
+            "a1-u16",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-ex01",
+          "lessonId": "a1-u16-l08-vratenie-tovaru",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "vrátenie",
+              "right": "повернення"
+            },
+            {
+              "left": "výmena",
+              "right": "обмін"
+            },
+            {
+              "left": "lehota",
+              "right": "строк"
+            },
+            {
+              "left": "visačka",
+              "right": "бирка"
+            },
+            {
+              "left": "diera",
+              "right": "дірка"
+            },
+            {
+              "left": "chybný",
+              "right": "бракований"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u16-l08-vratenie-tovaru-w01",
+            "a1-u16-l08-vratenie-tovaru-w02",
+            "a1-u16-l08-vratenie-tovaru-w03",
+            "a1-u16-l08-vratenie-tovaru-w04",
+            "a1-u16-l08-vratenie-tovaru-w05",
+            "a1-u16-l08-vratenie-tovaru-w06"
+          ]
+        },
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-ex02",
+          "lessonId": "a1-u16-l08-vratenie-tovaru",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Môžem to vymeniť za menšiu veľkosť?»",
+          "options": [
+            {
+              "id": "a",
+              "text": "Можна обміняти на менший розмір?",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Чи є менший розмір у продажу?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Можна повернути гроші?",
+              "correct": false
+            }
+          ],
+          "explanation": "vymeniť za… — обміняти на…",
+          "order": 2
+        },
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-ex03",
+          "lessonId": "a1-u16-l08-vratenie-tovaru",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Na svetri je "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "diery",
+                "dieru",
+                "diera"
+              ],
+              "correct": "diera"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "je + називний: diera.",
+          "order": 3,
+          "wordIds": [
+            "a1-u16-l08-vratenie-tovaru-w05"
+          ]
+        },
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-ex04",
+          "lessonId": "a1-u16-l08-vratenie-tovaru",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Chcem to vymeniť "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "za",
+                "do",
+                "na"
+              ],
+              "correct": "za"
+            },
+            {
+              "text": " inú veľkosť."
+            }
+          ],
+          "explanation": "vymeniť za + знахідний.",
+          "order": 4
+        },
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-ex05",
+          "lessonId": "a1-u16-l08-vratenie-tovaru",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Повернення чи рекламація?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Vrátenie alebo výmena"
+            },
+            {
+              "id": "c2",
+              "title": "Reklamácia"
+            }
+          ],
+          "items": [
+            {
+              "sk": "je mi to malé",
+              "category": "c1"
+            },
+            {
+              "sk": "diera na rukáve",
+              "category": "c2"
+            },
+            {
+              "sk": "chýba gombík",
+              "category": "c2"
+            },
+            {
+              "sk": "chybný zips",
+              "category": "c2"
+            },
+            {
+              "sk": "nepáči sa mi farba",
+              "category": "c1"
+            },
+            {
+              "sk": "nesedí mi",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Не підійшло — повернення; брак — рекламація.",
+          "order": 5,
+          "wordIds": [
+            "a1-u16-l08-vratenie-tovaru-w01",
+            "a1-u16-l08-vratenie-tovaru-w02",
+            "a1-u16-l08-vratenie-tovaru-w05",
+            "a1-u16-l08-vratenie-tovaru-w06"
+          ]
+        },
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-ex06",
+          "lessonId": "a1-u16-l08-vratenie-tovaru",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Покупку в інтернеті в Словаччині можна повернути протягом 14 днів.",
+          "correctAnswer": true,
+          "explanation": "Закон дає 14 днів.",
+          "order": 6
+        },
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-ex07",
+          "lessonId": "a1-u16-l08-vratenie-tovaru",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай умови магазину.",
+          "document": {
+            "title": "Podmienky vrátenia tovaru",
+            "fields": [
+              {
+                "label": "Lehota",
+                "value": "30 dní od nákupu"
+              },
+              {
+                "label": "Tovar",
+                "value": "nenosený, s visačkou"
+              },
+              {
+                "label": "Doklad",
+                "value": "pokladničný doklad"
+              },
+              {
+                "label": "Peniaze",
+                "value": "vrátime na kartu do 5 dní"
+              }
+            ]
+          },
+          "question": "Як тобі повернуть гроші?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "на картку протягом 5 днів",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "подарунковим сертифікатом",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "готівкою одразу",
+              "correct": false
+            }
+          ],
+          "explanation": "vrátime na kartu do 5 dní.",
+          "order": 7,
+          "wordIds": [
+            "a1-u16-l08-vratenie-tovaru-w01",
+            "a1-u16-l08-vratenie-tovaru-w03",
+            "a1-u16-l08-vratenie-tovaru-w04"
+          ]
+        },
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-ex08",
+          "lessonId": "a1-u16-l08-vratenie-tovaru",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Lehota na ______ je 30 dní. (повернення)",
+          "acceptedAnswers": [
+            "vrátenie"
+          ],
+          "explanation": "lehota na vrátenie — строк повернення.",
+          "order": 8,
+          "wordIds": [
+            "a1-u16-l08-vratenie-tovaru-w01",
+            "a1-u16-l08-vratenie-tovaru-w03"
+          ]
+        },
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-ex09",
+          "lessonId": "a1-u16-l08-vratenie-tovaru",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Chcela by som to vymeniť za iný veľkosť.",
+          "errorToken": "iný",
+          "correctToken": "inú",
+          "explanation": "veľkosť — жіночий рід: inú.",
+          "order": 9
+        },
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-ex10",
+          "lessonId": "a1-u16-l08-vratenie-tovaru",
+          "type": "branching_dialogue",
+          "skill": [
+            "dialogue",
+            "real_life"
+          ],
+          "instruction": "Пройди діалог: обирай доречні відповіді.",
+          "successMessage": "Ти успішно обміняла штани!",
+          "startNode": "n1",
+          "nodes": {
+            "n1": {
+              "speaker": "Predavačka",
+              "sk": "Dobrý deň, čo pre vás môžem urobiť?",
+              "choices": [
+                {
+                  "id": "n1c1",
+                  "sk": "Dobrý deň, chcela by som vymeniť tieto nohavice.",
+                  "next": "n2",
+                  "quality": "best"
+                },
+                {
+                  "id": "n1c3",
+                  "sk": "Nohavice vymeniť ja.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c2",
+                  "sk": "Dobrý deň, chcem vymeniť nohavice je.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n2": {
+              "speaker": "Predavačka",
+              "sk": "Čo je s nimi?",
+              "choices": [
+                {
+                  "id": "n2c2",
+                  "sk": "Sú mi malý. Máte väčší?",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c1",
+                  "sk": "Sú mi malé. Máte väčšie?",
+                  "next": "n3",
+                  "quality": "best"
+                },
+                {
+                  "id": "n2c3",
+                  "sk": "Malé nohavice som.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n3": {
+              "speaker": "Predavačka",
+              "sk": "Máte bloček?",
+              "choices": [
+                {
+                  "id": "n3c3",
+                  "sk": "Bloček je mať.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c2",
+                  "sk": "Áno, nech sa páčiš.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c1",
+                  "sk": "Áno, nech sa páči.",
+                  "next": "n4",
+                  "quality": "best"
+                }
+              ]
+            },
+            "n4": {
+              "speaker": "Predavačka",
+              "sk": "Tu sú o číslo väčšie.",
+              "choices": [
+                {
+                  "id": "n4c2",
+                  "sk": "Ďakujem, tieto mi sedí.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n4c3",
+                  "sk": "Sedím, ďakujem.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n4c1",
+                  "sk": "Ďakujem, tieto mi sedia.",
+                  "next": "success",
+                  "quality": "best"
+                }
+              ]
+            }
+          },
+          "order": 10
+        },
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-ex11",
+          "lessonId": "a1-u16-l08-vratenie-tovaru",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Predavač",
+              "sk": "Prečo chcete tovar vrátiť?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Vrátiť je farba.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Nesedí mi to a nepáči sa mi farba.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Nesedím to a nepáčim farba.",
+              "correct": false
+            }
+          ],
+          "explanation": "Nesedí mi to; nepáči sa mi.",
+          "order": 11
+        },
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-ex12",
+          "lessonId": "a1-u16-l08-vratenie-tovaru",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти купила футболку, а вдома побачила дірку. Ти пояснюєш у магазині.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Na tričko je dieru.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Na tričku je diera. Chcem to reklamovať.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Tričko diera má je.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Chcem vrátenie tričko diera.",
+              "correct": false
+            }
+          ],
+          "explanation": "Брак — reklamácia.",
+          "order": 12,
+          "wordIds": [
+            "a1-u16-l08-vratenie-tovaru-w01",
+            "a1-u16-l08-vratenie-tovaru-w05"
+          ]
+        },
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-ex13",
+          "lessonId": "a1-u16-l08-vratenie-tovaru",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Chcem vymeniť na väčší veľkosť.",
+          "acceptedAnswers": [
+            "Chcem vymeniť za väčšiu veľkosť.",
+            "Chcem to vymeniť za väčšiu veľkosť."
+          ],
+          "explanation": "vymeniť za; veľkosť — väčšiu.",
+          "order": 13
+        },
+        {
+          "id": "a1-u16-l08-vratenie-tovaru-ex14",
+          "lessonId": "a1-u16-l08-vratenie-tovaru",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери типові умови повернення одягу.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "pokladničný doklad",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "tovar s visačkou",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "lehota 30 dní",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "nosený tovar",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "tovar bez dokladu",
+              "correct": false
+            }
+          ],
+          "explanation": "Не ношена річ, бирка, чек, строк.",
+          "order": 14,
+          "wordIds": [
+            "a1-u16-l08-vratenie-tovaru-w03",
+            "a1-u16-l08-vratenie-tovaru-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Подарунок не підійшов",
+        "description": "Чоловікові подарували светр, але він замалий. Ти йдеш у магазин.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Продавчиня: «Dobrý deň, prosím?» Ти пояснюєш.",
+            "options": [
+              {
+                "sk": "Dobrý deň, chcela by som vymeniť tento sveter.",
+                "correct": true
+              },
+              {
+                "sk": "Dobrý deň, chcela by som vymeniť táto sveter.",
+                "correct": false
+              },
+              {
+                "sk": "Sveter vymeniť by som.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Aký je problém?» (чоловікові малий)",
+            "options": [
+              {
+                "sk": "Je mu malá.",
+                "correct": false
+              },
+              {
+                "sk": "Je ho malý.",
+                "correct": false
+              },
+              {
+                "sk": "Je mu malý.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Máte pokladničný doklad? Lehota je 30 dní.» Що потрібно?",
+            "options": [
+              {
+                "sk": "чек, строк — 3 дні",
+                "correct": false
+              },
+              {
+                "sk": "паспорт, строк — 30 днів",
+                "correct": false
+              },
+              {
+                "sk": "чек, строк — 30 днів",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Більшого розміру немає. Ти просиш повернути гроші.",
+            "options": [
+              {
+                "sk": "Tak mi, prosím, vrátiť peniaze.",
+                "correct": false
+              },
+              {
+                "sk": "Tak mi, prosím, vráťte peniaze.",
+                "correct": true
+              },
+              {
+                "sk": "Peniaze vrátenie prosím mi.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш повернути річ. Далі — розпродаж."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш повернути річ. Далі — розпродаж.",
+        "nowYouKnow": [
+          "vrátenie peňazí / výmena za inú veľkosť",
+          "lehota, visačka, pokladničný doklad",
+          "diera, chybný → reklamácia",
+          "Chcela by som to vrátiť / vymeniť"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u16-l09-vypredaj",
+          "title": "Розпродаж"
+        }
+      }
+    }
+  ]
+}

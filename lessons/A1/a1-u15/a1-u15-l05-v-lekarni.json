@@ -1,0 +1,817 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u15-l05-v-lekarni",
+      "sectionId": "a1-u15",
+      "level": "A1",
+      "title": "В аптеці: форми ліків",
+      "topic": "Здоров’я",
+      "description": "Аптека глибше: мазь, краплі, спрей; ліки за рецептом і без нього, e-рецепт, доплата, інструкція до ліків.",
+      "order": 145,
+      "xpReward": 25,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Купити потрібну форму ліків, зрозуміти доплату й попросити поради фармацевта.",
+      "completionMessage": "Ти впевнено почуваєшся в аптеці. Далі — як правильно приймати ліки.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Здоров’я",
+        "title": "В аптеці: форми ліків",
+        "shortDescription": "Купити потрібну форму ліків, зрозуміти доплату й попросити поради фармацевта.",
+        "outcomes": [
+          "називати masť, kvapky, sprej",
+          "розрізняти na predpis і voľnopredajný",
+          "розуміти doplatok і eRecept",
+          "питати Čo mi odporúčate?"
+        ],
+        "newWords": [
+          "masť",
+          "kvapky",
+          "lekárnik",
+          "voľnopredajný",
+          "doplatok",
+          "príbalový leták"
+        ],
+        "exercisesCount": 14,
+        "reward": "+25 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Forma lieku",
+          "text": "Ти вже знаєш tabletka, sirup, náplasť. Ще: «masť» — мазь, «kvapky» — краплі («kvapky do nosa / do očí / do uší»), «sprej» — спрей, «pastilky» — льодяники (від горла).",
+          "examples": [
+            {
+              "sk": "Potrebujem kvapky do nosa.",
+              "uk": "Мені потрібні краплі в ніс."
+            },
+            {
+              "sk": "Máte masť na bolesť chrbta?",
+              "uk": "У вас є мазь від болю в спині?"
+            }
+          ],
+          "shortRule": "kvapky do + родовий",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Recept a doplatok",
+          "text": "«Voľnopredajný liek» — ліки без рецепта, а «na predpis» — за рецептом. Лікар зазвичай виписує «eRecept» — в аптеці достатньо показати картку страхування. Частину ціни платить страхова, а ти платиш «doplatok» — доплату.",
+          "examples": [
+            {
+              "sk": "Máte eRecept?",
+              "uk": "У вас е-рецепт?"
+            },
+            {
+              "sk": "Doplatok je dve eurá.",
+              "uk": "Доплата — два євро."
+            }
+          ],
+          "shortRule": "na predpis / voľnopredajný",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Poradiť sa",
+          "text": "Фармацевт — «lekárnik / lekárnička». Можна спитати: «Čo mi odporúčate na…?» — що порадите від…? «Je to vhodné pre deti?» — це підходить дітям? «Príbalový leták» — інструкція в упаковці.",
+          "examples": [
+            {
+              "sk": "Čo mi odporúčate na nádchu?",
+              "uk": "Що порадите від нежиті?"
+            },
+            {
+              "sk": "Prečítajte si príbalový leták.",
+              "uk": "Прочитайте інструкцію."
+            }
+          ],
+          "shortRule": "Čo mi odporúčate na…?",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u15-l05-v-lekarni-w01",
+            "sk": "masť",
+            "uk": "мазь",
+            "pronunciationUk": "масть",
+            "exampleSk": "Masť natierajte na koleno dvakrát denne.",
+            "exampleUk": "Мазь наносьте на коліно двічі на день."
+          },
+          {
+            "wordId": "a1-u15-l05-v-lekarni-w02",
+            "sk": "kvapky",
+            "uk": "краплі",
+            "pronunciationUk": "квапкі",
+            "exampleSk": "Dieťa potrebuje kvapky do uší.",
+            "exampleUk": "Дитині потрібні краплі у вуха."
+          },
+          {
+            "wordId": "a1-u15-l05-v-lekarni-w03",
+            "sk": "lekárnik",
+            "uk": "фармацевт, аптекар",
+            "pronunciationUk": "лека:рнік",
+            "exampleSk": "Opýtajte sa lekárnika.",
+            "exampleUk": "Запитайте фармацевта."
+          },
+          {
+            "wordId": "a1-u15-l05-v-lekarni-w04",
+            "sk": "voľnopredajný",
+            "uk": "безрецептурний",
+            "pronunciationUk": "вольнопреда:йні:",
+            "exampleSk": "Tento liek je voľnopredajný.",
+            "exampleUk": "Ці ліки безрецептурні."
+          },
+          {
+            "wordId": "a1-u15-l05-v-lekarni-w05",
+            "sk": "doplatok",
+            "uk": "доплата",
+            "pronunciationUk": "доплаток",
+            "exampleSk": "Doplatok za liek je tri eurá.",
+            "exampleUk": "Доплата за ліки — три євро."
+          },
+          {
+            "wordId": "a1-u15-l05-v-lekarni-w06",
+            "sk": "príbalový leták",
+            "uk": "інструкція до ліків",
+            "pronunciationUk": "при:балові: лета:к",
+            "exampleSk": "Dávkovanie nájdete v príbalovom letáku.",
+            "exampleUk": "Дозування знайдете в інструкції."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u15-l05-v-lekarni-w01",
+          "sk": "masť",
+          "uk": "мазь",
+          "pronunciationUk": "масть",
+          "exampleSk": "Masť natierajte na koleno dvakrát denne.",
+          "exampleUk": "Мазь наносьте на коліно двічі на день.",
+          "level": "A1",
+          "topic": "Здоров’я",
+          "tags": [
+            "a1-u15",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u15-l05-v-lekarni-w02",
+          "sk": "kvapky",
+          "uk": "краплі",
+          "pronunciationUk": "квапкі",
+          "exampleSk": "Dieťa potrebuje kvapky do uší.",
+          "exampleUk": "Дитині потрібні краплі у вуха.",
+          "level": "A1",
+          "topic": "Здоров’я",
+          "tags": [
+            "a1-u15",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u15-l05-v-lekarni-w03",
+          "sk": "lekárnik",
+          "uk": "фармацевт, аптекар",
+          "pronunciationUk": "лека:рнік",
+          "exampleSk": "Opýtajte sa lekárnika.",
+          "exampleUk": "Запитайте фармацевта.",
+          "level": "A1",
+          "topic": "Здоров’я",
+          "tags": [
+            "a1-u15",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u15-l05-v-lekarni-w04",
+          "sk": "voľnopredajný",
+          "uk": "безрецептурний",
+          "pronunciationUk": "вольнопреда:йні:",
+          "exampleSk": "Tento liek je voľnopredajný.",
+          "exampleUk": "Ці ліки безрецептурні.",
+          "level": "A1",
+          "topic": "Здоров’я",
+          "tags": [
+            "a1-u15",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u15-l05-v-lekarni-w05",
+          "sk": "doplatok",
+          "uk": "доплата",
+          "pronunciationUk": "доплаток",
+          "exampleSk": "Doplatok za liek je tri eurá.",
+          "exampleUk": "Доплата за ліки — три євро.",
+          "level": "A1",
+          "topic": "Здоров’я",
+          "tags": [
+            "a1-u15",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u15-l05-v-lekarni-w06",
+          "sk": "príbalový leták",
+          "uk": "інструкція до ліків",
+          "pronunciationUk": "при:балові: лета:к",
+          "exampleSk": "Dávkovanie nájdete v príbalovom letáku.",
+          "exampleUk": "Дозування знайдете в інструкції.",
+          "level": "A1",
+          "topic": "Здоров’я",
+          "tags": [
+            "a1-u15",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u15-l05-v-lekarni-ex01",
+          "lessonId": "a1-u15-l05-v-lekarni",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "masť",
+              "right": "мазь"
+            },
+            {
+              "left": "kvapky",
+              "right": "краплі"
+            },
+            {
+              "left": "lekárnik",
+              "right": "фармацевт"
+            },
+            {
+              "left": "voľnopredajný",
+              "right": "безрецептурний"
+            },
+            {
+              "left": "doplatok",
+              "right": "доплата"
+            },
+            {
+              "left": "príbalový leták",
+              "right": "інструкція до ліків"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u15-l05-v-lekarni-w01",
+            "a1-u15-l05-v-lekarni-w02",
+            "a1-u15-l05-v-lekarni-w03",
+            "a1-u15-l05-v-lekarni-w04",
+            "a1-u15-l05-v-lekarni-w05",
+            "a1-u15-l05-v-lekarni-w06"
+          ]
+        },
+        {
+          "id": "a1-u15-l05-v-lekarni-ex02",
+          "lessonId": "a1-u15-l05-v-lekarni",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Potrebujem kvapky "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "na",
+                "v",
+                "do"
+              ],
+              "correct": "do"
+            },
+            {
+              "text": " očí."
+            }
+          ],
+          "explanation": "kvapky do + родовий: do očí.",
+          "order": 2,
+          "wordIds": [
+            "a1-u15-l05-v-lekarni-w02"
+          ]
+        },
+        {
+          "id": "a1-u15-l05-v-lekarni-ex03",
+          "lessonId": "a1-u15-l05-v-lekarni",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Máte niečo "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "do",
+                "na",
+                "od"
+              ],
+              "correct": "na"
+            },
+            {
+              "text": " nádchu?"
+            }
+          ],
+          "explanation": "niečo na + знахідний.",
+          "order": 3
+        },
+        {
+          "id": "a1-u15-l05-v-lekarni-ex04",
+          "lessonId": "a1-u15-l05-v-lekarni",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Tento liek je len na predpis»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Ці ліки лише для дітей",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Ці ліки — лише за рецептом",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Ці ліки можна купити без рецепта",
+              "correct": false
+            }
+          ],
+          "explanation": "na predpis — за рецептом.",
+          "order": 4
+        },
+        {
+          "id": "a1-u15-l05-v-lekarni-ex05",
+          "lessonId": "a1-u15-l05-v-lekarni",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Doplatok» — це частина ціни, яку платить пацієнт.",
+          "correctAnswer": true,
+          "explanation": "Решту платить страхова.",
+          "order": 5,
+          "wordIds": [
+            "a1-u15-l05-v-lekarni-w05"
+          ]
+        },
+        {
+          "id": "a1-u15-l05-v-lekarni-ex06",
+          "lessonId": "a1-u15-l05-v-lekarni",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "За рецептом чи без?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Na predpis"
+            },
+            {
+              "id": "c2",
+              "title": "Bez predpisu"
+            }
+          ],
+          "items": [
+            {
+              "sk": "pastilky na hrdlo",
+              "category": "c2"
+            },
+            {
+              "sk": "inzulín",
+              "category": "c1"
+            },
+            {
+              "sk": "náplasť",
+              "category": "c2"
+            },
+            {
+              "sk": "vitamíny",
+              "category": "c2"
+            },
+            {
+              "sk": "antibiotiká",
+              "category": "c1"
+            },
+            {
+              "sk": "lieky na tlak",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Сильні ліки — за рецептом.",
+          "order": 6
+        },
+        {
+          "id": "a1-u15-l05-v-lekarni-ex07",
+          "lessonId": "a1-u15-l05-v-lekarni",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Čo mi ______ na kašeľ? (порадите)",
+          "acceptedAnswers": [
+            "odporúčate"
+          ],
+          "explanation": "odporúčať — радити.",
+          "order": 7
+        },
+        {
+          "id": "a1-u15-l05-v-lekarni-ex08",
+          "lessonId": "a1-u15-l05-v-lekarni",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Спитай, чи це підходить дітям.",
+          "tokens": [
+            "pre",
+            "to",
+            "vhodné",
+            "Je",
+            "?",
+            "deti"
+          ],
+          "correctOrder": [
+            "Je",
+            "to",
+            "vhodné",
+            "pre",
+            "deti",
+            "?"
+          ],
+          "explanation": "vhodné pre — підходить для.",
+          "order": 8
+        },
+        {
+          "id": "a1-u15-l05-v-lekarni-ex09",
+          "lessonId": "a1-u15-l05-v-lekarni",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Potrebujem kvapky do nos pre syna.",
+          "errorToken": "nos",
+          "correctToken": "nosa",
+          "explanation": "do + родовий: nosa.",
+          "order": 9,
+          "wordIds": [
+            "a1-u15-l05-v-lekarni-w02"
+          ]
+        },
+        {
+          "id": "a1-u15-l05-v-lekarni-ex10",
+          "lessonId": "a1-u15-l05-v-lekarni",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай інструкцію.",
+          "document": {
+            "title": "Nosový sprej — príbalový leták",
+            "fields": [
+              {
+                "label": "Pre koho",
+                "value": "dospelí a deti od 6 rokov"
+              },
+              {
+                "label": "Dávkovanie",
+                "value": "1 – 2 vstreky do každej nosovej dierky 3-krát denne"
+              },
+              {
+                "label": "Užívanie",
+                "value": "najviac 7 dní za sebou"
+              }
+            ]
+          },
+          "question": "Скільки днів поспіль максимум можна використовувати спрей?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "3 дні",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "7 днів",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "6 днів",
+              "correct": false
+            }
+          ],
+          "explanation": "najviac 7 dní — щонайбільше 7 днів.",
+          "order": 10,
+          "wordIds": [
+            "a1-u15-l05-v-lekarni-w06"
+          ]
+        },
+        {
+          "id": "a1-u15-l05-v-lekarni-ex11",
+          "lessonId": "a1-u15-l05-v-lekarni",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Lekárnička",
+              "sk": "Máte eRecept?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Áno, tu je môj preukaz poistenca.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Áno, eRecept som.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Áno, tu je moja preukaz poistenca.",
+              "correct": false
+            }
+          ],
+          "explanation": "preukaz — чоловічий рід: môj.",
+          "order": 11,
+          "wordIds": [
+            "a1-u15-l05-v-lekarni-w03"
+          ]
+        },
+        {
+          "id": "a1-u15-l05-v-lekarni-ex12",
+          "lessonId": "a1-u15-l05-v-lekarni",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Тобі потрібна мазь від болю в спині.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Masť chrbta bolí mám?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Dajte chrbát masť.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Máte nejakú masť na bolesť chrbta?",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Máte masť na chrbát bolieť?",
+              "correct": false
+            }
+          ],
+          "explanation": "masť na bolesť chrbta.",
+          "order": 12,
+          "wordIds": [
+            "a1-u15-l05-v-lekarni-w01"
+          ]
+        },
+        {
+          "id": "a1-u15-l05-v-lekarni-ex13",
+          "lessonId": "a1-u15-l05-v-lekarni",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Lekárnik: Bez receptu vám to, žiaľ, nemôžem dať.",
+          "options": [
+            {
+              "id": "a",
+              "text": "ці ліки закінчилися",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "фармацевт радить інші ліки",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "ці ліки продають лише за рецептом",
+              "correct": true
+            }
+          ],
+          "explanation": "bez receptu nemôžem dať — лише за рецептом.",
+          "order": 13,
+          "wordIds": [
+            "a1-u15-l05-v-lekarni-w03"
+          ]
+        },
+        {
+          "id": "a1-u15-l05-v-lekarni-ex14",
+          "lessonId": "a1-u15-l05-v-lekarni",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери форми ліків.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "sprej",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "lekárnik",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "masť",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "kvapky",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "doplatok",
+              "correct": false
+            }
+          ],
+          "explanation": "Мазь, краплі, спрей — форми ліків.",
+          "order": 14,
+          "wordIds": [
+            "a1-u15-l05-v-lekarni-w01",
+            "a1-u15-l05-v-lekarni-w02",
+            "a1-u15-l05-v-lekarni-w03",
+            "a1-u15-l05-v-lekarni-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "В аптеці з дитиною",
+        "description": "У сина болить вухо, лікарка виписала е-рецепт.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Фармацевтка: «Dobrý deň, čo si želáte?»",
+            "options": [
+              {
+                "sk": "Dobrý deň, mám eRecept na kvapky do ucho.",
+                "correct": false
+              },
+              {
+                "sk": "Kvapky uši recept.",
+                "correct": false
+              },
+              {
+                "sk": "Dobrý deň, mám eRecept na kvapky do uší.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Doplatok je 2,40 €.» Що це означає?",
+            "options": [
+              {
+                "sk": "тобі повернуть 2,40 €",
+                "correct": false
+              },
+              {
+                "sk": "ліки коштують 2,40 € без рецепта",
+                "correct": false
+              },
+              {
+                "sk": "тобі треба доплатити 2,40 €",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти просиш ще щось від нежиті без рецепта.",
+            "options": [
+              {
+                "sk": "A máte aj niečo na nádchu bez predpisu?",
+                "correct": true
+              },
+              {
+                "sk": "Nádcha bez predpisu máte?",
+                "correct": false
+              },
+              {
+                "sk": "A máte aj niečo na nádcha bez predpis?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Prečítajte si príbalový leták.» Що порадила фармацевтка?",
+            "options": [
+              {
+                "sk": "прийти завтра",
+                "correct": false
+              },
+              {
+                "sk": "прочитати інструкцію",
+                "correct": true
+              },
+              {
+                "sk": "зберегти чек",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти впевнено почуваєшся в аптеці. Далі — як правильно приймати ліки."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти впевнено почуваєшся в аптеці. Далі — як правильно приймати ліки.",
+        "nowYouKnow": [
+          "masť, kvapky, sprej",
+          "na predpis / voľnopredajný, eRecept",
+          "doplatok",
+          "Čo mi odporúčate? príbalový leták"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u15-l06-uzivanie-liekov",
+          "title": "Як приймати ліки"
+        }
+      }
+    }
+  ]
+}
