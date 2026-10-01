@@ -473,6 +473,8 @@ def build_exercise(kind: str, body: str, extra: list[str], ex_id: str, lesson_id
     for e in extra:
         if e.startswith("= "):
             ex["explanation"] = e[2:].strip()
+            if ex["explanation"] in ("…", "...") or "заглушка" in ex["explanation"]:
+                raise SourceError("placeholder explanation")
         elif e.startswith("h: "):
             ex["hint"] = e[3:].strip()
         elif e.startswith("d: "):

@@ -1,0 +1,745 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u06-l05-nepravidelne-slovesa",
+      "sectionId": "a1-u06",
+      "level": "A1",
+      "title": "Неправильні дієслова",
+      "topic": "Дієслова в теперішньому часі",
+      "description": "Дієслова, що не підкоряються схемам: povedať (poviem), dať (dám), prísť (prídem), odísť, zostať, začať (začnem).",
+      "order": 55,
+      "xpReward": 25,
+      "estimatedMinutes": 20,
+      "isPublished": true,
+      "intro": "Знати форми найчастіших неправильних дієслів.",
+      "completionMessage": "Неправильні дієслова приборкано. Далі — заперечення.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Дієслова в теперішньому часі",
+        "title": "Неправильні дієслова",
+        "shortDescription": "Знати форми найчастіших неправильних дієслів.",
+        "outcomes": [
+          "відмінювати povedať, dať, prísť",
+          "казати prídem / odídem / zostanem",
+          "казати začínam / začnem",
+          "розуміти, що ці форми часто означають майбутнє"
+        ],
+        "newWords": [
+          "povedať",
+          "dať",
+          "prísť",
+          "odísť",
+          "zostať",
+          "začať"
+        ],
+        "exercisesCount": 13,
+        "reward": "+25 XP",
+        "estimatedMinutes": 20,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Povedať, dať",
+          "text": "povedať: poviem, povieš, povie, povieme, poviete, povedia. dať: dám, dáš, dá, dáme, dáte, dajú. Ці дієслова доконані — «poviem» часто означає «скажу».",
+          "examples": [
+            {
+              "sk": "Poviem ti to zajtra.",
+              "uk": "Я скажу тобі це завтра."
+            },
+            {
+              "sk": "Dám si kávu.",
+              "uk": "Я візьму каву."
+            }
+          ],
+          "shortRule": "poviem = скажу",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Prísť, odísť, zostať",
+          "text": "prísť (прийти): prídem, prídeš, príde… odísť (піти): odídem… zostať (залишитися): zostanem, zostaneš… Теж частіше про майбутнє.",
+          "examples": [
+            {
+              "sk": "Prídem o piatej.",
+              "uk": "Я прийду о п’ятій."
+            },
+            {
+              "sk": "Zostanem doma.",
+              "uk": "Я залишуся вдома."
+            }
+          ],
+          "shortRule": "prídem / odídem / zostanem",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Začať",
+          "text": "začať: začnem, začneš, začne… — почну. «Začínať» (недоконаний): začínam — починаю (зараз, регулярно). «Práca začína o ôsmej» — робота починається о восьмій.",
+          "examples": [
+            {
+              "sk": "Začnem zajtra.",
+              "uk": "Почну завтра."
+            },
+            {
+              "sk": "Kurz začína v pondelok.",
+              "uk": "Курс починається в понеділок."
+            }
+          ],
+          "shortRule": "začnem (почну) / začína (починається)",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u06-l05-nepravidelne-slovesa-w01",
+            "sk": "povedať",
+            "uk": "сказати",
+            "pronunciationUk": "поведать",
+            "exampleSk": "Čo ti povedal lekár?",
+            "exampleUk": "Що тобі сказав лікар?"
+          },
+          {
+            "wordId": "a1-u06-l05-nepravidelne-slovesa-w02",
+            "sk": "dať",
+            "uk": "дати",
+            "pronunciationUk": "дать",
+            "exampleSk": "Dám ti svoje číslo.",
+            "exampleUk": "Я дам тобі свій номер."
+          },
+          {
+            "wordId": "a1-u06-l05-nepravidelne-slovesa-w03",
+            "sk": "prísť",
+            "uk": "прийти",
+            "pronunciationUk": "прі:сть",
+            "exampleSk": "Kedy prídeš domov?",
+            "exampleUk": "Коли ти прийдеш додому?"
+          },
+          {
+            "wordId": "a1-u06-l05-nepravidelne-slovesa-w04",
+            "sk": "odísť",
+            "uk": "піти, поїхати",
+            "pronunciationUk": "оді:сть",
+            "exampleSk": "Odchádzam o piatej, odídem včas.",
+            "exampleUk": "Я виходжу о п’ятій, піду вчасно."
+          },
+          {
+            "wordId": "a1-u06-l05-nepravidelne-slovesa-w05",
+            "sk": "zostať",
+            "uk": "залишитися",
+            "pronunciationUk": "зостать",
+            "exampleSk": "Dnes zostanem doma.",
+            "exampleUk": "Сьогодні я залишуся вдома."
+          },
+          {
+            "wordId": "a1-u06-l05-nepravidelne-slovesa-w06",
+            "sk": "začať",
+            "uk": "почати",
+            "pronunciationUk": "зачать",
+            "exampleSk": "Kedy začneš novú prácu?",
+            "exampleUk": "Коли ти почнеш нову роботу?"
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-w01",
+          "sk": "povedať",
+          "uk": "сказати",
+          "pronunciationUk": "поведать",
+          "exampleSk": "Čo ti povedal lekár?",
+          "exampleUk": "Що тобі сказав лікар?",
+          "level": "A1",
+          "topic": "Дієслова в теперішньому часі",
+          "tags": [
+            "a1-u06",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-w02",
+          "sk": "dať",
+          "uk": "дати",
+          "pronunciationUk": "дать",
+          "exampleSk": "Dám ti svoje číslo.",
+          "exampleUk": "Я дам тобі свій номер.",
+          "level": "A1",
+          "topic": "Дієслова в теперішньому часі",
+          "tags": [
+            "a1-u06",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-w03",
+          "sk": "prísť",
+          "uk": "прийти",
+          "pronunciationUk": "прі:сть",
+          "exampleSk": "Kedy prídeš domov?",
+          "exampleUk": "Коли ти прийдеш додому?",
+          "level": "A1",
+          "topic": "Дієслова в теперішньому часі",
+          "tags": [
+            "a1-u06",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-w04",
+          "sk": "odísť",
+          "uk": "піти, поїхати",
+          "pronunciationUk": "оді:сть",
+          "exampleSk": "Odchádzam o piatej, odídem včas.",
+          "exampleUk": "Я виходжу о п’ятій, піду вчасно.",
+          "level": "A1",
+          "topic": "Дієслова в теперішньому часі",
+          "tags": [
+            "a1-u06",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-w05",
+          "sk": "zostať",
+          "uk": "залишитися",
+          "pronunciationUk": "зостать",
+          "exampleSk": "Dnes zostanem doma.",
+          "exampleUk": "Сьогодні я залишуся вдома.",
+          "level": "A1",
+          "topic": "Дієслова в теперішньому часі",
+          "tags": [
+            "a1-u06",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-w06",
+          "sk": "začať",
+          "uk": "почати",
+          "pronunciationUk": "зачать",
+          "exampleSk": "Kedy začneš novú prácu?",
+          "exampleUk": "Коли ти почнеш нову роботу?",
+          "level": "A1",
+          "topic": "Дієслова в теперішньому часі",
+          "tags": [
+            "a1-u06",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-ex01",
+          "lessonId": "a1-u06-l05-nepravidelne-slovesa",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай інфінітив і форму «я».",
+          "pairs": [
+            {
+              "left": "povedať",
+              "right": "poviem"
+            },
+            {
+              "left": "dať",
+              "right": "dám"
+            },
+            {
+              "left": "prísť",
+              "right": "prídem"
+            },
+            {
+              "left": "zostať",
+              "right": "zostanem"
+            },
+            {
+              "left": "začať",
+              "right": "začnem"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u06-l05-nepravidelne-slovesa-w01",
+            "a1-u06-l05-nepravidelne-slovesa-w02",
+            "a1-u06-l05-nepravidelne-slovesa-w03",
+            "a1-u06-l05-nepravidelne-slovesa-w05",
+            "a1-u06-l05-nepravidelne-slovesa-w06"
+          ]
+        },
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-ex02",
+          "lessonId": "a1-u06-l05-nepravidelne-slovesa",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Kedy "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "prídeš",
+                "prídem",
+                "príde"
+              ],
+              "correct": "prídeš"
+            },
+            {
+              "text": " domov?"
+            }
+          ],
+          "explanation": "ty → prídeš.",
+          "order": 2
+        },
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-ex03",
+          "lessonId": "a1-u06-l05-nepravidelne-slovesa",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Deti "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "povie",
+                "poviete",
+                "povedia"
+              ],
+              "correct": "povedia"
+            },
+            {
+              "text": " pravdu."
+            }
+          ],
+          "explanation": "oni → povedia.",
+          "order": 3,
+          "wordIds": [
+            "a1-u06-l05-nepravidelne-slovesa-w01"
+          ]
+        },
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-ex04",
+          "lessonId": "a1-u06-l05-nepravidelne-slovesa",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Zostanem doma»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Я вже вдома",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Я йду додому",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Я залишуся вдома",
+              "correct": true
+            }
+          ],
+          "explanation": "zostať — залишитися.",
+          "order": 4
+        },
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-ex05",
+          "lessonId": "a1-u06-l05-nepravidelne-slovesa",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Kurz "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "začína",
+                "začne",
+                "začnem"
+              ],
+              "correct": "začína"
+            },
+            {
+              "text": " každý pondelok."
+            }
+          ],
+          "explanation": "Регулярно — začína.",
+          "order": 5
+        },
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-ex06",
+          "lessonId": "a1-u06-l05-nepravidelne-slovesa",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Prídem o piatej» зазвичай означає майбутнє: «Я прийду о п’ятій».",
+          "correctAnswer": true,
+          "explanation": "Доконані дієслова в теперішній формі → майбутнє.",
+          "order": 6
+        },
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-ex07",
+          "lessonId": "a1-u06-l05-nepravidelne-slovesa",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши (я дам).",
+          "sentence": "______ ti svoje číslo.",
+          "acceptedAnswers": [
+            "Dám"
+          ],
+          "explanation": "dať → dám.",
+          "order": 7
+        },
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-ex08",
+          "lessonId": "a1-u06-l05-nepravidelne-slovesa",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що скажеш це завтра.",
+          "tokens": [
+            ".",
+            "to",
+            "ti",
+            "Poviem",
+            "zajtra"
+          ],
+          "correctOrder": [
+            "Poviem",
+            "ti",
+            "to",
+            "zajtra",
+            "."
+          ],
+          "explanation": "Poviem ti + to + kedy.",
+          "order": 8
+        },
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-ex09",
+          "lessonId": "a1-u06-l05-nepravidelne-slovesa",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Zajtra zostaneš doma, som chorý.",
+          "errorToken": "zostaneš",
+          "correctToken": "zostanem",
+          "explanation": "Про себе — zostanem.",
+          "order": 9,
+          "wordIds": [
+            "a1-u06-l05-nepravidelne-slovesa-w05"
+          ]
+        },
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-ex10",
+          "lessonId": "a1-u06-l05-nepravidelne-slovesa",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Шеф питає, коли ти прийдеш завтра (о 7:00).",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Príde o siedmej.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Prídem o siedmej.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Prísť o sedem.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Prídeš o siedmej.",
+              "correct": false
+            }
+          ],
+          "explanation": "Про себе — prídem.",
+          "order": 10,
+          "wordIds": [
+            "a1-u06-l05-nepravidelne-slovesa-w03"
+          ]
+        },
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-ex11",
+          "lessonId": "a1-u06-l05-nepravidelne-slovesa",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Майбутнє чи регулярна дія?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Майбутнє (раз)"
+            },
+            {
+              "id": "c2",
+              "title": "Регулярно"
+            }
+          ],
+          "items": [
+            {
+              "sk": "chodím",
+              "category": "c2"
+            },
+            {
+              "sk": "prídem",
+              "category": "c1"
+            },
+            {
+              "sk": "začínam",
+              "category": "c2"
+            },
+            {
+              "sk": "začnem",
+              "category": "c1"
+            },
+            {
+              "sk": "hovorím",
+              "category": "c2"
+            },
+            {
+              "sk": "poviem",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Доконані / недоконані.",
+          "order": 11
+        },
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-ex12",
+          "lessonId": "a1-u06-l05-nepravidelne-slovesa",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kolega",
+              "sk": "Odchádzaš už?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Odísť lekár.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Áno, dnes odídem skôr, idem k lekárovi.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Áno, odíde skôr.",
+              "correct": false
+            }
+          ],
+          "explanation": "Пояснюєш, чому йдеш раніше.",
+          "order": 12,
+          "wordIds": [
+            "a1-u06-l05-nepravidelne-slovesa-w04"
+          ]
+        },
+        {
+          "id": "a1-u06-l05-nepravidelne-slovesa-ex13",
+          "lessonId": "a1-u06-l05-nepravidelne-slovesa",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні форми.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "dajem",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "prídu",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "povieš",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "dáme",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "poveš",
+              "correct": false
+            }
+          ],
+          "explanation": "Неправильні форми.",
+          "order": 13
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Домовляємося про зустріч",
+        "description": "Подруга пише в месенджері.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Kedy prídeš?» (о шостій)",
+            "options": [
+              {
+                "sk": "Prísť o šesť.",
+                "correct": false
+              },
+              {
+                "sk": "Prídem o šiestej.",
+                "correct": true
+              },
+              {
+                "sk": "Príde o šiestej.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Zostaneš na večeru?» (так)",
+            "options": [
+              {
+                "sk": "Áno, zostať.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, rada zostanem.",
+                "correct": true
+              },
+              {
+                "sk": "Áno, zostane.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Povieš aj Marekovi?» (так, скажу)",
+            "options": [
+              {
+                "sk": "Áno, povedať.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, poviem mu.",
+                "correct": true
+              },
+              {
+                "sk": "Áno, povie mu.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Film začína o ôsmej.» Що це означає?",
+            "options": [
+              {
+                "sk": "ви почнете о восьмій",
+                "correct": false
+              },
+              {
+                "sk": "кіно до восьмої",
+                "correct": false
+              },
+              {
+                "sk": "фільм починається о восьмій",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Неправильні дієслова приборкано. Далі — заперечення."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Неправильні дієслова приборкано. Далі — заперечення.",
+        "nowYouKnow": [
+          "poviem, dám, prídem, odídem, zostanem, začnem",
+          "prídem = прийду",
+          "začína vs začnem"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 13,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u06-l06-zapor-slovies",
+          "title": "Заперечення з дієсловами"
+        }
+      }
+    }
+  ]
+}
