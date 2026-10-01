@@ -1,0 +1,730 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u05-l05-kupelna",
+      "sectionId": "a1-u05",
+      "level": "A1",
+      "title": "Ванна кімната",
+      "topic": "Житло",
+      "description": "Kúpeľňa, sprcha, vaňa, umývadlo, uterák, záchod — і щоденні дії: umyť sa, osprchovať sa.",
+      "order": 45,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Розповісти про ванну кімнату й зрозуміти зворотні дії «sa».",
+      "completionMessage": "Ванну опановано. Далі — поверх, ліфт і підвал.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Житло",
+        "title": "Ванна кімната",
+        "shortDescription": "Розповісти про ванну кімнату й зрозуміти зворотні дії «sa».",
+        "outcomes": [
+          "називати речі у ванній",
+          "казати Idem sa osprchovať",
+          "розрізняти kúpeľňa і záchod",
+          "просити рушник"
+        ],
+        "newWords": [
+          "kúpeľňa",
+          "sprcha",
+          "vaňa",
+          "umývadlo",
+          "uterák",
+          "zrkadlo"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Kúpeľňa і záchod",
+          "text": "«Kúpeľňa» — ванна кімната, «záchod / WC» — туалет. Часто окремо: «Kúpeľňa a WC sú oddelené». «Sprcha» — душ, «vaňa» — ванна, «umývadlo» — умивальник.",
+          "examples": [
+            {
+              "sk": "Kúpeľňa má vaňu aj sprchu.",
+              "uk": "У ванній є і ванна, і душ."
+            },
+            {
+              "sk": "WC je samostatné.",
+              "uk": "Туалет окремий."
+            }
+          ],
+          "shortRule": "kúpeľňa ≠ záchod",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Зворотні дії",
+          "text": "«Umyť sa» — умитися, «osprchovať sa» — прийняти душ, «okúpať sa» — викупатися. «Idem sa osprchovať» — піду в душ. «Umyť si ruky» — помити руки (si).",
+          "examples": [
+            {
+              "sk": "Umy si ruky!",
+              "uk": "Помий руки!"
+            },
+            {
+              "sk": "Ráno sa sprchujem.",
+              "uk": "Уранці я приймаю душ."
+            }
+          ],
+          "shortRule": "sa — себе; si — собі",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Речі",
+          "text": "uterák (рушник), mydlo (мило — вже знаєш), šampón, zubná kefka (зубна щітка), zrkadlo (дзеркало).",
+          "examples": [
+            {
+              "sk": "Uteráky sú v skrinke.",
+              "uk": "Рушники в шафці."
+            },
+            {
+              "sk": "Zrkadlo je nad umývadlom.",
+              "uk": "Дзеркало над умивальником."
+            }
+          ],
+          "shortRule": "uterák = рушник",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u05-l05-kupelna-w01",
+            "sk": "kúpeľňa",
+            "uk": "ванна кімната",
+            "pronunciationUk": "ку:пельня",
+            "exampleSk": "Kúpeľňa je po rekonštrukcii.",
+            "exampleUk": "Ванна кімната після ремонту."
+          },
+          {
+            "wordId": "a1-u05-l05-kupelna-w02",
+            "sk": "sprcha",
+            "uk": "душ",
+            "pronunciationUk": "спрха",
+            "exampleSk": "Sprcha nefunguje.",
+            "exampleUk": "Душ не працює."
+          },
+          {
+            "wordId": "a1-u05-l05-kupelna-w03",
+            "sk": "vaňa",
+            "uk": "ванна (ємність)",
+            "pronunciationUk": "ваня",
+            "exampleSk": "Deti sa kúpu vo vani.",
+            "exampleUk": "Діти купаються у ванні."
+          },
+          {
+            "wordId": "a1-u05-l05-kupelna-w04",
+            "sk": "umývadlo",
+            "uk": "умивальник",
+            "pronunciationUk": "уми:вадло",
+            "exampleSk": "Umývadlo je upchaté.",
+            "exampleUk": "Умивальник забитий."
+          },
+          {
+            "wordId": "a1-u05-l05-kupelna-w05",
+            "sk": "uterák",
+            "uk": "рушник",
+            "pronunciationUk": "утера:к",
+            "exampleSk": "Môžem dostať čistý uterák?",
+            "exampleUk": "Можна мені чистий рушник?"
+          },
+          {
+            "wordId": "a1-u05-l05-kupelna-w06",
+            "sk": "zrkadlo",
+            "uk": "дзеркало",
+            "pronunciationUk": "зркадло",
+            "exampleSk": "Zrkadlo je nad umývadlom.",
+            "exampleUk": "Дзеркало над умивальником."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u05-l05-kupelna-w01",
+          "sk": "kúpeľňa",
+          "uk": "ванна кімната",
+          "pronunciationUk": "ку:пельня",
+          "exampleSk": "Kúpeľňa je po rekonštrukcii.",
+          "exampleUk": "Ванна кімната після ремонту.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l05-kupelna-w02",
+          "sk": "sprcha",
+          "uk": "душ",
+          "pronunciationUk": "спрха",
+          "exampleSk": "Sprcha nefunguje.",
+          "exampleUk": "Душ не працює.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l05-kupelna-w03",
+          "sk": "vaňa",
+          "uk": "ванна (ємність)",
+          "pronunciationUk": "ваня",
+          "exampleSk": "Deti sa kúpu vo vani.",
+          "exampleUk": "Діти купаються у ванні.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l05-kupelna-w04",
+          "sk": "umývadlo",
+          "uk": "умивальник",
+          "pronunciationUk": "уми:вадло",
+          "exampleSk": "Umývadlo je upchaté.",
+          "exampleUk": "Умивальник забитий.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l05-kupelna-w05",
+          "sk": "uterák",
+          "uk": "рушник",
+          "pronunciationUk": "утера:к",
+          "exampleSk": "Môžem dostať čistý uterák?",
+          "exampleUk": "Можна мені чистий рушник?",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l05-kupelna-w06",
+          "sk": "zrkadlo",
+          "uk": "дзеркало",
+          "pronunciationUk": "зркадло",
+          "exampleSk": "Zrkadlo je nad umývadlom.",
+          "exampleUk": "Дзеркало над умивальником.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u05-l05-kupelna-ex01",
+          "lessonId": "a1-u05-l05-kupelna",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "kúpeľňa",
+              "right": "ванна кімната"
+            },
+            {
+              "left": "sprcha",
+              "right": "душ"
+            },
+            {
+              "left": "vaňa",
+              "right": "ванна"
+            },
+            {
+              "left": "umývadlo",
+              "right": "умивальник"
+            },
+            {
+              "left": "uterák",
+              "right": "рушник"
+            },
+            {
+              "left": "zrkadlo",
+              "right": "дзеркало"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u05-l05-kupelna-w01",
+            "a1-u05-l05-kupelna-w02",
+            "a1-u05-l05-kupelna-w03",
+            "a1-u05-l05-kupelna-w04",
+            "a1-u05-l05-kupelna-w05",
+            "a1-u05-l05-kupelna-w06"
+          ]
+        },
+        {
+          "id": "a1-u05-l05-kupelna-ex02",
+          "lessonId": "a1-u05-l05-kupelna",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Ráno "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "sa",
+                "si"
+              ],
+              "correct": "sa"
+            },
+            {
+              "text": " sprchujem."
+            }
+          ],
+          "explanation": "sprchovať sa — себе.",
+          "order": 2,
+          "wordIds": [
+            "a1-u05-l05-kupelna-w02"
+          ]
+        },
+        {
+          "id": "a1-u05-l05-kupelna-ex03",
+          "lessonId": "a1-u05-l05-kupelna",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Umy "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "sa",
+                "si"
+              ],
+              "correct": "si"
+            },
+            {
+              "text": " ruky!"
+            }
+          ],
+          "explanation": "umyť si ruky — si (собі) + що.",
+          "order": 3
+        },
+        {
+          "id": "a1-u05-l05-kupelna-ex04",
+          "lessonId": "a1-u05-l05-kupelna",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Kúpeľňa a WC sú oddelené»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "ванна й туалет окремо",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "туалет у ванній",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "ванної немає",
+              "correct": false
+            }
+          ],
+          "explanation": "oddelené — окремі.",
+          "order": 4
+        },
+        {
+          "id": "a1-u05-l05-kupelna-ex05",
+          "lessonId": "a1-u05-l05-kupelna",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Kúpeľňa» і «záchod» — це завжди одне приміщення.",
+          "correctAnswer": false,
+          "explanation": "Часто окремі приміщення.",
+          "order": 5,
+          "wordIds": [
+            "a1-u05-l05-kupelna-w01"
+          ]
+        },
+        {
+          "id": "a1-u05-l05-kupelna-ex06",
+          "lessonId": "a1-u05-l05-kupelna",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Môžem dostať čistý ______? (рушник)",
+          "acceptedAnswers": [
+            "uterák"
+          ],
+          "explanation": "uterák — рушник.",
+          "order": 6,
+          "wordIds": [
+            "a1-u05-l05-kupelna-w05"
+          ]
+        },
+        {
+          "id": "a1-u05-l05-kupelna-ex07",
+          "lessonId": "a1-u05-l05-kupelna",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що піде в душ.",
+          "tokens": [
+            "osprchovať",
+            "Idem",
+            "sa",
+            "."
+          ],
+          "correctOrder": [
+            "Idem",
+            "sa",
+            "osprchovať",
+            "."
+          ],
+          "explanation": "Idem sa + osprchovať.",
+          "order": 7,
+          "wordIds": [
+            "a1-u05-l05-kupelna-w02"
+          ]
+        },
+        {
+          "id": "a1-u05-l05-kupelna-ex08",
+          "lessonId": "a1-u05-l05-kupelna",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Deti sa kúpu vo vaňa.",
+          "errorToken": "vaňa",
+          "correctToken": "vani",
+          "explanation": "vo + місцевий: vani.",
+          "order": 8,
+          "wordIds": [
+            "a1-u05-l05-kupelna-w03"
+          ]
+        },
+        {
+          "id": "a1-u05-l05-kupelna-ex09",
+          "lessonId": "a1-u05-l05-kupelna",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "У готелі немає рушників. Ти телефонуєш на рецепцію.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Prepáčte, v izbe nie sú uteráky.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Uterák je nie.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Nemám uteráky som.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Uteráky je kúpeľňa.",
+              "correct": false
+            }
+          ],
+          "explanation": "V izbe nie sú uteráky.",
+          "order": 9,
+          "wordIds": [
+            "a1-u05-l05-kupelna-w01",
+            "a1-u05-l05-kupelna-w05"
+          ]
+        },
+        {
+          "id": "a1-u05-l05-kupelna-ex10",
+          "lessonId": "a1-u05-l05-kupelna",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що для чого?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Na umývanie"
+            },
+            {
+              "id": "c2",
+              "title": "Na utieranie"
+            }
+          ],
+          "items": [
+            {
+              "sk": "mydlo",
+              "category": "c1"
+            },
+            {
+              "sk": "osuška",
+              "category": "c2"
+            },
+            {
+              "sk": "šampón",
+              "category": "c1"
+            },
+            {
+              "sk": "zubná kefka",
+              "category": "c1"
+            },
+            {
+              "sk": "uterák",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Мити / витирати.",
+          "order": 10,
+          "wordIds": [
+            "a1-u05-l05-kupelna-w05"
+          ]
+        },
+        {
+          "id": "a1-u05-l05-kupelna-ex11",
+          "lessonId": "a1-u05-l05-kupelna",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Mama",
+              "sk": "Umyl si si zuby?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Áno, mami.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Zuby áno sa.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Áno, si umyl.",
+              "correct": false
+            }
+          ],
+          "explanation": "Коротка відповідь.",
+          "order": 11
+        },
+        {
+          "id": "a1-u05-l05-kupelna-ex12",
+          "lessonId": "a1-u05-l05-kupelna",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери речі, які бувають у ванній.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "zrkadlo",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "gauč",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "sporák",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "umývadlo",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "uterák",
+              "correct": true
+            }
+          ],
+          "explanation": "Ванна кімната.",
+          "order": 12,
+          "wordIds": [
+            "a1-u05-l05-kupelna-w04",
+            "a1-u05-l05-kupelna-w05",
+            "a1-u05-l05-kupelna-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Проблема в готелі",
+        "description": "Ти в готелі, у ванній проблеми. Дзвониш на рецепцію.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Recepcia, prosím.»",
+            "options": [
+              {
+                "sk": "Dobrý večer, volám z izby 215. Sprcha nefunguje.",
+                "correct": true
+              },
+              {
+                "sk": "Sprcha je dobrá.",
+                "correct": false
+              },
+              {
+                "sk": "Dobrú noc, sprcha.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Tečie vôbec voda?» (тече лише холодна)",
+            "options": [
+              {
+                "sk": "Voda studené.",
+                "correct": false
+              },
+              {
+                "sk": "Tečie len studený voda.",
+                "correct": false
+              },
+              {
+                "sk": "Tečie len studená voda.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Pošleme technika. A potrebujete ešte niečo?» (рушники)",
+            "options": [
+              {
+                "sk": "Áno, dva čisté uterák.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, uteráky čisté je.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, dva čisté uteráky, prosím.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Technik príde o desať minút.» Коли?",
+            "options": [
+              {
+                "sk": "завтра",
+                "correct": false
+              },
+              {
+                "sk": "о десятій",
+                "correct": false
+              },
+              {
+                "sk": "через 10 хвилин",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ванну опановано. Далі — поверх, ліфт і підвал."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ванну опановано. Далі — поверх, ліфт і підвал.",
+        "nowYouKnow": [
+          "kúpeľňa, sprcha, vaňa, umývadlo, uterák, zrkadlo",
+          "umyť sa, osprchovať sa",
+          "umyť si ruky",
+          "kúpeľňa ≠ záchod"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u05-l06-budova",
+          "title": "Будинок: поверх, ліфт, підвал"
+        }
+      }
+    }
+  ]
+}

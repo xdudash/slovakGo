@@ -1,0 +1,744 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u05-l06-budova",
+      "sectionId": "a1-u05",
+      "level": "A1",
+      "title": "Будинок: поверх, ліфт, підвал",
+      "topic": "Житло",
+      "description": "Поверхи (і словацький рахунок поверхів!), ліфт, сходи, підвал, балкон.",
+      "order": 46,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Пояснити, на якому поверсі живеш, і розуміти частини будинку.",
+      "completionMessage": "Тепер ти орієнтуєшся в будинку. Далі — домашні справи.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Житло",
+        "title": "Будинок: поверх, ліфт, підвал",
+        "shortDescription": "Пояснити, на якому поверсі живеш, і розуміти частини будинку.",
+        "outcomes": [
+          "розуміти prízemie і 1. poschodie",
+          "казати Bývam na treťom poschodí",
+          "називати výťah, schody, pivnica, balkón",
+          "розуміти оголошення в під’їзді"
+        ],
+        "newWords": [
+          "poschodie",
+          "prízemie",
+          "výťah",
+          "schody",
+          "pivnica",
+          "balkón"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Поверхи",
+          "text": "«Prízemie» — перший (партер) поверх; «1. poschodie» — у нашому розумінні ДРУГИЙ поверх! «Bývam na treťom poschodí» = четвертий поверх за українським рахунком.",
+          "examples": [
+            {
+              "sk": "Bývam na prízemí.",
+              "uk": "Я живу на першому поверсі."
+            },
+            {
+              "sk": "Kancelária je na druhom poschodí.",
+              "uk": "Офіс на 3-му поверсі (за нашим рахунком)."
+            }
+          ],
+          "shortRule": "prízemie = наш 1-й",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Ліфт і сходи",
+          "text": "«Výťah» — ліфт, «schody» — сходи, «schodisko» — сходова клітка. «Výťah nejde» — ліфт не працює. «Ísť po schodoch» — іти сходами.",
+          "examples": [
+            {
+              "sk": "Výťah je pokazený, ideme po schodoch.",
+              "uk": "Ліфт зламаний, ідемо сходами."
+            }
+          ],
+          "shortRule": "výťah, schody",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Підвал і балкон",
+          "text": "«Pivnica» — підвал (комора), «balkón», «terasa», «povala» — горище. «Kočíkáreň» — кімната для візочків.",
+          "examples": [
+            {
+              "sk": "Bicykle sú v pivnici.",
+              "uk": "Велосипеди в підвалі."
+            },
+            {
+              "sk": "Na balkóne sušíme bielizeň.",
+              "uk": "На балконі сушимо білизну."
+            }
+          ],
+          "shortRule": "pivnica — підвал",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u05-l06-budova-w01",
+            "sk": "poschodie",
+            "uk": "поверх",
+            "pronunciationUk": "посходіє",
+            "exampleSk": "Na ktorom poschodí bývate?",
+            "exampleUk": "На якому поверсі ви живете?"
+          },
+          {
+            "wordId": "a1-u05-l06-budova-w02",
+            "sk": "prízemie",
+            "uk": "перший поверх (партер)",
+            "pronunciationUk": "прі:земіє",
+            "exampleSk": "Obchod je na prízemí.",
+            "exampleUk": "Магазин на першому поверсі."
+          },
+          {
+            "wordId": "a1-u05-l06-budova-w03",
+            "sk": "výťah",
+            "uk": "ліфт",
+            "pronunciationUk": "ві:тях",
+            "exampleSk": "Výťah ide len do piateho poschodia.",
+            "exampleUk": "Ліфт іде лише до п’ятого поверху."
+          },
+          {
+            "wordId": "a1-u05-l06-budova-w04",
+            "sk": "schody",
+            "uk": "сходи",
+            "pronunciationUk": "сході",
+            "exampleSk": "Pozor, schody sú mokré.",
+            "exampleUk": "Обережно, сходи мокрі."
+          },
+          {
+            "wordId": "a1-u05-l06-budova-w05",
+            "sk": "pivnica",
+            "uk": "підвал, комора",
+            "pronunciationUk": "півніца",
+            "exampleSk": "Zimné pneumatiky sú v pivnici.",
+            "exampleUk": "Зимові шини в підвалі."
+          },
+          {
+            "wordId": "a1-u05-l06-budova-w06",
+            "sk": "balkón",
+            "uk": "балкон",
+            "pronunciationUk": "балко:н",
+            "exampleSk": "Byt má veľký balkón.",
+            "exampleUk": "Квартира має великий балкон."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u05-l06-budova-w01",
+          "sk": "poschodie",
+          "uk": "поверх",
+          "pronunciationUk": "посходіє",
+          "exampleSk": "Na ktorom poschodí bývate?",
+          "exampleUk": "На якому поверсі ви живете?",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l06-budova-w02",
+          "sk": "prízemie",
+          "uk": "перший поверх (партер)",
+          "pronunciationUk": "прі:земіє",
+          "exampleSk": "Obchod je na prízemí.",
+          "exampleUk": "Магазин на першому поверсі.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l06-budova-w03",
+          "sk": "výťah",
+          "uk": "ліфт",
+          "pronunciationUk": "ві:тях",
+          "exampleSk": "Výťah ide len do piateho poschodia.",
+          "exampleUk": "Ліфт іде лише до п’ятого поверху.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l06-budova-w04",
+          "sk": "schody",
+          "uk": "сходи",
+          "pronunciationUk": "сході",
+          "exampleSk": "Pozor, schody sú mokré.",
+          "exampleUk": "Обережно, сходи мокрі.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l06-budova-w05",
+          "sk": "pivnica",
+          "uk": "підвал, комора",
+          "pronunciationUk": "півніца",
+          "exampleSk": "Zimné pneumatiky sú v pivnici.",
+          "exampleUk": "Зимові шини в підвалі.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l06-budova-w06",
+          "sk": "balkón",
+          "uk": "балкон",
+          "pronunciationUk": "балко:н",
+          "exampleSk": "Byt má veľký balkón.",
+          "exampleUk": "Квартира має великий балкон.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u05-l06-budova-ex01",
+          "lessonId": "a1-u05-l06-budova",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "poschodie",
+              "right": "поверх"
+            },
+            {
+              "left": "prízemie",
+              "right": "перший поверх (партер)"
+            },
+            {
+              "left": "výťah",
+              "right": "ліфт"
+            },
+            {
+              "left": "schody",
+              "right": "сходи"
+            },
+            {
+              "left": "pivnica",
+              "right": "підвал"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u05-l06-budova-w01",
+            "a1-u05-l06-budova-w02",
+            "a1-u05-l06-budova-w03",
+            "a1-u05-l06-budova-w04",
+            "a1-u05-l06-budova-w05"
+          ]
+        },
+        {
+          "id": "a1-u05-l06-budova-ex02",
+          "lessonId": "a1-u05-l06-budova",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Сусід каже: «Bývam na prvom poschodí.» На якому поверсі за українським рахунком?",
+          "options": [
+            {
+              "id": "a",
+              "text": "на першому",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "на нульовому",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "на другому",
+              "correct": true
+            }
+          ],
+          "explanation": "1. poschodie = наш 2-й поверх.",
+          "order": 2
+        },
+        {
+          "id": "a1-u05-l06-budova-ex03",
+          "lessonId": "a1-u05-l06-budova",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Bicykle sú v "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "pivnicu",
+                "pivnica",
+                "pivnici"
+              ],
+              "correct": "pivnici"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "v + місцевий: pivnici.",
+          "order": 3,
+          "wordIds": [
+            "a1-u05-l06-budova-w05"
+          ]
+        },
+        {
+          "id": "a1-u05-l06-budova-ex04",
+          "lessonId": "a1-u05-l06-budova",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Bývam na treťom "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "poschodie",
+                "poschodí",
+                "poschodia"
+              ],
+              "correct": "poschodí"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "na + місцевий: poschodí.",
+          "order": 4,
+          "wordIds": [
+            "a1-u05-l06-budova-w01",
+            "a1-u05-l06-budova-w04"
+          ]
+        },
+        {
+          "id": "a1-u05-l06-budova-ex05",
+          "lessonId": "a1-u05-l06-budova",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Výťah nejde» означає, що ліфт не працює.",
+          "correctAnswer": true,
+          "explanation": "nejde — не їде, не працює.",
+          "order": 5,
+          "wordIds": [
+            "a1-u05-l06-budova-w03"
+          ]
+        },
+        {
+          "id": "a1-u05-l06-budova-ex06",
+          "lessonId": "a1-u05-l06-budova",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Obchod je na ______. (першому поверсі, партер)",
+          "acceptedAnswers": [
+            "prízemí"
+          ],
+          "hint": "Місцевий.",
+          "explanation": "na prízemí.",
+          "order": 6,
+          "wordIds": [
+            "a1-u05-l06-budova-w02"
+          ]
+        },
+        {
+          "id": "a1-u05-l06-budova-ex07",
+          "lessonId": "a1-u05-l06-budova",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що ліфт зламаний і ви йдете сходами.",
+          "tokens": [
+            "pokazený",
+            "ideme",
+            "schodoch",
+            "je",
+            ",",
+            ".",
+            "Výťah",
+            "po"
+          ],
+          "correctOrder": [
+            "Výťah",
+            "je",
+            "pokazený",
+            ",",
+            "ideme",
+            "po",
+            "schodoch",
+            "."
+          ],
+          "explanation": "po schodoch — сходами.",
+          "order": 7,
+          "wordIds": [
+            "a1-u05-l06-budova-w03",
+            "a1-u05-l06-budova-w04"
+          ]
+        },
+        {
+          "id": "a1-u05-l06-budova-ex08",
+          "lessonId": "a1-u05-l06-budova",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення й обери правильний висновок.",
+          "message": {
+            "sender": "Správca domu",
+            "body": "Oznam: V sobotu 10. 5. od 8:00 do 12:00 nebude fungovať výťah z dôvodu opravy. Ďakujeme za pochopenie."
+          },
+          "question": "Що станеться в суботу?",
+          "options": [
+            {
+              "id": "a",
+              "text": "прибирання підвалу",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "не буде води",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "ліфт не працюватиме з 8 до 12",
+              "correct": true
+            }
+          ],
+          "explanation": "nebude fungovať výťah.",
+          "order": 8,
+          "wordIds": [
+            "a1-u05-l06-budova-w03"
+          ]
+        },
+        {
+          "id": "a1-u05-l06-budova-ex09",
+          "lessonId": "a1-u05-l06-budova",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Bývam na štvrtý poschodí.",
+          "errorToken": "štvrtý",
+          "correctToken": "štvrtom",
+          "explanation": "na + місцевий: štvrtom.",
+          "order": 9,
+          "wordIds": [
+            "a1-u05-l06-budova-w01",
+            "a1-u05-l06-budova-w04"
+          ]
+        },
+        {
+          "id": "a1-u05-l06-budova-ex10",
+          "lessonId": "a1-u05-l06-budova",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Де в будинку?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Hore"
+            },
+            {
+              "id": "c2",
+              "title": "Dole"
+            }
+          ],
+          "items": [
+            {
+              "sk": "povala",
+              "category": "c1"
+            },
+            {
+              "sk": "pivnica",
+              "category": "c2"
+            },
+            {
+              "sk": "posledné poschodie",
+              "category": "c1"
+            },
+            {
+              "sk": "prízemie",
+              "category": "c2"
+            },
+            {
+              "sk": "kočíkáreň",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Верх / низ будинку.",
+          "order": 10,
+          "wordIds": [
+            "a1-u05-l06-budova-w01",
+            "a1-u05-l06-budova-w02",
+            "a1-u05-l06-budova-w04",
+            "a1-u05-l06-budova-w05"
+          ]
+        },
+        {
+          "id": "a1-u05-l06-budova-ex11",
+          "lessonId": "a1-u05-l06-budova",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Кур’єр питає, на якому ти поверсі (5-й поверх за українським рахунком).",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Štvrtý.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Na štyri poschodie.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Na štvrtom poschodí.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Na piatom poschodí.",
+              "correct": false
+            }
+          ],
+          "explanation": "Наш 5-й = словацьке 4. poschodie.",
+          "order": 11,
+          "wordIds": [
+            "a1-u05-l06-budova-w01",
+            "a1-u05-l06-budova-w04"
+          ]
+        },
+        {
+          "id": "a1-u05-l06-budova-ex12",
+          "lessonId": "a1-u05-l06-budova",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери частини будинку.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "výťah",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "uterák",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "sporák",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "pivnica",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "schodisko",
+              "correct": true
+            }
+          ],
+          "explanation": "Будинок.",
+          "order": 12,
+          "wordIds": [
+            "a1-u05-l06-budova-w03",
+            "a1-u05-l06-budova-w04",
+            "a1-u05-l06-budova-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Доставка меблів",
+        "description": "Кур’єри привезли шафу, ти пояснюєш дорогу.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Na ktorom poschodí bývate?» (2. poschodie)",
+            "options": [
+              {
+                "sk": "Druhá.",
+                "correct": false
+              },
+              {
+                "sk": "Na dva poschodie.",
+                "correct": false
+              },
+              {
+                "sk": "Na druhom poschodí.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Je tam výťah?» (так, але малий)",
+            "options": [
+              {
+                "sk": "Výťah je malé.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, ale je malý.",
+                "correct": true
+              },
+              {
+                "sk": "Áno, ale je malá.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Skriňa sa do výťahu nezmestí.» Що це означає?",
+            "options": [
+              {
+                "sk": "ліфт не працює",
+                "correct": false
+              },
+              {
+                "sk": "шафа зламана",
+                "correct": false
+              },
+              {
+                "sk": "шафа не влізе в ліфт",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Pôjdeme po schodoch.» Що зроблять?",
+            "options": [
+              {
+                "sk": "понесуть сходами",
+                "correct": true
+              },
+              {
+                "sk": "залишать у підвалі",
+                "correct": false
+              },
+              {
+                "sk": "поїдуть ліфтом",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тепер ти орієнтуєшся в будинку. Далі — домашні справи."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тепер ти орієнтуєшся в будинку. Далі — домашні справи.",
+        "nowYouKnow": [
+          "prízemie = наш 1-й; 1. poschodie = наш 2-й",
+          "výťah, schody, schodisko",
+          "pivnica, balkón",
+          "po schodoch"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u05-l07-domace-prace",
+          "title": "Домашні справи"
+        }
+      }
+    }
+  ]
+}

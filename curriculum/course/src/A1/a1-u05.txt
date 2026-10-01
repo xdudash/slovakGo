@@ -1,0 +1,446 @@
+@unit a1-u05 | Житло | Bývanie
+
+@lesson byt-a-izby | Квартира й кімнати | Byt a izby
+desc: Кімнати в квартирі: izba, obývačka, spálňa, detská izba, chodba — і тип квартири: dvojizbový byt.
+goal: Описати свою квартиру за кімнатами.
+out: називати кімнати ;; розуміти «dvojizbový / trojizbový byt» ;; казати V byte máme… ;; питати Koľko izieb má byt?
+done: Тепер ти описуєш своє житло. Далі — меблі.
+T: Byt і izby || «Byt» — квартира, «izba» — кімната. «Obývačka» — вітальня, «spálňa» — спальня, «detská izba» — дитяча, «chodba» — коридор. || Byt má tri izby. = Квартира має три кімнати. ;; Deti spia v detskej izbe. = Діти сплять у дитячій. || izba = кімната
+T: Типи квартир || Кількість кімнат у назві: jednoizbový (1 кімната), dvojizbový (2), trojizbový (3). В оголошеннях скорочено: 1-izb., 2-izb., 3-izb. Кухня не рахується як кімната. «Garsónka» — студія / малосімейка. || Prenajmem 2-izbový byt. = Здам двокімнатну квартиру. ;; Bývam v garsónke. = Я живу в однокімнатній студії. || 2-izbový = 2 кімнати + кухня
+T: Де? || «V obývačke, v spálni, v izbe, na chodbe» — у вітальні, у спальні, у кімнаті, у коридорі (na chodbe!). || Topánky sú na chodbe. = Взуття в коридорі. ;; Televízor je v obývačke. = Телевізор у вітальні. || na chodbe, ale v obývačke
+W: byt | квартира | біт | Bývame v malom byte. | Ми живемо в маленькій квартирі.
+W: izba | кімната | ізба | Koľko izieb má byt? | Скільки кімнат у квартирі?
+W: obývačka | вітальня | обі:вачка | Večer sedíme v obývačke. | Увечері ми сидимо у вітальні.
+W: spálňa | спальня | спа:лня | Spálňa je tichá. | Спальня тиха.
+W: detská izba | дитяча кімната | детска: ізба | Detská izba je malá. | Дитяча кімната маленька.
+W: chodba | коридор | ходба | Kočík je na chodbe. | Візочок у коридорі.
+X mt: З’єднай. | byt = квартира ;; izba = кімната ;; obývačka = вітальня ;; spálňa = спальня ;; chodba = коридор
+X sc~: Що означає «3-izbový byt»? | - | *квартира з трьома кімнатами (без кухні) ;; три квартири ;; квартира на третьому поверсі
+= Кухня не рахується: 3 кімнати + кухня.
+X dd: Обери. | Topánky sú [*na/v] chodbe.
+= na chodbe.
+X dd: Обери. | Deti spia v [*detskej/detská/detskú] izbe.
+= v + місцевий: v detskej izbe.
+X cat: Де це зазвичай буває? | obývačka: televízor, gauč ;; spálňa: posteľ, skriňa na šaty ;; chodba: vešiak, topánky
+= Меблі за кімнатами.
+X tf: - | - | «Garsónka» — це квартира-студія з однією кімнатою. | T
+= garsónka — однокімнатна студія.
+X fb: Допиши. | Koľko ___ má váš byt? (кімнат) | izieb | Родовий мн. від izba.
+= Koľko izieb…?
+X so: - | Скажи, що ви живете в маленькій квартирі. | Bývame v malom byte.
+= v malom byte — місцевий.
+X doc: Прочитай оголошення. | Prenájom | Typ: 2-izbový byt ;; Lokalita: Košice – Terasa ;; Plocha: 54 m² ;; Poschodie: 3. z 8 ;; Cena: 590 € + energie | Скільки кімнат у квартирі? | *дві (плюс кухня) ;; три ;; одна
+= 2-izbový.
+X np: Друг питає про твою нову квартиру. | *Je to trojizbový byt, máme obývačku, spálňu a detskú izbu. ;; Je to tri byt izby. ;; Mám trojizbu. ;; Byt je tri.
+= Тип + перелік кімнат.
+X ms: Обери назви кімнат. | - | *obývačka ;; *spálňa ;; *detská izba ;; kreslo ;; vešiak
+= kreslo, vešiak — меблі.
+X dr: - | Realitná maklérka: Hľadáte väčší byt? | *Áno, potrebujeme trojizbový. ;; Áno, trojizbová. ;; Áno, tri spálňa.
+= byt — чол.: trojizbový.
+F: Пошук квартири || Ти телефонуєш за оголошенням.
+S: Ти питаєш, скільки кімнат. | *Koľko izieb má byt? ;; Koľko izby má byt? ;; Izba je koľko?
+S: «Je to dvojizbový byt – obývačka a spálňa.» Яка квартира? | *дві кімнати: вітальня й спальня ;; одна кімната ;; три кімнати
+S: Тобі потрібна дитяча. | *Potrebujeme aj detskú izbu. ;; Potrebujeme aj detská izba. ;; Detskú izba áno.
+S: «Mám aj trojizbový o poschodie vyššie.» Що пропонують? | *трикімнатну на поверх вище ;; трикімнатну в іншому будинку ;; три квартири
+R: byt, izba, obývačka, spálňa, detská izba, chodba ;; 2-izbový, garsónka ;; v obývačke, na chodbe
+
+@lesson nabytok | Меблі | Nábytok
+desc: Меблі вдома: skriňa, gauč, kreslo, polica, koberec — і як сказати, що є в кімнаті.
+goal: Перелічити меблі в кімнаті й розуміти оголошення про продаж меблів.
+out: називати основні меблі ;; казати V izbe je… / sú… ;; розуміти «zariadený / nezariadený byt» ;; описувати меблі прикметниками
+done: Меблі розставлено! Далі — прийменники місця.
+T: Меблі || nábytok (меблі — збірне, однина!), skriňa (шафа), gauč (диван), kreslo (крісло), polica (полиця), koberec (килим). Уже знаєш: stôl, stolička, posteľ, lampa. || V obývačke je gauč a dve kreslá. = У вітальні диван і два крісла. || nábytok — однина
+T: Je / sú || «V izbe je skriňa» (одне), «V izbe sú dve postele» (кілька). Питання: «Čo je v kuchyni?» || Na stene je polica. = На стіні полиця. ;; V spálni sú dve skrine. = У спальні дві шафи. || je + однина / sú + множина
+T: Zariadený byt || «Zariadený» — мебльований, «čiastočne zariadený» — частково мебльований, «nezariadený» — без меблів. Важливо в оголошеннях про оренду! || Byt je kompletne zariadený. = Квартира повністю мебльована. || zariadený = з меблями
+W: nábytok | меблі | на:биток | Nový nábytok bol drahý. | Нові меблі були дорогі.
+W: skriňa | шафа | скриня | Oblečenie je v skrini. | Одяг у шафі.
+W: gauč | диван | гауч | Mačka spí na gauči. | Кішка спить на дивані.
+W: kreslo | крісло | кресло | Dedko sedí v kresle. | Дідусь сидить у кріслі.
+W: polica | полиця | поліца | Knihy sú na polici. | Книжки на полиці.
+W: koberec | килим | коберец | Na zemi je mäkký koberec. | На підлозі м’який килим.
+X mt: З’єднай. | skriňa = шафа ;; gauč = диван ;; kreslo = крісло ;; polica = полиця ;; koberec = килим
+X dd: Обери. | V spálni [*sú/je] dve skrine.
+= dve skrine — множина: sú.
+X dd: Обери. | V obývačke [*je/sú] veľký gauč.
+= Однина: je.
+X sc~: Що означає «Byt je nezariadený»? | - | *квартира без меблів ;; квартира без ремонту ;; квартира не зареєстрована
+= nezariadený — без меблів.
+X tf: - | - | «Nábytok» — однина, хоча означає багато предметів. | T
+= Nábytok je nový.
+X fb: Допиши. | Knihy sú na ___. (полиці) | polici | Місцевий відмінок.
+= na polici.
+X so: - | Скажи, що кішка спить на дивані. | Mačka spí na gauči.
+= na gauči.
+X cat: Для сидіння, лежання чи зберігання? | Сидіти: kreslo, stolička, gauč ;; Зберігати: skriňa, polica, zásuvka
+= Функції меблів.
+X fe: - | V izbe [je>sú] dve kreslá a stôl.
+= Перше — dve kreslá (множина): sú.
+X np: Ти питаєш власника, чи квартира з меблями. | *Je byt zariadený? ;; Je byt nábytok? ;; Má byt zariadené? ;; Nábytok je byt?
+= Je byt zariadený?
+X rc: - | Predám starý nábytok: dve skrine, gauč, tri kreslá a policu na knihy. Všetko je drevené a v dobrom stave. Koberec dám zdarma.
+q~: Що віддають безкоштовно? | *килим ;; полицю ;; диван
+q~: З чого меблі? | *з дерева ;; з металу ;; з пластику
+X ms: Обери меблі. | - | *skriňa ;; *polica ;; *kreslo ;; obývačka ;; chodba
+= obývačka, chodba — кімнати.
+F: Огляд мебльованої квартири || Власниця показує квартиру.
+S: Ти питаєш, що є у вітальні. | *Čo je v obývačke? ;; Kto je v obývačke? ;; Čo sú obývačka?
+S: «Gauč, dve kreslá a televízor.» Скільки крісел? | *два ;; одне ;; три
+S: Ти питаєш, чи є шафа в спальні. | *Je v spálni skriňa? ;; Sú v spálni skriňa? ;; Skriňu spálňa?
+S: «Koberec si zoberiem, ten je môj.» Що вона забере? | *килим ;; шафу ;; диван
+R: nábytok, skriňa, gauč, kreslo, polica, koberec ;; V izbe je / sú… ;; zariadený / nezariadený byt
+
+@lesson kde-je-co | Де що лежить? | Kde je čo?
+desc: Прийменники місця: na, v, pod, nad, pred, za, vedľa, medzi — з місцевим та орудним відмінком.
+goal: Пояснити, де лежить річ.
+out: казати na stole, v skrini ;; казати pod stolom, nad gaučom ;; казати pred domom, za dverami ;; знаходити речі за описом
+done: Тепер ти знайдеш і пояснюєш, де що. Далі — кухня.
+T: Na і v || «Na» — на поверхні (na stole, na polici), «v» — усередині (v skrini, v taške). Після них — місцевий відмінок: stôl → na stole, skriňa → v skrini. || Kľúče sú na stole. = Ключі на столі. ;; Peňaženka je v taške. = Гаманець у сумці. || na — на, v — у
+T: Pod, nad, pred, za || pod (під), nad (над), pred (перед), za (за) — з орудним відмінком: pod stolom, nad gaučom, pred domom, za dverami. || Mačka je pod posteľou. = Кішка під ліжком. ;; Obraz visí nad gaučom. = Картина висить над диваном. || pod / nad / pred / za + -om / -ou
+T: Медзі, vedľa, v rohu || medzi (між) — з орудним: medzi oknami. vedľa (поруч) — з родовим: vedľa skrine. «V rohu» — у кутку. || Lampa je v rohu. = Лампа в кутку. ;; Stôl je medzi oknami. = Стіл між вікнами. || v rohu = у кутку
+W: pod | під | под | Topánky sú pod posteľou. | Взуття під ліжком.
+W: nad | над | над | Nad stolom visí lampa. | Над столом висить лампа.
+W: pred | перед | пред | Auto je pred domom. | Машина перед будинком.
+W: za | за | за | Bicykel je za domom. | Велосипед за будинком.
+W: zásuvka | шухляда; розетка | за:сувка | Nože sú v zásuvke. | Ножі в шухляді.
+W: roh | кут; ріг | рог | Kreslo je v rohu. | Крісло в кутку.
+X mt: З’єднай. | pod = під ;; nad = над ;; pred = перед ;; za = за ;; v rohu = у кутку
+X dd: Обери. | Mačka je [*pod/nad/na] posteľou. (ховається внизу)
+= pod — під.
+X dd: Обери форму. | Obraz visí nad [*gaučom/gauč/gauči].
+= nad + орудний: gaučom.
+X dd: Обери форму. | Kľúče sú na [*stole/stolom/stôl].
+= na + місцевий: na stole.
+X sc~: «Zásuvka» може означати… | - | *і шухляду, і розетку ;; лише шухляду ;; лише вимикач
+= zásuvka — обидва значення, з контексту.
+X cat: Яка форма після прийменника? | na / v (місцевий): na stole, v skrini, na polici ;; pod / nad / pred / za (орудний): pod stolom, nad gaučom, pred domom
+= Дві групи прийменників.
+X tf: - | - | «Auto je za domom» означає «Машина перед будинком». | F
+= za — за; pred — перед.
+X fb: Допиши. | Peňaženka je ___ taške. (у) | v |
+= v taške.
+X so: - | Скажи, що взуття під ліжком. | Topánky sú pod posteľou.
+= pod + posteľou.
+X rc: - | Mami, kde sú moje veci? — Tvoje kľúče sú na stole v kuchyni. Telefón je v taške na chodbe. Okuliare sú na polici nad gaučom a bunda visí za dverami.
+q~: Де телефон? | *у сумці в коридорі ;; на столі ;; на полиці
+q~: Де куртка? | *за дверима ;; у шафі ;; під ліжком
+X fe: - | Obraz visí [na>nad] gaučom.
+= Над диваном — nad gaučom.
+X np: Гість питає, куди повісити куртку. Вішалка за дверима. | *Vešiak je za dverami. ;; Vešiak je za dvere. ;; Vešiak dvere za. ;; Za dverami je vešiak je.
+= za + орудний: za dverami.
+X ms: Обери правильні фрази. | - | *na stole ;; *pod posteľou ;; *v skrini ;; pod posteľ ;; na stolom
+= Відмінок після прийменника.
+F: Де мої документи? || Ти поспішаєш на співбесіду й телефонуєш чоловікові, бо не можеш знайти речі.
+S: «Kde je môj pas?» — «V zásuvke pod televízorom.» Де паспорт? | *у шухляді під телевізором ;; на телевізорі ;; у кутку
+S: Ти не знаходиш ключі. Чоловік: «Pozri sa na policu nad gaučom.» Куди дивитися? | *на полицю над диваном ;; під диван ;; у диван
+S: Ти питаєш, де парасолька. | *Kde je dáždnik? ;; Kde sú dáždnik? ;; Dáždnik je kde je?
+S: «Za dverami na chodbe.» Де парасолька? | *за дверима в коридорі ;; перед дверима ;; у спальні
+R: na / v + місцевий ;; pod, nad, pred, za + орудний ;; vedľa, medzi, v rohu ;; zásuvka
+
+@lesson kuchyna | Кухня | Kuchyňa
+desc: Кухня й техніка: chladnička, sporák, rúra, umývačka riadu, riad — і прості кухонні дії.
+goal: Розповісти про кухню й зрозуміти прохання на кухні.
+out: називати кухонну техніку ;; казати Dám to do chladničky ;; розуміти umývať riad ;; читати інструкцію до техніки (базово)
+done: Кухню облаштовано. Далі — ванна кімната.
+T: Техніка || chladnička (холодильник), mraznička (морозилка), sporák (плита), rúra (духовка), mikrovlnka (мікрохвильовка), umývačka riadu (посудомийка), varná kanvica (електрочайник). || Mlieko je v chladničke. = Молоко в холодильнику. ;; Pizza je v rúre. = Піца в духовці. || mikrovlnka, umývačka
+T: Riad || «Riad» — посуд (збірне): taniere (тарілки), poháre (склянки), hrnčeky (чашки), príbor (прибори). «Umývať riad» — мити посуд. || Riad je v umývačke. = Посуд у посудомийці. ;; Kto dnes umýva riad? = Хто сьогодні миє посуд? || riad = посуд
+T: Do і z || «Dám mlieko do chladničky» — покладу молоко в холодильник (куди: do + родовий). «Vyber koláč z rúry» — вийми пиріг з духовки (z + родовий). || Daj to do mrazničky. = Поклади це в морозилку. ;; Vyber to z mikrovlnky. = Дістань це з мікрохвильовки. || do — куди, z — звідки
+W: kuchyňa | кухня | кухиня | Kuchyňa je malá, ale praktická. | Кухня маленька, але практична.
+W: chladnička | холодильник | хладнічка | Chladnička je prázdna. | Холодильник порожній.
+W: sporák | плита | спора:к | Sporák je elektrický. | Плита електрична.
+W: rúra | духовка | ру:ра | Koláč je v rúre. | Пиріг у духовці.
+W: umývačka riadu | посудомийна машина | уми:вачка ріаду | Máte umývačku riadu? | У вас є посудомийка?
+W: riad | посуд | ріад | Umyjem riad. | Я помию посуд.
+X mt: З’єднай. | chladnička = холодильник ;; sporák = плита ;; rúra = духовка ;; umývačka riadu = посудомийка ;; riad = посуд
+X dd: Обери. | Dám mlieko do [*chladničky/chladnička/chladničke].
+= do + родовий: chladničky.
+X dd: Обери. | Vyber koláč z [*rúry/rúre/rúra].
+= z + родовий: rúry.
+X sc~: Що означає «umývať riad»? | - | *мити посуд ;; прати білизну ;; прибирати кухню
+= riad — посуд.
+X cat: Куди покласти? | do chladničky: mlieko, maslo, syr ;; do mrazničky: zmrzlina, mrazená zelenina ;; do skrinky: cukor, ryža, múka
+= Холод, мороз чи шафка.
+X tf: - | - | «Rúra» на кухні — це духовка. | T
+= rúra — духовка (також труба).
+X fb: Допиши. | Chladnička je ___. (порожній) | prázdna | Жін. рід.
+= prázdna chladnička.
+X so: - | Скажи, що помиєш посуд. | Umyjem riad.
+= Umyjem + riad.
+X fe: - | Daj mäso do [mrazničke>mrazničky].
+= do + родовий: mrazničky.
+X doc: Прочитай інструкцію. | Mikrovlnná rúra – návod | Výkon: 800 W ;; Ohrev polievky: 2 minúty ;; Pozor: nedávajte dovnútra kov | Що не можна класти в мікрохвильовку? | *метал ;; суп ;; пластикову миску
+= nedávajte kov — не кладіть метал.
+X np: Ти прийшов(ла) в гості й хочеш допомогти після обіду. | *Môžem umyť riad? ;; Môžem umývačka? ;; Riad je môžem? ;; Umyjem kuchyňa.
+= Môžem umyť riad?
+X ms: Обери кухонну техніку. | - | *sporák ;; *chladnička ;; *mikrovlnka ;; koberec ;; skriňa
+= Техніка.
+F: Перший вечір у гуртожитку || Сусідка по кухні пояснює правила.
+S: «Tvoja polica je v chladničke dole.» Де твоє місце? | *нижня полиця в холодильнику ;; верхня шафка ;; морозилка
+S: Ти питаєш, де посуд. | *Kde je riad? ;; Kde sú riad? ;; Riad kde sú?
+S: «Riad po sebe umývaj hneď.» Яке правило? | *мити свій посуд одразу ;; не користуватися посудом ;; класти посуд у посудомийку завтра
+S: Ти хочеш покласти йогурт у холодильник. | *Dám jogurt do chladničky. ;; Dám jogurt v chladnička. ;; Jogurt do chladnička.
+R: chladnička, mraznička, sporák, rúra, mikrovlnka, umývačka riadu ;; riad ;; do + родовий (куди), z + родовий (звідки)
+
+@lesson kupelna | Ванна кімната | Kúpeľňa
+desc: Kúpeľňa, sprcha, vaňa, umývadlo, uterák, záchod — і щоденні дії: umyť sa, osprchovať sa.
+goal: Розповісти про ванну кімнату й зрозуміти зворотні дії «sa».
+out: називати речі у ванній ;; казати Idem sa osprchovať ;; розрізняти kúpeľňa і záchod ;; просити рушник
+done: Ванну опановано. Далі — поверх, ліфт і підвал.
+T: Kúpeľňa і záchod || «Kúpeľňa» — ванна кімната, «záchod / WC» — туалет. Часто окремо: «Kúpeľňa a WC sú oddelené». «Sprcha» — душ, «vaňa» — ванна, «umývadlo» — умивальник. || Kúpeľňa má vaňu aj sprchu. = У ванній є і ванна, і душ. ;; WC je samostatné. = Туалет окремий. || kúpeľňa ≠ záchod
+T: Зворотні дії || «Umyť sa» — умитися, «osprchovať sa» — прийняти душ, «okúpať sa» — викупатися. «Idem sa osprchovať» — піду в душ. «Umyť si ruky» — помити руки (si). || Umy si ruky! = Помий руки! ;; Ráno sa sprchujem. = Уранці я приймаю душ. || sa — себе; si — собі
+T: Речі || uterák (рушник), mydlo (мило — вже знаєш), šampón, zubná kefka (зубна щітка), zrkadlo (дзеркало). || Uteráky sú v skrinke. = Рушники в шафці. ;; Zrkadlo je nad umývadlom. = Дзеркало над умивальником. || uterák = рушник
+W: kúpeľňa | ванна кімната | ку:пельня | Kúpeľňa je po rekonštrukcii. | Ванна кімната після ремонту.
+W: sprcha | душ | спрха | Sprcha nefunguje. | Душ не працює.
+W: vaňa | ванна (ємність) | ваня | Deti sa kúpu vo vani. | Діти купаються у ванні.
+W: umývadlo | умивальник | уми:вадло | Umývadlo je upchaté. | Умивальник забитий.
+W: uterák | рушник | утера:к | Môžem dostať čistý uterák? | Можна мені чистий рушник?
+W: zrkadlo | дзеркало | зркадло | Zrkadlo je nad umývadlom. | Дзеркало над умивальником.
+X mt: З’єднай. | kúpeľňa = ванна кімната ;; sprcha = душ ;; vaňa = ванна ;; umývadlo = умивальник ;; uterák = рушник ;; zrkadlo = дзеркало
+X dd: Обери. | Ráno [*sa/si] sprchujem.
+= sprchovať sa — себе.
+X dd: Обери. | Umy [*si/sa] ruky!
+= umyť si ruky — si (собі) + що.
+X sc~: Що означає «Kúpeľňa a WC sú oddelené»? | - | *ванна й туалет окремо ;; ванної немає ;; туалет у ванній
+= oddelené — окремі.
+X tf: - | - | «Kúpeľňa» і «záchod» — це завжди одне приміщення. | F
+= Часто окремі приміщення.
+X fb: Допиши. | Môžem dostať čistý ___? (рушник) | uterák |
+= uterák — рушник.
+X so: - | Скажи, що піде в душ. | Idem sa osprchovať.
+= Idem sa + osprchovať.
+X fe: - | Deti sa kúpu vo [vaňa>vani].
+= vo + місцевий: vani.
+X np: У готелі немає рушників. Ти телефонуєш на рецепцію. | *Prepáčte, v izbe nie sú uteráky. ;; Uterák je nie. ;; Nemám uteráky som. ;; Uteráky je kúpeľňa.
+= V izbe nie sú uteráky.
+X cat: Що для чого? | Na umývanie: mydlo, šampón, zubná kefka ;; Na utieranie: uterák, osuška
+= Мити / витирати.
+X dr: - | Mama: Umyl si si zuby? | *Áno, mami. ;; Áno, si umyl. ;; Zuby áno sa.
+= Коротка відповідь.
+X ms: Обери речі, які бувають у ванній. | - | *zrkadlo ;; *umývadlo ;; *uterák ;; sporák ;; gauč
+= Ванна кімната.
+F: Проблема в готелі || Ти в готелі, у ванній проблеми. Дзвониш на рецепцію.
+S: «Recepcia, prosím.» | *Dobrý večer, volám z izby 215. Sprcha nefunguje. ;; Sprcha je dobrá. ;; Dobrú noc, sprcha.
+S: «Tečie vôbec voda?» (тече лише холодна) | *Tečie len studená voda. ;; Tečie len studený voda. ;; Voda studené.
+S: «Pošleme technika. A potrebujete ešte niečo?» (рушники) | *Áno, dva čisté uteráky, prosím. ;; Áno, dva čisté uterák. ;; Áno, uteráky čisté je.
+S: «Technik príde o desať minút.» Коли? | *через 10 хвилин ;; о десятій ;; завтра
+R: kúpeľňa, sprcha, vaňa, umývadlo, uterák, zrkadlo ;; umyť sa, osprchovať sa ;; umyť si ruky ;; kúpeľňa ≠ záchod
+
+@lesson budova | Будинок: поверх, ліфт, підвал | Budova: poschodie a výťah
+desc: Поверхи (і словацький рахунок поверхів!), ліфт, сходи, підвал, балкон.
+goal: Пояснити, на якому поверсі живеш, і розуміти частини будинку.
+out: розуміти prízemie і 1. poschodie ;; казати Bývam na treťom poschodí ;; називати výťah, schody, pivnica, balkón ;; розуміти оголошення в під’їзді
+done: Тепер ти орієнтуєшся в будинку. Далі — домашні справи.
+T: Поверхи || «Prízemie» — перший (партер) поверх; «1. poschodie» — у нашому розумінні ДРУГИЙ поверх! «Bývam na treťom poschodí» = четвертий поверх за українським рахунком. || Bývam na prízemí. = Я живу на першому поверсі. ;; Kancelária je na druhom poschodí. = Офіс на 3-му поверсі (за нашим рахунком). || prízemie = наш 1-й
+T: Ліфт і сходи || «Výťah» — ліфт, «schody» — сходи, «schodisko» — сходова клітка. «Výťah nejde» — ліфт не працює. «Ísť po schodoch» — іти сходами. || Výťah je pokazený, ideme po schodoch. = Ліфт зламаний, ідемо сходами. || výťah, schody
+T: Підвал і балкон || «Pivnica» — підвал (комора), «balkón», «terasa», «povala» — горище. «Kočíkáreň» — кімната для візочків. || Bicykle sú v pivnici. = Велосипеди в підвалі. ;; Na balkóne sušíme bielizeň. = На балконі сушимо білизну. || pivnica — підвал
+W: poschodie | поверх | посходіє | Na ktorom poschodí bývate? | На якому поверсі ви живете?
+W: prízemie | перший поверх (партер) | прі:земіє | Obchod je na prízemí. | Магазин на першому поверсі.
+W: výťah | ліфт | ві:тях | Výťah ide len do piateho poschodia. | Ліфт іде лише до п’ятого поверху.
+W: schody | сходи | сході | Pozor, schody sú mokré. | Обережно, сходи мокрі.
+W: pivnica | підвал, комора | півніца | Zimné pneumatiky sú v pivnici. | Зимові шини в підвалі.
+W: balkón | балкон | балко:н | Byt má veľký balkón. | Квартира має великий балкон.
+X mt: З’єднай. | poschodie = поверх ;; prízemie = перший поверх (партер) ;; výťah = ліфт ;; schody = сходи ;; pivnica = підвал
+X sc~: Сусід каже: «Bývam na prvom poschodí.» На якому поверсі за українським рахунком? | - | *на другому ;; на першому ;; на нульовому
+= 1. poschodie = наш 2-й поверх.
+X dd: Обери. | Bicykle sú v [*pivnici/pivnica/pivnicu].
+= v + місцевий: pivnici.
+X dd: Обери. | Bývam na treťom [*poschodí/poschodie/poschodia].
+= na + місцевий: poschodí.
+X tf: - | - | «Výťah nejde» означає, що ліфт не працює. | T
+= nejde — не їде, не працює.
+X fb: Допиши. | Obchod je na ___. (першому поверсі, партер) | prízemí | Місцевий.
+= na prízemí.
+X so: - | Скажи, що ліфт зламаний і ви йдете сходами. | Výťah je pokazený, ideme po schodoch.
+= po schodoch — сходами.
+X msg: - | Správca domu | Oznam: V sobotu 10. 5. od 8:00 do 12:00 nebude fungovať výťah z dôvodu opravy. Ďakujeme za pochopenie. | Що станеться в суботу? | *ліфт не працюватиме з 8 до 12 ;; не буде води ;; прибирання підвалу
+= nebude fungovať výťah.
+X fe: - | Bývam na [štvrtý>štvrtom] poschodí.
+= na + місцевий: štvrtom.
+X cat: Де в будинку? | Hore: povala, posledné poschodie ;; Dole: pivnica, prízemie, kočíkáreň
+= Верх / низ будинку.
+X np: Кур’єр питає, на якому ти поверсі (5-й поверх за українським рахунком). | *Na štvrtom poschodí. ;; Na piatom poschodí. ;; Na štyri poschodie. ;; Štvrtý.
+= Наш 5-й = словацьке 4. poschodie.
+X ms: Обери частини будинку. | - | *pivnica ;; *výťah ;; *schodisko ;; uterák ;; sporák
+= Будинок.
+F: Доставка меблів || Кур’єри привезли шафу, ти пояснюєш дорогу.
+S: «Na ktorom poschodí bývate?» (2. poschodie) | *Na druhom poschodí. ;; Na dva poschodie. ;; Druhá.
+S: «Je tam výťah?» (так, але малий) | *Áno, ale je malý. ;; Áno, ale je malá. ;; Výťah je malé.
+S: «Skriňa sa do výťahu nezmestí.» Що це означає? | *шафа не влізе в ліфт ;; шафа зламана ;; ліфт не працює
+S: «Pôjdeme po schodoch.» Що зроблять? | *понесуть сходами ;; поїдуть ліфтом ;; залишать у підвалі
+R: prízemie = наш 1-й; 1. poschodie = наш 2-й ;; výťah, schody, schodisko ;; pivnica, balkón ;; po schodoch
+
+@lesson domace-prace | Домашні справи | Domáce práce
+desc: Дієслова побуту: upratovať, vysávať, umývať, prať, žehliť, variť — і хто що робить.
+goal: Розповісти про домашні обов’язки й розподілити справи.
+out: називати шість домашніх справ ;; відмінювати дієслова на -ať / -ovať ;; казати Kto dnes…? ;; домовлятися про обов’язки
+done: Хатні справи розподілено. Далі — коли щось ламається.
+T: Справи || upratovať (прибирати), vysávať (пилососити), umývať (мити), prať (прати), žehliť (прасувати), variť (готувати їжу). || V sobotu upratujeme. = У суботу ми прибираємо. ;; Kto dnes varí? = Хто сьогодні готує? || upratovať, variť
+T: Форми || -ovať → -ujem: upratujem, upratuješ, upratuje… -ať → -ám: vysávam, umývam. -iť → -ím: varím, žehlím. prať → perie (неправильне): ja periem. || Ja varím, ty umývaš riad. = Я готую, ти миєш посуд. ;; Manžel perie a žehlí. = Чоловік пере й прасує. || -ujem / -ám / -ím
+T: Розподіл || «Ja vysávam a ty utrieš prach» — я пилососю, а ти витреш пил. «Dnes je rad na tebe» — сьогодні твоя черга. || Kto je dnes na rade? = Чия сьогодні черга? ;; Dnes upratuješ ty. = Сьогодні прибираєш ти. || je na rade = черга
+W: upratovať | прибирати | упратовать | Každú sobotu upratujeme byt. | Щосуботи ми прибираємо квартиру.
+W: vysávať | пилососити | віса:вать | Vysávam obývačku. | Я пилососю вітальню.
+W: umývať | мити | умі:вать | Umývam okná. | Я мию вікна.
+W: prať | прати | прать | Periem raz týždenne. | Я перу раз на тиждень.
+W: žehliť | прасувати | жегліть | Nerád žehlím košele. | Я не люблю прасувати сорочки.
+W: variť | готувати їжу, варити | варіть | Dnes varím boršč. | Сьогодні я варю борщ.
+X mt: З’єднай. | upratovať = прибирати ;; vysávať = пилососити ;; prať = прати ;; žehliť = прасувати ;; variť = готувати
+X dd: Обери форму. | Ja dnes [*upratujem/upratovám/upratuje].
+= -ovať → -ujem.
+X dd: Обери форму. | Manžel [*perie/praje/prá] a ja žehlím.
+= prať → perie.
+X sc~: Що означає «Dnes je rad na tebe»? | - | *Сьогодні твоя черга ;; Сьогодні ти радий ;; Сьогодні ряд біля тебе
+= rad — черга.
+X cat: Яка справа? | В кухні: variť, umývať riad ;; З одягом: prať, žehliť ;; Прибирання: vysávať, utierať prach
+= Групи справ.
+X tf: - | - | «Variť» означає лише «варити суп». | F
+= variť — готувати їжу загалом.
+X fb: Допиши. | Každú sobotu ___ byt. (ми прибираємо) | upratujeme | -ovať → -ujeme.
+= upratujeme.
+X so: - | Скажи, що сьогодні ти вариш борщ. | Dnes varím boršč.
+= Dnes + varím.
+X fe: - | Nerád [žehlíš>žehlím] košele, robí to manžel.
+= Про себе: žehlím.
+X do: - | Najprv upraceme stôl. ;; Potom umyjeme riad. ;; Potom povysávam obývačku. ;; Nakoniec vynesieme smeti.
+= Послідовність прибирання.
+X np: Співмешканець у квартирі знову не помив посуд. Ти нагадуєш. | *Prosím ťa, dnes je rad na tebe umyť riad. ;; Umyť riad je rad! ;; Riad je na tebe ty. ;; Rad umyje ty riad.
+= Ввічливе нагадування.
+X ms: Обери правильні форми. | - | *upratujem ;; *varím ;; *periem ;; prám ;; upratovám
+= -ujem, -ím, неправильне periem.
+F: Графік прибирання || Ви з сусідами по квартирі складаєте графік.
+S: «Kto bude vysávať?» (ти) | *Ja budem vysávať. ;; Ja vysávaš. ;; Vysávam ty.
+S: «Ja nerada varím, ale rada upratujem.» Що любить сусідка? | *прибирати ;; готувати ;; прасувати
+S: Ти пропонуєш, щоб вона мила вікна. | *Môžeš umývať okná? ;; Môžeš umývam okná? ;; Okná umývať si?
+S: «Dobre, a prať bude každý sám.» Яке правило для прання? | *кожен пере сам ;; пере сусідка ;; перуть разом
+R: upratovať, vysávať, umývať, prať, žehliť, variť ;; -ujem / -ám / -ím; periem ;; je rad na tebe
+
+@lesson poruchy-zaklad | Коли щось не працює | Keď niečo nefunguje
+desc: Базово про поломки вдома: pokazený, kvapkať, tiecť, svetlo, kúrenie, opraviť.
+goal: Повідомити власника чи управителя про просту поломку.
+out: казати … je pokazený / nefunguje ;; казати Kvapká kohútik / Tečie voda ;; просити opraviť ;; описати проблему в повідомленні
+done: Тепер ти повідомиш про поломку. Далі — опис своєї квартири.
+T: Nefunguje / je pokazený || «Nefunguje» — не працює, «je pokazený / pokazená / pokazené» — зламаний / зламана / зламане. «Nesvieti» — не світить (світло). || Chladnička nefunguje. = Холодильник не працює. ;; Svetlo v kúpeľni nesvieti. = Світло у ванній не світить. || pokazený / pokazená / pokazené
+T: Вода й тепло || «Kvapká kohútik» — капає кран. «Tečie voda» — тече вода (протікає). «Nejde teplá voda» — немає гарячої води. «Kúrenie nekúri» — опалення не гріє. || Zo stropu tečie voda! = Зі стелі тече вода! ;; Nejde kúrenie. = Не працює опалення. || kvapká / tečie
+T: Попросити ремонт || «Môžete to opraviť?» — можете відремонтувати? «Kedy príde opravár?» — коли прийде майстер? «Je to súrne» — це терміново. || Prosím, pošlite opravára. = Будь ласка, надішліть майстра. ;; Kedy to opravíte? = Коли ви це полагодите? || opraviť = полагодити
+W: pokazený | зламаний | показені: | Výťah je pokazený. | Ліфт зламаний.
+W: kvapkať | капати | квапкать | Kohútik kvapká celú noc. | Кран капає всю ніч.
+W: tiecť | текти | тієцть | Spod umývačky tečie voda. | З-під посудомийки тече вода.
+W: svetlo | світло | свєтло | Na chodbe nesvieti svetlo. | У коридорі не світить світло.
+W: kúrenie | опалення | ку:реніє | Kúrenie je studené. | Опалення холодне.
+W: opraviť | полагодити, відремонтувати | оправіть | Kedy to opravíte? | Коли ви це полагодите?
+X mt: З’єднай. | pokazený = зламаний ;; kvapkať = капати ;; tiecť = текти ;; svetlo = світло ;; kúrenie = опалення ;; opraviť = полагодити
+X dd: Обери. | Práčka je [*pokazená/pokazený/pokazené].
+= práčka — жін.: pokazená.
+X dd: Обери. | Zo stropu [*tečie/kvapká kohútik/svieti] voda!
+= tiecť — текти; tečie voda.
+X sc~: Що означає «Nejde teplá voda»? | - | *немає гарячої води ;; вода занадто гаряча ;; тепла вода тече скрізь
+= nejde — не йде, немає.
+X tf: - | - | «Kúrenie nekúri» означає, що опалення не гріє. | T
+= kúriť — гріти, топити.
+X fb: Допиши. | Kedy príde ___? (майстер) | opravár |
+= opravár — майстер.
+X so: - | Попроси надіслати майстра. | Prosím, pošlite opravára.
+= pošlite + opravára.
+X fe: - | Chladnička je [pokazený>pokazená] od včera.
+= chladnička — pokazená.
+X msg: - | Ty → majiteľ bytu | Dobrý deň, pán Kováč, v kúpeľni kvapká kohútik a v kuchyni nesvieti svetlo. Kedy môžete prísť? Ďakujem, Olena | Скільки проблем описала Олена? | *дві: кран і світло ;; одну: світло ;; три
+= kvapká kohútik + nesvieti svetlo.
+X cat: Терміново чи може зачекати? | Súrne: tečie voda zo stropu, nejde kúrenie v zime ;; Môže počkať: kvapká kohútik, nesvieti lampa v izbe
+= Терміновість.
+X np: Узимку не працює опалення. Ти телефонуєш управителю. | *Dobrý deň, nejde kúrenie, je to súrne. ;; Kúrenie je dobré. ;; Nefunguje teplo kúrenie je. ;; Dobrý deň, kúrenie áno.
+= Проблема + терміновість.
+X ms: Обери фрази про поломку. | - | *Nefunguje. ;; *Je pokazený. ;; *Kvapká. ;; Je pekný. ;; Je útulný.
+= Поломки.
+F: Повідомлення власникові || У п’ятницю ввечері з-під пральної машини тече вода.
+S: Як почнеш повідомлення? | *Dobrý večer, pán Horák, máme problém. ;; Čau, problém. ;; Dobrú noc, voda.
+S: Опиши проблему. | *Spod práčky tečie voda. ;; Práčka je tečie. ;; Voda je pokazená.
+S: «Zastavte vodu a ráno pošlem opravára.» Що треба зробити? | *перекрити воду, майстер прийде вранці ;; викликати майстра самому ;; нічого не робити
+S: Ти дякуєш. | *Ďakujem, budem čakať. ;; Nech sa páči, opravár. ;; Niet za čo.
+R: nefunguje, je pokazený ;; kvapká, tečie, nejde teplá voda ;; nesvieti, nekúri ;; Môžete to opraviť? opravár
+
+@lesson moj-byt | Моя квартира | Môj byt
+desc: Опис житла: útulný, svetlý, tmavý, priestranný, zariadený, výhľad — від квартири мрії до реального житла.
+goal: Описати свою квартиру з її плюсами й мінусами.
+out: описувати квартиру прикметниками ;; казати z okna je výhľad na… ;; поєднувати плюси й мінуси через ale ;; розповідати, що ти змінив би
+done: Ти можеш описати своє житло. Далі — підсумок розділу.
+T: Характеристики житла || útulný (затишний), svetlý (світлий), tmavý (темний), priestranný (просторий), tichý, hlučný, teplý, studený. || Byt je malý, ale útulný. = Квартира маленька, але затишна. ;; Obývačka je svetlá. = Вітальня світла. || útulný, svetlý, priestranný
+T: Вид із вікна || «Z okna je výhľad na…» — з вікна вид на… (+ знахідний): na hory, na rieku, na parkovisko. || Z balkóna je výhľad na hrad. = З балкона вид на замок. ;; Okná idú na dvor. = Вікна виходять у двір. || výhľad na + знахідний
+T: Плюси й мінуси || «Výhoda» — перевага, «nevýhoda» — недолік. «Výhoda je, že je blízko centra. Nevýhoda je hluk.» || Byt je pekný, ale drahý. = Квартира гарна, але дорога. ;; Jediná nevýhoda je malá kuchyňa. = Єдиний недолік — мала кухня. || výhoda / nevýhoda
+W: útulný | затишний | у:тулні: | Máme malý, ale útulný byt. | У нас маленька, але затишна квартира.
+W: svetlý | світлий | свєтлі: | Spálňa je veľmi svetlá. | Спальня дуже світла.
+W: tmavý | темний | тмаві: | Chodba je tmavá. | Коридор темний.
+W: priestranný | просторий | прієстранні: | Obývačka je priestranná. | Вітальня простора.
+W: zariadený | мебльований, обладнаний | заріадені: | Kuchyňa je plne zariadená. | Кухня повністю обладнана.
+W: výhľad | вид (з вікна) | ві:глад | Z okna je pekný výhľad. | З вікна гарний вид.
+X mt: З’єднай. | útulný = затишний ;; svetlý = світлий ;; tmavý = темний ;; priestranný = просторий ;; výhľad = вид з вікна
+X dd: Обери. | Obývačka je [*priestranná/priestranný/priestranné].
+= obývačka — жін.
+X dd: Обери. | Z okna je výhľad na [*hory/horách/hor].
+= výhľad na + знахідний мн.: hory.
+X cat: Плюс чи мінус житла? | Výhoda: útulný, svetlý, tichý ;; Nevýhoda: tmavý, hlučný, studený
+= Оцінка.
+X tf: - | - | «Okná idú na dvor» означає «вікна виходять у двір». | T
+= ísť na — виходити на (про вікна).
+X fb: Допиши. | Byt je malý, ___ útulný. (але) | ale |
+= ale — але.
+X so: - | Скажи, що з балкона вид на замок. | Z balkóna je výhľad na hrad.
+= výhľad na hrad.
+X fe: - | Naša kuchyňa je veľmi [svetlý>svetlá].
+= kuchyňa — svetlá.
+X rc: - | Bývam v trojizbovom byte na štvrtom poschodí. Byt je svetlý a priestranný a z balkóna je výhľad na park. Výhoda je, že je blízko škola aj obchod. Nevýhoda je, že dom nemá výťah a susedia sú niekedy hluční.
+q~: Що видно з балкона? | *парк ;; гори ;; парковку
+q~: Який недолік? | *немає ліфта й шумні сусіди ;; темна квартира ;; далеко від школи
+X tr: Поєднай у речення через «ale». | Byt je pekný. Byt je drahý. | Byt je pekný, ale drahý. ;; Byt je pekný, ale je drahý.
+= Плюс + ale + мінус.
+X np: Друг питає, чи подобається тобі нова квартира (вона світла, але маленька кухня). | *Áno, je svetlá, ale kuchyňa je malá. ;; Áno, je svetlý, malá kuchyňa. ;; Kuchyňa svetlá áno. ;; Áno, malá svetlá.
+= Плюс + ale + мінус.
+X ms: Обери правильні речення. | - | *Byt je útulný. ;; *Izba je tmavá. ;; *Z okna je výhľad na rieku. ;; Izba je tmavý. ;; Výhľad na riekou.
+= Узгодження й знахідний.
+F: Відгук для подруги, яка теж шукає житло || Подруга питає про твій будинок.
+S: «Aký je tvoj byt?» (затишний і світлий) | *Je útulný a svetlý. ;; Je útulná a svetlá. ;; Útulné svetlé.
+S: «Je to drahé?» (доволі) | *Je to dosť drahé. ;; Je to príliš lacné. ;; Drahý dosť.
+S: «Čo vidíš z okna?» (річку) | *Mám výhľad na rieku. ;; Mám výhľad na rieka. ;; Rieku vidím na.
+S: «Má to nejakú nevýhodu?» (немає ліфта) | *Áno, nie je tam výťah. ;; Áno, výťah je pokazený výhoda. ;; Nie, nevýhoda.
+R: útulný, svetlý, tmavý, priestranný, zariadený ;; výhľad na… ;; výhoda / nevýhoda ;; …, ale…
+
+@lesson byvanie-opakovanie | Підсумок: моє житло | Opakovanie: bývanie
+desc: Підсумок розділу: кімнати, меблі, де що лежить, справи й поломки — в одній історії переїзду.
+goal: Упоратися з переїздом і побутом словацькою.
+out: описати квартиру й меблі ;; пояснити, де що лежить ;; розподілити справи ;; повідомити про проблему
+done: Розділ «Житло» пройдено! Далі — дієслова в теперішньому часі.
+T: Переїзд || «Sťahovať sa» — переїжджати, «sťahovanie» — переїзд, «presťahovať sa» — переїхати. «Zvonček» — дзвінок біля дверей, «poštová schránka» — поштова скринька. || Budúci týždeň sa sťahujeme. = Наступного тижня ми переїжджаємо. ;; Daj meno na zvonček. = Напиши ім’я на дзвінку. || sťahovať sa = переїжджати
+T: Нові сусіди — нові правила || «Domový poriadok» — правила будинку: nočný kľud od 22:00 (тиша вночі), triedenie odpadu, upratovanie spoločných priestorov. || Nočný kľud je od desiatej. = Нічна тиша з десятої. ;; Smeti triedime. = Ми сортуємо сміття. || domový poriadok
+T: Шпаргалка || izby, nábytok, na / v + місцевий, pod / nad / pred / za + орудний, do / z + родовий, upratujem / varím / periem, nefunguje / je pokazený. || Kľúče sú v zásuvke pod televízorom. = Ключі в шухляді під телевізором. || Усі прийменники місця
+W: sťahovať sa | переїжджати | стяговать са | Sťahujeme sa do Trnavy. | Ми переїжджаємо в Трнаву.
+W: zvonček | дверний дзвінок | звончек | Na zvončeku nie je meno. | На дзвінку немає імені.
+W: poštová schránka | поштова скринька | пошто:ва схра:нка | Kľúč od poštovej schránky je malý. | Ключ від поштової скриньки маленький.
+W: domový poriadok | правила будинку | домові: поріадок | Prečítajte si domový poriadok. | Прочитайте правила будинку.
+X rc: - | Domový poriadok: Nočný kľud je od 22:00 do 6:00. Bicykle a kočíky patria do kočíkárne na prízemí, nie na chodbu. Odpad triedime – plast, papier, sklo. Spoločné priestory upratujú nájomníci podľa rozpisu.
+q~: З якої години нічна тиша? | *з 22:00 ;; з 20:00 ;; з 6:00
+q~: Де тримати велосипеди? | *у кімнаті для візочків на першому поверсі ;; у коридорі ;; на балконі
+X cz: - | Kľúče sú {na} stole. Taška je {pod} stolom. Mlieko daj {do} chladničky. Bicykel je {v} pivnici. | Прийменники місця.
+= na, pod, do, v.
+X mt: З’єднай. | sťahovať sa = переїжджати ;; zvonček = дзвінок ;; poštová schránka = поштова скринька ;; domový poriadok = правила будинку ;; nočný kľud = нічна тиша
+X fe: - | Daj, prosím, mäso do [chladnička>chladničky].
+= do + родовий.
+X ce: Виправ речення. | Bývam na tretí poschodie a výťah je pokazená. | Bývam na treťom poschodí a výťah je pokazený. ;; Bývam na treťom poschodí a výťah je pokazený
+= na + місцевий; výťah — pokazený.
+X bd: - | Переїзд пройшов успішно!
+> Sťahovák: Dobrý deň, kam s tou skriňou? | *Do spálne, prosím. Je to prvé dvere vľavo. ;; Do spálňa. ;; Skriňa je spálňa.
+> Sťahovák: A gauč? | *Gauč do obývačky, k oknu. ;; Gauč obývačka. ;; Na gauči obývačku.
+> Sťahovák: Krabice s knihami? | *Tie dajte do pivnice, prosím. ;; Tie dajte v pivnica. ;; Pivnica krabice.
+> Sťahovák: Hotovo. Podpíšte tu. | *Ďakujem, tu je podpis. ;; Nech sa páči, krabice. ;; Hotovo, dobrú chuť.
+X sb: - | Скажи, що наступного тижня ви переїжджаєте. | Budúci týždeň sa sťahujeme.
+= sťahovať sa → sťahujeme sa.
+X cat: Куди (do) чи де (v/na)? | Куди: do kuchyne, do pivnice, do chladničky ;; Де: v kuchyni, v pivnici, na stole
+= do + родовий — рух; v/na + місцевий — місце.
+X ms: Обери правильні фрази. | - | *Mlieko je v chladničke. ;; *Daj to do skrine. ;; *Mačka je pod gaučom. ;; Daj to do skriňa. ;; Mačka je pod gauč.
+= Відмінки після прийменників.
+X dr: - | Nová susedka: Vitajte v našom dome! Ste noví? | *Áno, presťahovali sme sa včera. Teší ma. ;; Áno, sťahovák. ;; Nie, sme nový.
+= Знайомство із сусідкою.
+X np: Ти хочеш, щоб кур’єри знайшли квартиру: на дзвінку твоє ім’я. | *Zazvoňte na zvonček s menom Koval. ;; Zvonček je Koval. ;; Koval zvoniť. ;; Zvoňte Koval meno.
+= Zazvoňte na zvonček…
+F: Перший тиждень у новій квартирі || Ти щойно переїхав(ла) й вирішуєш побутові питання.
+S: Сусідка питає: «Na ktorom poschodí bývate?» (3. poschodie) | *Na treťom poschodí. ;; Na tri poschodí. ;; Tretí poschodie.
+S: Ти питаєш, де підвал. | *Kde je pivnica? ;; Kde sú pivnica? ;; Pivnica je kde je?
+S: «Bicykel nedávajte na chodbu, len do kočíkárne.» Яке правило? | *велосипед — лише в кімнату для візочків ;; велосипед можна в коридор ;; велосипеди заборонені
+S: Не працює дзвінок. Ти пишеш власнику: | *Dobrý deň, nefunguje zvonček. Môžete ho opraviť? ;; Zvonček je pekný. ;; Dobrý deň, zvonček nefungujem.
+R: sťahovať sa, zvonček, poštová schránka, domový poriadok ;; кімнати, меблі, прийменники місця ;; справи й поломки

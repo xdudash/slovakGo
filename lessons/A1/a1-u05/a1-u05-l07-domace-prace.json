@@ -1,0 +1,734 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u05-l07-domace-prace",
+      "sectionId": "a1-u05",
+      "level": "A1",
+      "title": "Домашні справи",
+      "topic": "Житло",
+      "description": "Дієслова побуту: upratovať, vysávať, umývať, prať, žehliť, variť — і хто що робить.",
+      "order": 47,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Розповісти про домашні обов’язки й розподілити справи.",
+      "completionMessage": "Хатні справи розподілено. Далі — коли щось ламається.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Житло",
+        "title": "Домашні справи",
+        "shortDescription": "Розповісти про домашні обов’язки й розподілити справи.",
+        "outcomes": [
+          "називати шість домашніх справ",
+          "відмінювати дієслова на -ať / -ovať",
+          "казати Kto dnes…?",
+          "домовлятися про обов’язки"
+        ],
+        "newWords": [
+          "upratovať",
+          "vysávať",
+          "umývať",
+          "prať",
+          "žehliť",
+          "variť"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Справи",
+          "text": "upratovať (прибирати), vysávať (пилососити), umývať (мити), prať (прати), žehliť (прасувати), variť (готувати їжу).",
+          "examples": [
+            {
+              "sk": "V sobotu upratujeme.",
+              "uk": "У суботу ми прибираємо."
+            },
+            {
+              "sk": "Kto dnes varí?",
+              "uk": "Хто сьогодні готує?"
+            }
+          ],
+          "shortRule": "upratovať, variť",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Форми",
+          "text": "-ovať → -ujem: upratujem, upratuješ, upratuje… -ať → -ám: vysávam, umývam. -iť → -ím: varím, žehlím. prať → perie (неправильне): ja periem.",
+          "examples": [
+            {
+              "sk": "Ja varím, ty umývaš riad.",
+              "uk": "Я готую, ти миєш посуд."
+            },
+            {
+              "sk": "Manžel perie a žehlí.",
+              "uk": "Чоловік пере й прасує."
+            }
+          ],
+          "shortRule": "-ujem / -ám / -ím",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Розподіл",
+          "text": "«Ja vysávam a ty utrieš prach» — я пилососю, а ти витреш пил. «Dnes je rad na tebe» — сьогодні твоя черга.",
+          "examples": [
+            {
+              "sk": "Kto je dnes na rade?",
+              "uk": "Чия сьогодні черга?"
+            },
+            {
+              "sk": "Dnes upratuješ ty.",
+              "uk": "Сьогодні прибираєш ти."
+            }
+          ],
+          "shortRule": "je na rade = черга",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u05-l07-domace-prace-w01",
+            "sk": "upratovať",
+            "uk": "прибирати",
+            "pronunciationUk": "упратовать",
+            "exampleSk": "Každú sobotu upratujeme byt.",
+            "exampleUk": "Щосуботи ми прибираємо квартиру."
+          },
+          {
+            "wordId": "a1-u05-l07-domace-prace-w02",
+            "sk": "vysávať",
+            "uk": "пилососити",
+            "pronunciationUk": "віса:вать",
+            "exampleSk": "Vysávam obývačku.",
+            "exampleUk": "Я пилососю вітальню."
+          },
+          {
+            "wordId": "a1-u05-l07-domace-prace-w03",
+            "sk": "umývať",
+            "uk": "мити",
+            "pronunciationUk": "умі:вать",
+            "exampleSk": "Umývam okná.",
+            "exampleUk": "Я мию вікна."
+          },
+          {
+            "wordId": "a1-u05-l07-domace-prace-w04",
+            "sk": "prať",
+            "uk": "прати",
+            "pronunciationUk": "прать",
+            "exampleSk": "Periem raz týždenne.",
+            "exampleUk": "Я перу раз на тиждень."
+          },
+          {
+            "wordId": "a1-u05-l07-domace-prace-w05",
+            "sk": "žehliť",
+            "uk": "прасувати",
+            "pronunciationUk": "жегліть",
+            "exampleSk": "Nerád žehlím košele.",
+            "exampleUk": "Я не люблю прасувати сорочки."
+          },
+          {
+            "wordId": "a1-u05-l07-domace-prace-w06",
+            "sk": "variť",
+            "uk": "готувати їжу, варити",
+            "pronunciationUk": "варіть",
+            "exampleSk": "Dnes varím boršč.",
+            "exampleUk": "Сьогодні я варю борщ."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u05-l07-domace-prace-w01",
+          "sk": "upratovať",
+          "uk": "прибирати",
+          "pronunciationUk": "упратовать",
+          "exampleSk": "Každú sobotu upratujeme byt.",
+          "exampleUk": "Щосуботи ми прибираємо квартиру.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l07-domace-prace-w02",
+          "sk": "vysávať",
+          "uk": "пилососити",
+          "pronunciationUk": "віса:вать",
+          "exampleSk": "Vysávam obývačku.",
+          "exampleUk": "Я пилососю вітальню.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l07-domace-prace-w03",
+          "sk": "umývať",
+          "uk": "мити",
+          "pronunciationUk": "умі:вать",
+          "exampleSk": "Umývam okná.",
+          "exampleUk": "Я мию вікна.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l07-domace-prace-w04",
+          "sk": "prať",
+          "uk": "прати",
+          "pronunciationUk": "прать",
+          "exampleSk": "Periem raz týždenne.",
+          "exampleUk": "Я перу раз на тиждень.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l07-domace-prace-w05",
+          "sk": "žehliť",
+          "uk": "прасувати",
+          "pronunciationUk": "жегліть",
+          "exampleSk": "Nerád žehlím košele.",
+          "exampleUk": "Я не люблю прасувати сорочки.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l07-domace-prace-w06",
+          "sk": "variť",
+          "uk": "готувати їжу, варити",
+          "pronunciationUk": "варіть",
+          "exampleSk": "Dnes varím boršč.",
+          "exampleUk": "Сьогодні я варю борщ.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u05-l07-domace-prace-ex01",
+          "lessonId": "a1-u05-l07-domace-prace",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "upratovať",
+              "right": "прибирати"
+            },
+            {
+              "left": "vysávať",
+              "right": "пилососити"
+            },
+            {
+              "left": "prať",
+              "right": "прати"
+            },
+            {
+              "left": "žehliť",
+              "right": "прасувати"
+            },
+            {
+              "left": "variť",
+              "right": "готувати"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u05-l07-domace-prace-w01",
+            "a1-u05-l07-domace-prace-w02",
+            "a1-u05-l07-domace-prace-w04",
+            "a1-u05-l07-domace-prace-w05",
+            "a1-u05-l07-domace-prace-w06"
+          ]
+        },
+        {
+          "id": "a1-u05-l07-domace-prace-ex02",
+          "lessonId": "a1-u05-l07-domace-prace",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Ja dnes "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "upratujem",
+                "upratuje",
+                "upratovám"
+              ],
+              "correct": "upratujem"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "-ovať → -ujem.",
+          "order": 2,
+          "wordIds": [
+            "a1-u05-l07-domace-prace-w01"
+          ]
+        },
+        {
+          "id": "a1-u05-l07-domace-prace-ex03",
+          "lessonId": "a1-u05-l07-domace-prace",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Manžel "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "praje",
+                "prá",
+                "perie"
+              ],
+              "correct": "perie"
+            },
+            {
+              "text": " a ja žehlím."
+            }
+          ],
+          "explanation": "prať → perie.",
+          "order": 3,
+          "wordIds": [
+            "a1-u05-l07-domace-prace-w05"
+          ]
+        },
+        {
+          "id": "a1-u05-l07-domace-prace-ex04",
+          "lessonId": "a1-u05-l07-domace-prace",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Dnes je rad na tebe»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Сьогодні ряд біля тебе",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Сьогодні твоя черга",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Сьогодні ти радий",
+              "correct": false
+            }
+          ],
+          "explanation": "rad — черга.",
+          "order": 4
+        },
+        {
+          "id": "a1-u05-l07-domace-prace-ex05",
+          "lessonId": "a1-u05-l07-domace-prace",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Яка справа?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "В кухні"
+            },
+            {
+              "id": "c2",
+              "title": "З одягом"
+            },
+            {
+              "id": "c3",
+              "title": "Прибирання"
+            }
+          ],
+          "items": [
+            {
+              "sk": "prať",
+              "category": "c2"
+            },
+            {
+              "sk": "utierať prach",
+              "category": "c3"
+            },
+            {
+              "sk": "variť",
+              "category": "c1"
+            },
+            {
+              "sk": "umývať riad",
+              "category": "c1"
+            },
+            {
+              "sk": "vysávať",
+              "category": "c3"
+            },
+            {
+              "sk": "žehliť",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Групи справ.",
+          "order": 5,
+          "wordIds": [
+            "a1-u05-l07-domace-prace-w02",
+            "a1-u05-l07-domace-prace-w03",
+            "a1-u05-l07-domace-prace-w04",
+            "a1-u05-l07-domace-prace-w05",
+            "a1-u05-l07-domace-prace-w06"
+          ]
+        },
+        {
+          "id": "a1-u05-l07-domace-prace-ex06",
+          "lessonId": "a1-u05-l07-domace-prace",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Variť» означає лише «варити суп».",
+          "correctAnswer": false,
+          "explanation": "variť — готувати їжу загалом.",
+          "order": 6,
+          "wordIds": [
+            "a1-u05-l07-domace-prace-w06"
+          ]
+        },
+        {
+          "id": "a1-u05-l07-domace-prace-ex07",
+          "lessonId": "a1-u05-l07-domace-prace",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Každú sobotu ______ byt. (ми прибираємо)",
+          "acceptedAnswers": [
+            "upratujeme"
+          ],
+          "hint": "-ovať → -ujeme.",
+          "explanation": "upratujeme.",
+          "order": 7
+        },
+        {
+          "id": "a1-u05-l07-domace-prace-ex08",
+          "lessonId": "a1-u05-l07-domace-prace",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що сьогодні ти вариш борщ.",
+          "tokens": [
+            "varím",
+            "Dnes",
+            "boršč",
+            "."
+          ],
+          "correctOrder": [
+            "Dnes",
+            "varím",
+            "boršč",
+            "."
+          ],
+          "explanation": "Dnes + varím.",
+          "order": 8
+        },
+        {
+          "id": "a1-u05-l07-domace-prace-ex09",
+          "lessonId": "a1-u05-l07-domace-prace",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Nerád žehlíš košele, robí to manžel.",
+          "errorToken": "žehlíš",
+          "correctToken": "žehlím",
+          "explanation": "Про себе: žehlím.",
+          "order": 9,
+          "wordIds": [
+            "a1-u05-l07-domace-prace-w05"
+          ]
+        },
+        {
+          "id": "a1-u05-l07-domace-prace-ex10",
+          "lessonId": "a1-u05-l07-domace-prace",
+          "type": "dialogue_order",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Віднови порядок реплік у діалозі.",
+          "lines": [
+            {
+              "id": "l2",
+              "sk": "Potom umyjeme riad."
+            },
+            {
+              "id": "l3",
+              "sk": "Potom povysávam obývačku."
+            },
+            {
+              "id": "l1",
+              "sk": "Najprv upraceme stôl."
+            },
+            {
+              "id": "l4",
+              "sk": "Nakoniec vynesieme smeti."
+            }
+          ],
+          "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4"
+          ],
+          "explanation": "Послідовність прибирання.",
+          "order": 10,
+          "wordIds": [
+            "a1-u05-l07-domace-prace-w02"
+          ]
+        },
+        {
+          "id": "a1-u05-l07-domace-prace-ex11",
+          "lessonId": "a1-u05-l07-domace-prace",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Співмешканець у квартирі знову не помив посуд. Ти нагадуєш.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Rad umyje ty riad.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Umyť riad je rad!",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Riad je na tebe ty.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Prosím ťa, dnes je rad na tebe umyť riad.",
+              "correct": true
+            }
+          ],
+          "explanation": "Ввічливе нагадування.",
+          "order": 11
+        },
+        {
+          "id": "a1-u05-l07-domace-prace-ex12",
+          "lessonId": "a1-u05-l07-domace-prace",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні форми.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "upratovám",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "upratujem",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "prám",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "varím",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "periem",
+              "correct": true
+            }
+          ],
+          "explanation": "-ujem, -ím, неправильне periem.",
+          "order": 12,
+          "wordIds": [
+            "a1-u05-l07-domace-prace-w01"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Графік прибирання",
+        "description": "Ви з сусідами по квартирі складаєте графік.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Kto bude vysávať?» (ти)",
+            "options": [
+              {
+                "sk": "Ja budem vysávať.",
+                "correct": true
+              },
+              {
+                "sk": "Vysávam ty.",
+                "correct": false
+              },
+              {
+                "sk": "Ja vysávaš.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Ja nerada varím, ale rada upratujem.» Що любить сусідка?",
+            "options": [
+              {
+                "sk": "прибирати",
+                "correct": true
+              },
+              {
+                "sk": "прасувати",
+                "correct": false
+              },
+              {
+                "sk": "готувати",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти пропонуєш, щоб вона мила вікна.",
+            "options": [
+              {
+                "sk": "Môžeš umývať okná?",
+                "correct": true
+              },
+              {
+                "sk": "Okná umývať si?",
+                "correct": false
+              },
+              {
+                "sk": "Môžeš umývam okná?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Dobre, a prať bude každý sám.» Яке правило для прання?",
+            "options": [
+              {
+                "sk": "пере сусідка",
+                "correct": false
+              },
+              {
+                "sk": "кожен пере сам",
+                "correct": true
+              },
+              {
+                "sk": "перуть разом",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Хатні справи розподілено. Далі — коли щось ламається."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Хатні справи розподілено. Далі — коли щось ламається.",
+        "nowYouKnow": [
+          "upratovať, vysávať, umývať, prať, žehliť, variť",
+          "-ujem / -ám / -ím; periem",
+          "je rad na tebe"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u05-l08-poruchy-zaklad",
+          "title": "Коли щось не працює"
+        }
+      }
+    }
+  ]
+}

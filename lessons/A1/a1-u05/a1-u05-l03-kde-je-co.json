@@ -1,0 +1,785 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u05-l03-kde-je-co",
+      "sectionId": "a1-u05",
+      "level": "A1",
+      "title": "Де що лежить?",
+      "topic": "Житло",
+      "description": "Прийменники місця: na, v, pod, nad, pred, za, vedľa, medzi — з місцевим та орудним відмінком.",
+      "order": 43,
+      "xpReward": 25,
+      "estimatedMinutes": 20,
+      "isPublished": true,
+      "intro": "Пояснити, де лежить річ.",
+      "completionMessage": "Тепер ти знайдеш і пояснюєш, де що. Далі — кухня.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Житло",
+        "title": "Де що лежить?",
+        "shortDescription": "Пояснити, де лежить річ.",
+        "outcomes": [
+          "казати na stole, v skrini",
+          "казати pod stolom, nad gaučom",
+          "казати pred domom, za dverami",
+          "знаходити речі за описом"
+        ],
+        "newWords": [
+          "pod",
+          "nad",
+          "pred",
+          "za",
+          "zásuvka",
+          "roh"
+        ],
+        "exercisesCount": 13,
+        "reward": "+25 XP",
+        "estimatedMinutes": 20,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Na і v",
+          "text": "«Na» — на поверхні (na stole, na polici), «v» — усередині (v skrini, v taške). Після них — місцевий відмінок: stôl → na stole, skriňa → v skrini.",
+          "examples": [
+            {
+              "sk": "Kľúče sú na stole.",
+              "uk": "Ключі на столі."
+            },
+            {
+              "sk": "Peňaženka je v taške.",
+              "uk": "Гаманець у сумці."
+            }
+          ],
+          "shortRule": "na — на, v — у",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Pod, nad, pred, za",
+          "text": "pod (під), nad (над), pred (перед), za (за) — з орудним відмінком: pod stolom, nad gaučom, pred domom, za dverami.",
+          "examples": [
+            {
+              "sk": "Mačka je pod posteľou.",
+              "uk": "Кішка під ліжком."
+            },
+            {
+              "sk": "Obraz visí nad gaučom.",
+              "uk": "Картина висить над диваном."
+            }
+          ],
+          "shortRule": "pod / nad / pred / za + -om / -ou",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Медзі, vedľa, v rohu",
+          "text": "medzi (між) — з орудним: medzi oknami. vedľa (поруч) — з родовим: vedľa skrine. «V rohu» — у кутку.",
+          "examples": [
+            {
+              "sk": "Lampa je v rohu.",
+              "uk": "Лампа в кутку."
+            },
+            {
+              "sk": "Stôl je medzi oknami.",
+              "uk": "Стіл між вікнами."
+            }
+          ],
+          "shortRule": "v rohu = у кутку",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u05-l03-kde-je-co-w01",
+            "sk": "pod",
+            "uk": "під",
+            "pronunciationUk": "под",
+            "exampleSk": "Topánky sú pod posteľou.",
+            "exampleUk": "Взуття під ліжком."
+          },
+          {
+            "wordId": "a1-u05-l03-kde-je-co-w02",
+            "sk": "nad",
+            "uk": "над",
+            "pronunciationUk": "над",
+            "exampleSk": "Nad stolom visí lampa.",
+            "exampleUk": "Над столом висить лампа."
+          },
+          {
+            "wordId": "a1-u05-l03-kde-je-co-w03",
+            "sk": "pred",
+            "uk": "перед",
+            "pronunciationUk": "пред",
+            "exampleSk": "Auto je pred domom.",
+            "exampleUk": "Машина перед будинком."
+          },
+          {
+            "wordId": "a1-u05-l03-kde-je-co-w04",
+            "sk": "za",
+            "uk": "за",
+            "pronunciationUk": "за",
+            "exampleSk": "Bicykel je za domom.",
+            "exampleUk": "Велосипед за будинком."
+          },
+          {
+            "wordId": "a1-u05-l03-kde-je-co-w05",
+            "sk": "zásuvka",
+            "uk": "шухляда; розетка",
+            "pronunciationUk": "за:сувка",
+            "exampleSk": "Nože sú v zásuvke.",
+            "exampleUk": "Ножі в шухляді."
+          },
+          {
+            "wordId": "a1-u05-l03-kde-je-co-w06",
+            "sk": "roh",
+            "uk": "кут; ріг",
+            "pronunciationUk": "рог",
+            "exampleSk": "Kreslo je v rohu.",
+            "exampleUk": "Крісло в кутку."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u05-l03-kde-je-co-w01",
+          "sk": "pod",
+          "uk": "під",
+          "pronunciationUk": "под",
+          "exampleSk": "Topánky sú pod posteľou.",
+          "exampleUk": "Взуття під ліжком.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l03-kde-je-co-w02",
+          "sk": "nad",
+          "uk": "над",
+          "pronunciationUk": "над",
+          "exampleSk": "Nad stolom visí lampa.",
+          "exampleUk": "Над столом висить лампа.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l03-kde-je-co-w03",
+          "sk": "pred",
+          "uk": "перед",
+          "pronunciationUk": "пред",
+          "exampleSk": "Auto je pred domom.",
+          "exampleUk": "Машина перед будинком.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l03-kde-je-co-w04",
+          "sk": "za",
+          "uk": "за",
+          "pronunciationUk": "за",
+          "exampleSk": "Bicykel je za domom.",
+          "exampleUk": "Велосипед за будинком.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l03-kde-je-co-w05",
+          "sk": "zásuvka",
+          "uk": "шухляда; розетка",
+          "pronunciationUk": "за:сувка",
+          "exampleSk": "Nože sú v zásuvke.",
+          "exampleUk": "Ножі в шухляді.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l03-kde-je-co-w06",
+          "sk": "roh",
+          "uk": "кут; ріг",
+          "pronunciationUk": "рог",
+          "exampleSk": "Kreslo je v rohu.",
+          "exampleUk": "Крісло в кутку.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u05-l03-kde-je-co-ex01",
+          "lessonId": "a1-u05-l03-kde-je-co",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "pod",
+              "right": "під"
+            },
+            {
+              "left": "nad",
+              "right": "над"
+            },
+            {
+              "left": "pred",
+              "right": "перед"
+            },
+            {
+              "left": "za",
+              "right": "за"
+            },
+            {
+              "left": "v rohu",
+              "right": "у кутку"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u05-l03-kde-je-co-w01",
+            "a1-u05-l03-kde-je-co-w02",
+            "a1-u05-l03-kde-je-co-w03",
+            "a1-u05-l03-kde-je-co-w04",
+            "a1-u05-l03-kde-je-co-w06"
+          ]
+        },
+        {
+          "id": "a1-u05-l03-kde-je-co-ex02",
+          "lessonId": "a1-u05-l03-kde-je-co",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Mačka je "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "nad",
+                "pod",
+                "na"
+              ],
+              "correct": "pod"
+            },
+            {
+              "text": " posteľou. (ховається внизу)"
+            }
+          ],
+          "explanation": "pod — під.",
+          "order": 2,
+          "wordIds": [
+            "a1-u05-l03-kde-je-co-w01",
+            "a1-u05-l03-kde-je-co-w02"
+          ]
+        },
+        {
+          "id": "a1-u05-l03-kde-je-co-ex03",
+          "lessonId": "a1-u05-l03-kde-je-co",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Obraz visí nad "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "gauč",
+                "gaučom",
+                "gauči"
+              ],
+              "correct": "gaučom"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "nad + орудний: gaučom.",
+          "order": 3,
+          "wordIds": [
+            "a1-u05-l03-kde-je-co-w02"
+          ]
+        },
+        {
+          "id": "a1-u05-l03-kde-je-co-ex04",
+          "lessonId": "a1-u05-l03-kde-je-co",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Kľúče sú na "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "stolom",
+                "stôl",
+                "stole"
+              ],
+              "correct": "stole"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "na + місцевий: na stole.",
+          "order": 4
+        },
+        {
+          "id": "a1-u05-l03-kde-je-co-ex05",
+          "lessonId": "a1-u05-l03-kde-je-co",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "«Zásuvka» може означати…",
+          "options": [
+            {
+              "id": "a",
+              "text": "і шухляду, і розетку",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "лише вимикач",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "лише шухляду",
+              "correct": false
+            }
+          ],
+          "explanation": "zásuvka — обидва значення, з контексту.",
+          "order": 5
+        },
+        {
+          "id": "a1-u05-l03-kde-je-co-ex06",
+          "lessonId": "a1-u05-l03-kde-je-co",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Яка форма після прийменника?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "na / v (місцевий)"
+            },
+            {
+              "id": "c2",
+              "title": "pod / nad / pred / za (орудний)"
+            }
+          ],
+          "items": [
+            {
+              "sk": "na stole",
+              "category": "c1"
+            },
+            {
+              "sk": "pred domom",
+              "category": "c2"
+            },
+            {
+              "sk": "na polici",
+              "category": "c1"
+            },
+            {
+              "sk": "pod stolom",
+              "category": "c2"
+            },
+            {
+              "sk": "v skrini",
+              "category": "c1"
+            },
+            {
+              "sk": "nad gaučom",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Дві групи прийменників.",
+          "order": 6,
+          "wordIds": [
+            "a1-u05-l03-kde-je-co-w01",
+            "a1-u05-l03-kde-je-co-w02",
+            "a1-u05-l03-kde-je-co-w03",
+            "a1-u05-l03-kde-je-co-w04"
+          ]
+        },
+        {
+          "id": "a1-u05-l03-kde-je-co-ex07",
+          "lessonId": "a1-u05-l03-kde-je-co",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Auto je za domom» означає «Машина перед будинком».",
+          "correctAnswer": false,
+          "explanation": "za — за; pred — перед.",
+          "order": 7,
+          "wordIds": [
+            "a1-u05-l03-kde-je-co-w04"
+          ]
+        },
+        {
+          "id": "a1-u05-l03-kde-je-co-ex08",
+          "lessonId": "a1-u05-l03-kde-je-co",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Peňaženka je ______ taške. (у)",
+          "acceptedAnswers": [
+            "v"
+          ],
+          "explanation": "v taške.",
+          "order": 8
+        },
+        {
+          "id": "a1-u05-l03-kde-je-co-ex09",
+          "lessonId": "a1-u05-l03-kde-je-co",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що взуття під ліжком.",
+          "tokens": [
+            "pod",
+            "Topánky",
+            "sú",
+            ".",
+            "posteľou"
+          ],
+          "correctOrder": [
+            "Topánky",
+            "sú",
+            "pod",
+            "posteľou",
+            "."
+          ],
+          "explanation": "pod + posteľou.",
+          "order": 9,
+          "wordIds": [
+            "a1-u05-l03-kde-je-co-w01"
+          ]
+        },
+        {
+          "id": "a1-u05-l03-kde-je-co-ex10",
+          "lessonId": "a1-u05-l03-kde-je-co",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Mami, kde sú moje veci? — Tvoje kľúče sú na stole v kuchyni. Telefón je v taške na chodbe. Okuliare sú na polici nad gaučom a bunda visí za dverami.",
+          "questions": [
+            {
+              "question": "Де телефон?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "на столі",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "на полиці",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "у сумці в коридорі",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Де куртка?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "у шафі",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "під ліжком",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "за дверима",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "a1-u05-l03-kde-je-co-w02",
+            "a1-u05-l03-kde-je-co-w04"
+          ]
+        },
+        {
+          "id": "a1-u05-l03-kde-je-co-ex11",
+          "lessonId": "a1-u05-l03-kde-je-co",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Obraz visí na gaučom.",
+          "errorToken": "na",
+          "correctToken": "nad",
+          "explanation": "Над диваном — nad gaučom.",
+          "order": 11,
+          "wordIds": [
+            "a1-u05-l03-kde-je-co-w02"
+          ]
+        },
+        {
+          "id": "a1-u05-l03-kde-je-co-ex12",
+          "lessonId": "a1-u05-l03-kde-je-co",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Гість питає, куди повісити куртку. Вішалка за дверима.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Vešiak dvere za.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Vešiak je za dverami.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Vešiak je za dvere.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Za dverami je vešiak je.",
+              "correct": false
+            }
+          ],
+          "explanation": "za + орудний: za dverami.",
+          "order": 12,
+          "wordIds": [
+            "a1-u05-l03-kde-je-co-w04"
+          ]
+        },
+        {
+          "id": "a1-u05-l03-kde-je-co-ex13",
+          "lessonId": "a1-u05-l03-kde-je-co",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні фрази.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "na stolom",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "na stole",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "pod posteľ",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "v skrini",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "pod posteľou",
+              "correct": true
+            }
+          ],
+          "explanation": "Відмінок після прийменника.",
+          "order": 13,
+          "wordIds": [
+            "a1-u05-l03-kde-je-co-w01"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Де мої документи?",
+        "description": "Ти поспішаєш на співбесіду й телефонуєш чоловікові, бо не можеш знайти речі.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Kde je môj pas?» — «V zásuvke pod televízorom.» Де паспорт?",
+            "options": [
+              {
+                "sk": "на телевізорі",
+                "correct": false
+              },
+              {
+                "sk": "у шухляді під телевізором",
+                "correct": true
+              },
+              {
+                "sk": "у кутку",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти не знаходиш ключі. Чоловік: «Pozri sa na policu nad gaučom.» Куди дивитися?",
+            "options": [
+              {
+                "sk": "під диван",
+                "correct": false
+              },
+              {
+                "sk": "на полицю над диваном",
+                "correct": true
+              },
+              {
+                "sk": "у диван",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти питаєш, де парасолька.",
+            "options": [
+              {
+                "sk": "Kde sú dáždnik?",
+                "correct": false
+              },
+              {
+                "sk": "Kde je dáždnik?",
+                "correct": true
+              },
+              {
+                "sk": "Dáždnik je kde je?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Za dverami na chodbe.» Де парасолька?",
+            "options": [
+              {
+                "sk": "за дверима в коридорі",
+                "correct": true
+              },
+              {
+                "sk": "перед дверима",
+                "correct": false
+              },
+              {
+                "sk": "у спальні",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тепер ти знайдеш і пояснюєш, де що. Далі — кухня."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тепер ти знайдеш і пояснюєш, де що. Далі — кухня.",
+        "nowYouKnow": [
+          "na / v + місцевий",
+          "pod, nad, pred, za + орудний",
+          "vedľa, medzi, v rohu",
+          "zásuvka"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 13,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u05-l04-kuchyna",
+          "title": "Кухня"
+        }
+      }
+    }
+  ]
+}
