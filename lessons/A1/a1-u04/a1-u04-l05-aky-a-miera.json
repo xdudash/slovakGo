@@ -1,0 +1,733 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u04-l05-aky-a-miera",
+      "sectionId": "a1-u04",
+      "level": "A1",
+      "title": "Який? Наскільки?",
+      "topic": "Прикметники й опис людей",
+      "description": "Питання aký / aká / aké і прислівники міри: veľmi, dosť, príliš, celkom, úplne.",
+      "order": 35,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Уточнювати ступінь якості й питати про властивості.",
+      "completionMessage": "Тепер ти точніше описуєш. Далі — прикметники в множині.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Прикметники й опис людей",
+        "title": "Який? Наскільки?",
+        "shortDescription": "Уточнювати ступінь якості й питати про властивості.",
+        "outcomes": [
+          "питати Aký / Aká / Aké?",
+          "казати veľmi, dosť, celkom",
+          "розрізняти dosť (досить) і príliš (занадто)",
+          "використовувати úplne"
+        ],
+        "newWords": [
+          "aký",
+          "veľmi",
+          "dosť",
+          "príliš",
+          "celkom",
+          "úplne"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Aký?",
+          "text": "Питання узгоджується з іменником: aký (чол.), aká (жін.), aké (сер. і множина речей), akí (чол. особи). «Aký je ten byt?», «Aké sú ceny?»",
+          "examples": [
+            {
+              "sk": "Aká je káva? — Výborná.",
+              "uk": "Яка кава? — Чудова."
+            },
+            {
+              "sk": "Akí sú tvoji kolegovia?",
+              "uk": "Які твої колеги?"
+            }
+          ],
+          "shortRule": "aký / aká / aké / akí",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Міра",
+          "text": "veľmi (дуже), dosť (досить, доволі), celkom (цілком, загалом), trochu (трохи), úplne (повністю, зовсім). «Je dosť drahé» — доволі дорого. «Úplne nový» — абсолютно новий.",
+          "examples": [
+            {
+              "sk": "Je to celkom dobré.",
+              "uk": "Це загалом непогано."
+            },
+            {
+              "sk": "Som úplne unavený.",
+              "uk": "Я зовсім виснажений."
+            }
+          ],
+          "shortRule": "veľmi > dosť > celkom > trochu",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Príliš — занадто",
+          "text": "«Príliš» — занадто (негатив): príliš drahé (занадто дорого), príliš ďaleko. Не плутай із «dosť» — доволі.",
+          "examples": [
+            {
+              "sk": "Je to príliš ďaleko.",
+              "uk": "Це занадто далеко."
+            },
+            {
+              "sk": "Káva je príliš horúca.",
+              "uk": "Кава занадто гаряча."
+            }
+          ],
+          "shortRule": "príliš = занадто (погано)",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u04-l05-aky-a-miera-w01",
+            "sk": "aký",
+            "uk": "який",
+            "pronunciationUk": "акі:",
+            "exampleSk": "Aký je váš názor?",
+            "exampleUk": "Яка ваша думка?"
+          },
+          {
+            "wordId": "a1-u04-l05-aky-a-miera-w02",
+            "sk": "veľmi",
+            "uk": "дуже",
+            "pronunciationUk": "вельмі",
+            "exampleSk": "Je veľmi milá.",
+            "exampleUk": "Вона дуже мила."
+          },
+          {
+            "wordId": "a1-u04-l05-aky-a-miera-w03",
+            "sk": "dosť",
+            "uk": "досить, доволі",
+            "pronunciationUk": "дость",
+            "exampleSk": "Byt je dosť drahý.",
+            "exampleUk": "Квартира доволі дорога."
+          },
+          {
+            "wordId": "a1-u04-l05-aky-a-miera-w04",
+            "sk": "príliš",
+            "uk": "занадто",
+            "pronunciationUk": "прі:ліш",
+            "exampleSk": "Hudba je príliš hlasná.",
+            "exampleUk": "Музика занадто гучна."
+          },
+          {
+            "wordId": "a1-u04-l05-aky-a-miera-w05",
+            "sk": "celkom",
+            "uk": "цілком, загалом, доволі",
+            "pronunciationUk": "целком",
+            "exampleSk": "Film bol celkom dobrý.",
+            "exampleUk": "Фільм був загалом непоганий."
+          },
+          {
+            "wordId": "a1-u04-l05-aky-a-miera-w06",
+            "sk": "úplne",
+            "uk": "повністю, зовсім",
+            "pronunciationUk": "у:плне",
+            "exampleSk": "Som úplne zdravý.",
+            "exampleUk": "Я цілком здоровий."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u04-l05-aky-a-miera-w01",
+          "sk": "aký",
+          "uk": "який",
+          "pronunciationUk": "акі:",
+          "exampleSk": "Aký je váš názor?",
+          "exampleUk": "Яка ваша думка?",
+          "level": "A1",
+          "topic": "Прикметники й опис людей",
+          "tags": [
+            "a1-u04",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u04-l05-aky-a-miera-w02",
+          "sk": "veľmi",
+          "uk": "дуже",
+          "pronunciationUk": "вельмі",
+          "exampleSk": "Je veľmi milá.",
+          "exampleUk": "Вона дуже мила.",
+          "level": "A1",
+          "topic": "Прикметники й опис людей",
+          "tags": [
+            "a1-u04",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u04-l05-aky-a-miera-w03",
+          "sk": "dosť",
+          "uk": "досить, доволі",
+          "pronunciationUk": "дость",
+          "exampleSk": "Byt je dosť drahý.",
+          "exampleUk": "Квартира доволі дорога.",
+          "level": "A1",
+          "topic": "Прикметники й опис людей",
+          "tags": [
+            "a1-u04",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u04-l05-aky-a-miera-w04",
+          "sk": "príliš",
+          "uk": "занадто",
+          "pronunciationUk": "прі:ліш",
+          "exampleSk": "Hudba je príliš hlasná.",
+          "exampleUk": "Музика занадто гучна.",
+          "level": "A1",
+          "topic": "Прикметники й опис людей",
+          "tags": [
+            "a1-u04",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u04-l05-aky-a-miera-w05",
+          "sk": "celkom",
+          "uk": "цілком, загалом, доволі",
+          "pronunciationUk": "целком",
+          "exampleSk": "Film bol celkom dobrý.",
+          "exampleUk": "Фільм був загалом непоганий.",
+          "level": "A1",
+          "topic": "Прикметники й опис людей",
+          "tags": [
+            "a1-u04",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u04-l05-aky-a-miera-w06",
+          "sk": "úplne",
+          "uk": "повністю, зовсім",
+          "pronunciationUk": "у:плне",
+          "exampleSk": "Som úplne zdravý.",
+          "exampleUk": "Я цілком здоровий.",
+          "level": "A1",
+          "topic": "Прикметники й опис людей",
+          "tags": [
+            "a1-u04",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u04-l05-aky-a-miera-ex01",
+          "lessonId": "a1-u04-l05-aky-a-miera",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "veľmi",
+              "right": "дуже"
+            },
+            {
+              "left": "dosť",
+              "right": "доволі"
+            },
+            {
+              "left": "príliš",
+              "right": "занадто"
+            },
+            {
+              "left": "celkom",
+              "right": "загалом"
+            },
+            {
+              "left": "úplne",
+              "right": "повністю"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u04-l05-aky-a-miera-w02",
+            "a1-u04-l05-aky-a-miera-w03",
+            "a1-u04-l05-aky-a-miera-w04",
+            "a1-u04-l05-aky-a-miera-w05",
+            "a1-u04-l05-aky-a-miera-w06"
+          ]
+        },
+        {
+          "id": "a1-u04-l05-aky-a-miera-ex02",
+          "lessonId": "a1-u04-l05-aky-a-miera",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери питання.",
+          "sentenceParts": [
+            {
+              "blankId": "b1",
+              "options": [
+                "Aká",
+                "Aké",
+                "Aký"
+              ],
+              "correct": "Aká"
+            },
+            {
+              "text": " je tvoja nová práca?"
+            }
+          ],
+          "explanation": "práca — aká.",
+          "order": 2,
+          "wordIds": [
+            "a1-u04-l05-aky-a-miera-w01"
+          ]
+        },
+        {
+          "id": "a1-u04-l05-aky-a-miera-ex03",
+          "lessonId": "a1-u04-l05-aky-a-miera",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери питання.",
+          "sentenceParts": [
+            {
+              "blankId": "b1",
+              "options": [
+                "Akí",
+                "Aké",
+                "Aký"
+              ],
+              "correct": "Akí"
+            },
+            {
+              "text": " sú tvoji kolegovia?"
+            }
+          ],
+          "explanation": "kolegovia — akí.",
+          "order": 3,
+          "wordIds": [
+            "a1-u04-l05-aky-a-miera-w01"
+          ]
+        },
+        {
+          "id": "a1-u04-l05-aky-a-miera-ex04",
+          "lessonId": "a1-u04-l05-aky-a-miera",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Je to príliš drahé»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Це трохи дорого",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Це занадто дорого",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Це доволі дорого",
+              "correct": false
+            }
+          ],
+          "explanation": "príliš — занадто.",
+          "order": 4
+        },
+        {
+          "id": "a1-u04-l05-aky-a-miera-ex05",
+          "lessonId": "a1-u04-l05-aky-a-miera",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Позитивне чи негативне значення?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Нейтральне / позитивне"
+            },
+            {
+              "id": "c2",
+              "title": "Негативне"
+            }
+          ],
+          "items": [
+            {
+              "sk": "celkom pekné",
+              "category": "c1"
+            },
+            {
+              "sk": "príliš hlučné",
+              "category": "c2"
+            },
+            {
+              "sk": "úplne nové",
+              "category": "c1"
+            },
+            {
+              "sk": "príliš ďaleko",
+              "category": "c2"
+            },
+            {
+              "sk": "príliš drahé",
+              "category": "c2"
+            },
+            {
+              "sk": "veľmi dobré",
+              "category": "c1"
+            }
+          ],
+          "explanation": "príliš — зазвичай негатив.",
+          "order": 5,
+          "wordIds": [
+            "a1-u04-l05-aky-a-miera-w02",
+            "a1-u04-l05-aky-a-miera-w04",
+            "a1-u04-l05-aky-a-miera-w05",
+            "a1-u04-l05-aky-a-miera-w06"
+          ]
+        },
+        {
+          "id": "a1-u04-l05-aky-a-miera-ex06",
+          "lessonId": "a1-u04-l05-aky-a-miera",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Dosť drahý» означає «занадто дорогий, не куплю».",
+          "correctAnswer": false,
+          "explanation": "dosť — доволі; «занадто» — príliš.",
+          "order": 6,
+          "wordIds": [
+            "a1-u04-l05-aky-a-miera-w03"
+          ]
+        },
+        {
+          "id": "a1-u04-l05-aky-a-miera-ex07",
+          "lessonId": "a1-u04-l05-aky-a-miera",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Hudba je ______ hlasná, nemôžem spať. (занадто)",
+          "acceptedAnswers": [
+            "príliš"
+          ],
+          "explanation": "príliš — занадто.",
+          "order": 7,
+          "wordIds": [
+            "a1-u04-l05-aky-a-miera-w04"
+          ]
+        },
+        {
+          "id": "a1-u04-l05-aky-a-miera-ex08",
+          "lessonId": "a1-u04-l05-aky-a-miera",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що фільм був загалом непоганий.",
+          "tokens": [
+            "celkom",
+            "bol",
+            "dobrý",
+            "Film",
+            "."
+          ],
+          "correctOrder": [
+            "Film",
+            "bol",
+            "celkom",
+            "dobrý",
+            "."
+          ],
+          "explanation": "celkom dobrý.",
+          "order": 8,
+          "wordIds": [
+            "a1-u04-l05-aky-a-miera-w05"
+          ]
+        },
+        {
+          "id": "a1-u04-l05-aky-a-miera-ex09",
+          "lessonId": "a1-u04-l05-aky-a-miera",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kolegyňa",
+              "sk": "Aká je tá nová reštaurácia?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Aký je drahý.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Reštaurácia je aká.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Celkom dobrá, ale dosť drahá.",
+              "correct": true
+            }
+          ],
+          "explanation": "Оцінка + застереження.",
+          "order": 9,
+          "wordIds": [
+            "a1-u04-l05-aky-a-miera-w01",
+            "a1-u04-l05-aky-a-miera-w03",
+            "a1-u04-l05-aky-a-miera-w05"
+          ]
+        },
+        {
+          "id": "a1-u04-l05-aky-a-miera-ex10",
+          "lessonId": "a1-u04-l05-aky-a-miera",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Кава занадто гаряча, ти пояснюєш, чому не п’єш.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Je dosť horúci.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Je príliš horúce káva.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Horúca príliš.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Je ešte príliš horúca.",
+              "correct": true
+            }
+          ],
+          "explanation": "káva — horúca; príliš.",
+          "order": 10,
+          "wordIds": [
+            "a1-u04-l05-aky-a-miera-w03",
+            "a1-u04-l05-aky-a-miera-w04"
+          ]
+        },
+        {
+          "id": "a1-u04-l05-aky-a-miera-ex11",
+          "lessonId": "a1-u04-l05-aky-a-miera",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Byt je príliš veľký a pekný, ten si vezmeme.",
+          "errorToken": "príliš",
+          "correctToken": "dosť",
+          "explanation": "Позитивний контекст: «доволі великий» — dosť; príliš звучало б як мінус.",
+          "order": 11,
+          "wordIds": [
+            "a1-u04-l05-aky-a-miera-w03",
+            "a1-u04-l05-aky-a-miera-w04"
+          ]
+        },
+        {
+          "id": "a1-u04-l05-aky-a-miera-ex12",
+          "lessonId": "a1-u04-l05-aky-a-miera",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери речення з негативною оцінкою.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Je to veľmi dobré.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Je príliš drahé.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Je to príliš ďaleko.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Je to celkom pekné.",
+              "correct": false
+            }
+          ],
+          "explanation": "príliš — мінус.",
+          "order": 12,
+          "wordIds": [
+            "a1-u04-l05-aky-a-miera-w02",
+            "a1-u04-l05-aky-a-miera-w04",
+            "a1-u04-l05-aky-a-miera-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Вибір садочка",
+        "description": "Ти з подругою обговорюєш два дитячі садки.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Aká je škôlka na našej ulici?» (загалом непогана, але маленька)",
+            "options": [
+              {
+                "sk": "Aký dobrý, ale malý.",
+                "correct": false
+              },
+              {
+                "sk": "Príliš dobrá, malá.",
+                "correct": false
+              },
+              {
+                "sk": "Celkom dobrá, ale malá.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«A tá v centre?» (дуже гарна, але занадто далеко)",
+            "options": [
+              {
+                "sk": "Pekný ďaleko.",
+                "correct": false
+              },
+              {
+                "sk": "Veľmi pekná, ale príliš ďaleko.",
+                "correct": true
+              },
+              {
+                "sk": "Dosť pekná, príliš blízko.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Aké sú ceny?» (доволі високі)",
+            "options": [
+              {
+                "sk": "Ceny sú dosť vysoké.",
+                "correct": true
+              },
+              {
+                "sk": "Ceny je dosť vysoká.",
+                "correct": false
+              },
+              {
+                "sk": "Ceny príliš.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Čo vyberieš?» (ту на вулиці — близько)",
+            "options": [
+              {
+                "sk": "Ten na našej ulici.",
+                "correct": false
+              },
+              {
+                "sk": "Tú na našej ulici, je blízko.",
+                "correct": true
+              },
+              {
+                "sk": "Tú v centre, je ďaleko.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тепер ти точніше описуєш. Далі — прикметники в множині."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тепер ти точніше описуєш. Далі — прикметники в множині.",
+        "nowYouKnow": [
+          "aký / aká / aké / akí",
+          "veľmi, dosť, celkom, trochu, úplne",
+          "príliš = занадто"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u04-l06-mnozne-prid",
+          "title": "Прикметники в множині"
+        }
+      }
+    }
+  ]
+}
