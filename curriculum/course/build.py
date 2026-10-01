@@ -175,6 +175,9 @@ def build_exercise(kind: str, body: str, extra: list[str], ex_id: str, lesson_id
     if kind not in TYPE:
         raise SourceError(f"unknown exercise kind {kind!r}")
     f = fields(body)
+    arity = {"np": 3, "hm": 3, "tone": 3, "mic": 4, "reg": 3, "dr": 3, "msg": 5, "doc": 5, "sch": 5, "ce": 3, "tr": 3, "tf": 4, "sc": 3, "ms": 3}
+    if kind.rstrip("~^") in arity and len(f) == arity[kind.rstrip("~^")] - 1:
+        f = ["-"] + f
     instr = f[0] if f and f[0] != "-" else DEFAULT_INSTR[kind]
     ex: dict = {"id": ex_id, "lessonId": lesson_id, "type": TYPE[kind], "skill": list(SKILLS[kind]), "instruction": instr}
     uk_opts = (kind in UK_OPTS_DEFAULT and not sk_flag) or uk_flag
@@ -489,7 +492,11 @@ def parse_file(path: Path) -> dict:
         try:
             if line.startswith("@unit "):
                 f = fields(line[6:])
-                unit = {"code": f[0], "level": f[1], "topic": f[2], "topicSk": f[3], "file": path}
+                if len(f) == 4:
+                    f = [f[0], f[2], f[3]]
+                if len(f) != 3:
+                    raise SourceError("@unit needs 'code | topic uk | topic sk'")
+                unit = {"code": f[0], "level": f[0][:2].upper(), "topic": f[1], "topicSk": f[2], "file": path}
                 continue
             if line.startswith("@lesson "):
                 f = fields(line[8:])
@@ -577,8 +584,8 @@ def parse_file(path: Path) -> dict:
                 cur["steps"].append({"prompt": f[0], "opts": f[1], "uk": head == "S~"})
             else:
                 raise SourceError(f"unknown line: {s[:60]}")
-        except SourceError as e:
-            raise SourceError(f"{path.relative_to(ROOT)}:{ln}: {e}") from None
+        except (SourceError, IndexError, ValueError) as e:
+            raise SourceError(f"{path.relative_to(ROOT)}:{ln}: {type(e).__name__}: {e}") from None
     if unit is None:
         raise SourceError(f"{path}: missing @unit")
     return {"unit": unit, "lessons": lessons}
