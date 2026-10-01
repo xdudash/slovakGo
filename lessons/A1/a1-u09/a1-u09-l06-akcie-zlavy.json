@@ -1,0 +1,768 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u09-l06-akcie-zlavy",
+      "sectionId": "a1-u09",
+      "level": "A1",
+      "title": "Акції й знижки",
+      "topic": "Магазин і покупки",
+      "description": "Акційні листівки й цінники: akcia, výpredaj, 1+1 zdarma, lacnejší, ušetriť, cena za kus / kg.",
+      "order": 86,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Розуміти акції й обчислювати вигоду.",
+      "completionMessage": "Тепер ти шукаєш вигідні покупки. Далі — побутова хімія.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Магазин і покупки",
+        "title": "Акції й знижки",
+        "shortDescription": "Розуміти акції й обчислювати вигоду.",
+        "outcomes": [
+          "розуміти akcia, výpredaj, 1 + 1 zdarma",
+          "порівнювати ціни: lacnejší / drahší",
+          "розуміти cena za kg",
+          "казати ušetril som…"
+        ],
+        "newWords": [
+          "akcia",
+          "výpredaj",
+          "lacnejší",
+          "drahší",
+          "ušetriť",
+          "výhodný"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Акції",
+          "text": "«Akcia» — акція, «výpredaj» — розпродаж, «1 + 1 zdarma» — 1+1 безкоштовно, «druhý kus za polovicu» — друга штука за пів ціни. «Platí do…» — діє до…",
+          "examples": [
+            {
+              "sk": "Akcia platí do nedele.",
+              "uk": "Акція діє до неділі."
+            },
+            {
+              "sk": "Druhý kus za polovičnú cenu.",
+              "uk": "Друга штука за пів ціни."
+            }
+          ],
+          "shortRule": "akcia / výpredaj",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Порівняння цін",
+          "text": "«Lacnejší» — дешевший, «drahší» — дорожчий. «Cena za kilogram / liter / kus» — ціна за кг / л / штуку (дрібним шрифтом!).",
+          "examples": [
+            {
+              "sk": "Tento je lacnejší za kilo.",
+              "uk": "Цей дешевший за кілограм."
+            },
+            {
+              "sk": "Väčšie balenie je výhodnejšie.",
+              "uk": "Більша упаковка вигідніша."
+            }
+          ],
+          "shortRule": "cena za kg",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Заощадити",
+          "text": "«Ušetriť» — заощадити: «Ušetril som desať eur». «Výhodný» — вигідний. «Zľava 30 %» — знижка 30 %.",
+          "examples": [
+            {
+              "sk": "Ušetrili sme pätnásť eur.",
+              "uk": "Ми заощадили 15 €."
+            },
+            {
+              "sk": "To je výhodná ponuka.",
+              "uk": "Це вигідна пропозиція."
+            }
+          ],
+          "shortRule": "ušetriť = заощадити",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u09-l06-akcie-zlavy-w01",
+            "sk": "akcia",
+            "uk": "акція (знижка)",
+            "pronunciationUk": "акція",
+            "exampleSk": "Káva je v akcii.",
+            "exampleUk": "Кава за акцією."
+          },
+          {
+            "wordId": "a1-u09-l06-akcie-zlavy-w02",
+            "sk": "výpredaj",
+            "uk": "розпродаж",
+            "pronunciationUk": "ві:предай",
+            "exampleSk": "Letný výpredaj začína v júli.",
+            "exampleUk": "Літній розпродаж починається в липні."
+          },
+          {
+            "wordId": "a1-u09-l06-akcie-zlavy-w03",
+            "sk": "lacnejší",
+            "uk": "дешевший",
+            "pronunciationUk": "лацнейші:",
+            "exampleSk": "Tento je lacnejší.",
+            "exampleUk": "Цей дешевший."
+          },
+          {
+            "wordId": "a1-u09-l06-akcie-zlavy-w04",
+            "sk": "drahší",
+            "uk": "дорожчий",
+            "pronunciationUk": "драгші:",
+            "exampleSk": "Značková káva je drahšia.",
+            "exampleUk": "Брендова кава дорожча."
+          },
+          {
+            "wordId": "a1-u09-l06-akcie-zlavy-w05",
+            "sk": "ušetriť",
+            "uk": "заощадити",
+            "pronunciationUk": "ушетріть",
+            "exampleSk": "Ušetrila som dvadsať eur.",
+            "exampleUk": "Я заощадила двадцять євро."
+          },
+          {
+            "wordId": "a1-u09-l06-akcie-zlavy-w06",
+            "sk": "výhodný",
+            "uk": "вигідний",
+            "pronunciationUk": "ві:годні:",
+            "exampleSk": "Veľké balenie je výhodnejšie.",
+            "exampleUk": "Велика упаковка вигідніша."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u09-l06-akcie-zlavy-w01",
+          "sk": "akcia",
+          "uk": "акція (знижка)",
+          "pronunciationUk": "акція",
+          "exampleSk": "Káva je v akcii.",
+          "exampleUk": "Кава за акцією.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l06-akcie-zlavy-w02",
+          "sk": "výpredaj",
+          "uk": "розпродаж",
+          "pronunciationUk": "ві:предай",
+          "exampleSk": "Letný výpredaj začína v júli.",
+          "exampleUk": "Літній розпродаж починається в липні.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l06-akcie-zlavy-w03",
+          "sk": "lacnejší",
+          "uk": "дешевший",
+          "pronunciationUk": "лацнейші:",
+          "exampleSk": "Tento je lacnejší.",
+          "exampleUk": "Цей дешевший.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l06-akcie-zlavy-w04",
+          "sk": "drahší",
+          "uk": "дорожчий",
+          "pronunciationUk": "драгші:",
+          "exampleSk": "Značková káva je drahšia.",
+          "exampleUk": "Брендова кава дорожча.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l06-akcie-zlavy-w05",
+          "sk": "ušetriť",
+          "uk": "заощадити",
+          "pronunciationUk": "ушетріть",
+          "exampleSk": "Ušetrila som dvadsať eur.",
+          "exampleUk": "Я заощадила двадцять євро.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l06-akcie-zlavy-w06",
+          "sk": "výhodný",
+          "uk": "вигідний",
+          "pronunciationUk": "ві:годні:",
+          "exampleSk": "Veľké balenie je výhodnejšie.",
+          "exampleUk": "Велика упаковка вигідніша.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u09-l06-akcie-zlavy-ex01",
+          "lessonId": "a1-u09-l06-akcie-zlavy",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "akcia",
+              "right": "акція"
+            },
+            {
+              "left": "výpredaj",
+              "right": "розпродаж"
+            },
+            {
+              "left": "lacnejší",
+              "right": "дешевший"
+            },
+            {
+              "left": "drahší",
+              "right": "дорожчий"
+            },
+            {
+              "left": "ušetriť",
+              "right": "заощадити"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u09-l06-akcie-zlavy-w01",
+            "a1-u09-l06-akcie-zlavy-w02",
+            "a1-u09-l06-akcie-zlavy-w03",
+            "a1-u09-l06-akcie-zlavy-w04",
+            "a1-u09-l06-akcie-zlavy-w05"
+          ]
+        },
+        {
+          "id": "a1-u09-l06-akcie-zlavy-ex02",
+          "lessonId": "a1-u09-l06-akcie-zlavy",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «1 + 1 zdarma»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "знижка 1 %",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "купуєш один — другий безкоштовно",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "один товар коштує 1 €",
+              "correct": false
+            }
+          ],
+          "explanation": "Другий товар безкоштовно.",
+          "order": 2,
+          "wordIds": [
+            "a1-u09-l06-akcie-zlavy-w01"
+          ]
+        },
+        {
+          "id": "a1-u09-l06-akcie-zlavy-ex03",
+          "lessonId": "a1-u09-l06-akcie-zlavy",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай цінник.",
+          "document": {
+            "title": "Akcia",
+            "fields": [
+              {
+                "label": "Káva mletá 250 g",
+                "value": "3,99 €"
+              },
+              {
+                "label": "Pôvodná cena",
+                "value": "5,49 €"
+              },
+              {
+                "label": "Cena za 1 kg",
+                "value": "15,96 €"
+              },
+              {
+                "label": "Platí",
+                "value": "1. 10. – 7. 10."
+              }
+            ]
+          },
+          "question": "Скільки заощадиш на одній упаковці?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "3,99 €",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "1,50 €",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "15,96 €",
+              "correct": false
+            }
+          ],
+          "explanation": "5,49 – 3,99 = 1,50 €.",
+          "order": 3,
+          "wordIds": [
+            "a1-u09-l06-akcie-zlavy-w01"
+          ]
+        },
+        {
+          "id": "a1-u09-l06-akcie-zlavy-ex04",
+          "lessonId": "a1-u09-l06-akcie-zlavy",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Väčšie balenie je "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "výhodnejšia",
+                "výhodnejšie",
+                "výhodnejší"
+              ],
+              "correct": "výhodnejšie"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "balenie — сер. рід.",
+          "order": 4,
+          "wordIds": [
+            "a1-u09-l06-akcie-zlavy-w01",
+            "a1-u09-l06-akcie-zlavy-w06"
+          ]
+        },
+        {
+          "id": "a1-u09-l06-akcie-zlavy-ex05",
+          "lessonId": "a1-u09-l06-akcie-zlavy",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Platí do nedele» означає, що акція діє до неділі.",
+          "correctAnswer": true,
+          "explanation": "platí do — діє до.",
+          "order": 5,
+          "wordIds": [
+            "a1-u09-l06-akcie-zlavy-w01"
+          ]
+        },
+        {
+          "id": "a1-u09-l06-akcie-zlavy-ex06",
+          "lessonId": "a1-u09-l06-akcie-zlavy",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "______ sme pätnásť eur. (заощадили)",
+          "acceptedAnswers": [
+            "Ušetrili"
+          ],
+          "explanation": "Ušetrili sme.",
+          "order": 6,
+          "wordIds": [
+            "a1-u09-l06-akcie-zlavy-w01",
+            "a1-u09-l06-akcie-zlavy-w05"
+          ]
+        },
+        {
+          "id": "a1-u09-l06-akcie-zlavy-ex07",
+          "lessonId": "a1-u09-l06-akcie-zlavy",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що кава за акцією.",
+          "tokens": [
+            "akcii",
+            "Káva",
+            "v",
+            "je",
+            "."
+          ],
+          "correctOrder": [
+            "Káva",
+            "je",
+            "v",
+            "akcii",
+            "."
+          ],
+          "explanation": "v akcii.",
+          "order": 7,
+          "wordIds": [
+            "a1-u09-l06-akcie-zlavy-w01"
+          ]
+        },
+        {
+          "id": "a1-u09-l06-akcie-zlavy-ex08",
+          "lessonId": "a1-u09-l06-akcie-zlavy",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Značková káva je drahší.",
+          "errorToken": "drahší",
+          "correctToken": "drahšia",
+          "explanation": "káva — drahšia.",
+          "order": 8,
+          "wordIds": [
+            "a1-u09-l06-akcie-zlavy-w01",
+            "a1-u09-l06-akcie-zlavy-w04"
+          ]
+        },
+        {
+          "id": "a1-u09-l06-akcie-zlavy-ex09",
+          "lessonId": "a1-u09-l06-akcie-zlavy",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Вигідно чи ні?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Výhodné"
+            },
+            {
+              "id": "c2",
+              "title": "Nevýhodné"
+            }
+          ],
+          "items": [
+            {
+              "sk": "1 + 1 zdarma",
+              "category": "c1"
+            },
+            {
+              "sk": "zľava 50 %",
+              "category": "c1"
+            },
+            {
+              "sk": "plná cena",
+              "category": "c2"
+            },
+            {
+              "sk": "bez zľavy",
+              "category": "c2"
+            },
+            {
+              "sk": "výpredaj",
+              "category": "c1"
+            },
+            {
+              "sk": "drahšie balenie",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Оцінка пропозиції.",
+          "order": 9,
+          "wordIds": [
+            "a1-u09-l06-akcie-zlavy-w01",
+            "a1-u09-l06-akcie-zlavy-w02",
+            "a1-u09-l06-akcie-zlavy-w04",
+            "a1-u09-l06-akcie-zlavy-w06"
+          ]
+        },
+        {
+          "id": "a1-u09-l06-akcie-zlavy-ex10",
+          "lessonId": "a1-u09-l06-akcie-zlavy",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти пояснюєш подрузі, що велика упаковка вигідніша за кілограм.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Balenie veľké lacnejší.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Veľké balenie drahší je.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Veľké balenie je výhodnejšie, cena za kilo je nižšia.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Kilo je výhodný.",
+              "correct": false
+            }
+          ],
+          "explanation": "Порівняння за ціною за кг.",
+          "order": 10,
+          "wordIds": [
+            "a1-u09-l06-akcie-zlavy-w01",
+            "a1-u09-l06-akcie-zlavy-w03",
+            "a1-u09-l06-akcie-zlavy-w04",
+            "a1-u09-l06-akcie-zlavy-w06"
+          ]
+        },
+        {
+          "id": "a1-u09-l06-akcie-zlavy-ex11",
+          "lessonId": "a1-u09-l06-akcie-zlavy",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "На цінник наклеєно «Posledné kusy!». Що це означає?",
+          "options": [
+            {
+              "id": "a",
+              "text": "новий товар",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "лишилися останні штуки",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "товар безкоштовний",
+              "correct": false
+            }
+          ],
+          "explanation": "posledné kusy — останні штуки.",
+          "order": 11,
+          "wordIds": [
+            "a1-u09-l06-akcie-zlavy-w01"
+          ]
+        },
+        {
+          "id": "a1-u09-l06-akcie-zlavy-ex12",
+          "lessonId": "a1-u09-l06-akcie-zlavy",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери слова про знижки.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "košík",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "akcia",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "výpredaj",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "regál",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "zľava",
+              "correct": true
+            }
+          ],
+          "explanation": "Знижки.",
+          "order": 12,
+          "wordIds": [
+            "a1-u09-l06-akcie-zlavy-w01",
+            "a1-u09-l06-akcie-zlavy-w02"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Похід у магазин за акційною листівкою",
+        "description": "Ти з чоловіком дивитеся акційну листівку.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Prací prášok – druhý kus za polovicu.» Що це означає?",
+            "options": [
+              {
+                "sk": "половина упаковки безкоштовно",
+                "correct": false
+              },
+              {
+                "sk": "друга упаковка за пів ціни",
+                "correct": true
+              },
+              {
+                "sk": "знижка 2 %",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти кажеш, що варто купити два.",
+            "options": [
+              {
+                "sk": "Kúpme dve výhodný.",
+                "correct": false
+              },
+              {
+                "sk": "Dva výhodne kúpiť.",
+                "correct": false
+              },
+              {
+                "sk": "Kúpme dva, je to výhodné.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Чоловік: «Ale táto značka je drahšia.» Що він каже?",
+            "options": [
+              {
+                "sk": "цього бренду немає",
+                "correct": false
+              },
+              {
+                "sk": "цей бренд дешевший",
+                "correct": false
+              },
+              {
+                "sk": "цей бренд дорожчий",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти рахуєш: «Ušetríme päť eur.» Що це означає?",
+            "options": [
+              {
+                "sk": "ми заощадимо 5 €",
+                "correct": true
+              },
+              {
+                "sk": "ми витратимо 5 €",
+                "correct": false
+              },
+              {
+                "sk": "ми повернемо 5 €",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тепер ти шукаєш вигідні покупки. Далі — побутова хімія."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тепер ти шукаєш вигідні покупки. Далі — побутова хімія.",
+        "nowYouKnow": [
+          "akcia, výpredaj, 1 + 1 zdarma, druhý kus za polovicu",
+          "lacnejší, drahší",
+          "cena za kg",
+          "ušetriť, výhodný"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u09-l07-drogeria",
+          "title": "Побутова хімія й гігієна"
+        }
+      }
+    }
+  ]
+}

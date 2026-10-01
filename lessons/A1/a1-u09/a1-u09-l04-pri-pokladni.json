@@ -1,0 +1,735 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u09-l04-pri-pokladni",
+      "sectionId": "a1-u09",
+      "level": "A1",
+      "title": "На касі",
+      "topic": "Магазин і покупки",
+      "description": "Діалог на касі: nákupná taška, samoobslužná pokladňa, vernostná karta, zaplatiť, terminál.",
+      "order": 84,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Пройти касу без стресу й зрозуміти питання касира.",
+      "completionMessage": "Каса пройдена! Далі — способи оплати.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Магазин і покупки",
+        "title": "На касі",
+        "shortDescription": "Пройти касу без стресу й зрозуміти питання касира.",
+        "outcomes": [
+          "розуміти Máte vernostnú kartu?",
+          "відповідати про пакет: Tašku nepotrebujem",
+          "користуватися samoobslužná pokladňa",
+          "розуміти інструкції терміналу"
+        ],
+        "newWords": [
+          "nákupná taška",
+          "samoobslužná pokladňa",
+          "vernostná karta",
+          "zaplatiť",
+          "terminál",
+          "naskenovať"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Питання касира",
+          "text": "«Máte vernostnú kartu?» — у вас є картка лояльності? «Potrebujete tašku?» — потрібен пакет? «Bloček?» — чек? Відповіді: «Nie, ďakujem», «Áno, jednu tašku».",
+          "examples": [
+            {
+              "sk": "Tašku nepotrebujem, mám svoju.",
+              "uk": "Пакет не потрібен, маю свій."
+            }
+          ],
+          "shortRule": "vernostná karta, taška",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Каса самообслуговування",
+          "text": "«Samoobslužná pokladňa» — каса самообслуговування. Екрани: «Naskenujte tovar» (відскануйте товар), «Položte tovar do priestoru» (покладіть товар), «Zvoľte spôsob platby» (оберіть спосіб оплати).",
+          "examples": [
+            {
+              "sk": "Naskenujte čiarový kód.",
+              "uk": "Відскануйте штрихкод."
+            }
+          ],
+          "shortRule": "naskenujte, položte, zvoľte",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Пакети",
+          "text": "Пакети платні: «Taška stojí 15 centov». «Papierová / plastová taška». Багато хто носить «nákupnú tašku» (еко-сумку).",
+          "examples": [
+            {
+              "sk": "Jednu papierovú tašku, prosím.",
+              "uk": "Один паперовий пакет, будь ласка."
+            }
+          ],
+          "shortRule": "taška = пакет / сумка",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u09-l04-pri-pokladni-w01",
+            "sk": "nákupná taška",
+            "uk": "сумка для покупок, пакет",
+            "pronunciationUk": "на:купна: ташка",
+            "exampleSk": "Mám vlastnú nákupnú tašku.",
+            "exampleUk": "У мене своя сумка для покупок."
+          },
+          {
+            "wordId": "a1-u09-l04-pri-pokladni-w02",
+            "sk": "samoobslužná pokladňa",
+            "uk": "каса самообслуговування",
+            "pronunciationUk": "самообслужна: покладня",
+            "exampleSk": "Idem na samoobslužnú pokladňu.",
+            "exampleUk": "Я йду на касу самообслуговування."
+          },
+          {
+            "wordId": "a1-u09-l04-pri-pokladni-w03",
+            "sk": "vernostná karta",
+            "uk": "картка лояльності",
+            "pronunciationUk": "верностна: карта",
+            "exampleSk": "Máte vernostnú kartu?",
+            "exampleUk": "У вас є картка лояльності?"
+          },
+          {
+            "wordId": "a1-u09-l04-pri-pokladni-w04",
+            "sk": "zaplatiť",
+            "uk": "заплатити",
+            "pronunciationUk": "заплатіть",
+            "exampleSk": "Zaplatím kartou.",
+            "exampleUk": "Я заплачу карткою."
+          },
+          {
+            "wordId": "a1-u09-l04-pri-pokladni-w05",
+            "sk": "terminál",
+            "uk": "термінал",
+            "pronunciationUk": "термінал",
+            "exampleSk": "Priložte kartu k terminálu.",
+            "exampleUk": "Прикладіть картку до терміналу."
+          },
+          {
+            "wordId": "a1-u09-l04-pri-pokladni-w06",
+            "sk": "naskenovať",
+            "uk": "відсканувати",
+            "pronunciationUk": "наскеновать",
+            "exampleSk": "Naskenujte tovar.",
+            "exampleUk": "Відскануйте товар."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u09-l04-pri-pokladni-w01",
+          "sk": "nákupná taška",
+          "uk": "сумка для покупок, пакет",
+          "pronunciationUk": "на:купна: ташка",
+          "exampleSk": "Mám vlastnú nákupnú tašku.",
+          "exampleUk": "У мене своя сумка для покупок.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l04-pri-pokladni-w02",
+          "sk": "samoobslužná pokladňa",
+          "uk": "каса самообслуговування",
+          "pronunciationUk": "самообслужна: покладня",
+          "exampleSk": "Idem na samoobslužnú pokladňu.",
+          "exampleUk": "Я йду на касу самообслуговування.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l04-pri-pokladni-w03",
+          "sk": "vernostná karta",
+          "uk": "картка лояльності",
+          "pronunciationUk": "верностна: карта",
+          "exampleSk": "Máte vernostnú kartu?",
+          "exampleUk": "У вас є картка лояльності?",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l04-pri-pokladni-w04",
+          "sk": "zaplatiť",
+          "uk": "заплатити",
+          "pronunciationUk": "заплатіть",
+          "exampleSk": "Zaplatím kartou.",
+          "exampleUk": "Я заплачу карткою.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l04-pri-pokladni-w05",
+          "sk": "terminál",
+          "uk": "термінал",
+          "pronunciationUk": "термінал",
+          "exampleSk": "Priložte kartu k terminálu.",
+          "exampleUk": "Прикладіть картку до терміналу.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l04-pri-pokladni-w06",
+          "sk": "naskenovať",
+          "uk": "відсканувати",
+          "pronunciationUk": "наскеновать",
+          "exampleSk": "Naskenujte tovar.",
+          "exampleUk": "Відскануйте товар.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u09-l04-pri-pokladni-ex01",
+          "lessonId": "a1-u09-l04-pri-pokladni",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "nákupná taška",
+              "right": "сумка для покупок"
+            },
+            {
+              "left": "vernostná karta",
+              "right": "картка лояльності"
+            },
+            {
+              "left": "zaplatiť",
+              "right": "заплатити"
+            },
+            {
+              "left": "terminál",
+              "right": "термінал"
+            },
+            {
+              "left": "naskenovať",
+              "right": "відсканувати"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u09-l04-pri-pokladni-w01",
+            "a1-u09-l04-pri-pokladni-w02",
+            "a1-u09-l04-pri-pokladni-w03",
+            "a1-u09-l04-pri-pokladni-w04",
+            "a1-u09-l04-pri-pokladni-w05",
+            "a1-u09-l04-pri-pokladni-w06"
+          ]
+        },
+        {
+          "id": "a1-u09-l04-pri-pokladni-ex02",
+          "lessonId": "a1-u09-l04-pri-pokladni",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Pokladníčka",
+              "sk": "Máte vernostnú kartu?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Nie, nemám.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Áno, vernostná.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Nie, nemáte.",
+              "correct": false
+            }
+          ],
+          "explanation": "Коротка відповідь.",
+          "order": 2,
+          "wordIds": [
+            "a1-u09-l04-pri-pokladni-w02",
+            "a1-u09-l04-pri-pokladni-w03"
+          ]
+        },
+        {
+          "id": "a1-u09-l04-pri-pokladni-ex03",
+          "lessonId": "a1-u09-l04-pri-pokladni",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Pokladník",
+              "sk": "Potrebujete tašku?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Taška je.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Nie, ďakujem, mám vlastnú.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Áno, mám tašku nie.",
+              "correct": false
+            }
+          ],
+          "explanation": "Ввічлива відмова.",
+          "order": 3,
+          "wordIds": [
+            "a1-u09-l04-pri-pokladni-w01",
+            "a1-u09-l04-pri-pokladni-w02"
+          ]
+        },
+        {
+          "id": "a1-u09-l04-pri-pokladni-ex04",
+          "lessonId": "a1-u09-l04-pri-pokladni",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "На екрані: «Zvoľte spôsob platby». Що робити?",
+          "options": [
+            {
+              "id": "a",
+              "text": "обрати спосіб оплати",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "покликати касира",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "зважити товар",
+              "correct": false
+            }
+          ],
+          "explanation": "zvoľte — оберіть.",
+          "order": 4,
+          "wordIds": [
+            "a1-u09-l04-pri-pokladni-w02"
+          ]
+        },
+        {
+          "id": "a1-u09-l04-pri-pokladni-ex05",
+          "lessonId": "a1-u09-l04-pri-pokladni",
+          "type": "dialogue_order",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Віднови порядок реплік у діалозі.",
+          "lines": [
+            {
+              "id": "l2",
+              "sk": "Položte tovar do priestoru."
+            },
+            {
+              "id": "l1",
+              "sk": "Naskenujte tovar."
+            },
+            {
+              "id": "l4",
+              "sk": "Priložte kartu."
+            },
+            {
+              "id": "l5",
+              "sk": "Vezmite si bloček."
+            },
+            {
+              "id": "l3",
+              "sk": "Zvoľte spôsob platby."
+            }
+          ],
+          "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5"
+          ],
+          "explanation": "Етапи каси самообслуговування.",
+          "order": 5,
+          "wordIds": [
+            "a1-u09-l04-pri-pokladni-w02",
+            "a1-u09-l04-pri-pokladni-w03"
+          ]
+        },
+        {
+          "id": "a1-u09-l04-pri-pokladni-ex06",
+          "lessonId": "a1-u09-l04-pri-pokladni",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Пакети в словацьких супермаркетах зазвичай платні.",
+          "correctAnswer": true,
+          "explanation": "Taška stojí pár centov.",
+          "order": 6,
+          "wordIds": [
+            "a1-u09-l04-pri-pokladni-w02"
+          ]
+        },
+        {
+          "id": "a1-u09-l04-pri-pokladni-ex07",
+          "lessonId": "a1-u09-l04-pri-pokladni",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "______ kartu k terminálu. (прикладіть)",
+          "acceptedAnswers": [
+            "Priložte"
+          ],
+          "explanation": "Priložte kartu.",
+          "order": 7,
+          "wordIds": [
+            "a1-u09-l04-pri-pokladni-w02",
+            "a1-u09-l04-pri-pokladni-w03",
+            "a1-u09-l04-pri-pokladni-w05"
+          ]
+        },
+        {
+          "id": "a1-u09-l04-pri-pokladni-ex08",
+          "lessonId": "a1-u09-l04-pri-pokladni",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що заплатиш карткою.",
+          "tokens": [
+            "kartou",
+            "Zaplatím",
+            "."
+          ],
+          "correctOrder": [
+            "Zaplatím",
+            "kartou",
+            "."
+          ],
+          "explanation": "Zaplatím + kartou.",
+          "order": 8,
+          "wordIds": [
+            "a1-u09-l04-pri-pokladni-w02",
+            "a1-u09-l04-pri-pokladni-w03",
+            "a1-u09-l04-pri-pokladni-w04"
+          ]
+        },
+        {
+          "id": "a1-u09-l04-pri-pokladni-ex09",
+          "lessonId": "a1-u09-l04-pri-pokladni",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Mám vlastný nákupnú tašku.",
+          "errorToken": "vlastný",
+          "correctToken": "vlastnú",
+          "explanation": "taška — vlastnú.",
+          "order": 9,
+          "wordIds": [
+            "a1-u09-l04-pri-pokladni-w01",
+            "a1-u09-l04-pri-pokladni-w02"
+          ]
+        },
+        {
+          "id": "a1-u09-l04-pri-pokladni-ex10",
+          "lessonId": "a1-u09-l04-pri-pokladni",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Каса самообслуговування пищить: «Neočakávaný predmet v priestore balenia.» Що сталося?",
+          "options": [
+            {
+              "id": "a",
+              "text": "оплата не пройшла",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "на зоні пакування є неочікуваний предмет",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "товар розпродано",
+              "correct": false
+            }
+          ],
+          "explanation": "neočakávaný predmet — неочікуваний предмет.",
+          "order": 10,
+          "wordIds": [
+            "a1-u09-l04-pri-pokladni-w02"
+          ]
+        },
+        {
+          "id": "a1-u09-l04-pri-pokladni-ex11",
+          "lessonId": "a1-u09-l04-pri-pokladni",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Тобі потрібен один паперовий пакет.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Jednu papierovú tašku, prosím.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Papierovú prosím.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Jedna papierová taška, prosím.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Tašku papier jednu.",
+              "correct": false
+            }
+          ],
+          "explanation": "Знахідний: jednu papierovú tašku.",
+          "order": 11,
+          "wordIds": [
+            "a1-u09-l04-pri-pokladni-w01",
+            "a1-u09-l04-pri-pokladni-w02"
+          ]
+        },
+        {
+          "id": "a1-u09-l04-pri-pokladni-ex12",
+          "lessonId": "a1-u09-l04-pri-pokladni",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери питання касира.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Máte to na sklade?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Bloček?",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Máte vernostnú kartu?",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Kde nájdem múku?",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Potrebujete tašku?",
+              "correct": true
+            }
+          ],
+          "explanation": "Питання на касі.",
+          "order": 12,
+          "wordIds": [
+            "a1-u09-l04-pri-pokladni-w01",
+            "a1-u09-l04-pri-pokladni-w02",
+            "a1-u09-l04-pri-pokladni-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Каса самообслуговування",
+        "description": "Ти вперше користуєшся касою самообслуговування.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Екран: «Naskenujte prvý tovar.»",
+            "options": [
+              {
+                "sk": "платиш",
+                "correct": false
+              },
+              {
+                "sk": "скануєш перший товар",
+                "correct": true
+              },
+              {
+                "sk": "кличеш касира",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Яблука без штрихкоду. Екран: «Vyberte ovocie zo zoznamu.»",
+            "options": [
+              {
+                "sk": "обираєш яблука зі списку на екрані",
+                "correct": true
+              },
+              {
+                "sk": "кладеш їх назад",
+                "correct": false
+              },
+              {
+                "sk": "скануєш пакет",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Помилка. Ти кличеш працівника.",
+            "options": [
+              {
+                "sk": "Prepáčte, môžete mi pomôcť?",
+                "correct": true
+              },
+              {
+                "sk": "Prepáčte, pomáham.",
+                "correct": false
+              },
+              {
+                "sk": "Pomoc, pokladňa!",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Priložte kartu.» Що робиш?",
+            "options": [
+              {
+                "sk": "беру чек",
+                "correct": false
+              },
+              {
+                "sk": "прикладаю картку до терміналу",
+                "correct": true
+              },
+              {
+                "sk": "вставляю гроші",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Каса пройдена! Далі — способи оплати."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Каса пройдена! Далі — способи оплати.",
+        "nowYouKnow": [
+          "nákupná taška, vernostná karta",
+          "samoobslužná pokladňa: naskenujte, položte, zvoľte",
+          "zaplatiť, terminál"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u09-l05-platba",
+          "title": "Способи оплати"
+        }
+      }
+    }
+  ]
+}

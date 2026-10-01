@@ -1,0 +1,755 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u09-l09-e-shop",
+      "sectionId": "a1-u09",
+      "level": "A1",
+      "title": "Покупки онлайн",
+      "topic": "Магазин і покупки",
+      "description": "Онлайн-покупки: e-shop, objednať, doručenie, kuriér, balík, Z-Box / výdajné miesto.",
+      "order": 89,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Оформити й отримати онлайн-замовлення.",
+      "completionMessage": "Онлайн-покупки підкорено. Далі — підсумок розділу.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Магазин і покупки",
+        "title": "Покупки онлайн",
+        "shortDescription": "Оформити й отримати онлайн-замовлення.",
+        "outcomes": [
+          "казати Objednal som cez e-shop",
+          "розуміти doručenie domov / na výdajné miesto",
+          "розуміти статуси замовлення",
+          "розуміти повідомлення кур’єра"
+        ],
+        "newWords": [
+          "e-shop",
+          "objednať",
+          "doručenie",
+          "kuriér",
+          "balík",
+          "dobierka"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Замовлення",
+          "text": "«E-shop» — інтернет-магазин, «objednať» — замовити, «objednávka» — замовлення, «košík» (онлайн-кошик), «pokračovať k platbe» — перейти до оплати.",
+          "examples": [
+            {
+              "sk": "Objednala som topánky cez e-shop.",
+              "uk": "Я замовила взуття в інтернет-магазині."
+            }
+          ],
+          "shortRule": "objednať, objednávka",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Доставка",
+          "text": "«Doručenie» — доставка: domov (додому) або na výdajné miesto / do Z-Boxu (у пункт видачі, поштомат). «Kuriér» — кур’єр. «Dobierka» — оплата при отриманні.",
+          "examples": [
+            {
+              "sk": "Doručenie je zdarma od 50 €.",
+              "uk": "Доставка безкоштовна від 50 €."
+            },
+            {
+              "sk": "Platím na dobierku.",
+              "uk": "Плачу при отриманні."
+            }
+          ],
+          "shortRule": "dobierka = оплата при отриманні",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Статуси",
+          "text": "«Objednávka prijatá» — прийнято, «odoslaná» — відправлено, «doručená» — доставлено, «pripravená na vyzdvihnutie» — готова до видачі.",
+          "examples": [
+            {
+              "sk": "Vaša objednávka bola odoslaná.",
+              "uk": "Ваше замовлення відправлено."
+            }
+          ],
+          "shortRule": "prijatá → odoslaná → doručená",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u09-l09-e-shop-w01",
+            "sk": "e-shop",
+            "uk": "інтернет-магазин",
+            "pronunciationUk": "і:-шоп",
+            "exampleSk": "Kupujem veľa cez e-shop.",
+            "exampleUk": "Я багато купую в інтернет-магазинах."
+          },
+          {
+            "wordId": "a1-u09-l09-e-shop-w02",
+            "sk": "objednať",
+            "uk": "замовити",
+            "pronunciationUk": "объєднать",
+            "exampleSk": "Objednám to online.",
+            "exampleUk": "Я замовлю це онлайн."
+          },
+          {
+            "wordId": "a1-u09-l09-e-shop-w03",
+            "sk": "doručenie",
+            "uk": "доставка",
+            "pronunciationUk": "доручєніє",
+            "exampleSk": "Doručenie trvá dva dni.",
+            "exampleUk": "Доставка триває два дні."
+          },
+          {
+            "wordId": "a1-u09-l09-e-shop-w04",
+            "sk": "kuriér",
+            "uk": "кур’єр",
+            "pronunciationUk": "курієр",
+            "exampleSk": "Kuriér príde medzi deviatou a dvanástou.",
+            "exampleUk": "Кур’єр приїде з дев’ятої до дванадцятої."
+          },
+          {
+            "wordId": "a1-u09-l09-e-shop-w05",
+            "sk": "balík",
+            "uk": "посилка",
+            "pronunciationUk": "бали:к",
+            "exampleSk": "Balík je na pošte.",
+            "exampleUk": "Посилка на пошті."
+          },
+          {
+            "wordId": "a1-u09-l09-e-shop-w06",
+            "sk": "dobierka",
+            "uk": "оплата при отриманні",
+            "pronunciationUk": "добієрка",
+            "exampleSk": "Zaplatím na dobierku.",
+            "exampleUk": "Заплачу при отриманні."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u09-l09-e-shop-w01",
+          "sk": "e-shop",
+          "uk": "інтернет-магазин",
+          "pronunciationUk": "і:-шоп",
+          "exampleSk": "Kupujem veľa cez e-shop.",
+          "exampleUk": "Я багато купую в інтернет-магазинах.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l09-e-shop-w02",
+          "sk": "objednať",
+          "uk": "замовити",
+          "pronunciationUk": "объєднать",
+          "exampleSk": "Objednám to online.",
+          "exampleUk": "Я замовлю це онлайн.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l09-e-shop-w03",
+          "sk": "doručenie",
+          "uk": "доставка",
+          "pronunciationUk": "доручєніє",
+          "exampleSk": "Doručenie trvá dva dni.",
+          "exampleUk": "Доставка триває два дні.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l09-e-shop-w04",
+          "sk": "kuriér",
+          "uk": "кур’єр",
+          "pronunciationUk": "курієр",
+          "exampleSk": "Kuriér príde medzi deviatou a dvanástou.",
+          "exampleUk": "Кур’єр приїде з дев’ятої до дванадцятої.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l09-e-shop-w05",
+          "sk": "balík",
+          "uk": "посилка",
+          "pronunciationUk": "бали:к",
+          "exampleSk": "Balík je na pošte.",
+          "exampleUk": "Посилка на пошті.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l09-e-shop-w06",
+          "sk": "dobierka",
+          "uk": "оплата при отриманні",
+          "pronunciationUk": "добієрка",
+          "exampleSk": "Zaplatím na dobierku.",
+          "exampleUk": "Заплачу при отриманні.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u09-l09-e-shop-ex01",
+          "lessonId": "a1-u09-l09-e-shop",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "e-shop",
+              "right": "інтернет-магазин"
+            },
+            {
+              "left": "objednať",
+              "right": "замовити"
+            },
+            {
+              "left": "doručenie",
+              "right": "доставка"
+            },
+            {
+              "left": "kuriér",
+              "right": "кур’єр"
+            },
+            {
+              "left": "dobierka",
+              "right": "оплата при отриманні"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u09-l09-e-shop-w01",
+            "a1-u09-l09-e-shop-w02",
+            "a1-u09-l09-e-shop-w03",
+            "a1-u09-l09-e-shop-w04",
+            "a1-u09-l09-e-shop-w06"
+          ]
+        },
+        {
+          "id": "a1-u09-l09-e-shop-ex02",
+          "lessonId": "a1-u09-l09-e-shop",
+          "type": "dialogue_order",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Віднови порядок реплік у діалозі.",
+          "lines": [
+            {
+              "id": "l1",
+              "sk": "Objednávka prijatá."
+            },
+            {
+              "id": "l3",
+              "sk": "Balík je u kuriéra."
+            },
+            {
+              "id": "l2",
+              "sk": "Objednávka odoslaná."
+            },
+            {
+              "id": "l4",
+              "sk": "Objednávka doručená."
+            }
+          ],
+          "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4"
+          ],
+          "explanation": "Статуси по порядку.",
+          "order": 2,
+          "wordIds": [
+            "a1-u09-l09-e-shop-w01",
+            "a1-u09-l09-e-shop-w02",
+            "a1-u09-l09-e-shop-w03",
+            "a1-u09-l09-e-shop-w04",
+            "a1-u09-l09-e-shop-w05"
+          ]
+        },
+        {
+          "id": "a1-u09-l09-e-shop-ex03",
+          "lessonId": "a1-u09-l09-e-shop",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення й обери правильний висновок.",
+          "message": {
+            "sender": "Packeta",
+            "body": "Váš balík č. 2209 je pripravený na vyzdvihnutie v Z-BOXe Mlynská 5. Kód: 4471. Balík bude uložený 7 dní."
+          },
+          "question": "Скільки днів чекатиме посилка?",
+          "options": [
+            {
+              "id": "a",
+              "text": "4471 день",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "7 днів",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "5 днів",
+              "correct": false
+            }
+          ],
+          "explanation": "uložený 7 dní.",
+          "order": 3,
+          "wordIds": [
+            "a1-u09-l09-e-shop-w01",
+            "a1-u09-l09-e-shop-w05"
+          ]
+        },
+        {
+          "id": "a1-u09-l09-e-shop-ex04",
+          "lessonId": "a1-u09-l09-e-shop",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Doručenie zdarma od 50 €»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "доставка коштує 50 €",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "знижка 50 €",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "безкоштовна доставка для замовлень від 50 €",
+              "correct": true
+            }
+          ],
+          "explanation": "zdarma od 50 €.",
+          "order": 4,
+          "wordIds": [
+            "a1-u09-l09-e-shop-w01"
+          ]
+        },
+        {
+          "id": "a1-u09-l09-e-shop-ex05",
+          "lessonId": "a1-u09-l09-e-shop",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Dobierka» означає, що ти платиш кур’єрові під час отримання.",
+          "correctAnswer": true,
+          "explanation": "Оплата при отриманні.",
+          "order": 5,
+          "wordIds": [
+            "a1-u09-l09-e-shop-w01",
+            "a1-u09-l09-e-shop-w06"
+          ]
+        },
+        {
+          "id": "a1-u09-l09-e-shop-ex06",
+          "lessonId": "a1-u09-l09-e-shop",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "______ to online. (я замовлю)",
+          "acceptedAnswers": [
+            "Objednám"
+          ],
+          "explanation": "Objednám.",
+          "order": 6,
+          "wordIds": [
+            "a1-u09-l09-e-shop-w01",
+            "a1-u09-l09-e-shop-w02"
+          ]
+        },
+        {
+          "id": "a1-u09-l09-e-shop-ex07",
+          "lessonId": "a1-u09-l09-e-shop",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що доставка триває два дні.",
+          "tokens": [
+            ".",
+            "Doručenie",
+            "trvá",
+            "dni",
+            "dva"
+          ],
+          "correctOrder": [
+            "Doručenie",
+            "trvá",
+            "dva",
+            "dni",
+            "."
+          ],
+          "explanation": "trvá + dva dni.",
+          "order": 7,
+          "wordIds": [
+            "a1-u09-l09-e-shop-w01",
+            "a1-u09-l09-e-shop-w03"
+          ]
+        },
+        {
+          "id": "a1-u09-l09-e-shop-ex08",
+          "lessonId": "a1-u09-l09-e-shop",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Kuriér prídem medzi deviatou a dvanástou.",
+          "errorToken": "prídem",
+          "correctToken": "príde",
+          "explanation": "kuriér — príde.",
+          "order": 8,
+          "wordIds": [
+            "a1-u09-l09-e-shop-w01",
+            "a1-u09-l09-e-shop-w04"
+          ]
+        },
+        {
+          "id": "a1-u09-l09-e-shop-ex09",
+          "lessonId": "a1-u09-l09-e-shop",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Кур’єр телефонує, а тебе немає вдома. Попроси залишити в сусідки.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Susedka balík je?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Balík nechám ja.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Nechať susedka.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Môžete ho nechať u susedky?",
+              "correct": true
+            }
+          ],
+          "explanation": "Môžete ho nechať u…?",
+          "order": 9,
+          "wordIds": [
+            "a1-u09-l09-e-shop-w01",
+            "a1-u09-l09-e-shop-w05"
+          ]
+        },
+        {
+          "id": "a1-u09-l09-e-shop-ex10",
+          "lessonId": "a1-u09-l09-e-shop",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kuriér",
+              "sk": "Dobrý deň, mám pre vás balík na dobierku, 34 eur."
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Nie, objednám.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Dobre, môžem platiť kartou?",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Dobierka je balík.",
+              "correct": false
+            }
+          ],
+          "explanation": "Уточнення способу оплати.",
+          "order": 10,
+          "wordIds": [
+            "a1-u09-l09-e-shop-w01",
+            "a1-u09-l09-e-shop-w02",
+            "a1-u09-l09-e-shop-w04",
+            "a1-u09-l09-e-shop-w05",
+            "a1-u09-l09-e-shop-w06"
+          ]
+        },
+        {
+          "id": "a1-u09-l09-e-shop-ex11",
+          "lessonId": "a1-u09-l09-e-shop",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Додому чи в пункт видачі?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Domov"
+            },
+            {
+              "id": "c2",
+              "title": "Výdajné miesto"
+            }
+          ],
+          "items": [
+            {
+              "sk": "výdajňa",
+              "category": "c2"
+            },
+            {
+              "sk": "na adresu",
+              "category": "c1"
+            },
+            {
+              "sk": "kuriér",
+              "category": "c1"
+            },
+            {
+              "sk": "Z-Box",
+              "category": "c2"
+            },
+            {
+              "sk": "pošta",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Способи отримання.",
+          "order": 11,
+          "wordIds": [
+            "a1-u09-l09-e-shop-w01",
+            "a1-u09-l09-e-shop-w04"
+          ]
+        },
+        {
+          "id": "a1-u09-l09-e-shop-ex12",
+          "lessonId": "a1-u09-l09-e-shop",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери статуси замовлення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "odoslaná",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "poškodená zdarma",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "doručená",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "prijatá",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "vypredaná",
+              "correct": false
+            }
+          ],
+          "explanation": "Статуси.",
+          "order": 12,
+          "wordIds": [
+            "a1-u09-l09-e-shop-w01",
+            "a1-u09-l09-e-shop-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Замовлення онлайн",
+        "description": "Ти замовляєш дитячі черевики в e-shopі.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Сайт пропонує: «Doručenie domov – 4,90 €, Z-Box – 2,50 €». Що дешевше?",
+            "options": [
+              {
+                "sk": "доставка додому",
+                "correct": false
+              },
+              {
+                "sk": "Z-Box",
+                "correct": true
+              },
+              {
+                "sk": "однаково",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти обираєш оплату при отриманні. Як це на сайті?",
+            "options": [
+              {
+                "sk": "Platba kartou vopred",
+                "correct": false
+              },
+              {
+                "sk": "Dobierka",
+                "correct": true
+              },
+              {
+                "sk": "Záruka",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "SMS: «Vaša objednávka bola odoslaná.» Що це?",
+            "options": [
+              {
+                "sk": "замовлення скасовано",
+                "correct": false
+              },
+              {
+                "sk": "замовлення відправлено",
+                "correct": true
+              },
+              {
+                "sk": "замовлення доставлено",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Кур’єр: «Som pred domom.»",
+            "options": [
+              {
+                "sk": "Hneď idem dole.",
+                "correct": true
+              },
+              {
+                "sk": "Dom je kuriér.",
+                "correct": false
+              },
+              {
+                "sk": "Som hore dole.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Онлайн-покупки підкорено. Далі — підсумок розділу."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Онлайн-покупки підкорено. Далі — підсумок розділу.",
+        "nowYouKnow": [
+          "e-shop, objednať, objednávka",
+          "doručenie, kuriér, Z-Box, dobierka",
+          "prijatá → odoslaná → doručená"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u09-l10-nakupovanie-opakovanie",
+          "title": "Підсумок: покупки"
+        }
+      }
+    }
+  ]
+}
