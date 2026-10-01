@@ -1,0 +1,745 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u11-l09-meskanie",
+      "sectionId": "a1-u11",
+      "level": "A1",
+      "title": "Затримки й проблеми",
+      "topic": "Транспорт",
+      "description": "Коли щось іде не так: meškanie, zrušený, výluka, náhradná doprava, zmeškať, štrajk.",
+      "order": 109,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Зрозуміти оголошення про проблеми й знайти альтернативу.",
+      "completionMessage": "Тепер затримки тебе не зупинять. Далі — підсумок розділу.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Транспорт",
+        "title": "Затримки й проблеми",
+        "shortDescription": "Зрозуміти оголошення про проблеми й знайти альтернативу.",
+        "outcomes": [
+          "розуміти meškanie і zrušený spoj",
+          "розуміти výluka і náhradná doprava",
+          "казати Zmeškal som vlak",
+          "питати Ako sa teraz dostanem…?"
+        ],
+        "newWords": [
+          "meškanie",
+          "zrušený",
+          "výluka",
+          "náhradná doprava",
+          "zmeškať",
+          "štrajk"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Затримка й скасування",
+          "text": "«Meškanie» — затримка, «mešká 20 minút». «Zrušený spoj» — скасований рейс. «Vlak je zrušený» — поїзд скасовано.",
+          "examples": [
+            {
+              "sk": "Spoj o 8:10 je zrušený.",
+              "uk": "Рейс о 8:10 скасовано."
+            },
+            {
+              "sk": "Meškanie je približne pol hodiny.",
+              "uk": "Затримка приблизно пів години."
+            }
+          ],
+          "shortRule": "meškanie, zrušený",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Ремонти",
+          "text": "«Výluka» — закриття колії / ділянки (ремонт). «Náhradná autobusová doprava» — заміна автобусами. «Obchádzka» — об’їзд.",
+          "examples": [
+            {
+              "sk": "Pre výluku premáva náhradná doprava.",
+              "uk": "Через ремонт курсують автобуси на заміну."
+            }
+          ],
+          "shortRule": "výluka = закриття на ремонт",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Пропустив",
+          "text": "«Zmeškať» — пропустити, спізнитися на: «Zmeškal som vlak». «Ďalší spoj» — наступний рейс. «Štrajk» — страйк.",
+          "examples": [
+            {
+              "sk": "Zmeškala som autobus, idem ďalším.",
+              "uk": "Я спізнилася на автобус, поїду наступним."
+            },
+            {
+              "sk": "Kedy ide ďalší?",
+              "uk": "Коли наступний?"
+            }
+          ],
+          "shortRule": "zmeškať + знахідний",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u11-l09-meskanie-w01",
+            "sk": "meškanie",
+            "uk": "затримка, запізнення",
+            "pronunciationUk": "мешканіє",
+            "exampleSk": "Vlak má meškanie desať minút.",
+            "exampleUk": "Поїзд має затримку десять хвилин."
+          },
+          {
+            "wordId": "a1-u11-l09-meskanie-w02",
+            "sk": "zrušený",
+            "uk": "скасований",
+            "pronunciationUk": "зрушені:",
+            "exampleSk": "Let je zrušený.",
+            "exampleUk": "Рейс скасовано."
+          },
+          {
+            "wordId": "a1-u11-l09-meskanie-w03",
+            "sk": "výluka",
+            "uk": "закриття (колії) на ремонт",
+            "pronunciationUk": "ві:лука",
+            "exampleSk": "Cez víkend je výluka na trati.",
+            "exampleUk": "На вихідних закриття колії."
+          },
+          {
+            "wordId": "a1-u11-l09-meskanie-w04",
+            "sk": "náhradná doprava",
+            "uk": "заміна транспорту",
+            "pronunciationUk": "на:градна: допрaва",
+            "exampleSk": "Náhradná doprava ide z parkoviska.",
+            "exampleUk": "Транспорт на заміну йде з парковки."
+          },
+          {
+            "wordId": "a1-u11-l09-meskanie-w05",
+            "sk": "zmeškať",
+            "uk": "спізнитися (на транспорт), пропустити",
+            "pronunciationUk": "змешкать",
+            "exampleSk": "Zmeškal som posledný autobus.",
+            "exampleUk": "Я спізнився на останній автобус."
+          },
+          {
+            "wordId": "a1-u11-l09-meskanie-w06",
+            "sk": "štrajk",
+            "uk": "страйк",
+            "pronunciationUk": "штрайк",
+            "exampleSk": "Zajtra je štrajk dopravcov.",
+            "exampleUk": "Завтра страйк перевізників."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u11-l09-meskanie-w01",
+          "sk": "meškanie",
+          "uk": "затримка, запізнення",
+          "pronunciationUk": "мешканіє",
+          "exampleSk": "Vlak má meškanie desať minút.",
+          "exampleUk": "Поїзд має затримку десять хвилин.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l09-meskanie-w02",
+          "sk": "zrušený",
+          "uk": "скасований",
+          "pronunciationUk": "зрушені:",
+          "exampleSk": "Let je zrušený.",
+          "exampleUk": "Рейс скасовано.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l09-meskanie-w03",
+          "sk": "výluka",
+          "uk": "закриття (колії) на ремонт",
+          "pronunciationUk": "ві:лука",
+          "exampleSk": "Cez víkend je výluka na trati.",
+          "exampleUk": "На вихідних закриття колії.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l09-meskanie-w04",
+          "sk": "náhradná doprava",
+          "uk": "заміна транспорту",
+          "pronunciationUk": "на:градна: допрaва",
+          "exampleSk": "Náhradná doprava ide z parkoviska.",
+          "exampleUk": "Транспорт на заміну йде з парковки.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l09-meskanie-w05",
+          "sk": "zmeškať",
+          "uk": "спізнитися (на транспорт), пропустити",
+          "pronunciationUk": "змешкать",
+          "exampleSk": "Zmeškal som posledný autobus.",
+          "exampleUk": "Я спізнився на останній автобус.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l09-meskanie-w06",
+          "sk": "štrajk",
+          "uk": "страйк",
+          "pronunciationUk": "штрайк",
+          "exampleSk": "Zajtra je štrajk dopravcov.",
+          "exampleUk": "Завтра страйк перевізників.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u11-l09-meskanie-ex01",
+          "lessonId": "a1-u11-l09-meskanie",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "meškanie",
+              "right": "затримка"
+            },
+            {
+              "left": "zrušený",
+              "right": "скасований"
+            },
+            {
+              "left": "výluka",
+              "right": "закриття на ремонт"
+            },
+            {
+              "left": "náhradná doprava",
+              "right": "заміна транспорту"
+            },
+            {
+              "left": "zmeškať",
+              "right": "спізнитися"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u11-l09-meskanie-w01",
+            "a1-u11-l09-meskanie-w02",
+            "a1-u11-l09-meskanie-w03",
+            "a1-u11-l09-meskanie-w04",
+            "a1-u11-l09-meskanie-w05"
+          ]
+        },
+        {
+          "id": "a1-u11-l09-meskanie-ex02",
+          "lessonId": "a1-u11-l09-meskanie",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Оголошення: «Pre výluku premáva náhradná autobusová doprava.» Що це означає?",
+          "options": [
+            {
+              "id": "a",
+              "text": "квитки подорожчали",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "автобуси скасовано",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "через ремонт поїзди замінено автобусами",
+              "correct": true
+            }
+          ],
+          "explanation": "výluka + náhradná doprava.",
+          "order": 2
+        },
+        {
+          "id": "a1-u11-l09-meskanie-ex03",
+          "lessonId": "a1-u11-l09-meskanie",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Zmeškal som "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "vlaku",
+                "vlakom",
+                "vlak"
+              ],
+              "correct": "vlak"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "zmeškať + знахідний.",
+          "order": 3,
+          "wordIds": [
+            "a1-u11-l09-meskanie-w05"
+          ]
+        },
+        {
+          "id": "a1-u11-l09-meskanie-ex04",
+          "lessonId": "a1-u11-l09-meskanie",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Zrušený spoj» означає, що рейс скасовано.",
+          "correctAnswer": true,
+          "explanation": "zrušený — скасований.",
+          "order": 4,
+          "wordIds": [
+            "a1-u11-l09-meskanie-w02"
+          ]
+        },
+        {
+          "id": "a1-u11-l09-meskanie-ex05",
+          "lessonId": "a1-u11-l09-meskanie",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Vlak má ______ desať minút. (затримку)",
+          "acceptedAnswers": [
+            "meškanie"
+          ],
+          "explanation": "meškanie.",
+          "order": 5,
+          "wordIds": [
+            "a1-u11-l09-meskanie-w01"
+          ]
+        },
+        {
+          "id": "a1-u11-l09-meskanie-ex06",
+          "lessonId": "a1-u11-l09-meskanie",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Запитай, коли наступний рейс.",
+          "tokens": [
+            "ide",
+            "Kedy",
+            "spoj",
+            "?",
+            "ďalší"
+          ],
+          "correctOrder": [
+            "Kedy",
+            "ide",
+            "ďalší",
+            "spoj",
+            "?"
+          ],
+          "explanation": "ďalší spoj.",
+          "order": 6
+        },
+        {
+          "id": "a1-u11-l09-meskanie-ex07",
+          "lessonId": "a1-u11-l09-meskanie",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Let je zrušená kvôli počasiu.",
+          "errorToken": "zrušená",
+          "correctToken": "zrušený",
+          "explanation": "let — zrušený.",
+          "order": 7,
+          "wordIds": [
+            "a1-u11-l09-meskanie-w02"
+          ]
+        },
+        {
+          "id": "a1-u11-l09-meskanie-ex08",
+          "lessonId": "a1-u11-l09-meskanie",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення й обери правильний висновок.",
+          "message": {
+            "sender": "ZSSK",
+            "body": "Vlak R 615 Bratislava – Banská Bystrica je dnes zrušený. Cestujúci môžu použiť vlak R 617 s odchodom o 14:05."
+          },
+          "question": "Що робити пасажирам?",
+          "options": [
+            {
+              "id": "a",
+              "text": "їхати поїздом R 617 о 14:05",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "чекати завтра",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "повернути квиток лише",
+              "correct": false
+            }
+          ],
+          "explanation": "použiť vlak R 617.",
+          "order": 8,
+          "wordIds": [
+            "a1-u11-l09-meskanie-w02"
+          ]
+        },
+        {
+          "id": "a1-u11-l09-meskanie-ex09",
+          "lessonId": "a1-u11-l09-meskanie",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти спізнився(лася) на останній автобус. Питаєш на вокзалі.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Autobus zmeškať Nitra.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Zmeškal som posledný autobus. Ako sa teraz dostanem do Nitry?",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Nitra autobus ďalší je zrušený.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Posledný autobus je kde?",
+              "correct": false
+            }
+          ],
+          "explanation": "Проблема + питання про альтернативу.",
+          "order": 9,
+          "wordIds": [
+            "a1-u11-l09-meskanie-w02",
+            "a1-u11-l09-meskanie-w05"
+          ]
+        },
+        {
+          "id": "a1-u11-l09-meskanie-ex10",
+          "lessonId": "a1-u11-l09-meskanie",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Яка проблема?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Čas"
+            },
+            {
+              "id": "c2",
+              "title": "Nepremáva"
+            },
+            {
+              "id": "c3",
+              "title": "Oprava"
+            }
+          ],
+          "items": [
+            {
+              "sk": "výluka",
+              "category": "c3"
+            },
+            {
+              "sk": "štrajk",
+              "category": "c2"
+            },
+            {
+              "sk": "zrušený spoj",
+              "category": "c2"
+            },
+            {
+              "sk": "obchádzka",
+              "category": "c3"
+            },
+            {
+              "sk": "meškanie",
+              "category": "c1"
+            },
+            {
+              "sk": "zdržanie",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Типи проблем.",
+          "order": 10,
+          "wordIds": [
+            "a1-u11-l09-meskanie-w01",
+            "a1-u11-l09-meskanie-w02",
+            "a1-u11-l09-meskanie-w03",
+            "a1-u11-l09-meskanie-w06"
+          ]
+        },
+        {
+          "id": "a1-u11-l09-meskanie-ex11",
+          "lessonId": "a1-u11-l09-meskanie",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери проблеми в транспорті.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "miestenka",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "meškanie",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "prilba",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "výluka",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "štrajk",
+              "correct": true
+            }
+          ],
+          "explanation": "Проблеми.",
+          "order": 11,
+          "wordIds": [
+            "a1-u11-l09-meskanie-w01",
+            "a1-u11-l09-meskanie-w03",
+            "a1-u11-l09-meskanie-w06"
+          ]
+        },
+        {
+          "id": "a1-u11-l09-meskanie-ex12",
+          "lessonId": "a1-u11-l09-meskanie",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kolega",
+              "sk": "Prečo meškáš?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Meškanie som.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Vlak meškal pol.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Vlak mal meškanie pol hodiny.",
+              "correct": true
+            }
+          ],
+          "explanation": "Пояснення.",
+          "order": 12,
+          "wordIds": [
+            "a1-u11-l09-meskanie-w01"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Скасований поїзд",
+        "description": "Ти їдеш на важливу зустріч до Банської Бистриці.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Табло: «R 615 – ZRUŠENÝ». Що сталося?",
+            "options": [
+              {
+                "sk": "поїзд скасовано",
+                "correct": true
+              },
+              {
+                "sk": "поїзд запізнюється",
+                "correct": false
+              },
+              {
+                "sk": "поїзд відправився",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти питаєш у довідковому про альтернативу.",
+            "options": [
+              {
+                "sk": "Kde je vlak zrušený?",
+                "correct": false
+              },
+              {
+                "sk": "Bystrica zrušený.",
+                "correct": false
+              },
+              {
+                "sk": "Ako sa teraz dostanem do Banskej Bystrice?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Náhradná doprava ide o 13:30 z parkoviska.» Що це?",
+            "options": [
+              {
+                "sk": "автобус на заміну о 13:30 з парковки",
+                "correct": true
+              },
+              {
+                "sk": "поїзд о 13:30",
+                "correct": false
+              },
+              {
+                "sk": "таксі",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти пишеш, що запізнишся.",
+            "options": [
+              {
+                "sk": "Prepáčte, vlak bol zrušený, budem meškať asi hodinu.",
+                "correct": true
+              },
+              {
+                "sk": "Meškanie zrušené.",
+                "correct": false
+              },
+              {
+                "sk": "Vlak zrušený, mešká hodinu ja.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тепер затримки тебе не зупинять. Далі — підсумок розділу."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тепер затримки тебе не зупинять. Далі — підсумок розділу.",
+        "nowYouKnow": [
+          "meškanie, zrušený spoj",
+          "výluka, náhradná doprava, obchádzka",
+          "zmeškať, ďalší spoj",
+          "štrajk"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u11-l10-doprava-opakovanie",
+          "title": "Підсумок: транспорт"
+        }
+      }
+    }
+  ]
+}

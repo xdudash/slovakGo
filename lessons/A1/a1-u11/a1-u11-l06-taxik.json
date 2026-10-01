@@ -1,0 +1,725 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u11-l06-taxik",
+      "sectionId": "a1-u11",
+      "level": "A1",
+      "title": "Таксі й додатки",
+      "topic": "Транспорт",
+      "description": "Таксі й сервіси на зразок Bolt / Uber: taxík, aplikácia, jazda, odvoz, cieľ.",
+      "order": 106,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Замовити таксі й домовитися з водієм.",
+      "completionMessage": "Таксі замовлено. Далі — машина й паркування.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Транспорт",
+        "title": "Таксі й додатки",
+        "shortDescription": "Замовити таксі й домовитися з водієм.",
+        "outcomes": [
+          "замовити таксі по телефону",
+          "користуватися aplikácia",
+          "казати Odvezte ma na…",
+          "розуміти ціну й оплату за jazda"
+        ],
+        "newWords": [
+          "taxík",
+          "aplikácia",
+          "jazda",
+          "odvoz",
+          "cieľ",
+          "odviezť"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Замовити",
+          "text": "«Objednať taxík» — замовити таксі: «Potrebujem taxík na Hlavnú 12». «Odvoz» — підвезення, трансфер. «Aplikácia» — застосунок (Bolt, Uber, Hopin).",
+          "examples": [
+            {
+              "sk": "Objednám si taxík cez aplikáciu.",
+              "uk": "Замовлю таксі через застосунок."
+            }
+          ],
+          "shortRule": "objednať taxík",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "У таксі",
+          "text": "«Odvezte ma na stanicu, prosím» — відвезіть мене на вокзал. «Zastavte tu» — зупиніть тут. «Koľko to bude stáť?» — скільки це коштуватиме? «Cieľ» — пункт призначення.",
+          "examples": [
+            {
+              "sk": "Zastavte, prosím, pri vchode.",
+              "uk": "Зупиніть, будь ласка, біля входу."
+            }
+          ],
+          "shortRule": "Odvezte ma na…",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Ціна",
+          "text": "«Jazda» — поїздка, «cena za jazdu», «tarifa». У додатку ціна відома наперед. «Sprepitné» — чайові. «Môžem platiť kartou?»",
+          "examples": [
+            {
+              "sk": "Jazda na letisko stojí okolo 20 €.",
+              "uk": "Поїздка до аеропорту коштує близько 20 €."
+            }
+          ],
+          "shortRule": "jazda = поїздка",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u11-l06-taxik-w01",
+            "sk": "taxík",
+            "uk": "таксі",
+            "pronunciationUk": "такси:к",
+            "exampleSk": "Zavolám ti taxík.",
+            "exampleUk": "Викличу тобі таксі."
+          },
+          {
+            "wordId": "a1-u11-l06-taxik-w02",
+            "sk": "aplikácia",
+            "uk": "застосунок",
+            "pronunciationUk": "апліка:ція",
+            "exampleSk": "Mám aplikáciu na taxík.",
+            "exampleUk": "У мене є застосунок для таксі."
+          },
+          {
+            "wordId": "a1-u11-l06-taxik-w03",
+            "sk": "jazda",
+            "uk": "поїздка",
+            "pronunciationUk": "язда",
+            "exampleSk": "Jazda trvala desať minút.",
+            "exampleUk": "Поїздка тривала десять хвилин."
+          },
+          {
+            "wordId": "a1-u11-l06-taxik-w04",
+            "sk": "odvoz",
+            "uk": "підвезення, трансфер",
+            "pronunciationUk": "одвоз",
+            "exampleSk": "Potrebujem odvoz na letisko.",
+            "exampleUk": "Мені потрібне підвезення в аеропорт."
+          },
+          {
+            "wordId": "a1-u11-l06-taxik-w05",
+            "sk": "cieľ",
+            "uk": "мета; пункт призначення",
+            "pronunciationUk": "ціель",
+            "exampleSk": "Zadajte cieľ cesty.",
+            "exampleUk": "Введіть пункт призначення."
+          },
+          {
+            "wordId": "a1-u11-l06-taxik-w06",
+            "sk": "odviezť",
+            "uk": "відвезти",
+            "pronunciationUk": "одвієзть",
+            "exampleSk": "Odvezte ma na stanicu.",
+            "exampleUk": "Відвезіть мене на вокзал."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u11-l06-taxik-w01",
+          "sk": "taxík",
+          "uk": "таксі",
+          "pronunciationUk": "такси:к",
+          "exampleSk": "Zavolám ti taxík.",
+          "exampleUk": "Викличу тобі таксі.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l06-taxik-w02",
+          "sk": "aplikácia",
+          "uk": "застосунок",
+          "pronunciationUk": "апліка:ція",
+          "exampleSk": "Mám aplikáciu na taxík.",
+          "exampleUk": "У мене є застосунок для таксі.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l06-taxik-w03",
+          "sk": "jazda",
+          "uk": "поїздка",
+          "pronunciationUk": "язда",
+          "exampleSk": "Jazda trvala desať minút.",
+          "exampleUk": "Поїздка тривала десять хвилин.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l06-taxik-w04",
+          "sk": "odvoz",
+          "uk": "підвезення, трансфер",
+          "pronunciationUk": "одвоз",
+          "exampleSk": "Potrebujem odvoz na letisko.",
+          "exampleUk": "Мені потрібне підвезення в аеропорт.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l06-taxik-w05",
+          "sk": "cieľ",
+          "uk": "мета; пункт призначення",
+          "pronunciationUk": "ціель",
+          "exampleSk": "Zadajte cieľ cesty.",
+          "exampleUk": "Введіть пункт призначення.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l06-taxik-w06",
+          "sk": "odviezť",
+          "uk": "відвезти",
+          "pronunciationUk": "одвієзть",
+          "exampleSk": "Odvezte ma na stanicu.",
+          "exampleUk": "Відвезіть мене на вокзал.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u11-l06-taxik-ex01",
+          "lessonId": "a1-u11-l06-taxik",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "taxík",
+              "right": "таксі"
+            },
+            {
+              "left": "aplikácia",
+              "right": "застосунок"
+            },
+            {
+              "left": "jazda",
+              "right": "поїздка"
+            },
+            {
+              "left": "odvoz",
+              "right": "підвезення"
+            },
+            {
+              "left": "cieľ",
+              "right": "пункт призначення"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u11-l06-taxik-w01",
+            "a1-u11-l06-taxik-w02",
+            "a1-u11-l06-taxik-w03",
+            "a1-u11-l06-taxik-w04",
+            "a1-u11-l06-taxik-w05"
+          ]
+        },
+        {
+          "id": "a1-u11-l06-taxik-ex02",
+          "lessonId": "a1-u11-l06-taxik",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти сідаєш у таксі й хочеш на вокзал.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Stanica, rýchlo!",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Taxík stanica.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Odviezť stanicu.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Dobrý deň, odvezte ma na stanicu, prosím.",
+              "correct": true
+            }
+          ],
+          "explanation": "Odvezte ma na…",
+          "order": 2,
+          "wordIds": [
+            "a1-u11-l06-taxik-w01",
+            "a1-u11-l06-taxik-w06"
+          ]
+        },
+        {
+          "id": "a1-u11-l06-taxik-ex03",
+          "lessonId": "a1-u11-l06-taxik",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти хочеш вийти біля входу в лікарню.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Vchod zastavte je.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Zastavte, prosím, pri vchode.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Zastaviť vchodu.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Stop vchod.",
+              "correct": false
+            }
+          ],
+          "explanation": "Zastavte + pri vchode.",
+          "order": 3
+        },
+        {
+          "id": "a1-u11-l06-taxik-ex04",
+          "lessonId": "a1-u11-l06-taxik",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Objednám si taxík cez "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "aplikácia",
+                "aplikáciu",
+                "aplikácii"
+              ],
+              "correct": "aplikáciu"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "cez + знахідний.",
+          "order": 4,
+          "wordIds": [
+            "a1-u11-l06-taxik-w01",
+            "a1-u11-l06-taxik-w02"
+          ]
+        },
+        {
+          "id": "a1-u11-l06-taxik-ex05",
+          "lessonId": "a1-u11-l06-taxik",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "У застосунку ціну поїздки зазвичай видно наперед.",
+          "correctAnswer": true,
+          "explanation": "Bolt / Uber показують ціну.",
+          "order": 5
+        },
+        {
+          "id": "a1-u11-l06-taxik-ex06",
+          "lessonId": "a1-u11-l06-taxik",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Potrebujem ______ na letisko. (підвезення)",
+          "acceptedAnswers": [
+            "odvoz"
+          ],
+          "explanation": "odvoz.",
+          "order": 6,
+          "wordIds": [
+            "a1-u11-l06-taxik-w04"
+          ]
+        },
+        {
+          "id": "a1-u11-l06-taxik-ex07",
+          "lessonId": "a1-u11-l06-taxik",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Запитай, скільки коштуватиме поїздка.",
+          "tokens": [
+            "?",
+            "bude",
+            "to",
+            "Koľko",
+            "stáť"
+          ],
+          "correctOrder": [
+            "Koľko",
+            "to",
+            "bude",
+            "stáť",
+            "?"
+          ],
+          "explanation": "Koľko to bude stáť?",
+          "order": 7
+        },
+        {
+          "id": "a1-u11-l06-taxik-ex08",
+          "lessonId": "a1-u11-l06-taxik",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Zadajte cieľa cesty v aplikácii.",
+          "errorToken": "cieľa",
+          "correctToken": "cieľ",
+          "explanation": "cieľ — без змін у знахідному.",
+          "order": 8,
+          "wordIds": [
+            "a1-u11-l06-taxik-w02",
+            "a1-u11-l06-taxik-w05"
+          ]
+        },
+        {
+          "id": "a1-u11-l06-taxik-ex09",
+          "lessonId": "a1-u11-l06-taxik",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення й обери правильний висновок.",
+          "message": {
+            "sender": "Bolt",
+            "body": "Váš vodič Martin (Škoda Octavia, BA-123XY) prichádza o 3 minúty."
+          },
+          "question": "Яка машина приїде?",
+          "options": [
+            {
+              "id": "a",
+              "text": "через 3 години",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Škoda Octavia BA-123XY за 3 хвилини",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "водій Мартін скасував поїздку",
+              "correct": false
+            }
+          ],
+          "explanation": "prichádza o 3 minúty.",
+          "order": 9
+        },
+        {
+          "id": "a1-u11-l06-taxik-ex10",
+          "lessonId": "a1-u11-l06-taxik",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Taxikár",
+              "sk": "Kam to bude?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Kam je stanica.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Taxík stanica je.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Na Hlavnú stanicu, prosím.",
+              "correct": true
+            }
+          ],
+          "explanation": "Пункт призначення.",
+          "order": 10,
+          "wordIds": [
+            "a1-u11-l06-taxik-w01"
+          ]
+        },
+        {
+          "id": "a1-u11-l06-taxik-ex11",
+          "lessonId": "a1-u11-l06-taxik",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "До поїздки чи після?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Pred jazdou"
+            },
+            {
+              "id": "c2",
+              "title": "Po jazde"
+            }
+          ],
+          "items": [
+            {
+              "sk": "dať sprepitné",
+              "category": "c2"
+            },
+            {
+              "sk": "ohodnotiť vodiča",
+              "category": "c2"
+            },
+            {
+              "sk": "zaplatiť",
+              "category": "c2"
+            },
+            {
+              "sk": "zadať cieľ",
+              "category": "c1"
+            },
+            {
+              "sk": "objednať taxík",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Етапи.",
+          "order": 11,
+          "wordIds": [
+            "a1-u11-l06-taxik-w01",
+            "a1-u11-l06-taxik-w03",
+            "a1-u11-l06-taxik-w05"
+          ]
+        },
+        {
+          "id": "a1-u11-l06-taxik-ex12",
+          "lessonId": "a1-u11-l06-taxik",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери фрази для таксі.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Odvezte ma na letisko.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Koľko to bude stáť?",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Jednosmerný lístok.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Zastavte tu.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Vystúpim na konečnej.",
+              "correct": false
+            }
+          ],
+          "explanation": "Таксі.",
+          "order": 12
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Нічна поїздка",
+        "description": "О другій ночі ти повертаєшся з вечірки.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти замовляєш таксі в застосунку. Що вводиш?",
+            "options": [
+              {
+                "sk": "heslo",
+                "correct": false
+              },
+              {
+                "sk": "kurz",
+                "correct": false
+              },
+              {
+                "sk": "cieľ – svoju adresu",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Vodič prichádza o 5 minút.» Що робиш?",
+            "options": [
+              {
+                "sk": "іду пішки",
+                "correct": false
+              },
+              {
+                "sk": "чекаю 5 хвилин",
+                "correct": true
+              },
+              {
+                "sk": "скасовую",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "У таксі ти кажеш адресу.",
+            "options": [
+              {
+                "sk": "Odvoz Hlavná.",
+                "correct": false
+              },
+              {
+                "sk": "Hlavná je 12 kde?",
+                "correct": false
+              },
+              {
+                "sk": "Hlavná 12, prosím.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти хочеш зупинитися біля банкомата.",
+            "options": [
+              {
+                "sk": "Bankomat zastaviť je.",
+                "correct": false
+              },
+              {
+                "sk": "Môžete zastaviť pri bankomate?",
+                "correct": true
+              },
+              {
+                "sk": "Zastavte bankomatu.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Таксі замовлено. Далі — машина й паркування."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Таксі замовлено. Далі — машина й паркування.",
+        "nowYouKnow": [
+          "taxík, aplikácia, objednať",
+          "Odvezte ma na…, Zastavte tu",
+          "jazda, cieľ, odvoz",
+          "Koľko to bude stáť?"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u11-l07-auto-parkovanie",
+          "title": "Авто й паркування"
+        }
+      }
+    }
+  ]
+}

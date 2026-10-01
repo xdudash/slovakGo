@@ -1,0 +1,435 @@
+@unit a1-u11 | Транспорт | Doprava
+
+@lesson ist-chodit-jazdit | Іти, їхати, літати | Ísť, chodiť, jazdiť
+desc: Дієслова руху: ísť / chodiť, jazdiť, šoférovať, lietať — і транспорт: trolejbus, lietadlo, loď.
+goal: Правильно обирати дієслово руху залежно від способу й регулярності.
+out: розрізняти ísť (зараз) і chodiť (регулярно) ;; казати jazdím autom / šoférujem ;; казати letím lietadlom ;; називати види транспорту
+done: Дієслова руху опановано. Далі — «чим» їхати.
+T: Ísť і chodiť || «Ísť» — іти / їхати зараз, один раз, у певному напрямку: «Idem do práce». «Chodiť» — регулярно або взагалі: «Chodím do práce pešo». Словацьке ísť охоплює і «йти», і «їхати»: «Idem autobusom». || Teraz idem domov. = Зараз я йду додому. ;; Chodím do školy každý deň. = Я ходжу до школи щодня. || ísť — зараз; chodiť — регулярно
+T: Jazdiť і šoférovať || «Jazdiť» — їздити (регулярно транспортом): «Jazdím električkou». «Šoférovať» — керувати машиною: «Šoféruješ?» — ти за кермом? «Viem šoférovať» — умію водити. || Jazdím do práce autom. = Я їжджу на роботу машиною. ;; Dnes šoféruje manžel. = Сьогодні за кермом чоловік. || šoférovať = бути водієм
+T: Літати й пливти || «Letieť» — летіти (зараз), «lietať» — літати (регулярно). «Lietadlo» — літак, «loď» — корабель, «trolejbus» — тролейбус. || Letíme do Kyjeva? = Ми летимо до Києва? ;; Lietam často. = Я часто літаю. || letím — lietam
+W: jazdiť | їздити | яздіть | Jazdím do práce bicyklom. | Я їжджу на роботу велосипедом.
+W: šoférovať | керувати авто, бути за кермом | шоферовать | Neviem šoférovať. | Я не вмію водити.
+W: lietať | літати | лієтать | Nerada lietam. | Я не люблю літати.
+W: trolejbus | тролейбус | тролейбус | Trolejbus číslo 33 ide na sídlisko. | Тролейбус номер 33 їде на житловий масив.
+W: lietadlo | літак | лієтадло | Lietadlo mešká hodinu. | Літак запізнюється на годину.
+W: loď | корабель, судно | лодь | Loďou do Viedne za hodinu. | Кораблем до Відня за годину.
+X mt: З’єднай. | jazdiť = їздити ;; šoférovať = керувати авто ;; lietať = літати ;; lietadlo = літак ;; loď = корабель
+X dd: Обери. | Každý deň [*chodím/idem] do práce pešo.
+= Регулярно — chodím.
+X dd: Обери. | Teraz [*idem/chodím] na stanicu.
+= Зараз — idem.
+X sc~: Що означає «Neviem šoférovať»? | - | *Я не вмію водити машину ;; Я не знаю шофера ;; Я не хочу їхати
+= šoférovať — керувати авто.
+X cat: Зараз (раз) чи регулярно? | Teraz: idem, letím, idem autom ;; Pravidelne: chodím, lietam, jazdím
+= Пари дієслів руху.
+X tf: - | - | Словацьке «ísť» може означати і «йти пішки», і «їхати». | T
+= Idem autobusom — їду автобусом.
+X fb: Допиши. | Do Kyjeva ___ lietadlom. (ми летимо) | letíme |
+= letíme.
+X so: - | Скажи, що ти не любиш літати (жінка). | Nerada lietam.
+= Nerada + lietam.
+X fe: - | Teraz [chodím>idem] do obchodu, o chvíľu prídem.
+= Зараз — idem.
+X np: Колега пропонує, щоб ти повів машину. Ти не вмієш. | *Prepáč, neviem šoférovať. ;; Neviem jazdiť auto. ;; Šoférovať nie viem. ;; Nemôžem šofér.
+= Neviem šoférovať.
+X dr: - | Kamarát: Ako chodíš do práce? | *Jazdím trolejbusom, asi dvadsať minút. ;; Idem trolejbus. ;; Chodím trolejbus.
+= Регулярно + чим.
+X ms: Обери дієслова регулярної дії. | - | *chodiť ;; *jazdiť ;; *lietať ;; ísť ;; letieť
+= Регулярні.
+F: Відпустка в Україні || Ви плануєте поїздку з родиною.
+S: «Ako pôjdete na Ukrajinu?» (автобусом) | *Pôjdeme autobusom. ;; Chodíme autobus. ;; Lietame autobusom.
+S: «Prečo nie lietadlom?» (дорого) | *Lietadlo je pre nás príliš drahé. ;; Lietadlo je lacný. ;; Letieť drahá.
+S: «A kto bude šoférovať k autobusu?» (чоловік) | *Manžel. On šoféruje. ;; Manžel jazdí šofér. ;; Šoférujem manžel.
+S: «Chodíte domov často?» (раз на рік) | *Raz za rok. ;; Raz rok chodíme lietadlo. ;; Často raz.
+R: ísť (зараз) / chodiť (регулярно) ;; jazdiť, šoférovať ;; letieť / lietať ;; lietadlo, loď, trolejbus
+
+@lesson cim-cestujem | Чим їдеш? Орудний відмінок | Čím cestuješ?
+desc: Транспорт в орудному відмінку: autobusom, vlakom, električkou, autom — і слова MHD, linka, prestúpiť, konečná.
+goal: Сказати, чим ти їдеш, і розуміти маршрут із пересадкою.
+out: казати autobusom, električkou, autom ;; розуміти MHD і linka ;; казати Musím prestúpiť ;; розуміти konečná
+done: Ти пересуваєшся містом упевнено. Далі — квитки й розклад.
+T: Чим? — орудний || Чоловічий і середній рід: -om: autobus → autobusom, vlak → vlakom, auto → autom, metro → metrom. Жіночий: -ou: električka → električkou, loď → loďou. «Pešo» — пішки. || Idem do práce vlakom. = Я їду на роботу потягом. ;; Deti chodia do školy električkou. = Діти їздять до школи трамваєм. || -om / -ou
+T: MHD і лінії || «MHD» (mestská hromadná doprava) — міський громадський транспорт. «Linka» — маршрут: «linka 9». «Spoj» — рейс, сполучення. «Dopravný prostriedok» — транспортний засіб. || Linka 39 ide na letisko. = Маршрут 39 їде в аеропорт. || MHD, linka
+T: Пересадка || «Prestúpiť» — пересісти: «Na Hlavnej stanici prestúpite na električku 4». «Prestup» — пересадка. «Konečná» — кінцева зупинка. || Musím raz prestúpiť. = Мені треба один раз пересісти. ;; Vystúpte na konečnej. = Вийдіть на кінцевій. || prestúpiť, konečná
+W: dopravný prostriedok | транспортний засіб | доправні: прострієдок | Aký dopravný prostriedok používaš? | Яким транспортом ти користуєшся?
+W: MHD | міський громадський транспорт | ем-га-де: | V MHD je to pohodlné. | У громадському транспорті зручно.
+W: linka | маршрут, лінія | лінка | Ktorá linka ide do centra? | Який маршрут їде в центр?
+W: prestúpiť | пересісти | престу:піть | Na stanici prestúpte na vlak. | На вокзалі пересядьте на поїзд.
+W: konečná | кінцева зупинка | конечна: | Vystúpim až na konečnej. | Я вийду аж на кінцевій.
+W: spoj | рейс, сполучення | спой | Posledný spoj ide o polnoci. | Останній рейс о півночі.
+X mt: З’єднай. | autobus = autobusom ;; vlak = vlakom ;; auto = autom ;; električka = električkou ;; loď = loďou
+X dd: Обери форму. | Idem do Košíc [*vlakom/vlak/vlaku].
+= Чим — vlakom.
+X dd: Обери форму. | Jazdím [*električkou/električkom/električka].
+= Жін.: -ou.
+X sc~: Що означає «Musím raz prestúpiť»? | - | *мені треба один раз пересісти ;; мені треба вийти один раз ;; мені треба купити квиток
+= prestúpiť — пересісти.
+X tf: - | - | «Konečná» — це кінцева зупинка. | T
+= konečná zastávka.
+X fb: Допиши. | Posledný ___ ide o polnoci. (рейс) | spoj |
+= spoj — рейс.
+X so: - | Запитай, який маршрут їде в центр. | Ktorá linka ide do centra?
+= Ktorá linka…?
+X fe: - | Deti chodia do školy [električkom>električkou].
+= Жін.: električkou.
+X rc: - | Z letiska do centra Bratislavy: Choďte autobusom číslo 61 na Hlavnú stanicu. Tam prestúpte na električku číslo 1 a vystúpte na zastávke Námestie SNP. Celá cesta trvá asi 40 minút.
+q~: Де пересісти? | *на Головному вокзалі ;; в аеропорту ;; на площі SNP
+q~: Скільки триває дорога? | *близько 40 хвилин ;; 61 хвилину ;; 1 годину
+X np: Ти пояснюєш гостеві, як доїхати: автобусом до вокзалу, потім трамваєм. | *Choď autobusom na stanicu a tam prestúp na električku. ;; Autobus stanica električka prestup. ;; Choď autobusu na stanicu. ;; Prestúp autobus.
+= орудний + prestúpiť.
+X ms: Обери правильні форми. | - | *autobusom ;; *vlakom ;; *električkou ;; električkom ;; autou
+= -om / -ou.
+F: Перша поїздка до нової роботи || Ти з’ясовуєш маршрут у працівника MHD.
+S: Ти питаєш, як дістатися до промзони. | *Ako sa dostanem do priemyselnej zóny? ;; Priemyselná zóna kde je linka? ;; Ako dostanem zóna?
+S: «Autobusom 22, prestúpite na Mlynoch.» Що треба зробити? | *їхати автобусом 22 з пересадкою на Млинах ;; їхати 22 зупинки ;; їхати трамваєм
+S: Ти уточнюєш, на що пересісти. | *Na čo mám prestúpiť? ;; Čím prestúpiť ja? ;; Prestúpiť na kde?
+S: «Na linku 51, vystúpite na konečnej.» Де виходити? | *на кінцевій ;; на першій ;; на Млинах
+R: autobusom, vlakom, autom, električkou ;; MHD, linka, spoj ;; prestúpiť, konečná
+
+@lesson cestovny-poriadok | Квитки й розклад | Lístky a cestovný poriadok
+desc: Розклад і квитки: cestovný poriadok, odchod, príchod, nástupište, jednosmerný, spiatočný.
+goal: Прочитати розклад і купити потрібний квиток.
+out: читати cestovný poriadok ;; розрізняти odchod і príchod ;; купувати jednosmerný / spiatočný lístok ;; розуміти nástupište
+done: Розклади тобі зрозумілі. Далі — на вокзалі.
+T: Розклад || «Cestovný poriadok» — розклад. «Odchod» — відправлення, «príchod» — прибуття. «Nástupište» — платформа (перон). «Premáva v pracovné dni» — курсує в робочі дні. || Odchod o 7:15 z nástupišťa 3. = Відправлення о 7:15 з платформи 3. || odchod / príchod
+T: Квитки || «Jednosmerný lístok» — квиток в один бік, «spiatočný» — туди й назад. «Zľavnený lístok» — пільговий (студенти, пенсіонери, діти). «Cestovný lístok» — проїзний квиток. || Spiatočný do Žiliny, prosím. = Туди й назад до Жиліни, будь ласка. || jednosmerný / spiatočný
+T: Студенти й діти || Діти до 6 років — безкоштовно; студенти й пенсіонери — часто безкоштовно або зі знижкою у вагонах ZSSK (потрібна реєстрація). «Preukaz na zľavu» — посвідчення на знижку. || Mám nárok na zľavu? = Я маю право на знижку? || nárok na zľavu
+W: cestovný poriadok | розклад руху | цестовні: поріадок | Pozriem sa na cestovný poriadok. | Подивлюся в розклад.
+W: odchod | відправлення | одход | Odchod vlaku je o 8:20. | Відправлення поїзда о 8:20.
+W: príchod | прибуття | прі:ход | Príchod do Košíc o 13:05. | Прибуття в Кошиці о 13:05.
+W: nástupište | платформа | на:ступіште | Vlak stojí na nástupišti dva. | Поїзд стоїть на другій платформі.
+W: jednosmerný | в один бік | єдносмерні: | Jednosmerný lístok, prosím. | Квиток в один бік, будь ласка.
+W: spiatočný | туди й назад | спяточні: | Spiatočný lístok je výhodnejší. | Квиток туди й назад вигідніший.
+X mt: З’єднай. | cestovný poriadok = розклад ;; odchod = відправлення ;; príchod = прибуття ;; nástupište = платформа ;; spiatočný = туди й назад
+X sch: - | Bratislava hl. st. → Košice | Odchod 6:05 / Príchod 10:41 = IC, nástupište 1 ;; Odchod 8:05 / Príchod 12:46 = R, nástupište 3 ;; Odchod 10:05 / Príchod 14:41 = IC, nástupište 1 | Ти маєш бути в Кошицях до 13:00. Який найпізніший поїзд? | *о 8:05 з платформи 3 ;; о 10:05 ;; о 6:05
+= 8:05 → прибуття 12:46.
+X dd: Обери. | [*Spiatočný/Jednosmerný] lístok do Trnavy, zajtra sa vraciam.
+= Повертаюся — туди й назад.
+X sc~: Що означає «Premáva len v pracovné dni»? | - | *курсує лише в будні ;; курсує щодня ;; курсує лише на вихідних
+= pracovné dni — будні.
+X tf: - | - | «Príchod» — це відправлення. | F
+= príchod — прибуття; odchod — відправлення.
+X fb: Допиши. | Vlak stojí na ___ dva. (платформі) | nástupišti |
+= na nástupišti.
+X so: - | Попроси квиток в один бік. | Jednosmerný lístok, prosím.
+= Jednosmerný lístok.
+X fe: - | Odchod [vlak>vlaku] je o ôsmej.
+= odchod + родовий: vlaku.
+X dr: - | Pokladníčka: Jednosmerný alebo spiatočný? | *Spiatočný, prosím. ;; Spiatočná. ;; Áno, jednosmerný spiatočný.
+= Обери.
+X np: Ти студентка й питаєш про знижку. | *Som študentka, mám nárok na zľavu? ;; Študentka zľava je? ;; Mám študentka zľavu. ;; Zľava nárok študent.
+= Mám nárok na zľavu?
+X cat: Відправлення чи прибуття? | Odchod: z Bratislavy 7:00, odchádza ;; Príchod: do Žiliny 9:30, prichádza
+= Два напрямки руху.
+X ms: Обери види квитків. | - | *jednosmerný ;; *spiatočný ;; *zľavnený ;; nástupište ;; príchod
+= Квитки.
+F: Поїздка до Попраду || Ти купуєш квиток у касі на вокзалі.
+S: Ти просиш квиток туди й назад до Попраду. | *Spiatočný lístok do Popradu, prosím. ;; Spiatočný do Poprad. ;; Lístok Poprad spiatočná.
+S: «Kedy sa vraciate?» (у неділю) | *V nedeľu. ;; Nedeľa. ;; Na nedeľu je.
+S: «Vlak ide o 9:15 z nástupišťa 4.» Що запам’ятати? | *9:15, платформа 4 ;; 4:15, платформа 9 ;; 9:15, вагон 4
+S: Ти питаєш, о котрій прибуття. | *O koľkej je príchod do Popradu? ;; Kedy odchod Poprad? ;; Príchod je koľko?
+R: cestovný poriadok, odchod, príchod, nástupište ;; jednosmerný / spiatočný lístok ;; zľava, nárok na zľavu
+
+@lesson na-stanici | На вокзалі | Na stanici
+desc: Вокзал: čakáreň, úschovňa batožiny, batožina, informácie, koľaj, tabuľa odchodov.
+goal: Орієнтуватися на вокзалі й розуміти оголошення.
+out: розуміти табло й оголошення ;; розрізняти nástupište і koľaj ;; питати в informáciách ;; здати багаж в úschovňu
+done: Вокзал опановано. Далі — у поїзді.
+T: На вокзалі || «Čakáreň» — зала очікування, «informácie» — довідкове бюро, «úschovňa batožiny» — камера схову, «batožina» — багаж, «tabuľa odchodov» — табло відправлень. || Kde je úschovňa batožiny? = Де камера схову? || batožina = багаж
+T: Nástupište і koľaj || «Nástupište» — платформа, «koľaj» — колія. Оголошення: «Vlak prichádza na druhú koľaj pri prvom nástupišti» — поїзд прибуває на другу колію біля першої платформи. || Vlak stojí na tretej koľaji. = Поїзд стоїть на третій колії. || koľaj = колія
+T: Оголошення || «Vlak mešká približne 15 minút» — запізнюється ~15 хв. «Prosíme cestujúcich…» — просимо пасажирів… «Pozor, vlak prechádza» — увага, поїзд проходить (не зупиняється). || Prosíme cestujúcich, aby nastúpili. = Просимо пасажирів зайти у вагони. || cestujúci = пасажири
+W: čakáreň | зала очікування | чака:рень | V čakárni je teplo. | У залі очікування тепло.
+W: batožina | багаж | батожіна | Máte veľa batožiny? | У вас багато багажу?
+W: úschovňa | камера схову | у:сховня | Nechám kufor v úschovni. | Залишу валізу в камері схову.
+W: informácie | довідкове бюро; інформація | інформа:ціє | Spýtaj sa v informáciách. | Запитай у довідковому.
+W: koľaj | колія | коляй | Vlak prichádza na prvú koľaj. | Поїзд прибуває на першу колію.
+W: tabuľa odchodov | табло відправлень | табуля одходоу | Pozri sa na tabuľu odchodov. | Подивись на табло відправлень.
+X mt: З’єднай. | čakáreň = зала очікування ;; batožina = багаж ;; úschovňa = камера схову ;; koľaj = колія ;; informácie = довідкове бюро
+X sc~: Оголошення: «Vlak prichádza na druhú koľaj pri treťom nástupišti.» Куди йти? | - | *на 3-тю платформу, 2-га колія ;; на 2-гу платформу ;; на 3-тю колію
+= koľaj 2, nástupište 3.
+X dd: Обери. | Nechám kufor v [*úschovni/úschovňa/úschovňu].
+= v + місцевий.
+X tf: - | - | «Batožina» означає «багаж». | T
+= batožina.
+X fb: Допиши. | Spýtaj sa v ___. (довідковому) | informáciách | Місцевий мн.
+= v informáciách.
+X so: - | Запитай, де камера схову. | Kde je úschovňa batožiny?
+= Kde je…?
+X fe: - | Vlak prichádza na [prvá>prvú] koľaj.
+= na + знахідний: prvú.
+X hm: Оголошення: «Pozor, na štvrtú koľaj prechádza vlak.» Що робити? | *не підходити до краю — поїзд проходить без зупинки ;; сідати в поїзд ;; іти на 4-ту колію
+= prechádza — проходить без зупинки.
+X np: Ти не бачиш свого поїзда на табло. Питаєш у довідковому. | *Dobrý deň, na ktorej koľaji je vlak do Nitry? ;; Vlak Nitra koľaj je? ;; Koľaj Nitra, čau. ;; Nitra kde koľaj?
+= Na ktorej koľaji…?
+X cat: Що для чого на вокзалі? | Čakať: čakáreň, lavička ;; Batožina: úschovňa, vozík na kufre ;; Informácie: tabuľa odchodov, informácie
+= Функції.
+X ms: Обери частини вокзалу. | - | *čakáreň ;; *úschovňa ;; *pokladňa ;; matrika ;; radnica
+= Вокзал.
+F: Пересадка з валізами || У тебе 3 години до пересадки в Жиліні з великою валізою.
+S: Ти хочеш залишити валізу. | *Kde je úschovňa batožiny? ;; Kde je batožina úschovňa? ;; Úschovni kde?
+S: «Na konci haly, vpravo.» Де? | *у кінці залу праворуч ;; на платформі ;; на другому поверсі
+S: Оголошення: «Vlak do Košíc mešká 30 minút.» Що це означає? | *поїзд до Кошиць запізнюється на 30 хв ;; поїзд відправляється через 30 хв ;; поїзд скасовано
+S: Ти чекаєш у теплі. Де? | *V čakárni. ;; V úschovni. ;; Na koľaji.
+R: čakáreň, informácie, úschovňa batožiny ;; nástupište vs koľaj ;; tabuľa odchodov ;; оголошення: mešká, prechádza
+
+@lesson vo-vlaku | У поїзді | Vo vlaku
+desc: Поїзд: vagón, sedadlo, miestenka, rýchlik, kupé, jedálny vozeň — і розмова з кондуктором.
+goal: Знайти своє місце й спілкуватися в поїзді.
+out: казати Hľadám vagón 5, sedadlo 12 ;; розуміти miestenka ;; розрізняти rýchlik, osobný vlak, IC ;; відповідати кондуктору
+done: Поїздка потягом пройде гладко. Далі — таксі й додатки.
+T: Вагон і місце || «Vagón» — вагон, «sedadlo» — сидіння, місце, «kupé» — купе, «miestenka» — резервування місця. «Toto je moje miesto» — це моє місце. || Mám miestenku na sedadlo 24. = У мене резерв на місце 24. ;; Prepáčte, toto je moje miesto. = Вибачте, це моє місце. || miestenka = резерв місця
+T: Типи поїздів || «Osobný vlak» — приміський (зупиняється всюди), «rýchlik (R)» — швидкий, «IC / EC» — інтерсіті (потрібна miestenka), «nočný vlak» — нічний. «Jedálny vozeň» — вагон-ресторан. || Rýchlik stojí len vo väčších mestách. = Швидкий зупиняється лише у великих містах. || osobný / rýchlik / IC
+T: Кондуктор || Кондуктор: «Cestovné lístky, prosím» — квитки, будь ласка. «Máte zľavu?» Ти: «Kde mám vystúpiť do…?», «Stojí tento vlak v…?» (чи зупиняється в…?). || Stojí tento vlak v Ružomberku? = Цей поїзд зупиняється в Ружомберку? || Stojí tento vlak v…?
+W: vagón | вагон | ваго:н | Sme vo vagóne číslo šesť. | Ми в шостому вагоні.
+W: sedadlo | сидіння, місце | седадло | Je toto sedadlo voľné? | Це місце вільне?
+W: miestenka | резервування місця | мієстенка | Na IC vlak potrebujete miestenku. | На IC потрібне резервування.
+W: rýchlik | швидкий поїзд | рі:хлік | Rýchlik ide do Košíc päť hodín. | Швидкий іде до Кошиць п’ять годин.
+W: kupé | купе | купе: | V kupé je šesť miest. | У купе шість місць.
+W: jedálny vozeň | вагон-ресторан | єда:лні: возень | Jedálny vozeň je v strede vlaku. | Вагон-ресторан посередині поїзда.
+X mt: З’єднай. | vagón = вагон ;; sedadlo = місце ;; miestenka = резервування ;; rýchlik = швидкий поїзд ;; jedálny vozeň = вагон-ресторан
+X dr: - | Sprievodca: Cestovné lístky, prosím. | *Nech sa páči, tu je lístok a preukaz. ;; Lístok je. ;; Prosím si lístok.
+= Подаєш квиток.
+X dr: - | Pán: Prepáčte, toto je moje miesto. | *Ach, prepáčte, hneď sa presuniem. ;; Nie, moje miesto. ;; To nič.
+= Ввічливо звільняєш місце.
+X sc~: Що означає «Stojí tento vlak v Martine?»? | - | *Чи зупиняється цей поїзд у Мартіні? ;; Чи стоїть поїзд у Мартіні зараз? ;; Скільки коштує до Мартіна?
+= stáť — зупинятися (про поїзд).
+X tf: - | - | Osobný vlak зупиняється майже на кожній станції. | T
+= Приміський.
+X fb: Допиши. | Je toto ___ voľné? (місце) | sedadlo |
+= sedadlo.
+X so: - | Скажи, що ви в шостому вагоні. | Sme vo vagóne číslo šesť.
+= vo vagóne.
+X fe: - | Na IC vlak potrebujete [miestenka>miestenku].
+= Знахідний: miestenku.
+X doc: Прочитай квиток. | Cestovný lístok ZSSK | Z: Bratislava hl. st. ;; Do: Žilina ;; Vlak: IC 503 ;; Vagón: 3 ;; Miesto: 47 | Яке місце? | *47 у 3-му вагоні ;; 3 у 47-му вагоні ;; 503
+= Vagón 3, miesto 47.
+X np: Ти хочеш дізнатися, де вагон-ресторан. | *Prepáčte, kde je jedálny vozeň? ;; Jedálny vozeň kde je vozeň? ;; Reštaurácia vlak? ;; Kde jesť vlak?
+= Kde je…?
+X cat: Тип поїзда | Rýchly: IC, rýchlik, EC ;; Pomalý: osobný vlak, regionálny vlak
+= Швидкість.
+X ms: Обери слова з поїзда. | - | *vagón ;; *kupé ;; *sedadlo ;; pobočka ;; matrika
+= Поїзд.
+F: Нічний потяг до Кошиць || Ти їдеш нічним поїздом.
+S: Ти шукаєш місце. Провідник питає: «Aké máte miesto?» | *Vagón päť, kupé tri, miesto dvanásť. ;; Päť vagón miesto. ;; Mám miesto vagón.
+S: У твоєму купе хтось на твоєму місці. | *Prepáčte, myslím, že toto je moje miesto. ;; Toto moje miesto je vaše. ;; Choďte preč.
+S: Ти питаєш, чи поїзд зупиняється в Попраді. | *Stojí tento vlak v Poprade? ;; Je Poprad vlak? ;; Vlak stojí Poprad?
+S: «Áno, o 4:30. Zobudím vás.» Що пропонує провідник? | *розбудити тебе о 4:30 ;; висадити тебе ;; продати квиток
+R: vagón, sedadlo, kupé, miestenka ;; osobný vlak, rýchlik, IC ;; Stojí tento vlak v…? ;; Toto je moje miesto.
+
+@lesson taxik | Таксі й додатки | Taxík a aplikácie
+desc: Таксі й сервіси на зразок Bolt / Uber: taxík, aplikácia, jazda, odvoz, cieľ.
+goal: Замовити таксі й домовитися з водієм.
+out: замовити таксі по телефону ;; користуватися aplikácia ;; казати Odvezte ma na… ;; розуміти ціну й оплату за jazda
+done: Таксі замовлено. Далі — машина й паркування.
+T: Замовити || «Objednať taxík» — замовити таксі: «Potrebujem taxík na Hlavnú 12». «Odvoz» — підвезення, трансфер. «Aplikácia» — застосунок (Bolt, Uber, Hopin). || Objednám si taxík cez aplikáciu. = Замовлю таксі через застосунок. || objednať taxík
+T: У таксі || «Odvezte ma na stanicu, prosím» — відвезіть мене на вокзал. «Zastavte tu» — зупиніть тут. «Koľko to bude stáť?» — скільки це коштуватиме? «Cieľ» — пункт призначення. || Zastavte, prosím, pri vchode. = Зупиніть, будь ласка, біля входу. || Odvezte ma na…
+T: Ціна || «Jazda» — поїздка, «cena za jazdu», «tarifa». У додатку ціна відома наперед. «Sprepitné» — чайові. «Môžem platiť kartou?» || Jazda na letisko stojí okolo 20 €. = Поїздка до аеропорту коштує близько 20 €. || jazda = поїздка
+W: taxík | таксі | такси:к | Zavolám ti taxík. | Викличу тобі таксі.
+W: aplikácia | застосунок | апліка:ція | Mám aplikáciu na taxík. | У мене є застосунок для таксі.
+W: jazda | поїздка | язда | Jazda trvala desať minút. | Поїздка тривала десять хвилин.
+W: odvoz | підвезення, трансфер | одвоз | Potrebujem odvoz na letisko. | Мені потрібне підвезення в аеропорт.
+W: cieľ | мета; пункт призначення | ціель | Zadajte cieľ cesty. | Введіть пункт призначення.
+W: odviezť | відвезти | одвієзть | Odvezte ma na stanicu. | Відвезіть мене на вокзал.
+X mt: З’єднай. | taxík = таксі ;; aplikácia = застосунок ;; jazda = поїздка ;; odvoz = підвезення ;; cieľ = пункт призначення
+X np: Ти сідаєш у таксі й хочеш на вокзал. | *Dobrý deň, odvezte ma na stanicu, prosím. ;; Stanica, rýchlo! ;; Odviezť stanicu. ;; Taxík stanica.
+= Odvezte ma na…
+X np: Ти хочеш вийти біля входу в лікарню. | *Zastavte, prosím, pri vchode. ;; Stop vchod. ;; Zastaviť vchodu. ;; Vchod zastavte je.
+= Zastavte + pri vchode.
+X dd: Обери. | Objednám si taxík cez [*aplikáciu/aplikácia/aplikácii].
+= cez + знахідний.
+X tf: - | - | У застосунку ціну поїздки зазвичай видно наперед. | T
+= Bolt / Uber показують ціну.
+X fb: Допиши. | Potrebujem ___ na letisko. (підвезення) | odvoz |
+= odvoz.
+X so: - | Запитай, скільки коштуватиме поїздка. | Koľko to bude stáť?
+= Koľko to bude stáť?
+X fe: - | Zadajte [cieľa>cieľ] cesty v aplikácii.
+= cieľ — без змін у знахідному.
+X msg: - | Bolt | Váš vodič Martin (Škoda Octavia, BA-123XY) prichádza o 3 minúty. | Яка машина приїде? | *Škoda Octavia BA-123XY за 3 хвилини ;; через 3 години ;; водій Мартін скасував поїздку
+= prichádza o 3 minúty.
+X dr: - | Taxikár: Kam to bude? | *Na Hlavnú stanicu, prosím. ;; Kam je stanica. ;; Taxík stanica je.
+= Пункт призначення.
+X cat: До поїздки чи після? | Pred jazdou: objednať taxík, zadať cieľ ;; Po jazde: zaplatiť, dať sprepitné, ohodnotiť vodiča
+= Етапи.
+X ms: Обери фрази для таксі. | - | *Odvezte ma na letisko. ;; *Zastavte tu. ;; *Koľko to bude stáť? ;; Vystúpim na konečnej. ;; Jednosmerný lístok.
+= Таксі.
+F: Нічна поїздка || О другій ночі ти повертаєшся з вечірки.
+S: Ти замовляєш таксі в застосунку. Що вводиш? | *cieľ – svoju adresu ;; heslo ;; kurz
+S: «Vodič prichádza o 5 minút.» Що робиш? | *чекаю 5 хвилин ;; іду пішки ;; скасовую
+S: У таксі ти кажеш адресу. | *Hlavná 12, prosím. ;; Hlavná je 12 kde? ;; Odvoz Hlavná.
+S: Ти хочеш зупинитися біля банкомата. | *Môžete zastaviť pri bankomate? ;; Bankomat zastaviť je. ;; Zastavte bankomatu.
+R: taxík, aplikácia, objednať ;; Odvezte ma na…, Zastavte tu ;; jazda, cieľ, odvoz ;; Koľko to bude stáť?
+
+@lesson auto-parkovanie | Авто й паркування | Auto a parkovanie
+desc: Машина: parkovať, parkovisko, benzín, čerpacia stanica, vodičský preukaz, pokuta.
+goal: Припаркуватися, заправитися й розуміти правила.
+out: казати Kde môžem parkovať? ;; розуміти платне паркування ;; заправитися на čerpacej stanici ;; розуміти pokuta і vodičský preukaz
+done: Тепер ти почуваєшся за кермом упевнено. Далі — велосипед і самокат.
+T: Паркування || «Parkovať» — паркуватися, «parkovisko» — парковка, «parkovacie miesto» — місце. «Platené parkovanie» — платне, «rezidentské» — для мешканців. «Parkovací lístok / SMS parkovné». || Kde môžem zaparkovať? = Де можна припаркуватися? ;; Tu je zákaz parkovania. = Тут заборонено паркуватися. || zákaz parkovania
+T: Заправка || «Čerpacia stanica» (benzínka) — АЗС. «Benzín» (95 / 98), «nafta» — дизель. «Natankovať» — заправити. «Stojan číslo 3» — колонка номер 3. || Natankujem plnú nádrž. = Заправлю повний бак. ;; Platím za stojan päť. = Плачу за колонку п’ять. || benzín / nafta
+T: Документи й штрафи || «Vodičský preukaz» — посвідчення водія, «technický preukaz» — техпаспорт, «diaľničná známka» (e-vignette) — віньєтка для автобанів. «Pokuta» — штраф. || Policajt chcel vidieť vodičský preukaz. = Поліцейський хотів побачити посвідчення водія. ;; Dostal som pokutu za parkovanie. = Я отримав штраф за паркування. || diaľničná známka
+W: parkovať | паркувати(ся) | парковать | Kde tu môžem parkovať? | Де тут можна паркуватися?
+W: parkovisko | парковка | парковіско | Parkovisko je za obchodom. | Парковка за магазином.
+W: benzín | бензин | бензі:н | Benzín je drahý. | Бензин дорогий.
+W: čerpacia stanica | АЗС | черпаціа станіца | Zastavíme na čerpacej stanici. | Зупинимося на заправці.
+W: vodičský preukaz | посвідчення водія | водічскі: преуказ | Mám ukrajinský vodičský preukaz. | У мене українське посвідчення водія.
+W: pokuta | штраф | покута | Pokuta za rýchlosť je vysoká. | Штраф за швидкість високий.
+X mt: З’єднай. | parkovisko = парковка ;; benzín = бензин ;; čerpacia stanica = АЗС ;; vodičský preukaz = посвідчення водія ;; pokuta = штраф
+X sc~: Що означає табличка «Zákaz parkovania»? | - | *паркування заборонено ;; безкоштовна парковка ;; парковка для таксі
+= zákaz — заборона.
+X dd: Обери. | Zastavíme na čerpacej [*stanici/stanica/stanicu].
+= na + місцевий.
+X tf: - | - | «Nafta» на заправці — це дизельне паливо. | T
+= nafta — дизель.
+X fb: Допиши. | Kde tu môžem ___? (паркуватися) | parkovať |
+= parkovať.
+X so: - | Скажи, що отримав штраф за паркування. | Dostal som pokutu za parkovanie.
+= pokutu za parkovanie.
+X fe: - | Policajt chcel vidieť vodičský [preukazu>preukaz].
+= Неживий — без змін.
+X doc: Прочитай табличку. | Parkovisko – Centrum | Platené: Po – Pi 8:00 – 18:00 ;; Cena: 1,50 € / hodina ;; Sobota, nedeľa: zadarmo ;; Platba: SMS alebo automat | Скільки коштує 2 години в понеділок о 10:00? | *3,00 € ;; 1,50 € ;; безкоштовно
+= 2 × 1,50 €.
+X np: На заправці ти кажеш касирові, яку колонку оплачуєш (номер 4). | *Platím za stojan číslo štyri. ;; Stojan štyri platím je. ;; Benzín štyri. ;; Štyri, prosím, nafta stojan.
+= Platím za stojan…
+X cat: Документ чи місце? | Dokument: vodičský preukaz, technický preukaz, diaľničná známka ;; Miesto: parkovisko, čerpacia stanica, garáž
+= Дві групи.
+X ms: Обери слова про авто. | - | *benzín ;; *parkovisko ;; *pokuta ;; miestenka ;; kupé
+= Авто.
+X dr: - | Policajt: Vodičský preukaz a technický preukaz, prosím. | *Nech sa páči. ;; Preukaz je. ;; Áno, nie.
+= Подаєш документи.
+F: Поїздка автомобілем до Відня || Ти їдеш на машині з Братислави до Відня.
+S: Для автобана в Словаччині потрібно… | *diaľničnú známku ;; miestenku ;; spiatočný lístok
+S: На заправці ти просиш повний бак дизелю. | *Plnú nádrž nafty, prosím. ;; Nafta plná. ;; Benzín plný nádrž.
+S: У Відні ти питаєш, де можна припаркуватися. | *Kde tu môžem zaparkovať? ;; Parkovať kde som? ;; Parkovisko mám?
+S: «Tu je zákaz parkovania, dostanete pokutu.» Що це означає? | *тут не можна, буде штраф ;; тут безкоштовно ;; тут платно
+R: parkovať, parkovisko, zákaz parkovania ;; čerpacia stanica, benzín, nafta ;; vodičský preukaz, diaľničná známka, pokuta
+
+@lesson bicykel | Велосипед і самокат | Bicykel a kolobežka
+desc: Велосипед, самокат і прокат: bicykel, kolobežka, prilba, cyklotrasa, požičať, zdieľaný.
+goal: Орендувати велосипед чи самокат і їздити безпечно.
+out: казати Požičiam si bicykel ;; розуміти zdieľané kolobežky ;; розуміти правила: prilba, cyklotrasa ;; розповідати, як ти їздиш
+done: Двоколісний транспорт опановано. Далі — затримки й проблеми.
+T: Велосипед і самокат || «Bicykel» — велосипед, «kolobežka» — самокат (і електросамокат: elektrická kolobežka). «Bicyklovať» / «jazdiť na bicykli» — їздити на велосипеді. || Do práce jazdím na bicykli. = На роботу я їжджу на велосипеді. || jazdiť na bicykli
+T: Прокат || «Požičať si» — узяти напрокат / позичити, «požičovňa» — прокат. «Zdieľané kolobežky / bicykle» — шерингові самокати. «Odomknúť cez aplikáciu» — розблокувати через застосунок. || Požičal som si kolobežku cez aplikáciu. = Я взяв самокат через застосунок. || požičať si
+T: Безпека || «Prilba» — шолом, «cyklotrasa / cyklochodník» — велодоріжка. «Nejazdite po chodníku» — не їздьте тротуаром. Діти до 15 — шолом обов’язковий. || Bez prilby nejazdím. = Без шолома не їжджу. || prilba = шолом
+W: bicykel | велосипед | біцикел | Mám nový bicykel. | У мене новий велосипед.
+W: kolobežka | самокат | колобежка | Deti jazdia na kolobežke. | Діти катаються на самокаті.
+W: prilba | шолом | прілба | Nezabudni si prilbu! | Не забудь шолом!
+W: cyklotrasa | велодоріжка, веломаршрут | циклотраса | Pri Dunaji je pekná cyklotrasa. | Біля Дунаю гарна велодоріжка.
+W: požičať si | узяти напрокат, позичити | пожічать сі | Požičiam si bicykel na víkend. | Візьму велосипед напрокат на вихідні.
+W: zdieľaný | спільний, шеринговий | здієлані: | Zdieľané bicykle sú lacné. | Шерингові велосипеди дешеві.
+X mt: З’єднай. | bicykel = велосипед ;; kolobežka = самокат ;; prilba = шолом ;; cyklotrasa = велодоріжка ;; požičať si = узяти напрокат
+X dd: Обери. | Do práce jazdím na [*bicykli/bicykel/bicyklom].
+= jazdiť na + місцевий.
+X sc~: Що означає «Nejazdite po chodníku»? | - | *Не їздьте тротуаром ;; Не ходіть тротуаром ;; Їдьте тротуаром
+= po chodníku — тротуаром.
+X tf: - | - | «Požičať si bicykel» означає «купити велосипед». | F
+= požičať si — узяти напрокат.
+X fb: Допиши. | Nezabudni si ___! (шолом) | prilbu | Знахідний.
+= prilbu.
+X so: - | Скажи, що візьмеш велосипед напрокат на вихідні. | Požičiam si bicykel na víkend.
+= požičať si.
+X fe: - | Deti jazdia na [kolobežka>kolobežke].
+= na + місцевий.
+X rc: - | Zdieľané kolobežky: Kolobežku odomknete v aplikácii. Jazda stojí 15 centov za minútu. Nejazdite po chodníku a parkujte len v povolených zónach. Za zlé parkovanie zaplatíte pokutu 10 €.
+q~: Як розблокувати самокат? | *через застосунок ;; ключем ;; карткою на самокаті
+q~: Що буде за неправильне паркування? | *штраф 10 € ;; нічого ;; блокування акаунта
+X np: Сусідка питає, чи можна позичити твій велосипед. Ти погоджуєшся. | *Jasné, požičaj si ho. ;; Jasné, požičať je. ;; Bicykel požičal sa. ;; Áno, kolobežka.
+= Požičaj si ho.
+X cat: Велосипед чи самокат? | Bicykel: pedále, reťaz, cyklotrasa ;; Kolobežka: elektrická, kolieska, aplikácia
+= Особливості.
+X ms: Обери слова безпеки. | - | *prilba ;; *svetlo ;; *reflexná vesta ;; zľava ;; menu
+= Безпека.
+F: Прокат на вихідних || Ти береш велосипеди для родини в прокаті біля Дунаю.
+S: Ти питаєш про оренду на день. | *Koľko stojí požičanie bicykla na celý deň? ;; Bicykel deň koľko? ;; Požičať deň cena je?
+S: «Pätnásť eur, prilba je v cene.» Що включено? | *шолом ;; страхування ;; вода
+S: Ти питаєш про дитячий велосипед. | *Máte aj detský bicykel? ;; Detský máte bicykle? ;; Dieťa bicykel?
+S: «Cyklotrasa je vľavo pri rieke.» Де велодоріжка? | *ліворуч біля річки ;; праворуч біля дороги ;; її немає
+R: bicykel, kolobežka, jazdiť na bicykli ;; požičať si, požičovňa, zdieľané ;; prilba, cyklotrasa
+
+@lesson meskanie | Затримки й проблеми | Meškanie a problémy
+desc: Коли щось іде не так: meškanie, zrušený, výluka, náhradná doprava, zmeškať, štrajk.
+goal: Зрозуміти оголошення про проблеми й знайти альтернативу.
+out: розуміти meškanie і zrušený spoj ;; розуміти výluka і náhradná doprava ;; казати Zmeškal som vlak ;; питати Ako sa teraz dostanem…?
+done: Тепер затримки тебе не зупинять. Далі — підсумок розділу.
+T: Затримка й скасування || «Meškanie» — затримка, «mešká 20 minút». «Zrušený spoj» — скасований рейс. «Vlak je zrušený» — поїзд скасовано. || Spoj o 8:10 je zrušený. = Рейс о 8:10 скасовано. ;; Meškanie je približne pol hodiny. = Затримка приблизно пів години. || meškanie, zrušený
+T: Ремонти || «Výluka» — закриття колії / ділянки (ремонт). «Náhradná autobusová doprava» — заміна автобусами. «Obchádzka» — об’їзд. || Pre výluku premáva náhradná doprava. = Через ремонт курсують автобуси на заміну. || výluka = закриття на ремонт
+T: Пропустив || «Zmeškať» — пропустити, спізнитися на: «Zmeškal som vlak». «Ďalší spoj» — наступний рейс. «Štrajk» — страйк. || Zmeškala som autobus, idem ďalším. = Я спізнилася на автобус, поїду наступним. ;; Kedy ide ďalší? = Коли наступний? || zmeškať + знахідний
+W: meškanie | затримка, запізнення | мешканіє | Vlak má meškanie desať minút. | Поїзд має затримку десять хвилин.
+W: zrušený | скасований | зрушені: | Let je zrušený. | Рейс скасовано.
+W: výluka | закриття (колії) на ремонт | ві:лука | Cez víkend je výluka na trati. | На вихідних закриття колії.
+W: náhradná doprava | заміна транспорту | на:градна: допрaва | Náhradná doprava ide z parkoviska. | Транспорт на заміну йде з парковки.
+W: zmeškať | спізнитися (на транспорт), пропустити | змешкать | Zmeškal som posledný autobus. | Я спізнився на останній автобус.
+W: štrajk | страйк | штрайк | Zajtra je štrajk dopravcov. | Завтра страйк перевізників.
+X mt: З’єднай. | meškanie = затримка ;; zrušený = скасований ;; výluka = закриття на ремонт ;; náhradná doprava = заміна транспорту ;; zmeškať = спізнитися
+X sc~: Оголошення: «Pre výluku premáva náhradná autobusová doprava.» Що це означає? | - | *через ремонт поїзди замінено автобусами ;; автобуси скасовано ;; квитки подорожчали
+= výluka + náhradná doprava.
+X dd: Обери. | Zmeškal som [*vlak/vlaku/vlakom].
+= zmeškať + знахідний.
+X tf: - | - | «Zrušený spoj» означає, що рейс скасовано. | T
+= zrušený — скасований.
+X fb: Допиши. | Vlak má ___ desať minút. (затримку) | meškanie |
+= meškanie.
+X so: - | Запитай, коли наступний рейс. | Kedy ide ďalší spoj?
+= ďalší spoj.
+X fe: - | Let je [zrušená>zrušený] kvôli počasiu.
+= let — zrušený.
+X msg: - | ZSSK | Vlak R 615 Bratislava – Banská Bystrica je dnes zrušený. Cestujúci môžu použiť vlak R 617 s odchodom o 14:05. | Що робити пасажирам? | *їхати поїздом R 617 о 14:05 ;; чекати завтра ;; повернути квиток лише
+= použiť vlak R 617.
+X np: Ти спізнився(лася) на останній автобус. Питаєш на вокзалі. | *Zmeškal som posledný autobus. Ako sa teraz dostanem do Nitry? ;; Autobus zmeškať Nitra. ;; Posledný autobus je kde? ;; Nitra autobus ďalší je zrušený.
+= Проблема + питання про альтернативу.
+X cat: Яка проблема? | Čas: meškanie, zdržanie ;; Nepremáva: zrušený spoj, štrajk ;; Oprava: výluka, obchádzka
+= Типи проблем.
+X ms: Обери проблеми в транспорті. | - | *meškanie ;; *výluka ;; *štrajk ;; miestenka ;; prilba
+= Проблеми.
+X dr: - | Kolega: Prečo meškáš? | *Vlak mal meškanie pol hodiny. ;; Vlak meškal pol. ;; Meškanie som.
+= Пояснення.
+F: Скасований поїзд || Ти їдеш на важливу зустріч до Банської Бистриці.
+S: Табло: «R 615 – ZRUŠENÝ». Що сталося? | *поїзд скасовано ;; поїзд запізнюється ;; поїзд відправився
+S: Ти питаєш у довідковому про альтернативу. | *Ako sa teraz dostanem do Banskej Bystrice? ;; Bystrica zrušený. ;; Kde je vlak zrušený?
+S: «Náhradná doprava ide o 13:30 z parkoviska.» Що це? | *автобус на заміну о 13:30 з парковки ;; поїзд о 13:30 ;; таксі
+S: Ти пишеш, що запізнишся. | *Prepáčte, vlak bol zrušený, budem meškať asi hodinu. ;; Vlak zrušený, mešká hodinu ja. ;; Meškanie zrušené.
+R: meškanie, zrušený spoj ;; výluka, náhradná doprava, obchádzka ;; zmeškať, ďalší spoj ;; štrajk
+
+@lesson doprava-opakovanie | Підсумок: транспорт | Opakovanie: doprava
+desc: Підсумок розділу: дієслова руху, орудний відмінок, квитки, вокзал, таксі, авто й проблеми.
+goal: Самостійно спланувати й здійснити поїздку будь-яким транспортом.
+out: обирати ísť / chodiť / jazdiť ;; вживати орудний: vlakom, električkou ;; купувати квитки й читати розклад ;; розв’язувати проблеми в дорозі
+done: Розділ «Транспорт» завершено! Далі — робота й професії.
+T: Слова мандрівника || «Cestujúci» — пасажир, «trasa» — маршрут, «preprava» — перевезення, «dochádzať» — добиратися (на роботу): «Dochádzam do práce 40 minút». || Cestujúci, nastúpte, prosím. = Пасажири, сідайте, будь ласка. ;; Dochádzam do Bratislavy vlakom. = Я добираюся до Братислави поїздом. || dochádzať do práce
+T: Шпаргалка || ísť / chodiť, jazdiť, letieť / lietať; autobusom, vlakom, autom, električkou; lístok jednosmerný / spiatočný; odchod / príchod; nástupište / koľaj; meškanie, zrušený, výluka. || Dochádzam autobusom s jedným prestupom. = Добираюся автобусом з однією пересадкою. || Усе про дорогу
+T: Планування поїздки || Kam? Kedy? Čím? Koľko stojí? Odkiaľ odchádza? Kde prestúpim? || Plánujem cestu do Tatier vlakom. = Планую поїздку в Татри поїздом. || Kam? Kedy? Čím?
+W: cestujúci | пасажир | цестую:ці | Cestujúci čakajú na nástupišti. | Пасажири чекають на платформі.
+W: trasa | маршрут, траса | траса | Trasa vedie cez hory. | Маршрут іде через гори.
+W: dochádzať | добиратися (регулярно) | доха:дзать | Do práce dochádzam hodinu. | На роботу я добираюся годину.
+W: preprava | перевезення | преправа | Preprava batožiny je zadarmo. | Перевезення багажу безкоштовне.
+X cz: - | Do práce {jazdím} električkou. Dnes však {idem} pešo, lebo električka {mešká}. | Дієслова руху.
+= jazdím (регулярно), idem (сьогодні), mešká.
+X mt: З’єднай. | cestujúci = пасажир ;; trasa = маршрут ;; dochádzať = добиратися ;; preprava = перевезення
+X cat: Квиток, вокзал чи проблема? | Lístok: jednosmerný, spiatočný, miestenka ;; Stanica: nástupište, koľaj, úschovňa ;; Problém: meškanie, výluka, zrušený
+= Повторення.
+X fe: - | Idem do Nitry [autobus>autobusom] o ôsmej.
+= Чим — autobusom.
+X ce: Виправ речення. | Každý deň idem do práce električka a dnes chodím pešo. | Každý deň chodím do práce električkou a dnes idem pešo. ;; Každý deň jazdím do práce električkou a dnes idem pešo.
+= Регулярно — chodím / jazdím; сьогодні — idem; električkou.
+X bd: - | Поїздка спланована ідеально!
+> Pokladníčka: Dobrý deň, kam to bude? | *Do Popradu, spiatočný lístok, prosím. ;; Poprad spiatočná. ;; Lístok kam.
+> Pokladníčka: Kedy chcete ísť? | *Zajtra ráno, najlepšie rýchlikom. ;; Zajtra rýchlik ráno je. ;; Rýchlo.
+> Pokladníčka: Rýchlik o 6:05, prestúpite v Žiline. | *Na ktorom nástupišti? ;; Prestúpim kde? Žilina je? ;; Nástupište je.
+> Pokladníčka: Na treťom. Spolu 32 eur. | *Ďakujem, platím kartou. ;; Ďakujem, karta. ;; Tri nástupište.
+X rc: - | Moja cesta do práce: Bývam v Pezinku a pracujem v Bratislave. Každý deň dochádzam vlakom, cesta trvá dvadsať minút. Z Hlavnej stanice jazdím električkou. Keď je výluka, chodím náhradnou autobusovou dopravou. Raz týždenne idem autom, keď potrebujem niečo veľké odviezť.
+q~: Як він добирається з Пезінка? | *поїздом ;; машиною щодня ;; велосипедом
+q~: Що він робить під час ремонту колії? | *їде автобусом на заміну ;; лишається вдома ;; іде пішки
+X ms: Обери правильні речення. | - | *Jazdím vlakom. ;; *Zmeškal som autobus. ;; *Teraz idem na stanicu. ;; Jazdím vlak. ;; Teraz chodím na stanicu.
+= Повторення.
+X sb: - | Скажи, що добираєшся на роботу годину. | Do práce dochádzam hodinu.
+= dochádzať + do práce.
+X np: Тебе питають, як ти добираєшся на роботу (автобус + трамвай). | *Jazdím autobusom a potom prestupujem na električku. ;; Autobus električka. ;; Idem autobus prestup. ;; Chodím autobusu.
+= jazdím + prestupujem.
+F: Термінова поїздка в лікарню в іншому місті || Тобі треба до Мартіна на обстеження о 9:00.
+S: Ти дивишся розклад: поїзд о 7:10, прибуття 8:30. Встигнеш? | *áno, s rezervou ;; nie ;; neviem
+S: На вокзалі: «Vlak mešká 50 minút.» Що робиш? | *шукаю альтернативу — автобус або таксі ;; чекаю, усе одно встигну ;; іду додому
+S: Ти питаєш у довідковому. | *Ide do Martina skôr nejaký autobus? ;; Martin autobus skôr je? ;; Autobusom skôr Martinu?
+S: Ти телефонуєш у лікарню, що запізнишся. | *Dobrý deň, vlak má meškanie, prídem asi o pol desiatej. ;; Vlak meškanie, desiata. ;; Meškám vlak pol.
+R: cestujúci, trasa, dochádzať, preprava ;; ísť / chodiť / jazdiť ;; квитки, розклад, вокзал ;; затримки й альтернативи
