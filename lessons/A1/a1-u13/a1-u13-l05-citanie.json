@@ -1,0 +1,733 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u13-l05-citanie",
+      "sectionId": "a1-u13",
+      "level": "A1",
+      "title": "Читання",
+      "topic": "Вільний час",
+      "description": "Книги, журнали і газети: časopis, noviny, román, autor; čítať і prečítať.",
+      "order": 125,
+      "xpReward": 25,
+      "estimatedMinutes": 20,
+      "isPublished": true,
+      "intro": "Розповісти, що ти читаєш, і зрозуміти різницю між čítať і prečítať.",
+      "completionMessage": "Ти розповідаєш про читання. Далі — зустріч із друзями.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Вільний час",
+        "title": "Читання",
+        "shortDescription": "Розповісти, що ти читаєш, і зрозуміти різницю між čítať і prečítať.",
+        "outcomes": [
+          "називати časopis, noviny, román",
+          "казати Práve čítam…",
+          "розрізняти čítať / prečítať",
+          "говорити про autora"
+        ],
+        "newWords": [
+          "časopis",
+          "noviny",
+          "román",
+          "autor",
+          "prečítať"
+        ],
+        "exercisesCount": 13,
+        "reward": "+25 XP",
+        "estimatedMinutes": 20,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Що читаємо?",
+          "text": "«Kniha» — книга, «román» — роман, «časopis» — журнал, «noviny» — газета (завжди множина: «Noviny sú na stole»). «Autor / autorka» — автор. «E-kniha» — електронна книга.",
+          "examples": [
+            {
+              "sk": "Čítam noviny na mobile.",
+              "uk": "Я читаю газету в телефоні."
+            },
+            {
+              "sk": "Kto je autor?",
+              "uk": "Хто автор?"
+            }
+          ],
+          "shortRule": "noviny — множина",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Čítať і prečítať",
+          "text": "«Čítať» — читати (процес): «Práve čítam román» — якраз читаю роман. «Prečítať» — прочитати (до кінця, результат): «Prečítal som celú knihu» — я прочитав усю книгу.",
+          "examples": [
+            {
+              "sk": "Čítam každý večer.",
+              "uk": "Я читаю щовечора."
+            },
+            {
+              "sk": "Prečítala som to za týždeň.",
+              "uk": "Я прочитала це за тиждень."
+            }
+          ],
+          "shortRule": "процес / результат",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Читання словацькою",
+          "text": "«Čítam po slovensky» — читаю словацькою. Для початку — «jednoduché texty», дитячі книги, «časopis pre deti». У knižnici (бібліотеці) можна «požičať si knihu» — позичити книгу.",
+          "examples": [
+            {
+              "sk": "Požičala som si knihu v knižnici.",
+              "uk": "Я позичила книгу в бібліотеці."
+            }
+          ],
+          "shortRule": "čítať po slovensky",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u13-l05-citanie-w01",
+            "sk": "časopis",
+            "uk": "журнал",
+            "pronunciationUk": "часопіс",
+            "exampleSk": "Kupujem si časopis o varení.",
+            "exampleUk": "Я купую журнал про кулінарію."
+          },
+          {
+            "wordId": "a1-u13-l05-citanie-w02",
+            "sk": "noviny",
+            "uk": "газета",
+            "pronunciationUk": "новіни",
+            "exampleSk": "Dedko číta noviny každé ráno.",
+            "exampleUk": "Дідусь читає газету щоранку."
+          },
+          {
+            "wordId": "a1-u13-l05-citanie-w03",
+            "sk": "román",
+            "uk": "роман",
+            "pronunciationUk": "рома:н",
+            "exampleSk": "Ten román má päťsto strán.",
+            "exampleUk": "Цей роман має п’ятсот сторінок."
+          },
+          {
+            "wordId": "a1-u13-l05-citanie-w04",
+            "sk": "autor",
+            "uk": "автор",
+            "pronunciationUk": "аутор",
+            "exampleSk": "Poznáš toho autora?",
+            "exampleUk": "Ти знаєш цього автора?"
+          },
+          {
+            "wordId": "a1-u13-l05-citanie-w05",
+            "sk": "prečítať",
+            "uk": "прочитати",
+            "pronunciationUk": "пречі:тат",
+            "exampleSk": "Prečítal som ten článok.",
+            "exampleUk": "Я прочитав ту статтю."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u13-l05-citanie-w01",
+          "sk": "časopis",
+          "uk": "журнал",
+          "pronunciationUk": "часопіс",
+          "exampleSk": "Kupujem si časopis o varení.",
+          "exampleUk": "Я купую журнал про кулінарію.",
+          "level": "A1",
+          "topic": "Вільний час",
+          "tags": [
+            "a1-u13",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u13-l05-citanie-w02",
+          "sk": "noviny",
+          "uk": "газета",
+          "pronunciationUk": "новіни",
+          "exampleSk": "Dedko číta noviny každé ráno.",
+          "exampleUk": "Дідусь читає газету щоранку.",
+          "level": "A1",
+          "topic": "Вільний час",
+          "tags": [
+            "a1-u13",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u13-l05-citanie-w03",
+          "sk": "román",
+          "uk": "роман",
+          "pronunciationUk": "рома:н",
+          "exampleSk": "Ten román má päťsto strán.",
+          "exampleUk": "Цей роман має п’ятсот сторінок.",
+          "level": "A1",
+          "topic": "Вільний час",
+          "tags": [
+            "a1-u13",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u13-l05-citanie-w04",
+          "sk": "autor",
+          "uk": "автор",
+          "pronunciationUk": "аутор",
+          "exampleSk": "Poznáš toho autora?",
+          "exampleUk": "Ти знаєш цього автора?",
+          "level": "A1",
+          "topic": "Вільний час",
+          "tags": [
+            "a1-u13",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u13-l05-citanie-w05",
+          "sk": "prečítať",
+          "uk": "прочитати",
+          "pronunciationUk": "пречі:тат",
+          "exampleSk": "Prečítal som ten článok.",
+          "exampleUk": "Я прочитав ту статтю.",
+          "level": "A1",
+          "topic": "Вільний час",
+          "tags": [
+            "a1-u13",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u13-l05-citanie-ex01",
+          "lessonId": "a1-u13-l05-citanie",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "časopis",
+              "right": "журнал"
+            },
+            {
+              "left": "noviny",
+              "right": "газета"
+            },
+            {
+              "left": "román",
+              "right": "роман"
+            },
+            {
+              "left": "autor",
+              "right": "автор"
+            },
+            {
+              "left": "prečítať",
+              "right": "прочитати"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u13-l05-citanie-w01",
+            "a1-u13-l05-citanie-w02",
+            "a1-u13-l05-citanie-w03",
+            "a1-u13-l05-citanie-w04",
+            "a1-u13-l05-citanie-w05"
+          ]
+        },
+        {
+          "id": "a1-u13-l05-citanie-ex02",
+          "lessonId": "a1-u13-l05-citanie",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Noviny "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "je",
+                "sú"
+              ],
+              "correct": "sú"
+            },
+            {
+              "text": " na stole."
+            }
+          ],
+          "explanation": "noviny — множина: sú.",
+          "order": 2,
+          "wordIds": [
+            "a1-u13-l05-citanie-w02"
+          ]
+        },
+        {
+          "id": "a1-u13-l05-citanie-ex03",
+          "lessonId": "a1-u13-l05-citanie",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Včera som "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "čítala",
+                "prečítala"
+              ],
+              "correct": "prečítala"
+            },
+            {
+              "text": " celú knihu."
+            }
+          ],
+          "explanation": "Результат — prečítala.",
+          "order": 3,
+          "wordIds": [
+            "a1-u13-l05-citanie-w05"
+          ]
+        },
+        {
+          "id": "a1-u13-l05-citanie-ex04",
+          "lessonId": "a1-u13-l05-citanie",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Práve čítam román»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Я якраз читаю роман",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Я правильно читаю роман",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Я щойно прочитав роман",
+              "correct": false
+            }
+          ],
+          "explanation": "práve — якраз зараз.",
+          "order": 4
+        },
+        {
+          "id": "a1-u13-l05-citanie-ex05",
+          "lessonId": "a1-u13-l05-citanie",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Noviny» в словацькій — іменник у множині.",
+          "correctAnswer": true,
+          "explanation": "noviny sú.",
+          "order": 5,
+          "wordIds": [
+            "a1-u13-l05-citanie-w02"
+          ]
+        },
+        {
+          "id": "a1-u13-l05-citanie-ex06",
+          "lessonId": "a1-u13-l05-citanie",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Čítam ______ slovensky. (словацькою)",
+          "acceptedAnswers": [
+            "po"
+          ],
+          "explanation": "po slovensky.",
+          "order": 6
+        },
+        {
+          "id": "a1-u13-l05-citanie-ex07",
+          "lessonId": "a1-u13-l05-citanie",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що читаєш газету в телефоні.",
+          "tokens": [
+            "Čítam",
+            "na",
+            "noviny",
+            "mobile",
+            "."
+          ],
+          "correctOrder": [
+            "Čítam",
+            "noviny",
+            "na",
+            "mobile",
+            "."
+          ],
+          "explanation": "na mobile.",
+          "order": 7,
+          "wordIds": [
+            "a1-u13-l05-citanie-w02"
+          ]
+        },
+        {
+          "id": "a1-u13-l05-citanie-ex08",
+          "lessonId": "a1-u13-l05-citanie",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Včera som prečítal celú kniha.",
+          "errorToken": "kniha",
+          "correctToken": "knihu",
+          "explanation": "Знахідний: knihu.",
+          "order": 8,
+          "wordIds": [
+            "a1-u13-l05-citanie-w05"
+          ]
+        },
+        {
+          "id": "a1-u13-l05-citanie-ex09",
+          "lessonId": "a1-u13-l05-citanie",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Процес чи результат?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Proces"
+            },
+            {
+              "id": "c2",
+              "title": "Výsledok"
+            }
+          ],
+          "items": [
+            {
+              "sk": "čítam každý deň",
+              "category": "c1"
+            },
+            {
+              "sk": "prečítal som",
+              "category": "c2"
+            },
+            {
+              "sk": "čítam",
+              "category": "c1"
+            },
+            {
+              "sk": "práve čítam",
+              "category": "c1"
+            },
+            {
+              "sk": "prečítala som celú knihu",
+              "category": "c2"
+            }
+          ],
+          "explanation": "čítať / prečítať.",
+          "order": 9,
+          "wordIds": [
+            "a1-u13-l05-citanie-w05"
+          ]
+        },
+        {
+          "id": "a1-u13-l05-citanie-ex10",
+          "lessonId": "a1-u13-l05-citanie",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення.",
+          "message": {
+            "sender": "Mestská knižnica",
+            "body": "Dobrý deň, kniha „Malý princ“, ktorú ste si požičali, je potrebné vrátiť do piatku. Ďakujeme."
+          },
+          "question": "Що потрібно зробити?",
+          "options": [
+            {
+              "id": "a",
+              "text": "забрати книгу в п’ятницю",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "купити книгу",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "повернути книгу до п’ятниці",
+              "correct": true
+            }
+          ],
+          "explanation": "vrátiť — повернути.",
+          "order": 10
+        },
+        {
+          "id": "a1-u13-l05-citanie-ex11",
+          "lessonId": "a1-u13-l05-citanie",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kamarát",
+              "sk": "Čo teraz čítaš?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Čítam román slovenská.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Práve čítam slovenský román.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Práve prečítam román.",
+              "correct": false
+            }
+          ],
+          "explanation": "Процес — čítam.",
+          "order": 11,
+          "wordIds": [
+            "a1-u13-l05-citanie-w03",
+            "a1-u13-l05-citanie-w05"
+          ]
+        },
+        {
+          "id": "a1-u13-l05-citanie-ex12",
+          "lessonId": "a1-u13-l05-citanie",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти хочеш спитати бібліотекарку, чи можна позичити книгу.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Môžem si požičať túto knihu?",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Kniha požičať môžem si?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Dajte knihu.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Môžem požičať kniha?",
+              "correct": false
+            }
+          ],
+          "explanation": "požičať si.",
+          "order": 12
+        },
+        {
+          "id": "a1-u13-l05-citanie-ex13",
+          "lessonId": "a1-u13-l05-citanie",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні речення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Noviny sú nové.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Noviny je nová.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Čítam slovensky po.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Čítam po slovensky.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Prečítal som knihu.",
+              "correct": true
+            }
+          ],
+          "explanation": "Повторення.",
+          "order": 13,
+          "wordIds": [
+            "a1-u13-l05-citanie-w02",
+            "a1-u13-l05-citanie-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Книжковий клуб",
+        "description": "В українській громаді в Кошицях почав працювати читацький клуб.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Організаторка: «Čo radi čítate?» (романи й журнали)",
+            "options": [
+              {
+                "sk": "Rada čítam román a časopis je.",
+                "correct": false
+              },
+              {
+                "sk": "Rada čítam romány a časopisy.",
+                "correct": true
+              },
+              {
+                "sk": "Romány rada.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Čítate aj po slovensky?» (так, прості тексти)",
+            "options": [
+              {
+                "sk": "Áno, po slovensky jednoducho.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, jednoduché texty.",
+                "correct": true
+              },
+              {
+                "sk": "Áno, jednoduchý text slovensky.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Tento román sme prečítali za mesiac.» Що зробив клуб?",
+            "options": [
+              {
+                "sk": "купив роман",
+                "correct": false
+              },
+              {
+                "sk": "читає роман щомісяця",
+                "correct": false
+              },
+              {
+                "sk": "прочитав роман за місяць",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти питаєш, хто автор.",
+            "options": [
+              {
+                "sk": "Kto je autor?",
+                "correct": true
+              },
+              {
+                "sk": "Autor kto?",
+                "correct": false
+              },
+              {
+                "sk": "Kto autor je kniha?",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розповідаєш про читання. Далі — зустріч із друзями."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розповідаєш про читання. Далі — зустріч із друзями.",
+        "nowYouKnow": [
+          "časopis, noviny, román, autor",
+          "čítať — процес, prečítať — результат",
+          "čítať po slovensky",
+          "požičať si knihu"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 13,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u13-l06-stretnutie-s-priatelmi",
+          "title": "Зустріч із друзями"
+        }
+      }
+    }
+  ]
+}
