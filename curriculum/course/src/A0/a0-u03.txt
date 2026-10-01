@@ -1,0 +1,393 @@
+@unit a0-u03 | Знайомство | Zoznámenie
+
+@lesson volam-sa | Як тебе звати? | Ako sa voláš?
+desc: Представитися й запитати ім’я: volám sa, som, moje meno je, a ty?
+goal: Назвати своє ім’я і запитати ім’я співрозмовника на «ти» й на «ви».
+out: казати Volám sa… і Som… ;; питати Ako sa voláš? / Ako sa voláte? ;; розуміти «krstné meno» і «priezvisko» ;; повертати питання: A ty? A vy?
+done: Ти вже знайомишся словацькою! Далі — звідки ти.
+T: Volám sa… || Найприродніше представитися: «Volám sa Olena» (мене звати Олена) або просто «Som Olena» (я Олена). Формально: «Moje meno je Olena Kovalenko». || Volám sa Taras. = Мене звати Тарас. ;; Som Iryna. = Я Ірина. ;; Moje meno je Petro Bondar. = Моє ім’я — Петро Бондар. || Volám sa… / Som…
+T: Як запитати ім’я || На «ти»: «Ako sa voláš?» На «ви»: «Ako sa voláte?» У офіційних ситуаціях: «Vaše meno, prosím?» (Ваше ім’я, будь ласка?). || Ako sa voláš? = Як тебе звати? ;; Ako sa voláte? = Як вас звати? ;; Vaše meno, prosím? = Ваше ім’я, будь ласка? || voláš (ти) — voláte (ви)
+T: Ім’я та прізвище || «Meno» — ім’я (іноді повне ім’я), «krstné meno» — власне ім’я, «priezvisko» — прізвище. Словацькі жіночі прізвища мають -ová: Novák → Nováková. Українські прізвища зазвичай не змінюють. || krstné meno: Olena = ім’я: Олена ;; priezvisko: Kovalenko = прізвище: Коваленко ;; pán Novák – pani Nováková = пан Новак – пані Новакова || priezvisko = прізвище (не плутай із «прізвиськом»!)
+W: volám sa | мене звати | вола:м са | Volám sa Andrij. | Мене звати Андрій.
+W: Ako sa voláš? | Як тебе звати? | ако са вола:ш | Ahoj, ako sa voláš? | Привіт, як тебе звати?
+W: meno | ім’я | мено | Napíšte sem svoje meno. | Напишіть сюди своє ім’я.
+W: priezvisko | прізвище | прієзвіско | Aké je vaše priezvisko? | Яке ваше прізвище?
+W: krstné meno | власне ім’я | крстне: мено | Krstné meno píšte veľkými písmenami. | Ім’я пишіть великими літерами.
+X dr: - | Nový kolega: Ahoj, ja som Martin. A ty? | *Ja som Oksana. ;; Ako sa voláte? ;; Dovidenia, Martin.
+= A ty? — він чекає твоє ім’я: Ja som… / Volám sa…
+X dd: Обери форму. | Dobrý deň, ako sa [*voláte/voláš]?
+= Dobrý deň + vykanie → voláte.
+X mt: З’єднай. | meno = ім’я ;; priezvisko = прізвище ;; Volám sa… = Мене звати… ;; Ako sa voláš? = Як тебе звати?
+X tf: - | - | «Priezvisko» означає «прізвисько». | F
+= priezvisko — прізвище. Хибний друг перекладача!
+X sc~: Як буде жіноча форма прізвища «Kováč»? | - | *Kováčová ;; Kováčka ;; Kováča
+= Словацькі жіночі прізвища зазвичай мають -ová.
+X so: - | Представся. | Volám sa Natália.
+= Volám sa + ім’я.
+X np: Працівниця офісу просить твоє ім’я для запису. | *Moje meno je Olena Kovalenko. ;; Čau, som Olena. ;; Olena, a ty? ;; Ahoj, Olena.
+= В офіційній ситуації — повне ім’я в нейтральній формі.
+X fb: Допиши питання на «ти». | Ako sa ___? | voláš | Друга особа однини.
+= Ako sa voláš?
+X doc: Прочитай частину анкети. | Formulár | Krstné meno: Olha ;; Priezvisko: Shevchenko ;; Štátna príslušnosť: Ukrajina | Яке прізвище в анкеті? | *Shevchenko ;; Olha ;; Ukrajina
+= Priezvisko — прізвище: Shevchenko.
+X sb: - | Запитай ім’я ввічливо. | Ako sa voláte, prosím?
+= Ako sa voláte + prosím.
+X cat: Питання на «ти» чи на «ви»? | Ти: Ako sa voláš?, A ty? ;; Ви: Ako sa voláte?, A vy?, Odkiaľ ste?
+= Форми -š для «ти», -te для «ви».
+X reg: - | Vaše meno, prosím? | formal
+= Формальне питання в офісі чи на рецепції.
+X dr: - | Recepčná: Vaše priezvisko, prosím? | *Bondarenko. ;; Taras. ;; Ukrajina.
+= Питають прізвище — priezvisko.
+F: Курси словацької || Перше заняття на мовних курсах. Ви знайомитеся.
+S: Викладачка: «Dobrý deň, ako sa voláte?» | *Volám sa Yulia. ;; Ako sa voláš? ;; Dobrú noc.
+S: Вона уточнює: «A vaše priezvisko?» | *Moroz. ;; Yulia. ;; Áno.
+S: Сусід по парті: «Ahoj, ja som Ahmed.» | *Ahoj, ja som Yulia. Teší ma. ;; Dobrý deň prajem, pán Ahmed. ;; Prepáčte.
+S: Ти хочеш запитати ім’я іншої студентки (ровесниці). | *Ako sa voláš? ;; Ako sa voláte, pani? ;; Vaše priezvisko?
+R: Volám sa… / Som… ;; Ako sa voláš? / Ako sa voláte? ;; meno, krstné meno, priezvisko ;; -ová у жіночих прізвищах
+
+@lesson odkial-si | Звідки ти? | Odkiaľ si?
+desc: Розповісти, з якої ти країни і міста, і запитати про це інших.
+goal: Казати Som z Ukrajiny / z Kyjeva і питати Odkiaľ ste?
+out: питати: Odkiaľ si / Odkiaľ ste? ;; відповідати: Som z Ukrajiny ;; назвати місто: Som z Ľvova ;; назвати кілька країн
+done: Ти можеш розповісти, звідки ти. Далі — національність і мови.
+T: Odkiaľ? || «Odkiaľ si?» (звідки ти?) / «Odkiaľ ste?» (звідки ви?). Відповідь: «Som z…» + країна або місто. Після z назва змінюється (родовий відмінок): Ukrajina → z Ukrajiny. || Odkiaľ ste? = Звідки ви? ;; Som z Ukrajiny. = Я з України. || Odkiaľ…? — Som z…
+T: Країни після z || Ukrajina → z Ukrajiny, Slovensko → zo Slovenska, Poľsko → z Poľska, Česko → z Česka, Nemecko → z Nemecka. Перед s, z, ž, š пишуть «zo». || Som zo Slovenska. = Я зі Словаччини. ;; Je z Poľska. = Він з Польщі. || -a → -y; -o → -a; zo перед s, z.
+T: Міста || Kyjev → z Kyjeva, Ľvov → zo Ľvova, Charkov → z Charkova, Odesa → z Odesy, Dnipro → z Dnipra. Bratislava → z Bratislavy, Košice → z Košíc. || Som z Charkova. = Я з Харкова. ;; Bývam v Bratislave, ale som z Odesy. = Я живу в Братиславі, але я з Одеси. || Міста теж змінюються після z.
+W: Odkiaľ ste? | Звідки ви? | одкяль стє? | Odkiaľ ste, pán Petrenko? | Звідки ви, пане Петренко?
+W: Ukrajina | Україна | украйіна | Som z Ukrajiny. | Я з України.
+W: Slovensko | Словаччина | словенско | Žijem na Slovensku. | Я живу в Словаччині.
+W: krajina | країна | крайіна | Z akej krajiny ste? | З якої ви країни?
+W: Poľsko | Польща | польско | Moja kolegyňa je z Poľska. | Моя колега з Польщі.
+W: Česko | Чехія | ческо | Brat býva v Česku. | Брат живе в Чехії.
+X dd: Обери форму. | Som z [*Ukrajiny/Ukrajina/Ukrajinu].
+= Після z: Ukrajina → z Ukrajiny.
+X dd: Обери форму. | Som [*zo/z] Slovenska.
+= Перед s — zo: zo Slovenska.
+X mt: З’єднай країну з формою після z. | Ukrajina = z Ukrajiny ;; Slovensko = zo Slovenska ;; Poľsko = z Poľska ;; Česko = z Česka
+X dr: - | Lekár: Odkiaľ ste? | *Som z Ukrajiny, z Charkova. ;; Som v Charkove. ;; Volám sa Charkov.
+= Odkiaľ — звідки, відповідь Som z…
+X sc~: Що означає «Odkiaľ si?»? | - | *Звідки ти? ;; Де ти живеш? ;; Куди ти йдеш?
+= odkiaľ — звідки.
+X fb: Допиши. | Som z ___. (Польща) | Poľska | Poľsko → z Poľska.
+= Poľsko → z Poľska.
+X tfl: - | Volám sa Daria. Som z Ukrajiny, zo Ľvova. Teraz bývam na Slovensku, v Žiline. Môj manžel je zo Slovenska. | *Daria je z Ukrajiny. ;; Daria je zo Žiliny. ;; *Daria teraz býva v Žiline. ;; *Manžel je Slovák.
+X sb: - | Скажи, що ти з Одеси. | Som z Odesy.
+= Odesa → z Odesy.
+X fe: - | Som z [Ukrajina>Ukrajiny] a bývam v Košiciach.
+= Після z — родовий відмінок: z Ukrajiny.
+X np: Ти хочеш запитати пані на курсах, звідки вона. | *Odkiaľ ste? ;; Odkiaľ si, pani? ;; Kde je Odkiaľ? ;; Ako sa voláš?
+= До пані — Odkiaľ ste?
+X ms: Обери всі правильні фрази. | - | *Som zo Slovenska. ;; *Som z Česka. ;; *Som z Kyjeva. ;; Som z Ukrajina. ;; Som zo Poľska.
+= z Ukrajiny (не Ukrajina), z Poľska (zo лише перед s, z, ž, š).
+X so: - | Запитай колегу на «ти». | Odkiaľ si?
+= Odkiaľ + si.
+F: Знайомство в черзі || Ти чекаєш у черзі в установі й розмовляєш із сусідами.
+S: Пані поруч: «Odkiaľ ste?» | *Som z Ukrajiny. ;; Som Ukrajina. ;; Som v Ukrajine.
+S: «A z ktorého mesta?» (Ти з Дніпра.) | *Z Dnipra. ;; Dnipro je. ;; V Dnipre som.
+S: Ти питаєш її: | *A vy ste odkiaľ? ;; A ty si odkiaľ, pani? ;; A vy ste kto?
+S: Вона відповідає «Zo Slovenska, z Nitry.» Що це означає? | *вона словачка з Нітри ;; вона з Чехії ;; вона живе в Україні
+R: Odkiaľ si / ste? ;; Som z Ukrajiny, zo Slovenska ;; z + назва в родовому відмінку ;; zo перед s, z
+
+@lesson narodnost-jazyky | Національність і мови | Národnosť a jazyky
+desc: Українець, українка, словак, словачка; мови: hovorím po slovensky, trochu, plynule.
+goal: Назвати свою національність і мови, якими ти говориш.
+out: казати Som Ukrajinec / Ukrajinka ;; питати Akým jazykom hovoríte? ;; казати hovorím po… ;; оцінювати рівень: trochu, dobre, plynule
+done: Ти вже розповідаєш про себе й мови. Далі — де ти живеш.
+T: Національність || Чоловік — Ukrajinec, жінка — Ukrajinka. Slovák — Slovenka, Poliak — Poľka, Čech — Češka. Національності пишуться з великої літери. || Som Ukrajinec. = Я українець. ;; Som Ukrajinka. = Я українка. ;; Moja priateľka je Slovenka. = Моя подруга — словачка. || Ukrajinec / Ukrajinka
+T: Мови || «Hovorím po slovensky / po ukrajinsky / po anglicky / po rusky / po nemecky» — я говорю словацькою / українською... Назва мови — з малої літери: slovenčina, ukrajinčina, angličtina. || Hovorím po ukrajinsky a po anglicky. = Я говорю українською та англійською. ;; Učím sa slovenčinu. = Я вчу словацьку. || po + -sky/-cky = «якою мовою»
+T: Наскільки добре || trochu (трохи), dobre (добре), plynule (вільно), len trochu (лише трохи). «Ešte nehovorím dobre po slovensky» — я ще не говорю добре словацькою. || Hovorím trochu po slovensky. = Я трохи говорю словацькою. ;; Hovorí plynule po anglicky. = Він вільно говорить англійською. || trochu → dobre → plynule
+W: Ukrajinec | українець | украйінец | Môj sused je Ukrajinec. | Мій сусід — українець.
+W: Ukrajinka | українка | украйінка | Som Ukrajinka z Poltavy. | Я українка з Полтави.
+W: Slovák | словак | слова:к | Môj šéf je Slovák. | Мій шеф — словак.
+W: Slovenka | словачка | словенка | Jej mama je Slovenka. | Її мама — словачка.
+W: hovoriť | говорити | говоріть | Hovoríte po ukrajinsky? | Ви говорите українською?
+W: trochu | трохи | трохи | Rozumiem len trochu. | Я розумію лише трохи.
+W: plynule | вільно | плинулє | Hovorí plynule po nemecky. | Він вільно говорить німецькою.
+X dd: Обери (говорить жінка). | Som [*Ukrajinka/Ukrajinec] z Kyjeva.
+= Жінка — Ukrajinka.
+X mt: З’єднай чоловічу і жіночу форму. | Ukrajinec = Ukrajinka ;; Slovák = Slovenka ;; Poliak = Poľka ;; Čech = Češka
+X sc: Як сказати «Я говорю англійською»? | - | *Hovorím po anglicky. ;; Hovorím anglicky po. ;; Hovorím po Anglicko. ;; Hovorím angličtina.
+= po + anglicky.
+X cat: Людина чи мова? | Людина: Slovák, Ukrajinka, Poliak ;; Мова: slovenčina, ukrajinčina, angličtina
+= Мови — з малої, національності — з великої літери.
+X tf: - | - | Назви мов (slovenčina, angličtina) словацькою пишуться з великої літери. | F
+= Мови — з малої: slovenčina. Національності — з великої: Slovák.
+X dr: - | Úradníčka: Hovoríte po slovensky? | *Trochu, učím sa. ;; Som zo Slovenska. ;; Volám sa slovensky.
+= Чесна відповідь про рівень: trochu.
+X fb: Допиши. | Hovorím ___ po slovensky. (трохи) | trochu |
+= trochu — трохи.
+X so: - | Скажи, що ти вчиш словацьку. | Učím sa slovenčinu.
+= Učím sa + назва мови.
+X fe: - | Som [ukrajinka>Ukrajinka] a hovorím po slovensky.
+= Національність пишеться з великої літери: Ukrajinka.
+X np: Колега питає, чи можна з тобою говорити англійською. Ти говориш вільно. | *Áno, hovorím plynule po anglicky. ;; Áno, som Angličan. ;; Hovorím angličtina. ;; Plynule áno anglicky.
+= hovorím plynule po anglicky.
+X ms: Обери всі правильні фрази. | - | *Hovorím po ukrajinsky. ;; *Som Ukrajinec. ;; *Učím sa slovenčinu. ;; Som ukrajinsky. ;; Hovorím po Ukrajina.
+= Національність — іменником, мова — po + -sky.
+X rc: - | Ahoj, volám sa Hanna. Som Ukrajinka, ale môj manžel Peter je Slovák. Doma hovoríme po slovensky a po ukrajinsky. Peter hovorí po ukrajinsky len trochu.
+q~: Хто Петер за національністю? | *словак ;; українець ;; поляк
+q~: Як Петер говорить українською? | *трохи ;; вільно ;; зовсім не говорить
+F: Співбесіда в агенції || Агенція з працевлаштування заповнює твою картку.
+S: «Aká je vaša národnosť?» (ти — жінка) | *Som Ukrajinka. ;; Som ukrajinsky. ;; Som Ukrajina.
+S: «Akými jazykmi hovoríte?» | *Po ukrajinsky, po anglicky a trochu po slovensky. ;; Ukrajina, Anglicko. ;; Som po slovensky.
+S: «Ako dobre hovoríte po anglicky?» | *Plynule. ;; Ukrajinka. ;; Zo Slovenska.
+S: «Učíte sa slovenčinu?» | *Áno, učím sa slovenčinu. ;; Áno, som Slovenka. ;; Áno, Slovensko.
+R: Ukrajinec / Ukrajinka, Slovák / Slovenka ;; hovorím po slovensky / po ukrajinsky ;; trochu, dobre, plynule ;; мови — з малої літери
+
+@lesson kde-byvas | Де ти живеш? | Kde bývaš?
+desc: Сказати, де ти живеш: місто, район, вулиця. Різниця між «bývať» і «žiť».
+goal: Розповісти, де ти живеш, і запитати про це інших.
+out: питати Kde bývaš / bývate? ;; казати Bývam v Bratislave / na Slovensku ;; назвати вулицю ;; розрізняти bývať і žiť
+done: Ти вмієш розповісти про своє житло й місто. Далі — мови в роботі й побуті.
+T: Bývať — жити (де саме) || «Bývam v Košiciach» — я живу в Кошицях. «Kde bývate?» — де ви живете? «Bývať» — про конкретне місце: місто, квартиру, вулицю. || Bývam v Nitre. = Я живу в Нітрі. ;; Kde bývaš? = Де ти живеш? || Kde bývaš? — Bývam v…
+T: V чи na? || Більшість міст і країн — «v»: v Bratislave, v Žiline, v Poľsku. Але «na Slovensku», «na Ukrajine» (так говорять словаки), «na ulici», «na sídlisku» (у спальному районі). || Bývam na Slovensku. = Я живу в Словаччині. ;; Bývam na Hlavnej ulici. = Я живу на Головній вулиці. || na Slovensku, na ulici; v + місто.
+T: Žiť — жити (взагалі) || «Žiť» — жити як існувати, проводити життя: «Žijem na Slovensku dva roky» (живу в Словаччині два роки). Для адреси краще «bývať». || Žijem tu rok. = Я живу тут рік. ;; Bývam na Mierovej ulici 5. = Я живу на вулиці Мірова, 5. || adresa → bývať
+W: bývať | жити (мешкати) | бі:вать | Bývam v centre. | Я живу в центрі.
+W: žiť | жити | жіть | Žijeme tu už rok. | Ми живемо тут уже рік.
+W: ulica | вулиця | уліца | Bývam na Mlynskej ulici. | Я живу на вулиці Млинській.
+W: sídlisko | житловий масив | сі:дліско | Bývame na sídlisku Petržalka. | Ми живемо на масиві Петржалка.
+W: adresa | адреса | адреса | Aká je vaša adresa? | Яка ваша адреса?
+W: Kde bývate? | Де ви живете? | гдє бі:ватє | Kde bývate na Slovensku? | Де ви живете в Словаччині?
+X dd: Обери прийменник. | Bývam [*na/v] Slovensku.
+= Говорять na Slovensku.
+X dd: Обери прийменник. | Bývam [*v/na] Bratislave.
+= Міста — з v: v Bratislave.
+X mt: З’єднай. | bývať = мешкати ;; žiť = жити ;; ulica = вулиця ;; sídlisko = житловий масив ;; adresa = адреса
+X dr: - | Kolegyňa: Kde bývaš? | *Bývam v Petržalke, na sídlisku. ;; Som z Ukrajiny. ;; Volám sa Petržalka.
+= Kde bývaš — питання про місце проживання.
+X sc~: Чим відрізняється «Odkiaľ si?» від «Kde bývaš?»? | - | *перше — звідки ти родом, друге — де живеш зараз ;; це одне й те саме ;; перше — де живеш, друге — звідки
+= Odkiaľ — походження, kde bývaš — місце проживання.
+X tf: - | - | «Bývam na Hlavnej ulici» означає «Я живу на Головній вулиці». | T
+= na + вулиця.
+X fb: Допиши дієслово (я живу). | ___ v Trnave. | Bývam | Перша особа: -am.
+= Bývam v Trnave.
+X so: - | Запитай пані, де вона живе. | Kde bývate, pani Nováková?
+= Kde bývate + звертання.
+X np: Ти розповідаєш, скільки вже живеш у Словаччині. | *Žijem na Slovensku dva roky. ;; Bývam na Slovensku ulica. ;; Žijem v Slovensku. ;; Som Slovensko dva roky.
+= Žiť — про тривалість життя в країні; na Slovensku.
+X fe: - | Bývam [v>na] Slovensku a pracujem v Nitre.
+= na Slovensku, а не v Slovensku.
+X doc: Прочитай дані з анкети. | Údaje o pobyte | Meno: Ivan Melnyk ;; Ulica: Hlavná 12 ;; Mesto: Prešov ;; PSČ: 080 01 | У якому місті живе Іван? | *Prešov ;; Hlavná ;; Melnyk
+= Mesto — місто: Prešov.
+X ms: Обери правильні фрази. | - | *Bývam v Žiline. ;; *Bývam na Slovensku. ;; *Bývam na sídlisku. ;; Bývam na Žiline. ;; Bývam v Slovensku.
+= v Žiline, na Slovensku, na sídlisku.
+F: Нова знайома в парку || Ти гуляєш із дитиною, і мама іншої дитини починає розмову.
+S: «Bývate tu blízko?» (так, на вулиці Lipová) | *Áno, bývam na Lipovej ulici. ;; Áno, som z Lipovej. ;; Áno, volám sa Lipová.
+S: «Ako dlho žijete na Slovensku?» (рік) | *Žijem tu rok. ;; Bývam rok ulica. ;; Som z roka.
+S: Ти питаєш її: | *A kde bývate vy? ;; A odkiaľ ste ulica? ;; A kde ste sa volali?
+S: «Bývam na sídlisku.» Що це означає? | *вона живе на житловому масиві ;; вона живе в селі ;; вона живе за кордоном
+R: Kde bývaš / bývate? ;; Bývam v + місто ;; na Slovensku, na ulici ;; bývať (адреса) vs žiť (жити)
+
+@lesson vek | Скільки тобі років? | Koľko máš rokov?
+desc: Вік, рік народження і день народження: mám … rokov, narodil som sa, narodeniny.
+goal: Сказати свій вік і запитати чужий, розуміти питання про дату народження.
+out: питати Koľko máš / máte rokov? ;; відповідати Mám … rokov / roky ;; розуміти dátum narodenia ;; привітати з днем народження
+done: Ти вже вмієш говорити про вік. Далі — професії.
+T: Mám … rokov || У словацькій вік «мають»: «Mám tridsať rokov» (мені 30 років). Питання: «Koľko máš rokov?» / «Koľko máte rokov?». Питати вік дорослих незнайомих — неввічливо, але в документах і в лікаря це звичайно. || Koľko máš rokov? = Скільки тобі років? ;; Mám dvadsaťpäť rokov. = Мені 25 років. || Mám + число + rokov
+T: Rok, roky, rokov || 1 rok, 2–4 roky, 5+ rokov — як в українській «рік, роки, років». Десятки (dvadsať, tridsať…) детально будуть у наступному розділі. || Synovi je jeden rok. = Синові один рік. ;; Dcéra má tri roky. = Доньці три роки. ;; Mám štyridsať rokov. = Мені 40 років. || 1 rok, 2–4 roky, 5+ rokov
+T: Народження й день народження || «Dátum narodenia» — дата народження (у формах). «Narodil som sa…» (чол.) / «Narodila som sa…» (жін.) — я народився/народилася. «Narodeniny» — день народження. Привітання: «Všetko najlepšie k narodeninám!» || Narodila som sa v Kyjeve. = Я народилася в Києві. ;; Všetko najlepšie! = Усього найкращого! || narodeniny = день народження
+W: rok | рік | рок | Na Slovensku žijem rok. | Я живу в Словаччині рік.
+W: Koľko máš rokov? | Скільки тобі років? | кольо ма:ш рокоу | Koľko máš rokov, Miško? | Скільки тобі років, Мішко?
+W: narodeniny | день народження | народєніні | Dnes mám narodeniny. | Сьогодні в мене день народження.
+W: dátum narodenia | дата народження | да:тум народенія | Napíšte dátum narodenia. | Напишіть дату народження.
+W: Všetko najlepšie! | Усього найкращого! | фшеткo найлепшіє | Všetko najlepšie k narodeninám! | З днем народження!
+X dd: Обери форму. | Dcéra má tri [*roky/rokov/rok].
+= 2–4 → roky.
+X dd: Обери форму. | Syn má jeden [*rok/roky/rokov].
+= 1 → rok.
+X mt: З’єднай. | narodeniny = день народження ;; dátum narodenia = дата народження ;; Koľko máš rokov? = Скільки тобі років? ;; Všetko najlepšie! = Усього найкращого!
+X sc~: Що означає «Mám dvadsať rokov»? | - | *Мені двадцять років ;; У мене двадцять речей ;; Я маю двадцять євро
+= Вік у словацькій виражають дієсловом mať.
+X dr: - | Kamarátka: Dnes mám narodeniny! | *Všetko najlepšie! ;; To ma mrzí. ;; Dobrú noc.
+= На день народження — Všetko najlepšie!
+X fb: Допиши (говорить чоловік). | ___ som sa v Ľvove. | Narodil | Чоловік: narodil, жінка: narodila.
+= Narodil som sa — я народився.
+X tf: - | - | У словацькій питати вік у незнайомої дорослої людини на вулиці — цілком звично. | F
+= Це неввічливо; вік питають у формах, у лікаря, у дітей.
+X so: - | Привітай подругу з днем народження. | Všetko najlepšie k narodeninám!
+= Стандартне привітання.
+X doc: Прочитай частину документа. | Preukaz | Meno: Anna Hrytsenko ;; Dátum narodenia: 12. 3. 1994 ;; Miesto narodenia: Poltava | Де народилася Анна? | *у Полтаві ;; 12 березня ;; у 1994 році
+= Miesto narodenia — місце народження.
+X np: Лікарка питає вік твоєї доньки (5 років). | *Má päť rokov. ;; Má päť roky. ;; Je päť rok. ;; Mám päť.
+= 5+ → rokov; má — вона має.
+X cat: rok, roky чи rokov? | rok: 1 ;; roky: 2, 3, 4 ;; rokov: 5, 10, 20
+= 1 rok; 2–4 roky; 5 і більше — rokov.
+F: Реєстрація в лікаря || Ти записуєш себе й сина до сімейного лікаря.
+S: «Koľko máte rokov?» (тобі 35) | *Mám tridsaťpäť rokov. ;; Som tridsaťpäť. ;; Mám tridsaťpäť roky.
+S: «A syn?» (йому 3) | *Syn má tri roky. ;; Syn má tri rokov. ;; Syn je tri.
+S: «Dátum narodenia?» Що треба назвати? | *дату народження ;; місце народження ;; адресу
+S: Медсестра бачить у картці: сьогодні в сина день народження. Що вона скаже? | *Všetko najlepšie! ;; To ma mrzí. ;; Dovidenia!
+R: Koľko máš / máte rokov? ;; Mám … rokov ;; 1 rok, 2–4 roky, 5+ rokov ;; narodeniny, dátum narodenia, Všetko najlepšie!
+
+@lesson povolania-zaklad | Ким ти працюєш? | Čo robíš?
+desc: Назви базових професій, питання «Čo robíš?» і «Kde pracuješ?».
+goal: Сказати, ким ти працюєш і де, і запитати про це інших.
+out: питати Čo robíš? / Kde pracujete? ;; казати Som kuchár / kuchárka ;; утворювати жіночі назви професій ;; казати Pracujem v…
+done: Ти вмієш говорити про роботу. Далі — як продиктувати ім’я по літерах.
+T: Čo robíš? || Про роботу питають: «Čo robíš?» / «Čo robíte?» (що робиш? = ким працюєш?) або «Kde pracuješ?» (де працюєш?). Відповідь: «Som…» + професія. || Čo robíte? — Som vodič. = Ким працюєте? — Я водій. ;; Kde pracuješ? — V hoteli. = Де працюєш? — У готелі. || Čo robíš? = ким працюєш
+T: Жінка і чоловік || Більшість професій мають жіночу форму: kuchár — kuchárka, predavač — predavačka, učiteľ — učiteľka, lekár — lekárka, upratovač — upratovačka. || Som predavačka. = Я продавчиня. ;; Môj manžel je kuchár. = Мій чоловік — кухар. || -ár → -árka, -teľ → -teľka
+T: Pracujem v… / na… || «Pracujem v obchode» (у магазині), «v nemocnici» (у лікарні), «v sklade» (на складі), «na stavbe» (на будові), «v kancelárii» (в офісі). || Pracujem v sklade. = Я працюю на складі. ;; Pracujem na stavbe. = Я працюю на будові. || Pracujem v / na + місце
+W: Čo robíš? | Ким працюєш? (що робиш?) | чо робі:ш | Čo robíš v práci? | Що ти робиш на роботі?
+W: pracovať | працювати | працовать | Pracujem v hoteli. | Я працюю в готелі.
+W: kuchár | кухар | куха:р | Pracujem ako kuchár. | Я працюю кухарем.
+W: predavačka | продавчиня | предавачка | Predavačka je veľmi milá. | Продавчиня дуже мила.
+W: vodič | водій | водзіч | Môj brat je vodič autobusu. | Мій брат — водій автобуса.
+W: sklad | склад | склад | Pracujem v sklade v noci. | Я працюю на складі вночі.
+X mt: З’єднай чоловічу та жіночу форму. | kuchár = kuchárka ;; predavač = predavačka ;; učiteľ = učiteľka ;; lekár = lekárka
+X dd: Обери (говорить жінка). | Som [*predavačka/predavač] v potravinách.
+= Жінка — predavačka.
+X dr: - | Nová známa: Čo robíš? | *Som vodič, jazdím s kamiónom. ;; Som z Kyjeva. ;; Mám tridsať rokov.
+= Čo robíš? — про роботу.
+X sc~: Що означає «Pracujem v sklade»? | - | *Я працюю на складі ;; Я працюю в школі ;; Я працюю з другом
+= sklad — склад.
+X cat: Де працюють ці люди? | v obchode: predavač, pokladníčka ;; v kuchyni: kuchár, čašník ;; v nemocnici: lekárka, sestra
+= Співвіднеси професію з місцем.
+X fb: Допиши. | ___ v kancelárii. (я працюю) | Pracujem | pracovať → pracujem.
+= Pracujem v kancelárii.
+X so: - | Запитай пані, де вона працює. | Kde pracujete, pani Kováčová?
+= Kde pracujete — на «ви».
+X tf: - | - | «Čo robíš?» часто означає «Ким ти працюєш?». | T
+= Так, у знайомстві це питання про роботу.
+X np: Ти представляєшся на новій роботі (ти — кухарка). | *Dobrý deň, som Oksana, nová kuchárka. ;; Ahoj, som kuchár Oksana. ;; Som kuchárka, a ty čo? Čau. ;; Dobrý deň, kuchárka som ja Oksana.
+= Ім’я + професія в правильному роді.
+X rc: - | Ahoj, som Serhij. Mám tridsaťpäť rokov a som z Ukrajiny. Na Slovensku pracujem ako vodič. Moja manželka Olena je kuchárka, pracuje v hoteli v centre.
+q~: Ким працює Сергій? | *водієм ;; кухарем ;; продавцем
+q~: Де працює Олена? | *у готелі ;; на складі ;; у школі
+X ms: Обери всі назви жіночих професій. | - | *kuchárka ;; *lekárka ;; *učiteľka ;; vodič ;; predavač ;; kuchár
+= Жіночі форми закінчуються на -ka.
+F: Анкета в агенції || Агентка з працевлаштування розпитує тебе (ти — чоловік).
+S: «Čo robíte?» (ти — водій) | *Som vodič. ;; Som vodička. ;; Robím vodič.
+S: «Kde ste pracovali na Ukrajine?» (на складі) | *V sklade. ;; Na sklade som vodič. ;; Sklad.
+S: «A vaša manželka?» (вона кухарка) | *Je kuchárka. ;; Je kuchár. ;; Kuchárka som.
+S: «Chcete pracovať v Bratislave?» | *Áno, rád. ;; Áno, Bratislava. ;; Som z Bratislavy.
+R: Čo robíš? / Kde pracuješ? ;; Som + професія ;; -ár → -árka, -teľ → -teľka ;; Pracujem v / na…
+
+@lesson hlaskovanie | Продиктуй по літерах | Hláskovanie
+desc: Як назвати літери словацької абетки, щоб продиктувати ім’я чи e-mail у банку, на пошті або по телефону.
+goal: Продиктувати своє ім’я та прізвище по літерах і зрозуміти диктування.
+out: називати літери абетки ;; диктувати складні літери: J, Y, Ž, Š ;; казати «s dĺžňom», «s mäkčeňom» ;; питати «Ako sa to píše?»
+done: Тепер ти можеш продиктувати будь-яке ім’я. Далі — телефон і e-mail.
+T: Назви літер || Голосні звучать як є: A, E, I, O, U. Приголосні мають «е»: B = bé, C = cé, D = dé, P = pé, T = té, V = vé. Інші: F = ef, L = el, M = em, N = en, R = er, S = es. || B = bé ;; M = em ;; R = er || bé, cé, dé… / ef, el, em…
+T: Складні літери || H = há, CH = chá, J = jé, K = ká, G = gé, Y = ypsilon, Z = zet, W = dvojité vé, X = iks, Q = kvé. Для українських імен важливі J (jé) і Y (ypsilon). || J = jé ;; Y = ypsilon ;; W = dvojité vé || J = jé, Y = ypsilon
+T: Знаки при диктуванні || Знаки називають так: Č = cé s mäkčeňom, Á = á s dĺžňom (dlhé á). «Ako sa to píše?» — як це пишеться? «Hláskujte, prosím» — продиктуйте по літерах, будь ласка. || Š = es s mäkčeňom ;; Á = dlhé á ;; Ako sa píše vaše priezvisko? = Як пишеться ваше прізвище? || s mäkčeňom = з гачком; dlhé = довге
+W: hláskovať | диктувати по літерах | гла:сковать | Môžete to hláskovať? | Можете продиктувати по літерах?
+W: písmeno | літера | пі:смено | Prvé písmeno je K. | Перша літера — K.
+W: Ako sa to píše? | Як це пишеться? | ако са то пі:ше | Ako sa píše vaše meno? | Як пишеться ваше ім’я?
+W: s mäkčeňom | з гачком (ˇ) | с мекченьом | Š – es s mäkčeňom. | Š — es із гачком.
+W: veľké písmeno | велика літера | вельке: пі:смено | Meno píšte veľkým písmenom. | Ім’я пишіть з великої літери.
+X mt: З’єднай літеру з назвою. | J = jé ;; Y = ypsilon ;; H = há ;; W = dvojité vé ;; Z = zet
+X sc~: Як продиктувати літеру Š? | - | *es s mäkčeňom ;; dlhé es ;; es s dĺžňom
+= Гачок — mäkčeň: es s mäkčeňom.
+X sc: Ти диктуєш прізвище «Yarosh». Як назвеш першу літеру? | - | *ypsilon ;; jé ;; i ;; ú
+= Y — ypsilon.
+X np: Працівниця банку не розуміє, як пишеться твоє прізвище. | *Môžem to hláskovať. ;; Nerozumiem, dovidenia. ;; Píše sa dobre. ;; Neviem, ako sa volám.
+= Запропонуй продиктувати — hláskovať.
+X tf: - | - | Літера J словацькою називається «džej». | F
+= J — jé. «Džej» — англійська назва.
+X fb: Допиши питання. | Ako sa to ___? | píše | Як це пишеться?
+= Ako sa to píše?
+X cat: Як називається літера? | З «е» на кінці (bé, cé…): B, C, D, P, T ;; З «е» на початку (ef, el…): F, L, M, N, S
+= Більшість приголосних: bé, cé… або ef, el…
+X dr: - | Úradník: Ako sa píše vaše priezvisko? | *Hláskujem: K – O – V – A – L. ;; Volám sa Koval. ;; Píšem dobre.
+= На питання «як пишеться» — продиктуй по літерах.
+X so: - | Попроси продиктувати по літерах. | Hláskujte, prosím.
+= Hláskujte — наказова форма на «ви».
+X dd: Обери. | Á – to je [*dlhé/mäkké/veľké] á.
+= Á — довге (dlhé) á.
+X sb: - | Скажи, що перша літера — K. | Prvé písmeno je K.
+= prvé písmeno — перша літера.
+X hm: Касир каже: «To je s mäkčeňom alebo bez?» Що він уточнює? | *чи є гачок над літерою ;; чи є довгота ;; чи це велика літера
+= mäkčeň — гачок (ˇ).
+F: Дзвінок до банку || Ти телефонуєш до банку, щоб записатися на зустріч.
+S: «Vaše priezvisko, prosím?» Прізвище Zhuk звучить незвично. Що робиш? | *Ponúknem hláskovanie: zet – há – ú – ká. ;; Poviem len „Žuk“ a zložím. ;; Poviem „Nerozumiem“.
+S: «Je to Ž s mäkčeňom?» Ні, це Z і H. | *Nie, zet a potom há. ;; Áno, s mäkčeňom. ;; Neviem.
+S: Ти хочеш перепитати, як пишеться назва вулиці. | *Ako sa to píše, prosím? ;; Kde to je? ;; Kto to píše?
+S: «Á je s dĺžňom.» Що це означає? | *довге á ;; á з гачком ;; велике A
+R: bé, cé, dé… ef, el, em… ;; J = jé, Y = ypsilon ;; s mäkčeňom, dlhé á ;; Ako sa to píše? / Hláskujte, prosím.
+
+@lesson kontakt | Телефон і e-mail | Telefón a e-mail
+desc: Дати свій номер телефону й e-mail: zavináč, bodka, pomlčka — і зрозуміти контакти інших.
+goal: Продиктувати й записати номер телефону та e-mail.
+out: диктувати номер телефону цифрами 0–9 ;; називати символи e-mail: zavináč, bodka ;; питати Aké je vaše číslo? ;; розуміти контакти на вивісках
+done: Тепер ти можеш обмінятися контактами. Далі — підсумок: анкета й знайомство.
+T: Телефонний номер || Номер зазвичай диктують по одній чи по дві цифри: 0905 123 456 — «nula deväť nula päť, jeden dva tri…». Словацькі мобільні починаються з 09, міжнародний код +421. «Aké je vaše telefónne číslo?» || Moje číslo je 0910 222 333. = Мій номер 0910 222 333. ;; Zavolám vám. = Я вам подзвоню. || Aké je tvoje / vaše číslo?
+T: E-mail || @ = zavináč, . = bodka, - = pomlčka, _ = podčiarkovník. Приклад: olena.koval@gmail.com = «olena bodka koval zavináč gmail bodka com». || zavináč = @ ;; bodka = . (крапка) ;; pomlčka = - (дефіс) || @ = zavináč
+T: Обмін контактами || «Môžem dostať tvoje číslo?» — Можна твій номер? «Napíšem ti SMS-ku» — напишу тобі смс. «Pošlem vám e-mail» — надішлю вам лист. || Môžem dostať vaše číslo? = Можна ваш номер? ;; Pošlite mi e-mail. = Надішліть мені e-mail. || Môžem dostať…?
+W: telefónne číslo | номер телефону | телефо:нне: чі:сло | Napíšte mi vaše telefónne číslo. | Напишіть мені ваш номер телефону.
+W: zavináč | знак @ | завіна:ч | Po zavináči je gmail. | Після @ — gmail.
+W: bodka | крапка | бодка | Na konci je bodka sk. | Наприкінці — крапка sk.
+W: zavolať | подзвонити | заволать | Zavolám ti večer. | Я подзвоню тобі ввечері.
+W: poslať | надіслати | послать | Pošlem vám správu. | Я надішлю вам повідомлення.
+X mt: З’єднай символ із назвою. | @ = zavináč ;; . = bodka ;; - = pomlčka ;; _ = podčiarkovník
+X sc: Як продиктувати «anna@post.sk»? | - | *anna zavináč post bodka sk ;; anna bodka post zavináč sk ;; anna pomlčka post bodka sk
+= @ = zavináč, . = bodka.
+X sc~: Ти чуєш: «nula deväť jeden päť». Які перші цифри номера? | - | *0915 ;; 0951 ;; 0195
+= nula (0), deväť (9), jeden (1), päť (5).
+X dr: - | Kolega: Môžem dostať tvoje číslo? | *Jasné, 0944 512 300. ;; Áno, som z Kyjeva. ;; Nie je číslo.
+= Дай номер.
+X fb: Як словацькою називається знак «@»? | Znak @ sa volá ___. | zavináč | Схоже на «закрутку».
+= @ — zavináč.
+X tf: - | - | Словацький міжнародний код — +421. | T
+= Так, +421.
+X so: - | Попроси номер ввічливо. | Môžem dostať vaše číslo?
+= Môžem dostať + що?
+X msg: - | Kaderníctvo Lucia | Dobrý deň, potvrdzujeme termín v piatok o 10:00. Ak nemôžete prísť, zavolajte na 0902 111 222. | Що робити, якщо не можеш прийти? | *подзвонити на 0902 111 222 ;; написати e-mail ;; нічого, термін скасується сам
+= Zavolajte — подзвоніть.
+X dd: Обери. | Zavolám [*ti/ty] večer.
+= Zavolám ti — подзвоню тобі.
+X np: Ти даєш свій e-mail для чеку: ivan_shevchuk@seznam.cz | *ivan podčiarkovník shevchuk zavináč seznam bodka cz ;; ivan pomlčka shevchuk bodka seznam zavináč cz ;; ivan shevchuk seznam cz
+= _ = podčiarkovník, @ = zavináč, . = bodka.
+X cat: Що це: телефон чи e-mail? | Телефон: 0905 333 111, +421 2 5555 1234 ;; E-mail: info@obec.sk, jana.mala@post.sk
+= Шукай zavináč (@).
+X sc~: Що означає «Pošlem vám e-mail»? | - | *Я надішлю вам e-mail ;; Надішліть мені e-mail ;; Я подзвоню вам
+= pošlem — надішлю (я).
+F: Обмін контактами після співбесіди || Співбесіда пройшла добре, ви обмінюєтеся контактами.
+S: «Aké je vaše telefónne číslo?» | *0948 222 105. ;; Som z Kyjeva. ;; Volám sa Ivan.
+S: «A e-mail?» (ivan.lysenko@gmail.com) | *ivan bodka lysenko zavináč gmail bodka com ;; ivan zavináč lysenko bodka gmail ;; ivan lysenko gmail
+S: «Zavoláme vám v piatok.» Що це означає? | *тобі подзвонять у п’ятницю ;; ти маєш подзвонити в п’ятницю ;; співбесіда в п’ятницю
+S: Ти не почув(ла) їхній номер. | *Môžete to zopakovať, prosím? ;; Ďakujem, dovidenia. ;; Teší ma.
+R: diktujem číslo ;; zavináč, bodka, pomlčka ;; Môžem dostať vaše číslo? ;; zavolať, poslať
+
+@lesson zoznamenie-opakovanie | Підсумок: анкета і знайомство | Opakovanie: dotazník
+desc: Підсумковий урок розділу: заповнюємо анкету й знайомимося в реальних ситуаціях.
+goal: Розповісти про себе в 5–6 реченнях і розуміти базову анкету.
+out: розповісти: ім’я, країна, місто, вік, робота, мови ;; розуміти поля анкети ;; ставити питання при знайомстві ;; правильно обирати ти / ви
+done: Розділ «Знайомство» пройдено! Далі — числа, ціни й час.
+T: Розповідь про себе || Модель із 5 речень: Volám sa… Som z… Bývam v… Mám … rokov. Pracujem ako… / Som… Hovorím po… || Volám sa Iryna. Som z Ukrajiny. = Мене звати Ірина. Я з України. ;; Bývam v Trenčíne a pracujem ako zdravotná sestra. = Я живу в Тренчині й працюю медсестрою. || 5 речень — і ти представився.
+T: Поля анкети || Meno, Priezvisko, Dátum narodenia, Miesto narodenia, Štátna príslušnosť (громадянство), Adresa, Telefón, E-mail, Podpis (підпис), Dátum. || Štátna príslušnosť: Ukrajina = громадянство: Україна ;; Podpis = підпис || Štátna príslušnosť = громадянство
+T: Питання при знайомстві || Ako sa voláš? Odkiaľ si? Kde bývaš? Čo robíš? Hovoríš po anglicky? — і на «ви»: voláte, ste, bývate, robíte, hovoríte. || Čo robíte? = Ким працюєте? ;; Odkiaľ ste? = Звідки ви? || ти: -š / ви: -te
+W: štátna príslušnosť | громадянство | шта:тна пріслушност | Štátna príslušnosť: Ukrajina. | Громадянство: Україна.
+W: podpis | підпис | подпіс | Tu je miesto na podpis. | Тут місце для підпису.
+W: dotazník | анкета | дотазні:к | Vyplňte dotazník, prosím. | Заповніть анкету, будь ласка.
+W: vyplniť | заповнити | виплніть | Musím vyplniť formulár. | Я мушу заповнити формуляр.
+X doc: Прочитай анкету. | Dotazník | Meno: Mykola ;; Priezvisko: Tkachenko ;; Štátna príslušnosť: Ukrajina ;; Adresa: Námestie SNP 3, Banská Bystrica ;; Povolanie: elektrikár | Ким працює Микола? | *електриком ;; у Банській Бистриці ;; громадянином України
+= Povolanie — професія: elektrikár.
+X mt: З’єднай поле анкети з перекладом. | Priezvisko = прізвище ;; Štátna príslušnosť = громадянство ;; Podpis = підпис ;; Miesto narodenia = місце народження ;; Povolanie = професія
+X do: - | Ahoj, ja som Lukáš. ;; Ahoj, ja som Oleksii. Teší ma. ;; Aj mňa. Odkiaľ si? ;; Som z Ukrajiny, z Poltavy. A ty? ;; Ja som z Martina.
+= Знайомство: ім’я → «приємно» → звідки → відповідь і зустрічне питання.
+X cz: - | Volám sa Halyna. Som {z} Ukrajiny. Bývam {v} Košiciach. Mám štyridsať {rokov}. Pracujem {ako} predavačka. | Короткі службові слова.
+= z (звідки), v (де), rokov (вік 40), ako (ким працюю).
+X wb: - | [Volám] sa Petro. ;; Som [z] Ukrajiny. ;; [Bývam] v Nitre. ;; Hovorím [po] slovensky. | ako ;; na
+X fe: - | Volám sa Petro a [býva>bývam] v Žiline.
+= Про себе — перша особа: bývam.
+X tr: Перетвори на ввічливі питання (на «ви»). | Odkiaľ si? | Odkiaľ ste? ;; Odkiaľ ste
+= si → ste.
+X ce: Виправ речення. | Som ukrajinka z Odesa. | Som Ukrajinka z Odesy. ;; Som Ukrajinka z Odesy
+= Національність — з великої літери; z Odesy.
+X bd: - | Відмінне знайомство!
+> Mária: Dobrý deň, vy ste nová susedka? | *Áno, dobrý deň. Volám sa Olha. ;; Čau, áno. ;; Nie, dovidenia.
+> Mária: Teší ma, ja som Mária Holá. Odkiaľ ste? | *Teší ma. Som z Ukrajiny, z Vinnycie. ;; Som v Ukrajine. ;; Volám sa Ukrajina.
+> Mária: A čo robíte? | *Som účtovníčka, pracujem v kancelárii. ;; Mám tridsať rokov. ;; Bývam tu.
+> Mária: Ak niečo potrebujete, zavolajte mi. Moje číslo je 0911 456 789. | *Ďakujem pekne, ste veľmi milá. ;; Nerozumiem, dovidenia. ;; Niet za čo.
+X rc: - | Dobrý deň, volám sa Viktor Hnatiuk. Mám dvadsaťosem rokov. Som z Ukrajiny, z Rivne. Na Slovensku žijem dva roky. Bývam v Trnave a pracujem ako mechanik v autoservise. Hovorím po ukrajinsky, po anglicky a trochu po slovensky.
+q~: Скільки років Віктору? | *28 ;; 2 ;; 38
+q~: Де він працює? | *в автосервісі ;; у школі ;; на складі
+q~: Як він говорить словацькою? | *трохи ;; вільно ;; не говорить
+X reg: - | Odkiaľ si, kamoš? | informal
+= kamoš — розмовне «друже».
+F: Перша співбесіда в автосервісі || Майстер, пан Bielik, розпитує тебе.
+S: «Dobrý deň, ako sa voláte?» | *Dobrý deň, volám sa Viktor Hnatiuk. ;; Čau, Viktor. ;; Volám sa Slovensko.
+S: «Odkiaľ ste a kde bývate?» | *Som z Ukrajiny, bývam v Trnave. ;; Bývam z Ukrajiny v Trnave. ;; Som Trnava.
+S: «Hovoríte po slovensky?» | *Trochu, ale učím sa. ;; Áno, som Slovák. ;; Po slovensky je Slovensko.
+S: «Vyplňte, prosím, tento dotazník.» Що треба зробити? | *заповнити анкету ;; підписати договір ;; подзвонити
+R: розповідаю про себе в 5 реченнях ;; розумію анкету: priezvisko, štátna príslušnosť, podpis ;; питаю на «ти» і на «ви»
