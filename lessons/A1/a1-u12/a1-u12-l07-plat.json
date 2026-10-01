@@ -1,0 +1,762 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u12-l07-plat",
+      "sectionId": "a1-u12",
+      "level": "A1",
+      "title": "Зарплата",
+      "topic": "Робота і професії",
+      "description": "Mzda, výplata, hrubá / čistá mzda, výplatný termín, prémia — базова лексика зарплати.",
+      "order": 117,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Розуміти, скільки й коли тобі платять.",
+      "completionMessage": "Тема зарплати більше не складна. Далі — дзвінки на роботі.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Робота і професії",
+        "title": "Зарплата",
+        "shortDescription": "Розуміти, скільки й коли тобі платять.",
+        "outcomes": [
+          "розрізняти hrubá і čistá mzda",
+          "казати Výplatu dostávam desiateho",
+          "розуміти prémia",
+          "питати Kedy je výplata?"
+        ],
+        "newWords": [
+          "mzda",
+          "výplata",
+          "hrubá mzda",
+          "čistá mzda",
+          "prémia",
+          "príplatok"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Mzda і výplata",
+          "text": "«Mzda / plat» — зарплата (ставка), «výplata» — виплата, день зарплати: «Kedy je výplata?» — коли зарплата? «Výplatný termín» — дата виплати.",
+          "examples": [
+            {
+              "sk": "Výplatu dostávam desiateho.",
+              "uk": "Зарплату отримую десятого."
+            }
+          ],
+          "shortRule": "výplata = виплата",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Брутто й нетто",
+          "text": "«Hrubá mzda» — брутто (до податків), «čistá mzda» — нетто (на руки). Різниця — «odvody» (внески) і «daň» (податок).",
+          "examples": [
+            {
+              "sk": "Hrubá mzda je 1 200 €, čistá asi 930 €.",
+              "uk": "Брутто 1200 €, нетто близько 930 €."
+            }
+          ],
+          "shortRule": "hrubá ≠ čistá",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Бонуси",
+          "text": "«Prémia» — премія, «odmena» — винагорода, «13. plat» — тринадцята зарплата, «príplatok za noc / víkend» — доплата за ніч / вихідні.",
+          "examples": [
+            {
+              "sk": "Za nočnú zmenu je príplatok.",
+              "uk": "За нічну зміну є доплата."
+            }
+          ],
+          "shortRule": "prémia, príplatok",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u12-l07-plat-w01",
+            "sk": "mzda",
+            "uk": "зарплата (ставка)",
+            "pronunciationUk": "мзда",
+            "exampleSk": "Aká je mzda na tejto pozícii?",
+            "exampleUk": "Яка зарплата на цій посаді?"
+          },
+          {
+            "wordId": "a1-u12-l07-plat-w02",
+            "sk": "výplata",
+            "uk": "виплата зарплати",
+            "pronunciationUk": "ві:плата",
+            "exampleSk": "Výplata je vždy desiateho.",
+            "exampleUk": "Зарплата завжди десятого."
+          },
+          {
+            "wordId": "a1-u12-l07-plat-w03",
+            "sk": "hrubá mzda",
+            "uk": "зарплата брутто",
+            "pronunciationUk": "груба: мзда",
+            "exampleSk": "Hrubá mzda je 1 100 eur.",
+            "exampleUk": "Брутто — 1100 євро."
+          },
+          {
+            "wordId": "a1-u12-l07-plat-w04",
+            "sk": "čistá mzda",
+            "uk": "зарплата нетто",
+            "pronunciationUk": "чіста: мзда",
+            "exampleSk": "Čistá mzda je okolo 850 eur.",
+            "exampleUk": "Нетто — близько 850 євро."
+          },
+          {
+            "wordId": "a1-u12-l07-plat-w05",
+            "sk": "prémia",
+            "uk": "премія",
+            "pronunciationUk": "пре:мія",
+            "exampleSk": "Na Vianoce dostaneme prémiu.",
+            "exampleUk": "На Різдво отримаємо премію."
+          },
+          {
+            "wordId": "a1-u12-l07-plat-w06",
+            "sk": "príplatok",
+            "uk": "доплата",
+            "pronunciationUk": "прі:платок",
+            "exampleSk": "Príplatok za víkend je 30 %.",
+            "exampleUk": "Доплата за вихідні — 30 %."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u12-l07-plat-w01",
+          "sk": "mzda",
+          "uk": "зарплата (ставка)",
+          "pronunciationUk": "мзда",
+          "exampleSk": "Aká je mzda na tejto pozícii?",
+          "exampleUk": "Яка зарплата на цій посаді?",
+          "level": "A1",
+          "topic": "Робота і професії",
+          "tags": [
+            "a1-u12",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u12-l07-plat-w02",
+          "sk": "výplata",
+          "uk": "виплата зарплати",
+          "pronunciationUk": "ві:плата",
+          "exampleSk": "Výplata je vždy desiateho.",
+          "exampleUk": "Зарплата завжди десятого.",
+          "level": "A1",
+          "topic": "Робота і професії",
+          "tags": [
+            "a1-u12",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u12-l07-plat-w03",
+          "sk": "hrubá mzda",
+          "uk": "зарплата брутто",
+          "pronunciationUk": "груба: мзда",
+          "exampleSk": "Hrubá mzda je 1 100 eur.",
+          "exampleUk": "Брутто — 1100 євро.",
+          "level": "A1",
+          "topic": "Робота і професії",
+          "tags": [
+            "a1-u12",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u12-l07-plat-w04",
+          "sk": "čistá mzda",
+          "uk": "зарплата нетто",
+          "pronunciationUk": "чіста: мзда",
+          "exampleSk": "Čistá mzda je okolo 850 eur.",
+          "exampleUk": "Нетто — близько 850 євро.",
+          "level": "A1",
+          "topic": "Робота і професії",
+          "tags": [
+            "a1-u12",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u12-l07-plat-w05",
+          "sk": "prémia",
+          "uk": "премія",
+          "pronunciationUk": "пре:мія",
+          "exampleSk": "Na Vianoce dostaneme prémiu.",
+          "exampleUk": "На Різдво отримаємо премію.",
+          "level": "A1",
+          "topic": "Робота і професії",
+          "tags": [
+            "a1-u12",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u12-l07-plat-w06",
+          "sk": "príplatok",
+          "uk": "доплата",
+          "pronunciationUk": "прі:платок",
+          "exampleSk": "Príplatok za víkend je 30 %.",
+          "exampleUk": "Доплата за вихідні — 30 %.",
+          "level": "A1",
+          "topic": "Робота і професії",
+          "tags": [
+            "a1-u12",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u12-l07-plat-ex01",
+          "lessonId": "a1-u12-l07-plat",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "mzda",
+              "right": "зарплата"
+            },
+            {
+              "left": "výplata",
+              "right": "виплата"
+            },
+            {
+              "left": "hrubá mzda",
+              "right": "брутто"
+            },
+            {
+              "left": "čistá mzda",
+              "right": "нетто"
+            },
+            {
+              "left": "prémia",
+              "right": "премія"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u12-l07-plat-w01",
+            "a1-u12-l07-plat-w02",
+            "a1-u12-l07-plat-w03",
+            "a1-u12-l07-plat-w04",
+            "a1-u12-l07-plat-w05"
+          ]
+        },
+        {
+          "id": "a1-u12-l07-plat-ex02",
+          "lessonId": "a1-u12-l07-plat",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яка з них «на руки»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "hrubá mzda",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "obidve rovnaké",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "čistá mzda",
+              "correct": true
+            }
+          ],
+          "explanation": "čistá — після податків.",
+          "order": 2,
+          "wordIds": [
+            "a1-u12-l07-plat-w01",
+            "a1-u12-l07-plat-w03",
+            "a1-u12-l07-plat-w04"
+          ]
+        },
+        {
+          "id": "a1-u12-l07-plat-ex03",
+          "lessonId": "a1-u12-l07-plat",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Výplatu dostávam "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "desiateho",
+                "desiaty",
+                "desať"
+              ],
+              "correct": "desiateho"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Дата в родовому: desiateho.",
+          "order": 3,
+          "wordIds": [
+            "a1-u12-l07-plat-w02"
+          ]
+        },
+        {
+          "id": "a1-u12-l07-plat-ex04",
+          "lessonId": "a1-u12-l07-plat",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Hrubá mzda завжди менша за čistú.",
+          "correctAnswer": false,
+          "explanation": "Навпаки: hrubá більша.",
+          "order": 4,
+          "wordIds": [
+            "a1-u12-l07-plat-w01",
+            "a1-u12-l07-plat-w03",
+            "a1-u12-l07-plat-w04"
+          ]
+        },
+        {
+          "id": "a1-u12-l07-plat-ex05",
+          "lessonId": "a1-u12-l07-plat",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Na Vianoce dostaneme ______. (премію)",
+          "acceptedAnswers": [
+            "prémiu"
+          ],
+          "hint": "Знахідний.",
+          "explanation": "prémiu.",
+          "order": 5,
+          "wordIds": [
+            "a1-u12-l07-plat-w05"
+          ]
+        },
+        {
+          "id": "a1-u12-l07-plat-ex06",
+          "lessonId": "a1-u12-l07-plat",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Запитай, коли зарплата.",
+          "tokens": [
+            "výplata",
+            "?",
+            "je",
+            "Kedy"
+          ],
+          "correctOrder": [
+            "Kedy",
+            "je",
+            "výplata",
+            "?"
+          ],
+          "explanation": "Kedy je výplata?",
+          "order": 6,
+          "wordIds": [
+            "a1-u12-l07-plat-w02"
+          ]
+        },
+        {
+          "id": "a1-u12-l07-plat-ex07",
+          "lessonId": "a1-u12-l07-plat",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Za nočnú zmenu je príplatku.",
+          "errorToken": "príplatku",
+          "correctToken": "príplatok",
+          "explanation": "Називний: príplatok.",
+          "order": 7,
+          "wordIds": [
+            "a1-u12-l07-plat-w06"
+          ]
+        },
+        {
+          "id": "a1-u12-l07-plat-ex08",
+          "lessonId": "a1-u12-l07-plat",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай розрахунковий лист.",
+          "document": {
+            "title": "Výplatná páska – október",
+            "fields": [
+              {
+                "label": "Hrubá mzda",
+                "value": "1 150,00 €"
+              },
+              {
+                "label": "Príplatky",
+                "value": "120,00 €"
+              },
+              {
+                "label": "Odvody a daň",
+                "value": "330,00 €"
+              },
+              {
+                "label": "Čistá mzda",
+                "value": "940,00 €"
+              }
+            ]
+          },
+          "question": "Скільки ти отримаєш на рахунок?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "1 150 €",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "1 270 €",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "940 €",
+              "correct": true
+            }
+          ],
+          "explanation": "Čistá mzda — 940 €.",
+          "order": 8,
+          "wordIds": [
+            "a1-u12-l07-plat-w01",
+            "a1-u12-l07-plat-w02",
+            "a1-u12-l07-plat-w03",
+            "a1-u12-l07-plat-w04",
+            "a1-u12-l07-plat-w06"
+          ]
+        },
+        {
+          "id": "a1-u12-l07-plat-ex09",
+          "lessonId": "a1-u12-l07-plat",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "На співбесіді ти питаєш про зарплату нетто.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Hrubá alebo?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Čistá koľko je mzda je?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Mzda čisto.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Koľko je čistá mzda?",
+              "correct": true
+            }
+          ],
+          "explanation": "Koľko je čistá mzda?",
+          "order": 9,
+          "wordIds": [
+            "a1-u12-l07-plat-w01",
+            "a1-u12-l07-plat-w03",
+            "a1-u12-l07-plat-w04"
+          ]
+        },
+        {
+          "id": "a1-u12-l07-plat-ex10",
+          "lessonId": "a1-u12-l07-plat",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Додатково до зарплати",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Navyše"
+            },
+            {
+              "id": "c2",
+              "title": "Odpočítava sa"
+            }
+          ],
+          "items": [
+            {
+              "sk": "odvody",
+              "category": "c2"
+            },
+            {
+              "sk": "prémia",
+              "category": "c1"
+            },
+            {
+              "sk": "príplatok za noc",
+              "category": "c1"
+            },
+            {
+              "sk": "daň",
+              "category": "c2"
+            },
+            {
+              "sk": "13. plat",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Плюси й мінуси.",
+          "order": 10,
+          "wordIds": [
+            "a1-u12-l07-plat-w05",
+            "a1-u12-l07-plat-w06"
+          ]
+        },
+        {
+          "id": "a1-u12-l07-plat-ex11",
+          "lessonId": "a1-u12-l07-plat",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери слова про гроші на роботі.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "mzda",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "príplatok",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "tím",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "prémia",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "porada",
+              "correct": false
+            }
+          ],
+          "explanation": "Зарплата.",
+          "order": 11,
+          "wordIds": [
+            "a1-u12-l07-plat-w01",
+            "a1-u12-l07-plat-w03",
+            "a1-u12-l07-plat-w04",
+            "a1-u12-l07-plat-w05",
+            "a1-u12-l07-plat-w06"
+          ]
+        },
+        {
+          "id": "a1-u12-l07-plat-ex12",
+          "lessonId": "a1-u12-l07-plat",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kolega",
+              "sk": "Už prišla výplata?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Áno, prišla nie.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Výplata je mzda.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Ešte nie, príde zajtra.",
+              "correct": true
+            }
+          ],
+          "explanation": "Статус.",
+          "order": 12,
+          "wordIds": [
+            "a1-u12-l07-plat-w01",
+            "a1-u12-l07-plat-w02",
+            "a1-u12-l07-plat-w03",
+            "a1-u12-l07-plat-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Розмова про вакансію",
+        "description": "Агентка розповідає про умови.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Hrubá mzda je 1 300 eur.» Що це?",
+            "options": [
+              {
+                "sk": "на руки",
+                "correct": false
+              },
+              {
+                "sk": "премія",
+                "correct": false
+              },
+              {
+                "sk": "брутто, до податків",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти питаєш, скільки на руки.",
+            "options": [
+              {
+                "sk": "Hrubá je čistá?",
+                "correct": false
+              },
+              {
+                "sk": "Koľko je hrubá?",
+                "correct": false
+              },
+              {
+                "sk": "A koľko je to v čistom?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Okolo tisíc eur, plus príplatky za noc.» Що ще?",
+            "options": [
+              {
+                "sk": "премія на Різдво",
+                "correct": false
+              },
+              {
+                "sk": "доплати за нічні",
+                "correct": true
+              },
+              {
+                "sk": "безкоштовне житло",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти питаєш, коли виплата.",
+            "options": [
+              {
+                "sk": "Kedy výplata je termín?",
+                "correct": false
+              },
+              {
+                "sk": "Výplata kedy dostať?",
+                "correct": false
+              },
+              {
+                "sk": "Kedy je výplatný termín?",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тема зарплати більше не складна. Далі — дзвінки на роботі."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тема зарплати більше не складна. Далі — дзвінки на роботі.",
+        "nowYouKnow": [
+          "mzda, výplata, výplatný termín",
+          "hrubá / čistá mzda",
+          "prémia, príplatok"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u12-l08-telefon-v-praci",
+          "title": "Телефон на роботі"
+        }
+      }
+    }
+  ]
+}

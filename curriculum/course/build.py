@@ -771,6 +771,9 @@ def cross_checks(lessons: list[dict]) -> list[str]:
                 warn.append(f"WARN word '{w['sk']}' owned by {seen[k]} and {l['id']}")
             else:
                 seen[k] = l["id"]
+        for w in l["words"]:
+            if re.search(r"[A-Za-z\u0100-\u024F\u3000-\u9fff]", w["pronunciationUk"]) and w["sk"] not in ("PSČ", "MHD", "PIN", "e-shop"):
+                warn.append(f"WARN pron mixed script in {l['id']}: {w['sk']} -> {w['pronunciationUk']}")
         types = [e["type"] for e in l["exercises"]]
         for t in set(types):
             if types.count(t) > (7 if l["level"] == "A0" else 4):
