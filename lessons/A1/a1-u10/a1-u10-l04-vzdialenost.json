@@ -1,0 +1,769 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u10-l04-vzdialenost",
+      "sectionId": "a1-u10",
+      "level": "A1",
+      "title": "Відстань і райони",
+      "topic": "Місто й місцевий відмінок",
+      "description": "Метри, кілометри, район міста й околиці: kilometer, meter, vzdialenosť, okolie, mestská časť, predmestie.",
+      "order": 94,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Описати, де розташований район і як далеко до потрібного місця.",
+      "completionMessage": "Ти описуєш відстані й райони. Далі — державні установи.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Місто й місцевий відмінок",
+        "title": "Відстань і райони",
+        "shortDescription": "Описати, де розташований район і як далеко до потрібного місця.",
+        "outcomes": [
+          "казати Je to päť kilometrov",
+          "називати mestská časť, okolie, predmestie",
+          "питати Ako ďaleko je…?",
+          "описувати своє розташування"
+        ],
+        "newWords": [
+          "kilometer",
+          "meter",
+          "vzdialenosť",
+          "okolie",
+          "mestská časť",
+          "predmestie"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Метри й кілометри",
+          "text": "meter (м), kilometer (км): 1 meter / kilometer, 2–4 metre / kilometre, 5+ metrov / kilometrov. «Ako ďaleko je to?» — як далеко це?",
+          "examples": [
+            {
+              "sk": "Je to dvesto metrov.",
+              "uk": "Це двісті метрів."
+            },
+            {
+              "sk": "Do práce mám tri kilometre.",
+              "uk": "До роботи в мене три кілометри."
+            }
+          ],
+          "shortRule": "5+ → kilometrov",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Райони",
+          "text": "«Mestská časť» — міський район (Petržalka, Ružinov…), «štvrť» (квартал, теж район), «okolie» — околиці, «predmestie» — передмістя, «centrum».",
+          "examples": [
+            {
+              "sk": "Bývame v mestskej časti Ružinov.",
+              "uk": "Ми живемо в районі Ружинов."
+            },
+            {
+              "sk": "Okolie je zelené.",
+              "uk": "Околиці зелені."
+            }
+          ],
+          "shortRule": "mestská časť = район",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Час і відстань",
+          "text": "«Desať minút pešo / autom / autobusom». «Za mestom» — за містом. «Na okraji mesta» — на краю міста.",
+          "examples": [
+            {
+              "sk": "Bývam na okraji mesta.",
+              "uk": "Я живу на краю міста."
+            },
+            {
+              "sk": "Je to dvadsať minút autom.",
+              "uk": "Це 20 хвилин машиною."
+            }
+          ],
+          "shortRule": "na okraji, za mestom",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u10-l04-vzdialenost-w01",
+            "sk": "kilometer",
+            "uk": "кілометр",
+            "pronunciationUk": "кілометер",
+            "exampleSk": "Do centra je to päť kilometrov.",
+            "exampleUk": "До центру п’ять кілометрів."
+          },
+          {
+            "wordId": "a1-u10-l04-vzdialenost-w02",
+            "sk": "meter",
+            "uk": "метр",
+            "pronunciationUk": "метер",
+            "exampleSk": "Zastávka je sto metrov odtiaľto.",
+            "exampleUk": "Зупинка за сто метрів звідси."
+          },
+          {
+            "wordId": "a1-u10-l04-vzdialenost-w03",
+            "sk": "vzdialenosť",
+            "uk": "відстань",
+            "pronunciationUk": "вздіаленость",
+            "exampleSk": "Aká je vzdialenosť do Viedne?",
+            "exampleUk": "Яка відстань до Відня?"
+          },
+          {
+            "wordId": "a1-u10-l04-vzdialenost-w04",
+            "sk": "okolie",
+            "uk": "околиці",
+            "pronunciationUk": "околіє",
+            "exampleSk": "Okolie mesta je krásne.",
+            "exampleUk": "Околиці міста гарні."
+          },
+          {
+            "wordId": "a1-u10-l04-vzdialenost-w05",
+            "sk": "mestská časť",
+            "uk": "район міста",
+            "pronunciationUk": "местска: часть",
+            "exampleSk": "V ktorej mestskej časti bývate?",
+            "exampleUk": "У якому районі ви живете?"
+          },
+          {
+            "wordId": "a1-u10-l04-vzdialenost-w06",
+            "sk": "predmestie",
+            "uk": "передмістя",
+            "pronunciationUk": "предместіє",
+            "exampleSk": "Bývame na predmestí, je tam ticho.",
+            "exampleUk": "Ми живемо в передмісті, там тихо."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u10-l04-vzdialenost-w01",
+          "sk": "kilometer",
+          "uk": "кілометр",
+          "pronunciationUk": "кілометер",
+          "exampleSk": "Do centra je to päť kilometrov.",
+          "exampleUk": "До центру п’ять кілометрів.",
+          "level": "A1",
+          "topic": "Місто й місцевий відмінок",
+          "tags": [
+            "a1-u10",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u10-l04-vzdialenost-w02",
+          "sk": "meter",
+          "uk": "метр",
+          "pronunciationUk": "метер",
+          "exampleSk": "Zastávka je sto metrov odtiaľto.",
+          "exampleUk": "Зупинка за сто метрів звідси.",
+          "level": "A1",
+          "topic": "Місто й місцевий відмінок",
+          "tags": [
+            "a1-u10",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u10-l04-vzdialenost-w03",
+          "sk": "vzdialenosť",
+          "uk": "відстань",
+          "pronunciationUk": "вздіаленость",
+          "exampleSk": "Aká je vzdialenosť do Viedne?",
+          "exampleUk": "Яка відстань до Відня?",
+          "level": "A1",
+          "topic": "Місто й місцевий відмінок",
+          "tags": [
+            "a1-u10",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u10-l04-vzdialenost-w04",
+          "sk": "okolie",
+          "uk": "околиці",
+          "pronunciationUk": "околіє",
+          "exampleSk": "Okolie mesta je krásne.",
+          "exampleUk": "Околиці міста гарні.",
+          "level": "A1",
+          "topic": "Місто й місцевий відмінок",
+          "tags": [
+            "a1-u10",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u10-l04-vzdialenost-w05",
+          "sk": "mestská časť",
+          "uk": "район міста",
+          "pronunciationUk": "местска: часть",
+          "exampleSk": "V ktorej mestskej časti bývate?",
+          "exampleUk": "У якому районі ви живете?",
+          "level": "A1",
+          "topic": "Місто й місцевий відмінок",
+          "tags": [
+            "a1-u10",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u10-l04-vzdialenost-w06",
+          "sk": "predmestie",
+          "uk": "передмістя",
+          "pronunciationUk": "предместіє",
+          "exampleSk": "Bývame na predmestí, je tam ticho.",
+          "exampleUk": "Ми живемо в передмісті, там тихо.",
+          "level": "A1",
+          "topic": "Місто й місцевий відмінок",
+          "tags": [
+            "a1-u10",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u10-l04-vzdialenost-ex01",
+          "lessonId": "a1-u10-l04-vzdialenost",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "kilometer",
+              "right": "кілометр"
+            },
+            {
+              "left": "meter",
+              "right": "метр"
+            },
+            {
+              "left": "vzdialenosť",
+              "right": "відстань"
+            },
+            {
+              "left": "okolie",
+              "right": "околиці"
+            },
+            {
+              "left": "predmestie",
+              "right": "передмістя"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u10-l04-vzdialenost-w01",
+            "a1-u10-l04-vzdialenost-w02",
+            "a1-u10-l04-vzdialenost-w03",
+            "a1-u10-l04-vzdialenost-w04",
+            "a1-u10-l04-vzdialenost-w06"
+          ]
+        },
+        {
+          "id": "a1-u10-l04-vzdialenost-ex02",
+          "lessonId": "a1-u10-l04-vzdialenost",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Do práce mám tri "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "kilometrov",
+                "kilometer",
+                "kilometre"
+              ],
+              "correct": "kilometre"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "2–4 → kilometre.",
+          "order": 2,
+          "wordIds": [
+            "a1-u10-l04-vzdialenost-w01",
+            "a1-u10-l04-vzdialenost-w02",
+            "a1-u10-l04-vzdialenost-w03"
+          ]
+        },
+        {
+          "id": "a1-u10-l04-vzdialenost-ex03",
+          "lessonId": "a1-u10-l04-vzdialenost",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Je to päťsto "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "meter",
+                "metrov",
+                "metre"
+              ],
+              "correct": "metrov"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "5+ → metrov.",
+          "order": 3,
+          "wordIds": [
+            "a1-u10-l04-vzdialenost-w02",
+            "a1-u10-l04-vzdialenost-w03"
+          ]
+        },
+        {
+          "id": "a1-u10-l04-vzdialenost-ex04",
+          "lessonId": "a1-u10-l04-vzdialenost",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Bývam na okraji mesta»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Я живу на краю міста",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Я живу в центрі",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Я живу за кордоном",
+              "correct": false
+            }
+          ],
+          "explanation": "okraj — край.",
+          "order": 4,
+          "wordIds": [
+            "a1-u10-l04-vzdialenost-w03"
+          ]
+        },
+        {
+          "id": "a1-u10-l04-vzdialenost-ex05",
+          "lessonId": "a1-u10-l04-vzdialenost",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Mestská časť» — це район міста.",
+          "correctAnswer": true,
+          "explanation": "Petržalka — mestská časť Bratislavy.",
+          "order": 5,
+          "wordIds": [
+            "a1-u10-l04-vzdialenost-w03",
+            "a1-u10-l04-vzdialenost-w05"
+          ]
+        },
+        {
+          "id": "a1-u10-l04-vzdialenost-ex06",
+          "lessonId": "a1-u10-l04-vzdialenost",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Ako ______ je to? (далеко)",
+          "acceptedAnswers": [
+            "ďaleko"
+          ],
+          "explanation": "Ako ďaleko…?",
+          "order": 6,
+          "wordIds": [
+            "a1-u10-l04-vzdialenost-w03"
+          ]
+        },
+        {
+          "id": "a1-u10-l04-vzdialenost-ex07",
+          "lessonId": "a1-u10-l04-vzdialenost",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Запитай, у якому районі людина живе.",
+          "tokens": [
+            "mestskej",
+            "ktorej",
+            "bývate",
+            "V",
+            "časti",
+            "?"
+          ],
+          "correctOrder": [
+            "V",
+            "ktorej",
+            "mestskej",
+            "časti",
+            "bývate",
+            "?"
+          ],
+          "explanation": "v ktorej + місцевий.",
+          "order": 7,
+          "wordIds": [
+            "a1-u10-l04-vzdialenost-w03",
+            "a1-u10-l04-vzdialenost-w05"
+          ]
+        },
+        {
+          "id": "a1-u10-l04-vzdialenost-ex08",
+          "lessonId": "a1-u10-l04-vzdialenost",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Do centra je to päť kilometre.",
+          "errorToken": "kilometre",
+          "correctToken": "kilometrov",
+          "explanation": "5+ → kilometrov.",
+          "order": 8,
+          "wordIds": [
+            "a1-u10-l04-vzdialenost-w01",
+            "a1-u10-l04-vzdialenost-w03"
+          ]
+        },
+        {
+          "id": "a1-u10-l04-vzdialenost-ex09",
+          "lessonId": "a1-u10-l04-vzdialenost",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай оголошення.",
+          "document": {
+            "title": "Prenájom domu",
+            "fields": [
+              {
+                "label": "Lokalita",
+                "value": "predmestie Žiliny"
+              },
+              {
+                "label": "Vzdialenosť do centra",
+                "value": "7 km"
+              },
+              {
+                "label": "MHD",
+                "value": "zastávka 200 m"
+              },
+              {
+                "label": "Okolie",
+                "value": "les, tiché prostredie"
+              }
+            ]
+          },
+          "question": "Як далеко зупинка?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "7 км",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "2 км",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "200 м",
+              "correct": true
+            }
+          ],
+          "explanation": "MHD: zastávka 200 m.",
+          "order": 9,
+          "wordIds": [
+            "a1-u10-l04-vzdialenost-w03",
+            "a1-u10-l04-vzdialenost-w04",
+            "a1-u10-l04-vzdialenost-w06"
+          ]
+        },
+        {
+          "id": "a1-u10-l04-vzdialenost-ex10",
+          "lessonId": "a1-u10-l04-vzdialenost",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Колега питає, далеко ти живеш (12 км, 25 хв автобусом).",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Ďaleko je dvanásť.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Asi dvanásť kilometrov, dvadsaťpäť minút autobusom.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Kilometrov dvanásť pešo.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Dvanásť kilometre autobus.",
+              "correct": false
+            }
+          ],
+          "explanation": "Відстань + час.",
+          "order": 10,
+          "wordIds": [
+            "a1-u10-l04-vzdialenost-w01",
+            "a1-u10-l04-vzdialenost-w03"
+          ]
+        },
+        {
+          "id": "a1-u10-l04-vzdialenost-ex11",
+          "lessonId": "a1-u10-l04-vzdialenost",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Центр чи околиця?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Centrum"
+            },
+            {
+              "id": "c2",
+              "title": "Okraj / predmestie"
+            }
+          ],
+          "items": [
+            {
+              "sk": "pole",
+              "category": "c2"
+            },
+            {
+              "sk": "pešia zóna",
+              "category": "c1"
+            },
+            {
+              "sk": "námestie",
+              "category": "c1"
+            },
+            {
+              "sk": "radnica",
+              "category": "c1"
+            },
+            {
+              "sk": "rodinné domy",
+              "category": "c2"
+            },
+            {
+              "sk": "les",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Типове розташування.",
+          "order": 11,
+          "wordIds": [
+            "a1-u10-l04-vzdialenost-w03",
+            "a1-u10-l04-vzdialenost-w06"
+          ]
+        },
+        {
+          "id": "a1-u10-l04-vzdialenost-ex12",
+          "lessonId": "a1-u10-l04-vzdialenost",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні форми.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "dva kilometre",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "jeden meter",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "päť kilometrov",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "dva kilometrov",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "päť kilometre",
+              "correct": false
+            }
+          ],
+          "explanation": "1 / 2–4 / 5+.",
+          "order": 12,
+          "wordIds": [
+            "a1-u10-l04-vzdialenost-w01",
+            "a1-u10-l04-vzdialenost-w02",
+            "a1-u10-l04-vzdialenost-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Вибір квартири за розташуванням",
+        "description": "Ти порівнюєш дві квартири з чоловіком.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Prvý byt je v centre, druhý na predmestí.» Де другий?",
+            "options": [
+              {
+                "sk": "у центрі",
+                "correct": false
+              },
+              {
+                "sk": "за кордоном",
+                "correct": false
+              },
+              {
+                "sk": "у передмісті",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Ako ďaleko je predmestie od práce?» (8 км)",
+            "options": [
+              {
+                "sk": "Osem kilometre.",
+                "correct": false
+              },
+              {
+                "sk": "Osem kilometrov.",
+                "correct": true
+              },
+              {
+                "sk": "Ôsmy kilometer.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«A v centre?» (2 км)",
+            "options": [
+              {
+                "sk": "Dva kilometrov.",
+                "correct": false
+              },
+              {
+                "sk": "Dve kilometrov.",
+                "correct": false
+              },
+              {
+                "sk": "Dva kilometre.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Na predmestí je pekné okolie a ticho.» Що він підкреслює?",
+            "options": [
+              {
+                "sk": "гарні околиці й тиша",
+                "correct": true
+              },
+              {
+                "sk": "галас",
+                "correct": false
+              },
+              {
+                "sk": "близько до роботи",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти описуєш відстані й райони. Далі — державні установи."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти описуєш відстані й райони. Далі — державні установи.",
+        "nowYouKnow": [
+          "meter, kilometer (1 / 2–4 / 5+)",
+          "vzdialenosť, Ako ďaleko?",
+          "mestská časť, okolie, predmestie, na okraji mesta"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u10-l05-instituce",
+          "title": "Державні установи"
+        }
+      }
+    }
+  ]
+}
