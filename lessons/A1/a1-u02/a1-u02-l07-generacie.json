@@ -1,0 +1,800 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u02-l07-generacie",
+      "sectionId": "a1-u02",
+      "level": "A1",
+      "title": "Покоління й вік",
+      "topic": "Родина: mať і присвійні займенники",
+      "description": "Mladý, starý, dospelý, tínedžer, dôchodca, bábätko — етапи життя.",
+      "order": 17,
+      "xpReward": 25,
+      "estimatedMinutes": 20,
+      "isPublished": true,
+      "intro": "Описувати людей за віком і етапом життя.",
+      "completionMessage": "Тепер ти описуєш людей будь-якого віку. Далі — шлюб і стосунки.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Родина: mať і присвійні займенники",
+        "title": "Покоління й вік",
+        "shortDescription": "Описувати людей за віком і етапом життя.",
+        "outcomes": [
+          "називати етапи життя",
+          "казати mladý / starý",
+          "розуміти dospelý, dôchodca",
+          "описувати вік членів родини"
+        ],
+        "newWords": [
+          "bábätko",
+          "tínedžer",
+          "dospelý",
+          "dôchodca",
+          "mladý",
+          "starý",
+          "zdarma"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 20,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Етапи життя",
+          "text": "bábätko (немовля), dieťa (дитина), tínedžer (підліток), dospelý (дорослий), dôchodca / dôchodkyňa (пенсіонер / пенсіонерка).",
+          "examples": [
+            {
+              "sk": "Máme bábätko, má tri mesiace.",
+              "uk": "У нас немовля, йому три місяці."
+            },
+            {
+              "sk": "Dospelí platia plnú cenu.",
+              "uk": "Дорослі платять повну ціну."
+            }
+          ],
+          "shortRule": "bábätko → dieťa → tínedžer → dospelý → dôchodca",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Mladý і starý",
+          "text": "«Mladý» — молодий, «starý» — старий (і про людей, і про речі). Ввічливіше про людей: «starší pán» (літній пан), «staršia pani».",
+          "examples": [
+            {
+              "sk": "Je to mladá rodina.",
+              "uk": "Це молода сім’я."
+            },
+            {
+              "sk": "Pomôžte staršej pani.",
+              "uk": "Допоможіть літній пані."
+            }
+          ],
+          "shortRule": "starší pán — ввічливо",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Ціни й знижки за віком",
+          "text": "У транспорті й музеях: «deti do 6 rokov zdarma», «študenti», «dôchodcovia nad 62 rokov». «Zdarma» — безкоштовно.",
+          "examples": [
+            {
+              "sk": "Deti do 6 rokov cestujú zdarma.",
+              "uk": "Діти до 6 років їдуть безкоштовно."
+            },
+            {
+              "sk": "Zľava pre dôchodcov.",
+              "uk": "Знижка для пенсіонерів."
+            }
+          ],
+          "shortRule": "zdarma = безкоштовно",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u02-l07-generacie-w01",
+            "sk": "bábätko",
+            "uk": "немовля",
+            "pronunciationUk": "ба:бетко",
+            "exampleSk": "Bábätko spí.",
+            "exampleUk": "Немовля спить."
+          },
+          {
+            "wordId": "a1-u02-l07-generacie-w02",
+            "sk": "tínedžer",
+            "uk": "підліток",
+            "pronunciationUk": "ті:неджер",
+            "exampleSk": "Môj syn je tínedžer, má pätnásť.",
+            "exampleUk": "Мій син підліток, йому п’ятнадцять."
+          },
+          {
+            "wordId": "a1-u02-l07-generacie-w03",
+            "sk": "dospelý",
+            "uk": "дорослий",
+            "pronunciationUk": "доспелі:",
+            "exampleSk": "Lístok pre dvoch dospelých.",
+            "exampleUk": "Квиток для двох дорослих."
+          },
+          {
+            "wordId": "a1-u02-l07-generacie-w04",
+            "sk": "dôchodca",
+            "uk": "пенсіонер",
+            "pronunciationUk": "дуохотца",
+            "exampleSk": "Môj otec je dôchodca.",
+            "exampleUk": "Мій батько — пенсіонер."
+          },
+          {
+            "wordId": "a1-u02-l07-generacie-w05",
+            "sk": "mladý",
+            "uk": "молодий",
+            "pronunciationUk": "младі:",
+            "exampleSk": "Sme mladá rodina.",
+            "exampleUk": "Ми молода сім’я."
+          },
+          {
+            "wordId": "a1-u02-l07-generacie-w06",
+            "sk": "starý",
+            "uk": "старий",
+            "pronunciationUk": "старі:",
+            "exampleSk": "Dom je starý, ale pekný.",
+            "exampleUk": "Будинок старий, але гарний."
+          },
+          {
+            "wordId": "a1-u02-l07-generacie-w07",
+            "sk": "zdarma",
+            "uk": "безкоштовно",
+            "pronunciationUk": "здарма",
+            "exampleSk": "Vstup je zdarma.",
+            "exampleUk": "Вхід безкоштовний."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u02-l07-generacie-w01",
+          "sk": "bábätko",
+          "uk": "немовля",
+          "pronunciationUk": "ба:бетко",
+          "exampleSk": "Bábätko spí.",
+          "exampleUk": "Немовля спить.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u02-l07-generacie-w02",
+          "sk": "tínedžer",
+          "uk": "підліток",
+          "pronunciationUk": "ті:неджер",
+          "exampleSk": "Môj syn je tínedžer, má pätnásť.",
+          "exampleUk": "Мій син підліток, йому п’ятнадцять.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u02-l07-generacie-w03",
+          "sk": "dospelý",
+          "uk": "дорослий",
+          "pronunciationUk": "доспелі:",
+          "exampleSk": "Lístok pre dvoch dospelých.",
+          "exampleUk": "Квиток для двох дорослих.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u02-l07-generacie-w04",
+          "sk": "dôchodca",
+          "uk": "пенсіонер",
+          "pronunciationUk": "дуохотца",
+          "exampleSk": "Môj otec je dôchodca.",
+          "exampleUk": "Мій батько — пенсіонер.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u02-l07-generacie-w05",
+          "sk": "mladý",
+          "uk": "молодий",
+          "pronunciationUk": "младі:",
+          "exampleSk": "Sme mladá rodina.",
+          "exampleUk": "Ми молода сім’я.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u02-l07-generacie-w06",
+          "sk": "starý",
+          "uk": "старий",
+          "pronunciationUk": "старі:",
+          "exampleSk": "Dom je starý, ale pekný.",
+          "exampleUk": "Будинок старий, але гарний.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u02-l07-generacie-w07",
+          "sk": "zdarma",
+          "uk": "безкоштовно",
+          "pronunciationUk": "здарма",
+          "exampleSk": "Vstup je zdarma.",
+          "exampleUk": "Вхід безкоштовний.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u02-l07-generacie-ex01",
+          "lessonId": "a1-u02-l07-generacie",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "bábätko",
+              "right": "немовля"
+            },
+            {
+              "left": "tínedžer",
+              "right": "підліток"
+            },
+            {
+              "left": "dospelý",
+              "right": "дорослий"
+            },
+            {
+              "left": "dôchodca",
+              "right": "пенсіонер"
+            },
+            {
+              "left": "zdarma",
+              "right": "безкоштовно"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u02-l07-generacie-w01",
+            "a1-u02-l07-generacie-w02",
+            "a1-u02-l07-generacie-w03",
+            "a1-u02-l07-generacie-w04",
+            "a1-u02-l07-generacie-w07"
+          ]
+        },
+        {
+          "id": "a1-u02-l07-generacie-ex02",
+          "lessonId": "a1-u02-l07-generacie",
+          "type": "dialogue_order",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Віднови порядок реплік у діалозі.",
+          "lines": [
+            {
+              "id": "l5",
+              "sk": "dôchodca"
+            },
+            {
+              "id": "l2",
+              "sk": "dieťa"
+            },
+            {
+              "id": "l4",
+              "sk": "dospelý"
+            },
+            {
+              "id": "l3",
+              "sk": "tínedžer"
+            },
+            {
+              "id": "l1",
+              "sk": "bábätko"
+            }
+          ],
+          "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5"
+          ],
+          "explanation": "Етапи від наймолодшого до найстаршого.",
+          "order": 2,
+          "wordIds": [
+            "a1-u02-l07-generacie-w01",
+            "a1-u02-l07-generacie-w02",
+            "a1-u02-l07-generacie-w03",
+            "a1-u02-l07-generacie-w04"
+          ]
+        },
+        {
+          "id": "a1-u02-l07-generacie-ex03",
+          "lessonId": "a1-u02-l07-generacie",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Je to "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "mladá",
+                "mladý",
+                "mladé"
+              ],
+              "correct": "mladá"
+            },
+            {
+              "text": " rodina."
+            }
+          ],
+          "explanation": "rodina — mladá.",
+          "order": 3,
+          "wordIds": [
+            "a1-u02-l07-generacie-w05"
+          ]
+        },
+        {
+          "id": "a1-u02-l07-generacie-ex04",
+          "lessonId": "a1-u02-l07-generacie",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Deti do 6 rokov zdarma»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "діти до 6 років не допускаються",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "6 дітей безкоштовно",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "діти до 6 років — безкоштовно",
+              "correct": true
+            }
+          ],
+          "explanation": "do 6 rokov — до 6 років; zdarma — безкоштовно.",
+          "order": 4
+        },
+        {
+          "id": "a1-u02-l07-generacie-ex05",
+          "lessonId": "a1-u02-l07-generacie",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "У трамваї літня пані стоїть. Ти хочеш поступитися.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Sadnite, stará pani.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Nech sa páči, sadnite si.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Dôchodca, sadnúť!",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Stará, sadni si.",
+              "correct": false
+            }
+          ],
+          "explanation": "Ввічлива пропозиція без слова «stará».",
+          "order": 5,
+          "wordIds": [
+            "a1-u02-l07-generacie-w04",
+            "a1-u02-l07-generacie-w06"
+          ]
+        },
+        {
+          "id": "a1-u02-l07-generacie-ex06",
+          "lessonId": "a1-u02-l07-generacie",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Сказати про літню жінку «staršia pani» — ввічливіше, ніж «stará pani».",
+          "correctAnswer": true,
+          "explanation": "starší / staršia — ввічливий евфемізм.",
+          "order": 6,
+          "wordIds": [
+            "a1-u02-l07-generacie-w06"
+          ]
+        },
+        {
+          "id": "a1-u02-l07-generacie-ex07",
+          "lessonId": "a1-u02-l07-generacie",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Vstup je ______. (безкоштовно)",
+          "acceptedAnswers": [
+            "zdarma"
+          ],
+          "explanation": "zdarma — безкоштовно.",
+          "order": 7,
+          "wordIds": [
+            "a1-u02-l07-generacie-w07"
+          ]
+        },
+        {
+          "id": "a1-u02-l07-generacie-ex08",
+          "lessonId": "a1-u02-l07-generacie",
+          "type": "real_schedule",
+          "skill": [
+            "reading",
+            "real_life",
+            "time"
+          ],
+          "instruction": "Подивись на розклад і обери відповідь.",
+          "schedule": {
+            "title": "Cenník – Zoologická záhrada",
+            "rows": [
+              {
+                "day": "Dospelí",
+                "hours": "12 €"
+              },
+              {
+                "day": "Deti 3 – 15 rokov",
+                "hours": "6 €"
+              },
+              {
+                "day": "Deti do 3 rokov",
+                "hours": "zdarma"
+              },
+              {
+                "day": "Dôchodcovia",
+                "hours": "8 €"
+              }
+            ]
+          },
+          "question": "Скільки заплатить родина: 2 дорослих + дитина 2 роки?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "18 €",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "24 €",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "30 €",
+              "correct": false
+            }
+          ],
+          "explanation": "2 × 12 € + 0 € = 24 €.",
+          "order": 8,
+          "wordIds": [
+            "a1-u02-l07-generacie-w03",
+            "a1-u02-l07-generacie-w04",
+            "a1-u02-l07-generacie-w07"
+          ]
+        },
+        {
+          "id": "a1-u02-l07-generacie-ex09",
+          "lessonId": "a1-u02-l07-generacie",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Ціна за віком (у зоопарку вище)",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Платять повну ціну"
+            },
+            {
+              "id": "c2",
+              "title": "Знижка"
+            },
+            {
+              "id": "c3",
+              "title": "Безкоштовно"
+            }
+          ],
+          "items": [
+            {
+              "sk": "dieťa 10 rokov",
+              "category": "c2"
+            },
+            {
+              "sk": "bábätko",
+              "category": "c3"
+            },
+            {
+              "sk": "tínedžer 16 rokov",
+              "category": "c1"
+            },
+            {
+              "sk": "dôchodca",
+              "category": "c2"
+            },
+            {
+              "sk": "dospelý",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Порівняй із цінником.",
+          "order": 9,
+          "wordIds": [
+            "a1-u02-l07-generacie-w01",
+            "a1-u02-l07-generacie-w02",
+            "a1-u02-l07-generacie-w03",
+            "a1-u02-l07-generacie-w04"
+          ]
+        },
+        {
+          "id": "a1-u02-l07-generacie-ex10",
+          "lessonId": "a1-u02-l07-generacie",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що твій батько — пенсіонер.",
+          "tokens": [
+            "dôchodca",
+            "otec",
+            ".",
+            "je",
+            "Môj"
+          ],
+          "correctOrder": [
+            "Môj",
+            "otec",
+            "je",
+            "dôchodca",
+            "."
+          ],
+          "explanation": "je dôchodca.",
+          "order": 10,
+          "wordIds": [
+            "a1-u02-l07-generacie-w04"
+          ]
+        },
+        {
+          "id": "a1-u02-l07-generacie-ex11",
+          "lessonId": "a1-u02-l07-generacie",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Lístok pre dvoch dospelý a jedno dieťa.",
+          "errorToken": "dospelý",
+          "correctToken": "dospelých",
+          "explanation": "pre dvoch dospelých — знахідний мн.",
+          "order": 11,
+          "wordIds": [
+            "a1-u02-l07-generacie-w03"
+          ]
+        },
+        {
+          "id": "a1-u02-l07-generacie-ex12",
+          "lessonId": "a1-u02-l07-generacie",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери слова про вік або етап життя.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "kufor",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "tínedžer",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "bábätko",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "dôchodca",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "zdarma",
+              "correct": false
+            }
+          ],
+          "explanation": "zdarma, kufor — не про вік.",
+          "order": 12,
+          "wordIds": [
+            "a1-u02-l07-generacie-w01",
+            "a1-u02-l07-generacie-w02",
+            "a1-u02-l07-generacie-w04",
+            "a1-u02-l07-generacie-w07"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Квитки в музей",
+        "description": "Ти з родиною купуєш квитки в музей.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Касирка: «Koľko lístkov?» (2 дорослих, 2 дітей)",
+            "options": [
+              {
+                "sk": "Dva pre dospelých a dva detské.",
+                "correct": true
+              },
+              {
+                "sk": "Štyri dospelé.",
+                "correct": false
+              },
+              {
+                "sk": "Dva dospelý a dva deti.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Koľko majú deti rokov?» (2 і 8)",
+            "options": [
+              {
+                "sk": "Dva roky a osem rokov sú.",
+                "correct": false
+              },
+              {
+                "sk": "Druhý a ôsmy.",
+                "correct": false
+              },
+              {
+                "sk": "Dva a osem.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Dieťa do troch rokov je zdarma.» Що це означає для тебе?",
+            "options": [
+              {
+                "sk": "за обох дітей не платиш",
+                "correct": false
+              },
+              {
+                "sk": "за дворічну дитину не платиш",
+                "correct": true
+              },
+              {
+                "sk": "за дорослих не платиш",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Ste dôchodca?» (ні)",
+            "options": [
+              {
+                "sk": "Nie, nie som.",
+                "correct": true
+              },
+              {
+                "sk": "Nie, som tínedžer.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, nie som.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тепер ти описуєш людей будь-якого віку. Далі — шлюб і стосунки."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тепер ти описуєш людей будь-якого віку. Далі — шлюб і стосунки.",
+        "nowYouKnow": [
+          "bábätko, dieťa, tínedžer, dospelý, dôchodca",
+          "mladý / starý, starší pán",
+          "zdarma, zľava pre…"
+        ],
+        "newWordsCount": 7,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u02-l08-vztahy",
+          "title": "Шлюб і стосунки"
+        }
+      }
+    }
+  ]
+}

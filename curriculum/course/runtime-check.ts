@@ -84,7 +84,9 @@ function correctAnswer(x: R): { good: string | string[]; bad?: string | string[]
         picked.push(pool.splice(i, 1)[0]);
       }
       if (pool.length) return { good: ["<unused tokens>"] };
-      return { good: picked, bad: [...x.tokens] };
+      const rev = [...picked].reverse();
+      const n = (v: string) => v.trim().toLowerCase().replace(/[.!?]/g, "");
+      return { good: picked, bad: n(joinTokens(rev)) === n(x.correctSentence) ? undefined : rev };
     }
     case "sentence_order":
       return { good: x.correctOrder, bad: [...x.tokens] };

@@ -1,0 +1,458 @@
+@unit a1-u01 | Я і ти: дієслово byť | Ja a ty: sloveso byť
+
+@lesson ja-som-ty-si | Ja som, ty si | Ja som, ty si
+desc: Дієслово byť (бути) в однині: ja som, ty si — і чому займенник часто пропускають.
+goal: Правильно казати «я є», «ти є» і будувати перші речення з byť.
+out: відмінювати byť: som, si ;; пропускати займенник: Som Olena ;; ставити som / si на друге місце ;; будувати речення «Я — студент»
+done: Ти знаєш перші форми byť. Далі — on, ona, ono.
+T: Byť — бути || В українській «бути» в теперішньому часі майже зникло («я — студент»). У словацькій byť обов’язкове: «Ja som študent» — я (є) студент. «Ty si doma» — ти (є) вдома. || Ja som Petro. = Я — Петро. ;; Ty si Anna? = Ти — Анна? || ja som, ty si — обов’язково
+T: Займенник можна пропустити || Форма дієслова вже показує особу, тому «ja» і «ty» часто пропускають: «Som unavený» (я втомлений), «Si doma?» (ти вдома?). Займенник лишають для наголосу: «Ja som tu, ty si tam». || Som v práci. = Я на роботі. ;; Si Ukrajinec? = Ти українець? || Som… / Si… без займенника — норма.
+T: Порядок слів || Som і si — «слабкі» слова, вони люблять друге місце в реченні: «Dnes som doma» (а не «Dnes doma som»). Почни з одного слова — і одразу som. || Teraz som v obchode. = Зараз я в магазині. ;; Kde si? = Де ти? || som / si — на другому місці
+mis: Ja študent. => Ja som študent. ;; Dnes doma som. => Dnes som doma.
+W: ja | я | я | Ja som Taras. | Я — Тарас.
+W: ty | ти | ті | Ty si môj kamarát. | Ти мій друг.
+W: byť | бути | біть | Chcem byť lekár. | Я хочу бути лікарем.
+W: študent | студент | штудент | Som študent medicíny. | Я студент медицини.
+W: doma | удома | дома | Večer som doma. | Увечері я вдома.
+W: unavený | втомлений | унавені: | Dnes som veľmi unavený. | Сьогодні я дуже втомлений.
+X mt: З’єднай. | ja som = я (є) ;; ty si = ти (є) ;; som doma = я вдома ;; si unavený? = ти втомлений?
+X dd: Обери форму. | Ja [*som/si/je] z Ukrajiny.
+= ja → som.
+X dd: Обери форму. | Ty [*si/som/sú] doma?
+= ty → si.
+X sc~: Що означає «Som unavený»? | - | *Я втомлений ;; Ти втомлений ;; Він утомлений
+= som — перша особа: я.
+X tf: - | - | Речення «Ja študent» граматично правильне словацькою. | F
+= Потрібне дієслово: Ja som študent.
+X so: - | Скажи, що ти сьогодні вдома. | Dnes som doma.
+= som стоїть на другому місці.
+X sb: - | Запитай друга, де він. | Kde si teraz?
+= Kde + si на другому місці.
+X fb: Допиши форму byť. | Ty ___ môj sused? | si | Ти — si.
+= Ty si…?
+X fe: - | Dnes [je>som] v práci do piatej.
+= Про себе — som.
+X ce: Виправ речення. | Ja študent z Ukrajiny. | Ja som študent z Ukrajiny. ;; Som študent z Ukrajiny.
+= Пропущено som.
+X cat: Із som чи з si? | som: ja, Ja … unavený., … doma (про себе) ;; si: ty, Ty … doma?, Kde … ?
+= som — я, si — ти.
+X dr: - | Kolegyňa: Si unavený? | *Áno, som veľmi unavený. ;; Áno, si unavený. ;; Áno, je unavený.
+= Відповідаєш про себе — som.
+X ms: Обери правильні речення. | - | *Som doma. ;; *Ty si Peter? ;; *Dnes som v práci. ;; Dnes doma som. ;; Ty som doma.
+= Ty si; som на другому місці.
+F: Дзвінок від друга || Друг Ján телефонує тобі ввечері.
+S: «Ahoj, kde si?» | *Som doma. ;; Si doma. ;; Doma som ja si.
+S: «Si unavený?» (так) | *Áno, som unavený. ;; Áno, si unavený. ;; Áno, unavený je.
+S: «Ty si študent alebo pracuješ?» (студент) | *Som študent. ;; Si študent. ;; Študent som si.
+S: «A zajtra si v škole?» (так) | *Áno, zajtra som v škole. ;; Áno, zajtra v škole som. ;; Áno, si v škole.
+R: ja som, ty si ;; займенник можна пропустити ;; som / si на другому місці ;; byť обов’язкове
+
+@lesson on-ona-ono | On, ona, ono — je | On, ona, ono
+desc: Третя особа: on je, ona je, ono je — і як займенник залежить від роду іменника.
+goal: Говорити про третю особу й обирати on / ona / ono.
+out: казати on je, ona je, ono je ;; заміняти іменник займенником ;; розуміти рід предметів ;; описувати людей і речі
+done: Тепер ти говориш про інших. Далі — множина: my, vy, oni.
+T: Je — для всіх трьох || «On je» (він є), «ona je» (вона є), «ono je» (воно є). Форма одна — je. Займенник часто пропускають: «Je doma» — він/вона вдома. || On je lekár. = Він лікар. ;; Ona je z Košíc. = Вона з Кошиць. || on / ona / ono + je
+T: Ono — середній рід || «Ono» — для іменників середнього роду: dieťa (дитина), auto, mesto. «Kde je dieťa? — Ono je v škôlke» (частіше просто «Je v škôlke»). || Dieťa je choré. = Дитина хвора. ;; Auto je nové. = Машина нова. || dieťa — ono (як «воно»)
+T: Предмети теж «він» і «вона» || Як в українській: stôl (він) je veľký, taška (вона) je ťažká. Але рід не завжди збігається з українським: auto — ono (машина — вона), problém — on. || Kde je taška? — Je tu. = Де сумка? — Тут. ;; Auto je drahé. = Машина дорога. || Рід дивимося за словацьким словом.
+W: on | він | он | On je môj kolega. | Він мій колега.
+W: ona | вона | она | Ona je veľmi milá. | Вона дуже мила.
+W: ono | воно | оно | Dieťa? Ono spí. | Дитина? Вона спить.
+W: dieťa | дитина | дзієтя | Dieťa má tri roky. | Дитині три роки.
+W: kolega | колега | колеґа | Môj kolega je zo Žiliny. | Мій колега з Жиліни.
+W: milý | милий, приємний | мілі: | Predavač je milý. | Продавець приємний.
+X mt: З’єднай іменник із займенником. | brat = on ;; sestra = ona ;; dieťa = ono
+X dd: Обери займенник. | Auto? [*Ono/On/Ona] je v garáži.
+= auto — середній рід: ono.
+X dd: Обери форму. | Kolegyňa [*je/som/si] z Poľska.
+= kolegyňa — вона → je.
+X cat: On, ona чи ono? | on: stôl, kolega, otec ;; ona: taška, ulica, sestra ;; ono: auto, dieťa, mesto
+= Закінчення підказують рід: -a — часто жін., -o / -e — часто сер.
+X tf: - | - | «Auto» в словацькій — жіночого роду, як «машина». | F
+= auto — середній рід (ono).
+X sc~: «Je doma.» Хто вдома? | - | *він або вона (з контексту) ;; лише я ;; лише ти
+= je — третя особа однини.
+X fb: Допиши займенник. | Toto je moja sestra. ___ je učiteľka. | Ona | Сестра — вона.
+= Ona je učiteľka.
+X so: - | Скажи, що дитина хвора. | Dieťa je choré.
+= dieťa je + прикметник середнього роду.
+X sb: - | Скажи, що твій колега зі Жиліни. | Môj kolega je zo Žiliny.
+= Môj kolega je + odkiaľ.
+X fe: - | Moja kolegyňa [som>je] veľmi milá.
+= kolegyňa → je.
+X rc: - | Toto je Marta. Je zo Slovenska, z Prešova. Je lekárka. Jej syn Matej je študent. Ich auto je staré, ale dobré.
+q~: Ким працює Марта? | *лікаркою ;; студенткою ;; вчителькою
+q~: Яка в них машина? | *стара, але добра ;; нова й дорога ;; погана
+X ms: Обери правильні речення. | - | *On je doma. ;; *Ona je z Prešova. ;; *Dieťa je malé. ;; Ona som lekárka. ;; Ono si auto.
+= Третя особа — je.
+F: Знайомлю колег || Ти показуєш новій колезі фото команди.
+S: «Kto je to?» (Петер, колега) | *To je Peter, je môj kolega. ;; To je Peter, som kolega. ;; Peter, si kolega.
+S: «A ona?» (Яна, з Братислави) | *To je Jana, je z Bratislavy. ;; To je Jana, som z Bratislavy. ;; Jana, ona si z Bratislavy.
+S: «Je milá?» | *Áno, je veľmi milá. ;; Áno, som milá. ;; Áno, milý je.
+S: «A čie je to auto?» (Петера, воно нове) | *Je Petrovo, je nové. ;; Je Petrovo, som nový. ;; Ono si nová.
+R: on, ona, ono — je ;; займенник за родом словацького слова ;; auto, dieťa — ono ;; je часто без займенника
+
+@lesson my-vy-oni | My, vy, oni — множина | My sme, vy ste, oni sú
+desc: Множина дієслова byť: my sme, vy ste, oni sú — і ввічливе «vy ste».
+goal: Відмінювати byť у множині й використовувати «vy ste» для ввічливості.
+out: казати my sme, vy ste, oni sú ;; використовувати vy ste для однієї людини ввічливо ;; розрізняти oni / ony (розмовно — oni) ;; знати повну таблицю byť
+done: Повна таблиця byť твоя! Далі — заперечення.
+T: Множина || my sme (ми є), vy ste (ви є), oni sú (вони є). «Sme z Ukrajiny» — ми з України. «Ste tu nový?» — ви тут новий? || My sme rodina. = Ми — родина. ;; Oni sú v práci. = Вони на роботі. || sme, ste, sú
+T: Vy ste — ввічливо || «Vy ste» — і множина, і ввічливе звертання до однієї людини: «Pán Novák, vy ste z Bratislavy?» Прикметник тоді — в однині: «Ste unavený?» (до чоловіка). || Ste z Kyjeva? = Ви з Києва? ;; Pani doktorka, ste tu zajtra? = Пані лікарко, ви тут завтра? || Vy ste — ввічливе «ви»
+T: Повна таблиця || ja som, ty si, on/ona/ono je, my sme, vy ste, oni sú. Це найважливіша таблиця рівня A1 — повтори її вголос. || Sme tu. = Ми тут. ;; Sú doma. = Вони вдома. || som, si, je, sme, ste, sú
+W: my | ми | мі | My sme z Ukrajiny. | Ми з України.
+W: vy | ви | ві | Vy ste nová kolegyňa? | Ви нова колега?
+W: oni | вони | оні | Oni sú na dovolenke. | Вони у відпустці.
+W: rodina | сім’я, родина | родзіна | Naša rodina je veľká. | Наша сім’я велика.
+W: kolegovia | колеги | колеґові | Kolegovia sú na porade. | Колеги на нараді.
+W: dovolenka | відпустка | доволенка | V auguste som na dovolenke. | У серпні я у відпустці.
+X mt: З’єднай. | my = sme ;; vy = ste ;; oni = sú ;; ja = som ;; ty = si
+X dd: Обери форму. | My [*sme/ste/sú] z Charkova.
+= my → sme.
+X dd: Обери форму. | Deti [*sú/je/sme] v škole.
+= deti — вони → sú.
+X dd: Обери форму (ввічливо до пана). | Pán Horváth, [*ste/si/je] tu zajtra?
+= Ввічливо — vy ste.
+X tf: - | - | «Vy ste» можна сказати одній людині з ввічливості. | T
+= Так, vykanie: Vy ste…
+X fb: Допиши. | Oni ___ na dovolenke v Chorvátsku. | sú | Вони — sú.
+= oni sú.
+X cz: - | Ja {som} z Odesy. Ty {si} zo Lvova? My {sme} kolegovia. Oni {sú} v kancelárii. | Повна таблиця byť.
+= som, si, sme, sú.
+X so: - | Скажи, що ви з дружиною разом п’ять років. | Sme spolu päť rokov.
+= Sme spolu + час.
+X fe: - | Moji rodičia [je>sú] na Ukrajine.
+= rodičia — вони → sú.
+X cat: Однина чи множина? | Однина: som, si, je ;; Множина: sme, ste, sú
+= Шість форм byť.
+X dr: - | Úradník: Ste tu s rodinou? | *Áno, sme tu spolu. ;; Áno, sú tu spolu. ;; Áno, si tu.
+= Про себе й родину — sme.
+X sb: - | Запитай колег, чи вони вже на роботі. | Ste už v práci?
+= Ste + už + v práci.
+X ms: Обери правильні речення. | - | *My sme doma. ;; *Vy ste milá. ;; *Oni sú z Nitry. ;; My sú doma. ;; Oni ste tu.
+= sme / ste / sú.
+F: Сімейна поїздка || Ти з сім’єю поселяєшся в пансіонат.
+S: Господиня: «Vy ste rodina Melnyk?» | *Áno, my sme Melnykovci. ;; Áno, oni sú Melnyk. ;; Áno, si Melnyk.
+S: «Koľko vás je?» | *Sme štyria – dvaja dospelí a dve deti. ;; Sú štyri. ;; Ste štyria.
+S: «Deti sú unavené?» | *Áno, sú veľmi unavené. ;; Áno, sme unavené. ;; Áno, je unavené.
+S: Ти питаєш, чи господарі тут уранці. | *Ste tu ráno? ;; Sú tu ráno vy? ;; Si tu ráno, pani?
+R: my sme, vy ste, oni sú ;; vy ste — ввічливо ;; som, si, je, sme, ste, sú
+
+@lesson zapor-nie-som | Заперечення: nie som | Zápor: nie som
+desc: Заперечення дієслова byť: nie som, nie si, nie je… — пишеться окремо (на відміну від інших дієслів).
+goal: Заперечувати з byť і правильно писати «nie som».
+out: заперечувати: nie som, nie je, nie sme ;; пам’ятати: nie з byť окремо ;; відповідати Nie, nie som ;; виправляти неправильну інформацію
+done: Ти вмієш заперечувати. Далі — питання з byť.
+T: Nie + byť || Заперечення byť: nie som, nie si, nie je, nie sme, nie ste, nie sú. Увага: тут «nie» пишеться ОКРЕМО. З іншими дієсловами — разом: nemám, nechcem. || Nie som doma. = Я не вдома. ;; To nie je pravda. = Це неправда. || nie som — окремо; nemám — разом
+T: Виправляємо || «Nie som Rus, som Ukrajinec» — я не росіянин, я українець. «Nie je to ďaleko» — це недалеко. Корисне слово: «ale» — але. || Nie som študent, som robotník. = Я не студент, я робітник. ;; Nie je zima, je teplo. = Не холодно, тепло. || nie…, ale…
+T: Порядок слів || У запереченні «nie» стоїть перед формою byť: «Dnes nie som v práci». Але в коротких реченнях часто: «Nie, nie som». || Dnes nie som v práci. = Сьогодні я не на роботі. ;; Peter tu nie je. = Петера тут немає. || nie + som / je…
+mis: Nesom doma. => Nie som doma. ;; Ja nie mám čas. => Ja nemám čas.
+W: nie je | немає; не є | ніє є | Šéf tu dnes nie je. | Шефа сьогодні тут немає.
+W: pravda | правда | правда | To je pravda. | Це правда.
+W: ale | але | алє | Nie som Slovák, ale žijem tu. | Я не словак, але живу тут.
+W: robotník | робітник | роботні:к | Môj brat je robotník v továrni. | Мій брат — робітник на фабриці.
+W: chorý | хворий | хорі: | Nie som chorý, len unavený. | Я не хворий, лише втомлений.
+X dd: Обери правильне написання. | Dnes [*nie som/niesom/nesom] v práci.
+= nie som — окремо.
+X dd: Обери. | Ja [*nemám/nie mám] čas.
+= З mať — разом: nemám.
+X tr: Зроби речення заперечним. | Som chorý. | Nie som chorý. ;; Nie som chorý
+= Som → Nie som.
+X tr: Зроби речення заперечним. | Peter je doma. | Peter nie je doma. ;; Peter nie je doma
+= je → nie je.
+X sc~: Що означає «To nie je pravda»? | - | *Це неправда ;; Це правда ;; Це не тут
+= nie je pravda — неправда.
+X dr: - | Kolega: Si Rus? | *Nie, nie som Rus, som Ukrajinec. ;; Nie, som nie Rus. ;; Áno, nie som.
+= Nie som…, som…
+X fe: - | Moja žena [nieje>nie je] doma.
+= nie je — два слова.
+X cat: Окремо чи разом? | Окремо (з byť): nie som, nie je, nie sú ;; Разом (з іншими дієсловами): nemám, nechcem, neviem
+= Тільки byť має окреме nie.
+X so: - | Скажи, що ти не хворий, а втомлений. | Nie som chorý, som unavený.
+= nie som…, som…
+X fb: Допиши. | Šéf tu dnes ___. (немає) | nie je | Два слова.
+= nie je — немає.
+X tf: - | - | «Nesom» — правильна форма заперечення. | F
+= Правильно: nie som.
+X np: Тебе плутають із колегою. | *Prepáčte, nie som Ivan, som Oleh. ;; Prepáčte, nesom Ivan. ;; Ivan nie, áno. ;; Nie Ivan som.
+= Nie som…, som…
+X ms: Обери правильні речення. | - | *Nie som doma. ;; *Nemám čas. ;; *Dnes tu nie je. ;; Nesom doma. ;; Nie mám čas.
+= nie som (окремо), nemám (разом).
+F: Плутанина на рецепції || Рецепціоністка в лікарні плутає твої дані.
+S: «Vy ste pán Kovalenko?» (ти — Коваль) | *Nie, nie som Kovalenko, som Koval. ;; Nie, som Kovalenko. ;; Áno, nie.
+S: «Ste zo Slovenska?» | *Nie, nie som zo Slovenska, som z Ukrajiny. ;; Nie, som nie zo Slovenska. ;; Áno, nie som.
+S: «Lekár tu dnes nie je.» Що це означає? | *лікаря сьогодні немає ;; лікар сьогодні тут ;; лікар хворий
+S: «Je to súrne?» (ні) | *Nie, nie je to súrne. ;; Nie, nieje súrne. ;; Nie, súrne som.
+R: nie som, nie si, nie je… — окремо ;; nemám, nechcem — разом ;; nie…, ale… ;; To nie je pravda.
+
+@lesson otazky-s-byt | Питання з byť | Otázky: Si…? Je…?
+desc: Питання «так / ні» з byť та короткі відповіді: Si doma? — Áno, som. / Nie, nie som.
+goal: Ставити питання з byť і давати короткі відповіді.
+out: ставити питання інтонацією: Si doma? ;; ставити byť на початок: Je to ďaleko? ;; відповідати коротко: Áno, som. ;; використовувати však? (чи не так?)
+done: Ти вже питаєш і відповідаєш. Далі — Kto je to? Čo je to?
+T: Питання без питального слова || Найпростіше — підвищити інтонацію: «Si doma?» Дієслово часто стоїть на початку: «Je to ďaleko?», «Sú deti v škole?». || Ste z Ukrajiny? = Ви з України? ;; Je pani Malá v kancelárii? = Пані Мала в кабінеті? || Si…? Je…? Ste…?
+T: Короткі відповіді || Відповідають дієсловом: «Si unavený? — Áno, som.» / «Nie, nie som.» Не кажи лише «Áno, je» про себе! || Je to drahé? — Áno, je. = Це дорого? — Так. ;; Ste tu nový? — Nie, nie som. = Ви тут новий? — Ні. || Áno, som. / Nie, nie som.
+T: Však? — чи не так? || У кінці твердження «však?» робить його питанням-підтвердженням: «Je to dobré, však?» — це добре, чи не так? Розмовно: «…, nie?» || Je zima, však? = Холодно, правда? ;; Si z Ukrajiny, nie? = Ти з України, так? || …, však?
+W: však | чи не так; адже | фшак | Je pekne, však? | Гарно, чи не так?
+W: nový | новий | нові: | Ste tu nový? | Ви тут новий?
+W: hotový | готовий | готові: | Je obed hotový? | Обід готовий?
+W: istý | певний, упевнений | істі: | Si si istý? | Ти впевнений?
+W: voľný | вільний | вольні: | Je tento stôl voľný? | Цей стіл вільний?
+X so: - | Запитай, чи цей стіл вільний. | Je tento stôl voľný?
+= Je + підмет + прикметник?
+X dr: - | Čašník: Ste pripravení objednať? | *Áno, sme. ;; Áno, je. ;; Áno, som pripravený je.
+= Відповідь дієсловом: sme.
+X dd: Обери коротку відповідь. | Si unavená? — Nie, [*nie som/nie je/nie si].
+= Про себе — nie som.
+X sc~: Що означає «Je zima, však?»? | - | *Холодно, правда ж? ;; Чи зима зараз? ;; Холодно, але…
+= však? — чи не так?
+X tr: Перетвори на питання. | Obed je hotový. | Je obed hotový? ;; Je obed hotový
+= Je на початок + знак питання.
+X mt: З’єднай питання з відповіддю. | Si doma? = Áno, som. ;; Je to ďaleko? = Nie, nie je. ;; Ste z Kyjeva? = Áno, sme. ;; Sú deti hore? = Nie, nie sú.
+X tf: - | - | На питання «Si istý?» можна відповісти «Áno, som.» | T
+= Так, коротка відповідь із som.
+X fb: Допиши відповідь. | Je ten stôl voľný? — Áno, ___. | je | Про стіл — je.
+= Áno, je.
+X np: Ти в кафе біля вільного столика й хочеш перепитати людей поруч. | *Prepáčte, je tento stôl voľný? ;; Voľný stôl si? ;; Stôl je, áno? ;; Prepáčte, som voľný?
+= Je tento stôl voľný?
+X ce: Виправ відповідь. | Si nový? — Áno, si. | Áno, som. ;; Áno, som
+= Про себе — som.
+X cat: Питання чи твердження? | Питання: Si doma?, Je to drahé?, Ste hotoví? ;; Твердження: Som doma., Je to drahé., Sme hotoví.
+= Знак питання й інтонація.
+X sb: - | Запитай, чи друг упевнений. | Si si istý?
+= Si si istý? — двічі si (byť + зворотне).
+X ms: Обери правильні короткі відповіді на «Ste unavení?» (до вас двох). | - | *Áno, sme. ;; *Nie, nie sme. ;; Áno, ste. ;; Nie, nie sú.
+= Ви двоє → ми: sme.
+F: Перший день на складі || Бригадир знайомиться з новими працівниками.
+S: «Vy ste nový?» (так) | *Áno, som. ;; Áno, ste. ;; Áno, je nový.
+S: «Ste pripravený začať?» | *Áno, som pripravený. ;; Áno, si pripravený. ;; Áno, pripravený je.
+S: Ти уточнюєш, чи це твоя шафка (skrinka). | *Je to moja skrinka? ;; Si moja skrinka? ;; Som skrinka moja?
+S: «Je ti zima? Tu je chladno, však?» (так) | *Áno, je tu chladno. ;; Áno, som chladno. ;; Áno, si zima.
+R: Si…? Je…? Ste…? ;; Áno, som. / Nie, nie som. ;; …, však? ;; byť на початку питання
+
+@lesson kto-co-je-to | Хто це? Що це? | Kto je to? Čo je to?
+desc: Питальні слова kto (хто) і čo (що), вказівне to / toto / tamto.
+goal: Запитувати й пояснювати, хто чи що перед тобою.
+out: питати Kto je to? / Čo je to? ;; відповідати To je… ;; розрізняти toto (це тут) і tamto (он те) ;; питати Čo je toto po slovensky?
+done: Тепер ти можеш дізнатися назву будь-чого. Далі — професії з byť.
+T: Kto? Čo? || «Kto je to?» — хто це? (про людей). «Čo je to?» — що це? (про речі). Відповідь: «To je…» — це… || Kto je to? — To je môj šéf. = Хто це? — Це мій шеф. ;; Čo je to? — To je kľúč od skrine. = Що це? — Це ключ від шафи. || Kto — людина, čo — річ
+T: To, toto, tamto || «To» — це (загалом), «toto» — оце (тут, близько), «tamto» — он те (далеко). «Čo je toto?» — що оце? «Kto je tamto?» — хто он там? || Toto je môj stôl. = Оце мій стіл. ;; Tamto je naša škola. = Он там наша школа. || toto — тут, tamto — там
+T: Як це словацькою? || «Čo je toto po slovensky?» — як це словацькою? «Ako sa volá toto?» — як це називається? Супер-фраза для вивчення мови! || Ako sa volá toto po slovensky? = Як це називається словацькою? ;; To sa volá vešiak. = Це називається вішалка. || Ako sa volá…?
+W: kto | хто | кто | Kto je tvoj šéf? | Хто твій шеф?
+W: čo | що | чо | Čo je to? | Що це?
+W: toto | оце | тото | Toto je môj kľúč. | Оце мій ключ.
+W: tamto | он те | тамто | Tamto je stanica. | Он там вокзал.
+W: šéf | шеф, начальник | ше:ф | Šéf je dnes na porade. | Шеф сьогодні на нараді.
+W: vec | річ | вец | Čia je táto vec? | Чия це річ?
+X dd: Обери питальне слово. | [*Kto/Čo] je to? — To je moja suseda.
+= Про людину — kto.
+X dd: Обери питальне слово. | [*Čo/Kto] je to? — To je nabíjačka.
+= Про річ — čo.
+X mt: З’єднай. | kto = хто ;; čo = що ;; toto = оце ;; tamto = он те ;; vec = річ
+X dr: - | Kolega ukazuje na fotku: Kto je to? | *To je moja dcéra. ;; Čo je to dcéra. ;; To je dcéra kto.
+= To je…
+X np: Ти бачиш на кухні дивний прилад і хочеш дізнатися назву. | *Ako sa volá toto po slovensky? ;; Kto je toto? ;; Toto je čo kto? ;; Čo je kto?
+= Ako sa volá toto…?
+X cat: Kto чи čo? | Kto: šéf, lekárka, sused ;; Čo: kľúč, taška, nabíjačka
+= kto — люди, čo — речі.
+X tf: - | - | «Tamto» вказує на щось далеке. | T
+= tamto — он те, далеко.
+X fb: Допиши. | ___ je to? — To je pán Novák. | Kto |
+= Kto — про людину.
+X so: - | Запитай, хто твій шеф. | Kto je tvoj šéf?
+= Kto + je + …
+X sb: - | Скажи, що он там вокзал. | Tamto je stanica.
+= Tamto je…
+X rc: - | Toto je moja kancelária. Toto je môj stôl a tamto je stôl kolegu Mateja. Matej je dnes chorý. Kto je tá žena pri okne? To je naša šéfka, pani Bieliková.
+q~: Чий стіл далі? | *Матея ;; шефині ;; оповідача
+q~: Хто жінка біля вікна? | *шефиня ;; колега Матей ;; клієнтка
+X hm: Дитина показує пальцем на пташку й питає: «Mami, čo je to?» Чого вона хоче? | *дізнатися назву ;; щоб мама прогнала птаха ;; дізнатися, чия птаха
+= čo je to — що це.
+X ms: Обери правильні питання. | - | *Kto je to? ;; *Čo je toto? ;; *Ako sa volá toto? ;; Kto je kľúč? ;; Čo je pani Malá?
+= kto — люди, čo — речі.
+F: Перший день в офісі || Колега Зузана показує тобі офіс.
+S: Ти бачиш чоловіка в кабінеті. | *Kto je to? ;; Čo je to? ;; Čo je on?
+S: «To je náš šéf, pán Kráľ.» Хто це? | *шеф, пан Краль ;; клієнт ;; охоронець
+S: На столі незнайомий прилад. | *Čo je toto? ;; Kto je toto? ;; Toto je kto?
+S: «To je skartovačka.» Ти хочеш, щоб вона повторила назву. | *Prepáč, ako sa to volá? ;; Prepáč, kto to je? ;; Prepáč, tamto?
+R: Kto je to? / Čo je to? ;; To je… ;; toto / tamto ;; Ako sa volá toto po slovensky?
+
+@lesson povolania-s-byt | Професії з byť | Povolania
+desc: Більше професій, жіночі форми й речення «Som…», «Chcem byť…», «Pracujem ako…».
+goal: Розповісти про свою професію й професії родичів.
+out: називати 12+ професій ;; утворювати жіночі форми ;; казати Pracujem ako… ;; казати Chcem byť… (орудний відмінок — початок)
+done: Ти говориш про професії. Далі — опис людей.
+T: Професії || elektrikár, murár (муляр), stolár (столяр), šofér / vodič, opatrovateľka (доглядальниця), upratovačka (прибиральниця), čašník / čašníčka, programátor, účtovníčka (бухгалтерка), zdravotná sestra (медсестра). || Som murár. = Я муляр. ;; Mama je opatrovateľka. = Мама — доглядальниця. || Som + професія
+T: Жіночі форми || Типові суфікси: -ár → -árka (elektrikár — elektrikárka), -teľ → -teľka (učiteľ — učiteľka), -ník → -níčka (čašník — čašníčka), -ista → -istka. || programátor = programátorka ;; čašník = čašníčka || Жінка: -ka
+T: Pracujem ako… / Chcem byť… || «Pracujem ako murár» — працюю мулярем (ako + називний). «Chcem byť lekárom» — хочу бути лікарем (після byť у мріях часто орудний: lekárom, učiteľkou). || Pracujem ako upratovačka. = Я працюю прибиральницею. ;; Syn chce byť hasičom. = Син хоче бути пожежником. || ako + називний
+W: elektrikár | електрик | електріка:р | Elektrikár príde zajtra. | Електрик прийде завтра.
+W: murár | муляр | мура:р | Otec robí murára. | Батько працює мулярем.
+W: opatrovateľka | доглядальниця | опатрователька | Pracuje ako opatrovateľka v Rakúsku. | Вона працює доглядальницею в Австрії.
+W: upratovačka | прибиральниця | упратовачка | Upratovačka prichádza ráno. | Прибиральниця приходить уранці.
+W: účtovníčka | бухгалтерка | у:чтовні:чка | Účtovníčka má otázku. | У бухгалтерки питання.
+W: zdravotná sestra | медсестра | здравотна: сестра | Zdravotná sestra je v ambulancii. | Медсестра в амбулаторії.
+X mt: З’єднай. | elektrikár = електрик ;; murár = муляр ;; opatrovateľka = доглядальниця ;; upratovačka = прибиральниця ;; účtovníčka = бухгалтерка
+X mt: З’єднай чоловічу і жіночу форму. | elektrikár = elektrikárka ;; učiteľ = učiteľka ;; čašník = čašníčka ;; programátor = programátorka
+X dd: Обери. | Pracujem ako [*čašníčka/čašník] (говорить жінка).
+= Жінка — čašníčka.
+X dd: Обери. | Syn chce byť [*hasičom/hasič/hasiča].
+= Chcieť byť + орудний: hasičom.
+X cat: Де працює ця людина? | na stavbe: murár, elektrikár ;; v nemocnici: zdravotná sestra, lekár ;; v kancelárii: účtovníčka, programátor
+= Професія → місце.
+X sc: Хто доглядає літніх людей? | - | *opatrovateľka ;; účtovníčka ;; murár ;; programátorka
+= opatrovateľka — доглядальниця.
+X tf: - | - | «Pracujem ako murár» означає «Я працюю мулярем». | T
+= ako + професія.
+X fb: Допиши. | Pracujem ___ elektrikár. | ako |
+= Pracujem ako…
+X so: - | Скажи, що мама — медсестра. | Moja mama je zdravotná sestra.
+= je + професія.
+X dr: - | Agentúra: Akú prácu robíte? | *Som murár, mám desať rokov praxe. ;; Som murárka práca. ;; Pracujem murár ako.
+= Som + професія.
+X rc: - | V našej firme pracuje päť Ukrajincov. Oleh je elektrikár, Vasyl a Ihor sú murári. Halyna pracuje ako upratovačka a jej dcéra Kateryna je účtovníčka v kancelárii.
+q~: Хто працює в офісі? | *Катерина ;; Галина ;; Олег
+q~: Скільки мулярів? | *двоє ;; один ;; п’ятеро
+X ms: Обери жіночі назви професій. | - | *opatrovateľka ;; *upratovačka ;; *programátorka ;; murár ;; elektrikár
+= Жіночі — на -ka.
+F: Розмова з агенцією || Агентка з працевлаштування уточнює дані твоєї родини.
+S: «Akú prácu robíte?» (ти — столяр) | *Som stolár. ;; Som stolárka. ;; Robím ako stolár je.
+S: «A vaša manželka?» (доглядальниця) | *Pracuje ako opatrovateľka. ;; Pracuje ako opatrovateľ. ;; Je opatrovať.
+S: «Čím chce byť váš syn?» (лікарем) | *Chce byť lekárom. ;; Chce byť lekár je. ;; Chce lekárka.
+S: «Hľadáme murára. Poznáte niekoho?» | *Áno, môj brat je murár. ;; Áno, som murárka. ;; Nie, murár je.
+R: elektrikár, murár, opatrovateľka, upratovačka, účtovníčka, zdravotná sestra ;; -ár → -árka, -ník → -níčka ;; Pracujem ako… ;; Chcem byť lekárom
+
+@lesson vlastnosti | Який ти? Риси й стани | Aký si?
+desc: Прикметники стану й характеру з byť: šťastný, smutný, nervózny, pokojný, hladný, smädný.
+goal: Описати свій стан і характер за допомогою byť + прикметник.
+out: казати Som hladný / smädný ;; описувати емоції: šťastný, smutný, nervózny ;; узгоджувати прикметник з родом ;; питати Aký je…?
+done: Тепер ти описуєш, як почуваєшся. Далі — де хто перебуває.
+T: Стан зараз || «Som hladný» — я голодний, «som smädný» — хочу пити, «som unavený» — втомлений, «som chorý» — хворий. Жінка: hladná, smädná, unavená, chorá. || Som hladná. = Я голодна. ;; Deti sú smädné. = Діти хочуть пити. || чоловік -ý, жінка -á
+T: Емоції || šťastný (щасливий), smutný (сумний), nervózny (знервований), pokojný (спокійний), spokojný (задоволений), nahnevaný (сердитий). || Som šťastná, mám novú prácu. = Я щаслива, у мене нова робота. ;; Šéf je nahnevaný. = Шеф сердитий. || Som + прикметник
+T: Множина й «ви» || Множина: «Sme unavení» (чоловіки або змішана група), «Sme unavené» (лише жінки або діти/предмети). Ввічливе vy + однина прикметника: «Ste unavený?» (до чоловіка). || Sme spokojní. = Ми задоволені. ;; Ste hladná? = Ви голодна? || -í (чол. мн.) / -é (жін. мн.)
+W: hladný | голодний | гладні: | Som hladný ako vlk. | Я голодний як вовк.
+W: smädný | спраглий (хоче пити) | смедні: | Si smädná? Tu je voda. | Хочеш пити? Ось вода.
+W: šťastný | щасливий | щастні: | Sme šťastní, že sme spolu. | Ми щасливі, що ми разом.
+W: smutný | сумний | смутні: | Prečo si smutná? | Чому ти сумна?
+W: nervózny | знервований | нерво:зні | Pred pohovorom som nervózny. | Перед співбесідою я нервую.
+W: spokojný | задоволений | спокойні: | Šéf je spokojný s prácou. | Шеф задоволений роботою.
+X mt: З’єднай. | hladný = голодний ;; smädný = спраглий ;; šťastný = щасливий ;; smutný = сумний ;; nervózny = знервований
+X dd: Обери (говорить жінка). | Som [*hladná/hladný] a smädná.
+= Жінка — hladná.
+X dd: Обери. | Deti sú [*unavené/unavený/unavená].
+= deti — множина, форма -é.
+X dd: Обери (група чоловіків). | Sme veľmi [*spokojní/spokojné/spokojný].
+= Чоловіки / змішана група — -í.
+X cat: Приємний чи неприємний стан? | Приємний: šťastný, spokojný, pokojný ;; Неприємний: smutný, nervózny, nahnevaný
+= Розділи за емоцією.
+X dr: - | Kamarátka: Prečo si smutný? | *Som ďaleko od rodiny. ;; Som šťastný. ;; Som smutná dobre.
+= Пояснюєш причину суму.
+X tf: - | - | «Smädný» означає «той, хто хоче пити». | T
+= smädný — спраглий.
+X fb: Допиши (говорить жінка). | Pred skúškou som veľmi ___. (знервована) | nervózna | Жіночий рід: -a.
+= nervózna.
+X so: - | Скажи, що ти голодний як вовк. | Som hladný ako vlk.
+= Сталий вираз.
+X fe: - | Moja dcéra je veľmi [šťastný>šťastná].
+= dcéra → šťastná.
+X np: Ти зайшов (зайшла) до подруги після тренування. | *Som smädná, môžem dostať vodu? ;; Som hladný voda. ;; Voda som smädná. ;; Smädná je voda.
+= Som smädná + прохання.
+X tone: - | Šéf: Toto je už tretia chyba tento týždeň! | *роздратований, сердитий ;; задоволений ;; сумний
+= Він підкреслює «уже третя» — роздратування.
+X ms: Обери правильні речення. | - | *Som šťastná. ;; *Sme unavení. ;; *Ste hladný? ;; Ona je smutný. ;; Deti sú unavený.
+= Узгодження за родом і числом.
+F: Вечір після переїзду || Ти з чоловіком і дітьми щойно переїхали в нову квартиру. Телефонує подруга.
+S: «Ako sa máte? Ste unavení?» | *Áno, sme veľmi unavení. ;; Áno, sme unavený. ;; Áno, som unavení.
+S: «A deti?» (вони голодні) | *Deti sú hladné. ;; Deti je hladný. ;; Deti sme hladní.
+S: «Ste spokojní s bytom?» (так, дуже) | *Áno, sme veľmi spokojní. ;; Áno, je spokojný. ;; Áno, spokojná sme.
+S: «Si šťastná?» (ти — жінка) | *Áno, som šťastná. ;; Áno, som šťastný. ;; Áno, si šťastná.
+R: hladný, smädný, unavený, chorý ;; šťastný, smutný, nervózny, spokojný ;; -ý / -á / -í / -é ;; Som… / Ste…?
+
+@lesson kde-sme | Де ми? Доma, на роботі, у місті | Kde sme?
+desc: Byť + місце: doma, v práci, v škole, na úrade, vonku, hore, dole.
+goal: Сказати, де ти й інші перебувають зараз.
+out: казати Som v práci / v škole / na úrade ;; розуміти vonku, vnútri, hore, dole ;; питати Kde ste? ;; описувати, хто де
+done: Тепер ти пояснюєш, де хто. Далі — підсумок розділу.
+T: Byť + де? || «Kde si?» — «Som v práci» (на роботі), «v škole» (у школі), «na úrade» (в установі), «v meste» (у місті), «u lekára» (у лікаря). Різниця v / na — як у попередніх уроках. || Som ešte v práci. = Я ще на роботі. ;; Mama je u lekára. = Мама в лікаря. || v práci, v škole, na úrade, u lekára
+T: Надворі й усередині || «Vonku» — надворі, «vnútri» — усередині. «Hore» — нагорі, «dole» — унизу. «Deti sú vonku» — діти надворі. «Čakám dole» — чекаю внизу. || Je vonku zima? = Надворі холодно? ;; Sme hore, na treťom poschodí. = Ми нагорі, на третьому поверсі. || vonku / vnútri, hore / dole
+T: U + хто? || «U lekára» (у лікаря), «u kamaráta» (у друга), «u nás» (у нас), «u babky» (у бабусі). «U» = у когось удома / в когось. || Sme u kamaráta. = Ми в друга. ;; U nás je to inak. = У нас це інакше. || u + людина
+W: v práci | на роботі | ф пра:ці | Manžel je ešte v práci. | Чоловік ще на роботі.
+W: vonku | надворі | вонку | Deti sa hrajú vonku. | Діти граються надворі.
+W: vnútri | усередині | внутрі | Čakajte vnútri, vonku prší. | Чекайте всередині, надворі дощ.
+W: hore | нагорі | горе | Kancelária je hore. | Кабінет нагорі.
+W: dole | унизу | доле | Taxík čaká dole. | Таксі чекає внизу.
+W: u lekára | у лікаря | у лєка:ра | Dnes som u lekára. | Сьогодні я в лікаря.
+X mt: З’єднай. | vonku = надворі ;; vnútri = усередині ;; hore = нагорі ;; dole = унизу ;; v práci = на роботі
+X dd: Обери. | Mama je [*u/v/na] lekára.
+= U lekára — у лікаря.
+X dd: Обери. | Sme [*na/v] úrade.
+= na úrade.
+X dr: - | Manželka telefonuje: Kde si? | *Som ešte v práci, prídem o šiestej. ;; Si v práci. ;; Práca je.
+= Som + де.
+X cat: Протилежності | Перше слово пари: vonku, hore ;; Друге слово пари: vnútri, dole
+= vonku ↔ vnútri, hore ↔ dole.
+X tf: - | - | «Taxík čaká dole» означає «Таксі чекає внизу». | T
+= dole — унизу.
+X fb: Допиши. | Prší, čakajte ___. (усередині) | vnútri |
+= vnútri — усередині.
+X so: - | Скажи, що діти надворі. | Deti sú vonku.
+= Deti sú + vonku.
+X fe: - | Dnes som [v>u] kamaráta, prídem neskoro.
+= U + людина: u kamaráta.
+X sch: - | Budova úradu – orientačná tabuľa | Prízemie = podateľňa, pokladňa ;; 1. poschodie = cudzinecké oddelenie ;; 2. poschodie = riaditeľ | Де відділ для іноземців? | *на «1. poschodí» — за українським рахунком це другий поверх ;; на «prízemí» — першому поверсі ;; на «2. poschodí»
+= Словаки рахують поверхи від prízemie (партер), тому 1. poschodie — це наш другий поверх.
+X np: Друг пише, що він під твоїм будинком. Ти ще в квартирі. | *Som ešte hore, idem dole. ;; Som dole, idem hore. ;; Hore je dole. ;; Vonku som vnútri.
+= Ти нагорі — йдеш униз.
+X ms: Обери правильні фрази. | - | *v práci ;; *na úrade ;; *u lekára ;; na práci ;; v lekára
+= v práci, na úrade, u lekára.
+F: Де всі? || Субота, 15:00. Ти телефонуєш членам родини.
+S: Ти питаєш чоловіка: | *Kde si? ;; Kde je si? ;; Kde som?
+S: «Som ešte v práci.» Де він? | *ще на роботі ;; уже вдома ;; у лікаря
+S: Донька пише «Sme u babky.» Де вони? | *у бабусі ;; у школі ;; надворі
+S: Ти пишеш, що ти вдома і чекаєш їх. | *Som doma, čakám vás. ;; Ste doma, čakám. ;; Doma je čakám.
+R: Som v práci / v škole / na úrade / u lekára ;; vonku / vnútri, hore / dole ;; u kamaráta, u nás ;; Kde si / ste?
+
+@lesson byt-opakovanie | Підсумок: byť у житті | Opakovanie: byť
+desc: Підсумковий урок: повна таблиця byť, заперечення, питання, опис людей і місць.
+goal: Вільно використовувати byť у розповіді про себе й інших.
+out: відмінювати byť без помилок ;; заперечувати й питати з byť ;; описувати людей: хто, звідки, який, де ;; розповідати про родину й колег
+done: Розділ «Я і ти: byť» завершено! Далі — родина й присвійні займенники.
+T: Таблиця byť || som, si, je, sme, ste, sú. Заперечення: nie som, nie si, nie je, nie sme, nie ste, nie sú (окремо!). Питання: Si…? Je…? Ste…? || Sme z Ukrajiny, ale nie sme turisti. = Ми з України, але ми не туристи. || Шість форм — і ти говориш.
+T: Схема опису людини || Kto je to? — To je… Odkiaľ je? — Je z… Čo robí? — Je… / Pracuje ako… Aký je? — Je milý, pokojný… Kde je teraz? — Je v práci. || Toto je Ivan. Je z Rivne, je murár. Je milý a pokojný. = Це Іван. Він із Рівного, муляр. Він милий і спокійний. || Хто? Звідки? Що робить? Який? Де?
+T: Корисні частки || «Tiež» — теж, «aj» — і, також, «už» — уже, «ešte» — ще. «Aj ja som z Ukrajiny» — я теж з України. || Aj ja som unavená. = Я теж утомлена. ;; Ešte nie som hotový. = Я ще не готовий. || aj / tiež / už / ešte
+W: tiež | теж | тієж | Som tiež zo Lvova. | Я теж зі Львова.
+W: aj | і, також | ай | Aj ja som tu nový. | Я теж тут новий.
+W: len | лише | лен | Som tu len rok. | Я тут лише рік.
+W: kamarát | друг, приятель | камара:т | Môj kamarát je z Martina. | Мій друг з Мартіна.
+X cz: - | Volám sa Ihor. {Som} z Ukrajiny. Moja žena {je} Slovenka. My {sme} spolu tri roky. Naše deti {sú} ešte malé. | Форми byť.
+= som, je, sme, sú.
+X wb: - | Ja [som] doma. ;; Ty [si] v práci? ;; Oni [sú] u babky. ;; Vy [ste] noví? | je ;; sme
+X tr: Зроби заперечним. | Sme hotoví. | Nie sme hotoví. ;; Nie sme hotoví
+= Nie + sme.
+X tr: Перетвори на питання: постав дієслово на початок. | Ona je z Košíc. | Je z Košíc? ;; Je ona z Košíc?
+= Дієслово на початку робить питання: Je z Košíc?
+X ce: Виправ речення. | Ja nesom unavený, ja smädný. | Nie som unavený, som smädný. ;; Ja nie som unavený, ja som smädný. ;; Nie som unavený, som smädný
+= nie som; потрібне som.
+X do: - | Ahoj, ty si nová kolegyňa? ;; Áno, som Olena. A ty? ;; Ja som Michal. Si zo Slovenska? ;; Nie, nie som, som z Ukrajiny. ;; Aj ja som tu nový, som z Poľska.
+= Знайомство на роботі з byť.
+X rc: - | Toto je moja kamarátka Daria. Je z Ukrajiny, zo Záporožia. Teraz je na Slovensku, v Martine. Je zdravotná sestra, ale teraz nie je v práci, je na dovolenke. Je milá a veľmi pokojná. Jej manžel tiež nie je doma, je u kamaráta.
+q~: Де зараз Дарія? | *у відпустці ;; на роботі ;; у Запоріжжі
+q~: Яка вона? | *мила й спокійна ;; знервована ;; сумна
+q~: Де її чоловік? | *у друга ;; удома ;; на роботі
+X bd: - | Супер, ти впевнено використовуєш byť!
+> Pani v čakárni: Prepáčte, vy ste tu tiež na desiatu? | *Áno, som. Aj vy? ;; Áno, ste. ;; Nie, je desať.
+> Pani: Áno. Ste z Ukrajiny? | *Áno, som z Ukrajiny, z Poltavy. ;; Áno, sú z Ukrajiny. ;; Nie, nie je.
+> Pani: Ja som zo Slovenska. Lekár ešte nie je tu, však? | *Nie, ešte nie je. ;; Nie, ešte nie som. ;; Áno, nie sme.
+X fe: - | Moji kamaráti [je>sú] z Ukrajiny.
+= kamaráti — вони → sú.
+X ms: Обери правильні речення. | - | *Aj ja som unavený. ;; *Nie sme doma. ;; *Ste tu nová? ;; Nesme doma. ;; Ony som tu.
+= Повторення таблиці.
+X dd: Обери. | Ja som z Ukrajiny a môj kamarát je [*tiež/už/ešte] z Ukrajiny.
+= tiež — теж.
+X sb: - | Скажи, що ти ще не готовий. | Ešte nie som hotový.
+= Ešte + nie som + …
+F: Розмова на дитячому майданчику || Мама іншої дитини починає розмову.
+S: «Vy ste mama Mariky?» (так) | *Áno, som. ;; Áno, je. ;; Áno, ste.
+S: «Ste tu nová?» (так, з України) | *Áno, sme tu len mesiac, sme z Ukrajiny. ;; Áno, sú tu nová. ;; Nie, som tu nová.
+S: «Aj váš manžel je tu?» (ні, він ще в Україні) | *Nie, nie je, je ešte na Ukrajine. ;; Nie, nie som, je na Ukrajine. ;; Áno, nie je.
+S: «Ja som Petra, teší ma.» | *Teší ma, ja som Olha. ;; Teší ma, som Petra. ;; Aj mňa, si Olha.
+R: som, si, je, sme, ste, sú ;; nie som… (окремо) ;; Хто? Звідки? Що робить? Який? Де? ;; tiež, aj, už, ešte

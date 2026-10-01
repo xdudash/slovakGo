@@ -1,0 +1,810 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u01-l06-kto-co-je-to",
+      "sectionId": "a1-u01",
+      "level": "A1",
+      "title": "Хто це? Що це?",
+      "topic": "Я і ти: дієслово byť",
+      "description": "Питальні слова kto (хто) і čo (що), вказівне to / toto / tamto.",
+      "order": 6,
+      "xpReward": 25,
+      "estimatedMinutes": 20,
+      "isPublished": true,
+      "intro": "Запитувати й пояснювати, хто чи що перед тобою.",
+      "completionMessage": "Тепер ти можеш дізнатися назву будь-чого. Далі — професії з byť.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Я і ти: дієслово byť",
+        "title": "Хто це? Що це?",
+        "shortDescription": "Запитувати й пояснювати, хто чи що перед тобою.",
+        "outcomes": [
+          "питати Kto je to? / Čo je to?",
+          "відповідати To je…",
+          "розрізняти toto (це тут) і tamto (он те)",
+          "питати Čo je toto po slovensky?"
+        ],
+        "newWords": [
+          "kto",
+          "čo",
+          "toto",
+          "tamto",
+          "šéf",
+          "vec"
+        ],
+        "exercisesCount": 13,
+        "reward": "+25 XP",
+        "estimatedMinutes": 20,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Kto? Čo?",
+          "text": "«Kto je to?» — хто це? (про людей). «Čo je to?» — що це? (про речі). Відповідь: «To je…» — це…",
+          "examples": [
+            {
+              "sk": "Kto je to? — To je môj šéf.",
+              "uk": "Хто це? — Це мій шеф."
+            },
+            {
+              "sk": "Čo je to? — To je kľúč od skrine.",
+              "uk": "Що це? — Це ключ від шафи."
+            }
+          ],
+          "shortRule": "Kto — людина, čo — річ",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "To, toto, tamto",
+          "text": "«To» — це (загалом), «toto» — оце (тут, близько), «tamto» — он те (далеко). «Čo je toto?» — що оце? «Kto je tamto?» — хто он там?",
+          "examples": [
+            {
+              "sk": "Toto je môj stôl.",
+              "uk": "Оце мій стіл."
+            },
+            {
+              "sk": "Tamto je naša škola.",
+              "uk": "Он там наша школа."
+            }
+          ],
+          "shortRule": "toto — тут, tamto — там",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Як це словацькою?",
+          "text": "«Čo je toto po slovensky?» — як це словацькою? «Ako sa volá toto?» — як це називається? Супер-фраза для вивчення мови!",
+          "examples": [
+            {
+              "sk": "Ako sa volá toto po slovensky?",
+              "uk": "Як це називається словацькою?"
+            },
+            {
+              "sk": "To sa volá vešiak.",
+              "uk": "Це називається вішалка."
+            }
+          ],
+          "shortRule": "Ako sa volá…?",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u01-l06-kto-co-je-to-w01",
+            "sk": "kto",
+            "uk": "хто",
+            "pronunciationUk": "кто",
+            "exampleSk": "Kto je tvoj šéf?",
+            "exampleUk": "Хто твій шеф?"
+          },
+          {
+            "wordId": "a1-u01-l06-kto-co-je-to-w02",
+            "sk": "čo",
+            "uk": "що",
+            "pronunciationUk": "чо",
+            "exampleSk": "Čo je to?",
+            "exampleUk": "Що це?"
+          },
+          {
+            "wordId": "a1-u01-l06-kto-co-je-to-w03",
+            "sk": "toto",
+            "uk": "оце",
+            "pronunciationUk": "тото",
+            "exampleSk": "Toto je môj kľúč.",
+            "exampleUk": "Оце мій ключ."
+          },
+          {
+            "wordId": "a1-u01-l06-kto-co-je-to-w04",
+            "sk": "tamto",
+            "uk": "он те",
+            "pronunciationUk": "тамто",
+            "exampleSk": "Tamto je stanica.",
+            "exampleUk": "Он там вокзал."
+          },
+          {
+            "wordId": "a1-u01-l06-kto-co-je-to-w05",
+            "sk": "šéf",
+            "uk": "шеф, начальник",
+            "pronunciationUk": "ше:ф",
+            "exampleSk": "Šéf je dnes na porade.",
+            "exampleUk": "Шеф сьогодні на нараді."
+          },
+          {
+            "wordId": "a1-u01-l06-kto-co-je-to-w06",
+            "sk": "vec",
+            "uk": "річ",
+            "pronunciationUk": "вец",
+            "exampleSk": "Čia je táto vec?",
+            "exampleUk": "Чия це річ?"
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u01-l06-kto-co-je-to-w01",
+          "sk": "kto",
+          "uk": "хто",
+          "pronunciationUk": "кто",
+          "exampleSk": "Kto je tvoj šéf?",
+          "exampleUk": "Хто твій шеф?",
+          "level": "A1",
+          "topic": "Я і ти: дієслово byť",
+          "tags": [
+            "a1-u01",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u01-l06-kto-co-je-to-w02",
+          "sk": "čo",
+          "uk": "що",
+          "pronunciationUk": "чо",
+          "exampleSk": "Čo je to?",
+          "exampleUk": "Що це?",
+          "level": "A1",
+          "topic": "Я і ти: дієслово byť",
+          "tags": [
+            "a1-u01",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u01-l06-kto-co-je-to-w03",
+          "sk": "toto",
+          "uk": "оце",
+          "pronunciationUk": "тото",
+          "exampleSk": "Toto je môj kľúč.",
+          "exampleUk": "Оце мій ключ.",
+          "level": "A1",
+          "topic": "Я і ти: дієслово byť",
+          "tags": [
+            "a1-u01",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u01-l06-kto-co-je-to-w04",
+          "sk": "tamto",
+          "uk": "он те",
+          "pronunciationUk": "тамто",
+          "exampleSk": "Tamto je stanica.",
+          "exampleUk": "Он там вокзал.",
+          "level": "A1",
+          "topic": "Я і ти: дієслово byť",
+          "tags": [
+            "a1-u01",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u01-l06-kto-co-je-to-w05",
+          "sk": "šéf",
+          "uk": "шеф, начальник",
+          "pronunciationUk": "ше:ф",
+          "exampleSk": "Šéf je dnes na porade.",
+          "exampleUk": "Шеф сьогодні на нараді.",
+          "level": "A1",
+          "topic": "Я і ти: дієслово byť",
+          "tags": [
+            "a1-u01",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u01-l06-kto-co-je-to-w06",
+          "sk": "vec",
+          "uk": "річ",
+          "pronunciationUk": "вец",
+          "exampleSk": "Čia je táto vec?",
+          "exampleUk": "Чия це річ?",
+          "level": "A1",
+          "topic": "Я і ти: дієслово byť",
+          "tags": [
+            "a1-u01",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u01-l06-kto-co-je-to-ex01",
+          "lessonId": "a1-u01-l06-kto-co-je-to",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери питальне слово.",
+          "sentenceParts": [
+            {
+              "blankId": "b1",
+              "options": [
+                "Kto",
+                "Čo"
+              ],
+              "correct": "Kto"
+            },
+            {
+              "text": " je to? — To je moja suseda."
+            }
+          ],
+          "explanation": "Про людину — kto.",
+          "order": 1,
+          "wordIds": [
+            "a1-u01-l06-kto-co-je-to-w01",
+            "a1-u01-l06-kto-co-je-to-w02"
+          ]
+        },
+        {
+          "id": "a1-u01-l06-kto-co-je-to-ex02",
+          "lessonId": "a1-u01-l06-kto-co-je-to",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери питальне слово.",
+          "sentenceParts": [
+            {
+              "blankId": "b1",
+              "options": [
+                "Čo",
+                "Kto"
+              ],
+              "correct": "Čo"
+            },
+            {
+              "text": " je to? — To je nabíjačka."
+            }
+          ],
+          "explanation": "Про річ — čo.",
+          "order": 2,
+          "wordIds": [
+            "a1-u01-l06-kto-co-je-to-w01",
+            "a1-u01-l06-kto-co-je-to-w02"
+          ]
+        },
+        {
+          "id": "a1-u01-l06-kto-co-je-to-ex03",
+          "lessonId": "a1-u01-l06-kto-co-je-to",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "kto",
+              "right": "хто"
+            },
+            {
+              "left": "čo",
+              "right": "що"
+            },
+            {
+              "left": "toto",
+              "right": "оце"
+            },
+            {
+              "left": "tamto",
+              "right": "он те"
+            },
+            {
+              "left": "vec",
+              "right": "річ"
+            }
+          ],
+          "order": 3,
+          "wordIds": [
+            "a1-u01-l06-kto-co-je-to-w01",
+            "a1-u01-l06-kto-co-je-to-w02",
+            "a1-u01-l06-kto-co-je-to-w03",
+            "a1-u01-l06-kto-co-je-to-w04",
+            "a1-u01-l06-kto-co-je-to-w06"
+          ]
+        },
+        {
+          "id": "a1-u01-l06-kto-co-je-to-ex04",
+          "lessonId": "a1-u01-l06-kto-co-je-to",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kolega ukazuje na fotku",
+              "sk": "Kto je to?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Čo je to dcéra.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "To je dcéra kto.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "To je moja dcéra.",
+              "correct": true
+            }
+          ],
+          "explanation": "To je…",
+          "order": 4,
+          "wordIds": [
+            "a1-u01-l06-kto-co-je-to-w01",
+            "a1-u01-l06-kto-co-je-to-w02"
+          ]
+        },
+        {
+          "id": "a1-u01-l06-kto-co-je-to-ex05",
+          "lessonId": "a1-u01-l06-kto-co-je-to",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти бачиш на кухні дивний прилад і хочеш дізнатися назву.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Toto je čo kto?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Kto je toto?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Ako sa volá toto po slovensky?",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Čo je kto?",
+              "correct": false
+            }
+          ],
+          "explanation": "Ako sa volá toto…?",
+          "order": 5,
+          "wordIds": [
+            "a1-u01-l06-kto-co-je-to-w01",
+            "a1-u01-l06-kto-co-je-to-w02",
+            "a1-u01-l06-kto-co-je-to-w03"
+          ]
+        },
+        {
+          "id": "a1-u01-l06-kto-co-je-to-ex06",
+          "lessonId": "a1-u01-l06-kto-co-je-to",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Kto чи čo?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Kto"
+            },
+            {
+              "id": "c2",
+              "title": "Čo"
+            }
+          ],
+          "items": [
+            {
+              "sk": "taška",
+              "category": "c2"
+            },
+            {
+              "sk": "kľúč",
+              "category": "c2"
+            },
+            {
+              "sk": "šéf",
+              "category": "c1"
+            },
+            {
+              "sk": "sused",
+              "category": "c1"
+            },
+            {
+              "sk": "nabíjačka",
+              "category": "c2"
+            },
+            {
+              "sk": "lekárka",
+              "category": "c1"
+            }
+          ],
+          "explanation": "kto — люди, čo — речі.",
+          "order": 6,
+          "wordIds": [
+            "a1-u01-l06-kto-co-je-to-w01",
+            "a1-u01-l06-kto-co-je-to-w02",
+            "a1-u01-l06-kto-co-je-to-w05"
+          ]
+        },
+        {
+          "id": "a1-u01-l06-kto-co-je-to-ex07",
+          "lessonId": "a1-u01-l06-kto-co-je-to",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Tamto» вказує на щось далеке.",
+          "correctAnswer": true,
+          "explanation": "tamto — он те, далеко.",
+          "order": 7,
+          "wordIds": [
+            "a1-u01-l06-kto-co-je-to-w01",
+            "a1-u01-l06-kto-co-je-to-w04"
+          ]
+        },
+        {
+          "id": "a1-u01-l06-kto-co-je-to-ex08",
+          "lessonId": "a1-u01-l06-kto-co-je-to",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "______ je to? — To je pán Novák.",
+          "acceptedAnswers": [
+            "Kto"
+          ],
+          "explanation": "Kto — про людину.",
+          "order": 8,
+          "wordIds": [
+            "a1-u01-l06-kto-co-je-to-w01"
+          ]
+        },
+        {
+          "id": "a1-u01-l06-kto-co-je-to-ex09",
+          "lessonId": "a1-u01-l06-kto-co-je-to",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Запитай, хто твій шеф.",
+          "tokens": [
+            "je",
+            "šéf",
+            "?",
+            "tvoj",
+            "Kto"
+          ],
+          "correctOrder": [
+            "Kto",
+            "je",
+            "tvoj",
+            "šéf",
+            "?"
+          ],
+          "explanation": "Kto + je + …",
+          "order": 9,
+          "wordIds": [
+            "a1-u01-l06-kto-co-je-to-w01",
+            "a1-u01-l06-kto-co-je-to-w05"
+          ]
+        },
+        {
+          "id": "a1-u01-l06-kto-co-je-to-ex10",
+          "lessonId": "a1-u01-l06-kto-co-je-to",
+          "type": "sentence_builder",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Склади речення зі слів.",
+          "context": "Скажи, що он там вокзал.",
+          "tokens": [
+            "je",
+            "stanica",
+            ".",
+            "Tamto"
+          ],
+          "correctSentence": "Tamto je stanica.",
+          "explanation": "Tamto je…",
+          "order": 10,
+          "wordIds": [
+            "a1-u01-l06-kto-co-je-to-w01",
+            "a1-u01-l06-kto-co-je-to-w04"
+          ]
+        },
+        {
+          "id": "a1-u01-l06-kto-co-je-to-ex11",
+          "lessonId": "a1-u01-l06-kto-co-je-to",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Toto je moja kancelária. Toto je môj stôl a tamto je stôl kolegu Mateja. Matej je dnes chorý. Kto je tá žena pri okne? To je naša šéfka, pani Bieliková.",
+          "questions": [
+            {
+              "question": "Чий стіл далі?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "оповідача",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "шефині",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "Матея",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Хто жінка біля вікна?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "шефиня",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "клієнтка",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "колега Матей",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 11,
+          "wordIds": [
+            "a1-u01-l06-kto-co-je-to-w01",
+            "a1-u01-l06-kto-co-je-to-w03",
+            "a1-u01-l06-kto-co-je-to-w04",
+            "a1-u01-l06-kto-co-je-to-w05"
+          ]
+        },
+        {
+          "id": "a1-u01-l06-kto-co-je-to-ex12",
+          "lessonId": "a1-u01-l06-kto-co-je-to",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Дитина показує пальцем на пташку й питає: «Mami, čo je to?» Чого вона хоче?",
+          "options": [
+            {
+              "id": "a",
+              "text": "щоб мама прогнала птаха",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "дізнатися, чия птаха",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "дізнатися назву",
+              "correct": true
+            }
+          ],
+          "explanation": "čo je to — що це.",
+          "order": 12,
+          "wordIds": [
+            "a1-u01-l06-kto-co-je-to-w01",
+            "a1-u01-l06-kto-co-je-to-w02"
+          ]
+        },
+        {
+          "id": "a1-u01-l06-kto-co-je-to-ex13",
+          "lessonId": "a1-u01-l06-kto-co-je-to",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні питання.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Kto je to?",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Čo je toto?",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Ako sa volá toto?",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Čo je pani Malá?",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Kto je kľúč?",
+              "correct": false
+            }
+          ],
+          "explanation": "kto — люди, čo — речі.",
+          "order": 13,
+          "wordIds": [
+            "a1-u01-l06-kto-co-je-to-w01",
+            "a1-u01-l06-kto-co-je-to-w02",
+            "a1-u01-l06-kto-co-je-to-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перший день в офісі",
+        "description": "Колега Зузана показує тобі офіс.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти бачиш чоловіка в кабінеті.",
+            "options": [
+              {
+                "sk": "Čo je to?",
+                "correct": false
+              },
+              {
+                "sk": "Čo je on?",
+                "correct": false
+              },
+              {
+                "sk": "Kto je to?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«To je náš šéf, pán Kráľ.» Хто це?",
+            "options": [
+              {
+                "sk": "шеф, пан Краль",
+                "correct": true
+              },
+              {
+                "sk": "охоронець",
+                "correct": false
+              },
+              {
+                "sk": "клієнт",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "На столі незнайомий прилад.",
+            "options": [
+              {
+                "sk": "Čo je toto?",
+                "correct": true
+              },
+              {
+                "sk": "Kto je toto?",
+                "correct": false
+              },
+              {
+                "sk": "Toto je kto?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«To je skartovačka.» Ти хочеш, щоб вона повторила назву.",
+            "options": [
+              {
+                "sk": "Prepáč, tamto?",
+                "correct": false
+              },
+              {
+                "sk": "Prepáč, ako sa to volá?",
+                "correct": true
+              },
+              {
+                "sk": "Prepáč, kto to je?",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тепер ти можеш дізнатися назву будь-чого. Далі — професії з byť."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тепер ти можеш дізнатися назву будь-чого. Далі — професії з byť.",
+        "nowYouKnow": [
+          "Kto je to? / Čo je to?",
+          "To je…",
+          "toto / tamto",
+          "Ako sa volá toto po slovensky?"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 13,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u01-l07-povolania-s-byt",
+          "title": "Професії з byť"
+        }
+      }
+    }
+  ]
+}

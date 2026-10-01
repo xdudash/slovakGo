@@ -1,0 +1,763 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u02-l05-rodicia-surodenci",
+      "sectionId": "a1-u02",
+      "level": "A1",
+      "title": "Батьки, старший, молодший",
+      "topic": "Родина: mať і присвійні займенники",
+      "description": "Rodičia, súrodenci, starší / mladší, dvojčatá — як описати свою сім’ю.",
+      "order": 15,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Розповісти про батьків, братів і сестер та порівняти вік.",
+      "completionMessage": "Ти вмієш описати найближчих. Далі — бабусі, дядьки й двоюрідні.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Родина: mať і присвійні займенники",
+        "title": "Батьки, старший, молодший",
+        "shortDescription": "Розповісти про батьків, братів і сестер та порівняти вік.",
+        "outcomes": [
+          "казати rodičia (батьки)",
+          "казати starší / mladší brat",
+          "розуміти dvojčatá, nevlastný",
+          "описувати склад сім’ї"
+        ],
+        "newWords": [
+          "rodičia",
+          "starší",
+          "mladší",
+          "dvojčatá",
+          "nevlastný",
+          "najmladší"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Rodičia",
+          "text": "«Rodičia» — батьки (мама й тато разом). Однина «rodič» — один із батьків (у документах). «Bývam u rodičov» — я живу в батьків.",
+          "examples": [
+            {
+              "sk": "Moji rodičia sú dôchodcovia.",
+              "uk": "Мої батьки — пенсіонери."
+            },
+            {
+              "sk": "Rodič alebo zákonný zástupca",
+              "uk": "Один із батьків або законний представник"
+            }
+          ],
+          "shortRule": "rodičia = батьки",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Starší і mladší",
+          "text": "«Starší brat» — старший брат, «mladšia sestra» — молодша сестра. «Najstarší» — найстарший, «najmladší» — наймолодший.",
+          "examples": [
+            {
+              "sk": "Mám staršieho brata.",
+              "uk": "У мене старший брат."
+            },
+            {
+              "sk": "Som najmladšia.",
+              "uk": "Я наймолодша."
+            }
+          ],
+          "shortRule": "starší / mladší / najstarší",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Особливі слова",
+          "text": "«Dvojčatá» — близнюки, «nevlastný otec» — вітчим, «nevlastná sestra» — зведена сестра, «polovičný brat» — єдинокровний брат.",
+          "examples": [
+            {
+              "sk": "Moje deti sú dvojčatá.",
+              "uk": "Мої діти — близнюки."
+            },
+            {
+              "sk": "Mám nevlastného otca.",
+              "uk": "У мене є вітчим."
+            }
+          ],
+          "shortRule": "nevlastný = не рідний",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u02-l05-rodicia-surodenci-w01",
+            "sk": "rodičia",
+            "uk": "батьки",
+            "pronunciationUk": "родічія",
+            "exampleSk": "Rodičia ma navštívia v lete.",
+            "exampleUk": "Батьки відвідають мене влітку."
+          },
+          {
+            "wordId": "a1-u02-l05-rodicia-surodenci-w02",
+            "sk": "starší",
+            "uk": "старший",
+            "pronunciationUk": "старші:",
+            "exampleSk": "Môj starší brat žije v Kanade.",
+            "exampleUk": "Мій старший брат живе в Канаді."
+          },
+          {
+            "wordId": "a1-u02-l05-rodicia-surodenci-w03",
+            "sk": "mladší",
+            "uk": "молодший",
+            "pronunciationUk": "младші:",
+            "exampleSk": "Mladšia sestra ešte študuje.",
+            "exampleUk": "Молодша сестра ще навчається."
+          },
+          {
+            "wordId": "a1-u02-l05-rodicia-surodenci-w04",
+            "sk": "dvojčatá",
+            "uk": "близнюки",
+            "pronunciationUk": "двойчата:",
+            "exampleSk": "Majú dvojčatá, chlapca a dievča.",
+            "exampleUk": "У них близнюки, хлопчик і дівчинка."
+          },
+          {
+            "wordId": "a1-u02-l05-rodicia-surodenci-w05",
+            "sk": "nevlastný",
+            "uk": "нерідний (вітчим, мачуха…)",
+            "pronunciationUk": "невластні:",
+            "exampleSk": "Môj nevlastný otec je dobrý človek.",
+            "exampleUk": "Мій вітчим — хороша людина."
+          },
+          {
+            "wordId": "a1-u02-l05-rodicia-surodenci-w06",
+            "sk": "najmladší",
+            "uk": "наймолодший",
+            "pronunciationUk": "наймладші:",
+            "exampleSk": "Som najmladší z troch súrodencov.",
+            "exampleUk": "Я наймолодший із трьох дітей."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u02-l05-rodicia-surodenci-w01",
+          "sk": "rodičia",
+          "uk": "батьки",
+          "pronunciationUk": "родічія",
+          "exampleSk": "Rodičia ma navštívia v lete.",
+          "exampleUk": "Батьки відвідають мене влітку.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u02-l05-rodicia-surodenci-w02",
+          "sk": "starší",
+          "uk": "старший",
+          "pronunciationUk": "старші:",
+          "exampleSk": "Môj starší brat žije v Kanade.",
+          "exampleUk": "Мій старший брат живе в Канаді.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u02-l05-rodicia-surodenci-w03",
+          "sk": "mladší",
+          "uk": "молодший",
+          "pronunciationUk": "младші:",
+          "exampleSk": "Mladšia sestra ešte študuje.",
+          "exampleUk": "Молодша сестра ще навчається.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u02-l05-rodicia-surodenci-w04",
+          "sk": "dvojčatá",
+          "uk": "близнюки",
+          "pronunciationUk": "двойчата:",
+          "exampleSk": "Majú dvojčatá, chlapca a dievča.",
+          "exampleUk": "У них близнюки, хлопчик і дівчинка.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u02-l05-rodicia-surodenci-w05",
+          "sk": "nevlastný",
+          "uk": "нерідний (вітчим, мачуха…)",
+          "pronunciationUk": "невластні:",
+          "exampleSk": "Môj nevlastný otec je dobrý človek.",
+          "exampleUk": "Мій вітчим — хороша людина.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u02-l05-rodicia-surodenci-w06",
+          "sk": "najmladší",
+          "uk": "наймолодший",
+          "pronunciationUk": "наймладші:",
+          "exampleSk": "Som najmladší z troch súrodencov.",
+          "exampleUk": "Я наймолодший із трьох дітей.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u02-l05-rodicia-surodenci-ex01",
+          "lessonId": "a1-u02-l05-rodicia-surodenci",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "rodičia",
+              "right": "батьки"
+            },
+            {
+              "left": "starší brat",
+              "right": "старший брат"
+            },
+            {
+              "left": "mladšia sestra",
+              "right": "молодша сестра"
+            },
+            {
+              "left": "dvojčatá",
+              "right": "близнюки"
+            },
+            {
+              "left": "nevlastný otec",
+              "right": "вітчим"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u02-l05-rodicia-surodenci-w01",
+            "a1-u02-l05-rodicia-surodenci-w02",
+            "a1-u02-l05-rodicia-surodenci-w03",
+            "a1-u02-l05-rodicia-surodenci-w04",
+            "a1-u02-l05-rodicia-surodenci-w05"
+          ]
+        },
+        {
+          "id": "a1-u02-l05-rodicia-surodenci-ex02",
+          "lessonId": "a1-u02-l05-rodicia-surodenci",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Mám "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "mladšiu",
+                "mladšia",
+                "mladší"
+              ],
+              "correct": "mladšiu"
+            },
+            {
+              "text": " sestru."
+            }
+          ],
+          "explanation": "Знахідний жін.: mladšiu sestru.",
+          "order": 2,
+          "wordIds": [
+            "a1-u02-l05-rodicia-surodenci-w03"
+          ]
+        },
+        {
+          "id": "a1-u02-l05-rodicia-surodenci-ex03",
+          "lessonId": "a1-u02-l05-rodicia-surodenci",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Môj "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "staršia",
+                "staršie",
+                "starší"
+              ],
+              "correct": "starší"
+            },
+            {
+              "text": " brat je inžinier."
+            }
+          ],
+          "explanation": "brat — starší.",
+          "order": 3,
+          "wordIds": [
+            "a1-u02-l05-rodicia-surodenci-w02"
+          ]
+        },
+        {
+          "id": "a1-u02-l05-rodicia-surodenci-ex04",
+          "lessonId": "a1-u02-l05-rodicia-surodenci",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Bývam u rodičov»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Я живу біля батьків",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Я живу в батьків",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Я живу з дітьми",
+              "correct": false
+            }
+          ],
+          "explanation": "u rodičov — у батьків.",
+          "order": 4
+        },
+        {
+          "id": "a1-u02-l05-rodicia-surodenci-ex05",
+          "lessonId": "a1-u02-l05-rodicia-surodenci",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Rodičia» означає «родичі».",
+          "correctAnswer": false,
+          "explanation": "rodičia — батьки. Родичі — príbuzní.",
+          "order": 5,
+          "wordIds": [
+            "a1-u02-l05-rodicia-surodenci-w01"
+          ]
+        },
+        {
+          "id": "a1-u02-l05-rodicia-surodenci-ex06",
+          "lessonId": "a1-u02-l05-rodicia-surodenci",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Som ______ z troch súrodencov. (наймолодший)",
+          "acceptedAnswers": [
+            "najmladší"
+          ],
+          "explanation": "najmladší — наймолодший.",
+          "order": 6,
+          "wordIds": [
+            "a1-u02-l05-rodicia-surodenci-w03",
+            "a1-u02-l05-rodicia-surodenci-w06"
+          ]
+        },
+        {
+          "id": "a1-u02-l05-rodicia-surodenci-ex07",
+          "lessonId": "a1-u02-l05-rodicia-surodenci",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що твої батьки — пенсіонери.",
+          "tokens": [
+            ".",
+            "dôchodcovia",
+            "Moji",
+            "sú",
+            "rodičia"
+          ],
+          "correctOrder": [
+            "Moji",
+            "rodičia",
+            "sú",
+            "dôchodcovia",
+            "."
+          ],
+          "explanation": "Moji rodičia sú…",
+          "order": 7,
+          "wordIds": [
+            "a1-u02-l05-rodicia-surodenci-w01"
+          ]
+        },
+        {
+          "id": "a1-u02-l05-rodicia-surodenci-ex08",
+          "lessonId": "a1-u02-l05-rodicia-surodenci",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Volám sa Roman. Mám dvoch súrodencov. Moja staršia sestra Iryna má tridsaťpäť rokov a žije v Prahe. Môj mladší brat Andrij má dvadsať rokov a študuje v Bratislave. Ja som prostredný. Naši rodičia bývajú v Ternopile.",
+          "questions": [
+            {
+              "question": "Хто найстарший серед дітей?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Роман",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "Ірина",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "Андрій",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Де навчається Андрій?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "у Братиславі",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "у Тернополі",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "у Празі",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 8,
+          "wordIds": [
+            "a1-u02-l05-rodicia-surodenci-w01",
+            "a1-u02-l05-rodicia-surodenci-w02",
+            "a1-u02-l05-rodicia-surodenci-w03"
+          ]
+        },
+        {
+          "id": "a1-u02-l05-rodicia-surodenci-ex09",
+          "lessonId": "a1-u02-l05-rodicia-surodenci",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Старший чи молодший член сім’ї?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Starší"
+            },
+            {
+              "id": "c2",
+              "title": "Mladší"
+            }
+          ],
+          "items": [
+            {
+              "sk": "mladší brat",
+              "category": "c2"
+            },
+            {
+              "sk": "vnuk",
+              "category": "c2"
+            },
+            {
+              "sk": "starý otec",
+              "category": "c1"
+            },
+            {
+              "sk": "rodičia",
+              "category": "c1"
+            },
+            {
+              "sk": "dcéra",
+              "category": "c2"
+            },
+            {
+              "sk": "staršia sestra",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Порівняй вік.",
+          "order": 9,
+          "wordIds": [
+            "a1-u02-l05-rodicia-surodenci-w01",
+            "a1-u02-l05-rodicia-surodenci-w02",
+            "a1-u02-l05-rodicia-surodenci-w03"
+          ]
+        },
+        {
+          "id": "a1-u02-l05-rodicia-surodenci-ex10",
+          "lessonId": "a1-u02-l05-rodicia-surodenci",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kamarát",
+              "sk": "Sú tvoje deti dvojčatá?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Nie, sú nevlastný.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Áno, majú obe šesť rokov.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Áno, sú rodičia.",
+              "correct": false
+            }
+          ],
+          "explanation": "dvojčatá — однолітки.",
+          "order": 10,
+          "wordIds": [
+            "a1-u02-l05-rodicia-surodenci-w01",
+            "a1-u02-l05-rodicia-surodenci-w04",
+            "a1-u02-l05-rodicia-surodenci-w05"
+          ]
+        },
+        {
+          "id": "a1-u02-l05-rodicia-surodenci-ex11",
+          "lessonId": "a1-u02-l05-rodicia-surodenci",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Moja starší sestra žije v Prahe.",
+          "errorToken": "starší",
+          "correctToken": "staršia",
+          "explanation": "sestra — staršia.",
+          "order": 11,
+          "wordIds": [
+            "a1-u02-l05-rodicia-surodenci-w02"
+          ]
+        },
+        {
+          "id": "a1-u02-l05-rodicia-surodenci-ex12",
+          "lessonId": "a1-u02-l05-rodicia-surodenci",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні речення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Mám starší brat.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Moji rodičia sú doma.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Mám staršieho brata.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Sme dvojčatá.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Moje rodičia sú doma.",
+              "correct": false
+            }
+          ],
+          "explanation": "Знахідний і узгодження.",
+          "order": 12,
+          "wordIds": [
+            "a1-u02-l05-rodicia-surodenci-w01",
+            "a1-u02-l05-rodicia-surodenci-w02",
+            "a1-u02-l05-rodicia-surodenci-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Знайомство з вихователькою",
+        "description": "Вихователька садка питає про сім’ю дитини.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Má Marko súrodencov?» (старшу сестру)",
+            "options": [
+              {
+                "sk": "Áno, má starší sestra.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, má staršiu sestru.",
+                "correct": true
+              },
+              {
+                "sk": "Áno, je sestra.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Bývate s rodičmi?» (ні, батьки в Україні)",
+            "options": [
+              {
+                "sk": "Áno, nie.",
+                "correct": false
+              },
+              {
+                "sk": "Nie, moji rodičia sú na Ukrajine.",
+                "correct": true
+              },
+              {
+                "sk": "Nie, rodičia je Ukrajina.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Kto je na fotke vedľa Marka?» (його брат-близнюк)",
+            "options": [
+              {
+                "sk": "To je jeho rodičia.",
+                "correct": false
+              },
+              {
+                "sk": "To je jeho dvojča, brat Matvii.",
+                "correct": true
+              },
+              {
+                "sk": "To je dvojčatá.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Je Marko najmladší?» (так)",
+            "options": [
+              {
+                "sk": "Áno, je najmladší.",
+                "correct": true
+              },
+              {
+                "sk": "Áno, najmladšia.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, je mladší najviac.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш описати найближчих. Далі — бабусі, дядьки й двоюрідні."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш описати найближчих. Далі — бабусі, дядьки й двоюрідні.",
+        "nowYouKnow": [
+          "rodičia",
+          "starší / mladší / najstarší / najmladší",
+          "dvojčatá, nevlastný",
+          "bývam u rodičov"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u02-l06-sirsia-rodina",
+          "title": "Бабусі, дядьки, двоюрідні"
+        }
+      }
+    }
+  ]
+}

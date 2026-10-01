@@ -1,0 +1,789 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u02-l08-vztahy",
+      "sectionId": "a1-u02",
+      "level": "A1",
+      "title": "Шлюб і стосунки",
+      "topic": "Родина: mať і присвійні займенники",
+      "description": "Svadba, zasnúbený, partner, vzťah, ľúbiť — як говорити про особисте життя коректно.",
+      "order": 18,
+      "xpReward": 25,
+      "estimatedMinutes": 20,
+      "isPublished": true,
+      "intro": "Розповісти про свої стосунки й розуміти, коли питання надто особисті.",
+      "completionMessage": "Тепер ти говориш і про стосунки. Далі — родина на відстані.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Родина: mať і присвійні займенники",
+        "title": "Шлюб і стосунки",
+        "shortDescription": "Розповісти про свої стосунки й розуміти, коли питання надто особисті.",
+        "outcomes": [
+          "казати Som zasnúbený(á) / Mám partnera",
+          "розуміти svadba, vzťah",
+          "казати Ľúbim ťa",
+          "розпізнавати делікатні теми"
+        ],
+        "newWords": [
+          "svadba",
+          "zasnúbený",
+          "partner",
+          "vzťah",
+          "ľúbiť",
+          "rozísť sa"
+        ],
+        "exercisesCount": 13,
+        "reward": "+25 XP",
+        "estimatedMinutes": 20,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Від знайомства до весілля",
+          "text": "«Chodiť s niekým» — зустрічатися з кимось, «zasnúbiť sa» — заручитися, «vziať sa» — побратися, «svadba» — весілля. «Sme zasnúbení» — ми заручені.",
+          "examples": [
+            {
+              "sk": "Chodíme spolu dva roky.",
+              "uk": "Ми зустрічаємося два роки."
+            },
+            {
+              "sk": "Svadba bude v júni.",
+              "uk": "Весілля буде в червні."
+            }
+          ],
+          "shortRule": "chodiť s… → zasnúbiť sa → svadba",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Partner і vzťah",
+          "text": "«Partner / partnerka» — нейтральне слово для пари (і в шлюбі, і без). «Vzťah» — стосунки. «Rozísť sa» — розійтися.",
+          "examples": [
+            {
+              "sk": "Môj partner je z Bratislavy.",
+              "uk": "Мій партнер із Братислави."
+            },
+            {
+              "sk": "Sme vo vzťahu.",
+              "uk": "Ми у стосунках."
+            }
+          ],
+          "shortRule": "partner — нейтрально",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Почуття і делікатність",
+          "text": "«Ľúbim ťa» — я тебе кохаю (романтично), «mám ťa rád / rada» — ти мені дорогий. Про особисте словаки питають обережно: «Ak to nie je tajomstvo…» — якщо це не секрет…",
+          "examples": [
+            {
+              "sk": "Ľúbim ťa.",
+              "uk": "Я тебе кохаю."
+            },
+            {
+              "sk": "Ak to nie je tajomstvo, ste ženatý?",
+              "uk": "Якщо не секрет, ви одружені?"
+            }
+          ],
+          "shortRule": "Делікатні теми — обережно",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u02-l08-vztahy-w01",
+            "sk": "svadba",
+            "uk": "весілля",
+            "pronunciationUk": "свадба",
+            "exampleSk": "Na svadbe bolo sto hostí.",
+            "exampleUk": "На весіллі було сто гостей."
+          },
+          {
+            "wordId": "a1-u02-l08-vztahy-w02",
+            "sk": "zasnúbený",
+            "uk": "заручений",
+            "pronunciationUk": "заснубені:",
+            "exampleSk": "Sme zasnúbení od Vianoc.",
+            "exampleUk": "Ми заручені з Різдва."
+          },
+          {
+            "wordId": "a1-u02-l08-vztahy-w03",
+            "sk": "partner",
+            "uk": "партнер",
+            "pronunciationUk": "партнер",
+            "exampleSk": "Môj partner varí lepšie ako ja.",
+            "exampleUk": "Мій партнер готує краще за мене."
+          },
+          {
+            "wordId": "a1-u02-l08-vztahy-w04",
+            "sk": "vzťah",
+            "uk": "стосунки",
+            "pronunciationUk": "взťах",
+            "exampleSk": "Máme dobrý vzťah.",
+            "exampleUk": "У нас хороші стосунки."
+          },
+          {
+            "wordId": "a1-u02-l08-vztahy-w05",
+            "sk": "ľúbiť",
+            "uk": "кохати, любити",
+            "pronunciationUk": "лю:біть",
+            "exampleSk": "Ľúbim ťa.",
+            "exampleUk": "Я тебе кохаю."
+          },
+          {
+            "wordId": "a1-u02-l08-vztahy-w06",
+            "sk": "rozísť sa",
+            "uk": "розійтися",
+            "pronunciationUk": "розі:сть са",
+            "exampleSk": "Rozišli sa po piatich rokoch.",
+            "exampleUk": "Вони розійшлися через п’ять років."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u02-l08-vztahy-w01",
+          "sk": "svadba",
+          "uk": "весілля",
+          "pronunciationUk": "свадба",
+          "exampleSk": "Na svadbe bolo sto hostí.",
+          "exampleUk": "На весіллі було сто гостей.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u02-l08-vztahy-w02",
+          "sk": "zasnúbený",
+          "uk": "заручений",
+          "pronunciationUk": "заснубені:",
+          "exampleSk": "Sme zasnúbení od Vianoc.",
+          "exampleUk": "Ми заручені з Різдва.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u02-l08-vztahy-w03",
+          "sk": "partner",
+          "uk": "партнер",
+          "pronunciationUk": "партнер",
+          "exampleSk": "Môj partner varí lepšie ako ja.",
+          "exampleUk": "Мій партнер готує краще за мене.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u02-l08-vztahy-w04",
+          "sk": "vzťah",
+          "uk": "стосунки",
+          "pronunciationUk": "взťах",
+          "exampleSk": "Máme dobrý vzťah.",
+          "exampleUk": "У нас хороші стосунки.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u02-l08-vztahy-w05",
+          "sk": "ľúbiť",
+          "uk": "кохати, любити",
+          "pronunciationUk": "лю:біть",
+          "exampleSk": "Ľúbim ťa.",
+          "exampleUk": "Я тебе кохаю.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u02-l08-vztahy-w06",
+          "sk": "rozísť sa",
+          "uk": "розійтися",
+          "pronunciationUk": "розі:сть са",
+          "exampleSk": "Rozišli sa po piatich rokoch.",
+          "exampleUk": "Вони розійшлися через п’ять років.",
+          "level": "A1",
+          "topic": "Родина: mať і присвійні займенники",
+          "tags": [
+            "a1-u02",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u02-l08-vztahy-ex01",
+          "lessonId": "a1-u02-l08-vztahy",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "svadba",
+              "right": "весілля"
+            },
+            {
+              "left": "zasnúbený",
+              "right": "заручений"
+            },
+            {
+              "left": "vzťah",
+              "right": "стосунки"
+            },
+            {
+              "left": "rozísť sa",
+              "right": "розійтися"
+            },
+            {
+              "left": "ľúbiť",
+              "right": "кохати"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u02-l08-vztahy-w01",
+            "a1-u02-l08-vztahy-w02",
+            "a1-u02-l08-vztahy-w04",
+            "a1-u02-l08-vztahy-w05",
+            "a1-u02-l08-vztahy-w06"
+          ]
+        },
+        {
+          "id": "a1-u02-l08-vztahy-ex02",
+          "lessonId": "a1-u02-l08-vztahy",
+          "type": "dialogue_order",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Віднови порядок реплік у діалозі.",
+          "lines": [
+            {
+              "id": "l2",
+              "sk": "Zasnúbia sa."
+            },
+            {
+              "id": "l3",
+              "sk": "Majú svadbu."
+            },
+            {
+              "id": "l1",
+              "sk": "Chodia spolu."
+            },
+            {
+              "id": "l4",
+              "sk": "Majú dieťa."
+            }
+          ],
+          "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4"
+          ],
+          "explanation": "Типова послідовність подій.",
+          "order": 2,
+          "wordIds": [
+            "a1-u02-l08-vztahy-w01"
+          ]
+        },
+        {
+          "id": "a1-u02-l08-vztahy-ex03",
+          "lessonId": "a1-u02-l08-vztahy",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Sme "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "zasnúbený",
+                "zasnúbení",
+                "zasnúbená"
+              ],
+              "correct": "zasnúbení"
+            },
+            {
+              "text": " od Vianoc. (пара)"
+            }
+          ],
+          "explanation": "Пара — zasnúbení (мн.).",
+          "order": 3,
+          "wordIds": [
+            "a1-u02-l08-vztahy-w02"
+          ]
+        },
+        {
+          "id": "a1-u02-l08-vztahy-ex04",
+          "lessonId": "a1-u02-l08-vztahy",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Chodíme spolu»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Ми ходимо разом на роботу",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Ми зустрічаємося (у стосунках)",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Ми гуляємо",
+              "correct": false
+            }
+          ],
+          "explanation": "chodiť s niekým — зустрічатися.",
+          "order": 4
+        },
+        {
+          "id": "a1-u02-l08-vztahy-ex05",
+          "lessonId": "a1-u02-l08-vztahy",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Слово «partner» можна вжити і про подружжя, і про пару без шлюбу.",
+          "correctAnswer": true,
+          "explanation": "partner — нейтральне.",
+          "order": 5,
+          "wordIds": [
+            "a1-u02-l08-vztahy-w03"
+          ]
+        },
+        {
+          "id": "a1-u02-l08-vztahy-ex06",
+          "lessonId": "a1-u02-l08-vztahy",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Колега каже: «Ak to nie je tajomstvo, kedy je svadba?» Як вона питає?",
+          "options": [
+            {
+              "id": "a",
+              "text": "делікатно, визнаючи, що це особисте",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "грубо, вимагаючи відповіді",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "жартома, не чекаючи відповіді",
+              "correct": false
+            }
+          ],
+          "explanation": "Ak to nie je tajomstvo — ввічлива рамка для особистого питання.",
+          "order": 6,
+          "wordIds": [
+            "a1-u02-l08-vztahy-w01"
+          ]
+        },
+        {
+          "id": "a1-u02-l08-vztahy-ex07",
+          "lessonId": "a1-u02-l08-vztahy",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "______ bude v júni. (весілля)",
+          "acceptedAnswers": [
+            "Svadba"
+          ],
+          "explanation": "Svadba — весілля.",
+          "order": 7,
+          "wordIds": [
+            "a1-u02-l08-vztahy-w01"
+          ]
+        },
+        {
+          "id": "a1-u02-l08-vztahy-ex08",
+          "lessonId": "a1-u02-l08-vztahy",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що у вас хороші стосунки.",
+          "tokens": [
+            ".",
+            "vzťah",
+            "dobrý",
+            "Máme"
+          ],
+          "correctOrder": [
+            "Máme",
+            "dobrý",
+            "vzťah",
+            "."
+          ],
+          "explanation": "Máme + vzťah.",
+          "order": 8,
+          "wordIds": [
+            "a1-u02-l08-vztahy-w04"
+          ]
+        },
+        {
+          "id": "a1-u02-l08-vztahy-ex09",
+          "lessonId": "a1-u02-l08-vztahy",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kamarátka",
+              "sk": "Počula som, že ste sa zasnúbili!"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Nie, ľúbim svadbu.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Áno, rozišli sme sa.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Áno, svadba bude na jeseň.",
+              "correct": true
+            }
+          ],
+          "explanation": "Підтвердження + дата весілля.",
+          "order": 9,
+          "wordIds": [
+            "a1-u02-l08-vztahy-w01",
+            "a1-u02-l08-vztahy-w05"
+          ]
+        },
+        {
+          "id": "a1-u02-l08-vztahy-ex10",
+          "lessonId": "a1-u02-l08-vztahy",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Ľúbim ťa, zlatko.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": false
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": true
+            }
+          ],
+          "explanation": "Інтимне, неформальне.",
+          "order": 10,
+          "wordIds": [
+            "a1-u02-l08-vztahy-w05"
+          ]
+        },
+        {
+          "id": "a1-u02-l08-vztahy-ex11",
+          "lessonId": "a1-u02-l08-vztahy",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Хороші чи погані новини?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Хороші"
+            },
+            {
+              "id": "c2",
+              "title": "Сумні"
+            }
+          ],
+          "items": [
+            {
+              "sk": "Majú svadbu.",
+              "category": "c1"
+            },
+            {
+              "sk": "Zasnúbili sa.",
+              "category": "c1"
+            },
+            {
+              "sk": "Rozviedli sa.",
+              "category": "c2"
+            },
+            {
+              "sk": "Čakajú bábätko.",
+              "category": "c1"
+            },
+            {
+              "sk": "Rozišli sa.",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Реакція різна.",
+          "order": 11,
+          "wordIds": [
+            "a1-u02-l08-vztahy-w01"
+          ]
+        },
+        {
+          "id": "a1-u02-l08-vztahy-ex12",
+          "lessonId": "a1-u02-l08-vztahy",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Подруга розповідає, що вони з партнером розійшлися.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "To je pekná svadba.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Super, gratulujem!",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "To ma mrzí. Ako sa máš?",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Ľúbim ťa.",
+              "correct": false
+            }
+          ],
+          "explanation": "To ma mrzí — співчуття.",
+          "order": 12,
+          "wordIds": [
+            "a1-u02-l08-vztahy-w01",
+            "a1-u02-l08-vztahy-w05"
+          ]
+        },
+        {
+          "id": "a1-u02-l08-vztahy-ex13",
+          "lessonId": "a1-u02-l08-vztahy",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери слова про весілля.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "dôchodca",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "rozísť sa",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "vziať sa",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "zasnúbený",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "svadba",
+              "correct": true
+            }
+          ],
+          "explanation": "rozísť sa — протилежне.",
+          "order": 13,
+          "wordIds": [
+            "a1-u02-l08-vztahy-w01",
+            "a1-u02-l08-vztahy-w02",
+            "a1-u02-l08-vztahy-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Запрошення на весілля",
+        "description": "Колега Мартіна приносить запрошення.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Beriem sa! Svadba je v sobotu dvanásteho.» Що сталося?",
+            "options": [
+              {
+                "sk": "вона йде у відпустку",
+                "correct": false
+              },
+              {
+                "sk": "вона розлучається",
+                "correct": false
+              },
+              {
+                "sk": "вона виходить заміж",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти вітаєш її.",
+            "options": [
+              {
+                "sk": "To ma mrzí.",
+                "correct": false
+              },
+              {
+                "sk": "Nech sa páči.",
+                "correct": false
+              },
+              {
+                "sk": "Gratulujem, to je skvelá správa!",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Prídeš aj s partnerom?» Ти прийдеш із чоловіком.",
+            "options": [
+              {
+                "sk": "Áno, partner prídem.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, prídem s manželom.",
+                "correct": true
+              },
+              {
+                "sk": "Áno, prídem s manžel.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Ako dlho ste spolu?» (сім років)",
+            "options": [
+              {
+                "sk": "Sedem rokov chodíme svadba.",
+                "correct": false
+              },
+              {
+                "sk": "Sme spolu sedem rokov.",
+                "correct": true
+              },
+              {
+                "sk": "Sme spolu sedem roky.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тепер ти говориш і про стосунки. Далі — родина на відстані."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тепер ти говориш і про стосунки. Далі — родина на відстані.",
+        "nowYouKnow": [
+          "chodiť s…, zasnúbiť sa, svadba",
+          "partner, vzťah",
+          "ľúbiť, rozísť sa",
+          "Ak to nie je tajomstvo…"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 13,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u02-l09-rodina-na-dialku",
+          "title": "Родина на відстані"
+        }
+      }
+    }
+  ]
+}
