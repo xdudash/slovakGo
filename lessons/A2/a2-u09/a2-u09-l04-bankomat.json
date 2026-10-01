@@ -1,0 +1,886 @@
+{
+  "lessons": [
+    {
+      "id": "a2-u09-l04-bankomat",
+      "sectionId": "a2-u09",
+      "level": "A2",
+      "title": "Банкомат",
+      "topic": "Банк і платежі",
+      "description": "Вказівки на екрані банкомата: vložte, zadajte, zvoľte, prevezmite. Зняття й внесення готівки, банкноти, монети й залишок.",
+      "order": 84,
+      "xpReward": 30,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Розуміти вказівки банкомата й говорити про зняття та внесення готівки.",
+      "completionMessage": "Ти впевнено користуєшся банкоматом. Далі — інтернет-банкінг і застосунок банку.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A2 · Банк і платежі",
+        "title": "Банкомат",
+        "shortDescription": "Розуміти вказівки банкомата й говорити про зняття та внесення готівки.",
+        "outcomes": [
+          "розуміти Vložte kartu, Zadajte PIN, Zvoľte sumu",
+          "розрізняти výber a vklad",
+          "називати bankovky a mince",
+          "перевіряти zostatok na účte"
+        ],
+        "newWords": [
+          "zadať",
+          "výber",
+          "vklad",
+          "bankovka",
+          "minca",
+          "zostatok"
+        ],
+        "exercisesCount": 14,
+        "reward": "+30 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Наказ на екрані",
+          "text": "Банкомат звертається до тебе на «vy» наказовим способом: «Vložte kartu.» — вставте картку; «Zadajte PIN.» — введіть PIN; «Zvoľte sumu.» — оберіть суму; «Prevezmite si kartu.» — заберіть картку; «Prevezmite si hotovosť.» — заберіть готівку.",
+          "examples": [
+            {
+              "sk": "Zadajte PIN a stlačte Potvrdiť.",
+              "uk": "Введіть PIN і натисніть «Підтвердити»."
+            },
+            {
+              "sk": "Prevezmite si hotovosť.",
+              "uk": "Заберіть готівку."
+            }
+          ],
+          "shortRule": "-te: vložte, zadajte, zvoľte, prevezmite",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Výber a vklad",
+          "text": "«Výber» — зняття грошей: «výber z bankomatu», дієслово «vybrať peniaze». «Vklad» — внесення: «vklad hotovosti», дієслово «vložiť peniaze na účet». Не всі банкомати приймають готівку — шукай позначку «vklad».",
+          "examples": [
+            {
+              "sk": "Výber z bankomatu našej banky je zadarmo.",
+              "uk": "Зняття готівки в банкоматі нашого банку безкоштовне."
+            },
+            {
+              "sk": "Chcem vložiť hotovosť na účet.",
+              "uk": "Я хочу внести готівку на рахунок."
+            }
+          ],
+          "shortRule": "výber (зняти) ↔ vklad (внести)",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Bankovky, mince, zostatok",
+          "text": "Банкноти — «bankovky»: «dvadsaťeurová bankovka»; монети — «mince». «Zostatok» — залишок на рахунку: кнопка «Zobraziť zostatok» — показати залишок. Банкомат часто питає: «Chcete vytlačiť potvrdenie?» — Чи хочете надрукувати чек?",
+          "examples": [
+            {
+              "sk": "Bankomat vydáva len bankovky.",
+              "uk": "Банкомат видає лише банкноти."
+            },
+            {
+              "sk": "Aký mám zostatok na účte?",
+              "uk": "Який у мене залишок на рахунку?"
+            }
+          ],
+          "shortRule": "bankovka · minca · zostatok",
+          "commonMistakes": [
+            {
+              "mistake": "Vložil som peniaze z bankomatu.",
+              "correct": "Vybral som peniaze z bankomatu."
+            },
+            {
+              "mistake": "výber na účet",
+              "correct": "vklad na účet"
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a2-u09-l04-bankomat-w01",
+            "sk": "zadať",
+            "uk": "ввести (код, дані)",
+            "pronunciationUk": "задат’",
+            "exampleSk": "Zadajte PIN a potvrďte.",
+            "exampleUk": "Введіть PIN і підтвердьте."
+          },
+          {
+            "wordId": "a2-u09-l04-bankomat-w02",
+            "sk": "výber",
+            "uk": "зняття (грошей); вибір",
+            "pronunciationUk": "ві:бер",
+            "exampleSk": "Výber z bankomatu inej banky stojí jedno euro.",
+            "exampleUk": "Зняття готівки в банкоматі іншого банку коштує один євро."
+          },
+          {
+            "wordId": "a2-u09-l04-bankomat-w03",
+            "sk": "vklad",
+            "uk": "внесення (грошей), вклад",
+            "pronunciationUk": "вклад",
+            "exampleSk": "Vklad hotovosti je možný v pobočke.",
+            "exampleUk": "Внести готівку можна у відділенні."
+          },
+          {
+            "wordId": "a2-u09-l04-bankomat-w04",
+            "sk": "bankovka",
+            "uk": "банкнота",
+            "pronunciationUk": "банковка",
+            "exampleSk": "Bankomat mi vydal dve päťdesiateurové bankovky.",
+            "exampleUk": "Банкомат видав мені дві банкноти по п’ятдесят євро."
+          },
+          {
+            "wordId": "a2-u09-l04-bankomat-w05",
+            "sk": "minca",
+            "uk": "монета",
+            "pronunciationUk": "мінца",
+            "exampleSk": "V peňaženke mám len mince.",
+            "exampleUk": "У гаманці в мене лише монети."
+          },
+          {
+            "wordId": "a2-u09-l04-bankomat-w06",
+            "sk": "zostatok",
+            "uk": "залишок (на рахунку)",
+            "pronunciationUk": "зостаток",
+            "exampleSk": "Zostatok na účte si pozriem v aplikácii.",
+            "exampleUk": "Залишок на рахунку я подивлюся в застосунку."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a2-u09-l04-bankomat-w01",
+          "sk": "zadať",
+          "uk": "ввести (код, дані)",
+          "pronunciationUk": "задат’",
+          "exampleSk": "Zadajte PIN a potvrďte.",
+          "exampleUk": "Введіть PIN і підтвердьте.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l04-bankomat-w02",
+          "sk": "výber",
+          "uk": "зняття (грошей); вибір",
+          "pronunciationUk": "ві:бер",
+          "exampleSk": "Výber z bankomatu inej banky stojí jedno euro.",
+          "exampleUk": "Зняття готівки в банкоматі іншого банку коштує один євро.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l04-bankomat-w03",
+          "sk": "vklad",
+          "uk": "внесення (грошей), вклад",
+          "pronunciationUk": "вклад",
+          "exampleSk": "Vklad hotovosti je možný v pobočke.",
+          "exampleUk": "Внести готівку можна у відділенні.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l04-bankomat-w04",
+          "sk": "bankovka",
+          "uk": "банкнота",
+          "pronunciationUk": "банковка",
+          "exampleSk": "Bankomat mi vydal dve päťdesiateurové bankovky.",
+          "exampleUk": "Банкомат видав мені дві банкноти по п’ятдесят євро.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l04-bankomat-w05",
+          "sk": "minca",
+          "uk": "монета",
+          "pronunciationUk": "мінца",
+          "exampleSk": "V peňaženke mám len mince.",
+          "exampleUk": "У гаманці в мене лише монети.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l04-bankomat-w06",
+          "sk": "zostatok",
+          "uk": "залишок (на рахунку)",
+          "pronunciationUk": "зостаток",
+          "exampleSk": "Zostatok na účte si pozriem v aplikácii.",
+          "exampleUk": "Залишок на рахунку я подивлюся в застосунку.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a2-u09-l04-bankomat-ex01",
+          "lessonId": "a2-u09-l04-bankomat",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "zadať",
+              "right": "ввести (код)"
+            },
+            {
+              "left": "výber",
+              "right": "зняття грошей"
+            },
+            {
+              "left": "vklad",
+              "right": "внесення грошей"
+            },
+            {
+              "left": "bankovka",
+              "right": "банкнота"
+            },
+            {
+              "left": "minca",
+              "right": "монета"
+            },
+            {
+              "left": "zostatok",
+              "right": "залишок"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a2-u09-l04-bankomat-w01",
+            "a2-u09-l04-bankomat-w02",
+            "a2-u09-l04-bankomat-w03",
+            "a2-u09-l04-bankomat-w04",
+            "a2-u09-l04-bankomat-w05",
+            "a2-u09-l04-bankomat-w06"
+          ]
+        },
+        {
+          "id": "a2-u09-l04-bankomat-ex02",
+          "lessonId": "a2-u09-l04-bankomat",
+          "type": "dialogue_order",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Розстав повідомлення банкомата в правильному порядку.",
+          "lines": [
+            {
+              "id": "l4",
+              "sk": "Bankomat: Prevezmite si kartu."
+            },
+            {
+              "id": "l2",
+              "sk": "Bankomat: Zadajte PIN."
+            },
+            {
+              "id": "l3",
+              "sk": "Bankomat: Zvoľte sumu."
+            },
+            {
+              "id": "l1",
+              "sk": "Bankomat: Vložte kartu."
+            },
+            {
+              "id": "l5",
+              "sk": "Bankomat: Prevezmite si hotovosť."
+            }
+          ],
+          "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5"
+          ],
+          "explanation": "Картка → PIN → сума → картка назад → готівка.",
+          "order": 2,
+          "wordIds": [
+            "a2-u09-l04-bankomat-w01"
+          ]
+        },
+        {
+          "id": "a2-u09-l04-bankomat-ex03",
+          "lessonId": "a2-u09-l04-bankomat",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "blankId": "b1",
+              "options": [
+                "Zadajú",
+                "Zadajte",
+                "Zadaný"
+              ],
+              "correct": "Zadajte"
+            },
+            {
+              "text": " PIN a stlačte Potvrdiť."
+            }
+          ],
+          "explanation": "Наказовий спосіб на «vy»: zadajte.",
+          "order": 3,
+          "wordIds": [
+            "a2-u09-l04-bankomat-w01"
+          ]
+        },
+        {
+          "id": "a2-u09-l04-bankomat-ex04",
+          "lessonId": "a2-u09-l04-bankomat",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Chcem "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "vložiť",
+                "vybrať",
+                "zadať"
+              ],
+              "correct": "vybrať"
+            },
+            {
+              "text": " sto eur z bankomatu."
+            }
+          ],
+          "explanation": "Зняти гроші з банкомата — vybrať.",
+          "order": 4,
+          "wordIds": [
+            "a2-u09-l04-bankomat-w01"
+          ]
+        },
+        {
+          "id": "a2-u09-l04-bankomat-ex05",
+          "lessonId": "a2-u09-l04-bankomat",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Зняття чи внесення?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Výber"
+            },
+            {
+              "id": "c2",
+              "title": "Vklad"
+            }
+          ],
+          "items": [
+            {
+              "sk": "vložiť peniaze na účet",
+              "category": "c2"
+            },
+            {
+              "sk": "výber z bankomatu",
+              "category": "c1"
+            },
+            {
+              "sk": "vklad hotovosti",
+              "category": "c2"
+            },
+            {
+              "sk": "prevziať hotovosť",
+              "category": "c1"
+            },
+            {
+              "sk": "bankomat s vkladom",
+              "category": "c2"
+            },
+            {
+              "sk": "vybrať peniaze",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Výber — гроші з рахунку; vklad — гроші на рахунок.",
+          "order": 5,
+          "wordIds": [
+            "a2-u09-l04-bankomat-w02",
+            "a2-u09-l04-bankomat-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l04-bankomat-ex06",
+          "lessonId": "a2-u09-l04-bankomat",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Tento bankomat vydáva len ______. (банкноти)",
+          "acceptedAnswers": [
+            "bankovky"
+          ],
+          "explanation": "bankovka → bankovky (знахідний множини).",
+          "order": 6,
+          "wordIds": [
+            "a2-u09-l04-bankomat-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l04-bankomat-ex07",
+          "lessonId": "a2-u09-l04-bankomat",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає на екрані «Prevezmite si kartu»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "заберіть картку",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "картку заблоковано",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "вставте картку ще раз",
+              "correct": false
+            }
+          ],
+          "explanation": "prevziať si — забрати, отримати.",
+          "order": 7
+        },
+        {
+          "id": "a2-u09-l04-bankomat-ex08",
+          "lessonId": "a2-u09-l04-bankomat",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Chcem si pozrieť zostatku na účte.",
+          "errorToken": "zostatku",
+          "correctToken": "zostatok",
+          "explanation": "pozrieť si čo? — знахідний: zostatok (неживий — як називний).",
+          "order": 8,
+          "wordIds": [
+            "a2-u09-l04-bankomat-w06"
+          ]
+        },
+        {
+          "id": "a2-u09-l04-bankomat-ex09",
+          "lessonId": "a2-u09-l04-bankomat",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Bankomat: «Výber nie je možný. Prekročili ste denný limit.»",
+          "statement": "Сьогодні з цієї картки вже не можна зняти гроші.",
+          "correctAnswer": true,
+          "explanation": "Prekročili ste denný limit — ви перевищили денний ліміт.",
+          "order": 9,
+          "wordIds": [
+            "a2-u09-l04-bankomat-w02"
+          ]
+        },
+        {
+          "id": "a2-u09-l04-bankomat-ex10",
+          "lessonId": "a2-u09-l04-bankomat",
+          "type": "real_schedule",
+          "skill": [
+            "reading",
+            "real_life",
+            "time"
+          ],
+          "instruction": "Подивись на банкомати в торговому центрі.",
+          "schedule": {
+            "title": "Bankomaty v obchodnom centre",
+            "rows": [
+              {
+                "day": "Bankomat pri vchode A",
+                "hours": "len výber"
+              },
+              {
+                "day": "Bankomat pri lekárni",
+                "hours": "výber aj vklad"
+              },
+              {
+                "day": "Bankomat na parkovisku",
+                "hours": "mimo prevádzky"
+              },
+              {
+                "day": "Pobočka na 1. poschodí",
+                "hours": "po – pi 9:00 – 17:00"
+              }
+            ]
+          },
+          "question": "Де можна внести готівку?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "у банкоматі на парковці",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "у банкоматі біля аптеки",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "у банкоматі біля входу A",
+              "correct": false
+            }
+          ],
+          "explanation": "výber aj vklad — і зняття, і внесення.",
+          "order": 10,
+          "wordIds": [
+            "a2-u09-l04-bankomat-w02",
+            "a2-u09-l04-bankomat-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l04-bankomat-ex11",
+          "lessonId": "a2-u09-l04-bankomat",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Natália bola v sobotu na nákupe v Žiline a potrebovala hotovosť na trh. Bankomat jej banky bol mimo prevádzky, tak išla k bankomatu inej banky. Ten jej ukázal správu: „Za výber zaplatíte poplatok 1,50 €.“ Natália súhlasila, zadala PIN a zvolila sumu štyridsať eur. Najprv si prevzala kartu, potom hotovosť – dve dvadsaťeurové bankovky. Potvrdenie nechcela, zostatok si pozrela neskôr v aplikácii.",
+          "questions": [
+            {
+              "question": "Чому Наталія пішла до банкомата іншого банку?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "там не було комісії",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "банкомат її банку не працював",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "її картка не працювала",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Скільки вона заплатила за зняття готівки?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "нічого",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "40 €",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "1,50 €",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Які банкноти видав банкомат?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "чотири по десять євро",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "дві по двадцять євро",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "одну на п’ятдесят євро",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 11,
+          "wordIds": [
+            "a2-u09-l04-bankomat-w01",
+            "a2-u09-l04-bankomat-w02",
+            "a2-u09-l04-bankomat-w04",
+            "a2-u09-l04-bankomat-w06"
+          ]
+        },
+        {
+          "id": "a2-u09-l04-bankomat-ex12",
+          "lessonId": "a2-u09-l04-bankomat",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kamarát",
+              "sk": "Kde si tu môžem vybrať peniaze?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Bankomat je hneď pri vchode do obchodu.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Bankomat je hneď pri vchod do obchod.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Bankomat je hneď pri vchodom do obchodu.",
+              "correct": false
+            }
+          ],
+          "explanation": "pri + місцевий: pri vchode; do + родовий: do obchodu.",
+          "order": 12
+        },
+        {
+          "id": "a2-u09-l04-bankomat-ex13",
+          "lessonId": "a2-u09-l04-bankomat",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти питаєш у відділенні, чи можна тут внести готівку на рахунок.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Môžem si tu vložiť hotovosti na účte?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Môžem si tu vložiť hotovosť na účet?",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Môžem tu vklad hotovosť na účet?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Môžem si tu vybrať hotovosť na účet?",
+              "correct": false
+            }
+          ],
+          "explanation": "vložiť hotovosť na účet — внести готівку на рахунок.",
+          "order": 13,
+          "wordIds": [
+            "a2-u09-l04-bankomat-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l04-bankomat-ex14",
+          "lessonId": "a2-u09-l04-bankomat",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "Na obrazovke: «Chcete vytlačiť potvrdenie?»",
+          "target": "potvrdenie",
+          "options": [
+            {
+              "id": "a",
+              "text": "чек про операцію",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "PIN-код",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "залишок на рахунку",
+              "correct": false
+            }
+          ],
+          "explanation": "potvrdenie — тут паперовий чек про операцію.",
+          "order": 14
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Готівка на ринок",
+        "description": "У суботу тобі потрібна готівка, а поруч лише банкомат.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Екран: «Vložte kartu.» Що треба зробити?",
+            "options": [
+              {
+                "sk": "вставити картку",
+                "correct": true
+              },
+              {
+                "sk": "ввести PIN-код",
+                "correct": false
+              },
+              {
+                "sk": "забрати картку",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Екран: «Zvoľte sumu: 20 € / 50 € / 100 € / Iná suma». Тобі потрібно 30 €.",
+            "options": [
+              {
+                "sk": "50 €",
+                "correct": false
+              },
+              {
+                "sk": "20 €",
+                "correct": false
+              },
+              {
+                "sk": "Iná suma",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Друг питає, чи ти вже зняв гроші.",
+            "options": [
+              {
+                "sk": "Áno, už som si vybral peniaze.",
+                "correct": true
+              },
+              {
+                "sk": "Áno, už som si vložil peniaze.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, už som si vybrať peniaze.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Екран: «Zobraziť zostatok?» Що пропонує банкомат?",
+            "options": [
+              {
+                "sk": "внести готівку",
+                "correct": false
+              },
+              {
+                "sk": "показати залишок на рахунку",
+                "correct": true
+              },
+              {
+                "sk": "змінити PIN-код",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти впевнено користуєшся банкоматом. Далі — інтернет-банкінг і застосунок банку."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти впевнено користуєшся банкоматом. Далі — інтернет-банкінг і застосунок банку.",
+        "nowYouKnow": [
+          "Vložte kartu, Zadajte PIN, Zvoľte sumu, Prevezmite si kartu",
+          "výber a vklad",
+          "bankovka, minca",
+          "zostatok na účte"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 30,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a2-u09-l05-internetbanking",
+          "title": "Інтернет-банкінг"
+        }
+      }
+    }
+  ]
+}

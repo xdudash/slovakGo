@@ -1,0 +1,920 @@
+{
+  "lessons": [
+    {
+      "id": "a2-u07-l04-formular",
+      "sectionId": "a2-u07",
+      "level": "A2",
+      "title": "Формуляр",
+      "topic": "Легалізація і úrad",
+      "description": "Як читати й заповнювати офіційний формуляр: поля, сімейний стан, підпис і типові інструкції в наказовому способі.",
+      "order": 64,
+      "xpReward": 30,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Розуміти поля формуляра й правильно вписувати свої дані.",
+      "completionMessage": "Формуляр більше не лякає. Далі — як записатися на прийом в установі.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A2 · Легалізація і úrad",
+        "title": "Формуляр",
+        "shortDescription": "Розуміти поля формуляра й правильно вписувати свої дані.",
+        "outcomes": [
+          "розуміти поля priezvisko, rodné priezvisko, miesto narodenia",
+          "вказувати rodinný stav: ženatý / vydatá",
+          "розуміти інструкції Vyplňte paličkovým písmom, Nehodiace sa prečiarknite",
+          "підписувати заяву: podpísať, podpis žiadateľa"
+        ],
+        "newWords": [
+          "formulár",
+          "žiadosť",
+          "políčko",
+          "rodinný stav",
+          "miesto narodenia",
+          "podpísať"
+        ],
+        "exercisesCount": 15,
+        "reward": "+30 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Поля формуляра",
+          "text": "«Formulár» або «tlačivo» — бланк. Типові поля: «priezvisko» — прізвище, «rodné priezvisko» — прізвище при народженні (у жінок часто дівоче), «dátum narodenia», «miesto narodenia» — місце народження, «štátna príslušnosť» — громадянство, «rodinný stav» — сімейний стан, «adresa pobytu na Slovensku» — адреса в Словаччині. Ім’я та прізвище пиши так, як у паспорті.",
+          "examples": [
+            {
+              "sk": "Miesto narodenia: Odesa, Ukrajina",
+              "uk": "Місце народження: Одеса, Україна"
+            },
+            {
+              "sk": "Štátna príslušnosť: ukrajinská",
+              "uk": "Громадянство: українське"
+            }
+          ],
+          "shortRule": "ім’я та прізвище — як у паспорті",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Сімейний стан",
+          "text": "У полі «rodinný stav» пишуть: «slobodný / slobodná» — неодружений / незаміжня, «ženatý» — одружений (про чоловіка), «vydatá» — заміжня (про жінку), «rozvedený / rozvedená» — розлучений / розлучена, «vdovec / vdova» — вдівець / вдова. Чоловік ніколи не буває «vydatý», а жінка — «ženatá».",
+          "examples": [
+            {
+              "sk": "Som vydatá.",
+              "uk": "Я заміжня."
+            },
+            {
+              "sk": "Brat je ženatý.",
+              "uk": "Брат одружений."
+            }
+          ],
+          "shortRule": "ženatý — він · vydatá — вона",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Інструкції у формулярі",
+          "text": "Інструкції пишуть у наказовому способі на «vy»: «Vyplňte» — заповніть, «Podpíšte» — підпишіть, «Priložte» — додайте. «Vyplňte paličkovým písmom» — заповніть друкованими літерами. «Nehodiace sa prečiarknite» — непотрібне закресліть. «Podpis žiadateľa» — підпис заявника.",
+          "examples": [
+            {
+              "sk": "Vyplňte paličkovým písmom.",
+              "uk": "Заповніть друкованими літерами."
+            },
+            {
+              "sk": "Podpíšte sa tu, prosím.",
+              "uk": "Підпишіться тут, будь ласка."
+            }
+          ],
+          "shortRule": "Vyplňte · Podpíšte · Priložte · Nehodiace sa prečiarknite",
+          "commonMistakes": [
+            {
+              "mistake": "Som ženatá.",
+              "correct": "Som vydatá."
+            },
+            {
+              "mistake": "Podpísajte sa.",
+              "correct": "Podpíšte sa."
+            },
+            {
+              "mistake": "miesto narodenie",
+              "correct": "miesto narodenia"
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a2-u07-l04-formular-w01",
+            "sk": "formulár",
+            "uk": "формуляр, бланк",
+            "pronunciationUk": "формула:р",
+            "exampleSk": "Tento formulár vyplňte paličkovým písmom.",
+            "exampleUk": "Цей формуляр заповніть друкованими літерами."
+          },
+          {
+            "wordId": "a2-u07-l04-formular-w02",
+            "sk": "žiadosť",
+            "uk": "заява",
+            "pronunciationUk": "жіадост’",
+            "exampleSk": "Žiadosť o prechodný pobyt podávam osobne.",
+            "exampleUk": "Заяву на тимчасове перебування я подаю особисто."
+          },
+          {
+            "wordId": "a2-u07-l04-formular-w03",
+            "sk": "políčko",
+            "uk": "поле, клітинка (у бланку)",
+            "pronunciationUk": "полі:чко",
+            "exampleSk": "Toto políčko nechajte prázdne.",
+            "exampleUk": "Це поле залиште порожнім."
+          },
+          {
+            "wordId": "a2-u07-l04-formular-w04",
+            "sk": "rodinný stav",
+            "uk": "сімейний стан",
+            "pronunciationUk": "родінні: став",
+            "exampleSk": "Do formulára som napísala rodinný stav: vydatá.",
+            "exampleUk": "У формулярі я вказала сімейний стан: заміжня."
+          },
+          {
+            "wordId": "a2-u07-l04-formular-w05",
+            "sk": "miesto narodenia",
+            "uk": "місце народження",
+            "pronunciationUk": "мієсто народенія",
+            "exampleSk": "Miesto narodenia píšte podľa pasu.",
+            "exampleUk": "Місце народження пишіть як у паспорті."
+          },
+          {
+            "wordId": "a2-u07-l04-formular-w06",
+            "sk": "podpísať",
+            "uk": "підписати",
+            "pronunciationUk": "подпі:сат’",
+            "exampleSk": "Žiadosť musíte podpísať vlastnoručne.",
+            "exampleUk": "Заяву ви мусите підписати власноруч."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a2-u07-l04-formular-w01",
+          "sk": "formulár",
+          "uk": "формуляр, бланк",
+          "pronunciationUk": "формула:р",
+          "exampleSk": "Tento formulár vyplňte paličkovým písmom.",
+          "exampleUk": "Цей формуляр заповніть друкованими літерами.",
+          "level": "A2",
+          "topic": "Легалізація і úrad",
+          "tags": [
+            "a2-u07",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-w02",
+          "sk": "žiadosť",
+          "uk": "заява",
+          "pronunciationUk": "жіадост’",
+          "exampleSk": "Žiadosť o prechodný pobyt podávam osobne.",
+          "exampleUk": "Заяву на тимчасове перебування я подаю особисто.",
+          "level": "A2",
+          "topic": "Легалізація і úrad",
+          "tags": [
+            "a2-u07",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-w03",
+          "sk": "políčko",
+          "uk": "поле, клітинка (у бланку)",
+          "pronunciationUk": "полі:чко",
+          "exampleSk": "Toto políčko nechajte prázdne.",
+          "exampleUk": "Це поле залиште порожнім.",
+          "level": "A2",
+          "topic": "Легалізація і úrad",
+          "tags": [
+            "a2-u07",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-w04",
+          "sk": "rodinný stav",
+          "uk": "сімейний стан",
+          "pronunciationUk": "родінні: став",
+          "exampleSk": "Do formulára som napísala rodinný stav: vydatá.",
+          "exampleUk": "У формулярі я вказала сімейний стан: заміжня.",
+          "level": "A2",
+          "topic": "Легалізація і úrad",
+          "tags": [
+            "a2-u07",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-w05",
+          "sk": "miesto narodenia",
+          "uk": "місце народження",
+          "pronunciationUk": "мієсто народенія",
+          "exampleSk": "Miesto narodenia píšte podľa pasu.",
+          "exampleUk": "Місце народження пишіть як у паспорті.",
+          "level": "A2",
+          "topic": "Легалізація і úrad",
+          "tags": [
+            "a2-u07",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-w06",
+          "sk": "podpísať",
+          "uk": "підписати",
+          "pronunciationUk": "подпі:сат’",
+          "exampleSk": "Žiadosť musíte podpísať vlastnoručne.",
+          "exampleUk": "Заяву ви мусите підписати власноруч.",
+          "level": "A2",
+          "topic": "Легалізація і úrad",
+          "tags": [
+            "a2-u07",
+            "a2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a2-u07-l04-formular-ex01",
+          "lessonId": "a2-u07-l04-formular",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "formulár",
+              "right": "формуляр, бланк"
+            },
+            {
+              "left": "žiadosť",
+              "right": "заява"
+            },
+            {
+              "left": "políčko",
+              "right": "поле (у бланку)"
+            },
+            {
+              "left": "rodinný stav",
+              "right": "сімейний стан"
+            },
+            {
+              "left": "miesto narodenia",
+              "right": "місце народження"
+            },
+            {
+              "left": "podpísať",
+              "right": "підписати"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a2-u07-l04-formular-w01",
+            "a2-u07-l04-formular-w02",
+            "a2-u07-l04-formular-w03",
+            "a2-u07-l04-formular-w04",
+            "a2-u07-l04-formular-w05",
+            "a2-u07-l04-formular-w06"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-ex02",
+          "lessonId": "a2-u07-l04-formular",
+          "type": "collocation",
+          "skill": [
+            "vocabulary",
+            "natural_language"
+          ],
+          "instruction": "З’єднай поле формуляра з прикладом.",
+          "pairs": [
+            {
+              "left": "Priezvisko",
+              "right": "Kovalenko"
+            },
+            {
+              "left": "Miesto narodenia",
+              "right": "Odesa"
+            },
+            {
+              "left": "Štátna príslušnosť",
+              "right": "ukrajinská"
+            },
+            {
+              "left": "Rodinný stav",
+              "right": "vydatá"
+            },
+            {
+              "left": "Dátum narodenia",
+              "right": "12. 4. 1990"
+            }
+          ],
+          "order": 2,
+          "wordIds": [
+            "a2-u07-l04-formular-w01",
+            "a2-u07-l04-formular-w04",
+            "a2-u07-l04-formular-w05"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-ex03",
+          "lessonId": "a2-u07-l04-formular",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Môj manžel je "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "ženatý",
+                "vydatý",
+                "vydatá"
+              ],
+              "correct": "ženatý"
+            },
+            {
+              "text": " a ja som vydatá."
+            }
+          ],
+          "explanation": "Про чоловіка кажуть ženatý.",
+          "order": 3,
+          "wordIds": [
+            "a2-u07-l04-formular-w01"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-ex04",
+          "lessonId": "a2-u07-l04-formular",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Olena je "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "vydatá",
+                "ženatý",
+                "ženatá"
+              ],
+              "correct": "vydatá"
+            },
+            {
+              "text": " a má dve deti."
+            }
+          ],
+          "explanation": "Про жінку кажуть vydatá.",
+          "order": 4,
+          "wordIds": [
+            "a2-u07-l04-formular-w01"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-ex05",
+          "lessonId": "a2-u07-l04-formular",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає інструкція «Nehodiace sa prečiarknite»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Непотрібне закресліть",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Заповніть усі поля",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Нічого не закреслюйте",
+              "correct": false
+            }
+          ],
+          "explanation": "nehodiace sa — те, що не підходить; prečiarknuť — закреслити.",
+          "order": 5,
+          "wordIds": [
+            "a2-u07-l04-formular-w01"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-ex06",
+          "lessonId": "a2-u07-l04-formular",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "Formulár: «Vyplňte paličkovým písmom.»",
+          "target": "paličkovým písmom",
+          "options": [
+            {
+              "id": "a",
+              "text": "письмовими літерами від руки",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "синьою ручкою",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "друкованими літерами",
+              "correct": true
+            }
+          ],
+          "explanation": "paličkové písmo — друковані великі літери.",
+          "order": 6,
+          "wordIds": [
+            "a2-u07-l04-formular-w01"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-ex07",
+          "lessonId": "a2-u07-l04-formular",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши наказову форму (podpísať).",
+          "sentence": "______ sa, prosím, na konci strany.",
+          "acceptedAnswers": [
+            "Podpíšte"
+          ],
+          "explanation": "podpísať → podpíšte (наказовий для vy).",
+          "order": 7,
+          "wordIds": [
+            "a2-u07-l04-formular-w01"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-ex08",
+          "lessonId": "a2-u07-l04-formular",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Podpísajte žiadosť na poslednej strane.",
+          "errorToken": "Podpísajte",
+          "correctToken": "Podpíšte",
+          "explanation": "Наказовий від podpísať — podpíšte (як píšem → píšte).",
+          "order": 8,
+          "wordIds": [
+            "a2-u07-l04-formular-w01",
+            "a2-u07-l04-formular-w02",
+            "a2-u07-l04-formular-w06"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-ex09",
+          "lessonId": "a2-u07-l04-formular",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перетвори на інструкцію для «vy».",
+          "source": "vyplniť formulár",
+          "acceptedAnswers": [
+            "Vyplňte formulár."
+          ],
+          "explanation": "vyplniť → vyplňte.",
+          "order": 9,
+          "wordIds": [
+            "a2-u07-l04-formular-w01"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-ex10",
+          "lessonId": "a2-u07-l04-formular",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай частину формуляра.",
+          "document": {
+            "title": "Žiadosť o udelenie prechodného pobytu (vzor)",
+            "fields": [
+              {
+                "label": "Priezvisko",
+                "value": "MELNYK"
+              },
+              {
+                "label": "Rodné priezvisko",
+                "value": "SAVČENKO"
+              },
+              {
+                "label": "Meno",
+                "value": "IRYNA"
+              },
+              {
+                "label": "Miesto narodenia",
+                "value": "CHARKOV, UKRAJINA"
+              },
+              {
+                "label": "Rodinný stav",
+                "value": "VYDATÁ"
+              }
+            ]
+          },
+          "question": "Яке прізвище було в Ірини при народженні?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Харків",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Савченко",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Мельник",
+              "correct": false
+            }
+          ],
+          "explanation": "Rodné priezvisko — прізвище при народженні.",
+          "order": 10,
+          "wordIds": [
+            "a2-u07-l04-formular-w01",
+            "a2-u07-l04-formular-w02",
+            "a2-u07-l04-formular-w04",
+            "a2-u07-l04-formular-w05"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-ex11",
+          "lessonId": "a2-u07-l04-formular",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Заміжня жінка в полі «Rodinný stav» пише «ženatá».",
+          "correctAnswer": false,
+          "explanation": "Жінка пише vydatá; ženatý — тільки про чоловіка.",
+          "order": 11,
+          "wordIds": [
+            "a2-u07-l04-formular-w01",
+            "a2-u07-l04-formular-w04"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-ex12",
+          "lessonId": "a2-u07-l04-formular",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що пишуть у полі?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Rodinný stav"
+            },
+            {
+              "id": "c2",
+              "title": "Štátna príslušnosť"
+            }
+          ],
+          "items": [
+            {
+              "sk": "ženatý",
+              "category": "c1"
+            },
+            {
+              "sk": "slobodný",
+              "category": "c1"
+            },
+            {
+              "sk": "rozvedená",
+              "category": "c1"
+            },
+            {
+              "sk": "slovenská",
+              "category": "c2"
+            },
+            {
+              "sk": "poľská",
+              "category": "c2"
+            },
+            {
+              "sk": "ukrajinská",
+              "category": "c2"
+            },
+            {
+              "sk": "vydatá",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Сімейний стан — slobodný, ženatý…; громадянство — прикметник: ukrajinská.",
+          "order": 12,
+          "wordIds": [
+            "a2-u07-l04-formular-w01",
+            "a2-u07-l04-formular-w04"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-ex13",
+          "lessonId": "a2-u07-l04-formular",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Pokyny k vyplneniu žiadosti: Žiadosť vyplňte paličkovým písmom, modrým alebo čiernym perom. Meno a priezvisko napíšte presne tak, ako sú uvedené v cestovnom pase. Ak ste žena, uveďte aj rodné priezvisko. V políčku Rodinný stav nehodiace sa prečiarknite. Políčka označené hviezdičkou sú povinné. Žiadosť na konci vlastnoručne podpíšte.",
+          "questions": [
+            {
+              "question": "Якою ручкою можна заповнювати заяву?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "синьою або чорною",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "тільки чорною",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "будь-якою",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Як треба писати ім’я та прізвище?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "так, як їх вимовляють словацькою",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "точно так, як у закордонному паспорті",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "маленькими письмовими літерами",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Які поля обов’язкові?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "тільки поле «Rodinný stav»",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "усі поля",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "позначені зірочкою",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 13,
+          "wordIds": [
+            "a2-u07-l04-formular-w01",
+            "a2-u07-l04-formular-w02",
+            "a2-u07-l04-formular-w03",
+            "a2-u07-l04-formular-w04"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-ex14",
+          "lessonId": "a2-u07-l04-formular",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Úradníčka",
+              "sk": "Tu chýba váš podpis."
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Prepáčte, hneď to podpíšem.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Prepáčte, hneď to podpíšte.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Prepáčte, hneď to podpísal.",
+              "correct": false
+            }
+          ],
+          "explanation": "podpíšem — я підпишу (доконаний вид, майбутній час).",
+          "order": 14,
+          "wordIds": [
+            "a2-u07-l04-formular-w01",
+            "a2-u07-l04-formular-w06"
+          ]
+        },
+        {
+          "id": "a2-u07-l04-formular-ex15",
+          "lessonId": "a2-u07-l04-formular",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Спитай службовицю, де тобі підписатися.",
+          "tokens": [
+            "sa",
+            "?",
+            "Kde",
+            "mám",
+            "podpísať"
+          ],
+          "correctOrder": [
+            "Kde",
+            "sa",
+            "mám",
+            "podpísať",
+            "?"
+          ],
+          "explanation": "sa стоїть одразу після питального слова: Kde sa mám…",
+          "order": 15,
+          "wordIds": [
+            "a2-u07-l04-formular-w01",
+            "a2-u07-l04-formular-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Заповнюємо заяву",
+        "description": "Ти заповнюєш заяву на тимчасове перебування просто на úrade.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти заміжня жінка. Що ти пишеш у полі «Rodinný stav»?",
+            "options": [
+              {
+                "sk": "ženatá",
+                "correct": false
+              },
+              {
+                "sk": "vydatý",
+                "correct": false
+              },
+              {
+                "sk": "vydatá",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти не розумієш поле «Rodné priezvisko» і питаєш:",
+            "options": [
+              {
+                "sk": "Prepáčte, čo mám písať v políčku Rodné priezvisko je?",
+                "correct": false
+              },
+              {
+                "sk": "Prepáčte, čo mám napísať do políčko Rodné priezvisko?",
+                "correct": false
+              },
+              {
+                "sk": "Prepáčte, čo mám napísať do políčka Rodné priezvisko?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Службовиця: «Vyplňte to paličkovým písmom.» Як ти пишеш?",
+            "options": [
+              {
+                "sk": "олівцем",
+                "correct": false
+              },
+              {
+                "sk": "дрібним письмовим почерком",
+                "correct": false
+              },
+              {
+                "sk": "великими друкованими літерами",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Службовиця: «Ešte sa tu podpíšte.» Що ти робиш?",
+            "options": [
+              {
+                "sk": "ставиш підпис",
+                "correct": true
+              },
+              {
+                "sk": "закреслюєш поле",
+                "correct": false
+              },
+              {
+                "sk": "пишеш дату",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Формуляр більше не лякає. Далі — як записатися на прийом в установі."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Формуляр більше не лякає. Далі — як записатися на прийом в установі.",
+        "nowYouKnow": [
+          "priezvisko, rodné priezvisko, miesto narodenia",
+          "ženatý (він) — vydatá (вона)",
+          "Vyplňte paličkovým písmom, nehodiace sa prečiarknite",
+          "podpísať žiadosť, podpis žiadateľa"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 15,
+        "xpReward": 30,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a2-u07-l05-termin-na-urade",
+          "title": "Запис на прийом"
+        }
+      }
+    }
+  ]
+}

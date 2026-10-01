@@ -1,0 +1,891 @@
+{
+  "lessons": [
+    {
+      "id": "a2-u09-l03-iban-a-prevod",
+      "sectionId": "a2-u09",
+      "level": "A2",
+      "title": "IBAN і банківський переказ",
+      "topic": "Банк і платежі",
+      "description": "Як прочитати IBAN, заповнити переказ і кому та куди надсилати гроші: давальний і знахідний відмінки в банківських фразах.",
+      "order": 83,
+      "xpReward": 30,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Надіслати гроші переказом і правильно заповнити реквізити.",
+      "completionMessage": "Ти вмієш надсилати гроші переказом. Далі — банкомат: зняти й внести готівку.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A2 · Банк і платежі",
+        "title": "IBAN і банківський переказ",
+        "shortDescription": "Надіслати гроші переказом і правильно заповнити реквізити.",
+        "outcomes": [
+          "читати й диктувати IBAN",
+          "заповнювати príjemca, suma, variabilný symbol, správa pre príjemcu",
+          "казати poslať peniaze mame na účet",
+          "розрізняти звичайний переказ і okamžitú platbu"
+        ],
+        "newWords": [
+          "prevod",
+          "previesť",
+          "príjemca",
+          "IBAN",
+          "variabilný symbol",
+          "okamžitá platba"
+        ],
+        "exercisesCount": 14,
+        "reward": "+30 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "IBAN",
+          "text": "«IBAN» — міжнародний номер рахунку. Словацький має 24 знаки й починається з «SK»: «SK31 4400 0000 1987 4263 7541». Цифри зазвичай читають групами по чотири. Питають так: «Aké je vaše číslo účtu?» або «Pošlite mi IBAN.»",
+          "examples": [
+            {
+              "sk": "Môžete mi poslať váš IBAN?",
+              "uk": "Можете надіслати мені ваш IBAN?"
+            },
+            {
+              "sk": "Číslo účtu je v zmluve.",
+              "uk": "Номер рахунку є в договорі."
+            }
+          ],
+          "shortRule": "SK + 22 цифри",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Prevod",
+          "text": "«Prevod» — переказ: «poslať peniaze prevodom», «previesť peniaze na účet». Кому? — давальний: «Posielam peniaze mame.» На чий рахунок? — «na účet» + родовий: «na účet pána Kováča». Звичайний переказ між банками зазвичай приходить наступного робочого дня, «okamžitá platba» — за кілька секунд.",
+          "examples": [
+            {
+              "sk": "Peniaze som previedla na účet syna.",
+              "uk": "Я переказала гроші на рахунок сина."
+            },
+            {
+              "sk": "Posielam ti peniaze za lístky.",
+              "uk": "Надсилаю тобі гроші за квитки."
+            }
+          ],
+          "shortRule": "poslať komu? (давальний) · na účet koho? (родовий)",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Údaje platby",
+          "text": "У формі переказу є поля: «IBAN príjemcu» (номер рахунку одержувача), «suma», «variabilný symbol» (VS — число, за яким одержувач знаходить твій платіж, напр. номер фактури) і «správa pre príjemcu» (повідомлення). Хто отримує гроші — «príjemca», хто платить — «platiteľ».",
+          "examples": [
+            {
+              "sk": "Do správy pre príjemcu napíšte svoje meno.",
+              "uk": "У повідомленні для одержувача напишіть своє ім’я."
+            },
+            {
+              "sk": "Variabilný symbol je číslo faktúry.",
+              "uk": "Варіабельний символ — це номер фактури."
+            }
+          ],
+          "shortRule": "príjemca, suma, VS, správa",
+          "commonMistakes": [
+            {
+              "mistake": "Posielam peniaze mama.",
+              "correct": "Posielam peniaze mame."
+            },
+            {
+              "mistake": "previesť peniaze na účte",
+              "correct": "previesť peniaze na účet"
+            },
+            {
+              "mistake": "meno príjemca",
+              "correct": "meno príjemcu"
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a2-u09-l03-iban-a-prevod-w01",
+            "sk": "prevod",
+            "uk": "переказ",
+            "pronunciationUk": "превод",
+            "exampleSk": "Prevod z inej banky trvá jeden pracovný deň.",
+            "exampleUk": "Переказ з іншого банку триває один робочий день."
+          },
+          {
+            "wordId": "a2-u09-l03-iban-a-prevod-w02",
+            "sk": "previesť",
+            "uk": "переказати (гроші)",
+            "pronunciationUk": "превієст’",
+            "exampleSk": "Nájom som previedol na účet majiteľa.",
+            "exampleUk": "Оренду я переказав на рахунок власника."
+          },
+          {
+            "wordId": "a2-u09-l03-iban-a-prevod-w03",
+            "sk": "príjemca",
+            "uk": "одержувач",
+            "pronunciationUk": "при:йемца",
+            "exampleSk": "Skontrolujte meno príjemcu.",
+            "exampleUk": "Перевірте ім’я одержувача."
+          },
+          {
+            "wordId": "a2-u09-l03-iban-a-prevod-w04",
+            "sk": "IBAN",
+            "uk": "міжнародний номер рахунку (IBAN)",
+            "pronunciationUk": "і:бан",
+            "exampleSk": "IBAN začína písmenami SK.",
+            "exampleUk": "IBAN починається літерами SK."
+          },
+          {
+            "wordId": "a2-u09-l03-iban-a-prevod-w05",
+            "sk": "variabilný symbol",
+            "uk": "варіабельний символ (номер платежу)",
+            "pronunciationUk": "варіабілні: сімбол",
+            "exampleSk": "Bez variabilného symbolu firma platbu nenájde.",
+            "exampleUk": "Без варіабельного символу фірма не знайде платіж."
+          },
+          {
+            "wordId": "a2-u09-l03-iban-a-prevod-w06",
+            "sk": "okamžitá platba",
+            "uk": "миттєвий платіж",
+            "pronunciationUk": "окамжіта: платба",
+            "exampleSk": "Okamžitá platba príde do pár sekúnd.",
+            "exampleUk": "Миттєвий платіж надходить за кілька секунд."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a2-u09-l03-iban-a-prevod-w01",
+          "sk": "prevod",
+          "uk": "переказ",
+          "pronunciationUk": "превод",
+          "exampleSk": "Prevod z inej banky trvá jeden pracovný deň.",
+          "exampleUk": "Переказ з іншого банку триває один робочий день.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l03-iban-a-prevod-w02",
+          "sk": "previesť",
+          "uk": "переказати (гроші)",
+          "pronunciationUk": "превієст’",
+          "exampleSk": "Nájom som previedol na účet majiteľa.",
+          "exampleUk": "Оренду я переказав на рахунок власника.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l03-iban-a-prevod-w03",
+          "sk": "príjemca",
+          "uk": "одержувач",
+          "pronunciationUk": "при:йемца",
+          "exampleSk": "Skontrolujte meno príjemcu.",
+          "exampleUk": "Перевірте ім’я одержувача.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l03-iban-a-prevod-w04",
+          "sk": "IBAN",
+          "uk": "міжнародний номер рахунку (IBAN)",
+          "pronunciationUk": "і:бан",
+          "exampleSk": "IBAN začína písmenami SK.",
+          "exampleUk": "IBAN починається літерами SK.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l03-iban-a-prevod-w05",
+          "sk": "variabilný symbol",
+          "uk": "варіабельний символ (номер платежу)",
+          "pronunciationUk": "варіабілні: сімбол",
+          "exampleSk": "Bez variabilného symbolu firma platbu nenájde.",
+          "exampleUk": "Без варіабельного символу фірма не знайде платіж.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l03-iban-a-prevod-w06",
+          "sk": "okamžitá platba",
+          "uk": "миттєвий платіж",
+          "pronunciationUk": "окамжіта: платба",
+          "exampleSk": "Okamžitá platba príde do pár sekúnd.",
+          "exampleUk": "Миттєвий платіж надходить за кілька секунд.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a2-u09-l03-iban-a-prevod-ex01",
+          "lessonId": "a2-u09-l03-iban-a-prevod",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "prevod",
+              "right": "переказ"
+            },
+            {
+              "left": "previesť",
+              "right": "переказати"
+            },
+            {
+              "left": "príjemca",
+              "right": "одержувач"
+            },
+            {
+              "left": "IBAN",
+              "right": "номер рахунку"
+            },
+            {
+              "left": "variabilný symbol",
+              "right": "номер платежу (VS)"
+            },
+            {
+              "left": "okamžitá platba",
+              "right": "миттєвий платіж"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a2-u09-l03-iban-a-prevod-w01",
+            "a2-u09-l03-iban-a-prevod-w02",
+            "a2-u09-l03-iban-a-prevod-w03",
+            "a2-u09-l03-iban-a-prevod-w04",
+            "a2-u09-l03-iban-a-prevod-w05",
+            "a2-u09-l03-iban-a-prevod-w06"
+          ]
+        },
+        {
+          "id": "a2-u09-l03-iban-a-prevod-ex02",
+          "lessonId": "a2-u09-l03-iban-a-prevod",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Každý mesiac posielam peniaze "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "mama",
+                "mamu",
+                "mame"
+              ],
+              "correct": "mame"
+            },
+            {
+              "text": " na Ukrajinu."
+            }
+          ],
+          "explanation": "Кому? — давальний: mama → mame.",
+          "order": 2,
+          "wordIds": [
+            "a2-u09-l03-iban-a-prevod-w01",
+            "a2-u09-l03-iban-a-prevod-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l03-iban-a-prevod-ex03",
+          "lessonId": "a2-u09-l03-iban-a-prevod",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Nájom som previedol na účet "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "majiteľom",
+                "majiteľa",
+                "majiteľ"
+              ],
+              "correct": "majiteľa"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "na účet koho? — родовий: majiteľ → majiteľa.",
+          "order": 3,
+          "wordIds": [
+            "a2-u09-l03-iban-a-prevod-w01",
+            "a2-u09-l03-iban-a-prevod-w02",
+            "a2-u09-l03-iban-a-prevod-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l03-iban-a-prevod-ex04",
+          "lessonId": "a2-u09-l03-iban-a-prevod",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Skontrolujte IBAN ______. (príjemca)",
+          "acceptedAnswers": [
+            "príjemcu"
+          ],
+          "explanation": "príjemca → príjemcu (родовий, як kolega → kolegu).",
+          "order": 4,
+          "wordIds": [
+            "a2-u09-l03-iban-a-prevod-w01",
+            "a2-u09-l03-iban-a-prevod-w03",
+            "a2-u09-l03-iban-a-prevod-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l03-iban-a-prevod-ex05",
+          "lessonId": "a2-u09-l03-iban-a-prevod",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай платіжне доручення.",
+          "document": {
+            "title": "Príkaz na úhradu",
+            "fields": [
+              {
+                "label": "IBAN príjemcu",
+                "value": "SK47 4400 0000 0051 2233 4455"
+              },
+              {
+                "label": "Príjemca",
+                "value": "Domáce energie s. r. o."
+              },
+              {
+                "label": "Suma",
+                "value": "64,20 €"
+              },
+              {
+                "label": "Variabilný symbol",
+                "value": "2026104"
+              },
+              {
+                "label": "Správa pre príjemcu",
+                "value": "Kovalenko, október"
+              }
+            ]
+          },
+          "question": "Який варіабельний символ цього платежу?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "64,20",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "4400",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "2026104",
+              "correct": true
+            }
+          ],
+          "explanation": "Variabilný symbol: 2026104.",
+          "order": 5,
+          "wordIds": [
+            "a2-u09-l03-iban-a-prevod-w01",
+            "a2-u09-l03-iban-a-prevod-w03",
+            "a2-u09-l03-iban-a-prevod-w04",
+            "a2-u09-l03-iban-a-prevod-w05"
+          ]
+        },
+        {
+          "id": "a2-u09-l03-iban-a-prevod-ex06",
+          "lessonId": "a2-u09-l03-iban-a-prevod",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Попроси перевірити ім’я одержувача.",
+          "tokens": [
+            ".",
+            "meno",
+            "príjemcu",
+            "Skontrolujte"
+          ],
+          "correctOrder": [
+            "Skontrolujte",
+            "meno",
+            "príjemcu",
+            "."
+          ],
+          "explanation": "skontrolovať + знахідний: meno; čie meno? — родовий: príjemcu.",
+          "order": 6,
+          "wordIds": [
+            "a2-u09-l03-iban-a-prevod-w01",
+            "a2-u09-l03-iban-a-prevod-w03",
+            "a2-u09-l03-iban-a-prevod-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l03-iban-a-prevod-ex07",
+          "lessonId": "a2-u09-l03-iban-a-prevod",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Peniaze som poslala sestra na nový účet.",
+          "errorToken": "sestra",
+          "correctToken": "sestre",
+          "explanation": "Кому? — давальний: sestra → sestre.",
+          "order": 7,
+          "wordIds": [
+            "a2-u09-l03-iban-a-prevod-w01",
+            "a2-u09-l03-iban-a-prevod-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l03-iban-a-prevod-ex08",
+          "lessonId": "a2-u09-l03-iban-a-prevod",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що таке «okamžitá platba»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "переказ, який надходить за кілька секунд",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "платіж, який треба зробити сьогодні",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "оплата готівкою",
+              "correct": false
+            }
+          ],
+          "explanation": "okamžitý — миттєвий: гроші приходять одразу.",
+          "order": 8,
+          "wordIds": [
+            "a2-u09-l03-iban-a-prevod-w01",
+            "a2-u09-l03-iban-a-prevod-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l03-iban-a-prevod-ex09",
+          "lessonId": "a2-u09-l03-iban-a-prevod",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Словацький IBAN починається літерами SK.",
+          "correctAnswer": true,
+          "explanation": "SK + 22 цифри, разом 24 знаки.",
+          "order": 9,
+          "wordIds": [
+            "a2-u09-l03-iban-a-prevod-w01",
+            "a2-u09-l03-iban-a-prevod-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l03-iban-a-prevod-ex10",
+          "lessonId": "a2-u09-l03-iban-a-prevod",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення від власниці квартири.",
+          "message": {
+            "sender": "Pani Horváthová",
+            "body": "Dobrý deň, nájom za november mi, prosím, pošlite do piateho na môj účet SK12 4400 0000 0012 3456 7890. Do správy pre príjemcu napíšte číslo bytu. Ďakujem."
+          },
+          "question": "Що треба написати в повідомленні для одержувача?",
+          "options": [
+            {
+              "id": "a",
+              "text": "номер квартири",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "своє ім’я та прізвище",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "номер рахунку",
+              "correct": false
+            }
+          ],
+          "explanation": "Do správy pre príjemcu napíšte číslo bytu — напишіть номер квартири.",
+          "order": 10,
+          "wordIds": [
+            "a2-u09-l03-iban-a-prevod-w01",
+            "a2-u09-l03-iban-a-prevod-w03",
+            "a2-u09-l03-iban-a-prevod-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l03-iban-a-prevod-ex11",
+          "lessonId": "a2-u09-l03-iban-a-prevod",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Andrij posiela každý mesiac peniaze rodičom do Ľvova. Predtým posielal peniaze cez známych, ktorí cestovali domov. Teraz to robí jednoducho v aplikácii banky: zadá IBAN otcovho účtu, sumu a do správy napíše „pre mamu a otca“. Prevod do zahraničia je pomalší ako prevod na Slovensku a stojí dve eurá. Keď posiela peniaze kolegovi na Slovensku, používa okamžitú platbu a peniaze prídu za pár sekúnd.",
+          "questions": [
+            {
+              "question": "Кому Андрій щомісяця надсилає гроші?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "батькам у Львів",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "колезі в Словаччині",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "знайомим, які їдуть додому",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Скільки коштує переказ за кордон?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "два євро",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "п’ять євро",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "нічого",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Коли Андрій користується миттєвим платежем?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "коли надсилає гроші батькам",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "коли надсилає гроші колезі в Словаччині",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "коли платить за квартиру",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 11,
+          "wordIds": [
+            "a2-u09-l03-iban-a-prevod-w01",
+            "a2-u09-l03-iban-a-prevod-w04",
+            "a2-u09-l03-iban-a-prevod-w06"
+          ]
+        },
+        {
+          "id": "a2-u09-l03-iban-a-prevod-ex12",
+          "lessonId": "a2-u09-l03-iban-a-prevod",
+          "type": "word_bank",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Склади.",
+          "wordBank": [
+            "príjemcu",
+            "previedla"
+          ],
+          "items": [
+            {
+              "sentence": "Peniaze som ______ na účet syna.",
+              "correct": "previedla"
+            },
+            {
+              "sentence": "Skontrolujte meno ______.",
+              "correct": "príjemcu"
+            }
+          ],
+          "extraWords": [
+            "príjemcovi",
+            "previesť"
+          ],
+          "explanation": "previedla — минулий час жіночого роду; meno príjemcu — родовий.",
+          "order": 12,
+          "wordIds": [
+            "a2-u09-l03-iban-a-prevod-w01",
+            "a2-u09-l03-iban-a-prevod-w02",
+            "a2-u09-l03-iban-a-prevod-w03",
+            "a2-u09-l03-iban-a-prevod-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l03-iban-a-prevod-ex13",
+          "lessonId": "a2-u09-l03-iban-a-prevod",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kolegyňa",
+              "sk": "Pošleš mi peniaze za lístok?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Jasné, pošli ma IBAN.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Jasné, pošli mne IBANom.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Jasné, pošli mi IBAN.",
+              "correct": true
+            }
+          ],
+          "explanation": "pošli mi — давальний: mi; IBAN — знахідний.",
+          "order": 13,
+          "wordIds": [
+            "a2-u09-l03-iban-a-prevod-w01",
+            "a2-u09-l03-iban-a-prevod-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l03-iban-a-prevod-ex14",
+          "lessonId": "a2-u09-l03-iban-a-prevod",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти купуєш річ за оголошенням і питаєш у продавця номер рахунку.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Aké je vaše číslo účtu?",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Aký je váš číslo účtu?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Aké je vaše číslo účet?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Aké je vám číslo účtu?",
+              "correct": false
+            }
+          ],
+          "explanation": "číslo — середній рід: aké, vaše; číslo čoho? — родовий: účtu.",
+          "order": 14,
+          "wordIds": [
+            "a2-u09-l03-iban-a-prevod-w01",
+            "a2-u09-l03-iban-a-prevod-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перший переказ",
+        "description": "Ти оплачуєш курси словацької через застосунок банку.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Школа пише: «Kurzovné uhraďte na účet SK…, VS: 5521.» Що таке «VS: 5521»?",
+            "options": [
+              {
+                "sk": "номер аудиторії",
+                "correct": false
+              },
+              {
+                "sk": "сума до сплати",
+                "correct": false
+              },
+              {
+                "sk": "варіабельний символ платежу",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти питаєш, хто одержувач платежу.",
+            "options": [
+              {
+                "sk": "Kto je príjemca platby?",
+                "correct": true
+              },
+              {
+                "sk": "Kto je príjemcu platby?",
+                "correct": false
+              },
+              {
+                "sk": "Kto je príjemca platbu?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Застосунок питає: «Okamžitá platba? Poplatok 0,50 €» Що це означає?",
+            "options": [
+              {
+                "sk": "миттєвий платіж безкоштовний",
+                "correct": false
+              },
+              {
+                "sk": "миттєвий платіж коштує 50 центів",
+                "correct": true
+              },
+              {
+                "sk": "переказ прийде за 50 хвилин",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти пишеш школі, що вже переказала гроші.",
+            "options": [
+              {
+                "sk": "Dobrý deň, kurzovné som už previedla na váš účet.",
+                "correct": true
+              },
+              {
+                "sk": "Dobrý deň, kurzovné som už previedla na vašom účte.",
+                "correct": false
+              },
+              {
+                "sk": "Dobrý deň, kurzovné som už previesť na váš účet.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш надсилати гроші переказом. Далі — банкомат: зняти й внести готівку."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш надсилати гроші переказом. Далі — банкомат: зняти й внести готівку.",
+        "nowYouKnow": [
+          "IBAN: SK + 22 číslic",
+          "poslať peniaze mame na účet",
+          "príjemca, suma, variabilný symbol, správa pre príjemcu",
+          "prevod a okamžitá platba"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 30,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a2-u09-l04-bankomat",
+          "title": "Банкомат"
+        }
+      }
+    }
+  ]
+}

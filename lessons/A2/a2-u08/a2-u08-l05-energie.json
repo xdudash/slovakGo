@@ -1,0 +1,882 @@
+{
+  "lessons": [
+    {
+      "id": "a2-u08-l05-energie",
+      "sectionId": "a2-u08",
+      "level": "A2",
+      "title": "Комунальні послуги",
+      "topic": "Оренда житла",
+      "description": "Що словаки називають «energie»: електрика, газ, вода, опалення. Лічильники, показники, річний перерахунок, переплата й недоплата.",
+      "order": 75,
+      "xpReward": 30,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Розуміти рахунки за комунальні послуги й говорити про лічильники та перерахунок.",
+      "completionMessage": "Ти розумієш рахунки за енергії. Далі — управитель будинку та оголошення в під’їзді.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A2 · Оренда житла",
+        "title": "Комунальні послуги",
+        "shortDescription": "Розуміти рахунки за комунальні послуги й говорити про лічильники та перерахунок.",
+        "outcomes": [
+          "називати elektrina, plyn, voda, kúrenie",
+          "розуміти stav merača і nahlásiť stav",
+          "розуміти ročné vyúčtovanie",
+          "розрізняти preplatok і nedoplatok"
+        ],
+        "newWords": [
+          "elektrina",
+          "plyn",
+          "merač",
+          "vyúčtovanie",
+          "preplatok",
+          "nedoplatok"
+        ],
+        "exercisesCount": 14,
+        "reward": "+30 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Energie",
+          "text": "У розмові про оренду «energie» — це комунальні послуги: «elektrina» (електрика), «plyn» (газ), «voda» (вода), «kúrenie» (опалення), «teplá voda» (гаряча вода). «Nájom 600 € + energie» означає, що енергії оплачуються окремо від орендної плати. Зверни увагу: електрика — «elektrina», а не «elektrika».",
+          "examples": [
+            {
+              "sk": "Koľko platíte mesačne za elektrinu?",
+              "uk": "Скільки ви платите щомісяця за електрику?"
+            },
+            {
+              "sk": "V byte nie je plyn, sporák je elektrický.",
+              "uk": "У квартирі немає газу, плита електрична."
+            }
+          ],
+          "shortRule": "energie: elektrina, plyn, voda, kúrenie",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Лічильники",
+          "text": "«Merač» — лічильник: «elektromer» (електролічильник), «plynomer» (газовий), «vodomer» (водяний). «Stav merača» — показник лічильника. Його треба «odpísať» (записати) або «nahlásiť» (повідомити), наприклад, коли заселяєшся чи виїжджаєш. «Odpočet» — зняття показників.",
+          "examples": [
+            {
+              "sk": "Pri nasťahovaní si odfoťte stav meračov.",
+              "uk": "Під час заселення сфотографуйте показники лічильників."
+            },
+            {
+              "sk": "Vodomer je v kúpeľni pod umývadlom.",
+              "uk": "Водяний лічильник — у ванній під умивальником."
+            }
+          ],
+          "shortRule": "merač · stav merača · odpočet",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Vyúčtovanie",
+          "text": "Протягом року платять «zálohy» — аванси, тобто приблизні суми. Раз на рік приходить «vyúčtovanie» — перерахунок за фактичним споживанням. Якщо ти заплатив більше, ніж спожив, — це «preplatok» (переплата), гроші тобі повертають. Якщо менше — «nedoplatok» (недоплата), і треба доплатити.",
+          "examples": [
+            {
+              "sk": "Z vyúčtovania máme preplatok 85 €.",
+              "uk": "За перерахунком у нас переплата 85 €."
+            },
+            {
+              "sk": "Nedoplatok treba uhradiť do konca mesiaca.",
+              "uk": "Недоплату треба сплатити до кінця місяця."
+            }
+          ],
+          "shortRule": "preplatok — повертають · nedoplatok — доплачуєш",
+          "commonMistakes": [
+            {
+              "mistake": "Platím za elektriku.",
+              "correct": "Platím za elektrinu."
+            },
+            {
+              "mistake": "stav merač",
+              "correct": "stav merača"
+            },
+            {
+              "mistake": "Máme preplatku.",
+              "correct": "Máme preplatok."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a2-u08-l05-energie-w01",
+            "sk": "elektrina",
+            "uk": "електрика, електроенергія",
+            "pronunciationUk": "електріна",
+            "exampleSk": "Elektrina je teraz drahšia ako vlani.",
+            "exampleUk": "Електрика тепер дорожча, ніж торік."
+          },
+          {
+            "wordId": "a2-u08-l05-energie-w02",
+            "sk": "plyn",
+            "uk": "газ",
+            "pronunciationUk": "плін",
+            "exampleSk": "Kúrenie aj sporák sú na plyn.",
+            "exampleUk": "І опалення, і плита працюють на газі."
+          },
+          {
+            "wordId": "a2-u08-l05-energie-w03",
+            "sk": "merač",
+            "uk": "лічильник",
+            "pronunciationUk": "мерач",
+            "exampleSk": "Merač elektriny je na chodbe.",
+            "exampleUk": "Лічильник електрики — у коридорі."
+          },
+          {
+            "wordId": "a2-u08-l05-energie-w04",
+            "sk": "vyúčtovanie",
+            "uk": "перерахунок, річний розрахунок",
+            "pronunciationUk": "віу:чтованіе",
+            "exampleSk": "Vyúčtovanie za minulý rok prišlo v máji.",
+            "exampleUk": "Перерахунок за минулий рік прийшов у травні."
+          },
+          {
+            "wordId": "a2-u08-l05-energie-w05",
+            "sk": "preplatok",
+            "uk": "переплата",
+            "pronunciationUk": "преплаток",
+            "exampleSk": "Preplatok vám pošleme na účet.",
+            "exampleUk": "Переплату ми надішлемо вам на рахунок."
+          },
+          {
+            "wordId": "a2-u08-l05-energie-w06",
+            "sk": "nedoplatok",
+            "uk": "недоплата",
+            "pronunciationUk": "недоплаток",
+            "exampleSk": "Máme nedoplatok za vodu štyridsať eur.",
+            "exampleUk": "У нас недоплата за воду — сорок євро."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a2-u08-l05-energie-w01",
+          "sk": "elektrina",
+          "uk": "електрика, електроенергія",
+          "pronunciationUk": "електріна",
+          "exampleSk": "Elektrina je teraz drahšia ako vlani.",
+          "exampleUk": "Електрика тепер дорожча, ніж торік.",
+          "level": "A2",
+          "topic": "Оренда житла",
+          "tags": [
+            "a2-u08",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u08-l05-energie-w02",
+          "sk": "plyn",
+          "uk": "газ",
+          "pronunciationUk": "плін",
+          "exampleSk": "Kúrenie aj sporák sú na plyn.",
+          "exampleUk": "І опалення, і плита працюють на газі.",
+          "level": "A2",
+          "topic": "Оренда житла",
+          "tags": [
+            "a2-u08",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u08-l05-energie-w03",
+          "sk": "merač",
+          "uk": "лічильник",
+          "pronunciationUk": "мерач",
+          "exampleSk": "Merač elektriny je na chodbe.",
+          "exampleUk": "Лічильник електрики — у коридорі.",
+          "level": "A2",
+          "topic": "Оренда житла",
+          "tags": [
+            "a2-u08",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u08-l05-energie-w04",
+          "sk": "vyúčtovanie",
+          "uk": "перерахунок, річний розрахунок",
+          "pronunciationUk": "віу:чтованіе",
+          "exampleSk": "Vyúčtovanie za minulý rok prišlo v máji.",
+          "exampleUk": "Перерахунок за минулий рік прийшов у травні.",
+          "level": "A2",
+          "topic": "Оренда житла",
+          "tags": [
+            "a2-u08",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u08-l05-energie-w05",
+          "sk": "preplatok",
+          "uk": "переплата",
+          "pronunciationUk": "преплаток",
+          "exampleSk": "Preplatok vám pošleme na účet.",
+          "exampleUk": "Переплату ми надішлемо вам на рахунок.",
+          "level": "A2",
+          "topic": "Оренда житла",
+          "tags": [
+            "a2-u08",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u08-l05-energie-w06",
+          "sk": "nedoplatok",
+          "uk": "недоплата",
+          "pronunciationUk": "недоплаток",
+          "exampleSk": "Máme nedoplatok za vodu štyridsať eur.",
+          "exampleUk": "У нас недоплата за воду — сорок євро.",
+          "level": "A2",
+          "topic": "Оренда житла",
+          "tags": [
+            "a2-u08",
+            "a2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a2-u08-l05-energie-ex01",
+          "lessonId": "a2-u08-l05-energie",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "elektrina",
+              "right": "електрика"
+            },
+            {
+              "left": "plyn",
+              "right": "газ"
+            },
+            {
+              "left": "merač",
+              "right": "лічильник"
+            },
+            {
+              "left": "vyúčtovanie",
+              "right": "перерахунок"
+            },
+            {
+              "left": "preplatok",
+              "right": "переплата"
+            },
+            {
+              "left": "nedoplatok",
+              "right": "недоплата"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a2-u08-l05-energie-w01",
+            "a2-u08-l05-energie-w02",
+            "a2-u08-l05-energie-w03",
+            "a2-u08-l05-energie-w04",
+            "a2-u08-l05-energie-w05",
+            "a2-u08-l05-energie-w06"
+          ]
+        },
+        {
+          "id": "a2-u08-l05-energie-ex02",
+          "lessonId": "a2-u08-l05-energie",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що це?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Енергії"
+            },
+            {
+              "id": "c2",
+              "title": "Лічильники"
+            }
+          ],
+          "items": [
+            {
+              "sk": "plynomer",
+              "category": "c2"
+            },
+            {
+              "sk": "elektrina",
+              "category": "c1"
+            },
+            {
+              "sk": "teplá voda",
+              "category": "c1"
+            },
+            {
+              "sk": "elektromer",
+              "category": "c2"
+            },
+            {
+              "sk": "kúrenie",
+              "category": "c1"
+            },
+            {
+              "sk": "vodomer",
+              "category": "c2"
+            },
+            {
+              "sk": "plyn",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Слова на -mer — лічильники; elektrina, plyn, voda, kúrenie — самі енергії.",
+          "order": 2,
+          "wordIds": [
+            "a2-u08-l05-energie-w01",
+            "a2-u08-l05-energie-w02"
+          ]
+        },
+        {
+          "id": "a2-u08-l05-energie-ex03",
+          "lessonId": "a2-u08-l05-energie",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Platíme zálohy na "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "elektrinu",
+                "elektriny",
+                "elektrina"
+              ],
+              "correct": "elektrinu"
+            },
+            {
+              "text": " a plyn."
+            }
+          ],
+          "explanation": "na + знахідний: elektrina → elektrinu.",
+          "order": 3,
+          "wordIds": [
+            "a2-u08-l05-energie-w01",
+            "a2-u08-l05-energie-w02"
+          ]
+        },
+        {
+          "id": "a2-u08-l05-energie-ex04",
+          "lessonId": "a2-u08-l05-energie",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Prosím, nahláste stav "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "meračom",
+                "merač",
+                "merača"
+              ],
+              "correct": "merača"
+            },
+            {
+              "text": " do piatku."
+            }
+          ],
+          "explanation": "stav čoho? — родовий: merač → merača.",
+          "order": 4,
+          "wordIds": [
+            "a2-u08-l05-energie-w03"
+          ]
+        },
+        {
+          "id": "a2-u08-l05-energie-ex05",
+          "lessonId": "a2-u08-l05-energie",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Z vyúčtovania máme ______, dostaneme späť šesťdesiat eur. (переплата)",
+          "acceptedAnswers": [
+            "preplatok"
+          ],
+          "explanation": "preplatok — переплата: гроші повертають.",
+          "order": 5,
+          "wordIds": [
+            "a2-u08-l05-energie-w04",
+            "a2-u08-l05-energie-w05"
+          ]
+        },
+        {
+          "id": "a2-u08-l05-energie-ex06",
+          "lessonId": "a2-u08-l05-energie",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "У перерахунку написано «Nedoplatok: 45 €». Що треба зробити?",
+          "options": [
+            {
+              "id": "a",
+              "text": "нічого, усе вже сплачено",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "чекати, поки повернуть 45 €",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "доплатити 45 €",
+              "correct": true
+            }
+          ],
+          "explanation": "nedoplatok — недоплата: треба доплатити.",
+          "order": 6
+        },
+        {
+          "id": "a2-u08-l05-energie-ex07",
+          "lessonId": "a2-u08-l05-energie",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Preplatok» означає, що протягом року ти заплатив менше, ніж спожив.",
+          "correctAnswer": false,
+          "explanation": "Навпаки: preplatok — ти заплатив більше, і різницю тобі повернуть.",
+          "order": 7,
+          "wordIds": [
+            "a2-u08-l05-energie-w05"
+          ]
+        },
+        {
+          "id": "a2-u08-l05-energie-ex08",
+          "lessonId": "a2-u08-l05-energie",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Tento rok máme nedoplatku za plyn.",
+          "errorToken": "nedoplatku",
+          "correctToken": "nedoplatok",
+          "explanation": "máme + знахідний: nedoplatok (неживий іменник, як у називному).",
+          "order": 8,
+          "wordIds": [
+            "a2-u08-l05-energie-w02",
+            "a2-u08-l05-energie-w06"
+          ]
+        },
+        {
+          "id": "a2-u08-l05-energie-ex09",
+          "lessonId": "a2-u08-l05-energie",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай перерахунок.",
+          "document": {
+            "title": "Ročné vyúčtovanie (vzor)",
+            "fields": [
+              {
+                "label": "Obdobie",
+                "value": "1. 1. – 31. 12. 2025"
+              },
+              {
+                "label": "Zaplatené zálohy",
+                "value": "960 €"
+              },
+              {
+                "label": "Skutočná spotreba",
+                "value": "1 035 €"
+              },
+              {
+                "label": "Výsledok",
+                "value": "nedoplatok 75 €"
+              },
+              {
+                "label": "Splatnosť",
+                "value": "do 30. 6. 2026"
+              }
+            ]
+          },
+          "question": "Що з цього правда?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "аванси були більші за споживання",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "треба доплатити 75 € до 30 червня",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "тобі повернуть 75 € до 30 червня",
+              "correct": false
+            }
+          ],
+          "explanation": "Spotreba 1 035 € більша за zálohy 960 €: nedoplatok 75 €.",
+          "order": 9,
+          "wordIds": [
+            "a2-u08-l05-energie-w04",
+            "a2-u08-l05-energie-w06"
+          ]
+        },
+        {
+          "id": "a2-u08-l05-energie-ex10",
+          "lessonId": "a2-u08-l05-energie",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення від власника.",
+          "message": {
+            "sender": "Prenajímateľ Marek",
+            "body": "Ahoj Oleh, zajtra ráno príde technik na odpočet vody. Ak nebudeš doma, odfoť mi, prosím, stav vodomeru v kúpeľni a pošli mi ho ešte dnes. Vďaka!"
+          },
+          "question": "Що просить власник?",
+          "options": [
+            {
+              "id": "a",
+              "text": "полагодити лічильник у ванній",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "сфотографувати показник водяного лічильника й надіслати сьогодні",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "заплатити за воду завтра зранку",
+              "correct": false
+            }
+          ],
+          "explanation": "odfoť stav vodomeru — сфотографуй показник водяного лічильника.",
+          "order": 10
+        },
+        {
+          "id": "a2-u08-l05-energie-ex11",
+          "lessonId": "a2-u08-l05-energie",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "V našom byte v Trenčíne platíme nájomné 520 eur a zálohy na energie 160 eur mesačne. V zálohách je kúrenie, teplá a studená voda a upratovanie spoločných priestorov. Elektrinu platíme zvlášť: máme vlastnú zmluvu s dodávateľom a platíme mu 35 eur mesačne. Raz ročne nám správca pošle vyúčtovanie. Minulý rok sme mali preplatok 90 eur, lebo zima bola teplá. Tento rok máme nedoplatok 40 eur za vodu, lebo u nás bývala celé leto aj svokra.",
+          "questions": [
+            {
+              "question": "За що родина платить окремо від авансів?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "за воду",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "за опалення",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "за електрику",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Чому минулого року була переплата?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "власник знизив орендну плату",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "родина довго була у відпустці",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "зима була теплою",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Чому цього року недоплата за воду?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "усе літо в них жила свекруха",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "вода подорожчала",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "зламався лічильник",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 11,
+          "wordIds": [
+            "a2-u08-l05-energie-w01",
+            "a2-u08-l05-energie-w04",
+            "a2-u08-l05-energie-w05",
+            "a2-u08-l05-energie-w06"
+          ]
+        },
+        {
+          "id": "a2-u08-l05-energie-ex12",
+          "lessonId": "a2-u08-l05-energie",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Prenajímateľ",
+              "sk": "Prosím vás, aký je teraz stav elektromera?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Pozriem sa a pošlem vám fotku.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Pozriem sa a pošlem vám fotka.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Pozriem sa a pošlem vás fotku.",
+              "correct": false
+            }
+          ],
+          "explanation": "poslať komu? — vám; čo? — fotku (знахідний).",
+          "order": 12,
+          "wordIds": [
+            "a2-u08-l05-energie-w03"
+          ]
+        },
+        {
+          "id": "a2-u08-l05-energie-ex13",
+          "lessonId": "a2-u08-l05-energie",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти питаєш власника, скільки щомісяця коштують енергії.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Koľko stoja energiami mesačne?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Koľko stoja energií mesačne?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Koľko stoja energie mesačne?",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Koľko stojí energie mesačne?",
+              "correct": false
+            }
+          ],
+          "explanation": "energie — множина: stoja.",
+          "order": 13
+        },
+        {
+          "id": "a2-u08-l05-energie-ex14",
+          "lessonId": "a2-u08-l05-energie",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Mesačne platím za elektriku tridsať eur.",
+          "acceptedAnswers": [
+            "Mesačne platím za elektrinu tridsať eur.",
+            "Za elektrinu platím mesačne tridsať eur."
+          ],
+          "explanation": "Електроенергія — elektrina; «elektrika» — розмовне слово, у рахунках його немає.",
+          "order": 14,
+          "wordIds": [
+            "a2-u08-l05-energie-w01"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перший перерахунок",
+        "description": "У травні ти отримуєш перерахунок за енергії та пишеш власникові.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "У листі: «Výsledok vyúčtovania: preplatok 60 €.» Що це означає?",
+            "options": [
+              {
+                "sk": "треба доплатити 60 €",
+                "correct": false
+              },
+              {
+                "sk": "аванси зростуть на 60 €",
+                "correct": false
+              },
+              {
+                "sk": "тобі повернуть 60 €",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти пишеш власникові, що маєш переплату.",
+            "options": [
+              {
+                "sk": "Z vyúčtovania máme preplatok šesťdesiat euro.",
+                "correct": false
+              },
+              {
+                "sk": "Z vyúčtovania máme preplatok šesťdesiat eur.",
+                "correct": true
+              },
+              {
+                "sk": "Z vyúčtovania máme preplatku šesťdesiat eur.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Власник: «Pošlite mi, prosím, stav merača plynu.» Що треба зробити?",
+            "options": [
+              {
+                "sk": "надіслати показник газового лічильника",
+                "correct": true
+              },
+              {
+                "sk": "заплатити за газ",
+                "correct": false
+              },
+              {
+                "sk": "викликати газовика",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти питаєш, чи зміняться аванси.",
+            "options": [
+              {
+                "sk": "Zmenia sa zálohy na energiách?",
+                "correct": false
+              },
+              {
+                "sk": "Zmenia sa zálohy na energie?",
+                "correct": true
+              },
+              {
+                "sk": "Zmení sa zálohy na energie?",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш рахунки за енергії. Далі — управитель будинку та оголошення в під’їзді."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш рахунки за енергії. Далі — управитель будинку та оголошення в під’їзді.",
+        "nowYouKnow": [
+          "energie: elektrina, plyn, voda, kúrenie",
+          "merač, stav merača, odpočet",
+          "zálohy → vyúčtovanie",
+          "preplatok — nedoplatok"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 30,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a2-u08-l06-spravca-domu",
+          "title": "Управитель будинку"
+        }
+      }
+    }
+  ]
+}

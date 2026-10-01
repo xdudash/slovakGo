@@ -1,0 +1,876 @@
+{
+  "lessons": [
+    {
+      "id": "a2-u09-l07-vypis-z-uctu",
+      "sectionId": "a2-u09",
+      "level": "A2",
+      "title": "Виписка з рахунку",
+      "topic": "Банк і платежі",
+      "description": "Як читати виписку: період, надходження й списання, дати, початковий і кінцевий залишок. Дати в родовому відмінку.",
+      "order": 87,
+      "xpReward": 30,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Читати банківську виписку й пояснювати, звідки прийшли і куди пішли гроші.",
+      "completionMessage": "Ти вмієш читати виписку. Далі — що робити, коли з карткою проблема.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A2 · Банк і платежі",
+        "title": "Виписка з рахунку",
+        "shortDescription": "Читати банківську виписку й пояснювати, звідки прийшли і куди пішли гроші.",
+        "outcomes": [
+          "розуміти výpis z účtu za obdobie…",
+          "розрізняти pripísať na účet і odpísať z účtu",
+          "читати počiatočný a konečný zostatok",
+          "казати Výplata mi bola pripísaná piateho"
+        ],
+        "newWords": [
+          "výpis",
+          "obdobie",
+          "transakcia",
+          "pripísať",
+          "príjem",
+          "pohyb"
+        ],
+        "exercisesCount": 14,
+        "reward": "+30 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Výpis z účtu",
+          "text": "«Výpis z účtu» — виписка: перелік усіх операцій за певний період — «obdobie»: «výpis za september», «za obdobie od 1. 9. do 30. 9.». Банк надсилає виписку щомісяця в застосунок або електронною поштою; паперова виписка часто платна.",
+          "examples": [
+            {
+              "sk": "Pošlite mi, prosím, výpis z účtu za august.",
+              "uk": "Надішліть мені, будь ласка, виписку з рахунку за серпень."
+            },
+            {
+              "sk": "Výpis nájdete v internetbankingu.",
+              "uk": "Виписку знайдете в інтернет-банкінгу."
+            }
+          ],
+          "shortRule": "výpis z účtu za + знахідний (za september)",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Pripísať a odpísať",
+          "text": "Гроші прийшли — «boli pripísané na účet» (зараховані), розмовно «prišli mi peniaze». Гроші пішли — «boli odpísané z účtu» (списані). Кожна операція — «transakcia» або «pohyb na účte». У виписці «+» — «príjem», «−» — «výdavok».",
+          "examples": [
+            {
+              "sk": "Výplata mi bola pripísaná desiateho.",
+              "uk": "Зарплату мені зарахували десятого."
+            },
+            {
+              "sk": "Z účtu mi odpísali tridsať eur.",
+              "uk": "З рахунку мені списали тридцять євро."
+            }
+          ],
+          "shortRule": "pripísať na účet (+) ↔ odpísať z účtu (−)",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Zostatok a dátumy",
+          "text": "«Počiatočný zostatok» — залишок на початку періоду, «konečný zostatok» — у кінці. Дати в реченні читаємо в родовому: «5. 10.» — «piateho októbra». У виписці дати пишуть цифрами: «18. 9.»",
+          "examples": [
+            {
+              "sk": "Konečný zostatok k 30. 9. je 412 eur.",
+              "uk": "Кінцевий залишок на 30.09 — 412 євро."
+            },
+            {
+              "sk": "Nájom odišiel tretieho septembra.",
+              "uk": "Оренда пішла третього вересня."
+            }
+          ],
+          "shortRule": "počiatočný → konečný zostatok",
+          "commonMistakes": [
+            {
+              "mistake": "výpis od účtu",
+              "correct": "výpis z účtu"
+            },
+            {
+              "mistake": "Peniaze mi pripísali z účtu.",
+              "correct": "Peniaze mi pripísali na účet."
+            },
+            {
+              "mistake": "výpis na september",
+              "correct": "výpis za september"
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a2-u09-l07-vypis-z-uctu-w01",
+            "sk": "výpis",
+            "uk": "виписка",
+            "pronunciationUk": "ві:піс",
+            "exampleSk": "Výpis z účtu mi príde každý mesiac e-mailom.",
+            "exampleUk": "Виписка з рахунку приходить мені щомісяця електронною поштою."
+          },
+          {
+            "wordId": "a2-u09-l07-vypis-z-uctu-w02",
+            "sk": "obdobie",
+            "uk": "період",
+            "pronunciationUk": "обдобіє",
+            "exampleSk": "Výpis je za obdobie od prvého do tridsiateho septembra.",
+            "exampleUk": "Виписка за період з першого до тридцятого вересня."
+          },
+          {
+            "wordId": "a2-u09-l07-vypis-z-uctu-w03",
+            "sk": "transakcia",
+            "uk": "операція, транзакція",
+            "pronunciationUk": "трансакція",
+            "exampleSk": "Túto transakciu nepoznám.",
+            "exampleUk": "Я не знаю, що це за операція."
+          },
+          {
+            "wordId": "a2-u09-l07-vypis-z-uctu-w04",
+            "sk": "pripísať",
+            "uk": "зарахувати (на рахунок)",
+            "pronunciationUk": "пріпі:сат’",
+            "exampleSk": "Peniaze vám pripíšeme na účet do troch dní.",
+            "exampleUk": "Гроші ми зарахуємо вам на рахунок протягом трьох днів."
+          },
+          {
+            "wordId": "a2-u09-l07-vypis-z-uctu-w05",
+            "sk": "príjem",
+            "uk": "надходження, дохід",
+            "pronunciationUk": "при:йем",
+            "exampleSk": "Výplata je môj jediný príjem.",
+            "exampleUk": "Зарплата — мій єдиний дохід."
+          },
+          {
+            "wordId": "a2-u09-l07-vypis-z-uctu-w06",
+            "sk": "pohyb",
+            "uk": "рух (коштів), операція",
+            "pronunciationUk": "погиб",
+            "exampleSk": "Pohyby na účte si kontrolujem v aplikácii.",
+            "exampleUk": "Рух коштів на рахунку я перевіряю в застосунку."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-w01",
+          "sk": "výpis",
+          "uk": "виписка",
+          "pronunciationUk": "ві:піс",
+          "exampleSk": "Výpis z účtu mi príde každý mesiac e-mailom.",
+          "exampleUk": "Виписка з рахунку приходить мені щомісяця електронною поштою.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-w02",
+          "sk": "obdobie",
+          "uk": "період",
+          "pronunciationUk": "обдобіє",
+          "exampleSk": "Výpis je za obdobie od prvého do tridsiateho septembra.",
+          "exampleUk": "Виписка за період з першого до тридцятого вересня.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-w03",
+          "sk": "transakcia",
+          "uk": "операція, транзакція",
+          "pronunciationUk": "трансакція",
+          "exampleSk": "Túto transakciu nepoznám.",
+          "exampleUk": "Я не знаю, що це за операція.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-w04",
+          "sk": "pripísať",
+          "uk": "зарахувати (на рахунок)",
+          "pronunciationUk": "пріпі:сат’",
+          "exampleSk": "Peniaze vám pripíšeme na účet do troch dní.",
+          "exampleUk": "Гроші ми зарахуємо вам на рахунок протягом трьох днів.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-w05",
+          "sk": "príjem",
+          "uk": "надходження, дохід",
+          "pronunciationUk": "при:йем",
+          "exampleSk": "Výplata je môj jediný príjem.",
+          "exampleUk": "Зарплата — мій єдиний дохід.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-w06",
+          "sk": "pohyb",
+          "uk": "рух (коштів), операція",
+          "pronunciationUk": "погиб",
+          "exampleSk": "Pohyby na účte si kontrolujem v aplikácii.",
+          "exampleUk": "Рух коштів на рахунку я перевіряю в застосунку.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-ex01",
+          "lessonId": "a2-u09-l07-vypis-z-uctu",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "výpis",
+              "right": "виписка"
+            },
+            {
+              "left": "obdobie",
+              "right": "період"
+            },
+            {
+              "left": "transakcia",
+              "right": "операція"
+            },
+            {
+              "left": "pripísať",
+              "right": "зарахувати"
+            },
+            {
+              "left": "príjem",
+              "right": "надходження"
+            },
+            {
+              "left": "pohyb na účte",
+              "right": "рух коштів"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a2-u09-l07-vypis-z-uctu-w01",
+            "a2-u09-l07-vypis-z-uctu-w02",
+            "a2-u09-l07-vypis-z-uctu-w03",
+            "a2-u09-l07-vypis-z-uctu-w04",
+            "a2-u09-l07-vypis-z-uctu-w05",
+            "a2-u09-l07-vypis-z-uctu-w06"
+          ]
+        },
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-ex02",
+          "lessonId": "a2-u09-l07-vypis-z-uctu",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Pošlite mi výpis "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "na",
+                "z",
+                "od"
+              ],
+              "correct": "z"
+            },
+            {
+              "text": " účtu za október."
+            }
+          ],
+          "explanation": "výpis z účtu — виписка з рахунку.",
+          "order": 2,
+          "wordIds": [
+            "a2-u09-l07-vypis-z-uctu-w01"
+          ]
+        },
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-ex03",
+          "lessonId": "a2-u09-l07-vypis-z-uctu",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Výplata mi bola pripísaná "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "desiatom",
+                "desiaty",
+                "desiateho"
+              ],
+              "correct": "desiateho"
+            },
+            {
+              "text": " októbra."
+            }
+          ],
+          "explanation": "Дата в реченні — родовий: desiateho októbra.",
+          "order": 3,
+          "wordIds": [
+            "a2-u09-l07-vypis-z-uctu-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-ex04",
+          "lessonId": "a2-u09-l07-vypis-z-uctu",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Potrebujem výpis ______ september. (за)",
+          "acceptedAnswers": [
+            "za"
+          ],
+          "explanation": "výpis za + знахідний: za september.",
+          "order": 4,
+          "wordIds": [
+            "a2-u09-l07-vypis-z-uctu-w01"
+          ]
+        },
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-ex05",
+          "lessonId": "a2-u09-l07-vypis-z-uctu",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай виписку.",
+          "document": {
+            "title": "Výpis z účtu – september 2026",
+            "fields": [
+              {
+                "label": "Počiatočný zostatok (1. 9.)",
+                "value": "318,40 €"
+              },
+              {
+                "label": "5. 9. Výplata – Stavby Trnava s. r. o.",
+                "value": "+1 240,00 €"
+              },
+              {
+                "label": "6. 9. Nájom – trvalý príkaz",
+                "value": "−520,00 €"
+              },
+              {
+                "label": "18. 9. Potraviny – platba kartou",
+                "value": "−86,30 €"
+              },
+              {
+                "label": "Konečný zostatok (30. 9.)",
+                "value": "952,10 €"
+              }
+            ]
+          },
+          "question": "Скільки грошей було на рахунку наприкінці вересня?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "952,10 €",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "1 240,00 €",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "318,40 €",
+              "correct": false
+            }
+          ],
+          "explanation": "Konečný zostatok — кінцевий залишок: 952,10 €.",
+          "order": 5,
+          "wordIds": [
+            "a2-u09-l07-vypis-z-uctu-w01"
+          ]
+        },
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-ex06",
+          "lessonId": "a2-u09-l07-vypis-z-uctu",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Dňa 6. 9. vám z účtu odpísali 520 € za nájom.",
+          "statement": "Шостого вересня на рахунок надійшло 520 €.",
+          "correctAnswer": false,
+          "explanation": "Odpísali — списали, а не зарахували.",
+          "order": 6
+        },
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-ex07",
+          "lessonId": "a2-u09-l07-vypis-z-uctu",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «konečný zostatok»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "остання операція",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "залишок на початку періоду",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "залишок наприкінці періоду",
+              "correct": true
+            }
+          ],
+          "explanation": "konečný — кінцевий; počiatočný — початковий.",
+          "order": 7
+        },
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-ex08",
+          "lessonId": "a2-u09-l07-vypis-z-uctu",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Peniaze mi pripísali z účet včera večer.",
+          "errorToken": "z",
+          "correctToken": "na",
+          "explanation": "pripísať na účet — зарахувати на рахунок.",
+          "order": 8,
+          "wordIds": [
+            "a2-u09-l07-vypis-z-uctu-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-ex09",
+          "lessonId": "a2-u09-l07-vypis-z-uctu",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Надходження чи витрата?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Príjem"
+            },
+            {
+              "id": "c2",
+              "title": "Výdavok"
+            }
+          ],
+          "items": [
+            {
+              "sk": "vrátenie peňazí",
+              "category": "c1"
+            },
+            {
+              "sk": "prevod od kamaráta",
+              "category": "c1"
+            },
+            {
+              "sk": "výplata",
+              "category": "c1"
+            },
+            {
+              "sk": "nájom",
+              "category": "c2"
+            },
+            {
+              "sk": "platba kartou",
+              "category": "c2"
+            },
+            {
+              "sk": "poplatok za vedenie účtu",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Príjem — гроші на рахунок; výdavok — гроші з рахунку.",
+          "order": 9,
+          "wordIds": [
+            "a2-u09-l07-vypis-z-uctu-w05"
+          ]
+        },
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-ex10",
+          "lessonId": "a2-u09-l07-vypis-z-uctu",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення банку.",
+          "message": {
+            "sender": "Banka Lipa",
+            "body": "Na váš účet bola pripísaná suma 1 240,00 €. Odosielateľ: Stavby Trnava s. r. o. Aktuálny zostatok: 1 558,40 €."
+          },
+          "question": "Що сталося?",
+          "options": [
+            {
+              "id": "a",
+              "text": "на рахунок надійшло 1 240 €",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "з рахунку списали 1 240 €",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "на рахунку тепер рівно 1 240 €",
+              "correct": false
+            }
+          ],
+          "explanation": "bola pripísaná — зарахована на рахунок.",
+          "order": 10,
+          "wordIds": [
+            "a2-u09-l07-vypis-z-uctu-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-ex11",
+          "lessonId": "a2-u09-l07-vypis-z-uctu",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Iryna si v októbri všimla, že má na účte menej peňazí, ako čakala. Pozrela si výpis za september. Výplata jej prišla piateho, nájom odišiel šiesteho ako vždy. Potom však našla dve rovnaké transakcie z osemnásteho septembra: dvakrát 86,30 € v obchode s potravinami. Platila však len raz. Zavolala do banky a pracovník jej povedal, že ide o chybu obchodu a peniaze jej do desiatich dní vrátia.",
+          "questions": [
+            {
+              "question": "Що Ірина знайшла у виписці?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "неправильну суму зарплати",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "дві однакові операції від 18 вересня",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "подвійну оплату оренди",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Скільки разів вона насправді платила в магазині?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "двічі",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "жодного разу",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "один раз",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що сказав працівник банку?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "це помилка магазину, гроші повернуть протягом 10 днів",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "треба самій іти до магазину",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "це помилка Ірини, гроші не повернуть",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 11,
+          "wordIds": [
+            "a2-u09-l07-vypis-z-uctu-w01",
+            "a2-u09-l07-vypis-z-uctu-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-ex12",
+          "lessonId": "a2-u09-l07-vypis-z-uctu",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Účtovníčka",
+              "sk": "Prišla vám už výplata?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Áno, bola mi pripísaná včera.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Áno, bola mi pripísané včera.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Áno, bol mi pripísaná včera.",
+              "correct": false
+            }
+          ],
+          "explanation": "výplata — жіночий рід: bola pripísaná.",
+          "order": 12,
+          "wordIds": [
+            "a2-u09-l07-vypis-z-uctu-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-ex13",
+          "lessonId": "a2-u09-l07-vypis-z-uctu",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перепиши офіційніше з дієсловом «pripísať».",
+          "source": "Výplata mi prišla na účet.",
+          "acceptedAnswers": [
+            "Výplata mi bola pripísaná na účet.",
+            "Výplatu mi pripísali na účet.",
+            "Na účet mi bola pripísaná výplata."
+          ],
+          "explanation": "prísť na účet → byť pripísaný na účet (офіційно).",
+          "order": 13,
+          "wordIds": [
+            "a2-u09-l07-vypis-z-uctu-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l07-vypis-z-uctu-ex14",
+          "lessonId": "a2-u09-l07-vypis-z-uctu",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти просиш у відділенні виписку за серпень.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Potrebujem výpisu z účtu za august.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Potrebujem výpis od účtu za august.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Potrebujem výpis z účtu za august.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Potrebujem výpis z účtu na august.",
+              "correct": false
+            }
+          ],
+          "explanation": "výpis z účtu za + знахідний: za august.",
+          "order": 14,
+          "wordIds": [
+            "a2-u09-l07-vypis-z-uctu-w01"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Дивна виписка",
+        "description": "Наприкінці місяця ти перевіряєш виписку й рахуєш гроші.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти бачиш «Počiatočný zostatok: 200 €». Що це?",
+            "options": [
+              {
+                "sk": "залишок наприкінці періоду",
+                "correct": false
+              },
+              {
+                "sk": "залишок на початку періоду",
+                "correct": true
+              },
+              {
+                "sk": "щомісячна комісія",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти бачиш «+1 100 € Výplata» і пишеш колезі.",
+            "options": [
+              {
+                "sk": "Výplata mi už bolo pripísaná.",
+                "correct": false
+              },
+              {
+                "sk": "Výplata mi už bola pripísaná.",
+                "correct": true
+              },
+              {
+                "sk": "Výplata mi už bola odpísaná.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти питаєш у банку про незнайому операцію від 12 жовтня.",
+            "options": [
+              {
+                "sk": "Nepoznám túto transakciu z dvanásty október.",
+                "correct": false
+              },
+              {
+                "sk": "Nepoznám tieto transakcia z dvanásteho októbra.",
+                "correct": false
+              },
+              {
+                "sk": "Nepoznám túto transakciu z dvanásteho októbra.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти просиш надсилати виписку електронною поштою.",
+            "options": [
+              {
+                "sk": "Môžete mi posielať výpis s e-mailom?",
+                "correct": false
+              },
+              {
+                "sk": "Môžete mi posielať výpisom e-mail?",
+                "correct": false
+              },
+              {
+                "sk": "Môžete mi posielať výpis e-mailom?",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш читати виписку. Далі — що робити, коли з карткою проблема."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш читати виписку. Далі — що робити, коли з карткою проблема.",
+        "nowYouKnow": [
+          "výpis z účtu za september",
+          "pripísať na účet ↔ odpísať z účtu",
+          "transakcia, príjem a výdavok",
+          "počiatočný a konečný zostatok"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 30,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a2-u09-l08-problem-s-kartou",
+          "title": "Проблема з карткою"
+        }
+      }
+    }
+  ]
+}
