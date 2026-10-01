@@ -144,7 +144,7 @@ T: V чи na? || Більшість міст і країн — «v»: v Bratisla
 T: Žiť — жити (взагалі) || «Žiť» — жити як існувати, проводити життя: «Žijem na Slovensku dva roky» (живу в Словаччині два роки). Для адреси краще «bývať». || Žijem tu rok. = Я живу тут рік. ;; Bývam na Mierovej ulici 5. = Я живу на вулиці Мірова, 5. || adresa → bývať
 W: bývať | жити (мешкати) | бі:вать | Bývam v centre. | Я живу в центрі.
 W: žiť | жити | жіть | Žijeme tu už rok. | Ми живемо тут уже рік.
-W: ulica | вулиця | уліца | Bývam na Mlynskej ulici. | Я живу на вулиці Млинській.
+W: PSČ | поштовий індекс | пе-ес-че: | Aké je vaše PSČ? | Який ваш поштовий індекс?
 W: sídlisko | житловий масив | сі:дліско | Bývame na sídlisku Petržalka. | Ми живемо на масиві Петржалка.
 W: adresa | адреса | адреса | Aká je vaša adresa? | Яка ваша адреса?
 W: Kde bývate? | Де ви живете? | гдє бі:ватє | Kde bývate na Slovensku? | Де ви живете в Словаччині?
@@ -347,6 +347,51 @@ S: «A e-mail?» (ivan.lysenko@gmail.com) | *ivan bodka lysenko zavináč gmail 
 S: «Zavoláme vám v piatok.» Що це означає? | *тобі подзвонять у п’ятницю ;; ти маєш подзвонити в п’ятницю ;; співбесіда в п’ятницю
 S: Ти не почув(ла) їхній номер. | *Môžete to zopakovať, prosím? ;; Ďakujem, dovidenia. ;; Teší ma.
 R: diktujem číslo ;; zavináč, bodka, pomlčka ;; Môžem dostať vaše číslo? ;; zavolať, poslať
+
+@lesson rodinny-stav | Сімейний стан і мета перебування | Rodinný stav a účel pobytu
+desc: Слова з анкет: ženatý, vydatá, slobodný, rozvedený — і відповідь на питання «Чому ви в Словаччині?».
+goal: Назвати свій сімейний стан і мету перебування в Словаччині.
+out: казати Som ženatý / vydatá / slobodný(á) ;; розуміти поле «rodinný stav» ;; відповідати Prečo ste na Slovensku? ;; казати kvôli práci / štúdiu / rodine
+done: Тепер анкети не злякають тебе. Далі — підсумок розділу.
+T: Сімейний стан || У словацькій чоловік «ženatý» (одружений — «має жінку»), жінка «vydatá» (заміжня). Неодружені: slobodný (чол.) / slobodná (жін.). Розлучені: rozvedený / rozvedená. Вдівці: vdovec / vdova. || Som ženatý. = Я одружений. ;; Som vydatá. = Я заміжня. ;; Som slobodná. = Я неодружена. || чоловік — ženatý, жінка — vydatá
+mis: Som ženatá (жінка) => Som vydatá ;; Som vydatý (чоловік) => Som ženatý
+T: Чому ти тут? || «Prečo ste na Slovensku?» — чому ви в Словаччині? Відповіді: «Kvôli práci» (через роботу), «Kvôli štúdiu» (через навчання), «Kvôli rodine» (через сім’ю). Або: «Pracujem tu», «Študujem tu», «Mám tu rodinu». || Som tu kvôli práci. = Я тут через роботу. ;; Študujem v Bratislave. = Я навчаюсь у Братиславі. || kvôli + причина
+T: У документах || «Rodinný stav» — сімейний стан, «Účel pobytu» — мета перебування. В анкетах часто треба лише поставити хрестик: ☐ slobodný(á) ☐ ženatý / vydatá ☐ rozvedený(á). || Rodinný stav: vydatá = Сімейний стан: заміжня ;; Účel pobytu: zamestnanie = Мета перебування: працевлаштування || rodinný stav, účel pobytu
+W: ženatý | одружений (про чоловіка) | жената: | Môj brat je ženatý. | Мій брат одружений.
+W: vydatá | заміжня | вида та: | Sestra je vydatá a má dve deti. | Сестра заміжня й має двох дітей.
+W: slobodný | неодружений | слободні: | Som slobodný, nemám deti. | Я неодружений, дітей не маю.
+W: rozvedený | розлучений | розведені: | Je rozvedený už päť rokov. | Він розлучений уже п’ять років.
+W: prečo | чому | пречо | Prečo ste na Slovensku? | Чому ви в Словаччині?
+W: študovať | навчатися (у ВНЗ) | штудовать | Študujem medicínu. | Я вивчаю медицину.
+X dd: Обери (говорить жінка). | Som [*vydatá/ženatá/ženatý].
+= Про жінку — vydatá.
+X dd: Обери (говорить чоловік). | Som [*ženatý/vydatá/vydatý] a mám syna.
+= Про чоловіка — ženatý.
+X mt: З’єднай. | ženatý = одружений ;; vydatá = заміжня ;; slobodný = неодружений ;; rozvedený = розлучений
+X cat: Про чоловіка чи про жінку? | Чоловік: ženatý, slobodný, vdovec ;; Жінка: vydatá, slobodná, vdova
+= Форми розрізняються за родом.
+X dr: - | Úradníčka: Prečo ste na Slovensku? | *Kvôli práci. Pracujem v Nitre. ;; Som z Ukrajiny. ;; Som slobodná.
+= Prečo — причина: kvôli práci.
+X sc~: Що означає «Účel pobytu: štúdium»? | - | *мета перебування — навчання ;; місце проживання — університет ;; сімейний стан — студент
+= účel pobytu — мета перебування.
+X tf: - | - | Жінка може сказати про себе «Som ženatá». | F
+= Жінка — vydatá. Ženatý — лише про чоловіка.
+X fb: Допиши питання. | ___ ste na Slovensku? | Prečo | Питання про причину.
+= Prečo — чому.
+X sb: - | Скажи, що ти тут через сім’ю. | Som tu kvôli rodine.
+= kvôli + rodine.
+X doc: Прочитай анкету. | Žiadosť | Meno: Svitlana Hrytsai ;; Rodinný stav: rozvedená ;; Účel pobytu: zamestnanie ;; Počet detí: 1 | Який сімейний стан Світлани? | *розлучена ;; заміжня ;; неодружена
+= rozvedená — розлучена.
+X ms: Обери всі правильні фрази. | - | *Som slobodná. ;; *Som ženatý. ;; *Študujem v Košiciach. ;; Som vydatý. ;; Som tu kvôli prácu.
+= vydatý не існує; kvôli + давальний: kvôli práci.
+X np: Колега питає, чи ти одружений. Ти — чоловік, неодружений. | *Nie, som slobodný. ;; Nie, som slobodná. ;; Nie, som vydatý. ;; Áno, slobodný.
+= Чоловік — slobodný.
+F: Анкета на кафедрі || Ти вступаєш на курс у Кошицях і заповнюєш анкету з працівницею (ти — жінка, заміжня).
+S: «Rodinný stav?» | *Vydatá. ;; Ženatá. ;; Ženatý.
+S: «Máte deti?» (одна дитина) | *Áno, mám jedno dieťa. ;; Áno, som dieťa. ;; Nie, vydatá.
+S: «Prečo ste na Slovensku?» | *Kvôli štúdiu a rodine. ;; Som zo Slovenska. ;; Lebo Slovensko.
+S: «Účel pobytu: štúdium» — що це означає в анкеті? | *ти тут навчаєшся ;; ти тут працюєш ;; ти тут у відпустці
+R: ženatý / vydatá, slobodný(á), rozvedený(á) ;; Prečo ste na Slovensku? ;; kvôli práci / štúdiu / rodine ;; rodinný stav, účel pobytu
 
 @lesson zoznamenie-opakovanie | Підсумок: анкета і знайомство | Opakovanie: dotazník
 desc: Підсумковий урок розділу: заповнюємо анкету й знайомимося в реальних ситуаціях.
