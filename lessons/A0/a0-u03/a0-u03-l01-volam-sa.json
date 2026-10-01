@@ -1,0 +1,780 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u03-l01-volam-sa",
+      "sectionId": "a0-u03",
+      "level": "A0",
+      "title": "Як тебе звати?",
+      "topic": "Знайомство",
+      "description": "Представитися й запитати ім’я: volám sa, som, moje meno je, a ty?",
+      "order": 21,
+      "xpReward": 15,
+      "estimatedMinutes": 20,
+      "isPublished": true,
+      "intro": "Назвати своє ім’я і запитати ім’я співрозмовника на «ти» й на «ви».",
+      "completionMessage": "Ти вже знайомишся словацькою! Далі — звідки ти.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Знайомство",
+        "title": "Як тебе звати?",
+        "shortDescription": "Назвати своє ім’я і запитати ім’я співрозмовника на «ти» й на «ви».",
+        "outcomes": [
+          "казати Volám sa… і Som…",
+          "питати Ako sa voláš? / Ako sa voláte?",
+          "розуміти «krstné meno» і «priezvisko»",
+          "повертати питання: A ty? A vy?"
+        ],
+        "newWords": [
+          "volám sa",
+          "Ako sa voláš?",
+          "meno",
+          "priezvisko",
+          "krstné meno"
+        ],
+        "exercisesCount": 13,
+        "reward": "+15 XP",
+        "estimatedMinutes": 20,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Volám sa…",
+          "text": "Найприродніше представитися: «Volám sa Olena» (мене звати Олена) або просто «Som Olena» (я Олена). Формально: «Moje meno je Olena Kovalenko».",
+          "examples": [
+            {
+              "sk": "Volám sa Taras.",
+              "uk": "Мене звати Тарас."
+            },
+            {
+              "sk": "Som Iryna.",
+              "uk": "Я Ірина."
+            },
+            {
+              "sk": "Moje meno je Petro Bondar.",
+              "uk": "Моє ім’я — Петро Бондар."
+            }
+          ],
+          "shortRule": "Volám sa… / Som…",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Як запитати ім’я",
+          "text": "На «ти»: «Ako sa voláš?» На «ви»: «Ako sa voláte?» У офіційних ситуаціях: «Vaše meno, prosím?» (Ваше ім’я, будь ласка?).",
+          "examples": [
+            {
+              "sk": "Ako sa voláš?",
+              "uk": "Як тебе звати?"
+            },
+            {
+              "sk": "Ako sa voláte?",
+              "uk": "Як вас звати?"
+            },
+            {
+              "sk": "Vaše meno, prosím?",
+              "uk": "Ваше ім’я, будь ласка?"
+            }
+          ],
+          "shortRule": "voláš (ти) — voláte (ви)",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Ім’я та прізвище",
+          "text": "«Meno» — ім’я (іноді повне ім’я), «krstné meno» — власне ім’я, «priezvisko» — прізвище. Словацькі жіночі прізвища мають -ová: Novák → Nováková. Українські прізвища зазвичай не змінюють.",
+          "examples": [
+            {
+              "sk": "krstné meno: Olena",
+              "uk": "ім’я: Олена"
+            },
+            {
+              "sk": "priezvisko: Kovalenko",
+              "uk": "прізвище: Коваленко"
+            },
+            {
+              "sk": "pán Novák – pani Nováková",
+              "uk": "пан Новак – пані Новакова"
+            }
+          ],
+          "shortRule": "priezvisko = прізвище (не плутай із «прізвиськом»!)",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u03-l01-volam-sa-w01",
+            "sk": "volám sa",
+            "uk": "мене звати",
+            "pronunciationUk": "вола:м са",
+            "exampleSk": "Volám sa Andrij.",
+            "exampleUk": "Мене звати Андрій."
+          },
+          {
+            "wordId": "a0-u03-l01-volam-sa-w02",
+            "sk": "Ako sa voláš?",
+            "uk": "Як тебе звати?",
+            "pronunciationUk": "ако са вола:ш",
+            "exampleSk": "Ahoj, ako sa voláš?",
+            "exampleUk": "Привіт, як тебе звати?"
+          },
+          {
+            "wordId": "a0-u03-l01-volam-sa-w03",
+            "sk": "meno",
+            "uk": "ім’я",
+            "pronunciationUk": "мено",
+            "exampleSk": "Napíšte sem svoje meno.",
+            "exampleUk": "Напишіть сюди своє ім’я."
+          },
+          {
+            "wordId": "a0-u03-l01-volam-sa-w04",
+            "sk": "priezvisko",
+            "uk": "прізвище",
+            "pronunciationUk": "прієзвіско",
+            "exampleSk": "Aké je vaše priezvisko?",
+            "exampleUk": "Яке ваше прізвище?"
+          },
+          {
+            "wordId": "a0-u03-l01-volam-sa-w05",
+            "sk": "krstné meno",
+            "uk": "власне ім’я",
+            "pronunciationUk": "крстне: мено",
+            "exampleSk": "Krstné meno píšte veľkými písmenami.",
+            "exampleUk": "Ім’я пишіть великими літерами."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u03-l01-volam-sa-w01",
+          "sk": "volám sa",
+          "uk": "мене звати",
+          "pronunciationUk": "вола:м са",
+          "exampleSk": "Volám sa Andrij.",
+          "exampleUk": "Мене звати Андрій.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l01-volam-sa-w02",
+          "sk": "Ako sa voláš?",
+          "uk": "Як тебе звати?",
+          "pronunciationUk": "ако са вола:ш",
+          "exampleSk": "Ahoj, ako sa voláš?",
+          "exampleUk": "Привіт, як тебе звати?",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l01-volam-sa-w03",
+          "sk": "meno",
+          "uk": "ім’я",
+          "pronunciationUk": "мено",
+          "exampleSk": "Napíšte sem svoje meno.",
+          "exampleUk": "Напишіть сюди своє ім’я.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l01-volam-sa-w04",
+          "sk": "priezvisko",
+          "uk": "прізвище",
+          "pronunciationUk": "прієзвіско",
+          "exampleSk": "Aké je vaše priezvisko?",
+          "exampleUk": "Яке ваше прізвище?",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l01-volam-sa-w05",
+          "sk": "krstné meno",
+          "uk": "власне ім’я",
+          "pronunciationUk": "крстне: мено",
+          "exampleSk": "Krstné meno píšte veľkými písmenami.",
+          "exampleUk": "Ім’я пишіть великими літерами.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u03-l01-volam-sa-ex01",
+          "lessonId": "a0-u03-l01-volam-sa",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Nový kolega",
+              "sk": "Ahoj, ja som Martin. A ty?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Dovidenia, Martin.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Ja som Oksana.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Ako sa voláte?",
+              "correct": false
+            }
+          ],
+          "explanation": "A ty? — він чекає твоє ім’я: Ja som… / Volám sa…",
+          "order": 1,
+          "wordIds": [
+            "a0-u03-l01-volam-sa-w01",
+            "a0-u03-l01-volam-sa-w02"
+          ]
+        },
+        {
+          "id": "a0-u03-l01-volam-sa-ex02",
+          "lessonId": "a0-u03-l01-volam-sa",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Dobrý deň, ako sa "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "voláte",
+                "voláš"
+              ],
+              "correct": "voláte"
+            },
+            {
+              "text": "?"
+            }
+          ],
+          "explanation": "Dobrý deň + vykanie → voláte.",
+          "order": 2,
+          "wordIds": [
+            "a0-u03-l01-volam-sa-w01",
+            "a0-u03-l01-volam-sa-w02"
+          ]
+        },
+        {
+          "id": "a0-u03-l01-volam-sa-ex03",
+          "lessonId": "a0-u03-l01-volam-sa",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "meno",
+              "right": "ім’я"
+            },
+            {
+              "left": "priezvisko",
+              "right": "прізвище"
+            },
+            {
+              "left": "Volám sa…",
+              "right": "Мене звати…"
+            },
+            {
+              "left": "Ako sa voláš?",
+              "right": "Як тебе звати?"
+            }
+          ],
+          "order": 3,
+          "wordIds": [
+            "a0-u03-l01-volam-sa-w01",
+            "a0-u03-l01-volam-sa-w02",
+            "a0-u03-l01-volam-sa-w03",
+            "a0-u03-l01-volam-sa-w04",
+            "a0-u03-l01-volam-sa-w05"
+          ]
+        },
+        {
+          "id": "a0-u03-l01-volam-sa-ex04",
+          "lessonId": "a0-u03-l01-volam-sa",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Priezvisko» означає «прізвисько».",
+          "correctAnswer": false,
+          "explanation": "priezvisko — прізвище. Хибний друг перекладача!",
+          "order": 4,
+          "wordIds": [
+            "a0-u03-l01-volam-sa-w04"
+          ]
+        },
+        {
+          "id": "a0-u03-l01-volam-sa-ex05",
+          "lessonId": "a0-u03-l01-volam-sa",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Як буде жіноча форма прізвища «Kováč»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Kováča",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Kováčka",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Kováčová",
+              "correct": true
+            }
+          ],
+          "explanation": "Словацькі жіночі прізвища зазвичай мають -ová.",
+          "order": 5
+        },
+        {
+          "id": "a0-u03-l01-volam-sa-ex06",
+          "lessonId": "a0-u03-l01-volam-sa",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Представся.",
+          "tokens": [
+            ".",
+            "Natália",
+            "Volám",
+            "sa"
+          ],
+          "correctOrder": [
+            "Volám",
+            "sa",
+            "Natália",
+            "."
+          ],
+          "explanation": "Volám sa + ім’я.",
+          "order": 6,
+          "wordIds": [
+            "a0-u03-l01-volam-sa-w01",
+            "a0-u03-l01-volam-sa-w02"
+          ]
+        },
+        {
+          "id": "a0-u03-l01-volam-sa-ex07",
+          "lessonId": "a0-u03-l01-volam-sa",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Працівниця офісу просить твоє ім’я для запису.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Ahoj, Olena.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Čau, som Olena.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Moje meno je Olena Kovalenko.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Olena, a ty?",
+              "correct": false
+            }
+          ],
+          "explanation": "В офіційній ситуації — повне ім’я в нейтральній формі.",
+          "order": 7,
+          "wordIds": [
+            "a0-u03-l01-volam-sa-w03",
+            "a0-u03-l01-volam-sa-w05"
+          ]
+        },
+        {
+          "id": "a0-u03-l01-volam-sa-ex08",
+          "lessonId": "a0-u03-l01-volam-sa",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши питання на «ти».",
+          "sentence": "Ako sa ______?",
+          "acceptedAnswers": [
+            "voláš"
+          ],
+          "hint": "Друга особа однини.",
+          "explanation": "Ako sa voláš?",
+          "order": 8,
+          "wordIds": [
+            "a0-u03-l01-volam-sa-w01",
+            "a0-u03-l01-volam-sa-w02"
+          ]
+        },
+        {
+          "id": "a0-u03-l01-volam-sa-ex09",
+          "lessonId": "a0-u03-l01-volam-sa",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай частину анкети.",
+          "document": {
+            "title": "Formulár",
+            "fields": [
+              {
+                "label": "Krstné meno",
+                "value": "Olha"
+              },
+              {
+                "label": "Priezvisko",
+                "value": "Shevchenko"
+              },
+              {
+                "label": "Štátna príslušnosť",
+                "value": "Ukrajina"
+              }
+            ]
+          },
+          "question": "Яке прізвище в анкеті?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Shevchenko",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Ukrajina",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Olha",
+              "correct": false
+            }
+          ],
+          "explanation": "Priezvisko — прізвище: Shevchenko.",
+          "order": 9,
+          "wordIds": [
+            "a0-u03-l01-volam-sa-w03",
+            "a0-u03-l01-volam-sa-w04",
+            "a0-u03-l01-volam-sa-w05"
+          ]
+        },
+        {
+          "id": "a0-u03-l01-volam-sa-ex10",
+          "lessonId": "a0-u03-l01-volam-sa",
+          "type": "sentence_builder",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Склади речення зі слів.",
+          "context": "Запитай ім’я ввічливо.",
+          "tokens": [
+            "prosím",
+            "voláte",
+            "Ako",
+            "?",
+            "sa",
+            ","
+          ],
+          "correctSentence": "Ako sa voláte, prosím?",
+          "explanation": "Ako sa voláte + prosím.",
+          "order": 10,
+          "wordIds": [
+            "a0-u03-l01-volam-sa-w01",
+            "a0-u03-l01-volam-sa-w02"
+          ]
+        },
+        {
+          "id": "a0-u03-l01-volam-sa-ex11",
+          "lessonId": "a0-u03-l01-volam-sa",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Питання на «ти» чи на «ви»?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Ти"
+            },
+            {
+              "id": "c2",
+              "title": "Ви"
+            }
+          ],
+          "items": [
+            {
+              "sk": "A vy?",
+              "category": "c2"
+            },
+            {
+              "sk": "Ako sa voláte?",
+              "category": "c2"
+            },
+            {
+              "sk": "Ako sa voláš?",
+              "category": "c1"
+            },
+            {
+              "sk": "A ty?",
+              "category": "c1"
+            },
+            {
+              "sk": "Odkiaľ ste?",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Форми -š для «ти», -te для «ви».",
+          "order": 11,
+          "wordIds": [
+            "a0-u03-l01-volam-sa-w01",
+            "a0-u03-l01-volam-sa-w02"
+          ]
+        },
+        {
+          "id": "a0-u03-l01-volam-sa-ex12",
+          "lessonId": "a0-u03-l01-volam-sa",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Vaše meno, prosím?",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": true
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": false
+            }
+          ],
+          "explanation": "Формальне питання в офісі чи на рецепції.",
+          "order": 12,
+          "wordIds": [
+            "a0-u03-l01-volam-sa-w03",
+            "a0-u03-l01-volam-sa-w05"
+          ]
+        },
+        {
+          "id": "a0-u03-l01-volam-sa-ex13",
+          "lessonId": "a0-u03-l01-volam-sa",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Recepčná",
+              "sk": "Vaše priezvisko, prosím?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Taras.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Ukrajina.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Bondarenko.",
+              "correct": true
+            }
+          ],
+          "explanation": "Питають прізвище — priezvisko.",
+          "order": 13,
+          "wordIds": [
+            "a0-u03-l01-volam-sa-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Курси словацької",
+        "description": "Перше заняття на мовних курсах. Ви знайомитеся.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Викладачка: «Dobrý deň, ako sa voláte?»",
+            "options": [
+              {
+                "sk": "Volám sa Yulia.",
+                "correct": true
+              },
+              {
+                "sk": "Dobrú noc.",
+                "correct": false
+              },
+              {
+                "sk": "Ako sa voláš?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Вона уточнює: «A vaše priezvisko?»",
+            "options": [
+              {
+                "sk": "Yulia.",
+                "correct": false
+              },
+              {
+                "sk": "Áno.",
+                "correct": false
+              },
+              {
+                "sk": "Moroz.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Сусід по парті: «Ahoj, ja som Ahmed.»",
+            "options": [
+              {
+                "sk": "Prepáčte.",
+                "correct": false
+              },
+              {
+                "sk": "Ahoj, ja som Yulia. Teší ma.",
+                "correct": true
+              },
+              {
+                "sk": "Dobrý deň prajem, pán Ahmed.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти хочеш запитати ім’я іншої студентки (ровесниці).",
+            "options": [
+              {
+                "sk": "Ako sa voláte, pani?",
+                "correct": false
+              },
+              {
+                "sk": "Vaše priezvisko?",
+                "correct": false
+              },
+              {
+                "sk": "Ako sa voláš?",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вже знайомишся словацькою! Далі — звідки ти."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вже знайомишся словацькою! Далі — звідки ти.",
+        "nowYouKnow": [
+          "Volám sa… / Som…",
+          "Ako sa voláš? / Ako sa voláte?",
+          "meno, krstné meno, priezvisko",
+          "-ová у жіночих прізвищах"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 13,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u03-l02-odkial-si",
+          "title": "Звідки ти?"
+        }
+      }
+    }
+  ]
+}

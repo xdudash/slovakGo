@@ -1,0 +1,717 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u03-l05-vek",
+      "sectionId": "a0-u03",
+      "level": "A0",
+      "title": "Скільки тобі років?",
+      "topic": "Знайомство",
+      "description": "Вік, рік народження і день народження: mám … rokov, narodil som sa, narodeniny.",
+      "order": 25,
+      "xpReward": 15,
+      "estimatedMinutes": 18,
+      "isPublished": true,
+      "intro": "Сказати свій вік і запитати чужий, розуміти питання про дату народження.",
+      "completionMessage": "Ти вже вмієш говорити про вік. Далі — професії.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Знайомство",
+        "title": "Скільки тобі років?",
+        "shortDescription": "Сказати свій вік і запитати чужий, розуміти питання про дату народження.",
+        "outcomes": [
+          "питати Koľko máš / máte rokov?",
+          "відповідати Mám … rokov / roky",
+          "розуміти dátum narodenia",
+          "привітати з днем народження"
+        ],
+        "newWords": [
+          "rok",
+          "Koľko máš rokov?",
+          "narodeniny",
+          "dátum narodenia",
+          "Všetko najlepšie!"
+        ],
+        "exercisesCount": 11,
+        "reward": "+15 XP",
+        "estimatedMinutes": 18,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Mám … rokov",
+          "text": "У словацькій вік «мають»: «Mám tridsať rokov» (мені 30 років). Питання: «Koľko máš rokov?» / «Koľko máte rokov?». Питати вік дорослих незнайомих — неввічливо, але в документах і в лікаря це звичайно.",
+          "examples": [
+            {
+              "sk": "Koľko máš rokov?",
+              "uk": "Скільки тобі років?"
+            },
+            {
+              "sk": "Mám dvadsaťpäť rokov.",
+              "uk": "Мені 25 років."
+            }
+          ],
+          "shortRule": "Mám + число + rokov",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Rok, roky, rokov",
+          "text": "1 rok, 2–4 roky, 5+ rokov — як в українській «рік, роки, років». Десятки (dvadsať, tridsať…) детально будуть у наступному розділі.",
+          "examples": [
+            {
+              "sk": "Synovi je jeden rok.",
+              "uk": "Синові один рік."
+            },
+            {
+              "sk": "Dcéra má tri roky.",
+              "uk": "Доньці три роки."
+            },
+            {
+              "sk": "Mám štyridsať rokov.",
+              "uk": "Мені 40 років."
+            }
+          ],
+          "shortRule": "1 rok, 2–4 roky, 5+ rokov",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Народження й день народження",
+          "text": "«Dátum narodenia» — дата народження (у формах). «Narodil som sa…» (чол.) / «Narodila som sa…» (жін.) — я народився/народилася. «Narodeniny» — день народження. Привітання: «Všetko najlepšie k narodeninám!»",
+          "examples": [
+            {
+              "sk": "Narodila som sa v Kyjeve.",
+              "uk": "Я народилася в Києві."
+            },
+            {
+              "sk": "Všetko najlepšie!",
+              "uk": "Усього найкращого!"
+            }
+          ],
+          "shortRule": "narodeniny = день народження",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u03-l05-vek-w01",
+            "sk": "rok",
+            "uk": "рік",
+            "pronunciationUk": "рок",
+            "exampleSk": "Na Slovensku žijem rok.",
+            "exampleUk": "Я живу в Словаччині рік."
+          },
+          {
+            "wordId": "a0-u03-l05-vek-w02",
+            "sk": "Koľko máš rokov?",
+            "uk": "Скільки тобі років?",
+            "pronunciationUk": "кольо ма:ш рокоу",
+            "exampleSk": "Koľko máš rokov, Miško?",
+            "exampleUk": "Скільки тобі років, Мішко?"
+          },
+          {
+            "wordId": "a0-u03-l05-vek-w03",
+            "sk": "narodeniny",
+            "uk": "день народження",
+            "pronunciationUk": "народєніні",
+            "exampleSk": "Dnes mám narodeniny.",
+            "exampleUk": "Сьогодні в мене день народження."
+          },
+          {
+            "wordId": "a0-u03-l05-vek-w04",
+            "sk": "dátum narodenia",
+            "uk": "дата народження",
+            "pronunciationUk": "да:тум народенія",
+            "exampleSk": "Napíšte dátum narodenia.",
+            "exampleUk": "Напишіть дату народження."
+          },
+          {
+            "wordId": "a0-u03-l05-vek-w05",
+            "sk": "Všetko najlepšie!",
+            "uk": "Усього найкращого!",
+            "pronunciationUk": "фшеткo найлепшіє",
+            "exampleSk": "Všetko najlepšie k narodeninám!",
+            "exampleUk": "З днем народження!"
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u03-l05-vek-w01",
+          "sk": "rok",
+          "uk": "рік",
+          "pronunciationUk": "рок",
+          "exampleSk": "Na Slovensku žijem rok.",
+          "exampleUk": "Я живу в Словаччині рік.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l05-vek-w02",
+          "sk": "Koľko máš rokov?",
+          "uk": "Скільки тобі років?",
+          "pronunciationUk": "кольо ма:ш рокоу",
+          "exampleSk": "Koľko máš rokov, Miško?",
+          "exampleUk": "Скільки тобі років, Мішко?",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l05-vek-w03",
+          "sk": "narodeniny",
+          "uk": "день народження",
+          "pronunciationUk": "народєніні",
+          "exampleSk": "Dnes mám narodeniny.",
+          "exampleUk": "Сьогодні в мене день народження.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l05-vek-w04",
+          "sk": "dátum narodenia",
+          "uk": "дата народження",
+          "pronunciationUk": "да:тум народенія",
+          "exampleSk": "Napíšte dátum narodenia.",
+          "exampleUk": "Напишіть дату народження.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l05-vek-w05",
+          "sk": "Všetko najlepšie!",
+          "uk": "Усього найкращого!",
+          "pronunciationUk": "фшеткo найлепшіє",
+          "exampleSk": "Všetko najlepšie k narodeninám!",
+          "exampleUk": "З днем народження!",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u03-l05-vek-ex01",
+          "lessonId": "a0-u03-l05-vek",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Dcéra má tri "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "rokov",
+                "roky",
+                "rok"
+              ],
+              "correct": "roky"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "2–4 → roky.",
+          "order": 1,
+          "wordIds": [
+            "a0-u03-l05-vek-w01",
+            "a0-u03-l05-vek-w02"
+          ]
+        },
+        {
+          "id": "a0-u03-l05-vek-ex02",
+          "lessonId": "a0-u03-l05-vek",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Syn má jeden "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "rok",
+                "roky",
+                "rokov"
+              ],
+              "correct": "rok"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "1 → rok.",
+          "order": 2,
+          "wordIds": [
+            "a0-u03-l05-vek-w01",
+            "a0-u03-l05-vek-w02"
+          ]
+        },
+        {
+          "id": "a0-u03-l05-vek-ex03",
+          "lessonId": "a0-u03-l05-vek",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "narodeniny",
+              "right": "день народження"
+            },
+            {
+              "left": "dátum narodenia",
+              "right": "дата народження"
+            },
+            {
+              "left": "Koľko máš rokov?",
+              "right": "Скільки тобі років?"
+            },
+            {
+              "left": "Všetko najlepšie!",
+              "right": "Усього найкращого!"
+            }
+          ],
+          "order": 3,
+          "wordIds": [
+            "a0-u03-l05-vek-w01",
+            "a0-u03-l05-vek-w02",
+            "a0-u03-l05-vek-w03",
+            "a0-u03-l05-vek-w04",
+            "a0-u03-l05-vek-w05"
+          ]
+        },
+        {
+          "id": "a0-u03-l05-vek-ex04",
+          "lessonId": "a0-u03-l05-vek",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Mám dvadsať rokov»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "У мене двадцять речей",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Я маю двадцять євро",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Мені двадцять років",
+              "correct": true
+            }
+          ],
+          "explanation": "Вік у словацькій виражають дієсловом mať.",
+          "order": 4
+        },
+        {
+          "id": "a0-u03-l05-vek-ex05",
+          "lessonId": "a0-u03-l05-vek",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kamarátka",
+              "sk": "Dnes mám narodeniny!"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Všetko najlepšie!",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Dobrú noc.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "To ma mrzí.",
+              "correct": false
+            }
+          ],
+          "explanation": "На день народження — Všetko najlepšie!",
+          "order": 5,
+          "wordIds": [
+            "a0-u03-l05-vek-w03",
+            "a0-u03-l05-vek-w04",
+            "a0-u03-l05-vek-w05"
+          ]
+        },
+        {
+          "id": "a0-u03-l05-vek-ex06",
+          "lessonId": "a0-u03-l05-vek",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши (говорить чоловік).",
+          "sentence": "______ som sa v Ľvove.",
+          "acceptedAnswers": [
+            "Narodil"
+          ],
+          "hint": "Чоловік: narodil, жінка: narodila.",
+          "explanation": "Narodil som sa — я народився.",
+          "order": 6
+        },
+        {
+          "id": "a0-u03-l05-vek-ex07",
+          "lessonId": "a0-u03-l05-vek",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "У словацькій питати вік у незнайомої дорослої людини на вулиці — цілком звично.",
+          "correctAnswer": false,
+          "explanation": "Це неввічливо; вік питають у формах, у лікаря, у дітей.",
+          "order": 7
+        },
+        {
+          "id": "a0-u03-l05-vek-ex08",
+          "lessonId": "a0-u03-l05-vek",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Привітай подругу з днем народження.",
+          "tokens": [
+            "k",
+            "narodeninám",
+            "!",
+            "najlepšie",
+            "Všetko"
+          ],
+          "correctOrder": [
+            "Všetko",
+            "najlepšie",
+            "k",
+            "narodeninám",
+            "!"
+          ],
+          "explanation": "Стандартне привітання.",
+          "order": 8,
+          "wordIds": [
+            "a0-u03-l05-vek-w03",
+            "a0-u03-l05-vek-w04",
+            "a0-u03-l05-vek-w05"
+          ]
+        },
+        {
+          "id": "a0-u03-l05-vek-ex09",
+          "lessonId": "a0-u03-l05-vek",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай частину документа.",
+          "document": {
+            "title": "Preukaz",
+            "fields": [
+              {
+                "label": "Meno",
+                "value": "Anna Hrytsenko"
+              },
+              {
+                "label": "Dátum narodenia",
+                "value": "12. 3. 1994"
+              },
+              {
+                "label": "Miesto narodenia",
+                "value": "Poltava"
+              }
+            ]
+          },
+          "question": "Де народилася Анна?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "у Полтаві",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "у 1994 році",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "12 березня",
+              "correct": false
+            }
+          ],
+          "explanation": "Miesto narodenia — місце народження.",
+          "order": 9,
+          "wordIds": [
+            "a0-u03-l05-vek-w03",
+            "a0-u03-l05-vek-w04"
+          ]
+        },
+        {
+          "id": "a0-u03-l05-vek-ex10",
+          "lessonId": "a0-u03-l05-vek",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Лікарка питає вік твоєї доньки (5 років).",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Mám päť.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Je päť rok.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Má päť rokov.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Má päť roky.",
+              "correct": false
+            }
+          ],
+          "explanation": "5+ → rokov; má — вона має.",
+          "order": 10,
+          "wordIds": [
+            "a0-u03-l05-vek-w01",
+            "a0-u03-l05-vek-w02"
+          ]
+        },
+        {
+          "id": "a0-u03-l05-vek-ex11",
+          "lessonId": "a0-u03-l05-vek",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "rok, roky чи rokov?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "rok"
+            },
+            {
+              "id": "c2",
+              "title": "roky"
+            },
+            {
+              "id": "c3",
+              "title": "rokov"
+            }
+          ],
+          "items": [
+            {
+              "sk": "1",
+              "category": "c1"
+            },
+            {
+              "sk": "20",
+              "category": "c3"
+            },
+            {
+              "sk": "4",
+              "category": "c2"
+            },
+            {
+              "sk": "3",
+              "category": "c2"
+            },
+            {
+              "sk": "2",
+              "category": "c2"
+            },
+            {
+              "sk": "10",
+              "category": "c3"
+            },
+            {
+              "sk": "5",
+              "category": "c3"
+            }
+          ],
+          "explanation": "1 rok; 2–4 roky; 5 і більше — rokov.",
+          "order": 11,
+          "wordIds": [
+            "a0-u03-l05-vek-w01",
+            "a0-u03-l05-vek-w02"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Реєстрація в лікаря",
+        "description": "Ти записуєш себе й сина до сімейного лікаря.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Koľko máte rokov?» (тобі 35)",
+            "options": [
+              {
+                "sk": "Som tridsaťpäť.",
+                "correct": false
+              },
+              {
+                "sk": "Mám tridsaťpäť roky.",
+                "correct": false
+              },
+              {
+                "sk": "Mám tridsaťpäť rokov.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«A syn?» (йому 3)",
+            "options": [
+              {
+                "sk": "Syn má tri roky.",
+                "correct": true
+              },
+              {
+                "sk": "Syn má tri rokov.",
+                "correct": false
+              },
+              {
+                "sk": "Syn je tri.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Dátum narodenia?» Що треба назвати?",
+            "options": [
+              {
+                "sk": "дату народження",
+                "correct": true
+              },
+              {
+                "sk": "адресу",
+                "correct": false
+              },
+              {
+                "sk": "місце народження",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Медсестра бачить у картці: сьогодні в сина день народження. Що вона скаже?",
+            "options": [
+              {
+                "sk": "Dovidenia!",
+                "correct": false
+              },
+              {
+                "sk": "To ma mrzí.",
+                "correct": false
+              },
+              {
+                "sk": "Všetko najlepšie!",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вже вмієш говорити про вік. Далі — професії."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вже вмієш говорити про вік. Далі — професії.",
+        "nowYouKnow": [
+          "Koľko máš / máte rokov?",
+          "Mám … rokov",
+          "1 rok, 2–4 roky, 5+ rokov",
+          "narodeniny, dátum narodenia, Všetko najlepšie!"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 11,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u03-l06-povolania-zaklad",
+          "title": "Ким ти працюєш?"
+        }
+      }
+    }
+  ]
+}

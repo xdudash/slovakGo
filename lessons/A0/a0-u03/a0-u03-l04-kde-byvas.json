@@ -1,0 +1,755 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u03-l04-kde-byvas",
+      "sectionId": "a0-u03",
+      "level": "A0",
+      "title": "Де ти живеш?",
+      "topic": "Знайомство",
+      "description": "Сказати, де ти живеш: місто, район, вулиця. Різниця між «bývať» і «žiť».",
+      "order": 24,
+      "xpReward": 15,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Розповісти, де ти живеш, і запитати про це інших.",
+      "completionMessage": "Ти вмієш розповісти про своє житло й місто. Далі — мови в роботі й побуті.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Знайомство",
+        "title": "Де ти живеш?",
+        "shortDescription": "Розповісти, де ти живеш, і запитати про це інших.",
+        "outcomes": [
+          "питати Kde bývaš / bývate?",
+          "казати Bývam v Bratislave / na Slovensku",
+          "назвати вулицю",
+          "розрізняти bývať і žiť"
+        ],
+        "newWords": [
+          "bývať",
+          "žiť",
+          "ulica",
+          "sídlisko",
+          "adresa",
+          "Kde bývate?"
+        ],
+        "exercisesCount": 12,
+        "reward": "+15 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Bývať — жити (де саме)",
+          "text": "«Bývam v Košiciach» — я живу в Кошицях. «Kde bývate?» — де ви живете? «Bývať» — про конкретне місце: місто, квартиру, вулицю.",
+          "examples": [
+            {
+              "sk": "Bývam v Nitre.",
+              "uk": "Я живу в Нітрі."
+            },
+            {
+              "sk": "Kde bývaš?",
+              "uk": "Де ти живеш?"
+            }
+          ],
+          "shortRule": "Kde bývaš? — Bývam v…",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "V чи na?",
+          "text": "Більшість міст і країн — «v»: v Bratislave, v Žiline, v Poľsku. Але «na Slovensku», «na Ukrajine» (так говорять словаки), «na ulici», «na sídlisku» (у спальному районі).",
+          "examples": [
+            {
+              "sk": "Bývam na Slovensku.",
+              "uk": "Я живу в Словаччині."
+            },
+            {
+              "sk": "Bývam na Hlavnej ulici.",
+              "uk": "Я живу на Головній вулиці."
+            }
+          ],
+          "shortRule": "na Slovensku, na ulici; v + місто.",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Žiť — жити (взагалі)",
+          "text": "«Žiť» — жити як існувати, проводити життя: «Žijem na Slovensku dva roky» (живу в Словаччині два роки). Для адреси краще «bývať».",
+          "examples": [
+            {
+              "sk": "Žijem tu rok.",
+              "uk": "Я живу тут рік."
+            },
+            {
+              "sk": "Bývam na Mierovej ulici 5.",
+              "uk": "Я живу на вулиці Мірова, 5."
+            }
+          ],
+          "shortRule": "adresa → bývať",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u03-l04-kde-byvas-w01",
+            "sk": "bývať",
+            "uk": "жити (мешкати)",
+            "pronunciationUk": "бі:вать",
+            "exampleSk": "Bývam v centre.",
+            "exampleUk": "Я живу в центрі."
+          },
+          {
+            "wordId": "a0-u03-l04-kde-byvas-w02",
+            "sk": "žiť",
+            "uk": "жити",
+            "pronunciationUk": "жіть",
+            "exampleSk": "Žijeme tu už rok.",
+            "exampleUk": "Ми живемо тут уже рік."
+          },
+          {
+            "wordId": "a0-u03-l04-kde-byvas-w03",
+            "sk": "ulica",
+            "uk": "вулиця",
+            "pronunciationUk": "уліца",
+            "exampleSk": "Bývam na Mlynskej ulici.",
+            "exampleUk": "Я живу на вулиці Млинській."
+          },
+          {
+            "wordId": "a0-u03-l04-kde-byvas-w04",
+            "sk": "sídlisko",
+            "uk": "житловий масив",
+            "pronunciationUk": "сі:дліско",
+            "exampleSk": "Bývame na sídlisku Petržalka.",
+            "exampleUk": "Ми живемо на масиві Петржалка."
+          },
+          {
+            "wordId": "a0-u03-l04-kde-byvas-w05",
+            "sk": "adresa",
+            "uk": "адреса",
+            "pronunciationUk": "адреса",
+            "exampleSk": "Aká je vaša adresa?",
+            "exampleUk": "Яка ваша адреса?"
+          },
+          {
+            "wordId": "a0-u03-l04-kde-byvas-w06",
+            "sk": "Kde bývate?",
+            "uk": "Де ви живете?",
+            "pronunciationUk": "гдє бі:ватє",
+            "exampleSk": "Kde bývate na Slovensku?",
+            "exampleUk": "Де ви живете в Словаччині?"
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u03-l04-kde-byvas-w01",
+          "sk": "bývať",
+          "uk": "жити (мешкати)",
+          "pronunciationUk": "бі:вать",
+          "exampleSk": "Bývam v centre.",
+          "exampleUk": "Я живу в центрі.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l04-kde-byvas-w02",
+          "sk": "žiť",
+          "uk": "жити",
+          "pronunciationUk": "жіть",
+          "exampleSk": "Žijeme tu už rok.",
+          "exampleUk": "Ми живемо тут уже рік.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l04-kde-byvas-w03",
+          "sk": "ulica",
+          "uk": "вулиця",
+          "pronunciationUk": "уліца",
+          "exampleSk": "Bývam na Mlynskej ulici.",
+          "exampleUk": "Я живу на вулиці Млинській.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l04-kde-byvas-w04",
+          "sk": "sídlisko",
+          "uk": "житловий масив",
+          "pronunciationUk": "сі:дліско",
+          "exampleSk": "Bývame na sídlisku Petržalka.",
+          "exampleUk": "Ми живемо на масиві Петржалка.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l04-kde-byvas-w05",
+          "sk": "adresa",
+          "uk": "адреса",
+          "pronunciationUk": "адреса",
+          "exampleSk": "Aká je vaša adresa?",
+          "exampleUk": "Яка ваша адреса?",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l04-kde-byvas-w06",
+          "sk": "Kde bývate?",
+          "uk": "Де ви живете?",
+          "pronunciationUk": "гдє бі:ватє",
+          "exampleSk": "Kde bývate na Slovensku?",
+          "exampleUk": "Де ви живете в Словаччині?",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u03-l04-kde-byvas-ex01",
+          "lessonId": "a0-u03-l04-kde-byvas",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери прийменник.",
+          "sentenceParts": [
+            {
+              "text": "Bývam "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "v",
+                "na"
+              ],
+              "correct": "na"
+            },
+            {
+              "text": " Slovensku."
+            }
+          ],
+          "explanation": "Говорять na Slovensku.",
+          "order": 1,
+          "wordIds": [
+            "a0-u03-l04-kde-byvas-w01",
+            "a0-u03-l04-kde-byvas-w06"
+          ]
+        },
+        {
+          "id": "a0-u03-l04-kde-byvas-ex02",
+          "lessonId": "a0-u03-l04-kde-byvas",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери прийменник.",
+          "sentenceParts": [
+            {
+              "text": "Bývam "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "na",
+                "v"
+              ],
+              "correct": "v"
+            },
+            {
+              "text": " Bratislave."
+            }
+          ],
+          "explanation": "Міста — з v: v Bratislave.",
+          "order": 2,
+          "wordIds": [
+            "a0-u03-l04-kde-byvas-w01",
+            "a0-u03-l04-kde-byvas-w06"
+          ]
+        },
+        {
+          "id": "a0-u03-l04-kde-byvas-ex03",
+          "lessonId": "a0-u03-l04-kde-byvas",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "bývať",
+              "right": "мешкати"
+            },
+            {
+              "left": "žiť",
+              "right": "жити"
+            },
+            {
+              "left": "ulica",
+              "right": "вулиця"
+            },
+            {
+              "left": "sídlisko",
+              "right": "житловий масив"
+            },
+            {
+              "left": "adresa",
+              "right": "адреса"
+            }
+          ],
+          "order": 3,
+          "wordIds": [
+            "a0-u03-l04-kde-byvas-w01",
+            "a0-u03-l04-kde-byvas-w02",
+            "a0-u03-l04-kde-byvas-w03",
+            "a0-u03-l04-kde-byvas-w04",
+            "a0-u03-l04-kde-byvas-w05",
+            "a0-u03-l04-kde-byvas-w06"
+          ]
+        },
+        {
+          "id": "a0-u03-l04-kde-byvas-ex04",
+          "lessonId": "a0-u03-l04-kde-byvas",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kolegyňa",
+              "sk": "Kde bývaš?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Bývam v Petržalke, na sídlisku.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Volám sa Petržalka.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Som z Ukrajiny.",
+              "correct": false
+            }
+          ],
+          "explanation": "Kde bývaš — питання про місце проживання.",
+          "order": 4,
+          "wordIds": [
+            "a0-u03-l04-kde-byvas-w01",
+            "a0-u03-l04-kde-byvas-w04",
+            "a0-u03-l04-kde-byvas-w06"
+          ]
+        },
+        {
+          "id": "a0-u03-l04-kde-byvas-ex05",
+          "lessonId": "a0-u03-l04-kde-byvas",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Чим відрізняється «Odkiaľ si?» від «Kde bývaš?»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "перше — звідки ти родом, друге — де живеш зараз",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "перше — де живеш, друге — звідки",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "це одне й те саме",
+              "correct": false
+            }
+          ],
+          "explanation": "Odkiaľ — походження, kde bývaš — місце проживання.",
+          "order": 5
+        },
+        {
+          "id": "a0-u03-l04-kde-byvas-ex06",
+          "lessonId": "a0-u03-l04-kde-byvas",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Bývam na Hlavnej ulici» означає «Я живу на Головній вулиці».",
+          "correctAnswer": true,
+          "explanation": "na + вулиця.",
+          "order": 6,
+          "wordIds": [
+            "a0-u03-l04-kde-byvas-w01",
+            "a0-u03-l04-kde-byvas-w03",
+            "a0-u03-l04-kde-byvas-w06"
+          ]
+        },
+        {
+          "id": "a0-u03-l04-kde-byvas-ex07",
+          "lessonId": "a0-u03-l04-kde-byvas",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши дієслово (я живу).",
+          "sentence": "______ v Trnave.",
+          "acceptedAnswers": [
+            "Bývam"
+          ],
+          "hint": "Перша особа: -am.",
+          "explanation": "Bývam v Trnave.",
+          "order": 7,
+          "wordIds": [
+            "a0-u03-l04-kde-byvas-w01",
+            "a0-u03-l04-kde-byvas-w06"
+          ]
+        },
+        {
+          "id": "a0-u03-l04-kde-byvas-ex08",
+          "lessonId": "a0-u03-l04-kde-byvas",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Запитай пані, де вона живе.",
+          "tokens": [
+            "pani",
+            "bývate",
+            ",",
+            "Kde",
+            "?",
+            "Nováková"
+          ],
+          "correctOrder": [
+            "Kde",
+            "bývate",
+            ",",
+            "pani",
+            "Nováková",
+            "?"
+          ],
+          "explanation": "Kde bývate + звертання.",
+          "order": 8,
+          "wordIds": [
+            "a0-u03-l04-kde-byvas-w01",
+            "a0-u03-l04-kde-byvas-w06"
+          ]
+        },
+        {
+          "id": "a0-u03-l04-kde-byvas-ex09",
+          "lessonId": "a0-u03-l04-kde-byvas",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти розповідаєш, скільки вже живеш у Словаччині.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Bývam na Slovensku ulica.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Som Slovensko dva roky.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Žijem na Slovensku dva roky.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Žijem v Slovensku.",
+              "correct": false
+            }
+          ],
+          "explanation": "Žiť — про тривалість життя в країні; na Slovensku.",
+          "order": 9,
+          "wordIds": [
+            "a0-u03-l04-kde-byvas-w01",
+            "a0-u03-l04-kde-byvas-w03",
+            "a0-u03-l04-kde-byvas-w06"
+          ]
+        },
+        {
+          "id": "a0-u03-l04-kde-byvas-ex10",
+          "lessonId": "a0-u03-l04-kde-byvas",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Bývam v Slovensku už rok.",
+          "errorToken": "v",
+          "correctToken": "na",
+          "explanation": "na Slovensku, а не v Slovensku.",
+          "order": 10,
+          "wordIds": [
+            "a0-u03-l04-kde-byvas-w01",
+            "a0-u03-l04-kde-byvas-w06"
+          ]
+        },
+        {
+          "id": "a0-u03-l04-kde-byvas-ex11",
+          "lessonId": "a0-u03-l04-kde-byvas",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай дані з анкети.",
+          "document": {
+            "title": "Údaje o pobyte",
+            "fields": [
+              {
+                "label": "Meno",
+                "value": "Ivan Melnyk"
+              },
+              {
+                "label": "Ulica",
+                "value": "Hlavná 12"
+              },
+              {
+                "label": "Mesto",
+                "value": "Prešov"
+              },
+              {
+                "label": "PSČ",
+                "value": "080 01"
+              }
+            ]
+          },
+          "question": "У якому місті живе Іван?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Melnyk",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Prešov",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Hlavná",
+              "correct": false
+            }
+          ],
+          "explanation": "Mesto — місто: Prešov.",
+          "order": 11,
+          "wordIds": [
+            "a0-u03-l04-kde-byvas-w03"
+          ]
+        },
+        {
+          "id": "a0-u03-l04-kde-byvas-ex12",
+          "lessonId": "a0-u03-l04-kde-byvas",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні фрази.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Bývam v Žiline.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Bývam v Slovensku.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Bývam na sídlisku.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Bývam na Slovensku.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Bývam na Žiline.",
+              "correct": false
+            }
+          ],
+          "explanation": "v Žiline, na Slovensku, na sídlisku.",
+          "order": 12,
+          "wordIds": [
+            "a0-u03-l04-kde-byvas-w01",
+            "a0-u03-l04-kde-byvas-w04",
+            "a0-u03-l04-kde-byvas-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Нова знайома в парку",
+        "description": "Ти гуляєш із дитиною, і мама іншої дитини починає розмову.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Bývate tu blízko?» (так, на вулиці Lipová)",
+            "options": [
+              {
+                "sk": "Áno, bývam na Lipovej ulici.",
+                "correct": true
+              },
+              {
+                "sk": "Áno, som z Lipovej.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, volám sa Lipová.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Ako dlho žijete na Slovensku?» (рік)",
+            "options": [
+              {
+                "sk": "Som z roka.",
+                "correct": false
+              },
+              {
+                "sk": "Bývam rok ulica.",
+                "correct": false
+              },
+              {
+                "sk": "Žijem tu rok.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти питаєш її:",
+            "options": [
+              {
+                "sk": "A odkiaľ ste ulica?",
+                "correct": false
+              },
+              {
+                "sk": "A kde bývate vy?",
+                "correct": true
+              },
+              {
+                "sk": "A kde ste sa volali?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Bývam na sídlisku.» Що це означає?",
+            "options": [
+              {
+                "sk": "вона живе на житловому масиві",
+                "correct": true
+              },
+              {
+                "sk": "вона живе за кордоном",
+                "correct": false
+              },
+              {
+                "sk": "вона живе в селі",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш розповісти про своє житло й місто. Далі — мови в роботі й побуті."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш розповісти про своє житло й місто. Далі — мови в роботі й побуті.",
+        "nowYouKnow": [
+          "Kde bývaš / bývate?",
+          "Bývam v + місто",
+          "na Slovensku, na ulici",
+          "bývať (адреса) vs žiť (жити)"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u03-l05-vek",
+          "title": "Скільки тобі років?"
+        }
+      }
+    }
+  ]
+}
