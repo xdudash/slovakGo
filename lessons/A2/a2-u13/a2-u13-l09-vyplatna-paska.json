@@ -1,0 +1,850 @@
+{
+  "lessons": [
+    {
+      "id": "a2-u13-l09-vyplatna-paska",
+      "sectionId": "a2-u13",
+      "level": "A2",
+      "title": "Розрахунковий листок",
+      "topic": "На робочому місці",
+      "description": "Як читати розрахунковий листок: брутто й нетто, внески на страхування, податок, відпрацьовані години й доплати.",
+      "order": 119,
+      "xpReward": 30,
+      "estimatedMinutes": 20,
+      "isPublished": true,
+      "intro": "Прочитати výplatnú pásku, зрозуміти, з чого складається зарплата, і запитати в бухгалтерії про помилку.",
+      "completionMessage": "Ти вмієш читати розрахунковий листок. Далі — підсумок розділу «На робочому місці».",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A2 · На робочому місці",
+        "title": "Розрахунковий листок",
+        "shortDescription": "Прочитати výplatnú pásku, зрозуміти, з чого складається зарплата, і запитати в бухгалтерії про помилку.",
+        "outcomes": [
+          "розуміти hrubá a čistá mzda на листку",
+          "називати odvody: zdravotné a sociálne poistenie, daň z príjmu",
+          "знаходити odpracované hodiny a príplatky",
+          "казати Na páske mi chýba…"
+        ],
+        "newWords": [
+          "výplatná páska",
+          "odvody",
+          "daň z príjmu",
+          "zdravotné poistenie",
+          "sociálne poistenie",
+          "odpracované hodiny"
+        ],
+        "exercisesCount": 13,
+        "reward": "+30 XP",
+        "estimatedMinutes": 20,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Čo je výplatná páska",
+          "text": "«Výplatná páska» — розрахунковий листок, який отримуєш щомісяця (папером, електронною поштою або в застосунку). Зверху — «hrubá mzda» (брутто), внизу — «čistá mzda» (нетто), яка прийде на рахунок. Між ними — «odvody» (внески) і «daň» (податок).",
+          "examples": [
+            {
+              "sk": "Výplatnú pásku dostávam e-mailom.",
+              "uk": "Розрахунковий листок я отримую електронною поштою."
+            },
+            {
+              "sk": "Z hrubej mzdy sa platia odvody a daň.",
+              "uk": "З брутто-зарплати сплачуються внески й податок."
+            }
+          ],
+          "shortRule": "hrubá mzda − odvody − daň = čistá mzda",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Odvody a daň",
+          "text": "Працівник сплачує «zdravotné poistenie» (медичне страхування) і «sociálne poistenie» (соціальне: пенсія, лікарняні, допомога з безробіття). Потім іде «daň z príjmu» — податок на доходи. Сам нічого не перераховуєш: роботодавець утримує все із зарплати й надсилає куди треба.",
+          "examples": [
+            {
+              "sk": "Odvody a daň mi zamestnávateľ strhne zo mzdy.",
+              "uk": "Внески й податок роботодавець утримує мені із зарплати."
+            },
+            {
+              "sk": "Zo sociálneho poistenia dostanem aj dôchodok.",
+              "uk": "Із соціального страхування я отримаю й пенсію."
+            }
+          ],
+          "shortRule": "zdravotné + sociálne poistenie = odvody",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Hodiny a príplatky",
+          "text": "На листку є «odpracované hodiny» (відпрацьовані години), «nadčasy» і «príplatky» — за ніч, суботу, неділю чи свято. Якщо щось не сходиться, звертайся в «mzdovú účtáreň» (бухгалтерію із зарплати): «Na páske mi chýba príplatok za nočné.»",
+          "examples": [
+            {
+              "sk": "Minulý mesiac som odpracoval 168 hodín.",
+              "uk": "Минулого місяця я відпрацював 168 годин."
+            },
+            {
+              "sk": "Na páske mi chýbajú dve hodiny nadčasu.",
+              "uk": "У листку бракує двох годин понаднормової роботи."
+            }
+          ],
+          "shortRule": "mi chýba (однина) · mi chýbajú (множина)",
+          "commonMistakes": [
+            {
+              "mistake": "Na páske mi chýba dve hodiny.",
+              "correct": "Na páske mi chýbajú dve hodiny."
+            },
+            {
+              "mistake": "odpracoval 168 hodiny",
+              "correct": "odpracoval 168 hodín"
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a2-u13-l09-vyplatna-paska-w01",
+            "sk": "výplatná páska",
+            "uk": "розрахунковий листок",
+            "pronunciationUk": "ві:платна: па:ска",
+            "exampleSk": "Na výplatnej páske vidím aj nadčasy.",
+            "exampleUk": "На розрахунковому листку я бачу й понаднормові."
+          },
+          {
+            "wordId": "a2-u13-l09-vyplatna-paska-w02",
+            "sk": "odvody",
+            "uk": "внески (на страхування)",
+            "pronunciationUk": "одводи",
+            "exampleSk": "Odvody tvoria asi trinásť percent z hrubej mzdy.",
+            "exampleUk": "Внески становлять близько тринадцяти відсотків від брутто-зарплати."
+          },
+          {
+            "wordId": "a2-u13-l09-vyplatna-paska-w03",
+            "sk": "daň z príjmu",
+            "uk": "податок на доходи",
+            "pronunciationUk": "дань з при:йму",
+            "exampleSk": "Daň z príjmu je na páske v osobitnom riadku.",
+            "exampleUk": "Податок на доходи в листку — окремим рядком."
+          },
+          {
+            "wordId": "a2-u13-l09-vyplatna-paska-w04",
+            "sk": "zdravotné poistenie",
+            "uk": "медичне страхування",
+            "pronunciationUk": "здравотне: поістеніє",
+            "exampleSk": "Zdravotné poistenie platím ja aj zamestnávateľ.",
+            "exampleUk": "Медичне страхування сплачую і я, і роботодавець."
+          },
+          {
+            "wordId": "a2-u13-l09-vyplatna-paska-w05",
+            "sk": "sociálne poistenie",
+            "uk": "соціальне страхування",
+            "pronunciationUk": "соціа:лне: поістеніє",
+            "exampleSk": "Zo sociálneho poistenia sa platí aj nemocenské.",
+            "exampleUk": "Із соціального страхування виплачують і лікарняні."
+          },
+          {
+            "wordId": "a2-u13-l09-vyplatna-paska-w06",
+            "sk": "odpracované hodiny",
+            "uk": "відпрацьовані години",
+            "pronunciationUk": "одпрацоване: годіни",
+            "exampleSk": "Na páske sú odpracované hodiny za celý mesiac.",
+            "exampleUk": "У листку — відпрацьовані години за весь місяць."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a2-u13-l09-vyplatna-paska-w01",
+          "sk": "výplatná páska",
+          "uk": "розрахунковий листок",
+          "pronunciationUk": "ві:платна: па:ска",
+          "exampleSk": "Na výplatnej páske vidím aj nadčasy.",
+          "exampleUk": "На розрахунковому листку я бачу й понаднормові.",
+          "level": "A2",
+          "topic": "На робочому місці",
+          "tags": [
+            "a2-u13",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u13-l09-vyplatna-paska-w02",
+          "sk": "odvody",
+          "uk": "внески (на страхування)",
+          "pronunciationUk": "одводи",
+          "exampleSk": "Odvody tvoria asi trinásť percent z hrubej mzdy.",
+          "exampleUk": "Внески становлять близько тринадцяти відсотків від брутто-зарплати.",
+          "level": "A2",
+          "topic": "На робочому місці",
+          "tags": [
+            "a2-u13",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u13-l09-vyplatna-paska-w03",
+          "sk": "daň z príjmu",
+          "uk": "податок на доходи",
+          "pronunciationUk": "дань з при:йму",
+          "exampleSk": "Daň z príjmu je na páske v osobitnom riadku.",
+          "exampleUk": "Податок на доходи в листку — окремим рядком.",
+          "level": "A2",
+          "topic": "На робочому місці",
+          "tags": [
+            "a2-u13",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u13-l09-vyplatna-paska-w04",
+          "sk": "zdravotné poistenie",
+          "uk": "медичне страхування",
+          "pronunciationUk": "здравотне: поістеніє",
+          "exampleSk": "Zdravotné poistenie platím ja aj zamestnávateľ.",
+          "exampleUk": "Медичне страхування сплачую і я, і роботодавець.",
+          "level": "A2",
+          "topic": "На робочому місці",
+          "tags": [
+            "a2-u13",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u13-l09-vyplatna-paska-w05",
+          "sk": "sociálne poistenie",
+          "uk": "соціальне страхування",
+          "pronunciationUk": "соціа:лне: поістеніє",
+          "exampleSk": "Zo sociálneho poistenia sa platí aj nemocenské.",
+          "exampleUk": "Із соціального страхування виплачують і лікарняні.",
+          "level": "A2",
+          "topic": "На робочому місці",
+          "tags": [
+            "a2-u13",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u13-l09-vyplatna-paska-w06",
+          "sk": "odpracované hodiny",
+          "uk": "відпрацьовані години",
+          "pronunciationUk": "одпрацоване: годіни",
+          "exampleSk": "Na páske sú odpracované hodiny za celý mesiac.",
+          "exampleUk": "У листку — відпрацьовані години за весь місяць.",
+          "level": "A2",
+          "topic": "На робочому місці",
+          "tags": [
+            "a2-u13",
+            "a2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a2-u13-l09-vyplatna-paska-ex01",
+          "lessonId": "a2-u13-l09-vyplatna-paska",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "výplatná páska",
+              "right": "розрахунковий листок"
+            },
+            {
+              "left": "odvody",
+              "right": "внески"
+            },
+            {
+              "left": "daň z príjmu",
+              "right": "податок на доходи"
+            },
+            {
+              "left": "zdravotné poistenie",
+              "right": "медичне страхування"
+            },
+            {
+              "left": "sociálne poistenie",
+              "right": "соціальне страхування"
+            },
+            {
+              "left": "odpracované hodiny",
+              "right": "відпрацьовані години"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a2-u13-l09-vyplatna-paska-w01",
+            "a2-u13-l09-vyplatna-paska-w02",
+            "a2-u13-l09-vyplatna-paska-w03",
+            "a2-u13-l09-vyplatna-paska-w04",
+            "a2-u13-l09-vyplatna-paska-w05",
+            "a2-u13-l09-vyplatna-paska-w06"
+          ]
+        },
+        {
+          "id": "a2-u13-l09-vyplatna-paska-ex02",
+          "lessonId": "a2-u13-l09-vyplatna-paska",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай розрахунковий листок.",
+          "document": {
+            "title": "Výplatná páska – september 2026",
+            "fields": [
+              {
+                "label": "Odpracované hodiny",
+                "value": "168"
+              },
+              {
+                "label": "Hrubá mzda",
+                "value": "1 200,00 €"
+              },
+              {
+                "label": "Zdravotné poistenie",
+                "value": "48,00 €"
+              },
+              {
+                "label": "Sociálne poistenie",
+                "value": "112,80 €"
+              },
+              {
+                "label": "Daň z príjmu",
+                "value": "106,35 €"
+              },
+              {
+                "label": "Čistá mzda",
+                "value": "932,85 €"
+              }
+            ]
+          },
+          "question": "Скільки грошей прийде на рахунок?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "112,80 €",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "932,85 €",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "1 200,00 €",
+              "correct": false
+            }
+          ],
+          "explanation": "Čistá mzda — нетто, сума на рахунок: 932,85 €.",
+          "order": 2,
+          "wordIds": [
+            "a2-u13-l09-vyplatna-paska-w01",
+            "a2-u13-l09-vyplatna-paska-w03",
+            "a2-u13-l09-vyplatna-paska-w04",
+            "a2-u13-l09-vyplatna-paska-w05",
+            "a2-u13-l09-vyplatna-paska-w06"
+          ]
+        },
+        {
+          "id": "a2-u13-l09-vyplatna-paska-ex03",
+          "lessonId": "a2-u13-l09-vyplatna-paska",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Na páske mi "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "chýbajú",
+                "chýbam",
+                "chýba"
+              ],
+              "correct": "chýba"
+            },
+            {
+              "text": " príplatok za sobotu."
+            }
+          ],
+          "explanation": "príplatok — однина: mi chýba.",
+          "order": 3,
+          "wordIds": [
+            "a2-u13-l09-vyplatna-paska-w01"
+          ]
+        },
+        {
+          "id": "a2-u13-l09-vyplatna-paska-ex04",
+          "lessonId": "a2-u13-l09-vyplatna-paska",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Na páske mi "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "chýba",
+                "chýbajú",
+                "chýbam"
+              ],
+              "correct": "chýbajú"
+            },
+            {
+              "text": " dve hodiny nadčasu."
+            }
+          ],
+          "explanation": "dve hodiny — множина: mi chýbajú.",
+          "order": 4,
+          "wordIds": [
+            "a2-u13-l09-vyplatna-paska-w01",
+            "a2-u13-l09-vyplatna-paska-w06"
+          ]
+        },
+        {
+          "id": "a2-u13-l09-vyplatna-paska-ex05",
+          "lessonId": "a2-u13-l09-vyplatna-paska",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Z ______ mzdy sa platia odvody a daň. (hrubá)",
+          "acceptedAnswers": [
+            "hrubej"
+          ],
+          "explanation": "z + родовий: hrubá mzda → z hrubej mzdy.",
+          "order": 5,
+          "wordIds": [
+            "a2-u13-l09-vyplatna-paska-w02"
+          ]
+        },
+        {
+          "id": "a2-u13-l09-vyplatna-paska-ex06",
+          "lessonId": "a2-u13-l09-vyplatna-paska",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що віднімають, а що додають?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Віднімають"
+            },
+            {
+              "id": "c2",
+              "title": "Додають"
+            }
+          ],
+          "items": [
+            {
+              "sk": "príplatok za noc",
+              "category": "c2"
+            },
+            {
+              "sk": "prémia",
+              "category": "c2"
+            },
+            {
+              "sk": "daň z príjmu",
+              "category": "c1"
+            },
+            {
+              "sk": "nadčasy",
+              "category": "c2"
+            },
+            {
+              "sk": "odvody",
+              "category": "c1"
+            },
+            {
+              "sk": "zdravotné poistenie",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Внески й податок утримують; доплати, понаднормові й премію нараховують.",
+          "order": 6,
+          "wordIds": [
+            "a2-u13-l09-vyplatna-paska-w02",
+            "a2-u13-l09-vyplatna-paska-w03",
+            "a2-u13-l09-vyplatna-paska-w04",
+            "a2-u13-l09-vyplatna-paska-w05"
+          ]
+        },
+        {
+          "id": "a2-u13-l09-vyplatna-paska-ex07",
+          "lessonId": "a2-u13-l09-vyplatna-paska",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Čistá mzda» — це сума до сплати внесків і податку.",
+          "correctAnswer": false,
+          "explanation": "До сплати — hrubá mzda; čistá mzda — те, що лишається після.",
+          "order": 7
+        },
+        {
+          "id": "a2-u13-l09-vyplatna-paska-ex08",
+          "lessonId": "a2-u13-l09-vyplatna-paska",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Mykola pracuje prvý mesiac v automobilke pri Žiline. V zmluve má hrubú mzdu 1 300 eur, ale na účet mu prišlo menej, asi tisíc eur. Najprv si myslel, že je to chyba. Kolega mu ukázal výplatnú pásku a vysvetlil: z hrubej mzdy sa platí zdravotné a sociálne poistenie a potom daň z príjmu. Na páske videl aj odpracované hodiny a príplatok za dve nočné zmeny. Teraz už vie, že mzda je v poriadku. Kolega mu ešte povedal, že zamestnávateľ platí odvody aj zo svojich peňazí.",
+          "questions": [
+            {
+              "question": "Чому Микола спочатку подумав, що сталася помилка?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "у листку не було його імені",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "зарплата прийшла пізно",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "на рахунок прийшло менше, ніж зазначено в договорі",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що пояснив йому колега?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "з брутто сплачуються внески й податок",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "за нічні зміни не платять",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "бухгалтерія помилилася",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що Микола побачив у листку, крім відрахувань?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "відпрацьовані години й доплату за нічні зміни",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "графік змін",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "свою відпустку",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 8,
+          "wordIds": [
+            "a2-u13-l09-vyplatna-paska-w01",
+            "a2-u13-l09-vyplatna-paska-w02",
+            "a2-u13-l09-vyplatna-paska-w03",
+            "a2-u13-l09-vyplatna-paska-w04",
+            "a2-u13-l09-vyplatna-paska-w05",
+            "a2-u13-l09-vyplatna-paska-w06"
+          ]
+        },
+        {
+          "id": "a2-u13-l09-vyplatna-paska-ex09",
+          "lessonId": "a2-u13-l09-vyplatna-paska",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай відповідь бухгалтерії.",
+          "message": {
+            "sender": "Mzdová účtáreň",
+            "body": "Dobrý deň, pani Kovalenko, príplatok za nočné zmeny vám v septembri chýbal kvôli chybe v systéme. Doplatíme vám ho s októbrovou výplatou. Ospravedlňujeme sa."
+          },
+          "question": "Коли пані Коваленко отримає доплату?",
+          "options": [
+            {
+              "id": "a",
+              "text": "разом із жовтневою зарплатою",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "її не буде",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "завтра готівкою",
+              "correct": false
+            }
+          ],
+          "explanation": "s októbrovou výplatou — разом із зарплатою за жовтень.",
+          "order": 9,
+          "wordIds": [
+            "a2-u13-l09-vyplatna-paska-w01"
+          ]
+        },
+        {
+          "id": "a2-u13-l09-vyplatna-paska-ex10",
+          "lessonId": "a2-u13-l09-vyplatna-paska",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти звертаєшся в бухгалтерію щодо листка.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Dobrý deň, mám otázku k výplatnej pásky.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Dobrý deň, mám otázku k výplatnej páske.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Dobrý deň, mám otázku k výplatná páska.",
+              "correct": false
+            }
+          ],
+          "explanation": "k + давальний: k výplatnej páske.",
+          "order": 10,
+          "wordIds": [
+            "a2-u13-l09-vyplatna-paska-w01"
+          ]
+        },
+        {
+          "id": "a2-u13-l09-vyplatna-paska-ex11",
+          "lessonId": "a2-u13-l09-vyplatna-paska",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Minulý mesiac som odpracoval 168 hodiny.",
+          "errorToken": "hodiny",
+          "correctToken": "hodín",
+          "explanation": "Після числа 168 — родовий множини: hodín.",
+          "order": 11,
+          "wordIds": [
+            "a2-u13-l09-vyplatna-paska-w06"
+          ]
+        },
+        {
+          "id": "a2-u13-l09-vyplatna-paska-ex12",
+          "lessonId": "a2-u13-l09-vyplatna-paska",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "Kolega: Tento mesiac mám vyššiu čistú mzdu, lebo som mal veľa nadčasov.",
+          "target": "čistú mzdu",
+          "options": [
+            {
+              "id": "a",
+              "text": "річну премію",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "суму до вирахування податку",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "суму, яку він реально отримує на рахунок",
+              "correct": true
+            }
+          ],
+          "explanation": "čistá mzda — нетто, на руки.",
+          "order": 12
+        },
+        {
+          "id": "a2-u13-l09-vyplatna-paska-ex13",
+          "lessonId": "a2-u13-l09-vyplatna-paska",
+          "type": "sentence_builder",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Склади речення зі слів.",
+          "context": "Скажи, що розрахунковий листок отримуєш електронною поштою.",
+          "tokens": [
+            "dostávam",
+            ".",
+            "pásku",
+            "e-mailom",
+            "Výplatnú"
+          ],
+          "correctSentence": "Výplatnú pásku dostávam e-mailom.",
+          "explanation": "Чим? — орудний: e-mailom.",
+          "order": 13,
+          "wordIds": [
+            "a2-u13-l09-vyplatna-paska-w01"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Щось не сходиться",
+        "description": "Ти отримав(ла) розрахунковий листок за жовтень, і сума менша, ніж ти очікував(ла).",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Де в листку шукати суму, яка прийде на рахунок?",
+            "options": [
+              {
+                "sk": "у рядку «Čistá mzda»",
+                "correct": true
+              },
+              {
+                "sk": "у рядку «Odvody»",
+                "correct": false
+              },
+              {
+                "sk": "у рядку «Hrubá mzda»",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти бачиш, що бракує нічних доплат. Ти пишеш у бухгалтерію:",
+            "options": [
+              {
+                "sk": "Dobrý deň, na páske mi chýbajú príplatky za nočné zmeny.",
+                "correct": true
+              },
+              {
+                "sk": "Dobrý deň, na páske ma chýbajú príplatky za nočné zmeny.",
+                "correct": false
+              },
+              {
+                "sk": "Dobrý deň, na páske mi chýba príplatky za nočné zmeny.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Бухгалтерка відповідає: «Doplatíme vám ich v novembri.» Що це означає?",
+            "options": [
+              {
+                "sk": "доплати отримаєш у листопаді",
+                "correct": true
+              },
+              {
+                "sk": "у листопаді треба подати заяву",
+                "correct": false
+              },
+              {
+                "sk": "доплат не буде",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Колега питає, чому брутто й нетто такі різні. Ти пояснюєш:",
+            "options": [
+              {
+                "sk": "Z hrubej mzdy sa platí odvodov a daň.",
+                "correct": false
+              },
+              {
+                "sk": "Z hrubá mzda sa platia odvody a daň.",
+                "correct": false
+              },
+              {
+                "sk": "Z hrubej mzdy sa platia odvody a daň.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш читати розрахунковий листок. Далі — підсумок розділу «На робочому місці»."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш читати розрахунковий листок. Далі — підсумок розділу «На робочому місці».",
+        "nowYouKnow": [
+          "výplatná páska: hrubá mzda → čistá mzda",
+          "odvody: zdravotné a sociálne poistenie, daň z príjmu",
+          "odpracované hodiny, nadčasy, príplatky",
+          "Na páske mi chýba… · Mám otázku k výplatnej páske."
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 13,
+        "xpReward": 30,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a2-u13-l10-praca-opakovanie",
+          "title": "Підсумок: на робочому місці"
+        }
+      }
+    }
+  ]
+}
