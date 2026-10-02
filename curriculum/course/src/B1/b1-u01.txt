@@ -1,0 +1,547 @@
+@unit b1-u01 | Кафе й ресторан | Kaviareň a reštaurácia
+
+@lesson objednavka | Замовлення в ресторані | Objednávka v reštaurácii
+desc: Як замовити повний обід чи вечерю: predjedlo, hlavný chod, dezert, напої, зміни в страві та ступінь просмаження стейка.
+goal: Упевнено замовити кілька страв для себе й компанії, уточнивши свої побажання.
+out: орієнтуватися в розділах меню: predjedlá, hlavné chody, prílohy, dezerty ;; замовляти з ako predjedlo si dám… / ako hlavný chod… ;; просити зміни: namiesto hranoliek ryžu, bez cibule ;; замовляти стейк: krvavý, stredne prepečený, dobre prepečený
+done: Ти замовляєш цілу вечерю з уточненнями. Далі — як попросити пораду й самому порадити страву.
+T: Структура меню || Меню (jedálny lístok) у словацькому ресторані зазвичай поділене на розділи: «predjedlá» (закуски), «polievky», «hlavné jedlá» або «hlavné chody», «prílohy» (гарніри — їх часто замовляють і оплачують окремо!), «dezerty». Напої — в окремій карті: «nápojový lístok». Замовляючи, кажемо «Dám si…» або ввічливіше «Prosil by som…» / «Prosila by som…». Після «dám si» — знахідний відмінок; losos, pstruh — істоти, тому «lososa», «pstruha». || Ako predjedlo si dám paradajkový šalát. = На закуску я візьму салат із помідорів. ;; Ako hlavný chod by som si dala lososa so zeleninou. = Як основну страву я взяла б лосося з овочами. || ako predjedlo / ako hlavný chod si dám + знахідний
+mis: Dám si losos. => Dám si lososa. ;; Ako predjedlo si dám polievka. => Ako predjedlo si dám polievku.
+T: Зміни в страві || На рівні B1 важливо вміти змінити страву під себе. «Namiesto» + родовий — замість: «namiesto hranoliek» (замість картоплі фрі), «namiesto ryže». «Bez» + родовий: «bez cibule», «bez omáčky». Ввічливе питання: «Môžem dostať…?» — Чи можу я отримати…? Офіціант спитає: «Akú prílohu si dáte?» — Який гарнір візьмете? || Môžem dostať namiesto hranoliek ryžu? = Можна мені замість картоплі фрі рис? ;; Prosím bez omáčky. = Будь ласка, без соусу. || namiesto / bez + родовий
+mis: namiesto hranolky => namiesto hranoliek ;; bez cibuľa => bez cibule
+T: Стейк і напої || Офіціант спитає про ступінь просмаження: «Aké prepečenie si želáte?» Варіанти: «krvavý» (з кров’ю), «stredne prepečený» (середній), «dobre prepečený» (добре просмажений). Напої зазвичай замовляють першими: «Čo si dáte na pitie?» — «Zatiaľ len vodu, prosím.» Офіціант питає «Máte už vybrané?» — Ви вже вибрали? Наприкінці: «To je všetko, ďakujem.» || Steak stredne prepečený, prosím. = Стейк середнього просмаження, будь ласка. ;; Zatiaľ si dáme len minerálku. = Поки що ми візьмемо лише мінералку. || krvavý → stredne prepečený → dobre prepečený
+W: krvavý | з кров’ю (про стейк) | крвави: | Steak si dám krvavý, prosím. | Стейк я візьму з кров’ю, будь ласка.
+W: predjedlo | закуска (перша страва) | предйедло | Ako predjedlo si dám paradajkový šalát. | На закуску я візьму салат із помідорів.
+W: hlavný chod | основна страва | главни: ход | Na hlavný chod sme čakali pol hodiny. | Основну страву ми чекали пів години.
+W: omáčka | соус | ома:чка | Mäso je so smotanovou omáčkou. | М’ясо з вершковим соусом.
+W: prepečený | просмажений, пропечений | препечени: | Steak chcem dobre prepečený. | Я хочу добре просмажений стейк.
+W: nápojový lístok | карта напоїв | на:пойові: лі:сток | Môžem poprosiť nápojový lístok? | Можна попросити карту напоїв?
+X mt: З’єднай. | krvavý = з кров’ю ;; predjedlo = закуска ;; hlavný chod = основна страва ;; prepečený = просмажений ;; omáčka = соус ;; nápojový lístok = карта напоїв
+X dd: Обери. | Môžem dostať namiesto [*hranoliek/hranolky/hranolkách] ryžu?
+= namiesto + родовий множини: hranoliek.
+X dd: Обери. | Ako hlavný chod si dám [*lososa/losos/lososovi] s grilovanou zeleninou.
+= losos — істота, тому знахідний відмінок: lososa.
+X menu: Подивись на меню ресторану. | Predjedlá: tatarák s hriankami = 9,90 € ;; Polievky: hovädzí vývar s rezancami = 3,50 € ;; Hlavné chody: kuracie prsia na grile = 11,90 € ;; Hlavné chody: hovädzí steak 250 g = 24,90 € ;; Prílohy: hranolky = 3,20 € ;; Dezerty: čokoládový fondán = 5,90 €
+q~: Скільки ти заплатиш за курячу грудку з картоплею фрі? | *15,10 € ;; 11,90 € ;; 14,10 €
+q~: Яка страва з меню — закуска? | *тартар із грінками ;; бульйон із локшиною ;; шоколадний фондан
+q~: Що варто врахувати, замовляючи стейк? | *гарнір у його ціну не входить, його замовляють окремо ;; стейк подають лише з картоплею фрі ;; до стейка безкоштовно дають суп
+X sc~: Що означає «Ako predjedlo si dám polievku»? | - | *Як першу страву (закуску) я візьму суп ;; Перед замовленням я з’їм суп ;; Суп я візьму на десерт
+= ako predjedlo — як закуску, першу страву.
+X fb: Допиши. | Steak prosím stredne ___. (просмажений) | prepečený |
+= steak — чоловічий рід: stredne prepečený.
+X dr: - | Čašník: Aké prepečenie si želáte? | *Stredne prepečený, prosím. ;; Stredne prepečená, prosím. ;; Prepečenie stredne, áno.
+= Ідеться про стейк — чоловічий рід: stredne prepečený.
+X np: Ти хочеш варену картоплю замість рису. | *Môžem dostať namiesto ryže varené zemiaky? ;; Môžem dostať namiesto ryža varené zemiaky? ;; Namiesto zemiaky ryžu, môžem? ;; Môžem dostať varené zemiaky ako ryža?
+= namiesto + родовий: namiesto ryže.
+X do: Розстав діалог у правильному порядку. | Čašník: Dobrý večer, máte už vybrané? ;; Hosť: Áno. Ako predjedlo si dám tatarák. ;; Čašník: Výborne. A ako hlavný chod? ;; Hosť: Kuracie prsia na grile, ale namiesto hranoliek ryžu, ak sa dá. ;; Čašník: Samozrejme. A čo si dáte na pitie? ;; Hosť: Zatiaľ len minerálku, ďakujem.
+X so: - | Попроси в офіціанта карту напоїв. | Môžem poprosiť nápojový lístok?
+= nápojový lístok — карта напоїв.
+X fe: - | Dám si polievku bez [cibuľa>cibule] a cesnaku.
+= bez + родовий: bez cibule.
+X cat: Розподіли страви за розділами меню. | Predjedlá: tatarák, paradajkový šalát s mozzarellou ;; Hlavné chody: hovädzí guláš, vyprážaný rezeň ;; Dezerty: palacinky, jablkový závin
+= Закуски, основні страви й десерти.
+X tr: Зроби прохання ввічливішим за допомогою умовного способу (говорить чоловік). | Chcem steak. | Chcel by som steak. ;; Prosil by som steak. ;; Dal by som si steak.
+= chcel by som / prosil by som — ввічливіше, ніж chcem.
+X ms: Обери правильні речення для замовлення. | - | *Ako predjedlo si dám tatarák. ;; *Môžem dostať omáčku bokom? ;; *Na dezert si dáme palacinky. ;; Ako predjedlo si dám tataráku. ;; Na dezert si dáme palaciniek.
+= Після dám si — знахідний відмінок: tatarák, palacinky.
+X bd: - | Ти замовив(ла) вечерю для себе й колеги!
+> Čašník: Dobrý večer, čo si dáte na pitie? | *Dve minerálky, prosím. Jedlo si ešte vyberáme. ;; Dva minerálka, prosím. ;; Pitie áno, dve.
+> Čašník: Máte už vybrané? | *Áno, ako predjedlo si dáme dvakrát polievku. ;; Áno, ako predjedlo dáme polievky dva. ;; Áno, predjedlo je polievka my.
+> Čašník: A ako hlavný chod? | *Ja si dám steak, stredne prepečený, a kolegyňa lososa. ;; Ja steak prepečená a kolegyňa losos. ;; Steak a losos, stredne kolegyňa.
+> Čašník: Dáte si k tomu aj prílohu? | *Áno, dvakrát grilovanú zeleninu, prosím. ;; Áno, grilovaná zelenina dva. ;; Prílohu áno nie, ďakujem dvakrát.
+F: Вечеря з другом || Ти з другом у ресторані в Кошицях і замовляєш для обох.
+S: Офіціант: «Čo si dáte na pitie?» Ви поки що хочете лише воду. | *Zatiaľ len vodu, prosím. ;; Zatiaľ len voda, prosím. ;; Na pitie zatiaľ vodou.
+S: Ти замовляєш тартар на закуску. | *Ako predjedlo si dám tatarák. ;; Ako predjedlo si dám tataráku. ;; Predjedlo tatarák som.
+S: Ти хочеш стейк середнього просмаження. | *Steak stredne prepečený, prosím. ;; Steak stredne prepečená, prosím. ;; Stredne steak prepečenie.
+S: Ти просиш рис замість картоплі фрі. | *Môžem dostať namiesto hranoliek ryžu? ;; Môžem dostať namiesto hranolky ryžu? ;; Namiesto ryža hranolky?
+R: predjedlo, hlavný chod, dezert, nápojový lístok ;; ako predjedlo si dám + знахідний ;; namiesto / bez + родовий ;; krvavý, stredne prepečený, dobre prepečený
+
+@lesson odporucanie | Порада й рекомендація | Odporúčanie
+desc: Як попросити офіціанта чи друга порадити страву, як порадити самому й описати смак: šťavnatý, chrumkavý, výrazný, sýty.
+goal: Попросити рекомендацію, висловити думку про страву й порадити її іншим.
+out: питати Čo by ste nám odporučili? ;; радити Určite vyskúšajte… / Ak máte radi…, odporúčam… ;; описувати смак і текстуру страви ;; висловлювати думку: podľa mňa, myslím si, že…
+done: Ти радиш і просиш поради. Далі — алергени в меню.
+T: Як попросити пораду || «Čo by ste nám odporučili?» — Що б ви нам порадили? «Čo je vaša špecialita?» — Яка ваша фірмова страва? «Čo je dnes čerstvé?» Якщо вагаєшся: «Neviem sa rozhodnúť medzi… a…» — не можу вибрати між… і… Після «medzi» — орудний відмінок: medzi kačicou a pstruhom. || Čo by ste nám odporučili z rýb? = Що б ви нам порадили з риби? ;; Neviem sa rozhodnúť medzi kačicou a pstruhom. = Не можу вибрати між качкою і фореллю. || Čo by ste odporučili? · medzi + орудний
+T: Як порадити || «Určite vyskúšajte…» / «Určite skúste…» — обов’язково спробуйте. Умова: «Ak máte radi pikantné, odporúčam gulášovú polievku.» Думка: «Podľa mňa…», «Myslím si, že…». Тактовне застереження: «Ten rezeň by som vám dnes neodporúčal.» — Цей шніцель я б вам сьогодні не радив. || Určite vyskúšajte našu kačicu. = Обов’язково скуштуйте нашу качку. ;; Podľa mňa je tu najlepší guláš v meste. = Як на мене, тут найкращий гуляш у місті. || vyskúšať + знахідний · podľa mňa
+mis: Odporúčam vám kačica. => Odporúčam vám kačicu. ;; medzi kačica a pstruh => medzi kačicou a pstruhom
+T: Смак і текстура || Щоб описати страву, мало сказати «dobré». Корисні прикметники: «šťavnatý» (соковитий), «chrumkavý» (хрусткий), «výrazný» (насичений, яскравий смак), «jemný» (ніжний, м’який), «sýty» (ситний), «mastný» (жирний), «suchý» (сухий). Узгоджуй їх з родом іменника: šťavnaté mäso, chrumkavá kôrka, výrazný syr. || Mäso je šťavnaté a kôrka chrumkavá. = М’ясо соковите, а скоринка хрустка. ;; Fazuľová polievka je veľmi sýta. = Квасолевий суп дуже ситний. || šťavnatý / šťavnatá / šťavnaté
+mis: šťavnatý mäso => šťavnaté mäso
+W: špecialita | фірмова страва | шпеціаліта | Bryndzové halušky sú špecialita podniku. | Бриндзові галушки — фірмова страва закладу.
+W: jemný | ніжний, м’який (смак) | йемни: | Teľacie mäso je veľmi jemné. | Телятина дуже ніжна.
+W: šťavnatý | соковитий | штявнати: | Kuracie stehno bolo šťavnaté. | Куряче стегно було соковите.
+W: chrumkavý | хрусткий | хрумкави: | Hranolky sú chrumkavé. | Картопля фрі хрустка.
+W: výrazný | насичений, яскравий (смак) | ві:разни: | Tento syr má výraznú chuť. | Цей сир має насичений смак.
+W: sýty | ситний | си:ти | Po sýtom obede nechcem dezert. | Після ситного обіду я не хочу десерту.
+X mt: З’єднай. | špecialita = фірмова страва ;; jemný = ніжний ;; šťavnatý = соковитий ;; chrumkavý = хрусткий ;; výrazný = насичений ;; sýty = ситний
+X dd: Обери. | Neviem sa rozhodnúť medzi [*kačicou/kačica/kačicu] a pstruhom.
+= medzi + орудний: kačicou.
+X dd: Обери. | Kuracie mäso bolo veľmi [*šťavnaté/šťavnatý/šťavnatá].
+= mäso — середній рід: šťavnaté.
+X dr: - | Hosť: Čo by ste nám odporučili? Máme radi pikantné jedlá. | *Určite skúste naše pikantné kuracie krídla. ;; Odporúčam vám palacinky, sú veľmi sladké. ;; Pikantné nemáme radi, ďakujem.
+= Гості люблять гостре — порадь гостру страву.
+X rc: - | Ahoj Oksana, pýtala si sa, kam ísť v sobotu s rodičmi. Určite vyskúšajte bistro U Kohúta na Hlavnej ulici. Nie je to lacný podnik, ale jedlo stojí za to. Ich špecialita je pečená kačica s červenou kapustou a lokšami. Mäso je šťavnaté a koža chrumkavá. Ak tvoj otec nemá rád mastné jedlá, odporúčam mu pstruha na masle, je ľahší. Polievky sú tam veľmi sýte, takže si ich dajte, len ak ste poriadne hladní. Na dezert si podľa mňa nedávajte tiramisu, mne sa zdalo suché. Radšej skúste domáce šišky s lekvárom. Stôl si rezervujte vopred, cez víkend je tam plno. Maja
+q~: Яка фірмова страва бістро? | *запечена качка з червоною капустою й локшами ;; форель на маслі ;; домашні пампушки з повидлом
+q~: Що Мая радить батькові Оксани і чому? | *форель, бо вона легша й не така жирна ;; качку, бо вона соковита ;; суп, бо він ситний
+q~: Що Мая думає про тірамісу? | *воно здалося їй сухим, тому вона його не радить ;; це найкращий десерт у місті ;; вона його не куштувала
+X fb: Допиши. | Určite ___ našu domácu limonádu. (спробуйте) | vyskúšajte ;; skúste |
+= vyskúšať / skúsiť — наказовий спосіб для vy: vyskúšajte, skúste.
+X np: Ти не можеш вибрати між фореллю і качкою та просиш поради. | *Neviem sa rozhodnúť medzi pstruhom a kačicou. Čo by ste odporučili? ;; Neviem sa rozhodnúť medzi pstruh a kačica. Čo odporúčať? ;; Rozhodnúť sa neviem pstruh alebo kačicu, odporučte ma. ;; Odporúčam vám pstruha alebo kačicu.
+= medzi + орудний; Čo by ste odporučili?
+X tone: - | Recenzia: «Kačica bola šťavnatá, koža chrumkavá a obsluha milá. Určite sa vrátime!» | *захоплений, задоволений ;; розчарований ;; байдужий
+= Похвала й «určite sa vrátime» — автор у захваті.
+X cat: Як описати страву? | Chválime: šťavnatý, chrumkavý, výrazný, jemný ;; Kritizujeme: mastný, suchý, bez chuti, presolený
+= Позитивні й негативні характеристики страви.
+X tf: - | Čašník: «Ten rezeň by som vám dnes neodporúčal. Skúste radšej pstruha.» | Офіціант радить замовити шніцель. | F
+= neodporúčal by som — я б не радив; він радить форель.
+X so: - | Попроси офіціанта щось вам порадити. | Čo by ste nám odporučili?
+= Ввічливе прохання поради з by ste.
+X fe: - | Ak máte radi ryby, odporúčam vám [pstruh>pstruha] na masle.
+= odporúčam + знахідний; pstruh — істота: pstruha.
+X ms: Обери природні способи порадити страву. | - | *Určite vyskúšajte našu kačicu. ;; *Ak máte radi syr, skúste vyprážaný syr. ;; *Podľa mňa je tu najlepší guláš. ;; Určite vyskúšať naša kačica. ;; Podľa mňa je tu najlepšia guláš.
+= vyskúšajte + знахідний; guláš — чоловічий рід: najlepší.
+X mic: - | Kamarát: «Ten guláš je dosť sýty, po ňom už dezert nezvládneš.» | sýty | *ситний ;; солоний ;; рідкий
+= sýty — ситний: після нього вже не до десерту.
+X hm: - | Čašník: «Pstruh je u nás obľúbený. Ale ak chcete niečo naozaj čerstvé, ja by som si dnes zobral kačicu.» | *форель сьогодні, мабуть, не найсвіжіша, тож офіціант тактовно радить качку ;; форелі вже немає ;; качка — найдешевша страва
+= Офіціант прямо не критикує форель, але натякає взяти качку.
+F: Обід у новому ресторані || Колеги вперше привели тебе в словацький ресторан, і ти просиш поради.
+S: Ти питаєш офіціанта, що він порадить. | *Čo by ste nám odporučili? ;; Čo by ste nám odporúčať? ;; Odporučte čo nám by?
+S: Офіціант: «Naša špecialita je pečená kačica.» Що він сказав? | *Їхня фірмова страва — запечена качка ;; Качки сьогодні немає ;; Качка — це страва дня зі знижкою
+S: Колега питає, яке м’ясо. Воно соковите. | *Je veľmi šťavnaté. ;; Je veľmi šťavnatý. ;; Je veľmi šťava.
+S: Ти радиш колезі спробувати пампушки. | *Určite vyskúšaj tie šišky. ;; Určite vyskúšať tie šišky. ;; Určite vyskúšajú tie šišky.
+R: Čo by ste nám odporučili? Čo je vaša špecialita? ;; Určite vyskúšajte… / Ak máte radi…, odporúčam… ;; šťavnatý, chrumkavý, výrazný, sýty ;; podľa mňa, medzi + орудний
+
+@lesson alergeny | Алергени | Alergény
+desc: Як прочитати позначки алергенів у словацькому меню і як попередити офіціанта про алергію чи непереносимість.
+goal: Безпечно замовити їжу, якщо в тебе чи дитини алергія.
+out: розуміти номери алергенів у меню: 1 lepok, 3 vajcia, 7 mlieko, 8 orechy ;; казати Som alergický na… / Mám intoleranciu laktózy ;; питати Obsahuje to…? Je to bez lepku? ;; розуміти môže obsahovať stopy…
+done: Ти вмієш говорити про алергени. Далі — бронювання столика.
+T: Алергени в меню || У Словаччині заклади зобов’язані позначати 14 алергенів ЄС. Біля страви зазвичай стоять числа: «Alergény: 1, 3, 7», а список — унизу меню. Найчастіші: 1 — obilniny obsahujúce lepok (злаки з глютеном), 3 — vajcia, 4 — ryby, 5 — arašidy, 7 — mlieko (і laktóza), 8 — orechy, 9 — zeler (селера), 11 — sezam. || Vyprážaný syr – alergény 1, 3, 7. = Смажений сир — алергени 1, 3, 7. ;; Zoznam alergénov nájdete na konci jedálneho lístka. = Список алергенів знайдете в кінці меню. || 1 lepok · 3 vajcia · 4 ryby · 7 mlieko · 8 orechy
+T: Як сказати про алергію || «Som alergický / alergická na + знахідний»: «na orechy», «na mlieko». Також: «Mám alergiu na arašidy». Непереносимість: «Mám intoleranciu laktózy». Целіакія: «Mám celiakiu». Обережно з «Neznášam lepok»: дієслово neznášať означає і «не переношу», і «ненавиджу», тож у ресторані краще сказати точно. Про дитину: «Syn je alergický na arašidy.» || Som alergická na orechy. = У мене (ж.) алергія на горіхи. ;; Dcéra nesmie jesť nič s lepkom. = Доньці не можна їсти нічого з глютеном. || alergický na + знахідний
+mis: Som alergický pre orechy. => Som alergický na orechy. ;; Dcéra je alergický. => Dcéra je alergická.
+T: Питання до офіціанта || «Obsahuje to orechy?» — Чи містить це горіхи? «Je to bez lepku?» «Dá sa to pripraviť bez mlieka?» На упаковці чи в меню: «Môže obsahovať stopy orechov» — може містити сліди горіхів (для алергіка це важливо!). «Bezlepkový», «bezlaktózový» — без глютену, без лактози. || Obsahuje tá omáčka mlieko? = Чи є в цьому соусі молоко? ;; Máte aj bezlepkové cestoviny? = У вас є й безглютенові макарони? || obsahovať + знахідний · bez + родовий
+mis: bez lepok => bez lepku ;; Obsahuje to orechov? => Obsahuje to orechy?
+W: alergén | алерген | алерге:н | Na jedálnom lístku sú uvedené všetky alergény. | У меню вказані всі алергени.
+W: lepok | глютен, клейковина | лепок | Chlieb obsahuje lepok. | Хліб містить глютен.
+W: laktóza | лактоза | лакто:за | Mám intoleranciu laktózy. | У мене непереносимість лактози.
+W: orechy | горіхи | орехи | Koláč je s vlašskými orechmi. | Пиріг із волоськими горіхами.
+W: obsahovať | містити | обсаговат | Obsahuje tento dezert vajcia? | Чи містить цей десерт яйця?
+W: bezlepkový | безглютеновий | безлепкови: | Máte bezlepkové pečivo? | У вас є безглютенова випічка?
+X mt: З’єднай. | alergén = алерген ;; lepok = глютен ;; laktóza = лактоза ;; orechy = горіхи ;; obsahovať = містити ;; bezlepkový = безглютеновий
+X menu: Подивись на меню з алергенами (1 — глютен, 3 — яйця, 4 — риба, 7 — молоко, 8 — горіхи, 9 — селера). | Polievky: šošovicová polievka (1, 9) = 3,20 € ;; Hlavné chody: grilovaný losos so zeleninou (4) = 15,90 € ;; Hlavné chody: vyprážaný syr s hranolkami (1, 3, 7) = 9,50 € ;; Dezerty: orechový koláč (1, 3, 7, 8) = 4,20 € ;; Dezerty: ovocný sorbet = 3,80 €
+q~: Яка основна страва підходить людині з целіакією (без глютену)? | *лосось на грилі з овочами ;; смажений сир із картоплею фрі ;; обидві основні страви
+q~: Який десерт можна дитині з алергією на горіхи й молоко? | *фруктовий сорбет ;; горіховий пиріг ;; обидва десерти
+q~: Скільки коштує єдина страва без жодного позначеного алергену? | *3,80 € ;; 3,20 € ;; 15,90 €
+X dd: Обери. | Som alergický [*na/pre/od] orechy.
+= alergický na + знахідний.
+X dd: Обери. | Prosím si cestoviny bez [*lepku/lepok/lepkom].
+= bez + родовий: lepku.
+X sc~: Що означає напис «Môže obsahovať stopy orechov»? | - | *Може містити сліди горіхів ;; Містить багато горіхів ;; Точно не містить горіхів
+= stopy — сліди; для алергіка це важливе попередження.
+X dr: - | Čašník: Máte nejaké alergie alebo intolerancie? | *Áno, mám intoleranciu laktózy. ;; Áno, mám intolerancia laktóza. ;; Áno, som alergický laktózy.
+= mať intoleranciu + родовий: laktózy.
+X np: Ти питаєш, чи є в соусі молоко. | *Obsahuje tá omáčka mlieko? ;; Obsahuje tá omáčka mlieka? ;; Je tá omáčka s obsahom? ;; Omáčka mlieko obsahovať?
+= obsahovať + знахідний: mlieko.
+X rc: - | Minulý týždeň sme boli s rodinou na obede v novej reštaurácii v Žiline. Môj syn Danylo je alergický na arašidy a orechy, preto som sa hneď pri objednávke spýtala čašníčky na alergény. Bola veľmi ochotná. Priniesla nám zoznam alergénov a vysvetlila, že orechy obsahuje len pesto a jeden dezert. Kuchár pripravil cestoviny pre Danyla zvlášť, bez pesta. Pri dezertoch nás upozornila, že čokoládová torta síce nemá orechy v recepte, ale môže obsahovať ich stopy, lebo ju pečú v tej istej kuchyni. Danylo si preto dal ovocný šalát. Manžel má celiakiu, takže si objednal rizoto, ktoré je prirodzene bezlepkové. Všetci sme odišli spokojní.
+q~: Що з меню містило горіхи за рецептом? | *лише песто й один десерт ;; усі десерти ;; шоколадний торт
+q~: Чому Данило не взяв шоколадний торт? | *торт може містити сліди горіхів ;; у рецепті торта є арахіс ;; торт закінчився
+q~: Що замовив чоловік, у якого целіакія? | *різото, яке природно без глютену ;; макарони без песто ;; фруктовий салат
+X tf: - | Pri jedle je napísané: Alergény 1, 3, 7. | Ця страва підходить людині, якій не можна молока. | F
+= 7 — молоко, тож страва не підходить.
+X fe: - | Dcéra je [alergický>alergická] na mlieko a vajcia.
+= dcéra — жіночий рід: alergická.
+X ce: Виправ речення. | Mám alergiu pre arašidy a nesmiem jesť nič s orechy. | Mám alergiu na arašidy a nesmiem jesť nič s orechmi.
+= alergia na + знахідний; s + орудний: s orechmi.
+X tr: Перетвори на ввічливе питання з «Dá sa…pripraviť…?». | Chcem šalát bez syra. | Dá sa ten šalát pripraviť bez syra? ;; Dá sa šalát pripraviť bez syra? ;; Dá sa to pripraviť bez syra?
+= Dá sa to pripraviť bez + родовий — чи можна приготувати без…
+X cat: Що містить глютен? | S lepkom: chlieb, cestoviny, pivo, vyprážaný syr ;; Bez lepku: ryža, zemiaky, kukurica, pohánka
+= Глютен є в пшениці, житі, ячмені (і в пиві); рис, картопля, кукурудза й гречка — без глютену.
+X msg: Прочитай повідомлення від ресторану. | Bistro Zelená | Dobrý deň, ďakujeme za rezerváciu na sobotu. Ak má niekto z vašej skupiny alergiu alebo intoleranciu, dajte nám vedieť aspoň deň vopred. Bezlepkové cestoviny a rastlinné mlieko máme vždy k dispozícii. | Що просить ресторан? | *повідомити про алергії щонайменше за день ;; принести власну їжу ;; підтвердити бронювання телефоном
+= dajte nám vedieť aspoň deň vopred — повідомте щонайменше за день.
+X wb: Склади речення. | Som alergická [na] orechy. ;; Táto torta môže obsahovať [stopy] arašidov. | pre ;; od
+= alergický na; môže obsahovať stopy — може містити сліди.
+F: Обід із донькою || У твоєї доньки алергія на молоко. Ви обідаєте в кафе.
+S: Ти попереджаєш офіціантку. | *Dcéra je alergická na mlieko. ;; Dcéra je alergický na mlieko. ;; Dcéra má alergia pre mlieko.
+S: Ти питаєш, чи є молоко в супі. | *Obsahuje tá polievka mlieko? ;; Obsahuje tá polievka mlieka? ;; Mlieko polievka obsahovať?
+S: Біля десерту написано «Alergény: 1, 3». Що це означає? | *Там є глютен і яйця, але не позначено молока ;; Там є молоко ;; Десерт без алергенів
+S: Офіціантка: «Môže obsahovať stopy mlieka.» Що це означає? | *Можуть бути сліди молока ;; Молока там точно немає ;; Там багато молока
+R: 1 lepok, 3 vajcia, 4 ryby, 7 mlieko, 8 orechy ;; som alergický na + знахідний, mám intoleranciu laktózy ;; Obsahuje to…? Je to bez lepku? ;; môže obsahovať stopy…, bezlepkový
+
+@lesson rezervacia | Бронювання столика | Rezervácia stola
+desc: Бронювання столика телефоном і онлайн: дата, час, кількість осіб, місце (terasa, salónik, pri okne), зміна і скасування.
+goal: Забронювати, змінити або скасувати столик для родини чи колективу.
+out: бронювати stôl pre štyri osoby na sobotu o siedmej ;; вибирати місце: na terase, v salóniku, pri okne ;; бронювати na meno… ;; переносити, скасовувати й попереджати про запізнення
+done: Ти вмієш бронювати столик. Далі — як ввічливо поскаржитися.
+T: Як забронювати || «Chcel by som si rezervovať stôl na sobotu.» Кількість: «stôl pre + знахідний»: «pre dve osoby», «pre štyri osoby», з п’яти — родовий множини: «pre šesť osôb». День — «na + знахідний»: «na sobotu», час — «o + місцевий»: «o siedmej». Ім’я: «Na aké meno?» — «Na meno Kovalenko.» || Chcela by som si rezervovať stôl pre štyri osoby na piatok o siedmej. = Я хотіла б забронювати столик на чотирьох на п’ятницю на сьому. ;; Na aké meno to bude? = На яке ім’я записати? || stôl pre + число · na + день · o + година
+mis: pre šesť osoby => pre šesť osôb ;; na sobota => na sobotu ;; o sedem => o siedmej
+T: Де сісти || «Máte voľný stôl na terase?» — на терасі. «Pri okne» — біля вікна. «Salónik» — окрема зала для групи: святкування, корпоративна вечеря. «Počet osôb» — кількість осіб, це поле є в кожній онлайн-формі. За salónik часто просять передоплату — «zálohu». || Na oslavu potrebujeme salónik pre dvadsať osôb. = Для святкування нам потрібна окрема зала на двадцять осіб. ;; Sedeli by sme radšej pri okne. = Ми б краще сіли біля вікна. || na terase · v salóniku · pri okne
+T: Зміни й скасування || «Mohli by sme rezerváciu presunúť na ôsmu?» — перенести на восьму. «Potrebujem zrušiť rezerváciu.» Запізнення: «Budeme asi o dvadsať minút meškať.» Заклад може написати: «Stôl vám podržíme 15 minút» — триматимемо столик 15 хвилин, після цього бронювання скасовують. || Prepáčte, budeme asi o dvadsať minút meškať. = Вибачте, ми, мабуть, запізнимося на двадцять хвилин. ;; Chcel by som zmeniť počet osôb zo štyroch na šesť. = Я хотів би змінити кількість осіб з чотирьох на шість. || presunúť na · zrušiť · budeme meškať
+W: salónik | окрема зала (в ресторані) | сало:нік | Firemnú večeru máme v salóniku. | Корпоративна вечеря в нас в окремій залі.
+W: terasa | тераса | тераса | V lete sedíme najradšej na terase. | Улітку ми найбільше любимо сидіти на терасі.
+W: na meno | на ім’я | на мено | Stôl je rezervovaný na meno Hrubá. | Столик заброньований на ім’я Груба.
+W: počet osôb | кількість осіб | почет осуоб | Do formulára napíšte počet osôb. | У формі напишіть кількість осіб.
+W: pri okne | біля вікна | прі окне | Máte voľný stôl pri okne? | У вас є вільний столик біля вікна?
+X mt: З’єднай. | salónik = окрема зала ;; terasa = тераса ;; na meno = на ім’я ;; počet osôb = кількість осіб ;; pri okne = біля вікна ;; zrušiť rezerváciu = скасувати бронювання
+X dd: Обери. | Rezervujeme stôl pre [*štyri/štyria/štyrom] osoby.
+= osoba — жіночий рід, знахідний: štyri osoby.
+X dd: Обери. | V lete sedíme radi na [*terase/terasa/terasu].
+= na + місцевий (де?): na terase.
+X do: Розстав телефонну розмову. | Reštaurácia: Reštaurácia Lipa, dobrý deň, prosím. ;; Hosť: Dobrý deň, chcela by som si rezervovať stôl na sobotu večer. ;; Reštaurácia: Pre koľko osôb a na koľkú? ;; Hosť: Pre päť osôb, o siedmej, ak sa dá, na terase. ;; Reštaurácia: Terasa je v sobotu plná, ale máme voľný stôl pri okne. Na aké meno? ;; Hosť: Na meno Melnyk. Ďakujem.
+X doc: Прочитай онлайн-підтвердження. | Potvrdenie rezervácie – Reštaurácia Dunaj | Meno: Oleh Bondar ;; Dátum: piatok 16. 10. ;; Čas: 18:30 ;; Počet osôb: 8 ;; Miesto: salónik ;; Poznámka: Stôl vám podržíme 15 minút. Pri neskoršom príchode bude rezervácia zrušená. | До котрої години Олег має прийти, щоб не втратити столик? | *до 18:45 ;; до 18:30 ;; до 19:00
+= 18:30 + 15 хвилин — 18:45.
+X np: Ти хочеш перенести бронювання на восьму. | *Mohli by sme presunúť rezerváciu na ôsmu? ;; Mohli by sme presunúť rezerváciu o ôsmu? ;; Presunúť rezervácia osem, prosím. ;; Mohli by sme presunúť rezerváciu na ôsma?
+= presunúť na + знахідний: na ôsmu.
+X fb: Допиши. | Chcela by som si rezervovať stôl ___ dve osoby. | pre |
+= stôl pre + знахідний: pre dve osoby.
+X sc~: Офіціант питає: «Na aké meno to bude?» Що він хоче знати? | - | *На яке ім’я записати бронювання ;; Як звуть офіціанта ;; Скільки буде осіб
+= na meno — на ім’я.
+X msg: Прочитай SMS із ресторану. | Reštaurácia Lipa | Dobrý deň, pripomíname vašu rezerváciu dnes o 19:00 pre 4 osoby. Ak nemôžete prísť, prosíme, zrušte ju odpoveďou NIE. Ďakujeme. | Що треба зробити, якщо ви не прийдете? | *відповісти на SMS словом NIE ;; зателефонувати керівникові ;; нічого, бронювання скасується саме
+= zrušte ju odpoveďou NIE — скасуйте, відповівши NIE.
+X fe: - | Prepáčte, budeme asi o desať minút [meškáme>meškať].
+= Майбутній час: budeme + інфінітив — budeme meškať.
+X ms: Обери правильні фрази для бронювання. | - | *Máte voľný stôl na sobotu? ;; *Rezervácia je na meno Kovalenko. ;; *Potrebujeme salónik pre dvadsať osôb. ;; Máte voľný stôl na sobota? ;; Potrebujeme salónik pre dvadsať osoby.
+= na + знахідний: na sobotu; після dvadsať — родовий множини: osôb.
+X reg: - | Vážený pán vedúci, dovoľujem si Vás požiadať o rezerváciu salónika pre dvadsať osôb na 12. decembra. | formal
+= Vážený pán…, dovoľujem si Vás požiadať — офіційний лист.
+X tf: - | Čašník: «Terasa je na sobotu úplne obsadená, ale vnútri ešte máme voľné stoly.» | У суботу можна сісти лише всередині. | T
+= Тераса зайнята, вільні столики є тільки всередині.
+X bd: - | Ти забронював(ла) окрему залу на день народження!
+> Reštaurácia: Reštaurácia Dunaj, dobrý deň. | *Dobrý deň, chcel by som si rezervovať salónik na oslavu. ;; Dobrý deň, chcel by som rezervovať salónikom oslavu. ;; Ahoj, salónik oslava?
+> Reštaurácia: Na kedy a pre koľko osôb? | *Na sobotu dvadsiateho, pre pätnásť osôb. ;; Na sobota dvadsať, pätnásť osoby. ;; V sobotu pätnásť osobami.
+> Reštaurácia: Za salónik vyberáme zálohu 50 eur. Vyhovuje vám to? | *Áno, to je v poriadku. Ako môžem zálohu zaplatiť? ;; Áno, záloha platiť ako? ;; Nie, zálohu nikdy neplatíme, aj tak prídeme.
+> Reštaurácia: Prevodom na účet. Na aké meno píšem rezerváciu? | *Na meno Taras Bondar. ;; Meno je Tarasom Bondarom. ;; Pre meno Taras Bondar.
+X tr: Перетвори на ввічливе прохання з «Mohli by ste…». | Zmeňte počet osôb na šesť. | Mohli by ste zmeniť počet osôb na šesť? ;; Mohli by ste počet osôb zmeniť na šesť?
+= Mohli by ste + інфінітив — ввічливе прохання.
+F: Бронювання на мамин день народження || Ти телефонуєш у ресторан, щоб забронювати столик для родини.
+S: Ти кажеш, що хочеш забронювати столик на суботу. | *Chcel by som si rezervovať stôl na sobotu. ;; Chcel by som si rezervovať stôl na sobota. ;; Rezervovať stôl sobotou chcem.
+S: «Pre koľko osôb?» (вас шестеро) | *Pre šesť osôb. ;; Pre šesť osoby. ;; Na šesť osobách.
+S: Ти питаєш, чи є місце на терасі. | *Máte voľný stôl na terase? ;; Máte voľný stôl na terasa? ;; Terasu máte voľnú stôl?
+S: «Stôl vám podržíme pätnásť minút.» Що це означає? | *Столик триматимуть 15 хвилин, якщо ви запізнитеся ;; Ви маєте поїсти за 15 хвилин ;; Столик буде готовий за 15 хвилин
+R: stôl pre štyri osoby / pre šesť osôb na sobotu o siedmej ;; na terase, v salóniku, pri okne ;; Na aké meno? — Na meno… ;; presunúť na…, zrušiť, budeme meškať
+
+@lesson staznost | Скарга в ресторані | Sťažnosť v reštaurácii
+desc: Як ввічливо, але твердо поскаржитися: ледь тепла чи пригоріла страва, довге очікування, помилка в замовленні — і як домовитися про рішення.
+goal: Поскаржитися в ресторані так, щоб проблему вирішили, і не звучати грубо.
+out: м’яко вводити скаргу: Prepáčte, ale… / Obávam sa, že… ;; описувати проблему: vlažný, pripálený, nedopečený, vlas ;; просити рішення: vymeniť, zohriať, prepočítať ;; розуміти na účet podniku
+done: Ти вмієш скаржитися конструктивно. Далі — рахунок і чайові.
+T: М’який вступ || Словаки скаржаться стримано. Почни з «Prepáčte, ale…» або «Obávam sa, že…» (Боюся, що…). Далі — факт без емоцій: «Objednal som si pstruha, ale priniesli ste mi lososa.» Уникай вигуків на кшталт «To je hnus!» (Це гидота!) — так звучиш грубо, і тобі менш охоче підуть назустріч. || Prepáčte, ale polievka je vlažná. = Вибачте, але суп ледь теплий. ;; Obávam sa, že ste nám zabudli priniesť prílohu. = Боюся, що ви забули принести нам гарнір. || Prepáčte, ale… · Obávam sa, že…
+mis: To je hnus! => Prepáčte, ale jedlo nie je v poriadku.
+T: Що може бути не так || «Vlažný» — ледь теплий (суп має бути гарячим), «pripálený» — пригорілий, «nedopečený» — недопечений (м’ясо, тісто), «presolený» — пересолений, «tvrdý» — жорсткий, «Je v tom vlas» — там волосина. Очікування: «Čakáme už štyridsať minút.» Прикметник узгоджуємо з іменником: vlažná polievka, nedopečené mäso. || Mäso je nedopečené, vnútri je ešte surové. = М’ясо недопечене, усередині ще сире. ;; V šaláte je vlas. = У салаті волосина. || vlažný · pripálený · nedopečený · presolený
+mis: Polievka je vlažný. => Polievka je vlažná.
+T: Рішення || Попроси конкретно: «Mohli by ste mi to vymeniť?» (замінити), «Mohli by ste to zohriať?» (підігріти), «Chcel by som hovoriť s vedúcim.» Помилка в рахунку: «Myslím, že je tu chyba, mohli by ste to prepočítať?» Заклад часто вибачається так: «Dezert máte na účet podniku» — десерт за рахунок закладу, тобто безкоштовно. || Ospravedlňujeme sa, kávu máte na účet podniku. = Перепрошуємо, кава за рахунок закладу. ;; Mohli by ste mi ten rezeň vymeniť? = Чи могли б ви замінити мені цей шніцель? || vymeniť · zohriať · na účet podniku
+mis: hovoriť s vedúci => hovoriť s vedúcim
+W: obávať sa | побоюватися, боятися (ввічливо) | оба:ват са | Obávam sa, že je tu chyba. | Боюся, що тут помилка.
+W: vlažný | ледь теплий | влажни: | Káva bola len vlažná. | Кава була ледь тепла.
+W: pripálený | пригорілий | пріпа:лени: | Pizza má pripálený okraj. | У піци пригорілий край.
+W: nedopečený | недопечений, сируватий | недопечени: | Kurča bolo nedopečené. | Курча було недопечене.
+W: vlas | волосина | влас | V polievke bol vlas. | У супі була волосина.
+W: na účet podniku | за рахунок закладу | на у:чет подьніку | Dezert máte na účet podniku. | Десерт — за рахунок закладу.
+X mt: З’єднай. | obávať sa = побоюватися ;; vlažný = ледь теплий ;; pripálený = пригорілий ;; nedopečený = недопечений ;; vlas = волосина ;; na účet podniku = за рахунок закладу
+X dd: Обери. | Prepáčte, ale polievka je len [*vlažná/vlažný/vlažné].
+= polievka — жіночий рід: vlažná.
+X tone: - | Hosť: «Čo ste mi to doniesli? To sa nedá jesť!» | *роздратований, грубий ;; ввічливий і стриманий ;; жартівливий
+= Без «Prepáčte» і з вигуками — так скаржитися не варто.
+X np: Тобі (ти — чоловік) принесли лосося, а ти замовляв форель. | *Prepáčte, ale objednal som si pstruha, nie lososa. ;; Prepáčte, ale objednal som si pstruh, nie losos. ;; To je hnus, toto som nechcel! ;; Pstruh som objednať, nie losos.
+= Ввічливо й точно; знахідний істот: pstruha, lososa.
+X rc: - | Vážený pán vedúci, v sobotu 10. októbra sme s manželom oslavovali výročie svadby vo vašej reštaurácii. Stôl sme mali rezervovaný na 19:00, no na predjedlo sme čakali takmer hodinu. Čašník sa ospravedlnil, že v kuchyni majú veľa práce. Kačica bola výborná, ale manželov steak bol nedopečený, hoci si objednal dobre prepečený. Čašník ho síce bez problémov vymenil, no manžel potom jedol sám, lebo ja som už dojedla. Na účte sme navyše našli dve kávy, ktoré sme nemali. Nechceme peniaze späť, chceme len, aby ste o problémoch vedeli. Inak vašu reštauráciu máme radi a radi sa vrátime. S pozdravom Natália Hrycenko
+q~: Що було не так зі стейком? | *він був недопечений, хоча чоловік замовив добре просмажений ;; він був холодний ;; його взагалі не принесли
+q~: Що було не так із рахунком? | *там були дві кави, яких вони не замовляли ;; у рахунку двічі був стейк ;; їм не принесли рахунку
+q~: Чого хоче Наталія? | *щоб керівник знав про проблеми, гроші вона не вимагає ;; повернення грошей за стейк ;; безкоштовну вечерю наступного разу
+X fe: - | Chcel by som hovoriť s [vedúci>vedúcim] podniku.
+= s + орудний: s vedúcim.
+X cat: Проблема чи рішення? | Problém: vlažná polievka, pripálená pizza, vlas v šaláte, nedopečené mäso ;; Riešenie: výmena jedla, dezert na účet podniku, zľava z účtu, zohriata polievka
+= Що пішло не так і як заклад може це виправити.
+X dr: - | Čašník: Ospravedlňujem sa za čakanie. Ako vám chutilo? | *Mäso bolo výborné, ale prílohu ste nám priniesli studenú. ;; Mäso bolo výborný, ale príloha studený. ;; Chutilo sme výborné, ďakujem studenú.
+= Похвала + конкретна скарга; mäso — výborné.
+X tr: Пом’якши скаргу: почни з «Obávam sa, že…». | Zabudli ste na môj dezert. | Obávam sa, že ste zabudli na môj dezert. ;; Obávam sa, že ste na môj dezert zabudli.
+= Obávam sa, že… — м’який вступ до скарги.
+X mic: - | Čašník: «Veľmi sa ospravedlňujeme. Kávu a dezert máte dnes na účet podniku.» | na účet podniku | *безкоштовно, платить заклад ;; додадуть до вашого рахунку ;; кава й десерт закінчилися
+= na účet podniku — за рахунок закладу.
+X fb: Допиши. | Prepáčte, ale pizza má ___ okraj. (пригорілий) | pripálený |
+= okraj — чоловічий рід: pripálený.
+X sc: Яка скарга найввічливіша й найдієвіша? | - | *Prepáčte, ale polievka je vlažná. Mohli by ste ju zohriať? ;; Polievka je studená, dajte inú! ;; Čo to je za polievku?
+= Prepáčte + факт + конкретне прохання.
+X so: - | Попроси замінити тобі страву. | Mohli by ste mi to vymeniť?
+= Mohli by ste + інфінітив.
+X ce: Виправ скаргу. | Prepáčte, ale mäso je nedopečený a hranolky sú studené. | Prepáčte, ale mäso je nedopečené a hranolky sú studené.
+= mäso — середній рід: nedopečené.
+X bd: - | Проблему вирішили, і вечір врятовано!
+> Čašník: Všetko v poriadku? | *Prepáčte, ale obávam sa, že kurča je nedopečené. ;; Nie, kurča je hnus. ;; Prepáčte, kurča nedopečený je.
+> Čašník: Ojoj, ospravedlňujem sa. Hneď vám ho vymením. Prajete si to isté, alebo niečo iné? | *To isté, ale prosím dobre prepečené. ;; To isté, ale dobre prepečený kurča. ;; Iné to isté, prosím.
+> Čašník: Samozrejme. Ako ospravedlnenie máte dezert na účet podniku. | *To je od vás milé, ďakujem. ;; Na účet podniku platím ja. ;; Dezert nechcem, dajte peniaze.
+F: Невдала вечеря || Ти з дружиною в ресторані, але не все гаразд.
+S: Суп ледь теплий. Ти кажеш офіціантові. | *Prepáčte, ale polievka je vlažná. ;; Prepáčte, ale polievka je vlažný. ;; Polievka hnusná, zohriať!
+S: Ти просиш її підігріти. | *Mohli by ste ju zohriať? ;; Mohli by ste ho zohriať? ;; Mohol by ste ju zohriať?
+S: Офіціант: «Ospravedlňujeme sa, kávu máte na účet podniku.» | *Кава для вас безкоштовна ;; Каву треба оплатити окремо ;; Каву принесуть пізніше
+S: У рахунку зайвий десерт. Що кажеш? | *Myslím, že je tu chyba, dezert sme nemali. ;; Dezert je chyba, platiť nie. ;; Tu je dezert, ďakujem.
+R: Prepáčte, ale… / Obávam sa, že… ;; vlažný, pripálený, nedopečený, vlas ;; Mohli by ste to vymeniť / zohriať? ;; na účet podniku
+
+@lesson ucet-a-sprepitne | Рахунок і чайові | Účet a sprepitné
+desc: Як попросити рахунок, заплатити разом чи окремо, скільки лишати чайових у Словаччині та як платити стравенками.
+goal: Розрахуватися в ресторані впевнено, по-словацьки й без незручностей.
+out: просити рахунок: Zaplatím, prosím / Môžem vás poprosiť o účet? ;; відповідати на Spolu, alebo zvlášť? ;; давати чайові: Zoberte si tridsať / Zvyšok si nechajte ;; платити stravenkou чи kartou
+done: Ти розраховуєшся як місцевий. Далі — дієти й особливе харчування.
+T: Рахунок || Офіціант зазвичай не приносить рахунок сам — треба попросити: «Zaplatím, prosím», «Môžem vás poprosiť o účet?». Він спитає: «Spolu, alebo zvlášť?» — разом чи окремо. «Každý zvlášť» — кожен окремо. «Ja platím za oboch» — я плачу за двох. || Zaplatíme, prosím. = Ми розрахуємося, будь ласка. ;; Platíme zvlášť, každý za seba. = Платимо окремо, кожен за себе. || spolu × zvlášť
+T: Чайові || «Sprepitné» у Словаччині не обов’язкове, але звичне: у ресторані 5–10 %, у кафе часто просто «zaokrúhlime» — округлюємо. Чайові не кладуть на стіл, а називають офіціантові загальну суму під час оплати: рахунок 27,40 €, даєш 50 € і кажеш «Zoberte si tridsať» — офіціант поверне 20 €, а 2,60 € — чайові. Або: «Zvyšok si nechajte» — решту залиште собі. Карткою: «Zaplatím kartou tridsať aj so sprepitným.» || Účet je 18,60 €. Zoberte si dvadsať. = Рахунок 18,60 €. Візьміть двадцять. ;; Zvyšok si nechajte, ďakujem. = Решту залиште собі, дякую. || назви загальну суму разом із чайовими
+mis: Dajte mi výdavok. (коли хочеш лишити чайові) => Zvyšok si nechajte. ;; Vydajte tridsať. (коли хочеш, щоб узяли 30) => Zoberte si tridsať.
+T: Стравенки й термінал || Багато працівників у Словаччині отримують «stravenky» — талони на харчування, паперові або на стравенковій картці. Запитай: «Beriete stravenky?» Решту зі стравенки зазвичай не повертають, тож різницю доплачують: «Doplatím kartou.» Для картки офіціант приносить «platobný terminál». На чеку бачиш «DPH» — ПДВ. || Beriete aj stravenkové karty? = Ви приймаєте й стравенкові картки? ;; Zvyšok doplatím kartou. = Решту доплачу карткою. || Beriete stravenky? · platiť stravenkou / kartou
+W: sprepitné | чайові | спрепітне: | Nechali sme čašníkovi sprepitné. | Ми залишили офіціантові чайові.
+W: doplatiť | доплатити | доплатіть | Rozdiel doplatím kartou. | Різницю я доплачу карткою.
+W: zvyšok | решта, залишок | звишок | Zvyšok si nechajte. | Решту залиште собі.
+W: zaokrúhliť | округлити | заокру:гліть | Účet sme zaokrúhlili na dvadsať eur. | Ми округлили рахунок до двадцяти євро.
+W: stravenka | талон на харчування (стравенка) | стравенка | Môžem zaplatiť stravenkou? | Можна заплатити талоном на харчування?
+W: platobný terminál | платіжний термінал | платобни: терміна:л | Čašník priniesol platobný terminál. | Офіціант приніс платіжний термінал.
+X mt: З’єднай. | sprepitné = чайові ;; doplatiť = доплатити ;; zvyšok = решта ;; zaokrúhliť = округлити ;; stravenka = талон на харчування ;; platobný terminál = платіжний термінал
+X doc: Прочитай чек. | Pokladničný blok – Kaviareň Mlyn | 2× cappuccino: 6,40 € ;; 1× jablkový závin: 3,90 € ;; 1× minerálka 0,33 l: 2,10 € ;; Spolu: 12,40 € ;; z toho DPH: 2,32 € ;; Platba: karta | Скільки в цьому чеку становить ПДВ? | *2,32 € ;; 12,40 € ;; 6,40 €
+= DPH — податок на додану вартість (ПДВ): 2,32 €.
+X dd: Обери. | Platíme [*zvlášť/zvláštne/zvlášte], každý za seba.
+= zvlášť — окремо; zvláštne — дивно.
+X sc~: Рахунок 46,30 €. Ти даєш 50 € і кажеш: «Zoberte si štyridsaťosem.» Що це означає? | - | *Ти хочеш 2 € решти, а 1,70 € — чайові ;; Ти просиш 48 € решти ;; Ти хочеш заплатити 48 € карткою
+= Називаєш суму разом із чайовими: 50 − 48 = 2 € решти.
+X dr: - | Čašník: Spolu, alebo zvlášť? | *Zvlášť, prosím. Ja platím pizzu a kolu. ;; Zvlášť, prosím. Ja platím pizza a kola. ;; Spolu zvlášť, ďakujem.
+= platiť + знахідний: pizzu, kolu.
+X fb: Допиши. | Účet je 23,50 €. Dávaš 25 € a hovoríš: «To je v poriadku, ___ si nechajte.» | zvyšok |
+= zvyšok si nechajte — решту залиште собі.
+X tfl: - | Sprepitné na Slovensku nie je povinné, ale je bežné. V reštauráciách ľudia zvyčajne nechávajú päť až desať percent, v kaviarňach často len zaokrúhlia sumu. Sprepitné obvykle nenechávajú na stole, ale povedia čašníkovi sumu, keď platia. Ak platíte kartou, môžete čašníkovi povedať celkovú sumu aj so sprepitným. Keď ste neboli spokojní, nemusíte nechať nič. | *Чайові в Словаччині не обов’язкові. ;; *Суму чайових зазвичай називають офіціантові під час оплати. ;; Чайові завжди залишають на столі. ;; Карткою чайові дати неможливо. ;; *Якщо ти був незадоволений, чайові можна не давати.
+X np: Ти хочеш заплатити талоном на харчування, але спершу питаєш, чи можна. | *Beriete stravenky? ;; Beriete stravenka? ;; Stravenky berie? ;; Platíte stravenky?
+= brať — приймати: Beriete stravenky?
+X so: - | Попроси офіціанта про рахунок. | Môžem vás poprosiť o účet?
+= poprosiť o + знахідний: o účet.
+X menu: Подивись на меню кав’ярні. | Káva: espresso = 2,20 € ;; Káva: cappuccino = 3,20 € ;; Čaj: zázvorový čaj = 2,90 € ;; Koláče: tvarohový koláč = 3,50 € ;; Koláče: mrkvový koláč = 3,80 €
+q~: Ти замовляєш капучино й морквяний пиріг. Скільки до сплати? | *7,00 € ;; 6,70 € ;; 7,30 €
+q~: Ти платиш за капучино й сирний пиріг і округлюєш до 7 €. Скільки чайових? | *0,30 € ;; 0,70 € ;; 1,00 €
+X fe: - | Môžem zaplatiť [stravenka>stravenkou] alebo kartou?
+= zaplatiť чим? — орудний: stravenkou.
+X tf: - | Účet: 31,80 €. Hosť: «Zoberte si tridsaťpäť.» | Гість залишає 3,20 € чайових. | T
+= 35 − 31,80 = 3,20 €.
+X hm: - | Hosť podáva čašníkovi 20 € za účet 18,40 €. Čašník: «Vydať vám?» | *Офіціант питає, чи віддавати решту — може, це чайові ;; Офіціант питає, чи тобі все смакувало ;; Офіціант пропонує десерт
+= Vydať vám? — Дати вам решту? Відповідь «Nie, to je v poriadku» означає, що решта — чайові.
+X ms: Обери фрази, якими можна попросити рахунок. | - | *Zaplatím, prosím. ;; *Môžem vás poprosiť o účet? ;; *Zaplatíme, prosím. ;; Platiť chcem účet. ;; Dajte mi zvyšok účet.
+= Zaplatím / Zaplatíme, prosím; Môžem vás poprosiť o účet?
+X bd: - | Ти розрахувався(лася) й залишив(ла) чайові!
+> Čašník: Bude to všetko? | *Áno, zaplatíme, prosím. ;; Áno, zaplatiť my. ;; Áno, všetko účet.
+> Čašník: Spolu, alebo zvlášť? | *Spolu, ja platím za oboch. ;; Spolu, ja platím za obaja. ;; Zvlášť spolu, ja.
+> Čašník: Dokopy to bude 42,60 €. | *Zaplatím kartou štyridsaťpäť aj so sprepitným. ;; Štyridsaťpäť dajte mi zvyšok kartou nie. ;; Kartou sprepitné štyridsaťpäť platiť.
+F: Обід із колегою || Ти пригощаєш колегу обідом у кафе.
+S: Ти кличеш офіціанта, щоб розрахуватися. | *Zaplatíme, prosím. ;; Zaplatiť, prosím. ;; Platíme sa, prosím.
+S: «Spolu, alebo zvlášť?» Ти платиш за обох. | *Spolu, platím za oboch. ;; Zvlášť, platím za oboch. ;; Spolu, platím pre oboch.
+S: Рахунок 18,40 €. Ти хочеш, щоб офіціант узяв 20 €. | *Zoberte si dvadsať, prosím. ;; Vydajte dvadsať, prosím. ;; Dvadsať zvyšok mi dajte.
+S: Ти питаєш, чи приймають стравенки. | *Beriete stravenky? ;; Beriete stravenkami? ;; Máte stravenku zvlášť?
+R: Zaplatím, prosím. / Môžem vás poprosiť o účet? ;; spolu × zvlášť, za oboch ;; sprepitné 5–10 %: Zoberte si tridsať / Zvyšok si nechajte ;; Beriete stravenky? platobný terminál
+
+@lesson diety | Дієти й особливе харчування | Diéty a stravovanie
+desc: Вегетаріанство, веганство, піст, дієта за станом здоров’я: як про це сказати й про що спитати в ресторані чи їдальні.
+goal: Пояснити свої обмеження в харчуванні й знайти страву, що їм відповідає.
+out: казати som vegetarián / vegánka, nejem mäso ani ryby ;; пояснювати nesmiem…, držím diétu, postím sa ;; питати: Je to varené na mäsovom vývare? Na masle, alebo na oleji? ;; розуміти bezmäsité jedlá, rastlinný × živočíšny
+done: Ти пояснюєш свої харчові потреби. Далі — зустріч із колегами в ресторані.
+T: Хто що не їсть || «Vegetarián / vegetariánka» не їсть м’яса й риби. «Vegán / vegánka» не їсть нічого тваринного: ні молока, ні яєць, ні меду. У меню шукай розділ «bezmäsité jedlá» (страви без м’яса) або позначку «vegánske». Заперечення: «nejem mäso ani ryby». || Som vegetariánka, nejem mäso ani ryby. = Я вегетаріанка, не їм ні м’яса, ні риби. ;; Brat je vegán, nepije ani kravské mlieko. = Брат веган, не п’є навіть коров’ячого молока. || vegetarián / vegetariánka · vegán / vegánka
+mis: (жінка) Som vegetarián. => Som vegetariánka.
+T: Дієта і здоров’я || «Držím diétu» — тримаю дієту. «Nesmiem…» — мені не можна: «Nesmiem sladké, mám cukrovku.» «Postím sa» — пощуся (зворотне дієслово, із «sa»!). «Nejem bravčové» — не їм свинини. «Rastlinný» — рослинний, «živočíšny» — тваринного походження: rastlinné mlieko, živočíšny tuk. || Lekár mi povedal, že nesmiem jesť slané. = Лікар сказав, що мені не можна солоного. ;; Cez pôst nejem mäso. = Під час посту я не їм м’яса. || nesmiem + інфінітив / знахідний · postiť sa
+mis: Postím. => Postím sa.
+T: Що спитати || Пастка для вегетаріанців — суп: «Je tá polievka varená na mäsovom vývare?» — Чи суп зварений на м’ясному бульйоні? Також: «Je to pripravené na masle, alebo na oleji?», «Máte rastlinné mlieko?», «Dá sa to urobiť bez syra?», «Je v tom živočíšny tuk?» || Je v tej omáčke živočíšny tuk? = Чи є в цьому соусі тваринний жир? ;; Máte ovsené alebo sójové mlieko? = У вас є вівсяне чи соєве молоко? || na masle × na oleji · rastlinný × živočíšny
+W: vegetarián | вегетаріанець | веґетаріа:н | Môj kolega je vegetarián. | Мій колега вегетаріанець.
+W: vegán | веган | веґа:н | Pre vegánov máme tofu s ryžou. | Для веганів у нас є тофу з рисом.
+W: bezmäsitý | безм’ясний, без м’яса | безмесити: | V piatok varíme bezmäsité jedlá. | У п’ятницю ми готуємо страви без м’яса.
+W: rastlinný | рослинний | растлінни: | Do kávy si dám rastlinné mlieko. | У каву я візьму рослинне молоко.
+W: živočíšny | тваринного походження, тваринний | живочі:шни: | Vegáni nejedia živočíšne produkty. | Вегани не їдять продуктів тваринного походження.
+W: postiť sa | поститися | постіть са | Babka sa na Veľký piatok postí. | Бабуся поститься у Страсну п’ятницю.
+X mt: З’єднай. | vegetarián = вегетаріанець ;; vegán = веган ;; bezmäsitý = без м’яса ;; rastlinný = рослинний ;; živočíšny = тваринного походження ;; postiť sa = поститися
+X dd: Обери (говорить жінка). | Som [*vegetariánka/vegetarián/vegetariáni], nejem mäso.
+= Жінка — vegetariánka.
+X cat: Що може їсти веган? | Vegán áno: tofu, šošovica, ovsené mlieko, ovocie ;; Vegán nie: med, vajcia, syr, maslo
+= Мед, яйця, сир і масло — тваринного походження.
+X menu: Подивись на денне меню їдальні. | Polievky: hovädzí vývar s rezancami = 2,40 € ;; Polievky: šošovicová polievka (bezmäsitá) = 2,20 € ;; Menu 1: bravčový rezeň so zemiakmi = 7,20 € ;; Menu 2: zeleninové kari s ryžou (vegánske) = 6,50 € ;; Menu 3: cestoviny so syrovou omáčkou (bezmäsité) = 6,30 €
+q~: Яка основна страва підходить вегану? | *Menu 2 ;; Menu 3 ;; Menu 1
+q~: Колега-вегетаріанець хоче суп і основну страву якнайдешевше. Скільки він заплатить? | *8,50 € ;; 8,70 € ;; 8,90 €
+q~: Чого має уникати людина, яка не їсть свинини? | *Menu 1 ;; Menu 2 ;; сочевичного супу
+X fb: Допиши. | Je tá polievka varená na mäsovom ___? (бульйоні) | vývare |
+= na + місцевий: na mäsovom vývare.
+X dr: - | Čašník: Dáte si ku káve mlieko? | *Áno, ale rastlinné, ak máte. Som vegánka. ;; Áno, kravské, som vegánka. ;; Áno, živočíšne rastlinné.
+= Веганка п’є рослинне молоко.
+X np: Ти питаєш, чи страва приготована на маслі, чи на олії. | *Je to pripravené na masle, alebo na oleji? ;; Je to pripravené s maslom alebo olejom na? ;; Je to pripravené na maslo, alebo na olej? ;; Maslo alebo olej je pripravené?
+= na + місцевий: na masle, na oleji.
+X rc: - | Keď som pred tromi rokmi prišla do Bratislavy, bála som sa, že ako vegetariánka budem jesť len vyprážaný syr. Slovenská kuchyňa je naozaj dosť mäsitá, ale situácia sa rýchlo mení. Dnes má takmer každá reštaurácia aspoň dve bezmäsité jedlá a v centre je veľa vegánskych bistier. Musím však byť opatrná pri polievkach. Aj keď je na lístku zeleninová polievka, často je varená na mäsovom vývare. Preto sa vždy pýtam. Problém sú aj bryndzové halušky, lebo sa podávajú so slaninou. Vtedy poprosím, aby mi slaninu nedávali. Moja kolegyňa je vegánka a má to ťažšie: v mnohých jedálňach pre ňu nie je nič okrem príloh.
+q~: Чого авторка боялася, коли приїхала? | *що їстиме лише смажений сир ;; що не знайде роботу ;; що в Братиславі немає ресторанів
+q~: Чому вона завжди питає про овочевий суп? | *він часто зварений на м’ясному бульйоні ;; він завжди гострий ;; він дуже дорогий
+q~: Що вона пише про колегу-веганку? | *їй важче, бо в багатьох їдальнях для неї є лише гарніри ;; вона їсть лише в центрі ;; вона знову почала їсти м’ясо
+X fe: - | Cez pôst moja mama [nejedia>neje] mäso.
+= mama — третя особа однини: neje.
+X tr: Перепиши від імені жінки. | Som vegetarián a nejem ryby. | Som vegetariánka a nejem ryby.
+= Жіноча форма — vegetariánka.
+X tf: - | Hosť: «Mám cukrovku, takže dezert si radšej nedám.» | Гість не замовляє десерт через стан здоров’я. | T
+= cukrovka — цукровий діабет, тому без десерту.
+X mic: - | Na obale: «Výrobok neobsahuje živočíšne zložky.» | živočíšne zložky | *складники тваринного походження ;; штучні барвники ;; рослинні олії
+= živočíšny — тваринного походження; zložka — складник.
+X ms: Що можна сказати офіціантові, якщо ти веган(ка)? | - | *Nejem nič živočíšne. ;; *Máte rastlinné mlieko? ;; *Dá sa to urobiť bez syra? ;; Dám si vajíčka na masle. ;; Som vegán, prineste mi rezeň.
+= Вегани не їдять яєць, масла й м’яса.
+X wb: Склади речення. | Som [vegánka] a nejem nič [živočíšne]. ;; Do kávy si dám [rastlinné] mlieko. | vegetarián ;; bezmäsitý
+= vegánka, živočíšne, rastlinné.
+F: Обід із подругою-вегетаріанкою || Ти обідаєш із подругою, яка не їсть м’яса; сама ти не їси свинини.
+S: Ти кажеш офіціантові, що подруга не їсть м’яса. | *Kamarátka je vegetariánka, neje mäso. ;; Kamarátka je vegetarián, neje mäso. ;; Kamarátka nejem mäso.
+S: Ти питаєш, чи суп не зварений на м’ясному бульйоні. | *Nie je tá polievka varená na mäsovom vývare? ;; Je tá polievka varená na mäsový vývar? ;; Polievka vývar mäso je?
+S: Офіціант: «Na obed máme dve bezmäsité jedlá.» | *Є дві страви без м’яса ;; Немає страв без м’яса ;; Є дві м’ясні страви
+S: Ти кажеш, що не їси свинини. | *Nejem bravčové mäso. ;; Nejedím bravčové mäso. ;; Nejem bravčového mäsom.
+R: vegetarián(ka), vegán(ka), postiť sa ;; nesmiem…, držím diétu ;; rastlinný × živočíšny, bezmäsité jedlá ;; varené na mäsovom vývare? na masle, alebo na oleji?
+
+@lesson stretnutie-s-kolegami | Зустріч із колегами | Stretnutie s kolegami
+desc: Неформальна зустріч після роботи, корпоративна вечеря, тост і ввічливе завершення вечора — мова, етикет і хто платить.
+goal: Запросити колег, підтримати вечір за столом, виголосити короткий тост і ввічливо піти.
+out: пропонувати: Nezájdeme po práci na pivo? / Čo keby sme…? ;; розуміти, хто платить: pozývam vás, pohostiť ;; виголошувати тост: Pripime si na…! ;; ввічливо йти: Budem sa musieť pobrať, bolo to príjemné posedenie
+done: Ти почуваєшся впевнено на зустрічах із колегами. Далі — як читати й писати відгук про ресторан.
+T: Запрошення || Природні пропозиції: «Nezájdeme po práci na pivo?» (заперечне питання звучить м’яко й дружньо), «Čo keby sme išli na obed spolu?», «Máte chuť na pizzu?». Відповіді: «Rád / rada, idem s vami», «Tento piatok nemôžem, ale nabudúce určite.» || Nezájdeme v piatok niekam na večeru? = Може, підемо в п’ятницю кудись на вечерю? ;; Čo keby sme to oslávili? = А що, якби ми це відсвяткували? || Nezájdeme…? · Čo keby sme…?
+mis: Nezájdeme na pivo po prácu? => Nezájdeme po práci na pivo?
+T: Хто платить || «Pozývam ťa / vás» означає не лише «запрошую», а й «я плачу». Також: «Dnes platím ja». Колега може «pohostiť» колектив — принести торт або заплатити за всіх: так у Словаччині часто відзначають день народження, іменини чи новий контракт. Якщо хочеш платити сам: «To nemusíš, zaplatím si sám.» || Na moje meniny vás pozývam na kávu. = На мої іменини я пригощаю вас кавою. ;; Šéf nás pohostil na firemnom večierku. = Шеф пригостив нас на корпоративі. || pozývam ťa → плачу я
+T: Тост і завершення || Тост — «prípitok»: «Na zdravie!», «Pripime si na úspešný projekt!», «Na Petru!» — за Петру. Під час тосту цокаються й дивляться в очі. Іти додому: «Prepáčte, ja sa už budem musieť pobrať» — мені вже треба йти, «Ďakujem, bolo to príjemné posedenie». || Pripime si na nového kolegu! = Вип’ємо за нового колегу! ;; Bolo to veľmi príjemné posedenie, ďakujem. = Це були дуже приємні посиденьки, дякую. || pripiť si na + знахідний
+mis: Pripime si na úspechu! => Pripime si na úspech! ;; Na zdravia! => Na zdravie!
+W: zájsť si | сходити, зайти (кудись ненадовго) | за:йсть сі | Nezájdeme si po práci na kávu? | Може, сходимо після роботи на каву?
+W: pobrať sa | зібратися йти, піти | побрат са | Je neskoro, už sa musím pobrať. | Уже пізно, мені треба йти.
+W: posedenie | посиденьки, неформальна зустріч | поседеніе | V piatok máme posedenie s kolegami. | У п’ятницю в нас посиденьки з колегами.
+W: prípitok | тост | прі:піток | Šéf predniesol krátky prípitok. | Шеф виголосив короткий тост.
+W: pripiť si | випити за щось, підняти келих | пріпіть сі | Pripime si na úspech! | Вип’ємо за успіх!
+W: firemný večierok | корпоратив | фіремни: вечієрок | Firemný večierok bude v decembri. | Корпоратив буде в грудні.
+X mt: З’єднай. | zájsť si = сходити кудись ;; pobrať sa = зібратися йти ;; posedenie = посиденьки ;; prípitok = тост ;; pripiť si = випити за щось ;; firemný večierok = корпоратив
+X dd: Обери. | Pripime si [*na/pre/o] úspešný projekt!
+= pripiť si na + знахідний.
+X hm: - | Kolega: «Dnes vás všetkých pozývam, mám narodeniny.» | *колега сьогодні платить за всіх ;; колега просить кожного заплатити за себе ;; колега кличе всіх до себе додому
+= pozývam vás — я пригощаю, тобто плачу.
+X msg: Прочитай повідомлення в робочому чаті. | Peter (tím) | Ahojte! Projekt je hotový, tak čo keby sme to v piatok oslávili? Rezervoval som stôl v pivárni U Dvoch levov na 17:30. Prvé kolo platí firma, ďalej už každý sám. Dajte vedieť do štvrtka, kto ide. | Хто платить за напої? | *за перше коло — фірма, далі кожен сам ;; усе оплачує фірма ;; Петер платить за всіх
+= Prvé kolo platí firma, ďalej už každý sám.
+X np: Ти хочеш запропонувати колегам сходити після роботи на піцу. | *Nezájdeme po práci na pizzu? ;; Nezájdeme po prácu na pizzu? ;; Nezájdeme po práci na pizza? ;; Zájdeme pizza práci po?
+= po + місцевий: po práci; na + знахідний: na pizzu.
+X dr: - | Kolegyňa: Ideš s nami v piatok na posedenie? | *Tento piatok nemôžem, ale nabudúce určite prídem. ;; Tento piatok nemôžem, ale nabudúce určite prísť. ;; Áno, nemôžem, ďakujem za piatok.
+= Ввічлива відмова з обіцянкою на наступний раз.
+X do: Розстав тост у правильному порядку. | Šéfka: Milí kolegovia, chcela by som povedať pár slov. ;; Šéfka: Tento rok bol náročný, ale zvládli sme ho výborne. ;; Šéfka: Pripime si na úspešný rok a na náš skvelý tím! ;; Kolegovia: Na zdravie! ;; Kolega: Ďakujeme, šéfka, aj vám za trpezlivosť.
+X rc: - | Milí kolegovia, aj tento rok vás srdečne pozývame na firemný večierok. Uskutoční sa v piatok 11. decembra od 18:00 v reštaurácii Zlatý dvor na Hlavnej ulici. Firma platí večeru aj nápoje a ako každý rok bude aj tombola. Na večierok môžete prísť aj s partnerom alebo partnerkou, prosíme vás však, aby ste to nahlásili do 30. novembra pani Kováčovej z personálneho oddelenia. Kto neje mäso alebo má inú diétu, nech to uvedie pri prihlasovaní, kuchyňa pripraví aj vegetariánske a bezlepkové jedlá. O 19:00 sa vám prihovorí generálny riaditeľ a predstaví plány na budúci rok. Potom bude hudba a tanec. Tešíme sa na príjemné posedenie! Vedenie spoločnosti
+q~: Що треба зробити до 30 листопада? | *повідомити пані Ковачовій, якщо прийдеш із партнером ;; оплатити вечерю ;; підготувати промову
+q~: Що буде о 19:00? | *гендиректор розповість про плани на наступний рік ;; почнеться лотерея ;; почнуться танці
+q~: Що робити, якщо ти не їси м’яса? | *указати це під час реєстрації ;; принести власну їжу ;; нічого, м’яса на вечері не буде
+X fb: Допиши. | Ďakujem, bolo to veľmi príjemné ___. (посиденьки) | posedenie |
+= posedenie — середній рід: príjemné posedenie.
+X tone: - | Kolega pri odchode: «Prepáčte, ja sa už budem musieť pobrať, ráno skoro vstávam. Bolo to super, ďakujem!» | *ввічливий і дружній ;; ображений ;; роздратований
+= Пояснює причину й дякує — ввічливе прощання.
+X reg: - | Ideme na jedno? | informal
+= Розмовна пропозиція випити по одному (пиву) — неформально.
+X fe: - | Na moje meniny vás všetkých [pozývame>pozývam] na kávu.
+= moje meniny — пригощаю я: pozývam.
+X sb: - | Запропонуй колегам відсвяткувати це. | Čo keby sme to oslávili?
+= Čo keby sme + минулий час — що якби ми…
+X ms: Обери правильні тости. | - | *Na zdravie! ;; *Pripime si na úspech! ;; *Na nového kolegu! ;; Pripime si na úspechu! ;; Na zdravia!
+= pripiť si na + знахідний: na úspech; Na zdravie!
+X bd: - | Вечір із колегами вдався!
+> Kolega: Nezájdeme po práci na pivo? | *Rád, ale len na jedno, zajtra skoro vstávam. ;; Rád, ale len na jeden, zajtra skoro vstávať. ;; Pivo zájsť, áno, po prácu.
+> Kolega: Super. Dnes vás pozývam, dostal som novú zmluvu. | *Gratulujem! Tak si pripime na tvoju novú zmluvu. ;; Gratulujem! Tak si pripime na tvoja nová zmluva. ;; Pozývam aj ja seba.
+> Kolega: Na zdravie! Dáš si ešte jedno? | *Nie, ďakujem, už sa budem musieť pobrať. Bolo to príjemné posedenie. ;; Nie, ďakujem, už budem musieť pobrať sa posedenie. ;; Áno, nie, nemôžem pivo.
+F: Корпоратив || На корпоративі колега кличе тебе за свій стіл.
+S: Колега: «Dnes ťa pozývam.» Що це означає? | *Він за тебе платить ;; Він запрошує тебе до себе додому ;; Він просить, щоб ти заплатив(ла)
+S: Ти пропонуєш тост за успішний рік. | *Pripime si na úspešný rok! ;; Pripime si na úspešným rokom! ;; Pripime si o úspešný rok!
+S: Колега питає, чи підеш ти в п’ятницю на піцу. Ти не можеш. | *Tento piatok nemôžem, ale nabudúce určite. ;; Tento piatok nemôžem, ale nabudúce určitý. ;; Piatok nie, nabudúce nemôžem určite.
+S: Ти йдеш додому й дякуєш. | *Ďakujem, bolo to príjemné posedenie. ;; Ďakujem, bol to príjemné posedenie. ;; Ďakujem za príjemný posedenie.
+R: Nezájdeme…? / Čo keby sme…? ;; pozývam ťa — плачу я, pohostiť ;; Pripime si na…! / Na zdravie! ;; posedenie, firemný večierok, budem sa musieť pobrať
+
+@lesson hodnotenie-restauracie | Відгук про ресторан | Hodnotenie reštaurácie
+desc: Як читати й писати відгуки про ресторан: структура, оцінні слова, контраст síce…, ale… і ввічлива критика.
+goal: Зрозуміти чужий відгук і написати власний — збалансований і переконливий.
+out: розуміти структуру відгуку: jedlo, obsluha, prostredie, cena ;; вживати оцінні слова: predražený, sklamanie, vrelo odporúčam ;; будувати контраст: síce…, ale…, napriek tomu ;; розпізнавати тон і приховану критику
+done: Ти читаєш і пишеш відгуки. Далі — підсумок розділу.
+T: Структура відгуку || Хороший відгук відповідає на чотири питання: jedlo (їжа), obsluha (обслуговування), prostredie (обстановка, атмосфера) і cena (ціна). Починають загальним враженням — «celkový dojem» — і закінчують висновком: «Určite sa vrátime», «Vrelo odporúčam» або «Neodporúčam». || Celkový dojem je veľmi pozitívny. = Загальне враження дуже позитивне. ;; Prostredie je príjemné, ale trochu hlučné. = Обстановка приємна, але трохи гамірна. || jedlo · obsluha · prostredie · cena
+T: Оцінні слова || Позитивні: «vynikajúci», «vrelo odporúčam» (щиро раджу), «stojí to za to» (воно того варте). Негативні: «predražený» (з завищеною ціною), «sklamanie» (розчарування), «nepríjemná obsluha», «nič zvláštne» (нічого особливого). Зважай на силу слова: «sklamanie» звучить значно різкіше, ніж «nič zvláštne». || Ceny sú na takú kvalitu predražené. = Як на таку якість, ціни завищені. ;; Dezert bol veľké sklamanie. = Десерт був великим розчаруванням. || vrelo odporúčam ↔ neodporúčam
+mis: Ceny sú predražený. => Ceny sú predražené.
+T: Контраст і баланс || Чесний відгук поєднує плюси й мінуси: «síce…, ale…» (хоч…, але…), «na druhej strane» (з іншого боку), «napriek tomu» (попри це). «Síce» не стоїть на початку речення — воно йде після першого слова чи групи: «Jedlo bolo síce chutné, ale…». Формальна критика м’якша з умовним способом: «Obsluha by mohla byť pozornejšia.» || Jedlo bolo síce chutné, ale porcie boli malé. = Їжа хоч і була смачна, але порції були малі. ;; Čakali sme dlho, napriek tomu sa vrátime. = Ми довго чекали, попри це повернемося. || X je síce…, ale… · napriek tomu
+mis: Síce jedlo bolo chutné, ale… => Jedlo bolo síce chutné, ale…
+W: napriek tomu | попри це, однак | напрієк тому | Čakali sme dlho, napriek tomu sme boli spokojní. | Ми довго чекали, попри це залишилися задоволені.
+W: prostredie | обстановка, атмосфера (місця) | простредіе | Reštaurácia má príjemné prostredie. | Ресторан має приємну атмосферу.
+W: obsluha | обслуговування; персонал | обслуга | Obsluha bola rýchla a milá. | Обслуговування було швидке й привітне.
+W: predražený | надто дорогий, із завищеною ціною | предражени: | Káva na námestí je predražená. | Кава на площі надто дорога.
+W: sklamanie | розчарування | скламаніе | Nová pizzeria bola pre nás sklamanie. | Нова піцерія стала для нас розчаруванням.
+W: celkovo | загалом | целково | Celkovo sme boli spokojní. | Загалом ми були задоволені.
+X mt: З’єднай. | napriek tomu = попри це ;; prostredie = обстановка ;; obsluha = обслуговування ;; predražený = надто дорогий ;; sklamanie = розчарування ;; celkovo = загалом
+X rc: - | Bistro Pod hradom, Trenčín – 3 hviezdičky. Do bistra sme prišli v nedeľu na obed bez rezervácie a hneď sme dostali stôl na terase s výhľadom na hrad. Prostredie je naozaj krásne. Obsluha bola síce milá, ale veľmi pomalá: na polievku sme čakali dvadsať minút a na hlavný chod ďalšiu polhodinu. Kačica bola šťavnatá a dobre ochutená, manželov rezeň však bol suchý a prílohy studené. Najväčšie sklamanie bol dezert: tiramisu za 7,50 € chutilo ako z obchodu. Ceny sú na to, čo dostanete, mierne predražené. Napriek tomu sa sem asi ešte vrátime, lebo výhľad a kačica stoja za to. Celkovo priemerný zážitok, odporúčam skôr na kávu na terase než na obed. Oksana K.
+q~: Що Оксані сподобалося найбільше? | *вид на замок і качка ;; швидке обслуговування ;; десерт
+q~: Що вона пише про тірамісу? | *воно було найбільшим розчаруванням і смакувало як із магазину ;; воно було дешеве й смачне ;; його не було в меню
+q~: Що вона радить? | *ходити туди радше на каву на терасі, ніж на обід ;; ніколи туди не ходити ;; ходити лише на обід у неділю
+X dd: Обери. | Jedlo bolo [*síce/hoci/napriek] chutné, ale porcie boli malé.
+= síce…, ale… — хоч…, але…
+X cat: До чого належить кожна деталь відгуку? | Obsluha: pomalý čašník, milá čašníčka, nepríjemný personál ;; Prostredie: hlučná hudba, výhľad na hrad, pohodlné stoličky ;; Cena: predražené víno, primerané ceny
+= Обслуговування, обстановка й ціна.
+X tone: - | Recenzia: «Jedlo nič zvláštne, obsluha v pohode, ceny primerané. Dá sa.» | *стриманий, без захоплення ;; захоплений ;; дуже обурений
+= nič zvláštne, dá sa — нормально, але без захвату.
+X hm: - | Recenzia: «Obsluha by mohla byť pozornejšia.» | *обслуговування було неуважне ;; обслуговування було ідеальне ;; персоналу було забагато
+= М’яка критика: персонал був недостатньо уважний.
+X fb: Допиши. | Ceny sú na takú kvalitu ___. (завищені) | predražené |
+= ceny — множина: predražené.
+X tr: З’єднай два речення за допомогою «síce…, ale…». | Jedlo bolo chutné. Porcie boli malé. | Jedlo bolo síce chutné, ale porcie boli malé. ;; Jedlo síce bolo chutné, ale porcie boli malé.
+= síce — не на початку речення; перед ale — кома.
+X sc: Яке речення — найввічливіша критика? | - | *Obsluha by mohla byť pozornejšia. ;; Obsluha je katastrofa. ;; Čašník bol drzý a hlúpy.
+= Умовний спосіб пом’якшує критику.
+X fe: - | Celkový [dojmy>dojem] z večera bol veľmi dobrý.
+= celkový … bol — однина: dojem.
+X ms: Обери фрази, що звучать позитивно. | - | *Vrelo odporúčam. ;; *Stojí to za to. ;; *Určite sa vrátime. ;; Nič zvláštne. ;; Veľké sklamanie.
+= Nič zvláštne — нейтрально-негативно; sklamanie — негативно.
+X reg: - | Vážená pani Kováčová, ďakujeme za Vašu recenziu a ospravedlňujeme sa za dlhé čakanie. | formal
+= Vážená pani…, Vašu з великої літери — офіційна відповідь закладу.
+X doc: Подивись на рейтинг ресторану. | Reštaurácia Koliba – hodnotenie hostí | Jedlo: 4,6 / 5 ;; Obsluha: 3,1 / 5 ;; Prostredie: 4,8 / 5 ;; Pomer ceny a kvality: 3,9 / 5 ;; Počet recenzií: 312 | Що гості оцінили найгірше? | *обслуговування ;; співвідношення ціни та якості ;; обстановку
+= Obsluha — 3,1 з 5, найнижча оцінка.
+X np: Ти пишеш у відгуку, що загалом ви були задоволені. | *Celkovo sme boli spokojní. ;; Celkovo sme boli spokojné jedlo. ;; Celkový sme boli spokojní. ;; Celkovo boli sme spokojnosť.
+= celkovo — прислівник; boli spokojní.
+X ce: Виправ речення з відгуку. | Prostredie bolo príjemný, ale čašník bol pomalá. | Prostredie bolo príjemné, ale čašník bol pomalý.
+= prostredie — середній рід: príjemné; čašník — чоловічий: pomalý.
+F: Твій перший відгук || Ти пишеш відгук в інтернеті про піцерію біля роботи.
+S: Ти починаєш загальним враженням: воно позитивне. | *Celkový dojem je pozitívny. ;; Celková dojem je pozitívny. ;; Celkový dojem je pozitívna.
+S: Піца смачна, але надто дорога. | *Pizza bola síce chutná, ale predražená. ;; Pizza bola síce chutný, ale predražená. ;; Síce pizza chutná, ale predražený.
+S: Ти м’яко критикуєш персонал. | *Obsluha by mohla byť rýchlejšia. ;; Obsluha je hrozná a hlúpa. ;; Obsluha mohla by rýchlejšia.
+S: Відповідь закладу: «Mrzí nás, že ste boli sklamaný.» | *Закладу шкода, що ти був розчарований ;; Заклад радий, що тобі сподобалося ;; Заклад просить видалити відгук
+R: jedlo, obsluha, prostredie, cena, celkový dojem ;; vrelo odporúčam, stojí to za to, predražený, sklamanie ;; síce…, ale…, napriek tomu ;; Obsluha by mohla byť pozornejšia.
+
+@lesson opakovanie | Підсумок: кафе й ресторан | Opakovanie: kaviareň a reštaurácia
+desc: Підсумок розділу: замовлення, рекомендації, алергени, бронювання, скарга, рахунок, дієти, зустріч із колегами й відгук — в одній історії.
+goal: Упевнено пройти весь вечір у ресторані — від бронювання до відгуку.
+out: бронювати й замовляти з уточненнями ;; говорити про алергени й дієти ;; ввічливо скаржитися й розраховуватися з чайовими ;; виголошувати тост і писати відгук
+done: Ти пройшов(ла) розділ «Кафе й ресторан». Далі — Úrad II: заяви й форми.
+T: Від бронювання до замовлення || Бронювання: «stôl pre štyri osoby na sobotu o siedmej, na meno…». Замовлення: «Ako predjedlo si dám…», «namiesto hranoliek ryžu». Порада: «Čo by ste nám odporučili?» Алергени: «Som alergický na orechy. Obsahuje to lepok?» Дієта: «Som vegetariánka, je tá polievka varená na mäsovom vývare?» || Chcel by som si rezervovať stôl pre šesť osôb na piatok o siedmej. = Я хотів би забронювати столик на шістьох на п’ятницю на сьому. ;; Obsahuje ten dezert orechy? = Чи містить цей десерт горіхи? || pre + знахідний · alergický na · namiesto + родовий
+T: Скарга й рахунок || Скарга: «Prepáčte, ale…», «Obávam sa, že mäso je nedopečené. Mohli by ste ho vymeniť?» Рахунок: «Zaplatíme, prosím.» — «Spolu, alebo zvlášť?» Чайові: назви загальну суму («Zoberte si tridsať») або «Zvyšok si nechajte». Стравенки: «Beriete stravenky?» || Prepáčte, ale polievka je vlažná. = Вибачте, але суп ледь теплий. ;; Zoberte si dvadsaťpäť, zvyšok si nechajte. = Візьміть двадцять п’ять, решту залиште собі. || Prepáčte, ale… · spolu × zvlášť
+T: Колеги й відгук || З колегами: «Nezájdeme po práci na pivo?», «Dnes vás pozývam» (плачу я), «Pripime si na…!». Відгук: jedlo, obsluha, prostredie, cena; «síce…, ale…», «napriek tomu», «Vrelo odporúčam». Постійного гостя закладу називають «štamgast». || Pripime si na úspešnú spoluprácu! = Вип’ємо за успішну співпрацю! ;; Jedlo bolo síce výborné, ale obsluha pomalá. = Їжа хоч і була чудова, але обслуговування повільне. || pripiť si na · síce…, ale…
+W: podnik | заклад (кафе, бар, ресторан) | подьнік | Ten podnik je otvorený do polnoci. | Цей заклад працює до опівночі.
+W: štamgast | постійний відвідувач | штамґаст | Pán Novák je tu štamgast, chodí sem každý deň. | Пан Новак тут постійний відвідувач, приходить щодня.
+W: ochutnávka | дегустація | охутна:вка | V sobotu je v reštaurácii ochutnávka vín. | У суботу в ресторані дегустація вин.
+W: gastronómia | гастрономія, кулінарія | ґастроно:міа | Slovenská gastronómia sa rýchlo mení. | Словацька гастрономія швидко змінюється.
+X mt: З’єднай. | predjedlo = закуска ;; sprepitné = чайові ;; lepok = глютен ;; prípitok = тост ;; sklamanie = розчарування ;; štamgast = постійний відвідувач
+X rc: - | Minulý piatok som organizoval večeru pre kolegov z oddelenia. Stôl pre desať osôb som rezervoval týždeň vopred v podniku Starý mlyn, lebo tam majú salónik. Kolegyňa Jana je alergická na orechy a Tomáš je vegán, preto som reštauráciu upozornil už pri rezervácii. Čašník nám odporučil pečené bravčové koleno, pre Tomáša pripravili zeleninové kari. Jediný problém bol, že Janin šalát prišiel s orechmi. Čašník sa ospravedlnil, šalát hneď vymenil a dezert nám dal na účet podniku. Na konci som predniesol krátky prípitok na úspešný rok. Platili sme zvlášť a každý nechal asi desať percent sprepitného. Večer bol taký vydarený, že sme tam v pondelok išli znova na obed.
+q~: Чому автор вибрав Starý mlyn? | *там є окрема зала ;; там найдешевше ;; там працює його друг
+q~: Яка проблема виникла? | *салат Яни принесли з горіхами ;; для Томаша не було що їсти ;; бронювання загубилося
+q~: Як заклад вирішив проблему? | *замінив салат і дав десерт за рахунок закладу ;; повернув усі гроші ;; дав знижку на наступний раз
+X menu: Подивись на меню (алергени: 1 — глютен, 3 — яйця, 4 — риба, 7 — молоко, 8 — горіхи). | Predjedlá: bryndzové pirohy (1, 7) = 7,90 € ;; Predjedlá: grilovaná zelenina s hummusom (vegánske) = 6,50 € ;; Hlavné chody: hovädzí steak 200 g = 23,50 € ;; Hlavné chody: pstruh na masle (4, 7) = 16,90 € ;; Dezerty: orechové palacinky (1, 3, 7, 8) = 5,40 € ;; Prílohy: opekané zemiaky = 3,20 €
+q~: Яку закуску може замовити веган? | *овочі на грилі з хумусом ;; бриндзові вареники ;; форель на маслі
+q~: Ти береш стейк і смажену картоплю та кажеш «Zoberte si tridsať». Скільки чайових? | *3,30 € ;; 3,20 € ;; 6,50 €
+q~: Яка страва не підходить людині з алергією на рибу? | *форель на маслі ;; стейк ;; бриндзові вареники
+X dr: - | Čašník: Máte nejaké alergie? | *Áno, dcéra je alergická na lepok. ;; Áno, dcéra je alergický na lepok. ;; Áno, dcéra je alergická pre lepok.
+= dcéra — alergická; alergický na + знахідний.
+X np: Ти бронюєш столик на вісьмох на п’ятницю. | *Chcel by som si rezervovať stôl pre osem osôb na piatok. ;; Chcel by som si rezervovať stôl pre osem osoby na piatok. ;; Chcel by som si rezervovať stôl pre osem osôb v piatok na. ;; Rezervovať stôl osem piatok.
+= pre osem osôb — родовий множини після числа; na piatok.
+X fe: - | Prepáčte, ale obávam sa, že kurča je [nedopečený>nedopečené].
+= kurča — середній рід: nedopečené.
+X tr: Перетвори на ввічливу скаргу, почни з «Prepáčte, ale…». | Polievka je studená! | Prepáčte, ale polievka je studená. ;; Prepáčte, ale tá polievka je studená.
+= Prepáčte, ale… — ввічливий вступ до скарги.
+X cat: До якої ситуації належить фраза? | Rezervácia: na aké meno, pre koľko osôb, stôl pri okne ;; Platenie: zvlášť alebo spolu, zvyšok si nechajte, beriete stravenky ;; Sťažnosť: polievka je vlažná, v šaláte je vlas, mäso je pripálené
+= Бронювання, оплата, скарга.
+X hm: - | Čašník: «Dnes máme v kuchyni veľmi veľa objednávok, na pizzu sa čaká asi hodinu.» | *якщо поспішаєш, краще замов щось інше ;; піца сьогодні безкоштовна ;; кухня вже не працює
+= Офіціант натякає: піцу доведеться довго чекати.
+X dd: Обери. | Ceny sú síce vysoké, [*ale/a/alebo] jedlo stojí za to.
+= síce…, ale… — хоч…, але…
+X tone: - | Recenzia: «Absolútne sklamanie. Hodinu sme čakali, jedlo bolo studené a čašník sa ani neospravedlnil. Už nikdy viac!» | *дуже розчарований і обурений ;; задоволений ;; нейтральний
+= Absolútne sklamanie, už nikdy viac — сильний негатив.
+X msg: Прочитай повідомлення від колеги. | Lucia | Ahoj, v piatok idem s vami na večeru, ale nezabudni, že som vegánka. Ak tam nemajú nič bez živočíšnych produktov, radšej nájdime iný podnik. A nech je to niekde, kde sa dá platiť stravenkami! | Які дві умови ставить Луція? | *щоб була веганська їжа й можна було платити стравенками ;; щоб заклад був дешевий і поруч ;; щоб була окрема зала й тераса
+= Bez živočíšnych produktov + platiť stravenkami.
+X so: - | Скажи офіціантові, що решту він може залишити собі. | Zvyšok si nechajte, ďakujem.
+= Zvyšok si nechajte — решта як чайові.
+X ms: Обери ввічливі фрази. | - | *Mohli by ste mi to vymeniť? ;; *Čo by ste nám odporučili? ;; *Môžem vás poprosiť o účet? ;; Dajte účet, rýchlo! ;; Čo je toto za hnus?
+= Умовний спосіб і poprosiť звучать ввічливо.
+X bd: - | Вечір у ресторані пройшов бездоганно!
+> Reštaurácia: Reštaurácia Starý mlyn, prosím. | *Dobrý deň, chcel by som si rezervovať stôl pre štyri osoby na sobotu o siedmej. ;; Dobrý deň, rezervovať stôl štyri osoby sobota sedem. ;; Ahoj, stôl na sobotu, áno?
+> Čašník: Dobrý večer, čo si dáte? | *Ako predjedlo si dáme dvakrát pirohy. Obsahujú lepok? ;; Ako predjedlo dáme pirohov dva. Lepok obsahuje? ;; Predjedlo pirohy lepok, prosím.
+> Čašník: Áno, cesto je pšeničné. Máme však aj bezlepkové jedlá. | *Výborne, tak pre kolegyňu niečo bezlepkové, prosím. ;; Výborne, tak pre kolegyňa niečo bezlepkový, prosím. ;; Bezlepok kolegyňa, áno.
+> Čašník: Spolu, alebo zvlášť? | *Spolu. Tu je osemdesiat, zvyšok si nechajte. ;; Spolu. Osemdesiat zvyšok nechať. ;; Zvlášť spolu, ďakujem.
+F: Вечеря для партнерів || Твоя фірма приймає партнерів з України, і ти організовуєш вечерю в ресторані.
+S: Ти бронюєш окрему залу на дванадцять осіб. | *Potrebujeme salónik pre dvanásť osôb. ;; Potrebujeme salónik pre dvanásť osoby. ;; Potrebujeme salónikom dvanásť osôb.
+S: Один гість — веган. Ти питаєш офіціанта. | *Máte aj vegánske jedlá? ;; Máte aj vegánsky jedlá? ;; Vegán jedlo máte aj?
+S: Ти виголошуєш тост за співпрацю. | *Pripime si na úspešnú spoluprácu! ;; Pripime si na úspešná spolupráca! ;; Pripime si o úspešnú spoluprácu!
+S: Рахунок 386 €, ти хочеш заплатити 420 € разом із чайовими. Що кажеш? | *Zoberte si štyristodvadsať, prosím. ;; Vydajte štyristodvadsať, prosím. ;; Štyristodvadsať zvyšok vydať.
+R: rezervácia, objednávka, odporúčanie, alergény ;; sťažnosť: Prepáčte, ale… / na účet podniku ;; účet, sprepitné, stravenky, diéty ;; posedenie s kolegami, prípitok, hodnotenie: síce…, ale…
