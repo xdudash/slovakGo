@@ -1,0 +1,924 @@
+{
+  "lessons": [
+    {
+      "id": "b1-u17-l07-ochrana-prirody",
+      "sectionId": "b1-u17",
+      "level": "B1",
+      "title": "Охорона природи",
+      "topic": "Природа і туризм",
+      "description": "Правила поведінки в природі й заповідних територіях: що заборонено, як поводитися при зустрічі з ведмедем і як висловити свою думку про охорону довкілля.",
+      "order": 157,
+      "xpReward": 40,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Розуміти заборони (je zakázané, zákaz, nesmie sa) і висловлювати думку про охорону природи.",
+      "completionMessage": "Ти знаєш, як поводитися в природі. Далі — кемпінг: намет, спальник і правила ночівлі.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B1 · Природа і туризм",
+        "title": "Охорона природи",
+        "shortDescription": "Розуміти заборони (je zakázané, zákaz, nesmie sa) і висловлювати думку про охорону природи.",
+        "outcomes": [
+          "розуміти заборони: je zakázané + інфінітив, zákaz + родовий, nesmie sa",
+          "пояснювати правила в заповідних територіях",
+          "знати, як поводитися при зустрічі з ведмедем",
+          "висловлювати думку: podľa mňa, súhlasím, som proti tomu, aby…"
+        ],
+        "newWords": [
+          "chránený",
+          "životné prostredie",
+          "medveď",
+          "ohnisko",
+          "odpadky",
+          "trhať"
+        ],
+        "exercisesCount": 15,
+        "reward": "+40 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Zákazy",
+          "text": "Заборони мають кілька форм: «Je zakázané» + інфінітив — «Je zakázané trhať kvety»; «Zákaz» + родовий — «Zákaz vstupu so psom», «Zákaz zakladania ohňa»; «nesmie sa» + інфінітив — «Tu sa nesmie fajčiť». Дозвіл: «je povolené», «smie sa».",
+          "examples": [
+            {
+              "sk": "Je zakázané trhať chránené rastliny.",
+              "uk": "Заборонено зривати охоронювані рослини."
+            },
+            {
+              "sk": "Zákaz zakladania ohňa.",
+              "uk": "Заборонено розпалювати вогонь."
+            }
+          ],
+          "shortRule": "je zakázané + інфінітив · zákaz + родовий",
+          "commonMistakes": [
+            {
+              "mistake": "Zákaz vstup.",
+              "correct": "Zákaz vstupu."
+            },
+            {
+              "mistake": "Je zakázaný trhať kvety.",
+              "correct": "Je zakázané trhať kvety."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Medveď",
+          "text": "У Словаччині живе понад тисячу бурих ведмедів. Якщо бачиш ведмедя: не тікай, не наближайся, говори спокійно й повільно відходь. На стежці розмовляй, щоб ведмідь почув тебе заздалегідь. Не залишай їжі й «odpadkov» — сміття приваблює ведмедів до стежок і сіл.",
+          "examples": [
+            {
+              "sk": "Ak stretnete medveďa, neutekajte.",
+              "uk": "Якщо зустрінете ведмедя, не тікайте."
+            },
+            {
+              "sk": "Odpadky si odneste so sebou.",
+              "uk": "Сміття заберіть із собою."
+            }
+          ],
+          "shortRule": "medveď — stretnúť medveďa (знахідний = родовий)",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Názor",
+          "text": "Про охорону природи часто сперечаються. Думка: «Podľa mňa…», «Myslím si, že…», «Som za to, aby…», «Som proti tomu, aby…». Згода й незгода: «Súhlasím s tebou», «S tým nesúhlasím, pretože…». Після «aby» — l-форма: «Som za to, aby sa vstup spoplatnil.»",
+          "examples": [
+            {
+              "sk": "Podľa mňa by sa v národných parkoch nemalo stavať.",
+              "uk": "На мою думку, в національних парках не слід будувати."
+            },
+            {
+              "sk": "Som proti tomu, aby ľudia kŕmili medvede.",
+              "uk": "Я проти того, щоб люди годували ведмедів."
+            }
+          ],
+          "shortRule": "som za to / som proti tomu, aby + l-форма",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b1-u17-l07-ochrana-prirody-w01",
+            "sk": "chránený",
+            "uk": "охоронюваний, заповідний",
+            "pronunciationUk": "хра:нени:",
+            "exampleSk": "Tento kvet je chránený, netrhajte ho.",
+            "exampleUk": "Ця квітка охороняється, не зривайте її."
+          },
+          {
+            "wordId": "b1-u17-l07-ochrana-prirody-w02",
+            "sk": "životné prostredie",
+            "uk": "довкілля, навколишнє середовище",
+            "pronunciationUk": "жівотне: простредьє",
+            "exampleSk": "Plasty škodia životnému prostrediu.",
+            "exampleUk": "Пластик шкодить довкіллю."
+          },
+          {
+            "wordId": "b1-u17-l07-ochrana-prirody-w03",
+            "sk": "medveď",
+            "uk": "ведмідь",
+            "pronunciationUk": "медвєдь",
+            "exampleSk": "Na chodníku sme videli stopy medveďa.",
+            "exampleUk": "На стежці ми бачили сліди ведмедя."
+          },
+          {
+            "wordId": "b1-u17-l07-ochrana-prirody-w04",
+            "sk": "ohnisko",
+            "uk": "облаштоване вогнище",
+            "pronunciationUk": "огніско",
+            "exampleSk": "Oheň sa smie zakladať len na vyznačenom ohnisku.",
+            "exampleUk": "Вогонь можна розпалювати лише на позначеному вогнищі."
+          },
+          {
+            "wordId": "b1-u17-l07-ochrana-prirody-w05",
+            "sk": "odpadky",
+            "uk": "сміття",
+            "pronunciationUk": "одпадки",
+            "exampleSk": "Odpadky si z hôr odneste so sebou.",
+            "exampleUk": "Сміття з гір забирайте із собою."
+          },
+          {
+            "wordId": "b1-u17-l07-ochrana-prirody-w06",
+            "sk": "trhať",
+            "uk": "рвати, зривати",
+            "pronunciationUk": "тргать",
+            "exampleSk": "Deti, netrhajte kvety v rezervácii.",
+            "exampleUk": "Діти, не зривайте квітів у заповіднику."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b1-u17-l07-ochrana-prirody-w01",
+          "sk": "chránený",
+          "uk": "охоронюваний, заповідний",
+          "pronunciationUk": "хра:нени:",
+          "exampleSk": "Tento kvet je chránený, netrhajte ho.",
+          "exampleUk": "Ця квітка охороняється, не зривайте її.",
+          "level": "B1",
+          "topic": "Природа і туризм",
+          "tags": [
+            "b1-u17",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-w02",
+          "sk": "životné prostredie",
+          "uk": "довкілля, навколишнє середовище",
+          "pronunciationUk": "жівотне: простредьє",
+          "exampleSk": "Plasty škodia životnému prostrediu.",
+          "exampleUk": "Пластик шкодить довкіллю.",
+          "level": "B1",
+          "topic": "Природа і туризм",
+          "tags": [
+            "b1-u17",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-w03",
+          "sk": "medveď",
+          "uk": "ведмідь",
+          "pronunciationUk": "медвєдь",
+          "exampleSk": "Na chodníku sme videli stopy medveďa.",
+          "exampleUk": "На стежці ми бачили сліди ведмедя.",
+          "level": "B1",
+          "topic": "Природа і туризм",
+          "tags": [
+            "b1-u17",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-w04",
+          "sk": "ohnisko",
+          "uk": "облаштоване вогнище",
+          "pronunciationUk": "огніско",
+          "exampleSk": "Oheň sa smie zakladať len na vyznačenom ohnisku.",
+          "exampleUk": "Вогонь можна розпалювати лише на позначеному вогнищі.",
+          "level": "B1",
+          "topic": "Природа і туризм",
+          "tags": [
+            "b1-u17",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-w05",
+          "sk": "odpadky",
+          "uk": "сміття",
+          "pronunciationUk": "одпадки",
+          "exampleSk": "Odpadky si z hôr odneste so sebou.",
+          "exampleUk": "Сміття з гір забирайте із собою.",
+          "level": "B1",
+          "topic": "Природа і туризм",
+          "tags": [
+            "b1-u17",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-w06",
+          "sk": "trhať",
+          "uk": "рвати, зривати",
+          "pronunciationUk": "тргать",
+          "exampleSk": "Deti, netrhajte kvety v rezervácii.",
+          "exampleUk": "Діти, не зривайте квітів у заповіднику.",
+          "level": "B1",
+          "topic": "Природа і туризм",
+          "tags": [
+            "b1-u17",
+            "b1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b1-u17-l07-ochrana-prirody-ex01",
+          "lessonId": "b1-u17-l07-ochrana-prirody",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "chránený",
+              "right": "охоронюваний"
+            },
+            {
+              "left": "životné prostredie",
+              "right": "довкілля"
+            },
+            {
+              "left": "medveď",
+              "right": "ведмідь"
+            },
+            {
+              "left": "ohnisko",
+              "right": "облаштоване вогнище"
+            },
+            {
+              "left": "odpadky",
+              "right": "сміття"
+            },
+            {
+              "left": "trhať",
+              "right": "зривати"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b1-u17-l07-ochrana-prirody-w01",
+            "b1-u17-l07-ochrana-prirody-w02",
+            "b1-u17-l07-ochrana-prirody-w03",
+            "b1-u17-l07-ochrana-prirody-w04",
+            "b1-u17-l07-ochrana-prirody-w05",
+            "b1-u17-l07-ochrana-prirody-w06"
+          ]
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-ex02",
+          "lessonId": "b1-u17-l07-ochrana-prirody",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Zákaz "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "vstupom",
+                "vstup",
+                "vstupu"
+              ],
+              "correct": "vstupu"
+            },
+            {
+              "text": " so psom."
+            }
+          ],
+          "explanation": "Zákaz + родовий: zákaz vstupu.",
+          "order": 2
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-ex03",
+          "lessonId": "b1-u17-l07-ochrana-prirody",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Je "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "zakázané",
+                "zakázaný",
+                "zakázaná"
+              ],
+              "correct": "zakázané"
+            },
+            {
+              "text": " zakladať oheň v lese."
+            }
+          ],
+          "explanation": "Je zakázané + інфінітив — завжди середній рід.",
+          "order": 3
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-ex04",
+          "lessonId": "b1-u17-l07-ochrana-prirody",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Ak stretnete ______, neutekajte. (ведмедя)",
+          "acceptedAnswers": [
+            "medveďa"
+          ],
+          "explanation": "Stretnúť + знахідний; medveď — істота, тому medveďa.",
+          "order": 4,
+          "wordIds": [
+            "b1-u17-l07-ochrana-prirody-w03"
+          ]
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-ex05",
+          "lessonId": "b1-u17-l07-ochrana-prirody",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що робити, якщо бачиш ведмедя недалеко від стежки?",
+          "options": [
+            {
+              "id": "a",
+              "text": "швидко тікати",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "говорити спокійно й повільно відходити",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "кинути йому їжу",
+              "correct": false
+            }
+          ],
+          "explanation": "Тікати не можна — ведмідь бігає швидше; їжа привчає ведмедів до людей.",
+          "order": 5
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-ex06",
+          "lessonId": "b1-u17-l07-ochrana-prirody",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Je zakázaný trhať chránené rastliny.",
+          "acceptedAnswers": [
+            "Je zakázané trhať chránené rastliny."
+          ],
+          "explanation": "Je zakázané + інфінітив: середній рід.",
+          "order": 6,
+          "wordIds": [
+            "b1-u17-l07-ochrana-prirody-w01",
+            "b1-u17-l07-ochrana-prirody-w06"
+          ]
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-ex07",
+          "lessonId": "b1-u17-l07-ochrana-prirody",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай табличку біля входу в заповідник.",
+          "document": {
+            "title": "Národná prírodná rezervácia (vzor)",
+            "fields": [
+              {
+                "label": "Zakázané",
+                "value": "zakladať oheň, táboriť, trhať rastliny"
+              },
+              {
+                "label": "Psy",
+                "value": "len na vôdzke"
+              },
+              {
+                "label": "Pohyb",
+                "value": "len po značkovaných chodníkoch"
+              },
+              {
+                "label": "Bicykle",
+                "value": "len po vyznačených cyklotrasách"
+              },
+              {
+                "label": "Porušenie",
+                "value": "pokuta"
+              }
+            ]
+          },
+          "question": "Що в заповіднику дозволено?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "розпалити вогонь на галявині",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "гуляти із собакою без повідка",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "їздити на велосипеді позначеними трасами",
+              "correct": true
+            }
+          ],
+          "explanation": "Bicykle: len po vyznačených cyklotrasách — на велосипеді можна, але лише позначеними трасами.",
+          "order": 7,
+          "wordIds": [
+            "b1-u17-l07-ochrana-prirody-w06"
+          ]
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-ex08",
+          "lessonId": "b1-u17-l07-ochrana-prirody",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Дозволено чи заборонено в національному парку?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Povolené"
+            },
+            {
+              "id": "c2",
+              "title": "Zakázané"
+            }
+          ],
+          "items": [
+            {
+              "sk": "fotografovať zvieratá z diaľky",
+              "category": "c1"
+            },
+            {
+              "sk": "nechávať odpadky v lese",
+              "category": "c2"
+            },
+            {
+              "sk": "chodiť po značkovanom chodníku",
+              "category": "c1"
+            },
+            {
+              "sk": "trhať chránené kvety",
+              "category": "c2"
+            },
+            {
+              "sk": "zakladať oheň v lese",
+              "category": "c2"
+            },
+            {
+              "sk": "opekať na vyznačenom ohnisku",
+              "category": "c1"
+            },
+            {
+              "sk": "kŕmiť medvede",
+              "category": "c2"
+            },
+            {
+              "sk": "venčiť psa na vôdzke",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Заборонено все, що шкодить рослинам і тваринам або може спричинити пожежу.",
+          "order": 8,
+          "wordIds": [
+            "b1-u17-l07-ochrana-prirody-w01",
+            "b1-u17-l07-ochrana-prirody-w03",
+            "b1-u17-l07-ochrana-prirody-w04",
+            "b1-u17-l07-ochrana-prirody-w05",
+            "b1-u17-l07-ochrana-prirody-w06"
+          ]
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-ex09",
+          "lessonId": "b1-u17-l07-ochrana-prirody",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай оголошення сільської ради.",
+          "message": {
+            "sender": "Obecný úrad (vzor)",
+            "body": "Vážení občania, v posledných dňoch sa pri kontajneroch na okraji obce opakovane objavuje medveď. Prosíme vás, aby ste nenechávali odpadky mimo kontajnerov, nechodili za tmy do lesa a psov mali na vôdzke. Ak medveďa uvidíte v obci, volajte 112."
+          },
+          "question": "Чому ведмідь приходить у село?",
+          "options": [
+            {
+              "id": "a",
+              "text": "бо в лісі темно",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "через сміття біля контейнерів",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "через собак без повідка",
+              "correct": false
+            }
+          ],
+          "explanation": "Ведмедя приваблюють odpadky pri kontajneroch — тому просять не залишати сміття поза контейнерами.",
+          "order": 9,
+          "wordIds": [
+            "b1-u17-l07-ochrana-prirody-w03",
+            "b1-u17-l07-ochrana-prirody-w05"
+          ]
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-ex10",
+          "lessonId": "b1-u17-l07-ochrana-prirody",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "V obci pod Tatrami chce investor postaviť nový hotel a lanovku. Starosta hovorí: «Podľa mňa je to šanca pre obec. Ľudia tu budú mať prácu a turisti budú míňať peniaze u nás.» Ochranári však nesúhlasia. «Som proti tomu, aby sa v národnom parku rúbal les kvôli lyžovačke. Žijú tu medvede, kamzíky a chránené vtáky,» hovorí jedna z nich. Miestna obyvateľka Hana má kompromisný názor: «Súhlasím, že potrebujeme prácu, ale hotel by sa mal postaviť v obci, nie v lese.» O projekte rozhodne ministerstvo životného prostredia.",
+          "questions": [
+            {
+              "question": "Чому староста підтримує проєкт?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "будуть робочі місця й гроші від туристів",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "у селі немає дороги",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "він сам хоче працювати в готелі",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що думає природоохоронниця?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "вона хоче переселити ведмедів",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "вона проти вирубки лісу в національному парку",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "вона за новий підйомник",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Яку думку має Гана?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "готель потрібен, але в селі, а не в лісі",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "готель треба будувати в лісі біля підйомника",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "готель не потрібен узагалі",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "b1-u17-l07-ochrana-prirody-w01",
+            "b1-u17-l07-ochrana-prirody-w02",
+            "b1-u17-l07-ochrana-prirody-w03"
+          ]
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-ex11",
+          "lessonId": "b1-u17-l07-ochrana-prirody",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Колега хоче нарвати охоронюваних квітів для дружини. Ти ввічливо застерігаєш.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Pozor, tie kvety sú chránené, je zakázané ich trhať.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Pozor, tie kvety sú chránené, by je zakázané ich trhať.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Pozor, tie kvety sú chránené, je zakázaný ich trhať.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Pozor, tie kvety sú chránený, je zakázané ich trhať.",
+              "correct": false
+            }
+          ],
+          "explanation": "Kvety — множина: sú chránené; je zakázané + інфінітив.",
+          "order": 11,
+          "wordIds": [
+            "b1-u17-l07-ochrana-prirody-w01",
+            "b1-u17-l07-ochrana-prirody-w06"
+          ]
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-ex12",
+          "lessonId": "b1-u17-l07-ochrana-prirody",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kolega",
+              "sk": "Podľa mňa by mal byť vstup do Tatier spoplatnený."
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "S tým nesúhlasím, pretože príroda by mala byť pre všetci.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "S tým nesúhlasím, pretože príroda by mala byť pre všetkých.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "S tým nesúhlasím, pretože príroda by mal byť pre všetkých.",
+              "correct": false
+            }
+          ],
+          "explanation": "Pre + знахідний: pre všetkých; príroda — жіночий рід: mala.",
+          "order": 12
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-ex13",
+          "lessonId": "b1-u17-l07-ochrana-prirody",
+          "type": "sentence_builder",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Склади речення зі слів.",
+          "context": "Скажи: «Я проти того, щоб люди годували ведмедів.»",
+          "tokens": [
+            "Som",
+            "medvede",
+            ".",
+            "proti",
+            "aby",
+            "tomu",
+            "kŕmili",
+            "ľudia",
+            ","
+          ],
+          "correctSentence": "Som proti tomu, aby ľudia kŕmili medvede.",
+          "explanation": "Som proti tomu, aby + l-форма: kŕmili.",
+          "order": 13,
+          "wordIds": [
+            "b1-u17-l07-ochrana-prirody-w03"
+          ]
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-ex14",
+          "lessonId": "b1-u17-l07-ochrana-prirody",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Na chodníku sme videli čerstvé stopy medveď.",
+          "errorToken": "medveď",
+          "correctToken": "medveďa",
+          "explanation": "Stopy + родовий: stopy medveďa.",
+          "order": 14,
+          "wordIds": [
+            "b1-u17-l07-ochrana-prirody-w03"
+          ]
+        },
+        {
+          "id": "b1-u17-l07-ochrana-prirody-ex15",
+          "lessonId": "b1-u17-l07-ochrana-prirody",
+          "type": "tone",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Визнач тон мовця.",
+          "context": "Chatár: «Zase tu niekto nechal plné vrecia odpadkov. Fakt úžasné, ako ľudia milujú prírodu.»",
+          "options": [
+            {
+              "id": "a",
+              "text": "щиро захоплений",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "байдужий",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "іронічний, обурений",
+              "correct": true
+            }
+          ],
+          "explanation": "«Fakt úžasné» після розповіді про сміття — іронія: господар обурений.",
+          "order": 15,
+          "wordIds": [
+            "b1-u17-l07-ochrana-prirody-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Прогулянка в заповіднику",
+        "description": "Ти з друзями у Великій Фатрі, і вам трапляються різні ситуації.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Друг хоче розпалити вогонь на галявині.",
+            "options": [
+              {
+                "sk": "Tu sa oheň nesmie zakladať, poďme k ohnisko.",
+                "correct": false
+              },
+              {
+                "sk": "Tu sa oheň nesmie zakladať, poďme k ohnisku.",
+                "correct": true
+              },
+              {
+                "sk": "Tu sa oheň nesmú zakladať, poďme k ohnisku.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ви бачите ведмедя за сто метрів. Що кажеш друзям?",
+            "options": [
+              {
+                "sk": "Poďme bližšie, odfotíme ho.",
+                "correct": false
+              },
+              {
+                "sk": "Rýchlo, utekajme!",
+                "correct": false
+              },
+              {
+                "sk": "Neutekajme, hovorme pokojne a pomaly odíďme.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Після пікніка залишилося сміття.",
+            "options": [
+              {
+                "sk": "Odpadky si zoberieme so sebe.",
+                "correct": false
+              },
+              {
+                "sk": "Odpadky si zoberieme so sebou.",
+                "correct": true
+              },
+              {
+                "sk": "Odpadky necháme pri strome, niekto ich zoberie.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Друг: «Podľa mňa sú tie zákazy zbytočné.» Ти не погоджуєшся.",
+            "options": [
+              {
+                "sk": "Súhlasím, sú úplne zbytočné.",
+                "correct": false
+              },
+              {
+                "sk": "Nesúhlasím, chránia prírodu aj my.",
+                "correct": false
+              },
+              {
+                "sk": "Nesúhlasím, chránia prírodu aj nás.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти знаєш, як поводитися в природі. Далі — кемпінг: намет, спальник і правила ночівлі."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти знаєш, як поводитися в природі. Далі — кемпінг: намет, спальник і правила ночівлі.",
+        "nowYouKnow": [
+          "je zakázané + інфінітив · zákaz + родовий · nesmie sa",
+          "chránené rastliny, ohnisko, odpadky",
+          "medveď: neutekať, hovoriť pokojne, pomaly odísť",
+          "podľa mňa, súhlasím, som proti tomu, aby…"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 15,
+        "xpReward": 40,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b1-u17-l08-kemping",
+          "title": "Кемпінг"
+        }
+      }
+    }
+  ]
+}
