@@ -34,6 +34,13 @@ def main() -> int:
             k = w["sk"].strip().lower()
             if k in owned:
                 warns.append(f"WARN {l['id']}: word '{w['sk']}' already owned by {owned[k]}")
+    import re
+    mixed = re.compile(r"\S*(?:[Ѐ-ӿ][A-Za-zÀ-ſ]|[A-Za-zÀ-ſ][Ѐ-ӿ])\S*")
+    for p in paths:
+        for i, line in enumerate(p.read_text(encoding="utf-8").splitlines(), 1):
+            for m in mixed.findall(line):
+                if not m.lower().startswith(("e-mail", "e-shop")):
+                    warns.append(f"WARN {p.name}:{i}: mixed Latin/Cyrillic word '{m}'")
     for w in warns:
         print(w)
     print(f"checked {len(lessons)} lessons; exercises={sum(len(l['exercises']) for l in lessons)}")
