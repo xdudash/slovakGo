@@ -1,0 +1,961 @@
+{
+  "lessons": [
+    {
+      "id": "b1-u06-l03-vysetrenia",
+      "sectionId": "b1-u06",
+      "level": "B1",
+      "title": "Обстеження",
+      "topic": "Здоров’я B1",
+      "description": "Рентген, УЗД, МРТ, ЕКГ, аналіз крові й сечі: як підготуватися за інструкцією, що каже лікар під час обстеження і як розуміти результати.",
+      "order": 53,
+      "xpReward": 40,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Підготуватися до обстеження, виконати вказівки лікаря й зрозуміти результат.",
+      "completionMessage": "Ти розумієш обстеження й результати. Далі — перебування в лікарні.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B1 · Здоров’я B1",
+        "title": "Обстеження",
+        "shortDescription": "Підготуватися до обстеження, виконати вказівки лікаря й зрозуміти результат.",
+        "outcomes": [
+          "називати обстеження: röntgen, ultrazvuk, magnetická rezonancia, EKG, krvný obraz",
+          "розуміти інструкції: príďte nalačno, nefajčite, prineste vzorku moču",
+          "виконувати вказівки: vyzlečte sa do pol pása, zhlboka sa nadýchnite",
+          "розуміти результати: v norme, negatívny, zvýšený"
+        ],
+        "newWords": [
+          "röntgen",
+          "ultrazvuk",
+          "magnetická rezonancia",
+          "EKG",
+          "krvný obraz",
+          "vzorka moču"
+        ],
+        "exercisesCount": 15,
+        "reward": "+40 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Види обстежень",
+          "text": "«Röntgen» (RTG) — рентген, «ultrazvuk» (USG, sonografia) — УЗД, «CT» — комп’ютерна томографія, «magnetická rezonancia» — МРТ, «EKG» — електрокардіограма, «krvný obraz» — загальний аналіз крові, «vzorka moču» — зразок сечі. Дієслова: «urobiť vyšetrenie», «ísť na röntgen» (na + знахідний), «dať si urobiť krvné testy».",
+          "examples": [
+            {
+              "sk": "Lekár ma poslal na ultrazvuk brucha.",
+              "uk": "Лікар направив мене на УЗД черевної порожнини."
+            },
+            {
+              "sk": "Na magnetickú rezonanciu sa čaká tri mesiace.",
+              "uk": "На МРТ чекають три місяці."
+            }
+          ],
+          "shortRule": "ísť na + знахідний · urobiť vyšetrenie",
+          "commonMistakes": [
+            {
+              "mistake": "ísť na röntgene",
+              "correct": "ísť na röntgen"
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Підготовка й вказівки",
+          "text": "Інструкції — у наказовому способі або з «nesmiete / treba»: «Príďte nalačno», «Šesť hodín pred vyšetrením nejedzte» (pred + орудний), «Ráno nefajčite», «Prineste si vzorku ranného moču», «Hodinu pred vyšetrením vypite liter vody». Під час огляду: «Vyzlečte sa do pol pása» (роздягніться до пояса), «Ľahnite si na chrbát», «Zhlboka sa nadýchnite a nedýchajte», «Môžete sa obliecť.»",
+          "examples": [
+            {
+              "sk": "Šesť hodín pred vyšetrením nesmiete jesť ani piť.",
+              "uk": "За шість годин до обстеження не можна їсти й пити."
+            },
+            {
+              "sk": "Zhlboka sa nadýchnite a zadržte dych.",
+              "uk": "Глибоко вдихніть і затримайте дихання."
+            }
+          ],
+          "shortRule": "pred + орудний · nesmiete + інфінітив",
+          "commonMistakes": [
+            {
+              "mistake": "pred vyšetrenie",
+              "correct": "pred vyšetrením"
+            },
+            {
+              "mistake": "Ľahnite sa.",
+              "correct": "Ľahnite si."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Результати",
+          "text": "«Výsledky budú do troch dní», «Výsledky pošleme vašej lekárke». Оцінки: «v norme» (у нормі), «negatívny» (негативний — для тесту це зазвичай добре!), «pozitívny», «zvýšený / znížený» (підвищений / знижений): «Máte zvýšený cholesterol.» «Nález je bez patologických zmien» — без патологічних змін, тобто все гаразд. «Treba to doplniť ďalším vyšetrením» — потрібне ще одне обстеження.",
+          "examples": [
+            {
+              "sk": "Krvný obraz je v norme.",
+              "uk": "Аналіз крові в нормі."
+            },
+            {
+              "sk": "Test na chrípku je negatívny.",
+              "uk": "Тест на грип негативний."
+            }
+          ],
+          "shortRule": "v norme · negatívny = добре · zvýšený / znížený",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b1-u06-l03-vysetrenia-w01",
+            "sk": "röntgen",
+            "uk": "рентген",
+            "pronunciationUk": "рентґен",
+            "exampleSk": "Röntgen pľúc je v poriadku.",
+            "exampleUk": "Рентген легень у порядку."
+          },
+          {
+            "wordId": "b1-u06-l03-vysetrenia-w02",
+            "sk": "ultrazvuk",
+            "uk": "УЗД, ультразвук",
+            "pronunciationUk": "ультразвук",
+            "exampleSk": "Na ultrazvuk brucha treba prísť nalačno.",
+            "exampleUk": "На УЗД черевної порожнини треба прийти натщесерце."
+          },
+          {
+            "wordId": "b1-u06-l03-vysetrenia-w03",
+            "sk": "magnetická rezonancia",
+            "uk": "МРТ, магнітно-резонансна томографія",
+            "pronunciationUk": "маґнетіцка: резонанціа",
+            "exampleSk": "Neurológ ma objednal na magnetickú rezonanciu.",
+            "exampleUk": "Невролог записав мене на МРТ."
+          },
+          {
+            "wordId": "b1-u06-l03-vysetrenia-w04",
+            "sk": "EKG",
+            "uk": "ЕКГ, електрокардіограма",
+            "pronunciationUk": "е:-ка:-ґе:",
+            "exampleSk": "Pred operáciou mi urobili EKG.",
+            "exampleUk": "Перед операцією мені зробили ЕКГ."
+          },
+          {
+            "wordId": "b1-u06-l03-vysetrenia-w05",
+            "sk": "krvný obraz",
+            "uk": "загальний аналіз крові",
+            "pronunciationUk": "крвни: образ",
+            "exampleSk": "Krvný obraz bol v poriadku.",
+            "exampleUk": "Загальний аналіз крові був у порядку."
+          },
+          {
+            "wordId": "b1-u06-l03-vysetrenia-w06",
+            "sk": "vzorka moču",
+            "uk": "зразок сечі",
+            "pronunciationUk": "взорка мочу",
+            "exampleSk": "Vzorku moču prineste ráno do ambulancie.",
+            "exampleUk": "Зразок сечі принесіть зранку в амбулаторію."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b1-u06-l03-vysetrenia-w01",
+          "sk": "röntgen",
+          "uk": "рентген",
+          "pronunciationUk": "рентґен",
+          "exampleSk": "Röntgen pľúc je v poriadku.",
+          "exampleUk": "Рентген легень у порядку.",
+          "level": "B1",
+          "topic": "Здоров’я B1",
+          "tags": [
+            "b1-u06",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-w02",
+          "sk": "ultrazvuk",
+          "uk": "УЗД, ультразвук",
+          "pronunciationUk": "ультразвук",
+          "exampleSk": "Na ultrazvuk brucha treba prísť nalačno.",
+          "exampleUk": "На УЗД черевної порожнини треба прийти натщесерце.",
+          "level": "B1",
+          "topic": "Здоров’я B1",
+          "tags": [
+            "b1-u06",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-w03",
+          "sk": "magnetická rezonancia",
+          "uk": "МРТ, магнітно-резонансна томографія",
+          "pronunciationUk": "маґнетіцка: резонанціа",
+          "exampleSk": "Neurológ ma objednal na magnetickú rezonanciu.",
+          "exampleUk": "Невролог записав мене на МРТ.",
+          "level": "B1",
+          "topic": "Здоров’я B1",
+          "tags": [
+            "b1-u06",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-w04",
+          "sk": "EKG",
+          "uk": "ЕКГ, електрокардіограма",
+          "pronunciationUk": "е:-ка:-ґе:",
+          "exampleSk": "Pred operáciou mi urobili EKG.",
+          "exampleUk": "Перед операцією мені зробили ЕКГ.",
+          "level": "B1",
+          "topic": "Здоров’я B1",
+          "tags": [
+            "b1-u06",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-w05",
+          "sk": "krvný obraz",
+          "uk": "загальний аналіз крові",
+          "pronunciationUk": "крвни: образ",
+          "exampleSk": "Krvný obraz bol v poriadku.",
+          "exampleUk": "Загальний аналіз крові був у порядку.",
+          "level": "B1",
+          "topic": "Здоров’я B1",
+          "tags": [
+            "b1-u06",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-w06",
+          "sk": "vzorka moču",
+          "uk": "зразок сечі",
+          "pronunciationUk": "взорка мочу",
+          "exampleSk": "Vzorku moču prineste ráno do ambulancie.",
+          "exampleUk": "Зразок сечі принесіть зранку в амбулаторію.",
+          "level": "B1",
+          "topic": "Здоров’я B1",
+          "tags": [
+            "b1-u06",
+            "b1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b1-u06-l03-vysetrenia-ex01",
+          "lessonId": "b1-u06-l03-vysetrenia",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "röntgen",
+              "right": "рентген"
+            },
+            {
+              "left": "ultrazvuk",
+              "right": "УЗД"
+            },
+            {
+              "left": "magnetická rezonancia",
+              "right": "МРТ"
+            },
+            {
+              "left": "EKG",
+              "right": "електрокардіограма"
+            },
+            {
+              "left": "krvný obraz",
+              "right": "загальний аналіз крові"
+            },
+            {
+              "left": "vzorka moču",
+              "right": "зразок сечі"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b1-u06-l03-vysetrenia-w01",
+            "b1-u06-l03-vysetrenia-w02",
+            "b1-u06-l03-vysetrenia-w03",
+            "b1-u06-l03-vysetrenia-w04",
+            "b1-u06-l03-vysetrenia-w05",
+            "b1-u06-l03-vysetrenia-w06"
+          ]
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-ex02",
+          "lessonId": "b1-u06-l03-vysetrenia",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Šesť hodín pred "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "vyšetrenia",
+                "vyšetrením",
+                "vyšetrenie"
+              ],
+              "correct": "vyšetrením"
+            },
+            {
+              "text": " nejedzte."
+            }
+          ],
+          "explanation": "pred + орудний: pred vyšetrením.",
+          "order": 2
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-ex03",
+          "lessonId": "b1-u06-l03-vysetrenia",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Zajtra idem na "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "röntgene",
+                "röntgenu",
+                "röntgen"
+              ],
+              "correct": "röntgen"
+            },
+            {
+              "text": " pľúc."
+            }
+          ],
+          "explanation": "Куди? — na + знахідний: na röntgen.",
+          "order": 3,
+          "wordIds": [
+            "b1-u06-l03-vysetrenia-w01"
+          ]
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-ex04",
+          "lessonId": "b1-u06-l03-vysetrenia",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай інструкцію перед обстеженням.",
+          "document": {
+            "title": "Pokyny pred vyšetrením – Ultrazvuk brucha",
+            "fields": [
+              {
+                "label": "Termín",
+                "value": "utorok 3. 11. o 7:40"
+              },
+              {
+                "label": "Príprava",
+                "value": "6 hodín pred vyšetrením nejesť"
+              },
+              {
+                "label": "Pitie",
+                "value": "1 hodinu pred vyšetrením vypiť 1 liter neperlivej vody"
+              },
+              {
+                "label": "Fajčenie",
+                "value": "v deň vyšetrenia nefajčiť"
+              },
+              {
+                "label": "Prineste",
+                "value": "výmenný lístok, preukaz poistenca"
+              }
+            ]
+          },
+          "question": "Що треба випити перед обстеженням?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "каву без цукру",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "літр негазованої води за годину до обстеження",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "нічого не можна пити цілий день",
+              "correct": false
+            }
+          ],
+          "explanation": "vypiť 1 liter neperlivej vody — літр негазованої води.",
+          "order": 4,
+          "wordIds": [
+            "b1-u06-l03-vysetrenia-w02"
+          ]
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-ex05",
+          "lessonId": "b1-u06-l03-vysetrenia",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Лікарка каже: «Vyzlečte sa do pol pása.» Що треба зробити?",
+          "options": [
+            {
+              "id": "a",
+              "text": "зняти лише взуття",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "роздягнутися до пояса",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "роздягнутися повністю",
+              "correct": false
+            }
+          ],
+          "explanation": "do pol pása — до пояса.",
+          "order": 5
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-ex06",
+          "lessonId": "b1-u06-l03-vysetrenia",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і оціни кожне твердження.",
+          "text": "Výsledky: krvný obraz je v norme, cholesterol je mierne zvýšený, test na zápal je negatívny. Lekárka odporúča menej tučných jedál a kontrolu o tri mesiace.",
+          "statements": [
+            {
+              "sk": "Аналіз крові в нормі.",
+              "correct": true
+            },
+            {
+              "sk": "Холестерин трохи підвищений.",
+              "correct": true
+            },
+            {
+              "sk": "Тест на запалення позитивний.",
+              "correct": false
+            },
+            {
+              "sk": "Наступний контроль — через тиждень.",
+              "correct": false
+            }
+          ],
+          "explanation": "mierne zvýšený — трохи підвищений; negatívny — запалення немає; kontrola o tri mesiace.",
+          "order": 6,
+          "wordIds": [
+            "b1-u06-l03-vysetrenia-w05"
+          ]
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-ex07",
+          "lessonId": "b1-u06-l03-vysetrenia",
+          "type": "dialogue_order",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Розстав діалог у правильному порядку.",
+          "lines": [
+            {
+              "id": "l7",
+              "sk": "Sestra: Hotovo, môžete sa obliecť. Výsledky pošleme vašej lekárke."
+            },
+            {
+              "id": "l1",
+              "sk": "Sestra: Pán Bondar, poďte ďalej, prosím."
+            },
+            {
+              "id": "l3",
+              "sk": "Sestra: Áno, do pol pása, a ľahnite si na lôžko."
+            },
+            {
+              "id": "l4",
+              "sk": "Pacient: Na chrbát?"
+            },
+            {
+              "id": "l6",
+              "sk": "Pacient: Už je hotovo?"
+            },
+            {
+              "id": "l2",
+              "sk": "Pacient: Dobrý deň. Mám sa vyzliecť?"
+            },
+            {
+              "id": "l5",
+              "sk": "Sestra: Áno. Teraz sa zhlboka nadýchnite a nedýchajte."
+            }
+          ],
+          "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5",
+            "l6",
+            "l7"
+          ],
+          "order": 7
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-ex08",
+          "lessonId": "b1-u06-l03-vysetrenia",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Krvný obraz je v ______, všetko je v poriadku.",
+          "acceptedAnswers": [
+            "norme"
+          ],
+          "explanation": "v norme — у нормі.",
+          "order": 8,
+          "wordIds": [
+            "b1-u06-l03-vysetrenia-w05"
+          ]
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-ex09",
+          "lessonId": "b1-u06-l03-vysetrenia",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Lekárka: «Röntgen je v poriadku, ale tie bolesti sa mi nepáčia. Pošlem vás ešte na magnetickú rezonanciu.»",
+          "options": [
+            {
+              "id": "a",
+              "text": "рентген показав перелом",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "лікарка хоче виключити серйознішу причину, рентгена їй недостатньо",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "лікарка вважає, що пацієнт вигадує",
+              "correct": false
+            }
+          ],
+          "explanation": "Результат у нормі, але лікарка хоче додаткового обстеження.",
+          "order": 9,
+          "wordIds": [
+            "b1-u06-l03-vysetrenia-w01",
+            "b1-u06-l03-vysetrenia-w03"
+          ]
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-ex10",
+          "lessonId": "b1-u06-l03-vysetrenia",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "Lekár: «Test na chrípku je negatívny, môžete ísť do práce.»",
+          "target": "negatívny",
+          "options": [
+            {
+              "id": "a",
+              "text": "тест зіпсований",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "вірус не виявлено — це добрий результат",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "результат поганий",
+              "correct": false
+            }
+          ],
+          "explanation": "Негативний тест — хворобу не виявлено.",
+          "order": 10
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-ex11",
+          "lessonId": "b1-u06-l03-vysetrenia",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Prosím, zhlboka sa nadýchnete a nedýchajte.",
+          "errorToken": "nadýchnete",
+          "correctToken": "nadýchnite",
+          "explanation": "Вказівка — наказовий спосіб: nadýchnite sa.",
+          "order": 11
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-ex12",
+          "lessonId": "b1-u06-l03-vysetrenia",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перетвори на заборону в наказовому способі (vy).",
+          "source": "Ráno nesmiete fajčiť.",
+          "acceptedAnswers": [
+            "Ráno nefajčite.",
+            "Nefajčite ráno."
+          ],
+          "explanation": "Заперечний наказовий: nefajčite.",
+          "order": 12
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-ex13",
+          "lessonId": "b1-u06-l03-vysetrenia",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Добра новина чи треба діяти?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Dobrá správa"
+            },
+            {
+              "id": "c2",
+              "title": "Treba riešiť"
+            }
+          ],
+          "items": [
+            {
+              "sk": "v norme",
+              "category": "c1"
+            },
+            {
+              "sk": "bez patologických zmien",
+              "category": "c1"
+            },
+            {
+              "sk": "negatívny test",
+              "category": "c1"
+            },
+            {
+              "sk": "zvýšený cholesterol",
+              "category": "c2"
+            },
+            {
+              "sk": "treba doplniť vyšetrenie",
+              "category": "c2"
+            },
+            {
+              "sk": "pozitívny nález",
+              "category": "c2"
+            }
+          ],
+          "explanation": "v norme, negatívny, bez patologických zmien — усе гаразд.",
+          "order": 13
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-ex14",
+          "lessonId": "b1-u06-l03-vysetrenia",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що лікар може сказати під час обстеження?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Ľahnite si na chrbát.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Zhlboka sa nadýchnite.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Ľahnite sa na chrbát.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Môžete sa obliecť.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Zhlboka sa nadýchajte si.",
+              "correct": false
+            }
+          ],
+          "explanation": "ľahnúť si (не sa); nadýchnuť sa.",
+          "order": 14
+        },
+        {
+          "id": "b1-u06-l03-vysetrenia-ex15",
+          "lessonId": "b1-u06-l03-vysetrenia",
+          "type": "branching_dialogue",
+          "skill": [
+            "dialogue",
+            "real_life"
+          ],
+          "instruction": "Пройди діалог: обирай доречні відповіді.",
+          "successMessage": "Обстеження пройшло гладко!",
+          "startNode": "n1",
+          "nodes": {
+            "n1": {
+              "speaker": "Sestra",
+              "sk": "Prišli ste nalačno?",
+              "choices": [
+                {
+                  "id": "n1c1",
+                  "sk": "Áno, od večera som nič nejedol.",
+                  "next": "n2",
+                  "quality": "best"
+                },
+                {
+                  "id": "n1c3",
+                  "sk": "Nalačno som, ale raňajkoval.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c2",
+                  "sk": "Áno, od večer nič jedol.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n2": {
+              "speaker": "Sestra",
+              "sk": "Priniesli ste vzorku moču?",
+              "choices": [
+                {
+                  "id": "n2c2",
+                  "sk": "Áno, tu je, aj s výmenný lístok.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c3",
+                  "sk": "Vzorku áno nie.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c1",
+                  "sk": "Áno, tu je, aj s výmenným lístkom.",
+                  "next": "n3",
+                  "quality": "best"
+                }
+              ]
+            },
+            "n3": {
+              "speaker": "Sestra",
+              "sk": "Ako sa cítite?",
+              "choices": [
+                {
+                  "id": "n3c1",
+                  "sk": "Dobre, len mám trochu strach z odberu.",
+                  "next": "n4",
+                  "quality": "best"
+                },
+                {
+                  "id": "n3c2",
+                  "sk": "Dobre, len mám trochu strach z odber.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c3",
+                  "sk": "Cítim dobre strach.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n4": {
+              "speaker": "Sestra",
+              "sk": "Hotovo. Výsledky budú do troch dní.",
+              "choices": [
+                {
+                  "id": "n4c2",
+                  "sk": "Pošlete ich moja lekárka?",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n4c1",
+                  "sk": "Pošlete ich mojej lekárke, alebo si ich mám vyzdvihnúť?",
+                  "next": "success",
+                  "quality": "best"
+                },
+                {
+                  "id": "n4c3",
+                  "sk": "Výsledky tri dni ja.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            }
+          },
+          "order": 15,
+          "wordIds": [
+            "b1-u06-l03-vysetrenia-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Направлення на обстеження",
+        "description": "Сімейна лікарка направила тебе на аналізи й УЗД.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "В інструкції написано «Príďte nalačno». Що це означає?",
+            "options": [
+              {
+                "sk": "Прийти рано-вранці",
+                "correct": false
+              },
+              {
+                "sk": "Прийти, нічого не ївши",
+                "correct": true
+              },
+              {
+                "sk": "Прийти після сніданку",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Медсестра питає, чи ти щось їв. Ти не їв від учорашнього вечора.",
+            "options": [
+              {
+                "sk": "Nie, od večer som nič jesť.",
+                "correct": false
+              },
+              {
+                "sk": "Nie, večer nejedol som nič od.",
+                "correct": false
+              },
+              {
+                "sk": "Nie, od večera som nič nejedol.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Лікар каже: «Zhlboka sa nadýchnite.»",
+            "options": [
+              {
+                "sk": "Глибоко видихнути й лягти",
+                "correct": false
+              },
+              {
+                "sk": "Не дихати носом",
+                "correct": false
+              },
+              {
+                "sk": "Глибоко вдихнути",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Лікарка: «Cholesterol máte mierne zvýšený.»",
+            "options": [
+              {
+                "sk": "Холестерин трохи підвищений",
+                "correct": true
+              },
+              {
+                "sk": "Холестерин значно знижений",
+                "correct": false
+              },
+              {
+                "sk": "Холестерин у нормі",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш обстеження й результати. Далі — перебування в лікарні."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш обстеження й результати. Далі — перебування в лікарні.",
+        "nowYouKnow": [
+          "röntgen, ultrazvuk, magnetická rezonancia, EKG, krvný obraz, vzorka moču",
+          "príďte nalačno, pred vyšetrením nejedzte, nefajčite",
+          "vyzlečte sa do pol pása, zhlboka sa nadýchnite",
+          "v norme, negatívny, zvýšený / znížený"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 15,
+        "xpReward": 40,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b1-u06-l04-nemocnica",
+          "title": "У лікарні"
+        }
+      }
+    }
+  ]
+}

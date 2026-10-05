@@ -1,0 +1,562 @@
+@unit b1-u06 | Здоров’я B1 | Zdravie B1
+
+@lesson priznaky-podrobne | Симптоми докладно | Príznaky podrobne
+desc: Як точно описати лікарю, що з тобою: характер болю, куди він віддає, відколи триває, коли посилюється, і супутні симптоми — нудота, блювання, судоми, оніміння.
+goal: Описати свій стан лікарю так докладно, щоб він швидко зрозумів проблему.
+out: описувати характер болю: tupá, ostrá, pálivá, bodavá, pulzujúca bolesť ;; казати, куди біль віддає: vystreľuje mi do ruky ;; описувати тривалість і зміни: od včera, už tri dni, zhoršuje sa, prichádza a odchádza ;; називати супутні симптоми: nevoľnosť, zvracanie, hnačka, kŕče, tŕpnutie
+done: Ти докладно описуєш свої симптоми. Далі — до якого лікаря-спеціаліста з ними йти.
+T: Який це біль? || На рівні A1–A2 вистачало «Bolí ma hlava». На B1 лікар спитає більше: «Aká je to bolesť?» Біль буває «tupá» (тупий, ниючий), «ostrá» (гострий), «pálivá» (пекучий), «bodavá» (колючий), «pulzujúca» (пульсуючий). Зверни увагу: «bolesť» у словацькій — жіночого роду, тож прикметники мають закінчення -á. Силу болю часто оцінюють за шкалою: «Na stupnici od jedna do desať je to tak sedem.» || Je to tupá bolesť v krížoch. = Це тупий біль у попереку. ;; Bolesť je ostrá a pálivá. = Біль гострий і пекучий. || bolesť (ж. р.) → tupá, ostrá, pálivá, bodavá
+mis: tupý bolesť => tupá bolesť ;; Mám ostrý bolesť. => Mám ostrú bolesť.
+T: Куди віддає і як я почуваюся || Важливо сказати, де біль починається і куди віддає: «vystreľuje (mi) do ruky / do nohy / do chrbta». Стан часто описують конструкціями з давальним відмінком: «Je mi zle» (мені погано), «Je mi na vracanie» (мене нудить), «Točí sa mi hlava» (паморочиться голова), «Tŕpnu mi prsty» (терпнуть пальці). «Kŕč» — судома: «Mám kŕče v lýtkach» (у литках). || Bolesť mi vystreľuje z krížov do ľavej nohy. = Біль віддає мені з попереку в ліву ногу. ;; V noci mi tŕpne pravá ruka. = Уночі в мене терпне права рука. || vystreľuje do + родовий · je mi zle / na vracanie
+mis: Som zle. => Je mi zle. ;; Tŕpnem prsty. => Tŕpnu mi prsty.
+T: Відколи і як змінюється || Лікар спитає: «Odkedy to máte?» — Відколи це у вас? Відповідь: «od včera», «od pondelka» (od + родовий), «už tri dni», «asi týždeň». Як змінюється: «zhoršuje sa» (погіршується), «zlepšuje sa», «prichádza a odchádza» (то з’являється, то зникає), «je to horšie v noci / po jedle / pri chôdzi». Супутні симптоми: «nevoľnosť» (нудота), «zvracanie» (блювання), «hnačka» (діарея). || Bolí ma to už tri dni a v noci je to horšie. = Болить уже три дні, а вночі гірше. ;; Od rána mám hnačku a nevoľnosť. = З ранку в мене діарея й нудота. || od + родовий · už + тривалість · horšie po / pri
+mis: od pondelok => od pondelka ;; Bolesť zhoršuje. => Bolesť sa zhoršuje.
+W: príznak | симптом, ознака | при:знак | Aké máte príznaky okrem horúčky? | Які у вас симптоми, крім температури?
+W: nevoľnosť | нудота | невольность | Po jedle mávam nevoľnosť. | Після їжі в мене буває нудота.
+W: zvracať | блювати | зврацать | Dieťa v noci dvakrát zvracalo. | Дитина вночі двічі блювала.
+W: hnačka | діарея, пронос | гначка | Ak hnačka trvá dlhšie ako tri dni, choďte k lekárovi. | Якщо діарея триває довше ніж три дні, ідіть до лікаря.
+W: kŕč | судома, спазм | кр:ч | V noci ma zobudil kŕč v lýtku. | Уночі мене розбудила судома в литці.
+W: tŕpnuť | терпнути, німіти | тр:пнуть | Pri práci na počítači mi tŕpnu prsty. | Під час роботи за комп’ютером у мене терпнуть пальці.
+W: vystreľovať | віддавати (про біль) | вистрельовать | Bolesť vystreľuje do ľavej ruky. | Біль віддає в ліву руку.
+X mt: З’єднай. | príznak = симптом ;; nevoľnosť = нудота ;; zvracať = блювати ;; hnačka = діарея ;; kŕč = судома ;; tŕpnuť = терпнути
+X dd: Обери. | Je to [*tupá/tupý/tupé] bolesť v krížoch.
+= bolesť — жіночий рід: tupá bolesť.
+X dd: Обери. | Bolí ma to od [*pondelka/pondelok/pondelku].
+= od + родовий: od pondelka.
+X sc~: Що означає «Je mi na vracanie»? | - | *Мене нудить ;; Мене вже вирвало ;; Я хочу повернутися додому
+= Je mi na vracanie — нудить, хочеться блювати (але ще не було).
+X dr: - | Lekárka: Kam vám tá bolesť vystreľuje? | *Do pravej nohy, hlavne keď dlho sedím. ;; Do pravá noha, keď dlho sedím. ;; Vystreľuje ma pravú nohu.
+= do + родовий: do pravej nohy.
+X cat: Розподіли опис болю. | Aká je bolesť: tupá, ostrá, pálivá, bodavá ;; Ako sa mení: zhoršuje sa, prichádza a odchádza, je horšia v noci, zlepšuje sa po lieku
+= Характер болю і те, як він змінюється.
+X rc: - | Dobrý deň, pani doktorka. Asi desať dní ma bolí chrbát v krížoch. Najprv to bola len tupá bolesť po práci, ale od soboty je ostrá a vystreľuje mi do ľavej nohy až po koleno. Horšie je to, keď dlho sedím alebo sa zohnem. V noci mi občas tŕpnu prsty na ľavej nohe. Horúčku nemám a lieky proti bolesti mi pomáhajú len na pár hodín. V práci veľa dvíham ťažké krabice. Mohli by ste mi, prosím, povedať, či mám prísť k vám, alebo rovno k špecialistovi? Ďakujem. Mykola Šapoval
+q~: Як змінився біль? | *спершу був тупий, а із суботи гострий і віддає в ногу ;; спершу був гострий, а тепер тупий ;; біль не змінюється вже десять днів
+q~: Коли Миколі гірше? | *коли довго сидить або нахиляється ;; уночі, коли лежить ;; після їжі
+q~: Що Микола хоче дізнатися? | *чи йти до лікарки, чи одразу до спеціаліста ;; які ліки від болю купити ;; чи можна йому на лікарняний
+X fe: - | V noci [tŕpnem>tŕpnu] mi prsty na pravej ruke.
+= Підмет — prsty (множина): tŕpnu mi prsty.
+X np: Ти хочеш сказати лікарю, що біль то з’являється, то зникає. | *Bolesť prichádza a odchádza. ;; Bolesť ide a príde. ;; Bolesť raz áno a raz nie bolí. ;; Bolesť prichádzam a odchádzam.
+= prichádza a odchádza — то з’являється, то зникає.
+X tr: Скажи те саме з дієсловом «točiť sa». | Mám závrat. | Točí sa mi hlava. ;; Hlava sa mi točí.
+= Točí sa mi hlava — паморочиться голова (давальний mi).
+X fb: Допиши. | Bolesť mi ___ do ľavej ruky. (віддає) | vystreľuje |
+= vystreľovať → (ona) vystreľuje.
+X ms: Обери правильні речення. | - | *Od rána mám nevoľnosť. ;; *Mám kŕče v lýtkach. ;; *Je mi na vracanie. ;; Som na vracanie. ;; Mám ostrý bolesť.
+= Стан — через je mi…; bolesť — жіночий рід: ostrú bolesť.
+X mic: - | Pacient: «Na stupnici od jedna do desať je to tak osem, v noci nespím.» | na stupnici od jedna do desať | *за шкалою від одного до десяти ;; на сходах від першої до десятої ;; з першої до десятої години
+= stupnica — шкала; так оцінюють силу болю.
+X do: Розстав діалог у правильному порядку. | Lekár: Dobrý deň, čo vás trápi? ;; Pacientka: Od včera ma bolí brucho a je mi na vracanie. ;; Lekár: Aká je to bolesť? Ostrá, alebo tupá? ;; Pacientka: Skôr ostrá, vpravo dole, a po jedle je horšia. ;; Lekár: Zvracali ste? Máte teplotu? ;; Pacientka: Raz som zvracala a ráno som mala 38 stupňov.
+X bd: - | Лікарка чітко зрозуміла твій стан!
+> Lekárka: Čo vás k nám privádza? | *Už tri dni mám silné bolesti hlavy a je mi zle. ;; Už tri dni ma bolieť hlava a som zle. ;; Hlava tri dni, zle.
+> Lekárka: Aká je to bolesť? | *Pulzujúca, hlavne v ľavej časti hlavy. ;; Pulzujúci, ľavá hlava. ;; Bolesť je pulzujem vľavo.
+> Lekárka: Máte aj iné príznaky? | *Áno, cez deň mám nevoľnosť a vadí mi svetlo. ;; Áno, mám nevoľnosť svetlo vadiť. ;; Iné príznak áno, svetlo.
+> Lekárka: Kedy je to horšie? | *Večer, po dlhej práci za počítačom. ;; Večer, po dlhá práca za počítač. ;; Horšie je ja večer.
+F: Дзвінок до педіатра || Твоєму синові вночі стало погано, і зранку ти описуєш медсестрі його симптоми.
+S: Ти кажеш, що з ночі в нього болить живіт і його нудить. | *Od noci ho bolí brucho a je mu na vracanie. ;; Od noc ho bolí brucho a je on na vracanie. ;; Brucho bolí od noci, je ho zle.
+S: Медсестра: «Zvracal?» Він блював двічі. | *Áno, dvakrát zvracal. ;; Áno, dvakrát zvracať. ;; Áno, dvakrát som zvracala.
+S: Біль гострий, праворуч унизу. | *Bolesť je ostrá, vpravo dole. ;; Bolesť je ostrý, vpravo dole. ;; Ostré bolesť vpravo dole je.
+S: Медсестра: «Ak sa to zhorší, choďte rovno na pohotovosť.» Що вона радить? | *Якщо стане гірше, одразу йти на чергову допомогу ;; Чекати до завтра в будь-якому разі ;; Дати дитині ліки й нікуди не йти
+R: tupá, ostrá, pálivá, bodavá, pulzujúca bolesť ;; vystreľuje mi do… · je mi zle / na vracanie · tŕpnu mi prsty ;; od + родовий, už tri dni, zhoršuje sa, prichádza a odchádza ;; nevoľnosť, zvracanie, hnačka, kŕče
+
+@lesson specialisti | Лікарі-спеціалісти | Odborní lekári
+desc: Хто що лікує: кардіолог, невролог, ортопед, шкірний і очний лікар, гінеколог — і як розповісти спеціалістові свою історію хвороби.
+goal: Вибрати потрібного спеціаліста, пояснити, чому прийшов, і розповісти, як лікувався досі.
+out: знати, який спеціаліст що лікує, і розмовні назви: ísť na očné, na kožné ;; розрізняти u kardiológa (де?), ku kardiológovi (куди?), od kardiológa (від кого?) ;; називати лікарок: kardiologička, neurologička, očná lekárka ;; розповідати історію: liečim sa na…, užívam…, pred rokom som mal…
+done: Ти знаєш, до якого спеціаліста йти. Далі — обстеження: рентген, УЗД, аналізи.
+T: Хто що лікує || «Kardiológ» лікує серце й тиск, «neurológ» — нерви, головний біль, оніміння, біль у спині, «ortopéd» — суглоби й кістки, «kožný lekár» (dermatológ) — шкіру, «očný lekár» (oftalmológ) — очі, «gynekológ» — жіноче здоров’я, «ORL» (ušný, nosný, krčný lekár) — вухо, ніс і горло. Розмовно часто називають кабінет: «Idem na kožné», «na očné», «na ORL». Хто чим займається: «zaoberať sa» + орудний. || Kardiológ sa zaoberá ochoreniami srdca. = Кардіолог займається хворобами серця. ;; Zajtra idem na očné. = Завтра йду до окуліста. || zaoberať sa + орудний · ísť na očné / kožné
+T: Де? Куди? Від кого? || З A2 ти знаєш «k ortopédovi» (куди?). Тепер — уся система. Де? — «u + родовий»: «Bol som u neurológa.» Від кого? — «od + родовий»: «správa od ortopéda». Лікарка: «kardiologička», «neurologička», «gynekologička», «očná lekárka», «kožná lekárka». Відділення в лікарні: «kardiológia», «neurológia», «ortopédia» → «na kardiológii» (місцевий). || Som objednaný u neurologičky na budúci týždeň. = Я записаний до неврологині на наступний тиждень. ;; Nález od ortopéda som poslal obvodnej lekárke. = Висновок від ортопеда я надіслав дільничній лікарці. || u + родовий · k + давальний · od + родовий
+mis: Bol som u kardiológ. => Bol som u kardiológa. ;; na kardiológie => na kardiológii
+T: Твоя історія хвороби || Спеціаліст попросить коротко розповісти, чим ти хворів і як лікуєшся. «Liečim sa na tlak» — я лікуюся від тиску (liečiť sa na + знахідний). «Užívam lieky na štítnu žľazu» — приймаю ліки для щитоподібної залози. «Pred dvoma rokmi som mal operáciu kolena» — два роки тому мав операцію на коліні (pred + орудний). «V rodine máme cukrovku» — у родині є діабет. Приноси «výmenný lístok» і попередні висновки. || Liečim sa na vysoký tlak už päť rokov. = Я лікуюся від високого тиску вже п’ять років. ;; Otec mal infarkt, preto chodím pravidelne na kontroly. = Батько мав інфаркт, тому я регулярно ходжу на контролі. || liečiť sa na + знахідний · pred + орудний
+mis: Liečim sa od tlaku. => Liečim sa na tlak. ;; pred dva roky => pred dvoma rokmi
+W: kardiológ | кардіолог | кардіоло:ґ | Kardiológ mi urobil EKG. | Кардіолог зробив мені ЕКГ.
+W: neurológ | невролог | неуроло:ґ | Pre bolesti chrbta ma poslali k neurológovi. | Через біль у спині мене направили до невролога.
+W: ortopéd | ортопед | ортопе:д | Ortopéd mi odporučil rehabilitáciu. | Ортопед порадив мені реабілітацію.
+W: kožný lekár | шкірний лікар, дерматолог | кожни: лека:р | S ekzémom chodím ku kožnému lekárovi. | З екземою я ходжу до шкірного лікаря.
+W: očný lekár | окуліст, очний лікар | очни: лека:р | Očný lekár mi predpísal nové okuliare. | Окуліст виписав мені нові окуляри.
+W: gynekológ | гінеколог | ґінеколо:ґ | Ku gynekológovi chodím na prehliadku raz ročne. | До гінеколога я ходжу на огляд раз на рік.
+X mt: З’єднай. | kardiológ = кардіолог ;; neurológ = невролог ;; ortopéd = ортопед ;; kožný lekár = шкірний лікар ;; očný lekár = окуліст ;; gynekológ = гінеколог
+X cat: До якого лікаря з цією проблемою? | Kardiológ: búšenie srdca, vysoký tlak ;; Ortopéd: bolesť kolena, vyvrtnutý členok ;; Kožný lekár: ekzém, podozrivé znamienko ;; Očný lekár: rozmazané videnie, pálenie očí
+= Серце — кардіолог, суглоби — ортопед, шкіра — дерматолог, очі — окуліст.
+X dd: Обери. | Včera som bol u [*neurológa/neurológ/neurológovi].
+= u + родовий: u neurológa.
+X dd: Обери. | Liečim sa [*na/od/proti] vysoký tlak.
+= liečiť sa na + знахідний.
+X sc~: Колега каже: «Zajtra idem na kožné.» Куди він іде? | - | *до шкірного лікаря ;; на шкіряну фабрику ;; на масаж
+= Розмовно: na kožné — до шкірного лікаря.
+X dr: - | Kardiologička: Liečite sa na niečo? Užívate nejaké lieky? | *Áno, liečim sa na štítnu žľazu a lieky užívam každé ráno. ;; Áno, liečim sa od štítna žľaza. ;; Áno, lieky užívam na štítnu žľazu sa.
+= liečiť sa na + знахідний: na štítnu žľazu.
+X msg: Прочитай повідомлення з амбулаторії. | Ortopedická ambulancia | Dobrý deň, váš termín u pána doktora sa presúva z 12. 11. na 19. 11. o 8:30. Prineste si výmenný lístok od všeobecného lekára a RTG snímku kolena, ak ju máte. | Що треба принести? | *направлення від сімейного лікаря і рентгенівський знімок коліна, якщо він є ;; лише паспорт ;; результати аналізу крові
+= výmenný lístok + RTG snímka kolena.
+X rc: - | Olena pracuje v Bratislave ako účtovníčka a celé dni sedí za počítačom. Na jar jej začali tŕpnuť prsty na pravej ruke a bolela ju krčná chrbtica. Všeobecná lekárka ju poslala k neurologičke. Neurologička zistila, že problém nie je v ruke, ale v krčnej chrbtici. Odporučila jej rehabilitáciu a pravidelné cvičenie. Okrem toho jej povedala, nech si dá skontrolovať aj oči, lebo bolesti hlavy môžu súvisieť so zlým zrakom. Očný lekár naozaj zistil, že Olena potrebuje okuliare na prácu s počítačom. Dnes jej prsty netŕpnu tak často a hlava ju bolí menej. Olena hovorí, že najväčšia zmena prišla, keď si v práci upravila stoličku a monitor.
+q~: До кого сімейна лікарка спершу направила Олену? | *до неврологині ;; до ортопеда ;; до окуліста
+q~: Чому неврологиня порадила перевірити очі? | *головний біль може бути пов’язаний із поганим зором ;; в Олени пекли очі ;; так вимагала страхова
+q~: Що, на думку Олени, допомогло найбільше? | *налаштувати стілець і монітор на роботі ;; нові ліки від болю ;; відпустка
+X fe: - | Výsledky som už poslal [obvodná>obvodnej] lekárke.
+= Кому? — давальний: obvodnej lekárke.
+X np: Ти (жінка) кажеш, що записана до кардіологині на вівторок. | *Som objednaná u kardiologičky na utorok. ;; Som objednaná u kardiologička na utorok. ;; Som objednaný u kardiologičky v utorok na. ;; Objednala kardiologička utorok.
+= u + родовий: u kardiologičky; жінка — objednaná.
+X tr: Ти вже в кабінеті. Перетвори «куди?» на «де?». | Idem ku kardiológovi. | Som u kardiológa.
+= Де? — u + родовий: u kardiológa.
+X so: - | Спитай, до якого лікаря тобі йти. | Ku ktorému lekárovi mám ísť?
+= Куди? — k (ku) + давальний: ku ktorému lekárovi.
+X ms: Обери правильні речення. | - | *Bol som u ortopéda. ;; *Idem ku kožnému lekárovi. ;; *Správu od neurológa mám so sebou. ;; Bol som u ortopédovi. ;; Idem ku kožný lekár.
+= u + родовий, k + давальний, od + родовий.
+X tf: - | Lekárka: «S tým znamienkom by som nečakala. Objednajte sa ku kožnému lekárovi čo najskôr.» | Лікарка радить не поспішати до дерматолога. | F
+= nečakala by som, čo najskôr — радить іти якнайшвидше.
+X bd: - | Ти чітко розповів(ла) спеціалістові свою історію!
+> Neurológ: Čo vás ku mne privádza? | *Všeobecná lekárka ma poslala kvôli bolestiam chrbta. ;; Všeobecná lekárka ma poslala kvôli bolesti chrbát. ;; Lekárka poslať ja chrbát.
+> Neurológ: Liečite sa ešte na niečo iné? | *Áno, na vysoký tlak, lieky užívam každé ráno. ;; Áno, od vysokého tlaku liečim. ;; Áno, vysoký tlak lieky ráno sa.
+> Neurológ: Mali ste niekedy nejakú operáciu? | *Áno, pred tromi rokmi som mal operáciu kolena. ;; Áno, pred tri roky som mal operácia koleno. ;; Operáciu áno, koleno tri.
+> Neurológ: Máte so sebou výmenný lístok? | *Áno, nech sa páči, aj s predchádzajúcim nálezom. ;; Áno, nech sa páči, aj s predchádzajúci nález. ;; Výmenný lístok som ho.
+F: Мама в гостях || Твоя мама приїхала до тебе в Словаччину, і ти допомагаєш їй із лікарями.
+S: У мами болить коліно. До кого вона піде? | *K ortopédovi. ;; K ortopéd. ;; U ortopédovi.
+S: Ти пояснюєш лікареві, що вона лікується від тиску. | *Lieči sa na vysoký tlak. ;; Lieči sa od vysokého tlaku. ;; Lieči na vysoký tlak sa.
+S: Ти питаєш медсестру, коли приймає неврологиня. | *Kedy ordinuje pani neurologička? ;; Kedy ordinuje pani neurologičky? ;; Kedy neurologička ordinovať?
+S: Медсестра: «Bez výmenného lístka vás pani doktorka neprijme.» | *Без направлення лікарка не прийме ;; Направлення не потрібне ;; Лікарка приймає без запису
+R: kardiológ, neurológ, ortopéd, kožný a očný lekár, gynekológ ;; u + родовий, k + давальний, od + родовий; kardiologička, na kardiológii ;; liečim sa na…, užívam…, pred rokom som mal… ;; ísť na očné / kožné / ORL
+
+@lesson vysetrenia | Обстеження | Vyšetrenia
+desc: Рентген, УЗД, МРТ, ЕКГ, аналіз крові й сечі: як підготуватися за інструкцією, що каже лікар під час обстеження і як розуміти результати.
+goal: Підготуватися до обстеження, виконати вказівки лікаря й зрозуміти результат.
+out: називати обстеження: röntgen, ultrazvuk, magnetická rezonancia, EKG, krvný obraz ;; розуміти інструкції: príďte nalačno, nefajčite, prineste vzorku moču ;; виконувати вказівки: vyzlečte sa do pol pása, zhlboka sa nadýchnite ;; розуміти результати: v norme, negatívny, zvýšený
+done: Ти розумієш обстеження й результати. Далі — перебування в лікарні.
+T: Види обстежень || «Röntgen» (RTG) — рентген, «ultrazvuk» (USG, sonografia) — УЗД, «CT» — комп’ютерна томографія, «magnetická rezonancia» — МРТ, «EKG» — електрокардіограма, «krvný obraz» — загальний аналіз крові, «vzorka moču» — зразок сечі. Дієслова: «urobiť vyšetrenie», «ísť na röntgen» (na + знахідний), «dať si urobiť krvné testy». || Lekár ma poslal na ultrazvuk brucha. = Лікар направив мене на УЗД черевної порожнини. ;; Na magnetickú rezonanciu sa čaká tri mesiace. = На МРТ чекають три місяці. || ísť na + знахідний · urobiť vyšetrenie
+mis: ísť na röntgene => ísť na röntgen
+T: Підготовка й вказівки || Інструкції — у наказовому способі або з «nesmiete / treba»: «Príďte nalačno», «Šesť hodín pred vyšetrením nejedzte» (pred + орудний), «Ráno nefajčite», «Prineste si vzorku ranného moču», «Hodinu pred vyšetrením vypite liter vody». Під час огляду: «Vyzlečte sa do pol pása» (роздягніться до пояса), «Ľahnite si na chrbát», «Zhlboka sa nadýchnite a nedýchajte», «Môžete sa obliecť.» || Šesť hodín pred vyšetrením nesmiete jesť ani piť. = За шість годин до обстеження не можна їсти й пити. ;; Zhlboka sa nadýchnite a zadržte dych. = Глибоко вдихніть і затримайте дихання. || pred + орудний · nesmiete + інфінітив
+mis: pred vyšetrenie => pred vyšetrením ;; Ľahnite sa. => Ľahnite si.
+T: Результати || «Výsledky budú do troch dní», «Výsledky pošleme vašej lekárke». Оцінки: «v norme» (у нормі), «negatívny» (негативний — для тесту це зазвичай добре!), «pozitívny», «zvýšený / znížený» (підвищений / знижений): «Máte zvýšený cholesterol.» «Nález je bez patologických zmien» — без патологічних змін, тобто все гаразд. «Treba to doplniť ďalším vyšetrením» — потрібне ще одне обстеження. || Krvný obraz je v norme. = Аналіз крові в нормі. ;; Test na chrípku je negatívny. = Тест на грип негативний. || v norme · negatívny = добре · zvýšený / znížený
+W: röntgen | рентген | рентґен | Röntgen pľúc je v poriadku. | Рентген легень у порядку.
+W: ultrazvuk | УЗД, ультразвук | ультразвук | Na ultrazvuk brucha treba prísť nalačno. | На УЗД черевної порожнини треба прийти натщесерце.
+W: magnetická rezonancia | МРТ, магнітно-резонансна томографія | маґнетіцка: резонанціа | Neurológ ma objednal na magnetickú rezonanciu. | Невролог записав мене на МРТ.
+W: EKG | ЕКГ, електрокардіограма | е:-ка:-ґе: | Pred operáciou mi urobili EKG. | Перед операцією мені зробили ЕКГ.
+W: krvný obraz | загальний аналіз крові | крвни: образ | Krvný obraz bol v poriadku. | Загальний аналіз крові був у порядку.
+W: vzorka moču | зразок сечі | взорка мочу | Vzorku moču prineste ráno do ambulancie. | Зразок сечі принесіть зранку в амбулаторію.
+X mt: З’єднай. | röntgen = рентген ;; ultrazvuk = УЗД ;; magnetická rezonancia = МРТ ;; EKG = електрокардіограма ;; krvný obraz = загальний аналіз крові ;; vzorka moču = зразок сечі
+X dd: Обери. | Šesť hodín pred [*vyšetrením/vyšetrenie/vyšetrenia] nejedzte.
+= pred + орудний: pred vyšetrením.
+X dd: Обери. | Zajtra idem na [*röntgen/röntgene/röntgenu] pľúc.
+= Куди? — na + знахідний: na röntgen.
+X doc: Прочитай інструкцію перед обстеженням. | Pokyny pred vyšetrením – Ultrazvuk brucha | Termín: utorok 3. 11. o 7:40 ;; Príprava: 6 hodín pred vyšetrením nejesť ;; Pitie: 1 hodinu pred vyšetrením vypiť 1 liter neperlivej vody ;; Fajčenie: v deň vyšetrenia nefajčiť ;; Prineste: výmenný lístok, preukaz poistenca | Що треба випити перед обстеженням? | *літр негазованої води за годину до обстеження ;; каву без цукру ;; нічого не можна пити цілий день
+= vypiť 1 liter neperlivej vody — літр негазованої води.
+X sc~: Лікарка каже: «Vyzlečte sa do pol pása.» Що треба зробити? | - | *роздягнутися до пояса ;; зняти лише взуття ;; роздягнутися повністю
+= do pol pása — до пояса.
+X tfl: - | Výsledky: krvný obraz je v norme, cholesterol je mierne zvýšený, test na zápal je negatívny. Lekárka odporúča menej tučných jedál a kontrolu o tri mesiace. | *Аналіз крові в нормі. ;; *Холестерин трохи підвищений. ;; Тест на запалення позитивний. ;; Наступний контроль — через тиждень.
+= mierne zvýšený — трохи підвищений; negatívny — запалення немає; kontrola o tri mesiace.
+X do: Розстав діалог у правильному порядку. | Sestra: Pán Bondar, poďte ďalej, prosím. ;; Pacient: Dobrý deň. Mám sa vyzliecť? ;; Sestra: Áno, do pol pása, a ľahnite si na lôžko. ;; Pacient: Na chrbát? ;; Sestra: Áno. Teraz sa zhlboka nadýchnite a nedýchajte. ;; Pacient: Už je hotovo? ;; Sestra: Hotovo, môžete sa obliecť. Výsledky pošleme vašej lekárke.
+X fb: Допиши. | Krvný obraz je v ___, všetko je v poriadku. | norme |
+= v norme — у нормі.
+X hm: - | Lekárka: «Röntgen je v poriadku, ale tie bolesti sa mi nepáčia. Pošlem vás ešte na magnetickú rezonanciu.» | *лікарка хоче виключити серйознішу причину, рентгена їй недостатньо ;; рентген показав перелом ;; лікарка вважає, що пацієнт вигадує
+= Результат у нормі, але лікарка хоче додаткового обстеження.
+X mic: - | Lekár: «Test na chrípku je negatívny, môžete ísť do práce.» | negatívny | *вірус не виявлено — це добрий результат ;; результат поганий ;; тест зіпсований
+= Негативний тест — хворобу не виявлено.
+X fe: - | Prosím, zhlboka sa [nadýchnete>nadýchnite] a nedýchajte.
+= Вказівка — наказовий спосіб: nadýchnite sa.
+X tr: Перетвори на заборону в наказовому способі (vy). | Ráno nesmiete fajčiť. | Ráno nefajčite. ;; Nefajčite ráno.
+= Заперечний наказовий: nefajčite.
+X cat: Добра новина чи треба діяти? | Dobrá správa: v norme, negatívny test, bez patologických zmien ;; Treba riešiť: zvýšený cholesterol, pozitívny nález, treba doplniť vyšetrenie
+= v norme, negatívny, bez patologických zmien — усе гаразд.
+X ms: Що лікар може сказати під час обстеження? | - | *Ľahnite si na chrbát. ;; *Zhlboka sa nadýchnite. ;; *Môžete sa obliecť. ;; Ľahnite sa na chrbát. ;; Zhlboka sa nadýchajte si.
+= ľahnúť si (не sa); nadýchnuť sa.
+X bd: - | Обстеження пройшло гладко!
+> Sestra: Prišli ste nalačno? | *Áno, od večera som nič nejedol. ;; Áno, od večer nič jedol. ;; Nalačno som, ale raňajkoval.
+> Sestra: Priniesli ste vzorku moču? | *Áno, tu je, aj s výmenným lístkom. ;; Áno, tu je, aj s výmenný lístok. ;; Vzorku áno nie.
+> Sestra: Ako sa cítite? | *Dobre, len mám trochu strach z odberu. ;; Dobre, len mám trochu strach z odber. ;; Cítim dobre strach.
+> Sestra: Hotovo. Výsledky budú do troch dní. | *Pošlete ich mojej lekárke, alebo si ich mám vyzdvihnúť? ;; Pošlete ich moja lekárka? ;; Výsledky tri dni ja.
+F: Направлення на обстеження || Сімейна лікарка направила тебе на аналізи й УЗД.
+S: В інструкції написано «Príďte nalačno». Що це означає? | *Прийти, нічого не ївши ;; Прийти рано-вранці ;; Прийти після сніданку
+S: Медсестра питає, чи ти щось їв. Ти не їв від учорашнього вечора. | *Nie, od večera som nič nejedol. ;; Nie, od večer som nič jesť. ;; Nie, večer nejedol som nič od.
+S: Лікар каже: «Zhlboka sa nadýchnite.» | *Глибоко вдихнути ;; Глибоко видихнути й лягти ;; Не дихати носом
+S: Лікарка: «Cholesterol máte mierne zvýšený.» | *Холестерин трохи підвищений ;; Холестерин у нормі ;; Холестерин значно знижений
+R: röntgen, ultrazvuk, magnetická rezonancia, EKG, krvný obraz, vzorka moču ;; príďte nalačno, pred vyšetrením nejedzte, nefajčite ;; vyzlečte sa do pol pása, zhlboka sa nadýchnite ;; v norme, negatívny, zvýšený / znížený
+
+@lesson nemocnica | У лікарні | V nemocnici
+desc: Перебування в лікарні: госпіталізація, відділення, що взяти з собою, ранковий обхід, години відвідування, інформація про стан рідних і виписка.
+goal: Зорієнтуватися в лікарні як пацієнт або як родич пацієнта.
+out: називати відділення: interné, chirurgia, detské oddelenie, JIS ;; розуміти розпорядок: vizita, návštevné hodiny, primár ;; питати про стан родича: Ako sa má…? Kedy ho prepustia? ;; розуміти prepúšťaciu správu і що з нею робити
+done: Ти орієнтуєшся в лікарні. Далі — операція: до, під час і після.
+T: Госпіталізація || Якщо лікар вирішить тебе «hospitalizovať» (госпіталізувати), тебе приймуть на «oddelenie» (відділення): «interné» (терапевтичне), «chirurgia», «detské oddelenie», «JIS» — jednotka intenzívnej starostlivosti (інтенсивна терапія). «Ležať v nemocnici» — лежати в лікарні. Що взяти: preukaz poistenca, doklad totožnosti, zoznam liekov, ktoré užívaš, pyžamo, prezuvky, hygienické potreby. Цінні речі краще лишити вдома. || Brata hospitalizovali na internom oddelení. = Брата госпіталізували в терапевтичне відділення. ;; Mama leží v nemocnici už týždeň. = Мама лежить у лікарні вже тиждень. || ležať v nemocnici · na + місцевий (na internom oddelení)
+mis: Leží na nemocnici. => Leží v nemocnici.
+T: Розпорядок || Зранку лікарі обходять пацієнтів — «vizita»: «Počas vizity sa pýtajte na všetko, čo vás trápi.» Завідувач відділення — «primár». Рідні приходять у «návštevné hodiny», наприклад «denne 15:00 – 18:00»; на JIS відвідування обмежені. Потрібна допомога — натисни кнопку виклику біля ліжка й попроси: «Mohli by ste mi, prosím, pomôcť?» || Vizita je každé ráno o ôsmej. = Обхід щоранку о восьмій. ;; Návštevné hodiny sú od tretej do šiestej. = Години відвідування — з третьої до шостої. || vizita · primár · návštevné hodiny
+T: Стан пацієнта і виписка || Інформацію про стан здоров’я зазвичай дає лише лікар і лише близьким: «Informácie o zdravotnom stave podáva ošetrujúci lekár.» Питай: «Ako sa má môj otec?», «Kedy ho prepustia?» — Коли його випишуть? Увага: «виписати з лікарні» — «prepustiť», а «vypísať» — виписати документ (рецепт, PN). Під час виписки отримаєш «prepúšťaciu správu» з діагнозом, лікуванням і рекомендаціями — її треба віднести сімейному лікарю. || Otca prepustia v piatok, ak budú výsledky dobré. = Батька випишуть у п’ятницю, якщо результати будуть добрі. ;; Prepúšťaciu správu odneste obvodnému lekárovi. = Виписку віднесіть дільничному лікарю. || prepustiť z nemocnice · prepúšťacia správa
+mis: Kedy ho vypíšu z nemocnice? => Kedy ho prepustia z nemocnice?
+W: hospitalizovať | госпіталізувати | госпіталізовать | Po úraze ho museli hospitalizovať. | Після травми його довелося госпіталізувати.
+W: vizita | обхід (лікарів у лікарні) | візіта | Počas vizity sa ma lekár pýtal, ako som spal. | Під час обходу лікар питав мене, як я спав.
+W: primár | завідувач відділення | пріма:р | Primár rozhodol, že operácia nebude potrebná. | Завідувач вирішив, що операція не буде потрібна.
+W: návštevné hodiny | години відвідування | на:вштевне: години | Návštevné hodiny sú denne od 15:00 do 18:00. | Години відвідування — щодня з 15:00 до 18:00.
+W: prepustiť | виписати (з лікарні) | препустіть | Mamu prepustili z nemocnice v piatok. | Маму виписали з лікарні в п’ятницю.
+W: prepúšťacia správa | виписка (з лікарні) | препу:штяціа спра:ва | Prepúšťaciu správu si dobre odložte. | Виписку добре збережіть.
+X mt: З’єднай. | hospitalizovať = госпіталізувати ;; vizita = обхід лікарів ;; primár = завідувач відділення ;; návštevné hodiny = години відвідування ;; prepustiť = виписати з лікарні ;; prepúšťacia správa = виписка
+X dd: Обери. | Otec už týždeň leží [*v/na/do] nemocnici.
+= ležať v nemocnici.
+X dd: Обери. | Brata hospitalizovali na [*internom/interné/interného] oddelení.
+= na + місцевий: na internom oddelení.
+X sch: Подивись на розпорядок відділення. | Interné oddelenie – denný režim | Budíček = 6:00 ;; Vizita = 8:00 – 9:30 ;; Obed = 11:30 ;; Návštevné hodiny = 15:00 – 18:00 ;; Večera = 17:00 ;; Nočný pokoj = 21:00 | Коли можна прийти провідати хворого? | *з 15:00 до 18:00 ;; з 8:00 до 9:30 ;; після 21:00
+= návštevné hodiny — 15:00 – 18:00.
+X sc~: Що означає питання «Kedy ho prepustia?» | - | *Коли його випишуть? ;; Коли його відпустять на обід? ;; Коли його переведуть в інше відділення?
+= prepustiť z nemocnice — виписати з лікарні.
+X fe: - | Kedy otca [vypíšu>prepustia] z nemocnice?
+= З лікарні — prepustiť; vypísať — виписати документ (рецепт, PN).
+X tr: Перетвори на ввічливе прохання з «Mohli by ste…». | Pomôžte mi vstať. | Mohli by ste mi pomôcť vstať?
+= Mohli by ste + інфінітив — ввічливе прохання.
+X msg: Прочитай повідомлення від брата. | Andrij | Ahoj, mama je od včera na chirurgii, izba 214. Operácia dopadla dobre, ale je ešte unavená. Návštevy sú od tretej do šiestej, ale dnes, prosím, nechoďte všetci naraz, primár povedal, že potrebuje pokoj. Prines jej, prosím, pyžamo a nabíjačku. | Про що просить брат? | *не приходити всім одночасно й принести мамі піжаму та зарядку ;; зовсім не приходити до кінця тижня ;; принести мамі їжу з дому
+= nechoďte všetci naraz — не йдіть усі разом; pyžamo a nabíjačku.
+X rc: - | Minulý mesiac som strávil päť dní v nemocnici v Prešove. Prijali ma na interné oddelenie s vysokým tlakom a silnými bolesťami hlavy. Prvý deň som bol dosť vystrašený, lebo som nerozumel všetkým slovám, ktoré lekári používali. Sestry však boli trpezlivé, a keď som niečomu nerozumel, vysvetlili mi to jednoduchšie. Každé ráno bola vizita. Primár sa ma raz spýtal, či rozumiem liečbe, a keď som povedal, že nie celkom, sadol si ku mne a všetko mi nakreslil. Manželka chodila každý deň v návštevných hodinách. Pri prepustení som dostal prepúšťaciu správu s novými liekmi a s odporúčaním na kontrolu u kardiológa. Správu som hneď na druhý deň odniesol obvodnej lekárke.
+q~: Чому автор першого дня боявся? | *не розумів усіх слів, які вживали лікарі ;; у нього був дуже високий тиск ;; дружина не могла прийти
+q~: Що зробив завідувач, коли автор не все розумів? | *сів до нього й усе намалював ;; покликав перекладача ;; дав йому брошуру
+q~: Що автор зробив із випискою? | *наступного дня відніс її дільничній лікарці ;; віддав кардіологові в лікарні ;; надіслав у страхову
+X np: Ти (чоловік) телефонуєш у лікарню й хочеш дізнатися про стан батька. | *Dobrý deň, chcel by som sa informovať o zdravotnom stave môjho otca. ;; Dobrý deň, chcel by som sa informovať o zdravotný stav môj otec. ;; Ako je otec zdravotný? ;; Informujte ma otca.
+= informovať sa o + місцевий: o zdravotnom stave môjho otca.
+X fb: Допиши. | Mamu ___ z nemocnice v piatok. (виписали) | prepustili |
+= prepustiť → prepustili (вони, минулий час).
+X reg: - | Informácie o zdravotnom stave pacientov podáva výlučne ošetrujúci lekár. | formal
+= výlučne, podáva informácie — офіційне оголошення.
+X do: Розстав телефонну розмову. | Sestra: Interné oddelenie, sestra Hudáková, prosím. ;; Volajúca: Dobrý deň, moja mama u vás leží od pondelka. Ako sa má? ;; Sestra: Telefonicky vám informácie dať nemôžem. Musíte sa porozprávať s lekárom. ;; Volajúca: A kedy je to možné? ;; Sestra: Pán primár je tu po vizite, okolo desiatej. ;; Volajúca: Ďakujem, prídem osobne.
+X ms: Що зазвичай радять узяти в лікарню? | - | *preukaz poistenca ;; *zoznam liekov, ktoré užívate ;; *prezuvky a pyžamo ;; šperky a cennosti ;; vlastnú posteľ
+= Документи, список ліків і особисті речі; цінності краще лишити вдома.
+X bd: - | Ти провідав(ла) тата в лікарні!
+> Vrátnik: Dobrý deň, kam idete? | *Dobrý deň, idem na návštevu na interné oddelenie. ;; Dobrý deň, idem návšteva na interné oddelenie. ;; Interné oddelenie som návštevu.
+> Sestra: Koho hľadáte? | *Pána Petra Hnatiuka, leží tu od pondelka. ;; Pán Peter Hnatiuk, hospitalizovať pondelok. ;; Hnatiuka pána, leží pondelok na.
+> Sestra: Je na izbe 12, ale práve má vyšetrenie. Počkajte chvíľu. | *Dobre, počkám. Neviete, kedy ho prepustia? ;; Dobre, počkám. Neviete, kedy ho vypíšu? ;; Počkám chvíľu ho prepustiť.
+> Sestra: To vám povie lekár, pán primár je tu do tretej. | *Rozumiem, ďakujem za informáciu. ;; Rozumiem, ďakujem za informácia. ;; Rozumel, ďakujem informáciu.
+F: Тато в лікарні || Твого тата госпіталізували, і тобі треба все з’ясувати.
+S: Ти питаєш, у якому відділенні лежить тато. | *Na ktorom oddelení leží môj otec? ;; Na ktoré oddelenie leží môj otec? ;; V ktorom oddelení ležať otec?
+S: «Návštevné hodiny sú od tretej do šiestej.» | *Відвідувати можна з 15:00 до 18:00 ;; Обхід лікарів — із третьої до шостої ;; Тато вільний із третьої до шостої
+S: Ти питаєш, коли його випишуть. | *Kedy ho prepustia? ;; Kedy ho vypíšu? ;; Kedy ho prepúšťať?
+S: Під час виписки тобі дали prepúšťaciu správu. Що з нею зробити? | *Віднести сімейному лікарю ;; Викинути після виписки ;; Віддати на роботу замість лікарняного
+R: hospitalizovať, ležať v nemocnici, interné oddelenie, JIS ;; vizita, primár, návštevné hodiny ;; Ako sa má…? Kedy ho prepustia? (не vypíšu!) ;; prepúšťacia správa → obvodný lekár
+
+@lesson operacia | Операція | Operácia
+desc: Що відбувається до, під час і після операції: передопераційне обстеження, інформована згода, наркоз, шви, шрам і відновлення — і як про все це запитати.
+goal: Розуміти пояснення лікаря щодо операції, ставити запитання й дотримуватися режиму після неї.
+out: розрізняти plánovaná a akútna operácia, zákrok ;; підписувати informovaný súhlas і питати про ризики ;; розуміти celková narkóza та lokálne umŕtvenie ;; виконувати вказівки після операції: stehy, jazva, nedvíhajte nič ťažké, rekonvalescencia
+done: Ти розумієш, як проходить операція й відновлення. Далі — невідкладна допомога і швидка.
+T: Перед операцією || Операція буває «plánovaná» (планова, з датою наперед) або «akútna» (екстрена). Менша процедура — «zákrok»: «malý chirurgický zákrok». Перед плановою операцією потрібне «predoperačné vyšetrenie» — аналізи, ЕКГ, іноді рентген легень. Ти підписуєш «informovaný súhlas» — інформовану згоду: лікар мусить пояснити, що робитимуть і які ризики. Не соромся питати: «Aké sú riziká?», «Ako dlho budem v nemocnici?» || Pred operáciou podpíšete informovaný súhlas. = Перед операцією ви підпишете інформовану згоду. ;; Na predoperačné vyšetrenie choďte k obvodnej lekárke. = На передопераційне обстеження ідіть до дільничної лікарки. || plánovaná × akútna · informovaný súhlas
+T: Наркоз || «Celková narkóza» (celková anestézia) — загальний наркоз: ти спиш. «Lokálne umŕtvenie» — місцеве знеболення: «Umŕtvime vám len prst.» Анестезіолог («anesteziológ») спитає про алергії, ліки й попередні наркози. Стан — з прийменником v + місцевий: «v celkovej narkóze». Перед наркозом: «Šesť hodín pred operáciou nejedzte a nepite.» || Operácia bude v celkovej narkóze. = Операція буде під загальним наркозом. ;; Mali ste niekedy problém s narkózou? = У вас колись були проблеми з наркозом? || v celkovej narkóze · lokálne umŕtvenie
+T: Після операції || «Stehy» — шви: «Stehy vám vyberieme o desať dní» (знімемо шви). «Jazva» — шрам. Обережно: «jazva» звучить як «язва», але означає саме шрам; виразка словацькою — «vred». «Rekonvalescencia» — відновлення після хвороби чи операції. Типові вказівки: «Dva týždne nedvíhajte nič ťažké», «Ranu udržiavajte v suchu», «Ak sa rana zapáli alebo dostanete horúčku, okamžite príďte.» || Jazva sa hojí dobre. = Шрам добре гоїться. ;; Rekonvalescencia potrvá asi šesť týždňov. = Відновлення триватиме приблизно шість тижнів. || jazva = шрам · vybrať stehy · nedvíhajte
+W: operácia | операція | операціа | Operácia trvala dve hodiny. | Операція тривала дві години.
+W: zákrok | (медичне) втручання, процедура | за:крок | Je to krátky zákrok, domov pôjdete ešte dnes. | Це коротка процедура, додому ви підете ще сьогодні.
+W: narkóza | наркоз | нарко:за | Po narkóze som bol celý deň ospalý. | Після наркозу я був сонний увесь день.
+W: informovaný súhlas | інформована згода | інформовани: су:глас | Pred zákrokom som podpísala informovaný súhlas. | Перед процедурою я підписала інформовану згоду.
+W: stehy | шви | стехи | Stehy mi vyberú o desať dní. | Шви мені знімуть через десять днів.
+W: jazva | шрам, рубець | язва | Po operácii mi zostala malá jazva. | Після операції в мене лишився маленький шрам.
+W: rekonvalescencia | відновлення, одужання | реконвалесценціа | Počas rekonvalescencie nemôžem chodiť do práce. | Під час відновлення я не можу ходити на роботу.
+X mt: З’єднай. | zákrok = процедура, втручання ;; narkóza = наркоз ;; informovaný súhlas = інформована згода ;; stehy = шви ;; jazva = шрам ;; rekonvalescencia = відновлення
+X dd: Обери. | Operácia bude v celkovej [*narkóze/narkóza/narkózu].
+= v + місцевий: v narkóze.
+X dd: Обери. | Dva týždne [*nedvíhajte/nedvíhať/nedvíhate] nič ťažké.
+= Вказівка — заперечний наказовий: nedvíhajte.
+X sc~: Лікар: «Je to plánovaná operácia, nie akútna.» Що це означає? | - | *Операцію призначать на дату наперед ;; Операцію зроблять негайно ;; Операції не буде
+= plánovaná — планова, з датою наперед.
+X mic: - | Sestra: «Rana sa hojí pekne, jazva bude takmer neviditeľná.» | jazva | *шрам ;; виразка ;; пов’язка
+= jazva — шрам; виразка словацькою — vred.
+X doc: Прочитай частину інформованої згоди. | Informovaný súhlas pacienta | Pacientka: Iryna Kravec ;; Výkon: laparoskopické odstránenie žlčníka ;; Anestézia: celková ;; Možné riziká: krvácanie, infekcia rany, reakcia na anestéziu ;; Predpokladaná hospitalizácia: 2 – 3 dni | Яке знеболення буде в Ірини? | *загальний наркоз ;; місцеве знеболення ;; без знеболення
+= Anestézia: celková — загальний наркоз.
+X rc: - | Odporúčania po operácii slepého čreva: Prvé dva dni veľa odpočívajte, ale chodiť môžete, pohyb je dôležitý. Ranu udržiavajte v suchu. Sprchovať sa môžete po troch dňoch, kúpať sa vo vani až po vybratí stehov. Stehy vám vyberie obvodný lekár o desať dní. Štyri týždne nedvíhajte nič ťažšie ako päť kilogramov a necvičte. Ak sa rana zapáli, začervená alebo dostanete horúčku nad 38 stupňov, okamžite kontaktujte lekára. Rekonvalescencia trvá zvyčajne tri až štyri týždne, potom sa môžete vrátiť do práce.
+q~: Коли можна приймати ванну? | *лише після зняття швів ;; через три дні ;; одразу після операції
+q~: Хто і коли зніме шви? | *дільничний лікар через десять днів ;; хірург у лікарні наступного дня ;; пацієнт сам удома
+q~: Коли треба негайно звернутися до лікаря? | *якщо рана запалиться, почервоніє або температура понад 38 ;; якщо хочеться спати ;; якщо хочеться рухатися
+X fe: - | Pred operáciou musíte podpísať [informovaná>informovaný] súhlas.
+= súhlas — чоловічий рід: informovaný súhlas.
+X np: Ти хочеш спитати лікаря про ризики процедури. | *Aké sú riziká tohto zákroku? ;; Aké sú riziko tohto zákroku? ;; Riziká zákrok aké? ;; Akí sú riziká tohto zákroku?
+= riziká — множина середнього роду: aké sú riziká.
+X tr: Перетвори на вказівку в наказовому способі (vy). | Mesiac nesmiete športovať. | Mesiac nešportujte. ;; Nešportujte mesiac.
+= Заборона — заперечний наказовий: nešportujte.
+X cat: До чи після операції? | Pred operáciou: predoperačné vyšetrenie, informovaný súhlas, prísť nalačno ;; Po operácii: vyberanie stehov, rekonvalescencia, starostlivosť o jazvu
+= Підготовка — до операції; шви, шрам і відновлення — після.
+X hm: - | Lekár: «Operácia je síce bežná, ale pri vašej cukrovke budeme radšej opatrnejší a necháme si vás tu o deň dlhšie.» | *через діабет лікар хоче перестрахуватися й потримати пацієнта в лікарні довше ;; операція дуже небезпечна й рідкісна ;; лікар відмовляється оперувати
+= síce bežná, ale… budeme opatrnejší — звичайна операція, але лікар перестраховується.
+X fb: Допиши. | Rekonvalescencia ___ asi šesť týždňov. (триватиме) | potrvá ;; bude trvať |
+= Майбутній час: potrvá або bude trvať.
+X dr: - | Anesteziológ: Ste alergický na nejaké lieky? Mali ste už niekedy narkózu? | *Na lieky alergický nie som a narkózu som mal pred piatimi rokmi bez problémov. ;; Na lieky alergický nie som a narkózu mal som pred päť rokov. ;; Alergický som nie, narkóza bola mi.
+= pred + орудний: pred piatimi rokmi; som стоїть на другому місці.
+X bd: - | Ти поставив(ла) хірургові всі важливі запитання!
+> Chirurg: Navrhujem plánovanú operáciu kolena. Máte nejaké otázky? | *Áno, ako dlho budem v nemocnici? ;; Áno, ako dlho budem nemocnica? ;; Otázky áno, koleno dlho.
+> Chirurg: Asi tri dni. Operácia bude v celkovej narkóze. | *Aké sú riziká? ;; Aké je riziká? ;; Riziká bude?
+> Chirurg: Ako pri každej operácii — krvácanie alebo infekcia, ale sú zriedkavé. | *Rozumiem. A kedy sa budem môcť vrátiť do práce? ;; Rozumiem. A kedy budem vrátiť práca? ;; Rozumel som, práca kedy?
+> Chirurg: Rekonvalescencia trvá asi šesť týždňov. Tu je informovaný súhlas. | *Ďakujem, prečítam si ho a podpíšem. ;; Ďakujem, prečítam si ju a podpíšem. ;; Podpíšem ho prečítať.
+F: Планова операція || Тобі запропонували планову операцію на коліні.
+S: Ти питаєш, скільки триватиме відновлення. | *Ako dlho bude trvať rekonvalescencia? ;; Ako dlho bude trvať rekonvalescenciu? ;; Rekonvalescencia trvať dlho ako?
+S: «Operácia bude v celkovej narkóze.» Що це означає? | *Під час операції ти спатимеш ;; Знеболять тільки коліно ;; Операція буде без знеболення
+S: Лікар: «Dva týždne nedvíhajte nič ťažké.» | *Два тижні не піднімати нічого важкого ;; Два тижні нічого не їсти ;; Два тижні лежати в ліжку
+S: Медсестра: «Stehy vám vyberie obvodný lekár.» | *Шви зніме дільничний лікар ;; Шви не знімають, вони розсмокчуться ;; Шви треба зняти самому вдома
+R: plánovaná × akútna operácia, zákrok, predoperačné vyšetrenie ;; informovaný súhlas · Aké sú riziká? ;; v celkovej narkóze × lokálne umŕtvenie ;; stehy, jazva (= шрам), nedvíhajte nič ťažké, rekonvalescencia
+
+@lesson pohotovost-a-zachranka | Невідкладна допомога і швидка | Pohotovosť a záchranka
+desc: Що робити, коли комусь поруч потрібна негайна допомога: точний виклик швидкої, відповіді диспетчерові, перша допомога, ознаки інфаркту й інсульту, переломи й опіки.
+goal: Спокійно й чітко викликати швидку та надати першу допомогу до її приїзду.
+out: точно повідомляти, що сталося і де: čo → kde → kto ;; відповідати на питання диспетчера: Je pri vedomí? Dýcha? ;; виконувати вказівки першої допомоги: uložte ho do stabilizovanej polohy, tlačte na ranu ;; розпізнавати ознаки інфаркту й мозкової príhody
+done: Ти знаєш, як діяти в екстреній ситуації. Далі — психічне здоров’я.
+T: Виклик || Номери ти знаєш з A2: 155 — záchranná služba, 112 — єдиний номер. Тепер — як говорити. Диспетчер («operátor», «operátorka») питає: «Čo sa stalo? Kde presne ste? Koľko ľudí je zranených?» Відповідай за схемою: що сталося → де (місто, вулиця, номер, орієнтир: «pri benzínke», «vchod z dvora») → хто і в якому стані. Не клади слухавку, поки тобі не дозволять: «Nezavesujte.» || Kolega spadol z rebríka a nehýbe sa. = Колега впав із драбини й не рухається. ;; Sme v sklade na Priemyselnej ulici 12, vchod z dvora. = Ми на складі на вулиці Промисловій, 12, вхід із двору. || čo → kde → kto · nezavesujte
+mis: Sme na ulici Priemyselná. => Sme na Priemyselnej ulici.
+T: Стан людини || Ключові питання: «Je pri vedomí?» (при тямі?), «Dýcha?», «Krváca?». «Bezvedomie» — непритомність: «Je v bezvedomí.» Ознаки «infarktu»: сильний тиск у грудях, біль віддає в ліву руку чи щелепу, холодний піт, нудота. «Mozgová príhoda» (інсульт, розмовно «porážka»): опущений куточок рота («ovisnutý kútik úst»), слабкість однієї руки, незрозуміла мова. Тут важлива кожна хвилина. || Je v bezvedomí, ale dýcha. = Він непритомний, але дихає. ;; Má silnú bolesť na hrudi a je celý spotený. = У нього сильний біль у грудях, і він увесь спітнілий. || v bezvedomí × pri vedomí
+mis: Je bezvedomie. => Je v bezvedomí.
+T: Перша допомога || «Prvá pomoc» — перша допомога; курс першої допомоги проходить кожен майбутній водій. Диспетчер дає вказівки в наказовому способі: «Uložte ho do stabilizovanej polohy» (у стабільне бокове положення), «Tlačte silno na ranu», «Popáleninu chlaďte vodou aspoň desať minút», «Nehýbte s ním, môže mať zlomeninu», «Ak nedýcha, začnite masáž srdca.» || Popáleninu chlaďte studenou vodou. = Опік охолоджуйте холодною водою. ;; Nehýbte s ním, môže mať zlomeninu. = Не рухайте його, у нього може бути перелом. || uložte · tlačte · chlaďte · nehýbte
+W: záchranná služba | швидка медична допомога (служба) | за:хранна: служба | Záchranná služba prišla o desať minút. | Швидка приїхала за десять хвилин.
+W: prvá pomoc | перша допомога | прва: помоц | Kurz prvej pomoci je povinný pre budúcich vodičov. | Курс першої допомоги обов’язковий для майбутніх водіїв.
+W: bezvedomie | непритомність | безведоміе | Našli ho na chodbe v bezvedomí. | Його знайшли в коридорі непритомним.
+W: zlomenina | перелом | зломеніна | Na röntgene bolo vidieť zlomeninu zápästia. | На рентгені було видно перелом зап’ястя.
+W: popálenina | опік | попа:леніна | Popáleninu chlaďte vodou. | Опік охолоджуйте водою.
+W: infarkt | інфаркт | інфаркт | Pri infarkte je dôležitá každá minúta. | При інфаркті важлива кожна хвилина.
+W: stabilizovaná poloha | стабільне бокове положення | стабілізована: полога | Uložte ho do stabilizovanej polohy. | Покладіть його в стабільне бокове положення.
+X mt: З’єднай. | záchranná služba = швидка допомога ;; prvá pomoc = перша допомога ;; bezvedomie = непритомність ;; zlomenina = перелом ;; popálenina = опік ;; infarkt = інфаркт
+X dd: Обери. | Je v [*bezvedomí/bezvedomie/bezvedomia], ale dýcha.
+= v + місцевий: v bezvedomí.
+X dd: Обери. | Popáleninu [*chlaďte/chladiť/chladíte] studenou vodou.
+= Вказівка диспетчера — наказовий: chlaďte.
+X do: Розстав розмову з диспетчером. | Operátor: Záchranná služba, čo sa stalo? ;; Volajúca: Kolega na stavbe spadol z lešenia a nehýbe sa. ;; Operátor: Kde presne ste? ;; Volajúca: Nitra, Štúrova ulica, pri novej bytovke vedľa benzínky. ;; Operátor: Je pri vedomí? Dýcha? ;; Volajúca: Je pri vedomí a dýcha, ale krváca z hlavy. ;; Operátor: Tlačte na ranu čistou látkou a nezavesujte.
+X sc~: Диспетчер каже: «Nezavesujte.» Що це означає? | - | *Не кладіть слухавку ;; Не рухайте постраждалого ;; Не чекайте, їдьте самі
+= zavesiť — покласти слухавку.
+X cat: Інфаркт чи інсульт? | Infarkt: tlak na hrudi, bolesť do ľavej ruky, studený pot ;; Mozgová príhoda: ovisnutý kútik úst, nezrozumiteľná reč, slabosť jednej ruky
+= Інфаркт — серце; мозкова príhoda — обличчя, мова, слабкість однієї сторони.
+X rc: - | Vo štvrtok popoludní odpadol v predajni potravín v Trnave asi šesťdesiatročný muž. Ako prvá k nemu pribehla pokladníčka Oksana, ktorá pochádza z Charkova. Muž nedýchal, a tak zavolala na 155 a podľa pokynov operátorky začala masáž srdca. Jeden zákazník medzitým priniesol defibrilátor, ktorý visí pri vchode do obchodného centra. Záchranári prišli o osem minút a muža previezli do nemocnice. Lekári neskôr povedali, že rýchla prvá pomoc mu pravdepodobne zachránila život. Oksana hovorí, že kurz prvej pomoci absolvovala ešte doma v Charkove, ale nikdy si nemyslela, že ho bude potrebovať.
+q~: Що зробила Оксана, коли чоловік не дихав? | *викликала 155 і за вказівками почала масаж серця ;; поклала його в стабільне положення й пішла по допомогу ;; чекала швидку, нічого не роблячи
+q~: Що приніс один із покупців? | *дефібрилятор ;; воду ;; аптечку
+q~: Що сказали лікарі? | *швидка перша допомога, ймовірно, врятувала чоловікові життя ;; у чоловіка була легка травма ;; Оксана діяла неправильно
+X fe: - | Uložte ho do [stabilizovaná>stabilizovanej] polohy.
+= do + родовий: do stabilizovanej polohy.
+X np: Ти кажеш диспетчерові, що чоловік непритомний, але дихає. | *Je v bezvedomí, ale dýcha. ;; Je bezvedomie, ale dýcha. ;; Je v bezvedomí a nedýcha. ;; Bezvedomý dýchať.
+= v bezvedomí — непритомний; dýcha — дихає.
+X tr: Перетвори на вказівку в наказовому способі (vy). | Treba tlačiť na ranu. | Tlačte na ranu.
+= tlačiť → tlačte.
+X tf: - | Operátorka: «Kým príde záchranka, chlaďte popáleninu vlažnou vodou a nič na ňu nedávajte.» | Опік треба змастити олією. | F
+= nič na ňu nedávajte — нічого не наносьте, лише охолоджуйте водою.
+X mic: - | Suseda: «Starý pán Kováč dostal včera porážku, odviezli ho do nemocnice.» | porážka | *інсульт ;; поразка в змаганні ;; перелом
+= Розмовне porážka — інсульт (mozgová príhoda).
+X ms: Що варто сказати диспетчерові? | - | *Kolega spadol a krváca z hlavy. ;; *Sme na Štúrovej ulici 5, pri benzínke. ;; *Je pri vedomí a dýcha. ;; Poďte rýchlo, viete kde. ;; Neviem, zavolám neskôr.
+= Що сталося, точна адреса, стан людини.
+X fb: Допиши. | Kurz ___ pomoci je povinný pre budúcich vodičov. | prvej |
+= prvá pomoc → родовий: kurz prvej pomoci.
+X bd: - | Ти чітко викликав(ла) швидку й допоміг(ла) до її приїзду!
+> Operátorka: Záchranná služba, čo sa stalo? | *Suseda odpadla na schodoch a nereaguje. ;; Suseda odpadnúť schody nereagovať. ;; Haló, poďte rýchlo!
+> Operátorka: Kde presne ste? | *Banská Bystrica, Tajovského 14, druhé poschodie. ;; V Banskej Bystrici, viete kde. ;; V dome, na schodoch.
+> Operátorka: Dýcha? | *Áno, dýcha, ale je v bezvedomí. ;; Áno, dýcha, ale je bezvedomie. ;; Neviem, nepozerám sa.
+> Operátorka: Uložte ju do stabilizovanej polohy a nezavesujte. | *Dobre, ukladám ju na bok. Som stále na linke. ;; Dobre, uložím ju a zavesím. ;; Nemôžem, idem preč.
+F: Нещасний випадок на роботі || На складі колега впав, і ти телефонуєш на 155.
+S: Ти кажеш, що сталося. | *Kolega spadol z rebríka a krváca. ;; Kolega spadnúť z rebríka a krvácať. ;; Kolega je spadol z rebríka.
+S: Ти даєш адресу. | *Sme v sklade na Priemyselnej ulici 12. ;; Sme v sklade na Priemyselná ulica 12. ;; Sklad Priemyselnú ulicu dvanásť.
+S: «Je pri vedomí?» Він не реагує, але дихає. | *Nie, je v bezvedomí, ale dýcha. ;; Nie, je bezvedomie, ale dýcha. ;; Nie, vedomie nemá, dýchať.
+S: Диспетчер: «Tlačte na ranu a nezavesujte.» | *Тиснути на рану й не класти слухавку ;; Перев’язати рану й передзвонити ;; Промити рану й чекати на дзвінок
+R: 155 / 112: čo sa stalo → kde presne → kto a v akom stave ;; je pri vedomí × je v bezvedomí, dýcha, krváca ;; uložte do stabilizovanej polohy, tlačte na ranu, chlaďte popáleninu, nezavesujte ;; infarkt × mozgová príhoda (porážka), zlomenina, popálenina
+
+@lesson dusevne-zdravie | Психічне здоров’я | Duševné zdravie
+desc: Як говорити про психічне здоров’я з повагою: стрес, вигорання, тривога, безсоння; як описати свій стан лікарю, де шукати допомогу і як підтримати близьку людину.
+goal: Описати свій психічний стан, попросити допомоги й тактовно підтримати іншого.
+out: називати стани: stres, vyhorenie, úzkosť, nespavosť ;; описувати, як почуваєшся: cítim sa vyčerpaný, nemôžem sa sústrediť, nič ma neteší ;; розрізняти psychológ, psychiater, psychoterapia і знаходити допомогу ;; підтримувати інших: Nie si v tom sám. Som tu pre teba.
+done: Ти вмієш говорити про психічне здоров’я. Далі — профілактика.
+T: Як я почуваюся || «Duševné zdravie» — психічне здоров’я; це така сама частина здоров’я, як серце чи спина. Стан описують через «cítim sa + прикметник»: «cítim sa vyčerpaný / vyčerpaná» (виснажений), «napätý» (напружений), «smutný». Також: «Nič ma neteší» (ніщо не тішить), «Nemôžem sa sústrediť», «V noci nemôžem zaspať» — це «nespavosť» (безсоння). Переїзд, нова мова, робота й тривога за рідних — часті причини стресу, і про це нормально говорити. || Posledné týždne sa cítim stále unavená a napätá. = Останні тижні я весь час почуваюся втомленою й напруженою. ;; Nemôžem sa sústrediť a v noci sa budím. = Не можу зосередитися й уночі прокидаюся. || cítim sa + прикметник · nemôžem sa sústrediť
+mis: Cítim vyčerpaný. => Cítim sa vyčerpaný.
+T: Стрес, вигорання, тривога || «Stres» — стрес: «Som v strese z práce» (z + родовий). «Vyhorenie» — вигорання: довга виснаженість від роботи, коли нічого не хочеться: «je vo vyhorení». «Úzkosť» — тривога: «Trápi ma úzkosť». Це стани, а не слабкість характеру. Про людину не кажуть зневажливо «je blázon» — це образливо. Нейтрально: «prechádza ťažkým obdobím» (переживає важкий період). || Kolega je vo vyhorení, je doma na PN. = Колега у вигоранні, він удома на лікарняному. ;; Prechádza teraz ťažkým obdobím. = Він зараз переживає важкий період. || som v strese z + родовий · prechádzať ťažkým obdobím
+mis: Som v strese od práce. => Som v strese z práce.
+T: Де шукати допомогу || «Psychológ» — психолог: розмова, консультація; часто платно, але є й безкоштовні «poradne» (консультаційні центри), зокрема для людей з України. «Psychiater» — лікар-психіатр: ставить діагноз і може виписати ліки. «Psychoterapia» — тривала терапія розмовою. Почати можна із сімейного лікаря: «Mám dlhodobo problémy so spánkom. Kam sa môžem obrátiť?» Підтримка: «Nie si v tom sám / sama», «Som tu pre teba», «Ako ti môžem pomôcť?» || Kam sa môžem obrátiť, ak potrebujem psychologickú pomoc? = Куди мені звернутися, якщо потрібна психологічна допомога? ;; Nie si v tom sama, som tu pre teba. = Ти не сама в цьому, я поруч. || obrátiť sa na + знахідний · Nie si v tom sám.
+W: duševné zdravie | психічне здоров’я | душевне: здравіе | O duševné zdravie sa treba starať rovnako ako o telo. | Про психічне здоров’я треба дбати так само, як про тіло.
+W: stres | стрес | стрес | V práci mám teraz veľký stres. | На роботі в мене зараз сильний стрес.
+W: vyhorenie | вигорання | вигореніе | Po troch rokoch nadčasov prišlo vyhorenie. | Після трьох років понаднормових прийшло вигорання.
+W: úzkosť | тривога, тривожність | у:зкость | Pred dôležitými stretnutiami ma trápi úzkosť. | Перед важливими зустрічами мене мучить тривога.
+W: nespavosť | безсоння | неспавость | Na nespavosť mi lekárka neodporučila tabletky, ale zmenu režimu. | Від безсоння лікарка порадила мені не таблетки, а зміну режиму.
+W: psychológ | психолог | псіхоло:ґ | Raz za týždeň chodím k psychológovi. | Раз на тиждень я ходжу до психолога.
+X mt: З’єднай. | duševné zdravie = психічне здоров’я ;; stres = стрес ;; vyhorenie = вигорання ;; úzkosť = тривога ;; nespavosť = безсоння ;; psychológ = психолог
+X dd: Обери. | Posledné dni sa [*cítim/cítiť/cítenie] veľmi vyčerpaná.
+= cítiť sa → (ja) cítim sa.
+X dd: Обери. | Som v strese [*z/od/pre] práce.
+= v strese z + родовий: z práce.
+X sc~: Що означає «Prechádza ťažkým obdobím»? | - | *Переживає важкий період ;; Іде важкою дорогою ;; Склав важкий іспит
+= prechádzať ťažkým obdobím — переживати важкий час.
+X tone: - | Kolega: «Ale no tak, nebuď blázon, všetci máme stres. Vzchop sa!» | *зневажливий, знецінює проблему ;; уважний і підтримувальний ;; офіційний
+= «nebuď blázon», «vzchop sa» — знецінення; так підтримувати не варто.
+X dr: - | Kamarátka: Neviem, čo so mnou je. Nič ma neteší a v noci nespím. | *To znie náročne. Nie si v tom sama. Nechceš sa o tom porozprávať? ;; Nebuď smutná, to prejde samo. ;; Ja mám ešte väčšie problémy ako ty.
+= Підтримка без знецінення й без перемикання на себе.
+X rc: - | Psychologička Mária Hricová pracuje v poradni v Košiciach, kam chodia aj ľudia z Ukrajiny. «Mnohí prichádzajú až vtedy, keď už nemôžu spať, nič ich neteší a v práci robia chyby,» hovorí. Podľa nej je stres po presťahovaní do inej krajiny úplne prirodzený: človek sa učí nový jazyk, hľadá prácu a často sa bojí o blízkych doma. Radí nečakať, kým sa problémy zhoršia. «Prvým krokom môže byť obyčajný rozhovor s obvodným lekárom alebo s nami. Konzultácie v poradni sú bezplatné a hovoríme aj po ukrajinsky.» Dôležitá je aj podpora okolia. Namiesto rád typu «vzchop sa» je lepšie povedať: «Vidím, že je to pre teba ťažké. Ako ti môžem pomôcť?»
+q~: Коли, за словами психологині, люди найчастіше приходять? | *коли вже не можуть спати, ніщо не тішить і вони помиляються на роботі ;; одразу після переїзду ;; коли їх направить роботодавець
+q~: Що вона каже про стрес після переїзду? | *він цілком природний ;; це ознака слабкості ;; він буває лише в дітей
+q~: Що краще сказати замість «vzchop sa»? | *«Бачу, що тобі важко. Як я можу допомогти?» ;; «Не думай про це» ;; «Усім важко, не скаржся»
+X fe: - | Raz za týždeň chodím k [psychológ>psychológovi].
+= k + давальний: k psychológovi.
+X np: Ти питаєш сімейну лікарку, куди звернутися по психологічну допомогу. | *Kam sa môžem obrátiť, ak potrebujem psychologickú pomoc? ;; Kam sa môžem obrátiť, ak potrebujem psychologická pomoc? ;; Kde obrátiť psychológ? ;; Kam mám ísť, som blázon?
+= obrátiť sa — звернутися; potrebujem + знахідний: psychologickú pomoc.
+X cat: Підтримує чи знецінює? | Podporuje: Nie si v tom sám, Som tu pre teba, Ako ti môžem pomôcť ;; Zľahčuje: Vzchop sa, To prejde samo, Iní sú na tom horšie
+= Підтримка — увага до людини; знецінення — «не перебільшуй».
+X mic: - | Lekárka: «Vaše problémy so spánkom môžu súvisieť s úzkosťou. Odporučím vás k odborníkovi.» | úzkosť | *тривога ;; вузькість ;; злість
+= úzkosť — тривога.
+X tr: Перетвори на конструкцію з «cítiť sa». | Som veľmi unavený a smutný. | Cítim sa veľmi unavený a smutný.
+= cítim sa + прикметник.
+X fb: Допиши. | Kolega je vo ___, už dva mesiace je doma. (вигорання) | vyhorení |
+= vo + місцевий: vo vyhorení.
+X ms: Обери правильні речення. | - | *Mám problémy so spánkom. ;; *Som v strese z práce. ;; *Prechádzam ťažkým obdobím. ;; Som v strese od práce. ;; Mám problémy so spánok.
+= s + орудний: so spánkom; v strese z práce.
+X bd: - | Ти відверто поговорив(ла) з лікаркою й отримав(ла) допомогу!
+> Lekárka: Čo vás trápi? | *Už dva mesiace zle spím a cítim sa stále vyčerpaný. ;; Dva mesiace zle spať a cítim vyčerpaný. ;; Nič, len som blázon.
+> Lekárka: Máte veľa stresu? | *Áno, v práci je toho veľa a bojím sa o rodinu na Ukrajine. ;; Áno, práca veľa a bojím rodinu. ;; Stres nemám, mám úzkosť práca.
+> Lekárka: Myslím, že by vám pomohol rozhovor s psychológom. | *Dobre, skúsim to. Viete mi niekoho odporučiť? ;; Dobre, skúsim to. Odporučte ma niekto. ;; Psychológa nepotrebujem, nie som blázon.
+> Lekárka: V meste je bezplatná poradňa, hovoria aj po ukrajinsky. | *To je výborné, ďakujem. Objednám sa tam ešte tento týždeň. ;; To je výborné, ďakujem. Objednať tam týždeň. ;; Poradňa je bezplatné, ďakujem.
+F: Розмова з колегою || Твоя колега останнім часом сумна й виснажена. Ти (жінка) хочеш її підтримати.
+S: Ти тактовно починаєш розмову. | *Všimla som si, že si v poslednom čase unavená. Si v poriadku? ;; Prečo si stále taká smutná? Vzchop sa! ;; Ty si v poslednom čase nejaká blázon.
+S: Вона: «Nič ma neteší a nemôžem spať.» Що вона каже? | *Ніщо її не тішить і вона не може спати ;; Вона нічого не їсть і багато спить ;; Їй не подобається ця робота
+S: Ти підтримуєш її. | *Nie si v tom sama, som tu pre teba. ;; Nie si v tom sám, som tu pre teba. ;; To prejde samo, neboj sa.
+S: Ти пропонуєш професійну допомогу. | *Nechceš sa objednať k psychológovi? Pomôžem ti nájsť poradňu. ;; Choď k psychológ, hneď. ;; Psychológ je pre bláznov, ale skús.
+R: stres, vyhorenie, úzkosť, nespavosť ;; cítim sa vyčerpaný, nemôžem sa sústrediť, nič ma neteší ;; psychológ, psychiater, poradňa · Kam sa môžem obrátiť? ;; Nie si v tom sám. Som tu pre teba. (не: Vzchop sa!)
+
+@lesson prevencia | Профілактика | Prevencia
+desc: Профілактика в Словаччині: які огляди оплачує страхова і як часто, щеплення, скринінги, холестерин і тиск — і як переконати родича піти на огляд.
+goal: Знати свої профілактичні права та переконливо порадити іншим подбати про здоров’я.
+out: знати періодичність оглядів: raz za dva roky, raz ročne ;; розуміти očkovanie proti…, skríning, pozvánka od poisťovne ;; говорити про ризики: cholesterol, tlak, imunita ;; радити й переконувати: mal by si…, na tvojom mieste by som…, čím skôr, tým lepšie
+done: Ти знаєш, як дбати про здоров’я заздалегідь. Далі — здоровий спосіб життя.
+T: Профілактичні огляди || «Prevencia» — профілактика. Профілактичні огляди («preventívne prehliadky») оплачує страхова: у сімейного лікаря дорослі мають право на огляд раз на два роки, у стоматолога — раз на рік, у гінеколога — раз на рік. На огляді міряють тиск, беруть кров і сечу, з певного віку роблять ЕКГ. «Oplatí sa ísť, aj keď nič nebolí.» || Na preventívnu prehliadku k obvodnej lekárke chodím raz za dva roky. = На профілактичний огляд до дільничної лікарки я ходжу раз на два роки. ;; Prevencia je lacnejšia ako liečba. = Профілактика дешевша за лікування. || raz za dva roky · raz ročne
+mis: raz za dva rok => raz za dva roky
+T: Щеплення й скринінги || «Očkovanie» — щеплення: «povinné očkovanie detí», «očkovanie proti chrípke» (proti + давальний), «preočkovanie proti tetanu» (ревакцинація від правця). Зробити щеплення — «dať sa zaočkovať». «Skríning» — обстеження людей без симптомів, щоб рано виявити хворобу, наприклад «skríning rakoviny hrubého čreva»: страхова надсилає «pozvánku» — запрошення. || Dala som sa zaočkovať proti chrípke. = Я зробила щеплення від грипу. ;; Poisťovňa mi poslala pozvánku na skríning. = Страхова надіслала мені запрошення на скринінг. || očkovanie proti + давальний · dať sa zaočkovať
+mis: očkovanie od chrípky => očkovanie proti chrípke
+T: Порада й переконання || Радити: «Mal by si ísť na prehliadku» (тобі варто), «Oplatí sa to», «Je lepšie predchádzať chorobám, ako ich liečiť» (predchádzať + давальний — запобігати). Умовний спосіб пом’якшує пораду: «Na tvojom mieste by som si dal skontrolovať cholesterol.» Аргумент: «Čím skôr sa choroba zistí, tým lepšie sa lieči.» — Чим раніше виявлять хворобу, тим краще її лікувати. || Na tvojom mieste by som išla na prehliadku čo najskôr. = На твоєму місці я пішла б на огляд якнайшвидше. ;; Čím skôr, tým lepšie. = Чим раніше, тим краще. || mal by si… · na tvojom mieste by som… · čím…, tým…
+mis: predchádzať choroby => predchádzať chorobám
+W: prevencia | профілактика | превенціа | Prevencia je lacnejšia ako liečba. | Профілактика дешевша за лікування.
+W: očkovanie | щеплення, вакцинація | очкованіе | Na očkovanie proti chrípke sa môžete objednať u obvodného lekára. | На щеплення від грипу можна записатися в дільничного лікаря.
+W: skríning | скринінг | скрі:нінґ | Skríning pomáha odhaliť chorobu včas. | Скринінг допомагає вчасно виявити хворобу.
+W: cholesterol | холестерин | холестерол | Mám mierne zvýšený cholesterol. | У мене трохи підвищений холестерин.
+W: rakovina | рак (хвороба) | раковіна | Skríning rakoviny je pre poistencov bezplatný. | Скринінг раку для застрахованих безкоштовний.
+W: imunita | імунітет | імуніта | Na jeseň si posilňujem imunitu. | Восени я зміцнюю імунітет.
+X mt: З’єднай. | prevencia = профілактика ;; očkovanie = щеплення ;; skríning = скринінг ;; cholesterol = холестерин ;; rakovina = рак ;; imunita = імунітет
+X dd: Обери. | Dala som sa zaočkovať [*proti/od/na] chrípke.
+= očkovanie proti + давальний: proti chrípke.
+X dd: Обери. | Je lepšie predchádzať [*chorobám/choroby/chorobách].
+= predchádzať + давальний: chorobám.
+X sch: Подивись на таблицю профілактики для дорослих. | Preventívne prehliadky (hradí zdravotná poisťovňa) | Všeobecný lekár = raz za 2 roky ;; Zubný lekár = raz ročne ;; Gynekológ = raz ročne ;; Skríning rakoviny hrubého čreva = podľa pozvánky od poisťovne ;; Očkovanie proti chrípke = odporúča sa každú jeseň | Як часто дорослий може ходити на профілактичний огляд до стоматолога за кошт страхової? | *раз на рік ;; раз на два роки ;; лише за запрошенням
+= Zubný lekár — raz ročne.
+X sc~: Що означає «Poisťovňa vám posiela pozvánku na skríning»? | - | *Страхова запрошує на профілактичне обстеження ;; Страхова вимагає доплатити ;; Страхова скасовує вашу картку
+= pozvánka — запрошення; skríning — обстеження без симптомів.
+X msg: Прочитай повідомлення від страхової. | Vaša zdravotná poisťovňa | Vážený poistenec, podľa našich záznamov ste neboli na preventívnej prehliadke u zubného lekára viac ako rok. Ak ju neabsolvujete, pri ďalšom ošetrení môžete zaplatiť viac. Objednajte sa čo najskôr. | Що може статися, якщо не піти на огляд? | *за наступне лікування доведеться заплатити більше ;; страхову скасують ;; стоматолог більше ніколи не лікуватиме
+= pri ďalšom ošetrení môžete zaplatiť viac.
+X rc: - | Môj otec má päťdesiatpäť rokov a k lekárovi nechodil roky. Vždy hovoril: «Načo, veď ma nič nebolí.» Minulú jeseň mu poisťovňa poslala pozvánku na skríning rakoviny hrubého čreva. Chcel ju vyhodiť, ale vysvetlil som mu, že je to jednoduchý test, ktorý si môže urobiť doma, a že čím skôr sa choroba zistí, tým lepšie sa lieči. Nakoniec súhlasil a išiel aj na preventívnu prehliadku. Test bol negatívny, ale lekárka zistila, že má vysoký tlak a zvýšený cholesterol. Teraz užíva lieky, menej solí a každý večer chodí so psom na prechádzku. Mama hovorí, že prevencia pomohla nielen otcovi, ale aj psovi, ktorý konečne schudol.
+q~: Чому батько не ходив до лікаря? | *вважав, що це зайве, бо нічого не болить ;; боявся лікарів ;; не мав страховки
+q~: Що показав огляд? | *тест на рак негативний, але тиск і холестерин підвищені ;; у батька виявили рак ;; усе було в нормі
+q~: Що змінилося в житті батька? | *він приймає ліки, менше солить і щовечора гуляє із собакою ;; він кинув палити ;; він записався в спортзал
+X fe: - | Na preventívnu prehliadku chodím raz za dva [rok>roky].
+= dva + називний множини: dva roky.
+X np: Ти м’яко радиш другові перевірити холестерин. | *Na tvojom mieste by som si dal skontrolovať cholesterol. ;; Na tvoje miesto by som si dal skontrolovať cholesterol. ;; Na tvojom mieste som si dal skontrolovať cholesterol. ;; Musíš kontrolovať cholesterol, hneď!
+= na tvojom mieste by som… — умовний спосіб пом’якшує пораду.
+X tr: Перетвори наказ на пораду з «Mal by si…» (говориш другові). | Choď na prehliadku. | Mal by si ísť na prehliadku.
+= mal by si + інфінітив — тобі варто.
+X fb: Допиши. | ___ skôr sa choroba zistí, tým lepšie sa lieči. | Čím |
+= čím…, tým… — чим…, тим…
+X mic: - | Lekár: «Imunitu si posilníte pohybom, spánkom a pestrou stravou, nie drahými doplnkami.» | imunita | *імунітет ;; єдність ;; апетит
+= imunita — імунітет.
+X cat: Профілактика чи лікування? | Prevencia: preventívna prehliadka, očkovanie, skríning, meranie tlaku ;; Liečba: antibiotiká, operácia, rehabilitácia, hospitalizácia
+= Профілактика — до хвороби; лікування — коли хвороба вже є.
+X dr: - | Kolega: Poisťovňa mi poslala pozvánku na nejaký skríning. Asi ju vyhodím, veď som zdravý. | *Nevyhadzuj ju. Skríning je práve pre zdravých ľudí, aby sa choroba zistila včas. ;; Áno, vyhoď ju, aj ja ich vyhadzujem. ;; Skríning je len pre chorých, máš pravdu.
+= Скринінг — саме для людей без симптомів.
+X ms: Обери правильні речення. | - | *Dal som sa zaočkovať proti tetanu. ;; *Mal by si ísť na prehliadku. ;; *Je lepšie predchádzať chorobám. ;; Dal som sa zaočkovať od tetanu. ;; Je lepšie predchádzať choroby.
+= proti + давальний; predchádzať + давальний.
+F: Переконати маму || Мамі шістдесят, і вона давно не була на огляді.
+S: Ти радиш їй піти на огляд. | *Mala by si ísť na preventívnu prehliadku. ;; Mal by si ísť na preventívnu prehliadku. ;; Mala by si ísť na preventívna prehliadka.
+S: Мама: «Načo? Nič ma nebolí.» Що ти відповідаєш? | *Prevencia je práve na to, aby sa choroba zistila včas. ;; Máš pravdu, nechoď. ;; Ak ťa nič nebolí, choď na pohotovosť.
+S: Ти радиш їй також щеплення від грипу. | *A daj sa zaočkovať proti chrípke. ;; A daj sa zaočkovať od chrípky. ;; A zaočkuj chrípku.
+S: Лікарка: «Cholesterol je v norme.» | *Холестерин у нормі ;; Холестерин підвищений ;; Аналіз треба повторити
+R: preventívna prehliadka: raz za dva roky / raz ročne ;; očkovanie proti + давальний, dať sa zaočkovať, skríning, pozvánka ;; cholesterol, tlak, imunita ;; mal by si…, na tvojom mieste by som…, čím skôr, tým lepšie
+
+@lesson zdravy-zivotny-styl | Здоровий спосіб життя | Zdravý životný štýl
+desc: Здоровий спосіб життя без крайнощів: харчування, питний режим, рух при сидячій роботі, сон, шкідливі звички, загартування — і як розповісти про свої зміни та обговорити різні погляди.
+goal: Розповісти про свій спосіб життя й зміни в ньому, порадити й аргументовано висловити думку.
+out: говорити про звички: vyvážená strava, pitný režim, sedavé zamestnanie ;; розповідати про зміни: odkedy…, prestal som…, začala som… ;; говорити про nadváhu й zlozvyky тактовно ;; висловлювати й аргументувати думку: podľa mňa, súhlasím s tebou, na jednej strane… na druhej strane
+done: Ти говориш про здоровий спосіб життя й аргументуєш свою думку. Далі — підсумок розділу.
+T: Харчування й питний режим || «Vyvážená strava» — збалансоване харчування: овочі, фрукти, цільнозернові продукти, менше цукру й солі. «Pitný režim» — питний режим: «Dodržiavaj pitný režim» — пий достатньо води протягом дня. «Nadváha» — надмірна вага: «Mám pár kíl nadváhy». «Schudnúť» — схуднути, «pribrať» — набрати вагу. Коментувати вагу інших прямо — нетактовно; краще говорити про себе. || Snažím sa jesť vyvážene a dodržiavať pitný režim. = Я намагаюся збалансовано харчуватися й дотримуватися питного режиму. ;; Za rok som schudol päť kíl. = За рік я схуд на п’ять кілограмів. || dodržiavať pitný režim · schudnúť × pribrať
+T: Рух, сон і звички || «Sedavé zamestnanie» — сидяча робота. Порада: «Každú hodinu sa postav a prejdi sa.» «Zlozvyk» — шкідлива звичка: куріння, переїдання, телефон перед сном. Зміни: «Prestal som fajčiť» (prestať + інфінітив — кинути), «Odkedy chodím pešo do práce, cítim sa lepšie.» «Otužovanie» — загартування: у Словаччині популярно взимку занурюватися в холодну воду, таких людей називають «otužilci». || Odkedy chodím spať pred jedenástou, mám viac energie. = Відколи я лягаю спати до одинадцятої, у мене більше енергії. ;; Pred rokom som prestala fajčiť. = Рік тому я кинула палити. || odkedy… · prestať + інфінітив
+mis: Prestal som s fajčiť. => Prestal som fajčiť.
+T: Думка й аргументи || Обговорюючи тему, кажи: «Podľa mňa…», «Myslím si, že…», «Súhlasím s tebou» / «Nesúhlasím» (súhlasiť s + орудний), «Na jednej strane…, na druhej strane…» (з одного боку…, з іншого боку…), «Záleží na tom, či…» (залежить від того, чи…). Аргумент: «…, pretože…», «Okrem toho…» (крім того). || Na jednej strane je otužovanie zdravé, na druhej strane nie je pre každého. = З одного боку, загартування корисне, з іншого — воно не для всіх. ;; Súhlasím s tebou, ale záleží aj na genetike. = Я з тобою згоден, але це залежить і від генетики. || na jednej strane… na druhej strane · súhlasím s + орудний
+mis: Súhlasím ťa. => Súhlasím s tebou. ;; podľa mne => podľa mňa
+W: životný štýl | спосіб життя | жівотни: шті:л | Zmenil som životný štýl a cítim sa lepšie. | Я змінив спосіб життя й почуваюся краще.
+W: vyvážený | збалансований | вива:жени: | Vyvážená strava je základ zdravia. | Збалансоване харчування — основа здоров’я.
+W: pitný režim | питний режим | пітни: режім | V lete je dôležité dodržiavať pitný režim. | Улітку важливо дотримуватися питного режиму.
+W: nadváha | надмірна вага | надва:га | Lekár mi povedal, že mám miernu nadváhu. | Лікар сказав мені, що в мене невелика надмірна вага.
+W: sedavý | сидячий (про роботу, спосіб життя) | седави: | Mám sedavé zamestnanie, preto chodím po práci plávať. | У мене сидяча робота, тому після роботи я ходжу плавати.
+W: zlozvyk | шкідлива звичка | злозвик | Pozerať do mobilu pred spaním je môj najhorší zlozvyk. | Дивитися в мобільний перед сном — моя найгірша шкідлива звичка.
+W: otužovanie | загартування | отужованіе | Otužovanie je na Slovensku čoraz populárnejšie. | Загартування стає у Словаччині дедалі популярнішим.
+X mt: З’єднай. | životný štýl = спосіб життя ;; vyvážený = збалансований ;; pitný režim = питний режим ;; nadváha = надмірна вага ;; zlozvyk = шкідлива звичка ;; otužovanie = загартування
+X dd: Обери. | Snažím sa dodržiavať pitný [*režim/režimu/režime].
+= dodržiavať + знахідний: pitný režim.
+X dd: Обери. | [*Odkedy/Odkiaľ/Kedysi] chodím do práce pešo, cítim sa lepšie.
+= odkedy — відколи.
+X sc~: Що означає «Mám sedavé zamestnanie»? | - | *У мене сидяча робота ;; У мене робота з постійними поїздками ;; Я працюю вдома
+= sedavý — сидячий.
+X rc: - | Pred dvoma rokmi som pracoval v kancelárii od rána do večera, jedol som hlavne rýchle jedlá a večer som pozeral seriály do jednej v noci. Mal som dvanásť kíl nadváhy a stále som bol unavený. Zlom prišiel, keď mi lekárka na preventívnej prehliadke povedala, že mám vysoký tlak. Nezačal som hneď behať maratóny. Najprv som prestal piť sladené nápoje a začal som dodržiavať pitný režim. Potom som začal chodiť do práce pešo, je to tridsať minút. Najťažšie bolo zbaviť sa zlozvyku pozerať seriály do noci. Dnes chodím spať pred jedenástou a mám o osem kíl menej. Podľa mňa netreba robiť veľké zmeny naraz, malé kroky sú dlhodobo účinnejšie.
+q~: Що стало поворотним моментом? | *лікарка на огляді сказала, що в автора високий тиск ;; він не зміг пробігти марафон ;; дружина попросила його схуднути
+q~: Що було найважче? | *позбутися звички дивитися серіали допізна ;; ходити пішки на роботу ;; пити більше води
+q~: Яка думка автора? | *краще робити маленькі кроки, ніж великі зміни одразу ;; без спортзалу схуднути неможливо ;; харчування важливіше за сон
+X fe: - | Pred rokom som prestala [fajčím>fajčiť].
+= prestať + інфінітив: prestala fajčiť.
+X np: Ти висловлюєш зважену думку про загартування. | *Na jednej strane je otužovanie zdravé, na druhej strane nie je pre každého. ;; Na jednej strane otužovanie zdravé je, na druhú stranu nie každý. ;; Otužovanie je zdravé, preto nie je pre každého. ;; Jednou stranou otužovanie, druhou nie.
+= na jednej strane…, na druhej strane… — з одного боку…, з іншого…
+X dr: - | Kamarát: Myslím si, že bez posilňovne sa schudnúť nedá. | *Nesúhlasím. Podľa mňa je dôležitejšia strava a bežný pohyb. ;; Nesúhlasím s ty, strava je. ;; Áno, súhlasím ťa.
+= Nesúhlasím + аргумент; podľa mňa.
+X tr: З’єднай два речення за допомогою «Odkedy…». | Chodím spať skôr. Mám viac energie. | Odkedy chodím spať skôr, mám viac energie. ;; Mám viac energie, odkedy chodím spať skôr.
+= odkedy… — відколи…
+X cat: Корисна звичка чи шкідлива? | Zdravý návyk: dodržiavať pitný režim, chodiť pešo, spať osem hodín ;; Zlozvyk: fajčiť, jesť v noci, pozerať do mobilu pred spaním
+= návyk — звичка; zlozvyk — шкідлива звичка.
+X hm: - | Kolegyňa: «Pekný nový bicykel! Aspoň už nebudeš toľko chodiť k automatu na čokoládu.» | *натякає, що колега їсть забагато солодкого ;; просто хвалить велосипед ;; хоче позичити велосипед
+= Жартівливий натяк: менше солодкого з автомата.
+X fb: Допиши. | Za tri mesiace som ___ šesť kíl. (схуд / схудла) | schudol ;; schudla |
+= schudnúť → schudol (він), schudla (вона).
+X ms: Обери природні способи висловити думку. | - | *Podľa mňa je spánok najdôležitejší. ;; *Súhlasím s tebou, ale záleží aj na genetike. ;; *Myslím si, že otužovanie nie je pre každého. ;; Podľa mne je spánok najdôležitejší. ;; Súhlasím ťa, ale záleží genetika.
+= podľa mňa; súhlasím s tebou; záleží na + місцевий.
+X wb: Склади речення. | Mám [sedavé] zamestnanie, preto cvičím. ;; Každý deň dodržiavam pitný [režim]. ;; Fajčenie je môj najhorší [zlozvyk]. | sedavý ;; režimu
+= zamestnanie — середній рід: sedavé; dodržiavať pitný režim.
+X bd: - | Ти переконливо розповів(ла) про свої зміни!
+> Kolega: Vyzeráš skvele! Čo si zmenil? | *Prestal som jesť sladkosti a do práce chodím pešo. ;; Prestal som jesť sladkosti a chodím pešo práca. ;; Zmenil som sa jesť menej.
+> Kolega: A nechýba ti auto? | *Na jednej strane je to pomalšie, na druhej strane mám viac energie. ;; Na jednej strane pomalšie, na druhú strane energie. ;; Auto mi chýba, nie, áno.
+> Kolega: Ja mám sedavé zamestnanie a nemám čas na šport. | *Skús sa aspoň každú hodinu postaviť a prejsť sa. ;; Skúsiť sa každú hodinu postaviť. ;; Sedavé nemáš čas, áno.
+> Kolega: A čo spánok? Ja zaspávam až o jednej. | *Odkedy chodím spať pred jedenástou, cítim sa oveľa lepšie. ;; Odkedy chodím spať pred jedenásť, cítim lepšie. ;; Spánok o jednej je zdravý.
+F: Обговорення на перерві || На обідній перерві колеги обговорюють здоровий спосіб життя.
+S: Ти (чоловік) розповідаєш, що кинув палити рік тому. | *Pred rokom som prestal fajčiť. ;; Pred rokom som prestal fajčím. ;; Pred rok som prestal fajčiť.
+S: Колега: «Bez diéty sa schudnúť nedá.» Ти не згоден. | *Nesúhlasím, podľa mňa stačí vyvážená strava a pohyb. ;; Nesúhlasím s ty, diéta áno. ;; Súhlasím, preto nesúhlasím.
+S: Ти радиш колезі, яка весь день сидить. | *Skús sa každú hodinu postaviť a prejsť sa. ;; Skúsiť sa každú hodinu postaviť. ;; Sedieť je zdravé, nič nemeň.
+S: Колега: «Otužovanie je čoraz populárnejšie.» Що він сказав? | *Загартування стає дедалі популярнішим ;; Загартування вже не популярне ;; Загартування заборонене
+R: vyvážená strava, pitný režim, nadváha, schudnúť × pribrať ;; sedavé zamestnanie, zlozvyk, otužovanie ;; odkedy…, prestal som + інфінітив ;; podľa mňa, súhlasím s tebou, na jednej strane… na druhej strane
+
+@lesson opakovanie | Підсумок: здоров’я B1 | Opakovanie: zdravie B1
+desc: Підсумок розділу: від перших симптомів через спеціаліста, обстеження, лікарню й операцію до відновлення, екстреної допомоги, психічного здоров’я, профілактики й здорового способу життя — в одній історії.
+goal: Пройти весь шлях пацієнта в Словаччині й упевнено, тактовно говорити про здоров’я — своє та близьких.
+out: докладно описувати симптоми й історію хвороби ;; орієнтуватися у спеціалістах, обстеженнях, лікарні й операції ;; діяти в екстреній ситуації ;; говорити про психічне здоров’я, профілактику й спосіб життя
+done: Ти пройшов(ла) розділ «Здоров’я B1». Далі — покупки й рекламації.
+T: Від симптому до діагнозу || Симптоми: «tupá / ostrá bolesť», «vystreľuje mi do…», «je mi na vracanie», «od pondelka», «zhoršuje sa». Спеціаліст: «u neurológa», «ku kardiologičke», «liečim sa na…». Обстеження: «ísť na ultrazvuk», «príďte nalačno», «krvný obraz je v norme». Спершу лікар збирає «anamnézu» — історію хвороби, зокрема сімейну. || Bolesť mi vystreľuje do ľavej ruky a pri námahe sa zhoršuje. = Біль віддає мені в ліву руку й посилюється при навантаженні. ;; Výsledky sú v norme, ale pošlem vás ešte na EKG. = Результати в нормі, але я направлю вас іще на ЕКГ. || vystreľuje do · u + родовий · ísť na + знахідний
+T: Лікарня, операція, екстрена допомога || Лікарня: «hospitalizovať», «vizita», «návštevné hodiny», «prepustiť» (не vypísať!), «prepúšťacia správa». Операція: «informovaný súhlas», «v celkovej narkóze», «vybrať stehy», «jazva» (шрам), «rekonvalescencia». Екстрено: 155 / 112, «čo → kde → kto», «je v bezvedomí, ale dýcha», «uložte ho do stabilizovanej polohy». Тривала хвороба — «chronické ochorenie». || Otca prepustili po operácii, stehy mu vyberú o týždeň. = Батька виписали після операції, шви йому знімуть через тиждень. ;; Sused je v bezvedomí, ale dýcha. = Сусід непритомний, але дихає. || prepustiť · v narkóze · v bezvedomí
+T: Психіка, профілактика, спосіб життя || Психічне здоров’я: «cítim sa vyčerpaný», «som v strese z práce», «Nie si v tom sám». Профілактика: «raz za dva roky», «dať sa zaočkovať proti…», «skríning». Спосіб життя: «vyvážená strava», «pitný režim», «Odkedy…, …», «na jednej strane… na druhej strane». Одужати, відновитися — «zotaviť sa»: «Rýchlo sa zotavil.» || Po chrípke som sa zotavovala dva týždne. = Після грипу я відновлювалася два тижні. ;; Na tvojom mieste by som sa dal zaočkovať. = На твоєму місці я зробив би щеплення. || zotaviť sa · dať sa zaočkovať · mal by si…
+W: anamnéza | анамнез, історія хвороби | анамне:за | Lekárka sa pýtala aj na rodinnú anamnézu. | Лікарка питала й про сімейний анамнез.
+W: chronický | хронічний | хроніцки: | Mama má chronické ochorenie obličiek. | У мами хронічна хвороба нирок.
+W: zotaviť sa | одужати, відновитися | зотавіть са | Po operácii sa rýchlo zotavil. | Після операції він швидко відновився.
+W: zdravotný stav | стан здоров’я | здравотни: став | Zdravotný stav pacienta je stabilizovaný. | Стан пацієнта стабілізований.
+X mt: З’єднай. | nevoľnosť = нудота ;; neurológ = невролог ;; ultrazvuk = УЗД ;; prepustiť = виписати з лікарні ;; jazva = шрам ;; vyhorenie = вигорання
+X rc: - | Taras pracuje vo Zvolene ako vodič. Na jar ho začala bolieť hlava a tŕpla mu ľavá ruka. Najprv si myslel, že je to len stres z práce, ale manželka ho presvedčila, aby šiel k obvodnej lekárke. Lekárka mu zmerala tlak, ktorý bol veľmi vysoký, a poslala ho ku kardiológovi. Kardiológ mu urobil EKG a ultrazvuk srdca a zistil, že Taras potrebuje malý zákrok. V nemocnici bol tri dni, zákrok robili len v lokálnom umŕtvení. Pri prepustení dostal prepúšťaciu správu a odporúčania: užívať lieky, menej soliť, prestať fajčiť a viac sa hýbať. Rekonvalescencia trvala mesiac. Dnes Taras chodí každé ráno so psom na prechádzku, nefajčí a hovorí, že sa cíti lepšie ako pred desiatimi rokmi. Kolegom odporúča: «Nečakajte, kým sa niečo stane. Choďte na preventívnu prehliadku.»
+q~: Що Тарас спершу подумав про свої симптоми? | *що це лише стрес від роботи ;; що це інфаркт ;; що це алергія
+q~: Яке знеболення було під час процедури? | *місцеве ;; загальний наркоз ;; жодного
+q~: Що Тарас радить колегам? | *не чекати й ходити на профілактичні огляди ;; більше працювати й менше спати ;; лікуватися лише вдома
+X dd: Обери. | Bolesť mi vystreľuje do [*ľavej/ľavá/ľavou] ruky.
+= do + родовий: do ľavej ruky.
+X dd: Обери. | Zajtra som objednaná u [*kardiologičky/kardiologička/kardiologičke].
+= u + родовий: u kardiologičky.
+X cat: Де ти це почуєш? | Záchranka: Je pri vedomí, Tlačte na ranu, Nezavesujte ;; Vyšetrenie: Príďte nalačno, Zhlboka sa nadýchnite, Vyzlečte sa do pol pása ;; Nemocnica: Návštevné hodiny sú od troch, Vizita je o ôsmej, Prepustíme vás v piatok
+= Диспетчер швидкої, обстеження й лікарня.
+X doc: Прочитай виписку з лікарні. | Prepúšťacia správa – Interné oddelenie | Pacientka: Halyna Melnyk ;; Hospitalizácia: 4. 10. – 9. 10. ;; Diagnóza: zápal pľúc ;; Odporúčanie: antibiotiká ešte 5 dní, pokoj, pitný režim ;; Kontrola: u obvodného lekára do 3 dní po prepustení | Що Галина має зробити після виписки? | *протягом 3 днів прийти на контроль до дільничного лікаря ;; одразу вийти на роботу ;; повернутися в лікарню через тиждень
+= Kontrola: u obvodného lekára do 3 dní po prepustení.
+X fe: - | Dala som sa zaočkovať proti [chrípka>chrípke].
+= proti + давальний: proti chrípke.
+X np: Ти просиш лікаря пояснити результати простіше. | *Mohli by ste mi to vysvetliť jednoduchšie? ;; Mohli by ste mi to vysvetliť jednoduchý? ;; Vysvetliť jednoduchšie vy? ;; Môžem vám to vysvetliť jednoduchšie?
+= Mohli by ste + інфінітив; jednoduchšie — простіше.
+X tr: Перетвори на пораду з «Na tvojom mieste by som…» (говорить жінка). | Choď k lekárovi. | Na tvojom mieste by som išla k lekárovi. ;; Na tvojom mieste by som šla k lekárovi.
+= na tvojom mieste by som + l-форма: išla / šla.
+X dr: - | Sused: Môj brat bol na operácii a teraz je doma. Je ešte stále slabý. | *To je normálne, rekonvalescencia chvíľu trvá. Nech sa rýchlo zotaví. ;; To je normálne, nech sa rýchlo zotaviť. ;; Slabý je, lebo je lenivý.
+= Співчуття й побажання: Nech sa rýchlo zotaví.
+X tone: - | SMS od dcéry: «Mami, zvládla som to! Operácia dopadla dobre, lekár je spokojný a zajtra ma možno prepustia.» | *полегшення й радість ;; страх і тривога ;; роздратування
+= zvládla som to, dopadla dobre — радісна новина.
+X fb: Допиши. | Lekárka sa pýtala aj na rodinnú ___. (анамнез) | anamnézu |
+= pýtať sa na + знахідний: anamnézu.
+X ms: Обери правильні речення. | - | *Liečim sa na vysoký tlak. ;; *Mama má chronické ochorenie. ;; *Som v strese z práce. ;; Liečim sa od vysoký tlak. ;; Mama má chronický ochorenie.
+= liečiť sa na; ochorenie — середній рід: chronické.
+X hm: - | Lekár: «Fajčiť, samozrejme, môžete aj naďalej. Len potom nečakajte, že sa vám tlak zlepší.» | *лікар іронічно натякає, що треба кинути палити ;; лікар дозволяє палити й не бачить проблеми ;; тиск не залежить від куріння
+= Іронія: формально дозволяє, насправді радить кинути.
+X bd: - | Ти пройшов(ла) весь шлях пацієнта!
+> Lekárka: Čo vás trápi? | *Týždeň mám tupú bolesť v krížoch, ktorá vystreľuje do nohy. ;; Týždeň mám tupý bolesť, vystreľuje noha. ;; Kríže, týždeň, noha.
+> Lekárka: Pošlem vás k neurológovi a na magnetickú rezonanciu. | *Dobre. Musím na vyšetrenie prísť nalačno? ;; Dobre. Musím na vyšetrenie prísť nalačne? ;; Neurológ magnetická, nalačno?
+> Neurológ: Výsledky ukazujú, že bude potrebná operácia. | *Rozumiem. Aké sú riziká a ako dlho trvá rekonvalescencia? ;; Rozumiem. Aké je riziká a ako dlho rekonvalescencia? ;; Operácia nie, ďakujem, idem domov.
+> Sestra: Zajtra vás prepustíme. Tu je prepúšťacia správa. | *Ďakujem, odnesiem ju svojej obvodnej lekárke. ;; Ďakujem, odnesiem ho obvodná lekárka. ;; Prepúšťacia správa mi vypíšu.
+F: Тітка з України || Твоя тітка приїхала в гості й захворіла. Ти допомагаєш їй у словацькій системі охорони здоров’я.
+S: Ти описуєш медсестрі тітчин стан. | *Od včera má vysokú horúčku a je jej na vracanie. ;; Od včera má vysoká horúčka a je ona na vracanie. ;; Včera horúčka, vracanie ona.
+S: Лікар: «Pošlem ju na röntgen pľúc.» | *Він направить її на рентген легень ;; Він випише їй ліки для легень ;; Вона має прийти на обхід
+S: Тітку госпіталізували. Ти питаєш, коли можна прийти. | *Kedy sú návštevné hodiny? ;; Kedy je návštevné hodiny? ;; Kedy návšteva hodiny?
+S: Тітку виписують. Ти питаєш, кому віддати виписку. | *Komu mám odovzdať prepúšťaciu správu? ;; Komu mám odovzdať prepúšťacia správa? ;; Kto prepúšťacia správa odovzdať?
+R: príznaky a anamnéza: tupá bolesť, vystreľuje do…, liečim sa na… ;; špecialisti, vyšetrenia, nemocnica, operácia: u neurológa, nalačno, prepustiť, v narkóze ;; záchranka: čo → kde → kto, v bezvedomí, stabilizovaná poloha ;; duševné zdravie, prevencia, životný štýl: cítim sa…, dať sa zaočkovať, pitný režim, zotaviť sa
