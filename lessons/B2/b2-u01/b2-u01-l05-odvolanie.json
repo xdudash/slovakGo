@@ -1,0 +1,928 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u01-l05-odvolanie",
+      "sectionId": "b2-u01",
+      "level": "B2",
+      "title": "Оскарження рішення",
+      "topic": "Офіційне листування",
+      "description": "Як оскаржити рішення установи: строк і місце подання, формула Podávam odvolanie proti rozhodnutiu, аргументи, докази й прохання до органу, який розглядає оскарження.",
+      "order": 5,
+      "xpReward": 50,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Писати оскарження з посиланням на рішення, аргументами, доказами й чіткою вимогою.",
+      "completionMessage": "Ти вмієш оскаржити рішення. Далі — вибачення: як вибачитися стримано й офіційно.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Офіційне листування",
+        "title": "Оскарження рішення",
+        "shortDescription": "Писати оскарження з посиланням на рішення, аргументами, доказами й чіткою вимогою.",
+        "outcomes": [
+          "ідентифікувати рішення: rozhodnutie č. … zo dňa …",
+          "будувати Podávam odvolanie proti rozhodnutiu",
+          "аргументувати: vzhľadom na…, preukázať, napadnuté rozhodnutie",
+          "просити: Žiadam, aby odvolací orgán rozhodnutie zrušil"
+        ],
+        "newWords": [
+          "právoplatný",
+          "preskúmanie",
+          "odvolací orgán",
+          "preukázať",
+          "napadnutý",
+          "vzhľadom na"
+        ],
+        "exercisesCount": 15,
+        "reward": "+50 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Що таке odvolanie і де строк",
+          "text": "Odvolanie — це оскарження рішення установи: ти просиш вищий орган ще раз розглянути справу. Строк і місце подання завжди вказані в поученні (poučenie) наприкінці рішення: часто це 15 днів від дня отримання, а подається оскарження зазвичай в установі, яка рішення видала. Якщо ти не оскаржиш у строк, рішення зазвичай набуде законної сили (nadobudne právoplatnosť), і змінити його стане набагато важче. Починай з ідентифікації рішення: номер і дата. Дату з номером зв’язує «zo dňa» + дата. Дієслово: «podať odvolanie proti + давальний»: «proti rozhodnutiu».",
+          "examples": [
+            {
+              "sk": "Podávam odvolanie proti rozhodnutiu č. 456/2026 zo dňa 3. 3. 2026.",
+              "uk": "Оскаржую рішення № 456/2026 від 3. 3. 2026."
+            },
+            {
+              "sk": "Odvolanie treba podať do 15 dní odo dňa doručenia.",
+              "uk": "Оскарження треба подати протягом 15 днів від дня отримання."
+            }
+          ],
+          "shortRule": "odvolanie proti + давальний · zo dňa + дата · строк у poučení",
+          "commonMistakes": [
+            {
+              "mistake": "Podávam odvolanie na rozhodnutie.",
+              "correct": "Podávam odvolanie proti rozhodnutiu."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Аргументи й докази",
+          "text": "Оскарження не повторює скаргу, воно аргументує. Спершу називаємо оскаржуване рішення («napadnuté rozhodnutie»), далі — з чим не погоджуємося й чому: «Úrad pri výpočte zohľadnil príjem, ktorý už nepoberám.» Докази вводимо дієсловом «preukázať» — довести: «Zmenu príjmu preukazuje nová pracovná zmluva.» Висновок вводимо «vzhľadom na» + знахідний — з огляду на: «Vzhľadom na uvedené skutočnosti žiadam o preskúmanie rozhodnutia.» Тон — спокійний, юридично нейтральний: ми не звинувачуємо працівника, а вказуємо, що рішення спирається на неточні дані.",
+          "examples": [
+            {
+              "sk": "Vzhľadom na uvedené skutočnosti žiadam o preskúmanie rozhodnutia.",
+              "uk": "З огляду на викладені обставини прошу переглянути рішення."
+            },
+            {
+              "sk": "Zmenu príjmu preukazuje priložená pracovná zmluva.",
+              "uk": "Зміну доходу підтверджує доданий трудовий договір."
+            }
+          ],
+          "shortRule": "napadnuté rozhodnutie · preukázať · vzhľadom na + знахідний",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Вимога до органу",
+          "text": "Наприкінці чітко формулюємо, чого хочемо. «Žiadam, aby odvolací orgán napadnuté rozhodnutie zrušil.» (aby + l-форма; орган — чоловічий рід, тому «zrušil»). Або менш радикально: «Navrhujem zmenu rozhodnutia.» «Žiadam o preskúmanie rozhodnutia.» Додаємо перелік додатків: «Prílohy: kópia rozhodnutia, nová pracovná zmluva.» Підпис і дата обов’язкові. Корисно залишити собі копію з відміткою установи про дату прийняття — це доказ, що ти вклався(лась) у строк.",
+          "examples": [
+            {
+              "sk": "Žiadam, aby odvolací orgán napadnuté rozhodnutie zrušil.",
+              "uk": "Прошу, щоб орган, який розглядає оскарження, скасував оскаржуване рішення."
+            },
+            {
+              "sk": "Prílohy: kópia rozhodnutia, nová pracovná zmluva.",
+              "uk": "Додатки: копія рішення, новий трудовий договір."
+            }
+          ],
+          "shortRule": "aby odvolací orgán … zrušil · prílohy · копія з відміткою",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u01-l05-odvolanie-w01",
+            "sk": "právoplatný",
+            "uk": "той, що набрав законної сили",
+            "pronunciationUk": "пра:воплатни:",
+            "exampleSk": "Ak sa v lehote neodvoláte, rozhodnutie sa stane právoplatným.",
+            "exampleUk": "Якщо ви не оскаржите у строк, рішення набуде законної сили."
+          },
+          {
+            "wordId": "b2-u01-l05-odvolanie-w02",
+            "sk": "preskúmanie",
+            "uk": "перегляд, перевірка",
+            "pronunciationUk": "преску:маньє",
+            "exampleSk": "Žiadam o preskúmanie rozhodnutia.",
+            "exampleUk": "Прошу переглянути рішення."
+          },
+          {
+            "wordId": "b2-u01-l05-odvolanie-w03",
+            "sk": "odvolací orgán",
+            "uk": "орган, що розглядає оскарження",
+            "pronunciationUk": "одволаці: орга:н",
+            "exampleSk": "Odvolací orgán rozhodne o odvolaní.",
+            "exampleUk": "Орган, що розглядає оскарження, ухвалить рішення щодо оскарження."
+          },
+          {
+            "wordId": "b2-u01-l05-odvolanie-w04",
+            "sk": "preukázať",
+            "uk": "довести, підтвердити документами",
+            "pronunciationUk": "преука:зать",
+            "exampleSk": "Zmenu príjmu preukážem pracovnou zmluvou.",
+            "exampleUk": "Зміну доходу я доведу трудовим договором."
+          },
+          {
+            "wordId": "b2-u01-l05-odvolanie-w05",
+            "sk": "napadnutý",
+            "uk": "оскаржуваний (про рішення)",
+            "pronunciationUk": "нападнути:",
+            "exampleSk": "Napadnuté rozhodnutie považujem za nesprávne.",
+            "exampleUk": "Оскаржуване рішення вважаю неправильним."
+          },
+          {
+            "wordId": "b2-u01-l05-odvolanie-w06",
+            "sk": "vzhľadom na",
+            "uk": "з огляду на",
+            "pronunciationUk": "взгл'адом на",
+            "exampleSk": "Vzhľadom na uvedené skutočnosti žiadam o zmenu rozhodnutia.",
+            "exampleUk": "З огляду на викладені обставини прошу змінити рішення."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u01-l05-odvolanie-w01",
+          "sk": "právoplatný",
+          "uk": "той, що набрав законної сили",
+          "pronunciationUk": "пра:воплатни:",
+          "exampleSk": "Ak sa v lehote neodvoláte, rozhodnutie sa stane právoplatným.",
+          "exampleUk": "Якщо ви не оскаржите у строк, рішення набуде законної сили.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-w02",
+          "sk": "preskúmanie",
+          "uk": "перегляд, перевірка",
+          "pronunciationUk": "преску:маньє",
+          "exampleSk": "Žiadam o preskúmanie rozhodnutia.",
+          "exampleUk": "Прошу переглянути рішення.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-w03",
+          "sk": "odvolací orgán",
+          "uk": "орган, що розглядає оскарження",
+          "pronunciationUk": "одволаці: орга:н",
+          "exampleSk": "Odvolací orgán rozhodne o odvolaní.",
+          "exampleUk": "Орган, що розглядає оскарження, ухвалить рішення щодо оскарження.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-w04",
+          "sk": "preukázať",
+          "uk": "довести, підтвердити документами",
+          "pronunciationUk": "преука:зать",
+          "exampleSk": "Zmenu príjmu preukážem pracovnou zmluvou.",
+          "exampleUk": "Зміну доходу я доведу трудовим договором.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-w05",
+          "sk": "napadnutý",
+          "uk": "оскаржуваний (про рішення)",
+          "pronunciationUk": "нападнути:",
+          "exampleSk": "Napadnuté rozhodnutie považujem za nesprávne.",
+          "exampleUk": "Оскаржуване рішення вважаю неправильним.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-w06",
+          "sk": "vzhľadom na",
+          "uk": "з огляду на",
+          "pronunciationUk": "взгл'адом на",
+          "exampleSk": "Vzhľadom na uvedené skutočnosti žiadam o zmenu rozhodnutia.",
+          "exampleUk": "З огляду на викладені обставини прошу змінити рішення.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u01-l05-odvolanie-ex01",
+          "lessonId": "b2-u01-l05-odvolanie",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "právoplatný",
+              "right": "той, що набрав законної сили"
+            },
+            {
+              "left": "preskúmanie",
+              "right": "перегляд"
+            },
+            {
+              "left": "odvolací orgán",
+              "right": "орган, що розглядає оскарження"
+            },
+            {
+              "left": "preukázať",
+              "right": "довести"
+            },
+            {
+              "left": "napadnutý",
+              "right": "оскаржуваний"
+            },
+            {
+              "left": "vzhľadom na",
+              "right": "з огляду на"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u01-l05-odvolanie-w01",
+            "b2-u01-l05-odvolanie-w02",
+            "b2-u01-l05-odvolanie-w03",
+            "b2-u01-l05-odvolanie-w04",
+            "b2-u01-l05-odvolanie-w05",
+            "b2-u01-l05-odvolanie-w06"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-ex02",
+          "lessonId": "b2-u01-l05-odvolanie",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Podávam odvolanie "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "na",
+                "proti",
+                "pre"
+              ],
+              "correct": "proti"
+            },
+            {
+              "text": " rozhodnutiu č. 123/2026."
+            }
+          ],
+          "explanation": "Odvolanie podávame proti + давальний: proti rozhodnutiu.",
+          "order": 2,
+          "wordIds": [
+            "b2-u01-l05-odvolanie-w03"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-ex03",
+          "lessonId": "b2-u01-l05-odvolanie",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Vzhľadom "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "o",
+                "na",
+                "pre"
+              ],
+              "correct": "na"
+            },
+            {
+              "text": " uvedené skutočnosti žiadam o preskúmanie rozhodnutia."
+            }
+          ],
+          "explanation": "Вираз «vzhľadom na» вимагає знахідного відмінка: na uvedené skutočnosti.",
+          "order": 3,
+          "wordIds": [
+            "b2-u01-l05-odvolanie-w02",
+            "b2-u01-l05-odvolanie-w03",
+            "b2-u01-l05-odvolanie-w06"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-ex04",
+          "lessonId": "b2-u01-l05-odvolanie",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Ak sa v lehote neodvoláte, rozhodnutie nadobudne ______. (законну силу)",
+          "acceptedAnswers": [
+            "právoplatnosť"
+          ],
+          "explanation": "Rozhodnutie nadobudne právoplatnosť — набуде законної сили.",
+          "order": 4,
+          "wordIds": [
+            "b2-u01-l05-odvolanie-w01",
+            "b2-u01-l05-odvolanie-w03"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-ex05",
+          "lessonId": "b2-u01-l05-odvolanie",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яке формулювання вимоги правильне?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Žiadam, aby odvolací orgán napadnuté rozhodnutie zrušil.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Žiadam, aby odvolací orgán napadnuté rozhodnutie zrušiť.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Žiadam, aby odvolací orgán napadnuté rozhodnutie zruší.",
+              "correct": false
+            }
+          ],
+          "explanation": "Після «aby» стоїть l-форма: zrušil.",
+          "order": 5,
+          "wordIds": [
+            "b2-u01-l05-odvolanie-w03",
+            "b2-u01-l05-odvolanie-w05"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-ex06",
+          "lessonId": "b2-u01-l05-odvolanie",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Podávam odvolanie na rozhodnutiu o zamietnutí žiadosti.",
+          "errorToken": "na",
+          "correctToken": "proti",
+          "explanation": "Podať odvolanie proti + давальний: proti rozhodnutiu.",
+          "order": 6,
+          "wordIds": [
+            "b2-u01-l05-odvolanie-w03"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-ex07",
+          "lessonId": "b2-u01-l05-odvolanie",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Podávam odvolanie proti rozhodnutie č. 456/2026.",
+          "acceptedAnswers": [
+            "Podávam odvolanie proti rozhodnutiu č. 456/2026."
+          ],
+          "explanation": "«Proti» вимагає давального відмінка: rozhodnutiu.",
+          "order": 7,
+          "wordIds": [
+            "b2-u01-l05-odvolanie-w03"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-ex08",
+          "lessonId": "b2-u01-l05-odvolanie",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Olena dostala poštou rozhodnutie, ktorým úrad zamietol jej žiadosť o príspevok na bývanie. V odôvodnení stálo, že jej príjem je vyšší ako povolená hranica. Olena však zistila, že úrad započítal aj mzdu, ktorú už od januára nedostáva, pretože zmenila zamestnanie. V poučení našla, že odvolanie môže podať do 15 dní odo dňa doručenia a že ho podáva na úrade, ktorý rozhodnutie vydal. Napísala, že proti rozhodnutiu podáva odvolanie, uviedla číslo spisu a napadnuté rozhodnutie presne označila. Zmenu príjmu preukázala: priložila novú pracovnú zmluvu a výplatnú pásku. Požiadala, aby odvolací orgán rozhodnutie zrušil. Odvolanie odovzdala na podateľni a nechala si potvrdiť dátum prijatia.",
+          "questions": [
+            {
+              "question": "Чому Олені відмовили в допомозі?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "вона не живе в цьому місті",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "за розрахунком її дохід вищий за дозволену межу",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "вона не подала заяви вчасно",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Яку помилку, на думку Олени, зробила установа?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "видала рішення без підпису",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "не врахувала її дітей",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "врахувала зарплату, якої вона вже не отримує",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Як Олена довела зміну доходу?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "принесла лист від сусідки",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "написала, що це правда",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "додала новий трудовий договір і розрахунковий листок",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 8,
+          "wordIds": [
+            "b2-u01-l05-odvolanie-w03",
+            "b2-u01-l05-odvolanie-w04",
+            "b2-u01-l05-odvolanie-w05"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-ex09",
+          "lessonId": "b2-u01-l05-odvolanie",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай витяг із рішення.",
+          "document": {
+            "title": "Rozhodnutie č. 456/2026 – poučenie",
+            "fields": [
+              {
+                "label": "Výsledok",
+                "value": "žiadosť zamietnutá"
+              },
+              {
+                "label": "Poučenie",
+                "value": "proti tomuto rozhodnutiu možno podať odvolanie do 15 dní odo dňa doručenia"
+              },
+              {
+                "label": "Miesto podania",
+                "value": "úrad, ktorý rozhodnutie vydal"
+              },
+              {
+                "label": "Orgán",
+                "value": "Mestský úrad"
+              }
+            ]
+          },
+          "question": "Куди й у який строк подається оскарження?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "без строку, електронною поштою",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "протягом 30 днів, у суді",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "протягом 15 днів від отримання, в установі, що видала рішення",
+              "correct": true
+            }
+          ],
+          "explanation": "Poučenie: do 15 dní odo dňa doručenia, na úrade, ktorý rozhodnutie vydal.",
+          "order": 9,
+          "wordIds": [
+            "b2-u01-l05-odvolanie-w03"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-ex10",
+          "lessonId": "b2-u01-l05-odvolanie",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай відповідь установи.",
+          "message": {
+            "sender": "Mestský úrad",
+            "body": "Dobrý deň, pani Kovalenko, Vaše odvolanie sme dostali 20. marca, teda v zákonnej lehote. Spis sme postúpili odvolaciemu orgánu, ktorý o ňom rozhodne. Ak by ste chceli doplniť ďalšie dôkazy, doručte ich čo najskôr. S pozdravom referent odboru sociálnych vecí"
+          },
+          "question": "Що сталося зі справою після подання оскарження?",
+          "options": [
+            {
+              "id": "a",
+              "text": "оскарження відхилили через пропуск строку",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "справу передали органу, що розглядає оскарження",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "справу повернули авторці",
+              "correct": false
+            }
+          ],
+          "explanation": "Spis sme postúpili odvolaciemu orgánu — справу передали органу, що розглядає оскарження.",
+          "order": 10,
+          "wordIds": [
+            "b2-u01-l05-odvolanie-w03"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-ex11",
+          "lessonId": "b2-u01-l05-odvolanie",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти починаєш оскарження: подаєш його проти рішення № 456/2026 від 3. 3. 2026.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Podávam odvolanie na rozhodnutie č. 456/2026 zo dňa 3. 3. 2026.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Podávam odvolanie proti rozhodnutiu č. 456/2026 zo dňom 3. 3. 2026.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Podávam odvolanie proti rozhodnutiu č. 456/2026 zo dňa 3. 3. 2026.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Podávam odvolanie proti rozhodnutie č. 456/2026 zo dňa 3. 3. 2026.",
+              "correct": false
+            }
+          ],
+          "explanation": "Proti + давальний (rozhodnutiu); дата — «zo dňa».",
+          "order": 11,
+          "wordIds": [
+            "b2-u01-l05-odvolanie-w03"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-ex12",
+          "lessonId": "b2-u01-l05-odvolanie",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що тут аргумент, а що прохання?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Dôvod"
+            },
+            {
+              "id": "c2",
+              "title": "Návrh"
+            }
+          ],
+          "items": [
+            {
+              "sk": "Žiadam o zrušenie rozhodnutia",
+              "category": "c2"
+            },
+            {
+              "sk": "Žiadam o nové posúdenie žiadosti",
+              "category": "c2"
+            },
+            {
+              "sk": "Navrhujem zmenu rozhodnutia",
+              "category": "c2"
+            },
+            {
+              "sk": "Zmena príjmu je preukázaná dokladmi",
+              "category": "c1"
+            },
+            {
+              "sk": "Úrad započítal starý príjem",
+              "category": "c1"
+            },
+            {
+              "sk": "Rozhodnutie nezohľadnilo moje nové zamestnanie",
+              "category": "c1"
+            },
+            {
+              "sk": "Mzdu už od januára nepoberám",
+              "category": "c1"
+            },
+            {
+              "sk": "Žiadam o preskúmanie rozhodnutia",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Аргумент пояснює, чому рішення неправильне; прохання починається зі žiadam / navrhujem.",
+          "order": 12,
+          "wordIds": [
+            "b2-u01-l05-odvolanie-w02",
+            "b2-u01-l05-odvolanie-w03",
+            "b2-u01-l05-odvolanie-w04"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-ex13",
+          "lessonId": "b2-u01-l05-odvolanie",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і оціни кожне твердження.",
+          "text": "Poučenie: Proti tomuto rozhodnutiu možno podať odvolanie do 15 dní odo dňa jeho doručenia. Odvolanie sa podáva na úrade, ktorý rozhodnutie vydal. Odvolanie má obsahovať označenie rozhodnutia, dôvody nesúhlasu a podpis odvolateľa. Ak sa odvolanie v lehote nepodá, rozhodnutie nadobudne právoplatnosť.",
+          "statements": [
+            {
+              "sk": "Оскарження треба подати протягом 15 днів від отримання.",
+              "correct": true
+            },
+            {
+              "sk": "В оскарженні мають бути причини незгоди.",
+              "correct": true
+            },
+            {
+              "sk": "Після спливу строку рішення набуває законної сили.",
+              "correct": true
+            },
+            {
+              "sk": "Оскарження подається до суду.",
+              "correct": false
+            },
+            {
+              "sk": "Підпис в оскарженні не потрібен.",
+              "correct": false
+            }
+          ],
+          "explanation": "Подання — в установі, що видала рішення; підпис потрібен.",
+          "order": 13,
+          "wordIds": [
+            "b2-u01-l05-odvolanie-w01",
+            "b2-u01-l05-odvolanie-w03"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-ex14",
+          "lessonId": "b2-u01-l05-odvolanie",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні формулювання.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Vzhľadom na uvedené žiadam o zrušenie rozhodnutia.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Žiadam o preskúmať rozhodnutie.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Podávam odvolanie na rozhodnutiu.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Podávam odvolanie proti rozhodnutiu.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Žiadam o preskúmanie napadnutého rozhodnutia.",
+              "correct": true
+            }
+          ],
+          "explanation": "proti + давальний; žiadať o + іменник у знахідному.",
+          "order": 14,
+          "wordIds": [
+            "b2-u01-l05-odvolanie-w02",
+            "b2-u01-l05-odvolanie-w03",
+            "b2-u01-l05-odvolanie-w05",
+            "b2-u01-l05-odvolanie-w06"
+          ]
+        },
+        {
+          "id": "b2-u01-l05-odvolanie-ex15",
+          "lessonId": "b2-u01-l05-odvolanie",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Ak sa odvolanie nepodá v lehote, rozhodnutie sa spravidla stane právoplatným.",
+          "correctAnswer": true,
+          "explanation": "Після спливу строку рішення набуває законної сили — змінити його вже складно.",
+          "order": 15,
+          "wordIds": [
+            "b2-u01-l05-odvolanie-w01",
+            "b2-u01-l05-odvolanie-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Оскарження відмови",
+        "description": "Установа відмовила Олені в допомозі, бо врахувала старий дохід. Вона готує оскарження.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Як почнеш?",
+            "options": [
+              {
+                "sk": "Podávam odvolanie na rozhodnutie č. 456/2026 zo dňa 3. 3. 2026.",
+                "correct": false
+              },
+              {
+                "sk": "Podávam odvolanie proti rozhodnutiu č. 456/2026 zo dňa 3. 3. 2026.",
+                "correct": true
+              },
+              {
+                "sk": "Dobrý deň, nesúhlasím a basta.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як опишеш помилку?",
+            "options": [
+              {
+                "sk": "Úrad je nespravodlivý a zlý.",
+                "correct": false
+              },
+              {
+                "sk": "Nechce sa mi to platiť.",
+                "correct": false
+              },
+              {
+                "sk": "Úrad pri výpočte započítal príjem, ktorý už nepoberám.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Яку вимогу сформулюєш?",
+            "options": [
+              {
+                "sk": "Žiadam, aby odvolací orgán napadnuté rozhodnutie zruší.",
+                "correct": false
+              },
+              {
+                "sk": "Žiadam, aby odvolací orgán napadnuté rozhodnutie zrušil.",
+                "correct": true
+              },
+              {
+                "sk": "Zrušte to hneď!",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Коли подаси оскарження?",
+            "options": [
+              {
+                "sk": "Kedykoľvek v budúcom roku.",
+                "correct": false
+              },
+              {
+                "sk": "Najneskôr do 15 dní odo dňa doručenia, ako sa uvádza v poučení.",
+                "correct": true
+              },
+              {
+                "sk": "Až keď budem mať čas.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш оскаржити рішення. Далі — вибачення: як вибачитися стримано й офіційно."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш оскаржити рішення. Далі — вибачення: як вибачитися стримано й офіційно.",
+        "nowYouKnow": [
+          "odvolanie proti + давальний · zo dňa",
+          "napadnuté rozhodnutie · preukázať · vzhľadom na",
+          "Žiadam, aby odvolací orgán … zrušil",
+          "строк і місце — у poučení"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 15,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u01-l06-ospravedlnenie",
+          "title": "Вибачення в офіційному листі"
+        }
+      }
+    }
+  ]
+}

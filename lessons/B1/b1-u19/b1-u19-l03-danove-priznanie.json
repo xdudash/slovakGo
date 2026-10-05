@@ -1,0 +1,876 @@
+{
+  "lessons": [
+    {
+      "id": "b1-u19-l03-danove-priznanie",
+      "sectionId": "b1-u19",
+      "level": "B1",
+      "title": "Податкова декларація",
+      "topic": "Фінанси",
+      "description": "Хто, як і коли подає daňové priznanie, що таке ročné zúčtovanie, preplatok і nedoplatok, чим загрожує пропущена lehota та коли допоможе daňový poradca.",
+      "order": 183,
+      "xpReward": 40,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Розуміти, чи потрібно подавати декларацію, як її заповнити й подати, і що робити з результатом.",
+      "completionMessage": "Ти розумієш, як працює податкова декларація. Далі — кредит і позика.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B1 · Фінанси",
+        "title": "Податкова декларація",
+        "shortDescription": "Розуміти, чи потрібно подавати декларацію, як її заповнити й подати, і що робити з результатом.",
+        "outcomes": [
+          "пояснювати, хто й чому подає daňové priznanie",
+          "описувати кроки: vyplniť tlačivo, priložiť potvrdenie, podať elektronicky",
+          "розрізняти preplatok і nedoplatok",
+          "говорити про lehotu, pokutu й dodatočné priznanie"
+        ],
+        "newWords": [
+          "tlačivo",
+          "dodatočné daňové priznanie",
+          "daňový poradca",
+          "odpočítať",
+          "elektronicky",
+          "zdaniteľný príjem"
+        ],
+        "exercisesCount": 14,
+        "reward": "+40 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Хто подає й коли",
+          "text": "«Daňové priznanie» — податкова декларація. Її подає той, кому це велить закон, наприклад хто мав крім зарплати ще й інший дохід (оренда, підприємництво, дохід з-за кордону). Працівник часто декларацію не подає: «ročné zúčtovanie» може зробити роботодавець, якщо про це попросити. Чи ти маєш обов’язок, залежить від ситуації, тому завжди перевіряй на сайті фінансової адміністрації. Строк («lehota») буває навесні, але точну дату теж перевір.",
+          "examples": [
+            {
+              "sk": "Musím podať daňové priznanie, ak som mal aj iný príjem?",
+              "uk": "Чи мушу я подати декларацію, якщо мав і інший дохід?"
+            },
+            {
+              "sk": "Ročné zúčtovanie môže urobiť zamestnávateľ.",
+              "uk": "Річний перерахунок може зробити роботодавець."
+            }
+          ],
+          "shortRule": "povinnosť podať · ročné zúčtovanie · lehota",
+          "commonMistakes": [
+            {
+              "mistake": "Musím podal priznanie.",
+              "correct": "Musím podať priznanie."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Як подати",
+          "text": "Спершу «vyplniť tlačivo» (заповнити бланк), потім додати «prílohy» — найчастіше «potvrdenie o zdaniteľných príjmoch» від роботодавця — і «podať» або «odoslať» декларацію. Часто це роблять «elektronicky» через портал фінансової адміністрації, де потрібна ідентифікація. Дієслова доконаного виду відповідають на «що зробити?»: vyplniť, priložiť, odoslať. Кажемо: «Priznanie sa podáva elektronicky alebo písomne.»",
+          "examples": [
+            {
+              "sk": "Najprv vyplním tlačivo a potom ho podám elektronicky.",
+              "uk": "Спершу заповню бланк, а потім подам його електронно."
+            },
+            {
+              "sk": "K priznaniu priložím potvrdenie od zamestnávateľa.",
+              "uk": "До декларації додам довідку від роботодавця."
+            }
+          ],
+          "shortRule": "vyplniť → priložiť → podať",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Результат і помилки",
+          "text": "Після розрахунку виходить «preplatok» (ти заплатив більше — тобі повернуть) або «nedoplatok» (треба доплатити в строк). Пропущена lehota може коштувати «pokutu»: «Hrozí mi pokuta.» (не «hrozí mi pokutu»). Помилку можна виправити через «dodatočné daňové priznanie». Із складними випадками допоможе «daňový poradca». Від бази можна «odpočítať» деякі статті, якщо закон це дозволяє.",
+          "examples": [
+            {
+              "sk": "Ak vznikne preplatok, finančná správa ti ho vráti.",
+              "uk": "Якщо виникне переплата, фінансова адміністрація поверне її тобі."
+            },
+            {
+              "sk": "Ak vznikne nedoplatok, treba ho zaplatiť v lehote.",
+              "uk": "Якщо виникне недоплата, її треба сплатити в строк."
+            }
+          ],
+          "shortRule": "preplatok = vrátia ti · nedoplatok = doplatíš",
+          "commonMistakes": [
+            {
+              "mistake": "Hrozí mi pokutu.",
+              "correct": "Hrozí mi pokuta."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b1-u19-l03-danove-priznanie-w01",
+            "sk": "tlačivo",
+            "uk": "бланк, форма",
+            "pronunciationUk": "тлачіво",
+            "exampleSk": "Tlačivo daňového priznania nájdeš na webe.",
+            "exampleUk": "Бланк податкової декларації знайдеш на сайті."
+          },
+          {
+            "wordId": "b1-u19-l03-danove-priznanie-w02",
+            "sk": "dodatočné daňové priznanie",
+            "uk": "додаткова декларація (виправлення помилки)",
+            "pronunciationUk": "додаточнє: даньове: прізнанє",
+            "exampleSk": "Pomýlil som sa v sume, preto podám dodatočné daňové priznanie.",
+            "exampleUk": "Я помилився в сумі, тому подам додаткову декларацію."
+          },
+          {
+            "wordId": "b1-u19-l03-danove-priznanie-w03",
+            "sk": "daňový poradca",
+            "uk": "податковий радник",
+            "pronunciationUk": "даньови: порадца",
+            "exampleSk": "Daňový poradca mi pomohol vyplniť priznanie.",
+            "exampleUk": "Податковий радник допоміг мені заповнити декларацію."
+          },
+          {
+            "wordId": "b1-u19-l03-danove-priznanie-w04",
+            "sk": "odpočítať",
+            "uk": "відняти, вирахувати",
+            "pronunciationUk": "одпочітать",
+            "exampleSk": "Od základu dane si môžeš odpočítať niektoré položky.",
+            "exampleUk": "Від бази оподаткування можна відняти деякі статті."
+          },
+          {
+            "wordId": "b1-u19-l03-danove-priznanie-w05",
+            "sk": "elektronicky",
+            "uk": "електронно",
+            "pronunciationUk": "електроніцкі",
+            "exampleSk": "Priznanie som podala elektronicky.",
+            "exampleUk": "Декларацію я подала електронно."
+          },
+          {
+            "wordId": "b1-u19-l03-danove-priznanie-w06",
+            "sk": "zdaniteľný príjem",
+            "uk": "оподатковуваний дохід",
+            "pronunciationUk": "зданітельни: при:йем",
+            "exampleSk": "Zdaniteľný príjem je uvedený v potvrdení od zamestnávateľa.",
+            "exampleUk": "Оподатковуваний дохід вказаний у довідці від роботодавця."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b1-u19-l03-danove-priznanie-w01",
+          "sk": "tlačivo",
+          "uk": "бланк, форма",
+          "pronunciationUk": "тлачіво",
+          "exampleSk": "Tlačivo daňového priznania nájdeš na webe.",
+          "exampleUk": "Бланк податкової декларації знайдеш на сайті.",
+          "level": "B1",
+          "topic": "Фінанси",
+          "tags": [
+            "b1-u19",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u19-l03-danove-priznanie-w02",
+          "sk": "dodatočné daňové priznanie",
+          "uk": "додаткова декларація (виправлення помилки)",
+          "pronunciationUk": "додаточнє: даньове: прізнанє",
+          "exampleSk": "Pomýlil som sa v sume, preto podám dodatočné daňové priznanie.",
+          "exampleUk": "Я помилився в сумі, тому подам додаткову декларацію.",
+          "level": "B1",
+          "topic": "Фінанси",
+          "tags": [
+            "b1-u19",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u19-l03-danove-priznanie-w03",
+          "sk": "daňový poradca",
+          "uk": "податковий радник",
+          "pronunciationUk": "даньови: порадца",
+          "exampleSk": "Daňový poradca mi pomohol vyplniť priznanie.",
+          "exampleUk": "Податковий радник допоміг мені заповнити декларацію.",
+          "level": "B1",
+          "topic": "Фінанси",
+          "tags": [
+            "b1-u19",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u19-l03-danove-priznanie-w04",
+          "sk": "odpočítať",
+          "uk": "відняти, вирахувати",
+          "pronunciationUk": "одпочітать",
+          "exampleSk": "Od základu dane si môžeš odpočítať niektoré položky.",
+          "exampleUk": "Від бази оподаткування можна відняти деякі статті.",
+          "level": "B1",
+          "topic": "Фінанси",
+          "tags": [
+            "b1-u19",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u19-l03-danove-priznanie-w05",
+          "sk": "elektronicky",
+          "uk": "електронно",
+          "pronunciationUk": "електроніцкі",
+          "exampleSk": "Priznanie som podala elektronicky.",
+          "exampleUk": "Декларацію я подала електронно.",
+          "level": "B1",
+          "topic": "Фінанси",
+          "tags": [
+            "b1-u19",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u19-l03-danove-priznanie-w06",
+          "sk": "zdaniteľný príjem",
+          "uk": "оподатковуваний дохід",
+          "pronunciationUk": "зданітельни: при:йем",
+          "exampleSk": "Zdaniteľný príjem je uvedený v potvrdení od zamestnávateľa.",
+          "exampleUk": "Оподатковуваний дохід вказаний у довідці від роботодавця.",
+          "level": "B1",
+          "topic": "Фінанси",
+          "tags": [
+            "b1-u19",
+            "b1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b1-u19-l03-danove-priznanie-ex01",
+          "lessonId": "b1-u19-l03-danove-priznanie",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "tlačivo",
+              "right": "бланк"
+            },
+            {
+              "left": "dodatočné daňové priznanie",
+              "right": "додаткова декларація"
+            },
+            {
+              "left": "daňový poradca",
+              "right": "податковий радник"
+            },
+            {
+              "left": "odpočítať",
+              "right": "відняти"
+            },
+            {
+              "left": "elektronicky",
+              "right": "електронно"
+            },
+            {
+              "left": "zdaniteľný príjem",
+              "right": "оподатковуваний дохід"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b1-u19-l03-danove-priznanie-w01",
+            "b1-u19-l03-danove-priznanie-w02",
+            "b1-u19-l03-danove-priznanie-w03",
+            "b1-u19-l03-danove-priznanie-w04",
+            "b1-u19-l03-danove-priznanie-w05",
+            "b1-u19-l03-danove-priznanie-w06"
+          ]
+        },
+        {
+          "id": "b1-u19-l03-danove-priznanie-ex02",
+          "lessonId": "b1-u19-l03-danove-priznanie",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Daňové priznanie môžeš podať "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "elektronickému",
+                "elektronický",
+                "elektronicky"
+              ],
+              "correct": "elektronicky"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Спосіб дії — прислівник: elektronicky.",
+          "order": 2,
+          "wordIds": [
+            "b1-u19-l03-danove-priznanie-w02",
+            "b1-u19-l03-danove-priznanie-w03",
+            "b1-u19-l03-danove-priznanie-w05"
+          ]
+        },
+        {
+          "id": "b1-u19-l03-danove-priznanie-ex03",
+          "lessonId": "b1-u19-l03-danove-priznanie",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Ak vznikne preplatok, finančná správa ti ho "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "zmešká",
+                "vyplní",
+                "vráti"
+              ],
+              "correct": "vráti"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Переплату повертають: vráti. Vyplniť — заповнити, zmeškať — пропустити.",
+          "order": 3,
+          "wordIds": [
+            "b1-u19-l03-danove-priznanie-w02"
+          ]
+        },
+        {
+          "id": "b1-u19-l03-danove-priznanie-ex04",
+          "lessonId": "b1-u19-l03-danove-priznanie",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Tlačivo daňového priznania treba ______ a podať v lehote. (інфінітив: заповнити)",
+          "acceptedAnswers": [
+            "vyplniť"
+          ],
+          "explanation": "treba + інфінітив: vyplniť.",
+          "order": 4,
+          "wordIds": [
+            "b1-u19-l03-danove-priznanie-w01",
+            "b1-u19-l03-danove-priznanie-w02",
+            "b1-u19-l03-danove-priznanie-w03"
+          ]
+        },
+        {
+          "id": "b1-u19-l03-danove-priznanie-ex05",
+          "lessonId": "b1-u19-l03-danove-priznanie",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Priznanie môžeš podal aj elektronicky.",
+          "errorToken": "podal",
+          "correctToken": "podať",
+          "explanation": "môžeš + інфінітив: podať.",
+          "order": 5,
+          "wordIds": [
+            "b1-u19-l03-danove-priznanie-w02",
+            "b1-u19-l03-danove-priznanie-w05"
+          ]
+        },
+        {
+          "id": "b1-u19-l03-danove-priznanie-ex06",
+          "lessonId": "b1-u19-l03-danove-priznanie",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Lehotu na podanie priznania som zmeškal, preto mi hrozí pokutu.",
+          "acceptedAnswers": [
+            "Lehotu na podanie priznania som zmeškal, preto mi hrozí pokuta."
+          ],
+          "explanation": "hroziť + давальний, підмет — pokuta (називний): hrozí mi pokuta.",
+          "order": 6,
+          "wordIds": [
+            "b1-u19-l03-danove-priznanie-w02"
+          ]
+        },
+        {
+          "id": "b1-u19-l03-danove-priznanie-ex07",
+          "lessonId": "b1-u19-l03-danove-priznanie",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Об’єднай речення словом «potom».",
+          "source": "Vyplním tlačivo. Podám ho elektronicky.",
+          "acceptedAnswers": [
+            "Najprv vyplním tlačivo a potom ho podám elektronicky.",
+            "Vyplním tlačivo a potom ho podám elektronicky.",
+            "Najprv vyplním tlačivo, potom ho podám elektronicky.",
+            "Vyplním tlačivo, potom ho podám elektronicky.",
+            "Vyplním tlačivo a potom ho elektronicky podám.",
+            "Najprv vyplním tlačivo a potom ho elektronicky podám."
+          ],
+          "explanation": "Послідовність дій: vyplniť → podať; ho стоїть після potom.",
+          "order": 7,
+          "wordIds": [
+            "b1-u19-l03-danove-priznanie-w01",
+            "b1-u19-l03-danove-priznanie-w02",
+            "b1-u19-l03-danove-priznanie-w05"
+          ]
+        },
+        {
+          "id": "b1-u19-l03-danove-priznanie-ex08",
+          "lessonId": "b1-u19-l03-danove-priznanie",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Preplatok alebo nedoplatok?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Preplatok"
+            },
+            {
+              "id": "c2",
+              "title": "Nedoplatok"
+            }
+          ],
+          "items": [
+            {
+              "sk": "dlhujem štátu",
+              "category": "c2"
+            },
+            {
+              "sk": "zaplatím v lehote",
+              "category": "c2"
+            },
+            {
+              "sk": "dostanem späť peniaze",
+              "category": "c1"
+            },
+            {
+              "sk": "zaplatil som viac",
+              "category": "c1"
+            },
+            {
+              "sk": "vrátenie na účet",
+              "category": "c1"
+            },
+            {
+              "sk": "finančná správa mi vráti peniaze",
+              "category": "c1"
+            },
+            {
+              "sk": "zaplatil som menej",
+              "category": "c2"
+            },
+            {
+              "sk": "musím doplatiť",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Переплату повертають тобі, недоплату доплачуєш ти.",
+          "order": 8,
+          "wordIds": [
+            "b1-u19-l03-danove-priznanie-w02"
+          ]
+        },
+        {
+          "id": "b1-u19-l03-danove-priznanie-ex09",
+          "lessonId": "b1-u19-l03-danove-priznanie",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай довідку роботодавця.",
+          "document": {
+            "title": "Potvrdenie o zdaniteľných príjmoch",
+            "fields": [
+              {
+                "label": "Zamestnávateľ",
+                "value": "Strojárne Žilina s. r. o."
+              },
+              {
+                "label": "Obdobie",
+                "value": "1. 1. – 31. 12."
+              },
+              {
+                "label": "Zdaniteľný príjem za rok",
+                "value": "16 800 €"
+              },
+              {
+                "label": "Preddavky na daň",
+                "value": "1 560 €"
+              }
+            ]
+          },
+          "question": "Яку суму роботодавець перерахував як авансові внески податку?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "1 560 €",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "16 800 €",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "12 місяців",
+              "correct": false
+            }
+          ],
+          "explanation": "Preddavky na daň — авансові внески податку: 1 560 €.",
+          "order": 9,
+          "wordIds": [
+            "b1-u19-l03-danove-priznanie-w02",
+            "b1-u19-l03-danove-priznanie-w06"
+          ]
+        },
+        {
+          "id": "b1-u19-l03-danove-priznanie-ex10",
+          "lessonId": "b1-u19-l03-danove-priznanie",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення від податкового радника.",
+          "message": {
+            "sender": "Daňový poradca Mgr. Kováč",
+            "body": "Dobrý deň, pani Kovalenková, vo vašom priznaní vyšiel preplatok 210 eur. Finančná správa ho vráti na účet, ktorý sme uviedli v tlačive. Priznanie sme podali elektronicky v lehote. Potvrdenie o podaní vám prikladám."
+          },
+          "question": "Що станеться з переплатою?",
+          "options": [
+            {
+              "id": "a",
+              "text": "вона залишиться державі",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "її повернуть на рахунок, вказаний у бланку",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "її треба сплатити за тиждень",
+              "correct": false
+            }
+          ],
+          "explanation": "Preplatok vráti finančná správa na účet z tlačiva.",
+          "order": 10,
+          "wordIds": [
+            "b1-u19-l03-danove-priznanie-w01",
+            "b1-u19-l03-danove-priznanie-w02",
+            "b1-u19-l03-danove-priznanie-w03",
+            "b1-u19-l03-danove-priznanie-w05"
+          ]
+        },
+        {
+          "id": "b1-u19-l03-danove-priznanie-ex11",
+          "lessonId": "b1-u19-l03-danove-priznanie",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти питаєш колегу, чи мусиш подавати декларацію, якщо мав ще й підробіток.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Musím podanie daňové priznanie, ak som mal aj brigádu?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Musím podať daňové priznanie, ak mal som aj brigádu?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Musím podať daňové priznanie, ak som mal aj brigádu?",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Mám podať daňové priznanie, ak som mal brigádou?",
+              "correct": false
+            }
+          ],
+          "explanation": "musím + інфінітив; ak som mal — som стоїть після ak.",
+          "order": 11,
+          "wordIds": [
+            "b1-u19-l03-danove-priznanie-w02",
+            "b1-u19-l03-danove-priznanie-w03"
+          ]
+        },
+        {
+          "id": "b1-u19-l03-danove-priznanie-ex12",
+          "lessonId": "b1-u19-l03-danove-priznanie",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kolegyňa",
+              "sk": "Musím podať daňové priznanie?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Záleží na tvojej situácii. Over si to na stránke finančnej správy.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Je to jedno. Nikto to nekontroluje.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Záleží na tvojej situácii. Over to si na stránke finančnej správe.",
+              "correct": false
+            }
+          ],
+          "explanation": "Обов’язок залежить від ситуації; správa — родовий: finančnej správy.",
+          "order": 12,
+          "wordIds": [
+            "b1-u19-l03-danove-priznanie-w02",
+            "b1-u19-l03-danove-priznanie-w03"
+          ]
+        },
+        {
+          "id": "b1-u19-l03-danove-priznanie-ex13",
+          "lessonId": "b1-u19-l03-danove-priznanie",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і оціни кожне твердження.",
+          "text": "Zamestnanec, ktorý mal len jednu prácu, často daňové priznanie podávať nemusí. Ročné zúčtovanie môže urobiť zamestnávateľ, ak ho o to zamestnanec požiada. Kto mal aj iný príjem, napríklad z prenájmu bytu, zvyčajne priznanie podať musí. Tlačivo sa dá vyplniť aj elektronicky. Za zmeškanie lehoty hrozí pokuta. Podrobnosti treba vždy overiť.",
+          "statements": [
+            {
+              "sk": "Працівник із однією роботою часто декларацію подавати не мусить.",
+              "correct": true
+            },
+            {
+              "sk": "Річний перерахунок може зробити роботодавець на прохання працівника.",
+              "correct": true
+            },
+            {
+              "sk": "Бланк можна заповнити лише на папері.",
+              "correct": false
+            },
+            {
+              "sk": "За пропущений строк може загрожувати штраф.",
+              "correct": true
+            },
+            {
+              "sk": "Хто здавав квартиру, ніколи не мусить подавати декларацію.",
+              "correct": false
+            }
+          ],
+          "explanation": "Бланк можна заповнити й електронно; хто мав інший дохід, зазвичай мусить подати.",
+          "order": 13,
+          "wordIds": [
+            "b1-u19-l03-danove-priznanie-w01",
+            "b1-u19-l03-danove-priznanie-w02",
+            "b1-u19-l03-danove-priznanie-w03",
+            "b1-u19-l03-danove-priznanie-w05",
+            "b1-u19-l03-danove-priznanie-w06"
+          ]
+        },
+        {
+          "id": "b1-u19-l03-danove-priznanie-ex14",
+          "lessonId": "b1-u19-l03-danove-priznanie",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні речення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Priznanie môžeš podať elektronicky.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Lehotu treba dodržať.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Ak vznikne preplatok, finančná správa ti ho vráti.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Ak vznikne nedoplatok, štát ti ho vráti.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Priznanie môžeš podal elektronicky.",
+              "correct": false
+            }
+          ],
+          "explanation": "Недоплату доплачуєш ти, а не держава; môžeš + інфінітив.",
+          "order": 14,
+          "wordIds": [
+            "b1-u19-l03-danove-priznanie-w02",
+            "b1-u19-l03-danove-priznanie-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перша податкова декларація",
+        "description": "Тобі треба розібратися з декларацією, бо в минулому році ти мав ще й підробіток.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти питаєш у колеги, чи мусиш подавати декларацію.",
+            "options": [
+              {
+                "sk": "Musím podať daňové priznanie, ak som mal aj brigádu?",
+                "correct": true
+              },
+              {
+                "sk": "Musím podanie priznanie, ak mal som brigádu?",
+                "correct": false
+              },
+              {
+                "sk": "Musím podal daňové priznanie, ak som mal aj brigádu?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Колега радить подати електронно. Ти питаєш, де знайти бланк.",
+            "options": [
+              {
+                "sk": "Kde najdem tlačivo daňové priznanie?",
+                "correct": false
+              },
+              {
+                "sk": "Kde nájdem tlačivo na daňového priznanie?",
+                "correct": false
+              },
+              {
+                "sk": "Kde nájdem tlačivo na daňové priznanie?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Радник: «Vyšiel vám nedoplatok.» Що це означає?",
+            "options": [
+              {
+                "sk": "Ти пропустив строк",
+                "correct": false
+              },
+              {
+                "sk": "Ти заплатив менше й маєш доплатити",
+                "correct": true
+              },
+              {
+                "sk": "Тобі повернуть гроші",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти пояснюєш, що зробиш після заповнення бланка.",
+            "options": [
+              {
+                "sk": "Najprv vyplniť tlačivo a potom ho podám.",
+                "correct": false
+              },
+              {
+                "sk": "Najprv vyplním tlačivo a potom podám ho.",
+                "correct": false
+              },
+              {
+                "sk": "Najprv vyplním tlačivo a potom ho podám.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш, як працює податкова декларація. Далі — кредит і позика."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш, як працює податкова декларація. Далі — кредит і позика.",
+        "nowYouKnow": [
+          "daňové priznanie, ročné zúčtovanie — перевір, чи це твій випадок",
+          "vyplniť tlačivo → priložiť potvrdenie → podať elektronicky",
+          "preplatok (vrátia) × nedoplatok (doplatíš)",
+          "lehota, pokuta, dodatočné priznanie, daňový poradca"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 40,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b1-u19-l04-uver-a-pozicka",
+          "title": "Кредит і позика"
+        }
+      }
+    }
+  ]
+}

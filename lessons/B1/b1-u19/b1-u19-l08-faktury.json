@@ -1,0 +1,907 @@
+{
+  "lessons": [
+    {
+      "id": "b1-u19-l08-faktury",
+      "sectionId": "b1-u19",
+      "level": "B1",
+      "title": "Рахунки-фактури",
+      "topic": "Фінанси",
+      "description": "З чого складається faktúra (dodávateľ, odberateľ, IČO, DIČ, variabilný symbol, dátum splatnosti), faktúra za + знахідний, як оплатити, нагадати й попросити виправити помилку.",
+      "order": 188,
+      "xpReward": 40,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Читати й оформлювати faktúru, оплачувати її вчасно та ввічливо реагувати на помилки й нагадування.",
+      "completionMessage": "Ти вмієш працювати з рахунками-фактурами. Далі — фінансові шахрайства.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B1 · Фінанси",
+        "title": "Рахунки-фактури",
+        "shortDescription": "Читати й оформлювати faktúru, оплачувати її вчасно та ввічливо реагувати на помилки й нагадування.",
+        "outcomes": [
+          "читати daňový doklad: dodávateľ, odberateľ, IČO, DIČ, dátum splatnosti",
+          "говорити faktúra za + знахідний, vystaviť, uhradiť, fakturovať",
+          "розрізняти zálohovú a konečnú faktúru",
+          "просити виправити faktúru й ввічливо відповідати на upomienku"
+        ],
+        "newWords": [
+          "odberateľ",
+          "fakturovať",
+          "daňový doklad",
+          "zálohová faktúra",
+          "dátum splatnosti",
+          "DIČ"
+        ],
+        "exercisesCount": 15,
+        "reward": "+40 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Що на faktúre",
+          "text": "«Faktúra» — рахунок-фактура. «Dodávateľ» — той, хто постачає й виставляє її (ти, якщо ти živnostník); «odberateľ» — той, хто купує й платить. На faktúre є: IČO та DIČ сторін, číslo faktúry, dátum vystavenia, dátum splatnosti, suma, IBAN і variabilný symbol. Прийменник «za» + знахідний — за що: «faktúra za opravu», «faktúra za služby». «Fakturovať» — виставляти рахунок: «Klientovi fakturujem 400 eur mesačne.»",
+          "examples": [
+            {
+              "sk": "Vystavil som faktúru za opravu auta.",
+              "uk": "Я виставив рахунок за ремонт авто."
+            },
+            {
+              "sk": "Odberateľ musí uhradiť faktúru do dátumu splatnosti.",
+              "uk": "Покупець мусить оплатити рахунок до дати сплати."
+            }
+          ],
+          "shortRule": "faktúra za + знахідний · dodávateľ × odberateľ",
+          "commonMistakes": [
+            {
+              "mistake": "Vystavil som faktúru pre opravu.",
+              "correct": "Vystavil som faktúru za opravu."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Zálohová a konečná faktúra, platba",
+          "text": "«Zálohová faktúra» — рахунок на передоплату (аванс), зазвичай не є податковим документом. Після виконання робіт виставляють остаточну: «daňový doklad». Платимо «do dátumu splatnosti» (до + родовий) і вказуємо правильний «variabilný symbol», інакше платіж важко зіставити: «Faktúra je uhradená / neuhradená.» Прострочена оплата може означати «upomienku» й «úroky z omeškania». Умови завжди дивись у договорі.",
+          "examples": [
+            {
+              "sk": "Najprv zaplatím zálohovú faktúru, potom dostanem daňový doklad.",
+              "uk": "Спершу я сплачу рахунок на передоплату, потім отримаю податковий документ."
+            },
+            {
+              "sk": "Faktúra je splatná do štrnástich dní.",
+              "uk": "Рахунок підлягає оплаті протягом чотирнадцяти днів."
+            }
+          ],
+          "shortRule": "zálohová → konečná · do dátumu splatnosti",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Chyba na faktúre",
+          "text": "Якщо у faktúre помилка, ввічливо проси про виправлення: «Faktúra obsahuje nesprávnu sumu. Prosím Vás o vystavenie opravnej faktúry.» Після «prosím o» — знахідний відмінок, часто віддієслівний іменник на -ie: «prosím o opravu», «o vystavenie». Дієслово «obsahovať» — однина при faktúra: «Faktúra obsahuje chybu». На нагадування відповідай конкретно: «Faktúru som uhradil dňa…» Формальне «Vy» пиши з великої літери в листі.",
+          "examples": [
+            {
+              "sk": "Faktúra obsahuje nesprávnu sumu, prosím Vás o opravu.",
+              "uk": "У рахунку неправильна сума, прошу Вас виправити."
+            },
+            {
+              "sk": "Faktúru som uhradila minulý piatok.",
+              "uk": "Рахунок я оплатила минулої п’ятниці."
+            }
+          ],
+          "shortRule": "prosím o + знахідний · faktúra obsahuje",
+          "commonMistakes": [
+            {
+              "mistake": "Faktúra obsahujú chybu.",
+              "correct": "Faktúra obsahuje chybu."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b1-u19-l08-faktury-w01",
+            "sk": "odberateľ",
+            "uk": "покупець, замовник",
+            "pronunciationUk": "одбератель",
+            "exampleSk": "Odberateľ zaplatil faktúru včas.",
+            "exampleUk": "Замовник оплатив рахунок вчасно."
+          },
+          {
+            "wordId": "b1-u19-l08-faktury-w02",
+            "sk": "fakturovať",
+            "uk": "виставляти рахунок",
+            "pronunciationUk": "фактуровать",
+            "exampleSk": "Klientovi fakturujem 400 eur mesačne.",
+            "exampleUk": "Клієнтові я виставляю рахунок на 400 євро щомісяця."
+          },
+          {
+            "wordId": "b1-u19-l08-faktury-w03",
+            "sk": "daňový doklad",
+            "uk": "податковий документ",
+            "pronunciationUk": "даньови: доклад",
+            "exampleSk": "Po dokončení práce dostanete daňový doklad.",
+            "exampleUk": "Після завершення роботи ви отримаєте податковий документ."
+          },
+          {
+            "wordId": "b1-u19-l08-faktury-w04",
+            "sk": "zálohová faktúra",
+            "uk": "рахунок на передоплату",
+            "pronunciationUk": "за:лохова: факту:ра",
+            "exampleSk": "Najprv zaplatím zálohovú faktúru.",
+            "exampleUk": "Спершу я сплачу рахунок на передоплату."
+          },
+          {
+            "wordId": "b1-u19-l08-faktury-w05",
+            "sk": "dátum splatnosti",
+            "uk": "дата сплати",
+            "pronunciationUk": "да:тум сплатносьті",
+            "exampleSk": "Dátum splatnosti je uvedený na faktúre.",
+            "exampleUk": "Дата сплати вказана в рахунку."
+          },
+          {
+            "wordId": "b1-u19-l08-faktury-w06",
+            "sk": "DIČ",
+            "uk": "податковий ідентифікаційний номер",
+            "pronunciationUk": "діч",
+            "exampleSk": "Na faktúre musí byť uvedené IČO aj DIČ.",
+            "exampleUk": "У рахунку мають бути вказані IČO й DIČ."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b1-u19-l08-faktury-w01",
+          "sk": "odberateľ",
+          "uk": "покупець, замовник",
+          "pronunciationUk": "одбератель",
+          "exampleSk": "Odberateľ zaplatil faktúru včas.",
+          "exampleUk": "Замовник оплатив рахунок вчасно.",
+          "level": "B1",
+          "topic": "Фінанси",
+          "tags": [
+            "b1-u19",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-w02",
+          "sk": "fakturovať",
+          "uk": "виставляти рахунок",
+          "pronunciationUk": "фактуровать",
+          "exampleSk": "Klientovi fakturujem 400 eur mesačne.",
+          "exampleUk": "Клієнтові я виставляю рахунок на 400 євро щомісяця.",
+          "level": "B1",
+          "topic": "Фінанси",
+          "tags": [
+            "b1-u19",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-w03",
+          "sk": "daňový doklad",
+          "uk": "податковий документ",
+          "pronunciationUk": "даньови: доклад",
+          "exampleSk": "Po dokončení práce dostanete daňový doklad.",
+          "exampleUk": "Після завершення роботи ви отримаєте податковий документ.",
+          "level": "B1",
+          "topic": "Фінанси",
+          "tags": [
+            "b1-u19",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-w04",
+          "sk": "zálohová faktúra",
+          "uk": "рахунок на передоплату",
+          "pronunciationUk": "за:лохова: факту:ра",
+          "exampleSk": "Najprv zaplatím zálohovú faktúru.",
+          "exampleUk": "Спершу я сплачу рахунок на передоплату.",
+          "level": "B1",
+          "topic": "Фінанси",
+          "tags": [
+            "b1-u19",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-w05",
+          "sk": "dátum splatnosti",
+          "uk": "дата сплати",
+          "pronunciationUk": "да:тум сплатносьті",
+          "exampleSk": "Dátum splatnosti je uvedený na faktúre.",
+          "exampleUk": "Дата сплати вказана в рахунку.",
+          "level": "B1",
+          "topic": "Фінанси",
+          "tags": [
+            "b1-u19",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-w06",
+          "sk": "DIČ",
+          "uk": "податковий ідентифікаційний номер",
+          "pronunciationUk": "діч",
+          "exampleSk": "Na faktúre musí byť uvedené IČO aj DIČ.",
+          "exampleUk": "У рахунку мають бути вказані IČO й DIČ.",
+          "level": "B1",
+          "topic": "Фінанси",
+          "tags": [
+            "b1-u19",
+            "b1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b1-u19-l08-faktury-ex01",
+          "lessonId": "b1-u19-l08-faktury",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "odberateľ",
+              "right": "покупець"
+            },
+            {
+              "left": "fakturovať",
+              "right": "виставляти рахунок"
+            },
+            {
+              "left": "daňový doklad",
+              "right": "податковий документ"
+            },
+            {
+              "left": "zálohová faktúra",
+              "right": "рахунок на передоплату"
+            },
+            {
+              "left": "dátum splatnosti",
+              "right": "дата сплати"
+            },
+            {
+              "left": "DIČ",
+              "right": "податковий ідентифікаційний номер"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b1-u19-l08-faktury-w01",
+            "b1-u19-l08-faktury-w02",
+            "b1-u19-l08-faktury-w03",
+            "b1-u19-l08-faktury-w04",
+            "b1-u19-l08-faktury-w05",
+            "b1-u19-l08-faktury-w06"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-ex02",
+          "lessonId": "b1-u19-l08-faktury",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Vystavil som faktúru "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "pre",
+                "o",
+                "za"
+              ],
+              "correct": "za"
+            },
+            {
+              "text": " opravu auta."
+            }
+          ],
+          "explanation": "faktúra za + знахідний — за що.",
+          "order": 2,
+          "wordIds": [
+            "b1-u19-l08-faktury-w04"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-ex03",
+          "lessonId": "b1-u19-l08-faktury",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Faktúru treba uhradiť do "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "dátume splatnosti",
+                "dátumu splatnosti",
+                "dátum splatnosti"
+              ],
+              "correct": "dátumu splatnosti"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "do + родовий: do dátumu splatnosti.",
+          "order": 3,
+          "wordIds": [
+            "b1-u19-l08-faktury-w04",
+            "b1-u19-l08-faktury-w05"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-ex04",
+          "lessonId": "b1-u19-l08-faktury",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Vo faktúre musí byť správny variabilný ______. (скорочено VS)",
+          "acceptedAnswers": [
+            "symbol"
+          ],
+          "explanation": "variabilný symbol — число для зіставлення платежу.",
+          "order": 4,
+          "wordIds": [
+            "b1-u19-l08-faktury-w04"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-ex05",
+          "lessonId": "b1-u19-l08-faktury",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Kto je odberateľ na faktúre?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "ten, kto tovar alebo službu kúpil a platí",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "ten, kto faktúru vystavil",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "banka, ktorá spracuje platbu",
+              "correct": false
+            }
+          ],
+          "explanation": "Odberateľ platí; dodávateľ vystavuje.",
+          "order": 5,
+          "wordIds": [
+            "b1-u19-l08-faktury-w04"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-ex06",
+          "lessonId": "b1-u19-l08-faktury",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Faktúra obsahujú nesprávnu sumu.",
+          "errorToken": "obsahujú",
+          "correctToken": "obsahuje",
+          "explanation": "faktúra — однина: obsahuje.",
+          "order": 6,
+          "wordIds": [
+            "b1-u19-l08-faktury-w04"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-ex07",
+          "lessonId": "b1-u19-l08-faktury",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Vystavil som faktúru pre opravu.",
+          "acceptedAnswers": [
+            "Vystavil som faktúru za opravu."
+          ],
+          "explanation": "faktúra za + знахідний.",
+          "order": 7,
+          "wordIds": [
+            "b1-u19-l08-faktury-w04"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-ex08",
+          "lessonId": "b1-u19-l08-faktury",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Переведи в минулий час (говорить жінка).",
+          "source": "Uhradím faktúru dnes.",
+          "acceptedAnswers": [
+            "Uhradila som faktúru dnes.",
+            "Dnes som uhradila faktúru.",
+            "Faktúru som uhradila dnes.",
+            "Faktúru som dnes uhradila."
+          ],
+          "explanation": "Минулий час жіночого роду: uhradila som.",
+          "order": 8,
+          "wordIds": [
+            "b1-u19-l08-faktury-w04"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-ex09",
+          "lessonId": "b1-u19-l08-faktury",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що де на faktúre?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Údaje o dodávateľovi"
+            },
+            {
+              "id": "c2",
+              "title": "Platobné údaje"
+            }
+          ],
+          "items": [
+            {
+              "sk": "názov dodávateľa",
+              "category": "c1"
+            },
+            {
+              "sk": "adresa dodávateľa",
+              "category": "c1"
+            },
+            {
+              "sk": "dátum splatnosti",
+              "category": "c2"
+            },
+            {
+              "sk": "IČO",
+              "category": "c1"
+            },
+            {
+              "sk": "IBAN",
+              "category": "c2"
+            },
+            {
+              "sk": "variabilný symbol",
+              "category": "c2"
+            },
+            {
+              "sk": "suma na úhradu",
+              "category": "c2"
+            },
+            {
+              "sk": "DIČ",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Хто виставив рахунок — окремо, як платити — окремо.",
+          "order": 9,
+          "wordIds": [
+            "b1-u19-l08-faktury-w05",
+            "b1-u19-l08-faktury-w06"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-ex10",
+          "lessonId": "b1-u19-l08-faktury",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай зразок faktúry.",
+          "document": {
+            "title": "Faktúra č. 2025-017",
+            "fields": [
+              {
+                "label": "Dodávateľ",
+                "value": "Jana Horváthová – upratovanie"
+              },
+              {
+                "label": "Odberateľ",
+                "value": "Klinika Zdravie s. r. o."
+              },
+              {
+                "label": "Položka",
+                "value": "upratovanie priestorov za február"
+              },
+              {
+                "label": "Suma na úhradu",
+                "value": "400 €"
+              },
+              {
+                "label": "Dátum vystavenia",
+                "value": "28. 2."
+              },
+              {
+                "label": "Dátum splatnosti",
+                "value": "14. 3."
+              },
+              {
+                "label": "Variabilný symbol",
+                "value": "2025017"
+              }
+            ]
+          },
+          "question": "До якої дати треба оплатити рахунок?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "до 28 лютого",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "до 14 березня",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "до кінця квітня",
+              "correct": false
+            }
+          ],
+          "explanation": "Dátum splatnosti: 14. 3.",
+          "order": 10,
+          "wordIds": [
+            "b1-u19-l08-faktury-w01",
+            "b1-u19-l08-faktury-w04",
+            "b1-u19-l08-faktury-w05"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-ex11",
+          "lessonId": "b1-u19-l08-faktury",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення від клієнта.",
+          "message": {
+            "sender": "Ján Mráz",
+            "body": "Dobrý deň, faktúru č. 017 som dostal, ďakujem. Uvedená suma je však o 50 eur vyššia, než sme sa dohodli. Prosím Vás o vystavenie opravnej faktúry alebo dobropisu. Po oprave faktúru uhradím do dátumu splatnosti. S pozdravom Ján Mráz"
+          },
+          "question": "Чого просить клієнт?",
+          "options": [
+            {
+              "id": "a",
+              "text": "повернути всю оплату",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "виправлений рахунок або кредит-ноту, бо сума вища, ніж домовлялися",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "продовжити договір",
+              "correct": false
+            }
+          ],
+          "explanation": "Prosím o vystavenie opravnej faktúry alebo dobropisu — сума завищена на 50 євро.",
+          "order": 11,
+          "wordIds": [
+            "b1-u19-l08-faktury-w04",
+            "b1-u19-l08-faktury-w05"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-ex12",
+          "lessonId": "b1-u19-l08-faktury",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти просиш виставити рахунок на вашу фірму.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Prosím Vás o vystaviť faktúru na našu firmu.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Prosím Vás o vystavenie faktúry na našu firmu.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Prosím Vás vystavenie faktúry na našu firmu.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Prosím Vás o vystavenie faktúra na našu firmu.",
+              "correct": false
+            }
+          ],
+          "explanation": "prosiť o + знахідний іменник: o vystavenie; faktúry — родовий.",
+          "order": 12,
+          "wordIds": [
+            "b1-u19-l08-faktury-w04"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-ex13",
+          "lessonId": "b1-u19-l08-faktury",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Klient",
+              "sk": "Faktúru som ešte nedostal."
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Ospravedlňujem sa, pošlem vám ho ešte dnes e-mailom.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Ospravedlňujem sa, pošlem vám ju ešte dnes e-mailom.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Ospravedlňujem sa, poslal som vám ju dnes zajtra.",
+              "correct": false
+            }
+          ],
+          "explanation": "faktúra — жіночий рід: ju.",
+          "order": 13,
+          "wordIds": [
+            "b1-u19-l08-faktury-w04"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-ex14",
+          "lessonId": "b1-u19-l08-faktury",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і оціни кожне твердження.",
+          "text": "Katarína pracuje ako živnostníčka a robí administratívu pre malé firmy. Faktúru vystavuje vždy na konci mesiaca. Dátum splatnosti nastavuje na štrnásť dní. Klient musí uviesť správny variabilný symbol, inak sa platba ťažko páruje. Ak klient nezaplatí včas, pošle upomienku. Ak vo faktúre nájde chybu, vystaví opravnú faktúru.",
+          "statements": [
+            {
+              "sk": "Катаріна виставляє рахунки наприкінці місяця.",
+              "correct": true
+            },
+            {
+              "sk": "Variabilný symbol допомагає зіставити платіж із рахунком.",
+              "correct": true
+            },
+            {
+              "sk": "Катаріна ніколи не надсилає нагадувань.",
+              "correct": false
+            },
+            {
+              "sk": "У разі помилки вона виставляє виправлений рахунок.",
+              "correct": true
+            },
+            {
+              "sk": "Строк оплати завжди два місяці.",
+              "correct": false
+            }
+          ],
+          "explanation": "Якщо клієнт не платить, вона надсилає нагадування; строк — чотирнадцять днів.",
+          "order": 14,
+          "wordIds": [
+            "b1-u19-l08-faktury-w04",
+            "b1-u19-l08-faktury-w05"
+          ]
+        },
+        {
+          "id": "b1-u19-l08-faktury-ex15",
+          "lessonId": "b1-u19-l08-faktury",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні речення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Vystavil som faktúru pre opravu.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Vystavil som faktúru za opravu.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Faktúra obsahuje chybu.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Faktúra obsahujú chybu.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Faktúru treba uhradiť do dátumu splatnosti.",
+              "correct": true
+            }
+          ],
+          "explanation": "faktúra za + знахідний; faktúra obsahuje.",
+          "order": 15,
+          "wordIds": [
+            "b1-u19-l08-faktury-w04",
+            "b1-u19-l08-faktury-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перший клієнт підприємця",
+        "description": "Ти — підприємець (živnostník) і домовляєшся з клієнтом про faktúru.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти кажеш клієнтові, що виставиш рахунок за роботу за березень.",
+            "options": [
+              {
+                "sk": "Vystavím faktúru za prácu za marec.",
+                "correct": true
+              },
+              {
+                "sk": "Vystavím faktúru pre prácu za marec.",
+                "correct": false
+              },
+              {
+                "sk": "Vystavil faktúru za prácu za marec.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Клієнт питає, коли треба заплатити. Ти — чотирнадцять днів.",
+            "options": [
+              {
+                "sk": "Faktúra je splatná do štrnástich dní.",
+                "correct": true
+              },
+              {
+                "sk": "Faktúra splatná je do štrnásť dní.",
+                "correct": false
+              },
+              {
+                "sk": "Faktúra je splatná do štrnásť dni.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Клієнт: «Prosím Vás o opravu faktúry.» Що він просить?",
+            "options": [
+              {
+                "sk": "оплатити рахунок",
+                "correct": false
+              },
+              {
+                "sk": "скасувати договір",
+                "correct": false
+              },
+              {
+                "sk": "виправити рахунок",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти нагадуєш, що рахунок уже оплачено.",
+            "options": [
+              {
+                "sk": "Faktúru som uhradiť minulý piatok.",
+                "correct": false
+              },
+              {
+                "sk": "Faktúru som uhradil minulý piatok.",
+                "correct": true
+              },
+              {
+                "sk": "Faktúru uhradím som minulý piatok.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш працювати з рахунками-фактурами. Далі — фінансові шахрайства."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш працювати з рахунками-фактурами. Далі — фінансові шахрайства.",
+        "nowYouKnow": [
+          "dodávateľ × odberateľ; IČO, DIČ, IBAN, variabilný symbol",
+          "faktúra za + знахідний; do dátumu splatnosti",
+          "zálohová faktúra → daňový doklad",
+          "prosím o opravu / dobropis; upomienka"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 15,
+        "xpReward": 40,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b1-u19-l09-financne-podvody",
+          "title": "Фінансові шахрайства"
+        }
+      }
+    }
+  ]
+}

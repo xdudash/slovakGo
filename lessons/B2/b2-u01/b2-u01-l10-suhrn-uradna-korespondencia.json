@@ -1,0 +1,825 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u01-l10-suhrn-uradna-korespondencia",
+      "sectionId": "b2-u01",
+      "level": "B2",
+      "title": "Підсумок: офіційне листування",
+      "topic": "Офіційне листування",
+      "description": "Повторення всього блоку: структура листа, звернення й прощання, заява, скарга, оскарження, вибачення, підтвердження й нагадування, звільнення та e-mail до установи — із тоном, який пасує кожному жанру.",
+      "order": 10,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Вільно вибирати жанр, регістр і формули для будь-якого офіційного листа.",
+      "completionMessage": "Ти вмієш написати офіційний лист будь-якого типу. Далі — наради й робочі e-maily: pozvánka, program porady, zápisnica.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Офіційне листування",
+        "title": "Підсумок: офіційне листування",
+        "shortDescription": "Вільно вибирати жанр, регістр і формули для будь-якого офіційного листа.",
+        "outcomes": [
+          "впізнавати жанр листа за формулами",
+          "витримувати діловий тон і Vy-форму",
+          "правильно ставити керування: žiadať o, proti + давальний, domáhať sa + родовий",
+          "перевіряти структуру листа перед надсиланням"
+        ],
+        "newWords": [
+          "výhrada",
+          "zrozumiteľný",
+          "formálny",
+          "záverom"
+        ],
+        "exercisesCount": 15,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Жанри й їхні формули",
+          "text": "Кожен жанр має власну головну формулу. Заява: «Žiadam Vás o vydanie potvrdenia.» Скарга: «Obraciam sa na Vás so sťažnosťou na…», «Nesúhlasím s…», «Domáham sa odškodnenia.» Оскарження: «Podávam odvolanie proti rozhodnutiu č. … zo dňa…» Вибачення: «Ospravedlňujem sa Vám za…», «Došlo k nedopatreniu.» Нагадування: «Dovoľujem si Vám pripomenúť… Do dnešného dňa som neobdržal… Opätovne Vás žiadam…» Звільнення: «Týmto dávam výpoveď z pracovného pomeru.» Підтвердження: «Potvrdzujem prijatie Vášho listu.» Усі жанри мають спільний каркас: шапка, місце й дата, Vec, звернення, текст, прощання, підпис, додатки.",
+          "examples": [
+            {
+              "sk": "Žiadam Vás o vydanie potvrdenia o zamestnaní.",
+              "uk": "Прошу вас видати довідку про роботу."
+            },
+            {
+              "sk": "Obraciam sa na Vás so sťažnosťou na kvalitu služieb.",
+              "uk": "Звертаюся до вас зі скаргою на якість послуг."
+            }
+          ],
+          "shortRule": "жанр → формула · спільний каркас листа",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Тон і регістр",
+          "text": "Офіційний лист має діловий (vecný) тон: факти, дати, номери, конкретна вимога. Звертаємося на «Vy» (Vás, Vám, Váš — з великої літери), без розмовних слів, оклику й смайлів. Емоції й звинувачення послаблюють позицію: замість «Ste neschopní» пишемо «Pri vybavovaní došlo k pochybeniu.» Прощання підбираємо за адресатом: «S pozdravom» — універсальне, «S úctou» — до посадовців, «S priateľským pozdravom» — до знайомого партнера. Формальний не означає холодний: лист може бути формальним за формою й теплим за тоном: «Ďakujem Vám za ústretovosť.»",
+          "examples": [
+            {
+              "sk": "Pri vybavovaní došlo k pochybeniu.",
+              "uk": "Під час розгляду сталася помилка."
+            },
+            {
+              "sk": "Ďakujem Vám za ústretovosť a pochopenie.",
+              "uk": "Дякую вам за уважність і розуміння."
+            }
+          ],
+          "shortRule": "діловий тон · Vy з великої · без емоцій · форма формальна, тон теплий",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Керування: найчастіші помилки",
+          "text": "Найчастіші помилки — у керуванні: žiadať o + знахідний (žiadam o vydanie); sťažovať sa na + знахідний (na kvalitu); nesúhlasiť s + орудний (s vyúčtovaním); odvolanie proti + давальний (proti rozhodnutiu); domáhať sa + родовий (odškodnenia); ospravedlniť sa komu za + знахідний (ospravedlňujem sa Vám za meškanie); výpoveď z + родовий (z pracovného pomeru); vyhovieť + давальний (žiadosti); v súvislosti s + орудний (s mojou žiadosťou). Перед надсиланням перевір: мету листа, тему (Vec), адресата, обов’язкові додатки, дату, підпис і термін, якого просиш.",
+          "examples": [
+            {
+              "sk": "Žiadam o vydanie, sťažujem sa na kvalitu, nesúhlasím s vyúčtovaním.",
+              "uk": "Прошу видати, скаржусь на якість, не погоджуюся з розрахунком."
+            },
+            {
+              "sk": "Podávam odvolanie proti rozhodnutiu a domáham sa odškodnenia.",
+              "uk": "Оскаржую рішення й вимагаю відшкодування."
+            }
+          ],
+          "shortRule": "žiadať o + знах. · proti + дав. · domáhať sa + род. · s + оруд.",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u01-l10-suhrn-uradna-korespondencia-w01",
+            "sk": "výhrada",
+            "uk": "застереження, заперечення",
+            "pronunciationUk": "ві:града",
+            "exampleSk": "K návrhu zmluvy nemám žiadne výhrady.",
+            "exampleUk": "До проєкту договору я не маю жодних застережень."
+          },
+          {
+            "wordId": "b2-u01-l10-suhrn-uradna-korespondencia-w02",
+            "sk": "zrozumiteľný",
+            "uk": "зрозумілий, чіткий",
+            "pronunciationUk": "зрозумітєльни:",
+            "exampleSk": "List má byť zrozumiteľný aj pre cudzieho čitateľa.",
+            "exampleUk": "Лист має бути зрозумілим і стороннім читачам."
+          },
+          {
+            "wordId": "b2-u01-l10-suhrn-uradna-korespondencia-w03",
+            "sk": "formálny",
+            "uk": "офіційний, формальний",
+            "pronunciationUk": "форма:льни:",
+            "exampleSk": "Formálny list má pevnú štruktúru.",
+            "exampleUk": "Офіційний лист має сталу структуру."
+          },
+          {
+            "wordId": "b2-u01-l10-suhrn-uradna-korespondencia-w04",
+            "sk": "záverom",
+            "uk": "наприкінці, насамкінець",
+            "pronunciationUk": "за:вером",
+            "exampleSk": "Záverom Vám ďakujem za ústretovosť.",
+            "exampleUk": "Насамкінець дякую вам за уважність."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-w01",
+          "sk": "výhrada",
+          "uk": "застереження, заперечення",
+          "pronunciationUk": "ві:града",
+          "exampleSk": "K návrhu zmluvy nemám žiadne výhrady.",
+          "exampleUk": "До проєкту договору я не маю жодних застережень.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-w02",
+          "sk": "zrozumiteľný",
+          "uk": "зрозумілий, чіткий",
+          "pronunciationUk": "зрозумітєльни:",
+          "exampleSk": "List má byť zrozumiteľný aj pre cudzieho čitateľa.",
+          "exampleUk": "Лист має бути зрозумілим і стороннім читачам.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-w03",
+          "sk": "formálny",
+          "uk": "офіційний, формальний",
+          "pronunciationUk": "форма:льни:",
+          "exampleSk": "Formálny list má pevnú štruktúru.",
+          "exampleUk": "Офіційний лист має сталу структуру.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-w04",
+          "sk": "záverom",
+          "uk": "наприкінці, насамкінець",
+          "pronunciationUk": "за:вером",
+          "exampleSk": "Záverom Vám ďakujem za ústretovosť.",
+          "exampleUk": "Насамкінець дякую вам за уважність.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-ex01",
+          "lessonId": "b2-u01-l10-suhrn-uradna-korespondencia",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай вид листа з його формулою.",
+          "pairs": [
+            {
+              "left": "žiadosť",
+              "right": "Žiadam Vás o…"
+            },
+            {
+              "left": "sťažnosť",
+              "right": "Nesúhlasím s…"
+            },
+            {
+              "left": "odvolanie",
+              "right": "Podávam odvolanie proti…"
+            },
+            {
+              "left": "ospravedlnenie",
+              "right": "Ospravedlňujem sa Vám za…"
+            },
+            {
+              "left": "pripomienka",
+              "right": "Do dnešného dňa som neobdržal…"
+            },
+            {
+              "left": "výpoveď",
+              "right": "Týmto dávam výpoveď z…"
+            }
+          ],
+          "order": 1
+        },
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-ex02",
+          "lessonId": "b2-u01-l10-suhrn-uradna-korespondencia",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Domáham sa "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "odškodnením",
+                "odškodnenia",
+                "odškodnenie"
+              ],
+              "correct": "odškodnenia"
+            },
+            {
+              "text": " za poškodený tovar."
+            }
+          ],
+          "explanation": "Domáhať sa + родовий: odškodnenia.",
+          "order": 2
+        },
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-ex03",
+          "lessonId": "b2-u01-l10-suhrn-uradna-korespondencia",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Úprimne sa "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "vy",
+                "Vám",
+                "Vás"
+              ],
+              "correct": "Vám"
+            },
+            {
+              "text": " ospravedlňujem za nepríjemnosti."
+            }
+          ],
+          "explanation": "Ospravedlniť sa komu — давальний: Vám.",
+          "order": 3
+        },
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-ex04",
+          "lessonId": "b2-u01-l10-suhrn-uradna-korespondencia",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Vážená pani riaditeľka, ďakujem Vám za čas. S ______ (прощання з особливою повагою)",
+          "acceptedAnswers": [
+            "úctou"
+          ],
+          "explanation": "S úctou — найповажніше прощання; для універсального вживаємо S pozdravom.",
+          "order": 4
+        },
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-ex05",
+          "lessonId": "b2-u01-l10-suhrn-uradna-korespondencia",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Який початок підходить для офіційної скарги?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Obraciam sa na Vás so sťažnosťou na kvalitu služieb.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Hej, počujete, ste neschopní!",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Dobrý deň, mám s vami problém.",
+              "correct": false
+            }
+          ],
+          "explanation": "Офіційна скарга починається нейтральною формулою у Vy-формі, без образ і розмовних слів.",
+          "order": 5
+        },
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-ex06",
+          "lessonId": "b2-u01-l10-suhrn-uradna-korespondencia",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Do dnešného dňa som neobdržím žiadnu odpoveď.",
+          "errorToken": "neobdržím",
+          "correctToken": "neobdržal",
+          "explanation": "Дія вже відбулася: som neobdržal.",
+          "order": 6
+        },
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-ex07",
+          "lessonId": "b2-u01-l10-suhrn-uradna-korespondencia",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Ospravedlňujem Vás za nedopatrenie.",
+          "acceptedAnswers": [
+            "Ospravedlňujem sa Vám za nedopatrenie.",
+            "Ospravedlňujem sa za nedopatrenie."
+          ],
+          "explanation": "Без «sa» дієслово означає «виправдати когось»; вибачатися — ospravedlniť sa komu.",
+          "order": 7
+        },
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-ex08",
+          "lessonId": "b2-u01-l10-suhrn-uradna-korespondencia",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перепиши офіційно, іменниковим зворотом зі словом «vydanie».",
+          "source": "Chcem, aby ste mi vydali potvrdenie.",
+          "acceptedAnswers": [
+            "Žiadam Vás o vydanie potvrdenia.",
+            "Žiadam o vydanie potvrdenia.",
+            "Prosím Vás o vydanie potvrdenia.",
+            "Prosím o vydanie potvrdenia."
+          ],
+          "explanation": "Офіційний стиль любить іменники: žiadam / prosím o vydanie + родовий.",
+          "order": 8
+        },
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-ex09",
+          "lessonId": "b2-u01-l10-suhrn-uradna-korespondencia",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Maryna dostala vyúčtovanie energií s nedoplatkom 380 eur, hoci zálohy platila pravidelne. Najprv napísala vecný e-mail: požiadala o kópiu odpočtov meračov a o vysvetlenie. Odpoveď neprišla, preto po týždni poslala pripomienku s dátumom prvého e-mailu. Až potom napísala formálnu sťažnosť. Neobviňovala správcu, len uviedla fakty: odpočty, zálohy a rozdiel. Namietala konkrétny údaj a požiadala o opravu vyúčtovania do 14 dní. Správca sa ospravedlnil za nedopatrenie, údaj opravil a nedoplatok klesol na 40 eur.",
+          "questions": [
+            {
+              "question": "Що Марина зробила першим кроком?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "одразу подала скаргу",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "написала діловий e-mail із проханням про копію показників і пояснення",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "сплатила борг",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Чому її скарга була переконливою?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "вона виклала факти й не звинувачувала управителя",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "вона написала дуже довгий лист",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "вона погрожувала судом",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Яким був результат?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Марина сплатила 380 євро",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "показник виправили, борг зменшився до 40 євро",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "скаргу відхилили",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 9,
+          "wordIds": [
+            "b2-u01-l10-suhrn-uradna-korespondencia-w03"
+          ]
+        },
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-ex10",
+          "lessonId": "b2-u01-l10-suhrn-uradna-korespondencia",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай чернетку листа.",
+          "document": {
+            "title": "Úradný list – koncept",
+            "fields": [
+              {
+                "label": "Odosielateľ",
+                "value": "Ihor Bondar, Trnava"
+              },
+              {
+                "label": "Adresát",
+                "value": "Okresný úrad"
+              },
+              {
+                "label": "Miesto a dátum",
+                "value": "V Trnave 3. 4. 2026"
+              },
+              {
+                "label": "Vec",
+                "value": "Žiadosť o predĺženie lehoty"
+              },
+              {
+                "label": "Text",
+                "value": "Žiadam Vás o predĺženie lehoty o 14 dní."
+              },
+              {
+                "label": "Záver",
+                "value": "S pozdravom"
+              },
+              {
+                "label": "Podpis",
+                "value": "Ihor Bondar"
+              }
+            ]
+          },
+          "question": "Яка обов’язкова частина листа відсутня?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "звернення (наприклад, «Vážená pani, vážený pán,»)",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "дата й місце",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "рядок Vec",
+              "correct": false
+            }
+          ],
+          "explanation": "У чернетці є шапка, адресат, дата, Vec, текст, прощання й підпис, але бракує звернення.",
+          "order": 10,
+          "wordIds": [
+            "b2-u01-l10-suhrn-uradna-korespondencia-w04"
+          ]
+        },
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-ex11",
+          "lessonId": "b2-u01-l10-suhrn-uradna-korespondencia",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення колеги.",
+          "message": {
+            "sender": "Marek",
+            "body": "Ahoj, Ihor, pozrel som si tvoj list pre úrad. Mám k nemu tri pripomienky. V predmete máš «Pomoc», napíš tam radšej konkrétnu vec. V texte píšeš «chcem, aby ste mi dali papier», lepšie je «Žiadam Vás o vydanie potvrdenia». A na konci chýba pozdrav. Inak je list dobrý."
+          },
+          "question": "Що пропонує Марек?",
+          "options": [
+            {
+              "id": "a",
+              "text": "змінити тему, офіційніше сформулювати прохання й додати прощання",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "не надсилати лист",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "переписати лист іншою мовою",
+              "correct": false
+            }
+          ],
+          "explanation": "Pripomienky тут — зауваження: тема, формулювання, прощання.",
+          "order": 11
+        },
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-ex12",
+          "lessonId": "b2-u01-l10-suhrn-uradna-korespondencia",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти закінчуєш лист: наперед дякуєш і прощаєшся з повагою.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Vopred Vám ďakujem, ahoj.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Dík vopred, čau",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Vopred Vám ďakujem za vybavenie. S úctou",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Vopred ti ďakujem. Maj sa",
+              "correct": false
+            }
+          ],
+          "explanation": "Офіційне закінчення: Vy-форма й прощання «S úctou».",
+          "order": 12
+        },
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-ex13",
+          "lessonId": "b2-u01-l10-suhrn-uradna-korespondencia",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Dovoľujem si upozorniť na nezrovnalosť vo vyúčtovaní.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": true
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": false
+            }
+          ],
+          "explanation": "Dovoľujem si + інфінітив і іменникові звороти — формальний регістр.",
+          "order": 13
+        },
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-ex14",
+          "lessonId": "b2-u01-l10-suhrn-uradna-korespondencia",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "До якого типу листа це належить?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Žiadosť"
+            },
+            {
+              "id": "c2",
+              "title": "Sťažnosť"
+            },
+            {
+              "id": "c3",
+              "title": "Výpoveď"
+            }
+          ],
+          "items": [
+            {
+              "sk": "Nesúhlasím s vyúčtovaním",
+              "category": "c2"
+            },
+            {
+              "sk": "Pracovné pomôcky odovzdám podľa protokolu",
+              "category": "c3"
+            },
+            {
+              "sk": "Žiadam Vás o vydanie potvrdenia",
+              "category": "c1"
+            },
+            {
+              "sk": "Domáham sa odškodnenia",
+              "category": "c2"
+            },
+            {
+              "sk": "Týmto dávam výpoveď z pracovného pomeru",
+              "category": "c3"
+            },
+            {
+              "sk": "Prosím Vás o predĺženie lehoty",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Кожен жанр має свої типові формули.",
+          "order": 14
+        },
+        {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia-ex15",
+          "lessonId": "b2-u01-l10-suhrn-uradna-korespondencia",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери доречні офіційні формулювання.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Dovoľujem si Vás požiadať o stretnutie.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Čau, potrebujem ten papier.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Vzhľadom na uvedené žiadam o preskúmanie rozhodnutia.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Ďakujem Vám za pochopenie.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Vaša firma je podvod!!!",
+              "correct": false
+            }
+          ],
+          "explanation": "Офіційний лист — Vy-форма, діловий тон, без образ.",
+          "order": 15
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Лист про неправильне нарахування",
+        "description": "Ти пишеш у компанію офіційний лист про помилку в рахунку за енергію.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Яке звернення вибереш, якщо не знаєш адресата?",
+            "options": [
+              {
+                "sk": "Čau,",
+                "correct": false
+              },
+              {
+                "sk": "Ahoj,",
+                "correct": false
+              },
+              {
+                "sk": "Vážená pani, vážený pán,",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як почнеш основну частину?",
+            "options": [
+              {
+                "sk": "Obraciam na Vás s sťažnosťou na vyúčtovanie.",
+                "correct": false
+              },
+              {
+                "sk": "Vyúčtovanie je podvod.",
+                "correct": false
+              },
+              {
+                "sk": "Obraciam sa na Vás so sťažnosťou na nesprávne vyúčtovanie.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Яку вимогу сформулюєш?",
+            "options": [
+              {
+                "sk": "Žiadam o opraviť vyúčtovanie do 14 dní.",
+                "correct": false
+              },
+              {
+                "sk": "Žiadam o opravu vyúčtovania do 14 dní.",
+                "correct": true
+              },
+              {
+                "sk": "Opravte to!!!",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як завершиш?",
+            "options": [
+              {
+                "sk": "Vopred Vám ďakujem za vybavenie. S pozdravom",
+                "correct": true
+              },
+              {
+                "sk": "Ďakujem, čau",
+                "correct": false
+              },
+              {
+                "sk": "Odpovedajte, inak sa budete mať na pozore.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш написати офіційний лист будь-якого типу. Далі — наради й робочі e-maily: pozvánka, program porady, zápisnica."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш написати офіційний лист будь-якого типу. Далі — наради й робочі e-maily: pozvánka, program porady, zápisnica.",
+        "nowYouKnow": [
+          "жанр → формула · спільний каркас листа",
+          "діловий тон · Vy з великої · без емоцій",
+          "žiadať o + знах. · proti + дав. · domáhať sa + род. · ospravedlniť sa komu",
+          "перед надсиланням: Vec, адресат, додатки, дата, підпис, термін"
+        ],
+        "newWordsCount": 4,
+        "exercisesCompleted": 15,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ]
+      }
+    }
+  ]
+}

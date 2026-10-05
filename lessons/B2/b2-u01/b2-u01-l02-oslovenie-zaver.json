@@ -1,0 +1,959 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u01-l02-oslovenie-zaver",
+      "sectionId": "b2-u01",
+      "level": "B2",
+      "title": "Звернення й закінчення листа",
+      "topic": "Офіційне листування",
+      "description": "Як почати й завершити офіційний лист: Vážený pán… / Vážená pani…, звернення до невідомої особи й до групи, титули та посади, формули S pozdravom / S úctou, подяка наприкінці.",
+      "order": 2,
+      "xpReward": 50,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Підбирати звернення й прощання залежно від адресата та ступеня офіційності.",
+      "completionMessage": "Ти вмієш правильно почати й завершити лист. Далі — заява: як сформулювати прохання.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Офіційне листування",
+        "title": "Звернення й закінчення листа",
+        "shortDescription": "Підбирати звернення й прощання залежно від адресата та ступеня офіційності.",
+        "outcomes": [
+          "будувати Vážený pán… / Vážená pani… з правильною формою прізвища чи посади",
+          "звертатися до невідомої особи й до групи",
+          "розрізняти S pozdravom / S úctou / S priateľským pozdravom",
+          "ставити коми й великі літери у зверненні та підписі"
+        ],
+        "newWords": [
+          "titul",
+          "primátor",
+          "ústretovosť",
+          "adresovať",
+          "s priateľským pozdravom"
+        ],
+        "exercisesCount": 15,
+        "reward": "+50 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Vážený pán, vážená pani",
+          "text": "Офіційне звернення — «Vážený pán» (чоловік) або «Vážená pani» (жінка) + прізвище чи посада: «Vážený pán Novák», «Vážená pani Nováková», «Vážený pán riaditeľ», «Vážená pani riaditeľka». Слова «Vážený / Vážená» і сама посада збігаються зі статтю адресата: чоловік — riaditeľ, primátor, starosta; жінка — riaditeľka, primátorka, starostka. Після звернення ставимо кому, а текст продовжуємо з малої літери: «Vážená pani riaditeľka, obraciam sa na Vás…». Знак оклику сьогодні вживають рідко.",
+          "examples": [
+            {
+              "sk": "Vážený pán primátor, dovoľujem si Vás požiadať o stretnutie.",
+              "uk": "Шановний пане мере, дозволю собі попросити вас про зустріч."
+            },
+            {
+              "sk": "Vážená pani Nováková, ďakujem za Vašu odpoveď.",
+              "uk": "Шановна пані Новакова, дякую за вашу відповідь."
+            }
+          ],
+          "shortRule": "Vážený pán / Vážená pani + прізвище або посада · кома · далі з малої літери",
+          "commonMistakes": [
+            {
+              "mistake": "Vážený pani Nováková,",
+              "correct": "Vážená pani Nováková,"
+            },
+            {
+              "mistake": "Vážená pani riaditeľ,",
+              "correct": "Vážená pani riaditeľka,"
+            },
+            {
+              "mistake": "Vážený pán Novák! Obraciam sa…",
+              "correct": "Vážený pán Novák, obraciam sa…"
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Невідомий адресат, група, титули",
+          "text": "Коли ти не знаєш імені, пиши «Vážená pani, vážený pán,» або нейтральне «Dobrý deň,» — особливо в імейлі до установи. До групи звертаємося у множині: «Vážení kolegovia,», «Vážené kolegyne, vážení kolegovia,». До лікаря чи викладача — за званням: «Vážená pani doktorka», «Vážený pán doktor», «Vážená pani profesorka». Скорочень титулів (Ing., Mgr.) у звертанні не пишемо: в адресі — «Ing. Jana Nováková», а у звертанні — «Vážená pani Nováková» або повним словом «Vážená pani inžinierka». Скорочений титул — для адреси й підпису.",
+          "examples": [
+            {
+              "sk": "Vážené kolegyne, vážení kolegovia, pozývam Vás na poradu.",
+              "uk": "Шановні колеги, запрошую вас на нараду."
+            },
+            {
+              "sk": "Vážená pani doktorka, ďakujem Vám za ošetrenie.",
+              "uk": "Шановна пані докторко, дякую вам за лікування."
+            }
+          ],
+          "shortRule": "невідомий адресат: Vážená pani, vážený pán, / Dobrý deň, · група: Vážení…",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Закінчення й підпис",
+          "text": "Перед прощанням ставимо коротку фразу: «Vopred Vám ďakujem za vybavenie.», «Teším sa na Vašu odpoveď.», «Ďakujem Vám za ústretovosť.» Прощання: «S pozdravom» — найуніверсальніше; «S úctou» — особлива повага (посадовець, орган влади, старший за віком чи посадою); «S priateľským pozdravom» — знайомий партнер чи колега, з яким стосунки добрі. Прощання пишемо окремим рядком і за словацькою нормою без коми (кома після «S pozdravom» — вплив англійської); під ним — ім’я та прізвище. Після підпису крапки немає.",
+          "examples": [
+            {
+              "sk": "Ďakujem Vám za ústretovosť. S úctou",
+              "uk": "Дякую вам за готовність допомогти. З глибокою повагою"
+            },
+            {
+              "sk": "Teším sa na Vašu odpoveď. S pozdravom",
+              "uk": "Чекаю на вашу відповідь. З повагою"
+            }
+          ],
+          "shortRule": "S pozdravom — універсально · S úctou — найповажніше · S priateľským pozdravom — свій",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u01-l02-oslovenie-zaver-w01",
+            "sk": "titul",
+            "uk": "титул, науковий чи професійний ступінь",
+            "pronunciationUk": "тітул",
+            "exampleSk": "Do adresy patrí aj titul adresáta, napríklad Ing. alebo Mgr.",
+            "exampleUk": "В адресу входить і титул адресата, наприклад Ing. чи Mgr."
+          },
+          {
+            "wordId": "b2-u01-l02-oslovenie-zaver-w02",
+            "sk": "primátor",
+            "uk": "мер міста",
+            "pronunciationUk": "пріма:тор",
+            "exampleSk": "Vážený pán primátor, prosím o stretnutie.",
+            "exampleUk": "Шановний пане мере, прошу про зустріч."
+          },
+          {
+            "wordId": "b2-u01-l02-oslovenie-zaver-w03",
+            "sk": "ústretovosť",
+            "uk": "готовність піти назустріч, люб’язність",
+            "pronunciationUk": "у:стретовость",
+            "exampleSk": "Ďakujem Vám za ústretovosť a rýchle vybavenie.",
+            "exampleUk": "Дякую вам за люб’язність і швидке вирішення."
+          },
+          {
+            "wordId": "b2-u01-l02-oslovenie-zaver-w04",
+            "sk": "adresovať",
+            "uk": "адресувати, спрямувати",
+            "pronunciationUk": "адресовать",
+            "exampleSk": "List adresujte priamo riaditeľovi školy.",
+            "exampleUk": "Адресуйте листа безпосередньо директорові школи."
+          },
+          {
+            "wordId": "b2-u01-l02-oslovenie-zaver-w05",
+            "sk": "s priateľským pozdravom",
+            "uk": "з дружнім привітанням",
+            "pronunciationUk": "с пріятельски:м поздравом",
+            "exampleSk": "Dlhoročnému obchodnému partnerovi napíšeme «S priateľským pozdravom».",
+            "exampleUk": "Багаторічному діловому партнерові напишемо «З дружнім привітанням»."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-w01",
+          "sk": "titul",
+          "uk": "титул, науковий чи професійний ступінь",
+          "pronunciationUk": "тітул",
+          "exampleSk": "Do adresy patrí aj titul adresáta, napríklad Ing. alebo Mgr.",
+          "exampleUk": "В адресу входить і титул адресата, наприклад Ing. чи Mgr.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-w02",
+          "sk": "primátor",
+          "uk": "мер міста",
+          "pronunciationUk": "пріма:тор",
+          "exampleSk": "Vážený pán primátor, prosím o stretnutie.",
+          "exampleUk": "Шановний пане мере, прошу про зустріч.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-w03",
+          "sk": "ústretovosť",
+          "uk": "готовність піти назустріч, люб’язність",
+          "pronunciationUk": "у:стретовость",
+          "exampleSk": "Ďakujem Vám za ústretovosť a rýchle vybavenie.",
+          "exampleUk": "Дякую вам за люб’язність і швидке вирішення.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-w04",
+          "sk": "adresovať",
+          "uk": "адресувати, спрямувати",
+          "pronunciationUk": "адресовать",
+          "exampleSk": "List adresujte priamo riaditeľovi školy.",
+          "exampleUk": "Адресуйте листа безпосередньо директорові школи.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-w05",
+          "sk": "s priateľským pozdravom",
+          "uk": "з дружнім привітанням",
+          "pronunciationUk": "с пріятельски:м поздравом",
+          "exampleSk": "Dlhoročnému obchodnému partnerovi napíšeme «S priateľským pozdravom».",
+          "exampleUk": "Багаторічному діловому партнерові напишемо «З дружнім привітанням».",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-ex01",
+          "lessonId": "b2-u01-l02-oslovenie-zaver",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "Vážená pani riaditeľka",
+              "right": "звернення до директорки"
+            },
+            {
+              "left": "Vážený pán primátor",
+              "right": "звернення до мера"
+            },
+            {
+              "left": "Vážení kolegovia",
+              "right": "звернення до групи колег"
+            },
+            {
+              "left": "Dobrý deň",
+              "right": "нейтральний початок листа невідомій особі"
+            },
+            {
+              "left": "S úctou",
+              "right": "прощання з особливою повагою"
+            },
+            {
+              "left": "S priateľským pozdravom",
+              "right": "прощання зі знайомим партнером"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u01-l02-oslovenie-zaver-w02",
+            "b2-u01-l02-oslovenie-zaver-w05"
+          ]
+        },
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-ex02",
+          "lessonId": "b2-u01-l02-oslovenie-zaver",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Vážená pani "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "Nováková",
+                "Novák",
+                "Novákovej"
+              ],
+              "correct": "Nováková"
+            },
+            {
+              "text": ", ďakujem za Vašu odpoveď."
+            }
+          ],
+          "explanation": "Прізвище жінки — Nováková; звернення стоїть у називному відмінку.",
+          "order": 2
+        },
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-ex03",
+          "lessonId": "b2-u01-l02-oslovenie-zaver",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Vážená pani "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "riaditeľka",
+                "riaditeľke",
+                "riaditeľ"
+              ],
+              "correct": "riaditeľka"
+            },
+            {
+              "text": ", dovoľujem si Vás požiadať o stretnutie."
+            }
+          ],
+          "explanation": "Адресат — жінка, тож посада в жіночому роді: riaditeľka, називний відмінок.",
+          "order": 3
+        },
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-ex04",
+          "lessonId": "b2-u01-l02-oslovenie-zaver",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Ти пишеш e-mail у міську раду, імені адресата не знаєш. Яке звернення підійде?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Dobrý deň,",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Ahoj,",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Vážený pán Novák,",
+              "correct": false
+            }
+          ],
+          "explanation": "Без імені адресата доречне нейтральне «Dobrý deň,» або «Vážená pani, vážený pán,».",
+          "order": 4
+        },
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-ex05",
+          "lessonId": "b2-u01-l02-oslovenie-zaver",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Vážený pani Nováková, ďakujem Vám za rýchlu odpoveď.",
+          "errorToken": "Vážený",
+          "correctToken": "Vážená",
+          "explanation": "Pani — жіночий рід, тому Vážená.",
+          "order": 5
+        },
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-ex06",
+          "lessonId": "b2-u01-l02-oslovenie-zaver",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Vopred Vám ______ za vybavenie. (дякую)",
+          "acceptedAnswers": [
+            "ďakujem",
+            "ďakujeme"
+          ],
+          "explanation": "Vopred Vám ďakujem za vybavenie — типова подяка перед прощанням.",
+          "order": 6
+        },
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-ex07",
+          "lessonId": "b2-u01-l02-oslovenie-zaver",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Ahoj, Zuzka, ďakujem za odpoveď, maj sa!",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": false
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": true
+            }
+          ],
+          "explanation": "Ahoj і maj sa — неформальне спілкування, у листі до установи так не пишуть.",
+          "order": 7
+        },
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-ex08",
+          "lessonId": "b2-u01-l02-oslovenie-zaver",
+          "type": "cloze_text",
+          "skill": [
+            "grammar",
+            "reading"
+          ],
+          "instruction": "Доповни e-mail.",
+          "textParts": [
+            {
+              "blankId": "b1",
+              "acceptedAnswers": [
+                "Vážená"
+              ]
+            },
+            {
+              "text": " pani riaditeľka, obraciam sa na Vás vo veci prijatia dcéry do školy. "
+            },
+            {
+              "blankId": "b2",
+              "acceptedAnswers": [
+                "Vopred"
+              ]
+            },
+            {
+              "text": " Vám ďakujem za vybavenie. S "
+            },
+            {
+              "blankId": "b3",
+              "acceptedAnswers": [
+                "úctou"
+              ]
+            }
+          ],
+          "hint": "Vážená, Vopred, úctou",
+          "order": 8
+        },
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-ex09",
+          "lessonId": "b2-u01-l02-oslovenie-zaver",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти закінчуєш лист до мера: дякуєш за люб’язність і прощаєшся з особливою повагою.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Ďakujem za ústretovosť. Čau",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Ďakujem Vám za ústretovosť. S úctou",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Ďakujem Vám za ústretovosť. Maj sa",
+              "correct": false
+            }
+          ],
+          "explanation": "Розмовні «Čau» і «Maj sa» у листі до мера недоречні; «S úctou» — найповажніше прощання.",
+          "order": 9,
+          "wordIds": [
+            "b2-u01-l02-oslovenie-zaver-w03"
+          ]
+        },
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-ex10",
+          "lessonId": "b2-u01-l02-oslovenie-zaver",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Ihor pracuje v Trnave a potreboval napísať riaditeľovi firmy. Prvý e-mail začal slovami: «Ahoj pán riaditeľ, chcem sa opýtať na dovolenku.» Odpoveď nedostal. Jeho kolegyňa Marta mu vysvetlila, že oslovenie je vizitka listu. Mal napísať «Vážený pán riaditeľ,» a pokračovať malým písmenom. Na konci nestačí «Ahoj», treba použiť «S pozdravom» alebo «S úctou». Marta ho upozornila aj na ďalšiu vec: Ihor napísal «vás» s malým písmenom, hoci v liste jednej osobe sa zvyčajne píše «Vás» s veľkým V. Ihor teda napísal nový e-mail, poďakoval sa za ústretovosť a podpísal sa celým menom. Riaditeľ mu odpovedal do hodiny a dovolenku mu schválil. Ihor si uvedomil, že forma nie je formalita: ukazuje rešpekt k adresátovi.",
+          "questions": [
+            {
+              "question": "Чому, найімовірніше, Ігор не отримав відповіді на перший лист?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Ігор написав не тій особі",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "лист був занадто розмовний, зі звертанням «Ahoj»",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "лист був надто довгий",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Яку ще пораду дала Марта?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "не підписувати листа",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "у листі до однієї особи писати «Vás» з великої літери",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "писати весь лист великими літерами",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Який висновок зробив Ігор?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "форма не має значення, якщо зміст добрий",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "краще завжди телефонувати",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "форма листа виявляє повагу до адресата",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "b2-u01-l02-oslovenie-zaver-w03",
+            "b2-u01-l02-oslovenie-zaver-w05"
+          ]
+        },
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-ex11",
+          "lessonId": "b2-u01-l02-oslovenie-zaver",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай чернетку імейлу.",
+          "document": {
+            "title": "E-mail do podateľne mesta",
+            "fields": [
+              {
+                "label": "Komu",
+                "value": "Mestský úrad – podateľňa"
+              },
+              {
+                "label": "Predmet",
+                "value": "Žiadosť o potvrdenie o pobyte"
+              },
+              {
+                "label": "Oslovenie",
+                "value": "Dobrý deň,"
+              },
+              {
+                "label": "Záver",
+                "value": "S pozdravom"
+              },
+              {
+                "label": "Podpis",
+                "value": "Oksana Melnyk"
+              }
+            ]
+          },
+          "question": "Чому в листі звернення «Dobrý deň»?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "адресата не названо на ім’я, тому звернення нейтральне",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Оксана добре знає адресата",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "адресат — суд",
+              "correct": false
+            }
+          ],
+          "explanation": "Коли нема імені, використовуємо нейтральне «Dobrý deň,» або «Vážená pani, vážený pán,».",
+          "order": 11,
+          "wordIds": [
+            "b2-u01-l02-oslovenie-zaver-w05"
+          ]
+        },
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-ex12",
+          "lessonId": "b2-u01-l02-oslovenie-zaver",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і оціни кожне твердження.",
+          "text": "Vážená pani riaditeľka, dovoľujem si Vás požiadať o stretnutie. Naša dcéra Marta nastúpila do piatej triedy a chceli by sme sa poradiť o jej štúdiu. Budeme Vám vďační za Váš čas. S úctou Oksana a Taras Melnykovci",
+          "statements": [
+            {
+              "sk": "Лист адресовано директорці школи.",
+              "correct": true
+            },
+            {
+              "sk": "Батьки просять про зустріч.",
+              "correct": true
+            },
+            {
+              "sk": "Лист починається словом «Ahoj».",
+              "correct": false
+            },
+            {
+              "sk": "Прощання «S úctou» виражає особливу повагу.",
+              "correct": true
+            },
+            {
+              "sk": "Лист адресовано директору-чоловікові.",
+              "correct": false
+            }
+          ],
+          "explanation": "Звернення Vážená pani riaditeľka — директорка (жінка); слова «Ahoj» у листі немає.",
+          "order": 12
+        },
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-ex13",
+          "lessonId": "b2-u01-l02-oslovenie-zaver",
+          "type": "branching_dialogue",
+          "skill": [
+            "dialogue",
+            "real_life"
+          ],
+          "instruction": "Пройди діалог: обирай доречні відповіді.",
+          "successMessage": "Ти правильно почав(ла) і завершив(ла) лист до директорки!",
+          "startNode": "n1",
+          "nodes": {
+            "n1": {
+              "speaker": "Marek",
+              "sk": "Píšem riaditeľke školy, pani Novotnej. Ako ju oslovím?",
+              "choices": [
+                {
+                  "id": "n1c3",
+                  "sk": "Ahoj pani Novotná,",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c2",
+                  "sk": "Vážený pani riaditeľka,",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c1",
+                  "sk": "Vážená pani riaditeľka,",
+                  "next": "n2",
+                  "quality": "best"
+                }
+              ]
+            },
+            "n2": {
+              "speaker": "Marek",
+              "sk": "A čo po oslovení? Mám pokračovať veľkým písmenom?",
+              "choices": [
+                {
+                  "id": "n2c3",
+                  "sk": "Za oslovenie nedávaj nič a hneď začni text.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c1",
+                  "sk": "Nie, po čiarke pokračuj malým písmenom: Vážená pani riaditeľka, obraciam sa na Vás…",
+                  "next": "n3",
+                  "quality": "best"
+                },
+                {
+                  "id": "n2c2",
+                  "sk": "Áno, po oslovení vždy pokračuj veľkým písmenom.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n3": {
+              "speaker": "Marek",
+              "sk": "Dobre. A ako list ukončím? Chcem sa jej poďakovať za čas.",
+              "choices": [
+                {
+                  "id": "n3c3",
+                  "sk": "Ďakujem ti za čas. Maj sa",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c1",
+                  "sk": "Ďakujem Vám za Váš čas. S úctou",
+                  "next": "success",
+                  "quality": "best"
+                },
+                {
+                  "id": "n3c2",
+                  "sk": "Ďakujem za čas. Čau",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            }
+          },
+          "order": 13
+        },
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-ex14",
+          "lessonId": "b2-u01-l02-oslovenie-zaver",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Початок чи кінець листа?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Začiatok"
+            },
+            {
+              "id": "c2",
+              "title": "Koniec"
+            }
+          ],
+          "items": [
+            {
+              "sk": "Vážený pán primátor",
+              "category": "c1"
+            },
+            {
+              "sk": "S pozdravom",
+              "category": "c2"
+            },
+            {
+              "sk": "S úctou",
+              "category": "c2"
+            },
+            {
+              "sk": "S priateľským pozdravom",
+              "category": "c2"
+            },
+            {
+              "sk": "Teším sa na Vašu odpoveď",
+              "category": "c2"
+            },
+            {
+              "sk": "Dobrý deň",
+              "category": "c1"
+            },
+            {
+              "sk": "Vážená pani riaditeľka",
+              "category": "c1"
+            },
+            {
+              "sk": "Vážení kolegovia",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Звернення стоїть на початку; прощання й подяка — наприкінці.",
+          "order": 14,
+          "wordIds": [
+            "b2-u01-l02-oslovenie-zaver-w02",
+            "b2-u01-l02-oslovenie-zaver-w05"
+          ]
+        },
+        {
+          "id": "b2-u01-l02-oslovenie-zaver-ex15",
+          "lessonId": "b2-u01-l02-oslovenie-zaver",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні звернення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Ahoj pán riaditeľ,",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Vážený pán Novák,",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Vážená pani doktorka,",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Vážený pani Nováková,",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Vážené kolegyne, vážení kolegovia,",
+              "correct": true
+            }
+          ],
+          "explanation": "Vážená + pani, Vážený + pán; «Ahoj» у зверненні в офіційному листі недоречне.",
+          "order": 15
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Лист директорці школи",
+        "description": "Оксана пише директорці школи пані Новотній і просить про зустріч щодо доньки.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Як ти звернешся до директорки?",
+            "options": [
+              {
+                "sk": "Vážená pani riaditeľka,",
+                "correct": true
+              },
+              {
+                "sk": "Ahoj pani Novotná,",
+                "correct": false
+              },
+              {
+                "sk": "Vážená pani riaditeľ,",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти дякуєш наперед за час.",
+            "options": [
+              {
+                "sk": "Vopred ti ďakujem za čas.",
+                "correct": false
+              },
+              {
+                "sk": "Vopred Vám ďakujem za Váš čas.",
+                "correct": true
+              },
+              {
+                "sk": "Dík vopred.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Яке прощання вибереш?",
+            "options": [
+              {
+                "sk": "S úctou",
+                "correct": true
+              },
+              {
+                "sk": "Maj sa",
+                "correct": false
+              },
+              {
+                "sk": "Papa",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Директорка завершила відповідь словами «S priateľským pozdravom». Що це означає?",
+            "options": [
+              {
+                "text": "вона відмовляє у зустрічі",
+                "correct": false
+              },
+              {
+                "text": "вона виражає найвищу офіційну повагу",
+                "correct": false
+              },
+              {
+                "text": "вона ставиться до тебе приязно, не надто офіційно",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш правильно почати й завершити лист. Далі — заява: як сформулювати прохання."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш правильно почати й завершити лист. Далі — заява: як сформулювати прохання.",
+        "nowYouKnow": [
+          "Vážený pán / Vážená pani + прізвище або посада, кома, далі з малої",
+          "невідомий адресат: Dobrý deň, / Vážená pani, vážený pán,",
+          "S pozdravom · S úctou · S priateľským pozdravom",
+          "Vopred Vám ďakujem za vybavenie · S pozdravom без коми · підпис без крапки"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 15,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u01-l03-ziadost",
+          "title": "Заява: як сформулювати прохання"
+        }
+      }
+    }
+  ]
+}

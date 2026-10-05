@@ -1,0 +1,933 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u01-l09-email-uradu",
+      "sectionId": "b2-u01",
+      "level": "B2",
+      "title": "E-mail до установи",
+      "topic": "Офіційне листування",
+      "description": "Як писати електронні листи в установи: конкретна тема, нейтральне звернення, структура з трьох абзаців, скановані додатки, питання про електронне подання й підпис із контактами.",
+      "order": 9,
+      "xpReward": 50,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Складати короткий, зрозумілий e-mail, який працівник установи може швидко опрацювати.",
+      "completionMessage": "Ти вмієш написати e-mail до установи. Далі — підсумок: збираємо весь офіційний лист докупи.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Офіційне листування",
+        "title": "E-mail до установи",
+        "shortDescription": "Складати короткий, зрозумілий e-mail, який працівник установи може швидко опрацювати.",
+        "outcomes": [
+          "писати тему (predmet) і звернення до невідомої особи",
+          "будувати три абзаци: v súvislosti s…, питання, додатки",
+          "формулювати запитання: Rád by som sa opýtal, či…",
+          "додавати скановані документи й ставити підпис із контактом"
+        ],
+        "newWords": [
+          "elektronický podpis",
+          "oskenovať",
+          "v súvislosti s",
+          "vyžiadať si",
+          "referentka",
+          "trvalý pobyt"
+        ],
+        "exercisesCount": 15,
+        "reward": "+50 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Тема, звернення, підпис",
+          "text": "E-mail до установи має ті ж частини, що й лист, але коротший. Тема (predmet) — конкретна й коротка: «Žiadosť o vydanie potvrdenia o trvalom pobyte – Oksana Melnyk» або «Otázka k žiadosti o prídavok na dieťa». Не пиши «Pomoc», «Dobrý deň» чи «Urgentné!!!». Звернення — нейтральне, якщо не знаєш імені: «Dobrý deň,» або «Vážená pani, vážený pán,»; якщо знаєш — «Vážená pani Horváthová,». Прощання — «S pozdravom» і під ним повне ім’я та телефон. У відповіді залишай той самий predmet і початок «Re:», щоб працівник бачив історію листування. Ніяких смайлів, «ASAP» і розмовних слів.",
+          "examples": [
+            {
+              "sk": "Dobrý deň, obraciam sa na Vás s otázkou k potvrdeniu o pobyte.",
+              "uk": "Добрий день, звертаюся до вас із запитанням щодо довідки про проживання."
+            },
+            {
+              "sk": "Vopred Vám ďakujem za odpoveď. S pozdravom",
+              "uk": "Наперед дякую вам за відповідь. З повагою"
+            }
+          ],
+          "shortRule": "predmet: коротко й конкретно · Dobrý deň, · S pozdravom + ім’я + телефон",
+          "commonMistakes": [
+            {
+              "mistake": "Obraciam sa na Vás s otázka.",
+              "correct": "Obraciam sa na Vás s otázkou."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Три абзаци",
+          "text": "Працівник установи читає десятки листів, тому пиши в три абзаци. Перший — вступ: хто я й чому пишу: «V súvislosti s mojou žiadosťou zo dňa 5. marca Vám píšem, lebo…» (v súvislosti s + орудний). Другий — одне чи два чіткі запитання: «Rád by som sa opýtal, aké dokumenty mám priniesť.» або «Mohli by ste mi, prosím, oznámiť, či je možné podať žiadosť elektronicky?» Третій — додатки й подяка: «V prílohe Vám zasielam oskenovaný doklad totožnosti. Vopred Vám ďakujem za odpoveď.» Хочеш отримати документ — «Chcel by som si vyžiadať potvrdenie…» (vyžiadať si + знахідний).",
+          "examples": [
+            {
+              "sk": "V súvislosti s mojou žiadosťou Vám píšem s otázkou.",
+              "uk": "У зв’язку з моєю заявою пишу вам із запитанням."
+            },
+            {
+              "sk": "Chcel by som si vyžiadať potvrdenie o trvalom pobyte.",
+              "uk": "Хотів би запросити довідку про постійне місце проживання."
+            }
+          ],
+          "shortRule": "v súvislosti s + орудний · rád by som sa opýtal, či… · vyžiadať si + знахідний",
+          "commonMistakes": [
+            {
+              "mistake": "V súvislosti mojej žiadosti",
+              "correct": "V súvislosti s mojou žiadosťou"
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Додатки й електронне подання",
+          "text": "Скан документа надсилай у форматі PDF, чітким, з простою назвою файла: «Melnyk_ziadost.pdf». У листі згадай додаток: «V prílohe Vám zasielam oskenovaný doklad.» Заповнений бланк (tlačivo) — теж у додатку: «Vyplnené tlačivo posielam v prílohe.» Подання «elektronicky» не завжди рівнозначне звичайному імейлу: деякі заяви потребують електронного підпису, використання електронної скриньки або письмового підтвердження. Тому спитай: «Je možné podať žiadosť elektronicky?» Це кращий спосіб не втратити строк.",
+          "examples": [
+            {
+              "sk": "V prílohe Vám zasielam oskenovaný doklad totožnosti.",
+              "uk": "У додатку надсилаю вам відсканований документ, що посвідчує особу."
+            },
+            {
+              "sk": "Je možné podať žiadosť elektronicky?",
+              "uk": "Чи можна подати заяву в електронній формі?"
+            }
+          ],
+          "shortRule": "PDF · oskenovať · tlačivo · podať elektronicky",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u01-l09-email-uradu-w01",
+            "sk": "elektronický podpis",
+            "uk": "електронний підпис",
+            "pronunciationUk": "електроніцки: подпіс",
+            "exampleSk": "Na podanie žiadosti cez portál potrebujete elektronický podpis.",
+            "exampleUk": "Щоб подати заяву через портал, вам потрібен електронний підпис."
+          },
+          {
+            "wordId": "b2-u01-l09-email-uradu-w02",
+            "sk": "oskenovať",
+            "uk": "відсканувати",
+            "pronunciationUk": "оскеновать",
+            "exampleSk": "Doklad som oskenoval a posielam ho v prílohe.",
+            "exampleUk": "Документ я відсканував і надсилаю його в додатку."
+          },
+          {
+            "wordId": "b2-u01-l09-email-uradu-w03",
+            "sk": "v súvislosti s",
+            "uk": "у зв’язку з",
+            "pronunciationUk": "в су:вислості с",
+            "exampleSk": "V súvislosti s mojou žiadosťou Vám píšem.",
+            "exampleUk": "У зв’язку з моєю заявою пишу вам."
+          },
+          {
+            "wordId": "b2-u01-l09-email-uradu-w04",
+            "sk": "vyžiadať si",
+            "uk": "попросити видати, витребувати",
+            "pronunciationUk": "віжядать сі",
+            "exampleSk": "Chcel by som si vyžiadať potvrdenie o pobyte.",
+            "exampleUk": "Хотів би попросити видати довідку про проживання."
+          },
+          {
+            "wordId": "b2-u01-l09-email-uradu-w05",
+            "sk": "referentka",
+            "uk": "працівниця установи, що веде справу",
+            "pronunciationUk": "референтка",
+            "exampleSk": "Referentka mi poslala zoznam dokladov.",
+            "exampleUk": "Працівниця установи надіслала мені перелік документів."
+          },
+          {
+            "wordId": "b2-u01-l09-email-uradu-w06",
+            "sk": "trvalý pobyt",
+            "uk": "постійне проживання, прописка",
+            "pronunciationUk": "трвалі: побит",
+            "exampleSk": "Mám trvalý pobyt v Nitre.",
+            "exampleUk": "Я маю постійну реєстрацію у Нітрі."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u01-l09-email-uradu-w01",
+          "sk": "elektronický podpis",
+          "uk": "електронний підпис",
+          "pronunciationUk": "електроніцки: подпіс",
+          "exampleSk": "Na podanie žiadosti cez portál potrebujete elektronický podpis.",
+          "exampleUk": "Щоб подати заяву через портал, вам потрібен електронний підпис.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-w02",
+          "sk": "oskenovať",
+          "uk": "відсканувати",
+          "pronunciationUk": "оскеновать",
+          "exampleSk": "Doklad som oskenoval a posielam ho v prílohe.",
+          "exampleUk": "Документ я відсканував і надсилаю його в додатку.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-w03",
+          "sk": "v súvislosti s",
+          "uk": "у зв’язку з",
+          "pronunciationUk": "в су:вислості с",
+          "exampleSk": "V súvislosti s mojou žiadosťou Vám píšem.",
+          "exampleUk": "У зв’язку з моєю заявою пишу вам.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-w04",
+          "sk": "vyžiadať si",
+          "uk": "попросити видати, витребувати",
+          "pronunciationUk": "віжядать сі",
+          "exampleSk": "Chcel by som si vyžiadať potvrdenie o pobyte.",
+          "exampleUk": "Хотів би попросити видати довідку про проживання.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-w05",
+          "sk": "referentka",
+          "uk": "працівниця установи, що веде справу",
+          "pronunciationUk": "референтка",
+          "exampleSk": "Referentka mi poslala zoznam dokladov.",
+          "exampleUk": "Працівниця установи надіслала мені перелік документів.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-w06",
+          "sk": "trvalý pobyt",
+          "uk": "постійне проживання, прописка",
+          "pronunciationUk": "трвалі: побит",
+          "exampleSk": "Mám trvalý pobyt v Nitre.",
+          "exampleUk": "Я маю постійну реєстрацію у Нітрі.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u01-l09-email-uradu-ex01",
+          "lessonId": "b2-u01-l09-email-uradu",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "elektronický podpis",
+              "right": "електронний підпис"
+            },
+            {
+              "left": "oskenovať",
+              "right": "відсканувати"
+            },
+            {
+              "left": "v súvislosti s",
+              "right": "у зв’язку з"
+            },
+            {
+              "left": "vyžiadať si",
+              "right": "попросити видати"
+            },
+            {
+              "left": "referentka",
+              "right": "працівниця установи"
+            },
+            {
+              "left": "trvalý pobyt",
+              "right": "постійне проживання"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u01-l09-email-uradu-w01",
+            "b2-u01-l09-email-uradu-w02",
+            "b2-u01-l09-email-uradu-w03",
+            "b2-u01-l09-email-uradu-w04",
+            "b2-u01-l09-email-uradu-w05",
+            "b2-u01-l09-email-uradu-w06"
+          ]
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-ex02",
+          "lessonId": "b2-u01-l09-email-uradu",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "V súvislosti "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "s",
+                "na",
+                "so"
+              ],
+              "correct": "s"
+            },
+            {
+              "text": " mojou žiadosťou zo dňa 5. marca Vám píšem."
+            }
+          ],
+          "explanation": "V súvislosti s + орудний: s mojou žiadosťou.",
+          "order": 2,
+          "wordIds": [
+            "b2-u01-l09-email-uradu-w03"
+          ]
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-ex03",
+          "lessonId": "b2-u01-l09-email-uradu",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Chcel by som si "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "vyžiadam",
+                "vyžiadal",
+                "vyžiadať"
+              ],
+              "correct": "vyžiadať"
+            },
+            {
+              "text": " potvrdenie o trvalom pobyte."
+            }
+          ],
+          "explanation": "Після «chcel by som» стоїть інфінітив: vyžiadať.",
+          "order": 3,
+          "wordIds": [
+            "b2-u01-l09-email-uradu-w04",
+            "b2-u01-l09-email-uradu-w06"
+          ]
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-ex04",
+          "lessonId": "b2-u01-l09-email-uradu",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "V prílohe Vám zasielam ______ doklad totožnosti. (відсканований)",
+          "acceptedAnswers": [
+            "oskenovaný",
+            "naskenovaný"
+          ],
+          "explanation": "Oskenovaný / naskenovaný — відсканований; обидва варіанти вживаються.",
+          "order": 4,
+          "wordIds": [
+            "b2-u01-l09-email-uradu-w02"
+          ]
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-ex05",
+          "lessonId": "b2-u01-l09-email-uradu",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яка тема (predmet) імейлу найкраща?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Dobrý deň",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Potrebujem pomoc!!!",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Žiadosť o vydanie potvrdenia o trvalom pobyte – Oksana Melnyk",
+              "correct": true
+            }
+          ],
+          "explanation": "Тема має бути конкретною й короткою: що й від кого.",
+          "order": 5,
+          "wordIds": [
+            "b2-u01-l09-email-uradu-w06"
+          ]
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-ex06",
+          "lessonId": "b2-u01-l09-email-uradu",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Obraciam sa na Vás s otázka k vybaveniu pobytu.",
+          "errorToken": "otázka",
+          "correctToken": "otázkou",
+          "explanation": "S + орудний: s otázkou.",
+          "order": 6,
+          "wordIds": [
+            "b2-u01-l09-email-uradu-w06"
+          ]
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-ex07",
+          "lessonId": "b2-u01-l09-email-uradu",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Píšem Vám v súvislosti s moja žiadosť zo dňa 5. marca.",
+          "acceptedAnswers": [
+            "Píšem Vám v súvislosti s mojou žiadosťou zo dňa 5. marca."
+          ],
+          "explanation": "V súvislosti s + орудний: s mojou žiadosťou.",
+          "order": 7,
+          "wordIds": [
+            "b2-u01-l09-email-uradu-w03"
+          ]
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-ex08",
+          "lessonId": "b2-u01-l09-email-uradu",
+          "type": "drag_to_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильне слово.",
+          "sentence": "Vyplnené tlačivo Vám zasielam ______.",
+          "draggable": [
+            "z prílohy",
+            "v prílohe",
+            "na prílohe"
+          ],
+          "correct": "v prílohe",
+          "explanation": "Додаток до імейлу — «v prílohe».",
+          "order": 8
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-ex09",
+          "lessonId": "b2-u01-l09-email-uradu",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Daria potrebovala zistiť, aké doklady má priniesť na úrad pri žiadosti o prídavok na dieťa. Na webe nenašla jasnú odpoveď, a tak napísala e-mail. Do predmetu uviedla: «Otázka k žiadosti o prídavok na dieťa – Daria Kovalenko». V prvom odseku sa predstavila a vysvetlila, prečo píše. V druhom položila dve konkrétne otázky: aké doklady má priniesť a či ich môže poslať elektronicky. V treťom odseku priložila sken dokladu totožnosti, poďakovala sa a uviedla svoj telefón. Odpoveď prišla do troch dní. Referentka jej poslala zoznam dokladov a upozornila, že niektoré dokumenty bude musieť priniesť osobne.",
+          "questions": [
+            {
+              "question": "Чому Дарія написала e-mail?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "хотіла поскаржитися",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "на сайті не знайшла чіткої відповіді",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "хотіла подякувати",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Які два запитання вона поставила?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "хто керівник і де установа",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "скільки це коштує й коли відкрито",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "які документи принести й чи можна надіслати їх електронно",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що відповіла працівниця?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "надіслала перелік документів і попередила, що частину треба принести особисто",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "відмовила в прийнятті документів",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "не відповіла",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 9,
+          "wordIds": [
+            "b2-u01-l09-email-uradu-w01",
+            "b2-u01-l09-email-uradu-w05"
+          ]
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-ex10",
+          "lessonId": "b2-u01-l09-email-uradu",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай чернетку імейлу.",
+          "document": {
+            "title": "E-mail úradu – koncept",
+            "fields": [
+              {
+                "label": "Komu",
+                "value": "Mestský úrad – podateľňa"
+              },
+              {
+                "label": "Predmet",
+                "value": "Otázka k potvrdeniu o trvalom pobyte"
+              },
+              {
+                "label": "Príloha",
+                "value": "doklad_totoznosti.pdf (oskenovaný)"
+              },
+              {
+                "label": "Otázka",
+                "value": "Je možné podať žiadosť elektronicky?"
+              },
+              {
+                "label": "Podpis",
+                "value": "Oksana Melnyk, tel. 0900 123 456"
+              }
+            ]
+          },
+          "question": "Що Оксана хоче дізнатися?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "чи можна подати заяву електронно",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "скільки коштує довідка",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "де знаходиться установа",
+              "correct": false
+            }
+          ],
+          "explanation": "Otázka: Je možné podať žiadosť elektronicky? — чи можна подати електронно.",
+          "order": 10,
+          "wordIds": [
+            "b2-u01-l09-email-uradu-w01",
+            "b2-u01-l09-email-uradu-w02",
+            "b2-u01-l09-email-uradu-w06"
+          ]
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-ex11",
+          "lessonId": "b2-u01-l09-email-uradu",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай відповідь установи.",
+          "message": {
+            "sender": "Mestský úrad, referát evidencie",
+            "body": "Dobrý deň, pani Melnyk, žiadosť môžete podať elektronicky. Ak ju pošlete e-mailom bez elektronického podpisu, prosíme Vás o doplnenie písomného podania do troch dní. Prílohu s oskenovaným dokladom totožnosti sme dostali. S pozdravom referát evidencie"
+          },
+          "question": "Що треба зробити, якщо надіслати заяву імейлом без електронного підпису?",
+          "options": [
+            {
+              "id": "a",
+              "text": "нічого, e-mail достатній",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "протягом трьох днів доповнити її письмовим поданням",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "прийти за тиждень",
+              "correct": false
+            }
+          ],
+          "explanation": "Pri e-maile bez elektronického podpisu — doplniť písomné podanie do troch dní.",
+          "order": 11,
+          "wordIds": [
+            "b2-u01-l09-email-uradu-w01",
+            "b2-u01-l09-email-uradu-w02"
+          ]
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-ex12",
+          "lessonId": "b2-u01-l09-email-uradu",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти питаєш в імейлі, які документи треба принести.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Rád by som sa opýtal, aké dokumenty mám priniesť.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Ahoj, čo mám priniesť?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Povedzte mi hneď, aké dokumenty mám priniesť!",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Rád by som sa opýtal, aké dokumenty priniesol.",
+              "correct": false
+            }
+          ],
+          "explanation": "Ввічливе запитання: rád by som sa opýtal + підрядне речення; без оклику й «Ahoj».",
+          "order": 12
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-ex13",
+          "lessonId": "b2-u01-l09-email-uradu",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Тема листа чи текст листа?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Predmet"
+            },
+            {
+              "id": "c2",
+              "title": "Text"
+            }
+          ],
+          "items": [
+            {
+              "sk": "Žiadosť o potvrdenie o pobyte",
+              "category": "c1"
+            },
+            {
+              "sk": "V prílohe Vám zasielam sken dokladu",
+              "category": "c2"
+            },
+            {
+              "sk": "Obraciam sa na Vás s otázkou",
+              "category": "c2"
+            },
+            {
+              "sk": "Zmena adresy – Oksana Melnyk",
+              "category": "c1"
+            },
+            {
+              "sk": "Reklamácia faktúry č. 123",
+              "category": "c1"
+            },
+            {
+              "sk": "Rád by som sa opýtal na postup",
+              "category": "c2"
+            },
+            {
+              "sk": "Otázka k žiadosti o prídavok",
+              "category": "c1"
+            },
+            {
+              "sk": "Vopred Vám ďakujem za odpoveď",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Тема — коротка іменникова фраза; у тексті — речення зі звертанням і проханням.",
+          "order": 13,
+          "wordIds": [
+            "b2-u01-l09-email-uradu-w06"
+          ]
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-ex14",
+          "lessonId": "b2-u01-l09-email-uradu",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери доречні формулювання для імейлу в установу.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Vopred Vám ďakujem za odpoveď.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Ahoj, mám otázku :)",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Dobrý deň, obraciam sa na Vás s otázkou.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "V prílohe Vám zasielam oskenovaný doklad.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Pošlite mi to ASAP!!!",
+              "correct": false
+            }
+          ],
+          "explanation": "Смайли, «ASAP» і оклики в імейлі до установи недоречні.",
+          "order": 14,
+          "wordIds": [
+            "b2-u01-l09-email-uradu-w02"
+          ]
+        },
+        {
+          "id": "b2-u01-l09-email-uradu-ex15",
+          "lessonId": "b2-u01-l09-email-uradu",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і оціни кожне твердження.",
+          "text": "Žiadosť o potvrdenie o trvalom pobyte môžete podať osobne alebo elektronicky. Pri elektronickom podaní priložte oskenovaný doklad totožnosti vo formáte PDF. Tlačivo vyplňte čitateľne. Úradné hodiny sú v pondelok, v stredu a v piatok. Referentka Vám zodpovie otázky telefonicky alebo e-mailom.",
+          "statements": [
+            {
+              "sk": "Заяву можна подати й електронно.",
+              "correct": true
+            },
+            {
+              "sk": "До електронної заяви треба додати PDF-скан документа.",
+              "correct": true
+            },
+            {
+              "sk": "Установа приймає відвідувачів тричі на тиждень.",
+              "correct": true
+            },
+            {
+              "sk": "Заяву можна подати лише особисто.",
+              "correct": false
+            },
+            {
+              "sk": "Бланк заповнювати не потрібно.",
+              "correct": false
+            }
+          ],
+          "explanation": "Подання — особисто або електронно; бланк треба заповнити; години — пн, ср, пт.",
+          "order": 15,
+          "wordIds": [
+            "b2-u01-l09-email-uradu-w01",
+            "b2-u01-l09-email-uradu-w02",
+            "b2-u01-l09-email-uradu-w05",
+            "b2-u01-l09-email-uradu-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "E-mail у відділ виплат",
+        "description": "Дарія пише в установу, щоб дізнатися, які документи потрібні для заяви про допомогу на дитину.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Яку тему листа вкажеш?",
+            "options": [
+              {
+                "sk": "Dobrý deň",
+                "correct": false
+              },
+              {
+                "sk": "Otázka k žiadosti o prídavok na dieťa – Daria Kovalenko",
+                "correct": true
+              },
+              {
+                "sk": "Pomoc",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як почнеш лист?",
+            "options": [
+              {
+                "sk": "Ahoj,",
+                "correct": false
+              },
+              {
+                "sk": "Dobrý deň,",
+                "correct": true
+              },
+              {
+                "sk": "Čau úrad,",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Як сформулюєш запитання?",
+            "options": [
+              {
+                "sk": "Rada by som sa opýtala, aké doklady mám priniesť.",
+                "correct": true
+              },
+              {
+                "sk": "Aké doklady mám prinesiem?",
+                "correct": false
+              },
+              {
+                "sk": "Povedzte, čo mám priniesť!",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як закінчиш?",
+            "options": [
+              {
+                "sk": "V prílohe Vám zasielam oskenovaný doklad. Vopred ďakujem. S pozdravom",
+                "correct": true
+              },
+              {
+                "sk": "Prílohu som zabudla, ale vy si poradíte.",
+                "correct": false
+              },
+              {
+                "sk": "Doklad je v prílohe. Čau",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш написати e-mail до установи. Далі — підсумок: збираємо весь офіційний лист докупи."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш написати e-mail до установи. Далі — підсумок: збираємо весь офіційний лист докупи.",
+        "nowYouKnow": [
+          "predmet: що й від кого · Dobrý deň, · S pozdravom",
+          "три абзаци: v súvislosti s… · питання · prílohy",
+          "Rád by som sa opýtal, či… · vyžiadať si",
+          "PDF · oskenovať · podať elektronicky: спитай про підпис"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 15,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u01-l10-suhrn-uradna-korespondencia",
+          "title": "Підсумок: офіційне листування"
+        }
+      }
+    }
+  ]
+}
