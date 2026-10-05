@@ -1,0 +1,512 @@
+@unit b1-u02 | Úrad II: заяви й форми | Úrad II: žiadosti a formuláre
+
+@lesson ziadost | Офіційна заява | Žiadosť
+desc: Як скласти письмову заяву на úrad: будова документа, формула «Týmto žiadam o…», обґрунтування, додатки й ввічливе завершення.
+goal: Самостійно написати коротку офіційну заяву й зрозуміти, що в ній обов’язково має бути.
+out: знати будову žiadosti: odosielateľ, adresát, Vec, text, podpis, prílohy ;; починати текст формулою Týmto žiadam o + знахідний ;; коротко обґрунтовувати прохання: Dôvodom je… / keďže… ;; правильно завершувати заяву й перелічувати додатки
+done: Ти вмієш скласти офіційну заяву. Далі — čestné vyhlásenie: письмова заява під особисту відповідальність.
+T: Будова заяви || Офіційна заява (žiadosť) має сталу будову. Угорі зліва — «odosielateľ» (твоє ім’я й адреса), нижче — «adresát» (назва úradu та його адреса), праворуч — місце й дата. Далі рядок «Vec:» — коротко, про що заява: «Vec: Žiadosť o vydanie potvrdenia». Потім звертання, текст, підпис і «Prílohy:» — перелік додатків. Якщо бракує якогось із цих реквізитів (náležitostí), úrad може попросити заяву доповнити. || Vec: Žiadosť o predĺženie lehoty = Предмет: Заява про продовження строку ;; Prílohy: kópia nájomnej zmluvy = Додатки: копія договору оренди || odosielateľ → adresát → Vec → text → podpis → prílohy
+T: Týmto žiadam o… || Головна фраза заяви: «Týmto žiadam o + знахідний відмінок». «Týmto» тут означає «цим (листом)». Віддієслівні іменники на -nie/-tie середнього роду в знахідному не змінюються: «o vydanie», «o predĺženie». Іменники жіночого роду змінюються: «o zmenu», «o kópiu». Ще дві офіційні формули: «Obraciam sa na Vás so žiadosťou o…» і «Dovoľujem si Vás požiadať o…». || Týmto žiadam o vydanie potvrdenia o pobyte. = Цим прошу видати довідку про перебування. ;; Dovoľujem si Vás požiadať o zmenu termínu. = Дозволю собі попросити Вас змінити термін. || žiadam o + знахідний: o zmenu, o vydanie
+mis: Žiadam na vydanie potvrdenia. => Žiadam o vydanie potvrdenia. ;; Žiadam o zmena adresy. => Žiadam o zmenu adresy.
+T: Обґрунтування й завершення || Після прохання йде «odôvodnenie» — пояснення, чому ти просиш. Типові звороти: «Žiadosť odôvodňujem tým, že…», «Dôvodom je…», «keďže…» (оскільки). Документи, які підтверджують сказане, ти долучаєш до заяви — «doložíš» їх або «priložíš». Завершення: «Vopred ďakujem za kladné vybavenie mojej žiadosti.», далі «S pozdravom» і власноручний підпис. У листі до úradu займенники «Vás», «Vám» пишуть з великої літери. || Žiadosť odôvodňujem tým, že som zmenil zamestnávateľa. = Заяву обґрунтовую тим, що я змінив роботодавця. ;; Vopred ďakujem za kladné vybavenie. = Заздалегідь дякую за позитивне вирішення. || odôvodňujem tým, že… · keďže… · Vopred ďakujem…
+mis: Žiadosť odôvodňujem, že… => Žiadosť odôvodňujem tým, že… ;; kladný vybavenie => kladné vybavenie
+W: odôvodniť | обґрунтувати | одуоводніть | Žiadosť musíte odôvodniť a priložiť doklady. | Заяву ви маєте обґрунтувати й додати документи.
+W: odôvodnenie | обґрунтування | одуоводнєніє | V odôvodnení napíšte, prečo žiadate o zmenu. | В обґрунтуванні напишіть, чому ви просите про зміну.
+W: týmto | цим (цим листом, цією заявою) | ти:мто | Týmto žiadam o vydanie potvrdenia. | Цим прошу видати довідку.
+W: kladne | позитивно | кладнє | Moja žiadosť bola vybavená kladne. | Мою заяву вирішили позитивно.
+W: doložiť | долучити (документ на підтвердження) | доложить | K žiadosti musíte doložiť potvrdenie o príjme. | До заяви ви маєте долучити довідку про дохід.
+W: predložiť | пред’явити, надати (документ) | предложить | Pri podaní žiadosti predložte doklad totožnosti. | Подаючи заяву, пред’явіть документ, що посвідчує особу.
+X mt: З’єднай. | odôvodniť = обґрунтувати ;; odôvodnenie = обґрунтування ;; týmto = цим (листом) ;; kladne = позитивно ;; doložiť = долучити документ ;; predložiť = пред’явити
+X dd: Обери. | Týmto žiadam [*o/na/pre] predĺženie lehoty na doloženie dokladov.
+= žiadať o + знахідний: žiadam o predĺženie.
+X dd: Обери. | Žiadam o [*zmenu/zmena/zmeny] adresy v evidencii.
+= zmena — жіночий рід, після o — знахідний: o zmenu.
+X doc~: Прочитай заяву. | Žiadosť (vzor) | Odosielateľ: Iryna Kovaľová, Mlynská 12, Košice ;; Adresát: Okresný úrad Košice ;; Vec: Žiadosť o vydanie duplikátu rozhodnutia ;; Text: Týmto žiadam o vydanie duplikátu rozhodnutia, keďže originál sa mi pri sťahovaní stratil. ;; Prílohy: kópia dokladu totožnosti | Чому Ірина просить дублікат? | *оригінал загубився під час переїзду ;; у рішенні була помилка ;; роботодавець просить другий примірник
+= keďže originál sa mi stratil — оскільки оригінал загубився.
+X rc: - | Oksana Bondarenko, Hlavná 8, Prešov. Okresný úrad Prešov. Vec: Žiadosť o predĺženie lehoty. Vážení, týmto žiadam o predĺženie lehoty na doloženie potvrdenia o príjme. Dôvodom je, že môj zamestnávateľ mi potvrdenie vydá až na konci mesiaca. Potvrdenie doložím hneď, ako ho dostanem. Na preukázanie prikladám kópiu pracovnej zmluvy. Vopred ďakujem za kladné vybavenie mojej žiadosti. S pozdravom, Oksana Bondarenko. Prílohy: kópia pracovnej zmluvy.
+q~: Про що просить Оксана? | *продовжити строк, щоб долучити довідку про дохід ;; видати їй довідку про дохід ;; змінити її адресу
+q~: Чому вона не може надати довідку зараз? | *роботодавець видасть її лише наприкінці місяця ;; вона загубила довідку ;; úrad не приймає копій
+q~: Що вона додає до заяви? | *копію трудового договору ;; довідку про дохід ;; свій паспорт
+X cat: Розподіли фрази за частинами заяви. | Začiatok textu: Týmto žiadam o vydanie potvrdenia, Dovoľujem si Vás požiadať o zmenu termínu ;; Odôvodnenie: Dôvodom je zmena zamestnávateľa, Potvrdenie potrebujem pre banku ;; Záver: Vopred ďakujem za kladné vybavenie, S pozdravom
+= Прохання → обґрунтування → завершення.
+X sc~: Що пишуть у рядку «Vec:»? | - | *коротко, про що заява ;; ім’я службовця, якому пишеш ;; перелік додатків
+= Vec — предмет заяви: Žiadosť o…
+X fb: Допиши. | K žiadosti je potrebné ___ kópiu nájomnej zmluvy. (долучити) | doložiť ;; priložiť |
+= doložiť / priložiť — долучити документ до заяви.
+X so: - | Почни заяву про продовження строку. | Týmto žiadam o predĺženie lehoty.
+= Týmto žiadam o + знахідний — стандартний початок.
+X fe: - | Vopred ďakujem za [kladný>kladné] vybavenie mojej žiadosti.
+= vybavenie — середній рід: kladné vybavenie.
+X tr: Перепиши прохання офіційно, почни з «Týmto žiadam o…». | Chcem nový termín. | Týmto žiadam o nový termín. ;; Týmto Vás žiadam o nový termín.
+= Týmto žiadam o + знахідний — офіційна формула замість chcem.
+X reg: - | Dovoľujem si Vás požiadať o predĺženie lehoty na doloženie dokladov. | formal
+= Dovoľujem si Vás požiadať — дуже офіційний стиль.
+X ms: Обери, що обов’язково має бути в заяві на úrad. | - | *meno a adresa odosielateľa ;; *vec, teda o čo žiadate ;; *vlastnoručný podpis ;; fotografia žiadateľa ;; meno úradníka, ktorý žiadosť vybaví
+= Відправник, предмет і підпис — обов’язкові; фото й ім’я службовця — ні.
+X np: Ти пояснюєш у заяві, чому просиш: ти (жінка) змінила роботодавця. | *Žiadosť odôvodňujem tým, že som zmenila zamestnávateľa. ;; Žiadosť odôvodňujem, že som zmenila zamestnávateľa. ;; Odôvodnenie mám zmenila zamestnávateľa. ;; Zamestnávateľa som zmenila, preto dávam žiadosť ako.
+= Сталий зворот: odôvodňujem tým, že…
+X bd: - | Ти правильно склала й подала заяву!
+> Úradníčka: Dobrý deň, čo potrebujete? | *Dobrý deň, chcela by som podať žiadosť o vydanie potvrdenia. ;; Dobrý deň, chcem žiadosť na potvrdenie dať. ;; Ahoj, potvrdenie treba.
+> Úradníčka: Žiadosť nemá všetky náležitosti. Chýba vám odôvodnenie. | *Rozumiem, môžem ho dopísať hneď tu? ;; Rozumiem, odôvodnenie je zbytočné. ;; Odôvodnenie nemám rada, nepíšem.
+> Úradníčka: Áno. A predložte mi, prosím, doklad totožnosti. | *Nech sa páči, tu je môj pas. ;; Nech sa páči, tu je moje odôvodnenie. ;; Doklad predložím vy, prosím.
+> Úradníčka: Ďakujem, žiadosť je prijatá. | *Ďakujem. Kedy môžem čakať odpoveď? ;; Ďakujem. Prijatá žiadosť som ja. ;; Ďakujem, a kedy čakajú?
+F: Заява на úrade || Тобі потрібна довідка для банку, і ти складаєш письмову заяву на місцевий úrad.
+S: Як заповниш рядок «Vec»? | *Vec: Žiadosť o vydanie potvrdenia ;; Vec: Žiadam potvrdenie dať ;; Vec: Dobrý deň, potvrdenie
+S: Перше речення заяви. | *Týmto žiadam o vydanie potvrdenia. ;; Týmto žiadam na vydanie potvrdenia. ;; Týmto žiadam o vydania potvrdenie.
+S: Ти пояснюєш, навіщо тобі довідка. | *Potvrdenie potrebujem pre banku. ;; Potvrdenie potrebujem pre banka. ;; Potvrdenie banka potrebuje mne.
+S: Завершення заяви. | *Vopred ďakujem za kladné vybavenie mojej žiadosti. ;; Vopred ďakujem za kladný vybavenie moja žiadosť. ;; Ďakujem vopred, čau.
+R: odosielateľ, adresát, Vec, podpis, prílohy ;; Týmto žiadam o + знахідний ;; odôvodnenie: Dôvodom je… / keďže… ;; Vopred ďakujem za kladné vybavenie.
+
+@lesson cestne-vyhlasenie | Заява під особисту відповідальність | Čestné vyhlásenie
+desc: Що таке čestné vyhlásenie, коли úrad його приймає і як воно будується: «Dolupodpísaný/á…, čestne vyhlasujem, že…».
+goal: Розуміти й складати čestné vyhlásenie та знати, яку відповідальність воно несе.
+out: розуміти, навіщо úrad просить čestné vyhlásenie ;; будувати речення Čestne vyhlasujem, že… ;; узгоджувати dolupodpísaný / dolupodpísaná з родом ;; розуміти формулу про правдивість даних і правові наслідки
+done: Ти вмієш читати й складати čestné vyhlásenie. Далі — довіреність: як доручити справу іншій людині.
+T: Що це за документ || «Čestné vyhlásenie» — письмова заява, у якій ти під особисту відповідальність підтверджуєш певний факт: що не маєш боргів перед громадою, що живеш за вказаною адресою, що дані правдиві. Úrad приймає її, коли закон це дозволяє — часто замість довідки, яку важко отримати. Підписуючи, ти береш на себе відповідальність: неправдиве čestné vyhlásenie може мати правові наслідки. || Úrad akceptuje čestné vyhlásenie namiesto potvrdenia. = Установа приймає заяву під особисту відповідальність замість довідки. ;; Za pravdivosť údajov zodpovedá ten, kto vyhlásenie podpísal. = За правдивість даних відповідає той, хто підписав заяву. || čestné vyhlásenie = твоє письмове слово, за яке ти відповідаєш
+T: Формула вступу || Типовий початок: «Dolupodpísaný (чоловік) / Dolupodpísaná (жінка) Meno Priezvisko, narodený/narodená…, bytom…, čestne vyhlasujem, že…». «Dolupodpísaný» — буквально «нижчепідписаний». «Bytom» — офіційне «що проживає за адресою». Після «vyhlasujem, že» стоїть звичайне речення в теперішньому чи минулому часі. || Dolupodpísaná Olena Ivanenko čestne vyhlasujem, že nemám nedoplatky voči obci. = Я, нижчепідписана Олена Іваненко, під особисту відповідальність заявляю, що не маю заборгованостей перед громадою. ;; Čestne vyhlasujem, že všetky uvedené údaje sú pravdivé. = Під особисту відповідальність заявляю, що всі вказані дані правдиві. || Dolupodpísaný / Dolupodpísaná…, čestne vyhlasujem, že…
+mis: Dolupodpísaný Olena… => Dolupodpísaná Olena… ;; čestne vyhlasujem, čo… => čestne vyhlasujem, že…
+T: Правдиві й повні дані || Наприкінці часто стоїть: «Som si vedomý / vedomá právnych následkov nepravdivého vyhlásenia.» — Я усвідомлюю правові наслідки неправдивої заяви. Конструкція «byť si vedomý + родовий»: som si vedomá následkov. Ще одна формула: «Uvedené údaje sú pravdivé a úplné» — дані правдиві й повні. Далі — місце, дата й підпис. Іноді úrad вимагає, щоб підпис на такій заяві був засвідчений. || Som si vedomý právnych následkov nepravdivého vyhlásenia. = Я усвідомлюю правові наслідки неправдивої заяви. ;; Uvedené údaje sú pravdivé a úplné. = Вказані дані правдиві й повні. || byť si vedomý + родовий
+mis: Som vedomý následkov. => Som si vedomý následkov. ;; som si vedomá právne následky => som si vedomá právnych následkov
+W: čestné vyhlásenie | заява під особисту відповідальність | честне: вигла:сеніє | K žiadosti priložte čestné vyhlásenie o bezdlžnosti. | До заяви додайте заяву під особисту відповідальність про відсутність боргів.
+W: vyhlasovať | заявляти (офіційно) | вигласовать | Čestne vyhlasujem, že v byte bývam sama. | Під особисту відповідальність заявляю, що живу у квартирі сама.
+W: pravdivý | правдивий | правдиви: | Všetky údaje vo formulári musia byť pravdivé. | Усі дані у формулярі мають бути правдиві.
+W: nepravdivý | неправдивий | неправдиви: | Nepravdivé vyhlásenie môže mať právne následky. | Неправдива заява може мати правові наслідки.
+W: dolupodpísaný | нижчепідписаний | долупотпі:сани: | Dolupodpísaný Andrij Melnyk čestne vyhlasujem, že nemám žiadne dlhy. | Я, нижчепідписаний Андрій Мельник, під особисту відповідальність заявляю, що не маю жодних боргів.
+W: úplný | повний | у:плни: | Žiadosť nie je úplná, chýba jedna príloha. | Заява неповна, бракує одного додатка.
+X mt: З’єднай. | čestné vyhlásenie = заява під особисту відповідальність ;; vyhlasovať = заявляти ;; pravdivý = правдивий ;; nepravdivý = неправдивий ;; dolupodpísaný = нижчепідписаний ;; úplný = повний
+X dd: Обери. | [*Dolupodpísaná/Dolupodpísaný/Dolupodpísané] Natália Kravec čestne vyhlasujem, že bývam na uvedenej adrese.
+= Наталія — жінка: dolupodpísaná.
+X dd: Обери. | Som si vedomá právnych [*následkov/následky/následkami] nepravdivého vyhlásenia.
+= byť si vedomý + родовий: následkov.
+X doc~: Прочитай документ. | Čestné vyhlásenie (vzor) | Vyhlasujúci: Petro Šapoval, nar. 4. 5. 1990 ;; Bytom: Študentská 5, Nitra ;; Text: Čestne vyhlasujem, že som v roku 2025 nemal žiadny príjem zo zahraničia. ;; Doložka: Som si vedomý právnych následkov nepravdivého vyhlásenia. ;; Miesto a dátum: Nitra, 3. 2. 2026 | Що саме підтверджує Петро? | *що у 2025 році не мав доходу з-за кордону ;; що живе в Нітрі з 2025 року ;; що не має боргів перед містом
+= príjem zo zahraničia — дохід з-за кордону.
+X fb: Допиши. | Čestne vyhlasujem, ___ všetky uvedené údaje sú pravdivé. (що) | že |
+= vyhlasujem, že… — сполучник že, а не čo.
+X tf: - | Úradníčka: «Potvrdenie zo zahraničia nemusíte nosiť, v tomto prípade stačí čestné vyhlásenie.» | Довідку з-за кордону приносити не треба — досить заяви під особисту відповідальність. | T
+= stačí čestné vyhlásenie — достатньо такої заяви.
+X fe: - | Uvedené údaje sú pravdivé a [úplný>úplné].
+= údaje — множина: pravdivé a úplné.
+X sb: - | Підтверди, що всі дані правдиві. | Všetky údaje sú pravdivé.
+= údaje — множина, тому pravdivé.
+X ms: Обери граматично правильні речення. | - | *Čestne vyhlasujem, že nemám dlhy voči obci. ;; *Som si vedomá právnych následkov. ;; *Dolupodpísaný Ivan Hnatiuk čestne vyhlasujem, že bývam sám. ;; Čestne vyhlasujem, čo nemám dlhy. ;; Som vedomá právne následky.
+= vyhlasujem, že…; som si vedomá + родовий.
+X mic: - | Formulár: «Dolupodpísaná Iryna Moroz, bytom Hlavná 3, Žilina, čestne vyhlasujem…» | bytom | *що проживає за адресою ;; власниця квартири ;; надіслано поштою
+= bytom — офіційне «проживає за адресою».
+X tr: Перетвори на офіційне речення, почни з «Čestne vyhlasujem, že…». | Nemám žiadne dlhy. | Čestne vyhlasujem, že nemám žiadne dlhy. ;; Čestne vyhlasujem, že nemám dlhy.
+= Čestne vyhlasujem, že + звичайне речення.
+X hm: - | Úradník: «Čestné vyhlásenie vám prijmem, ale upozorňujem, že údaje si môžeme overiť.» | *дані мають бути правдиві, бо úrad може їх перевірити ;; úrad не приймає таких заяв ;; дані можна буде виправити пізніше
+= Службовець натякає: неправду легко виявити.
+X tfl: - | Čestné vyhlásenie je písomné vyhlásenie, v ktorom osoba potvrdzuje určitú skutočnosť. Úrady ho akceptujú najmä vtedy, keď to dovoľuje zákon a potvrdenie sa nedá ľahko získať. Kto vyhlásenie podpíše, zodpovedá za pravdivosť údajov. Niekedy úrad žiada, aby bol podpis na vyhlásení úradne osvedčený. Vyhlásenie s nepravdivými údajmi môže mať pre vyhlasujúceho právne následky. | *Таку заяву приймають, коли це дозволяє закон. ;; *За правдивість даних відповідає той, хто підписав. ;; Підпис на такій заяві ніколи не засвідчують. ;; *Неправдиві дані можуть мати правові наслідки. ;; Таку заяву можна подати лише усно.
+X np: Ти (жінка) підтверджуєш у заяві, що живеш за вказаною адресою. | *Čestne vyhlasujem, že bývam na uvedenej adrese. ;; Čestne vyhlasujem, že bývam na uvedená adresa. ;; Čestne vyhlásim, bývam adresa uvedená. ;; Vyhlasujem čestne bývanie adresa.
+= na + місцевий відмінок: na uvedenej adrese.
+F: Заява замість довідки || Úrad просить у тебе довідку з України, але отримати її зараз неможливо. Úradníčka пропонує čestné vyhlásenie.
+S: Ти (жінка) починаєш вступ. Яка форма правильна? | *Dolupodpísaná ;; Dolupodpísaný ;; Dolupodpísané
+S: Ти підтверджуєш, що не мала доходів в Україні. | *Čestne vyhlasujem, že som na Ukrajine nemala žiadne príjmy. ;; Čestne vyhlasujem, čo som na Ukrajine nemala žiadne príjmy. ;; Čestne vyhlasujem, že som na Ukrajinu nemala žiadny príjmy.
+S: Ти додаєш формулу про наслідки. | *Som si vedomá právnych následkov nepravdivého vyhlásenia. ;; Som si vedomá právne následky nepravdivého vyhlásenia. ;; Som vedomá si následky nepravdivé.
+S~: Úradníčka: «Údaje musia byť pravdivé a úplné.» Що вона наголошує? | *дані мають бути правдиві й повні ;; дані можна дописати пізніше ;; достатньо вказати частину даних
+R: čestné vyhlásenie — письмове підтвердження під особисту відповідальність ;; Dolupodpísaný/á…, čestne vyhlasujem, že… ;; Som si vedomý/á právnych následkov… (byť si vedomý + родовий) ;; údaje sú pravdivé a úplné
+
+@lesson splnomocnenie | Довіреність | Splnomocnenie
+desc: Як доручити іншій людині справу на úrade, пошті чи в банку: хто такі splnomocniteľ і splnomocnenec, що писати в довіреності й чому важливий її обсяг (rozsah).
+goal: Скласти просту довіреність і зрозуміти, що в ній написано.
+out: розрізняти splnomocniteľ і splnomocnenec ;; будувати речення Splnomocňujem + знахідний na + знахідний ;; чітко визначати rozsah splnomocnenia ;; розуміти, коли потрібен засвідчений підпис
+done: Ти вмієш скласти довіреність. Далі — засвідчення підпису: де і як це зробити.
+T: Хто кого уповноважує || «Splnomocnenie» (або «plná moc») — документ, яким ти доручаєш іншій людині діяти від твого імені. Той, хто дає довіреність, — «splnomocniteľ», той, хто її отримує, — «splnomocnenec». Дієслово «splnomocniť niekoho» вимагає знахідного відмінка (кого?). Підказка: суфікс -teľ означає того, хто робить дію (як učiteľ), а -nec — того, кому її доручили. || Splnomocňujem svoju manželku, aby za mňa prevzala doklad. = Уповноважую свою дружину отримати за мене документ. ;; Splnomocnenec koná v mene splnomocniteľa. = Довірена особа діє від імені довірителя. || splnomocniteľ (дає) → splnomocnenec (отримує)
+mis: Splnomocňujem manželke. => Splnomocňujem manželku.
+T: Rozsah: на що саме || Довіреність має чітко сказати, на що вона дає право, — це «rozsah splnomocnenia». Формули: «na prevzatie rozhodnutia» (на отримання рішення), «na podanie žiadosti», «na všetky úkony v konaní o…» (на всі дії в провадженні щодо…). «Úkon» — окрема юридична дія: подати, отримати, підписати. Чим точніше вказано rozsah, тим менше проблем на úrade. || Splnomocnenie sa vzťahuje len na prevzatie zásielky. = Довіреність стосується лише отримання відправлення. ;; Splnomocnenec je oprávnený podať žiadosť v mojom mene. = Довірена особа має право подати заяву від мого імені. || na + знахідний: na prevzatie, na podanie
+mis: v môjho mene => v mojom mene
+T: Що ще має бути || У довіреності вказують дані обох осіб (ім’я, дату народження, адресу), rozsah, місце й дату та підпис довірителя. Часто підписується й довірена особа з фразою «Splnomocnenie prijímam» (довіреність приймаю). Для деяких дій úrad вимагає «úradne osvedčený podpis» — засвідчений підпис довірителя. Довіреність можна й «odvolať» — відкликати. || Splnomocnenie prijímam. = Довіреність приймаю. ;; Na tento úkon potrebujete splnomocnenie s osvedčeným podpisom. = Для цієї дії вам потрібна довіреність із засвідченим підписом. || údaje oboch strán + rozsah + dátum + podpis
+W: splnomocniteľ | довіритель (той, хто дає довіреність) | сплномоцнітель | Splnomocniteľ musí splnomocnenie vlastnoručne podpísať. | Довіритель має власноручно підписати довіреність.
+W: splnomocnenec | довірена особа | сплномоцнєнец | Splnomocnenec sa musí na úrade preukázať dokladom totožnosti. | Довірена особа має пред’явити в установі документ, що посвідчує особу.
+W: plná moc | довіреність | плна: моц | Brat má odo mňa plnú moc na predaj auta. | Брат має від мене довіреність на продаж авто.
+W: úkon | (юридична) дія | у:кон | Podanie žiadosti je právny úkon. | Подання заяви — юридична дія.
+W: splnomocniť | уповноважити (дати довіреність) | сплномоцніть | Splnomocnila som manžela, aby za mňa prevzal rozhodnutie. | Я уповноважила чоловіка отримати за мене рішення.
+W: v mene | від імені | в мєнє | Splnomocnenec podal žiadosť v mene svojej matky. | Довірена особа подала заяву від імені своєї матері.
+X mt: З’єднай. | splnomocniteľ = довіритель ;; splnomocnenec = довірена особа ;; plná moc = довіреність ;; úkon = юридична дія ;; splnomocniť = уповноважити ;; v mene = від імені
+X cat: Хто це робить? | Splnomocniteľ: dáva plnú moc, určuje rozsah splnomocnenia, môže splnomocnenie odvolať ;; Splnomocnenec: koná v mene iného, preukáže sa splnomocnením, prijíma splnomocnenie
+= Довіритель дає й відкликає довіреність, довірена особа діє за нею.
+X dd: Обери. | Splnomocňujem [*svoju/svojej/svojou] sestru na prevzatie zásielky.
+= splnomocniť + знахідний: svoju sestru.
+X dd: Обери. | Splnomocnenie sa vzťahuje len na [*podanie/podania/podaní] žiadosti.
+= vzťahovať sa na + знахідний: na podanie.
+X doc~: Прочитай довіреність. | Splnomocnenie (vzor) | Splnomocniteľ: Olha Tkačenko, nar. 12. 4. 1985, Bratislava ;; Splnomocnenec: Mykola Tkačenko, nar. 3. 9. 1983, Bratislava ;; Rozsah: prevzatie rozhodnutia na Okresnom úrade Bratislava ;; Text: Splnomocnenec je oprávnený vykonať v mojom mene len uvedený úkon. ;; Podpis splnomocniteľa: Olha Tkačenko | Що може зробити Микола? | *лише отримати рішення в окружному úrade ;; подавати будь-які заяви від імені Ольги ;; продати квартиру Ольги
+= len uvedený úkon — лише вказана дія.
+X sc~: Хто такий «splnomocnenec»? | - | *людина, яка діє від імені іншої за довіреністю ;; людина, яка видає довіреність ;; службовець, який засвідчує довіреність
+= -nec — той, кому доручили діяти.
+X fb: Допиши фразу довіреної особи. | Splnomocnenie ___. (приймаю) | prijímam |
+= Splnomocnenie prijímam — довіреність приймаю.
+X fe: - | Splnomocnenec koná v mene [splnomocnenca>splnomocniteľa].
+= Довірена особа діє від імені довірителя — splnomocniteľa.
+X so: - | Скажи, що ти дієш від імені своєї матері. | Konám v mene svojej matky.
+= konať v mene + родовий.
+X tr: Склади речення для довіреності, почни з «Splnomocňujem brata…». | Brat môže za mňa prevziať môj balík. | Splnomocňujem brata na prevzatie môjho balíka. ;; Splnomocňujem brata, aby za mňa prevzal môj balík. ;; Splnomocňujem brata, aby prevzal môj balík. ;; Splnomocňujem brata na prevzatie balíka. ;; Splnomocňujem brata, aby za mňa prevzal balík.
+= Splnomocňujem + знахідний + na + знахідний або aby…
+X dr: - | Úradník: Žiadosť chcete podať za manželku? Máte od nej splnomocnenie? | *Áno, tu je splnomocnenie s jej podpisom. ;; Áno, splnomocnenie mám sám od seba. ;; Nie, ale manželka je splnomocnenec.
+= Довіреність має бути від дружини і з її підписом.
+X msg: Прочитай повідомлення. | Natália | Ahoj, zajtra nemôžem ísť na úrad prevziať rozhodnutie. Napísala som ti splnomocnenie, je na stole v obývačke. Nezabudni si zobrať aj svoj občiansky preukaz, bez neho ti rozhodnutie nevydajú. Ďakujem! | Що має зробити отримувач? | *отримати рішення, взявши довіреність і свій документ ;; написати довіреність для Наталії ;; лише привезти Наталії її паспорт
+= Splnomocnenie + vlastný doklad totožnosti.
+X hm: - | Úradníčka: «Splnomocnenie máte, ale je tam napísané len "vybaviť všetko". To je dosť nekonkrétne.» | *обсяг довіреності нечіткий, і úrad може її не прийняти ;; довіреність ідеальна ;; бракує лише дати
+= Rozsah має бути конкретним.
+X bd: - | Ти отримав(ла) рішення за сестру!
+> Úradník: Dobrý deň, ako vám môžem pomôcť? | *Dobrý deň, prišiel som prevziať rozhodnutie za svoju sestru. ;; Dobrý deň, prišiel som prevziať rozhodnutie za svoja sestra. ;; Rozhodnutie sestra, dajte.
+> Úradník: Máte splnomocnenie? | *Áno, nech sa páči, tu je splnomocnenie aj môj pas. ;; Áno, splnomocnenie je doma, verte mi. ;; Nie je potrebné, som brat.
+> Úradník: V poriadku, rozsah zodpovedá. Podpíšte prevzatie. | *Kde mám podpísať? ;; Podpíšte vy za mňa. ;; Prevzatie podpisujem splnomocnenec.
+F: Довіреність для брата || Ти їдеш на два тижні в Україну, а на úrade треба забрати рішення. Ти складаєш довіреність для брата.
+S: Ти даєш довіреність. Як ти називаєшся в документі? | *splnomocniteľ ;; splnomocnenec ;; splnomocnenie
+S: Ти уповноважуєш брата. | *Splnomocňujem svojho brata na prevzatie rozhodnutia. ;; Splnomocňujem svojmu bratovi na prevzatie rozhodnutia. ;; Splnomocňujem svoj brat na prevzatie rozhodnutie.
+S: Що брат дописує під текстом? | *Splnomocnenie prijímam. ;; Splnomocnenie dávam. ;; Splnomocnenec prijímam.
+S~: Úradník: «Rozsah je jasný – prevzatie rozhodnutia.» Що це означає? | *у довіреності чітко вказано, на що вона ;; довіреність недійсна ;; брат може робити будь-що від твого імені
+R: splnomocniteľ dáva plnú moc, splnomocnenec koná v jeho mene ;; Splnomocňujem + знахідний na + знахідний ;; rozsah, úkon, byť oprávnený ;; Splnomocnenie prijímam · osvedčený podpis
+
+@lesson overenie-podpisu | Засвідчення підпису | Overenie podpisu
+desc: Де і як засвідчити підпис у Словаччині (matrika, notár), що для цього взяти, що саме засвідчують і що таке апостиль.
+goal: Самостійно засвідчити підпис на документі й розуміти, що саме засвідчують.
+out: розрізняти overiť podpis (розм.) і osvedčiť podpis (офіц.) ;; знати, куди піти: matrika або notár ;; просити: Potrebujem si dať osvedčiť podpis. ;; розуміти, коли може знадобитися apostila
+done: Ти знаєш, як засвідчити підпис. Далі — живностенський реєстр: як почати власну справу.
+T: Що засвідчують || У розмові кажуть «overiť podpis» або «overenie podpisu», в офіційній мові — «osvedčenie podpisu». Засвідчують лише те, що документ підписала саме ти, — не зміст документа і не його правдивість. Тому зміст перевіряєш ти сама. Схожа послуга — «overená kópia» (засвідчена копія): підтверджують, що копія відповідає оригіналу. || Osvedčenie podpisu nepotvrdzuje správnosť obsahu listiny. = Засвідчення підпису не підтверджує правильності змісту документа. ;; Potrebujem si dať overiť podpis na splnomocnení. = Мені треба засвідчити підпис на довіреності. || overiť podpis (розм.) = osvedčiť podpis (офіц.)
+T: Де і як || Підпис можна засвідчити на «matrike» — зазвичай на «obecnom» чи «mestskom úrade» — або в нотаріуса («u notára»). Візьми чинний документ, що посвідчує особу, і сам документ. Підписуєш перед службовцем (або підтверджуєш, що підпис твій). За послугу платять poplatok. Конструкція «dať si + інфінітив» означає «доручити комусь зробити»: «dať si osvedčiť podpis», «dať si preložiť dokument». || Podpis vám osvedčíme, ak sa preukážete platným dokladom totožnosti. = Ми засвідчимо ваш підпис, якщо ви пред’явите чинний документ, що посвідчує особу. ;; Listinu podpíšte až pred úradníčkou. = Документ підпишіть лише перед службовицею. || dať si + інфінітив: dať si osvedčiť, dať si preložiť
+mis: Chcem overiť môj podpis u notár. => Chcem si dať overiť podpis u notára.
+T: Документи для іншої країни || Якщо документ потрібен в іншій країні, може знадобитися «apostila» — спеціальне засвідчення, що підтверджує справжність («pravosť») підпису й печатки на офіційному документі. Чи потрібні апостиль і переклад, залежить від країни та установи — завжди уточнюй заздалегідь. «Listina» — офіційне слово для паперового документа. || Na tejto listine je potrebná apostila. = На цьому документі потрібен апостиль. ;; Apostila potvrdzuje pravosť podpisu a pečiatky. = Апостиль підтверджує справжність підпису й печатки. || apostila → pravosť podpisu a pečiatky
+W: osvedčenie podpisu | засвідчення підпису (офіц.) | освєдченіє потпісу | Osvedčenie podpisu vybavíte na matrike. | Засвідчення підпису оформите у відділі реєстрації (matrika).
+W: notár | нотаріус | нота:р | Zmluvu sme podpísali u notára. | Договір ми підписали в нотаріуса.
+W: listina | документ (паперовий, офіційний) | лістіна | Listinu podpíšte až pred úradníkom. | Документ підпишіть лише перед службовцем.
+W: pravosť | справжність, автентичність | правость | Notár osvedčil pravosť podpisu. | Нотаріус засвідчив справжність підпису.
+W: vlastnoručne | власноручно | властноручнє | Žiadosť musíte podpísať vlastnoručne. | Заяву ви маєте підписати власноручно.
+W: apostila | апостиль | апостіла | Úradníčka sa pýtala, či má môj diplom apostilu. | Службовиця спитала, чи має мій диплом апостиль.
+X mt: З’єднай. | osvedčenie podpisu = засвідчення підпису ;; notár = нотаріус ;; listina = документ ;; pravosť = справжність ;; vlastnoručne = власноручно ;; apostila = апостиль
+X dd: Обери. | Potrebujem si dať [*overiť/overím/overenie] podpis na splnomocnení.
+= dať si + інфінітив: dať si overiť.
+X dd: Обери. | Podpis si môžete dať osvedčiť aj u [*notára/notár/notárovi].
+= u + родовий: u notára.
+X tf: - | Úradníčka: «Osvedčujeme len to, že ste listinu podpísali vy. Za obsah zodpovedáte sami.» | Службовиця перевіряє, чи правильний зміст документа. | F
+= Засвідчують лише підпис, а не зміст.
+X sch: - | Matrika – Mestský úrad (vzor) | Pondelok = 8:00 – 12:00, 13:00 – 17:00 ;; Utorok = 8:00 – 12:00 ;; Streda = 8:00 – 12:00, 13:00 – 17:00 ;; Štvrtok = nestránkový deň ;; Piatok = 8:00 – 12:00 | Ти працюєш до 15:00. Коли можеш прийти після роботи? | *у понеділок або в середу ;; у четвер ;; у п’ятницю
+= Після 15:00 відкрито лише в понеділок і середу; nestránkový deň — день без прийому відвідувачів.
+X ms: Що взяти із собою, щоб засвідчити підпис? | - | *platný doklad totožnosti ;; *listinu, na ktorej treba osvedčiť podpis ;; *peniaze na poplatok ;; dvoch svedkov ;; potvrdenie od zamestnávateľa
+= Потрібні документ особи, сам документ і збір; свідки не потрібні.
+X fb: Допиши. | Žiadosť musíte podpísať ___, nie pečiatkou. (власноручно) | vlastnoručne |
+= vlastnoručne — власною рукою.
+X fe: - | Chcela by som si dať overiť [podpisu>podpis] na zmluve.
+= overiť + знахідний: podpis.
+X mic: - | Úradník: «Túto listinu budete používať v zahraničí? Tak si zistite, či nepotrebujete apostilu.» | apostilu | *спеціальне засвідчення документа для іншої країни ;; переклад документа ;; нову фотографію
+= apostila — засвідчення для використання за кордоном.
+X np: Ти приходиш на matriku. | *Dobrý deň, potrebujem si dať osvedčiť podpis na splnomocnení. ;; Dobrý deň, potrebujem osvedčenie môj podpis na splnomocnenie. ;; Dobrý deň, overte mi obsah splnomocnenia. ;; Podpis overiť, rýchlo.
+= dať si osvedčiť podpis na + місцевий.
+X do: Розстав діалог у правильному порядку. | Úradníčka: Dobrý deň, čo potrebujete? ;; Klient: Potrebujem si dať osvedčiť podpis na splnomocnení. ;; Úradníčka: Máte pri sebe doklad totožnosti? ;; Klient: Áno, tu je môj pas. ;; Úradníčka: Dobre. Listinu podpíšte tu predo mnou. ;; Klient: Už som ju podpísal doma. Nevadí to? ;; Úradníčka: Nevadí, ale musíte potvrdiť, že podpis je váš.
+X tr: Перетвори за зразком «dať si + інфінітив». | Na matrike mi overia podpis. | Na matrike si dám overiť podpis. ;; Podpis si dám overiť na matrike. ;; Na matrike si dám podpis overiť.
+= dať si overiť — доручити засвідчити.
+X col: З’єднай словосполучення. | osvedčiť = podpis ;; preukázať sa = dokladom totožnosti ;; zaplatiť = správny poplatok ;; podpísať = vlastnoručne
+X bd: - | Нотаріус засвідчив твій підпис!
+> Notárka: Dobrý deň, ako vám pomôžem? | *Dobrý deň, potrebujem osvedčiť podpis na listine. ;; Dobrý deň, potrebujem osvedčiť, že obsah listiny je pravdivý. ;; Podpis, áno, ja.
+> Notárka: Prosím váš doklad totožnosti. | *Nech sa páči, tu je môj pas. ;; Nemám ho, ale som to naozaj ja. ;; Nech sa páči, tu je kópia mojej zmluvy.
+> Notárka: Budete listinu používať v zahraničí? | *Áno, na Ukrajine. Potrebujem aj apostilu? ;; Áno, v Ukrajinu. Apostilu nepotrebujem nikdy. ;; Nie, ale chcem apostilu na všetko.
+F: Підпис для довіреності || Брат отримуватиме за тебе документи, і úrad вимагає довіреність із засвідченим підписом.
+S: Ти пояснюєш на matrike, що тобі треба. | *Potrebujem si dať osvedčiť podpis na splnomocnení. ;; Potrebujem si dať osvedčiť podpisu na splnomocnenie. ;; Osvedčte mi brata na splnomocnení.
+S: Службовиця: «Doklad totožnosti, prosím.» | *Nech sa páči, tu je môj pas. ;; Nech sa páči, tu je moje splnomocnenie. ;; Doklad nemám, stačí podpis?
+S: Як ти підписуєш документ? | *Vlastnoručne, pred úradníčkou. ;; Pečiatkou, doma. ;; Kópiou, vlastnoručnou.
+S~: Службовиця: «Obsah listiny neoverujeme.» Що це означає? | *за зміст документа відповідаєш ти сама ;; зміст документа неправильний ;; документ треба переписати
+R: overiť podpis (розм.) = osvedčiť podpis (офіц.) ;; matrika alebo notár, doklad totožnosti, poplatok ;; dať si + інфінітив: dať si osvedčiť ;; listina, pravosť, apostila
+
+@lesson zivnostensky-register | Живностенський реєстр: основи | Živnostenský register
+desc: Що таке živnosť, які бувають види živností і як зареєструватися: voľná, remeselná, viazaná, predmet podnikania, IČO.
+goal: Розуміти основні поняття й уміти поставити прості питання про реєстрацію živnosti.
+out: пояснити, що таке živnosť і podnikať ;; розрізняти voľnú, remeselnú a viazanú živnosť ;; розуміти predmet podnikania, výpis і IČO ;; питати на úrade про реєстрацію živnosti
+done: Ти знаєш основи живностенського реєстру. Далі — податковий úrad: основні поняття.
+T: Що таке živnosť || «Živnosť» — підприємницька діяльність (схоже на український ФОП), яку людина веде постійно, самостійно, від свого імені, на власну відповідальність і з метою отримати прибуток. Людину з živnosťou називають «živnostník». Дієслово «podnikať» — займатися підприємництвом; «podnikať v + місцевий» — у якійсь галузі. Усіх живностенників веде «živnostenský register», а реєстрацією займаються okresné úrady. || Manžel podniká v stavebníctve. = Чоловік займається підприємництвом у будівництві. ;; Živnosť sa vykonáva samostatne, vo vlastnom mene a na vlastnú zodpovednosť. = Підприємницьку діяльність (živnosť) провадять самостійно, від власного імені й на власну відповідальність. || podnikať ako živnostník · podnikať v + місцевий
+mis: Podnikám v stavebníctvo. => Podnikám v stavebníctve.
+T: Види živností || «Voľná živnosť» (вільна) не потребує спеціальної кваліфікації — це, наприклад, прибиральні чи адміністративні послуги. «Remeselná» (ремісна) і «viazaná» (зв’язана) živnosti вимагають «odbornú spôsobilosť» — підтвердженої освіти або практики: перукарня чи мулярство — ремісні živnosti. Те, чим саме ти займатимешся, вказуєш як «predmet podnikania». || Upratovacie služby sú voľná živnosť. = Прибиральні послуги — це вільна živnosť. ;; Na kaderníctvo potrebujete odbornú spôsobilosť. = Для перукарні вам потрібна фахова кваліфікація. || voľná × remeselná / viazaná (s odbornou spôsobilosťou)
+T: Реєстрація й IČO || Živnosť реєструють на okresnom úrade — у «jednotnom kontaktnom mieste» (JKM) — або онлайн. Ти подаєш «ohlásenie živnosti» і вказуєш predmet podnikania та місце підприємництва. Після внесення до реєстру отримаєш «IČO» — ідентифікаційний номер — і витяг із реєстру (výpis). Через JKM можна водночас зареєструватися на податковому úrade й у медичній страховій. || Chcela by som ohlásiť voľnú živnosť. = Я хотіла б зареєструвати вільну živnosť. ;; IČO nájdete vo výpise zo živnostenského registra. = IČO знайдете у витягу з живностенського реєстру. || ohlásiť živnosť → výpis → IČO
+W: živnostenský register | живностенський реєстр (реєстр підприємців) | живностенски: реґістер | Každý živnostník je zapísaný v živnostenskom registri. | Кожен живностенник внесений до живностенського реєстру.
+W: podnikať | займатися підприємництвом | подьнікать | Na Slovensku podnikám už tri roky. | У Словаччині я займаюся підприємництвом уже три роки.
+W: predmet podnikania | вид (предмет) діяльності | предмет подьніканія | Predmetom môjho podnikania sú upratovacie služby. | Вид моєї діяльності — прибиральні послуги.
+W: voľná živnosť | вільна živnosť (без спеціальної кваліфікації) | вольна: живность | Upratovanie môžete robiť ako voľnú živnosť. | Прибиранням можна займатися в межах вільної živnosti.
+W: odborná spôsobilosť | фахова кваліфікація | одборна: спуособілость | Pri remeselnej živnosti musíte preukázať odbornú spôsobilosť. | Для ремісної živnosti ви маєте підтвердити фахову кваліфікацію.
+W: IČO | ідентифікаційний номер (підприємця, організації) | ічо | IČO dostanete po zápise do živnostenského registra. | IČO ви отримаєте після внесення до живностенського реєстру.
+X mt: З’єднай. | živnostenský register = живностенський реєстр ;; podnikať = займатися підприємництвом ;; predmet podnikania = вид діяльності ;; voľná živnosť = вільна živnosť (без кваліфікації) ;; odborná spôsobilosť = фахова кваліфікація ;; IČO = ідентифікаційний номер
+X cat: Чи потрібна фахова кваліфікація? | Voľná živnosť: upratovacie služby, administratívne služby, kopírovacie služby ;; Remeselná živnosť: kaderníctvo, murárstvo, stolárstvo
+= Ремесла вимагають odbornej spôsobilosti, вільні živnosti — ні.
+X dd: Обери. | Manžel podniká v [*stavebníctve/stavebníctvo/stavebníctvom].
+= podnikať v + місцевий: v stavebníctve.
+X dd: Обери. | Na kaderníctvo potrebujete odbornú [*spôsobilosť/spôsobilosti/spôsobilosťou].
+= potrebovať + знахідний: odbornú spôsobilosť.
+X doc~: Прочитай витяг. | Výpis zo živnostenského registra (vzor) | Meno: Halyna Moroz ;; IČO: 12 345 678 ;; Miesto podnikania: Jesenského 4, Banská Bystrica ;; Predmet podnikania: čistiace a upratovacie služby ;; Deň vzniku živnostenského oprávnenia: 1. 3. 2026 ;; Vydal: Okresný úrad Banská Bystrica | З якого дня Галина має право надавати послуги? | *з 1 березня 2026 року ;; з дня, коли витяг прийде поштою ;; з 1 січня 2026 року
+= Deň vzniku oprávnenia — день, з якого можна провадити діяльність.
+X sc~: Що таке IČO? | - | *ідентифікаційний номер підприємця ;; номер паспорта ;; податкова декларація
+= IČO отримуєш після внесення до реєстру.
+X fb: Допиши. | Chcela by som ___ voľnú živnosť. (зареєструвати, офіц.) | ohlásiť ;; zaregistrovať |
+= ohlásiť živnosť — офіційно зареєструвати živnosť.
+X tfl: - | Ak chcete začať podnikať ako živnostník, môžete ísť na jednotné kontaktné miesto na okresnom úrade. Tam podáte ohlásenie živnosti a uvediete predmet podnikania. Pri voľnej živnosti nemusíte preukazovať odbornú spôsobilosť, pri remeselnej a viazanej živnosti ju preukázať musíte. Po zápise do živnostenského registra dostanete IČO. Cez jednotné kontaktné miesto sa môžete zaregistrovať aj na daňovom úrade a v zdravotnej poisťovni. | *Živnosť можна зареєструвати в JKM на окружному úrade. ;; Для вільної živnosti треба підтвердити кваліфікацію. ;; *IČO отримуєш після внесення до реєстру. ;; *Через JKM можна зареєструватися й на податковому úrade. ;; Для ремісної živnosti кваліфікація не потрібна.
+X fe: - | Upratovanie je [voľný>voľná] živnosť.
+= živnosť — жіночий рід: voľná živnosť.
+X np: Ти в JKM і хочеш почати прибиральний бізнес. | *Dobrý deň, chcela by som ohlásiť voľnú živnosť na upratovacie služby. ;; Dobrý deň, chcela by som ohlásiť voľná živnosť na upratovacie služby. ;; Dobrý deň, chcem robiť živnosť upratovať. ;; Živnosť, upratovanie, dajte.
+= ohlásiť + знахідний: voľnú živnosť.
+X dr: - | Úradníčka: Akú živnosť chcete ohlásiť? | *Voľnú. Predmetom podnikania budú upratovacie služby. ;; Voľný. Predmet podnikania upratovacie služba. ;; Živnosť chcem ohlásiť, áno.
+= Відповідь називає вид živnosti й predmet podnikania.
+X hm: - | Úradník: «Kaderníctvo je remeselná živnosť. Máte nejaký doklad o vzdelaní alebo praxi?» | *без підтвердження кваліфікації цю živnosť не зареєструють ;; службовцю просто цікаво, де ти навчалася ;; перукарня — це вільна živnosť
+= Ремісна živnosť вимагає odbornej spôsobilosti.
+X reg: - | Som na živnosti, robím sám na seba. | informal
+= Розмовне «som na živnosti» — я підприємець; «robím sám na seba» — працюю сам на себе.
+X so: - | Скажи службовцю, що хотів би зареєструвати živnosť. | Chcel by som ohlásiť živnosť.
+= chcel by som + інфінітив — ввічливе прохання.
+F: Власна справа || Ти хочеш легально надавати прибиральні послуги як живностенниця й ідеш до JKM.
+S: Що кажеш на початку? | *Dobrý deň, chcela by som ohlásiť živnosť. ;; Dobrý deň, chcela by som ohlásiť živnosťou. ;; Dobrý deň, živnosť robiť chcem ohlásiť.
+S: Службовиця питає про predmet podnikania. | *Čistiace a upratovacie služby. ;; Čistiace a upratovacie služba. ;; Odborná spôsobilosť.
+S~: «Je to voľná živnosť, odbornú spôsobilosť nepreukazujete.» Що це означає? | *кваліфікацію підтверджувати не треба ;; потрібен диплом прибиральниці ;; цю živnosť зареєструвати не можна
+S: Ти питаєш, коли матимеш ідентифікаційний номер. | *Kedy budem mať IČO? ;; Kedy mám mať IČO bude? ;; IČO kedy mať budem mne?
+R: živnosť, živnostník, podnikať ;; voľná × remeselná / viazaná živnosť, odborná spôsobilosť ;; ohlásiť živnosť, predmet podnikania ;; živnostenský register, výpis, IČO
+
+@lesson danovy-urad | Податковий úrad: основи | Daňový úrad
+desc: Хто такі finančná správa й daňový úrad, що таке DIČ, daňové priznanie, zdaňovacie obdobie й preddavky — на базовому рівні.
+goal: Розуміти основні податкові поняття й короткі листи від податкового úradu.
+out: розуміти finančná správa, daňový úrad, daňovník, DIČ ;; знати, що таке daňové priznanie й zdaňovacie obdobie ;; розуміти preddavok, preplatok, nedoplatok ;; ставити прості питання на податковому úrade
+done: Ти орієнтуєшся в основах податків. Далі — строки: як їх читати й рахувати.
+T: Хто збирає податки || Податками у Словаччині займається «Finančná správa», її місцеві установи — «daňové úrady». Людина чи фірма, що сплачує податок, — «daňovník». Живностенник реєструється для податку й отримує «DIČ» (daňové identifikačné číslo). Із фінансовою управою спілкуються особисто, поштою або електронно; підприємці часто зобов’язані робити це електронно. || Na daňovom úrade som sa zaregistroval hneď po ohlásení živnosti. = На податковому úrade я зареєструвався одразу після реєстрації živnosti. ;; Každý daňovník má svoje DIČ. = Кожен платник податків має свій DIČ. || finančná správa → daňový úrad → daňovník
+T: Податкова декларація || «Daňové priznanie» — податкова декларація. Її подають раз на рік за «zdaňovacie obdobie» — для людей це зазвичай календарний рік. Строк подання встановлює закон — перевір його на сайті фінансової управи. Працівникові за трудовим договором часто достатньо «ročného zúčtovania», яке робить роботодавець, а живностенник подає декларацію сам. Дієслова: «podať daňové priznanie», «vyplniť», «odoslať elektronicky». || Daňové priznanie musím podať za celé zdaňovacie obdobie. = Декларацію я мушу подати за весь податковий період. ;; Za minulý rok som podala daňové priznanie elektronicky. = За минулий рік я подала декларацію електронно. || podať daňové priznanie za + знахідний
+mis: podať daňový priznanie => podať daňové priznanie
+T: Аванс, переплата, недоплата || «Preddavok na daň» — авансовий платіж податку протягом року. Після декларації виходить «preplatok» (ти заплатив більше — тобі повернуть) або «nedoplatok» (заплатив менше — треба доплатити). У листах úradu трапляється: «Vyzývame vás na úhradu nedoplatku» — закликаємо вас сплатити недоплату. || Na preddavkoch som zaplatil viac, takže mám preplatok. = Авансами я заплатив більше, тож маю переплату. ;; Nedoplatok treba uhradiť v stanovenej lehote. = Недоплату треба сплатити у встановлений строк. || preddavok → priznanie → preplatok / nedoplatok
+mis: platiť preddavky z daň => platiť preddavky na daň
+W: daňový úrad | податковий úrad, податкова | даньові: у:рад | Na daňovom úrade mi vysvetlili, ako vyplniť tlačivo. | У податковій мені пояснили, як заповнити бланк.
+W: daňové priznanie | податкова декларація | даньове: призна:ніє | Daňové priznanie podávam každý rok elektronicky. | Податкову декларацію я подаю щороку електронно.
+W: finančná správa | фінансова управа (податкова служба) | фінанчна: спра:ва | Formuláre nájdete na webe finančnej správy. | Бланки знайдете на сайті фінансової управи.
+W: zdaňovacie obdobie | податковий період | здяньоваціє обдобіє | Zdaňovacím obdobím je spravidla kalendárny rok. | Податковим періодом зазвичай є календарний рік.
+W: preddavok | аванс, авансовий платіж | преддавок | Preddavky na daň platím pravidelne počas roka. | Авансові платежі податку я сплачую регулярно протягом року.
+W: daňovník | платник податків | даньовні:к | Každý daňovník zodpovedá za správne údaje v priznaní. | Кожен платник податків відповідає за правильність даних у декларації.
+X mt: З’єднай. | daňový úrad = податковий úrad ;; daňové priznanie = податкова декларація ;; finančná správa = фінансова управа ;; zdaňovacie obdobie = податковий період ;; preddavok = авансовий платіж ;; daňovník = платник податків
+X cat: Що це? | Inštitúcie: finančná správa, daňový úrad ;; Dokumenty: daňové priznanie, výpis zo živnostenského registra ;; Platby: preddavok na daň, úhrada nedoplatku
+= Установи, документи й платежі.
+X dd: Обери. | Daňové priznanie musím podať za celé zdaňovacie [*obdobie/obdobia/obdobím].
+= za + знахідний: za obdobie.
+X dd: Обери. | Na preddavkoch som zaplatila viac, preto mám [*preplatok/nedoplatok/pokutu].
+= Заплатила більше — переплата (preplatok).
+X msg: Прочитай повідомлення. | Finančná správa (vzor) | Vážený daňovník, na základe podaného daňového priznania za zdaňovacie obdobie 2025 vám vznikol preplatok na dani vo výške 214,50 €. Preplatok vám vrátime na účet uvedený v priznaní. Nemusíte robiť nič. | Що має зробити отримувач? | *нічого — переплату повернуть на рахунок ;; сплатити 214,50 € ;; подати нову декларацію
+= preplatok vám vrátime — переплату повернуть.
+X tf: - | Kolegyňa: «Kto pracuje len na pracovnú zmluvu, často nemusí podávať daňové priznanie. Stačí mu ročné zúčtovanie od zamestnávateľa.» | Працівник за трудовим договором завжди сам подає декларацію. | F
+= Часто достатньо річного перерахунку від роботодавця.
+X fb: Допиши. | Daňové priznanie môžete ___ aj elektronicky. (подати) | podať ;; odoslať ;; poslať |
+= podať daňové priznanie — подати декларацію.
+X sc~: Що означає «zdaňovacie obdobie»? | - | *період, за який рахують податок (зазвичай рік) ;; строк сплати штрафу ;; години роботи податкової
+= Для людей це зазвичай календарний рік.
+X fe: - | Každý [daňovníka>daňovník] zodpovedá za údaje v priznaní.
+= Підмет — називний відмінок: daňovník.
+X rc: - | Volám sa Taras a od minulého roka podnikám ako živnostník – robím rekonštrukcie kúpeľní. Hneď po ohlásení živnosti som sa zaregistroval na daňovom úrade a dostal som DIČ. Prvý rok som bol nervózny, lebo som nevedel, ako vyplniť daňové priznanie. Kamarát mi poradil, aby som si našiel účtovníčku. Tá mi vysvetlila, že zdaňovacím obdobím je kalendárny rok a že priznanie musím podať v zákonnej lehote. Keďže som počas roka platil preddavky, nakoniec mi vznikol malý preplatok. Teraz už viem, že s finančnou správou komunikujem elektronicky a dôležité správy mi chodia do elektronickej schránky.
+q~: Хто допоміг Тарасові з декларацією? | *бухгалтерка, яку йому порадив друг ;; службовець податкової ;; його дружина
+q~: Чому в нього вийшла переплата? | *бо протягом року він сплачував авансові платежі ;; бо він подав декларацію заздалегідь ;; бо податкова помилилася
+q~: Як Тарас тепер спілкується з фінансовою управою? | *електронно ;; лише особисто ;; через друга
+X np: Ти не розумієш лист із податкової й приходиш на úrad. | *Dobrý deň, dostal som od vás list a nerozumiem, či mám nedoplatok. ;; Dobrý deň, dostal som od vás list a nerozumiem, či mám nedoplatku. ;; Dobrý deň, list nerozumiem nedoplatok čo. ;; Nedoplatok neplatím, zbohom.
+= Ввічливе пояснення проблеми: nerozumiem, či…
+X mic: - | List z daňového úradu: «Vyzývame vás na úhradu nedoplatku v lehote uvedenej nižšie.» | nedoplatku | *суми податку, яку ти ще не доплатив ;; переплати, яку тобі повернуть ;; штрафу за запізнення
+= nedoplatok — недоплата податку.
+X ms: Обери правильні речення. | - | *Podala som daňové priznanie elektronicky. ;; *Platím preddavky na daň. ;; *Mám preplatok, úrad mi ho vráti. ;; Podala som daňový priznanie. ;; Platím preddavky z daň.
+= daňové priznanie — середній рід; preddavky na daň.
+X bd: - | Ти зареєструвався на податковому úrade!
+> Úradníčka: Dobrý deň, čo potrebujete? | *Dobrý deň, začal som podnikať a potrebujem sa zaregistrovať na daň z príjmov. ;; Dobrý deň, potrebujem daň, prosím. ;; Ahoj, chcem DIČ hneď.
+> Úradníčka: Máte výpis zo živnostenského registra? | *Áno, tu je výpis aj môj doklad totožnosti. ;; Áno, výpis mám na Ukrajine. ;; Výpis? Nie, mám preddavok.
+> Úradníčka: Dobre. DIČ vám pošleme. S finančnou správou budete komunikovať elektronicky. | *Rozumiem. Kde nájdem formuláre? ;; Rozumiem. Kde nájdem formulárov? ;; Rozumiem, elektronicky nebudem nikdy.
+F: Перший рік živnosti || Ти рік працюєш як живностенник, і настав час розібратися з податками.
+S~: «Zdaňovacím obdobím je kalendárny rok.» Що це означає? | *податок рахують за календарний рік ;; декларацію подають щомісяця ;; податок сплачують раз на два роки
+S: Ти кажеш, що хочеш подати декларацію. | *Chcel by som podať daňové priznanie. ;; Chcel by som podať daňový priznanie. ;; Chcel by som priznať daňové.
+S~: Úradníčka: «Máte preplatok.» Що це означає для тебе? | *тобі повернуть зайво сплачені гроші ;; ти маєш доплатити податок ;; ти маєш сплатити штраф
+S: Ти питаєш, як сплачувати авансові платежі. | *Ako mám platiť preddavky na daň? ;; Ako mám platiť preddavky z daň? ;; Ako preddavok mám platiť daňou?
+R: finančná správa, daňový úrad, daňovník, DIČ ;; daňové priznanie za zdaňovacie obdobie ;; preddavok, preplatok, nedoplatok ;; ročné zúčtovanie (zamestnanec) × daňové priznanie (živnostník)
+
+@lesson lehoty | Строки | Lehoty
+desc: Як читати й рахувати строки в офіційних листах: «v lehote … dní odo dňa doručenia», «najneskôr do…», що буває, якщо строк закінчується у вихідний, і як попросити продовження.
+goal: Правильно зрозуміти, до якого дня треба щось зробити, і не пропустити строк.
+out: розуміти формули v lehote, odo dňa doručenia, najneskôr do + родовий ;; знати, коли строк починає плинути й коли він минає ;; знати, що буває, якщо останній день — вихідний або свято ;; просити про продовження строку
+done: Ти вмієш читати й рахувати строки. Далі — odvolanie: як оскаржити рішення.
+T: Як записують строки || Типові формули: «v lehote … dní odo dňa doručenia» (протягом … днів від дня вручення), «najneskôr do» + родовий (не пізніше ніж до…), «bezodkladne» (невідкладно). Про строк кажуть, що він «plynie» (спливає, триває) і «uplynie» (мине). Після «do» — родовий відмінок: «do piatka», «do konca mesiaca». || Doklady doložte v lehote uvedenej vo výzve. = Документи долучіть у строк, зазначений у вимозі. ;; Platbu uhraďte najneskôr do konca mesiaca. = Сплатіть не пізніше кінця місяця. || najneskôr do + родовий · lehota plynie / uplynie
+mis: najneskôr do piatok => najneskôr do piatka
+T: Як рахувати || Загальне правило в адміністративному провадженні: день, коли сталася подія (наприклад, тобі вручили лист), у строк не зараховують — строк починає плинути наступного дня. Якщо останній день припадає на суботу, неділю чи свято, останнім днем стає найближчий робочий день. Строк дотримано («lehota je zachovaná»), якщо в останній день ти подаєш документ на úrade або здаєш його на пошту. В окремих справах правила можуть відрізнятися — читай лист уважно. || Lehota začína plynúť dňom nasledujúcim po doručení. = Строк починає плинути з наступного дня після вручення. ;; Ak posledný deň lehoty pripadne na nedeľu, posledným dňom lehoty je najbližší pracovný deň. = Якщо останній день строку припадає на неділю, останнім днем є найближчий робочий день. || deň doručenia sa do lehoty nepočíta
+T: Якщо не встигаєш || Якщо знаєш, що не встигнеш, напиши заяву про продовження строку ще до того, як він мине: «Žiadam o predĺženie lehoty na doloženie dokladov, keďže…». Пропустити строк — «zmeškať lehotu»: тоді úrad може вирішити без твоїх документів або припинити розгляд. Тож дотримуватися строків — твоє головне завдання. «Dodatočne» — пізніше, згодом: «doklad doložím dodatočne». || Žiadam o predĺženie lehoty, keďže čakám na doklad z Ukrajiny. = Прошу продовжити строк, оскільки чекаю на документ з України. ;; Potvrdenie doložím dodatočne. = Довідку долучу пізніше. || o predĺženie žiadaj ešte pred uplynutím lehoty
+W: plynúť | (про строк) спливати, тривати | плину:ть | Lehota plynie odo dňa nasledujúceho po doručení. | Строк спливає з дня, що настає після вручення.
+W: uplynúť | минути, закінчитися | уплину:ть | Lehota na odvolanie už uplynula. | Строк оскарження вже минув.
+W: najneskôr | не пізніше ніж | найнєскуор | Doklady doneste najneskôr do piatka. | Документи принесіть не пізніше п’ятниці.
+W: zachovať | дотримати (строк), зберегти | заховать | Lehotu zachováte, ak list odovzdáte na pošte v posledný deň. | Строк ви дотримаєте, якщо здасте лист на пошту в останній день.
+W: pracovný deň | робочий день | працовни: дєнь | Posledným dňom lehoty je najbližší pracovný deň. | Останнім днем строку є найближчий робочий день.
+W: dodatočne | пізніше, згодом | додаточнє | Chýbajúci doklad doložím dodatočne. | Документ, якого бракує, долучу пізніше.
+X mt: З’єднай. | plynúť = спливати (про строк) ;; uplynúť = минути ;; najneskôr = не пізніше ніж ;; zachovať = дотримати ;; pracovný deň = робочий день ;; dodatočne = пізніше
+X dd: Обери. | Platbu uhraďte najneskôr do [*piatka/piatok/piatkom].
+= do + родовий: do piatka.
+X dd: Обери. | Lehota na doplnenie dokladov už [*uplynula/uplynulo/uplynul].
+= lehota — жіночий рід: uplynula.
+X doc~: Прочитай вимогу. | Výzva na doplnenie podania (vzor) | Doručené: štvrtok 5. 3. 2026 ;; Lehota: 10 dní odo dňa doručenia ;; Čo doložiť: potvrdenie o zdravotnom poistení ;; Upozornenie: Ak doklad v lehote nedoložíte, konanie môže byť zastavené. | Котрий день останній, якщо рахувати за загальним правилом? | *понеділок, 16. 3. 2026 ;; неділя, 15. 3. 2026 ;; субота, 14. 3. 2026
+= Рахуємо з 6. 3.; десятий день — неділя 15. 3., тому строк переходить на понеділок 16. 3.
+X tfl: - | Lehota začína plynúť dňom, ktorý nasleduje po dni doručenia. Ak posledný deň lehoty pripadne na sobotu, nedeľu alebo sviatok, posledným dňom lehoty je najbližší pracovný deň. Lehota je zachovaná, ak v posledný deň podanie urobíte na úrade alebo ho odovzdáte na pošte. Ak viete, že lehotu nestihnete, požiadajte o jej predĺženie ešte predtým, ako uplynie. | *День вручення до строку не зараховують. ;; Якщо останній день — неділя, строк закінчується в суботу. ;; *Строк дотримано, якщо в останній день ти здаси лист на пошту. ;; *Про продовження строку треба просити до того, як він мине. ;; Лист має надійти на úrad щонайпізніше за день до кінця строку.
+X fb: Допиши. | Doklady doneste ___ do konca mesiaca. (не пізніше) | najneskôr |
+= najneskôr do — не пізніше ніж до.
+X fe: - | Lehota začína plynúť dňom nasledujúcim po [doručenie>doručení].
+= po + місцевий: po doručení.
+X mic: - | Úradník: «Lehota je zachovaná, list ste odovzdali na pošte v posledný deň.» | zachovaná | *строк дотримано ;; строк продовжено ;; строк порушено
+= lehota je zachovaná — строк дотримано.
+X tr: Перетвори на офіційне прохання, почни з «Žiadam o…». | Potrebujem viac času na doloženie dokladov. | Žiadam o predĺženie lehoty na doloženie dokladov. ;; Týmto žiadam o predĺženie lehoty na doloženie dokladov. ;; Žiadam Vás o predĺženie lehoty na doloženie dokladov. ;; Týmto Vás žiadam o predĺženie lehoty na doloženie dokladov.
+= žiadam o predĺženie lehoty — прошу продовжити строк.
+X np: Ти не встигаєш принести довідку й пишеш úradu. | *Žiadam o predĺženie lehoty, keďže čakám na potvrdenie z Ukrajiny. ;; Žiadam o predĺženie lehota, keďže čakám na potvrdenie z Ukrajiny. ;; Lehota predĺžiť, čakám Ukrajina. ;; Lehotu som zmeškala, ale nevadí.
+= predĺženie + родовий: lehoty; keďže — оскільки.
+X sc~: Úradníčka: «Chýbajúci doklad môžete doložiť dodatočne.» Що це означає? | - | *документ можна принести пізніше ;; документ уже не потрібен ;; документ треба принести негайно
+= dodatočne — пізніше, згодом.
+X col: З’єднай словосполучення. | zmeškať = lehotu ;; uhradiť = nedoplatok ;; doložiť = chýbajúci doklad ;; odovzdať = list na pošte
+X hm: - | Úradník: «Lehotu vám síce predĺžime, ale ďalšie predĺženie už nebude možné.» | *це останній шанс — більше продовжень не буде ;; можна просити продовження скільки завгодно ;; строк не продовжили
+= síce…, ale… — поступка з чітким застереженням.
+X do: Розстав діалог у правильному порядку. | Žiadateľka: Dobrý deň, dostala som výzvu na doplnenie dokladov. ;; Úradník: Áno, akú máte otázku? ;; Žiadateľka: Čakám na potvrdenie z Ukrajiny a v lehote ho nestihnem doložiť. ;; Úradník: Tak nám čím skôr pošlite žiadosť o predĺženie lehoty. ;; Žiadateľka: Stačí ju poslať e-mailom? ;; Úradník: Najlepšie poštou alebo do elektronickej schránky, a ešte pred uplynutím lehoty.
+F: Лист із вимогою || Ти отримала вимогу долучити документ у певний строк, але документ з України затримується.
+S~: У листі: «v lehote … dní odo dňa doručenia». Лист тобі вручили в понеділок. З якого дня рахуєш? | *з вівторка — день вручення не зараховують ;; з понеділка ;; з дня, коли лист відправили
+S~: Останній день строку — субота. Що це означає? | *строк переходить на найближчий робочий день ;; строк закінчився ще в п’ятницю ;; строк скасовується
+S: Ти просиш про продовження. | *Žiadam o predĺženie lehoty na doloženie potvrdenia. ;; Žiadam o predĺženie lehoty na doloženie potvrdenie. ;; Žiadam predĺžiť lehotou potvrdenia.
+S: Ти обіцяєш принести документ пізніше. | *Potvrdenie doložím dodatočne. ;; Potvrdenie doložím dodatočný. ;; Dodatočne potvrdenia doložiť.
+R: v lehote, najneskôr do + родовий ;; lehota plynie od nasledujúceho dňa a uplynie ;; sobota, nedeľa, sviatok → najbližší pracovný deň; lehota je zachovaná ;; žiadosť o predĺženie lehoty, doložiť dodatočne
+
+@lesson odvolanie | Оскарження рішення | Odvolanie
+desc: Що робити, якщо ти не згодна з рішенням úradu: як прочитати «Poučenie», куди й як подати odvolanie та що в ньому написати.
+goal: Зрозуміти poučenie в рішенні й скласти просте, фактичне odvolanie.
+out: знаходити в рішенні poučenie: чи, до коли й де оскаржити ;; вживати odvolať sa proti + давальний ;; будувати odvolanie: хто, проти якого рішення, чому, чого просиш ;; розрізняти odvolať sa (оскаржити) і odvolať (відкликати)
+done: Ти вмієш оскаржити рішення. Далі — розмова зі службовцем: як домогтися зрозумілої відповіді.
+T: Poučenie — інструкція в кінці рішення || Наприкінці рішення úradu є розділ «Poučenie» — роз’яснення, чи можна рішення оскаржити, у який строк і де подати odvolanie. Якщо ти не згодна з рішенням, читай його першим. За загальним правилом odvolanie подають до того «správneho orgánu», який рішення видав; якщо він сам рішення не змінить, передає справу вищому органу. || Proti tomuto rozhodnutiu sa možno odvolať. = Це рішення можна оскаржити. ;; Odvolanie sa podáva na správnom orgáne, ktorý rozhodnutie vydal. = Скаргу подають до органу, який видав рішення. || Poučenie: či, dokedy a kde sa odvolať
+T: Odvolať sa proti… || «Odvolať sa proti rozhodnutiu» — оскаржити рішення (proti + давальний). Іменник — «odvolanie». В офіційних текстах також: «napadnúť rozhodnutie» — оскаржити, «napadnuté rozhodnutie» — оскаржене рішення. Обережно: «odvolať» без «sa» означає «відкликати»: «odvolať splnomocnenie», «odvolať žiadosť». || Proti rozhodnutiu o zamietnutí žiadosti sa odvolávam. = Я оскаржую рішення про відхилення заяви. ;; Splnomocnenie môžete kedykoľvek odvolať. = Довіреність ви можете будь-коли відкликати. || odvolať sa proti + давальний ≠ odvolať (відкликати)
+mis: odvolať sa proti rozhodnutie => odvolať sa proti rozhodnutiu ;; Odvolávam rozhodnutie. => Odvolávam sa proti rozhodnutiu.
+T: Що написати || Odvolanie має містити: хто його подає (ім’я, адреса), проти якого рішення (номер і дата), чому ти не згодна — «dôvody», чого просиш — «návrh» (змінити чи скасувати рішення), і підпис. Тон — спокійний і фактичний: «Nesúhlasím s rozhodnutím, pretože…», «Navrhujem, aby odvolací orgán rozhodnutie zmenil.» Нові докази долучи як додатки. Вищий орган рішення «preskúma» — перегляне. || Nesúhlasím s rozhodnutím, pretože úrad nezohľadnil priložené potvrdenie. = Я не згодна з рішенням, бо úrad не врахував доданої довідки. ;; Navrhujem, aby odvolací orgán napadnuté rozhodnutie zrušil. = Прошу, щоб апеляційний орган скасував оскаржене рішення. || kto → proti čomu → dôvody → návrh → podpis
+W: odvolanie | скарга, апеляція (на рішення) | одволаніє | Odvolanie som podala v lehote. | Скаргу я подала у строк.
+W: odvolať sa | оскаржити (рішення) | одволать са | Proti rozhodnutiu sa môžete odvolať. | Рішення ви можете оскаржити.
+W: poučenie | роз’яснення (порядку оскарження) | поученіє | V poučení je uvedené, kde sa odvolanie podáva. | У роз’ясненні вказано, де подають скаргу.
+W: správny orgán | адміністративний орган | спра:вни орґа:н | Správny orgán v rozhodnutí uvádza aj poučenie o odvolaní. | Адміністративний орган у рішенні вказує й роз’яснення щодо оскарження.
+W: napadnúť | оскаржити (офіц.) | нападну:ть | Rozhodnutie môžete napadnúť odvolaním. | Рішення можна оскаржити апеляцією.
+W: preskúmať | переглянути, ретельно перевірити | преску:мать | Odvolací orgán rozhodnutie preskúma. | Апеляційний орган перегляне рішення.
+X mt: З’єднай. | odvolanie = скарга на рішення ;; odvolať sa = оскаржити ;; poučenie = роз’яснення порядку оскарження ;; správny orgán = адміністративний орган ;; napadnúť = оскаржити (офіц.) ;; preskúmať = переглянути
+X dd: Обери. | Odvolávam sa proti [*rozhodnutiu/rozhodnutie/rozhodnutím] o zamietnutí žiadosti.
+= proti + давальний: rozhodnutiu.
+X dd: Обери. | Nesúhlasím s rozhodnutím, [*pretože/ale/aby] úrad nezohľadnil moje potvrdenie.
+= pretože — бо, пояснює причину.
+X doc~: Прочитай рішення. | Rozhodnutie (vzor) | Číslo: OU-KE-2026/00123 ;; Výrok: Žiadosť sa zamieta. ;; Poučenie: Proti tomuto rozhodnutiu možno podať odvolanie do 15 dní odo dňa jeho doručenia na Okresný úrad Košice, ktorý rozhodnutie vydal. | Куди треба подати скаргу? | *до окружного úradu Košice, який видав рішення ;; одразу до суду ;; до міністерства в Братиславі
+= Poučenie каже: на úrad, ktorý rozhodnutie vydal.
+X sc~: Що означає «odvolať splnomocnenie»? | - | *відкликати довіреність ;; оскаржити довіреність ;; засвідчити довіреність
+= odvolať без sa — відкликати.
+X cat: Що означає дієслово? | Odvolať sa (оскаржити): proti rozhodnutiu, proti výroku o pokute ;; Odvolať (відкликати): splnomocnenie, svoju žiadosť
+= Із sa — оскаржити, без sa — відкликати.
+X fb: Допиши. | Proti tomuto rozhodnutiu sa môžete ___. (оскаржити) | odvolať |
+= odvolať sa proti + давальний.
+X fe: - | V [poučeniu>poučení] nájdete lehotu na odvolanie.
+= v + місцевий: v poučení.
+X rc: - | Okresný úrad Žilina. Vec: Odvolanie proti rozhodnutiu (vzor). Dolupodpísaný Serhij Bondar, bytom Hollého 7, Žilina, sa týmto odvolávam proti rozhodnutiu, ktorým úrad zamietol moju žiadosť. Rozhodnutie mi bolo doručené 2. 3. 2026. S rozhodnutím nesúhlasím, pretože úrad nezohľadnil potvrdenie o príjme, ktoré som doložil v lehote uvedenej vo výzve. Prikladám kópiu tohto potvrdenia aj potvrdenie z podateľne o jeho prijatí. Navrhujem, aby odvolací orgán napadnuté rozhodnutie zrušil a vec znovu preskúmal. S pozdravom, Serhij Bondar.
+q~: Чому Сергій не згоден з рішенням? | *úrad не врахував довідку про дохід, яку він вчасно долучив ;; рішення прийшло із запізненням ;; йому не сподобався службовець
+q~: Чого він просить? | *скасувати рішення й знову розглянути справу ;; повернути збір ;; продовжити строк
+q~: Що він додає? | *копію довідки й підтвердження, що її прийняли ;; оригінал рішення ;; нову заяву
+X np: Ти пишеш, чому не згодна з рішенням. | *Nesúhlasím s rozhodnutím, pretože úrad nezohľadnil moje doklady. ;; Nesúhlasím s rozhodnutie, pretože úrad nezohľadnil moje doklady. ;; Rozhodnutie nesúhlasí so mnou, doklady. ;; Rozhodnutie je hlúpe a úradník tiež.
+= nesúhlasiť s + орудний: s rozhodnutím; тон фактичний.
+X tone: - | «Rozhodnutie je úplne nezmyselné, na úrade nikto nič nevie a ja sa s vami nebudem baviť!» | *роздратований, емоційний — для odvolania це невдалий тон ;; спокійний і фактичний ;; ввічливий і вдячний
+= В odvolaní потрібні факти, а не емоції.
+X reg: - | Navrhujem, aby odvolací orgán napadnuté rozhodnutie zmenil. | formal
+= Navrhujem, aby… і napadnuté rozhodnutie — офіційний стиль.
+X tr: Скажи офіційно одним реченням, почни з «Odvolávam sa…». | Nesúhlasím s rozhodnutím o pokute a chcem ho napadnúť. | Odvolávam sa proti rozhodnutiu o pokute. ;; Týmto sa odvolávam proti rozhodnutiu o pokute.
+= odvolávam sa proti + давальний.
+X bd: - | Ти подала odvolanie правильно!
+> Úradníčka: Dobrý deň, čo potrebujete? | *Dobrý deň, prišla som podať odvolanie proti rozhodnutiu. ;; Dobrý deň, prišla som odvolať rozhodnutie preč. ;; Dobrý deň, prišla som odvolanie proti rozhodnutie.
+> Úradníčka: Máte v odvolaní uvedené, proti ktorému rozhodnutiu ho podávate? | *Áno, uviedla som číslo aj dátum rozhodnutia. ;; Nie, to nie je dôležité. ;; Áno, uviedla som číslo svojho telefónu.
+> Úradníčka: A prečo s rozhodnutím nesúhlasíte? | *Úrad nezohľadnil potvrdenie, ktoré som doložila v lehote. ;; Lebo sa mi nepáči. ;; Lebo úradníčka bola nepríjemná.
+> Úradníčka: Dobre, odvolanie prijímam. Prijatie vám potvrdím na kópii. | *Ďakujem, to mi veľmi pomôže. ;; Ďakujem, kópiu nechcem nikdy. ;; Prijímam sa, ďakujem.
+F: Відмова, з якою ти не згодна || Úrad відхилив твою заяву, хоча ти вчасно долучила всі документи. Ти готуєш odvolanie.
+S~: Де шукаєш, до коли й куди подати odvolanie? | *у розділі «Poučenie» в кінці рішення ;; у рядку «Vec» ;; у додатках до своєї заяви
+S: Перше речення odvolania. | *Týmto sa odvolávam proti rozhodnutiu o zamietnutí žiadosti. ;; Týmto odvolávam rozhodnutie o zamietnutí žiadosti. ;; Týmto sa odvolávam proti rozhodnutie o zamietnutí žiadosti.
+S: Ти пояснюєш причину. | *Nesúhlasím s rozhodnutím, pretože úrad nezohľadnil priložené doklady. ;; Nesúhlasím s rozhodnutím, aby úrad nezohľadnil priložené doklady. ;; Rozhodnutie nesúhlasím, doklady priložené.
+S: Чого ти просиш? | *Navrhujem, aby odvolací orgán rozhodnutie zrušil. ;; Navrhujem, aby odvolací orgán rozhodnutie zrušiť. ;; Navrhujem odvolací orgán zrušil rozhodnutím.
+R: Poučenie: či, dokedy a kde sa odvolať ;; odvolať sa proti + давальний ≠ odvolať (відкликати) ;; obsah odvolania: kto, proti čomu, dôvody, návrh, podpis ;; správny orgán, napadnuté rozhodnutie, preskúmať
+
+@lesson komunikacia-s-uradnikom | Розмова зі службовцем | Komunikácia s úradníkom
+desc: Як ввічливо й ефективно говорити зі службовцем: назвати номер справи, дізнатися стан провадження, попросити пояснити простіше, ознайомитися з матеріалами й отримати відповідь письмово.
+goal: Упевнено вести розмову на úrade чи телефоном і домогтися зрозумілої відповіді.
+out: називати spisovú značku й питати про стан konania ;; просити повторити, пояснити простіше, дати письмово ;; реагувати на výzvu: Na základe vašej výzvy… ;; ввічливо, але конкретно наполягати на своєму
+done: Ти вмієш говорити зі службовцем. Далі — підсумок розділу.
+T: Номер справи й стан провадження || Кожна справа на úrade має «spisovú značku» (номер справи) — вона є на кожному листі. Називай її на початку розмови: «Volám vo veci svojej žiadosti, spisová značka…». «Vo veci + родовий» — у справі, щодо. Про стан справи питай: «V akom štádiu je moje konanie?», «Kedy môžem čakať rozhodnutie?» Твою справу веде конкретний службовець — «referent / referentka». || V akom štádiu je moje konanie? = На якій стадії моє провадження? ;; Kto je referentom v mojej veci? = Хто веде мою справу? || vo veci + родовий · spisová značka
+mis: volám vo veci moja žiadosť => volám vo veci mojej žiadosti
+T: Якщо не розумієш || Не соромся просити: «Mohli by ste to zopakovať pomalšie?», «Mohli by ste mi to vysvetliť jednoduchšie?» Перевір, чи правильно зрозуміла: «Ak tomu dobre rozumiem, mám doložiť…, je to tak?» Важливе проси письмово: «Mohli by ste mi to dať písomne?» Усно — «ústne», письмово — «písomne». Учасник провадження має право «nahliadnuť do spisu» — ознайомитися з матеріалами своєї справи. || Ak tomu dobre rozumiem, mám doložiť ešte jedno potvrdenie. = Якщо я правильно розумію, я маю долучити ще одну довідку. ;; Chcela by som nahliadnuť do spisu. = Я хотіла б ознайомитися з матеріалами справи. || Ak tomu dobre rozumiem… · nahliadnuť do + родовий
+T: Výzva й ввічлива наполегливість || «Výzva» — офіційна вимога úradu: «výzva na doplnenie podania» (доповнити подання), «výzva na zaplatenie». Відповідай вчасно й посилайся на неї: «Na základe vašej výzvy dokladám…». Якщо щось іде не так, будь ввічлива, але конкретна: «Rozumiem, ale podľa poučenia mám právo…», «Mohli by ste mi povedať, na koho sa môžem obrátiť?» Уникай емоцій — службовець працює з фактами й документами. || Na základe vašej výzvy dokladám potvrdenie o príjme. = На підставі вашої вимоги долучаю довідку про дохід. ;; Rozumiem, ale mohli by ste mi povedať, na koho sa môžem obrátiť? = Розумію, але чи могли б ви сказати, до кого я можу звернутися? || na základe výzvy · zdvorilo, ale konkrétne
+W: výzva | (офіційна) вимога | ві:зва | Dostala som výzvu na doplnenie podania. | Я отримала вимогу доповнити подання.
+W: spisová značka | номер справи | спісова: значка | Pri každom telefonáte uveďte spisovú značku. | Під час кожної розмови вказуйте номер справи.
+W: konanie | провадження (у справі) | конаніє | Konanie o mojej žiadosti ešte nie je ukončené. | Провадження за моєю заявою ще не завершене.
+W: referent | референт, службовець, що веде справу | референт | Referentka mi vysvetlila, čo ešte chýba. | Референтка пояснила мені, чого ще бракує.
+W: nahliadnuť | переглянути, ознайомитися | нагліадну:ть | Účastník konania môže nahliadnuť do spisu. | Учасник провадження може ознайомитися з матеріалами справи.
+W: štádium | стадія | шта:діум | Aktuálne štádium konania vám povie referentka. | Поточну стадію провадження вам підкаже референтка.
+X mt: З’єднай. | výzva = офіційна вимога ;; spisová značka = номер справи ;; konanie = провадження ;; referent = службовець, що веде справу ;; nahliadnuť = ознайомитися ;; štádium = стадія
+X dd: Обери. | Volám vo veci svojej [*žiadosti/žiadosť/žiadosťou].
+= vo veci + родовий: žiadosti.
+X dd: Обери. | Chcel by som nahliadnuť do [*spisu/spis/spisom].
+= do + родовий: do spisu.
+X msg: Прочитай лист від референтки. | Okresný úrad – referentka | Dobrý deň, vo veci vašej žiadosti (spisová značka je uvedená v predmete) vás žiadam o doloženie kópie nájomnej zmluvy. Bez tohto dokladu nemôžem v konaní pokračovať. Doklad môžete poslať poštou alebo doniesť osobne v úradných hodinách. | Чого хоче референтка? | *щоб ти долучила копію договору оренди ;; щоб ти прийшла на співбесіду ;; щоб ти сплатила збір
+= doloženie kópie nájomnej zmluvy — долучити копію договору оренди.
+X sb: - | Попроси службовця дати тобі це письмово. | Mohli by ste mi to dať písomne?
+= Mohli by ste… — ввічливе прохання.
+X fb: Допиши. | Na základe vašej ___ dokladám kópiu zmluvy. (вимоги) | výzvy |
+= na základe + родовий: vašej výzvy.
+X np: Ти хочеш перевірити, що правильно зрозуміла службовицю. | *Ak tomu dobre rozumiem, mám doložiť ešte jedno potvrdenie, je to tak? ;; Ak tomu dobre rozumiem, mám doložiť ešte jeden potvrdenie, je to tak? ;; Rozumiem dobre tomu, doložiť potvrdenie ja? ;; Nerozumiem a nezaujíma ma to.
+= potvrdenie — середній рід: jedno potvrdenie.
+X dr: - | Referent: Vaša žiadosť je v štádiu posudzovania. | *Prepáčte, čo to presne znamená? Kedy môžem čakať rozhodnutie? ;; Štádium je moje, ďakujem. ;; Tak to mi je jedno, dajte mi to hneď.
+= Ввічливо уточни незрозуміле й спитай про строк.
+X reg: - | Zdvorilo Vás žiadam o písomné vyjadrenie vo veci mojej žiadosti. | formal
+= Zdvorilo Vás žiadam, vo veci — офіційний стиль.
+X fe: - | Pri každom telefonáte uveďte [spisová>spisovú] značku.
+= uviesť + знахідний: spisovú značku.
+X hm: - | Referentka: «Ja vám rozumiem, ale bez toho dokladu s tým, žiaľ, nič neurobím.» | *без документа справа не рухатиметься — його треба донести ;; документ не потрібен ;; референтка все зробить і без документа
+= Співчуття, але чітке «без документа — ні».
+X tf: - | Referent: «Do spisu môžete nahliadnuť v stredu v úradných hodinách.» | Ознайомитися з матеріалами справи можна будь-якого дня. | F
+= Лише в середу в години прийому.
+X cat: Яка мета фрази? | Nerozumiem: Mohli by ste to zopakovať pomalšie?, Čo presne znamená táto výzva? ;; Chcem potvrdenie: Mohli by ste mi to dať písomne?, Potvrdíte mi prijatie na kópii? ;; Pýtam sa na stav: V akom štádiu je moje konanie?, Kedy môžem čakať rozhodnutie?
+= Перепитати, отримати підтвердження, дізнатися стан справи.
+X bd: - | Ти з’ясувала, що робити далі!
+> Úrad: Okresný úrad, Hudáková, prosím. | *Dobrý deň, volám vo veci svojej žiadosti. Spisovú značku mám pred sebou. ;; Dobrý deň, volám vo veci svoja žiadosť. ;; Ahoj, čo je s mojím papierom?
+> Úrad: Áno, vidím. Chýba nám ešte potvrdenie o zdravotnom poistení. | *Ak tomu dobre rozumiem, stačí doložiť toto potvrdenie a konanie bude pokračovať? ;; Potvrdenie nie, nechcem. ;; Ak tomu dobre rozumiem, potvrdenie chýbate vy?
+> Úrad: Presne tak. Pošlite ho poštou alebo do elektronickej schránky. | *Rozumiem. Mohli by ste mi to potvrdiť aj písomne? ;; Rozumiem. Písomne mi to neposielajte nikdy. ;; Rozumiem, ale elektronickú schránku nemám rád vás.
+F: Справа стоїть на місці || Ти вже кілька тижнів чекаєш рішення й телефонуєш референтці.
+S: Як почнеш розмову? | *Dobrý deň, volám vo veci svojej žiadosti. ;; Dobrý deň, volám vo veci svoja žiadosť. ;; Dobrý deň, volám veci žiadosti mojej.
+S: Ти питаєш про стан справи. | *V akom štádiu je moje konanie? ;; V akom štádiu je moja konanie? ;; Ako štádium mám konanie?
+S: Референтка говорить дуже швидко. | *Mohli by ste to zopakovať pomalšie? ;; Mohli by ste to zopakovať pomalý? ;; Opakujte rýchlejšie, prosím.
+S: Ти хочеш ознайомитися з матеріалами справи. | *Chcela by som nahliadnuť do spisu. ;; Chcela by som nahliadnuť do spis. ;; Chcela by som nahliadnuť spisom.
+R: spisová značka, konanie, štádium, referent ;; vo veci + родовий, V akom štádiu je…? ;; Mohli by ste to zopakovať / vysvetliť / dať písomne? ;; výzva, na základe výzvy, nahliadnuť do spisu
+
+@lesson opakovanie | Підсумок: заяви й форми | Opakovanie: žiadosti a formuláre
+desc: Підсумок розділу: заява, čestné vyhlásenie, довіреність, засвідчення підпису, živnosť, податки, строки, оскарження й розмова зі службовцем — в одній історії.
+goal: Упевнено пройти весь шлях на úrade — від заяви до рішення й, за потреби, оскарження.
+out: складати žiadosť, čestné vyhlásenie a splnomocnenie ;; засвідчувати підпис і розуміти основи živnosti та податків ;; рахувати строки й оскаржувати рішення ;; ефективно спілкуватися зі службовцем і подавати документи
+done: Ти пройшов(ла) розділ «Úrad II: заяви й форми». Далі — співбесіда: як підготуватися й успішно пройти pohovor.
+T: Письмові документи || Заява: «Týmto žiadam o + знахідний», «Dôvodom je…», «Vopred ďakujem za kladné vybavenie». Čestné vyhlásenie: «Dolupodpísaný/á…, čestne vyhlasujem, že…», «Som si vedomý/á právnych následkov…». Довіреність: «Splnomocňujem + знахідний na + знахідний», «Splnomocnenie prijímam». Усі документи подаєш як «podanie» — у «podateľni» úradu (на твоїй копії поставлять штамп про прийняття) або електронно. || Týmto žiadam o vydanie potvrdenia. = Цим прошу видати довідку. ;; Splnomocňujem sestru na prevzatie rozhodnutia. = Уповноважую сестру отримати рішення. || žiadam o · vyhlasujem, že · splnomocňujem + знахідний
+T: Підпис, živnosť, податки || Підпис засвідчують на matrike або в нотаріуса: «Potrebujem si dať osvedčiť podpis.» Засвідчують лише підпис, не зміст. Živnosť: «ohlásiť voľnú živnosť», «predmet podnikania», «IČO». Податки: «daňové priznanie za zdaňovacie obdobie», «preddavok», «preplatok / nedoplatok». Офіційні листи часто приходять в «elektronickú schránku», а оголошення висять на «úradnej doske». || Potrebujem si dať osvedčiť podpis na splnomocnení. = Мені треба засвідчити підпис на довіреності. ;; Na preddavkoch som zaplatil viac, mám preplatok. = Авансами я заплатив більше, маю переплату. || dať si osvedčiť · ohlásiť živnosť · podať priznanie
+T: Строки, оскарження, розмова || Строк плине з наступного дня після вручення; якщо останній день — вихідний чи свято, переходить на найближчий робочий день. Не встигаєш — «Žiadam o predĺženie lehoty» ще до її закінчення. Не згодна з рішенням — читай «Poučenie» й подавай «odvolanie proti rozhodnutiu». Зі службовцем: «Volám vo veci…», «spisová značka», «Mohli by ste mi to dať písomne?». || Odvolávam sa proti rozhodnutiu, pretože úrad nezohľadnil moje doklady. = Я оскаржую рішення, бо úrad не врахував моїх документів. ;; V akom štádiu je moje konanie? = На якій стадії моє провадження? || lehota → predĺženie → odvolanie
+W: podateľňa | канцелярія для прийому документів | податєльня | Žiadosť som odovzdala v podateľni na prízemí. | Заяву я здала в канцелярії на першому поверсі.
+W: podanie | подання (документ, що подаєш на úrad) | поданіє | Podanie môžete urobiť aj elektronicky. | Подання можна зробити й електронно.
+W: úradná doska | дошка оголошень установи | у:радна: доска | Oznámenie visí na úradnej doske obce. | Оголошення висить на дошці оголошень громади.
+W: elektronická schránka | електронна скринька (для офіційних листів) | електроніцка: схра:нка | Rozhodnutie mi prišlo do elektronickej schránky. | Рішення надійшло мені в електронну скриньку.
+X mt: З’єднай. | podateľňa = канцелярія для прийому документів ;; čestné vyhlásenie = заява під особисту відповідальність ;; splnomocnenec = довірена особа ;; daňové priznanie = податкова декларація ;; odvolanie = скарга на рішення ;; spisová značka = номер справи
+X rc: - | Natália pracuje na Slovensku ako upratovačka a minulú jar sa rozhodla podnikať. Na jednotnom kontaktnom mieste ohlásila voľnú živnosť a dostala IČO. Keďže v tom čase musela odcestovať na Ukrajinu, výpis zo živnostenského registra za ňu prevzal manžel na základe splnomocnenia s osvedčeným podpisom. Neskôr jej prišla do elektronickej schránky výzva na doplnenie podania s krátkou lehotou. Natália chýbajúci doklad v lehote odovzdala v podateľni, ale úrad ho prehliadol a uložil jej pokutu. Natália si prečítala poučenie a podala odvolanie, v ktorom uviedla, že doklad doložila včas, a priložila potvrdenie z podateľne. Odvolací orgán rozhodnutie preskúmal a pokutu zrušil.
+q~: Як Наталія отримала витяг, коли була в Україні? | *його забрав чоловік за довіреністю із засвідченим підписом ;; його надіслали поштою в Україну ;; вона забрала його сама після повернення
+q~: Чому Наталія подала скаргу? | *úrad не помітив документа, який вона вчасно здала, і наклав штраф ;; вона не встигла долучити документ ;; їй не дали IČO
+q~: Що допомогло їй довести, що документ подано вчасно? | *підтвердження з podateľne ;; čestné vyhlásenie чоловіка ;; дзвінок референтці
+X cat: З якого документа фраза? | Žiadosť: Týmto žiadam o vydanie potvrdenia, Vopred ďakujem za kladné vybavenie ;; Čestné vyhlásenie: Som si vedomá právnych následkov, Uvedené údaje sú pravdivé a úplné ;; Splnomocnenie: Splnomocnenie prijímam, Splnomocnenec je oprávnený prevziať rozhodnutie ;; Odvolanie: Odvolávam sa proti rozhodnutiu, Navrhujem rozhodnutie zrušiť
+= Кожен документ має свої сталі формули.
+X dd: Обери. | Žiadam o [*predĺženie/predĺžení/predĺženia] lehoty.
+= žiadať o + знахідний: o predĺženie.
+X dd: Обери. | Odvolávam sa proti [*rozhodnutiu/rozhodnutie/rozhodnutia] o pokute.
+= proti + давальний: rozhodnutiu.
+X doc~: Прочитай підтвердження. | Potvrdenie o podaní (vzor) | Podateľňa: Mestský úrad Trnava ;; Prijaté dňa: 14. 9. 2026 ;; Druh podania: odvolanie ;; Počet príloh: 2 ;; Pečiatka a podpis: áno | Навіщо зберігати таке підтвердження? | *воно доводить, коли саме ти подала документ ;; це рішення у твоїй справі ;; це довіреність для іншої людини
+= Potvrdenie o podaní — доказ дати подання.
+X fe: - | Dolupodpísaná Iryna Petrenko čestne vyhlasujem, [čo>že] nemám žiadne dlhy.
+= vyhlasujem, že… — сполучник že, а не čo.
+X tr: Склади речення для довіреності, почни з «Splnomocňujem…». | Potrebujem, aby sestra za mňa prevzala balík. | Splnomocňujem sestru na prevzatie balíka. ;; Splnomocňujem svoju sestru na prevzatie balíka. ;; Splnomocňujem sestru, aby za mňa prevzala balík. ;; Splnomocňujem svoju sestru, aby za mňa prevzala balík. ;; Splnomocňujem sestru na prevzatie môjho balíka. ;; Splnomocňujem svoju sestru na prevzatie môjho balíka.
+= Splnomocňujem + знахідний na + знахідний або aby…
+X np: Ти маєш здати документ, але не знаєш куди. | *Prepáčte, kde je tu podateľňa? ;; Prepáčte, kde je tu podateľňu? ;; Podateľňa kde ja? ;; Prepáčte, kde je tu podanie?
+= Документи приймає podateľňa.
+X mic: - | Úradník: «Rozhodnutie vám pošleme do elektronickej schránky, sledujte ju.» | elektronickej schránky | *офіційної електронної скриньки для листів від установ ;; поштової скриньки біля дому ;; сторінки в соцмережі
+= elektronická schránka — для офіційних електронних листів.
+X sc~: Останній день строку — неділя. Коли насправді спливає строк? | - | *у найближчий робочий день ;; у суботу ;; строк уже не діє
+= Вихідний чи свято переносить кінець строку на найближчий робочий день.
+X tf: - | «Oznámenie o začatí konania je zverejnené na úradnej doske.» | Повідомлення розміщене на дошці оголошень установи. | T
+= úradná doska — дошка оголошень úradu.
+X ms: Обери, що має бути в odvolaní. | - | *proti ktorému rozhodnutiu sa odvolávate ;; *dôvody nesúhlasu ;; *podpis ;; fotografia referenta ;; ospravedlnenie úradu
+= Хто, проти чого, чому, чого просиш і підпис.
+X bd: - | Ти впевнено пройшла весь шлях на úrade!
+> Úradníčka: Dobrý deň, čo pre vás môžem urobiť? | *Dobrý deň, chcela by som podať žiadosť o vydanie potvrdenia. ;; Dobrý deň, chcela by som podať žiadosť na vydanie potvrdenia. ;; Žiadosť, potvrdenie, rýchlo.
+> Úradníčka: K žiadosti treba doložiť čestné vyhlásenie. | *Mám ho tu, údaje sú pravdivé a úplné. ;; Mám ho tu, údaje sú pravdivý a úplný. ;; Vyhlásenie čestné nemám rada.
+> Úradníčka: A podpis máte osvedčený? | *Áno, dala som si ho osvedčiť na matrike. ;; Áno, dala som si osvedčiť na matriku. ;; Podpis osvedčený nie je potrebný mne.
+> Úradníčka: Výborne. O výsledku vás budeme informovať písomne. | *Ďakujem. Kedy môžem čakať rozhodnutie? ;; Ďakujem, rozhodnutie mi je jedno. ;; Ďakujem. Kedy rozhodnutie čakať ja vám?
+F: Від заяви до рішення || Ти реєструєш živnosť і подаєш на úrad пакет документів: заяву, довіреність і відповідь на вимогу.
+S: Ти починаєш заяву. | *Týmto žiadam o vydanie potvrdenia. ;; Týmto žiadam na vydanie potvrdenia. ;; Týmto žiadam o vydania potvrdenie.
+S: Ти даєш довіреність колезі. | *Splnomocňujem kolegu na podanie žiadosti. ;; Splnomocňujem kolegovi na podanie žiadosti. ;; Splnomocňujem kolega na podanie žiadosti.
+S~: Строк у вимозі закінчується в суботу. Коли останній день? | *найближчий робочий день ;; п’ятниця ;; неділя
+S: Ти не згодна з рішенням. | *Odvolávam sa proti rozhodnutiu. ;; Odvolávam rozhodnutie. ;; Odvolávam sa proti rozhodnutie.
+R: žiadosť, čestné vyhlásenie, splnomocnenie ;; osvedčenie podpisu, živnosť, daňové priznanie ;; lehota plynie a uplynie, najbližší pracovný deň, predĺženie lehoty ;; odvolanie, výzva, spisová značka, podateľňa, elektronická schránka

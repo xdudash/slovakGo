@@ -1,0 +1,886 @@
+{
+  "lessons": [
+    {
+      "id": "b1-u04-l07-mzda-a-odvody",
+      "sectionId": "b1-u04",
+      "level": "B1",
+      "title": "Зарплата й відрахування",
+      "topic": "Трудове право",
+      "description": "Як із hrubej mzdy виходить čistá: odvody на zdravotné і sociálne poistenie, preddavok na daň, daňový bonus на дітей; minimálna mzda, výplatný termín і ročné zúčtovanie.",
+      "order": 37,
+      "xpReward": 40,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Прочитати свою výplatnú pásku й зрозуміти, куди йдуть гроші.",
+      "completionMessage": "Ти розумієш свою виплатну. Далі — výpoveď: як правильно звільнитися і що робити, коли звільняють тебе.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B1 · Трудове право",
+        "title": "Зарплата й відрахування",
+        "shortDescription": "Прочитати свою výplatnú pásku й зрозуміти, куди йдуть гроші.",
+        "outcomes": [
+          "розуміти шлях hrubá mzda → odvody → preddavok na daň → čistá mzda",
+          "знати про minimálnu mzdu й výplatný termín",
+          "розуміти daňový bonus",
+          "знати, навіщо ročné zúčtovanie dane"
+        ],
+        "newWords": [
+          "minimálna mzda",
+          "výplatný termín",
+          "preddavok na daň",
+          "daňový bonus",
+          "ročné zúčtovanie"
+        ],
+        "exercisesCount": 14,
+        "reward": "+40 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Від брутто до нетто",
+          "text": "З «hrubej mzdy» (брутто) роботодавець утримує «odvody» — внески на zdravotné poistenie і sociálne poistenie, — а потім «preddavok na daň» — авансовий платіж податку з доходу. Те, що лишається, — «čistá mzda», яку ти отримуєш на рахунок. Крім того, роботодавець сам платить за тебе внески зі своїх коштів.",
+          "examples": [
+            {
+              "sk": "Z hrubej mzdy mi strhnú odvody a preddavok na daň.",
+              "uk": "З брутто мені утримають внески й аванс податку."
+            },
+            {
+              "sk": "Na účet mi príde čistá mzda.",
+              "uk": "На рахунок мені надходить зарплата нетто."
+            }
+          ],
+          "shortRule": "hrubá mzda → odvody → preddavok na daň → čistá mzda",
+          "commonMistakes": [
+            {
+              "mistake": "z hrubá mzda",
+              "correct": "z hrubej mzdy"
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Мінімалка, день виплати, бонус",
+          "text": "Закон установлює «minimálnu mzdu» — мінімальну зарплату; її розмір щороку переглядають. Зарплату виплачують у «výplatný termín» — день виплати, указаний у договорі чи внутрішніх правилах фірми, зазвичай раз на місяць за попередній місяць. Якщо маєш дітей, можеш застосувати «daňový bonus»: він зменшує податок, тож čistá mzda більша. Для цього підписуєш у роботодавця заяву — «vyhlásenie».",
+          "examples": [
+            {
+              "sk": "Výplatný termín máme pätnásteho v mesiaci.",
+              "uk": "День виплати в нас п’ятнадцятого числа."
+            },
+            {
+              "sk": "Na dve deti si uplatňujem daňový bonus.",
+              "uk": "На двох дітей я застосовую податковий бонус."
+            }
+          ],
+          "shortRule": "výplatný termín · uplatniť si daňový bonus",
+          "commonMistakes": [
+            {
+              "mistake": "daňový bonus na dve detí",
+              "correct": "daňový bonus na dve deti"
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Річний перерахунок",
+          "text": "Протягом року податок платиш авансами. На початку наступного року роботодавець може зробити «ročné zúčtovanie» (річний перерахунок податку), якщо ти про це попросиш у визначений строк; або ти сам подаєш «daňové priznanie». Результат — «preplatok» (переплата, її повернуть) або «nedoplatok» (недоплата, її треба доплатити).",
+          "examples": [
+            {
+              "sk": "Požiadal som zamestnávateľa o ročné zúčtovanie.",
+              "uk": "Я попросив роботодавця зробити річний перерахунок податку."
+            },
+            {
+              "sk": "Z ročného zúčtovania mi vyšiel preplatok.",
+              "uk": "За річним перерахунком у мене вийшла переплата."
+            }
+          ],
+          "shortRule": "požiadať o ročné zúčtovanie · preplatok × nedoplatok",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b1-u04-l07-mzda-a-odvody-w01",
+            "sk": "minimálna mzda",
+            "uk": "мінімальна зарплата",
+            "pronunciationUk": "міні:ма:льна мзда",
+            "exampleSk": "Minimálna mzda sa každý rok mení.",
+            "exampleUk": "Мінімальна зарплата щороку змінюється."
+          },
+          {
+            "wordId": "b1-u04-l07-mzda-a-odvody-w02",
+            "sk": "výplatný termín",
+            "uk": "день виплати зарплати",
+            "pronunciationUk": "ві:платни: термі:н",
+            "exampleSk": "Výplatný termín je do pätnásteho.",
+            "exampleUk": "День виплати — до п’ятнадцятого."
+          },
+          {
+            "wordId": "b1-u04-l07-mzda-a-odvody-w03",
+            "sk": "preddavok na daň",
+            "uk": "авансовий платіж податку",
+            "pronunciationUk": "преддавок на дань",
+            "exampleSk": "Zamestnávateľ mi z mzdy zráža preddavok na daň.",
+            "exampleUk": "Роботодавець утримує з моєї зарплати авансовий платіж податку."
+          },
+          {
+            "wordId": "b1-u04-l07-mzda-a-odvody-w04",
+            "sk": "daňový bonus",
+            "uk": "податковий бонус (на дітей)",
+            "pronunciationUk": "даньові: бонус",
+            "exampleSk": "Vďaka daňovému bonusu mám vyššiu výplatu.",
+            "exampleUk": "Завдяки податковому бонусу в мене вища зарплата."
+          },
+          {
+            "wordId": "b1-u04-l07-mzda-a-odvody-w05",
+            "sk": "ročné zúčtovanie",
+            "uk": "річний перерахунок податку",
+            "pronunciationUk": "рочне: зу:чтованіе",
+            "exampleSk": "Ročné zúčtovanie mi urobí mzdová účtovníčka.",
+            "exampleUk": "Річний перерахунок мені зробить бухгалтерка із зарплати."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-w01",
+          "sk": "minimálna mzda",
+          "uk": "мінімальна зарплата",
+          "pronunciationUk": "міні:ма:льна мзда",
+          "exampleSk": "Minimálna mzda sa každý rok mení.",
+          "exampleUk": "Мінімальна зарплата щороку змінюється.",
+          "level": "B1",
+          "topic": "Трудове право",
+          "tags": [
+            "b1-u04",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-w02",
+          "sk": "výplatný termín",
+          "uk": "день виплати зарплати",
+          "pronunciationUk": "ві:платни: термі:н",
+          "exampleSk": "Výplatný termín je do pätnásteho.",
+          "exampleUk": "День виплати — до п’ятнадцятого.",
+          "level": "B1",
+          "topic": "Трудове право",
+          "tags": [
+            "b1-u04",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-w03",
+          "sk": "preddavok na daň",
+          "uk": "авансовий платіж податку",
+          "pronunciationUk": "преддавок на дань",
+          "exampleSk": "Zamestnávateľ mi z mzdy zráža preddavok na daň.",
+          "exampleUk": "Роботодавець утримує з моєї зарплати авансовий платіж податку.",
+          "level": "B1",
+          "topic": "Трудове право",
+          "tags": [
+            "b1-u04",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-w04",
+          "sk": "daňový bonus",
+          "uk": "податковий бонус (на дітей)",
+          "pronunciationUk": "даньові: бонус",
+          "exampleSk": "Vďaka daňovému bonusu mám vyššiu výplatu.",
+          "exampleUk": "Завдяки податковому бонусу в мене вища зарплата.",
+          "level": "B1",
+          "topic": "Трудове право",
+          "tags": [
+            "b1-u04",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-w05",
+          "sk": "ročné zúčtovanie",
+          "uk": "річний перерахунок податку",
+          "pronunciationUk": "рочне: зу:чтованіе",
+          "exampleSk": "Ročné zúčtovanie mi urobí mzdová účtovníčka.",
+          "exampleUk": "Річний перерахунок мені зробить бухгалтерка із зарплати.",
+          "level": "B1",
+          "topic": "Трудове право",
+          "tags": [
+            "b1-u04",
+            "b1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-ex01",
+          "lessonId": "b1-u04-l07-mzda-a-odvody",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "minimálna mzda",
+              "right": "мінімальна зарплата"
+            },
+            {
+              "left": "výplatný termín",
+              "right": "день виплати"
+            },
+            {
+              "left": "preddavok na daň",
+              "right": "аванс податку"
+            },
+            {
+              "left": "daňový bonus",
+              "right": "податковий бонус"
+            },
+            {
+              "left": "ročné zúčtovanie",
+              "right": "річний перерахунок податку"
+            },
+            {
+              "left": "odvody",
+              "right": "внески на страхування"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b1-u04-l07-mzda-a-odvody-w01",
+            "b1-u04-l07-mzda-a-odvody-w02",
+            "b1-u04-l07-mzda-a-odvody-w03",
+            "b1-u04-l07-mzda-a-odvody-w04",
+            "b1-u04-l07-mzda-a-odvody-w05"
+          ]
+        },
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-ex02",
+          "lessonId": "b1-u04-l07-mzda-a-odvody",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай виплатну.",
+          "document": {
+            "title": "Výplatná páska – október 2026",
+            "fields": [
+              {
+                "label": "Hrubá mzda",
+                "value": "1 300,00 €"
+              },
+              {
+                "label": "Zdravotné poistenie",
+                "value": "52,00 €"
+              },
+              {
+                "label": "Sociálne poistenie",
+                "value": "122,20 €"
+              },
+              {
+                "label": "Preddavok na daň",
+                "value": "128,85 €"
+              },
+              {
+                "label": "Daňový bonus",
+                "value": "100,00 €"
+              },
+              {
+                "label": "Čistá mzda",
+                "value": "1 096,95 €"
+              }
+            ]
+          },
+          "question": "Скільки всього утримали внесків на страхування (zdravotné + sociálne)?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "303,05 €",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "122,20 €",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "174,20 €",
+              "correct": true
+            }
+          ],
+          "explanation": "Odvody — це лише внески: 52,00 + 122,20 = 174,20 €; податок — окремо.",
+          "order": 2,
+          "wordIds": [
+            "b1-u04-l07-mzda-a-odvody-w01",
+            "b1-u04-l07-mzda-a-odvody-w02",
+            "b1-u04-l07-mzda-a-odvody-w03",
+            "b1-u04-l07-mzda-a-odvody-w04"
+          ]
+        },
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-ex03",
+          "lessonId": "b1-u04-l07-mzda-a-odvody",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Z "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "hrubou",
+                "hrubej",
+                "hrubá"
+              ],
+              "correct": "hrubej"
+            },
+            {
+              "text": " mzdy sa platia odvody."
+            }
+          ],
+          "explanation": "z + родовий: z hrubej mzdy.",
+          "order": 3,
+          "wordIds": [
+            "b1-u04-l07-mzda-a-odvody-w01"
+          ]
+        },
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-ex04",
+          "lessonId": "b1-u04-l07-mzda-a-odvody",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що таке «výplatný termín»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "строк, до якого треба подати заяву про звільнення",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "кінцевий строк податкової декларації",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "день, коли роботодавець виплачує зарплату",
+              "correct": true
+            }
+          ],
+          "explanation": "výplatný termín — день виплати.",
+          "order": 4,
+          "wordIds": [
+            "b1-u04-l07-mzda-a-odvody-w01"
+          ]
+        },
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-ex05",
+          "lessonId": "b1-u04-l07-mzda-a-odvody",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Mzdová účtovníčka mi urobí ročné ______ dane. (перерахунок)",
+          "acceptedAnswers": [
+            "zúčtovanie"
+          ],
+          "explanation": "ročné zúčtovanie dane — річний перерахунок податку.",
+          "order": 5,
+          "wordIds": [
+            "b1-u04-l07-mzda-a-odvody-w01",
+            "b1-u04-l07-mzda-a-odvody-w05"
+          ]
+        },
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-ex06",
+          "lessonId": "b1-u04-l07-mzda-a-odvody",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і оціни кожне твердження.",
+          "text": "Hrubú mzdu máš napísanú v pracovnej zmluve. Na účet ti však príde menej, lebo zamestnávateľ z nej strhne odvody na zdravotné a sociálne poistenie a preddavok na daň. Ak máš deti, môžeš si uplatniť daňový bonus a čistá mzda bude vyššia. Výplata chodí raz mesačne vo výplatnom termíne.",
+          "statements": [
+            {
+              "sk": "У договорі вказана зарплата брутто.",
+              "correct": true
+            },
+            {
+              "sk": "На рахунок приходить уся сума з договору.",
+              "correct": false
+            },
+            {
+              "sk": "Податковий бонус збільшує зарплату нетто.",
+              "correct": true
+            },
+            {
+              "sk": "Зарплату виплачують щотижня.",
+              "correct": false
+            }
+          ],
+          "explanation": "Брутто мінус внески й податок; бонус збільшує нетто; виплата раз на місяць.",
+          "order": 6,
+          "wordIds": [
+            "b1-u04-l07-mzda-a-odvody-w01",
+            "b1-u04-l07-mzda-a-odvody-w02",
+            "b1-u04-l07-mzda-a-odvody-w03",
+            "b1-u04-l07-mzda-a-odvody-w04"
+          ]
+        },
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-ex07",
+          "lessonId": "b1-u04-l07-mzda-a-odvody",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти питаєш бухгалтерку, коли день виплати.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Kedy výplatný termínu je?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Kedy je výplatná termín?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Kedy je výplatný termín?",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Koľko je výplatný termín?",
+              "correct": false
+            }
+          ],
+          "explanation": "termín — чоловічий рід: výplatný termín; питання про час — kedy.",
+          "order": 7,
+          "wordIds": [
+            "b1-u04-l07-mzda-a-odvody-w01",
+            "b1-u04-l07-mzda-a-odvody-w02"
+          ]
+        },
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-ex08",
+          "lessonId": "b1-u04-l07-mzda-a-odvody",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Mzdová účtovníčka mi vrátila preplatku na dani.",
+          "errorToken": "preplatku",
+          "correctToken": "preplatok",
+          "explanation": "vrátila (що?) — знахідний: preplatok.",
+          "order": 8,
+          "wordIds": [
+            "b1-u04-l07-mzda-a-odvody-w01"
+          ]
+        },
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-ex09",
+          "lessonId": "b1-u04-l07-mzda-a-odvody",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Viktória pracuje druhý rok ako zdravotná sestra v Žiline. Keď nastúpila, nerozumela, prečo jej na účet chodí oveľa menej, ako mala v zmluve. Mzdová účtovníčka jej vysvetlila, že v zmluve je hrubá mzda a z nej sa platia odvody a preddavok na daň. Poradila jej aj, aby podpísala vyhlásenie na daňový bonus, keďže má malého syna. Od ďalšieho mesiaca bola jej čistá mzda vyššia. Vo februári Viktória požiadala o ročné zúčtovanie. Ukázalo sa, že za minulý rok zaplatila na preddavkoch viac, ako mala, a v marcovej výplate jej firma vrátila preplatok.",
+          "questions": [
+            {
+              "question": "Чому Вікторія спершу отримувала менше, ніж у договорі?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "бухгалтерка помилилася",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "вона була на лікарняному",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "у договорі брутто, а з нього платять внески й аванс податку",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Чому її čistá mzda зросла?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "вона підписала заяву на податковий бонус на сина",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "їй підвищили зарплату брутто",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "вона працювала понаднормово",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що показав річний перерахунок?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "податок не змінився",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "вона переплатила податок, і їй повернули переплату",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "вона мусила доплатити податок",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 9,
+          "wordIds": [
+            "b1-u04-l07-mzda-a-odvody-w01",
+            "b1-u04-l07-mzda-a-odvody-w02",
+            "b1-u04-l07-mzda-a-odvody-w03",
+            "b1-u04-l07-mzda-a-odvody-w04",
+            "b1-u04-l07-mzda-a-odvody-w05"
+          ]
+        },
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-ex10",
+          "lessonId": "b1-u04-l07-mzda-a-odvody",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що зменшує, а що збільшує čistú mzdu?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Znižuje"
+            },
+            {
+              "id": "c2",
+              "title": "Zvyšuje"
+            }
+          ],
+          "items": [
+            {
+              "sk": "zrážka zo mzdy",
+              "category": "c1"
+            },
+            {
+              "sk": "preplatok z ročného zúčtovania",
+              "category": "c2"
+            },
+            {
+              "sk": "daňový bonus",
+              "category": "c2"
+            },
+            {
+              "sk": "preddavok na daň",
+              "category": "c1"
+            },
+            {
+              "sk": "prémia",
+              "category": "c2"
+            },
+            {
+              "sk": "zdravotné poistenie",
+              "category": "c1"
+            },
+            {
+              "sk": "sociálne poistenie",
+              "category": "c1"
+            },
+            {
+              "sk": "príplatok za nadčas",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Внески, податок і утримання зменшують нетто; бонус, доплати й переплата — збільшують.",
+          "order": 10,
+          "wordIds": [
+            "b1-u04-l07-mzda-a-odvody-w01",
+            "b1-u04-l07-mzda-a-odvody-w03",
+            "b1-u04-l07-mzda-a-odvody-w04",
+            "b1-u04-l07-mzda-a-odvody-w05"
+          ]
+        },
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-ex11",
+          "lessonId": "b1-u04-l07-mzda-a-odvody",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Účtovníčka",
+              "sk": "Máte deti do osemnástich rokov?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Áno, deti, bonus dajte.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Áno, mám dcéru. Môžem si uplatniť daňová bonus?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Áno, mám dcéru. Môžem si uplatniť daňový bonus?",
+              "correct": true
+            }
+          ],
+          "explanation": "bonus — чоловічий рід: daňový bonus.",
+          "order": 11,
+          "wordIds": [
+            "b1-u04-l07-mzda-a-odvody-w01",
+            "b1-u04-l07-mzda-a-odvody-w04"
+          ]
+        },
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-ex12",
+          "lessonId": "b1-u04-l07-mzda-a-odvody",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Z hrubý mzdy mi strhli odvody a preddavok na daňou.",
+          "acceptedAnswers": [
+            "Z hrubej mzdy mi strhli odvody a preddavok na daň."
+          ],
+          "explanation": "z + родовий: z hrubej mzdy; preddavok na + знахідний: na daň.",
+          "order": 12,
+          "wordIds": [
+            "b1-u04-l07-mzda-a-odvody-w01",
+            "b1-u04-l07-mzda-a-odvody-w03",
+            "b1-u04-l07-mzda-a-odvody-w04"
+          ]
+        },
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-ex13",
+          "lessonId": "b1-u04-l07-mzda-a-odvody",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "Kamarát: «Minimálna mzda je síce vyššia ako vlani, ale nájom stúpol ešte viac.»",
+          "target": "minimálna mzda",
+          "options": [
+            {
+              "id": "a",
+              "text": "найменша зарплата, яку дозволяє закон",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "зарплата без податків",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "середня зарплата в країні",
+              "correct": false
+            }
+          ],
+          "explanation": "minimálna mzda — мінімальна зарплата, установлена законом.",
+          "order": 13,
+          "wordIds": [
+            "b1-u04-l07-mzda-a-odvody-w01"
+          ]
+        },
+        {
+          "id": "b1-u04-l07-mzda-a-odvody-ex14",
+          "lessonId": "b1-u04-l07-mzda-a-odvody",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перетвори на ввічливе прохання з «Mohli by ste…».",
+          "source": "Urobte mi ročné zúčtovanie.",
+          "acceptedAnswers": [
+            "Mohli by ste mi urobiť ročné zúčtovanie?",
+            "Mohli by ste mi ročné zúčtovanie urobiť?"
+          ],
+          "explanation": "Mohli by ste + інфінітив — ввічливе прохання до бухгалтерії.",
+          "order": 14,
+          "wordIds": [
+            "b1-u04-l07-mzda-a-odvody-w01",
+            "b1-u04-l07-mzda-a-odvody-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перша виплатна",
+        "description": "Ти (жінка) отримала першу výplatnú pásku й маєш питання до бухгалтерії.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти питаєш, чому на рахунок прийшло менше, ніж у договорі.",
+            "options": [
+              {
+                "sk": "Prečo menej účet ako zmluva?",
+                "correct": false
+              },
+              {
+                "sk": "Prečo mi na účet prišlo menej, ako mám v zmluve?",
+                "correct": true
+              },
+              {
+                "sk": "Prečo mi na účet prišiel menej, ako mám v zmluve?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Бухгалтерка: «V zmluve máte hrubú mzdu.»",
+            "options": [
+              {
+                "sk": "У договорі вказано зарплату брутто",
+                "correct": true
+              },
+              {
+                "sk": "У договорі помилка",
+                "correct": false
+              },
+              {
+                "sk": "У договорі вказано зарплату нетто",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "У тебе син. Що ти просиш?",
+            "options": [
+              {
+                "sk": "Chcela by som si uplatniť daňový bonus.",
+                "correct": true
+              },
+              {
+                "sk": "Chcela by som si uplatniť daňovú bonus.",
+                "correct": false
+              },
+              {
+                "sk": "Daňový bonus syn chcieť.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Наступного лютого ти хочеш річний перерахунок податку.",
+            "options": [
+              {
+                "sk": "Ročné zúčtovanie požiadať.",
+                "correct": false
+              },
+              {
+                "sk": "Požiadam o ročné zúčtovanie.",
+                "correct": true
+              },
+              {
+                "sk": "Požiadam na ročné zúčtovanie.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш свою виплатну. Далі — výpoveď: як правильно звільнитися і що робити, коли звільняють тебе."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш свою виплатну. Далі — výpoveď: як правильно звільнитися і що робити, коли звільняють тебе.",
+        "nowYouKnow": [
+          "hrubá mzda → odvody a preddavok na daň → čistá mzda",
+          "minimálna mzda, výplatný termín",
+          "daňový bonus",
+          "ročné zúčtovanie, preplatok × nedoplatok"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 14,
+        "xpReward": 40,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b1-u04-l08-vypoved",
+          "title": "Звільнення"
+        }
+      }
+    }
+  ]
+}

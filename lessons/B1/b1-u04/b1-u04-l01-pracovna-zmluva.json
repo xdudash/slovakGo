@@ -1,0 +1,974 @@
+{
+  "lessons": [
+    {
+      "id": "b1-u04-l01-pracovna-zmluva",
+      "sectionId": "b1-u04",
+      "level": "B1",
+      "title": "Трудовий договір",
+      "topic": "Трудове право",
+      "description": "Що має бути в трудовому договорі за Zákonníkom práce: вид роботи, місце, день початку, зарплата; строковий і безстроковий договір; що перевірити перед підписом.",
+      "order": 31,
+      "xpReward": 40,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Прочитати й зрозуміти свій трудовий договір і поставити роботодавцю уточнювальні питання.",
+      "completionMessage": "Ти розумієш свій трудовий договір. Далі — угоди про роботу: dohoda o vykonaní práce і brigáda для студентів.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B1 · Трудове право",
+        "title": "Трудовий договір",
+        "shortDescription": "Прочитати й зрозуміти свій трудовий договір і поставити роботодавцю уточнювальні питання.",
+        "outcomes": [
+          "називати основні náležitosti pracovnej zmluvy",
+          "розрізняти zmluvu na dobu určitú a na dobu neurčitú",
+          "питати про druh práce, miesto výkonu práce, deň nástupu",
+          "знати, що зміни вносять písomne, dodatkom k zmluve"
+        ],
+        "newWords": [
+          "vyhotovenie",
+          "druh práce",
+          "miesto výkonu práce",
+          "deň nástupu",
+          "dodatok",
+          "mzdové podmienky"
+        ],
+        "exercisesCount": 14,
+        "reward": "+40 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Що обов’язково є в договорі",
+          "text": "«Pracovná zmluva» — трудовий договір між zamestnávateľom і zamestnancom. Згідно із Zákonníkom práce її укладають «písomne» (письмово), і кожна сторона отримує свій примірник — «vyhotovenie». Обов’язкові пункти — «náležitosti»: «druh práce» (вид роботи, посада), «miesto výkonu práce» (місце, де ти фактично працюєш), «deň nástupu do práce» (день початку роботи) і «mzdové podmienky» (умови оплати), якщо їх не визначає колективний договір.",
+          "examples": [
+            {
+              "sk": "Pracovná zmluva sa uzatvára písomne.",
+              "uk": "Трудовий договір укладають письмово."
+            },
+            {
+              "sk": "Deň nástupu do práce je prvého marca.",
+              "uk": "День початку роботи — перше березня."
+            }
+          ],
+          "shortRule": "druh práce · miesto výkonu práce · deň nástupu · mzda",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Строковий чи безстроковий",
+          "text": "Договір буває «na dobu neurčitú» (безстроковий) або «na dobu určitú» (строковий, до певної дати). Якщо строк у договорі не вказано, трудові відносини зазвичай вважаються безстроковими. У договорі часто є й «skúšobná doba» — випробувальний термін; її треба домовити письмово, і закон обмежує її тривалість. Після «na» — знахідний відмінок: «na dobu určitú do konca roka».",
+          "examples": [
+            {
+              "sk": "Zmluvu mám na dobu určitú do konca roka.",
+              "uk": "Договір у мене строковий до кінця року."
+            },
+            {
+              "sk": "Ak doba nie je v zmluve uvedená, ide o pracovný pomer na dobu neurčitú.",
+              "uk": "Якщо строк у договорі не вказано, ідеться про безстрокові трудові відносини."
+            }
+          ],
+          "shortRule": "na dobu určitú × na dobu neurčitú",
+          "commonMistakes": [
+            {
+              "mistake": "Zmluvu mám na dobu určitá.",
+              "correct": "Zmluvu mám na dobu určitú."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Перед підписом",
+          "text": "Перш ніж підписати, спитай: «Aký je presne druh práce?», «Kde je miesto výkonu práce?», «Je mzda uvedená v hrubom?» Зміни в договорі можливі лише за згодою обох сторін і письмово — через «dodatok k pracovnej zmluve» (додаток, додаткову угоду). Корисні звороти: «podpísať zmluvu» (знахідний), «v zmluve je uvedené…» (у договорі зазначено…).",
+          "examples": [
+            {
+              "sk": "Mzda je v zmluve uvedená v hrubom.",
+              "uk": "Зарплата в договорі вказана брутто."
+            },
+            {
+              "sk": "Zmenu pracovného času sme dohodli dodatkom k zmluve.",
+              "uk": "Зміну робочого часу ми погодили додатком до договору."
+            }
+          ],
+          "shortRule": "dodatok k zmluve · v zmluve je uvedené",
+          "commonMistakes": [
+            {
+              "mistake": "dodatok na zmluvu",
+              "correct": "dodatok k zmluve"
+            },
+            {
+              "mistake": "Podpísal som zmluvy. (один договір)",
+              "correct": "Podpísal som zmluvu."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b1-u04-l01-pracovna-zmluva-w01",
+            "sk": "vyhotovenie",
+            "uk": "примірник (документа)",
+            "pronunciationUk": "виготовеніє",
+            "exampleSk": "Zmluvu podpíšeme v dvoch vyhotoveniach.",
+            "exampleUk": "Договір ми підпишемо у двох примірниках."
+          },
+          {
+            "wordId": "b1-u04-l01-pracovna-zmluva-w02",
+            "sk": "druh práce",
+            "uk": "вид роботи (посада)",
+            "pronunciationUk": "друг пра:це",
+            "exampleSk": "V zmluve je druh práce uvedený ako skladník.",
+            "exampleUk": "У договорі вид роботи вказано як комірник."
+          },
+          {
+            "wordId": "b1-u04-l01-pracovna-zmluva-w03",
+            "sk": "miesto výkonu práce",
+            "uk": "місце виконання роботи",
+            "pronunciationUk": "м’єсто ві:кону пра:це",
+            "exampleSk": "Miesto výkonu práce je sklad v Senci.",
+            "exampleUk": "Місце виконання роботи — склад у Сенці."
+          },
+          {
+            "wordId": "b1-u04-l01-pracovna-zmluva-w04",
+            "sk": "deň nástupu",
+            "uk": "день початку роботи",
+            "pronunciationUk": "день на:ступу",
+            "exampleSk": "Deň nástupu máme dohodnutý na pondelok.",
+            "exampleUk": "День початку роботи в нас домовлено на понеділок."
+          },
+          {
+            "wordId": "b1-u04-l01-pracovna-zmluva-w05",
+            "sk": "dodatok",
+            "uk": "додаток (до договору), додаткова угода",
+            "pronunciationUk": "додаток",
+            "exampleSk": "Zvýšenie mzdy upravuje dodatok k zmluve.",
+            "exampleUk": "Підвищення зарплати регулює додаток до договору."
+          },
+          {
+            "wordId": "b1-u04-l01-pracovna-zmluva-w06",
+            "sk": "mzdové podmienky",
+            "uk": "умови оплати праці",
+            "pronunciationUk": "мздове: подм’єнки",
+            "exampleSk": "Mzdové podmienky sú uvedené v zmluve.",
+            "exampleUk": "Умови оплати праці зазначено в договорі."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-w01",
+          "sk": "vyhotovenie",
+          "uk": "примірник (документа)",
+          "pronunciationUk": "виготовеніє",
+          "exampleSk": "Zmluvu podpíšeme v dvoch vyhotoveniach.",
+          "exampleUk": "Договір ми підпишемо у двох примірниках.",
+          "level": "B1",
+          "topic": "Трудове право",
+          "tags": [
+            "b1-u04",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-w02",
+          "sk": "druh práce",
+          "uk": "вид роботи (посада)",
+          "pronunciationUk": "друг пра:це",
+          "exampleSk": "V zmluve je druh práce uvedený ako skladník.",
+          "exampleUk": "У договорі вид роботи вказано як комірник.",
+          "level": "B1",
+          "topic": "Трудове право",
+          "tags": [
+            "b1-u04",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-w03",
+          "sk": "miesto výkonu práce",
+          "uk": "місце виконання роботи",
+          "pronunciationUk": "м’єсто ві:кону пра:це",
+          "exampleSk": "Miesto výkonu práce je sklad v Senci.",
+          "exampleUk": "Місце виконання роботи — склад у Сенці.",
+          "level": "B1",
+          "topic": "Трудове право",
+          "tags": [
+            "b1-u04",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-w04",
+          "sk": "deň nástupu",
+          "uk": "день початку роботи",
+          "pronunciationUk": "день на:ступу",
+          "exampleSk": "Deň nástupu máme dohodnutý na pondelok.",
+          "exampleUk": "День початку роботи в нас домовлено на понеділок.",
+          "level": "B1",
+          "topic": "Трудове право",
+          "tags": [
+            "b1-u04",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-w05",
+          "sk": "dodatok",
+          "uk": "додаток (до договору), додаткова угода",
+          "pronunciationUk": "додаток",
+          "exampleSk": "Zvýšenie mzdy upravuje dodatok k zmluve.",
+          "exampleUk": "Підвищення зарплати регулює додаток до договору.",
+          "level": "B1",
+          "topic": "Трудове право",
+          "tags": [
+            "b1-u04",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-w06",
+          "sk": "mzdové podmienky",
+          "uk": "умови оплати праці",
+          "pronunciationUk": "мздове: подм’єнки",
+          "exampleSk": "Mzdové podmienky sú uvedené v zmluve.",
+          "exampleUk": "Умови оплати праці зазначено в договорі.",
+          "level": "B1",
+          "topic": "Трудове право",
+          "tags": [
+            "b1-u04",
+            "b1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-ex01",
+          "lessonId": "b1-u04-l01-pracovna-zmluva",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "vyhotovenie",
+              "right": "примірник"
+            },
+            {
+              "left": "druh práce",
+              "right": "вид роботи"
+            },
+            {
+              "left": "miesto výkonu práce",
+              "right": "місце виконання роботи"
+            },
+            {
+              "left": "deň nástupu",
+              "right": "день початку роботи"
+            },
+            {
+              "left": "dodatok",
+              "right": "додаток до договору"
+            },
+            {
+              "left": "mzdové podmienky",
+              "right": "умови оплати праці"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b1-u04-l01-pracovna-zmluva-w01",
+            "b1-u04-l01-pracovna-zmluva-w02",
+            "b1-u04-l01-pracovna-zmluva-w03",
+            "b1-u04-l01-pracovna-zmluva-w04",
+            "b1-u04-l01-pracovna-zmluva-w05",
+            "b1-u04-l01-pracovna-zmluva-w06"
+          ]
+        },
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-ex02",
+          "lessonId": "b1-u04-l01-pracovna-zmluva",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай уривок із трудового договору.",
+          "document": {
+            "title": "Pracovná zmluva",
+            "fields": [
+              {
+                "label": "Zamestnávateľ",
+                "value": "LogiTrans, s. r. o., Senec"
+              },
+              {
+                "label": "Zamestnanec",
+                "value": "Andrij Kravec"
+              },
+              {
+                "label": "Druh práce",
+                "value": "vodič nákladného vozidla"
+              },
+              {
+                "label": "Miesto výkonu práce",
+                "value": "Senec a územie SR"
+              },
+              {
+                "label": "Deň nástupu do práce",
+                "value": "2. 11. 2026"
+              },
+              {
+                "label": "Doba trvania",
+                "value": "na dobu určitú do 31. 10. 2027"
+              },
+              {
+                "label": "Skúšobná doba",
+                "value": "3 mesiace"
+              },
+              {
+                "label": "Mzda",
+                "value": "1 450 € v hrubom mesačne"
+              }
+            ]
+          },
+          "question": "До якого часу діє договір Андрія?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "безстроково",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "до 31 жовтня 2027 року",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "до 2 листопада 2026 року",
+              "correct": false
+            }
+          ],
+          "explanation": "Doba trvania: na dobu určitú do 31. 10. 2027 — це строковий договір.",
+          "order": 2,
+          "wordIds": [
+            "b1-u04-l01-pracovna-zmluva-w02",
+            "b1-u04-l01-pracovna-zmluva-w03",
+            "b1-u04-l01-pracovna-zmluva-w04"
+          ]
+        },
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-ex03",
+          "lessonId": "b1-u04-l01-pracovna-zmluva",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Zmluvu mám na dobu "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "určitá",
+                "určitej",
+                "určitú"
+              ],
+              "correct": "určitú"
+            },
+            {
+              "text": " do konca roka."
+            }
+          ],
+          "explanation": "na + знахідний: na dobu určitú.",
+          "order": 3
+        },
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-ex04",
+          "lessonId": "b1-u04-l01-pracovna-zmluva",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «miesto výkonu práce»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "місце, де підписують договір",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "адреса, де живе працівник",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "місце, де працівник фактично виконує роботу",
+              "correct": true
+            }
+          ],
+          "explanation": "miesto výkonu práce — там, де ти працюєш: склад, офіс, будова.",
+          "order": 4
+        },
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-ex05",
+          "lessonId": "b1-u04-l01-pracovna-zmluva",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Personalistka: «Ak v zmluve nie je uvedené, dokedy pracovný pomer trvá, je na dobu neurčitú.»",
+          "statement": "Якщо строк у договорі не вказано, трудові відносини безстрокові.",
+          "correctAnswer": true,
+          "explanation": "Без указаного строку — pracovný pomer na dobu neurčitú.",
+          "order": 5
+        },
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-ex06",
+          "lessonId": "b1-u04-l01-pracovna-zmluva",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти хочеш спитати, чи зарплата в договорі вказана брутто.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Je mzda v zmluve uvedený v hrubom?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Mzda je hrubá uvedená zmluva?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Je mzda v zmluve uvedená v hrubý?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Je mzda v zmluve uvedená v hrubom?",
+              "correct": true
+            }
+          ],
+          "explanation": "mzda — жіночий рід: uvedená; v hrubom — брутто.",
+          "order": 6
+        },
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-ex07",
+          "lessonId": "b1-u04-l01-pracovna-zmluva",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Zmeny v pracovnej zmluve sa robia ______ formou dodatku. (письмово)",
+          "acceptedAnswers": [
+            "písomne"
+          ],
+          "explanation": "Як? — прислівник písomne.",
+          "order": 7,
+          "wordIds": [
+            "b1-u04-l01-pracovna-zmluva-w05"
+          ]
+        },
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-ex08",
+          "lessonId": "b1-u04-l01-pracovna-zmluva",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Pracovná zmluva sa uzatvára písomná v dvoch vyhotoveniach.",
+          "errorToken": "písomná",
+          "correctToken": "písomne",
+          "explanation": "Потрібен прислівник (як укладають?): písomne.",
+          "order": 8,
+          "wordIds": [
+            "b1-u04-l01-pracovna-zmluva-w01"
+          ]
+        },
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-ex09",
+          "lessonId": "b1-u04-l01-pracovna-zmluva",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Olena dostala ponuku práce v hoteli v Bratislave ako recepčná. Pred podpisom jej personalistka poslala návrh pracovnej zmluvy e-mailom. Olena si ho pozorne prečítala. Druh práce, miesto výkonu práce aj deň nástupu boli v poriadku. Zmluva bola na dobu určitú na jeden rok so skúšobnou dobou tri mesiace. Olene však chýbala informácia o pracovnom čase a o tom, či je mzda uvedená v hrubom, alebo v čistom. Napísala personalistke e-mail s otázkami. Personalistka odpovedala, že recepcia funguje nepretržite, pracuje sa na dvanásťhodinové zmeny a mzda je uvedená v hrubom. Obe informácie do zmluvy doplnili a Olena ju potom podpísala.",
+          "questions": [
+            {
+              "question": "Яку посаду пропонують Олені?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "адміністраторки на рецепції готелю",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "покоївки в готелі",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "персоналістки",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Чого бракувало в договорі?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "інформації про робочий час і про те, чи зарплата брутто, чи нетто",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "дня початку роботи",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "місця виконання роботи",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що сталося перед підписом?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Олена відмовилася від роботи",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "договір змінили на безстроковий",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "інформацію дописали в договір",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 9,
+          "wordIds": [
+            "b1-u04-l01-pracovna-zmluva-w02",
+            "b1-u04-l01-pracovna-zmluva-w03",
+            "b1-u04-l01-pracovna-zmluva-w04"
+          ]
+        },
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-ex10",
+          "lessonId": "b1-u04-l01-pracovna-zmluva",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Чий це обов’язок?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Zamestnávateľ"
+            },
+            {
+              "id": "c2",
+              "title": "Zamestnanec"
+            }
+          ],
+          "items": [
+            {
+              "sk": "prideľuje prácu",
+              "category": "c1"
+            },
+            {
+              "sk": "dodržiava pracovný čas",
+              "category": "c2"
+            },
+            {
+              "sk": "zabezpečuje bezpečnosť pri práci",
+              "category": "c1"
+            },
+            {
+              "sk": "vypláca mzdu",
+              "category": "c1"
+            },
+            {
+              "sk": "vykonáva prácu",
+              "category": "c2"
+            },
+            {
+              "sk": "plní pokyny nadriadeného",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Роботодавець платить і організовує роботу; працівник працює й дотримується правил.",
+          "order": 10,
+          "wordIds": [
+            "b1-u04-l01-pracovna-zmluva-w02",
+            "b1-u04-l01-pracovna-zmluva-w03"
+          ]
+        },
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-ex11",
+          "lessonId": "b1-u04-l01-pracovna-zmluva",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перетвори на ввічливе прохання з «Mohli by ste…».",
+          "source": "Pošlite mi návrh zmluvy vopred.",
+          "acceptedAnswers": [
+            "Mohli by ste mi poslať návrh zmluvy vopred?",
+            "Mohli by ste mi návrh zmluvy poslať vopred?",
+            "Mohli by ste mi vopred poslať návrh zmluvy?"
+          ],
+          "explanation": "Mohli by ste + інфінітив — ввічливе прохання.",
+          "order": 11
+        },
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-ex12",
+          "lessonId": "b1-u04-l01-pracovna-zmluva",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Спитай, коли день початку роботи.",
+          "tokens": [
+            "do",
+            "práce",
+            "je",
+            "?",
+            "Kedy",
+            "deň",
+            "nástupu"
+          ],
+          "correctOrder": [
+            "Kedy",
+            "je",
+            "deň",
+            "nástupu",
+            "do",
+            "práce",
+            "?"
+          ],
+          "explanation": "Kedy je… — питання про дату.",
+          "order": 12,
+          "wordIds": [
+            "b1-u04-l01-pracovna-zmluva-w02",
+            "b1-u04-l01-pracovna-zmluva-w03",
+            "b1-u04-l01-pracovna-zmluva-w04"
+          ]
+        },
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-ex13",
+          "lessonId": "b1-u04-l01-pracovna-zmluva",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні речення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "V zmluve chýba miesto výkonu práce.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Zmenu sme dohodli dodatok k zmluve.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Zmluvu mám na dobu určitú.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Zmluvu mám na dobu určitá.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Zmenu sme dohodli dodatkom k zmluve.",
+              "correct": true
+            }
+          ],
+          "explanation": "na dobu určitú — знахідний; dohodli (чим?) dodatkom — орудний.",
+          "order": 13,
+          "wordIds": [
+            "b1-u04-l01-pracovna-zmluva-w02",
+            "b1-u04-l01-pracovna-zmluva-w03",
+            "b1-u04-l01-pracovna-zmluva-w05"
+          ]
+        },
+        {
+          "id": "b1-u04-l01-pracovna-zmluva-ex14",
+          "lessonId": "b1-u04-l01-pracovna-zmluva",
+          "type": "branching_dialogue",
+          "skill": [
+            "dialogue",
+            "real_life"
+          ],
+          "instruction": "Пройди діалог: обирай доречні відповіді.",
+          "successMessage": "Ти з’ясував(ла) всі деталі договору перед підписом!",
+          "startNode": "n1",
+          "nodes": {
+            "n1": {
+              "speaker": "Personalistka",
+              "sk": "Tu je vaša pracovná zmluva. Máte k nej nejaké otázky?",
+              "choices": [
+                {
+                  "id": "n1c1",
+                  "sk": "Áno. Je mzda uvedená v hrubom, alebo v čistom?",
+                  "next": "n2",
+                  "quality": "best"
+                },
+                {
+                  "id": "n1c3",
+                  "sk": "Nie, zmluvy nikdy nečítam.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c2",
+                  "sk": "Áno. Mzda je hrubý alebo čistý som?",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n2": {
+              "speaker": "Personalistka",
+              "sk": "V hrubom. Ešte niečo?",
+              "choices": [
+                {
+                  "id": "n2c2",
+                  "sk": "Kde presne bude miesta výkonu práce?",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c1",
+                  "sk": "Kde presne bude miesto výkonu práce?",
+                  "next": "n3",
+                  "quality": "best"
+                },
+                {
+                  "id": "n2c3",
+                  "sk": "Miesto výkon práca kde?",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n3": {
+              "speaker": "Personalistka",
+              "sk": "V sklade v Senci. Nastupujete prvého decembra.",
+              "choices": [
+                {
+                  "id": "n3c3",
+                  "sk": "Rozumiem, zmluvu ja nepotrebujem.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c1",
+                  "sk": "Rozumiem. Dostanem aj ja jedno vyhotovenie zmluvy?",
+                  "next": "n4",
+                  "quality": "best"
+                },
+                {
+                  "id": "n3c2",
+                  "sk": "Rozumiem. Dostanem aj ja jeden vyhotovenie zmluvy?",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n4": {
+              "speaker": "Personalistka",
+              "sk": "Samozrejme, jedno je pre vás.",
+              "choices": [
+                {
+                  "id": "n4c1",
+                  "sk": "Ďakujem, tak ju podpíšem.",
+                  "next": "success",
+                  "quality": "best"
+                },
+                {
+                  "id": "n4c2",
+                  "sk": "Ďakujem, tak jej podpíšem.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n4c3",
+                  "sk": "Ďakujem, podpísať ju.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            }
+          },
+          "order": 14,
+          "wordIds": [
+            "b1-u04-l01-pracovna-zmluva-w01",
+            "b1-u04-l01-pracovna-zmluva-w02",
+            "b1-u04-l01-pracovna-zmluva-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перший договір у Словаччині",
+        "description": "Ти отримав(ла) роботу на складі й читаєш договір перед підписом.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "У договорі написано «na dobu určitú do 30. 6.». Що це означає?",
+            "options": [
+              {
+                "sk": "Випробувальний термін триває до 30 червня",
+                "correct": false
+              },
+              {
+                "sk": "Договір строковий, до 30 червня",
+                "correct": true
+              },
+              {
+                "sk": "Договір безстроковий",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти питаєш, де будеш працювати.",
+            "options": [
+              {
+                "sk": "Kde je miesta výkonu práce?",
+                "correct": false
+              },
+              {
+                "sk": "Kde je miesto výkonu práce?",
+                "correct": true
+              },
+              {
+                "sk": "Miesto výkon práca je kde?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти питаєш, чи зарплата вказана брутто.",
+            "options": [
+              {
+                "sk": "Je mzda uvedená v hrubom?",
+                "correct": true
+              },
+              {
+                "sk": "Je mzda uvedený v hrubom?",
+                "correct": false
+              },
+              {
+                "sk": "Mzda hrubom je?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Роботодавець хоче змінити тобі робочий час. Як це правильно оформити?",
+            "options": [
+              {
+                "sk": "Усною домовленістю по телефону",
+                "correct": false
+              },
+              {
+                "sk": "Письмовим додатком до договору",
+                "correct": true
+              },
+              {
+                "sk": "Новим оголошенням на сайті",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш свій трудовий договір. Далі — угоди про роботу: dohoda o vykonaní práce і brigáda для студентів."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш свій трудовий договір. Далі — угоди про роботу: dohoda o vykonaní práce і brigáda для студентів.",
+        "nowYouKnow": [
+          "náležitosti: druh práce, miesto výkonu práce, deň nástupu, mzda",
+          "na dobu určitú × na dobu neurčitú",
+          "písomne, dodatok k zmluve",
+          "питання перед підписом договору"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 40,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b1-u04-l02-dohody",
+          "title": "Угоди про роботу"
+        }
+      }
+    }
+  ]
+}
