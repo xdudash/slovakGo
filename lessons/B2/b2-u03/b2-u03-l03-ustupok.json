@@ -1,0 +1,876 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u03-l03-ustupok",
+      "sectionId": "b2-u03",
+      "level": "B2",
+      "title": "Поступка: síce… ale, hoci, aj keď",
+      "topic": "Дискусія та аргументація",
+      "description": "Як визнати слушну думку співрозмовника й не здати власну позицію: síce…, ale; hoci; aj keď; aj keby; treba priznať, že…, avšak; nepochybne; každopádne.",
+      "order": 23,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Будувати речення-поступки, у яких визнання й власна позиція чітко розділені.",
+      "completionMessage": "Ти вмієш визнати слушне й лишитися при своїй думці. Далі — zdôraznenie: як підсилити головну думку.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Дискусія та аргументація",
+        "title": "Поступка: síce… ale, hoci, aj keď",
+        "shortDescription": "Будувати речення-поступки, у яких визнання й власна позиція чітко розділені.",
+        "outcomes": [
+          "будувати Je to síce…, ale…",
+          "вживати hoci і aj keď без зайвого «ale»",
+          "розрізняти aj keď (факт) і aj keby (гіпотеза)",
+          "переходити від визнання до власної позиції: Treba priznať, že…, avšak…"
+        ],
+        "newWords": [
+          "síce",
+          "aj keď",
+          "avšak",
+          "nepochybne",
+          "každopádne",
+          "treba priznať"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Síce… ale",
+          "text": "Поступка — це визнання чогось, що говорить проти твоєї позиції, а потім повернення до неї. Найпростіша схема: «síce» (щоправда) у першій частині й «ale» (але) у другій: «Byt je síce drahý, ale má výbornú polohu.» «Síce» саме не стоїть без протиставлення: потрібне «ale», «no» або «však». Перед «ale» ставимо кому. Основна думка — після «ale»: саме її слухач запам’ятає, а те, що стоїть після «síce», звучить як поступка.",
+          "examples": [
+            {
+              "sk": "Auto je síce staré, ale spoľahlivé.",
+              "uk": "Машина, щоправда, стара, але надійна."
+            },
+            {
+              "sk": "Je to síce náročné, ale oplatí sa to.",
+              "uk": "Це, щоправда, складно, але воно того варте."
+            }
+          ],
+          "shortRule": "síce + факт, ale + моя позиція",
+          "commonMistakes": [
+            {
+              "mistake": "Auto je síce staré, spoľahlivé.",
+              "correct": "Auto je síce staré, ale spoľahlivé."
+            },
+            {
+              "mistake": "Auto je sice staré, ale spoľahlivé.",
+              "correct": "Auto je síce staré, ale spoľahlivé."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Hoci, aj keď, aj keby",
+          "text": "«Hoci» (хоча) — трохи книжніше, «aj keď» (хоч, навіть якщо це так) — нейтральніше й розмовніше: «Hoci prší, ideme von.» «Aj keď mám málo času, prídem.» У другій частині після них НЕ ставимо «ale»: «Hoci prší, ale ideme von» — помилка (можна «predsa» або «napriek tomu»). Обидва вживаємо про реальний факт. Гіпотетично — «aj keby» (навіть якби) з умовним способом: «Aj keby ste mali pravdu, nič by sa nezmenilo.» Тут мовець не визнає, що співрозмовник справді має рацію, — він лише допускає це для аргументу.",
+          "examples": [
+            {
+              "sk": "Aj keď je to drahé, kúpim si to.",
+              "uk": "Хоч це й дорого, я це куплю."
+            },
+            {
+              "sk": "Hoci je neskoro, začneme.",
+              "uk": "Хоча вже пізно, почнемо."
+            }
+          ],
+          "shortRule": "hoci / aj keď + факт, без «ale» · aj keby + гіпотеза",
+          "commonMistakes": [
+            {
+              "mistake": "Hoci prší, ale ideme von.",
+              "correct": "Hoci prší, ideme von."
+            },
+            {
+              "mistake": "Aj keď prší, ale ideme von.",
+              "correct": "Aj keď prší, ideme von."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Визнати і повернутися",
+          "text": "У письмі й на роботі поступку формулюють подовше: «Treba priznať, že…, avšak…» (треба визнати, що…, проте…), «Nepochybne…, no…» (безсумнівно…, але…). «Avšak» — книжніше за «ale»; «no» як сполучник — розмовніше. «Každopádne» (у будь-якому разі) повертає розмову до головного: «Môžeme sa o tom ešte baviť, každopádne termín platí.» Загальна схема: визнати → повернутися (ale / avšak / no) → мій висновок.",
+          "examples": [
+            {
+              "sk": "Treba priznať, že plat je nižší, avšak práca je istá.",
+              "uk": "Треба визнати, що зарплата нижча, проте робота стабільна."
+            },
+            {
+              "sk": "Je to nepochybne správny krok, no nie bez rizika.",
+              "uk": "Це безсумнівно правильний крок, але не без ризику."
+            }
+          ],
+          "shortRule": "treba priznať…, avšak… · každopádne = у будь-якому разі",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u03-l03-ustupok-w01",
+            "sk": "síce",
+            "uk": "щоправда, хоча й (з ale)",
+            "pronunciationUk": "сіце",
+            "exampleSk": "Plat je síce nižší, ale práca je istá.",
+            "exampleUk": "Зарплата, щоправда, нижча, але робота стабільна."
+          },
+          {
+            "wordId": "b2-u03-l03-ustupok-w02",
+            "sk": "aj keď",
+            "uk": "хоч, хоча, навіть якщо це так",
+            "pronunciationUk": "ай кедь",
+            "exampleSk": "Aj keď mám málo času, prídem na stretnutie.",
+            "exampleUk": "Хоч я й маю мало часу, прийду на зустріч."
+          },
+          {
+            "wordId": "b2-u03-l03-ustupok-w03",
+            "sk": "avšak",
+            "uk": "проте, одначе",
+            "pronunciationUk": "авшак",
+            "exampleSk": "Plat je nízky, avšak práca je stabilná.",
+            "exampleUk": "Зарплата низька, проте робота стабільна."
+          },
+          {
+            "wordId": "b2-u03-l03-ustupok-w04",
+            "sk": "nepochybne",
+            "uk": "безсумнівно",
+            "pronunciationUk": "нєпохибнє",
+            "exampleSk": "Je to nepochybne dobrý nápad, no musíme ho prepočítať.",
+            "exampleUk": "Це безсумнівно добра ідея, але треба її прорахувати."
+          },
+          {
+            "wordId": "b2-u03-l03-ustupok-w05",
+            "sk": "každopádne",
+            "uk": "у будь-якому разі",
+            "pronunciationUk": "каждопа:днє",
+            "exampleSk": "Rozhodnite sa, ako chcete, každopádne mi dajte vedieť.",
+            "exampleUk": "Вирішуйте, як хочете, у будь-якому разі дайте мені знати."
+          },
+          {
+            "wordId": "b2-u03-l03-ustupok-w06",
+            "sk": "treba priznať",
+            "uk": "треба визнати",
+            "pronunciationUk": "треба признать",
+            "exampleSk": "Treba priznať, že kurz bol náročný.",
+            "exampleUk": "Треба визнати, що курс був складний."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u03-l03-ustupok-w01",
+          "sk": "síce",
+          "uk": "щоправда, хоча й (з ale)",
+          "pronunciationUk": "сіце",
+          "exampleSk": "Plat je síce nižší, ale práca je istá.",
+          "exampleUk": "Зарплата, щоправда, нижча, але робота стабільна.",
+          "level": "B2",
+          "topic": "Дискусія та аргументація",
+          "tags": [
+            "b2-u03",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u03-l03-ustupok-w02",
+          "sk": "aj keď",
+          "uk": "хоч, хоча, навіть якщо це так",
+          "pronunciationUk": "ай кедь",
+          "exampleSk": "Aj keď mám málo času, prídem na stretnutie.",
+          "exampleUk": "Хоч я й маю мало часу, прийду на зустріч.",
+          "level": "B2",
+          "topic": "Дискусія та аргументація",
+          "tags": [
+            "b2-u03",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u03-l03-ustupok-w03",
+          "sk": "avšak",
+          "uk": "проте, одначе",
+          "pronunciationUk": "авшак",
+          "exampleSk": "Plat je nízky, avšak práca je stabilná.",
+          "exampleUk": "Зарплата низька, проте робота стабільна.",
+          "level": "B2",
+          "topic": "Дискусія та аргументація",
+          "tags": [
+            "b2-u03",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u03-l03-ustupok-w04",
+          "sk": "nepochybne",
+          "uk": "безсумнівно",
+          "pronunciationUk": "нєпохибнє",
+          "exampleSk": "Je to nepochybne dobrý nápad, no musíme ho prepočítať.",
+          "exampleUk": "Це безсумнівно добра ідея, але треба її прорахувати.",
+          "level": "B2",
+          "topic": "Дискусія та аргументація",
+          "tags": [
+            "b2-u03",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u03-l03-ustupok-w05",
+          "sk": "každopádne",
+          "uk": "у будь-якому разі",
+          "pronunciationUk": "каждопа:днє",
+          "exampleSk": "Rozhodnite sa, ako chcete, každopádne mi dajte vedieť.",
+          "exampleUk": "Вирішуйте, як хочете, у будь-якому разі дайте мені знати.",
+          "level": "B2",
+          "topic": "Дискусія та аргументація",
+          "tags": [
+            "b2-u03",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u03-l03-ustupok-w06",
+          "sk": "treba priznať",
+          "uk": "треба визнати",
+          "pronunciationUk": "треба признать",
+          "exampleSk": "Treba priznať, že kurz bol náročný.",
+          "exampleUk": "Треба визнати, що курс був складний.",
+          "level": "B2",
+          "topic": "Дискусія та аргументація",
+          "tags": [
+            "b2-u03",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u03-l03-ustupok-ex01",
+          "lessonId": "b2-u03-l03-ustupok",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "síce",
+              "right": "щоправда"
+            },
+            {
+              "left": "aj keď",
+              "right": "хоч, навіть якщо це так"
+            },
+            {
+              "left": "avšak",
+              "right": "проте"
+            },
+            {
+              "left": "nepochybne",
+              "right": "безсумнівно"
+            },
+            {
+              "left": "každopádne",
+              "right": "у будь-якому разі"
+            },
+            {
+              "left": "treba priznať",
+              "right": "треба визнати"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u03-l03-ustupok-w01",
+            "b2-u03-l03-ustupok-w02",
+            "b2-u03-l03-ustupok-w03",
+            "b2-u03-l03-ustupok-w04",
+            "b2-u03-l03-ustupok-w05",
+            "b2-u03-l03-ustupok-w06"
+          ]
+        },
+        {
+          "id": "b2-u03-l03-ustupok-ex02",
+          "lessonId": "b2-u03-l03-ustupok",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Auto je "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "hoci",
+                "aj keď",
+                "síce"
+              ],
+              "correct": "síce"
+            },
+            {
+              "text": " staré, ale spoľahlivé."
+            }
+          ],
+          "explanation": "Пара «síce… ale» — визнання й повернення; після hoci / aj keď «ale» не ставимо.",
+          "order": 2,
+          "wordIds": [
+            "b2-u03-l03-ustupok-w01",
+            "b2-u03-l03-ustupok-w02"
+          ]
+        },
+        {
+          "id": "b2-u03-l03-ustupok-ex03",
+          "lessonId": "b2-u03-l03-ustupok",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Hoci je byt drahý, "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "mám ho rád",
+                "ale mám ho rád",
+                "preto ho mám rád"
+              ],
+              "correct": "mám ho rád"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Після «hoci» — без «ale»; «preto» дає хибний логічний зв’язок.",
+          "order": 3
+        },
+        {
+          "id": "b2-u03-l03-ustupok-ex04",
+          "lessonId": "b2-u03-l03-ustupok",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Byt je ______ drahý, ale má dobrú polohu. (щоправда)",
+          "acceptedAnswers": [
+            "síce"
+          ],
+          "explanation": "Síce стоїть у першій частині й чекає на ale.",
+          "order": 4,
+          "wordIds": [
+            "b2-u03-l03-ustupok-w01"
+          ]
+        },
+        {
+          "id": "b2-u03-l03-ustupok-ex05",
+          "lessonId": "b2-u03-l03-ustupok",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що це: визнання чи моя позиція?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Uznanie"
+            },
+            {
+              "id": "c2",
+              "title": "Moja pozícia"
+            }
+          ],
+          "items": [
+            {
+              "sk": "ale má výbornú polohu",
+              "category": "c2"
+            },
+            {
+              "sk": "avšak práca je stabilná",
+              "category": "c2"
+            },
+            {
+              "sk": "Nepochybne je to riziko",
+              "category": "c1"
+            },
+            {
+              "sk": "no oplatí sa to",
+              "category": "c2"
+            },
+            {
+              "sk": "Uznávam nižší plat",
+              "category": "c1"
+            },
+            {
+              "sk": "Byt je síce drahý",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Перша частина — визнання, друга (після ale, avšak, no) — те, що мовець хоче сказати насправді.",
+          "order": 5,
+          "wordIds": [
+            "b2-u03-l03-ustupok-w01",
+            "b2-u03-l03-ustupok-w03",
+            "b2-u03-l03-ustupok-w04"
+          ]
+        },
+        {
+          "id": "b2-u03-l03-ustupok-ex06",
+          "lessonId": "b2-u03-l03-ustupok",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Об’єднай речення за допомогою «síce… ale».",
+          "source": "Auto je staré. Je spoľahlivé.",
+          "acceptedAnswers": [
+            "Auto je síce staré, ale spoľahlivé.",
+            "Auto je síce staré, ale je spoľahlivé."
+          ],
+          "explanation": "Síce стоїть у першій частині, ale вводить другу; перед ale — кома.",
+          "order": 6,
+          "wordIds": [
+            "b2-u03-l03-ustupok-w01"
+          ]
+        },
+        {
+          "id": "b2-u03-l03-ustupok-ex07",
+          "lessonId": "b2-u03-l03-ustupok",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення, зберігши «hoci».",
+          "sentence": "Hoci prší, ale ideme von.",
+          "acceptedAnswers": [
+            "Hoci prší, ideme von.",
+            "Hoci prší, predsa ideme von.",
+            "Hoci prší, napriek tomu ideme von."
+          ],
+          "explanation": "Після hoci «ale» не ставимо; можна додати predsa або napriek tomu.",
+          "order": 7
+        },
+        {
+          "id": "b2-u03-l03-ustupok-ex08",
+          "lessonId": "b2-u03-l03-ustupok",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Iryna sa rozhodovala medzi dvoma ponukami práce. V Bratislave by zarábala o 300 eur mesačne viac. Treba priznať, že je to lákavé. Život v hlavnom meste je však drahší, takže rozdiel v plate sa čiastočne stratí. Kolegyňa ju presviedčala, že v Bratislave sa naučí viac, no Iryna zostala pokojná. Nakoniec si vybrala Nitru. Plat je tam síce nižší, ale byt je lacnejší a do práce chodí pešo. Aj keď to nie je kariérny skok, povedala: «Každopádne chcem mať čas na rodinu.» Dodala, že o dva roky sa môže rozhodnúť inak.",
+          "questions": [
+            {
+              "question": "Що для Ірини було вигіднішим у Нітрі?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "менше роботи",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "дешевша квартира й дорога до роботи пішки",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "вищий оклад",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Яким було її головне міркування?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "у будь-якому разі вона хоче мати час на родину",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "вона мріє про швидку кар’єру",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "вона хоче поїхати до Праги",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Яке уточнення вона додала наприкінці?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "що через два роки може вирішити інакше",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "що колега мала рацію",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "що ніколи не змінить роботу",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 8,
+          "wordIds": [
+            "b2-u03-l03-ustupok-w01",
+            "b2-u03-l03-ustupok-w02",
+            "b2-u03-l03-ustupok-w05",
+            "b2-u03-l03-ustupok-w06"
+          ]
+        },
+        {
+          "id": "b2-u03-l03-ustupok-ex09",
+          "lessonId": "b2-u03-l03-ustupok",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти визнаєш, що квартира дорога, але підкреслюєш її перевагу — розташування.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Byt je drahý, síce má výbornú polohu.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Byt je síce drahý, ale má výbornú polohu.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Byt je síce drahý, preto má výbornú polohu.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Hoci je byt drahý, ale má výbornú polohu.",
+              "correct": false
+            }
+          ],
+          "explanation": "Síce… ale: визнання плюс повернення до своєї думки.",
+          "order": 9,
+          "wordIds": [
+            "b2-u03-l03-ustupok-w01"
+          ]
+        },
+        {
+          "id": "b2-u03-l03-ustupok-ex10",
+          "lessonId": "b2-u03-l03-ustupok",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Шеф каже, що зарплата невисока. Ти визнаєш це, але називаєш перевагу.",
+          "dialogue": [
+            {
+              "speaker": "Šéf",
+              "sk": "Plat nie je vysoký."
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Treba priznať, že plat nie je vysoký, avšak práca je stabilná.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Treba priznať, že plat nie je vysoký, avšak preto je práca stabilná.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Treba priznať, plat nie je vysoký, avšak práca je stabilná.",
+              "correct": false
+            }
+          ],
+          "explanation": "Treba priznať, že… + avšak: чітка поступка; «preto» ламає логіку.",
+          "order": 10,
+          "wordIds": [
+            "b2-u03-l03-ustupok-w03",
+            "b2-u03-l03-ustupok-w06"
+          ]
+        },
+        {
+          "id": "b2-u03-l03-ustupok-ex11",
+          "lessonId": "b2-u03-l03-ustupok",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Kolegyňa o byte: «Byt je síce pekný, ale trochu ďaleko od centra.»",
+          "options": [
+            {
+              "id": "a",
+              "text": "їй байдуже, де квартира",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "вона вагається й, найімовірніше, схиляється відмовитися",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "вона в захваті й хоче оренду негайно",
+              "correct": false
+            }
+          ],
+          "explanation": "Після «ale» стоїть те, що мовець справді вважає важливим: відстань.",
+          "order": 11,
+          "wordIds": [
+            "b2-u03-l03-ustupok-w01"
+          ]
+        },
+        {
+          "id": "b2-u03-l03-ustupok-ex12",
+          "lessonId": "b2-u03-l03-ustupok",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні речення з поступкою.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Hoci je neskoro, začneme.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Je to síce náročné, ale oplatí sa to.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Aj keď prší, ideme von.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Hoci je neskoro, ale začneme.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Aj keď prší, ale ideme von.",
+              "correct": false
+            }
+          ],
+          "explanation": "Після hoci та aj keď «ale» в другій частині не ставимо.",
+          "order": 12,
+          "wordIds": [
+            "b2-u03-l03-ustupok-w01",
+            "b2-u03-l03-ustupok-w02"
+          ]
+        },
+        {
+          "id": "b2-u03-l03-ustupok-ex13",
+          "lessonId": "b2-u03-l03-ustupok",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Šéf: «Aj keby ste mali pravdu, nič by sa nezmenilo.»",
+          "statement": "Шеф визнає, що співрозмовник має рацію.",
+          "correctAnswer": false,
+          "explanation": "Aj keby — лише гіпотеза: «навіть якби ви мали рацію»; визнання тут немає.",
+          "order": 13
+        },
+        {
+          "id": "b2-u03-l03-ustupok-ex14",
+          "lessonId": "b2-u03-l03-ustupok",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення від орендодавиці.",
+          "message": {
+            "sender": "Pani Horváthová",
+            "body": "Dobrý deň, byt je síce voľný od 1. mája, avšak kľúče Vám môžem odovzdať až 3. mája, pretože som do 2. mája mimo mesta. Každopádne Vám dám včas vedieť presný čas. Ak by Vám tento termín nevyhovoval, nepochybne nájdeme iný."
+          },
+          "question": "Коли орендодавиця зможе віддати ключі?",
+          "options": [
+            {
+              "id": "a",
+              "text": "3 травня",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "1 травня",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "2 травня",
+              "correct": false
+            }
+          ],
+          "explanation": "Byt je síce voľný od 1. mája, avšak kľúče až 3. mája.",
+          "order": 14,
+          "wordIds": [
+            "b2-u03-l03-ustupok-w01",
+            "b2-u03-l03-ustupok-w03",
+            "b2-u03-l03-ustupok-w04",
+            "b2-u03-l03-ustupok-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Розмова про нову роботу",
+        "description": "Подруга питає, чому ти хочеш змінити роботу, і ти відповідаєш виважено: визнаєш мінуси, але називаєш плюси.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти визнаєш, що дорога довга, але зарплата вища.",
+            "options": [
+              {
+                "sk": "Hoci je cesta do práce dlhá, ale plat je vyšší.",
+                "correct": false
+              },
+              {
+                "sk": "Cesta do práce je dlhá, síce plat je vyšší.",
+                "correct": false
+              },
+              {
+                "sk": "Cesta do práce je síce dlhá, ale plat je vyšší.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти кажеш, що не відступиш, навіть якщо втомишся.",
+            "options": [
+              {
+                "sk": "Aj keď sa unavím, preto sa nevzdám.",
+                "correct": false
+              },
+              {
+                "sk": "Aj keď sa unavím, ale nevzdám sa.",
+                "correct": false
+              },
+              {
+                "sk": "Aj keď sa unavím, nevzdám sa.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти книжним стилем визнаєш, що це нелегко, але воно того варте.",
+            "options": [
+              {
+                "sk": "Treba priznať, že to nie je ľahké, avšak preto sa to oplatí.",
+                "correct": false
+              },
+              {
+                "sk": "Treba priznať, to nie je ľahké, avšak oplatí sa to.",
+                "correct": false
+              },
+              {
+                "sk": "Treba priznať, že to nie je ľahké, avšak oplatí sa to.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Подруга: «Byt je síce malý, ale útulný.» Що вона каже?",
+            "options": [
+              {
+                "sk": "Квартира затишна, хоча й велика",
+                "correct": false
+              },
+              {
+                "sk": "Квартира, щоправда, мала, але затишна",
+                "correct": true
+              },
+              {
+                "sk": "Квартира мала, тому затишна",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш визнати слушне й лишитися при своїй думці. Далі — zdôraznenie: як підсилити головну думку."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш визнати слушне й лишитися при своїй думці. Далі — zdôraznenie: як підсилити головну думку.",
+        "nowYouKnow": [
+          "síce…, ale…",
+          "hoci, aj keď — без «ale» в другій частині",
+          "aj keby — лише гіпотеза",
+          "Treba priznať, že…, avšak… · každopádne"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u03-l04-zdoraznenie",
+          "title": "Підсилення думки"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,866 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u03-l01-struktura-argumentu",
+      "sectionId": "b2-u03",
+      "level": "B2",
+      "title": "Структура аргументу",
+      "topic": "Дискусія та аргументація",
+      "description": "Із чого складається переконливий аргумент: теза, причина, доказ чи приклад і висновок. Формули Tvrdím, že…, pretože…, Dôkazom toho je…, Svedčí o tom…, po prvé / po druhé, z toho vyplýva.",
+      "order": 21,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Будувати власний аргумент словацькою так, щоб його можна було зрозуміти, перевірити й заперечити по суті.",
+      "completionMessage": "Ти вмієш побудувати аргумент від тези до висновку. Далі — протиаргумент: як чесно й по суті заперечити співрозмовника.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Дискусія та аргументація",
+        "title": "Структура аргументу",
+        "shortDescription": "Будувати власний аргумент словацькою так, щоб його можна було зрозуміти, перевірити й заперечити по суті.",
+        "outcomes": [
+          "формулювати тезу: Tvrdím, že… / Som presvedčený, že…",
+          "обґрунтовувати її через pretože і підкріплювати доказом чи прикладом",
+          "нумерувати аргументи: po prvé, po druhé, v neposlednom rade",
+          "робити висновок: Z toho vyplýva, že…"
+        ],
+        "newWords": [
+          "vyplývať",
+          "argumentovať",
+          "zdôvodniť",
+          "podložiť",
+          "po prvé",
+          "v neposlednom rade"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Теза і причина",
+          "text": "Аргумент починається з тези — головного твердження, яке ти хочеш обґрунтувати: «Tvrdím, že práca z domu zvyšuje produktivitu.» Інші вступні формули: «Som presvedčený, že…» (я переконаний, що…), «Môj názor je, že…». Сама теза ще не аргумент. Аргументом вона стає, коли ти називаєш причину: «…, pretože zamestnanci ušetria čas na ceste.» Перед «že» і «pretože» завжди стоїть кома. Обґрунтувати словацькою — «zdôvodniť» (щось пояснити причиною), а вести всю лінію думки — «argumentovať».",
+          "examples": [
+            {
+              "sk": "Tvrdím, že kurz slovenčiny sa oplatí, pretože bez jazyka sa ťažko hľadá dobrá práca.",
+              "uk": "Стверджую, що курс словацької вартий зусиль, бо без мови важко знайти добру роботу."
+            },
+            {
+              "sk": "Svoj názor vždy zdôvodním.",
+              "uk": "Свою думку я завжди обґрунтую."
+            }
+          ],
+          "shortRule": "téza + že · причина + pretože",
+          "commonMistakes": [
+            {
+              "mistake": "Tvrdím, práca z domu je lepšia.",
+              "correct": "Tvrdím, že práca z domu je lepšia."
+            },
+            {
+              "mistake": "Kurz je užitočný pretože pomáha.",
+              "correct": "Kurz je užitočný, pretože pomáha."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Доказ і приклад",
+          "text": "Причина без підтвердження — лише твердження. Тому свою тезу треба «podložiť» — підкріпити фактами, цифрами, прикладом чи досвідом. Доказ вводимо формулами: «Dôkazom toho je…» (доказом цього є…), «Svedčí o tom, že…» (про це свідчить те, що…), «Napríklad…» (наприклад). Цифри й джерела (štatistika, zdroj) переконують краще за слова «všetci vedia», тому «Podľa štatistiky…» звучить сильніше, ніж «Každý vie, že…». Ще одна пастка — коло: «Kurz je zbytočný, lebo je to zbytočné» не доводить нічого.",
+          "examples": [
+            {
+              "sk": "Dôkazom toho je, že počet záujemcov o kurz každý rok rastie.",
+              "uk": "Доказом цього є те, що кількість охочих на курс щороку зростає."
+            },
+            {
+              "sk": "Svedčí o tom aj moja skúsenosť z práce.",
+              "uk": "Про це свідчить і мій досвід на роботі."
+            }
+          ],
+          "shortRule": "podložiť čím? — faktom, číslom, príkladom (орудний)",
+          "commonMistakes": [
+            {
+              "mistake": "Podložím to príklad.",
+              "correct": "Podložím to príkladom."
+            },
+            {
+              "mistake": "Dôkazom toho je, aby ceny stúpli.",
+              "correct": "Dôkazom toho je, že ceny stúpli."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Порядок і висновок",
+          "text": "Кілька аргументів нумеруємо: «po prvé», «po druhé», а останній вводимо словами «v neposlednom rade» (і не в останню чергу). Після кожного з цих виразів ставимо кому. Наприкінці робимо висновок: «Z toho vyplýva, že…» (з цього випливає, що…). Висновок має логічно випливати з наведених причин, а не вводити нову тему. Типова схема виступу: теза → po prvé → po druhé → v neposlednom rade → висновок.",
+          "examples": [
+            {
+              "sk": "Po prvé, je to lacnejšie, po druhé, rýchlejšie a v neposlednom rade ohľaduplnejšie k životnému prostrediu.",
+              "uk": "По-перше, це дешевше, по-друге, швидше і, не в останню чергу, дбайливіше до довкілля."
+            },
+            {
+              "sk": "Z toho vyplýva, že investícia sa oplatí.",
+              "uk": "З цього випливає, що інвестиція виправдана."
+            }
+          ],
+          "shortRule": "po prvé, po druhé, v neposlednom rade → z toho vyplýva",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u03-l01-struktura-argumentu-w01",
+            "sk": "vyplývať",
+            "uk": "випливати (як наслідок)",
+            "pronunciationUk": "випли:вать",
+            "exampleSk": "Z jeho slov vyplýva, že s návrhom nesúhlasí.",
+            "exampleUk": "З його слів випливає, що він не згоден із пропозицією."
+          },
+          {
+            "wordId": "b2-u03-l01-struktura-argumentu-w02",
+            "sk": "argumentovať",
+            "uk": "аргументувати, наводити аргументи",
+            "pronunciationUk": "аргументовать",
+            "exampleSk": "Dobre argumentuje ten, kto podloží každé tvrdenie faktom.",
+            "exampleUk": "Добре аргументує той, хто підкріплює кожне твердження фактом."
+          },
+          {
+            "wordId": "b2-u03-l01-struktura-argumentu-w03",
+            "sk": "zdôvodniť",
+            "uk": "обґрунтувати, пояснити причину",
+            "pronunciationUk": "здуоводніть",
+            "exampleSk": "Svoje rozhodnutie vedel pokojne zdôvodniť.",
+            "exampleUk": "Своє рішення він умів спокійно обґрунтувати."
+          },
+          {
+            "wordId": "b2-u03-l01-struktura-argumentu-w04",
+            "sk": "podložiť",
+            "uk": "підкріпити (фактами)",
+            "pronunciationUk": "подложіть",
+            "exampleSk": "Tvrdenie musíš podložiť číslami.",
+            "exampleUk": "Твердження треба підкріпити цифрами."
+          },
+          {
+            "wordId": "b2-u03-l01-struktura-argumentu-w05",
+            "sk": "po prvé",
+            "uk": "по-перше",
+            "pronunciationUk": "по прве:",
+            "exampleSk": "Po prvé, je to lacnejšie a po druhé, rýchlejšie.",
+            "exampleUk": "По-перше, це дешевше, а по-друге, швидше."
+          },
+          {
+            "wordId": "b2-u03-l01-struktura-argumentu-w06",
+            "sk": "v neposlednom rade",
+            "uk": "і не в останню чергу",
+            "pronunciationUk": "в нєпослєдном раде",
+            "exampleSk": "V neposlednom rade ide o bezpečnosť detí.",
+            "exampleUk": "І не в останню чергу йдеться про безпеку дітей."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u03-l01-struktura-argumentu-w01",
+          "sk": "vyplývať",
+          "uk": "випливати (як наслідок)",
+          "pronunciationUk": "випли:вать",
+          "exampleSk": "Z jeho slov vyplýva, že s návrhom nesúhlasí.",
+          "exampleUk": "З його слів випливає, що він не згоден із пропозицією.",
+          "level": "B2",
+          "topic": "Дискусія та аргументація",
+          "tags": [
+            "b2-u03",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u03-l01-struktura-argumentu-w02",
+          "sk": "argumentovať",
+          "uk": "аргументувати, наводити аргументи",
+          "pronunciationUk": "аргументовать",
+          "exampleSk": "Dobre argumentuje ten, kto podloží každé tvrdenie faktom.",
+          "exampleUk": "Добре аргументує той, хто підкріплює кожне твердження фактом.",
+          "level": "B2",
+          "topic": "Дискусія та аргументація",
+          "tags": [
+            "b2-u03",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u03-l01-struktura-argumentu-w03",
+          "sk": "zdôvodniť",
+          "uk": "обґрунтувати, пояснити причину",
+          "pronunciationUk": "здуоводніть",
+          "exampleSk": "Svoje rozhodnutie vedel pokojne zdôvodniť.",
+          "exampleUk": "Своє рішення він умів спокійно обґрунтувати.",
+          "level": "B2",
+          "topic": "Дискусія та аргументація",
+          "tags": [
+            "b2-u03",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u03-l01-struktura-argumentu-w04",
+          "sk": "podložiť",
+          "uk": "підкріпити (фактами)",
+          "pronunciationUk": "подложіть",
+          "exampleSk": "Tvrdenie musíš podložiť číslami.",
+          "exampleUk": "Твердження треба підкріпити цифрами.",
+          "level": "B2",
+          "topic": "Дискусія та аргументація",
+          "tags": [
+            "b2-u03",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u03-l01-struktura-argumentu-w05",
+          "sk": "po prvé",
+          "uk": "по-перше",
+          "pronunciationUk": "по прве:",
+          "exampleSk": "Po prvé, je to lacnejšie a po druhé, rýchlejšie.",
+          "exampleUk": "По-перше, це дешевше, а по-друге, швидше.",
+          "level": "B2",
+          "topic": "Дискусія та аргументація",
+          "tags": [
+            "b2-u03",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u03-l01-struktura-argumentu-w06",
+          "sk": "v neposlednom rade",
+          "uk": "і не в останню чергу",
+          "pronunciationUk": "в нєпослєдном раде",
+          "exampleSk": "V neposlednom rade ide o bezpečnosť detí.",
+          "exampleUk": "І не в останню чергу йдеться про безпеку дітей.",
+          "level": "B2",
+          "topic": "Дискусія та аргументація",
+          "tags": [
+            "b2-u03",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u03-l01-struktura-argumentu-ex01",
+          "lessonId": "b2-u03-l01-struktura-argumentu",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "vyplývať",
+              "right": "випливати як наслідок"
+            },
+            {
+              "left": "argumentovať",
+              "right": "наводити аргументи"
+            },
+            {
+              "left": "zdôvodniť",
+              "right": "пояснити причину"
+            },
+            {
+              "left": "podložiť",
+              "right": "підкріпити фактами"
+            },
+            {
+              "left": "po prvé",
+              "right": "по-перше"
+            },
+            {
+              "left": "v neposlednom rade",
+              "right": "і не в останню чергу"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u03-l01-struktura-argumentu-w01",
+            "b2-u03-l01-struktura-argumentu-w02",
+            "b2-u03-l01-struktura-argumentu-w03",
+            "b2-u03-l01-struktura-argumentu-w04",
+            "b2-u03-l01-struktura-argumentu-w05",
+            "b2-u03-l01-struktura-argumentu-w06"
+          ]
+        },
+        {
+          "id": "b2-u03-l01-struktura-argumentu-ex02",
+          "lessonId": "b2-u03-l01-struktura-argumentu",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Svoje tvrdenie musíš "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "podložil",
+                "podložiť",
+                "podložený"
+              ],
+              "correct": "podložiť"
+            },
+            {
+              "text": " faktmi."
+            }
+          ],
+          "explanation": "Після «musíš» стоїть інфінітив: podložiť.",
+          "order": 2,
+          "wordIds": [
+            "b2-u03-l01-struktura-argumentu-w04"
+          ]
+        },
+        {
+          "id": "b2-u03-l01-struktura-argumentu-ex03",
+          "lessonId": "b2-u03-l01-struktura-argumentu",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Tvrdím, že kurz je užitočný, "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "aby",
+                "hoci",
+                "pretože"
+              ],
+              "correct": "pretože"
+            },
+            {
+              "text": " pomáha rýchlejšie sa naučiť jazyk."
+            }
+          ],
+          "explanation": "Причину вводить «pretože»; hoci означає «хоча», aby — «щоб».",
+          "order": 3
+        },
+        {
+          "id": "b2-u03-l01-struktura-argumentu-ex04",
+          "lessonId": "b2-u03-l01-struktura-argumentu",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "______ prvé, je to lacnejšie. (по-перше)",
+          "acceptedAnswers": [
+            "Po"
+          ],
+          "explanation": "Нумерація аргументів: po prvé, po druhé.",
+          "order": 4,
+          "wordIds": [
+            "b2-u03-l01-struktura-argumentu-w05"
+          ]
+        },
+        {
+          "id": "b2-u03-l01-struktura-argumentu-ex05",
+          "lessonId": "b2-u03-l01-struktura-argumentu",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що тут теза, причина, приклад?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Téza"
+            },
+            {
+              "id": "c2",
+              "title": "Príčina"
+            },
+            {
+              "id": "c3",
+              "title": "Príklad"
+            }
+          ],
+          "items": [
+            {
+              "sk": "Napríklad v Nitre sú v centre každé ráno zápchy",
+              "category": "c3"
+            },
+            {
+              "sk": "Bez jazyka sa ťažko hľadá dobrá práca",
+              "category": "c2"
+            },
+            {
+              "sk": "Napríklad moja kolegyňa dostala dobrú prácu až po kurze",
+              "category": "c3"
+            },
+            {
+              "sk": "Znečistené ovzdušie škodí zdraviu",
+              "category": "c2"
+            },
+            {
+              "sk": "Mestá by mali obmedziť autá v centre",
+              "category": "c1"
+            },
+            {
+              "sk": "Napríklad cesta vlakom z Nitry do Bratislavy trvá menej ako dve hodiny",
+              "category": "c3"
+            },
+            {
+              "sk": "Vlak je lacnejší a rýchlejší",
+              "category": "c2"
+            },
+            {
+              "sk": "Cestovanie vlakom je lepšie ako cestovanie autom",
+              "category": "c1"
+            },
+            {
+              "sk": "Slovenčinu sa oplatí učiť od prvého dňa",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Теза — це твердження, причина пояснює «чому», приклад показує конкретний випадок.",
+          "order": 5,
+          "wordIds": [
+            "b2-u03-l01-struktura-argumentu-w05"
+          ]
+        },
+        {
+          "id": "b2-u03-l01-struktura-argumentu-ex06",
+          "lessonId": "b2-u03-l01-struktura-argumentu",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Який аргумент найкраще побудований?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Domovy dôchodcov treba rozšíriť, veď to každý vie.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Domovy dôchodcov treba rozšíriť, pretože seniorov pribúda. Napríklad v našom okrese už teraz chýbajú miesta.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Domovy dôchodcov treba rozšíriť, lebo ich treba rozšíriť.",
+              "correct": false
+            }
+          ],
+          "explanation": "Перший варіант має тезу, причину й приклад. Другий ходить по колу, третій посилається на «всі знають» і нічого не доводить.",
+          "order": 6
+        },
+        {
+          "id": "b2-u03-l01-struktura-argumentu-ex07",
+          "lessonId": "b2-u03-l01-struktura-argumentu",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Svoje tvrdenie podložím príklad z mojej práce.",
+          "errorToken": "príklad",
+          "correctToken": "príkladom",
+          "explanation": "Підкріпити чим? — прикладом (орудний відмінок).",
+          "order": 7,
+          "wordIds": [
+            "b2-u03-l01-struktura-argumentu-w04"
+          ]
+        },
+        {
+          "id": "b2-u03-l01-struktura-argumentu-ex08",
+          "lessonId": "b2-u03-l01-struktura-argumentu",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Об’єднай два речення за допомогою «pretože».",
+          "source": "Kurz je užitočný. Pomáha mi hovoriť plynulejšie.",
+          "acceptedAnswers": [
+            "Kurz je užitočný, pretože mi pomáha hovoriť plynulejšie.",
+            "Kurz je užitočný, pretože mi pomáha plynulejšie hovoriť."
+          ],
+          "explanation": "«Pretože» вводить причину; перед ним стоїть кома.",
+          "order": 8
+        },
+        {
+          "id": "b2-u03-l01-struktura-argumentu-ex09",
+          "lessonId": "b2-u03-l01-struktura-argumentu",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи: «По-перше, це дешевше.»",
+          "tokens": [
+            ".",
+            "je",
+            "Po",
+            ",",
+            "lacnejšie",
+            "to",
+            "prvé"
+          ],
+          "correctOrder": [
+            "Po",
+            "prvé",
+            ",",
+            "je",
+            "to",
+            "lacnejšie",
+            "."
+          ],
+          "explanation": "«Po prvé» стоїть на початку речення, після нього — кома.",
+          "order": 9,
+          "wordIds": [
+            "b2-u03-l01-struktura-argumentu-w05"
+          ]
+        },
+        {
+          "id": "b2-u03-l01-struktura-argumentu-ex10",
+          "lessonId": "b2-u03-l01-struktura-argumentu",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Na rodičovskom združení v Trnave predstavila Maryna návrh: škola by mala otvoriť bezplatný krúžok slovenčiny pre ukrajinské deti. Najprv uviedla svoju tézu: «Deti, ktoré zle rozumejú po slovensky, nemajú rovnakú šancu.» Po prvé, podľa učiteľky z jej triedy polovica ukrajinských žiakov nerozumie zadaniam z matematiky. Po druhé, krúžok by stál málo, pretože škola už má učebňu aj učiteľku. Svoje tvrdenie podložila príkladom: jej syn sa po polroku v krúžku zlepšil z trojky na jednotku. V neposlednom rade pripomenula, že dobre integrované deti sú prínosom pre celú triedu. Záver povedala jasne: «Z toho vyplýva, že krúžok sa oplatí.»",
+          "questions": [
+            {
+              "question": "Яка теза Марини?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "діти, які погано розуміють словацьку, не мають рівних шансів",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "гурток словацької завжди коштує дуже дорого",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "усі діти мають вчитися в одному класі",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Чому, на думку Марини, гурток буде недорогий?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "батьки заплатять за все самі",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "гурток проходитиме вдома в учнів",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "школа вже має клас і вчительку",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Який приклад вона навела на підтвердження тези?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "усі діти в класі отримали одиниці",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "вчителька попросила гурток закрити",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "її син за півроку в гуртку покращив оцінку з трійки до одиниці",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "b2-u03-l01-struktura-argumentu-w01",
+            "b2-u03-l01-struktura-argumentu-w04",
+            "b2-u03-l01-struktura-argumentu-w05",
+            "b2-u03-l01-struktura-argumentu-w06"
+          ]
+        },
+        {
+          "id": "b2-u03-l01-struktura-argumentu-ex11",
+          "lessonId": "b2-u03-l01-struktura-argumentu",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти починаєш виступ: називаєш тезу й одразу пояснюєш причину.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Tvrdím, že práca z domu zvyšuje produktivitu pretože, šetrí čas na ceste.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Tvrdím, že práca z domu zvyšuje produktivitu, pretože šetrí čas na ceste.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Tvrdím že, práca z domu zvyšuje produktivitu, pretože šetrí čas na ceste.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Tvrdím, práca z domu zvyšuje produktivitu, pretože šetrí čas na ceste.",
+              "correct": false
+            }
+          ],
+          "explanation": "Tvrdím, že… + кома перед pretože; кома не стоїть ні після «že», ні після «pretože».",
+          "order": 11
+        },
+        {
+          "id": "b2-u03-l01-struktura-argumentu-ex12",
+          "lessonId": "b2-u03-l01-struktura-argumentu",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери вирази, що вводять доказ або приклад.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Naopak…",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Hoci…",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Svedčí o tom, že…",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Napríklad…",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Dôkazom toho je…",
+              "correct": true
+            }
+          ],
+          "explanation": "Naopak вводить протилежність, hoci — поступку; доказ чи приклад уводять перші три.",
+          "order": 12
+        },
+        {
+          "id": "b2-u03-l01-struktura-argumentu-ex13",
+          "lessonId": "b2-u03-l01-struktura-argumentu",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення від колеги.",
+          "message": {
+            "sender": "Peter",
+            "body": "Ahoj Ihor, pozrel som si tvoj návrh skrátiť porady na pol hodiny. Tézu máš jasnú, ale chýba mi podloženie. Po prvé, uveď, koľko času nám porady dnes zaberajú. Po druhé, daj príklad z iného oddelenia, kde to už funguje. Potom to pošli šéfovi."
+          },
+          "question": "Що Петро радить додати до пропозиції?",
+          "options": [
+            {
+              "id": "a",
+              "text": "список колег, які проти",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "дані про те, скільки часу забирають наради, і приклад з іншого відділу",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "ще одну тезу про відпустки",
+              "correct": false
+            }
+          ],
+          "explanation": "Петро просить підкріпити тезу: дані й приклад.",
+          "order": 13,
+          "wordIds": [
+            "b2-u03-l01-struktura-argumentu-w04",
+            "b2-u03-l01-struktura-argumentu-w05"
+          ]
+        },
+        {
+          "id": "b2-u03-l01-struktura-argumentu-ex14",
+          "lessonId": "b2-u03-l01-struktura-argumentu",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Аргумент складається лише з тези — причину й приклад можна не додавати.",
+          "correctAnswer": false,
+          "explanation": "Аргумент — це теза, причина і доказ чи приклад; без них це лише твердження.",
+          "order": 14
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Збори мешканців будинку",
+        "description": "Ти виступаєш перед сусідами й пропонуєш облаштувати в будинку кімнату для зберігання велосипедів.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти починаєш із тези: будинку потрібна кімната для велосипедів.",
+            "options": [
+              {
+                "sk": "Tvrdím, že náš dom potrebujú úschovňu bicyklov.",
+                "correct": false
+              },
+              {
+                "sk": "Tvrdím, že náš dom potrebuje úschovňu bicyklov.",
+                "correct": true
+              },
+              {
+                "sk": "Tvrdím, náš dom potrebuje úschovňu bicyklov.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Називаєш першу причину: велосипеди в коридорі заважають.",
+            "options": [
+              {
+                "sk": "Na prvé, bicykle na chodbe zavadzajú.",
+                "correct": false
+              },
+              {
+                "sk": "Po prvé, bicykle na chodbe zavadzajú.",
+                "correct": true
+              },
+              {
+                "sk": "Po prvý, bicykle na chodbe zavadzajú.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Підкріплюєш тезу прикладом: минулого тижня сусід об них перечепився.",
+            "options": [
+              {
+                "sk": "Napríklad minulý týždeň sa o ne potkol sused.",
+                "correct": true
+              },
+              {
+                "sk": "Napríklad minulý týždeň potkol by sa o ne sused.",
+                "correct": false
+              },
+              {
+                "sk": "Napríklad minulý týždeň sa o ne potknúť sused.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Робиш висновок з усього сказаного.",
+            "options": [
+              {
+                "sk": "Z toho vyplýva, že úschovňa sa oplatí.",
+                "correct": true
+              },
+              {
+                "sk": "Z toho vyplývať, že úschovňa sa oplatí.",
+                "correct": false
+              },
+              {
+                "sk": "Z toho vyplýva úschovňa, že sa oplatí.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш побудувати аргумент від тези до висновку. Далі — протиаргумент: як чесно й по суті заперечити співрозмовника."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш побудувати аргумент від тези до висновку. Далі — протиаргумент: як чесно й по суті заперечити співрозмовника.",
+        "nowYouKnow": [
+          "Tvrdím, že… + pretože",
+          "podložiť čím? — faktom, príkladom, číslom",
+          "po prvé, po druhé, v neposlednom rade",
+          "Z toho vyplýva, že…"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u03-l02-protiargument",
+          "title": "Протиаргумент"
+        }
+      }
+    }
+  ]
+}
