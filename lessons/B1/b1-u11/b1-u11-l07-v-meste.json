@@ -1,0 +1,909 @@
+{
+  "lessons": [
+    {
+      "id": "b1-u11-l07-v-meste",
+      "sectionId": "b1-u11",
+      "level": "B1",
+      "title": "Рух містом",
+      "topic": "Дієслова руху з префіксами",
+      "description": "Як запитати й пояснити дорогу містом: наказовий спосіб дієслів руху (choďte, prejdite, obíďte, zíďte, vyjdite), орієнтири та міський транспорт.",
+      "order": 107,
+      "xpReward": 40,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Запитати дорогу й пояснити її іншому, використовуючи дієслова руху та орієнтири.",
+      "completionMessage": "Ти вже пояснюєш дорогу як місцевий. Далі — у гори: дієслова руху на туристичній стежці.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B1 · Дієслова руху з префіксами",
+        "title": "Рух містом",
+        "shortDescription": "Запитати дорогу й пояснити її іншому, використовуючи дієслова руху та орієнтири.",
+        "outcomes": [
+          "питати: Ako sa dostanem na / k…? Je to ďaleko?",
+          "пояснювати: choďte rovno, prejdite cez…, odbočte, obíďte, zíďte do podchodu",
+          "використовувати орієнтири: na druhej križovatke, oproti, hneď za rohom",
+          "радити транспорт: vystúpte na tretej zastávke"
+        ],
+        "newWords": [
+          "dostať sa",
+          "podchod",
+          "nadchod",
+          "chodec",
+          "eskalátor"
+        ],
+        "exercisesCount": 15,
+        "reward": "+40 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Як спитати дорогу",
+          "text": "«Prepáčte, ako sa dostanem na stanicu?» — Вибачте, як мені дістатися до вокзалу? Після «dostať sa» — «na / do / k». Також: «Je to ďaleko?», «Ako dlho to trvá pešo?», «Idem dobre na…?» — Чи правильно я йду до…? Відповідь може бути «Je to kúsok.» — Це зовсім близько.",
+          "examples": [
+            {
+              "sk": "Prepáčte, ako sa dostanem k hlavnej stanici?",
+              "uk": "Вибачте, як мені дістатися до головного вокзалу?"
+            },
+            {
+              "sk": "Je to odtiaľto ďaleko pešo?",
+              "uk": "Це звідси далеко пішки?"
+            }
+          ],
+          "shortRule": "ako sa dostanem na / do / k…?",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Наказовий спосіб для пояснення",
+          "text": "Дорогу незнайомим пояснюють формою на «vy»: «choďte» (ідіть), «prejdite» (перейдіть), «odbočte» (поверніть), «obíďte» (обійдіть), «zíďte» (спустіться), «vyjdite» (підніміться, вийдіть), «pokračujte» (продовжуйте). Для «ty»: «choď, prejdi, odboč, obíď, zíď, vyjdi».",
+          "examples": [
+            {
+              "sk": "Choďte rovno a na druhej križovatke odbočte doľava.",
+              "uk": "Ідіть прямо й на другому перехресті поверніть ліворуч."
+            },
+            {
+              "sk": "Zíďte do podchodu a vyjdite na druhej strane.",
+              "uk": "Спустіться в підземний перехід і вийдіть на іншому боці."
+            }
+          ],
+          "shortRule": "choďte · prejdite · obíďte · zíďte · vyjdite",
+          "commonMistakes": [
+            {
+              "mistake": "Idite rovno.",
+              "correct": "Choďte rovno."
+            },
+            {
+              "mistake": "Prejďte cez cestu.",
+              "correct": "Prejdite cez cestu."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Орієнтири та транспорт",
+          "text": "Орієнтири: «hneď za rohom» (одразу за рогом), «oproti pošte» (навпроти пошти), «vedľa lekárne», «na konci ulice», «na druhej križovatke». Транспорт: «Choďte električkou číslo štyri a vystúpte na tretej zastávke.» Біля ремонту можна побачити табличку: «Chodci, použite podchod.» — Пішоходи, користуйтеся підземним переходом.",
+          "examples": [
+            {
+              "sk": "Lekáreň je hneď za rohom, oproti pošte.",
+              "uk": "Аптека одразу за рогом, навпроти пошти."
+            },
+            {
+              "sk": "Vystúpte na tretej zastávke.",
+              "uk": "Вийдіть на третій зупинці."
+            }
+          ],
+          "shortRule": "za rohom · oproti + давальний · vedľa + родовий",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b1-u11-l07-v-meste-w01",
+            "sk": "dostať sa",
+            "uk": "дістатися, потрапити",
+            "pronunciationUk": "достать са",
+            "exampleSk": "Ako sa dostanem na hlavnú stanicu?",
+            "exampleUk": "Як мені дістатися до головного вокзалу?"
+          },
+          {
+            "wordId": "b1-u11-l07-v-meste-w02",
+            "sk": "podchod",
+            "uk": "підземний перехід",
+            "pronunciationUk": "подход",
+            "exampleSk": "Na druhú stranu sa dostanete podchodom.",
+            "exampleUk": "На інший бік ви потрапите підземним переходом."
+          },
+          {
+            "wordId": "b1-u11-l07-v-meste-w03",
+            "sk": "nadchod",
+            "uk": "надземний перехід",
+            "pronunciationUk": "надход",
+            "exampleSk": "Cez diaľnicu vedie nadchod pre chodcov.",
+            "exampleUk": "Через автомагістраль веде надземний перехід для пішоходів."
+          },
+          {
+            "wordId": "b1-u11-l07-v-meste-w04",
+            "sk": "chodec",
+            "uk": "пішохід",
+            "pronunciationUk": "ходец",
+            "exampleSk": "Chodci musia počas opravy použiť druhý chodník.",
+            "exampleUk": "Під час ремонту пішоходи мають користуватися іншим тротуаром."
+          },
+          {
+            "wordId": "b1-u11-l07-v-meste-w05",
+            "sk": "eskalátor",
+            "uk": "ескалатор",
+            "pronunciationUk": "ескала:тор",
+            "exampleSk": "Vyjdite eskalátorom na prvé poschodie.",
+            "exampleUk": "Підніміться ескалатором на перший поверх."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b1-u11-l07-v-meste-w01",
+          "sk": "dostať sa",
+          "uk": "дістатися, потрапити",
+          "pronunciationUk": "достать са",
+          "exampleSk": "Ako sa dostanem na hlavnú stanicu?",
+          "exampleUk": "Як мені дістатися до головного вокзалу?",
+          "level": "B1",
+          "topic": "Дієслова руху з префіксами",
+          "tags": [
+            "b1-u11",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u11-l07-v-meste-w02",
+          "sk": "podchod",
+          "uk": "підземний перехід",
+          "pronunciationUk": "подход",
+          "exampleSk": "Na druhú stranu sa dostanete podchodom.",
+          "exampleUk": "На інший бік ви потрапите підземним переходом.",
+          "level": "B1",
+          "topic": "Дієслова руху з префіксами",
+          "tags": [
+            "b1-u11",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u11-l07-v-meste-w03",
+          "sk": "nadchod",
+          "uk": "надземний перехід",
+          "pronunciationUk": "надход",
+          "exampleSk": "Cez diaľnicu vedie nadchod pre chodcov.",
+          "exampleUk": "Через автомагістраль веде надземний перехід для пішоходів.",
+          "level": "B1",
+          "topic": "Дієслова руху з префіксами",
+          "tags": [
+            "b1-u11",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u11-l07-v-meste-w04",
+          "sk": "chodec",
+          "uk": "пішохід",
+          "pronunciationUk": "ходец",
+          "exampleSk": "Chodci musia počas opravy použiť druhý chodník.",
+          "exampleUk": "Під час ремонту пішоходи мають користуватися іншим тротуаром.",
+          "level": "B1",
+          "topic": "Дієслова руху з префіксами",
+          "tags": [
+            "b1-u11",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u11-l07-v-meste-w05",
+          "sk": "eskalátor",
+          "uk": "ескалатор",
+          "pronunciationUk": "ескала:тор",
+          "exampleSk": "Vyjdite eskalátorom na prvé poschodie.",
+          "exampleUk": "Підніміться ескалатором на перший поверх.",
+          "level": "B1",
+          "topic": "Дієслова руху з префіксами",
+          "tags": [
+            "b1-u11",
+            "b1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b1-u11-l07-v-meste-ex01",
+          "lessonId": "b1-u11-l07-v-meste",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "podchod",
+              "right": "підземний перехід"
+            },
+            {
+              "left": "nadchod",
+              "right": "надземний перехід"
+            },
+            {
+              "left": "chodec",
+              "right": "пішохід"
+            },
+            {
+              "left": "eskalátor",
+              "right": "ескалатор"
+            },
+            {
+              "left": "za rohom",
+              "right": "за рогом"
+            },
+            {
+              "left": "oproti",
+              "right": "навпроти"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b1-u11-l07-v-meste-w02",
+            "b1-u11-l07-v-meste-w03",
+            "b1-u11-l07-v-meste-w04",
+            "b1-u11-l07-v-meste-w05"
+          ]
+        },
+        {
+          "id": "b1-u11-l07-v-meste-ex02",
+          "lessonId": "b1-u11-l07-v-meste",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Na druhej križovatke "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "odbočte",
+                "zíďte",
+                "vojdite"
+              ],
+              "correct": "odbočte"
+            },
+            {
+              "text": " doľava."
+            }
+          ],
+          "explanation": "Поворот на перехресті — odbočiť: odbočte.",
+          "order": 2
+        },
+        {
+          "id": "b1-u11-l07-v-meste-ex03",
+          "lessonId": "b1-u11-l07-v-meste",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Tu cez cestu prejsť nemôžete, "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "zíďte",
+                "obíďte",
+                "vyjdite"
+              ],
+              "correct": "zíďte"
+            },
+            {
+              "text": " do podchodu."
+            }
+          ],
+          "explanation": "Підземний перехід унизу — zísť do podchodu.",
+          "order": 3,
+          "wordIds": [
+            "b1-u11-l07-v-meste-w02",
+            "b1-u11-l07-v-meste-w04"
+          ]
+        },
+        {
+          "id": "b1-u11-l07-v-meste-ex04",
+          "lessonId": "b1-u11-l07-v-meste",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши наказ для «vy» (ідіть).",
+          "sentence": "______ rovno až na námestie.",
+          "acceptedAnswers": [
+            "Choďte"
+          ],
+          "explanation": "Наказовий від chodiť для vy — choďte.",
+          "order": 4
+        },
+        {
+          "id": "b1-u11-l07-v-meste-ex05",
+          "lessonId": "b1-u11-l07-v-meste",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Lekáreň je hneď za roh vedľa pošty.",
+          "errorToken": "roh",
+          "correctToken": "rohom",
+          "explanation": "za + орудний (де?): za rohom.",
+          "order": 5
+        },
+        {
+          "id": "b1-u11-l07-v-meste-ex06",
+          "lessonId": "b1-u11-l07-v-meste",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перетвори пояснення з «vy» на «ty».",
+          "source": "Prejdite cez most a zíďte k rieke.",
+          "acceptedAnswers": [
+            "Prejdi cez most a zíď k rieke."
+          ],
+          "explanation": "prejdite → prejdi, zíďte → zíď.",
+          "order": 6
+        },
+        {
+          "id": "b1-u11-l07-v-meste-ex07",
+          "lessonId": "b1-u11-l07-v-meste",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає табличка «Chodci, použite podchod»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Пішоходам прохід заборонено",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Пішоходи, користуйтеся підземним переходом",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Пішоходи, переходьте по зебрі",
+              "correct": false
+            }
+          ],
+          "explanation": "chodci — пішоходи; podchod — підземний перехід.",
+          "order": 7
+        },
+        {
+          "id": "b1-u11-l07-v-meste-ex08",
+          "lessonId": "b1-u11-l07-v-meste",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Спитай перехожого, як дістатися до вокзалу.",
+          "tokens": [
+            "Ako",
+            "na",
+            "dostanem",
+            "sa",
+            "?",
+            "stanicu"
+          ],
+          "correctOrder": [
+            "Ako",
+            "sa",
+            "dostanem",
+            "na",
+            "stanicu",
+            "?"
+          ],
+          "explanation": "dostať sa na + знахідний.",
+          "order": 8,
+          "wordIds": [
+            "b1-u11-l07-v-meste-w01"
+          ]
+        },
+        {
+          "id": "b1-u11-l07-v-meste-ex09",
+          "lessonId": "b1-u11-l07-v-meste",
+          "type": "dialogue_order",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Розстав діалог у правильному порядку.",
+          "lines": [
+            {
+              "id": "l6",
+              "sk": "Košičan: Nemáte za čo."
+            },
+            {
+              "id": "l1",
+              "sk": "Turista: Prepáčte, ako sa dostanem k Dómu svätej Alžbety?"
+            },
+            {
+              "id": "l2",
+              "sk": "Košičan: Choďte rovno po Hlavnej ulici."
+            },
+            {
+              "id": "l5",
+              "sk": "Turista: Ďakujem pekne."
+            },
+            {
+              "id": "l4",
+              "sk": "Košičan: Nie, je to kúsok, asi päť minút."
+            },
+            {
+              "id": "l3",
+              "sk": "Turista: Je to ďaleko pešo?"
+            }
+          ],
+          "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5",
+            "l6"
+          ],
+          "order": 9,
+          "wordIds": [
+            "b1-u11-l07-v-meste-w01"
+          ]
+        },
+        {
+          "id": "b1-u11-l07-v-meste-ex10",
+          "lessonId": "b1-u11-l07-v-meste",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай оголошення про обхід.",
+          "document": {
+            "title": "Uzávierka chodníka",
+            "fields": [
+              {
+                "label": "Miesto",
+                "value": "Obchodná ulica 12 – 20"
+              },
+              {
+                "label": "Dôvod",
+                "value": "rekonštrukcia vodovodu"
+              },
+              {
+                "label": "Termín",
+                "value": "5. 10. – 30. 11."
+              },
+              {
+                "label": "Obchádzka pre chodcov",
+                "value": "po protiľahlej strane ulice"
+              },
+              {
+                "label": "Pozor",
+                "value": "priechod pre chodcov pri čísle 14 je zrušený"
+              }
+            ]
+          },
+          "question": "Як пішоходи мають обходити ремонт?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "через підземний перехід",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "по переходу біля будинку 14",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "по протилежному боці вулиці",
+              "correct": true
+            }
+          ],
+          "explanation": "obchádzka po protiľahlej strane — обхід протилежним боком; перехід біля № 14 скасовано.",
+          "order": 10,
+          "wordIds": [
+            "b1-u11-l07-v-meste-w04"
+          ]
+        },
+        {
+          "id": "b1-u11-l07-v-meste-ex11",
+          "lessonId": "b1-u11-l07-v-meste",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення від колеги.",
+          "message": {
+            "sender": "Kolega Marek",
+            "body": "Ahoj, firma je kúsok od zastávky Trnavské mýto. Z električky vystúp, zíď do podchodu a vyjdi pri obchodnom dome. Potom choď rovno asi sto metrov a vojdi do sklenenej budovy oproti banke. Recepcia je na prízemí."
+          },
+          "question": "Де вхід до фірми?",
+          "options": [
+            {
+              "id": "a",
+              "text": "у банк поруч із підземним переходом",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "в універмаг біля зупинки",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "у скляну будівлю навпроти банку",
+              "correct": true
+            }
+          ],
+          "explanation": "vojdi do sklenenej budovy oproti banke.",
+          "order": 11,
+          "wordIds": [
+            "b1-u11-l07-v-meste-w02",
+            "b1-u11-l07-v-meste-w04"
+          ]
+        },
+        {
+          "id": "b1-u11-l07-v-meste-ex12",
+          "lessonId": "b1-u11-l07-v-meste",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Okoloidúca",
+              "sk": "Prepáčte, idem dobre na stanicu?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Nie, musíte sa vrátiť a na križovatke odbočiť doprava.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Nie, musíte prísť naspäť a križovatka doprava.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Nie, musíte sa vrátiť a na križovatku odbočiť doprava.",
+              "correct": false
+            }
+          ],
+          "explanation": "Де повернути? — na križovatke (місцевий).",
+          "order": 12
+        },
+        {
+          "id": "b1-u11-l07-v-meste-ex13",
+          "lessonId": "b1-u11-l07-v-meste",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти питаєш, чи далеко до граду.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Je to ďaleko u hradu?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Je to ďaleko k hradu?",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Je to ďaleko do hrad?",
+              "correct": false
+            }
+          ],
+          "explanation": "Напрямок до місця — k hradu (давальний).",
+          "order": 13
+        },
+        {
+          "id": "b1-u11-l07-v-meste-ex14",
+          "lessonId": "b1-u11-l07-v-meste",
+          "type": "cloze_text",
+          "skill": [
+            "grammar",
+            "reading"
+          ],
+          "instruction": "Заповни пропуски в тексті.",
+          "textParts": [
+            {
+              "text": "Vystúpte na zastávke Námestie SNP. "
+            },
+            {
+              "blankId": "b1",
+              "acceptedAnswers": [
+                "Prejdite"
+              ]
+            },
+            {
+              "text": " cez námestie a "
+            },
+            {
+              "blankId": "b2",
+              "acceptedAnswers": [
+                "obíďte"
+              ]
+            },
+            {
+              "text": " fontánu. Potom "
+            },
+            {
+              "blankId": "b3",
+              "acceptedAnswers": [
+                "zíďte"
+              ]
+            },
+            {
+              "text": " po schodoch dole a "
+            },
+            {
+              "blankId": "b4",
+              "acceptedAnswers": [
+                "vojdite"
+              ]
+            },
+            {
+              "text": " do pasáže."
+            }
+          ],
+          "hint": "prejdite, obíďte, zíďte, vojdite",
+          "explanation": "Через — prejdite, довкола — obíďte, униз — zíďte, усередину — vojdite.",
+          "order": 14,
+          "wordIds": [
+            "b1-u11-l07-v-meste-w04"
+          ]
+        },
+        {
+          "id": "b1-u11-l07-v-meste-ex15",
+          "lessonId": "b1-u11-l07-v-meste",
+          "type": "branching_dialogue",
+          "skill": [
+            "dialogue",
+            "real_life"
+          ],
+          "instruction": "Пройди діалог: обирай доречні відповіді.",
+          "successMessage": "Ти допоміг(ла) туристці знайти аптеку!",
+          "startNode": "n1",
+          "nodes": {
+            "n1": {
+              "speaker": "Turistka",
+              "sk": "Prepáčte, je tu niekde lekáreň?",
+              "choices": [
+                {
+                  "id": "n1c2",
+                  "sk": "Áno, je hneď za roh, oproti pošty.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c1",
+                  "sk": "Áno, je hneď za rohom, oproti pošte.",
+                  "next": "n2",
+                  "quality": "best"
+                },
+                {
+                  "id": "n1c3",
+                  "sk": "Áno, je hneď za rohom, oproti poštu.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n2": {
+              "speaker": "Turistka",
+              "sk": "Musím prejsť cez cestu?",
+              "choices": [
+                {
+                  "id": "n2c2",
+                  "sk": "Áno, ale tu nie je priechod. Vyjdite do podchodu.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c3",
+                  "sk": "Áno, ale tu nie je priechod. Obíďte do podchodu.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c1",
+                  "sk": "Áno, ale tu nie je priechod. Zíďte do podchodu.",
+                  "next": "n3",
+                  "quality": "best"
+                }
+              ]
+            },
+            "n3": {
+              "speaker": "Turistka",
+              "sk": "A potom?",
+              "choices": [
+                {
+                  "id": "n3c2",
+                  "sk": "Zíďte na druhej strane hore a choďte doľava.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c3",
+                  "sk": "Vojdite na druhej strane von a choďte doľava.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c1",
+                  "sk": "Vyjdite na druhej strane a choďte doľava.",
+                  "next": "success",
+                  "quality": "best"
+                }
+              ]
+            }
+          },
+          "order": 15,
+          "wordIds": [
+            "b1-u11-l07-v-meste-w02",
+            "b1-u11-l07-v-meste-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Новий колега в місті",
+        "description": "Твій колега з України вперше в Кошицях, і ти пояснюєш йому дорогу телефоном.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Він питає, як спитати перехожого про вокзал.",
+            "options": [
+              {
+                "sk": "Prepáčte, ako sa dostanem v stanici?",
+                "correct": false
+              },
+              {
+                "sk": "Prepáčte, ako sa dostanem na stanicu?",
+                "correct": true
+              },
+              {
+                "sk": "Prepáčte, kde sa dostanem stanicu?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти кажеш йому спуститися в підземний перехід.",
+            "options": [
+              {
+                "sk": "Zíď do podchodu.",
+                "correct": true
+              },
+              {
+                "sk": "Zíď z podchodu dole.",
+                "correct": false
+              },
+              {
+                "sk": "Vyjdi do podchodu.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Потім — повернути праворуч на другому перехресті.",
+            "options": [
+              {
+                "sk": "Na druhej križovatke odboč doprava.",
+                "correct": true
+              },
+              {
+                "sk": "Na druhú križovatku odboč doprava.",
+                "correct": false
+              },
+              {
+                "sk": "Na druhej križovatke odbočil doprava.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Перехожий каже йому: «Je to kúsok.» Що це означає?",
+            "options": [
+              {
+                "sk": "Це лише частина шляху",
+                "correct": false
+              },
+              {
+                "sk": "Це далеко",
+                "correct": false
+              },
+              {
+                "sk": "Це зовсім близько",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вже пояснюєш дорогу як місцевий. Далі — у гори: дієслова руху на туристичній стежці."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вже пояснюєш дорогу як місцевий. Далі — у гори: дієслова руху на туристичній стежці.",
+        "nowYouKnow": [
+          "Ako sa dostanem na / do / k…?",
+          "choďte, prejdite, odbočte, obíďte, zíďte, vyjdite",
+          "za rohom, oproti, vedľa, na druhej križovatke",
+          "podchod, nadchod, chodec, eskalátor"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 15,
+        "xpReward": 40,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b1-u11-l08-na-ture",
+          "title": "У поході"
+        }
+      }
+    }
+  ]
+}
