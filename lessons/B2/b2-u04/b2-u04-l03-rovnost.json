@@ -1,0 +1,902 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u04-l03-rovnost",
+      "sectionId": "b2-u04",
+      "level": "B2",
+      "title": "Рівність і рівні можливості",
+      "topic": "Суспільні теми",
+      "description": "Як говорити про рівність, дискримінацію й нерівну оплату: рівні права та рівні можливості, нейтральні вакансії, відмінність між фактом та інтерпретацією і зважені формули при обговоренні чутливих тем.",
+      "order": 33,
+      "xpReward": 50,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Говорити про рівність і дискримінацію точно, відрізняючи факти від оцінок.",
+      "completionMessage": "Ти вмієш зважено говорити про рівність. Далі — житло й ціни: оренда, іпотека та зміни на ринку.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Суспільні теми",
+        "title": "Рівність і рівні можливості",
+        "shortDescription": "Говорити про рівність і дискримінацію точно, відрізняючи факти від оцінок.",
+        "outcomes": [
+          "розрізняти rovnoprávnosť, rovnosť príležitostí й rovnosť výsledkov",
+          "будувати diskriminácia na základe + родовий",
+          "читати й складати нейтральні вакансії та говорити про odmeňovanie",
+          "розрізняти факт, джерело й інтерпретацію: podľa prieskumu, údaje naznačujú"
+        ],
+        "newWords": [
+          "rovnoprávnosť",
+          "diskriminácia",
+          "predsudok",
+          "znevýhodnený",
+          "odmeňovanie",
+          "bezbariérový"
+        ],
+        "exercisesCount": 15,
+        "reward": "+50 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Рівні права й рівні можливості",
+          "text": "«Rovnoprávnosť» — рівність у правах: закон ставиться до всіх однаково. Закон забороняє дискримінацію (diskriminácia) — гірше ставлення без об’єктивної причини — «na základe pohlavia, veku, pôvodu, viery alebo zdravotného postihnutia» (на підставі + родовий). Окремо говорять про «rovnosť príležitostí» — рівність можливостей: кожен має чесний старт, наприклад доступ до освіти. Це не те саме, що «rovnosť výsledkov» — однакові результати. Люди по-різному оцінюють, яка з цих рівностей головніша, тож у нейтральному тексті показуємо обидва погляди. «Znevýhodnený» — той, хто починає з гіршої позиції, наприклад через інвалідність чи бідність.",
+          "examples": [
+            {
+              "sk": "Zákon zaručuje rovnoprávnosť žien a mužov.",
+              "uk": "Закон гарантує рівноправність жінок і чоловіків."
+            },
+            {
+              "sk": "Zakazuje sa diskriminácia na základe pohlavia alebo veku.",
+              "uk": "Заборонено дискримінацію за ознакою статі чи віку."
+            }
+          ],
+          "shortRule": "rovnoprávnosť ≠ rovnosť výsledkov · na základe + родовий · znevýhodnený — з гіршим стартом",
+          "commonMistakes": [
+            {
+              "mistake": "Zakazuje sa diskriminácia na základe pohlavie.",
+              "correct": "Zakazuje sa diskriminácia na základe pohlavia."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Оплата й вакансії",
+          "text": "Принцип «rovnaká mzda za rovnakú prácu» означає, що оплата залежить від роботи, а не від статі чи походження. «Odmeňovanie» — система оплати праці. Різницю в заробітках чоловіків і жінок називають «platový rozdiel»; її причини дискутують: структура професій, перерви в кар’єрі, а в частині випадків — дискримінація. Нейтральна вакансія називає й чоловічу, й жіночу форму: «pracovník alebo pracovníčka», «zamestnanec / zamestnankyňa» — і не обмежує вік чи стать, якщо це не вимога самої роботи. Про доступність пишуть «bezbariérový vstup» — вхід без бар’єрів для людей на візку чи з коляскою.",
+          "examples": [
+            {
+              "sk": "Hľadáme pracovníka alebo pracovníčku do skladu.",
+              "uk": "Шукаємо працівника чи працівницю на склад."
+            },
+            {
+              "sk": "Budova má bezbariérový vstup.",
+              "uk": "Будівля має безбар’єрний вхід."
+            }
+          ],
+          "shortRule": "rovnaká mzda za rovnakú prácu · pracovník alebo pracovníčka · bezbariérový",
+          "commonMistakes": [
+            {
+              "mistake": "Hľadáme mladého predavača do 30 rokov.",
+              "correct": "Hľadáme predavača alebo predavačku."
+            },
+            {
+              "mistake": "Platová rozdiel je veľký.",
+              "correct": "Platový rozdiel je veľký."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Факт, джерело, інтерпретація",
+          "text": "Про нерівність найлегше говорити, коли ми розрізняємо три речі. Факт: «Ženy v priemere zarábajú menej.» Джерело: «Podľa prieskumu…», «Údaje naznačujú, že…». Інтерпретація — пояснення причин: «Nemožno vylúčiť, že pôsobí aj diskriminácia.» Обережні слова («naznačujú», «nemožno vylúčiť», «čiastočne») показують, що ми не маємо повної певності. «Predsudok» — упереджена думка, сформована без перевірки; на відміну від досвіду, він переноситься на цілу групу людей. Нейтральний мовець не приписує всім зловмисних мотивів і не заперечує проблему без доказів: він називає дані, джерело й можливі пояснення.",
+          "examples": [
+            {
+              "sk": "Podľa prieskumu ženy v priemere zarábajú menej, príčin je však viac.",
+              "uk": "За даними опитування жінки в середньому заробляють менше, але причин кілька."
+            },
+            {
+              "sk": "Údaje naznačujú, že rozdiel čiastočne vysvetľuje štruktúra povolaní.",
+              "uk": "Дані вказують, що різницю частково пояснює структура професій."
+            }
+          ],
+          "shortRule": "podľa prieskumu · údaje naznačujú · nemožno vylúčiť",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u04-l03-rovnost-w01",
+            "sk": "rovnoprávnosť",
+            "uk": "рівноправність",
+            "pronunciationUk": "ровнопра:вность",
+            "exampleSk": "Zákon zaručuje rovnoprávnosť všetkých občanov.",
+            "exampleUk": "Закон гарантує рівноправність усіх громадян."
+          },
+          {
+            "wordId": "b2-u04-l03-rovnost-w02",
+            "sk": "diskriminácia",
+            "uk": "дискримінація",
+            "pronunciationUk": "дискриміна:ція",
+            "exampleSk": "Diskriminácia je horšie zaobchádzanie bez objektívneho dôvodu.",
+            "exampleUk": "Дискримінація — гірше ставлення без об’єктивної причини."
+          },
+          {
+            "wordId": "b2-u04-l03-rovnost-w03",
+            "sk": "predsudok",
+            "uk": "упередження",
+            "pronunciationUk": "предсудок",
+            "exampleSk": "Predsudok vzniká, keď súdime ľudí bez skúsenosti.",
+            "exampleUk": "Упередження виникає, коли ми судимо людей без досвіду."
+          },
+          {
+            "wordId": "b2-u04-l03-rovnost-w04",
+            "sk": "znevýhodnený",
+            "uk": "у гіршому становищі, обмежений у можливостях",
+            "pronunciationUk": "зневи:годнени:",
+            "exampleSk": "Znevýhodnený uchádzač potrebuje viac podpory pri štarte.",
+            "exampleUk": "Кандидат у гіршому становищі потребує більше підтримки на старті."
+          },
+          {
+            "wordId": "b2-u04-l03-rovnost-w05",
+            "sk": "odmeňovanie",
+            "uk": "оплата праці, система винагород",
+            "pronunciationUk": "одменьованьє",
+            "exampleSk": "Pri odmeňovaní rozhoduje práca, nie pohlavie.",
+            "exampleUk": "У системі оплати праці важить робота, а не стать."
+          },
+          {
+            "wordId": "b2-u04-l03-rovnost-w06",
+            "sk": "bezbariérový",
+            "uk": "безбар’єрний",
+            "pronunciationUk": "безбарієрови:",
+            "exampleSk": "Budova má bezbariérový vstup.",
+            "exampleUk": "Будівля має безбар’єрний вхід."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u04-l03-rovnost-w01",
+          "sk": "rovnoprávnosť",
+          "uk": "рівноправність",
+          "pronunciationUk": "ровнопра:вность",
+          "exampleSk": "Zákon zaručuje rovnoprávnosť všetkých občanov.",
+          "exampleUk": "Закон гарантує рівноправність усіх громадян.",
+          "level": "B2",
+          "topic": "Суспільні теми",
+          "tags": [
+            "b2-u04",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u04-l03-rovnost-w02",
+          "sk": "diskriminácia",
+          "uk": "дискримінація",
+          "pronunciationUk": "дискриміна:ція",
+          "exampleSk": "Diskriminácia je horšie zaobchádzanie bez objektívneho dôvodu.",
+          "exampleUk": "Дискримінація — гірше ставлення без об’єктивної причини.",
+          "level": "B2",
+          "topic": "Суспільні теми",
+          "tags": [
+            "b2-u04",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u04-l03-rovnost-w03",
+          "sk": "predsudok",
+          "uk": "упередження",
+          "pronunciationUk": "предсудок",
+          "exampleSk": "Predsudok vzniká, keď súdime ľudí bez skúsenosti.",
+          "exampleUk": "Упередження виникає, коли ми судимо людей без досвіду.",
+          "level": "B2",
+          "topic": "Суспільні теми",
+          "tags": [
+            "b2-u04",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u04-l03-rovnost-w04",
+          "sk": "znevýhodnený",
+          "uk": "у гіршому становищі, обмежений у можливостях",
+          "pronunciationUk": "зневи:годнени:",
+          "exampleSk": "Znevýhodnený uchádzač potrebuje viac podpory pri štarte.",
+          "exampleUk": "Кандидат у гіршому становищі потребує більше підтримки на старті.",
+          "level": "B2",
+          "topic": "Суспільні теми",
+          "tags": [
+            "b2-u04",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u04-l03-rovnost-w05",
+          "sk": "odmeňovanie",
+          "uk": "оплата праці, система винагород",
+          "pronunciationUk": "одменьованьє",
+          "exampleSk": "Pri odmeňovaní rozhoduje práca, nie pohlavie.",
+          "exampleUk": "У системі оплати праці важить робота, а не стать.",
+          "level": "B2",
+          "topic": "Суспільні теми",
+          "tags": [
+            "b2-u04",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u04-l03-rovnost-w06",
+          "sk": "bezbariérový",
+          "uk": "безбар’єрний",
+          "pronunciationUk": "безбарієрови:",
+          "exampleSk": "Budova má bezbariérový vstup.",
+          "exampleUk": "Будівля має безбар’єрний вхід.",
+          "level": "B2",
+          "topic": "Суспільні теми",
+          "tags": [
+            "b2-u04",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u04-l03-rovnost-ex01",
+          "lessonId": "b2-u04-l03-rovnost",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "rovnoprávnosť",
+              "right": "рівність у правах"
+            },
+            {
+              "left": "diskriminácia",
+              "right": "нерівне ставлення без об’єктивної причини"
+            },
+            {
+              "left": "predsudok",
+              "right": "упереджена думка без перевірки"
+            },
+            {
+              "left": "znevýhodnený",
+              "right": "з гіршим стартом"
+            },
+            {
+              "left": "odmeňovanie",
+              "right": "система оплати праці"
+            },
+            {
+              "left": "bezbariérový",
+              "right": "доступний для людей з обмеженою мобільністю"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u04-l03-rovnost-w01",
+            "b2-u04-l03-rovnost-w02",
+            "b2-u04-l03-rovnost-w03",
+            "b2-u04-l03-rovnost-w04",
+            "b2-u04-l03-rovnost-w05",
+            "b2-u04-l03-rovnost-w06"
+          ]
+        },
+        {
+          "id": "b2-u04-l03-rovnost-ex02",
+          "lessonId": "b2-u04-l03-rovnost",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Zakazuje sa diskriminácia na základe "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "pohlavím",
+                "pohlavie",
+                "pohlavia"
+              ],
+              "correct": "pohlavia"
+            },
+            {
+              "text": " alebo veku."
+            }
+          ],
+          "explanation": "Після «na základe» стоїть родовий відмінок: pohlavia.",
+          "order": 2,
+          "wordIds": [
+            "b2-u04-l03-rovnost-w02"
+          ]
+        },
+        {
+          "id": "b2-u04-l03-rovnost-ex03",
+          "lessonId": "b2-u04-l03-rovnost",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Budova má "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "bezbariérový",
+                "bezbariérová",
+                "bezbariérové"
+              ],
+              "correct": "bezbariérový"
+            },
+            {
+              "text": " vstup."
+            }
+          ],
+          "explanation": "Vstup — чоловічий рід: bezbariérový vstup.",
+          "order": 3,
+          "wordIds": [
+            "b2-u04-l03-rovnost-w06"
+          ]
+        },
+        {
+          "id": "b2-u04-l03-rovnost-ex04",
+          "lessonId": "b2-u04-l03-rovnost",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Pri odmeňovaní má platiť zásada rovnakej mzdy za rovnakú ______. (праця, знахідний)",
+          "acceptedAnswers": [
+            "prácu"
+          ],
+          "explanation": "Za rovnakú prácu: прийменник «za» + знахідний відмінок.",
+          "order": 4,
+          "wordIds": [
+            "b2-u04-l03-rovnost-w05"
+          ]
+        },
+        {
+          "id": "b2-u04-l03-rovnost-ex05",
+          "lessonId": "b2-u04-l03-rovnost",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яке оголошення відповідає принципу рівного ставлення?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Hľadáme mladého muža do 30 rokov.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Hľadáme len ženy bez detí.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Hľadáme pracovníka alebo pracovníčku do skladu.",
+              "correct": true
+            }
+          ],
+          "explanation": "Нейтральна вакансія не обмежує вік чи стать без вагомої причини.",
+          "order": 5
+        },
+        {
+          "id": "b2-u04-l03-rovnost-ex06",
+          "lessonId": "b2-u04-l03-rovnost",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Rovnosť príležitostí znamenajú férový štart pre každého.",
+          "errorToken": "znamenajú",
+          "correctToken": "znamená",
+          "explanation": "Підмет «rovnosť» — однина, тому «znamená».",
+          "order": 6
+        },
+        {
+          "id": "b2-u04-l03-rovnost-ex07",
+          "lessonId": "b2-u04-l03-rovnost",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Platová rozdiel medzi ženami a mužmi je predmetom diskusie.",
+          "acceptedAnswers": [
+            "Platový rozdiel medzi ženami a mužmi je predmetom diskusie.",
+            "Platový rozdiel medzi mužmi a ženami je predmetom diskusie."
+          ],
+          "explanation": "Rozdiel — чоловічий рід, тому прикметник «platový».",
+          "order": 7
+        },
+        {
+          "id": "b2-u04-l03-rovnost-ex08",
+          "lessonId": "b2-u04-l03-rovnost",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши жіночу форму сполучником «alebo».",
+          "source": "Hľadáme šikovného predavača.",
+          "acceptedAnswers": [
+            "Hľadáme šikovného predavača alebo predavačku.",
+            "Hľadáme šikovného predavača alebo šikovnú predavačku.",
+            "Hľadáme predavača alebo predavačku."
+          ],
+          "explanation": "Нейтральна вакансія називає й чоловічу, й жіночу форму.",
+          "order": 8
+        },
+        {
+          "id": "b2-u04-l03-rovnost-ex09",
+          "lessonId": "b2-u04-l03-rovnost",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Zamestnávateľ je povinný zabezpečiť rovnaké zaobchádzanie so všetkými zamestnancami.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": true
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": false
+            }
+          ],
+          "explanation": "Офіційний стиль: іменник «zaobchádzanie», «je povinný zabezpečiť».",
+          "order": 9
+        },
+        {
+          "id": "b2-u04-l03-rovnost-ex10",
+          "lessonId": "b2-u04-l03-rovnost",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай оголошення.",
+          "document": {
+            "title": "Ponuka práce",
+            "fields": [
+              {
+                "label": "Pozícia",
+                "value": "pracovník alebo pracovníčka recepcie"
+              },
+              {
+                "label": "Požiadavky",
+                "value": "komunikačné zručnosti, slovenčina na úrovni B2"
+              },
+              {
+                "label": "Ponúkame",
+                "value": "nástup od 1. novembra, rovnaké odmeňovanie bez ohľadu na pohlavie"
+              },
+              {
+                "label": "Pracovisko",
+                "value": "bezbariérový vstup"
+              }
+            ]
+          },
+          "question": "Що в оголошенні свідчить про рівне ставлення?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "шукають лише чоловіка",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "однакова оплата незалежно від статі й безбар’єрний вхід",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "вказаний вік 25–30 років",
+              "correct": false
+            }
+          ],
+          "explanation": "Rovnaké odmeňovanie bez ohľadu na pohlavie a bezbariérový vstup.",
+          "order": 10,
+          "wordIds": [
+            "b2-u04-l03-rovnost-w05",
+            "b2-u04-l03-rovnost-w06"
+          ]
+        },
+        {
+          "id": "b2-u04-l03-rovnost-ex11",
+          "lessonId": "b2-u04-l03-rovnost",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай лист.",
+          "message": {
+            "sender": "Personálne oddelenie",
+            "body": "Dobrý deň, ďakujeme za Váš záujem o pozíciu. Uchádzačov vyberáme podľa skúseností a zručností. Pozývame Vás na pohovor 12. novembra o 10.00. Ak potrebujete bezbariérový prístup alebo iné úpravy, dajte nám to vedieť vopred. S pozdravom Personálne oddelenie"
+          },
+          "question": "Що пропонує компанія кандидатам з особливими потребами?",
+          "options": [
+            {
+              "id": "a",
+              "text": "перенести співбесіду на інший місяць",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "повідомити заздалегідь, щоб вона могла створити потрібні умови",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "нічого не пропонує",
+              "correct": false
+            }
+          ],
+          "explanation": "Компанія просить повідомити про потреби заздалегідь.",
+          "order": 11,
+          "wordIds": [
+            "b2-u04-l03-rovnost-w06"
+          ]
+        },
+        {
+          "id": "b2-u04-l03-rovnost-ex12",
+          "lessonId": "b2-u04-l03-rovnost",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Firma Alfa (vymyslený príklad) zistila pri internej analýze, že ženy v nej zarábajú v priemere o 9 % menej ako muži. Vedenie najprv preverilo, či ide o rovnaké pozície. Ukázalo sa, že časť rozdielu vysvetľuje menší počet vedúcich funkcií u žien a ich častejšia práca na skrátený úväzok. Menšia časť rozdielu však jasné vysvetlenie nemala. Firma preto zaviedla transparentné platové pásma a pravidelné preskúmanie miezd. Niektorí zamestnanci tvrdia, že dôležitejšia než čísla je zmena firemnej kultúry, iní zdôrazňujú, že bez čísel sa problém nedá riešiť. Vedenie vzalo do úvahy oba názory a po roku rozdiel prehodnotí.",
+          "questions": [
+            {
+              "question": "Наскільки менше в середньому заробляють жінки в цій вигаданій фірмі?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "на 90 %",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "на 19 %",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "на 9 %",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що частково пояснило різницю?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "помилка в бухгалтерії",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "різний стаж у всіх працівників",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "менше керівних посад і частіша робота на скорочений день",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що ввела фірма?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "прозорі рівні оплати й регулярний перегляд зарплат",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "заборону переговорів про зарплату",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "квоти на всі посади",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 12
+        },
+        {
+          "id": "b2-u04-l03-rovnost-ex13",
+          "lessonId": "b2-u04-l03-rovnost",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і оціни кожне твердження.",
+          "text": "Diskusia o rovnosti rozlišuje rovnosť príležitostí a rovnosť výsledkov. Rovnosť príležitostí znamená férový štart pre každého. Niektorí zdôrazňujú, že výsledky majú závisieť od úsilia. Iní upozorňujú, že štart nie je pre všetkých rovnaký, preto treba podporovať aj znevýhodnených. Obe strany sa zhodujú, že diskriminácia je neprijateľná.",
+          "statements": [
+            {
+              "sk": "Text rozlišuje dva pojmy rovnosti.",
+              "correct": true
+            },
+            {
+              "sk": "Podľa niektorých majú výsledky závisieť od úsilia.",
+              "correct": true
+            },
+            {
+              "sk": "Obe strany považujú diskrimináciu za neprijateľnú.",
+              "correct": true
+            },
+            {
+              "sk": "Text tvrdí, že znevýhodnených netreba podporovať.",
+              "correct": false
+            },
+            {
+              "sk": "Text hovorí, že štart je pre všetkých rovnaký.",
+              "correct": false
+            }
+          ],
+          "explanation": "Текст подає два погляди та згоду обох сторін, що дискримінація неприйнятна.",
+          "order": 13,
+          "wordIds": [
+            "b2-u04-l03-rovnost-w02",
+            "b2-u04-l03-rovnost-w04"
+          ]
+        },
+        {
+          "id": "b2-u04-l03-rovnost-ex14",
+          "lessonId": "b2-u04-l03-rovnost",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери вдалі формулювання, що розрізняють факт і інтерпретацію.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Všetci zamestnávatelia diskriminujú.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Podľa prieskumu ženy v priemere zarábajú menej, príčin je však viac.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Nemožno vylúčiť, že pôsobí aj diskriminácia.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Údaje naznačujú, že rozdiel čiastočne vysvetľuje štruktúra povolaní.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Je to jasné: ženy sú vždy znevýhodnené.",
+              "correct": false
+            }
+          ],
+          "explanation": "«Všetci» і «vždy» узагальнюють без доказів; обережні формули дозволяють розрізнити факт і пояснення.",
+          "order": 14,
+          "wordIds": [
+            "b2-u04-l03-rovnost-w02",
+            "b2-u04-l03-rovnost-w04"
+          ]
+        },
+        {
+          "id": "b2-u04-l03-rovnost-ex15",
+          "lessonId": "b2-u04-l03-rovnost",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Факт чи інтерпретація?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Fakt"
+            },
+            {
+              "id": "c2",
+              "title": "Interpretácia"
+            }
+          ],
+          "items": [
+            {
+              "sk": "Ženy v správe zarábajú v priemere o 9 % menej",
+              "category": "c1"
+            },
+            {
+              "sk": "Firma zaviedla platové pásma",
+              "category": "c1"
+            },
+            {
+              "sk": "Firma to robí len pre dobrý imidž",
+              "category": "c2"
+            },
+            {
+              "sk": "Rozdiel určite spôsobuje diskriminácia",
+              "category": "c2"
+            },
+            {
+              "sk": "Je to len otázka firemnej kultúry",
+              "category": "c2"
+            },
+            {
+              "sk": "Rozdiel zistili pri internej analýze",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Факти можна перевірити; інтерпретації пояснюють причини й залежать від погляду.",
+          "order": 15,
+          "wordIds": [
+            "b2-u04-l03-rovnost-w02"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Розмова на роботі",
+        "description": "На нараді ви обговорюєте набір нових колег і рівні оплати. Ти хочеш говорити по суті й без упереджень.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Як напишеш нейтральне оголошення?",
+            "options": [
+              {
+                "sk": "Hľadáme kolegu alebo kolegyňu do tímu.",
+                "correct": true
+              },
+              {
+                "sk": "Hľadáme len ženy.",
+                "correct": false
+              },
+              {
+                "sk": "Hľadáme kolegu do 30 rokov.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як скажеш, що за однакову роботу має бути однакова зарплата?",
+            "options": [
+              {
+                "sk": "Za rovnakú prácu má patriť rovnaká mzda.",
+                "correct": true
+              },
+              {
+                "sk": "Za rovnakú prácu má patriť rovnakú mzdu.",
+                "correct": false
+              },
+              {
+                "sk": "Za rovnaká práca má patriť rovnaká mzda.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Як подаси дані про різницю в оплаті?",
+            "options": [
+              {
+                "sk": "Rozdiel neexistuje, nikto sa nesťažuje.",
+                "correct": false
+              },
+              {
+                "sk": "Podľa našej analýzy je platový rozdiel 9 %, príčin však môže byť viac.",
+                "correct": true
+              },
+              {
+                "sk": "Rozdiel je veľký a je to vina šéfov.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Колега каже: «Ženy nemôžu viesť tím.» Що відповіси по суті?",
+            "options": [
+              {
+                "sk": "Si predsudkový človek, nechcem sa s tebou rozprávať.",
+                "correct": false
+              },
+              {
+                "sk": "Máš pravdu, nikdy nič iné nebolo.",
+                "correct": false
+              },
+              {
+                "sk": "Nemyslím si, že to závisí od pohlavia, dôležité sú skúsenosti a schopnosti.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш зважено говорити про рівність. Далі — житло й ціни: оренда, іпотека та зміни на ринку."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш зважено говорити про рівність. Далі — житло й ціни: оренда, іпотека та зміни на ринку.",
+        "nowYouKnow": [
+          "diskriminácia na základe + родовий",
+          "rovnoprávnosť · rovnosť príležitostí ≠ rovnosť výsledkov",
+          "rovnaká mzda za rovnakú prácu · pracovník alebo pracovníčka",
+          "podľa prieskumu · údaje naznačujú · nemožno vylúčiť"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 15,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u04-l04-byvanie-ceny",
+          "title": "Житло й ціни"
+        }
+      }
+    }
+  ]
+}

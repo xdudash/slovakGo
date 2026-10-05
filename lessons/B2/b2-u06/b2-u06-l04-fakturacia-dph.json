@@ -1,0 +1,838 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u06-l04-fakturacia-dph",
+      "sectionId": "b2-u06",
+      "level": "B2",
+      "title": "Фактури й DPH",
+      "topic": "Економіка і бізнес",
+      "description": "Як читати й виставляти фактуру в Словаччині: обов’язкові реквізити, база оподаткування, ставка й сума DPH, платник DPH та IČ DPH, строк оплати — і як ввічливо попросити виправити помилку у фактурі.",
+      "order": 54,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Розуміти фактуру з DPH, перевіряти її реквізити й ділово спілкуватися про виставлення та виправлення фактур.",
+      "completionMessage": "Ти вмієш читати й виставляти фактуру. Далі — бухгалтерія: облік, документи й річна звітність.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Економіка і бізнес",
+        "title": "Фактури й DPH",
+        "shortDescription": "Розуміти фактуру з DPH, перевіряти її реквізити й ділово спілкуватися про виставлення та виправлення фактур.",
+        "outcomes": [
+          "називати основні реквізити фактури",
+          "розрізняти základ dane, sadzbu DPH і sumu s DPH",
+          "пояснювати, хто такий platiteľ DPH і навіщо IČ DPH",
+          "вживати: vystaviť faktúru, faktúra je splatná do…, prosím o vystavenie opravnej faktúry"
+        ],
+        "newWords": [
+          "vystaviť faktúru",
+          "základ dane",
+          "sadzba DPH",
+          "platiteľ DPH",
+          "IČ DPH",
+          "odpočet DPH"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Що має бути у фактурі",
+          "text": "Фактура (faktúra) — документ, яким постачальник вимагає оплату за товар чи послугу. Її «vystavuje» (виставляє) dodávateľ, а оплачує odberateľ. Типові реквізити: obchodné meno a sídlo обох сторін, IČO, DIČ, а в платників DPH — ще й IČ DPH; číslo faktúry; dátum vyhotovenia (дата виставлення) і dátum dodania (дата постачання); опис і кількість; ціна; сума до оплати; dátum splatnosti; банківські дані й variabilný symbol (часто — номер фактури). Точний перелік визначає закон, і він залежить від того, чи ти платник DPH, — звіряйся з бухгалтером або з інформацією фінансової управи. Строк оплати: «Faktúra je splatná do 14 dní.» — do + родовий.",
+          "examples": [
+            {
+              "sk": "Faktúru vystavím hneď po dokončení prác.",
+              "uk": "Фактуру виставлю одразу після завершення робіт."
+            },
+            {
+              "sk": "Faktúra je splatná do 14 dní.",
+              "uk": "Фактуру треба оплатити протягом 14 днів."
+            }
+          ],
+          "shortRule": "vystaviť faktúru · dodávateľ vystavuje, odberateľ platí · splatná do + родовий",
+          "commonMistakes": [
+            {
+              "mistake": "Faktúra je splatná do 14 dňoch.",
+              "correct": "Faktúra je splatná do 14 dní."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "DPH: база, ставка, сума",
+          "text": "DPH (daň z pridanej hodnoty) — податок на додану вартість. У фактурі платника DPH ціну розкладають на складники: «základ dane» — ціна без податку, «sadzba DPH» — ставка у відсотках, «DPH» — сума податку, а разом — «celkom na úhradu» (сума з DPH). Ставок у Словаччині кілька (базова й знижені), і законодавець їх час від часу змінює, тому конкретне число бери з чинного закону, а не з пам’яті. У мовленні: «Cena je 100 eur bez DPH.», «Cena s DPH je…», «DPH vo výške…». Хто не є платником DPH, податку у фактурі не нараховує й часто пише: «Nie som platiteľ DPH.»",
+          "examples": [
+            {
+              "sk": "Základ dane je 1 000 eur, k tomu sa pripočíta DPH.",
+              "uk": "База оподаткування — 1 000 євро, до неї додається DPH."
+            },
+            {
+              "sk": "Cena je uvedená bez DPH.",
+              "uk": "Ціну вказано без DPH."
+            }
+          ],
+          "shortRule": "základ dane + DPH → celkom na úhradu · bez DPH × s DPH",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Платник DPH і виправлення",
+          "text": "«Platiteľ DPH» — підприємець, зареєстрований для DPH: він нараховує податок у своїх фактурах і, як правило, може відрахувати DPH зі своїх закупівель — це «odpočet DPH». Зареєструватися треба, коли обіг перевищить поріг, визначений законом, а можна й добровільно; поріг і правила змінюються, тож перевіряй актуальні. Номер платника — «IČ DPH» (починається літерами SK). Якщо у фактурі помилка, її не перекреслюють і не виправляють ручкою: просять новий документ — opravnú faktúru чи dobropis. Ввічливо: «Vo faktúre č. … je uvedená nesprávna suma. Prosím o vystavenie opravnej faktúry.» Зверни увагу: перед «f» кажемо «vo», а не «v»: vo faktúre.",
+          "examples": [
+            {
+              "sk": "Vo faktúre chýba dátum dodania.",
+              "uk": "У фактурі бракує дати постачання."
+            },
+            {
+              "sk": "Prosím o vystavenie opravnej faktúry.",
+              "uk": "Прошу виставити виправлену фактуру."
+            }
+          ],
+          "shortRule": "vo faktúre · prosím o vystavenie + родовий",
+          "commonMistakes": [
+            {
+              "mistake": "V faktúre je chyba.",
+              "correct": "Vo faktúre je chyba."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u06-l04-fakturacia-dph-w01",
+            "sk": "vystaviť faktúru",
+            "uk": "виставити фактуру",
+            "pronunciationUk": "віставіть факту:ру",
+            "exampleSk": "Faktúru vystavím hneď po dokončení prác.",
+            "exampleUk": "Фактуру виставлю одразу після завершення робіт."
+          },
+          {
+            "wordId": "b2-u06-l04-fakturacia-dph-w02",
+            "sk": "základ dane",
+            "uk": "база оподаткування, ціна без податку",
+            "pronunciationUk": "за:клад дане",
+            "exampleSk": "Základ dane je cena bez DPH.",
+            "exampleUk": "База оподаткування — це ціна без DPH."
+          },
+          {
+            "wordId": "b2-u06-l04-fakturacia-dph-w03",
+            "sk": "sadzba DPH",
+            "uk": "ставка DPH",
+            "pronunciationUk": "садзба де-пе-га",
+            "exampleSk": "Pri niektorých potravinách sa uplatňuje znížená sadzba DPH.",
+            "exampleUk": "Для деяких продуктів застосовують знижену ставку DPH."
+          },
+          {
+            "wordId": "b2-u06-l04-fakturacia-dph-w04",
+            "sk": "platiteľ DPH",
+            "uk": "платник DPH",
+            "pronunciationUk": "платітель де-пе-га",
+            "exampleSk": "Ako platiteľ DPH musím na faktúre uviesť IČ DPH.",
+            "exampleUk": "Як платник DPH я мушу вказати у фактурі IČ DPH."
+          },
+          {
+            "wordId": "b2-u06-l04-fakturacia-dph-w05",
+            "sk": "IČ DPH",
+            "uk": "ідентифікаційний номер платника DPH",
+            "pronunciationUk": "і-че де-пе-га",
+            "exampleSk": "IČ DPH nájdete v hlavičke faktúry.",
+            "exampleUk": "IČ DPH знайдете в шапці фактури."
+          },
+          {
+            "wordId": "b2-u06-l04-fakturacia-dph-w06",
+            "sk": "odpočet DPH",
+            "uk": "відрахування вхідного DPH",
+            "pronunciationUk": "одпочет де-пе-га",
+            "exampleSk": "Na odpočet DPH potrebujem správnu faktúru od dodávateľa.",
+            "exampleUk": "Для відрахування DPH мені потрібна правильна фактура від постачальника."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u06-l04-fakturacia-dph-w01",
+          "sk": "vystaviť faktúru",
+          "uk": "виставити фактуру",
+          "pronunciationUk": "віставіть факту:ру",
+          "exampleSk": "Faktúru vystavím hneď po dokončení prác.",
+          "exampleUk": "Фактуру виставлю одразу після завершення робіт.",
+          "level": "B2",
+          "topic": "Економіка і бізнес",
+          "tags": [
+            "b2-u06",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u06-l04-fakturacia-dph-w02",
+          "sk": "základ dane",
+          "uk": "база оподаткування, ціна без податку",
+          "pronunciationUk": "за:клад дане",
+          "exampleSk": "Základ dane je cena bez DPH.",
+          "exampleUk": "База оподаткування — це ціна без DPH.",
+          "level": "B2",
+          "topic": "Економіка і бізнес",
+          "tags": [
+            "b2-u06",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u06-l04-fakturacia-dph-w03",
+          "sk": "sadzba DPH",
+          "uk": "ставка DPH",
+          "pronunciationUk": "садзба де-пе-га",
+          "exampleSk": "Pri niektorých potravinách sa uplatňuje znížená sadzba DPH.",
+          "exampleUk": "Для деяких продуктів застосовують знижену ставку DPH.",
+          "level": "B2",
+          "topic": "Економіка і бізнес",
+          "tags": [
+            "b2-u06",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u06-l04-fakturacia-dph-w04",
+          "sk": "platiteľ DPH",
+          "uk": "платник DPH",
+          "pronunciationUk": "платітель де-пе-га",
+          "exampleSk": "Ako platiteľ DPH musím na faktúre uviesť IČ DPH.",
+          "exampleUk": "Як платник DPH я мушу вказати у фактурі IČ DPH.",
+          "level": "B2",
+          "topic": "Економіка і бізнес",
+          "tags": [
+            "b2-u06",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u06-l04-fakturacia-dph-w05",
+          "sk": "IČ DPH",
+          "uk": "ідентифікаційний номер платника DPH",
+          "pronunciationUk": "і-че де-пе-га",
+          "exampleSk": "IČ DPH nájdete v hlavičke faktúry.",
+          "exampleUk": "IČ DPH знайдете в шапці фактури.",
+          "level": "B2",
+          "topic": "Економіка і бізнес",
+          "tags": [
+            "b2-u06",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u06-l04-fakturacia-dph-w06",
+          "sk": "odpočet DPH",
+          "uk": "відрахування вхідного DPH",
+          "pronunciationUk": "одпочет де-пе-га",
+          "exampleSk": "Na odpočet DPH potrebujem správnu faktúru od dodávateľa.",
+          "exampleUk": "Для відрахування DPH мені потрібна правильна фактура від постачальника.",
+          "level": "B2",
+          "topic": "Економіка і бізнес",
+          "tags": [
+            "b2-u06",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u06-l04-fakturacia-dph-ex01",
+          "lessonId": "b2-u06-l04-fakturacia-dph",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "vystaviť faktúru",
+              "right": "виставити фактуру"
+            },
+            {
+              "left": "základ dane",
+              "right": "ціна без податку"
+            },
+            {
+              "left": "sadzba DPH",
+              "right": "ставка податку у відсотках"
+            },
+            {
+              "left": "platiteľ DPH",
+              "right": "підприємець, зареєстрований для DPH"
+            },
+            {
+              "left": "IČ DPH",
+              "right": "номер платника DPH"
+            },
+            {
+              "left": "odpočet DPH",
+              "right": "відрахування податку з закупівель"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u06-l04-fakturacia-dph-w01",
+            "b2-u06-l04-fakturacia-dph-w02",
+            "b2-u06-l04-fakturacia-dph-w03",
+            "b2-u06-l04-fakturacia-dph-w04",
+            "b2-u06-l04-fakturacia-dph-w05",
+            "b2-u06-l04-fakturacia-dph-w06"
+          ]
+        },
+        {
+          "id": "b2-u06-l04-fakturacia-dph-ex02",
+          "lessonId": "b2-u06-l04-fakturacia-dph",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай фактуру.",
+          "document": {
+            "title": "Faktúra č. 2026/015 (vzor)",
+            "fields": [
+              {
+                "label": "Dodávateľ",
+                "value": "Melnyk Elektro, s. r. o., IČ DPH SK1234567890"
+              },
+              {
+                "label": "Odberateľ",
+                "value": "Hotel Tatra, s. r. o."
+              },
+              {
+                "label": "Predmet",
+                "value": "oprava osvetlenia"
+              },
+              {
+                "label": "Základ dane",
+                "value": "1 000,00 €"
+              },
+              {
+                "label": "DPH 23 %",
+                "value": "230,00 €"
+              },
+              {
+                "label": "Celkom na úhradu",
+                "value": "1 230,00 €"
+              },
+              {
+                "label": "Dátum splatnosti",
+                "value": "20. 11. 2026"
+              }
+            ]
+          },
+          "question": "Скільки становить сам податок?",
+          "options": [
+            {
+              "id": "a",
+              "text": "1 230 євро",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "1 000 євро",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "230 євро",
+              "correct": true
+            }
+          ],
+          "explanation": "Рядок «DPH 23 %: 230,00 €» — сума податку; 1 000 € — база, 1 230 € — разом до оплати.",
+          "order": 2,
+          "wordIds": [
+            "b2-u06-l04-fakturacia-dph-w01",
+            "b2-u06-l04-fakturacia-dph-w02",
+            "b2-u06-l04-fakturacia-dph-w05"
+          ]
+        },
+        {
+          "id": "b2-u06-l04-fakturacia-dph-ex03",
+          "lessonId": "b2-u06-l04-fakturacia-dph",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Хто це робить?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Dodávateľ"
+            },
+            {
+              "id": "c2",
+              "title": "Odberateľ"
+            }
+          ],
+          "items": [
+            {
+              "sk": "uhradí faktúru",
+              "category": "c2"
+            },
+            {
+              "sk": "skontroluje sumu",
+              "category": "c2"
+            },
+            {
+              "sk": "uvedie dátum dodania",
+              "category": "c1"
+            },
+            {
+              "sk": "uvedie variabilný symbol pri platbe",
+              "category": "c2"
+            },
+            {
+              "sk": "vystaví faktúru",
+              "category": "c1"
+            },
+            {
+              "sk": "opraví chybnú faktúru",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Постачальник виставляє й виправляє фактуру, а замовник її перевіряє й оплачує.",
+          "order": 3,
+          "wordIds": [
+            "b2-u06-l04-fakturacia-dph-w01"
+          ]
+        },
+        {
+          "id": "b2-u06-l04-fakturacia-dph-ex04",
+          "lessonId": "b2-u06-l04-fakturacia-dph",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Faktúra je splatná do 14 "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "dňoch",
+                "dní",
+                "dňami"
+              ],
+              "correct": "dní"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Do + родовий відмінок: do 14 dní.",
+          "order": 4,
+          "wordIds": [
+            "b2-u06-l04-fakturacia-dph-w01"
+          ]
+        },
+        {
+          "id": "b2-u06-l04-fakturacia-dph-ex05",
+          "lessonId": "b2-u06-l04-fakturacia-dph",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "blankId": "b1",
+              "options": [
+                "V",
+                "Vo",
+                "Do"
+              ],
+              "correct": "Vo"
+            },
+            {
+              "text": " faktúre chýba dátum dodania."
+            }
+          ],
+          "explanation": "Перед словом на «f» прийменник «v» має форму «vo»: vo faktúre.",
+          "order": 5,
+          "wordIds": [
+            "b2-u06-l04-fakturacia-dph-w01"
+          ]
+        },
+        {
+          "id": "b2-u06-l04-fakturacia-dph-ex06",
+          "lessonId": "b2-u06-l04-fakturacia-dph",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Cena je uvedená ______ DPH, daň sa ešte pripočíta. (без)",
+          "acceptedAnswers": [
+            "bez"
+          ],
+          "explanation": "Якщо податок ще додається, ціну вказано bez DPH.",
+          "order": 6
+        },
+        {
+          "id": "b2-u06-l04-fakturacia-dph-ex07",
+          "lessonId": "b2-u06-l04-fakturacia-dph",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що таке základ dane?",
+          "options": [
+            {
+              "id": "a",
+              "text": "ціна разом із податком",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "сума самого податку",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "ціна без DPH",
+              "correct": true
+            }
+          ],
+          "explanation": "Základ dane — сума, з якої рахують податок, тобто ціна без DPH.",
+          "order": 7
+        },
+        {
+          "id": "b2-u06-l04-fakturacia-dph-ex08",
+          "lessonId": "b2-u06-l04-fakturacia-dph",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Prosím o vystavenie opravnej faktúra.",
+          "errorToken": "faktúra",
+          "correctToken": "faktúry",
+          "explanation": "Vystavenie + родовий відмінок: opravnej faktúry.",
+          "order": 8,
+          "wordIds": [
+            "b2-u06-l04-fakturacia-dph-w01"
+          ]
+        },
+        {
+          "id": "b2-u06-l04-fakturacia-dph-ex09",
+          "lessonId": "b2-u06-l04-fakturacia-dph",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Fakturujem Vám opravu osvetlenie.",
+          "acceptedAnswers": [
+            "Fakturujem Vám opravu osvetlenia.",
+            "Fakturujem Vám za opravu osvetlenia."
+          ],
+          "explanation": "Oprava чого? — родовий відмінок: opravu osvetlenia.",
+          "order": 9
+        },
+        {
+          "id": "b2-u06-l04-fakturacia-dph-ex10",
+          "lessonId": "b2-u06-l04-fakturacia-dph",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Nie som platiteľ DPH, preto na faktúre DPH neuvádzam.",
+          "statement": "Підприємець не є платником DPH, тому не нараховує податку у фактурі.",
+          "correctAnswer": true,
+          "explanation": "Хто не зареєстрований для DPH, податку у фактурі не нараховує.",
+          "order": 10,
+          "wordIds": [
+            "b2-u06-l04-fakturacia-dph-w01",
+            "b2-u06-l04-fakturacia-dph-w04"
+          ]
+        },
+        {
+          "id": "b2-u06-l04-fakturacia-dph-ex11",
+          "lessonId": "b2-u06-l04-fakturacia-dph",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай лист від бухгалтерки замовника.",
+          "message": {
+            "sender": "Eva Kováčová, Hotel Tatra",
+            "body": "Dobrý deň, pán Melnyk, vo faktúre č. 2026/015 ste uviedli nesprávnu sadzbu DPH. Faktúru preto zatiaľ nemôžeme uhradiť. Prosím, vystavte opravný doklad a pošlite nám ho do piatku. Ďakujem. S pozdravom Eva Kováčová, účtovné oddelenie"
+          },
+          "question": "Про що просить бухгалтерка?",
+          "options": [
+            {
+              "id": "a",
+              "text": "виставити виправлений документ і надіслати до п’ятниці",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "сплатити штраф за помилку",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "знизити ціну наполовину",
+              "correct": false
+            }
+          ],
+          "explanation": "Prosím, vystavte opravný doklad — просить виправлений документ; доти фактуру не оплатять.",
+          "order": 11,
+          "wordIds": [
+            "b2-u06-l04-fakturacia-dph-w01",
+            "b2-u06-l04-fakturacia-dph-w03"
+          ]
+        },
+        {
+          "id": "b2-u06-l04-fakturacia-dph-ex12",
+          "lessonId": "b2-u06-l04-fakturacia-dph",
+          "type": "word_bank",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Склади речення.",
+          "wordBank": [
+            "bez",
+            "splatná",
+            "uvádzam"
+          ],
+          "items": [
+            {
+              "sentence": "Faktúra je ______ do 14 dní.",
+              "correct": "splatná"
+            },
+            {
+              "sentence": "Cena je uvedená ______ DPH.",
+              "correct": "bez"
+            },
+            {
+              "sentence": "Ako platiteľ DPH ______ na faktúre IČ DPH.",
+              "correct": "uvádzam"
+            }
+          ],
+          "extraWords": [
+            "splatnú",
+            "bezo",
+            "uvádzať"
+          ],
+          "explanation": "Splatná узгоджується з faktúra; bez DPH; після «ako platiteľ» — особова форма uvádzam.",
+          "order": 12,
+          "wordIds": [
+            "b2-u06-l04-fakturacia-dph-w01",
+            "b2-u06-l04-fakturacia-dph-w04",
+            "b2-u06-l04-fakturacia-dph-w05"
+          ]
+        },
+        {
+          "id": "b2-u06-l04-fakturacia-dph-ex13",
+          "lessonId": "b2-u06-l04-fakturacia-dph",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Odberateľ",
+              "sk": "Dobrý deň, je cena 1 000 eur s DPH, alebo bez DPH?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Je to cena bez DPH, DPH sa pripočítať podľa sadzby.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Je to cena bez DPH, DPH sa pripočíta podľa platnej sadzby.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Neviem, to nikoho nezaujíma.",
+              "correct": false
+            }
+          ],
+          "explanation": "Чітка відповідь: ціна без DPH, податок додається за чинною ставкою; «sa pripočíta» — особова форма.",
+          "order": 13,
+          "wordIds": [
+            "b2-u06-l04-fakturacia-dph-w03"
+          ]
+        },
+        {
+          "id": "b2-u06-l04-fakturacia-dph-ex14",
+          "lessonId": "b2-u06-l04-fakturacia-dph",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти просиш постачальника виправити суму у фактурі.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Vo faktúre je uvedená nesprávna suma. Prosím o vystaviť opravnú faktúru.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "V faktúre je zlá suma, opravte to hneď!!!",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Vo faktúre je uvedená nesprávna suma. Prosím o vystavenie opravnej faktúry.",
+              "correct": true
+            }
+          ],
+          "explanation": "Prosím o + іменник (vystavenie) + родовий; «vo faktúre»; без окликів і наказового тону.",
+          "order": 14,
+          "wordIds": [
+            "b2-u06-l04-fakturacia-dph-w01"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перша фактура Тараса",
+        "description": "Тарас закінчив ремонт освітлення в готелі й виставляє свою першу фактуру з DPH.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Хто в цій угоді dodávateľ?",
+            "options": [
+              {
+                "text": "готель, бо він замовив роботу",
+                "correct": false
+              },
+              {
+                "text": "банк, через який ідуть платежі",
+                "correct": false
+              },
+              {
+                "text": "Тарас, бо він виконав роботу",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як він уточнить ціну?",
+            "options": [
+              {
+                "sk": "Cena je uvedená bez DPH.",
+                "correct": true
+              },
+              {
+                "sk": "Cena je uvedená bez daň.",
+                "correct": false
+              },
+              {
+                "sk": "Cena uvedená bez je.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Як вкаже строк оплати?",
+            "options": [
+              {
+                "sk": "Faktúra je splatná do 14 dňoch.",
+                "correct": false
+              },
+              {
+                "sk": "Faktúra je splatná do 14 dní.",
+                "correct": true
+              },
+              {
+                "sk": "Faktúra splatná 14 dní do.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Готель знайшов помилку. Як відповість Тарас?",
+            "options": [
+              {
+                "sk": "Ďakujem za upozornenie, opravnú faktúru Vám pošlem do piatku.",
+                "correct": true
+              },
+              {
+                "sk": "Ďakujem za upozornenie, opravnú faktúru Vám poslať do piatku.",
+                "correct": false
+              },
+              {
+                "sk": "To nie je môj problém.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш читати й виставляти фактуру. Далі — бухгалтерія: облік, документи й річна звітність."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш читати й виставляти фактуру. Далі — бухгалтерія: облік, документи й річна звітність.",
+        "nowYouKnow": [
+          "dodávateľ vystavuje · odberateľ platí · splatná do + родовий",
+          "základ dane + DPH → celkom na úhradu",
+          "platiteľ DPH · IČ DPH · odpočet DPH",
+          "vo faktúre · prosím o vystavenie opravnej faktúry"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u06-l05-uctovnictvo",
+          "title": "Бухгалтерія й облік"
+        }
+      }
+    }
+  ]
+}

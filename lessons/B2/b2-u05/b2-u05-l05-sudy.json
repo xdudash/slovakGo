@@ -1,0 +1,937 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u05-l05-sudy",
+      "sectionId": "b2-u05",
+      "level": "B2",
+      "title": "Суди: як працює судова система",
+      "topic": "Право і права споживача",
+      "description": "Як влаштовані суди в Словаччині з погляду пересічної людини: інстанції, хто такі žalobca і žalovaný, що відбувається на pojednávaní, що таке rozsudok і platobný rozkaz та чому важливо читати poučenie й дотримуватися строків.",
+      "order": 45,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Розуміти основні етапи цивільного процесу й вчасно та правильно реагувати на листи із суду.",
+      "completionMessage": "Ти розумієш, як працює суд. Далі — адвокат: коли він потрібен і як із ним співпрацювати.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Право і права споживача",
+        "title": "Суди: як працює судова система",
+        "shortDescription": "Розуміти основні етапи цивільного процесу й вчасно та правильно реагувати на листи із суду.",
+        "outcomes": [
+          "називати інстанції й учасників цивільного процесу",
+          "розуміти слова žaloba, pojednávanie, rozsudok, platobný rozkaz",
+          "вживати podať žalobu proti + давальний та žalovať + знахідний",
+          "знаходити в poučení строк і спосіб захисту"
+        ],
+        "newWords": [
+          "žaloba",
+          "žalobca",
+          "žalovaný",
+          "pojednávanie",
+          "rozsudok",
+          "platobný rozkaz"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Інстанції й учасники",
+          "text": "Більшість цивільних справ (споживчі спори, борги, оренда) зазвичай починається в okresnom súde — це перша інстанція. Рішення першої інстанції можна оскаржити: про odvolanie зазвичай вирішує krajský súd. Над ними стоїть Najvyšší súd, а окремо діє Ústavný súd, який захищає конституцію й основні права. Систему судів останніми роками реформували, тож який саме суд розглядатиме твою справу, перевіряй на офіційних сторінках. Учасники: žalobca (позивач) подає žalobu, žalovaný (відповідач) — той, проти кого вона спрямована. Рішення ухвалює sudca або sudkyňa.",
+          "examples": [
+            {
+              "sk": "Žalobca podal žalobu na okresný súd.",
+              "uk": "Позивач подав позов до окружного суду."
+            },
+            {
+              "sk": "O odvolaní rozhoduje krajský súd.",
+              "uk": "Про апеляцію вирішує обласний суд."
+            }
+          ],
+          "shortRule": "okresný súd → krajský súd → Najvyšší súd · Ústavný súd окремо · žalobca ≠ žalovaný",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Žaloba a pojednávanie",
+          "text": "Žaloba — письмова заява до суду, у якій žalobca описує факти, називає докази й пише, чого саме вимагає. За подання зазвичай сплачують súdny poplatok; його розмір і винятки перевір на офіційних сторінках. Суд надсилає копію позову відповідачеві, і той може письмово висловитися (vyjadrenie). Далі часто призначають pojednávanie — судове засідання, на якому сторони й svedkovia виступають перед суддею. Конструкції: «podať žalobu proti» + давальний («proti predajcovi») або «žalovať» + знахідний («žalovať predajcu»); повістка — «predvolanie na pojednávanie». Якщо не можеш прийти, заздалегідь письмово повідом суд і поясни причину.",
+          "examples": [
+            {
+              "sk": "Podal som žalobu proti predajcovi.",
+              "uk": "Я подав позов проти продавця."
+            },
+            {
+              "sk": "Pojednávanie sa uskutoční 12. mája.",
+              "uk": "Судове засідання відбудеться 12 травня."
+            }
+          ],
+          "shortRule": "podať žalobu proti + давальний · žalovať + знахідний · predvolanie na pojednávanie",
+          "commonMistakes": [
+            {
+              "mistake": "Podal som žalobu proti predajca.",
+              "correct": "Podal som žalobu proti predajcovi."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Rozsudok, platobný rozkaz a lehoty",
+          "text": "Справа зазвичай закінчується rozsudkom — рішенням суду. Він стає právoplatný (набирає законної сили), коли його вже не можна оскаржити звичайним способом. У простих грошових справах суд може видати platobný rozkaz — наказ сплатити без засідання. Хто з ним не згоден, може подати odpor (заперечення); тоді справа зазвичай продовжується звичайним шляхом. Головне — уважно прочитати poučenie: там написано, чи можна захищатися, як і в який строк. Строки короткі й зазвичай рахуються від дня doručenia (вручення), тож судовий лист не відкладай: «Lehota plynie odo dňa doručenia.»",
+          "examples": [
+            {
+              "sk": "Proti platobnému rozkazu môžete podať odpor.",
+              "uk": "Проти платіжного наказу можна подати заперечення."
+            },
+            {
+              "sk": "Rozsudok nadobudol právoplatnosť.",
+              "uk": "Рішення набрало законної сили."
+            }
+          ],
+          "shortRule": "rozsudok → právoplatnosť · platobný rozkaz → odpor · lehota plynie odo dňa doručenia",
+          "commonMistakes": [
+            {
+              "mistake": "Proti platobný rozkaz podal odpor.",
+              "correct": "Proti platobnému rozkazu podal odpor."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u05-l05-sudy-w01",
+            "sk": "žaloba",
+            "uk": "позов",
+            "pronunciationUk": "жалоба",
+            "exampleSk": "Žalobu treba podať písomne a podpísať.",
+            "exampleUk": "Позов треба подати письмово й підписати."
+          },
+          {
+            "wordId": "b2-u05-l05-sudy-w02",
+            "sk": "žalobca",
+            "uk": "позивач",
+            "pronunciationUk": "жалобца",
+            "exampleSk": "Žalobca k žalobe priložil zmluvu a faktúry.",
+            "exampleUk": "Позивач додав до позову договір і рахунки."
+          },
+          {
+            "wordId": "b2-u05-l05-sudy-w03",
+            "sk": "žalovaný",
+            "uk": "відповідач",
+            "pronunciationUk": "жаловани:",
+            "exampleSk": "Žalovaný sa k žalobe písomne vyjadril.",
+            "exampleUk": "Відповідач письмово висловився щодо позову."
+          },
+          {
+            "wordId": "b2-u05-l05-sudy-w04",
+            "sk": "pojednávanie",
+            "uk": "судове засідання",
+            "pronunciationUk": "поєдна:ваньє",
+            "exampleSk": "Pojednávanie bolo odročené na jún.",
+            "exampleUk": "Судове засідання перенесли на червень."
+          },
+          {
+            "wordId": "b2-u05-l05-sudy-w05",
+            "sk": "rozsudok",
+            "uk": "рішення суду",
+            "pronunciationUk": "розсудок",
+            "exampleSk": "Súd vyhlásil rozsudok v prospech žalobcu.",
+            "exampleUk": "Суд оголосив рішення на користь позивача."
+          },
+          {
+            "wordId": "b2-u05-l05-sudy-w06",
+            "sk": "platobný rozkaz",
+            "uk": "платіжний наказ (суду)",
+            "pronunciationUk": "платобни: розказ",
+            "exampleSk": "Platobný rozkaz mi prišiel poštou do vlastných rúk.",
+            "exampleUk": "Платіжний наказ надійшов мені поштою з врученням особисто."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u05-l05-sudy-w01",
+          "sk": "žaloba",
+          "uk": "позов",
+          "pronunciationUk": "жалоба",
+          "exampleSk": "Žalobu treba podať písomne a podpísať.",
+          "exampleUk": "Позов треба подати письмово й підписати.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l05-sudy-w02",
+          "sk": "žalobca",
+          "uk": "позивач",
+          "pronunciationUk": "жалобца",
+          "exampleSk": "Žalobca k žalobe priložil zmluvu a faktúry.",
+          "exampleUk": "Позивач додав до позову договір і рахунки.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l05-sudy-w03",
+          "sk": "žalovaný",
+          "uk": "відповідач",
+          "pronunciationUk": "жаловани:",
+          "exampleSk": "Žalovaný sa k žalobe písomne vyjadril.",
+          "exampleUk": "Відповідач письмово висловився щодо позову.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l05-sudy-w04",
+          "sk": "pojednávanie",
+          "uk": "судове засідання",
+          "pronunciationUk": "поєдна:ваньє",
+          "exampleSk": "Pojednávanie bolo odročené na jún.",
+          "exampleUk": "Судове засідання перенесли на червень.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l05-sudy-w05",
+          "sk": "rozsudok",
+          "uk": "рішення суду",
+          "pronunciationUk": "розсудок",
+          "exampleSk": "Súd vyhlásil rozsudok v prospech žalobcu.",
+          "exampleUk": "Суд оголосив рішення на користь позивача.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l05-sudy-w06",
+          "sk": "platobný rozkaz",
+          "uk": "платіжний наказ (суду)",
+          "pronunciationUk": "платобни: розказ",
+          "exampleSk": "Platobný rozkaz mi prišiel poštou do vlastných rúk.",
+          "exampleUk": "Платіжний наказ надійшов мені поштою з врученням особисто.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u05-l05-sudy-ex01",
+          "lessonId": "b2-u05-l05-sudy",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "žaloba",
+              "right": "позов"
+            },
+            {
+              "left": "žalobca",
+              "right": "позивач"
+            },
+            {
+              "left": "žalovaný",
+              "right": "відповідач"
+            },
+            {
+              "left": "pojednávanie",
+              "right": "судове засідання"
+            },
+            {
+              "left": "rozsudok",
+              "right": "рішення суду"
+            },
+            {
+              "left": "platobný rozkaz",
+              "right": "наказ сплатити без засідання"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u05-l05-sudy-w01",
+            "b2-u05-l05-sudy-w02",
+            "b2-u05-l05-sudy-w03",
+            "b2-u05-l05-sudy-w04",
+            "b2-u05-l05-sudy-w05",
+            "b2-u05-l05-sudy-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l05-sudy-ex02",
+          "lessonId": "b2-u05-l05-sudy",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Podal som žalobu "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "na",
+                "proti",
+                "pre"
+              ],
+              "correct": "proti"
+            },
+            {
+              "text": " predajcovi."
+            }
+          ],
+          "explanation": "Proti + давальний: proti predajcovi. З «na» потрібен був би знахідний (na predajcu).",
+          "order": 2,
+          "wordIds": [
+            "b2-u05-l05-sudy-w01",
+            "b2-u05-l05-sudy-w02"
+          ]
+        },
+        {
+          "id": "b2-u05-l05-sudy-ex03",
+          "lessonId": "b2-u05-l05-sudy",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Lehota na odvolanie plynie odo dňa ______ rozsudku. (вручення)",
+          "acceptedAnswers": [
+            "doručenia"
+          ],
+          "explanation": "Odo dňa + родовий: odo dňa doručenia — від дня вручення.",
+          "order": 3,
+          "wordIds": [
+            "b2-u05-l05-sudy-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l05-sudy-ex04",
+          "lessonId": "b2-u05-l05-sudy",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Хто такий žalovaný?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "суддя, що веде справу",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "особа, яка подає позов",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "особа, проти якої подано позов",
+              "correct": true
+            }
+          ],
+          "explanation": "Žalobca подає žalobu, а žalovaný — той, проти кого вона спрямована.",
+          "order": 4
+        },
+        {
+          "id": "b2-u05-l05-sudy-ex05",
+          "lessonId": "b2-u05-l05-sudy",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Proti platobnému rozkazu môžete podať odporu v lehote podľa poučenia.",
+          "errorToken": "odporu",
+          "correctToken": "odpor",
+          "explanation": "Podať що? — знахідний відмінок: podať odpor.",
+          "order": 5,
+          "wordIds": [
+            "b2-u05-l05-sudy-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l05-sudy-ex06",
+          "lessonId": "b2-u05-l05-sudy",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Proti platobný rozkaz som podal odpor.",
+          "acceptedAnswers": [
+            "Proti platobnému rozkazu som podal odpor.",
+            "Podal som odpor proti platobnému rozkazu."
+          ],
+          "explanation": "Proti + давальний: proti platobnému rozkazu.",
+          "order": 6,
+          "wordIds": [
+            "b2-u05-l05-sudy-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l05-sudy-ex07",
+          "lessonId": "b2-u05-l05-sudy",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перепиши з дієсловом «žalovať».",
+          "source": "Podala žalobu proti zamestnávateľovi.",
+          "acceptedAnswers": [
+            "Žalovala zamestnávateľa.",
+            "Žalovala svojho zamestnávateľa."
+          ],
+          "explanation": "Žalovať + знахідний: žalovať zamestnávateľa.",
+          "order": 7,
+          "wordIds": [
+            "b2-u05-l05-sudy-w01",
+            "b2-u05-l05-sudy-w02",
+            "b2-u05-l05-sudy-w03"
+          ]
+        },
+        {
+          "id": "b2-u05-l05-sudy-ex08",
+          "lessonId": "b2-u05-l05-sudy",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повістку.",
+          "document": {
+            "title": "Predvolanie na pojednávanie – ukážka",
+            "fields": [
+              {
+                "label": "Súd",
+                "value": "Okresný súd Žilina"
+              },
+              {
+                "label": "Spisová značka",
+                "value": "12C/45/2026"
+              },
+              {
+                "label": "Žalobca",
+                "value": "Elektro Plus, s. r. o."
+              },
+              {
+                "label": "Žalovaný",
+                "value": "Taras Bondar"
+              },
+              {
+                "label": "Termín",
+                "value": "14. 5. 2026 o 9.30 h, pojednávacia miestnosť č. 12"
+              },
+              {
+                "label": "Poučenie",
+                "value": "Ak sa nemôžete dostaviť, oznámte to súdu vopred a uveďte dôvod."
+              }
+            ]
+          },
+          "question": "Що робити, якщо Тарас не зможе прийти?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "просто не приходити",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "заздалегідь повідомити суд і вказати причину",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "надіслати замість себе сусіда",
+              "correct": false
+            }
+          ],
+          "explanation": "Poučenie: oznámte to súdu vopred a uveďte dôvod — повідомте суд заздалегідь і вкажіть причину.",
+          "order": 8,
+          "wordIds": [
+            "b2-u05-l05-sudy-w01",
+            "b2-u05-l05-sudy-w02",
+            "b2-u05-l05-sudy-w03",
+            "b2-u05-l05-sudy-w04"
+          ]
+        },
+        {
+          "id": "b2-u05-l05-sudy-ex09",
+          "lessonId": "b2-u05-l05-sudy",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Iryna pracuje v Trnave. Jedného dňa jej poštár priniesol zásielku do vlastných rúk z okresného súdu. Bol v nej platobný rozkaz: mobilný operátor od nej žiadal zaplatiť faktúru, ktorú však už pred pol rokom uhradila. Iryna si najprv pozorne prečítala poučenie. Zistila, že proti platobnému rozkazu môže podať odpor, ale len v krátkej lehote od doručenia. Našla si výpis z účtu s platbou a poradila sa v bezplatnej poradni. Odpor podala včas a priložila doklad o úhrade. Keby nereagovala, platobný rozkaz by sa mohol stať právoplatným a operátor by mohol peniaze vymáhať. Po čase operátor svoj návrh vzal späť.",
+          "questions": [
+            {
+              "question": "Чому Ірина не погоджувалася з наказом?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "вона вже сплатила цей рахунок",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "суму вказали в чужій валюті",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "вона ніколи не користувалася послугами оператора",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що вона зробила насамперед?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "уважно прочитала poučenie",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "одразу сплатила рахунок удруге",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "викинула лист",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що могло статися, якби вона не відреагувала?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "суд автоматично скасував би наказ",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "оператор мусив би заплатити їй",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "наказ міг набрати законної сили, а оператор — стягувати гроші",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 9,
+          "wordIds": [
+            "b2-u05-l05-sudy-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l05-sudy-ex10",
+          "lessonId": "b2-u05-l05-sudy",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні твердження.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "List zo súdu je najlepšie nechať neotvorený.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "O odvolaní proti rozsudku okresného súdu zvyčajne rozhoduje krajský súd.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Lehota na odpor zvyčajne plynie odo dňa doručenia.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Žalovaný je ten, kto podáva žalobu.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Platobný rozkaz môže súd vydať bez pojednávania.",
+              "correct": true
+            }
+          ],
+          "explanation": "Žalobu подає žalobca; судовий лист треба відкрити одразу, бо строки короткі.",
+          "order": 10,
+          "wordIds": [
+            "b2-u05-l05-sudy-w01",
+            "b2-u05-l05-sudy-w02",
+            "b2-u05-l05-sudy-w03",
+            "b2-u05-l05-sudy-w04",
+            "b2-u05-l05-sudy-w05",
+            "b2-u05-l05-sudy-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l05-sudy-ex11",
+          "lessonId": "b2-u05-l05-sudy",
+          "type": "branching_dialogue",
+          "skill": [
+            "dialogue",
+            "real_life"
+          ],
+          "instruction": "Пройди діалог: обирай доречні відповіді.",
+          "successMessage": "Ти правильно порадив(ла) другові, що робити з платіжним наказом!",
+          "startNode": "n1",
+          "nodes": {
+            "n1": {
+              "speaker": "Oleh",
+              "sk": "Prišiel mi list zo súdu, je v ňom platobný rozkaz. Čo mám robiť?",
+              "choices": [
+                {
+                  "id": "n1c3",
+                  "sk": "Hneď zaplať a nič nečítaj.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c1",
+                  "sk": "Najprv si pozorne prečítaj poučenie a pozri sa na lehotu.",
+                  "next": "n2",
+                  "quality": "best"
+                },
+                {
+                  "id": "n1c2",
+                  "sk": "Nechaj ho tak, samo sa to vyrieši.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n2": {
+              "speaker": "Oleh",
+              "sk": "Ale tú faktúru som už zaplatil.",
+              "choices": [
+                {
+                  "id": "n2c2",
+                  "sk": "Tak ju musíš zaplatiť ešte raz.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c1",
+                  "sk": "Tak môžeš podať odpor a priložiť doklad o úhrade.",
+                  "next": "n3",
+                  "quality": "best"
+                },
+                {
+                  "id": "n2c3",
+                  "sk": "Tak pošli sudcovi SMS.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n3": {
+              "speaker": "Oleh",
+              "sk": "Dokedy to musím stihnúť?",
+              "choices": [
+                {
+                  "id": "n3c2",
+                  "sk": "Kedykoľvek, súd počká.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c3",
+                  "sk": "Až po pojednávaní.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c1",
+                  "sk": "Lehota je uvedená v poučení a zvyčajne plynie odo dňa doručenia.",
+                  "next": "success",
+                  "quality": "best"
+                }
+              ]
+            }
+          },
+          "order": 11,
+          "wordIds": [
+            "b2-u05-l05-sudy-w04",
+            "b2-u05-l05-sudy-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l05-sudy-ex12",
+          "lessonId": "b2-u05-l05-sudy",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Žalovaný sa k žalobe vyjadril v stanovenej lehote.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": true
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": false
+            }
+          ],
+          "explanation": "Терміни (žalovaný, žaloba, v stanovenej lehote) і безособовий стиль — офіційний регістр.",
+          "order": 12,
+          "wordIds": [
+            "b2-u05-l05-sudy-w01",
+            "b2-u05-l05-sudy-w02",
+            "b2-u05-l05-sudy-w03"
+          ]
+        },
+        {
+          "id": "b2-u05-l05-sudy-ex13",
+          "lessonId": "b2-u05-l05-sudy",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Ти — чоловік. Обери доречну відповідь у канцелярії суду.",
+          "dialogue": [
+            {
+              "speaker": "Úradníčka",
+              "sk": "Dobrý deň, čo pre Vás môžem urobiť?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Chcem rozsudok hneď, inak sa budem sťažovať!",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Čau, daj mi ten spis.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Dobrý deň, chcel by som nahliadnuť do spisu vo svojej veci.",
+              "correct": true
+            }
+          ],
+          "explanation": "Ввічлива Vy-форма й конкретне прохання; «Čau» і погрози в суді недоречні.",
+          "order": 13,
+          "wordIds": [
+            "b2-u05-l05-sudy-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l05-sudy-ex14",
+          "lessonId": "b2-u05-l05-sudy",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "V poučení stojí: «Rozsudok nadobudne právoplatnosť, ak sa proti nemu nikto neodvolá.»",
+          "target": "nadobudne právoplatnosť",
+          "options": [
+            {
+              "id": "a",
+              "text": "стане таємним",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "набере законної сили",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "буде негайно скасований",
+              "correct": false
+            }
+          ],
+          "explanation": "Nadobudnúť právoplatnosť — набрати законної сили: рішення вже не можна оскаржити звичайним способом.",
+          "order": 14,
+          "wordIds": [
+            "b2-u05-l05-sudy-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Платіжний наказ поштою",
+        "description": "Тобі вручили лист від суду з платіжним наказом за рахунок, який ти вже сплатив(ла). Ти дієш спокійно й вчасно.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Що зробиш насамперед?",
+            "options": [
+              {
+                "text": "одразу сплачу ще раз",
+                "correct": false
+              },
+              {
+                "text": "прочитаю poučenie й знайду строк",
+                "correct": true
+              },
+              {
+                "text": "відкладу лист на потім",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Яке речення правильне?",
+            "options": [
+              {
+                "sk": "Proti platobnému rozkazu podávam odpor.",
+                "correct": true
+              },
+              {
+                "sk": "Proti platobný rozkaz podávam odpor.",
+                "correct": false
+              },
+              {
+                "sk": "Proti platobnému rozkazu podávam odporom.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Що додаси як доказ?",
+            "options": [
+              {
+                "sk": "výpis z účtu s úhradou faktúry",
+                "correct": true
+              },
+              {
+                "sk": "nič, súd to zistí sám",
+                "correct": false
+              },
+              {
+                "sk": "fotografiu poštára",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Від якого дня зазвичай рахується строк?",
+            "options": [
+              {
+                "text": "від дня, коли ти вирішиш відповісти",
+                "correct": false
+              },
+              {
+                "text": "від дня вручення листа",
+                "correct": true
+              },
+              {
+                "text": "від Нового року",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш, як працює суд. Далі — адвокат: коли він потрібен і як із ним співпрацювати."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш, як працює суд. Далі — адвокат: коли він потрібен і як із ним співпрацювати.",
+        "nowYouKnow": [
+          "okresný → krajský → Najvyšší súd · Ústavný súd окремо",
+          "žalobca · žalovaný · pojednávanie · rozsudok",
+          "podať žalobu proti + давальний · žalovať + знахідний",
+          "platobný rozkaz → odpor · poučenie · lehota odo dňa doručenia"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u05-l06-advokat",
+          "title": "Адвокат: коли й як звертатися"
+        }
+      }
+    }
+  ]
+}

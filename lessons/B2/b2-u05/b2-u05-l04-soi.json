@@ -1,0 +1,886 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u05-l04-soi",
+      "sectionId": "b2-u05",
+      "level": "B2",
+      "title": "SOI: нагляд за продавцями",
+      "topic": "Право і права споживача",
+      "description": "Що робить Slovenská obchodná inšpekcia, коли до неї звертатися, чим вона відрізняється від суду та як написати чіткий podnet: хто, що, коли, докази й чого саме ти просиш.",
+      "order": 44,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Розуміти роль SOI та писати конкретний podnet на перевірку продавця.",
+      "completionMessage": "Ти знаєш, до кого звернутися, щоб перевірити продавця. Далі — суди: як працює суд і що таке žaloba.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Право і права споживача",
+        "title": "SOI: нагляд за продавцями",
+        "shortDescription": "Розуміти роль SOI та писати конкретний podnet на перевірку продавця.",
+        "outcomes": [
+          "пояснювати, чим займається SOI і чим вона відрізняється від суду",
+          "розпізнавати nekalú obchodnú prax та klamlivú reklamu",
+          "будувати podnet na kontrolu та žiadam o preverenie",
+          "додавати докази й описувати факти без оцінок"
+        ],
+        "newWords": [
+          "dozor",
+          "inšpekcia",
+          "inšpektor",
+          "nekalá obchodná prax",
+          "klamlivý",
+          "preveriť"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "SOI: що вона робить",
+          "text": "Slovenská obchodná inšpekcia (SOI) — державний орган, який здійснює dozor над дотриманням правил захисту споживачів. Інспектори перевіряють магазини, інтернет-магазини, заклади харчування й послуги: чи правильно позначено ціни, чи реклама не вводить в оману, чи видають продавці чеки. Якщо знаходять порушення, можуть призначити pokutu й вимагають усунути недоліки. Важливо: SOI — це не суд. Її основна роль — нагляд за дотриманням правил, а не гарантоване вирішення кожного особистого спору про гроші. Окрім того, SOI зазвичай бере участь і в позасудовому вирішенні спорів, але як саме, перевір на її офіційних сторінках.",
+          "examples": [
+            {
+              "sk": "SOI vykonáva dozor nad predajcami.",
+              "uk": "SOI здійснює нагляд за продавцями."
+            },
+            {
+              "sk": "Inšpektor preveril označenie cien v obchode.",
+              "uk": "Інспектор перевірив позначення цін у магазині."
+            }
+          ],
+          "shortRule": "SOI = dozor · inšpekcia ≠ súd · dozor nad + орудний",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Nekalá obchodná prax",
+          "text": "Nekalá obchodná prax — поведінка продавця, яка вводить споживача в оману або тисне на нього. Типові приклади: klamlivá reklama (рекламована знижка, якої насправді не було), приховані платежі, фальшиві відгуки, агресивний тиск під час продажу, відсутня ціна на товарі. Прикметник «klamlivý» (оманливий) походить від дієслова «klamať». Остаточно оцінює такі випадки інспекція, тому в листі пиши обережно: «Mám podozrenie z nekalej obchodnej praxe.» (podozrenie z + родовий). Не пиши «zločinci» чи «podvodníci», пиши факти: що було заявлено, що виявилося насправді, коли.",
+          "examples": [
+            {
+              "sk": "Reklama bola klamlivá: zľava v skutočnosti neexistovala.",
+              "uk": "Реклама була оманливою: знижки насправді не було."
+            },
+            {
+              "sk": "Mám podozrenie z nekalej obchodnej praxe.",
+              "uk": "Маю підозру щодо нечесної торговельної практики."
+            }
+          ],
+          "shortRule": "klamlivá reklama · nekalá obchodná prax · podozrenie z + родовий",
+          "commonMistakes": [
+            {
+              "mistake": "Mám podozrenie na nekalú obchodnú prax.",
+              "correct": "Mám podozrenie z nekalej obchodnej praxe."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Podnet: як його написати",
+          "text": "Podnet — коротке звернення з інформацією про можливе порушення. Структура: хто (назва продавця й адреса), що сталося (факти), коли (дата), докази (фото цінника, doklad o kúpe, скріншот реклами) і чого ти просиш: «Žiadam o preverenie postupu predajcu.» (žiadať o + знахідний). Починаємо формулою «Podávam podnet na kontrolu predajcu» (podnet na + знахідний). Пиши нейтрально, без образ, а дати, суми й місце — точно. Інспекція зазвичай повідомляє, що зроблено, але не завжди вирішує твою особисту вимогу про гроші. Тому, якщо тобі потрібні гроші, поєднай podnet із рекламацією чи заявою на ARS.",
+          "examples": [
+            {
+              "sk": "Podávam podnet na kontrolu predajcu.",
+              "uk": "Подаю звернення з проханням перевірити продавця."
+            },
+            {
+              "sk": "Žiadam o preverenie postupu predajcu.",
+              "uk": "Прошу перевірити дії продавця."
+            }
+          ],
+          "shortRule": "podnet na + знахідний · žiadať o preverenie · дати, докази, нейтральний тон",
+          "commonMistakes": [
+            {
+              "mistake": "Žiadam o preverení postupu predajcu.",
+              "correct": "Žiadam o preverenie postupu predajcu."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u05-l04-soi-w01",
+            "sk": "dozor",
+            "uk": "нагляд, державний контроль",
+            "pronunciationUk": "дозор",
+            "exampleSk": "Dozor nad dodržiavaním pravidiel vykonáva inšpekcia.",
+            "exampleUk": "Нагляд за дотриманням правил здійснює інспекція."
+          },
+          {
+            "wordId": "b2-u05-l04-soi-w02",
+            "sk": "inšpekcia",
+            "uk": "інспекція",
+            "pronunciationUk": "інспекція",
+            "exampleSk": "Slovenská obchodná inšpekcia kontroluje predajcov.",
+            "exampleUk": "Словацька торговельна інспекція перевіряє продавців."
+          },
+          {
+            "wordId": "b2-u05-l04-soi-w03",
+            "sk": "inšpektor",
+            "uk": "інспектор",
+            "pronunciationUk": "інспектор",
+            "exampleSk": "Inšpektor skontroloval cenovky v predajni.",
+            "exampleUk": "Інспектор перевірив цінники в магазині."
+          },
+          {
+            "wordId": "b2-u05-l04-soi-w04",
+            "sk": "nekalá obchodná prax",
+            "uk": "нечесна торговельна практика",
+            "pronunciationUk": "некала: обходна: пракс",
+            "exampleSk": "Skrytý poplatok môže byť nekalou obchodnou praxou.",
+            "exampleUk": "Прихований платіж може бути нечесною торговельною практикою."
+          },
+          {
+            "wordId": "b2-u05-l04-soi-w05",
+            "sk": "klamlivý",
+            "uk": "оманливий",
+            "pronunciationUk": "кламліви:",
+            "exampleSk": "Reklama sľubovala zľavu a bola klamlivá.",
+            "exampleUk": "Реклама обіцяла знижку й була оманливою."
+          },
+          {
+            "wordId": "b2-u05-l04-soi-w06",
+            "sk": "preveriť",
+            "uk": "перевірити, з’ясувати",
+            "pronunciationUk": "преверіть",
+            "exampleSk": "Inšpekcia preverí, či bola cena správne označená.",
+            "exampleUk": "Інспекція перевірить, чи правильно позначено ціну."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u05-l04-soi-w01",
+          "sk": "dozor",
+          "uk": "нагляд, державний контроль",
+          "pronunciationUk": "дозор",
+          "exampleSk": "Dozor nad dodržiavaním pravidiel vykonáva inšpekcia.",
+          "exampleUk": "Нагляд за дотриманням правил здійснює інспекція.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l04-soi-w02",
+          "sk": "inšpekcia",
+          "uk": "інспекція",
+          "pronunciationUk": "інспекція",
+          "exampleSk": "Slovenská obchodná inšpekcia kontroluje predajcov.",
+          "exampleUk": "Словацька торговельна інспекція перевіряє продавців.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l04-soi-w03",
+          "sk": "inšpektor",
+          "uk": "інспектор",
+          "pronunciationUk": "інспектор",
+          "exampleSk": "Inšpektor skontroloval cenovky v predajni.",
+          "exampleUk": "Інспектор перевірив цінники в магазині.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l04-soi-w04",
+          "sk": "nekalá obchodná prax",
+          "uk": "нечесна торговельна практика",
+          "pronunciationUk": "некала: обходна: пракс",
+          "exampleSk": "Skrytý poplatok môže byť nekalou obchodnou praxou.",
+          "exampleUk": "Прихований платіж може бути нечесною торговельною практикою.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l04-soi-w05",
+          "sk": "klamlivý",
+          "uk": "оманливий",
+          "pronunciationUk": "кламліви:",
+          "exampleSk": "Reklama sľubovala zľavu a bola klamlivá.",
+          "exampleUk": "Реклама обіцяла знижку й була оманливою.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l04-soi-w06",
+          "sk": "preveriť",
+          "uk": "перевірити, з’ясувати",
+          "pronunciationUk": "преверіть",
+          "exampleSk": "Inšpekcia preverí, či bola cena správne označená.",
+          "exampleUk": "Інспекція перевірить, чи правильно позначено ціну.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u05-l04-soi-ex01",
+          "lessonId": "b2-u05-l04-soi",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "dozor",
+              "right": "державний нагляд"
+            },
+            {
+              "left": "inšpekcia",
+              "right": "орган, що проводить перевірки"
+            },
+            {
+              "left": "inšpektor",
+              "right": "працівник, який перевіряє"
+            },
+            {
+              "left": "nekalá obchodná prax",
+              "right": "оманлива чи агресивна практика продавця"
+            },
+            {
+              "left": "klamlivý",
+              "right": "оманливий"
+            },
+            {
+              "left": "preveriť",
+              "right": "перевірити"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u05-l04-soi-w01",
+            "b2-u05-l04-soi-w02",
+            "b2-u05-l04-soi-w03",
+            "b2-u05-l04-soi-w04",
+            "b2-u05-l04-soi-w05",
+            "b2-u05-l04-soi-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l04-soi-ex02",
+          "lessonId": "b2-u05-l04-soi",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Podávam podnet "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "na",
+                "o",
+                "pre"
+              ],
+              "correct": "na"
+            },
+            {
+              "text": " kontrolu predajcu."
+            }
+          ],
+          "explanation": "Podnet na + знахідний: podnet na kontrolu.",
+          "order": 2
+        },
+        {
+          "id": "b2-u05-l04-soi-ex03",
+          "lessonId": "b2-u05-l04-soi",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Mám podozrenie "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "o",
+                "na",
+                "z"
+              ],
+              "correct": "z"
+            },
+            {
+              "text": " nekalej obchodnej praxe."
+            }
+          ],
+          "explanation": "Podozrenie z + родовий: z nekalej obchodnej praxe.",
+          "order": 3,
+          "wordIds": [
+            "b2-u05-l04-soi-w04"
+          ]
+        },
+        {
+          "id": "b2-u05-l04-soi-ex04",
+          "lessonId": "b2-u05-l04-soi",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "SOI vykonáva ______ nad dodržiavaním zákonov na ochranu spotrebiteľa. (нагляд)",
+          "acceptedAnswers": [
+            "dozor"
+          ],
+          "explanation": "Dozor nad + орудний: dozor nad dodržiavaním.",
+          "order": 4,
+          "wordIds": [
+            "b2-u05-l04-soi-w01"
+          ]
+        },
+        {
+          "id": "b2-u05-l04-soi-ex05",
+          "lessonId": "b2-u05-l04-soi",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яка основна роль SOI?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "замість суду виносити обов’язкові рішення про відшкодування кожному споживачеві",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "здійснювати нагляд за дотриманням правил продавцями",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "продавати товари зі знижкою",
+              "correct": false
+            }
+          ],
+          "explanation": "SOI — орган нагляду; вона не є судом і зазвичай не вирішує особистих грошових вимог.",
+          "order": 5
+        },
+        {
+          "id": "b2-u05-l04-soi-ex06",
+          "lessonId": "b2-u05-l04-soi",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Inšpektor preverí cenovky v predajni minulý týždeň.",
+          "errorToken": "preverí",
+          "correctToken": "preveril",
+          "explanation": "Подія в минулому, тому «preveril» (l-форма).",
+          "order": 6,
+          "wordIds": [
+            "b2-u05-l04-soi-w03",
+            "b2-u05-l04-soi-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l04-soi-ex07",
+          "lessonId": "b2-u05-l04-soi",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Žiadam o preverení postupu predajcu.",
+          "acceptedAnswers": [
+            "Žiadam o preverenie postupu predajcu.",
+            "Žiadam Vás o preverenie postupu predajcu."
+          ],
+          "explanation": "Žiadať o + знахідний (preverenie), а не місцевий (preverení).",
+          "order": 7,
+          "wordIds": [
+            "b2-u05-l04-soi-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l04-soi-ex08",
+          "lessonId": "b2-u05-l04-soi",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перепиши з прикметником «klamlivý».",
+          "source": "Reklama klame spotrebiteľa.",
+          "acceptedAnswers": [
+            "Reklama je klamlivá.",
+            "Reklama je pre spotrebiteľa klamlivá.",
+            "Reklama je klamlivá pre spotrebiteľa."
+          ],
+          "explanation": "Klamať (діяти оманливо) — klamlivý (оманливий): Reklama je klamlivá.",
+          "order": 8,
+          "wordIds": [
+            "b2-u05-l04-soi-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l04-soi-ex09",
+          "lessonId": "b2-u05-l04-soi",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Oksana si v e-shope objednala vysávač so zľavou 40 %. Neskôr zistila, že cena pred akciou bola zvýšená, takže zľava bola klamlivá. Urobila si snímky obrazovky s dátumom. Najprv napísala predajcovi, ale odpoveď nedostala. Potom podala podnet na SOI: uviedla názov e-shopu, odkaz na ponuku, dátumy a opis situácie a priložila snímky. Požiadala o preverenie postupu predajcu a nepísala žiadne obvinenia. Neskôr jej inšpekcia oznámila, že podnet preveruje. Oksana vedela, že inšpekcia nerozhoduje o vrátení jej peňazí, preto si nárok zároveň uplatnila aj priamo u predajcu.",
+          "questions": [
+            {
+              "question": "Чому знижка була оманливою?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "пилосос був пошкоджений",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "Оксана не отримала доставки",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "ціну перед акцією підвищили",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що Оксана вказала в podnet?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "лише свій номер телефону",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "тільки скарги на персонал",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "назву магазину, посилання, дати, опис і знімки екрана",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Чому вона водночас вимагала своє й у продавця?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "інспекція це заборонила",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "інспекція зазвичай не вирішує особисту вимогу про повернення грошей",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "вона хотіла одразу подати до суду",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 9,
+          "wordIds": [
+            "b2-u05-l04-soi-w02",
+            "b2-u05-l04-soi-w05",
+            "b2-u05-l04-soi-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l04-soi-ex10",
+          "lessonId": "b2-u05-l04-soi",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай зразок podnetu.",
+          "document": {
+            "title": "Podnet na SOI – ukážka",
+            "fields": [
+              {
+                "label": "Predajca",
+                "value": "Domáce spotrebiče, s. r. o. (e-shop)"
+              },
+              {
+                "label": "Dátum",
+                "value": "12. 4. 2026"
+              },
+              {
+                "label": "Opis",
+                "value": "zľava 40 % sa vzťahovala na cenu, ktorá bola pred akciou zvýšená"
+              },
+              {
+                "label": "Prílohy",
+                "value": "snímky obrazovky s dátumom, odkaz na ponuku"
+              },
+              {
+                "label": "Žiadosť",
+                "value": "preverenie postupu predajcu"
+              }
+            ]
+          },
+          "question": "Чого просить автор podnetu?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "закрити магазин назавжди",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "негайно виплатити премію",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "перевірити дії продавця",
+              "correct": true
+            }
+          ],
+          "explanation": "Žiadosť: preverenie postupu predajcu — автор просить перевірку дій продавця.",
+          "order": 10,
+          "wordIds": [
+            "b2-u05-l04-soi-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l04-soi-ex11",
+          "lessonId": "b2-u05-l04-soi",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай відповідь інспекції.",
+          "message": {
+            "sender": "SOI – podateľňa",
+            "body": "Dobrý deň, pani Melnyk, Váš podnet sme zaevidovali. Inšpektori preveria, či predajca postupoval v súlade s predpismi. O výsledku Vás môžeme informovať, o Vašom nároku na vrátenie peňazí však nerozhodujeme. Svoj nárok si preto uplatnite aj priamo u predajcu. Ak ste ešte nedoplnili snímky obrazovky, pošlite ich prosím. S pozdravom SOI"
+          },
+          "question": "Що підкреслює інспекція у відповіді?",
+          "options": [
+            {
+              "id": "a",
+              "text": "вона обов’язково поверне гроші",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "вона перевірить продавця, але не обов’язково вирішуватиме питання про повернення грошей",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "вона повністю відмовляє",
+              "correct": false
+            }
+          ],
+          "explanation": "Інспекція перевіряє продавця, а особисту грошову вимогу радить заявити продавцеві.",
+          "order": 11,
+          "wordIds": [
+            "b2-u05-l04-soi-w03",
+            "b2-u05-l04-soi-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l04-soi-ex12",
+          "lessonId": "b2-u05-l04-soi",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти пишеш у SOI й просиш перевірити дії продавця.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Žiadam o preveriť postup predajcu.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Žiadam o preverenie postupu predajcu.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Žiadam o preverení postupu predajcu.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Preverte ho hneď!!!",
+              "correct": false
+            }
+          ],
+          "explanation": "Žiadam o + знахідний (preverenie), не місцевий і не інфінітив; без оклику.",
+          "order": 12,
+          "wordIds": [
+            "b2-u05-l04-soi-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l04-soi-ex13",
+          "lessonId": "b2-u05-l04-soi",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що тут факти для podnetu, а що емоції?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Fakty"
+            },
+            {
+              "id": "c2",
+              "title": "Emócie"
+            }
+          ],
+          "items": [
+            {
+              "sk": "snímka obrazovky ponuky",
+              "category": "c1"
+            },
+            {
+              "sk": "predajca je zlodej",
+              "category": "c2"
+            },
+            {
+              "sk": "názov predajne a adresa",
+              "category": "c1"
+            },
+            {
+              "sk": "cenovka bez uvedenej ceny",
+              "category": "c1"
+            },
+            {
+              "sk": "toto je hrozný podvod",
+              "category": "c2"
+            },
+            {
+              "sk": "dátum nákupu 3. apríla",
+              "category": "c1"
+            },
+            {
+              "sk": "všetci tu klamú",
+              "category": "c2"
+            },
+            {
+              "sk": "nikdy viac nenakúpim",
+              "category": "c2"
+            }
+          ],
+          "explanation": "У podnet пишемо перевірювані факти; образи й емоції послаблюють звернення.",
+          "order": 13
+        },
+        {
+          "id": "b2-u05-l04-soi-ex14",
+          "lessonId": "b2-u05-l04-soi",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери ситуації, з якими типово можна звернутися до SOI.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "прихований платіж, про який споживача не попередили",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "продавець був у поганому настрої",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "у магазині немає моєї улюбленої марки",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "товар у магазині без вказаної ціни",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "реклама з неіснуючою знижкою",
+              "correct": true
+            }
+          ],
+          "explanation": "До SOI звертаються щодо порушень правил продажу: оманлива реклама, ціни, приховані платежі.",
+          "order": 14
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Оманлива знижка в інтернет-магазині",
+        "description": "Реклама обіцяла знижку, але ціну перед акцією підвищили. Ти пишеш у SOI.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Як почнеш podnet?",
+            "options": [
+              {
+                "sk": "Podávam podnet na kontrolu predajcu v súvislosti s podozrením z klamlivej reklamy.",
+                "correct": true
+              },
+              {
+                "sk": "Predajca je zlodej, urobte s ním poriadok!!!",
+                "correct": false
+              },
+              {
+                "sk": "Podávam podnet kontrola predajcu.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Які докази додаси?",
+            "options": [
+              {
+                "sk": "ústny sľub suseda",
+                "correct": false
+              },
+              {
+                "sk": "nič, podnet nepotrebuje dôkazy",
+                "correct": false
+              },
+              {
+                "sk": "snímky obrazovky s dátumom a odkaz na ponuku",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Що попросиш?",
+            "options": [
+              {
+                "sk": "Žiadam o preverenie postupu predajcu.",
+                "correct": true
+              },
+              {
+                "sk": "Žiadam o zatvorenie e-shopu navždy.",
+                "correct": false
+              },
+              {
+                "sk": "Žiadam, aby ste mi vrátili peniaze z Vášho účtu.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Чому варто паралельно заявити вимогу й продавцеві?",
+            "options": [
+              {
+                "text": "SOI забороняє звертатися до продавця",
+                "correct": false
+              },
+              {
+                "text": "продавець образиться",
+                "correct": false
+              },
+              {
+                "text": "SOI здійснює нагляд і не завжди вирішує особисту вимогу про гроші",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти знаєш, до кого звернутися, щоб перевірити продавця. Далі — суди: як працює суд і що таке žaloba."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти знаєш, до кого звернутися, щоб перевірити продавця. Далі — суди: як працює суд і що таке žaloba.",
+        "nowYouKnow": [
+          "SOI = dozor nad predajcami · nie je súd",
+          "nekalá obchodná prax · klamlivá reklama · podozrenie z + родовий",
+          "podnet na + знахідний · žiadať o preverenie",
+          "факти + докази + нейтральний тон"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u05-l05-sudy",
+          "title": "Суди: як працює судова система"
+        }
+      }
+    }
+  ]
+}

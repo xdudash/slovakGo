@@ -1,0 +1,907 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u07-l08-lieky-a-doplatky",
+      "sectionId": "b2-u07",
+      "level": "B2",
+      "title": "Ліки й доплати",
+      "topic": "Система охорони здоров’я",
+      "description": "Чому за той самий рецепт в аптеці доплачують по-різному: категоризація ліків, повністю й частково оплачувані препарати, дешевші взаємозамінні ліки, захисний ліміт доплат для деяких груп і медичні вироби за спеціальним рецептом.",
+      "order": 68,
+      "xpReward": 50,
+      "estimatedMinutes": 20,
+      "isPublished": true,
+      "intro": "Розуміти, з чого складається доплата в аптеці, і вміти попросити дешевший рівноцінний препарат.",
+      "completionMessage": "Ти розумієш доплати в аптеці й умієш заощадити без шкоди для лікування. Далі — санаторно-курортне лікування.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Система охорони здоров’я",
+        "title": "Ліки й доплати",
+        "shortDescription": "Розуміти, з чого складається доплата в аптеці, і вміти попросити дешевший рівноцінний препарат.",
+        "outcomes": [
+          "пояснювати, що таке kategorizácia liekov і plne / čiastočne hradený liek",
+          "просити дешевший zameniteľný liek",
+          "розуміти ochranný limit і лист страхової про повернення доплат",
+          "порівнювати ціни: o 5 eur lacnejší, doplatok vo výške…"
+        ],
+        "newWords": [
+          "kategorizácia liekov",
+          "plne hradený",
+          "zameniteľný",
+          "ochranný limit",
+          "zdravotnícka pomôcka",
+          "lekársky poukaz"
+        ],
+        "exercisesCount": 13,
+        "reward": "+50 XP",
+        "estimatedMinutes": 20,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Категоризація і доплати",
+          "text": "Не всі ліки страхова оплачує однаково. Міністерство охорони здоров’я веде список категоризованих ліків (kategorizácia liekov), який регулярно оновлюється. Ліки з цього списку страхова оплачує повністю (plne hradený liek) або частково (čiastočne hradený) — тоді пацієнт сплачує doplatok. Ліки поза списком пацієнт, як правило, оплачує сам. Розмір доплати залежить від конкретного препарату: два ліки з тією самою діючою речовиною можуть мати дуже різну доплату.",
+          "examples": [
+            {
+              "sk": "Tento liek je plne hradený, nič nedoplácate.",
+              "uk": "Ці ліки повністю оплачуються, ви нічого не доплачуєте."
+            },
+            {
+              "sk": "Doplatok za liek je vo výške 6,40 €.",
+              "uk": "Доплата за ліки становить 6,40 €."
+            }
+          ],
+          "shortRule": "plne hradený — 0 € · čiastočne hradený — doplatok · nekategorizovaný — platí pacient",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Дешевший рівноцінний препарат",
+          "text": "Якщо лікар виписав ліки з діючою речовиною, а не конкретну марку, або дозволив заміну, фармацевт зазвичай може запропонувати «zameniteľný liek» — взаємозамінний препарат (часто генерик) з тією самою речовиною, дозою й формою, але з нижчою доплатою. Запитати можна прямо: «Existuje k tomu lacnejší zameniteľný liek?» Порівнюючи, словаки кажуть: «o 5 eur lacnejší» (дешевший на 5 євро; o + знахідний), «doplatok vo výške 0,90 €». Медичні вироби — тест-смужки, милиці, слухові апарати — це «zdravotnícke pomôcky»; на них лікар виписує «lekársky poukaz».",
+          "examples": [
+            {
+              "sk": "Je o päť eur lacnejší a účinná látka je rovnaká.",
+              "uk": "Він на п’ять євро дешевший, а діюча речовина та сама."
+            },
+            {
+              "sk": "Na barle mi lekár vystavil lekársky poukaz.",
+              "uk": "На милиці лікар виписав мені спеціальний рецепт."
+            }
+          ],
+          "shortRule": "zameniteľný liek = rovnaká látka, dávka, forma · o + знахідний: o 5 eur lacnejší",
+          "commonMistakes": [
+            {
+              "mistake": "lacnejší na päť eur",
+              "correct": "lacnejší o päť eur"
+            },
+            {
+              "mistake": "doplatok vo výške šesť eurá",
+              "correct": "doplatok vo výške šesť eur"
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Захисний ліміт доплат",
+          "text": "Для деяких груп людей — наприклад, дітей, пенсіонерів, людей з інвалідністю — закон установлює «ochranný limit» (також limit spoluúčasti): максимальну суму доплат за категоризовані ліки за квартал (štvrťrok). Що перевищує ліміт, страхова, як правило, повертає сама — переказом на рахунок чи поштою. Хто саме має право на ліміт і яка його сума, визначає закон; точні суми змінюються, тож перевіряй їх у страховій. Офіційна мова: «prekročiť ochranný limit», «vrátiť preplatok», «nárok na vrátenie doplatkov».",
+          "examples": [
+            {
+              "sk": "Za štvrťrok ste prekročili ochranný limit o 12 €.",
+              "uk": "За квартал ви перевищили захисний ліміт на 12 €."
+            },
+            {
+              "sk": "Poisťovňa Vám vráti sumu nad limit.",
+              "uk": "Страхова поверне вам суму понад ліміт."
+            }
+          ],
+          "shortRule": "ochranný limit — za štvrťrok · suma nad limit → vráti poisťovňa",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u07-l08-lieky-a-doplatky-w01",
+            "sk": "kategorizácia liekov",
+            "uk": "категоризація ліків (офіційний список оплачуваних ліків)",
+            "pronunciationUk": "катеґорізаціа лієкоу",
+            "exampleSk": "Či je liek hradený, zistíte v kategorizácii liekov.",
+            "exampleUk": "Чи оплачуються ліки, дізнаєтеся в списку категоризації ліків."
+          },
+          {
+            "wordId": "b2-u07-l08-lieky-a-doplatky-w02",
+            "sk": "plne hradený",
+            "uk": "повністю оплачуваний (страховою)",
+            "pronunciationUk": "плнє гради:ни",
+            "exampleSk": "Lekár mi predpísal plne hradený liek, takže som nič nedoplácala.",
+            "exampleUk": "Лікар виписав мені повністю оплачувані ліки, тож я нічого не доплачувала."
+          },
+          {
+            "wordId": "b2-u07-l08-lieky-a-doplatky-w03",
+            "sk": "zameniteľný",
+            "uk": "взаємозамінний",
+            "pronunciationUk": "заменітєльни:",
+            "exampleSk": "Pani lekárnička mi ponúkla zameniteľný liek s nižším doplatkom.",
+            "exampleUk": "Пані фармацевтка запропонувала мені взаємозамінний препарат із меншою доплатою."
+          },
+          {
+            "wordId": "b2-u07-l08-lieky-a-doplatky-w04",
+            "sk": "ochranný limit",
+            "uk": "захисний ліміт (доплат)",
+            "pronunciationUk": "охранни: ліміт",
+            "exampleSk": "Ak prekročíte ochranný limit, poisťovňa Vám rozdiel vráti.",
+            "exampleUk": "Якщо ви перевищите захисний ліміт, страхова поверне вам різницю."
+          },
+          {
+            "wordId": "b2-u07-l08-lieky-a-doplatky-w05",
+            "sk": "zdravotnícka pomôcka",
+            "uk": "медичний виріб (засіб)",
+            "pronunciationUk": "здравотні:цка помуоцка",
+            "exampleSk": "Glukomer je zdravotnícka pomôcka, ktorú čiastočne hradí poisťovňa.",
+            "exampleUk": "Глюкометр — медичний виріб, який частково оплачує страхова."
+          },
+          {
+            "wordId": "b2-u07-l08-lieky-a-doplatky-w06",
+            "sk": "lekársky poukaz",
+            "uk": "рецепт на медичний виріб",
+            "pronunciationUk": "лєка:рски: поуказ",
+            "exampleSk": "Na barle potrebujete lekársky poukaz od ortopéda.",
+            "exampleUk": "На милиці вам потрібен рецепт від ортопеда."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-w01",
+          "sk": "kategorizácia liekov",
+          "uk": "категоризація ліків (офіційний список оплачуваних ліків)",
+          "pronunciationUk": "катеґорізаціа лієкоу",
+          "exampleSk": "Či je liek hradený, zistíte v kategorizácii liekov.",
+          "exampleUk": "Чи оплачуються ліки, дізнаєтеся в списку категоризації ліків.",
+          "level": "B2",
+          "topic": "Система охорони здоров’я",
+          "tags": [
+            "b2-u07",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-w02",
+          "sk": "plne hradený",
+          "uk": "повністю оплачуваний (страховою)",
+          "pronunciationUk": "плнє гради:ни",
+          "exampleSk": "Lekár mi predpísal plne hradený liek, takže som nič nedoplácala.",
+          "exampleUk": "Лікар виписав мені повністю оплачувані ліки, тож я нічого не доплачувала.",
+          "level": "B2",
+          "topic": "Система охорони здоров’я",
+          "tags": [
+            "b2-u07",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-w03",
+          "sk": "zameniteľný",
+          "uk": "взаємозамінний",
+          "pronunciationUk": "заменітєльни:",
+          "exampleSk": "Pani lekárnička mi ponúkla zameniteľný liek s nižším doplatkom.",
+          "exampleUk": "Пані фармацевтка запропонувала мені взаємозамінний препарат із меншою доплатою.",
+          "level": "B2",
+          "topic": "Система охорони здоров’я",
+          "tags": [
+            "b2-u07",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-w04",
+          "sk": "ochranný limit",
+          "uk": "захисний ліміт (доплат)",
+          "pronunciationUk": "охранни: ліміт",
+          "exampleSk": "Ak prekročíte ochranný limit, poisťovňa Vám rozdiel vráti.",
+          "exampleUk": "Якщо ви перевищите захисний ліміт, страхова поверне вам різницю.",
+          "level": "B2",
+          "topic": "Система охорони здоров’я",
+          "tags": [
+            "b2-u07",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-w05",
+          "sk": "zdravotnícka pomôcka",
+          "uk": "медичний виріб (засіб)",
+          "pronunciationUk": "здравотні:цка помуоцка",
+          "exampleSk": "Glukomer je zdravotnícka pomôcka, ktorú čiastočne hradí poisťovňa.",
+          "exampleUk": "Глюкометр — медичний виріб, який частково оплачує страхова.",
+          "level": "B2",
+          "topic": "Система охорони здоров’я",
+          "tags": [
+            "b2-u07",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-w06",
+          "sk": "lekársky poukaz",
+          "uk": "рецепт на медичний виріб",
+          "pronunciationUk": "лєка:рски: поуказ",
+          "exampleSk": "Na barle potrebujete lekársky poukaz od ortopéda.",
+          "exampleUk": "На милиці вам потрібен рецепт від ортопеда.",
+          "level": "B2",
+          "topic": "Система охорони здоров’я",
+          "tags": [
+            "b2-u07",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-ex01",
+          "lessonId": "b2-u07-l08-lieky-a-doplatky",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "kategorizácia liekov",
+              "right": "список ліків, які оплачує страхова"
+            },
+            {
+              "left": "plne hradený",
+              "right": "доплата 0 €"
+            },
+            {
+              "left": "zameniteľný",
+              "right": "з тією самою речовиною, дозою й формою"
+            },
+            {
+              "left": "ochranný limit",
+              "right": "максимум доплат за квартал"
+            },
+            {
+              "left": "zdravotnícka pomôcka",
+              "right": "медичний виріб"
+            },
+            {
+              "left": "lekársky poukaz",
+              "right": "рецепт на медичний виріб"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u07-l08-lieky-a-doplatky-w01",
+            "b2-u07-l08-lieky-a-doplatky-w02",
+            "b2-u07-l08-lieky-a-doplatky-w03",
+            "b2-u07-l08-lieky-a-doplatky-w04",
+            "b2-u07-l08-lieky-a-doplatky-w05",
+            "b2-u07-l08-lieky-a-doplatky-w06"
+          ]
+        },
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-ex02",
+          "lessonId": "b2-u07-l08-lieky-a-doplatky",
+          "type": "real_menu",
+          "skill": [
+            "reading",
+            "real_life",
+            "numbers"
+          ],
+          "instruction": "Подивись на цінник аптеки.",
+          "menuData": [
+            {
+              "category": "Liek na tlak (originál)",
+              "item": "Kardiotens 10 mg, 30 tbl.",
+              "price": "doplatok 6,40 €"
+            },
+            {
+              "category": "Liek na tlak (zameniteľný)",
+              "item": "Tenzolin 10 mg, 30 tbl.",
+              "price": "doplatok 0,90 €"
+            },
+            {
+              "category": "Zdravotnícka pomôcka",
+              "item": "glukomer na poukaz",
+              "price": "doplatok 0,00 €"
+            },
+            {
+              "category": "Bez úhrady",
+              "item": "vitamín D 1000 IU",
+              "price": "7,20 €"
+            }
+          ],
+          "questions": [
+            {
+              "question": "На скільки дешевша доплата за взаємозамінний препарат?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "на 0,90 €",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "на 6,40 €",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "на 5,50 €",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "За що пацієнт платить повну ціну сам?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "за глюкометр за рецептом",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "за Tenzolin",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "за вітамін D",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 2,
+          "wordIds": [
+            "b2-u07-l08-lieky-a-doplatky-w01",
+            "b2-u07-l08-lieky-a-doplatky-w03",
+            "b2-u07-l08-lieky-a-doplatky-w05",
+            "b2-u07-l08-lieky-a-doplatky-w06"
+          ]
+        },
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-ex03",
+          "lessonId": "b2-u07-l08-lieky-a-doplatky",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Tenzolin je "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "na",
+                "o",
+                "za"
+              ],
+              "correct": "o"
+            },
+            {
+              "text": " päť eur lacnejší a doplatok je vo "
+            },
+            {
+              "blankId": "b2",
+              "options": [
+                "výšku",
+                "výška",
+                "výške"
+              ],
+              "correct": "výške"
+            },
+            {
+              "text": " 0,90 €."
+            }
+          ],
+          "explanation": "Різниця — o + знахідний (o päť eur); сталий вираз — vo výške (у розмірі).",
+          "order": 3,
+          "wordIds": [
+            "b2-u07-l08-lieky-a-doplatky-w01"
+          ]
+        },
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-ex04",
+          "lessonId": "b2-u07-l08-lieky-a-doplatky",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Tento liek je na tri eurá lacnejší.",
+          "errorToken": "na",
+          "correctToken": "o",
+          "explanation": "Різницю в ціні виражаємо прийменником o + знахідний: o tri eurá lacnejší.",
+          "order": 4,
+          "wordIds": [
+            "b2-u07-l08-lieky-a-doplatky-w01"
+          ]
+        },
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-ex05",
+          "lessonId": "b2-u07-l08-lieky-a-doplatky",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перепиши офіційно: «Доплата становить…» — почни «Doplatok je vo výške…».",
+          "source": "Za liek doplatíte šesť eur štyridsať centov.",
+          "acceptedAnswers": [
+            "Doplatok je vo výške 6,40 €.",
+            "Doplatok je vo výške 6,40 eur.",
+            "Doplatok je vo výške šesť eur štyridsať centov.",
+            "Doplatok za liek je vo výške 6,40 €."
+          ],
+          "explanation": "Офіційна формула суми: vo výške + сума.",
+          "order": 5,
+          "wordIds": [
+            "b2-u07-l08-lieky-a-doplatky-w01"
+          ]
+        },
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-ex06",
+          "lessonId": "b2-u07-l08-lieky-a-doplatky",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай лист страхової.",
+          "message": {
+            "sender": "Vaša zdravotná poisťovňa",
+            "body": "Vážená pani Petrenková, v treťom štvrťroku ste na doplatkoch za kategorizované lieky zaplatili sumu, ktorá prekročila Váš ochranný limit o 14,30 €. Táto suma Vám bude vrátená na bankový účet uvedený v našej evidencii do 60 dní. Nemusíte podávať žiadnu žiadosť. S pozdravom"
+          },
+          "question": "Що має зробити пані Петренкова, щоб отримати 14,30 €?",
+          "options": [
+            {
+              "id": "a",
+              "text": "нічого, страхова поверне гроші сама",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "принести чеки з аптеки",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "подати заяву до 60 днів",
+              "correct": false
+            }
+          ],
+          "explanation": "Nemusíte podávať žiadnu žiadosť — жодної заяви не треба, суму повернуть автоматично.",
+          "order": 6,
+          "wordIds": [
+            "b2-u07-l08-lieky-a-doplatky-w01",
+            "b2-u07-l08-lieky-a-doplatky-w04"
+          ]
+        },
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-ex07",
+          "lessonId": "b2-u07-l08-lieky-a-doplatky",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Pán Oleh má vysoký tlak a lieky užíva dlhodobo. Každý mesiac doplácal v lekárni vyše šesť eur. Raz mu nová lekárnička povedala: «Viete, že k tomuto lieku existuje zameniteľný liek s rovnakou účinnou látkou? Doplatok je o päť eur nižší.» Oleh sa bál, že lacnejší liek bude horší. Lekárnička mu vysvetlila, že zameniteľný liek musí mať rovnakú účinnú látku, dávku aj liekovú formu a že prípadnú zmenu môže prebrať aj so svojím lekárom. Oleh sa poradil s obvodnou lekárkou, ktorá zmenu odobrila. Teraz ročne ušetrí vyše šesťdesiat eur.",
+          "questions": [
+            {
+              "question": "Чого боявся Олег?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "що лікар розсердиться",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "що страхова перестане платити",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "що дешевший препарат буде гіршим",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що має бути однаковим у взаємозамінного препарату?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "діюча речовина, доза й форма",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "виробник і країна",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "назва й колір упаковки",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Скільки Олег заощаджує тепер?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "6 євро на місяць",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "понад 60 євро на рік",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "5 євро на рік",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 7,
+          "wordIds": [
+            "b2-u07-l08-lieky-a-doplatky-w01",
+            "b2-u07-l08-lieky-a-doplatky-w03"
+          ]
+        },
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-ex08",
+          "lessonId": "b2-u07-l08-lieky-a-doplatky",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Lekárnička",
+              "sk": "Doplatok za tento liek je 6,40 €."
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Existuje k nemu aj lacnejší zameniteľný liek?",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Existuje k nemu aj lacnejšia zameniteľná liek?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "To je zlodejina, nič nezaplatím!",
+              "correct": false
+            }
+          ],
+          "explanation": "Liek — чоловічий рід: lacnejší zameniteľný liek; ввічливе питання краще за обурення.",
+          "order": 8,
+          "wordIds": [
+            "b2-u07-l08-lieky-a-doplatky-w01",
+            "b2-u07-l08-lieky-a-doplatky-w03"
+          ]
+        },
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-ex09",
+          "lessonId": "b2-u07-l08-lieky-a-doplatky",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти хочеш перепитати, чи ліки повністю оплачуються.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Platí to celé niekto iný, nie?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Je tento liek plne hradený poisťovňou?",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Je tento liek plne hradená poisťovňou?",
+              "correct": false
+            }
+          ],
+          "explanation": "Liek — чоловічий рід, тому hradený; третій варіант — невиразний і розмовний.",
+          "order": 9,
+          "wordIds": [
+            "b2-u07-l08-lieky-a-doplatky-w01",
+            "b2-u07-l08-lieky-a-doplatky-w02"
+          ]
+        },
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-ex10",
+          "lessonId": "b2-u07-l08-lieky-a-doplatky",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Хто це робить: лікар, фармацевт чи страхова?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Lekár"
+            },
+            {
+              "id": "c2",
+              "title": "Lekárnik"
+            },
+            {
+              "id": "c3",
+              "title": "Poisťovňa"
+            }
+          ],
+          "items": [
+            {
+              "sk": "vracia doplatky nad ochranný limit",
+              "category": "c3"
+            },
+            {
+              "sk": "vydáva liek",
+              "category": "c2"
+            },
+            {
+              "sk": "predpisuje liek",
+              "category": "c1"
+            },
+            {
+              "sk": "hradí kategorizované lieky",
+              "category": "c3"
+            },
+            {
+              "sk": "vystavuje lekársky poukaz",
+              "category": "c1"
+            },
+            {
+              "sk": "ponúka zameniteľný liek",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Лікар виписує, фармацевт видає й радить, страхова оплачує й повертає надлишок доплат.",
+          "order": 10,
+          "wordIds": [
+            "b2-u07-l08-lieky-a-doplatky-w01",
+            "b2-u07-l08-lieky-a-doplatky-w03",
+            "b2-u07-l08-lieky-a-doplatky-w04",
+            "b2-u07-l08-lieky-a-doplatky-w06"
+          ]
+        },
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-ex11",
+          "lessonId": "b2-u07-l08-lieky-a-doplatky",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Dva lieky s rovnakou účinnou látkou môžu mať v lekárni úplne iný doplatok.",
+          "statement": "Všetky lieky s rovnakou účinnou látkou majú vždy rovnaký doplatok.",
+          "correctAnswer": false,
+          "explanation": "Доплата залежить від конкретного препарату; тому й варто питати про zameniteľný liek.",
+          "order": 11,
+          "wordIds": [
+            "b2-u07-l08-lieky-a-doplatky-w01",
+            "b2-u07-l08-lieky-a-doplatky-w02"
+          ]
+        },
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-ex12",
+          "lessonId": "b2-u07-l08-lieky-a-doplatky",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "Za tretí štvrťrok ste prekročili ochranný limit, rozdiel Vám vrátime.",
+          "target": "prekročili ochranný limit",
+          "options": [
+            {
+              "id": "a",
+              "text": "заплатили більше доплат, ніж установлений максимум",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "купили заборонені ліки",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "запізнилися з оплатою внесків",
+              "correct": false
+            }
+          ],
+          "explanation": "Ochranný limit — максимальна сума доплат за квартал; що понад нього — повертають.",
+          "order": 12,
+          "wordIds": [
+            "b2-u07-l08-lieky-a-doplatky-w01",
+            "b2-u07-l08-lieky-a-doplatky-w04"
+          ]
+        },
+        {
+          "id": "b2-u07-l08-lieky-a-doplatky-ex13",
+          "lessonId": "b2-u07-l08-lieky-a-doplatky",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що потрібно, щоб отримати милиці з частковою оплатою від страхової?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "výmenný lístok",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "negatívny revers",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "lekársky poukaz",
+              "correct": true
+            }
+          ],
+          "explanation": "На медичні вироби лікар виписує lekársky poukaz.",
+          "order": 13,
+          "wordIds": [
+            "b2-u07-l08-lieky-a-doplatky-w01",
+            "b2-u07-l08-lieky-a-doplatky-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "В аптеці з рецептом",
+        "description": "Ти (жінка) прийшла в аптеку з рецептом на ліки від тиску для мами-пенсіонерки й хочеш заощадити.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Фармацевтка називає доплату 6,40 €. Що спитаєш?",
+            "options": [
+              {
+                "sk": "Prečo ste takí drahí?",
+                "correct": false
+              },
+              {
+                "sk": "Existuje k tomu lacnejšia zameniteľný liek?",
+                "correct": false
+              },
+              {
+                "sk": "Existuje k tomu lacnejší zameniteľný liek?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Фармацевтка: «Tenzolin má rovnakú účinnú látku, doplatok je 0,90 €.» Що це означає?",
+            "options": [
+              {
+                "text": "ці ліки без рецепта",
+                "correct": false
+              },
+              {
+                "text": "це зовсім інші ліки",
+                "correct": false
+              },
+              {
+                "text": "та сама речовина, а доплата значно менша",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти хочеш упевнитися, що доза та сама.",
+            "options": [
+              {
+                "sk": "Má aj rovnaký dávku a liekovú formu?",
+                "correct": false
+              },
+              {
+                "sk": "A je to vôbec liek?",
+                "correct": false
+              },
+              {
+                "sk": "Má aj rovnakú dávku a liekovú formu?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Мама пенсіонерка. Що спитаєш про ліміт?",
+            "options": [
+              {
+                "sk": "Dajte nám to zadarmo, mama je dôchodkyňa.",
+                "correct": false
+              },
+              {
+                "sk": "Vzťahuje sa na mamu ochranný limit na doplatky?",
+                "correct": true
+              },
+              {
+                "sk": "Vzťahuje sa na mamu ochranný limitu na doplatky?",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш доплати в аптеці й умієш заощадити без шкоди для лікування. Далі — санаторно-курортне лікування."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш доплати в аптеці й умієш заощадити без шкоди для лікування. Далі — санаторно-курортне лікування.",
+        "nowYouKnow": [
+          "kategorizácia liekov · plne / čiastočne hradený · doplatok vo výške…",
+          "zameniteľný liek — rovnaká látka, dávka, forma · o 5 eur lacnejší",
+          "ochranný limit za štvrťrok → poisťovňa vráti rozdiel",
+          "zdravotnícka pomôcka · lekársky poukaz"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 13,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u07-l09-kupelna-liecba",
+          "title": "Санаторно-курортне лікування"
+        }
+      }
+    }
+  ]
+}

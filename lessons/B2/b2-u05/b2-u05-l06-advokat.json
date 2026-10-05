@@ -1,0 +1,866 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u05-l06-advokat",
+      "sectionId": "b2-u05",
+      "level": "B2",
+      "title": "Адвокат: коли й як звертатися",
+      "topic": "Право і права споживача",
+      "description": "Коли варто звернутися до адвоката, як перевірити, що це справжній адвокат, про що домовитися на першій консультації (винагорода, довіреність, строки), що означає mlčanlivosť і як підготуватися до зустрічі.",
+      "order": 46,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Обирати фахову правову допомогу, домовлятися про умови й ефективно готуватися до консультації.",
+      "completionMessage": "Ти знаєш, як працювати з адвокатом. Далі — екзекуція: що відбувається, коли борг стягують примусово.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Право і права споживача",
+        "title": "Адвокат: коли й як звертатися",
+        "shortDescription": "Обирати фахову правову допомогу, домовлятися про умови й ефективно готуватися до консультації.",
+        "outcomes": [
+          "розрізняти advokát, právnik, notár, obhajca",
+          "домовлятися про odmenu й právne zastúpenie",
+          "готувати документи й хронологію до консультації",
+          "ввічливо питати: Mohli by ste mi poradiť, či…"
+        ],
+        "newWords": [
+          "advokát",
+          "advokátska kancelária",
+          "právne zastúpenie",
+          "právne služby",
+          "honorár",
+          "obhajca"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Advokát, právnik, notár",
+          "text": "«Právnik» — загальна назва людини з юридичною освітою. «Advokát» — правник, внесений до списку Slovenskej advokátskej komory (SAK); він може представляти тебе в суді й надавати právne služby за плату. Чи людина справді адвокат, можна перевірити в офіційному списку на сайті SAK. «Notár» — інша професія: засвідчує підписи, складає нотаріальні акти, бере участь у спадкових справах. Адвокат працює сам або в advokátskej kancelárii. Захисника в кримінальній справі називають «obhajca». У деяких справах (наприклад, у частині звернень до вищих судів) представництво адвокатом обов’язкове — з’ясуй це заздалегідь.",
+          "examples": [
+            {
+              "sk": "Advokát ma bude zastupovať na súde.",
+              "uk": "Адвокат представлятиме мене в суді."
+            },
+            {
+              "sk": "Podpis na zmluve mi overil notár.",
+              "uk": "Підпис на договорі мені засвідчив нотаріус."
+            }
+          ],
+          "shortRule": "právnik — загальна назва · advokát = член SAK · notár = засвідчення · obhajca = захисник",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Odmena a plná moc",
+          "text": "До початку роботи домовся про винагороду (odmena, розмовно й honorár): погодинна, фіксована сума за окрему дію (úkon) або інша домовленість. Якщо домовленості немає, розмір винагороди зазвичай визначає правовий акт міністерства — подробиці з’ясуй в адвоката. Попроси письмову угоду й орієнтовну загальну вартість. Щоб адвокат міг діяти від твого імені, ти підписуєш plnú moc (довіреність): «udeliť plnú moc» + давальний. Právne zastúpenie означає, що адвокат від твого імені подає документи й виступає в суді. Корисні фрази: «Koľko bude stáť prvá konzultácia?», «Mohli by ste mi poradiť, či má zmysel podať žalobu?»",
+          "examples": [
+            {
+              "sk": "Dohodli sme sa na hodinovej odmene.",
+              "uk": "Ми домовилися про погодинну винагороду."
+            },
+            {
+              "sk": "Udelila som advokátke plnú moc.",
+              "uk": "Я видала адвокатці довіреність."
+            }
+          ],
+          "shortRule": "odmena: hodinová / za úkon / pevná · udeliť plnú moc + давальний · právne zastúpenie",
+          "commonMistakes": [
+            {
+              "mistake": "Dal som plnú moc pre advokáta.",
+              "correct": "Udelil som plnú moc advokátovi."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Mlčanlivosť a príprava",
+          "text": "Адвокат зобов’язаний зберігати mlčanlivosť — таємницю про все, що дізнається від клієнта, тож говори відверто. До консультації підготуй: хронологію подій із датами, договори, листування, рішення, листи із суду й, головне, строки, які вже спливають. Сформулюй, чого хочеш досягти. На консультації записуй відповіді й перепитуй: «Môžete mi to vysvetliť jednoduchšie?» Питай про ризики й вартість: «Aké sú moje šance a aké náklady mi môžu vzniknúť?» Обережні формулювання адвоката («podľa môjho názoru», «nedá sa vylúčiť») — нормальні: результат суду не може гарантувати ніхто. Після «poradiť» питальне «чи» — це «či», а не «ak».",
+          "examples": [
+            {
+              "sk": "Advokát je viazaný mlčanlivosťou.",
+              "uk": "Адвокат зобов’язаний зберігати таємницю."
+            },
+            {
+              "sk": "Aké náklady mi môžu vzniknúť?",
+              "uk": "Які витрати в мене можуть виникнути?"
+            }
+          ],
+          "shortRule": "mlčanlivosť · хронологія + документи + строки · питай про ризики й вартість · «чи» = či",
+          "commonMistakes": [
+            {
+              "mistake": "Môžete mi poradiť, ak má zmysel podať žalobu?",
+              "correct": "Môžete mi poradiť, či má zmysel podať žalobu?"
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u05-l06-advokat-w01",
+            "sk": "advokát",
+            "uk": "адвокат",
+            "pronunciationUk": "адвока:т",
+            "exampleSk": "Advokát ma zastupoval v spore s predajcom.",
+            "exampleUk": "Адвокат представляв мене в спорі з продавцем."
+          },
+          {
+            "wordId": "b2-u05-l06-advokat-w02",
+            "sk": "advokátska kancelária",
+            "uk": "адвокатське бюро",
+            "pronunciationUk": "адвока:тска канцела:рія",
+            "exampleSk": "Advokátska kancelária sídli v centre Košíc.",
+            "exampleUk": "Адвокатське бюро розташоване в центрі Кошиць."
+          },
+          {
+            "wordId": "b2-u05-l06-advokat-w03",
+            "sk": "právne zastúpenie",
+            "uk": "правове представництво",
+            "pronunciationUk": "пра:вне заступеньє",
+            "exampleSk": "Právne zastúpenie na súde je pre mňa dôležité.",
+            "exampleUk": "Правове представництво в суді для мене важливе."
+          },
+          {
+            "wordId": "b2-u05-l06-advokat-w04",
+            "sk": "právne služby",
+            "uk": "юридичні послуги",
+            "pronunciationUk": "пра:вне служби",
+            "exampleSk": "Advokát poskytuje právne služby za odmenu.",
+            "exampleUk": "Адвокат надає юридичні послуги за винагороду."
+          },
+          {
+            "wordId": "b2-u05-l06-advokat-w05",
+            "sk": "honorár",
+            "uk": "гонорар, винагорода",
+            "pronunciationUk": "гонора:р",
+            "exampleSk": "Honorár advokáta sme si dohodli vopred.",
+            "exampleUk": "Гонорар адвоката ми узгодили заздалегідь."
+          },
+          {
+            "wordId": "b2-u05-l06-advokat-w06",
+            "sk": "obhajca",
+            "uk": "захисник (у кримінальній справі)",
+            "pronunciationUk": "обгайца",
+            "exampleSk": "Obvinený má právo na obhajcu.",
+            "exampleUk": "Обвинувачений має право на захисника."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u05-l06-advokat-w01",
+          "sk": "advokát",
+          "uk": "адвокат",
+          "pronunciationUk": "адвока:т",
+          "exampleSk": "Advokát ma zastupoval v spore s predajcom.",
+          "exampleUk": "Адвокат представляв мене в спорі з продавцем.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l06-advokat-w02",
+          "sk": "advokátska kancelária",
+          "uk": "адвокатське бюро",
+          "pronunciationUk": "адвока:тска канцела:рія",
+          "exampleSk": "Advokátska kancelária sídli v centre Košíc.",
+          "exampleUk": "Адвокатське бюро розташоване в центрі Кошиць.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l06-advokat-w03",
+          "sk": "právne zastúpenie",
+          "uk": "правове представництво",
+          "pronunciationUk": "пра:вне заступеньє",
+          "exampleSk": "Právne zastúpenie na súde je pre mňa dôležité.",
+          "exampleUk": "Правове представництво в суді для мене важливе.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l06-advokat-w04",
+          "sk": "právne služby",
+          "uk": "юридичні послуги",
+          "pronunciationUk": "пра:вне служби",
+          "exampleSk": "Advokát poskytuje právne služby za odmenu.",
+          "exampleUk": "Адвокат надає юридичні послуги за винагороду.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l06-advokat-w05",
+          "sk": "honorár",
+          "uk": "гонорар, винагорода",
+          "pronunciationUk": "гонора:р",
+          "exampleSk": "Honorár advokáta sme si dohodli vopred.",
+          "exampleUk": "Гонорар адвоката ми узгодили заздалегідь.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l06-advokat-w06",
+          "sk": "obhajca",
+          "uk": "захисник (у кримінальній справі)",
+          "pronunciationUk": "обгайца",
+          "exampleSk": "Obvinený má právo na obhajcu.",
+          "exampleUk": "Обвинувачений має право на захисника.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u05-l06-advokat-ex01",
+          "lessonId": "b2-u05-l06-advokat",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "advokát",
+              "right": "член адвокатської палати, представник у суді"
+            },
+            {
+              "left": "advokátska kancelária",
+              "right": "адвокатське бюро"
+            },
+            {
+              "left": "právne zastúpenie",
+              "right": "правове представництво"
+            },
+            {
+              "left": "právne služby",
+              "right": "юридичні послуги"
+            },
+            {
+              "left": "honorár",
+              "right": "винагорода юриста"
+            },
+            {
+              "left": "obhajca",
+              "right": "захисник у кримінальній справі"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u05-l06-advokat-w01",
+            "b2-u05-l06-advokat-w02",
+            "b2-u05-l06-advokat-w03",
+            "b2-u05-l06-advokat-w04",
+            "b2-u05-l06-advokat-w05",
+            "b2-u05-l06-advokat-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l06-advokat-ex02",
+          "lessonId": "b2-u05-l06-advokat",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Udelila som plnú moc "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "advokátkou",
+                "advokátke",
+                "advokátka"
+              ],
+              "correct": "advokátke"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Udeliť plnú moc komu — давальний: advokátke.",
+          "order": 2,
+          "wordIds": [
+            "b2-u05-l06-advokat-w01"
+          ]
+        },
+        {
+          "id": "b2-u05-l06-advokat-ex03",
+          "lessonId": "b2-u05-l06-advokat",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Advokát je viazaný "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "mlčanlivosťou",
+                "mlčanlivosti",
+                "mlčanlivosť"
+              ],
+              "correct": "mlčanlivosťou"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Byť viazaný + орудний: viazaný mlčanlivosťou.",
+          "order": 3,
+          "wordIds": [
+            "b2-u05-l06-advokat-w01"
+          ]
+        },
+        {
+          "id": "b2-u05-l06-advokat-ex04",
+          "lessonId": "b2-u05-l06-advokat",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Môžete mi poradiť, ______ má zmysel podať žalobu? (чи)",
+          "acceptedAnswers": [
+            "či"
+          ],
+          "explanation": "Непряме питання «чи» — či; «ak» означає «якщо».",
+          "order": 4,
+          "wordIds": [
+            "b2-u05-l06-advokat-w01"
+          ]
+        },
+        {
+          "id": "b2-u05-l06-advokat-ex05",
+          "lessonId": "b2-u05-l06-advokat",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Як переконатися, що людина справді адвокат?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "повірити вивісці на дверях",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "знайти її в офіційному списку Slovenskej advokátskej komory",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "спитати в соцмережах",
+              "correct": false
+            }
+          ],
+          "explanation": "Адвокати внесені до списку SAK, який можна перевірити на її сайті.",
+          "order": 5,
+          "wordIds": [
+            "b2-u05-l06-advokat-w01",
+            "b2-u05-l06-advokat-w02"
+          ]
+        },
+        {
+          "id": "b2-u05-l06-advokat-ex06",
+          "lessonId": "b2-u05-l06-advokat",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Honorár advokáta sme si dohodnú vopred písomne.",
+          "errorToken": "dohodnú",
+          "correctToken": "dohodli",
+          "explanation": "Після «sme» потрібна l-форма минулого часу: sme si dohodli.",
+          "order": 6,
+          "wordIds": [
+            "b2-u05-l06-advokat-w01",
+            "b2-u05-l06-advokat-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l06-advokat-ex07",
+          "lessonId": "b2-u05-l06-advokat",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Хто це зазвичай робить?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Advokát"
+            },
+            {
+              "id": "c2",
+              "title": "Notár"
+            }
+          ],
+          "items": [
+            {
+              "sk": "zastupuje klienta na súde",
+              "category": "c1"
+            },
+            {
+              "sk": "radí klientovi v spore",
+              "category": "c1"
+            },
+            {
+              "sk": "koná v dedičských veciach",
+              "category": "c2"
+            },
+            {
+              "sk": "overuje podpisy",
+              "category": "c2"
+            },
+            {
+              "sk": "pripravuje žalobu",
+              "category": "c1"
+            },
+            {
+              "sk": "spisuje notárske zápisnice",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Адвокат представляє й радить у спорі; нотаріус засвідчує й оформлює документи.",
+          "order": 7,
+          "wordIds": [
+            "b2-u05-l06-advokat-w01"
+          ]
+        },
+        {
+          "id": "b2-u05-l06-advokat-ex08",
+          "lessonId": "b2-u05-l06-advokat",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Natália býva v Prešove v prenájme. Po skončení nájmu jej prenajímateľ nevrátil kauciu a tvrdil, že byt poškodila. Natália mala fotografie z odovzdania bytu, a tak sa rozhodla poradiť s advokátom. Na stránke advokátskej komory si overila, že vybraná advokátka je skutočne zapísaná v zozname. Pred stretnutím si pripravila zmluvu, fotografie a e-maily a napísala si časovú os udalostí. Na prvej konzultácii sa najprv spýtala na cenu. Advokátka jej vysvetlila, aké má šance aj aké náklady môžu vzniknúť, a navrhla začať písomnou výzvou prenajímateľovi. Dohodli sa na pevnej odmene a Natália podpísala plnú moc.",
+          "questions": [
+            {
+              "question": "Навіщо Наталія заходила на сайт адвокатської палати?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "щоб подати позов онлайн",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "щоб знайти нову квартиру",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "щоб перевірити, що адвокатка справді внесена до списку",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що вона підготувала до зустрічі?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "договір, фото, листування й хронологію подій",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "нічого",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "лише паспорт",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Який перший крок запропонувала адвокатка?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "надіслати орендодавцю письмову вимогу",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "одразу подати позов",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "відмовитися від застави",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 8,
+          "wordIds": [
+            "b2-u05-l06-advokat-w01",
+            "b2-u05-l06-advokat-w02"
+          ]
+        },
+        {
+          "id": "b2-u05-l06-advokat-ex09",
+          "lessonId": "b2-u05-l06-advokat",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай лист з адвокатського бюро.",
+          "message": {
+            "sender": "JUDr. Eva Horváthová, advokátka",
+            "body": "Dobrý deň, pani Kovaľová, potvrdzujem Vašu konzultáciu vo štvrtok o 15.00 h. Prineste, prosím, nájomnú zmluvu, preberací protokol, fotografie a korešpondenciu s prenajímateľom. Prvá konzultácia trvá približne hodinu a stojí 60 eur. O ďalšom postupe a odmene sa dohodneme až po konzultácii. S pozdravom Eva Horváthová"
+          },
+          "question": "Коли домовлятимуться про подальшу винагороду?",
+          "options": [
+            {
+              "id": "a",
+              "text": "після першої консультації",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "ще до консультації телефоном",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "після завершення справи в суді",
+              "correct": false
+            }
+          ],
+          "explanation": "O ďalšom postupe a odmene sa dohodneme až po konzultácii — лише після консультації.",
+          "order": 9,
+          "wordIds": [
+            "b2-u05-l06-advokat-w01"
+          ]
+        },
+        {
+          "id": "b2-u05-l06-advokat-ex10",
+          "lessonId": "b2-u05-l06-advokat",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти ввічливо питаєш адвоката, чи має сенс подавати позов.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Mohli by ste mi poradiť, či má zmysel podať žalobu?",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Mohli by ste mi poradiť, ak má zmysel podať žalobu?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Poraď mi, či mám podať žalobu.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Mohli by ste mi poradiť, či má zmysel podať žalobou?",
+              "correct": false
+            }
+          ],
+          "explanation": "Či — «чи»; Vy-форма; podať žalobu — знахідний.",
+          "order": 10,
+          "wordIds": [
+            "b2-u05-l06-advokat-w01"
+          ]
+        },
+        {
+          "id": "b2-u05-l06-advokat-ex11",
+          "lessonId": "b2-u05-l06-advokat",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Адвокатка каже: «Podľa môjho názoru máte dobré argumenty, ale výsledok sa nedá zaručiť.» Що вона має на увазі?",
+          "options": [
+            {
+              "id": "a",
+              "text": "шанси непогані, але гарантувати перемогу вона не може",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "справа точно виграшна",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "вона відмовляється братися за справу",
+              "correct": false
+            }
+          ],
+          "explanation": "«Výsledok sa nedá zaručiť» — результат не можна гарантувати; це звичайна професійна обережність.",
+          "order": 11,
+          "wordIds": [
+            "b2-u05-l06-advokat-w01"
+          ]
+        },
+        {
+          "id": "b2-u05-l06-advokat-ex12",
+          "lessonId": "b2-u05-l06-advokat",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Адвокат може розповісти твоєму роботодавцю, про що ти говорив(ла) на консультації.",
+          "correctAnswer": false,
+          "explanation": "Ні: адвокат зобов’язаний зберігати mlčanlivosť щодо всього, що дізнався від клієнта.",
+          "order": 12,
+          "wordIds": [
+            "b2-u05-l06-advokat-w01"
+          ]
+        },
+        {
+          "id": "b2-u05-l06-advokat-ex13",
+          "lessonId": "b2-u05-l06-advokat",
+          "type": "dialogue_order",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Розстав репліки в правильному порядку.",
+          "lines": [
+            {
+              "id": "l5",
+              "sk": "Advokátka: Dobre. Navrhujem najprv poslať prenajímateľovi písomnú výzvu."
+            },
+            {
+              "id": "l2",
+              "sk": "Klient: Dobrý deň, prenajímateľ mi nevrátil kauciu. Mám so sebou zmluvu a fotografie."
+            },
+            {
+              "id": "l1",
+              "sk": "Advokátka: Dobrý deň, posaďte sa. S čím Vám môžem pomôcť?"
+            },
+            {
+              "id": "l6",
+              "sk": "Klient: Súhlasím. Koľko bude stáť tento úkon?"
+            },
+            {
+              "id": "l4",
+              "sk": "Klient: Pred dvoma mesiacmi, mám aj preberací protokol."
+            },
+            {
+              "id": "l3",
+              "sk": "Advokátka: Ďakujem. Kedy ste byt odovzdali?"
+            }
+          ],
+          "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5",
+            "l6"
+          ],
+          "explanation": "Логіка: привітання → суть проблеми → уточнення дати → доказ → пропозиція адвокатки → питання про ціну.",
+          "order": 13,
+          "wordIds": [
+            "b2-u05-l06-advokat-w01"
+          ]
+        },
+        {
+          "id": "b2-u05-l06-advokat-ex14",
+          "lessonId": "b2-u05-l06-advokat",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перепиши ввічливіше, почни з «Mohli by ste…».",
+          "source": "Vysvetlite mi to jednoduchšie.",
+          "acceptedAnswers": [
+            "Mohli by ste mi to vysvetliť jednoduchšie?",
+            "Mohli by ste mi to jednoduchšie vysvetliť?"
+          ],
+          "explanation": "Mohli by ste + інфінітив — ввічливе прохання замість наказу.",
+          "order": 14,
+          "wordIds": [
+            "b2-u05-l06-advokat-w01"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перша консультація",
+        "description": "Орендодавець не повертає заставу. Ти йдеш на першу консультацію до адвокатки.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Як переконаєшся, що це справжня адвокатка?",
+            "options": [
+              {
+                "text": "спитаю сусіда",
+                "correct": false
+              },
+              {
+                "text": "повірю вивісці на дверях",
+                "correct": false
+              },
+              {
+                "text": "перевірю її в списку Slovenskej advokátskej komory",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як спитаєш про ціну?",
+            "options": [
+              {
+                "sk": "Koľko bude stáť prvú konzultáciu?",
+                "correct": false
+              },
+              {
+                "sk": "Daj mi cenu.",
+                "correct": false
+              },
+              {
+                "sk": "Koľko bude stáť prvá konzultácia?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Що підпишеш, щоб вона могла діяти від твого імені?",
+            "options": [
+              {
+                "sk": "kópiu pasu suseda",
+                "correct": false
+              },
+              {
+                "sk": "plnú moc",
+                "correct": true
+              },
+              {
+                "sk": "ústny sľub",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як спитаєш про ризики?",
+            "options": [
+              {
+                "sk": "Vyhráme to určite, však?",
+                "correct": false
+              },
+              {
+                "sk": "Aké je moje šance a náklady?",
+                "correct": false
+              },
+              {
+                "sk": "Aké sú moje šance a aké náklady mi môžu vzniknúť?",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти знаєш, як працювати з адвокатом. Далі — екзекуція: що відбувається, коли борг стягують примусово."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти знаєш, як працювати з адвокатом. Далі — екзекуція: що відбувається, коли борг стягують примусово.",
+        "nowYouKnow": [
+          "advokát (SAK) · právnik · notár · obhajca",
+          "odmena · honorár · udeliť plnú moc + давальний",
+          "mlčanlivosť · хронологія, документи, строки",
+          "Mohli by ste mi poradiť, či… · Aké náklady mi môžu vzniknúť?"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u05-l07-exekucia",
+          "title": "Екзекуція: примусове стягнення боргу"
+        }
+      }
+    }
+  ]
+}

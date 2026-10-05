@@ -1,0 +1,924 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u05-l07-exekucia",
+      "sectionId": "b2-u05",
+      "level": "B2",
+      "title": "Екзекуція: примусове стягнення боргу",
+      "topic": "Право і права споживача",
+      "description": "Що таке exekúcia, хто такі veriteľ, dlžník і exekútor, навіщо потрібен exekučný titul, як можуть стягувати борг (зарплата, рахунок, майно) і що розумно робити, коли прийшов лист від екзекутора.",
+      "order": 47,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Розуміти процес примусового стягнення й реагувати на нього відповідально, без паніки.",
+      "completionMessage": "Ти розумієш, як працює екзекуція. Далі — захист персональних даних: що таке GDPR і які права воно тобі дає.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Право і права споживача",
+        "title": "Екзекуція: примусове стягнення боргу",
+        "shortDescription": "Розуміти процес примусового стягнення й реагувати на нього відповідально, без паніки.",
+        "outcomes": [
+          "розрізняти veriteľ, dlžník і exekútor (oprávnený, povinný)",
+          "пояснювати, що екзекуція потребує exekučného titulu",
+          "називати способи стягнення: zrážky zo mzdy, prikázanie pohľadávky z účtu",
+          "домовлятися про сплату й перевіряти обґрунтованість вимоги"
+        ],
+        "newWords": [
+          "exekúcia",
+          "exekútor",
+          "dlžník",
+          "veriteľ",
+          "exekučný titul",
+          "zrážka zo mzdy"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Хто є хто",
+          "text": "Exekúcia — примусове виконання обов’язку, найчастіше сплати боргу. Veriteľ (кредитор) — той, кому винні; dlžník (боржник) — той, хто винен. В офіційних документах екзекуції кредитора називають «oprávnený», а боржника — «povinný». Exekútor — особа, яка за дорученням суду проводить стягнення. Важливо: екзекуція не починається «просто так» — потрібен exekučný titul, тобто документ, що підтверджує обов’язок сплатити: наприклад, právoplatný rozsudok або platobný rozkaz. Без нього колекторська фірма (inkasná spoločnosť) може нагадувати й вимагати, але не стягувати примусово.",
+          "examples": [
+            {
+              "sk": "Veriteľ podal návrh na vykonanie exekúcie.",
+              "uk": "Кредитор подав заяву про проведення екзекуції."
+            },
+            {
+              "sk": "Exekučným titulom je právoplatný rozsudok.",
+              "uk": "Виконавчим документом є рішення, що набрало законної сили."
+            }
+          ],
+          "shortRule": "veriteľ (oprávnený) · dlžník (povinný) · exekútor · bez exekučného titulu nie je exekúcia",
+          "commonMistakes": [
+            {
+              "mistake": "Dlžník je ten, komu niekto dlhuje.",
+              "correct": "Veriteľ je ten, komu niekto dlhuje."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Як стягують борг",
+          "text": "Про початок екзекуції боржник зазвичай отримує upovedomenie o začatí exekúcie. Способи стягнення: zrážky zo mzdy (роботодавець щомісяця утримує частину зарплати й перераховує її), prikázanie pohľadávky z účtu (банк блокує кошти на рахунку й перераховує їх), продаж рухомого майна чи нерухомості. Закон зазвичай залишає боржникові частину доходу, з якої стягувати не можна; точні суми змінюються, тож перевіряй їх на офіційних сторінках. Екзекуція коштує грошей, і ці витрати зазвичай несе боржник, тому борг швидко зростає.",
+          "examples": [
+            {
+              "sk": "Zamestnávateľ mi robí zrážky zo mzdy.",
+              "uk": "Роботодавець утримує частину моєї зарплати."
+            },
+            {
+              "sk": "Exekútor zablokoval účet dlžníka.",
+              "uk": "Екзекутор заблокував рахунок боржника."
+            }
+          ],
+          "shortRule": "upovedomenie o začatí exekúcie · zrážky zo mzdy · prikázanie pohľadávky z účtu · náklady exekúcie",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Що робити, коли прийшов лист",
+          "text": "Не ігноруй пошту: неотриманий лист зазвичай усе одно вважається врученим, а строки спливають. 1) Прочитай, хто кредитор, яка сума й на підставі якого exekučného titulu ведеться стягнення. 2) Перевір, чи борг справжній і чи ти його вже не сплатив(ла). 3) Зв’яжися з екзекутором і спитай про сплату частинами (splátky): «Chcel by som dlh splácať v splátkach.» 4) Якщо вважаєш екзекуцію неправомірною, швидко звертайся по правову допомогу — строки на захист короткі. Граматика: «zaplatiť dlh» (знахідний), але «zbaviť sa dlhov» (родовий). Якщо боргів забагато, існує oddlženie — про нього в уроці про правову допомогу.",
+          "examples": [
+            {
+              "sk": "Chcela by som dlh splácať v splátkach.",
+              "uk": "Я хотіла б виплачувати борг частинами."
+            },
+            {
+              "sk": "Dlh som už zaplatil, prikladám doklad o úhrade.",
+              "uk": "Я вже сплатив борг, додаю підтвердження оплати."
+            }
+          ],
+          "shortRule": "не ігноруй пошту · перевір titul і суму · splátky · швидко по допомогу",
+          "commonMistakes": [
+            {
+              "mistake": "Chcem zaplatiť dlhu.",
+              "correct": "Chcem zaplatiť dlh."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u05-l07-exekucia-w01",
+            "sk": "exekúcia",
+            "uk": "екзекуція, примусове стягнення",
+            "pronunciationUk": "екзеку:ція",
+            "exampleSk": "Exekúcia sa začala na základe právoplatného rozsudku.",
+            "exampleUk": "Екзекуція почалася на підставі рішення, що набрало законної сили."
+          },
+          {
+            "wordId": "b2-u05-l07-exekucia-w02",
+            "sk": "exekútor",
+            "uk": "екзекутор, судовий виконавець",
+            "pronunciationUk": "екзеку:тор",
+            "exampleSk": "Exekútor poslal dlžníkovi upovedomenie.",
+            "exampleUk": "Екзекутор надіслав боржникові повідомлення."
+          },
+          {
+            "wordId": "b2-u05-l07-exekucia-w03",
+            "sk": "dlžník",
+            "uk": "боржник",
+            "pronunciationUk": "длжні:к",
+            "exampleSk": "Dlžník požiadal o splátkový kalendár.",
+            "exampleUk": "Боржник попросив про графік платежів."
+          },
+          {
+            "wordId": "b2-u05-l07-exekucia-w04",
+            "sk": "veriteľ",
+            "uk": "кредитор",
+            "pronunciationUk": "верітєль",
+            "exampleSk": "Veriteľ súhlasil so splácaním po častiach.",
+            "exampleUk": "Кредитор погодився на сплату частинами."
+          },
+          {
+            "wordId": "b2-u05-l07-exekucia-w05",
+            "sk": "exekučný titul",
+            "uk": "виконавчий документ",
+            "pronunciationUk": "екзекучни: тітул",
+            "exampleSk": "Bez exekučného titulu exekúcia nemôže začať.",
+            "exampleUk": "Без виконавчого документа екзекуція не може початися."
+          },
+          {
+            "wordId": "b2-u05-l07-exekucia-w06",
+            "sk": "zrážka zo mzdy",
+            "uk": "утримання із зарплати",
+            "pronunciationUk": "зра:жка зо мзди",
+            "exampleSk": "Zamestnávateľ mi oznámil zrážku zo mzdy.",
+            "exampleUk": "Роботодавець повідомив мені про утримання із зарплати."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u05-l07-exekucia-w01",
+          "sk": "exekúcia",
+          "uk": "екзекуція, примусове стягнення",
+          "pronunciationUk": "екзеку:ція",
+          "exampleSk": "Exekúcia sa začala na základe právoplatného rozsudku.",
+          "exampleUk": "Екзекуція почалася на підставі рішення, що набрало законної сили.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l07-exekucia-w02",
+          "sk": "exekútor",
+          "uk": "екзекутор, судовий виконавець",
+          "pronunciationUk": "екзеку:тор",
+          "exampleSk": "Exekútor poslal dlžníkovi upovedomenie.",
+          "exampleUk": "Екзекутор надіслав боржникові повідомлення.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l07-exekucia-w03",
+          "sk": "dlžník",
+          "uk": "боржник",
+          "pronunciationUk": "длжні:к",
+          "exampleSk": "Dlžník požiadal o splátkový kalendár.",
+          "exampleUk": "Боржник попросив про графік платежів.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l07-exekucia-w04",
+          "sk": "veriteľ",
+          "uk": "кредитор",
+          "pronunciationUk": "верітєль",
+          "exampleSk": "Veriteľ súhlasil so splácaním po častiach.",
+          "exampleUk": "Кредитор погодився на сплату частинами.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l07-exekucia-w05",
+          "sk": "exekučný titul",
+          "uk": "виконавчий документ",
+          "pronunciationUk": "екзекучни: тітул",
+          "exampleSk": "Bez exekučného titulu exekúcia nemôže začať.",
+          "exampleUk": "Без виконавчого документа екзекуція не може початися.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l07-exekucia-w06",
+          "sk": "zrážka zo mzdy",
+          "uk": "утримання із зарплати",
+          "pronunciationUk": "зра:жка зо мзди",
+          "exampleSk": "Zamestnávateľ mi oznámil zrážku zo mzdy.",
+          "exampleUk": "Роботодавець повідомив мені про утримання із зарплати.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u05-l07-exekucia-ex01",
+          "lessonId": "b2-u05-l07-exekucia",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "exekúcia",
+              "right": "примусове стягнення"
+            },
+            {
+              "left": "exekútor",
+              "right": "особа, яка проводить стягнення"
+            },
+            {
+              "left": "dlžník",
+              "right": "той, хто винен"
+            },
+            {
+              "left": "veriteľ",
+              "right": "той, кому винні"
+            },
+            {
+              "left": "exekučný titul",
+              "right": "документ, що підтверджує обов’язок сплатити"
+            },
+            {
+              "left": "zrážka zo mzdy",
+              "right": "утримання частини зарплати"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u05-l07-exekucia-w01",
+            "b2-u05-l07-exekucia-w02",
+            "b2-u05-l07-exekucia-w03",
+            "b2-u05-l07-exekucia-w04",
+            "b2-u05-l07-exekucia-w05",
+            "b2-u05-l07-exekucia-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l07-exekucia-ex02",
+          "lessonId": "b2-u05-l07-exekucia",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Exekúcia sa začala na "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "základom",
+                "základ",
+                "základe"
+              ],
+              "correct": "základe"
+            },
+            {
+              "text": " právoplatného rozsudku."
+            }
+          ],
+          "explanation": "Na základe + родовий — на підставі.",
+          "order": 2,
+          "wordIds": [
+            "b2-u05-l07-exekucia-w01"
+          ]
+        },
+        {
+          "id": "b2-u05-l07-exekucia-ex03",
+          "lessonId": "b2-u05-l07-exekucia",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Chcem zaplatiť "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "dlhu",
+                "dlhom",
+                "dlh"
+              ],
+              "correct": "dlh"
+            },
+            {
+              "text": " čo najskôr."
+            }
+          ],
+          "explanation": "Zaplatiť що? — знахідний: dlh.",
+          "order": 3
+        },
+        {
+          "id": "b2-u05-l07-exekucia-ex04",
+          "lessonId": "b2-u05-l07-exekucia",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Bez exekučného ______ exekúcia nemôže začať. (документа — родовий)",
+          "acceptedAnswers": [
+            "titulu"
+          ],
+          "explanation": "Bez + родовий: bez exekučného titulu.",
+          "order": 4,
+          "wordIds": [
+            "b2-u05-l07-exekucia-w01",
+            "b2-u05-l07-exekucia-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l07-exekucia-ex05",
+          "lessonId": "b2-u05-l07-exekucia",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що потрібно, щоб почалася екзекуція?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "усна вимога знайомого",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "лише дзвінок колектора",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "виконавчий документ, наприклад рішення, що набрало законної сили",
+              "correct": true
+            }
+          ],
+          "explanation": "Без exekučného titulu примусове стягнення не можливе.",
+          "order": 5
+        },
+        {
+          "id": "b2-u05-l07-exekucia-ex06",
+          "lessonId": "b2-u05-l07-exekucia",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Dlžník požiadala exekútora o splátky.",
+          "errorToken": "požiadala",
+          "correctToken": "požiadal",
+          "explanation": "Dlžník — чоловічий рід, тому l-форма požiadal.",
+          "order": 6,
+          "wordIds": [
+            "b2-u05-l07-exekucia-w02",
+            "b2-u05-l07-exekucia-w03"
+          ]
+        },
+        {
+          "id": "b2-u05-l07-exekucia-ex07",
+          "lessonId": "b2-u05-l07-exekucia",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Хто це?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Veriteľ"
+            },
+            {
+              "id": "c2",
+              "title": "Dlžník"
+            }
+          ],
+          "items": [
+            {
+              "sk": "dlhuje peniaze",
+              "category": "c2"
+            },
+            {
+              "sk": "požičal peniaze",
+              "category": "c1"
+            },
+            {
+              "sk": "spláca splátky",
+              "category": "c2"
+            },
+            {
+              "sk": "čaká na splatenie",
+              "category": "c1"
+            },
+            {
+              "sk": "podal návrh na exekúciu",
+              "category": "c1"
+            },
+            {
+              "sk": "dostal upovedomenie",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Кредитор чекає гроші й ініціює стягнення; боржник винен і сплачує.",
+          "order": 7,
+          "wordIds": [
+            "b2-u05-l07-exekucia-w01",
+            "b2-u05-l07-exekucia-w03",
+            "b2-u05-l07-exekucia-w04"
+          ]
+        },
+        {
+          "id": "b2-u05-l07-exekucia-ex08",
+          "lessonId": "b2-u05-l07-exekucia",
+          "type": "real_schedule",
+          "skill": [
+            "reading",
+            "real_life",
+            "time"
+          ],
+          "instruction": "Прочитай графік платежів.",
+          "schedule": {
+            "title": "Splátkový kalendár – ukážka",
+            "rows": [
+              {
+                "day": "15. 3. 2026",
+                "hours": "150 eur"
+              },
+              {
+                "day": "15. 4. 2026",
+                "hours": "150 eur"
+              },
+              {
+                "day": "15. 5. 2026",
+                "hours": "150 eur"
+              },
+              {
+                "day": "15. 6. 2026",
+                "hours": "120 eur"
+              }
+            ]
+          },
+          "question": "Скільки становить останній платіж?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "150 євро",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "570 євро",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "120 євро",
+              "correct": true
+            }
+          ],
+          "explanation": "Останній рядок: 15. 6. 2026 — 120 eur.",
+          "order": 8
+        },
+        {
+          "id": "b2-u05-l07-exekucia-ex09",
+          "lessonId": "b2-u05-l07-exekucia",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Vasyľ pred dvoma rokmi zrušil paušál, ale posledná faktúra zostala nezaplatená. Medzitým sa presťahoval, listy na starú adresu nedostával a o platobnom rozkaze sa vôbec nedozvedel. Rozkaz sa stal právoplatným a neskôr mu zamestnávateľ oznámil, že dostal od exekútora príkaz na zrážky zo mzdy. Vasyľ najprv spanikáril, potom však exekútorovi zavolal. Zistil, kto je veriteľ, aká je suma a na základe akého exekučného titulu sa exekúcia vedie. Dlh bol skutočný, ale kvôli nákladom exekúcie bol niekoľkokrát vyšší. Dohodol sa na splátkach a odvtedy novú adresu vždy hneď oznámi pošte aj všetkým firmám.",
+          "questions": [
+            {
+              "question": "Чому Василь не знав про платіжний наказ?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "він переїхав і не отримував листів на стару адресу",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "він був у відпустці за кордоном",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "оператор нічого не надсилав",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що він з’ясував, подзвонивши екзекуторові?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "що борг уже сплачено",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "що екзекуція — помилка",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "хто кредитор, яка сума й на підставі якого документа ведеться стягнення",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Чому борг виявився значно більшим?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "через новий тариф",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "через штраф від роботодавця",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "через витрати на екзекуцію",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 9,
+          "wordIds": [
+            "b2-u05-l07-exekucia-w01",
+            "b2-u05-l07-exekucia-w02",
+            "b2-u05-l07-exekucia-w04",
+            "b2-u05-l07-exekucia-w05",
+            "b2-u05-l07-exekucia-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l07-exekucia-ex10",
+          "lessonId": "b2-u05-l07-exekucia",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення.",
+          "document": {
+            "title": "Upovedomenie o začatí exekúcie – ukážka",
+            "fields": [
+              {
+                "label": "Exekútor",
+                "value": "JUDr. Peter Malý, Exekútorský úrad Nitra"
+              },
+              {
+                "label": "Oprávnený",
+                "value": "TeleMobil, a. s."
+              },
+              {
+                "label": "Povinný",
+                "value": "Vasyľ Hnatiuk"
+              },
+              {
+                "label": "Exekučný titul",
+                "value": "platobný rozkaz Okresného súdu Nitra"
+              },
+              {
+                "label": "Vymáhaná suma",
+                "value": "86 eur s príslušenstvom"
+              },
+              {
+                "label": "Spôsob vykonania",
+                "value": "zrážky zo mzdy"
+              }
+            ]
+          },
+          "question": "Хто тут кредитор?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Vasyľ Hnatiuk",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "TeleMobil, a. s.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "JUDr. Peter Malý",
+              "correct": false
+            }
+          ],
+          "explanation": "У документах екзекуції кредитор — oprávnený, боржник — povinný.",
+          "order": 10,
+          "wordIds": [
+            "b2-u05-l07-exekucia-w01",
+            "b2-u05-l07-exekucia-w02",
+            "b2-u05-l07-exekucia-w05",
+            "b2-u05-l07-exekucia-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l07-exekucia-ex11",
+          "lessonId": "b2-u05-l07-exekucia",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти (жінка) пишеш екзекуторові й просиш про сплату частинами.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Chcel by som dlh splácať v splátkach.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Chcela by som dlh splácať v splátky.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Dajte mi splátky, inak nezaplatím nič.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Chcela by som dlh splácať v splátkach.",
+              "correct": true
+            }
+          ],
+          "explanation": "Жінка: chcela by som; v splátkach — місцевий; без погроз.",
+          "order": 11
+        },
+        {
+          "id": "b2-u05-l07-exekucia-ex12",
+          "lessonId": "b2-u05-l07-exekucia",
+          "type": "tone",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Визнач тон мовця.",
+          "context": "Exekútor: Rozumiem Vašej situácii. Ak sa ozvete do piatku, môžeme sa dohodnúť na splátkach.",
+          "options": [
+            {
+              "id": "a",
+              "text": "діловий і готовий до домовленості",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "жартівливий",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "погрозливий і агресивний",
+              "correct": false
+            }
+          ],
+          "explanation": "«Rozumiem Vašej situácii» і пропозиція splátok — спокійний діловий тон.",
+          "order": 12,
+          "wordIds": [
+            "b2-u05-l07-exekucia-w02"
+          ]
+        },
+        {
+          "id": "b2-u05-l07-exekucia-ex13",
+          "lessonId": "b2-u05-l07-exekucia",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери розумні кроки після листа від екзекутора.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "ihneď zrušiť všetky účty a zmiznúť",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "overiť, na základe akého exekučného titulu sa exekúcia vedie",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "prečítať, kto je veriteľ a aká je suma",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "neotvárať poštu a čakať",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "skontaktovať exekútora a spýtať sa na splátky",
+              "correct": true
+            }
+          ],
+          "explanation": "Розумно перевірити кредитора, суму й titul та домовлятися; ігнорування лише збільшує борг.",
+          "order": 13,
+          "wordIds": [
+            "b2-u05-l07-exekucia-w01",
+            "b2-u05-l07-exekucia-w02",
+            "b2-u05-l07-exekucia-w04",
+            "b2-u05-l07-exekucia-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l07-exekucia-ex14",
+          "lessonId": "b2-u05-l07-exekucia",
+          "type": "drag_to_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentence": "Exekútor zablokoval ______ dlžníka.",
+          "draggable": [
+            "účet",
+            "účtom",
+            "účtu"
+          ],
+          "correct": "účet",
+          "explanation": "Zablokovať що? — знахідний: účet.",
+          "order": 14,
+          "wordIds": [
+            "b2-u05-l07-exekucia-w02",
+            "b2-u05-l07-exekucia-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Лист від екзекутора",
+        "description": "Тобі (ти — чоловік) прийшло повідомлення про початок екзекуції за старий рахунок. Ти дієш тверезо.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Що перевіриш насамперед?",
+            "options": [
+              {
+                "text": "хто кредитор, яка сума й на підставі якого виконавчого документа",
+                "correct": true
+              },
+              {
+                "text": "нічого, просто чекатиму",
+                "correct": false
+              },
+              {
+                "text": "колір конверта",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Що скажеш екзекуторові?",
+            "options": [
+              {
+                "sk": "Chcel by som dlh splácať v splátkach.",
+                "correct": true
+              },
+              {
+                "sk": "Nič vám nezaplatím.",
+                "correct": false
+              },
+              {
+                "sk": "Chcela by som dlh splácať v splátkach.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти вже давно сплатив борг. Що напишеш?",
+            "options": [
+              {
+                "sk": "Dlh som už zaplatil, prikladám doklad o úhrade.",
+                "correct": true
+              },
+              {
+                "sk": "Dlh som už zaplatiť, prikladám doklad.",
+                "correct": false
+              },
+              {
+                "sk": "Nechajte ma na pokoji.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як уникнути подібного надалі?",
+            "options": [
+              {
+                "text": "вчасно повідомляти нову адресу й не ігнорувати листи",
+                "correct": true
+              },
+              {
+                "text": "не відкривати пошту",
+                "correct": false
+              },
+              {
+                "text": "змінити номер телефону",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш, як працює екзекуція. Далі — захист персональних даних: що таке GDPR і які права воно тобі дає."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш, як працює екзекуція. Далі — захист персональних даних: що таке GDPR і які права воно тобі дає.",
+        "nowYouKnow": [
+          "veriteľ (oprávnený) · dlžník (povinný) · exekútor",
+          "exekučný titul: právoplatný rozsudok, platobný rozkaz",
+          "zrážky zo mzdy · prikázanie pohľadávky z účtu · náklady rastú",
+          "не ігнорувати пошту · splátky · zaplatiť dlh"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u05-l08-ochrana-udajov",
+          "title": "Захист персональних даних (GDPR)"
+        }
+      }
+    }
+  ]
+}

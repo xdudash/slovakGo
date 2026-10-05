@@ -1,0 +1,891 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u05-l08-ochrana-udajov",
+      "sectionId": "b2-u05",
+      "level": "B2",
+      "title": "Захист персональних даних (GDPR)",
+      "topic": "Право і права споживача",
+      "description": "Які права дає GDPR: що таке osobné údaje, хто такі prevádzkovateľ і dotknutá osoba, право на доступ, виправлення й výmaz, відкликання згоди, витік даних і коли звертатися до Úradu na ochranu osobných údajov.",
+      "order": 48,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Розуміти свої права щодо персональних даних і письмово їх реалізовувати.",
+      "completionMessage": "Ти знаєш свої права щодо даних. Далі — безоплатна правова допомога: куди звернутися, якщо адвокат тобі не по кишені.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Право і права споживача",
+        "title": "Захист персональних даних (GDPR)",
+        "shortDescription": "Розуміти свої права щодо персональних даних і письмово їх реалізовувати.",
+        "outcomes": [
+          "розрізняти prevádzkovateľ і dotknutá osoba",
+          "називати основні права: prístup, oprava, výmaz, námietka",
+          "писати žiadosť o prístup k osobným údajom та žiadosť o výmaz",
+          "реагувати на витік даних і знати, де подати скаргу"
+        ],
+        "newWords": [
+          "spracúvanie",
+          "prevádzkovateľ",
+          "dotknutá osoba",
+          "výmaz",
+          "únik údajov",
+          "odvolať"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Хто є хто",
+          "text": "GDPR — регламент ЄС про захист даних; словацькою його називають «všeobecné nariadenie o ochrane údajov». Osobné údaje — будь-яка інформація, за якою можна ідентифікувати людину: ім’я, адреса, номер телефону, фото обличчя, часто й IP-адреса. Prevádzkovateľ (контролер) — той, хто вирішує, навіщо й як дані обробляються: роботодавець, банк, інтернет-магазин. Dotknutá osoba (суб’єкт даних) — людина, якої дані стосуються, тобто ти. Spracúvanie — будь-яка робота з даними: збирання, зберігання, передавання. В офіційних текстах пишуть «spracúvanie», хоча в мовленні почуєш і «spracovanie».",
+          "examples": [
+            {
+              "sk": "Prevádzkovateľ spracúva osobné údaje zákazníkov.",
+              "uk": "Контролер обробляє персональні дані клієнтів."
+            },
+            {
+              "sk": "Ako dotknutá osoba mám právo na informácie.",
+              "uk": "Як суб’єкт даних я маю право на інформацію."
+            }
+          ],
+          "shortRule": "prevádzkovateľ = хто обробляє · dotknutá osoba = про кого дані · spracúvanie = обробка",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Твої права",
+          "text": "Як dotknutá osoba ти зазвичай маєш право на доступ (дізнатися, які дані про тебе обробляють), opravu (виправлення), výmaz (видалення — не в кожній ситуації, бо деякі дані закон велить зберігати), обмеження обробки, námietku (заперечення) й перенесення даних. Якщо обробка ґрунтується на твоїй згоді, її можна будь-коли odvolať — відкликати. Prevádzkovateľ має відповісти без зайвої затримки, як правило протягом місяця; у складних випадках строк можна продовжити. Формули: «žiadosť o prístup k osobným údajom» (k + давальний), «Žiadam o výmaz mojich osobných údajov.», «Odvolávam súhlas so spracúvaním…» (so перед s).",
+          "examples": [
+            {
+              "sk": "Žiadam o výmaz mojich osobných údajov.",
+              "uk": "Прошу видалити мої персональні дані."
+            },
+            {
+              "sk": "Odvolávam súhlas so spracúvaním osobných údajov na marketingové účely.",
+              "uk": "Відкликаю згоду на обробку персональних даних для маркетингу."
+            }
+          ],
+          "shortRule": "prístup k + давальний · žiadam o výmaz · odvolať súhlas so spracúvaním",
+          "commonMistakes": [
+            {
+              "mistake": "Žiadam o prístup ku moje osobné údaje.",
+              "correct": "Žiadam o prístup k mojim osobným údajom."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Únik údajov a sťažnosť",
+          "text": "Únik údajov — ситуація, коли дані потрапили до сторонніх: злам, загублений ноутбук, лист не тому адресатові. Prevádzkovateľ має реагувати, у серйозних випадках повідомити наглядовий орган, а часом і людей, яких це стосується. Що робиш ти: змінюєш паролі, остерігаєшся шахрайських листів (podvodné e-maily), стежиш за рахунком. Якщо prevádzkovateľ не реагує на твою žiadosť або ти вважаєш, що дані обробляють незаконно, можна звернутися до Úradu na ochranu osobných údajov Slovenskej republiky. Банер «súhlas s cookies» — це теж згода: відмовитися від необов’язкових cookies зазвичай має бути так само просто, як погодитися. Граматика: «dôjsť k» + давальний — «Došlo k úniku údajov.»",
+          "examples": [
+            {
+              "sk": "Došlo k úniku osobných údajov zákazníkov.",
+              "uk": "Стався витік персональних даних клієнтів."
+            },
+            {
+              "sk": "Obrátila som sa na Úrad na ochranu osobných údajov.",
+              "uk": "Я звернулася до Управління із захисту персональних даних."
+            }
+          ],
+          "shortRule": "únik údajov → змінити паролі · Úrad na ochranu osobných údajov · cookies = теж згода",
+          "commonMistakes": [
+            {
+              "mistake": "Došlo k únik údajov.",
+              "correct": "Došlo k úniku údajov."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u05-l08-ochrana-udajov-w01",
+            "sk": "spracúvanie",
+            "uk": "обробка (даних)",
+            "pronunciationUk": "спрацу:ваньє",
+            "exampleSk": "Spracúvanie osobných údajov musí mať právny základ.",
+            "exampleUk": "Обробка персональних даних повинна мати правову підставу."
+          },
+          {
+            "wordId": "b2-u05-l08-ochrana-udajov-w02",
+            "sk": "prevádzkovateľ",
+            "uk": "контролер (той, хто обробляє дані)",
+            "pronunciationUk": "прева:дзковатєль",
+            "exampleSk": "Prevádzkovateľ musí odpovedať bez zbytočného odkladu.",
+            "exampleUk": "Контролер має відповісти без зайвої затримки."
+          },
+          {
+            "wordId": "b2-u05-l08-ochrana-udajov-w03",
+            "sk": "dotknutá osoba",
+            "uk": "суб’єкт даних",
+            "pronunciationUk": "доткнута: особа",
+            "exampleSk": "Dotknutá osoba má právo na prístup k údajom.",
+            "exampleUk": "Суб’єкт даних має право на доступ до даних."
+          },
+          {
+            "wordId": "b2-u05-l08-ochrana-udajov-w04",
+            "sk": "výmaz",
+            "uk": "видалення (даних)",
+            "pronunciationUk": "ві:маз",
+            "exampleSk": "Požiadala som o výmaz svojich údajov z databázy.",
+            "exampleUk": "Я попросила видалити свої дані з бази."
+          },
+          {
+            "wordId": "b2-u05-l08-ochrana-udajov-w05",
+            "sk": "únik údajov",
+            "uk": "витік даних",
+            "pronunciationUk": "у:нік у:дайов",
+            "exampleSk": "Po úniku údajov som si zmenil všetky heslá.",
+            "exampleUk": "Після витоку даних я змінив усі паролі."
+          },
+          {
+            "wordId": "b2-u05-l08-ochrana-udajov-w06",
+            "sk": "odvolať",
+            "uk": "відкликати (згоду, заяву)",
+            "pronunciationUk": "одволать",
+            "exampleSk": "Súhlas môžete kedykoľvek odvolať.",
+            "exampleUk": "Згоду можна будь-коли відкликати."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u05-l08-ochrana-udajov-w01",
+          "sk": "spracúvanie",
+          "uk": "обробка (даних)",
+          "pronunciationUk": "спрацу:ваньє",
+          "exampleSk": "Spracúvanie osobných údajov musí mať právny základ.",
+          "exampleUk": "Обробка персональних даних повинна мати правову підставу.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l08-ochrana-udajov-w02",
+          "sk": "prevádzkovateľ",
+          "uk": "контролер (той, хто обробляє дані)",
+          "pronunciationUk": "прева:дзковатєль",
+          "exampleSk": "Prevádzkovateľ musí odpovedať bez zbytočného odkladu.",
+          "exampleUk": "Контролер має відповісти без зайвої затримки.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l08-ochrana-udajov-w03",
+          "sk": "dotknutá osoba",
+          "uk": "суб’єкт даних",
+          "pronunciationUk": "доткнута: особа",
+          "exampleSk": "Dotknutá osoba má právo na prístup k údajom.",
+          "exampleUk": "Суб’єкт даних має право на доступ до даних.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l08-ochrana-udajov-w04",
+          "sk": "výmaz",
+          "uk": "видалення (даних)",
+          "pronunciationUk": "ві:маз",
+          "exampleSk": "Požiadala som o výmaz svojich údajov z databázy.",
+          "exampleUk": "Я попросила видалити свої дані з бази.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l08-ochrana-udajov-w05",
+          "sk": "únik údajov",
+          "uk": "витік даних",
+          "pronunciationUk": "у:нік у:дайов",
+          "exampleSk": "Po úniku údajov som si zmenil všetky heslá.",
+          "exampleUk": "Після витоку даних я змінив усі паролі.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l08-ochrana-udajov-w06",
+          "sk": "odvolať",
+          "uk": "відкликати (згоду, заяву)",
+          "pronunciationUk": "одволать",
+          "exampleSk": "Súhlas môžete kedykoľvek odvolať.",
+          "exampleUk": "Згоду можна будь-коли відкликати.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u05-l08-ochrana-udajov-ex01",
+          "lessonId": "b2-u05-l08-ochrana-udajov",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "spracúvanie",
+              "right": "обробка даних"
+            },
+            {
+              "left": "prevádzkovateľ",
+              "right": "той, хто визначає мету обробки"
+            },
+            {
+              "left": "dotknutá osoba",
+              "right": "людина, якої стосуються дані"
+            },
+            {
+              "left": "výmaz",
+              "right": "видалення даних"
+            },
+            {
+              "left": "únik údajov",
+              "right": "потрапляння даних до сторонніх"
+            },
+            {
+              "left": "odvolať",
+              "right": "відкликати згоду"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u05-l08-ochrana-udajov-w01",
+            "b2-u05-l08-ochrana-udajov-w02",
+            "b2-u05-l08-ochrana-udajov-w03",
+            "b2-u05-l08-ochrana-udajov-w04",
+            "b2-u05-l08-ochrana-udajov-w05",
+            "b2-u05-l08-ochrana-udajov-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l08-ochrana-udajov-ex02",
+          "lessonId": "b2-u05-l08-ochrana-udajov",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Žiadam o prístup "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "ku",
+                "k",
+                "na"
+              ],
+              "correct": "k"
+            },
+            {
+              "text": " mojim osobným údajom."
+            }
+          ],
+          "explanation": "Prístup k + давальний; «ku» вживаємо лише перед k/g (ku koncu).",
+          "order": 2,
+          "wordIds": [
+            "b2-u05-l08-ochrana-udajov-w03",
+            "b2-u05-l08-ochrana-udajov-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l08-ochrana-udajov-ex03",
+          "lessonId": "b2-u05-l08-ochrana-udajov",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Došlo k "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "úniku",
+                "únikom",
+                "únik"
+              ],
+              "correct": "úniku"
+            },
+            {
+              "text": " osobných údajov."
+            }
+          ],
+          "explanation": "Dôjsť k + давальний: k úniku.",
+          "order": 3,
+          "wordIds": [
+            "b2-u05-l08-ochrana-udajov-w03",
+            "b2-u05-l08-ochrana-udajov-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l08-ochrana-udajov-ex04",
+          "lessonId": "b2-u05-l08-ochrana-udajov",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Súhlas so spracúvaním môžete kedykoľvek ______. (відкликати)",
+          "acceptedAnswers": [
+            "odvolať"
+          ],
+          "explanation": "Odvolať súhlas — відкликати згоду.",
+          "order": 4,
+          "wordIds": [
+            "b2-u05-l08-ochrana-udajov-w01",
+            "b2-u05-l08-ochrana-udajov-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l08-ochrana-udajov-ex05",
+          "lessonId": "b2-u05-l08-ochrana-udajov",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Хто такий prevádzkovateľ?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "людина, про яку ці дані",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "той, хто визначає мету й спосіб обробки даних",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "хакер, який дані вкрав",
+              "correct": false
+            }
+          ],
+          "explanation": "Prevádzkovateľ — роботодавець, банк, e-shop: хто вирішує, навіщо й як обробляти дані.",
+          "order": 5
+        },
+        {
+          "id": "b2-u05-l08-ochrana-udajov-ex06",
+          "lessonId": "b2-u05-l08-ochrana-udajov",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Prevádzkovateľ musí odpovedať bez zbytočný odkladu.",
+          "errorToken": "zbytočný",
+          "correctToken": "zbytočného",
+          "explanation": "Bez + родовий: bez zbytočného odkladu.",
+          "order": 6,
+          "wordIds": [
+            "b2-u05-l08-ochrana-udajov-w02"
+          ]
+        },
+        {
+          "id": "b2-u05-l08-ochrana-udajov-ex07",
+          "lessonId": "b2-u05-l08-ochrana-udajov",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Odvolávam súhlas s spracúvaním údajov.",
+          "acceptedAnswers": [
+            "Odvolávam súhlas so spracúvaním údajov."
+          ],
+          "explanation": "Перед словом на s пишемо «so»: so spracúvaním.",
+          "order": 7,
+          "wordIds": [
+            "b2-u05-l08-ochrana-udajov-w01",
+            "b2-u05-l08-ochrana-udajov-w05",
+            "b2-u05-l08-ochrana-udajov-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l08-ochrana-udajov-ex08",
+          "lessonId": "b2-u05-l08-ochrana-udajov",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що з цього — персональні дані конкретної людини?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Osobné údaje"
+            },
+            {
+              "id": "c2",
+              "title": "Nie sú osobné údaje"
+            }
+          ],
+          "items": [
+            {
+              "sk": "telefónne číslo",
+              "category": "c1"
+            },
+            {
+              "sk": "počet obyvateľov Nitry",
+              "category": "c2"
+            },
+            {
+              "sk": "priemerná teplota v meste",
+              "category": "c2"
+            },
+            {
+              "sk": "meno a priezvisko",
+              "category": "c1"
+            },
+            {
+              "sk": "adresa bydliska",
+              "category": "c1"
+            },
+            {
+              "sk": "cena chleba",
+              "category": "c2"
+            },
+            {
+              "sk": "otváracie hodiny obchodu",
+              "category": "c2"
+            },
+            {
+              "sk": "fotografia tváre",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Персональні дані дозволяють ідентифікувати людину; загальна статистика й ціни — ні.",
+          "order": 8,
+          "wordIds": [
+            "b2-u05-l08-ochrana-udajov-w03",
+            "b2-u05-l08-ochrana-udajov-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l08-ochrana-udajov-ex09",
+          "lessonId": "b2-u05-l08-ochrana-udajov",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Olena dostávala z e-shopu, v ktorom raz nakúpila, každý deň reklamné e-maily. Odhlásenie cez odkaz nefungovalo. Napísala preto prevádzkovateľovi žiadosť: chcela vedieť, aké údaje o nej spracúva, odvolala súhlas so zasielaním reklamy a požiadala o výmaz. E-shop odpovedal do troch týždňov. Poslal jej prehľad údajov a potvrdil, že ju vymazal z marketingovej databázy. Faktúru z nákupu si však musí ponechať, lebo mu to ukladajú predpisy o účtovníctve. Olena bola spokojná. Keby jej neodpovedali, mohla by sa obrátiť na Úrad na ochranu osobných údajov.",
+          "questions": [
+            {
+              "question": "Чого вимагала Олена?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "повернення грошей за покупку",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "інформацію про свої дані, відкликання згоди на рекламу й видалення даних",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "знижку на наступну покупку",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Чому магазин не видалив рахунок за покупку?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "бо правила бухобліку вимагають його зберігати",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "бо рахунок загубився",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "бо Олена про це не просила",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Куди Олена могла б звернутися, якби їй не відповіли?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "до адвокатської палати",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "до Управління із захисту персональних даних",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "до податкової",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 9,
+          "wordIds": [
+            "b2-u05-l08-ochrana-udajov-w02",
+            "b2-u05-l08-ochrana-udajov-w03",
+            "b2-u05-l08-ochrana-udajov-w04",
+            "b2-u05-l08-ochrana-udajov-w05",
+            "b2-u05-l08-ochrana-udajov-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l08-ochrana-udajov-ex10",
+          "lessonId": "b2-u05-l08-ochrana-udajov",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення інтернет-магазину.",
+          "message": {
+            "sender": "Zákaznícky servis FitShop",
+            "body": "Vážená zákazníčka, vážený zákazník, informujeme Vás, že 2. 6. 2026 došlo k neoprávnenému prístupu do našej databázy. Mohli byť odcudzené mená, e-mailové adresy a heslá. Údaje o platobných kartách dotknuté neboli. Odporúčame Vám okamžite zmeniť heslo a dávať si pozor na podvodné e-maily, ktoré sa môžu vydávať za nás. Ospravedlňujeme sa za nepríjemnosti."
+          },
+          "question": "Що радить магазин?",
+          "options": [
+            {
+              "id": "a",
+              "text": "негайно змінити пароль і остерігатися шахрайських листів",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "заблокувати платіжну картку",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "нічого не робити",
+              "correct": false
+            }
+          ],
+          "explanation": "Okamžite zmeniť heslo a dávať si pozor na podvodné e-maily; картки витік не зачепив.",
+          "order": 10,
+          "wordIds": [
+            "b2-u05-l08-ochrana-udajov-w03",
+            "b2-u05-l08-ochrana-udajov-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l08-ochrana-udajov-ex11",
+          "lessonId": "b2-u05-l08-ochrana-udajov",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "Na webe je tlačidlo: «Odmietnuť všetky nepovinné cookies»",
+          "target": "nepovinné",
+          "options": [
+            {
+              "id": "a",
+              "text": "заборонені",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "необов’язкові",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "платні",
+              "correct": false
+            }
+          ],
+          "explanation": "Nepovinný — необов’язковий (povinný — обов’язковий).",
+          "order": 11
+        },
+        {
+          "id": "b2-u05-l08-ochrana-udajov-ex12",
+          "lessonId": "b2-u05-l08-ochrana-udajov",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти офіційно просиш видалити свої дані.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Žiadam o výmaz mojich osobných údajov.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Žiadam o výmaz moje osobné údaje.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Vymažte ma odtiaľ hneď!",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Žiadam o výmaze mojich osobných údajov.",
+              "correct": false
+            }
+          ],
+          "explanation": "Žiadam o + знахідний (výmaz) + родовий (mojich osobných údajov); без наказового тону.",
+          "order": 12,
+          "wordIds": [
+            "b2-u05-l08-ochrana-udajov-w03",
+            "b2-u05-l08-ochrana-udajov-w04",
+            "b2-u05-l08-ochrana-udajov-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l08-ochrana-udajov-ex13",
+          "lessonId": "b2-u05-l08-ochrana-udajov",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і оціни кожне твердження.",
+          "text": "Ako dotknutá osoba máte právo vedieť, aké údaje o Vás prevádzkovateľ spracúva. Môžete žiadať opravu nesprávnych údajov a za určitých podmienok aj ich výmaz. Súhlas so spracúvaním môžete kedykoľvek odvolať. Prevádzkovateľ by mal odpovedať bez zbytočného odkladu, spravidla do jedného mesiaca.",
+          "statements": [
+            {
+              "sk": "Dotknutá osoba môže zistiť, aké údaje sa o nej spracúvajú.",
+              "correct": true
+            },
+            {
+              "sk": "Súhlas so spracúvaním sa dá odvolať.",
+              "correct": true
+            },
+            {
+              "sk": "Na žiadosť treba spravidla odpovedať do mesiaca.",
+              "correct": true
+            },
+            {
+              "sk": "Výmaz údajov je možný vždy a bez výnimky.",
+              "correct": false
+            },
+            {
+              "sk": "Súhlas sa nedá nikdy odvolať.",
+              "correct": false
+            }
+          ],
+          "explanation": "Výmaz можливий лише «za určitých podmienok», а згоду можна відкликати будь-коли.",
+          "order": 13,
+          "wordIds": [
+            "b2-u05-l08-ochrana-udajov-w01",
+            "b2-u05-l08-ochrana-udajov-w02",
+            "b2-u05-l08-ochrana-udajov-w03",
+            "b2-u05-l08-ochrana-udajov-w04",
+            "b2-u05-l08-ochrana-udajov-w05",
+            "b2-u05-l08-ochrana-udajov-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l08-ochrana-udajov-ex14",
+          "lessonId": "b2-u05-l08-ochrana-udajov",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Odvolávam súhlas so spracúvaním mojich osobných údajov na marketingové účely.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": true
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": false
+            }
+          ],
+          "explanation": "Термінологія (spracúvanie, osobné údaje, účely) і повна конструкція — офіційний регістр.",
+          "order": 14,
+          "wordIds": [
+            "b2-u05-l08-ochrana-udajov-w01",
+            "b2-u05-l08-ochrana-udajov-w03",
+            "b2-u05-l08-ochrana-udajov-w05",
+            "b2-u05-l08-ochrana-udajov-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Небажані листи й витік даних",
+        "description": "Інтернет-магазин надсилає тобі рекламу без згоди, а потім повідомляє про витік даних.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Як почнеш лист магазину?",
+            "options": [
+              {
+                "sk": "Žiadam o prístup ku moje osobné údaje.",
+                "correct": false
+              },
+              {
+                "sk": "Dajte mi moje dáta.",
+                "correct": false
+              },
+              {
+                "sk": "Žiadam o prístup k mojim osobným údajom.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як відкличеш згоду?",
+            "options": [
+              {
+                "sk": "Odvolávam súhlas so spracúvaním na marketingové účely.",
+                "correct": true
+              },
+              {
+                "sk": "Odvolávam súhlas s spracúvaním na marketing.",
+                "correct": false
+              },
+              {
+                "sk": "Už mi nepíšte, inak uvidíte!",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Що зробиш одразу після повідомлення про витік?",
+            "options": [
+              {
+                "text": "надішлю свій пароль у відповідь",
+                "correct": false
+              },
+              {
+                "text": "зміню паролі й остерігатимусь шахрайських листів",
+                "correct": true
+              },
+              {
+                "text": "нічого",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Магазин місяцями не відповідає. Куди звернешся?",
+            "options": [
+              {
+                "text": "до Úradu na ochranu osobných údajov",
+                "correct": true
+              },
+              {
+                "text": "до нотаріуса",
+                "correct": false
+              },
+              {
+                "text": "до екзекутора",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти знаєш свої права щодо даних. Далі — безоплатна правова допомога: куди звернутися, якщо адвокат тобі не по кишені."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти знаєш свої права щодо даних. Далі — безоплатна правова допомога: куди звернутися, якщо адвокат тобі не по кишені.",
+        "nowYouKnow": [
+          "prevádzkovateľ · dotknutá osoba · spracúvanie",
+          "prístup k + давальний · oprava · výmaz · námietka · odvolať súhlas",
+          "únik údajov → змінити паролі, остерігатися шахраїв",
+          "Úrad na ochranu osobných údajov"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u05-l09-pravna-pomoc",
+          "title": "Безоплатна правова допомога"
+        }
+      }
+    }
+  ]
+}
