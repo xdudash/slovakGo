@@ -1,0 +1,858 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u10-l05-referendum",
+      "sectionId": "b2-u10",
+      "level": "B2",
+      "title": "Референдум",
+      "topic": "Публічна влада",
+      "description": "Як у Словаччині проводять референдум: хто його оголошує, скільки підписів потрібно, які питання заборонені, коли результат дійсний — і як будуються питання «Súhlasíte s tým, aby…?».",
+      "order": 85,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Розуміти правила референдуму, читати референдне питання й нейтрально говорити про результат.",
+      "completionMessage": "Ти знаєш, як працює референдум. Далі — громадянські права: свобода слова, зібрань і рівність перед законом.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Публічна влада",
+        "title": "Референдум",
+        "shortDescription": "Розуміти правила референдуму, читати референдне питання й нейтрально говорити про результат.",
+        "outcomes": [
+          "пояснювати, хто й на якій підставі оголошує референдум",
+          "називати умови дійсності: kvórum, nadpolovičná väčšina",
+          "розуміти й будувати питання Súhlasíte s tým, aby + l-форма",
+          "нейтрально повідомляти результат: referendum bolo neplatné, pretože…"
+        ],
+        "newWords": [
+          "referendum",
+          "oprávnený volič",
+          "kvórum",
+          "nadpolovičná väčšina",
+          "priama demokracia",
+          "miestne referendum"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Пряма демократія",
+          "text": "Референдум — форма прямої демократії (priama demokracia): громадяни самі відповідають на питання «áno» чи «nie». Загальнодержавний референдум оголошує президент на підставі петиції щонайменше 350 000 громадян або постанови Національної ради. Предметом референдуму не можуть бути основні права й свободи, податки, внески й державний бюджет. Перш ніж оголосити референдум, президент може попросити Конституційний суд перевірити, чи питання відповідає конституції. Голосувати можуть ті самі люди, що й на парламентських виборах — виборці з правом голосу (oprávnení voliči). Існує й місцевий референдум (miestne referendum) — у громаді, наприклад про об’єднання з сусідньою громадою.",
+          "examples": [
+            {
+              "sk": "Referendum vyhlasuje prezident republiky.",
+              "uk": "Референдум оголошує президент республіки."
+            },
+            {
+              "sk": "Predmetom referenda nemôžu byť dane ani štátny rozpočet.",
+              "uk": "Предметом референдуму не можуть бути податки чи державний бюджет."
+            }
+          ],
+          "shortRule": "350 000 podpisov alebo uznesenie NR SR → prezident vyhlási referendum · nie: dane, rozpočet, základné práva",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Коли результат дійсний",
+          "text": "Щоб результат був дійсним, мають виконатися дві умови. Перша: участь узяла більш ніж половина всіх виборців із правом голосу — це «kvórum» (у новинах: «referendum nedosiahlo kvórum»). Друга: рішення ухвалила більшість учасників — «nadpolovičná väčšina účastníkov». Якщо прийшло менше половини виборців, референдум недійсний (neplatný), навіть якщо майже всі учасники сказали «áno». У новинах часто чуємо: «Účasť bola 25 percent, výsledok je preto neplatný.» Зверни увагу на відмінки: «zúčastniť sa referenda» (родовий), «v referende» (місцевий), «vyhlásiť referendum» (знахідний).",
+          "examples": [
+            {
+              "sk": "Referendum je platné, ak sa ho zúčastní nadpolovičná väčšina oprávnených voličov.",
+              "uk": "Референдум дійсний, якщо в ньому візьме участь більш ніж половина виборців із правом голосу."
+            },
+            {
+              "sk": "Referendum nedosiahlo kvórum.",
+              "uk": "Референдум не набрав необхідної явки."
+            }
+          ],
+          "shortRule": "kvórum > 50 % oprávnených voličov · nadpolovičná väčšina účastníkov · zúčastniť sa referenda",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Питання «Súhlasíte s tým, aby…?»",
+          "text": "Референдні питання зазвичай мають форму: «Súhlasíte s tým, aby + l-форма дієслова…?» Після «aby» стоїть форма на -l (як у минулому часі), але значення — бажане чи можливе: «Súhlasíte s tým, aby sa obec spojila so susednou obcou?» (щоб громада об’єдналася). Особу показує форма «aby»: я → «aby som», ми → «aby sme»: «Starosta chce, aby sme prišli na zasadnutie.» Нейтрально переказати питання можна так: «Občania odpovedali na otázku, či súhlasia s…»",
+          "examples": [
+            {
+              "sk": "Súhlasíte s tým, aby sa v centre mesta zakázalo parkovanie?",
+              "uk": "Чи згодні ви з тим, щоб у центрі міста заборонили паркування?"
+            },
+            {
+              "sk": "Občania odpovedali na otázku, či súhlasia so zlúčením obcí.",
+              "uk": "Громадяни відповідали на питання, чи згодні вони з об’єднанням громад."
+            }
+          ],
+          "shortRule": "Súhlasíte s tým, aby + l-форма? · aby som / aby sme · otázka, či…",
+          "commonMistakes": [
+            {
+              "mistake": "Súhlasíte s tým, aby sa obec spojí?",
+              "correct": "Súhlasíte s tým, aby sa obec spojila?"
+            },
+            {
+              "mistake": "zúčastniť sa na referendum",
+              "correct": "zúčastniť sa referenda"
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u10-l05-referendum-w01",
+            "sk": "referendum",
+            "uk": "референдум",
+            "pronunciationUk": "референдум",
+            "exampleSk": "Prezident vyhlásil referendum na sobotu v septembri.",
+            "exampleUk": "Президент оголосив референдум на вересневу суботу."
+          },
+          {
+            "wordId": "b2-u10-l05-referendum-w02",
+            "sk": "oprávnený volič",
+            "uk": "особа з правом голосу",
+            "pronunciationUk": "опра:внени: воліч",
+            "exampleSk": "V obci je dvetisíc oprávnených voličov.",
+            "exampleUk": "У громаді дві тисячі осіб із правом голосу."
+          },
+          {
+            "wordId": "b2-u10-l05-referendum-w03",
+            "sk": "kvórum",
+            "uk": "кворум, мінімальна явка",
+            "pronunciationUk": "кво:рум",
+            "exampleSk": "Referendum bolo neplatné, lebo nedosiahlo kvórum.",
+            "exampleUk": "Референдум був недійсним, бо не набрав кворуму."
+          },
+          {
+            "wordId": "b2-u10-l05-referendum-w04",
+            "sk": "nadpolovičná väčšina",
+            "uk": "більш ніж половина, абсолютна більшість",
+            "pronunciationUk": "надполовічна: вечшина",
+            "exampleSk": "Návrh podporila nadpolovičná väčšina účastníkov.",
+            "exampleUk": "Пропозицію підтримала більш ніж половина учасників."
+          },
+          {
+            "wordId": "b2-u10-l05-referendum-w05",
+            "sk": "priama demokracia",
+            "uk": "пряма демократія",
+            "pronunciationUk": "пріама демокраціа",
+            "exampleSk": "Referendum je nástrojom priamej demokracie.",
+            "exampleUk": "Референдум — інструмент прямої демократії."
+          },
+          {
+            "wordId": "b2-u10-l05-referendum-w06",
+            "sk": "miestne referendum",
+            "uk": "місцевий референдум",
+            "pronunciationUk": "міестне референдум",
+            "exampleSk": "O zlúčení obcí rozhodli obyvatelia v miestnom referende.",
+            "exampleUk": "Про об’єднання громад вирішили жителі на місцевому референдумі."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u10-l05-referendum-w01",
+          "sk": "referendum",
+          "uk": "референдум",
+          "pronunciationUk": "референдум",
+          "exampleSk": "Prezident vyhlásil referendum na sobotu v septembri.",
+          "exampleUk": "Президент оголосив референдум на вересневу суботу.",
+          "level": "B2",
+          "topic": "Публічна влада",
+          "tags": [
+            "b2-u10",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u10-l05-referendum-w02",
+          "sk": "oprávnený volič",
+          "uk": "особа з правом голосу",
+          "pronunciationUk": "опра:внени: воліч",
+          "exampleSk": "V obci je dvetisíc oprávnených voličov.",
+          "exampleUk": "У громаді дві тисячі осіб із правом голосу.",
+          "level": "B2",
+          "topic": "Публічна влада",
+          "tags": [
+            "b2-u10",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u10-l05-referendum-w03",
+          "sk": "kvórum",
+          "uk": "кворум, мінімальна явка",
+          "pronunciationUk": "кво:рум",
+          "exampleSk": "Referendum bolo neplatné, lebo nedosiahlo kvórum.",
+          "exampleUk": "Референдум був недійсним, бо не набрав кворуму.",
+          "level": "B2",
+          "topic": "Публічна влада",
+          "tags": [
+            "b2-u10",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u10-l05-referendum-w04",
+          "sk": "nadpolovičná väčšina",
+          "uk": "більш ніж половина, абсолютна більшість",
+          "pronunciationUk": "надполовічна: вечшина",
+          "exampleSk": "Návrh podporila nadpolovičná väčšina účastníkov.",
+          "exampleUk": "Пропозицію підтримала більш ніж половина учасників.",
+          "level": "B2",
+          "topic": "Публічна влада",
+          "tags": [
+            "b2-u10",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u10-l05-referendum-w05",
+          "sk": "priama demokracia",
+          "uk": "пряма демократія",
+          "pronunciationUk": "пріама демокраціа",
+          "exampleSk": "Referendum je nástrojom priamej demokracie.",
+          "exampleUk": "Референдум — інструмент прямої демократії.",
+          "level": "B2",
+          "topic": "Публічна влада",
+          "tags": [
+            "b2-u10",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u10-l05-referendum-w06",
+          "sk": "miestne referendum",
+          "uk": "місцевий референдум",
+          "pronunciationUk": "міестне референдум",
+          "exampleSk": "O zlúčení obcí rozhodli obyvatelia v miestnom referende.",
+          "exampleUk": "Про об’єднання громад вирішили жителі на місцевому референдумі.",
+          "level": "B2",
+          "topic": "Публічна влада",
+          "tags": [
+            "b2-u10",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u10-l05-referendum-ex01",
+          "lessonId": "b2-u10-l05-referendum",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "referendum",
+              "right": "голосування «так» чи «ні»"
+            },
+            {
+              "left": "oprávnený volič",
+              "right": "людина з правом голосу"
+            },
+            {
+              "left": "kvórum",
+              "right": "мінімальна потрібна явка"
+            },
+            {
+              "left": "nadpolovičná väčšina",
+              "right": "понад половину"
+            },
+            {
+              "left": "priama demokracia",
+              "right": "громадяни вирішують самі"
+            },
+            {
+              "left": "miestne referendum",
+              "right": "голосування в громаді"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u10-l05-referendum-w01",
+            "b2-u10-l05-referendum-w02",
+            "b2-u10-l05-referendum-w03",
+            "b2-u10-l05-referendum-w04",
+            "b2-u10-l05-referendum-w05",
+            "b2-u10-l05-referendum-w06"
+          ]
+        },
+        {
+          "id": "b2-u10-l05-referendum-ex02",
+          "lessonId": "b2-u10-l05-referendum",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Referendum je platné, ak sa ho zúčastní nadpolovičná väčšina oprávnených "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "voličom",
+                "voličov",
+                "voliči"
+              ],
+              "correct": "voličov"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Väčšina чого? — родовий множини: voličov.",
+          "order": 2,
+          "wordIds": [
+            "b2-u10-l05-referendum-w01",
+            "b2-u10-l05-referendum-w02",
+            "b2-u10-l05-referendum-w04",
+            "b2-u10-l05-referendum-w06"
+          ]
+        },
+        {
+          "id": "b2-u10-l05-referendum-ex03",
+          "lessonId": "b2-u10-l05-referendum",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Súhlasíte s tým, aby sa obec "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "spojiť",
+                "spojila",
+                "spojí"
+              ],
+              "correct": "spojila"
+            },
+            {
+              "text": " so susednou obcou?"
+            }
+          ],
+          "explanation": "Після «aby» — форма на -l: spojila.",
+          "order": 3,
+          "wordIds": [
+            "b2-u10-l05-referendum-w01",
+            "b2-u10-l05-referendum-w06"
+          ]
+        },
+        {
+          "id": "b2-u10-l05-referendum-ex04",
+          "lessonId": "b2-u10-l05-referendum",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Na vyhlásenie referenda treba petíciu aspoň 350 000 ______ (громадян).",
+          "acceptedAnswers": [
+            "občanov"
+          ],
+          "explanation": "350 000 + родовий множини: občanov.",
+          "order": 4,
+          "wordIds": [
+            "b2-u10-l05-referendum-w01",
+            "b2-u10-l05-referendum-w06"
+          ]
+        },
+        {
+          "id": "b2-u10-l05-referendum-ex05",
+          "lessonId": "b2-u10-l05-referendum",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що НЕ може бути предметом загальнодержавного референдуму?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "податки й державний бюджет",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "охорона природи",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "вступ держави до міжнародного союзу",
+              "correct": false
+            }
+          ],
+          "explanation": "Конституція забороняє референдуми про основні права й свободи, податки, внески й бюджет.",
+          "order": 5,
+          "wordIds": [
+            "b2-u10-l05-referendum-w01",
+            "b2-u10-l05-referendum-w06"
+          ]
+        },
+        {
+          "id": "b2-u10-l05-referendum-ex06",
+          "lessonId": "b2-u10-l05-referendum",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "V referende sa zúčastnilo 31 % oprávnených voličov. Za návrh hlasovalo 92 % účastníkov.",
+          "statement": "Результат референдуму дійсний, бо майже всі учасники сказали «так».",
+          "correctAnswer": false,
+          "explanation": "Явка 31 % не досягла кворуму (понад 50 %), тому результат недійсний.",
+          "order": 6,
+          "wordIds": [
+            "b2-u10-l05-referendum-w01",
+            "b2-u10-l05-referendum-w02",
+            "b2-u10-l05-referendum-w06"
+          ]
+        },
+        {
+          "id": "b2-u10-l05-referendum-ex07",
+          "lessonId": "b2-u10-l05-referendum",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Moji susedia sa zúčastnil referenda o zlúčení obcí.",
+          "errorToken": "zúčastnil",
+          "correctToken": "zúčastnili",
+          "explanation": "Підмет «moji susedia» — множина, тому дієслово теж у множині: zúčastnili.",
+          "order": 7,
+          "wordIds": [
+            "b2-u10-l05-referendum-w01",
+            "b2-u10-l05-referendum-w06"
+          ]
+        },
+        {
+          "id": "b2-u10-l05-referendum-ex08",
+          "lessonId": "b2-u10-l05-referendum",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перетвори на референдне питання. Почни словами «Súhlasíte s tým, aby…».",
+          "source": "Mesto má postaviť novú plaváreň.",
+          "acceptedAnswers": [
+            "Súhlasíte s tým, aby mesto postavilo novú plaváreň?"
+          ],
+          "explanation": "Súhlasíte s tým, aby + l-форма: aby mesto postavilo.",
+          "order": 8,
+          "wordIds": [
+            "b2-u10-l05-referendum-w01",
+            "b2-u10-l05-referendum-w06"
+          ]
+        },
+        {
+          "id": "b2-u10-l05-referendum-ex09",
+          "lessonId": "b2-u10-l05-referendum",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Obyvatelia dvoch malých obcí pri Poprade dlho diskutovali o tom, či by sa nemali spojiť. Spoločná obec by mala jedného starostu, jeden úrad a nižšie náklady. Odporcovia sa však báli, že ich časť obce stratí vlastný hlas. Zastupiteľstvá preto vyhlásili miestne referendum s otázkou: «Súhlasíte s tým, aby sa obce zlúčili do jednej obce?» Kampaň bola pokojná: obce zorganizovali dve verejné diskusie, kde vystúpili zástancovia aj odporcovia. Účasť bola 58 percent a za zlúčenie hlasovalo 54 percent účastníkov. Výsledok je teda platný a obce sa spoja po najbližších komunálnych voľbách.",
+          "questions": [
+            {
+              "question": "Чого боялися противники об’єднання?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "що їхня частина громади втратить власний голос",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "що податки різко зростуть",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "що школа закриється",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Як громади готували людей до голосування?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "розіслали листи лише прихильникам",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "заборонили обговорення",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "провели дві публічні дискусії з обома сторонами",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Чому результат дійсний?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "явка 58 % перевищила половину, і більшість учасників сказала «так»",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "бо проголосували всі жителі",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "бо так вирішив староста",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 9,
+          "wordIds": [
+            "b2-u10-l05-referendum-w01",
+            "b2-u10-l05-referendum-w06"
+          ]
+        },
+        {
+          "id": "b2-u10-l05-referendum-ex10",
+          "lessonId": "b2-u10-l05-referendum",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай бюлетень.",
+          "document": {
+            "title": "Hlasovací lístok – miestne referendum",
+            "fields": [
+              {
+                "label": "Otázka",
+                "value": "Súhlasíte s tým, aby sa v centre obce zakázal vjazd nákladných áut?"
+              },
+              {
+                "label": "Odpoveď",
+                "value": "áno – nie"
+              },
+              {
+                "label": "Pokyn",
+                "value": "Zakrúžkujte jednu odpoveď. Lístok s dvomi zakrúžkovanými odpoveďami je neplatný."
+              }
+            ]
+          },
+          "question": "Коли бюлетень буде недійсним?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "якщо обвести обидві відповіді",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "якщо проголосувати після обіду",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "якщо обвести «nie»",
+              "correct": false
+            }
+          ],
+          "explanation": "Lístok s dvomi zakrúžkovanými odpoveďami je neplatný — обидві відповіді роблять бюлетень недійсним.",
+          "order": 10,
+          "wordIds": [
+            "b2-u10-l05-referendum-w01",
+            "b2-u10-l05-referendum-w06"
+          ]
+        },
+        {
+          "id": "b2-u10-l05-referendum-ex11",
+          "lessonId": "b2-u10-l05-referendum",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "Moderátor: «Referendum opäť nedosiahlo kvórum, výsledok preto nie je záväzný.»",
+          "target": "nie je záväzný",
+          "options": [
+            {
+              "id": "a",
+              "text": "ще не підрахований",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "не є обов’язковим до виконання",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "таємний",
+              "correct": false
+            }
+          ],
+          "explanation": "Záväzný — обов’язковий; недійсний референдум нікого не зобов’язує.",
+          "order": 11,
+          "wordIds": [
+            "b2-u10-l05-referendum-w01",
+            "b2-u10-l05-referendum-w03",
+            "b2-u10-l05-referendum-w06"
+          ]
+        },
+        {
+          "id": "b2-u10-l05-referendum-ex12",
+          "lessonId": "b2-u10-l05-referendum",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти нейтрально переказуєш, про що було питання на референдумі.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Občania konečne pochopili, že zlúčenie je jediná správna cesta.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Občania odpovedali na otázku, keby súhlasia so zlúčením obcí.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Občania odpovedali na otázku, či súhlasia so zlúčením obcí.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Občania odpovedali na otázku, či súhlasia so zlúčenie obcí.",
+              "correct": false
+            }
+          ],
+          "explanation": "Непряме питання вводимо словом «či»; s + орудний: so zlúčením; оцінка «jediná správna cesta» — не нейтральна.",
+          "order": 12,
+          "wordIds": [
+            "b2-u10-l05-referendum-w01",
+            "b2-u10-l05-referendum-w06"
+          ]
+        },
+        {
+          "id": "b2-u10-l05-referendum-ex13",
+          "lessonId": "b2-u10-l05-referendum",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери умови, які разом роблять результат референдуму дійсним.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "голосували лише в неділю",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "референдум оголосив прем’єр-міністр",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "рішення ухвалила більш ніж половина учасників",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "участь узяла більш ніж половина виборців із правом голосу",
+              "correct": true
+            }
+          ],
+          "explanation": "Потрібні обидві умови: кворум явки й більшість учасників; оголошує референдум президент.",
+          "order": 13,
+          "wordIds": [
+            "b2-u10-l05-referendum-w01",
+            "b2-u10-l05-referendum-w06"
+          ]
+        },
+        {
+          "id": "b2-u10-l05-referendum-ex14",
+          "lessonId": "b2-u10-l05-referendum",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи: «Референдум не набрав кворуму.»",
+          "tokens": [
+            "kvórum",
+            "nedosiahlo",
+            ".",
+            "Referendum"
+          ],
+          "correctOrder": [
+            "Referendum",
+            "nedosiahlo",
+            "kvórum",
+            "."
+          ],
+          "explanation": "Nedosiahnuť + знахідний: kvórum.",
+          "order": 14,
+          "wordIds": [
+            "b2-u10-l05-referendum-w01",
+            "b2-u10-l05-referendum-w03",
+            "b2-u10-l05-referendum-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Референдум у громаді",
+        "description": "У твоїй громаді оголосили місцевий референдум про нову спортивну залу. Ти маєш постійне проживання й обговорюєш це із сусідкою.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Як скажеш, що теж можеш голосувати?",
+            "options": [
+              {
+                "sk": "S trvalým pobytom môžem hlasovať aj ja.",
+                "correct": true
+              },
+              {
+                "sk": "S trvalým pobytom môžem hlasujem aj ja.",
+                "correct": false
+              },
+              {
+                "sk": "S trvalý pobyt môžem hlasovať aj ja.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як переповіси питання?",
+            "options": [
+              {
+                "sk": "Pýtajú sa, či súhlasíme s tým, aby obec postavila telocvičňu.",
+                "correct": true
+              },
+              {
+                "sk": "Pýtajú sa, keby súhlasíme s telocvičňou.",
+                "correct": false
+              },
+              {
+                "sk": "Pýtajú sa, či súhlasíme s tým, aby obec postaví telocvičňu.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Що стане, якщо прийде лише 30 % виборців?",
+            "options": [
+              {
+                "text": "результат буде недійсним",
+                "correct": true
+              },
+              {
+                "text": "референдум автоматично повториться наступного тижня",
+                "correct": false
+              },
+              {
+                "text": "рішення ухвалить більшість учасників",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як нейтрально скажеш про обидві сторони?",
+            "options": [
+              {
+                "sk": "Zástancovia hovoria o zdraví detí, odporcovia o nákladoch.",
+                "correct": true
+              },
+              {
+                "sk": "Odporcovia sú jednoducho proti všetkému.",
+                "correct": false
+              },
+              {
+                "sk": "Kto je proti, ten nemá rozum.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти знаєш, як працює референдум. Далі — громадянські права: свобода слова, зібрань і рівність перед законом."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти знаєш, як працює референдум. Далі — громадянські права: свобода слова, зібрань і рівність перед законом.",
+        "nowYouKnow": [
+          "referendum vyhlasuje prezident · 350 000 podpisov alebo uznesenie NR SR",
+          "nie: dane, rozpočet, základné práva",
+          "platné: kvórum (> 50 % oprávnených voličov) + nadpolovičná väčšina účastníkov",
+          "Súhlasíte s tým, aby + l-форма? · zúčastniť sa referenda"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u10-l06-obcianske-prava",
+          "title": "Громадянські права"
+        }
+      }
+    }
+  ]
+}

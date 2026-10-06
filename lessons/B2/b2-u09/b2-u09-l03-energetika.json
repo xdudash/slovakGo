@@ -1,0 +1,892 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u09-l03-energetika",
+      "sectionId": "b2-u09",
+      "level": "B2",
+      "title": "Енергетика",
+      "topic": "Довкілля",
+      "description": "Звідки береться електрика й тепло: викопні, атомні й відновлювані джерела, енергія в домі (тепловий насос, фотовольтаїка, енергетичний сертифікат) і мова чисел — відсотки, частки, «čím…, tým…».",
+      "order": 73,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Зважено порівнювати джерела енергії й розуміти тексти з цифрами та частками.",
+      "completionMessage": "Ти вмієш зважено говорити про джерела енергії й читати цифри. Далі — вода: питна, підземна, повені й посуха.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Довкілля",
+        "title": "Енергетика",
+        "shortDescription": "Зважено порівнювати джерела енергії й розуміти тексти з цифрами та частками.",
+        "outcomes": [
+          "розрізняти obnoviteľné zdroje, fosílne palivá і jadrovú energiu",
+          "узгоджувати числа й частки з дієсловом: päť percent pochádza, polovica pochádza",
+          "будувати порівняння čím…, tým…",
+          "читати енергетичний сертифікат і зважено говорити про переваги й недоліки"
+        ],
+        "newWords": [
+          "obnoviteľný zdroj",
+          "fosílne palivá",
+          "jadrová elektráreň",
+          "fotovoltika",
+          "tepelné čerpadlo",
+          "energetický certifikát"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Джерела енергії",
+          "text": "Електрику й тепло отримують із «fosílnych palív» — uhlie (вугілля), zemný plyn (природний газ), ropa (нафта), — з атомної енергії (jadrová energia) та з «obnoviteľných zdrojov»: voda, slnko, vietor, biomasa. У Словаччині працюють дві атомні електростанції — Jaslovské Bohunice й Mochovce — і велика гідроелектростанція Gabčíkovo. Жодне джерело не є ідеальним, тому в серйозній розмові називаємо і переваги, і недоліки: «Jadrová elektráreň má nízke emisie, problémom je však vyhoreté palivo.» «Solárne panely sú lacné, ale v noci nevyrábajú.» Корисні зв’язки: «na jednej strane… na druhej strane», «výhodou je…, nevýhodou však je…».",
+          "examples": [
+            {
+              "sk": "Výhodou vetra je, že je zadarmo, nevýhodou však je, že nefúka stále.",
+              "uk": "Перевага вітру в тому, що він безкоштовний, а недолік — що він дме не завжди."
+            },
+            {
+              "sk": "Zemný plyn je čistejší ako uhlie, stále je to však fosílne palivo.",
+              "uk": "Газ чистіший за вугілля, проте це все одно викопне паливо."
+            }
+          ],
+          "shortRule": "кожне джерело: výhoda + nevýhoda",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Цифри й частки",
+          "text": "У текстах про енергетику повно чисел, і дієслово треба з ними узгодити. «Jedno percento» + однина, «dve – štyri percentá» + множина: «Dve percentá pochádzajú z vetra.» Від п’яти — «percent» (родовий множини) і дієслово в однині середнього роду: «Päť percent elektriny pochádza zo slnka.» Частки — polovica (половина), tretina (третина), štvrtina (чверть), šestina — вимагають родового відмінка й дієслова в однині: «Polovica elektriny pochádza z jadra.» Зміну вимірюємо через «o»: «o tretinu viac», «o päť percent menej».",
+          "examples": [
+            {
+              "sk": "Polovica elektriny pochádza z jadrových elektrární.",
+              "uk": "Половина електроенергії надходить з атомних електростанцій."
+            },
+            {
+              "sk": "Spotreba klesla o desať percent.",
+              "uk": "Споживання знизилося на десять відсотків."
+            }
+          ],
+          "shortRule": "1 percento · 2–4 percentá + мн. · 5+ percent + одн. · polovica / tretina + род. + одн.",
+          "commonMistakes": [
+            {
+              "mistake": "Päť percent elektriny pochádzajú zo slnka.",
+              "correct": "Päť percent elektriny pochádza zo slnka."
+            },
+            {
+              "mistake": "Polovica elektriny pochádzajú z jadra.",
+              "correct": "Polovica elektriny pochádza z jadra."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Енергія в домі",
+          "text": "Купуючи чи винаймаючи житло, подивися на «energetický certifikát» — він показує енергетичний клас будинку: від A0 (найекономніший) до G. Сучасні будинки часто опалюють «tepelným čerpadlom» (тепловий насос) і мають на даху «fotovoltiku» — сонячні панелі для власної електрики. Держава час від часу підтримує такі переходи дотаціями, але умови програм змінюються, тож актуальні правила завжди перевіряй на офіційному сайті. Для зіставлення використовуємо конструкцію «čím…, tým…» (що…, то…): «Čím lepšie je dom zateplený, tým menej energie potrebuje.» Інструмент чи джерело опалення — орудний відмінок без прийменника: «vykurujeme plynom, tepelným čerpadlom».",
+          "examples": [
+            {
+              "sk": "Čím viac slnka, tým viac elektriny panely vyrobia.",
+              "uk": "Що більше сонця, то більше електрики виробляють панелі."
+            },
+            {
+              "sk": "Vykurujeme tepelným čerpadlom.",
+              "uk": "Опалюємо тепловим насосом."
+            }
+          ],
+          "shortRule": "čím…, tým… · vykurovať + оруд. без «s»",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u09-l03-energetika-w01",
+            "sk": "obnoviteľný zdroj",
+            "uk": "відновлюване джерело (енергії)",
+            "pronunciationUk": "обновітельни: здрой",
+            "exampleSk": "Vietor je obnoviteľný zdroj energie.",
+            "exampleUk": "Вітер — відновлюване джерело енергії."
+          },
+          {
+            "wordId": "b2-u09-l03-energetika-w02",
+            "sk": "fosílne palivá",
+            "uk": "викопне паливо",
+            "pronunciationUk": "фосі:лне паліва:",
+            "exampleSk": "Uhlie, ropa a zemný plyn sú fosílne palivá.",
+            "exampleUk": "Вугілля, нафта й природний газ — викопне паливо."
+          },
+          {
+            "wordId": "b2-u09-l03-energetika-w03",
+            "sk": "jadrová elektráreň",
+            "uk": "атомна електростанція",
+            "pronunciationUk": "ядрова: електра:рень",
+            "exampleSk": "Jadrová elektráreň Mochovce leží neďaleko Levíc.",
+            "exampleUk": "Атомна електростанція Моховце розташована неподалік Левіце."
+          },
+          {
+            "wordId": "b2-u09-l03-energetika-w04",
+            "sk": "fotovoltika",
+            "uk": "фотовольтаїка, сонячні панелі",
+            "pronunciationUk": "фотоволтіка",
+            "exampleSk": "Na streche sme si nainštalovali fotovoltiku.",
+            "exampleUk": "Ми встановили на даху сонячні панелі."
+          },
+          {
+            "wordId": "b2-u09-l03-energetika-w05",
+            "sk": "tepelné čerpadlo",
+            "uk": "тепловий насос",
+            "pronunciationUk": "тепелне: черпадло",
+            "exampleSk": "Tepelné čerpadlo odoberá teplo zo vzduchu.",
+            "exampleUk": "Тепловий насос бере тепло з повітря."
+          },
+          {
+            "wordId": "b2-u09-l03-energetika-w06",
+            "sk": "energetický certifikát",
+            "uk": "енергетичний сертифікат",
+            "pronunciationUk": "енергетіцки: цертіфіка:т",
+            "exampleSk": "Podľa energetického certifikátu patrí byt do triedy B.",
+            "exampleUk": "За енергетичним сертифікатом квартира належить до класу B."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u09-l03-energetika-w01",
+          "sk": "obnoviteľný zdroj",
+          "uk": "відновлюване джерело (енергії)",
+          "pronunciationUk": "обновітельни: здрой",
+          "exampleSk": "Vietor je obnoviteľný zdroj energie.",
+          "exampleUk": "Вітер — відновлюване джерело енергії.",
+          "level": "B2",
+          "topic": "Довкілля",
+          "tags": [
+            "b2-u09",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u09-l03-energetika-w02",
+          "sk": "fosílne palivá",
+          "uk": "викопне паливо",
+          "pronunciationUk": "фосі:лне паліва:",
+          "exampleSk": "Uhlie, ropa a zemný plyn sú fosílne palivá.",
+          "exampleUk": "Вугілля, нафта й природний газ — викопне паливо.",
+          "level": "B2",
+          "topic": "Довкілля",
+          "tags": [
+            "b2-u09",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u09-l03-energetika-w03",
+          "sk": "jadrová elektráreň",
+          "uk": "атомна електростанція",
+          "pronunciationUk": "ядрова: електра:рень",
+          "exampleSk": "Jadrová elektráreň Mochovce leží neďaleko Levíc.",
+          "exampleUk": "Атомна електростанція Моховце розташована неподалік Левіце.",
+          "level": "B2",
+          "topic": "Довкілля",
+          "tags": [
+            "b2-u09",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u09-l03-energetika-w04",
+          "sk": "fotovoltika",
+          "uk": "фотовольтаїка, сонячні панелі",
+          "pronunciationUk": "фотоволтіка",
+          "exampleSk": "Na streche sme si nainštalovali fotovoltiku.",
+          "exampleUk": "Ми встановили на даху сонячні панелі.",
+          "level": "B2",
+          "topic": "Довкілля",
+          "tags": [
+            "b2-u09",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u09-l03-energetika-w05",
+          "sk": "tepelné čerpadlo",
+          "uk": "тепловий насос",
+          "pronunciationUk": "тепелне: черпадло",
+          "exampleSk": "Tepelné čerpadlo odoberá teplo zo vzduchu.",
+          "exampleUk": "Тепловий насос бере тепло з повітря.",
+          "level": "B2",
+          "topic": "Довкілля",
+          "tags": [
+            "b2-u09",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u09-l03-energetika-w06",
+          "sk": "energetický certifikát",
+          "uk": "енергетичний сертифікат",
+          "pronunciationUk": "енергетіцки: цертіфіка:т",
+          "exampleSk": "Podľa energetického certifikátu patrí byt do triedy B.",
+          "exampleUk": "За енергетичним сертифікатом квартира належить до класу B.",
+          "level": "B2",
+          "topic": "Довкілля",
+          "tags": [
+            "b2-u09",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u09-l03-energetika-ex01",
+          "lessonId": "b2-u09-l03-energetika",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "obnoviteľný zdroj",
+              "right": "відновлюване джерело"
+            },
+            {
+              "left": "fosílne palivá",
+              "right": "викопне паливо"
+            },
+            {
+              "left": "jadrová elektráreň",
+              "right": "атомна електростанція"
+            },
+            {
+              "left": "fotovoltika",
+              "right": "сонячні панелі"
+            },
+            {
+              "left": "tepelné čerpadlo",
+              "right": "тепловий насос"
+            },
+            {
+              "left": "energetický certifikát",
+              "right": "енергетичний сертифікат"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u09-l03-energetika-w01",
+            "b2-u09-l03-energetika-w02",
+            "b2-u09-l03-energetika-w03",
+            "b2-u09-l03-energetika-w04",
+            "b2-u09-l03-energetika-w05",
+            "b2-u09-l03-energetika-w06"
+          ]
+        },
+        {
+          "id": "b2-u09-l03-energetika-ex02",
+          "lessonId": "b2-u09-l03-energetika",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Відновлюване джерело чи викопне паливо?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Obnoviteľné zdroje"
+            },
+            {
+              "id": "c2",
+              "title": "Fosílne palivá"
+            }
+          ],
+          "items": [
+            {
+              "sk": "vietor",
+              "category": "c1"
+            },
+            {
+              "sk": "uhlie",
+              "category": "c2"
+            },
+            {
+              "sk": "ropa",
+              "category": "c2"
+            },
+            {
+              "sk": "biomasa",
+              "category": "c1"
+            },
+            {
+              "sk": "slnko",
+              "category": "c1"
+            },
+            {
+              "sk": "zemný plyn",
+              "category": "c2"
+            },
+            {
+              "sk": "voda",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Сонце, вітер, вода й біомаса відновлюються; вугілля, газ і нафта утворювалися мільйони років і закінчуються.",
+          "order": 2,
+          "wordIds": [
+            "b2-u09-l03-energetika-w01",
+            "b2-u09-l03-energetika-w02"
+          ]
+        },
+        {
+          "id": "b2-u09-l03-energetika-ex03",
+          "lessonId": "b2-u09-l03-energetika",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Päť percent elektriny "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "pochádzajú",
+                "pochádza",
+                "pochádzam"
+              ],
+              "correct": "pochádza"
+            },
+            {
+              "text": " zo slnka."
+            }
+          ],
+          "explanation": "Після päť percent дієслово стоїть в однині середнього роду: pochádza.",
+          "order": 3
+        },
+        {
+          "id": "b2-u09-l03-energetika-ex04",
+          "lessonId": "b2-u09-l03-energetika",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Dve "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "percentá",
+                "percento",
+                "percent"
+              ],
+              "correct": "percentá"
+            },
+            {
+              "text": " energie pochádzajú z vetra."
+            }
+          ],
+          "explanation": "Після dve, tri, štyri — форма percentá і дієслово в множині.",
+          "order": 4
+        },
+        {
+          "id": "b2-u09-l03-energetika-ex05",
+          "lessonId": "b2-u09-l03-energetika",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Polovica elektriny pochádzajú z jadrových elektrární.",
+          "errorToken": "pochádzajú",
+          "correctToken": "pochádza",
+          "explanation": "Polovica — іменник в однині, тому pochádza.",
+          "order": 5,
+          "wordIds": [
+            "b2-u09-l03-energetika-w03"
+          ]
+        },
+        {
+          "id": "b2-u09-l03-energetika-ex06",
+          "lessonId": "b2-u09-l03-energetika",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Čím lepšie je dom zateplený, ______ menej energie potrebuje.",
+          "acceptedAnswers": [
+            "tým"
+          ],
+          "explanation": "Пара čím…, tým… — «що…, то…».",
+          "order": 6
+        },
+        {
+          "id": "b2-u09-l03-energetika-ex07",
+          "lessonId": "b2-u09-l03-energetika",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яке твердження про атомну енергію зважене?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Jadrová energia nemá žiadne nevýhody.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Jadrové elektrárne vypúšťajú najviac CO₂ zo všetkých zdrojov.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Jadrové elektrárne majú nízke emisie, problémom je však vyhoreté palivo a drahá výstavba.",
+              "correct": true
+            }
+          ],
+          "explanation": "Зважене твердження називає й перевагу (низькі викиди), і проблеми (відпрацьоване паливо, дороге будівництво).",
+          "order": 7,
+          "wordIds": [
+            "b2-u09-l03-energetika-w01",
+            "b2-u09-l03-energetika-w02",
+            "b2-u09-l03-energetika-w03"
+          ]
+        },
+        {
+          "id": "b2-u09-l03-energetika-ex08",
+          "lessonId": "b2-u09-l03-energetika",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Taras si v novinách prečítal článok o slovenskej energetike. Podľa údajov prevádzkovateľa sústavy vyrobili jadrové elektrárne v posledných rokoch viac ako polovicu elektriny na Slovensku, vodné elektrárne zhruba šestinu a slnečná energia len niekoľko percent. Autor článku píše, že jadro je stabilný zdroj s nízkymi emisiami, no výstavba nových blokov trvá desaťročia a stojí miliardy. Pri slnku a vetre zas upozorňuje, že vyrábajú len vtedy, keď svieti alebo fúka, preto treba energiu ukladať. Taras s článkom diskutoval so susedom, ktorý má na streche fotovoltiku. Sused priznal, že v lete vyrába viac, ako spotrebuje, ale v zime elektrinu stále kupuje.",
+          "questions": [
+            {
+              "question": "Яке джерело, за статтею, дає найбільше електроенергії у Словаччині?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "сонячні панелі",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "атомні електростанції",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "гідроелектростанції",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Яку проблему сонця й вітру називає автор?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "вони найдорожчі у світі",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "вони дуже забруднюють повітря",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "вони виробляють енергію не постійно, тож її треба накопичувати",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що каже сусід про свої панелі?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "панелі зовсім не працюють",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "цілий рік не купує жодної електрики",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "улітку виробляє більше, ніж споживає, а взимку купує електрику",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 8,
+          "wordIds": [
+            "b2-u09-l03-energetika-w01",
+            "b2-u09-l03-energetika-w03",
+            "b2-u09-l03-energetika-w04"
+          ]
+        },
+        {
+          "id": "b2-u09-l03-energetika-ex09",
+          "lessonId": "b2-u09-l03-energetika",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай витяг з енергетичного сертифіката.",
+          "document": {
+            "title": "Energetický certifikát budovy – rodinný dom",
+            "fields": [
+              {
+                "label": "Energetická trieda",
+                "value": "B"
+              },
+              {
+                "label": "Vykurovanie",
+                "value": "tepelné čerpadlo vzduch – voda"
+              },
+              {
+                "label": "Ohrev vody",
+                "value": "tepelné čerpadlo a fotovoltika"
+              },
+              {
+                "label": "Platnosť certifikátu",
+                "value": "10 rokov"
+              }
+            ]
+          },
+          "question": "Чим опалюють будинок?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "тепловим насосом",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "дровами в печі",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "газовим котлом",
+              "correct": false
+            }
+          ],
+          "explanation": "Vykurovanie: tepelné čerpadlo — опалення тепловим насосом.",
+          "order": 9,
+          "wordIds": [
+            "b2-u09-l03-energetika-w04",
+            "b2-u09-l03-energetika-w05",
+            "b2-u09-l03-energetika-w06"
+          ]
+        },
+        {
+          "id": "b2-u09-l03-energetika-ex10",
+          "lessonId": "b2-u09-l03-energetika",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення друга.",
+          "message": {
+            "sender": "Marek",
+            "body": "Ahoj Taras, tak sme dali na strechu fotovoltiku. V lete vyrobíme viac, ako minieme, ale v zime nám veľmi nepomôže, takže elektrinu stále kupujeme. Dotácia pokryla asi tretinu ceny, zvyšok sme zaplatili z úspor. Návratnosť odhadujú na desať rokov. Či sa to naozaj oplatí, uvidíme."
+          },
+          "question": "Як Марек оцінює своє рішення?",
+          "options": [
+            {
+              "id": "a",
+              "text": "розчаровано: шкодує про покупку",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "обережно: переваги є, але чи окупиться — ще побачать",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "захоплено: це найкраща інвестиція в житті",
+              "correct": false
+            }
+          ],
+          "explanation": "«Či sa to naozaj oplatí, uvidíme» — стримана, обережна оцінка.",
+          "order": 10,
+          "wordIds": [
+            "b2-u09-l03-energetika-w04"
+          ]
+        },
+        {
+          "id": "b2-u09-l03-energetika-ex11",
+          "lessonId": "b2-u09-l03-energetika",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "Predajca: «Návratnosť investície do fotovoltiky je pri dnešných cenách asi osem rokov.»",
+          "target": "návratnosť",
+          "options": [
+            {
+              "id": "a",
+              "text": "окупність",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "гарантія",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "повернення товару",
+              "correct": false
+            }
+          ],
+          "explanation": "Návratnosť investície — за скільки років вкладення окупиться.",
+          "order": 11,
+          "wordIds": [
+            "b2-u09-l03-energetika-w04"
+          ]
+        },
+        {
+          "id": "b2-u09-l03-energetika-ex12",
+          "lessonId": "b2-u09-l03-energetika",
+          "type": "collocation",
+          "skill": [
+            "vocabulary",
+            "natural_language"
+          ],
+          "instruction": "З’єднай словосполучення.",
+          "pairs": [
+            {
+              "left": "vyrábať",
+              "right": "elektrinu"
+            },
+            {
+              "left": "znížiť",
+              "right": "spotrebu"
+            },
+            {
+              "left": "inštalovať",
+              "right": "solárne panely"
+            },
+            {
+              "left": "vykurovať",
+              "right": "byt"
+            },
+            {
+              "left": "zatepliť",
+              "right": "fasádu"
+            }
+          ],
+          "order": 12
+        },
+        {
+          "id": "b2-u09-l03-energetika-ex13",
+          "lessonId": "b2-u09-l03-energetika",
+          "type": "tone",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Визнач тон мовця.",
+          "context": "Sused: «Fotovoltika? No, kto má peniaze navyše, nech si ju dá. Ja si počkám, kým to zlacnie.»",
+          "options": [
+            {
+              "id": "a",
+              "text": "стриманий скептицизм: поки що вважає це надто дорогим",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "гнів на сусідів із панелями",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "захоплення: хоче купити негайно",
+              "correct": false
+            }
+          ],
+          "explanation": "«Kto má peniaze navyše» і «počkám, kým to zlacnie» — сумнів через ціну, без ворожості.",
+          "order": 13,
+          "wordIds": [
+            "b2-u09-l03-energetika-w04"
+          ]
+        },
+        {
+          "id": "b2-u09-l03-energetika-ex14",
+          "lessonId": "b2-u09-l03-energetika",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Хочеш зважено сказати, що в сонячної енергії є і перевага, і недолік.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Solárna energia je dokonalá a nemá žiadnu chybu.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Solárna energia je lacná a čistá, nevýhodou však je, že v noci nevyrábajú.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Solárna energia je lacná a čistá, nevýhodou však je, že v noci nevyrába.",
+              "correct": true
+            }
+          ],
+          "explanation": "Підмет solárna energia — однина: nevyrába; зважена думка називає й недолік.",
+          "order": 14
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Сусід і сонячні панелі",
+        "description": "Сусід розпитує тебе про опалення й панелі на даху, бо сам роздумує про ремонт будинку.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Сусід питає, чим ви опалюєте. Як відповіси?",
+            "options": [
+              {
+                "sk": "Vykurujeme s tepelným čerpadlom.",
+                "correct": false
+              },
+              {
+                "sk": "Vykurujeme tepelné čerpadlo.",
+                "correct": false
+              },
+              {
+                "sk": "Vykurujeme tepelným čerpadlom.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як обережно оціниш окупність панелей?",
+            "options": [
+              {
+                "sk": "Návratnosť sa odhaduje asi na desiatich rokoch.",
+                "correct": false
+              },
+              {
+                "sk": "Návratnosť sa odhaduje asi na desať rokov.",
+                "correct": true
+              },
+              {
+                "sk": "Za mesiac sa to určite vráti.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Як поясниш значення утеплення?",
+            "options": [
+              {
+                "sk": "Tým lepšie je dom zateplený, čím menej energie potrebuje.",
+                "correct": false
+              },
+              {
+                "sk": "Čím lepšie je dom zateplený, tým menej energie potrebuje.",
+                "correct": true
+              },
+              {
+                "sk": "Čím lepšie je dom zateplený, tým viac energie potrebuje.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Сусід питає про державну дотацію. Що розсудливо порадиш?",
+            "options": [
+              {
+                "text": "нічого не перевіряти — дотацію дають усім автоматично",
+                "correct": false
+              },
+              {
+                "text": "не цікавитися — дотацій не буває",
+                "correct": false
+              },
+              {
+                "text": "перевірити актуальні умови на офіційному сайті, бо програми змінюються",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш зважено говорити про джерела енергії й читати цифри. Далі — вода: питна, підземна, повені й посуха."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш зважено говорити про джерела енергії й читати цифри. Далі — вода: питна, підземна, повені й посуха.",
+        "nowYouKnow": [
+          "fosílne palivá · jadrová energia · obnoviteľné zdroje — у кожного є výhoda і nevýhoda",
+          "päť percent pochádza · dve percentá pochádzajú · polovica pochádza",
+          "čím…, tým… · vykurovať + оруд.: tepelným čerpadlom",
+          "energetický certifikát: класи від A0 до G"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u09-l04-voda",
+          "title": "Вода"
+        }
+      }
+    }
+  ]
+}

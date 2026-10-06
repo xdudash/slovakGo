@@ -1,0 +1,934 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u11-l04-manipulativne-techniky",
+      "sectionId": "b2-u11",
+      "level": "B2",
+      "title": "Маніпулятивні прийоми",
+      "topic": "Медіаграмотність",
+      "description": "Як можна ввести в оману, не сказавши жодної відвертої брехні: залякування, ярлики, напівправда, цитата, вирвана з контексту, хибна дилема й перекручування слів опонента.",
+      "order": 94,
+      "xpReward": 50,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Розпізнавати типові маніпулятивні прийоми в медіа й спокійно називати їх словацькою.",
+      "completionMessage": "Ти бачиш маніпуляцію й можеш її назвати. Далі — джерела: чим першоджерело відрізняється від переказу й кому вірити.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Медіаграмотність",
+        "title": "Маніпулятивні прийоми",
+        "shortDescription": "Розпізнавати типові маніпулятивні прийоми в медіа й спокійно називати їх словацькою.",
+        "outcomes": [
+          "впізнавати zastrašovanie, nálepkovanie й апеляцію до емоцій",
+          "пояснювати, що таке polopravda й citát vytrhnutý z kontextu",
+          "розпізнавати falošnú dilemu й перекручування (prekrútenie)",
+          "узгоджувати пасивний дієприкметник: citát vytrhnutý, veta vytrhnutá"
+        ],
+        "newWords": [
+          "manipulácia",
+          "polopravda",
+          "vytrhnúť z kontextu",
+          "zastrašovanie",
+          "nálepkovanie",
+          "falošná dilema"
+        ],
+        "exercisesCount": 15,
+        "reward": "+50 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Емоції замість аргументів",
+          "text": "Маніпуляція («manipulácia») — спроба вплинути на тебе так, щоб ти не помітив, як саме. Найпростіше — грати на емоціях («apelovať na emócie»): страх, гнів, жалість. «Zastrašovanie» — залякування: «Vaše deti sú v ohrození!», «Zajtra môže byť neskoro!» «Nálepkovanie» — навішування ярликів: замість аргументу опонента називають «zradca», «extrémista», «neschopný». Ярлик не доводить нічого — він лише відбиває бажання слухати іншу сторону.",
+          "examples": [
+            {
+              "sk": "Kto nesúhlasí, je vraj zradca – to je nálepkovanie.",
+              "uk": "Хто не згоден, той нібито зрадник — це навішування ярликів."
+            },
+            {
+              "sk": "Strach nie je argument.",
+              "uk": "Страх — не аргумент."
+            }
+          ],
+          "shortRule": "емоція + ярлик замість фактів = сигнал маніпуляції",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Правда, але не вся",
+          "text": "«Polopravda» — напівправда: кожне речення правдиве, але бракує важливої частини, тож висновок хибний. «Vytrhnúť z kontextu» — вирвати з контексту: процитувати слова без умови чи обставин. Мер сказав: «Dane zvýšime iba vtedy, ak príde kríza.» Заголовок: «Primátor: Dane zvýšime». Подібно «zamlčať» — замовчати незручну інформацію. Пасивний дієприкметник узгоджується з іменником: «citát bol vytrhnutý», «veta bola vytrhnutá», «slová boli vytrhnuté z kontextu».",
+          "examples": [
+            {
+              "sk": "Citát bol vytrhnutý z kontextu.",
+              "uk": "Цитату вирвали з контексту."
+            },
+            {
+              "sk": "Článok zamlčal, že išlo len o návrh.",
+              "uk": "Стаття замовчала, що йшлося лише про пропозицію."
+            }
+          ],
+          "shortRule": "vytrhnutý (ч.) · vytrhnutá (ж.) · vytrhnuté (сер., мн.)",
+          "commonMistakes": [
+            {
+              "mistake": "Ten veta bola vytrhnutý z kontextu.",
+              "correct": "Tá veta bola vytrhnutá z kontextu."
+            },
+            {
+              "mistake": "Je to lož, lebo každá veta je pravdivá.",
+              "correct": "Každá veta je pravdivá, a predsa je to polopravda."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Логічні пастки",
+          "text": "«Falošná dilema» — хибна дилема: вдають, що є лише два варіанти («Nový tunel alebo večné zápchy»), хоча їх більше. «Prekrútiť» слова опонента (підмінити тезу): «Chcem menej áut v centre» → «Chce zakázať autá všetkým!». «Zovšeobecňovanie» — один випадок видають за правило. Нагадування з попередніх рівнів: «demagógia» — маніпулятивне, популістське мовлення. Як реагувати спокійно: «To je falošná dilema, existujú aj iné možnosti.», «To som nepovedal, prekrúcate moje slová.», «Jeden prípad ešte nie je pravidlo.»",
+          "examples": [
+            {
+              "sk": "To je falošná dilema, možností je viac.",
+              "uk": "Це хибна дилема, варіантів більше."
+            },
+            {
+              "sk": "Prekrúcate moje slová.",
+              "uk": "Ви перекручуєте мої слова."
+            }
+          ],
+          "shortRule": "дві можливості? шукай третю · «ви кажете X» — чи справді він це сказав?",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u11-l04-manipulativne-techniky-w01",
+            "sk": "manipulácia",
+            "uk": "маніпуляція",
+            "pronunciationUk": "маніпула:ціа",
+            "exampleSk": "Strašenie bez faktov je typická manipulácia.",
+            "exampleUk": "Залякування без фактів — типова маніпуляція."
+          },
+          {
+            "wordId": "b2-u11-l04-manipulativne-techniky-w02",
+            "sk": "polopravda",
+            "uk": "напівправда",
+            "pronunciationUk": "полоправда",
+            "exampleSk": "Článok nebol lož, ale polopravda – vynechal to najdôležitejšie.",
+            "exampleUk": "Стаття не була брехнею, а напівправдою — вона пропустила найважливіше."
+          },
+          {
+            "wordId": "b2-u11-l04-manipulativne-techniky-w03",
+            "sk": "vytrhnúť z kontextu",
+            "uk": "вирвати з контексту",
+            "pronunciationUk": "витргну:ть з контексту",
+            "exampleSk": "Web vytrhol z kontextu jednu vetu z rozhovoru.",
+            "exampleUk": "Сайт вирвав з контексту одне речення з інтерв’ю."
+          },
+          {
+            "wordId": "b2-u11-l04-manipulativne-techniky-w04",
+            "sk": "zastrašovanie",
+            "uk": "залякування",
+            "pronunciationUk": "застрашованіє",
+            "exampleSk": "Leták stavil na zastrašovanie, nie na argumenty.",
+            "exampleUk": "Листівка зробила ставку на залякування, а не на аргументи."
+          },
+          {
+            "wordId": "b2-u11-l04-manipulativne-techniky-w05",
+            "sk": "nálepkovanie",
+            "uk": "навішування ярликів",
+            "pronunciationUk": "на:лепкованіє",
+            "exampleSk": "Namiesto argumentov prišlo nálepkovanie oponentov.",
+            "exampleUk": "Замість аргументів почалося навішування ярликів на опонентів."
+          },
+          {
+            "wordId": "b2-u11-l04-manipulativne-techniky-w06",
+            "sk": "falošná dilema",
+            "uk": "хибна дилема",
+            "pronunciationUk": "фалошна: ділема",
+            "exampleSk": "«Tunel alebo zápchy navždy» je falošná dilema.",
+            "exampleUk": "«Тунель або вічні затори» — це хибна дилема."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-w01",
+          "sk": "manipulácia",
+          "uk": "маніпуляція",
+          "pronunciationUk": "маніпула:ціа",
+          "exampleSk": "Strašenie bez faktov je typická manipulácia.",
+          "exampleUk": "Залякування без фактів — типова маніпуляція.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-w02",
+          "sk": "polopravda",
+          "uk": "напівправда",
+          "pronunciationUk": "полоправда",
+          "exampleSk": "Článok nebol lož, ale polopravda – vynechal to najdôležitejšie.",
+          "exampleUk": "Стаття не була брехнею, а напівправдою — вона пропустила найважливіше.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-w03",
+          "sk": "vytrhnúť z kontextu",
+          "uk": "вирвати з контексту",
+          "pronunciationUk": "витргну:ть з контексту",
+          "exampleSk": "Web vytrhol z kontextu jednu vetu z rozhovoru.",
+          "exampleUk": "Сайт вирвав з контексту одне речення з інтерв’ю.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-w04",
+          "sk": "zastrašovanie",
+          "uk": "залякування",
+          "pronunciationUk": "застрашованіє",
+          "exampleSk": "Leták stavil na zastrašovanie, nie na argumenty.",
+          "exampleUk": "Листівка зробила ставку на залякування, а не на аргументи.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-w05",
+          "sk": "nálepkovanie",
+          "uk": "навішування ярликів",
+          "pronunciationUk": "на:лепкованіє",
+          "exampleSk": "Namiesto argumentov prišlo nálepkovanie oponentov.",
+          "exampleUk": "Замість аргументів почалося навішування ярликів на опонентів.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-w06",
+          "sk": "falošná dilema",
+          "uk": "хибна дилема",
+          "pronunciationUk": "фалошна: ділема",
+          "exampleSk": "«Tunel alebo zápchy navždy» je falošná dilema.",
+          "exampleUk": "«Тунель або вічні затори» — це хибна дилема.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-ex01",
+          "lessonId": "b2-u11-l04-manipulativne-techniky",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "manipulácia",
+              "right": "прихований вплив на думку"
+            },
+            {
+              "left": "polopravda",
+              "right": "правда без важливої частини"
+            },
+            {
+              "left": "vytrhnúť z kontextu",
+              "right": "процитувати без обставин"
+            },
+            {
+              "left": "zastrašovanie",
+              "right": "залякування"
+            },
+            {
+              "left": "nálepkovanie",
+              "right": "навішування ярликів"
+            },
+            {
+              "left": "falošná dilema",
+              "right": "вдавано лише два варіанти"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u11-l04-manipulativne-techniky-w01",
+            "b2-u11-l04-manipulativne-techniky-w02",
+            "b2-u11-l04-manipulativne-techniky-w03",
+            "b2-u11-l04-manipulativne-techniky-w04",
+            "b2-u11-l04-manipulativne-techniky-w05",
+            "b2-u11-l04-manipulativne-techniky-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-ex02",
+          "lessonId": "b2-u11-l04-manipulativne-techniky",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Який це прийом?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Zastrašovanie"
+            },
+            {
+              "id": "c2",
+              "title": "Nálepkovanie"
+            },
+            {
+              "id": "c3",
+              "title": "Falošná dilema"
+            }
+          ],
+          "items": [
+            {
+              "sk": "Zajtra môže byť neskoro!",
+              "category": "c1"
+            },
+            {
+              "sk": "Tí zradcovia z radnice",
+              "category": "c2"
+            },
+            {
+              "sk": "Vaše deti sú v ohrození!",
+              "category": "c1"
+            },
+            {
+              "sk": "Typický extrémista",
+              "category": "c2"
+            },
+            {
+              "sk": "Nový tunel alebo večné zápchy",
+              "category": "c3"
+            },
+            {
+              "sk": "Zákaz áut alebo smog navždy",
+              "category": "c3"
+            }
+          ],
+          "explanation": "Залякування грає на страху, ярлик підмінює аргумент, хибна дилема приховує інші варіанти.",
+          "order": 2,
+          "wordIds": [
+            "b2-u11-l04-manipulativne-techniky-w04",
+            "b2-u11-l04-manipulativne-techniky-w05",
+            "b2-u11-l04-manipulativne-techniky-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-ex03",
+          "lessonId": "b2-u11-l04-manipulativne-techniky",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильну форму.",
+          "sentenceParts": [
+            {
+              "text": "Tá veta bola "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "vytrhnutá",
+                "vytrhnuté",
+                "vytrhnutý"
+              ],
+              "correct": "vytrhnutá"
+            },
+            {
+              "text": " z kontextu a jej význam sa úplne zmenil."
+            }
+          ],
+          "explanation": "Veta — жіночий рід: bola vytrhnutá.",
+          "order": 3,
+          "wordIds": [
+            "b2-u11-l04-manipulativne-techniky-w03"
+          ]
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-ex04",
+          "lessonId": "b2-u11-l04-manipulativne-techniky",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Кандидат у дебатах: «Kto nesúhlasí s naším plánom, ten jednoducho nemá rád toto mesto.»",
+          "options": [
+            {
+              "id": "a",
+              "text": "він підмінює аргументи: незгоду з планом видає за нелюбов до міста",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "він пропонує компроміс",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "він щиро хвалить своїх опонентів",
+              "correct": false
+            }
+          ],
+          "explanation": "Це поєднання хибної дилеми й ярлика: або згоден, або «не любиш місто».",
+          "order": 4
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-ex05",
+          "lessonId": "b2-u11-l04-manipulativne-techniky",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Riaditeľka základnej školy v Banskej Bystrici poskytla regionálnemu rádiu dlhší rozhovor. Na otázku o mobiloch odpovedala: «Mobily v triede zakážeme iba vtedy, ak sa s rodičmi nedohodneme na spoločných pravidlách. Verím však, že sa dohodneme.» Na druhý deň sa na jednom webe objavil titulok: «Riaditeľka: Mobily v triede zakážeme!» Pod ním pribudli stovky nahnevaných komentárov a niektorí rodičia riaditeľku nazvali diktátorkou. Rádio potom zverejnilo celý záznam rozhovoru. Ukázalo sa, že citát bol vytrhnutý z kontextu: podmienka «iba vtedy, ak…» aj veta o dohode z neho zmizli. Web sa neospravedlnil, iba potichu zmenil titulok.",
+          "questions": [
+            {
+              "question": "Що насправді сказала директорка?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "телефони заборонять, лише якщо не вдасться домовитися з батьками про правила",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "телефони в школі вже заборонені",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "телефони заборонять із понеділка",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Який прийом використав сайт?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "опублікував фотомонтаж",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "вигадав інтерв’ю від початку до кінця",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "вирвав цитату з контексту, прибравши умову",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що зробили деякі батьки, назвавши директорку «diktátorka»?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "навели перевірені факти",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "запропонували хибну дилему",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "навісили на неї ярлик",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 5,
+          "wordIds": [
+            "b2-u11-l04-manipulativne-techniky-w03"
+          ]
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-ex06",
+          "lessonId": "b2-u11-l04-manipulativne-techniky",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Autor článku zamlčala dôležitú časť štúdie o cenách bytov.",
+          "errorToken": "zamlčala",
+          "correctToken": "zamlčal",
+          "explanation": "Autor — чоловічий рід: zamlčal.",
+          "order": 6
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-ex07",
+          "lessonId": "b2-u11-l04-manipulativne-techniky",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перетвори на пасив: «Цитату вирвали з контексту.»",
+          "source": "Niekto vytrhol citát z kontextu.",
+          "acceptedAnswers": [
+            "Citát bol vytrhnutý z kontextu.",
+            "Citát bol z kontextu vytrhnutý."
+          ],
+          "explanation": "Пасив: byť + дієприкметник, узгоджений з citát (ч. р.): bol vytrhnutý.",
+          "order": 7,
+          "wordIds": [
+            "b2-u11-l04-manipulativne-techniky-w03"
+          ]
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-ex08",
+          "lessonId": "b2-u11-l04-manipulativne-techniky",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери маніпулятивні висловлювання.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Buď podporíte náš plán, alebo nemáte radi deti.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Iba hlupák môže veriť takým číslam.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Podľa údajov úradu klesla nezamestnanosť o dve percentá.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Ak nič neurobíme, mesto čaká katastrofa!",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Náš plán stojí milión eur a uvádzame, odkiaľ peniaze vezmeme.",
+              "correct": false
+            }
+          ],
+          "explanation": "Хибна дилема, ярлик і залякування — маніпуляція; останні два речення спираються на дані.",
+          "order": 8
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-ex09",
+          "lessonId": "b2-u11-l04-manipulativne-techniky",
+          "type": "tone",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Визнач тон мовця.",
+          "context": "Radnica vám opäť siahla do peňaženky! Dokedy to budete mlčky trpieť? Zdieľajte, kým to nezmažú!",
+          "options": [
+            {
+              "id": "a",
+              "text": "стриманий і інформативний",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "іронічно-дружній",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "підбурливий, грає на гніві й поспіху",
+              "correct": true
+            }
+          ],
+          "explanation": "Оклики, звинувачення й заклик поширювати «поки не видалили» — тиск на емоції.",
+          "order": 9
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-ex10",
+          "lessonId": "b2-u11-l04-manipulativne-techniky",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Співрозмовник каже: «Buď postavíme diaľnicu, alebo región zomrie.» Ти спокійно заперечуєш.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "To je falošný dilema, existujú aj iné možnosti.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "To je falošná dilemu, existujú aj iné možnosti.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "To je falošná dilema, existujú aj iné možnosti.",
+              "correct": true
+            }
+          ],
+          "explanation": "Dilema — жіночий рід, називний відмінок: falošná dilema.",
+          "order": 10,
+          "wordIds": [
+            "b2-u11-l04-manipulativne-techniky-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-ex11",
+          "lessonId": "b2-u11-l04-manipulativne-techniky",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "«Článok nie je lož, je to polopravda.»",
+          "target": "polopravda",
+          "options": [
+            {
+              "id": "a",
+              "text": "перевірений факт",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "правда, з якої вилучили важливу частину",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "цілковита вигадка",
+              "correct": false
+            }
+          ],
+          "explanation": "Polopravda — правдиві речення, але бракує ключової частини.",
+          "order": 11,
+          "wordIds": [
+            "b2-u11-l04-manipulativne-techniky-w02"
+          ]
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-ex12",
+          "lessonId": "b2-u11-l04-manipulativne-techniky",
+          "type": "drag_to_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильну форму.",
+          "sentence": "Nesúhlasiť s plánom ešte neznamená ______ mesto.",
+          "draggable": [
+            "nenávisť",
+            "nenávidí",
+            "nenávidieť"
+          ],
+          "correct": "nenávidieť",
+          "explanation": "Neznamená + інфінітив, паралельно до «nesúhlasiť»: nenávidieť.",
+          "order": 12
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-ex13",
+          "lessonId": "b2-u11-l04-manipulativne-techniky",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Напівправда може не містити жодного неправдивого речення, але все одно вводить в оману.",
+          "correctAnswer": true,
+          "explanation": "Polopravda вводить в оману тим, що замовчує важливе.",
+          "order": 13
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-ex14",
+          "lessonId": "b2-u11-l04-manipulativne-techniky",
+          "type": "collocation",
+          "skill": [
+            "vocabulary",
+            "natural_language"
+          ],
+          "instruction": "З’єднай у природні словосполучення.",
+          "pairs": [
+            {
+              "left": "vytrhnúť",
+              "right": "z kontextu"
+            },
+            {
+              "left": "zamlčať",
+              "right": "dôležitú informáciu"
+            },
+            {
+              "left": "apelovať",
+              "right": "na emócie"
+            },
+            {
+              "left": "prekrútiť",
+              "right": "slová oponenta"
+            },
+            {
+              "left": "nalepiť niekomu",
+              "right": "nálepku"
+            }
+          ],
+          "order": 14,
+          "wordIds": [
+            "b2-u11-l04-manipulativne-techniky-w03"
+          ]
+        },
+        {
+          "id": "b2-u11-l04-manipulativne-techniky-ex15",
+          "lessonId": "b2-u11-l04-manipulativne-techniky",
+          "type": "branching_dialogue",
+          "skill": [
+            "dialogue",
+            "real_life"
+          ],
+          "instruction": "Пройди діалог: обирай доречні відповіді.",
+          "successMessage": "Ти спокійно розібрав(ла) маніпулятивне відео!",
+          "startNode": "n1",
+          "nodes": {
+            "n1": {
+              "speaker": "Kamarát",
+              "sk": "Videl si to video? Hovorí sa v ňom, že nový zákon zakáže všetky autá na benzín už budúci rok!",
+              "choices": [
+                {
+                  "id": "n1c3",
+                  "sk": "Neviem, ale ak to hovorí video, je to pravda.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c2",
+                  "sk": "Áno, hneď idem predať auto.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c1",
+                  "sk": "Videl, ale autor vytrhol vetu z kontextu. Zákon hovorí o nových autách od roku 2035.",
+                  "next": "n2",
+                  "quality": "best"
+                }
+              ]
+            },
+            "n2": {
+              "speaker": "Kamarát",
+              "sk": "Ale autor tvrdí, že kto zákon podporuje, je nepriateľ obyčajných ľudí.",
+              "choices": [
+                {
+                  "id": "n2c1",
+                  "sk": "To je nálepkovanie, nie argument.",
+                  "next": "n3",
+                  "quality": "best"
+                },
+                {
+                  "id": "n2c3",
+                  "sk": "To je falošná fotomontáž.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c2",
+                  "sk": "Tak to máš pravdu, sú to nepriatelia.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n3": {
+              "speaker": "Kamarát",
+              "sk": "Tak čo si mám o tom myslieť?",
+              "choices": [
+                {
+                  "id": "n3c2",
+                  "sk": "Nič, všetko je lož.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c1",
+                  "sk": "Prečítaj si samotný zákon alebo vecný článok, potom si urob názor.",
+                  "next": "success",
+                  "quality": "best"
+                },
+                {
+                  "id": "n3c3",
+                  "sk": "Ver tomu, kto kričí najviac.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            }
+          },
+          "order": 15,
+          "wordIds": [
+            "b2-u11-l04-manipulativne-techniky-w03",
+            "b2-u11-l04-manipulativne-techniky-w05",
+            "b2-u11-l04-manipulativne-techniky-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Передвиборча листівка",
+        "description": "У поштовій скриньці ти знаходиш листівку вигаданої партії: «Buď nás zvolíte, alebo vaše mesto zničia! Naši oponenti sú zradcovia.» Сусід питає, що ти про це думаєш.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Як назвеш першу частину?",
+            "options": [
+              {
+                "sk": "To je falošná dilema.",
+                "correct": true
+              },
+              {
+                "sk": "To je perex.",
+                "correct": false
+              },
+              {
+                "sk": "To je overiteľný fakt.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "А «Naši oponenti sú zradcovia»?",
+            "options": [
+              {
+                "sk": "To je presný citát zo štúdie.",
+                "correct": false
+              },
+              {
+                "sk": "To je spätné vyhľadávanie.",
+                "correct": false
+              },
+              {
+                "sk": "To je nálepkovanie, chýbajú argumenty.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Чого в листівці бракує найбільше?",
+            "options": [
+              {
+                "text": "конкретних фактів, чисел і планів",
+                "correct": true
+              },
+              {
+                "text": "більшої кількості окликів",
+                "correct": false
+              },
+              {
+                "text": "яскравих кольорів",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Що порадиш сусідові?",
+            "options": [
+              {
+                "sk": "Volme toho, kto viac straší.",
+                "correct": false
+              },
+              {
+                "sk": "Leták hneď zdieľajme.",
+                "correct": false
+              },
+              {
+                "sk": "Porovnajme si radšej programy strán a ich čísla.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти бачиш маніпуляцію й можеш її назвати. Далі — джерела: чим першоджерело відрізняється від переказу й кому вірити."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти бачиш маніпуляцію й можеш її назвати. Далі — джерела: чим першоджерело відрізняється від переказу й кому вірити.",
+        "nowYouKnow": [
+          "zastrašovanie, nálepkovanie, apel na emócie — емоції замість аргументів",
+          "polopravda й citát vytrhnutý z kontextu — правда, але не вся",
+          "falošná dilema, prekrútenie, zovšeobecňovanie — логічні пастки",
+          "vytrhnutý / vytrhnutá / vytrhnuté — узгодження з іменником"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 15,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u11-l05-zdroje",
+          "title": "Джерела інформації"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,902 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u11-l10-suhrn-medialna-gramotnost",
+      "sectionId": "b2-u11",
+      "level": "B2",
+      "title": "Підсумок: медіаграмотність",
+      "topic": "Медіаграмотність",
+      "description": "Повторення всього блоку: типи медіа, заголовки, перевірка фактів, маніпуляції, джерела, реклама, статистика, думка й факт та виступ у медіа — зібрані в п’ять кроків, які займають кілька хвилин.",
+      "order": 100,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Застосовувати всі прийоми медіаграмотності разом: від заголовка до цитати.",
+      "completionMessage": "Ти пройшов блок про медіаграмотність і вмієш читати новини з головою. Далі — дієприкметники й номіналізація: pracujúci, napísaný, rozhodnutie.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Медіаграмотність",
+        "title": "Підсумок: медіаграмотність",
+        "shortDescription": "Застосовувати всі прийоми медіаграмотності разом: від заголовка до цитати.",
+        "outcomes": [
+          "проходити п’ять кроків перевірки за кілька хвилин",
+          "називати прийом маніпуляції його словом",
+          "відрізняти число, джерело й оцінку в одній статті",
+          "тримати критичний відступ без цинізму"
+        ],
+        "newWords": [
+          "mediálna gramotnosť",
+          "kritické myslenie",
+          "odstup",
+          "obozretný"
+        ],
+        "exercisesCount": 15,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "П’ять кроків за кілька хвилин",
+          "text": "Усе з цього блоку складається в одну коротку процедуру. Перший крок — заголовок: що він обіцяє і чи це підтверджують «perex» і сам текст. Другий — джерело: хто це пише, хто «vydavateľ», чи є «primárny zdroj», чи стаття лише переказує когось «s odvolaním sa na». Третій — дата: коли сталася подія й коли вийшов текст; старе фото в новому тексті трапляється щодня. Четвертий — числа: «percento» чи «percentuálny bod», «priemer» чи «medián», яка «vzorka» і чи є «štatistická chyba». П’ятий — мова: де оцінні слова, де «zastrašovanie», «nálepkovanie» або «falošná dilema». Якщо на якомусь кроці щось не сходиться, не поширюй — перевір. Правило медіаграмотності не «нікому не вір», а «перед поширенням перевір».",
+          "examples": [
+            {
+              "sk": "Pred zdieľaním si vždy overím dátum aj zdroj.",
+              "uk": "Перед поширенням я завжди перевіряю і дату, і джерело."
+            },
+            {
+              "sk": "Tento titulok neobstojí po prečítaní textu.",
+              "uk": "Цей заголовок не витримує перевірки після прочитання тексту."
+            }
+          ],
+          "shortRule": "заголовок · джерело · дата · числа · мова",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Назви прийом його словом",
+          "text": "Коли вмієш назвати прийом, він майже перестає діяти. «Clickbait» — заголовок-приманка, якого текст не підтверджує. «Polopravda» — правда без найважливішої частини. «Vytrhnutie z kontextu» — цитата без речення перед нею й після неї. «Zastrašovanie» — страх замість аргументу. «Nálepkovanie» — ярлик замість доводу. «Falošná dilema» — два варіанти там, де їх більше. «Skrytá reklama» — платний вміст без позначки. «Zavádzajúci graf» — вісь, що не починається з нуля. «Nepodložené tvrdenie» — твердження без доказу. У розмові це звучить спокійно й коротко: «Toto je falošná dilema, možností je viac» або «Tá veta je vytrhnutá z kontextu». Назва прийому переводить суперечку з емоцій на конкретику, бо далі говорити вже треба про текст, а не про настрій.",
+          "examples": [
+            {
+              "sk": "Toto je falošná dilema, možností je viac.",
+              "uk": "Це хибна дилема, варіантів більше."
+            },
+            {
+              "sk": "Tá veta je vytrhnutá z kontextu.",
+              "uk": "Це речення вирване з контексту."
+            }
+          ],
+          "shortRule": "назви прийом — і він втрачає силу",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Критичний відступ без цинізму",
+          "text": "Медіаграмотність — не недовіра до всього. Цинік каже «všetci lžú» і саме через це врешті вірить кому завгодно: якщо все однаково недостовірне, вибір стає справою настрою. Обачний читач натомість розрізняє три різні речі: «overené», «neoverené» і «nepravdivé». Неперевірене — ще не брехня, а брехня — не просто інша думка. Такий читач визнає, коли помилився, і виправляє себе сам. Корисні звороти для розмови: «Nie som si istý, overím si to.» «Toto som čítal, ale nemám na to zdroj.» «Jeden zdroj mi nestačí, hľadám ešte jeden.» Діліться не лише висновком, а й сумнівом — тоді розмова залишається розмовою, а не стає суперечкою про те, хто розумніший.",
+          "examples": [
+            {
+              "sk": "Toto som čítal, ale nemám na to zdroj.",
+              "uk": "Я це читав, але джерела на це не маю."
+            },
+            {
+              "sk": "Jeden zdroj mi nestačí, hľadám ešte jeden.",
+              "uk": "Одного джерела мені не досить, шукаю ще одне."
+            }
+          ],
+          "shortRule": "overené · neoverené · nepravdivé — три різні речі; цинізм не є критичністю",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u11-l10-suhrn-medialna-gramotnost-w01",
+            "sk": "mediálna gramotnosť",
+            "uk": "медіаграмотність",
+            "pronunciationUk": "медіа:лна грамотность",
+            "exampleSk": "Mediálna gramotnosť sa dá naučiť za pár týždňov.",
+            "exampleUk": "Медіаграмотності можна навчитися за кілька тижнів."
+          },
+          {
+            "wordId": "b2-u11-l10-suhrn-medialna-gramotnost-w02",
+            "sk": "kritické myslenie",
+            "uk": "критичне мислення",
+            "pronunciationUk": "крітіцке: мисленіє",
+            "exampleSk": "Kritické myslenie znamená overovať, nie všetko odmietať.",
+            "exampleUk": "Критичне мислення означає перевіряти, а не все відкидати."
+          },
+          {
+            "wordId": "b2-u11-l10-suhrn-medialna-gramotnost-w03",
+            "sk": "odstup",
+            "uk": "критична дистанція, відсторонення",
+            "pronunciationUk": "одступ",
+            "exampleSk": "Pri emotívnych správach si zachovávam odstup.",
+            "exampleUk": "Читаючи емоційні новини, я зберігаю дистанцію."
+          },
+          {
+            "wordId": "b2-u11-l10-suhrn-medialna-gramotnost-w04",
+            "sk": "obozretný",
+            "uk": "обачний, осторожний",
+            "pronunciationUk": "обозретни:",
+            "exampleSk": "Obozretný čitateľ si overí dátum aj zdroj.",
+            "exampleUk": "Обачний читач перевірить і дату, і джерело."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-w01",
+          "sk": "mediálna gramotnosť",
+          "uk": "медіаграмотність",
+          "pronunciationUk": "медіа:лна грамотность",
+          "exampleSk": "Mediálna gramotnosť sa dá naučiť za pár týždňov.",
+          "exampleUk": "Медіаграмотності можна навчитися за кілька тижнів.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-w02",
+          "sk": "kritické myslenie",
+          "uk": "критичне мислення",
+          "pronunciationUk": "крітіцке: мисленіє",
+          "exampleSk": "Kritické myslenie znamená overovať, nie všetko odmietať.",
+          "exampleUk": "Критичне мислення означає перевіряти, а не все відкидати.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-w03",
+          "sk": "odstup",
+          "uk": "критична дистанція, відсторонення",
+          "pronunciationUk": "одступ",
+          "exampleSk": "Pri emotívnych správach si zachovávam odstup.",
+          "exampleUk": "Читаючи емоційні новини, я зберігаю дистанцію.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-w04",
+          "sk": "obozretný",
+          "uk": "обачний, осторожний",
+          "pronunciationUk": "обозретни:",
+          "exampleSk": "Obozretný čitateľ si overí dátum aj zdroj.",
+          "exampleUk": "Обачний читач перевірить і дату, і джерело.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-ex01",
+          "lessonId": "b2-u11-l10-suhrn-medialna-gramotnost",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай прийом з описом.",
+          "pairs": [
+            {
+              "left": "clickbait",
+              "right": "заголовок-приманка без підтвердження в тексті"
+            },
+            {
+              "left": "polopravda",
+              "right": "правда без найважливішої частини"
+            },
+            {
+              "left": "zastrašovanie",
+              "right": "страх замість аргументу"
+            },
+            {
+              "left": "nálepkovanie",
+              "right": "ярлик замість доводу"
+            },
+            {
+              "left": "falošná dilema",
+              "right": "два варіанти там, де їх більше"
+            },
+            {
+              "left": "skrytá reklama",
+              "right": "платний вміст без позначки"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u11-l10-suhrn-medialna-gramotnost-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-ex02",
+          "lessonId": "b2-u11-l10-suhrn-medialna-gramotnost",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Де чесна позначка, а де маніпуляція?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Čestné označenie"
+            },
+            {
+              "id": "c2",
+              "title": "Manipulácia"
+            }
+          ],
+          "items": [
+            {
+              "sk": "platená spolupráca",
+              "category": "c1"
+            },
+            {
+              "sk": "komerčná prezentácia",
+              "category": "c1"
+            },
+            {
+              "sk": "skrytá reklama",
+              "category": "c2"
+            },
+            {
+              "sk": "nálepkovanie",
+              "category": "c2"
+            },
+            {
+              "sk": "falošná dilema",
+              "category": "c2"
+            },
+            {
+              "sk": "sponzorovaný obsah",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Позначений комерційний вміст чесний; маніпуляція приховує платність або підмінює аргумент.",
+          "order": 2,
+          "wordIds": [
+            "b2-u11-l10-suhrn-medialna-gramotnost-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-ex03",
+          "lessonId": "b2-u11-l10-suhrn-medialna-gramotnost",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яке твердження можна перевірити?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Prieskum oslovil tisíc respondentov v marci.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Prieskum je najlepší dôkaz pravdy.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Prieskum bol úplne zbytočný.",
+              "correct": false
+            }
+          ],
+          "explanation": "Перше твердження має число й місяць, тож його можна перевірити; два інші оцінюють.",
+          "order": 3,
+          "wordIds": [
+            "b2-u11-l10-suhrn-medialna-gramotnost-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-ex04",
+          "lessonId": "b2-u11-l10-suhrn-medialna-gramotnost",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Tá veta je "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "vytrhnutá",
+                "vytrhnutý",
+                "vytrhnuté"
+              ],
+              "correct": "vytrhnutá"
+            },
+            {
+              "text": " z kontextu."
+            }
+          ],
+          "explanation": "Veta — іменник жіночого роду: vytrhnutá z kontextu.",
+          "order": 4,
+          "wordIds": [
+            "b2-u11-l10-suhrn-medialna-gramotnost-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-ex05",
+          "lessonId": "b2-u11-l10-suhrn-medialna-gramotnost",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Pred zdieľaním si vždy overím dátum aj "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "zdroj",
+                "zdrojom",
+                "zdroja"
+              ],
+              "correct": "zdroj"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Overiť вимагає знахідного відмінка: overím dátum aj zdroj.",
+          "order": 5,
+          "wordIds": [
+            "b2-u11-l10-suhrn-medialna-gramotnost-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-ex06",
+          "lessonId": "b2-u11-l10-suhrn-medialna-gramotnost",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Toto je falošná ______, možností je viac.",
+          "acceptedAnswers": [
+            "dilema"
+          ],
+          "explanation": "Хибна дилема подає два варіанти там, де їх насправді більше.",
+          "order": 6,
+          "wordIds": [
+            "b2-u11-l10-suhrn-medialna-gramotnost-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-ex07",
+          "lessonId": "b2-u11-l10-suhrn-medialna-gramotnost",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Informáciu potvrdili dva nezávislí zdroje.",
+          "errorToken": "nezávislí",
+          "correctToken": "nezávislé",
+          "explanation": "Zdroj — неживий іменник чоловічого роду: dva nezávislé zdroje.",
+          "order": 7,
+          "wordIds": [
+            "b2-u11-l10-suhrn-medialna-gramotnost-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-ex08",
+          "lessonId": "b2-u11-l10-suhrn-medialna-gramotnost",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Tvrdenie bez dôkazu je nepodložená.",
+          "acceptedAnswers": [
+            "Tvrdenie bez dôkazu je nepodložené."
+          ],
+          "explanation": "Tvrdenie — іменник середнього роду: je nepodložené.",
+          "order": 8,
+          "wordIds": [
+            "b2-u11-l10-suhrn-medialna-gramotnost-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-ex09",
+          "lessonId": "b2-u11-l10-suhrn-medialna-gramotnost",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перепиши зворотом «Toto som čítal, ale…», щоб визнати, що джерела не маєш.",
+          "source": "Je to tak, čítal som to.",
+          "acceptedAnswers": [
+            "Toto som čítal, ale nemám na to zdroj.",
+            "Toto som čítal, ale nemám na to žiadny zdroj."
+          ],
+          "explanation": "Обачний читач визнає межі свого знання: читав, але джерела не має.",
+          "order": 9,
+          "wordIds": [
+            "b2-u11-l10-suhrn-medialna-gramotnost-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-ex10",
+          "lessonId": "b2-u11-l10-suhrn-medialna-gramotnost",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "«Podľa nemenovaného zdroja z ministerstva sa termín posunie.»",
+          "target": "nemenovaného",
+          "options": [
+            {
+              "id": "a",
+              "text": "джерело вигадала сама редакція",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "редакція знає, хто це, але імені не публікує",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "цього не знає ніхто, навіть редакція",
+              "correct": false
+            }
+          ],
+          "explanation": "Nemenovaný zdroj редакція знає; anonymný účet не знає ніхто.",
+          "order": 10,
+          "wordIds": [
+            "b2-u11-l10-suhrn-medialna-gramotnost-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-ex11",
+          "lessonId": "b2-u11-l10-suhrn-medialna-gramotnost",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Заголовок: «Neuveríte, čo sa stalo v centre mesta!»",
+          "options": [
+            {
+              "id": "a",
+              "text": "заголовок обіцяє сенсацію, щоб на нього клікнули",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "заголовок точно переказує зміст статті",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "заголовок попереджає про реальну небезпеку",
+              "correct": false
+            }
+          ],
+          "explanation": "«Neuveríte…» — типовий клікбейт: обіцянка без жодного змісту.",
+          "order": 11,
+          "wordIds": [
+            "b2-u11-l10-suhrn-medialna-gramotnost-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-ex12",
+          "lessonId": "b2-u11-l10-suhrn-medialna-gramotnost",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Na portáli Infoblesk vyšiel článok s titulkom «Nájmy v meste vyleteli o päťdesiat percent!». V perexe stálo, že ide o údaje jednej realitnej kancelárie. Článok neuvádzal, za aké obdobie nájmy stúpli, ani koľko zmlúv kancelária porovnávala. Pod textom bolo malým písmom napísané: komerčná prezentácia. O dva dni neskôr zverejnil mestský úrad vlastné čísla: priemerný nájom stúpol za tri roky o osem percent, medián o päť. Čitateľ Taras poslal článok do susedskej skupiny so slovami, že mesto klame. Jeho suseda Oksana si najprv našla pôvodnú tabuľku úradu, potom dátumy oboch textov a až potom odpovedala. Napísala, že článok je komerčná prezentácia a že päťdesiat percent sa v ňom nedá overiť.",
+          "questions": [
+            {
+              "question": "Чому число «п’ятдесят відсотків» не можна перевірити?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "у статті не було ліда",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "не названо ні періоду, ні кількості порівняних договорів",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "установа відмовилася відповідати порталу",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що означала позначка дрібним шрифтом під текстом?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "що це платний рекламний матеріал",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "що текст надала інформаційна агенція",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "що це редакційна стаття",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що зробила Оксана, перш ніж відповісти в групі?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "знайшла первинну таблицю установи й перевірила дати обох текстів",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "написала скаргу на портал",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "поширила статтю далі зі своїм коментарем",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 12,
+          "wordIds": [
+            "b2-u11-l10-suhrn-medialna-gramotnost-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-ex13",
+          "lessonId": "b2-u11-l10-suhrn-medialna-gramotnost",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай опис перевірки.",
+          "text": "Oksana otvorila článok o nájmoch. Najprv si prečítala celý text, nie len titulok. Potom hľadala, odkiaľ sú čísla, a našla iba jednu realitnú kanceláriu. Všimla si poznámku komerčná prezentácia. Nakoniec si našla tabuľku mestského úradu s priemerom aj mediánom. Článok nezdieľala.",
+          "statements": [
+            {
+              "sk": "Вона порівняла заголовок із цілим текстом.",
+              "correct": true
+            },
+            {
+              "sk": "Вона шукала первинне джерело чисел.",
+              "correct": true
+            },
+            {
+              "sk": "Вона помітила позначку про платний вміст.",
+              "correct": true
+            },
+            {
+              "sk": "Вона поширила статтю далі.",
+              "correct": false
+            },
+            {
+              "sk": "Вона спиралася тільки на заголовок.",
+              "correct": false
+            }
+          ],
+          "explanation": "Порядок перевірки: цілий текст, джерело чисел, позначка про рекламу — і лише потім рішення поширювати.",
+          "order": 13,
+          "wordIds": [
+            "b2-u11-l10-suhrn-medialna-gramotnost-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-ex14",
+          "lessonId": "b2-u11-l10-suhrn-medialna-gramotnost",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що перевіряєш перед поширенням новини?",
+          "options": [
+            {
+              "id": "a",
+              "text": "чи новина збігається з твоєю думкою",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "хто видавець і чи є первинне джерело",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "дату події й дату публікації",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "text": "чи заголовок відповідає текстові",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "text": "скільки людей уже поширило новину",
+              "correct": false
+            }
+          ],
+          "explanation": "Кількість поширень і власна думка нічого не доводять.",
+          "order": 14,
+          "wordIds": [
+            "b2-u11-l10-suhrn-medialna-gramotnost-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost-ex15",
+          "lessonId": "b2-u11-l10-suhrn-medialna-gramotnost",
+          "type": "branching_dialogue",
+          "skill": [
+            "dialogue",
+            "real_life"
+          ],
+          "instruction": "Пройди діалог: обирай доречні відповіді.",
+          "successMessage": "Паніку не поширено — новину спокійно перевірено.",
+          "startNode": "n1",
+          "nodes": {
+            "n1": {
+              "speaker": "Sused Taras",
+              "sk": "Videl si to? Nájmy v meste vyleteli o päťdesiat percent! Musíme to zdieľať.",
+              "choices": [
+                {
+                  "id": "n1c2",
+                  "sk": "Zdieľaj to hneď, ľudia to musia vedieť.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c1",
+                  "sk": "Počkaj, pozrime sa najprv, odkiaľ je to číslo.",
+                  "next": "n2",
+                  "quality": "best"
+                },
+                {
+                  "id": "n1c3",
+                  "sk": "To je jasná lož, Infoblesk klame vždy.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n2": {
+              "speaker": "Taras",
+              "sk": "Píše to portál Infoblesk, mám to zo susedskej skupiny.",
+              "choices": [
+                {
+                  "id": "n2c2",
+                  "sk": "Portály nikdy nepíšu pravdu, nečítaj ich.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c3",
+                  "sk": "Ak je to v skupine, tak to bude pravda.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c1",
+                  "sk": "Pod článkom je poznámka komerčná prezentácia, čiže ide o platený text.",
+                  "next": "n3",
+                  "quality": "best"
+                }
+              ]
+            },
+            "n3": {
+              "speaker": "Taras",
+              "sk": "A koľko to teda stúplo naozaj?",
+              "choices": [
+                {
+                  "id": "n3c1",
+                  "sk": "Úrad zverejnil priemer osem percent za tri roky a medián päť.",
+                  "next": "n4",
+                  "quality": "best"
+                },
+                {
+                  "id": "n3c3",
+                  "sk": "Určite ešte viac ako päťdesiat percent.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c2",
+                  "sk": "To nikto nevie a nikdy sa to nedozvieme.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n4": {
+              "speaker": "Taras",
+              "sk": "Dobre, nezdieľam to. A čo mám robiť inokedy?",
+              "choices": [
+                {
+                  "id": "n4c3",
+                  "sk": "Zdieľaj len to, čo sa ti hodí.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n4c2",
+                  "sk": "Nečítaj správy, aj tak všetci lžú.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n4c1",
+                  "sk": "Pozri si dátum, zdroj a či titulok súhlasí s textom.",
+                  "next": "success",
+                  "quality": "best"
+                }
+              ]
+            }
+          },
+          "order": 15,
+          "wordIds": [
+            "b2-u11-l10-suhrn-medialna-gramotnost-w01"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Відповідь у сусідській групі",
+        "description": "У сусідській групі хтось поширив статтю про стрибок орендної плати на п’ятдесят відсотків. Ти (жінка, Оксана) відповідаєш спокійно й по суті.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "З чого почнеш?",
+            "options": [
+              {
+                "sk": "Zdieľajte to ďalej, nech to vedia všetci.",
+                "correct": false
+              },
+              {
+                "sk": "Pozrime sa, odkiaľ je to číslo a za aké obdobie.",
+                "correct": true
+              },
+              {
+                "sk": "Je to lož, radšej to vôbec nečítajte.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Що скажеш про позначку під статтею?",
+            "options": [
+              {
+                "sk": "Pod textom nie je nič, takže je všetko v poriadku.",
+                "correct": false
+              },
+              {
+                "sk": "Pod textom je poznámka komerčná prezentácia, čiže ide o platený obsah.",
+                "correct": true
+              },
+              {
+                "sk": "Pod textom je poznámka, takže článok je overený redakciou.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Які числа наведеш?",
+            "options": [
+              {
+                "sk": "Úrad nezverejnil nič, všetky čísla sú tajné.",
+                "correct": false
+              },
+              {
+                "sk": "Úrad zverejnil priemerný nárast osem percent za tri roky a medián päť.",
+                "correct": true
+              },
+              {
+                "sk": "Úrad zverejnil priemerný nárast osem percentuálnych bodov za tri dni.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як закінчиш?",
+            "options": [
+              {
+                "sk": "Rada si to ešte overím a pošlem vám odkaz na tabuľku úradu.",
+                "correct": true
+              },
+              {
+                "sk": "Verte mi, mám to z dobrého zdroja.",
+                "correct": false
+              },
+              {
+                "sk": "Rád si to ešte overím a pošlem vám odkaz na tabuľku úradu.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти пройшов блок про медіаграмотність і вмієш читати новини з головою. Далі — дієприкметники й номіналізація: pracujúci, napísaný, rozhodnutie."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти пройшов блок про медіаграмотність і вмієш читати новини з головою. Далі — дієприкметники й номіналізація: pracujúci, napísaný, rozhodnutie.",
+        "nowYouKnow": [
+          "заголовок, джерело, дата, числа, мова — п’ять кроків перед поширенням",
+          "назви прийом його словом: clickbait, polopravda, falošná dilema, skrytá reklama, zavádzajúci graf",
+          "overené, neoverené й nepravdivé — три різні речі, а цинізм не є критичністю",
+          "«Toto som čítal, ale nemám na to zdroj» — чесна межа власного знання"
+        ],
+        "newWordsCount": 4,
+        "exercisesCompleted": 15,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ]
+      }
+    }
+  ]
+}

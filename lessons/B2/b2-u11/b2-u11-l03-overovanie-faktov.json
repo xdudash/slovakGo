@@ -1,0 +1,976 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u11-l03-overovanie-faktov",
+      "sectionId": "b2-u11",
+      "level": "B2",
+      "title": "Перевірка фактів",
+      "topic": "Медіаграмотність",
+      "description": "Як за кілька хвилин перевірити новину: хто стверджує, коли й звідки; бічне читання, зворотний пошук зображень, фотомонтаж і підробки, а також мова сумніву: vraj, údajne, nepodarilo sa overiť.",
+      "order": 93,
+      "xpReward": 50,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Перевіряти твердження й зображення за простим алгоритмом і обережно формулювати непідтверджену інформацію.",
+      "completionMessage": "Ти вмієш перевірити новину й фото. Далі — маніпулятивні прийоми: як подати правду так, щоб вона ввела в оману.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Медіаграмотність",
+        "title": "Перевірка фактів",
+        "shortDescription": "Перевіряти твердження й зображення за простим алгоритмом і обережно формулювати непідтверджену інформацію.",
+        "outcomes": [
+          "ставити п’ять контрольних питань до новини",
+          "розрізняти overiteľné й neoveriteľné твердження",
+          "описувати перевірку фото: fotomontáž, spätné vyhľadávanie, starý obrázok v novom kontexte",
+          "розрізняти overovať (процес) і overiť (результат) та вживати vraj / údajne"
+        ],
+        "newWords": [
+          "overovanie faktov",
+          "overiteľný",
+          "fotomontáž",
+          "podvrh",
+          "dohľadať",
+          "spätné vyhľadávanie"
+        ],
+        "exercisesCount": 15,
+        "reward": "+50 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "П’ять запитань",
+          "text": "«Overovanie faktov» (фактчекінг) починається з п’яти запитань: «Kto to tvrdí?» (хто стверджує?), «Kedy to bolo zverejnené?» (коли опубліковано?), «Odkiaľ to má?» (звідки в нього ця інформація?), «Píšu o tom aj iné médiá?» (чи пишуть про це інші?), «Prečo to niekto šíri?» (кому це вигідно?). Професіонали читають «do šírky» — не вглиб одного сайту, а відкривають нові вкладки й шукають, що про джерело пишуть інші. Твердження з іменами, числами й датами — «overiteľné» (їх можна перевірити); «vraj sa hovorí» чи «všetci vedia» — неперевірювані.",
+          "examples": [
+            {
+              "sk": "Kto to tvrdí a odkiaľ to má?",
+              "uk": "Хто це стверджує і звідки він це знає?"
+            },
+            {
+              "sk": "Píšu o tom aj iné médiá?",
+              "uk": "Чи пишуть про це інші медіа?"
+            }
+          ],
+          "shortRule": "хто · коли · звідки · хто ще · навіщо",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Фото й відео",
+          "text": "Найчастіша пастка — справжнє, але старе фото в новому контексті: «Fotka je pravá, ale je tri roky stará a pochádza z inej krajiny.» Друга — «fotomontáž»: зображення змінили в редакторі. Допомагає «spätné vyhľadávanie obrázkov» (зворотний пошук): завантажуєш фото й бачиш, де й коли воно з’явилося вперше. «Podvrh» — підробка: фальшивий документ або сайт, що імітує відоме медіа (схожа назва, схожий логотип, інша адреса). Мета — «dohľadať» (розшукати) першоджерело.",
+          "examples": [
+            {
+              "sk": "Fotka je pravá, ale pochádza z roku 2019.",
+              "uk": "Фото справжнє, але воно з 2019 року."
+            },
+            {
+              "sk": "Web napodobňuje známy denník, je to podvrh.",
+              "uk": "Сайт імітує відому газету, це підробка."
+            }
+          ],
+          "shortRule": "справжнє фото ≠ правдивий контекст · шукай, де фото з’явилося вперше",
+          "commonMistakes": [
+            {
+              "mistake": "Fotka je pravá, takže aj správa je pravdivá.",
+              "correct": "Fotka je pravá, ale môže byť stará a z iného miesta."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Мова сумніву",
+          "text": "Непідтверджену інформацію медіа подають обережно: «údajne» (нібито — нейтрально, книжно), «vraj» (мовляв, кажуть — розмовно), «podľa nepotvrdených informácií» (за непідтвердженою інформацією), «Informáciu sa nám zatiaľ nepodarilo nezávisle overiť.» (Нам поки не вдалося незалежно перевірити інформацію.) Зверни увагу на вид дієслова: «overovať» — процес («Práve si to overujem» — саме перевіряю), «overiť» — результат («Už som si to overil, je to pravda»).",
+          "examples": [
+            {
+              "sk": "Firma údajne prepustila sto ľudí.",
+              "uk": "Фірма нібито звільнила сто людей."
+            },
+            {
+              "sk": "Už som si to overila, je to pravda.",
+              "uk": "Я вже перевірила — це правда."
+            }
+          ],
+          "shortRule": "údajne / vraj = ще не факт · overujem (процес) × overil som (результат)",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u11-l03-overovanie-faktov-w01",
+            "sk": "overovanie faktov",
+            "uk": "перевірка фактів, фактчекінг",
+            "pronunciationUk": "оверованіє фактов",
+            "exampleSk": "Overovanie faktov trvá niekedy len päť minút.",
+            "exampleUk": "Перевірка фактів іноді триває лише п’ять хвилин."
+          },
+          {
+            "wordId": "b2-u11-l03-overovanie-faktov-w02",
+            "sk": "overiteľný",
+            "uk": "який можна перевірити",
+            "pronunciationUk": "оверітельни:",
+            "exampleSk": "Tvrdenie s presným dátumom a číslom je overiteľné.",
+            "exampleUk": "Твердження з точною датою й числом можна перевірити."
+          },
+          {
+            "wordId": "b2-u11-l03-overovanie-faktov-w03",
+            "sk": "fotomontáž",
+            "uk": "фотомонтаж",
+            "pronunciationUk": "фотомонта:ж",
+            "exampleSk": "Žralok na diaľnici je známa fotomontáž.",
+            "exampleUk": "Акула на автостраді — відомий фотомонтаж."
+          },
+          {
+            "wordId": "b2-u11-l03-overovanie-faktov-w04",
+            "sk": "podvrh",
+            "uk": "підробка, фальшивка",
+            "pronunciationUk": "подврг",
+            "exampleSk": "Web s logom známeho denníka bol podvrh.",
+            "exampleUk": "Сайт із логотипом відомої газети виявився підробкою."
+          },
+          {
+            "wordId": "b2-u11-l03-overovanie-faktov-w05",
+            "sk": "dohľadať",
+            "uk": "розшукати, віднайти (джерело, інформацію)",
+            "pronunciationUk": "доглядать",
+            "exampleSk": "Podarilo sa mi dohľadať pôvodný článok z roku 2019.",
+            "exampleUk": "Мені вдалося розшукати оригінальну статтю 2019 року."
+          },
+          {
+            "wordId": "b2-u11-l03-overovanie-faktov-w06",
+            "sk": "spätné vyhľadávanie",
+            "uk": "зворотний пошук (зображень)",
+            "pronunciationUk": "спетне: вигляда:ваніє",
+            "exampleSk": "Cez spätné vyhľadávanie som zistil, že fotka je stará.",
+            "exampleUk": "Через зворотний пошук я з’ясував, що фото старе."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u11-l03-overovanie-faktov-w01",
+          "sk": "overovanie faktov",
+          "uk": "перевірка фактів, фактчекінг",
+          "pronunciationUk": "оверованіє фактов",
+          "exampleSk": "Overovanie faktov trvá niekedy len päť minút.",
+          "exampleUk": "Перевірка фактів іноді триває лише п’ять хвилин.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-w02",
+          "sk": "overiteľný",
+          "uk": "який можна перевірити",
+          "pronunciationUk": "оверітельни:",
+          "exampleSk": "Tvrdenie s presným dátumom a číslom je overiteľné.",
+          "exampleUk": "Твердження з точною датою й числом можна перевірити.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-w03",
+          "sk": "fotomontáž",
+          "uk": "фотомонтаж",
+          "pronunciationUk": "фотомонта:ж",
+          "exampleSk": "Žralok na diaľnici je známa fotomontáž.",
+          "exampleUk": "Акула на автостраді — відомий фотомонтаж.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-w04",
+          "sk": "podvrh",
+          "uk": "підробка, фальшивка",
+          "pronunciationUk": "подврг",
+          "exampleSk": "Web s logom známeho denníka bol podvrh.",
+          "exampleUk": "Сайт із логотипом відомої газети виявився підробкою.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-w05",
+          "sk": "dohľadať",
+          "uk": "розшукати, віднайти (джерело, інформацію)",
+          "pronunciationUk": "доглядать",
+          "exampleSk": "Podarilo sa mi dohľadať pôvodný článok z roku 2019.",
+          "exampleUk": "Мені вдалося розшукати оригінальну статтю 2019 року.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-w06",
+          "sk": "spätné vyhľadávanie",
+          "uk": "зворотний пошук (зображень)",
+          "pronunciationUk": "спетне: вигляда:ваніє",
+          "exampleSk": "Cez spätné vyhľadávanie som zistil, že fotka je stará.",
+          "exampleUk": "Через зворотний пошук я з’ясував, що фото старе.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u11-l03-overovanie-faktov-ex01",
+          "lessonId": "b2-u11-l03-overovanie-faktov",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "overovanie faktov",
+              "right": "перевірка фактів"
+            },
+            {
+              "left": "overiteľný",
+              "right": "який можна перевірити"
+            },
+            {
+              "left": "fotomontáž",
+              "right": "змінене в редакторі зображення"
+            },
+            {
+              "left": "podvrh",
+              "right": "підробка, фальшивка"
+            },
+            {
+              "left": "dohľadať",
+              "right": "розшукати"
+            },
+            {
+              "left": "spätné vyhľadávanie",
+              "right": "зворотний пошук зображень"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u11-l03-overovanie-faktov-w01",
+            "b2-u11-l03-overovanie-faktov-w02",
+            "b2-u11-l03-overovanie-faktov-w03",
+            "b2-u11-l03-overovanie-faktov-w04",
+            "b2-u11-l03-overovanie-faktov-w05",
+            "b2-u11-l03-overovanie-faktov-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-ex02",
+          "lessonId": "b2-u11-l03-overovanie-faktov",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи: «Чи можна це перевірити?»",
+          "tokens": [
+            "sa",
+            "overiť",
+            "to",
+            "Dá",
+            "?"
+          ],
+          "correctOrder": [
+            "Dá",
+            "sa",
+            "to",
+            "overiť",
+            "?"
+          ],
+          "explanation": "Dá sa + інфінітив — «можна…»: Dá sa to overiť?",
+          "order": 2,
+          "wordIds": [
+            "b2-u11-l03-overovanie-faktov-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-ex03",
+          "lessonId": "b2-u11-l03-overovanie-faktov",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Як сказати: «Я вже перевірив — це правда»?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Už si to overujem, je to pravda.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Už som si to overil, je to pravda.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Už som si to overovať, je to pravda.",
+              "correct": false
+            }
+          ],
+          "explanation": "Готовий результат — доконаний вид у минулому: overil som; overujem — процес триває.",
+          "order": 3,
+          "wordIds": [
+            "b2-u11-l03-overovanie-faktov-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-ex04",
+          "lessonId": "b2-u11-l03-overovanie-faktov",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши слово «фотомонтаж».",
+          "sentence": "Žralok na zaplavenej diaľnici? To je známa ______, obrázok niekto upravil v počítači.",
+          "acceptedAnswers": [
+            "fotomontáž"
+          ],
+          "explanation": "Fotomontáž — жіночий рід: známa fotomontáž.",
+          "order": 4,
+          "wordIds": [
+            "b2-u11-l03-overovanie-faktov-w01",
+            "b2-u11-l03-overovanie-faktov-w03"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-ex05",
+          "lessonId": "b2-u11-l03-overovanie-faktov",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Які твердження можна перевірити (overiteľné)?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Vraj sa všetci ľudia boja.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Hovorí sa, že bude ešte horšie.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Parlament zákon schválil pätnásteho mája.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Nový most v Martine stál dvanásť miliónov eur.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "V roku 2025 sa v Košiciach narodilo viac detí ako rok predtým.",
+              "correct": true
+            }
+          ],
+          "explanation": "Числа, дати й назви можна перевірити; «vraj» і «hovorí sa» не мають джерела.",
+          "order": 5,
+          "wordIds": [
+            "b2-u11-l03-overovanie-faktov-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-ex06",
+          "lessonId": "b2-u11-l03-overovanie-faktov",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Сигнал довіри чи тривожний сигнал?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Dôveryhodný signál"
+            },
+            {
+              "id": "c2",
+              "title": "Varovný signál"
+            }
+          ],
+          "items": [
+            {
+              "sk": "iba anonymné vraj",
+              "category": "c2"
+            },
+            {
+              "sk": "uvedený autor",
+              "category": "c1"
+            },
+            {
+              "sk": "žiadny autor",
+              "category": "c2"
+            },
+            {
+              "sk": "chýbajúci dátum",
+              "category": "c2"
+            },
+            {
+              "sk": "rovnaká správa v iných médiách",
+              "category": "c1"
+            },
+            {
+              "sk": "dátum zverejnenia",
+              "category": "c1"
+            },
+            {
+              "sk": "odkaz na zdroj",
+              "category": "c1"
+            },
+            {
+              "sk": "výzva na okamžité zdieľanie",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Автор, дата й джерело підвищують довіру; анонімність і заклик негайно поширювати — тривожні знаки.",
+          "order": 6,
+          "wordIds": [
+            "b2-u11-l03-overovanie-faktov-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-ex07",
+          "lessonId": "b2-u11-l03-overovanie-faktov",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Cez víkend sa po sociálnych sieťach šírila fotka zrúteného mosta s popisom: «Dnes ráno v Martine! Médiá mlčia!» Študentka žurnalistiky Daryna sa rozhodla, že to overí. Najprv si všimla, že pod príspevkom chýba autor aj presný čas. Potom urobila spätné vyhľadávanie obrázka a zistila, že fotka je pravá, ale pochádza spred piatich rokov z inej krajiny. Nakoniec zavolala na mestský úrad v Martine, kde jej potvrdili, že všetky mosty v meste sú v poriadku. Darynin krátky text s odkazmi na pôvodnú fotku zdieľalo viac ľudí ako pôvodný hoax. Jej učiteľ ocenil najmä to, že nespoliehala iba na jeden zdroj.",
+          "questions": [
+            {
+              "question": "Що Дарина помітила насамперед?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "фото було надто темне",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "допис мав мало вподобань",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "під дописом не було автора й точного часу",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що показав зворотний пошук?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "фото зробили того ранку в Мартіні",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "фото — фотомонтаж",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "фото справжнє, але п’ятирічної давності й з іншої країни",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що вчитель оцінив найбільше?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "що вона не дзвонила в установи",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "що вона не покладалася лише на одне джерело",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "що її текст був дуже короткий",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 7,
+          "wordIds": [
+            "b2-u11-l03-overovanie-faktov-w01",
+            "b2-u11-l03-overovanie-faktov-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-ex08",
+          "lessonId": "b2-u11-l03-overovanie-faktov",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай картку фактчекінгу.",
+          "document": {
+            "title": "Overovanie faktov – výsledok",
+            "fields": [
+              {
+                "label": "Tvrdenie",
+                "value": "«V Martine sa dnes ráno zrútil most.»"
+              },
+              {
+                "label": "Kde sa šírilo",
+                "value": "sociálne siete, 14 000 zdieľaní"
+              },
+              {
+                "label": "Pôvod fotky",
+                "value": "zahraničný portál, rok 2021"
+              },
+              {
+                "label": "Vyjadrenie mesta",
+                "value": "všetky mosty sú v prevádzke"
+              },
+              {
+                "label": "Verdikt",
+                "value": "nepravdivé – stará fotka v novom kontexte"
+              }
+            ]
+          },
+          "question": "Чому твердження визнали неправдивим?",
+          "options": [
+            {
+              "id": "a",
+              "text": "бо фото старе й з іншого місця, а місто підтвердило, що мости працюють",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "бо фото — фотомонтаж",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "бо допис мав замало поширень",
+              "correct": false
+            }
+          ],
+          "explanation": "«Stará fotka v novom kontexte» — справжнє фото, але подане як нова подія.",
+          "order": 8,
+          "wordIds": [
+            "b2-u11-l03-overovanie-faktov-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-ex09",
+          "lessonId": "b2-u11-l03-overovanie-faktov",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "Redakcia napísala: «Informáciu sa nám zatiaľ nepodarilo nezávisle overiť.»",
+          "target": "nepodarilo nezávisle overiť",
+          "options": [
+            {
+              "id": "a",
+              "text": "редакція знає, що це неправда",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "редакція отримала інформацію від уряду",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "редакція ще не підтвердила це з незалежного джерела",
+              "correct": true
+            }
+          ],
+          "explanation": "Formula означає: інформацію поки не підтвердили незалежно — це ще не факт.",
+          "order": 9,
+          "wordIds": [
+            "b2-u11-l03-overovanie-faktov-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-ex10",
+          "lessonId": "b2-u11-l03-overovanie-faktov",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Tvrdenie bez čísel a mien je ťažko overiteľná a treba byť opatrný.",
+          "errorToken": "overiteľná",
+          "correctToken": "overiteľné",
+          "explanation": "Tvrdenie — середній рід: overiteľné.",
+          "order": 10,
+          "wordIds": [
+            "b2-u11-l03-overovanie-faktov-w01",
+            "b2-u11-l03-overovanie-faktov-w02"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-ex11",
+          "lessonId": "b2-u11-l03-overovanie-faktov",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перетвори на обережне повідомлення: додай «údajne».",
+          "source": "Firma prepustila sto zamestnancov.",
+          "acceptedAnswers": [
+            "Firma údajne prepustila sto zamestnancov.",
+            "Údajne firma prepustila sto zamestnancov.",
+            "Firma prepustila údajne sto zamestnancov."
+          ],
+          "explanation": "Údajne (нібито) показує, що інформація ще не підтверджена.",
+          "order": 11,
+          "wordIds": [
+            "b2-u11-l03-overovanie-faktov-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-ex12",
+          "lessonId": "b2-u11-l03-overovanie-faktov",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Ти реагуєш спокійно й пропонуєш перевірити.",
+          "dialogue": [
+            {
+              "speaker": "Suseda",
+              "sk": "Pozri, zajtra vypnú v celom meste vodu na tri dni! Rýchlo to zdieľaj!"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "To je určite pravda, veď to máš v mobile.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Odkiaľ to máš? Na webe vodárne o tom nič nie je, overme si to najprv.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Hneď to pošlem všetkým známym.",
+              "correct": false
+            }
+          ],
+          "explanation": "Перш ніж поширювати, запитай про джерело й перевір офіційний сайт.",
+          "order": 12,
+          "wordIds": [
+            "b2-u11-l03-overovanie-faktov-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-ex13",
+          "lessonId": "b2-u11-l03-overovanie-faktov",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Якщо ту саму новину опублікували десять сайтів, вона точно правдива.",
+          "correctAnswer": false,
+          "explanation": "Десять сайтів можуть передрукувати одну неправду; важливо, хто першоджерело.",
+          "order": 13,
+          "wordIds": [
+            "b2-u11-l03-overovanie-faktov-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-ex14",
+          "lessonId": "b2-u11-l03-overovanie-faktov",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти пишеш у чат, що спробуєш зворотний пошук, щоб з’ясувати, звідки фото.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Skúsim spätné vyhľadávanie obrázok, uvidíme, odkiaľ fotka pochádza.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Skúsim spätné vyhľadávanie obrázka, uvidíme, odkiaľ fotka pochádza.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Skúsim spätného vyhľadávania obrázka, uvidíme, odkiaľ fotka pochádza.",
+              "correct": false
+            }
+          ],
+          "explanation": "Skúsim (що?) spätné vyhľadávanie — знахідний; (чого?) obrázka — родовий.",
+          "order": 14,
+          "wordIds": [
+            "b2-u11-l03-overovanie-faktov-w01",
+            "b2-u11-l03-overovanie-faktov-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l03-overovanie-faktov-ex15",
+          "lessonId": "b2-u11-l03-overovanie-faktov",
+          "type": "branching_dialogue",
+          "skill": [
+            "dialogue",
+            "real_life"
+          ],
+          "instruction": "Пройди діалог: обирай доречні відповіді.",
+          "successMessage": "Ти разом із колегою перевірив(ла) підозріле фото!",
+          "startNode": "n1",
+          "nodes": {
+            "n1": {
+              "speaker": "Kolega",
+              "sk": "Pozri na túto fotku. Píšu, že je z dnešného požiaru v Prešove.",
+              "choices": [
+                {
+                  "id": "n1c1",
+                  "sk": "Skúsme najprv spätné vyhľadávanie, nech vieme, odkiaľ pochádza.",
+                  "next": "n2",
+                  "quality": "best"
+                },
+                {
+                  "id": "n1c3",
+                  "sk": "Fotky nikdy neklamú, netreba nič overovať.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c2",
+                  "sk": "Tak to rovno zdieľajme, je to dôležité.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n2": {
+              "speaker": "Kolega",
+              "sk": "Vyhľadávanie ukazuje, že sa objavila už pred tromi rokmi.",
+              "choices": [
+                {
+                  "id": "n2c2",
+                  "sk": "Takže je to určite fotomontáž.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c1",
+                  "sk": "Takže fotka je pravá, ale je stará a v novom kontexte zavádza.",
+                  "next": "n3",
+                  "quality": "best"
+                },
+                {
+                  "id": "n2c3",
+                  "sk": "Takže požiar bol dnes, iba fotka je stará, to je jedno.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n3": {
+              "speaker": "Kolega",
+              "sk": "Čo s tým urobíme?",
+              "choices": [
+                {
+                  "id": "n3c3",
+                  "sk": "Napíšeme, že v Prešove žiadny požiar nikdy nebol.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c1",
+                  "sk": "Napíšeme do skupiny, že ide o starú fotku, a pridáme odkaz na pôvodný zdroj.",
+                  "next": "success",
+                  "quality": "best"
+                },
+                {
+                  "id": "n3c2",
+                  "sk": "Nebudeme robiť nič, nie je to náš problém.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            }
+          },
+          "order": 15,
+          "wordIds": [
+            "b2-u11-l03-overovanie-faktov-w01",
+            "b2-u11-l03-overovanie-faktov-w03",
+            "b2-u11-l03-overovanie-faktov-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перевір, перш ніж поширити",
+        "description": "У робочому чаті колега Марек надсилає фото «затопленої» вулиці в Попраді з підписом «Dnes! Médiá to tajia!». Ти перевіряєш.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Що зробиш насамперед?",
+            "options": [
+              {
+                "text": "напишу Марекові, що він брехун",
+                "correct": false
+              },
+              {
+                "text": "перевірю автора, дату й зроблю зворотний пошук фото",
+                "correct": true
+              },
+              {
+                "text": "одразу поширю, щоб попередити всіх",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Пошук показав, що фото з 2020 року з іншого міста. Що напишеш?",
+            "options": [
+              {
+                "sk": "Fotka je fotomontáž z dneška.",
+                "correct": false
+              },
+              {
+                "sk": "Fotka je pravá, ale je z roku 2020 a z iného mesta.",
+                "correct": true
+              },
+              {
+                "sk": "Fotka je pravá a je z dneška.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Як обережно опишеш, що повінь у Попраді ніхто не підтвердив?",
+            "options": [
+              {
+                "sk": "Správu o povodni v Poprade sa zatiaľ nepodarilo overovať.",
+                "correct": false
+              },
+              {
+                "sk": "Povodeň v Poprade určite bola.",
+                "correct": false
+              },
+              {
+                "sk": "Správu o povodni v Poprade sa zatiaľ nepodarilo overiť.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Що порадиш колегам?",
+            "options": [
+              {
+                "sk": "Nabudúce zdieľajme všetko čo najrýchlejšie.",
+                "correct": false
+              },
+              {
+                "sk": "Nabudúce si overme zdroj skôr, než niečo zdieľame.",
+                "correct": true
+              },
+              {
+                "sk": "Nabudúce verme každej fotke.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш перевірити новину й фото. Далі — маніпулятивні прийоми: як подати правду так, щоб вона ввела в оману."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш перевірити новину й фото. Далі — маніпулятивні прийоми: як подати правду так, щоб вона ввела в оману.",
+        "nowYouKnow": [
+          "хто · коли · звідки · хто ще пише · навіщо — п’ять запитань перевірки",
+          "справжнє фото ≠ правдивий контекст: spätné vyhľadávanie, fotomontáž, podvrh",
+          "údajne / vraj / nepodarilo sa overiť = ще не факт",
+          "overovať — процес, overiť — результат"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 15,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u11-l04-manipulativne-techniky",
+          "title": "Маніпулятивні прийоми"
+        }
+      }
+    }
+  ]
+}

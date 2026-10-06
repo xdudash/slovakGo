@@ -1,0 +1,857 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u11-l08-nazor-vs-fakt",
+      "sectionId": "b2-u11",
+      "level": "B2",
+      "title": "Думка й факт",
+      "topic": "Медіаграмотність",
+      "description": "Як відрізнити перевірюване твердження від оцінки: де в тексті факт, де думка, де здогад; оцінні слова й лапки; жанри správa, komentár, úvodník і звороти podľa mňa, mám za to, zdá sa mi.",
+      "order": 98,
+      "xpReward": 50,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Відділяти факти від оцінок у статті й формулювати власну думку так, щоб її не сприймали як доведений факт.",
+      "completionMessage": "Ти відділяєш факт від думки й умієш позначити власну оцінку. Далі — виступ у медіа: як говорити з журналістом і давати заяву.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Медіаграмотність",
+        "title": "Думка й факт",
+        "shortDescription": "Відділяти факти від оцінок у статті й формулювати власну думку так, щоб її не сприймали як доведений факт.",
+        "outcomes": [
+          "розрізняти fakt, názor і domnienku",
+          "знаходити оцінні слова в нібито нейтральному тексті",
+          "впізнавати жанри správa, komentár, úvodník, recenzia",
+          "позначати власну думку зворотами podľa mňa, mám za to, zdá sa mi"
+        ],
+        "newWords": [
+          "objektívny",
+          "subjektívny",
+          "domnienka",
+          "nepodložený",
+          "úvodník",
+          "zaujatosť"
+        ],
+        "exercisesCount": 15,
+        "reward": "+50 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Факт, думка, здогад",
+          "text": "«Fakt» — твердження, яке можна перевірити: у ньому є дата, число, подія, документ. «Vlak mal včera meškanie dvadsaťpäť minút» — фактове твердження, бо його можна зіставити з даними перевізника. «Názor» — оцінка: «Železnice fungujú katastrofálne.» «Domnienka» — здогад про те, чого ми не знаємо; його видають слова «zrejme, pravdepodobne, asi, možno, predpokladám»: «Meškanie zrejme spôsobil nedostatok rušňovodičov.» Увага на тонкість: фактове твердження може бути хибним і однаково залишиться фактовим, бо його можна перевірити. А думка не буває правдивою чи неправдивою — вона буває обґрунтованою («podložený») або необґрунтованою («nepodložený»). Тому в розмові не кажи «toto je môj fakt», а «toto je môj názor».",
+          "examples": [
+            {
+              "sk": "Vlak mal včera meškanie dvadsaťpäť minút.",
+              "uk": "Поїзд учора мав запізнення двадцять п’ять хвилин."
+            },
+            {
+              "sk": "Podľa mňa železnice zanedbávajú údržbu.",
+              "uk": "На мою думку, залізниця нехтує обслуговуванням."
+            }
+          ],
+          "shortRule": "fakt — перевіряється · názor — обґрунтовується · domnienka — zrejme, asi, pravdepodobne",
+          "commonMistakes": [
+            {
+              "mistake": "Toto je môj fakt.",
+              "correct": "Toto je môj názor."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Оцінні слова",
+          "text": "Думка рідко оголошує себе — вона ховається в окремих словах. Прикметники й прислівники з оцінкою: «katastrofálny, škandalózny, úžasný, neprijateľný, zbytočný, obrovský». Дієслова з оцінкою: «zlyhať, zneužiť, rozhádzať» замість нейтральних «nesplniť, použiť, vynaložiť». Оцінку несуть і лапки разом зі словом «takzvaný»: «Mesto spustilo takzvanú obnovu parku» означає, що автор обнову обновою не вважає. Порівняй два речення з тим самим числом: нейтральна новина пише «Mesto vynaložilo na park tristotisíc eur», а коментар — «Mesto rozhádzalo na park tristotisíc eur». Число однакове, змінилося лише дієслово — і з повідомлення став осуд. Коли читаєш, підкреслюй такі слова: під ними майже завжди лежить думка автора.",
+          "examples": [
+            {
+              "sk": "Mesto vynaložilo na park tristotisíc eur.",
+              "uk": "Місто витратило на парк триста тисяч євро."
+            },
+            {
+              "sk": "Mesto rozhádzalo na park tristotisíc eur.",
+              "uk": "Місто розкидало на парк триста тисяч євро."
+            }
+          ],
+          "shortRule": "hodnotiace slová · takzvaný плюс лапки означають незгоду автора",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Жанри й позначки думки",
+          "text": "У виданні думку позначає жанр і рубрика. «Správa» — новина без оцінки; автор у ній переважно не вживає «ja». «Komentár» і «analýza» — автор оцінює й підписується власним іменем. «Úvodník» — коментар редакції, часто без підпису або за підписом головного редактора. «Recenzia» — оцінка фільму, книжки, вистави. «Čitateľský list» — думка читача. Коли висловлюєш думку сам, познач це зворотом: «Podľa mňa…», «Mám za to, že…», «Zdá sa mi, že…», «Osobne si myslím, že…», «Som presvedčený, že…». Пильнуй керування: «podľa» вимагає родового відмінка («podľa mňa», не «podľa mne»); «súhlasiť s» і «nesúhlasiť s» вимагають орудного («s tvojím názorom»). І навпаки: звороти «je dokázané, že…» або «fakt je, že…» обіцяють доказ, тож не став їх перед власною оцінкою.",
+          "examples": [
+            {
+              "sk": "Mám za to, že mesto malo zverejniť zmluvu.",
+              "uk": "Вважаю, що місто мало опублікувати договір."
+            },
+            {
+              "sk": "Zdá sa mi, že ten prieskum bol zaujatý.",
+              "uk": "Мені здається, що те опитування було упередженим."
+            }
+          ],
+          "shortRule": "správa · komentár · úvodník · recenzia · podľa mňa plus родовий",
+          "commonMistakes": [
+            {
+              "mistake": "Podľa mne je to zbytočné.",
+              "correct": "Podľa mňa je to zbytočné."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u11-l08-nazor-vs-fakt-w01",
+            "sk": "objektívny",
+            "uk": "об’єктивний, безсторонній",
+            "pronunciationUk": "обєкті:вни",
+            "exampleSk": "Novinár sa snažil o objektívny opis situácie.",
+            "exampleUk": "Журналіст намагався дати об’єктивний опис ситуації."
+          },
+          {
+            "wordId": "b2-u11-l08-nazor-vs-fakt-w02",
+            "sk": "subjektívny",
+            "uk": "суб’єктивний, особистий",
+            "pronunciationUk": "субєкті:вни",
+            "exampleSk": "Recenzia je vždy subjektívna.",
+            "exampleUk": "Рецензія завжди суб’єктивна."
+          },
+          {
+            "wordId": "b2-u11-l08-nazor-vs-fakt-w03",
+            "sk": "domnienka",
+            "uk": "здогад, припущення",
+            "pronunciationUk": "домнієнка",
+            "exampleSk": "Bez dôkazov je to len domnienka.",
+            "exampleUk": "Без доказів це лише здогад."
+          },
+          {
+            "wordId": "b2-u11-l08-nazor-vs-fakt-w04",
+            "sk": "nepodložený",
+            "uk": "необґрунтований, непідтверджений",
+            "pronunciationUk": "неподложени:",
+            "exampleSk": "Článok obsahoval nepodložené tvrdenia.",
+            "exampleUk": "Стаття містила необґрунтовані твердження."
+          },
+          {
+            "wordId": "b2-u11-l08-nazor-vs-fakt-w05",
+            "sk": "úvodník",
+            "uk": "редакційна стаття, передова",
+            "pronunciationUk": "у:водні:к",
+            "exampleSk": "Úvodník vyjadruje postoj redakcie, nie overený fakt.",
+            "exampleUk": "Редакційна стаття висловлює позицію редакції, а не перевірений факт."
+          },
+          {
+            "wordId": "b2-u11-l08-nazor-vs-fakt-w06",
+            "sk": "zaujatosť",
+            "uk": "упередженість, необ’єктивність",
+            "pronunciationUk": "зауятость",
+            "exampleSk": "Čitatelia vytýkali autorovi zaujatosť.",
+            "exampleUk": "Читачі докоряли авторові за упередженість."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-w01",
+          "sk": "objektívny",
+          "uk": "об’єктивний, безсторонній",
+          "pronunciationUk": "обєкті:вни",
+          "exampleSk": "Novinár sa snažil o objektívny opis situácie.",
+          "exampleUk": "Журналіст намагався дати об’єктивний опис ситуації.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-w02",
+          "sk": "subjektívny",
+          "uk": "суб’єктивний, особистий",
+          "pronunciationUk": "субєкті:вни",
+          "exampleSk": "Recenzia je vždy subjektívna.",
+          "exampleUk": "Рецензія завжди суб’єктивна.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-w03",
+          "sk": "domnienka",
+          "uk": "здогад, припущення",
+          "pronunciationUk": "домнієнка",
+          "exampleSk": "Bez dôkazov je to len domnienka.",
+          "exampleUk": "Без доказів це лише здогад.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-w04",
+          "sk": "nepodložený",
+          "uk": "необґрунтований, непідтверджений",
+          "pronunciationUk": "неподложени:",
+          "exampleSk": "Článok obsahoval nepodložené tvrdenia.",
+          "exampleUk": "Стаття містила необґрунтовані твердження.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-w05",
+          "sk": "úvodník",
+          "uk": "редакційна стаття, передова",
+          "pronunciationUk": "у:водні:к",
+          "exampleSk": "Úvodník vyjadruje postoj redakcie, nie overený fakt.",
+          "exampleUk": "Редакційна стаття висловлює позицію редакції, а не перевірений факт.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-w06",
+          "sk": "zaujatosť",
+          "uk": "упередженість, необ’єктивність",
+          "pronunciationUk": "зауятость",
+          "exampleSk": "Čitatelia vytýkali autorovi zaujatosť.",
+          "exampleUk": "Читачі докоряли авторові за упередженість.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-ex01",
+          "lessonId": "b2-u11-l08-nazor-vs-fakt",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "objektívny",
+              "right": "об’єктивний"
+            },
+            {
+              "left": "subjektívny",
+              "right": "суб’єктивний"
+            },
+            {
+              "left": "domnienka",
+              "right": "здогад"
+            },
+            {
+              "left": "nepodložený",
+              "right": "необґрунтований"
+            },
+            {
+              "left": "úvodník",
+              "right": "редакційна стаття"
+            },
+            {
+              "left": "zaujatosť",
+              "right": "упередженість"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u11-l08-nazor-vs-fakt-w01",
+            "b2-u11-l08-nazor-vs-fakt-w02",
+            "b2-u11-l08-nazor-vs-fakt-w03",
+            "b2-u11-l08-nazor-vs-fakt-w04",
+            "b2-u11-l08-nazor-vs-fakt-w05",
+            "b2-u11-l08-nazor-vs-fakt-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-ex02",
+          "lessonId": "b2-u11-l08-nazor-vs-fakt",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Факт чи думка?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Fakt"
+            },
+            {
+              "id": "c2",
+              "title": "Názor"
+            }
+          ],
+          "items": [
+            {
+              "sk": "Rozpočet je nespravodlivý",
+              "category": "c2"
+            },
+            {
+              "sk": "Park je najkrajšie miesto v meste",
+              "category": "c2"
+            },
+            {
+              "sk": "Portál zverejnil článok v piatok",
+              "category": "c1"
+            },
+            {
+              "sk": "Článok bol zbytočný",
+              "category": "c2"
+            },
+            {
+              "sk": "Zastupiteľstvo schválilo rozpočet v júni",
+              "category": "c1"
+            },
+            {
+              "sk": "Park má rozlohu dva hektáre",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Факт має дату, число або подію, яку можна перевірити; думка містить оцінку.",
+          "order": 2
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-ex03",
+          "lessonId": "b2-u11-l08-nazor-vs-fakt",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яке твердження можна перевірити?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Mesto rozhádzalo na park peniaze.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Mesto vynaložilo na park tristotisíc eur.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Oprava parku bola úplne zbytočná.",
+              "correct": false
+            }
+          ],
+          "explanation": "Перше речення називає суму, яку можна зіставити зі звітом; два інші оцінюють.",
+          "order": 3
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-ex04",
+          "lessonId": "b2-u11-l08-nazor-vs-fakt",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Podľa "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "mňa",
+                "mne",
+                "mi"
+              ],
+              "correct": "mňa"
+            },
+            {
+              "text": " je ten titulok zveličený."
+            }
+          ],
+          "explanation": "Podľa вимагає родового відмінка: podľa mňa.",
+          "order": 4
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-ex05",
+          "lessonId": "b2-u11-l08-nazor-vs-fakt",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Bez dôkazov je to len "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "fakt",
+                "domnienka",
+                "správa"
+              ],
+              "correct": "domnienka"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Твердження без доказу — здогад, а не факт.",
+          "order": 5,
+          "wordIds": [
+            "b2-u11-l08-nazor-vs-fakt-w03"
+          ]
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-ex06",
+          "lessonId": "b2-u11-l08-nazor-vs-fakt",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши слово.",
+          "sentence": "Autor neuvádza dôkazy, jeho tvrdenia sú ______. (необґрунтовані)",
+          "acceptedAnswers": [
+            "nepodložené"
+          ],
+          "explanation": "Tvrdenia — середній рід у множині: nepodložené tvrdenia.",
+          "order": 6,
+          "wordIds": [
+            "b2-u11-l08-nazor-vs-fakt-w04"
+          ]
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-ex07",
+          "lessonId": "b2-u11-l08-nazor-vs-fakt",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Podľa mne je ten prieskum zaujatý.",
+          "errorToken": "mne",
+          "correctToken": "mňa",
+          "explanation": "Podľa плюс родовий відмінок: podľa mňa.",
+          "order": 7
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-ex08",
+          "lessonId": "b2-u11-l08-nazor-vs-fakt",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Nesúhlasím s tvoj názor.",
+          "acceptedAnswers": [
+            "Nesúhlasím s tvojím názorom.",
+            "S tvojím názorom nesúhlasím."
+          ],
+          "explanation": "Nesúhlasiť s вимагає орудного відмінка: s tvojím názorom.",
+          "order": 8
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-ex09",
+          "lessonId": "b2-u11-l08-nazor-vs-fakt",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перепиши як власну думку зворотом «Mám za to, že…».",
+          "source": "Zmluva mala byť zverejnená.",
+          "acceptedAnswers": [
+            "Mám za to, že zmluva mala byť zverejnená."
+          ],
+          "explanation": "Mám za to, že плюс підрядне речення — чітка позначка власної думки.",
+          "order": 9
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-ex10",
+          "lessonId": "b2-u11-l08-nazor-vs-fakt",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "«Mesto rozhádzalo na park tristotisíc eur.»",
+          "target": "rozhádzalo",
+          "options": [
+            {
+              "id": "a",
+              "text": "автор оцінює витрату як марнотратство",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "місто втратило гроші через крадіжку",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "місто отримало ці гроші з державного бюджету",
+              "correct": false
+            }
+          ],
+          "explanation": "Rozhádzať — оцінне дієслово; нейтрально було б vynaložiť.",
+          "order": 10
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-ex11",
+          "lessonId": "b2-u11-l08-nazor-vs-fakt",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "У коментарі: «Mesto spustilo takzvanú obnovu parku.»",
+          "options": [
+            {
+              "id": "a",
+              "text": "автор наводить офіційну назву проєкту",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "автор дає зрозуміти, що обновою це не вважає",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "автор хвалить місто за швидкість",
+              "correct": false
+            }
+          ],
+          "explanation": "Takzvaný сигналізує, що автор із назвою не погоджується.",
+          "order": 11
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-ex12",
+          "lessonId": "b2-u11-l08-nazor-vs-fakt",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Regionálny portál Mestský hlas priniesol v piatok správu: zastupiteľstvo schválilo obnovu parku za tristotisíc eur a práce majú začať v apríli. Správa mala štyri odseky, čísla a vyjadrenie úradu. V nedeľu vyšiel na tom istom portáli komentár redaktorky Soni Hrubej. Napísala, že suma je podľa nej privysoká a že mesto malo najprv zverejniť zmluvu. Pod textom bola rubrika Komentár a jej podpis. V pondelok pridal portál úvodník bez podpisu, v ktorom redakcia vyzvala mesto na diskusiu s obyvateľmi. Čitateľ Taras poslal do redakcie čitateľský list. Tvrdil, že suma je určite výsledkom korupcie, no nijaký dôkaz neuviedol.",
+          "questions": [
+            {
+              "question": "Який із текстів є нейтральною новиною?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "лист читача",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "коментар редакторки з неділі",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "матеріал із п’ятниці з числами й поясненням установи",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Чим úvodník відрізнявся від коментаря?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "його написав читач",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "він містив лише числа без оцінок",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "він був без підпису й висловлював позицію редакції",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Чому твердження читача не можна вважати фактом?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "він не підписався власним іменем",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "він не навів жодного доказу",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "він написав занадто коротко",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 12,
+          "wordIds": [
+            "b2-u11-l08-nazor-vs-fakt-w05"
+          ]
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-ex13",
+          "lessonId": "b2-u11-l08-nazor-vs-fakt",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Колега показує тобі статтю.",
+          "dialogue": [
+            {
+              "speaker": "Kolega",
+              "sk": "V tom komentári píšu, že mesto rozhádzalo peniaze. Tak to je dokázané, nie?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Áno, v komentári sú vždy len overené fakty.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "To je názor autora. Dokázané je len to, že mesto schválilo tristotisíc eur.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Áno, každý komentár musí redakcia pred vydaním overiť.",
+              "correct": false
+            }
+          ],
+          "explanation": "Коментар подає оцінку; доведеним фактом є лише сума в ухвалі.",
+          "order": 13
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-ex14",
+          "lessonId": "b2-u11-l08-nazor-vs-fakt",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Які формулювання чітко позначають власну думку?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Fakt je, že mesto rozhádzalo peniaze.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Mám za to, že zmluva mala byť zverejnená.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Zdá sa mi, že ten prieskum bol zaujatý.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Je dokázané, že tá suma je privysoká.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Podľa mňa je tá suma privysoká.",
+              "correct": true
+            }
+          ],
+          "explanation": "Podľa mňa, mám za to й zdá sa mi позначають думку; «je dokázané» і «fakt je» подають оцінку як доказ.",
+          "order": 14
+        },
+        {
+          "id": "b2-u11-l08-nazor-vs-fakt-ex15",
+          "lessonId": "b2-u11-l08-nazor-vs-fakt",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Mám za to, že uvedené tvrdenie je nepodložené.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": true
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": false
+            }
+          ],
+          "explanation": "Зворот «mám za to, že» і віддієслівні іменники дають формальний регістр.",
+          "order": 15,
+          "wordIds": [
+            "b2-u11-l08-nazor-vs-fakt-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Лист до редакції",
+        "description": "Ти (чоловік, Андрій) пишеш до редакції регіонального порталу, бо коментар про парк подає оцінки як доведені факти.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Що впишеш у рядок теми листа?",
+            "options": [
+              {
+                "sk": "Čitateľský list ku komentáru o obnove parku",
+                "correct": true
+              },
+              {
+                "sk": "Škandál vo vašej redakcii",
+                "correct": false
+              },
+              {
+                "sk": "Dobrý deň",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як сформулюєш своє заперечення?",
+            "options": [
+              {
+                "sk": "Váš komentár je úplná hlúposť.",
+                "correct": false
+              },
+              {
+                "sk": "Mám za to, že komentár podáva názor ako dokázaný fakt.",
+                "correct": true
+              },
+              {
+                "sk": "Mám za to, že komentár podáva názor ako dokázaný faktom.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Який перевірюваний факт наведеш?",
+            "options": [
+              {
+                "sk": "Mesto určite rozhádzalo peniaze.",
+                "correct": false
+              },
+              {
+                "sk": "Zastupiteľstvo schválilo na obnovu parku tristotisíc eur.",
+                "correct": true
+              },
+              {
+                "sk": "Všetci vedia, že tá suma je privysoká.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як закінчиш лист?",
+            "options": [
+              {
+                "sk": "Budem rád, ak komentár jasne označíte ako názor. S pozdravom Andrij",
+                "correct": true
+              },
+              {
+                "sk": "Ak to neopravíte, zničím vám portál.",
+                "correct": false
+              },
+              {
+                "sk": "Budem rada, ak komentár jasne označíte ako názor. S pozdravom Andrij",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти відділяєш факт від думки й умієш позначити власну оцінку. Далі — виступ у медіа: як говорити з журналістом і давати заяву."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти відділяєш факт від думки й умієш позначити власну оцінку. Далі — виступ у медіа: як говорити з журналістом і давати заяву.",
+        "nowYouKnow": [
+          "fakt перевіряється, názor обґрунтовується, domnienka звучить як zrejme, asi, pravdepodobne",
+          "hodnotiace slová (rozhádzať, katastrofálny) і takzvaný з лапками виказують оцінку",
+          "správa без оцінки, komentár і recenzia з підписом, úvodník — позиція редакції",
+          "podľa mňa плюс родовий · mám za to, že · nesúhlasím s плюс орудний"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 15,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u11-l09-medialny-prejav",
+          "title": "Виступ у медіа"
+        }
+      }
+    }
+  ]
+}

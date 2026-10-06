@@ -1,0 +1,946 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u11-l05-zdroje",
+      "sectionId": "b2-u11",
+      "level": "B2",
+      "title": "Джерела інформації",
+      "topic": "Медіаграмотність",
+      "description": "Першоджерело й переказ, як медіа посилаються на джерела, анонімні й неназвані джерела, незалежність і конфлікт інтересів — і як не потрапити в «зіпсований телефон».",
+      "order": 95,
+      "xpReward": 50,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Відрізняти першоджерело від вторинного, розуміти формули посилання й оцінювати надійність джерела.",
+      "completionMessage": "Ти вмієш оцінити джерело. Далі — реклама: як розпізнати платний вміст, навіть коли він удає звичайну статтю.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Медіаграмотність",
+        "title": "Джерела інформації",
+        "shortDescription": "Відрізняти першоджерело від вторинного, розуміти формули посилання й оцінювати надійність джерела.",
+        "outcomes": [
+          "розрізняти primárny a sekundárny zdroj",
+          "розуміти й уживати podľa + родовий, odvolávať sa na + знахідний, s odvolaním sa na",
+          "пояснювати, що означає nemenovaný / anonymný zdroj",
+          "оцінювати незалежність джерела й помічати конфлікт інтересів"
+        ],
+        "newWords": [
+          "primárny zdroj",
+          "sekundárny zdroj",
+          "nemenovaný",
+          "s odvolaním sa na",
+          "anonymný",
+          "nezávislý"
+        ],
+        "exercisesCount": 15,
+        "reward": "+50 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Першоджерело й переказ",
+          "text": "«Primárny zdroj» — першоджерело: текст закону, оригінальне дослідження, запис засідання, офіційна статистика, очевидець. «Sekundárny zdroj» — те, що про нього пишуть інші: стаття про дослідження, допис блогера про закон, переказ знайомого. Що більше кроків від першоджерела, то більше спотворень — як у «зіпсованому телефоні» (словацькою «tichá pošta»). Дослідження каже «môže súvisieť» (може бути пов’язано), стаття — «spôsobuje» (спричиняє), допис — «vedci dokázali» (вчені довели).",
+          "examples": [
+            {
+              "sk": "Dohľadajte si pôvodnú štúdiu, nie len článok o nej.",
+              "uk": "Розшукайте оригінальне дослідження, а не лише статтю про нього."
+            },
+            {
+              "sk": "Text zákona je primárny zdroj.",
+              "uk": "Текст закону — першоджерело."
+            }
+          ],
+          "shortRule": "primárny = оригінал · sekundárny = переказ · кожен крок — ризик спотворення",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Як медіа посилаються",
+          "text": "Базове «podľa + родовий» (podľa polície) і «odvolávať sa na + знахідний» (посилатися на) ти вже знаєш. У медіа: «Článok sa odvoláva na štúdiu univerzity.» Книжна формула «s odvolaním sa na + знахідний»: «S odvolaním sa na hovorcu nemocnice portál uviedol…». «Podľa slov + родовий»: «podľa slov riaditeľa». Коли редакція не називає людину: «podľa nemenovaného zdroja z ministerstva», «zdroj si neželal byť menovaný». У серйозній журналістиці редакція знає, хто це, і відповідає за нього. «Anonymný účet» у соцмережі — зовсім інша справа: ніхто не знає, хто за ним стоїть.",
+          "examples": [
+            {
+              "sk": "Portál sa odvoláva na nemenovaný zdroj z polície.",
+              "uk": "Портал посилається на неназване джерело в поліції."
+            },
+            {
+              "sk": "Zdroj si neželal byť menovaný.",
+              "uk": "Джерело побажало залишитися неназваним."
+            }
+          ],
+          "shortRule": "podľa + род. · odvolávať sa na + знах. · s odvolaním sa na + знах.",
+          "commonMistakes": [
+            {
+              "mistake": "Článok sa odvoláva o štúdiu.",
+              "correct": "Článok sa odvoláva na štúdiu."
+            },
+            {
+              "mistake": "podľa nemenovaný zdroj",
+              "correct": "podľa nemenovaného zdroja"
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Кому вірити",
+          "text": "Запитай: чи джерело «nezávislý» (незалежне від того, про кого йдеться)? Чи це фахівець саме в цій галузі, а не знаменитість? Чи немає «konflikt záujmov» (конфлікту інтересів): «Štúdiu o zdravých nápojoch financoval ich výrobca.» Чи інформація актуальна? Серйозні редакції публікують важливу новину, коли її підтвердять «dva nezávislé zdroje». Фраза «Odkiaľ to vieš?» — не образа, а нормальне запитання.",
+          "examples": [
+            {
+              "sk": "Informáciu potvrdili dva nezávislé zdroje.",
+              "uk": "Інформацію підтвердили два незалежні джерела."
+            },
+            {
+              "sk": "Štúdiu financoval výrobca, ide o konflikt záujmov.",
+              "uk": "Дослідження фінансував виробник, це конфлікт інтересів."
+            }
+          ],
+          "shortRule": "незалежність · фаховість · конфлікт інтересів · актуальність",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u11-l05-zdroje-w01",
+            "sk": "primárny zdroj",
+            "uk": "першоджерело",
+            "pronunciationUk": "пріма:рни здрой",
+            "exampleSk": "Pri overovaní vždy hľadám primárny zdroj, napríklad text zákona.",
+            "exampleUk": "Під час перевірки я завжди шукаю першоджерело, наприклад текст закону."
+          },
+          {
+            "wordId": "b2-u11-l05-zdroje-w02",
+            "sk": "sekundárny zdroj",
+            "uk": "вторинне джерело",
+            "pronunciationUk": "секунда:рни здрой",
+            "exampleSk": "Článok o štúdii je len sekundárny zdroj.",
+            "exampleUk": "Стаття про дослідження — лише вторинне джерело."
+          },
+          {
+            "wordId": "b2-u11-l05-zdroje-w03",
+            "sk": "nemenovaný",
+            "uk": "неназваний (про особу чи джерело)",
+            "pronunciationUk": "неменовани:",
+            "exampleSk": "Podľa nemenovaného zdroja z ministerstva sa termín posunie.",
+            "exampleUk": "За словами неназваного джерела в міністерстві, термін перенесуть."
+          },
+          {
+            "wordId": "b2-u11-l05-zdroje-w04",
+            "sk": "s odvolaním sa na",
+            "uk": "з посиланням на",
+            "pronunciationUk": "с одволані:м са на",
+            "exampleSk": "S odvolaním sa na hovorcu polície portál uviedol, že cesta je zatvorená.",
+            "exampleUk": "З посиланням на речника поліції портал повідомив, що дорогу закрито."
+          },
+          {
+            "wordId": "b2-u11-l05-zdroje-w05",
+            "sk": "anonymný",
+            "uk": "анонімний",
+            "pronunciationUk": "анонімни:",
+            "exampleSk": "Správu šíril anonymný účet bez fotky a bez histórie.",
+            "exampleUk": "Новину поширював анонімний акаунт без фото й без історії."
+          },
+          {
+            "wordId": "b2-u11-l05-zdroje-w06",
+            "sk": "nezávislý",
+            "uk": "незалежний",
+            "pronunciationUk": "неза:вісли:",
+            "exampleSk": "Informáciu potvrdili dva nezávislé zdroje.",
+            "exampleUk": "Інформацію підтвердили два незалежні джерела."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u11-l05-zdroje-w01",
+          "sk": "primárny zdroj",
+          "uk": "першоджерело",
+          "pronunciationUk": "пріма:рни здрой",
+          "exampleSk": "Pri overovaní vždy hľadám primárny zdroj, napríklad text zákona.",
+          "exampleUk": "Під час перевірки я завжди шукаю першоджерело, наприклад текст закону.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-w02",
+          "sk": "sekundárny zdroj",
+          "uk": "вторинне джерело",
+          "pronunciationUk": "секунда:рни здрой",
+          "exampleSk": "Článok o štúdii je len sekundárny zdroj.",
+          "exampleUk": "Стаття про дослідження — лише вторинне джерело.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-w03",
+          "sk": "nemenovaný",
+          "uk": "неназваний (про особу чи джерело)",
+          "pronunciationUk": "неменовани:",
+          "exampleSk": "Podľa nemenovaného zdroja z ministerstva sa termín posunie.",
+          "exampleUk": "За словами неназваного джерела в міністерстві, термін перенесуть.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-w04",
+          "sk": "s odvolaním sa na",
+          "uk": "з посиланням на",
+          "pronunciationUk": "с одволані:м са на",
+          "exampleSk": "S odvolaním sa na hovorcu polície portál uviedol, že cesta je zatvorená.",
+          "exampleUk": "З посиланням на речника поліції портал повідомив, що дорогу закрито.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-w05",
+          "sk": "anonymný",
+          "uk": "анонімний",
+          "pronunciationUk": "анонімни:",
+          "exampleSk": "Správu šíril anonymný účet bez fotky a bez histórie.",
+          "exampleUk": "Новину поширював анонімний акаунт без фото й без історії.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-w06",
+          "sk": "nezávislý",
+          "uk": "незалежний",
+          "pronunciationUk": "неза:вісли:",
+          "exampleSk": "Informáciu potvrdili dva nezávislé zdroje.",
+          "exampleUk": "Інформацію підтвердили два незалежні джерела.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u11-l05-zdroje-ex01",
+          "lessonId": "b2-u11-l05-zdroje",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "primárny zdroj",
+              "right": "першоджерело"
+            },
+            {
+              "left": "sekundárny zdroj",
+              "right": "переказ, вторинне джерело"
+            },
+            {
+              "left": "nemenovaný",
+              "right": "неназваний"
+            },
+            {
+              "left": "s odvolaním sa na",
+              "right": "з посиланням на"
+            },
+            {
+              "left": "anonymný",
+              "right": "анонімний"
+            },
+            {
+              "left": "nezávislý",
+              "right": "незалежний"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u11-l05-zdroje-w01",
+            "b2-u11-l05-zdroje-w02",
+            "b2-u11-l05-zdroje-w03",
+            "b2-u11-l05-zdroje-w04",
+            "b2-u11-l05-zdroje-w05",
+            "b2-u11-l05-zdroje-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-ex02",
+          "lessonId": "b2-u11-l05-zdroje",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Першоджерело чи вторинне джерело?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Primárny zdroj"
+            },
+            {
+              "id": "c2",
+              "title": "Sekundárny zdroj"
+            }
+          ],
+          "items": [
+            {
+              "sk": "príspevok blogera o zákone",
+              "category": "c2"
+            },
+            {
+              "sk": "text zákona",
+              "category": "c1"
+            },
+            {
+              "sk": "záznam zo zasadnutia",
+              "category": "c1"
+            },
+            {
+              "sk": "komentár k zasadnutiu",
+              "category": "c2"
+            },
+            {
+              "sk": "prerozprávanie kamaráta",
+              "category": "c2"
+            },
+            {
+              "sk": "článok o štúdii",
+              "category": "c2"
+            },
+            {
+              "sk": "pôvodná štúdia",
+              "category": "c1"
+            },
+            {
+              "sk": "údaje štatistického úradu",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Першоджерело — оригінал; усе, що його переказує чи коментує, — вторинне.",
+          "order": 2,
+          "wordIds": [
+            "b2-u11-l05-zdroje-w01",
+            "b2-u11-l05-zdroje-w02"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-ex03",
+          "lessonId": "b2-u11-l05-zdroje",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери прийменник.",
+          "sentenceParts": [
+            {
+              "blankId": "b1",
+              "options": [
+                "Na",
+                "Podľa",
+                "Pri"
+              ],
+              "correct": "Podľa"
+            },
+            {
+              "text": " slov hovorcu nemocnice sa nikto vážne nezranil."
+            }
+          ],
+          "explanation": "Podľa slov + родовий — за словами когось.",
+          "order": 3,
+          "wordIds": [
+            "b2-u11-l05-zdroje-w01",
+            "b2-u11-l05-zdroje-w02"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-ex04",
+          "lessonId": "b2-u11-l05-zdroje",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильну форму.",
+          "sentenceParts": [
+            {
+              "text": "Podľa "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "nemenovaný",
+                "nemenovaného",
+                "nemenovanému"
+              ],
+              "correct": "nemenovaného"
+            },
+            {
+              "text": " zdroja z ministerstva sa termín posunie."
+            }
+          ],
+          "explanation": "Podľa + родовий: nemenovaného zdroja.",
+          "order": 4,
+          "wordIds": [
+            "b2-u11-l05-zdroje-w01",
+            "b2-u11-l05-zdroje-w02",
+            "b2-u11-l05-zdroje-w03"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-ex05",
+          "lessonId": "b2-u11-l05-zdroje",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши: «Джерело побажало залишитися неназваним».",
+          "sentence": "Zdroj si neželal byť ______.",
+          "acceptedAnswers": [
+            "menovaný"
+          ],
+          "explanation": "Byť menovaný — бути названим; zdroj — чоловічий рід.",
+          "order": 5,
+          "wordIds": [
+            "b2-u11-l05-zdroje-w01",
+            "b2-u11-l05-zdroje-w02"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-ex06",
+          "lessonId": "b2-u11-l05-zdroje",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Ти перевіряєш, що саме змінює новий закон. Що є першоджерелом?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "samotný text zákona zverejnený v Zbierke zákonov",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "video influencera, ktorý zákon vysvetľuje",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "komentár pod článkom o zákone",
+              "correct": false
+            }
+          ],
+          "explanation": "Першоджерело — сам текст закону; коментарі й відео — переказ.",
+          "order": 6,
+          "wordIds": [
+            "b2-u11-l05-zdroje-w01",
+            "b2-u11-l05-zdroje-w02"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-ex07",
+          "lessonId": "b2-u11-l05-zdroje",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Vedci z vymysleného Ústavu pre výskum spánku sledovali tristo stredoškolákov. V štúdii napísali: «Žiaci, ktorí spia menej ako šesť hodín, majú v priemere o niečo horšie známky. Príčinu sme neskúmali.» Ústav vydal tlačovú správu s názvom «Spánok môže súvisieť so školskými výsledkami». Jeden portál z nej urobil titulok «Málo spánku robí z detí horších žiakov». O deň neskôr sa na sociálnej sieti objavil príspevok: «Vedci dokázali: kto spí menej ako osem hodín, prepadne!» Učiteľka Halyna si celý reťazec prešla. Vysvetlila žiakom, že každý ďalší krok bol ďalej od primárneho zdroja a vždy o trochu viac zveličoval.",
+          "questions": [
+            {
+              "question": "Що насправді стверджує дослідження?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "учні, які сплять менше шести годин, у середньому мають трохи гірші оцінки, причину не досліджували",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "хто спить менше восьми годин, не складе іспитів",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "брак сну спричиняє погані оцінки",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Яке джерело в цьому ланцюжку є першоджерелом?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "допис у соцмережі",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "саме дослідження вчених",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "заголовок порталу",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що показала вчителька учням?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "що дослідження було підробкою",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "що портал написав точніше, ніж учені",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "що кожен переказ віддалявся від оригіналу й більше перебільшував",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 7,
+          "wordIds": [
+            "b2-u11-l05-zdroje-w01",
+            "b2-u11-l05-zdroje-w02"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-ex08",
+          "lessonId": "b2-u11-l05-zdroje",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай перелік джерел під статтею.",
+          "document": {
+            "title": "Článok: Nájomné v krajských mestách – zdroje",
+            "fields": [
+              {
+                "label": "Zdroj 1",
+                "value": "údaje Štatistického úradu SR za rok 2025"
+              },
+              {
+                "label": "Zdroj 2",
+                "value": "tlačová správa realitnej kancelárie Domov Plus"
+              },
+              {
+                "label": "Zdroj 3",
+                "value": "nemenovaný zamestnanec mestského úradu"
+              },
+              {
+                "label": "Zdroj 4",
+                "value": "rozhovor s ekonómkou Ústavu pre výskum bývania"
+              }
+            ]
+          },
+          "question": "Яке джерело найважче перевірити читачеві?",
+          "options": [
+            {
+              "id": "a",
+              "text": "неназваний працівник міського управління",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "інтерв’ю з економісткою",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "дані статистичного управління",
+              "correct": false
+            }
+          ],
+          "explanation": "Неназване джерело читач перевірити не може — за нього відповідає редакція.",
+          "order": 8,
+          "wordIds": [
+            "b2-u11-l05-zdroje-w01",
+            "b2-u11-l05-zdroje-w02",
+            "b2-u11-l05-zdroje-w03"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-ex09",
+          "lessonId": "b2-u11-l05-zdroje",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "«Informáciu redakcii potvrdili dva nezávislé zdroje.»",
+          "target": "nezávislé zdroje",
+          "options": [
+            {
+              "id": "a",
+              "text": "джерела, не пов’язані між собою й зі стороною, про яку йдеться",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "анонімні акаунти в соцмережах",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "джерела, що працюють у редакції",
+              "correct": false
+            }
+          ],
+          "explanation": "Nezávislý — незалежний: джерела не залежать одне від одного й від героя новини.",
+          "order": 9,
+          "wordIds": [
+            "b2-u11-l05-zdroje-w01",
+            "b2-u11-l05-zdroje-w02",
+            "b2-u11-l05-zdroje-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-ex10",
+          "lessonId": "b2-u11-l05-zdroje",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Článok sa odvoláva o štúdiu z minulého roka.",
+          "errorToken": "o",
+          "correctToken": "na",
+          "explanation": "Odvolávať sa na + знахідний відмінок: na štúdiu.",
+          "order": 10,
+          "wordIds": [
+            "b2-u11-l05-zdroje-w01",
+            "b2-u11-l05-zdroje-w02"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-ex11",
+          "lessonId": "b2-u11-l05-zdroje",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Заміни «cituje» на «odvoláva sa na».",
+          "source": "Článok cituje štúdiu Ústavu pre výskum bývania.",
+          "acceptedAnswers": [
+            "Článok sa odvoláva na štúdiu Ústavu pre výskum bývania."
+          ],
+          "explanation": "Odvolávať sa na + знахідний: na štúdiu; «sa» стоїть на другому місці в реченні.",
+          "order": 11,
+          "wordIds": [
+            "b2-u11-l05-zdroje-w01",
+            "b2-u11-l05-zdroje-w02"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-ex12",
+          "lessonId": "b2-u11-l05-zdroje",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Речник міністерства: «K informáciám z nemenovaných zdrojov sa nevyjadrujeme.»",
+          "options": [
+            {
+              "id": "a",
+              "text": "він визнає, що інформація неправдива",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "він ані підтверджує, ані спростовує інформацію",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "він офіційно підтверджує інформацію",
+              "correct": false
+            }
+          ],
+          "explanation": "«Nevyjadrujeme sa» — дипломатичне ухиляння: ні «так», ні «ні».",
+          "order": 12,
+          "wordIds": [
+            "b2-u11-l05-zdroje-w01",
+            "b2-u11-l05-zdroje-w02",
+            "b2-u11-l05-zdroje-w03"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-ex13",
+          "lessonId": "b2-u11-l05-zdroje",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Ти пропонуєш знайти першоджерело.",
+          "dialogue": [
+            {
+              "speaker": "Kolega",
+              "sk": "Čítal som, že od januára zrušia príspevok na deti. Píše to jeden bloger."
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Tak to je isto pravda, bloger má veľa sledovateľov.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Odvoláva sa na nejaký zákon alebo oficiálne vyjadrenie? Pozrime sa na primárny zdroj.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Blogerom nikdy neverím, takže to určite nie je pravda.",
+              "correct": false
+            }
+          ],
+          "explanation": "Ні сліпа довіра, ні сліпе заперечення: шукаємо першоджерело.",
+          "order": 13,
+          "wordIds": [
+            "b2-u11-l05-zdroje-w01",
+            "b2-u11-l05-zdroje-w02"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-ex14",
+          "lessonId": "b2-u11-l05-zdroje",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і оціни кожне твердження.",
+          "text": "Nová štúdia tvrdí, že sladené nápoje deťom nijako neškodia. Štúdiu financoval výrobca sladených nápojov. Výsledky nevyšli v odbornom časopise, iba v tlačovej správe firmy. Nezávislí odborníci zatiaľ štúdiu nekomentovali.",
+          "statements": [
+            {
+              "sk": "Тут є конфлікт інтересів.",
+              "correct": true
+            },
+            {
+              "sk": "Результати не перевірила незалежна наукова спільнота.",
+              "correct": true
+            },
+            {
+              "sk": "Дослідження опубліковано у фаховому журналі.",
+              "correct": false
+            },
+            {
+              "sk": "Висновки дослідження підтвердили незалежні експерти.",
+              "correct": false
+            }
+          ],
+          "explanation": "Фінансування виробником і публікація лише в прес-релізі — підстави для сумніву.",
+          "order": 14,
+          "wordIds": [
+            "b2-u11-l05-zdroje-w01",
+            "b2-u11-l05-zdroje-w02",
+            "b2-u11-l05-zdroje-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l05-zdroje-ex15",
+          "lessonId": "b2-u11-l05-zdroje",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери ознаки надійного джерела.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Uvádza autora a dátum zverejnenia.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Zdrojom je kamarát kamaráta.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Odkazuje na primárny zdroj.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Ide o anonymný účet bez histórie.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Informáciu potvrdil nezávislý zdroj.",
+              "correct": true
+            }
+          ],
+          "explanation": "Автор, дата, посилання на оригінал і незалежне підтвердження — ознаки надійності.",
+          "order": 15,
+          "wordIds": [
+            "b2-u11-l05-zdroje-w01",
+            "b2-u11-l05-zdroje-w02",
+            "b2-u11-l05-zdroje-w05",
+            "b2-u11-l05-zdroje-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Звідки ця цифра?",
+        "description": "Колега Петра (ти — жінка, Оксана) на обідній перерві каже: «Čítala som, že nájomné v Žiline stúplo o polovicu!» Ти з’ясовуєш, звідки ця інформація.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Що запитаєш насамперед?",
+            "options": [
+              {
+                "sk": "Prečo mi to hovoríš?",
+                "correct": false
+              },
+              {
+                "sk": "Odkiaľ to máš? Kto to tvrdí?",
+                "correct": true
+              },
+              {
+                "sk": "Koľko platíš ty?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Петра показує допис, що посилається на статтю. Що скажеш?",
+            "options": [
+              {
+                "sk": "Je to len sekundárny zdroj, pozrime sa, na čo sa článok odvoláva.",
+                "correct": true
+              },
+              {
+                "sk": "Je to sekundárny zdroj, takže je to isto lož.",
+                "correct": false
+              },
+              {
+                "sk": "Je to primárny zdroj, takže je to isto pravda.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Стаття посилається на «неназваного маклера». Як це оцінити?",
+            "options": [
+              {
+                "text": "як остаточний доказ",
+                "correct": false
+              },
+              {
+                "text": "як офіційні дані держави",
+                "correct": false
+              },
+              {
+                "text": "обережно: читач не може перевірити неназване джерело",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти знайшла офіційні дані: оренда подорожчала на 8 %. Що скажеш Петрі?",
+            "options": [
+              {
+                "sk": "Podľa údajov štatistického úradu nájomné stúpli o osem percent.",
+                "correct": false
+              },
+              {
+                "sk": "Podľa údaje štatistického úradu nájomné stúplo o osem percent.",
+                "correct": false
+              },
+              {
+                "sk": "Podľa údajov štatistického úradu nájomné stúplo o osem percent, nie o polovicu.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш оцінити джерело. Далі — реклама: як розпізнати платний вміст, навіть коли він удає звичайну статтю."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш оцінити джерело. Далі — реклама: як розпізнати платний вміст, навіть коли він удає звичайну статтю.",
+        "nowYouKnow": [
+          "primárny zdroj — оригінал, sekundárny — переказ; кожен крок спотворює",
+          "podľa + род. · odvolávať sa na + знах. · s odvolaním sa na",
+          "nemenovaný zdroj знає редакція, anonymný účet — ніхто",
+          "незалежність, фаховість, конфлікт інтересів"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 15,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u11-l06-reklama",
+          "title": "Реклама й прихована реклама"
+        }
+      }
+    }
+  ]
+}

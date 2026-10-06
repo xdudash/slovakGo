@@ -1,0 +1,863 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u10-l07-verejna-sprava",
+      "sectionId": "b2-u10",
+      "level": "B2",
+      "title": "Публічна адміністрація",
+      "topic": "Публічна влада",
+      "description": "Як влаштована публічна адміністрація: державне управління й самоврядування, міністерства й окружні управління, клієнтські центри й електронні послуги, а також право запитати в установи інформацію за «infozákonom» — і як писати до установи точно.",
+      "order": 87,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Знаходити потрібну установу, розуміти її компетенцію й подавати запит на інформацію.",
+      "completionMessage": "Ти орієнтуєшся в публічній адміністрації. Далі — петиція: як громадяни збирають підписи й чого можуть домогтися.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Публічна влада",
+        "title": "Публічна адміністрація",
+        "shortDescription": "Знаходити потрібну установу, розуміти її компетенцію й подавати запит на інформацію.",
+        "outcomes": [
+          "розрізняти štátna správa і samospráva та їхні установи",
+          "знати, що вирішує okresný úrad і що таке klientske centrum",
+          "подавати žiadosť o sprístupnenie informácie за zákonom o slobodnom prístupe k informáciám",
+          "правильно вживати na + місцевий (де?) і na + знахідний (куди?)"
+        ],
+        "newWords": [
+          "štátna správa",
+          "okresný úrad",
+          "klientske centrum",
+          "slobodný prístup k informáciám",
+          "povinná osoba",
+          "kompetencia"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Державне управління й самоврядування",
+          "text": "Публічна адміністрація (verejná správa) має дві гілки. Державне управління (štátna správa) виконує державні завдання: на вищому рівні — міністерства (ministerstvá) й інші центральні органи, на місцевому — окружні управління (okresné úrady), а також спеціалізовані органи: податкові управління, управління праці чи прикордонна й іміграційна поліція. Самоврядування (samospráva) — це громади, міста й краї, про які ти вже знаєш. Окружне управління має відділи (odbory): наприклад, підприємницький (živnostenský), кадастровий (katastrálny) чи транспортний (dopravy). Багато справ можна залагодити в одному місці — у клієнтському центрі (klientske centrum).",
+          "examples": [
+            {
+              "sk": "Živnosť sa ohlasuje na okresnom úrade, odbore živnostenského podnikania.",
+              "uk": "Про підприємницьку діяльність повідомляють в окружному управлінні, у підприємницькому відділі."
+            },
+            {
+              "sk": "V klientskom centre vybavíte viac agend na jednom mieste.",
+              "uk": "У клієнтському центрі залагодите кілька справ в одному місці."
+            }
+          ],
+          "shortRule": "štátna správa: ministerstvá → okresné úrady · samospráva: obce, mestá, kraje · klientske centrum",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Право на інформацію: infozákon",
+          "text": "Закон про вільний доступ до інформації (zákon o slobodnom prístupe k informáciám, у розмові — «infozákon») дає кожному право запитати установу про інформацію, яку вона має: скільки місто витратило на ремонт, скільки людей у черзі до садочка, які договори уклало. Установу, що мусить відповісти, закон називає «povinná osoba». Причину запиту пояснювати не треба. Запит можна подати письмово, електронною поштою чи усно. Установа має відповісти без зайвої затримки, найпізніше протягом восьми робочих днів; відмова мусить мати форму рішення, яке можна оскаржити. Особисті дані інших людей чи комерційну таємницю установа не надасть.",
+          "examples": [
+            {
+              "sk": "Podľa zákona o slobodnom prístupe k informáciám žiadam o sprístupnenie zmluvy.",
+              "uk": "Відповідно до закону про вільний доступ до інформації прошу надати договір."
+            },
+            {
+              "sk": "Povinná osoba musí žiadosť vybaviť do ôsmich pracovných dní.",
+              "uk": "Зобов’язана особа мусить розглянути запит протягом восьми робочих днів."
+            }
+          ],
+          "shortRule": "každý môže žiadať · netreba uvádzať dôvod · do 8 pracovných dní · odmietnutie = rozhodnutie",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Де і куди: na + місцевий / знахідний",
+          "text": "В адміністративній мові часто плутають, де відбувається дія й куди вона спрямована. Де? — na + місцевий: «Žiadosť podáte na okresnom úrade.» (подасте в окружному управлінні). Куди? — na + знахідний: «Žiadosť pošlite na okresný úrad.» (надішліть до окружного управління). Компетенцію виражаємо так: «Okresný úrad je príslušný vo veci…», «Táto agenda patrí do kompetencie ministerstva.» До установи звертаємося формулою «obrátiť sa na + знахідний»: «Obráťte sa na klientske centrum.»",
+          "examples": [
+            {
+              "sk": "Pas si vybavíte na oddelení dokladov.",
+              "uk": "Паспорт оформите у відділі документів."
+            },
+            {
+              "sk": "S otázkou sa obráťte na príslušný odbor.",
+              "uk": "З питанням зверніться до відповідного відділу."
+            }
+          ],
+          "shortRule": "kde? na úrade · kam? na úrad · obrátiť sa na + знахідний · patrí do kompetencie + родовий",
+          "commonMistakes": [
+            {
+              "mistake": "Pošlite to na okresnom úrade.",
+              "correct": "Pošlite to na okresný úrad."
+            },
+            {
+              "mistake": "Obrátil som sa k úradu.",
+              "correct": "Obrátil som sa na úrad."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u10-l07-verejna-sprava-w01",
+            "sk": "štátna správa",
+            "uk": "державне управління",
+            "pronunciationUk": "шта:тна спра:ва",
+            "exampleSk": "Ministerstvá a okresné úrady patria do štátnej správy.",
+            "exampleUk": "Міністерства й окружні управління належать до державного управління."
+          },
+          {
+            "wordId": "b2-u10-l07-verejna-sprava-w02",
+            "sk": "okresný úrad",
+            "uk": "окружне управління",
+            "pronunciationUk": "окресни: у:рад",
+            "exampleSk": "Na okresnom úrade si zaregistrujete živnosť.",
+            "exampleUk": "В окружному управлінні зареєструєте підприємницьку діяльність."
+          },
+          {
+            "wordId": "b2-u10-l07-verejna-sprava-w03",
+            "sk": "klientske centrum",
+            "uk": "клієнтський центр (центр обслуговування)",
+            "pronunciationUk": "кліентске центрум",
+            "exampleSk": "V klientskom centre vybavíte viacero vecí naraz.",
+            "exampleUk": "У клієнтському центрі залагодите кілька справ одразу."
+          },
+          {
+            "wordId": "b2-u10-l07-verejna-sprava-w04",
+            "sk": "slobodný prístup k informáciám",
+            "uk": "вільний доступ до інформації",
+            "pronunciationUk": "слободни: при:ступ к інформа:ціям",
+            "exampleSk": "Zákon o slobodnom prístupe k informáciám platí pre všetky úrady.",
+            "exampleUk": "Закон про вільний доступ до інформації діє для всіх установ."
+          },
+          {
+            "wordId": "b2-u10-l07-verejna-sprava-w05",
+            "sk": "povinná osoba",
+            "uk": "зобов’язана особа (установа, що мусить надати інформацію)",
+            "pronunciationUk": "повінна: особа",
+            "exampleSk": "Mesto je povinná osoba a musí informáciu sprístupniť.",
+            "exampleUk": "Місто є зобов’язаною особою й мусить надати інформацію."
+          },
+          {
+            "wordId": "b2-u10-l07-verejna-sprava-w06",
+            "sk": "kompetencia",
+            "uk": "компетенція, повноваження вирішувати",
+            "pronunciationUk": "компетенціа",
+            "exampleSk": "Oprava cesty nie je v kompetencii obce.",
+            "exampleUk": "Ремонт дороги не належить до компетенції громади."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u10-l07-verejna-sprava-w01",
+          "sk": "štátna správa",
+          "uk": "державне управління",
+          "pronunciationUk": "шта:тна спра:ва",
+          "exampleSk": "Ministerstvá a okresné úrady patria do štátnej správy.",
+          "exampleUk": "Міністерства й окружні управління належать до державного управління.",
+          "level": "B2",
+          "topic": "Публічна влада",
+          "tags": [
+            "b2-u10",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u10-l07-verejna-sprava-w02",
+          "sk": "okresný úrad",
+          "uk": "окружне управління",
+          "pronunciationUk": "окресни: у:рад",
+          "exampleSk": "Na okresnom úrade si zaregistrujete živnosť.",
+          "exampleUk": "В окружному управлінні зареєструєте підприємницьку діяльність.",
+          "level": "B2",
+          "topic": "Публічна влада",
+          "tags": [
+            "b2-u10",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u10-l07-verejna-sprava-w03",
+          "sk": "klientske centrum",
+          "uk": "клієнтський центр (центр обслуговування)",
+          "pronunciationUk": "кліентске центрум",
+          "exampleSk": "V klientskom centre vybavíte viacero vecí naraz.",
+          "exampleUk": "У клієнтському центрі залагодите кілька справ одразу.",
+          "level": "B2",
+          "topic": "Публічна влада",
+          "tags": [
+            "b2-u10",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u10-l07-verejna-sprava-w04",
+          "sk": "slobodný prístup k informáciám",
+          "uk": "вільний доступ до інформації",
+          "pronunciationUk": "слободни: при:ступ к інформа:ціям",
+          "exampleSk": "Zákon o slobodnom prístupe k informáciám platí pre všetky úrady.",
+          "exampleUk": "Закон про вільний доступ до інформації діє для всіх установ.",
+          "level": "B2",
+          "topic": "Публічна влада",
+          "tags": [
+            "b2-u10",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u10-l07-verejna-sprava-w05",
+          "sk": "povinná osoba",
+          "uk": "зобов’язана особа (установа, що мусить надати інформацію)",
+          "pronunciationUk": "повінна: особа",
+          "exampleSk": "Mesto je povinná osoba a musí informáciu sprístupniť.",
+          "exampleUk": "Місто є зобов’язаною особою й мусить надати інформацію.",
+          "level": "B2",
+          "topic": "Публічна влада",
+          "tags": [
+            "b2-u10",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u10-l07-verejna-sprava-w06",
+          "sk": "kompetencia",
+          "uk": "компетенція, повноваження вирішувати",
+          "pronunciationUk": "компетенціа",
+          "exampleSk": "Oprava cesty nie je v kompetencii obce.",
+          "exampleUk": "Ремонт дороги не належить до компетенції громади.",
+          "level": "B2",
+          "topic": "Публічна влада",
+          "tags": [
+            "b2-u10",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u10-l07-verejna-sprava-ex01",
+          "lessonId": "b2-u10-l07-verejna-sprava",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "štátna správa",
+              "right": "міністерства й окружні управління"
+            },
+            {
+              "left": "okresný úrad",
+              "right": "місцевий орган держави"
+            },
+            {
+              "left": "klientske centrum",
+              "right": "багато справ в одному місці"
+            },
+            {
+              "left": "slobodný prístup k informáciám",
+              "right": "право запитати установу"
+            },
+            {
+              "left": "povinná osoba",
+              "right": "установа, що мусить відповісти"
+            },
+            {
+              "left": "kompetencia",
+              "right": "що установа вирішує"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u10-l07-verejna-sprava-w01",
+            "b2-u10-l07-verejna-sprava-w02",
+            "b2-u10-l07-verejna-sprava-w03",
+            "b2-u10-l07-verejna-sprava-w04",
+            "b2-u10-l07-verejna-sprava-w05",
+            "b2-u10-l07-verejna-sprava-w06"
+          ]
+        },
+        {
+          "id": "b2-u10-l07-verejna-sprava-ex02",
+          "lessonId": "b2-u10-l07-verejna-sprava",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Державне управління чи самоврядування?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Štátna správa"
+            },
+            {
+              "id": "c2",
+              "title": "Samospráva"
+            }
+          ],
+          "items": [
+            {
+              "sk": "okresný úrad",
+              "category": "c1"
+            },
+            {
+              "sk": "samosprávny kraj",
+              "category": "c2"
+            },
+            {
+              "sk": "daňový úrad",
+              "category": "c1"
+            },
+            {
+              "sk": "obecný úrad",
+              "category": "c2"
+            },
+            {
+              "sk": "ministerstvo vnútra",
+              "category": "c1"
+            },
+            {
+              "sk": "mestské zastupiteľstvo",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Державні органи виконують завдання держави; громади, міста й краї — самоврядування.",
+          "order": 2,
+          "wordIds": [
+            "b2-u10-l07-verejna-sprava-w01",
+            "b2-u10-l07-verejna-sprava-w02"
+          ]
+        },
+        {
+          "id": "b2-u10-l07-verejna-sprava-ex03",
+          "lessonId": "b2-u10-l07-verejna-sprava",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Žiadosť o výpis môžete podať "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "na okresnom úrade",
+                "na okresný úrad",
+                "v okresný úrad"
+              ],
+              "correct": "na okresnom úrade"
+            },
+            {
+              "text": " v klientskom centre."
+            }
+          ],
+          "explanation": "Де? — na + місцевий: na okresnom úrade.",
+          "order": 3,
+          "wordIds": [
+            "b2-u10-l07-verejna-sprava-w02",
+            "b2-u10-l07-verejna-sprava-w03"
+          ]
+        },
+        {
+          "id": "b2-u10-l07-verejna-sprava-ex04",
+          "lessonId": "b2-u10-l07-verejna-sprava",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Ak máte otázku, obráťte sa "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "na",
+                "k",
+                "o"
+              ],
+              "correct": "na"
+            },
+            {
+              "text": " príslušný odbor."
+            }
+          ],
+          "explanation": "Obrátiť sa na + знахідний: na príslušný odbor.",
+          "order": 4
+        },
+        {
+          "id": "b2-u10-l07-verejna-sprava-ex05",
+          "lessonId": "b2-u10-l07-verejna-sprava",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши число словом у родовому відмінку.",
+          "sentence": "Povinná osoba musí žiadosť vybaviť do ______ pracovných dní. (вісім)",
+          "acceptedAnswers": [
+            "ôsmich"
+          ],
+          "explanation": "Do + родовий: do ôsmich pracovných dní.",
+          "order": 5,
+          "wordIds": [
+            "b2-u10-l07-verejna-sprava-w05"
+          ]
+        },
+        {
+          "id": "b2-u10-l07-verejna-sprava-ex06",
+          "lessonId": "b2-u10-l07-verejna-sprava",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що потрібно вказати в запиті за infozákonom?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "номер свого банківського рахунку",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "чому тобі ця інформація потрібна",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "яку інформацію просиш і як її надіслати",
+              "correct": true
+            }
+          ],
+          "explanation": "Причину пояснювати не треба: досить сказати, що й у якій формі хочеш отримати.",
+          "order": 6
+        },
+        {
+          "id": "b2-u10-l07-verejna-sprava-ex07",
+          "lessonId": "b2-u10-l07-verejna-sprava",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Установа може відмовити в інформації просто телефоном, без письмового рішення.",
+          "correctAnswer": false,
+          "explanation": "Відмова мусить мати форму рішення, яке можна оскаржити.",
+          "order": 7
+        },
+        {
+          "id": "b2-u10-l07-verejna-sprava-ex08",
+          "lessonId": "b2-u10-l07-verejna-sprava",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "So žiadosťou som sa obrátila k mestský úrad.",
+          "errorToken": "k",
+          "correctToken": "na",
+          "explanation": "Звертатися до установи — obrátiť sa na + знахідний: na mestský úrad.",
+          "order": 8,
+          "wordIds": [
+            "b2-u10-l07-verejna-sprava-w02"
+          ]
+        },
+        {
+          "id": "b2-u10-l07-verejna-sprava-ex09",
+          "lessonId": "b2-u10-l07-verejna-sprava",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перепиши офіційно іменником «sprístupnenie». Почни словами «Žiadam o…».",
+          "source": "Chcem, aby ste mi poslali zmluvu o oprave školy.",
+          "acceptedAnswers": [
+            "Žiadam o sprístupnenie zmluvy o oprave školy.",
+            "Žiadam Vás o sprístupnenie zmluvy o oprave školy."
+          ],
+          "explanation": "Офіційний запит — žiadam o sprístupnenie + родовий: zmluvy.",
+          "order": 9,
+          "wordIds": [
+            "b2-u10-l07-verejna-sprava-w04"
+          ]
+        },
+        {
+          "id": "b2-u10-l07-verejna-sprava-ex10",
+          "lessonId": "b2-u10-l07-verejna-sprava",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Oksana pracuje ako účtovníčka v Košiciach a zaujíma sa, prečo sa oprava telocvične pri škole jej syna tak predlžuje. Na stránke mesta nenašla nič, a tak využila zákon o slobodnom prístupe k informáciám. Poslala mestu e-mail: «Podľa zákona č. 211/2000 Z. z. žiadam o sprístupnenie zmluvy o oprave telocvične a harmonogramu prác. Informáciu mi prosím zašlite e-mailom.» Dôvod neuvádzala, lebo ho uvádzať netreba. Po šiestich pracovných dňoch dostala zmluvu aj harmonogram. Zistila, že práce sa predĺžili kvôli zmene projektu a majú sa skončiť v marci. Informáciu zdieľala s ostatnými rodičmi.",
+          "questions": [
+            {
+              "question": "Чому Оксана звернулася до міста?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "хотіла поскаржитися на вчителя",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "хотіла дізнатися, чому затягується ремонт спортзали",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "шукала роботу в мерії",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Чи пояснювала вона причину запиту?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "так, бо інакше запит не приймуть",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "так, вона додала довідку з роботи",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "ні, бо це не обов’язково",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що вона дізналася?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "ремонт скасували",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "роботи затягнулися через зміну проєкту й мають завершитися в березні",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "місто не мало договору",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "b2-u10-l07-verejna-sprava-w04"
+          ]
+        },
+        {
+          "id": "b2-u10-l07-verejna-sprava-ex11",
+          "lessonId": "b2-u10-l07-verejna-sprava",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай інформацію з сайту управління.",
+          "document": {
+            "title": "Okresný úrad Trnava – klientske centrum",
+            "fields": [
+              {
+                "label": "Úradné hodiny",
+                "value": "Po – Št 8.00 – 15.00, Pi 8.00 – 12.00"
+              },
+              {
+                "label": "Agendy",
+                "value": "živnostenské podnikanie, kataster nehnuteľností, vodičské preukazy"
+              },
+              {
+                "label": "Objednanie",
+                "value": "online cez rezervačný systém"
+              },
+              {
+                "label": "Doklady",
+                "value": "občiansky preukaz alebo doklad o pobyte"
+              }
+            ]
+          },
+          "question": "Що можна залагодити в цьому клієнтському центрі?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "продовження дозволу на перебування",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "питання підприємництва, кадастру й водійських посвідчень",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "реєстрацію шлюбу",
+              "correct": false
+            }
+          ],
+          "explanation": "Agendy: živnosť, kataster, vodičské preukazy — дозвіл на перебування видає поліція, а шлюб — matrika.",
+          "order": 11,
+          "wordIds": [
+            "b2-u10-l07-verejna-sprava-w02",
+            "b2-u10-l07-verejna-sprava-w03"
+          ]
+        },
+        {
+          "id": "b2-u10-l07-verejna-sprava-ex12",
+          "lessonId": "b2-u10-l07-verejna-sprava",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай відповідь установи.",
+          "message": {
+            "sender": "Mestský úrad Prešov, oddelenie komunikácie",
+            "body": "Dobrý deň, k Vašej žiadosti o sprístupnenie informácie Vám oznamujeme, že požadovaná zmluva nie je v našej kompetencii. Zmluvu uzatváral Prešovský samosprávny kraj, ktorému sme Vašu žiadosť postúpili. Odpoveď dostanete priamo od neho. S pozdravom"
+          },
+          "question": "Що сталося з запитом?",
+          "options": [
+            {
+              "id": "a",
+              "text": "місто передало його краю, бо договір укладав край",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "місто відмовилося відповідати назавжди",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "запит загубили",
+              "correct": false
+            }
+          ],
+          "explanation": "Postúpiť žiadosť — передати запит установі, до компетенції якої він належить.",
+          "order": 12,
+          "wordIds": [
+            "b2-u10-l07-verejna-sprava-w01",
+            "b2-u10-l07-verejna-sprava-w02",
+            "b2-u10-l07-verejna-sprava-w04",
+            "b2-u10-l07-verejna-sprava-w06"
+          ]
+        },
+        {
+          "id": "b2-u10-l07-verejna-sprava-ex13",
+          "lessonId": "b2-u10-l07-verejna-sprava",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти радиш колезі, куди звернутися з питанням про підприємницьку діяльність.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Obráť sa na okresnom úrade, odbor živnostenského podnikania.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Obráť sa na okresný úrad, odbor živnostenského podnikania.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Choď do parlamentu.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Obráť sa k okresnému úradu.",
+              "correct": false
+            }
+          ],
+          "explanation": "Obrátiť sa na + знахідний: na okresný úrad.",
+          "order": 13,
+          "wordIds": [
+            "b2-u10-l07-verejna-sprava-w02"
+          ]
+        },
+        {
+          "id": "b2-u10-l07-verejna-sprava-ex14",
+          "lessonId": "b2-u10-l07-verejna-sprava",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Dobrý deň, podľa zákona o slobodnom prístupe k informáciám žiadam o sprístupnenie zmluvy o oprave telocvične.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": true
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": false
+            }
+          ],
+          "explanation": "Посилання на закон, «žiadam o sprístupnenie» й іменникові звороти — формальний регістр.",
+          "order": 14,
+          "wordIds": [
+            "b2-u10-l07-verejna-sprava-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Запит до міста",
+        "description": "Ти хочеш дізнатися, скільки місто заплатило за новий дитячий майданчик, і пишеш запит за infozákonom.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Як почнеш запит?",
+            "options": [
+              {
+                "sk": "Podľa zákona o slobodnom prístupe k informáciám žiadam o sprístupnení informácie.",
+                "correct": false
+              },
+              {
+                "sk": "Podľa zákona o slobodnom prístupe k informáciám žiadam o sprístupnenie informácie.",
+                "correct": true
+              },
+              {
+                "sk": "Chcem vedieť, koľko ste minuli, a hneď!",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Чи треба пояснювати, навіщо тобі інформація?",
+            "options": [
+              {
+                "text": "так, інакше запит відхилять",
+                "correct": false
+              },
+              {
+                "text": "ні, причину вказувати не треба",
+                "correct": true
+              },
+              {
+                "text": "так, треба додати довідку з роботи",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Як попросиш надіслати відповідь електронною поштою?",
+            "options": [
+              {
+                "sk": "Informáciu mi prosím zašlite e-mail.",
+                "correct": false
+              },
+              {
+                "sk": "Informáciu mi prosím zašlite e-mailom.",
+                "correct": true
+              },
+              {
+                "sk": "Informácia mi pošli.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Що зробиш, якщо через вісім робочих днів відповіді нема?",
+            "options": [
+              {
+                "text": "забуду про це",
+                "correct": false
+              },
+              {
+                "text": "нагадаю установі й за потреби оскаржу її бездіяльність",
+                "correct": true
+              },
+              {
+                "text": "напишу образливий допис у мережі",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти орієнтуєшся в публічній адміністрації. Далі — петиція: як громадяни збирають підписи й чого можуть домогтися."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти орієнтуєшся в публічній адміністрації. Далі — петиція: як громадяни збирають підписи й чого можуть домогтися.",
+        "nowYouKnow": [
+          "štátna správa: ministerstvá, okresné úrady · samospráva: obce, mestá, kraje",
+          "klientske centrum — багато справ в одному місці",
+          "infozákon: každý · bez dôvodu · do 8 pracovných dní · odmietnutie = rozhodnutie",
+          "kde? na úrade · kam? na úrad · obrátiť sa na + знахідний"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u10-l08-peticia",
+          "title": "Петиція"
+        }
+      }
+    }
+  ]
+}

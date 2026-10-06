@@ -1,0 +1,992 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u11-l06-reklama",
+      "sectionId": "b2-u11",
+      "level": "B2",
+      "title": "Реклама й прихована реклама",
+      "topic": "Медіаграмотність",
+      "description": "Як відрізнити рекламу від журналістики: позначки платного вмісту, PR-статті, співпраця з інфлюенсерами, прихована реклама, мова рекламних обіцянок і дрібний шрифт.",
+      "order": 96,
+      "xpReward": 50,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Розпізнавати позначену й приховану рекламу та критично читати рекламні обіцянки й умови.",
+      "completionMessage": "Ти бачиш рекламу навіть тоді, коли вона маскується. Далі — статистика в медіа: як числа можуть казати правду й водночас вводити в оману.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Медіаграмотність",
+        "title": "Реклама й прихована реклама",
+        "shortDescription": "Розпізнавати позначену й приховану рекламу та критично читати рекламні обіцянки й умови.",
+        "outcomes": [
+          "розпізнавати позначки komerčná prezentácia, sponzorovaný obsah, platená spolupráca",
+          "пояснювати, що таке skrytá reklama і чому вона проблемна",
+          "розуміти рекламні формули «až», «od», «len dnes»",
+          "читати drobné písmo й рахувати реальну ціну"
+        ],
+        "newWords": [
+          "skrytá reklama",
+          "platená spolupráca",
+          "sponzorovaný",
+          "inzercia",
+          "influencer",
+          "drobné písmo"
+        ],
+        "exercisesCount": 15,
+        "reward": "+50 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Позначена реклама",
+          "text": "Чесне медіа відокремлює рекламу від журналістики й позначає її: «reklama», «platená inzercia», «komerčná prezentácia», «PR článok», «sponzorovaný obsah», «Článok vznikol v spolupráci s firmou…». «Inzercia» — рекламні оголошення в медіа загалом («oddelenie inzercie» — рекламний відділ). Якщо платний текст удає звичайну статтю й не позначений, це «skrytá reklama» — прихована реклама, яку словацький закон забороняє. Читач має право знати, хто за текст заплатив.",
+          "examples": [
+            {
+              "sk": "Článok je označený ako komerčná prezentácia.",
+              "uk": "Статтю позначено як комерційну презентацію."
+            },
+            {
+              "sk": "Článok vznikol v spolupráci s firmou Domov Plus.",
+              "uk": "Стаття створена у співпраці з фірмою «Domov Plus»."
+            }
+          ],
+          "shortRule": "позначка є → реклама чесна · позначки нема, а текст хвалить продукт → підозра на skrytú reklamu",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Інфлюенсери",
+          "text": "«Influencer, influencerka» заробляє на співпраці з фірмами. Такий допис має бути позначений: «platená spolupráca», «#reklama», «#spolupráca». Співпраця — це не лише гроші: подарований продукт, безкоштовна поїздка чи «zľavový kód» (код знижки), з якого блогер має комісію, теж є формою оплати. Тривожні сигнали: лише захоплення без жодної критики, посилання одразу в е-магазин, «toto mi zmenilo život». Питання до себе: «Kto za to platí?»",
+          "examples": [
+            {
+              "sk": "Príspevok je označený ako platená spolupráca.",
+              "uk": "Допис позначено як платну співпрацю."
+            },
+            {
+              "sk": "S mojím kódom máte zľavu desať percent.",
+              "uk": "З моїм кодом у вас знижка десять відсотків."
+            }
+          ],
+          "shortRule": "подарунок, знижковий код, комісія = теж співпраця",
+          "commonMistakes": [
+            {
+              "mistake": "Influencerka zabudli označiť príspevok.",
+              "correct": "Influencerka zabudla označiť príspevok."
+            },
+            {
+              "mistake": "Dostal som to zadarmo, takže to nie je reklama.",
+              "correct": "Dostal som to zadarmo, preto to označujem ako spoluprácu."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Мова обіцянок і дрібний шрифт",
+          "text": "Реклама любить слова, що звучать більше, ніж означають. «Zľava až 70 %» — знижка ДО 70 %, тобто лише на деякі товари. «Cena od 9,99 €» — найдешевший варіант, звичайно не той, що на фото. «Len dnes», «posledné kusy», «obmedzená ponuka» — тиск часу. «Klinicky testované» — не означає «доведено, що діє». Справжні умови — у «drobnom písme» (дрібний шрифт) під зірочкою: «*Platí pri viazanosti 24 mesiacov.» (за умови договору на 24 місяці).",
+          "examples": [
+            {
+              "sk": "Zľava až 70 % platí len na vybrané produkty.",
+              "uk": "Знижка до 70 % діє лише на вибрані товари."
+            },
+            {
+              "sk": "Prečítajte si aj drobné písmo.",
+              "uk": "Прочитайте й дрібний шрифт."
+            }
+          ],
+          "shortRule": "až = «до» (максимум) · od = «від» (мінімум) · * = читай умови",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u11-l06-reklama-w01",
+            "sk": "skrytá reklama",
+            "uk": "прихована реклама",
+            "pronunciationUk": "скрита: реклама",
+            "exampleSk": "Nadšený článok o kréme bez označenia môže byť skrytá reklama.",
+            "exampleUk": "Захоплена стаття про крем без позначки може бути прихованою рекламою."
+          },
+          {
+            "wordId": "b2-u11-l06-reklama-w02",
+            "sk": "platená spolupráca",
+            "uk": "платна співпраця",
+            "pronunciationUk": "платена: сполупра:ца",
+            "exampleSk": "Influencerka pod video napísala, že ide o platenú spoluprácu.",
+            "exampleUk": "Інфлюенсерка написала під відео, що це платна співпраця."
+          },
+          {
+            "wordId": "b2-u11-l06-reklama-w03",
+            "sk": "sponzorovaný",
+            "uk": "спонсорований",
+            "pronunciationUk": "спонзоровани:",
+            "exampleSk": "Sponzorovaný obsah musí byť jasne označený.",
+            "exampleUk": "Спонсорований вміст має бути чітко позначений."
+          },
+          {
+            "wordId": "b2-u11-l06-reklama-w04",
+            "sk": "inzercia",
+            "uk": "рекламні оголошення, реклама в медіа",
+            "pronunciationUk": "інзерціа",
+            "exampleSk": "Portál žije najmä z inzercie.",
+            "exampleUk": "Портал живе переважно з реклами."
+          },
+          {
+            "wordId": "b2-u11-l06-reklama-w05",
+            "sk": "influencer",
+            "uk": "інфлюенсер, блогер із впливом на аудиторію",
+            "pronunciationUk": "інфлуенсер",
+            "exampleSk": "Známy influencer odporúčal vitamíny, ale nenapísal, že je to reklama.",
+            "exampleUk": "Відомий інфлюенсер рекомендував вітаміни, але не написав, що це реклама."
+          },
+          {
+            "wordId": "b2-u11-l06-reklama-w06",
+            "sk": "drobné písmo",
+            "uk": "дрібний шрифт (умови під зірочкою)",
+            "pronunciationUk": "дробне: пі:смо",
+            "exampleSk": "Skutočná cena bola až v drobnom písme pod hviezdičkou.",
+            "exampleUk": "Справжня ціна була аж у дрібному шрифті під зірочкою."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u11-l06-reklama-w01",
+          "sk": "skrytá reklama",
+          "uk": "прихована реклама",
+          "pronunciationUk": "скрита: реклама",
+          "exampleSk": "Nadšený článok o kréme bez označenia môže byť skrytá reklama.",
+          "exampleUk": "Захоплена стаття про крем без позначки може бути прихованою рекламою.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-w02",
+          "sk": "platená spolupráca",
+          "uk": "платна співпраця",
+          "pronunciationUk": "платена: сполупра:ца",
+          "exampleSk": "Influencerka pod video napísala, že ide o platenú spoluprácu.",
+          "exampleUk": "Інфлюенсерка написала під відео, що це платна співпраця.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-w03",
+          "sk": "sponzorovaný",
+          "uk": "спонсорований",
+          "pronunciationUk": "спонзоровани:",
+          "exampleSk": "Sponzorovaný obsah musí byť jasne označený.",
+          "exampleUk": "Спонсорований вміст має бути чітко позначений.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-w04",
+          "sk": "inzercia",
+          "uk": "рекламні оголошення, реклама в медіа",
+          "pronunciationUk": "інзерціа",
+          "exampleSk": "Portál žije najmä z inzercie.",
+          "exampleUk": "Портал живе переважно з реклами.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-w05",
+          "sk": "influencer",
+          "uk": "інфлюенсер, блогер із впливом на аудиторію",
+          "pronunciationUk": "інфлуенсер",
+          "exampleSk": "Známy influencer odporúčal vitamíny, ale nenapísal, že je to reklama.",
+          "exampleUk": "Відомий інфлюенсер рекомендував вітаміни, але не написав, що це реклама.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-w06",
+          "sk": "drobné písmo",
+          "uk": "дрібний шрифт (умови під зірочкою)",
+          "pronunciationUk": "дробне: пі:смо",
+          "exampleSk": "Skutočná cena bola až v drobnom písme pod hviezdičkou.",
+          "exampleUk": "Справжня ціна була аж у дрібному шрифті під зірочкою.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u11-l06-reklama-ex01",
+          "lessonId": "b2-u11-l06-reklama",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "skrytá reklama",
+              "right": "непозначена платна реклама"
+            },
+            {
+              "left": "platená spolupráca",
+              "right": "платна співпраця"
+            },
+            {
+              "left": "sponzorovaný",
+              "right": "спонсорований"
+            },
+            {
+              "left": "inzercia",
+              "right": "рекламні оголошення в медіа"
+            },
+            {
+              "left": "influencer",
+              "right": "блогер із впливом на аудиторію"
+            },
+            {
+              "left": "drobné písmo",
+              "right": "дрібний шрифт з умовами"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u11-l06-reklama-w01",
+            "b2-u11-l06-reklama-w02",
+            "b2-u11-l06-reklama-w03",
+            "b2-u11-l06-reklama-w04",
+            "b2-u11-l06-reklama-w05",
+            "b2-u11-l06-reklama-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-ex02",
+          "lessonId": "b2-u11-l06-reklama",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Позначена чи прихована реклама?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Označená reklama"
+            },
+            {
+              "id": "c2",
+              "title": "Podozrenie na skrytú reklamu"
+            }
+          ],
+          "items": [
+            {
+              "sk": "Komerčná prezentácia",
+              "category": "c1"
+            },
+            {
+              "sk": "Nadšená recenzia bez označenia",
+              "category": "c2"
+            },
+            {
+              "sk": "Produkt v kadri bez zmienky o platbe",
+              "category": "c2"
+            },
+            {
+              "sk": "Platená spolupráca",
+              "category": "c1"
+            },
+            {
+              "sk": "Sponzorovaný obsah",
+              "category": "c1"
+            },
+            {
+              "sk": "Odkaz do e-shopu bez vysvetlenia",
+              "category": "c2"
+            },
+            {
+              "sk": "PR článok",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Позначка чесно каже «за це заплатили»; без неї платний вміст стає прихованою рекламою.",
+          "order": 2,
+          "wordIds": [
+            "b2-u11-l06-reklama-w01",
+            "b2-u11-l06-reklama-w02",
+            "b2-u11-l06-reklama-w03"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-ex03",
+          "lessonId": "b2-u11-l06-reklama",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "Na výklade visí plagát: «Zľava až 70 %!»",
+          "target": "až 70 %",
+          "options": [
+            {
+              "id": "a",
+              "text": "знижка максимум 70 %, і лише на деякі товари",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "знижка щонайменше 70 % на все",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "знижка 70 % тільки сьогодні",
+              "correct": false
+            }
+          ],
+          "explanation": "«Až» тут означає верхню межу: до 70 %, а на більшість товарів — менше.",
+          "order": 3,
+          "wordIds": [
+            "b2-u11-l06-reklama-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-ex04",
+          "lessonId": "b2-u11-l06-reklama",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Реклама банку: «Pôžička bez starostí! Úrok už od 3,9 %*». Унизу дрібним шрифтом: «*Pre klientov s príjmom nad 3 000 € mesačne.»",
+          "options": [
+            {
+              "id": "a",
+              "text": "низький відсоток отримають лише клієнти з дуже високим доходом",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "кожен клієнт отримає 3,9 %",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "банк дає позики без відсотків",
+              "correct": false
+            }
+          ],
+          "explanation": "Зірочка веде до умови: 3,9 % — лише для небагатьох; «od» — мінімум.",
+          "order": 4,
+          "wordIds": [
+            "b2-u11-l06-reklama-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-ex05",
+          "lessonId": "b2-u11-l06-reklama",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай умови акції.",
+          "document": {
+            "title": "Akcia: Internet doma za 1 €",
+            "fields": [
+              {
+                "label": "Cena",
+                "value": "1 € mesačne*"
+              },
+              {
+                "label": "*Platí",
+                "value": "prvé 3 mesiace"
+              },
+              {
+                "label": "Podmienka",
+                "value": "viazanosť 24 mesiacov"
+              },
+              {
+                "label": "Cena od 4. mesiaca",
+                "value": "24,99 € mesačne"
+              },
+              {
+                "label": "Predčasné ukončenie",
+                "value": "poplatok 150 €"
+              }
+            ]
+          },
+          "question": "Скільки ти платитимеш від четвертого місяця?",
+          "options": [
+            {
+              "id": "a",
+              "text": "1 € щомісяця",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "24,99 € щомісяця",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "150 € одноразово",
+              "correct": false
+            }
+          ],
+          "explanation": "1 € — лише перші три місяці; далі 24,99 € при договорі на 24 місяці.",
+          "order": 5,
+          "wordIds": [
+            "b2-u11-l06-reklama-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-ex06",
+          "lessonId": "b2-u11-l06-reklama",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильну форму.",
+          "sentenceParts": [
+            {
+              "text": "Každý platený príspevok musí byť jasne "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "označené",
+                "označený",
+                "označená"
+              ],
+              "correct": "označený"
+            },
+            {
+              "text": " ako reklama."
+            }
+          ],
+          "explanation": "Príspevok — чоловічий рід, однина: označený.",
+          "order": 6,
+          "wordIds": [
+            "b2-u11-l06-reklama-w01",
+            "b2-u11-l06-reklama-w02"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-ex07",
+          "lessonId": "b2-u11-l06-reklama",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши слово «співпраці».",
+          "sentence": "Článok vznikol v ______ s firmou Domov Plus.",
+          "acceptedAnswers": [
+            "spolupráci"
+          ],
+          "explanation": "V + місцевий відмінок: v spolupráci.",
+          "order": 7,
+          "wordIds": [
+            "b2-u11-l06-reklama-w01",
+            "b2-u11-l06-reklama-w02"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-ex08",
+          "lessonId": "b2-u11-l06-reklama",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Influencerka zabudli označiť príspevok ako reklamu.",
+          "errorToken": "zabudli",
+          "correctToken": "zabudla",
+          "explanation": "Influencerka — жіночий рід, однина: zabudla.",
+          "order": 8,
+          "wordIds": [
+            "b2-u11-l06-reklama-w01",
+            "b2-u11-l06-reklama-w05"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-ex09",
+          "lessonId": "b2-u11-l06-reklama",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яка позначка чесно повідомляє, що текст оплачений?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Exkluzívne pre vás",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Komerčná prezentácia",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Najlepšie v meste",
+              "correct": false
+            }
+          ],
+          "explanation": "«Komerčná prezentácia» — стандартна позначка платного тексту; інші — рекламні гасла.",
+          "order": 9,
+          "wordIds": [
+            "b2-u11-l06-reklama-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-ex10",
+          "lessonId": "b2-u11-l06-reklama",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Kateryna sleduje na sociálnej sieti influencerku, ktorá často varí a cvičí. Minulý mesiac v troch videách po sebe nadšene chválila vitamíny istej značky: «Odkedy ich beriem, mám dvakrát viac energie!» Pod videom bol zľavový kód a odkaz do e-shopu. Označenie «platená spolupráca» však chýbalo. Kateryna si všimla, že influencerka o vitamínoch nikdy nenapísala nič kritické a nespomenula ani cenu. Keď sa jej v komentári slušne opýtala, či ide o reklamu, influencerka odpovedala, že vitamíny dostala zadarmo a za video jej nikto nezaplatil. O týždeň neskôr však pod starými videami pribudlo označenie «#spolupráca».",
+          "questions": [
+            {
+              "question": "Що насторожило Катерину?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "лише захоплені відгуки, код знижки й посилання без позначки реклами",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "що інфлюенсерка перестала готувати",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "надто дорога ціна вітамінів",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Як інфлюенсерка спершу пояснила ситуацію?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "вітаміни отримала безкоштовно, грошей за відео не брала",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "заявила, що вітаміни купила сама в аптеці",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "визнала, що це платна реклама",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що свідчить про те, що співпраця все ж була?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "вітаміни зникли з продажу",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "інфлюенсерка видалила акаунт",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "згодом під відео з’явилася позначка «#spolupráca»",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "b2-u11-l06-reklama-w01",
+            "b2-u11-l06-reklama-w02",
+            "b2-u11-l06-reklama-w05"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-ex11",
+          "lessonId": "b2-u11-l06-reklama",
+          "type": "tone",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Визнач тон мовця.",
+          "context": "Posledná šanca! Len dnes! Kúpte teraz, zajtra už bude neskoro!",
+          "options": [
+            {
+              "id": "a",
+              "text": "наполегливий, тисне на швидке рішення",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "офіційний і стриманий",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "спокійний та інформативний",
+              "correct": false
+            }
+          ],
+          "explanation": "«Len dnes», «posledná šanca» — тиск часу, щоб ти не встиг подумати.",
+          "order": 11,
+          "wordIds": [
+            "b2-u11-l06-reklama-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-ex12",
+          "lessonId": "b2-u11-l06-reklama",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти ввічливо питаєш у коментарі блогерку, чи це платна співпраця.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Dobrý deň, je tento príspevok platená spoluprácu?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Dobrý deň, je tento príspevok platený spolupráca?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Dobrý deň, je tento príspevok platená spolupráca?",
+              "correct": true
+            }
+          ],
+          "explanation": "Byť + називний: je to platená spolupráca; spolupráca — жіночий рід.",
+          "order": 12,
+          "wordIds": [
+            "b2-u11-l06-reklama-w01",
+            "b2-u11-l06-reklama-w02"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-ex13",
+          "lessonId": "b2-u11-l06-reklama",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що може свідчити про приховану рекламу?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Článok porovnáva viac výrobkov aj s ich nevýhodami.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Odkaz priamo do e-shopu bez vysvetlenia.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Iba nadšené hodnotenie bez akejkoľvek kritiky.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Text jasne uvádza, kto ho zaplatil.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Zľavový kód influencera.",
+              "correct": true
+            }
+          ],
+          "explanation": "Однобока похвала, код і пряме посилання без позначки — сигнали співпраці.",
+          "order": 13,
+          "wordIds": [
+            "b2-u11-l06-reklama-w01",
+            "b2-u11-l06-reklama-w05"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-ex14",
+          "lessonId": "b2-u11-l06-reklama",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Якщо інфлюенсер отримав продукт у подарунок, а не гроші, допис не треба позначати як рекламу.",
+          "correctAnswer": false,
+          "explanation": "Подарований продукт — теж форма оплати, тож співпрацю треба позначити.",
+          "order": 14,
+          "wordIds": [
+            "b2-u11-l06-reklama-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l06-reklama-ex15",
+          "lessonId": "b2-u11-l06-reklama",
+          "type": "branching_dialogue",
+          "skill": [
+            "dialogue",
+            "real_life"
+          ],
+          "instruction": "Пройди діалог: обирай доречні відповіді.",
+          "successMessage": "Ти допоміг (допомогла) подрузі не купити кота в мішку!",
+          "startNode": "n1",
+          "nodes": {
+            "n1": {
+              "speaker": "Lesia",
+              "sk": "Pozri, tento krém odporúča moja obľúbená influencerka. Hovorí, že omladne o desať rokov!",
+              "choices": [
+                {
+                  "id": "n1c1",
+                  "sk": "Je to označené ako spolupráca? A má to nejaké nezávislé recenzie?",
+                  "next": "n2",
+                  "quality": "best"
+                },
+                {
+                  "id": "n1c3",
+                  "sk": "Influencerom sa nedá veriť nikdy a v ničom.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c2",
+                  "sk": "Tak si ho hneď kúp, ona to vie najlepšie.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n2": {
+              "speaker": "Lesia",
+              "sk": "Píše tam «#spolupráca» a kód na zľavu.",
+              "choices": [
+                {
+                  "id": "n2c2",
+                  "sk": "Takže je to nezávislá recenzia.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c1",
+                  "sk": "Takže jej firma platí. Neznamená to, že krém je zlý, ale jej nadšenie nie je nezávislé.",
+                  "next": "n3",
+                  "quality": "best"
+                },
+                {
+                  "id": "n2c3",
+                  "sk": "Takže krém je určite podvod.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n3": {
+              "speaker": "Lesia",
+              "sk": "Cena je «od 19,99 €». To je dobré, nie?",
+              "choices": [
+                {
+                  "id": "n3c1",
+                  "sk": "Pozri sa aj na drobné písmo, tá cena bude asi len za najmenšie balenie.",
+                  "next": "success",
+                  "quality": "best"
+                },
+                {
+                  "id": "n3c2",
+                  "sk": "Áno, každé balenie stojí 19,99 €.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c3",
+                  "sk": "Cena je vždy presne taká, ako píšu veľkým písmom.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            }
+          },
+          "order": 15,
+          "wordIds": [
+            "b2-u11-l06-reklama-w01",
+            "b2-u11-l06-reklama-w02",
+            "b2-u11-l06-reklama-w05",
+            "b2-u11-l06-reklama-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Порада сусідові",
+        "description": "Твій сусід, пан Ковач, хоче оформити тариф мобільного зв’язку, бо побачив рекламу «Volania zadarmo už od 5 €*». Ти допомагаєш йому розібратися.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "На що звернеш увагу насамперед?",
+            "options": [
+              {
+                "text": "на те, скільки людей рекламу вподобали",
+                "correct": false
+              },
+              {
+                "text": "на колір реклами",
+                "correct": false
+              },
+              {
+                "text": "на зірочку й умови, написані дрібним шрифтом",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як поясниш йому слово «od»?",
+            "options": [
+              {
+                "sk": "«Od 5 €» znamená, že 5 € je najnižšia cena, väčšina taríf je drahšia.",
+                "correct": true
+              },
+              {
+                "sk": "«Od 5 €» znamená, že prvých päť mesiacov je zadarmo.",
+                "correct": false
+              },
+              {
+                "sk": "«Od 5 €» znamená, že všetky tarify stoja presne 5 €.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "У дрібному шрифті: «Platí pri viazanosti 24 mesiacov.» Що скажеш?",
+            "options": [
+              {
+                "sk": "Môžete zmluvu kedykoľvek zrušiť bez poplatku.",
+                "correct": false
+              },
+              {
+                "sk": "Musíte podpísať zmluvu na dva roky, inak cena neplatí.",
+                "correct": true
+              },
+              {
+                "sk": "Cena platí iba dvadsaťštyri dní.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Пан Ковач показує захоплене відео блогера про цей тариф. Що порадиш?",
+            "options": [
+              {
+                "sk": "Hneď podpíšte zmluvu, kým je akcia.",
+                "correct": false
+              },
+              {
+                "sk": "Pozrime sa, či je video označené ako platená spolupráca.",
+                "correct": true
+              },
+              {
+                "sk": "Blogerovi verme, veď má veľa sledovateľov.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти бачиш рекламу навіть тоді, коли вона маскується. Далі — статистика в медіа: як числа можуть казати правду й водночас вводити в оману."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти бачиш рекламу навіть тоді, коли вона маскується. Далі — статистика в медіа: як числа можуть казати правду й водночас вводити в оману.",
+        "nowYouKnow": [
+          "komerčná prezentácia, sponzorovaný obsah, platená spolupráca — чесні позначки",
+          "skrytá reklama — платний вміст без позначки",
+          "až = до, od = від, «len dnes» = тиск часу",
+          "drobné písmo під зірочкою — справжні умови"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 15,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u11-l07-statistiky",
+          "title": "Статистика в медіа"
+        }
+      }
+    }
+  ]
+}

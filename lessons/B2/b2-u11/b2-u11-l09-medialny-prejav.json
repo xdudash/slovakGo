@@ -1,0 +1,930 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u11-l09-medialny-prejav",
+      "sectionId": "b2-u11",
+      "level": "B2",
+      "title": "Виступ у медіа",
+      "topic": "Медіаграмотність",
+      "description": "Як говорити з журналістом: коротка заява на три речення, авторизація цитати, прохання про виправлення, пресконференція й чому уникливі відповіді шкодять більше за чесне «цього не скажу».",
+      "order": 99,
+      "xpReward": 50,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Дати коротку, точну заяву для медіа й контролювати, як тебе цитують.",
+      "completionMessage": "Ти вмієш дати заяву медіа й захистити свою цитату. Далі — підсумок усього блоку про медіаграмотність.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Медіаграмотність",
+        "title": "Виступ у медіа",
+        "shortDescription": "Дати коротку, точну заяву для медіа й контролювати, як тебе цитують.",
+        "outcomes": [
+          "будувати vyhlásenie за схемою факт, причина, наступний крок",
+          "домовлятися про autorizáciu цитати й просити opravu",
+          "відповідати stručne, без уникливих фраз",
+          "виправляти хибне припущення в запитанні журналіста"
+        ],
+        "newWords": [
+          "tlačová beseda",
+          "vyhlásenie",
+          "autorizácia",
+          "vyhýbavo",
+          "stručný",
+          "prejav"
+        ],
+        "exercisesCount": 15,
+        "reward": "+50 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Коротка заява",
+          "text": "Журналіст майже завжди просить «krátke vyjadrenie» — одне-три речення, які потім дослівно з’являться в тексті. Надійна схема: факт, причина, наступний крок. «Vo štvrtok sme museli zatvoriť prevádzku. Dôvodom bola porucha vodovodného potrubia. Otvárame v piatok od siedmej.» Перед розмовою маєш право спитати дві речі: «Do akého času to potrebujete?» і «Pre aké médium píšete?» Строк визначає, скільки часу ти маєш на перевірку, а видання — наскільку докладно варто говорити. Якщо чогось не знаєш, не вигадуй і не відмовляйся глухо: «To si overím a do hodiny Vám napíšem.» Це краще за «bez komentára», бо саме цю фразу читач найчастіше читає як визнання вини. Тримай речення короткими: довге речення журналіст усе одно скоротить, і скоротить так, як захоче сам.",
+          "examples": [
+            {
+              "sk": "Rád Vám dám krátke vyjadrenie, potrebujem však pätnásť minút.",
+              "uk": "Я охоче дам вам коротку заяву, але мені потрібно п’ятнадцять хвилин."
+            },
+            {
+              "sk": "To si overím a do hodiny Vám napíšem.",
+              "uk": "Я це перевірю й напишу вам протягом години."
+            }
+          ],
+          "shortRule": "факт · причина · наступний крок · «To si overím» замість «bez komentára»",
+          "commonMistakes": [
+            {
+              "mistake": "Dám vám krátky vyjadrenie.",
+              "correct": "Dám vám krátke vyjadrenie."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Авторизація й виправлення",
+          "text": "«Autorizácia» — погодження цитати перед публікацією. Про неї домовляються заздалегідь, а не після виходу статті: «Môžem si citáciu pred zverejnením prečítať?» Під час авторизації можна виправити неточне число, уточнити нечітке формулювання, додати дату. Чого не можна: переписувати зміст цитати, викидати незручне запитання чи правити текст самого журналіста. Якщо цитата вийшла неточною, напиши до редакції спокійно й конкретно: «V článku je moje vyjadrenie uvedené nepresne. Povedal som jeden deň, nie jeden týždeň. Prosím o opravu.» Редакції зазвичай додають «opravu» або «doplnenie» під текстом. І ще одне правило, про яке часто забувають: усе, що ти сказав журналістові, є на запис, поки ви прямо не домовилися про інше.",
+          "examples": [
+            {
+              "sk": "Môžem si citáciu pred zverejnením prečítať?",
+              "uk": "Чи можу я прочитати цитату перед публікацією?"
+            },
+            {
+              "sk": "V článku je moje vyjadrenie uvedené nepresne, prosím o opravu.",
+              "uk": "У статті моя заява наведена неточно, прошу про виправлення."
+            }
+          ],
+          "shortRule": "autorizácia для точності, не для переписування · prosím o opravu · усе сказане на запис",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Пресконференція й уникливі відповіді",
+          "text": "На «tlačovej besede» спочатку говорить той, хто її скликав, потім ідуть запитання. Відповідай на поставлене запитання, а не на те, яке тобі зручніше. Уникливі формули журналісти розпізнають з першого слова: «Ako som už povedal…», «To je dobrá otázka…», «O tom sa teraz nebudem vyjadrovať.» Чесне обмеження працює краще: скажи, чого саме не скажеш, і назви причину — «Konkrétne mená nepoviem, prebieha kontrola.» Якщо запитання спирається на хибне припущення, спершу виправ припущення, і тільки потім відповідай: «Nie je pravda, že sme prevádzku zatvorili na mesiac. Zatvorili sme ju na jeden deň.» Інакше погодишся з припущенням самим фактом відповіді. Прислівник від «stručný» — «stručne», тому журналістові відповідаємо «stručne», а не «stručno».",
+          "examples": [
+            {
+              "sk": "Konkrétne mená nepoviem, prebieha kontrola.",
+              "uk": "Конкретних імен не назву, триває перевірка."
+            },
+            {
+              "sk": "Nie je pravda, že sme prevádzku zatvorili na mesiac.",
+              "uk": "Неправда, що ми закрили заклад на місяць."
+            }
+          ],
+          "shortRule": "відповідай на запитання · виправ хибне припущення · stručne, не stručno",
+          "commonMistakes": [
+            {
+              "mistake": "Odpovedal som novinárovi stručno.",
+              "correct": "Odpovedal som novinárovi stručne."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u11-l09-medialny-prejav-w01",
+            "sk": "tlačová beseda",
+            "uk": "пресконференція",
+            "pronunciationUk": "тлачова: беседа",
+            "exampleSk": "Mesto zvolalo tlačovú besedu na stredu.",
+            "exampleUk": "Місто скликало пресконференцію на середу."
+          },
+          {
+            "wordId": "b2-u11-l09-medialny-prejav-w02",
+            "sk": "vyhlásenie",
+            "uk": "заява, офіційне повідомлення",
+            "pronunciationUk": "вигла:сеніє",
+            "exampleSk": "Firma vydala krátke vyhlásenie k poruche.",
+            "exampleUk": "Фірма видала коротку заяву щодо аварії."
+          },
+          {
+            "wordId": "b2-u11-l09-medialny-prejav-w03",
+            "sk": "autorizácia",
+            "uk": "авторизація, погодження цитати",
+            "pronunciationUk": "авторіза:ціа",
+            "exampleSk": "Pred zverejnením som dostal citát na autorizáciu.",
+            "exampleUk": "Перед публікацією я отримав цитату на авторизацію."
+          },
+          {
+            "wordId": "b2-u11-l09-medialny-prejav-w04",
+            "sk": "vyhýbavo",
+            "uk": "уникливо, непрямо",
+            "pronunciationUk": "вигі:баво",
+            "exampleSk": "Riaditeľ odpovedal vyhýbavo a novinári si to hneď všimli.",
+            "exampleUk": "Директор відповідав уникливо, і журналісти це відразу помітили."
+          },
+          {
+            "wordId": "b2-u11-l09-medialny-prejav-w05",
+            "sk": "stručný",
+            "uk": "стислий, короткий",
+            "pronunciationUk": "стручни:",
+            "exampleSk": "Novinári ocenia stručnú odpoveď s číslom a dátumom.",
+            "exampleUk": "Журналісти цінують стислу відповідь із числом і датою."
+          },
+          {
+            "wordId": "b2-u11-l09-medialny-prejav-w06",
+            "sk": "prejav",
+            "uk": "виступ, промова",
+            "pronunciationUk": "преяв",
+            "exampleSk": "Jej prejav na tlačovej besede trval tri minúty.",
+            "exampleUk": "Її виступ на пресконференції тривав три хвилини."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u11-l09-medialny-prejav-w01",
+          "sk": "tlačová beseda",
+          "uk": "пресконференція",
+          "pronunciationUk": "тлачова: беседа",
+          "exampleSk": "Mesto zvolalo tlačovú besedu na stredu.",
+          "exampleUk": "Місто скликало пресконференцію на середу.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-w02",
+          "sk": "vyhlásenie",
+          "uk": "заява, офіційне повідомлення",
+          "pronunciationUk": "вигла:сеніє",
+          "exampleSk": "Firma vydala krátke vyhlásenie k poruche.",
+          "exampleUk": "Фірма видала коротку заяву щодо аварії.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-w03",
+          "sk": "autorizácia",
+          "uk": "авторизація, погодження цитати",
+          "pronunciationUk": "авторіза:ціа",
+          "exampleSk": "Pred zverejnením som dostal citát na autorizáciu.",
+          "exampleUk": "Перед публікацією я отримав цитату на авторизацію.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-w04",
+          "sk": "vyhýbavo",
+          "uk": "уникливо, непрямо",
+          "pronunciationUk": "вигі:баво",
+          "exampleSk": "Riaditeľ odpovedal vyhýbavo a novinári si to hneď všimli.",
+          "exampleUk": "Директор відповідав уникливо, і журналісти це відразу помітили.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-w05",
+          "sk": "stručný",
+          "uk": "стислий, короткий",
+          "pronunciationUk": "стручни:",
+          "exampleSk": "Novinári ocenia stručnú odpoveď s číslom a dátumom.",
+          "exampleUk": "Журналісти цінують стислу відповідь із числом і датою.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-w06",
+          "sk": "prejav",
+          "uk": "виступ, промова",
+          "pronunciationUk": "преяв",
+          "exampleSk": "Jej prejav na tlačovej besede trval tri minúty.",
+          "exampleUk": "Її виступ на пресконференції тривав три хвилини.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u11-l09-medialny-prejav-ex01",
+          "lessonId": "b2-u11-l09-medialny-prejav",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "tlačová beseda",
+              "right": "пресконференція"
+            },
+            {
+              "left": "vyhlásenie",
+              "right": "офіційна заява"
+            },
+            {
+              "left": "autorizácia",
+              "right": "погодження цитати"
+            },
+            {
+              "left": "vyhýbavo",
+              "right": "уникливо"
+            },
+            {
+              "left": "stručný",
+              "right": "стислий"
+            },
+            {
+              "left": "prejav",
+              "right": "виступ"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u11-l09-medialny-prejav-w01",
+            "b2-u11-l09-medialny-prejav-w02",
+            "b2-u11-l09-medialny-prejav-w03",
+            "b2-u11-l09-medialny-prejav-w04",
+            "b2-u11-l09-medialny-prejav-w05",
+            "b2-u11-l09-medialny-prejav-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-ex02",
+          "lessonId": "b2-u11-l09-medialny-prejav",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Môžem si citáciu pred "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "zverejnenia",
+                "zverejnenie",
+                "zverejnením"
+              ],
+              "correct": "zverejnením"
+            },
+            {
+              "text": " prečítať?"
+            }
+          ],
+          "explanation": "Pred вимагає орудного відмінка: pred zverejnením.",
+          "order": 2,
+          "wordIds": [
+            "b2-u11-l09-medialny-prejav-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-ex03",
+          "lessonId": "b2-u11-l09-medialny-prejav",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Novinárovi som odpovedal "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "stručný",
+                "stručno",
+                "stručne"
+              ],
+              "correct": "stručne"
+            },
+            {
+              "text": ", len dvoma vetami."
+            }
+          ],
+          "explanation": "Прислівник від stručný має форму stručne.",
+          "order": 3,
+          "wordIds": [
+            "b2-u11-l09-medialny-prejav-w05",
+            "b2-u11-l09-medialny-prejav-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-ex04",
+          "lessonId": "b2-u11-l09-medialny-prejav",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "V článku je moje vyjadrenie uvedené nepresne, prosím o ______. (виправлення)",
+          "acceptedAnswers": [
+            "opravu"
+          ],
+          "explanation": "Prosiť o вимагає знахідного відмінка: prosím o opravu.",
+          "order": 4,
+          "wordIds": [
+            "b2-u11-l09-medialny-prejav-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-ex05",
+          "lessonId": "b2-u11-l09-medialny-prejav",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Mesto zvolalo tlačová besedu na stredu.",
+          "errorToken": "tlačová",
+          "correctToken": "tlačovú",
+          "explanation": "Zvolať вимагає знахідного відмінка: zvolalo tlačovú besedu.",
+          "order": 5,
+          "wordIds": [
+            "b2-u11-l09-medialny-prejav-w01",
+            "b2-u11-l09-medialny-prejav-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-ex06",
+          "lessonId": "b2-u11-l09-medialny-prejav",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Dám vám krátky vyjadrenie do hodiny.",
+          "acceptedAnswers": [
+            "Dám vám krátke vyjadrenie do hodiny."
+          ],
+          "explanation": "Vyjadrenie — іменник середнього роду: krátke vyjadrenie.",
+          "order": 6,
+          "wordIds": [
+            "b2-u11-l09-medialny-prejav-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-ex07",
+          "lessonId": "b2-u11-l09-medialny-prejav",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перепиши уникливу відповідь так, як учить теорія: назви, чого не скажеш (konkrétne mená), і причину (prebieha kontrola).",
+          "source": "O tom sa teraz nebudem vyjadrovať.",
+          "acceptedAnswers": [
+            "Konkrétne mená nepoviem, prebieha kontrola.",
+            "Konkrétne mená nepoviem, pretože prebieha kontrola."
+          ],
+          "explanation": "Чесне обмеження з причиною звучить переконливіше за уникливу фразу.",
+          "order": 7,
+          "wordIds": [
+            "b2-u11-l09-medialny-prejav-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-ex08",
+          "lessonId": "b2-u11-l09-medialny-prejav",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Журналіст питає про цифру, якої ти точно не знаєш.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Bez komentára.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "To si overím a do hodiny Vám napíšem.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "To je dobrá otázka.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Myslím, že asi tak dvesto, ale neviem.",
+              "correct": false
+            }
+          ],
+          "explanation": "Не вигадуй число й не відмовляйся глухо: обіцяй перевірити й назви строк.",
+          "order": 8,
+          "wordIds": [
+            "b2-u11-l09-medialny-prejav-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-ex09",
+          "lessonId": "b2-u11-l09-medialny-prejav",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення журналістки.",
+          "message": {
+            "sender": "Redaktorka Soňa Hrubá",
+            "body": "Dobrý deň, pripravujem článok o včerajšej poruche vody na Záhradnej ulici. Potrebujem krátke vyjadrenie do dnešných pätnástich hodín. Zaujíma ma, kedy ste prevádzku zatvorili, prečo a odkedy je opäť otvorená. Citáciu Vám pred zverejnením pošlem na autorizáciu."
+          },
+          "question": "Чого саме просить журналістка?",
+          "options": [
+            {
+              "id": "a",
+              "text": "коротку заяву до п’ятнадцятої години з трьома конкретними даними",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "дозвіл сфотографувати приміщення",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "запрошення на пресконференцію",
+              "correct": false
+            }
+          ],
+          "explanation": "Вона називає строк і три конкретні запитання: коли закрили, чому й відколи знову відкрито.",
+          "order": 9,
+          "wordIds": [
+            "b2-u11-l09-medialny-prejav-w03",
+            "b2-u11-l09-medialny-prejav-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-ex10",
+          "lessonId": "b2-u11-l09-medialny-prejav",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай чернетку заяви.",
+          "document": {
+            "title": "Vyhlásenie pre médiá – koncept",
+            "fields": [
+              {
+                "label": "Fakt",
+                "value": "Prevádzku sme zatvorili vo štvrtok o desiatej"
+              },
+              {
+                "label": "Dôvod",
+                "value": "porucha vodovodného potrubia"
+              },
+              {
+                "label": "Ďalší krok",
+                "value": "otvárame v piatok od siedmej"
+              },
+              {
+                "label": "Kontakt",
+                "value": "Oksana Koval, tel. 0901 234 567"
+              }
+            ]
+          },
+          "question": "Чи має чернетка всі три частини короткої заяви?",
+          "options": [
+            {
+              "id": "a",
+              "text": "так, є факт, причина й наступний крок",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "ні, бракує причини",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "ні, бракує наступного кроку",
+              "correct": false
+            }
+          ],
+          "explanation": "Факт, причина й наступний крок — у чернетці є всі три, а на додачу й контакт.",
+          "order": 10,
+          "wordIds": [
+            "b2-u11-l09-medialny-prejav-w02",
+            "b2-u11-l09-medialny-prejav-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-ex11",
+          "lessonId": "b2-u11-l09-medialny-prejav",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Vedúca prevádzky Oksana dostala v piatok ráno e-mail od redaktora. Pýtal sa, prečo bola kaviareň tri dni zatvorená. Oksana si najprv overila dátumy a až potom odpovedala. Napísala tri vety: kaviareň bola zatvorená jeden deň, dôvodom bola porucha potrubia a od piatka je opäť otvorená. Zároveň požiadala o autorizáciu citátu. Redaktor jej citát poslal, Oksana v ňom opravila jedno číslo a nič iné neprepisovala. V článku potom stálo správne, že zatvorené bolo jeden deň. Sused Taras tomu istému redaktorovi tvrdil, že kaviareň je zatvorená pre dlhy. Redaktor jeho tvrdenie nepoužil, pretože Taras nemal žiadny dôkaz.",
+          "questions": [
+            {
+              "question": "Що Оксана зробила перед тим, як відповісти?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "скликала пресконференцію",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "перевірила дати",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "звернулася до адвоката",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що вона змінила під час авторизації?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "лише одне число",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "запитання журналіста",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "весь зміст цитати",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Чому редактор не використав твердження сусіда?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "сусід говорив надто довго",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "сусід не назвав свого телефону",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "сусід не мав жодного доказу",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 11,
+          "wordIds": [
+            "b2-u11-l09-medialny-prejav-w03",
+            "b2-u11-l09-medialny-prejav-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-ex12",
+          "lessonId": "b2-u11-l09-medialny-prejav",
+          "type": "dialogue_order",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Розстав розмову по порядку.",
+          "lines": [
+            {
+              "id": "l2",
+              "sk": "Oksana: Dobrý deň, rada. Do akého času to potrebujete?"
+            },
+            {
+              "id": "l6",
+              "sk": "Oksana: Výborne, prečítam si ju a hneď Vám odpíšem."
+            },
+            {
+              "id": "l1",
+              "sk": "Redaktor: Dobrý deň, pripravujem článok o poruche vody. Môžete mi dať krátke vyjadrenie?"
+            },
+            {
+              "id": "l3",
+              "sk": "Redaktor: Do pätnástich hodín, článok ide dnes večer."
+            },
+            {
+              "id": "l5",
+              "sk": "Redaktor: Ďakujem, citáciu Vám pošlem na autorizáciu."
+            },
+            {
+              "id": "l4",
+              "sk": "Oksana: Dobre. Prevádzku sme zatvorili na jeden deň pre poruchu potrubia, od piatka je otvorená."
+            }
+          ],
+          "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5",
+            "l6"
+          ],
+          "order": 12,
+          "wordIds": [
+            "b2-u11-l09-medialny-prejav-w03",
+            "b2-u11-l09-medialny-prejav-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-ex13",
+          "lessonId": "b2-u11-l09-medialny-prejav",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Запитання журналіста спирається на хибне припущення.",
+          "dialogue": [
+            {
+              "speaker": "Redaktor",
+              "sk": "Prečo ste prevádzku zatvorili na celý mesiac?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Nie je pravda, že sme ju zatvorili na mesiac. Zatvorili sme ju na jeden deň.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Bez komentára, na to Vám neodpoviem.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Ako som už povedal, o tom sa teraz nebudem vyjadrovať.",
+              "correct": false
+            }
+          ],
+          "explanation": "Спершу виправ хибне припущення, аж потім дай точне число.",
+          "order": 13,
+          "wordIds": [
+            "b2-u11-l09-medialny-prejav-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-ex14",
+          "lessonId": "b2-u11-l09-medialny-prejav",
+          "type": "tone",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Визнач тон мовця.",
+          "context": "Novinárovi odpovieš: «Ako som už povedal, o tom sa teraz nebudem vyjadrovať.»",
+          "options": [
+            {
+              "id": "a",
+              "text": "уникливо й закрито",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "дружньо й відкрито",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "чесно й конкретно",
+              "correct": false
+            }
+          ],
+          "explanation": "Ця формула не відповідає на запитання, тому звучить як спроба втекти від відповіді.",
+          "order": 14,
+          "wordIds": [
+            "b2-u11-l09-medialny-prejav-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l09-medialny-prejav-ex15",
+          "lessonId": "b2-u11-l09-medialny-prejav",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що можна під час авторизації, а що ні?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Môžem"
+            },
+            {
+              "id": "c2",
+              "title": "Nemôžem"
+            }
+          ],
+          "items": [
+            {
+              "sk": "spresniť nejasnú formuláciu",
+              "category": "c1"
+            },
+            {
+              "sk": "meniť text novinára",
+              "category": "c2"
+            },
+            {
+              "sk": "opraviť nesprávne číslo",
+              "category": "c1"
+            },
+            {
+              "sk": "vyhodiť nepríjemnú otázku",
+              "category": "c2"
+            },
+            {
+              "sk": "prepísať obsah citátu",
+              "category": "c2"
+            },
+            {
+              "sk": "doplniť dátum",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Авторизація служить точності цитати, а не переписуванню змісту чи цензурі запитань.",
+          "order": 15,
+          "wordIds": [
+            "b2-u11-l09-medialny-prejav-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Дзвінок журналістки",
+        "description": "Тобі (жінка, Оксана) телефонує редакторка про аварію води у твоїй кав’ярні. Ти даєш коротку заяву й домовляєшся про цитату.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Що спитаєш на початку розмови?",
+            "options": [
+              {
+                "sk": "Prečo sa na to vlastne vypytujete?",
+                "correct": false
+              },
+              {
+                "sk": "Nič mi nehovorte, bez komentára.",
+                "correct": false
+              },
+              {
+                "sk": "Do akého času to potrebujete a pre aké médium píšete?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як сформулюєш заяву?",
+            "options": [
+              {
+                "sk": "Prevádzku sme zatvorili na jeden deň pre poruchu potrubia, od piatka je otvorený.",
+                "correct": false
+              },
+              {
+                "sk": "Prevádzku sme zatvorili na jeden deň pre poruchu potrubia, od piatka je otvorená.",
+                "correct": true
+              },
+              {
+                "sk": "Bolo to zatvorené asi týždeň, možno aj dlhšie.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Журналістка питає про суму збитків, якої ти не знаєш. Що скажеш?",
+            "options": [
+              {
+                "sk": "Bez komentára.",
+                "correct": false
+              },
+              {
+                "sk": "Asi desaťtisíc eur, ale istá si nie som.",
+                "correct": false
+              },
+              {
+                "sk": "To si overím a do hodiny Vám napíšem.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як домовишся про цитату?",
+            "options": [
+              {
+                "sk": "Rada by som si citáciu pred zverejnením prečítala.",
+                "correct": true
+              },
+              {
+                "sk": "Rád by som si citáciu pred zverejnením prečítal.",
+                "correct": false
+              },
+              {
+                "sk": "Citáciu mi pošlite až po zverejnení článku.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш дати заяву медіа й захистити свою цитату. Далі — підсумок усього блоку про медіаграмотність."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш дати заяву медіа й захистити свою цитату. Далі — підсумок усього блоку про медіаграмотність.",
+        "nowYouKnow": [
+          "krátke vyjadrenie: факт, причина, наступний крок",
+          "«To si overím a do hodiny Vám napíšem» краще за «bez komentára»",
+          "autorizácia виправляє неточність, не переписує зміст; prosím o opravu",
+          "відповідай на поставлене запитання, виправ хибне припущення, говори stručne"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 15,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u11-l10-suhrn-medialna-gramotnost",
+          "title": "Підсумок: медіаграмотність"
+        }
+      }
+    }
+  ]
+}

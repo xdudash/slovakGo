@@ -1,0 +1,901 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u11-l07-statistiky",
+      "sectionId": "b2-u11",
+      "level": "B2",
+      "title": "Статистика в медіа",
+      "topic": "Медіаграмотність",
+      "description": "Як числа в новинах можуть водночас бути правдивими й вводити в оману: середнє й медіана, відсотки й відсоткові пункти, абсолютні й відносні числа, вибірка опитування, кореляція та «обрізані» графіки.",
+      "order": 97,
+      "xpReward": 50,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Критично читати числа в медіа й точно описувати їх словацькою.",
+      "completionMessage": "Ти не даєш числам себе обдурити. Далі — думка й факт: як відрізнити, що автор знає, а що лише вважає.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Медіаграмотність",
+        "title": "Статистика в медіа",
+        "shortDescription": "Критично читати числа в медіа й точно описувати їх словацькою.",
+        "outcomes": [
+          "розрізняти priemer і medián",
+          "розрізняти percento й percentuálny bod, абсолютні й відносні числа",
+          "оцінювати опитування: reprezentatívna vzorka, štatistická chyba",
+          "узгоджувати числівники з дієсловом: tridsať percent odpovedalo"
+        ],
+        "newWords": [
+          "priemer",
+          "medián",
+          "percentuálny bod",
+          "reprezentatívny",
+          "vzorka",
+          "korelácia"
+        ],
+        "exercisesCount": 15,
+        "reward": "+50 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Середнє й медіана",
+          "text": "«Priemer» — середнє арифметичне: суму ділимо на кількість. «Medián» — середнє значення в упорядкованому ряду: половина людей має менше, половина — більше. У фірмі 9 людей заробляє по 1 000 €, директор — 11 000 €. «Priemerná mzda» — 2 000 €, хоча так не заробляє ніхто з дев’яти. «Mediánová mzda» — 1 000 €, і вона краще показує типового працівника. Тому «väčšina ľudí zarába menej, ako je priemer» — звичайна ситуація, а не скандал.",
+          "examples": [
+            {
+              "sk": "Priemer zvyšujú vysoké platy niekoľkých ľudí.",
+              "uk": "Середнє піднімають високі зарплати кількох людей."
+            },
+            {
+              "sk": "Medián lepšie ukazuje bežnú mzdu.",
+              "uk": "Медіана краще показує звичайну зарплату."
+            }
+          ],
+          "shortRule": "priemer — чутливий до крайнощів · medián — «типова» людина",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Відсотки, пункти, «удвічі»",
+          "text": "Безробіття зросло з 5 % до 6 % — це «o jeden percentuálny bod», але водночас «o 20 percent» (бо 1 — це п’ята частина від 5). Обидва числа правдиві, але звучать зовсім по-різному. Так само «riziko sa zdvojnásobilo» (ризик подвоївся) може означати зміну з 1 до 2 випадків на 10 000 людей. Завжди шукай «absolútne čísla» (абсолютні числа) за «relatívnymi» (відносними). Граматика: «jedno percento», «dve percentá», «päť percent»; від п’яти дієслово в однині середнього роду: «Tridsať percent respondentov odpovedalo áno.»",
+          "examples": [
+            {
+              "sk": "Nezamestnanosť stúpla o jeden percentuálny bod.",
+              "uk": "Безробіття зросло на один відсотковий пункт."
+            },
+            {
+              "sk": "Päť percent ľudí odpovedalo nie.",
+              "uk": "П’ять відсотків людей відповіли «ні»."
+            }
+          ],
+          "shortRule": "% від числа ≠ процентні пункти · 1 → 2 = «подвоєння», але дуже мало",
+          "commonMistakes": [
+            {
+              "mistake": "Tridsať percent ľudí odpovedali áno.",
+              "correct": "Tridsať percent ľudí odpovedalo áno."
+            },
+            {
+              "mistake": "stúpla z 5 % na 6 %, teda o jedno percento",
+              "correct": "stúpla o jeden percentuálny bod"
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Опитування й графіки",
+          "text": "Надійне опитування має «reprezentatívnu vzorku» (репрезентативну вибірку): приблизно 1 000 людей, підібраних за віком, статтю, регіоном, освітою. Анкета на сайті, де голосує хто завгодно й скільки завгодно, нічого не каже про суспільство. Кожне опитування має «štatistickú chybu» (статистичну похибку): «±3 percentuálne body». «Korelácia» (кореляція) — дві речі змінюються разом, але це ще не означає, що одна спричиняє іншу (не «príčinná súvislosť»). І дивись на графік: якщо вісь Y починається не з нуля, дрібна різниця виглядає величезною.",
+          "examples": [
+            {
+              "sk": "Prieskum robili na reprezentatívnej vzorke 1 050 ľudí.",
+              "uk": "Опитування провели на репрезентативній вибірці з 1 050 осіб."
+            },
+            {
+              "sk": "Korelácia ešte nie je príčinná súvislosť.",
+              "uk": "Кореляція — ще не причиново-наслідковий зв’язок."
+            }
+          ],
+          "shortRule": "хто, скільки, як вибирали? · ±похибка · вісь з нуля?",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u11-l07-statistiky-w01",
+            "sk": "priemer",
+            "uk": "середнє значення",
+            "pronunciationUk": "пріємер",
+            "exampleSk": "Priemer zvyšujú vysoké platy niekoľkých manažérov.",
+            "exampleUk": "Середнє піднімають високі зарплати кількох менеджерів."
+          },
+          {
+            "wordId": "b2-u11-l07-statistiky-w02",
+            "sk": "medián",
+            "uk": "медіана",
+            "pronunciationUk": "медіа:н",
+            "exampleSk": "Medián miezd lepšie ukazuje, koľko zarába bežný človek.",
+            "exampleUk": "Медіана зарплат краще показує, скільки заробляє звичайна людина."
+          },
+          {
+            "wordId": "b2-u11-l07-statistiky-w03",
+            "sk": "percentuálny bod",
+            "uk": "відсотковий пункт",
+            "pronunciationUk": "перцентуа:льни: бод",
+            "exampleSk": "Podpora strany klesla o dva percentuálne body.",
+            "exampleUk": "Підтримка партії знизилася на два відсоткові пункти."
+          },
+          {
+            "wordId": "b2-u11-l07-statistiky-w04",
+            "sk": "reprezentatívny",
+            "uk": "репрезентативний",
+            "pronunciationUk": "репрезентаті:вни:",
+            "exampleSk": "Na reprezentatívny prieskum nestačí anketa na webe.",
+            "exampleUk": "Для репрезентативного опитування не досить анкети на сайті."
+          },
+          {
+            "wordId": "b2-u11-l07-statistiky-w05",
+            "sk": "vzorka",
+            "uk": "вибірка (в опитуванні)",
+            "pronunciationUk": "взорка",
+            "exampleSk": "Agentúra oslovila vzorku 1 050 respondentov.",
+            "exampleUk": "Агенція опитала вибірку з 1 050 респондентів."
+          },
+          {
+            "wordId": "b2-u11-l07-statistiky-w06",
+            "sk": "korelácia",
+            "uk": "кореляція, взаємозв’язок",
+            "pronunciationUk": "корела:ціа",
+            "exampleSk": "Medzi kávou a dlhším životom je korelácia, ale nie dôkaz príčiny.",
+            "exampleUk": "Між кавою і довшим життям є кореляція, але не доказ причини."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u11-l07-statistiky-w01",
+          "sk": "priemer",
+          "uk": "середнє значення",
+          "pronunciationUk": "пріємер",
+          "exampleSk": "Priemer zvyšujú vysoké platy niekoľkých manažérov.",
+          "exampleUk": "Середнє піднімають високі зарплати кількох менеджерів.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l07-statistiky-w02",
+          "sk": "medián",
+          "uk": "медіана",
+          "pronunciationUk": "медіа:н",
+          "exampleSk": "Medián miezd lepšie ukazuje, koľko zarába bežný človek.",
+          "exampleUk": "Медіана зарплат краще показує, скільки заробляє звичайна людина.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l07-statistiky-w03",
+          "sk": "percentuálny bod",
+          "uk": "відсотковий пункт",
+          "pronunciationUk": "перцентуа:льни: бод",
+          "exampleSk": "Podpora strany klesla o dva percentuálne body.",
+          "exampleUk": "Підтримка партії знизилася на два відсоткові пункти.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l07-statistiky-w04",
+          "sk": "reprezentatívny",
+          "uk": "репрезентативний",
+          "pronunciationUk": "репрезентаті:вни:",
+          "exampleSk": "Na reprezentatívny prieskum nestačí anketa na webe.",
+          "exampleUk": "Для репрезентативного опитування не досить анкети на сайті.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l07-statistiky-w05",
+          "sk": "vzorka",
+          "uk": "вибірка (в опитуванні)",
+          "pronunciationUk": "взорка",
+          "exampleSk": "Agentúra oslovila vzorku 1 050 respondentov.",
+          "exampleUk": "Агенція опитала вибірку з 1 050 респондентів.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u11-l07-statistiky-w06",
+          "sk": "korelácia",
+          "uk": "кореляція, взаємозв’язок",
+          "pronunciationUk": "корела:ціа",
+          "exampleSk": "Medzi kávou a dlhším životom je korelácia, ale nie dôkaz príčiny.",
+          "exampleUk": "Між кавою і довшим життям є кореляція, але не доказ причини.",
+          "level": "B2",
+          "topic": "Медіаграмотність",
+          "tags": [
+            "b2-u11",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u11-l07-statistiky-ex01",
+          "lessonId": "b2-u11-l07-statistiky",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "priemer",
+              "right": "середнє арифметичне"
+            },
+            {
+              "left": "medián",
+              "right": "середнє значення в упорядкованому ряду"
+            },
+            {
+              "left": "percentuálny bod",
+              "right": "відсотковий пункт"
+            },
+            {
+              "left": "reprezentatívny",
+              "right": "що відображає все суспільство"
+            },
+            {
+              "left": "vzorka",
+              "right": "вибірка опитаних"
+            },
+            {
+              "left": "korelácia",
+              "right": "зв’язок двох явищ, що змінюються разом"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u11-l07-statistiky-w01",
+            "b2-u11-l07-statistiky-w02",
+            "b2-u11-l07-statistiky-w03",
+            "b2-u11-l07-statistiky-w04",
+            "b2-u11-l07-statistiky-w05",
+            "b2-u11-l07-statistiky-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l07-statistiky-ex02",
+          "lessonId": "b2-u11-l07-statistiky",
+          "type": "real_schedule",
+          "skill": [
+            "reading",
+            "real_life",
+            "time"
+          ],
+          "instruction": "Подивись на дані.",
+          "schedule": {
+            "title": "Mzdy vo vymyslenej firme Stavmont",
+            "rows": [
+              {
+                "day": "9 zamestnancov",
+                "hours": "po 1 000 € mesačne"
+              },
+              {
+                "day": "riaditeľ",
+                "hours": "11 000 € mesačne"
+              },
+              {
+                "day": "priemerná mzda",
+                "hours": "2 000 €"
+              },
+              {
+                "day": "mediánová mzda",
+                "hours": "1 000 €"
+              }
+            ]
+          },
+          "question": "Що краще показує зарплату типового працівника цієї фірми?",
+          "options": [
+            {
+              "id": "a",
+              "text": "зарплата директора — 11 000 €",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "медіана — 1 000 €",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "середня — 2 000 €",
+              "correct": false
+            }
+          ],
+          "explanation": "Середнє піднімає одна дуже висока зарплата; медіана показує, скільки отримує більшість.",
+          "order": 2,
+          "wordIds": [
+            "b2-u11-l07-statistiky-w01",
+            "b2-u11-l07-statistiky-w02"
+          ]
+        },
+        {
+          "id": "b2-u11-l07-statistiky-ex03",
+          "lessonId": "b2-u11-l07-statistiky",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Nezamestnanosť stúpla z piatich na šesť percent, teda o jeden "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "percentuálne body",
+                "percentuálny bod",
+                "priemer"
+              ],
+              "correct": "percentuálny bod"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Різниця 6 − 5 — це один відсотковий пункт (у відносному вимірі — 20 %).",
+          "order": 3,
+          "wordIds": [
+            "b2-u11-l07-statistiky-w01",
+            "b2-u11-l07-statistiky-w03"
+          ]
+        },
+        {
+          "id": "b2-u11-l07-statistiky-ex04",
+          "lessonId": "b2-u11-l07-statistiky",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши слово «пункти».",
+          "sentence": "Podpora strany klesla z 30 na 28 percent, teda o dva percentuálne ______.",
+          "acceptedAnswers": [
+            "body"
+          ],
+          "explanation": "Dva / tri / štyri + називний множини: dva body.",
+          "order": 4,
+          "wordIds": [
+            "b2-u11-l07-statistiky-w03"
+          ]
+        },
+        {
+          "id": "b2-u11-l07-statistiky-ex05",
+          "lessonId": "b2-u11-l07-statistiky",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "«Prieskum má štatistickú chybu plus mínus tri percentuálne body.»",
+          "target": "štatistickú chybu",
+          "options": [
+            {
+              "id": "a",
+              "text": "агенція помилилася в підрахунку",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "три відсотки людей відповіли неправду",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "справжній результат може бути до трьох пунктів вищим або нижчим",
+              "correct": true
+            }
+          ],
+          "explanation": "Štatistická chyba — допустиме відхилення результату вибірки від реальності.",
+          "order": 5,
+          "wordIds": [
+            "b2-u11-l07-statistiky-w03"
+          ]
+        },
+        {
+          "id": "b2-u11-l07-statistiky-ex06",
+          "lessonId": "b2-u11-l07-statistiky",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Заголовок: «Riziko ochorenia sa zdvojnásobilo!» У тексті: ризик зріс з одного до двох випадків на 10 000 людей.",
+          "options": [
+            {
+              "id": "a",
+              "text": "ризик зріс на два відсоткові пункти",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "захворіє половина людей",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "абсолютний ризик дуже малий, а «подвоєння» звучить страшніше, ніж є насправді",
+              "correct": true
+            }
+          ],
+          "explanation": "Відносне число (удвічі) без абсолютного (2 з 10 000) лякає більше, ніж треба.",
+          "order": 6
+        },
+        {
+          "id": "b2-u11-l07-statistiky-ex07",
+          "lessonId": "b2-u11-l07-statistiky",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Portál Infoblesk zverejnil anketu: «Má mesto postaviť nový štadión?» Zúčastnilo sa jej 12 000 čitateľov a 80 percent hlasovalo proti. Titulok znel: «Obyvatelia jasne odmietajú štadión!» O týždeň neskôr zverejnila agentúra Stredopoľ reprezentatívny prieskum. Oslovila vzorku 1 050 obyvateľov mesta, vybraných podľa veku, pohlavia a štvrte. Proti štadiónu bolo 46 percent, za 41 percent a zvyšok nevedel. Štatistická chyba bola plus mínus tri percentuálne body. Novinár Taras v komentári upozornil, že v ankete mohol hlasovať ktokoľvek, aj ľudia z iných miest, a to aj viackrát.",
+          "questions": [
+            {
+              "question": "Чому анкета порталу не показує думку мешканців?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "бо запитання було незрозуміле",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "голосувати міг будь-хто й кілька разів, вибірка не репрезентативна",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "бо в ній узяло участь замало людей",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Скільки опитаних у репрезентативному дослідженні були проти?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "41 відсоток",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "46 відсотків",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "80 відсотків",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що випливає з похибки ±3 пункти?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "мешканці однозначно відкидають стадіон",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "результат точний до одного відсотка",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "різниця між «проти» і «за» майже на межі похибки, тож однозначної більшості нема",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 7,
+          "wordIds": [
+            "b2-u11-l07-statistiky-w03",
+            "b2-u11-l07-statistiky-w04",
+            "b2-u11-l07-statistiky-w05"
+          ]
+        },
+        {
+          "id": "b2-u11-l07-statistiky-ex08",
+          "lessonId": "b2-u11-l07-statistiky",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Štúdia: «Ľudia, ktorí pijú viac kávy, žijú v priemere dlhšie.»",
+          "statement": "Дослідження довело, що кава подовжує життя.",
+          "correctAnswer": false,
+          "explanation": "Це кореляція: можливо, кавоман просто має інший спосіб життя; причину не доведено.",
+          "order": 8,
+          "wordIds": [
+            "b2-u11-l07-statistiky-w01"
+          ]
+        },
+        {
+          "id": "b2-u11-l07-statistiky-ex09",
+          "lessonId": "b2-u11-l07-statistiky",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Tridsať percent respondentov odpovedali na otázku záporne.",
+          "errorToken": "odpovedali",
+          "correctToken": "odpovedalo",
+          "explanation": "Після «tridsať percent» дієслово стоїть в однині середнього роду: odpovedalo.",
+          "order": 9
+        },
+        {
+          "id": "b2-u11-l07-statistiky-ex10",
+          "lessonId": "b2-u11-l07-statistiky",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Скажи коротко, на скільки пунктів зросло безробіття.",
+          "source": "Nezamestnanosť stúpla z piatich na šesť percent.",
+          "acceptedAnswers": [
+            "Nezamestnanosť stúpla o jeden percentuálny bod.",
+            "Nezamestnanosť stúpla o 1 percentuálny bod."
+          ],
+          "explanation": "З 5 % на 6 % — o jeden percentuálny bod.",
+          "order": 10,
+          "wordIds": [
+            "b2-u11-l07-statistiky-w03"
+          ]
+        },
+        {
+          "id": "b2-u11-l07-statistiky-ex11",
+          "lessonId": "b2-u11-l07-statistiky",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що робить опитування надійним?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "anketa, v ktorej môže hlasovať ktokoľvek aj viackrát",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "uvedená štatistická chyba",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "uvedený počet respondentov",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "reprezentatívna vzorka",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "prieskum, ktorý nezverejnil otázky",
+              "correct": false
+            }
+          ],
+          "explanation": "Важливі вибірка, кількість опитаних і похибка; відкрита анкета й приховані запитання знецінюють результат.",
+          "order": 11,
+          "wordIds": [
+            "b2-u11-l07-statistiky-w04",
+            "b2-u11-l07-statistiky-w05"
+          ]
+        },
+        {
+          "id": "b2-u11-l07-statistiky-ex12",
+          "lessonId": "b2-u11-l07-statistiky",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Абсолютне чи відносне число?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Absolútne číslo"
+            },
+            {
+              "id": "c2",
+              "title": "Relatívne číslo"
+            }
+          ],
+          "items": [
+            {
+              "sk": "polovica obyvateľov",
+              "category": "c2"
+            },
+            {
+              "sk": "dvojnásobok",
+              "category": "c2"
+            },
+            {
+              "sk": "5 nehôd",
+              "category": "c1"
+            },
+            {
+              "sk": "120 nových bytov",
+              "category": "c1"
+            },
+            {
+              "sk": "3 000 respondentov",
+              "category": "c1"
+            },
+            {
+              "sk": "o 20 percent viac",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Абсолютне число — кількість; відносне — частка чи порівняння з іншим числом.",
+          "order": 12
+        },
+        {
+          "id": "b2-u11-l07-statistiky-ex13",
+          "lessonId": "b2-u11-l07-statistiky",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Ти спокійно уточнюєш.",
+          "dialogue": [
+            {
+              "speaker": "Kolega",
+              "sk": "Priemerná mzda je vraj 1 500 €. Takže väčšina ľudí zarába 1 500 €, nie?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Nie celkom. Priemer zvyšujú vysoké platy, lepšie je pozrieť sa na medián.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Áno, priemer znamená, že tak zarába väčšina.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Áno, a kto zarába menej, je výnimka.",
+              "correct": false
+            }
+          ],
+          "explanation": "Середнє ≠ «більшість»: медіана краще показує типову зарплату.",
+          "order": 13,
+          "wordIds": [
+            "b2-u11-l07-statistiky-w01",
+            "b2-u11-l07-statistiky-w02"
+          ]
+        },
+        {
+          "id": "b2-u11-l07-statistiky-ex14",
+          "lessonId": "b2-u11-l07-statistiky",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи: «Кореляція — це не причиново-наслідковий зв’язок.»",
+          "tokens": [
+            ".",
+            "je",
+            "nie",
+            "súvislosť",
+            "príčinná",
+            "Korelácia"
+          ],
+          "correctOrder": [
+            "Korelácia",
+            "nie",
+            "je",
+            "príčinná",
+            "súvislosť",
+            "."
+          ],
+          "explanation": "Príčinná súvislosť — причиново-наслідковий зв’язок.",
+          "order": 14,
+          "wordIds": [
+            "b2-u11-l07-statistiky-w06"
+          ]
+        },
+        {
+          "id": "b2-u11-l07-statistiky-ex15",
+          "lessonId": "b2-u11-l07-statistiky",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай опис графіка.",
+          "text": "Graf v článku porovnáva podporu dvoch strán. Os Y nezačína na nule, ale na 48 percentách. Strana A má 50 percent, strana B 52 percent. Na grafe vyzerá stĺpec strany B dvakrát vyšší ako stĺpec strany A.",
+          "statements": [
+            {
+              "sk": "Реальна різниця між партіями — два відсоткові пункти.",
+              "correct": true
+            },
+            {
+              "sk": "Вісь, що не починається з нуля, візуально перебільшує різницю.",
+              "correct": true
+            },
+            {
+              "sk": "Партія B має вдвічі більшу підтримку, ніж партія A.",
+              "correct": false
+            },
+            {
+              "sk": "Варто подивитися на похибку опитування.",
+              "correct": true
+            }
+          ],
+          "explanation": "52 і 50 % відрізняються лише на 2 пункти; «удвічі вищий» стовпчик — ефект обрізаної осі.",
+          "order": 15
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Числа на нараді",
+        "description": "На нараді колега Мартін показує статтю: «Kriminalita v meste stúpla o 50 percent!» Ти (жінка, Ірина) з’ясовуєш, що за цим стоїть.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Яке запитання поставиш насамперед?",
+            "options": [
+              {
+                "sk": "Kto napísal ten článok? Je pekný?",
+                "correct": false
+              },
+              {
+                "sk": "Prečo o tom hovoríš?",
+                "correct": false
+              },
+              {
+                "sk": "Aké sú absolútne čísla? Z koľkých prípadov na koľko?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "У тексті: «з 4 до 6 крадіжок велосипедів за рік». Як це оцінити?",
+            "options": [
+              {
+                "text": "відносне число звучить драматично, але абсолютно це лише два випадки",
+                "correct": true
+              },
+              {
+                "text": "ці дані неможливо перевірити",
+                "correct": false
+              },
+              {
+                "text": "місто стало небезпечним",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Як поясниш колегам?",
+            "options": [
+              {
+                "sk": "Ide o nárast zo štyri na šesť prípadov, teda o dva prípady.",
+                "correct": false
+              },
+              {
+                "sk": "Ide o nárast zo štyroch na šesť prípadov, teda o dva prípady.",
+                "correct": true
+              },
+              {
+                "sk": "Ide o nárast zo štyroch na šesť prípadov, teda o päťdesiat prípadov.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Мартін заперечує: «Але це опитування на сайті, 70 % людей бояться!» Що відповіси?",
+            "options": [
+              {
+                "sk": "Webová anketa nie je reprezentatívna, hlasovať mohol ktokoľvek.",
+                "correct": true
+              },
+              {
+                "sk": "Webová anketa nie je reprezentatívny, hlasovať mohol ktokoľvek.",
+                "correct": false
+              },
+              {
+                "sk": "Webová anketa je vždy presná.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти не даєш числам себе обдурити. Далі — думка й факт: як відрізнити, що автор знає, а що лише вважає."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти не даєш числам себе обдурити. Далі — думка й факт: як відрізнити, що автор знає, а що лише вважає.",
+        "nowYouKnow": [
+          "priemer — чутливий до крайнощів, medián — типова людина",
+          "percento ≠ percentuálny bod; шукай absolútne čísla за relatívnymi",
+          "reprezentatívna vzorka, štatistická chyba, korelácia ≠ príčina, вісь з нуля",
+          "päť percent / tridsať percent + дієслово в однині сер. роду"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 15,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u11-l08-nazor-vs-fakt",
+          "title": "Думка й факт"
+        }
+      }
+    }
+  ]
+}
