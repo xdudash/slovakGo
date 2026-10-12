@@ -1093,7 +1093,7 @@ function LessonScreen() {
   })();
 
   return (
-    <main className="lesson-screen">
+    <main className={`lesson-screen${phase === "final" ? " lesson-screen--final" : ""}`}>
       <div className="lesson-top">
         <button type="button" onClick={() => navigate("/app/path")} aria-label="Назад"><ChevronLeft /></button>
         <ProgressBar value={percent} />

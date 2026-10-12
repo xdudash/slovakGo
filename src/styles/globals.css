@@ -7304,3 +7304,16 @@ textarea:focus,
 }
 
 .auth-card-heading { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 1rem; }
+
+/* A final scenario has an introduction and a separate question card. Both must
+   flow together instead of putting the introduction in the exercise's 1fr row. */
+.lesson-screen--final {
+  grid-template-rows: none;
+  grid-auto-rows: max-content;
+  align-content: start;
+}
+.lesson-screen--final > * { width: 100%; max-width: 680px; min-width: 0; justify-self: center; }
+.lesson-screen--final .final-situation-intro { display: grid; gap: 12px; }
+.final-situation-title, .final-situation-description { margin: 0; }
+.final-situation-description { line-height: 1.5; }
+.lesson-screen--final > .lesson-feedback:empty { display: none; }
