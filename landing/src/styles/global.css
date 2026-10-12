@@ -1163,6 +1163,7 @@ p { margin: 0; }
 }
 
 .post-header h1 {
+  overflow-wrap: anywhere;
   font-size: clamp(1.8rem, 5vw, 2.8rem);
   font-weight: 900;
   color: var(--fg);
@@ -2999,3 +3000,5 @@ details.faq-accordion-item[open] summary::after {
 @media (prefers-reduced-motion: reduce) {
   .mkt-btn { transition: none; }
 }
+
+.post-cta .btn { max-width: 100%; white-space: normal; text-align: center; }
