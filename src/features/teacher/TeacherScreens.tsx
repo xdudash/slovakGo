@@ -62,16 +62,18 @@ function Lessons() {
       <PageHeader title={t("teacher.lessons.title")} action={<Button onClick={() => navigate("/teacher/lessons/new")}>{t("teacher.lessons.new")}</Button>} />
       <div className="lesson-list">
         {data.lessons.map((lesson) => (
-          <Card key={lesson.id} className="lesson-card">
+          <Card key={lesson.id} className="teacher-lesson-card">
             <div className="lesson-copy">
               <h3>{toPlainText(lesson.title)}</h3>
               <p>{lesson.level} · {toPlainText(lesson.topic)} · {lesson.words.length} {t("teacher.lessons.words")} · {lesson.exercises.length} {t("teacher.lessons.exercises")}</p>
             </div>
             <span className="status-pill">{lesson.isPublished ? t("teacher.lessons.published") : t("teacher.lessons.draft")}</span>
-            <Button variant="secondary" onClick={() => navigate(`/teacher/lessons/${lesson.id}/edit`)}>{t("teacher.lessons.edit")}</Button>
-            <Button variant="ghost" onClick={() => upsertLesson({ ...lesson, id: `${lesson.id}-copy-${Date.now()}`, title: `${toPlainText(lesson.title)} ${t("teacher.lessons.copy")}`, order: data.lessons.length + 1 })}>{t("teacher.lessons.copy")}</Button>
-            <Button variant="ghost" onClick={() => upsertLesson({ ...lesson, isPublished: !lesson.isPublished })}>{lesson.isPublished ? t("teacher.lessons.unpublish") : t("teacher.lessons.publish")}</Button>
-            <Button variant="danger" onClick={() => deleteLesson(lesson.id)}>{t("teacher.lessons.delete")}</Button>
+            <div className="teacher-lesson-actions">
+              <Button variant="secondary" onClick={() => navigate(`/teacher/lessons/${lesson.id}/edit`)}>{t("teacher.lessons.edit")}</Button>
+              <Button variant="ghost" onClick={() => upsertLesson({ ...lesson, id: `${lesson.id}-copy-${Date.now()}`, title: `${toPlainText(lesson.title)} ${t("teacher.lessons.copy")}`, order: data.lessons.length + 1 })}>{t("teacher.lessons.copy")}</Button>
+              <Button variant="ghost" onClick={() => upsertLesson({ ...lesson, isPublished: !lesson.isPublished })}>{lesson.isPublished ? t("teacher.lessons.unpublish") : t("teacher.lessons.publish")}</Button>
+              <Button variant="danger" onClick={() => deleteLesson(lesson.id)}>{t("teacher.lessons.delete")}</Button>
+            </div>
           </Card>
         ))}
       </div>

@@ -1070,7 +1070,7 @@ p { margin: 0; }
 
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   gap: 24px;
 }
 
@@ -1862,7 +1862,7 @@ details.faq-accordion-item[open] summary::after {
 }
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 24px;
 }
 .testimonial-card {
@@ -1998,7 +1998,7 @@ details.faq-accordion-item[open] summary::after {
 }
 .pricing-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 28px;
   align-items: stretch;
 }
@@ -2091,7 +2091,7 @@ details.faq-accordion-item[open] summary::after {
   max-width: 1140px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 24px;
 }
 .blog-teaser-card {

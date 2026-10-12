@@ -2079,7 +2079,7 @@ textarea:focus,
 @media (min-width: 760px) {
   .auth-screen {
     max-width: 980px;
-    grid-template-columns: 1fr 420px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
     align-items: center;
   }
 
@@ -2100,6 +2100,7 @@ textarea:focus,
     width: min(calc(100vw - 36px), 1180px);
     max-width: none;
     height: calc(100dvh - 36px);
+    min-height: 0;
     margin-top: 18px;
     margin-bottom: 18px;
     border-radius: 28px;
@@ -2223,10 +2224,11 @@ textarea:focus,
     flex-wrap: wrap;
   }
 
-  .lesson-card,
-  .level-row {
+  .lesson-card {
     grid-template-columns: 44px minmax(0, 1fr);
   }
+
+  .level-row { grid-template-columns: minmax(0, 1fr); }
 
   .level-row .btn {
     grid-column: 1 / -1;
@@ -7265,3 +7267,40 @@ textarea:focus,
     grid-column: auto;
   }
 }
+
+/* Responsive workspace: size controls against the available content column,
+   which is narrower than the viewport when the desktop sidebar is visible. */
+.app-content { min-width: 0; container-type: inline-size; container-name: workspace; }
+.page-content, .auth-card, .lesson-copy { min-width: 0; }
+.admin-user-info { overflow-wrap: anywhere; }
+.teacher-lesson-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; align-items: start; }
+.teacher-lesson-card .lesson-copy h3 { margin: 0 0 8px; overflow-wrap: anywhere; }
+.teacher-lesson-card .lesson-copy p { margin: 0; color: var(--muted); }
+.teacher-lesson-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px; }
+.teacher-lesson-actions .btn { white-space: normal; }
+@container workspace (max-width: 720px) {
+  .admin-user-row { flex-wrap: wrap; align-items: flex-start; row-gap: 10px; }
+  .admin-user-avatar { order: 1; }
+  .admin-user-info { order: 2; flex: 1 1 160px; }
+  .admin-user-badges { order: 3; flex-wrap: wrap; }
+  .admin-user-stats { order: 4; flex-direction: row; gap: 10px; }
+  .admin-user-actions { order: 5; flex: 1 1 100%; }
+}
+@media (min-width: 760px) {
+  #root:has(.app-frame) { display: flow-root; }
+  .bottom-nav { min-height: 0; overflow-y: auto; }
+  .brand-panel > * { max-width: 100%; }
+  .brand-panel::after { top: 290px; bottom: auto; width: 240px; height: 440px; right: 28px; }
+}
+@media (max-width: 919px) {
+  .auth-screen:has(.brand-panel) { max-width: 520px; grid-template-columns: minmax(0, 1fr); }
+  .brand-panel { min-height: 0; }
+  .brand-panel::after { display: none; }
+  .brand-panel > * { max-width: 100%; }
+}
+@media (max-width: 480px) {
+  .teacher-lesson-card { grid-template-columns: minmax(0, 1fr); }
+  .teacher-lesson-actions { grid-column: 1; }
+}
+
+.auth-card-heading { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 1rem; }

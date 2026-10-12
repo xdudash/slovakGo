@@ -32,7 +32,7 @@ function AuthShell({ title, text, children }: { title: string; text: string; chi
         <p>{text}</p>
       </section>
       <Card className="auth-card">
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
+        <div className="auth-card-heading">
           <h2 style={{ margin: 0 }}>{title}</h2>
           <div style={{ display: "flex", gap: "0.25rem" }}>
             {langOptions.map((opt) => (
