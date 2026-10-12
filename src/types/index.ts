@@ -409,6 +409,8 @@ export interface LessonAudioAsset {
 }
 
 export interface Lesson {
+  /** API supplied metadata only; teaching content requires an authorized refresh. */
+  contentLocked?: boolean;
   id: string;
   level: UserLevel;
   title: LocalizedText;
@@ -486,6 +488,7 @@ export interface Achievement {
 }
 
 export interface Progress {
+  freePreviewLevel?: UserLevel;
   userId: string;
   currentLevel: UserLevel;
   currentLessonId?: string;

@@ -1,3 +1,6 @@
+import { ensureActivity } from "../_lib/activity";
+import { randomUUID } from "node:crypto";
+import { ensureEmailPreferences, unsubscribeUrl } from "../_lib/emailPreferences";
 /**
  * Vercel Cron — lifecycle emails (runs once a day).
  *
@@ -48,14 +51,16 @@ export function pickEmail(c: Candidate, sent: Set<EmailKind>): EmailKind | null 
 
 function compose(kind: EmailKind, c: Candidate): { subject: string; html: string } {
   const base = appUrl();
+  const unsubscribe = unsubscribeUrl(c.id);
   switch (kind) {
     case "d0_welcome":
       return {
         subject: "Вітаємо в SlovakGO 🇸🇰",
         html: renderEmail({
+          unsubscribeUrl: unsubscribe,
           title: "Почнімо зі словацької для життя",
           paragraphs: [
-            `Привіт, ${c.name}! Перший розділ уже відкритий — без оплати.`,
+            `Привіт, ${c.name}! Перші 10 уроків уже відкриті — без оплати.`,
             "Один урок займає близько чотирьох хвилин. Після нього ти вже зможеш сказати перші фрази в магазині чи в лікарні.",
           ],
           ctaText: "Пройти перший урок",
@@ -66,6 +71,7 @@ function compose(kind: EmailKind, c: Candidate): { subject: string; html: string
       return {
         subject: "Твій перший урок за 4 хвилини",
         html: renderEmail({
+          unsubscribeUrl: unsubscribe,
           title: "Найважчий крок — почати",
           paragraphs: [
             `${c.name}, перший урок ще чекає на тебе.`,
@@ -79,6 +85,7 @@ function compose(kind: EmailKind, c: Candidate): { subject: string; html: string
       return {
         subject: "5 фраз, які рятують у лікаря",
         html: renderEmail({
+          unsubscribeUrl: unsubscribe,
           title: "Забери п'ять фраз для лікаря",
           paragraphs: [
             "Bolí ma hlava — у мене болить голова.",
@@ -96,6 +103,7 @@ function compose(kind: EmailKind, c: Candidate): { subject: string; html: string
       return {
         subject: "Тиждень зі словацькою — ось твій результат",
         html: renderEmail({
+          unsubscribeUrl: unsubscribe,
           title: "Тиждень позаду",
           paragraphs: [
             `${c.name}, за цей тиждень ти пройшов ${c.completedLessons} урок(ів) і набрав ${c.xpTotal} XP${c.streakDays > 1 ? `, серія — ${c.streakDays} днів` : ""}.`,
@@ -119,10 +127,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     return;
   }
   if (!process.env.RESEND_API_KEY) {
-    res.status(200).json({ ok: true, skipped: "RESEND_API_KEY not configured" });
+    res.status(503).json({ ok: false, error: "RESEND_API_KEY not configured" });
     return;
   }
 
+  await exec("CREATE TABLE IF NOT EXISTS lifecycle_runs (id TEXT PRIMARY KEY, started_at TEXT NOT NULL, finished_at TEXT, sent INTEGER NOT NULL DEFAULT 0, failed INTEGER NOT NULL DEFAULT 0)");
+  const runId = randomUUID();
+  await exec("INSERT INTO lifecycle_runs(id, started_at) VALUES (?, ?)", [runId, nowIso()]);
+  await ensureEmailPreferences();
+  await ensureActivity();
   await exec(
     `CREATE TABLE IF NOT EXISTS email_log (
        user_id TEXT NOT NULL,
@@ -137,14 +150,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   const since = new Date(now - 9 * 86_400_000).toISOString().replace(/\.\d{3}Z$/, "Z");
   const rows = await query(
     `SELECT u.id, u.email, u.name_text, u.created_at,
-            p.completed_j, p.last_prac, p.streak_days, p.xp_total
-     FROM users u JOIN progress p ON p.user_id = u.id
-     WHERE u.is_blocked = 0 AND u.role = 'student' AND u.created_at >= ?`,
+            p.completed_j, p.last_prac, p.streak_days, p.xp_total,
+            (SELECT MAX(last_active_at) FROM activity_sessions WHERE user_id=u.id) AS last_active_at
+     FROM users u JOIN progress p ON p.user_id = u.id JOIN email_preferences ep ON ep.user_id = u.id
+     WHERE ep.marketing_consent = 1 AND u.is_blocked = 0 AND u.role = 'student' AND u.created_at >= ?`,
     [since]
   );
 
   const counts: Record<string, number> = {};
   let sentTotal = 0;
+  let failed = 0;
 
   for (const row of rows) {
     const userId = String(row.id);
@@ -157,7 +172,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       email: String(row.email),
       name: String(row.name_text || "друже"),
       daysSinceSignup,
-      inactiveDays: row.last_prac ? daysBetween(String(row.last_prac), now) : daysSinceSignup,
+      inactiveDays: row.last_active_at || row.last_prac ? daysBetween([String(row.last_active_at ?? ""),String(row.last_prac ?? "")].sort().at(-1)!, now) : daysSinceSignup,
       completedLessons: safeJson<string[]>(String(row.completed_j ?? "[]"), []).length,
       streakDays: Number(row.streak_days ?? 0),
       xpTotal: Number(row.xp_total ?? 0),
@@ -167,13 +182,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (!kind) continue;
 
     const { subject, html } = compose(kind, candidate);
-    const ok = await sendEmail(candidate.email, subject, html);
-    if (!ok) continue;
+    const consent = await query("SELECT user_id FROM email_preferences WHERE user_id = ? AND marketing_consent = 1", [userId]);
+    if (!consent.length) continue;
+    const ok = await sendEmail(candidate.email, subject, html, { idempotencyKey: `lifecycle/${userId}/${kind}`, unsubscribeUrl: unsubscribeUrl(userId) });
+    if (!ok) { failed++; continue; }
 
     await exec("INSERT OR IGNORE INTO email_log (user_id, kind, sent_at) VALUES (?, ?, ?)", [userId, kind, nowIso()]);
     counts[kind] = (counts[kind] ?? 0) + 1;
     sentTotal++;
   }
 
-  res.status(200).json({ ok: true, scanned: rows.length, sent: sentTotal, byKind: counts });
+  await exec("UPDATE lifecycle_runs SET finished_at=?,sent=?,failed=? WHERE id=?", [nowIso(),sentTotal,failed,runId]);
+  res.status(failed ? 502 : 200).json({ ok: failed === 0, scanned: rows.length, sent: sentTotal, failed, byKind: counts });
 }

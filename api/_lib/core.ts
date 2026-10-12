@@ -182,7 +182,9 @@ export async function ensureProgress(uid: string): Promise<Row> {
  * sub_status stays truthful for the admin panel.
  */
 function effectiveSubStatus(r: Row): string {
-  const stored = String(r.sub_status);
+  let stored = String(r.sub_status);
+  if (stored === "trial" && !(Date.parse(String(r.trial_ends)) > Date.now())) stored = "expired";
+  if (stored === "plus" && r.sub_expires_at && !(Date.parse(String(r.sub_expires_at)) > Date.now())) stored = "expired";
   if (stored === "plus" || stored === "trial" || stored === "past_due") return stored;
   const bonusUntil = String(r.bonus_until ?? "");
   return bonusUntil && Date.parse(bonusUntil) > Date.now() ? "plus" : stored;
@@ -207,7 +209,7 @@ export function rowToUser(r: Row): Record<string, unknown> {
     hasUsedTrial:       Boolean(r.trial_used) || Boolean(r.stripe_customer_id),
     authProvider:       r.google_sub && !String(r.pw_hash ?? "") ? "google" : "password",
     createdAt:          String(r.created_at),
-    lastActiveAt:       String(r.updated_at),
+    lastActiveAt:       r.last_active_at ?? null,
     updatedAt:          String(r.updated_at),
   };
 }

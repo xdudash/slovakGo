@@ -8,7 +8,6 @@ function setLang(lang) {
  document.querySelector('meta[name="description"]')?.setAttribute('content',copy[currentLang].lead);
  document.querySelectorAll('[data-t]').forEach(el => { const value = copy[currentLang][el.dataset.t]; if (typeof value === 'string') el.innerHTML = value; });
  document.querySelectorAll('[data-alt]').forEach(el => { el.alt = copy[currentLang][el.dataset.alt] || ''; });
- document.querySelectorAll('[data-alt]').forEach(el => { el.alt = copy[currentLang][el.dataset.alt] || ''; });
  document.querySelectorAll('[data-lang]').forEach(button => { const active = button.dataset.lang === currentLang; button.classList.toggle('active', active); if (button.tagName === 'A') { if (active) button.setAttribute('aria-current','page'); else button.removeAttribute('aria-current'); } else button.setAttribute('aria-pressed', String(active)); });
  document.querySelector('.lesson-feedback').textContent = '';
  document.querySelector('.lesson-next').hidden = true;
@@ -38,4 +37,24 @@ if ('IntersectionObserver' in window) {
   sticky.classList.toggle('is-visible', !heroVisible && !footerVisible);
  }, {threshold:0});
  observer.observe(document.querySelector('.hero')); observer.observe(document.querySelector('.footer'));
+}
+
+// Native details works with keyboard and without JavaScript.
+document.querySelectorAll('.mobile-menu a').forEach(link => link.addEventListener('click', () => {
+ document.querySelector('.mobile-menu').open = false;
+}));
+document.addEventListener('click', event => {
+ const menu = document.querySelector('.mobile-menu');
+ if (menu && !menu.contains(event.target)) menu.open = false;
+});
+document.addEventListener('keydown', event => {
+ if (event.key === 'Escape') document.querySelector('.mobile-menu').open = false;
+});
+if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+ const moments = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+   if (entry.isIntersecting) { entry.target.classList.add('in-view'); moments.unobserve(entry.target); }
+  });
+ }, { threshold: .15 });
+ document.querySelectorAll('.story-heading, .study-layout, .level-grid').forEach(el => moments.observe(el));
 }

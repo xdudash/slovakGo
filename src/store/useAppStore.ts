@@ -15,7 +15,7 @@ interface AppStore {
   syncMessage?: string;
   lastSyncedAt?: string;
   login: (email: string, password: string) => Promise<User | null>;
-  register: (payload: { name: string; email: string; password: string; goal?: string }) => Promise<User | null>;
+  register: (payload: { name: string; email: string; password: string; goal?: string; marketingConsent?: boolean }) => Promise<User | null>;
   logout: () => void;
   updateUser: (patch: Partial<User>) => void;
   completeOnboarding: (goal: string, level: UserLevel) => void;
@@ -209,7 +209,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
 
     const tentativeId = `user-${crypto.randomUUID()}`;
     try {
-      const { user: raw } = await apiClient.register(tentativeId, payload.name.trim(), payload.email, payload.password, payload.goal);
+      const { user: raw } = await apiClient.register(tentativeId, payload.name.trim(), payload.email, payload.password, payload.goal, payload.marketingConsent);
       const registeredUser = raw as User;
       const userId = registeredUser.id;
       let data = get().data;
@@ -343,7 +343,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
     data = withSync(data, currentUserId, "profile.update", { goal, level, onboardingDone: true });
     save(data);
     set({ data });
-    get().drainSync().catch(() => undefined);
+    get().drainSync().then(() => get().refreshUser()).catch(() => undefined);
   },
 
   setLevel(level) {
@@ -567,6 +567,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
     const now = new Date().toISOString();
     set({ data, syncMessage: "✓ Синхронізовано", lastSyncedAt: now });
     setTimeout(() => set({ syncMessage: undefined }), 3000);
+    if (!get().data.syncQueue.some(m => m.userId === currentUserId)) await get().refreshUser();
   },
 
   resetLocal() {

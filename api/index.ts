@@ -1,3 +1,6 @@
+import { handleIntegrationHealth } from "./_lib/integrations";
+import { handleEmailPreferences, handleUnsubscribe } from "./_lib/emailPreferences";
+import { handleActivity } from "./_lib/activity";
 /**
  * SlovakGO — Vercel Serverless API Router
  * Delegates logic to /api/_lib/ modules.
@@ -59,6 +62,7 @@ async function handlePing(res: VercelResponse): Promise<void> {
 
 export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   setCors(req, res);
+  res.setHeader("Cache-Control", "no-store");
   if (req.method === "OPTIONS") { res.status(204).end(); return; }
 
   const rawBody  = await readRaw(req);
@@ -72,6 +76,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   try {
     if (meth === "GET"  && (route === "/" || route === "/ping")) return await handlePing(res);
     
+    if (["GET", "POST"].includes(meth) && route === "/email/unsubscribe") return await handleUnsubscribe(req, res);
+    if (meth === "GET" && route === "/user/email-preferences") return await handleEmailPreferences(req, res);
+    if (meth === "POST" && route === "/user/email-preferences") return await handleEmailPreferences(req, res, body);
     // Auth Routes
     if (meth === "POST" && route === "/auth/register")     return await handleRegister(req, res, body);
     if (meth === "POST" && route === "/auth/login")        return await handleLogin(req, res, body);
@@ -88,6 +95,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "POST" && route === "/sync/push")         return await handleSyncPush(req, res, body);
     if (meth === "GET"  && route === "/lessons")           return await handleLessonsPull(req, res);
     
+    if (meth === "POST" && route === "/user/activity") return await handleActivity(req, res, body);
     // User Routes
     if (meth === "POST" && route === "/user/email")        return await handleUserEmail(req, res, body);
     if (meth === "POST" && route === "/user/password")     return await handleUserPassword(req, res, body);
@@ -105,6 +113,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "POST" && route === "/billing/portal")    return await handleBillingPortal(req, res);
     if (meth === "POST" && (route === "/billing/webhook" || route === "/stripe/webhook")) return await handleBillingWebhook(req, res, rawBody);
     
+    if (meth === "GET" && route === "/admin/integrations") return await handleIntegrationHealth(req, res);
     // Admin Routes
     if (meth === "GET"  && route === "/teacher/stats")          return await handleTeacherStats(req, res);
     if (meth === "GET"  && route === "/admin/stats")            return await handleAdminStats(req, res);
@@ -117,6 +126,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
     res.status(404).json({ ok: false, error: "Not found" });
   } catch (err) {
+    if (err instanceof Error && err.name === "ConcurrentMutationError") { res.status(409).json({ ok: false, error: "Повторіть синхронізацію" }); return; }
     console.error("[API Error]", route, err);
     res.status(500).json({ ok: false, error: "Internal server error" });
   }

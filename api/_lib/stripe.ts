@@ -16,6 +16,27 @@ const getStripe = () => _stripe ??= new Stripe(process.env.STRIPE_SECRET_KEY ?? 
  */
 export const TRIAL_DAYS = 3;
 
+export function validPrice(price: Pick<Stripe.Price, "active" | "currency" | "unit_amount" | "recurring" | "billing_scheme">, plan: string): boolean {
+  return price.active && price.currency === "eur" && price.billing_scheme === "per_unit"
+    && price.unit_amount === (plan === "yearly" ? 2000 : 300)
+    && price.recurring?.interval === (plan === "yearly" ? "year" : "month")
+    && price.recurring.interval_count === 1 && price.recurring.usage_type === "licensed";
+}
+export async function inspectBillingPrice(plan: "monthly" | "yearly") {
+  const id = plan === "yearly" ? process.env.STRIPE_PRICE_ID_YEARLY : process.env.STRIPE_PRICE_ID;
+  if (!id || !process.env.STRIPE_SECRET_KEY) return { plan, verified: false, error: "not_configured" };
+  try {
+    const price = await getStripe().prices.retrieve(id);
+    return { plan, verified: validPrice(price, plan), amount: price.unit_amount, currency: price.currency, interval: price.recurring?.interval };
+  } catch { return { plan, verified: false, error: "unreachable_or_unauthorized" }; }
+}
+function subscriptionPriceText(sub: Stripe.Subscription): string {
+  const price = sub.items.data[0]?.price;
+  if (!price || price.unit_amount === null) return "згідно з умовами оформленої підписки";
+  const amount = new Intl.NumberFormat("uk-UA", { style: "currency", currency: price.currency }).format(price.unit_amount / 100);
+  return `${amount} / ${price.recurring?.interval === "year" ? "рік" : "місяць"}`;
+}
+
 /** Free Plus days the referrer earns when an invited learner actually pays. */
 export const REFERRAL_BONUS_DAYS = 14;
 
@@ -33,9 +54,12 @@ export async function cancelBillingForDeletedUser(uid: string): Promise<void> {
 
 export async function handleBillingCheckout(req: VercelRequest, res: VercelResponse, body: any): Promise<void> {
   const uid = await requireUid(req, res); if (!uid) return;
+  if (body?.acceptTerms !== true) return fail(res, "Підтвердьте умови підписки", 422);
   const planType = body?.planType === "yearly" ? "yearly" : "monthly";
   const priceId = planType === "yearly" ? process.env.STRIPE_PRICE_ID_YEARLY : process.env.STRIPE_PRICE_ID;
   if (!priceId) return fail(res, `Stripe price ID for ${planType} not configured`, 503);
+  const price = await getStripe().prices.retrieve(priceId);
+  if (!validPrice(price, planType)) return fail(res, "Тариф оплати не відповідає заявленій ціні. Зверніться до підтримки.", 503);
   
   await ensureCol("users", "sub_expires_at", "TEXT");
   await ensureCol("users", "stripe_customer_id", "TEXT");
@@ -162,10 +186,10 @@ export async function handleBillingWebhook(req: VercelRequest, res: VercelRespon
         String(row.email),
         "Пробний період закінчується — SlovakGO Plus",
         renderEmail({
-          title: "Через 3 дні почнеться підписка",
+          title: "Пробний доступ завершується",
           paragraphs: [
             `Привіт, ${String(row.name_text)}! Твій пробний доступ до SlovakGO Plus закінчується ${endsAt}.`,
-            "Після цього ми спишемо €9,99 за перший місяць, і всі рівні, практика та словник залишаться відкритими.",
+            `Після цього підписка коштуватиме ${subscriptionPriceText(sub)}. Усі рівні, практика та словник залишаться відкритими.`,
             "Якщо продовжувати не плануєш — скасуй підписку в кабінеті, це займе хвилину і жодних списань не буде.",
           ],
           ctaText: "Керувати підпискою",

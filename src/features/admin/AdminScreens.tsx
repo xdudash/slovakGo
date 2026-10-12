@@ -1,3 +1,4 @@
+import { IntegrationHealth } from "../../components/IntegrationHealth";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Route, Routes, useNavigate, useParams } from "react-router-dom";
 import {
@@ -56,6 +57,7 @@ function Dashboard() {
   return (
     <main className="page-content">
       <PageHeader title="Адмін-панель" subtitle="SlovakGO MVP" />
+      <IntegrationHealth />
       {summaryError && <p className="error-text">Не вдалося завантажити серверну статистику.</p>}
       <div className="admin-stats-grid">
         <Card className="admin-stat-card">
@@ -123,30 +125,7 @@ interface AdminServerUser {
   subscriptionStatus: string; isBlocked: boolean;
   createdAt: string; lastSeenAt: string | null;
   xpTotal: number; streakDays: number; completedCount: number;
-}
-
-function exportUsersCSV(users: AdminServerUser[]) {
-  const BOM = "﻿";
-  const headers = ["Ім'я", "Email", "Роль", "Рівень", "Підписка", "XP", "Серія", "Уроків завершено", "Остання активність"];
-  const rows = users.map((u) => [
-    `"${u.name.replace(/"/g, '""')}"`,
-    u.email,
-    u.role,
-    u.level,
-    u.subscriptionStatus,
-    u.xpTotal,
-    u.streakDays,
-    u.completedCount,
-    u.lastSeenAt ? new Date(u.lastSeenAt).toLocaleDateString("uk-UA") : "—",
-  ].join(","));
-  const csv = BOM + [headers.join(","), ...rows].join("\n");
-  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement("a");
-  a.href     = url;
-  a.download = `users-${new Date().toISOString().slice(0, 10)}.csv`;
-  a.click();
-  URL.revokeObjectURL(url);
+  activeSeconds: number; sessionCount: number; visits: number; marketingConsent: boolean;
 }
 
 const LEVEL_ORDER: UserLevel[] = ["A0", "A1", "A2", "B1", "B2", "C1"];
@@ -638,22 +617,35 @@ function UsersScreen() {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [roleFilter, setRoleFilter] = useState<UserRole | "all">("all");
+  const requestSequence = useRef(0);
   const [users, setUsers] = useState<AdminServerUser[]>([]);
+  const [subFilter, setSubFilter] = useState("all");
+  const [activityFilter, setActivityFilter] = useState("all");
+  const [progressFilter, setProgressFilter] = useState("all");
+  const [page, setPage] = useState(0);
+  const [exporting, setExporting] = useState(false);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   function fetchUsers() {
+    const sequence = ++requestSequence.current;
     setLoading(true);
     setError(null);
-    apiClient.getAdminUsers({ search, role: roleFilter === "all" ? undefined : roleFilter, limit: 200 })
-      .then((d) => { setUsers(d.users); setTotal(d.total); setError(null); })
-      .catch(() => { setUsers([]); setTotal(0); setError("Не вдалося завантажити користувачів."); })
-      .finally(() => setLoading(false));
+    apiClient.getAdminUsers({ search, role: roleFilter, sub: subFilter, activity: activityFilter, progress: progressFilter, offset: page * 100, limit: 100 })
+      .then((d) => { if (sequence === requestSequence.current) { setUsers(d.users); setTotal(d.total); setError(null); } })
+      .catch(() => { if (sequence === requestSequence.current) { setUsers([]); setTotal(0); setError("Не вдалося завантажити користувачів."); } })
+      .finally(() => { if (sequence === requestSequence.current) setLoading(false); });
   }
 
-  useEffect(() => { fetchUsers(); }, [search, roleFilter]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { fetchUsers(); }, [search, roleFilter, subFilter, activityFilter, progressFilter, page]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  async function exportCSV(extra: Record<string, string> = {}) {
+    setExporting(true); setError(null);
+    try { await apiClient.exportAdminUsers({ search, role: roleFilter, sub: subFilter, activity: activityFilter, progress: progressFilter, ...extra }); }
+    catch (e) { setError((e as Error).message); }
+    finally { setExporting(false); }
+  }
   async function patchUser(id: string, patch: Parameters<typeof apiClient.directAdminUpdateUser>[1]) {
     setError(null);
     try {
@@ -676,23 +668,31 @@ function UsersScreen() {
       <div className="admin-toolbar">
         <div className="admin-search-box">
           <Search size={15} />
-          <input placeholder="Пошук за ім'ям або email…" value={search} onChange={(e) => setSearch(e.target.value)} />
+          <input placeholder="Пошук за ім'ям або email…" value={search} onChange={(e) => { setSearch(e.target.value); setPage(0); }} />
         </div>
         <div className="admin-toolbar-right">
-          <Button variant="secondary" onClick={() => exportUsersCSV(users)}>
-            <Download size={15} /> Експорт CSV
+          <Button variant="secondary" disabled={exporting} onClick={() => exportCSV()}>
+            <Download size={15} /> Експорт усього списку CSV
           </Button>
+          <Button variant="secondary" disabled={exporting} onClick={() => exportCSV({ search: "", role: "all", sub: "all", activity: "inactive", progress: "all" })}>Усі неактивні · CSV</Button>
+          <Button variant="secondary" disabled={exporting} onClick={() => exportCSV({ search: "", role: "all", sub: "all", activity: "inactive", progress: "all", marketing: "consented" })}>Неактивні зі згодою · CSV</Button>
         </div>
       </div>
+      <p>Неактивні: без активності щонайменше 7 днів. Для розсилки використовуйте список зі згодою.</p>
       <div className="filter-row" style={{ marginBottom: 12 }}>
         {(["all", "student", "teacher", "admin"] as const).map((r) => (
           <button key={r} type="button" className={`chip chip--sm ${roleFilter === r ? "active" : ""}`}
-            onClick={() => setRoleFilter(r)}>
+            onClick={() => { setRoleFilter(r); setPage(0); }}>
             {r === "all" ? "Всі" : r}
           </button>
         ))}
       </div>
 
+      <div className="filter-row">
+        <label>Підписка <select value={subFilter} onChange={e => { setSubFilter(e.target.value); setPage(0); }}>{["all", "free", "trial", "plus", "past_due", "expired", "cancelled"].map(v => <option key={v} value={v}>{v === "all" ? "Усі" : v}</option>)}</select></label>
+        <label>Активність <select value={activityFilter} onChange={e => { setActivityFilter(e.target.value); setPage(0); }}><option value="all">Усі</option><option value="active">Активні за 7 днів</option><option value="inactive">Неактивні 7+ днів</option></select></label>
+        <label>Прогрес <select value={progressFilter} onChange={e => { setProgressFilter(e.target.value); setPage(0); }}><option value="all">Усі</option><option value="none">0 уроків</option><option value="started">1–9 уроків</option><option value="ten_plus">10+ уроків</option></select></label>
+      </div>
       {loading && <p style={{ color: "var(--muted)" }}>Завантаження…</p>}
       {error && (
         <Card className="form-stack">
@@ -716,7 +716,7 @@ function UsersScreen() {
             </div>
             <div className="admin-user-stats">
               <span>{u.xpTotal} XP</span>
-              <span>{u.streakDays}🔥</span>
+              <span>{u.completedCount} уроків · {Math.floor(u.activeSeconds / 60)} хв · {u.sessionCount} сеансів</span>
             </div>
             <div className="admin-user-actions" onClick={(e) => e.stopPropagation()}>
               <button type="button" className="chip chip--sm"
@@ -738,6 +738,7 @@ function UsersScreen() {
           </div>
         ))}
       </div>
+      <div className="filter-row"><Button variant="secondary" disabled={page === 0 || loading} onClick={() => setPage(p => p - 1)}>Назад</Button><span>{page * 100 + (users.length ? 1 : 0)}–{page * 100 + users.length} із {total}</span><Button variant="secondary" disabled={(page + 1) * 100 >= total || loading} onClick={() => setPage(p => p + 1)}>Далі</Button></div>
     </main>
   );
 }
@@ -785,7 +786,8 @@ function UserDetail() {
 
   // Lesson completion rate vs published lessons at user's level
   const totalLessons = data.lessons.filter((l) => l.isPublished && l.level === u.level).length;
-  const completionPct = totalLessons > 0 ? Math.round((p.completedLessons.length / totalLessons) * 100) : 0;
+  const levelCompleted = data.lessons.filter(l => l.isPublished && l.level === u.level && p.completedLessons.includes(l.id)).length;
+  const completionPct = totalLessons > 0 ? Math.round((levelCompleted / totalLessons) * 100) : 0;
 
   // Most mistakes by lesson
   const mistakesByLesson: Record<string, number> = {};
@@ -825,6 +827,13 @@ function UserDetail() {
         <Card className="admin-stat-card"><strong>{(p.mistakes as unknown[]).length}</strong><span>Помилок</span></Card>
       </div>
 
+      <h3 className="admin-section-title">Активність у застосунку</h3>
+      <Card>
+        <p>Активний час: {Math.floor(detail.activity.activeSeconds / 60)} хв {detail.activity.activeSeconds % 60} с · Сеансів: {detail.activity.sessionCount} · Відвідувань: {detail.activity.visits}</p>
+        <p>Остання активність: {detail.activity.lastActiveAt ? new Date(detail.activity.lastActiveAt).toLocaleString("uk-UA") : "Ще не зафіксована"}</p>
+        <p>Новий сеанс після 5 хв бездіяльності. Час без взаємодії понад 60 с та приховані вкладки не враховуються. Дані збираються після оновлення застосунку.</p>
+        {detail.activity.sessions.map(s => <div key={s.id} className="admin-detail-row"><span>{new Date(s.started_at).toLocaleString("uk-UA")} · {s.ended_at ? "завершено" : "відкритий"}</span><strong>{Math.floor(s.active_seconds / 60)} хв {s.active_seconds % 60} с · {s.visits} відвід.</strong></div>)}
+      </Card>
       {/* XP bar chart — last 7 days */}
       <h3 className="admin-section-title">XP за останні 7 днів</h3>
       <Card>

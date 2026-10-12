@@ -131,6 +131,7 @@ export function Register() {
   const demoDoneParam = searchParams.get("demoDone") === "true";
 
   const [form, setForm] = useState({ email: "", password: "" });
+  const [marketingConsent, setMarketingConsent] = useState(false);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -149,6 +150,7 @@ export function Register() {
         name: defaultName,
         email: form.email,
         password: form.password,
+        marketingConsent,
       });
 
       if (user) {
@@ -186,8 +188,10 @@ export function Register() {
         </div>
       )}
       <form onSubmit={submit} className="form-stack" noValidate>
-        <Field label={t("auth.email")} type="email" value={form.email} autoFocus onChange={(event) => setForm({ ...form, email: event.target.value })} />
-        <Field label={t("auth.password")} type="password" value={form.password} onChange={(event) => setForm({ ...form, password: event.target.value })} />
+        <Field label={t("auth.email")} type="email" value={form.email} autoComplete="email" autoFocus onChange={(event) => setForm({ ...form, email: event.target.value })} />
+        <Field label={t("auth.password")} type="password" autoComplete="new-password" value={form.password} onChange={(event) => setForm({ ...form, password: event.target.value })} />
+        <p>Пароль: щонайменше 8 символів, велика й мала літера та цифра.</p>
+        <label><input type="checkbox" checked={marketingConsent} onChange={e => setMarketingConsent(e.target.checked)} /> Хочу отримувати поради, нагадування та новини SlovakGO поштою. Згода добровільна, відписка — у кожному листі.</label>
         {authError ? <p className="error-text">{authError}</p> : null}
         <Button type="submit" disabled={loading} loading={loading}>
           {loading

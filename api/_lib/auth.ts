@@ -1,3 +1,5 @@
+import { ensureActivity } from "./activity";
+import { ensureEmailPreferences, saveConsent } from "./emailPreferences";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import bcrypt from "bcryptjs";
 import { createHash, randomBytes, randomUUID, timingSafeEqual } from "node:crypto";
@@ -47,6 +49,7 @@ export async function handleRegister(req: VercelRequest, res: VercelResponse, bo
     [id, email, hash, name, goal || null, defS, now, now]
   );
   await ensureProgress(id);
+  await saveConsent(id, body.marketingConsent === true);
 
   const row = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [id]);
   if (!row) return fail(res, "Помилка реєстрації", 500);
@@ -221,6 +224,10 @@ export async function handleDeleteAccount(req: VercelRequest, res: VercelRespons
   await exec("DELETE FROM progress WHERE user_id = ?", [uid]);
   await exec("DELETE FROM fcm_tokens WHERE user_id = ?", [uid]);
   await exec("DELETE FROM sync_log WHERE user_id = ?", [uid]);
+  await ensureActivity();
+  await ensureEmailPreferences();
+  await exec("DELETE FROM activity_sessions WHERE user_id = ?", [uid]);
+  await exec("DELETE FROM email_preferences WHERE user_id = ?", [uid]);
   await exec("DELETE FROM users WHERE id = ?", [uid]);
 
   clearCookie(res);

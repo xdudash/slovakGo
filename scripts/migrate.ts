@@ -1,6 +1,6 @@
 /**
  * One-time Turso schema setup — run once after creating a new Turso database:
- *   npx tsx scripts/migrate.ts
+ *   npx tsx scripts/migrate.ts --schema-only
  *
  * Idempotent (uses CREATE TABLE IF NOT EXISTS). Safe to re-run.
  * Uses TURSO_DATABASE_URL + TURSO_AUTH_TOKEN from .env.local (loaded by tsx via dotenv).
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS users (
   goal                TEXT,
   avatar              TEXT,
   country             TEXT,
-  sub_status          TEXT NOT NULL DEFAULT 'trial',
+  sub_status          TEXT NOT NULL DEFAULT 'free',
   trial_ends          TEXT,
   trial_used          INTEGER NOT NULL DEFAULT 0,
   stripe_customer_id  TEXT,
@@ -147,6 +147,24 @@ CREATE INDEX IF NOT EXISTS idx_events_name_date     ON events(name, created_at);
 CREATE INDEX IF NOT EXISTS idx_events_user          ON events(user_id);
 CREATE INDEX IF NOT EXISTS idx_users_email          ON users(email);
 CREATE INDEX IF NOT EXISTS idx_users_sub_status     ON users(sub_status);
+CREATE TABLE IF NOT EXISTS activity_sessions (
+  user_id TEXT NOT NULL, id TEXT NOT NULL, started_at TEXT NOT NULL,
+  last_active_at TEXT NOT NULL, ended_at TEXT, active_seconds INTEGER NOT NULL DEFAULT 0,
+  visits INTEGER NOT NULL DEFAULT 1, PRIMARY KEY(user_id,id)
+);
+CREATE INDEX IF NOT EXISTS activity_user_time ON activity_sessions(user_id,last_active_at);
+CREATE TABLE IF NOT EXISTS email_preferences (
+  user_id TEXT PRIMARY KEY, marketing_consent INTEGER NOT NULL DEFAULT 0,
+  consent_at TEXT, unsubscribed_at TEXT, updated_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS email_deliveries (
+  id TEXT PRIMARY KEY, recipient TEXT NOT NULL, subject TEXT NOT NULL,
+  provider_id TEXT, status TEXT NOT NULL, created_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS lifecycle_runs (
+  id TEXT PRIMARY KEY, started_at TEXT NOT NULL, finished_at TEXT,
+  sent INTEGER NOT NULL DEFAULT 0, failed INTEGER NOT NULL DEFAULT 0
+);
 CREATE INDEX IF NOT EXISTS idx_users_updated_at     ON users(updated_at);
 CREATE INDEX IF NOT EXISTS idx_sync_log_user        ON sync_log(user_id);
 CREATE INDEX IF NOT EXISTS idx_login_attempts_ip    ON login_attempts(ip, attempted_at);
@@ -167,28 +185,35 @@ async function run() {
   }
   for (const sql of [
     "ALTER TABLE users ADD COLUMN google_sub TEXT",
+    "ALTER TABLE users ADD COLUMN free_preview_level TEXT",
     "ALTER TABLE progress ADD COLUMN hearts_restored_at TEXT",
     "ALTER TABLE progress ADD COLUMN practice_awarded_at TEXT",
     "ALTER TABLE progress ADD COLUMN last_reminder_date TEXT",
     "ALTER TABLE users ADD COLUMN bonus_until TEXT",
     "ALTER TABLE users ADD COLUMN referral_rewarded INTEGER NOT NULL DEFAULT 0",
   ]) {
-    try { await db.execute(sql); } catch { /* column already exists */ }
+    try { await db.execute(sql); } catch (error) {
+      if (!String(error).includes("duplicate column name")) throw error;
+    }
   }
 
   console.log("✓ Schema applied");
 
   // Backfill: users created before reminderTime had a default never received a
   // reminder push, because the cron only selects users who have one set.
-  const backfill = await db.execute({
-    sql: `UPDATE users
-          SET settings_j = json_set(settings_j, '$.reminderTime', '19:00'),
-              updated_at = ?
-          WHERE json_extract(settings_j, '$.reminderTime') IS NULL
-            AND json_extract(settings_j, '$.notificationsEnabled') = 1`,
-    args: [new Date().toISOString().replace(/\.\d{3}Z$/, "Z")],
-  });
-  console.log(`✓ reminderTime backfilled for ${backfill.rowsAffected} user(s)`);
+  if (!process.argv.includes("--schema-only")) {
+    const backfill = await db.execute({
+      sql: `UPDATE users
+            SET settings_j = json_set(settings_j, '$.reminderTime', '19:00'),
+                updated_at = ?
+            WHERE json_extract(settings_j, '$.reminderTime') IS NULL
+              AND json_extract(settings_j, '$.notificationsEnabled') = 1`,
+      args: [new Date().toISOString().replace(/\.\d{3}Z$/, "Z")],
+    });
+    console.log(`✓ reminderTime backfilled for ${backfill.rowsAffected} user(s)`);
+  } else {
+    console.log("✓ Schema-only mode: existing user settings and activity timestamps preserved");
+  }
 
   const counts = await Promise.all([
     db.execute("SELECT COUNT(*) as c FROM users"),

@@ -1,3 +1,4 @@
+import { EmailPreferences } from "../../components/EmailPreferences";
 import { useCallback, useEffect, useRef, useState, useMemo } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { AlertCircle, Bell, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, Download, Flame, Heart, Layers, Link2, LogOut, Medal, MessageSquare, Play, RefreshCw, Search, Settings, Share2, ShoppingBag, Star, Trophy, Users, Volume2, Zap } from "lucide-react";
@@ -114,7 +115,7 @@ export function StudentLayout() {
   }
 
   if (user && progress && user.role === "student" && !accessService.hasFullAccess(user.subscriptionStatus)) {
-    const alwaysAllowed = ["/app/profile", "/app/paywall"];
+    const alwaysAllowed = ["/app/profile", "/app/paywall", "/app/settings", "/app/levels"];
     const isPath = location.pathname === "/app" || location.pathname === "/app/path";
     const lessonId = location.pathname.startsWith("/app/lesson/") ? location.pathname.slice("/app/lesson/".length) : "";
     const canPreview = accessService.canUsePreview(data.lessons, progress, user.subscriptionStatus);
@@ -219,7 +220,7 @@ export function Onboarding() {
       <div className="onboarding-content">
         <div className="onboarding-copy">
           <span className="onboarding-step-label">Спробуй перед підпискою</span>
-          <h1>Твої перші 5 уроків уже відкриті</h1>
+          <h1>Твої перші 10 уроків уже відкриті</h1>
           <p className="onboarding-text">Пройди справжні уроки свого рівня, відчуй формат і лише потім вирішуй, чи продовжувати з повним доступом.</p>
         </div>
         <div className="mechanics-grid">
@@ -240,7 +241,7 @@ export function Onboarding() {
         <div className="onboarding-copy">
           <span className="onboarding-step-label">Обери свій старт</span>
           <h1>{t("student.onboarding.start_title")}</h1>
-          <p className="onboarding-text">Спочатку отримай результат: перші 5 уроків доступні без оплати. Повний доступ запропонуємо лише після їх завершення.</p>
+          <p className="onboarding-text">Спочатку отримай результат: перші 10 уроків доступні без оплати. Повний доступ запропонуємо лише після їх завершення.</p>
         </div>
         <div className="onboarding-actions">
           <Button className="onboarding-btn-primary" onClick={() => { track("onboarding_done", { goal, start: "A0" }); completeOnboarding(goal, "A0"); navigate("/app/path", { replace: true }); }}>
@@ -347,8 +348,8 @@ function PathScreen() {
   const goalDone = todayXp >= dailyGoal;
   const streakAtRisk = progress.streakDays > 0 && todayXp === 0;
   const previewMode = user.role === "student" && accessService.canUsePreview(data.lessons, progress, user.subscriptionStatus);
-  const previewLessons = accessService.firstPreviewLessons(data.lessons, progress.currentLevel);
-  const previewCompleted = previewLessons.filter((lesson) => progress.completedLessons.includes(lesson.id)).length;
+  const previewCompleted = new Set(progress.completedLessons).size;
+  const nextPreview = accessService.firstPreviewLessons(data.lessons, progress.freePreviewLevel ?? progress.currentLevel).find(l => !progress.completedLessons.includes(l.id));
 
   return (
     <main className="page-content">
@@ -361,13 +362,14 @@ function PathScreen() {
       {previewMode && (
         <div className="preview-access-banner">
           <div>
-            <strong>Перші 5 уроків — без оплати</strong>
-            <span>Пройди {previewLessons.length} справжніх уроків, а потім відкрий 3 дні повного доступу.</span>
+            <strong>Перші 10 уроків — без оплати</strong>
+            <span>Пройди 10 справжніх уроків, а потім відкрий 3 дні повного доступу.</span>
           </div>
-          <span className="preview-access-progress">{previewCompleted}/{previewLessons.length}</span>
+          <span className="preview-access-progress">{previewCompleted}/10</span>
         </div>
       )}
 
+      {previewMode && nextPreview && nextPreview.level !== progress.currentLevel && <Card><p>Продовжити безкоштовні уроки на рівні {nextPreview.level}</p><Button onClick={() => useAppStore.getState().setLevel(nextPreview.level)}>До наступного уроку</Button></Card>}
       {/* Unit section header */}
       <div className="unit-card">
         <span className="progress-pill">{levelProgress}%</span>
@@ -883,6 +885,11 @@ function LessonScreen() {
     return "exercise";
   });
 
+  useEffect(() => {
+    if (lesson?.contentLocked) void useAppStore.getState().refreshLessons();
+  }, [lesson?.id, lesson?.contentLocked]);
+
+  if (lesson?.contentLocked) return <PageSkeleton />;
   if (!user || !progress || !lesson) return <Navigate to="/app/path" replace />;
 
   const isAdmin = user.role === "admin";
@@ -2916,6 +2923,7 @@ function SettingsScreen() {
         </Card>
       </section>
 
+      <EmailPreferences />
       <section className="settings-section settings-danger">
         <h3 className="settings-section-title settings-section-title--danger">{t("student.settings.danger_zone")}</h3>
         <Card className="form-stack">
@@ -2980,16 +2988,15 @@ export function PaywallScreen() {
   }
 
   if (accessService.canUsePreview(data.lessons, progress, user.subscriptionStatus)) {
-    const section = accessService.firstPreviewLessons(data.lessons, progress.currentLevel);
-    const completed = section.filter((lesson) => progress.completedLessons.includes(lesson.id)).length;
+    const completed = new Set(progress.completedLessons).size;
     return (
       <main className="page-content preview-locked-page">
         <div className="preview-locked-visual">
           <img src="/app-exercise.png" alt="Вправа SlovakGO" width="390" height="844" decoding="async" />
         </div>
-        <h1>Спочатку заверши перші 5 уроків</h1>
+        <h1>Спочатку заверши перші 10 уроків</h1>
         <p>Ми запропонуємо 3 дні пробного доступу лише після того, як ти перевіриш SlovakGO на справжніх уроках.</p>
-        <div className="preview-locked-counter">{completed} з {section.length} уроків уже пройдено</div>
+        <div className="preview-locked-counter">{completed} з 10 уроків уже пройдено</div>
         <Button onClick={() => navigate("/app/path")}>Продовжити навчання</Button>
         <Button variant="ghost" onClick={() => navigate("/app/profile")}>Профіль</Button>
       </main>
@@ -3014,7 +3021,7 @@ export function PaywallScreen() {
       <div style={{ textAlign: "center", marginBottom: "24px" }}>
         <img src="/apple-icon.png" alt="SlovakGO" style={{ width: "80px", height: "80px", borderRadius: "20px", marginBottom: "16px" }} />
         <h1 style={{ fontSize: "1.8rem", fontWeight: 900, color: "var(--fg)", marginBottom: "8px" }}>
-          Перші 5 уроків пройдено 🎉
+          Перші 10 уроків пройдено 🎉
         </h1>
         <p style={{ color: "var(--muted)", fontSize: "0.95rem", margin: 0 }}>
           Ти вже спробував SlovakGO на практиці. Тепер відкрий усі рівні та функції на 3 дні.
@@ -3195,12 +3202,12 @@ function ShopScreen() {
         <div className="shop-comparison">
           <div className="shop-comp-header">
             <span></span>
-            <span className="comp-free">Перші 5 уроків</span>
+            <span className="comp-free">Перші 10 уроків</span>
             <span className="comp-plus">Plus</span>
           </div>
           <div className="shop-comp-row">
             <span>Уроки</span>
-            <span>5 уроків</span>
+            <span>10 уроків</span>
             <span className="comp-check"><CheckCircle2 size={14} /> Усі рівні</span>
           </div>
           <div className="shop-comp-row">

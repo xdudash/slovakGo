@@ -17,13 +17,15 @@ process.env.TURSO_DATABASE_URL = `file:${TEST_DB}`;
 process.env.JWT_SECRET          = "vitest-secret-key-do-not-use-in-prod-abc123";
 process.env.NODE_ENV            = "test";
 
-// Stripe is only used in billing routes which we don't test here — stub it out
+// Stub Stripe network calls while asserting real checkout parameters.
+const stripeChecks = vi.hoisted(() => ({ price: vi.fn(), checkout: vi.fn().mockResolvedValue({ url: "https://checkout.stripe.com/test" }) }));
 vi.mock("stripe", () => ({
-  default: vi.fn(() => ({
-    checkout:     { sessions: { create: vi.fn().mockResolvedValue({ url: "https://checkout.stripe.com/test" }) } },
+  default: vi.fn(function () { return {
+    checkout: { sessions: { create: stripeChecks.checkout } },
+    prices: { retrieve: stripeChecks.price },
     billingPortal:{ sessions: { create: vi.fn().mockResolvedValue({ url: "https://billing.stripe.com/test" }) } },
     webhooks:     { constructEvent: vi.fn() },
-  })),
+  }; }),
 }));
 
 // Handler is imported AFTER env vars are set
@@ -93,6 +95,8 @@ interface MockRes {
   getHeader(key: string): string | string[] | undefined;
   writeHead(code: number, headers?: Record<string, string>): void;
   end(): void;
+  send(data: string): void;
+  write(data: string): boolean;
 }
 
 function makeRes(): MockRes {
@@ -106,6 +110,8 @@ function makeRes(): MockRes {
     getHeader(k) { return res._headers[k]; },
     writeHead(code, headers) { res._status = code; Object.assign(res._headers, headers ?? {}); },
     end()        {},
+    send(data) { res._body = data; },
+    write(data) { res._body = String(res._body ?? "") + data; return true; },
   };
   return res;
 }
@@ -454,7 +460,7 @@ describe("POST /sync/push", () => {
         mutations: [{
           id: "mut-profile-1",
           type: "profile.update",
-          payload: { name: "Оновлене Імʼя", goal: "B1" },
+          payload: { name: "Оновлене Імʼя", goal: "B1", level: "A1", onboardingDone: true },
         }],
       },
     });
@@ -577,7 +583,7 @@ describe("POST /sync/push", () => {
     expect(word!.status).toBe("practicing");
   });
 
-  it("applies practice.complete — adds XP", async () => {
+  it("rejects paid practice for a free account", async () => {
     const { body: before } = await call("GET", ["sync", "pull"], { cookie });
     const xpBefore = Number((before.progress as Record<string, unknown>).xpTotal);
 
@@ -598,7 +604,7 @@ describe("POST /sync/push", () => {
     });
 
     const { body: after } = await call("GET", ["sync", "pull"], { cookie });
-    expect(Number((after.progress as Record<string, unknown>).xpTotal)).toBe(xpBefore + 5);
+    expect(Number((after.progress as Record<string, unknown>).xpTotal)).toBe(xpBefore);
   });
 
   it("applies hearts.restore — resets hearts to max", async () => {
@@ -930,5 +936,155 @@ describe("JWT auth", () => {
       cookie: "sl_session=totally.fake.token",
     });
     expect(status).toBe(401);
+  });
+});
+
+// Real SQL regression coverage for the revised entitlement, exports and activity.
+describe("growth and access regressions", () => {
+  let cookie: string;
+  const db = createClient({ url: `file:${TEST_DB}` });
+  const ids = Array.from({ length: 11 }, (_, i) => `preview-${i + 1}`);
+  beforeAll(async () => {
+    await db.execute(`INSERT INTO users(id,email,name_text,role,level,sub_status,ob_done,created_at,updated_at)
+      VALUES ('preview-user','preview@test.com','Preview','student','A0','free',1,'2026-01-01T00:00:00Z','2026-01-01T00:00:00Z')`);
+    await db.execute("INSERT INTO progress(user_id,updated_at) VALUES ('preview-user',datetime('now'))");
+    for (let i = 0; i < ids.length; i++) {
+      const lesson = { id: ids[i], level: "A0", order: i+1, topic: `Single-lesson topic ${i}`, title: ids[i], isPublished: true, xpReward: 10, words: [{id: `secret-word-${i}`, sk:"ahoj"}], exercises: [{ id: `secret-exercise-${i}` }], theoryScreens: [{ content: "protected theory" }], finalSituation: { text: "protected scenario" } };
+      await db.execute({sql: "INSERT INTO lessons(id,data_json,published,updated_at) VALUES (?,?,1,?)", args:[ids[i],JSON.stringify(lesson),new Date().toISOString()]});
+    }
+    cookie = await makeCookie("preview-user");
+  });
+  it("never leaks paid words, exercises or theory through either catalog endpoint", async () => {
+    for (const path of [["lessons"], ["sync","pull"]]) {
+      const { body, status } = await call("GET",path,{cookie}); expect(status).toBe(200);
+      const lessons = body.lessons as Record<string,unknown>[];
+      expect((lessons.find(l => l.id === ids[0])!.exercises as unknown[]).length).toBe(1);
+      const paid = lessons.find(l => l.id === ids[10])!;
+      expect(paid.exercises).toEqual([]); expect(paid.words).toEqual([]);
+      expect(paid.theoryScreens).toBeUndefined(); expect(paid.finalSituation).toBeUndefined();
+    }
+  });
+  it("retains the free catalog when a caller forges a profile level change", async () => {
+    await call("POST",["sync","push"],{cookie,body:{mutations:[{id:"forge-level",type:"profile.update",payload:{level:"A1",onboardingDone:true}}]}});
+    const { body } = await call("GET",["lessons"],{cookie});
+    expect(((body.lessons as Record<string,unknown>[]).find(l => l.id === "lesson-1")!.exercises)).toEqual([]);
+    await db.execute("UPDATE users SET level='A0' WHERE id='preview-user'");
+  });
+  it("keeps preview open after a short topic and rejects an eleventh completion via API", async () => {
+    await db.execute({sql:"UPDATE progress SET completed_j=? WHERE user_id='preview-user'",args:[JSON.stringify(ids.slice(0,9))]});
+    const push = (id: string, lessonId: string) => call("POST",["sync","push"],{cookie,body:{mutations:[{id,type:"lesson.complete",payload:{lessonId,answers:[]}}]}});
+    expect((await push("tenth",ids[9])).body.applied).toBe(1);
+    expect((await push("eleventh",ids[10])).body.applied).toBe(0);
+    const { body } = await call("GET",["sync","pull"],{cookie});
+    expect((body.progress as {completedLessons:string[]}).completedLessons).toHaveLength(10);
+    expect((body.user as {subscriptionStatus:string}).subscriptionStatus).toBe("free");
+    expect((body.user as {trialEndsAt:unknown}).trialEndsAt).toBeNull();
+    expect((await push("repeat-tenth",ids[9])).body.applied).toBe(1);
+  });
+  it("rejects expired trial access without requiring a previous sync pull", async () => {
+    await db.execute("UPDATE users SET sub_status='trial',trial_ends='2020-01-01T00:00:00Z' WHERE id='preview-user'");
+    const { body } = await call("GET",["lessons"],{cookie});
+    expect(((body.lessons as Record<string,unknown>[]).find(l => l.id === ids[0])!.exercises)).toEqual([]);
+    await db.execute("UPDATE users SET sub_status='free',trial_ends=NULL WHERE id='preview-user'");
+  });
+  it("requires explicit checkout acceptance and validates the Stripe price before checkout", async () => {
+    process.env.STRIPE_PRICE_ID = "price-test-monthly";
+    const price = { active:true, currency:"eur", unit_amount:300, billing_scheme:"per_unit", recurring:{interval:"month",interval_count:1,usage_type:"licensed"} };
+    stripeChecks.price.mockResolvedValue(price); stripeChecks.checkout.mockClear();
+    expect((await call("POST",["billing","checkout"],{cookie,body:{}})).status).toBe(422);
+    expect(stripeChecks.checkout).not.toHaveBeenCalled();
+    expect((await call("POST",["billing","checkout"],{cookie,body:{acceptTerms:true}})).status).toBe(200);
+    expect(stripeChecks.checkout.mock.calls[0][0].subscription_data.trial_period_days).toBe(3);
+    stripeChecks.price.mockResolvedValue({...price,unit_amount:999});
+    expect((await call("POST",["billing","checkout"],{cookie,body:{acceptTerms:true}})).status).toBe(503);
+    expect(stripeChecks.checkout).toHaveBeenCalledTimes(1);
+    const row = (await db.execute("SELECT sub_status,trial_ends FROM users WHERE id='preview-user'")).rows[0];
+    expect(row.sub_status).toBe("free"); expect(row.trial_ends).toBeNull();
+    delete process.env.STRIPE_PRICE_ID;
+  });
+  it("persists opt-in separately and supports a signed unsubscribe without login", async () => {
+    expect((await call("GET",["user","email-preferences"],{cookie})).body.marketingConsent).toBe(false);
+    await call("POST",["user","email-preferences"],{cookie,body:{marketingConsent:true}});
+    expect((await call("GET",["user","email-preferences"],{cookie})).body.marketingConsent).toBe(true);
+    const { unsubscribeUrl } = await import("../../api/_lib/emailPreferences");
+    const token = new URL(unsubscribeUrl("preview-user")).searchParams.get("token")!;
+    expect((await call("GET",["email","unsubscribe"],{query:{token}})).status).toBe(200);
+    // Link scanners cannot unsubscribe by fetching the page.
+    expect((await call("GET",["user","email-preferences"],{cookie})).body.marketingConsent).toBe(true);
+    expect((await call("POST",["email","unsubscribe"],{query:{token}})).status).toBe(200);
+    expect((await call("GET",["user","email-preferences"],{cookie})).body.marketingConsent).toBe(false);
+    expect((await call("POST",["email","unsubscribe"],{query:{token: token.slice(0,-2)+"00"}})).status).toBe(400);
+  });
+  it("exports over 500 users, includes all inactive users, and applies filters to the whole database", async () => {
+    await db.batch(Array.from({length: 605},(_,i)=>({sql:`INSERT INTO users(id,email,name_text,role,level,sub_status,created_at,updated_at) VALUES (?,?,'=malicious','student','A0','free','2020-01-01T00:00:00Z','2026-10-11T00:00:00Z')`,args:[`csv-${i}`,`csv-${i}@example.com`]})),"write");
+    const admin = await makeCookie("admin-1");
+    expect((await call("GET",["admin","users"],{cookie,query:{format:"csv"}})).status).toBe(403);
+    const result = await call("GET",["admin","users"],{cookie:admin,query:{format:"csv",activity:"inactive",search:"csv-"}});
+    expect(result.status).toBe(200);
+    const csv = result.body as unknown as string;
+    expect(csv.split("\r\n").filter(Boolean)).toHaveLength(606);
+    expect(csv).toContain("csv-604@example.com"); expect(csv).toContain("'=malicious");
+    const filtered = await call("GET",["admin","users"],{cookie:admin,query:{search:"preview@test.com",progress:"ten_plus",sub:"free"}});
+    expect(filtered.body.total).toBe(1);
+    expect((await call("GET",["admin","users"],{cookie:admin,query:{search:"csv-",offset:"500",limit:"100"}})).body.users).toHaveLength(100);
+  });
+  it("deduplicates activity reports, bounds duration and closes abandoned sessions", async () => {
+    const id = "session-test-123456";
+    const send = (seconds: number) => call("POST",["user","activity"],{cookie,body:{sessionId:id,activeSeconds:seconds,visits:2}});
+    await send(0);
+    await db.execute({sql:"UPDATE activity_sessions SET started_at=? WHERE id=?",args:[new Date(Date.now()-120000).toISOString(),id]});
+    await send(60); await send(60); await send(40);
+    const row = (await db.execute({sql:"SELECT * FROM activity_sessions WHERE id=?",args:[id]})).rows[0];
+    expect(row.active_seconds).toBe(60); expect(row.visits).toBe(2);
+    await send(9999);
+    const capped = (await db.execute({sql:"SELECT active_seconds FROM activity_sessions WHERE id=?",args:[id]})).rows[0];
+    expect(Number(capped.active_seconds)).toBeLessThanOrEqual(121);
+    await db.execute({sql:"UPDATE activity_sessions SET last_active_at=? WHERE id=?",args:[new Date(Date.now()-360000).toISOString(),id]});
+    expect((await send(120)).body.closed).toBe(true);
+    const admin = await makeCookie("admin-1");
+    const detail = await call("GET",["admin","users","preview-user"],{cookie:admin});
+    expect((detail.body.activity as {sessionCount:number}).sessionCount).toBe(1);
+    expect((detail.body.activity as {sessions:{ended_at:string}[]}).sessions[0].ended_at).toBeTruthy();
+  });
+});
+
+describe("automatic email delivery", () => {
+  it("sends only with explicit consent, records provider acceptance and does not repeat", async () => {
+    const { default: lifecycle } = await import("../../api/cron/lifecycle");
+    const { saveConsent } = await import("../../api/_lib/emailPreferences");
+    const db = createClient({url:`file:${TEST_DB}`});
+    await db.execute({sql:`INSERT INTO users(id,email,name_text,role,sub_status,created_at,updated_at) VALUES ('mail-test','mail@test.com','Mail','student','free',?,?)`,args:[new Date().toISOString(),new Date().toISOString()]});
+    await db.execute("INSERT INTO progress(user_id,updated_at) VALUES ('mail-test',datetime('now'))");
+    process.env.CRON_SECRET = "test-cron"; process.env.RESEND_API_KEY = "test-resend";
+    const provider = vi.spyOn(globalThis,"fetch").mockResolvedValue(new Response(JSON.stringify({id:"provider-email-123"}),{status:200}));
+    const run = async () => {
+      const req = makeReq("GET",["cron","lifecycle"]); req.headers.authorization="Bearer test-cron";
+      const res=makeRes(); await lifecycle(req,res as unknown as VercelResponse); return res;
+    };
+    try {
+      expect((await run())._status).toBe(200); expect(provider).not.toHaveBeenCalled();
+      await saveConsent("mail-test",true);
+      const result=await run(); expect(result._status).toBe(200);
+      expect((result._body as {sent:number}).sent).toBe(1);
+      const payload = JSON.parse(String(provider.mock.calls[0][1]!.body));
+      expect(payload.html).toContain("Відписатися"); expect(payload.headers["List-Unsubscribe-Post"]).toBe("List-Unsubscribe=One-Click");
+      const log=(await db.execute("SELECT status,provider_id FROM email_deliveries WHERE recipient='mail@test.com'")).rows[0];
+      expect(log.status).toBe("accepted"); expect(log.provider_id).toBe("provider-email-123");
+      await run(); expect(provider).toHaveBeenCalledTimes(1);
+    } finally { provider.mockRestore(); delete process.env.CRON_SECRET; delete process.env.RESEND_API_KEY; }
+  });
+});
+
+describe("parallel entitlement requests", () => {
+  it("cannot claim two final free slots at once", async () => {
+    const db=createClient({url:`file:${TEST_DB}`});
+    await db.execute(`INSERT INTO users(id,email,name_text,role,level,sub_status,ob_done,created_at,updated_at) VALUES ('parallel-free','parallel@test.com','Parallel','student','A0','free',1,datetime('now'),datetime('now'))`);
+    const completed=[...Array.from({length:8},(_,i)=>`preview-${i+1}`),'legacy-completed'];
+    await db.execute({sql:"INSERT INTO progress(user_id,completed_j,updated_at) VALUES ('parallel-free',?,datetime('now'))",args:[JSON.stringify(completed)]});
+    const cookie=await makeCookie('parallel-free');
+    const results=await Promise.all([9,10].map(i=>call('POST',['sync','push'],{cookie,body:{mutations:[{id:`parallel-${i}`,type:'lesson.complete',payload:{lessonId:`preview-${i}`,answers:[]}}]}})));
+    expect(results.every(r=>[200,409].includes(r.status))).toBe(true);
+    const row=(await db.execute("SELECT completed_j FROM progress WHERE user_id='parallel-free'")).rows[0];
+    expect(JSON.parse(String(row.completed_j))).toHaveLength(10);
   });
 });

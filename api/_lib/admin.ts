@@ -1,3 +1,5 @@
+import { closeIdleSessions } from "./activity";
+export { handleAdminUsers } from "./adminUsers";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { Arg } from "./core";
 import { normalizeLessonPayload } from "./lessonValidation";
@@ -50,14 +52,15 @@ export async function handleAdminStats(req: VercelRequest, res: VercelResponse):
   const uid = await requireUid(req, res); if (!uid) return;
   if (!(await checkRole(uid, "admin"))) return fail(res, "Недостатньо прав", 403);
 
+  await closeIdleSessions();
   const now  = Date.now();
   const day  = new Date(now - 86400_000).toISOString().replace(/\.\d{3}Z$/, "Z");
   const week = new Date(now - 7 * 86400_000).toISOString().replace(/\.\d{3}Z$/, "Z");
 
   const [total, a24, a7, plus, avgXpRow, avgStreakRow] = await Promise.all([
     queryOne("SELECT COUNT(*) as c FROM users"),
-    queryOne("SELECT COUNT(*) as c FROM users WHERE updated_at > ?", [day]),
-    queryOne("SELECT COUNT(*) as c FROM users WHERE updated_at > ?", [week]),
+    queryOne("SELECT COUNT(DISTINCT user_id) as c FROM activity_sessions WHERE last_active_at > ?", [day]),
+    queryOne("SELECT COUNT(DISTINCT user_id) as c FROM activity_sessions WHERE last_active_at > ?", [week]),
     queryOne("SELECT COUNT(*) as c FROM users WHERE sub_status = 'plus'"),
     queryOne("SELECT AVG(xp_total) as v FROM progress"),
     queryOne("SELECT AVG(streak_days) as v FROM progress"),
@@ -206,72 +209,21 @@ export async function handleAdminNotify(req: VercelRequest, res: VercelResponse,
 }
 
 
-export async function handleAdminUsers(req: VercelRequest, res: VercelResponse): Promise<void> {
-  const uid = await requireUid(req, res); if (!uid) return;
-  if (!(await checkRole(uid, "admin"))) return fail(res, "Недостатньо прав", 403);
-
-  const search = String(req.query.search ?? "").trim();
-  const role   = String(req.query.role ?? "");
-  const sub    = String(req.query.sub ?? "");
-  const limit  = Math.min(Number(req.query.limit ?? 100), 500);
-  const offset = Number(req.query.offset ?? 0);
-
-  const clauses: string[] = [];
-  const args: Arg[] = [];
-  if (search) { clauses.push("(u.name_text LIKE ? OR u.email LIKE ?)"); args.push(`%${search}%`, `%${search}%`); }
-  if (role && role !== "all") { clauses.push("u.role = ?"); args.push(role); }
-  if (sub  && sub  !== "all") { clauses.push("u.sub_status = ?"); args.push(sub); }
-  const where = clauses.length ? "WHERE " + clauses.join(" AND ") : "";
-
-  const [rows, totalRow] = await Promise.all([
-    query(
-      `SELECT u.id, u.email, u.name_text, u.role, u.level, u.avatar, u.country,
-              u.sub_status, u.is_blocked, u.created_at, u.updated_at,
-              COALESCE(p.xp_total, 0)    AS xp_total,
-              COALESCE(p.streak_days, 0) AS streak_days,
-              COALESCE(p.completed_j, '[]') AS completed_j
-       FROM users u LEFT JOIN progress p ON p.user_id = u.id
-       ${where} ORDER BY u.created_at DESC LIMIT ? OFFSET ?`,
-      [...args, limit, offset]
-    ),
-    queryOne(`SELECT COUNT(*) AS c FROM users u ${where}`, args),
-  ]);
-
-  respond(res, {
-    ok: true,
-    total: Number(totalRow?.c ?? 0),
-    users: rows.map(r => ({
-      id:                 String(r.id),
-      email:              String(r.email),
-      name:               String(r.name_text),
-      role:               String(r.role),
-      level:              String(r.level),
-      avatar:             r.avatar ? String(r.avatar) : null,
-      country:            r.country ? String(r.country) : "",
-      subscriptionStatus: String(r.sub_status),
-      isBlocked:          Boolean(r.is_blocked),
-      createdAt:          String(r.created_at),
-      lastSeenAt:         String(r.updated_at),
-      updatedAt:          String(r.updated_at),
-      xpTotal:            Number(r.xp_total),
-      streakDays:         Number(r.streak_days),
-      completedCount:     safeJson<string[]>(String(r.completed_j), []).length,
-    })),
-  });
-}
-
 export async function handleAdminUserDetail(req: VercelRequest, res: VercelResponse, targetId: string): Promise<void> {
   const uid = await requireUid(req, res); if (!uid) return;
   if (!(await checkRole(uid, "admin"))) return fail(res, "Недостатньо прав", 403);
 
   const row = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [targetId]);
   if (!row) return fail(res, "Користувача не знайдено", 404);
+  await closeIdleSessions();
+  const sessions = await query("SELECT id, started_at, last_active_at, ended_at, active_seconds, visits FROM activity_sessions WHERE user_id = ? ORDER BY started_at DESC", [targetId]);
+  const summary = sessions.reduce((a, s) => ({ activeSeconds: a.activeSeconds + Number(s.active_seconds), visits: a.visits + Number(s.visits), lastActiveAt: String(s.last_active_at) > (a.lastActiveAt ?? "") ? String(s.last_active_at) : a.lastActiveAt }), { activeSeconds: 0, visits: 0, lastActiveAt: null as string | null });
   const prog = await ensureProgress(targetId);
   const userWords = await getUserWords(targetId);
 
   respond(res, {
     ok: true,
-    user: rowToUser(row),
+    user: { ...rowToUser(row), lastActiveAt: summary.lastActiveAt },
     progress: {
       userId:            targetId,
       currentLevel:      String(row.level),
@@ -292,6 +244,7 @@ export async function handleAdminUserDetail(req: VercelRequest, res: VercelRespo
       updatedAt:         String(prog.updated_at),
     },
     userWords,
+    activity: { ...summary, sessionCount: sessions.length, sessions },
   });
 }
 

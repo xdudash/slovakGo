@@ -1,3 +1,4 @@
+import { startActivityTracking } from "../services/activityService";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
@@ -56,6 +57,10 @@ function AppLoadingScreen({ message = "Готуємо твій навчальн�
 
 export function App() {
   const location = useLocation();
+  const activityUserId = useAppStore(s => s.currentUserId);
+  useEffect(() => {
+    if (activityUserId && !localStorage.getItem("slovakgo.admin-return")) return startActivityTracking();
+  }, [activityUserId]);
   // Cached sessions render immediately; the server refresh stays a background task.
   const [restoring, setRestoring] = useState(() => !useAppStore.getState().currentUserId);
   const autoRestoreSession = useAppStore((s) => s.autoRestoreSession);

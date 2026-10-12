@@ -1,3 +1,5 @@
+import { completedCount, FREE_LESSON_LIMIT } from "../../shared/access";
+import { accessibleLessons, assertLessonAccess, AccessDeniedError } from "./access";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { Arg } from "./core";
 import { normalizeLessonPayload } from "./lessonValidation";
@@ -5,7 +7,7 @@ import {
   XP_PER_PRACTICE,
   exec, queryOne, nowIso, todayKey, currentWeekId, safeJson, getDb, ensureCol,
   requireUid, respond, fail, rowToUser, ensureProgress,
-  getUserWords, getLessons, checkRole
+  getUserWords, checkRole
 } from "./core";
 
 export async function handleSyncPull(req: VercelRequest, res: VercelResponse): Promise<void> {
@@ -35,8 +37,8 @@ export async function handleSyncPull(req: VercelRequest, res: VercelResponse): P
   const url = new URL(req.url ?? "/sync/pull", "http://localhost");
   const includeLessonsParam = typeof req.query.includeLessons === "string" ? req.query.includeLessons : url.searchParams.get("includeLessons");
   const includeLessons = includeLessonsParam !== "0";
-  const lessonVersion = await getLessonVersion(String(row.role));
-  const lessons = includeLessons ? await getLessons(String(row.role)) : undefined;
+  const lessonVersion = `${await getLessonVersion(String(row.role))}:${String(rowToUser(row).subscriptionStatus)}:${row.level}:${row.ob_done}:${String(prog.completed_j)}`;
+  const lessons = includeLessons ? await accessibleLessons(uid) : undefined;
 
   respond(res, {
     ok: true,
@@ -44,6 +46,7 @@ export async function handleSyncPull(req: VercelRequest, res: VercelResponse): P
     progress: {
       userId:            uid,
       currentLevel:      String(row.level),
+      freePreviewLevel: row.free_preview_level ?? row.level,
       completedLessons:  safeJson(String(prog.completed_j ?? "[]"), []),
       xpTotal:           Number(prog.xp_total),
       xpWeekly:          Number(prog.xp_weekly),
@@ -70,11 +73,12 @@ export async function handleLessonsPull(req: VercelRequest, res: VercelResponse)
   const uid = await requireUid(req, res);
   if (!uid) return;
 
-  const row = await queryOne("SELECT role FROM users WHERE id = ? LIMIT 1", [uid]);
+  const row = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [uid]);
   if (!row) return fail(res, "Користувача не знайдено", 404);
 
   const role = String(row.role);
-  const version = await getLessonVersion(role);
+  const prog = await ensureProgress(uid);
+  const version = `${await getLessonVersion(role)}:${String(rowToUser(row).subscriptionStatus)}:${row.level}:${row.ob_done}:${String(prog.completed_j)}`;
   const url = new URL(req.url ?? "/lessons", "http://localhost");
   const currentVersion = typeof req.query.version === "string" ? req.query.version : url.searchParams.get("version");
 
@@ -82,7 +86,7 @@ export async function handleLessonsPull(req: VercelRequest, res: VercelResponse)
     return respond(res, { ok: true, unchanged: true, version });
   }
 
-  respond(res, { ok: true, unchanged: false, version, lessons: await getLessons(role) });
+  respond(res, { ok: true, unchanged: false, version, lessons: await accessibleLessons(uid) });
 }
 
 async function getLessonVersion(role: string): Promise<string> {
@@ -91,6 +95,8 @@ async function getLessonVersion(role: string): Promise<string> {
   const row = await queryOne(`SELECT COUNT(*) AS count, MAX(updated_at) AS updated_at FROM lessons${where}`);
   return `${privileged ? "all" : "published"}:${Number(row?.count ?? 0)}:${String(row?.updated_at ?? "empty")}`;
 }
+
+class ConcurrentMutationError extends Error { name = "ConcurrentMutationError"; }
 
 class StaleMutationError extends Error {
   constructor(message: string) {
@@ -125,7 +131,7 @@ export async function handleSyncPush(req: VercelRequest, res: VercelResponse, bo
       await processMutation(uid, mut);
       applied++;
     } catch (err) {
-      if (err instanceof StaleMutationError) {
+      if (err instanceof StaleMutationError || err instanceof AccessDeniedError) {
         // The client may have queued a lesson completion while offline and the
         // lesson may have been unpublished/deleted before the queue drains.
         // Keep the mutation claimed so it is idempotently discarded and allow
@@ -223,6 +229,8 @@ async function mutRestoreHearts(uid: string): Promise<void> {
 }
 
 async function mutProfileUpdate(uid: string, p: Record<string, unknown>): Promise<void> {
+  await ensureCol("users", "free_preview_level", "TEXT");
+  await exec("UPDATE users SET free_preview_level=level WHERE id=? AND ob_done=1 AND free_preview_level IS NULL", [uid]);
   const sets: string[] = []; const vals: Arg[] = [];
   if ("name" in p)           { sets.push("name_text = ?");  vals.push(String(p.name ?? "").trim().slice(0, 100)); }
   if ("goal" in p)           { sets.push("goal = ?");       vals.push(p.goal ? String(p.goal).trim().slice(0, 200) : null); }
@@ -232,7 +240,15 @@ async function mutProfileUpdate(uid: string, p: Record<string, unknown>): Promis
     if (!av || !/https?:|data:|javascript:/i.test(av)) { sets.push("avatar = ?"); vals.push(av || null); }
   }
   if ("country" in p)        { sets.push("country = ?");    vals.push(String(p.country)); }
-  if ("onboardingDone" in p) { sets.push("ob_done = ?");    vals.push(p.onboardingDone ? 1 : 0); }
+  if ("onboardingDone" in p) {
+    sets.push("ob_done = ?"); vals.push(p.onboardingDone ? 1 : 0);
+    if (p.onboardingDone) {
+      await ensureCol("users", "free_preview_level", "TEXT");
+      sets.push("free_preview_level = COALESCE(free_preview_level, ?)");
+      const user = await queryOne("SELECT level FROM users WHERE id = ?", [uid]);
+      vals.push(String(p.level ?? user?.level ?? "A0"));
+    }
+  }
   if ("settings" in p)       { sets.push("settings_j = ?"); vals.push(JSON.stringify(p.settings)); }
   if (!sets.length) return;
   sets.push("updated_at = ?"); vals.push(nowIso()); vals.push(uid);
@@ -244,6 +260,7 @@ async function mutLessonComplete(uid: string, p: Record<string, unknown>): Promi
   const lessonRow = lessonId ? await queryOne("SELECT data_json FROM lessons WHERE id = ? AND published = 1 LIMIT 1", [lessonId]) : null;
   if (!lessonRow) throw new StaleMutationError("Unknown or unpublished lesson");
 
+  await assertLessonAccess(uid, lessonId);
   const lesson = safeJson<Record<string, unknown>>(String(lessonRow.data_json), {});
   const exerciseCount = Array.isArray(lesson.exercises) ? lesson.exercises.length : 0;
   const finalSituation = (typeof lesson.finalSituation === "object" && lesson.finalSituation)
@@ -267,6 +284,7 @@ async function mutLessonComplete(uid: string, p: Record<string, unknown>): Promi
   const reward = Math.max(0, Number(lesson.xpReward ?? 10) || 10);
   const baseXp = alreadyCompleted ? Math.max(3, Math.round(reward * 0.25)) : reward;
   const status = String(rowToUser(userRow).subscriptionStatus ?? "");
+  if (status === "free" && !alreadyCompleted && completedCount(completed) >= FREE_LESSON_LIMIT && String(userRow.role) === "student") throw new AccessDeniedError("Безкоштовні уроки завершено");
   const xpEarned = status === "plus" || status === "trial" || status === "past_due" ? Math.round(baseXp * 1.5) : baseXp;
 
   const today = todayKey();
@@ -291,11 +309,12 @@ async function mutLessonComplete(uid: string, p: Record<string, unknown>): Promi
   xpDaily[today] = (xpDaily[today] ?? 0) + xpEarned;
   if (!alreadyCompleted) completed.push(lessonId);
 
-  await exec(
-    `UPDATE progress SET xp_total = xp_total + ?, xp_weekly = ?, xp_daily_j = ?, week_id = ?,
-       streak_days = ?, last_prac = ?, freeze_cnt = ?, completed_j = ?, updated_at = ? WHERE user_id = ?`,
-    [xpEarned, xpW + xpEarned, JSON.stringify(xpDaily), weekId, streak, today, freeze, JSON.stringify(completed), nowIso(), uid]
-  );
+  const saved = await getDb().execute({
+    sql: `UPDATE progress SET xp_total = xp_total + ?, xp_weekly = ?, xp_daily_j = ?, week_id = ?,
+       streak_days = ?, last_prac = ?, freeze_cnt = ?, completed_j = ?, updated_at = ? WHERE user_id = ? AND completed_j = ?`,
+    args: [xpEarned, xpW + xpEarned, JSON.stringify(xpDaily), weekId, streak, today, freeze, JSON.stringify(completed), nowIso(), uid, String(prog.completed_j ?? "[]")]
+  });
+  if (!saved.rowsAffected) throw new ConcurrentMutationError("Concurrent completion; retry sync");
 
   const words = Array.isArray(lesson.words) ? lesson.words as Record<string, unknown>[] : [];
   for (const word of words) {
@@ -303,6 +322,7 @@ async function mutLessonComplete(uid: string, p: Record<string, unknown>): Promi
   }
 }
 async function mutExerciseWrong(uid: string, p: Record<string, unknown>): Promise<void> {
+  if (p.lessonId) await assertLessonAccess(uid, String(p.lessonId));
   const prog     = await ensureProgress(uid);
   const mistakes: unknown[] = safeJson(String(prog.mistakes_j ?? "[]"), []);
   mistakes.push({ lessonId: String(p.lessonId ?? ""), exerciseId: String(p.exerciseId ?? ""), userAnswer: String(p.answer ?? ""), timestamp: nowIso() });
@@ -330,6 +350,7 @@ async function mutPracticeComplete(uid: string, p: Record<string, unknown>): Pro
 
   await ensureCol("progress", "practice_awarded_at", "TEXT");
   const status = String(rowToUser(userRow).subscriptionStatus ?? "");
+  if (!["plus", "trial", "past_due"].includes(status) && !["admin", "teacher"].includes(String(userRow.role))) throw new AccessDeniedError("Практика потребує підписки");
   const xpEarned = status === "plus" || status === "trial" || status === "past_due"
     ? Math.round(XP_PER_PRACTICE * 1.5)
     : XP_PER_PRACTICE;

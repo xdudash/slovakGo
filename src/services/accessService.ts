@@ -1,59 +1,20 @@
 import type { Lesson, Progress, SubscriptionStatus, UserLevel } from "../types";
-import { lessonService } from "./lessonService";
-
-// `past_due` keeps full access on purpose: Stripe is still retrying the card and
-// most of those payments recover. Locking a paying learner out on the first
-// failed charge loses the subscription that would have renewed by itself.
-const unrestrictedStatuses: SubscriptionStatus[] = ["trial", "plus", "past_due"];
-
-function firstPreviewLessons(lessons: Lesson[], level: UserLevel): Lesson[] {
-  const levelLessons = lessonService.byLevel(lessons, level);
-  if (!levelLessons.length) return [];
-  const firstTopic = levelLessons[0].topic;
-  const sectionLessons = levelLessons.filter((l) => l.topic === firstTopic);
-  return sectionLessons.slice(0, 5);
-}
+import { canReadLesson, completedCount, FREE_LESSON_LIMIT, fullAccess, previewLessons } from "../../shared/access";
 
 export const accessService = {
-  hasFullAccess(status: SubscriptionStatus): boolean {
-    return unrestrictedStatuses.includes(status);
+  hasFullAccess: fullAccess,
+  firstPreviewLessons(lessons: Lesson[], level: UserLevel): Lesson[] { return previewLessons(lessons, level); },
+  hasCompletedPreviewAtAnyLevel(_lessons: Lesson[], progress: Progress): boolean {
+    return completedCount(progress.completedLessons) >= FREE_LESSON_LIMIT;
   },
-
-  firstPreviewLessons(lessons: Lesson[], level: UserLevel): Lesson[] {
-    return firstPreviewLessons(lessons, level);
+  canUsePreview(_lessons: Lesson[], progress: Progress, status: SubscriptionStatus): boolean {
+    return status === "free" && completedCount(progress.completedLessons) < FREE_LESSON_LIMIT;
   },
-
-  hasCompletedPreviewAtAnyLevel(lessons: Lesson[], progress: Progress): boolean {
-    return lessonService.levels.some((level) => {
-      const section = firstPreviewLessons(lessons, level);
-      return section.length > 0 && section.every((lesson) => progress.completedLessons.includes(lesson.id));
-    });
+  canOpenLesson(id: string, lessons: Lesson[], progress: Progress, status: SubscriptionStatus): boolean {
+    return canReadLesson(id, lessons, progress.completedLessons, progress.freePreviewLevel ?? progress.currentLevel, status);
   },
-
-  canUsePreview(lessons: Lesson[], progress: Progress, status: SubscriptionStatus): boolean {
-    return status === "free" && !this.hasCompletedPreviewAtAnyLevel(lessons, progress);
-  },
-
-  canOpenLesson(lessonId: string, lessons: Lesson[], progress: Progress, status: SubscriptionStatus): boolean {
-    if (this.hasFullAccess(status)) return true;
-    if (status !== "free") return false;
-    const previewLesson = lessonService.levels
-      .flatMap((level) => firstPreviewLessons(lessons, level))
-      .find((lesson) => lesson.id === lessonId);
-    if (!previewLesson) return false;
-
-    // Keep an already completed preview lesson mounted long enough to show its
-    // result screen. This also lets a learner repeat the section they already
-    // earned, while the path and every paid feature remain locked.
-    if (progress.completedLessons.includes(lessonId)) return true;
-    if (this.hasCompletedPreviewAtAnyLevel(lessons, progress)) return false;
-    return previewLesson.level === progress.currentLevel;
-  },
-
-  isFinalPreviewLesson(lessonId: string, lessons: Lesson[], progress: Progress, status: SubscriptionStatus): boolean {
-    if (status !== "free" || this.hasCompletedPreviewAtAnyLevel(lessons, progress)) return false;
-    const section = firstPreviewLessons(lessons, progress.currentLevel);
-    const remaining = section.filter((lesson) => !progress.completedLessons.includes(lesson.id));
-    return remaining.length === 1 && remaining[0]?.id === lessonId;
+  isFinalPreviewLesson(id: string, lessons: Lesson[], progress: Progress, status: SubscriptionStatus): boolean {
+    return status === "free" && completedCount(progress.completedLessons) === FREE_LESSON_LIMIT - 1
+      && !progress.completedLessons.includes(id) && this.canOpenLesson(id, lessons, progress, status);
   }
 };
