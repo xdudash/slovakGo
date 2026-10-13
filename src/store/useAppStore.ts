@@ -433,7 +433,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
   },
 
   finishPracticeSession(results) {
-    if (isAdminPreview()) return;
+    if (isAdminPreview() || results.length === 0) return;
     const currentUserId = get().currentUserId;
     if (!currentUserId) return;
     const subStatus = get().data.users.find((u) => u.id === currentUserId)?.subscriptionStatus;

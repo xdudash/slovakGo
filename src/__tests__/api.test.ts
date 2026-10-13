@@ -1088,3 +1088,65 @@ describe("parallel entitlement requests", () => {
     expect(JSON.parse(String(row.completed_j))).toHaveLength(10);
   });
 });
+
+describe('practice hearts persist through server sync', () => {
+  let cookie: string;
+  let uid: string;
+  beforeAll(async () => {
+    await resetRateLimit();
+    const registered = await call('POST', ['auth', 'register'], {
+      body: {email: 'heart-recovery@example.com', password: 'Secret123', name: 'Heart recovery'},
+    });
+    uid = String((registered.body.user as Record<string, unknown>).id);
+    cookie = await makeCookie(uid);
+    const db = createClient({url: `file:${TEST_DB}`});
+    await db.execute({sql: "UPDATE users SET sub_status='plus' WHERE id=?", args: [uid]});
+    db.close();
+  });
+
+  async function practice(id: string, results: unknown[]) {
+    return call('POST', ['sync', 'push'], {cookie, body: {mutations: [{id, type: 'practice.complete', payload: {results}}]}});
+  }
+  async function progress() {
+    return (await call('GET', ['sync', 'pull'], {cookie})).body.progress as Record<string, unknown>;
+  }
+
+  it('restores 0 to 1, records the real completion day and does not award a replay twice', async () => {
+    const db = createClient({url: `file:${TEST_DB}`});
+    await db.execute({sql: 'UPDATE progress SET hearts=0 WHERE user_id=?',args:[uid]});
+    db.close();
+    const results = [{wordId:'lesson-word',correct:true}];
+    const before = await progress();
+    expect((await practice('heart-practice-1', results)).status).toBe(200);
+    const after = await progress();
+    expect(after.hearts).toBe(1);
+    expect(Number(after.xpTotal)-Number(before.xpTotal)).toBe(8);
+    const { learningDay } = await import('../../shared/learningCalendar');
+    expect(after.lastPracticeDate).toBe(learningDay());
+    await practice('heart-practice-1',results);
+    const replay = await progress();
+    expect(replay.hearts).toBe(1);
+    expect(replay.xpTotal).toBe(after.xpTotal);
+  });
+
+  it('caps hearts at five across further completed sessions', async () => {
+    const db = createClient({url: `file:${TEST_DB}`});
+    await db.execute({sql:'UPDATE progress SET hearts=4 WHERE user_id=?',args:[uid]});
+    db.close();
+    await practice('heart-practice-2',[{wordId:'lesson-word',correct:false}]);
+    expect((await progress()).hearts).toBe(5);
+    await practice('heart-practice-3',[{wordId:'lesson-word',correct:true}]);
+    expect((await progress()).hearts).toBe(5);
+  });
+
+  it('does not award hearts or XP for an empty session', async () => {
+    const db = createClient({url:`file:${TEST_DB}`});
+    await db.execute({sql:'UPDATE progress SET hearts=0 WHERE user_id=?',args:[uid]});
+    db.close();
+    const before = await progress();
+    await practice('heart-practice-empty',[]);
+    const after = await progress();
+    expect(after.hearts).toBe(0);
+    expect(after.xpTotal).toBe(before.xpTotal);
+  });
+});

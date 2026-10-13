@@ -7317,3 +7317,21 @@ textarea:focus,
 .final-situation-title, .final-situation-description { margin: 0; }
 .final-situation-description { line-height: 1.5; }
 .lesson-screen--final > .lesson-feedback:empty { display: none; }
+
+.practice-recovery-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: var(--radius-card);
+  background: var(--accent-soft);
+}
+.practice-recovery-banner > svg { color: var(--error); flex-shrink: 0; }
+.practice-recovery-banner p { margin: 0; font-size: .9rem; line-height: 1.6; }
+.practice-recovery-banner strong { margin-left: auto; white-space: nowrap; }
+.practice-recovery-result { display: flex; align-items: center; justify-content: center; gap: 7px; flex-wrap: wrap; }
+.practice-recovery-result svg { color: var(--error); }
+@media (max-width: 600px) {
+  .practice-result-word { flex-wrap: wrap; }
+  .practice-result-word .sr-next-date { flex-basis: calc(100% - 30px); margin-left: 26px; white-space: normal; }
+}

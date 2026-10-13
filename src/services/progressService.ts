@@ -165,6 +165,7 @@ export const progressService = {
       ...updated,
       xpTotal: updated.xpTotal + xpEarned,
       xpWeekly: updated.xpWeekly + xpEarned,
+      hearts: Math.min(updated.maxHearts, updated.hearts + 1),
       lastPracticeDate: todayKey(),
       updatedAt: new Date().toISOString()
     };

@@ -73,3 +73,26 @@ describe('formatWeekTimer', () => {
     expect(formatWeekTimer(s)).toBe('6 д 23 год 59 хв');
   });
 });
+
+describe('learning calendar shared with the API', () => {
+  it('uses the Slovak calendar day after local midnight even while UTC is yesterday', async () => {
+    const { todayKey } = await import('./date');
+    expect(todayKey(new Date('2026-10-13T22:15:00Z'))).toBe('2026-10-14');
+    expect(todayKey(new Date('2026-10-13T21:59:00Z'))).toBe('2026-10-13');
+  });
+
+  it('uses the winter timezone offset', async () => {
+    const { todayKey } = await import('./date');
+    expect(todayKey(new Date('2026-12-13T23:15:00Z'))).toBe('2026-12-14');
+  });
+
+  it('starts the new learning week on Monday in Slovakia', () => {
+    expect(currentWeekId(new Date('2026-10-11T22:15:00Z'))).toBe('2026-10-12');
+  });
+
+  it('moves between calendar dates across daylight saving boundaries', async () => {
+    const { shiftLearningDay } = await import('../../shared/learningCalendar');
+    expect(shiftLearningDay('2026-03-30', -1)).toBe('2026-03-29');
+    expect(shiftLearningDay('2026-10-26', -1)).toBe('2026-10-25');
+  });
+});

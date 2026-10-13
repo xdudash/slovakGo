@@ -1,10 +1,11 @@
+import { todayKey } from "../utils/date";
 import type { VocabularyWord } from "./vocabularyService";
 
 // Consecutive-correct → days until next review
 const INTERVAL_DAYS = [1, 3, 7, 14, 30] as const;
 
 function todayISO(): string {
-  return new Date().toISOString().slice(0, 10);
+  return todayKey();
 }
 
 export const srService = {
@@ -25,7 +26,7 @@ export const srService = {
   dueCount(words: VocabularyWord[]): number {
     const today = todayISO();
     return words.filter(
-      (w) => w.status !== "mastered" && w.nextReviewAt != null && w.nextReviewAt.slice(0, 10) <= today
+      (w) => w.status !== "mastered" && w.nextReviewAt != null && todayKey(new Date(w.nextReviewAt)) <= today
     ).length;
   },
 
@@ -46,7 +47,7 @@ export const srService = {
       if (w.nextReviewAt == null) {
         return w.mistakeCount > 0 ? 50 + w.mistakeCount : 10;
       }
-      const day = w.nextReviewAt.slice(0, 10);
+      const day = todayKey(new Date(w.nextReviewAt));
       if (day < today) {
         const overdue = Math.floor((Date.now() - new Date(day).getTime()) / 86_400_000);
         return 1000 + overdue;

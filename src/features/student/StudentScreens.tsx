@@ -19,7 +19,7 @@ import type { AnswerRecord, Exercise, ExerciseType, LeaderboardEntry, Lesson, Lo
 import { getDailyPhrases, getScenarioForGoal } from "../../data/scenarios";
 import { downloadCertificate } from "../../services/certificateService";
 import { generateShareCard, shareOrDownloadCard } from "../../services/shareService";
-import { formatWeekTimer, secondsUntilWeekEnd } from "../../utils/date";
+import { formatWeekTimer, secondsUntilWeekEnd, todayKey } from "../../utils/date";
 import { requestFcmToken } from "../../services/fcmService";
 import { accessService } from "../../services/accessService";
 import { track } from "../../services/analytics";
@@ -1466,6 +1466,7 @@ function LessonScreen() {
             <Heart size={40} color="var(--red)" />
             <h1>{t("student.lesson.no_hearts_title")}</h1>
             <p>{t("student.lesson.no_hearts_text")}</p>
+            {accessService.hasFullAccess(user?.subscriptionStatus ?? "free") && <Button onClick={() => navigate("/app/practice")}>{t("student.practice.recover_hearts")}</Button>}
             <Button onClick={() => navigate("/app/path")}>{t("student.lesson.back_to_path")}</Button>
             <Button variant="secondary" onClick={restoreHearts}>{t("student.lesson.try_again")}</Button>
             <Button variant="ghost" onClick={() => navigate("/app/shop")}>{t("student.lesson.go_plus")}</Button>
@@ -1747,6 +1748,8 @@ function PracticeScreen() {
   const [countdown, setCountdown] = useState(20);
   const [sessionAnswers, setSessionAnswers] = useState<{ wordId: string; correct: boolean }[]>([]);
   const feedbackRef = useRef<"correct" | "wrong" | null>(null);
+  const sessionFinishedRef = useRef(false);
+  const [sessionResult, setSessionResult] = useState<{ completedAt: string; heartsRestored: number } | null>(null);
   const timerIdRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => { feedbackRef.current = feedback; }, [feedback]);
@@ -1754,30 +1757,31 @@ function PracticeScreen() {
   useEffect(() => {
     if (!timerEnabled || phase !== "session") return;
     setCountdown(20);
+    const deadline = Date.now() + 20_000;
     timerIdRef.current = setInterval(() => {
-      setCountdown((n) => {
-        if (n <= 1) {
-          if (timerIdRef.current) { clearInterval(timerIdRef.current); timerIdRef.current = null; }
-          if (feedbackRef.current === null) {
-            setSessionAnswers((sa) => [...sa, { wordId: exercises[index]?.wordId ?? "", correct: false }]);
-            setFeedback("wrong");
-          }
-          return 0;
+      const remaining = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
+      setCountdown(remaining);
+      if (remaining === 0) {
+        if (timerIdRef.current) { clearInterval(timerIdRef.current); timerIdRef.current = null; }
+        if (feedbackRef.current === null) {
+          feedbackRef.current = "wrong";
+          setSessionAnswers((sa) => [...sa, { wordId: exercises[index]?.wordId ?? "", correct: false }]);
+          setFeedback("wrong");
         }
-        return n - 1;
-      });
+      }
     }, 1000);
     return () => { if (timerIdRef.current) { clearInterval(timerIdRef.current); timerIdRef.current = null; } };
   }, [index, timerEnabled, phase, exercises]);
 
   if (!user || !progress) return <PageSkeleton />;
 
+  const heartsToRestore = progress.hearts < progress.maxHearts ? 1 : 0;
   const hasXpBonus = ["trial", "plus", "past_due"].includes(user.subscriptionStatus);
   const xpEarned = hasXpBonus ? 8 : 5;
   const allWords = vocabularyService.build(data.lessons, data.userWords[user.id]);
   const dueCount = srService.dueCount(allWords);
   const dueWords = allWords.filter(
-    (w) => w.status !== "mastered" && w.nextReviewAt != null && w.nextReviewAt.slice(0, 10) <= new Date().toISOString().slice(0, 10)
+    (w) => w.status !== "mastered" && w.nextReviewAt != null && todayKey(new Date(w.nextReviewAt)) <= todayKey()
   );
 
   function toggleType(type: PracticeType) {
@@ -1815,6 +1819,10 @@ function PracticeScreen() {
       types,
       (word) => resolveText(word.translation, lang, "uk") || word.uk
     );
+    if (ex.length === 0) return;
+    sessionFinishedRef.current = false;
+    setSessionResult(null);
+    feedbackRef.current = null;
     setExercises(ex);
     setIndex(0);
     setSessionAnswers([]);
@@ -1824,6 +1832,10 @@ function PracticeScreen() {
   }
 
   function startMistakeSession() {
+    if (recentMistakeExercises.length === 0) return;
+    sessionFinishedRef.current = false;
+    setSessionResult(null);
+    feedbackRef.current = null;
     setExercises(recentMistakeExercises);
     setIndex(0);
     setSessionAnswers([]);
@@ -1870,6 +1882,12 @@ function PracticeScreen() {
                 </div>
               </button>
             )}
+
+            <div className="practice-recovery-banner">
+              <Heart size={22} />
+              <p>{t("student.practice.hearts_reward_hint")}</p>
+              <strong>{progress.hearts}/{progress.maxHearts}</strong>
+            </div>
 
             {/* Plus XP bonus card */}
             {hasXpBonus && (
@@ -1918,7 +1936,7 @@ function PracticeScreen() {
                     <div className="word-group-header">{label}</div>
                     <div className="word-mini-list">
                       {words.map((w) => (
-                        <span key={w.id} className={w.nextReviewAt && w.nextReviewAt.slice(0, 10) <= new Date().toISOString().slice(0, 10) ? "sr-due-word" : ""}>
+                        <span key={w.id} className={w.nextReviewAt && todayKey(new Date(w.nextReviewAt)) <= todayKey() ? "sr-due-word" : ""}>
                           {w.sk} — {w.uk}
                         </span>
                       ))}
@@ -1943,17 +1961,23 @@ function PracticeScreen() {
     const wordTopic = allWords.find((w) => w.id === practiceEx.wordId)?.topic ?? "";
 
     function check() {
+      if (feedbackRef.current !== null) return;
       if (timerIdRef.current) { clearInterval(timerIdRef.current); timerIdRef.current = null; }
       const correct = progressService.check(exercise, answer);
+      feedbackRef.current = correct ? "correct" : "wrong";
       setSessionAnswers((prev) => [...prev, { wordId: practiceEx.wordId, correct }]);
       setFeedback(correct ? "correct" : "wrong");
     }
 
     function next() {
       if (isLast) {
+        if (sessionFinishedRef.current || sessionAnswers.length !== exercises.length) return;
+        sessionFinishedRef.current = true;
+        setSessionResult({ completedAt: new Date().toISOString(), heartsRestored: heartsToRestore });
         finishPracticeSession(sessionAnswers);
         setPhase("results");
       } else {
+        feedbackRef.current = null;
         setIndex((i) => i + 1);
         setAnswer("");
         setFeedback(null);
@@ -2005,6 +2029,10 @@ function PracticeScreen() {
           <h2>+{xpEarned} XP</h2>
           {hasXpBonus && <span className="plus-xp-chip">{t("student.practice.plus_bonus")}</span>}
         </div>
+        {sessionResult && <>
+          <p className="practice-recovery-result"><Heart size={18} /> {sessionResult.heartsRestored > 0 ? t("student.practice.hearts_restored") : t("student.practice.hearts_full")} · {progress.hearts}/{progress.maxHearts}</p>
+          <p>{t("student.practice.completed_on")} {new Date(sessionResult.completedAt).toLocaleDateString(lang === "uk" ? "uk-UA" : lang, { timeZone: "Europe/Bratislava", day: "numeric", month: "long" })}</p>
+        </>}
         <p>{correctCount} / {total} {t("student.practice.results_correct")} · {accuracy}%</p>
       </Card>
       <Card>
@@ -2013,13 +2041,13 @@ function PracticeScreen() {
           {sessionAnswers.map(({ wordId, correct }, i) => {
             const word = allWords.find((w) => w.id === wordId);
             const nextReview = data.userWords[user.id]?.find((w) => w.wordId === wordId)?.nextReviewAt;
-            const nextDay = nextReview ? new Date(nextReview).toLocaleDateString("uk-UA", { month: "short", day: "numeric" }) : null;
+            const nextDay = nextReview ? new Date(nextReview).toLocaleDateString(lang === "uk" ? "uk-UA" : lang, { timeZone: "Europe/Bratislava", month: "short", day: "numeric" }) : null;
             return (
               <div key={`${wordId}-${i}`} className="practice-result-word">
                 <span className={correct ? "correct-mark" : "wrong-mark"}>{correct ? "✓" : "✗"}</span>
                 <span>{word?.sk}</span>
                 <span className="word-meta">{word?.uk}</span>
-                {nextDay && <span className="sr-next-date">{nextDay}</span>}
+                {nextDay && <span className="sr-next-date">{t("student.practice.next_review")} {nextDay}</span>}
               </div>
             );
           })}

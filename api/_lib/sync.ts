@@ -1,3 +1,4 @@
+import { shiftLearningDay } from "../../shared/learningCalendar";
 import { completedCount, FREE_LESSON_LIMIT } from "../../shared/access";
 import { accessibleLessons, assertLessonAccess, AccessDeniedError } from "./access";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
@@ -290,7 +291,7 @@ async function mutLessonComplete(uid: string, p: Record<string, unknown>): Promi
   const today = todayKey();
   const weekId = currentWeekId();
   const xpW = String(prog.week_id) === weekId ? Number(prog.xp_weekly) : 0;
-  const lastP = String(prog.last_prac ?? "");
+  const lastP = String(prog.last_prac ?? "").slice(0, 10);
   let streak = Number(prog.streak_days);
   let freeze = Number(prog.freeze_cnt);
 
@@ -298,7 +299,7 @@ async function mutLessonComplete(uid: string, p: Record<string, unknown>): Promi
     if (!lastP) {
       streak = 1;
     } else {
-      const yest = new Date(Date.now() - 86400_000).toISOString().slice(0, 10);
+      const yest = shiftLearningDay(today, -1);
       if (lastP === yest) streak += 1;
       else if (freeze > 0) freeze -= 1;
       else streak = 1;
@@ -344,6 +345,8 @@ async function mutWordUpdate(uid: string, p: Record<string, unknown>): Promise<v
 
 async function mutPracticeComplete(uid: string, p: Record<string, unknown>): Promise<void> {
   const results = Array.isArray(p.results) ? p.results as Record<string, unknown>[] : [];
+  // An empty or malformed session earns neither XP nor hearts.
+  if (results.length === 0 || results.some(r => !r || typeof r.correct !== "boolean" || typeof r.wordId !== "string")) return;
   const prog = await ensureProgress(uid);
   const userRow = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [uid]);
   if (!userRow) throw new Error("Unknown user");
@@ -358,7 +361,7 @@ async function mutPracticeComplete(uid: string, p: Record<string, unknown>): Pro
   const today = todayKey();
   const weekId = currentWeekId();
   const xpW = String(prog.week_id) === weekId ? Number(prog.xp_weekly) : 0;
-  const lastP = String(prog.last_prac ?? "");
+  const lastP = String(prog.last_prac ?? "").slice(0, 10);
   let streak = Number(prog.streak_days);
   let freeze = Number(prog.freeze_cnt);
 
@@ -366,7 +369,7 @@ async function mutPracticeComplete(uid: string, p: Record<string, unknown>): Pro
     if (!lastP) {
       streak = 1;
     } else {
-      const yest = new Date(Date.now() - 86400_000).toISOString().slice(0, 10);
+      const yest = shiftLearningDay(today, -1);
       if (lastP === yest) streak += 1;
       else if (freeze > 0) freeze -= 1;
       else streak = 1;
@@ -378,7 +381,8 @@ async function mutPracticeComplete(uid: string, p: Record<string, unknown>): Pro
 
   await exec(
     `UPDATE progress SET xp_total = xp_total + ?, xp_weekly = ?, xp_daily_j = ?, week_id = ?,
-       streak_days = ?, last_prac = ?, freeze_cnt = ?, practice_awarded_at = ?, updated_at = ? WHERE user_id = ?`,
+       streak_days = ?, last_prac = ?, freeze_cnt = ?, hearts = MIN(max_hearts, hearts + 1),
+       practice_awarded_at = ?, updated_at = ? WHERE user_id = ?`,
     [xpEarned, xpW + xpEarned, JSON.stringify(xpDaily), weekId, streak, today, freeze, nowIso(), nowIso(), uid]
   );
 

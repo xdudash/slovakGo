@@ -1,5 +1,7 @@
+import { learningDay, learningWeek, shiftLearningDay } from "../../shared/learningCalendar";
+
 export function todayKey(date = new Date()): string {
-  return date.toISOString().slice(0, 10);
+  return learningDay(date);
 }
 
 export function addDays(date: Date, days: number): string {
@@ -8,15 +10,16 @@ export function addDays(date: Date, days: number): string {
   return next.toISOString();
 }
 
+function dateDay(value: string): string {
+  return /^\d{4}-\d{2}-\d{2}$/.test(value) ? value : todayKey(new Date(value));
+}
+
 export function isYesterday(dateIso?: string): boolean {
-  if (!dateIso) return false;
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
-  return todayKey(new Date(dateIso)) === todayKey(yesterday);
+  return !!dateIso && dateDay(dateIso) === shiftLearningDay(todayKey(), -1);
 }
 
 export function isToday(dateIso?: string): boolean {
-  return !!dateIso && todayKey(new Date(dateIso)) === todayKey();
+  return !!dateIso && dateDay(dateIso) === todayKey();
 }
 
 export function secondsUntilWeekEnd(now = new Date()): number {
@@ -35,12 +38,5 @@ export function formatWeekTimer(seconds: number): string {
 }
 
 export function currentWeekId(now = new Date()): string {
-  const d = new Date(now);
-  d.setHours(0, 0, 0, 0);
-  const day = d.getDay() || 7;
-  d.setDate(d.getDate() + 1 - day);
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, "0");
-  const dd = String(d.getDate()).padStart(2, "0");
-  return `${y}-${m}-${dd}`;
+  return learningWeek(now);
 }

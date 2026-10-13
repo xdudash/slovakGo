@@ -1,3 +1,4 @@
+import { learningDay, learningWeek } from "../../shared/learningCalendar";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { createClient, type Row, type InValue } from "@libsql/client";
 import { SignJWT, jwtVerify } from "jose";
@@ -76,18 +77,9 @@ export async function logEvent(userId: string | null, name: string, props: Recor
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 export const nowIso  = () => new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
-export const todayKey = () => new Date().toISOString().slice(0, 10);
+export const todayKey = learningDay;
 
-export function currentWeekId(now = new Date()): string {
-  const d = new Date(now);
-  d.setHours(0, 0, 0, 0);
-  const day = d.getDay() || 7;
-  d.setDate(d.getDate() + 1 - day);
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, "0");
-  const dd = String(d.getDate()).padStart(2, "0");
-  return `${y}-${m}-${dd}`;
-}
+export const currentWeekId = learningWeek;
 
 export function parseCookies(h: string): Record<string, string> {
   const out: Record<string, string> = {};

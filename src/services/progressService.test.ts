@@ -152,3 +152,21 @@ describe('progressService.check', () => {
     expect(progressService.check(ex, 'čau')).toBe(false);
   });
 });
+
+describe('practice heart recovery', () => {
+  it('recovers one heart from zero and still awards practice XP', () => {
+    const result = progressService.practiceDone(makeProgress({ hearts: 0 }), 'plus');
+    expect(result.hearts).toBe(1);
+    expect(result.xpTotal).toBe(108);
+  });
+
+  it('can recover hearts on consecutive sessions without exceeding the limit', () => {
+    let progress = makeProgress({ hearts: 3 });
+    progress = progressService.practiceDone(progress);
+    expect(progress.hearts).toBe(4);
+    progress = progressService.practiceDone(progress);
+    expect(progress.hearts).toBe(5);
+    progress = progressService.practiceDone(progress);
+    expect(progress.hearts).toBe(5);
+  });
+});
