@@ -1,7 +1,8 @@
+import { CompanionNote, GuideCharacter } from "../../components/LearningCompanion";
 import { EmailPreferences } from "../../components/EmailPreferences";
 import { useCallback, useEffect, useRef, useState, useMemo } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { AlertCircle, Bell, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, Download, Flame, Heart, Layers, Link2, LogOut, Medal, MessageSquare, Play, RefreshCw, Search, Settings, Share2, ShoppingBag, Star, Trophy, Users, Volume2, Zap } from "lucide-react";
+import { AlertCircle, Bell, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, ChevronRight, Download, Flame, Heart, Layers, Link2, LogOut, Medal, MessageSquare, Play, RefreshCw, Search, Settings, Share2, ShoppingBag, Star, Trophy, Users, Volume2, Zap } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, EmptyState, Field, Modal, PageHeader, ProgressBar } from "../../components/ui";
 import { PageSkeleton } from "../../components/Skeleton";
@@ -86,15 +87,15 @@ function useStudentData() {
 
 function TopStats() {
   const { user, progress } = useStudentData();
-  const { t } = useT();
+  const { t, lang } = useT();
   if (!user || !progress) return null;
-  const today = new Date().toISOString().slice(0, 10);
+  const today = todayKey();
   const todayXp = progress.xpDailyHistory?.[today] ?? 0;
   const streakAtRisk = progress.streakDays > 0 && todayXp === 0;
   return (
     <div className="sticky-stats">
       <div className="level-badge">{progress.currentLevel}</div>
-      <div className="stat-chip xp"><Zap size={14} /> {progress.xpTotal} XP</div>
+      <div className="stat-chip xp" aria-label={`${progress.xpTotal} XP`}><Zap size={14} /> {new Intl.NumberFormat(lang, { notation: "compact", maximumFractionDigits: 1 }).format(progress.xpTotal)} XP</div>
       <div className="stat-chip hearts"><Heart size={14} /> {progress.hearts}/{progress.maxHearts}</div>
       <div className={`stat-chip streak${streakAtRisk ? " at-risk" : ""}`}>
         <Flame size={14} /> {progress.streakDays}
@@ -341,7 +342,7 @@ function PathScreen() {
 
   if (!user || !progress) return <PageSkeleton />;
 
-  const today = new Date().toISOString().slice(0, 10);
+  const today = todayKey();
   const todayXp = progress.xpDailyHistory?.[today] ?? 0;
   const dailyGoal = 20;
   const goalPct = Math.min(100, Math.round(todayXp / dailyGoal * 100));
@@ -352,12 +353,11 @@ function PathScreen() {
   const nextPreview = accessService.firstPreviewLessons(data.lessons, progress.freePreviewLevel ?? progress.currentLevel).find(l => !progress.completedLessons.includes(l.id));
 
   return (
-    <main className="page-content">
+    <main className="page-content path-page">
       <PageHeader
-        title={t("student.path.title")}
+        title={`${t("student.experience.hello")}, ${user.name.split(" ")[0]}!`}
         subtitle={`${progress.currentLevel} · ${t(`student.level_desc.${progress.currentLevel}`)}`}
       />
-      <PWAInstallBanner />
 
       {previewMode && (
         <div className="preview-access-banner">
@@ -370,12 +370,17 @@ function PathScreen() {
       )}
 
       {previewMode && nextPreview && nextPreview.level !== progress.currentLevel && <Card><p>Продовжити безкоштовні уроки на рівні {nextPreview.level}</p><Button onClick={() => useAppStore.getState().setLevel(nextPreview.level)}>До наступного уроку</Button></Card>}
-      {/* Unit section header */}
-      <div className="unit-card">
-        <span className="progress-pill">{levelProgress}%</span>
-        <h2>{progress.currentLevel}: {resolveText(current?.topic, lang) || t("student.path.default_topic")}</h2>
-        <p>{levelLessons.filter((l) => lessonService.status(l, data.lessons, progress) === "completed").length}/{levelLessons.length} {t("student.path.progress_pct")}</p>
-      </div>
+      <section className="learning-hero">
+        <div className="learning-hero-copy">
+          <span className="learning-hero-level">{progress.currentLevel} · {t("student.experience.your_journey")}</span>
+          <h2>{resolveText(current?.topic, lang) || t("student.path.default_topic")}</h2>
+          <p>{levelLessons.filter((l) => lessonService.status(l, data.lessons, progress) === "completed").length}/{levelLessons.length} {t("student.path.progress_pct")}</p>
+          <div className="learning-hero-progress" role="progressbar" aria-label={t("student.experience.level_progress")} aria-valuemin={0} aria-valuemax={100} aria-valuenow={levelProgress}><span style={{ width: `${levelProgress}%` }} /></div>
+          {current && <Button onClick={() => navigate(`/app/lesson/${current.id}`)}>{t("student.path.continue")} <ChevronRight size={18} /></Button>}
+        </div>
+        <div className="learning-hero-friend"><span className="companion-speech" lang="sk">Dobrý deň! <span aria-hidden="true">✦</span></span><GuideCharacter /></div>
+      </section>
+      {current && <div className="next-lesson-summary"><BookOpen size={20} /><div><span>{t("student.experience.next_lesson")}</span><strong>{resolveText(current.title, lang)}</strong></div><span className="next-lesson-duration">{current.estimatedMinutes} {t("student.experience.minutes")}</span></div>}
 
       {/* Daily goal bar */}
       <div className={`daily-goal${goalDone ? " daily-goal--done" : ""}`}>
@@ -402,6 +407,7 @@ function PathScreen() {
         </div>
       )}
 
+      <div className="path-sections">
       {/* Visual lesson node path */}
       <div className="learning-path">
         {groupedTopics.map((group, groupIndex) => {
@@ -460,20 +466,7 @@ function PathScreen() {
         })}
       </div>
 
-      {/* Floating lesson CTA */}
-      {current && (
-        <div className="floating-lesson">
-          <div className="icon-circle"><BookOpen size={20} /></div>
-          <div className="info">
-            <h4>{resolveText(current.title, lang)}</h4>
-            <p>{resolveText(current.topic, lang)} · {current.xpReward} XP</p>
-          </div>
-          <button type="button" className="btn-go" onClick={() => navigate(`/app/lesson/${current.id}`)}>
-            {t("student.path.continue")}
-          </button>
-        </div>
-      )}
-
+      <aside className="path-aside">
       {/* Daily scenario phrases */}
       <Card className="scenario-card">
         <div className="scenario-header">
@@ -489,6 +482,9 @@ function PathScreen() {
           ))}
         </ul>
       </Card>
+      <PWAInstallBanner />
+      </aside>
+      </div>
     </main>
   );
 }
@@ -1461,7 +1457,7 @@ function LessonScreen() {
       )}
 
       {progress.hearts <= 0 ? (
-        <Modal>
+        <Modal className="student-modal" label={t("student.experience.dialog_title")}>
           <Card className="modal-card">
             <Heart size={40} color="var(--red)" />
             <h1>{t("student.lesson.no_hearts_title")}</h1>
@@ -1488,7 +1484,7 @@ function LessonScreen() {
             />
           ))}
           <div className="celebrate-card">
-            <div className="celebrate-icon">{celebration.wrong.length === 0 ? "🏆" : "🎉"}</div>
+            <div className="celebrate-icon"><GuideCharacter mood="celebrate" /></div>
             <div className="celebrate-xp">+{celebration.xp} XP</div>
             <p className="celebrate-sub">
               {celebration.correct} / {celebration.total} {t("student.lesson.correct_label")}
@@ -1588,10 +1584,10 @@ function VocabularyScreen() {
 
   function renderCard(word: VocabularyWord) {
     return (
-      <Card key={word.id} className="word-card word-card--interactive" onClick={() => setSelectedWord(word)}>
+      <Card key={word.id} className="word-card word-card--interactive">
         <div className="word-card-main">
           <div className="word-card-content">
-            <h3>{word.sk}</h3>
+            <h3><button type="button" className="word-card-open" onClick={() => setSelectedWord(word)}>{word.sk}</button></h3>
             <p className="word-uk">{word.uk}</p>
             {word.exampleSk && <small>{word.exampleSk}</small>}
           </div>
@@ -1603,6 +1599,7 @@ function VocabularyScreen() {
               </button>
             )}
             <button type="button" className={`icon-button ${word.favorite ? "active" : ""}`}
+              aria-label={t(word.favorite ? "student.experience.unsave_word" : "student.experience.save_word")}
               onClick={(e) => { e.stopPropagation(); toggleFavorite(word.id); }}>
               <Star size={19} />
             </button>
@@ -1620,7 +1617,7 @@ function VocabularyScreen() {
   }
 
   return (
-    <main className="page-content">
+    <main className="page-content vocabulary-page">
       <PageHeader title={t("student.vocabulary.title")} subtitle={t("student.vocabulary.subtitle")} />
       <div className="search-box">
         <Search size={18} />
@@ -1667,7 +1664,7 @@ function VocabularyScreen() {
       </div>
 
       {sorted.length === 0 && (
-        <EmptyState
+        <EmptyState companion
           title={filter === "favorite" ? t("student.vocabulary.empty_saved_title") : t("student.vocabulary.empty_title")}
           text={filter === "favorite" ? t("student.vocabulary.empty_saved_text") : t("student.vocabulary.empty_text")}
         />
@@ -1685,7 +1682,7 @@ function VocabularyScreen() {
       </div>
 
       {selectedWord && (
-        <Modal>
+        <Modal className="student-modal" label={t("student.experience.dialog_title")} onClose={() => setSelectedWord(null)}>
           <Card className="modal-card word-detail">
             <div className="word-detail-header">
               <div>
@@ -1853,14 +1850,14 @@ function PracticeScreen() {
     );
 
     return (
-      <main className="page-content">
+      <main className="page-content practice-page">
         <PageHeader
           title={t("student.practice.title")}
           subtitle={`${allWords.length} ${t("student.practice.words_count")}`}
         />
 
         {allWords.length === 0 ? (
-          <EmptyState title={t("student.practice.empty_title")} text={t("student.practice.empty_text")} />
+          <EmptyState companion title={t("student.practice.empty_title")} text={t("student.practice.empty_text")} />
         ) : (
           <>
             {/* Due-today banner */}
@@ -1883,11 +1880,9 @@ function PracticeScreen() {
               </button>
             )}
 
-            <div className="practice-recovery-banner">
-              <Heart size={22} />
-              <p>{t("student.practice.hearts_reward_hint")}</p>
-              <strong>{progress.hearts}/{progress.maxHearts}</strong>
-            </div>
+            <CompanionNote title={t("student.experience.practice_title")} text={t("student.practice.hearts_reward_hint")}>
+              <span className="companion-heart-count"><Heart size={15} /> {progress.hearts}/{progress.maxHearts}</span>
+            </CompanionNote>
 
             {/* Plus XP bonus card */}
             {hasXpBonus && (
@@ -1896,6 +1891,10 @@ function PracticeScreen() {
                 <span>{t("student.practice.plus_bonus")}</span>
               </div>
             )}
+
+            <Button onClick={startSession}>
+              {t("student.practice.start_btn").replace("{count}", String(practiceCount))}
+            </Button>
 
             <Card>
               <h3>{t("student.practice.settings_title")}</h3>
@@ -1925,9 +1924,6 @@ function PracticeScreen() {
               </div>
             </Card>
 
-            <Button onClick={startSession}>
-              {t("student.practice.start_btn").replace("{count}", String(practiceCount))}
-            </Button>
 
             {topicGroups.length > 0 && (
               <div className="practice-preview-section">
@@ -2024,7 +2020,7 @@ function PracticeScreen() {
     <main className="page-content">
       <PageHeader title={t("student.practice.results_title")} />
       <Card className="result-card">
-        <Trophy size={48} color="var(--yellow-strong)" />
+        <GuideCharacter className="result-companion" mood="celebrate" />
         <div className="result-xp-row">
           <h2>+{xpEarned} XP</h2>
           {hasXpBonus && <span className="plus-xp-chip">{t("student.practice.plus_bonus")}</span>}
@@ -2185,7 +2181,7 @@ function LeaderboardScreen() {
                 </Card>
               </details>
             ))
-            : <EmptyState title={t("student.leaderboard.history_empty_title")} text={t("student.leaderboard.history_empty_text")} />
+            : <EmptyState companion title={t("student.leaderboard.history_empty_title")} text={t("student.leaderboard.history_empty_text")} />
           }
         </>
       ) : (
@@ -2464,7 +2460,7 @@ function ProfileScreen() {
       </div>
 
       {modal === "streak" && (
-        <Modal onClose={() => setModal(null)}>
+        <Modal className="student-modal" label={t("student.experience.dialog_title")} onClose={() => setModal(null)}>
           <Card className="profile-modal">
             <Flame size={44} color="var(--orange)" />
             <strong className="modal-big-num">{progress.streakDays}</strong>
@@ -2475,7 +2471,7 @@ function ProfileScreen() {
       )}
 
       {modal === "hearts" && (
-        <Modal onClose={() => setModal(null)}>
+        <Modal className="student-modal" label={t("student.experience.dialog_title")} onClose={() => setModal(null)}>
           <Card className="profile-modal">
             <Heart size={44} color="var(--red)" />
             <strong className="modal-big-num">{progress.hearts}/{progress.maxHearts}</strong>
@@ -2489,7 +2485,7 @@ function ProfileScreen() {
       )}
 
       {modal === "avatar" && avatarPreview && (
-        <Modal onClose={() => { setModal(null); setAvatarPreview(null); }}>
+        <Modal className="student-modal" label={t("student.experience.dialog_title")} onClose={() => { setModal(null); setAvatarPreview(null); }}>
           <Card className="profile-modal">
             <h2>{t("student.profile.avatar_title")}</h2>
             <img className="avatar-preview" src={avatarPreview} alt="preview" />
@@ -2504,7 +2500,7 @@ function ProfileScreen() {
       )}
 
       {modal === "logout" && (
-        <Modal onClose={() => setModal(null)}>
+        <Modal className="student-modal" label={t("student.experience.dialog_title")} onClose={() => setModal(null)}>
           <Card className="profile-modal">
             <h2>{t("student.profile.logout_confirm_title")}</h2>
             <p>{t("student.profile.logout_confirm_text")}</p>
@@ -2518,6 +2514,7 @@ function ProfileScreen() {
 }
 
 function SupportWidget({ variant = "secondary" }: { variant?: "primary" | "secondary" | "ghost" }) {
+  const { t } = useT();
   const [supportOpen, setSupportOpen] = useState(false);
   const [supportTopic, setSupportTopic] = useState("question");
   const [supportMsg, setSupportMsg] = useState("");
@@ -2546,7 +2543,7 @@ function SupportWidget({ variant = "secondary" }: { variant?: "primary" | "secon
       </Button>
 
       {supportOpen && (
-        <Modal onClose={() => { setSupportOpen(false); setSupportSent(false); setSupportError(""); }}>
+        <Modal className="student-modal" label={t("student.experience.dialog_title")} onClose={() => { setSupportOpen(false); setSupportSent(false); setSupportError(""); }}>
           <Card className="profile-modal support-modal">
             <h2 className="support-modal-title">
               <MessageSquare size={20} />
@@ -2965,7 +2962,7 @@ function SettingsScreen() {
       </section>
 
       {modal === "deactivate" && (
-        <Modal onClose={() => setModal(null)}>
+        <Modal className="student-modal" label={t("student.experience.dialog_title")} onClose={() => setModal(null)}>
           <Card className="profile-modal">
             <h2>{t("student.settings.deactivate_title")}</h2>
             <p>{t("student.settings.deactivate_text")}</p>
@@ -2977,7 +2974,7 @@ function SettingsScreen() {
       )}
 
       {modal === "delete" && (
-        <Modal onClose={() => setModal(null)}>
+        <Modal className="student-modal" label={t("student.experience.dialog_title")} onClose={() => setModal(null)}>
           <Card className="profile-modal">
             <h2>{t("student.settings.delete_title")}</h2>
             <p>{t("student.settings.delete_text")}</p>

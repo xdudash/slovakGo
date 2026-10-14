@@ -1,3 +1,4 @@
+import { GuideCharacter } from "../components/LearningCompanion";
 import { startActivityTracking } from "../services/activityService";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
@@ -7,6 +8,7 @@ import { Suspense, lazy, useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import type { UserRole } from "../types";
 import "../styles/globals.css";
+import "../styles/student-experience.css";
 
 const AdminLayout = lazy(() => import("../features/admin/AdminScreens").then(m => ({ default: m.AdminLayout })));
 const ForgotPassword = lazy(() => import("../features/auth/AuthScreens").then(m => ({ default: m.ForgotPassword })));
@@ -46,7 +48,7 @@ function AppLoadingScreen({ message = "Готуємо твій навчальн�
   return (
     <main className="app-loading-screen" role="status" aria-live="polite">
       <div className="app-loading-brand">
-        <img src="/apple-icon.png" alt="" className="app-loading-logo" />
+        <GuideCharacter className="app-loading-companion" />
         <strong>SlovakGO</strong>
       </div>
       <div className="app-loading-bar" aria-hidden="true"><span /></div>

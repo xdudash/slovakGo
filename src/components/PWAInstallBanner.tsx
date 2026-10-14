@@ -1,110 +1,104 @@
 import { useEffect, useState } from "react";
-import { X } from "lucide-react";
+import { Download, X } from "lucide-react";
 import { Button } from "./ui";
+import { useT } from "../i18n";
+
+type InstallPrompt = Event & {
+  prompt: () => Promise<void>;
+  userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
+};
+const installWindow = window as Window & {
+  deferredPrompt?: InstallPrompt | null;
+};
 
 export function PWAInstallBanner() {
-  const [deferredPrompt, setDeferredPrompt] = useState<any>((window as any).deferredPrompt || null);
+  const { t } = useT();
+  const [deferredPrompt, setDeferredPrompt] = useState(
+    installWindow.deferredPrompt ?? null,
+  );
   const [isIOS, setIsIOS] = useState(false);
   const [isStandalone, setIsStandalone] = useState(false);
   const [dismissed, setDismissed] = useState(true);
+  const [installing, setInstalling] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    // Check if dismissed
-    const isDismissed = localStorage.getItem("slovakgo.pwa-dismissed") === "true";
-    setDismissed(isDismissed);
-
-    // Detect iOS (iPhones, iPads, iPods)
-    const userAgent = window.navigator.userAgent;
-    const ios = /Macintosh/i.test(userAgent) && navigator.maxTouchPoints > 0 || /iPad|iPhone|iPod/.test(userAgent);
-    setIsIOS(ios);
-
-    // Detect if already installed (standalone mode)
-    const standalone = window.matchMedia("(display-mode: standalone)").matches || (window.navigator as any).standalone;
-    setIsStandalone(standalone);
-
-    // Listen to custom event for PWA prompt (dispatched in main.tsx)
-    const handlePrompt = () => {
-      setDeferredPrompt((window as any).deferredPrompt);
-    };
-
+    try {
+      setDismissed(localStorage.getItem("slovakgo.pwa-dismissed") === "true");
+    } catch {
+      setDismissed(false);
+    }
+    const agent = navigator.userAgent;
+    setIsIOS(
+      (/Macintosh/i.test(agent) && navigator.maxTouchPoints > 0) ||
+        /iPad|iPhone|iPod/.test(agent),
+    );
+    setIsStandalone(
+      matchMedia("(display-mode: standalone)").matches ||
+        Boolean((navigator as Navigator & { standalone?: boolean }).standalone),
+    );
+    const handlePrompt = () =>
+      setDeferredPrompt(installWindow.deferredPrompt ?? null);
     window.addEventListener("pwa-install-available", handlePrompt);
-    return () => {
+    return () =>
       window.removeEventListener("pwa-install-available", handlePrompt);
-    };
   }, []);
 
-  const showBanner = !dismissed && !isStandalone && (deferredPrompt || isIOS);
+  if (dismissed || isStandalone || (!deferredPrompt && !isIOS)) return null;
 
-  if (!showBanner) return null;
-
-  async function handleInstallPWA() {
+  async function install() {
     if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    console.log(`[PWA] User choice: ${outcome}`);
-    (window as any).deferredPrompt = null;
-    setDeferredPrompt(null);
-  }
-
-  function handleDismiss() {
-    localStorage.setItem("slovakgo.pwa-dismissed", "true");
-    setDismissed(true);
+    setInstalling(true);
+    setError(false);
+    try {
+      await deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      installWindow.deferredPrompt = null;
+      setDeferredPrompt(null);
+    } catch {
+      setError(true);
+    } finally {
+      setInstalling(false);
+    }
   }
 
   return (
-    <section className="card pwa-install-banner" style={{ position: "relative", marginBottom: "16px", paddingRight: "36px" }}>
-      <button 
-        type="button" 
-        onClick={handleDismiss} 
-        style={{ 
-          position: "absolute", 
-          top: "12px", 
-          right: "12px", 
-          background: "none", 
-          border: "none", 
-          color: "var(--muted)", 
-          cursor: "pointer",
-          padding: "4px"
-        }}
-        aria-label="Закрити"
-      >
-        <X size={16} />
-      </button>
-
-      {deferredPrompt && (
-        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-          <div>
-            <strong style={{ fontSize: "1rem", color: "var(--fg)", display: "block", marginBottom: "4px" }}>
-              Встановити SlovakGO
-            </strong>
-            <p style={{ margin: 0, fontSize: "0.85rem", color: "var(--muted)" }}>
-              Додайте застосунок на головний екран для швидкого входу та економії інтернету.
-            </p>
-          </div>
-          <Button onClick={handleInstallPWA} style={{ width: "fit-content", padding: "6px 12px", fontSize: "0.85rem" }}>
-            Встановити застосунок
+    <section className="pwa-install-banner">
+      <Download size={21} aria-hidden="true" />
+      <div className="pwa-install-copy">
+        <strong>{t("student.experience.install_title")}</strong>
+        <p>{t("student.experience.install_text")}</p>
+        {isIOS ? (
+          <details>
+            <summary>{t("student.experience.install_how")}</summary>
+            <ol>
+              <li>{t("student.experience.install_step1")}</li>
+              <li>{t("student.experience.install_step2")}</li>
+              <li>{t("student.experience.install_step3")}</li>
+            </ol>
+          </details>
+        ) : (
+          <Button variant="secondary" loading={installing} onClick={install}>
+            {t("student.experience.install_button")}
           </Button>
-        </div>
-      )}
-
-      {isIOS && (
-        <div style={{ fontSize: "0.85rem", color: "var(--fg)", display: "flex", flexDirection: "column", gap: "8px" }}>
-          <strong style={{ fontSize: "0.95rem", display: "block" }}>
-            Встановити SlovakGO на iPhone 📱
-          </strong>
-          <ol style={{ paddingLeft: "16px", margin: 0, display: "flex", flexDirection: "column", gap: "6px" }}>
-            <li>
-              Якщо ви відкрили посилання через <strong>Telegram, Viber або Instagram</strong>: натисніть значок у кутку та виберіть <strong>«Відкрити в Safari»</strong>.
-            </li>
-            <li>
-              У браузері <strong>Safari</strong> натисніть кнопку <strong>«Поділитися»</strong> (квадрат зі стрілкою вгору: <span style={{ fontSize: "1.1rem", verticalAlign: "middle" }}>📤</span>) внизу екрана.
-            </li>
-            <li>
-              У списку виберіть <strong>«Додати на початковий екран»</strong> (або <strong>«На екран "Домой"»</strong> / <strong>Add to Home Screen</strong> <span style={{ fontSize: "1.1rem", verticalAlign: "middle" }}>➕</span>).
-            </li>
-          </ol>
-        </div>
-      )}
+        )}
+        {error && <p role="alert">{t("student.experience.install_error")}</p>}
+      </div>
+      <button
+        type="button"
+        className="pwa-dismiss"
+        aria-label={t("student.experience.close")}
+        onClick={() => {
+          try {
+            localStorage.setItem("slovakgo.pwa-dismissed", "true");
+          } catch {
+            /* Dismiss for this visit. */
+          }
+          setDismissed(true);
+        }}
+      >
+        <X size={18} />
+      </button>
     </section>
   );
 }

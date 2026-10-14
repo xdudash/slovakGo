@@ -1,3 +1,4 @@
+import { useSyncExternalStore } from "react";
 import ukData from './locales/uk.json';
 import ruData from './locales/ru.json';
 import skData from './locales/sk.json';
@@ -21,16 +22,20 @@ function dig(dict: Record<string, unknown>, key: string): unknown {
   return v;
 }
 
+let guestLanguageFallback: Locale = "uk";
+
 export function getGuestLanguage(): Locale {
-  const saved = localStorage.getItem('slovakgo.guest-lang');
+  let saved: string | null = null;
+  try { saved = localStorage.getItem('slovakgo.guest-lang'); } catch { /* Use the default language when storage is unavailable. */ }
   if (saved && (saved === 'uk' || saved === 'ru' || saved === 'sk' || saved === 'en')) {
     return saved as Locale;
   }
-  return 'uk';
+  return guestLanguageFallback;
 }
 
 export function setGuestLanguage(lang: Locale) {
-  localStorage.setItem('slovakgo.guest-lang', lang);
+  guestLanguageFallback = lang;
+  try { localStorage.setItem('slovakgo.guest-lang', lang); } catch { /* Language changes should not crash a private browser. */ }
   document.documentElement.lang = lang;
   window.dispatchEvent(new Event('languagechange'));
 }
@@ -43,12 +48,19 @@ if (typeof document !== 'undefined') {
   document.documentElement.lang = getGuestLanguage();
 }
 
+function subscribeGuestLanguage(onChange: () => void) {
+  window.addEventListener("languagechange", onChange);
+  window.addEventListener("storage", onChange);
+  return () => {
+    window.removeEventListener("languagechange", onChange);
+    window.removeEventListener("storage", onChange);
+  };
+}
+
 export function useT() {
-  const lang = useAppStore((s) => {
-    const user = s.data.users.find((u) => u.id === s.currentUserId);
-    if (user?.settings?.language) return user.settings.language as Locale;
-    return getGuestLanguage();
-  });
+  const guestLanguage = useSyncExternalStore(subscribeGuestLanguage, getGuestLanguage, () => "uk" as Locale);
+  const userLanguage = useAppStore((s) => s.data.users.find((u) => u.id === s.currentUserId)?.settings?.language);
+  const lang = (userLanguage ?? guestLanguage) as Locale;
 
   const dict = locales[lang] ?? locales.uk;
   const fallback = locales.uk;

@@ -1,3 +1,4 @@
+import { GuideCharacter } from "./LearningCompanion";
 import { BookOpen, Dumbbell, House, LockKeyhole, Medal, Settings, ShoppingBag, Trophy, UserRound, UsersRound } from "lucide-react";
 import { NavLink, Outlet, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState, type ReactNode } from "react";
@@ -78,7 +79,7 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
   const showNav = location.pathname !== "/app/paywall";
 
   return (
-    <div className="app-frame">
+    <div className={`app-frame app-frame--${role}`}>
       {!isOnline && (
         <div className="offline-banner">
           Офлайн{pendingCount > 0 ? ` · ${pendingCount} дій в черзі` : ""}
@@ -98,8 +99,7 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
       {showNav && (
         <nav className="bottom-nav" aria-label={t("nav.aria")}>
           <div className="nav-brand">
-            <img src="/apple-icon.png" alt="SlovakGO" className="nav-logo" />
-            <span>SlovakGO</span>
+            {role === "student" ? <span className="nav-wordmark">Slovak<b>GO</b></span> : <><img src="/apple-icon.png" alt="SlovakGO" className="nav-logo" /><span>SlovakGO</span></>}
           </div>
           {items.map((item) => {
             const Icon = item.icon;
@@ -111,13 +111,19 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
                 to={destination}
                 className={({ isActive }) => `bottom-nav-item ${isActive && !locked ? "active" : ""}${locked ? " locked" : ""}`}
                 end={item.to === "/teacher" || item.to === "/admin"}
-                aria-label={locked ? `${t(item.key)} — доступно після активації` : undefined}
+                aria-label={locked ? `${t(item.key)} — ${t("student.experience.subscription_required")}` : t(item.key)}
               >
                 {locked ? <LockKeyhole size={18} /> : <Icon size={20} />}
                 <span>{t(item.key)}</span>
               </NavLink>
             );
           })}
+          {role === "student" && <>
+            <div className="sidebar-companion"><GuideCharacter /><strong lang="sk">Zvládneš to!</strong><p>{t("student.experience.sidebar_note")}</p></div>
+            <button type="button" className="sidebar-profile" onClick={() => navigate("/app/profile")} aria-label={t("nav.student.profile")}>
+              <span className="sidebar-avatar">{currentUserName.slice(0, 1).toUpperCase()}</span><span className="sidebar-profile-copy"><strong>{currentUserName}</strong><small>{t("student.experience.your_profile")}</small></span>
+            </button>
+          </>}
         </nav>
       )}
       {syncMessage && <div className="sync-toast">{syncMessage}</div>}

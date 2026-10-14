@@ -1,3 +1,4 @@
+import { GuideCharacter } from "../../components/LearningCompanion";
 import { useEffect, useState } from "react";
 import type { FormEvent, ReactNode } from "react";
 import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
@@ -25,31 +26,23 @@ function AuthShell({ title, text, children }: { title: string; text: string; chi
   ] as const;
 
   return (
-    <main className="auth-screen">
+    <main className="auth-screen auth-screen--refined">
       <section className="brand-panel">
-        <img src="/apple-icon.png" alt="SlovakGO" className="logo-mark" />
+        <GuideCharacter className="auth-companion" />
         <h1>SlovakGO</h1>
         <p>{text}</p>
       </section>
       <Card className="auth-card">
         <div className="auth-card-heading">
           <h2 style={{ margin: 0 }}>{title}</h2>
-          <div style={{ display: "flex", gap: "0.25rem" }}>
+          <div className="auth-languages" aria-label="Language">
             {langOptions.map((opt) => (
               <button
                 key={opt.code}
                 type="button"
                 onClick={() => setGuestLanguage(opt.code)}
-                style={{
-                  padding: "0.2rem 0.5rem",
-                  fontSize: "0.75rem",
-                  fontWeight: lang === opt.code ? "bold" : "normal",
-                  borderRadius: "6px",
-                  border: lang === opt.code ? "1px solid var(--color-primary, #2563eb)" : "1px solid var(--color-border, #e5e7eb)",
-                  background: lang === opt.code ? "var(--color-primary-light, #eff6ff)" : "transparent",
-                  color: lang === opt.code ? "var(--color-primary, #2563eb)" : "inherit",
-                  cursor: "pointer"
-                }}
+                aria-pressed={lang === opt.code}
+                className={lang === opt.code ? "active" : ""}
               >
                 {opt.label}
               </button>
@@ -102,7 +95,7 @@ export function Login() {
             window.location.assign(`${import.meta.env.BASE_URL}app/lesson/lesson-1-a0`);
           }}
         >
-          Открыть первый урок
+          {t("auth.try_demo")}
         </Button>
       )}
       <form onSubmit={submit} className="form-stack" noValidate>
@@ -111,10 +104,10 @@ export function Login() {
         {authError ? <p className="error-text">{authError}</p> : null}
         <Button type="submit" disabled={loading}>{loading ? "…" : t("auth.sign_in")}</Button>
       </form>
-      <div className="auth-divider"><span>або</span></div>
+      <div className="auth-divider"><span>{t("auth.or")}</span></div>
       <button type="button" className="btn btn-google" onClick={() => { window.location.href = "/api/auth/google/start"; }}>
         <GoogleIcon />
-        Увійти через Google
+        {t("auth.google_sign_in")}
       </button>
       <p className="auth-link">{t("auth.no_account")} <Link to="/register">{t("auth.register_link")}</Link></p>
       <p className="auth-link"><Link to="/forgot-password" className="auth-forgot-link">{t("auth.forgot_link")}</Link></p>
@@ -365,9 +358,9 @@ export function GoogleDone() {
   }, [autoRestoreSession, isNew, navigate]);
 
   return (
-    <main className="auth-screen">
+    <main className="auth-screen auth-screen--refined">
       <section className="brand-panel">
-        <img src="/apple-icon.png" alt="SlovakGO" className="logo-mark" />
+        <GuideCharacter className="auth-companion" />
         <h1>SlovakGO</h1>
       </section>
       <p style={{ textAlign: "center", color: "var(--muted)", fontWeight: 600 }}>Завантаження…</p>
