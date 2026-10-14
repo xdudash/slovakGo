@@ -29,7 +29,7 @@ if (_FCM.apiKey && _FCM.apiKey.indexOf('%%') === -1) {
   });
 }
 
-const CACHE_VERSION = 'slovakgo-v10';
+const CACHE_VERSION = 'slovakgo-v11';
 const STATIC_CACHE  = `${CACHE_VERSION}-static`;
 const AUDIO_CACHE   = `${CACHE_VERSION}-audio`;
 

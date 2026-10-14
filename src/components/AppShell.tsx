@@ -99,7 +99,7 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
       {showNav && (
         <nav className="bottom-nav" aria-label={t("nav.aria")}>
           <div className="nav-brand">
-            {role === "student" ? <span className="nav-wordmark">Slovak<b>GO</b></span> : <><img src="/apple-icon.png" alt="SlovakGO" className="nav-logo" /><span>SlovakGO</span></>}
+            <img src="/brand-avatar-v1.webp" alt="SlovakGO" className="nav-logo" width={36} height={36} /><span className="nav-wordmark">Slovak<b>GO</b></span>
           </div>
           {items.map((item) => {
             const Icon = item.icon;

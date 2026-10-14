@@ -70,7 +70,8 @@ const canonical = new URL(Astro.url.pathname, "https://www.slovakgo.sk");
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="/apple-icon.png" />
+    <link rel="icon" href="/favicon-32-v1.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-icon.png?v=mascot-1" sizes="180x180" />
     <meta property="og:title" content={`SlovakGO — ${t("eyebrow")}`} />
     <meta property="og:description" content={t("lead")} />
     <meta property="og:type" content="website" />
@@ -90,6 +91,7 @@ const canonical = new URL(Astro.url.pathname, "https://www.slovakgo.sk");
     </a>
     <header class="nav shell">
       <a class="brand" href={`/${lang}/`} aria-label="SlovakGO">
+        <img class="brand-avatar" src="/brand-avatar-v1.webp" alt="" width="40" height="40" />
         <span>
           Slovak<span class="brand-go">GO</span>
         </span>
@@ -675,7 +677,8 @@ const canonical = new URL(Astro.url.pathname, "https://www.slovakgo.sk");
     </main>
     <footer class="footer shell">
       <a class="brand" href={`/${lang}/`}>
-        Slovak<span class="brand-go">GO</span>
+        <img class="brand-avatar" src="/brand-avatar-v1.webp" alt="" width="40" height="40" />
+        <span>Slovak<span class="brand-go">GO</span></span>
       </a>
       <span>© {new Date().getFullYear()} SlovakGO</span>
       <a href="/blog" data-t="blogLabel">

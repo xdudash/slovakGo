@@ -1980,3 +1980,6 @@ h2 {
     font-size: 22px;
   }
 }
+
+.brand-avatar { width: 40px; height: 40px; flex-shrink: 0; border-radius: 13px; object-fit: cover; }
+@media (max-width: 380px) { .nav .brand { gap: 7px; } .nav .brand-avatar { width: 32px; height: 32px; border-radius: 10px; } }

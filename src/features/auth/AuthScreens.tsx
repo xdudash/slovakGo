@@ -1,4 +1,3 @@
-import { GuideCharacter } from "../../components/LearningCompanion";
 import { useEffect, useState } from "react";
 import type { FormEvent, ReactNode } from "react";
 import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
@@ -28,7 +27,7 @@ function AuthShell({ title, text, children }: { title: string; text: string; chi
   return (
     <main className="auth-screen auth-screen--refined">
       <section className="brand-panel">
-        <GuideCharacter className="auth-companion" />
+        <img src="/brand-avatar-v1.webp" className="auth-companion auth-brand-avatar" alt="SlovakGO" width={150} height={150} />
         <h1>SlovakGO</h1>
         <p>{text}</p>
       </section>
@@ -360,7 +359,7 @@ export function GoogleDone() {
   return (
     <main className="auth-screen auth-screen--refined">
       <section className="brand-panel">
-        <GuideCharacter className="auth-companion" />
+        <img src="/brand-avatar-v1.webp" className="auth-companion auth-brand-avatar" alt="SlovakGO" width={150} height={150} />
         <h1>SlovakGO</h1>
       </section>
       <p style={{ textAlign: "center", color: "var(--muted)", fontWeight: 600 }}>Завантаження…</p>

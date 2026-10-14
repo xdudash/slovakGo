@@ -1526,3 +1526,13 @@
   opacity: 1;
   color: #65607f;
 }
+
+/* Shared brand avatar from the selected SlovakGO artwork. */
+.auth-brand-avatar { aspect-ratio: 1; height: auto; border-radius: 28%; object-fit: cover; }
+.app-frame--student .nav-logo { width: 36px; height: 36px; flex-shrink: 0; border-radius: 12px; }
+@media (min-width: 1024px) {
+  .app-frame--student .nav-brand { padding-inline: 0; gap: 8px; font-size: 23px; }
+}
+@media (min-width: 760px) and (max-width: 1023px) {
+  .app-frame--student .nav-wordmark { display: none; }
+}
