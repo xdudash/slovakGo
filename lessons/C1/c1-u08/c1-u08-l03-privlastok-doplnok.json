@@ -1,0 +1,729 @@
+{
+  "lessons": [
+    {
+      "id": "c1-u08-l03-privlastok-doplnok",
+      "sectionId": "c1-u08",
+      "level": "C1",
+      "title": "Означення і додаток: prívlastok, doplnok, rozvitý, nerozvitý",
+      "topic": "Синтаксис і порядок слів",
+      "description": "Означення (prívlastok) уточнює іменник, додаток (doplnok) уточнює стан підмета; rozvitý (розвинений) і nerozvitý (нерозвинений) — речення з більшою чи меншою кількістю членів.",
+      "order": 73,
+      "xpReward": 60,
+      "estimatedMinutes": 20,
+      "isPublished": true,
+      "intro": "Розпізнавати означення і додаток та будувати розвинені речення.",
+      "completionMessage": "Ти розумієш означення й додаток. Далі — вставки і складні речення.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "C1 · Синтаксис і порядок слів",
+        "title": "Означення і додаток: prívlastok, doplnok, rozvitý, nerozvitý",
+        "shortDescription": "Розпізнавати означення і додаток та будувати розвинені речення.",
+        "outcomes": [
+          "розпізнавати prívlastok",
+          "розпізнавати doplnok",
+          "будувати rozvitú vetu",
+          "розрізняти nerozvitú vetu"
+        ],
+        "newWords": [
+          "prívlastok",
+          "doplnok",
+          "rozvitý",
+          "nerozvitý"
+        ],
+        "exercisesCount": 14,
+        "reward": "+60 XP",
+        "estimatedMinutes": 20,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Означення",
+          "text": "Prívlastok (означення) — слово, що описує іменник: «nová kniha» = нова книга.",
+          "examples": [
+            {
+              "sk": "Nová kniha je na stole.",
+              "uk": "Нова книга на столі."
+            },
+            {
+              "sk": "Krásny dom stojí tam.",
+              "uk": "Гарний будинок стоїть там."
+            }
+          ],
+          "shortRule": "prívlastok · nerozvitý",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Додаток",
+          "text": "Doplnok (додаток) — уточнює стан підмета або предмета, часто прикметником: «Prišiel unavený.» = Він прийшов утомлений.",
+          "examples": [
+            {
+              "sk": "Prišiel unavený.",
+              "uk": "Він прийшов утомлений."
+            },
+            {
+              "sk": "Vrátila sa smutná.",
+              "uk": "Вона повернулась сумна."
+            }
+          ],
+          "shortRule": "doplnok · prívlastok",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Розвинене і нерозвинене",
+          "text": "Rozvitá veta (розвинене речення) має більше членів: «Nová kniha môjho brata leží na stole.» Nerozvitá (нерозвинене) має тільки головні: «Kniha leží.» = Книга лежить.",
+          "examples": [
+            {
+              "sk": "Nová kniha môjho brata leží na stole.",
+              "uk": "Нова книга мого брата лежить на столі."
+            },
+            {
+              "sk": "Kniha leží.",
+              "uk": "Книга лежить."
+            }
+          ],
+          "shortRule": "rozvitý · nerozvitý",
+          "commonMistakes": [
+            {
+              "mistake": "Prívlastok je vždy podstatné meno.",
+              "correct": "Prívlastok je obvykle prídavné meno alebo iné slovo, ktoré opisuje podstatné meno."
+            },
+            {
+              "mistake": "Doplnok je to isté ako prívlastok.",
+              "correct": "Doplnok sa vzťahuje na podmet alebo predmet, prívlastok na podstatné meno."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "c1-u08-l03-privlastok-doplnok-w01",
+            "sk": "prívlastok",
+            "uk": "означення",
+            "pronunciationUk": "прівласток",
+            "exampleSk": "Prívlastok opisuje podstatné meno.",
+            "exampleUk": "Означення описує іменник."
+          },
+          {
+            "wordId": "c1-u08-l03-privlastok-doplnok-w02",
+            "sk": "doplnok",
+            "uk": "додаток",
+            "pronunciationUk": "доплнок",
+            "exampleSk": "Prišiel unavený, to je doplnok.",
+            "exampleUk": "Він прийшов утомлений, це додаток."
+          },
+          {
+            "wordId": "c1-u08-l03-privlastok-doplnok-w03",
+            "sk": "rozvitý",
+            "uk": "розвинений",
+            "pronunciationUk": "розвітий",
+            "exampleSk": "Rozvitá veta má viac členov.",
+            "exampleUk": "Розвинене речення має більше членів."
+          },
+          {
+            "wordId": "c1-u08-l03-privlastok-doplnok-w04",
+            "sk": "nerozvitý",
+            "uk": "нерозвинений",
+            "pronunciationUk": "нерозвітий",
+            "exampleSk": "Nerozvitá veta je krátka.",
+            "exampleUk": "Нерозвинене речення коротке."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "c1-u08-l03-privlastok-doplnok-w01",
+          "sk": "prívlastok",
+          "uk": "означення",
+          "pronunciationUk": "прівласток",
+          "exampleSk": "Prívlastok opisuje podstatné meno.",
+          "exampleUk": "Означення описує іменник.",
+          "level": "C1",
+          "topic": "Синтаксис і порядок слів",
+          "tags": [
+            "c1-u08",
+            "c1"
+          ]
+        },
+        {
+          "id": "c1-u08-l03-privlastok-doplnok-w02",
+          "sk": "doplnok",
+          "uk": "додаток",
+          "pronunciationUk": "доплнок",
+          "exampleSk": "Prišiel unavený, to je doplnok.",
+          "exampleUk": "Він прийшов утомлений, це додаток.",
+          "level": "C1",
+          "topic": "Синтаксис і порядок слів",
+          "tags": [
+            "c1-u08",
+            "c1"
+          ]
+        },
+        {
+          "id": "c1-u08-l03-privlastok-doplnok-w03",
+          "sk": "rozvitý",
+          "uk": "розвинений",
+          "pronunciationUk": "розвітий",
+          "exampleSk": "Rozvitá veta má viac členov.",
+          "exampleUk": "Розвинене речення має більше членів.",
+          "level": "C1",
+          "topic": "Синтаксис і порядок слів",
+          "tags": [
+            "c1-u08",
+            "c1"
+          ]
+        },
+        {
+          "id": "c1-u08-l03-privlastok-doplnok-w04",
+          "sk": "nerozvitý",
+          "uk": "нерозвинений",
+          "pronunciationUk": "нерозвітий",
+          "exampleSk": "Nerozvitá veta je krátka.",
+          "exampleUk": "Нерозвинене речення коротке.",
+          "level": "C1",
+          "topic": "Синтаксис і порядок слів",
+          "tags": [
+            "c1-u08",
+            "c1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "c1-u08-l03-privlastok-doplnok-ex01",
+          "lessonId": "c1-u08-l03-privlastok-doplnok",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай слово і значення.",
+          "pairs": [
+            {
+              "left": "prívlastok",
+              "right": "означення"
+            },
+            {
+              "left": "doplnok",
+              "right": "додаток"
+            },
+            {
+              "left": "rozvitý",
+              "right": "розвинений"
+            },
+            {
+              "left": "nerozvitý",
+              "right": "нерозвинений"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "c1-u08-l03-privlastok-doplnok-w01",
+            "c1-u08-l03-privlastok-doplnok-w02",
+            "c1-u08-l03-privlastok-doplnok-w03",
+            "c1-u08-l03-privlastok-doplnok-w04"
+          ]
+        },
+        {
+          "id": "c1-u08-l03-privlastok-doplnok-ex02",
+          "lessonId": "c1-u08-l03-privlastok-doplnok",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильну форму.",
+          "sentenceParts": [
+            {
+              "text": "Nová kniha je "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "zaujímavú",
+                "zaujímavé",
+                "zaujímavá"
+              ],
+              "correct": "zaujímavá"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Жіночий рід, однина: «zaujímavá».",
+          "order": 2,
+          "wordIds": [
+            "c1-u08-l03-privlastok-doplnok-w02"
+          ]
+        },
+        {
+          "id": "c1-u08-l03-privlastok-doplnok-ex03",
+          "lessonId": "c1-u08-l03-privlastok-doplnok",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди помилку.",
+          "sentence": "Prišiel unavená.",
+          "errorToken": "unavená",
+          "correctToken": "unavený",
+          "explanation": "Підмет чоловічого роду: «unavený».",
+          "order": 3,
+          "wordIds": [
+            "c1-u08-l03-privlastok-doplnok-w02"
+          ]
+        },
+        {
+          "id": "c1-u08-l03-privlastok-doplnok-ex04",
+          "lessonId": "c1-u08-l03-privlastok-doplnok",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Vrátila sa ______ . (смутна)",
+          "acceptedAnswers": [
+            "smutná"
+          ],
+          "explanation": "Жіночий рід однини: «smutná».",
+          "order": 4,
+          "wordIds": [
+            "c1-u08-l03-privlastok-doplnok-w02"
+          ]
+        },
+        {
+          "id": "c1-u08-l03-privlastok-doplnok-ex05",
+          "lessonId": "c1-u08-l03-privlastok-doplnok",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Розвинь речення.",
+          "sentence": "Kniha leží.",
+          "acceptedAnswers": [
+            "Nová kniha leží."
+          ],
+          "explanation": "Додаємо означення «nová».",
+          "order": 5,
+          "wordIds": [
+            "c1-u08-l03-privlastok-doplnok-w02"
+          ]
+        },
+        {
+          "id": "c1-u08-l03-privlastok-doplnok-ex06",
+          "lessonId": "c1-u08-l03-privlastok-doplnok",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «doplnok»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "додаток, що уточнює підмет",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "назва книги",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "частина дня.",
+              "correct": false
+            }
+          ],
+          "explanation": "Doplnok уточнює стан підмета або предмета.",
+          "order": 6,
+          "wordIds": [
+            "c1-u08-l03-privlastok-doplnok-w02"
+          ]
+        },
+        {
+          "id": "c1-u08-l03-privlastok-doplnok-ex07",
+          "lessonId": "c1-u08-l03-privlastok-doplnok",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яке речення є розвиненим?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Leží.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Nová kniha môjho brata leží na stole.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Kniha leží.",
+              "correct": false
+            }
+          ],
+          "explanation": "Розвинене речення має більше членів.",
+          "order": 7,
+          "wordIds": [
+            "c1-u08-l03-privlastok-doplnok-w02"
+          ]
+        },
+        {
+          "id": "c1-u08-l03-privlastok-doplnok-ex08",
+          "lessonId": "c1-u08-l03-privlastok-doplnok",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Prívlastok opisuje podstatné meno.",
+          "statement": "Означення описує іменник.",
+          "correctAnswer": true,
+          "explanation": "Prívlastok — означення до іменника.",
+          "order": 8,
+          "wordIds": [
+            "c1-u08-l03-privlastok-doplnok-w01",
+            "c1-u08-l03-privlastok-doplnok-w02"
+          ]
+        },
+        {
+          "id": "c1-u08-l03-privlastok-doplnok-ex09",
+          "lessonId": "c1-u08-l03-privlastok-doplnok",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Розподіли.",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Означення"
+            },
+            {
+              "id": "c2",
+              "title": "Додаток"
+            },
+            {
+              "id": "c3",
+              "title": "Речення"
+            }
+          ],
+          "items": [
+            {
+              "sk": "nerozvitá",
+              "category": "c3"
+            },
+            {
+              "sk": "krásny",
+              "category": "c1"
+            },
+            {
+              "sk": "nová",
+              "category": "c1"
+            },
+            {
+              "sk": "unavený",
+              "category": "c2"
+            },
+            {
+              "sk": "rozvitá",
+              "category": "c3"
+            },
+            {
+              "sk": "smutná",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Групування означень, додатків і типів речень.",
+          "order": 9,
+          "wordIds": [
+            "c1-u08-l03-privlastok-doplnok-w02",
+            "c1-u08-l03-privlastok-doplnok-w03",
+            "c1-u08-l03-privlastok-doplnok-w04"
+          ]
+        },
+        {
+          "id": "c1-u08-l03-privlastok-doplnok-ex10",
+          "lessonId": "c1-u08-l03-privlastok-doplnok",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери всі правильні твердження.",
+          "prompt": "Розвинені й нерозвинені речення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Doplnok je vždy prívlastok",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Rozvitá veta má viac členov",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Nerozvitá veta je krátka",
+              "correct": true
+            }
+          ],
+          "explanation": "Doplnok — окремий член речення, не означення.",
+          "order": 10,
+          "wordIds": [
+            "c1-u08-l03-privlastok-doplnok-w01",
+            "c1-u08-l03-privlastok-doplnok-w02",
+            "c1-u08-l03-privlastok-doplnok-w03",
+            "c1-u08-l03-privlastok-doplnok-w04"
+          ]
+        },
+        {
+          "id": "c1-u08-l03-privlastok-doplnok-ex11",
+          "lessonId": "c1-u08-l03-privlastok-doplnok",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Vieš, je to jednoduché.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": true
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": false
+            }
+          ],
+          "explanation": "Формально: «Viete, je to jednoduché.»",
+          "order": 11,
+          "wordIds": [
+            "c1-u08-l03-privlastok-doplnok-w02"
+          ]
+        },
+        {
+          "id": "c1-u08-l03-privlastok-doplnok-ex12",
+          "lessonId": "c1-u08-l03-privlastok-doplnok",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Nová ______ leží na stole. (книга)",
+          "acceptedAnswers": [
+            "kniha"
+          ],
+          "explanation": "Іменник жіночого роду «kniha».",
+          "order": 12,
+          "wordIds": [
+            "c1-u08-l03-privlastok-doplnok-w02"
+          ]
+        },
+        {
+          "id": "c1-u08-l03-privlastok-doplnok-ex13",
+          "lessonId": "c1-u08-l03-privlastok-doplnok",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильну форму.",
+          "sentenceParts": [
+            {
+              "text": "Ona prišla "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "unavená",
+                "unavený",
+                "unavení"
+              ],
+              "correct": "unavená"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Жіночий рід: «unavená».",
+          "order": 13,
+          "wordIds": [
+            "c1-u08-l03-privlastok-doplnok-w02"
+          ]
+        },
+        {
+          "id": "c1-u08-l03-privlastok-doplnok-ex14",
+          "lessonId": "c1-u08-l03-privlastok-doplnok",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Який член речення описує іменник?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "prísudok.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "prívlastok",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "podmet",
+              "correct": false
+            }
+          ],
+          "explanation": "Prívlastok — означення.",
+          "order": 14,
+          "wordIds": [
+            "c1-u08-l03-privlastok-doplnok-w01",
+            "c1-u08-l03-privlastok-doplnok-w02"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Опис події",
+        "description": "Треба описати, як прийшов колега і що він мав на собі. Потрібні prívlastok, doplnok і розвинене речення.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Колега питає, як ти виглядаєш після роботи. Що відповідаєш? (ti — muž)",
+            "options": [
+              {
+                "sk": "Som unavený, ale šťastný.",
+                "correct": true
+              },
+              {
+                "sk": "Som unavená, ale šťastný.",
+                "correct": false
+              },
+              {
+                "sk": "Som unavený, ale nie šťastný.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Колега питає про новий проект. Як відповідаєш? (ti — žena)",
+            "options": [
+              {
+                "sk": "Úloha je zaujímavá, ja nie.",
+                "correct": false
+              },
+              {
+                "sk": "Mám zaujímavú úlohu a rozvíjam ju.",
+                "correct": true
+              },
+              {
+                "sk": "Mám zaujímavý úlohu a rozvíjam ju.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Колега питає, що таке розвинене речення. Що відповідаєш?",
+            "options": [
+              {
+                "text": "Це речення з однієї букви.",
+                "correct": false
+              },
+              {
+                "text": "Це речення з більшою кількістю членів.",
+                "correct": true
+              },
+              {
+                "text": "Це речення без жодного слова.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як закінчиш опис? (ti — muž)",
+            "options": [
+              {
+                "sk": "Opis je jasný a má všetky členy.",
+                "correct": true
+              },
+              {
+                "sk": "Opis je zbytočný.",
+                "correct": false
+              },
+              {
+                "sk": "Opis nemá žiadne slová, stačí jedno.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш означення й додаток. Далі — вставки і складні речення."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш означення й додаток. Далі — вставки і складні речення.",
+        "nowYouKnow": [
+          "prívlastok · doplnok",
+          "rozvitý · nerozvitý"
+        ],
+        "newWordsCount": 4,
+        "exercisesCompleted": 14,
+        "xpReward": 60,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "c1-u08-l04-vetne-cleny-rekcia",
+          "title": "Члени речення й рекція: vetný, rekcia, väzba, predložka"
+        }
+      }
+    }
+  ]
+}
