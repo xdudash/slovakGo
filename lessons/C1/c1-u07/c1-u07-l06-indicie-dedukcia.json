@@ -1,0 +1,734 @@
+{
+  "lessons": [
+    {
+      "id": "c1-u07-l06-indicie-dedukcia",
+      "sectionId": "c1-u07",
+      "level": "C1",
+      "title": "Ознаки й висновки: indícia, stopa, dedukcia, logika",
+      "topic": "Імплікатура та іронія",
+      "description": "Ознаки й висновки: indícia (ознака, індиція), stopa (слід), dedukcia (дедукція, висновок від загального), logika (логіка); як із непрямих ознак робити обґрунтовані висновки і не плутати припущення з доказом.",
+      "order": 66,
+      "xpReward": 60,
+      "estimatedMinutes": 20,
+      "isPublished": true,
+      "intro": "Робити обґрунтовані висновки з непрямих ознак.",
+      "completionMessage": "Ти вмієш робити висновки з непрямих ознак. Далі — загадки і таємниці.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "C1 · Імплікатура та іронія",
+        "title": "Ознаки й висновки: indícia, stopa, dedukcia, logika",
+        "shortDescription": "Робити обґрунтовані висновки з непрямих ознак.",
+        "outcomes": [
+          "розпізнавати непрямі ознаки",
+          "пояснювати дедукцію",
+          "відрізняти припущення від доказу",
+          "будувати логічний ланцюжок"
+        ],
+        "newWords": [
+          "indícia",
+          "stopa",
+          "dedukcia",
+          "logika"
+        ],
+        "exercisesCount": 14,
+        "reward": "+60 XP",
+        "estimatedMinutes": 20,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Ознаки і сліди",
+          "text": "Indícia (ознака, індиція) — непряма ознака, яка вказує на щось. Stopa (слід) — фізичний або інформаційний слід. «Našli sme indíciu v dátach.» = Ми знайшли ознаку в даних.",
+          "examples": [
+            {
+              "sk": "Našli sme indíciu v dátach.",
+              "uk": "Ми знайшли ознаку в даних."
+            },
+            {
+              "sk": "Stopa vedie k zdroju chyby.",
+              "uk": "Слід веде до джерела помилки."
+            }
+          ],
+          "shortRule": "indícia · stopa",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Дедукція",
+          "text": "Dedukcia (дедукція) — висновок від загального правила до конкретного випадку. «Z dedukcie vyplýva, že chyba je v dátach.» = З дедукції випливає, що помилка в даних.",
+          "examples": [
+            {
+              "sk": "Z dedukcie vyplýva, že chyba je v dátach.",
+              "uk": "З дедукції випливає, що помилка в даних."
+            },
+            {
+              "sk": "Dedukcia musí byť overená.",
+              "uk": "Дедукцію треба перевірити."
+            }
+          ],
+          "shortRule": "dedukcia · logika",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Логіка і припущення",
+          "text": "Logika (логіка) вимагає, щоб висновок випливав із посилок. Припущення ще не є доказом. «Táto logika je správna.» = Ця логіка правильна.",
+          "examples": [
+            {
+              "sk": "Táto logika je správna.",
+              "uk": "Ця логіка правильна."
+            },
+            {
+              "sk": "Predpoklad nie je dôkaz.",
+              "uk": "Припущення не є доказом."
+            }
+          ],
+          "shortRule": "logika · indícia",
+          "commonMistakes": [
+            {
+              "mistake": "Indícia je dôkaz.",
+              "correct": "Indícia je len náznak, nie dôkaz."
+            },
+            {
+              "mistake": "Dedukcia vždy vedie k pravde.",
+              "correct": "Dedukcia je pravdivá len vtedy, keď sú správne premisy."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "c1-u07-l06-indicie-dedukcia-w01",
+            "sk": "indícia",
+            "uk": "ознака, індиція",
+            "pronunciationUk": "індіція",
+            "exampleSk": "Našli sme indíciu v dátach.",
+            "exampleUk": "Ми знайшли ознаку в даних."
+          },
+          {
+            "wordId": "c1-u07-l06-indicie-dedukcia-w02",
+            "sk": "stopa",
+            "uk": "слід",
+            "pronunciationUk": "стопа",
+            "exampleSk": "Stopa vedie k zdroju chyby.",
+            "exampleUk": "Слід веде до джерела помилки."
+          },
+          {
+            "wordId": "c1-u07-l06-indicie-dedukcia-w03",
+            "sk": "dedukcia",
+            "uk": "дедукція, висновок від загального",
+            "pronunciationUk": "дедукція",
+            "exampleSk": "Z dedukcie vyplýva, že chyba je v dátach.",
+            "exampleUk": "З дедукції випливає, що помилка в даних."
+          },
+          {
+            "wordId": "c1-u07-l06-indicie-dedukcia-w04",
+            "sk": "logika",
+            "uk": "логіка",
+            "pronunciationUk": "логіка",
+            "exampleSk": "Táto logika je správna.",
+            "exampleUk": "Ця логіка правильна."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "c1-u07-l06-indicie-dedukcia-w01",
+          "sk": "indícia",
+          "uk": "ознака, індиція",
+          "pronunciationUk": "індіція",
+          "exampleSk": "Našli sme indíciu v dátach.",
+          "exampleUk": "Ми знайшли ознаку в даних.",
+          "level": "C1",
+          "topic": "Імплікатура та іронія",
+          "tags": [
+            "c1-u07",
+            "c1"
+          ]
+        },
+        {
+          "id": "c1-u07-l06-indicie-dedukcia-w02",
+          "sk": "stopa",
+          "uk": "слід",
+          "pronunciationUk": "стопа",
+          "exampleSk": "Stopa vedie k zdroju chyby.",
+          "exampleUk": "Слід веде до джерела помилки.",
+          "level": "C1",
+          "topic": "Імплікатура та іронія",
+          "tags": [
+            "c1-u07",
+            "c1"
+          ]
+        },
+        {
+          "id": "c1-u07-l06-indicie-dedukcia-w03",
+          "sk": "dedukcia",
+          "uk": "дедукція, висновок від загального",
+          "pronunciationUk": "дедукція",
+          "exampleSk": "Z dedukcie vyplýva, že chyba je v dátach.",
+          "exampleUk": "З дедукції випливає, що помилка в даних.",
+          "level": "C1",
+          "topic": "Імплікатура та іронія",
+          "tags": [
+            "c1-u07",
+            "c1"
+          ]
+        },
+        {
+          "id": "c1-u07-l06-indicie-dedukcia-w04",
+          "sk": "logika",
+          "uk": "логіка",
+          "pronunciationUk": "логіка",
+          "exampleSk": "Táto logika je správna.",
+          "exampleUk": "Ця логіка правильна.",
+          "level": "C1",
+          "topic": "Імплікатура та іронія",
+          "tags": [
+            "c1-u07",
+            "c1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "c1-u07-l06-indicie-dedukcia-ex01",
+          "lessonId": "c1-u07-l06-indicie-dedukcia",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай слово і значення.",
+          "pairs": [
+            {
+              "left": "indícia",
+              "right": "ознака"
+            },
+            {
+              "left": "stopa",
+              "right": "слід"
+            },
+            {
+              "left": "dedukcia",
+              "right": "дедукція"
+            },
+            {
+              "left": "logika",
+              "right": "логіка"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "c1-u07-l06-indicie-dedukcia-w01",
+            "c1-u07-l06-indicie-dedukcia-w02",
+            "c1-u07-l06-indicie-dedukcia-w03",
+            "c1-u07-l06-indicie-dedukcia-w04"
+          ]
+        },
+        {
+          "id": "c1-u07-l06-indicie-dedukcia-ex02",
+          "lessonId": "c1-u07-l06-indicie-dedukcia",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильну форму.",
+          "sentenceParts": [
+            {
+              "text": "Našli sme "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "indíciu",
+                "indícia",
+                "indície"
+              ],
+              "correct": "indíciu"
+            },
+            {
+              "text": " v dátach."
+            }
+          ],
+          "explanation": "Знахідний відмінок однини «indíciu».",
+          "order": 2,
+          "wordIds": [
+            "c1-u07-l06-indicie-dedukcia-w01",
+            "c1-u07-l06-indicie-dedukcia-w03"
+          ]
+        },
+        {
+          "id": "c1-u07-l06-indicie-dedukcia-ex03",
+          "lessonId": "c1-u07-l06-indicie-dedukcia",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди помилку.",
+          "sentence": "Stopa vedú k zdroju chyby.",
+          "errorToken": "vedú",
+          "correctToken": "vedie",
+          "explanation": "Однина: «stopa vedie».",
+          "order": 3,
+          "wordIds": [
+            "c1-u07-l06-indicie-dedukcia-w02",
+            "c1-u07-l06-indicie-dedukcia-w03"
+          ]
+        },
+        {
+          "id": "c1-u07-l06-indicie-dedukcia-ex04",
+          "lessonId": "c1-u07-l06-indicie-dedukcia",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Z ______ vyplýva, že chyba je v dátach. (дедукції)",
+          "acceptedAnswers": [
+            "dedukcie"
+          ],
+          "explanation": "Родовий відмінок після «z».",
+          "order": 4,
+          "wordIds": [
+            "c1-u07-l06-indicie-dedukcia-w03"
+          ]
+        },
+        {
+          "id": "c1-u07-l06-indicie-dedukcia-ex05",
+          "lessonId": "c1-u07-l06-indicie-dedukcia",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Indícia je dôkaz.",
+          "acceptedAnswers": [
+            "Indícia je len náznak, nie dôkaz."
+          ],
+          "explanation": "Ознака — лише натяк, а не доказ.",
+          "order": 5,
+          "wordIds": [
+            "c1-u07-l06-indicie-dedukcia-w01",
+            "c1-u07-l06-indicie-dedukcia-w03"
+          ]
+        },
+        {
+          "id": "c1-u07-l06-indicie-dedukcia-ex06",
+          "lessonId": "c1-u07-l06-indicie-dedukcia",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «stopa»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "слід",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "прямий доказ.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "стопа ноги в медицині",
+              "correct": false
+            }
+          ],
+          "explanation": "Stopa — слід.",
+          "order": 6,
+          "wordIds": [
+            "c1-u07-l06-indicie-dedukcia-w03"
+          ]
+        },
+        {
+          "id": "c1-u07-l06-indicie-dedukcia-ex07",
+          "lessonId": "c1-u07-l06-indicie-dedukcia",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яке речення правильне?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Predpoklad nie je dôkaz.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Predpoklad je vždy dôkaz.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Logika nie je potrebná.",
+              "correct": false
+            }
+          ],
+          "explanation": "Припущення не є доказом.",
+          "order": 7,
+          "wordIds": [
+            "c1-u07-l06-indicie-dedukcia-w03",
+            "c1-u07-l06-indicie-dedukcia-w04"
+          ]
+        },
+        {
+          "id": "c1-u07-l06-indicie-dedukcia-ex08",
+          "lessonId": "c1-u07-l06-indicie-dedukcia",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Dedukcia vždy vedie k pravde.",
+          "statement": "Дедукція завжди веде до істини.",
+          "correctAnswer": false,
+          "explanation": "Дедукція правдива лише за правильних посилок.",
+          "order": 8,
+          "wordIds": [
+            "c1-u07-l06-indicie-dedukcia-w03"
+          ]
+        },
+        {
+          "id": "c1-u07-l06-indicie-dedukcia-ex09",
+          "lessonId": "c1-u07-l06-indicie-dedukcia",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Розподіли.",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Ознаки"
+            },
+            {
+              "id": "c2",
+              "title": "Міркування"
+            },
+            {
+              "id": "c3",
+              "title": "Перевірка"
+            }
+          ],
+          "items": [
+            {
+              "sk": "logika",
+              "category": "c2"
+            },
+            {
+              "sk": "dedukcia",
+              "category": "c2"
+            },
+            {
+              "sk": "predpoklad",
+              "category": "c3"
+            },
+            {
+              "sk": "dôkaz",
+              "category": "c3"
+            },
+            {
+              "sk": "indícia",
+              "category": "c1"
+            },
+            {
+              "sk": "stopa",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Групування понять розслідування.",
+          "order": 9,
+          "wordIds": [
+            "c1-u07-l06-indicie-dedukcia-w01",
+            "c1-u07-l06-indicie-dedukcia-w02",
+            "c1-u07-l06-indicie-dedukcia-w03",
+            "c1-u07-l06-indicie-dedukcia-w04"
+          ]
+        },
+        {
+          "id": "c1-u07-l06-indicie-dedukcia-ex10",
+          "lessonId": "c1-u07-l06-indicie-dedukcia",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери всі правильні твердження.",
+          "prompt": "Висновок має спиратися на факти.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Дедукція не потребує перевірки",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Ознака — лише натяк",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Логіка має бути правильною",
+              "correct": true
+            }
+          ],
+          "explanation": "Висновок має бути логічним, а дедукцію треба перевіряти.",
+          "order": 10,
+          "wordIds": [
+            "c1-u07-l06-indicie-dedukcia-w03"
+          ]
+        },
+        {
+          "id": "c1-u07-l06-indicie-dedukcia-ex11",
+          "lessonId": "c1-u07-l06-indicie-dedukcia",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Na základe indícií možno predpokladať, že chyba vznikla v dátach.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": true
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": false
+            }
+          ],
+          "explanation": "Формальна обережна аргументація.",
+          "order": 11,
+          "wordIds": [
+            "c1-u07-l06-indicie-dedukcia-w01",
+            "c1-u07-l06-indicie-dedukcia-w03"
+          ]
+        },
+        {
+          "id": "c1-u07-l06-indicie-dedukcia-ex12",
+          "lessonId": "c1-u07-l06-indicie-dedukcia",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Táto ______ je správna. (логіка)",
+          "acceptedAnswers": [
+            "logika"
+          ],
+          "explanation": "Іменник жіночого роду «logika».",
+          "order": 12,
+          "wordIds": [
+            "c1-u07-l06-indicie-dedukcia-w03",
+            "c1-u07-l06-indicie-dedukcia-w04"
+          ]
+        },
+        {
+          "id": "c1-u07-l06-indicie-dedukcia-ex13",
+          "lessonId": "c1-u07-l06-indicie-dedukcia",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильну форму.",
+          "sentenceParts": [
+            {
+              "text": "Táto "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "logiky",
+                "logika",
+                "logiku"
+              ],
+              "correct": "logika"
+            },
+            {
+              "text": " je správna."
+            }
+          ],
+          "explanation": "Називний відмінок «logika».",
+          "order": 13,
+          "wordIds": [
+            "c1-u07-l06-indicie-dedukcia-w03",
+            "c1-u07-l06-indicie-dedukcia-w04"
+          ]
+        },
+        {
+          "id": "c1-u07-l06-indicie-dedukcia-ex14",
+          "lessonId": "c1-u07-l06-indicie-dedukcia",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «indícia»?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Непряма ознака",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Прямий доказ",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Точна цифра.",
+              "correct": false
+            }
+          ],
+          "explanation": "Indícia — непряма ознака.",
+          "order": 14,
+          "wordIds": [
+            "c1-u07-l06-indicie-dedukcia-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Розслідування невеликої помилки",
+        "description": "У звіті знайшлася помилка. Треба розглянути indície і stopy, зробити dedukciou обережний висновок і показати логіку без поспіху.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Колега питає, хто помилився. Що відповідаєте? (ti — muž)",
+            "options": [
+              {
+                "sk": "Viem presne, kto to bol, je to jasné.",
+                "correct": false
+              },
+              {
+                "sk": "Nie je to dôležité.",
+                "correct": false
+              },
+              {
+                "sk": "Zatiaľ máme len indície, takže nemôžem nikoho obviňovať.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Колега каже, що ознаки однозначні. Як відповідаєш? (ti — žena)",
+            "options": [
+              {
+                "sk": "Nie, všetko je jasné bez overenia.",
+                "correct": false
+              },
+              {
+                "sk": "Logiku netreba.",
+                "correct": false
+              },
+              {
+                "sk": "Logika nám hovorí, že musíme overiť dáta.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Колега питає, чи дедукція вже доказ. Що відповідаєте?",
+            "options": [
+              {
+                "text": "Так, якщо вона гарна.",
+                "correct": false
+              },
+              {
+                "text": "Ні, потрібна перевірка, бо дедукція залежить від посилок.",
+                "correct": true
+              },
+              {
+                "text": "Так, дедукція завжди доказ.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як закінчиш аналіз? (ti — muž)",
+            "options": [
+              {
+                "sk": "Stopu overíme v zdrojoch a výsledok potom zverejníme.",
+                "correct": true
+              },
+              {
+                "sk": "Stopu zmažeme a nič nezverejníme.",
+                "correct": false
+              },
+              {
+                "sk": "Výsledok nebude.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш робити висновки з непрямих ознак. Далі — загадки і таємниці."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш робити висновки з непрямих ознак. Далі — загадки і таємниці.",
+        "nowYouKnow": [
+          "indícia · stopa",
+          "dedukcia",
+          "logika",
+          "dôkaz"
+        ],
+        "newWordsCount": 4,
+        "exercisesCompleted": 14,
+        "xpReward": 60,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "c1-u07-l07-hadanka-zahada",
+          "title": "Загадка й таємниця: hádanka, záhada, utajený, tušiť"
+        }
+      }
+    }
+  ]
+}
