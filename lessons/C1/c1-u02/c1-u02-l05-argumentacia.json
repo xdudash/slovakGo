@@ -1,0 +1,639 @@
+{
+  "lessons": [
+    {
+      "id": "c1-u02-l05-argumentacia",
+      "sectionId": "c1-u02",
+      "level": "C1",
+      "title": "Аргументація: opodstatnenie, korpus, premisa",
+      "topic": "Академічне письмо",
+      "description": "Структура аргументу в науковому тексті: твердження, обґрунтування (opodstatnenie), опора на корпус даних (korpus) і висновок; як пов’язувати аргументи логічними сполучниками.",
+      "order": 15,
+      "xpReward": 60,
+      "estimatedMinutes": 18,
+      "isPublished": true,
+      "intro": "Будувати аргумент від твердження до висновку з опорою на дані.",
+      "completionMessage": "Ти вмієш будувати аргумент від твердження до висновку. Далі — термінологія.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "C1 · Академічне письмо",
+        "title": "Аргументація: opodstatnenie, korpus, premisa",
+        "shortDescription": "Будувати аргумент від твердження до висновку з опорою на дані.",
+        "outcomes": [
+          "виділяти твердження й обґрунтування",
+          "опиратися на корпус даних",
+          "використовувати логічні сполучники",
+          "перевіряти, чи висновок випливає з аргументу"
+        ],
+        "newWords": [
+          "opodstatnenie",
+          "korpus",
+          "premisa",
+          "nakoľko"
+        ],
+        "exercisesCount": 11,
+        "reward": "+60 XP",
+        "estimatedMinutes": 18,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Структура аргументу",
+          "text": "Аргумент складається з тези (твердження), опори (dôkaz або dáta) і висновку. Premisa (посилка) — початок аргументу: «Premisa je, že doprava znečisťuje vzduch.» = Посилка: транспорт забруднює повітря. Висновок має випливати з посилок.",
+          "examples": [
+            {
+              "sk": "Premisa je, že doprava znečisťuje vzduch.",
+              "uk": "Посилка: транспорт забруднює повітря."
+            },
+            {
+              "sk": "Z toho vyplýva, že treba regulovať dopravu.",
+              "uk": "Звідси випливає, що транспорт треба регулювати."
+            }
+          ],
+          "shortRule": "premisa · opodstatnenie",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Опора на корпус",
+          "text": "Корпус (korpus) — зібрана база текстів або даних. Посилання на нього додає вагу: «Podľa korpusu sa slovo používa častejšie v tlači.» = За корпусом це слово частіше вживається в пресі. Без корпусу твердження виглядає як думка.",
+          "examples": [
+            {
+              "sk": "Podľa korpusu sa slovo používa častejšie.",
+              "uk": "За корпусом це слово вживається частіше."
+            },
+            {
+              "sk": "Korpus obsahuje tisíce textov.",
+              "uk": "Корпус містить тисячі текстів."
+            }
+          ],
+          "shortRule": "korpus · opodstatnenie",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Логічні сполучники",
+          "text": "Аргумент пов’язують сполучники: «nakoľko» (оскільки), «preto» (тому), «avšak» (однак). Наприклад: «Nakoľko dáta sú obmedzené, výsledok je predbežný.» = Оскільки дані обмежені, результат попередній.",
+          "examples": [
+            {
+              "sk": "Nakoľko dáta sú obmedzené, výsledok je predbežný.",
+              "uk": "Оскільки дані обмежені, результат попередній."
+            },
+            {
+              "sk": "Avšak výsledok je stabilný.",
+              "uk": "Однак результат стабільний."
+            }
+          ],
+          "shortRule": "nakoľko · preto",
+          "commonMistakes": [
+            {
+              "mistake": "Doprava je zlá, preto je zlá.",
+              "correct": "Doprava znečisťuje vzduch, preto treba zmenšiť jej objem, o čom svedčí korpus dát."
+            },
+            {
+              "mistake": "Korpus je názor autora.",
+              "correct": "Korpus je zbierka textov alebo dát."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "c1-u02-l05-argumentacia-w01",
+            "sk": "opodstatnenie",
+            "uk": "обґрунтування, підстава",
+            "pronunciationUk": "оподстатненіє",
+            "exampleSk": "Opodstatnenie tvrdenia vychádza z dát.",
+            "exampleUk": "Обґрунтування твердження спирається на дані."
+          },
+          {
+            "wordId": "c1-u02-l05-argumentacia-w02",
+            "sk": "korpus",
+            "uk": "корпус (зібрана база даних або текстів)",
+            "pronunciationUk": "корпус",
+            "exampleSk": "Korpus obsahuje tisíce textov z tlače.",
+            "exampleUk": "Корпус містить тисячі текстів із преси."
+          },
+          {
+            "wordId": "c1-u02-l05-argumentacia-w03",
+            "sk": "premisa",
+            "uk": "посилка, вихідна засада",
+            "pronunciationUk": "премиса",
+            "exampleSk": "Premisa tvrdenia musí byť overená.",
+            "exampleUk": "Посилка твердження має бути перевірена."
+          },
+          {
+            "wordId": "c1-u02-l05-argumentacia-w04",
+            "sk": "nakoľko",
+            "uk": "оскільки, тому що",
+            "pronunciationUk": "накольке",
+            "exampleSk": "Nakoľko dáta sú málo, výsledok je predbežný.",
+            "exampleUk": "Оскільки даних мало, результат попередній."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "c1-u02-l05-argumentacia-w01",
+          "sk": "opodstatnenie",
+          "uk": "обґрунтування, підстава",
+          "pronunciationUk": "оподстатненіє",
+          "exampleSk": "Opodstatnenie tvrdenia vychádza z dát.",
+          "exampleUk": "Обґрунтування твердження спирається на дані.",
+          "level": "C1",
+          "topic": "Академічне письмо",
+          "tags": [
+            "c1-u02",
+            "c1"
+          ]
+        },
+        {
+          "id": "c1-u02-l05-argumentacia-w02",
+          "sk": "korpus",
+          "uk": "корпус (зібрана база даних або текстів)",
+          "pronunciationUk": "корпус",
+          "exampleSk": "Korpus obsahuje tisíce textov z tlače.",
+          "exampleUk": "Корпус містить тисячі текстів із преси.",
+          "level": "C1",
+          "topic": "Академічне письмо",
+          "tags": [
+            "c1-u02",
+            "c1"
+          ]
+        },
+        {
+          "id": "c1-u02-l05-argumentacia-w03",
+          "sk": "premisa",
+          "uk": "посилка, вихідна засада",
+          "pronunciationUk": "премиса",
+          "exampleSk": "Premisa tvrdenia musí byť overená.",
+          "exampleUk": "Посилка твердження має бути перевірена.",
+          "level": "C1",
+          "topic": "Академічне письмо",
+          "tags": [
+            "c1-u02",
+            "c1"
+          ]
+        },
+        {
+          "id": "c1-u02-l05-argumentacia-w04",
+          "sk": "nakoľko",
+          "uk": "оскільки, тому що",
+          "pronunciationUk": "накольке",
+          "exampleSk": "Nakoľko dáta sú málo, výsledok je predbežný.",
+          "exampleUk": "Оскільки даних мало, результат попередній.",
+          "level": "C1",
+          "topic": "Академічне письмо",
+          "tags": [
+            "c1-u02",
+            "c1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "c1-u02-l05-argumentacia-ex01",
+          "lessonId": "c1-u02-l05-argumentacia",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай слово і значення.",
+          "pairs": [
+            {
+              "left": "premisa",
+              "right": "посилка"
+            },
+            {
+              "left": "opodstatnenie",
+              "right": "обґрунтування"
+            },
+            {
+              "left": "korpus",
+              "right": "корпус"
+            },
+            {
+              "left": "nakoľko",
+              "right": "оскільки"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "c1-u02-l05-argumentacia-w01",
+            "c1-u02-l05-argumentacia-w02",
+            "c1-u02-l05-argumentacia-w03",
+            "c1-u02-l05-argumentacia-w04"
+          ]
+        },
+        {
+          "id": "c1-u02-l05-argumentacia-ex02",
+          "lessonId": "c1-u02-l05-argumentacia",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильну форму.",
+          "sentenceParts": [
+            {
+              "text": "Nakoľko dáta sú "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "obmedzená",
+                "obmedzené",
+                "obmedzený"
+              ],
+              "correct": "obmedzené"
+            },
+            {
+              "text": ", výsledok je predbežný."
+            }
+          ],
+          "explanation": "Множина підмета «dáta» (множина): «obmedzené».",
+          "order": 2,
+          "wordIds": [
+            "c1-u02-l05-argumentacia-w04"
+          ]
+        },
+        {
+          "id": "c1-u02-l05-argumentacia-ex03",
+          "lessonId": "c1-u02-l05-argumentacia",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди помилку.",
+          "sentence": "Korpus obsahujú tisíce textov.",
+          "errorToken": "obsahujú",
+          "correctToken": "obsahuje",
+          "explanation": "Підмет «korpus» однина: «obsahuje».",
+          "order": 3,
+          "wordIds": [
+            "c1-u02-l05-argumentacia-w02"
+          ]
+        },
+        {
+          "id": "c1-u02-l05-argumentacia-ex04",
+          "lessonId": "c1-u02-l05-argumentacia",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Podľa ______ sa slovo používa častejšie. (корпусу)",
+          "acceptedAnswers": [
+            "korpusu"
+          ],
+          "explanation": "Родовий відмінок після «podľa»: «korpusu».",
+          "order": 4,
+          "wordIds": [
+            "c1-u02-l05-argumentacia-w02"
+          ]
+        },
+        {
+          "id": "c1-u02-l05-argumentacia-ex05",
+          "lessonId": "c1-u02-l05-argumentacia",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Doprava je zlá, preto je zlá.",
+          "acceptedAnswers": [
+            "Doprava znečisťuje vzduch, preto treba regulovať jej objem."
+          ],
+          "explanation": "Аргумент має спиратися на факт, а не на повтор твердження.",
+          "order": 5
+        },
+        {
+          "id": "c1-u02-l05-argumentacia-ex06",
+          "lessonId": "c1-u02-l05-argumentacia",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «premisa»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "назва розділу",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "посилка аргументу",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "висновок",
+              "correct": false
+            }
+          ],
+          "order": 6
+        },
+        {
+          "id": "c1-u02-l05-argumentacia-ex07",
+          "lessonId": "c1-u02-l05-argumentacia",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яке речення є висновком?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Z toho vyplýva, že treba regulovať dopravu.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Nakoľko dáta sú obmedzené.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Premisa je, že doprava znečisťuje.",
+              "correct": false
+            }
+          ],
+          "explanation": "Висновок стоїть після посилки.",
+          "order": 7,
+          "wordIds": [
+            "c1-u02-l05-argumentacia-w03",
+            "c1-u02-l05-argumentacia-w04"
+          ]
+        },
+        {
+          "id": "c1-u02-l05-argumentacia-ex08",
+          "lessonId": "c1-u02-l05-argumentacia",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Korpus є думкою автора.",
+          "statement": "Корпус є думкою автора.",
+          "correctAnswer": false,
+          "explanation": "Корпус — це зібрана база текстів або даних.",
+          "order": 8,
+          "wordIds": [
+            "c1-u02-l05-argumentacia-w02"
+          ]
+        },
+        {
+          "id": "c1-u02-l05-argumentacia-ex09",
+          "lessonId": "c1-u02-l05-argumentacia",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Розподіли аргумент.",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Посилка"
+            },
+            {
+              "id": "c2",
+              "title": "Опора"
+            },
+            {
+              "id": "c3",
+              "title": "Зв’язок"
+            }
+          ],
+          "items": [
+            {
+              "sk": "korpus",
+              "category": "c2"
+            },
+            {
+              "sk": "preto",
+              "category": "c3"
+            },
+            {
+              "sk": "nakoľko",
+              "category": "c3"
+            },
+            {
+              "sk": "dáta",
+              "category": "c2"
+            },
+            {
+              "sk": "opodstatnenie",
+              "category": "c1"
+            },
+            {
+              "sk": "premisa",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Групування елементів аргументу.",
+          "order": 9,
+          "wordIds": [
+            "c1-u02-l05-argumentacia-w01",
+            "c1-u02-l05-argumentacia-w02",
+            "c1-u02-l05-argumentacia-w03",
+            "c1-u02-l05-argumentacia-w04"
+          ]
+        },
+        {
+          "id": "c1-u02-l05-argumentacia-ex10",
+          "lessonId": "c1-u02-l05-argumentacia",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери всі правильні твердження.",
+          "prompt": "Аргумент має висновок.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Nakoľko вказує на причину",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Корпус є висновком аргументу",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Посилка передує висновку",
+              "correct": true
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "c1-u02-l05-argumentacia-w04"
+          ]
+        },
+        {
+          "id": "c1-u02-l05-argumentacia-ex11",
+          "lessonId": "c1-u02-l05-argumentacia",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Nakoľko korpus je veľký, môžeme sa oprieť o jeho dáta.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": true
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": false
+            }
+          ],
+          "explanation": "Формальний регістр з логічним сполучником.",
+          "order": 11,
+          "wordIds": [
+            "c1-u02-l05-argumentacia-w02",
+            "c1-u02-l05-argumentacia-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Аргумент у статті",
+        "description": "Ти пишеш аргументацію для статті. Треба сформулювати посилку, опертися на корпус і зробити висновок, який випливає з даних.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Рецензент питає, на чому грунтується твій висновок. Що відповідаєш? (ti — чоловік)",
+            "options": [
+              {
+                "sk": "Opieram sa o svoj pocit, lebo je to jasné.",
+                "correct": false
+              },
+              {
+                "sk": "Opieram sa o korpus, nakoľko dáta potvrdzujú vzorec.",
+                "correct": true
+              },
+              {
+                "sk": "Nemám žiadnu oporu.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Рецензент питає, čo z toho vyplýva. Ako odpovieš? (ti — žena)",
+            "options": [
+              {
+                "sk": "Z toho vyplýva, že doprava vyžaduje reguláciu.",
+                "correct": true
+              },
+              {
+                "sk": "Z toho vyplýva, že doprava je dobrá pre všetkých.",
+                "correct": false
+              },
+              {
+                "sk": "Z toho nič nevyplýva.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Рецензент питає, чи ваша посилка перевірена. Що відповідаєте?",
+            "options": [
+              {
+                "text": "Ні, вона просто моя думка.",
+                "correct": false
+              },
+              {
+                "text": "Так, її перевірено на корпусі даних і результат збігається.",
+                "correct": true
+              },
+              {
+                "text": "Не знаю, не перевіряли.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як завершиш аргумент? (ti — чоловік)",
+            "options": [
+              {
+                "sk": "Záver nie je potrebný.",
+                "correct": false
+              },
+              {
+                "sk": "Avšak tento záver je definitívny, bez ďalších dát.",
+                "correct": false
+              },
+              {
+                "sk": "Avšak tento záver vyžaduje ďalšie dáta, preto je predbežný.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш будувати аргумент від твердження до висновку. Далі — термінологія."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш будувати аргумент від твердження до висновку. Далі — термінологія.",
+        "nowYouKnow": [
+          "premisa · opodstatnenie",
+          "korpus",
+          "nakoľko · preto",
+          "z toho vyplýva"
+        ],
+        "newWordsCount": 4,
+        "exercisesCompleted": 11,
+        "xpReward": 60,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "c1-u02-l06-terminologia",
+          "title": "Терміни й визначення: pojmoslovie, vysvetlenie, glosár"
+        }
+      }
+    }
+  ]
+}
