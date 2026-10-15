@@ -1,0 +1,902 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u14-l03-citoslovcia",
+      "sectionId": "b2-u14",
+      "level": "B2",
+      "title": "Вигуки",
+      "topic": "Розмовна словацька",
+      "description": "Словацькі вигуки: emocionálne (jaj, au, fuj, fíha, ejha, bŕ), výzvové (hej, pst, nože) та zvukomalebné (buch, cvak, haf); як їх писати, як відокремлювати комою й чому вони не місце в офіційному тексті.",
+      "order": 133,
+      "xpReward": 50,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Розуміти й доречно вживати найчастіші словацькі вигуки в розмові та в чаті.",
+      "completionMessage": "Ти розумієш, що означають jaj, fuj, fíha чи au, і коли їх можна сказати. Далі — частки veď, však, predsa, hádam.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Розмовна словацька",
+        "title": "Вигуки",
+        "shortDescription": "Розуміти й доречно вживати найчастіші словацькі вигуки в розмові та в чаті.",
+        "outcomes": [
+          "розпізнавати емоцію за вигуком",
+          "відрізняти вигуки емоцій, звернення та звуконаслідування",
+          "ставити кому після вигуку",
+          "не вживати вигуки в офіційних текстах"
+        ],
+        "newWords": [
+          "citoslovce",
+          "jaj",
+          "fuj",
+          "fíha",
+          "au",
+          "ejha"
+        ],
+        "exercisesCount": 15,
+        "reward": "+50 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Що таке citoslovce",
+          "text": "«Citoslovce» — вигук: слово, яке не називає предмет чи дію, а прямо передає емоцію, звук або звернення. Воно не змінюється й стоїть здебільшого на початку речення, відокремлене комою: «Jaj, zabudol som doma kartu.» Словацькі вигуки діляться на три групи. Перша — емоційні: «au», «jaj», «fuj», «fíha», «ejha», «bŕ», «hm», «ach». Друга — вигуки звернення й наказу: «hej», «pst», «nože», «haló». Третя — звуконаслідувальні: «buch», «cvak», «šmik», «haf», «mňau». Вигук можна вимовити з різною довжиною й інтонацією, і від цього змінюється сила емоції: «Jaaaj!» сильніше за «Jaj».",
+          "examples": [
+            {
+              "sk": "Jaj, to som nechcel.",
+              "uk": "Ой, я цього не хотів."
+            },
+            {
+              "sk": "Pst, dieťa už spí.",
+              "uk": "Тсс, дитина вже спить."
+            }
+          ],
+          "shortRule": "вигук не змінюється · стоїть на початку · після нього кома",
+          "commonMistakes": [
+            {
+              "mistake": "Jaj to som nechcel.",
+              "correct": "Jaj, to som nechcel."
+            },
+            {
+              "mistake": "Fuj! Žiadam Vás o vydanie potvrdenia.",
+              "correct": "Žiadam Vás o vydanie potvrdenia."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Найчастіші вигуки емоцій",
+          "text": "«Au» — раптовий біль: «Au, to bolelo.» «Jaj» (або «joj») — ширше: біль, жаль, переляк, досада: «Jaj, zmeškal som bus.» «Fuj» — огида, здебільшого про запах, смак або вигляд: «Fuj, to mlieko je skysnuté.» «Fíha» й «ejha» — приємне або нейтральне здивування: «Fíha, to je rýchly stroj.» «Bŕ» — холод або неприємний дотик: «Bŕ, tá voda je ľadová.» «Hm» — вагання, роздуми, стримана незгода: коли на питання «Zvládneme tú normu?» чуєш «Hm…», відповідь радше ні, ніж так. «Ach» і «och» звучать книжніше й трохи театрально.",
+          "examples": [
+            {
+              "sk": "Fíha, to ste stihli naozaj rýchlo.",
+              "uk": "Ого, ви справилися справді швидко."
+            },
+            {
+              "sk": "Bŕ, tá voda v sprche je ľadová.",
+              "uk": "Бр, та вода в душі крижана."
+            }
+          ],
+          "shortRule": "au — біль · jaj — жаль і досада · fuj — огида · fíha, ejha — здивування · bŕ — холод · hm — вагання",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Де вигуки доречні",
+          "text": "Вигуки — ознака живої розмови й неформального письма: чат, повідомлення друзям, розмова з колегами. В офіційному тексті (заява, скарга, трудовий договір, лист до установи) вигуків немає зовсім: такий текст має бути «vecný», тобто діловий і без емоцій. У робочому e-mailі всередині колективу поодинокий вигук можливий, якщо тон у фірмі невимушений, але в листі назовні — ні. Окремо тримайся подалі від вигуків, які походять від релігійних чи грубих слів: «Ježišmária» звучить сильно, а грубі вигуки на роботі сприймають як нечемність. Слово «no» формально теж вигук, але частіше працює як частка — про це наступний урок.",
+          "examples": [
+            {
+              "sk": "V správe pre kamaráta napíšem Jaj, prepáč, zabudol som.",
+              "uk": "У повідомленні другові напишу «Ой, вибач, я забув»."
+            },
+            {
+              "sk": "V žiadosti napíšem Ospravedlňujem sa za svoju chybu.",
+              "uk": "У заяві напишу «Прошу вибачення за свою помилку»."
+            }
+          ],
+          "shortRule": "чат і розмова — так · заява й офіційний лист — ні",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u14-l03-citoslovcia-w01",
+            "sk": "citoslovce",
+            "uk": "вигук (частина мови)",
+            "pronunciationUk": "цітословце",
+            "exampleSk": "Citoslovce au vyjadruje náhlu bolesť.",
+            "exampleUk": "Вигук «au» виражає раптовий біль."
+          },
+          {
+            "wordId": "b2-u14-l03-citoslovcia-w02",
+            "sk": "jaj",
+            "uk": "ой, ай (біль, жаль, досада)",
+            "pronunciationUk": "яй",
+            "exampleSk": "Jaj, zabudol som doma kartu.",
+            "exampleUk": "Ой, я забув удома картку."
+          },
+          {
+            "wordId": "b2-u14-l03-citoslovcia-w03",
+            "sk": "fuj",
+            "uk": "фу (огида)",
+            "pronunciationUk": "фуй",
+            "exampleSk": "Fuj, to mlieko je už skysnuté.",
+            "exampleUk": "Фу, те молоко вже скисло."
+          },
+          {
+            "wordId": "b2-u14-l03-citoslovcia-w04",
+            "sk": "fíha",
+            "uk": "ого (приємне здивування)",
+            "pronunciationUk": "фі:га",
+            "exampleSk": "Fíha, to ste stihli naozaj rýchlo.",
+            "exampleUk": "Ого, ви справилися справді швидко."
+          },
+          {
+            "wordId": "b2-u14-l03-citoslovcia-w05",
+            "sk": "au",
+            "uk": "ай (раптовий біль)",
+            "pronunciationUk": "ав",
+            "exampleSk": "Au, tá krabica mi spadla na nohu.",
+            "exampleUk": "Ай, та коробка впала мені на ногу."
+          },
+          {
+            "wordId": "b2-u14-l03-citoslovcia-w06",
+            "sk": "ejha",
+            "uk": "ого, оце так",
+            "pronunciationUk": "ейга",
+            "exampleSk": "Ejha, takú cenu som naozaj nečakal.",
+            "exampleUk": "Ого, такої ціни я справді не очікував."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u14-l03-citoslovcia-w01",
+          "sk": "citoslovce",
+          "uk": "вигук (частина мови)",
+          "pronunciationUk": "цітословце",
+          "exampleSk": "Citoslovce au vyjadruje náhlu bolesť.",
+          "exampleUk": "Вигук «au» виражає раптовий біль.",
+          "level": "B2",
+          "topic": "Розмовна словацька",
+          "tags": [
+            "b2-u14",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-w02",
+          "sk": "jaj",
+          "uk": "ой, ай (біль, жаль, досада)",
+          "pronunciationUk": "яй",
+          "exampleSk": "Jaj, zabudol som doma kartu.",
+          "exampleUk": "Ой, я забув удома картку.",
+          "level": "B2",
+          "topic": "Розмовна словацька",
+          "tags": [
+            "b2-u14",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-w03",
+          "sk": "fuj",
+          "uk": "фу (огида)",
+          "pronunciationUk": "фуй",
+          "exampleSk": "Fuj, to mlieko je už skysnuté.",
+          "exampleUk": "Фу, те молоко вже скисло.",
+          "level": "B2",
+          "topic": "Розмовна словацька",
+          "tags": [
+            "b2-u14",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-w04",
+          "sk": "fíha",
+          "uk": "ого (приємне здивування)",
+          "pronunciationUk": "фі:га",
+          "exampleSk": "Fíha, to ste stihli naozaj rýchlo.",
+          "exampleUk": "Ого, ви справилися справді швидко.",
+          "level": "B2",
+          "topic": "Розмовна словацька",
+          "tags": [
+            "b2-u14",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-w05",
+          "sk": "au",
+          "uk": "ай (раптовий біль)",
+          "pronunciationUk": "ав",
+          "exampleSk": "Au, tá krabica mi spadla na nohu.",
+          "exampleUk": "Ай, та коробка впала мені на ногу.",
+          "level": "B2",
+          "topic": "Розмовна словацька",
+          "tags": [
+            "b2-u14",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-w06",
+          "sk": "ejha",
+          "uk": "ого, оце так",
+          "pronunciationUk": "ейга",
+          "exampleSk": "Ejha, takú cenu som naozaj nečakal.",
+          "exampleUk": "Ого, такої ціни я справді не очікував.",
+          "level": "B2",
+          "topic": "Розмовна словацька",
+          "tags": [
+            "b2-u14",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u14-l03-citoslovcia-ex01",
+          "lessonId": "b2-u14-l03-citoslovcia",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай вигук зі значенням.",
+          "pairs": [
+            {
+              "left": "au",
+              "right": "раптовий біль"
+            },
+            {
+              "left": "fuj",
+              "right": "огида"
+            },
+            {
+              "left": "fíha",
+              "right": "приємне здивування"
+            },
+            {
+              "left": "bŕ",
+              "right": "холод"
+            },
+            {
+              "left": "pst",
+              "right": "заклик до тишини"
+            },
+            {
+              "left": "hm",
+              "right": "вагання"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u14-l03-citoslovcia-w01",
+            "b2-u14-l03-citoslovcia-w03",
+            "b2-u14-l03-citoslovcia-w04",
+            "b2-u14-l03-citoslovcia-w05"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-ex02",
+          "lessonId": "b2-u14-l03-citoslovcia",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "До якої групи належить вигук?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Emócia"
+            },
+            {
+              "id": "c2",
+              "title": "Zvukomalebné"
+            },
+            {
+              "id": "c3",
+              "title": "Výzva alebo oslovenie"
+            }
+          ],
+          "items": [
+            {
+              "sk": "hej",
+              "category": "c3"
+            },
+            {
+              "sk": "haló",
+              "category": "c3"
+            },
+            {
+              "sk": "haf",
+              "category": "c2"
+            },
+            {
+              "sk": "pst",
+              "category": "c3"
+            },
+            {
+              "sk": "fuj",
+              "category": "c1"
+            },
+            {
+              "sk": "fíha",
+              "category": "c1"
+            },
+            {
+              "sk": "cvak",
+              "category": "c2"
+            },
+            {
+              "sk": "au",
+              "category": "c1"
+            },
+            {
+              "sk": "buch",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Емоційні передають почуття, звуконаслідувальні — звук, а виклики привертають увагу.",
+          "order": 2,
+          "wordIds": [
+            "b2-u14-l03-citoslovcia-w01",
+            "b2-u14-l03-citoslovcia-w03",
+            "b2-u14-l03-citoslovcia-w04",
+            "b2-u14-l03-citoslovcia-w05"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-ex03",
+          "lessonId": "b2-u14-l03-citoslovcia",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "У якому тексті вигук «jaj» доречний?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "v žiadosti o dovolenku",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "v správe pre kamarátku",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "v nájomnej zmluve",
+              "correct": false
+            }
+          ],
+          "explanation": "Вигуки живуть у неформальному письмі; у заяві й договорі їх не вживають.",
+          "order": 3,
+          "wordIds": [
+            "b2-u14-l03-citoslovcia-w01"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-ex04",
+          "lessonId": "b2-u14-l03-citoslovcia",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "blankId": "b1",
+              "options": [
+                "Jaj",
+                "Dovi",
+                "Nazdar"
+              ],
+              "correct": "Jaj"
+            },
+            {
+              "text": ", zabudol som doma kartu a nemám čím zaplatiť."
+            }
+          ],
+          "explanation": "Потрібен вигук досади «jaj»; «nazdar» і «dovi» — привітання й прощання.",
+          "order": 4,
+          "wordIds": [
+            "b2-u14-l03-citoslovcia-w01",
+            "b2-u14-l03-citoslovcia-w02"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-ex05",
+          "lessonId": "b2-u14-l03-citoslovcia",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши вигук, який виражає раптовий біль (дві літери).",
+          "sentence": "______, ten drôt ma kopol!",
+          "acceptedAnswers": [
+            "au"
+          ],
+          "explanation": "Раптовий біль передає вигук «au».",
+          "order": 5,
+          "wordIds": [
+            "b2-u14-l03-citoslovcia-w01",
+            "b2-u14-l03-citoslovcia-w05"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-ex06",
+          "lessonId": "b2-u14-l03-citoslovcia",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "Majster sa pozrie na hotové palety a povie: «Fíha, to ste stihli rýchlo.»",
+          "target": "Fíha",
+          "options": [
+            {
+              "id": "a",
+              "text": "приємне здивування",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "сумнів",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "роздратування",
+              "correct": false
+            }
+          ],
+          "explanation": "«Fíha» виражає позитивне здивування, тож майстер хвалить темп роботи.",
+          "order": 6,
+          "wordIds": [
+            "b2-u14-l03-citoslovcia-w01",
+            "b2-u14-l03-citoslovcia-w04"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-ex07",
+          "lessonId": "b2-u14-l03-citoslovcia",
+          "type": "tone",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Визнач тон мовця.",
+          "context": "Kolega otvorí chladničku v šatni a povie: «Fuj, čo tu tak zapácha?»",
+          "options": [
+            {
+              "id": "a",
+              "text": "радість",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "огида",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "здивування",
+              "correct": false
+            }
+          ],
+          "explanation": "«Fuj» завжди передає огиду — найчастіше через запах, смак або вигляд.",
+          "order": 7,
+          "wordIds": [
+            "b2-u14-l03-citoslovcia-w01",
+            "b2-u14-l03-citoslovcia-w03"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-ex08",
+          "lessonId": "b2-u14-l03-citoslovcia",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Pýtaš sa kolegu, či novú normu zvládnu do večera. On pokrúti hlavou a povie len: «Hm.»",
+          "options": [
+            {
+              "id": "a",
+              "text": "він сумнівається, але не хоче сказати це прямо",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "він повністю погоджується",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "він не почув питання",
+              "correct": false
+            }
+          ],
+          "explanation": "«Hm» із похитуванням головою — стримана незгода або сумнів, а не згода.",
+          "order": 8,
+          "wordIds": [
+            "b2-u14-l03-citoslovcia-w01"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-ex09",
+          "lessonId": "b2-u14-l03-citoslovcia",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти вдарився об край палети, і поруч стоїть колега.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Fíha, to bolelo.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Au, to bolelo.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Pst, to bolelo.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Fuj, to bolelo.",
+              "correct": false
+            }
+          ],
+          "explanation": "Біль передає «au»; «fuj» — огида, «fíha» — здивування, «pst» — заклик до тишини.",
+          "order": 9,
+          "wordIds": [
+            "b2-u14-l03-citoslovcia-w01",
+            "b2-u14-l03-citoslovcia-w03",
+            "b2-u14-l03-citoslovcia-w04",
+            "b2-u14-l03-citoslovcia-w05"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-ex10",
+          "lessonId": "b2-u14-l03-citoslovcia",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Fíha, tie čísla sú ale dobré, to musíme dať šéfovi.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": false
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": true
+            }
+          ],
+          "explanation": "Вигук «fíha» і частка «ale» в такій позиції — жива розмовна мова.",
+          "order": 10,
+          "wordIds": [
+            "b2-u14-l03-citoslovcia-w01",
+            "b2-u14-l03-citoslovcia-w04"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-ex11",
+          "lessonId": "b2-u14-l03-citoslovcia",
+          "type": "dialogue_order",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Віднови порядок реплік.",
+          "lines": [
+            {
+              "id": "l4",
+              "sk": "Peter: Hm, aj tak to bolí."
+            },
+            {
+              "id": "l1",
+              "sk": "Oleh: Jaj, pozor, tá paleta sa kláti."
+            },
+            {
+              "id": "l2",
+              "sk": "Peter: Au, veď mi spadla krabica na nohu."
+            },
+            {
+              "id": "l5",
+              "sk": "Oleh: Tak si sadni, ja to dorovnám."
+            },
+            {
+              "id": "l3",
+              "sk": "Oleh: Fíha, to si mal šťastie, že bola prázdna."
+            }
+          ],
+          "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5"
+          ],
+          "explanation": "Спершу попередження, тоді біль, тоді реакція, сумнів і рішення.",
+          "order": 11,
+          "wordIds": [
+            "b2-u14-l03-citoslovcia-w01",
+            "b2-u14-l03-citoslovcia-w02",
+            "b2-u14-l03-citoslovcia-w04",
+            "b2-u14-l03-citoslovcia-w05"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-ex12",
+          "lessonId": "b2-u14-l03-citoslovcia",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення від знайомої.",
+          "message": {
+            "sender": "Katka",
+            "body": "Jaj, Oleh, prepáč, zabudla som ti napísať skôr: zajtra prídem až o šiestej, nie o štvrtej. Fuj, celý deň som v práci a mám z toho hlavu ako balón. Pizzu ale prinesiem, tak sa nehnevaj."
+          },
+          "question": "Що сталося?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Катка взагалі не приїде",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Катка приїде пізніше, ніж домовлялися, і просить вибачення",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Катка просить Олега купити піцу",
+              "correct": false
+            }
+          ],
+          "explanation": "«Prídem až o šiestej» — приїде о шостій замість четвертої; піцу привезе вона сама.",
+          "order": 12,
+          "wordIds": [
+            "b2-u14-l03-citoslovcia-w01",
+            "b2-u14-l03-citoslovcia-w02",
+            "b2-u14-l03-citoslovcia-w03"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-ex13",
+          "lessonId": "b2-u14-l03-citoslovcia",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Po citoslovci píšeme čiarka a veta pokračuje malým písmenom.",
+          "errorToken": "čiarka",
+          "correctToken": "čiarku",
+          "explanation": "«Píšeme» вимагає знахідного відмінка: «píšeme čiarku».",
+          "order": 13,
+          "wordIds": [
+            "b2-u14-l03-citoslovcia-w01"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-ex14",
+          "lessonId": "b2-u14-l03-citoslovcia",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Úradný list má byť vecný: fakty, dátumy a konkrétna žiadosť, bez emócií a bez citosloviec.",
+          "statement": "Citoslovce jaj je v žiadosti o dovolenku vhodné.",
+          "correctAnswer": false,
+          "explanation": "Текст прямо каже, що офіційний лист обходиться без вигуків.",
+          "order": 14,
+          "wordIds": [
+            "b2-u14-l03-citoslovcia-w01",
+            "b2-u14-l03-citoslovcia-w02"
+          ]
+        },
+        {
+          "id": "b2-u14-l03-citoslovcia-ex15",
+          "lessonId": "b2-u14-l03-citoslovcia",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери речення, у яких вигук уживається доречно.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Fuj, s pozdravom Oleh Kravec.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Jaj, žiadam Vás o vydanie potvrdenia.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Au, to bolelo!",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Jaj, prepáč, zabudol som.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Fíha, to je rýchly stroj.",
+              "correct": true
+            }
+          ],
+          "explanation": "Вигук доречний у живій розмові, а не в заяві й не в підписі листа.",
+          "order": 15,
+          "wordIds": [
+            "b2-u14-l03-citoslovcia-w01",
+            "b2-u14-l03-citoslovcia-w02",
+            "b2-u14-l03-citoslovcia-w03",
+            "b2-u14-l03-citoslovcia-w04",
+            "b2-u14-l03-citoslovcia-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Неприємність на складі",
+        "description": "На складі впала коробка, і Олег реагує голосом. Підбери природні вигуки й доречний тон.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Коробка впала тобі на ногу. Що вигукнеш?",
+            "options": [
+              {
+                "sk": "Au!",
+                "correct": true
+              },
+              {
+                "sk": "Pst!",
+                "correct": false
+              },
+              {
+                "sk": "Fíha!",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Колега відкрив холодильник, і звідти жахливо пахне. Що він скаже?",
+            "options": [
+              {
+                "sk": "Au, to treba vyhodiť.",
+                "correct": false
+              },
+              {
+                "sk": "Fíha, to treba vyhodiť.",
+                "correct": false
+              },
+              {
+                "sk": "Fuj, to treba vyhodiť.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Майстер хвалить вас за швидку роботу. Як відреагуєш по-дружньому?",
+            "options": [
+              {
+                "sk": "Ospravedlňujem sa za svoj výkon.",
+                "correct": false
+              },
+              {
+                "sk": "Fíha, dík, to sme sa naozaj snažili.",
+                "correct": true
+              },
+              {
+                "sk": "Pst, nehovorte o tom.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Чому вигук не можна лишити в заяві про нещасний випадок?",
+            "options": [
+              {
+                "text": "вигуки не мають значення",
+                "correct": false
+              },
+              {
+                "text": "заява має бути діловою й без емоцій",
+                "correct": true
+              },
+              {
+                "text": "вигуки існують тільки в говірці",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш, що означають jaj, fuj, fíha чи au, і коли їх можна сказати. Далі — частки veď, však, predsa, hádam."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш, що означають jaj, fuj, fíha чи au, і коли їх можна сказати. Далі — частки veď, však, predsa, hádam.",
+        "nowYouKnow": [
+          "три групи: емоційні, звернення, звуконаслідувальні",
+          "au — біль · jaj — досада · fuj — огида · fíha, ejha — здивування · bŕ — холод",
+          "після вигуку кома, далі мала літера",
+          "чат і розмова — так, заява й договір — ні"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 15,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u14-l04-castice-vyrazy",
+          "title": "Частки: veď, nó, predsa"
+        }
+      }
+    }
+  ]
+}
