@@ -1,0 +1,706 @@
+{
+  "lessons": [
+    {
+      "id": "c2-u04-l06-logicke-usudzovanie",
+      "sectionId": "c2-u04",
+      "level": "C1",
+      "title": "Логічні висновки: syllogizmus, entymém, indukcia, relevantný",
+      "topic": "Риторика",
+      "description": "Логічні висновки: syllogizmus (силогізм), entymém (ентимема), indukcia (індукція) і relevantný (релевантний); як будувати висновок із двох тверджень, як працює скорочений висновок і чому доказ має бути релевантним.",
+      "order": 156,
+      "xpReward": 70,
+      "estimatedMinutes": 20,
+      "isPublished": true,
+      "intro": "Розпізнавати силогізм, ентимему та індукцію і перевіряти релевантність доказу.",
+      "completionMessage": "Ти розумієш логічні висновки. Далі — софізми і хибні міркування.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "C2 · Риторика",
+        "title": "Логічні висновки: syllogizmus, entymém, indukcia, relevantný",
+        "shortDescription": "Розпізнавати силогізм, ентимему та індукцію і перевіряти релевантність доказу.",
+        "outcomes": [
+          "розпізнавати syllogizmus",
+          "розуміти entymém",
+          "obmedziť indukciu",
+          "vyberať relevantný dôkaz"
+        ],
+        "newWords": [
+          "syllogizmus",
+          "entymém",
+          "indukcia",
+          "relevantný"
+        ],
+        "exercisesCount": 14,
+        "reward": "+70 XP",
+        "estimatedMinutes": 20,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Силогізм і ентимема",
+          "text": "Syllogizmus (силогізм) — висновок із двох тверджень: «Každý človek je smrteľný, Sokrates je človek, teda Sokrates je smrteľný.» = Кожна людина смертна, Сократ — людина, отже, Сократ смертний.",
+          "examples": [
+            {
+              "sk": "Každý človek je smrteľný, Sokrates je človek, teda Sokrates je smrteľný.",
+              "uk": "Кожна людина смертна, Сократ — людина, отже, Сократ смертний."
+            },
+            {
+              "sk": "Je zima, vezmi si kabát.",
+              "uk": "Холодно, візьми пальто."
+            }
+          ],
+          "shortRule": "syllogizmus · entymém",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Індукція",
+          "text": "Indukcia (індукція) — узагальнення з окремих спостережень: «Každý pozorovaný kov vedie elektrinu, teda kovy vedú elektrinu.» = Кожен спостережений метал проводить струм, отже, метали проводять струм.",
+          "examples": [
+            {
+              "sk": "Každý pozorovaný kov vedie elektrinu, teda kovy vedú elektrinu.",
+              "uk": "Кожен спостережений метал проводить струм, отже, метали проводять струм."
+            },
+            {
+              "sk": "Indukcia dáva pravdepodobný záver.",
+              "uk": "Індукція дає ймовірний висновок."
+            }
+          ],
+          "shortRule": "indukcia · relevantný",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Релевантність",
+          "text": "Relevantný (релевантний, доречний) — що стосується теми і підтримує тезу: «Relevantný dôkaz podporuje tézu.» = Релевантний доказ підтримує тезу.",
+          "examples": [
+            {
+              "sk": "Relevantný dôkaz podporuje tézu.",
+              "uk": "Релевантний доказ підтримує тезу."
+            },
+            {
+              "sk": "Nerelevantný príklad tému nezmení.",
+              "uk": "Нерелевантний приклад тему не змінить."
+            }
+          ],
+          "shortRule": "relevantný · syllogizmus",
+          "commonMistakes": [
+            {
+              "mistake": "Entymém je úplný úsudok s tromi tvrdeniami.",
+              "correct": "Entymém je skrátený úsudok, v ktorom jedna premisa chýba."
+            },
+            {
+              "mistake": "Indukcia zaručuje pravdivý záver.",
+              "correct": "Indukcia dáva pravdepodobný záver."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "c2-u04-l06-logicke-usudzovanie-w01",
+            "sk": "syllogizmus",
+            "uk": "силогізм",
+            "pronunciationUk": "силоґізмус",
+            "exampleSk": "Každý človek je smrteľný, Sokrates je človek.",
+            "exampleUk": "Кожна людина смертна, Сократ — людина."
+          },
+          {
+            "wordId": "c2-u04-l06-logicke-usudzovanie-w02",
+            "sk": "entymém",
+            "uk": "ентимема",
+            "pronunciationUk": "ентимем",
+            "exampleSk": "Je zima, vezmi si kabát.",
+            "exampleUk": "Холодно, візьми пальто."
+          },
+          {
+            "wordId": "c2-u04-l06-logicke-usudzovanie-w03",
+            "sk": "indukcia",
+            "uk": "індукція",
+            "pronunciationUk": "індукція",
+            "exampleSk": "Každý pozorovaný kov vedie elektrinu.",
+            "exampleUk": "Кожен спостережений метал проводить струм."
+          },
+          {
+            "wordId": "c2-u04-l06-logicke-usudzovanie-w04",
+            "sk": "relevantný",
+            "uk": "релевантний",
+            "pronunciationUk": "релевантний",
+            "exampleSk": "Relevantný dôkaz podporuje tézu.",
+            "exampleUk": "Релевантний доказ підтримує тезу."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "c2-u04-l06-logicke-usudzovanie-w01",
+          "sk": "syllogizmus",
+          "uk": "силогізм",
+          "pronunciationUk": "силоґізмус",
+          "exampleSk": "Každý človek je smrteľný, Sokrates je človek.",
+          "exampleUk": "Кожна людина смертна, Сократ — людина.",
+          "level": "C1",
+          "topic": "Риторика",
+          "tags": [
+            "c2-u04",
+            "c2"
+          ]
+        },
+        {
+          "id": "c2-u04-l06-logicke-usudzovanie-w02",
+          "sk": "entymém",
+          "uk": "ентимема",
+          "pronunciationUk": "ентимем",
+          "exampleSk": "Je zima, vezmi si kabát.",
+          "exampleUk": "Холодно, візьми пальто.",
+          "level": "C1",
+          "topic": "Риторика",
+          "tags": [
+            "c2-u04",
+            "c2"
+          ]
+        },
+        {
+          "id": "c2-u04-l06-logicke-usudzovanie-w03",
+          "sk": "indukcia",
+          "uk": "індукція",
+          "pronunciationUk": "індукція",
+          "exampleSk": "Každý pozorovaný kov vedie elektrinu.",
+          "exampleUk": "Кожен спостережений метал проводить струм.",
+          "level": "C1",
+          "topic": "Риторика",
+          "tags": [
+            "c2-u04",
+            "c2"
+          ]
+        },
+        {
+          "id": "c2-u04-l06-logicke-usudzovanie-w04",
+          "sk": "relevantný",
+          "uk": "релевантний",
+          "pronunciationUk": "релевантний",
+          "exampleSk": "Relevantný dôkaz podporuje tézu.",
+          "exampleUk": "Релевантний доказ підтримує тезу.",
+          "level": "C1",
+          "topic": "Риторика",
+          "tags": [
+            "c2-u04",
+            "c2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "c2-u04-l06-logicke-usudzovanie-ex01",
+          "lessonId": "c2-u04-l06-logicke-usudzovanie",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай слово і значення.",
+          "pairs": [
+            {
+              "left": "syllogizmus",
+              "right": "силогізм"
+            },
+            {
+              "left": "entymém",
+              "right": "ентимема"
+            },
+            {
+              "left": "indukcia",
+              "right": "індукція"
+            },
+            {
+              "left": "relevantný",
+              "right": "релевантний"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "c2-u04-l06-logicke-usudzovanie-w01",
+            "c2-u04-l06-logicke-usudzovanie-w02",
+            "c2-u04-l06-logicke-usudzovanie-w03",
+            "c2-u04-l06-logicke-usudzovanie-w04"
+          ]
+        },
+        {
+          "id": "c2-u04-l06-logicke-usudzovanie-ex02",
+          "lessonId": "c2-u04-l06-logicke-usudzovanie",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильну форму.",
+          "sentenceParts": [
+            {
+              "blankId": "b1",
+              "options": [
+                "Syllogizmu",
+                "Syllogizmom",
+                "Syllogizmus"
+              ],
+              "correct": "Syllogizmus"
+            },
+            {
+              "text": " má dve premisy a záver."
+            }
+          ],
+          "explanation": "Підмет «syllogizmus» — називний відмінок.",
+          "order": 2,
+          "wordIds": [
+            "c2-u04-l06-logicke-usudzovanie-w01"
+          ]
+        },
+        {
+          "id": "c2-u04-l06-logicke-usudzovanie-ex03",
+          "lessonId": "c2-u04-l06-logicke-usudzovanie",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди помилку.",
+          "sentence": "Entymém je skrátený úsudok, v ktorom chýbajú jedna premisa.",
+          "errorToken": "chýbajú",
+          "correctToken": "chýba",
+          "explanation": "Підмет «jedna premisa» — однина, тому «chýba».",
+          "order": 3,
+          "wordIds": [
+            "c2-u04-l06-logicke-usudzovanie-w02"
+          ]
+        },
+        {
+          "id": "c2-u04-l06-logicke-usudzovanie-ex04",
+          "lessonId": "c2-u04-l06-logicke-usudzovanie",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Syllogizmus má dve premisy a jeden ______ . (висновок)",
+          "acceptedAnswers": [
+            "záver"
+          ],
+          "explanation": "Називний відмінок «záver».",
+          "order": 4,
+          "wordIds": [
+            "c2-u04-l06-logicke-usudzovanie-w01"
+          ]
+        },
+        {
+          "id": "c2-u04-l06-logicke-usudzovanie-ex05",
+          "lessonId": "c2-u04-l06-logicke-usudzovanie",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Indukcia zaručuje pravdivý záver.",
+          "acceptedAnswers": [
+            "Indukcia dáva pravdepodobný záver."
+          ],
+          "explanation": "Індукція дає ймовірний, а не гарантований висновок.",
+          "order": 5,
+          "wordIds": [
+            "c2-u04-l06-logicke-usudzovanie-w03"
+          ]
+        },
+        {
+          "id": "c2-u04-l06-logicke-usudzovanie-ex06",
+          "lessonId": "c2-u04-l06-logicke-usudzovanie",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «relevantný»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "довгий.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "релевантний, доречний",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "слабкий",
+              "correct": false
+            }
+          ],
+          "explanation": "Relevantný — релевантний, доречний.",
+          "order": 6
+        },
+        {
+          "id": "c2-u04-l06-logicke-usudzovanie-ex07",
+          "lessonId": "c2-u04-l06-logicke-usudzovanie",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яке слово означає скорочений силогізм?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "entymém",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "syllogizmus",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "indukcia.",
+              "correct": false
+            }
+          ],
+          "explanation": "Entymém — ентимема.",
+          "order": 7,
+          "wordIds": [
+            "c2-u04-l06-logicke-usudzovanie-w01",
+            "c2-u04-l06-logicke-usudzovanie-w02",
+            "c2-u04-l06-logicke-usudzovanie-w03"
+          ]
+        },
+        {
+          "id": "c2-u04-l06-logicke-usudzovanie-ex08",
+          "lessonId": "c2-u04-l06-logicke-usudzovanie",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Syllogizmus má vždy tri premisy.",
+          "statement": "Силогізм завжди має три твердження.",
+          "correctAnswer": false,
+          "explanation": "Syllogizmus má dve premisy a záver.",
+          "order": 8,
+          "wordIds": [
+            "c2-u04-l06-logicke-usudzovanie-w01"
+          ]
+        },
+        {
+          "id": "c2-u04-l06-logicke-usudzovanie-ex09",
+          "lessonId": "c2-u04-l06-logicke-usudzovanie",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Розподіли.",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Форма висновку"
+            },
+            {
+              "id": "c2",
+              "title": "Метод"
+            },
+            {
+              "id": "c3",
+              "title": "Ознака доказу"
+            }
+          ],
+          "items": [
+            {
+              "sk": "relevantný",
+              "category": "c3"
+            },
+            {
+              "sk": "syllogizmus",
+              "category": "c1"
+            },
+            {
+              "sk": "entymém",
+              "category": "c1"
+            },
+            {
+              "sk": "indukcia",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Розподіл понять.",
+          "order": 9,
+          "wordIds": [
+            "c2-u04-l06-logicke-usudzovanie-w01",
+            "c2-u04-l06-logicke-usudzovanie-w02",
+            "c2-u04-l06-logicke-usudzovanie-w03",
+            "c2-u04-l06-logicke-usudzovanie-w04"
+          ]
+        },
+        {
+          "id": "c2-u04-l06-logicke-usudzovanie-ex10",
+          "lessonId": "c2-u04-l06-logicke-usudzovanie",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери всі правильні твердження.",
+          "prompt": "Логіка.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Indukcia vždy dáva istý záver",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Entymém má skrátenú premisu",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Syllogizmus je úsudok z dvoch premís",
+              "correct": true
+            }
+          ],
+          "explanation": "Індукція дає ймовірний висновок.",
+          "order": 10,
+          "wordIds": [
+            "c2-u04-l06-logicke-usudzovanie-w01",
+            "c2-u04-l06-logicke-usudzovanie-w02",
+            "c2-u04-l06-logicke-usudzovanie-w03"
+          ]
+        },
+        {
+          "id": "c2-u04-l06-logicke-usudzovanie-ex11",
+          "lessonId": "c2-u04-l06-logicke-usudzovanie",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Dokáž mi to, prosím.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": true
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": false
+            }
+          ],
+          "explanation": "Формально: «Dokážte mi to, prosím.»",
+          "order": 11
+        },
+        {
+          "id": "c2-u04-l06-logicke-usudzovanie-ex12",
+          "lessonId": "c2-u04-l06-logicke-usudzovanie",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Každý pozorovaný kov vedie elektrinu, teda kovy ______ elektrinu. (проводять)",
+          "acceptedAnswers": [
+            "vedú"
+          ],
+          "explanation": "Дієслово «viesť», 3-тя особа множини.",
+          "order": 12
+        },
+        {
+          "id": "c2-u04-l06-logicke-usudzovanie-ex13",
+          "lessonId": "c2-u04-l06-logicke-usudzovanie",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильну форму.",
+          "sentenceParts": [
+            {
+              "text": "Lebo je zima, "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "vezmime",
+                "vezmi",
+                "vezmú"
+              ],
+              "correct": "vezmi"
+            },
+            {
+              "text": " si kabát."
+            }
+          ],
+          "explanation": "Повелительний спосіб другої особи однини: «vezmi».",
+          "order": 13
+        },
+        {
+          "id": "c2-u04-l06-logicke-usudzovanie-ex14",
+          "lessonId": "c2-u04-l06-logicke-usudzovanie",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яке слово означає «індукція»?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "dedukcia",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "indukcia",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "analógia.",
+              "correct": false
+            }
+          ],
+          "explanation": "Indukcia — індукція.",
+          "order": 14,
+          "wordIds": [
+            "c2-u04-l06-logicke-usudzovanie-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перевірка аргументу",
+        "description": "Студентка перевіряє міркування у статті і шукає силогізм, пропущену посилку і надійний доказ. Треба пояснити основні форми висновку.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Колега каже, що логіка не потрібна. Як відповідаєш? (ti — muž)",
+            "options": [
+              {
+                "sk": "Logika je zbytočná.",
+                "correct": false
+              },
+              {
+                "sk": "Bez logiky sa záver nedá dobre podložiť.",
+                "correct": true
+              },
+              {
+                "sk": "Vyvodzovať závery nemusíš.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Колега питає, навіщо знати силогізм. Як відповідаєш? (ti — žena)",
+            "options": [
+              {
+                "sk": "Netreba to.",
+                "correct": false
+              },
+              {
+                "sk": "Je to zbytočné.",
+                "correct": false
+              },
+              {
+                "sk": "Lebo pomáha správne vyvodiť záver z premís.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Колега питає, що таке entymém. Що відповідаєш?",
+            "options": [
+              {
+                "text": "Це скорочений силогізм, де одна посилка прихована.",
+                "correct": true
+              },
+              {
+                "text": "Це вид танцю.",
+                "correct": false
+              },
+              {
+                "text": "Це назва вина.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як закінчиш урок? (ti — muž)",
+            "options": [
+              {
+                "sk": "Dôkazy netreba.",
+                "correct": false
+              },
+              {
+                "sk": "Závery nemajú zmysel.",
+                "correct": false
+              },
+              {
+                "sk": "Teraz vieš stavať závery a hľadať relevantné dôkazy.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш логічні висновки. Далі — софізми і хибні міркування."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш логічні висновки. Далі — софізми і хибні міркування.",
+        "nowYouKnow": [
+          "syllogizmus · entymém",
+          "indukcia · relevantný"
+        ],
+        "newWordsCount": 4,
+        "exercisesCompleted": 14,
+        "xpReward": 70,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "c2-u04-l07-sofizmy-chybne-myslenie",
+          "title": "Софізми і хибні міркування: sofizmus, sofistika, paralogizmus, konzistentný"
+        }
+      }
+    }
+  ]
+}
