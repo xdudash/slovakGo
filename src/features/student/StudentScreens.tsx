@@ -869,6 +869,9 @@ function LessonScreen() {
   const [sharing, setSharing] = useState(false);
   useEffect(() => {
     if (lesson) track("lesson_start", { lessonId: lesson.id, level: lesson.level });
+    // Hearts are a per-lesson allowance: every lesson starts with a full set, so
+    // mistakes from earlier lessons never block a beginner from the next one.
+    if (lesson && progress && progress.hearts < progress.maxHearts) restoreHearts();
     // Only on entering a lesson, not on every re-render inside it.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lessonId]);
@@ -1450,7 +1453,7 @@ function LessonScreen() {
             <Button autoFocus onClick={() => navigate(completionDestination)}>
               {opensTrialAfterLesson ? `${t("student.lesson.open_full_access")} →` : lesson.resultScreen.buttons?.[0] ?? t("student.lesson.continue")}
             </Button>
-            <Button variant="secondary" onClick={() => { setIndex(0); setTheoryIndex(0); setRecords([]); setFinalAnswer(""); setFinalFeedback(null); setFinalStepIndex(0); setFinalStepResults([]); setFinalStepAnswers([]); setFinalAttemptFailed(false); setCompletionData(null); setPhase(lesson.startScreen ? "start" : theories.length > 0 ? "theory" : "wordsScreen" in lesson && lesson.wordsScreen ? "words" : "exercise"); }}>{lesson.resultScreen.buttons?.[1] ?? t("student.lesson.repeat_lesson")}</Button>
+            <Button variant="secondary" onClick={() => { restoreHearts(); setIndex(0); setTheoryIndex(0); setRecords([]); setFinalAnswer(""); setFinalFeedback(null); setFinalStepIndex(0); setFinalStepResults([]); setFinalStepAnswers([]); setFinalAttemptFailed(false); setCompletionData(null); setPhase(lesson.startScreen ? "start" : theories.length > 0 ? "theory" : "wordsScreen" in lesson && lesson.wordsScreen ? "words" : "exercise"); }}>{lesson.resultScreen.buttons?.[1] ?? t("student.lesson.repeat_lesson")}</Button>
             {completionData.wrong.length > 0 && <Button variant="ghost" onClick={() => navigate("/app/practice")}>{lesson.resultScreen.mistakesMessage ?? lesson.resultScreen.buttons?.[2] ?? t("student.lesson.practice_mistakes")}</Button>}
           </div>
         </div>
