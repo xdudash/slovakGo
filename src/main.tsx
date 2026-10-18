@@ -152,6 +152,15 @@ window.addEventListener("load", async () => {
       // A new SW may already be waiting right after registration (e.g. page reload during update)
       if (reg.waiting) showUpdateBanner(reg);
 
+      // Apply a waiting update while the learner is away from the tab, so nobody
+      // stays on an old version forever. Skipped on auth forms (typed data would
+      // be lost); lesson position is restored from the lesson draft.
+      document.addEventListener("visibilitychange", () => {
+        if (!document.hidden || !reg.waiting) return;
+        if (/^\/(register|login|forgot-password|reset-password)(\/|$)/.test(window.location.pathname)) return;
+        reg.waiting.postMessage("SKIP_WAITING");
+      });
+
       // Watch for future updates found while the page is open
       reg.addEventListener("updatefound", () => {
         const next = reg.installing;

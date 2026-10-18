@@ -63,6 +63,13 @@ export function App() {
   useEffect(() => {
     if (activityUserId && !localStorage.getItem("slovakgo.admin-return")) return startActivityTracking();
   }, [activityUserId]);
+  // The "new version" banner must never cover sign-up/login buttons, onboarding
+  // or a lesson in progress; it is shown only on regular in-app screens.
+  useEffect(() => {
+    const p = location.pathname;
+    const allowed = /^\/(app|teacher|admin)(\/|$)/.test(p) && !p.startsWith("/app/lesson/");
+    document.documentElement.dataset.swBanner = allowed ? "show" : "hide";
+  }, [location.pathname]);
   // Cached sessions render immediately; the server refresh stays a background task.
   const [restoring, setRestoring] = useState(() => !useAppStore.getState().currentUserId);
   const autoRestoreSession = useAppStore((s) => s.autoRestoreSession);
