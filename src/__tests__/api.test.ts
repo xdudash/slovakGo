@@ -1129,6 +1129,16 @@ describe('practice hearts persist through server sync', () => {
     expect(replay.xpTotal).toBe(after.xpTotal);
   });
 
+  it('refills hearts on every retry, not only once per day', async () => {
+    const db = createClient({url: `file:${TEST_DB}`});
+    for (const n of [1, 2]) {
+      await db.execute({sql: 'UPDATE progress SET hearts=0 WHERE user_id=?', args: [uid]});
+      await call('POST', ['sync', 'push'], {cookie, body: {mutations: [{id: `heart-restore-same-day-${n}`, type: 'hearts.restore', payload: {}}]}});
+      expect((await progress()).hearts).toBe(5);
+    }
+    db.close();
+  });
+
   it('caps hearts at five across further completed sessions', async () => {
     const db = createClient({url: `file:${TEST_DB}`});
     await db.execute({sql:'UPDATE progress SET hearts=4 WHERE user_id=?',args:[uid]});

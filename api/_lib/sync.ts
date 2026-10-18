@@ -222,10 +222,13 @@ async function touchServerWord(uid: string, wordId: string, correct: boolean): P
 async function mutRestoreHearts(uid: string): Promise<void> {
   await ensureCol("progress", "hearts_restored_at", "TEXT");
   const now = nowIso();
+  // The learner-facing "try again" promises a full refill. A once-per-day server
+  // limit made the client refill local-only: the next sync pull overwrote it with
+  // 0 hearts and re-locked the lesson, so beginners could not finish lessons.
   await exec(
     `UPDATE progress SET hearts = max_hearts, hearts_restored_at = ?, updated_at = ?
-     WHERE user_id = ? AND (hearts_restored_at IS NULL OR substr(hearts_restored_at, 1, 10) < ?)`,
-    [now, now, uid, todayKey()]
+     WHERE user_id = ?`,
+    [now, now, uid]
   );
 }
 
