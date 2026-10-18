@@ -1,3 +1,4 @@
+import { checkEmail } from "../../shared/email";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import bcrypt from "bcryptjs";
 import { randomUUID } from "node:crypto";
@@ -10,7 +11,8 @@ export async function handleUserEmail(req: VercelRequest, res: VercelResponse, b
   const uid = await requireUid(req, res); if (!uid) return;
   const email = String(body.email ?? "").toLowerCase().trim();
   const password = String(body.currentPassword ?? "");
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail(res, "Некоректний email", 422);
+  const emailCheck = checkEmail(email);
+  if (!emailCheck.ok) return fail(res, emailCheck.error, 422);
   await ensureCol("users", "google_sub", "TEXT");
   const current = await queryOne("SELECT pw_hash, google_sub FROM users WHERE id = ? LIMIT 1", [uid]);
   const hash = String(current?.pw_hash ?? "");
