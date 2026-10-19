@@ -112,7 +112,10 @@ export function StudentLayout() {
   const { data, user, progress } = useStudentData();
   const adminPreview = Boolean(localStorage.getItem("slovakgo.admin-return"));
 
-  if (adminPreview && ["/app/shop", "/app/profile", "/app/settings", "/app/paywall"].includes(location.pathname)) {
+  // The paywall stays viewable in admin preview (checkout is disabled there):
+  // blocking it made "10 lessons done -> paywall" and "preview -> path" redirect
+  // into each other forever.
+  if (adminPreview && ["/app/shop", "/app/profile", "/app/settings"].includes(location.pathname)) {
     return <Navigate to="/app/path" replace />;
   }
 
@@ -3021,6 +3024,7 @@ function SettingsScreen() {
 export function PaywallScreen() {
   const { data, user, progress } = useStudentData();
   const navigate = useNavigate();
+  const adminPreview = Boolean(localStorage.getItem("slovakgo.admin-return"));
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -3030,8 +3034,8 @@ export function PaywallScreen() {
     && !accessService.hasFullAccess(user.subscriptionStatus)
     && !accessService.canUsePreview(data.lessons, progress, user.subscriptionStatus);
   useEffect(() => {
-    if (showsOffer) track("paywall_view", { status: user!.subscriptionStatus, usedTrial: user!.hasUsedTrial });
-  }, [showsOffer, user]);
+    if (showsOffer && !adminPreview) track("paywall_view", { status: user!.subscriptionStatus, usedTrial: user!.hasUsedTrial });
+  }, [showsOffer, user, adminPreview]);
 
   if (!user || !progress) return <PageSkeleton />;
 
@@ -3056,6 +3060,7 @@ export function PaywallScreen() {
   }
 
   async function handleSubscribe() {
+    if (adminPreview) return;
     setLoading(true);
     setError(null);
     try {
@@ -3087,12 +3092,18 @@ export function PaywallScreen() {
         </div>
       )}
 
+      {adminPreview && (
+        <div className="card" style={{ marginBottom: "16px", padding: "12px", fontSize: "0.85rem" }}>
+          👁 Режим перегляду адміністратора: учень бачить цей екран саме так. Оплата тут вимкнена.
+        </div>
+      )}
+
       <section className="card" style={{ marginBottom: "24px", padding: "20px" }}>
         <h3 style={{ margin: "0 0 12px 0", fontSize: "1rem", fontWeight: 700 }}>Що входить у підписку:</h3>
         <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px", fontSize: "0.9rem" }}>
           <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <CheckCircle2 size={16} color="var(--green)" />
-            <span><strong>Безлімітні серця</strong> — вчися без зупинок</span>
+            <span><strong>Усі рівні від A0 до C2</strong> — понад 1000 уроків</span>
           </li>
           <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <CheckCircle2 size={16} color="var(--green)" />
@@ -3100,7 +3111,7 @@ export function PaywallScreen() {
           </li>
           <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <CheckCircle2 size={16} color="var(--green)" />
-            <span><strong>Офлайн режим</strong> — вчи мову навіть без інтернету</span>
+            <span><strong>Словник і практика помилок</strong> — повторюй усе, що вивчив</span>
           </li>
           <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <CheckCircle2 size={16} color="var(--green)" />
@@ -3112,7 +3123,7 @@ export function PaywallScreen() {
       <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
         {!user.hasUsedTrial ? (
           <>
-            <Button onClick={handleSubscribe} disabled={loading} style={{ width: "100%" }}>
+            <Button onClick={handleSubscribe} disabled={loading || adminPreview} style={{ width: "100%" }}>
               {loading ? "Завантаження…" : "Почати 3 дні пробного доступу"}
             </Button>
             <div style={{ textAlign: "center", fontSize: "0.8rem", color: "var(--muted)", marginTop: "4px" }}>
@@ -3124,7 +3135,7 @@ export function PaywallScreen() {
             <div style={{ textAlign: "center", padding: "12px", background: "rgba(239, 68, 68, 0.08)", borderRadius: "12px", border: "1px solid rgba(239, 68, 68, 0.2)", marginBottom: "8px", fontSize: "0.85rem", color: "var(--red)" }}>
               🔒 <strong>Пробний період завершився або був використаний.</strong> Будь ласка, оформіть підписку, щоб продовжити навчання.
             </div>
-            <Button onClick={handleSubscribe} disabled={loading} style={{ width: "100%" }}>
+            <Button onClick={handleSubscribe} disabled={loading || adminPreview} style={{ width: "100%" }}>
               {loading ? "Завантаження…" : "Оформити підписку (€3/міс)"}
             </Button>
           </>
