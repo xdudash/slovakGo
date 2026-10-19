@@ -1,3 +1,4 @@
+import { checkEmail } from "../../shared/email";
 import { ensureActivity } from "./activity";
 import { ensureEmailPreferences, saveConsent } from "./emailPreferences";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
@@ -28,9 +29,10 @@ export async function handleRegister(req: VercelRequest, res: VercelResponse, bo
   const goal     = String(body.goal ?? "").trim().slice(0, 200);
   const cliId    = String(body.id ?? "").trim().slice(0, 50);
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  const emailCheck = checkEmail(email);
+  if (!emailCheck.ok) {
     await exec("INSERT INTO login_attempts (ip, attempted_at) VALUES (?, ?)", [ip, nowIso()]);
-    return fail(res, "Некоректний email", 422);
+    return fail(res, emailCheck.error, 422);
   }
   if (password.length < 8 || !/[A-ZА-ЯІЇЄҐ]/.test(password) || !/[a-zа-яіїєґ]/.test(password) || !/\d/.test(password))
     return fail(res, "Пароль має містити мінімум 8 символів, велику та малу літеру і цифру", 422);

@@ -7,6 +7,7 @@ import { apiClient } from "../../services/apiClient";
 import { track } from "../../services/analytics";
 import { setGuestLanguage, useT } from "../../i18n";
 import type { User } from "../../types";
+import { checkEmail } from "../../../shared/email";
 
 function postAuthRoute(user: User): string {
   if (user.role === "student" && !user.onboardingDone) {
@@ -125,6 +126,7 @@ export function Register() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [marketingConsent, setMarketingConsent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [emailIssue, setEmailIssue] = useState<{ error: string; suggestion?: string } | null>(null);
 
   useEffect(() => {
     if (!currentUserId) return;
@@ -135,12 +137,18 @@ export function Register() {
 
   async function submit(event: FormEvent) {
     event.preventDefault();
+    const emailCheck = checkEmail(form.email);
+    if (!emailCheck.ok) {
+      setEmailIssue({ error: emailCheck.error, suggestion: emailCheck.suggestion });
+      return;
+    }
+    setEmailIssue(null);
     setLoading(true);
     try {
-      const defaultName = form.email.split("@")[0] || "Студент";
+      const defaultName = emailCheck.email.split("@")[0] || "Студент";
       const user = await register({
         name: defaultName,
-        email: form.email,
+        email: emailCheck.email,
         password: form.password,
         marketingConsent,
       });
@@ -180,7 +188,17 @@ export function Register() {
         </div>
       )}
       <form onSubmit={submit} className="form-stack" noValidate>
-        <Field label={t("auth.email")} type="email" value={form.email} autoComplete="email" autoFocus onChange={(event) => setForm({ ...form, email: event.target.value })} />
+        <Field label={t("auth.email")} type="email" value={form.email} autoComplete="email" autoFocus onChange={(event) => { setForm({ ...form, email: event.target.value }); setEmailIssue(null); }} />
+        {emailIssue ? (
+          <p className="error-text" role="alert">
+            {emailIssue.error}{" "}
+            {emailIssue.suggestion ? (
+              <button type="button" className="link-button" onClick={() => { setForm({ ...form, email: emailIssue.suggestion! }); setEmailIssue(null); }}>
+                Виправити
+              </button>
+            ) : null}
+          </p>
+        ) : null}
         <Field label={t("auth.password")} type="password" autoComplete="new-password" value={form.password} onChange={(event) => setForm({ ...form, password: event.target.value })} />
         <p>Пароль: щонайменше 8 символів, велика й мала літера та цифра.</p>
         <label><input type="checkbox" checked={marketingConsent} onChange={e => setMarketingConsent(e.target.checked)} /> Хочу отримувати поради, нагадування та новини SlovakGO поштою. Згода добровільна, відписка — у кожному листі.</label>

@@ -2430,6 +2430,8 @@ textarea:focus,
    SW update banner (injected by main.tsx outside React)
 ═══════════════════════════════════════════════════════════════════ */
 
+[data-sw-banner="hide"] .sw-update-banner { display: none; }
+
 .sw-update-banner {
   position: fixed;
   bottom: calc(env(safe-area-inset-bottom, 0px) + 72px); /* above bottom nav */
@@ -7334,4 +7336,15 @@ textarea:focus,
 @media (max-width: 600px) {
   .practice-result-word { flex-wrap: wrap; }
   .practice-result-word .sr-next-date { flex-basis: calc(100% - 30px); margin-left: 26px; white-space: normal; }
+}
+
+.link-button {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
 }

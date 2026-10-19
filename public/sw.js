@@ -49,7 +49,9 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(STATIC_CACHE)
       .then((cache) => cache.addAll(PRECACHE_URLS))
-      .then(() => self.skipWaiting())
+    // No skipWaiting() here: activating immediately fired controllerchange and
+    // force-reloaded open pages after every deploy, wiping half-filled sign-up
+    // forms and lessons in progress. The page activates the update itself.
   );
 });
 

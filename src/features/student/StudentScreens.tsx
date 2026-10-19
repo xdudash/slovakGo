@@ -28,6 +28,7 @@ import { resolveText, resolveWordExampleTranslation, resolveWordTranslation } fr
 import { useLessonLocale } from "../../hooks/useLessonLocale";
 import { formatCorrectAnswer, isLegacyCorrectOption } from "../../services/exerciseChecking";
 import { soundService } from "../../services/soundService";
+import { clearLessonDraft, loadLessonDraft, saveLessonDraft } from "../../utils/lessonDraft";
 import { OptionListExercise } from "./exercises/OptionListExercise";
 import { TrueFalseExercise } from "./exercises/TrueFalseExercise";
 import { BlankFillExercise } from "./exercises/BlankFillExercise";
@@ -853,11 +854,15 @@ function LessonScreen() {
   const hasNewFormat = !!(lesson?.startScreen || theories.length > 0 || lesson?.finalSituation || lesson?.resultScreen);
   const hasLegacyIntro = !hasNewFormat && !!(lesson?.intro || (lesson?.words?.length ?? 0) > 0);
 
-  const [index, setIndex] = useState(0);
-  const [theoryIndex, setTheoryIndex] = useState(0);
+  // Resume where the learner left this lesson (phone call, app switch, reload).
+  const [draft] = useState(() => (lesson && !lesson.contentLocked
+    ? loadLessonDraft(user?.id, lesson.id, { theoryCount: theories.length, hasWords: !!lesson.wordsScreen, exerciseCount: lesson.exercises.length })
+    : null));
+  const [index, setIndex] = useState(draft?.index ?? 0);
+  const [theoryIndex, setTheoryIndex] = useState(draft?.theoryIndex ?? 0);
   const [answer, setAnswer] = useState<string | string[]>("");
   const [feedback, setFeedback] = useState<"correct" | "wrong" | null>(null);
-  const [records, setRecords] = useState<AnswerRecord[]>([]);
+  const [records, setRecords] = useState<AnswerRecord[]>(draft?.records ?? []);
   const [finalAnswer, setFinalAnswer] = useState<string>("");
   const [finalFeedback, setFinalFeedback] = useState<"correct" | "wrong" | null>(null);
   const [finalStepIndex, setFinalStepIndex] = useState(0);
@@ -869,10 +874,14 @@ function LessonScreen() {
   const [sharing, setSharing] = useState(false);
   useEffect(() => {
     if (lesson) track("lesson_start", { lessonId: lesson.id, level: lesson.level });
+    // Hearts are a per-lesson allowance: every lesson starts with a full set, so
+    // mistakes from earlier lessons never block a beginner from the next one.
+    if (lesson && progress && progress.hearts < progress.maxHearts) restoreHearts();
     // Only on entering a lesson, not on every re-render inside it.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lessonId]);
   const [phase, setPhase] = useState<LessonPhase>(() => {
+    if (draft) return draft.phase;
     if (!lesson) return "exercise";
     if (lesson.startScreen) return "start";
     if ((lesson.theoryScreens?.length ?? 0) > 0) return "theory";
@@ -880,6 +889,14 @@ function LessonScreen() {
     if (lesson.intro || (lesson.words?.length ?? 0) > 0) return "start";
     return "exercise";
   });
+
+  useEffect(() => {
+    if (!lesson || !user || lesson.contentLocked || celebration || completionData) return;
+    if (phase === "theory" || phase === "words" || phase === "exercise") {
+      saveLessonDraft(user.id, lesson.id, { phase, theoryIndex, index, records });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase, theoryIndex, index, records, lesson?.id, lesson?.contentLocked, user?.id, celebration, completionData]);
 
   useEffect(() => {
     if (lesson?.contentLocked) void useAppStore.getState().refreshLessons();
@@ -934,6 +951,7 @@ function LessonScreen() {
 
   function finishLesson(finalRecords: AnswerRecord[]) {
     const isFirst = progress!.completedLessons.length === 0;
+    clearLessonDraft(user!.id, lesson!.id);
     completeLesson(lesson!, finalRecords);
     const xp = computeXp();
     const correct = finalRecords.filter((r) => r.correct).length;
@@ -1450,7 +1468,7 @@ function LessonScreen() {
             <Button autoFocus onClick={() => navigate(completionDestination)}>
               {opensTrialAfterLesson ? `${t("student.lesson.open_full_access")} →` : lesson.resultScreen.buttons?.[0] ?? t("student.lesson.continue")}
             </Button>
-            <Button variant="secondary" onClick={() => { setIndex(0); setTheoryIndex(0); setRecords([]); setFinalAnswer(""); setFinalFeedback(null); setFinalStepIndex(0); setFinalStepResults([]); setFinalStepAnswers([]); setFinalAttemptFailed(false); setCompletionData(null); setPhase(lesson.startScreen ? "start" : theories.length > 0 ? "theory" : "wordsScreen" in lesson && lesson.wordsScreen ? "words" : "exercise"); }}>{lesson.resultScreen.buttons?.[1] ?? t("student.lesson.repeat_lesson")}</Button>
+            <Button variant="secondary" onClick={() => { restoreHearts(); setIndex(0); setTheoryIndex(0); setRecords([]); setFinalAnswer(""); setFinalFeedback(null); setFinalStepIndex(0); setFinalStepResults([]); setFinalStepAnswers([]); setFinalAttemptFailed(false); setCompletionData(null); setPhase(lesson.startScreen ? "start" : theories.length > 0 ? "theory" : "wordsScreen" in lesson && lesson.wordsScreen ? "words" : "exercise"); }}>{lesson.resultScreen.buttons?.[1] ?? t("student.lesson.repeat_lesson")}</Button>
             {completionData.wrong.length > 0 && <Button variant="ghost" onClick={() => navigate("/app/practice")}>{lesson.resultScreen.mistakesMessage ?? lesson.resultScreen.buttons?.[2] ?? t("student.lesson.practice_mistakes")}</Button>}
           </div>
         </div>
