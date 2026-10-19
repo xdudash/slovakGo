@@ -1,4 +1,4 @@
-import { closeIdleSessions } from "./activity";
+import { closeIdleSessions, ensureActivity } from "./activity";
 export { handleAdminUsers } from "./adminUsers";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { Arg } from "./core";
@@ -146,10 +146,32 @@ export async function handleAdminStats(req: VercelRequest, res: VercelResponse):
   const mistakeHeatmap = Object.fromEntries(Object.entries(mistakeMap).sort((a, b) => b[1].total - a[1].total).slice(0, 10));
 
   const retention: Record<string, { total: number; d1: number; d7: number; d30: number }> = {};
-  for (const r of await query("SELECT strftime('%Y-%m', created_at) as month, created_at, updated_at FROM users")) {
+  // "Last seen" comes from real learning activity. users.updated_at is not touched
+  // by lessons or sessions, so using it reported 0% retention for every cohort
+  // whose learners never edited their profile.
+  await ensureActivity();
+  await exec(
+    `CREATE TABLE IF NOT EXISTS events (
+       id INTEGER PRIMARY KEY AUTOINCREMENT,
+       user_id TEXT, name TEXT NOT NULL,
+       props_j TEXT NOT NULL DEFAULT '{}', created_at TEXT NOT NULL)`
+  );
+  const retentionRows = await query(
+    `SELECT strftime('%Y-%m', u.created_at) AS month, u.created_at,
+            MAX(
+              COALESCE((SELECT MAX(last_active_at) FROM activity_sessions a WHERE a.user_id = u.id), ''),
+              COALESCE((SELECT MAX(created_at) FROM events e WHERE e.user_id = u.id), ''),
+              COALESCE(p.last_prac, ''),
+              CASE WHEN json_array_length(COALESCE(p.completed_j, '[]')) > 0 THEN COALESCE(p.updated_at, '') ELSE '' END
+            ) AS last_seen
+       FROM users u LEFT JOIN progress p ON p.user_id = u.id
+      WHERE u.role = 'student'`
+  );
+  for (const r of retentionRows) {
     const m = String(r.month); if (!retention[m]) retention[m] = { total: 0, d1: 0, d7: 0, d30: 0 };
     retention[m].total++;
-    const diff = new Date(String(r.updated_at)).getTime() - new Date(String(r.created_at)).getTime();
+    const lastSeen = String(r.last_seen ?? "");
+    const diff = lastSeen ? new Date(lastSeen).getTime() - new Date(String(r.created_at)).getTime() : 0;
     if (diff >= 86400_000) retention[m].d1++;
     if (diff >= 7 * 86400_000) retention[m].d7++;
     if (diff >= 30 * 86400_000) retention[m].d30++;

@@ -1055,7 +1055,7 @@ function Stats() {
                   const lesson = data.lessons.find((l) => l.id === row.lessonId);
                   return (
                     <div key={row.lessonId} className="admin-detail-row">
-                      <span>{toPlainText(lesson?.title) || row.lessonId}{lesson ? ` · ${lesson.level}` : ""}</span>
+                      <span>{lesson ? `${toPlainText(lesson.title) || row.lessonId} · ${lesson.level}` : `${row.lessonId} (видалений урок)`}</span>
                       <strong>{row.completed}/{row.started}</strong>
                       <span style={{ color: "var(--muted)" }}>кинули {row.started - row.completed}</span>
                     </div>
@@ -1102,7 +1102,7 @@ function Stats() {
           return (
             <Card key={lid} className="heatmap-card">
               <div className="heatmap-header">
-                <strong>{toPlainText(lesson?.title) || lid}</strong>
+                <strong>{lesson ? toPlainText(lesson.title) || lid : `${lid} (видалений урок)`}</strong>
                 <span className="heatmap-total">{info.total} помилок</span>
               </div>
               <div className="heatmap-bar-stack">
