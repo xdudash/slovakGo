@@ -182,7 +182,7 @@ function Editor() {
         <Field label={t("teacher.editor.field_title")} value={toPlainText(lesson.title)} onChange={(event) => setLesson({ ...lesson, title: event.target.value })} />
         <Field label={t("teacher.editor.field_desc")} value={toPlainText(lesson.description)} onChange={(event) => setLesson({ ...lesson, description: event.target.value })} />
         <Field label={t("teacher.editor.field_topic")} value={toPlainText(lesson.topic)} onChange={(event) => setLesson({ ...lesson, topic: event.target.value })} />
-        <label className="field"><span>{t("teacher.editor.field_level")}</span><select value={lesson.level} onChange={(event) => setLesson({ ...lesson, level: event.target.value as UserLevel })}>{["A0", "A1", "A2", "B1", "B2", "C1"].map((level) => <option key={level}>{level}</option>)}</select></label>
+        <label className="field"><span>{t("teacher.editor.field_level")}</span><select value={lesson.level} onChange={(event) => setLesson({ ...lesson, level: event.target.value as UserLevel })}>{["A0", "A1", "A2", "B1", "B2", "C1", "C2"].map((level) => <option key={level}>{level}</option>)}</select></label>
         <label className="toggle-row"><input type="checkbox" checked={lesson.isPublished} onChange={(event) => setLesson({ ...lesson, isPublished: event.target.checked })} /> {t("teacher.editor.field_published")}</label>
       </Card>
       <Card className="form-stack">

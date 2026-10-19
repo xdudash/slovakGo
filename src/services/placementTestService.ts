@@ -266,8 +266,7 @@ export function combineResults(closed: PlacementClosedResult, writing: UserLevel
 }
 
 export function toCourseLevel(result: PlacementOverallLevel): UserLevel {
-  const base = result.replace("+", "");
-  return (base === "C2" ? "C1" : base) as UserLevel;
+  return result.replace("+", "") as UserLevel;
 }
 
 function weakSkills(questions: PlacementQuestion[], answers: PlacementAnswer[]): string[] {

@@ -261,7 +261,7 @@ function PathScreen() {
     if (!progress) {
       return { levelLessons: [], levelProgress: 0, current: undefined, groupedTopics: [] };
     }
-    const LEVEL_ORDER_SORT = ["A0", "A1", "A2", "B1", "B2", "C1"] as const;
+    const LEVEL_ORDER_SORT = ["A0", "A1", "A2", "B1", "B2", "C1", "C2"] as const;
     const lLessons = isAdmin
       ? data.lessons
         .filter((l) => l.level === progress.currentLevel)

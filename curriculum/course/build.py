@@ -29,9 +29,8 @@ OUT = ROOT / "lessons"
 BLANK = "______"
 
 LEVEL_ORDER = ["A0", "A1", "A2", "B1", "B2", "C1", "C2"]
-# The app track has no C2: placementTestService.toCourseLevel maps C2 -> C1,
-# so C2 lessons are published on the C1 track after the C1 lessons.
-RUNTIME_LEVEL = {"A0": "A0", "A1": "A1", "A2": "A2", "B1": "B1", "B2": "B2", "C1": "C1", "C2": "C1"}
+# Every CEFR level, C2 included, is its own track in the app.
+RUNTIME_LEVEL = {"A0": "A0", "A1": "A1", "A2": "A2", "B1": "B1", "B2": "B2", "C1": "C1", "C2": "C2"}
 XP = {"A0": 15, "A1": 25, "A2": 30, "B1": 40, "B2": 50, "C1": 60, "C2": 70}
 
 SKILLS = {

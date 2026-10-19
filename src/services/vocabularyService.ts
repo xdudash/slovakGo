@@ -9,7 +9,7 @@ export interface VocabularyWord extends Word {
   lastSeenAt?: string;
 }
 
-const LEVELS: UserLevel[] = ["A0", "A1", "A2", "B1", "B2", "C1"];
+const LEVELS: UserLevel[] = ["A0", "A1", "A2", "B1", "B2", "C1", "C2"];
 
 export const vocabularyService = {
   build(lessons: Lesson[], userWords: UserWord[] = []): VocabularyWord[] {

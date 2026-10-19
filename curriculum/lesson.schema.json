@@ -37,7 +37,7 @@
       "properties": {
         "id": { "type": "string", "minLength": 1 },
         "sectionId": { "type": "string", "minLength": 1 },
-        "level": { "enum": ["A1", "A2", "B1", "B2", "C1", "C2"] },
+        "level": { "enum": ["A0", "A1", "A2", "B1", "B2", "C1", "C2"] },
         "title": { "$ref": "#/$defs/localizedText" },
         "topic": { "$ref": "#/$defs/localizedText" },
         "description": { "$ref": "#/$defs/localizedText" },
