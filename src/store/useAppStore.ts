@@ -35,6 +35,8 @@ interface AppStore {
   refreshUser: () => Promise<void>;
   drainSync: () => Promise<void>;
   refreshLessons: () => Promise<void>;
+  /** Loads a catalog shell's content on demand; returns the full lesson or null. */
+  ensureLessonContent: (lessonId: string) => Promise<Lesson | null>;
   autoRestoreSession: () => Promise<boolean>;
   resetLocal: () => void;
 }
@@ -296,13 +298,36 @@ export const useAppStore = create<AppStore>((set, get) => ({
         : undefined;
       const response = await apiClient.lessonsPull(currentVersion);
       if (response.unchanged) return;
-      const lessons = response.lessons as Lesson[] | undefined;
-      if (lessons === undefined) return;
+      const incoming = response.lessons as Lesson[] | undefined;
+      if (incoming === undefined) return;
+      // Keep content already loaded on demand (e.g. the lesson open right now)
+      // when the server sends the same lesson version as a shell again.
+      const loaded = new Map(get().data.lessons.filter((l) => l.contentLoaded).map((l) => [l.id, l]));
+      const lessons = incoming.map((l) => {
+        const kept = l.contentDeferred ? loaded.get(l.id) : undefined;
+        return kept && kept.updatedAt === l.updatedAt ? { ...kept, isPublished: l.isPublished } : l;
+      });
       const data = save({ ...get().data, lessons });
       storageService.setLessonVersion(response.version);
       set({ data });
     } catch {
       // Cached lessons remain available when the background refresh fails.
+    }
+  },
+
+  async ensureLessonContent(lessonId) {
+    const current = get().data.lessons.find((l) => l.id === lessonId);
+    if (current && !current.contentDeferred) return current;
+    try {
+      const response = await apiClient.getLesson(lessonId);
+      const lesson = { ...(response.lesson as Lesson), contentDeferred: false, contentLoaded: true };
+      const lessons = get().data.lessons.some((l) => l.id === lessonId)
+        ? get().data.lessons.map((l) => (l.id === lessonId ? lesson : l))
+        : [...get().data.lessons, lesson];
+      set({ data: { ...get().data, lessons } });
+      return lesson;
+    } catch {
+      return null;
     }
   },
 

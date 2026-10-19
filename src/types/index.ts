@@ -411,6 +411,10 @@ export interface LessonAudioAsset {
 export interface Lesson {
   /** API supplied metadata only; teaching content requires an authorized refresh. */
   contentLocked?: boolean;
+  /** Catalog shell: readable, but content (exercises, theory…) is loaded when the lesson is opened. */
+  contentDeferred?: boolean;
+  /** Content was loaded on demand; kept in memory only, stored back as a shell. */
+  contentLoaded?: boolean;
   id: string;
   level: UserLevel;
   title: LocalizedText;

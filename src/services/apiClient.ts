@@ -91,6 +91,14 @@ export const apiClient = {
     return apiRequest<unknown>(`/sync/pull?since=${since}&includeLessons=${includeLessons ? "1" : "0"}`);
   },
 
+  getLesson(id: string) {
+    return apiRequest<{ ok: boolean; lesson: unknown }>(`/lessons/${encodeURIComponent(id)}`, {}, 20_000);
+  },
+
+  exportLessonsPage(offset: number) {
+    return apiRequest<{ ok: boolean; lessons: unknown[]; total: number; next: number }>(`/admin/lessons/export?offset=${offset}&limit=100`, {}, 30_000);
+  },
+
   lessonsPull(version?: string) {
     const query = version ? `?version=${encodeURIComponent(version)}` : "";
     return apiRequest<{ ok: boolean; unchanged: boolean; version: string; lessons?: unknown[] }>(`/lessons${query}`, {}, 20_000);
@@ -305,3 +313,15 @@ export const apiClient = {
     });
   },
 };
+
+/** Every lesson in full, fetched page by page (admin/teacher export and backups). */
+export async function fetchAllLessons(): Promise<unknown[]> {
+  const all: unknown[] = [];
+  for (let offset = 0; ; ) {
+    const page = await apiClient.exportLessonsPage(offset);
+    all.push(...page.lessons);
+    if (!page.lessons.length || page.next >= page.total) break;
+    offset = page.next;
+  }
+  return all;
+}

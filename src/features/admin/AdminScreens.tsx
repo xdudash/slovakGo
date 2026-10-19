@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, Field, Modal, PageHeader } from "../../components/ui";
-import { apiClient, type CoursePlan } from "../../services/apiClient";
+import { apiClient, fetchAllLessons, type CoursePlan } from "../../services/apiClient";
 import { selectCurrentUser, useAppStore } from "../../store/useAppStore";
 import type { Lesson, UserLevel, UserRole } from "../../types";
 import { toPlainText } from "../../utils/lessonLocale";
@@ -109,7 +109,10 @@ type ImportState =
   | { phase: "preview"; lessons: Lesson[]; errors: string[] }
   | { phase: "done"; imported: number; updated: number };
 
-function exportJson(lessons: Lesson[]) {
+async function exportJson(fallback: Lesson[]) {
+  // The catalog holds content-less shells for most lessons, so export fetches
+  // every lesson in full from the server.
+  const lessons = await fetchAllLessons().catch(() => fallback.filter((l) => !l.contentDeferred));
   const blob = new Blob([JSON.stringify({ lessons }, null, 2)], { type: "application/json" });
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement("a");
@@ -226,7 +229,7 @@ function LessonsScreen() {
           </Button>
           <input ref={fileRef} type="file" accept=".json,application/json" style={{ display: "none" }}
             onChange={(e) => { const f = e.target.files?.[0]; if (f) { handleFile(f); e.target.value = ""; } }} />
-          <Button variant="secondary" onClick={() => exportJson(data.lessons)}>
+          <Button variant="secondary" onClick={() => { void exportJson(data.lessons); }}>
             <Download size={15} /> Експорт
           </Button>
         </div>

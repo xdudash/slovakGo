@@ -134,10 +134,13 @@ export async function handleAdminCourse(req: VercelRequest, res: VercelResponse,
       if (missing > 0) return fail(res, `Спочатку завантаж увесь курс: бракує ${missing} уроків`, 409);
       const oldIds = existing.filter((id) => !courseIds.has(id));
       if (oldIds.length) {
-        const backedUp = await queryOne(
-          `SELECT COUNT(DISTINCT id) AS n FROM lessons_backup WHERE id IN (${oldIds.map(() => "?").join(",")})`, oldIds
-        );
-        if (Number(backedUp?.n ?? 0) < oldIds.length) return fail(res, "Спочатку зроби резервну копію старих уроків", 409);
+        let backedUp = 0;
+        for (let i = 0; i < oldIds.length; i += 200) {
+          const chunk = oldIds.slice(i, i + 200);
+          const r = await queryOne(`SELECT COUNT(DISTINCT id) AS n FROM lessons_backup WHERE id IN (${chunk.map(() => "?").join(",")})`, chunk);
+          backedUp += Number(r?.n ?? 0);
+        }
+        if (backedUp < oldIds.length) return fail(res, "Спочатку зроби резервну копію старих уроків", 409);
         for (let i = 0; i < oldIds.length; i += 200) {
           const chunk = oldIds.slice(i, i + 200);
           await exec(`DELETE FROM lessons WHERE id IN (${chunk.map(() => "?").join(",")})`, chunk);
