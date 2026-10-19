@@ -30,6 +30,16 @@
     "stripe": "^17.7.0",
     "zustand": "^5.0.14"
   },
+  "overrides": {
+    "@grpc/grpc-js": "^1.13.6",
+    "@vercel/node": {
+      "undici": "^6.28.1",
+      "path-to-regexp": "^6.3.0"
+    },
+    "@vercel/static-config": {
+      "ajv": "^8.18.0"
+    }
+  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/bcryptjs": "^2.4.6",
