@@ -25,7 +25,7 @@ function formatDate(date: Date) {
 
         <div class="blog-grid">
           {posts.map(post => (
-            <a href={`/blog/${post.slug}`} class="blog-card">
+            <a href={`/blog/${post.id}`} class="blog-card">
               <time datetime={post.data.pubDate.toISOString()}>
                 {formatDate(post.data.pubDate)}
               </time>
