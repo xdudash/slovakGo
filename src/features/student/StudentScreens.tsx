@@ -160,34 +160,19 @@ export function Onboarding() {
   // learner has seen any value gets a permanent "Block", which also kills the
   // well-timed request that runs after the first finished lesson (useAppStore.completeLesson).
 
+  // Two steps only (goal → start), then straight into the first lesson:
+  // every extra screen between sign-up and the first exercise loses learners.
   const cards = [
-    <Card className="onboarding-card onboarding-card-anim" key="welcome">
-      <div className="onboarding-visual onboarding-visual--welcome">
-        <div className="onboarding-product-shot onboarding-product-shot--welcome">
-          <img src="/app-exercise.png" alt="Вправа SlovakGO з реального застосунку" width="390" height="844" decoding="async" fetchPriority="high" />
-        </div>
-      </div>
-      <div className="onboarding-content">
-        <div className="onboarding-copy">
-          <span className="onboarding-step-label">Словацька для реального життя</span>
-          <h1>{t("student.onboarding.welcome_title")}</h1>
-          <p className="onboarding-text">{t("student.onboarding.welcome_text")}</p>
-        </div>
-        <div className="onboarding-actions">
-          <Button className="onboarding-btn-primary" onClick={() => setStep(1)}>{t("student.onboarding.welcome_btn")}</Button>
-        </div>
-      </div>
-    </Card>,
     <Card className="onboarding-card onboarding-card-anim" key="goal">
       <div className="onboarding-visual onboarding-visual--goal">
         <div className="onboarding-product-shot onboarding-product-shot--goal">
-          <img src="/app-onboarding.png" alt="Налаштування навчального шляху SlovakGO" width="390" height="844" loading="lazy" decoding="async" />
+          <img src="/app-onboarding.png" alt="Налаштування навчального шляху SlovakGO" width="390" height="844" decoding="async" fetchPriority="high" />
         </div>
         <div className="onboarding-visual-badge"><Trophy size={22} /> Твоя ціль</div>
       </div>
       <div className="onboarding-content">
         <div className="onboarding-copy">
-          <span className="onboarding-step-label">Навчання під тебе</span>
+          <span className="onboarding-step-label">{t("student.onboarding.welcome_title")} 👋</span>
           <h1>{t("student.onboarding.goal_title")}</h1>
         </div>
         <div className="onboarding-chip-list">
@@ -198,7 +183,7 @@ export function Onboarding() {
               type="button"
               onClick={() => {
                 setGoal(item);
-                setStep(2);
+                setStep(1);
               }}
             >
               <CheckCircle2 size={18} className="check-icon" />
@@ -207,29 +192,9 @@ export function Onboarding() {
           ))}
         </div>
         <div className="onboarding-actions" style={{ marginTop: "1.5rem" }}>
-          <Button className="onboarding-btn-primary" onClick={() => setStep(2)}>
+          <Button className="onboarding-btn-primary" onClick={() => setStep(1)}>
             {t("student.onboarding.next")}
           </Button>
-        </div>
-      </div>
-    </Card>,
-    <Card className="onboarding-card onboarding-card-anim" key="mechanics">
-      <div className="onboarding-visual onboarding-visual--progress">
-        <div className="onboarding-product-shot onboarding-product-shot--progress">
-          <img src="/slovakgo-preview.png" alt="Навчальний шлях і прогрес у SlovakGO" width="390" height="844" loading="lazy" decoding="async" />
-        </div>
-      </div>
-      <div className="onboarding-content">
-        <div className="onboarding-copy">
-          <span className="onboarding-step-label">Спробуй перед підпискою</span>
-          <h1>Твої перші 10 уроків уже відкриті</h1>
-          <p className="onboarding-text">Пройди справжні уроки свого рівня, відчуй формат і лише потім вирішуй, чи продовжувати з повним доступом.</p>
-        </div>
-        <div className="mechanics-grid">
-          {ta("student.onboarding.mechanics_items").map((item) => <span key={item}>{item}</span>)}
-        </div>
-        <div className="onboarding-actions">
-          <Button className="onboarding-btn-primary" onClick={() => setStep(3)}>Продовжити</Button>
         </div>
       </div>
     </Card>,
@@ -246,7 +211,14 @@ export function Onboarding() {
           <p className="onboarding-text">Спочатку отримай результат: перші 10 уроків доступні без оплати. Повний доступ запропонуємо лише після їх завершення.</p>
         </div>
         <div className="onboarding-actions">
-          <Button className="onboarding-btn-primary" onClick={() => { track("onboarding_done", { goal, start: "A0" }); completeOnboarding(goal, "A0"); navigate("/app/path", { replace: true }); }}>
+          <Button className="onboarding-btn-primary" onClick={() => {
+            track("onboarding_done", { goal, start: "A0" });
+            completeOnboarding(goal, "A0");
+            const state = useAppStore.getState();
+            const lessonId = state.currentUserId ? state.data.progress[state.currentUserId]?.currentLessonId : undefined;
+            const first = lessonId ? state.data.lessons.find((l) => l.id === lessonId) : undefined;
+            navigate(first && !first.contentLocked ? `/app/lesson/${first.id}` : "/app/path", { replace: true });
+          }}>
             {t("student.onboarding.start_a0")}
           </Button>
           <Button variant="secondary" onClick={() => navigate("/placement-test")}>

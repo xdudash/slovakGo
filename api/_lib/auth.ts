@@ -1,4 +1,5 @@
 import { checkEmail } from "../../shared/email";
+import { sendWelcomeEmail } from "./welcome";
 import { ensureActivity } from "./activity";
 import { ensureEmailPreferences, saveConsent } from "./emailPreferences";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
@@ -56,6 +57,7 @@ export async function handleRegister(req: VercelRequest, res: VercelResponse, bo
   const row = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [id]);
   if (!row) return fail(res, "Помилка реєстрації", 500);
 
+  await sendWelcomeEmail(id, email, name);
   setCookie(res, await signToken(id));
   respond(res, { ok: true, user: rowToUser(row) }, 201);
 }
@@ -324,6 +326,7 @@ export async function handleGoogleCallback(req: VercelRequest, res: VercelRespon
         [id, email, name, defS, gUser.id, now, now]
       );
       await ensureProgress(id);
+      await sendWelcomeEmail(id, email, name);
       setCookie(res, await signToken(id));
       res.writeHead(302, { Location: `${appUrl}/auth/google/done?new=1` });
     }
