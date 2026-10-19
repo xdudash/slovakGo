@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Route, Routes, useNavigate, useParams } from "react-router-dom";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, Field, PageHeader } from "../../components/ui";
@@ -6,7 +6,7 @@ import { selectCurrentUser, useAppStore } from "../../store/useAppStore";
 import { useT } from "../../i18n";
 import type { Lesson, UserLevel } from "../../types";
 import { toPlainText } from "../../utils/lessonLocale";
-import { apiClient } from "../../services/apiClient";
+import { apiClient, fetchAllLessons } from "../../services/apiClient";
 
 export function TeacherLayout() {
   return (
@@ -15,7 +15,7 @@ export function TeacherLayout() {
         <Route path="/" element={<Dashboard />} />
         <Route path="lessons" element={<Lessons />} />
         <Route path="lessons/new" element={<Editor />} />
-        <Route path="lessons/:lessonId/edit" element={<Editor />} />
+        <Route path="lessons/:lessonId/edit" element={<EditorGate />} />
         <Route path="stats" element={<Stats />} />
         <Route path="import-export" element={<ImportExport />} />
       </Routes>
@@ -99,6 +99,20 @@ function blankLesson(): Lesson {
     exercises: [],
     updatedAt: new Date().toISOString()
   };
+}
+
+/** Loads the full lesson before editing: saving a catalog shell would drop its content. */
+function EditorGate() {
+  const { lessonId } = useParams();
+  const lesson = useAppStore((s) => s.data.lessons.find((l) => l.id === lessonId));
+  const [failed, setFailed] = useState(false);
+  const deferred = Boolean(lesson?.contentDeferred);
+  useEffect(() => {
+    if (!lessonId || !deferred) return;
+    void useAppStore.getState().ensureLessonContent(lessonId).then((full) => { if (!full) setFailed(true); });
+  }, [lessonId, deferred]);
+  if (deferred) return <main className="page-content"><p>{failed ? "Не вдалося завантажити урок. Онови сторінку." : "Завантаження уроку…"}</p></main>;
+  return <Editor key={lessonId} />;
 }
 
 function Editor() {
@@ -225,7 +239,14 @@ function Stats() {
 function ImportExport() {
   const { data } = useTeacherData();
   const { t } = useT();
-  const exportJson = useMemo(() => JSON.stringify({ lessons: data.lessons }, null, 2), [data.lessons]);
+  // The catalog holds shells for most lessons; export always fetches full lessons.
+  const [exportJson, setExportJson] = useState("");
+  useEffect(() => {
+    let cancelled = false;
+    void fetchAllLessons().then((lessons) => { if (!cancelled) setExportJson(JSON.stringify({ lessons }, null, 2)); })
+      .catch(() => { if (!cancelled) setExportJson(JSON.stringify({ lessons: data.lessons.filter((l) => !l.contentDeferred) }, null, 2)); });
+    return () => { cancelled = true; };
+  }, [data.lessons]);
   return (
     <main className="page-content">
       <PageHeader title={t("teacher.import_export.title")} subtitle={t("teacher.import_export.subtitle")} />

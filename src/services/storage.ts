@@ -1,5 +1,5 @@
 import { seedData } from "../data/seedData";
-import type { AppData } from "../types";
+import type { AppData, Lesson } from "../types";
 
 const STORAGE_KEY = "slovakgo.state.v1";
 const LESSON_VERSION_KEY = "slovakgo.lessons.version.v1";
@@ -7,6 +7,14 @@ const SEED_USER_IDS = ["user-student", "user-teacher", "user-admin"];
 
 function cloneSeed(): AppData {
   return JSON.parse(JSON.stringify(seedData)) as AppData;
+}
+
+const CONTENT_FIELDS = ["theoryScreens", "wordsScreen", "startScreen", "finalSituation", "resultScreen", "intro", "completionMessage"] as const;
+
+export function toLessonShell(lesson: Lesson): Lesson {
+  const shell: Lesson = { ...lesson, exercises: [], contentDeferred: true, contentLoaded: undefined };
+  for (const field of CONTENT_FIELDS) delete (shell as unknown as Record<string, unknown>)[field];
+  return shell;
 }
 
 function trimHeavyData(data: AppData): AppData {
@@ -21,7 +29,10 @@ function trimHeavyData(data: AppData): AppData {
         : p.xpDailyHistory,
     }])
   );
-  return { ...data, progress };
+  // Content loaded on demand stays in memory only: storing every opened lesson
+  // in full would exceed the localStorage quota (the catalog is shells).
+  const lessons = (data.lessons ?? []).map((lesson) => lesson.contentLoaded ? toLessonShell(lesson) : lesson);
+  return { ...data, progress, lessons };
 }
 
 export const storageService = {

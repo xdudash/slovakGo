@@ -357,6 +357,20 @@ export async function handleAdminUserPatch(req: VercelRequest, res: VercelRespon
   respond(res, { ok: true, user: updated ? rowToUser(updated) : null });
 }
 
+/** GET /admin/lessons/export?offset=&limit= — full lessons in pages (each page stays under the response limit). */
+export async function handleAdminLessonsExport(req: VercelRequest, res: VercelResponse): Promise<void> {
+  const uid = await requireUid(req, res); if (!uid) return;
+  if (!(await checkRole(uid, "admin", "teacher"))) return fail(res, "Недостатньо прав", 403);
+  const url = new URL(req.url ?? "/admin/lessons/export", "http://localhost");
+  const param = (k: string) => (typeof req.query?.[k] === "string" ? String(req.query[k]) : url.searchParams.get(k));
+  const offset = Math.max(0, Math.floor(Number(param("offset") ?? 0)) || 0);
+  const limit = Math.min(100, Math.max(1, Math.floor(Number(param("limit") ?? 100)) || 100));
+  const total = Number((await queryOne("SELECT COUNT(*) AS n FROM lessons"))?.n ?? 0);
+  const lessons = (await query("SELECT data_json FROM lessons ORDER BY rowid LIMIT ? OFFSET ?", [limit, offset]))
+    .map((r) => safeJson(String(r.data_json), null)).filter(Boolean);
+  respond(res, { ok: true, lessons, total, next: offset + lessons.length });
+}
+
 export async function handleAdminImportLessons(req: VercelRequest, res: VercelResponse, body: Record<string, unknown>): Promise<void> {
   const uid = await requireUid(req, res); if (!uid) return;
   if (!(await checkRole(uid, "admin"))) return fail(res, "Недостатньо прав", 403);

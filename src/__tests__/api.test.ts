@@ -1219,6 +1219,52 @@ describe('practice hearts persist through server sync', () => {
   });
 });
 
+describe("lesson catalog for full access stays small", () => {
+  it("sends shells with words to Plus users and admins and loads content per lesson", async () => {
+    const db = createClient({ url: `file:${TEST_DB}` });
+    await db.execute(`INSERT INTO users(id,email,name_text,role,level,sub_status,ob_done,created_at,updated_at)
+      VALUES ('plus-cat','pluscat@cat.test','Plus','student','A1','plus',1,datetime('now'),datetime('now'))`);
+    await db.execute("INSERT INTO progress(user_id,updated_at) VALUES ('plus-cat',datetime('now'))");
+    db.close();
+    for (const cookie of [await makeCookie("plus-cat"), await makeCookie("admin-1")]) {
+      const { body } = await call("GET", ["lessons"], { cookie });
+      const shell = (body.lessons as Record<string, unknown>[]).find((l) => l.id === "lesson-1")!;
+      expect(shell.contentDeferred).toBe(true);
+      expect(shell.exercises).toEqual([]);
+      expect((shell.words as unknown[]).length).toBe(1);
+      const one = await call("GET", ["lessons", "lesson-1"], { cookie });
+      expect(one.status).toBe(200);
+      expect(((one.body.lesson as Record<string, unknown>).exercises as unknown[]).length).toBe(3);
+    }
+  });
+
+  it("refuses content of a lesson the user cannot read", async () => {
+    const { body } = await call("GET", ["lessons", "preview-11"], { cookie: await makeCookie("preview-user") });
+    expect(body.ok).toBe(false);
+    expect((await call("GET", ["lessons", "lesson-1"])).status).toBe(401);
+  });
+
+  it("never overwrites stored content with a catalog shell (publish toggle)", async () => {
+    const admin = await makeCookie("admin-1");
+    const shell = { id: "lesson-1", level: "A1", title: "Test Lesson", topic: "Test", isPublished: false, contentDeferred: true, words: [], exercises: [], updatedAt: new Date().toISOString() };
+    await call("POST", ["sync", "push"], { cookie: admin, body: { mutations: [{ id: "shell-toggle-1", type: "lesson.upsert", payload: { lesson: shell } }] } });
+    const db = createClient({ url: `file:${TEST_DB}` });
+    const row = (await db.execute("SELECT data_json, published FROM lessons WHERE id='lesson-1'")).rows[0];
+    expect(Number(row.published)).toBe(0);
+    expect((JSON.parse(String(row.data_json)).exercises as unknown[]).length).toBe(3);
+    await db.execute("UPDATE lessons SET published=1, data_json=json_set(data_json,'$.isPublished',json('true')) WHERE id='lesson-1'");
+    db.close();
+  });
+
+  it("exports full lessons page by page for admins only", async () => {
+    const page = await call("GET", ["admin", "lessons", "export"], { cookie: await makeCookie("admin-1"), query: { offset: "0", limit: "100" } });
+    expect(page.status).toBe(200);
+    const lesson1 = (page.body.lessons as Record<string, unknown>[]).find((l) => l.id === "lesson-1")!;
+    expect((lesson1.exercises as unknown[]).length).toBe(3);
+    expect((await call("GET", ["admin", "lessons", "export"], { cookie: await makeCookie("plus-cat") })).status).toBe(403);
+  });
+});
+
 // Keep last: it replaces the lessons table and restores it afterwards.
 describe("admin course deploy", () => {
   let admin: string;

@@ -228,6 +228,22 @@ export async function getLessonIndex(role: string): Promise<{ id: string; level:
   return (await query(sql)).map(r => ({ id: String(r.id), level: String(r.level ?? ""), order: Number(r.ord ?? 0), isPublished: Number(r.published) === 1 }));
 }
 
+/** Heavy per-lesson fields, loaded on demand (GET /lessons/:id) instead of in the catalog. */
+export const LESSON_CONTENT_FIELDS = ["exercises", "theoryScreens", "wordsScreen", "startScreen", "finalSituation", "resultScreen", "intro", "completionMessage"] as const;
+
+/**
+ * Catalog rows without lesson content (keeps metadata and words). The full
+ * course is ~19 MB of JSON — far above Vercel's 4.5 MB response limit and the
+ * browser's localStorage quota — while shells are ~2–3 MB.
+ */
+export async function getLessonShells(role: string): Promise<Record<string, unknown>[]> {
+  const strip = LESSON_CONTENT_FIELDS.map((f) => `'$.${f}'`).join(", ");
+  const where = (role === "teacher" || role === "admin") ? "" : " WHERE published = 1";
+  return (await query(`SELECT json_remove(data_json, ${strip}) AS j FROM lessons${where} ORDER BY rowid`))
+    .map(r => safeJson<Record<string, unknown> | null>(String(r.j), null))
+    .filter((l): l is Record<string, unknown> => Boolean(l));
+}
+
 export async function getLessons(role: string): Promise<unknown[]> {
   const sql = (role === "teacher" || role === "admin")
     ? "SELECT data_json FROM lessons ORDER BY rowid"

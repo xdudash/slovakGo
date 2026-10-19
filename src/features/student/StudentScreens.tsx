@@ -809,7 +809,44 @@ function ReminderOptIn() {
   );
 }
 
+/**
+ * Route gate: catalog shells (full-access learners, admins) and locked lessons
+ * get their content before the player mounts, so the player's initial state
+ * (phase, resume position) is computed from the real lesson.
+ */
 function LessonScreen() {
+  const { lessonId } = useParams();
+  const navigate = useNavigate();
+  const lesson = useAppStore((s) => s.data.lessons.find((l) => l.id === lessonId));
+  const [failed, setFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
+  const deferred = Boolean(lesson?.contentDeferred);
+  const locked = Boolean(lesson?.contentLocked);
+  useEffect(() => {
+    if (!lesson) return;
+    if (locked) { void useAppStore.getState().refreshLessons(); return; }
+    if (!deferred) return;
+    let cancelled = false;
+    setFailed(false);
+    void useAppStore.getState().ensureLessonContent(lesson.id).then((full) => { if (!cancelled && !full) setFailed(true); });
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lesson?.id, locked, deferred, attempt]);
+
+  if (locked || (deferred && !failed)) return <PageSkeleton />;
+  if (deferred && failed) {
+    return (
+      <main className="page-content">
+        <EmptyState title="Не вдалося завантажити урок" text="Перевір з'єднання та спробуй ще раз." />
+        <Button onClick={() => setAttempt((n) => n + 1)}>Спробувати ще раз</Button>
+        <Button variant="secondary" onClick={() => navigate("/app/path")}>До шляху</Button>
+      </main>
+    );
+  }
+  return <LessonPlayer key={lessonId} />;
+}
+
+function LessonPlayer() {
   const navigate = useNavigate();
   const { lessonId } = useParams();
   const { data, user, progress, completeLesson, recordWrongAnswer, restoreHearts } = useStudentData();

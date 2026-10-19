@@ -1,5 +1,6 @@
 import { handleIntegrationHealth } from "./_lib/integrations";
 import { handleAdminCourse } from "./_lib/course";
+import { handleLessonGet } from "./_lib/access";
 import { handleEmailPreferences, handleUnsubscribe } from "./_lib/emailPreferences";
 import { handleActivity } from "./_lib/activity";
 /**
@@ -18,7 +19,7 @@ import { handleLessonsPull, handleSyncPull, handleSyncPush } from "./_lib/sync";
 
 import {
   handleAdminStats, handleTeacherStats, handleAdminErrors, handleAdminNotify, handleAdminUsers,
-  handleAdminUserDetail, handleAdminUserPatch, handleAdminImportLessons
+  handleAdminUserDetail, handleAdminUserPatch, handleAdminImportLessons, handleAdminLessonsExport
 } from "./_lib/admin";
 
 import { handleBillingCheckout, handleBillingPortal, handleBillingWebhook } from "./_lib/stripe";
@@ -95,6 +96,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "GET"  && route === "/sync/pull")         return await handleSyncPull(req, res);
     if (meth === "POST" && route === "/sync/push")         return await handleSyncPush(req, res, body);
     if (meth === "GET"  && route === "/lessons")           return await handleLessonsPull(req, res);
+    if (meth === "GET"  && route.startsWith("/lessons/"))  return await handleLessonGet(req, res, decodeURIComponent(route.slice("/lessons/".length)));
     
     if (meth === "POST" && route === "/user/activity") return await handleActivity(req, res, body);
     // User Routes
@@ -121,6 +123,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "GET"  && route === "/admin/errors")           return await handleAdminErrors(req, res);
     if (meth === "POST" && route === "/admin/notify")           return await handleAdminNotify(req, res, body);
     if (meth === "POST" && route === "/admin/lessons/import")   return await handleAdminImportLessons(req, res, body);
+    if (meth === "GET"  && route === "/admin/lessons/export")   return await handleAdminLessonsExport(req, res);
     if ((meth === "GET" || meth === "POST") && route === "/admin/course") return await handleAdminCourse(req, res, body);
     if (meth === "GET"  && route === "/admin/users")            return await handleAdminUsers(req, res);
     if (meth === "GET"  && route.startsWith("/admin/users/"))   return await handleAdminUserDetail(req, res, route.slice("/admin/users/".length));

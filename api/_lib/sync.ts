@@ -395,9 +395,21 @@ async function mutPracticeComplete(uid: string, p: Record<string, unknown>): Pro
     await touchServerWord(uid, String(r.wordId), Boolean(r.correct));
   }
 }
+// Fields an editor may change on a catalog shell without having the content.
+const LESSON_META_FIELDS = ["isPublished", "title", "topic", "level", "order", "description", "xpReward", "estimatedMinutes", "updatedAt"];
+
 async function mutLessonUpsert(uid: string, p: Record<string, unknown>): Promise<void> {
-  const rawLesson = (typeof p.lesson === "object" && p.lesson) ? p.lesson : p;
-  const lesson = normalizeLessonPayload(rawLesson);
+  const rawLesson = ((typeof p.lesson === "object" && p.lesson) ? p.lesson : p) as Record<string, unknown>;
+  const existingRow = rawLesson?.id ? await queryOne("SELECT data_json FROM lessons WHERE id = ? LIMIT 1", [String(rawLesson.id)]) : null;
+  const existing = existingRow ? safeJson<Record<string, unknown>>(String(existingRow.data_json), {}) : null;
+  const incomingEmpty = !(Array.isArray(rawLesson?.exercises) && rawLesson.exercises.length) && !(Array.isArray(rawLesson?.theoryScreens) && rawLesson.theoryScreens.length);
+  const existingHasContent = Boolean(existing && Array.isArray(existing.exercises) && existing.exercises.length);
+  // A catalog shell (content loaded on demand) must never overwrite the stored
+  // lesson content: only its metadata (e.g. publish toggle) is applied.
+  const source = existing && (rawLesson?.contentDeferred === true || (incomingEmpty && existingHasContent))
+    ? { ...existing, ...Object.fromEntries(LESSON_META_FIELDS.filter((k) => k in rawLesson).map((k) => [k, rawLesson[k]])) }
+    : rawLesson;
+  const lesson = normalizeLessonPayload(source);
   await exec(
     `INSERT INTO lessons (id, data_json, published, created_by, updated_at) VALUES (?, ?, ?, ?, ?)
      ON CONFLICT(id) DO UPDATE SET data_json = excluded.data_json, published = excluded.published, updated_at = excluded.updated_at`,

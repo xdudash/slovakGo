@@ -35,7 +35,7 @@
     }
   ],
   "functions": {
-    "api/index.ts": {
+    "api/course.ts": {
       "includeFiles": "lessons/**",
       "maxDuration": 60
     }
@@ -51,6 +51,10 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/api/admin/course",
+      "destination": "/api/course"
+    },
     {
       "source": "/api/(.*)",
       "destination": "/api/index"
