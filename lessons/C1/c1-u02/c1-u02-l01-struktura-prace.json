@@ -1,0 +1,625 @@
+{
+  "lessons": [
+    {
+      "id": "c1-u02-l01-struktura-prace",
+      "sectionId": "c1-u02",
+      "level": "C1",
+      "title": "Структура наукової праці: oddiel, sekcia, kapitola",
+      "topic": "Академічне письмо",
+      "description": "Будова наукової праці: вступ, огляд літератури, методологія, результати, обговорення, висновки; як відрізнити розділ (kapitola) від підрозділу (oddiel) і навіщо потрібна логіка переходу між частинами.",
+      "order": 11,
+      "xpReward": 60,
+      "estimatedMinutes": 18,
+      "isPublished": true,
+      "intro": "Описувати структуру наукової праці та пояснювати функцію кожного розділу.",
+      "completionMessage": "Ти розумієш, як побудована наукова праця і що має робити кожна її частина. Далі — абстракт як стиснутий зміст праці.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "C1 · Академічне письмо",
+        "title": "Структура наукової праці: oddiel, sekcia, kapitola",
+        "shortDescription": "Описувати структуру наукової праці та пояснювати функцію кожного розділу.",
+        "outcomes": [
+          "називати основні частини праці",
+          "пояснювати функцію розділу",
+          "розрізняти kapitolu, oddiel і sekciu",
+          "формулювати перехід між частинами"
+        ],
+        "newWords": [
+          "oddiel",
+          "sekcia",
+          "kapitola",
+          "pojednanie"
+        ],
+        "exercisesCount": 11,
+        "reward": "+60 XP",
+        "estimatedMinutes": 18,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Основні частини",
+          "text": "Наукова праця складається з вступу (úvod), огляду літератури (prehľad literatúry), методології (metodika), результатів (výsledky), обговорення (diskusia) і висновків (záver). Кожна частина має власну функцію, і їх не можна змішувати.",
+          "examples": [
+            {
+              "sk": "Metodika opisuje postup výskumu.",
+              "uk": "Методологія описує хід дослідження."
+            },
+            {
+              "sk": "Záver zhrnie hlavné zistenia.",
+              "uk": "Висновок підсумовує головні результати."
+            }
+          ],
+          "shortRule": "kapitola · metodika",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Розділ, підрозділ, sekcia",
+          "text": "Kapitola — великий розділ, oddiel — підрозділ, sekcia — частина тексту в межах розділу. У тексті їх позначають номерами: «2.1 Metodika». Номер показує ієрархію, а не лише порядок.",
+          "examples": [
+            {
+              "sk": "Kapitola 2 má tri oddiely.",
+              "uk": "Розділ 2 має три підрозділи."
+            },
+            {
+              "sk": "Táto sekcia opisuje dáta.",
+              "uk": "Цей розділ описує дані."
+            }
+          ],
+          "shortRule": "oddiel · sekcia",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Логіка переходу",
+          "text": "Між частинами потрібні переходи, які пояснюють зв’язок: «V ďalšej časti opisujeme metódu.» = У наступній частині описуємо метод. Перехід показує, чому текст рухається далі.",
+          "examples": [
+            {
+              "sk": "V ďalšej časti opisujeme metódu.",
+              "uk": "У наступній частині описуємо метод."
+            },
+            {
+              "sk": "Výsledky potvrdzujú predchádzajúci záver.",
+              "uk": "Результати підтверджують попередній висновок."
+            }
+          ],
+          "shortRule": "oddiel · sekcia",
+          "commonMistakes": [
+            {
+              "mistake": "Záver je na začiatku práce, lebo tam sa predstavuje téma.",
+              "correct": "Záver je na konci práce a zhrnie zistenia."
+            },
+            {
+              "mistake": "Oddiel je väčší než kapitola.",
+              "correct": "Kapitola je väčšia než oddiel."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "c1-u02-l01-struktura-prace-w01",
+            "sk": "oddiel",
+            "uk": "підрозділ",
+            "pronunciationUk": "оддіел",
+            "exampleSk": "Tento oddiel opisuje metódu zberu.",
+            "exampleUk": "Цей підрозділ описує метод збору."
+          },
+          {
+            "wordId": "c1-u02-l01-struktura-prace-w02",
+            "sk": "sekcia",
+            "uk": "частина, розділ тексту",
+            "pronunciationUk": "секція",
+            "exampleSk": "Sekcia výsledkov je v strede práce.",
+            "exampleUk": "Частина результатів — у середині праці."
+          },
+          {
+            "wordId": "c1-u02-l01-struktura-prace-w03",
+            "sk": "kapitola",
+            "uk": "розділ (великий)",
+            "pronunciationUk": "капітола",
+            "exampleSk": "Kapitola druhá sa venuje teórii.",
+            "exampleUk": "Другий розділ присвячений теорії."
+          },
+          {
+            "wordId": "c1-u02-l01-struktura-prace-w04",
+            "sk": "pojednanie",
+            "uk": "трактат, розгорнутий виклад",
+            "pronunciationUk": "поєднання",
+            "exampleSk": "Pojednanie rozvíja hlavnú tézu.",
+            "exampleUk": "Трактат розвиває головну тезу."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "c1-u02-l01-struktura-prace-w01",
+          "sk": "oddiel",
+          "uk": "підрозділ",
+          "pronunciationUk": "оддіел",
+          "exampleSk": "Tento oddiel opisuje metódu zberu.",
+          "exampleUk": "Цей підрозділ описує метод збору.",
+          "level": "C1",
+          "topic": "Академічне письмо",
+          "tags": [
+            "c1-u02",
+            "c1"
+          ]
+        },
+        {
+          "id": "c1-u02-l01-struktura-prace-w02",
+          "sk": "sekcia",
+          "uk": "частина, розділ тексту",
+          "pronunciationUk": "секція",
+          "exampleSk": "Sekcia výsledkov je v strede práce.",
+          "exampleUk": "Частина результатів — у середині праці.",
+          "level": "C1",
+          "topic": "Академічне письмо",
+          "tags": [
+            "c1-u02",
+            "c1"
+          ]
+        },
+        {
+          "id": "c1-u02-l01-struktura-prace-w03",
+          "sk": "kapitola",
+          "uk": "розділ (великий)",
+          "pronunciationUk": "капітола",
+          "exampleSk": "Kapitola druhá sa venuje teórii.",
+          "exampleUk": "Другий розділ присвячений теорії.",
+          "level": "C1",
+          "topic": "Академічне письмо",
+          "tags": [
+            "c1-u02",
+            "c1"
+          ]
+        },
+        {
+          "id": "c1-u02-l01-struktura-prace-w04",
+          "sk": "pojednanie",
+          "uk": "трактат, розгорнутий виклад",
+          "pronunciationUk": "поєднання",
+          "exampleSk": "Pojednanie rozvíja hlavnú tézu.",
+          "exampleUk": "Трактат розвиває головну тезу.",
+          "level": "C1",
+          "topic": "Академічне письмо",
+          "tags": [
+            "c1-u02",
+            "c1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "c1-u02-l01-struktura-prace-ex01",
+          "lessonId": "c1-u02-l01-struktura-prace",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай слово і значення.",
+          "pairs": [
+            {
+              "left": "kapitola",
+              "right": "розділ"
+            },
+            {
+              "left": "oddiel",
+              "right": "підрозділ"
+            },
+            {
+              "left": "sekcia",
+              "right": "частина тексту"
+            },
+            {
+              "left": "metodika",
+              "right": "методика"
+            },
+            {
+              "left": "záver",
+              "right": "висновок"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "c1-u02-l01-struktura-prace-w01",
+            "c1-u02-l01-struktura-prace-w02",
+            "c1-u02-l01-struktura-prace-w03"
+          ]
+        },
+        {
+          "id": "c1-u02-l01-struktura-prace-ex02",
+          "lessonId": "c1-u02-l01-struktura-prace",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильну форму.",
+          "sentenceParts": [
+            {
+              "text": "V "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "ďalší",
+                "ďalšia",
+                "ďalšej"
+              ],
+              "correct": "ďalšej"
+            },
+            {
+              "text": " časti opisujeme metódu."
+            }
+          ],
+          "explanation": "Місцевий відмінок жіночого роду: «ďalšej».",
+          "order": 2
+        },
+        {
+          "id": "c1-u02-l01-struktura-prace-ex03",
+          "lessonId": "c1-u02-l01-struktura-prace",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди помилку.",
+          "sentence": "Kapitola 2 má tri oddiel.",
+          "errorToken": "oddiel",
+          "correctToken": "oddiely",
+          "explanation": "Множина «oddiely», а не однина.",
+          "order": 3,
+          "wordIds": [
+            "c1-u02-l01-struktura-prace-w01",
+            "c1-u02-l01-struktura-prace-w03"
+          ]
+        },
+        {
+          "id": "c1-u02-l01-struktura-prace-ex04",
+          "lessonId": "c1-u02-l01-struktura-prace",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Výsledky ______ predchádzajúci záver. (підтверджують)",
+          "acceptedAnswers": [
+            "potvrdzujú"
+          ],
+          "explanation": "Множина підмета «výsledky»: «potvrdzujú».",
+          "order": 4
+        },
+        {
+          "id": "c1-u02-l01-struktura-prace-ex05",
+          "lessonId": "c1-u02-l01-struktura-prace",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Záver je na začiatku práce, lebo tam sa predstavuje téma.",
+          "acceptedAnswers": [
+            "Záver je na konci práce, lebo zhrnie zistenia."
+          ],
+          "explanation": "Висновок стоїть наприкінці й підсумовує.",
+          "order": 5
+        },
+        {
+          "id": "c1-u02-l01-struktura-prace-ex06",
+          "lessonId": "c1-u02-l01-struktura-prace",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «oddiel»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "розділ",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "абзац",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "підрозділ",
+              "correct": true
+            }
+          ],
+          "order": 6
+        },
+        {
+          "id": "c1-u02-l01-struktura-prace-ex07",
+          "lessonId": "c1-u02-l01-struktura-prace",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яке речення правильно описує функцію методології?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Metodika opisuje postup výskumu.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Metodika je zoznam literatúry.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Metodika zhrnie výsledky.",
+              "correct": false
+            }
+          ],
+          "explanation": "Методологія описує спосіб дослідження.",
+          "order": 7
+        },
+        {
+          "id": "c1-u02-l01-struktura-prace-ex08",
+          "lessonId": "c1-u02-l01-struktura-prace",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Kapitola je menšia jednotka než oddiel.",
+          "statement": "Розділ — менша одиниця, ніж підрозділ.",
+          "correctAnswer": false,
+          "explanation": "Розділ — вища одиниця за підрозділ.",
+          "order": 8,
+          "wordIds": [
+            "c1-u02-l01-struktura-prace-w01",
+            "c1-u02-l01-struktura-prace-w03"
+          ]
+        },
+        {
+          "id": "c1-u02-l01-struktura-prace-ex09",
+          "lessonId": "c1-u02-l01-struktura-prace",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Розподіли частини.",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Вступ і висновок"
+            },
+            {
+              "id": "c2",
+              "title": "Основна частина"
+            },
+            {
+              "id": "c3",
+              "title": "Структурні одиниці"
+            }
+          ],
+          "items": [
+            {
+              "sk": "metodika",
+              "category": "c2"
+            },
+            {
+              "sk": "úvod",
+              "category": "c1"
+            },
+            {
+              "sk": "výsledky",
+              "category": "c2"
+            },
+            {
+              "sk": "oddiel",
+              "category": "c3"
+            },
+            {
+              "sk": "kapitola",
+              "category": "c3"
+            },
+            {
+              "sk": "záver",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Групування за роллю в праці.",
+          "order": 9,
+          "wordIds": [
+            "c1-u02-l01-struktura-prace-w01",
+            "c1-u02-l01-struktura-prace-w03"
+          ]
+        },
+        {
+          "id": "c1-u02-l01-struktura-prace-ex10",
+          "lessonId": "c1-u02-l01-struktura-prace",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери всі правильні твердження.",
+          "prompt": "Štruktúra práce má logiku.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Úvod predstavuje tému",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Záver zhrnie zistenia",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Výsledky sa píšu pred metódou",
+              "correct": false
+            }
+          ],
+          "order": 10
+        },
+        {
+          "id": "c1-u02-l01-struktura-prace-ex11",
+          "lessonId": "c1-u02-l01-struktura-prace",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "V úvode predstavujeme tému a ciele výskumu.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": true
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": false
+            }
+          ],
+          "explanation": "Нейтральний науковий регістр.",
+          "order": 11
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Розподіл праці",
+        "description": "Ти складаєш план курсової роботи. Треба розподілити частини, позначити розділи номерами й написати перехід між методологією і результатами.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Керівник питає, де буде методологія. Що відповідаєш? (ti — чоловік)",
+            "options": [
+              {
+                "sk": "Metodika nebude, lebo to nie je dôležité.",
+                "correct": false
+              },
+              {
+                "sk": "Metodika bude na konci, po záveri.",
+                "correct": false
+              },
+              {
+                "sk": "Metodika bude v druhej kapitole, v oddiele 2.1.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Керівник питає про перехід. Як відповідаєш? (ti — žena)",
+            "options": [
+              {
+                "sk": "V ďalšej časti nič neopisujeme.",
+                "correct": false
+              },
+              {
+                "sk": "V ďalšej časti opisujeme metódu zberu dát.",
+                "correct": true
+              },
+              {
+                "sk": "Prechod nebude, lebo text je krátky.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Керівник питає, що зробити в кінці. Що відповідаєш?",
+            "options": [
+              {
+                "text": "Написати висновок, який коротко підсумує головні результати.",
+                "correct": true
+              },
+              {
+                "text": "Додати ще один розділ з новими даними.",
+                "correct": false
+              },
+              {
+                "text": "Нічого не писати, бо це зайве.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як закінчиш розмову? (ti — чоловік)",
+            "options": [
+              {
+                "sk": "Ďakujem, nič neupravím.",
+                "correct": false
+              },
+              {
+                "sk": "Ďakujem, upravím štruktúru podľa vašich pripomienok.",
+                "correct": true
+              },
+              {
+                "sk": "Dovidenia, práca nebude.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш, як побудована наукова праця і що має робити кожна її частина. Далі — абстракт як стиснутий зміст праці."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш, як побудована наукова праця і що має робити кожна її частина. Далі — абстракт як стиснутий зміст праці.",
+        "nowYouKnow": [
+          "kapitola · oddiel",
+          "metodika",
+          "úvod · záver",
+          "logika prechodu"
+        ],
+        "newWordsCount": 4,
+        "exercisesCompleted": 11,
+        "xpReward": 60,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "c1-u02-l02-abstrakt",
+          "title": "Абстракт: стиснутий зміст праці"
+        }
+      }
+    }
+  ]
+}

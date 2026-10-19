@@ -1,0 +1,541 @@
+@unit b1-u05 | Проблеми з житлом | Problémy s bývaním
+
+@lesson porucha-a-oprava | Поломка й ремонт | Porucha a oprava
+desc: Як точно описати несправність, письмово повідомити про неї власника чи управителя й з’ясувати, хто платить за ремонт.
+goal: Повідомити про поломку так, щоб її швидко усунули, і знати, які ремонти оплачує орендар.
+out: точно описувати несправність: pokazil sa bojler, radiátor nehreje ;; писати формальне повідомлення про поломку ;; розрізняти drobné opravy й великі ремонти ;; діяти під час аварії й домовлятися про візит техніка
+done: Ти вмієш повідомити про поломку й домовитися про ремонт. Далі — сусіди й шум.
+T: Точний опис несправності || На рівні A2 ти казав(ла) просто «nefunguje». Тепер описуй точно, що сталося. Зворотне дієслово «pokaziť sa» — зламатися, і минулий час узгоджується з родом: «pokazil sa bojler», «pokazila sa práčka», «pokazilo sa svetlo». Корисні дієслова: «nehreje» (не гріє), «netesní» (протікає з’єднання), «tečie» (тече), «iskrí» (іскрить). Під час аварії (praskla rúra) спершу закрий «hlavný uzáver vody» і викликай «havarijnú službu». || Pokazil sa bojler, nemáme teplú vodu. = Зламався бойлер, у нас немає гарячої води. ;; Radiátor v spálni vôbec nehreje. = Радіатор у спальні зовсім не гріє. || pokazil sa (ч.) · pokazila sa (ж.) · pokazilo sa (с.)
+mis: Pokazil sa práčka. => Pokazila sa práčka. ;; Radiátor nehrie. => Radiátor nehreje.
+T: Хто платить за ремонт || За словацьким законом орендар (nájomca) зазвичай сам оплачує «drobné opravy» (дрібні ремонти) й «bežnú údržbu» (звичайне утримання): заміну лампочки, прокладки в крані, прочищення сифона. Більші ремонти — бойлера, радіатора, електропроводки — оплачує власник (prenajímateľ), якщо договір не каже інакше. Якщо поломку спричинив сам орендар, платить він. Про поломку треба повідомити без зайвої затримки. || Drobné opravy platí nájomca. = Дрібні ремонти оплачує орендар. ;; Výmenu bojlera musí zaplatiť prenajímateľ. = Заміну бойлера має оплатити власник. || drobné opravy → nájomca · veľké opravy → prenajímateľ
+T: Формальне повідомлення || Власникові чи управителю краще написати e-mail — так залишиться доказ, коли ти повідомив(ла). Структура: звертання «Dobrý deň, pán Horváth,»; що й коли сталося; прохання «Prosím Vás o bezodkladné odstránenie poruchy.»; коли ти вдома: «Doma som každý deň po 17:00.»; закінчення «Ďakujem a s pozdravom». Ввічливе прохання — з умовним способом: «Mohli by ste poslať technika ešte tento týždeň?» || Prosím Vás o bezodkladné odstránenie poruchy. = Прошу Вас невідкладно усунути несправність. ;; V prílohe posielam fotografie. = У додатку надсилаю фотографії. || Prosím Vás o + знахідний
+mis: Prosím Vás o odstránenie poruchu. => Prosím Vás o odstránenie poruchy.
+W: bojler | бойлер, водонагрівач | бойлер | Bojler je starý a voda je len vlažná. | Бойлер старий, і вода лише ледь тепла.
+W: radiátor | радіатор (опалення) | радіа:тор | Radiátor v detskej izbe nehreje. | Радіатор у дитячій кімнаті не гріє.
+W: tesnenie | ущільнювач, прокладка | тесненіє | V kohútiku treba vymeniť tesnenie. | У крані треба замінити прокладку.
+W: odstrániť | усунути, прибрати | одстра:ніть | Technik poruchu odstránil za hodinu. | Технік усунув несправність за годину.
+W: bezodkladne | невідкладно, без зволікань | безодкладнє | Poruchu treba bezodkladne nahlásiť. | Про несправність треба невідкладно повідомити.
+W: havarijná služba | аварійна служба | гаварійна: служба | V noci sme volali havarijnú službu. | Уночі ми викликали аварійну службу.
+W: údržba | утримання, технічне обслуговування | у:држба | Bežnú údržbu bytu platí nájomca. | Звичайне утримання квартири оплачує орендар.
+X mt: З’єднай. | bojler = бойлер ;; radiátor = радіатор ;; tesnenie = прокладка ;; odstrániť = усунути ;; bezodkladne = невідкладно ;; havarijná služba = аварійна служба
+X dd: Обери. | Včera večer sa [*pokazila/pokazil/pokazilo] práčka.
+= práčka — жіночий рід: pokazila sa.
+X dd: Обери. | Prosím Vás o bezodkladné odstránenie [*poruchy/porucha/poruchou].
+= odstránenie + родовий відмінок: poruchy.
+X cat: Хто зазвичай платить за ремонт? | Nájomca: výmena žiarovky, nové tesnenie v kohútiku, vyčistenie odtoku ;; Prenajímateľ: výmena bojlera, oprava radiátora, nová elektroinštalácia
+= Дрібні ремонти — орендар, великі — власник (якщо договір не каже інакше).
+X msg: Прочитай відповідь власника квартири. | Pán Horváth (prenajímateľ) | Dobrý deň, ďakujem za správu. Technik príde vo štvrtok medzi 8:00 a 12:00. Ak nebudete doma, nechajte kľúč u susedy pani Kováčovej. Výmenu bojlera zaplatím ja, ale nové tesnenie v kúpeľni je drobná oprava, to už je na vás. | Що має оплатити орендар? | *нову прокладку у ванній ;; заміну бойлера ;; візит техніка в четвер
+= «To už je na vás» — дрібний ремонт оплачуєш ти.
+X fb: Допиши. | V noci sme volali ___ službu, lebo praskla rúra. (аварійну) | havarijnú |
+= služba — жіночий рід, знахідний відмінок: havarijnú službu.
+X dr: - | Správca: Čo presne sa stalo? | *Radiátor v obývačke vôbec nehreje a z ventilu kvapká voda. ;; Radiátor v obývačke vôbec nehrie a z ventilu kvapká voda. ;; Nefunguje tam nejaká vec, neviem.
+= Точний опис: nehreje (не гріє), kvapká voda.
+X np: Ти пишеш власникові квартири й просиш, щоб технік прийшов ще цього тижня. | *Mohli by ste poslať technika ešte tento týždeň? ;; Mohli by ste poslať technik ešte tento týždeň? ;; Pošlite technika hneď, inak neplatím! ;; Mohol by technik prísť tento týždeň minulý?
+= poslať + знахідний: technika (істота); ввічливо — mohli by ste.
+X fe: - | Včera sa nám [pokazilo>pokazil] bojler a nemáme teplú vodu.
+= bojler — чоловічий рід: pokazil sa.
+X tf: - | E-mail: «Dobrý deň, pán Horváth, od pondelka netečie v kuchyni teplá voda. Na bojleri svieti červená kontrolka. Doma som každý deň po 16:00. S pozdravom Natália» | Наталія буває вдома щодня після 16:00. | T
+= «Doma som každý deň po 16:00» — щодня після 16:00.
+X so: - | Формально попроси невідкладно усунути несправність. | Prosím Vás o bezodkladné odstránenie poruchy.
+= Prosím Vás o + знахідний: o odstránenie.
+X tr: Перетвори наказ на ввічливе прохання з «Mohli by ste…». | Pošlite technika. | Mohli by ste poslať technika? ;; Mohli by ste mi poslať technika? ;; Mohli by ste nám poslať technika? ;; Mohli by ste, prosím, poslať technika? ;; Mohli by ste prosím poslať technika?
+= Умовний спосіб (mohli by ste) робить прохання ввічливим.
+X hm: - | Prenajímateľ: «Ten bojler je síce starý, ale doteraz fungoval bez problémov. Neskúšali ste ho náhodou opravovať sami?» | *власник підозрює, що поломку спричинив орендар, і не хоче платити ;; власник хоче купити новий бойлер ;; власник хвалить орендаря за ініціативу
+= Питання натякає: може, винен ти — тоді платити мав би ти.
+X do: Розстав телефонну розмову в правильному порядку. | Dispečing: Havarijná služba, dobrý deň. ;; Nájomca: Dobrý deň, v kúpeľni nám praskla rúra a voda tečie na zem. ;; Dispečing: Zavreli ste hlavný uzáver vody? ;; Nájomca: Áno, už je zavretý. ;; Dispečing: Dobre. Technik bude u vás do hodiny. Aká je adresa? ;; Nájomca: Športová 14, Trnava, tretie poschodie.
+X bd: - | Поломку усунули, і ти не заплатив(ла) зайвого!
+> Prenajímateľ: Dobrý deň, čo sa deje? | *Dobrý deň, pokazil sa bojler. Od včera nemáme teplú vodu. ;; Dobrý deň, pokazila sa bojler. Teplá voda nemáme. ;; Bojler zlý, voda nie.
+> Prenajímateľ: Hm, a neskúšali ste ho opravovať sami? | *Nie, nič sme nerobili. Prestal hriať zo dňa na deň. ;; Nie, nič sme nerobili. Prestal hreje zo dňa na deň. ;; Áno, opravovali sme, ale nefunguje.
+> Prenajímateľ: Dobre, pošlem technika. Kedy ste doma? | *Každý deň po piatej. Alebo vám môžem nechať kľúč u susedy. ;; Každý deň po päť. Kľúč nechám susedy u. ;; Doma kedy, neviem.
+> Prenajímateľ: A kto zaplatí opravu? | *Výmena bojlera nie je drobná oprava, tú by ste mali zaplatiť vy. ;; Výmena bojlera je drobná oprava, zaplatím ja nič. ;; Vy zaplatíte, ja nie, hotovo!
+F: Studená sprcha || У січні в орендованій квартирі в Жиліні зламався бойлер. Ти повідомляєш власника й домовляєшся про ремонт.
+S: Ти коротко пишеш, що сталося. | *Pokazil sa bojler, nemáme teplú vodu. ;; Pokazila sa bojler, nemáme teplá voda. ;; Bojler pokazený sa, voda nie.
+S: Ти формально просиш невідкладно усунути несправність. | *Prosím Vás o bezodkladné odstránenie poruchy. ;; Prosím Vás o bezodkladné odstránenie porucha. ;; Prosím Vás na odstránenie poruchu.
+S: Власник питає, коли ти вдома. | *Doma som každý deň po 17:00. ;; Doma mám každý deň po 17:00. ;; Doma byť každý deň po 17:00.
+S: Власник хоче, щоб новий бойлер оплатив(ла) ти. Що відповіси? | *Výmena bojlera nie je drobná oprava, tú platí prenajímateľ. ;; Výmena bojlera je drobná oprava, platí ju nájomca. ;; Bojler rád zaplatím, aj keď to nie je moja povinnosť.
+R: pokazil sa / pokazila sa + точний опис несправності ;; drobné opravy платить nájomca, великі — prenajímateľ ;; Prosím Vás o bezodkladné odstránenie poruchy. ;; аварія: hlavný uzáver vody, havarijná služba
+
+@lesson susedia-a-hluk | Сусіди й шум | Susedia a hluk
+desc: Як тактовно, але твердо поговорити із сусідом про шум, собаку чи ремонт і що робити, якщо розмова не допомогла.
+goal: Вирішити конфлікт із сусідами ввічливо, а за потреби — письмово поскаржитися управителю.
+out: починати делікатну розмову: Prepáčte, že vás ruším, ale… ;; просити через keby: Bol by som rád, keby ste… ;; описувати шум: vŕtať, búchať, štekať ;; знати порядок дій: domový poriadok, скарга управителю
+done: Ти вмієш вирішувати суперечки із сусідами. Далі — управитель і спільнота власників.
+T: Як почати розмову || Із сусідом говори спокійно й без звинувачень. Почни з вибачення: «Prepáčte, že vás ruším, ale…», «Nechcem robiť problémy, ale…». Описуй факт, а не людину: не «Ste hluční», а «Včera do polnoci bolo počuť hudbu». Закінчи пошуком рішення: «Možno by sme sa mohli nejako dohodnúť.» || Prepáčte, že vás ruším, ale včera do polnoci bolo počuť hudbu. = Вибачте, що турбую, але вчора до півночі було чути музику. ;; Nechcem robiť problémy, ale váš pes šteká celý deň. = Не хочу створювати проблем, але ваш пес гавкає цілий день. || факт замість звинувачення
+T: Прохання з «keby» || Найделікатніше прохання — «Bol by som rád / Bola by som rada, keby ste…» + форма на -li: «keby ste stíšili hudbu», «keby ste v nedeľu nevŕtali». Так само: «Bolo by fajn, keby…». Після «keby ste» завжди стоїть форма на -li, навіть коли звертаєшся до однієї людини на «ви». || Bol by som rád, keby ste po desiatej stíšili hudbu. = Я був би радий, якби ви після десятої зробили музику тихіше. ;; Bola by som rada, keby ste v nedeľu nevŕtali. = Я була б рада, якби ви в неділю не свердлили. || keby ste + -li
+mis: keby ste stíšite hudbu => keby ste stíšili hudbu ;; Bol by som rád, keď ste stíšili hudbu. => Bol by som rád, keby ste stíšili hudbu.
+T: Якщо розмова не допомогла || Правила будинку — «domový poriadok» — зазвичай визначають нічний спокій з 22:00 до 6:00, а гучні роботи (vŕtanie, búchanie) дозволяють лише у визначені години. Якщо сусід не реагує, напиши скаргу управителю: «Obraciam sa na Vás so sťažnosťou na opakované rušenie nočného pokoja.» Управитель може сусідові «dohovoriť» — зробити зауваження. Крайній крок — mestská polícia. || Obraciam sa na Vás so sťažnosťou na suseda z bytu č. 12. = Звертаюся до Вас зі скаргою на сусіда з квартири № 12. ;; Hluk pokračuje aj po desiatej večer. = Шум триває й після десятої вечора. || rozhovor → sťažnosť správcovi → mestská polícia
+W: vŕtať | свердлити | вр:тать | Sused vŕta každú sobotu od ôsmej rána. | Сусід свердлить щосуботи з восьмої ранку.
+W: búchať | гупати, грюкати | бу:хать | Deti nad nami celý večer búchajú. | Діти над нами цілий вечір гупають.
+W: štekať | гавкати | штекать | Pes susedov šteká, keď sú v práci. | Пес сусідів гавкає, коли вони на роботі.
+W: znášať | терпіти, зносити | зна:шать | Ten hluk už nemôžem dlhšie znášať. | Я вже не можу довше терпіти цей шум.
+W: ohľaduplnosť | уважність до інших, тактовність | оглядуплность | V bytovom dome je dôležitá ohľaduplnosť. | У багатоквартирному будинку важлива уважність до інших.
+W: dohovoriť | зробити зауваження, напоумити | договоріть | Správca susedovi dohovoril a odvtedy je ticho. | Управитель зробив сусідові зауваження, і відтоді тихо.
+X mt: З’єднай. | vŕtať = свердлити ;; búchať = гупати ;; štekať = гавкати ;; znášať = терпіти ;; ohľaduplnosť = уважність до інших ;; dohovoriť = зробити зауваження
+X dd: Обери. | Bol by som rád, keby ste po desiatej [*stíšili/stíšite/stíšiť] hudbu.
+= keby ste + форма на -li: stíšili.
+X dd: Обери. | Prepáčte, že vás [*ruším/rušiť/rušíte], ale máme malé dieťa.
+= Я вас турбую: (ja) ruším.
+X col: З’єднай слова в природні словосполучення. | robiť = problémy ;; rušiť = nočný pokoj ;; stíšiť = hudbu ;; podať = sťažnosť ;; dodržiavať = domový poriadok
+X np: Ти хочеш попросити сусідку, щоб її пес не гавкав на балконі цілий день. | *Prepáčte, že vás ruším, ale váš pes šteká na balkóne celý deň. Dalo by sa s tým niečo urobiť? ;; Váš pes je hrozný a vy tiež! ;; Prepáčte, že vás ruším, ale váš pes štekajú na balkóne celý deň. ;; Pes. Balkón. Celý deň. Prestaňte.
+= Вибачення + факт + пошук рішення; pes šteká (однина).
+X fb: Допиши. | Bola by som rada, keby ste v nedeľu ___. (не свердлили) | nevŕtali |
+= keby ste + форма на -li; заперечення ne- пишемо разом: nevŕtali.
+X msg: Прочитай записку на дверях під’їзду. | Suseda z 3. poschodia | Milí susedia, minulý týždeň sa nám narodila dcérka. Chceli by sme vás poprosiť o trochu ohľaduplnosti, hlavne po 20:00. Ak plánujete vŕtať, dajte nám, prosím, vedieť deň vopred. Ďakujeme za pochopenie! | Про що просить сусідка? | *бути тихішими ввечері й попереджати про свердління заздалегідь ;; узагалі не свердлити ;; прийти привітати немовля
+= Ohľaduplnosť po 20:00 + dať vedieť deň vopred.
+X tone: - | Sused: «Už tretíkrát vás prosím. Ak to nebude lepšie, budem sa musieť obrátiť na správcu.» | *роздратований, але ще ввічливий; попереджає про скаргу ;; дружній і жартівливий ;; байдужий
+= «Už tretíkrát» + «budem sa musieť obrátiť na správcu» — останнє попередження.
+X fe: - | Hluk z bytu nad nami už nemôžem ďalej [znášam>znášať].
+= Після nemôžem — інфінітив: znášať.
+X sch: Подивись на витяг із правил будинку. | Domový poriadok – Javorová 5 | Nočný pokoj = 22:00 – 6:00 ;; Hlučné práce (pondelok – piatok) = 8:00 – 18:00 ;; Hlučné práce (sobota) = 9:00 – 12:00 ;; Hlučné práce (nedeľa a sviatky) = zakázané | Коли в суботу можна свердлити? | *з 9:00 до 12:00 ;; з 8:00 до 18:00 ;; у суботу не можна взагалі
+= Sobota: 9:00 – 12:00.
+X tr: Перетвори пряму вимогу на ввічливе прохання з «Bol by som rád, keby ste…». | Nebúchajte večer! | Bol by som rád, keby ste večer nebúchali. ;; Bol by som rád, keby ste nebúchali večer.
+= keby ste + заперечна форма на -li: nebúchali.
+X ms: Які фрази підходять для письмової скарги управителю? | - | *Obraciam sa na Vás so sťažnosťou na opakované rušenie nočného pokoja. ;; *Hluk pokračuje aj po 22:00. ;; *Prosím Vás o riešenie tejto situácie. ;; Sused je idiot, urobte niečo! ;; Čau, máme problém so susedom.
+= Офіційна скарга — нейтрально-формальна, без образ і без «čau».
+X mic: - | Pani Nováková: «Hovorila som s tými mladými zo štvrtého. Správca im tiež dohovoril, tak snáď bude konečne pokoj.» | dohovoril | *зробив зауваження, напоумив ;; домовився з ними про зустріч ;; договорив до кінця свою промову
+= dohovoriť niekomu — зробити комусь зауваження.
+X do: Розстав розмову із сусідом у правильному порядку. | Ty: Dobrý večer, prepáčte, že vás ruším. Bývam pod vami. ;; Sused: Dobrý večer. Deje sa niečo? ;; Ty: Nechcem robiť problémy, ale každý večer počujem búchanie až do polnoci. ;; Sused: Aha, to bude asi náš syn, cvičí na rotopede. Nevedel som, že je to počuť. ;; Ty: Bol by som rád, keby po desiatej už necvičil. ;; Sused: Jasné, prepáčte. Poviem mu to.
+X bd: - | Ти вирішив(ла) конфлікт без скарги!
+> Suseda: Áno? Čo potrebujete? | *Dobrý deň, prepáčte, že vás ruším. Bývam vedľa vás. ;; Dobrý deň, vy ste hluční, viete o tom? ;; Hluk! Zase!
+> Suseda: A o čo ide? | *Váš pes šteká celý deň, keď nie ste doma. Asi o tom neviete. ;; Váš pes štekajú celý deň, keď nie ste doma. ;; Pes zlý, celý deň hav.
+> Suseda: Naozaj? Nemala som tušenie. Čo s tým môžem urobiť? | *Bola by som rada, keby ste ho nenechávali samého na balkóne. ;; Bola by som rada, keby ste ho nenechávate samého na balkóne. ;; Dajte ho preč.
+> Suseda: Dobre, skúsim ho cez deň vodiť k mame. Ďakujem, že ste prišli najprv za mnou. | *Ja ďakujem za pochopenie. Pekný deň! ;; Nabudúce idem rovno na políciu. ;; Ďakujem za pochopenie, dobrý deň mať.
+F: Hlučné víkendy || Сусіди над тобою в Нітрі щосуботи з восьмої ранку роблять ремонт, а ввечері гучно слухають музику.
+S: Ти починаєш розмову із сусідом. | *Prepáčte, že vás ruším, ale chcel by som s vami hovoriť o hluku. ;; Prepáčte, že vás rušíte, ale hluk. ;; Hluk je zlý, vy ste zlí.
+S: Ти просиш, щоб у суботу не свердлили так рано. | *Bol by som rád, keby ste v sobotu nevŕtali pred deviatou. ;; Bol by som rád, keby ste v sobotu nevŕtate pred deviatou. ;; Vŕtať v sobotu pred deviatou, nie.
+S: Сусід: «Ale ja si v byte môžem robiť, čo chcem!» Ти відповідаєш. | *Podľa domového poriadku sú hlučné práce v sobotu až od deviatej. ;; Áno, máte pravdu, robte, čo chcete. ;; Podľa domový poriadok sú práce od deväť.
+S: Нічого не змінилося. Ти пишеш управителю. | *Obraciam sa na Vás so sťažnosťou na opakované rušenie nočného pokoja. ;; Obraciam sa na Vás so sťažnosť na rušenie. ;; Ahoj, sused je hrozný, vyrieš to.
+R: Prepáčte, že vás ruším, ale… / Nechcem robiť problémy, ale… ;; Bol by som rád, keby ste + форма на -li ;; vŕtať, búchať, štekať, znášať, ohľaduplnosť ;; domový poriadok → sťažnosť správcovi → mestská polícia
+
+@lesson spolocenstvo-vlastnikov | Управитель і спільнота власників | Správca a spoločenstvo vlastníkov
+desc: Хто керує багатоквартирним будинком у Словаччині, як проходять збори власників і як письмово звернутися до управителя.
+goal: Розуміти запрошення на збори й результати голосування та написати офіційний запит управителю.
+out: розрізняти správca і spoločenstvo vlastníkov ;; розуміти schôdza, hlasovanie, uznesenie ;; говорити про fond opráv і ремонт будинку ;; писати запит: Obraciam sa na Vás so žiadosťou o…
+done: Ти розумієш, як керують будинком, і вмієш звернутися до управителя. Далі — рекламація послуг.
+T: Хто керує будинком || Квартири в багатоквартирному будинку мають різних власників (vlastníci bytov). Спільне майно — дах, ліфт, під’їзд — утримують або через управительську фірму «správca», або через «spoločenstvo vlastníkov bytov» (SVB) — щось подібне до українського ОСББ. Щомісяця власник платить внесок до «fondu opráv» (повна назва — fond prevádzky, údržby a opráv). Якщо ти орендуєш, цей внесок зазвичай уже враховано в сумі, яку ти платиш власникові. || Náš dom spravuje spoločenstvo vlastníkov. = Нашим будинком управляє спільнота власників. ;; Z fondu opráv zaplatíme nový výťah. = З ремонтного фонду ми оплатимо новий ліфт. || správca × spoločenstvo vlastníkov
+T: Збори й голосування || Важливі рішення ухвалюють на «schôdzi vlastníkov». Голосують «za» (за), «proti» (проти) або «zdržia sa hlasovania» (утримуються). Ухвалене рішення — «uznesenie»: «Uznesenie bolo schválené.» Голосує лише власник квартири, не орендар. Відмінки: «hlasovať za návrh» (за + знахідний), «hlasovať proti návrhu» (proti + давальний). || Väčšina vlastníkov hlasovala za zateplenie. = Більшість власників проголосувала за утеплення. ;; Dvaja sa zdržali hlasovania. = Двоє утрималися від голосування. || za + знахідний · proti + давальний
+mis: hlasovať proti návrh => hlasovať proti návrhu ;; na schôdza => na schôdzi
+T: Офіційний запит управителю || До управителя пишуть формально: «Vážený pán Kováč,» / «Vážená pani Kováčová,». Вступ: «Obraciam sa na Vás so žiadosťou o…» (з проханням про…) або «Chcel(a) by som Vás informovať, že…». У листі займенники Vy, Vás, Vám пишуть з великої літери. Закінчення: «Vopred ďakujem za odpoveď. S pozdravom». || Obraciam sa na Vás so žiadosťou o výmenu zámku na vchodových dverách. = Звертаюся до Вас із проханням про заміну замка на вхідних дверях. ;; Vopred ďakujem za odpoveď. = Заздалегідь дякую за відповідь. || so žiadosťou o + знахідний
+W: spoločenstvo vlastníkov | спільнота власників (≈ ОСББ) | сполоченство власьні:ков | Spoločenstvo vlastníkov si zvolilo nového predsedu. | Спільнота власників обрала нового голову.
+W: schôdza | збори | схуодза | Schôdza vlastníkov bude v utorok o 18:00. | Збори власників будуть у вівторок о 18:00.
+W: hlasovanie | голосування | гласованіє | Na hlasovaní sa zúčastnilo tridsať vlastníkov. | У голосуванні взяли участь тридцять власників.
+W: uznesenie | рішення, ухвала (зборів) | узнесеніє | Uznesenie schôdze visí na nástenke. | Рішення зборів висить на дошці оголошень.
+W: fond opráv | ремонтний фонд | фонд опра:в | Do fondu opráv platíme dvadsať eur mesačne. | До ремонтного фонду ми платимо двадцять євро на місяць.
+W: zateplenie | утеплення (будинку) | затепленіє | Po zateplení domu platíme menej za kúrenie. | Після утеплення будинку ми платимо менше за опалення.
+X mt: З’єднай. | spoločenstvo vlastníkov = спільнота власників ;; schôdza = збори ;; hlasovanie = голосування ;; uznesenie = рішення зборів ;; fond opráv = ремонтний фонд ;; zateplenie = утеплення
+X doc: Прочитай запрошення на збори. | Pozvánka na schôdzu vlastníkov | Dátum: 14. 11., 18:00 ;; Miesto: spoločenská miestnosť na prízemí ;; Program: zateplenie domu, zvýšenie príspevku do fondu opráv, rôzne ;; Upozornenie: Ak sa nemôžete zúčastniť, môžete splnomocniť inú osobu. | Що можна зробити, якщо не можеш прийти? | *уповноважити іншу особу ;; проголосувати телефоном ;; попросити перенести збори
+= splnomocniť inú osobu — уповноважити іншу особу.
+X dd: Обери. | Väčšina vlastníkov hlasovala [*za/proti/o] zateplenie domu.
+= hlasovať za + знахідний: za zateplenie (proti вимагало б давального: zatepleniu).
+X dd: Обери. | Traja vlastníci hlasovali proti [*návrhu/návrh/návrhom].
+= proti + давальний відмінок: návrhu.
+X tfl: - | Výsledky schôdze vlastníkov, Lipová 8. Na schôdzi sa zúčastnilo 28 zo 40 vlastníkov. O zateplení domu sa hlasovalo takto: 22 vlastníkov za, 4 proti a 2 sa zdržali hlasovania. Uznesenie o zateplení bolo schválené. Práce sa začnú v apríli a zaplatia sa z fondu opráv a z úveru. Príspevok do fondu opráv sa zatiaľ nemení. Výmena výťahu sa presúva na budúci rok. | *На зборах були присутні не всі власники. ;; *Рішення про утеплення ухвалено. ;; Двоє власників голосували проти. ;; Внесок до ремонтного фонду підвищили. ;; *Ліфт цього року міняти не будуть.
+X fb: Допиши. | Dvaja vlastníci sa ___ hlasovania. (утрималися) | zdržali |
+= zdržať sa hlasovania — утриматися від голосування.
+X sc: Хто має право голосувати на зборах власників? | - | *власник квартири ;; орендар, який живе в будинку понад рік ;; працівник управительської фірми
+= Голосують лише власники квартир, не орендарі й не управитель.
+X np: Ти орендуєш квартиру, і на вхідних дверях будинку зламався замок. Ти пишеш управителю. | *Obraciam sa na Vás so žiadosťou o opravu zámku na vchodových dverách. ;; Obraciam sa na Vás so žiadosť o opravu zámok. ;; Hej, zámok je rozbitý, oprav to. ;; Obraciam sa na Vás pre žiadosťou o opravu zámku.
+= so žiadosťou o + знахідний; формальний тон.
+X reg: - | Vážená pani správkyňa, dovoľujem si Vás informovať o poruche osvetlenia v pivnici. | formal
+= «Vážená…», «dovoľujem si» — офіційний стиль.
+X fe: - | Schôdza vlastníkov sa uskutoční v utorok v spoločenskej [miestnosť>miestnosti] na prízemí.
+= v + місцевий відмінок: v miestnosti.
+X ce: Виправ речення з листа. | Obraciam sa na Vás so žiadosťou o vyčistenie spoločné priestory. | Obraciam sa na Vás so žiadosťou o vyčistenie spoločných priestorov.
+= vyčistenie + родовий множини: spoločných priestorov.
+X cat: Що зазвичай оплачують із ремонтного фонду, а що — власник квартири сам? | Fond opráv: oprava strechy, nový výťah, zateplenie domu ;; Vlastník bytu: nová kuchynská linka, maľovanie obývačky, nové dvere do kúpeľne
+= Із фонду — спільні частини будинку; усередині квартири платить власник.
+X so: - | Скажи, що рішення ухвалено. | Uznesenie bolo schválené.
+= bolo schválené — пасив: було ухвалено.
+X mic: - | Oznam na nástenke: «Príspevok do fondu opráv sa od januára zvyšuje o 0,10 € za m². Dôvodom je plánované zateplenie domu.» | príspevok | *щомісячний внесок ;; допис у соцмережі ;; знижка
+= príspevok do fondu opráv — внесок до ремонтного фонду.
+X bd: - | Ти домігся(лася) ремонту в під’їзді!
+> Správca: Správa domov Žilina, prosím. | *Dobrý deň, volám z Lipovej 8. Chcela by som nahlásiť, že vo vchode nesvieti svetlo. ;; Dobrý deň, ja Lipová 8, svetlo nie. ;; Čau, u nás je tma.
+> Správca: Ste vlastníčka bytu? | *Nie, byt si prenajímam, ale bývam tam. ;; Nie, byt si prenajímate. ;; Áno nie, nájom.
+> Správca: Dobre. Môžete mi to poslať aj e-mailom? | *Samozrejme, pošlem Vám aj fotografie. ;; Samozrejme, pošlem Vám aj fotografiami. ;; E-mail nie.
+> Správca: Ďakujem. Elektrikár príde do troch dní. | *Výborne, ďakujem za rýchle riešenie. ;; Výborne, ďakujem za rýchly riešenie. ;; To je pomalé, chcem to dnes!
+F: Prvá schôdza || Ти нещодавно купив(ла) квартиру в Банській Бистриці й уперше йдеш на збори власників.
+S: Ти питаєш сусіда, скільки ви платите до ремонтного фонду. | *Koľko platíme do fondu opráv? ;; Koľko platíme do fond opráv? ;; Koľko platíme na fondom opráv?
+S: Ти хочеш проголосувати за утеплення. | *Hlasujem za zateplenie. ;; Hlasujem za zateplení. ;; Hlasujem za zateplením.
+S: Голова оголошує: «Uznesenie bolo schválené.» Що це означає? | *Рішення ухвалено ;; Рішення відхилено ;; Голосування перенесено
+S: Ти пишеш управителю офіційний лист. Як почнеш? | *Obraciam sa na Vás so žiadosťou o… ;; Čau, potrebujem… ;; Počúvaj, správca…
+R: správca, spoločenstvo vlastníkov, fond opráv ;; schôdza, hlasovanie: za + знахідний, proti + давальний ;; Uznesenie bolo schválené. ;; Obraciam sa na Vás so žiadosťou o…
+
+@lesson reklamacia-sluzieb | Рекламація послуг | Reklamácia služieb
+desc: Як письмово й усно поскаржитися на неякісну послугу — інтернет, прибирання, ремонт — і вимагати компенсацію.
+goal: Написати обґрунтовану рекламацію послуги й знати, що робити, якщо її відхилять.
+out: називати проблему: výpadok internetu, nekvalitne vykonaná práca ;; вимагати: Žiadam o zľavu / o kompenzáciu ;; будувати рекламаційний лист: факти, дати, вимога ;; розуміти відповідь: uznaná, zamietnutá, odstúpiť od zmluvy
+done: Ти вмієш рекламувати послуги. Далі — річний розрахунок за житло.
+T: Рекламація послуги || Рекламувати можна не лише товар, а й послугу: «Reklamujem výpadok internetového pripojenia», «Reklamujem nekvalitne vykonanú opravu». Того, хто надає послугу, називають «poskytovateľ». Вимогу формулюють через «Žiadam o…» + знахідний: «o zníženie ceny» (зниження ціни), «o kompenzáciu», «o bezplatné odstránenie nedostatkov» (безкоштовне усунення недоліків). || Reklamujem výpadok internetu od 3. do 7. marca. = Подаю рекламацію на відсутність інтернету з 3 по 7 березня. ;; Žiadam o primeranú zľavu z mesačného poplatku. = Прошу про відповідну знижку з місячної плати. || Žiadam o + знахідний
+mis: Žiadam o kompenzácia. => Žiadam o kompenzáciu. ;; Reklamujem na službu. => Reklamujem službu.
+T: Структура рекламаційного листа || 1) Звертання й номер договору або клієнта: «Číslo zmluvy: 2024/118». 2) Факти: що сталося, коли й як довго. 3) Що ти вже зробив(ла): «Poruchu som nahlásil telefonicky 4. marca.» 4) Вимога: «Žiadam o…». 5) Додатки: «V prílohe prikladám fotografie.» Пиши спокійно й конкретно: емоції не допомагають, а факти й дати — так. || Poruchu som nahlásila telefonicky už 4. marca, no doteraz nebola odstránená. = Про несправність я повідомила телефоном ще 4 березня, але досі її не усунули. ;; V prílohe prikladám fotografie. = У додатку додаю фотографії. || fakty + dátumy + požiadavka
+T: Відповідь на рекламацію || Рекламацію можуть визнати — «reklamácia bola uznaná ako oprávnená» (обґрунтована) — або відхилити: «reklamácia bola zamietnutá». Рекламацію споживача мають вирішити найпізніше за 30 днів. Якщо проблема повторюється, за умовами договору часто можна «odstúpiť od zmluvy» — відмовитися від договору. Допомогти може й Slovenská obchodná inšpekcia (SOI). || Vaša reklamácia bola uznaná ako oprávnená. = Вашу рекламацію визнано обґрунтованою. ;; Pre opakované výpadky chcem odstúpiť od zmluvy. = Через повторні перебої я хочу відмовитися від договору. || uznaná (oprávnená) × zamietnutá
+W: poskytovateľ | постачальник (послуг), провайдер | поскитоватєль | Poskytovateľ internetu sľúbil opravu do 24 hodín. | Інтернет-провайдер пообіцяв ремонт протягом 24 годин.
+W: výpadok | перебій, відключення | ві:падок | Počas výpadku som nemohla pracovať z domu. | Під час перебою я не могла працювати з дому.
+W: nekvalitný | неякісний | неквалітни: | Za nekvalitnú prácu nechcem platiť plnú cenu. | За неякісну роботу я не хочу платити повну ціну.
+W: kompenzácia | компенсація | компенза:ція | Za týždeň bez internetu žiadam kompenzáciu. | За тиждень без інтернету я вимагаю компенсацію.
+W: uznať | визнати (рекламацію, вимогу) | узнать | Firma nakoniec reklamáciu uznala a vrátila mi peniaze. | Фірма зрештою визнала рекламацію й повернула мені гроші.
+W: odstúpiť od zmluvy | відмовитися від договору | одсту:піть од змлуви | Ak to neopravia, odstúpim od zmluvy. | Якщо це не полагодять, я відмовлюся від договору.
+X mt: З’єднай. | poskytovateľ = постачальник послуг ;; výpadok = перебій ;; nekvalitný = неякісний ;; kompenzácia = компенсація ;; uznať = визнати ;; odstúpiť od zmluvy = відмовитися від договору
+X dd: Обери. | Žiadam o primeranú [*zľavu/zľava/zľavou] z mesačného poplatku.
+= Žiadam o + знахідний: o zľavu.
+X col: З’єднай слова в природні словосполучення. | podať = reklamáciu ;; nahlásiť = poruchu ;; odstúpiť = od zmluvy ;; vykonať = opravu ;; priložiť = fotografie
+X msg: Прочитай відповідь провайдера. | Zákaznícka linka NetSpeed | Dobrý deň, Vaša reklamácia č. 4471 bola posúdená ako oprávnená. Za obdobie výpadku od 3. 3. do 7. 3. Vám vrátime pomernú časť mesačného poplatku, ktorú odpočítame z najbližšej faktúry. Ospravedlňujeme sa za komplikácie. | Як клієнт отримає компенсацію? | *суму вирахують із наступного рахунку ;; гроші надішлють на банківський рахунок ;; клієнт отримає безкоштовний місяць
+= «Odpočítame z najbližšej faktúry» — вирахуємо з наступного рахунку.
+X fb: Допиши. | Poruchu som nahlásila už 4. marca, no doteraz nebola ___. (усунута) | odstránená |
+= porucha — жіночий рід: nebola odstránená.
+X sc: Яке речення найкраще підходить для рекламаційного листа? | - | *Internet nefungoval od 3. do 7. marca, poruchu som nahlásil telefonicky 4. marca. ;; Váš internet je katastrofa, ako vždy! ;; Internet niekedy asi trochu nešiel, neviem presne kedy.
+= Конкретні факти й дати — основа рекламації.
+X tf: - | Odpoveď firmy: «Vaša reklamácia bola zamietnutá, keďže porucha vznikla na zariadení zákazníka.» | Фірма визнала рекламацію обґрунтованою. | F
+= zamietnutá — відхилена: поломка виникла на обладнанні клієнта.
+X so: - | Скажи, що подаєш рекламацію на неякісно виконаний ремонт. | Reklamujem nekvalitne vykonanú opravu.
+= reklamovať + знахідний: opravu.
+X rc: - | Minulý mesiac som si cez aplikáciu objednala upratovaciu firmu na upratanie bytu po maľovaní. Zaplatila som 120 eur vopred. Upratovačky prišli o hodinu neskôr, okná umyli len zvnútra a v kúpeľni zostali škvrny od farby. Hneď v ten deň som im poslala fotografie a podala som reklamáciu. Firma mi najprv odpísala, že škvrny od farby nie sú súčasťou bežného upratovania. V objednávke som však mala jasne napísané upratovanie po maľovaní. Keď som im poslala kópiu objednávky, uznali, že reklamácia je oprávnená. Ponúkli mi buď opätovné upratanie zadarmo, alebo vrátenie 40 eur. Vybrala som si peniaze, lebo s touto firmou už nechcem spolupracovať.
+q~: Що було не так із прибиранням? | *вікна вимили лише зсередини, а у ванній залишилися плями від фарби ;; прибиральниці взагалі не прийшли ;; вони пошкодили меблі
+q~: Чому фірма спершу відхилила скаргу? | *стверджувала, що плями від фарби не входять у звичайне прибирання ;; клієнтка не заплатила наперед ;; клієнтка поскаржилася запізно
+q~: Що зрештою обрала клієнтка? | *повернення 40 євро ;; повторне безкоштовне прибирання ;; знижку на наступне замовлення
+X fe: - | Vaša reklamácia bola uznaná ako [oprávnený>oprávnená] a poplatok vám vrátime.
+= reklamácia — жіночий рід: oprávnená.
+X tr: Перетвори на офіційну вимогу: «Žiadam o vrátenie…» + родовий від peniaze. | Chcem späť peniaze. | Žiadam o vrátenie peňazí.
+= vrátenie + родовий: peňazí.
+X ms: Що варто додати до рекламаційного листа? | - | *číslo zmluvy alebo zákazníka ;; *dátum a popis problému ;; *fotografie alebo iné dôkazy ;; urážky na adresu pracovníkov ;; výšku vášho platu
+= Потрібні ідентифікація, факти й докази; образи й особисті дані — ні.
+X hm: - | Technik: «Router vám vymením, ale musím povedať, že takéto poškodenie väčšinou vzniká, keď ho niekto pustí na zem.» | *технік натякає, що поломку спричинив клієнт, тож ремонт може бути платним ;; технік хвалить роутер ;; технік радить купити ще один роутер
+= Прямо не звинувачує, але натякає на вину клієнта.
+X reg: - | Čau, net mi zas nejde, čo s tým budete robiť? | informal
+= «Čau», «net», «zas» — розмовний стиль; для рекламації не годиться.
+X bd: - | Ти домігся(лася) компенсації!
+> Operátor: Zákaznícka linka, dobrý deň, ako vám môžem pomôcť? | *Dobrý deň, chcel by som reklamovať výpadok internetu. Číslo zmluvy je 2024/118. ;; Dobrý deň, internet nefunguje, ste neschopní. ;; Reklamovať internet číslo.
+> Operátor: Odkedy vám služba nefunguje? | *Od pondelka 3. marca. Poruchu som nahlásil už v utorok. ;; Od pondelok 3. marec. ;; Dlho, neviem.
+> Operátor: Porucha je už odstránená. Potrebujete ešte niečo? | *Áno, za päť dní bez internetu žiadam o primeranú kompenzáciu. ;; Áno, za päť dní bez internetu žiadam o primeraná kompenzácia. ;; Nie, ďakujem, nič nepotrebujem.
+> Operátor: Rozumiem. Reklamáciu zaevidujem a do 30 dní vám pošleme odpoveď. | *Ďakujem. Môžete mi poslať aj číslo reklamácie e-mailom? ;; 30 dní? To je absurdné, chcem to hneď! ;; Ďakujem, a číslo reklamácie potrebovať ja.
+F: Týždeň bez internetu || Ти працюєш з дому в Пряшеві, але тиждень не мав(ла) інтернету. Ти пишеш рекламацію провайдерові.
+S: Ти починаєш рекламацію. | *Reklamujem výpadok internetového pripojenia od 3. do 10. marca. ;; Reklamujem na výpadok internet od 3. do 10. marca. ;; Internet bol zlý, reklamácia.
+S: Ти пишеш, що вже повідомляв(ла) про поломку. | *Poruchu som nahlásil telefonicky už 4. marca. ;; Poruchu som nahlásiť telefonicky už 4. marca. ;; Poruchu nahlásený telefón 4. marca.
+S: Ти формулюєш вимогу. | *Žiadam o primeranú zľavu z mesačného poplatku. ;; Žiadam o primeraná zľava z mesačného poplatku. ;; Daj zľavu, hneď.
+S: Відповідь: «Vaša reklamácia bola zamietnutá.» Що це означає? | *Рекламацію відхилено ;; Рекламацію визнано ;; Рекламацію ще розглядають
+R: poskytovateľ, výpadok, nekvalitne vykonaná práca ;; Žiadam o + знахідний: o zľavu, o kompenzáciu ;; лист: факти, дати, вимога, додатки ;; uznaná × zamietnutá, odstúpiť od zmluvy
+
+@lesson vyuctovanie | Річний розрахунок | Vyúčtovanie
+desc: Як читати річний розрахунок за тепло, воду й послуги будинку, розуміти аванси й показники лічильників і як оскаржити незрозумілу суму.
+goal: Перевірити vyúčtovanie, знайти помилку й письмово подати заперечення.
+out: розуміти zálohová platba, skutočné náklady, preplatok і nedoplatok ;; читати таблицю розрахунку ;; говорити про spotrebu, odpočet, vodné a stočné ;; подавати námietku proti vyúčtovaniu
+done: Ти вмієш перевірити розрахунок і заперечити його. Далі — договір оренди та його припинення.
+T: Як влаштований розрахунок || Протягом року ти щомісяця платиш «zálohové platby» (аванси) — за тепло, воду, ліфт, прибирання. Раз на рік управитель робить «vyúčtovanie»: порівнює аванси зі «skutočnými nákladmi» (фактичними витратами). Якщо ти заплатив(ла) більше — маєш preplatok, і його повернуть; якщо менше — nedoplatok, і його треба доплатити. Орендар отримує розрахунок від власника квартири. || Zálohové platby boli vyššie ako skutočné náklady. = Аванси були вищі за фактичні витрати. ;; Preplatok vám vrátime do 31. mája. = Переплату ми вам повернемо до 31 травня. || zálohy − skutočné náklady = preplatok / nedoplatok
+T: Споживання й показники || «Spotreba» — споживання: «spotreba teplej vody», «spotreba tepla». Показники лічильників знімають під час «odpočtu»: «Odpočet vodomerov bude 15. januára.» Плату за воду в розрахунку часто називають «vodné a stočné» — за подану воду й за каналізацію. Тепло в будинку розподіляють між квартирами за лічильниками на радіаторах — це «rozúčtovanie» (розподіл витрат). || Spotreba teplej vody bola 28 m³. = Споживання гарячої води становило 28 м³. ;; Odpočet vodomerov bude v piatok ráno. = Зняття показників водомірів буде в п’ятницю вранці. || spotreba · odpočet · vodné a stočné · rozúčtovanie
+T: Заперечення проти розрахунку || Якщо сума здається неправильною, подай письмове заперечення — «námietku». Формули: «Podávam námietku proti vyúčtovaniu za rok 2025.», «Spotreba teplej vody sa mi zdá neprimerane vysoká.» (несумірно висока), «Žiadam o kontrolu odpočtu.», «Žiadam o predloženie podkladov.» (про надання підтвердних документів). Строк для заперечення зазвичай указано в самому розрахунку. || Podávam námietku proti vyúčtovaniu za rok 2025. = Подаю заперечення проти розрахунку за 2025 рік. ;; Žiadam o predloženie podkladov k rozúčtovaniu tepla. = Прошу надати документи щодо розподілу витрат на тепло. || námietka proti + давальний
+mis: námietka proti vyúčtovanie => námietka proti vyúčtovaniu ;; Spotreba sa mi zdá neprimerane vysoký. => Spotreba sa mi zdá neprimerane vysoká.
+W: zálohová platba | авансовий платіж | за:логова: платба | Zálohová platba za vodu je 35 eur mesačne. | Авансовий платіж за воду — 35 євро на місяць.
+W: spotreba | споживання | спотреба | Tento rok sme mali nižšiu spotrebu tepla. | Цього року в нас було менше споживання тепла.
+W: odpočet | зняття показників (лічильника) | одпочет | Pri odpočte musí byť niekto doma. | Під час зняття показників хтось має бути вдома.
+W: vodné a stočné | плата за воду й каналізацію | водне: а сточне: | Vodné a stočné tvorí veľkú časť vyúčtovania. | Плата за воду й каналізацію становить велику частину розрахунку.
+W: rozúčtovanie | розподіл витрат | розу:чтованіє | Rozúčtovanie tepla robí externá firma. | Розподіл витрат на тепло робить зовнішня фірма.
+W: námietka | заперечення | на:мьєтка | Proti vyúčtovaniu môžete podať námietku do 30 dní. | Проти розрахунку ви можете подати заперечення протягом 30 днів.
+X mt: З’єднай. | zálohová platba = авансовий платіж ;; spotreba = споживання ;; odpočet = зняття показників ;; vodné a stočné = плата за воду й каналізацію ;; rozúčtovanie = розподіл витрат ;; námietka = заперечення
+X doc: Прочитай річний розрахунок. | Vyúčtovanie za rok 2025 – byt č. 7 | Teplo: zálohy 540 €, skutočné náklady 640 € ;; Teplá voda: zálohy 300 €, skutočné náklady 260 € ;; Vodné a stočné: zálohy 240 €, skutočné náklady 210 € ;; Splatnosť: do 30. 6. 2026 | Який підсумок розрахунку? | *недоплата 30 € ;; переплата 30 € ;; переплата 70 €
+= За тепло недоплачено 100 €, за воду переплачено 40 + 30 = 70 €: разом недоплата 30 €.
+X dd: Обери. | Zálohové platby boli nižšie ako skutočné náklady, preto máme [*nedoplatok/preplatok/zálohu].
+= Заплатили менше, ніж витратили, — nedoplatok.
+X cz: - | Každý mesiac platíme {zálohy}. Raz za rok príde {vyúčtovanie}. Ak sme zaplatili viac, ako sme minuli, máme {preplatok}. Stav vodomerov zistí technik pri {odpočte}. | zálohy, vyúčtovanie, preplatok, odpočte
+X fb: Допиши. | Podávam námietku proti ___ za rok 2025. (розрахунку) | vyúčtovaniu |
+= proti + давальний відмінок: vyúčtovaniu.
+X msg: Прочитай оголошення управителя. | Správa domu Javorová | Vážení obyvatelia, odpočet vodomerov a meračov tepla sa uskutoční v stredu 15. 1. od 8:00 do 12:00. Ak v tom čase nebudete doma, nahláste stav meračov do 17. 1. e-mailom aj s fotografiou. Inak vám spotrebu určíme odhadom. | Що буде, якщо ти не повідомиш показники вчасно? | *споживання визначать приблизно ;; тобі нарахують штраф ;; тобі відключать воду
+= «Spotrebu určíme odhadom» — споживання визначать приблизно.
+X tf: - | Vyúčtovanie: «Teplá voda – zálohy 300 €, skutočné náklady 260 €.» | За гарячу воду є переплата 40 €. | T
+= Аванси більші за витрати на 40 € — це preplatok.
+X np: Тобі здається, що споживання гарячої води надто високе. Ти пишеш управителю. | *Spotreba teplej vody sa mi zdá neprimerane vysoká. Žiadam o kontrolu odpočtu. ;; Spotreba teplej vody sa mi zdá neprimerane vysokú. Žiadam o kontrola odpočtu. ;; Voda je drahá, nezaplatím. ;; Spotreba teplej vody je asi v poriadku, ďakujem.
+= Ввічливе, але чітке заперечення: zdá sa mi + прикметник у називному; žiadam o + знахідний.
+X fe: - | Žiadam o predloženie [podklady>podkladov] k rozúčtovaniu tepla.
+= predloženie + родовий відмінок: podkladov.
+X so: - | Попроси надати підтвердні документи. | Žiadam o predloženie podkladov.
+= Žiadam o + знахідний: o predloženie podkladov.
+X hm: - | Prenajímateľ: «Vyúčtovanie mi ešte neprišlo. Ale viete, minulú zimu ste mali okná stále otvorené a kúrenie naplno...» | *власник натякає, що чекає недоплати за тепло через марнування орендаря ;; власник радить частіше провітрювати ;; власник уже повернув переплату
+= Згадка про відчинені вікна й опалення — натяк на великий nedoplatok.
+X ce: Виправ речення. | Podávam námietku proti vyúčtovanie, lebo spotreba sa mi zdá neprimerane vysoký. | Podávam námietku proti vyúčtovaniu, lebo spotreba sa mi zdá neprimerane vysoká.
+= proti + давальний: vyúčtovaniu; spotreba — жіночий рід: vysoká.
+X cat: Як часто? | Platíme mesačne: zálohová platba, nájomné, príspevok do fondu opráv ;; Raz za rok: vyúčtovanie, odpočet vodomerov, vrátenie preplatku
+= Аванси й внески — щомісяця; розрахунок і показники — раз на рік.
+X ms: Які формулювання підходять для заперечення? | - | *Podávam námietku proti vyúčtovaniu za rok 2025. ;; *Žiadam o predloženie podkladov. ;; *Spotreba tepla sa mi zdá neprimerane vysoká. ;; Vaše vyúčtovanie je podvod a nezaplatím ani cent. ;; Podávam námietku proti vyúčtovanie.
+= Формально, конкретно й граматично правильно (proti vyúčtovaniu).
+X bd: - | Помилку в розрахунку виправили!
+> Správca: Dobrý deň, vraj máte otázku k vyúčtovaniu. | *Áno, spotreba teplej vody sa mi zdá neprimerane vysoká. Bývam v byte sama. ;; Áno, spotreba teplej vody sa mi zdá neprimerane vysokou. ;; Áno, vyúčtovanie zlé.
+> Správca: Pozriem sa… Podľa odpočtu ste mali 52 kubíkov. | *To nie je možné. Stav vodomeru mám odfotený, je tam 25. ;; To nie je možné, vodomer odfotiť som 25. ;; Dobre, tak zaplatím.
+> Správca: Máte pravdu, asi došlo k chybe pri prepise. | *Môžete mi teda poslať opravené vyúčtovanie? ;; Môžete mi teda poslať opravený vyúčtovanie? ;; Chyba je vaša, zaplaťte mi odškodné.
+> Správca: Samozrejme. Z nedoplatku bude preplatok. | *Výborne, ďakujem za rýchle vybavenie. ;; Výborne, ďakujem za rýchly vybavenie. ;; Aha, tak dobre, nič.
+F: Prekvapenie v schránke || У поштовій скриньці — річний розрахунок із недоплатою 180 €. Тобі ця сума здається завеликою.
+S: Ти пояснюєш подрузі, звідки береться nedoplatok. | *Zálohy boli nižšie ako skutočné náklady, musím doplatiť. ;; Zálohy boli vyššie ako skutočné náklady, musím doplatiť. ;; Zálohy boli nižšie ako skutočné náklady, vrátia mi peniaze.
+S: Ти починаєш лист управителю. | *Podávam námietku proti vyúčtovaniu za rok 2025. ;; Podávam námietku proti vyúčtovanie za rok 2025. ;; Podávam námietka proti vyúčtovaniu za rok 2025.
+S: Ти пояснюєш причину. | *Spotreba teplej vody sa mi zdá neprimerane vysoká. ;; Spotreba teplej vody sa mi zdá neprimerane vysoký. ;; Spotreba teplej vody je mi zdá vysoká.
+S: Ти просиш надати документи. | *Žiadam o predloženie podkladov. ;; Žiadam o predloženie podklady. ;; Žiadam predloženie o podkladov.
+R: zálohová platba, skutočné náklady, preplatok × nedoplatok ;; spotreba, odpočet, vodné a stočné, rozúčtovanie ;; Podávam námietku proti vyúčtovaniu… ;; Žiadam o predloženie podkladov / o kontrolu odpočtu.
+
+@lesson ukoncenie-zmluvy | Договір і його припинення | Zmluva a jej ukončenie
+desc: Як закінчується договір оренди — спливанням строку, за згодою сторін або через výpoveď — і як правильно написати й вручити повідомлення про розірвання.
+goal: Припинити оренду без конфлікту, дотримавшись строків і форми.
+out: розрізняти na dobu určitú / na dobu neurčitú та uplynutie doby ;; пропонувати ukončenie dohodou ;; рахувати výpovednú lehotu від дати вручення ;; писати výpoveď і надсилати її doporučene
+done: Ти вмієш правильно закінчити оренду. Далі — страхування домашнього майна.
+T: Три способи припинити договір || 1) «Uplynutím doby» — договір «na dobu určitú» закінчується сам у визначений день. 2) «Dohodou» — за згодою сторін: обидві сторони підписують дату закінчення; це найшвидший і найспокійніший шлях. 3) «Výpoveďou» — одна сторона розриває договір; так зазвичай закінчують договір «na dobu neurčitú». Власник може дати výpoveď лише з «výpovedným dôvodom», який визначає закон (наприклад, орендар не платить). Зміни до договору оформлюють як «dodatok k zmluve». || Zmluvu môžeme ukončiť dohodou k 31. marcu. = Ми можемо припинити договір за згодою сторін до 31 березня. ;; Nájom sa skončí uplynutím doby 30. júna. = Оренда закінчиться спливанням строку 30 червня. || uplynutím doby · dohodou · výpoveďou
+T: Výpovedná lehota || Для оренди квартири výpovedná lehota становить щонайменше три місяці. Вона починає спливати першого дня місяця, що настає після місяця, коли výpoveď вручили. Приклад: власник отримав výpoveď 12 травня → строк починається 1 червня → оренда закінчується 31 серпня. Тому вирішальна дата вручення, а не дата написання листа. || Výpovedná lehota začína plynúť prvým dňom nasledujúceho mesiaca. = Строк попередження починає спливати з першого дня наступного місяця. ;; Výpoveď mu doručili 12. mája. = Повідомлення про розірвання йому вручили 12 травня. || doručenie → 1. deň ďalšieho mesiaca → 3 mesiace
+T: Як написати výpoveď || Výpoveď має бути письмовою й підписаною. Типові фрази: «Týmto vypovedám nájomnú zmluvu zo dňa 1. 9. 2024.» (Цим розриваю договір оренди від…), «Byt odovzdám najneskôr posledný deň výpovednej lehoty.» Надсилай її «doporučene» з «doručenkou» (повідомленням про вручення) або передай особисто й попроси власника підписати, що він її отримав. Так матимеш доказ дати вручення. || Týmto vypovedám nájomnú zmluvu zo dňa 1. 9. 2024. = Цим я розриваю договір оренди від 01.09.2024. ;; Výpoveď som poslal doporučene s doručenkou. = Повідомлення я надіслав рекомендованим листом із повідомленням про вручення. || Týmto vypovedám… · doporučene s doručenkou
+mis: Týmto vypoviem zmluvu. => Týmto vypovedám zmluvu.
+W: vypovedať | розірвати (договір) в односторонньому порядку | виповедать | Nájomca môže zmluvu vypovedať aj bez udania dôvodu. | Орендар може розірвати договір і без зазначення причини.
+W: uplynutie | спливання, закінчення (строку) | уплинутіє | Nájom sa skončí uplynutím dohodnutej doby. | Оренда закінчиться зі спливанням погодженого строку.
+W: dohodou | за згодою (сторін) | догодоу | Zmluvu sme ukončili dohodou bez problémov. | Ми припинили договір за згодою сторін без проблем.
+W: pôvodný stav | початковий стан | пуоводни: став | Byt treba odovzdať v pôvodnom stave. | Квартиру треба передати в початковому стані.
+W: doporučene | рекомендованим листом | допоручене | Výpoveď pošlite doporučene s doručenkou. | Повідомлення про розірвання надішліть рекомендованим листом із повідомленням про вручення.
+W: dodatok k zmluve | додаткова угода (до договору) | додаток к змлуве | Nové nájomné sme zapísali do dodatku k zmluve. | Нову орендну плату ми записали в додаткову угоду до договору.
+X mt: З’єднай. | vypovedať = розірвати договір ;; uplynutie = спливання строку ;; dohodou = за згодою сторін ;; pôvodný stav = початковий стан ;; doporučene = рекомендованим листом ;; dodatok k zmluve = додаткова угода
+X sc: Власник отримав výpoveď 12 травня, výpovedná lehota — три місяці. Коли закінчиться оренда? | - | *31 серпня ;; 12 серпня ;; 31 липня
+= Строк починається 1 червня: червень, липень, серпень → 31 серпня.
+X dd: Обери. | Nájom sa skončí [*uplynutím/uplynutie/uplynutiu] doby 30. júna.
+= Орудний відмінок: uplynutím doby — зі спливанням строку.
+X cat: Як закінчується договір? | Uplynutím doby: zmluva skončí v deň uvedený v zmluve, netreba nič posielať ;; Dohodou: obe strany podpíšu dátum ukončenia, nájom môže skončiť aj o týždeň ;; Výpoveďou: trojmesačná výpovedná lehota, list poslaný doporučene
+= Три способи: спливання строку, згода сторін, výpoveď.
+X doc: Прочитай повідомлення про розірвання. | Výpoveď z nájmu bytu | Nájomca: Iryna Melnyk ;; Prenajímateľ: Ing. Peter Baláž ;; Byt: Hlavná 22, Prešov ;; Text: Týmto vypovedám nájomnú zmluvu zo dňa 1. 9. 2024. Byt odovzdám najneskôr posledný deň výpovednej lehoty. ;; Doručené prenajímateľovi: 24. 3. 2026 | Коли найпізніше Ірина має передати квартиру (строк — 3 місяці)? | *30 червня 2026 ;; 24 червня 2026 ;; 31 березня 2026
+= Вручено в березні → строк із 1 квітня → кінець 30 червня.
+X fb: Допиши. | Výpoveď pošlite ___ s doručenkou. (рекомендованим листом) | doporučene |
+= doporučene — рекомендованим листом.
+X np: Ти хочеш запропонувати власникові закінчити оренду раніше за згодою сторін. | *Nemohli by sme zmluvu ukončiť dohodou už k 31. máju? ;; Nemohli by sme zmluvu ukončiť dohoda už k 31. máju? ;; Končím zajtra, zbohom. ;; Nemohli by sme zmluvu ukončiť výpoveďou dohodou zajtra?
+= ukončiť dohodou — орудний відмінок; ввічливо — nemohli by sme.
+X tf: - | Nájomná zmluva: «Nájom sa uzatvára na dobu určitú od 1. 7. 2025 do 30. 6. 2026.» | Цей договір закінчиться спливанням строку 30 червня 2026 року. | T
+= Na dobu určitú — договір закінчується сам у визначений день.
+X fe: - | Výpoveď pošlite doporučene s [doručenka>doručenkou] na adresu prenajímateľa.
+= s + орудний відмінок: s doručenkou.
+X tr: Перетвори на офіційну формулу розірвання. | Chcem zrušiť nájomnú zmluvu. | Týmto vypovedám nájomnú zmluvu.
+= Týmto vypovedám + знахідний — стандартна формула.
+X hm: - | Prenajímateľ: «Výpoveď? Dobre. Len upozorňujem, že kauciu vraciam až po odovzdaní bytu v pôvodnom stave.» | *власник натякає, що ретельно перевірить квартиру й може утримати частину застави ;; власник поверне заставу одразу ;; власник не приймає výpoveď
+= «Len upozorňujem» — попередження: стан квартири вплине на заставу.
+X msg: Прочитай повідомлення від власника. | Pán Baláž | Dobrý deň, pani Melnyk, rozumiem, že sa sťahujete skôr. Ak nájdete nového nájomcu do 1. mája, môžeme zmluvu ukončiť dohodou k 30. aprílu. Inak platí trojmesačná výpovedná lehota. | За якої умови оренду можна закінчити 30 квітня? | *якщо Ірина знайде нового орендаря до 1 травня ;; якщо Ірина заплатить штраф ;; за будь-яких умов
+= «Ak nájdete nového nájomcu do 1. mája» — така умова.
+X dr: - | Prenajímateľ: Chceli by ste zmluvu predĺžiť o ďalší rok? | *Áno, rád. Pripravíte dodatok k zmluve? ;; Áno, rád. Pripravíte dodatku k zmluve? ;; Áno, výpoveď.
+= pripraviť + знахідний: dodatok k zmluve.
+X ms: Що обов’язково має бути у výpovedi? | - | *meno nájomcu a prenajímateľa ;; *odkaz na nájomnú zmluvu a jej dátum ;; *podpis ;; dôvod, prečo sa nájomca sťahuje ;; fotografia bytu
+= Орендар не мусить пояснювати причину; потрібні сторони, договір і підпис.
+X bd: - | Ти закінчив(ла) оренду без конфлікту!
+> Prenajímateľ: Dobrý deň, pani Melnyk, vraj sa sťahujete? | *Áno, dostala som prácu v Bratislave. Chcela by som zmluvu ukončiť. ;; Áno, dostala som práca v Bratislave. ;; Áno, končím, ahoj.
+> Prenajímateľ: Viete, že výpovedná lehota sú tri mesiace? | *Viem. Nemohli by sme sa však dohodnúť na skoršom termíne? ;; Viem. Nemohli by sme sa však dohodnúť na skorší termín? ;; Neviem a nezaujíma ma to.
+> Prenajímateľ: Ak mi nájdete nového nájomcu, môžeme skončiť dohodou. | *Výborne. Dáme si to potom písomne? ;; Výborne. Dať si to potom písomný? ;; Nového nájomcu hľadať nebudem.
+> Prenajímateľ: Samozrejme, pripravím dohodu o ukončení nájmu. | *Ďakujem. Byt vám odovzdám v pôvodnom stave. ;; Ďakujem. Byt vám odovzdám v pôvodný stav. ;; Ďakujem, kľúče niekedy hodím do schránky.
+F: Nová práca, nové mesto || Ти отримав(ла) роботу в іншому місті й маєш припинити оренду квартири в Пряшеві. Договір укладено na dobu neurčitú.
+S: Ти пропонуєш власникові закінчити за згодою. | *Nemohli by sme zmluvu ukončiť dohodou? ;; Nemohli by sme zmluvu ukončiť dohoda? ;; Nemohli by sme zmluvu ukončiť s dohodou?
+S: Власник не погоджується. Як почнеш výpoveď? | *Týmto vypovedám nájomnú zmluvu zo dňa 1. 9. 2024. ;; Týmto vypovedať nájomnú zmluvu zo dňa 1. 9. 2024. ;; Týmto vypovedám nájomná zmluva zo dňa 1. 9. 2024.
+S: Як надіслати výpoveď, щоб мати доказ? | *doporučene s doručenkou ;; звичайним листом ;; повідомленням у месенджері
+S: Výpoveď вручили 5 жовтня. Коли закінчиться оренда? | *31 січня ;; 5 січня ;; 31 грудня
+R: uplynutím doby · dohodou · výpoveďou ;; výpovedná lehota: 3 місяці з 1-го числа наступного місяця ;; Týmto vypovedám nájomnú zmluvu… ;; doporučene s doručenkou, dodatok k zmluve
+
+@lesson poistenie-domacnosti | Страхування домашнього майна | Poistenie domácnosti
+desc: Чим відрізняються страхування нерухомості, домашнього майна й відповідальності, що означають poistná suma, spoluúčasť, poistné і як укласти поліс.
+goal: Обрати потрібне страхування й зрозуміти головні умови поліса.
+out: розрізняти poistenie nehnuteľnosti, domácnosti й zodpovednosti ;; розуміти poistka, poistná suma, spoluúčasť ;; відрізняти poistné від poistného plnenia ;; питати агента: Vzťahuje sa poistenie aj na…?
+done: Ти розумієш свій поліс. Далі — шкода: що робити, коли щось сталося.
+T: Що страхують || «Poistenie nehnuteľnosti» — страхування самої квартири: стін, підлоги, вікон; його укладає власник. «Poistenie domácnosti» — страхування речей у квартирі: меблів, техніки, одягу; його може укласти й орендар. «Poistenie zodpovednosti» — якщо ти випадково завдав(ла) шкоди іншим, наприклад затопив(ла) сусідів, страхова заплатить за тебе. Часто їх поєднують в одному полісі — «poistke». || Ako nájomca si môžem uzavrieť poistenie domácnosti. = Як орендар я можу укласти страхування домашнього майна. ;; Poistenie zodpovednosti kryje škody, ktoré spôsobíte susedom. = Страхування відповідальності покриває шкоду, яку ви заподієте сусідам. || nehnuteľnosť × domácnosť × zodpovednosť
+T: Умови поліса || «Poistná suma» — максимальна сума, яку страхова може виплатити. «Spoluúčasť» — частина шкоди, яку ти платиш сам (франшиза): при spoluúčasti 50 € і шкоді 400 € страхова заплатить 350 €. «Poistné» — скільки платиш ТИ за страхування (щомісяця або раз на рік). «Poistná udalosť» — страховий випадок: пожежа, крадіжка, затоплення. Те, що страхова виплачує ТОБІ, — «poistné plnenie». || Spoluúčasť je 50 eur. = Франшиза становить 50 євро. ;; Poistné platím raz ročne. = Страховий внесок я плачу раз на рік. || poistné (платиш ти) × poistné plnenie (платять тобі)
+mis: Poistné plnenie platím každý mesiac. => Poistné platím každý mesiac.
+T: Питання агентові || «Chcel(a) by som si uzavrieť poistenie domácnosti.» «Na akú sumu by ste mi odporučili poistiť domácnosť?» Корисна конструкція — «vzťahovať sa na» + знахідний (поширюватися на): «Vzťahuje sa poistenie aj na bicykel v pivnici?» А також: «Čo poistenie nekryje?» — Чого страхування не покриває? Нижча spoluúčasť означає вище poistné, і навпаки. || Vzťahuje sa poistenie aj na notebook? = Чи поширюється страхування й на ноутбук? ;; Čo poistenie nekryje? = Чого страхування не покриває? || vzťahovať sa na + знахідний
+mis: Vzťahuje sa na notebooku? => Vzťahuje sa na notebook?
+W: poistenie domácnosti | страхування домашнього майна | поістеніє дома:цності | Poistenie domácnosti kryje aj krádež. | Страхування домашнього майна покриває й крадіжку.
+W: poistka | страховий поліс | поістка | Poistku mám uloženú v e-maile. | Поліс у мене збережений в електронній пошті.
+W: poistná udalosť | страховий випадок | поістна: удалость | Vytopenie bytu je poistná udalosť. | Затоплення квартири — страховий випадок.
+W: spoluúčasť | франшиза (власна частка участі) | сполуу:часть | Pri spoluúčasti 100 eur je poistné nižšie. | При франшизі 100 євро страховий внесок нижчий.
+W: poistné plnenie | страхова виплата | поістне: пльненіє | Poistné plnenie mi prišlo na účet za dva týždne. | Страхова виплата надійшла мені на рахунок за два тижні.
+W: poistenie zodpovednosti | страхування відповідальності | поістеніє зодповедності | Vďaka poisteniu zodpovednosti som nemusel platiť susedom. | Завдяки страхуванню відповідальності мені не довелося платити сусідам.
+X mt: З’єднай. | poistenie domácnosti = страхування домашнього майна ;; poistka = страховий поліс ;; poistná udalosť = страховий випадок ;; spoluúčasť = франшиза ;; poistné plnenie = страхова виплата ;; poistenie zodpovednosti = страхування відповідальності
+X cat: Яке страхування спрацює? | Poistenie domácnosti: ukradnutý notebook, zhorená sedačka po požiari, poškodený televízor po skrate ;; Poistenie zodpovednosti: vytopený sused pod vami, rozbité okno u suseda loptou, auto suseda poškodené kvetináčom z vášho balkóna
+= Свої речі — домашнє майно; шкода іншим — відповідальність.
+X sc: Шкода — 400 €, spoluúčasť — 50 €. Скільки заплатить страхова? | - | *350 € ;; 400 € ;; 450 €
+= Франшизу (50 €) платиш сам: 400 − 50 = 350 €.
+X dd: Обери. | Vzťahuje sa poistenie aj na [*bicykel/bicykli/bicyklom] v pivnici?
+= vzťahovať sa na + знахідний: na bicykel.
+X doc: Прочитай поліс. | Poistná zmluva – Poistenie domácnosti | Poistník: Andrij Savčuk ;; Miesto poistenia: Mierová 3, Košice, byt č. 15 ;; Poistná suma: 20 000 € ;; Spoluúčasť: 70 € ;; Ročné poistné: 64 € ;; Výluky: hotovosť nad 500 €, veci v spoločných priestoroch | Скільки Андрій платить за страхування на рік? | *64 € ;; 70 € ;; 20 000 €
+= Ročné poistné — щорічний внесок; 70 € — це франшиза, 20 000 € — страхова сума.
+X tf: - | Poistka: «Poistenie sa nevzťahuje na veci uložené v spoločných priestoroch domu.» | Велосипед, украдений зі спільного підвалу будинку, страхова покриє. | F
+= Spoločné priestory (спільний підвал) — виняток, страхування на них не поширюється.
+X fb: Допиши. | Po požiari mi poisťovňa vyplatila poistné ___. (виплату) | plnenie |
+= Poistné plnenie — страхова виплата.
+X np: Ти хочеш спитати агента, чи поширюється страхування на ноутбук. | *Vzťahuje sa poistenie aj na notebook? ;; Vzťahuje sa poistenie aj na notebooku? ;; Vzťahuje poistenie notebook aj sa? ;; Poistenie je notebook?
+= vzťahovať sa na + знахідний: na notebook.
+X mic: - | Agent: «Pri vyššej spoluúčasti budete mať nižšie poistné, ale menšie škody si zaplatíte sami.» | poistné | *страховий внесок, який платить клієнт ;; страхова виплата клієнтові ;; страховий агент
+= poistné — те, що платиш ти; poistné plnenie — те, що платять тобі.
+X fe: - | Ako nájomca si môžem uzavrieť poistenie [domácnosť>domácnosti].
+= poistenie + родовий відмінок: domácnosti.
+X tr: Перетвори на ввічливе прохання з «Chcel by som…». | Chcem uzavrieť poistenie domácnosti. | Chcel by som si uzavrieť poistenie domácnosti. ;; Chcel by som uzavrieť poistenie domácnosti.
+= chcel by som — умовний спосіб, ввічливіше за chcem.
+X rc: - | Keď sme sa s manželom presťahovali do Trenčína, prenajali sme si dvojizbový byt. Majiteľ mal poistenú nehnuteľnosť, ale naše veci poistené neboli. Kolegyňa nám poradila, aby sme si uzavreli poistenie domácnosti spolu s poistením zodpovednosti. Platíme 7 eur mesačne a spoluúčasť je 50 eur. O pol roka nám praskla hadica pri umývačke riadu a voda zatiekla susedom pod nami. Poisťovňa im z nášho poistenia zodpovednosti zaplatila nový strop aj maľovanie. Naša podlaha bola tiež poškodená, ale tú zaplatila poisťovňa majiteľa, lebo podlaha patrí k nehnuteľnosti. My sme zaplatili len spoluúčasť.
+q~: Чому подружжю довелося укласти власне страхування? | *поліс власника покривав лише саму квартиру, а не їхні речі ;; власник вимагав цього в договорі ;; так порадив управитель будинку
+q~: Хто заплатив за ремонт стелі в сусідів? | *страхова — з їхнього страхування відповідальності ;; власник квартири ;; подружжя з власних грошей
+q~: Чому підлогу оплатила страхова власника? | *бо підлога належить до нерухомості ;; бо подружжя не платило внесків ;; бо шкода була меншою за франшизу
+X ms: Які питання правильні й доречні в розмові зі страховим агентом? | - | *Aká je spoluúčasť? ;; *Čo poistenie nekryje? ;; *Vzťahuje sa poistenie aj na pivnicu? ;; Vzťahuje sa poistenie aj na pivnici? ;; Koľko je poistná udalosť mesačne?
+= vzťahovať sa na + знахідний: na pivnicu; poistná udalosť — випадок, а не платіж.
+X dr: - | Agentka: Akú spoluúčasť si želáte – 50, alebo 150 eur? | *Radšej 50 eur, aj keď bude poistné vyššie. ;; Radšej 50 eur, aj keď bude poistné nižšie. ;; Spoluúčasť áno, prosím.
+= Нижча франшиза — вищий страховий внесок, а не нижчий.
+X bd: - | Ти уклав(ла) вигідне страхування!
+> Agent: Dobrý deň, čo pre vás môžem urobiť? | *Dobrý deň, chcel by som si uzavrieť poistenie domácnosti. Byt mám v prenájme. ;; Dobrý deň, chcel by som si uzavrieť poistenie domácnosť. ;; Poistenie, rýchlo, áno.
+> Agent: Rozumiem. Odporúčam aj poistenie zodpovednosti. | *Čo presne kryje? Napríklad keby som vytopil suseda? ;; Čo presne kryjú? Napríklad keby som vytopiť suseda? ;; Nie, to je zbytočné, nikdy sa nič nestane.
+> Agent: Áno, presne tak. Na akú sumu chcete poistiť domácnosť? | *Myslím, že 15 000 eur bude stačiť. ;; Myslím, že 15 000 eur budú stačiť. ;; Poistná suma mesačne päť.
+> Agent: Výborne. Máte ešte nejakú otázku? | *Áno, vzťahuje sa poistenie aj na bicykel v pivnici? ;; Áno, vzťahuje sa poistenie aj na bicykli v pivnici? ;; Nie, nechápem nič, ale podpíšem.
+F: Prvá poistka || Ти переїхав(ла) в орендовану квартиру в Тренчині й хочеш застрахувати свої речі.
+S: Ти пояснюєш агентові, що хочеш. | *Chcel by som si uzavrieť poistenie domácnosti. ;; Chcel by som si uzavrieť poistenie domácnosť. ;; Chcel by som si uzavrieť poistenú domácnosť.
+S: Ти питаєш про франшизу. | *Aká je spoluúčasť? ;; Aký je spoluúčasť? ;; Aké je spoluúčasť?
+S: Агент: «Poistné je 6 eur mesačne.» Що це? | *скільки ти платиш за страхування щомісяця ;; скільки тобі виплатять у разі шкоди ;; розмір франшизи
+S: Ти хочеш захиститися на випадок, якщо затопиш сусідів. Що попросиш? | *poistenie zodpovednosti ;; poistenie nehnuteľnosti ;; poistné plnenie
+R: poistenie domácnosti × nehnuteľnosti × zodpovednosti ;; poistka, poistná suma, spoluúčasť ;; poistné (платиш ти) × poistné plnenie (платять тобі) ;; Vzťahuje sa poistenie aj na + знахідний?
+
+@lesson skoda | Шкода | Škoda
+desc: Що робити, коли сталося затоплення, пожежа чи крадіжка: як розповісти про подію, хто відповідає за шкоду і як заявити страховий випадок.
+goal: Описати шкоду в минулому часі, домовитися із сусідом і повідомити страхову.
+out: розповідати, як виникла шкода: praskla hadica, vytopil som suseda ;; говорити про вину: bez môjho zavinenia, škodu spôsobil… ;; повідомляти страхову про poistnú udalosť ;; розуміти obhliadka, likvidátor, náhrada škody
+done: Ти вмієш діяти, коли сталася шкода. Далі — як домовитися й знайти компроміс.
+T: Як розповісти, що сталося || Розповідь про шкоду — у минулому часі, чітко по черзі: «Keď som bol v práci, praskla hadica od práčky.» — «Keď som prišiel domov, voda bola všade.» — «Hneď som zavrel hlavný uzáver.» Дієслово «vytopiť» — затопити когось: «vytopil som suseda» (я затопив сусіда), «vytopili nás» (нас затопили). Пасив: «Náš byt bol vytopený.» || Keď sme boli na dovolenke, vytopil nás sused zhora. = Коли ми були у відпустці, нас затопив сусід згори. ;; Praskla hadica a voda zatiekla do bytu pod nami. = Лопнув шланг, і вода затекла до квартири під нами. || keď + минулий час · vytopiť niekoho
+mis: Vytopil som sa suseda. => Vytopil som suseda. ;; Praskol hadica. => Praskla hadica.
+T: Вина й відповідальність || Хто відповідає: «Škodu spôsobil…» (шкоду спричинив), «Za škodu zodpovedá vlastník bytu.» Якщо винен не ти: «Škoda vznikla bez môjho zavinenia.» (не з моєї вини). Потерпілий може вимагати «náhradu škody» — відшкодування збитків. Якщо маєш poistenie zodpovednosti, не плати сам готівкою — передай справу страховій. || Škoda vznikla bez môjho zavinenia. = Шкода виникла не з моєї вини. ;; Sused žiada náhradu škody 800 eur. = Сусід вимагає відшкодування збитків у розмірі 800 євро. || bez môjho zavinenia · žiadať náhradu škody
+T: Заява до страхової || Повідом про «poistnú udalosť» якомога швидше — телефоном, онлайн або в застосунку. Тебе спитають: «Kedy a kde udalosť vznikla?», «Ako ku škode došlo?», «Aký je rozsah škody?» (обсяг). Сфотографуй усе й нічого не викидай до «obhliadky» — огляду на місці. Огляд проводить «likvidátor» — працівник страхової, який оцінює шкоду. При крадіжці потрібен ще й протокол поліції. || Škodu som nahlásila hneď na druhý deň. = Про шкоду я повідомила одразу наступного дня. ;; Likvidátor príde na obhliadku v pondelok. = Оцінювач прийде на огляд у понеділок. || fotografie → nahlásenie → obhliadka → plnenie
+W: vytopiť | затопити (когось, приміщення) | витопіть | Minulý týždeň nás vytopil sused z piateho poschodia. | Минулого тижня нас затопив сусід із п’ятого поверху.
+W: poškodiť | пошкодити | пошкодіть | Voda poškodila parkety aj nábytok. | Вода пошкодила паркет і меблі.
+W: náhrada škody | відшкодування збитків | на:града шкоди | Sused od nás žiada náhradu škody. | Сусід вимагає від нас відшкодування збитків.
+W: zavinenie | вина | завіненіє | Požiar vznikol bez zavinenia nájomcu. | Пожежа виникла не з вини орендаря.
+W: obhliadka | огляд (на місці) | обглядка | Do obhliadky nič nevyhadzujte. | До огляду нічого не викидайте.
+W: likvidátor | оцінювач збитків (у страховій) | ліквіда:тор | Likvidátor odfotil všetky poškodené veci. | Оцінювач сфотографував усі пошкоджені речі.
+X mt: З’єднай. | vytopiť = затопити ;; poškodiť = пошкодити ;; náhrada škody = відшкодування збитків ;; zavinenie = вина ;; obhliadka = огляд на місці ;; likvidátor = оцінювач збитків
+X dd: Обери. | Keď sme boli na dovolenke, [*vytopil/vytopila/vytopilo] nás sused zhora.
+= sused — чоловічий рід: vytopil.
+X sch: Подивись, як просувається страхова справа. | Poistná udalosť č. 2026/5531 | 3. 2. = nahlásenie škody cez aplikáciu ;; 5. 2. = obhliadka likvidátorom ;; 12. 2. = posúdenie rozsahu škody ;; 19. 2. = výplata poistného plnenia | Коли оцінювач оглянув квартиру? | *5 лютого ;; 3 лютого ;; 19 лютого
+= Obhliadka likvidátorom — 5. 2.
+X so: - | Скажи, що шкода виникла не з твоєї вини. | Škoda vznikla bez môjho zavinenia.
+= bez + родовий: bez môjho zavinenia.
+X fb: Допиши. | Voda ___ parkety aj nábytok. (пошкодила) | poškodila |
+= voda — жіночий рід: poškodila.
+X do: Розстав розмову із сусідом знизу в правильному порядку. | Sused: Dobrý deň, z vášho bytu nám tečie voda zo stropu! ;; Ty: Preboha, prepáčte! Hneď idem zavrieť vodu. ;; Sused: Máme mokrý strop a poškodenú skriňu. ;; Ty: Veľmi ma to mrzí. Mám poistenie zodpovednosti, škodu nahlásim ešte dnes. ;; Sused: Dobre. Budem potrebovať číslo poistnej udalosti. ;; Ty: Samozrejme, pošlem vám ho hneď, ako ho dostanem.
+X tfl: - | Hlásenie škody. Dňa 3. 2. 2026 okolo 14:00 praskla v kuchyni hadica pri umývačke riadu. V tom čase som bol v práci. Voda poškodila podlahu v kuchyni a zatiekla aj do bytu č. 8 pod nami. Po príchode domov o 17:30 som zavrel hlavný uzáver vody a informoval suseda. Poškodené veci som odfotil a nič som nevyhodil. | *Шланг лопнув, коли автора не було вдома. ;; *Вода потрапила й до квартири знизу. ;; Автор закрив воду одразу о 14:00. ;; Автор викинув зіпсовані речі. ;; *Автор сфотографував пошкоджені речі.
+X mic: - | Agentka: «Likvidátor príde na obhliadku vo štvrtok. Dovtedy, prosím, nič nevyhadzujte.» | obhliadku | *огляд пошкоджень на місці ;; прибирання квартири ;; ремонт підлоги
+= obhliadka — огляд, під час якого оцінюють шкоду.
+X np: Сусід вимагає, щоб ти одразу заплатив(ла) готівкою, але в тебе є страхування відповідальності. | *Rozumiem, ale mám poistenie zodpovednosti. Škodu vám uhradí poisťovňa. ;; Rozumiem, ale mám poistenie zodpovednosť. Škodu vám uhradí poisťovňa. ;; Nič vám nezaplatím, je to váš problém. ;; Zaplatím vám hneď, poisťovňa nie je dôležitá.
+= Ввічливо відсилаєш до страхової; poistenie + родовий: zodpovednosti.
+X fe: - | Sused od nás žiada náhradu [škoda>škody] za poškodený strop.
+= náhrada + родовий відмінок: škody.
+X sc: Що зробити найперше, коли з твоєї квартири тече вода до сусідів? | - | *закрити головний кран води ;; зателефонувати страховому агентові ;; сфотографувати квартиру
+= Спершу зупини шкоду, потім — фото й заява до страхової.
+X ce: Виправ речення. | Keď som bola v práci, praskol hadica a vytopila som suseda. | Keď som bola v práci, praskla hadica a vytopila som suseda.
+= hadica — жіночий рід: praskla.
+X tone: - | Sused: «No výborne. Nový strop, nová maľovka a teraz zase voda. Ďakujem pekne, susedia.» | *іронічний, роздратований ;; щиро вдячний ;; спокійний, нейтральний
+= «Ďakujem pekne» тут — іронія.
+X ms: Що спитає страхова, коли ти повідомляєш про шкоду? | - | *Kedy a kde udalosť vznikla? ;; *Ako ku škode došlo? ;; *Aký je rozsah škody? ;; Prečo bývate v prenájme? ;; Koľko zarábate mesačne?
+= Страхова питає про час, місце, причину й обсяг шкоди.
+X bd: - | Страхову справу відкрито без проблем!
+> Operátorka: Poisťovňa, dobrý deň. Ako vám môžem pomôcť? | *Dobrý deň, chcel by som nahlásiť poistnú udalosť. Vytopil som suseda. ;; Dobrý deň, chcel by som nahlásiť poistnú udalosť. Vytopil som sa suseda. ;; Voda, sused, pomoc!
+> Operátorka: Kedy a ako ku škode došlo? | *Včera popoludní praskla hadica pri práčke. Bol som v práci. ;; Včera popoludní praskol hadica pri práčke. ;; Neviem, nejako.
+> Operátorka: Máte fotografie poškodenia? | *Áno, všetko som odfotil a nič som nevyhodil. ;; Áno, všetko som odfotiť. ;; Nie, všetko som už vyhodil.
+> Operátorka: Dobre. Likvidátor príde na obhliadku v pondelok. | *Ďakujem. Môžem dostať číslo poistnej udalosti pre suseda? ;; Ďakujem. Môžem dostať číslo poistná udalosť? ;; Pondelok nie, nikdy.
+F: Voda u susedov || Поки ти був(ла) на роботі в Банській Бистриці, лопнув шланг пральної машини, і вода затекла до сусідів знизу.
+S: Ти вибачаєшся перед сусідом. | *Veľmi ma to mrzí. Hneď som zavrel vodu. ;; Veľmi ma to mrzím. Hneď som zavrel vodu. ;; Mrzí, voda zavrieť.
+S: Ти пояснюєш, що сталося. | *Keď som bol v práci, praskla hadica pri práčke. ;; Keď som bol v práci, praskol hadica pri práčke. ;; Keď som byť v práci, hadica praskla.
+S: Сусід вимагає 600 € готівкою. | *Mám poistenie zodpovednosti, škodu vám uhradí poisťovňa. ;; Hneď vám dám 600 eur, papiere netreba. ;; To nie je moja vec.
+S: Страхова каже: «Likvidátor príde na obhliadku.» Що буде? | *працівник страхової прийде оглянути й оцінити шкоду ;; прийде майстер ремонтувати стелю ;; страхова закриє справу без огляду
+R: keď + минулий час: praskla hadica, vytopil som suseda ;; bez môjho zavinenia, náhrada škody ;; nahlásiť poistnú udalosť: kedy, kde, ako, rozsah ;; obhliadka, likvidátor
+
+@lesson dohoda | Домовленість і компроміс | Dohoda
+desc: Як вести переговори з власником квартири чи сусідом: пропонувати, ставити умови, висувати зустрічні пропозиції й закріплювати домовленість письмово.
+goal: Домовитися про орендну плату, графік платежів чи інші умови так, щоб обидві сторони були задоволені.
+out: пропонувати: Navrhujem, aby… / Čo keby sme…? ;; ставити умови: pod podmienkou, že… ;; висувати protinávrh і шукати kompromis ;; закріплювати домовленість: Dajme si to písomne.
+done: Ти вмієш домовлятися. Далі — підсумок розділу.
+T: Пропозиція || Пропонуй м’яко: «Čo keby sme…?» (А що, якби ми…?), «Bolo by možné…?» (Чи можна було б…?), «Navrhujem, aby ste…» — після «aby» стоїть форма на -l / -li: «Navrhujem, aby ste mi znížili nájomné.» Якщо твою пропозицію відхилили, висунь «protinávrh» — зустрічну пропозицію. || Navrhujem, aby sme nedoplatok rozdelili na tri splátky. = Пропоную розділити недоплату на три платежі. ;; Čo keby sme to rozdelili napoly? = А що, якби ми розділили це навпіл? || aby + -l / -li
+mis: Navrhujem, aby ste znížite nájomné. => Navrhujem, aby ste znížili nájomné.
+T: Умови й поступки || «Súhlasím, ale pod podmienkou, že…» — погоджуюся, але за умови, що… «Môžem vám vyjsť v ústrety, ak…» — можу піти вам назустріч, якщо… Ввічлива, але тверда відмова: «To je pre mňa, žiaľ, neprijateľné.» Людину, яка охоче йде на поступки, називають «ústretový»: «Majiteľ bol veľmi ústretový.» || Súhlasím, ale pod podmienkou, že nájomné zaplatíte do pätnásteho. = Погоджуюся, але за умови, що ви сплатите оренду до п’ятнадцятого. ;; Môžem vám vyjsť v ústrety, ak podpíšete zmluvu na dva roky. = Можу піти вам назустріч, якщо підпишете договір на два роки. || pod podmienkou, že… · vyjsť v ústrety
+T: Закріпи домовленість || Усні домовленості — «ústne dohody» — важко довести. Тому кажи: «Dajme si to písomne.» Борг можна розкласти за «splátkovým kalendárom» — графіком платежів. Зміну орендної плати оформлюють як dodatok k zmluve. Після розмови підсумуй домовленість e-mailом: «Ako sme sa dohodli, …» — Як ми домовилися, … || Dajme si to písomne, aby nevznikli nedorozumenia. = Зафіксуймо це письмово, щоб не виникло непорозумінь. ;; Ako sme sa dohodli, nedoplatok zaplatím v troch splátkach. = Як ми домовилися, недоплату я сплачу трьома платежами. || ústne → písomne
+W: kompromis | компроміс | компроміс | Nakoniec sme našli kompromis, ktorý vyhovuje obom. | Зрештою ми знайшли компроміс, який підходить обом.
+W: ústretový | поступливий, готовий піти назустріч | у:стретові: | Majiteľ bytu bol veľmi ústretový. | Власник квартири був дуже поступливим.
+W: ústupok | поступка | у:ступок | Obe strany museli urobiť malý ústupok. | Обом сторонам довелося піти на невелику поступку.
+W: protinávrh | зустрічна пропозиція | протіна:врг | Majiteľ odmietol zľavu, ale dal protinávrh. | Власник відмовив у знижці, але висунув зустрічну пропозицію.
+W: splátkový kalendár | графік платежів | спла:ткові: календа:р | Na nedoplatok sme dostali splátkový kalendár. | На недоплату ми отримали графік платежів.
+W: neprijateľný | неприйнятний | непріятельни: | Zvýšenie o sto eur je pre mňa neprijateľné. | Підвищення на сто євро для мене неприйнятне.
+X mt: З’єднай. | kompromis = компроміс ;; ústretový = поступливий ;; ústupok = поступка ;; protinávrh = зустрічна пропозиція ;; splátkový kalendár = графік платежів ;; neprijateľný = неприйнятний
+X dd: Обери. | Navrhujem, aby ste mi [*znížili/znížite/znížiť] nájomné o 30 eur.
+= aby ste + форма на -li: znížili.
+X dd: Обери. | Súhlasím, ale pod [*podmienkou/podmienka/podmienke], že zaplatíte do pätnásteho.
+= pod + орудний відмінок: pod podmienkou.
+X np: Ти хочеш попросити власника розкласти недоплату 300 € на кілька платежів. | *Bolo by možné rozložiť nedoplatok na tri splátky? ;; Bolo by možné rozložiť nedoplatok na tri splátok? ;; Daj mi splátky, nemám peniaze. ;; Rozložiť splátky nedoplatok by bolo?
+= Bolo by možné…? — ввічливе прохання; na tri splátky (знахідний множини).
+X rc: - | Olena býva v prenájme v Bratislave už dva roky. Keď jej majiteľ oznámil, že od septembra zvýši nájomné o 80 eur, rozhodla sa vyjednávať. Napísala mu, že je spoľahlivá nájomníčka, vždy platí načas a byt udržiava v dobrom stave. Navrhla, aby nájomné zvýšil len o 30 eur. Majiteľ dal protinávrh: zvýši ho o 50 eur, ale iba pod podmienkou, že Olena podpíše zmluvu na ďalšie dva roky. Olena súhlasila, lebo sa nechcela sťahovať. Majiteľ ju ešte poprosil, aby si drobné opravy riešila sama. Všetko si dali písomne do dodatku k zmluve.
+q~: Чим Олена обґрунтувала свою пропозицію? | *вона надійна орендарка: платить вчасно й дбає про квартиру ;; у неї маленька дитина ;; в інших квартирах оренда дешевша
+q~: На скільки зрештою зросте орендна плата? | *на 50 € ;; на 30 € ;; на 80 €
+q~: Як вони закріпили домовленість? | *додатковою угодою до договору ;; усно за кавою ;; повідомленням у месенджері
+X fb: Допиши. | Majiteľ bytu bol veľmi ___ a dal nám zľavu. (поступливий) | ústretový |
+= ústretový — готовий піти назустріч.
+X fe: - | Navrhujem, aby sme nedoplatok [rozdelíme>rozdelili] na tri splátky.
+= aby sme + форма на -li: rozdelili.
+X reg: - | Dovoľujem si Vám navrhnúť zníženie nájomného o 30 eur. | formal
+= «Dovoľujem si Vám navrhnúť» — офіційний стиль.
+X hm: - | Majiteľ: «Zľavu vám dať nemôžem. Ale keby ste si drobné opravy robili sami, o niečom by sa dalo uvažovať.» | *власник готовий поступитися, якщо орендар візьме дрібні ремонти на себе ;; власник категорично відмовляє ;; власник сам робитиме всі ремонти
+= «O niečom by sa dalo uvažovať» — натяк на можливу поступку з умовою.
+X cat: Це пропозиція чи відмова? | Návrh: Čo keby sme to rozdelili napoly?, Navrhujem dve splátky., Bolo by možné posunúť termín? ;; Odmietnutie: To je pre mňa neprijateľné., S tým nemôžem súhlasiť., Na to nepristúpim.
+= Пропозиції відкривають розмову, відмови її закривають.
+X so: - | Запропонуй зафіксувати домовленість письмово. | Dajme si to písomne.
+= Dajme si to písomne — зафіксуймо письмово.
+X tr: Перетвори пряму вимогу на пропозицію з «Navrhujem, aby ste…». | Znížte mi nájomné! | Navrhujem, aby ste mi znížili nájomné.
+= Navrhujem, aby ste + форма на -li.
+X dr: - | Majiteľ: Zľavu 50 eur vám dať nemôžem. | *Rozumiem. Čo keby sme sa dohodli na 30 eurách? ;; Rozumiem. Čo keby sme sa dohodli na 30 eurá? ;; Tak sa sťahujem, zbohom.
+= dohodnúť sa na + місцевий відмінок: na 30 eurách.
+X msg: Прочитай e-mail після переговорів. | Ing. Kováč | Dobrý deň, pani Bondarenko, ako sme sa včera ústne dohodli, nedoplatok 360 € môžete zaplatiť v troch mesačných splátkach po 120 €, vždy spolu s nájomným. Prvá splátka je splatná 15. októbra. Ak vám to vyhovuje, potvrďte mi to, prosím, odpoveďou na tento e-mail. | Що має зробити пані Бондаренко? | *підтвердити домовленість відповіддю на e-mail ;; одразу сплатити 360 € ;; підписати новий договір оренди
+= «Potvrďte mi to odpoveďou na tento e-mail» — усну домовленість закріплюють письмово.
+X bd: - | Ви знайшли компроміс, і все записано!
+> Majiteľ: Od januára zvyšujem nájomné o 100 eur. | *Rozumiem, ale to je pre mňa veľa. Môžeme sa o tom porozprávať? ;; Dobre, nič, zaplatím. ;; To je neprijateľné, ste zlodej!
+> Majiteľ: A čo navrhujete? | *Navrhujem, aby ste ho zvýšili len o 50 eur. Vždy platím načas. ;; Navrhujem, aby ste ho zvýšite len o 50 eur. ;; Navrhujem nič zvyšovať.
+> Majiteľ: Hm. Súhlasím, ale pod podmienkou, že podpíšete zmluvu na dva roky. | *To je férový kompromis. Súhlasím. ;; To je férová kompromis. Súhlasím. ;; Dva roky? Nikdy!
+> Majiteľ: Výborne. | *Dajme si to písomne do dodatku k zmluve. ;; Dajme si to písomný do dodatku k zmluve. ;; Ústne to stačí, papiere sú zbytočné.
+F: Vyššie nájomné || Власник квартири в Трнаві повідомив, що піднімає орендну плату на 120 €. Ти хочеш домовитися.
+S: Ти пропонуєш менше підвищення. | *Navrhujem, aby ste nájomné zvýšili len o 60 eur. ;; Navrhujem, aby ste nájomné zvýšite len o 60 eur. ;; Navrhujem, aby ste nájomné zvýšiť len o 60 eur.
+S: Власник: «Dobre, ale len ak si drobné opravy budete platiť sami.» Це… | *зустрічна пропозиція з умовою ;; категорична відмова ;; згода без жодних умов
+S: Ти погоджуєшся з умовою. | *Súhlasím, ale pod podmienkou, že to bude v zmluve. ;; Súhlasím, ale pod podmienka, že to bude v zmluve. ;; Súhlasím, ale na podmienke, že to bude v zmluve.
+S: Ти пропонуєш зафіксувати домовленість. | *Dajme si to písomne. ;; Dajme si to ústne. ;; Dajme si to písomný.
+R: Navrhujem, aby ste + -li / Čo keby sme…? / Bolo by možné…? ;; pod podmienkou, že… / vyjsť v ústrety ;; protinávrh, kompromis, ústretový ;; ústne × písomne, splátkový kalendár, dodatok k zmluve
+
+@lesson opakovanie | Підсумок: проблеми з житлом | Opakovanie: problémy s bývaním
+desc: Підсумок розділу: поломки, сусіди, управитель, рекламації, розрахунки, договір, страхування, шкода й домовленості — в одній історії.
+goal: Упевнено розв’язувати житлові проблеми усно й письмово.
+out: повідомляти про поломки й шкоду та вимагати їх усунення ;; вирішувати конфлікти із сусідами й звертатися до управителя ;; читати розрахунки, поліси й договори ;; писати рекламації, заперечення й výpoveď та домовлятися
+done: Ти пройшов(ла) розділ «Проблеми з житлом». Далі — Здоров’я B1: симптоми, лікарі-спеціалісти й обстеження.
+T: Поломки, сусіди, будинок || Поломка: «Pokazil sa bojler. Prosím Vás o bezodkladné odstránenie poruchy.» Дрібні ремонти платить орендар, великі — власник. Сусіди: «Prepáčte, že vás ruším, ale…», «Bol by som rád, keby ste…». Будинок: správca або spoločenstvo vlastníkov, schôdza, hlasovanie za / proti, fond opráv. || Bol by som rád, keby ste po desiatej nevŕtali. = Я був би радий, якби ви після десятої не свердлили. ;; Obraciam sa na Vás so žiadosťou o opravu výťahu. = Звертаюся до Вас із проханням про ремонт ліфта. || keby ste + -li · so žiadosťou o + знахідний
+T: Гроші й документи || Рекламація: «Reklamujem…», «Žiadam o kompenzáciu.» Розрахунок: zálohy проти skutočných nákladov → preplatok або nedoplatok; «Podávam námietku proti vyúčtovaniu.» Договір закінчується uplynutím doby, dohodou або výpoveďou; «Týmto vypovedám nájomnú zmluvu…», надсилати doporučene. || Žiadam o primeranú zľavu z mesačného poplatku. = Прошу про відповідну знижку з місячної плати. ;; Výpovedná lehota začína plynúť prvým dňom nasledujúceho mesiaca. = Строк попередження починає спливати з першого дня наступного місяця. || Žiadam o… · námietka proti + давальний
+T: Страхування, шкода, домовленість || Страхування: poistenie domácnosti, poistenie zodpovednosti; spoluúčasť, poistné × poistné plnenie. Шкода: «Keď som bol v práci, praskla hadica», «bez môjho zavinenia», nahlásiť poistnú udalosť, obhliadka. Домовленість: «Navrhujem, aby…», «pod podmienkou, že…», protinávrh, «Dajme si to písomne.» || Škoda vznikla bez môjho zavinenia. = Шкода виникла не з моєї вини. ;; Súhlasím, ale pod podmienkou, že to bude v dodatku k zmluve. = Погоджуюся, але за умови, що це буде в додатковій угоді. || aby + -li · pod podmienkou, že…
+W: vysťahovať sa | виселитися, з’їхати (з квартири) | вистяговать са | Z bytu sa vysťahujeme do konca marca. | Ми з’їдемо з квартири до кінця березня.
+W: riešenie | рішення, розв’язання (проблеми) | рьєшеніє | Hľadáme riešenie, ktoré bude vyhovovať obom stranám. | Ми шукаємо рішення, яке влаштує обидві сторони.
+W: technik | технік, майстер | технік | Technik vymenil tesnenie za desať minút. | Технік замінив прокладку за десять хвилин.
+W: svojpomocne | власними силами, самотужки | свойпомоцне | Drobné opravy robím svojpomocne. | Дрібні ремонти я роблю власними силами.
+X mt: З’єднай. | bojler = бойлер ;; vŕtať = свердлити ;; fond opráv = ремонтний фонд ;; námietka = заперечення ;; spoluúčasť = франшиза ;; protinávrh = зустрічна пропозиція
+X rc: - | Taras býva s rodinou v prenajatom byte v Nitre. Tento rok mal veľa starostí. V januári sa pokazil bojler. Taras poslal majiteľovi e-mail s fotografiami, technik prišiel do dvoch dní a výmenu zaplatil majiteľ. Na jar susedia nad nimi začali rekonštrukciu a vŕtali aj v nedeľu. Taras sa s nimi najprv pokúsil pokojne porozprávať, a keď to nepomohlo, napísal sťažnosť správcovi. V máji prišlo vyúčtovanie s nedoplatkom 240 eur. Taras podal námietku, lebo spotreba vody bola dvojnásobná. Ukázalo sa, že pri odpočte došlo k chybe. V lete mu pri umývaní okien spadol kvetináč a poškodil susedovi auto. Škodu uhradila poisťovňa z poistenia zodpovednosti. Na konci roka sa s majiteľom dohodol na predĺžení zmluvy o rok bez zvýšenia nájomného.
+q~: Хто заплатив за новий бойлер? | *власник квартири ;; Тарас ;; страхова
+q~: Чому Тарас подав заперечення проти розрахунку? | *споживання води було вдвічі більшим через помилку під час зняття показників ;; він не мав грошей на недоплату ;; управитель забув надіслати розрахунок
+q~: Чим закінчився рік? | *договір продовжили на рік без підвищення орендної плати ;; Тарас переїхав в іншу квартиру ;; орендна плата зросла
+X dd: Обери. | Bol by som rád, keby ste v nedeľu [*nevŕtali/nevŕtate/nevŕtať].
+= keby ste + форма на -li: nevŕtali.
+X dd: Обери. | Podávam námietku proti [*vyúčtovaniu/vyúčtovanie/vyúčtovaním] za rok 2025.
+= proti + давальний відмінок: vyúčtovaniu.
+X cat: До якої теми належить вираз? | Susedia: nočný pokoj, búchanie po polnoci, pes šteká ;; Poisťovňa: spoluúčasť, likvidátor, poistné plnenie ;; Zmluva: výpovedná lehota, dodatok k zmluve, uplynutie doby
+= Сусіди, страхова, договір.
+X fe: - | Týmto vypovedám nájomnú [zmluva>zmluvu] zo dňa 1. 3. 2025.
+= vypovedať + знахідний: zmluvu.
+X doc: Прочитай розрахунок. | Vyúčtovanie 2025 – byt č. 4 | Zálohy spolu: 1 320 € ;; Skutočné náklady spolu: 1 185 € ;; Výsledok: preplatok ;; Vrátenie: do 31. 5. 2026 na účet nájomcu | Яка сума переплати? | *135 € ;; 1 185 € ;; 1 320 €
+= 1 320 € − 1 185 € = 135 € переплати.
+X np: Тебе затоплює сусід згори, і ти йому пишеш. | *Dobrý deň, z vášho bytu nám zateká voda do kúpeľne. Môžete to, prosím, hneď skontrolovať? ;; Dobrý deň, z vášho bytu nám zateká vodu do kúpeľne. ;; Vytopili ste ma, zaplaťte hneď tisíc eur! ;; Voda, kúpeľňa, prosím, kontrola.
+= Факт + ввічливе прохання; voda — підмет у називному відмінку.
+X tr: Перетвори на ввічливе прохання до управителя, почни з «Obraciam sa na Vás so žiadosťou o…». | Opravte výťah! | Obraciam sa na Vás so žiadosťou o opravu výťahu.
+= so žiadosťou o + знахідний: o opravu výťahu.
+X tone: - | E-mail od majiteľa: «Pani Melnyk, už tretíkrát Vám pripomínam nezaplatené nájomné. Ak ho neuhradíte do piatku, budem nútený zmluvu vypovedať.» | *різкий, з останнім попередженням ;; дружній і жартівливий ;; вибачливий
+= «Už tretíkrát» + погроза výpovede — останнє попередження.
+X ce: Виправ речення. | Navrhujem, aby ste mi znížite nájomné, a ja podpíšem zmluvu na dva roky. | Navrhujem, aby ste mi znížili nájomné, a ja podpíšem zmluvu na dva roky.
+= aby ste + форма на -li: znížili.
+X ms: Які речення правильні? | - | *Pokazila sa práčka. ;; *Hlasujem za zateplenie. ;; *Vzťahuje sa poistenie aj na bicykel? ;; Pokazil sa práčka. ;; Hlasujem proti návrh.
+= práčka — ж. р.: pokazila sa; proti + давальний: proti návrhu.
+X sc: Шкода — 900 €, spoluúčasť — 100 €. Скільки виплатить страхова? | - | *800 € ;; 900 € ;; 1 000 €
+= 900 € − 100 € франшизи = 800 €.
+X so: - | Скажи офіційною формулою, що розриваєш договір оренди. | Týmto vypovedám nájomnú zmluvu.
+= Týmto vypovedám + знахідний.
+X bd: - | Ти розв’язав(ла) всі проблеми з квартирою!
+> Majiteľ: Dobrý deň, vraj máte nejaký problém? | *Áno, pokazil sa bojler. Prosím o bezodkladné odstránenie poruchy. ;; Áno, pokazila sa bojler. Prosím o odstránenie porucha. ;; Bojler, zle, rýchlo.
+> Majiteľ: Dobre, technik príde zajtra. A ešte jedna vec: od marca zvyšujem nájomné. | *Rozumiem. Čo keby sme sa dohodli na menšom zvýšení? ;; Rozumiem. Čo keby sme sa dohodli na menšie zvýšenie? ;; Tak vám dávam výpoveď hneď dnes.
+> Majiteľ: O 40 eur namiesto 80? Ale pod podmienkou, že predĺžime zmluvu. | *Súhlasím. Dajme si to písomne do dodatku k zmluve. ;; Súhlasím. Dajme si to písomný do dodatku k zmluve. ;; Ústne to stačí, papiere netreba.
+> Majiteľ: Výborne, pripravím dodatok. | *Ďakujem, ste veľmi ústretový. ;; Ďakujem, ste veľmi ústretová. ;; Ďakujem, ste veľmi ústretovosť.
+F: Rok v prenajatom byte || Ти орендуєш квартиру в Нітрі. За рік сталося все: гучні сусіди, розрахунок із помилкою, переїзд і переговори з власником.
+S: Сусіди гучно слухають музику після десятої. Ти їх просиш. | *Bol by som rád, keby ste po desiatej stíšili hudbu. ;; Bol by som rád, keby ste po desiatej stíšite hudbu. ;; Bol by som rád, keď stíšiť hudbu.
+S: У розрахунку завелика сума за воду. | *Podávam námietku proti vyúčtovaniu, spotreba sa mi zdá neprimerane vysoká. ;; Podávam námietku proti vyúčtovanie, spotreba je vysoký. ;; Vyúčtovanie je podvod.
+S: Ти вирішив(ла) переїхати. Як надіслати výpoveď? | *doporučene s doručenkou ;; SMS-повідомленням ;; усно телефоном
+S: Власник пропонує знижку, якщо продовжиш договір. Ти погоджуєшся й просиш усе зафіксувати. | *Súhlasím. Dajme si to písomne. ;; Súhlasím. Dajme si to ústne. ;; Súhlasím. Dajme si to písomný.
+R: porucha, sťažnosť na susedov, žiadosť správcovi ;; reklamácia, námietka proti vyúčtovaniu, výpoveď ;; poistenie, škoda, poistná udalosť ;; vyjednávanie: Navrhujem, aby… / pod podmienkou, že…

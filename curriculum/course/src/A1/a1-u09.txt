@@ -1,0 +1,439 @@
+@unit a1-u09 | Магазин і покупки | V obchode
+
+@lesson balenie | Упаковки й кількість | Balenie a množstvo
+desc: Як просити товари в упаковках: balenie, plechovka, krabička, vrecko, liter, gram.
+goal: Правильно називати кількість і упаковку товару.
+out: казати balenie / plechovka / vrecko + родовий ;; розуміти літри й грами на етикетках ;; казати dve balenia, päť balení ;; просити 300 gramov syra
+done: Тепер ти просиш потрібну кількість. Далі — супермаркет.
+T: Упаковки || balenie (упаковка), plechovka (бляшанка), krabička (коробочка), vrecko (пакетик), téglik (стаканчик — йогурт, сметана), tuba (тюбик). Після них — родовий: plechovka fazule, vrecko cukru. || Kúpim balenie kávy. = Куплю упаковку кави. ;; Dve plechovky piva. = Дві бляшанки пива. || упаковка + родовий
+T: Літри й грами || liter (л), gram (г), kilogram / kilo, deka (10 г). «Pol litra» — пів літра, «tristo gramov» — 300 г. У гастрономі часто: «dvadsať deka šunky» (200 г). || Liter mlieka. = Літр молока. ;; Tridsať deka syra, prosím. = 300 г сиру, будь ласка. || 1 deka = 10 g
+T: 1, 2–4, 5+ || jedno balenie, dve balenia, päť balení; jedna plechovka, tri plechovky, šesť plechoviek. || Mám päť balení. = У мене п’ять упаковок. ;; Šesť plechoviek coly. = Шість бляшанок коли. || 5+ → родовий мн.
+W: balenie | упаковка | баленіє | Jedno balenie má desať kusov. | Одна упаковка — десять штук.
+W: plechovka | бляшанка | плеховка | Plechovka fazule stojí euro. | Бляшанка квасолі коштує євро.
+W: krabička | коробочка | крабічка | Krabička čaju. | Коробочка чаю.
+W: vrecko | пакетик | врецко | Vrecko cukru, prosím. | Пакетик цукру, будь ласка.
+W: liter | літр | літер | Dva litre mlieka. | Два літри молока.
+W: gram | грам | ґрам | Sto gramov orieškov. | Сто грамів горішків.
+X mt: З’єднай. | balenie = упаковка ;; plechovka = бляшанка ;; krabička = коробочка ;; vrecko = пакетик ;; liter = літр
+X dd: Обери форму. | Kúpim tri [*balenia/balení/balenie] vody.
+= 2–4 → balenia.
+X dd: Обери форму. | Potrebujem šesť [*plechoviek/plechovky/plechovka].
+= 5+ → родовий мн.: plechoviek.
+X sc~: Скільки це «dvadsať deka»? | - | *200 г ;; 20 г ;; 2 кг
+= 1 deka = 10 г.
+X tf: - | - | «Liter mlieka» — правильна форма (liter + родовий). | T
+= liter + mlieka.
+X fb: Допиши. | Vrecko ___, prosím. (цукру) | cukru | Родовий.
+= vrecko cukru.
+X so: - | Попроси 300 грамів сиру по-гастрономічному (deka). | Tridsať deka syra, prosím.
+= tridsať deka + syra.
+X fe: - | Kúpim dve [balení>balenia] kávy.
+= 2–4 → balenia.
+X cat: Що в якій упаковці? | plechovka: pivo, fazuľa, kukurica ;; vrecko: cukor, múka, ryža ;; krabička: čaj, cigarety, zápalky
+= Типові упаковки.
+X np: У гастрономі ти просиш 150 грамів шинки. | *Pätnásť deka šunky, prosím. ;; Pätnásť šunka deka. ;; Šunku pätnásť, prosím deka. ;; Sto päťdesiat šunky.
+= pätnásť deka + šunky.
+X dr: - | Predavačka: Koľko vám dám? | *Dvadsať deka, prosím. ;; Dvadsať deky. ;; Dva deka.
+= Кількість у дека.
+X ms: Обери правильні форми. | - | *liter mlieka ;; *päť balení ;; *vrecko múky ;; dve balení ;; vrecko múka
+= Родовий після упаковки.
+F: У гастрономі супермаркету || Ти купуєш продукти для пікніка.
+S: Ти просиш 200 г шинки. | *Dvadsať deka šunky, prosím. ;; Dvesto šunky. ;; Šunka dvadsať deka.
+S: «Ešte niečo?» (300 г сиру) | *Tridsať deka syra. ;; Tri deka syr. ;; Syr tridsať.
+S: Потім ти береш напої: шість бляшанок води. | *Šesť plechoviek vody. ;; Šesť plechovky vody. ;; Šesť plechovka.
+S: На полиці «Balenie: 6 × 0,5 l». Що це означає? | *у паку 6 пляшок по 0,5 л ;; 6 літрів в одній пляшці ;; 0,5 л за 6 €
+R: balenie, plechovka, krabička, vrecko + родовий ;; liter, gram, deka ;; dve balenia, päť balení
+
+@lesson supermarket | У супермаркеті | V supermarkete
+desc: Як орієнтуватися в супермаркеті: košík, vozík, regál, oddelenie, pokladňa.
+goal: Знайти потрібний відділ і товар у супермаркеті.
+out: називати košík і vozík ;; розуміти назви відділів ;; питати V ktorom regáli…? ;; розуміти вказівки персоналу
+done: Супермаркет більше не лабіринт. Далі — як знайти потрібний товар.
+T: Візок і кошик || «Košík» — кошик, «vozík» — візок (часто потрібна монета 1 € або жетон). «Nákupný vozík» — візок для покупок. || Vezmem si košík. = Візьму кошик. ;; Na vozík potrebujem euro. = Для візка потрібне євро. || košík / vozík
+T: Відділи || «Oddelenie» — відділ: ovocie a zelenina, mäso a údeniny (м’ясо й ковбаси), mliečne výrobky, pečivo, nápoje, drogéria (побутова хімія), mrazené výrobky (заморожені). «Regál» — стелаж, «uličky» — ряди. || Mlieko je na oddelení mliečnych výrobkov. = Молоко у відділі молочних продуктів. || oddelenie, regál
+T: Персонал || «Prepáčte, kde nájdem…?» — вибачте, де знайти…? Відповіді: «V treťom regáli», «Na konci uličky», «Pri pokladniach». || Kde nájdem múku? — V uličke číslo päť. = Де знайти борошно? — У ряду номер п’ять. || Kde nájdem…?
+W: supermarket | супермаркет | супермаркет | Supermarket je otvorený do desiatej. | Супермаркет працює до десятої.
+W: košík | кошик | коші:к | Vezmi si košík. | Візьми кошик.
+W: vozík | візок | возі:к | Vozík je plný. | Візок повний.
+W: regál | стелаж, полиця в магазині | реґа:л | Cestoviny sú v druhom regáli. | Макарони на другому стелажі.
+W: oddelenie | відділ | одделеніє | Kde je oddelenie mäsa? | Де м’ясний відділ?
+W: pokladňa | каса | покладня | Pokladňa číslo tri je otvorená. | Каса номер три відкрита.
+X mt: З’єднай. | košík = кошик ;; vozík = візок ;; regál = стелаж ;; oddelenie = відділ ;; pokladňa = каса
+X cat: У якому відділі? | mliečne výrobky: jogurt, tvaroh, smotana ;; pečivo: rožok, žemľa, chlieb ;; mrazené výrobky: zmrzlina, mrazená zelenina, pizza
+= Відділи супермаркету.
+X dd: Обери. | Cestoviny sú v [*druhom/druhý/druhá] regáli.
+= v + місцевий: v druhom regáli.
+X sc~: Що означає «Na vozík potrebujete euro»? | - | *для візка потрібна монета 1 € ;; візок коштує 1 € на годину ;; візки лише для покупок на 1 €
+= Монета-застава.
+X tf: - | - | «Drogéria» в супермаркеті — це відділ ліків. | F
+= drogéria — побутова хімія й косметика. Ліки — lekáreň.
+X fb: Допиши. | Prepáčte, kde ___ múku? (знайду) | nájdem |
+= Kde nájdem…?
+X so: - | Запитай, де м’ясний відділ. | Kde je oddelenie mäsa?
+= Kde je + oddelenie…
+X fe: - | Pokladňa [čísla>číslo] tri je otvorená.
+= pokladňa číslo tri.
+X np: Ти не можеш знайти рис. Питаєш працівника. | *Prepáčte, kde nájdem ryžu? ;; Ryža je kde nájdem? ;; Prepáčte, ryža nájdem. ;; Kde ryža?
+= Kde nájdem + знахідний.
+X hm: Працівник каже: «Ryža je hneď vedľa cestovín, na konci uličky.» Що робити? | *шукати поруч із макаронами в кінці ряду ;; іти до каси ;; рис закінчився
+= vedľa cestovín — поруч із макаронами.
+X ms: Обери речі, з якими ходять у супермаркеті. | - | *košík ;; *vozík ;; *nákupný zoznam ;; regál ;; pokladňa
+= З собою беруть кошик, візок, список.
+X dr: - | Pracovník: Môžem vám pomôcť? | *Áno, hľadám mrazenú zeleninu. ;; Áno, hľadám mrazená zelenina. ;; Nie, áno.
+= Що шукаєш.
+F: Великі покупки || Ти в гіпермаркеті вперше.
+S: Візок прикутий ланцюжком. Ти питаєш покупця. | *Prepáčte, ako si vezmem vozík? ;; Vozík je kde? ;; Ahoj, vozík.
+S: «Musíte doň dať euro.» Що робити? | *вставити монету 1 € ;; заплатити на касі ;; взяти кошик
+S: Ти шукаєш заморожені овочі. | *Kde je oddelenie mrazených výrobkov? ;; Kde je mrazené oddelenia? ;; Mrazené kde?
+S: «Na konci obchodu, vľavo.» Де? | *у кінці магазину ліворуч ;; на початку праворуч ;; біля каси
+R: košík, vozík, regál, oddelenie, pokladňa ;; Kde nájdem…? ;; mliečne výrobky, pečivo, drogéria
+
+@lesson hladam-tovar | Шукаю товар | Hľadám tovar
+desc: Як знайти конкретний товар: tovar, značka, vypredaný, dostupný, mať na sklade.
+goal: Запитати про наявність товару й зрозуміти відповідь.
+out: питати Máte…? / Kde nájdem…? ;; розуміти vypredané / nie je na sklade ;; питати про značka ;; розуміти, коли товар буде
+done: Тепер ти знайдеш будь-який товар. Далі — на касі.
+T: Товар і бренд || «Tovar» — товар, «značka» — марка, бренд. «Akú značku?» — яку марку? «Lacnejšia značka» — дешевша марка. || Hľadám tento tovar. = Шукаю цей товар. ;; Máte inú značku? = У вас є інша марка? || značka = бренд
+T: Є чи немає || «Je vypredané» — розпродано. «Nie je na sklade» — немає на складі. «Bude zajtra» — буде завтра. «Dostupné aj online» — доступно онлайн. || Táto veľkosť je vypredaná. = Цей розмір розпродано. ;; Bude to na sklade v piatok. = Це буде в наявності в п’ятницю. || vypredané / na sklade
+T: Показати фото || У магазині корисно показати фото: «Máte niečo také?» — у вас є щось таке? «Toto hľadám» — ось що шукаю. || Máte niečo také, ale menšie? = У вас є щось таке, але менше? || Máte niečo také?
+W: tovar | товар | товар | Tovar je v akcii do nedele. | Товар зі знижкою до неділі.
+W: značka | марка, бренд | значка | Akú značku odporúčate? | Яку марку порадите?
+W: nájsť | знайти | на:йсть | Nemôžem nájsť cukor. | Не можу знайти цукор.
+W: vypredaný | розпроданий | випредані: | Chlieb je už vypredaný. | Хліб уже розпродано.
+W: na sklade | у наявності | на складзе | Máte to na sklade? | Це є в наявності?
+W: dostupný | доступний | досту:пні: | Je to dostupné aj v inej farbe? | Це є і в іншому кольорі?
+X mt: З’єднай. | tovar = товар ;; značka = бренд ;; nájsť = знайти ;; vypredaný = розпроданий ;; na sklade = у наявності
+X sc~: Що означає «Nie je to na sklade»? | - | *цього немає в наявності ;; це на складі за магазином ;; це заборонено
+= na sklade — у наявності.
+X dd: Обери. | Chlieb je už [*vypredaný/vypredaná/vypredané].
+= chlieb — vypredaný.
+X dr: - | Predavačka: Táto značka je vypredaná. | *A máte inú značku? ;; A máte vypredaná? ;; Značka je dobre.
+= Попроси альтернативу.
+X tf: - | - | «Bude zajtra» означає, що товар з’явиться завтра. | T
+= bude — буде.
+X fb: Допиши. | Nemôžem ___ cukor. (знайти) | nájsť |
+= nájsť — знайти.
+X so: - | Запитай, чи це є в наявності. | Máte to na sklade?
+= Máte + to + na sklade?
+X fe: - | Je to [dostupná>dostupné] aj v inej farbe?
+= to — dostupné.
+X np: Ти показуєш продавцю фото зарядки на телефоні. | *Máte niečo také? ;; Kde je toto také? ;; Toto je také máte? ;; Taký máš?
+= Máte niečo také?
+X msg: - | Drogéria DM | Vami objednaný tovar je pripravený na vyzdvihnutie v predajni do 15. 10. | Що з товаром? | *його можна забрати в магазині до 15.10 ;; його доставлять додому ;; його розпродали
+= pripravený na vyzdvihnutie — готовий до видачі.
+X cat: Є чи немає? | Je: na sklade, dostupné, máme ;; Nie je: vypredané, nie je na sklade, chýba
+= Наявність.
+X ms: Обери питання про наявність. | - | *Máte to na sklade? ;; *Kedy to bude? ;; *Je to dostupné? ;; Je to vypredané dostupné? ;; Tovar je značka?
+= Питання.
+F: Шукаю дитяче харчування || Потрібне конкретне дитяче харчування, а полиця порожня.
+S: Ти питаєш працівницю. | *Prepáčte, máte túto detskú výživu? ;; Detská výživa je kde máte. ;; Prepáčte, výživa vypredaný.
+S: «Je vypredaná, bude v pondelok.» Що відповіли? | *розпродано, буде в понеділок ;; є на складі ;; більше не продається
+S: Ти питаєш про іншу марку. | *Máte inú značku? ;; Máte iná značka? ;; Značka iné?
+S: «Áno, táto je podobná a lacnejšia.» Що пропонують? | *схожу й дешевшу марку ;; дорожчу ;; таку ж
+R: tovar, značka ;; nájsť, Kde nájdem…? ;; vypredané, na sklade, dostupné ;; Máte niečo také?
+
+@lesson pri-pokladni | На касі | Pri pokladni
+desc: Діалог на касі: nákupná taška, samoobslužná pokladňa, vernostná karta, zaplatiť, terminál.
+goal: Пройти касу без стресу й зрозуміти питання касира.
+out: розуміти Máte vernostnú kartu? ;; відповідати про пакет: Tašku nepotrebujem ;; користуватися samoobslužná pokladňa ;; розуміти інструкції терміналу
+done: Каса пройдена! Далі — способи оплати.
+T: Питання касира || «Máte vernostnú kartu?» — у вас є картка лояльності? «Potrebujete tašku?» — потрібен пакет? «Bloček?» — чек? Відповіді: «Nie, ďakujem», «Áno, jednu tašku». || Tašku nepotrebujem, mám svoju. = Пакет не потрібен, маю свій. || vernostná karta, taška
+T: Каса самообслуговування || «Samoobslužná pokladňa» — каса самообслуговування. Екрани: «Naskenujte tovar» (відскануйте товар), «Položte tovar do priestoru» (покладіть товар), «Zvoľte spôsob platby» (оберіть спосіб оплати). || Naskenujte čiarový kód. = Відскануйте штрихкод. || naskenujte, položte, zvoľte
+T: Пакети || Пакети платні: «Taška stojí 15 centov». «Papierová / plastová taška». Багато хто носить «nákupnú tašku» (еко-сумку). || Jednu papierovú tašku, prosím. = Один паперовий пакет, будь ласка. || taška = пакет / сумка
+W: nákupná taška | сумка для покупок, пакет | на:купна: ташка | Mám vlastnú nákupnú tašku. | У мене своя сумка для покупок.
+W: samoobslužná pokladňa | каса самообслуговування | самообслужна: покладня | Idem na samoobslužnú pokladňu. | Я йду на касу самообслуговування.
+W: vernostná karta | картка лояльності | верностна: карта | Máte vernostnú kartu? | У вас є картка лояльності?
+W: zaplatiť | заплатити | заплатіть | Zaplatím kartou. | Я заплачу карткою.
+W: terminál | термінал | термінал | Priložte kartu k terminálu. | Прикладіть картку до терміналу.
+W: naskenovať | відсканувати | наскеновать | Naskenujte tovar. | Відскануйте товар.
+X mt: З’єднай. | nákupná taška = сумка для покупок ;; vernostná karta = картка лояльності ;; zaplatiť = заплатити ;; terminál = термінал ;; naskenovať = відсканувати
+X dr: - | Pokladníčka: Máte vernostnú kartu? | *Nie, nemám. ;; Nie, nemáte. ;; Áno, vernostná.
+= Коротка відповідь.
+X dr: - | Pokladník: Potrebujete tašku? | *Nie, ďakujem, mám vlastnú. ;; Áno, mám tašku nie. ;; Taška je.
+= Ввічлива відмова.
+X sc~: На екрані: «Zvoľte spôsob platby». Що робити? | - | *обрати спосіб оплати ;; зважити товар ;; покликати касира
+= zvoľte — оберіть.
+X do: - | Naskenujte tovar. ;; Položte tovar do priestoru. ;; Zvoľte spôsob platby. ;; Priložte kartu. ;; Vezmite si bloček.
+= Етапи каси самообслуговування.
+X tf: - | - | Пакети в словацьких супермаркетах зазвичай платні. | T
+= Taška stojí pár centov.
+X fb: Допиши. | ___ kartu k terminálu. (прикладіть) | Priložte |
+= Priložte kartu.
+X so: - | Скажи, що заплатиш карткою. | Zaplatím kartou.
+= Zaplatím + kartou.
+X fe: - | Mám [vlastný>vlastnú] nákupnú tašku.
+= taška — vlastnú.
+X hm: Каса самообслуговування пищить: «Neočakávaný predmet v priestore balenia.» Що сталося? | *на зоні пакування є неочікуваний предмет ;; оплата не пройшла ;; товар розпродано
+= neočakávaný predmet — неочікуваний предмет.
+X np: Тобі потрібен один паперовий пакет. | *Jednu papierovú tašku, prosím. ;; Jedna papierová taška, prosím. ;; Tašku papier jednu. ;; Papierovú prosím.
+= Знахідний: jednu papierovú tašku.
+X ms: Обери питання касира. | - | *Máte vernostnú kartu? ;; *Potrebujete tašku? ;; *Bloček? ;; Kde nájdem múku? ;; Máte to na sklade?
+= Питання на касі.
+F: Каса самообслуговування || Ти вперше користуєшся касою самообслуговування.
+S: Екран: «Naskenujte prvý tovar.» | *скануєш перший товар ;; платиш ;; кличеш касира
+S: Яблука без штрихкоду. Екран: «Vyberte ovocie zo zoznamu.» | *обираєш яблука зі списку на екрані ;; скануєш пакет ;; кладеш їх назад
+S: Помилка. Ти кличеш працівника. | *Prepáčte, môžete mi pomôcť? ;; Prepáčte, pomáham. ;; Pomoc, pokladňa!
+S: «Priložte kartu.» Що робиш? | *прикладаю картку до терміналу ;; вставляю гроші ;; беру чек
+R: nákupná taška, vernostná karta ;; samoobslužná pokladňa: naskenujte, položte, zvoľte ;; zaplatiť, terminál
+
+@lesson platba | Способи оплати | Platba
+desc: Як платити: platobná karta, PIN, bezkontaktne, hotovosť, mince, vydať — і що робити, якщо картка не проходить.
+goal: Розплатитися будь-яким способом і вирішити проблему з оплатою.
+out: казати Platím kartou / v hotovosti ;; розуміти Zadajte PIN ;; розуміти bezkontaktne ;; реагувати: Karta neprešla
+done: Оплата без проблем. Далі — акції й знижки.
+T: Картка || «Platobná karta» — платіжна картка. «Bezkontaktne» — безконтактно. «Zadajte PIN» — введіть PIN. «Mobilom» — телефоном. || Môžem platiť mobilom? = Можна оплатити телефоном? ;; Zadajte PIN a potvrďte. = Введіть PIN і підтвердьте. || bezkontaktne / PIN
+T: Готівка || «Hotovosť» — готівка, «bankovka» — банкнота, «mince» — монети. «Vydať» — дати решту: «Vydám vám päť eur». «Máte drobné?» (вже знаєш). || Nemám drobné, len päťdesiat eur. = Не маю дрібних, лише 50 євро. ;; Vydajte mi, prosím, v minciach. = Дайте решту монетами. || vydať = дати решту
+T: Проблема || «Karta neprešla» — оплата карткою не пройшла. «Skúste znova» — спробуйте знову. «Platba bola zamietnutá» — платіж відхилено. || Prepáčte, karta neprešla. Skúsim inú. = Вибачте, картка не пройшла. Спробую іншу. || neprešla = не пройшла
+W: platobná karta | платіжна картка | платобна: карта | Zabudol som platobnú kartu. | Я забув платіжну картку.
+W: PIN | PIN-код | пін | Zadajte PIN. | Введіть PIN.
+W: bezkontaktne | безконтактно | безконтактне | Platím bezkontaktne. | Я плачу безконтактно.
+W: hotovosť | готівка | готовост | Mám len hotovosť. | У мене лише готівка.
+W: mince | монети | мінце | Mám veľa mincí. | У мене багато монет.
+W: vydať | дати решту; видати | видать | Vydám vám desať eur. | Дам вам десять євро решти.
+X mt: З’єднай. | platobná karta = платіжна картка ;; bezkontaktne = безконтактно ;; hotovosť = готівка ;; mince = монети ;; vydať = дати решту
+X sc~: Що означає «Karta neprešla»? | - | *оплата карткою не пройшла ;; картку забули ;; картку не приймають у цьому магазині
+= neprešla — не пройшла.
+X dd: Обери. | Platím [*bezkontaktne/bezkontaktný/bezkontakt].
+= Прислівник: bezkontaktne.
+X dr: - | Pokladníčka: Karta neprešla. | *Prepáčte, skúsim to znova. ;; Karta je dobrá. ;; Neprešla som.
+= Спробуєш знову.
+X tf: - | - | «Zadajte PIN» означає «Введіть PIN». | T
+= zadať — ввести.
+X fb: Допиши. | Mám len ___. (готівка) | hotovosť |
+= hotovosť.
+X so: - | Запитай, чи можна оплатити телефоном. | Môžem platiť mobilom?
+= platiť + mobilom.
+X fe: - | Zabudol som [platobný>platobnú] kartu.
+= karta — platobnú.
+X cat: Картка чи готівка? | Karta: PIN, terminál, bezkontaktne ;; Hotovosť: mince, bankovka, výdavok
+= Способи оплати.
+X np: Ти даєш 50 € за покупку на 3 €. | *Prepáčte, mám len päťdesiat eur. Môžete vydať? ;; Päťdesiat, vydať. ;; Mám päťdesiat drobné. ;; Vydajte päťdesiat mince.
+= Попередження + прохання.
+X hm: Продавець на ринку каже: «Kartou nie, len hotovosť.» Що це означає? | *він приймає лише готівку ;; картка не працює ;; готівки в нього немає
+= len hotovosť — лише готівка.
+X ms: Обери способи оплати. | - | *kartou ;; *v hotovosti ;; *mobilom ;; vernostnou kartou ;; košíkom
+= Способи оплати.
+F: Проблема з оплатою || Ти купуєш продукти на 47 €, і картка не проходить.
+S: Касирка: «Karta neprešla.» | *Skúsim to ešte raz. ;; Karta je hotovosť. ;; Neprešla, ďakujem.
+S: Знову ні. Що скажеш? | *Môžem platiť v hotovosti? ;; Môžem platiť košíkom? ;; Hotovosť je karta?
+S: У тебе 50 €. Касирка: «Vydám vám tri eurá.» Що це означає? | *решта — 3 € ;; ще треба доплатити 3 € ;; знижка 3 €
+S: «Ďakujem, pekný deň.» | *Aj vám, dovidenia. ;; Prosím si. ;; Dobrú chuť.
+R: platobná karta, PIN, bezkontaktne, mobilom ;; hotovosť, mince, bankovka, vydať ;; Karta neprešla. Skúsim znova.
+
+@lesson akcie-zlavy | Акції й знижки | Akcie a zľavy
+desc: Акційні листівки й цінники: akcia, výpredaj, 1+1 zdarma, lacnejší, ušetriť, cena za kus / kg.
+goal: Розуміти акції й обчислювати вигоду.
+out: розуміти akcia, výpredaj, 1 + 1 zdarma ;; порівнювати ціни: lacnejší / drahší ;; розуміти cena za kg ;; казати ušetril som…
+done: Тепер ти шукаєш вигідні покупки. Далі — побутова хімія.
+T: Акції || «Akcia» — акція, «výpredaj» — розпродаж, «1 + 1 zdarma» — 1+1 безкоштовно, «druhý kus za polovicu» — друга штука за пів ціни. «Platí do…» — діє до… || Akcia platí do nedele. = Акція діє до неділі. ;; Druhý kus za polovičnú cenu. = Друга штука за пів ціни. || akcia / výpredaj
+T: Порівняння цін || «Lacnejší» — дешевший, «drahší» — дорожчий. «Cena za kilogram / liter / kus» — ціна за кг / л / штуку (дрібним шрифтом!). || Tento je lacnejší za kilo. = Цей дешевший за кілограм. ;; Väčšie balenie je výhodnejšie. = Більша упаковка вигідніша. || cena za kg
+T: Заощадити || «Ušetriť» — заощадити: «Ušetril som desať eur». «Výhodný» — вигідний. «Zľava 30 %» — знижка 30 %. || Ušetrili sme pätnásť eur. = Ми заощадили 15 €. ;; To je výhodná ponuka. = Це вигідна пропозиція. || ušetriť = заощадити
+W: akcia | акція (знижка) | акція | Káva je v akcii. | Кава за акцією.
+W: výpredaj | розпродаж | ві:предай | Letný výpredaj začína v júli. | Літній розпродаж починається в липні.
+W: lacnejší | дешевший | лацнейші: | Tento je lacnejší. | Цей дешевший.
+W: drahší | дорожчий | драгші: | Značková káva je drahšia. | Брендова кава дорожча.
+W: ušetriť | заощадити | ушетріть | Ušetrila som dvadsať eur. | Я заощадила двадцять євро.
+W: výhodný | вигідний | ві:годні: | Veľké balenie je výhodnejšie. | Велика упаковка вигідніша.
+X mt: З’єднай. | akcia = акція ;; výpredaj = розпродаж ;; lacnejší = дешевший ;; drahší = дорожчий ;; ušetriť = заощадити
+X sc~: Що означає «1 + 1 zdarma»? | - | *купуєш один — другий безкоштовно ;; один товар коштує 1 € ;; знижка 1 %
+= Другий товар безкоштовно.
+X doc: Прочитай цінник. | Akcia | Káva mletá 250 g: 3,99 € ;; Pôvodná cena: 5,49 € ;; Cena za 1 kg: 15,96 € ;; Platí: 1. 10. – 7. 10. | Скільки заощадиш на одній упаковці? | *1,50 € ;; 3,99 € ;; 15,96 €
+= 5,49 – 3,99 = 1,50 €.
+X dd: Обери. | Väčšie balenie je [*výhodnejšie/výhodnejší/výhodnejšia].
+= balenie — сер. рід.
+X tf: - | - | «Platí do nedele» означає, що акція діє до неділі. | T
+= platí do — діє до.
+X fb: Допиши. | ___ sme pätnásť eur. (заощадили) | Ušetrili |
+= Ušetrili sme.
+X so: - | Скажи, що кава за акцією. | Káva je v akcii.
+= v akcii.
+X fe: - | Značková káva je [drahší>drahšia].
+= káva — drahšia.
+X cat: Вигідно чи ні? | Výhodné: 1 + 1 zdarma, zľava 50 %, výpredaj ;; Nevýhodné: drahšie balenie, plná cena, bez zľavy
+= Оцінка пропозиції.
+X np: Ти пояснюєш подрузі, що велика упаковка вигідніша за кілограм. | *Veľké balenie je výhodnejšie, cena za kilo je nižšia. ;; Veľké balenie drahší je. ;; Kilo je výhodný. ;; Balenie veľké lacnejší.
+= Порівняння за ціною за кг.
+X hm: На цінник наклеєно «Posledné kusy!». Що це означає? | *лишилися останні штуки ;; новий товар ;; товар безкоштовний
+= posledné kusy — останні штуки.
+X ms: Обери слова про знижки. | - | *akcia ;; *výpredaj ;; *zľava ;; regál ;; košík
+= Знижки.
+F: Похід у магазин за акційною листівкою || Ти з чоловіком дивитеся акційну листівку.
+S: «Prací prášok – druhý kus za polovicu.» Що це означає? | *друга упаковка за пів ціни ;; половина упаковки безкоштовно ;; знижка 2 %
+S: Ти кажеш, що варто купити два. | *Kúpme dva, je to výhodné. ;; Kúpme dve výhodný. ;; Dva výhodne kúpiť.
+S: Чоловік: «Ale táto značka je drahšia.» Що він каже? | *цей бренд дорожчий ;; цей бренд дешевший ;; цього бренду немає
+S: Ти рахуєш: «Ušetríme päť eur.» Що це означає? | *ми заощадимо 5 € ;; ми витратимо 5 € ;; ми повернемо 5 €
+R: akcia, výpredaj, 1 + 1 zdarma, druhý kus za polovicu ;; lacnejší, drahší ;; cena za kg ;; ušetriť, výhodný
+
+@lesson drogeria | Побутова хімія й гігієна | Drogéria
+desc: Що купити в drogérii: šampón, prací prášok, zubná pasta, toaletný papier, plienky, prostriedok na riad.
+goal: Купити засоби гігієни й побутову хімію.
+out: називати засоби гігієни ;; називати побутову хімію ;; розрізняти drogéria і lekáreň ;; просити Máte niečo na…?
+done: Drogéria більше не таємниця. Далі — повернення й обмін товару.
+T: Drogéria || «Drogéria» — магазин або відділ гігієни й хімії (dm, Teta). Тут: šampón, zubná pasta (зубна паста), zubná kefka, mydlo, dezodorant, krém, toaletný papier, plienky (підгузки). || Kúpim zubnú pastu a kefku. = Куплю зубну пасту й щітку. ;; Plienky pre bábätko. = Підгузки для немовляти. || drogéria ≠ lekáreň
+T: Для дому || prací prášok / prací gél (пральний порошок / гель), aviváž (кондиціонер для білизни), prostriedok na riad (засіб для посуду), čistiaci prostriedok (засіб для чищення). || Potrebujem prací gél na farebné prádlo. = Мені потрібен гель для кольорової білизни. || prací prášok, prostriedok na…
+T: Na čo? || «Prostriedok na okná» — засіб для вікон, «krém na ruky» — крем для рук, «šampón na mastné vlasy» — шампунь для жирного волосся. На + знахідний = для чого. || Máte krém na suchú pokožku? = У вас є крем для сухої шкіри? || na + знахідний = для
+W: drogéria | побутова хімія (магазин) | дроґерія | Drogéria je na prvom poschodí. | Магазин побутової хімії на другому поверсі.
+W: šampón | шампунь | шампо:н | Šampón na suché vlasy. | Шампунь для сухого волосся.
+W: zubná pasta | зубна паста | зубна: паста | Kúp aj zubnú pastu. | Купи ще зубну пасту.
+W: prací prášok | пральний порошок | праці: пра:шок | Prací prášok je v akcii. | Пральний порошок за акцією.
+W: toaletný papier | туалетний папір | тоалетні: папієр | Došiel toaletný papier. | Закінчився туалетний папір.
+W: plienky | підгузки | плієнкі | Plienky veľkosť 4. | Підгузки розміру 4.
+X mt: З’єднай. | šampón = шампунь ;; zubná pasta = зубна паста ;; prací prášok = пральний порошок ;; toaletný papier = туалетний папір ;; plienky = підгузки
+X cat: Гігієна чи для дому? | Hygiena: šampón, zubná pasta, dezodorant ;; Domácnosť: prací prášok, prostriedok na riad, aviváž
+= Відділи drogérie.
+X sc~: Де купити ліки від кашлю — у drogérii чи lekárni? | - | *у lekárni (аптеці) ;; у drogérii ;; в обох однаково
+= Ліки — lekáreň.
+X dd: Обери. | Máte krém na [*suchú/suchá/suchej] pokožku?
+= na + знахідний: suchú.
+X tf: - | - | «Došiel toaletný papier» означає, що туалетний папір закінчився. | T
+= dôjsť — закінчитися.
+X fb: Допиши. | Kúp aj ___ pastu. (зубну) | zubnú |
+= zubnú pastu.
+X so: - | Скажи, що потрібен гель для кольорової білизни. | Potrebujem prací gél na farebné prádlo.
+= na farebné prádlo.
+X fe: - | Kúpim [zubná>zubnú] pastu.
+= Знахідний: zubnú pastu.
+X np: Ти шукаєш засіб для миття вікон. | *Máte prostriedok na okná? ;; Máte okná prostriedok? ;; Prostriedok okien je? ;; Okná na prostriedok.
+= prostriedok na + знахідний.
+X dr: - | Predavačka: Akú veľkosť plienok? | *Štvorku, pre desaťmesačné bábätko. ;; Veľká plienka. ;; Bábätko je štyri.
+= Розмір підгузків.
+X ms: Обери товари з drogérie. | - | *šampón ;; *prací gél ;; *plienky ;; antibiotiká ;; chlieb
+= Antibiotiká — аптека; chlieb — продукти.
+F: Список у drogériu || Ви з дружиною переїхали, треба все купити.
+S: Дружина: «Čo nám chýba?» (туалетний папір і порошок) | *Toaletný papier a prací prášok. ;; Toaletný papiera a prášku. ;; Papier a prášok chýba je.
+S: «A pre malého?» (підгузки) | *Plienky, veľkosť tri. ;; Plienka tri. ;; Plienky malý.
+S: Ти питаєш продавчиню про засіб для посуду. | *Kde nájdem prostriedok na riad? ;; Kde je riad prostriedok? ;; Riad nájdem kde?
+S: «Uličku vedľa, pri pracích prostriedkoch.» Де? | *у сусідньому ряду, біля пральних засобів ;; біля каси ;; немає
+R: drogéria: šampón, zubná pasta, plienky ;; prací prášok, prostriedok na riad ;; na + знахідний = для ;; drogéria ≠ lekáreň
+
+@lesson reklamacia-zaklad | Повернення й обмін | Vrátenie a výmena
+desc: Як повернути чи обміняти товар: vrátiť, vymeniť, reklamovať, záruka, pokladničný doklad.
+goal: Повернути або обміняти покупку.
+out: казати Chcem to vrátiť / vymeniť ;; розуміти záruka ;; знати, що потрібен pokladničný doklad ;; пояснювати проблему: je pokazený, nesedí
+done: Тепер ти захистиш свої права покупця. Далі — онлайн-покупки.
+T: Повернути чи обміняти || «Vrátiť tovar» — повернути товар, «vymeniť» — обміняти, «reklamovať» — подати рекламацію (скаргу на брак). «Chcel by som to vrátiť» — хотів би це повернути. || Chcem to vymeniť za inú veľkosť. = Хочу обміняти на інший розмір. || vrátiť / vymeniť / reklamovať
+T: Документи || «Pokladničný doklad / bloček» — касовий чек — потрібен майже завжди. «Záruka» — гарантія: зазвичай 2 роки. «Záručný list» — гарантійний талон. || Máte pokladničný doklad? = У вас є чек? ;; Je to ešte v záruke. = Це ще на гарантії. || bez bločku — складно
+T: Проблема || «Je pokazený» — зламаний, «nefunguje», «je poškodený» — пошкоджений, «nesedí mi» — не підходить (одяг). || Telefón nefunguje, je v záruke. = Телефон не працює, він на гарантії. ;; Topánky mi nesedia. = Взуття мені не підходить. || nesedí = не підходить (розмір)
+W: vrátiť | повернути | вра:тіть | Chcem vrátiť tieto nohavice. | Хочу повернути ці штани.
+W: vymeniť | обміняти | вименіть | Môžem to vymeniť? | Можна це обміняти?
+W: reklamovať | подати рекламацію | рекламовать | Chcem reklamovať práčku. | Я хочу подати рекламацію на пральну машину.
+W: záruka | гарантія | за:рука | Záruka je dva roky. | Гарантія — два роки.
+W: pokladničný doklad | касовий чек | покладнічні: доклад | Bez pokladničného dokladu to nejde. | Без чека це неможливо.
+W: poškodený | пошкоджений | пошкодені: | Balík bol poškodený. | Посилка була пошкоджена.
+X mt: З’єднай. | vrátiť = повернути ;; vymeniť = обміняти ;; reklamovať = подати рекламацію ;; záruka = гарантія ;; poškodený = пошкоджений
+X sc~: Що означає «Je to ešte v záruke»? | - | *це ще на гарантії ;; це вже не на гарантії ;; гарантія — завтра
+= v záruke — на гарантії.
+X dd: Обери. | Chcem to vymeniť za [*inú/iná/inej] veľkosť.
+= za + знахідний: inú.
+X dr: - | Predavačka: Máte pokladničný doklad? | *Áno, tu je. ;; Áno, záruka. ;; Nie, ďakujem.
+= Подаєш чек.
+X tf: - | - | Без чека повернення зазвичай складне або неможливе. | T
+= pokladničný doklad — важливий.
+X fb: Допиши. | ___ je dva roky. (гарантія) | Záruka |
+= Záruka.
+X so: - | Скажи, що хочеш обміняти на інший розмір. | Chcem to vymeniť za inú veľkosť.
+= vymeniť za + знахідний.
+X fe: - | Balík bol [poškodená>poškodený].
+= balík — poškodený.
+X cat: Що робити? | Vrátiť: nepáči sa mi, zmenil som názor ;; Vymeniť: zlá veľkosť, iná farba ;; Reklamovať: nefunguje, je pokazený
+= Тип звернення.
+X np: Новий фен не працює. Ти в магазині. | *Dobrý deň, tento fén nefunguje. Chcem ho reklamovať. ;; Fén je pokazený som. ;; Fén reklamovať je. ;; Vrátiť fén pokazený nie.
+= Проблема + що хочеш.
+X hm: Продавець: «Vrátiť peniaze nemôžeme, ale môžeme vám dať poukážku.» Що пропонують? | *ваучер замість грошей ;; повернути гроші ;; нічого
+= poukážka — ваучер.
+X ms: Обери речі, потрібні для рекламації. | - | *pokladničný doklad ;; *záručný list ;; *tovar ;; vernostná karta ;; košík
+= Документи + товар.
+F: Повернення куртки || Ти купив(ла) куртку, але вона мала.
+S: «Dobrý deň, čo potrebujete?» | *Dobrý deň, táto bunda mi nesedí. Môžem ju vymeniť? ;; Bunda je malý. ;; Chcem bundu nesedí.
+S: «Máte bloček?» | *Áno, nech sa páči. ;; Áno, záruka. ;; Nie, bunda.
+S: «Akú veľkosť potrebujete?» (більшу, L) | *Väčšiu, L. ;; Väčší L. ;; Malú.
+S: «L už nemáme. Môžeme vrátiť peniaze.» Що пропонують? | *повернути гроші ;; дати M ;; нічого
+R: vrátiť, vymeniť, reklamovať ;; záruka, pokladničný doklad ;; nefunguje, je poškodený, nesedí
+
+@lesson e-shop | Покупки онлайн | Nákup cez internet
+desc: Онлайн-покупки: e-shop, objednať, doručenie, kuriér, balík, Z-Box / výdajné miesto.
+goal: Оформити й отримати онлайн-замовлення.
+out: казати Objednal som cez e-shop ;; розуміти doručenie domov / na výdajné miesto ;; розуміти статуси замовлення ;; розуміти повідомлення кур’єра
+done: Онлайн-покупки підкорено. Далі — підсумок розділу.
+T: Замовлення || «E-shop» — інтернет-магазин, «objednať» — замовити, «objednávka» — замовлення, «košík» (онлайн-кошик), «pokračovať k platbe» — перейти до оплати. || Objednala som topánky cez e-shop. = Я замовила взуття в інтернет-магазині. || objednať, objednávka
+T: Доставка || «Doručenie» — доставка: domov (додому) або na výdajné miesto / do Z-Boxu (у пункт видачі, поштомат). «Kuriér» — кур’єр. «Dobierka» — оплата при отриманні. || Doručenie je zdarma od 50 €. = Доставка безкоштовна від 50 €. ;; Platím na dobierku. = Плачу при отриманні. || dobierka = оплата при отриманні
+T: Статуси || «Objednávka prijatá» — прийнято, «odoslaná» — відправлено, «doručená» — доставлено, «pripravená na vyzdvihnutie» — готова до видачі. || Vaša objednávka bola odoslaná. = Ваше замовлення відправлено. || prijatá → odoslaná → doručená
+W: e-shop | інтернет-магазин | і:-шоп | Kupujem veľa cez e-shop. | Я багато купую в інтернет-магазинах.
+W: objednať | замовити | объєднать | Objednám to online. | Я замовлю це онлайн.
+W: doručenie | доставка | доручєніє | Doručenie trvá dva dni. | Доставка триває два дні.
+W: kuriér | кур’єр | курієр | Kuriér príde medzi deviatou a dvanástou. | Кур’єр приїде з дев’ятої до дванадцятої.
+W: balík | посилка | бали:к | Balík je na pošte. | Посилка на пошті.
+W: dobierka | оплата при отриманні | добієрка | Zaplatím na dobierku. | Заплачу при отриманні.
+X mt: З’єднай. | e-shop = інтернет-магазин ;; objednať = замовити ;; doručenie = доставка ;; kuriér = кур’єр ;; dobierka = оплата при отриманні
+X do: - | Objednávka prijatá. ;; Objednávka odoslaná. ;; Balík je u kuriéra. ;; Objednávka doručená.
+= Статуси по порядку.
+X msg: - | Packeta | Váš balík č. 2209 je pripravený na vyzdvihnutie v Z-BOXe Mlynská 5. Kód: 4471. Balík bude uložený 7 dní. | Скільки днів чекатиме посилка? | *7 днів ;; 5 днів ;; 4471 день
+= uložený 7 dní.
+X sc~: Що означає «Doručenie zdarma od 50 €»? | - | *безкоштовна доставка для замовлень від 50 € ;; доставка коштує 50 € ;; знижка 50 €
+= zdarma od 50 €.
+X tf: - | - | «Dobierka» означає, що ти платиш кур’єрові під час отримання. | T
+= Оплата при отриманні.
+X fb: Допиши. | ___ to online. (я замовлю) | Objednám |
+= Objednám.
+X so: - | Скажи, що доставка триває два дні. | Doručenie trvá dva dni.
+= trvá + dva dni.
+X fe: - | Kuriér [prídem>príde] medzi deviatou a dvanástou.
+= kuriér — príde.
+X np: Кур’єр телефонує, а тебе немає вдома. Попроси залишити в сусідки. | *Môžete ho nechať u susedky? ;; Susedka balík je? ;; Nechať susedka. ;; Balík nechám ja.
+= Môžete ho nechať u…?
+X dr: - | Kuriér: Dobrý deň, mám pre vás balík na dobierku, 34 eur. | *Dobre, môžem platiť kartou? ;; Dobierka je balík. ;; Nie, objednám.
+= Уточнення способу оплати.
+X cat: Додому чи в пункт видачі? | Domov: kuriér, na adresu ;; Výdajné miesto: Z-Box, pošta, výdajňa
+= Способи отримання.
+X ms: Обери статуси замовлення. | - | *prijatá ;; *odoslaná ;; *doručená ;; vypredaná ;; poškodená zdarma
+= Статуси.
+F: Замовлення онлайн || Ти замовляєш дитячі черевики в e-shopі.
+S: Сайт пропонує: «Doručenie domov – 4,90 €, Z-Box – 2,50 €». Що дешевше? | *Z-Box ;; доставка додому ;; однаково
+S: Ти обираєш оплату при отриманні. Як це на сайті? | *Dobierka ;; Platba kartou vopred ;; Záruka
+S: SMS: «Vaša objednávka bola odoslaná.» Що це? | *замовлення відправлено ;; замовлення доставлено ;; замовлення скасовано
+S: Кур’єр: «Som pred domom.» | *Hneď idem dole. ;; Som hore dole. ;; Dom je kuriér.
+R: e-shop, objednať, objednávka ;; doručenie, kuriér, Z-Box, dobierka ;; prijatá → odoslaná → doručená
+
+@lesson nakupovanie-opakovanie | Підсумок: покупки | Opakovanie: nakupovanie
+desc: Підсумок розділу: від списку покупок до каси, акцій і повернення товару.
+goal: Самостійно впоратися з будь-якою покупкою.
+out: складати список покупок ;; орієнтуватися в магазині й на касі ;; розуміти акції й оплату ;; повертати чи обмінювати товар
+done: Розділ «Магазин і покупки» завершено! Далі — місто й місцевий відмінок.
+T: Бюджет || «Nákupný zoznam» — список покупок, «rozpočet» — бюджет, «minúť» — витратити: «Minula som päťdesiat eur». «Výhodný nákup» — вигідна покупка. || Tento mesiac sme minuli veľa. = Цього місяця ми багато витратили. ;; Mám rozpočet sto eur. = У мене бюджет 100 €. || minúť = витратити
+T: Ланцюжок покупки || Zoznam → obchod → oddelenie → regál → košík → pokladňa → platba → bloček → (vrátenie). || Najprv si spravím zoznam. = Спочатку складаю список. || Від списку до чека
+T: Ключові фрази || Kde nájdem…? Máte to na sklade? Koľko stojí…? Je to v akcii? Platím kartou. Môžem to vrátiť? || Prepáčte, je toto v akcii? = Вибачте, це за акцією? || 6 рятівних фраз
+W: nákupný zoznam | список покупок | на:купні: зознам | Zabudol som nákupný zoznam doma. | Я забув список покупок удома.
+W: rozpočet | бюджет | розпочет | Máme obmedzený rozpočet. | У нас обмежений бюджет.
+W: minúť | витратити | міну:ть | Koľko si minul? | Скільки ти витратив?
+W: zákazník | клієнт, покупець | за:казні:к | Zákazník má vždy pravdu. | Клієнт завжди правий.
+X rc: - | Sobotný nákup: Lucia si spravila nákupný zoznam: chlieb, tri litre mlieka, kilo jabĺk, prací prášok a plienky. V supermarkete bola káva v akcii, 1 + 1 zdarma, tak kúpila dve balenia. Pri pokladni karta neprešla, preto platila v hotovosti. Doma zistila, že jeden jogurt je po záruke, a v pondelok ho vrátila.
+q~: Чому Люція купила дві упаковки кави? | *була акція 1+1 безкоштовно ;; кава закінчувалась ;; помилилась
+q~: Як вона заплатила? | *готівкою ;; карткою ;; мобільним
+q~: Що вона повернула? | *прострочений йогурт ;; каву ;; підгузки
+X wb: - | Kde [nájdem] múku? ;; Káva je v [akcii]. ;; Platím [kartou]. ;; Chcem to [vrátiť]. | vrecko ;; dobierka
+X mt: З’єднай. | nákupný zoznam = список покупок ;; rozpočet = бюджет ;; minúť = витратити ;; zákazník = покупець
+X do: - | Spravím si nákupný zoznam. ;; Vezmem si vozík. ;; Nájdem tovar v regáloch. ;; Zaplatím pri pokladni. ;; Odložím si bloček.
+= Ланцюжок покупки.
+X fe: - | Kúpim tri [balení>balenia] mlieka.
+= 2–4 → balenia.
+X ce: Виправ речення. | Kde nájdem prací prášok a dva litra mlieka? | Kde nájdem prací prášok a dva litre mlieka? ;; Kde nájdem prací prášok a dva litre mlieka
+= dva litre.
+X bd: - | Покупку зроблено ідеально!
+> Predavač: Dobrý deň, môžem pomôcť? | *Áno, hľadám detské plienky. ;; Áno, hľadám detská plienka. ;; Nie, áno.
+> Predavač: Sú v drogérii, ulička päť. Akú veľkosť? | *Trojku. Sú v akcii? ;; Tri veľkosť je. ;; Malá plienka.
+> Predavač: Áno, druhé balenie za polovicu. | *Výborne, vezmem dve balenia. ;; Výborne, vezmem dve balení. ;; Balenie je dobre.
+> Pokladníčka: Máte vernostnú kartu? | *Nie, nemám. Platím kartou. ;; Nie, nemáte. ;; Áno, plienky.
+X ms: Обери правильні речення. | - | *Kúpim dva litre mlieka. ;; *Káva je v akcii. ;; *Chcem to vymeniť. ;; Kúpim dve balení. ;; Platím karta.
+= Повторення.
+X sb: - | Скажи, що в вас обмежений бюджет. | Máme obmedzený rozpočet.
+= Máme + obmedzený rozpočet.
+X np: Ти питаєш подругу, скільки вона витратила. | *Koľko si minula? ;; Koľko minúť? ;; Minula si koľko je? ;; Rozpočet koľko?
+= Koľko si minula?
+X dd: Обери. | Zákazník [*má/mám/majú] vždy pravdu.
+= zákazník — má.
+F: Великі покупки перед святами || Ти купуєш продукти на свято з бюджетом 80 €.
+S: Ти питаєш, де борошно. | *Prepáčte, kde nájdem múku? ;; Kde je múka nájdem? ;; Múku kde?
+S: Ти бачиш «Mäso – zľava 25 %». Що це означає? | *м’ясо зі знижкою 25 % ;; м’ясо коштує 25 € ;; 25 упаковок м’яса
+S: Касирка: «Spolu 76,40 €.» Ти в бюджеті? | *áno, je to menej ako 80 € ;; nie, je to viac ;; neviem
+S: Удома одна упаковка розбита. Ти повертаєшся. | *Dobrý deň, toto balenie je poškodené. Môžem ho vymeniť? ;; Balenie je pekné. ;; Vymeniť poškodený.
+R: nákupný zoznam, rozpočet, minúť ;; від списку до чека ;; акції, оплата, повернення

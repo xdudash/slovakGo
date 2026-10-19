@@ -1,0 +1,929 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u04-l02-demografia",
+      "sectionId": "b2-u04",
+      "level": "B2",
+      "title": "Демографія",
+      "topic": "Суспільні теми",
+      "description": "Як говорити й писати про населення: народжуваність, старіння, природний приріст і спад, опис змін із прийменниками o / na / z, наближені числа та причини й наслідки демографічних процесів.",
+      "order": 32,
+      "xpReward": 50,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Описувати демографічні зміни точно й нейтрально та пояснювати їхні причини й наслідки.",
+      "completionMessage": "Ти вмієш описувати демографічні зміни. Далі — рівність: як говорити про рівні права, можливості й нерівність.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Суспільні теми",
+        "title": "Демографія",
+        "shortDescription": "Описувати демографічні зміни точно й нейтрально та пояснювати їхні причини й наслідки.",
+        "outcomes": [
+          "вживати базову лексику: obyvateľstvo, pôrodnosť, prírastok, úbytok",
+          "описувати зміни: vzrástol o…, klesol na…, z… na…",
+          "наближувати числа: približne, vyše, necelých, takmer",
+          "пояснювати причини й наслідки: príčinou je…, vedie k…"
+        ],
+        "newWords": [
+          "obyvateľstvo",
+          "pôrodnosť",
+          "starnutie",
+          "prírastok",
+          "úbytok",
+          "podiel"
+        ],
+        "exercisesCount": 15,
+        "reward": "+50 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Базові поняття демографії",
+          "text": "Demografia вивчає, скільки нас, якого ми віку й як змінюється кількість людей. «Obyvateľstvo» — населення. «Pôrodnosť» — скільки дітей народжується, «úmrtnosť» — скільки людей помирає. Різницю між народженими й померлими називаємо «prirodzený prírastok» (якщо народжених більше) або «prirodzený úbytok» (якщо більше померлих). До цього додається міграція: хто приїхав і хто виїхав. Регулярний перепис — «sčítanie obyvateľov»: дані з нього враховують у планах шкіл, лікарень і пенсій. Частку групи від цілого називаємо «podiel»: podiel seniorov, podiel mladých.",
+          "examples": [
+            {
+              "sk": "Pôrodnosť v mnohých krajinách Európy klesá.",
+              "uk": "Народжуваність у багатьох країнах Європи знижується."
+            },
+            {
+              "sk": "Prirodzený úbytok znamená, že sa narodilo menej ľudí, ako zomrelo.",
+              "uk": "Природний спад означає, що народилося менше людей, ніж померло."
+            }
+          ],
+          "shortRule": "pôrodnosť — народжуваність · úmrtnosť — смертність · prirodzený prírastok / úbytok",
+          "commonMistakes": [
+            {
+              "mistake": "Počet obyvateľov klesla.",
+              "correct": "Počet obyvateľov klesol."
+            },
+            {
+              "mistake": "Národnosť klesá.",
+              "correct": "Pôrodnosť klesá."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Як описати зміну",
+          "text": "Зміну описуємо дієсловами «rásť / vzrásť», «klesať / klesnúť», «zvyšovať sa», «znižovať sa». Прийменники мають чіткі ролі: «o» + знахідний — на скільки (різниця): «vzrástol o 3 %»; «na» + знахідний — до якого значення (результат): «vzrástol na 5,4 milióna»; «z» + родовий — від якого значення: «z 15 % na 19 %». Усе разом: «Podiel seniorov vzrástol z 15 % na 19 %, teda o štyri percentné body.» Для наближених чисел є слова «približne», «takmer» (майже), «vyše» (понад), «necelých» (менш як). Десяткову частину пишемо комою: «5,4 milióna», а тисячі відокремлюємо пропуском: «5 400 000».",
+          "examples": [
+            {
+              "sk": "Počet obyvateľov klesol zo 100 000 na 95 000.",
+              "uk": "Кількість мешканців знизилася зі 100 000 до 95 000."
+            },
+            {
+              "sk": "V obci žije vyše tisíc ľudí.",
+              "uk": "У селі живе понад тисячу людей."
+            }
+          ],
+          "shortRule": "o = на скільки · na = до скількох · z = від скількох",
+          "commonMistakes": [
+            {
+              "mistake": "Pôrodnosť klesol o dve percentá.",
+              "correct": "Pôrodnosť klesla o dve percentá."
+            },
+            {
+              "mistake": "Podiel vzrástol o 15 % na 19 %.",
+              "correct": "Podiel vzrástol z 15 % na 19 %."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Причини й наслідки",
+          "text": "Старіння населення (starnutie populácie) має кілька причин: нижча народжуваність і довше життя. Наслідки — більше пенсіонерів на одного працюючого, тиск на пенсійну й медичну системи, брак робочої сили. Причину й наслідок з’єднуємо словами: «príčinou je…» (+ називний), «dôsledkom je…», «vedie k + давальний» (vedie k nárastu, k poklesu), «znamená to, že…». Про можливі рішення нейтральний текст не обирає сторону, а називає їх усі: підтримка сімей, трудова міграція, подовження активного віку. У кожного рішення є переваги й недоліки, і чесний автор показує обидва боки.",
+          "examples": [
+            {
+              "sk": "Príčinou starnutia je nižšia pôrodnosť a dlhší život.",
+              "uk": "Причина старіння — нижча народжуваність і довше життя."
+            },
+            {
+              "sk": "Starnutie vedie k väčšiemu tlaku na dôchodkový systém.",
+              "uk": "Старіння призводить до більшого тиску на пенсійну систему."
+            }
+          ],
+          "shortRule": "viesť k + давальний · príčinou je + називний · рішення: переваги й недоліки",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u04-l02-demografia-w01",
+            "sk": "obyvateľstvo",
+            "uk": "населення",
+            "pronunciationUk": "обивательство",
+            "exampleSk": "Obyvateľstvo mesta sa za dvadsať rokov zmenilo.",
+            "exampleUk": "Населення міста за двадцять років змінилося."
+          },
+          {
+            "wordId": "b2-u04-l02-demografia-w02",
+            "sk": "pôrodnosť",
+            "uk": "народжуваність",
+            "pronunciationUk": "пуородность",
+            "exampleSk": "Nízka pôrodnosť je výzva pre školy aj dôchodky.",
+            "exampleUk": "Низька народжуваність — виклик для шкіл і пенсій."
+          },
+          {
+            "wordId": "b2-u04-l02-demografia-w03",
+            "sk": "starnutie",
+            "uk": "старіння",
+            "pronunciationUk": "старнутіє",
+            "exampleSk": "Starnutie populácie sa týka väčšiny európskych krajín.",
+            "exampleUk": "Старіння населення стосується більшості європейських країн."
+          },
+          {
+            "wordId": "b2-u04-l02-demografia-w04",
+            "sk": "prírastok",
+            "uk": "приріст",
+            "pronunciationUk": "при:расток",
+            "exampleSk": "Prirodzený prírastok je kladný, ak sa narodí viac ľudí, ako zomrie.",
+            "exampleUk": "Природний приріст додатний, якщо народжується більше людей, ніж помирає."
+          },
+          {
+            "wordId": "b2-u04-l02-demografia-w05",
+            "sk": "úbytok",
+            "uk": "спад, зменшення кількості",
+            "pronunciationUk": "у:биток",
+            "exampleSk": "Obec zaznamenala úbytok obyvateľov.",
+            "exampleUk": "Село зафіксувало зменшення кількості мешканців."
+          },
+          {
+            "wordId": "b2-u04-l02-demografia-w06",
+            "sk": "podiel",
+            "uk": "частка",
+            "pronunciationUk": "подієл",
+            "exampleSk": "Podiel seniorov v meste stúpa.",
+            "exampleUk": "Частка людей похилого віку в місті зростає."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u04-l02-demografia-w01",
+          "sk": "obyvateľstvo",
+          "uk": "населення",
+          "pronunciationUk": "обивательство",
+          "exampleSk": "Obyvateľstvo mesta sa za dvadsať rokov zmenilo.",
+          "exampleUk": "Населення міста за двадцять років змінилося.",
+          "level": "B2",
+          "topic": "Суспільні теми",
+          "tags": [
+            "b2-u04",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u04-l02-demografia-w02",
+          "sk": "pôrodnosť",
+          "uk": "народжуваність",
+          "pronunciationUk": "пуородность",
+          "exampleSk": "Nízka pôrodnosť je výzva pre školy aj dôchodky.",
+          "exampleUk": "Низька народжуваність — виклик для шкіл і пенсій.",
+          "level": "B2",
+          "topic": "Суспільні теми",
+          "tags": [
+            "b2-u04",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u04-l02-demografia-w03",
+          "sk": "starnutie",
+          "uk": "старіння",
+          "pronunciationUk": "старнутіє",
+          "exampleSk": "Starnutie populácie sa týka väčšiny európskych krajín.",
+          "exampleUk": "Старіння населення стосується більшості європейських країн.",
+          "level": "B2",
+          "topic": "Суспільні теми",
+          "tags": [
+            "b2-u04",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u04-l02-demografia-w04",
+          "sk": "prírastok",
+          "uk": "приріст",
+          "pronunciationUk": "при:расток",
+          "exampleSk": "Prirodzený prírastok je kladný, ak sa narodí viac ľudí, ako zomrie.",
+          "exampleUk": "Природний приріст додатний, якщо народжується більше людей, ніж помирає.",
+          "level": "B2",
+          "topic": "Суспільні теми",
+          "tags": [
+            "b2-u04",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u04-l02-demografia-w05",
+          "sk": "úbytok",
+          "uk": "спад, зменшення кількості",
+          "pronunciationUk": "у:биток",
+          "exampleSk": "Obec zaznamenala úbytok obyvateľov.",
+          "exampleUk": "Село зафіксувало зменшення кількості мешканців.",
+          "level": "B2",
+          "topic": "Суспільні теми",
+          "tags": [
+            "b2-u04",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u04-l02-demografia-w06",
+          "sk": "podiel",
+          "uk": "частка",
+          "pronunciationUk": "подієл",
+          "exampleSk": "Podiel seniorov v meste stúpa.",
+          "exampleUk": "Частка людей похилого віку в місті зростає.",
+          "level": "B2",
+          "topic": "Суспільні теми",
+          "tags": [
+            "b2-u04",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u04-l02-demografia-ex01",
+          "lessonId": "b2-u04-l02-demografia",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "obyvateľstvo",
+              "right": "населення"
+            },
+            {
+              "left": "pôrodnosť",
+              "right": "кількість народжених дітей"
+            },
+            {
+              "left": "starnutie",
+              "right": "зростання частки літніх людей"
+            },
+            {
+              "left": "prírastok",
+              "right": "збільшення кількості"
+            },
+            {
+              "left": "úbytok",
+              "right": "зменшення кількості"
+            },
+            {
+              "left": "podiel",
+              "right": "частина від цілого"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u04-l02-demografia-w01",
+            "b2-u04-l02-demografia-w02",
+            "b2-u04-l02-demografia-w03",
+            "b2-u04-l02-demografia-w04",
+            "b2-u04-l02-demografia-w05",
+            "b2-u04-l02-demografia-w06"
+          ]
+        },
+        {
+          "id": "b2-u04-l02-demografia-ex02",
+          "lessonId": "b2-u04-l02-demografia",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Podiel seniorov vzrástol z 15 % "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "o",
+                "pre",
+                "na"
+              ],
+              "correct": "na"
+            },
+            {
+              "text": " 19 %."
+            }
+          ],
+          "explanation": "Результат зміни виражаємо прийменником «na»: z 15 % na 19 %.",
+          "order": 2,
+          "wordIds": [
+            "b2-u04-l02-demografia-w06"
+          ]
+        },
+        {
+          "id": "b2-u04-l02-demografia-ex03",
+          "lessonId": "b2-u04-l02-demografia",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Podiel seniorov vzrástol z 15 % na 19 %, teda "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "z",
+                "na",
+                "o"
+              ],
+              "correct": "o"
+            },
+            {
+              "text": " štyri percentné body."
+            }
+          ],
+          "explanation": "Різницю (на скільки) виражаємо прийменником «o»: o štyri percentné body.",
+          "order": 3,
+          "wordIds": [
+            "b2-u04-l02-demografia-w06"
+          ]
+        },
+        {
+          "id": "b2-u04-l02-demografia-ex04",
+          "lessonId": "b2-u04-l02-demografia",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Narodilo sa menej ľudí, než zomrelo; ide o prirodzený ______. (спад)",
+          "acceptedAnswers": [
+            "úbytok"
+          ],
+          "explanation": "Úbytok — зменшення кількості; prírastok — збільшення.",
+          "order": 4,
+          "wordIds": [
+            "b2-u04-l02-demografia-w05"
+          ]
+        },
+        {
+          "id": "b2-u04-l02-demografia-ex05",
+          "lessonId": "b2-u04-l02-demografia",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яке речення правильно описує зниження народжуваності?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Pôrodnosť v meste klesol z 1,6 na 1,4.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Pôrodnosť v meste klesla na 1,6 z 1,4.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Pôrodnosť v meste klesla z 1,6 na 1,4.",
+              "correct": true
+            }
+          ],
+          "explanation": "Спочатку «z» (початкове значення), потім «na» (результат); «pôrodnosť» — жіночий рід, тому klesla.",
+          "order": 5,
+          "wordIds": [
+            "b2-u04-l02-demografia-w02"
+          ]
+        },
+        {
+          "id": "b2-u04-l02-demografia-ex06",
+          "lessonId": "b2-u04-l02-demografia",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Starnutie vedie na väčšiemu tlaku v dôchodkovom systéme.",
+          "errorToken": "na",
+          "correctToken": "k",
+          "explanation": "Viesť k + давальний відмінок: k tlaku.",
+          "order": 6,
+          "wordIds": [
+            "b2-u04-l02-demografia-w03"
+          ]
+        },
+        {
+          "id": "b2-u04-l02-demografia-ex07",
+          "lessonId": "b2-u04-l02-demografia",
+          "type": "cloze_text",
+          "skill": [
+            "grammar",
+            "reading"
+          ],
+          "instruction": "Доповни текст.",
+          "textParts": [
+            {
+              "text": "Obyvateľstvo "
+            },
+            {
+              "blankId": "b1",
+              "acceptedAnswers": [
+                "starne"
+              ]
+            },
+            {
+              "text": ", lebo "
+            },
+            {
+              "blankId": "b2",
+              "acceptedAnswers": [
+                "pôrodnosť"
+              ]
+            },
+            {
+              "text": " klesá a ľudia žijú "
+            },
+            {
+              "blankId": "b3",
+              "acceptedAnswers": [
+                "dlhšie"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ],
+          "hint": "starne, pôrodnosť, dlhšie",
+          "order": 7,
+          "wordIds": [
+            "b2-u04-l02-demografia-w01",
+            "b2-u04-l02-demografia-w02"
+          ]
+        },
+        {
+          "id": "b2-u04-l02-demografia-ex08",
+          "lessonId": "b2-u04-l02-demografia",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Опиши протилежну зміну, вжий дієслово «klesnúť».",
+          "source": "Počet obyvateľov vzrástol o päť percent.",
+          "acceptedAnswers": [
+            "Počet obyvateľov klesol o päť percent.",
+            "Počet obyvateľov o päť percent klesol."
+          ],
+          "explanation": "Змінюємо напрямок: vzrástol → klesol; прийменник «o» залишається.",
+          "order": 8
+        },
+        {
+          "id": "b2-u04-l02-demografia-ex09",
+          "lessonId": "b2-u04-l02-demografia",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Pôrodnosť v kraji klesol minulý rok.",
+          "acceptedAnswers": [
+            "Pôrodnosť v kraji klesla minulý rok.",
+            "Pôrodnosť v kraji minulý rok klesla.",
+            "Minulý rok pôrodnosť v kraji klesla."
+          ],
+          "explanation": "Pôrodnosť — жіночий рід, дієслово: klesla.",
+          "order": 9,
+          "wordIds": [
+            "b2-u04-l02-demografia-w02"
+          ]
+        },
+        {
+          "id": "b2-u04-l02-demografia-ex10",
+          "lessonId": "b2-u04-l02-demografia",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Vzorový text (údaje sú vymyslené): v kraji Zelené údolie žilo v roku 2010 približne 400 000 obyvateľov, v roku 2025 už len 372 000. Počet obyvateľov teda klesol o 28 000. Prvou príčinou je prirodzený úbytok: pôrodnosť klesla a podiel seniorov vzrástol zo 14 % na 20 %. Druhou príčinou je odliv mladých ľudí do väčších miest a do zahraničia. Naopak, v niektorých obciach pri meste sa počet obyvateľov zvýšil, pretože sa tam sťahujú rodiny. Kraj preto plánuje zlúčiť niektoré malé školy, ale zástupcovia obcí s tým nesúhlasia: tvrdia, že bez školy obec stratí mladé rodiny. Odborníci upozorňujú, že riešenie treba hľadať vo viacerých oblastiach naraz, napríklad v bývaní, v práci aj v službách.",
+          "questions": [
+            {
+              "question": "Скільки мешканців було в краї 2025 року (у вигаданому прикладі)?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "28 000",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "400 000",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "372 000",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Які дві причини спаду називає текст?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "закриття всіх лікарень і шкіл",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "висока народжуваність і приїзд мігрантів",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "природний спад і відтік молоді",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Чому представники сіл проти об’єднання шкіл?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "вважають, що дітей замало для будь-якої школи",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "вважають школи надто дорогими",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "бояться, що без школи село втратить молоді родини",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "b2-u04-l02-demografia-w02",
+            "b2-u04-l02-demografia-w05",
+            "b2-u04-l02-demografia-w06"
+          ]
+        },
+        {
+          "id": "b2-u04-l02-demografia-ex11",
+          "lessonId": "b2-u04-l02-demografia",
+          "type": "real_schedule",
+          "skill": [
+            "reading",
+            "real_life",
+            "time"
+          ],
+          "instruction": "Прочитай таблицю.",
+          "schedule": {
+            "title": "Vzorová tabuľka (údaje sú vymyslené): obec Slnečná",
+            "rows": [
+              {
+                "day": "rok 2015",
+                "hours": "4 800 obyvateľov"
+              },
+              {
+                "day": "rok 2020",
+                "hours": "5 100 obyvateľov"
+              },
+              {
+                "day": "rok 2025",
+                "hours": "5 400 obyvateľov"
+              }
+            ]
+          },
+          "question": "Який висновок із таблиці правильний?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "населення зросло лише 2025 року",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "населення зростало: кожні п’ять років приблизно на 300 осіб",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "населення зменшувалося",
+              "correct": false
+            }
+          ],
+          "explanation": "Різниця 5 100 − 4 800 = 300 і 5 400 − 5 100 = 300.",
+          "order": 11
+        },
+        {
+          "id": "b2-u04-l02-demografia-ex12",
+          "lessonId": "b2-u04-l02-demografia",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти кажеш, що кількість мешканців знизилася зі 100 000 до 95 000.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Počet obyvateľov klesol zo 100 000 na 95 000.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Počet obyvateľov klesol o 100 000 na 95 000.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Počet obyvateľov klesli zo 100 000 na 95 000.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Počet obyvateľov klesol na 100 000 zo 95 000.",
+              "correct": false
+            }
+          ],
+          "explanation": "Z + вихідне значення, na + результат; підмет «počet» — чоловічий рід однини: klesol.",
+          "order": 12
+        },
+        {
+          "id": "b2-u04-l02-demografia-ex13",
+          "lessonId": "b2-u04-l02-demografia",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Причина чи наслідок старіння?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Príčina"
+            },
+            {
+              "id": "c2",
+              "title": "Dôsledok"
+            }
+          ],
+          "items": [
+            {
+              "sk": "dlhší život",
+              "category": "c1"
+            },
+            {
+              "sk": "nižšia pôrodnosť",
+              "category": "c1"
+            },
+            {
+              "sk": "väčší dopyt po sociálnych službách",
+              "category": "c2"
+            },
+            {
+              "sk": "nedostatok pracovnej sily",
+              "category": "c2"
+            },
+            {
+              "sk": "tlak na dôchodkový systém",
+              "category": "c2"
+            },
+            {
+              "sk": "lepšia zdravotná starostlivosť",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Причини — те, що призводить до старіння; наслідки — те, що з нього випливає.",
+          "order": 13,
+          "wordIds": [
+            "b2-u04-l02-demografia-w02"
+          ]
+        },
+        {
+          "id": "b2-u04-l02-demografia-ex14",
+          "lessonId": "b2-u04-l02-demografia",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і оціни кожне твердження.",
+          "text": "Odborníci navrhujú rôzne riešenia starnutia. Podpora rodín môže zvýšiť pôrodnosť, no účinky sa prejavia až o niekoľko rokov. Pracovná migrácia dokáže rýchlo doplniť pracovnú silu, ale vyžaduje aj investície do integrácie. Predĺženie aktívneho veku znižuje tlak na dôchodky, avšak nie každé povolanie sa dá vykonávať dlho. Žiadne riešenie samo osebe nestačí.",
+          "statements": [
+            {
+              "sk": "Podpora rodín prináša účinky až po niekoľkých rokoch.",
+              "correct": true
+            },
+            {
+              "sk": "Pracovná migrácia vyžaduje aj investície do integrácie.",
+              "correct": true
+            },
+            {
+              "sk": "Text zdôrazňuje, že jediné riešenie nestačí.",
+              "correct": true
+            },
+            {
+              "sk": "Podľa textu stačí zvýšiť dôchodkový vek.",
+              "correct": false
+            },
+            {
+              "sk": "Podľa textu pracovná migrácia nič nerieši.",
+              "correct": false
+            }
+          ],
+          "explanation": "Текст не обстоює одного рішення: кожне має переваги й обмеження.",
+          "order": 14,
+          "wordIds": [
+            "b2-u04-l02-demografia-w02",
+            "b2-u04-l02-demografia-w03"
+          ]
+        },
+        {
+          "id": "b2-u04-l02-demografia-ex15",
+          "lessonId": "b2-u04-l02-demografia",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні описи змін.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Podiel seniorov vzrástol z 15 % na 19 %.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Počet obyvateľov vzrástla o päť percent.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Podiel vzrástol o 15 % na 19 %.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Počet detí poklesol o dvesto.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "V obci žije vyše tisíc obyvateľov.",
+              "correct": true
+            }
+          ],
+          "explanation": "Чоловічий рід: počet vzrástol; z… na… для початкового й кінцевого значення.",
+          "order": 15,
+          "wordIds": [
+            "b2-u04-l02-demografia-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Звіт про демографію села",
+        "description": "Ти готуєш короткий допис про зміну кількості мешканців у селі й намагаєшся писати точно та зважено.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Як опишеш спад кількості мешканців із 6 000 до 5 700?",
+            "options": [
+              {
+                "sk": "Počet obyvateľov klesla zo 6 000 na 5 700.",
+                "correct": false
+              },
+              {
+                "sk": "Počet obyvateľov klesol o 6 000 na 5 700.",
+                "correct": false
+              },
+              {
+                "sk": "Počet obyvateľov klesol zo 6 000 na 5 700, teda o 300.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як скажеш, що в селі живе понад тисячу літніх людей, якщо точного числа не знаєш?",
+            "options": [
+              {
+                "sk": "V obci žije vyše tisíc seniorov.",
+                "correct": true
+              },
+              {
+                "sk": "V obci žije presne tisíc seniorov, možno.",
+                "correct": false
+              },
+              {
+                "sk": "V obci žije necelých tisíc seniorov.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Як назвеш причину?",
+            "options": [
+              {
+                "sk": "Príčinou poklesu je nižšia pôrodnosť a odchod mladých ľudí.",
+                "correct": true
+              },
+              {
+                "sk": "Pokles je preto, že niekto tak chcel.",
+                "correct": false
+              },
+              {
+                "sk": "Príčinou poklesu je nižšia pôrodnosť a odchod mladých ľudí je.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як підсумуєш можливі рішення?",
+            "options": [
+              {
+                "sk": "Žiadne riešenie neexistuje, nerobme nič.",
+                "correct": false
+              },
+              {
+                "sk": "Jediné správne riešenie je to moje.",
+                "correct": false
+              },
+              {
+                "sk": "Odborníci navrhujú viac riešení a každé má svoje prínosy aj obmedzenia.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш описувати демографічні зміни. Далі — рівність: як говорити про рівні права, можливості й нерівність."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш описувати демографічні зміни. Далі — рівність: як говорити про рівні права, можливості й нерівність.",
+        "nowYouKnow": [
+          "o = на скільки · na = до скількох · z = від скількох",
+          "pôrodnosť klesla · počet klesol (рід підмета)",
+          "viesť k + давальний · príčinou je…",
+          "vyše · necelých · takmer · približne"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 15,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u04-l03-rovnost",
+          "title": "Рівність і рівні можливості"
+        }
+      }
+    }
+  ]
+}

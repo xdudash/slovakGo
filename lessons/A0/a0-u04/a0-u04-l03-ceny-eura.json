@@ -1,0 +1,793 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u04-l03-ceny-eura",
+      "sectionId": "a0-u04",
+      "level": "A0",
+      "title": "Ціни: євро й центи",
+      "topic": "Числа, ціни, час",
+      "description": "Як читати ціни, розуміти euro / eurá / eur і centy, і як правильно сказати суму.",
+      "order": 33,
+      "xpReward": 15,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Розуміти ціни на цінниках і на слух.",
+      "completionMessage": "Ціни для тебе вже не загадка. Далі — купуємо: Koľko to stojí?",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Числа, ціни, час",
+        "title": "Ціни: євро й центи",
+        "shortDescription": "Розуміти ціни на цінниках і на слух.",
+        "outcomes": [
+          "читати ціни з комою: 2,50 €",
+          "узгоджувати euro / eurá / eur",
+          "розуміти centy",
+          "казати суму вголос"
+        ],
+        "newWords": [
+          "euro",
+          "cent",
+          "lacný",
+          "drahý",
+          "zľava",
+          "spolu"
+        ],
+        "exercisesCount": 12,
+        "reward": "+15 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Euro, eurá, eur",
+          "text": "1 euro, 2–4 eurá, 5+ eur — як «рік, роки, років». Із центами так само: 1 cent, 2–4 centy, 5+ centov.",
+          "examples": [
+            {
+              "sk": "jedno euro",
+              "uk": "одне євро"
+            },
+            {
+              "sk": "tri eurá",
+              "uk": "три євро"
+            },
+            {
+              "sk": "desať eur",
+              "uk": "десять євро"
+            }
+          ],
+          "shortRule": "1 euro, 2–4 eurá, 5+ eur",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Кома, а не крапка",
+          "text": "У Словаччині ціни пишуть із комою: 2,50 € — «dve eurá päťdesiat (centov)». Часто центи кажуть без слова «centov»: «tri eurá dvadsať».",
+          "examples": [
+            {
+              "sk": "1,20 €",
+              "uk": "jedno euro dvadsať"
+            },
+            {
+              "sk": "4,99 €",
+              "uk": "štyri eurá deväťdesiatdeväť"
+            },
+            {
+              "sk": "0,80 €",
+              "uk": "osemdesiat centov"
+            }
+          ],
+          "shortRule": "2,50 € → dve eurá päťdesiat",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Слова про ціну",
+          "text": "cena (ціна), lacný (дешевий), drahý (дорогий), zľava (знижка), akcia (акційна пропозиція), spolu (разом).",
+          "examples": [
+            {
+              "sk": "To je drahé.",
+              "uk": "Це дорого."
+            },
+            {
+              "sk": "Je to v akcii.",
+              "uk": "Це за акцією."
+            },
+            {
+              "sk": "Spolu dvanásť eur.",
+              "uk": "Разом дванадцять євро."
+            }
+          ],
+          "shortRule": "lacné ≠ drahé",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u04-l03-ceny-eura-w01",
+            "sk": "euro",
+            "uk": "євро",
+            "pronunciationUk": "еуро",
+            "exampleSk": "Stojí to jedno euro.",
+            "exampleUk": "Це коштує одне євро."
+          },
+          {
+            "wordId": "a0-u04-l03-ceny-eura-w02",
+            "sk": "cent",
+            "uk": "цент",
+            "pronunciationUk": "цент",
+            "exampleSk": "Nemám drobné, len desať centov.",
+            "exampleUk": "У мене немає дрібних, лише десять центів."
+          },
+          {
+            "wordId": "a0-u04-l03-ceny-eura-w03",
+            "sk": "lacný",
+            "uk": "дешевий",
+            "pronunciationUk": "лацні:",
+            "exampleSk": "Tento chlieb je lacný.",
+            "exampleUk": "Цей хліб дешевий."
+          },
+          {
+            "wordId": "a0-u04-l03-ceny-eura-w04",
+            "sk": "drahý",
+            "uk": "дорогий",
+            "pronunciationUk": "драгі:",
+            "exampleSk": "Byt v centre je drahý.",
+            "exampleUk": "Квартира в центрі дорога."
+          },
+          {
+            "wordId": "a0-u04-l03-ceny-eura-w05",
+            "sk": "zľava",
+            "uk": "знижка",
+            "pronunciationUk": "зл’ява",
+            "exampleSk": "Na bundu je zľava 30 %.",
+            "exampleUk": "На куртку знижка 30 %."
+          },
+          {
+            "wordId": "a0-u04-l03-ceny-eura-w06",
+            "sk": "spolu",
+            "uk": "разом",
+            "pronunciationUk": "сполу",
+            "exampleSk": "Spolu to je osem eur.",
+            "exampleUk": "Разом це вісім євро."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u04-l03-ceny-eura-w01",
+          "sk": "euro",
+          "uk": "євро",
+          "pronunciationUk": "еуро",
+          "exampleSk": "Stojí to jedno euro.",
+          "exampleUk": "Це коштує одне євро.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l03-ceny-eura-w02",
+          "sk": "cent",
+          "uk": "цент",
+          "pronunciationUk": "цент",
+          "exampleSk": "Nemám drobné, len desať centov.",
+          "exampleUk": "У мене немає дрібних, лише десять центів.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l03-ceny-eura-w03",
+          "sk": "lacný",
+          "uk": "дешевий",
+          "pronunciationUk": "лацні:",
+          "exampleSk": "Tento chlieb je lacný.",
+          "exampleUk": "Цей хліб дешевий.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l03-ceny-eura-w04",
+          "sk": "drahý",
+          "uk": "дорогий",
+          "pronunciationUk": "драгі:",
+          "exampleSk": "Byt v centre je drahý.",
+          "exampleUk": "Квартира в центрі дорога.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l03-ceny-eura-w05",
+          "sk": "zľava",
+          "uk": "знижка",
+          "pronunciationUk": "зл’ява",
+          "exampleSk": "Na bundu je zľava 30 %.",
+          "exampleUk": "На куртку знижка 30 %.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l03-ceny-eura-w06",
+          "sk": "spolu",
+          "uk": "разом",
+          "pronunciationUk": "сполу",
+          "exampleSk": "Spolu to je osem eur.",
+          "exampleUk": "Разом це вісім євро.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u04-l03-ceny-eura-ex01",
+          "lessonId": "a0-u04-l03-ceny-eura",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "To stojí tri "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "euro",
+                "eurá",
+                "eur"
+              ],
+              "correct": "eurá"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "2–4 → eurá.",
+          "order": 1,
+          "wordIds": [
+            "a0-u04-l03-ceny-eura-w01"
+          ]
+        },
+        {
+          "id": "a0-u04-l03-ceny-eura-ex02",
+          "lessonId": "a0-u04-l03-ceny-eura",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Lístok stojí pätnásť "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "eurá",
+                "eur",
+                "euro"
+              ],
+              "correct": "eur"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "5+ → eur.",
+          "order": 2,
+          "wordIds": [
+            "a0-u04-l03-ceny-eura-w01"
+          ]
+        },
+        {
+          "id": "a0-u04-l03-ceny-eura-ex03",
+          "lessonId": "a0-u04-l03-ceny-eura",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Як прочитати «2,50 €»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "dva eurá päť",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "dve eurá päťdesiat",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "dvadsaťpäť eur",
+              "correct": false
+            }
+          ],
+          "explanation": "2 eurá + 50 centov.",
+          "order": 3
+        },
+        {
+          "id": "a0-u04-l03-ceny-eura-ex04",
+          "lessonId": "a0-u04-l03-ceny-eura",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай ціну з вимовою.",
+          "pairs": [
+            {
+              "left": "1,20 €",
+              "right": "jedno euro dvadsať"
+            },
+            {
+              "left": "3,50 €",
+              "right": "tri eurá päťdesiat"
+            },
+            {
+              "left": "0,90 €",
+              "right": "deväťdesiat centov"
+            },
+            {
+              "left": "10 €",
+              "right": "desať eur"
+            }
+          ],
+          "order": 4,
+          "wordIds": [
+            "a0-u04-l03-ceny-eura-w01",
+            "a0-u04-l03-ceny-eura-w02"
+          ]
+        },
+        {
+          "id": "a0-u04-l03-ceny-eura-ex05",
+          "lessonId": "a0-u04-l03-ceny-eura",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Дешево чи дорого?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Lacné"
+            },
+            {
+              "id": "c2",
+              "title": "Drahé"
+            }
+          ],
+          "items": [
+            {
+              "sk": "15 €",
+              "category": "c1"
+            },
+            {
+              "sk": "voda za 0",
+              "category": "c1"
+            },
+            {
+              "sk": "40 €",
+              "category": "c1"
+            },
+            {
+              "sk": "rožok za 0",
+              "category": "c1"
+            },
+            {
+              "sk": "nájom za 800 €",
+              "category": "c2"
+            },
+            {
+              "sk": "telefón za 900 €",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Здоровий глузд + слова lacný / drahý.",
+          "order": 5,
+          "wordIds": [
+            "a0-u04-l03-ceny-eura-w03",
+            "a0-u04-l03-ceny-eura-w04"
+          ]
+        },
+        {
+          "id": "a0-u04-l03-ceny-eura-ex06",
+          "lessonId": "a0-u04-l03-ceny-eura",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "У словацьких цінах замість коми пишуть крапку: 2.50 €.",
+          "correctAnswer": false,
+          "explanation": "У Словаччині пишуть кому: 2,50 €.",
+          "order": 6
+        },
+        {
+          "id": "a0-u04-l03-ceny-eura-ex07",
+          "lessonId": "a0-u04-l03-ceny-eura",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Spolu to je deväť ______.",
+          "acceptedAnswers": [
+            "eur"
+          ],
+          "hint": "5+ → eur.",
+          "explanation": "deväť eur.",
+          "order": 7,
+          "wordIds": [
+            "a0-u04-l03-ceny-eura-w06"
+          ]
+        },
+        {
+          "id": "a0-u04-l03-ceny-eura-ex08",
+          "lessonId": "a0-u04-l03-ceny-eura",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Pokladníčka",
+              "sk": "Spolu sedem eur dvadsať."
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Sedem eurá dvadsať?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "To je lacné, dovidenia.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Nech sa páči, tu je desať eur.",
+              "correct": true
+            }
+          ],
+          "explanation": "Подаючи гроші — nech sa páči.",
+          "order": 8,
+          "wordIds": [
+            "a0-u04-l03-ceny-eura-w03",
+            "a0-u04-l03-ceny-eura-w06"
+          ]
+        },
+        {
+          "id": "a0-u04-l03-ceny-eura-ex09",
+          "lessonId": "a0-u04-l03-ceny-eura",
+          "type": "real_menu",
+          "skill": [
+            "reading",
+            "real_life",
+            "numbers"
+          ],
+          "instruction": "Подивись на цінник і дай відповіді.",
+          "menuData": [
+            {
+              "category": "Pekáreň",
+              "item": "rožok",
+              "price": "0,15 €"
+            },
+            {
+              "category": "Pekáreň",
+              "item": "chlieb",
+              "price": "1,89 €"
+            },
+            {
+              "category": "Nápoje",
+              "item": "voda",
+              "price": "0,59 €"
+            },
+            {
+              "category": "Nápoje",
+              "item": "káva",
+              "price": "1,50 €"
+            }
+          ],
+          "questions": [
+            {
+              "question": "Що найдешевше?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "rožok",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "káva",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "chlieb",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Скільки коштує хліб?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "jedno euro devätnásť",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "osemnásť eur deväť",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "jedno euro osemdesiatdeväť",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 9,
+          "wordIds": [
+            "a0-u04-l03-ceny-eura-w01"
+          ]
+        },
+        {
+          "id": "a0-u04-l03-ceny-eura-ex10",
+          "lessonId": "a0-u04-l03-ceny-eura",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що це дорого.",
+          "tokens": [
+            "veľmi",
+            "To",
+            "drahé",
+            "je",
+            "."
+          ],
+          "correctOrder": [
+            "To",
+            "je",
+            "veľmi",
+            "drahé",
+            "."
+          ],
+          "explanation": "veľmi — дуже.",
+          "order": 10,
+          "wordIds": [
+            "a0-u04-l03-ceny-eura-w04"
+          ]
+        },
+        {
+          "id": "a0-u04-l03-ceny-eura-ex11",
+          "lessonId": "a0-u04-l03-ceny-eura",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти бачиш табличку «–30 %» і хочеш уточнити, чи це знижка.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Je to spolu?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Je na to zľava?",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Je to drahé?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Koľko je hodín?",
+              "correct": false
+            }
+          ],
+          "explanation": "zľava — знижка.",
+          "order": 11,
+          "wordIds": [
+            "a0-u04-l03-ceny-eura-w04",
+            "a0-u04-l03-ceny-eura-w05",
+            "a0-u04-l03-ceny-eura-w06"
+          ]
+        },
+        {
+          "id": "a0-u04-l03-ceny-eura-ex12",
+          "lessonId": "a0-u04-l03-ceny-eura",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Spolu dvadsať eur»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Знижка двадцять євро",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Разом двадцять євро",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Двадцять євро за штуку",
+              "correct": false
+            }
+          ],
+          "explanation": "spolu — разом.",
+          "order": 12
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "На касі в супермаркеті",
+        "description": "Ти купуєш продукти, касирка називає ціни.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Mlieko – jedno euro desať.» Скільки?",
+            "options": [
+              {
+                "sk": "11 €",
+                "correct": false
+              },
+              {
+                "sk": "1,10 €",
+                "correct": true
+              },
+              {
+                "sk": "1,01 €",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Spolu štrnásť eur päťdesiat.» Скільки разом?",
+            "options": [
+              {
+                "sk": "4,15 €",
+                "correct": false
+              },
+              {
+                "sk": "14,50 €",
+                "correct": true
+              },
+              {
+                "sk": "40,50 €",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти хочеш перепитати суму.",
+            "options": [
+              {
+                "sk": "Dobrú chuť.",
+                "correct": false
+              },
+              {
+                "sk": "Kde je pokladňa?",
+                "correct": false
+              },
+              {
+                "sk": "Koľko spolu, prosím?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Banány sú v akcii.» Що це означає?",
+            "options": [
+              {
+                "sk": "банани закінчилися",
+                "correct": false
+              },
+              {
+                "sk": "банани дорогі",
+                "correct": false
+              },
+              {
+                "sk": "банани зі знижкою",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ціни для тебе вже не загадка. Далі — купуємо: Koľko to stojí?"
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ціни для тебе вже не загадка. Далі — купуємо: Koľko to stojí?",
+        "nowYouKnow": [
+          "euro / eurá / eur",
+          "2,50 € = dve eurá päťdesiat",
+          "lacný, drahý, zľava, akcia",
+          "spolu"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u04-l04-kolko-to-stoji",
+          "title": "Скільки це коштує?"
+        }
+      }
+    }
+  ]
+}

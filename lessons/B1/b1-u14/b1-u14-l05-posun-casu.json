@@ -1,0 +1,773 @@
+{
+  "lessons": [
+    {
+      "id": "b1-u14-l05-posun-casu",
+      "sectionId": "b1-u14",
+      "level": "B1",
+      "title": "Час у непрямій мові",
+      "topic": "Непряма мова",
+      "description": "Головна відмінність від англійської: словацька не зсуває час у непрямій мові. Що означають je / bol / bude після povedal, že… і які слова часу й місця все-таки змінюються.",
+      "order": 135,
+      "xpReward": 40,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Зберігати час оригіналу в переказі й правильно змінювати слова zajtra, včera, tu, teraz.",
+      "completionMessage": "Ти знаєш, що час у непрямій мові не зсувається. Далі — новини й чутки від колег: vraj, údajne.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B1 · Непряма мова",
+        "title": "Час у непрямій мові",
+        "shortDescription": "Зберігати час оригіналу в переказі й правильно змінювати слова zajtra, včera, tu, teraz.",
+        "outcomes": [
+          "зберігати час оригіналу: „Som chorý.“ → povedal, že je chorý",
+          "розуміти різницю між povedal, že je / bol / bude",
+          "змінювати zajtra → na druhý deň, včera → deň predtým, tu → tam",
+          "залишати умовний спосіб: povedal, že by rád…"
+        ],
+        "newWords": [
+          "súslednosť časov",
+          "na druhý deň",
+          "deň predtým",
+          "v ten deň",
+          "predošlý"
+        ],
+        "exercisesCount": 14,
+        "reward": "+40 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Час не зсувається!",
+          "text": "В англійській «He said he was tired» — час зсувається в минуле (backshift). У словацькій, як і в українській, такого правила немає: зберігаємо час оригіналу. „Som unavený.“ → «Povedal, že je unavený.» „Prídem.“ → «Povedal, že príde.» „Bol som chorý.“ → «Povedal, že bol chorý.» Узгодження часів (súslednosť časov) в англійському розумінні словацька не знає.",
+          "examples": [
+            {
+              "sk": "Včera mi povedala, že je chorá.",
+              "uk": "Учора вона мені сказала, що хворіє."
+            },
+            {
+              "sk": "Minulý týždeň sľúbil, že to opraví.",
+              "uk": "Минулого тижня він пообіцяв, що це полагодить."
+            }
+          ],
+          "shortRule": "час оригіналу = час у переказі",
+          "commonMistakes": [
+            {
+              "mistake": "„Som unavený.“ → Povedal, že bol unavený.",
+              "correct": "Povedal, že je unavený."
+            },
+            {
+              "mistake": "„Opravím to.“ → Sľúbil, že by to opravil.",
+              "correct": "Sľúbil, že to opraví."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Що показує час у переказі",
+          "text": "Час у підрядному реченні рахуємо від моменту, коли людина говорила. «Povedal, že je chorý» — хворів тоді, коли казав. «Povedal, že bol chorý» — хворів ще раніше. «Povedal, že bude chorý / príde» — пізніше. Умовний спосіб теж лишається: „Rád by som prišiel.“ → «Povedal, že by rád prišiel.»",
+          "examples": [
+            {
+              "sk": "Povedal, že pracuje v Bratislave.",
+              "uk": "Він сказав, що працює в Братиславі (на той момент)."
+            },
+            {
+              "sk": "Povedal, že pracoval v Bratislave.",
+              "uk": "Він сказав, що раніше працював у Братиславі."
+            }
+          ],
+          "shortRule": "je — тоді · bol — раніше · bude — пізніше",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Що зсувається: слова часу й місця",
+          "text": "Змінюються не дієслівні часи, а слова «сьогодні, завтра, тут, зараз» — якщо переказуємо пізніше чи в іншому місці: dnes → v ten deň, zajtra → na druhý deň (nasledujúci deň), včera → deň predtým, teraz → vtedy, tu → tam. Якщо переказуємо того самого дня, «zajtra» лишається: «Ráno povedal, že príde zajtra.»",
+          "examples": [
+            {
+              "sk": "V pondelok povedal, že na druhý deň príde.",
+              "uk": "У понеділок він сказав, що прийде наступного дня."
+            },
+            {
+              "sk": "Tvrdila, že deň predtým bola u lekára.",
+              "uk": "Вона стверджувала, що напередодні була в лікаря."
+            }
+          ],
+          "shortRule": "zajtra → na druhý deň · včera → deň predtým · tu → tam",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b1-u14-l05-posun-casu-w01",
+            "sk": "súslednosť časov",
+            "uk": "узгодження часів",
+            "pronunciationUk": "су:слєдность часоу",
+            "exampleSk": "Slovenčina nepozná súslednosť časov ako angličtina.",
+            "exampleUk": "Словацька не знає узгодження часів, як англійська."
+          },
+          {
+            "wordId": "b1-u14-l05-posun-casu-w02",
+            "sk": "na druhý deň",
+            "uk": "наступного дня",
+            "pronunciationUk": "на други: дєнь",
+            "exampleSk": "Sľúbil, že zavolá, ale na druhý deň sa neozval.",
+            "exampleUk": "Він пообіцяв, що зателефонує, але наступного дня не озвався."
+          },
+          {
+            "wordId": "b1-u14-l05-posun-casu-w03",
+            "sk": "deň predtým",
+            "uk": "напередодні, за день до того",
+            "pronunciationUk": "дєнь предти:м",
+            "exampleSk": "Povedala, že deň predtým zmeškala vlak.",
+            "exampleUk": "Вона сказала, що напередодні запізнилася на потяг."
+          },
+          {
+            "wordId": "b1-u14-l05-posun-casu-w04",
+            "sk": "v ten deň",
+            "uk": "того дня",
+            "pronunciationUk": "в тен дєнь",
+            "exampleSk": "V ten deň mi povedal, že odchádza z firmy.",
+            "exampleUk": "Того дня він сказав мені, що йде з фірми."
+          },
+          {
+            "wordId": "b1-u14-l05-posun-casu-w05",
+            "sk": "predošlý",
+            "uk": "попередній",
+            "pronunciationUk": "предошли:",
+            "exampleSk": "Spomenul, že predošlý týždeň bol na služobnej ceste.",
+            "exampleUk": "Він згадав, що попереднього тижня був у відрядженні."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b1-u14-l05-posun-casu-w01",
+          "sk": "súslednosť časov",
+          "uk": "узгодження часів",
+          "pronunciationUk": "су:слєдность часоу",
+          "exampleSk": "Slovenčina nepozná súslednosť časov ako angličtina.",
+          "exampleUk": "Словацька не знає узгодження часів, як англійська.",
+          "level": "B1",
+          "topic": "Непряма мова",
+          "tags": [
+            "b1-u14",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u14-l05-posun-casu-w02",
+          "sk": "na druhý deň",
+          "uk": "наступного дня",
+          "pronunciationUk": "на други: дєнь",
+          "exampleSk": "Sľúbil, že zavolá, ale na druhý deň sa neozval.",
+          "exampleUk": "Він пообіцяв, що зателефонує, але наступного дня не озвався.",
+          "level": "B1",
+          "topic": "Непряма мова",
+          "tags": [
+            "b1-u14",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u14-l05-posun-casu-w03",
+          "sk": "deň predtým",
+          "uk": "напередодні, за день до того",
+          "pronunciationUk": "дєнь предти:м",
+          "exampleSk": "Povedala, že deň predtým zmeškala vlak.",
+          "exampleUk": "Вона сказала, що напередодні запізнилася на потяг.",
+          "level": "B1",
+          "topic": "Непряма мова",
+          "tags": [
+            "b1-u14",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u14-l05-posun-casu-w04",
+          "sk": "v ten deň",
+          "uk": "того дня",
+          "pronunciationUk": "в тен дєнь",
+          "exampleSk": "V ten deň mi povedal, že odchádza z firmy.",
+          "exampleUk": "Того дня він сказав мені, що йде з фірми.",
+          "level": "B1",
+          "topic": "Непряма мова",
+          "tags": [
+            "b1-u14",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u14-l05-posun-casu-w05",
+          "sk": "predošlý",
+          "uk": "попередній",
+          "pronunciationUk": "предошли:",
+          "exampleSk": "Spomenul, že predošlý týždeň bol na služobnej ceste.",
+          "exampleUk": "Він згадав, що попереднього тижня був у відрядженні.",
+          "level": "B1",
+          "topic": "Непряма мова",
+          "tags": [
+            "b1-u14",
+            "b1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b1-u14-l05-posun-casu-ex01",
+          "lessonId": "b1-u14-l05-posun-casu",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "súslednosť časov",
+              "right": "узгодження часів"
+            },
+            {
+              "left": "na druhý deň",
+              "right": "наступного дня"
+            },
+            {
+              "left": "deň predtým",
+              "right": "напередодні"
+            },
+            {
+              "left": "v ten deň",
+              "right": "того дня"
+            },
+            {
+              "left": "predošlý",
+              "right": "попередній"
+            },
+            {
+              "left": "vtedy",
+              "right": "тоді"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b1-u14-l05-posun-casu-w01",
+            "b1-u14-l05-posun-casu-w02",
+            "b1-u14-l05-posun-casu-w03",
+            "b1-u14-l05-posun-casu-w04",
+            "b1-u14-l05-posun-casu-w05"
+          ]
+        },
+        {
+          "id": "b1-u14-l05-posun-casu-ex02",
+          "lessonId": "b1-u14-l05-posun-casu",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Jana: „Som unavená.“ → Včera Jana povedala, že "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "bola",
+                "je",
+                "bude"
+              ],
+              "correct": "je"
+            },
+            {
+              "text": " unavená."
+            }
+          ],
+          "explanation": "Час не зсувається: som → je.",
+          "order": 2
+        },
+        {
+          "id": "b1-u14-l05-posun-casu-ex03",
+          "lessonId": "b1-u14-l05-posun-casu",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Peter: „Zajtra prídem.“ → Minulý týždeň Peter sľúbil, že na druhý deň "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "príde",
+                "prišiel",
+                "by prišiel"
+              ],
+              "correct": "príde"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Обіцянка про майбутнє — майбутній час príde, як в оригіналі.",
+          "order": 3,
+          "wordIds": [
+            "b1-u14-l05-posun-casu-w02"
+          ]
+        },
+        {
+          "id": "b1-u14-l05-posun-casu-ex04",
+          "lessonId": "b1-u14-l05-posun-casu",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "«Kolega povedal, že je chorý.» Коли колега хворів?",
+          "options": [
+            {
+              "id": "a",
+              "text": "до того, як це сказав, а тепер здоровий",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "у момент, коли це казав",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "хворітиме наступного тижня",
+              "correct": false
+            }
+          ],
+          "explanation": "je — теперішній час відносно моменту розмови.",
+          "order": 4
+        },
+        {
+          "id": "b1-u14-l05-posun-casu-ex05",
+          "lessonId": "b1-u14-l05-posun-casu",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Kolegyňa povedala, že bola na dovolenke.",
+          "statement": "Колегиня була у відпустці ще до того, як про це розповіла.",
+          "correctAnswer": true,
+          "explanation": "bola — минуле відносно моменту, коли вона говорила.",
+          "order": 5
+        },
+        {
+          "id": "b1-u14-l05-posun-casu-ex06",
+          "lessonId": "b1-u14-l05-posun-casu",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Mária včera povedala: „Pracujem v nemocnici.“ → Mária včera povedala, že ______ v nemocnici.",
+          "acceptedAnswers": [
+            "pracuje"
+          ],
+          "explanation": "Теперішній час зберігається: pracuje.",
+          "order": 6
+        },
+        {
+          "id": "b1-u14-l05-posun-casu-ex07",
+          "lessonId": "b1-u14-l05-posun-casu",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Minulý rok mi sused povedal, že bol dôchodca a má veľa času.",
+          "errorToken": "bol",
+          "correctToken": "je",
+          "explanation": "Сусід сказав «Som dôchodca»: у переказі теперішній час — je (як і má).",
+          "order": 7
+        },
+        {
+          "id": "b1-u14-l05-posun-casu-ex08",
+          "lessonId": "b1-u14-l05-posun-casu",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Як зміняться слова, якщо переказуєш через тиждень?",
+          "pairs": [
+            {
+              "left": "dnes",
+              "right": "v ten deň"
+            },
+            {
+              "left": "zajtra",
+              "right": "na druhý deň"
+            },
+            {
+              "left": "včera",
+              "right": "deň predtým"
+            },
+            {
+              "left": "teraz",
+              "right": "vtedy"
+            },
+            {
+              "left": "tu",
+              "right": "tam"
+            }
+          ],
+          "order": 8,
+          "wordIds": [
+            "b1-u14-l05-posun-casu-w02",
+            "b1-u14-l05-posun-casu-w03",
+            "b1-u14-l05-posun-casu-w04"
+          ]
+        },
+        {
+          "id": "b1-u14-l05-posun-casu-ex09",
+          "lessonId": "b1-u14-l05-posun-casu",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Це сказали в понеділок, а ти переказуєш у п’ятницю.",
+          "source": "Šéf (v pondelok): „Zajtra bude porada.“",
+          "acceptedAnswers": [
+            "Šéf v pondelok povedal, že na druhý deň bude porada.",
+            "V pondelok šéf povedal, že na druhý deň bude porada.",
+            "Šéf v pondelok povedal, že porada bude na druhý deň.",
+            "Šéf povedal, že na druhý deň bude porada.",
+            "Šéf v pondelok povedal, že nasledujúci deň bude porada.",
+            "Šéf v pondelok povedal, že v utorok bude porada.",
+            "Šéf v pondelok povedal, že porada bude v utorok.",
+            "Šéf povedal, že v utorok bude porada."
+          ],
+          "explanation": "zajtra → na druhý deň (або просто v utorok); час bude не змінюється.",
+          "order": 9,
+          "wordIds": [
+            "b1-u14-l05-posun-casu-w02"
+          ]
+        },
+        {
+          "id": "b1-u14-l05-posun-casu-ex10",
+          "lessonId": "b1-u14-l05-posun-casu",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Ольга сказала: «Bývam v Trnave.» Виправ переказ.",
+          "sentence": "Oľga povedala, že bývala v Trnave.",
+          "acceptedAnswers": [
+            "Oľga povedala, že býva v Trnave."
+          ],
+          "explanation": "Англійська звичка: час не зсуваємо. Bývala означало б, що вона там уже не живе.",
+          "order": 10
+        },
+        {
+          "id": "b1-u14-l05-posun-casu-ex11",
+          "lessonId": "b1-u14-l05-posun-casu",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Minulý piatok som stretol starého kamaráta Vasyľa. Povedal mi, že teraz pracuje ako vodič v Prešove a že je spokojný. Priznal, že prvý rok na Slovensku bol ťažký, lebo nevedel jazyk. Spomenul, že deň predtým robil skúšku zo slovenčiny a že výsledky dostane o týždeň. Sľúbil, že mi na druhý deň pošle fotky z Tatier. Zatiaľ ich neposlal.",
+          "questions": [
+            {
+              "question": "Де і ким працює Василь?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "водієм у Пряшеві",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "гідом у Татрах",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "він зараз без роботи",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Коли Василь складав іспит зі словацької?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "у п’ятницю, у день зустрічі",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "у четвер, за день до зустрічі",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "через тиждень після зустрічі",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що Василь пообіцяв?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "приїхати наступного тижня",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "надіслати фото з Татр наступного дня",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "надіслати результати іспиту",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 11,
+          "wordIds": [
+            "b1-u14-l05-posun-casu-w02",
+            "b1-u14-l05-posun-casu-w03"
+          ]
+        },
+        {
+          "id": "b1-u14-l05-posun-casu-ex12",
+          "lessonId": "b1-u14-l05-posun-casu",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи: «Вона сказала, що хворіє.»",
+          "tokens": [
+            "je",
+            ",",
+            ".",
+            "Povedala",
+            "chorá",
+            "že"
+          ],
+          "correctOrder": [
+            "Povedala",
+            ",",
+            "že",
+            "je",
+            "chorá",
+            "."
+          ],
+          "explanation": "Теперішній час зберігається: je chorá.",
+          "order": 12
+        },
+        {
+          "id": "b1-u14-l05-posun-casu-ex13",
+          "lessonId": "b1-u14-l05-posun-casu",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Учора сусід сказав тобі: «Opravím ti bicykel.» Сьогодні ти переказуєш це дружині.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Sused včera povedal, že mi opravil by bicykel.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Sused včera povedal, že mi opraví bicykel.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Sused včera povedal, že mi opravil bicykel.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Sused včera povedal, že ti opraví bicykel.",
+              "correct": false
+            }
+          ],
+          "explanation": "Обіцянка на майбутнє — opraví; ti (тобі) → mi (мені).",
+          "order": 13
+        },
+        {
+          "id": "b1-u14-l05-posun-casu-ex14",
+          "lessonId": "b1-u14-l05-posun-casu",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні перекази речення «Rád by som vám pomohol.» (так сказав сусід).",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Sused povedal, že by nám rád pomôže.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Sused povedal, že nám rád pomohol.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Sused nám povedal, že by nám rád pomohol.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Sused povedal, že by nám rád pomohol.",
+              "correct": true
+            }
+          ],
+          "explanation": "Умовний спосіб зберігається: by rád pomohol; vám → nám.",
+          "order": 14
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Новини для нової колеги",
+        "description": "У п’ятницю ти переказуєш новій колезі, що начальник казав на нараді в понеділок.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Начальник у понеділок сказав: «Som spokojný s vašou prácou.»",
+            "options": [
+              {
+                "sk": "V pondelok povedal, že je spokojný s našou prácou.",
+                "correct": true
+              },
+              {
+                "sk": "V pondelok povedal, že bol spokojný s vašou prácou.",
+                "correct": false
+              },
+              {
+                "sk": "V pondelok povedal, že by bol spokojný s našou prácou.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Він сказав (у понеділок): «Zajtra príde kontrola.»",
+            "options": [
+              {
+                "sk": "Povedal, že deň predtým príde kontrola.",
+                "correct": false
+              },
+              {
+                "sk": "Povedal, že na druhý deň prišla by kontrola.",
+                "correct": false
+              },
+              {
+                "sk": "Povedal, že na druhý deň príde kontrola.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Він сказав: «Včera som hovoril s riaditeľom.»",
+            "options": [
+              {
+                "sk": "Povedal, že deň predtým hovorí s riaditeľom.",
+                "correct": false
+              },
+              {
+                "sk": "Povedal, že deň predtým hovoril s riaditeľom.",
+                "correct": true
+              },
+              {
+                "sk": "Povedal, že na druhý deň hovoril s riaditeľom.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Колега: «A povedal, kedy bude mať čas?» Він сказав, що матиме час у середу.",
+            "options": [
+              {
+                "sk": "Povedal, že bude mal čas v stredu.",
+                "correct": false
+              },
+              {
+                "sk": "Povedal, že mal čas v stredu.",
+                "correct": false
+              },
+              {
+                "sk": "Povedal, že bude mať čas v stredu.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти знаєш, що час у непрямій мові не зсувається. Далі — новини й чутки від колег: vraj, údajne."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти знаєш, що час у непрямій мові не зсувається. Далі — новини й чутки від колег: vraj, údajne.",
+        "nowYouKnow": [
+          "час не зсувається: „Som chorý.“ → povedal, že je chorý",
+          "je — тоді, bol — раніше, bude — пізніше",
+          "змінюються слова часу й місця: zajtra → na druhý deň, včera → deň predtým, tu → tam",
+          "умовний спосіб лишається: povedal, že by rád…"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 14,
+        "xpReward": 40,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b1-u14-l06-spravy-od-kolegov",
+          "title": "Новини й чутки від колег"
+        }
+      }
+    }
+  ]
+}

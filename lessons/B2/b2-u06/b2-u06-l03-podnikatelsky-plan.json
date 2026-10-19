@@ -1,0 +1,956 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u06-l03-podnikatelsky-plan",
+      "sectionId": "b2-u06",
+      "level": "B2",
+      "title": "Підприємницький план",
+      "topic": "Економіка і бізнес",
+      "description": "Як описати бізнес-ідею для банку, партнера чи програми підтримки: структура плану, цільова група, аналіз ринку, фінансова частина, точка беззбитковості й окупність — та мова обережного, але переконливого прогнозу.",
+      "order": 53,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Розуміти й складати основні частини підприємницького плану та формулювати прогнози обережно й аргументовано.",
+      "completionMessage": "Ти вмієш описати бізнес-ідею як план. Далі — фактури й DPH: як правильно виставити рахунок і перевірити податок.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Економіка і бізнес",
+        "title": "Підприємницький план",
+        "shortDescription": "Розуміти й складати основні частини підприємницького плану та формулювати прогнози обережно й аргументовано.",
+        "outcomes": [
+          "називати частини podnikateľského plánu й їхній порядок",
+          "описувати cieľovú skupinu й výsledky analýzy trhu",
+          "пояснювати počiatočný kapitál, bod zvratu й návratnosť",
+          "формулювати прогноз обережно: Predpokladáme, že… / Prevádzka by mohla…"
+        ],
+        "newWords": [
+          "podnikateľský plán",
+          "cieľová skupina",
+          "analýza trhu",
+          "počiatočný kapitál",
+          "bod zvratu",
+          "návratnosť"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Із чого складається план",
+          "text": "Podnikateľský plán — документ, у якому підприємець пояснює, що робитиме, для кого, як і за які гроші. Його читають банк, інвестор, партнер чи програма підтримки, тому він має бути стислим і конкретним. Типова структура: «zhrnutie» (короткий підсумок на одну сторінку — пишуть останнім, але ставлять першим), «opis podniku» (що й чому), «analýza trhu» (попит, конкуренти, тенденції), «cieľová skupina» (хто купуватиме), «marketingový plán», «organizácia a ľudia», «finančný plán» і «riziká». Назви розділів — іменникові фрази, як рядок Vec в офіційному листі. Про цільову групу кажемо так: «Našou cieľovou skupinou sú…» — орудний відмінок + дієслово «sú».",
+          "examples": [
+            {
+              "sk": "Zhrnutie píšeme nakoniec, ale v pláne je na prvom mieste.",
+              "uk": "Підсумок пишемо наприкінці, але в плані він на першому місці."
+            },
+            {
+              "sk": "Našou cieľovou skupinou sú mladé rodiny v Trnave.",
+              "uk": "Наша цільова група — молоді сім’ї в Трнаві."
+            }
+          ],
+          "shortRule": "zhrnutie → opis → trh → cieľová skupina → marketing → ľudia → financie → riziká",
+          "commonMistakes": [
+            {
+              "mistake": "Našou cieľovou skupinou sú všetci.",
+              "correct": "Našou cieľovou skupinou sú rodiny s malými deťmi v Trnave."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Цифри: капітал, беззбитковість, окупність",
+          "text": "Фінансова частина відповідає на три питання. Скільки грошей треба на старт? — «počiatočný kapitál»: обладнання, оренда, перші закупівлі, резерв. Коли доходи покриють витрати? — «bod zvratu»: обсяг продажу, за якого фірма ще не має прибутку, але вже не має збитку. За який час повернуться вкладені гроші? — «návratnosť investície». Цифри в плані — це завжди припущення, тому їх обґрунтовують: звідки ціни, скільки клієнтів і чому. Зверни увагу на керування: «dosiahnuť bod zvratu» (знахідний), «odhadovať návratnosť na tri roky» (na + знахідний). Конкретні суми оренди, податків і відрахувань перевіряй щоразу заново — вони змінюються.",
+          "examples": [
+            {
+              "sk": "Bod zvratu dosiahneme pri predaji 40 porcií denne.",
+              "uk": "Точки беззбитковості досягнемо при продажу 40 порцій на день."
+            },
+            {
+              "sk": "Návratnosť investície odhadujeme na tri roky.",
+              "uk": "Окупність інвестиції оцінюємо в три роки."
+            }
+          ],
+          "shortRule": "dosiahnuť bod zvratu · návratnosť + родовий · odhadovať na + знахідний",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Мова прогнозу: обережно й переконливо",
+          "text": "План переконує, коли автор не обіцяє неможливого. Прогнози формулюємо з дієсловами припущення: «Predpokladáme, že…», «Očakávame, že…», «Podľa odhadu…», «Ak sa naplní tento scenár, dosiahneme…». Умовний спосіб — «by» + форма на -l: «Prevádzka by mohla byť zisková už v druhom roku.» Ризики не ховаємо, а називаємо разом із реакцією на них: «Ak tržby v lete klesnú, znížime náklady na…». Слова «určite», «garantovane», «bez rizika» у плані викликають недовіру: банк читає їх як ознаку непідготовленості.",
+          "examples": [
+            {
+              "sk": "Predpokladáme, že prvý rok bude stratový.",
+              "uk": "Припускаємо, що перший рік буде збитковим."
+            },
+            {
+              "sk": "Prevádzka by mohla byť zisková v druhom roku.",
+              "uk": "Заклад міг би стати прибутковим на другий рік."
+            }
+          ],
+          "shortRule": "predpokladáme / očakávame, že… · by + -l · ризик + реакція",
+          "commonMistakes": [
+            {
+              "mistake": "Garantovane zarobíme milión.",
+              "correct": "Podľa odhadu by sme mohli dosiahnuť zisk v druhom roku."
+            },
+            {
+              "mistake": "Prevádzka by môže byť zisková.",
+              "correct": "Prevádzka by mohla byť zisková."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u06-l03-podnikatelsky-plan-w01",
+            "sk": "podnikateľský plán",
+            "uk": "підприємницький план, бізнес-план",
+            "pronunciationUk": "поднікательски: пла:н",
+            "exampleSk": "Banka chce vidieť podnikateľský plán aj s finančnou časťou.",
+            "exampleUk": "Банк хоче побачити бізнес-план разом із фінансовою частиною."
+          },
+          {
+            "wordId": "b2-u06-l03-podnikatelsky-plan-w02",
+            "sk": "cieľová skupina",
+            "uk": "цільова група",
+            "pronunciationUk": "цієльова: скупіна",
+            "exampleSk": "Našou cieľovou skupinou sú rodiny s malými deťmi.",
+            "exampleUk": "Наша цільова група — сім’ї з малими дітьми."
+          },
+          {
+            "wordId": "b2-u06-l03-podnikatelsky-plan-w03",
+            "sk": "analýza trhu",
+            "uk": "аналіз ринку",
+            "pronunciationUk": "аналі:за тргу",
+            "exampleSk": "Analýza trhu ukázala, že v okolí chýba detská kaviareň.",
+            "exampleUk": "Аналіз ринку показав, що поблизу бракує дитячої кав’ярні."
+          },
+          {
+            "wordId": "b2-u06-l03-podnikatelsky-plan-w04",
+            "sk": "počiatočný kapitál",
+            "uk": "стартовий капітал",
+            "pronunciationUk": "почіаточни: капіта:л",
+            "exampleSk": "Počiatočný kapitál pokryje vybavenie a nájom na tri mesiace.",
+            "exampleUk": "Стартовий капітал покриє обладнання й оренду на три місяці."
+          },
+          {
+            "wordId": "b2-u06-l03-podnikatelsky-plan-w05",
+            "sk": "bod zvratu",
+            "uk": "точка беззбитковості",
+            "pronunciationUk": "бод зврату",
+            "exampleSk": "Bod zvratu dosiahneme pri predaji 40 porcií denne.",
+            "exampleUk": "Точки беззбитковості досягнемо при продажу 40 порцій на день."
+          },
+          {
+            "wordId": "b2-u06-l03-podnikatelsky-plan-w06",
+            "sk": "návratnosť",
+            "uk": "окупність",
+            "pronunciationUk": "на:вратность",
+            "exampleSk": "Návratnosť investície odhadujeme na tri roky.",
+            "exampleUk": "Окупність інвестиції оцінюємо в три роки."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-w01",
+          "sk": "podnikateľský plán",
+          "uk": "підприємницький план, бізнес-план",
+          "pronunciationUk": "поднікательски: пла:н",
+          "exampleSk": "Banka chce vidieť podnikateľský plán aj s finančnou časťou.",
+          "exampleUk": "Банк хоче побачити бізнес-план разом із фінансовою частиною.",
+          "level": "B2",
+          "topic": "Економіка і бізнес",
+          "tags": [
+            "b2-u06",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-w02",
+          "sk": "cieľová skupina",
+          "uk": "цільова група",
+          "pronunciationUk": "цієльова: скупіна",
+          "exampleSk": "Našou cieľovou skupinou sú rodiny s malými deťmi.",
+          "exampleUk": "Наша цільова група — сім’ї з малими дітьми.",
+          "level": "B2",
+          "topic": "Економіка і бізнес",
+          "tags": [
+            "b2-u06",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-w03",
+          "sk": "analýza trhu",
+          "uk": "аналіз ринку",
+          "pronunciationUk": "аналі:за тргу",
+          "exampleSk": "Analýza trhu ukázala, že v okolí chýba detská kaviareň.",
+          "exampleUk": "Аналіз ринку показав, що поблизу бракує дитячої кав’ярні.",
+          "level": "B2",
+          "topic": "Економіка і бізнес",
+          "tags": [
+            "b2-u06",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-w04",
+          "sk": "počiatočný kapitál",
+          "uk": "стартовий капітал",
+          "pronunciationUk": "почіаточни: капіта:л",
+          "exampleSk": "Počiatočný kapitál pokryje vybavenie a nájom na tri mesiace.",
+          "exampleUk": "Стартовий капітал покриє обладнання й оренду на три місяці.",
+          "level": "B2",
+          "topic": "Економіка і бізнес",
+          "tags": [
+            "b2-u06",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-w05",
+          "sk": "bod zvratu",
+          "uk": "точка беззбитковості",
+          "pronunciationUk": "бод зврату",
+          "exampleSk": "Bod zvratu dosiahneme pri predaji 40 porcií denne.",
+          "exampleUk": "Точки беззбитковості досягнемо при продажу 40 порцій на день.",
+          "level": "B2",
+          "topic": "Економіка і бізнес",
+          "tags": [
+            "b2-u06",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-w06",
+          "sk": "návratnosť",
+          "uk": "окупність",
+          "pronunciationUk": "на:вратность",
+          "exampleSk": "Návratnosť investície odhadujeme na tri roky.",
+          "exampleUk": "Окупність інвестиції оцінюємо в три роки.",
+          "level": "B2",
+          "topic": "Економіка і бізнес",
+          "tags": [
+            "b2-u06",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-ex01",
+          "lessonId": "b2-u06-l03-podnikatelsky-plan",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "podnikateľský plán",
+              "right": "бізнес-план"
+            },
+            {
+              "left": "cieľová skupina",
+              "right": "ті, для кого продукт"
+            },
+            {
+              "left": "analýza trhu",
+              "right": "дослідження попиту й конкурентів"
+            },
+            {
+              "left": "počiatočný kapitál",
+              "right": "гроші на старт"
+            },
+            {
+              "left": "bod zvratu",
+              "right": "момент, коли доходи покривають витрати"
+            },
+            {
+              "left": "návratnosť",
+              "right": "окупність"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u06-l03-podnikatelsky-plan-w01",
+            "b2-u06-l03-podnikatelsky-plan-w02",
+            "b2-u06-l03-podnikatelsky-plan-w03",
+            "b2-u06-l03-podnikatelsky-plan-w04",
+            "b2-u06-l03-podnikatelsky-plan-w05",
+            "b2-u06-l03-podnikatelsky-plan-w06"
+          ]
+        },
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-ex02",
+          "lessonId": "b2-u06-l03-podnikatelsky-plan",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Яка це частина плану?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Analýza trhu"
+            },
+            {
+              "id": "c2",
+              "title": "Finančný plán"
+            },
+            {
+              "id": "c3",
+              "title": "Riziká"
+            }
+          ],
+          "items": [
+            {
+              "sk": "v lete môžu byť tržby nižšie",
+              "category": "c3"
+            },
+            {
+              "sk": "kľúčová zamestnankyňa môže odísť",
+              "category": "c3"
+            },
+            {
+              "sk": "dopyt po rodinných službách rastie",
+              "category": "c1"
+            },
+            {
+              "sk": "návratnosť do troch rokov",
+              "category": "c2"
+            },
+            {
+              "sk": "počiatočný kapitál 30 000 eur",
+              "category": "c2"
+            },
+            {
+              "sk": "v okolí nie je žiadna detská kaviareň",
+              "category": "c1"
+            },
+            {
+              "sk": "bod zvratu pri 40 porciách denne",
+              "category": "c2"
+            },
+            {
+              "sk": "konkurenti majú vysoké ceny",
+              "category": "c1"
+            },
+            {
+              "sk": "nájom môže stúpnuť",
+              "category": "c3"
+            }
+          ],
+          "explanation": "Аналіз ринку описує попит і конкурентів, фінансовий план — гроші, а ризики — те, що може піти не так.",
+          "order": 2,
+          "wordIds": [
+            "b2-u06-l03-podnikatelsky-plan-w01",
+            "b2-u06-l03-podnikatelsky-plan-w03",
+            "b2-u06-l03-podnikatelsky-plan-w04",
+            "b2-u06-l03-podnikatelsky-plan-w05",
+            "b2-u06-l03-podnikatelsky-plan-w06"
+          ]
+        },
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-ex03",
+          "lessonId": "b2-u06-l03-podnikatelsky-plan",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Bod zvratu "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "dosiahneme sa",
+                "dosiahneme",
+                "dosiahnuť"
+              ],
+              "correct": "dosiahneme"
+            },
+            {
+              "text": " pri predaji 40 porcií denne."
+            }
+          ],
+          "explanation": "Dosiahnuť — перехідне дієслово без «sa»; після підмета «my» — особова форма dosiahneme.",
+          "order": 3,
+          "wordIds": [
+            "b2-u06-l03-podnikatelsky-plan-w05"
+          ]
+        },
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-ex04",
+          "lessonId": "b2-u06-l03-podnikatelsky-plan",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Návratnosť investície odhadujeme "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "na",
+                "o",
+                "do"
+              ],
+              "correct": "na"
+            },
+            {
+              "text": " tri roky."
+            }
+          ],
+          "explanation": "Odhadovať na + знахідний: odhadujeme na tri roky.",
+          "order": 4,
+          "wordIds": [
+            "b2-u06-l03-podnikatelsky-plan-w06"
+          ]
+        },
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-ex05",
+          "lessonId": "b2-u06-l03-podnikatelsky-plan",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Predpokladáme, ______ prvý rok bude stratový. (що)",
+          "acceptedAnswers": [
+            "že"
+          ],
+          "explanation": "Predpokladáme, že… — сполучник «že» вводить підрядне речення з прогнозом.",
+          "order": 5
+        },
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-ex06",
+          "lessonId": "b2-u06-l03-podnikatelsky-plan",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яку частину плану пишуть останньою, але ставлять на перше місце?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Finančný plán",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Zhrnutie",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Riziká",
+              "correct": false
+            }
+          ],
+          "explanation": "Zhrnutie підсумовує весь план, тому його пишуть наприкінці, а читач бачить першим.",
+          "order": 6,
+          "wordIds": [
+            "b2-u06-l03-podnikatelsky-plan-w01"
+          ]
+        },
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-ex07",
+          "lessonId": "b2-u06-l03-podnikatelsky-plan",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Prevádzka by môže byť zisková už v druhom roku.",
+          "errorToken": "môže",
+          "correctToken": "mohla",
+          "explanation": "Умовний спосіб: by + форма на -l (mohla), а не теперішній час.",
+          "order": 7
+        },
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-ex08",
+          "lessonId": "b2-u06-l03-podnikatelsky-plan",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Analýza trhu ukázala, že v okolí chýba detskú kaviareň.",
+          "acceptedAnswers": [
+            "Analýza trhu ukázala, že v okolí chýba detská kaviareň.",
+            "Analýza trhu ukázala, že detská kaviareň v okolí chýba."
+          ],
+          "explanation": "При «chýba» те, чого бракує, — підмет у називному відмінку: chýba detská kaviareň.",
+          "order": 8,
+          "wordIds": [
+            "b2-u06-l03-podnikatelsky-plan-w03"
+          ]
+        },
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-ex09",
+          "lessonId": "b2-u06-l03-podnikatelsky-plan",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перепиши обережніше — умовним способом, почни зі слів «Prevádzka by mohla…».",
+          "source": "Prevádzka bude zisková v druhom roku.",
+          "acceptedAnswers": [
+            "Prevádzka by mohla byť zisková v druhom roku.",
+            "Prevádzka by mohla byť v druhom roku zisková."
+          ],
+          "explanation": "Умовний спосіб (by mohla) робить прогноз обережним, а отже, правдоподібнішим.",
+          "order": 9
+        },
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-ex10",
+          "lessonId": "b2-u06-l03-podnikatelsky-plan",
+          "type": "tone",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Визнач тон мовця.",
+          "context": "Investor: «Plán je zaujímavý. Len mi nie je celkom jasné, odkiaľ máte tých 200 zákazníkov denne.»",
+          "options": [
+            {
+              "id": "a",
+              "text": "вважає, що 200 клієнтів — це замало",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "захоплений і готовий негайно інвестувати",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "ввічливо сумнівається в прогнозі й чекає обґрунтування",
+              "correct": true
+            }
+          ],
+          "explanation": "«Nie je mi celkom jasné, odkiaľ…» — ввічливий сумнів: треба пояснити, звідки взялася цифра.",
+          "order": 10,
+          "wordIds": [
+            "b2-u06-l03-podnikatelsky-plan-w01"
+          ]
+        },
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-ex11",
+          "lessonId": "b2-u06-l03-podnikatelsky-plan",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Iryna z Trnavy chce otvoriť detskú kaviareň s herňou. Na úrade práce jej poradili, aby si najprv napísala podnikateľský plán. Pri analýze trhu zistila, že v jej štvrti žije veľa mladých rodín, no najbližšia podobná kaviareň je až v centre. Cieľovou skupinou sú preto rodičia s deťmi do šiestich rokov. Vo finančnom pláne vypočítala, že počiatočný kapitál pokryje vybavenie, nájom na tri mesiace a malú rezervu. Väčšiu časť chce financovať úverom. Konzultantka v banke ocenila, že Iryna nesľubuje zázraky: píše, že prvý rok bude pravdepodobne stratový a bod zvratu očakáva v druhom roku. Ako najväčšie riziko uviedla, že v lete je v meste menej rodín, a navrhla preto letné tábory pre deti.",
+          "questions": [
+            {
+              "question": "Чому Ірина обрала саме цю цільову групу?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "так їй наказав банк",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "діти — найбагатші клієнти",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "у її районі багато молодих сімей, а схожий заклад є лише в центрі",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що сподобалося консультантці в банку?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "те, що Ірині не потрібен кредит",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "реалістичний, обережний прогноз",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "обіцянка великого прибутку з першого місяця",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Як Ірина хоче відповісти на літній ризик?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "організувати літні табори для дітей",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "підняти ціни влітку",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "закрити кав’ярню на літо",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 11,
+          "wordIds": [
+            "b2-u06-l03-podnikatelsky-plan-w01",
+            "b2-u06-l03-podnikatelsky-plan-w02",
+            "b2-u06-l03-podnikatelsky-plan-w03",
+            "b2-u06-l03-podnikatelsky-plan-w04",
+            "b2-u06-l03-podnikatelsky-plan-w05"
+          ]
+        },
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-ex12",
+          "lessonId": "b2-u06-l03-podnikatelsky-plan",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай фінансову частину плану.",
+          "document": {
+            "title": "Podnikateľský plán – finančná časť (vzor)",
+            "fields": [
+              {
+                "label": "Počiatočný kapitál",
+                "value": "30 000 eur"
+              },
+              {
+                "label": "Z toho vlastné zdroje",
+                "value": "12 000 eur"
+              },
+              {
+                "label": "Bankový úver",
+                "value": "18 000 eur"
+              },
+              {
+                "label": "Bod zvratu",
+                "value": "40 porcií denne"
+              },
+              {
+                "label": "Očakávaná návratnosť",
+                "value": "3 roky"
+              }
+            ]
+          },
+          "question": "Яку частину стартового капіталу Ірина хоче покрити кредитом?",
+          "options": [
+            {
+              "id": "a",
+              "text": "12 000 євро",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "18 000 євро",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "30 000 євро",
+              "correct": false
+            }
+          ],
+          "explanation": "Bankový úver: 18 000 eur — кредит; 12 000 — власні кошти, 30 000 — увесь стартовий капітал.",
+          "order": 12,
+          "wordIds": [
+            "b2-u06-l03-podnikatelsky-plan-w01",
+            "b2-u06-l03-podnikatelsky-plan-w04",
+            "b2-u06-l03-podnikatelsky-plan-w05",
+            "b2-u06-l03-podnikatelsky-plan-w06"
+          ]
+        },
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-ex13",
+          "lessonId": "b2-u06-l03-podnikatelsky-plan",
+          "type": "branching_dialogue",
+          "skill": [
+            "dialogue",
+            "real_life"
+          ],
+          "instruction": "Пройди діалог: обирай доречні відповіді.",
+          "successMessage": "Ти переконливо представив(ла) свій план консультантці банку!",
+          "startNode": "n1",
+          "nodes": {
+            "n1": {
+              "speaker": "Konzultantka",
+              "sk": "Kto bude vaším zákazníkom?",
+              "choices": [
+                {
+                  "id": "n1c3",
+                  "sk": "Našou cieľovou skupinou sú rodiny s malé deti.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c1",
+                  "sk": "Našou cieľovou skupinou sú rodiny s malými deťmi z okolia.",
+                  "next": "n2",
+                  "quality": "best"
+                },
+                {
+                  "id": "n1c2",
+                  "sk": "Našou cieľovou skupinou sú úplne všetci ľudia.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n2": {
+              "speaker": "Konzultantka",
+              "sk": "A kedy očakávate zisk?",
+              "choices": [
+                {
+                  "id": "n2c3",
+                  "sk": "Neviem, to sa uvidí.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c2",
+                  "sk": "Určite hneď v prvom mesiaci, garantujem.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c1",
+                  "sk": "Predpokladáme, že bod zvratu dosiahneme v druhom roku.",
+                  "next": "n3",
+                  "quality": "best"
+                }
+              ]
+            },
+            "n3": {
+              "speaker": "Konzultantka",
+              "sk": "Aké riziká vidíte?",
+              "choices": [
+                {
+                  "id": "n3c1",
+                  "sk": "Ak tržby v lete klesnú, znížime náklady a ponúkneme letné tábory.",
+                  "next": "success",
+                  "quality": "best"
+                },
+                {
+                  "id": "n3c2",
+                  "sk": "Žiadne riziká nie sú.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c3",
+                  "sk": "Riziká ma nezaujímajú.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            }
+          },
+          "order": 13,
+          "wordIds": [
+            "b2-u06-l03-podnikatelsky-plan-w02",
+            "b2-u06-l03-podnikatelsky-plan-w05"
+          ]
+        },
+        {
+          "id": "b2-u06-l03-podnikatelsky-plan-ex14",
+          "lessonId": "b2-u06-l03-podnikatelsky-plan",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери обережні, але переконливі формулювання.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Predpokladáme, že prvý rok bude stratový.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Ak tržby klesnú, znížime náklady na reklamu.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Podľa odhadu dosiahneme bod zvratu v druhom roku.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Riziko neexistuje, sme najlepší.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Garantovane zarobíme milión.",
+              "correct": false
+            }
+          ],
+          "explanation": "Переконливий план обґрунтовує прогнози й називає ризики; «garantovane» та «riziko neexistuje» викликають недовіру.",
+          "order": 14,
+          "wordIds": [
+            "b2-u06-l03-podnikatelsky-plan-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Ірина в банку",
+        "description": "Ірина представляє бізнес-план дитячої кав’ярні консультантці банку й відповідає на її запитання.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Як вона опише цільову групу?",
+            "options": [
+              {
+                "sk": "Cieľová skupina je hocikto.",
+                "correct": false
+              },
+              {
+                "sk": "Našou cieľovou skupinou sú rodiny s malé deti.",
+                "correct": false
+              },
+              {
+                "sk": "Našou cieľovou skupinou sú rodiny s malými deťmi.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Що скаже про стартовий капітал?",
+            "options": [
+              {
+                "sk": "Počiatočný kapitál pokryť vybavenie a nájom.",
+                "correct": false
+              },
+              {
+                "sk": "Peniaze sa nejako nájdu.",
+                "correct": false
+              },
+              {
+                "sk": "Počiatočný kapitál pokryje vybavenie a nájom na tri mesiace.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Як сформулює прогноз?",
+            "options": [
+              {
+                "sk": "Garantovane zarobíme hneď.",
+                "correct": false
+              },
+              {
+                "sk": "Predpokladáme, že bod zvratu dosiahneme v druhom roku.",
+                "correct": true
+              },
+              {
+                "sk": "Predpokladáme, že bod zvratu dosiahnuť v druhom roku.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Що Ірина зробить із ризиками?",
+            "options": [
+              {
+                "text": "приховає їх від банку",
+                "correct": false
+              },
+              {
+                "text": "назве їх і пояснить, як на них реагуватиме",
+                "correct": true
+              },
+              {
+                "text": "скаже, що ризиків немає",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш описати бізнес-ідею як план. Далі — фактури й DPH: як правильно виставити рахунок і перевірити податок."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш описати бізнес-ідею як план. Далі — фактури й DPH: як правильно виставити рахунок і перевірити податок.",
+        "nowYouKnow": [
+          "zhrnutie → opis → analýza trhu → cieľová skupina → marketing → financie → riziká",
+          "Našou cieľovou skupinou sú… · analýza trhu",
+          "počiatočný kapitál · bod zvratu · návratnosť investície",
+          "predpokladáme, že… · by + -l · ризик + реакція"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u06-l04-fakturacia-dph",
+          "title": "Фактури й DPH"
+        }
+      }
+    }
+  ]
+}

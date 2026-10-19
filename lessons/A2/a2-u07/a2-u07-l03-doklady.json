@@ -1,0 +1,882 @@
+{
+  "lessons": [
+    {
+      "id": "a2-u07-l03-doklady",
+      "sectionId": "a2-u07",
+      "level": "A2",
+      "title": "Документи",
+      "topic": "Легалізація і úrad",
+      "description": "Які документи зазвичай просять на úrade, чим originál відрізняється від kópia і навіщо úradný preklad.",
+      "order": 63,
+      "xpReward": 30,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Розуміти список документів і пояснювати, що ти приніс і чого бракує.",
+      "completionMessage": "Ти вже знаєш, які бувають документи. Далі — формуляр: як його правильно заповнити.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A2 · Легалізація і úrad",
+        "title": "Документи",
+        "shortDescription": "Розуміти список документів і пояснювати, що ти приніс і чого бракує.",
+        "outcomes": [
+          "називати основні документи: cestovný pas, doklad totožnosti, doklad o ubytovaní",
+          "розрізняти originál, kópia, overená kópia",
+          "вживати doklad / potvrdenie o + місцевий",
+          "казати, чого бракує: Chýba mi…"
+        ],
+        "newWords": [
+          "originál",
+          "kópia",
+          "overený",
+          "preklad",
+          "priložiť",
+          "platný",
+          "doklad totožnosti"
+        ],
+        "exercisesCount": 15,
+        "reward": "+30 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Основні документи",
+          "text": "Найчастіше потрібні: «cestovný pas» — закордонний паспорт, «doklad totožnosti» — документ, що посвідчує особу, «fotografia» — фотографія, «doklad o ubytovaní» — документ про житло, «potvrdenie o zdravotnom poistení» — підтвердження медичного страхування. Для деяких заяв потрібен і «výpis z registra trestov» — довідка про несудимість. Точний список для своєї заяви завжди перевіряй на офіційному сайті.",
+          "examples": [
+            {
+              "sk": "Mám so sebou cestovný pas.",
+              "uk": "Я маю із собою закордонний паспорт."
+            },
+            {
+              "sk": "Chýba mi doklad o ubytovaní.",
+              "uk": "Мені бракує документа про житло."
+            }
+          ],
+          "shortRule": "cestovný pas · doklad totožnosti · doklad o ubytovaní",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Doklad o + місцевий",
+          "text": "Назви документів часто будуються з «o» + місцевий відмінок: «doklad o ubytovaní», «potvrdenie o príjme» — довідка про дохід, «potvrdenie o zamestnaní» — довідка з місця роботи, «doklad o zaplatení» — документ про оплату. «Doklad» — будь-який офіційний документ, «potvrdenie» — довідка, підтвердження.",
+          "examples": [
+            {
+              "sk": "Potrebujem potvrdenie o zamestnaní.",
+              "uk": "Мені потрібна довідка з місця роботи."
+            },
+            {
+              "sk": "Priniesla som doklad o ubytovaní.",
+              "uk": "Я принесла документ про житло."
+            }
+          ],
+          "shortRule": "doklad / potvrdenie o + місцевий",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Originál, kópia, preklad",
+          "text": "«Originál» — оригінал, «kópia» — копія. «Overená kópia» — засвідчена копія (з печаткою нотаріуса або установи). До документів іноземною мовою часто потрібен «úradný preklad» — офіційний переклад словацькою. Документи «priložiť k žiadosti» — додати до заяви (k + давальний).",
+          "examples": [
+            {
+              "sk": "Priložte kópiu pasu.",
+              "uk": "Додайте копію паспорта."
+            },
+            {
+              "sk": "Doklady musia byť platné.",
+              "uk": "Документи мають бути чинними."
+            }
+          ],
+          "shortRule": "originál ≠ kópia · overená kópia · úradný preklad",
+          "commonMistakes": [
+            {
+              "mistake": "doklad o ubytovanie",
+              "correct": "doklad o ubytovaní"
+            },
+            {
+              "mistake": "kópia pas",
+              "correct": "kópia pasu"
+            },
+            {
+              "mistake": "priložiť k žiadosť",
+              "correct": "priložiť k žiadosti"
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a2-u07-l03-doklady-w01",
+            "sk": "originál",
+            "uk": "оригінал",
+            "pronunciationUk": "оріґіна:л",
+            "exampleSk": "Originál pasu si nechajte, stačí kópia.",
+            "exampleUk": "Оригінал паспорта залиште собі, достатньо копії."
+          },
+          {
+            "wordId": "a2-u07-l03-doklady-w02",
+            "sk": "kópia",
+            "uk": "копія",
+            "pronunciationUk": "ко:піа",
+            "exampleSk": "Kópia musí byť dobre čitateľná.",
+            "exampleUk": "Копія має бути добре розбірливою."
+          },
+          {
+            "wordId": "a2-u07-l03-doklady-w03",
+            "sk": "overený",
+            "uk": "засвідчений",
+            "pronunciationUk": "оверені:",
+            "exampleSk": "Tento preklad musí byť overený.",
+            "exampleUk": "Цей переклад має бути засвідчений."
+          },
+          {
+            "wordId": "a2-u07-l03-doklady-w04",
+            "sk": "preklad",
+            "uk": "переклад",
+            "pronunciationUk": "преклад",
+            "exampleSk": "Úradný preklad mi urobila prekladateľka z Košíc.",
+            "exampleUk": "Офіційний переклад мені зробила перекладачка з Кошиць."
+          },
+          {
+            "wordId": "a2-u07-l03-doklady-w05",
+            "sk": "priložiť",
+            "uk": "додати (до заяви), докласти",
+            "pronunciationUk": "пріложіт’",
+            "exampleSk": "K žiadosti musíte priložiť fotografiu.",
+            "exampleUk": "До заяви ви мусите додати фотографію."
+          },
+          {
+            "wordId": "a2-u07-l03-doklady-w06",
+            "sk": "platný",
+            "uk": "чинний, дійсний",
+            "pronunciationUk": "платні:",
+            "exampleSk": "Váš pas je platný ešte dva roky.",
+            "exampleUk": "Ваш паспорт дійсний ще два роки."
+          },
+          {
+            "wordId": "a2-u07-l03-doklady-w07",
+            "sk": "doklad totožnosti",
+            "uk": "документ, що посвідчує особу",
+            "pronunciationUk": "доклад тотожності",
+            "exampleSk": "Pri vstupe ukážte doklad totožnosti.",
+            "exampleUk": "Біля входу покажіть документ, що посвідчує особу."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a2-u07-l03-doklady-w01",
+          "sk": "originál",
+          "uk": "оригінал",
+          "pronunciationUk": "оріґіна:л",
+          "exampleSk": "Originál pasu si nechajte, stačí kópia.",
+          "exampleUk": "Оригінал паспорта залиште собі, достатньо копії.",
+          "level": "A2",
+          "topic": "Легалізація і úrad",
+          "tags": [
+            "a2-u07",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-w02",
+          "sk": "kópia",
+          "uk": "копія",
+          "pronunciationUk": "ко:піа",
+          "exampleSk": "Kópia musí byť dobre čitateľná.",
+          "exampleUk": "Копія має бути добре розбірливою.",
+          "level": "A2",
+          "topic": "Легалізація і úrad",
+          "tags": [
+            "a2-u07",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-w03",
+          "sk": "overený",
+          "uk": "засвідчений",
+          "pronunciationUk": "оверені:",
+          "exampleSk": "Tento preklad musí byť overený.",
+          "exampleUk": "Цей переклад має бути засвідчений.",
+          "level": "A2",
+          "topic": "Легалізація і úrad",
+          "tags": [
+            "a2-u07",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-w04",
+          "sk": "preklad",
+          "uk": "переклад",
+          "pronunciationUk": "преклад",
+          "exampleSk": "Úradný preklad mi urobila prekladateľka z Košíc.",
+          "exampleUk": "Офіційний переклад мені зробила перекладачка з Кошиць.",
+          "level": "A2",
+          "topic": "Легалізація і úrad",
+          "tags": [
+            "a2-u07",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-w05",
+          "sk": "priložiť",
+          "uk": "додати (до заяви), докласти",
+          "pronunciationUk": "пріложіт’",
+          "exampleSk": "K žiadosti musíte priložiť fotografiu.",
+          "exampleUk": "До заяви ви мусите додати фотографію.",
+          "level": "A2",
+          "topic": "Легалізація і úrad",
+          "tags": [
+            "a2-u07",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-w06",
+          "sk": "platný",
+          "uk": "чинний, дійсний",
+          "pronunciationUk": "платні:",
+          "exampleSk": "Váš pas je platný ešte dva roky.",
+          "exampleUk": "Ваш паспорт дійсний ще два роки.",
+          "level": "A2",
+          "topic": "Легалізація і úrad",
+          "tags": [
+            "a2-u07",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-w07",
+          "sk": "doklad totožnosti",
+          "uk": "документ, що посвідчує особу",
+          "pronunciationUk": "доклад тотожності",
+          "exampleSk": "Pri vstupe ukážte doklad totožnosti.",
+          "exampleUk": "Біля входу покажіть документ, що посвідчує особу.",
+          "level": "A2",
+          "topic": "Легалізація і úrad",
+          "tags": [
+            "a2-u07",
+            "a2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a2-u07-l03-doklady-ex01",
+          "lessonId": "a2-u07-l03-doklady",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "originál",
+              "right": "оригінал"
+            },
+            {
+              "left": "kópia",
+              "right": "копія"
+            },
+            {
+              "left": "overený",
+              "right": "засвідчений"
+            },
+            {
+              "left": "preklad",
+              "right": "переклад"
+            },
+            {
+              "left": "priložiť",
+              "right": "додати (до заяви)"
+            },
+            {
+              "left": "platný",
+              "right": "чинний, дійсний"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a2-u07-l03-doklady-w01",
+            "a2-u07-l03-doklady-w02",
+            "a2-u07-l03-doklady-w03",
+            "a2-u07-l03-doklady-w04",
+            "a2-u07-l03-doklady-w05",
+            "a2-u07-l03-doklady-w06",
+            "a2-u07-l03-doklady-w07"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-ex02",
+          "lessonId": "a2-u07-l03-doklady",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Prosím vás, potrebujem potvrdenie o "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "zamestnania",
+                "zamestnaní",
+                "zamestnanie"
+              ],
+              "correct": "zamestnaní"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "potvrdenie o + місцевий: o zamestnaní.",
+          "order": 2,
+          "wordIds": [
+            "a2-u07-l03-doklady-w07"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-ex03",
+          "lessonId": "a2-u07-l03-doklady",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "K žiadosti priložte kópiu "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "pas",
+                "pasu",
+                "pase"
+              ],
+              "correct": "pasu"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "kópia чого? — родовий: pas → pasu.",
+          "order": 3,
+          "wordIds": [
+            "a2-u07-l03-doklady-w02",
+            "a2-u07-l03-doklady-w05",
+            "a2-u07-l03-doklady-w07"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-ex04",
+          "lessonId": "a2-u07-l03-doklady",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Zabudla som doma doklad o ______. (ubytovanie)",
+          "acceptedAnswers": [
+            "ubytovaní"
+          ],
+          "explanation": "doklad o + місцевий: o ubytovaní.",
+          "order": 4,
+          "wordIds": [
+            "a2-u07-l03-doklady-w07"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-ex05",
+          "lessonId": "a2-u07-l03-doklady",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Про що цей документ?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Посвідчує особу"
+            },
+            {
+              "id": "c2",
+              "title": "Про житло"
+            },
+            {
+              "id": "c3",
+              "title": "Про роботу"
+            }
+          ],
+          "items": [
+            {
+              "sk": "doklad totožnosti",
+              "category": "c1"
+            },
+            {
+              "sk": "doklad o ubytovaní",
+              "category": "c2"
+            },
+            {
+              "sk": "nájomná zmluva",
+              "category": "c2"
+            },
+            {
+              "sk": "potvrdenie o zamestnaní",
+              "category": "c3"
+            },
+            {
+              "sk": "cestovný pas",
+              "category": "c1"
+            },
+            {
+              "sk": "pracovná zmluva",
+              "category": "c3"
+            }
+          ],
+          "explanation": "Паспорт — про особу; договір оренди — про житло; довідка й трудовий договір — про роботу.",
+          "order": 5,
+          "wordIds": [
+            "a2-u07-l03-doklady-w07"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-ex06",
+          "lessonId": "a2-u07-l03-doklady",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Váš pas už nie je platná a musíte si vybaviť nový.",
+          "errorToken": "platná",
+          "correctToken": "platný",
+          "explanation": "pas — чоловічий рід: platný.",
+          "order": 6,
+          "wordIds": [
+            "a2-u07-l03-doklady-w06",
+            "a2-u07-l03-doklady-w07"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-ex07",
+          "lessonId": "a2-u07-l03-doklady",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Musíte priložiť overená kópiu diplomu.",
+          "errorToken": "overená",
+          "correctToken": "overenú",
+          "explanation": "kópiu — знахідний жіночого роду, прикметник теж: overenú.",
+          "order": 7,
+          "wordIds": [
+            "a2-u07-l03-doklady-w02",
+            "a2-u07-l03-doklady-w03",
+            "a2-u07-l03-doklady-w05",
+            "a2-u07-l03-doklady-w07"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-ex08",
+          "lessonId": "a2-u07-l03-doklady",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Overená kópia» — це копія з печаткою, що підтверджує її відповідність оригіналу.",
+          "correctAnswer": true,
+          "explanation": "overený — засвідчений нотаріусом або установою.",
+          "order": 8,
+          "wordIds": [
+            "a2-u07-l03-doklady-w02",
+            "a2-u07-l03-doklady-w03",
+            "a2-u07-l03-doklady-w07"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-ex09",
+          "lessonId": "a2-u07-l03-doklady",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Originál vám vrátime»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Оригінал треба надіслати поштою",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Оригінал залишиться в установі",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Оригінал вам повернуть",
+              "correct": true
+            }
+          ],
+          "explanation": "vrátiť — повернути.",
+          "order": 9,
+          "wordIds": [
+            "a2-u07-l03-doklady-w07"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-ex10",
+          "lessonId": "a2-u07-l03-doklady",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай список документів.",
+          "document": {
+            "title": "Žiadosť o prechodný pobyt – zoznam dokladov (príklad)",
+            "fields": [
+              {
+                "label": "Cestovný doklad",
+                "value": "platný pas"
+              },
+              {
+                "label": "Fotografie",
+                "value": "2 ks, 3 × 3,5 cm"
+              },
+              {
+                "label": "Ubytovanie",
+                "value": "doklad o zabezpečení ubytovania"
+              },
+              {
+                "label": "Doklady v cudzom jazyku",
+                "value": "s úradným prekladom do slovenčiny"
+              }
+            ]
+          },
+          "question": "Що потрібно для документів іноземною мовою?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "офіційний переклад словацькою",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "тільки оригінал",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "дві копії",
+              "correct": false
+            }
+          ],
+          "explanation": "s úradným prekladom do slovenčiny — з офіційним перекладом словацькою.",
+          "order": 10,
+          "wordIds": [
+            "a2-u07-l03-doklady-w04",
+            "a2-u07-l03-doklady-w06",
+            "a2-u07-l03-doklady-w07"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-ex11",
+          "lessonId": "a2-u07-l03-doklady",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Úradníčka",
+              "sk": "Máte doklad o ubytovaní?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Áno, mám nájomnou zmluvou.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Áno, mám nájomná zmluva.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Áno, mám nájomnú zmluvu.",
+              "correct": true
+            }
+          ],
+          "explanation": "mám + знахідний: nájomnú zmluvu.",
+          "order": 11,
+          "wordIds": [
+            "a2-u07-l03-doklady-w07"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-ex12",
+          "lessonId": "a2-u07-l03-doklady",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Mám kópia pasu a doklad o ubytovanie.",
+          "acceptedAnswers": [
+            "Mám kópiu pasu a doklad o ubytovaní.",
+            "Mám doklad o ubytovaní a kópiu pasu."
+          ],
+          "explanation": "mám + знахідний: kópiu; doklad o + місцевий: o ubytovaní.",
+          "order": 12,
+          "wordIds": [
+            "a2-u07-l03-doklady-w02",
+            "a2-u07-l03-doklady-w07"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-ex13",
+          "lessonId": "a2-u07-l03-doklady",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай e-mail.",
+          "message": {
+            "sender": "Oddelenie cudzineckej polície",
+            "body": "Dobrý deň, pani Kovalenko, k Vašej žiadosti chýba potvrdenie o zdravotnom poistení. Doklad doneste osobne alebo ho pošlite poštou do 15 dní. Originál Vám po kontrole vrátime."
+          },
+          "question": "Чого бракує до заяви?",
+          "options": [
+            {
+              "id": "a",
+              "text": "фотографії",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "підтвердження медичного страхування",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "копії паспорта",
+              "correct": false
+            }
+          ],
+          "explanation": "chýba potvrdenie o zdravotnom poistení — бракує підтвердження страхування.",
+          "order": 13,
+          "wordIds": [
+            "a2-u07-l03-doklady-w01",
+            "a2-u07-l03-doklady-w07"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-ex14",
+          "lessonId": "a2-u07-l03-doklady",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що тобі бракує одного документа.",
+          "tokens": [
+            "jeden",
+            "doklad",
+            "Chýba",
+            ".",
+            "mi"
+          ],
+          "correctOrder": [
+            "Chýba",
+            "mi",
+            "jeden",
+            "doklad",
+            "."
+          ],
+          "explanation": "chýbať komu? — mi; підмет — jeden doklad.",
+          "order": 14,
+          "wordIds": [
+            "a2-u07-l03-doklady-w07"
+          ]
+        },
+        {
+          "id": "a2-u07-l03-doklady-ex15",
+          "lessonId": "a2-u07-l03-doklady",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти питаєш, чи достатньо копії.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Stačí kópia, alebo potrebujete originál?",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Stačí kópia, alebo potrebujete originálu?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Stačí kópiu, alebo potrebujete originál?",
+              "correct": false
+            }
+          ],
+          "explanation": "Stačí + називний: kópia; potrebujete + знахідний: originál.",
+          "order": 15,
+          "wordIds": [
+            "a2-u07-l03-doklady-w01",
+            "a2-u07-l03-doklady-w02",
+            "a2-u07-l03-doklady-w07"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перевірка документів",
+        "description": "Ти подаєш документи, а службовиця перевіряє, чи все є.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Службовиця питає: «Máte so sebou cestovný pas?»",
+            "options": [
+              {
+                "sk": "Áno, tu je môjho pasu.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, tu som môj pas.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, tu je môj pas.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Вона каже: «Stačí kópia, originál vám vrátim.» Що буде з оригіналом?",
+            "options": [
+              {
+                "sk": "його треба перекласти",
+                "correct": false
+              },
+              {
+                "sk": "його повернуть",
+                "correct": true
+              },
+              {
+                "sk": "його залишать в установі",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Тобі бракує довідки з роботи. Ти кажеш:",
+            "options": [
+              {
+                "sk": "Chýba mi potvrdenie o zamestnaní.",
+                "correct": true
+              },
+              {
+                "sk": "Chýba mi potvrdenie o zamestnanie.",
+                "correct": false
+              },
+              {
+                "sk": "Chýbam potvrdenie o zamestnaní.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "У тебе свідоцтво про шлюб українською. Що ти уточнюєш?",
+            "options": [
+              {
+                "sk": "Potrebujete aj úradný prekladu?",
+                "correct": false
+              },
+              {
+                "sk": "Potrebujete aj úradný preklad?",
+                "correct": true
+              },
+              {
+                "sk": "Potrebujete aj úradného preklad?",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вже знаєш, які бувають документи. Далі — формуляр: як його правильно заповнити."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вже знаєш, які бувають документи. Далі — формуляр: як його правильно заповнити.",
+        "nowYouKnow": [
+          "cestovný pas, doklad totožnosti, doklad o ubytovaní",
+          "originál — kópia — overená kópia",
+          "doklad / potvrdenie o + місцевий",
+          "priložiť k žiadosti, úradný preklad"
+        ],
+        "newWordsCount": 7,
+        "exercisesCompleted": 15,
+        "xpReward": 30,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a2-u07-l04-formular",
+          "title": "Формуляр"
+        }
+      }
+    }
+  ]
+}

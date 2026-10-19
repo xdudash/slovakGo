@@ -1,0 +1,446 @@
+@unit a1-u07 | Мій день | Môj deň
+
+@lesson rano | Ранок | Ráno
+desc: Ранкова рутина: vstávať, zobudiť sa, budík, raňajky, obliecť sa — і форма «o koľkej».
+goal: Розповісти про свій ранок по порядку.
+out: казати Vstávam o šiestej ;; розрізняти zobudiť sa і vstávať ;; казати raňajkujem / mám raňajky ;; описувати ранок у послідовності
+done: Ранок описано. Далі — зворотні дієслова.
+T: Прокинутися й встати || «Zobudiť sa» — прокинутися, «vstávať / vstať» — вставати. «Budík» — будильник: «Budík zvoní o šiestej». || Zobudím sa o šiestej, ale vstávam o pol siedmej. = Прокидаюся о шостій, а встаю о пів на сьому. || zobudiť sa ≠ vstávať
+T: Сніданок || «Raňajky» — сніданок (лише множина!), «raňajkovať» — снідати. «Na raňajky mám…» — на сніданок у мене… || Raňajkujem o siedmej. = Я снідаю о сьомій. ;; Na raňajky mám chlieb s maslom. = На сніданок у мене хліб із маслом. || raňajky — множина
+T: Одягнутися || «Obliecť sa» — одягнутися (oblečiem sa), «obliekať sa» — одягатися (oblieka sa). Порядок: Najprv… potom… (спочатку… потім…). || Najprv sa umyjem, potom sa oblečiem. = Спочатку вмиюся, потім одягнуся. || najprv → potom
+W: vstávať | вставати | вста:вать | Vstávam o šiestej. | Я встаю о шостій.
+W: zobudiť sa | прокинутися | зобудзіть са | Zobudil som sa neskoro. | Я прокинувся пізно.
+W: budík | будильник | буді:к | Budík zvoní o piatej. | Будильник дзвонить о п’ятій.
+W: raňajky | сніданок | раняйкі | Raňajky sú hotové. | Сніданок готовий.
+W: raňajkovať | снідати | раняйковать | Raňajkujeme spolu. | Ми снідаємо разом.
+W: obliecť sa | одягнутися | облієцть са | Rýchlo sa oblečiem. | Я швидко одягнуся.
+X mt: З’єднай. | vstávať = вставати ;; zobudiť sa = прокинутися ;; budík = будильник ;; raňajky = сніданок ;; obliecť sa = одягнутися
+X do: - | Budík zvoní o šiestej. ;; Zobudím sa. ;; Vstanem a umyjem sa. ;; Oblečiem sa. ;; Raňajkujem a idem do práce.
+= Ранок по порядку.
+X dd: Обери. | [*Raňajky/Raňajka] sú na stole.
+= raňajky — лише множина: sú.
+X dd: Обери. | Ráno [*vstávam/vstávaš/vstáva] o šiestej. (я)
+= ja → vstávam.
+X sc~: Чим відрізняються «zobudiť sa» і «vstať»? | - | *прокинутися й встати з ліжка — різні дії ;; це синоніми ;; zobudiť sa — заснути
+= Можна прокинутися й ще лежати.
+X tf: - | - | «Raňajky» вживається лише в множині. | T
+= Raňajky sú…
+X fb: Допиши. | ___ zvoní o piatej. (будильник) | Budík |
+= budík — будильник.
+X so: - | Скажи, що ви снідаєте разом. | Raňajkujeme spolu.
+= raňajkovať → raňajkujeme.
+X fe: - | Raňajky [je>sú] hotové.
+= raňajky — множина.
+X np: Колега питає, чому ти запізнився. Ти проспав(ла). | *Prepáč, nezvonil mi budík. ;; Budík som. ;; Zobudil budík. ;; Raňajky meškám.
+= nezvonil mi budík — не задзвонив будильник.
+X cat: Що ти робиш уранці? | У ванній: umyť sa, osprchovať sa ;; У кухні: raňajkovať, variť kávu ;; У спальні: zobudiť sa, obliecť sa
+= Місце дії.
+X ms: Обери ранкові дії. | - | *vstávať ;; *raňajkovať ;; *obliecť sa ;; večerať ;; ísť spať
+= Вечірні — večerať, ísť spať.
+F: Ранок перед співбесідою || Співбесіда о 9:00. Ти плануєш ранок із сестрою.
+S: «O koľkej vstávaš?» (о шостій тридцять) | *Vstávam o šiestej tridsať. ;; Vstávaš o šiestej. ;; Vstávam šesť.
+S: «Raňajkuješ doma?» (так, швидко) | *Áno, rýchlo raňajkujem doma. ;; Áno, raňajky som. ;; Áno, raňajkuje.
+S: «Čo si oblečieš?» (костюм) | *Oblečiem si oblek. ;; Obliecť oblek. ;; Oblek sa oblečie.
+S: «Nastav si budík!» Що радить сестра? | *поставити будильник ;; купити будильник ;; вимкнути будильник
+R: zobudiť sa, vstávať, budík ;; raňajky (мн.), raňajkovať ;; obliecť sa ;; najprv → potom
+
+@lesson zvratne-slovesa | Зворотні дієслова: sa і si | Zvratné slovesá: sa a si
+desc: Дієслова з sa (holiť sa, ponáhľať sa, cítiť sa) і si (umyť si ruky, dať si) — і місце sa в реченні.
+goal: Правильно використовувати sa і si та ставити їх на друге місце.
+out: розрізняти sa (себе) і si (собі) ;; ставити sa / si на друге місце ;; казати ponáhľam sa, cítim sa dobre ;; розпізнавати дієслова, які завжди з sa
+done: Зворотні дієслова опановано. Далі — пів, чверть і точний час.
+T: Sa — себе || «Sa» — дія на себе: holiť sa (голитися), líčiť sa (фарбуватися), obliekať sa. Деякі дієслова завжди з sa без «себе»: ponáhľať sa (поспішати), báť sa (боятися), smiať sa (сміятися), nudiť sa (нудьгувати). || Ponáhľam sa do práce. = Я поспішаю на роботу. ;; Nudím sa. = Мені нудно. || sa = себе / просто частина дієслова
+T: Si — собі || «Si» — для себе + є інший об’єкт: umyť si ruky (помити собі руки), dať si kávu (взяти собі каву), pripraviť si obed. || Umyjem si vlasy. = Я помию волосся. ;; Pripravím si obed. = Приготую собі обід. || si + що
+T: Друге місце || Sa і si стоять на другому місці в реченні: «Ráno sa holím», «Dnes sa cítim lepšie», «Kávu si dám neskôr». Разом із som: «Ponáhľal som sa». || Dnes sa cítim dobre. = Сьогодні я почуваюся добре. ;; Rýchlo sa oblečiem. = Я швидко одягнуся. || sa / si — друге місце
+W: holiť sa | голитися | голіть са | Ráno sa holím. | Уранці я голюся.
+W: líčiť sa | фарбуватися (макіяж) | лі:чіть са | Sestra sa líči desať minút. | Сестра фарбується десять хвилин.
+W: ponáhľať sa | поспішати | пона:глять са | Prepáč, ponáhľam sa. | Вибач, я поспішаю.
+W: pripraviť sa | підготуватися | пріпра віть са | Musím sa pripraviť na pohovor. | Мені треба підготуватися до співбесіди.
+W: cítiť sa | почуватися | ці:тіть са | Ako sa cítiš? | Як ти почуваєшся?
+W: nudiť sa | нудьгувати | нудзіть са | Deti sa nudia. | Дітям нудно.
+X mt: З’єднай. | holiť sa = голитися ;; ponáhľať sa = поспішати ;; cítiť sa = почуватися ;; nudiť sa = нудьгувати ;; pripraviť sa = підготуватися
+X dd: Обери. | Umyjem [*si/sa] ruky.
+= si + об’єкт (ruky).
+X dd: Обери. | Rýchlo [*sa/si] oblečiem.
+= Одягаю себе — sa.
+X dd: Обери. | Dám [*si/sa] kávu.
+= dať si — взяти собі.
+X so: - | Скажи, що сьогодні почуваєшся добре. | Dnes sa cítim dobre.
+= sa на другому місці.
+X sb: - | Скажи, що ти поспішаєш на роботу. | Ponáhľam sa do práce.
+= ponáhľať sa.
+X tf: - | - | У реченні «Ráno sa holím» слово sa стоїть на другому місці. | T
+= Ráno (1) sa (2).
+X ce: Виправ порядок слів. | Dnes cítim sa oveľa lepšie. | Dnes sa cítim oveľa lepšie. ;; Dnes sa cítim oveľa lepšie
+= sa на другому місці: Dnes sa cítim.
+X cat: Sa чи si? | sa: holiť sa, ponáhľať sa, obliecť sa ;; si: umyť si ruky, dať si kávu, pripraviť si obed
+= si — коли є «що».
+X sc~: Що означає «Deti sa nudia»? | - | *Дітям нудно ;; Діти вчаться ;; Діти будять
+= nudiť sa — нудьгувати.
+X np: Друг хоче поговорити, а ти поспішаєш на автобус. | *Prepáč, ponáhľam sa, zavolám ti. ;; Prepáč, ponáhľam si. ;; Ponáhľa sa ja. ;; Sa ponáhľam.
+= ponáhľam sa.
+X dr: - | Lekárka: Ako sa dnes cítite? | *Lepšie, ďakujem. ;; Cítim si dobre. ;; Sa cítim.
+= Відповідь про самопочуття.
+X ms: Обери правильні речення. | - | *Ráno sa holím. ;; *Dám si čaj. ;; *Nudím sa. ;; Umyjem sa ruky. ;; Sa ponáhľam.
+= sa / si і порядок слів.
+F: Ранкова метушня || Ви з чоловіком збираєтеся на роботу, усі поспішають.
+S: Чоловік: «Kde si?» (ти у ванній, фарбуєшся) | *V kúpeľni, líčim sa. ;; V kúpeľni, líčim si. ;; Sa líčim kúpeľňa.
+S: «Ponáhľaj sa, meškáme!» Чого він хоче? | *щоб ти поспішала ;; щоб ти не поспішала ;; щоб ти лишилася вдома
+S: Ти пропонуєш взяти каву з собою. | *Dáme si kávu cestou. ;; Dáme sa kávu cestou. ;; Kávu sa dáme.
+S: Донька каже: «Necítim sa dobre.» Що з нею? | *їй погано ;; їй нудно ;; вона поспішає
+R: sa (себе): holiť sa, obliecť sa ;; завжди з sa: ponáhľať sa, nudiť sa ;; si (собі): umyť si ruky, dať si kávu ;; sa / si — на друге місце
+
+@lesson pol-stvrt | Пів, чверть, без чверті | Pol, štvrť, trištvrte
+desc: Розмовний час: štvrť na osem, pol ôsmej, trištvrte na osem — і слова presne, okolo, neskoro.
+goal: Розуміти й називати час у розмовному форматі.
+out: розуміти štvrť na… (7:15) ;; розуміти pol… (7:30) ;; розуміти trištvrte na… (7:45) ;; казати presne, okolo, neskoro
+done: Розмовний час підкорено. Далі — дорога на роботу.
+T: Чверть і пів || Словаки рахують до наступної години: 7:15 = «štvrť na osem» (чверть на восьму), 7:30 = «pol ôsmej» (пів восьмої), 7:45 = «trištvrte na osem» (три чверті на восьму). || štvrť na osem = 7:15 ;; pol ôsmej = 7:30 ;; trištvrte na osem = 7:45 || Рахуй до наступної години!
+T: О котрій? || «O štvrť na osem», «o pol ôsmej», «o trištvrte na osem». Пам’ятка: pol + родовий (pol deviatej = 8:30), štvrť / trištvrte na + знахідний (štvrť na deväť = 8:15). || Príď o pol deviatej. = Приходь о пів на дев’яту (8:30). ;; Vlak ide o trištvrte na päť. = Поїзд о 4:45. || pol deviatej = 8:30
+T: Точність || «Presne o ôsmej» — рівно о восьмій. «Okolo ôsmej» — близько восьмої. «Neskoro» — пізно, «skoro» — рано, «včas» — вчасно. || Prídem okolo šiestej. = Прийду близько шостої. ;; Je už neskoro. = Уже пізно. || presne / okolo
+W: pol | пів, половина | пол | Je pol tretej. | Пів на третю (2:30).
+W: štvrť | чверть | штврть | Je štvrť na päť. | Чверть на п’яту (4:15).
+W: trištvrte | три чверті | тріштвртє | Je trištvrte na sedem. | Без чверті сьома (6:45).
+W: presne | точно, рівно | пресне | Začíname presne o deviatej. | Починаємо рівно о дев’ятій.
+W: okolo | близько, приблизно | около | Prídem okolo piatej. | Я прийду близько п’ятої.
+W: neskoro | пізно | нєскоро | Je už neskoro, idem spať. | Уже пізно, я йду спати.
+X mt: З’єднай. | štvrť na osem = 7:15 ;; pol ôsmej = 7:30 ;; trištvrte na osem = 7:45 ;; pol deviatej = 8:30 ;; štvrť na deväť = 8:15
+X sc: Котра година «pol tretej»? | - | *2:30 ;; 3:30 ;; 3:15 ;; 2:15
+= pol tretej — половина третьої, тобто 2:30.
+X sc: Як сказати 5:45? | - | *trištvrte na šesť ;; trištvrte na päť ;; štvrť na šesť ;; pol šiestej
+= 5:45 — три чверті на шосту.
+X tf: - | - | «Pol ôsmej» — це 8:30. | F
+= pol ôsmej — 7:30 (половина восьмої години).
+X fb: Допиши. | Prídem ___ piatej. (близько) | okolo |
+= okolo piatej.
+X so: - | Скажи, що починаєте рівно о дев’ятій. | Začíname presne o deviatej.
+= presne o + порядкове.
+X sch: - | Vlak Žilina – Bratislava | Odchod = 6:45 ;; Príchod = 9:15 | Як сказати час відправлення розмовно? | *trištvrte na sedem ;; trištvrte na šesť ;; pol siedmej
+= 6:45 = trištvrte na sedem.
+X dd: Обери. | Je už [*neskoro/skoro/presne], deti musia spať.
+= neskoro — пізно.
+X cat: Перша чи друга половина години? | До пів: štvrť na osem, štvrť na deväť ;; Після пів: trištvrte na osem, trištvrte na deväť
+= štvrť — :15, trištvrte — :45.
+X dr: - | Kamarátka: O koľkej sa stretneme? | *O pol šiestej, pred kinom. ;; Pol šiesta. ;; O pol šesť hodín.
+= o pol + родовий.
+X np: Ти запізнишся приблизно о сьомій. Пишеш другу. | *Prídem až okolo siedmej. ;; Prídem presne sedem. ;; Okolo sedem hodiny. ;; Neskoro o sedem.
+= okolo + родовий.
+X ms: Обери правильні вирази для 8:30. | - | *pol deviatej ;; *osem tridsať ;; pol ôsmej ;; štvrť na deväť
+= 8:30 — pol deviatej або osem tridsať.
+F: Запис до перукаря || Перукарка пропонує час телефоном.
+S: «Môže byť štvrť na štyri?» Котра це? | *15:15 ;; 16:15 ;; 15:45
+S: Тобі незручно. Ти пропонуєш 16:30. | *Mohlo by byť o pol piatej? ;; O pol štvrtej? ;; O štyri tridsať pol?
+S: «Dobre, o pol piatej. Ale príďte presne.» Що просять? | *прийти точно вчасно ;; прийти раніше ;; прийти близько тієї години
+S: Ти запізнюєшся на 10 хвилин і пишеш. | *Prepáčte, budem tam okolo trištvrte na päť. ;; Prepáčte, budem tam štvrť na štyri. ;; Som neskoro presne.
+R: štvrť na… (:15), pol… (:30), trištvrte na… (:45) ;; pol + родовий ;; presne, okolo ;; neskoro, skoro, včas
+
+@lesson cesta-do-prace | Дорога на роботу | Cesta do práce
+desc: Odchádzať, meškať, včas, zmena, nočná zmena, skončiť — розмова про робочий графік.
+goal: Розповісти про дорогу на роботу й свій графік змін.
+out: казати Odchádzam z domu o… ;; казати Meškám / Som tu včas ;; розповідати про ranná / nočná zmena ;; казати Končím o…
+done: Робочий графік описано. Далі — обідня перерва.
+T: Виходжу з дому || «Odchádzať» — виходити, від’їжджати: «Odchádzam z domu o siedmej». «Cesta trvá…» — дорога займає… «Trvá mi to pol hodiny» — у мене на це йде пів години. || Cesta do práce trvá štyridsať minút. = Дорога на роботу займає 40 хвилин. || odchádzam z domu
+T: Meškám || «Meškať» — запізнюватися: «Meškám desať minút». «Včas» — вчасно. «Autobus mešká» — автобус запізнюється. Повідомлення шефу: «Prepáčte, meškám kvôli dopravnej zápche». || Vlak mešká. = Поїзд запізнюється. ;; Prídem včas. = Я прийду вчасно. || meškať ≠ prísť včas
+T: Зміни || «Zmena» — зміна: ranná (ранкова), poobedná (післяобідня), nočná (нічна). «Robím na tri zmeny» — працюю в три зміни. «Začínam o šiestej, končím o druhej». || Tento týždeň mám nočnú zmenu. = Цього тижня в мене нічна зміна. ;; Končím o desiatej večer. = Закінчую о 22:00. || ranná / poobedná / nočná zmena
+W: odchádzať | виходити, від’їжджати | одха:дзать | Odchádzam z domu o siedmej. | Я виходжу з дому о сьомій.
+W: meškať | запізнюватися | мешкать | Prepáčte, meškám. | Вибачте, я запізнююсь.
+W: včas | вчасно | фчас | Vždy prídem včas. | Я завжди приходжу вчасно.
+W: zmena | зміна (робоча); зміна (взагалі) | змена | Mám rannú zmenu. | У мене ранкова зміна.
+W: nočná zmena | нічна зміна | ночна: змена | Po nočnej zmene spím. | Після нічної зміни я сплю.
+W: skončiť | закінчити | скончіть | Kedy skončíš? | Коли ти закінчиш?
+X mt: З’єднай. | odchádzať = виходити ;; meškať = запізнюватися ;; včas = вчасно ;; zmena = зміна ;; skončiť = закінчити
+X dd: Обери. | Autobus [*mešká/meškám/meškajú] desať minút.
+= autobus — mešká.
+X dd: Обери. | Tento týždeň mám [*nočnú/nočná/nočný] zmenu.
+= Знахідний жін.: nočnú.
+X sc~: Що означає «Robím na tri zmeny»? | - | *працюю в три зміни (ранок, день, ніч) ;; працюю три дні ;; три рази змінював роботу
+= tri zmeny — змінний графік.
+X tf: - | - | «Prísť včas» означає «прийти із запізненням». | F
+= včas — вчасно.
+X fb: Допиши. | Cesta do práce ___ pol hodiny. (займає) | trvá |
+= trvá — займає (час).
+X so: - | Скажи, що виходиш з дому о сьомій. | Odchádzam z domu o siedmej.
+= Odchádzam z domu + o…
+X msg: - | Ty → šéf | Dobré ráno, pán Krajčí, vlak mešká dvadsať minút, prídem okolo pol ôsmej. Ospravedlňujem sa. Andrii | Чому Андрій запізнюється? | *поїзд запізнюється на 20 хвилин ;; він проспав ;; він хворий
+= vlak mešká.
+X fe: - | Prepáčte, [mešká>meškám] kvôli zápche.
+= Про себе — meškám.
+X np: Ти запізнюєшся на роботу через пробку. Пишеш бригадиру. | *Prepáčte, meškám kvôli zápche, prídem o desať minút. ;; Meškáte, zápcha. ;; Zápcha mešká mňa. ;; Prepáčte, včas.
+= Пояснення + коли прийдеш.
+X mt: З’єднай зміну з годинами. | ranná zmena = 6:00 – 14:00 ;; poobedná zmena = 14:00 – 22:00 ;; nočná zmena = 22:00 – 6:00
+= Типовий тризмінний графік.
+X dr: - | Kolega: Kedy končíš? | *O druhej, mám rannú. ;; O druhej skončíš. ;; Ranná.
+= Час + яка зміна.
+X ms: Обери фрази про запізнення. | - | *Meškám. ;; *Vlak mešká. ;; *Prídem neskôr. ;; Prídem včas. ;; Som tu presne.
+= Запізнення.
+F: Перший тиждень на заводі || Бригадир пояснює графік.
+S: «Tento týždeň máte rannú zmenu.» З якої години? | *зранку, близько 6:00 ;; увечері ;; уночі
+S: «Začíname presne o šiestej. Nemeškajte.» Що важливо? | *не запізнюватися ;; приходити о 7:00 ;; приходити коли зручно
+S: Ти питаєш, о котрій закінчуєш. | *O koľkej končíme? ;; Kedy skončíš? ;; O koľko končí?
+S: «A budúci týždeň nočná.» Що наступного тижня? | *нічна зміна ;; вихідні ;; ранкова зміна
+R: odchádzať z domu, cesta trvá… ;; meškať / včas ;; ranná, poobedná, nočná zmena ;; začínať / končiť
+
+@lesson obed-prestavka | Обід і перерва | Obed a prestávka
+desc: Перерва на роботі й обід: prestávka, obedovať, jedáleň, desiata, stravný lístok.
+goal: Говорити про перерву й обід на роботі чи в школі.
+out: казати Mám prestávku ;; казати Obedujem v jedálni ;; розуміти desiata (другий сніданок) ;; розуміти stravné lístky
+done: Перерву заслужено! Далі — після обіду.
+T: Prestávka || «Prestávka» — перерва: «Mám polhodinovú prestávku». «Ísť na obed» — піти на обід. «Pauza» — розмовно теж перерва. || O dvanástej mám prestávku. = О дванадцятій у мене перерва. ;; Idem na obed. = Іду на обід. || prestávka = перерва
+T: Обід || «Obedovať» — обідати. «Jedáleň» — їдальня (на роботі, у школі), «závodná jedáleň» — заводська їдальня. «Desiata» — другий сніданок (близько 10:00), типовий для шкіл. || Obedujeme v jedálni. = Ми обідаємо в їдальні. ;; Dieťa si berie desiatu do školy. = Дитина бере другий сніданок у школу. || desiata — о 10:00
+T: Stravné lístky || Багато фірм дають «stravné lístky» або «stravné» — талони / гроші на харчування. Ними можна платити в ресторанах і магазинах. || Platím stravnými lístkami. = Я плачу талонами на харчування. ;; Dostávam stravné na kartu. = Я отримую харчові на картку. || stravné = харчові
+W: prestávka | перерва | преста:вка | Máme pätnásť minút prestávku. | У нас п’ятнадцять хвилин перерви.
+W: obedovať | обідати | обедовать | Kde obeduješ? | Де ти обідаєш?
+W: jedáleň | їдальня | єда:лень | Jedáleň je na prízemí. | Їдальня на першому поверсі.
+W: desiata | другий сніданок | дзесята | Zabudol som si desiatu. | Я забув свій другий сніданок.
+W: stravný lístok | талон на харчування | страв ні: лі:сток | Môžem platiť stravným lístkom? | Можна платити талоном на харчування?
+W: obedové menu | обіднє меню | обедове: мену | Obedové menu stojí šesť eur. | Обіднє меню коштує шість євро.
+X mt: З’єднай. | prestávka = перерва ;; obedovať = обідати ;; jedáleň = їдальня ;; desiata = другий сніданок ;; stravný lístok = талон на харчування
+X dd: Обери. | [*Obedujeme/Obedujú/Obeduje] v jedálni. (ми)
+= my → obedujeme.
+X sc~: Що таке «desiata»? | - | *перекус близько 10-ї години ;; десята година ;; десерт
+= desiata — другий сніданок.
+X tf: - | - | Stravnými lístkami можна платити в багатьох ресторанах. | T
+= Так, це поширена практика.
+X fb: Допиши. | O dvanástej mám ___. (перерву) | prestávku | Знахідний.
+= mať prestávku.
+X so: - | Запитай колегу, де він обідає. | Kde obeduješ?
+= Kde + obeduješ?
+X menu: Подивись на обіднє меню. | Polievka: gulášová polievka = v cene menu ;; Menu 1: kuracie prsia, ryža = 6,50 € ;; Menu 2: vyprážaný syr, hranolky = 6,90 € ;; Menu 3: zeleninové rizoto = 5,90 €
+q~: Яке меню найдешевше? | *Menu 3 ;; Menu 1 ;; Menu 2
+q~: Чи треба доплачувати за суп? | *ні, він входить у ціну меню ;; так, 2 € ;; суп лише в Menu 1
+X fe: - | Jedáleň [sú>je] na prízemí.
+= jedáleň — je.
+X np: У ресторані ти хочеш платити талоном. | *Môžem platiť stravným lístkom? ;; Môžem stravný lístok platiť ja? ;; Lístok stravný je? ;; Platím jedáleň.
+= Môžem platiť stravným lístkom?
+X dr: - | Kolegyňa: Ideš na obed? | *Áno, idem. Ideš so mnou? ;; Áno, obeduje. ;; Prestávka je.
+= Погоджуєшся й запрошуєш.
+X ms: Обери слова про обід на роботі. | - | *jedáleň ;; *obedové menu ;; *prestávka ;; budík ;; zmena
+= Обід.
+F: Обід із колегами || Перший обід із новими колегами.
+S: «Ideme na obed, ideš s nami?» | *Áno, rád(a). Kam idete? ;; Áno, obeduje. ;; Nie, prestávka.
+S: «Do reštaurácie oproti, majú dobré obedové menu.» Що там є? | *хороше обіднє меню ;; лише кава ;; дорогі страви
+S: Ти питаєш, чи можна платити талонами. | *Berú tam stravné lístky? ;; Stravné sú tam? ;; Lístky berú platiť?
+S: «Prestávka máme len pol hodiny, poďme.» Скільки перерва? | *пів години ;; година ;; 15 хвилин
+R: prestávka, ísť na obed ;; obedovať, jedáleň, obedové menu ;; desiata ;; stravné lístky
+
+@lesson popoludnie | Після роботи | Popoludnie po práci
+desc: Справи після роботи: vyzdvihnúť deti, nakupovať, krúžok, vrátiť sa domov.
+goal: Розповісти про справи після роботи й скоординувати їх із родиною.
+out: казати Vyzdvihnem deti zo škôlky ;; казати Idem nakúpiť ;; розуміти krúžok ;; казати Vrátim sa o…
+done: Пообідні справи сплановано. Далі — вечір.
+T: Забрати дітей || «Vyzdvihnúť» — забрати (когось / щось): «Vyzdvihnem syna zo škôlky» — заберу сина з садка. «Kto vyzdvihne deti?» — хто забере дітей? || Vyzdvihnem ťa pri stanici. = Я заберу тебе біля вокзалу. ;; Balík vyzdvihnem zajtra. = Посилку заберу завтра. || vyzdvihnúť = забрати
+T: Покупки || «Nakupovať» — робити покупки (регулярно), «nakúpiť» — купити (раз). «Nákup» — покупки: «Mám veľký nákup». «Cestou domov» — дорогою додому. || Cestou domov nakúpim. = Дорогою додому зроблю покупки. ;; V piatok robíme veľký nákup. = У п’ятницю робимо великі покупки. || cestou domov
+T: Гуртки й повернення || «Krúžok» — гурток (спортивний, музичний): «Syn má v utorok krúžok». «Vrátiť sa» — повернутися: «Vrátim sa o šiestej». || Dcéra chodí na tanečný krúžok. = Донька ходить на танці. ;; Kedy sa vrátiš? = Коли повернешся? || krúžok, vrátiť sa
+W: vyzdvihnúť | забрати (когось / щось) | виздвігнуть | Vyzdvihneš deti zo školy? | Забереш дітей зі школи?
+W: nakupovať | робити покупки | накуповать | V sobotu nakupujeme na trhu. | У суботу ми закуповуємося на ринку.
+W: nákup | покупки | на:куп | Pomôžeš mi s nákupom? | Допоможеш мені з покупками?
+W: krúžok | гурток | кру:жок | Syn chodí na futbalový krúžok. | Син ходить на футбольну секцію.
+W: vrátiť sa | повернутися | вра:тіть са | Vrátim sa okolo siedmej. | Я повернуся близько сьомої.
+W: cestou | дорогою | цестоу | Cestou kúpim chlieb. | Дорогою куплю хліб.
+X mt: З’єднай. | vyzdvihnúť = забрати ;; nakupovať = робити покупки ;; krúžok = гурток ;; vrátiť sa = повернутися ;; cestou = дорогою
+X dd: Обери. | Kedy sa [*vrátiš/vrátim/vráti]? (питаєш друга)
+= ty → vrátiš.
+X dd: Обери. | Vyzdvihnem syna [*zo/z/zo do] škôlky.
+= zo škôlky (перед š).
+X sc~: Що означає «Cestou domov nakúpim»? | - | *Дорогою додому зроблю покупки ;; Удома зроблю покупки ;; Купуватиму квиток додому
+= cestou — дорогою.
+X tf: - | - | «Krúžok» — це гурток або секція для дітей. | T
+= krúžok — гурток.
+X fb: Допиши. | ___ sa okolo siedmej. (я повернуся) | Vrátim |
+= vrátim sa.
+X so: - | Запитай чоловіка, чи забере він дітей зі школи. | Vyzdvihneš deti zo školy?
+= Vyzdvihneš + deti + zo školy?
+X fe: - | Pomôžeš mi s [nákup>nákupom]?
+= s + орудний: nákupom.
+X msg: - | Manžel | Ahoj, dnes neskôr skončím, vyzdvihneš Sofiu z krúžku o piatej? Ja cestou nakúpim. | Що просить чоловік? | *забрати Софію з гуртка о 5 ;; зробити покупки ;; повернутися пізніше
+= vyzdvihneš Sofiu z krúžku.
+X np: Ти пишеш чоловікові, що затримаєшся й повернешся близько восьмої. | *Ahoj, vrátim sa až okolo ôsmej. ;; Vráti sa okolo osem. ;; Vrátiť sa ôsma. ;; Som okolo ôsmej vrátim.
+= Vrátim sa okolo ôsmej.
+X cat: Що це за справа? | Діти: vyzdvihnúť zo škôlky, krúžok ;; Дім: nakúpiť, uvariť večeru ;; Ти сам: posilňovňa, kurz slovenčiny
+= Пообідні справи.
+X ms: Обери правильні речення. | - | *Vyzdvihnem deti zo školy. ;; *Cestou nakúpim. ;; *Vrátim sa o šiestej. ;; Vrátim o šiestej sa. ;; Vyzdvihnem deti z škola.
+= Порядок і відмінки.
+F: Логістика сімейного вечора || Ви з чоловіком переписуєтесь о 15:00.
+S: Чоловік: «Kto vyzdvihne Maxa zo škôlky?» (ти) | *Ja ho vyzdvihnem. ;; Ja ho vyzdvihne. ;; Vyzdvihnúť ja.
+S: «A Sofia má krúžok do šiestej.» Що це означає? | *у Софії гурток до 18:00 ;; Софія вдома о шостій ;; гурток скасовано
+S: Ти просиш його зробити покупки дорогою. | *Nakúpiš cestou domov? ;; Nakupujem cestou ty? ;; Nákup cestou je?
+S: «Jasné. Kedy sa vrátiš?» (близько п’ятої) | *Okolo piatej. ;; Okolo päť. ;; O piata.
+R: vyzdvihnúť, nakupovať / nakúpiť, nákup ;; krúžok ;; vrátiť sa ;; cestou domov
+
+@lesson vecer | Вечір | Večer
+desc: Вечірня рутина: večera, večerať, relaxovať, seriál, ísť spať, zaspať.
+goal: Розповісти про свій вечір і час, коли лягаєш спати.
+out: казати večeriam o… ;; казати pozerám seriál, relaxujem ;; розрізняти ísť spať і zaspať ;; розповідати про вечір по порядку
+done: Вечір описано. Далі — вихідні.
+T: Вечеря || «Večera» — вечеря, «večerať» — вечеряти. «Na večeru máme…» — на вечерю в нас… «Kto varí večeru?» || Večeriame o siedmej. = Ми вечеряємо о сьомій. ;; Na večeru je polievka. = На вечерю суп. || večera / večerať
+T: Відпочинок || «Relaxovať» — відпочивати, розслаблятися, «pozerať seriál» — дивитися серіал, «čítať», «ísť von» — вийти кудись. || Večer relaxujem pri seriáli. = Увечері відпочиваю за серіалом. || relaxovať, seriál
+T: Сон || «Ísť spať» — іти спати, «zaspať» — заснути (а також «проспати»!). «Nemôžem zaspať» — не можу заснути. «Zaspal som» — я проспав / заснув. || Chodím spať o jedenástej. = Я лягаю спати об одинадцятій. ;; Rýchlo zaspím. = Я швидко засинаю. || zaspať = заснути / проспати
+W: večera | вечеря | вечера | Večera je o siedmej. | Вечеря о сьомій.
+W: večerať | вечеряти | вечерать | Večeriame spolu. | Ми вечеряємо разом.
+W: relaxovať | відпочивати, розслаблятися | релаксовать | Cez víkend relaxujem. | На вихідних я відпочиваю.
+W: seriál | серіал | серія:л | Pozeráme nový seriál. | Ми дивимося новий серіал.
+W: ísť spať | лягати спати | і:сть спать | Deti idú spať o deviatej. | Діти лягають спати о дев’ятій.
+W: zaspať | заснути; проспати | заспать | Nemôžem zaspať. | Не можу заснути.
+X mt: З’єднай. | večera = вечеря ;; večerať = вечеряти ;; relaxovať = відпочивати ;; seriál = серіал ;; zaspať = заснути
+X dd: Обери. | Deti [*idú/ide/ideme] spať o deviatej.
+= deti — idú.
+X sc~: Що означає «Zaspal som» уранці перед роботою? | - | *Я проспав ;; Я заснув за кермом ;; Я виспався
+= zaspať — і «заснути», і «проспати».
+X tf: - | - | «Ísť spať» і «zaspať» — завжди одне й те саме. | F
+= ísť spať — лягати; zaspať — заснути.
+X fb: Допиши. | Na ___ je polievka. (вечерю) | večeru | Знахідний.
+= na večeru.
+X so: - | Скажи, що увечері відпочиваєш за серіалом. | Večer relaxujem pri seriáli.
+= relaxujem pri seriáli.
+X do: - | Prídem domov. ;; Navarím večeru. ;; Večeriame spolu. ;; Pozeráme seriál. ;; Idem spať.
+= Вечір по порядку.
+X fe: - | Po práci [relaxuje>relaxujem] doma.
+= Про себе — relaxujem.
+X np: Друг кличе в бар об 11 вечора, а тобі рано вставати. | *Nie, dnes nie, idem skoro spať. ;; Áno, zaspím. ;; Spať je skoro. ;; Ide spať.
+= Відмова + причина.
+X cat: Вечірня чи ранкова дія? | Ráno: vstávať, raňajkovať, budík ;; Večer: večerať, relaxovať, ísť spať
+= Розподіл за часом доби.
+X dr: - | Manžel: Čo je na večeru? | *Kuracie mäso so zemiakmi. ;; Večeru jem. ;; O siedmej.
+= Відповідь про страву.
+X ms: Обери правильні речення. | - | *Večeriame o siedmej. ;; *Idem spať o jedenástej. ;; *Nemôžem zaspať. ;; Idem zaspať o jedenástej skoro. ;; Večera o sedem.
+= Вечірні фрази.
+F: Вечір із сусідкою || Сусідка заходить увечері на чай.
+S: «Čo robíš večer?» | *Večer bežne relaxujem, pozerám seriál. ;; Večer relaxuje. ;; Seriál večer.
+S: «Už ste večerali?» (так) | *Áno, už sme večerali. ;; Áno, večera je. ;; Áno, večerám.
+S: «O koľkej chodíš spať?» (близько 23:00) | *Okolo jedenástej. ;; Jedenásť hodín spať. ;; O jedenásť.
+S: «Ja nemôžem zaspať pred polnocou.» Що з сусідкою? | *вона не може заснути до півночі ;; вона проспала ;; вона лягає рано
+R: večera, večerať ;; relaxovať, seriál ;; ísť spať vs zaspať ;; Nemôžem zaspať.
+
+@lesson vikend | Вихідні | Víkend
+desc: Як провести вихідні: výlet, vyspať sa, voľno, plán, prechádzka.
+goal: Розповісти про вихідні й домовитися про спільні плани.
+out: казати Cez víkend… ;; казати vyspím sa, idem na výlet ;; пропонувати: Poďme na prechádzku ;; питати Aké máš plány?
+done: Вихідні сплановано. Далі — послідовність подій.
+T: Cez víkend || «Cez víkend» — на вихідних. «Mám voľno» — я вільний / маю вихідний. «Konečne víkend!» — нарешті вихідні! || Cez víkend nepracujem. = На вихідних я не працюю. ;; V sobotu mám voľno. = У суботу я вихідний. || cez víkend = на вихідних
+T: Відпочинок || «Vyspať sa» — виспатися, «ísť na výlet» — поїхати на прогулянку / екскурсію, «ísť na prechádzku» — піти погуляти. || V sobotu sa vyspím. = У суботу я висплюся. ;; Ideme na výlet do Tatier. = Їдемо на прогулянку в Татри. || vyspať sa, výlet, prechádzka
+T: Плани і пропозиції || «Aké máš plány na víkend?» — які плани на вихідні? «Poďme…» — давай(те)…: «Poďme na prechádzku». «Máš chuť…?» — маєш бажання…? || Poďme v nedeľu na výlet! = Поїхали в неділю на прогулянку! ;; Máš chuť ísť do kina? = Хочеш піти в кіно? || Poďme… = Давайте…
+W: víkend | вихідні | ві:кенд | Konečne je víkend! | Нарешті вихідні!
+W: výlet | прогулянка за місто, екскурсія | ві:лет | V nedeľu ideme na výlet. | У неділю ми їдемо на прогулянку.
+W: vyspať sa | виспатися | віспать са | Konečne sa vyspím. | Нарешті висплюся.
+W: voľno | вихідний (вільний час) | вольно | Zajtra mám voľno. | Завтра в мене вихідний.
+W: plán | план | пла:н | Aký je plán na sobotu? | Який план на суботу?
+W: prechádzka | прогулянка (пішки) | прехадзка | Poďme na prechádzku do parku. | Ходімо погуляти в парк.
+X mt: З’єднай. | víkend = вихідні ;; výlet = поїздка, прогулянка за місто ;; vyspať sa = виспатися ;; voľno = вихідний ;; prechádzka = прогулянка
+X dd: Обери. | [*Poďme/Poď/Ideme] na prechádzku! (пропозиція)
+= Poďme — давайте.
+X dd: Обери. | [*Cez/V/Na] víkend nepracujem.
+= cez víkend.
+X sc~: Що означає «Máš chuť ísť do kina?»? | - | *Хочеш піти в кіно? ;; Тобі смакує кіно? ;; Ти йдеш у кіно?
+= mať chuť — мати бажання.
+X tf: - | - | «Mať voľno» означає «мати вихідний / вільний час». | T
+= voľno — вільний час.
+X fb: Допиши. | Konečne sa ___. (висплюся) | vyspím |
+= vyspať sa → vyspím sa.
+X so: - | Запропонуй піти погуляти в парк. | Poďme na prechádzku do parku.
+= Poďme + na prechádzku.
+X dr: - | Kamarátka: Aké máš plány na víkend? | *V sobotu sa vyspím a v nedeľu ideme na výlet. ;; Víkend plán je. ;; Mám voľno plány.
+= Розповідь про плани.
+X fe: - | Poďme na [prechádzka>prechádzku] do lesa!
+= na + знахідний: prechádzku.
+X np: Колега питає, чи працюєш у суботу. Ні, у тебе вихідний. | *Nie, v sobotu mám voľno. ;; Nie, sobota voľno je. ;; Áno, voľno. ;; Mám víkend sobota.
+= v sobotu mám voľno.
+X cat: Активно чи спокійно? | Aktívne: výlet do hôr, futbal, bicykel ;; Pokojne: vyspať sa, čítať, seriál
+= Типи відпочинку.
+X ms: Обери пропозиції. | - | *Poďme na výlet! ;; *Máš chuť na kávu? ;; *Ideme spolu do kina? ;; Mám voľno. ;; Vyspím sa.
+= Пропозиція — запрошення до дії.
+F: Плани з друзями || Друзі в чаті планують вихідні.
+S: «Kto má v sobotu voľno?» (ти) | *Ja mám v sobotu voľno. ;; Ja má voľno. ;; Voľno sobota ja.
+S: «Poďme na výlet do Malých Karpát!» Що пропонують? | *поїздку в Малі Карпати ;; похід у кіно ;; вечірку
+S: Ти хочеш уточнити, о котрій. | *O koľkej ideme? ;; Koľko je výlet? ;; Kedy ideš ty?
+S: «Ráno o ôsmej, aby sme sa ešte vyspali, tak o deviatej.» Коли виїжджають? | *о дев’ятій ;; о восьмій ;; о сьомій
+R: cez víkend, mať voľno ;; vyspať sa, výlet, prechádzka ;; Poďme…! Máš chuť…? ;; Aké máš plány?
+
+@lesson postupnost | Спочатку, потім, нарешті | Najprv, potom, nakoniec
+desc: Слова послідовності: najprv, potom, nakoniec, keď, kým, predtým — для розповіді про день.
+goal: Розповідати події в правильному порядку зі зв’язками.
+out: використовувати najprv, potom, nakoniec ;; будувати речення з keď (коли) ;; казати predtým / potom ;; будувати зв’язну розповідь
+done: Твої розповіді стали зв’язними. Далі — підсумок розділу.
+T: Najprv — potom — nakoniec || «Najprv» — спочатку, «potom» — потім, «nakoniec» — нарешті, наприкінці. Ще: «najskôr» (найперше), «neskôr» (пізніше). || Najprv raňajkujem, potom idem do práce a nakoniec sa vrátim domov. = Спочатку снідаю, потім іду на роботу, а наприкінці повертаюся додому. || najprv → potom → nakoniec
+T: Keď — коли || «Keď prídem domov, navarím večeru» — коли прийду додому, приготую вечерю. Кома перед другою частиною обов’язкова. || Keď prší, zostávam doma. = Коли йде дощ, я лишаюся вдома. || Keď…, … (кома!)
+T: Predtým, kým || «Predtým» — перед тим, раніше, «kým» — поки: «Kým varím, deti sa hrajú» — поки я готую, діти граються. || Predtým som pracoval v Poľsku. = Раніше я працював у Польщі. ;; Kým čakám, čítam. = Поки чекаю, читаю. || kým = поки
+W: najprv | спочатку | найпрв | Najprv si umyj ruky. | Спочатку помий руки.
+W: potom | потім | потом | Potom ideme do parku. | Потім підемо в парк.
+W: nakoniec | нарешті, наприкінці | наконєц | Nakoniec sme to stihli. | Зрештою ми встигли.
+W: keď | коли (сполучник) | кедь | Keď prídem, zavolám. | Коли прийду, подзвоню.
+W: kým | поки | кі:м | Kým varím, počúvam rádio. | Поки готую, слухаю радіо.
+W: predtým | перед тим, раніше | предті:м | Predtým som býval v Nitre. | Раніше я жив у Нітрі.
+X mt: З’єднай. | najprv = спочатку ;; potom = потім ;; nakoniec = нарешті ;; keď = коли ;; kým = поки
+X do: - | Najprv vstanem. ;; Potom sa osprchujem. ;; Keď som hotový, raňajkujem. ;; Nakoniec idem do práce.
+= Послідовність зі словами-зв’язками.
+X dd: Обери. | [*Kým/Keď je] varím, deti pozerajú rozprávku.
+= Kým — поки (одночасно).
+X sc~: Що означає «Keď prídem, zavolám»? | - | *Коли прийду, подзвоню ;; Якщо прийду, можливо, подзвоню ;; Я прийшов і подзвонив
+= keď — коли.
+X tf: - | - | Після частини з «keď» ставлять кому: «Keď prídem, zavolám.» | T
+= Кома між частинами речення.
+X fb: Допиши. | ___ si umyj ruky, potom jedz. (спочатку) | Najprv |
+= Najprv…, potom…
+X so: - | Скажи, що раніше ти жив у Нітрі. | Predtým som býval v Nitre.
+= Predtým + som býval.
+X cz: - | {Najprv} idem do obchodu, {potom} vyzdvihnem deti a {nakoniec} uvarím večeru. | Слова послідовності.
+= najprv, potom, nakoniec.
+X fe: - | [Kým>Keď] prídem domov, zavolám ti.
+= Майбутня подія «коли» — keď.
+X np: Друг питає план на вечір. Спочатку спортзал, потім вечеря. | *Najprv idem do posilňovne a potom na večeru. ;; Potom posilňovňa najprv večera. ;; Najprv večera, potom predtým. ;; Keď posilňovňa.
+= najprv… a potom…
+X rc: - | Včera som mal dlhý deň. Najprv som išiel na úrad, kde som čakal dve hodiny. Kým som čakal, učil som sa slovíčka. Potom som išiel do práce. Keď som skončil, vyzdvihol som syna. Nakoniec sme spolu večerali.
+q~: Що він робив, поки чекав? | *вчив слова ;; спав ;; телефонував
+q~: Що було останнім? | *вечеря разом із сином ;; робота ;; установа
+X ms: Обери слова послідовності. | - | *najprv ;; *potom ;; *nakoniec ;; vždy ;; zriedka
+= vždy, zriedka — частота, не послідовність.
+F: Інструкція для нової няні || Ти пояснюєш няні, що робити після садка.
+S: Спочатку — забрати сина із садка о 16:00. | *Najprv vyzdvihnite syna zo škôlky o štvrtej. ;; Potom vyzdvihnite syna najprv. ;; Nakoniec škôlka.
+S: Потім — погуляти в парку. | *Potom choďte do parku. ;; Najprv nakoniec park. ;; Park predtým.
+S: «A keď sa vrátime?» Що відповіси? (дати вечерю) | *Keď sa vrátite, dajte mu večeru. ;; Kým sa vrátite, večera. ;; Nakoniec predtým večera.
+S: Наприкінці — ванна і сон о 20:00. | *Nakoniec ho okúpte a o ôsmej ide spať. ;; Najprv spať. ;; Potom predtým spať.
+R: najprv, potom, nakoniec ;; Keď…, … ;; kým ;; predtým
+
+@lesson moj-den-opakovanie | Підсумок: мій день | Opakovanie: môj deň
+desc: Підсумок розділу: розпорядок дня від будильника до сну з часом, зворотними дієсловами й послідовністю.
+goal: Розповісти про свій день від ранку до вечора.
+out: описати розпорядок дня ;; називати час розмовно ;; використовувати sa / si ;; поєднувати події словами-зв’язками
+done: Розділ «Мій день» завершено! Далі — їжа й знахідний відмінок.
+T: Денний режим || «Denný režim» — розпорядок дня, «rozvrh» — розклад (уроків, змін), «zvyčajne» — зазвичай, «termín» — дата / прийом. || Môj denný režim je jednoduchý. = Мій розпорядок дня простий. ;; Rozvrh mám na nástenke. = Розклад у мене на дошці. || denný režim
+T: Шаблон || Ráno o… vstávam, umyjem sa, raňajkujem. O… odchádzam. Pracujem od… do… Na obed… Po práci… Večer… O… idem spať. || Vstávam o pol siedmej. = Встаю о пів на сьому. || Від будильника до сну
+T: Повтор часу || štvrť na (:15), pol (:30), trištvrte na (:45); presne, okolo; o + порядкове -ej. || Končím o pol tretej. = Закінчую о 2:30. ;; Vlak ide o trištvrte na päť. = Поїзд о 4:45. || Час розмовно
+W: denný režim | розпорядок дня | денні: режім | Deti potrebujú pravidelný denný režim. | Дітям потрібен регулярний розпорядок.
+W: rozvrh | розклад | розврг | Aký máš rozvrh na budúci týždeň? | Який у тебе розклад на наступний тиждень?
+W: zvyčajne | зазвичай | звичайне | Zvyčajne končím o tretej. | Зазвичай я закінчую о третій.
+W: termín | термін, дата, запис | термі:н | Mám termín u zubára. | У мене запис до стоматолога.
+X rc: - | Môj denný režim: Zvyčajne vstávam o trištvrte na šesť. Umyjem sa, oblečiem sa a raňajkujem. Do práce odchádzam o pol siedmej, cesta trvá pol hodiny. Pracujem v sklade od siedmej do pol štvrtej. Na obed mám polhodinovú prestávku. Po práci vyzdvihnem dcéru z krúžku a cestou nakúpim. Večer varím, večeriame a o jedenástej idem spať.
+q~: О котрій вона встає? | *5:45 ;; 6:45 ;; 5:15
+q~: Коли закінчується робота? | *15:30 ;; 14:30 ;; 16:30
+q~: Що вона робить після роботи? | *забирає доньку з гуртка й купує продукти ;; іде в спортзал ;; спить
+X cz: - | Ráno {sa} osprchujem a dám {si} kávu. Do práce {odchádzam} o pol ôsmej. | sa / si / дієслово «виходжу».
+= sa, si, odchádzam.
+X mt: З’єднай час. | 6:15 = štvrť na sedem ;; 6:30 = pol siedmej ;; 6:45 = trištvrte na sedem ;; 7:00 = sedem hodín
+X fe: - | Ráno [si>sa] holím a potom raňajkujem.
+= holiť sa.
+X ce: Виправ речення. | Najprv raňajkujem, keď vstanem a potom idem do práce o pol osem. | Keď vstanem, najprv raňajkujem a potom idem do práce o pol ôsmej. ;; Keď vstanem, najprv raňajkujem a potom idem do práce o pol ôsmej
+= Логіка послідовності й «o pol ôsmej».
+X tr: Перетвори на «ми». | Vstávam o šiestej a raňajkujem. | Vstávame o šiestej a raňajkujeme. ;; Vstávame o šiestej a raňajkujeme
+= -áme, -ujeme.
+X bd: - | Чудова розповідь про свій день!
+> Lekárka: Aký máte denný režim? Spíte dosť? | *Zvyčajne spím sedem hodín, od jedenástej do šiestej. ;; Spí sedem. ;; Spať denný režim.
+> Lekárka: Raňajkujete? | *Áno, vždy raňajkujem doma. ;; Áno, raňajky som. ;; Nikdy áno.
+> Lekárka: A obed? | *V práci mám prestávku, obedujem v jedálni. ;; Obed je jedáleň. ;; Prestávku obedujú.
+> Lekárka: Dobre. Športujete? | *Niekedy cez víkend chodím na prechádzku. ;; Šport je víkend. ;; Nikdy športujem.
+X ms: Обери правильні речення. | - | *Vstávam o pol šiestej. ;; *Ráno sa holím. ;; *Keď prídem, zavolám. ;; Ráno holím sa ja. ;; O pol šesť vstávam.
+= Повторення.
+X sb: - | Скажи, що в тебе запис до стоматолога. | Mám termín u zubára.
+= Mám termín + u zubára.
+X dd: Обери. | [*Zvyčajne/Nikdy] končím o tretej, ale dnes o piatej.
+= Зазвичай — zvyčajne.
+X np: Ти пояснюєш новому колезі свій графік. | *Zvyčajne začínam o šiestej a končím o druhej. ;; Zvyčajne začína šesť. ;; Rozvrh šiesta. ;; Končím začínam druhá.
+= Графік від… до…
+F: Інтерв’ю для соціального дослідження || Соціологиня розпитує про твій типовий день.
+S: «O koľkej zvyčajne vstávate?» (6:15) | *O štvrť na sedem. ;; O štvrť na šesť. ;; O pol siedmej.
+S: «Ako dlho trvá cesta do práce?» (40 хв) | *Asi štyridsať minút. ;; Štyridsať hodín. ;; O štyridsať.
+S: «Čo robíte po práci?» | *Najprv vyzdvihnem deti, potom varím. ;; Najprv potom deti. ;; Deti varím.
+S: «A večer?» | *Zvyčajne pozerám seriál a o jedenástej idem spať. ;; Večer spať o jedenásť hodín seriál. ;; Idem spať o jedenásť.
+R: denný režim, rozvrh, termín, zvyčajne ;; час розмовно ;; sa / si ;; najprv, potom, keď, nakoniec

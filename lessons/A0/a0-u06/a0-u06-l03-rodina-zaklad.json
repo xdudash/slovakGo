@@ -1,0 +1,789 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u06-l03-rodina-zaklad",
+      "sectionId": "a0-u06",
+      "level": "A0",
+      "title": "Моя родина",
+      "topic": "Перші потреби",
+      "description": "Найближчі родичі: mama, otec, brat, sestra, syn, dcéra — і як сказати «мій / моя».",
+      "order": 53,
+      "xpReward": 15,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Назвати членів родини й розповісти, хто в тебе є.",
+      "completionMessage": "Тепер ти можеш розповісти про родину. Далі — тіло й біль.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Перші потреби",
+        "title": "Моя родина",
+        "shortDescription": "Назвати членів родини й розповісти, хто в тебе є.",
+        "outcomes": [
+          "називати найближчих родичів",
+          "казати môj / moja",
+          "казати Mám brata / sestru",
+          "розуміти розмовні mamina, ocko"
+        ],
+        "newWords": [
+          "mama",
+          "otec",
+          "brat",
+          "sestra",
+          "syn",
+          "dcéra"
+        ],
+        "exercisesCount": 12,
+        "reward": "+15 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Найближчі родичі",
+          "text": "mama (мама), otec (батько), brat (брат), sestra (сестра), syn (син), dcéra (донька). Розмовно: mamina, ocko / tato.",
+          "examples": [
+            {
+              "sk": "To je moja mama.",
+              "uk": "Це моя мама."
+            },
+            {
+              "sk": "Môj otec je lekár.",
+              "uk": "Мій батько — лікар."
+            }
+          ],
+          "shortRule": "dcéra — донька (не «дочка»)",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Môj, moja, moje",
+          "text": "Чоловічий рід — môj (môj brat), жіночий — moja (moja sestra), середній — moje (moje dieťa).",
+          "examples": [
+            {
+              "sk": "môj syn",
+              "uk": "мій син"
+            },
+            {
+              "sk": "moja dcéra",
+              "uk": "моя донька"
+            },
+            {
+              "sk": "moje dieťa",
+              "uk": "моя дитина"
+            }
+          ],
+          "shortRule": "môj / moja / moje",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Mám brata",
+          "text": "Після «mám» — знахідний відмінок. Чоловічий рід (живі істоти) отримує -a: brat → brata, syn → syna. Жіночий: sestra → sestru, dcéra → dcéru.",
+          "examples": [
+            {
+              "sk": "Mám dvoch bratov.",
+              "uk": "У мене двоє братів."
+            },
+            {
+              "sk": "Mám sestru a brata.",
+              "uk": "У мене є сестра й брат."
+            }
+          ],
+          "shortRule": "brat → brata, sestra → sestru",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u06-l03-rodina-zaklad-w01",
+            "sk": "mama",
+            "uk": "мама",
+            "pronunciationUk": "мама",
+            "exampleSk": "Moja mama býva na Ukrajine.",
+            "exampleUk": "Моя мама живе в Україні."
+          },
+          {
+            "wordId": "a0-u06-l03-rodina-zaklad-w02",
+            "sk": "otec",
+            "uk": "батько",
+            "pronunciationUk": "отец",
+            "exampleSk": "Otec pracuje na stavbe.",
+            "exampleUk": "Батько працює на будові."
+          },
+          {
+            "wordId": "a0-u06-l03-rodina-zaklad-w03",
+            "sk": "brat",
+            "uk": "брат",
+            "pronunciationUk": "брат",
+            "exampleSk": "Môj brat má dvadsať rokov.",
+            "exampleUk": "Моєму братові двадцять років."
+          },
+          {
+            "wordId": "a0-u06-l03-rodina-zaklad-w04",
+            "sk": "sestra",
+            "uk": "сестра",
+            "pronunciationUk": "сестра",
+            "exampleSk": "Sestra je študentka.",
+            "exampleUk": "Сестра — студентка."
+          },
+          {
+            "wordId": "a0-u06-l03-rodina-zaklad-w05",
+            "sk": "syn",
+            "uk": "син",
+            "pronunciationUk": "сін",
+            "exampleSk": "Syn chodí do škôlky.",
+            "exampleUk": "Син ходить у садок."
+          },
+          {
+            "wordId": "a0-u06-l03-rodina-zaklad-w06",
+            "sk": "dcéra",
+            "uk": "донька",
+            "pronunciationUk": "дцера",
+            "exampleSk": "Dcéra má päť rokov.",
+            "exampleUk": "Доньці п’ять років."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u06-l03-rodina-zaklad-w01",
+          "sk": "mama",
+          "uk": "мама",
+          "pronunciationUk": "мама",
+          "exampleSk": "Moja mama býva na Ukrajine.",
+          "exampleUk": "Моя мама живе в Україні.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l03-rodina-zaklad-w02",
+          "sk": "otec",
+          "uk": "батько",
+          "pronunciationUk": "отец",
+          "exampleSk": "Otec pracuje na stavbe.",
+          "exampleUk": "Батько працює на будові.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l03-rodina-zaklad-w03",
+          "sk": "brat",
+          "uk": "брат",
+          "pronunciationUk": "брат",
+          "exampleSk": "Môj brat má dvadsať rokov.",
+          "exampleUk": "Моєму братові двадцять років.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l03-rodina-zaklad-w04",
+          "sk": "sestra",
+          "uk": "сестра",
+          "pronunciationUk": "сестра",
+          "exampleSk": "Sestra je študentka.",
+          "exampleUk": "Сестра — студентка.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l03-rodina-zaklad-w05",
+          "sk": "syn",
+          "uk": "син",
+          "pronunciationUk": "сін",
+          "exampleSk": "Syn chodí do škôlky.",
+          "exampleUk": "Син ходить у садок.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l03-rodina-zaklad-w06",
+          "sk": "dcéra",
+          "uk": "донька",
+          "pronunciationUk": "дцера",
+          "exampleSk": "Dcéra má päť rokov.",
+          "exampleUk": "Доньці п’ять років.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u06-l03-rodina-zaklad-ex01",
+          "lessonId": "a0-u06-l03-rodina-zaklad",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "mama",
+              "right": "мама"
+            },
+            {
+              "left": "otec",
+              "right": "батько"
+            },
+            {
+              "left": "brat",
+              "right": "брат"
+            },
+            {
+              "left": "sestra",
+              "right": "сестра"
+            },
+            {
+              "left": "syn",
+              "right": "син"
+            },
+            {
+              "left": "dcéra",
+              "right": "донька"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a0-u06-l03-rodina-zaklad-w01",
+            "a0-u06-l03-rodina-zaklad-w02",
+            "a0-u06-l03-rodina-zaklad-w03",
+            "a0-u06-l03-rodina-zaklad-w04",
+            "a0-u06-l03-rodina-zaklad-w05",
+            "a0-u06-l03-rodina-zaklad-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l03-rodina-zaklad-ex02",
+          "lessonId": "a0-u06-l03-rodina-zaklad",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "To je "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "moje",
+                "moja",
+                "môj"
+              ],
+              "correct": "moja"
+            },
+            {
+              "text": " sestra."
+            }
+          ],
+          "explanation": "sestra — жін. рід: moja.",
+          "order": 2,
+          "wordIds": [
+            "a0-u06-l03-rodina-zaklad-w04"
+          ]
+        },
+        {
+          "id": "a0-u06-l03-rodina-zaklad-ex03",
+          "lessonId": "a0-u06-l03-rodina-zaklad",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "blankId": "b1",
+              "options": [
+                "Moje",
+                "Môj",
+                "Moja"
+              ],
+              "correct": "Môj"
+            },
+            {
+              "text": " otec je kuchár."
+            }
+          ],
+          "explanation": "otec — чол. рід: môj.",
+          "order": 3,
+          "wordIds": [
+            "a0-u06-l03-rodina-zaklad-w02"
+          ]
+        },
+        {
+          "id": "a0-u06-l03-rodina-zaklad-ex04",
+          "lessonId": "a0-u06-l03-rodina-zaklad",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Mám "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "bratom",
+                "brat",
+                "brata"
+              ],
+              "correct": "brata"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Mám + знахідний: brat → brata.",
+          "order": 4,
+          "wordIds": [
+            "a0-u06-l03-rodina-zaklad-w03"
+          ]
+        },
+        {
+          "id": "a0-u06-l03-rodina-zaklad-ex05",
+          "lessonId": "a0-u06-l03-rodina-zaklad",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Чоловік чи жінка?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Чоловік"
+            },
+            {
+              "id": "c2",
+              "title": "Жінка"
+            }
+          ],
+          "items": [
+            {
+              "sk": "brat",
+              "category": "c1"
+            },
+            {
+              "sk": "sestra",
+              "category": "c2"
+            },
+            {
+              "sk": "otec",
+              "category": "c1"
+            },
+            {
+              "sk": "mama",
+              "category": "c2"
+            },
+            {
+              "sk": "dcéra",
+              "category": "c2"
+            },
+            {
+              "sk": "syn",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Розподіли за статтю.",
+          "order": 5,
+          "wordIds": [
+            "a0-u06-l03-rodina-zaklad-w01",
+            "a0-u06-l03-rodina-zaklad-w02",
+            "a0-u06-l03-rodina-zaklad-w03",
+            "a0-u06-l03-rodina-zaklad-w04",
+            "a0-u06-l03-rodina-zaklad-w05",
+            "a0-u06-l03-rodina-zaklad-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l03-rodina-zaklad-ex06",
+          "lessonId": "a0-u06-l03-rodina-zaklad",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «ocko»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "тато (пестливо)",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "дідусь",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "дядько",
+              "correct": false
+            }
+          ],
+          "explanation": "ocko — пестливе «тато».",
+          "order": 6
+        },
+        {
+          "id": "a0-u06-l03-rodina-zaklad-ex07",
+          "lessonId": "a0-u06-l03-rodina-zaklad",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Dcéra» означає «донька».",
+          "correctAnswer": true,
+          "explanation": "dcéra — донька.",
+          "order": 7,
+          "wordIds": [
+            "a0-u06-l03-rodina-zaklad-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l03-rodina-zaklad-ex08",
+          "lessonId": "a0-u06-l03-rodina-zaklad",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Mám jednu ______. (доньку)",
+          "acceptedAnswers": [
+            "dcéru"
+          ],
+          "hint": "Знахідний: -a → -u.",
+          "explanation": "dcéra → dcéru.",
+          "order": 8,
+          "wordIds": [
+            "a0-u06-l03-rodina-zaklad-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l03-rodina-zaklad-ex09",
+          "lessonId": "a0-u06-l03-rodina-zaklad",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що твоя мама живе в Україні.",
+          "tokens": [
+            "Ukrajine",
+            "býva",
+            ".",
+            "na",
+            "mama",
+            "Moja"
+          ],
+          "correctOrder": [
+            "Moja",
+            "mama",
+            "býva",
+            "na",
+            "Ukrajine",
+            "."
+          ],
+          "explanation": "moja mama + býva.",
+          "order": 9,
+          "wordIds": [
+            "a0-u06-l03-rodina-zaklad-w01"
+          ]
+        },
+        {
+          "id": "a0-u06-l03-rodina-zaklad-ex10",
+          "lessonId": "a0-u06-l03-rodina-zaklad",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Volám sa Iryna. Mám manžela Olega a dve deti – syna Maksyma a dcéru Sofiu. Moja mama býva v Kyjeve, otec už nežije. Mám aj brata, býva v Poľsku.",
+          "questions": [
+            {
+              "question": "Скільки в Ірини дітей?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "одна",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "двоє",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "троє",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Де живе її брат?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "у Словаччині",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "у Києві",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "у Польщі",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "a0-u06-l03-rodina-zaklad-w01",
+            "a0-u06-l03-rodina-zaklad-w02",
+            "a0-u06-l03-rodina-zaklad-w03",
+            "a0-u06-l03-rodina-zaklad-w05",
+            "a0-u06-l03-rodina-zaklad-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l03-rodina-zaklad-ex11",
+          "lessonId": "a0-u06-l03-rodina-zaklad",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Колега питає, чи в тебе є діти. У тебе є син.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Áno, môj syn mám.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Áno, mám syna.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Áno, mám syn.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Áno, synovi.",
+              "correct": false
+            }
+          ],
+          "explanation": "Mám syna.",
+          "order": 11,
+          "wordIds": [
+            "a0-u06-l03-rodina-zaklad-w05"
+          ]
+        },
+        {
+          "id": "a0-u06-l03-rodina-zaklad-ex12",
+          "lessonId": "a0-u06-l03-rodina-zaklad",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні фрази.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "môj brat",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "moja dcéra",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Mám sestru.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "môj mama",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Mám sestra.",
+              "correct": false
+            }
+          ],
+          "explanation": "moja mama; Mám sestru.",
+          "order": 12,
+          "wordIds": [
+            "a0-u06-l03-rodina-zaklad-w01",
+            "a0-u06-l03-rodina-zaklad-w03",
+            "a0-u06-l03-rodina-zaklad-w04",
+            "a0-u06-l03-rodina-zaklad-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Фото на телефоні",
+        "description": "Колега на перерві розпитує про фото на твоєму телефоні.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Kto je to?» (твоя мама)",
+            "options": [
+              {
+                "sk": "To je môj mama.",
+                "correct": false
+              },
+              {
+                "sk": "To je mama moja je.",
+                "correct": false
+              },
+              {
+                "sk": "To je moja mama.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«A ten chlapec?» (твій син)",
+            "options": [
+              {
+                "sk": "To je moja syn.",
+                "correct": false
+              },
+              {
+                "sk": "Mám syna je.",
+                "correct": false
+              },
+              {
+                "sk": "To je môj syn.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Máš aj súrodencov?» (у тебе є сестра)",
+            "options": [
+              {
+                "sk": "Áno, moja sestru.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, mám sestru.",
+                "correct": true
+              },
+              {
+                "sk": "Áno, mám sestra.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Kde býva?» (у Варшаві)",
+            "options": [
+              {
+                "sk": "Býva z Varšavy.",
+                "correct": false
+              },
+              {
+                "sk": "Býva vo Varšave.",
+                "correct": true
+              },
+              {
+                "sk": "Je Varšava.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тепер ти можеш розповісти про родину. Далі — тіло й біль."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тепер ти можеш розповісти про родину. Далі — тіло й біль.",
+        "nowYouKnow": [
+          "mama, otec, brat, sestra, syn, dcéra",
+          "môj / moja / moje",
+          "Mám brata / sestru / syna / dcéru"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u06-l04-telo-bolest",
+          "title": "Тіло і «болить»"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,522 @@
+@unit a2-u04 | Місцевий відмінок і місце | Lokál a miesto
+
+@lesson lokal-jednotne | Місцевий відмінок однини | Lokál jednotného čísla
+desc: Де? Про кого? Уся система закінчень місцевого відмінка однини: v dome, v parku, v hoteli, o bratovi, v meste, na námestí, v škole, v miestnosti — і узгодження прикметників.
+goal: Упевнено утворювати місцевий відмінок однини всіх трьох родів разом із прикметником і займенником.
+out: утворювати чоловічий рід: v dome, v parku, v hoteli, o bratovi ;; утворювати середній рід: v meste, na Slovensku, na námestí, v múzeu ;; утворювати жіночий рід: v škole, na ulici, v miestnosti ;; узгоджувати прикметник і займенник: v novom, v novej, v mojom, v tej
+done: Ти знаєш систему місцевого відмінка однини. Далі — місцевий відмінок множини: v obchodoch, v Košiciach.
+T: Чоловічий рід || Неживі іменники з твердою основою мають -e: «dom → v dome», «obchod → v obchode», «stôl → na stole». Після k, g, h, ch — -u: «park → v parku», «vlak → vo vlaku», «roh → v rohu». М’яка основа і слова типу hotel мають -i: «hotel → v hoteli», «gauč → na gauči», «koberec → na koberci». Живі іменники (люди, тварини) мають -ovi: «brat → o bratovi», «kolega → o kolegovi». || Kľúče sú na stole. = Ключі на столі. ;; Rozprávali sme sa o novom kolegovi. = Ми говорили про нового колегу. || -e / -u (після k, g, h, ch) / -i (м’які) / -ovi (живі)
+T: Середній рід || На -o мають -e: «mesto → v meste», «auto → v aute», «okno → na okne». Але після k, g, h, ch — -u: «Slovensko → na Slovensku», «Česko → v Česku», «mlieko → v mlieku». На -e — -i: «more → pri mori»; на -ie — -í: «námestie → na námestí», «poschodie → na poschodí». На -eum — -u: «múzeum → v múzeu», але «centrum → v centre». || Bývame v malom meste pri Nitre. = Ми живемо в маленькому місті біля Нітри. ;; Na námestí je trh. = На площі ринок. || -e / -u (k, g, h, ch) / -i, -í
+T: Жіночий рід і узгодження || Тверда основа — -e: «škola → v škole», «banka → v banke», «Ukrajina → na Ukrajine». М’яка основа (-ca, -ňa, -ia) і іменники на приголосний — -i: «ulica → na ulici», «kuchyňa → v kuchyni», «kancelária → v kancelárii», «miestnosť → v miestnosti». Прикметник чоловічого й середнього роду має -om, жіночого — -ej: «v novom byte», «v malom meste», «na novej ulici». Займенники: «v mojom, v našom, v tom» / «v mojej, v našej, v tej». || Bývame v novom byte na tichej ulici. = Ми живемо в новій квартирі на тихій вулиці. ;; V našej firme pracuje veľa Ukrajincov. = У нашій фірмі працює багато українців. || -om (чоловічий і середній) / -ej (жіночий)
+mis: v parke => v parku ;; o brat => o bratovi ;; v novej byte => v novom byte ;; na Slovenske => na Slovensku
+W: miestnosť | приміщення, кімната | мієстност’ | V tejto miestnosti sa nefajčí. | У цьому приміщенні не палять.
+W: peňaženka | гаманець | пеняженка | Peňaženku mám vždy v kabelke. | Гаманець у мене завжди в сумочці.
+W: kabelka | (жіноча) сумочка | кабелка | Mobil mám v kabelke. | Телефон у мене в сумочці.
+W: nechať | залишити | нехат’ | Dáždnik som nechala v aute. | Парасольку я залишила в машині.
+W: zadný | задній | задни: | Taška je na zadnom sedadle. | Сумка на задньому сидінні.
+W: skrinka | шафка | скрінка | Veci si nechajte v skrinke v šatni. | Речі залиште в шафці в роздягальні.
+X mt: З’єднай. | miestnosť = приміщення ;; peňaženka = гаманець ;; kabelka = сумочка ;; nechať = залишити ;; zadný = задній ;; skrinka = шафка
+X cat: Яке закінчення в місцевому відмінку? | -e: v dome, v meste, v škole, na stole ;; -u: v parku, vo vlaku, na Slovensku, v múzeu ;; -i / -í: v hoteli, na ulici, v miestnosti, na námestí ;; -ovi: o bratovi, o kolegovi
+= Тверді основи — -e; після k, g, h, ch і в múzeum — -u; м’які основи та -ie — -i / -í; живі іменники чоловічого роду — -ovi.
+X dd: Обери. | Deti sa hrajú v [*parku/parke/parkovi].
+= Після k — закінчення -u: v parku.
+X dd: Обери. | Mobil je v [*kabelke/kabelki/kabelku].
+= Тверда основа жіночого роду: kabelka → v kabelke.
+X dd: Обери. | Bývame v [*novom/novej/nové] byte na [*tichej/tichom/tichá] ulici.
+= byt — чоловічий рід: v novom; ulica — жіночий: na tichej.
+X fb: Допиши. | Na porade sme hovorili o novom ___. (kolega) | kolegovi |
+= Живий іменник чоловічого роду: kolega → o kolegovi.
+X fb: Допиши. | Dáždnik som nechala v ___. (auto) | aute |
+= Середній рід на -o: auto → v aute.
+X sc: Як сказати «у готелі»? | - | *v hoteli ;; v hotele ;; v hotelu
+= hotel відмінюється як м’який тип: v hoteli.
+X fe: - | Moja sestra tiež žije na [Slovenske>Slovensku] a pracuje v Trnave.
+= Після k — -u: na Slovensku.
+X fe: - | Taška je na [zadnej>zadnom] sedadle v aute.
+= sedadlo — середній рід, тому прикметник має -om: na zadnom sedadle.
+X tf: - | - | Живі іменники чоловічого роду в місцевому відмінку мають закінчення -ovi: o bratovi, o susedovi. | T
+= brat → o bratovi, sused → o susedovi, kolega → o kolegovi.
+X tr: Утвори місцевий відмінок. | v + naša kuchyňa | v našej kuchyni
+= naša → našej (жіночий рід), kuchyňa → kuchyni (м’яка основа).
+X msg: Прочитай повідомлення. | Stratené a nájdené – stanica Žilina | Dobrý deň, vo vlaku R 605 sme našli čiernu kabelku s Vaším menom. V kabelke je peňaženka a zväzok kľúčov. Kabelku si môžete vyzdvihnúť na stanici v Žiline, v kancelárii pri pokladniach, od 8:00 do 18:00. Prineste si doklad totožnosti. | Де можна забрати сумочку? | *на вокзалі в Жиліні, в офісі біля кас ;; у поїзді R 605 ;; у поліції в Жиліні
+= na stanici, v kancelárii pri pokladniach — усе в місцевому відмінку.
+X dr: - | Manžel: Nevieš, kde sú kľúče od auta? | *Sú na stole v kuchyni. ;; Sú na stol v kuchyni. ;; Sú na stole v kuchyňa.
+= stôl → na stole, kuchyňa → v kuchyni.
+X np: Ти пояснюєш колезі, що залишив телефон у кабінеті. | *Telefón som nechal v kancelárii. ;; Telefón som nechal v kancelária. ;; Telefón som nechal v kanceláriu. ;; Telefón som nechal v kancelárie.
+= kancelária → v kancelárii (-ia → -ii).
+F: Де мої речі? || Ти поспішаєш на роботу, але не можеш знайти свої речі. Допомагає сусідка по квартирі.
+S: Сусідка: «Kde máš peňaženku?» (у сумочці) | *V kabelke. ;; V kabelku. ;; V kabelki.
+S: «A kľúče? Nenechal si ich v aute?» Що вона питає? | *чи не залишив ти ключі в машині ;; чи не купив ти нову машину ;; чи не загубив ти машину
+S: Ти кажеш, що телефон, мабуть, у вітальні на дивані. | *Telefón je asi v obývačke na gauči. ;; Telefón je asi v obývačka na gauč. ;; Telefón je asi v obývačku na gauči.
+S: Сусідка: «Tvoj dáždnik je na zadnom sedadle v mojom aute.» Де парасолька? | *на задньому сидінні в машині сусідки ;; біля дверей у твоїй машині ;; у кімнаті сусідки
+R: v dome, v parku, v hoteli, o bratovi ;; v meste, na Slovensku, na námestí, v múzeu ;; v škole, na ulici, v miestnosti ;; v novom byte, na novej ulici, v mojom aute
+
+@lesson lokal-mnozne | Місцевий відмінок множини | Lokál množného čísla
+desc: V obchodoch, v mestách, na uliciach, v Košiciach: закінчення місцевого відмінка множини, прикметники на -ých, назви міст і гір у множині.
+goal: Говорити про місця в множині й розуміти назви на кшталт v Košiciach, v Tatrách.
+out: утворювати -och у чоловічому роді: v obchodoch, o kolegoch ;; утворювати -ách / -iach: v mestách, v školách, na uliciach ;; узгоджувати v nových, v našich, v tých ;; казати v Košiciach, v Tatrách, v Piešťanoch
+done: Ти говориш про місця в множині. Далі — про що і про кого: o čom, o kom, o mne, o ňom.
+T: Чоловічий рід: -och || Усі іменники чоловічого роду — і живі, і неживі — мають у місцевому відмінку множини -och: «obchod → v obchodoch», «park → v parkoch», «úrad → na úradoch», «kolega → o kolegoch», «sused → o susedoch». || V obchodoch je cez víkend veľa ľudí. = У магазинах на вихідних багато людей. ;; Často hovoríme o kolegoch. = Ми часто говоримо про колег. || чоловічий рід → -och
+T: Жіночий і середній рід: -ách / -iach || Тверда основа — -ách: «škola → v školách», «mesto → v mestách», «hora → v horách». М’яка основа, іменники на приголосний і на -ie — -iach: «ulica → na uliciach», «miestnosť → v miestnostiach», «námestie → na námestiach». На -ia — -iách: «kancelária → v kanceláriách». Якщо попередній склад довгий, закінчення коротшає: «miesto → na miestach», «trieda → v triedach». || Na uliciach je dnes veľa áut. = На вулицях сьогодні багато машин. ;; V horách je ešte sneh. = У горах ще сніг. || -ách (тверді) / -iach (м’які)
+T: Прикметники й назви || Прикметник у множині має -ých, після м’яких — -ich: «v nových bytoch», «v cudzích krajinách». Займенники: «v našich, v mojich, v tých». Назви, що мають лише множину: «Košice → v Košiciach», «Michalovce → v Michalovciach», «Tatry → v Tatrách», «Piešťany → v Piešťanoch», «Nové Zámky → v Nových Zámkoch». || Brat pracuje v Košiciach. = Брат працює в Кошицях. ;; Leto sme strávili v Tatrách. = Літо ми провели в Татрах. || -ých / -ich + -och / -ách / -iach
+mis: v obchodách => v obchodoch ;; v Košiciách => v Košiciach ;; na ulicách => na uliciach ;; v Tatroch => v Tatrách
+W: kúpele | курорт (лікувальний), санаторій | ку:пеле | Babka je tri týždne v kúpeľoch v Piešťanoch. | Бабуся три тижні на курорті в Пєштянах.
+W: jaskyňa | печера | яскиня | V jaskyniach je aj v lete chladno. | У печерах навіть улітку прохолодно.
+W: obchodné centrum | торговий центр | обходне: центрум | V obchodných centrách sú cez víkend dlhé rady. | У торгових центрах на вихідних довгі черги.
+W: okolitý | навколишній | околіти: | Ľudia z okolitých dedín pracujú v meste. | Люди з навколишніх сіл працюють у місті.
+W: pohorie | гірський масив, гори | погоріє | Vysoké Tatry sú najvyššie pohorie na Slovensku. | Високі Татри — найвищі гори Словаччини.
+X mt: З’єднай. | kúpele = курорт, санаторій ;; jaskyňa = печера ;; obchodné centrum = торговий центр ;; okolitý = навколишній ;; pohorie = гірський масив
+X cat: Яке закінчення в місцевому відмінку множини? | -och: v obchodoch, v parkoch, o kolegoch, v Piešťanoch ;; -ách: v školách, v mestách, v horách, v Tatrách ;; -iach: na uliciach, v miestnostiach, na námestiach, v Košiciach
+= Чоловічий рід — -och; тверді основи жіночого й середнього роду — -ách; м’які основи та -ie — -iach.
+X dd: Обери. | Cez víkend sú v [*obchodoch/obchodách/obchodiach] veľké zľavy.
+= obchod — чоловічий рід: v obchodoch.
+X dd: Обери. | Na [*uliciach/ulicách/uliciách] je dnes veľa snehu.
+= ulica — м’яка основа: na uliciach.
+X dtb: Обери правильну форму. | Môj brat pracuje v [*Košiciach/Košice/Košíc].
+= Košice — лише множина, місцевий відмінок: v Košiciach.
+X fb: Допиши. | V slovenských ___ je aj v lete chladno. (jaskyňa) | jaskyniach |
+= jaskyňa — м’яка основа: v jaskyniach.
+X fb: Допиши. | Babka sa lieči v ___. (kúpele) | kúpeľoch |
+= kúpele — чоловічий рід, лише множина: v kúpeľoch.
+X fe: - | Leto sme strávili v [Tatroch>Tatrách] u známych.
+= Tatry — жіночий рід: v Tatrách.
+X fe: - | Na porade sme hovorili o nových [kolegách>kolegoch] zo skladu.
+= kolega — чоловічий рід: o kolegoch.
+X tr: Постав у множину. | V tom obchode sú nízke ceny. | V tých obchodoch sú nízke ceny.
+= v tom obchode → v tých obchodoch.
+X rc: - | Na Slovensku je veľa miest, kde môžete stráviť víkend. V Tatrách a v ďalších pohoriach sú stovky kilometrov turistických chodníkov. V lete sa ľudia kúpu v jazerách a na kúpaliskách, v zime lyžujú v horských strediskách. Kto má problémy s chrbtom, chodí do kúpeľov – najznámejšie sú v Piešťanoch. V jaskyniach je aj v lete len okolo šiestich stupňov, preto si zoberte bundu. A keď prší, rodiny s deťmi trávia čas v obchodných centrách alebo v múzeách.
+q~: Де найвідоміший лікувальний курорт? | *у Пєштянах ;; у Татрах ;; у печерах
+q~: Що варто взяти із собою в печеру? | *куртку ;; купальник ;; лижі
+q~: Що роблять родини з дітьми, коли йде дощ? | *ідуть у торгові центри або музеї ;; ідуть у гори ;; купаються в озерах
+X so: - | Спитай друга, у яких магазинах він купує продукти. | V ktorých obchodoch nakupuješ?
+= v ktorých obchodoch — місцевий відмінок множини.
+X doc: Прочитай пропозицію. | Pobyt v kúpeľoch – Piešťany | Ubytovanie: v dvojlôžkových izbách ;; Procedúry: v liečebnom dome, 3-krát denne ;; Strava: v hotelovej reštaurácii ;; Cena: 420 € / 7 nocí | Де розміщують гостей? | *у двомісних номерах ;; у лікувальному корпусі ;; у ресторані готелю
+= v dvojlôžkových izbách — у двомісних номерах (місцевий відмінок множини).
+X dr: - | Kolegyňa: Kde ste boli na dovolenke? | *V Tatrách a potom v Piešťanoch. ;; V Tatroch a potom v Piešťanach. ;; V Tatry a potom v Piešťany.
+= Tatry → v Tatrách, Piešťany → v Piešťanoch.
+X ms: Обери правильні форми. | - | *v obchodoch ;; *na uliciach ;; *v Košiciach ;; *v nových bytoch ;; v mestoch ;; v Tatroch
+= mesto і Tatry мають -ách: v mestách, v Tatrách.
+F: Вихідні в Словаччині || Колега-словак радить, куди поїхати з родиною на вихідні.
+S: Колега: «V lete odporúčam Tatry. V horách je príjemne.» Що він радить? | *улітку поїхати в Татри, бо в горах приємно ;; улітку не їздити в гори ;; поїхати в Татри взимку
+S: Ти питаєш, чи є в Татрах і печери. | *Sú v Tatrách aj jaskyne? ;; Sú v Tatroch aj jaskyne? ;; Sú v Tatry aj jaskyne?
+S: «Áno, ale v jaskyniach je zima, zoberte si bundy.» Що треба взяти? | *куртки, бо в печерах холодно ;; ліхтарики, бо в печерах темно ;; воду, бо в печерах спекотно
+S: Ти розповідаєш, що твоя мама лікувалася на курорті в Пєштянах. | *Moja mama sa liečila v kúpeľoch v Piešťanoch. ;; Moja mama sa liečila v kúpeľách v Piešťanoch. ;; Moja mama sa liečila v kúpele v Piešťany.
+R: v obchodoch, o kolegoch ;; v školách, v mestách, na uliciach, na námestiach ;; v nových bytoch, v našich firmách ;; v Košiciach, v Tatrách, v Piešťanoch
+
+@lesson o-com-o-kom | Про що? Про кого? | O čom? O kom?
+desc: Hovoriť, rozprávať sa, premýšľať, snívať o… Прийменник o + місцевий, особові займенники o mne, o tebe, o ňom, o nej, o nich і різниця між «o piatej» та «o hodinu».
+goal: Говорити й питати, про що чи про кого йдеться, з правильними займенниками.
+out: питати O čom? O kom? ;; уживати дієслова з o: rozprávať sa, diskutovať, premýšľať, snívať, zmieniť sa ;; казати o mne, o tebe, o ňom, o nej, o nás, o nich ;; розрізняти o piatej (о п’ятій) і o hodinu (через годину)
+done: Ти говориш про людей і речі. Далі — po meste: прийменник po з місцевим.
+T: O čom? O kom? || Прийменник «o» (про) завжди вживаємо з місцевим: «o práci, o meste, o bratovi». Питання: «O čom?» — про що?, «O kom?» — про кого? Типові дієслова: «hovoriť / rozprávať sa o…», «diskutovať o…» (обговорювати), «premýšľať o…» (обмірковувати), «snívať o…» (мріяти про), «vedieť o…» (знати про). Але «думати про когось» найчастіше — «myslieť na» + знахідний: «Myslím na teba». || O čom ste sa rozprávali? = Про що ви говорили? ;; Snívam o vlastnom dome. = Я мрію про власний будинок. || o + місцевий: o čom? o kom?
+T: O mne, o ňom || Особові займенники в місцевому: «o mne, o tebe, o ňom (про нього), o nej, o nás, o vás, o nich», зворотний — «o sebe». Після прийменника — форма з «ň»: «o ňom», не «o ním». Так само з іншими прийменниками: «pri nej», «na ňom», «v nich». || Šéf o tebe hovoril len dobre. = Шеф про тебе казав лише добре. ;; Povedz mi niečo o sebe. = Розкажи мені щось про себе. || o mne, o tebe, o ňom, o nej, o nás, o vás, o nich
+T: O piatej, ale o hodinu || «O» з місцевим також означає годину: «o piatej» — о п’ятій, «o deviatej». А «o» зі знахідним означає «через» або «на (скільки)»: «Prídem o hodinu» — прийду через годину, «Cena stúpla o päť eur» — ціна зросла на п’ять євро. || Porada začne o deviatej. = Нарада почнеться о дев’ятій. ;; Vrátim sa o týždeň. = Я повернуся через тиждень. || o + місцевий = про / о котрій; o + знахідний = через / на скільки
+mis: Hovoríme o brat. => Hovoríme o bratovi. ;; Hovorili sme o ním. => Hovorili sme o ňom. ;; Myslím o tebe. => Myslím na teba.
+W: diskutovať | обговорювати, дискутувати | дискутоват’ | Na porade sme diskutovali o novom rozvrhu. | На нараді ми обговорювали новий графік.
+W: premýšľať | обмірковувати, роздумувати | преми:шлят’ | Premýšľam o zmene práce. | Я роздумую про зміну роботи.
+W: snívať | мріяти | сні:ват’ | Snívam o vlastnom byte. | Я мрію про власну квартиру.
+W: informovať | повідомляти, інформувати | інформоват’ | Informujte nás o zmene adresy. | Повідомте нас про зміну адреси.
+W: téma | тема | те:ма | Bezpečnosť pri práci je dôležitá téma. | Безпека праці — важлива тема.
+W: zmieniť sa | згадати (у розмові) | змієніт’ са | Šéf sa zmienil o novom projekte. | Шеф згадав про новий проєкт.
+X mt: З’єднай. | diskutovať = обговорювати ;; premýšľať = обмірковувати ;; snívať = мріяти ;; informovať = повідомляти ;; téma = тема ;; zmieniť sa = згадати
+X dd: Обери. | Snívam o [*vlastnom/vlastný/vlastného] dome.
+= o + місцевий: vlastnom dome.
+X dd: Обери. | Hovorili sme o [*ňom/ním/neho] celý večer.
+= Після прийменника o — o ňom.
+X fb: Допиши питальне слово. | O ___ ste sa rozprávali na porade? (що) | čom |
+= Про що? — O čom?
+X fb: Допиши. | Šéf sa zmienil o novom ___. (kolega) | kolegovi |
+= Живий іменник: kolega → o kolegovi.
+X cat: Який відмінок після o? | Місцевий — про що або о котрій: o práci, o bratovi, o piatej, o mne ;; Знахідний — через скільки або на скільки: o hodinu, o týždeň, o päť eur
+= «Про» і година — місцевий; «через» і різниця — знахідний.
+X sc: Як сказати «Розкажи мені щось про себе»? | - | *Povedz mi niečo o sebe. ;; Povedz mi niečo o seba. ;; Povedz mi niečo o sebou.
+= Зворотний займенник у місцевому — o sebe.
+X sc~: Що означає «Prídem o hodinu»? | - | *Я прийду через годину. ;; Я прийду о першій годині. ;; Я прийду на годину.
+= o + знахідний (hodinu) — через годину.
+X fe: - | Šéf o [ty>tebe] hovoril len dobre.
+= Після прийменника o — місцевий: o tebe.
+X fe: - | Cez prestávku sme sa rozprávali o [dovolenka>dovolenke] v Chorvátsku.
+= o + місцевий: dovolenka → o dovolenke.
+X tf: - | - | Українське «Я думаю про тебе» словацькою найчастіше — «Myslím na teba». | T
+= myslieť na + знахідний: na teba.
+X msg: Прочитай повідомлення від учительки. | Triedna učiteľka 3.B | Milí rodičia, informujem Vás o zmene: rodičovské združenie bude vo štvrtok o piatej v triede 3.B, nie v jedálni. Budeme hovoriť o výlete do Tatier a o známkach za prvý polrok. Ďakujem. Mgr. Hudáková | Про що говоритимуть на батьківських зборах? | *про екскурсію в Татри й оцінки за перше півріччя ;; про нову їдальню ;; про нову вчительку
+= Budeme hovoriť o výlete… a o známkach… — o + місцевий.
+X dr: - | Manželka: O čom bola dnes porada? | *O novom rozvrhu zmien. ;; O nový rozvrh zmien. ;; O novým rozvrhom zmien.
+= o + місцевий: o novom rozvrhu.
+X np: Ти кажеш колезі, що часто думаєш про родину в Україні. | *Často myslím na rodinu na Ukrajine. ;; Často myslím o rodina na Ukrajine. ;; Často myslím rodinu na Ukrajine. ;; Často myslím o rodinu na Ukrajine.
+= Думати про когось — myslieť na + знахідний: na rodinu.
+X so: - | Спитай, про що ця книжка. | O čom je tá kniha?
+= O čom? — про що?
+F: Нарада в понеділок || Ти повертаєшся з наради, і колега питає, про що там говорили.
+S: Колега: «O čom bola porada?» (про нові зміни) | *O nových zmenách. ;; O nové zmeny. ;; O nových zmenoch.
+S: «Hovoril šéf aj o mne?» Що питає колега? | *чи говорив шеф і про нього ;; чи кликав шеф його на нараду ;; чи шеф уже пішов
+S: Ти кажеш, що шеф говорив про нього тільки добре. | *Áno, o tebe hovoril len dobre. ;; Áno, o ty hovoril len dobre. ;; Áno, o teba hovoril len dobre.
+S: «Dobre. Porada o projekte bude o týždeň.» Коли нарада про проєкт? | *через тиждень ;; щотижня ;; минулого тижня
+R: o čom? o kom? o práci, o bratovi ;; rozprávať sa, diskutovať, premýšľať, snívať, zmieniť sa o… ;; o mne, o tebe, o ňom, o nej, o nás, o vás, o nich ;; o piatej, але o hodinu, o päť eur
+
+@lesson po-meste | По місту | Po meste
+desc: Po + місцевий: po meste, po parku, po Slovensku (рух територією), po práci, po obede (після), po telefóne. І po + знахідний: idem po deti.
+goal: Розповідати, де ти ходиш чи їздиш і що робиш після чогось.
+out: казати prechádzať sa po meste, cestovať po Slovensku ;; казати po práci, po obede, po skončení ;; казати po telefóne ;; розрізняти po obede і idem po deti
+done: Ти говориш про рух містом і про «після». Далі — як обрати прийменник: v, na, pri.
+T: Po meste, po Slovensku || «Po» з місцевим означає рух поверхнею чи територією: «prechádzať sa po meste» — гуляти містом, «chodiť po obchodoch» — ходити по магазинах, «cestovať po Slovensku» — подорожувати Словаччиною, «rozvážať balíky po meste» — розвозити посилки містом. «Po celom…» — по всьому: «po celom svete». || V sobotu sme sa prechádzali po starom meste. = У суботу ми гуляли старим містом. ;; Kuriér jazdí celý deň po meste. = Кур’єр цілий день їздить містом. || po + місцевий = по (територією)
+T: Po práci, po obede || «Po» з місцевим — це також «після»: «po práci», «po obede», «po dovolenke», «po skončení kurzu» — після закінчення курсу. А ще засіб зв’язку: «po telefóne» — телефоном. || Po práci idem rovno domov. = Після роботи я йду прямо додому. ;; Toto po telefóne nevybavíte, musíte prísť osobne. = Телефоном ви цього не залагодите, треба прийти особисто. || po + місцевий = після; po telefóne
+T: Po deti — зі знахідним || «Po» зі знахідним означає «по когось / по щось» (щоб забрати чи принести): «Idem po deti do škôlky» — іду забрати дітей із садка, «Idem po chlieb» — іду по хліб. Не плутай: «po obede» (після обіду, місцевий) — «idem po obed» (іду по обід, знахідний). || O štvrtej idem po syna do školy. = О четвертій я йду забрати сина зі школи. ;; Skočím po kávu. = Я збігаю по каву. || po + знахідний = по когось / по щось
+mis: po mesto => po meste ;; po obedu => po obede ;; po skončenie kurzu => po skončení kurzu
+W: po | по; після | по | Po obede mám poradu. | Після обіду в мене нарада.
+W: prechádzať sa | гуляти, прогулюватися | преха:дзат’ са | Večer sa radi prechádzame po parku. | Увечері ми любимо гуляти парком.
+W: rozvážať | розвозити | розва:жат’ | Rozvážam pizzu po celej Nitre. | Я розвожу піцу по всій Нітрі.
+W: skončenie | закінчення | скончєніє | Po skončení kurzu dostanete certifikát. | Після закінчення курсу ви отримаєте сертифікат.
+W: škôlka | дитячий садок | шкуолка | Syn chodí do škôlky na našom sídlisku. | Син ходить у садок на нашому житловому масиві.
+X mt: З’єднай. | po = по; після ;; prechádzať sa = гуляти ;; rozvážať = розвозити ;; skončenie = закінчення ;; škôlka = дитячий садок
+X dd: Обери. | V nedeľu sa radi prechádzame po [*parku/park/parke].
+= po + місцевий: park → po parku.
+X dd: Обери. | Nevybavíte to po [*telefóne/telefón/telefónu], musíte prísť osobne.
+= po telefóne — телефоном (місцевий).
+X fb: Допиши. | Kuriér celý deň rozváža balíky po ___. (mesto) | meste |
+= po + місцевий: mesto → po meste.
+X fb: Допиши. | Po ___ idem rovno domov. (práca) | práci |
+= po + місцевий — після: po práci.
+X wb: Доповни. | Po [obede] mám poradu. ;; Cez víkend cestujeme po [Slovensku]. ;; O štvrtej idem po [syna] do školy. | obed ;; Slovensko ;; synovi
+= po obede, po Slovensku — місцевий; idem po syna — знахідний.
+X cat: Що означає po? | Після: po práci, po obede, po dovolenke ;; По території: po meste, po Slovensku, po obchodoch ;; По когось або щось: po deti, po chlieb, po kávu
+= «Після» і «по території» — місцевий; «по когось / щось» — знахідний.
+X sc~: Що означає «Idem po deti do škôlky»? | - | *Я йду забрати дітей із садка. ;; Я йду в садок після дітей. ;; Я гуляю з дітьми біля садка.
+= po + знахідний — по когось (щоб забрати).
+X fe: - | Celé leto sme cestovali po [Slovensko>Slovensku] s deťmi.
+= po + місцевий: Slovensko → po Slovensku.
+X fe: - | Po [skončenie>skončení] kurzu dostanete certifikát.
+= po + місцевий: skončenie → po skončení.
+X msg: Прочитай SMS. | Kuriérska služba | Dobrý deň, Váš balík je dnes na rozvoze. Kuriér jazdí po meste od 8:00 do 16:00. Ak nebudete doma, balík nájdete po 17:00 na výdajnom mieste v obchodnom centre na Hlavnej ulici. | Де забрати посилку, якщо тебе не буде вдома? | *у пункті видачі в торговому центрі після 17:00 ;; у кур’єра до 8:00 ;; на пошті наступного дня
+= po 17:00 — після 17:00; na výdajnom mieste — у пункті видачі.
+X rc: - | Volám sa Ihor a pracujem ako kuriér v Trnave. Ráno o siedmej si v sklade naložím balíky a potom ich celý deň rozvážam po meste a po okolitých dedinách. Najviac práce je pred Vianocami, keď mám aj sto balíkov denne. Po obede mám krátku prestávku, väčšinou jem v aute. Po práci idem po dcéru do škôlky a večer sa s rodinou prechádzame po parku. Cez víkend radi cestujeme po Slovensku – minulý mesiac sme boli v Banskej Štiavnici.
+q~: Що Ігор робить після роботи? | *забирає доньку із садка ;; розвозить посилки по селах ;; обідає в машині
+q~: Коли в Ігоря найбільше роботи? | *перед Різдвом ;; у вихідні ;; після обіду
+q~: Де Ігор зазвичай обідає? | *у машині ;; у їдальні на складі ;; удома з родиною
+X dr: - | Kamarát: Čo robíte v sobotu poobede? | *Pôjdeme sa prechádzať po starom meste. ;; Pôjdeme sa prechádzať po staré mesto. ;; Pôjdeme sa prechádzať po starého mesta.
+= po + місцевий: po starom meste.
+X np: Ти кажеш колезі, що мусиш іти забрати сина зі школи. | *Musím ísť po syna do školy. ;; Musím ísť po synovi do školy. ;; Musím ísť po syn do školy. ;; Musím ísť po synom do školy.
+= По когось — po + знахідний: po syna.
+X so: - | Скажи, що після роботи ти йдеш прямо додому. | Po práci idem rovno domov.
+= po práci — після роботи (місцевий).
+F: День кур’єра || Ти працюєш кур’єром у Банській Бистриці. Телефонує диспетчер.
+S: Диспетчер: «Kde ste teraz?» (розвозиш посилки містом) | *Rozvážam balíky po meste. ;; Rozvážam balíky po mesto. ;; Rozvážam balíky po mestu.
+S: «Po obede choďte na sklad po nové balíky.» Що треба зробити? | *після обіду поїхати на склад по нові посилки ;; поїхати на склад замість обіду ;; пообідати на складі
+S: Ти питаєш, чи можна залагодити проблему з клієнтом телефоном. | *Môžem to vybaviť po telefóne? ;; Môžem to vybaviť po telefón? ;; Môžem to vybaviť po telefónu?
+S: Дружина пише: «Po práci choď, prosím, po Mišku do škôlky.» Що треба зробити? | *після роботи забрати доньку Мішку із садка ;; після роботи піти до Мішки в гості ;; уранці відвести Мішку в садок
+R: po meste, po parku, po Slovensku ;; po práci, po obede, po skončení ;; po telefóne ;; idem po deti, po chlieb (знахідний)
+
+@lesson v-na-pri | V, na чи pri? | V, na alebo pri?
+desc: Як обрати між v і na: v obchode, але na pošte, na úrade, na stanici. Vo vlaku, vo firme. Події й країни: na koncerte, na Slovensku, v Česku. Pri — біля і під час.
+goal: Правильно обирати прийменник місця в повсякденних ситуаціях.
+out: розрізняти v (усередині) і na (поверхня, відкритий простір, установа) ;; казати na pošte, na stanici, na koncerte, na Slovensku ;; казати vo vlaku, vo firme, vo Zvolene ;; уживати pri: pri okne, pri práci
+done: Ти впевнено обираєш v чи na. Далі — де саме ти живеш: адреса, поверх, тип житла.
+T: V чи na? || «V» — усередині закритого простору: «v obchode, v banke, v nemocnici, v aute, v meste, v Bratislave». «Na» — на поверхні й на відкритому просторі: «na stole, na ulici, na námestí, na dvore». Але багато слів треба просто запам’ятати: «na pošte, na úrade, na stanici, na letisku, na polícii, na univerzite, na poschodí». || Kúpil som to v obchode na námestí. = Я купив це в магазині на площі. ;; Čakám na stanici. = Я чекаю на вокзалі. || v = усередині; na = на поверхні + слова, які треба запам’ятати
+T: Na koncerte, na Slovensku, vo vlaku || «Na» вживаємо також із подіями: «na koncerte, na svadbe, na porade, na školení, na návšteve, na dovolenke». Країни: «na Slovensku, na Ukrajine», але «v Česku, v Poľsku, v Rakúsku, v Nemecku». Перед словами на v і f та перед деякими групами приголосних — «vo»: «vo vlaku, vo firme, vo Zvolene, vo Viedni». || Minulý týždeň som bol na školení vo Zvolene. = Минулого тижня я був на навчанні у Зволені. ;; Brat žije v Česku a ja na Slovensku. = Брат живе в Чехії, а я в Словаччині. || na + події; vo перед v, f
+T: Pri || «Pri» з місцевим — біля, поруч: «pri okne, pri stanici, pri mori, pri Nitre» (біля Нітри). Також «під час» дії: «pri práci, pri jedle, pri platení» і «у присутності»: «pri deťoch». || Sedím pri okne. = Я сиджу біля вікна. ;; Pri práci nosíme ochranné okuliare. = Під час роботи ми носимо захисні окуляри. || pri = біля / під час
+mis: na obchode => v obchode ;; v pošte => na pošte ;; v vlaku => vo vlaku ;; v Slovensku => na Slovensku
+W: pri | біля; під час | прі | Stretneme sa pri vchode. | Зустрінемося біля входу.
+W: školenie | навчання, тренінг (на роботі) | школеніє | Zajtra máme celý deň školenie. | Завтра в нас цілий день навчання.
+W: ochranný | захисний | охранни: | Na stavbe nosíme ochrannú prilbu. | На будові ми носимо захисну каску.
+W: štadión | стадіон | штадіо:н | V sobotu sme boli na štadióne na futbale. | У суботу ми були на стадіоні на футболі.
+W: plaváreň | басейн (критий) | плава:рень | Deti majú tréning na plavárni. | У дітей тренування в басейні.
+W: telocvičňa | спортзал | телоцвічня | Žiaci cvičia v telocvični. | Учні займаються в спортзалі.
+X mt: З’єднай. | pri = біля; під час ;; školenie = навчання на роботі ;; ochranný = захисний ;; štadión = стадіон ;; plaváreň = басейн ;; telocvičňa = спортзал
+X cat: V чи na? | V: obchode, banke, nemocnici, telocvični ;; Na: pošte, stanici, štadióne, plavárni, koncerte
+= Закриті приміщення — v; установи, відкриті місця й події — na (запам’ятай: na pošte, na plavárni).
+X dd: Обери. | Dnes som bol [*na/v/o] pošte a potom [*v/na/o] banke.
+= na pošte, але v banke.
+X dd: Обери. | Brat pracuje [*vo/v/na] firme v Trnave.
+= Перед f — vo: vo firme.
+X dtb: Обери правильну форму. | Cez víkend sme boli [*na/v/do] svadbe u sesternice.
+= Події — na: na svadbe.
+X fb: Допиши (v чи na). | Moja sestra žije v Česku a ja ___ Slovensku. | na |
+= na Slovensku, але v Česku.
+X fb: Допиши. | Sedím ___ okne, lebo rád pozerám von. (біля) | pri |
+= pri + місцевий: pri okne.
+X sc: Як сказати «Я чекаю на вокзалі»? | - | *Čakám na stanici. ;; Čakám na stanicu. ;; Čakám pri stanica.
+= stanica — з na: na stanici.
+X fe: - | Minulý týždeň som bol [v>na] školení vo Zvolene.
+= Події — na: na školení.
+X fe: - | Zabudol som dáždnik [v>vo] vlaku.
+= Перед v — vo: vo vlaku.
+X tf: - | - | Кажемо «na Slovensku», але «v Česku» і «v Poľsku». | T
+= Словаччина й Україна — na; більшість інших країн — v.
+X doc: Прочитай запрошення. | Pozvánka na školenie BOZP | Termín: 14. 11., 8:00 – 12:00 ;; Miesto: budova B, 2. poschodie, miestnosť 214 ;; Školiteľ: Ing. Peter Mráz ;; Poznámka: ochranné okuliare a rukavice dostanete pri vstupe | Що й де отримають учасники? | *захисні окуляри й рукавиці біля входу ;; каску в кімнаті 214 ;; окуляри на другому поверсі після навчання
+= pri vstupe — біля входу (BOZP — безпека й охорона здоров’я на роботі).
+X dr: - | Kolega: Kde si bol včera? Nebol si na porade. | *Bol som na úrade práce. ;; Bol som na úrad práce. ;; Bol som o úrade práce.
+= Де? — na úrade (місцевий).
+X np: Ти пишеш другові, що сидиш у потязі й будеш на місці через годину. | *Sedím vo vlaku, budem tam o hodinu. ;; Sedím v vlaku, budem tam o hodinu. ;; Sedím na vlaku, budem tam o hodinu. ;; Sedím vo vlak, budem tam o hodinu.
+= vo vlaku — у потязі.
+X ms: Обери правильні словосполучення. | - | *na pošte ;; *v obchode ;; *vo vlaku ;; *na Slovensku ;; v pošte ;; na obchode ;; v vlaku
+= na pošte, v obchode, vo vlaku, na Slovensku.
+F: Субота в місті || Ви з подругою плануєте суботу й домовляєтеся телефоном.
+S: Подруга: «Kde si teraz?» (на пошті) | *Som na pošte. ;; Som v pošte. ;; Som pri pošta.
+S: «Stretneme sa pri fontáne na námestí?» Де зустріч? | *біля фонтана на площі ;; у кав’ярні на площі ;; на вокзалі біля фонтана
+S: Ти кажеш, що ввечері будеш на концерті. | *Večer som na koncerte. ;; Večer som v koncerte. ;; Večer som pri koncert.
+S: «Ja budem večer na návšteve u brata vo Zvolene.» Де буде подруга? | *у гостях у брата у Зволені ;; на концерті у Зволені ;; удома з братом
+R: v obchode, v banke — na pošte, na úrade, na stanici ;; na koncerte, na školení, na Slovensku — v Česku ;; vo vlaku, vo firme, vo Zvolene ;; pri okne, pri práci
+
+@lesson kde-presne-byvas | Де саме ти живеш? | Kde presne bývaš?
+desc: Точна адреса й тип житла: na Štúrovej ulici, v Petržalke, v paneláku na ôsmom poschodí, v rodinnom dome, na ubytovni, na internáte.
+goal: Точно пояснити, де ти живеш, і розуміти пояснення інших.
+out: казати na Štúrovej ulici 12, v Petržalke ;; казати v paneláku, v rodinnom dome, na ubytovni ;; казати na ôsmom poschodí, na prízemí, vo vchode B ;; розуміти анкету: trvalé bydlisko, adresa pobytu
+done: Ти точно описуєш, де живеш. Далі — на роботі й в установах: v práci, na úrade.
+T: Вулиця й частина міста || Вулиця — з «na»: «Bývam na Štúrovej ulici» або коротко «na Štúrovej». Назви вулиць — прикметники, тому мають -ej: «Hlavná → na Hlavnej», «Hurbanova → na Hurbanovej». Частина міста — найчастіше з «v»: «v Petržalke, v Ružinove, v Starom Meste». Житловий масив — «na sídlisku». || Bývam na Hurbanovej ulici číslo 15. = Я живу на вулиці Гурбанова, 15. ;; Bývame v Petržalke, na sídlisku pri Dunaji. = Ми живемо в Петржалці, на житловому масиві біля Дунаю. || na + вулиця; v + частина міста
+T: Тип житла || «V paneláku» — у панельному будинку, «v bytovom dome» — у багатоквартирному будинку, «v rodinnom dome» — у приватному будинку, «na ubytovni» — у гуртожитку для працівників, «na internáte» — у студентському гуртожитку, «v podnájme» — в орендованому житлі. І ще: «v meste», але «na dedine». || Prvý rok sme bývali na ubytovni pri fabrike. = Перший рік ми жили в гуртожитку біля фабрики. ;; Teraz bývame v podnájme v rodinnom dome. = Тепер ми винаймаємо житло в приватному будинку. || v paneláku, v rodinnom dome, na ubytovni, na internáte
+T: Поверх, під’їзд, дзвінок || Поверх — «na» + порядковий числівник на -om: «na ôsmom poschodí». «Na prízemí» — на першому поверсі. Увага: словацьке «prvé poschodie» — це український другий поверх! «Vo vchode B» — у під’їзді B, «na konci chodby» — у кінці коридору, «na zvončeku» — на дзвінку (табличка з прізвищем). || Bývam na prízemí, hneď vedľa vchodu. = Я живу на першому поверсі, одразу біля входу. ;; Na zvončeku je meno Kovalenko. = На дзвінку прізвище Коваленко. || na ôsmom poschodí, na prízemí, vo vchode B
+mis: v Štúrovej ulici => na Štúrovej ulici ;; na ôsmy poschodí => na ôsmom poschodí ;; na paneláku => v paneláku
+W: panelák | панельний будинок (багатоповерхівка) | панела:к | Bývame v paneláku na deviatom poschodí. | Ми живемо в панельному будинку на дев’ятому поверсі.
+W: rodinný dom | приватний (односімейний) будинок | родінни: дом | Rodičia bývajú v rodinnom dome so záhradou. | Батьки живуть у приватному будинку із садом.
+W: bytový dom | багатоквартирний будинок | битови: дом | V našom bytovom dome je štyridsať bytov. | У нашому багатоквартирному будинку сорок квартир.
+W: ubytovňa | гуртожиток (для працівників) | убитовня | Na ubytovni bývam s kolegom zo Ľvova. | У гуртожитку я живу з колегою зі Львова.
+W: internát | студентський гуртожиток | інтерна:т | Dcéra býva na internáte v Bratislave. | Донька живе в гуртожитку в Братиславі.
+W: bydlisko | місце проживання | бидліско | Uveďte adresu trvalého bydliska. | Вкажіть адресу постійного місця проживання.
+X mt: З’єднай. | panelák = панельний будинок ;; rodinný dom = приватний будинок ;; bytový dom = багатоквартирний будинок ;; ubytovňa = гуртожиток для працівників ;; internát = студентський гуртожиток ;; bydlisko = місце проживання
+X dd: Обери. | Bývam [*na/v/do] Štúrovej ulici číslo 8.
+= Вулиця — na: na Štúrovej ulici.
+X dd: Обери. | Moja sestra býva v Bratislave [*v/na/do] Petržalke.
+= Частина міста — v: v Petržalke.
+X dd: Обери. | Bývame na [*ôsmom/ôsmy/ôsmeho] poschodí.
+= Порядковий числівник у місцевому: na ôsmom poschodí.
+X fb: Допиши. | Rodičia bývajú v ___ dome so záhradou. (приватний) | rodinnom |
+= v rodinnom dome — прикметник на -om.
+X fb: Допиши. | Počas štúdia býva dcéra na ___. (студентський гуртожиток) | internáte |
+= internát → na internáte.
+X tf: - | - | Словацьке «prvé poschodie» — це український перший поверх. | F
+= Ні: prvé poschodie — це український другий поверх, а перший — prízemie.
+X sc~: Що означає «Bývame v podnájme»? | - | *Ми винаймаємо житло. ;; Ми живемо в підвалі. ;; Ми живемо у власній квартирі.
+= podnájom — оренда, найм житла.
+X fe: - | Bývam vo vchode B na [tretí>treťom] poschodí.
+= na + місцевий: na treťom poschodí.
+X fe: - | Bývame [na>v] paneláku pri stanici.
+= Будинок — v: v paneláku.
+X doc: Прочитай частину заяви. | Žiadosť o prijatie dieťaťa do materskej školy | Meno a priezvisko dieťaťa: Sofiia Bondarenko ;; Trvalé bydlisko: Kyjev, Ukrajina ;; Adresa pobytu na Slovensku: Hurbanova 15, byt č. 32, Trnava ;; Telefón zákonného zástupcu: 0905 123 456 | Де Софія живе в Словаччині? | *у Трнаві, на вулиці Гурбанова, 15, квартира 32 ;; у Києві ;; у дитячому садку в Трнаві
+= Adresa pobytu na Slovensku — адреса перебування в Словаччині; trvalé bydlisko — постійне місце проживання.
+X msg: Прочитай повідомлення. | Andrej | Ahoj, bývam na Jesenského 12, v bytovom dome oproti škole. Vchod je zo dvora, na zvončeku je meno Horváth. Bývam na piatom poschodí a výťah je pokazený, tak mi zavolaj a prídem po teba dolu. | Як знайти Андрія? | *зайти з двору, на дзвінку прізвище Horváth, п’ятий поверх ;; зайти з боку школи й піднятися ліфтом ;; чекати на нього в школі навпроти
+= Vchod je zo dvora; na zvončeku; na piatom poschodí.
+X do: Склади діалог. | Kuriér: Dobrý deň, nesiem vám balík. Kde presne bývate? ;; Olena: Na Hurbanovej 15, v bytovom dome oproti lekárni. ;; Kuriér: Ktorý vchod a ktoré poschodie? ;; Olena: Vchod B, štvrté poschodie. ;; Kuriér: Dobre, o desať minút som tam.
+= Кур’єр питає адресу, потім під’їзд і поверх, і каже, коли приїде.
+X dr: - | Kolegyňa: Kde presne bývaš? | *V Ružinove, na Trnavskej ulici, v paneláku. ;; V Ružinov, na Trnavská ulica, v panelák. ;; Na Ružinove, v Trnavskej ulici, na paneláku.
+= Частина міста — v, вулиця — na, будинок — v.
+X np: Ти пояснюєш кур’єрові, що живеш на першому поверсі, одразу біля входу. | *Bývam na prízemí, hneď vedľa vchodu. ;; Bývam na prízemí, hneď vedľa vchod. ;; Bývam na prízemie, hneď vedľa vchodu. ;; Bývam v prízemie, hneď vedľa vchodu.
+= na prízemí — місцевий; vedľa + родовий: vchodu.
+F: Нова адреса || Ти переїхав(ла) і повідомляєш у фірмі нову адресу, а потім пояснюєш дорогу колезі.
+S: Кадровичка: «Kde teraz bývate?» | *Na Hurbanovej ulici 15, v bytovom dome. ;; V Hurbanovej ulici 15, na bytovom dome. ;; Na Hurbanova ulica 15, v bytový dom.
+S: «Na ktorom poschodí?» (на четвертому за словацьким рахунком) | *Na štvrtom poschodí. ;; Na štvrtý poschodí. ;; Vo štvrtom poschodie.
+S: Колега: «Je to ten panelák pri škole, alebo rodinný dom?» Що він питає? | *чи це багатоповерхівка біля школи, чи приватний будинок ;; чи ти живеш у школі ;; чи будинок новий
+S: Ти кажеш, що вхід із двору, а на дзвінку твоє прізвище. | *Vchod je zo dvora a na zvončeku je moje meno. ;; Vchod je z dvor a na zvončeku je moje meno. ;; Vchod je zo dvora a v zvončeku je moje meno.
+R: na Štúrovej ulici, v Petržalke, na sídlisku ;; v paneláku, v rodinnom dome, v bytovom dome, na ubytovni ;; na štvrtom poschodí, na prízemí, vo vchode B ;; trvalé bydlisko, adresa pobytu
+
+@lesson v-praci-na-urade | На роботі й в установі | V práci, na úrade
+desc: Де ти працюєш і де був(ла): v sklade, vo výrobe, na stavbe, na recepcii, na úrade práce, na pohotovosti. Чому колеги немає: na PN, na dovolenke, na materskej, na služobnej ceste.
+goal: Говорити, де ти працюєш і де перебуваєш, і розуміти, чому колеги немає на місці.
+out: казати pracujem v sklade, vo výrobe, na stavbe ;; казати na recepcii, na oddelení, v zasadačke ;; казати na úrade práce, na cudzineckej polícii, na pohotovosti ;; розуміти je na PN, na dovolenke, na materskej, na služobnej ceste
+done: Ти говориш про роботу й установи. Далі — розповідь про своє місто.
+T: Де ти працюєш? || «V» — у приміщенні чи фірмі: «v sklade, v kancelárii, vo fabrike, vo firme, v nemocnici, v hoteli». «Na» — робоче місце, відділ, ділянка: «na stavbe» — на будові, «na recepcii», «na oddelení» — у відділі, «na pokladni» — на касі, «na linke» — на лінії. «Vo výrobe» — на виробництві. І головне: «v práci» — на роботі! || Pracujem vo výrobe na linke. = Я працюю на виробництві на лінії. ;; Manžel robí na stavbe v Bratislave. = Чоловік працює на будові в Братиславі. || v práci = на роботі
+T: Na úrade, na polícii || Установи — переважно з «na»: «na úrade, na úrade práce, na cudzineckej polícii, na matrike, na pošte, na pohotovosti» (у невідкладній допомозі). Але «v nemocnici, v banke, v ambulancii». || Včera som bol celé doobedie na cudzineckej polícii. = Учора я цілий ранок був у міграційній поліції. ;; V noci sme boli so synom na pohotovosti. = Уночі ми із сином були в невідкладній допомозі. || na úrade, na polícii — v nemocnici, v banke
+T: Na PN, na dovolenke || Чому колеги немає? Словацькою це теж «na» + місцевий: «je na PN» (на лікарняному; PN — práceneschopnosť), «na dovolenke» — у відпустці, «na materskej» — у декретній відпустці, «na služobnej ceste» — у відрядженні, «na obede», «na porade», «na školení». || Šéfka je tento týždeň na služobnej ceste vo Viedni. = Цього тижня шефиня у відрядженні у Відні. ;; Kolegyňa je na materskej. = Колега в декретній відпустці. || na PN, na dovolenke, na materskej, na služobnej ceste
+mis: v stavbe => na stavbe ;; Som na práci. => Som v práci. ;; v PN => na PN
+W: stavba | будова, будівництво | ставба | Na stavbe začíname o šiestej ráno. | На будові ми починаємо о шостій ранку.
+W: výroba | виробництво | ви:роба | Vo výrobe pracujeme na tri zmeny. | На виробництві ми працюємо в три зміни.
+W: recepcia | рецепція | рецепція | Kľúč od izby dostanete na recepcii. | Ключ від номера ви отримаєте на рецепції.
+W: materská dovolenka | декретна відпустка | матерска: доволенка | Kolegyňa je na materskej dovolenke. | Колега в декретній відпустці.
+W: služobná cesta | відрядження | служобна: цеста | Budúci týždeň idem na služobnú cestu do Viedne. | Наступного тижня я їду у відрядження до Відня.
+W: zasadačka | переговорна, зала засідань | засадачка | Porada bude v malej zasadačke. | Нарада буде в малій переговорній.
+X mt: З’єднай. | stavba = будова ;; výroba = виробництво ;; recepcia = рецепція ;; materská dovolenka = декретна відпустка ;; služobná cesta = відрядження ;; zasadačka = переговорна
+X cat: V чи na? | V: sklade, kancelárii, nemocnici, zasadačke ;; Na: stavbe, recepcii, úrade, pohotovosti, dovolenke
+= Приміщення — v; робоче місце, установа, стан — na.
+X dd: Обери. | Manžel pracuje [*na/v/o] stavbe v Bratislave.
+= na stavbe — на будові.
+X dd: Обери. | Pracujem [*vo/v/na] výrobe, na nočnej zmene.
+= Перед v — vo: vo výrobe.
+X dtb: Обери правильну форму. | Kolegyňa dnes nie je v práci, je na [*dovolenke/dovolenka/dovolenku] v Chorvátsku.
+= Де? — na dovolenke (місцевий).
+X fb: Допиши. | Šéf je celý týždeň na služobnej ___. (поїздка) | ceste |
+= na služobnej ceste — у відрядженні.
+X fb: Допиши. | Povolenie na pobyt som si vybavoval na cudzineckej ___. (поліція) | polícii |
+= polícia → na polícii (-ia → -ii).
+X sc~: Що означає «Kolega je na PN»? | - | *Колега на лікарняному. ;; Колега на перерві. ;; Колега на пенсії.
+= PN — práceneschopnosť, лікарняний.
+X tf: - | - | «Som v práci» означає «Я на роботі». | T
+= Українське «на роботі» — словацькою v práci.
+X fe: - | Kolegyňa je už rok na [materská>materskej].
+= na + місцевий: na materskej.
+X fe: - | Kľúč od izby dostanete [v>na] recepcii.
+= recepcia — з na: na recepcii.
+X msg: Прочитай автоматичну відповідь. | Mgr. Jana Kováčová | Dobrý deň, od 3. do 14. novembra som na dovolenke a nemám prístup k e-mailu. V naliehavých prípadoch sa obráťte na moju kolegyňu Ing. Martu Bielu z personálneho oddelenia, tel. 033 555 1234. Ďakujem za pochopenie. | Чому Яна Ковачова не відповідає? | *вона у відпустці до 14 листопада ;; вона на лікарняному ;; вона у відрядженні
+= som na dovolenke — я у відпустці.
+X rc: - | Ahoj Lena! Píšem ti z práce, mám práve prestávku. Pracujem v potravinárskej firme pri Trnave, vo výrobe na baliacej linke. Môj manžel robí na stavbe v Bratislave a domov chodí len cez víkend. Tento týždeň je u nás chaos: vedúci zmeny je na PN, jedna kolegyňa je na dovolenke v Chorvátsku a druhá na materskej. Šéf je na služobnej ceste v Rakúsku. Včera som musela ísť aj na úrad práce kvôli potvrdeniu, celé doobedie som tam čakala. Zajtra máme v zasadačke poradu o novej linke. Ozvi sa! Iryna
+q~: Де працює чоловік Ірини? | *на будові в Братиславі ;; на виробництві біля Трнави ;; в Австрії
+q~: Чому на роботі в Ірини хаос? | *багатьох колег немає на роботі ;; зламалася пакувальна лінія ;; прийшов новий шеф
+q~: Де завтра буде нарада? | *у переговорній ;; на будові ;; в управлінні праці
+X dr: - | Zákazník: Dobrý deň, je tu pán Novák? | *Bohužiaľ nie, je na služobnej ceste. ;; Bohužiaľ nie, je v služobnej ceste. ;; Bohužiaľ nie, je na služobná cesta.
+= na služobnej ceste — у відрядженні.
+X np: Ти телефонуєш шефові й кажеш, що ти із сином у невідкладній допомозі. | *Som so synom na pohotovosti. ;; Som so synom na pohotovosť. ;; Som so synom na pohotovostí. ;; Som so synom o pohotovosti.
+= Де? — na pohotovosti (місцевий).
+F: На рецепції фірми || Ти працюєш на рецепції фірми й відповідаєш на дзвінки та запитання.
+S: Клієнт: «Môžem hovoriť s pani Bielou?» (вона на нараді) | *Momentálne je na porade. ;; Momentálne je v porade. ;; Momentálne je na poradu.
+S: «A kedy bude v kancelárii?» Що питає клієнт? | *коли вона буде в кабінеті ;; де її кабінет ;; чи можна прийти в кабінет
+S: Хтось шукає пана Горвата зі складу. Ти кажеш, що він цього тижня на лікарняному. | *Pán Horváth je tento týždeň na PN. ;; Pán Horváth je tento týždeň v PN. ;; Pán Horváth je tento týždeň pri PN.
+S: Кур’єр: «Kde nechám balík pre výrobu?» (на рецепції) | *Nechajte ho, prosím, tu na recepcii. ;; Nechajte ho, prosím, tu v recepcii. ;; Nechajte ho, prosím, tu na recepciu.
+R: v práci, v sklade, vo výrobe, na stavbe, na recepcii ;; na úrade, na cudzineckej polícii, na pohotovosti — v nemocnici ;; na PN, na dovolenke, na materskej, na služobnej ceste ;; v zasadačke, na porade
+
+@lesson rozpravanie-o-meste | Розповідь про місто | Rozprávanie o meste
+desc: Де розташоване місто і що в ньому є: na západe Slovenska, na rieke Váh, na brehu Dunaja, v údolí. Розповідаємо про своє місто в Україні та в Словаччині.
+goal: Зв’язно розповісти, де розташоване твоє місто і що в ньому є.
+out: казати na severe, na juhu, na východe, na západe ;; казати leží na rieke, na brehu, v údolí ;; уживати nachádzať sa, ležať ;; розповідати про місто 5–6 реченнями
+done: Ти вмієш розповісти про своє місто. Далі — детальний опис квартири.
+T: Сторони світу || Сторони світу вживаємо з «na»: «na severe» (на півночі), «na juhu» (на півдні), «na východe» (на сході), «na západe» (на заході), «na severovýchode». Назва країни після них — у родовому: «na východe Slovenska», «na juhu Ukrajiny». || Košice ležia na východe Slovenska. = Кошиці розташовані на сході Словаччини. ;; Odesa je na juhu Ukrajiny. = Одеса на півдні України. || na severe / juhu / východe / západe + родовий
+T: Ležať, nachádzať sa || «Mesto leží / nachádza sa…» — місто розташоване…: «na rieke Váh» (на річці Ваг), «na brehu Dunaja» (на березі Дунаю), «v údolí» (у долині), «na úpätí Tatier» (біля підніжжя Татр), «neďaleko hraníc» (недалеко від кордону). || Bratislava leží na brehu Dunaja. = Братислава лежить на березі Дунаю. ;; Žilina sa nachádza v údolí rieky Váh. = Жиліна розташована в долині річки Ваг. || ležať / nachádzať sa + na / v + місцевий
+T: Що є в місті || Типові фрази для опису: «V meste je…», «V centre nájdete…», «Na námestí stojí…», «V okolí sú…». Корисні вирази: «v historickom centre», «na okraji mesta», «priemyselný park» — промисловий парк. || V historickom centre nájdete hrad a veľa kaviarní. = В історичному центрі ви знайдете замок і багато кав’ярень. ;; Na okraji mesta je priemyselný park. = На околиці міста є промисловий парк. || V meste je… / V okolí sú…
+mis: na sever Slovenska => na severe Slovenska ;; v brehu Dunaja => na brehu Dunaja ;; Mesto leží v rieke. => Mesto leží na rieke.
+W: sever | північ | север | Na severe Slovenska sú vysoké hory. | На півночі Словаччини високі гори.
+W: juh | південь | юх | Na juhu je teplejšie počasie. | На півдні тепліша погода.
+W: západ | захід | за:пад | Bratislava leží na západe krajiny. | Братислава розташована на заході країни.
+W: breh | берег | брех | Na brehu rieky je cyklotrasa. | На березі річки є велодоріжка.
+W: údolie | долина | у:доліє | Dedina leží v krásnom údolí. | Село лежить у гарній долині.
+W: nachádzať sa | знаходитися, бути розташованим | наха:дзат’ са | Mestský úrad sa nachádza na námestí. | Міська рада розташована на площі.
+X mt: З’єднай. | sever = північ ;; juh = південь ;; západ = захід ;; breh = берег ;; údolie = долина ;; nachádzať sa = бути розташованим
+X dd: Обери. | Košice ležia na [*východe/východ/východu] Slovenska.
+= Де? — na východe (місцевий).
+X dd: Обери. | Bratislava leží na [*brehu/brehe/breh] Dunaja.
+= Після h — -u: na brehu.
+X fb: Допиши. | Žilina leží v ___ rieky Váh. (долина) | údolí |
+= údolie → v údolí.
+X fb: Допиши. | Odesa sa nachádza na ___ Ukrajiny. (південь) | juhu |
+= juh → na juhu.
+X cz: - | Moje mesto {leží/sa nachádza} na západe Slovenska, na {rieke} Váh. V historickom {centre} je hrad. Na {okraji} mesta je priemyselný park. | ležať, rieka, centrum, okraj
+= leží; na rieke; v centre (centrum → v centre); na okraji.
+X sc: Як сказати «на півночі України»? | - | *na severe Ukrajiny ;; na sever Ukrajiny ;; v severe Ukrajiny
+= Де? — na severe (місцевий); na sever — це «на північ» (куди).
+X tf: - | - | «Na úpätí Tatier» означає «на вершині Татр». | F
+= Ні: na úpätí — біля підніжжя.
+X fe: - | Naša dedina leží [v>na] brehu Dunaja.
+= Берег — na: na brehu.
+X fe: - | Michalovce sa nachádzajú na [východ>východe] Slovenska.
+= Де? — na východe (місцевий).
+X rc: - | Pochádzam z Ivano-Frankivska. Je to mesto na západe Ukrajiny, neďaleko Karpát. V centre je pekné námestie s radnicou a veľa kaviarní. Teraz bývam v Žiline. Žilina leží na severozápade Slovenska, v údolí rieky Váh, a okolo sú hory – do Malej Fatry je to len pol hodiny autom. V historickom centre je krásne námestie a neďaleko centra je veľký park. Na okraji mesta je priemyselný park, kde pracuje aj môj manžel. Obe mestá majú niečo spoločné: hory sú blízko a ľudia sú priateľskí. Oksana
+q~: Де розташована Жиліна? | *на північному заході Словаччини, у долині річки Ваг ;; на сході Словаччини, на березі Дунаю ;; на заході України, біля Карпат
+q~: Де працює чоловік Оксани? | *у промисловому парку на околиці ;; в історичному центрі ;; у горах Мала Фатра
+q~: Що спільного між двома містами, на думку Оксани? | *поруч гори, а люди привітні ;; обидва стоять на березі Дунаю ;; обидва дуже великі
+X so: - | Спитай, у якій частині Словаччини лежить Прешов. | V ktorej časti Slovenska leží Prešov?
+= V ktorej časti — місцевий відмінок.
+X dr: - | Kolega: Odkiaľ si? Kde je to? | *Z Charkova. Je to veľké mesto na východe Ukrajiny. ;; Z Charkova. Je to veľké mesto na východ Ukrajiny. ;; Z Charkova. Je to veľké mesto v východe Ukrajiny.
+= Де? — na východe Ukrajiny.
+X ms: Обери правильні речення. | - | *Prešov leží na východe Slovenska. ;; *Bratislava leží na brehu Dunaja. ;; *Dedina sa nachádza v údolí. ;; Nitra leží v západe Slovenska. ;; Mesto sa nachádza na breh rieky.
+= na východe, na brehu, v údolí; правильно також na západe, na brehu rieky.
+X np: Ти розповідаєш, що на околиці міста є промисловий парк. | *Na okraji mesta je priemyselný park. ;; V okraji mesta je priemyselný park. ;; Na okraj mesta je priemyselný park. ;; Na okraji mesto je priemyselný park.
+= na okraji mesta — na + місцевий + родовий.
+F: Презентація на курсі || На курсі словацької ти розповідаєш групі про рідне місто й про місто, де живеш тепер.
+S: Ти починаєш: Чернігів — на півночі України. | *Černihiv leží na severe Ukrajiny. ;; Černihiv leží na sever Ukrajiny. ;; Černihiv leží v severe Ukrajina.
+S: Ти кажеш, що місто стоїть на річці Десна. | *Mesto leží na rieke Desna. ;; Mesto leží v rieke Desna. ;; Mesto leží na rieka Desna.
+S: Викладачка: «A v ktorom meste bývate teraz?» Що вона питає? | *у якому місті ти живеш тепер ;; яке місто тобі подобається ;; у якому місті ти народився(лася)
+S: Ти кажеш, що тепер живеш у Нітрі, на заході Словаччини. | *Teraz bývam v Nitre, na západe Slovenska. ;; Teraz bývam v Nitra, na západe Slovenska. ;; Teraz bývam v Nitre, na západ Slovenska.
+R: na severe, na juhu, na východe, na západe + родовий ;; ležať, nachádzať sa: na rieke, na brehu, v údolí ;; v historickom centre, na okraji mesta ;; V meste je… V okolí sú…
+
+@lesson opis-bytu-podrobne | Детальний опис квартири | Podrobný opis bytu
+desc: Описуємо квартиру до дрібниць: v predsieni, na stene, na strope, na podlahe, vo vstavanej skrini, na balkóne. Читаємо оголошення й описуємо недоліки.
+goal: Детально описати квартиру, пояснити, де що розташовано і що треба полагодити.
+out: казати v predsieni, v spálni, na balkóne, na chodbe ;; казати na stene, na strope, na podlahe, na parapete ;; казати vo vstavanej skrini, v rohu, pri okne ;; описувати недоліки: na strope je škvrna, v rohu je pleseň
+done: Ти докладно описуєш житло. Далі — підсумок розділу.
+T: Кімнати || «V predsieni» (у передпокої), «v obývačke», «v spálni», «v kuchyni», «v kúpeľni», «v pivnici». Але: «na chodbe», «na balkóne», «na terase» — з na, хоча це теж частина житла. || Topánky nechávame v predsieni. = Взуття ми залишаємо в передпокої. ;; Na balkóne sušíme bielizeň. = На балконі ми сушимо білизну. || v predsieni, v spálni — na balkóne, na chodbe
+T: Стіни, стеля, підлога || Поверхні — з «na»: «na stene» (на стіні), «na strope» (на стелі), «na podlahe» (на підлозі), «na parapete» (на підвіконні), «na dverách» (на дверях — dvere мають лише множину). Усередині — «v»: «vo vstavanej skrini» (у вбудованій шафі), «v zásuvke», «v rohu». || Na stene visí veľká mapa Slovenska. = На стіні висить велика мапа Словаччини. ;; Na podlahe sú nové parkety. = На підлозі новий паркет. || na stene, na strope, na podlahe — vo vstavanej skrini
+T: Що не так? || Під час огляду чи у скарзі орендодавцеві: «Na strope je škvrna» (пляма), «V rohu je pleseň» (цвіль), «Na podlahe sú škrabance» (подряпини), «Vo vstavanej skrini nesvieti svetlo». Загальна оцінка: «Byt je v dobrom stave» — квартира в доброму стані. || V kúpeľni na strope je pleseň. = У ванній на стелі цвіль. ;; Byt je v dobrom stave, len na podlahe sú škrabance. = Квартира в доброму стані, лише на підлозі подряпини. || V… je… / Na… je…
+mis: v stene => na stene ;; na predsieni => v predsieni ;; vo vstavaný skrini => vo vstavanej skrini
+W: predsieň | передпокій | предсієнь | V predsieni je vešiak na bundy. | У передпокої вішак для курток.
+W: stena | стіна | стена | Na stene visia hodiny. | На стіні висить годинник.
+W: parapet | підвіконня | парапет | Na parapete máme kvety. | На підвіконні в нас квіти.
+W: podlaha | підлога | подлаха | V obývačke je drevená podlaha. | У вітальні дерев’яна підлога.
+W: vstavaná skriňa | вбудована шафа | вставана: скриня | Vo vstavanej skrini je veľa miesta. | У вбудованій шафі багато місця.
+W: pleseň | цвіль | плесень | V rohu spálne je pleseň. | У кутку спальні цвіль.
+X mt: З’єднай. | predsieň = передпокій ;; stena = стіна ;; parapet = підвіконня ;; podlaha = підлога ;; vstavaná skriňa = вбудована шафа ;; pleseň = цвіль
+X cat: V чи na? | V: predsieni, spálni, kuchyni, vstavanej skrini ;; Na: stene, strope, podlahe, balkóne, chodbe
+= Кімнати й шафа — v; поверхні, балкон і коридор — na.
+X dd: Обери. | Na [*stene/stena/stenu] visí veľké zrkadlo.
+= na + місцевий: stena → na stene.
+X dd: Обери. | Bundy dávame do skrine v [*predsieni/predsieň/predsiene].
+= predsieň (жіночий рід на приголосний) → v predsieni.
+X fb: Допиши. | Na ___ v kúpeľni je pleseň. (стеля) | strope |
+= strop → na strope.
+X fb: Допиши. | Zimné veci máme vo vstavanej ___. (шафа) | skrini |
+= skriňa → vo vstavanej skrini.
+X sc~: Що означає «Byt je v dobrom stave»? | - | *Квартира в доброму стані. ;; Квартира в доброму районі. ;; Квартира на доброму поверсі.
+= stav — стан; v dobrom stave — у доброму стані.
+X tf: - | - | «Na balkóne» і «na chodbe» вживаємо з na, хоча це частини житла. | T
+= na balkóne, na chodbe, na terase.
+X fe: - | Na [podlaha>podlahe] v obývačke sú nové parkety.
+= na + місцевий: podlaha → na podlahe.
+X fe: - | Topánky nechávame [na>v] predsieni.
+= Кімнати — v: v predsieni.
+X doc: Прочитай оголошення. | Prenájom 2-izbového bytu, Nitra – Klokočina | Rozloha: 54 m², 3. poschodie z 8, výťah ;; Predsieň: vstavaná skriňa ;; Obývačka: nová drevená podlaha, vstup na balkón ;; Kúpeľňa: sprchovací kút, práčka ;; Cena: 550 € + energie | Де у квартирі вбудована шафа? | *у передпокої ;; у вітальні ;; у ванній
+= Predsieň: vstavaná skriňa — у передпокої.
+X rc: - | Dobrý deň, pán Kováč, píšem Vám kvôli niekoľkým problémom v byte. V kúpeľni na strope je veľká škvrna a v rohu pri okne sa objavila pleseň. Myslím, že je to od suseda nad nami. Vo vstavanej skrini v predsieni nesvieti svetlo a na balkóne sa nedajú dobre zatvoriť dvere. Inak je byt v dobrom stave a sme v ňom spokojní. Mohli by ste prísť tento týždeň? Doma sme každý deň po piatej. S pozdravom Taras Bondar
+q~: Де з’явилася цвіль? | *у ванній, у кутку біля вікна ;; у передпокої ;; на балконі
+q~: Що не працює у вбудованій шафі? | *світло ;; дверцята ;; полиці
+q~: Коли Тарас буває вдома? | *щодня після п’ятої ;; лише у вихідні ;; щодня до п’ятої
+X dr: - | Prenajímateľ: Tak čo, ako sa vám páči byt? | *Je pekný, ale v rohu spálne je pleseň. ;; Je pekný, ale v roh spálne je pleseň. ;; Je pekný, ale na rohu spálňa je pleseň.
+= v rohu — у кутку (після h — -u).
+X tr: Склади речення з цих слів. | zrkadlo / visieť / stena | Zrkadlo visí na stene. ;; Na stene visí zrkadlo.
+= visieť na + місцевий: na stene.
+X np: Під час огляду ти помічаєш пляму на стелі в спальні й кажеш про це. | *Na strope v spálni je škvrna. ;; V strope v spálni je škvrna. ;; Na strop v spálni je škvrna. ;; Na strope v spálňa je škvrna.
+= na strope, v spálni — місцевий.
+F: Огляд квартири перед підписанням договору || Ти оглядаєш квартиру разом з орендодавцем і фіксуєш її стан.
+S: Орендодавець: «Toto je predsieň, tu je vstavaná skriňa.» Що він показує? | *передпокій із вбудованою шафою ;; спальню з балконом ;; ванну з душем
+S: Ти кажеш, що на підлозі у вітальні подряпини. | *Na podlahe v obývačke sú škrabance. ;; V podlahe v obývačke sú škrabance. ;; Na podlaha v obývačke sú škrabance.
+S: Ти питаєш, чи немає у ванній цвілі. | *Nie je v kúpeľni pleseň? ;; Nie je na kúpeľňu pleseň? ;; Nie je v kúpeľňa pleseň?
+S: Орендодавець: «Inak je byt v dobrom stave, maľovali sme ho minulý rok.» Що він каже? | *квартира в доброму стані, її фарбували торік ;; квартиру треба пофарбувати ;; квартира в поганому стані
+R: v predsieni, v spálni, na balkóne, na chodbe ;; na stene, na strope, na podlahe ;; vo vstavanej skrini, v rohu, pri okne ;; v dobrom stave; pleseň, škvrna
+
+@lesson lokal-opakovanie | Підсумок: місцевий відмінок | Opakovanie: lokál
+desc: Повторюємо місцевий відмінок: однина й множина, прийменники v, na, o, po, pri, адреса, робота, місто, квартира. Нові сталі вирази: na rade, na mieste, v skutočnosti, v zahraničí.
+goal: Упевнено вживати місцевий відмінок у реальних ситуаціях і текстах.
+out: утворювати місцевий в однині й множині ;; обирати v / vo, na, o, po, pri ;; описувати адресу, роботу, місто й квартиру ;; розуміти сталі вирази: na rade, na mieste, v skutočnosti, v zahraničí
+done: Розділ «Місцевий відмінок і місце» завершено! Далі — орудний відмінок: s kým? čím?
+T: Сталі вирази з місцевим || «Kto je na rade?» — чия черга?, «Ste na rade» — ваша черга. «Na mieste» — на місці, одразу: «Zaplatíte na mieste». «V skutočnosti» — насправді. «V zahraničí» — за кордоном. І знайоме «v poriadku» — гаразд. || Prepáčte, kto je na rade? = Перепрошую, чия черга? ;; Pokutu môžete zaplatiť priamo na mieste. = Штраф можна сплатити прямо на місці. || na rade, na mieste, v skutočnosti, v zahraničí
+T: Шпаргалка закінчень || Однина: v dome, v parku, v hoteli, o bratovi; v meste, na Slovensku, na námestí, v múzeu; v škole, na ulici, v miestnosti; v novom / v novej. Множина: v obchodoch, o kolegoch; v mestách, v školách, na uliciach; v nových; v Košiciach, v Tatrách. || V našich obchodoch nájdete aj ukrajinské výrobky. = У наших магазинах ви знайдете й українські продукти. || однина й множина
+T: Прийменники з місцевим || «V / vo» — у; «na» — на, а також установи, події, сторони світу; «o» — про і година (o piatej); «po» — по, після (але po + знахідний: idem po deti); «pri» — біля, під час. Займенники: o mne, o tebe, o ňom, o nej, o nás, o vás, o nich. || Po práci sa stretneme pri fontáne na námestí. = Після роботи зустрінемося біля фонтана на площі. || v, na, o, po, pri + місцевий
+mis: v Slovensku => na Slovensku ;; o ním => o ňom ;; v obchodách => v obchodoch
+W: na rade | на черзі (чия черга) | на раде | Kto je teraz na rade? | Чия зараз черга?
+W: na mieste | на місці, одразу | на мієсте | Platiť sa dá aj kartou priamo na mieste. | Платити можна й карткою прямо на місці.
+W: v skutočnosti | насправді | ф скуточності | V skutočnosti je byt menší ako na fotkách. | Насправді квартира менша, ніж на фото.
+W: v zahraničí | за кордоном | в захранічі: | Dcéra majiteľa žije v zahraničí. | Донька власника живе за кордоном.
+X mt: З’єднай. | na rade = на черзі ;; na mieste = на місці, одразу ;; v skutočnosti = насправді ;; v zahraničí = за кордоном
+X rc: - | Ahoj Maksym! Konečne mám čas napísať ti, ako sa nám darí na Slovensku. Bývame v Prešove, na východe Slovenska. Mesto leží na rieke Torysa a v okolí sú pekné hory. Máme podnájom v paneláku na sídlisku Sekčov, na šiestom poschodí. Byt je malý, ale v dobrom stave – len v kúpeľni na strope bola pleseň, majiteľ to už dal do poriadku. Ja pracujem vo výrobe v priemyselnom parku na okraji mesta, Alla je na recepcii v hoteli v centre. Po práci sa často prechádzame po starom meste. Cez víkend sme boli v kúpeľoch pri Bardejove. Často myslíme na vás a na rodičov na Ukrajine. Daj vedieť, ako sa máte! Serhij
+q~: Де працює Алла? | *на рецепції готелю в центрі ;; на виробництві на околиці ;; на курорті біля Бардейова
+q~: Яка проблема була в квартирі? | *цвіль на стелі у ванній ;; зламаний ліфт ;; пляма на підлозі
+q~: Що Сергій і Алла роблять після роботи? | *гуляють старим містом ;; їздять на курорт ;; ходять у гори
+X cz: - | Bývam {na} Štúrovej ulici, {v} paneláku {na} piatom poschodí. Pracujem {vo} výrobe a po {práci} som dvakrát do týždňa {na} kurze slovenčiny. | -
+= na ulici, v paneláku, na poschodí, vo výrobe (перед v), po práci, na kurze.
+X dd: Обери. | V [*Košiciach/Košiciách/Košice] pracuje veľa Ukrajincov.
+= Košice → v Košiciach.
+X dd: Обери. | Hovorili sme o [*nej/ňou/ju] celý večer.
+= Після o — місцевий займенник: o nej.
+X fe: - | Moja sestra pracuje [v>na] recepcii hotela Dunaj.
+= recepcia — з na: na recepcii.
+X fe: - | Prepáčte, kto je teraz na [rad>rade]?
+= Сталий вираз: byť na rade.
+X ce: Виправ речення. | V Slovensku bývam v paneláku na ôsmy poschodí. | Na Slovensku bývam v paneláku na ôsmom poschodí.
+= na Slovensku; na ôsmom poschodí.
+X tr: Постав у множину. | Pracujem v tom novom obchode. | Pracujem v tých nových obchodoch.
+= v tom novom obchode → v tých nových obchodoch.
+X bd: - | Ти успішно залагодив(ла) справу на пошті!
+> Úradníčka: Dobrý deň, ste na rade. Čo potrebujete? | *Dobrý deň, prišiel mi balík zo zahraničia. ;; Dobrý deň, prišiel mi balík zo zahraničí. ;; Dobrý deň, prišiel mi balík zo zahraničie.
+> Úradníčka: Máte oznámenie a doklad? | *Áno, oznámenie mám v telefóne a doklad v peňaženke. ;; Áno, oznámenie mám v telefón a doklad v peňaženka. ;; Áno, oznámenie mám o telefóne a doklad o peňaženke.
+> Úradníčka: Clo môžete zaplatiť priamo na mieste. | *Dobre, zaplatím na mieste kartou. ;; Dobre, zaplatím na miesto kartou. ;; Dobre, zaplatím v mieste kartou.
+> Úradníčka: Kde bývate? Potrebujem adresu. | *Na Hlavnej ulici 25, v Trnave. ;; V Hlavnej ulici 25, na Trnave. ;; Na Hlavná ulica 25, v Trnava.
+X dr: - | Kamarátka: Ten byt na fotkách vyzerá veľký. | *V skutočnosti je dosť malý. ;; V skutočnosť je dosť malý. ;; Na skutočnosti je dosť malý.
+= v skutočnosti — насправді.
+X msg: Прочитай оголошення. | Mestský úrad | Oznamujeme občanom, že od 1. 12. sa podateľňa presťahuje z budovy na Hlavnej ulici do novej budovy na Námestí mieru 3, na prízemí. Poplatky môžete zaplatiť priamo na mieste kartou. | Де буде канцелярія з 1 грудня? | *у новій будівлі на площі Миру, 3, на першому поверсі ;; на вулиці Головній ;; на другому поверсі старої будівлі
+= na Námestí mieru 3, na prízemí — на першому поверсі.
+X ms: Обери правильні речення. | - | *Bývame na Slovensku, v Žiline. ;; *Kolegyňa je na materskej. ;; *Sedím vo vlaku. ;; *Hovorili sme o ňom. ;; Brat je v PN. ;; Býva v Košiciách.
+= na PN; v Košiciach.
+X np: Ти в черзі в аптеці й питаєш, чия черга. | *Prepáčte, kto je na rade? ;; Prepáčte, kto je o rade? ;; Prepáčte, kto je na rad? ;; Prepáčte, kto je na rady?
+= Сталий вираз: Kto je na rade?
+X so: - | Спитай колегу, про що говорили на нараді. | O čom ste sa rozprávali na porade?
+= o čom — про що; na porade — на нараді.
+F: Новий колега в Прешові || Ти щойно переїхав(ла) до Прешова і розповідаєш про себе новому колезі.
+S: Колега: «Kde presne bývaš?» | *Na sídlisku Sekčov, v paneláku na šiestom poschodí. ;; V sídlisku Sekčov, na paneláku v šiestom poschodí. ;; Na sídlisko Sekčov, v panelák na šiesty poschodí.
+S: «A kde si pracoval predtým?» (у Чехії, на будові) | *V Česku, na stavbe. ;; Na Česku, v stavbe. ;; V Česko, na stavba.
+S: Колега: «V skutočnosti je Prešov väčší, ako vyzerá.» Що він каже? | *насправді Прешов більший, ніж здається ;; Прешов справді виглядає великим ;; Прешов менший за Кошиці
+S: Ти кажеш, що після роботи хочеш погуляти старим містом. | *Po práci sa chcem prechádzať po starom meste. ;; Po prácu sa chcem prechádzať po staré mesto. ;; Po práci sa chcem prechádzať v starom mesto.
+R: v dome, v parku, o bratovi, na ulici — v obchodoch, na uliciach, v Košiciach ;; v / vo, na, o, po, pri ;; o mne, o ňom, o nej, o nich ;; na rade, na mieste, v skutočnosti, v zahraničí

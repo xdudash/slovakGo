@@ -1,0 +1,799 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u06-l09-frekvencia",
+      "sectionId": "a1-u06",
+      "level": "A1",
+      "title": "Як часто?",
+      "topic": "Дієслова в теперішньому часі",
+      "description": "Прислівники частоти: vždy, často, niekedy, zriedka, každý deň, raz týždenne — і їхнє місце в реченні.",
+      "order": 59,
+      "xpReward": 25,
+      "estimatedMinutes": 20,
+      "isPublished": true,
+      "intro": "Розповідати про звички та частоту дій.",
+      "completionMessage": "Ти розповідаєш про звички. Далі — підсумок розділу.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Дієслова в теперішньому часі",
+        "title": "Як часто?",
+        "shortDescription": "Розповідати про звички та частоту дій.",
+        "outcomes": [
+          "використовувати vždy, často, niekedy, zriedka",
+          "казати každý deň / týždeň",
+          "казати raz / dvakrát týždenne",
+          "описувати свої звички"
+        ],
+        "newWords": [
+          "vždy",
+          "často",
+          "niekedy",
+          "zriedka",
+          "každý deň",
+          "chodiť"
+        ],
+        "exercisesCount": 13,
+        "reward": "+25 XP",
+        "estimatedMinutes": 20,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Шкала частоти",
+          "text": "vždy (завжди) → zvyčajne (зазвичай) → často (часто) → niekedy (іноді) → zriedka (рідко) → nikdy (ніколи + ne-).",
+          "examples": [
+            {
+              "sk": "Vždy raňajkujem.",
+              "uk": "Я завжди снідаю."
+            },
+            {
+              "sk": "Zriedka chodím do kina.",
+              "uk": "Я рідко ходжу в кіно."
+            }
+          ],
+          "shortRule": "vždy → nikdy",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Кожен / раз на…",
+          "text": "«Každý deň» — щодня, «každý týždeň» — щотижня, «každú sobotu» — щосуботи. «Raz týždenne» — раз на тиждень, «dvakrát mesačne» — двічі на місяць.",
+          "examples": [
+            {
+              "sk": "Každé ráno pijem kávu.",
+              "uk": "Щоранку я п’ю каву."
+            },
+            {
+              "sk": "Upratujem raz týždenne.",
+              "uk": "Я прибираю раз на тиждень."
+            }
+          ],
+          "shortRule": "raz / dvakrát / trikrát + týždenne / mesačne",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Chodiť — регулярно",
+          "text": "Для регулярних походів: «chodím» (ходжу), не «idem»: «Chodím do práce pešo», «Chodím na kurz každý utorok». «Idem» — зараз, один раз.",
+          "examples": [
+            {
+              "sk": "Chodím plávať dvakrát týždenne.",
+              "uk": "Я ходжу плавати двічі на тиждень."
+            },
+            {
+              "sk": "Teraz idem do obchodu.",
+              "uk": "Зараз я йду в магазин."
+            }
+          ],
+          "shortRule": "chodím (регулярно) vs idem (зараз)",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u06-l09-frekvencia-w01",
+            "sk": "vždy",
+            "uk": "завжди",
+            "pronunciationUk": "вжди",
+            "exampleSk": "Vždy platím kartou.",
+            "exampleUk": "Я завжди плачу карткою."
+          },
+          {
+            "wordId": "a1-u06-l09-frekvencia-w02",
+            "sk": "často",
+            "uk": "часто",
+            "pronunciationUk": "часто",
+            "exampleSk": "Často pracujem cez víkend.",
+            "exampleUk": "Я часто працюю на вихідних."
+          },
+          {
+            "wordId": "a1-u06-l09-frekvencia-w03",
+            "sk": "niekedy",
+            "uk": "іноді",
+            "pronunciationUk": "ніекеді",
+            "exampleSk": "Niekedy varím ukrajinské jedlá.",
+            "exampleUk": "Іноді я готую українські страви."
+          },
+          {
+            "wordId": "a1-u06-l09-frekvencia-w04",
+            "sk": "zriedka",
+            "uk": "рідко",
+            "pronunciationUk": "зрієдка",
+            "exampleSk": "Zriedka chodím von.",
+            "exampleUk": "Я рідко виходжу кудись."
+          },
+          {
+            "wordId": "a1-u06-l09-frekvencia-w05",
+            "sk": "každý deň",
+            "uk": "щодня",
+            "pronunciationUk": "кажді: дєнь",
+            "exampleSk": "Každý deň sa učím nové slová.",
+            "exampleUk": "Щодня я вчу нові слова."
+          },
+          {
+            "wordId": "a1-u06-l09-frekvencia-w06",
+            "sk": "chodiť",
+            "uk": "ходити (регулярно)",
+            "pronunciationUk": "ходіть",
+            "exampleSk": "Chodím do práce autobusom.",
+            "exampleUk": "Я їжджу на роботу автобусом."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u06-l09-frekvencia-w01",
+          "sk": "vždy",
+          "uk": "завжди",
+          "pronunciationUk": "вжди",
+          "exampleSk": "Vždy platím kartou.",
+          "exampleUk": "Я завжди плачу карткою.",
+          "level": "A1",
+          "topic": "Дієслова в теперішньому часі",
+          "tags": [
+            "a1-u06",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u06-l09-frekvencia-w02",
+          "sk": "často",
+          "uk": "часто",
+          "pronunciationUk": "часто",
+          "exampleSk": "Často pracujem cez víkend.",
+          "exampleUk": "Я часто працюю на вихідних.",
+          "level": "A1",
+          "topic": "Дієслова в теперішньому часі",
+          "tags": [
+            "a1-u06",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u06-l09-frekvencia-w03",
+          "sk": "niekedy",
+          "uk": "іноді",
+          "pronunciationUk": "ніекеді",
+          "exampleSk": "Niekedy varím ukrajinské jedlá.",
+          "exampleUk": "Іноді я готую українські страви.",
+          "level": "A1",
+          "topic": "Дієслова в теперішньому часі",
+          "tags": [
+            "a1-u06",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u06-l09-frekvencia-w04",
+          "sk": "zriedka",
+          "uk": "рідко",
+          "pronunciationUk": "зрієдка",
+          "exampleSk": "Zriedka chodím von.",
+          "exampleUk": "Я рідко виходжу кудись.",
+          "level": "A1",
+          "topic": "Дієслова в теперішньому часі",
+          "tags": [
+            "a1-u06",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u06-l09-frekvencia-w05",
+          "sk": "každý deň",
+          "uk": "щодня",
+          "pronunciationUk": "кажді: дєнь",
+          "exampleSk": "Každý deň sa učím nové slová.",
+          "exampleUk": "Щодня я вчу нові слова.",
+          "level": "A1",
+          "topic": "Дієслова в теперішньому часі",
+          "tags": [
+            "a1-u06",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u06-l09-frekvencia-w06",
+          "sk": "chodiť",
+          "uk": "ходити (регулярно)",
+          "pronunciationUk": "ходіть",
+          "exampleSk": "Chodím do práce autobusom.",
+          "exampleUk": "Я їжджу на роботу автобусом.",
+          "level": "A1",
+          "topic": "Дієслова в теперішньому часі",
+          "tags": [
+            "a1-u06",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u06-l09-frekvencia-ex01",
+          "lessonId": "a1-u06-l09-frekvencia",
+          "type": "dialogue_order",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Віднови порядок реплік у діалозі.",
+          "lines": [
+            {
+              "id": "l2",
+              "sk": "často"
+            },
+            {
+              "id": "l1",
+              "sk": "vždy"
+            },
+            {
+              "id": "l4",
+              "sk": "zriedka"
+            },
+            {
+              "id": "l3",
+              "sk": "niekedy"
+            },
+            {
+              "id": "l5",
+              "sk": "nikdy"
+            }
+          ],
+          "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5"
+          ],
+          "explanation": "Від найчастішого до найрідшого.",
+          "order": 1,
+          "wordIds": [
+            "a1-u06-l09-frekvencia-w01",
+            "a1-u06-l09-frekvencia-w02",
+            "a1-u06-l09-frekvencia-w03",
+            "a1-u06-l09-frekvencia-w04"
+          ]
+        },
+        {
+          "id": "a1-u06-l09-frekvencia-ex02",
+          "lessonId": "a1-u06-l09-frekvencia",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "vždy",
+              "right": "завжди"
+            },
+            {
+              "left": "často",
+              "right": "часто"
+            },
+            {
+              "left": "niekedy",
+              "right": "іноді"
+            },
+            {
+              "left": "zriedka",
+              "right": "рідко"
+            },
+            {
+              "left": "každý deň",
+              "right": "щодня"
+            }
+          ],
+          "order": 2,
+          "wordIds": [
+            "a1-u06-l09-frekvencia-w01",
+            "a1-u06-l09-frekvencia-w02",
+            "a1-u06-l09-frekvencia-w03",
+            "a1-u06-l09-frekvencia-w04",
+            "a1-u06-l09-frekvencia-w05"
+          ]
+        },
+        {
+          "id": "a1-u06-l09-frekvencia-ex03",
+          "lessonId": "a1-u06-l09-frekvencia",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "blankId": "b1",
+              "options": [
+                "Idem",
+                "Chodím"
+              ],
+              "correct": "Chodím"
+            },
+            {
+              "text": " na kurz každý utorok."
+            }
+          ],
+          "explanation": "Регулярно — chodím.",
+          "order": 3,
+          "wordIds": [
+            "a1-u06-l09-frekvencia-w05",
+            "a1-u06-l09-frekvencia-w06"
+          ]
+        },
+        {
+          "id": "a1-u06-l09-frekvencia-ex04",
+          "lessonId": "a1-u06-l09-frekvencia",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Teraz "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "idem",
+                "chodím"
+              ],
+              "correct": "idem"
+            },
+            {
+              "text": " do obchodu, o chvíľu som späť."
+            }
+          ],
+          "explanation": "Зараз, один раз — idem.",
+          "order": 4,
+          "wordIds": [
+            "a1-u06-l09-frekvencia-w06"
+          ]
+        },
+        {
+          "id": "a1-u06-l09-frekvencia-ex05",
+          "lessonId": "a1-u06-l09-frekvencia",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «dvakrát mesačne»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "два місяці",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "двічі на місяць",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "двічі на тиждень",
+              "correct": false
+            }
+          ],
+          "explanation": "mesačne — щомісяця.",
+          "order": 5
+        },
+        {
+          "id": "a1-u06-l09-frekvencia-ex06",
+          "lessonId": "a1-u06-l09-frekvencia",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Nikdy» вимагає заперечення: «Nikdy nejem mäso».",
+          "correctAnswer": true,
+          "explanation": "Подвійне заперечення.",
+          "order": 6
+        },
+        {
+          "id": "a1-u06-l09-frekvencia-ex07",
+          "lessonId": "a1-u06-l09-frekvencia",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Upratujem raz ______. (на тиждень)",
+          "acceptedAnswers": [
+            "týždenne"
+          ],
+          "explanation": "raz týždenne.",
+          "order": 7
+        },
+        {
+          "id": "a1-u06-l09-frekvencia-ex08",
+          "lessonId": "a1-u06-l09-frekvencia",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що ти завжди платиш карткою.",
+          "tokens": [
+            "kartou",
+            "platím",
+            ".",
+            "Vždy"
+          ],
+          "correctOrder": [
+            "Vždy",
+            "platím",
+            "kartou",
+            "."
+          ],
+          "explanation": "Vždy + дієслово.",
+          "order": 8,
+          "wordIds": [
+            "a1-u06-l09-frekvencia-w01"
+          ]
+        },
+        {
+          "id": "a1-u06-l09-frekvencia-ex09",
+          "lessonId": "a1-u06-l09-frekvencia",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Každý deň idem do práce pešo.",
+          "errorToken": "idem",
+          "correctToken": "chodím",
+          "explanation": "Регулярно — chodím.",
+          "order": 9,
+          "wordIds": [
+            "a1-u06-l09-frekvencia-w05",
+            "a1-u06-l09-frekvencia-w06"
+          ]
+        },
+        {
+          "id": "a1-u06-l09-frekvencia-ex10",
+          "lessonId": "a1-u06-l09-frekvencia",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Môj týždeň: Každý deň vstávam o šiestej. Do práce chodím autobusom. Dvakrát týždenne chodím na kurz slovenčiny. Niekedy varím s kamarátkou. Zriedka pozerám televíziu a nikdy nefajčím.",
+          "questions": [
+            {
+              "question": "Як часто вона ходить на курс?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "рідко",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "двічі на тиждень",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "щодня",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що вона робить рідко?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "готує",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "встає о шостій",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "дивиться телевізор",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "a1-u06-l09-frekvencia-w03",
+            "a1-u06-l09-frekvencia-w04",
+            "a1-u06-l09-frekvencia-w05",
+            "a1-u06-l09-frekvencia-w06"
+          ]
+        },
+        {
+          "id": "a1-u06-l09-frekvencia-ex11",
+          "lessonId": "a1-u06-l09-frekvencia",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Лікар питає, чи часто ти займаєшся спортом. Ти — іноді.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Niekedy, asi raz týždenne.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Vždy nikdy.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Idem šport.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Často zriedka.",
+              "correct": false
+            }
+          ],
+          "explanation": "niekedy + уточнення.",
+          "order": 11,
+          "wordIds": [
+            "a1-u06-l09-frekvencia-w01",
+            "a1-u06-l09-frekvencia-w02",
+            "a1-u06-l09-frekvencia-w03",
+            "a1-u06-l09-frekvencia-w04"
+          ]
+        },
+        {
+          "id": "a1-u06-l09-frekvencia-ex12",
+          "lessonId": "a1-u06-l09-frekvencia",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Chodím чи idem?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Chodím (регулярно)"
+            },
+            {
+              "id": "c2",
+              "title": "Idem (зараз / один раз)"
+            }
+          ],
+          "items": [
+            {
+              "sk": "dvakrát týždenne",
+              "category": "c1"
+            },
+            {
+              "sk": "dnes večer",
+              "category": "c2"
+            },
+            {
+              "sk": "teraz",
+              "category": "c2"
+            },
+            {
+              "sk": "každý deň",
+              "category": "c1"
+            },
+            {
+              "sk": "vždy v sobotu",
+              "category": "c1"
+            },
+            {
+              "sk": "o chvíľu",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Підказка в часових словах.",
+          "order": 12,
+          "wordIds": [
+            "a1-u06-l09-frekvencia-w01",
+            "a1-u06-l09-frekvencia-w05",
+            "a1-u06-l09-frekvencia-w06"
+          ]
+        },
+        {
+          "id": "a1-u06-l09-frekvencia-ex13",
+          "lessonId": "a1-u06-l09-frekvencia",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери речення про звички.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Chodím plávať v utorok.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Zriedka jem mäso.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Každé ráno pijem čaj.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Teraz idem domov.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "O chvíľu prídem.",
+              "correct": false
+            }
+          ],
+          "explanation": "Звички — регулярні дії.",
+          "order": 13,
+          "wordIds": [
+            "a1-u06-l09-frekvencia-w04",
+            "a1-u06-l09-frekvencia-w05",
+            "a1-u06-l09-frekvencia-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Анкета для фітнес-клубу",
+        "description": "Тренер розпитує про твій спосіб життя.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Ako často športujete?» (рідко)",
+            "options": [
+              {
+                "sk": "Zriedka každý deň.",
+                "correct": false
+              },
+              {
+                "sk": "Vždy nikdy.",
+                "correct": false
+              },
+              {
+                "sk": "Zriedka, asi raz mesačne.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Fajčíte?» (ніколи не палив)",
+            "options": [
+              {
+                "sk": "Nikdy fajčím.",
+                "correct": false
+              },
+              {
+                "sk": "Nie, nikdy nefajčím.",
+                "correct": true
+              },
+              {
+                "sk": "Niekedy nie.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Ako chodíte do práce?» (пішки)",
+            "options": [
+              {
+                "sk": "Chodím pešo.",
+                "correct": true
+              },
+              {
+                "sk": "Chodím peší.",
+                "correct": false
+              },
+              {
+                "sk": "Idem pešo teraz.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Odporúčam chodiť k nám trikrát týždenne.» Що радить?",
+            "options": [
+              {
+                "sk": "ходити три місяці",
+                "correct": false
+              },
+              {
+                "sk": "ходити тричі на тиждень",
+                "correct": true
+              },
+              {
+                "sk": "ходити щодня",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розповідаєш про звички. Далі — підсумок розділу."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розповідаєш про звички. Далі — підсумок розділу.",
+        "nowYouKnow": [
+          "vždy, zvyčajne, často, niekedy, zriedka, nikdy",
+          "každý deň, raz týždenne",
+          "chodím (регулярно) vs idem (зараз)"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 13,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u06-l10-slovesa-opakovanie",
+          "title": "Підсумок: мій звичайний тиждень"
+        }
+      }
+    }
+  ]
+}

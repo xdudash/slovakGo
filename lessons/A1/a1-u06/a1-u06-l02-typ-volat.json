@@ -1,0 +1,758 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u06-l02-typ-volat",
+      "sectionId": "a1-u06",
+      "level": "A1",
+      "title": "Дієслова на -ám: volám, čakám",
+      "topic": "Дієслова в теперішньому часі",
+      "description": "Найпростіша група: volať → volám, čakám, počúvam, čítam, hrám, dávam.",
+      "order": 52,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Відмінювати дієслова типу volať і говорити про щоденні дії.",
+      "completionMessage": "Друга група дієслів опанована. Далі — дієслова на -em.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Дієслова в теперішньому часі",
+        "title": "Дієслова на -ám: volám, čakám",
+        "shortDescription": "Відмінювати дієслова типу volať і говорити про щоденні дії.",
+        "outcomes": [
+          "відмінювати -ám, -áš, -á, -áme, -áte, -ajú",
+          "використовувати čakať na…",
+          "казати čítam, počúvam, pozerám",
+          "розуміти hrať (sa)"
+        ],
+        "newWords": [
+          "čakať",
+          "počúvať",
+          "pozerať",
+          "čítať",
+          "hrať",
+          "dávať"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Схема -ám",
+          "text": "volať: volám, voláš, volá, voláme, voláte, volajú. Так само: čakať, počúvať, čítať, pozerať, hrať, dávať, bývať, vstávať.",
+          "examples": [
+            {
+              "sk": "Čakám na autobus.",
+              "uk": "Я чекаю на автобус."
+            },
+            {
+              "sk": "Večer čítame.",
+              "uk": "Увечері ми читаємо."
+            }
+          ],
+          "shortRule": "-ám / -áš / -á / -áme / -áte / -ajú",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Ритмічне скорочення",
+          "text": "Якщо склад у корені довгий, закінчення стає коротким: počúvať → počúvam, čítať → čítam (а не «čítám»). Це те саме ритмічне скорочення, що й у прикметниках.",
+          "examples": [
+            {
+              "sk": "Počúvam rádio.",
+              "uk": "Я слухаю радіо."
+            },
+            {
+              "sk": "Čítam noviny.",
+              "uk": "Я читаю газету."
+            }
+          ],
+          "shortRule": "довгий корінь → коротке -am",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Čakať na…",
+          "text": "«Čakať na + знахідний» — чекати на когось: čakám na teba, čakáme na lekára. «Pozerať televíziu / film» — дивитися ТБ / фільм. «Hrať futbal» — грати у футбол, «hrať sa» — гратися (про дітей).",
+          "examples": [
+            {
+              "sk": "Čakám na teba pred domom.",
+              "uk": "Я чекаю на тебе перед будинком."
+            },
+            {
+              "sk": "Deti sa hrajú vonku.",
+              "uk": "Діти граються надворі."
+            }
+          ],
+          "shortRule": "čakať na + знахідний",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u06-l02-typ-volat-w01",
+            "sk": "čakať",
+            "uk": "чекати",
+            "pronunciationUk": "чакать",
+            "exampleSk": "Čakám na lekára už hodinu.",
+            "exampleUk": "Я чекаю на лікаря вже годину."
+          },
+          {
+            "wordId": "a1-u06-l02-typ-volat-w02",
+            "sk": "počúvať",
+            "uk": "слухати",
+            "pronunciationUk": "почу:вать",
+            "exampleSk": "Počúvam podcast v slovenčine.",
+            "exampleUk": "Я слухаю подкаст словацькою."
+          },
+          {
+            "wordId": "a1-u06-l02-typ-volat-w03",
+            "sk": "pozerať",
+            "uk": "дивитися",
+            "pronunciationUk": "позерать",
+            "exampleSk": "Večer pozeráme film.",
+            "exampleUk": "Увечері ми дивимося фільм."
+          },
+          {
+            "wordId": "a1-u06-l02-typ-volat-w04",
+            "sk": "čítať",
+            "uk": "читати",
+            "pronunciationUk": "чі:тать",
+            "exampleSk": "Čítam správy na mobile.",
+            "exampleUk": "Я читаю новини на мобільному."
+          },
+          {
+            "wordId": "a1-u06-l02-typ-volat-w05",
+            "sk": "hrať",
+            "uk": "грати",
+            "pronunciationUk": "грать",
+            "exampleSk": "Syn hrá futbal.",
+            "exampleUk": "Син грає у футбол."
+          },
+          {
+            "wordId": "a1-u06-l02-typ-volat-w06",
+            "sk": "dávať",
+            "uk": "давати",
+            "pronunciationUk": "да:вать",
+            "exampleSk": "Dávam deťom vreckové.",
+            "exampleUk": "Я даю дітям кишенькові гроші."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u06-l02-typ-volat-w01",
+          "sk": "čakať",
+          "uk": "чекати",
+          "pronunciationUk": "чакать",
+          "exampleSk": "Čakám na lekára už hodinu.",
+          "exampleUk": "Я чекаю на лікаря вже годину.",
+          "level": "A1",
+          "topic": "Дієслова в теперішньому часі",
+          "tags": [
+            "a1-u06",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u06-l02-typ-volat-w02",
+          "sk": "počúvať",
+          "uk": "слухати",
+          "pronunciationUk": "почу:вать",
+          "exampleSk": "Počúvam podcast v slovenčine.",
+          "exampleUk": "Я слухаю подкаст словацькою.",
+          "level": "A1",
+          "topic": "Дієслова в теперішньому часі",
+          "tags": [
+            "a1-u06",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u06-l02-typ-volat-w03",
+          "sk": "pozerať",
+          "uk": "дивитися",
+          "pronunciationUk": "позерать",
+          "exampleSk": "Večer pozeráme film.",
+          "exampleUk": "Увечері ми дивимося фільм.",
+          "level": "A1",
+          "topic": "Дієслова в теперішньому часі",
+          "tags": [
+            "a1-u06",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u06-l02-typ-volat-w04",
+          "sk": "čítať",
+          "uk": "читати",
+          "pronunciationUk": "чі:тать",
+          "exampleSk": "Čítam správy na mobile.",
+          "exampleUk": "Я читаю новини на мобільному.",
+          "level": "A1",
+          "topic": "Дієслова в теперішньому часі",
+          "tags": [
+            "a1-u06",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u06-l02-typ-volat-w05",
+          "sk": "hrať",
+          "uk": "грати",
+          "pronunciationUk": "грать",
+          "exampleSk": "Syn hrá futbal.",
+          "exampleUk": "Син грає у футбол.",
+          "level": "A1",
+          "topic": "Дієслова в теперішньому часі",
+          "tags": [
+            "a1-u06",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u06-l02-typ-volat-w06",
+          "sk": "dávať",
+          "uk": "давати",
+          "pronunciationUk": "да:вать",
+          "exampleSk": "Dávam deťom vreckové.",
+          "exampleUk": "Я даю дітям кишенькові гроші.",
+          "level": "A1",
+          "topic": "Дієслова в теперішньому часі",
+          "tags": [
+            "a1-u06",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u06-l02-typ-volat-ex01",
+          "lessonId": "a1-u06-l02-typ-volat",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "čakať",
+              "right": "чекати"
+            },
+            {
+              "left": "počúvať",
+              "right": "слухати"
+            },
+            {
+              "left": "pozerať",
+              "right": "дивитися"
+            },
+            {
+              "left": "čítať",
+              "right": "читати"
+            },
+            {
+              "left": "hrať",
+              "right": "грати"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u06-l02-typ-volat-w01",
+            "a1-u06-l02-typ-volat-w02",
+            "a1-u06-l02-typ-volat-w03",
+            "a1-u06-l02-typ-volat-w04",
+            "a1-u06-l02-typ-volat-w05"
+          ]
+        },
+        {
+          "id": "a1-u06-l02-typ-volat-ex02",
+          "lessonId": "a1-u06-l02-typ-volat",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Deti sa "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "hrá",
+                "hrám",
+                "hrajú"
+              ],
+              "correct": "hrajú"
+            },
+            {
+              "text": " na ihrisku."
+            }
+          ],
+          "explanation": "oni → hrajú.",
+          "order": 2
+        },
+        {
+          "id": "a1-u06-l02-typ-volat-ex03",
+          "lessonId": "a1-u06-l02-typ-volat",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Čakám "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "o",
+                "na",
+                "za"
+              ],
+              "correct": "na"
+            },
+            {
+              "text": " autobus."
+            }
+          ],
+          "explanation": "čakať na + знахідний.",
+          "order": 3
+        },
+        {
+          "id": "a1-u06-l02-typ-volat-ex04",
+          "lessonId": "a1-u06-l02-typ-volat",
+          "type": "cloze_text",
+          "skill": [
+            "grammar",
+            "reading"
+          ],
+          "instruction": "Заповни пропуски в тексті.",
+          "textParts": [
+            {
+              "text": "Ja "
+            },
+            {
+              "blankId": "b1",
+              "acceptedAnswers": [
+                "čítam"
+              ]
+            },
+            {
+              "text": " knihu, manžel "
+            },
+            {
+              "blankId": "b2",
+              "acceptedAnswers": [
+                "pozerá"
+              ]
+            },
+            {
+              "text": " futbal a deti "
+            },
+            {
+              "blankId": "b3",
+              "acceptedAnswers": [
+                "počúvajú"
+              ]
+            },
+            {
+              "text": " hudbu."
+            }
+          ],
+          "hint": "Типова сімейна вечірня сцена.",
+          "explanation": "čítam, pozerá, počúvajú.",
+          "order": 4,
+          "wordIds": [
+            "a1-u06-l02-typ-volat-w02",
+            "a1-u06-l02-typ-volat-w03",
+            "a1-u06-l02-typ-volat-w04"
+          ]
+        },
+        {
+          "id": "a1-u06-l02-typ-volat-ex05",
+          "lessonId": "a1-u06-l02-typ-volat",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Pozerať» означає «дивитися».",
+          "correctAnswer": true,
+          "explanation": "pozerať film — дивитися фільм.",
+          "order": 5,
+          "wordIds": [
+            "a1-u06-l02-typ-volat-w03"
+          ]
+        },
+        {
+          "id": "a1-u06-l02-typ-volat-ex06",
+          "lessonId": "a1-u06-l02-typ-volat",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши форму (ми чекаємо).",
+          "sentence": "______ na teba pred kinom.",
+          "acceptedAnswers": [
+            "Čakáme"
+          ],
+          "explanation": "čakáme.",
+          "order": 6
+        },
+        {
+          "id": "a1-u06-l02-typ-volat-ex07",
+          "lessonId": "a1-u06-l02-typ-volat",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що ти чекаєш на лікаря вже годину.",
+          "tokens": [
+            "na",
+            ".",
+            "Čakám",
+            "hodinu",
+            "lekára",
+            "už"
+          ],
+          "correctOrder": [
+            "Čakám",
+            "na",
+            "lekára",
+            "už",
+            "hodinu",
+            "."
+          ],
+          "explanation": "Čakám na + знахідний.",
+          "order": 7
+        },
+        {
+          "id": "a1-u06-l02-typ-volat-ex08",
+          "lessonId": "a1-u06-l02-typ-volat",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Moji susedia počúva hlasnú hudbu.",
+          "errorToken": "počúva",
+          "correctToken": "počúvajú",
+          "explanation": "oni → počúvajú.",
+          "order": 8,
+          "wordIds": [
+            "a1-u06-l02-typ-volat-w02"
+          ]
+        },
+        {
+          "id": "a1-u06-l02-typ-volat-ex09",
+          "lessonId": "a1-u06-l02-typ-volat",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що можна?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "čítať"
+            },
+            {
+              "id": "c2",
+              "title": "počúvať"
+            },
+            {
+              "id": "c3",
+              "title": "pozerať"
+            }
+          ],
+          "items": [
+            {
+              "sk": "hudbu",
+              "category": "c2"
+            },
+            {
+              "sk": "film",
+              "category": "c3"
+            },
+            {
+              "sk": "seriál",
+              "category": "c3"
+            },
+            {
+              "sk": "rádio",
+              "category": "c2"
+            },
+            {
+              "sk": "správy",
+              "category": "c1"
+            },
+            {
+              "sk": "knihu",
+              "category": "c1"
+            },
+            {
+              "sk": "televíziu",
+              "category": "c3"
+            },
+            {
+              "sk": "podcast",
+              "category": "c2"
+            },
+            {
+              "sk": "noviny",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Сполучуваність.",
+          "order": 9,
+          "wordIds": [
+            "a1-u06-l02-typ-volat-w02",
+            "a1-u06-l02-typ-volat-w03",
+            "a1-u06-l02-typ-volat-w04"
+          ]
+        },
+        {
+          "id": "a1-u06-l02-typ-volat-ex10",
+          "lessonId": "a1-u06-l02-typ-volat",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kamarátka",
+              "sk": "Kde si?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Čaká na zastávke.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Čakám na zastávke.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Čakám zastávka.",
+              "correct": false
+            }
+          ],
+          "explanation": "Про себе: čakám.",
+          "order": 10
+        },
+        {
+          "id": "a1-u06-l02-typ-volat-ex11",
+          "lessonId": "a1-u06-l02-typ-volat",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Друг пропонує зустрітися, ти пишеш, що чекаєш на нього біля кафе.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Čakám teba kaviareň.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Čakáš na mňa pred kaviarňou.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Čakám na teba pred kaviarňou.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Teba čaká.",
+              "correct": false
+            }
+          ],
+          "explanation": "Čakám na teba + місце.",
+          "order": 11
+        },
+        {
+          "id": "a1-u06-l02-typ-volat-ex12",
+          "lessonId": "a1-u06-l02-typ-volat",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні форми.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "hrá",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "hrám sa ty",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "voláme",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "čítaja",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "čítajú",
+              "correct": true
+            }
+          ],
+          "explanation": "Схема -ám.",
+          "order": 12,
+          "wordIds": [
+            "a1-u06-l02-typ-volat-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Вечір у родині",
+        "description": "Подруга телефонує й питає, що ви робите.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Čo robíš?» (ти читаєш)",
+            "options": [
+              {
+                "sk": "Čítam knihu.",
+                "correct": true
+              },
+              {
+                "sk": "Čítaš knihu.",
+                "correct": false
+              },
+              {
+                "sk": "Čítam kniha.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«A Peter?» (дивиться футбол)",
+            "options": [
+              {
+                "sk": "Pozerá futbal.",
+                "correct": true
+              },
+              {
+                "sk": "Pozerajú futbal.",
+                "correct": false
+              },
+              {
+                "sk": "Pozerám futbal.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«A deti?» (граються в кімнаті)",
+            "options": [
+              {
+                "sk": "Hráme sa izba.",
+                "correct": false
+              },
+              {
+                "sk": "Hrá sa v izbe.",
+                "correct": false
+              },
+              {
+                "sk": "Hrajú sa v izbe.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Zajtra vás čakám na obed!» Що вона каже?",
+            "options": [
+              {
+                "sk": "прийде до вас на обід",
+                "correct": false
+              },
+              {
+                "sk": "чекає вас завтра на обід",
+                "correct": true
+              },
+              {
+                "sk": "не може завтра",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Друга група дієслів опанована. Далі — дієслова на -em."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Друга група дієслів опанована. Далі — дієслова на -em.",
+        "nowYouKnow": [
+          "volám, voláš, volá, voláme, voláte, volajú",
+          "čakať na + знахідний",
+          "čítať, počúvať, pozerať, hrať (sa)"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u06-l03-typ-niest",
+          "title": "Дієслова на -em: píšem, beriem"
+        }
+      }
+    }
+  ]
+}

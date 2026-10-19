@@ -1,0 +1,744 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u01-l07-slabicne-r-l",
+      "sectionId": "a0-u01",
+      "level": "A0",
+      "title": "Склади без голосних і правопис i/y",
+      "topic": "Абетка і звуки",
+      "description": "Як словаки вимовляють слова без голосних (vlk, prst, trh) і коли пишуть i, а коли y.",
+      "order": 7,
+      "xpReward": 15,
+      "estimatedMinutes": 18,
+      "isPublished": true,
+      "intro": "Вимовляти складові r і l та розуміти основне правило i/y.",
+      "completionMessage": "Ти пройшов усі звуки словацької! Далі — вчимося читати вивіски.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Абетка і звуки",
+        "title": "Склади без голосних і правопис i/y",
+        "shortDescription": "Вимовляти складові r і l та розуміти основне правило i/y.",
+        "outcomes": [
+          "читати слова зі складовими r, l (vlk, trh, krk)",
+          "знати, що i та y звучать однаково",
+          "розуміти правило «тверді/м’які приголосні» для i/y",
+          "прочитати п’ять нових слів"
+        ],
+        "newWords": [
+          "trh",
+          "vlk",
+          "prst",
+          "krk",
+          "zmrzlina"
+        ],
+        "exercisesCount": 11,
+        "reward": "+15 XP",
+        "estimatedMinutes": 18,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Склад без голосного",
+          "text": "У словацькій r і l можуть утворювати склад самі: vlk (вовк), prst (палець), trh (ринок). Вимовляй їх як один склад, не вставляючи «и» чи «е». Буває і довге ŕ, ĺ: vŕba (верба), stĺp (стовп).",
+          "examples": [
+            {
+              "sk": "vlk",
+              "uk": "вовк"
+            },
+            {
+              "sk": "prst",
+              "uk": "палець"
+            },
+            {
+              "sk": "trh",
+              "uk": "ринок"
+            },
+            {
+              "sk": "krk",
+              "uk": "шия"
+            }
+          ],
+          "shortRule": "r і l можуть бути «голосними».",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Звучать однаково — пишуться по-різному",
+          "text": "i та y (í та ý) звучать однаково. Вибір літери — це правопис. Після твердих приголосних (d, t, n, l, h, ch, k, g) пишуть y, після м’яких (ď, ť, ň, ľ, c, dz, č, š, ž, dž, j) — i. Після інших (b, m, p, r, s, v, z, f) — буває по-різному, треба запам’ятовувати слова.",
+          "examples": [
+            {
+              "sk": "ryba",
+              "uk": "риба"
+            },
+            {
+              "sk": "číslo",
+              "uk": "число"
+            },
+            {
+              "sk": "hity",
+              "uk": "хіти"
+            }
+          ],
+          "shortRule": "Тверді + y, м’які + i.",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Чому це важливо читачеві",
+          "text": "Для читання різниці немає: ryba = «ріба». Але пам’ятай правило м’якості: di, ti, ni, li — м’яко, а dy, ty, ny, ly — твердо. Так y допомагає почути правильний звук.",
+          "examples": [
+            {
+              "sk": "deti",
+              "uk": "діти (м’яко)"
+            },
+            {
+              "sk": "dym",
+              "uk": "дим (твердо)"
+            }
+          ],
+          "shortRule": "y після d, t, n, l = твердий звук.",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u01-l07-slabicne-r-l-w01",
+            "sk": "trh",
+            "uk": "ринок",
+            "pronunciationUk": "трг",
+            "exampleSk": "V sobotu idem na trh.",
+            "exampleUk": "У суботу я йду на ринок."
+          },
+          {
+            "wordId": "a0-u01-l07-slabicne-r-l-w02",
+            "sk": "vlk",
+            "uk": "вовк",
+            "pronunciationUk": "влк",
+            "exampleSk": "V lese žije vlk.",
+            "exampleUk": "У лісі живе вовк."
+          },
+          {
+            "wordId": "a0-u01-l07-slabicne-r-l-w03",
+            "sk": "prst",
+            "uk": "палець",
+            "pronunciationUk": "прст",
+            "exampleSk": "Porezal som si prst.",
+            "exampleUk": "Я порізав палець."
+          },
+          {
+            "wordId": "a0-u01-l07-slabicne-r-l-w04",
+            "sk": "krk",
+            "uk": "шия",
+            "pronunciationUk": "крк",
+            "exampleSk": "Bolí ma krk.",
+            "exampleUk": "У мене болить шия (горло)."
+          },
+          {
+            "wordId": "a0-u01-l07-slabicne-r-l-w05",
+            "sk": "zmrzlina",
+            "uk": "морозиво",
+            "pronunciationUk": "змрзліна",
+            "exampleSk": "Dáš si zmrzlinu?",
+            "exampleUk": "Будеш морозиво?"
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u01-l07-slabicne-r-l-w01",
+          "sk": "trh",
+          "uk": "ринок",
+          "pronunciationUk": "трг",
+          "exampleSk": "V sobotu idem na trh.",
+          "exampleUk": "У суботу я йду на ринок.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l07-slabicne-r-l-w02",
+          "sk": "vlk",
+          "uk": "вовк",
+          "pronunciationUk": "влк",
+          "exampleSk": "V lese žije vlk.",
+          "exampleUk": "У лісі живе вовк.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l07-slabicne-r-l-w03",
+          "sk": "prst",
+          "uk": "палець",
+          "pronunciationUk": "прст",
+          "exampleSk": "Porezal som si prst.",
+          "exampleUk": "Я порізав палець.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l07-slabicne-r-l-w04",
+          "sk": "krk",
+          "uk": "шия",
+          "pronunciationUk": "крк",
+          "exampleSk": "Bolí ma krk.",
+          "exampleUk": "У мене болить шия (горло).",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l07-slabicne-r-l-w05",
+          "sk": "zmrzlina",
+          "uk": "морозиво",
+          "pronunciationUk": "змрзліна",
+          "exampleSk": "Dáš si zmrzlinu?",
+          "exampleUk": "Будеш морозиво?",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u01-l07-slabicne-r-l-ex01",
+          "lessonId": "a0-u01-l07-slabicne-r-l",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Скільки складів у слові «trh»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "жодного",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "два",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "один",
+              "correct": true
+            }
+          ],
+          "explanation": "r тут працює як голосний: trh — один склад.",
+          "order": 1
+        },
+        {
+          "id": "a0-u01-l07-slabicne-r-l-ex02",
+          "lessonId": "a0-u01-l07-slabicne-r-l",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай слово з перекладом.",
+          "pairs": [
+            {
+              "left": "trh",
+              "right": "ринок"
+            },
+            {
+              "left": "vlk",
+              "right": "вовк"
+            },
+            {
+              "left": "prst",
+              "right": "палець"
+            },
+            {
+              "left": "krk",
+              "right": "шия"
+            },
+            {
+              "left": "zmrzlina",
+              "right": "морозиво"
+            }
+          ],
+          "order": 2,
+          "wordIds": [
+            "a0-u01-l07-slabicne-r-l-w01",
+            "a0-u01-l07-slabicne-r-l-w02",
+            "a0-u01-l07-slabicne-r-l-w03",
+            "a0-u01-l07-slabicne-r-l-w04",
+            "a0-u01-l07-slabicne-r-l-w05"
+          ]
+        },
+        {
+          "id": "a0-u01-l07-slabicne-r-l-ex03",
+          "lessonId": "a0-u01-l07-slabicne-r-l",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Як правильно вимовити «prst»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "одним складом, без вставних звуків",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "«пирст»",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "«перст»",
+              "correct": false
+            }
+          ],
+          "explanation": "Не вставляй голосних: prst — один склад.",
+          "order": 3
+        },
+        {
+          "id": "a0-u01-l07-slabicne-r-l-ex04",
+          "lessonId": "a0-u01-l07-slabicne-r-l",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«ryba» і «riba» звучали б однаково.",
+          "correctAnswer": true,
+          "explanation": "i та y вимовляються однаково — це питання лише правопису.",
+          "order": 4
+        },
+        {
+          "id": "a0-u01-l07-slabicne-r-l-ex05",
+          "lessonId": "a0-u01-l07-slabicne-r-l",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Як звучить «ty» (ти)?",
+          "options": [
+            {
+              "id": "a",
+              "text": "«ци»",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "м’яке «ть» + «і»",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "тверде «т» + «і»",
+              "correct": true
+            }
+          ],
+          "explanation": "Після t літера y дає твердий звук.",
+          "order": 5
+        },
+        {
+          "id": "a0-u01-l07-slabicne-r-l-ex06",
+          "lessonId": "a0-u01-l07-slabicne-r-l",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "i чи y пишеться після цих приголосних?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Після них пишемо y"
+            },
+            {
+              "id": "c2",
+              "title": "Після них пишемо i"
+            }
+          ],
+          "items": [
+            {
+              "sk": "ň",
+              "category": "c2"
+            },
+            {
+              "sk": "ľ",
+              "category": "c2"
+            },
+            {
+              "sk": "c",
+              "category": "c2"
+            },
+            {
+              "sk": "t",
+              "category": "c1"
+            },
+            {
+              "sk": "n",
+              "category": "c1"
+            },
+            {
+              "sk": "j",
+              "category": "c2"
+            },
+            {
+              "sk": "ž",
+              "category": "c2"
+            },
+            {
+              "sk": "d",
+              "category": "c1"
+            },
+            {
+              "sk": "k",
+              "category": "c1"
+            },
+            {
+              "sk": "h",
+              "category": "c1"
+            },
+            {
+              "sk": "š",
+              "category": "c2"
+            },
+            {
+              "sk": "ť",
+              "category": "c2"
+            },
+            {
+              "sk": "ď",
+              "category": "c2"
+            },
+            {
+              "sk": "ch",
+              "category": "c1"
+            },
+            {
+              "sk": "č",
+              "category": "c2"
+            },
+            {
+              "sk": "l",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Тверді приголосні + y, м’які + i.",
+          "order": 6
+        },
+        {
+          "id": "a0-u01-l07-slabicne-r-l-ex07",
+          "lessonId": "a0-u01-l07-slabicne-r-l",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яке слово означає «ринок»?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "trh",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "krk",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "vlk",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "prst",
+              "correct": false
+            }
+          ],
+          "explanation": "trh — ринок (як «торг»).",
+          "order": 7,
+          "wordIds": [
+            "a0-u01-l07-slabicne-r-l-w01",
+            "a0-u01-l07-slabicne-r-l-w02",
+            "a0-u01-l07-slabicne-r-l-w03",
+            "a0-u01-l07-slabicne-r-l-w04"
+          ]
+        },
+        {
+          "id": "a0-u01-l07-slabicne-r-l-ex08",
+          "lessonId": "a0-u01-l07-slabicne-r-l",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери слова, у яких r або l утворюють склад.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "prst",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "deti",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "zmrzlina",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "ryba",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "vlk",
+              "correct": true
+            },
+            {
+              "id": "f",
+              "sk": "voda",
+              "correct": false
+            }
+          ],
+          "explanation": "У vlk, prst, zmrzlina є склад без голосного.",
+          "order": 8,
+          "wordIds": [
+            "a0-u01-l07-slabicne-r-l-w02",
+            "a0-u01-l07-slabicne-r-l-w03",
+            "a0-u01-l07-slabicne-r-l-w05"
+          ]
+        },
+        {
+          "id": "a0-u01-l07-slabicne-r-l-ex09",
+          "lessonId": "a0-u01-l07-slabicne-r-l",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Напиши слово «ринок».",
+          "sentence": "V sobotu idem na ______.",
+          "acceptedAnswers": [
+            "trh"
+          ],
+          "hint": "Три приголосні, один склад.",
+          "explanation": "Ринок — trh.",
+          "order": 9,
+          "wordIds": [
+            "a0-u01-l07-slabicne-r-l-w01"
+          ]
+        },
+        {
+          "id": "a0-u01-l07-slabicne-r-l-ex10",
+          "lessonId": "a0-u01-l07-slabicne-r-l",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Bolí ma krk»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Болить шия/горло",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Болить палець",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Болить голова",
+              "correct": false
+            }
+          ],
+          "explanation": "krk — шия, горло.",
+          "order": 10
+        },
+        {
+          "id": "a0-u01-l07-slabicne-r-l-ex11",
+          "lessonId": "a0-u01-l07-slabicne-r-l",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери слово.",
+          "sentenceParts": [
+            {
+              "text": "Dáš si "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "prst",
+                "zmrzlinu",
+                "trh"
+              ],
+              "correct": "zmrzlinu"
+            },
+            {
+              "text": "?"
+            }
+          ],
+          "explanation": "Dáš si zmrzlinu? — Будеш морозиво?",
+          "order": 11,
+          "wordIds": [
+            "a0-u01-l07-slabicne-r-l-w01",
+            "a0-u01-l07-slabicne-r-l-w03",
+            "a0-u01-l07-slabicne-r-l-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Суботній ринок",
+        "description": "У суботу ти йдеш на ринок у центрі міста. Навколо вивіски й розмови.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "На вивісці «Farmársky trh». Що це?",
+            "options": [
+              {
+                "text": "фермерський ринок",
+                "correct": true
+              },
+              {
+                "text": "ферма",
+                "correct": false
+              },
+              {
+                "text": "фермерська школа",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Продавчиня пропонує: «Zmrzlina, 2 €». Що вона продає?",
+            "options": [
+              {
+                "text": "молоко",
+                "correct": false
+              },
+              {
+                "text": "м’ясо",
+                "correct": false
+              },
+              {
+                "text": "морозиво",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Дитина плаче: «Porezal som si prst!» Що сталося?",
+            "options": [
+              {
+                "text": "порізала палець",
+                "correct": true
+              },
+              {
+                "text": "болить шия",
+                "correct": false
+              },
+              {
+                "text": "бачила вовка",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Скільки складів у слові «vlk»?",
+            "options": [
+              {
+                "text": "три",
+                "correct": false
+              },
+              {
+                "text": "два",
+                "correct": false
+              },
+              {
+                "text": "один",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти пройшов усі звуки словацької! Далі — вчимося читати вивіски."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти пройшов усі звуки словацької! Далі — вчимося читати вивіски.",
+        "nowYouKnow": [
+          "r і l можуть утворювати склад",
+          "i = y в читанні",
+          "тверді + y, м’які + i",
+          "trh, vlk, prst, krk, zmrzlina"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 11,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u01-l08-napisy",
+          "title": "Читаємо вивіски й написи"
+        }
+      }
+    }
+  ]
+}

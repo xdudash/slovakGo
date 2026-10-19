@@ -1,0 +1,842 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u08-l01-nostrifikacia-postup",
+      "sectionId": "b2-u08",
+      "level": "B2",
+      "title": "Нострифікація: процедура й документи",
+      "topic": "Освіта і визнання дипломів",
+      "description": "Як визнати у Словаччині український документ про освіту: куди звертатися, які документи зазвичай потрібні, що означає «рівноцінний» і різницевий іспит та як про все це писати в заяві.",
+      "order": 71,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Розуміти процедуру визнання документа про освіту й упевнено готувати заяву з додатками.",
+      "completionMessage": "Ти знаєш, як проходить визнання документа про освіту. Далі — визнання професійної кваліфікації: що робити, якщо твоя професія регульована.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Освіта і визнання дипломів",
+        "title": "Нострифікація: процедура й документи",
+        "shortDescription": "Розуміти процедуру визнання документа про освіту й упевнено готувати заяву з додатками.",
+        "outcomes": [
+          "розрізняти nostrifikáciu шкільного документа й akademické uznanie диплома",
+          "складати перелік додатків: overená kópia, apostila, úradný preklad, dodatok k diplomu",
+          "розуміти рішення: uznať za rovnocenný s + орудний",
+          "реагувати на вимогу доповнити документи чи скласти rozdielovú skúšku"
+        ],
+        "newWords": [
+          "doklad o vzdelaní",
+          "dodatok k diplomu",
+          "rovnocenný",
+          "rozdielová skúška",
+          "akademické uznanie"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Хто що визнає",
+          "text": "Документ про освіту (doklad o vzdelaní), виданий в Україні, у Словаччині автоматично не діє — його треба визнати. Шкільні документи (свідоцтво про базову освіту, атестат — «maturitné vysvedčenie») зазвичай визнає «okresný úrad v sídle kraja, odbor školstva»; у побуті цю процедуру досі називають «nostrifikácia». Диплом університету для продовження навчання (магістратура, докторантура) визнає сам університет — це «akademické uznanie». Для роботи в регульованій професії потрібне визнання кваліфікації (про це — наступний урок). Правила й компетенції установ часом змінюються, тому перед поданням завжди перевір актуальну інформацію на сайті міністерства освіти чи окружного управління.",
+          "examples": [
+            {
+              "sk": "Maturitné vysvedčenie z Ukrajiny mi uznal okresný úrad v Košiciach.",
+              "uk": "Атестат з України мені визнало окружне управління в Кошицях."
+            },
+            {
+              "sk": "O akademické uznanie diplomu žiadam na fakulte, kde chcem študovať.",
+              "uk": "Про академічне визнання диплома я прошу на факультеті, де хочу навчатися."
+            }
+          ],
+          "shortRule": "шкільний документ → okresný úrad · диплом для навчання → vysoká škola · правила перевіряй актуально",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Документи до заяви",
+          "text": "Набір документів залежить від установи, але найчастіше просять: «žiadosť» (заповнений формуляр); «úradne overená kópia dokladu o vzdelaní» — засвідчену копію документа; «apostila» — апостиль, що підтверджує справжність українського документа; «úradný preklad» — переклад судового перекладача; до диплома ще й «dodatok k diplomu» (додаток із предметами, годинами й оцінками). Іноді додають копію паспорта чи доказ сплати збору. Додатки вводимо формулою «K žiadosti prikladám…» (+ знахідний), а в кінці листа перелічуємо їх після слова «Prílohy:». Документ «opatrený apostilou» — з проставленим апостилем (opatrený + орудний).",
+          "examples": [
+            {
+              "sk": "K žiadosti prikladám úradne overenú kópiu diplomu a dodatok k diplomu.",
+              "uk": "До заяви додаю засвідчену копію диплома й додаток до диплома."
+            },
+            {
+              "sk": "Vysvedčenie musí byť opatrené apostilou.",
+              "uk": "Атестат має бути з проставленим апостилем."
+            }
+          ],
+          "shortRule": "prikladám + знахідний · opatrený apostilou · Prílohy:",
+          "commonMistakes": [
+            {
+              "mistake": "K žiadosti prikladám overená kópia.",
+              "correct": "K žiadosti prikladám overenú kópiu."
+            },
+            {
+              "mistake": "Diplom je opatrený apostila.",
+              "correct": "Diplom je opatrený apostilou."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Рішення: rovnocenný чи rozdielová skúška",
+          "text": "Установа порівнює зміст і обсяг твоєї освіти зі словацькою. Якщо вони відповідають, вона визнає документ «za rovnocenný so slovenským dokladom» — рівноцінним словацькому (uznať za + знахідний; rovnocenný s + орудний). Якщо навчальні плани суттєво відрізняються, установа може вимагати доповнити документи або скласти «rozdielovú skúšku» — різницевий іспит із предметів, яких бракувало. Рішення приходить письмово, а наприкінці в ньому є поучення про те, як його оскаржити. Офіційні тексти люблять пасив: «Doklad bol uznaný.» «Žiadosť bola zamietnutá.»",
+          "examples": [
+            {
+              "sk": "Úrad uznal moje vysvedčenie za rovnocenné so slovenským maturitným vysvedčením.",
+              "uk": "Управління визнало мій атестат рівноцінним словацькому атестату."
+            },
+            {
+              "sk": "Ak sa učebné plány podstatne líšia, úrad môže určiť rozdielovú skúšku.",
+              "uk": "Якщо навчальні плани суттєво відрізняються, управління може призначити різницевий іспит."
+            }
+          ],
+          "shortRule": "uznať za rovnocenný s + орудний · rozdielová skúška · пасив: bol uznaný",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u08-l01-nostrifikacia-postup-w01",
+            "sk": "doklad o vzdelaní",
+            "uk": "документ про освіту",
+            "pronunciationUk": "доклад о вздєлані:",
+            "exampleSk": "K žiadosti priložte úradne overenú kópiu dokladu o vzdelaní.",
+            "exampleUk": "До заяви додайте засвідчену копію документа про освіту."
+          },
+          {
+            "wordId": "b2-u08-l01-nostrifikacia-postup-w02",
+            "sk": "dodatok k diplomu",
+            "uk": "додаток до диплома (з предметами й оцінками)",
+            "pronunciationUk": "додаток к діплому",
+            "exampleSk": "V dodatku k diplomu sú všetky predmety a známky.",
+            "exampleUk": "У додатку до диплома є всі предмети й оцінки."
+          },
+          {
+            "wordId": "b2-u08-l01-nostrifikacia-postup-w03",
+            "sk": "rovnocenný",
+            "uk": "рівноцінний, рівнозначний",
+            "pronunciationUk": "ровноценни:",
+            "exampleSk": "Úrad uznal moje vysvedčenie za rovnocenné so slovenským.",
+            "exampleUk": "Управління визнало мій атестат рівноцінним словацькому."
+          },
+          {
+            "wordId": "b2-u08-l01-nostrifikacia-postup-w04",
+            "sk": "rozdielová skúška",
+            "uk": "різницевий іспит (з предметів, яких бракувало)",
+            "pronunciationUk": "роздієлова: ску:шка",
+            "exampleSk": "Ak sa učebné plány líšia, môžu vám určiť rozdielovú skúšku.",
+            "exampleUk": "Якщо навчальні плани відрізняються, вам можуть призначити різницевий іспит."
+          },
+          {
+            "wordId": "b2-u08-l01-nostrifikacia-postup-w05",
+            "sk": "akademické uznanie",
+            "uk": "академічне визнання (диплома для навчання)",
+            "pronunciationUk": "академіцке: узнаніе",
+            "exampleSk": "O akademické uznanie diplomu žiadate priamo na vysokej škole.",
+            "exampleUk": "Про академічне визнання диплома ви просите безпосередньо у вищій школі."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-w01",
+          "sk": "doklad o vzdelaní",
+          "uk": "документ про освіту",
+          "pronunciationUk": "доклад о вздєлані:",
+          "exampleSk": "K žiadosti priložte úradne overenú kópiu dokladu o vzdelaní.",
+          "exampleUk": "До заяви додайте засвідчену копію документа про освіту.",
+          "level": "B2",
+          "topic": "Освіта і визнання дипломів",
+          "tags": [
+            "b2-u08",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-w02",
+          "sk": "dodatok k diplomu",
+          "uk": "додаток до диплома (з предметами й оцінками)",
+          "pronunciationUk": "додаток к діплому",
+          "exampleSk": "V dodatku k diplomu sú všetky predmety a známky.",
+          "exampleUk": "У додатку до диплома є всі предмети й оцінки.",
+          "level": "B2",
+          "topic": "Освіта і визнання дипломів",
+          "tags": [
+            "b2-u08",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-w03",
+          "sk": "rovnocenný",
+          "uk": "рівноцінний, рівнозначний",
+          "pronunciationUk": "ровноценни:",
+          "exampleSk": "Úrad uznal moje vysvedčenie za rovnocenné so slovenským.",
+          "exampleUk": "Управління визнало мій атестат рівноцінним словацькому.",
+          "level": "B2",
+          "topic": "Освіта і визнання дипломів",
+          "tags": [
+            "b2-u08",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-w04",
+          "sk": "rozdielová skúška",
+          "uk": "різницевий іспит (з предметів, яких бракувало)",
+          "pronunciationUk": "роздієлова: ску:шка",
+          "exampleSk": "Ak sa učebné plány líšia, môžu vám určiť rozdielovú skúšku.",
+          "exampleUk": "Якщо навчальні плани відрізняються, вам можуть призначити різницевий іспит.",
+          "level": "B2",
+          "topic": "Освіта і визнання дипломів",
+          "tags": [
+            "b2-u08",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-w05",
+          "sk": "akademické uznanie",
+          "uk": "академічне визнання (диплома для навчання)",
+          "pronunciationUk": "академіцке: узнаніе",
+          "exampleSk": "O akademické uznanie diplomu žiadate priamo na vysokej škole.",
+          "exampleUk": "Про академічне визнання диплома ви просите безпосередньо у вищій школі.",
+          "level": "B2",
+          "topic": "Освіта і визнання дипломів",
+          "tags": [
+            "b2-u08",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-ex01",
+          "lessonId": "b2-u08-l01-nostrifikacia-postup",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "doklad o vzdelaní",
+              "right": "документ про освіту"
+            },
+            {
+              "left": "dodatok k diplomu",
+              "right": "додаток до диплома з оцінками"
+            },
+            {
+              "left": "rovnocenný",
+              "right": "рівноцінний"
+            },
+            {
+              "left": "rozdielová skúška",
+              "right": "різницевий іспит"
+            },
+            {
+              "left": "akademické uznanie",
+              "right": "визнання диплома для подальшого навчання"
+            },
+            {
+              "left": "apostila",
+              "right": "апостиль"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u08-l01-nostrifikacia-postup-w01",
+            "b2-u08-l01-nostrifikacia-postup-w02",
+            "b2-u08-l01-nostrifikacia-postup-w03",
+            "b2-u08-l01-nostrifikacia-postup-w04",
+            "b2-u08-l01-nostrifikacia-postup-w05"
+          ]
+        },
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-ex02",
+          "lessonId": "b2-u08-l01-nostrifikacia-postup",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Куди найчастіше подають заяву про визнання?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Okresný úrad"
+            },
+            {
+              "id": "c2",
+              "title": "Vysoká škola"
+            }
+          ],
+          "items": [
+            {
+              "sk": "vysvedčenie z deviatej triedy",
+              "category": "c1"
+            },
+            {
+              "sk": "maturitné vysvedčenie z Ukrajiny",
+              "category": "c1"
+            },
+            {
+              "sk": "magisterský diplom pre doktorandské štúdium",
+              "category": "c2"
+            },
+            {
+              "sk": "bakalársky diplom pre magisterské štúdium",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Шкільні документи зазвичай визнає окружне управління; диплом для продовження навчання — сам університет.",
+          "order": 2,
+          "wordIds": [
+            "b2-u08-l01-nostrifikacia-postup-w02"
+          ]
+        },
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-ex03",
+          "lessonId": "b2-u08-l01-nostrifikacia-postup",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "K žiadosti "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "prikladať",
+                "priložený",
+                "prikladám"
+              ],
+              "correct": "prikladám"
+            },
+            {
+              "text": " úradne overenú kópiu vysvedčenia."
+            }
+          ],
+          "explanation": "Потрібна особова форма дієслова: (ja) prikladám — додаю.",
+          "order": 3
+        },
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-ex04",
+          "lessonId": "b2-u08-l01-nostrifikacia-postup",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Úrad uznal vysvedčenie za rovnocenné "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "pre",
+                "na",
+                "so"
+              ],
+              "correct": "so"
+            },
+            {
+              "text": " slovenským maturitným vysvedčením."
+            }
+          ],
+          "explanation": "Rovnocenný s + орудний; перед s + приголосний прийменник має форму «so»: so slovenským.",
+          "order": 4,
+          "wordIds": [
+            "b2-u08-l01-nostrifikacia-postup-w03"
+          ]
+        },
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-ex05",
+          "lessonId": "b2-u08-l01-nostrifikacia-postup",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Diplom musí byť opatrený ______. (апостилем)",
+          "acceptedAnswers": [
+            "apostilou"
+          ],
+          "explanation": "Opatrený + орудний: apostilou.",
+          "order": 5,
+          "wordIds": [
+            "b2-u08-l01-nostrifikacia-postup-w02"
+          ]
+        },
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-ex06",
+          "lessonId": "b2-u08-l01-nostrifikacia-postup",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Ти маєш український бакалаврський диплом і хочеш вступити до магістратури в Кошицях. Куди, найімовірніше, звернешся щодо визнання диплома?",
+          "options": [
+            {
+              "id": "a",
+              "text": "до податкової",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "до університету, де хочеш навчатися",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "до відділу поліції у справах іноземців",
+              "correct": false
+            }
+          ],
+          "explanation": "Академічне визнання для продовження навчання зазвичай здійснює сам університет.",
+          "order": 6
+        },
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-ex07",
+          "lessonId": "b2-u08-l01-nostrifikacia-postup",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Okresný úrad uznala moje vysvedčenie za rovnocenné so slovenským.",
+          "errorToken": "uznala",
+          "correctToken": "uznal",
+          "explanation": "Úrad — чоловічий рід, тому l-форма uznal.",
+          "order": 7,
+          "wordIds": [
+            "b2-u08-l01-nostrifikacia-postup-w03"
+          ]
+        },
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-ex08",
+          "lessonId": "b2-u08-l01-nostrifikacia-postup",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перепиши офіційно, вжий «uznať za rovnocenné so slovenským».",
+          "source": "Úrad povedal, že moje vysvedčenie má rovnakú hodnotu ako slovenské.",
+          "acceptedAnswers": [
+            "Úrad uznal moje vysvedčenie za rovnocenné so slovenským.",
+            "Úrad uznal moje vysvedčenie za rovnocenné so slovenským vysvedčením.",
+            "Moje vysvedčenie úrad uznal za rovnocenné so slovenským."
+          ],
+          "explanation": "uznať + знахідний + za rovnocenné (середній рід, бо vysvedčenie) + so + орудний.",
+          "order": 8,
+          "wordIds": [
+            "b2-u08-l01-nostrifikacia-postup-w03"
+          ]
+        },
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-ex09",
+          "lessonId": "b2-u08-l01-nostrifikacia-postup",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Sofia skončila jedenásť tried na Ukrajine a chce študovať v Košiciach. Fakulta od nej žiada uznané maturitné vysvedčenie. Na okresný úrad v sídle kraja preto podala žiadosť a priložila úradne overenú kópiu vysvedčenia s apostilou, prílohu so známkami a úradný preklad vysvedčenia. O dva týždne prišla výzva: chýbal úradný preklad prílohy so známkami a úrad jej dal desať dní na doplnenie. Sofia preklad doplnila včas. Úrad porovnal jej predmety so slovenskými učebnými plánmi a rozdiely nepovažoval za podstatné, preto rozdielovú skúšku neurčil. Vysvedčenie uznal za rovnocenné so slovenským. Rozhodnutie Sofia priložila k prihláške na vysokú školu.",
+          "questions": [
+            {
+              "question": "Чому Софія звернулася до окружного управління?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "вона хотіла змінити прізвище",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "їй потрібна довідка для роботи",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "факультет вимагає визнаний атестат",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Чого бракувало в першому поданні?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "копії паспорта",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "апостиля на атестаті",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "офіційного перекладу додатка з оцінками",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Чому Софія не складала різницевого іспиту?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "управління не вважало відмінності в предметах суттєвими",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "такого іспиту в Словаччині не буває",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "вона відмовилася його складати",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 9,
+          "wordIds": [
+            "b2-u08-l01-nostrifikacia-postup-w03",
+            "b2-u08-l01-nostrifikacia-postup-w04",
+            "b2-u08-l01-nostrifikacia-postup-w05"
+          ]
+        },
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-ex10",
+          "lessonId": "b2-u08-l01-nostrifikacia-postup",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай перелік документів.",
+          "document": {
+            "title": "Uznanie dokladu o vzdelaní – zoznam príloh (vzor)",
+            "fields": [
+              {
+                "label": "Žiadosť",
+                "value": "vyplnený formulár"
+              },
+              {
+                "label": "Doklad o vzdelaní",
+                "value": "úradne overená kópia s apostilou"
+              },
+              {
+                "label": "Výpis známok",
+                "value": "úradne overená kópia"
+              },
+              {
+                "label": "Preklad",
+                "value": "úradný preklad dokladu aj výpisu známok do slovenčiny"
+              },
+              {
+                "label": "Lehota na vybavenie",
+                "value": "spravidla do 30 dní"
+              }
+            ]
+          },
+          "question": "Що треба перекласти офіційно?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "і сам документ про освіту, і виписку оцінок",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "лише заяву",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "нічого, бо є апостиль",
+              "correct": false
+            }
+          ],
+          "explanation": "Preklad: úradný preklad dokladu aj výpisu známok — перекладають обидва документи.",
+          "order": 10,
+          "wordIds": [
+            "b2-u08-l01-nostrifikacia-postup-w01",
+            "b2-u08-l01-nostrifikacia-postup-w05"
+          ]
+        },
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-ex11",
+          "lessonId": "b2-u08-l01-nostrifikacia-postup",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай лист від університету.",
+          "message": {
+            "sender": "Študijné oddelenie, Filozofická fakulta",
+            "body": "Dobrý deň, pani Bondarenko, ďakujeme za Vašu žiadosť o akademické uznanie bakalárskeho diplomu. Aby sme ju mohli posúdiť, potrebujeme ešte dodatok k diplomu s úradným prekladom. Doklady, prosím, doručte do 15. júna. Ak ich nedoručíte, žiadosť nebudeme môcť posúdiť a nebudete sa môcť zapísať na štúdium. S pozdravom Mgr. Eva Kráľová"
+          },
+          "question": "Що пані Бондаренко має доставити до 15 червня?",
+          "options": [
+            {
+              "id": "a",
+              "text": "додаток до диплома з офіційним перекладом",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "квитанцію про оплату навчання",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "новий диплом",
+              "correct": false
+            }
+          ],
+          "explanation": "Potrebujeme ešte dodatok k diplomu s úradným prekladom — бракує саме додатка з перекладом.",
+          "order": 11,
+          "wordIds": [
+            "b2-u08-l01-nostrifikacia-postup-w01",
+            "b2-u08-l01-nostrifikacia-postup-w02",
+            "b2-u08-l01-nostrifikacia-postup-w05"
+          ]
+        },
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-ex12",
+          "lessonId": "b2-u08-l01-nostrifikacia-postup",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "Úradníčka: «Váš učebný plán sa od nášho podstatne líši, preto Vám určíme rozdielovú skúšku z dejepisu.»",
+          "target": "rozdielovú skúšku",
+          "options": [
+            {
+              "id": "a",
+              "text": "іспит із предмета, якого бракувало в навчальному плані",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "повторний іспит після провалу",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "вступний іспит до університету",
+              "correct": false
+            }
+          ],
+          "explanation": "Rozdielová skúška покриває різницю між навчальними планами.",
+          "order": 12,
+          "wordIds": [
+            "b2-u08-l01-nostrifikacia-postup-w04"
+          ]
+        },
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-ex13",
+          "lessonId": "b2-u08-l01-nostrifikacia-postup",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти пишеш до окружного управління й просиш визнати атестат.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Uznajte mi to vysvedčenie, prosím vás, rýchlo.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Žiadam uznanie maturitného vysvedčenia vydaného na Ukrajine.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Žiadam o uznať maturitné vysvedčenie vydané na Ukrajine.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Žiadam o uznanie maturitného vysvedčenia vydaného na Ukrajine.",
+              "correct": true
+            }
+          ],
+          "explanation": "Žiadať o + знахідний іменника: o uznanie; без «o» чи з інфінітивом — помилка.",
+          "order": 13,
+          "wordIds": [
+            "b2-u08-l01-nostrifikacia-postup-w05"
+          ]
+        },
+        {
+          "id": "b2-u08-l01-nostrifikacia-postup-ex14",
+          "lessonId": "b2-u08-l01-nostrifikacia-postup",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Ak úrad zistí podstatné rozdiely v obsahu vzdelania, môže žiadateľovi určiť rozdielovú skúšku.",
+          "statement": "Різницевий іспит обов’язково складає кожен, хто подає заяву.",
+          "correctAnswer": false,
+          "explanation": "«Môže určiť» — може призначити, і лише коли є суттєві відмінності, а не кожному.",
+          "order": 14,
+          "wordIds": [
+            "b2-u08-l01-nostrifikacia-postup-w01",
+            "b2-u08-l01-nostrifikacia-postup-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Визнання атестата",
+        "description": "Ти готуєш заяву про визнання українського атестата, щоб вступити до словацького університету.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Як сформулюєш прохання?",
+            "options": [
+              {
+                "sk": "Žiadam o uznať moje vysvedčenie.",
+                "correct": false
+              },
+              {
+                "sk": "Žiadam o uznanie maturitného vysvedčenia vydaného na Ukrajine.",
+                "correct": true
+              },
+              {
+                "sk": "Uznajte mi vysvedčenie.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як почнеш перелік додатків?",
+            "options": [
+              {
+                "sk": "K žiadosti prikladám úradne overená kópia vysvedčenia.",
+                "correct": false
+              },
+              {
+                "sk": "K žiadosti prikladám úradne overenú kópiu vysvedčenia s apostilou.",
+                "correct": true
+              },
+              {
+                "sk": "Dávam tam aj nejaké papiere.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Управління вимагає доповнити переклад протягом 10 днів. Що зробиш?",
+            "options": [
+              {
+                "text": "чекатиму на рішення без перекладу",
+                "correct": false
+              },
+              {
+                "text": "доставлю переклад у строк, бо інакше заяву можуть не розглянути",
+                "correct": true
+              },
+              {
+                "text": "подам нову заяву через рік",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як розумієш речення з рішення «Vysvedčenie sa uznáva za rovnocenné so slovenským»?",
+            "options": [
+              {
+                "text": "треба скласти різницевий іспит",
+                "correct": false
+              },
+              {
+                "text": "атестат треба перекласти ще раз",
+                "correct": false
+              },
+              {
+                "text": "атестат має таку саму силу, як словацький",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти знаєш, як проходить визнання документа про освіту. Далі — визнання професійної кваліфікації: що робити, якщо твоя професія регульована."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти знаєш, як проходить визнання документа про освіту. Далі — визнання професійної кваліфікації: що робити, якщо твоя професія регульована.",
+        "nowYouKnow": [
+          "шкільний документ → okresný úrad · диплом для навчання → akademické uznanie на VŠ",
+          "K žiadosti prikladám overenú kópiu · opatrený apostilou · úradný preklad · dodatok k diplomu",
+          "uznať za rovnocenný s + орудний",
+          "rozdielová skúška — коли плани суттєво відрізняються"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u08-l02-uznanie-kvalifikacie",
+          "title": "Визнання професійної кваліфікації"
+        }
+      }
+    }
+  ]
+}

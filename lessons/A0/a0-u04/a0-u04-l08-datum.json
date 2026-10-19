@@ -1,0 +1,773 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u04-l08-datum",
+      "sectionId": "a0-u04",
+      "level": "A0",
+      "title": "Дата: котре сьогодні?",
+      "topic": "Числа, ціни, час",
+      "description": "Порядкові числа для дат: prvý, druhý… Як записати й прочитати дату.",
+      "order": 38,
+      "xpReward": 15,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Розуміти й називати дати.",
+      "completionMessage": "Ти знаєш дати! Далі — великі числа.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Числа, ціни, час",
+        "title": "Дата: котре сьогодні?",
+        "shortDescription": "Розуміти й називати дати.",
+        "outcomes": [
+          "питати Koľkého je dnes?",
+          "читати дату 15. 3.",
+          "утворювати порядкові: prvý, druhý, tretí",
+          "розуміти dnes / zajtra / včera"
+        ],
+        "newWords": [
+          "prvý",
+          "druhý",
+          "tretí",
+          "dnes",
+          "zajtra",
+          "včera",
+          "dátum"
+        ],
+        "exercisesCount": 11,
+        "reward": "+15 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Порядкові числа",
+          "text": "1. prvý, 2. druhý, 3. tretí, 4. štvrtý, 5. piaty, 6. šiesty, 7. siedmy, 8. ôsmy, 9. deviaty, 10. desiaty. Після числа ставлять крапку: 1. = prvý.",
+          "examples": [
+            {
+              "sk": "prvý deň",
+              "uk": "перший день"
+            },
+            {
+              "sk": "tretí týždeň",
+              "uk": "третій тиждень"
+            }
+          ],
+          "shortRule": "Крапка після числа = порядкове.",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Котре сьогодні?",
+          "text": "«Koľkého je dnes?» — котре сьогодні? Відповідь у родовому: «Dnes je pätnásteho marca» (15. 3.). Розмовно часто: «Dnes je pätnásty marec» або просто «pätnásteho».",
+          "examples": [
+            {
+              "sk": "Dnes je prvého mája.",
+              "uk": "Сьогодні перше травня."
+            },
+            {
+              "sk": "Kedy? — Desiateho júna.",
+              "uk": "Коли? — Десятого червня."
+            }
+          ],
+          "shortRule": "Koľkého je dnes?",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Запис дати",
+          "text": "Дату пишуть: 15. 3. 2026 або 15. marca 2026. «Dnes» — сьогодні, «zajtra» — завтра, «včera» — учора, «pozajtra» — післязавтра.",
+          "examples": [
+            {
+              "sk": "Termín: 4. 5. o 10:00",
+              "uk": "Термін: 4 травня о 10:00"
+            },
+            {
+              "sk": "Zajtra je piatok.",
+              "uk": "Завтра п’ятниця."
+            }
+          ],
+          "shortRule": "15. 3. = pätnásteho marca",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u04-l08-datum-w01",
+            "sk": "prvý",
+            "uk": "перший",
+            "pronunciationUk": "перві:",
+            "exampleSk": "Prvý deň v práci.",
+            "exampleUk": "Перший день на роботі."
+          },
+          {
+            "wordId": "a0-u04-l08-datum-w02",
+            "sk": "druhý",
+            "uk": "другий",
+            "pronunciationUk": "другі:",
+            "exampleSk": "Bývam na druhom poschodí.",
+            "exampleUk": "Я живу на другому поверсі."
+          },
+          {
+            "wordId": "a0-u04-l08-datum-w03",
+            "sk": "tretí",
+            "uk": "третій",
+            "pronunciationUk": "треті:",
+            "exampleSk": "Je to tretí dom vpravo.",
+            "exampleUk": "Це третій будинок праворуч."
+          },
+          {
+            "wordId": "a0-u04-l08-datum-w04",
+            "sk": "dnes",
+            "uk": "сьогодні",
+            "pronunciationUk": "днєс",
+            "exampleSk": "Dnes je pondelok.",
+            "exampleUk": "Сьогодні понеділок."
+          },
+          {
+            "wordId": "a0-u04-l08-datum-w05",
+            "sk": "zajtra",
+            "uk": "завтра",
+            "pronunciationUk": "зайтра",
+            "exampleSk": "Zajtra mám voľno.",
+            "exampleUk": "Завтра в мене вихідний."
+          },
+          {
+            "wordId": "a0-u04-l08-datum-w06",
+            "sk": "včera",
+            "uk": "учора",
+            "pronunciationUk": "фчера",
+            "exampleSk": "Včera som bola u lekára.",
+            "exampleUk": "Учора я була в лікаря."
+          },
+          {
+            "wordId": "a0-u04-l08-datum-w07",
+            "sk": "dátum",
+            "uk": "дата",
+            "pronunciationUk": "да:тум",
+            "exampleSk": "Napíšte dnešný dátum.",
+            "exampleUk": "Напишіть сьогоднішню дату."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u04-l08-datum-w01",
+          "sk": "prvý",
+          "uk": "перший",
+          "pronunciationUk": "перві:",
+          "exampleSk": "Prvý deň v práci.",
+          "exampleUk": "Перший день на роботі.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l08-datum-w02",
+          "sk": "druhý",
+          "uk": "другий",
+          "pronunciationUk": "другі:",
+          "exampleSk": "Bývam na druhom poschodí.",
+          "exampleUk": "Я живу на другому поверсі.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l08-datum-w03",
+          "sk": "tretí",
+          "uk": "третій",
+          "pronunciationUk": "треті:",
+          "exampleSk": "Je to tretí dom vpravo.",
+          "exampleUk": "Це третій будинок праворуч.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l08-datum-w04",
+          "sk": "dnes",
+          "uk": "сьогодні",
+          "pronunciationUk": "днєс",
+          "exampleSk": "Dnes je pondelok.",
+          "exampleUk": "Сьогодні понеділок.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l08-datum-w05",
+          "sk": "zajtra",
+          "uk": "завтра",
+          "pronunciationUk": "зайтра",
+          "exampleSk": "Zajtra mám voľno.",
+          "exampleUk": "Завтра в мене вихідний.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l08-datum-w06",
+          "sk": "včera",
+          "uk": "учора",
+          "pronunciationUk": "фчера",
+          "exampleSk": "Včera som bola u lekára.",
+          "exampleUk": "Учора я була в лікаря.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l08-datum-w07",
+          "sk": "dátum",
+          "uk": "дата",
+          "pronunciationUk": "да:тум",
+          "exampleSk": "Napíšte dnešný dátum.",
+          "exampleUk": "Напишіть сьогоднішню дату.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u04-l08-datum-ex01",
+          "lessonId": "a0-u04-l08-datum",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "1.",
+              "right": "prvý"
+            },
+            {
+              "left": "2.",
+              "right": "druhý"
+            },
+            {
+              "left": "3.",
+              "right": "tretí"
+            },
+            {
+              "left": "4.",
+              "right": "štvrtý"
+            },
+            {
+              "left": "5.",
+              "right": "piaty"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a0-u04-l08-datum-w01",
+            "a0-u04-l08-datum-w02",
+            "a0-u04-l08-datum-w03"
+          ]
+        },
+        {
+          "id": "a0-u04-l08-datum-ex02",
+          "lessonId": "a0-u04-l08-datum",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Як прочитати дату «1. 5.»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "prvého mája",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "jeden päť",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "prvý piaty",
+              "correct": false
+            }
+          ],
+          "explanation": "1. 5. — перше травня, prvého mája.",
+          "order": 2,
+          "wordIds": [
+            "a0-u04-l08-datum-w01"
+          ]
+        },
+        {
+          "id": "a0-u04-l08-datum-ex03",
+          "lessonId": "a0-u04-l08-datum",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Минуле, теперішнє чи майбутнє?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Минуле"
+            },
+            {
+              "id": "c2",
+              "title": "Теперішнє"
+            },
+            {
+              "id": "c3",
+              "title": "Майбутнє"
+            }
+          ],
+          "items": [
+            {
+              "sk": "dnes",
+              "category": "c2"
+            },
+            {
+              "sk": "minulý týždeň",
+              "category": "c1"
+            },
+            {
+              "sk": "včera",
+              "category": "c1"
+            },
+            {
+              "sk": "teraz",
+              "category": "c2"
+            },
+            {
+              "sk": "zajtra",
+              "category": "c3"
+            },
+            {
+              "sk": "pozajtra",
+              "category": "c3"
+            }
+          ],
+          "explanation": "Часові слова.",
+          "order": 3,
+          "wordIds": [
+            "a0-u04-l08-datum-w04",
+            "a0-u04-l08-datum-w05",
+            "a0-u04-l08-datum-w06"
+          ]
+        },
+        {
+          "id": "a0-u04-l08-datum-ex04",
+          "lessonId": "a0-u04-l08-datum",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "blankId": "b1",
+              "options": [
+                "Zajtra",
+                "Včera"
+              ],
+              "correct": "Včera"
+            },
+            {
+              "text": " som bol v Žiline. (минулий час)"
+            }
+          ],
+          "explanation": "som bol — минуле → včera.",
+          "order": 4,
+          "wordIds": [
+            "a0-u04-l08-datum-w05",
+            "a0-u04-l08-datum-w06"
+          ]
+        },
+        {
+          "id": "a0-u04-l08-datum-ex05",
+          "lessonId": "a0-u04-l08-datum",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Ak je dnes pondelok, zajtra je ______.",
+          "acceptedAnswers": [
+            "utorok"
+          ],
+          "explanation": "Після понеділка — вівторок.",
+          "order": 5,
+          "wordIds": [
+            "a0-u04-l08-datum-w04",
+            "a0-u04-l08-datum-w05"
+          ]
+        },
+        {
+          "id": "a0-u04-l08-datum-ex06",
+          "lessonId": "a0-u04-l08-datum",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай запрошення.",
+          "document": {
+            "title": "Pozvánka na pohovor",
+            "fields": [
+              {
+                "label": "Meno",
+                "value": "Taras Bilyi"
+              },
+              {
+                "label": "Dátum",
+                "value": "12. 9. 2026"
+              },
+              {
+                "label": "Čas",
+                "value": "10:30"
+              },
+              {
+                "label": "Miesto",
+                "value": "Kancelária 2, Hlavná 4"
+              }
+            ]
+          },
+          "question": "Коли співбесіда?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "12 вересня о 10:30",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "9 грудня о 10:30",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "12 вересня о 2:00",
+              "correct": false
+            }
+          ],
+          "explanation": "12. 9. — дванадцяте вересня.",
+          "order": 6,
+          "wordIds": [
+            "a0-u04-l08-datum-w07"
+          ]
+        },
+        {
+          "id": "a0-u04-l08-datum-ex07",
+          "lessonId": "a0-u04-l08-datum",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Запис «3. 10.» означає третє жовтня.",
+          "correctAnswer": true,
+          "explanation": "Спочатку день, потім місяць.",
+          "order": 7
+        },
+        {
+          "id": "a0-u04-l08-datum-ex08",
+          "lessonId": "a0-u04-l08-datum",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kolegyňa",
+              "sk": "Koľkého je dnes?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Dnes je štvrtok hodín.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Je dvadsať.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Dnes je dvadsiateho októbra.",
+              "correct": true
+            }
+          ],
+          "explanation": "Дата в родовому: dvadsiateho októbra.",
+          "order": 8,
+          "wordIds": [
+            "a0-u04-l08-datum-w04"
+          ]
+        },
+        {
+          "id": "a0-u04-l08-datum-ex09",
+          "lessonId": "a0-u04-l08-datum",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що завтра в тебе вихідний.",
+          "tokens": [
+            "mám",
+            "voľno",
+            ".",
+            "Zajtra"
+          ],
+          "correctOrder": [
+            "Zajtra",
+            "mám",
+            "voľno",
+            "."
+          ],
+          "explanation": "zajtra — завтра.",
+          "order": 9,
+          "wordIds": [
+            "a0-u04-l08-datum-w05"
+          ]
+        },
+        {
+          "id": "a0-u04-l08-datum-ex10",
+          "lessonId": "a0-u04-l08-datum",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Пані на рецепції питає, коли ти приїхав(ла) (учора).",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Pozajtra.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Zajtra.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Včera.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Dnes ráno zajtra.",
+              "correct": false
+            }
+          ],
+          "explanation": "Учора — včera.",
+          "order": 10,
+          "wordIds": [
+            "a0-u04-l08-datum-w04",
+            "a0-u04-l08-datum-w05",
+            "a0-u04-l08-datum-w06"
+          ]
+        },
+        {
+          "id": "a0-u04-l08-datum-ex11",
+          "lessonId": "a0-u04-l08-datum",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери всі порядкові числівники.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "tretí",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "piaty",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "tri",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "jeden",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "prvý",
+              "correct": true
+            },
+            {
+              "id": "f",
+              "sk": "päť",
+              "correct": false
+            }
+          ],
+          "explanation": "Порядкові: prvý, tretí, piaty.",
+          "order": 11,
+          "wordIds": [
+            "a0-u04-l08-datum-w01",
+            "a0-u04-l08-datum-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Лист зі школи",
+        "description": "Ти отримав(ла) листа від класного керівника дитини.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Rodičovské združenie bude 18. 9.» Коли збори?",
+            "options": [
+              {
+                "sk": "9 серпня",
+                "correct": false
+              },
+              {
+                "sk": "18 вересня о 9:00",
+                "correct": false
+              },
+              {
+                "sk": "18 вересня",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Výlet je zajtra.» Коли екскурсія?",
+            "options": [
+              {
+                "sk": "учора",
+                "correct": false
+              },
+              {
+                "sk": "завтра",
+                "correct": true
+              },
+              {
+                "sk": "сьогодні",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти хочеш уточнити дату.",
+            "options": [
+              {
+                "sk": "Koľko je rodičovské?",
+                "correct": false
+              },
+              {
+                "sk": "O koľkej dnes je zajtra?",
+                "correct": false
+              },
+              {
+                "sk": "Koľkého je rodičovské združenie?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Prvý deň školy je druhého septembra.» Коли починається школа?",
+            "options": [
+              {
+                "sk": "12 вересня",
+                "correct": false
+              },
+              {
+                "sk": "2 вересня",
+                "correct": true
+              },
+              {
+                "sk": "1 вересня",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти знаєш дати! Далі — великі числа."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти знаєш дати! Далі — великі числа.",
+        "nowYouKnow": [
+          "prvý, druhý, tretí…",
+          "Koľkého je dnes?",
+          "15. 3. = pätnásteho marca",
+          "dnes, zajtra, včera"
+        ],
+        "newWordsCount": 7,
+        "exercisesCompleted": 11,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u04-l09-velke-cisla",
+          "title": "Великі числа: сотні й тисячі"
+        }
+      }
+    }
+  ]
+}

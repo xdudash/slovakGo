@@ -1,0 +1,847 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u14-l03-teplota",
+      "sectionId": "a1-u14",
+      "level": "A1",
+      "title": "Температура",
+      "topic": "Погода і пори року",
+      "description": "Скільки градусів? Jeden stupeň, dva stupne, päť stupňov; mínus, pod nulou; mráz, chladno, mrzne.",
+      "order": 133,
+      "xpReward": 25,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Сказати й зрозуміти температуру повітря та описати холод.",
+      "completionMessage": "Ти говориш про температуру. Далі — прогноз погоди.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Погода і пори року",
+        "title": "Температура",
+        "shortDescription": "Сказати й зрозуміти температуру повітря та описати холод.",
+        "outcomes": [
+          "питати Koľko je vonku stupňov?",
+          "казати jeden stupeň / dva stupne / päť stupňov",
+          "розуміти mínus, pod nulou, nad nulou",
+          "описувати chladno, mráz, mrznem"
+        ],
+        "newWords": [
+          "teplota",
+          "stupeň",
+          "teplomer",
+          "mráz",
+          "chladno",
+          "mrznúť"
+        ],
+        "exercisesCount": 14,
+        "reward": "+25 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Koľko je stupňov?",
+          "text": "«Teplota» — температура. Питаємо: «Koľko je vonku stupňov?» — скільки надворі градусів? Відповідь: «Je dvadsať stupňov». Слово «stupeň» змінюється після числа, як українське «градус — градуси — градусів».",
+          "examples": [
+            {
+              "sk": "Vonku je osemnásť stupňov.",
+              "uk": "Надворі вісімнадцять градусів."
+            }
+          ],
+          "shortRule": "Koľko je stupňov?",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "1 — 2–4 — 5+",
+          "text": "«Jeden stupeň» (je), «dva / tri / štyri stupne» (sú), «päť, desať, dvadsať… stupňov» (je). Тобто: «Je jeden stupeň», «Sú tri stupne», «Je osem stupňov». Нуль — «nula stupňov».",
+          "examples": [
+            {
+              "sk": "Vonku sú tri stupne.",
+              "uk": "Надворі три градуси."
+            },
+            {
+              "sk": "Je päť stupňov.",
+              "uk": "П’ять градусів."
+            }
+          ],
+          "shortRule": "1 stupeň, 2–4 stupne, 5+ stupňov",
+          "commonMistakes": [
+            {
+              "mistake": "Je päť stupne.",
+              "correct": "Je päť stupňov."
+            },
+            {
+              "mistake": "Je dva stupňov.",
+              "correct": "Sú dva stupne."
+            },
+            {
+              "mistake": "Koľko je gradusov?",
+              "correct": "Koľko je stupňov?"
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Pod nulou",
+          "text": "Нижче нуля: «mínus päť» або «päť stupňov pod nulou». Вище нуля — «nad nulou». «Mráz» — мороз, «mrzne» — морозить. Про себе: «Mrznem!» або «Je mi zima» — мені холодно. «Chladno» — прохолодно.",
+          "examples": [
+            {
+              "sk": "V noci mrzne.",
+              "uk": "Уночі морозить."
+            },
+            {
+              "sk": "Teplomer ukazuje mínus osem.",
+              "uk": "Термометр показує мінус вісім."
+            }
+          ],
+          "shortRule": "pod nulou / nad nulou",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u14-l03-teplota-w01",
+            "sk": "teplota",
+            "uk": "температура",
+            "pronunciationUk": "тєплота",
+            "exampleSk": "V lete teplota stúpa nad tridsať stupňov.",
+            "exampleUk": "Улітку температура піднімається понад тридцять градусів."
+          },
+          {
+            "wordId": "a1-u14-l03-teplota-w02",
+            "sk": "stupeň",
+            "uk": "градус",
+            "pronunciationUk": "ступень",
+            "exampleSk": "Vonku je jeden stupeň.",
+            "exampleUk": "Надворі один градус."
+          },
+          {
+            "wordId": "a1-u14-l03-teplota-w03",
+            "sk": "teplomer",
+            "uk": "термометр",
+            "pronunciationUk": "тєпломер",
+            "exampleSk": "Teplomer visí za oknom.",
+            "exampleUk": "Термометр висить за вікном."
+          },
+          {
+            "wordId": "a1-u14-l03-teplota-w04",
+            "sk": "mráz",
+            "uk": "мороз",
+            "pronunciationUk": "мра:з",
+            "exampleSk": "V januári je silný mráz.",
+            "exampleUk": "У січні сильний мороз."
+          },
+          {
+            "wordId": "a1-u14-l03-teplota-w05",
+            "sk": "chladno",
+            "uk": "прохолодно",
+            "pronunciationUk": "хладно",
+            "exampleSk": "Večer je chladno, vezmi si bundu.",
+            "exampleUk": "Увечері прохолодно, візьми куртку."
+          },
+          {
+            "wordId": "a1-u14-l03-teplota-w06",
+            "sk": "mrznúť",
+            "uk": "мерзнути; морозити",
+            "pronunciationUk": "мрзну:т",
+            "exampleSk": "V noci mrzne a ráno je na ceste ľad.",
+            "exampleUk": "Уночі морозить, а вранці на дорозі лід."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u14-l03-teplota-w01",
+          "sk": "teplota",
+          "uk": "температура",
+          "pronunciationUk": "тєплота",
+          "exampleSk": "V lete teplota stúpa nad tridsať stupňov.",
+          "exampleUk": "Улітку температура піднімається понад тридцять градусів.",
+          "level": "A1",
+          "topic": "Погода і пори року",
+          "tags": [
+            "a1-u14",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u14-l03-teplota-w02",
+          "sk": "stupeň",
+          "uk": "градус",
+          "pronunciationUk": "ступень",
+          "exampleSk": "Vonku je jeden stupeň.",
+          "exampleUk": "Надворі один градус.",
+          "level": "A1",
+          "topic": "Погода і пори року",
+          "tags": [
+            "a1-u14",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u14-l03-teplota-w03",
+          "sk": "teplomer",
+          "uk": "термометр",
+          "pronunciationUk": "тєпломер",
+          "exampleSk": "Teplomer visí za oknom.",
+          "exampleUk": "Термометр висить за вікном.",
+          "level": "A1",
+          "topic": "Погода і пори року",
+          "tags": [
+            "a1-u14",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u14-l03-teplota-w04",
+          "sk": "mráz",
+          "uk": "мороз",
+          "pronunciationUk": "мра:з",
+          "exampleSk": "V januári je silný mráz.",
+          "exampleUk": "У січні сильний мороз.",
+          "level": "A1",
+          "topic": "Погода і пори року",
+          "tags": [
+            "a1-u14",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u14-l03-teplota-w05",
+          "sk": "chladno",
+          "uk": "прохолодно",
+          "pronunciationUk": "хладно",
+          "exampleSk": "Večer je chladno, vezmi si bundu.",
+          "exampleUk": "Увечері прохолодно, візьми куртку.",
+          "level": "A1",
+          "topic": "Погода і пори року",
+          "tags": [
+            "a1-u14",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u14-l03-teplota-w06",
+          "sk": "mrznúť",
+          "uk": "мерзнути; морозити",
+          "pronunciationUk": "мрзну:т",
+          "exampleSk": "V noci mrzne a ráno je na ceste ľad.",
+          "exampleUk": "Уночі морозить, а вранці на дорозі лід.",
+          "level": "A1",
+          "topic": "Погода і пори року",
+          "tags": [
+            "a1-u14",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u14-l03-teplota-ex01",
+          "lessonId": "a1-u14-l03-teplota",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "teplota",
+              "right": "температура"
+            },
+            {
+              "left": "stupeň",
+              "right": "градус"
+            },
+            {
+              "left": "teplomer",
+              "right": "термометр"
+            },
+            {
+              "left": "mráz",
+              "right": "мороз"
+            },
+            {
+              "left": "chladno",
+              "right": "прохолодно"
+            },
+            {
+              "left": "mrznúť",
+              "right": "мерзнути"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u14-l03-teplota-w01",
+            "a1-u14-l03-teplota-w02",
+            "a1-u14-l03-teplota-w03",
+            "a1-u14-l03-teplota-w04",
+            "a1-u14-l03-teplota-w05",
+            "a1-u14-l03-teplota-w06"
+          ]
+        },
+        {
+          "id": "a1-u14-l03-teplota-ex02",
+          "lessonId": "a1-u14-l03-teplota",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Vonku je desať "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "stupňov",
+                "stupeň",
+                "stupne"
+              ],
+              "correct": "stupňov"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Після 5 і більше — stupňov.",
+          "order": 2,
+          "wordIds": [
+            "a1-u14-l03-teplota-w01",
+            "a1-u14-l03-teplota-w02"
+          ]
+        },
+        {
+          "id": "a1-u14-l03-teplota-ex03",
+          "lessonId": "a1-u14-l03-teplota",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Vonku "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "je",
+                "sú"
+              ],
+              "correct": "sú"
+            },
+            {
+              "text": " tri stupne."
+            }
+          ],
+          "explanation": "2–4: sú … stupne.",
+          "order": 3,
+          "wordIds": [
+            "a1-u14-l03-teplota-w01",
+            "a1-u14-l03-teplota-w02"
+          ]
+        },
+        {
+          "id": "a1-u14-l03-teplota-ex04",
+          "lessonId": "a1-u14-l03-teplota",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Яка форма слова?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "stupeň"
+            },
+            {
+              "id": "c2",
+              "title": "stupne"
+            },
+            {
+              "id": "c3",
+              "title": "stupňov"
+            }
+          ],
+          "items": [
+            {
+              "sk": "tri",
+              "category": "c2"
+            },
+            {
+              "sk": "nula",
+              "category": "c3"
+            },
+            {
+              "sk": "dvadsať",
+              "category": "c3"
+            },
+            {
+              "sk": "štyri",
+              "category": "c2"
+            },
+            {
+              "sk": "dva",
+              "category": "c2"
+            },
+            {
+              "sk": "desať",
+              "category": "c3"
+            },
+            {
+              "sk": "päť",
+              "category": "c3"
+            },
+            {
+              "sk": "jeden",
+              "category": "c1"
+            }
+          ],
+          "explanation": "1 — stupeň, 2–4 — stupne, 0 і 5+ — stupňov.",
+          "order": 4,
+          "wordIds": [
+            "a1-u14-l03-teplota-w01",
+            "a1-u14-l03-teplota-w02"
+          ]
+        },
+        {
+          "id": "a1-u14-l03-teplota-ex05",
+          "lessonId": "a1-u14-l03-teplota",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Je päť stupňov pod nulou»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "П’ять градусів у приміщенні",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Мінус п’ять градусів",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Плюс п’ять градусів",
+              "correct": false
+            }
+          ],
+          "explanation": "pod nulou — нижче нуля.",
+          "order": 5,
+          "wordIds": [
+            "a1-u14-l03-teplota-w01"
+          ]
+        },
+        {
+          "id": "a1-u14-l03-teplota-ex06",
+          "lessonId": "a1-u14-l03-teplota",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Mínus osem» і «osem stupňov pod nulou» — це та сама температура.",
+          "correctAnswer": true,
+          "explanation": "Обидва вирази означають −8 °C.",
+          "order": 6,
+          "wordIds": [
+            "a1-u14-l03-teplota-w01",
+            "a1-u14-l03-teplota-w02"
+          ]
+        },
+        {
+          "id": "a1-u14-l03-teplota-ex07",
+          "lessonId": "a1-u14-l03-teplota",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Teplomer ukazuje dvadsať ______. (градусів)",
+          "acceptedAnswers": [
+            "stupňov"
+          ],
+          "explanation": "dvadsať → stupňov.",
+          "order": 7,
+          "wordIds": [
+            "a1-u14-l03-teplota-w01",
+            "a1-u14-l03-teplota-w02",
+            "a1-u14-l03-teplota-w03"
+          ]
+        },
+        {
+          "id": "a1-u14-l03-teplota-ex08",
+          "lessonId": "a1-u14-l03-teplota",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Dnes ráno boli dva stupňov pod nulou.",
+          "errorToken": "stupňov",
+          "correctToken": "stupne",
+          "explanation": "2–4 — stupne.",
+          "order": 8,
+          "wordIds": [
+            "a1-u14-l03-teplota-w01",
+            "a1-u14-l03-teplota-w02"
+          ]
+        },
+        {
+          "id": "a1-u14-l03-teplota-ex09",
+          "lessonId": "a1-u14-l03-teplota",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що вночі морозить.",
+          "tokens": [
+            "mrzne",
+            "V",
+            ".",
+            "noci"
+          ],
+          "correctOrder": [
+            "V",
+            "noci",
+            "mrzne",
+            "."
+          ],
+          "explanation": "mrznúť → mrzne.",
+          "order": 9,
+          "wordIds": [
+            "a1-u14-l03-teplota-w01",
+            "a1-u14-l03-teplota-w06"
+          ]
+        },
+        {
+          "id": "a1-u14-l03-teplota-ex10",
+          "lessonId": "a1-u14-l03-teplota",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай табло на зупинці.",
+          "document": {
+            "title": "Košice — Hlavná",
+            "fields": [
+              {
+                "label": "Čas",
+                "value": "7:45"
+              },
+              {
+                "label": "Teplota",
+                "value": "−6 °C"
+              },
+              {
+                "label": "Najbližší spoj",
+                "value": "linka 12 o 7:52"
+              }
+            ]
+          },
+          "question": "Яка зараз температура?",
+          "options": [
+            {
+              "id": "a",
+              "text": "плюс шість градусів",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "мінус шість градусів",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "шістнадцять градусів",
+              "correct": false
+            }
+          ],
+          "explanation": "−6 °C — mínus šesť stupňov.",
+          "order": 10,
+          "wordIds": [
+            "a1-u14-l03-teplota-w01"
+          ]
+        },
+        {
+          "id": "a1-u14-l03-teplota-ex11",
+          "lessonId": "a1-u14-l03-teplota",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kolega",
+              "sk": "Brr, mrznem! Koľko je vonku stupňov?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Asi mínus desať stupne. Je silná mráz.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Asi mínus desať. Je silný mráz.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Mínus desať je mrzne.",
+              "correct": false
+            }
+          ],
+          "explanation": "mráz — ч. р.: silný mráz.",
+          "order": 11,
+          "wordIds": [
+            "a1-u14-l03-teplota-w01",
+            "a1-u14-l03-teplota-w02",
+            "a1-u14-l03-teplota-w04",
+            "a1-u14-l03-teplota-w06"
+          ]
+        },
+        {
+          "id": "a1-u14-l03-teplota-ex12",
+          "lessonId": "a1-u14-l03-teplota",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти заходиш у холодну кімнату й хочеш сказати, що мерзнеш.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Mrznem.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Mám mráz.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Som zima.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Je mi mrznúť.",
+              "correct": false
+            }
+          ],
+          "explanation": "mrznúť → mrznem (я мерзну).",
+          "order": 12,
+          "wordIds": [
+            "a1-u14-l03-teplota-w01",
+            "a1-u14-l03-teplota-w04",
+            "a1-u14-l03-teplota-w06"
+          ]
+        },
+        {
+          "id": "a1-u14-l03-teplota-ex13",
+          "lessonId": "a1-u14-l03-teplota",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Vonku je štyri stupňov.",
+          "acceptedAnswers": [
+            "Vonku sú štyri stupne."
+          ],
+          "explanation": "2–4: sú … stupne.",
+          "order": 13,
+          "wordIds": [
+            "a1-u14-l03-teplota-w01",
+            "a1-u14-l03-teplota-w02"
+          ]
+        },
+        {
+          "id": "a1-u14-l03-teplota-ex14",
+          "lessonId": "a1-u14-l03-teplota",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні речення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Sú dva stupne.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Je osem stupňov.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Je päť stupne.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Sú jeden stupňov.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Je jeden stupeň.",
+              "correct": true
+            }
+          ],
+          "explanation": "1 stupeň, 2–4 stupne, 5+ stupňov.",
+          "order": 14,
+          "wordIds": [
+            "a1-u14-l03-teplota-w01",
+            "a1-u14-l03-teplota-w02"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Холодний ранок",
+        "description": "Січень. Ти чекаєш на автобус разом із сусідом.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Сусід: «Koľko je dnes stupňov?» (мінус вісім)",
+            "options": [
+              {
+                "sk": "Mínus osem stupne.",
+                "correct": false
+              },
+              {
+                "sk": "Osem mínus stupeň.",
+                "correct": false
+              },
+              {
+                "sk": "Mínus osem stupňov.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Сусід: «V noci bolo až mínus pätnásť!» Що він каже?",
+            "options": [
+              {
+                "text": "уночі буде мінус п’ятнадцять",
+                "correct": false
+              },
+              {
+                "text": "уночі було плюс п’ятнадцять",
+                "correct": false
+              },
+              {
+                "text": "уночі було аж мінус п’ятнадцять",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти кажеш, що мерзнеш, бо сильний мороз.",
+            "options": [
+              {
+                "sk": "Som mráz.",
+                "correct": false
+              },
+              {
+                "sk": "Mrznúť, je silná mráz.",
+                "correct": false
+              },
+              {
+                "sk": "Mrznem, je silný mráz.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти показуєш на термометр біля аптеки: «−6».",
+            "options": [
+              {
+                "sk": "Teplomer mínus šesť je.",
+                "correct": false
+              },
+              {
+                "sk": "Teplomer ukazuje mínus šesť.",
+                "correct": true
+              },
+              {
+                "sk": "Teplomer ukazuje mínus šiesty.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти говориш про температуру. Далі — прогноз погоди."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти говориш про температуру. Далі — прогноз погоди.",
+        "nowYouKnow": [
+          "teplota, stupeň, teplomer",
+          "jeden stupeň / dva stupne / päť stupňov",
+          "mínus, pod nulou, nad nulou",
+          "mráz, mrzne, chladno, je mi zima"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u14-l04-predpoved",
+          "title": "Прогноз погоди"
+        }
+      }
+    }
+  ]
+}

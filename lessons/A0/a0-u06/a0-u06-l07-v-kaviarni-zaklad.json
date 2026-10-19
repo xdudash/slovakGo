@@ -1,0 +1,818 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u06-l07-v-kaviarni-zaklad",
+      "sectionId": "a0-u06",
+      "level": "A0",
+      "title": "У кав’ярні",
+      "topic": "Перші потреби",
+      "description": "Перше замовлення: kaviareň, minerálka, džús, koláč, čašník, účet.",
+      "order": 57,
+      "xpReward": 15,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Замовити напій і десерт та попросити рахунок.",
+      "completionMessage": "Ти вже замовляєш у кафе. Далі — аптека.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Перші потреби",
+        "title": "У кав’ярні",
+        "shortDescription": "Замовити напій і десерт та попросити рахунок.",
+        "outcomes": [
+          "замовляти Prosím si… / Dám si…",
+          "розуміти Čo si dáte?",
+          "просити рахунок: Účet, prosím",
+          "розрізняти minerálka perlivá / neperlivá"
+        ],
+        "newWords": [
+          "kaviareň",
+          "minerálka",
+          "džús",
+          "koláč",
+          "čašník",
+          "účet"
+        ],
+        "exercisesCount": 12,
+        "reward": "+15 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Замовлення",
+          "text": "Офіціант: «Čo si dáte?» (що будете?). Ти: «Dám si kávu» або «Prosím si čaj». Ввічливіше: «Chcel(a) by som…».",
+          "examples": [
+            {
+              "sk": "Dám si cappuccino.",
+              "uk": "Я візьму капучино."
+            },
+            {
+              "sk": "Prosím si koláč.",
+              "uk": "Мені пиріжне, будь ласка."
+            }
+          ],
+          "shortRule": "Dám si… / Prosím si…",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Напої",
+          "text": "minerálka — мінеральна вода: «perlivá» (з газом) чи «neperlivá» (без газу). džús — сік, čaj — чай, káva — кава (espresso, cappuccino, latte).",
+          "examples": [
+            {
+              "sk": "Minerálku neperlivú, prosím.",
+              "uk": "Мінералку без газу, будь ласка."
+            },
+            {
+              "sk": "Pomarančový džús.",
+              "uk": "Апельсиновий сік."
+            }
+          ],
+          "shortRule": "perlivá — з газом",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Рахунок",
+          "text": "«Účet, prosím» або «Zaplatím, prosím» — рахунок, будь ласка. «Spolu alebo zvlášť?» — разом чи окремо? Чайові зазвичай 5–10 %.",
+          "examples": [
+            {
+              "sk": "Platíme spolu.",
+              "uk": "Платимо разом."
+            },
+            {
+              "sk": "Zvlášť, prosím.",
+              "uk": "Окремо, будь ласка."
+            }
+          ],
+          "shortRule": "spolu / zvlášť",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u06-l07-v-kaviarni-zaklad-w01",
+            "sk": "kaviareň",
+            "uk": "кав’ярня",
+            "pronunciationUk": "каварень",
+            "exampleSk": "Stretneme sa v kaviarni na rohu.",
+            "exampleUk": "Зустрінемося в кав’ярні на розі."
+          },
+          {
+            "wordId": "a0-u06-l07-v-kaviarni-zaklad-w02",
+            "sk": "minerálka",
+            "uk": "мінеральна вода",
+            "pronunciationUk": "мінера:лка",
+            "exampleSk": "Jednu minerálku, prosím.",
+            "exampleUk": "Одну мінералку, будь ласка."
+          },
+          {
+            "wordId": "a0-u06-l07-v-kaviarni-zaklad-w03",
+            "sk": "džús",
+            "uk": "сік",
+            "pronunciationUk": "джу:с",
+            "exampleSk": "Deti chcú jablkový džús.",
+            "exampleUk": "Діти хочуть яблучний сік."
+          },
+          {
+            "wordId": "a0-u06-l07-v-kaviarni-zaklad-w04",
+            "sk": "koláč",
+            "uk": "пиріжне, пиріг",
+            "pronunciationUk": "кола:ч",
+            "exampleSk": "Tento koláč je domáci.",
+            "exampleUk": "Цей пиріг домашній."
+          },
+          {
+            "wordId": "a0-u06-l07-v-kaviarni-zaklad-w05",
+            "sk": "čašník",
+            "uk": "офіціант",
+            "pronunciationUk": "чашні:к",
+            "exampleSk": "Čašník, prosím!",
+            "exampleUk": "Офіціанте, будь ласка!"
+          },
+          {
+            "wordId": "a0-u06-l07-v-kaviarni-zaklad-w06",
+            "sk": "účet",
+            "uk": "рахунок",
+            "pronunciationUk": "у:чет",
+            "exampleSk": "Môžem dostať účet?",
+            "exampleUk": "Можна мені рахунок?"
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u06-l07-v-kaviarni-zaklad-w01",
+          "sk": "kaviareň",
+          "uk": "кав’ярня",
+          "pronunciationUk": "каварень",
+          "exampleSk": "Stretneme sa v kaviarni na rohu.",
+          "exampleUk": "Зустрінемося в кав’ярні на розі.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l07-v-kaviarni-zaklad-w02",
+          "sk": "minerálka",
+          "uk": "мінеральна вода",
+          "pronunciationUk": "мінера:лка",
+          "exampleSk": "Jednu minerálku, prosím.",
+          "exampleUk": "Одну мінералку, будь ласка.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l07-v-kaviarni-zaklad-w03",
+          "sk": "džús",
+          "uk": "сік",
+          "pronunciationUk": "джу:с",
+          "exampleSk": "Deti chcú jablkový džús.",
+          "exampleUk": "Діти хочуть яблучний сік.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l07-v-kaviarni-zaklad-w04",
+          "sk": "koláč",
+          "uk": "пиріжне, пиріг",
+          "pronunciationUk": "кола:ч",
+          "exampleSk": "Tento koláč je domáci.",
+          "exampleUk": "Цей пиріг домашній.",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l07-v-kaviarni-zaklad-w05",
+          "sk": "čašník",
+          "uk": "офіціант",
+          "pronunciationUk": "чашні:к",
+          "exampleSk": "Čašník, prosím!",
+          "exampleUk": "Офіціанте, будь ласка!",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u06-l07-v-kaviarni-zaklad-w06",
+          "sk": "účet",
+          "uk": "рахунок",
+          "pronunciationUk": "у:чет",
+          "exampleSk": "Môžem dostať účet?",
+          "exampleUk": "Можна мені рахунок?",
+          "level": "A0",
+          "topic": "Перші потреби",
+          "tags": [
+            "a0-u06",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u06-l07-v-kaviarni-zaklad-ex01",
+          "lessonId": "a0-u06-l07-v-kaviarni-zaklad",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "minerálka",
+              "right": "мінеральна вода"
+            },
+            {
+              "left": "džús",
+              "right": "сік"
+            },
+            {
+              "left": "koláč",
+              "right": "пиріжне"
+            },
+            {
+              "left": "čašník",
+              "right": "офіціант"
+            },
+            {
+              "left": "účet",
+              "right": "рахунок"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a0-u06-l07-v-kaviarni-zaklad-w01",
+            "a0-u06-l07-v-kaviarni-zaklad-w02",
+            "a0-u06-l07-v-kaviarni-zaklad-w03",
+            "a0-u06-l07-v-kaviarni-zaklad-w04",
+            "a0-u06-l07-v-kaviarni-zaklad-w05",
+            "a0-u06-l07-v-kaviarni-zaklad-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l07-v-kaviarni-zaklad-ex02",
+          "lessonId": "a0-u06-l07-v-kaviarni-zaklad",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Čašníčka",
+              "sk": "Dobrý deň, čo si dáte?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Účet je koláč.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Dám si kávu a koláč, prosím.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Dobrý deň, áno.",
+              "correct": false
+            }
+          ],
+          "explanation": "Dám si + замовлення.",
+          "order": 2,
+          "wordIds": [
+            "a0-u06-l07-v-kaviarni-zaklad-w01",
+            "a0-u06-l07-v-kaviarni-zaklad-w04",
+            "a0-u06-l07-v-kaviarni-zaklad-w05",
+            "a0-u06-l07-v-kaviarni-zaklad-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l07-v-kaviarni-zaklad-ex03",
+          "lessonId": "a0-u06-l07-v-kaviarni-zaklad",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Čašník",
+              "sk": "Perlivú alebo neperlivú?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Neperlivú, prosím.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Áno, prosím.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Minerálku.",
+              "correct": false
+            }
+          ],
+          "explanation": "Обери: з газом чи без.",
+          "order": 3,
+          "wordIds": [
+            "a0-u06-l07-v-kaviarni-zaklad-w01",
+            "a0-u06-l07-v-kaviarni-zaklad-w02",
+            "a0-u06-l07-v-kaviarni-zaklad-w05"
+          ]
+        },
+        {
+          "id": "a0-u06-l07-v-kaviarni-zaklad-ex04",
+          "lessonId": "a0-u06-l07-v-kaviarni-zaklad",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Spolu alebo zvlášť?»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "З цукром чи без?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Тут чи з собою?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Разом чи окремо (платити)?",
+              "correct": true
+            }
+          ],
+          "explanation": "spolu — разом, zvlášť — окремо.",
+          "order": 4,
+          "wordIds": [
+            "a0-u06-l07-v-kaviarni-zaklad-w01"
+          ]
+        },
+        {
+          "id": "a0-u06-l07-v-kaviarni-zaklad-ex05",
+          "lessonId": "a0-u06-l07-v-kaviarni-zaklad",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Попроси рахунок.",
+          "tokens": [
+            ",",
+            ".",
+            "prosím",
+            "Účet"
+          ],
+          "correctOrder": [
+            "Účet",
+            ",",
+            "prosím",
+            "."
+          ],
+          "explanation": "Účet + prosím.",
+          "order": 5,
+          "wordIds": [
+            "a0-u06-l07-v-kaviarni-zaklad-w01",
+            "a0-u06-l07-v-kaviarni-zaklad-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l07-v-kaviarni-zaklad-ex06",
+          "lessonId": "a0-u06-l07-v-kaviarni-zaklad",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Prosím si "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "minerálka",
+                "minerálku",
+                "minerálkou"
+              ],
+              "correct": "minerálku"
+            },
+            {
+              "text": " bez bubliniek."
+            }
+          ],
+          "explanation": "Prosím si + знахідний: minerálku.",
+          "order": 6,
+          "wordIds": [
+            "a0-u06-l07-v-kaviarni-zaklad-w01",
+            "a0-u06-l07-v-kaviarni-zaklad-w02"
+          ]
+        },
+        {
+          "id": "a0-u06-l07-v-kaviarni-zaklad-ex07",
+          "lessonId": "a0-u06-l07-v-kaviarni-zaklad",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Perlivá» вода — це вода з газом.",
+          "correctAnswer": true,
+          "explanation": "perlivá — газована.",
+          "order": 7,
+          "wordIds": [
+            "a0-u06-l07-v-kaviarni-zaklad-w01"
+          ]
+        },
+        {
+          "id": "a0-u06-l07-v-kaviarni-zaklad-ex08",
+          "lessonId": "a0-u06-l07-v-kaviarni-zaklad",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти хочеш покликати офіціанта.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Prepáčte, môžem si objednať?",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Pst, pst!",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Hej, účet!",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Čašník, ty!",
+              "correct": false
+            }
+          ],
+          "explanation": "Ввічливе звертання.",
+          "order": 8,
+          "wordIds": [
+            "a0-u06-l07-v-kaviarni-zaklad-w01",
+            "a0-u06-l07-v-kaviarni-zaklad-w05",
+            "a0-u06-l07-v-kaviarni-zaklad-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l07-v-kaviarni-zaklad-ex09",
+          "lessonId": "a0-u06-l07-v-kaviarni-zaklad",
+          "type": "branching_dialogue",
+          "skill": [
+            "dialogue",
+            "real_life"
+          ],
+          "instruction": "Пройди діалог: обирай доречні відповіді.",
+          "successMessage": "Замовлення зроблено!",
+          "startNode": "n1",
+          "nodes": {
+            "n1": {
+              "speaker": "Čašník",
+              "sk": "Dobrý deň, čo si dáte na pitie?",
+              "choices": [
+                {
+                  "id": "n1c2",
+                  "sk": "Mám cappuccino.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c3",
+                  "sk": "Cappuccino je drahé.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c1",
+                  "sk": "Prosím si cappuccino.",
+                  "next": "n2",
+                  "quality": "best"
+                }
+              ]
+            },
+            "n2": {
+              "speaker": "Čašník",
+              "sk": "A niečo sladké?",
+              "choices": [
+                {
+                  "id": "n2c3",
+                  "sk": "Áno, účet.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c1",
+                  "sk": "Áno, jeden čokoládový koláč.",
+                  "next": "n3",
+                  "quality": "best"
+                },
+                {
+                  "id": "n2c2",
+                  "sk": "Nie, sladké je zlé, dovidenia.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n3": {
+              "speaker": "Čašník",
+              "sk": "Ešte niečo?",
+              "choices": [
+                {
+                  "id": "n3c2",
+                  "sk": "Áno, nič.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c3",
+                  "sk": "Dobrú chuť.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c1",
+                  "sk": "Nie, to je všetko, ďakujem.",
+                  "next": "success",
+                  "quality": "best"
+                }
+              ]
+            }
+          },
+          "order": 9,
+          "wordIds": [
+            "a0-u06-l07-v-kaviarni-zaklad-w01",
+            "a0-u06-l07-v-kaviarni-zaklad-w04",
+            "a0-u06-l07-v-kaviarni-zaklad-w05",
+            "a0-u06-l07-v-kaviarni-zaklad-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l07-v-kaviarni-zaklad-ex10",
+          "lessonId": "a0-u06-l07-v-kaviarni-zaklad",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Môžem dostať ______? (рахунок)",
+          "acceptedAnswers": [
+            "účet"
+          ],
+          "explanation": "účet — рахунок.",
+          "order": 10,
+          "wordIds": [
+            "a0-u06-l07-v-kaviarni-zaklad-w01",
+            "a0-u06-l07-v-kaviarni-zaklad-w06"
+          ]
+        },
+        {
+          "id": "a0-u06-l07-v-kaviarni-zaklad-ex11",
+          "lessonId": "a0-u06-l07-v-kaviarni-zaklad",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Друг каже офіціантові: «Tento koláč platím ja, zvyšok zvlášť.» Що він має на увазі?",
+          "options": [
+            {
+              "id": "a",
+              "text": "він платить за все",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "він не платить",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "він платить за пиріг, решта — окремо",
+              "correct": true
+            }
+          ],
+          "explanation": "zvyšok — решта, zvlášť — окремо.",
+          "order": 11,
+          "wordIds": [
+            "a0-u06-l07-v-kaviarni-zaklad-w01",
+            "a0-u06-l07-v-kaviarni-zaklad-w04"
+          ]
+        },
+        {
+          "id": "a0-u06-l07-v-kaviarni-zaklad-ex12",
+          "lessonId": "a0-u06-l07-v-kaviarni-zaklad",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери всі напої.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "minerálka",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "čaj",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "džús",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "účet",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "koláč",
+              "correct": false
+            }
+          ],
+          "explanation": "Koláč і účet — не напої.",
+          "order": 12,
+          "wordIds": [
+            "a0-u06-l07-v-kaviarni-zaklad-w01",
+            "a0-u06-l07-v-kaviarni-zaklad-w02",
+            "a0-u06-l07-v-kaviarni-zaklad-w03",
+            "a0-u06-l07-v-kaviarni-zaklad-w04",
+            "a0-u06-l07-v-kaviarni-zaklad-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Кава з колегою",
+        "description": "Ти з колегою в кав’ярні після роботи.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Офіціантка: «Čo si dáte?»",
+            "options": [
+              {
+                "sk": "Čaj je citrón.",
+                "correct": false
+              },
+              {
+                "sk": "Dám si čaj s citrónom.",
+                "correct": true
+              },
+              {
+                "sk": "Mám čaj s citrónom.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Колега питає: «Dáš si aj koláč?»",
+            "options": [
+              {
+                "sk": "Áno, rád(a).",
+                "correct": true
+              },
+              {
+                "sk": "Áno, účet.",
+                "correct": false
+              },
+              {
+                "sk": "Nie, koláč.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти хочеш заплатити.",
+            "options": [
+              {
+                "sk": "Dobrú chuť, prosím.",
+                "correct": false
+              },
+              {
+                "sk": "Koláč, prosím.",
+                "correct": false
+              },
+              {
+                "sk": "Účet, prosím.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Spolu alebo zvlášť?» Ти платиш за обох.",
+            "options": [
+              {
+                "sk": "Spolu, prosím.",
+                "correct": true
+              },
+              {
+                "sk": "Áno, zvlášť spolu.",
+                "correct": false
+              },
+              {
+                "sk": "Zvlášť, prosím.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вже замовляєш у кафе. Далі — аптека."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вже замовляєш у кафе. Далі — аптека.",
+        "nowYouKnow": [
+          "Dám si… / Prosím si…",
+          "minerálka (perlivá / neperlivá), džús, koláč",
+          "Účet, prosím.",
+          "spolu / zvlášť"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u06-l08-v-lekarni-zaklad",
+          "title": "В аптеці"
+        }
+      }
+    }
+  ]
+}

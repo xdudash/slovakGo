@@ -1,0 +1,737 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u03-l02-odkial-si",
+      "sectionId": "a0-u03",
+      "level": "A0",
+      "title": "Звідки ти?",
+      "topic": "Знайомство",
+      "description": "Розповісти, з якої ти країни і міста, і запитати про це інших.",
+      "order": 22,
+      "xpReward": 15,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Казати Som z Ukrajiny / z Kyjeva і питати Odkiaľ ste?",
+      "completionMessage": "Ти можеш розповісти, звідки ти. Далі — національність і мови.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Знайомство",
+        "title": "Звідки ти?",
+        "shortDescription": "Казати Som z Ukrajiny / z Kyjeva і питати Odkiaľ ste?",
+        "outcomes": [
+          "питати: Odkiaľ si / Odkiaľ ste?",
+          "відповідати: Som z Ukrajiny",
+          "назвати місто: Som z Ľvova",
+          "назвати кілька країн"
+        ],
+        "newWords": [
+          "Odkiaľ ste?",
+          "Ukrajina",
+          "Slovensko",
+          "krajina",
+          "Poľsko",
+          "Česko"
+        ],
+        "exercisesCount": 12,
+        "reward": "+15 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Odkiaľ?",
+          "text": "«Odkiaľ si?» (звідки ти?) / «Odkiaľ ste?» (звідки ви?). Відповідь: «Som z…» + країна або місто. Після z назва змінюється (родовий відмінок): Ukrajina → z Ukrajiny.",
+          "examples": [
+            {
+              "sk": "Odkiaľ ste?",
+              "uk": "Звідки ви?"
+            },
+            {
+              "sk": "Som z Ukrajiny.",
+              "uk": "Я з України."
+            }
+          ],
+          "shortRule": "Odkiaľ…? — Som z…",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Країни після z",
+          "text": "Ukrajina → z Ukrajiny, Slovensko → zo Slovenska, Poľsko → z Poľska, Česko → z Česka, Nemecko → z Nemecka. Перед s, z, ž, š пишуть «zo».",
+          "examples": [
+            {
+              "sk": "Som zo Slovenska.",
+              "uk": "Я зі Словаччини."
+            },
+            {
+              "sk": "Je z Poľska.",
+              "uk": "Він з Польщі."
+            }
+          ],
+          "shortRule": "-a → -y; -o → -a; zo перед s, z.",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Міста",
+          "text": "Kyjev → z Kyjeva, Ľvov → zo Ľvova, Charkov → z Charkova, Odesa → z Odesy, Dnipro → z Dnipra. Bratislava → z Bratislavy, Košice → z Košíc.",
+          "examples": [
+            {
+              "sk": "Som z Charkova.",
+              "uk": "Я з Харкова."
+            },
+            {
+              "sk": "Bývam v Bratislave, ale som z Odesy.",
+              "uk": "Я живу в Братиславі, але я з Одеси."
+            }
+          ],
+          "shortRule": "Міста теж змінюються після z.",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u03-l02-odkial-si-w01",
+            "sk": "Odkiaľ ste?",
+            "uk": "Звідки ви?",
+            "pronunciationUk": "одкяль стє?",
+            "exampleSk": "Odkiaľ ste, pán Petrenko?",
+            "exampleUk": "Звідки ви, пане Петренко?"
+          },
+          {
+            "wordId": "a0-u03-l02-odkial-si-w02",
+            "sk": "Ukrajina",
+            "uk": "Україна",
+            "pronunciationUk": "украйіна",
+            "exampleSk": "Som z Ukrajiny.",
+            "exampleUk": "Я з України."
+          },
+          {
+            "wordId": "a0-u03-l02-odkial-si-w03",
+            "sk": "Slovensko",
+            "uk": "Словаччина",
+            "pronunciationUk": "словенско",
+            "exampleSk": "Žijem na Slovensku.",
+            "exampleUk": "Я живу в Словаччині."
+          },
+          {
+            "wordId": "a0-u03-l02-odkial-si-w04",
+            "sk": "krajina",
+            "uk": "країна",
+            "pronunciationUk": "крайіна",
+            "exampleSk": "Z akej krajiny ste?",
+            "exampleUk": "З якої ви країни?"
+          },
+          {
+            "wordId": "a0-u03-l02-odkial-si-w05",
+            "sk": "Poľsko",
+            "uk": "Польща",
+            "pronunciationUk": "польско",
+            "exampleSk": "Moja kolegyňa je z Poľska.",
+            "exampleUk": "Моя колега з Польщі."
+          },
+          {
+            "wordId": "a0-u03-l02-odkial-si-w06",
+            "sk": "Česko",
+            "uk": "Чехія",
+            "pronunciationUk": "ческо",
+            "exampleSk": "Brat býva v Česku.",
+            "exampleUk": "Брат живе в Чехії."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u03-l02-odkial-si-w01",
+          "sk": "Odkiaľ ste?",
+          "uk": "Звідки ви?",
+          "pronunciationUk": "одкяль стє?",
+          "exampleSk": "Odkiaľ ste, pán Petrenko?",
+          "exampleUk": "Звідки ви, пане Петренко?",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l02-odkial-si-w02",
+          "sk": "Ukrajina",
+          "uk": "Україна",
+          "pronunciationUk": "украйіна",
+          "exampleSk": "Som z Ukrajiny.",
+          "exampleUk": "Я з України.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l02-odkial-si-w03",
+          "sk": "Slovensko",
+          "uk": "Словаччина",
+          "pronunciationUk": "словенско",
+          "exampleSk": "Žijem na Slovensku.",
+          "exampleUk": "Я живу в Словаччині.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l02-odkial-si-w04",
+          "sk": "krajina",
+          "uk": "країна",
+          "pronunciationUk": "крайіна",
+          "exampleSk": "Z akej krajiny ste?",
+          "exampleUk": "З якої ви країни?",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l02-odkial-si-w05",
+          "sk": "Poľsko",
+          "uk": "Польща",
+          "pronunciationUk": "польско",
+          "exampleSk": "Moja kolegyňa je z Poľska.",
+          "exampleUk": "Моя колега з Польщі.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l02-odkial-si-w06",
+          "sk": "Česko",
+          "uk": "Чехія",
+          "pronunciationUk": "ческо",
+          "exampleSk": "Brat býva v Česku.",
+          "exampleUk": "Брат живе в Чехії.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u03-l02-odkial-si-ex01",
+          "lessonId": "a0-u03-l02-odkial-si",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Som z "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "Ukrajina",
+                "Ukrajinu",
+                "Ukrajiny"
+              ],
+              "correct": "Ukrajiny"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Після z: Ukrajina → z Ukrajiny.",
+          "order": 1,
+          "wordIds": [
+            "a0-u03-l02-odkial-si-w01",
+            "a0-u03-l02-odkial-si-w02",
+            "a0-u03-l02-odkial-si-w04"
+          ]
+        },
+        {
+          "id": "a0-u03-l02-odkial-si-ex02",
+          "lessonId": "a0-u03-l02-odkial-si",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Som "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "zo",
+                "z"
+              ],
+              "correct": "zo"
+            },
+            {
+              "text": " Slovenska."
+            }
+          ],
+          "explanation": "Перед s — zo: zo Slovenska.",
+          "order": 2,
+          "wordIds": [
+            "a0-u03-l02-odkial-si-w01",
+            "a0-u03-l02-odkial-si-w03"
+          ]
+        },
+        {
+          "id": "a0-u03-l02-odkial-si-ex03",
+          "lessonId": "a0-u03-l02-odkial-si",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай країну з формою після z.",
+          "pairs": [
+            {
+              "left": "Ukrajina",
+              "right": "z Ukrajiny"
+            },
+            {
+              "left": "Slovensko",
+              "right": "zo Slovenska"
+            },
+            {
+              "left": "Poľsko",
+              "right": "z Poľska"
+            },
+            {
+              "left": "Česko",
+              "right": "z Česka"
+            }
+          ],
+          "order": 3,
+          "wordIds": [
+            "a0-u03-l02-odkial-si-w01",
+            "a0-u03-l02-odkial-si-w02",
+            "a0-u03-l02-odkial-si-w03",
+            "a0-u03-l02-odkial-si-w04",
+            "a0-u03-l02-odkial-si-w05",
+            "a0-u03-l02-odkial-si-w06"
+          ]
+        },
+        {
+          "id": "a0-u03-l02-odkial-si-ex04",
+          "lessonId": "a0-u03-l02-odkial-si",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Lekár",
+              "sk": "Odkiaľ ste?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Som v Charkove.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Volám sa Charkov.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Som z Ukrajiny, z Charkova.",
+              "correct": true
+            }
+          ],
+          "explanation": "Odkiaľ — звідки, відповідь Som z…",
+          "order": 4,
+          "wordIds": [
+            "a0-u03-l02-odkial-si-w01",
+            "a0-u03-l02-odkial-si-w02",
+            "a0-u03-l02-odkial-si-w04"
+          ]
+        },
+        {
+          "id": "a0-u03-l02-odkial-si-ex05",
+          "lessonId": "a0-u03-l02-odkial-si",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Odkiaľ si?»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Звідки ти?",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Куди ти йдеш?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Де ти живеш?",
+              "correct": false
+            }
+          ],
+          "explanation": "odkiaľ — звідки.",
+          "order": 5,
+          "wordIds": [
+            "a0-u03-l02-odkial-si-w01"
+          ]
+        },
+        {
+          "id": "a0-u03-l02-odkial-si-ex06",
+          "lessonId": "a0-u03-l02-odkial-si",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Som z ______. (Польща)",
+          "acceptedAnswers": [
+            "Poľska"
+          ],
+          "hint": "Poľsko → z Poľska.",
+          "explanation": "Poľsko → z Poľska.",
+          "order": 6,
+          "wordIds": [
+            "a0-u03-l02-odkial-si-w01",
+            "a0-u03-l02-odkial-si-w05"
+          ]
+        },
+        {
+          "id": "a0-u03-l02-odkial-si-ex07",
+          "lessonId": "a0-u03-l02-odkial-si",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і оціни кожне твердження.",
+          "text": "Volám sa Daria. Som z Ukrajiny, zo Ľvova. Teraz bývam na Slovensku, v Žiline. Môj manžel je zo Slovenska.",
+          "statements": [
+            {
+              "sk": "Daria je z Ukrajiny.",
+              "correct": true
+            },
+            {
+              "sk": "Daria je zo Žiliny.",
+              "correct": false
+            },
+            {
+              "sk": "Daria teraz býva v Žiline.",
+              "correct": true
+            },
+            {
+              "sk": "Manžel je Slovák.",
+              "correct": true
+            }
+          ],
+          "order": 7,
+          "wordIds": [
+            "a0-u03-l02-odkial-si-w01",
+            "a0-u03-l02-odkial-si-w02",
+            "a0-u03-l02-odkial-si-w03",
+            "a0-u03-l02-odkial-si-w04"
+          ]
+        },
+        {
+          "id": "a0-u03-l02-odkial-si-ex08",
+          "lessonId": "a0-u03-l02-odkial-si",
+          "type": "sentence_builder",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Склади речення зі слів.",
+          "context": "Скажи, що ти з Одеси.",
+          "tokens": [
+            ".",
+            "z",
+            "Odesy",
+            "Som"
+          ],
+          "correctSentence": "Som z Odesy.",
+          "explanation": "Odesa → z Odesy.",
+          "order": 8,
+          "wordIds": [
+            "a0-u03-l02-odkial-si-w01"
+          ]
+        },
+        {
+          "id": "a0-u03-l02-odkial-si-ex09",
+          "lessonId": "a0-u03-l02-odkial-si",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Som z Ukrajina a bývam v Košiciach.",
+          "errorToken": "Ukrajina",
+          "correctToken": "Ukrajiny",
+          "explanation": "Після z — родовий відмінок: z Ukrajiny.",
+          "order": 9,
+          "wordIds": [
+            "a0-u03-l02-odkial-si-w01",
+            "a0-u03-l02-odkial-si-w02",
+            "a0-u03-l02-odkial-si-w04"
+          ]
+        },
+        {
+          "id": "a0-u03-l02-odkial-si-ex10",
+          "lessonId": "a0-u03-l02-odkial-si",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти хочеш запитати пані на курсах, звідки вона.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Odkiaľ si, pani?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Ako sa voláš?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Kde je Odkiaľ?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Odkiaľ ste?",
+              "correct": true
+            }
+          ],
+          "explanation": "До пані — Odkiaľ ste?",
+          "order": 10,
+          "wordIds": [
+            "a0-u03-l02-odkial-si-w01"
+          ]
+        },
+        {
+          "id": "a0-u03-l02-odkial-si-ex11",
+          "lessonId": "a0-u03-l02-odkial-si",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери всі правильні фрази.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Som zo Slovenska.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Som z Ukrajina.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Som z Česka.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Som zo Poľska.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Som z Kyjeva.",
+              "correct": true
+            }
+          ],
+          "explanation": "z Ukrajiny (не Ukrajina), z Poľska (zo лише перед s, z, ž, š).",
+          "order": 11,
+          "wordIds": [
+            "a0-u03-l02-odkial-si-w01",
+            "a0-u03-l02-odkial-si-w02",
+            "a0-u03-l02-odkial-si-w03",
+            "a0-u03-l02-odkial-si-w04",
+            "a0-u03-l02-odkial-si-w05",
+            "a0-u03-l02-odkial-si-w06"
+          ]
+        },
+        {
+          "id": "a0-u03-l02-odkial-si-ex12",
+          "lessonId": "a0-u03-l02-odkial-si",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Запитай колегу на «ти».",
+          "tokens": [
+            "?",
+            "Odkiaľ",
+            "si"
+          ],
+          "correctOrder": [
+            "Odkiaľ",
+            "si",
+            "?"
+          ],
+          "explanation": "Odkiaľ + si.",
+          "order": 12,
+          "wordIds": [
+            "a0-u03-l02-odkial-si-w01"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Знайомство в черзі",
+        "description": "Ти чекаєш у черзі в установі й розмовляєш із сусідами.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Пані поруч: «Odkiaľ ste?»",
+            "options": [
+              {
+                "sk": "Som Ukrajina.",
+                "correct": false
+              },
+              {
+                "sk": "Som v Ukrajine.",
+                "correct": false
+              },
+              {
+                "sk": "Som z Ukrajiny.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«A z ktorého mesta?» (Ти з Дніпра.)",
+            "options": [
+              {
+                "sk": "V Dnipre som.",
+                "correct": false
+              },
+              {
+                "sk": "Dnipro je.",
+                "correct": false
+              },
+              {
+                "sk": "Z Dnipra.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти питаєш її:",
+            "options": [
+              {
+                "sk": "A ty si odkiaľ, pani?",
+                "correct": false
+              },
+              {
+                "sk": "A vy ste kto?",
+                "correct": false
+              },
+              {
+                "sk": "A vy ste odkiaľ?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Вона відповідає «Zo Slovenska, z Nitry.» Що це означає?",
+            "options": [
+              {
+                "sk": "вона з Чехії",
+                "correct": false
+              },
+              {
+                "sk": "вона словачка з Нітри",
+                "correct": true
+              },
+              {
+                "sk": "вона живе в Україні",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти можеш розповісти, звідки ти. Далі — національність і мови."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти можеш розповісти, звідки ти. Далі — національність і мови.",
+        "nowYouKnow": [
+          "Odkiaľ si / ste?",
+          "Som z Ukrajiny, zo Slovenska",
+          "z + назва в родовому відмінку",
+          "zo перед s, z"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u03-l03-narodnost-jazyky",
+          "title": "Національність і мови"
+        }
+      }
+    }
+  ]
+}

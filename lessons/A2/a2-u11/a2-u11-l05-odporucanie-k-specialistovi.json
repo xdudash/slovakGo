@@ -1,0 +1,906 @@
+{
+  "lessons": [
+    {
+      "id": "a2-u11-l05-odporucanie-k-specialistovi",
+      "sectionId": "a2-u11",
+      "level": "A2",
+      "title": "Направлення до спеціаліста",
+      "topic": "Страхування і лікар",
+      "description": "Výmenný lístok і odporúčanie, назви спеціалістів, k/ku + давальний, черги до лікарів і висновок (nález).",
+      "order": 105,
+      "xpReward": 30,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Отримати направлення, записатися до спеціаліста й розуміти, що буде далі.",
+      "completionMessage": "Ти вмієш дістатися до спеціаліста. Далі — рецепт: як лікар виписує ліки і хто їх оплачує.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A2 · Страхування і лікар",
+        "title": "Направлення до спеціаліста",
+        "shortDescription": "Отримати направлення, записатися до спеціаліста й розуміти, що буде далі.",
+        "outcomes": [
+          "розуміти odporúčanie / výmenný lístok",
+          "казати ku kardiológovi, k ortopédovi, u dermatológa",
+          "питати про čakaciu dobu і skorší termín",
+          "розуміти, що nález отримує сімейний лікар"
+        ],
+        "newWords": [
+          "odporúčanie",
+          "výmenný lístok",
+          "špecialista",
+          "odborný lekár",
+          "nález",
+          "čakacia doba"
+        ],
+        "exercisesCount": 14,
+        "reward": "+30 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Odporúčanie a výmenný lístok",
+          "text": "До більшості спеціалістів потрібне направлення від сімейного лікаря. Розмовно його називають «výmenný lístok», офіційно — «odporúčanie». Сьогодні лікар зазвичай надсилає його електронно. Без направлення можна йти, наприклад, до гінеколога чи стоматолога.",
+          "examples": [
+            {
+              "sk": "Potrebujem odporúčanie ku kardiológovi.",
+              "uk": "Мені потрібне направлення до кардіолога."
+            },
+            {
+              "sk": "Dám vám výmenný lístok na ortopédiu.",
+              "uk": "Я дам вам направлення в ортопедію."
+            }
+          ],
+          "shortRule": "všeobecný lekár → odporúčanie → špecialista",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Ku kardiológovi, k ortopédovi",
+          "text": "Спеціаліст — «špecialista» або «odborný lekár». Куди? — k + давальний: «k ortopédovi», «k dermatológovi», «k neurológovi». Перед словами на k-, g- кажемо «ku»: «ku kardiológovi», «ku gynekológovi». Де? — u + родовий: «u kardiológa». Відділення — na + знахідний: «na ortopédiu», «na kardiológiu».",
+          "examples": [
+            {
+              "sk": "Zajtra idem ku kardiológovi.",
+              "uk": "Завтра я йду до кардіолога."
+            },
+            {
+              "sk": "Bola som u očnej lekárky.",
+              "uk": "Я була в окулістки."
+            }
+          ],
+          "shortRule": "k / ku + давальний · u + родовий",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Čakacia doba a nález",
+          "text": "До спеціаліста часто доводиться довго чекати: «Čakacia doba je dva mesiace.» Можна спитати: «Nemáte skorší termín?» Після огляду спеціаліст пише «nález» (висновок) і надсилає його сімейному лікареві.",
+          "examples": [
+            {
+              "sk": "Na neurológa sa čaká tri mesiace.",
+              "uk": "До невролога чекають три місяці."
+            },
+            {
+              "sk": "Nález pošleme vašej lekárke.",
+              "uk": "Висновок ми надішлемо вашій лікарці."
+            }
+          ],
+          "shortRule": "čakacia doba · skorší termín · nález",
+          "commonMistakes": [
+            {
+              "mistake": "Idem k kardiológovi.",
+              "correct": "Idem ku kardiológovi."
+            },
+            {
+              "mistake": "Idem u ortopéda.",
+              "correct": "Idem k ortopédovi."
+            },
+            {
+              "mistake": "Čakacia doba sú dva mesiace.",
+              "correct": "Čakacia doba je dva mesiace."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a2-u11-l05-odporucanie-k-specialistovi-w01",
+            "sk": "odporúčanie",
+            "uk": "направлення (до лікаря); рекомендація",
+            "pronunciationUk": "одпору:чаніє",
+            "exampleSk": "Bez odporúčania vás špecialista nemusí prijať.",
+            "exampleUk": "Без направлення спеціаліст може вас не прийняти."
+          },
+          {
+            "wordId": "a2-u11-l05-odporucanie-k-specialistovi-w02",
+            "sk": "výmenný lístok",
+            "uk": "направлення (розмовно)",
+            "pronunciationUk": "ві:менні: лі:сток",
+            "exampleSk": "Obvodná lekárka mi dala výmenný lístok na ortopédiu.",
+            "exampleUk": "Дільнична лікарка дала мені направлення в ортопедію."
+          },
+          {
+            "wordId": "a2-u11-l05-odporucanie-k-specialistovi-w03",
+            "sk": "špecialista",
+            "uk": "спеціаліст",
+            "pronunciationUk": "шпеціаліста",
+            "exampleSk": "Kožu vám musí pozrieť špecialista.",
+            "exampleUk": "Шкіру вам має оглянути спеціаліст."
+          },
+          {
+            "wordId": "a2-u11-l05-odporucanie-k-specialistovi-w04",
+            "sk": "odborný lekár",
+            "uk": "лікар-спеціаліст",
+            "pronunciationUk": "одборні: лека:р",
+            "exampleSk": "Odborný lekár mi urobil ďalšie vyšetrenia.",
+            "exampleUk": "Лікар-спеціаліст провів мені додаткові обстеження."
+          },
+          {
+            "wordId": "a2-u11-l05-odporucanie-k-specialistovi-w05",
+            "sk": "nález",
+            "uk": "висновок (лікаря), результат обстеження",
+            "pronunciationUk": "на:лез",
+            "exampleSk": "Nález od kardiológa poslali mojej lekárke.",
+            "exampleUk": "Висновок від кардіолога надіслали моїй лікарці."
+          },
+          {
+            "wordId": "a2-u11-l05-odporucanie-k-specialistovi-w06",
+            "sk": "čakacia doba",
+            "uk": "час очікування (черга)",
+            "pronunciationUk": "чакаціа доба",
+            "exampleSk": "Čakacia doba na vyšetrenie je šesť týždňov.",
+            "exampleUk": "Очікування на обстеження — шість тижнів."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-w01",
+          "sk": "odporúčanie",
+          "uk": "направлення (до лікаря); рекомендація",
+          "pronunciationUk": "одпору:чаніє",
+          "exampleSk": "Bez odporúčania vás špecialista nemusí prijať.",
+          "exampleUk": "Без направлення спеціаліст може вас не прийняти.",
+          "level": "A2",
+          "topic": "Страхування і лікар",
+          "tags": [
+            "a2-u11",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-w02",
+          "sk": "výmenný lístok",
+          "uk": "направлення (розмовно)",
+          "pronunciationUk": "ві:менні: лі:сток",
+          "exampleSk": "Obvodná lekárka mi dala výmenný lístok na ortopédiu.",
+          "exampleUk": "Дільнична лікарка дала мені направлення в ортопедію.",
+          "level": "A2",
+          "topic": "Страхування і лікар",
+          "tags": [
+            "a2-u11",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-w03",
+          "sk": "špecialista",
+          "uk": "спеціаліст",
+          "pronunciationUk": "шпеціаліста",
+          "exampleSk": "Kožu vám musí pozrieť špecialista.",
+          "exampleUk": "Шкіру вам має оглянути спеціаліст.",
+          "level": "A2",
+          "topic": "Страхування і лікар",
+          "tags": [
+            "a2-u11",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-w04",
+          "sk": "odborný lekár",
+          "uk": "лікар-спеціаліст",
+          "pronunciationUk": "одборні: лека:р",
+          "exampleSk": "Odborný lekár mi urobil ďalšie vyšetrenia.",
+          "exampleUk": "Лікар-спеціаліст провів мені додаткові обстеження.",
+          "level": "A2",
+          "topic": "Страхування і лікар",
+          "tags": [
+            "a2-u11",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-w05",
+          "sk": "nález",
+          "uk": "висновок (лікаря), результат обстеження",
+          "pronunciationUk": "на:лез",
+          "exampleSk": "Nález od kardiológa poslali mojej lekárke.",
+          "exampleUk": "Висновок від кардіолога надіслали моїй лікарці.",
+          "level": "A2",
+          "topic": "Страхування і лікар",
+          "tags": [
+            "a2-u11",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-w06",
+          "sk": "čakacia doba",
+          "uk": "час очікування (черга)",
+          "pronunciationUk": "чакаціа доба",
+          "exampleSk": "Čakacia doba na vyšetrenie je šesť týždňov.",
+          "exampleUk": "Очікування на обстеження — шість тижнів.",
+          "level": "A2",
+          "topic": "Страхування і лікар",
+          "tags": [
+            "a2-u11",
+            "a2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-ex01",
+          "lessonId": "a2-u11-l05-odporucanie-k-specialistovi",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "odporúčanie",
+              "right": "направлення"
+            },
+            {
+              "left": "výmenný lístok",
+              "right": "направлення (розмовно)"
+            },
+            {
+              "left": "špecialista",
+              "right": "спеціаліст"
+            },
+            {
+              "left": "odborný lekár",
+              "right": "лікар-спеціаліст"
+            },
+            {
+              "left": "nález",
+              "right": "висновок лікаря"
+            },
+            {
+              "left": "čakacia doba",
+              "right": "час очікування"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a2-u11-l05-odporucanie-k-specialistovi-w01",
+            "a2-u11-l05-odporucanie-k-specialistovi-w02",
+            "a2-u11-l05-odporucanie-k-specialistovi-w03",
+            "a2-u11-l05-odporucanie-k-specialistovi-w04",
+            "a2-u11-l05-odporucanie-k-specialistovi-w05",
+            "a2-u11-l05-odporucanie-k-specialistovi-w06"
+          ]
+        },
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-ex02",
+          "lessonId": "a2-u11-l05-odporucanie-k-specialistovi",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Zajtra idem "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "ku",
+                "k",
+                "u"
+              ],
+              "correct": "ku"
+            },
+            {
+              "text": " kardiológovi."
+            }
+          ],
+          "explanation": "Перед k- кажемо ku: ku kardiológovi.",
+          "order": 2
+        },
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-ex03",
+          "lessonId": "a2-u11-l05-odporucanie-k-specialistovi",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Zajtra som objednaná u "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "dermatológ",
+                "dermatológa",
+                "dermatológovi"
+              ],
+              "correct": "dermatológa"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Де? — u + родовий: u dermatológa.",
+          "order": 3
+        },
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-ex04",
+          "lessonId": "a2-u11-l05-odporucanie-k-specialistovi",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Потрібне направлення?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Treba odporúčanie"
+            },
+            {
+              "id": "c2",
+              "title": "Bez odporúčania"
+            }
+          ],
+          "items": [
+            {
+              "sk": "neurológ",
+              "category": "c1"
+            },
+            {
+              "sk": "kardiológ",
+              "category": "c1"
+            },
+            {
+              "sk": "gynekológ",
+              "category": "c2"
+            },
+            {
+              "sk": "zubár",
+              "category": "c2"
+            },
+            {
+              "sk": "ortopéd",
+              "category": "c1"
+            }
+          ],
+          "explanation": "До кардіолога, ортопеда чи невролога потрібне направлення; до гінеколога й стоматолога — ні.",
+          "order": 4,
+          "wordIds": [
+            "a2-u11-l05-odporucanie-k-specialistovi-w01"
+          ]
+        },
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-ex05",
+          "lessonId": "a2-u11-l05-odporucanie-k-specialistovi",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Na vyšetrenie u neurológa je čakacia ______ dva mesiace.",
+          "acceptedAnswers": [
+            "doba"
+          ],
+          "explanation": "čakacia doba — час очікування.",
+          "order": 5,
+          "wordIds": [
+            "a2-u11-l05-odporucanie-k-specialistovi-w06"
+          ]
+        },
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-ex06",
+          "lessonId": "a2-u11-l05-odporucanie-k-specialistovi",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що таке «nález» після обстеження?",
+          "options": [
+            {
+              "id": "a",
+              "text": "знайдена річ",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "рахунок за обстеження",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "письмовий висновок лікаря",
+              "correct": true
+            }
+          ],
+          "explanation": "Nález — висновок спеціаліста, його отримує сімейний лікар.",
+          "order": 6
+        },
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-ex07",
+          "lessonId": "a2-u11-l05-odporucanie-k-specialistovi",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай направлення.",
+          "document": {
+            "title": "Odporúčanie na odborné vyšetrenie",
+            "fields": [
+              {
+                "label": "Pacient",
+                "value": "Vasyľ Bondar"
+              },
+              {
+                "label": "Odosielajúci lekár",
+                "value": "MUDr. Eva Horná, všeobecná lekárka"
+              },
+              {
+                "label": "Odborné vyšetrenie",
+                "value": "kardiológia"
+              },
+              {
+                "label": "Dôvod",
+                "value": "bolesti na hrudi pri námahe, vysoký tlak"
+              },
+              {
+                "label": "Prílohy",
+                "value": "EKG, výsledky krvi"
+              }
+            ]
+          },
+          "question": "До якого спеціаліста направляють Василя?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "до ортопеда",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "до кардіолога",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "до невролога",
+              "correct": false
+            }
+          ],
+          "explanation": "Odborné vyšetrenie: kardiológia — огляд у кардіолога.",
+          "order": 7,
+          "wordIds": [
+            "a2-u11-l05-odporucanie-k-specialistovi-w01",
+            "a2-u11-l05-odporucanie-k-specialistovi-w04"
+          ]
+        },
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-ex08",
+          "lessonId": "a2-u11-l05-odporucanie-k-specialistovi",
+          "type": "real_schedule",
+          "skill": [
+            "reading",
+            "real_life",
+            "time"
+          ],
+          "instruction": "Подивись на найближчі вільні терміни. Сьогодні 1 жовтня.",
+          "schedule": {
+            "title": "Odborné ambulancie – zdravotné stredisko",
+            "rows": [
+              {
+                "day": "Kardiológia",
+                "hours": "najbližší voľný termín 12. 12."
+              },
+              {
+                "day": "Ortopédia",
+                "hours": "najbližší voľný termín 3. 11."
+              },
+              {
+                "day": "Neurológia",
+                "hours": "najbližší voľný termín 20. 1."
+              },
+              {
+                "day": "Dermatológia",
+                "hours": "len akútne prípady, štvrtok 7:00 – 9:00"
+              }
+            ]
+          },
+          "question": "Де найдовше чекати на прийом?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "у кардіології",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "в ортопедії",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "у неврології",
+              "correct": true
+            }
+          ],
+          "explanation": "Neurológia — аж 20 січня, тобто майже чотири місяці.",
+          "order": 8,
+          "wordIds": [
+            "a2-u11-l05-odporucanie-k-specialistovi-w04"
+          ]
+        },
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-ex09",
+          "lessonId": "a2-u11-l05-odporucanie-k-specialistovi",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Lekárka mi dala odporúčanie k gastroenterológovi.",
+          "errorToken": "k",
+          "correctToken": "ku",
+          "explanation": "Перед g- кажемо ku: ku gastroenterológovi.",
+          "order": 9,
+          "wordIds": [
+            "a2-u11-l05-odporucanie-k-specialistovi-w01",
+            "a2-u11-l05-odporucanie-k-specialistovi-w04"
+          ]
+        },
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-ex10",
+          "lessonId": "a2-u11-l05-odporucanie-k-specialistovi",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Petro pracuje na stavbe a už mesiac ho bolí koleno. Obvodný lekár ho vyšetril a dal mu odporúčanie na ortopédiu. Petro volal do ortopedickej ambulancie, ale najbližší voľný termín bol až o šesť týždňov. Sestra mu poradila, aby zavolal aj do inej nemocnice, kde bola čakacia doba kratšia – len dva týždne. Ortopéd mu urobil röntgen a povedal, že koleno je preťažené. Nález poslal obvodnému lekárovi a Petrovi odporučil cvičenia a ľahšiu prácu.",
+          "questions": [
+            {
+              "question": "Що болить Петра?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "спина",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "плече",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "коліно",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Чому він пішов до іншої лікарні?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "там лікування безкоштовне",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "там чекати було коротше — лише два тижні",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "там працює його знайомий",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Кому ортопед надіслав висновок?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "роботодавцеві Петра",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "у страхову",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "дільничному лікареві Петра",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "a2-u11-l05-odporucanie-k-specialistovi-w01",
+            "a2-u11-l05-odporucanie-k-specialistovi-w04",
+            "a2-u11-l05-odporucanie-k-specialistovi-w05",
+            "a2-u11-l05-odporucanie-k-specialistovi-w06"
+          ]
+        },
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-ex11",
+          "lessonId": "a2-u11-l05-odporucanie-k-specialistovi",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Lekárka",
+              "sk": "Pošlem vás na kardiológiu."
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Dobre. Dáte ma aj odporúčanie?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Dobre. Dáte mi aj odporúčanie?",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Dobre. Dáte mi aj odporúčaním?",
+              "correct": false
+            }
+          ],
+          "explanation": "dať komu? — mi (давальний); čo? — odporúčanie (знахідний).",
+          "order": 11,
+          "wordIds": [
+            "a2-u11-l05-odporucanie-k-specialistovi-w01",
+            "a2-u11-l05-odporucanie-k-specialistovi-w04"
+          ]
+        },
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-ex12",
+          "lessonId": "a2-u11-l05-odporucanie-k-specialistovi",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти питаєш, скільки треба чекати на прийом.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Aká dlhá je čakaciu dobu?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Aký dlhý je čakacia doba?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Ako dlhá čakacia doba je?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Aká dlhá je čakacia doba?",
+              "correct": true
+            }
+          ],
+          "explanation": "doba — жіночий рід: aká dlhá; čakacia doba — підмет у називному.",
+          "order": 12,
+          "wordIds": [
+            "a2-u11-l05-odporucanie-k-specialistovi-w06"
+          ]
+        },
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-ex13",
+          "lessonId": "a2-u11-l05-odporucanie-k-specialistovi",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і оціни кожне твердження.",
+          "text": "Vážení pacienti, na odborné vyšetrenie potrebujete odporúčanie od všeobecného lekára. Lekár vám ho pošle elektronicky, papierový výmenný lístok netreba. Na vyšetrenie si prineste preukaz poistenca a výsledky, ktoré už máte. Nález pošleme vášmu lekárovi do troch dní.",
+          "statements": [
+            {
+              "sk": "Направлення лікар надсилає електронно.",
+              "correct": true
+            },
+            {
+              "sk": "Треба обов’язково принести паперове направлення.",
+              "correct": false
+            },
+            {
+              "sk": "На огляд треба взяти картку страхування.",
+              "correct": true
+            },
+            {
+              "sk": "Висновок пацієнт отримає поштою через місяць.",
+              "correct": false
+            }
+          ],
+          "explanation": "Lekár pošle elektronicky; prineste si preukaz poistenca; nález pošleme vášmu lekárovi do troch dní.",
+          "order": 13,
+          "wordIds": [
+            "a2-u11-l05-odporucanie-k-specialistovi-w01",
+            "a2-u11-l05-odporucanie-k-specialistovi-w02",
+            "a2-u11-l05-odporucanie-k-specialistovi-w04",
+            "a2-u11-l05-odporucanie-k-specialistovi-w05"
+          ]
+        },
+        {
+          "id": "a2-u11-l05-odporucanie-k-specialistovi-ex14",
+          "lessonId": "a2-u11-l05-odporucanie-k-specialistovi",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Заміни «ortopéd» на «kardiológ».",
+          "source": "Idem k ortopédovi.",
+          "acceptedAnswers": [
+            "Idem ku kardiológovi."
+          ],
+          "explanation": "Перед k- прийменник k стає ku: ku kardiológovi.",
+          "order": 14
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Біль у грудях",
+        "description": "Сімейна лікарка вирішила, що тебе має оглянути кардіолог.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Лікарка: «Odporúčanie vám pošlem elektronicky.» Що це означає?",
+            "options": [
+              {
+                "sk": "направлення не потрібне",
+                "correct": false
+              },
+              {
+                "sk": "направлення буде в електронному вигляді",
+                "correct": true
+              },
+              {
+                "sk": "направлення треба забрати завтра",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти телефонуєш у кардіологію.",
+            "options": [
+              {
+                "sk": "Dobrý deň, chcel by som sa objednať ku kardiológovi.",
+                "correct": true
+              },
+              {
+                "sk": "Dobrý deň, chcel by som sa objednať u kardiológovi.",
+                "correct": false
+              },
+              {
+                "sk": "Dobrý deň, chcel by som sa objednať k kardiológovi.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Медсестра: «Najbližší voľný termín je o dva mesiace.» Ти питаєш про раніший термін.",
+            "options": [
+              {
+                "sk": "Nemáte náhodou skorej termín?",
+                "correct": false
+              },
+              {
+                "sk": "Nemáte náhodou skorší termín?",
+                "correct": true
+              },
+              {
+                "sk": "Nemáte náhodou skorší termínu?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Кардіолог: «Nález pošlem vašej lekárke.» Що це означає?",
+            "options": [
+              {
+                "sk": "лікарка має надіслати висновок кардіологу",
+                "correct": false
+              },
+              {
+                "sk": "висновок треба забрати самому через місяць",
+                "correct": false
+              },
+              {
+                "sk": "висновок отримає твоя сімейна лікарка",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш дістатися до спеціаліста. Далі — рецепт: як лікар виписує ліки і хто їх оплачує."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш дістатися до спеціаліста. Далі — рецепт: як лікар виписує ліки і хто їх оплачує.",
+        "nowYouKnow": [
+          "odporúčanie (výmenný lístok) od všeobecného lekára",
+          "ku kardiológovi, k ortopédovi, u dermatológa",
+          "čakacia doba, skorší termín",
+          "nález dostane všeobecný lekár"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 30,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a2-u11-l06-recept-a-erecept",
+          "title": "Рецепт і eRecept"
+        }
+      }
+    }
+  ]
+}

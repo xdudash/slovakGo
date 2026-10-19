@@ -1,0 +1,783 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u04-l09-velke-cisla",
+      "sectionId": "a0-u04",
+      "level": "A0",
+      "title": "Великі числа: сотні й тисячі",
+      "topic": "Числа, ціни, час",
+      "description": "Сотні й тисячі для оренди, зарплати й цін на техніку; роки.",
+      "order": 39,
+      "xpReward": 15,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Розуміти суми в сотнях і тисячах та називати рік.",
+      "completionMessage": "Великі числа — підкорено. Далі — підсумок розділу.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Числа, ціни, час",
+        "title": "Великі числа: сотні й тисячі",
+        "shortDescription": "Розуміти суми в сотнях і тисячах та називати рік.",
+        "outcomes": [
+          "називати сотні: dvesto, tristo",
+          "розуміти tisíc",
+          "читати суми оренди й зарплати",
+          "розуміти рік: dvetisícdvadsaťšesť"
+        ],
+        "newWords": [
+          "dvesto",
+          "päťsto",
+          "tisíc",
+          "nájom",
+          "plat",
+          "záloha"
+        ],
+        "exercisesCount": 12,
+        "reward": "+15 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Сотні",
+          "text": "100 sto, 200 dvesto, 300 tristo, 400 štyristo, 500 päťsto … 900 deväťsto. Пишуться разом: dvestopäťdesiat (250).",
+          "examples": [
+            {
+              "sk": "dvesto",
+              "uk": "двісті"
+            },
+            {
+              "sk": "päťsto",
+              "uk": "п’ятсот"
+            },
+            {
+              "sk": "tristopäťdesiat",
+              "uk": "триста п’ятдесят"
+            }
+          ],
+          "shortRule": "dve + sto = dvesto",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Тисячі",
+          "text": "1000 tisíc, 2000 dvetisíc, 5000 päťtisíc. Рік читають як звичайне число: 2026 = dvetisícdvadsaťšesť, 1991 = tisícdeväťstodeväťdesiatjeden.",
+          "examples": [
+            {
+              "sk": "tisíc eur",
+              "uk": "тисяча євро"
+            },
+            {
+              "sk": "v roku 2026",
+              "uk": "у 2026 році"
+            }
+          ],
+          "shortRule": "rok = число повністю",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Гроші в житті",
+          "text": "Nájom (оренда) 650 € = šesťstopäťdesiat eur. Plat (зарплата) 1 200 € = tisícdvesto eur. Великі числа в тексті пишуть із пробілом: 1 200.",
+          "examples": [
+            {
+              "sk": "Nájom je šesťsto eur.",
+              "uk": "Оренда — шістсот євро."
+            },
+            {
+              "sk": "Plat je tisícsto eur.",
+              "uk": "Зарплата — тисяча сто євро."
+            }
+          ],
+          "shortRule": "1 200 = tisícdvesto",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u04-l09-velke-cisla-w01",
+            "sk": "dvesto",
+            "uk": "двісті",
+            "pronunciationUk": "двесто",
+            "exampleSk": "Dvesto eur záloha.",
+            "exampleUk": "Двісті євро застави."
+          },
+          {
+            "wordId": "a0-u04-l09-velke-cisla-w02",
+            "sk": "päťsto",
+            "uk": "п’ятсот",
+            "pronunciationUk": "петсто",
+            "exampleSk": "Päťsto metrov odtiaľto.",
+            "exampleUk": "П’ятсот метрів звідси."
+          },
+          {
+            "wordId": "a0-u04-l09-velke-cisla-w03",
+            "sk": "tisíc",
+            "uk": "тисяча",
+            "pronunciationUk": "тісі:ц",
+            "exampleSk": "Stojí to tisíc eur.",
+            "exampleUk": "Це коштує тисячу євро."
+          },
+          {
+            "wordId": "a0-u04-l09-velke-cisla-w04",
+            "sk": "nájom",
+            "uk": "оренда",
+            "pronunciationUk": "на:йом",
+            "exampleSk": "Nájom platím do pätnásteho.",
+            "exampleUk": "Оренду я плачу до п’ятнадцятого."
+          },
+          {
+            "wordId": "a0-u04-l09-velke-cisla-w05",
+            "sk": "plat",
+            "uk": "зарплата",
+            "pronunciationUk": "плат",
+            "exampleSk": "Plat dostávam desiateho.",
+            "exampleUk": "Зарплату я отримую десятого."
+          },
+          {
+            "wordId": "a0-u04-l09-velke-cisla-w06",
+            "sk": "záloha",
+            "uk": "застава, аванс",
+            "pronunciationUk": "за:лога",
+            "exampleSk": "Záloha je jeden nájom.",
+            "exampleUk": "Застава — одна місячна оплата."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u04-l09-velke-cisla-w01",
+          "sk": "dvesto",
+          "uk": "двісті",
+          "pronunciationUk": "двесто",
+          "exampleSk": "Dvesto eur záloha.",
+          "exampleUk": "Двісті євро застави.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l09-velke-cisla-w02",
+          "sk": "päťsto",
+          "uk": "п’ятсот",
+          "pronunciationUk": "петсто",
+          "exampleSk": "Päťsto metrov odtiaľto.",
+          "exampleUk": "П’ятсот метрів звідси.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l09-velke-cisla-w03",
+          "sk": "tisíc",
+          "uk": "тисяча",
+          "pronunciationUk": "тісі:ц",
+          "exampleSk": "Stojí to tisíc eur.",
+          "exampleUk": "Це коштує тисячу євро.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l09-velke-cisla-w04",
+          "sk": "nájom",
+          "uk": "оренда",
+          "pronunciationUk": "на:йом",
+          "exampleSk": "Nájom platím do pätnásteho.",
+          "exampleUk": "Оренду я плачу до п’ятнадцятого.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l09-velke-cisla-w05",
+          "sk": "plat",
+          "uk": "зарплата",
+          "pronunciationUk": "плат",
+          "exampleSk": "Plat dostávam desiateho.",
+          "exampleUk": "Зарплату я отримую десятого.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u04-l09-velke-cisla-w06",
+          "sk": "záloha",
+          "uk": "застава, аванс",
+          "pronunciationUk": "за:лога",
+          "exampleSk": "Záloha je jeden nájom.",
+          "exampleUk": "Застава — одна місячна оплата.",
+          "level": "A0",
+          "topic": "Числа, ціни, час",
+          "tags": [
+            "a0-u04",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u04-l09-velke-cisla-ex01",
+          "lessonId": "a0-u04-l09-velke-cisla",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "200",
+              "right": "dvesto"
+            },
+            {
+              "left": "300",
+              "right": "tristo"
+            },
+            {
+              "left": "500",
+              "right": "päťsto"
+            },
+            {
+              "left": "1000",
+              "right": "tisíc"
+            },
+            {
+              "left": "2000",
+              "right": "dvetisíc"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a0-u04-l09-velke-cisla-w01",
+            "a0-u04-l09-velke-cisla-w02",
+            "a0-u04-l09-velke-cisla-w03"
+          ]
+        },
+        {
+          "id": "a0-u04-l09-velke-cisla-ex02",
+          "lessonId": "a0-u04-l09-velke-cisla",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Скільки буде «šesťstopäťdesiat»?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "615",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "6 500",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "650",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "560",
+              "correct": false
+            }
+          ],
+          "explanation": "šesťsto (600) + päťdesiat (50).",
+          "order": 2
+        },
+        {
+          "id": "a0-u04-l09-velke-cisla-ex03",
+          "lessonId": "a0-u04-l09-velke-cisla",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Як прочитати рік 2026?",
+          "options": [
+            {
+              "id": "a",
+              "text": "dvetisícdvadsaťšesť",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "dve nula dva šesť",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "dvadsať dvadsaťšesť",
+              "correct": false
+            }
+          ],
+          "explanation": "Рік читається як звичайне число.",
+          "order": 3,
+          "wordIds": [
+            "a0-u04-l09-velke-cisla-w03"
+          ]
+        },
+        {
+          "id": "a0-u04-l09-velke-cisla-ex04",
+          "lessonId": "a0-u04-l09-velke-cisla",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Напиши цифрами.",
+          "sentence": "tristo eur = ______ €",
+          "acceptedAnswers": [
+            "300"
+          ],
+          "explanation": "tristo — 300.",
+          "order": 4
+        },
+        {
+          "id": "a0-u04-l09-velke-cisla-ex05",
+          "lessonId": "a0-u04-l09-velke-cisla",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай оголошення.",
+          "document": {
+            "title": "Prenájom 2-izbového bytu",
+            "fields": [
+              {
+                "label": "Mesto",
+                "value": "Trnava"
+              },
+              {
+                "label": "Nájom",
+                "value": "550 € / mesiac"
+              },
+              {
+                "label": "Energie",
+                "value": "120 €"
+              },
+              {
+                "label": "Záloha",
+                "value": "550 €"
+              }
+            ]
+          },
+          "question": "Скільки разом щомісяця (оренда + енергія)?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "670 €",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "550 €",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "1 100 €",
+              "correct": false
+            }
+          ],
+          "explanation": "550 + 120 = 670 €.",
+          "order": 5,
+          "wordIds": [
+            "a0-u04-l09-velke-cisla-w04",
+            "a0-u04-l09-velke-cisla-w06"
+          ]
+        },
+        {
+          "id": "a0-u04-l09-velke-cisla-ex06",
+          "lessonId": "a0-u04-l09-velke-cisla",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Záloha» тут означає заставу, яку платять наперед.",
+          "correctAnswer": true,
+          "explanation": "záloha — застава / аванс.",
+          "order": 6,
+          "wordIds": [
+            "a0-u04-l09-velke-cisla-w06"
+          ]
+        },
+        {
+          "id": "a0-u04-l09-velke-cisla-ex07",
+          "lessonId": "a0-u04-l09-velke-cisla",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Plat je "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "tisícdvesto",
+                "dvanásťsto",
+                "tisícdvadsať"
+              ],
+              "correct": "tisícdvesto"
+            },
+            {
+              "text": " eur. (1 200 €)"
+            }
+          ],
+          "explanation": "1 200 — tisícdvesto.",
+          "order": 7,
+          "wordIds": [
+            "a0-u04-l09-velke-cisla-w01",
+            "a0-u04-l09-velke-cisla-w03",
+            "a0-u04-l09-velke-cisla-w05"
+          ]
+        },
+        {
+          "id": "a0-u04-l09-velke-cisla-ex08",
+          "lessonId": "a0-u04-l09-velke-cisla",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Менше чи більше за 500?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Менше"
+            },
+            {
+              "id": "c2",
+              "title": "Більше"
+            }
+          ],
+          "items": [
+            {
+              "sk": "dvesto",
+              "category": "c1"
+            },
+            {
+              "sk": "štyristo",
+              "category": "c1"
+            },
+            {
+              "sk": "tisíc",
+              "category": "c2"
+            },
+            {
+              "sk": "šesťsto",
+              "category": "c2"
+            },
+            {
+              "sk": "osemsto",
+              "category": "c2"
+            },
+            {
+              "sk": "tristo",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Порівнюй із päťsto.",
+          "order": 8,
+          "wordIds": [
+            "a0-u04-l09-velke-cisla-w01",
+            "a0-u04-l09-velke-cisla-w03"
+          ]
+        },
+        {
+          "id": "a0-u04-l09-velke-cisla-ex09",
+          "lessonId": "a0-u04-l09-velke-cisla",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що оренда — 600 євро.",
+          "tokens": [
+            "eur",
+            "šesťsto",
+            "Nájom",
+            ".",
+            "je"
+          ],
+          "correctOrder": [
+            "Nájom",
+            "je",
+            "šesťsto",
+            "eur",
+            "."
+          ],
+          "explanation": "šesťsto eur.",
+          "order": 9,
+          "wordIds": [
+            "a0-u04-l09-velke-cisla-w04"
+          ]
+        },
+        {
+          "id": "a0-u04-l09-velke-cisla-ex10",
+          "lessonId": "a0-u04-l09-velke-cisla",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Majiteľ bytu",
+              "sk": "Nájom je sedemsto eur plus energie."
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "To je lacné, dovidenia, sedem.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "A koľko sú energie?",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Sedemsto je deň.",
+              "correct": false
+            }
+          ],
+          "explanation": "Уточни іншу частину суми.",
+          "order": 10,
+          "wordIds": [
+            "a0-u04-l09-velke-cisla-w04"
+          ]
+        },
+        {
+          "id": "a0-u04-l09-velke-cisla-ex11",
+          "lessonId": "a0-u04-l09-velke-cisla",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти хочеш перепитати суму застави.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Kde je záloha?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Záloha je hodín?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "O koľkej je záloha?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Koľko je záloha?",
+              "correct": true
+            }
+          ],
+          "explanation": "Koľko — скільки.",
+          "order": 11,
+          "wordIds": [
+            "a0-u04-l09-velke-cisla-w06"
+          ]
+        },
+        {
+          "id": "a0-u04-l09-velke-cisla-ex12",
+          "lessonId": "a0-u04-l09-velke-cisla",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери всі числа, більші за тисячу.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "tritisíc",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "päťsto",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "dvetisíc",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "deväťsto",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "tisícpäťsto",
+              "correct": true
+            }
+          ],
+          "explanation": "tisíc = 1000.",
+          "order": 12,
+          "wordIds": [
+            "a0-u04-l09-velke-cisla-w02",
+            "a0-u04-l09-velke-cisla-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Огляд квартири",
+        "description": "Власник показує тобі квартиру в Жиліні.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Nájom je štyristopäťdesiat eur.» Скільки?",
+            "options": [
+              {
+                "sk": "450 €",
+                "correct": true
+              },
+              {
+                "sk": "4 500 €",
+                "correct": false
+              },
+              {
+                "sk": "405 €",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Záloha je jeden nájom.» Яка застава?",
+            "options": [
+              {
+                "sk": "45 €",
+                "correct": false
+              },
+              {
+                "sk": "450 €",
+                "correct": true
+              },
+              {
+                "sk": "1 €",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти хочеш дізнатися, скільки енергія.",
+            "options": [
+              {
+                "sk": "Koľko stoja energie?",
+                "correct": true
+              },
+              {
+                "sk": "Energie sú koľko hodín?",
+                "correct": false
+              },
+              {
+                "sk": "Kde sú energie?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Zmluva od 1. 10. 2026.» З якої дати договір?",
+            "options": [
+              {
+                "sk": "з 10 січня 2026",
+                "correct": false
+              },
+              {
+                "sk": "з 1 жовтня 2026",
+                "correct": true
+              },
+              {
+                "sk": "з 1 листопада 2026",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Великі числа — підкорено. Далі — підсумок розділу."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Великі числа — підкорено. Далі — підсумок розділу.",
+        "nowYouKnow": [
+          "dvesto, tristo… deväťsto",
+          "tisíc, dvetisíc",
+          "рік — числом",
+          "nájom, plat, záloha"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u04-l10-cisla-opakovanie",
+          "title": "Підсумок: каса, розклад, дата"
+        }
+      }
+    }
+  ]
+}

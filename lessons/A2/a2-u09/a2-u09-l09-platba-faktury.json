@@ -1,0 +1,894 @@
+{
+  "lessons": [
+    {
+      "id": "a2-u09-l09-platba-faktury",
+      "sectionId": "a2-u09",
+      "level": "A2",
+      "title": "Оплата рахунків",
+      "topic": "Банк і платежі",
+      "description": "Фактура за електрику, інтернет чи телефон: сума, строк оплати, VS, QR-код, постійне доручення, інкасо й нагадування.",
+      "order": 89,
+      "xpReward": 30,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Вчасно оплачувати рахунки й обрати зручний спосіб регулярних платежів.",
+      "completionMessage": "Ти вмієш оплачувати рахунки. Далі — підсумок розділу «Банк і платежі».",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A2 · Банк і платежі",
+        "title": "Оплата рахунків",
+        "shortDescription": "Вчасно оплачувати рахунки й обрати зручний спосіб регулярних платежів.",
+        "outcomes": [
+          "читати фактуру: suma na úhradu, dátum splatnosti, VS",
+          "платити через QR kód",
+          "розрізняти trvalý príkaz a inkaso",
+          "розуміти upomienka, nedoplatok, preplatok"
+        ],
+        "newWords": [
+          "faktúra",
+          "trvalý príkaz",
+          "inkaso",
+          "upomienka",
+          "QR kód",
+          "dodávateľ"
+        ],
+        "exercisesCount": 14,
+        "reward": "+30 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Faktúra",
+          "text": "«Faktúra» — рахунок від фірми: за електрику, газ, інтернет, телефон. Важливі рядки: «suma na úhradu» — сума до сплати, «dátum splatnosti» — до якого числа заплатити, «variabilný symbol» — зазвичай номер фактури. На багатьох фактурах є «QR kód»: відскануй його в застосунку банку — і реквізити заповняться самі.",
+          "examples": [
+            {
+              "sk": "Faktúru treba uhradiť do pätnásteho októbra.",
+              "uk": "Рахунок треба оплатити до п’ятнадцятого жовтня."
+            },
+            {
+              "sk": "Naskenujte QR kód v aplikácii.",
+              "uk": "Відскануйте QR-код у застосунку."
+            }
+          ],
+          "shortRule": "do + дата в родовому: do pätnásteho októbra",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Trvalý príkaz a inkaso",
+          "text": "Для регулярних платежів є два способи. «Trvalý príkaz» — постійне доручення: ти сам(а) налаштовуєш однакову суму щомісяця (наприклад, оренда). «Inkaso» — ти дозволяєш фірмі самій списувати гроші з рахунку; зручно, коли сума щоразу інша (наприклад, телефон).",
+          "examples": [
+            {
+              "sk": "Nájom platím trvalým príkazom.",
+              "uk": "Оренду я плачу постійним дорученням."
+            },
+            {
+              "sk": "Faktúry za telefón platím inkasom.",
+              "uk": "Рахунки за телефон я оплачую через інкасо."
+            }
+          ],
+          "shortRule": "trvalý príkaz — та сама сума · inkaso — фірма списує сама",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Upomienka, nedoplatok, preplatok",
+          "text": "Якщо не заплатиш вчасно, прийде «upomienka» — нагадування про несплату, іноді з пенею. «Nedoplatok» — ти заплатив(ла) менше, ніж треба, і маєш доплатити. «Preplatok» — заплатив(ла) більше, і фірма гроші поверне. Таке буває після «vyúčtovania» — річного розрахунку за енергію.",
+          "examples": [
+            {
+              "sk": "Prišla mi upomienka za internet.",
+              "uk": "Мені прийшло нагадування про несплату за інтернет."
+            },
+            {
+              "sk": "Z vyúčtovania mám preplatok štyridsať eur.",
+              "uk": "За річним розрахунком у мене переплата сорок євро."
+            }
+          ],
+          "shortRule": "nedoplatok (доплатити) ↔ preplatok (повернуть)",
+          "commonMistakes": [
+            {
+              "mistake": "Faktúru treba zaplatiť do pätnásty október.",
+              "correct": "Faktúru treba zaplatiť do pätnásteho októbra."
+            },
+            {
+              "mistake": "platiť trvalý príkaz",
+              "correct": "platiť trvalým príkazom"
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a2-u09-l09-platba-faktury-w01",
+            "sk": "faktúra",
+            "uk": "рахунок(-фактура)",
+            "pronunciationUk": "факту:ра",
+            "exampleSk": "Faktúru za elektrinu mi poslali e-mailom.",
+            "exampleUk": "Рахунок за електрику мені надіслали електронною поштою."
+          },
+          {
+            "wordId": "a2-u09-l09-platba-faktury-w02",
+            "sk": "trvalý príkaz",
+            "uk": "постійне доручення",
+            "pronunciationUk": "трвалі: прі:каз",
+            "exampleSk": "Nájom platím trvalým príkazom.",
+            "exampleUk": "Оренду я плачу постійним дорученням."
+          },
+          {
+            "wordId": "a2-u09-l09-platba-faktury-w03",
+            "sk": "inkaso",
+            "uk": "інкасо (автоматичне списання)",
+            "pronunciationUk": "інкасо",
+            "exampleSk": "Faktúru za mobil mi strhávajú inkasom.",
+            "exampleUk": "Рахунок за мобільний мені списують через інкасо."
+          },
+          {
+            "wordId": "a2-u09-l09-platba-faktury-w04",
+            "sk": "upomienka",
+            "uk": "нагадування про несплату",
+            "pronunciationUk": "упомієнка",
+            "exampleSk": "Zabudol som zaplatiť a prišla mi upomienka.",
+            "exampleUk": "Я забув заплатити, і мені прийшло нагадування."
+          },
+          {
+            "wordId": "a2-u09-l09-platba-faktury-w05",
+            "sk": "QR kód",
+            "uk": "QR-код",
+            "pronunciationUk": "ку:ер код",
+            "exampleSk": "QR kód nájdete v pravom hornom rohu faktúry.",
+            "exampleUk": "QR-код ви знайдете в правому верхньому куті фактури."
+          },
+          {
+            "wordId": "a2-u09-l09-platba-faktury-w06",
+            "sk": "dodávateľ",
+            "uk": "постачальник",
+            "pronunciationUk": "дода:ватель",
+            "exampleSk": "Dodávateľ elektriny mi poslal novú faktúru.",
+            "exampleUk": "Постачальник електроенергії надіслав мені новий рахунок."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a2-u09-l09-platba-faktury-w01",
+          "sk": "faktúra",
+          "uk": "рахунок(-фактура)",
+          "pronunciationUk": "факту:ра",
+          "exampleSk": "Faktúru za elektrinu mi poslali e-mailom.",
+          "exampleUk": "Рахунок за електрику мені надіслали електронною поштою.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l09-platba-faktury-w02",
+          "sk": "trvalý príkaz",
+          "uk": "постійне доручення",
+          "pronunciationUk": "трвалі: прі:каз",
+          "exampleSk": "Nájom platím trvalým príkazom.",
+          "exampleUk": "Оренду я плачу постійним дорученням.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l09-platba-faktury-w03",
+          "sk": "inkaso",
+          "uk": "інкасо (автоматичне списання)",
+          "pronunciationUk": "інкасо",
+          "exampleSk": "Faktúru za mobil mi strhávajú inkasom.",
+          "exampleUk": "Рахунок за мобільний мені списують через інкасо.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l09-platba-faktury-w04",
+          "sk": "upomienka",
+          "uk": "нагадування про несплату",
+          "pronunciationUk": "упомієнка",
+          "exampleSk": "Zabudol som zaplatiť a prišla mi upomienka.",
+          "exampleUk": "Я забув заплатити, і мені прийшло нагадування.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l09-platba-faktury-w05",
+          "sk": "QR kód",
+          "uk": "QR-код",
+          "pronunciationUk": "ку:ер код",
+          "exampleSk": "QR kód nájdete v pravom hornom rohu faktúry.",
+          "exampleUk": "QR-код ви знайдете в правому верхньому куті фактури.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l09-platba-faktury-w06",
+          "sk": "dodávateľ",
+          "uk": "постачальник",
+          "pronunciationUk": "дода:ватель",
+          "exampleSk": "Dodávateľ elektriny mi poslal novú faktúru.",
+          "exampleUk": "Постачальник електроенергії надіслав мені новий рахунок.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a2-u09-l09-platba-faktury-ex01",
+          "lessonId": "a2-u09-l09-platba-faktury",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "faktúra",
+              "right": "рахунок-фактура"
+            },
+            {
+              "left": "trvalý príkaz",
+              "right": "постійне доручення"
+            },
+            {
+              "left": "inkaso",
+              "right": "автоматичне списання"
+            },
+            {
+              "left": "upomienka",
+              "right": "нагадування про несплату"
+            },
+            {
+              "left": "QR kód",
+              "right": "QR-код"
+            },
+            {
+              "left": "dodávateľ",
+              "right": "постачальник"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a2-u09-l09-platba-faktury-w01",
+            "a2-u09-l09-platba-faktury-w02",
+            "a2-u09-l09-platba-faktury-w03",
+            "a2-u09-l09-platba-faktury-w04",
+            "a2-u09-l09-platba-faktury-w05",
+            "a2-u09-l09-platba-faktury-w06"
+          ]
+        },
+        {
+          "id": "a2-u09-l09-platba-faktury-ex02",
+          "lessonId": "a2-u09-l09-platba-faktury",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай фактуру.",
+          "document": {
+            "title": "Domáce energie s. r. o. – faktúra za elektrinu",
+            "fields": [
+              {
+                "label": "Číslo faktúry",
+                "value": "2026104512"
+              },
+              {
+                "label": "Variabilný symbol",
+                "value": "2026104512"
+              },
+              {
+                "label": "Suma na úhradu",
+                "value": "58,70 €"
+              },
+              {
+                "label": "Dátum splatnosti",
+                "value": "20. 10. 2026"
+              },
+              {
+                "label": "Spôsob úhrady",
+                "value": "prevodom alebo QR kódom"
+              }
+            ]
+          },
+          "question": "До якого числа треба оплатити рахунок?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "до 20 жовтня 2026",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "до кінця 2026 року",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "до 10 жовтня 2026",
+              "correct": false
+            }
+          ],
+          "explanation": "Dátum splatnosti — останній день оплати: 20. 10. 2026.",
+          "order": 2,
+          "wordIds": [
+            "a2-u09-l09-platba-faktury-w01",
+            "a2-u09-l09-platba-faktury-w05"
+          ]
+        },
+        {
+          "id": "a2-u09-l09-platba-faktury-ex03",
+          "lessonId": "a2-u09-l09-platba-faktury",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Faktúru treba uhradiť do "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "dvadsiateho",
+                "dvadsiaty",
+                "dvadsiatom"
+              ],
+              "correct": "dvadsiateho"
+            },
+            {
+              "text": " októbra."
+            }
+          ],
+          "explanation": "do + родовий: do dvadsiateho októbra.",
+          "order": 3,
+          "wordIds": [
+            "a2-u09-l09-platba-faktury-w01"
+          ]
+        },
+        {
+          "id": "a2-u09-l09-platba-faktury-ex04",
+          "lessonId": "a2-u09-l09-platba-faktury",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Nájom platím trvalým ______. (доручення)",
+          "acceptedAnswers": [
+            "príkazom"
+          ],
+          "explanation": "Чим? — орудний: trvalým príkazom.",
+          "order": 4,
+          "wordIds": [
+            "a2-u09-l09-platba-faktury-w02"
+          ]
+        },
+        {
+          "id": "a2-u09-l09-platba-faktury-ex05",
+          "lessonId": "a2-u09-l09-platba-faktury",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Постійне доручення чи інкасо?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Trvalý príkaz"
+            },
+            {
+              "id": "c2",
+              "title": "Inkaso"
+            }
+          ],
+          "items": [
+            {
+              "sk": "nájom",
+              "category": "c1"
+            },
+            {
+              "sk": "rovnaká suma každý mesiac",
+              "category": "c1"
+            },
+            {
+              "sk": "platbu nastavuje klient",
+              "category": "c1"
+            },
+            {
+              "sk": "peniaze si strhne firma",
+              "category": "c2"
+            },
+            {
+              "sk": "faktúra za mobil",
+              "category": "c2"
+            },
+            {
+              "sk": "suma sa môže meniť",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Trvalý príkaz — однакова сума, налаштовуєш сам(а); inkaso — фірма списує сама, сума може змінюватися.",
+          "order": 5,
+          "wordIds": [
+            "a2-u09-l09-platba-faktury-w01",
+            "a2-u09-l09-platba-faktury-w02",
+            "a2-u09-l09-platba-faktury-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l09-platba-faktury-ex06",
+          "lessonId": "a2-u09-l09-platba-faktury",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що таке «nedoplatok»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "сума, яку ще треба доплатити",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "сума, яку тобі повернуть",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "знижка за вчасну оплату",
+              "correct": false
+            }
+          ],
+          "explanation": "nedoplatok — заплатив(ла) менше, ніж треба.",
+          "order": 6
+        },
+        {
+          "id": "a2-u09-l09-platba-faktury-ex07",
+          "lessonId": "a2-u09-l09-platba-faktury",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення.",
+          "message": {
+            "sender": "Domáce energie s. r. o.",
+            "body": "Upomienka: Faktúra č. 2026091877 na sumu 46,20 € nebola uhradená do 20. 9. 2026. Prosíme, uhraďte ju do 7 dní. Ak ste už zaplatili, správu ignorujte."
+          },
+          "question": "Що просить фірма?",
+          "options": [
+            {
+              "id": "a",
+              "text": "платити 46,20 € щомісяця",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "оплатити рахунок протягом 7 днів",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "прийти в офіс фірми",
+              "correct": false
+            }
+          ],
+          "explanation": "uhraďte ju do 7 dní — оплатіть її протягом 7 днів.",
+          "order": 7,
+          "wordIds": [
+            "a2-u09-l09-platba-faktury-w01",
+            "a2-u09-l09-platba-faktury-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l09-platba-faktury-ex08",
+          "lessonId": "a2-u09-l09-platba-faktury",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Firma mi vráti tridsať eur, lebo mám nedoplatok z vyúčtovania.",
+          "errorToken": "nedoplatok",
+          "correctToken": "preplatok",
+          "explanation": "Фірма повертає гроші, коли є переплата — preplatok.",
+          "order": 8
+        },
+        {
+          "id": "a2-u09-l09-platba-faktury-ex09",
+          "lessonId": "a2-u09-l09-platba-faktury",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Faktúra za mobil – spôsob úhrady: inkaso.",
+          "statement": "Цей рахунок треба оплатити вручну переказом.",
+          "correctAnswer": false,
+          "explanation": "Inkaso — фірма сама списує гроші з рахунку.",
+          "order": 9,
+          "wordIds": [
+            "a2-u09-l09-platba-faktury-w01",
+            "a2-u09-l09-platba-faktury-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l09-platba-faktury-ex10",
+          "lessonId": "a2-u09-l09-platba-faktury",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Mykola a Lesia bývajú v Prešove druhý rok. Nájom platia trvalým príkazom vždy prvého v mesiaci. Faktúru za internet platili najprv sami cez QR kód, ale v auguste na ňu zabudli a prišla im upomienka. Preto si teraz pre internet nastavili inkaso. V marci dostali vyúčtovanie za plyn a mali nedoplatok šesťdesiat eur, ktorý uhradili prevodom.",
+          "questions": [
+            {
+              "question": "Як вони платять оренду?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "готівкою власникові",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "через інкасо",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "постійним дорученням першого числа",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Чому вони налаштували інкасо для інтернету?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "так вимагав власник квартири",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "забули оплатити рахунок і отримали нагадування",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "інкасо безкоштовне",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що показав розрахунок за газ?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "недоплату 60 €",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "що газ оплачено повністю",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "переплату 60 €",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "a2-u09-l09-platba-faktury-w01",
+            "a2-u09-l09-platba-faktury-w02",
+            "a2-u09-l09-platba-faktury-w03",
+            "a2-u09-l09-platba-faktury-w04",
+            "a2-u09-l09-platba-faktury-w05"
+          ]
+        },
+        {
+          "id": "a2-u09-l09-platba-faktury-ex11",
+          "lessonId": "a2-u09-l09-platba-faktury",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти пояснюєш, що вже оплатив рахунок через QR-код.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Faktúru som už zaplatiť cez QR kód.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Faktúru som už zaplatil cez QR kódom.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Faktúra som už zaplatil cez QR kód.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Faktúru som už zaplatil cez QR kód.",
+              "correct": true
+            }
+          ],
+          "explanation": "zaplatiť + знахідний: faktúru; cez + знахідний: cez QR kód.",
+          "order": 11,
+          "wordIds": [
+            "a2-u09-l09-platba-faktury-w01",
+            "a2-u09-l09-platba-faktury-w05"
+          ]
+        },
+        {
+          "id": "a2-u09-l09-platba-faktury-ex12",
+          "lessonId": "a2-u09-l09-platba-faktury",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kolega",
+              "sk": "Ako platíš nájom? Každý mesiac cez aplikáciu?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Nie, mám nastavený trvalého príkazu.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Nie, mám nastavený trvalý príkaz.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Nie, mám nastavená trvalý príkaz.",
+              "correct": false
+            }
+          ],
+          "explanation": "mám nastavený + знахідний: trvalý príkaz.",
+          "order": 12,
+          "wordIds": [
+            "a2-u09-l09-platba-faktury-w02"
+          ]
+        },
+        {
+          "id": "a2-u09-l09-platba-faktury-ex13",
+          "lessonId": "a2-u09-l09-platba-faktury",
+          "type": "word_bank",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Склади.",
+          "wordBank": [
+            "upomienka",
+            "preplatok"
+          ],
+          "items": [
+            {
+              "sentence": "Prišla mi ______ za internet.",
+              "correct": "upomienka"
+            },
+            {
+              "sentence": "Firma mi vráti ______.",
+              "correct": "preplatok"
+            }
+          ],
+          "extraWords": [
+            "nedoplatok",
+            "faktúru"
+          ],
+          "explanation": "upomienka — нагадування; firma vráti — переплату: preplatok.",
+          "order": 13,
+          "wordIds": [
+            "a2-u09-l09-platba-faktury-w01",
+            "a2-u09-l09-platba-faktury-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l09-platba-faktury-ex14",
+          "lessonId": "a2-u09-l09-platba-faktury",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Спитай, до якого числа треба оплатити фактуру.",
+          "tokens": [
+            "?",
+            "splatnosti",
+            "Kedy",
+            "faktúry",
+            "dátum",
+            "je"
+          ],
+          "correctOrder": [
+            "Kedy",
+            "je",
+            "dátum",
+            "splatnosti",
+            "faktúry",
+            "?"
+          ],
+          "explanation": "dátum splatnosti — дата оплати; faktúry — родовий.",
+          "order": 14,
+          "wordIds": [
+            "a2-u09-l09-platba-faktury-w01"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Листи в поштовій скриньці",
+        "description": "Тобі прийшли фактури й лист від постачальника енергії.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Фактура: «Dátum splatnosti: 25. 11.» Сьогодні 20 листопада.",
+            "options": [
+              {
+                "sk": "заплатити треба протягом п’яти днів",
+                "correct": true
+              },
+              {
+                "sk": "заплатити треба до 25 грудня",
+                "correct": false
+              },
+              {
+                "sk": "строк оплати вже минув",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти хочеш оплатити швидко, не переписуючи IBAN.",
+            "options": [
+              {
+                "sk": "Naskenujem QR kód v aplikácii.",
+                "correct": true
+              },
+              {
+                "sk": "Napíšem príjemcovi e-mail.",
+                "correct": false
+              },
+              {
+                "sk": "Pôjdem k bankomatu.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Лист: «Z vyúčtovania vám vznikol preplatok 35 €.»",
+            "options": [
+              {
+                "sk": "ти маєш доплатити 35 €",
+                "correct": false
+              },
+              {
+                "sk": "фірма поверне тобі 35 €",
+                "correct": true
+              },
+              {
+                "sk": "це комісія 35 €",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти хочеш, щоб фірма сама щомісяця списувала гроші за телефон. Що налаштуєш?",
+            "options": [
+              {
+                "sk": "inkaso",
+                "correct": true
+              },
+              {
+                "sk": "trvalý príkaz",
+                "correct": false
+              },
+              {
+                "sk": "okamžitú platbu",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш оплачувати рахунки. Далі — підсумок розділу «Банк і платежі»."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш оплачувати рахунки. Далі — підсумок розділу «Банк і платежі».",
+        "nowYouKnow": [
+          "faktúra od dodávateľa: suma na úhradu, dátum splatnosti, VS",
+          "naskenovať QR kód v aplikácii",
+          "trvalý príkaz a inkaso",
+          "upomienka, nedoplatok, preplatok"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 30,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a2-u09-l10-banka-opakovanie",
+          "title": "Підсумок: банк і платежі"
+        }
+      }
+    }
+  ]
+}

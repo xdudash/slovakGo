@@ -1,0 +1,752 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u11-l05-vo-vlaku",
+      "sectionId": "a1-u11",
+      "level": "A1",
+      "title": "У поїзді",
+      "topic": "Транспорт",
+      "description": "Поїзд: vagón, sedadlo, miestenka, rýchlik, kupé, jedálny vozeň — і розмова з кондуктором.",
+      "order": 105,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Знайти своє місце й спілкуватися в поїзді.",
+      "completionMessage": "Поїздка потягом пройде гладко. Далі — таксі й додатки.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Транспорт",
+        "title": "У поїзді",
+        "shortDescription": "Знайти своє місце й спілкуватися в поїзді.",
+        "outcomes": [
+          "казати Hľadám vagón 5, sedadlo 12",
+          "розуміти miestenka",
+          "розрізняти rýchlik, osobný vlak, IC",
+          "відповідати кондуктору"
+        ],
+        "newWords": [
+          "vagón",
+          "sedadlo",
+          "miestenka",
+          "rýchlik",
+          "kupé",
+          "jedálny vozeň"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Вагон і місце",
+          "text": "«Vagón» — вагон, «sedadlo» — сидіння, місце, «kupé» — купе, «miestenka» — резервування місця. «Toto je moje miesto» — це моє місце.",
+          "examples": [
+            {
+              "sk": "Mám miestenku na sedadlo 24.",
+              "uk": "У мене резерв на місце 24."
+            },
+            {
+              "sk": "Prepáčte, toto je moje miesto.",
+              "uk": "Вибачте, це моє місце."
+            }
+          ],
+          "shortRule": "miestenka = резерв місця",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Типи поїздів",
+          "text": "«Osobný vlak» — приміський (зупиняється всюди), «rýchlik (R)» — швидкий, «IC / EC» — інтерсіті (потрібна miestenka), «nočný vlak» — нічний. «Jedálny vozeň» — вагон-ресторан.",
+          "examples": [
+            {
+              "sk": "Rýchlik stojí len vo väčších mestách.",
+              "uk": "Швидкий зупиняється лише у великих містах."
+            }
+          ],
+          "shortRule": "osobný / rýchlik / IC",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Кондуктор",
+          "text": "Кондуктор: «Cestovné lístky, prosím» — квитки, будь ласка. «Máte zľavu?» Ти: «Kde mám vystúpiť do…?», «Stojí tento vlak v…?» (чи зупиняється в…?).",
+          "examples": [
+            {
+              "sk": "Stojí tento vlak v Ružomberku?",
+              "uk": "Цей поїзд зупиняється в Ружомберку?"
+            }
+          ],
+          "shortRule": "Stojí tento vlak v…?",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u11-l05-vo-vlaku-w01",
+            "sk": "vagón",
+            "uk": "вагон",
+            "pronunciationUk": "ваго:н",
+            "exampleSk": "Sme vo vagóne číslo šesť.",
+            "exampleUk": "Ми в шостому вагоні."
+          },
+          {
+            "wordId": "a1-u11-l05-vo-vlaku-w02",
+            "sk": "sedadlo",
+            "uk": "сидіння, місце",
+            "pronunciationUk": "седадло",
+            "exampleSk": "Je toto sedadlo voľné?",
+            "exampleUk": "Це місце вільне?"
+          },
+          {
+            "wordId": "a1-u11-l05-vo-vlaku-w03",
+            "sk": "miestenka",
+            "uk": "резервування місця",
+            "pronunciationUk": "мієстенка",
+            "exampleSk": "Na IC vlak potrebujete miestenku.",
+            "exampleUk": "На IC потрібне резервування."
+          },
+          {
+            "wordId": "a1-u11-l05-vo-vlaku-w04",
+            "sk": "rýchlik",
+            "uk": "швидкий поїзд",
+            "pronunciationUk": "рі:хлік",
+            "exampleSk": "Rýchlik ide do Košíc päť hodín.",
+            "exampleUk": "Швидкий іде до Кошиць п’ять годин."
+          },
+          {
+            "wordId": "a1-u11-l05-vo-vlaku-w05",
+            "sk": "kupé",
+            "uk": "купе",
+            "pronunciationUk": "купе:",
+            "exampleSk": "V kupé je šesť miest.",
+            "exampleUk": "У купе шість місць."
+          },
+          {
+            "wordId": "a1-u11-l05-vo-vlaku-w06",
+            "sk": "jedálny vozeň",
+            "uk": "вагон-ресторан",
+            "pronunciationUk": "єда:лні: возень",
+            "exampleSk": "Jedálny vozeň je v strede vlaku.",
+            "exampleUk": "Вагон-ресторан посередині поїзда."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u11-l05-vo-vlaku-w01",
+          "sk": "vagón",
+          "uk": "вагон",
+          "pronunciationUk": "ваго:н",
+          "exampleSk": "Sme vo vagóne číslo šesť.",
+          "exampleUk": "Ми в шостому вагоні.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l05-vo-vlaku-w02",
+          "sk": "sedadlo",
+          "uk": "сидіння, місце",
+          "pronunciationUk": "седадло",
+          "exampleSk": "Je toto sedadlo voľné?",
+          "exampleUk": "Це місце вільне?",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l05-vo-vlaku-w03",
+          "sk": "miestenka",
+          "uk": "резервування місця",
+          "pronunciationUk": "мієстенка",
+          "exampleSk": "Na IC vlak potrebujete miestenku.",
+          "exampleUk": "На IC потрібне резервування.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l05-vo-vlaku-w04",
+          "sk": "rýchlik",
+          "uk": "швидкий поїзд",
+          "pronunciationUk": "рі:хлік",
+          "exampleSk": "Rýchlik ide do Košíc päť hodín.",
+          "exampleUk": "Швидкий іде до Кошиць п’ять годин.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l05-vo-vlaku-w05",
+          "sk": "kupé",
+          "uk": "купе",
+          "pronunciationUk": "купе:",
+          "exampleSk": "V kupé je šesť miest.",
+          "exampleUk": "У купе шість місць.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l05-vo-vlaku-w06",
+          "sk": "jedálny vozeň",
+          "uk": "вагон-ресторан",
+          "pronunciationUk": "єда:лні: возень",
+          "exampleSk": "Jedálny vozeň je v strede vlaku.",
+          "exampleUk": "Вагон-ресторан посередині поїзда.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u11-l05-vo-vlaku-ex01",
+          "lessonId": "a1-u11-l05-vo-vlaku",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "vagón",
+              "right": "вагон"
+            },
+            {
+              "left": "sedadlo",
+              "right": "місце"
+            },
+            {
+              "left": "miestenka",
+              "right": "резервування"
+            },
+            {
+              "left": "rýchlik",
+              "right": "швидкий поїзд"
+            },
+            {
+              "left": "jedálny vozeň",
+              "right": "вагон-ресторан"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u11-l05-vo-vlaku-w01",
+            "a1-u11-l05-vo-vlaku-w02",
+            "a1-u11-l05-vo-vlaku-w03",
+            "a1-u11-l05-vo-vlaku-w04",
+            "a1-u11-l05-vo-vlaku-w06"
+          ]
+        },
+        {
+          "id": "a1-u11-l05-vo-vlaku-ex02",
+          "lessonId": "a1-u11-l05-vo-vlaku",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Sprievodca",
+              "sk": "Cestovné lístky, prosím."
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Prosím si lístok.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Nech sa páči, tu je lístok a preukaz.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Lístok je.",
+              "correct": false
+            }
+          ],
+          "explanation": "Подаєш квиток.",
+          "order": 2
+        },
+        {
+          "id": "a1-u11-l05-vo-vlaku-ex03",
+          "lessonId": "a1-u11-l05-vo-vlaku",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Pán",
+              "sk": "Prepáčte, toto je moje miesto."
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "To nič.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Nie, moje miesto.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Ach, prepáčte, hneď sa presuniem.",
+              "correct": true
+            }
+          ],
+          "explanation": "Ввічливо звільняєш місце.",
+          "order": 3
+        },
+        {
+          "id": "a1-u11-l05-vo-vlaku-ex04",
+          "lessonId": "a1-u11-l05-vo-vlaku",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Stojí tento vlak v Martine?»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Чи стоїть поїзд у Мартіні зараз?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Чи зупиняється цей поїзд у Мартіні?",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Скільки коштує до Мартіна?",
+              "correct": false
+            }
+          ],
+          "explanation": "stáť — зупинятися (про поїзд).",
+          "order": 4
+        },
+        {
+          "id": "a1-u11-l05-vo-vlaku-ex05",
+          "lessonId": "a1-u11-l05-vo-vlaku",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Osobný vlak зупиняється майже на кожній станції.",
+          "correctAnswer": true,
+          "explanation": "Приміський.",
+          "order": 5
+        },
+        {
+          "id": "a1-u11-l05-vo-vlaku-ex06",
+          "lessonId": "a1-u11-l05-vo-vlaku",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Je toto ______ voľné? (місце)",
+          "acceptedAnswers": [
+            "sedadlo"
+          ],
+          "explanation": "sedadlo.",
+          "order": 6,
+          "wordIds": [
+            "a1-u11-l05-vo-vlaku-w02"
+          ]
+        },
+        {
+          "id": "a1-u11-l05-vo-vlaku-ex07",
+          "lessonId": "a1-u11-l05-vo-vlaku",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що ви в шостому вагоні.",
+          "tokens": [
+            "vo",
+            "šesť",
+            ".",
+            "číslo",
+            "vagóne",
+            "Sme"
+          ],
+          "correctOrder": [
+            "Sme",
+            "vo",
+            "vagóne",
+            "číslo",
+            "šesť",
+            "."
+          ],
+          "explanation": "vo vagóne.",
+          "order": 7,
+          "wordIds": [
+            "a1-u11-l05-vo-vlaku-w01"
+          ]
+        },
+        {
+          "id": "a1-u11-l05-vo-vlaku-ex08",
+          "lessonId": "a1-u11-l05-vo-vlaku",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Na IC vlak potrebujete miestenka.",
+          "errorToken": "miestenka",
+          "correctToken": "miestenku",
+          "explanation": "Знахідний: miestenku.",
+          "order": 8,
+          "wordIds": [
+            "a1-u11-l05-vo-vlaku-w03"
+          ]
+        },
+        {
+          "id": "a1-u11-l05-vo-vlaku-ex09",
+          "lessonId": "a1-u11-l05-vo-vlaku",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай квиток.",
+          "document": {
+            "title": "Cestovný lístok ZSSK",
+            "fields": [
+              {
+                "label": "Z",
+                "value": "Bratislava hl. st."
+              },
+              {
+                "label": "Do",
+                "value": "Žilina"
+              },
+              {
+                "label": "Vlak",
+                "value": "IC 503"
+              },
+              {
+                "label": "Vagón",
+                "value": "3"
+              },
+              {
+                "label": "Miesto",
+                "value": "47"
+              }
+            ]
+          },
+          "question": "Яке місце?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "47 у 3-му вагоні",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "503",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "3 у 47-му вагоні",
+              "correct": false
+            }
+          ],
+          "explanation": "Vagón 3, miesto 47.",
+          "order": 9,
+          "wordIds": [
+            "a1-u11-l05-vo-vlaku-w01"
+          ]
+        },
+        {
+          "id": "a1-u11-l05-vo-vlaku-ex10",
+          "lessonId": "a1-u11-l05-vo-vlaku",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти хочеш дізнатися, де вагон-ресторан.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Prepáčte, kde je jedálny vozeň?",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Jedálny vozeň kde je vozeň?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Kde jesť vlak?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Reštaurácia vlak?",
+              "correct": false
+            }
+          ],
+          "explanation": "Kde je…?",
+          "order": 10,
+          "wordIds": [
+            "a1-u11-l05-vo-vlaku-w06"
+          ]
+        },
+        {
+          "id": "a1-u11-l05-vo-vlaku-ex11",
+          "lessonId": "a1-u11-l05-vo-vlaku",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Тип поїзда",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Rýchly"
+            },
+            {
+              "id": "c2",
+              "title": "Pomalý"
+            }
+          ],
+          "items": [
+            {
+              "sk": "IC",
+              "category": "c1"
+            },
+            {
+              "sk": "regionálny vlak",
+              "category": "c2"
+            },
+            {
+              "sk": "EC",
+              "category": "c1"
+            },
+            {
+              "sk": "rýchlik",
+              "category": "c1"
+            },
+            {
+              "sk": "osobný vlak",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Швидкість.",
+          "order": 11,
+          "wordIds": [
+            "a1-u11-l05-vo-vlaku-w04"
+          ]
+        },
+        {
+          "id": "a1-u11-l05-vo-vlaku-ex12",
+          "lessonId": "a1-u11-l05-vo-vlaku",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери слова з поїзда.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "sedadlo",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "pobočka",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "vagón",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "matrika",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "kupé",
+              "correct": true
+            }
+          ],
+          "explanation": "Поїзд.",
+          "order": 12,
+          "wordIds": [
+            "a1-u11-l05-vo-vlaku-w01",
+            "a1-u11-l05-vo-vlaku-w02",
+            "a1-u11-l05-vo-vlaku-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Нічний потяг до Кошиць",
+        "description": "Ти їдеш нічним поїздом.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти шукаєш місце. Провідник питає: «Aké máte miesto?»",
+            "options": [
+              {
+                "sk": "Päť vagón miesto.",
+                "correct": false
+              },
+              {
+                "sk": "Mám miesto vagón.",
+                "correct": false
+              },
+              {
+                "sk": "Vagón päť, kupé tri, miesto dvanásť.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "У твоєму купе хтось на твоєму місці.",
+            "options": [
+              {
+                "sk": "Choďte preč.",
+                "correct": false
+              },
+              {
+                "sk": "Prepáčte, myslím, že toto je moje miesto.",
+                "correct": true
+              },
+              {
+                "sk": "Toto moje miesto je vaše.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти питаєш, чи поїзд зупиняється в Попраді.",
+            "options": [
+              {
+                "sk": "Stojí tento vlak v Poprade?",
+                "correct": true
+              },
+              {
+                "sk": "Je Poprad vlak?",
+                "correct": false
+              },
+              {
+                "sk": "Vlak stojí Poprad?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Áno, o 4:30. Zobudím vás.» Що пропонує провідник?",
+            "options": [
+              {
+                "sk": "розбудити тебе о 4:30",
+                "correct": true
+              },
+              {
+                "sk": "висадити тебе",
+                "correct": false
+              },
+              {
+                "sk": "продати квиток",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Поїздка потягом пройде гладко. Далі — таксі й додатки."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Поїздка потягом пройде гладко. Далі — таксі й додатки.",
+        "nowYouKnow": [
+          "vagón, sedadlo, kupé, miestenka",
+          "osobný vlak, rýchlik, IC",
+          "Stojí tento vlak v…?",
+          "Toto je moje miesto."
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u11-l06-taxik",
+          "title": "Таксі й додатки"
+        }
+      }
+    }
+  ]
+}

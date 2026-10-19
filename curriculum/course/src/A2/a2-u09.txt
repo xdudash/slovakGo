@@ -1,0 +1,508 @@
+@unit a2-u09 | Банк і платежі | Banka a platby
+
+@lesson zalozenie-uctu | Банківський рахунок | Bankový účet
+desc: Як відкрити рахунок у банку: що взяти із собою, які бувають рахунки і як сказати «на рахунок», «на рахунку», «з рахунку».
+goal: Відкрити рахунок у відділенні банку й розуміти основні запитання працівника.
+out: казати Chcel(a) by som si založiť účet ;; розрізняти bežný a sporiaci účet ;; вживати na účet, na účte, z účtu ;; розуміти, які документи потрібні для відкриття рахунку
+done: Ти вмієш відкрити рахунок у банку. Далі — платіжна картка: дебетова чи кредитна.
+T: Založiť si účet || Рахунок у банку можна «založiť» або «otvoriť»: «Chcel by som si založiť účet.» Слово «si» показує, що рахунок відкриваєш для себе. Зазвичай потрібні «doklad totožnosti» (паспорт або посвідка на проживання) та адреса в Словаччині; у деяких банках рахунок можна відкрити й онлайн. Закрити рахунок — «zrušiť účet». || Chcela by som si založiť účet. = Я хотіла б відкрити рахунок. ;; Čo potrebujem na založenie účtu? = Що мені потрібно, щоб відкрити рахунок? || založiť / otvoriť si účet · zrušiť účet
+T: Bežný a sporiaci účet || «Bežný účet» — поточний рахунок: на нього приходить зарплата, з нього платиш карткою. «Sporiaci účet» — ощадний рахунок: там гроші лежать і приносять відсотки. Людина, яка має рахунок у банку, — «klient» / «klientka» банку. || Výplatu mi posielajú na bežný účet. = Зарплату мені перераховують на поточний рахунок. ;; Na sporiacom účte mám rezervu. = На ощадному рахунку в мене є резерв. || bežný — для щоденних платежів, sporiaci — для заощаджень
+T: Na účet, na účte, z účtu || Куди? — «na účet» (знахідний): «poslať peniaze na účet». Де? — «na účte» (місцевий): «Mám na účte dvesto eur.» Звідки? — «z účtu» (родовий): «Platba odišla z môjho účtu.» Сам банк — «v banke» (де?), «do banky» (куди?). || Peniaze sú už na účte. = Гроші вже на рахунку. ;; Nájom platím z bežného účtu. = Оренду я плачу з поточного рахунку. || na účet (куди) · na účte (де) · z účtu (звідки)
+mis: Mám peniaze v účte. => Mám peniaze na účte. ;; Som v banku. => Som v banke. ;; poslať peniaze na účte => poslať peniaze na účet
+W: založiť | відкрити (рахунок), заснувати | заложіт’ | Chcel by som si založiť účet. | Я хотів би відкрити рахунок.
+W: založenie | відкриття (рахунку), заснування | заложеніє | Založenie účtu trvá asi pol hodiny. | Відкриття рахунку триває приблизно пів години.
+W: bežný účet | поточний рахунок | бежні: у:чет | Výplatu dostávam na bežný účet. | Зарплату я отримую на поточний рахунок.
+W: sporiaci účet | ощадний рахунок | спорьяці у:чет | Každý mesiac si dávam sto eur na sporiaci účet. | Щомісяця я відкладаю сто євро на ощадний рахунок.
+W: klient | клієнт | кліент | Banka má pre nových klientov výhodnú ponuku. | Банк має вигідну пропозицію для нових клієнтів.
+X mt: З’єднай. | založiť = відкрити (рахунок) ;; založenie = відкриття (рахунку) ;; bežný účet = поточний рахунок ;; sporiaci účet = ощадний рахунок ;; klient = клієнт ;; zrušiť účet = закрити рахунок
+X dd: Обери. | Mám na [*účte/účet/účtu] ešte dvesto eur.
+= Де? — місцевий відмінок: na účte.
+X dd: Обери. | Výplatu mi posielajú na [*účet/účte/účtu] v banke.
+= Куди? — знахідний відмінок: na účet.
+X fb: Допиши. | Nájom platím z ___ účtu. (bežný) | bežného |
+= z + родовий: bežný účet → z bežného účtu.
+X cat: Куди, де чи звідки? | Куди: na účet, do banky ;; Де: na účte, v banke ;; Звідки: z účtu, z banky
+= na účet, do banky — куди; na účte, v banke — де; z účtu, z banky — звідки.
+X sc~: Що таке «sporiaci účet»? | - | *ощадний рахунок, де накопичуються гроші ;; рахунок для щоденних платежів ;; рахунок фірми для зарплат
+= sporiť — заощаджувати, тому sporiaci účet — ощадний рахунок.
+X fe: - | Chcel by som si založiť účet v [banku>banke].
+= Де? — v + місцевий: banka → v banke.
+X tf: - | - | «Zrušiť účet» означає відкрити новий рахунок. | F
+= Zrušiť účet — закрити рахунок; відкрити — založiť (otvoriť) účet.
+X so: - | Скажи, що хочеш відкрити поточний рахунок. | Chcem si založiť bežný účet.
+= chcieť si založiť + знахідний: bežný účet.
+X dr: - | Pracovníčka banky: Dobrý deň, ako vám môžem pomôcť? | *Dobrý deň, chcel by som si založiť účet. ;; Dobrý deň, chcel by som si založiť účtom. ;; Dobrý deň, chcel by som si založiť účte.
+= založiť + знахідний: účet.
+X doc: Прочитай інформацію банку. | Banka Lipa – založenie účtu | Potrebné doklady: cestovný pas alebo doklad o pobyte ;; Kontaktná adresa: na Slovensku ;; Vek: od 18 rokov ;; Trvanie: približne 30 minút | Що потрібно, щоб відкрити рахунок? | *паспорт або посвідка на проживання ;; лише номер телефону ;; трудовий договір
+= Potrebné doklady — потрібні документи: pas alebo doklad o pobyte.
+X rc: - | Halyna pracuje v Nitre od leta. Zamestnávateľ jej povedal, že výplatu posiela len na bankový účet. V piatok preto išla do pobočky banky na Štefánikovej ulici. Zobrala si pas a doklad o pobyte. Pracovník banky jej vysvetlil, že bežný účet je pre nových klientov prvý rok bez poplatku. Halyna si založila bežný účet a k nemu aj malý sporiaci účet. Celé to trvalo asi štyridsať minút. Kartu jej pošlú poštou do desiatich dní.
+q~: Чому Галина відкрила рахунок? | *роботодавець платить зарплату лише на рахунок ;; вона хотіла взяти кредит ;; про це попросила власниця квартири
+q~: Які рахунки вона відкрила? | *поточний і ощадний ;; лише ощадний ;; два поточні
+q~: Як вона отримає картку? | *поштою протягом десяти днів ;; одразу у відділенні ;; через місяць у відділенні
+X np: Ти питаєш, що потрібно, щоб відкрити рахунок. | *Čo potrebujem na založenie účtu? ;; Čo potrebujem na založenie účet? ;; Čo potrebujem pre založiť účet? ;; Čo potrebujem založenie účtu na?
+= na + знахідний: na založenie; založenie čoho? — родовий: účtu.
+X ms: Обери правильні речення. | - | *Mám na účte sto eur. ;; *Platím z bežného účtu. ;; *Posielam peniaze na účet. ;; Mám v účte sto eur. ;; Posielam peniaze na účte.
+= na účte — де; na účet — куди; z účtu — звідки.
+F: Перший рахунок || Ти щойно почав(ла) працювати в Словаччині, і тобі потрібен рахунок для зарплати.
+S: Ти пояснюєш працівниці банку, навіщо прийшов(ла). | *Chcel by som si založiť bežný účet. ;; Chcel by som si založiť bežného účtu. ;; Chcel by som si založiť na bežnom účte.
+S: Працівниця: «Máte so sebou doklad totožnosti?» Що вона питає? | *чи маєш ти із собою документ, що посвідчує особу ;; чи маєш ти рахунок в іншому банку ;; чи можеш ти підписати договір
+S: Ти питаєш, скільки триває відкриття рахунку. | *Ako dlho trvá založenie účtu? ;; Ako dlho trvá založenie účet? ;; Ako dlho trvá založiť účtu?
+S: Шеф питає, куди перераховувати зарплату. | *Pošlite mi ju, prosím, na bežný účet. ;; Pošlite mi ju, prosím, na bežnom účte. ;; Pošlite mi ju, prosím, z bežného účtu.
+R: založiť si účet, zrušiť účet ;; bežný účet a sporiaci účet ;; na účet — na účte — z účtu ;; doklad totožnosti a adresa na Slovensku
+
+@lesson platobna-karta | Платіжна картка | Platobná karta
+desc: Дебетова чи кредитна картка, активація, ліміти, строк дії та оплата карткою або телефоном.
+goal: Розуміти, яку картку пропонує банк, активувати її і питати про ліміти.
+out: розрізняти debetná a kreditná karta ;; казати platiť kartou, platba kartou ;; розуміти aktivovať kartu, denný limit ;; питати, до коли картка дійсна
+done: Ти розумієшся на банківських картках. Далі — IBAN і банківський переказ.
+T: Debetná a kreditná karta || «Debetná karta» прив’язана до твого рахунку: платиш власними грошима. «Kreditná karta» — картка з грошима банку: витрачене треба потім повернути, інакше доведеться платити відсотки. Для щоденних покупок більшості людей вистачає дебетової картки. || K účtu dostanete debetnú kartu. = До рахунку ви отримаєте дебетову картку. ;; Kreditnú kartu nepotrebujem. = Кредитна картка мені не потрібна. || debetná — свої гроші, kreditná — гроші банку
+T: Platiť kartou || Чим платиш? — орудний відмінок без прийменника: «platiť kartou», «platiť mobilom». Іменник «platba» — оплата, платіж: «platba kartou», «bezkontaktná platba». Готівкою — «v hotovosti». Не кажи «platiť s kartou». || Môžem platiť kartou? = Можна заплатити карткою? ;; Platba kartou neprešla. = Оплата карткою не пройшла. || platiť kartou / mobilom / v hotovosti
+T: Aktivácia, limit, platnosť || Нову картку треба «aktivovať» — у застосунку банку або першою операцією з PIN-кодом у банкоматі. «Limit» — максимальна сума: «denný limit na platby», «limit na výber». Ліміт можна «zvýšiť» (підвищити) або «znížiť» (знизити). Строк дії — «platnosť karty»: «Karta je platná do septembra 2029.» || Kartu si aktivujte v aplikácii. = Активуйте картку в застосунку. ;; Môj denný limit je tisíc eur. = Мій денний ліміт — тисяча євро. || aktivovať kartu · zvýšiť / znížiť limit
+mis: Platím s kartou. => Platím kartou. ;; Môžem platiť na kartu? => Môžem platiť kartou? ;; aktivizovať kartu => aktivovať kartu
+W: debetná karta | дебетова картка | дебетна: карта | K účtu dostanete debetnú kartu zadarmo. | До рахунку ви безкоштовно отримаєте дебетову картку.
+W: kreditná karta | кредитна картка | кредітна: карта | S kreditnou kartou míňate peniaze banky. | З кредитною карткою ви витрачаєте гроші банку.
+W: platba | оплата, платіж | платба | Platba kartou neprešla, skúste to znova. | Оплата карткою не пройшла, спробуйте ще раз.
+W: aktivovať | активувати | активоват’ | Novú kartu si musíte najprv aktivovať. | Нову картку спершу треба активувати.
+W: limit | ліміт | ліміт | Denný limit na výber je päťsto eur. | Денний ліміт на зняття готівки — п’ятсот євро.
+W: zvýšiť | підвищити, збільшити | зві:шіт’ | Limit si môžete zvýšiť v aplikácii. | Ліміт можна підвищити в застосунку.
+X mt: З’єднай. | debetná karta = дебетова картка ;; kreditná karta = кредитна картка ;; platba = оплата, платіж ;; aktivovať = активувати ;; limit = ліміт ;; zvýšiť = підвищити
+X dd: Обери. | Môžem platiť [*kartou/s kartou/na kartu]?
+= Чим? — орудний без прийменника: kartou.
+X dd: Обери. | Novú kartu si musíte najprv [*aktivovať/aktivovaný/aktivácia].
+= musieť + інфінітив: aktivovať.
+X sc: Яка картка дає змогу платити грошима банку, які потім треба повернути? | - | *kreditná karta ;; debetná karta ;; vernostná karta
+= Kreditná karta — гроші банку; vernostná karta — картка лояльності магазину, нею не платять.
+X fb: Допиши. | Platba ___ neprešla. (картка) | kartou |
+= platba čím? — орудний: kartou.
+X fe: - | Večer som v reštaurácii platila [mobilu>mobilom].
+= Чим? — орудний: mobil → mobilom.
+X tf: - | Karta je platná do septembra 2029. | Картку можна використовувати до вересня 2029 року. | T
+= platná do — дійсна до.
+X doc: Прочитай лист від банку. | Banka Lipa – vaša nová karta | Typ karty: debetná, bezkontaktná ;; Platnosť: do 08/2030 ;; Denný limit na platby: 1 500 € ;; Denný limit na výber z bankomatu: 600 € ;; Aktivácia: v aplikácii alebo prvým výberom s PIN | Скільки максимально можна зняти в банкоматі за день? | *600 € ;; 1 500 € ;; 2 100 €
+= Denný limit na výber — денний ліміт на зняття готівки: 600 €.
+X msg: Прочитай SMS від банку. | Banka Lipa | Vaša nová karta bola odoslaná poštou. Po doručení si ju aktivujte v aplikácii. PIN nájdete v aplikácii v časti Karty. | Де знайти PIN-код? | *у застосунку, у розділі «Karty» ;; у конверті разом із карткою ;; у відділенні банку
+= PIN nájdete v aplikácii — PIN знайдете в застосунку.
+X dr: - | Predavačka: Budete platiť v hotovosti? | *Nie, kartou, prosím. ;; Nie, s kartou, prosím. ;; Nie, na kartu, prosím.
+= platiť kartou — без прийменника.
+X tr: Заміни «v hotovosti» на оплату карткою. | Nájom platím v hotovosti. | Nájom platím kartou.
+= v hotovosti → kartou (орудний відмінок).
+X np: Ти питаєш у банку, чи можна підвищити денний ліміт. | *Môžem si zvýšiť denný limit? ;; Môžem si zvýšiť denného limitu? ;; Môžem si zvýšiť dennom limite? ;; Môžem zvýšiť si denný limit?
+= zvýšiť + знахідний: denný limit; si стоїть одразу після першого слова.
+X cat: Дебетова чи кредитна картка? | Debetná karta: vlastné peniaze, priamo z bežného účtu ;; Kreditná karta: požičané peniaze banky, úrok pri oneskorenej splátke
+= Дебетова — твої гроші з рахунку; кредитна — позичені гроші банку.
+X so: - | Скажи, що оплата карткою не пройшла. | Platba kartou neprešla.
+= platba kartou — оплата карткою; neprešla — не пройшла.
+F: Нова картка || Тобі прийшла поштою нова картка, і ти вперше йдеш нею платити.
+S: У листі: «Kartu si pred prvým použitím aktivujte.» Що треба зробити? | *активувати картку перед першим використанням ;; повернути картку в банк ;; змінити PIN-код
+S: Касирка: «Hotovosť alebo karta?» | *Kartou, prosím. ;; S kartou, prosím. ;; Na kartu, prosím.
+S: Термінал показує: «Prekročený denný limit.» Що сталося? | *перевищено денний ліміт ;; картка недійсна ;; неправильний PIN-код
+S: Ти питаєш у банку, до коли дійсна картка. | *Dokedy je karta platná? ;; Dokedy je karta platnosť? ;; Dokedy platná je kartou?
+R: debetná a kreditná karta ;; platiť kartou, platba kartou ;; aktivovať kartu, zvýšiť denný limit ;; karta je platná do…
+
+@lesson iban-a-prevod | IBAN і банківський переказ | IBAN a prevod
+desc: Як прочитати IBAN, заповнити переказ і кому та куди надсилати гроші: давальний і знахідний відмінки в банківських фразах.
+goal: Надіслати гроші переказом і правильно заповнити реквізити.
+out: читати й диктувати IBAN ;; заповнювати príjemca, suma, variabilný symbol, správa pre príjemcu ;; казати poslať peniaze mame na účet ;; розрізняти звичайний переказ і okamžitú platbu
+done: Ти вмієш надсилати гроші переказом. Далі — банкомат: зняти й внести готівку.
+T: IBAN || «IBAN» — міжнародний номер рахунку. Словацький має 24 знаки й починається з «SK»: «SK31 4400 0000 1987 4263 7541». Цифри зазвичай читають групами по чотири. Питають так: «Aké je vaše číslo účtu?» або «Pošlite mi IBAN.» || Môžete mi poslať váš IBAN? = Можете надіслати мені ваш IBAN? ;; Číslo účtu je v zmluve. = Номер рахунку є в договорі. || SK + 22 цифри
+T: Prevod || «Prevod» — переказ: «poslať peniaze prevodom», «previesť peniaze na účet». Кому? — давальний: «Posielam peniaze mame.» На чий рахунок? — «na účet» + родовий: «na účet pána Kováča». Звичайний переказ між банками зазвичай приходить наступного робочого дня, «okamžitá platba» — за кілька секунд. || Peniaze som previedla na účet syna. = Я переказала гроші на рахунок сина. ;; Posielam ti peniaze za lístky. = Надсилаю тобі гроші за квитки. || poslať komu? (давальний) · na účet koho? (родовий)
+T: Údaje platby || У формі переказу є поля: «IBAN príjemcu» (номер рахунку одержувача), «suma», «variabilný symbol» (VS — число, за яким одержувач знаходить твій платіж, напр. номер фактури) і «správa pre príjemcu» (повідомлення). Хто отримує гроші — «príjemca», хто платить — «platiteľ». || Do správy pre príjemcu napíšte svoje meno. = У повідомленні для одержувача напишіть своє ім’я. ;; Variabilný symbol je číslo faktúry. = Варіабельний символ — це номер фактури. || príjemca, suma, VS, správa
+mis: Posielam peniaze mama. => Posielam peniaze mame. ;; previesť peniaze na účte => previesť peniaze na účet ;; meno príjemca => meno príjemcu
+W: prevod | переказ | превод | Prevod z inej banky trvá jeden pracovný deň. | Переказ з іншого банку триває один робочий день.
+W: previesť | переказати (гроші) | превієст’ | Nájom som previedol na účet majiteľa. | Оренду я переказав на рахунок власника.
+W: príjemca | одержувач | при:йемца | Skontrolujte meno príjemcu. | Перевірте ім’я одержувача.
+W: IBAN | міжнародний номер рахунку (IBAN) | і:бан | IBAN začína písmenami SK. | IBAN починається літерами SK.
+W: variabilný symbol | варіабельний символ (номер платежу) | варіабілні: сімбол | Bez variabilného symbolu firma platbu nenájde. | Без варіабельного символу фірма не знайде платіж.
+W: okamžitá platba | миттєвий платіж | окамжіта: платба | Okamžitá platba príde do pár sekúnd. | Миттєвий платіж надходить за кілька секунд.
+X mt: З’єднай. | prevod = переказ ;; previesť = переказати ;; príjemca = одержувач ;; IBAN = номер рахунку ;; variabilný symbol = номер платежу (VS) ;; okamžitá platba = миттєвий платіж
+X dd: Обери. | Každý mesiac posielam peniaze [*mame/mama/mamu] na Ukrajinu.
+= Кому? — давальний: mama → mame.
+X dd: Обери. | Nájom som previedol na účet [*majiteľa/majiteľ/majiteľom].
+= na účet koho? — родовий: majiteľ → majiteľa.
+X fb: Допиши. | Skontrolujte IBAN ___. (príjemca) | príjemcu |
+= príjemca → príjemcu (родовий, як kolega → kolegu).
+X doc: Прочитай платіжне доручення. | Príkaz na úhradu | IBAN príjemcu: SK47 4400 0000 0051 2233 4455 ;; Príjemca: Domáce energie s. r. o. ;; Suma: 64,20 € ;; Variabilný symbol: 2026104 ;; Správa pre príjemcu: Kovalenko, október | Який варіабельний символ цього платежу? | *2026104 ;; 64,20 ;; 4400
+= Variabilný symbol: 2026104.
+X so: - | Попроси перевірити ім’я одержувача. | Skontrolujte meno príjemcu.
+= skontrolovať + знахідний: meno; čie meno? — родовий: príjemcu.
+X fe: - | Peniaze som poslala [sestra>sestre] na nový účet.
+= Кому? — давальний: sestra → sestre.
+X sc~: Що таке «okamžitá platba»? | - | *переказ, який надходить за кілька секунд ;; платіж, який треба зробити сьогодні ;; оплата готівкою
+= okamžitý — миттєвий: гроші приходять одразу.
+X tf: - | - | Словацький IBAN починається літерами SK. | T
+= SK + 22 цифри, разом 24 знаки.
+X msg: Прочитай повідомлення від власниці квартири. | Pani Horváthová | Dobrý deň, nájom za november mi, prosím, pošlite do piateho na môj účet SK12 4400 0000 0012 3456 7890. Do správy pre príjemcu napíšte číslo bytu. Ďakujem. | Що треба написати в повідомленні для одержувача? | *номер квартири ;; своє ім’я та прізвище ;; номер рахунку
+= Do správy pre príjemcu napíšte číslo bytu — напишіть номер квартири.
+X rc: - | Andrij posiela každý mesiac peniaze rodičom do Ľvova. Predtým posielal peniaze cez známych, ktorí cestovali domov. Teraz to robí jednoducho v aplikácii banky: zadá IBAN otcovho účtu, sumu a do správy napíše „pre mamu a otca“. Prevod do zahraničia je pomalší ako prevod na Slovensku a stojí dve eurá. Keď posiela peniaze kolegovi na Slovensku, používa okamžitú platbu a peniaze prídu za pár sekúnd.
+q~: Кому Андрій щомісяця надсилає гроші? | *батькам у Львів ;; колезі в Словаччині ;; знайомим, які їдуть додому
+q~: Скільки коштує переказ за кордон? | *два євро ;; нічого ;; п’ять євро
+q~: Коли Андрій користується миттєвим платежем? | *коли надсилає гроші колезі в Словаччині ;; коли надсилає гроші батькам ;; коли платить за квартиру
+X wb: Склади. | Peniaze som [previedla] na účet syna. ;; Skontrolujte meno [príjemcu]. | príjemcovi ;; previesť
+= previedla — минулий час жіночого роду; meno príjemcu — родовий.
+X dr: - | Kolegyňa: Pošleš mi peniaze za lístok? | *Jasné, pošli mi IBAN. ;; Jasné, pošli ma IBAN. ;; Jasné, pošli mne IBANom.
+= pošli mi — давальний: mi; IBAN — знахідний.
+X np: Ти купуєш річ за оголошенням і питаєш у продавця номер рахунку. | *Aké je vaše číslo účtu? ;; Aký je váš číslo účtu? ;; Aké je vaše číslo účet? ;; Aké je vám číslo účtu?
+= číslo — середній рід: aké, vaše; číslo čoho? — родовий: účtu.
+F: Перший переказ || Ти оплачуєш курси словацької через застосунок банку.
+S: Школа пише: «Kurzovné uhraďte na účet SK…, VS: 5521.» Що таке «VS: 5521»? | *варіабельний символ платежу ;; номер аудиторії ;; сума до сплати
+S: Ти питаєш, хто одержувач платежу. | *Kto je príjemca platby? ;; Kto je príjemcu platby? ;; Kto je príjemca platbu?
+S: Застосунок питає: «Okamžitá platba? Poplatok 0,50 €» Що це означає? | *миттєвий платіж коштує 50 центів ;; миттєвий платіж безкоштовний ;; переказ прийде за 50 хвилин
+S: Ти пишеш школі, що вже переказала гроші. | *Dobrý deň, kurzovné som už previedla na váš účet. ;; Dobrý deň, kurzovné som už previedla na vašom účte. ;; Dobrý deň, kurzovné som už previesť na váš účet.
+R: IBAN: SK + 22 číslic ;; poslať peniaze mame na účet ;; príjemca, suma, variabilný symbol, správa pre príjemcu ;; prevod a okamžitá platba
+
+@lesson bankomat | Банкомат | Bankomat
+desc: Вказівки на екрані банкомата: vložte, zadajte, zvoľte, prevezmite. Зняття й внесення готівки, банкноти, монети й залишок.
+goal: Розуміти вказівки банкомата й говорити про зняття та внесення готівки.
+out: розуміти Vložte kartu, Zadajte PIN, Zvoľte sumu ;; розрізняти výber a vklad ;; називати bankovky a mince ;; перевіряти zostatok na účte
+done: Ти впевнено користуєшся банкоматом. Далі — інтернет-банкінг і застосунок банку.
+T: Наказ на екрані || Банкомат звертається до тебе на «vy» наказовим способом: «Vložte kartu.» — вставте картку; «Zadajte PIN.» — введіть PIN; «Zvoľte sumu.» — оберіть суму; «Prevezmite si kartu.» — заберіть картку; «Prevezmite si hotovosť.» — заберіть готівку. || Zadajte PIN a stlačte Potvrdiť. = Введіть PIN і натисніть «Підтвердити». ;; Prevezmite si hotovosť. = Заберіть готівку. || -te: vložte, zadajte, zvoľte, prevezmite
+T: Výber a vklad || «Výber» — зняття грошей: «výber z bankomatu», дієслово «vybrať peniaze». «Vklad» — внесення: «vklad hotovosti», дієслово «vložiť peniaze na účet». Не всі банкомати приймають готівку — шукай позначку «vklad». || Výber z bankomatu našej banky je zadarmo. = Зняття готівки в банкоматі нашого банку безкоштовне. ;; Chcem vložiť hotovosť na účet. = Я хочу внести готівку на рахунок. || výber (зняти) ↔ vklad (внести)
+T: Bankovky, mince, zostatok || Банкноти — «bankovky»: «dvadsaťeurová bankovka»; монети — «mince». «Zostatok» — залишок на рахунку: кнопка «Zobraziť zostatok» — показати залишок. Банкомат часто питає: «Chcete vytlačiť potvrdenie?» — Чи хочете надрукувати чек? || Bankomat vydáva len bankovky. = Банкомат видає лише банкноти. ;; Aký mám zostatok na účte? = Який у мене залишок на рахунку? || bankovka · minca · zostatok
+mis: Vložil som peniaze z bankomatu. => Vybral som peniaze z bankomatu. ;; výber na účet => vklad na účet
+W: zadať | ввести (код, дані) | задат’ | Zadajte PIN a potvrďte. | Введіть PIN і підтвердьте.
+W: výber | зняття (грошей); вибір | ві:бер | Výber z bankomatu inej banky stojí jedno euro. | Зняття готівки в банкоматі іншого банку коштує один євро.
+W: vklad | внесення (грошей), вклад | вклад | Vklad hotovosti je možný v pobočke. | Внести готівку можна у відділенні.
+W: bankovka | банкнота | банковка | Bankomat mi vydal dve päťdesiateurové bankovky. | Банкомат видав мені дві банкноти по п’ятдесят євро.
+W: minca | монета | мінца | V peňaženke mám len mince. | У гаманці в мене лише монети.
+W: zostatok | залишок (на рахунку) | зостаток | Zostatok na účte si pozriem v aplikácii. | Залишок на рахунку я подивлюся в застосунку.
+X mt: З’єднай. | zadať = ввести (код) ;; výber = зняття грошей ;; vklad = внесення грошей ;; bankovka = банкнота ;; minca = монета ;; zostatok = залишок
+X do: Розстав повідомлення банкомата в правильному порядку. | Bankomat: Vložte kartu. ;; Bankomat: Zadajte PIN. ;; Bankomat: Zvoľte sumu. ;; Bankomat: Prevezmite si kartu. ;; Bankomat: Prevezmite si hotovosť.
+= Картка → PIN → сума → картка назад → готівка.
+X dd: Обери. | [*Zadajte/Zadajú/Zadaný] PIN a stlačte Potvrdiť.
+= Наказовий спосіб на «vy»: zadajte.
+X dd: Обери. | Chcem [*vybrať/vložiť/zadať] sto eur z bankomatu.
+= Зняти гроші з банкомата — vybrať.
+X cat: Зняття чи внесення? | Výber: vybrať peniaze, výber z bankomatu, prevziať hotovosť ;; Vklad: vložiť peniaze na účet, vklad hotovosti, bankomat s vkladom
+= Výber — гроші з рахунку; vklad — гроші на рахунок.
+X fb: Допиши. | Tento bankomat vydáva len ___. (банкноти) | bankovky |
+= bankovka → bankovky (знахідний множини).
+X sc~: Що означає на екрані «Prevezmite si kartu»? | - | *заберіть картку ;; вставте картку ще раз ;; картку заблоковано
+= prevziať si — забрати, отримати.
+X fe: - | Chcem si pozrieť [zostatku>zostatok] na účte.
+= pozrieť si čo? — знахідний: zostatok (неживий — як називний).
+X tf: - | Bankomat: «Výber nie je možný. Prekročili ste denný limit.» | Сьогодні з цієї картки вже не можна зняти гроші. | T
+= Prekročili ste denný limit — ви перевищили денний ліміт.
+X sch: Подивись на банкомати в торговому центрі. | Bankomaty v obchodnom centre | Bankomat pri vchode A = len výber ;; Bankomat pri lekárni = výber aj vklad ;; Bankomat na parkovisku = mimo prevádzky ;; Pobočka na 1. poschodí = po – pi 9:00 – 17:00 | Де можна внести готівку? | *у банкоматі біля аптеки ;; у банкоматі біля входу A ;; у банкоматі на парковці
+= výber aj vklad — і зняття, і внесення.
+X rc: - | Natália bola v sobotu na nákupe v Žiline a potrebovala hotovosť na trh. Bankomat jej banky bol mimo prevádzky, tak išla k bankomatu inej banky. Ten jej ukázal správu: „Za výber zaplatíte poplatok 1,50 €.“ Natália súhlasila, zadala PIN a zvolila sumu štyridsať eur. Najprv si prevzala kartu, potom hotovosť – dve dvadsaťeurové bankovky. Potvrdenie nechcela, zostatok si pozrela neskôr v aplikácii.
+q~: Чому Наталія пішла до банкомата іншого банку? | *банкомат її банку не працював ;; там не було комісії ;; її картка не працювала
+q~: Скільки вона заплатила за зняття готівки? | *1,50 € ;; 40 € ;; нічого
+q~: Які банкноти видав банкомат? | *дві по двадцять євро ;; одну на п’ятдесят євро ;; чотири по десять євро
+X dr: - | Kamarát: Kde si tu môžem vybrať peniaze? | *Bankomat je hneď pri vchode do obchodu. ;; Bankomat je hneď pri vchod do obchod. ;; Bankomat je hneď pri vchodom do obchodu.
+= pri + місцевий: pri vchode; do + родовий: do obchodu.
+X np: Ти питаєш у відділенні, чи можна тут внести готівку на рахунок. | *Môžem si tu vložiť hotovosť na účet? ;; Môžem si tu vybrať hotovosť na účet? ;; Môžem si tu vložiť hotovosti na účte? ;; Môžem tu vklad hotovosť na účet?
+= vložiť hotovosť na účet — внести готівку на рахунок.
+X mic: - | Na obrazovke: «Chcete vytlačiť potvrdenie?» | potvrdenie | *чек про операцію ;; PIN-код ;; залишок на рахунку
+= potvrdenie — тут паперовий чек про операцію.
+F: Готівка на ринок || У суботу тобі потрібна готівка, а поруч лише банкомат.
+S: Екран: «Vložte kartu.» Що треба зробити? | *вставити картку ;; забрати картку ;; ввести PIN-код
+S: Екран: «Zvoľte sumu: 20 € / 50 € / 100 € / Iná suma». Тобі потрібно 30 €. | *Iná suma ;; 20 € ;; 50 €
+S: Друг питає, чи ти вже зняв гроші. | *Áno, už som si vybral peniaze. ;; Áno, už som si vložil peniaze. ;; Áno, už som si vybrať peniaze.
+S: Екран: «Zobraziť zostatok?» Що пропонує банкомат? | *показати залишок на рахунку ;; змінити PIN-код ;; внести готівку
+R: Vložte kartu, Zadajte PIN, Zvoľte sumu, Prevezmite si kartu ;; výber a vklad ;; bankovka, minca ;; zostatok na účte
+
+@lesson internetbanking | Інтернет-банкінг | Internetbanking
+desc: Вхід у застосунок та інтернет-банкінг, код підтвердження, вихід і безпека: що банк ніколи не питає.
+goal: Користуватися інтернет-банкінгом і розпізнавати шахрайські повідомлення.
+out: казати prihlásiť sa do aplikácie, odhlásiť sa z aplikácie ;; розуміти používateľské meno, overovací kód ;; підтверджувати платіж у застосунку ;; розпізнавати шахрайське повідомлення (podvod)
+done: Ти безпечно користуєшся інтернет-банкінгом. Далі — банківські комісії й тарифи.
+T: Prihlásiť sa a odhlásiť sa || «Prihlásiť sa do» + родовий — увійти: «prihlásiť sa do internetbankingu, do aplikácie». «Odhlásiť sa z» + родовий — вийти: «odhlásiť sa z aplikácie». Для входу потрібні «používateľské meno» (або ID klienta) і «heslo». || Neviem sa prihlásiť do aplikácie. = Не можу увійти в застосунок. ;; Po skončení sa vždy odhláste. = Після завершення завжди виходьте із системи. || prihlásiť sa do… · odhlásiť sa z…
+T: Overovací kód || Важливі дії банк просить підтвердити: «Zadajte overovací kód zo SMS» або «Potvrďte platbu v aplikácii». Код діє лише кілька хвилин. «Overiť» — перевірити, підтвердити: «overiť totožnosť» — підтвердити особу. || Overovací kód vám príde v SMS. = Код підтвердження прийде вам в SMS. ;; Platbu som potvrdil v aplikácii. = Платіж я підтвердив у застосунку. || overovací kód — одноразовий код
+T: Bezpečnosť || Банк ніколи не просить по телефону, в SMS чи електронною поштою PIN, пароль або код підтвердження. Повідомлення на кшталт «Váš účet bude zablokovaný, kliknite na odkaz» — це «podvod» (шахрайство). Правило: «Kód nikomu neposkytujte.» || Banka vás nikdy nepožiada o heslo. = Банк ніколи не попросить у вас пароль. ;; Toto je podvodná správa. = Це шахрайське повідомлення. || PIN, heslo, kód — нікому
+mis: prihlásiť sa v aplikácii => prihlásiť sa do aplikácie ;; odhlásiť sa od aplikácie => odhlásiť sa z aplikácie
+W: internetbanking | інтернет-банкінг | інтернетбанкінг | Faktúry platím cez internetbanking. | Рахунки я оплачую через інтернет-банкінг.
+W: prihlásiť sa | увійти (в систему) | прігла:сіт’ са | Do aplikácie sa prihlásite odtlačkom prsta. | У застосунок ви ввійдете за відбитком пальця.
+W: odhlásiť sa | вийти (із системи) | одгла:сіт’ са | Nezabudnite sa odhlásiť z internetbankingu. | Не забудьте вийти з інтернет-банкінгу.
+W: používateľské meno | ім’я користувача, логін | поужі:вательске: мено | Používateľské meno nájdete v zmluve. | Ім’я користувача ви знайдете в договорі.
+W: overovací kód | код підтвердження | оверовації: код | Overovací kód platí päť minút. | Код підтвердження дійсний п’ять хвилин.
+W: podvod | шахрайство, обман | подвод | Pozor, táto správa je podvod! | Обережно, це повідомлення — шахрайство!
+X mt: З’єднай. | internetbanking = інтернет-банкінг ;; prihlásiť sa = увійти ;; odhlásiť sa = вийти ;; používateľské meno = логін ;; overovací kód = код підтвердження ;; podvod = шахрайство
+X dd: Обери. | Neviem sa prihlásiť [*do/z/na] aplikácie.
+= prihlásiť sa do + родовий: do aplikácie.
+X dd: Обери. | Po skončení sa odhláste [*z/do/na] internetbankingu.
+= odhlásiť sa z + родовий: z internetbankingu.
+X fb: Допиши. | Zadajte ___ kód zo SMS. (код підтвердження) | overovací |
+= overovací kód — код підтвердження.
+X sc~: Що означає «Potvrďte platbu v aplikácii»? | - | *підтвердьте платіж у застосунку ;; скасуйте платіж у застосунку ;; завантажте застосунок
+= potvrdiť — підтвердити.
+X tfl: - | Banka vás nikdy nepožiada o PIN ani heslo cez telefón alebo SMS. Overovací kód nikomu neposkytujte. Ak ste heslo zabudli, nové si nastavíte v aplikácii alebo v pobočke. | *Банк не просить PIN по телефону. ;; Код підтвердження можна сказати працівникові банку. ;; *Новий пароль можна налаштувати у відділенні. ;; Пароль можна відновити лише по телефону.
+= Банк не просить PIN і пароль; код — нікому; новий пароль — у застосунку або у відділенні.
+X msg: Прочитай SMS із невідомого номера. | Neznáme číslo | Váš účet bude dnes zablokovaný! Na odblokovanie kliknite na odkaz nižšie a zadajte PIN a heslo. | Що робити? | *нічого не натискати, це шахрайство ;; швидко ввести PIN і пароль ;; відповісти на SMS і надіслати код
+= Банк ніколи не просить PIN і пароль через SMS.
+X hm: - | SMS: «Gratulujeme! Vyhrali ste 500 eur. Na výplatu výhry zadajte číslo karty a overovací kód.» | *це шахрайство, хочуть отримати дані картки ;; банк дарує клієнтам гроші ;; треба прийти у відділення по виграш
+= Справжній банк не просить номер картки й код за «виграш».
+X fe: - | Zabudol som heslo do [internetbankingom>internetbankingu].
+= heslo do + родовий: do internetbankingu.
+X tr: Заміни на протилежну дію. | Prihlásila som sa do aplikácie. | Odhlásila som sa z aplikácie.
+= prihlásiť sa do… ↔ odhlásiť sa z…
+X do: Склади діалог із банком. | Klient: Dobrý deň, neviem sa prihlásiť do internetbankingu. ;; Pracovníčka: Zadávate správne používateľské meno? ;; Klient: Áno, ale asi som zabudol heslo. ;; Pracovníčka: Nové heslo si môžete nastaviť v aplikácii. ;; Klient: Ďakujem, skúsim to.
+= Проблема → уточнення → причина → рішення → подяка.
+X dr: - | Neznámy muž do telefónu: Dobrý deň, volám z banky. Povedzte mi, prosím, overovací kód zo SMS. | *Kód nikomu nehovorím. Zavolám priamo do banky. ;; Jasné, kód je 4521. ;; Moment, poviem vám aj PIN.
+= Код не можна казати нікому, навіть «працівникові банку».
+X np: Ти кажеш працівникові банку, що не можеш увійти в застосунок. | *Neviem sa prihlásiť do aplikácie. ;; Neviem sa prihlásiť v aplikácie. ;; Neviem prihlásiť do aplikáciu. ;; Neviem sa odhlásiť do aplikácie.
+= prihlásiť sa do + родовий: do aplikácie.
+X sb: - | Як застосунок просить ввести код з SMS? | Zadajte overovací kód zo SMS.
+= zadajte — наказ на «vy»; zo SMS — з SMS.
+F: Новий застосунок || Ти встановлюєш застосунок банку на новий телефон.
+S: Застосунок: «Zadajte používateľské meno a heslo.» Що треба ввести? | *ім’я користувача і пароль ;; номер картки і PIN ;; IBAN і суму
+S: Застосунок: «Na vaše číslo sme poslali overovací kód.» Що робиш? | *вводжу код із SMS у застосунок ;; пересилаю код другові ;; відповідаю на SMS і пишу PIN
+S: Ти пишеш у чат підтримки, що забув пароль. | *Dobrý deň, zabudol som heslo do aplikácie. ;; Dobrý deň, zabudol som heslo z aplikáciou. ;; Dobrý deň, zabudol som heslom do aplikácie.
+S: Після оплати ти виходиш із застосунку. Як це сказати словацькою? | *odhlásiť sa ;; prihlásiť sa ;; zaregistrovať sa
+R: prihlásiť sa do…, odhlásiť sa z… ;; používateľské meno a heslo ;; overovací kód, potvrdiť platbu ;; PIN, heslo a kód nikomu — inak je to podvod
+
+@lesson poplatky | Банківські комісії | Bankové poplatky
+desc: Скільки коштує рахунок: cenník, poplatok za vedenie účtu, безкоштовні й платні послуги, відсотки. Ціни й суми в євро.
+goal: Порівнювати тарифи банків і питати про вартість послуг.
+out: питати Koľko stojí vedenie účtu? ;; розуміти cenník, bezplatný, spoplatnený ;; казати poplatok za + знахідний ;; розуміти úrok і banka mi strhla poplatok
+done: Ти вмієш порівнювати банківські тарифи. Далі — виписка з рахунку.
+T: Poplatok za… || «Poplatok za vedenie účtu» — плата за обслуговування рахунку. Після «za» — знахідний: «poplatok za výber, za prevod, za kartu». Питаємо: «Koľko stojí…?» або «Aký je poplatok za…?» || Aký je mesačný poplatok za vedenie účtu? = Яка щомісячна плата за обслуговування рахунку? ;; Za výber z cudzieho bankomatu platím euro. = За зняття в чужому банкоматі я плачу євро. || poplatok za + знахідний
+T: Bezplatný, spoplatnený || «Cenník» — перелік цін, тарифи. «Bezplatný» — безкоштовний (офіційно: «bezplatný výber»), розмовно — «zadarmo». «Spoplatnený» — платний: «Výber na pobočke je spoplatnený.» Якщо банк зняв із рахунку комісію, кажуть: «Banka mi strhla poplatok.» || Vedenie účtu je pre študentov bezplatné. = Обслуговування рахунку для студентів безкоштовне. ;; Banka mi strhla poplatok za výber. = Банк стягнув із мене комісію за зняття готівки. || bezplatný ↔ spoplatnený
+T: Úrok || «Úrok» — відсотки: на ощадному рахунку банк платить «úrok» тобі, за кредит — ти платиш банку. «Úrok 2 % ročne» — 2 % річних. Суми: «3,90 €» читаємо «tri eurá deväťdesiat centov» або коротко «tri deväťdesiat». || Sporiaci účet má úrok 2 % ročne. = Ощадний рахунок має 2 % річних. ;; Účet stojí 3,90 € mesačne. = Рахунок коштує 3,90 € на місяць. || úrok — відсотки · mesačne / ročne
+mis: poplatok pre vedenie účtu => poplatok za vedenie účtu ;; Vedenie účtu je bezplatný. => Vedenie účtu je bezplatné.
+W: vedenie účtu | обслуговування рахунку | веденіє у:чту | Vedenie účtu stojí 4,90 € mesačne. | Обслуговування рахунку коштує 4,90 € на місяць.
+W: cenník | прейскурант, тарифи | ценні:к | Aktuálny cenník nájdete na webe banky. | Актуальні тарифи ви знайдете на сайті банку.
+W: bezplatný | безкоштовний | безплатні: | Výber z našich bankomatov je bezplatný. | Зняття готівки в наших банкоматах безкоштовне.
+W: spoplatnený | платний (за плату) | споплатнені: | Papierový výpis je spoplatnený. | Паперова виписка платна.
+W: úrok | відсоток (банківський) | у:рок | Na sporiacom účte dostávam malý úrok. | На ощадному рахунку я отримую невеликі відсотки.
+W: strhnúť | стягнути, списати (гроші) | стргну:т’ | Banka mi strhla poplatok za vedenie účtu. | Банк списав із мене плату за обслуговування рахунку.
+X mt: З’єднай. | vedenie účtu = обслуговування рахунку ;; cenník = тарифи ;; bezplatný = безкоштовний ;; spoplatnený = платний ;; úrok = відсоток ;; strhnúť = стягнути, списати
+X dd: Обери. | Aký je poplatok [*za/pre/na] vedenie účtu?
+= poplatok za + знахідний.
+X dd: Обери. | Výber z bankomatu našej banky je [*bezplatný/bezplatná/bezplatné].
+= výber — чоловічий рід: bezplatný.
+X fb: Допиши. | Vedenie účtu je pre študentov ___. (безкоштовне) | bezplatné ;; zadarmo |
+= vedenie — середній рід: bezplatné; розмовно — zadarmo.
+X doc: Прочитай тарифи банку. | Banka Javor – cenník služieb | Vedenie účtu: 4,90 € mesačne ;; Vedenie účtu pre klientov do 26 rokov: bezplatné ;; Výber z bankomatu Banky Javor: bezplatný ;; Výber z bankomatu inej banky: 1,50 € ;; Výber na pobočke: 3,00 € | Скільки коштує зняти гроші в банкоматі іншого банку? | *1,50 € ;; нічого ;; 3,00 €
+= Výber z bankomatu inej banky: 1,50 €.
+X sch: Порівняй рахунки. | Porovnanie účtov | Účet Štart = 0 € mesačne, výber z cudzieho bankomatu 2 € ;; Účet Plus = 3,50 € mesačne, všetky výbery bezplatné ;; Účet Senior = 1 € mesačne, len pre klientov nad 62 rokov | Який рахунок має безкоштовне зняття в усіх банкоматах? | *Účet Plus ;; Účet Štart ;; Účet Senior
+= Účet Plus: všetky výbery bezplatné.
+X sc~: Що означає «Banka mi strhla poplatok»? | - | *банк списав із мене комісію ;; банк повернув мені комісію ;; банк скасував комісію
+= strhnúť poplatok — стягнути, списати комісію.
+X fe: - | Výber peňazí na pobočke je [spoplatnená>spoplatnený].
+= výber — чоловічий рід: spoplatnený.
+X tf: - | Sporiaci účet: úrok 2 % ročne. | Клієнт отримує 2 % річних на ощадному рахунку. | T
+= úrok 2 % ročne — 2 % річних.
+X msg: Прочитай SMS від банку. | Banka Javor | Od 1. januára sa mení cenník. Poplatok za vedenie účtu Štart bude 1,90 € mesačne. Výber z našich bankomatov zostáva bezplatný. | Що зміниться з 1 січня? | *рахунок «Štart» коштуватиме 1,90 € на місяць ;; зняття в банкоматах банку стане платним ;; рахунок «Štart» стане безкоштовним
+= Poplatok… bude 1,90 € mesačne; výber zostáva bezplatný — зняття й далі безкоштовне.
+X rc: - | Oleh porovnával dva účty. V Banke Lipa platil za vedenie účtu päť eur mesačne, ale výbery z bankomatov mal bezplatné. Nová banka mu ponúkla účet bez mesačného poplatku, každý výber z bankomatu však stojí jedno euro. Oleh vyberá hotovosť asi dvakrát za mesiac, inak platí kartou alebo mobilom. Vypočítal si, že nový účet ho bude stáť asi dve eurá mesačne namiesto piatich. Preto si v novej banke založil účet a starý zrušil.
+q~: Скільки Олег платив за рахунок у Banka Lipa? | *5 євро на місяць ;; 1 євро на місяць ;; нічого
+q~: Скільки коштує зняття готівки в новому банку? | *1 євро за кожне зняття ;; нічого ;; 5 євро на місяць
+q~: Що Олег зробив зі старим рахунком? | *закрив його ;; залишив для заощаджень ;; переоформив на дружину
+X np: Ти питаєш у банку, скільки коштує обслуговування рахунку. | *Koľko stojí vedenie účtu? ;; Koľko stojí vedenie účet? ;; Koľko stojí vedeniu účtu? ;; Koľko stoja vedenie účtu?
+= vedenie čoho? — родовий: účtu; stojí — однина.
+X cat: Безкоштовно чи платно? | Bezplatné: zadarmo, bez poplatku, 0 € mesačne ;; Spoplatnené: s poplatkom, 2 € za výber, 5 € mesačne
+= bez poplatku, zadarmo — безкоштовно; s poplatkom — платно.
+X dr: - | Pracovník banky: Výber na pobočke je spoplatnený, stojí tri eurá. | *Tak si radšej vyberiem z bankomatu. ;; Tak si radšej vyberiem z bankomatom. ;; Tak si radšej vyberiem do bankomatu.
+= vybrať z + родовий: z bankomatu.
+F: Вибір рахунку || Ти порівнюєш тарифи двох банків перед відкриттям рахунку.
+S: Ти питаєш про щомісячну плату. | *Aký je mesačný poplatok za vedenie účtu? ;; Aký je mesačný poplatok pre vedenie účtu? ;; Aký je mesačného poplatku za vedenie účtu?
+S: Працівниця: «Pre klientov do 26 rokov je účet bezplatný.» Тобі 24 роки. | *рахунок для тебе безкоштовний ;; ти платиш 26 € ;; рахунок для тебе недоступний
+S: Ти питаєш, чи платне зняття готівки в банкоматі. | *Je výber z bankomatu spoplatnený? ;; Je výber z bankomatu spoplatnená? ;; Je výber do bankomatu spoplatnený?
+S: Через місяць у застосунку: «Poplatok za výber: −1,50 €». Що сталося? | *банк стягнув 1,50 € за зняття готівки ;; банк повернув тобі 1,50 € ;; ти заплатив 1,50 € у магазині
+R: poplatok za vedenie účtu ;; cenník: bezplatný ↔ spoplatnený ;; banka mi strhla poplatok ;; úrok 2 % ročne
+
+@lesson vypis-z-uctu | Виписка з рахунку | Výpis z účtu
+desc: Як читати виписку: період, надходження й списання, дати, початковий і кінцевий залишок. Дати в родовому відмінку.
+goal: Читати банківську виписку й пояснювати, звідки прийшли і куди пішли гроші.
+out: розуміти výpis z účtu za obdobie… ;; розрізняти pripísať na účet і odpísať z účtu ;; читати počiatočný a konečný zostatok ;; казати Výplata mi bola pripísaná piateho
+done: Ти вмієш читати виписку. Далі — що робити, коли з карткою проблема.
+T: Výpis z účtu || «Výpis z účtu» — виписка: перелік усіх операцій за певний період — «obdobie»: «výpis za september», «za obdobie od 1. 9. do 30. 9.». Банк надсилає виписку щомісяця в застосунок або електронною поштою; паперова виписка часто платна. || Pošlite mi, prosím, výpis z účtu za august. = Надішліть мені, будь ласка, виписку з рахунку за серпень. ;; Výpis nájdete v internetbankingu. = Виписку знайдете в інтернет-банкінгу. || výpis z účtu za + знахідний (za september)
+T: Pripísať a odpísať || Гроші прийшли — «boli pripísané na účet» (зараховані), розмовно «prišli mi peniaze». Гроші пішли — «boli odpísané z účtu» (списані). Кожна операція — «transakcia» або «pohyb na účte». У виписці «+» — «príjem», «−» — «výdavok». || Výplata mi bola pripísaná desiateho. = Зарплату мені зарахували десятого. ;; Z účtu mi odpísali tridsať eur. = З рахунку мені списали тридцять євро. || pripísať na účet (+) ↔ odpísať z účtu (−)
+T: Zostatok a dátumy || «Počiatočný zostatok» — залишок на початку періоду, «konečný zostatok» — у кінці. Дати в реченні читаємо в родовому: «5. 10.» — «piateho októbra». У виписці дати пишуть цифрами: «18. 9.» || Konečný zostatok k 30. 9. je 412 eur. = Кінцевий залишок на 30.09 — 412 євро. ;; Nájom odišiel tretieho septembra. = Оренда пішла третього вересня. || počiatočný → konečný zostatok
+mis: výpis od účtu => výpis z účtu ;; Peniaze mi pripísali z účtu. => Peniaze mi pripísali na účet. ;; výpis na september => výpis za september
+W: výpis | виписка | ві:піс | Výpis z účtu mi príde každý mesiac e-mailom. | Виписка з рахунку приходить мені щомісяця електронною поштою.
+W: obdobie | період | обдобіє | Výpis je za obdobie od prvého do tridsiateho septembra. | Виписка за період з першого до тридцятого вересня.
+W: transakcia | операція, транзакція | трансакція | Túto transakciu nepoznám. | Я не знаю, що це за операція.
+W: pripísať | зарахувати (на рахунок) | пріпі:сат’ | Peniaze vám pripíšeme na účet do troch dní. | Гроші ми зарахуємо вам на рахунок протягом трьох днів.
+W: príjem | надходження, дохід | при:йем | Výplata je môj jediný príjem. | Зарплата — мій єдиний дохід.
+W: pohyb | рух (коштів), операція | погиб | Pohyby na účte si kontrolujem v aplikácii. | Рух коштів на рахунку я перевіряю в застосунку.
+X mt: З’єднай. | výpis = виписка ;; obdobie = період ;; transakcia = операція ;; pripísať = зарахувати ;; príjem = надходження ;; pohyb na účte = рух коштів
+X dd: Обери. | Pošlite mi výpis [*z/od/na] účtu za október.
+= výpis z účtu — виписка з рахунку.
+X dd: Обери. | Výplata mi bola pripísaná [*desiateho/desiaty/desiatom] októbra.
+= Дата в реченні — родовий: desiateho októbra.
+X fb: Допиши. | Potrebujem výpis ___ september. (за) | za |
+= výpis za + знахідний: za september.
+X doc: Прочитай виписку. | Výpis z účtu – september 2026 | Počiatočný zostatok (1. 9.): 318,40 € ;; 5. 9. Výplata – Stavby Trnava s. r. o.: +1 240,00 € ;; 6. 9. Nájom – trvalý príkaz: −520,00 € ;; 18. 9. Potraviny – platba kartou: −86,30 € ;; Konečný zostatok (30. 9.): 952,10 € | Скільки грошей було на рахунку наприкінці вересня? | *952,10 € ;; 318,40 € ;; 1 240,00 €
+= Konečný zostatok — кінцевий залишок: 952,10 €.
+X tf: - | Dňa 6. 9. vám z účtu odpísali 520 € za nájom. | Шостого вересня на рахунок надійшло 520 €. | F
+= Odpísali — списали, а не зарахували.
+X sc~: Що означає «konečný zostatok»? | - | *залишок наприкінці періоду ;; залишок на початку періоду ;; остання операція
+= konečný — кінцевий; počiatočný — початковий.
+X fe: - | Peniaze mi pripísali [z>na] účet včera večer.
+= pripísať na účet — зарахувати на рахунок.
+X cat: Надходження чи витрата? | Príjem: výplata, vrátenie peňazí, prevod od kamaráta ;; Výdavok: nájom, platba kartou, poplatok za vedenie účtu
+= Príjem — гроші на рахунок; výdavok — гроші з рахунку.
+X msg: Прочитай повідомлення банку. | Banka Lipa | Na váš účet bola pripísaná suma 1 240,00 €. Odosielateľ: Stavby Trnava s. r. o. Aktuálny zostatok: 1 558,40 €. | Що сталося? | *на рахунок надійшло 1 240 € ;; з рахунку списали 1 240 € ;; на рахунку тепер рівно 1 240 €
+= bola pripísaná — зарахована на рахунок.
+X rc: - | Iryna si v októbri všimla, že má na účte menej peňazí, ako čakala. Pozrela si výpis za september. Výplata jej prišla piateho, nájom odišiel šiesteho ako vždy. Potom však našla dve rovnaké transakcie z osemnásteho septembra: dvakrát 86,30 € v obchode s potravinami. Platila však len raz. Zavolala do banky a pracovník jej povedal, že ide o chybu obchodu a peniaze jej do desiatich dní vrátia.
+q~: Що Ірина знайшла у виписці? | *дві однакові операції від 18 вересня ;; неправильну суму зарплати ;; подвійну оплату оренди
+q~: Скільки разів вона насправді платила в магазині? | *один раз ;; двічі ;; жодного разу
+q~: Що сказав працівник банку? | *це помилка магазину, гроші повернуть протягом 10 днів ;; це помилка Ірини, гроші не повернуть ;; треба самій іти до магазину
+X dr: - | Účtovníčka: Prišla vám už výplata? | *Áno, bola mi pripísaná včera. ;; Áno, bola mi pripísané včera. ;; Áno, bol mi pripísaná včera.
+= výplata — жіночий рід: bola pripísaná.
+X tr: Перепиши офіційніше з дієсловом «pripísať». | Výplata mi prišla na účet. | Výplata mi bola pripísaná na účet. ;; Výplatu mi pripísali na účet. ;; Na účet mi bola pripísaná výplata.
+= prísť na účet → byť pripísaný na účet (офіційно).
+X np: Ти просиш у відділенні виписку за серпень. | *Potrebujem výpis z účtu za august. ;; Potrebujem výpis z účtu na august. ;; Potrebujem výpis od účtu za august. ;; Potrebujem výpisu z účtu za august.
+= výpis z účtu za + знахідний: za august.
+F: Дивна виписка || Наприкінці місяця ти перевіряєш виписку й рахуєш гроші.
+S: Ти бачиш «Počiatočný zostatok: 200 €». Що це? | *залишок на початку періоду ;; залишок наприкінці періоду ;; щомісячна комісія
+S: Ти бачиш «+1 100 € Výplata» і пишеш колезі. | *Výplata mi už bola pripísaná. ;; Výplata mi už bola odpísaná. ;; Výplata mi už bolo pripísaná.
+S: Ти питаєш у банку про незнайому операцію від 12 жовтня. | *Nepoznám túto transakciu z dvanásteho októbra. ;; Nepoznám túto transakciu z dvanásty október. ;; Nepoznám tieto transakcia z dvanásteho októbra.
+S: Ти просиш надсилати виписку електронною поштою. | *Môžete mi posielať výpis e-mailom? ;; Môžete mi posielať výpis s e-mailom? ;; Môžete mi posielať výpisom e-mail?
+R: výpis z účtu za september ;; pripísať na účet ↔ odpísať z účtu ;; transakcia, príjem a výdavok ;; počiatočný a konečný zostatok
+
+@lesson problem-s-kartou | Проблема з карткою | Problém s kartou
+desc: Картку загублено, вкрадено або платіж відхилено: як заблокувати картку, повідомити банк і розповісти, що сталося, у минулому часі.
+goal: Швидко заблокувати картку й пояснити банку проблему.
+out: казати Stratil(a) som kartu, Ukradli mi peňaženku ;; просити Chcem zablokovať kartu ;; розуміти podozrivá transakcia, zneužiť kartu ;; розуміти Platba bola zamietnutá
+done: Ти знаєш, що робити, коли з карткою проблема. Далі — оплата рахунків і фактур.
+T: Stratil som kartu || Що сталося — минулий час доконаного виду: «Stratil som kartu», «Stratila som peňaženku». «Ukradli mi kartu» — у мене вкрали картку: «mi» — давальний відмінок, дієслово в 3-й особі множини без підмета. «Karta mi zostala v bankomate» — картка залишилася в банкоматі. || Včera som stratila peňaženku aj s kartou. = Учора я загубила гаманець разом із карткою. ;; V električke mi ukradli mobil. = У трамваї в мене вкрали телефон. || stratil(a) som… · ukradli mi…
+T: Zablokovať kartu || Насамперед — «zablokovať kartu»: у застосунку або через цілодобову «nonstop linku» банку. Потім «nahlásiť stratu» або «nahlásiť krádež» — повідомити банк про втрату чи крадіжку (знахідний відмінок, без прийменника). Крадіжку також можна «nahlásiť na polícii». || Chcem zablokovať platobnú kartu. = Я хочу заблокувати платіжну картку. ;; Musím nahlásiť krádež karty. = Мені треба повідомити про крадіжку картки. || najprv zablokovať, potom nahlásiť
+T: Zamietnutá platba, podozrivá transakcia || «Platba bola zamietnutá» — платіж відхилено: мало грошей, перевищено ліміт або картку заблоковано. «Podozrivá transakcia» — підозріла операція, якої ти не робив(ла): можливо, хтось «zneužil kartu» — незаконно скористався карткою. Тоді одразу блокуй картку й телефонуй у банк. || Na výpise mám podozrivú transakciu. = У виписці в мене підозріла операція. ;; Niekto zneužil moju kartu. = Хтось незаконно скористався моєю карткою. || zamietnutá platba · podozrivá transakcia
+mis: Ukradli ma kartu. => Ukradli mi kartu. ;; zablokovať kartou => zablokovať kartu ;; nahlásiť o krádeži => nahlásiť krádež
+W: zablokovať | заблокувати | заблоковат’ | Kartu si môžete zablokovať aj v aplikácii. | Картку можна заблокувати й у застосунку.
+W: nahlásiť | повідомити (про щось), заявити | нагла:сіт’ | Stratu karty treba hneď nahlásiť. | Про втрату картки треба одразу повідомити.
+W: ukradnúť | вкрасти | украднут’ | V autobuse mi ukradli peňaženku. | В автобусі в мене вкрали гаманець.
+W: krádež | крадіжка | кра:деж | Krádež karty nahláste aj na polícii. | Про крадіжку картки повідомте й поліцію.
+W: zneužiť | незаконно використати, зловжити | знеужіт’ | Niekto zneužil údaje z mojej karty. | Хтось незаконно використав дані моєї картки.
+W: podozrivý | підозрілий | подозриві: | Na účte vidím podozrivú platbu. | На рахунку я бачу підозрілий платіж.
+X mt: З’єднай. | zablokovať = заблокувати ;; nahlásiť = повідомити ;; ukradnúť = вкрасти ;; krádež = крадіжка ;; zneužiť = незаконно використати ;; podozrivý = підозрілий
+X dd: Обери. | V autobuse mi [*ukradli/ukradol som/ukradnúť] peňaženku.
+= ukradli mi — у мене вкрали (3-тя особа множини).
+X dd: Обери. | Chcem [*zablokovať/zablokovaná/zablokovanie] kartu.
+= chcieť + інфінітив: zablokovať.
+X fb: Допиши. | Musím nahlásiť ___ karty. (крадіжка) | krádež |
+= nahlásiť + знахідний: krádež (форма як у називному).
+X fe: - | Včera [ma>mi] ukradli kartu v obchode.
+= Кому? — давальний: mi.
+X sc~: Що означає «Platba bola zamietnutá»? | - | *платіж відхилено ;; платіж успішно проведено ;; платіж перенесено на завтра
+= zamietnuť — відхилити.
+X do: Склади телефонну розмову з банком. | Pracovník: Banka Lipa, nonstop linka, dobrý deň. ;; Klientka: Dobrý deň, stratila som platobnú kartu. ;; Pracovník: Kartu vám hneď zablokujem. Poviete mi, prosím, vaše meno a dátum narodenia? ;; Klientka: Oksana Kravčenko, dvadsiateho mája 1990. ;; Pracovník: Ďakujem, karta je zablokovaná. Novú vám pošleme poštou.
+= Привітання → проблема → блокування й перевірка особи → відповідь → результат.
+X msg: Прочитай SMS від банку. | Banka Lipa | Zaznamenali sme podozrivú transakciu: 349,00 € – e-shop, 2:14. Ak ste platbu nerobili, okamžite zablokujte kartu v aplikácii alebo volajte nonstop linku 0800 123 456. | Що треба зробити, якщо ти не робив цього платежу? | *одразу заблокувати картку ;; дочекатися виписки ;; відповісти на SMS і написати PIN
+= okamžite zablokujte kartu — негайно заблокуйте картку.
+X rc: - | Minulý piatok bol Taras s kamarátmi na koncerte v Bratislave. Po koncerte zistil, že nemá peňaženku. Bola v nej platobná karta, vodičský preukaz a päťdesiat eur. Hneď si v aplikácii zablokoval kartu. Na druhý deň však uvidel na účte dve podozrivé platby z noci – niekto zneužil kartu ešte pred zablokovaním. Taras nahlásil krádež na polícii a v banke podal reklamáciu. O tri týždne mu banka peniaze vrátila.
+q~: Що Тарас зробив одразу? | *заблокував картку в застосунку ;; пішов у поліцію ;; подзвонив друзям
+q~: Коли хтось скористався карткою? | *уночі, ще до блокування ;; після блокування ;; вдень під час концерту
+q~: Чим усе закінчилося? | *банк повернув гроші через три тижні ;; банк відмовився повертати гроші ;; Тарас знайшов гаманець
+X tf: - | - | Якщо картку вкрали, спершу треба її заблокувати, а потім повідомити про крадіжку. | T
+= Najprv zablokovať, potom nahlásiť.
+X np: Ти дзвониш у банк після втрати картки. | *Dobrý deň, stratil som kartu. Chcem ju zablokovať. ;; Dobrý deň, stratil som kartu. Chcem ju zablokovaná. ;; Dobrý deň, stratiť som kartu. Chcem ju zablokovať. ;; Dobrý deň, stratil som karta. Chcem ju zablokovať.
+= stratil som + знахідний: kartu; chcem + інфінітив: zablokovať.
+X mic: - | Na výpise je platba, ktorú som nerobil. Niekto asi zneužil moju kartu. | zneužil | *незаконно скористався ;; знайшов ;; заблокував
+= zneužiť — використати без дозволу, незаконно.
+X tr: Перепиши від імені жінки. | Stratil som kartu a hneď som ju zablokoval. | Stratila som kartu a hneď som ju zablokovala.
+= Жіночий рід минулого часу: -la (stratila, zablokovala).
+X dr: - | Pokladníčka: Prepáčte, platba bola zamietnutá. | *Skúsim to ešte raz, asi som zadal zlý PIN. ;; Skúsim to ešte raz, asi som zadal zlého PIN. ;; Skúsim to ešte raz, asi som zadať zlý PIN.
+= zadal (минулий час) + знахідний: zlý PIN.
+F: Загублений гаманець || Увечері ти помічаєш, що гаманця з карткою немає.
+S: Що робиш насамперед? | *блокую картку в застосунку ;; чекаю до ранку ;; пишу другові PIN-код
+S: Ти дзвониш на цілодобову лінію банку. | *Dobrý deň, stratila som peňaženku aj s kartou. ;; Dobrý deň, stratila som peňaženky aj s kartou. ;; Dobrý deň, stratiť som peňaženku aj s kartou.
+S: Оператор: «Nevidím na účte žiadne podozrivé transakcie.» | *підозрілих операцій немає ;; є одна підозріла операція ;; рахунок заблоковано
+S: Ти просиш нову картку. | *Môžete mi poslať novú kartu? ;; Môžete mi poslať nová karta? ;; Môžete ma poslať novú kartu?
+R: Stratil(a) som kartu, ukradli mi peňaženku ;; zablokovať kartu, nahlásiť krádež ;; platba bola zamietnutá ;; podozrivá transakcia, zneužiť kartu
+
+@lesson platba-faktury | Оплата рахунків | Platba faktúry
+desc: Фактура за електрику, інтернет чи телефон: сума, строк оплати, VS, QR-код, постійне доручення, інкасо й нагадування.
+goal: Вчасно оплачувати рахунки й обрати зручний спосіб регулярних платежів.
+out: читати фактуру: suma na úhradu, dátum splatnosti, VS ;; платити через QR kód ;; розрізняти trvalý príkaz a inkaso ;; розуміти upomienka, nedoplatok, preplatok
+done: Ти вмієш оплачувати рахунки. Далі — підсумок розділу «Банк і платежі».
+T: Faktúra || «Faktúra» — рахунок від фірми: за електрику, газ, інтернет, телефон. Важливі рядки: «suma na úhradu» — сума до сплати, «dátum splatnosti» — до якого числа заплатити, «variabilný symbol» — зазвичай номер фактури. На багатьох фактурах є «QR kód»: відскануй його в застосунку банку — і реквізити заповняться самі. || Faktúru treba uhradiť do pätnásteho októbra. = Рахунок треба оплатити до п’ятнадцятого жовтня. ;; Naskenujte QR kód v aplikácii. = Відскануйте QR-код у застосунку. || do + дата в родовому: do pätnásteho októbra
+T: Trvalý príkaz a inkaso || Для регулярних платежів є два способи. «Trvalý príkaz» — постійне доручення: ти сам(а) налаштовуєш однакову суму щомісяця (наприклад, оренда). «Inkaso» — ти дозволяєш фірмі самій списувати гроші з рахунку; зручно, коли сума щоразу інша (наприклад, телефон). || Nájom platím trvalým príkazom. = Оренду я плачу постійним дорученням. ;; Faktúry za telefón platím inkasom. = Рахунки за телефон я оплачую через інкасо. || trvalý príkaz — та сама сума · inkaso — фірма списує сама
+T: Upomienka, nedoplatok, preplatok || Якщо не заплатиш вчасно, прийде «upomienka» — нагадування про несплату, іноді з пенею. «Nedoplatok» — ти заплатив(ла) менше, ніж треба, і маєш доплатити. «Preplatok» — заплатив(ла) більше, і фірма гроші поверне. Таке буває після «vyúčtovania» — річного розрахунку за енергію. || Prišla mi upomienka za internet. = Мені прийшло нагадування про несплату за інтернет. ;; Z vyúčtovania mám preplatok štyridsať eur. = За річним розрахунком у мене переплата сорок євро. || nedoplatok (доплатити) ↔ preplatok (повернуть)
+mis: Faktúru treba zaplatiť do pätnásty október. => Faktúru treba zaplatiť do pätnásteho októbra. ;; platiť trvalý príkaz => platiť trvalým príkazom
+W: faktúra | рахунок(-фактура) | факту:ра | Faktúru za elektrinu mi poslali e-mailom. | Рахунок за електрику мені надіслали електронною поштою.
+W: trvalý príkaz | постійне доручення | трвалі: прі:каз | Nájom platím trvalým príkazom. | Оренду я плачу постійним дорученням.
+W: inkaso | інкасо (автоматичне списання) | інкасо | Faktúru za mobil mi strhávajú inkasom. | Рахунок за мобільний мені списують через інкасо.
+W: upomienka | нагадування про несплату | упомієнка | Zabudol som zaplatiť a prišla mi upomienka. | Я забув заплатити, і мені прийшло нагадування.
+W: QR kód | QR-код | ку:ер код | QR kód nájdete v pravom hornom rohu faktúry. | QR-код ви знайдете в правому верхньому куті фактури.
+W: dodávateľ | постачальник | дода:ватель | Dodávateľ elektriny mi poslal novú faktúru. | Постачальник електроенергії надіслав мені новий рахунок.
+X mt: З’єднай. | faktúra = рахунок-фактура ;; trvalý príkaz = постійне доручення ;; inkaso = автоматичне списання ;; upomienka = нагадування про несплату ;; QR kód = QR-код ;; dodávateľ = постачальник
+X doc: Прочитай фактуру. | Domáce energie s. r. o. – faktúra za elektrinu | Číslo faktúry: 2026104512 ;; Variabilný symbol: 2026104512 ;; Suma na úhradu: 58,70 € ;; Dátum splatnosti: 20. 10. 2026 ;; Spôsob úhrady: prevodom alebo QR kódom | До якого числа треба оплатити рахунок? | *до 20 жовтня 2026 ;; до 10 жовтня 2026 ;; до кінця 2026 року
+= Dátum splatnosti — останній день оплати: 20. 10. 2026.
+X dd: Обери. | Faktúru treba uhradiť do [*dvadsiateho/dvadsiaty/dvadsiatom] októbra.
+= do + родовий: do dvadsiateho októbra.
+X fb: Допиши. | Nájom platím trvalým ___. (доручення) | príkazom |
+= Чим? — орудний: trvalým príkazom.
+X cat: Постійне доручення чи інкасо? | Trvalý príkaz: rovnaká suma každý mesiac, platbu nastavuje klient, nájom ;; Inkaso: suma sa môže meniť, peniaze si strhne firma, faktúra za mobil
+= Trvalý príkaz — однакова сума, налаштовуєш сам(а); inkaso — фірма списує сама, сума може змінюватися.
+X sc~: Що таке «nedoplatok»? | - | *сума, яку ще треба доплатити ;; сума, яку тобі повернуть ;; знижка за вчасну оплату
+= nedoplatok — заплатив(ла) менше, ніж треба.
+X msg: Прочитай повідомлення. | Domáce energie s. r. o. | Upomienka: Faktúra č. 2026091877 na sumu 46,20 € nebola uhradená do 20. 9. 2026. Prosíme, uhraďte ju do 7 dní. Ak ste už zaplatili, správu ignorujte. | Що просить фірма? | *оплатити рахунок протягом 7 днів ;; платити 46,20 € щомісяця ;; прийти в офіс фірми
+= uhraďte ju do 7 dní — оплатіть її протягом 7 днів.
+X fe: - | Firma mi vráti tridsať eur, lebo mám [nedoplatok>preplatok] z vyúčtovania.
+= Фірма повертає гроші, коли є переплата — preplatok.
+X tf: - | Faktúra za mobil – spôsob úhrady: inkaso. | Цей рахунок треба оплатити вручну переказом. | F
+= Inkaso — фірма сама списує гроші з рахунку.
+X rc: - | Mykola a Lesia bývajú v Prešove druhý rok. Nájom platia trvalým príkazom vždy prvého v mesiaci. Faktúru za internet platili najprv sami cez QR kód, ale v auguste na ňu zabudli a prišla im upomienka. Preto si teraz pre internet nastavili inkaso. V marci dostali vyúčtovanie za plyn a mali nedoplatok šesťdesiat eur, ktorý uhradili prevodom.
+q~: Як вони платять оренду? | *постійним дорученням першого числа ;; готівкою власникові ;; через інкасо
+q~: Чому вони налаштували інкасо для інтернету? | *забули оплатити рахунок і отримали нагадування ;; інкасо безкоштовне ;; так вимагав власник квартири
+q~: Що показав розрахунок за газ? | *недоплату 60 € ;; переплату 60 € ;; що газ оплачено повністю
+X np: Ти пояснюєш, що вже оплатив рахунок через QR-код. | *Faktúru som už zaplatil cez QR kód. ;; Faktúru som už zaplatil cez QR kódom. ;; Faktúru som už zaplatiť cez QR kód. ;; Faktúra som už zaplatil cez QR kód.
+= zaplatiť + знахідний: faktúru; cez + знахідний: cez QR kód.
+X dr: - | Kolega: Ako platíš nájom? Každý mesiac cez aplikáciu? | *Nie, mám nastavený trvalý príkaz. ;; Nie, mám nastavený trvalého príkazu. ;; Nie, mám nastavená trvalý príkaz.
+= mám nastavený + знахідний: trvalý príkaz.
+X wb: Склади. | Prišla mi [upomienka] za internet. ;; Firma mi vráti [preplatok]. | nedoplatok ;; faktúru
+= upomienka — нагадування; firma vráti — переплату: preplatok.
+X so: - | Спитай, до якого числа треба оплатити фактуру. | Kedy je dátum splatnosti faktúry?
+= dátum splatnosti — дата оплати; faktúry — родовий.
+F: Листи в поштовій скриньці || Тобі прийшли фактури й лист від постачальника енергії.
+S: Фактура: «Dátum splatnosti: 25. 11.» Сьогодні 20 листопада. | *заплатити треба протягом п’яти днів ;; строк оплати вже минув ;; заплатити треба до 25 грудня
+S: Ти хочеш оплатити швидко, не переписуючи IBAN. | *Naskenujem QR kód v aplikácii. ;; Napíšem príjemcovi e-mail. ;; Pôjdem k bankomatu.
+S: Лист: «Z vyúčtovania vám vznikol preplatok 35 €.» | *фірма поверне тобі 35 € ;; ти маєш доплатити 35 € ;; це комісія 35 €
+S: Ти хочеш, щоб фірма сама щомісяця списувала гроші за телефон. Що налаштуєш? | *inkaso ;; trvalý príkaz ;; okamžitú platbu
+R: faktúra od dodávateľa: suma na úhradu, dátum splatnosti, VS ;; naskenovať QR kód v aplikácii ;; trvalý príkaz a inkaso ;; upomienka, nedoplatok, preplatok
+
+@lesson banka-opakovanie | Підсумок: банк і платежі | Opakovanie: banka a platby
+desc: Повторюємо весь розділ: рахунок, картка, переказ, банкомат, інтернет-банкінг, комісії, виписка, проблеми з карткою й фактури. Нове: заощадження й позика.
+goal: Упевнено вирішувати банківські справи в Словаччині від відкриття рахунку до оплати рахунків.
+out: вживати na účet, na účte, z účtu, platiť kartou, poslať mame ;; читати виписку, фактуру й тарифи ;; вирішувати проблему з карткою й розпізнавати шахрайство ;; говорити про заощадження й позику: sporiť, pôžička, splátka
+done: Розділ «Банк і платежі» завершено! Далі — пошта, посилки й кур’єри.
+T: Відмінки в банку || Куди? — «na účet», «do banky». Де? — «na účte», «v banke». Звідки? — «z účtu», «z bankomatu». Чим? — «kartou», «trvalým príkazom», «inkasom». Кому? — «mame», «majiteľovi». Коли? — «do pätnásteho októbra», «výpis za september». || Peniaze posielam mame na účet. = Я надсилаю гроші мамі на рахунок. ;; Nájom platím trvalým príkazom z bežného účtu. = Оренду я плачу постійним дорученням з поточного рахунку. || na účet · na účte · z účtu · kartou · mame
+T: Sporiť a požičať si || «Sporiť» — заощаджувати: «sporím si na auto» (na + знахідний). «Pôžička» — позика, кредит від банку; «požičať si» — позичити собі. «Splátka» — щомісячний внесок за позикою. Перед рішенням варто поговорити з «poradcom» — консультантом банку. || Sporím si na dovolenku. = Я відкладаю гроші на відпустку. ;; Mesačná splátka je 150 eur. = Щомісячний внесок — 150 євро. || sporiť si na + знахідний · pôžička → splátka
+T: Що робити, коли… || Загубив(ла) картку — «zablokovať kartu» й «nahlásiť stratu». Незнайома операція у виписці — «zavolať do banky». Не оплатив(ла) вчасно — прийде «upomienka». Дивне SMS із проханням про PIN чи код — це «podvod», нічого не натискай. || Hneď si zablokuj kartu. = Негайно заблокуй картку. ;; Toto je podvod, nič neklikaj. = Це шахрайство, нічого не натискай. || strata → zablokovať · podvod → nič nezadávať
+W: sporiť | заощаджувати | спорит’ | Sporím si na nové auto. | Я заощаджую на нову машину.
+W: pôžička | позика, кредит | пуожічка | Banka mi schválila pôžičku na auto. | Банк схвалив мені позику на машину.
+W: splátka | внесок (за позикою), частковий платіж | спла:тка | Mesačná splátka je stopäťdesiat eur. | Щомісячний внесок — сто п’ятдесят євро.
+W: poradca | консультант, радник | порадца | V piatok mám stretnutie s poradcom v banke. | У п’ятницю в мене зустріч із консультантом у банку.
+X mt: З’єднай. | sporiť = заощаджувати ;; pôžička = позика ;; splátka = внесок за позикою ;; poradca = консультант ;; výpis = виписка ;; upomienka = нагадування про несплату
+X rc: - | Svitlana pracuje v Košiciach v hoteli. Keď prišla na Slovensko, založila si bežný účet a k nemu dostala debetnú kartu. Výplatu jej zamestnávateľ posiela na účet vždy desiateho. Nájom platí trvalým príkazom a faktúru za mobil inkasom. Každý mesiac si dáva sto eur na sporiaci účet, lebo si sporí na auto. Minulý mesiac jej v obchode zamietli platbu, pretože mala nízky denný limit. V aplikácii si ho zvýšila. Teraz rozmýšľa o pôžičke na auto, preto má v piatok stretnutie s poradcom v banke.
+q~: Коли Світлана отримує зарплату? | *десятого числа ;; першого числа ;; у п’ятницю
+q~: Чому в магазині відхилили її платіж? | *у неї був низький денний ліміт ;; картку було заблоковано ;; на рахунку не було грошей
+q~: Навіщо вона йде до консультанта банку? | *хоче поговорити про позику на машину ;; хоче закрити рахунок ;; хоче поскаржитися на комісію
+X cz: - | Výplatu mi posielajú {na} účet. Nájom platím {z} bežného účtu. V obchode platím {kartou}. Peniaze posielam {mame} na Ukrajinu. | na, z, kartou, mame
+= na účet — куди; z účtu — звідки; kartou — чим; mame — кому.
+X dd: Обери. | Faktúru treba uhradiť do [*piateho/piaty/piatom] novembra.
+= do + родовий: do piateho novembra.
+X dd: Обери. | Sporím si [*na/za/do] nové auto.
+= sporiť si na + знахідний.
+X fe: - | Neviem sa prihlásiť [v>do] aplikácie.
+= prihlásiť sa do + родовий: do aplikácie.
+X fb: Допиши. | Mesačná ___ za pôžičku je 150 eur. (внесок) | splátka |
+= splátka — щомісячний внесок за позикою.
+X sc: Яке речення правильне? | - | *Chcem zablokovať kartu. ;; Chcem zablokovať kartou. ;; Chcem zablokovaná karta.
+= zablokovať + знахідний: kartu.
+X ms: Обери правильні речення. | - | *Platím kartou. ;; *Pošli mi IBAN. ;; *Výplata mi bola pripísaná. ;; Platím s kartou. ;; Pošli ma IBAN.
+= platiť kartou (без s); pošli mi (давальний); výplata bola pripísaná.
+X doc: Прочитай пропозицію банку. | Banka Javor – ponuka pôžičky | Výška pôžičky: 6 000 € ;; Doba splácania: 5 rokov ;; Mesačná splátka: 112 € ;; Úrok: 5,2 % ročne ;; Poplatok za poskytnutie: 0 € | Скільки треба платити щомісяця? | *112 € ;; 6 000 € ;; 5,2 €
+= Mesačná splátka — щомісячний внесок: 112 €.
+X bd: - | Ти чудово розв’язав(ла) проблему в банку!
+> Pracovníčka banky: Dobrý deň, čo pre vás môžem urobiť? | *Dobrý deň, na výpise mám transakciu, ktorú nepoznám. ;; Dobrý deň, na výpis mám transakciu, ktorú nepoznám. ;; Dobrý deň, na výpise mám transakcia, ktorú nepoznám.
+> Pracovníčka banky: Kedy to bolo? | *Štrnásteho októbra, platba 89 eur v e-shope. ;; Štrnásty október, platba 89 eur v e-shope. ;; Štrnásteho október, platba 89 eur v e-shope.
+> Pracovníčka banky: Máte kartu pri sebe? | *Áno, ale radšej ju chcem zablokovať. ;; Áno, ale radšej ju chcem zablokovaná. ;; Áno, ale radšej ju chcem zablokovanie.
+> Pracovníčka banky: Dobre. Novú kartu vám pošleme poštou. | *Ďakujem. Pošlite ju, prosím, na moju adresu v Nitre. ;; Ďakujem. Pošlite ju, prosím, na mojej adrese v Nitre. ;; Ďakujem. Pošlite ju, prosím, na moja adresa v Nitre.
+X np: Ти питаєш консультанта про відсотки за позикою. | *Aký úrok má táto pôžička? ;; Aký úrok má tá pôžičku? ;; Aká úrok má táto pôžička? ;; Aký úrokom má táto pôžička?
+= úrok — чоловічий рід: aký úrok; pôžička — називний (підмет).
+X sch: Подивись на години роботи відділення. | Banka Lipa, pobočka Nitra – Centrum | Pondelok – štvrtok = 9:00 – 17:00 ;; Piatok = 9:00 – 15:00 ;; Sobota – nedeľa = zatvorené ;; Nonstop linka = 24 hodín denne | Як заблокувати картку в неділю вночі? | *через цілодобову лінію банку ;; у відділенні в неділю ;; у відділенні в суботу
+= Sobota – nedeľa: zatvorené; nonstop linka — цілодобово.
+X tf: - | - | «Preplatok» означає, що ти маєш доплатити фірмі. | F
+= Preplatok — переплата, фірма гроші поверне; доплатити — nedoplatok.
+X dr: - | Kamarát: Na čo si sporíš? | *Sporím si na dovolenku v Chorvátsku. ;; Sporím si za dovolenku v Chorvátsku. ;; Sporím si do dovolenky v Chorvátsku.
+= sporiť si na + знахідний: na dovolenku.
+F: Нова колега в банку || Ти допомагаєш новій колезі з України розібратися з банком у Словаччині.
+S: Колега питає, що потрібно, щоб відкрити рахунок. | *паспорт або посвідка на проживання й адреса в Словаччині ;; лише номер телефону ;; виписка з іншого банку
+S: Їй прийшло SMS: «Zadajte PIN na odkaze, inak vám zablokujeme účet.» | *це шахрайство, нічого не вводити ;; треба швидко ввести PIN ;; треба переслати SMS у банк разом із PIN-кодом
+S: Вона хоче платити оренду автоматично, щомісяця однакову суму. Що їй порадиш? | *Nastav si trvalý príkaz. ;; Požiadaj o upomienku. ;; Nastav si okamžitú platbu.
+S: Вона загубила картку. Що їй скажеш? | *Hneď si zablokuj kartu v aplikácii. ;; Hneď si zablokuj kartou v aplikácii. ;; Hneď si zablokovať kartu v aplikácii.
+R: na účet, na účte, z účtu, platiť kartou ;; IBAN, prevod, trvalý príkaz, inkaso ;; zablokovať kartu, nahlásiť krádež, podvod ;; sporiť, pôžička, splátka

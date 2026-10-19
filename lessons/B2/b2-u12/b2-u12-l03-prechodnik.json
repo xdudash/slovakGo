@@ -1,0 +1,834 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u12-l03-prechodnik",
+      "sectionId": "b2-u12",
+      "level": "B2",
+      "title": "Прехідник: robiac, napísav",
+      "topic": "Дієприкметники й номіналізація",
+      "description": "Книжна незмінна форма на -úc та -iac: як вона утворюється, за яких умов її вживають, що означає застарілий минулий прехідник на -v та чим ці форми замінюють у сучасній словацькій.",
+      "order": 113,
+      "xpReward": 50,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Упізнавати прехідник у книжних і юридичних текстах і переказувати його зміст сучасними засобами.",
+      "completionMessage": "Ти впізнаєш прехідник і вмієш переказати його сучасною мовою. Далі — згущення речення: як підрядне речення стає дієприкметниковим зворотом.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Дієприкметники й номіналізація",
+        "title": "Прехідник: robiac, napísav",
+        "shortDescription": "Упізнавати прехідник у книжних і юридичних текстах і переказувати його зміст сучасними засобами.",
+        "outcomes": [
+          "упізнавати форми на -úc та -iac і знати, що вони незмінні",
+          "читати речення з прехідником і передавати їх словами keď, pričom, a",
+          "упізнавати застарілий минулий прехідник на -v",
+          "не вживати прехідник там, де потрібен звичайний дієприкметник"
+        ],
+        "newWords": [
+          "prechodník",
+          "knižný",
+          "zastaraný",
+          "nemenný",
+          "beletria"
+        ],
+        "exercisesCount": 16,
+        "reward": "+50 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Як виглядає прехідник",
+          "text": "Прехідник (prechodník) — незмінна дієслівна форма, яку творимо від активного дієприкметника: відкидаємо кінцеве -i. «pracujúci» → «pracujúc», «nesúci» → «nesúc», «idúci» → «idúc», «robiaci» → «robiac», «hovoriaci» → «hovoriac». Отже закінчень знову два: -úc і -iac. Найважливіша прикмета: прехідник не змінюється ні за родом, ні за числом, ні за відмінком. Тому і чоловік, і жінка, і група людей мають ту саму форму: «Robiac si poznámky, sledoval prednášku», «Robiac si poznámky, sledovala prednášku», «Robiac si poznámky, sledovali prednášku». Це головна відмінність від дієприкметника, який узгоджується завжди.",
+          "examples": [
+            {
+              "sk": "Čakajúc na autobus, čítal noviny.",
+              "uk": "Чекаючи на автобус, він читав газету."
+            },
+            {
+              "sk": "Nevediac o zmene, prišli o hodinu skôr.",
+              "uk": "Не знаючи про зміну, вони прийшли на годину раніше."
+            }
+          ],
+          "shortRule": "дієприкметник мінус -i · незмінна форма · -úc або -iac",
+          "commonMistakes": [
+            {
+              "mistake": "Robiaci si poznámky, sledoval prednášku.",
+              "correct": "Robiac si poznámky, sledoval prednášku."
+            },
+            {
+              "mistake": "Čakajúce na autobus, čítali noviny.",
+              "correct": "Čakajúc na autobus, čítali noviny."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Коли його можна вжити",
+          "text": "Прехідник має дві тверді умови. По-перше, підмет мусить бути той самий, що й у головному реченні: той, хто чекає, і той, хто читає, — одна особа. Речення «Čakajúc na autobus, prišla SMS» неправильне, бо SMS не чекала. По-друге, дія прехідника відбувається одночасно з дією присудка. Значення може бути різне й виводиться з контексту: час — «Idúc domov, stretol suseda» (коли йшов додому); причина — «Nevediac o zmene, prišli skôr» (бо не знали); супутня обставина — «Hovoril pomaly, vyberajúc slová» (і при цьому вибирав слова). Сучасна словацька майже завжди ставить тут підрядне речення: «keď šiel domov», «pretože nevedeli», «pričom vyberal slová».",
+          "examples": [
+            {
+              "sk": "Idúc domov, stretol suseda.",
+              "uk": "Ідучи додому, він зустрів сусіда."
+            },
+            {
+              "sk": "Keď šiel domov, stretol suseda.",
+              "uk": "Коли йшов додому, він зустрів сусіда."
+            }
+          ],
+          "shortRule": "той самий підмет · одночасність · сучасно: keď, pretože, pričom",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Минулий прехідник і стиль",
+          "text": "Крім форм на -úc та -iac, у старих текстах зустрінеш минулий прехідник на -v та -vši: «napísav list, odišiel», «urobivši svoje, mlčala». Ці форми в сучасній словацькій мертві — їх не твориш сам, лише розпізнаєш у літературі XIX століття й у стилізованих текстах. Так само книжним є активний дієприкметник минулого часу на -vší: «napísavší», «prišedší». Теперішній прехідник живий, але вузько: художня проза, поезія, подекуди юридичні й наукові формулювання, сталі звороти «nehľadiac na», «počnúc dňom», «súdiac podľa». У листі, в імейлі чи в розмові прехідник звучить штучно — там пиши підрядне речення.",
+          "examples": [
+            {
+              "sk": "Nehľadiac na počasie, výstava sa začala načas.",
+              "uk": "Незважаючи на погоду, виставка почалася вчасно."
+            },
+            {
+              "sk": "Súdiac podľa čísel, výroba vzrástla.",
+              "uk": "Судячи з цифр, виробництво зросло."
+            }
+          ],
+          "shortRule": "минулий прехідник на -v лише розпізнаємо · теперішній — книжний · сталі звороти: nehľadiac na, počnúc, súdiac podľa",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u12-l03-prechodnik-w01",
+            "sk": "prechodník",
+            "uk": "прехідник, дієприслівник",
+            "pronunciationUk": "преходні:к",
+            "exampleSk": "Prechodník je nemenný tvar na -úc alebo -iac.",
+            "exampleUk": "Прехідник — незмінна форма на -úc або -iac."
+          },
+          {
+            "wordId": "b2-u12-l03-prechodnik-w02",
+            "sk": "knižný",
+            "uk": "книжний",
+            "pronunciationUk": "кнїжни:",
+            "exampleSk": "Prechodník je dnes knižný prostriedok.",
+            "exampleUk": "Прехідник сьогодні — книжний засіб."
+          },
+          {
+            "wordId": "b2-u12-l03-prechodnik-w03",
+            "sk": "zastaraný",
+            "uk": "застарілий",
+            "pronunciationUk": "застарани:",
+            "exampleSk": "Minulý prechodník je zastaraný tvar.",
+            "exampleUk": "Минулий прехідник — застаріла форма."
+          },
+          {
+            "wordId": "b2-u12-l03-prechodnik-w04",
+            "sk": "nemenný",
+            "uk": "незмінний",
+            "pronunciationUk": "неменни:",
+            "exampleSk": "Prechodník je nemenný, neskloňuje sa.",
+            "exampleUk": "Прехідник незмінний, він не відмінюється."
+          },
+          {
+            "wordId": "b2-u12-l03-prechodnik-w05",
+            "sk": "beletria",
+            "uk": "художня література",
+            "pronunciationUk": "белетрія",
+            "exampleSk": "V beletrii sa prechodník používa dodnes.",
+            "exampleUk": "У художній літературі прехідник використовують і досі."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u12-l03-prechodnik-w01",
+          "sk": "prechodník",
+          "uk": "прехідник, дієприслівник",
+          "pronunciationUk": "преходні:к",
+          "exampleSk": "Prechodník je nemenný tvar na -úc alebo -iac.",
+          "exampleUk": "Прехідник — незмінна форма на -úc або -iac.",
+          "level": "B2",
+          "topic": "Дієприкметники й номіналізація",
+          "tags": [
+            "b2-u12",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-w02",
+          "sk": "knižný",
+          "uk": "книжний",
+          "pronunciationUk": "кнїжни:",
+          "exampleSk": "Prechodník je dnes knižný prostriedok.",
+          "exampleUk": "Прехідник сьогодні — книжний засіб.",
+          "level": "B2",
+          "topic": "Дієприкметники й номіналізація",
+          "tags": [
+            "b2-u12",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-w03",
+          "sk": "zastaraný",
+          "uk": "застарілий",
+          "pronunciationUk": "застарани:",
+          "exampleSk": "Minulý prechodník je zastaraný tvar.",
+          "exampleUk": "Минулий прехідник — застаріла форма.",
+          "level": "B2",
+          "topic": "Дієприкметники й номіналізація",
+          "tags": [
+            "b2-u12",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-w04",
+          "sk": "nemenný",
+          "uk": "незмінний",
+          "pronunciationUk": "неменни:",
+          "exampleSk": "Prechodník je nemenný, neskloňuje sa.",
+          "exampleUk": "Прехідник незмінний, він не відмінюється.",
+          "level": "B2",
+          "topic": "Дієприкметники й номіналізація",
+          "tags": [
+            "b2-u12",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-w05",
+          "sk": "beletria",
+          "uk": "художня література",
+          "pronunciationUk": "белетрія",
+          "exampleSk": "V beletrii sa prechodník používa dodnes.",
+          "exampleUk": "У художній літературі прехідник використовують і досі.",
+          "level": "B2",
+          "topic": "Дієприкметники й номіналізація",
+          "tags": [
+            "b2-u12",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u12-l03-prechodnik-ex01",
+          "lessonId": "b2-u12-l03-prechodnik",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай дієприкметник із прехідником.",
+          "pairs": [
+            {
+              "left": "pracujúci",
+              "right": "pracujúc"
+            },
+            {
+              "left": "robiaci",
+              "right": "robiac"
+            },
+            {
+              "left": "idúci",
+              "right": "idúc"
+            },
+            {
+              "left": "hovoriaci",
+              "right": "hovoriac"
+            },
+            {
+              "left": "nesúci",
+              "right": "nesúc"
+            },
+            {
+              "left": "vediaci",
+              "right": "vediac"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u12-l03-prechodnik-w01"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-ex02",
+          "lessonId": "b2-u12-l03-prechodnik",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Яка це форма?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Prechodník"
+            },
+            {
+              "id": "c2",
+              "title": "Príčastie"
+            }
+          ],
+          "items": [
+            {
+              "sk": "idúci",
+              "category": "c2"
+            },
+            {
+              "sk": "robiac",
+              "category": "c1"
+            },
+            {
+              "sk": "pracujúci",
+              "category": "c2"
+            },
+            {
+              "sk": "robiaci",
+              "category": "c2"
+            },
+            {
+              "sk": "pracujúc",
+              "category": "c1"
+            },
+            {
+              "sk": "idúc",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Прехідник кінчається на -úc або -iac і не має кінцевого -i, дієприкметник його має й відмінюється.",
+          "order": 2,
+          "wordIds": [
+            "b2-u12-l03-prechodnik-w01"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-ex03",
+          "lessonId": "b2-u12-l03-prechodnik",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "blankId": "b1",
+              "options": [
+                "Čakajúce",
+                "Čakajúc",
+                "Čakajúci"
+              ],
+              "correct": "Čakajúc"
+            },
+            {
+              "text": " na výsledky, prečítal si celý spis."
+            }
+          ],
+          "explanation": "Тут потрібна незмінна форма прехідника Čakajúc, бо вона не узгоджується з підметом.",
+          "order": 3,
+          "wordIds": [
+            "b2-u12-l03-prechodnik-w01"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-ex04",
+          "lessonId": "b2-u12-l03-prechodnik",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "blankId": "b1",
+              "options": [
+                "Nevediac",
+                "Nevediaci",
+                "Nevedúc"
+              ],
+              "correct": "Nevediac"
+            },
+            {
+              "text": " o zmene termínu, prišli o hodinu skôr."
+            }
+          ],
+          "explanation": "Від дієслова vedieť прехідник має форму Nevediac; Nevedúc не існує, Nevediaci — дієприкметник.",
+          "order": 4,
+          "wordIds": [
+            "b2-u12-l03-prechodnik-w01"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-ex05",
+          "lessonId": "b2-u12-l03-prechodnik",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши прехідник від «robiť».",
+          "sentence": "______ si poznámky, sledovala celú prednášku.",
+          "acceptedAnswers": [
+            "Robiac",
+            "robiac"
+          ],
+          "explanation": "Прехідник від robiť має форму robiac і не змінюється за родом.",
+          "order": 5,
+          "wordIds": [
+            "b2-u12-l03-prechodnik-w01"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-ex06",
+          "lessonId": "b2-u12-l03-prechodnik",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши прехідник від «ísť».",
+          "sentence": "______ domov, stretol starého suseda.",
+          "acceptedAnswers": [
+            "Idúc",
+            "idúc"
+          ],
+          "explanation": "Від ísť прехідник має форму idúc, бо форма oni звучить idú.",
+          "order": 6,
+          "wordIds": [
+            "b2-u12-l03-prechodnik-w01"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-ex07",
+          "lessonId": "b2-u12-l03-prechodnik",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Prechodník sa neskloňuje a nemení sa podľa rodu ani čísla.",
+          "statement": "Prechodník má pre ženský rod tvar robiaca.",
+          "correctAnswer": false,
+          "explanation": "Прехідник незмінний, форми robiaca в нього немає — це дієприкметник.",
+          "order": 7,
+          "wordIds": [
+            "b2-u12-l03-prechodnik-w01",
+            "b2-u12-l03-prechodnik-w04"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-ex08",
+          "lessonId": "b2-u12-l03-prechodnik",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "V slovenčine dnes nahrádzame prechodník vedľajšou vetou.",
+          "statement": "Veta Keď šiel domov, stretol suseda je dnešným ekvivalentom vety Idúc domov, stretol suseda.",
+          "correctAnswer": true,
+          "explanation": "Сучасна словацька передає прехідник підрядним реченням із keď.",
+          "order": 8,
+          "wordIds": [
+            "b2-u12-l03-prechodnik-w01"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-ex09",
+          "lessonId": "b2-u12-l03-prechodnik",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Robiaci si poznámky, sledovala celú prednášku.",
+          "errorToken": "Robiaci",
+          "correctToken": "Robiac",
+          "explanation": "Прехідник незмінний: Robiac, а не Robiaci.",
+          "order": 9,
+          "wordIds": [
+            "b2-u12-l03-prechodnik-w01"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-ex10",
+          "lessonId": "b2-u12-l03-prechodnik",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перепиши прехідник підрядним реченням зі «keď».",
+          "source": "Idúc domov, stretol starého suseda.",
+          "acceptedAnswers": [
+            "Keď šiel domov, stretol starého suseda."
+          ],
+          "explanation": "Прехідник часу передаємо сполучником keď і дієсловом у минулому часі.",
+          "order": 10,
+          "wordIds": [
+            "b2-u12-l03-prechodnik-w01"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-ex11",
+          "lessonId": "b2-u12-l03-prechodnik",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перепиши прехідник підрядним реченням зі «pretože».",
+          "source": "Nevediac o zmene termínu, prišli o hodinu skôr.",
+          "acceptedAnswers": [
+            "Pretože nevedeli o zmene termínu, prišli o hodinu skôr."
+          ],
+          "explanation": "Прехідник причини передаємо сполучником pretože й особовою формою дієслова.",
+          "order": 11,
+          "wordIds": [
+            "b2-u12-l03-prechodnik-w01"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-ex12",
+          "lessonId": "b2-u12-l03-prechodnik",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яке речення з прехідником правильне?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Čítajúc zmluvu, bola nájdená chyba v dátume.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Čítajúc zmluvu, všimol si chybu v dátume.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Čítajúc zmluvu, chyba v dátume ho prekvapila.",
+              "correct": false
+            }
+          ],
+          "explanation": "Підмет прехідника й присудка мусить бути той самий: читає і помічає та сама особа.",
+          "order": 12,
+          "wordIds": [
+            "b2-u12-l03-prechodnik-w01"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-ex13",
+          "lessonId": "b2-u12-l03-prechodnik",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Maryna študuje slovenskú literatúru a prvý raz čítala poviedku z konca devätnásteho storočia. Prekvapilo ju, že autor skoro v každom odseku použil prechodník. Hrdina odchádzal z domu, nehľadiac na dážď, a cestou premýšľal, počítajúc kroky. V jednej vete našla aj tvar napísav, ktorému vôbec nerozumela. Učiteľka jej vysvetlila, že ide o minulý prechodník, ktorý dnes nikto netvorí a stretneme ho len v starších textoch. Dodala, že prítomný prechodník žije ďalej, ale takmer výlučne v beletrii, v poézii a v niekoľkých ustálených spojeniach. Maryna si potom skúsila prepísať tri vety moderne. Namiesto nehľadiac na dážď napísala hoci pršalo a namiesto počítajúc kroky použila a pritom si počítal kroky. Text sa jej zdal jednoduchší, hoci stratil starý tón.",
+          "questions": [
+            {
+              "question": "Що здивувало Марину в оповіданні?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "оповідання було без діалогів",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "автор майже в кожному абзаці вживав прехідник",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "текст був написаний іншим алфавітом",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що таке форма «napísav»?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "наказова форма",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "форма майбутнього часу",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "минулий прехідник, якого сьогодні вже не творять",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що сталося з текстом після сучасного перепису?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "зовсім не змінився",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "став простішим, але втратив старий тон",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "став довшим і незрозумілішим",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 13,
+          "wordIds": [
+            "b2-u12-l03-prechodnik-w01",
+            "b2-u12-l03-prechodnik-w05"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-ex14",
+          "lessonId": "b2-u12-l03-prechodnik",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "V právnom texte stojí veta Počnúc dňom 1. januára sa poplatok zvyšuje.",
+          "target": "Počnúc",
+          "options": [
+            {
+              "id": "a",
+              "text": "за винятком",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "починаючи з",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "закінчуючи",
+              "correct": false
+            }
+          ],
+          "explanation": "Сталий зворот počnúc dňom означає починаючи з дня.",
+          "order": 14,
+          "wordIds": [
+            "b2-u12-l03-prechodnik-w01"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-ex15",
+          "lessonId": "b2-u12-l03-prechodnik",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти пишеш колезі звичайний імейл і хочеш сказати, що під час читання договору помітив помилку.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Prečítav zmluvu, všimol som si chybu.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Čítajúc zmluvu, chyba bola všimnutá.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Keď som čítal zmluvu, všimol som si chybu.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Čítajúc zmluvu, všimla sa chyba.",
+              "correct": false
+            }
+          ],
+          "explanation": "В імейлі природне підрядне речення з keď; прехідник там звучить штучно, а форма Prečítav застаріла.",
+          "order": 15,
+          "wordIds": [
+            "b2-u12-l03-prechodnik-w01"
+          ]
+        },
+        {
+          "id": "b2-u12-l03-prechodnik-ex16",
+          "lessonId": "b2-u12-l03-prechodnik",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Nehľadiac na nepriazeň počasia, slávnosť sa začala načas.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": true
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": false
+            }
+          ],
+          "explanation": "Прехідниковий зворот nehľadiac na робить речення виразно книжним і офіційним.",
+          "order": 16,
+          "wordIds": [
+            "b2-u12-l03-prechodnik-w01"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Стара новела й сучасний переказ",
+        "description": "Ти на курсі літератури переказуєш речення зі старої новели сучасною словацькою.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Як переповіси «Idúc po ulici, stretol učiteľa»?",
+            "options": [
+              {
+                "sk": "Idúc po ulici, učiteľ bol stretnutý.",
+                "correct": false
+              },
+              {
+                "sk": "Keď šiel po ulici, stretol učiteľa.",
+                "correct": true
+              },
+              {
+                "sk": "Idúci po ulici, stretol učiteľa.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як переповіси «Nevediac o schôdzi, zostal doma»?",
+            "options": [
+              {
+                "sk": "Pretože nevedel o schôdzi, zostal doma.",
+                "correct": true
+              },
+              {
+                "sk": "Nevediaci o schôdzi, zostal doma.",
+                "correct": false
+              },
+              {
+                "sk": "Nevediac o schôdzi, schôdza sa nezačala.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Що означає форма «urobivši»?",
+            "options": [
+              {
+                "text": "наказ для множини",
+                "correct": false
+              },
+              {
+                "text": "минулий прехідник, застаріла форма",
+                "correct": true
+              },
+              {
+                "text": "форма майбутнього часу",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Яке речення з прехідником побудоване правильно?",
+            "options": [
+              {
+                "sk": "Hovoril pomaly, slová boli vyberané.",
+                "correct": false
+              },
+              {
+                "sk": "Hovoril pomaly, vyberajúci slová.",
+                "correct": false
+              },
+              {
+                "sk": "Hovoril pomaly, vyberajúc slová.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти впізнаєш прехідник і вмієш переказати його сучасною мовою. Далі — згущення речення: як підрядне речення стає дієприкметниковим зворотом."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти впізнаєш прехідник і вмієш переказати його сучасною мовою. Далі — згущення речення: як підрядне речення стає дієприкметниковим зворотом.",
+        "nowYouKnow": [
+          "прехідник: дієприкметник мінус -i, форми -úc та -iac",
+          "незмінний, той самий підмет, одночасна дія",
+          "сучасно передаємо keď, pretože, pričom",
+          "минулий прехідник на -v лише розпізнаємо"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 16,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u12-l04-zhustenie-vety",
+          "title": "Стиснення речення: дієприкметник замість підрядного"
+        }
+      }
+    }
+  ]
+}

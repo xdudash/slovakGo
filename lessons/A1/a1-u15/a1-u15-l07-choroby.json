@@ -1,0 +1,874 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u15-l07-choroby",
+      "sectionId": "a1-u15",
+      "level": "A1",
+      "title": "Хвороби",
+      "topic": "Здоров’я",
+      "description": "Найчастіші хвороби: prechladnutie, chrípka, nádcha, angína; тривалі: vysoký tlak, cukrovka. Mať chrípku, byť prechladnutý, ochorieť.",
+      "order": 147,
+      "xpReward": 25,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Сказати, на що ти хворієш або хворів(-ла), і зрозуміти діагноз.",
+      "completionMessage": "Ти називаєш хвороби. Далі — поради лікаря.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Здоров’я",
+        "title": "Хвороби",
+        "shortDescription": "Сказати, на що ти хворієш або хворів(-ла), і зрозуміти діагноз.",
+        "outcomes": [
+          "називати prechladnutie, chrípka, angína",
+          "казати Mám chrípku / Som prechladnutý",
+          "говорити про тривалі хвороби",
+          "казати Ochorel som"
+        ],
+        "newWords": [
+          "chrípka",
+          "prechladnutie",
+          "nádcha",
+          "angína",
+          "cukrovka",
+          "tlak",
+          "ochorieť"
+        ],
+        "exercisesCount": 14,
+        "reward": "+25 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Prechladnutie a chrípka",
+          "text": "«Prechladnutie» — застуда: «Som prechladnutý / prechladnutá». «Chrípka» — грип (висока температура, болить усе тіло). «Nádcha» — нежить, «angína» — ангіна. Конструкція «mať + знахідний»: «Mám chrípku», «Mám nádchu».",
+          "examples": [
+            {
+              "sk": "Syn má angínu.",
+              "uk": "У сина ангіна."
+            },
+            {
+              "sk": "Som trochu prechladnutá.",
+              "uk": "Я (ж.) трохи застуджена."
+            }
+          ],
+          "shortRule": "mať chrípku, byť prechladnutý",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Dlhodobé choroby",
+          "text": "Тривалі (хронічні) хвороби: «vysoký tlak» — високий тиск, «cukrovka» — цукровий діабет, «astma» — астма. Лікареві кажуть: «Mám vysoký tlak», «Liečim sa na cukrovku» — лікуюся від діабету.",
+          "examples": [
+            {
+              "sk": "Otec má vysoký tlak.",
+              "uk": "У тата високий тиск."
+            },
+            {
+              "sk": "Mama sa lieči na cukrovku.",
+              "uk": "Мама лікується від діабету."
+            }
+          ],
+          "shortRule": "liečiť sa na + знахідний",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Ochorieť",
+          "text": "«Ochorieť» — захворіти: «Ochorel som» (ч.), «Ochorela som» (ж.). «Je to nákazlivé?» — це заразно? Хворому бажають: «Rýchlo sa uzdrav!» — швидше одужуй!",
+          "examples": [
+            {
+              "sk": "Celá rodina ochorela na chrípku.",
+              "uk": "Уся родина захворіла на грип."
+            },
+            {
+              "sk": "Je to nákazlivé?",
+              "uk": "Це заразно?"
+            }
+          ],
+          "shortRule": "ochorieť na + знахідний",
+          "commonMistakes": [
+            {
+              "mistake": "Mám chrípka.",
+              "correct": "Mám chrípku."
+            },
+            {
+              "mistake": "Som prechladnutie.",
+              "correct": "Som prechladnutý."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u15-l07-choroby-w01",
+            "sk": "chrípka",
+            "uk": "грип",
+            "pronunciationUk": "хрі:пка",
+            "exampleSk": "V zime má veľa ľudí chrípku.",
+            "exampleUk": "Узимку багато людей хворіє на грип."
+          },
+          {
+            "wordId": "a1-u15-l07-choroby-w02",
+            "sk": "prechladnutie",
+            "uk": "застуда",
+            "pronunciationUk": "прехладнутіє",
+            "exampleSk": "Na prechladnutie pomáha čaj s medom.",
+            "exampleUk": "Від застуди допомагає чай із медом."
+          },
+          {
+            "wordId": "a1-u15-l07-choroby-w03",
+            "sk": "nádcha",
+            "uk": "нежить",
+            "pronunciationUk": "на:дха",
+            "exampleSk": "Mám nádchu a nemôžem dýchať nosom.",
+            "exampleUk": "У мене нежить, і я не можу дихати носом."
+          },
+          {
+            "wordId": "a1-u15-l07-choroby-w04",
+            "sk": "angína",
+            "uk": "ангіна",
+            "pronunciationUk": "анґі:на",
+            "exampleSk": "Angínu lieči lekár antibiotikami.",
+            "exampleUk": "Ангіну лікар лікує антибіотиками."
+          },
+          {
+            "wordId": "a1-u15-l07-choroby-w05",
+            "sk": "cukrovka",
+            "uk": "цукровий діабет",
+            "pronunciationUk": "цукровка",
+            "exampleSk": "Dedko má cukrovku.",
+            "exampleUk": "У дідуся цукровий діабет."
+          },
+          {
+            "wordId": "a1-u15-l07-choroby-w06",
+            "sk": "tlak",
+            "uk": "тиск (кров’яний)",
+            "pronunciationUk": "тлак",
+            "exampleSk": "Sestra mi zmerala tlak.",
+            "exampleUk": "Медсестра виміряла мені тиск."
+          },
+          {
+            "wordId": "a1-u15-l07-choroby-w07",
+            "sk": "ochorieť",
+            "uk": "захворіти",
+            "pronunciationUk": "охорієт",
+            "exampleSk": "Minulý týždeň som ochorel.",
+            "exampleUk": "Минулого тижня я захворів."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u15-l07-choroby-w01",
+          "sk": "chrípka",
+          "uk": "грип",
+          "pronunciationUk": "хрі:пка",
+          "exampleSk": "V zime má veľa ľudí chrípku.",
+          "exampleUk": "Узимку багато людей хворіє на грип.",
+          "level": "A1",
+          "topic": "Здоров’я",
+          "tags": [
+            "a1-u15",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u15-l07-choroby-w02",
+          "sk": "prechladnutie",
+          "uk": "застуда",
+          "pronunciationUk": "прехладнутіє",
+          "exampleSk": "Na prechladnutie pomáha čaj s medom.",
+          "exampleUk": "Від застуди допомагає чай із медом.",
+          "level": "A1",
+          "topic": "Здоров’я",
+          "tags": [
+            "a1-u15",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u15-l07-choroby-w03",
+          "sk": "nádcha",
+          "uk": "нежить",
+          "pronunciationUk": "на:дха",
+          "exampleSk": "Mám nádchu a nemôžem dýchať nosom.",
+          "exampleUk": "У мене нежить, і я не можу дихати носом.",
+          "level": "A1",
+          "topic": "Здоров’я",
+          "tags": [
+            "a1-u15",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u15-l07-choroby-w04",
+          "sk": "angína",
+          "uk": "ангіна",
+          "pronunciationUk": "анґі:на",
+          "exampleSk": "Angínu lieči lekár antibiotikami.",
+          "exampleUk": "Ангіну лікар лікує антибіотиками.",
+          "level": "A1",
+          "topic": "Здоров’я",
+          "tags": [
+            "a1-u15",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u15-l07-choroby-w05",
+          "sk": "cukrovka",
+          "uk": "цукровий діабет",
+          "pronunciationUk": "цукровка",
+          "exampleSk": "Dedko má cukrovku.",
+          "exampleUk": "У дідуся цукровий діабет.",
+          "level": "A1",
+          "topic": "Здоров’я",
+          "tags": [
+            "a1-u15",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u15-l07-choroby-w06",
+          "sk": "tlak",
+          "uk": "тиск (кров’яний)",
+          "pronunciationUk": "тлак",
+          "exampleSk": "Sestra mi zmerala tlak.",
+          "exampleUk": "Медсестра виміряла мені тиск.",
+          "level": "A1",
+          "topic": "Здоров’я",
+          "tags": [
+            "a1-u15",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u15-l07-choroby-w07",
+          "sk": "ochorieť",
+          "uk": "захворіти",
+          "pronunciationUk": "охорієт",
+          "exampleSk": "Minulý týždeň som ochorel.",
+          "exampleUk": "Минулого тижня я захворів.",
+          "level": "A1",
+          "topic": "Здоров’я",
+          "tags": [
+            "a1-u15",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u15-l07-choroby-ex01",
+          "lessonId": "a1-u15-l07-choroby",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "chrípka",
+              "right": "грип"
+            },
+            {
+              "left": "prechladnutie",
+              "right": "застуда"
+            },
+            {
+              "left": "nádcha",
+              "right": "нежить"
+            },
+            {
+              "left": "angína",
+              "right": "ангіна"
+            },
+            {
+              "left": "cukrovka",
+              "right": "цукровий діабет"
+            },
+            {
+              "left": "tlak",
+              "right": "тиск"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u15-l07-choroby-w01",
+            "a1-u15-l07-choroby-w02",
+            "a1-u15-l07-choroby-w03",
+            "a1-u15-l07-choroby-w04",
+            "a1-u15-l07-choroby-w05",
+            "a1-u15-l07-choroby-w06"
+          ]
+        },
+        {
+          "id": "a1-u15-l07-choroby-ex02",
+          "lessonId": "a1-u15-l07-choroby",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Mám "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "chrípke",
+                "chrípku",
+                "chrípka"
+              ],
+              "correct": "chrípku"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "mať + знахідний: chrípku.",
+          "order": 2,
+          "wordIds": [
+            "a1-u15-l07-choroby-w01"
+          ]
+        },
+        {
+          "id": "a1-u15-l07-choroby-ex03",
+          "lessonId": "a1-u15-l07-choroby",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери (говорить жінка).",
+          "sentenceParts": [
+            {
+              "text": "Som "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "prechladnutie",
+                "prechladnutá",
+                "prechladnutý"
+              ],
+              "correct": "prechladnutá"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Жінка — prechladnutá.",
+          "order": 3,
+          "wordIds": [
+            "a1-u15-l07-choroby-w02"
+          ]
+        },
+        {
+          "id": "a1-u15-l07-choroby-ex04",
+          "lessonId": "a1-u15-l07-choroby",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Je to nákazlivé?»",
+          "options": [
+            {
+              "id": "a",
+              "text": "Це небезпечно?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Це заразно?",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Це надовго?",
+              "correct": false
+            }
+          ],
+          "explanation": "nákazlivý — заразний.",
+          "order": 4
+        },
+        {
+          "id": "a1-u15-l07-choroby-ex05",
+          "lessonId": "a1-u15-l07-choroby",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Liečim sa na tlak» означає, що в мене проблеми з тиском.",
+          "correctAnswer": true,
+          "explanation": "liečiť sa na — лікуватися від.",
+          "order": 5,
+          "wordIds": [
+            "a1-u15-l07-choroby-w06"
+          ]
+        },
+        {
+          "id": "a1-u15-l07-choroby-ex06",
+          "lessonId": "a1-u15-l07-choroby",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Короткочасна чи тривала хвороба?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Akútne"
+            },
+            {
+              "id": "c2",
+              "title": "Dlhodobé"
+            }
+          ],
+          "items": [
+            {
+              "sk": "angína",
+              "category": "c1"
+            },
+            {
+              "sk": "vysoký tlak",
+              "category": "c2"
+            },
+            {
+              "sk": "cukrovka",
+              "category": "c2"
+            },
+            {
+              "sk": "prechladnutie",
+              "category": "c1"
+            },
+            {
+              "sk": "chrípka",
+              "category": "c1"
+            },
+            {
+              "sk": "astma",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Гострі й хронічні хвороби.",
+          "order": 6,
+          "wordIds": [
+            "a1-u15-l07-choroby-w01",
+            "a1-u15-l07-choroby-w02",
+            "a1-u15-l07-choroby-w04",
+            "a1-u15-l07-choroby-w05",
+            "a1-u15-l07-choroby-w06"
+          ]
+        },
+        {
+          "id": "a1-u15-l07-choroby-ex07",
+          "lessonId": "a1-u15-l07-choroby",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши (говорить жінка).",
+          "sentence": "Minulý týždeň som ______ na chrípku. (захворіла)",
+          "acceptedAnswers": [
+            "ochorela"
+          ],
+          "explanation": "Жінка — ochorela.",
+          "order": 7,
+          "wordIds": [
+            "a1-u15-l07-choroby-w01"
+          ]
+        },
+        {
+          "id": "a1-u15-l07-choroby-ex08",
+          "lessonId": "a1-u15-l07-choroby",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що в тата високий тиск.",
+          "tokens": [
+            "vysoký",
+            "tlak",
+            "Otec",
+            ".",
+            "má"
+          ],
+          "correctOrder": [
+            "Otec",
+            "má",
+            "vysoký",
+            "tlak",
+            "."
+          ],
+          "explanation": "mať vysoký tlak.",
+          "order": 8,
+          "wordIds": [
+            "a1-u15-l07-choroby-w06"
+          ]
+        },
+        {
+          "id": "a1-u15-l07-choroby-ex09",
+          "lessonId": "a1-u15-l07-choroby",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Celá rodina ochorela na chrípka v januári.",
+          "errorToken": "chrípka",
+          "correctToken": "chrípku",
+          "explanation": "na + знахідний: chrípku.",
+          "order": 9,
+          "wordIds": [
+            "a1-u15-l07-choroby-w01"
+          ]
+        },
+        {
+          "id": "a1-u15-l07-choroby-ex10",
+          "lessonId": "a1-u15-l07-choroby",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Ahoj Zuzka, dnes neprídem na kurz. Od včera mám vysokú teplotu a bolí ma celé telo. Lekárka povedala, že je to chrípka, nie obyčajné prechladnutie. Musím byť doma aspoň päť dní. Chrípka je nákazlivá, tak ma radšej nenavštevuj. Pošleš mi úlohy mailom? Oksana",
+          "questions": [
+            {
+              "question": "Що в Оксани?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "грип",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "ангіна",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "звичайна застуда",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Скільки днів вона має бути вдома?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "десять",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "два",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "щонайменше п’ять",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Чому Зузці не варто приходити?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Оксана поїхала до лікарки",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "грип заразний",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "Оксана спить",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "a1-u15-l07-choroby-w01",
+            "a1-u15-l07-choroby-w02"
+          ]
+        },
+        {
+          "id": "a1-u15-l07-choroby-ex11",
+          "lessonId": "a1-u15-l07-choroby",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kolega",
+              "sk": "Vyzeráš zle. Si v poriadku?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Asi som prechladnutie, mám nádcha.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Asi som prechladnutý, mám nádchu.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Prechladnutý nádcha asi.",
+              "correct": false
+            }
+          ],
+          "explanation": "som prechladnutý + mám nádchu.",
+          "order": 11,
+          "wordIds": [
+            "a1-u15-l07-choroby-w02",
+            "a1-u15-l07-choroby-w03"
+          ]
+        },
+        {
+          "id": "a1-u15-l07-choroby-ex12",
+          "lessonId": "a1-u15-l07-choroby",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Колега захворів. Ти пишеш йому коротке побажання (на «ти»).",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Rýchlo sa uzdrav!",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Rýchlo uzdraviť!",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Buď chorý!",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Uzdrav rýchlo ma!",
+              "correct": false
+            }
+          ],
+          "explanation": "Rýchlo sa uzdrav! — швидше одужуй!",
+          "order": 12
+        },
+        {
+          "id": "a1-u15-l07-choroby-ex13",
+          "lessonId": "a1-u15-l07-choroby",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Syn má angína.",
+          "acceptedAnswers": [
+            "Syn má angínu."
+          ],
+          "explanation": "mať + знахідний: angínu.",
+          "order": 13,
+          "wordIds": [
+            "a1-u15-l07-choroby-w04"
+          ]
+        },
+        {
+          "id": "a1-u15-l07-choroby-ex14",
+          "lessonId": "a1-u15-l07-choroby",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні речення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Mám nádchu.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Ochorela som.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Otec sa lieči na cukrovku.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Mám nádcha.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Som chrípka.",
+              "correct": false
+            }
+          ],
+          "explanation": "mať + знахідний; ochorieť.",
+          "order": 14,
+          "wordIds": [
+            "a1-u15-l07-choroby-w01",
+            "a1-u15-l07-choroby-w03",
+            "a1-u15-l07-choroby-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Розмова з лікаркою",
+        "description": "Ти прийшов (прийшла) до лікарки з високою температурою.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Čo vás trápi?» (з учора висока температура й болить усе тіло)",
+            "options": [
+              {
+                "sk": "Teplota včera telo bolí.",
+                "correct": false
+              },
+              {
+                "sk": "Od včera mám vysoká teplota a bolí mi celé telo.",
+                "correct": false
+              },
+              {
+                "sk": "Od včera mám vysokú teplotu a bolí ma celé telo.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Je to chrípka. Máte nejaké dlhodobé choroby?» (так, астма)",
+            "options": [
+              {
+                "sk": "Áno, mám astmu.",
+                "correct": true
+              },
+              {
+                "sk": "Áno, som astma.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, mám astma.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти питаєш, чи це заразно.",
+            "options": [
+              {
+                "sk": "Je to nákazlivá?",
+                "correct": false
+              },
+              {
+                "sk": "Je to nákazlivé?",
+                "correct": true
+              },
+              {
+                "sk": "To nákaza je?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Áno. Zostaňte doma, kým nebudete mať normálnu teplotu.» Що порадила лікарка?",
+            "options": [
+              {
+                "sk": "іти на роботу",
+                "correct": false
+              },
+              {
+                "sk": "прийти завтра на аналізи",
+                "correct": false
+              },
+              {
+                "sk": "залишатися вдома, поки температура не стане нормальною",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти називаєш хвороби. Далі — поради лікаря."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти називаєш хвороби. Далі — поради лікаря.",
+        "nowYouKnow": [
+          "chrípka, prechladnutie, nádcha, angína",
+          "Mám chrípku / Som prechladnutý",
+          "vysoký tlak, cukrovka, liečiť sa na",
+          "ochorieť, nákazlivé, Rýchlo sa uzdrav!"
+        ],
+        "newWordsCount": 7,
+        "exercisesCompleted": 14,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u15-l08-rady-lekara",
+          "title": "Поради лікаря"
+        }
+      }
+    }
+  ]
+}

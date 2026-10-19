@@ -1,0 +1,958 @@
+{
+  "lessons": [
+    {
+      "id": "a2-u20-l05-nehoda",
+      "sectionId": "a2-u20",
+      "level": "A2",
+      "title": "Нещасний випадок",
+      "topic": "Розповіді про минуле",
+      "description": "Як розповісти, що сталося: посковзнувся, упав, зламав руку, зіткнення машин. Свідки, страхова компанія, екстрені номери.",
+      "order": 195,
+      "xpReward": 30,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Описати нещасний випадок лікарю, поліції чи страховій і викликати допомогу.",
+      "completionMessage": "Ти вмієш розповісти про нещасний випадок. Далі — загублені речі.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A2 · Розповіді про минуле",
+        "title": "Нещасний випадок",
+        "shortDescription": "Описати нещасний випадок лікарю, поліції чи страховій і викликати допомогу.",
+        "outcomes": [
+          "казати Pošmykol som sa, spadol som, zlomil som si ruku",
+          "описувати ДТП: zrážka, vodič, chodec",
+          "знати номери 112, 155, 158 і говорити зі свідком та поліцією",
+          "повідомляти про подію poisťovni"
+        ],
+        "newWords": [
+          "pošmyknúť sa",
+          "zlomiť si",
+          "zrážka",
+          "svedok",
+          "poisťovňa",
+          "sanitka"
+        ],
+        "exercisesCount": 14,
+        "reward": "+30 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Čo sa stalo?",
+          "text": "Коротка розповідь про травму: «Pošmykol som sa na poľadovici a spadol som.» З частинами тіла словацька вживає «si»: «Zlomil som si ruku.» (зламав руку), «Udrela som si hlavu.» (ударилася головою). Лікар питає: «Ako sa to stalo?»",
+          "examples": [
+            {
+              "sk": "Pošmykla som sa v kúpeľni a udrela som si koleno.",
+              "uk": "Я посковзнулася у ванній і вдарила коліно."
+            },
+            {
+              "sk": "Syn si zlomil nohu na tréningu.",
+              "uk": "Син зламав ногу на тренуванні."
+            }
+          ],
+          "shortRule": "zlomiť si / udrieť si + знахідний",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Dopravná nehoda",
+          "text": "«Dopravná nehoda» — ДТП. «Zrážka» — зіткнення: «zrážka auta s autobusom». «Vodič» — водій, «chodec» — пішохід. Хто винен? — «Kto zavinil nehodu?» Номери: 112 (єдиний екстрений номер), 155 (záchranka — швидка допомога), 158 (polícia), 150 (hasiči). Машина швидкої — «sanitka».",
+          "examples": [
+            {
+              "sk": "Vodič nezastavil na červenú a narazil do auta.",
+              "uk": "Водій не зупинився на червоне й врізався в автомобіль."
+            },
+            {
+              "sk": "Okamžite volajte 112!",
+              "uk": "Негайно телефонуйте 112!"
+            }
+          ],
+          "shortRule": "112 · 155 záchranka · 158 polícia",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Svedok a poisťovňa",
+          "text": "«Svedok» — свідок: «Videli ste, čo sa stalo? Môžete byť svedkom?» Після аварії складають «záznam o nehode» і повідомляють «poisťovni» (страховій компанії): «nahlásiť poistnú udalosť» — повідомити про страховий випадок. Nahlásiť komu? — давальний: poisťovni.",
+          "examples": [
+            {
+              "sk": "Nehodu som nahlásil poisťovni.",
+              "uk": "Я повідомив про аварію страхову компанію."
+            },
+            {
+              "sk": "Svedok videl, že auto išlo príliš rýchlo.",
+              "uk": "Свідок бачив, що машина їхала надто швидко."
+            }
+          ],
+          "shortRule": "svedok · nahlásiť poisťovni",
+          "commonMistakes": [
+            {
+              "mistake": "Zlomil som ruku.",
+              "correct": "Zlomil som si ruku."
+            },
+            {
+              "mistake": "Nahlásil som nehodu poisťovňu.",
+              "correct": "Nahlásil som nehodu poisťovni."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a2-u20-l05-nehoda-w01",
+            "sk": "pošmyknúť sa",
+            "uk": "посковзнутися",
+            "pronunciationUk": "пошмікну:т’ са",
+            "exampleSk": "V zime som sa pošmykol na schodoch.",
+            "exampleUk": "Узимку я посковзнувся на сходах."
+          },
+          {
+            "wordId": "a2-u20-l05-nehoda-w02",
+            "sk": "zlomiť si",
+            "uk": "зламати (собі)",
+            "pronunciationUk": "зломіт’ сі",
+            "exampleSk": "Kolega si zlomil ruku na bicykli.",
+            "exampleUk": "Колега зламав руку, коли їхав на велосипеді."
+          },
+          {
+            "wordId": "a2-u20-l05-nehoda-w03",
+            "sk": "zrážka",
+            "uk": "зіткнення",
+            "pronunciationUk": "зра:жка",
+            "exampleSk": "Na diaľnici bola zrážka troch áut.",
+            "exampleUk": "На автостраді зіткнулися три автомобілі."
+          },
+          {
+            "wordId": "a2-u20-l05-nehoda-w04",
+            "sk": "svedok",
+            "uk": "свідок",
+            "pronunciationUk": "сведок",
+            "exampleSk": "Polícia hľadá svedkov nehody.",
+            "exampleUk": "Поліція шукає свідків аварії."
+          },
+          {
+            "wordId": "a2-u20-l05-nehoda-w05",
+            "sk": "poisťovňa",
+            "uk": "страхова компанія",
+            "pronunciationUk": "поіст’овня",
+            "exampleSk": "Škodu vám zaplatí poisťovňa.",
+            "exampleUk": "Збитки вам відшкодує страхова компанія."
+          },
+          {
+            "wordId": "a2-u20-l05-nehoda-w06",
+            "sk": "sanitka",
+            "uk": "машина швидкої допомоги",
+            "pronunciationUk": "санітка",
+            "exampleSk": "Sanitka prišla o desať minút.",
+            "exampleUk": "Швидка приїхала через десять хвилин."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a2-u20-l05-nehoda-w01",
+          "sk": "pošmyknúť sa",
+          "uk": "посковзнутися",
+          "pronunciationUk": "пошмікну:т’ са",
+          "exampleSk": "V zime som sa pošmykol na schodoch.",
+          "exampleUk": "Узимку я посковзнувся на сходах.",
+          "level": "A2",
+          "topic": "Розповіді про минуле",
+          "tags": [
+            "a2-u20",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u20-l05-nehoda-w02",
+          "sk": "zlomiť si",
+          "uk": "зламати (собі)",
+          "pronunciationUk": "зломіт’ сі",
+          "exampleSk": "Kolega si zlomil ruku na bicykli.",
+          "exampleUk": "Колега зламав руку, коли їхав на велосипеді.",
+          "level": "A2",
+          "topic": "Розповіді про минуле",
+          "tags": [
+            "a2-u20",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u20-l05-nehoda-w03",
+          "sk": "zrážka",
+          "uk": "зіткнення",
+          "pronunciationUk": "зра:жка",
+          "exampleSk": "Na diaľnici bola zrážka troch áut.",
+          "exampleUk": "На автостраді зіткнулися три автомобілі.",
+          "level": "A2",
+          "topic": "Розповіді про минуле",
+          "tags": [
+            "a2-u20",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u20-l05-nehoda-w04",
+          "sk": "svedok",
+          "uk": "свідок",
+          "pronunciationUk": "сведок",
+          "exampleSk": "Polícia hľadá svedkov nehody.",
+          "exampleUk": "Поліція шукає свідків аварії.",
+          "level": "A2",
+          "topic": "Розповіді про минуле",
+          "tags": [
+            "a2-u20",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u20-l05-nehoda-w05",
+          "sk": "poisťovňa",
+          "uk": "страхова компанія",
+          "pronunciationUk": "поіст’овня",
+          "exampleSk": "Škodu vám zaplatí poisťovňa.",
+          "exampleUk": "Збитки вам відшкодує страхова компанія.",
+          "level": "A2",
+          "topic": "Розповіді про минуле",
+          "tags": [
+            "a2-u20",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u20-l05-nehoda-w06",
+          "sk": "sanitka",
+          "uk": "машина швидкої допомоги",
+          "pronunciationUk": "санітка",
+          "exampleSk": "Sanitka prišla o desať minút.",
+          "exampleUk": "Швидка приїхала через десять хвилин.",
+          "level": "A2",
+          "topic": "Розповіді про минуле",
+          "tags": [
+            "a2-u20",
+            "a2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a2-u20-l05-nehoda-ex01",
+          "lessonId": "a2-u20-l05-nehoda",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "pošmyknúť sa",
+              "right": "посковзнутися"
+            },
+            {
+              "left": "zlomiť si",
+              "right": "зламати (собі)"
+            },
+            {
+              "left": "zrážka",
+              "right": "зіткнення"
+            },
+            {
+              "left": "svedok",
+              "right": "свідок"
+            },
+            {
+              "left": "poisťovňa",
+              "right": "страхова компанія"
+            },
+            {
+              "left": "sanitka",
+              "right": "машина швидкої"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a2-u20-l05-nehoda-w01",
+            "a2-u20-l05-nehoda-w02",
+            "a2-u20-l05-nehoda-w03",
+            "a2-u20-l05-nehoda-w04",
+            "a2-u20-l05-nehoda-w05",
+            "a2-u20-l05-nehoda-w06"
+          ]
+        },
+        {
+          "id": "a2-u20-l05-nehoda-ex02",
+          "lessonId": "a2-u20-l05-nehoda",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Brat si pri futbale "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "zlomili",
+                "zlomila",
+                "zlomil"
+              ],
+              "correct": "zlomil"
+            },
+            {
+              "text": " nohu."
+            }
+          ],
+          "explanation": "Brat — чоловічий рід однини: zlomil si.",
+          "order": 2,
+          "wordIds": [
+            "a2-u20-l05-nehoda-w02"
+          ]
+        },
+        {
+          "id": "a2-u20-l05-nehoda-ex03",
+          "lessonId": "a2-u20-l05-nehoda",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Pošmykla som sa a udrela som "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "ju",
+                "sa",
+                "si"
+              ],
+              "correct": "si"
+            },
+            {
+              "text": " hlavu."
+            }
+          ],
+          "explanation": "Udrieť si + знахідний: udrela som si hlavu.",
+          "order": 3
+        },
+        {
+          "id": "a2-u20-l05-nehoda-ex04",
+          "lessonId": "a2-u20-l05-nehoda",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Nehodu som hneď nahlásil ______. (страхова компанія)",
+          "acceptedAnswers": [
+            "poisťovni"
+          ],
+          "explanation": "Nahlásiť komu? — давальний: poisťovňa → poisťovni.",
+          "order": 4,
+          "wordIds": [
+            "a2-u20-l05-nehoda-w05"
+          ]
+        },
+        {
+          "id": "a2-u20-l05-nehoda-ex05",
+          "lessonId": "a2-u20-l05-nehoda",
+          "type": "real_schedule",
+          "skill": [
+            "reading",
+            "real_life",
+            "time"
+          ],
+          "instruction": "Подивись на екстрені номери.",
+          "schedule": {
+            "title": "Tiesňové linky na Slovensku",
+            "rows": [
+              {
+                "day": "112",
+                "hours": "jednotné európske číslo tiesňového volania"
+              },
+              {
+                "day": "150",
+                "hours": "hasiči"
+              },
+              {
+                "day": "155",
+                "hours": "záchranná zdravotná služba"
+              },
+              {
+                "day": "158",
+                "hours": "polícia"
+              }
+            ]
+          },
+          "question": "Який номер у поліції?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "155",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "158",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "150",
+              "correct": false
+            }
+          ],
+          "explanation": "158 — polícia; 155 — швидка допомога; 150 — пожежники.",
+          "order": 5
+        },
+        {
+          "id": "a2-u20-l05-nehoda-ex06",
+          "lessonId": "a2-u20-l05-nehoda",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Vodič nezastavil a narazil do autom.",
+          "errorToken": "autom",
+          "correctToken": "auta",
+          "explanation": "Do + родовий: auto → do auta.",
+          "order": 6
+        },
+        {
+          "id": "a2-u20-l05-nehoda-ex07",
+          "lessonId": "a2-u20-l05-nehoda",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що питає поліцист: «Kto zavinil nehodu?»",
+          "options": [
+            {
+              "id": "a",
+              "text": "хто винен в аварії",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "хто постраждав в аварії",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "хто викликав поліцію",
+              "correct": false
+            }
+          ],
+          "explanation": "Zaviniť — спричинити, бути винним.",
+          "order": 7
+        },
+        {
+          "id": "a2-u20-l05-nehoda-ex08",
+          "lessonId": "a2-u20-l05-nehoda",
+          "type": "dialogue_order",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Склади розмову з диспетчером швидкої.",
+          "lines": [
+            {
+              "id": "l4",
+              "sk": "Volajúci: Na Hlavnej ulici pri pošte v Prešove."
+            },
+            {
+              "id": "l2",
+              "sk": "Volajúci: Dobrý deň, na ulici spadol starší pán a nehýbe sa."
+            },
+            {
+              "id": "l1",
+              "sk": "Dispečer: Záchranná služba, počúvam."
+            },
+            {
+              "id": "l3",
+              "sk": "Dispečer: Kde presne ste?"
+            },
+            {
+              "id": "l5",
+              "sk": "Dispečer: Zostaňte pri ňom, sanitka je na ceste."
+            }
+          ],
+          "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5"
+          ],
+          "explanation": "Диспетчер → що сталося → де → точна адреса → інструкція.",
+          "order": 8,
+          "wordIds": [
+            "a2-u20-l05-nehoda-w06"
+          ]
+        },
+        {
+          "id": "a2-u20-l05-nehoda-ex09",
+          "lessonId": "a2-u20-l05-nehoda",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Minulý štvrtok išla Natália ráno do práce na bicykli. Na križovatke v Trnave ju nevidel vodič, ktorý odbočoval doprava, a narazil do nej. Natália spadla a udrela si koleno a lakeť. Okoloidúca pani zavolala záchranku a sanitka prišla o pár minút. V nemocnici jej urobili röntgen: našťastie si nič nezlomila. Polícia spísala záznam a pani bola svedkom. Vodič sa ospravedlnil a škodu na bicykli zaplatí jeho poisťovňa.",
+          "questions": [
+            {
+              "question": "Як сталася аварія?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "водій, який повертав праворуч, не побачив Наталію",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "Наталія проїхала на червоне",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "Наталія посковзнулася на льоду",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що показав рентген?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "зламане коліно",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "нічого не зламано",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "зламаний лікоть",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Хто заплатить за пошкоджений велосипед?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "страхова компанія водія",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "сама Наталія",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "лікарня",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 9,
+          "wordIds": [
+            "a2-u20-l05-nehoda-w02",
+            "a2-u20-l05-nehoda-w04",
+            "a2-u20-l05-nehoda-w05",
+            "a2-u20-l05-nehoda-w06"
+          ]
+        },
+        {
+          "id": "a2-u20-l05-nehoda-ex10",
+          "lessonId": "a2-u20-l05-nehoda",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Лікар питає, що сталося. Ти (чоловік) кажеш, що посковзнувся на ожеледиці й упав.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Pošmykol som na poľadovici a spadol som.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Pošmykol som sa na poľadovicu a spadol som.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Pošmykol som sa na poľadovici a spadol som.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Pošmykol sa som na poľadovici a spadol som.",
+              "correct": false
+            }
+          ],
+          "explanation": "pošmyknúť sa — зі sa (som sa); де? — na + місцевий: na poľadovici.",
+          "order": 10
+        },
+        {
+          "id": "a2-u20-l05-nehoda-ex11",
+          "lessonId": "a2-u20-l05-nehoda",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Policajt",
+              "sk": "Videli ste, ako sa to stalo?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Áno, auto išlo na červenú a narazilo do autobusu.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Áno, auto ide na červenú a narazí do autobusu.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Áno, auto išlo na červenú a narazilo do autobus.",
+              "correct": false
+            }
+          ],
+          "explanation": "Розповідь про подію — минулий час; do + родовий: do autobusu.",
+          "order": 11
+        },
+        {
+          "id": "a2-u20-l05-nehoda-ex12",
+          "lessonId": "a2-u20-l05-nehoda",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Policajt: «Zostaňte na mieste nehody, kým nepríde polícia.»",
+          "statement": "Треба залишатися на місці аварії до приїзду поліції.",
+          "correctAnswer": true,
+          "explanation": "Kým nepríde — поки не приїде.",
+          "order": 12
+        },
+        {
+          "id": "a2-u20-l05-nehoda-ex13",
+          "lessonId": "a2-u20-l05-nehoda",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Травма чи ДТП?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Úraz"
+            },
+            {
+              "id": "c2",
+              "title": "Dopravná nehoda"
+            }
+          ],
+          "items": [
+            {
+              "sk": "chodec na priechode",
+              "category": "c2"
+            },
+            {
+              "sk": "udrieť si hlavu",
+              "category": "c1"
+            },
+            {
+              "sk": "pošmyknúť sa na schodoch",
+              "category": "c1"
+            },
+            {
+              "sk": "zrážka áut",
+              "category": "c2"
+            },
+            {
+              "sk": "zlomiť si ruku",
+              "category": "c1"
+            },
+            {
+              "sk": "opitý vodič",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Úraz — травма людини; dopravná nehoda — подія на дорозі.",
+          "order": 13,
+          "wordIds": [
+            "a2-u20-l05-nehoda-w01",
+            "a2-u20-l05-nehoda-w02",
+            "a2-u20-l05-nehoda-w03"
+          ]
+        },
+        {
+          "id": "a2-u20-l05-nehoda-ex14",
+          "lessonId": "a2-u20-l05-nehoda",
+          "type": "branching_dialogue",
+          "skill": [
+            "dialogue",
+            "real_life"
+          ],
+          "instruction": "Пройди діалог: обирай доречні відповіді.",
+          "successMessage": "Ти спокійно все пояснив(ла) поліції!",
+          "startNode": "n1",
+          "nodes": {
+            "n1": {
+              "speaker": "Policajt",
+              "sk": "Dobrý deň, čo sa stalo?",
+              "choices": [
+                {
+                  "id": "n1c1",
+                  "sk": "Iné auto do mňa narazilo zozadu.",
+                  "next": "n2",
+                  "quality": "best"
+                },
+                {
+                  "id": "n1c2",
+                  "sk": "Iné auto do mňa narazí zozadu.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c3",
+                  "sk": "Iné auto do mňa narazilo zozadom.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n2": {
+              "speaker": "Policajt",
+              "sk": "Je niekto zranený?",
+              "choices": [
+                {
+                  "id": "n2c2",
+                  "sk": "Nie, niekto nie je zranený.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c1",
+                  "sk": "Nie, nikto nie je zranený.",
+                  "next": "n3",
+                  "quality": "best"
+                },
+                {
+                  "id": "n2c3",
+                  "sk": "Nie, nikto je zranený.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n3": {
+              "speaker": "Policajt",
+              "sk": "Máte svedkov?",
+              "choices": [
+                {
+                  "id": "n3c2",
+                  "sk": "Áno, táto pani nič videla.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c1",
+                  "sk": "Áno, táto pani všetko videla.",
+                  "next": "n4",
+                  "quality": "best"
+                },
+                {
+                  "id": "n3c3",
+                  "sk": "Áno, táto pani všetko uvidí zajtra.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n4": {
+              "speaker": "Policajt",
+              "sk": "Dobre. Nehodu nahláste aj vašej poisťovni.",
+              "choices": [
+                {
+                  "id": "n4c2",
+                  "sk": "Dobre, zavolám ich ešte dnes.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n4c3",
+                  "sk": "Dobre, zavolám ešte dnes poisťovňou.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n4c1",
+                  "sk": "Dobre, zavolám im ešte dnes.",
+                  "next": "success",
+                  "quality": "best"
+                }
+              ]
+            }
+          },
+          "order": 14,
+          "wordIds": [
+            "a2-u20-l05-nehoda-w04",
+            "a2-u20-l05-nehoda-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Ожеледь біля роботи",
+        "description": "Узимку ти посковзнулася біля входу на роботу й травмувала руку.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Колега питає: «Čo sa ti stalo?»",
+            "options": [
+              {
+                "sk": "Pošmykla som sa pred vchod a spadla som.",
+                "correct": false
+              },
+              {
+                "sk": "Pošmykla som pred vchodom a spadla som.",
+                "correct": false
+              },
+              {
+                "sk": "Pošmykla som sa pred vchodom a spadla som.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Лікар каже: «Máte zlomenú ruku.» Що це означає?",
+            "options": [
+              {
+                "sk": "у тебе зламана рука",
+                "correct": true
+              },
+              {
+                "sk": "у тебе лише забита рука",
+                "correct": false
+              },
+              {
+                "sk": "з рукою все гаразд",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти пишеш шефові, що завтра не прийдеш.",
+            "options": [
+              {
+                "sk": "Zlomila som ruku si, zajtra nemôžem prísť do práce.",
+                "correct": false
+              },
+              {
+                "sk": "Zlomila som si ruku, zajtra nemôžem prísť do práce.",
+                "correct": true
+              },
+              {
+                "sk": "Zlomila sa mi ruku, zajtra nemôžem prísť do práce.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Шеф: «Úraz v práci musíme nahlásiť poisťovni.» Що він каже?",
+            "options": [
+              {
+                "sk": "ти маєш сама заплатити лікарю",
+                "correct": false
+              },
+              {
+                "sk": "про травму на роботі треба повідомити страхову компанію",
+                "correct": true
+              },
+              {
+                "sk": "страхова не платить за травми",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш розповісти про нещасний випадок. Далі — загублені речі."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш розповісти про нещасний випадок. Далі — загублені речі.",
+        "nowYouKnow": [
+          "pošmyknúť sa, spadnúť, zlomiť si ruku",
+          "dopravná nehoda: zrážka, vodič, chodec",
+          "112, 155 záchranka, 158 polícia",
+          "svedok, nahlásiť poisťovni"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 30,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a2-u20-l06-stratene-veci",
+          "title": "Загублені речі"
+        }
+      }
+    }
+  ]
+}

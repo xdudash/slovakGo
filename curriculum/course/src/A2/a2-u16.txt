@@ -1,0 +1,519 @@
+@unit a2-u16 | Подорожі Словаччиною | Cestovanie po Slovensku
+
+@lesson vlak-a-ic | Поїзд і IC | Vlak a IC
+desc: Як їздити поїздом по Словаччині: osobný vlak, rýchlik, IC, квиток у потрібний клас, пільги, прямий поїзд чи з пересадкою.
+goal: Купити квиток на поїзд до іншого міста й зрозуміти, чи потрібна пересадка.
+out: розрізняти osobný vlak, rýchlik і IC ;; казати cestovať vlakom do Košíc (орудний + do + родовий) ;; питати Je to priamy vlak? Kde prestupujem? ;; розуміти prvá trieda, cestovné, zľavnený lístok
+done: Ти вмієш подорожувати поїздом. Далі — міжміський автобус.
+T: Osobný vlak, rýchlik, IC || «Osobný vlak» (Os) зупиняється майже на кожній станції. «Rýchlik» (R) — швидший, зупиняється в більших містах. «IC» (InterCity) — найшвидший і найзручніший, їздить, наприклад, між Братиславою і Кошицями через Жиліну й Попрад. На IC зазвичай потрібна «miestenka» — резервування місця. Усю мережу називають «železnica». || Osobný vlak zastavuje takmer na každej stanici. = Пасажирський поїзд зупиняється майже на кожній станції. ;; Na IC potrebujete aj miestenku. = На IC вам потрібне ще й резервування місця. || Os — повільно · R — швидше · IC — найшвидше + miestenka
+T: Cestovať vlakom do… || Чим? — орудний відмінок без прийменника: «vlakom», «autobusom». Куди? — «do» + родовий: «do Žiliny, do Popradu, do Prešova, do Košíc». Звідки? — «z» + родовий: «z Bratislavy». Не кажи «s vlakom» чи «na vlaku», коли говориш про спосіб подорожі. || Cestujem vlakom z Bratislavy do Žiliny. = Я їду поїздом із Братислави до Жиліни. ;; Kedy ide najbližší vlak do Popradu? = Коли йде найближчий поїзд до Попраду? || vlakom (чим) · do + родовий (куди) · z + родовий (звідки)
+mis: Idem s vlakom. => Idem vlakom. ;; lístok do Košice => lístok do Košíc ;; vlak na Žilinu => vlak do Žiliny
+T: Priamy vlak, prípoj, trieda || «Priamy vlak» їде до мети без пересадки. Якщо треба пересідати, у тебе є «prípoj» — поїзд, на який пересідаєш: «V Žiline máte prípoj do Martina.» У поїздах є «prvá trieda» (дорожча й зручніша) і «druhá trieda». Плата за проїзд — «cestovné»; діти, студенти й пенсіонери часто мають «zľavnený lístok». Умови пільг змінюються, тому перевіряй їх перед поїздкою. || Je to priamy vlak, alebo musím prestupovať? = Це прямий поїзд чи мені треба пересідати? ;; Prosím si zľavnený lístok pre študenta. = Пільговий квиток для студента, будь ласка. || priamy vlak — без пересадки · prípoj — поїзд після пересадки
+W: železnica | залізниця | железніца | Železnica spája Bratislavu s Košicami. | Залізниця з’єднує Братиславу з Кошицями.
+W: priamy vlak | прямий поїзд | пріамі: влак | Do Popradu ide priamy vlak. | До Попраду їде прямий поїзд.
+W: prípoj | поїзд (рейс) для пересадки | прі:пой | V Žiline máte prípoj do Martina. | У Жиліні у вас пересадка на поїзд до Мартіна.
+W: prvá trieda | перший клас | прва: тріеда | V prvej triede je viac miesta. | У першому класі більше місця.
+W: cestovné | плата за проїзд | цестовне: | Cestovné môžete zaplatiť aj kartou. | Проїзд можна оплатити й карткою.
+W: zľavnený | пільговий, зі знижкою | зляунені: | Študenti majú zľavnený lístok. | Студенти мають пільговий квиток.
+X mt: З’єднай. | železnica = залізниця ;; priamy vlak = прямий поїзд ;; prípoj = поїзд для пересадки ;; prvá trieda = перший клас ;; cestovné = плата за проїзд ;; zľavnený = пільговий
+X dd: Обери. | Zajtra cestujem [*vlakom/vlak/s vlakom] do Popradu.
+= Чим? — орудний відмінок без прийменника: vlakom.
+X dtb: Обери правильну форму. | Kedy ide najbližší vlak do [*Žiliny/Žilina/Žiline]?
+= Куди? — do + родовий: Žilina → do Žiliny.
+X fb: Допиши. | V ___ triede sú pohodlnejšie sedadlá. (перший) | prvej |
+= Де? — v + місцевий: prvá trieda → v prvej triede.
+X sc~: Що таке «prípoj»? | - | *поїзд чи автобус, на який пересідаєш ;; запізнення поїзда ;; місце біля вікна
+= Prípoj — сполучення, на яке пересідаєш: V Žiline máte prípoj do Martina.
+X tf: - | - | Osobný vlak зупиняється лише у великих містах. | F
+= Osobný vlak зупиняється майже на кожній станції; у великих містах зупиняються rýchlik та IC.
+X sch: Подивись на табло відправлень. | Bratislava hl. st. – odchody | 6:05 = IC do Košíc cez Žilinu a Poprad-Tatry, nástupište 3 ;; 6:40 = Os do Trnavy, nástupište 1 ;; 7:10 = R do Zvolena cez Nové Zámky, nástupište 5 ;; 7:35 = Os do Kút, nástupište 2 | Яким поїздом можна доїхати до Попраду без пересадки? | *IC о 6:05 ;; R о 7:10 ;; Os о 6:40
+= IC ide cez Žilinu a Poprad-Tatry — він зупиняється в Попраді, тож пересідати не треба.
+X rc: - | Oksana pracuje v Bratislave a v piatok cestuje za sestrou do Popradu. Lístok si kúpila cez internet už v pondelok, lebo IC býva v piatok plný. Na IC potrebovala aj miestenku. Cestuje v druhej triede, prvá trieda je pre ňu drahá. Vlak odchádza o 16:05 z hlavnej stanice. Je to priamy vlak, takže Oksana nemusí prestupovať. Do Popradu príde o pol deviatej večer a sestra na ňu bude čakať na stanici.
+q~: Чому Оксана купила квиток заздалегідь? | *у п’ятницю IC буває повний ;; у понеділок квитки дешевші ;; вона хотіла їхати першим класом
+q~: У якому класі вона їде? | *у другому ;; у першому ;; у купе
+q~: Чи треба їй пересідати? | *ні, це прямий поїзд ;; так, у Жиліні ;; так, у Кошицях
+X np: Ти в касі. Попроси квиток в один бік до Кошиць у другому класі. | *Prosím si jednosmerný lístok do Košíc, druhá trieda. ;; Prosím si jednosmerný lístok do Košice, druhá trieda. ;; Prosím si jednosmerný lístok v Košiciach, druhá trieda. ;; Prosím si jednosmerná lístok do Košíc, druhá trieda.
+= do + родовий: Košice → do Košíc; lístok — чоловічий рід: jednosmerný.
+X dr: - | Pokladníčka: Dobrý deň, kam to bude? | *Do Žiliny a späť, prosím. ;; Na Žilinu a späť, prosím. ;; V Žiline a späť, prosím.
+= Куди? — do + родовий: do Žiliny; a späť — туди й назад.
+X fe: - | Lístok mám do [Prešov>Prešova] cez Košice.
+= do + родовий: Prešov → do Prešova.
+X so: - | Спитай, де ти пересідаєш на поїзд до Мартіна. | Kde prestupujem do Martina?
+= prestupovať — пересідати; do Martina — родовий.
+X msg: Прочитай повідомлення. | Taras | Ahoj, môj IC má meškanie 25 minút. Prípoj do Martina v Žiline asi nestihnem, tak pôjdem až ďalším vlakom o hodinu neskôr. Nečakaj ma na stanici, zoberiem si taxík. | Що вирішив Тарас? | *поїде наступним поїздом, а від вокзалу — таксі ;; чекатиме в Жиліні до ранку ;; повернеться до Братислави
+= Prípoj nestihnem — не встигну на пересадку; pôjdem ďalším vlakom — поїду наступним поїздом.
+X tr: Скажи, що їдеш не машиною, а поїздом. | Do Žiliny cestujem autom. | Do Žiliny cestujem vlakom. ;; Vlakom cestujem do Žiliny.
+= Чим? — орудний: autom → vlakom.
+X ms: Обери правильні речення. | - | *Cestujem vlakom do Prešova. ;; *Je to priamy vlak? ;; *V prvej triede je viac miesta. ;; Cestujem s vlakom do Prešova. ;; Idem do Prešov.
+= vlakom — без s; do + родовий: do Prešova; v prvej triede — місцевий.
+F: Поїздка до Попраду || У суботу ти їдеш поїздом із Братислави до Попраду в гості до друзів.
+S: Ти в касі. Що скажеш? | *Prosím si spiatočný lístok do Popradu. ;; Prosím si spiatočný lístok v Poprade. ;; Prosím si spiatočný lístok do Poprad.
+S: Касирка: «Na IC potrebujete aj miestenku.» Що це означає? | *на IC треба ще й зарезервувати місце ;; IC сьогодні не їде ;; на IC немає вільних місць
+S: Ти питаєш, чи потрібна пересадка. | *Je to priamy vlak, alebo musím prestupovať? ;; Je to priama vlak, alebo musím prestupovať? ;; Je to priamy vlakom, alebo musím prestupovať?
+S: Друг пише: «Ako cestuješ?» | *Cestujem vlakom, budem tam o ôsmej. ;; Cestujem s vlakom, budem tam o ôsmej. ;; Cestujem vlak, budem tam o ôsmej.
+R: osobný vlak, rýchlik, IC + miestenka ;; cestovať vlakom do + родовий ;; priamy vlak, prípoj, prestupovať ;; prvá / druhá trieda, cestovné, zľavnený lístok
+
+@lesson dialkovy-autobus | Міжміський автобус | Diaľkový autobus
+desc: Автобусом між містами: автовокзал, місце посадки, перевізник, багаж, зупинка на вимогу і через які міста їде автобус.
+goal: Знайти свій автобус на автовокзалі, купити квиток і вийти на потрібній зупинці.
+out: розуміти autobusová stanica і stanovište ;; питати Zastavuje tento autobus v Ružomberku? (v + місцевий) ;; казати ide cez Martin (cez + знахідний) ;; розуміти batožinový priestor і zastávka na znamenie
+done: Ти вмієш їздити міжміськими автобусами. Далі — де переночувати в подорожі.
+T: Na autobusovej stanici || Міжміські автобуси відправляються з «autobusová stanica» (автовокзал, скорочено AS). Кожен автобус має своє «stanovište» — пронумероване місце посадки: «Autobus do Nitry odchádza zo stanovišťa číslo 12.» Компанія, яка возить пасажирів, — «dopravca». Квиток часто можна купити онлайн або «u vodiča» (у водія). || Z ktorého stanovišťa ide autobus do Nitry? = З якого місця посадки їде автобус до Нітри? ;; Lístok si kúpim u vodiča. = Квиток я куплю у водія. || zo stanovišťa · u vodiča (родовий)
+T: Zastavuje v… / ide cez… || Де зупиняється? — «v» + місцевий: «Zastavuje v Martine? v Ružomberku? v Liptovskom Mikuláši?» Через що їде? — «cez» + знахідний: «Autobus ide cez Banskú Bystricu.» Кінцевий пункт — «do» + родовий. || Tento autobus ide cez Martin do Žiliny. = Цей автобус їде через Мартін до Жиліни. ;; Zastavuje aj v Ružomberku? = Він зупиняється і в Ружомбероку? || v + місцевий (де) · cez + знахідний (через)
+mis: Zastavuje na Martine? => Zastavuje v Martine? ;; ide cez Banská Bystrica => ide cez Banskú Bystricu ;; kúpim u vodič => kúpim u vodiča
+T: Batožina a zastávka na znamenie || Великі валізи кладуть у «batožinový priestor» — багажне відділення внизу автобуса. На деяких зупинках автобус зупиняється лише на вимогу — це «zastávka na znamenie». Щоб вийти, натисни кнопку або заздалегідь скажи водієві: «Zastavíte mi, prosím, v Lazanoch?» Щоб сісти, подай водієві знак рукою. || Kufor dajte do batožinového priestoru. = Валізу покладіть у багажне відділення. ;; Na zastávke na znamenie treba stlačiť tlačidlo. = На зупинці на вимогу треба натиснути кнопку. || zastávka na znamenie — сказати водієві або натиснути кнопку
+W: autobusová stanica | автовокзал | аутобусова: станіца | Autobusová stanica je hneď vedľa železničnej stanice. | Автовокзал — одразу біля залізничного вокзалу.
+W: stanovište | місце посадки (на автовокзалі) | становіште | Autobus stojí na stanovišti číslo päť. | Автобус стоїть на п’ятому місці посадки.
+W: dopravca | перевізник | доправца | Každý dopravca predáva lístky na svojej webovej stránke. | Кожен перевізник продає квитки на своєму сайті.
+W: diaľkový autobus | автобус далекого сполучення | дьіалькові: аутобус | Diaľkový autobus do Prahy ide v noci. | Автобус далекого сполучення до Праги їде вночі.
+W: batožinový priestor | багажне відділення | батожінові: прієстор | Veľký kufor dajte do batožinového priestoru. | Велику валізу покладіть у багажне відділення.
+W: zastávka na znamenie | зупинка на вимогу | заста:вка на знаменіє | Lazany sú zastávka na znamenie. | Лазани — зупинка на вимогу.
+X mt: З’єднай. | autobusová stanica = автовокзал ;; stanovište = місце посадки ;; dopravca = перевізник ;; diaľkový autobus = автобус далекого сполучення ;; batožinový priestor = багажне відділення ;; zastávka na znamenie = зупинка на вимогу
+X dd: Обери. | Autobus do Nitry odchádza zo [*stanovišťa/stanovište/stanovišti] číslo 12.
+= z(o) + родовий: stanovište → zo stanovišťa.
+X dd: Обери. | Tento autobus ide cez [*Banskú Bystricu/Banská Bystrica/Banskej Bystrici].
+= Через що? — cez + знахідний: Banskú Bystricu.
+X fb: Допиши. | Zastavuje tento autobus aj v ___? (Ružomberok) | Ružomberku |
+= Де? — v + місцевий: Ružomberok → v Ružomberku.
+X doc: Прочитай квиток. | Cestovný lístok – diaľková linka | Dopravca: Hron Bus s. r. o. ;; Trasa: Bratislava – Trenčín – Žilina ;; Odchod: 14:30, AS Bratislava, stanovište 7 ;; Príchod: 17:45, AS Žilina ;; Sedadlo: 23 ;; Batožina: 1 kus do batožinového priestoru | Звідки відправляється автобус? | *з автовокзалу в Братиславі, місце посадки 7 ;; з автовокзалу в Жиліні ;; із залізничного вокзалу, платформа 23
+= Odchod — відправлення: AS Bratislava, stanovište 7; 23 — це номер сидіння.
+X sch: Подивись на розклад. | Spoje Banská Bystrica – Žilina | 7:15 = cez Martin, priamy spoj ;; 9:40 = cez Martin, nepremáva v sobotu a v nedeľu ;; 12:10 = cez Ružomberok, prestup v Ružomberku ;; 16:30 = cez Martin, priamy spoj | Яким автобусом не можна поїхати в неділю? | *о 9:40 ;; о 7:15 ;; о 16:30
+= Nepremáva v sobotu a v nedeľu — не курсує у вихідні.
+X sc~: Що означає «zastávka na znamenie»? | - | *зупинка, де автобус зупиняється лише на вимогу ;; кінцева зупинка ;; зупинка, де заборонено виходити
+= Na znamenie — на знак: водієві треба сказати або натиснути кнопку.
+X tf: - | Pozor! Na zastávke Lazany, kostol autobus zastavuje iba na znamenie. | Автобус завжди зупиняється біля костелу в Лазанах. | F
+= Iba na znamenie — лише на вимогу, не завжди.
+X dr: - | Vodič: Kam idete? | *Do Martina, jeden lístok, prosím. ;; V Martine, jeden lístok, prosím. ;; Do Martin, jeden lístok, prosím.
+= Куди? — do + родовий: do Martina.
+X np: Ти хочеш, щоб водій зупинився в Лазанах (зупинка на вимогу). | *Zastavíte mi, prosím, v Lazanoch? ;; Zastavíte mi, prosím, do Lazan? ;; Zastavíte mi, prosím, na Lazany? ;; Zastavíte ma, prosím, v Lazanoch?
+= Де? — v + місцевий: Lazany → v Lazanoch; zastaviť komu — mi (давальний).
+X so: - | Спитай, з якого місця посадки їде автобус до Нітри. | Z ktorého stanovišťa ide autobus do Nitry?
+= zo stanovišťa — родовий; do Nitry — родовий.
+X rc: - | Mykola pracuje v Žiline. Cez víkend cestoval diaľkovým autobusom za bratom, ktorý býva v malej obci pred Banskou Bystricou. Lístok si kúpil online u dopravcu. Na autobusovej stanici dlho hľadal správne stanovište, nakoniec mu pomohla pani z informácií. Veľký kufor dal do batožinového priestoru, malý batoh mal pri sebe. Autobus išiel cez Martin. Bratova obec je zastávka na znamenie, preto Mykola povedal vodičovi už pri nástupe, kde chce vystúpiť.
+q~: Де Микола купив квиток? | *онлайн у перевізника ;; у водія ;; у касі на автовокзалі
+q~: Хто допоміг йому знайти місце посадки? | *працівниця довідкового бюро ;; водій ;; брат
+q~: Чому Микола одразу сказав водієві, де хоче вийти? | *бо це зупинка на вимогу ;; бо в нього був великий багаж ;; бо автобус запізнювався
+X fe: - | Autobus ide do Žiliny cez [Martine>Martin].
+= cez + знахідний: Martin.
+X ms: Обери правильні речення. | - | *Zastavuje tento autobus v Martine? ;; *Kufor dám do batožinového priestoru. ;; *Ide tento spoj cez Trenčín? ;; Zastavuje tento autobus na Martine? ;; Ide tento spoj cez Trenčíne?
+= v Martine — місцевий; cez Trenčín — знахідний.
+F: Автобусом на Ліптов || Ти їдеш міжміським автобусом із Жиліни до Ліптовського Мікулаша.
+S: Ти питаєш у довідковому, звідки їде автобус. | *Z ktorého stanovišťa ide autobus do Liptovského Mikuláša? ;; Z ktorého stanovišťa ide autobus v Liptovskom Mikuláši? ;; Z ktorého stanovište ide autobus do Liptovského Mikuláša?
+S: Водій: «Veľký kufor dajte dole do batožinového priestoru.» Що треба зробити? | *покласти велику валізу в багажне відділення внизу ;; узяти валізу із собою в салон ;; окремо заплатити за валізу
+S: Ти питаєш, чи автобус зупиняється в Ружомбероку. | *Zastavuje tento autobus aj v Ružomberku? ;; Zastavuje tento autobus aj do Ružomberka? ;; Zastavuje tento autobus aj na Ružomberok?
+S: Ти хочеш вийти на найближчій зупинці на вимогу. | *Zastavíte mi, prosím, na najbližšej zastávke? ;; Zastavíte mi, prosím, na najbližšia zastávka? ;; Zastavíte mi, prosím, do najbližšej zastávky?
+R: autobusová stanica, stanovište, dopravca ;; zastavuje v + місцевий, ide cez + знахідний ;; lístok u vodiča alebo online ;; batožinový priestor, zastávka na znamenie
+
+@lesson kde-prenocovat | Де переночувати | Kde prenocovať
+desc: Обираємо житло в подорожі: хостел, пансіон, апартаменти; двомісний номер, додаткове ліжко, сніданок чи напівпансіон; на скільки ночей і з якого по яке число.
+goal: Знайти й забронювати житло на кілька ночей та зрозуміти умови в оголошенні.
+out: називати види житла: hostel, penzión, apartmán ;; казати na dve noci, na päť nocí, od piatku do nedele ;; описувати номер: izba s kúpeľňou, s raňajkami (s + орудний) ;; розуміти dvojlôžková izba, prístelka, polpenzia
+done: Ти вмієш шукати житло. Далі — поселення на рецепції.
+T: Kde sa ubytovať? || «Ubytovať sa» — поселитися, «prenocovať» — переночувати. Найдешевше — «hostel» (часто ліжко у спільній кімнаті), затишно — «penzión», із власною кухнею — «apartmán», у горах — «chata». || Kde sa ubytujeme v Tatrách? = Де ми поселимося в Татрах? ;; Prenocujeme v hosteli pri stanici. = Переночуємо в хостелі біля вокзалу. || ubytovať sa / prenocovať + v + місцевий
+T: Na koľko nocí? || Тривалість — «na» + знахідний: «na jednu noc, na dve noci, na víkend». Після п’яти — родовий множини: «na päť nocí». Дати — «od» + родовий «do» + родовий: «od piatku do nedele», «od desiateho do dvanásteho júla». || Hľadáme ubytovanie na tri noci. = Шукаємо житло на три ночі. ;; Máte voľnú izbu od piatku do nedele? = У вас є вільний номер із п’ятниці до неділі? || na + знахідний · 2–4 noci, 5+ nocí · od + родовий do + родовий
+mis: na dva noci => na dve noci ;; na päť noci => na päť nocí ;; izba s kúpeľňa => izba s kúpeľňou
+T: Aká izba? || «Jednolôžková izba» — одномісний номер, «dvojlôžková izba» — двомісний. Для дитини можна попросити «prístelku» — додаткове ліжко. Харчування: «raňajky» — сніданок, «polpenzia» — сніданок і вечеря. Що є в номері — «s» + орудний: «izba s kúpeľňou, s balkónom, s výhľadom na hory». || Chceli by sme dvojlôžkovú izbu s prístelkou. = Ми хотіли б двомісний номер із додатковим ліжком. ;; Cena je s raňajkami. = Ціна зі сніданком. || s + орудний: s kúpeľňou, s raňajkami, s polpenziou
+W: ubytovať sa | поселитися | убитовать са | V hoteli sa môžete ubytovať od štrnástej. | Поселитися в готелі можна з чотирнадцятої.
+W: prenocovať | переночувати | преноцовать | Cestou do Košíc prenocujeme v Levoči. | Дорогою до Кошиць переночуємо в Левочі.
+W: hostel | хостел | гостел | Hostel je lacný a blízko stanice. | Хостел дешевий і близько від вокзалу.
+W: apartmán | апартаменти, туристична квартира | апартма:н | V apartmáne máme vlastnú kuchyňu. | В апартаментах у нас власна кухня.
+W: dvojlôžková izba | двомісний номер | двойлуожкова: ізба | Dvojlôžková izba má aj balkón. | Двомісний номер має й балкон.
+W: prístelka | додаткове ліжко | прі:стелка | Pre syna potrebujeme prístelku. | Для сина нам потрібне додаткове ліжко.
+W: polpenzia | напівпансіон (сніданок і вечеря) | полпензія | Cena pobytu je s polpenziou. | Ціна перебування — з напівпансіоном.
+X mt: З’єднай. | ubytovať sa = поселитися ;; prenocovať = переночувати ;; apartmán = апартаменти ;; dvojlôžková izba = двомісний номер ;; prístelka = додаткове ліжко ;; polpenzia = напівпансіон
+X dd: Обери. | Hľadáme ubytovanie na [*dve/dva/dvoch] noci.
+= noc — жіночий рід: dve noci.
+X dtb: Обери правильну форму. | Rezervácia je na päť [*nocí/noci/nociach].
+= Після päť — родовий множини: nocí.
+X fb: Допиши. | Máte voľnú izbu od ___ do nedele? (п’ятниця) | piatku |
+= od + родовий: piatok → od piatku.
+X cz: - | Chceli by sme izbu {s} kúpeľňou a {s} výhľadom {na} hory. Ubytovanie potrebujeme {od} piatku do nedele. | прийменники s, na, od
+= s + орудний; výhľad na + знахідний; od + родовий.
+X sc~: Що означає «polpenzia»? | - | *сніданок і вечеря ;; лише сніданок ;; харчування тричі на день
+= Pol — половина: сніданок і вечеря, без обіду.
+X tf: - | Apartmán Lúka: dve izby, vlastná kuchyňa, parkovanie pri dome, raňajky nie sú v cene. | В апартаментах можна самим готувати. | T
+= Vlastná kuchyňa — власна кухня, тож готувати можна.
+X doc: Прочитай оголошення. | Penzión pod Smrekom, Ždiar | Izby: jednolôžkové a dvojlôžkové s kúpeľňou ;; Strava: raňajky v cene, polpenzia za príplatok ;; Prístelka: pre deti do 12 rokov zadarmo ;; Ubytovanie: od 14:00, odchod do 10:00 ;; Domáce zvieratá: nie | Скільки коштує додаткове ліжко для восьмирічної дитини? | *нічого, воно безкоштовне ;; стільки ж, скільки напівпансіон ;; додаткових ліжок тут немає
+= Prístelka pre deti do 12 rokov zadarmo — для дітей до 12 років безкоштовно.
+X msg: Прочитай відповідь пансіону. | Penzión pod Smrekom | Dobrý deň, od 10. do 12. júla máme voľnú dvojlôžkovú izbu s balkónom. Prístelku vám vieme dať. Rezerváciu potvrdíme po zaplatení zálohy. | Коли бронювання буде підтверджене? | *після оплати завдатку ;; одразу після цього листа ;; після приїзду
+= Po zaplatení zálohy — після оплати завдатку.
+X rc: - | Rodina Kovalčukovcov chce v auguste ísť na štyri dni do Tatier. Hotel je pre nich drahý, preto hľadajú penzión alebo apartmán. Majú dve deti, takže potrebujú dvojlôžkovú izbu s dvoma prístelkami alebo apartmán s dvoma izbami. Mama chce raňajky, otec by radšej varil sám. Nakoniec si vybrali apartmán v Novej Lesnej s vlastnou kuchyňou. Na prvý večer si objednali večeru v penzióne vedľa, aby nemuseli hneď variť.
+q~: Чому вони не хочуть жити в готелі? | *для них він задорогий ;; у готелі немає вільних місць ;; готель далеко від гір
+q~: Що вони врешті обрали? | *апартаменти з власною кухнею ;; двомісний номер із двома додатковими ліжками ;; хостел біля вокзалу
+q~: Що вони замовили на перший вечір? | *вечерю в сусідньому пансіоні ;; сніданок в апартаментах ;; напівпансіон на всі дні
+X np: Ти пишеш у пансіон: потрібен двомісний номер на дві ночі. | *Potrebujeme dvojlôžkovú izbu na dve noci. ;; Potrebujeme dvojlôžková izba na dve noci. ;; Potrebujeme dvojlôžkovú izbu na dva noci. ;; Potrebujeme dvojlôžkovú izbu na dvoch nocí.
+= potrebovať + знахідний: dvojlôžkovú izbu; na dve noci.
+X fe: - | Hľadáme izbu s [balkón>balkónom] a výhľadom na hory.
+= s + орудний: balkón → s balkónom.
+X so: - | Скажи, що ціна зі сніданком. | Cena je s raňajkami.
+= s + орудний: raňajky → s raňajkami.
+X cat: Житло чи харчування? | Ubytovanie: hostel, penzión, apartmán, chata ;; Strava: raňajky, polpenzia, večera
+= Hostel, penzión, apartmán, chata — де спати; raňajky, polpenzia, večera — що їсти.
+F: Вихідні в Банській Штявниці || Ти шукаєш житло для двох людей на вихідні в Банській Штявниці.
+S: Ти пишеш у пансіон. | *Máte voľnú dvojlôžkovú izbu od piatku do nedele? ;; Máte voľnú dvojlôžkovú izbu od piatok do nedeľa? ;; Máte voľná dvojlôžková izba od piatku do nedele?
+S: Відповідь: «Cena je s raňajkami, polpenzia je za príplatok.» Що входить у ціну? | *лише сніданок ;; сніданок і вечеря ;; нічого, харчування окремо
+S: Ти хочеш номер із видом на місто. | *Chceli by sme izbu s výhľadom na mesto. ;; Chceli by sme izbu s výhľad na mesto. ;; Chceli by sme izbu s výhľadom na mestom.
+S: Пансіон питає: «Na koľko nocí?» | *Na dve noci. ;; Na dva noci. ;; Na dvoch nocí.
+R: hostel, penzión, apartmán; ubytovať sa, prenocovať ;; na dve noci, na päť nocí, od piatku do nedele ;; izba s kúpeľňou, s raňajkami, s prístelkou ;; dvojlôžková izba, polpenzia
+
+@lesson na-recepcii | На рецепції | Na recepcii
+desc: Поселення й виселення: бронювання на прізвище, місцевий збір, сейф, побудка, пізній приїзд і ввічливі прохання до адміністратора.
+goal: Поселитися в готелі, розпитати про умови й ввічливо попросити про послугу.
+out: казати Mám rezerváciu na meno… ;; ввічливо просити Mohli by ste…? ;; розуміти miestny poplatok, trezor, budenie, uschovať ;; питати Odkedy sú raňajky? Do koľkej…?
+done: Ти впевнено почуваєшся на рецепції. Далі — туристичні місця.
+T: Mám rezerváciu na meno… || Адміністратор — «recepčný», адміністраторка — «recepčná». Поселяючись, кажеш: «Dobrý deň, mám rezerváciu na meno Kovalenko.» Тебе попросять документ і, можливо, заповнити картку гостя. Якщо приїдеш пізно, попередь заздалегідь — це «neskorý príchod»: «Prídeme neskoro, okolo desiatej.» || Mám rezerváciu na meno Bondar. = У мене бронювання на прізвище Бондар. ;; Môžeme sa ubytovať už teraz? = Можемо поселитися вже зараз? || rezervácia na meno + прізвище
+T: Mohli by ste…? || Ввічливе прохання — «Mohli by ste…?» (Чи не могли б ви…?) або «Chcel(a) by som…». Попросити побудку — «budenie»: «Mohli by ste ma zobudiť o šiestej?» Речі можна «uschovať» — залишити на зберігання: «Môžem si tu uschovať batožinu?» Цінні речі кладуть у «trezor» (сейф). || Mohli by ste mi uschovať kufor do obeda? = Чи не могли б ви зберегти мою валізу до обіду? ;; Doklady máme v trezore. = Документи в нас у сейфі. || Mohli by ste + інфінітив?
+mis: Mám rezervácia. => Mám rezerváciu. ;; Môžete by ste…? => Mohli by ste…? ;; Mohol by ste…? => Mohli by ste…?
+T: Odkedy? Do koľkej? || Час: «Odkedy sú raňajky?» — «Od siedmej.» «Do koľkej musíme opustiť izbu?» — «Do desiatej.» Після od / do — родовий порядкового числівника. У багатьох містах Словаччини за кожну ніч платять «miestny poplatok» — місцевий збір; часто його оплачують окремо на рецепції. || Raňajky sú od siedmej do desiatej. = Сніданок із сьомої до десятої. ;; Miestny poplatok sa platí na recepcii. = Місцевий збір оплачують на рецепції. || od siedmej · do desiatej · do koľkej?
+W: recepčný | адміністратор (на рецепції) | рецепчні: | Recepčný nám dal kľúč od izby. | Адміністратор дав нам ключ від номера.
+W: neskorý príchod | пізній приїзд | нескорі: прі:ход | Neskorý príchod nám, prosím, oznámte vopred. | Про пізній приїзд, будь ласка, повідомте нам заздалегідь.
+W: miestny poplatok | місцевий (туристичний) збір | мієстні: поплаток | Miestny poplatok nie je v cene izby. | Місцевий збір не входить у ціну номера.
+W: trezor | сейф | трезор | Pas a peniaze máme v trezore. | Паспорт і гроші в нас у сейфі.
+W: budenie | побудка (дзвінок-будильник) | буденіє | Na recepcii si môžete objednať budenie. | На рецепції можна замовити побудку.
+W: uschovať | залишити на зберігання | усховать | Batožinu vám radi uschováme. | Ми охоче збережемо ваш багаж.
+X mt: З’єднай. | recepčný = адміністратор ;; neskorý príchod = пізній приїзд ;; miestny poplatok = місцевий збір ;; trezor = сейф ;; budenie = побудка ;; uschovať = залишити на зберігання
+X dd: Обери. | Dobrý deň, mám rezerváciu [*na meno/pod meno/s menom] Bondar.
+= rezervácia na meno + прізвище.
+X dd: Обери. | [*Mohli/Môžete/Mohol] by ste mi uschovať kufor?
+= Звертаючись на «ви», кажемо mohli by ste.
+X fb: Допиши. | Raňajky sú od ___ do desiatej. (сьома) | siedmej |
+= od + родовий порядкового: od siedmej.
+X tf: - | Recepcia: nonstop. Raňajky: 7:00 – 10:00. Izbu treba opustiť do 10:00. | Сніданок закінчується о десятій. | T
+= Raňajky 7:00 – 10:00 — сніданок до десятої.
+X doc: Прочитай інформацію в номері. | Hotel Javorina – informácie pre hostí | Recepcia: nonstop, linka 100 ;; Raňajky: 7:00 – 10:00, reštaurácia na prízemí ;; Odchod z izby: do 10:00 ;; Trezor: v skrini, kód si nastavíte sami ;; Budenie: objednáte si na recepcii | До котрої треба звільнити номер? | *до 10:00 ;; до 7:00 ;; до обіду
+= Odchod z izby do 10:00 — звільнити номер до десятої.
+X bd: - | Ти успішно поселився (поселилася) в готелі!
+> Recepčná: Dobrý deň, vitajte v hoteli Javorina. | *Dobrý deň, mám rezerváciu na meno Bondar. ;; Dobrý deň, mám rezervácia na meno Bondar. ;; Dobrý deň, mám rezerváciu na meno Bondarom.
+> Recepčná: Áno, dvojlôžková izba na tri noci. Môžem poprosiť váš doklad? | *Nech sa páči, tu je môj pas. ;; Nech sa páči, tu je môjho pasu. ;; Nech sa páči, tu je mojím pasom.
+> Recepčná: Ďakujem. Ešte miestny poplatok, ten nie je v cene. | *Dobre, môžem ho zaplatiť kartou? ;; Dobre, môžem ho zaplatiť s kartou? ;; Dobre, môžem ho zaplatiť karta?
+> Recepčná: Samozrejme. Vaša izba je na treťom poschodí. | *Ďakujem. Odkedy sú raňajky? ;; Ďakujem. Odkedy je raňajky? ;; Ďakujem. Od koľko raňajky?
+X np: Ти хочеш попросити, щоб тебе розбудили о шостій. | *Mohli by ste ma zobudiť o šiestej? ;; Mohli by ste ma zobudiť o šesť? ;; Mohli by ste mi zobudiť o šiestej? ;; Mohli by ste ma zobudiť na šiestej?
+= zobudiť koho — ma (знахідний); o šiestej — о шостій.
+X msg: Прочитай повідомлення від пансіону. | Penzión Lipa | Dobrý deň, ďakujeme za rezerváciu. Ak prídete po 22:00, recepcia bude zatvorená. Kľúč nájdete v schránke pri vchode, kód vám pošleme v deň príchodu. | Що буде, якщо ти приїдеш о 23:00? | *ключ чекатиме в скриньці біля входу ;; рецепція працюватиме для тебе ;; бронювання скасують
+= Po 22:00 recepcia zatvorená, kľúč v schránke pri vchode.
+X reg: - | Čau, nevieš, kde je tu výťah? | informal
+= Čau і звертання на «ти» — неформально; до адміністратора так не звертаються.
+X dr: - | Recepčný: Môžem vám ešte s niečím pomôcť? | *Áno, môžem si tu uschovať kufor do štvrtej? ;; Áno, môžem si tu uschovať kufrom do štvrtej? ;; Áno, môžem si tu uschovať kufor do štyri?
+= uschovať + знахідний: kufor; do štvrtej — до четвертої.
+X fe: - | Miestny poplatok nie je v [cena>cene] izby.
+= v + місцевий: cena → v cene.
+X so: - | Скажи, що ви приїдете пізно, близько десятої. | Prídeme neskoro, okolo desiatej.
+= okolo desiatej — близько десятої.
+X ms: Обери ввічливі прохання до адміністратора. | - | *Mohli by ste mi zavolať taxík? ;; *Chcel by som si objednať budenie. ;; *Prosím vás, kde je trezor? ;; Daj mi kľúč. ;; Čau, chcem raňajky.
+= Mohli by ste…, Chcel by som…, Prosím vás — ввічливо; daj, čau — фамільярно.
+F: Пізно ввечері в Кошицях || Ти приїжджаєш у готель у Кошицях о пів на десяту вечора після довгої дороги.
+S: Ти вітаєшся на рецепції. | *Dobrý večer, mám rezerváciu na meno Melnyk. ;; Dobrý večer, mám rezerváciu na meno Melnykom. ;; Dobrý večer, mám rezervácia na meno Melnyk.
+S: Адміністратор: «Miestny poplatok zaplatíte pri odchode.» Що це означає? | *місцевий збір оплатиш, коли виїжджатимеш ;; місцевий збір уже входить у ціну ;; збір треба сплатити зараз готівкою
+S: Ти питаєш, до котрої треба звільнити номер. | *Do koľkej musíme opustiť izbu? ;; Do koľko musíme opustiť izbu? ;; Do koľkej musíme opustiť izbou?
+S: Ти просиш розбудити тебе о 6:30. | *Mohli by ste ma zobudiť o pol siedmej? ;; Mohli by ste ma zobudiť o pol sedem? ;; Mohol by ste ma zobudiť o pol siedmej?
+R: Mám rezerváciu na meno… ;; Mohli by ste…? Chcel(a) by som… ;; miestny poplatok, trezor, budenie, uschovať ;; od siedmej, do desiatej, do koľkej?
+
+@lesson turisticke-miesta | Туристичні місця | Turistické miesta
+desc: Що подивитися в Словаччині: пам’ятки, собори, площі, інфоцентр, вхідні квитки й години роботи. Як порадити: Oplatí sa navštíviť…
+goal: Спланувати огляд міста, розпитати в інфоцентрі й порадити місце іншим.
+out: називати pamiatka, katedrála, infocentrum, vstupenka ;; казати Oplatí sa navštíviť… / Čo sa oplatí vidieť? ;; вживати місцевий відмінок назв міст: v Levoči, v Košiciach, v Banskej Štiavnici ;; читати години роботи й ціни вхідних квитків
+done: Ти вмієш планувати огляд міста. Далі — гори і Татри.
+T: Pamiatky || «Pamiatka» — історична пам’ятка: «hrad, kostol, katedrála, radnica, námestie, mestská brána» (міська брама). Кілька місць Словаччини внесено до списку ЮНЕСКО: «Banská Štiavnica», «Levoča», «Spišský hrad», «Bardejov», село «Vlkolínec». Мапу й поради дає «infocentrum» — туристичний інформаційний центр. || V Košiciach stojí Dóm svätej Alžbety, najväčší kostol na Slovensku. = У Кошицях стоїть собор святої Єлизавети, найбільший храм у Словаччині. ;; V infocentre nám dali mapu mesta. = В інфоцентрі нам дали мапу міста. || pamiatka · katedrála · infocentrum
+T: Oplatí sa… || Порадити — «Oplatí sa navštíviť Bardejov» (Бардеєв варто відвідати). Запитати — «Čo sa oplatí vidieť v Levoči?» Дієслово «oplatiť sa» завжди з «sa» і в третій особі однини: «oplatí sa», «neoplatí sa». || Do Banskej Štiavnice sa oplatí ísť na celý deň. = До Банської Штявниці варто поїхати на цілий день. ;; V lete sa oplatí prísť skoro ráno. = Улітку варто прийти рано-вранці. || oplatí sa + інфінітив
+mis: Oplatí navštíviť… => Oplatí sa navštíviť… ;; v Košice => v Košiciach ;; v Levoča => v Levoči
+T: V Levoči, v Košiciach || Місцевий відмінок назв міст: «Levoča → v Levoči», «Banská Štiavnica → v Banskej Štiavnici», «Bardejov → v Bardejove», «Košice → v Košiciach» (множина). Квиток до музею чи замку — «vstupenka». Ціни й «otváracie hodiny» (години роботи) часто залежать від сезону — перевіряй їх на сайті перед поїздкою. || V Levoči je najvyšší gotický drevený oltár na svete. = У Левочі — найвищий у світі готичний дерев’яний вівтар. ;; Aké sú otváracie hodiny? = Які години роботи? || -a → -i / -e · Košice → v Košiciach
+W: pamiatka | пам’ятка | памятка | Spišský hrad je pamiatka UNESCO. | Спіський замок — пам’ятка ЮНЕСКО.
+W: katedrála | собор | катедра:ла | Katedrála stojí v strede námestia. | Собор стоїть посеред площі.
+W: infocentrum | туристичний інфоцентр | інфоцентрум | V infocentre nám poradili dobrú reštauráciu. | В інфоцентрі нам порадили добрий ресторан.
+W: vstupenka | вхідний квиток | вступенка | Vstupenku si kúpite pri vchode. | Вхідний квиток купите біля входу.
+W: otváracie hodiny | години роботи | отва:раціє годіні | Otváracie hodiny sú napísané na dverách. | Години роботи написані на дверях.
+W: brána | брама, ворота | бра:на | Michalská brána je jediná zachovaná mestská brána v Bratislave. | Михайлівська брама — єдина збережена міська брама в Братиславі.
+X mt: З’єднай. | pamiatka = пам’ятка ;; katedrála = собор ;; infocentrum = туристичний інфоцентр ;; vstupenka = вхідний квиток ;; otváracie hodiny = години роботи ;; brána = брама
+X dd: Обери. | V Levoči [*sa oplatí/oplatí/sa oplatia] vidieť Baziliku svätého Jakuba.
+= oplatí sa — завжди з sa і в 3-й особі однини.
+X dtb: Обери правильну форму. | Najväčší kostol na Slovensku je v [*Košiciach/Košice/Košíc].
+= Košice — множина; де? — v Košiciach.
+X fb: Допиши. | Bývali sme v penzióne v Banskej ___. (Štiavnica) | Štiavnici |
+= Де? — v + місцевий: Banská Štiavnica → v Banskej Štiavnici.
+X sch: Подивись на години роботи. | Hradné múzeum – otváracie hodiny | Máj – september = denne 9:00 – 18:00 ;; Október = denne 9:00 – 16:00 ;; November – marec = zatvorené ;; Apríl = sobota a nedeľa 10:00 – 16:00 | Чи можна відвідати музей у грудні? | *ні, з листопада до березня він зачинений ;; так, щодня з 9:00 до 16:00 ;; так, але лише у вихідні
+= November – marec: zatvorené — зачинено.
+X doc: Прочитай ціни. | Mestská veža – vstupné | Dospelí: 5 € ;; Deti od 6 do 15 rokov: 3 € ;; Deti do 6 rokov: zadarmo ;; Rodinná vstupenka (2 dospelí + 2 deti): 14 € ;; Fotografovanie: povolené bez blesku | Скільки заплатить родина (двоє дорослих і діти 8 і 10 років), якщо купить родинний квиток? | *14 € ;; 16 € ;; 10 €
+= Rodinná vstupenka 2 + 2 — 14 €.
+X rc: - | Iryna a Petro boli cez víkend na Spiši. V sobotu ráno prišli do Levoče a najprv išli do infocentra na námestí. Pani v infocentre im povedala, že sa oplatí vidieť Baziliku svätého Jakuba s najvyšším gotickým dreveným oltárom na svete. Vstupenky si kúpili v pokladni oproti kostolu. Poobede išli autom na Spišský hrad. Hrad je obrovský a výhľad z veže bol nádherný. V nedeľu chceli ísť ešte do Kežmarku, ale začalo pršať, tak sa vrátili domov.
+q~: Куди вони пішли в Левочі спочатку? | *до інфоцентру на площі ;; до замку ;; до ресторану
+q~: Що їм порадили подивитися? | *базиліку з найвищим дерев’яним готичним вівтарем ;; музей у Кежмароку ;; Спіський замок уночі
+q~: Чому вони не поїхали до Кежмарка? | *почався дощ ;; там було зачинено ;; не було квитків
+X mic: - | Kolega: «Do Bojníc choď radšej cez týždeň. Cez víkend sa tam neoplatí ísť, je tam strašne veľa ľudí.» | neoplatí sa | *не варто ;; не можна ;; не треба платити
+= neoplatí sa — не варто; це не про гроші.
+X np: Ти питаєш в інфоцентрі, що варто подивитися в місті. | *Čo sa oplatí vidieť v meste? ;; Čo oplatí sa vidieť v meste? ;; Čo sa oplatí vidieť v mesto? ;; Čo sa oplatia vidieť v meste?
+= sa стоїть одразу після питального слова; v + місцевий: v meste.
+X dr: - | Pracovníčka infocentra: Dobrý deň, môžem vám pomôcť? | *Áno, aké sú otváracie hodiny katedrály? ;; Áno, aké sú otváracie hodiny katedrála? ;; Áno, aká sú otváracie hodiny katedrály?
+= otváracie hodiny čoho? — родовий: katedrály; hodiny — множина: aké sú.
+X fe: - | Cez víkend sme boli v [Bardejov>Bardejove] na námestí.
+= Де? — v + місцевий: Bardejov → v Bardejove.
+X tfl: - | Banská Štiavnica je staré banícke mesto a je na zozname UNESCO. V meste sú dva zámky – Starý zámok a Nový zámok. Okolo mesta sú umelé jazerá, ktoré sa volajú tajchy. V lete sa v nich ľudia kúpu. | *Банська Штявниця — старе гірницьке місто. ;; *У місті є два замки. ;; Довкола міста немає жодних озер. ;; Улітку в тайхах заборонено купатися.
+= Tajchy — штучні озера, улітку в них купаються.
+X so: - | Спитай, які години роботи музею. | Aké sú otváracie hodiny múzea?
+= otváracie hodiny — множина: aké sú; múzea — родовий.
+X ms: Обери правильні речення. | - | *V Košiciach je veľká katedrála. ;; *Oplatí sa ísť do Levoče. ;; *Vstupenku kúpite pri vchode. ;; V Košice je veľká katedrála. ;; Oplatí ísť do Levoče.
+= v Košiciach — місцевий множини; oplatí sa — завжди із sa.
+F: День у Бардеєві || Ти приїхав(ла) з колегою на один день до Бардеєва.
+S: Ти в інфоцентрі. | *Dobrý deň, čo sa oplatí vidieť v Bardejove? ;; Dobrý deň, čo sa oplatí vidieť v Bardejov? ;; Dobrý deň, čo oplatí sa vidieť v Bardejove?
+S: Працівниця: «Radnica je na námestí, vstupenky predávame aj tu.» Що вона сказала? | *ратуша на площі, а квитки можна купити тут, в інфоцентрі ;; ратуша сьогодні зачинена ;; квитки продають лише онлайн
+S: Ти питаєш, скільки коштують два вхідні квитки. | *Koľko stoja dve vstupenky? ;; Koľko stojí dve vstupenky? ;; Koľko stoja dva vstupenky?
+S: Колега питає, чи варто підніматися на вежу. Ти кажеш, що так, бо краєвид чудовий. | *Áno, oplatí sa, výhľad je nádherný. ;; Áno, oplatí, výhľad je nádherný. ;; Áno, oplatia sa, výhľad je nádherný.
+R: pamiatka, katedrála, brána, infocentrum, vstupenka ;; Oplatí sa navštíviť… / Čo sa oplatí vidieť? ;; v Levoči, v Bardejove, v Košiciach, v Banskej Štiavnici ;; otváracie hodiny залежать від сезону
+
+@lesson hory-a-tatry | Гори і Татри | Hory a Tatry
+desc: Високі Татри та інші гори: štít, pleso, dolina, сходження, висота над рівнем моря, гірська рятувальна служба й правила безпеки.
+goal: Спланувати похід у Татри, розуміти туристичні вказівники й знати, куди дзвонити в разі біди.
+out: називати štít, pleso, dolina ;; казати ísť do Tatier / byť v Tatrách, ísť na Rysy / byť na Rysoch ;; розуміти nadmorská výška і час підйому на вказівниках ;; знати, що робить horská služba
+done: Ти готовий (готова) до гір. Далі — курорти й термальні басейни.
+T: Vysoké Tatry || Найвищі гори Словаччини — «Vysoké Tatry». Гостра вершина — «štít»: найвищий — «Gerlachovský štít» (2655 m). Гірське озеро — «pleso»: «Štrbské pleso», «Popradské pleso». Між горами — «dolina». Висота над рівнем моря — «nadmorská výška»: «Štrbské pleso leží v nadmorskej výške 1346 m.» || Štrbské pleso je najznámejšie pleso v Tatrách. = Штрбське плесо — найвідоміше озеро в Татрах. ;; Dolinou ide pekný chodník. = Долиною йде гарна стежка. || štít · pleso · dolina · nadmorská výška (m n. m.)
+T: Do Tatier, v Tatrách, na Rysy || «Tatry» — лише множина: куди? «do Tatier»; де? «v Tatrách»; звідки? «z Tatier». На вершину — «na» + знахідний: «ísť na Rysy, na Lomnický štít»; бути там — «na» + місцевий: «na Rysoch, na Lomnickom štíte». До озера — «k plesu» (давальний), біля озера — «pri plese». || Cez víkend ideme do Tatier. = На вихідних ідемо в Татри. ;; Na Rysoch bolo veľa ľudí. = На Рисах було багато людей. || do Tatier · v Tatrách · na Rysy → na Rysoch
+mis: ísť v Tatry => ísť do Tatier ;; byť na Rysy => byť na Rysoch ;; v Tatroch => v Tatrách
+T: Bezpečne v horách || «Výstup» — підйом на вершину; на вказівниках пишуть час, напр. «Rysy 4 h 15 min». Ходи лише позначеними стежками. Багато високогірних стежок у Татрах узимку й навесні закриті — це «zimná uzávera». У разі біди дзвони «horská služba» — гірській рятувальній службі: 18 300 або 112. На Gerlachovský štít можна йти лише з гірським провідником. || Výstup na Rysy trvá asi štyri hodiny. = Підйом на Риси триває близько чотирьох годин. ;; Zavolali sme horskú službu. = Ми викликали гірських рятувальників. || horská služba: 18 300 · 112
+W: štít | гострий пік, вершина | шті:т | Na Lomnický štít vedie lanovka. | На Ломницький пік веде канатна дорога.
+W: pleso | гірське озеро | плесо | Pri plese sme mali piknik. | Біля гірського озера ми влаштували пікнік.
+W: dolina | долина | доліна | Dolinou tečie studený potok. | Долиною тече холодний потік.
+W: výstup | підйом, сходження | ві:ступ | Výstup na štít bol náročný. | Підйом на пік був важким.
+W: nadmorská výška | висота над рівнем моря | надморска: ві:шка | Chata pod Rysmi je v nadmorskej výške 2250 metrov. | Хата під Рисами розташована на висоті 2250 метрів над рівнем моря.
+W: horská služba | гірська рятувальна служба | горска: служба | Horská služba pomohla zranenému turistovi. | Гірські рятувальники допомогли травмованому туристові.
+X mt: З’єднай. | štít = гострий пік ;; pleso = гірське озеро ;; dolina = долина ;; výstup = підйом ;; nadmorská výška = висота над рівнем моря ;; horská služba = гірська рятувальна служба
+X dd: Обери. | Cez víkend ideme do [*Tatier/Tatry/Tatrách].
+= Куди? — do + родовий множини: do Tatier.
+X dtb: Обери правильну форму. | Na [*Rysoch/Rysy/Rysov] fúkal silný vietor.
+= Де? — na + місцевий: na Rysoch.
+X fb: Допиши. | Bývali sme v malom penzióne vo Vysokých ___. (Tatry) | Tatrách |
+= Де? — v(o) + місцевий множини: vo Vysokých Tatrách.
+X sch: Подивись на вказівник. | Turistický smerovník – Štrbské pleso, 1346 m | Popradské pleso = 1 h 15 min ;; Chata pod Rysmi = 3 h 45 min ;; Rysy = 4 h 15 min ;; Chata pod Soliskom = 1 h 30 min | Скільки триває підйом на Риси? | *4 год 15 хв ;; 3 год 45 хв ;; 1 год 15 хв
+= Rysy 4 h 15 min — до Рисів чотири години п’ятнадцять хвилин.
+X doc: Прочитай оголошення. | Informácia pre turistov – zimná uzávera | Vysokohorské chodníky: zatvorené od 1. novembra do 15. júna ;; Otvorené: chodníky do dolín a k chatám ;; Horská služba: 18 300 ;; Tiesňové volanie: 112 | Чи можна піти на Риси 20 травня? | *ні, високогірні стежки ще закриті ;; так, стежки вже відкриті ;; так, але лише з провідником
+= Zatvorené do 15. júna — 20 травня стежки ще закриті.
+X rc: - | V júli išiel Andrij s dvoma kolegami na Rysy. Vyšli zo Štrbského plesa o šiestej ráno, lebo výstup trvá asi štyri hodiny. Najprv išli dolinou, potom chodník stúpal stále prudšie. Na Chate pod Rysmi si dali čaj a trochu si oddýchli. Na vrchole bolo veľa ľudí a fúkal studený vietor, ale výhľad bol nádherný – videli aj poľskú stranu Tatier. Cestou dole si kolega vyvrtol členok. Zavolali horskú službu a záchranári mu pomohli zísť k chate.
+q~: Чому вони вийшли о шостій ранку? | *підйом триває близько чотирьох годин ;; о шостій відкривається стежка ;; удень на Рисах дуже спекотно
+q~: Що вони бачили з вершини? | *і польську частину Татр ;; лише туман ;; Кошиці
+q~: Хто допоміг колезі? | *гірська рятувальна служба ;; працівник хати ;; інші туристи
+X cat: Куди чи де? | Kam: do Tatier, na Rysy, k plesu ;; Kde: v Tatrách, na Rysoch, pri plese
+= Куди — родовий, знахідний, давальний; де — місцевий.
+X np: Ти питаєш на хаті, скільки ще йти до вершини. | *Ako dlho ešte trvá výstup na vrchol? ;; Ako dlho ešte trvá výstup na vrcholu? ;; Ako dlho ešte trvá výstup do vrchol? ;; Koľko dlho ešte trvá výstup na vrchol?
+= výstup na + знахідний: na vrchol; ako dlho — як довго.
+X dr: - | Kamarát: Kam idete v sobotu? | *Ideme do Tatier, na Kriváň. ;; Ideme v Tatrách, na Kriváň. ;; Ideme do Tatry, na Kriváni.
+= Куди? — do Tatier, na Kriváň (знахідний).
+X fe: - | Minulé leto sme boli [v>na] Lomnickom štíte.
+= На вершині — na + місцевий: na Lomnickom štíte.
+X tf: - | - | На Gerlachovský štít можна піти самому позначеною стежкою. | F
+= На Gerlachovský štít ходять лише з гірським провідником.
+X sc~: Що таке «pleso»? | - | *гірське озеро ;; гірська хата ;; гірський перевал
+= Pleso — гірське озеро, напр. Štrbské pleso.
+X ms: Обери правильні речення. | - | *Sme v Tatrách. ;; *Ideme na Rysy. ;; *Pri plese je chata. ;; Sme v Tatroch. ;; Ideme na Rysoch.
+= v Tatrách — місцевий; ideme na Rysy — знахідний (куди).
+F: Перший раз у Татрах || Ти з друзями на вихідних у Високих Татрах.
+S: Знайома пише: «Kde ste cez víkend?» | *Sme v Tatrách, pri Štrbskom plese. ;; Sme v Tatry, pri Štrbskom plese. ;; Sme do Tatier, pri Štrbské pleso.
+S: На вказівнику: «Popradské pleso 1 h 15 min, Rysy 4 h 15 min.» Що це означає? | *до Попрадського плеса година п’ятнадцять хвилин ходу, до Рисів — чотири години п’ятнадцять хвилин ;; до Рисів 4,15 км ;; Попрадське плесо на висоті 1415 м
+S: Ти питаєш у хаті, чи стежка на Риси вже відкрита. | *Je chodník na Rysy už otvorený? ;; Je chodník na Rysy už otvorená? ;; Je chodník na Rysy už otvorene?
+S: Подруга підвернула ногу і не може йти. Що скажеш? | *Zavoláme horskú službu. ;; Zavoláme horská služba. ;; Zavoláme horskou službou.
+R: štít, pleso, dolina, nadmorská výška ;; do Tatier, v Tatrách; na Rysy, na Rysoch ;; výstup, smerovník, zimná uzávera ;; horská služba: 18 300 alebo 112
+
+@lesson kupele | Курорти й термальні басейни | Kúpele
+desc: Словацькі курорти й термальні басейни: Піщани, Тренчанські Тепліце, Бардеївські Купелі; процедури, масаж, лікувальне перебування. Kúpele — лише множина!
+goal: Розповісти про перебування на курорті, зрозуміти розклад процедур і правила басейну.
+out: вживати kúpele в множині: do kúpeľov, v kúpeľoch, z kúpeľov ;; казати v Piešťanoch, do Piešťan, v Trenčianskych Tepliciach ;; розуміти liečebný pobyt, procedúra, prameň, masáž ;; казати ísť na masáž, byť na masáži, po masáži
+done: Ти вмієш говорити про курорти. Далі — словацькі замки.
+T: Kúpele — iba množné číslo || «Kúpele» — лікувальний курорт; слово вживається лише в множині: «ísť do kúpeľov», «byť v kúpeľoch», «vrátiť sa z kúpeľov». Так само багато назв курортних міст: «Piešťany → v Piešťanoch, do Piešťan», «Trenčianske Teplice → v Trenčianskych Tepliciach, do Trenčianskych Teplíc». || Mama je dva týždne v kúpeľoch. = Мама два тижні на курорті. ;; V máji idem do Piešťan. = У травні я їду до Піщан. || do kúpeľov · v kúpeľoch · z kúpeľov
+mis: v kúpeľov => v kúpeľoch ;; idem do kúpele => idem do kúpeľov ;; v Piešťany => v Piešťanoch
+T: Liečebný pobyt a procedúry || Словаччина багата на «pramene» — джерела мінеральної й «termálnej» (гарячої) води. «Liečebný pobyt» — лікувальне перебування, часто на кілька тижнів. Лікар призначає «procedúry»: «masáž», «bahenný zábal» (грязьове обгортання), «rehabilitácia». Іноді частину перебування оплачує медична страхова компанія за рекомендацією лікаря. || Piešťany sú známe liečivým bahnom. = Піщани відомі лікувальною гряззю. ;; Každé ráno mám dve procedúry. = Щоранку в мене дві процедури. || prameň · procedúra · liečebný pobyt
+T: Termálne kúpaliská || Не лише для лікування: у термальних басейнах відпочивають цілі родини — відомі, наприклад, «Bešeňová», «Podhájska», «Tatralandia». Не забудь «plavky» (купальник або плавки) і рушник. Іти «na masáž», бути «na masáži», «po masáži» — місцевий відмінок. || Zabudol som si plavky! = Я забув плавки! ;; Po masáži sa cítim výborne. = Після масажу почуваюся чудово. || ísť na masáž · byť na masáži · po masáži
+W: prameň | джерело | прамень | V parku je prameň minerálnej vody. | У парку є джерело мінеральної води.
+W: termálny | термальний | терма:лні: | V termálnom bazéne je voda teplá aj v zime. | У термальному басейні вода тепла навіть узимку.
+W: procedúra | процедура | процеду:ра | Prvú procedúru mám o ôsmej. | Першу процедуру я маю о восьмій.
+W: masáž | масаж | маса:ж | Po masáži ma prestal bolieť chrbát. | Після масажу в мене перестала боліти спина.
+W: plavky | купальник; плавки | плавкі | Plavky a uterák si zober so sebou. | Купальник і рушник візьми із собою.
+W: liečebný pobyt | лікувальне перебування (на курорті) | ліечебні: побит | Liečebný pobyt trvá tri týždne. | Лікувальне перебування триває три тижні.
+X mt: З’єднай. | prameň = джерело ;; termálny = термальний ;; procedúra = процедура ;; masáž = масаж ;; plavky = купальник, плавки ;; liečebný pobyt = лікувальне перебування
+X dd: Обери. | Babka je už týždeň v [*kúpeľoch/kúpeľov/kúpele].
+= Де? — v + місцевий множини: v kúpeľoch.
+X dtb: Обери правильну форму. | Budúci mesiac ide otec do [*Piešťan/Piešťany/Piešťanoch].
+= Piešťany — множина; куди? — do + родовий: do Piešťan.
+X fb: Допиши. | Po ___ sa cítim oveľa lepšie. (масаж) | masáži |
+= po + місцевий: masáž → po masáži.
+X sch: Подивись на розклад процедур. | Rozpis procedúr – pondelok | 8:00 = bahenný zábal ;; 9:30 = masáž chrbta ;; 11:00 = rehabilitácia v telocvični ;; 15:00 = termálny bazén (prineste si plavky) | Що буде о пів на десяту? | *масаж спини ;; грязьове обгортання ;; басейн
+= 9:30 — masáž chrbta, масаж спини.
+X doc: Прочитай правила басейну. | Termálne kúpalisko – informácie | Teplota vody: 26 – 38 °C ;; Otvorené: celoročne ;; Deti do 3 rokov: vstup zadarmo ;; Vlastné jedlo: nie je povolené ;; Plavky: povinné, uterák si môžete požičať | Що можна взяти напрокат? | *рушник ;; купальник ;; їжу
+= Uterák si môžete požičať — рушник можна позичити.
+X rc: - | Halyna pracuje ako opatrovateľka a už roky ju bolí chrbát. Lekárka jej odporučila liečebný pobyt v Piešťanoch. Halyna bola v kúpeľoch tri týždne. Každý deň mala tri procedúry: ráno bahenný zábal, potom masáž a poobede cvičenie v termálnom bazéne. Večer chodila na prechádzky po Kúpeľnom ostrove a cez Kolonádový most. Pila aj minerálnu vodu z prameňa, hoci jej veľmi nechutila. Domov sa vrátila oddýchnutá a chrbát ju bolí oveľa menej.
+q~: Чому Галина поїхала на курорт? | *у неї давно болить спина ;; вона хотіла засмагнути ;; її запросила подруга
+q~: Скільки процедур на день вона мала? | *три ;; дві ;; п’ять
+q~: Як вона почувається після курорту? | *відпочилою, і спина болить значно менше ;; дуже втомленою ;; так само, нічого не змінилося
+X hm: - | Kolega: Bešeňová? No… v sobotu tam bolo asi päťtisíc ľudí. | *колега натякає, що там було занадто людно ;; колезі там дуже сподобалося ;; колега радить їхати туди саме в суботу
+= «No…» і число людей — натяк, що було надто багато відвідувачів.
+X np: Ти питаєш на рецепції курорту, де басейн із термальною водою. | *Kde je bazén s termálnou vodou? ;; Kde je bazén s termálna voda? ;; Kde je bazén s termálnej vody? ;; Kde je bazén so termálnou vodou?
+= s + орудний: s termálnou vodou.
+X dr: - | Sestra na recepcii: Na akú procedúru idete? | *Idem na masáž chrbta. ;; Idem na masáži chrbta. ;; Idem do masáž chrbta.
+= Куди? — na + знахідний: na masáž.
+X fe: - | Svokra sa včera vrátila z [kúpele>kúpeľov] v Bardejove.
+= z + родовий множини: z kúpeľov.
+X tf: - | - | Слово «kúpele» вживається лише в множині. | T
+= Kúpele — тільки множина: do kúpeľov, v kúpeľoch.
+X sc: Яке речення правильне? | - | *Zajtra idem do Trenčianskych Teplíc. ;; Zajtra idem do Trenčianske Teplice. ;; Zajtra idem v Trenčianskych Tepliciach.
+= Куди? — do + родовий множини: do Trenčianskych Teplíc.
+X cat: Куди чи де? | Kam: do kúpeľov, na masáž, do Piešťan ;; Kde: v kúpeľoch, na masáži, v Piešťanoch
+= Куди — родовий або знахідний; де — місцевий.
+F: Тиждень на курорті || Твоя мама приїхала з України, і ви разом їдете на тиждень до Тренчанських Тепліц.
+S: Колега питає, де ти будеш наступного тижня. | *Budem s mamou v kúpeľoch v Trenčianskych Tepliciach. ;; Budem s mamou v kúpele v Trenčianskych Tepliciach. ;; Budem s mamou do kúpeľov v Trenčianske Teplice.
+S: Медсестра: «Na masáž príďte o desať minút skôr.» Що треба зробити? | *прийти на масаж на десять хвилин раніше ;; масаж триватиме десять хвилин ;; масаж перенесли на десять хвилин пізніше
+S: Ти забув(ла) купальник і питаєш, де його купити. | *Kde si tu môžem kúpiť plavky? ;; Kde si tu môžem kúpiť plavkách? ;; Kde si tu môžem kúpiť plavka?
+S: Ти питаєш, о котрій наступна процедура. | *O koľkej mám ďalšiu procedúru? ;; O koľko mám ďalšiu procedúru? ;; O koľkej mám ďalšia procedúra?
+R: kúpele: do kúpeľov, v kúpeľoch, z kúpeľov ;; v Piešťanoch, do Trenčianskych Teplíc ;; liečebný pobyt, procedúra, prameň, termálny ;; na masáž, na masáži, po masáži; plavky
+
+@lesson hrady-a-zamky | Замки й палаци | Hrady a zámky
+desc: Словаччина — країна замків: hrad, zámok, zrúcanina; Спіський, Оравський, Бойніцький, Тренчанський замки й Девін. Як сказати «у 13 столітті» і «замок збудували».
+goal: Розповісти про відомий замок: коли його збудували, що там подивитися і яка з ним пов’язана легенда.
+out: розрізняти hrad, zámok, zrúcanina ;; казати v 13. storočí (v trinástom storočí), zo 14. storočia ;; вживати безособове postavili і минулий час vyhorel ;; розуміти й переказувати коротку легенду
+done: Ти вмієш розповідати про замки. Далі — проблеми в дорозі.
+T: Hrad, zámok, zrúcanina || «Hrad» — фортеця, зазвичай на пагорбі, з «hradby» (мурами) і «veža» (вежею). «Zámok» — пізніший палац-резиденція для зручного життя, напр. «Bojnický zámok». Зруйнований замок — «zrúcanina». Увага: «zámok» означає ще й «замок у дверях»! || Spišský hrad je jeden z najväčších hradov v strednej Európe. = Спіський замок — один із найбільших замків у Центральній Європі. ;; Z hradu zostala len zrúcanina. = Від замку залишилися лише руїни. || hrad — фортеця · zámok — палац · zrúcanina — руїни
+T: V trinástom storočí || Століття — «storočie». Коли? — «v» + місцевий порядкового числівника: «v 13. storočí» = «v trinástom storočí». Звідки? — «z» + родовий: «zo 14. storočia» = «zo štrnásteho storočia». Безособово про минуле — 3-тя особа множини без підмета: «Hrad postavili v 13. storočí.» (замок збудували). || Hrad postavili v trinástom storočí. = Замок збудували в тринадцятому столітті. ;; V 18. storočí hrad vyhorel. = У 18 столітті замок згорів. || v trinástom storočí · zo štrnásteho storočia · postavili
+mis: v trinásty storočie => v trinástom storočí ;; Hrad postavil v 13. storočí. => Hrad postavili v 13. storočí. ;; z štrnásteho storočia => zo štrnásteho storočia
+T: Legendy || Багато замків мають свою «legenda». У Бойніцькому замку щовесни відбувається міжнародний фестиваль привидів і страховиськ. Про «Čachtický hrad» розповідають історію графині Алжбети Баторі. В Оравському замку знімали німий фільм «Носферату» (1922). З Тренчанським замком пов’язана легенда про «Studňa lásky» — криницю кохання. || Na Oravskom hrade nakrúcali film Nosferatu. = В Оравському замку знімали фільм «Носферату». ;; Podľa legendy kopali studňu tri roky. = За легендою, криницю копали три роки. || podľa legendy — за легендою
+W: zámok | палац (замок-резиденція); замок у дверях | за:мок | Bojnický zámok vyzerá ako z rozprávky. | Бойніцький замок виглядає як із казки.
+W: zrúcanina | руїни | зру:цаніна | Na kopci nad obcou je zrúcanina hradu. | На пагорбі над селом — руїни замку.
+W: veža | вежа | вежа | Z veže je pekný výhľad na mesto. | З вежі гарний краєвид на місто.
+W: hradby | фортечні мури | градбі | Staré hradby stoja dodnes. | Старі мури стоять досі.
+W: storočie | століття | сторочіє | Hrad je zo štrnásteho storočia. | Замок — із чотирнадцятого століття.
+W: legenda | легенда | леґенда | O hrade sa rozpráva strašidelná legenda. | Про замок розповідають моторошну легенду.
+X mt: З’єднай. | zámok = палац ;; zrúcanina = руїни ;; veža = вежа ;; hradby = фортечні мури ;; storočie = століття ;; legenda = легенда
+X dd: Обери. | Hrad [*postavili/postavený/postaviť] v 13. storočí.
+= Безособово: postavili — 3-тя особа множини без підмета.
+X dtb: Обери правильну форму. | Tento kostol je z pätnásteho [*storočia/storočie/storočí].
+= z + родовий: zo / z pätnásteho storočia.
+X fb: Допиши. | Hrad vyhorel v osemnástom ___. (століття) | storočí |
+= v + місцевий: v osemnástom storočí.
+X sc~: Чим «zámok» відрізняється від «hrad»? | - | *zámok — пізніший палац-резиденція, hrad — фортеця ;; zámok — руїни, hrad — ціла будівля ;; між ними немає жодної різниці
+= Hrad будували для оборони, zámok — для зручного життя.
+X mic: - | Turista pred múzeom: «Zámok na dverách je pokazený, nevieme otvoriť.» | zámok | *замок у дверях ;; палац ;; ключ
+= Zámok na dverách — дверний замок.
+X rc: - | Spišský hrad stojí na vysokom kopci nad obcou Spišské Podhradie. Je to jeden z najväčších hradných komplexov v strednej Európe a od roku 1993 je na zozname UNESCO. Hrad vznikol v 12. storočí. Patril kráľom a neskôr bohatým šľachtickým rodinám. V roku 1780 hrad vyhorel a odvtedy je z neho zrúcanina. Dnes je časť hradu opravená a nachádza sa v nej múzeum. Z veže je za dobrého počasia vidieť aj Vysoké Tatry.
+q~: Коли замок згорів? | *у 1780 році ;; у 1993 році ;; у 12 столітті
+q~: Що сьогодні є в частині замку? | *музей ;; готель ;; ресторан
+q~: Що видно з вежі в гарну погоду? | *Високі Татри ;; Дунай ;; Кошиці
+X np: Ти питаєш екскурсовода, коли збудували цей замок. | *Kedy postavili tento hrad? ;; Kedy postavený tento hrad? ;; Kedy postavili tento hradu? ;; Kedy postavili táto hrad?
+= Безособово: postavili; hrad — чоловічий рід: tento hrad.
+X fe: - | Hrad postavili v [trinásty>trinástom] storočí.
+= v + місцевий: v trinástom storočí.
+X tr: Напиши число словами. | Hrad je zo 14. storočia. | Hrad je zo štrnásteho storočia.
+= zo + родовий: zo štrnásteho storočia.
+X sch: Подивись на типи екскурсій. | Hrad – prehliadky | Klasická prehliadka = 60 minút, každú hodinu ;; Nočná prehliadka = len v piatok a v sobotu o 20:00 ;; Prehliadka veže = 20 minút, nevhodná pre deti do 6 rokov ;; Prehliadka v angličtine = denne o 11:00 | Коли можна піти на нічну екскурсію? | *у п’ятницю та суботу о 20:00 ;; щодня о 20:00 ;; щогодини
+= Nočná prehliadka — len v piatok a v sobotu.
+X dr: - | Kamarátka: Bol si už na Oravskom hrade? | *Áno, bol som tam minulé leto. ;; Áno, bol som tam minulý leto. ;; Áno, bol som tam minulého leta.
+= leto — середній рід: minulé leto.
+X tf: - | Podľa legendy kopal Turek Omar na Trenčianskom hrade studňu tri roky, aby oslobodil svoju milú Fatimu. | За легендою, Омар копав криницю, щоб звільнити кохану. | T
+= aby oslobodil svoju milú — щоб звільнити свою кохану.
+X ms: Обери правильні речення. | - | *Hrad postavili v 13. storočí. ;; *Z hradu zostala zrúcanina. ;; *Na hrade je vysoká veža. ;; Hrad postavili v 13. storočie. ;; Na hradu je vysoká veža.
+= v 13. storočí — місцевий; na hrade — місцевий.
+F: Екскурсія на Девін || Ти з родиною на екскурсії на руїнах замку Девін біля Братислави, там, де Морава впадає в Дунай.
+S: Гід: «Hrad zničili Napoleonove vojská v roku 1809.» Що сталося? | *у 1809 році замок зруйнувала армія Наполеона ;; Наполеон збудував замок ;; замок відновили в 1809 році
+S: Син питає, як називається вежа. Ти питаєш гіда. | *Ako sa volá táto veža? ;; Ako sa volá táto vežu? ;; Ako volá sa táto veža?
+S: Увечері ти пишеш колезі, де ви були. | *Boli sme na zrúcanine hradu Devín. ;; Boli sme na zrúcanina hradu Devín. ;; Boli sme v zrúcaninu hradu Devín.
+S: Ти питаєш гіда, з якого століття ці мури. | *Z ktorého storočia sú tieto hradby? ;; Z ktorého storočie sú tieto hradby? ;; Z ktorom storočí sú tieto hradby?
+R: hrad, zámok, zrúcanina; veža, hradby ;; v trinástom storočí, zo štrnásteho storočia ;; postavili, vyhorel, zničili ;; podľa legendy…
+
+@lesson problem-na-cestach | Проблеми в дорозі | Problém na cestách
+desc: Коли щось пішло не так: загубив(ла) речі, заблукав(ла), пробите колесо, розряджений телефон, пропущена пересадка. Як описати, що сталося, і попросити допомоги.
+goal: Описати проблему в минулому часі й попросити допомоги на вокзалі, на дорозі чи в місті.
+out: розповідати про проблему: Stratil(a) som…, Zabudol / Zabudla som…, Ukradli mi… ;; питати, де бюро знахідок, і як дістатися на вокзал ;; розуміти defekt, odťahová služba, vybitý ;; ввічливо просити: Mohli by ste mi pomôcť?
+done: Ти вмієш розв’язувати проблеми в дорозі. Далі — підсумок розділу.
+T: Čo sa stalo? || Про проблему говоримо в минулому часі: «Stratil som peňaženku.», «Zabudla som tašku vo vlaku.», «Zablúdili sme.» Якщо не знаємо, хто це зробив, — 3-тя особа множини без підмета: «Ukradli mi mobil.» (у мене вкрали телефон). || Zabudol som batoh v autobuse. = Я забув рюкзак в автобусі. ;; Ukradli mi peňaženku. = У мене вкрали гаманець. || Stratil(a) som… · Zabudol / Zabudla som… · Ukradli mi…
+mis: Ja stratil peňaženku. => Stratil som peňaženku. ;; Ukradli ma mobil. => Ukradli mi mobil. ;; Mám vybitá mobil. => Mám vybitý mobil.
+T: Straty a nálezy, vybitý mobil || Загублені речі шукай у бюро знахідок — «straty a nálezy» (на вокзалі, в аеропорту, на міському уряді). «Vybitý» — розряджений: «Mám vybitý mobil.» «Zablúdiť» — заблукати: «Zablúdili sme v lese.» Запитати дорогу: «Prepáčte, ako sa dostanem na stanicu?» || Kde nájdem straty a nálezy? = Де знайти бюро знахідок? ;; Mám vybitý mobil, môžem si ho tu nabiť? = У мене розряджений телефон, можна його тут зарядити? || straty a nálezy · vybitý mobil · zablúdiť
+T: Problém s autom || «Defekt» — пробите колесо: «Mám defekt.» Якщо авто не їде, кличуть «odťahová služba» — евакуатор. Пам’ятай про номер екстрених служб 112. Ввічливо попросити допомоги: «Prepáčte, mohli by ste mi pomôcť?» || Na diaľnici sme mali defekt. = На автостраді в нас пробило колесо. ;; Zavolali sme odťahovú službu. = Ми викликали евакуатор. || defekt · odťahová služba · 112
+W: straty a nálezy | бюро знахідок | страті а на:лезі | Straty a nálezy sú na prvom poschodí stanice. | Бюро знахідок — на першому поверсі вокзалу.
+W: zablúdiť | заблукати | заблу:діть | V starom meste sme zablúdili. | У старому місті ми заблукали.
+W: defekt | пробите колесо | дефект | Cestou do Nitry sme mali defekt. | Дорогою до Нітри в нас пробило колесо.
+W: odťahová služba | евакуатор (служба) | одтягова: служба | Odťahová služba príde o hodinu. | Евакуатор приїде за годину.
+W: vybitý | розряджений | вібіті: | Mobil mám vybitý, nemôžem volať. | Телефон у мене розряджений, не можу дзвонити.
+X mt: З’єднай. | straty a nálezy = бюро знахідок ;; zablúdiť = заблукати ;; defekt = пробите колесо ;; odťahová služba = евакуатор ;; vybitý = розряджений
+X dd: Обери (говорить жінка). | Včera som [*stratila/stratil/stratili] kľúče od bytu.
+= Жінка — stratila som.
+X dtb: Обери правильну форму. | Prepáčte, mám [*vybitý/vybitá/vybité] mobil.
+= mobil — чоловічий рід: vybitý.
+X fb: Допиши. | Vo vlaku ___ ukradli peňaženku. (мені) | mi |
+= Ukradli mi — у мене вкрали (давальний mi).
+X sc~: Що означає «Mám vybitý mobil»? | - | *у мене розряджений телефон ;; у мене розбитий телефон ;; у мене вкрали телефон
+= Vybitý — розряджений; розбитий — rozbitý.
+X msg: Прочитай повідомлення від подруги. | Olena | Ahoj, nemôžem ti volať, mám skoro vybitý mobil. Vlak meškal a prípoj do Popradu som nestihla. Ďalší ide až o 21:10. Prosím ťa, napíš pani v penzióne, že prídem neskoro. | Що просить Олена? | *написати власниці пансіону, що вона приїде пізно ;; забрати її з вокзалу ;; купити їй новий квиток
+= Napíš pani v penzióne, že prídem neskoro — напиши пані в пансіоні, що я приїду пізно.
+X doc: Прочитай заяву про втрату. | Straty a nálezy – hlásenie straty | Stratená vec: čierny batoh ;; Kde: vlak IC 503, vagón 4 ;; Kedy: 12. 10., okolo 16:00 ;; Obsah: notebook, nabíjačka, kniha ;; Kontakt: 0905 123 456 | Де загубили рюкзак? | *у поїзді IC, у четвертому вагоні ;; на вокзалі в залі очікування ;; в автобусі
+= Kde: vlak IC 503, vagón 4.
+X rc: - | V nedeľu išli Oleh a Natália autom z Košíc do Bardejova. Za Prešovom mali defekt. Oleh nemal náhradné koleso, lebo ho nechal v garáži. Natália chcela zavolať odťahovú službu, ale mala vybitý mobil a Oleh mal mobil doma. Pomohol im vodič nákladného auta, ktorý zastavil a požičal im svoj telefón. Odťahová služba prišla o hodinu a odviezla auto do servisu v Prešove. Do Bardejova napokon išli autobusom.
+q~: Чому Олег не поміняв колесо? | *запасне колесо залишилося в гаражі ;; він не вмів цього робити ;; було надто темно
+q~: Чому Наталія не подзвонила сама? | *у неї був розряджений телефон ;; вона не знала номера ;; не було сигналу
+q~: Як вони врешті доїхали до Бардеєва? | *автобусом ;; на евакуаторі ;; з водієм вантажівки
+X bd: - | Ти добре пояснив(ла), що сталося!
+> Pracovník stanice: Dobrý deň, čo potrebujete? | *Dobrý deň, zabudol som vo vlaku tašku. ;; Dobrý deň, zabudol som v vlaku tašku. ;; Dobrý deň, zabudol som vo vlaku taška.
+> Pracovník stanice: V ktorom vlaku? | *V rýchliku zo Zvolena, prišiel o 14:20. ;; V rýchlik zo Zvolena, prišiel o 14:20. ;; Do rýchlika zo Zvolena, prišiel o 14:20.
+> Pracovník stanice: Aká je to taška? | *Je to modrá športová taška s notebookom. ;; Je to modrú športovú tašku s notebookom. ;; Je to modrá športová taška s notebook.
+> Pracovník stanice: Zajtra sa zastavte na oddelení strát a nálezov. | *Ďakujem. A dokedy je otvorené? ;; Ďakujem. A dokedy je otvorená? ;; Ďakujem. A dokedy sú otvorený?
+X np: Ти (чоловік) заблукав у місті й питаєш дорогу на вокзал. | *Prepáčte, zablúdil som. Ako sa dostanem na stanicu? ;; Prepáčte, zablúdil som. Ako sa dostanem do stanicu? ;; Prepáčte, zablúdil som. Ako sa dostanem na stanici? ;; Prepáčte, zablúdiť som. Ako sa dostanem na stanicu?
+= zablúdil som — минулий час; na stanicu — куди? знахідний.
+X fe: - | Včera sme [zablúdil>zablúdili] v lese pri Zvolene.
+= My — zablúdili sme (множина).
+X so: - | Ввічливо попроси допомоги. | Mohli by ste mi pomôcť?
+= pomôcť komu — mi (давальний).
+X tone: - | Sprievodca vo vlaku: «Vy ste si naozaj mysleli, že tento lístok platí aj na IC?» | *іронія: кондуктор незадоволений ;; щире запитання з цікавості ;; похвала
+= Naozaj ste si mysleli… — іронічне запитання: квиток на IC не дійсний.
+X ms: Обери правильні речення. | - | *Stratil som kľúče. ;; *Ukradli mi mobil. ;; *Zabudla som dáždnik vo vlaku. ;; Stratil som kľúčmi. ;; Ukradli ma mobil.
+= stratiť + знахідний: kľúče; ukradli komu — mi.
+F: Неділя не за планом || Ти повертаєшся поїздом із Тренчина до Братислави, і все йде не так, як ти планував(ла).
+S: Ти помітив(ла), що гаманця немає. Кажеш кондукторові. | *Prepáčte, asi mi ukradli peňaženku. ;; Prepáčte, asi ma ukradli peňaženku. ;; Prepáčte, asi mi ukradla peňaženka.
+S: Кондуктор: «Nahláste to na polícii na stanici.» Що він радить? | *повідомити про це в поліцію на вокзалі ;; купити новий квиток ;; зателефонувати в банк
+S: Ти хочеш попросити в сусіда зарядку, бо телефон розряджений. | *Prepáčte, mám vybitý mobil. Nemáte nabíjačku? ;; Prepáčte, mám vybitá mobil. Nemáte nabíjačku? ;; Prepáčte, mám vybitý mobilom. Nemáte nabíjačku?
+S: Друг пише: «Prečo si neprišiel?» | *Vlak meškal a prípoj som nestihol. ;; Vlak meškal a prípoj som nestihnúť. ;; Vlak meškať a prípoj som nestihol.
+R: Stratil(a) som…, Zabudol / Zabudla som…, Ukradli mi… ;; straty a nálezy, vybitý mobil, zablúdiť ;; defekt, odťahová služba, 112 ;; Mohli by ste mi pomôcť?
+
+@lesson cestovanie-opakovanie | Підсумок: подорожі Словаччиною | Opakovanie: cestovanie po Slovensku
+desc: Повторюємо весь розділ: поїзд і автобус, житло й рецепція, пам’ятки, гори, курорти, замки й проблеми в дорозі. Нове: як розповісти про поїздку і що таке скансен.
+goal: Спланувати кількаденну подорож Словаччиною й розповісти про неї.
+out: вживати відмінки в подорожі: do Tatier, v Tatrách, vlakom, cez Žilinu, na dve noci ;; бронювати житло й домовлятися на рецепції ;; радити місця: Oplatí sa navštíviť… ;; розповідати про поїздку: najprv, potom, nakoniec
+done: Розділ «Подорожі Словаччиною» завершено! Далі — порівняння: lepší, najlepší, rýchlejší ako…
+T: Відмінки в подорожі || Куди? — «do Tatier, do kúpeľov, do Košíc, na hrad, na Rysy». Де? — «v Tatrách, v kúpeľoch, v Košiciach, na hrade, na Rysoch». Чим? — «vlakom, autobusom». Через що? — «cez Žilinu». На скільки? — «na dve noci». || Cestujeme vlakom cez Žilinu do Popradu. = Ми їдемо поїздом через Жиліну до Попраду. ;; Dve noci sme spali v penzióne v Tatrách. = Дві ночі ми спали в пансіоні в Татрах. || do / v · na + знахідний / місцевий · vlakom · cez · na dve noci
+T: Rozprávanie o ceste || Розповідь про поїздку — минулий час і слова послідовності: «najprv» (спочатку), «potom» (потім), «nakoniec» (нарешті). Порадити — «Oplatí sa…». Цікаве місце чи факт — «zaujímavosť»; пам’ятна річ — «suvenír». || Najprv sme boli na Spišskom hrade, potom v Levoči. = Спочатку ми були в Спіському замку, потім у Левочі. ;; Ako suvenír som kúpila drevenú hračku. = На сувенір я купила дерев’яну іграшку. || najprv → potom → nakoniec
+T: Skanzen a cestovateľ || «Skanzen» — музей народної архітектури просто неба: дерев’яні хати, церкви, млини. Відомі скансени є в Мартіні, Зуберці, Бардеївських Купелях і Старій Любовні. Людина, яка любить подорожувати, — «cestovateľ / cestovateľka». || V skanzene v Zuberci sú staré oravské domy. = У скансені в Зуберці є старі оравські хати. ;; Môj brat je skúsený cestovateľ. = Мій брат — досвідчений мандрівник. || skanzen — музей просто неба
+W: cestovateľ | мандрівник | цестователь | Je to cestovateľ, bol už vo všetkých krajoch Slovenska. | Він мандрівник, уже побував в усіх краях Словаччини.
+W: zaujímavosť | цікавинка, цікаве місце | зауї:мавость | Infocentrum vám ukáže zaujímavosti v okolí. | Інфоцентр покаже вам цікаві місця в околицях.
+W: suvenír | сувенір | сувені:р | Z Bardejova sme si priniesli suvenír. | З Бардеєва ми привезли сувенір.
+W: skanzen | скансен, музей просто неба | сканзен | V skanzene sme videli starý mlyn. | У скансені ми бачили старий млин.
+X mt: З’єднай. | cestovateľ = мандрівник ;; zaujímavosť = цікаве місце ;; suvenír = сувенір ;; skanzen = музей просто неба ;; prípoj = поїзд для пересадки ;; prístelka = додаткове ліжко
+X rc: - | Natália a Ihor žijú v Trnave. Na jeseň mali päť dní dovolenky a rozhodli sa spoznať Slovensko. Najprv išli vlakom IC do Popradu. V Tatrách bývali dve noci v penzióne s polpenziou. Prvý deň išli k Popradskému plesu, druhý deň lanovkou na Lomnický štít. Potom išli autobusom do Levoče, kde sa im najviac páčila bazilika s veľkým dreveným oltárom. Odtiaľ to nebolo ďaleko na Spišský hrad. Posledné dva dni strávili v Piešťanoch – Natália mala masáže a Ihor plával v termálnom bazéne. Cestou domov im vlak meškal hodinu, ale boli spokojní.
+q~: Як вони поїхали до Попраду? | *поїздом IC ;; автобусом ;; автомобілем
+q~: Що їм найбільше сподобалося в Левочі? | *базиліка з дерев’яним вівтарем ;; замок ;; скансен
+q~: Що робив Ігор у Піщанах? | *плавав у термальному басейні ;; ходив на масажі ;; лікувався гряззю
+X cz: - | V piatok cestujeme {vlakom} {do} Popradu. V Tatrách budeme bývať {na} dve noci v penzióne {s} raňajkami. V sobotu ideme {na} Rysy. | vlak → ?, прийменники do, na, s
+= vlakom — чим; do Popradu — куди; na dve noci — на скільки; s raňajkami — з чим; na Rysy — куди.
+X dd: Обери. | Mama sa vrátila z [*kúpeľov/kúpeľoch/kúpele] oddýchnutá.
+= z + родовий множини: z kúpeľov.
+X dd: Обери. | Spišský hrad vznikol v dvanástom [*storočí/storočie/storočia].
+= v + місцевий: v dvanástom storočí.
+X fe: - | Minulý rok sme boli na [Rysy>Rysoch] s kolegami.
+= Де? — na + місцевий: na Rysoch.
+X fb: Допиши. | Prosím si jednosmerný lístok do ___. (Prešov) | Prešova |
+= do + родовий: Prešov → do Prešova.
+X sc~: Що робити, якщо ти забув(ла) річ у поїзді? | - | *звернутися в бюро знахідок (straty a nálezy) ;; викликати евакуатор (odťahová služba) ;; подзвонити гірській рятувальній службі
+= Загублені речі шукають у straty a nálezy.
+X ms: Обери правильні речення. | - | *Ideme do Tatier. ;; *Bývali sme v hosteli. ;; *Oplatí sa navštíviť skanzen. ;; Ideme do Tatry. ;; Bývali sme v hostel.
+= do Tatier — родовий; v hosteli — місцевий; oplatí sa — із sa.
+X doc: Прочитай підтвердження бронювання. | Potvrdenie rezervácie | Ubytovanie: Penzión Lipa, Piešťany ;; Termín: 12. – 15. 9. (3 noci) ;; Izba: dvojlôžková s prístelkou ;; Strava: polpenzia ;; Miestny poplatok: platí sa pri príchode | Що входить у харчування? | *сніданок і вечеря ;; лише сніданок ;; харчування немає
+= Polpenzia — сніданок і вечеря.
+X bd: - | Ти чудово спланував(ла) день у Мартіні!
+> Pracovníčka infocentra: Dobrý deň, čo vás zaujíma? | *Dobrý deň, čo sa oplatí vidieť v Martine? ;; Dobrý deň, čo sa oplatí vidieť v Martin? ;; Dobrý deň, čo oplatí sa vidieť v Martine?
+> Pracovníčka infocentra: Určite skanzen – Múzeum slovenskej dediny. | *Ako sa tam dostanem? ;; Ako sa tam dostanem do? ;; Ako tam sa dostanem?
+> Pracovníčka infocentra: Mestským autobusom, zastávka je pri stanici. | *Ďakujem. Aké sú otváracie hodiny? ;; Ďakujem. Aká sú otváracie hodiny? ;; Ďakujem. Aké je otváracie hodiny?
+> Pracovníčka infocentra: Od deviatej do piatej. Chcete aj mapu? | *Áno, prosím. A koľko stojí vstupenka? ;; Áno, prosím. A koľko stoja vstupenka? ;; Áno, prosím. A koľko stojí vstupenku?
+X np: Ти радиш колезі поїхати в скансен у Зуберці. | *Oplatí sa ísť do skanzenu v Zuberci. ;; Oplatí sa ísť do skanzen v Zuberci. ;; Oplatí ísť do skanzenu v Zuberci. ;; Oplatí sa ísť do skanzenu v Zuberec.
+= do + родовий: do skanzenu; v + місцевий: v Zuberci; oplatí sa — із sa.
+X msg: Прочитай повідомлення від подруги. | Kateryna | Ahoj! Sme v Bojniciach. Ráno sme boli na zámku, bola tam aj prehliadka s legendou o duchoch. Poobede ideme do zoo, je hneď vedľa. Zajtra sa vraciame autobusom cez Prievidzu. | Що вони робитимуть після обіду? | *підуть у зоопарк ;; поїдуть додому ;; підуть на екскурсію замком
+= Poobede ideme do zoo — після обіду йдемо в зоопарк.
+X do: Склади телефонну розмову з пансіоном. | Recepčná: Penzión Lipa, dobrý deň. ;; Hosť: Dobrý deň, máte voľnú izbu od piatku do nedele? ;; Recepčná: Áno, máme. Pre koľko osôb? ;; Hosť: Pre dvoch dospelých a jedno dieťa, potrebujeme aj prístelku. ;; Recepčná: Dobre, prístelku vám dáme. Na aké meno? ;; Hosť: Na meno Šapoval. Ďakujem.
+= Привітання → запит → кількість осіб → додаткове ліжко → прізвище.
+X tf: - | - | «Skanzen» — це музей просто неба. | T
+= У скансені під відкритим небом стоять старі хати, церкви й млини.
+F: Твій маршрут Словаччиною || Друг з України приїжджає на тиждень, і ти плануєш для нього подорож Словаччиною.
+S: Друг питає, як дістатися з Братислави до Татр. | *Vlakom IC do Popradu, je to priamy vlak. ;; S vlakom IC do Popradu, je to priamy vlak. ;; Vlakom IC do Poprad, je to priamy vlak.
+S: Ти пропонуєш житло. | *Môžeme bývať v penzióne s raňajkami. ;; Môžeme bývať v penzión s raňajkami. ;; Môžeme bývať v penzióne s raňajky.
+S: Друг питає: «Čo sa oplatí vidieť na Spiši?» | *Oplatí sa vidieť Spišský hrad a Levoču. ;; Oplatí sa vidieť Spišský hrad a Levoča. ;; Oplatí sa vidieť Spišského hradu a Levoči.
+S: Друг загубив телефон у поїзді. Що порадиш? | *звернутися в бюро знахідок (straty a nálezy) ;; викликати евакуатор (odťahová služba) ;; подзвонити гірській рятувальній службі
+R: do Tatier — v Tatrách; vlakom cez Žilinu; na dve noci ;; rezervácia na meno, Mohli by ste…? ;; Oplatí sa navštíviť…; skanzen, zaujímavosť, suvenír ;; najprv, potom, nakoniec
