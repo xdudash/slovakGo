@@ -48,6 +48,63 @@ export async function handleTeacherStats(req: VercelRequest, res: VercelResponse
   });
 }
 
+/**
+ * Activation funnel for students who registered in the last 30 days, plus the
+ * lessons where learners most often start but do not finish. Answers "where do
+ * new users get stuck?" without exporting anything.
+ */
+export async function activationFunnel(now: number) {
+  const since = new Date(now - 30 * 86400_000).toISOString().replace(/\.\d{3}Z$/, "Z");
+  await exec(
+    `CREATE TABLE IF NOT EXISTS events (
+       id INTEGER PRIMARY KEY AUTOINCREMENT,
+       user_id TEXT, name TEXT NOT NULL,
+       props_j TEXT NOT NULL DEFAULT '{}', created_at TEXT NOT NULL)`
+  );
+  const cohort = `SELECT id FROM users WHERE role = 'student' AND is_blocked = 0 AND created_at >= ? AND email NOT LIKE '%@example.com'`;
+  const done = (min: number) => queryOne(
+    `SELECT COUNT(*) as c FROM progress WHERE user_id IN (${cohort}) AND json_array_length(completed_j) >= ?`, [since, min]);
+  const [registered, onboarded, started, done1, done3, done10, paying] = await Promise.all([
+    queryOne(`SELECT COUNT(*) as c FROM (${cohort})`, [since]),
+    queryOne(`SELECT COUNT(*) as c FROM users WHERE ob_done = 1 AND id IN (${cohort})`, [since]),
+    queryOne(
+      `SELECT COUNT(DISTINCT user_id) as c FROM (
+         SELECT user_id FROM events WHERE name = 'lesson_start' AND user_id IN (${cohort})
+         UNION SELECT user_id FROM progress WHERE json_array_length(completed_j) >= 1 AND user_id IN (${cohort}))`,
+      [since, since]),
+    done(1), done(3), done(10),
+    queryOne(`SELECT COUNT(*) as c FROM users WHERE sub_status IN ('plus', 'trial', 'past_due') AND id IN (${cohort})`, [since]),
+  ]);
+  const n = (r: Record<string, unknown> | null | undefined) => Number(r?.c ?? 0);
+  const steps = [
+    { key: "registered", label: "Зареєструвались", count: n(registered) },
+    { key: "onboarded", label: "Пройшли онбординг", count: n(onboarded) },
+    { key: "started", label: "Почали урок", count: n(started) },
+    { key: "done1", label: "Завершили 1+ урок", count: n(done1) },
+    { key: "done3", label: "Завершили 3+ уроки", count: n(done3) },
+    { key: "done10", label: "Пройшли 10 безкоштовних", count: n(done10) },
+    { key: "paying", label: "Підписка / trial", count: n(paying) },
+  ];
+
+  const lessonRows = await query(
+    `SELECT json_extract(props_j, '$.lessonId') as lesson_id,
+            COUNT(DISTINCT CASE WHEN name = 'lesson_start' THEN user_id END) as started,
+            COUNT(DISTINCT CASE WHEN name = 'lesson_complete' THEN user_id END) as completed
+       FROM events
+      WHERE name IN ('lesson_start', 'lesson_complete') AND created_at >= ? AND user_id IS NOT NULL
+        AND user_id IN (SELECT id FROM users WHERE role = 'student')
+      GROUP BY lesson_id`,
+    [since]
+  );
+  const lessonDropoff = lessonRows
+    .map((r) => ({ lessonId: String(r.lesson_id ?? ""), started: Number(r.started), completed: Number(r.completed) }))
+    .filter((r) => r.lessonId && r.started >= 2 && r.started > r.completed)
+    .sort((a, b) => (b.started - b.completed) - (a.started - a.completed) || b.started - a.started)
+    .slice(0, 8);
+
+  return { since, steps, lessonDropoff };
+}
+
 export async function handleAdminStats(req: VercelRequest, res: VercelResponse): Promise<void> {
   const uid = await requireUid(req, res); if (!uid) return;
   if (!(await checkRole(uid, "admin"))) return fail(res, "Недостатньо прав", 403);
@@ -98,8 +155,11 @@ export async function handleAdminStats(req: VercelRequest, res: VercelResponse):
     if (diff >= 30 * 86400_000) retention[m].d30++;
   }
 
+  const funnel = await activationFunnel(now);
+
   respond(res, {
     ok: true,
+    funnel,
     summary: {
       totalUsers: Number(total?.c ?? 0), active24h: Number(a24?.c ?? 0),
       active7d:   Number(a7?.c ?? 0),   plusUsers: Number(plus?.c ?? 0),
