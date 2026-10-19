@@ -833,6 +833,19 @@ describe("GET /admin/stats", () => {
     expect(typeof body.levels).toBe("object");
   });
 
+  it("computes cohort retention from learning activity, not profile edits", async () => {
+    const db = createClient({ url: `file:${TEST_DB}` });
+    await db.batch([
+      "INSERT INTO users (id, email, name_text, role, level, sub_status, created_at, updated_at) VALUES ('ret-1','ret1@ret.test','R1','student','A0','free','2019-03-01T10:00:00Z','2019-03-01T10:00:00Z')",
+      "INSERT INTO users (id, email, name_text, role, level, sub_status, created_at, updated_at) VALUES ('ret-2','ret2@ret.test','R2','student','A0','free','2019-03-02T10:00:00Z','2019-03-02T10:00:00Z')",
+      "INSERT INTO progress (user_id, last_prac, completed_j, updated_at) VALUES ('ret-1', '2019-03-10', '[\"x\"]', '2019-03-10T12:00:00Z')",
+    ], "write");
+    db.close();
+    const { body } = await call("GET", ["admin", "stats"], { cookie: await makeCookie("admin-1") });
+    const march = (body.retention as Record<string, { total: number; d1: number; d7: number; d30: number }>)["2019-03"];
+    expect(march).toEqual({ total: 2, d1: 1, d7: 1, d30: 0 });
+  });
+
   it("returns an activation funnel and lesson drop-off for recent students", async () => {
     const db = createClient({ url: `file:${TEST_DB}` });
     const now = new Date().toISOString();
