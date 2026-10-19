@@ -986,6 +986,11 @@ interface AdminStats {
   dailyRegistrations: Array<{ date: string; count: number }>;
   mistakeHeatmap: Record<string, { total: number; exercises: Record<string, number> }>;
   retention: Record<string, { total: number; d1: number; d7: number; d30: number }>;
+  funnel?: {
+    since: string;
+    steps: Array<{ key: string; label: string; count: number }>;
+    lessonDropoff: Array<{ lessonId: string; started: number; completed: number }>;
+  };
 }
 
 function Stats() {
@@ -1004,7 +1009,8 @@ function Stats() {
   if (loading) return <main className="page-content"><PageHeader title="Статистика" /><p style={{ color: "var(--muted)" }}>Завантаження…</p></main>;
   if (error || !stats) return <main className="page-content"><PageHeader title="Статистика" /><p style={{ color: "var(--red)" }}>Не вдалося завантажити дані з сервера.</p></main>;
 
-  const { summary, levels, dailyRegistrations, mistakeHeatmap, retention } = stats;
+  const { summary, levels, dailyRegistrations, mistakeHeatmap, retention, funnel } = stats;
+  const funnelTop = funnel?.steps[0]?.count || 0;
 
   return (
     <main className="page-content">
@@ -1019,6 +1025,47 @@ function Stats() {
         <Card className="admin-stat-card"><strong>{summary.avgXP}</strong><span>Сер. XP</span></Card>
         <Card className="admin-stat-card"><strong>{summary.avgStreak}</strong><span>Сер. серія</span></Card>
       </div>
+
+      {/* Activation funnel */}
+      {funnel && (
+        <>
+          <h3 className="admin-section-title">Воронка активації (нові учні за 30 днів)</h3>
+          <Card>
+            {funnel.steps.map((step, i) => {
+              const prev = i > 0 ? funnel.steps[i - 1].count : step.count;
+              const share = funnelTop ? Math.round((step.count / funnelTop) * 100) : 0;
+              const fromPrev = prev ? Math.round((step.count / prev) * 100) : 0;
+              return (
+                <div key={step.key} className="admin-detail-row">
+                  <span style={{ minWidth: "12rem" }}>{step.label}</span>
+                  <div className="admin-bar-wrap">
+                    <div className="admin-bar" style={{ width: `${share}%` }} />
+                  </div>
+                  <strong>{step.count}</strong>
+                  <span style={{ color: "var(--muted)", minWidth: "4.5rem", textAlign: "right" }}>{i === 0 ? "100%" : `${fromPrev}% ↓`}</span>
+                </div>
+              );
+            })}
+          </Card>
+          {funnel.lessonDropoff.length > 0 && (
+            <>
+              <h3 className="admin-section-title">Де кидають уроки (почали, але не завершили)</h3>
+              <Card>
+                {funnel.lessonDropoff.map((row) => {
+                  const lesson = data.lessons.find((l) => l.id === row.lessonId);
+                  return (
+                    <div key={row.lessonId} className="admin-detail-row">
+                      <span>{toPlainText(lesson?.title) || row.lessonId}{lesson ? ` · ${lesson.level}` : ""}</span>
+                      <strong>{row.completed}/{row.started}</strong>
+                      <span style={{ color: "var(--muted)" }}>кинули {row.started - row.completed}</span>
+                    </div>
+                  );
+                })}
+              </Card>
+            </>
+          )}
+        </>
+      )}
 
       {/* Retention Cohorts */}
       <h3 className="admin-section-title">Retention (когорти за місяцем)</h3>

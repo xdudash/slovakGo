@@ -832,6 +832,29 @@ describe("GET /admin/stats", () => {
     expect(Array.isArray(body.dailyRegistrations)).toBe(true);
     expect(typeof body.levels).toBe("object");
   });
+
+  it("returns an activation funnel and lesson drop-off for recent students", async () => {
+    const db = createClient({ url: `file:${TEST_DB}` });
+    const now = new Date().toISOString();
+    await db.batch([
+      { sql: "INSERT INTO users (id, email, name_text, role, level, sub_status, ob_done, created_at, updated_at) VALUES ('fun-1','fun1@funnel.test','F1','student','A0','free',1,?,?)", args: [now, now] },
+      { sql: "INSERT INTO users (id, email, name_text, role, level, sub_status, ob_done, created_at, updated_at) VALUES ('fun-2','fun2@funnel.test','F2','student','A0','free',1,?,?)", args: [now, now] },
+      { sql: "INSERT INTO users (id, email, name_text, role, level, sub_status, ob_done, created_at, updated_at) VALUES ('fun-3','fun3@funnel.test','F3','student','A0','free',0,?,?)", args: [now, now] },
+      { sql: "INSERT INTO progress (user_id, completed_j, updated_at) VALUES ('fun-1', '[\"funnel-lesson\"]', ?)", args: [now] },
+      "CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id TEXT, name TEXT NOT NULL, props_j TEXT NOT NULL DEFAULT '{}', created_at TEXT NOT NULL)",
+      { sql: "INSERT INTO events (user_id, name, props_j, created_at) VALUES ('fun-1','lesson_start','{\"lessonId\":\"funnel-lesson\"}',?), ('fun-1','lesson_complete','{\"lessonId\":\"funnel-lesson\"}',?), ('fun-2','lesson_start','{\"lessonId\":\"funnel-lesson\"}',?)", args: [now, now, now] },
+    ], "write");
+    db.close();
+
+    const { body } = await call("GET", ["admin", "stats"], { cookie: await makeCookie("admin-1") });
+    const funnel = body.funnel as { steps: { key: string; count: number }[]; lessonDropoff: { lessonId: string; started: number; completed: number }[] };
+    const step = (k: string) => funnel.steps.find((s) => s.key === k)!.count;
+    expect(step("registered")).toBeGreaterThanOrEqual(3);
+    expect(step("onboarded")).toBeLessThan(step("registered"));
+    expect(step("started")).toBeGreaterThanOrEqual(2);
+    expect(step("done1")).toBeGreaterThanOrEqual(1);
+    expect(funnel.lessonDropoff).toContainEqual({ lessonId: "funnel-lesson", started: 2, completed: 1 });
+  });
 });
 
 describe("POST /admin/users/:id", () => {
