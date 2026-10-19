@@ -149,15 +149,35 @@ window.addEventListener("load", async () => {
         document.body.appendChild(banner);
       }
 
+      // Right after the app opens nothing is lost by reloading, so a new version
+      // found then is applied at once (a plain reload never activates a waiting
+      // worker, which left people on the old version). Once the user has started
+      // interacting, the update waits for the banner or for the tab to be hidden.
+      const bootAt = Date.now();
+      let interacted = false;
+      const markInteracted = () => { interacted = true; };
+      window.addEventListener("pointerdown", markInteracted, { once: true, capture: true });
+      window.addEventListener("keydown", markInteracted, { once: true, capture: true });
+      const onAuthForm = () => /^\/(register|login|forgot-password|reset-password)(\/|$)/.test(window.location.pathname);
+      function handleWaiting(registration: ServiceWorkerRegistration) {
+        if (!registration.waiting) return;
+        if (!interacted && Date.now() - bootAt < 20_000 && !onAuthForm()) {
+          registration.waiting.postMessage("SKIP_WAITING");
+          return;
+        }
+        showUpdateBanner(registration);
+      }
+
       // A new SW may already be waiting right after registration (e.g. page reload during update)
-      if (reg.waiting) showUpdateBanner(reg);
+      if (reg.waiting) handleWaiting(reg);
 
       // Apply a waiting update while the learner is away from the tab, so nobody
       // stays on an old version forever. Skipped on auth forms (typed data would
       // be lost); lesson position is restored from the lesson draft.
+      // Returning to the app also checks for a newer deploy.
       document.addEventListener("visibilitychange", () => {
-        if (!document.hidden || !reg.waiting) return;
-        if (/^\/(register|login|forgot-password|reset-password)(\/|$)/.test(window.location.pathname)) return;
+        if (!document.hidden) { reg.update().catch(() => undefined); return; }
+        if (!reg.waiting || onAuthForm()) return;
         reg.waiting.postMessage("SKIP_WAITING");
       });
 
@@ -167,7 +187,7 @@ window.addEventListener("load", async () => {
         if (!next) return;
         next.addEventListener("statechange", () => {
           if (next.state === "installed" && reg.waiting) {
-            showUpdateBanner(reg);
+            handleWaiting(reg);
           }
         });
       });
