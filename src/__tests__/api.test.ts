@@ -1072,6 +1072,28 @@ describe("growth and access regressions", () => {
 });
 
 describe("automatic email delivery", () => {
+  it("sends an account-created email to every new registration, once, without blocking sign-up", async () => {
+    await resetRateLimit();
+    process.env.RESEND_API_KEY = "test-resend";
+    const provider = vi.spyOn(globalThis, "fetch").mockResolvedValue(new Response(JSON.stringify({ id: "welcome-1" }), { status: 200 }));
+    try {
+      const reg = await call("POST", ["auth", "register"], { body: { email: "welcome@test-mail.com", password: "Secret123", name: "Welcome", marketingConsent: false } });
+      expect(reg.status).toBe(201);
+      expect(provider).toHaveBeenCalledTimes(1);
+      const payload = JSON.parse(String(provider.mock.calls[0][1]!.body));
+      expect(payload.to).toBe("welcome@test-mail.com");
+      expect(payload.html).not.toContain("Відписатися");
+      const uid = String((reg.body.user as Record<string, unknown>).id);
+      const { sendWelcomeEmail } = await import("../../api/_lib/welcome");
+      expect(await sendWelcomeEmail(uid, "welcome@test-mail.com", "Welcome")).toBe(false);
+      expect(provider).toHaveBeenCalledTimes(1);
+
+      provider.mockRejectedValueOnce(new Error("provider down"));
+      const second = await call("POST", ["auth", "register"], { body: { email: "welcome2@test-mail.com", password: "Secret123", name: "W2" } });
+      expect(second.status).toBe(201);
+    } finally { provider.mockRestore(); delete process.env.RESEND_API_KEY; }
+  });
+
   it("sends only with explicit consent, records provider acceptance and does not repeat", async () => {
     const { default: lifecycle } = await import("../../api/cron/lifecycle");
     const { saveConsent } = await import("../../api/_lib/emailPreferences");
