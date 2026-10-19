@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, Field, Modal, PageHeader } from "../../components/ui";
-import { apiClient } from "../../services/apiClient";
+import { apiClient, type CoursePlan } from "../../services/apiClient";
 import { selectCurrentUser, useAppStore } from "../../store/useAppStore";
 import type { Lesson, UserLevel, UserRole } from "../../types";
 import { toPlainText } from "../../utils/lessonLocale";
@@ -360,6 +360,96 @@ type BulkImportPhase =
   | { phase: "importing"; done: number; total: number }
   | { phase: "done"; imported: number; skipped: number; errors: Array<{ id: string; error: string }> };
 
+// ── COURSE DEPLOY ────────────────────────────────────────────────────────────
+type CourseRun =
+  | { phase: "idle" }
+  | { phase: "running"; label: string; done: number; total: number }
+  | { phase: "done"; deleted: number; lessons: number; backupId: string }
+  | { phase: "error"; message: string };
+
+function CourseDeployCard() {
+  const [plan, setPlan] = useState<CoursePlan | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [confirming, setConfirming] = useState(false);
+  const [run, setRun] = useState<CourseRun>({ phase: "idle" });
+
+  const load = useCallback(() => {
+    setLoadError(null);
+    apiClient.getCoursePlan()
+      .then((r) => setPlan(r.plan))
+      .catch((e: Error) => setLoadError(e.message));
+  }, []);
+  useEffect(() => { load(); }, [load]);
+
+  async function deploy() {
+    setConfirming(false);
+    try {
+      setRun({ phase: "running", label: "Резервна копія поточних уроків…", done: 0, total: plan?.course ?? 0 });
+      const backup = await apiClient.courseStep({ step: "backup" });
+      let offset = 0;
+      for (;;) {
+        setRun({ phase: "running", label: "Завантаження уроків курсу…", done: offset, total: plan?.course ?? 0 });
+        const r = await apiClient.courseStep({ step: "upsert", offset, limit: 40 });
+        offset = r.next ?? offset;
+        if (r.done || !r.written) break;
+      }
+      setRun({ phase: "running", label: "Прибираємо старі уроки…", done: offset, total: offset });
+      const cleanup = await apiClient.courseStep({ step: "cleanup" });
+      setRun({ phase: "done", deleted: cleanup.deleted ?? 0, lessons: cleanup.lessons ?? 0, backupId: backup.backupId ?? "" });
+      await useAppStore.getState().refreshLessons().catch(() => undefined);
+      load();
+    } catch (e) {
+      setRun({ phase: "error", message: (e as Error).message });
+    }
+  }
+
+  const busy = run.phase === "running";
+  return (
+    <Card className="course-deploy-card">
+      <h3 style={{ marginTop: 0 }}>Курс SlovakGO A0–C2</h3>
+      {loadError && <p className="error-text">Не вдалося прочитати курс: {loadError} <button type="button" className="link-button" onClick={load}>Ще раз</button></p>}
+      {!plan && !loadError && <p style={{ color: "var(--muted)" }}>Перевіряємо файли курсу…</p>}
+      {plan && (
+        <>
+          <p>
+            У курсі <strong>{plan.course}</strong> уроків ({Object.entries(plan.levels).map(([l, n]) => `${l}: ${n}`).join(", ")}).
+            Зараз у застосунку <strong>{plan.existing}</strong>.
+          </p>
+          <ul style={{ margin: "0 0 1rem", paddingLeft: "1.2rem" }}>
+            <li>Нових уроків: <strong>{plan.toInsert}</strong>, оновиться: <strong>{plan.toUpdate}</strong></li>
+            <li>Старих уроків, яких немає в курсі: <strong>{plan.toDelete}</strong> (спершу збережуться в резервну копію)</li>
+            {plan.lastBackup && <li>Остання резервна копія: {new Date(plan.lastBackup.at).toLocaleString()} · {plan.lastBackup.lessons} уроків</li>}
+          </ul>
+          {plan.toInsert === 0 && plan.toDelete === 0 && run.phase !== "done" && <p>✓ Курс уже розгорнуто.</p>}
+          {(plan.toInsert > 0 || plan.toDelete > 0 || plan.toUpdate > 0) && (
+            <Button disabled={busy} onClick={() => setConfirming(true)}>Розгорнути курс</Button>
+          )}
+        </>
+      )}
+      {run.phase === "running" && (
+        <div style={{ marginTop: "1rem" }}>
+          <p>{run.label} {run.total ? `${Math.min(run.done, run.total)} / ${run.total}` : ""}</p>
+          <div className="admin-bar-wrap"><div className="admin-bar" style={{ width: `${run.total ? Math.round((Math.min(run.done, run.total) / run.total) * 100) : 0}%` }} /></div>
+          <p style={{ color: "var(--muted)" }}>Не закривай сторінку до завершення.</p>
+        </div>
+      )}
+      {run.phase === "done" && <p style={{ marginTop: "1rem" }}>✓ Готово: у застосунку {run.lessons} уроків, прибрано старих: {run.deleted}. Резервна копія: {run.backupId}.</p>}
+      {run.phase === "error" && <p className="error-text" style={{ marginTop: "1rem" }}>Помилка: {run.message}. Можна натиснути «Розгорнути курс» ще раз — кроки безпечно повторюються.</p>}
+      {confirming && plan && (
+        <Modal label="Підтвердження розгортання курсу">
+          <Card className="modal-card">
+            <h2>Розгорнути курс?</h2>
+            <p>Буде завантажено {plan.course} уроків курсу. {plan.toDelete > 0 ? `${plan.toDelete} старих уроків буде видалено після резервної копії.` : ""}</p>
+            <p>Учні, які проходили старі уроки, почнуть новий курс з початку свого рівня. XP і серії залишаться, а старі уроки не забиратимуть безкоштовний ліміт.</p>
+            <Button onClick={deploy}>Так, розгорнути</Button>
+            <Button variant="secondary" onClick={() => setConfirming(false)}>Скасувати</Button>
+          </Card>
+        </Modal>
+      )}
+    </Card>
+  );
+}
+
 function ImportScreen() {
   const { data, bulkSetLessons } = useAdminData();
   const [state,    setState]   = useState<BulkImportPhase>({ phase: "idle" });
@@ -450,6 +540,8 @@ function ImportScreen() {
   return (
     <main className="page-content">
       <PageHeader title="Масовий імпорт уроків" subtitle="JSON, до 100 уроків за раз" />
+
+      <CourseDeployCard />
 
       {/* Mode selector */}
       <div className="import-mode-row">

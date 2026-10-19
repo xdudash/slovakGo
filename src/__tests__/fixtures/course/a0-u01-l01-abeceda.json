@@ -1,0 +1,884 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u01-l01-abeceda",
+      "sectionId": "a0-u01",
+      "level": "A0",
+      "title": "Словацька абетка: перше знайомство",
+      "topic": "Абетка і звуки",
+      "description": "Як влаштована словацька абетка: які літери читаються як українські, а які — інакше. Перші слова, які ти прочитаєш сам.",
+      "order": 1,
+      "xpReward": 15,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Навчитися читати прості словацькі слова латиницею й розуміти знаки над літерами.",
+      "completionMessage": "Ти вже читаєш прості словацькі слова! Далі — голосні та довгі звуки.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Абетка і звуки",
+        "title": "Словацька абетка: перше знайомство",
+        "shortDescription": "Навчитися читати прості словацькі слова латиницею й розуміти знаки над літерами.",
+        "outcomes": [
+          "читати латинські літери, що звучать як українські",
+          "розпізнавати «пастки»: c, h, ch, j, y",
+          "знати, що означають знаки ´ ˇ ˆ",
+          "прочитати перші шість слів"
+        ],
+        "newWords": [
+          "dom",
+          "voda",
+          "mesto",
+          "chlieb",
+          "syr",
+          "cena"
+        ],
+        "exercisesCount": 13,
+        "reward": "+15 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Латиниця, але логічна",
+          "text": "Словацька пише латиницею, проте читається майже так, як пишеться: одна літера — один звук. Це значно простіше, ніж англійська. Наголос у словацькій завжди падає на ПЕРШИЙ склад слова — без винятків у звичайних словах.",
+          "examples": [
+            {
+              "sk": "dom",
+              "uk": "дім"
+            },
+            {
+              "sk": "voda",
+              "uk": "вода"
+            },
+            {
+              "sk": "mesto",
+              "uk": "місто"
+            }
+          ],
+          "shortRule": "Одна літера — один звук. Наголос — завжди на першому складі.",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Літери-«друзі»",
+          "text": "Більшість літер читаються так, як ти й очікуєш. Прочитай їх уголос — це вже половина абетки.",
+          "examples": [
+            {
+              "sk": "banka",
+              "uk": "банк"
+            },
+            {
+              "sk": "auto",
+              "uk": "авто"
+            },
+            {
+              "sk": "tu",
+              "uk": "тут"
+            },
+            {
+              "sk": "ruka",
+              "uk": "рука"
+            }
+          ],
+          "shortRule": "Ці літери читай «по-українськи».",
+          "alphabetGroups": [
+            {
+              "title": "Як в українській",
+              "letters": [
+                "a",
+                "b",
+                "d",
+                "e",
+                "f",
+                "k",
+                "l",
+                "m",
+                "n",
+                "o",
+                "p",
+                "r",
+                "s",
+                "t",
+                "u",
+                "v",
+                "z"
+              ],
+              "noteUk": "e читається як українське «е», а не «є»"
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Літери-«пастки»",
+          "text": "Кілька латинських літер читаються не так, як в англійській. Запам’ятай їх одразу — вони трапляються в кожному тексті.",
+          "examples": [
+            {
+              "sk": "cena",
+              "uk": "ціна"
+            },
+            {
+              "sk": "hora",
+              "uk": "гора"
+            },
+            {
+              "sk": "chlieb",
+              "uk": "хліб"
+            },
+            {
+              "sk": "jablko",
+              "uk": "яблуко"
+            },
+            {
+              "sk": "syr",
+              "uk": "сир"
+            }
+          ],
+          "shortRule": "c = ц, h = г, ch = х, j = й, y = і, g = ґ",
+          "pronunciationRows": [
+            {
+              "letter": "c",
+              "readUk": "ц",
+              "exampleSk": "cena",
+              "exampleUk": "ціна"
+            },
+            {
+              "letter": "h",
+              "readUk": "г (м’яке, як в «гора»)",
+              "exampleSk": "hora",
+              "exampleUk": "гора"
+            },
+            {
+              "letter": "ch",
+              "readUk": "х",
+              "exampleSk": "chlieb",
+              "exampleUk": "хліб"
+            },
+            {
+              "letter": "j",
+              "readUk": "й",
+              "exampleSk": "jablko",
+              "exampleUk": "яблуко"
+            },
+            {
+              "letter": "y",
+              "readUk": "і",
+              "exampleSk": "syr",
+              "exampleUk": "сир"
+            },
+            {
+              "letter": "g",
+              "readUk": "ґ",
+              "exampleSk": "guma",
+              "exampleUk": "гумка"
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-4",
+          "screenType": "theory",
+          "order": 4,
+          "title": "Знаки над літерами",
+          "text": "Словацька має три важливі знаки. Dĺžeň (´) робить голосний довшим: á, é, í, ó, ú, ý. Mäkčeň (ˇ) дає шиплячий або м’який звук: č, š, ž, ď, ť, ň, ľ. Vokáň (ˆ) буває лише в ô і читається «уо». У підказках вимови довгий звук позначаємо двокрапкою: á = «а:».",
+          "examples": [
+            {
+              "sk": "dáma",
+              "uk": "пані"
+            },
+            {
+              "sk": "čaj",
+              "uk": "чай"
+            },
+            {
+              "sk": "kôň",
+              "uk": "кінь"
+            }
+          ],
+          "shortRule": "´ — довше, ˇ — м’якше/шиплячий, ô = «уо».",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u01-l01-abeceda-w01",
+            "sk": "dom",
+            "uk": "дім",
+            "pronunciationUk": "дом",
+            "exampleSk": "Náš dom je malý.",
+            "exampleUk": "Наш дім маленький."
+          },
+          {
+            "wordId": "a0-u01-l01-abeceda-w02",
+            "sk": "voda",
+            "uk": "вода",
+            "pronunciationUk": "вода",
+            "exampleSk": "Voda je studená.",
+            "exampleUk": "Вода холодна."
+          },
+          {
+            "wordId": "a0-u01-l01-abeceda-w03",
+            "sk": "mesto",
+            "uk": "місто",
+            "pronunciationUk": "место",
+            "exampleSk": "Bratislava je veľké mesto.",
+            "exampleUk": "Братислава — велике місто."
+          },
+          {
+            "wordId": "a0-u01-l01-abeceda-w04",
+            "sk": "chlieb",
+            "uk": "хліб",
+            "pronunciationUk": "хлієб",
+            "exampleSk": "Chlieb je čerstvý.",
+            "exampleUk": "Хліб свіжий."
+          },
+          {
+            "wordId": "a0-u01-l01-abeceda-w05",
+            "sk": "syr",
+            "uk": "сир",
+            "pronunciationUk": "сір",
+            "exampleSk": "Syr je v chladničke.",
+            "exampleUk": "Сир у холодильнику."
+          },
+          {
+            "wordId": "a0-u01-l01-abeceda-w06",
+            "sk": "cena",
+            "uk": "ціна",
+            "pronunciationUk": "цена",
+            "exampleSk": "Aká je cena?",
+            "exampleUk": "Яка ціна?"
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u01-l01-abeceda-w01",
+          "sk": "dom",
+          "uk": "дім",
+          "pronunciationUk": "дом",
+          "exampleSk": "Náš dom je malý.",
+          "exampleUk": "Наш дім маленький.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l01-abeceda-w02",
+          "sk": "voda",
+          "uk": "вода",
+          "pronunciationUk": "вода",
+          "exampleSk": "Voda je studená.",
+          "exampleUk": "Вода холодна.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l01-abeceda-w03",
+          "sk": "mesto",
+          "uk": "місто",
+          "pronunciationUk": "место",
+          "exampleSk": "Bratislava je veľké mesto.",
+          "exampleUk": "Братислава — велике місто.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l01-abeceda-w04",
+          "sk": "chlieb",
+          "uk": "хліб",
+          "pronunciationUk": "хлієб",
+          "exampleSk": "Chlieb je čerstvý.",
+          "exampleUk": "Хліб свіжий.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l01-abeceda-w05",
+          "sk": "syr",
+          "uk": "сир",
+          "pronunciationUk": "сір",
+          "exampleSk": "Syr je v chladničke.",
+          "exampleUk": "Сир у холодильнику.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l01-abeceda-w06",
+          "sk": "cena",
+          "uk": "ціна",
+          "pronunciationUk": "цена",
+          "exampleSk": "Aká je cena?",
+          "exampleUk": "Яка ціна?",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u01-l01-abeceda-ex01",
+          "lessonId": "a0-u01-l01-abeceda",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Як читається літера «h» у слові «hora»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "як «ґ»",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "як «х»",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "як українське «г»",
+              "correct": true
+            }
+          ],
+          "explanation": "Словацьке h — дзвінке, майже як українське «г»: hora = гора. Звук «х» пишеться як ch.",
+          "order": 1
+        },
+        {
+          "id": "a0-u01-l01-abeceda-ex02",
+          "lessonId": "a0-u01-l01-abeceda",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Як читається «ch» у слові «chlieb»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "ч",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "ц",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "х",
+              "correct": true
+            }
+          ],
+          "explanation": "Дві літери ch дають один звук «х»: chlieb = хліб.",
+          "order": 2
+        },
+        {
+          "id": "a0-u01-l01-abeceda-ex03",
+          "lessonId": "a0-u01-l01-abeceda",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай літеру з тим, як вона читається.",
+          "pairs": [
+            {
+              "left": "c",
+              "right": "ц"
+            },
+            {
+              "left": "j",
+              "right": "й"
+            },
+            {
+              "left": "y",
+              "right": "і"
+            },
+            {
+              "left": "ch",
+              "right": "х"
+            },
+            {
+              "left": "h",
+              "right": "г"
+            }
+          ],
+          "order": 3
+        },
+        {
+          "id": "a0-u01-l01-abeceda-ex04",
+          "lessonId": "a0-u01-l01-abeceda",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яке слово означає «вода»?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "dom",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "voda",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "hora",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "cena",
+              "correct": false
+            }
+          ],
+          "explanation": "voda читається так само, як українське «вода», тільки наголос завжди на першому складі: VO-da.",
+          "order": 4,
+          "wordIds": [
+            "a0-u01-l01-abeceda-w01",
+            "a0-u01-l01-abeceda-w02",
+            "a0-u01-l01-abeceda-w06"
+          ]
+        },
+        {
+          "id": "a0-u01-l01-abeceda-ex05",
+          "lessonId": "a0-u01-l01-abeceda",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай слово з перекладом.",
+          "pairs": [
+            {
+              "left": "dom",
+              "right": "дім"
+            },
+            {
+              "left": "mesto",
+              "right": "місто"
+            },
+            {
+              "left": "chlieb",
+              "right": "хліб"
+            },
+            {
+              "left": "syr",
+              "right": "сир"
+            },
+            {
+              "left": "cena",
+              "right": "ціна"
+            }
+          ],
+          "order": 5,
+          "wordIds": [
+            "a0-u01-l01-abeceda-w01",
+            "a0-u01-l01-abeceda-w03",
+            "a0-u01-l01-abeceda-w04",
+            "a0-u01-l01-abeceda-w05",
+            "a0-u01-l01-abeceda-w06"
+          ]
+        },
+        {
+          "id": "a0-u01-l01-abeceda-ex06",
+          "lessonId": "a0-u01-l01-abeceda",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "На який склад падає наголос у слові «banka»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "на другий: ban-KA",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "на перший: BAN-ka",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "залежить від слова",
+              "correct": false
+            }
+          ],
+          "explanation": "У словацькій наголос завжди на першому складі. Це правило працює майже для всіх слів.",
+          "order": 6
+        },
+        {
+          "id": "a0-u01-l01-abeceda-ex07",
+          "lessonId": "a0-u01-l01-abeceda",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери всі слова, де є довгий голосний (знак ´).",
+          "options": [
+            {
+              "id": "a",
+              "sk": "voda",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "dáma",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "múka",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "syr",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "víno",
+              "correct": true
+            },
+            {
+              "id": "f",
+              "sk": "mesto",
+              "correct": false
+            }
+          ],
+          "explanation": "Знак ´ (dĺžeň) подовжує голосний: dáma, víno, múka. У voda, syr, mesto всі голосні короткі.",
+          "order": 7,
+          "wordIds": [
+            "a0-u01-l01-abeceda-w02",
+            "a0-u01-l01-abeceda-w03",
+            "a0-u01-l01-abeceda-w05"
+          ]
+        },
+        {
+          "id": "a0-u01-l01-abeceda-ex08",
+          "lessonId": "a0-u01-l01-abeceda",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Розклади слова: як читається перша літера?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Читається «ц»"
+            },
+            {
+              "id": "c2",
+              "title": "Читається «ч»"
+            }
+          ],
+          "items": [
+            {
+              "sk": "cesta",
+              "category": "c1"
+            },
+            {
+              "sk": "čas",
+              "category": "c2"
+            },
+            {
+              "sk": "cena",
+              "category": "c1"
+            },
+            {
+              "sk": "čisto",
+              "category": "c2"
+            },
+            {
+              "sk": "čaj",
+              "category": "c2"
+            },
+            {
+              "sk": "cukor",
+              "category": "c1"
+            }
+          ],
+          "explanation": "c без знаку = «ц», č із гачком (mäkčeň) = «ч».",
+          "order": 8,
+          "wordIds": [
+            "a0-u01-l01-abeceda-w06"
+          ]
+        },
+        {
+          "id": "a0-u01-l01-abeceda-ex09",
+          "lessonId": "a0-u01-l01-abeceda",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "У словацькій літера «y» читається як українське «и».",
+          "correctAnswer": false,
+          "explanation": "Ні: y читається як українське «і», так само як i. Syr = «сір».",
+          "order": 9
+        },
+        {
+          "id": "a0-u01-l01-abeceda-ex10",
+          "lessonId": "a0-u01-l01-abeceda",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Напиши латиницею слово «дім».",
+          "sentence": "Po slovensky: ______",
+          "acceptedAnswers": [
+            "dom"
+          ],
+          "hint": "Три літери, як читаються — так і пишуться.",
+          "explanation": "Дім — dom: одна літера — один звук.",
+          "order": 10,
+          "wordIds": [
+            "a0-u01-l01-abeceda-w01"
+          ]
+        },
+        {
+          "id": "a0-u01-l01-abeceda-ex11",
+          "lessonId": "a0-u01-l01-abeceda",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає знак ´ над голосним (á, í, ú)?",
+          "options": [
+            {
+              "id": "a",
+              "text": "звук вимовляється довше",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "звук м’якшає",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "на цей склад падає наголос",
+              "correct": false
+            }
+          ],
+          "explanation": "Dĺžeň (´) — це знак довготи, а не наголосу. Наголос завжди на першому складі.",
+          "order": 11
+        },
+        {
+          "id": "a0-u01-l01-abeceda-ex12",
+          "lessonId": "a0-u01-l01-abeceda",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Прочитай напис: «Chlieb a syr». Що тут написано?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Хліб і сир",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Хліб і сік",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Сир і вода",
+              "correct": false
+            }
+          ],
+          "explanation": "chlieb = хліб, syr = сир, a = і.",
+          "order": 12
+        },
+        {
+          "id": "a0-u01-l01-abeceda-ex13",
+          "lessonId": "a0-u01-l01-abeceda",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Як правильно прочитати слово «cena»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "СЕ-на",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "ЦЕ-на",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "це-НА",
+              "correct": false
+            }
+          ],
+          "explanation": "c = «ц», а наголос — на першому складі: CE-na.",
+          "order": 13
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перше читання в супермаркеті",
+        "description": "Ти вперше в словацькому супермаркеті. На полицях і цінниках — написи латиницею. Прочитай і зрозумій їх.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "На полиці напис «CHLIEB». Що тут продають?",
+            "options": [
+              {
+                "text": "воду",
+                "correct": false
+              },
+              {
+                "text": "хліб",
+                "correct": true
+              },
+              {
+                "text": "сир",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Поруч напис «SYR». Що це?",
+            "options": [
+              {
+                "text": "сіль",
+                "correct": false
+              },
+              {
+                "text": "сік",
+                "correct": false
+              },
+              {
+                "text": "сир",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "На цінник написано «CENA: 2 €». Що означає «cena»?",
+            "options": [
+              {
+                "text": "вага",
+                "correct": false
+              },
+              {
+                "text": "ціна",
+                "correct": true
+              },
+              {
+                "text": "знижка",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як правильно прочитати «VODA»?",
+            "options": [
+              {
+                "text": "во-ДА",
+                "correct": false
+              },
+              {
+                "text": "ВО-да",
+                "correct": true
+              },
+              {
+                "text": "ФО-да",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вже читаєш прості словацькі слова! Далі — голосні та довгі звуки."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вже читаєш прості словацькі слова! Далі — голосні та довгі звуки.",
+        "nowYouKnow": [
+          "читаю латиницю «одна літера — один звук»",
+          "c = ц, h = г, ch = х, j = й, y = і",
+          "наголос — на першому складі",
+          "dom, voda, mesto, chlieb, syr, cena"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 13,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u01-l02-samohlasky",
+          "title": "Голосні: короткі й довгі"
+        }
+      }
+    }
+  ]
+}

@@ -46,6 +46,17 @@ export async function apiRequest<T>(path: string, init: RequestInit = {}, timeou
   return payload as T;
 }
 
+export interface CoursePlan {
+  course: number;
+  levels: Record<string, number>;
+  existing: number;
+  toInsert: number;
+  toUpdate: number;
+  toDelete: number;
+  oldSample: string[];
+  lastBackup: { id: string; at: string; lessons: number } | null;
+}
+
 export const apiClient = {
   register(id: string, name: string, email: string, password: string, goal?: string, marketingConsent = false) {
     return apiRequest<{ ok: boolean; user: unknown }>("/auth/register", {
@@ -262,6 +273,17 @@ export const apiClient = {
       myRank: number | null;
       entries: Array<{ userId: string; name: string; avatar: string | null; country: string; xpWeekly: number; rank: number }>;
     }>("/leaderboard");
+  },
+
+  getCoursePlan() {
+    return apiRequest<{ ok: boolean; plan: CoursePlan }>("/admin/course", {}, 55_000);
+  },
+
+  courseStep(body: { step: "backup" } | { step: "upsert"; offset: number; limit?: number } | { step: "cleanup" }) {
+    return apiRequest<{ ok: boolean; backupId?: string; lessons?: number; written?: number; next?: number; total?: number; done?: boolean; deleted?: number }>("/admin/course", {
+      method: "POST",
+      body: JSON.stringify(body),
+    }, 55_000);
   },
 
   importLessons(lessons: unknown[], mode: "skip" | "overwrite") {

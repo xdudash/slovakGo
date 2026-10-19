@@ -1205,3 +1205,67 @@ describe('practice hearts persist through server sync', () => {
     expect(after.xpTotal).toBe(before.xpTotal);
   });
 });
+
+// Keep last: it replaces the lessons table and restores it afterwards.
+describe("admin course deploy", () => {
+  let admin: string;
+  const saved: { id: string; data_json: string; published: number; updated_at: string }[] = [];
+  beforeAll(async () => {
+    process.env.COURSE_DIR = "src/__tests__/fixtures/course";
+    admin = await makeCookie("admin-1");
+    const db = createClient({ url: `file:${TEST_DB}` });
+    for (const r of (await db.execute("SELECT id, data_json, published, updated_at FROM lessons")).rows) {
+      saved.push({ id: String(r.id), data_json: String(r.data_json), published: Number(r.published), updated_at: String(r.updated_at) });
+    }
+    db.close();
+  });
+  afterAll(async () => {
+    delete process.env.COURSE_DIR;
+    const db = createClient({ url: `file:${TEST_DB}` });
+    await db.execute("DELETE FROM lessons");
+    for (const r of saved) {
+      await db.execute({ sql: "INSERT INTO lessons (id, data_json, published, created_by, updated_at) VALUES (?, ?, ?, NULL, ?)", args: [r.id, r.data_json, r.published, r.updated_at] });
+    }
+    db.close();
+  });
+  const step = (body: Record<string, unknown>) => call("POST", ["admin", "course"], { cookie: admin, body });
+
+  it("is admin-only", async () => {
+    const { headers } = await call("POST", ["auth", "register"], { body: { email: "course-student@course.test", password: "Secret123", name: "S" } });
+    const cookie = String(headers["Set-Cookie"] ?? "").split(";")[0];
+    expect((await call("GET", ["admin", "course"], { cookie })).status).toBe(403);
+  });
+
+  it("plans, backs up, upserts in slices and only then removes old lessons", async () => {
+    const planRes = await call("GET", ["admin", "course"], { cookie: admin });
+    expect(planRes.status).toBe(200);
+    const plan = planRes.body.plan as { course: number; toInsert: number; toDelete: number; existing: number };
+    expect(plan.course).toBe(2);
+    expect(plan.toInsert).toBe(2);
+    expect(plan.toDelete).toBe(plan.existing);
+
+    expect((await step({ step: "cleanup" })).status).toBe(409); // course not uploaded yet
+    const first = await step({ step: "upsert", offset: 0, limit: 1 });
+    expect(first.body).toMatchObject({ written: 1, next: 1, total: 2, done: false });
+    expect((await step({ step: "cleanup" })).status).toBe(409); // one course lesson still missing
+    expect((await step({ step: "upsert", offset: 1, limit: 1 })).body).toMatchObject({ done: true });
+    expect((await step({ step: "cleanup" })).status).toBe(409); // no backup of the old lessons yet
+
+    const backup = await step({ step: "backup" });
+    expect(backup.status).toBe(200);
+    expect(Number(backup.body.lessons)).toBe(plan.existing + 2);
+    const cleanup = await step({ step: "cleanup" });
+    expect(cleanup.status).toBe(200);
+    expect(cleanup.body).toMatchObject({ deleted: plan.existing, lessons: 2 });
+
+    const after = (await call("GET", ["admin", "course"], { cookie: admin })).body.plan as { toInsert: number; toDelete: number; toUpdate: number };
+    expect(after).toMatchObject({ toInsert: 0, toDelete: 0, toUpdate: 2 });
+  });
+
+  it("does not let completions of removed lessons use up the free allowance", async () => {
+    const { completedCount } = await import("../../shared/access");
+    const current = [{ id: "a0-u01-l01-abeceda" }, { id: "a0-u01-l02-samohlasky" }];
+    expect(completedCount(["old-1", "old-2", "a0-u01-l01-abeceda"], current)).toBe(1);
+    expect(completedCount(["old-1", "old-2", "a0-u01-l01-abeceda"])).toBe(3);
+  });
+});
