@@ -1,0 +1,942 @@
+{
+  "lessons": [
+    {
+      "id": "b1-u19-l02-dane-zaklad",
+      "sectionId": "b1-u19",
+      "level": "B1",
+      "title": "Податки: основи",
+      "topic": "Фінанси",
+      "description": "Як розуміти, що відбувається із зарплатою: hrubá і čistá mzda, odvody, preddavok na daň, види податків і формули podliehať dani, oslobodený od dane.",
+      "order": 182,
+      "xpReward": 40,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Читати розрахунок зарплати, пояснювати, куди зникає частина грошей, і розрізняти основні види податків.",
+      "completionMessage": "Ти розумієш основи оподаткування. Далі — податкова декларація (daňové priznanie).",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B1 · Фінанси",
+        "title": "Податки: основи",
+        "shortDescription": "Читати розрахунок зарплати, пояснювати, куди зникає частина грошей, і розрізняти основні види податків.",
+        "outcomes": [
+          "розрізняти hrubú a čistú mzdu",
+          "говорити: Z hrubej mzdy sa odvádzajú odvody",
+          "називати основні податки: daň z príjmu, DPH, daň z nehnuteľností",
+          "вживати podliehať dani і byť oslobodený od dane"
+        ],
+        "newWords": [
+          "daň",
+          "sadzba dane",
+          "odviesť",
+          "podliehať dani",
+          "nezdaniteľná časť",
+          "oslobodený od dane"
+        ],
+        "exercisesCount": 14,
+        "reward": "+40 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Hrubá a čistá mzda",
+          "text": "«Hrubá mzda» — сума в договорі до відрахувань. З неї відраховують «odvody» (соціальне й медичне страхування) і «preddavok na daň» (авансовий внесок податку). Те, що залишається, — «čistá mzda», тобто сума, яка приходить на рахунок. Кажемо: «Z hrubej mzdy sa odvádzajú odvody.» Дієслово «odvádzať» (недок.) і «odviesť» (док.) — відраховувати й перераховувати державі. Точні ставки з часом змінюються, тому перевіряй їх на сайті фінансової адміністрації або в бухгалтера.",
+          "examples": [
+            {
+              "sk": "Z hrubej mzdy sa odvádzajú odvody a preddavok na daň.",
+              "uk": "З брутто-зарплати відраховують внески й авансовий внесок податку."
+            },
+            {
+              "sk": "Čistá mzda je mzda po odpočítaní odvodov a dane.",
+              "uk": "Чиста зарплата — це зарплата після вирахування внесків і податку."
+            }
+          ],
+          "shortRule": "hrubá mzda − odvody − preddavok na daň = čistá mzda",
+          "commonMistakes": [
+            {
+              "mistake": "Zo mzdy sa odvádza odvody.",
+              "correct": "Zo mzdy sa odvádzajú odvody."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Які бувають податки",
+          "text": "«Daň z príjmu» — податок із доходу: із зарплати, підробітку, оренди. «DPH» (daň z pridanej hodnoty) уже закладена в ціну товару в магазині. «Daň z nehnuteľností» платять власники квартир, будинків і ділянок місту чи селу. «Daň z motorových vozidiel» стосується власників авто, але умови залежать від закону. Після «daň z» ставимо родовий відмінок: «daň z príjmu», «daň z nehnuteľností». Усе, що стосується ставок і виключень, перевіряй на офіційних сторінках.",
+          "examples": [
+            {
+              "sk": "Daň z nehnuteľností platia majitelia bytov a domov.",
+              "uk": "Податок на нерухомість платять власники квартир і будинків."
+            },
+            {
+              "sk": "DPH je už zahrnutá v cene tovaru.",
+              "uk": "ПДВ уже включений у ціну товару."
+            }
+          ],
+          "shortRule": "daň z + родовий · DPH — у ціні",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Podliehať dani",
+          "text": "«Podliehať» + давальний: «Príjem podlieha dani.» — Дохід підлягає оподаткуванню. «Byť oslobodený od dane» + родовий — не оподатковуватися: «Táto suma je oslobodená od dane.» «Nezdaniteľná časť» — частина доходу, з якої податок не нараховують; працівник може попросити роботодавця врахувати її на підставі підписаної заяви. Чи й коли це можливо, залежить від закону й твоєї ситуації. Тому питай: «Je tento príjem oslobodený od dane?»",
+          "examples": [
+            {
+              "sk": "Príjem zo zamestnania podlieha dani z príjmu.",
+              "uk": "Дохід із роботи підлягає податку на доходи."
+            },
+            {
+              "sk": "Je tento príjem oslobodený od dane?",
+              "uk": "Цей дохід звільнений від податку?"
+            }
+          ],
+          "shortRule": "podliehať + давальний · oslobodený od + родовий",
+          "commonMistakes": [
+            {
+              "mistake": "Príjem podlieha daň.",
+              "correct": "Príjem podlieha dani."
+            },
+            {
+              "mistake": "oslobodený z dane",
+              "correct": "oslobodený od dane"
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b1-u19-l02-dane-zaklad-w01",
+            "sk": "daň",
+            "uk": "податок",
+            "pronunciationUk": "дань",
+            "exampleSk": "Daň z príjmu sa počíta zo mzdy.",
+            "exampleUk": "Податок на доходи рахують із зарплати."
+          },
+          {
+            "wordId": "b1-u19-l02-dane-zaklad-w02",
+            "sk": "sadzba dane",
+            "uk": "ставка податку",
+            "pronunciationUk": "садзба данє",
+            "exampleSk": "Sadzba dane sa môže meniť, preto ju vždy over.",
+            "exampleUk": "Ставка податку може змінюватися, тому завжди перевіряй її."
+          },
+          {
+            "wordId": "b1-u19-l02-dane-zaklad-w03",
+            "sk": "odviesť",
+            "uk": "відрахувати й перерахувати",
+            "pronunciationUk": "одвієсть",
+            "exampleSk": "Zamestnávateľ odvedie odvody za zamestnanca.",
+            "exampleUk": "Роботодавець перерахує внески за працівника."
+          },
+          {
+            "wordId": "b1-u19-l02-dane-zaklad-w04",
+            "sk": "podliehať dani",
+            "uk": "підлягати оподаткуванню",
+            "pronunciationUk": "подліегать дані",
+            "exampleSk": "Aj príjem z brigády môže podliehať dani.",
+            "exampleUk": "Дохід із підробітку теж може підлягати оподаткуванню."
+          },
+          {
+            "wordId": "b1-u19-l02-dane-zaklad-w05",
+            "sk": "nezdaniteľná časť",
+            "uk": "неоподатковувана частина доходу",
+            "pronunciationUk": "незданьітєльна: часть",
+            "exampleSk": "O nezdaniteľnú časť môžeš požiadať zamestnávateľa.",
+            "exampleUk": "Про неоподатковувану частину можеш попросити роботодавця."
+          },
+          {
+            "wordId": "b1-u19-l02-dane-zaklad-w06",
+            "sk": "oslobodený od dane",
+            "uk": "звільнений від податку",
+            "pronunciationUk": "ослободєни: од данє",
+            "exampleSk": "Niektoré príjmy sú oslobodené od dane.",
+            "exampleUk": "Деякі доходи звільнені від податку."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b1-u19-l02-dane-zaklad-w01",
+          "sk": "daň",
+          "uk": "податок",
+          "pronunciationUk": "дань",
+          "exampleSk": "Daň z príjmu sa počíta zo mzdy.",
+          "exampleUk": "Податок на доходи рахують із зарплати.",
+          "level": "B1",
+          "topic": "Фінанси",
+          "tags": [
+            "b1-u19",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u19-l02-dane-zaklad-w02",
+          "sk": "sadzba dane",
+          "uk": "ставка податку",
+          "pronunciationUk": "садзба данє",
+          "exampleSk": "Sadzba dane sa môže meniť, preto ju vždy over.",
+          "exampleUk": "Ставка податку може змінюватися, тому завжди перевіряй її.",
+          "level": "B1",
+          "topic": "Фінанси",
+          "tags": [
+            "b1-u19",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u19-l02-dane-zaklad-w03",
+          "sk": "odviesť",
+          "uk": "відрахувати й перерахувати",
+          "pronunciationUk": "одвієсть",
+          "exampleSk": "Zamestnávateľ odvedie odvody za zamestnanca.",
+          "exampleUk": "Роботодавець перерахує внески за працівника.",
+          "level": "B1",
+          "topic": "Фінанси",
+          "tags": [
+            "b1-u19",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u19-l02-dane-zaklad-w04",
+          "sk": "podliehať dani",
+          "uk": "підлягати оподаткуванню",
+          "pronunciationUk": "подліегать дані",
+          "exampleSk": "Aj príjem z brigády môže podliehať dani.",
+          "exampleUk": "Дохід із підробітку теж може підлягати оподаткуванню.",
+          "level": "B1",
+          "topic": "Фінанси",
+          "tags": [
+            "b1-u19",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u19-l02-dane-zaklad-w05",
+          "sk": "nezdaniteľná časť",
+          "uk": "неоподатковувана частина доходу",
+          "pronunciationUk": "незданьітєльна: часть",
+          "exampleSk": "O nezdaniteľnú časť môžeš požiadať zamestnávateľa.",
+          "exampleUk": "Про неоподатковувану частину можеш попросити роботодавця.",
+          "level": "B1",
+          "topic": "Фінанси",
+          "tags": [
+            "b1-u19",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u19-l02-dane-zaklad-w06",
+          "sk": "oslobodený od dane",
+          "uk": "звільнений від податку",
+          "pronunciationUk": "ослободєни: од данє",
+          "exampleSk": "Niektoré príjmy sú oslobodené od dane.",
+          "exampleUk": "Деякі доходи звільнені від податку.",
+          "level": "B1",
+          "topic": "Фінанси",
+          "tags": [
+            "b1-u19",
+            "b1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b1-u19-l02-dane-zaklad-ex01",
+          "lessonId": "b1-u19-l02-dane-zaklad",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "daň",
+              "right": "податок"
+            },
+            {
+              "left": "sadzba dane",
+              "right": "ставка податку"
+            },
+            {
+              "left": "odviesť",
+              "right": "відрахувати й перерахувати"
+            },
+            {
+              "left": "podliehať dani",
+              "right": "підлягати оподаткуванню"
+            },
+            {
+              "left": "nezdaniteľná časť",
+              "right": "неоподатковувана частина"
+            },
+            {
+              "left": "oslobodený od dane",
+              "right": "звільнений від податку"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b1-u19-l02-dane-zaklad-w01",
+            "b1-u19-l02-dane-zaklad-w02",
+            "b1-u19-l02-dane-zaklad-w03",
+            "b1-u19-l02-dane-zaklad-w04",
+            "b1-u19-l02-dane-zaklad-w05",
+            "b1-u19-l02-dane-zaklad-w06"
+          ]
+        },
+        {
+          "id": "b1-u19-l02-dane-zaklad-ex02",
+          "lessonId": "b1-u19-l02-dane-zaklad",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Z hrubej mzdy sa "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "odvádzame",
+                "odvádzajú",
+                "odvádza"
+              ],
+              "correct": "odvádzajú"
+            },
+            {
+              "text": " odvody a preddavok na daň."
+            }
+          ],
+          "explanation": "Підмет — odvody (множина), тому sa odvádzajú.",
+          "order": 2,
+          "wordIds": [
+            "b1-u19-l02-dane-zaklad-w01",
+            "b1-u19-l02-dane-zaklad-w02",
+            "b1-u19-l02-dane-zaklad-w06"
+          ]
+        },
+        {
+          "id": "b1-u19-l02-dane-zaklad-ex03",
+          "lessonId": "b1-u19-l02-dane-zaklad",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Príjem zo zamestnania podlieha "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "dane",
+                "dani",
+                "daň"
+              ],
+              "correct": "dani"
+            },
+            {
+              "text": " z príjmu."
+            }
+          ],
+          "explanation": "podliehať + давальний відмінок: dani.",
+          "order": 3,
+          "wordIds": [
+            "b1-u19-l02-dane-zaklad-w01",
+            "b1-u19-l02-dane-zaklad-w02",
+            "b1-u19-l02-dane-zaklad-w04",
+            "b1-u19-l02-dane-zaklad-w06"
+          ]
+        },
+        {
+          "id": "b1-u19-l02-dane-zaklad-ex04",
+          "lessonId": "b1-u19-l02-dane-zaklad",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Zamestnávateľ za mňa každý mesiac ______ odvody. (odvádzať, він)",
+          "acceptedAnswers": [
+            "odvádza"
+          ],
+          "explanation": "Він відраховує регулярно: odvádza.",
+          "order": 4,
+          "wordIds": [
+            "b1-u19-l02-dane-zaklad-w02",
+            "b1-u19-l02-dane-zaklad-w06"
+          ]
+        },
+        {
+          "id": "b1-u19-l02-dane-zaklad-ex05",
+          "lessonId": "b1-u19-l02-dane-zaklad",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Čistá mzda je mzda po odpočítať odvodov a dane.",
+          "errorToken": "odpočítať",
+          "correctToken": "odpočítaní",
+          "explanation": "Після прийменника po — місцевий відмінок: po odpočítaní.",
+          "order": 5,
+          "wordIds": [
+            "b1-u19-l02-dane-zaklad-w02",
+            "b1-u19-l02-dane-zaklad-w06"
+          ]
+        },
+        {
+          "id": "b1-u19-l02-dane-zaklad-ex06",
+          "lessonId": "b1-u19-l02-dane-zaklad",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Táto suma je oslobodená z dane.",
+          "acceptedAnswers": [
+            "Táto suma je oslobodená od dane."
+          ],
+          "explanation": "byť oslobodený od + родовий.",
+          "order": 6,
+          "wordIds": [
+            "b1-u19-l02-dane-zaklad-w02",
+            "b1-u19-l02-dane-zaklad-w06"
+          ]
+        },
+        {
+          "id": "b1-u19-l02-dane-zaklad-ex07",
+          "lessonId": "b1-u19-l02-dane-zaklad",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Яка це daň?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Daň z príjmu"
+            },
+            {
+              "id": "c2",
+              "title": "Daň z nehnuteľností"
+            }
+          ],
+          "items": [
+            {
+              "sk": "z garáže",
+              "category": "c2"
+            },
+            {
+              "sk": "z domu",
+              "category": "c2"
+            },
+            {
+              "sk": "zo mzdy",
+              "category": "c1"
+            },
+            {
+              "sk": "z brigády",
+              "category": "c1"
+            },
+            {
+              "sk": "zo stavby",
+              "category": "c2"
+            },
+            {
+              "sk": "z podnikania",
+              "category": "c1"
+            },
+            {
+              "sk": "z prenájmu bytu",
+              "category": "c1"
+            },
+            {
+              "sk": "z pozemku",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Дохід із праці чи оренди — daň z príjmu; власність — daň z nehnuteľností.",
+          "order": 7,
+          "wordIds": [
+            "b1-u19-l02-dane-zaklad-w01",
+            "b1-u19-l02-dane-zaklad-w02",
+            "b1-u19-l02-dane-zaklad-w06"
+          ]
+        },
+        {
+          "id": "b1-u19-l02-dane-zaklad-ex08",
+          "lessonId": "b1-u19-l02-dane-zaklad",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай зразок розрахункового листка.",
+          "document": {
+            "title": "Ukážková výplatná páska",
+            "fields": [
+              {
+                "label": "Hrubá mzda",
+                "value": "1 500 €"
+              },
+              {
+                "label": "Odvody zamestnanca",
+                "value": "210 €"
+              },
+              {
+                "label": "Preddavok na daň",
+                "value": "130 €"
+              },
+              {
+                "label": "Čistá mzda",
+                "value": "1 160 €"
+              }
+            ]
+          },
+          "question": "Скільки загалом відрахували з брутто-зарплати?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "340 €",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "210 €",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "1 160 €",
+              "correct": false
+            }
+          ],
+          "explanation": "210 + 130 = 340; 1 500 − 340 = 1 160.",
+          "order": 8,
+          "wordIds": [
+            "b1-u19-l02-dane-zaklad-w01",
+            "b1-u19-l02-dane-zaklad-w02",
+            "b1-u19-l02-dane-zaklad-w06"
+          ]
+        },
+        {
+          "id": "b1-u19-l02-dane-zaklad-ex09",
+          "lessonId": "b1-u19-l02-dane-zaklad",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення від бухгалтерії.",
+          "message": {
+            "sender": "Mzdová účtovníčka",
+            "body": "Dobrý deň, výplatná páska za máj je v systéme. Odvody a preddavok na daň sme odviedli v termíne. Ak si chcete uplatniť nezdaniteľnú časť, doručte nám podpísané vyhlásenie do 15. júna. Pekný deň."
+          },
+          "question": "Що треба зробити, якщо хочеш врахувати неоподатковувану частину?",
+          "options": [
+            {
+              "id": "a",
+              "text": "передати бухгалтерії підписану заяву до 15 червня",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "написати лист директорові",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "самостійно сплатити податок у податковій",
+              "correct": false
+            }
+          ],
+          "explanation": "Doručte podpísané vyhlásenie — передайте підписану заяву.",
+          "order": 9,
+          "wordIds": [
+            "b1-u19-l02-dane-zaklad-w01",
+            "b1-u19-l02-dane-zaklad-w02",
+            "b1-u19-l02-dane-zaklad-w03",
+            "b1-u19-l02-dane-zaklad-w04",
+            "b1-u19-l02-dane-zaklad-w05",
+            "b1-u19-l02-dane-zaklad-w06"
+          ]
+        },
+        {
+          "id": "b1-u19-l02-dane-zaklad-ex10",
+          "lessonId": "b1-u19-l02-dane-zaklad",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти питаєш у бухгалтерки, чи цей дохід звільнений від податку.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Je tento príjem oslobodený od daň?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Je tento príjem oslobodení od dane?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Je tento príjem oslobodený od dane?",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Je tento príjem oslobodený z dane?",
+              "correct": false
+            }
+          ],
+          "explanation": "byť oslobodený od + родовий: od dane.",
+          "order": 10,
+          "wordIds": [
+            "b1-u19-l02-dane-zaklad-w01",
+            "b1-u19-l02-dane-zaklad-w02",
+            "b1-u19-l02-dane-zaklad-w06"
+          ]
+        },
+        {
+          "id": "b1-u19-l02-dane-zaklad-ex11",
+          "lessonId": "b1-u19-l02-dane-zaklad",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kolega",
+              "sk": "Prečo je čistá mzda nižšia ako hrubá?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Lebo hrubá mzda sa odvádzajú a zdaniť.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Lebo z hrubej mzdy sa zamestnávateľ odvádza odvody a daň.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Lebo z hrubej mzdy sa odvádzajú odvody a preddavok na daň.",
+              "correct": true
+            }
+          ],
+          "explanation": "Зворотне sa + множина: sa odvádzajú odvody.",
+          "order": 11,
+          "wordIds": [
+            "b1-u19-l02-dane-zaklad-w01",
+            "b1-u19-l02-dane-zaklad-w02",
+            "b1-u19-l02-dane-zaklad-w04",
+            "b1-u19-l02-dane-zaklad-w06"
+          ]
+        },
+        {
+          "id": "b1-u19-l02-dane-zaklad-ex12",
+          "lessonId": "b1-u19-l02-dane-zaklad",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні речення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "DPH je už zahrnutá v cene tovaru.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Preddavok sa odvádza zo mzdu.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Príjem podlieha daň.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Príjem podlieha dani.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Daň z nehnuteľností platia majitelia bytov.",
+              "correct": true
+            }
+          ],
+          "explanation": "podliehať dani (давальний); zo mzdy (родовий).",
+          "order": 12,
+          "wordIds": [
+            "b1-u19-l02-dane-zaklad-w01",
+            "b1-u19-l02-dane-zaklad-w02",
+            "b1-u19-l02-dane-zaklad-w04",
+            "b1-u19-l02-dane-zaklad-w06"
+          ]
+        },
+        {
+          "id": "b1-u19-l02-dane-zaklad-ex13",
+          "lessonId": "b1-u19-l02-dane-zaklad",
+          "type": "word_bank",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Склади речення.",
+          "wordBank": [
+            "podlieha",
+            "odvádzajú"
+          ],
+          "items": [
+            {
+              "sentence": "Zo mzdy sa ______ odvody.",
+              "correct": "odvádzajú"
+            },
+            {
+              "sentence": "Táto suma ______ dani.",
+              "correct": "podlieha"
+            }
+          ],
+          "extraWords": [
+            "odvádza",
+            "podliehajú"
+          ],
+          "explanation": "odvody — множина (odvádzajú), suma — однина (podlieha).",
+          "order": 13,
+          "wordIds": [
+            "b1-u19-l02-dane-zaklad-w02",
+            "b1-u19-l02-dane-zaklad-w04",
+            "b1-u19-l02-dane-zaklad-w06"
+          ]
+        },
+        {
+          "id": "b1-u19-l02-dane-zaklad-ex14",
+          "lessonId": "b1-u19-l02-dane-zaklad",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Ihor pracuje v Nitre a dostal prvú výplatnú pásku. V zmluve má hrubú mzdu 1 400 eur, ale na účet mu prišlo menej. Spýtal sa kolegu Petra, kam zmizli peniaze. Peter mu vysvetlil, že zo mzdy sa odvádzajú odvody a preddavok na daň. Zamestnávateľ ich odvedie za neho. Ihor ešte nevedel, že si môže uplatniť nezdaniteľnú časť. Peter mu poradil, aby sa opýtal v mzdovej účtárni. Ihor sa tam ešte v ten deň zastavil.",
+          "questions": [
+            {
+              "question": "Чому на рахунок прийшло менше, ніж у договорі?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Ігор був на випробувальному терміні",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "із зарплати відраховують внески й авансовий внесок податку",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "роботодавець помилився",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Хто перераховує внески державі?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "роботодавець за Ігоря",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "Петро",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "Ігор сам",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що порадив Петро?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "запитати в бухгалтерії про неоподатковувану частину",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "змінити роботу",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "подати скаргу",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "explanation": "Ihor má v zmluve hrubú mzdu; čistá je nižšia. Peter radí opýtať sa v mzdovej účtárni.",
+          "order": 14,
+          "wordIds": [
+            "b1-u19-l02-dane-zaklad-w01",
+            "b1-u19-l02-dane-zaklad-w02",
+            "b1-u19-l02-dane-zaklad-w04",
+            "b1-u19-l02-dane-zaklad-w05",
+            "b1-u19-l02-dane-zaklad-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перша виплата на новій роботі",
+        "description": "Ти отримав(ла) першу виплату й розбираєшся з бухгалтеркою, що в ній що.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти питаєш, чому чиста зарплата менша за брутто.",
+            "options": [
+              {
+                "sk": "Prečo je mzda čistá nižšia ako hrubej?",
+                "correct": false
+              },
+              {
+                "sk": "Prečo je čistá mzda nižšia ako hrubá?",
+                "correct": true
+              },
+              {
+                "sk": "Prečo čistá mzda je nižšia od hrubá?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Бухгалтерка: «Z hrubej mzdy sa odvádzajú odvody.» Що вона каже?",
+            "options": [
+              {
+                "sk": "З брутто-зарплати відраховують внески",
+                "correct": true
+              },
+              {
+                "sk": "Брутто-зарплату виплачують повністю",
+                "correct": false
+              },
+              {
+                "sk": "Внески платиш ти особисто готівкою",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти питаєш, чи можеш врахувати неоподатковувану частину.",
+            "options": [
+              {
+                "sk": "Môžem si uplatniť nezdaniteľná časť?",
+                "correct": false
+              },
+              {
+                "sk": "Môžem sa uplatniť nezdaniteľnú časť?",
+                "correct": false
+              },
+              {
+                "sk": "Môžem si uplatniť nezdaniteľnú časť?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти питаєш, чи цей дохід звільнений від податку.",
+            "options": [
+              {
+                "sk": "Je tento príjem oslobodené od daň?",
+                "correct": false
+              },
+              {
+                "sk": "Je tento príjem oslobodený od dane?",
+                "correct": true
+              },
+              {
+                "sk": "Je tento príjem oslobodený z dane?",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш основи оподаткування. Далі — податкова декларація (daňové priznanie)."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш основи оподаткування. Далі — податкова декларація (daňové priznanie).",
+        "nowYouKnow": [
+          "hrubá mzda − odvody − preddavok = čistá mzda",
+          "daň z príjmu, DPH, daň z nehnuteľností",
+          "podliehať dani, byť oslobodený od dane",
+          "nezdaniteľná časť — питай бухгалтерію"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 40,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b1-u19-l03-danove-priznanie",
+          "title": "Податкова декларація"
+        }
+      }
+    }
+  ]
+}

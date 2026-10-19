@@ -1,0 +1,884 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u08-l03-vysoke-skoly",
+      "sectionId": "b2-u08",
+      "level": "B2",
+      "title": "Вищі школи: типи, ступені, вступ",
+      "topic": "Освіта і визнання дипломів",
+      "description": "Як устроєна словацька вища освіта: які бувають школи, три ступені навчання, денна й заочна форма, коли платять за навчання, як подають заяву та хто є хто на школі.",
+      "order": 73,
+      "xpReward": 50,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Орієнтуватися в типах шкіл, ступенях і формах навчання та подати заяву на навчання.",
+      "completionMessage": "Ти розумієш, як працюють словацькі вищі школи. Далі — стипендії: хто має на них право й як про них просити.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Освіта і визнання дипломів",
+        "title": "Вищі школи: типи, ступені, вступ",
+        "shortDescription": "Орієнтуватися в типах шкіл, ступенях і формах навчання та подати заяву на навчання.",
+        "outcomes": [
+          "називати три ступені навчання й відповідні титули",
+          "розрізняти denné й externé štúdium",
+          "розуміти, коли виникає školné, а коли ні",
+          "проходити шлях prihláška — prijímacie konanie — rozhodnutie — zápis"
+        ],
+        "newWords": [
+          "školné",
+          "externé štúdium",
+          "stupeň štúdia",
+          "dekan",
+          "akreditácia"
+        ],
+        "exercisesCount": 15,
+        "reward": "+50 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Typy škôl a stupne štúdia",
+          "text": "Вищі школи в Словаччині бувають «verejné» (їх найбільше), «štátne» (військова, поліцейська, медична для силових структур) і «súkromné». Школа ділиться на факультети, факультет — на кафедри. Навчання має три ступені: перший — «bakalárske štúdium» (зазвичай три роки, титул Bc.), другий — «magisterské», «inžinierske» або «doktorské» (здебільшого два роки; Mgr., Ing., MUDr.), третій — «doktorandské štúdium» (PhD.). Форма навчання буває «denná» (щоденна) і «externá» — без відриву від роботи, яка триває зазвичай на рік довше. Якість програми підтверджує «akreditácia»; програми, терміни й суми щороку змінюються, тому перевіряй їх на сайті факультету.",
+          "examples": [
+            {
+              "sk": "Bakalárske štúdium trvá na väčšine programov tri roky.",
+              "uk": "Бакалаврське навчання на більшості програм триває три роки."
+            },
+            {
+              "sk": "Magisterské štúdium je druhý stupeň štúdia.",
+              "uk": "Магістратура — другий ступінь навчання."
+            }
+          ],
+          "shortRule": "1. stupeň Bc. · 2. stupeň Mgr./Ing. · 3. stupeň PhD. · denné / externé",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Prihláška a prijímacie konanie",
+          "text": "Заяву («prihláška») подають електронно або на папері до терміну, який школа оголошує заздалегідь — на бакалаврат це часто кінець лютого чи березня. До заяви додають визнаний атестат або рішення про його визнання, виписку оцінок, іноді «motivačný list», і платять «poplatok za prijímacie konanie». Частина програм має «prijímaciu skúšku» чи «talentovú skúšku», інші приймають без іспиту — лише за результатами навчання. Потім приходить «rozhodnutie o prijatí» і запрошення на «zápis na štúdium»; аж після запису ти справді студент. Хто не вклався в термін, зазвичай чекає наступного року.",
+          "examples": [
+            {
+              "sk": "Prihlášku na bakalárske štúdium treba podať do konca marca.",
+              "uk": "Заяву на бакалаврат треба подати до кінця березня."
+            },
+            {
+              "sk": "Na tento program prijímame bez prijímacích skúšok, podľa študijných výsledkov.",
+              "uk": "На цю програму ми приймаємо без вступних іспитів, за результатами навчання."
+            }
+          ],
+          "shortRule": "prihláška → prijímacie konanie → rozhodnutie o prijatí → zápis",
+          "commonMistakes": [
+            {
+              "mistake": "Prihlásil som sa na externé štúdia.",
+              "correct": "Prihlásil som sa na externé štúdium."
+            },
+            {
+              "mistake": "Študujem na druhom stupni štúdium.",
+              "correct": "Študujem na druhom stupni štúdia."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Školné a kto je kto na škole",
+          "text": "На державних («verejných») вищих школах денне навчання в межах стандартної тривалості зазвичай безплатне, і це не залежить від громадянства. «Školné» з’являється тоді, коли навчання триває довше за стандартну тривалість, коли студент паралельно вчиться на другій програмі того самого ступеня або коли вибрав заочну форму чи приватну школу. Окремо від плати за навчання є дрібніші збори — за вступне провадження, за видачу диплома. Школу очолює «rektor», факультет — «dekan», за якість програми відповідає «garant»; студентські справи веде «študijné oddelenie». Чинні суми школа щороку публікує сама.",
+          "examples": [
+            {
+              "sk": "V externej forme štúdia sa zvyčajne platí školné.",
+              "uk": "У заочній формі навчання зазвичай платять за навчання."
+            },
+            {
+              "sk": "O prerušenie štúdia žiadam dekana fakulty.",
+              "uk": "Про перерву в навчанні я прошу декана факультету."
+            }
+          ],
+          "shortRule": "verejná VŠ, denné, štandardná dĺžka → zvyčajne bez školného · rektor školy · dekan fakulty",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u08-l03-vysoke-skoly-w01",
+            "sk": "školné",
+            "uk": "плата за навчання",
+            "pronunciationUk": "школне:",
+            "exampleSk": "Na súkromnej vysokej škole platí študent školné.",
+            "exampleUk": "У приватній вищій школі студент платить за навчання."
+          },
+          {
+            "wordId": "b2-u08-l03-vysoke-skoly-w02",
+            "sk": "externé štúdium",
+            "uk": "заочна форма навчання",
+            "pronunciationUk": "екстерне: шту:діум",
+            "exampleSk": "Externé štúdium si vybrala preto, že pracuje na plný úväzok.",
+            "exampleUk": "Заочну форму вона вибрала тому, що працює на повну ставку."
+          },
+          {
+            "wordId": "b2-u08-l03-vysoke-skoly-w03",
+            "sk": "stupeň štúdia",
+            "uk": "ступінь навчання",
+            "pronunciationUk": "ступень шту:діа",
+            "exampleSk": "Magisterské štúdium je druhý stupeň štúdia.",
+            "exampleUk": "Магістратура — другий ступінь навчання."
+          },
+          {
+            "wordId": "b2-u08-l03-vysoke-skoly-w04",
+            "sk": "dekan",
+            "uk": "декан",
+            "pronunciationUk": "декан",
+            "exampleSk": "O prerušenie štúdia rozhoduje dekan fakulty.",
+            "exampleUk": "Про перерву в навчанні вирішує декан факультету."
+          },
+          {
+            "wordId": "b2-u08-l03-vysoke-skoly-w05",
+            "sk": "akreditácia",
+            "uk": "акредитація, офіційне підтвердження якості програми",
+            "pronunciationUk": "акредіта:ціа",
+            "exampleSk": "Študijný program musí mať platnú akreditáciu.",
+            "exampleUk": "Навчальна програма повинна мати чинну акредитацію."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u08-l03-vysoke-skoly-w01",
+          "sk": "školné",
+          "uk": "плата за навчання",
+          "pronunciationUk": "школне:",
+          "exampleSk": "Na súkromnej vysokej škole platí študent školné.",
+          "exampleUk": "У приватній вищій школі студент платить за навчання.",
+          "level": "B2",
+          "topic": "Освіта і визнання дипломів",
+          "tags": [
+            "b2-u08",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u08-l03-vysoke-skoly-w02",
+          "sk": "externé štúdium",
+          "uk": "заочна форма навчання",
+          "pronunciationUk": "екстерне: шту:діум",
+          "exampleSk": "Externé štúdium si vybrala preto, že pracuje na plný úväzok.",
+          "exampleUk": "Заочну форму вона вибрала тому, що працює на повну ставку.",
+          "level": "B2",
+          "topic": "Освіта і визнання дипломів",
+          "tags": [
+            "b2-u08",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u08-l03-vysoke-skoly-w03",
+          "sk": "stupeň štúdia",
+          "uk": "ступінь навчання",
+          "pronunciationUk": "ступень шту:діа",
+          "exampleSk": "Magisterské štúdium je druhý stupeň štúdia.",
+          "exampleUk": "Магістратура — другий ступінь навчання.",
+          "level": "B2",
+          "topic": "Освіта і визнання дипломів",
+          "tags": [
+            "b2-u08",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u08-l03-vysoke-skoly-w04",
+          "sk": "dekan",
+          "uk": "декан",
+          "pronunciationUk": "декан",
+          "exampleSk": "O prerušenie štúdia rozhoduje dekan fakulty.",
+          "exampleUk": "Про перерву в навчанні вирішує декан факультету.",
+          "level": "B2",
+          "topic": "Освіта і визнання дипломів",
+          "tags": [
+            "b2-u08",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u08-l03-vysoke-skoly-w05",
+          "sk": "akreditácia",
+          "uk": "акредитація, офіційне підтвердження якості програми",
+          "pronunciationUk": "акредіта:ціа",
+          "exampleSk": "Študijný program musí mať platnú akreditáciu.",
+          "exampleUk": "Навчальна програма повинна мати чинну акредитацію.",
+          "level": "B2",
+          "topic": "Освіта і визнання дипломів",
+          "tags": [
+            "b2-u08",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u08-l03-vysoke-skoly-ex01",
+          "lessonId": "b2-u08-l03-vysoke-skoly",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "školné",
+              "right": "плата за навчання"
+            },
+            {
+              "left": "externé štúdium",
+              "right": "заочна форма навчання"
+            },
+            {
+              "left": "stupeň štúdia",
+              "right": "ступінь навчання"
+            },
+            {
+              "left": "dekan",
+              "right": "керівник факультету"
+            },
+            {
+              "left": "akreditácia",
+              "right": "офіційне підтвердження якості програми"
+            },
+            {
+              "left": "študijné oddelenie",
+              "right": "відділ, що веде справи студентів"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u08-l03-vysoke-skoly-w01",
+            "b2-u08-l03-vysoke-skoly-w02",
+            "b2-u08-l03-vysoke-skoly-w03",
+            "b2-u08-l03-vysoke-skoly-w04",
+            "b2-u08-l03-vysoke-skoly-w05"
+          ]
+        },
+        {
+          "id": "b2-u08-l03-vysoke-skoly-ex02",
+          "lessonId": "b2-u08-l03-vysoke-skoly",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Який це ступінь навчання?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Prvý stupeň"
+            },
+            {
+              "id": "c2",
+              "title": "Druhý stupeň"
+            },
+            {
+              "id": "c3",
+              "title": "Tretí stupeň"
+            }
+          ],
+          "items": [
+            {
+              "sk": "inžinierske štúdium",
+              "category": "c2"
+            },
+            {
+              "sk": "doktorandské štúdium",
+              "category": "c3"
+            },
+            {
+              "sk": "magisterské štúdium",
+              "category": "c2"
+            },
+            {
+              "sk": "bakalárske štúdium",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Перший ступінь — бакалаврський, другий — магістерський чи інженерський, третій — докторантура.",
+          "order": 2,
+          "wordIds": [
+            "b2-u08-l03-vysoke-skoly-w02",
+            "b2-u08-l03-vysoke-skoly-w03"
+          ]
+        },
+        {
+          "id": "b2-u08-l03-vysoke-skoly-ex03",
+          "lessonId": "b2-u08-l03-vysoke-skoly",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Prihlásila som sa na "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "externého",
+                "externé",
+                "externá"
+              ],
+              "correct": "externé"
+            },
+            {
+              "text": " štúdium, lebo pracujem."
+            }
+          ],
+          "explanation": "Štúdium — середнього роду, тож прикметник має форму externé.",
+          "order": 3,
+          "wordIds": [
+            "b2-u08-l03-vysoke-skoly-w02",
+            "b2-u08-l03-vysoke-skoly-w03"
+          ]
+        },
+        {
+          "id": "b2-u08-l03-vysoke-skoly-ex04",
+          "lessonId": "b2-u08-l03-vysoke-skoly",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Magisterské štúdium je druhý stupeň "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "štúdiom",
+                "štúdium",
+                "štúdia"
+              ],
+              "correct": "štúdia"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Після «stupeň» іменник стоїть у родовому: stupeň štúdia.",
+          "order": 4,
+          "wordIds": [
+            "b2-u08-l03-vysoke-skoly-w02",
+            "b2-u08-l03-vysoke-skoly-w03"
+          ]
+        },
+        {
+          "id": "b2-u08-l03-vysoke-skoly-ex05",
+          "lessonId": "b2-u08-l03-vysoke-skoly",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Študijný program musí mať platnú ______. (акредитацію)",
+          "acceptedAnswers": [
+            "akreditáciu"
+          ],
+          "explanation": "Mať + знахідний: platnú akreditáciu.",
+          "order": 5,
+          "wordIds": [
+            "b2-u08-l03-vysoke-skoly-w05"
+          ]
+        },
+        {
+          "id": "b2-u08-l03-vysoke-skoly-ex06",
+          "lessonId": "b2-u08-l03-vysoke-skoly",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Коли на державній вищій школі найчастіше виникає обов’язок платити за навчання?",
+          "options": [
+            {
+              "id": "a",
+              "text": "коли студент складає державний іспит",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "коли навчання триває довше за стандартну тривалість",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "коли студент має іноземне громадянство",
+              "correct": false
+            }
+          ],
+          "explanation": "Плата пов’язана з перевищенням стандартної тривалості, другою паралельною програмою чи заочною формою, а не з громадянством.",
+          "order": 6
+        },
+        {
+          "id": "b2-u08-l03-vysoke-skoly-ex07",
+          "lessonId": "b2-u08-l03-vysoke-skoly",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Poplatok za prijímacie konanie treba zaplatil pred podaním prihlášky.",
+          "errorToken": "zaplatil",
+          "correctToken": "zaplatiť",
+          "explanation": "Після «treba» стоїть інфінітив: zaplatiť.",
+          "order": 7
+        },
+        {
+          "id": "b2-u08-l03-vysoke-skoly-ex08",
+          "lessonId": "b2-u08-l03-vysoke-skoly",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Študujem na druhom stupni štúdium.",
+          "acceptedAnswers": [
+            "Študujem na druhom stupni štúdia.",
+            "Študujem na druhom stupni vysokoškolského štúdia."
+          ],
+          "explanation": "Після «stupeň» іменник стоїть у родовому: stupni štúdia.",
+          "order": 8,
+          "wordIds": [
+            "b2-u08-l03-vysoke-skoly-w01",
+            "b2-u08-l03-vysoke-skoly-w02",
+            "b2-u08-l03-vysoke-skoly-w03"
+          ]
+        },
+        {
+          "id": "b2-u08-l03-vysoke-skoly-ex09",
+          "lessonId": "b2-u08-l03-vysoke-skoly",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Vitalij má uznané maturitné vysvedčenie a chce študovať informatiku v Bratislave. Na stránke fakulty si našiel študijný program aj termín podania prihlášky. Prihlášku podal elektronicky, priložil výpis známok a zaplatil poplatok za prijímacie konanie. Na tento program fakulta prijíma bez prijímacích skúšok, iba podľa študijných výsledkov. O mesiac mu prišlo rozhodnutie o prijatí a pozvanie na zápis. Vitalij si vybral denné štúdium a nepresahuje štandardnú dĺžku, takže školné platiť nemusí. Jeho sestra Daryna sa prihlásila na externé štúdium ekonómie, kde sa školné platí za každý rok štúdia. Obaja sa zapísali v septembri a začali prvý ročník.",
+          "questions": [
+            {
+              "question": "Чому Віталій не складав вступного іспиту?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "він мав пільгу як іноземець",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "він уже мав диплом бакалавра",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "на цю програму приймають лише за результатами навчання",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Чому Віталій не платить за навчання?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "факультет скасував плату для всіх",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "має мотиваційну стипендію",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "навчається денно й не перевищує стандартної тривалості",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Чим ситуація Дарини відрізняється від ситуації брата?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "вона вчиться на іншому ступені",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "її взагалі не прийняли",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "за заочну форму платять за кожен рік навчання",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 9,
+          "wordIds": [
+            "b2-u08-l03-vysoke-skoly-w01",
+            "b2-u08-l03-vysoke-skoly-w02",
+            "b2-u08-l03-vysoke-skoly-w03"
+          ]
+        },
+        {
+          "id": "b2-u08-l03-vysoke-skoly-ex10",
+          "lessonId": "b2-u08-l03-vysoke-skoly",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай витяг з умов прийому.",
+          "document": {
+            "title": "Podmienky prijatia na bakalárske štúdium (vzor)",
+            "fields": [
+              {
+                "label": "Študijný program",
+                "value": "aplikovaná informatika"
+              },
+              {
+                "label": "Forma štúdia",
+                "value": "denná"
+              },
+              {
+                "label": "Štandardná dĺžka",
+                "value": "3 roky"
+              },
+              {
+                "label": "Termín podania prihlášky",
+                "value": "do 31. marca"
+              },
+              {
+                "label": "Poplatok za prijímacie konanie",
+                "value": "40 eur"
+              },
+              {
+                "label": "Prijímacia skúška",
+                "value": "nekoná sa, rozhoduje priemer známok z maturity"
+              }
+            ]
+          },
+          "question": "Що вирішує про прийняття на цю програму?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "середня оцінка з матури",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "результат вступного іспиту",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "співбесіда з деканом",
+              "correct": false
+            }
+          ],
+          "explanation": "Prijímacia skúška sa nekoná — rozhoduje priemer známok z maturity, тобто середня оцінка з атестата.",
+          "order": 10,
+          "wordIds": [
+            "b2-u08-l03-vysoke-skoly-w02",
+            "b2-u08-l03-vysoke-skoly-w03"
+          ]
+        },
+        {
+          "id": "b2-u08-l03-vysoke-skoly-ex11",
+          "lessonId": "b2-u08-l03-vysoke-skoly",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай лист зі студентського відділу.",
+          "message": {
+            "sender": "Študijné oddelenie, Fakulta ekonómie",
+            "body": "Dobrý deň, pani Hrytsenko, ďakujeme za Vašu prihlášku na externé štúdium. Prihláška je takmer úplná, chýba nám však doklad o uznaní maturitného vysvedčenia. Rozhodnutie okresného úradu, prosím, doručte najneskôr do 20. júla. Zároveň Vás informujeme, že školné na externom štúdiu je v tomto akademickom roku 900 eur a platí sa do 15. septembra. S pozdravom Ing. Peter Baláž"
+          },
+          "question": "Що пані Гриценко має доставити до 20 липня?",
+          "options": [
+            {
+              "id": "a",
+              "text": "рішення про визнання атестата",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "плату за навчання",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "нову заяву",
+              "correct": false
+            }
+          ],
+          "explanation": "Chýba doklad o uznaní maturitného vysvedčenia — потрібне саме рішення окружного управління.",
+          "order": 11,
+          "wordIds": [
+            "b2-u08-l03-vysoke-skoly-w01",
+            "b2-u08-l03-vysoke-skoly-w02",
+            "b2-u08-l03-vysoke-skoly-w03"
+          ]
+        },
+        {
+          "id": "b2-u08-l03-vysoke-skoly-ex12",
+          "lessonId": "b2-u08-l03-vysoke-skoly",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти телефонуєш у студентський відділ і хочеш дізнатися про термін подання заяви. (ти — чоловік)",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Dobrý deň, chcel by som sa informovať o termín podania prihlášky.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Čau, kedy sa to podáva?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Dobrý deň, chcem vedieť termín prihláška.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Dobrý deň, chcel by som sa informovať o termíne podania prihlášky.",
+              "correct": true
+            }
+          ],
+          "explanation": "Informovať sa o + місцевий: o termíne; і початок має бути ввічливий.",
+          "order": 12
+        },
+        {
+          "id": "b2-u08-l03-vysoke-skoly-ex13",
+          "lessonId": "b2-u08-l03-vysoke-skoly",
+          "type": "drag_to_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильне слово.",
+          "sentence": "V externej forme štúdia sa zvyčajne platí ______.",
+          "draggable": [
+            "školného",
+            "školným",
+            "školné"
+          ],
+          "correct": "školné",
+          "explanation": "Platí sa + називний: platí sa školné.",
+          "order": 13,
+          "wordIds": [
+            "b2-u08-l03-vysoke-skoly-w01",
+            "b2-u08-l03-vysoke-skoly-w02",
+            "b2-u08-l03-vysoke-skoly-w03"
+          ]
+        },
+        {
+          "id": "b2-u08-l03-vysoke-skoly-ex14",
+          "lessonId": "b2-u08-l03-vysoke-skoly",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Na verejnej vysokej škole je denné štúdium v štandardnej dĺžke zvyčajne bez školného, pri prekročení štandardnej dĺžky však škola školné vyberá.",
+          "statement": "Хто вчиться денно й не перевищує стандартної тривалості, зазвичай не платить за навчання.",
+          "correctAnswer": true,
+          "explanation": "Плата з’являється насамперед при перевищенні стандартної тривалості навчання.",
+          "order": 14,
+          "wordIds": [
+            "b2-u08-l03-vysoke-skoly-w01",
+            "b2-u08-l03-vysoke-skoly-w02",
+            "b2-u08-l03-vysoke-skoly-w03"
+          ]
+        },
+        {
+          "id": "b2-u08-l03-vysoke-skoly-ex15",
+          "lessonId": "b2-u08-l03-vysoke-skoly",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні речення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Študijný program musí mať platnú akreditáciu.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Študujem na druhom stupni štúdium.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Magisterské štúdium je druhý stupeň štúdia.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Prihlásila som sa na externá štúdium.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Prihlásila som sa na externé štúdium.",
+              "correct": true
+            }
+          ],
+          "explanation": "Externé štúdium (середній рід) і stupni štúdia (родовий) — решта речень має помилку у формі.",
+          "order": 15,
+          "wordIds": [
+            "b2-u08-l03-vysoke-skoly-w02",
+            "b2-u08-l03-vysoke-skoly-w03",
+            "b2-u08-l03-vysoke-skoly-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Вступ на вищу школу",
+        "description": "Ти маєш визнаний атестат і подаєшся на бакалаврське навчання в Кошицях.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Як запитаєш у студентському відділі про термін подання заяви? (ти — чоловік)",
+            "options": [
+              {
+                "sk": "Dobrý deň, chcel by som sa informovať o termíne podania prihlášky.",
+                "correct": true
+              },
+              {
+                "sk": "Čau, dokedy sa to podáva?",
+                "correct": false
+              },
+              {
+                "sk": "Dobrý deň, chcela by som sa informovať o termíne podania prihlášky.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти хочеш і далі працювати на повну ставку. Яку форму навчання вибереш?",
+            "options": [
+              {
+                "sk": "Prihlásim sa na externé štúdium.",
+                "correct": true
+              },
+              {
+                "sk": "Prihlásim sa na externého štúdia.",
+                "correct": false
+              },
+              {
+                "sk": "Prihlásim sa na externá štúdium.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Школа пише, що твоя заява неповна — бракує рішення про визнання атестата. Що зробиш?",
+            "options": [
+              {
+                "text": "доставлю рішення до вказаного терміну",
+                "correct": true
+              },
+              {
+                "text": "зачекаю, поки школа сама знайде документ",
+                "correct": false
+              },
+              {
+                "text": "подам заяву наступного року",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як розумієш речення з умов прийому «Prijímacia skúška sa nekoná, rozhoduje priemer známok z maturity»?",
+            "options": [
+              {
+                "text": "вступного іспиту не буде, вирішує середня оцінка з атестата",
+                "correct": true
+              },
+              {
+                "text": "іспит буде, але лише з математики",
+                "correct": false
+              },
+              {
+                "text": "приймуть кожного, хто подасть заяву",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш, як працюють словацькі вищі школи. Далі — стипендії: хто має на них право й як про них просити."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш, як працюють словацькі вищі школи. Далі — стипендії: хто має на них право й як про них просити.",
+        "nowYouKnow": [
+          "три ступені: bakalárske (Bc.) → magisterské a inžinierske (Mgr., Ing.) → doktorandské (PhD.)",
+          "denné / externé štúdium · školné pri externej forme a pri prekročení štandardnej dĺžky",
+          "prihláška → prijímacie konanie → rozhodnutie o prijatí → zápis",
+          "rektor školy · dekan fakulty · študijné oddelenie"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 15,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u08-l04-stipendia",
+          "title": "Стипендії та підтримка навчання"
+        }
+      }
+    }
+  ]
+}

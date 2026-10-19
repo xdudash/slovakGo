@@ -1,0 +1,834 @@
+{
+  "lessons": [
+    {
+      "id": "a2-u07-l06-ohlasenie-pobytu",
+      "sectionId": "a2-u07",
+      "level": "A2",
+      "title": "Повідомлення адреси",
+      "topic": "Легалізація і úrad",
+      "description": "Як повідомити адресу, де ти живеш, які документи про житло потрібні і що робити після переїзду.",
+      "order": 66,
+      "xpReward": 30,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Розуміти обов’язок повідомляти адресу й пояснювати свою житлову ситуацію.",
+      "completionMessage": "Ти вмієш повідомити свою адресу. Далі — що ти отримуєш після подання заяви: підтвердження і рішення.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A2 · Легалізація і úrad",
+        "title": "Повідомлення адреси",
+        "shortDescription": "Розуміти обов’язок повідомляти адресу й пояснювати свою житлову ситуацію.",
+        "outcomes": [
+          "вживати ohlásiť pobyt, ohlásiť zmenu adresy",
+          "розрізняти vlastník і nájomca",
+          "знати документи про житло: nájomná zmluva, súhlas vlastníka, list vlastníctva",
+          "розповідати про переїзд: presťahovali sme sa"
+        ],
+        "newWords": [
+          "ohlásiť",
+          "vlastník",
+          "list vlastníctva",
+          "písomný",
+          "ubytovateľ"
+        ],
+        "exercisesCount": 14,
+        "reward": "+30 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Ohlásiť pobyt",
+          "text": "«Ohlásiť» — офіційно повідомити: «ohlásiť pobyt», «ohlásiť zmenu adresy». Іноземці мусять повідомляти поліції адресу, де живуть, у встановлений строк. Точні правила залежать від статусу й можуть змінюватися, тому перевіряй їх на офіційному сайті. Розмовно кажуть і «nahlásiť adresu».",
+          "examples": [
+            {
+              "sk": "Musím ohlásiť zmenu adresy.",
+              "uk": "Я мушу повідомити про зміну адреси."
+            },
+            {
+              "sk": "Pobyt som ohlásila na polícii.",
+              "uk": "Про своє перебування я повідомила в поліції."
+            }
+          ],
+          "shortRule": "ohlásiť + знахідний (без прийменника)",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Vlastník і nájomca",
+          "text": "«Vlastník» — власник квартири, «nájomca» — орендар. Щоб підтвердити житло, зазвичай потрібна «nájomná zmluva» — договір оренди або «súhlas vlastníka» — згода власника, іноді також «list vlastníctva» — витяг про право власності. Іноді підпис власника має бути офіційно засвідчений.",
+          "examples": [
+            {
+              "sk": "Vlastník bytu mi dal písomný súhlas.",
+              "uk": "Власник квартири дав мені письмову згоду."
+            },
+            {
+              "sk": "Som nájomca, nie vlastník.",
+              "uk": "Я орендар, а не власник."
+            }
+          ],
+          "shortRule": "vlastník (власник) ≠ nájomca (орендар)",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Після переїзду",
+          "text": "Про переїзд кажемо доконаним видом у минулому: «Presťahoval som sa», «Presťahovali sme sa do Trnavy». Після переїзду треба «ohlásiť novú adresu». Документ про житло може видати й «ubytovateľ» — той, хто надає житло: власник, гуртожиток або готель.",
+          "examples": [
+            {
+              "sk": "Minulý mesiac sme sa presťahovali.",
+              "uk": "Минулого місяця ми переїхали."
+            },
+            {
+              "sk": "Ubytovateľ mi vydal potvrdenie o ubytovaní.",
+              "uk": "Власник житла видав мені підтвердження про проживання."
+            }
+          ],
+          "shortRule": "presťahovať sa → ohlásiť novú adresu",
+          "commonMistakes": [
+            {
+              "mistake": "ohlásiť o zmene adresy",
+              "correct": "ohlásiť zmenu adresy"
+            },
+            {
+              "mistake": "súhlas vlastník",
+              "correct": "súhlas vlastníka"
+            },
+            {
+              "mistake": "list vlastníka",
+              "correct": "list vlastníctva"
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a2-u07-l06-ohlasenie-pobytu-w01",
+            "sk": "ohlásiť",
+            "uk": "офіційно повідомити",
+            "pronunciationUk": "огла:сіт’",
+            "exampleSk": "Novú adresu musím ohlásiť na polícii.",
+            "exampleUk": "Про нову адресу я мушу повідомити в поліції."
+          },
+          {
+            "wordId": "a2-u07-l06-ohlasenie-pobytu-w02",
+            "sk": "vlastník",
+            "uk": "власник",
+            "pronunciationUk": "властні:к",
+            "exampleSk": "Vlastník bytu býva v Rakúsku.",
+            "exampleUk": "Власник квартири живе в Австрії."
+          },
+          {
+            "wordId": "a2-u07-l06-ohlasenie-pobytu-w03",
+            "sk": "list vlastníctva",
+            "uk": "витяг про право власності",
+            "pronunciationUk": "ліст властні:цтва",
+            "exampleSk": "List vlastníctva si môžete pozrieť aj online.",
+            "exampleUk": "Витяг про право власності можна переглянути й онлайн."
+          },
+          {
+            "wordId": "a2-u07-l06-ohlasenie-pobytu-w04",
+            "sk": "písomný",
+            "uk": "письмовий",
+            "pronunciationUk": "пі:сомні:",
+            "exampleSk": "Potrebujem písomný súhlas vlastníka.",
+            "exampleUk": "Мені потрібна письмова згода власника."
+          },
+          {
+            "wordId": "a2-u07-l06-ohlasenie-pobytu-w05",
+            "sk": "ubytovateľ",
+            "uk": "той, хто надає житло",
+            "pronunciationUk": "убітователь",
+            "exampleSk": "Potvrdenie podpísal ubytovateľ.",
+            "exampleUk": "Підтвердження підписав той, хто надає житло."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-w01",
+          "sk": "ohlásiť",
+          "uk": "офіційно повідомити",
+          "pronunciationUk": "огла:сіт’",
+          "exampleSk": "Novú adresu musím ohlásiť na polícii.",
+          "exampleUk": "Про нову адресу я мушу повідомити в поліції.",
+          "level": "A2",
+          "topic": "Легалізація і úrad",
+          "tags": [
+            "a2-u07",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-w02",
+          "sk": "vlastník",
+          "uk": "власник",
+          "pronunciationUk": "властні:к",
+          "exampleSk": "Vlastník bytu býva v Rakúsku.",
+          "exampleUk": "Власник квартири живе в Австрії.",
+          "level": "A2",
+          "topic": "Легалізація і úrad",
+          "tags": [
+            "a2-u07",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-w03",
+          "sk": "list vlastníctva",
+          "uk": "витяг про право власності",
+          "pronunciationUk": "ліст властні:цтва",
+          "exampleSk": "List vlastníctva si môžete pozrieť aj online.",
+          "exampleUk": "Витяг про право власності можна переглянути й онлайн.",
+          "level": "A2",
+          "topic": "Легалізація і úrad",
+          "tags": [
+            "a2-u07",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-w04",
+          "sk": "písomný",
+          "uk": "письмовий",
+          "pronunciationUk": "пі:сомні:",
+          "exampleSk": "Potrebujem písomný súhlas vlastníka.",
+          "exampleUk": "Мені потрібна письмова згода власника.",
+          "level": "A2",
+          "topic": "Легалізація і úrad",
+          "tags": [
+            "a2-u07",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-w05",
+          "sk": "ubytovateľ",
+          "uk": "той, хто надає житло",
+          "pronunciationUk": "убітователь",
+          "exampleSk": "Potvrdenie podpísal ubytovateľ.",
+          "exampleUk": "Підтвердження підписав той, хто надає житло.",
+          "level": "A2",
+          "topic": "Легалізація і úrad",
+          "tags": [
+            "a2-u07",
+            "a2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-ex01",
+          "lessonId": "a2-u07-l06-ohlasenie-pobytu",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "ohlásiť",
+              "right": "офіційно повідомити"
+            },
+            {
+              "left": "vlastník",
+              "right": "власник"
+            },
+            {
+              "left": "nájomca",
+              "right": "орендар"
+            },
+            {
+              "left": "list vlastníctva",
+              "right": "витяг про право власності"
+            },
+            {
+              "left": "písomný",
+              "right": "письмовий"
+            },
+            {
+              "left": "ubytovateľ",
+              "right": "той, хто надає житло"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a2-u07-l06-ohlasenie-pobytu-w01",
+            "a2-u07-l06-ohlasenie-pobytu-w02",
+            "a2-u07-l06-ohlasenie-pobytu-w03",
+            "a2-u07-l06-ohlasenie-pobytu-w04",
+            "a2-u07-l06-ohlasenie-pobytu-w05"
+          ]
+        },
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-ex02",
+          "lessonId": "a2-u07-l06-ohlasenie-pobytu",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Musím ohlásiť "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "zmena",
+                "zmene",
+                "zmenu"
+              ],
+              "correct": "zmenu"
+            },
+            {
+              "text": " adresy."
+            }
+          ],
+          "explanation": "ohlásiť + знахідний: zmenu.",
+          "order": 2,
+          "wordIds": [
+            "a2-u07-l06-ohlasenie-pobytu-w01"
+          ]
+        },
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-ex03",
+          "lessonId": "a2-u07-l06-ohlasenie-pobytu",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Potrebujem písomný súhlas "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "vlastníkom",
+                "vlastník",
+                "vlastníka"
+              ],
+              "correct": "vlastníka"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "súhlas кого? — родовий: vlastníka.",
+          "order": 3,
+          "wordIds": [
+            "a2-u07-l06-ohlasenie-pobytu-w02",
+            "a2-u07-l06-ohlasenie-pobytu-w04"
+          ]
+        },
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-ex04",
+          "lessonId": "a2-u07-l06-ohlasenie-pobytu",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Minulý mesiac sme sa ______ do Nitry. (переїхали)",
+          "acceptedAnswers": [
+            "presťahovali"
+          ],
+          "explanation": "Завершена дія в минулому — доконаний вид: presťahovali sme sa.",
+          "order": 4
+        },
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-ex05",
+          "lessonId": "a2-u07-l06-ohlasenie-pobytu",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Chcem ohlásiť novej adresu.",
+          "errorToken": "novej",
+          "correctToken": "novú",
+          "explanation": "ohlásiť + знахідний: novú adresu.",
+          "order": 5,
+          "wordIds": [
+            "a2-u07-l06-ohlasenie-pobytu-w01"
+          ]
+        },
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-ex06",
+          "lessonId": "a2-u07-l06-ohlasenie-pobytu",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Хто такий «nájomca»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "працівник поліції",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "власник квартири",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "людина, яка орендує житло",
+              "correct": true
+            }
+          ],
+          "explanation": "nájomca платить nájom — орендну плату.",
+          "order": 6
+        },
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-ex07",
+          "lessonId": "a2-u07-l06-ohlasenie-pobytu",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Vlastník» і «nájomca» означають одне й те саме.",
+          "correctAnswer": false,
+          "explanation": "vlastník — власник, nájomca — орендар.",
+          "order": 7,
+          "wordIds": [
+            "a2-u07-l06-ohlasenie-pobytu-w02"
+          ]
+        },
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-ex08",
+          "lessonId": "a2-u07-l06-ohlasenie-pobytu",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Хто це робить?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Vlastník"
+            },
+            {
+              "id": "c2",
+              "title": "Nájomca"
+            }
+          ],
+          "items": [
+            {
+              "sk": "býva v prenajatom byte",
+              "category": "c2"
+            },
+            {
+              "sk": "platí nájom",
+              "category": "c2"
+            },
+            {
+              "sk": "dáva súhlas",
+              "category": "c1"
+            },
+            {
+              "sk": "vlastní byt",
+              "category": "c1"
+            },
+            {
+              "sk": "prenajíma byt",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Власник володіє й здає житло; орендар платить і живе в ньому.",
+          "order": 8,
+          "wordIds": [
+            "a2-u07-l06-ohlasenie-pobytu-w02"
+          ]
+        },
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-ex09",
+          "lessonId": "a2-u07-l06-ohlasenie-pobytu",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай документ.",
+          "document": {
+            "title": "Súhlas vlastníka s ubytovaním (vzor)",
+            "fields": [
+              {
+                "label": "Vlastník",
+                "value": "Peter Horváth"
+              },
+              {
+                "label": "Adresa bytu",
+                "value": "Mierová 8, Trnava"
+              },
+              {
+                "label": "Ubytovaná osoba",
+                "value": "Halyna Ševčenko"
+              },
+              {
+                "label": "Ubytovanie od",
+                "value": "1. 11. 2026"
+              },
+              {
+                "label": "Podpis vlastníka",
+                "value": "úradne overený"
+              }
+            ]
+          },
+          "question": "Хто житиме в квартирі?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Петер Горват",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "ніхто, квартира вільна",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Галина Шевченко",
+              "correct": true
+            }
+          ],
+          "explanation": "Ubytovaná osoba — особа, яка проживає: Halyna Ševčenko.",
+          "order": 9,
+          "wordIds": [
+            "a2-u07-l06-ohlasenie-pobytu-w02"
+          ]
+        },
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-ex10",
+          "lessonId": "a2-u07-l06-ohlasenie-pobytu",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Dobrý deň, pani Horváthová, píšem Vám kvôli bytu na Mierovej ulici. Od budúceho mesiaca tam budem bývať s manželom. Na polícii mi povedali, že musím ohlásiť novú adresu a priniesť doklad o ubytovaní. Nájomnú zmluvu už máme, ale potrebujem ešte Váš písomný súhlas s úradne overeným podpisom. Mohli by ste ho podpísať tento týždeň? Vzor súhlasu Vám pošlem e-mailom. Ďakujem, Halyna",
+          "questions": [
+            {
+              "question": "Кому пише Галина?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "поліції",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "власниці квартири",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "своєму чоловікові",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що в Галини вже є?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "витяг про право власності",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "договір оренди",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "письмова згода власниці",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Про що вона просить?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "підписати письмову згоду цього тижня",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "піти з нею в поліцію",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "знизити орендну плату",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "a2-u07-l06-ohlasenie-pobytu-w01",
+            "a2-u07-l06-ohlasenie-pobytu-w04"
+          ]
+        },
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-ex11",
+          "lessonId": "a2-u07-l06-ohlasenie-pobytu",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Policajt",
+              "sk": "Bývate v podnájme alebo vo vlastnom byte?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Vo podnájme, tu je nájomnú zmluvu.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "V podnájom, tu je nájomná zmluva.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "V podnájme, tu je nájomná zmluva.",
+              "correct": true
+            }
+          ],
+          "explanation": "v + місцевий: v podnájme; tu je + називний: nájomná zmluva.",
+          "order": 11,
+          "wordIds": [
+            "a2-u07-l06-ohlasenie-pobytu-w02"
+          ]
+        },
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-ex12",
+          "lessonId": "a2-u07-l06-ohlasenie-pobytu",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Musím ohlásiť o zmene adresy.",
+          "acceptedAnswers": [
+            "Musím ohlásiť zmenu adresy.",
+            "Zmenu adresy musím ohlásiť."
+          ],
+          "explanation": "ohlásiť + знахідний без прийменника: zmenu adresy.",
+          "order": 12,
+          "wordIds": [
+            "a2-u07-l06-ohlasenie-pobytu-w01"
+          ]
+        },
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-ex13",
+          "lessonId": "a2-u07-l06-ohlasenie-pobytu",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що хочеш повідомити нову адресу.",
+          "tokens": [
+            ".",
+            "adresu",
+            "ohlásiť",
+            "Chcem",
+            "novú"
+          ],
+          "correctOrder": [
+            "Chcem",
+            "ohlásiť",
+            "novú",
+            "adresu",
+            "."
+          ],
+          "explanation": "ohlásiť + знахідний: novú adresu.",
+          "order": 13,
+          "wordIds": [
+            "a2-u07-l06-ohlasenie-pobytu-w01"
+          ]
+        },
+        {
+          "id": "a2-u07-l06-ohlasenie-pobytu-ex14",
+          "lessonId": "a2-u07-l06-ohlasenie-pobytu",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти пояснюєш, що ти орендар, а не власник.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Nie som vlastník, som nájomcu.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Nie som vlastníka, som nájomca.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Nie som vlastník, som nájomca.",
+              "correct": true
+            }
+          ],
+          "explanation": "Після som — називний: vlastník, nájomca.",
+          "order": 14,
+          "wordIds": [
+            "a2-u07-l06-ohlasenie-pobytu-w02"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Нова адреса",
+        "description": "Ти переїхав(ла) в іншу квартиру й мусиш повідомити нову адресу.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Службовець питає: «Čo potrebujete?»",
+            "options": [
+              {
+                "sk": "Chcem ohlásiť zmena adresy.",
+                "correct": false
+              },
+              {
+                "sk": "Chcem ohlásiť zmenu adresy.",
+                "correct": true
+              },
+              {
+                "sk": "Chcem ohlásiť o zmene adresy.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Він каже: «Potrebujem doklad o ubytovaní.» Що ти даєш?",
+            "options": [
+              {
+                "sk": "рахунок за електрику",
+                "correct": false
+              },
+              {
+                "sk": "договір оренди або згоду власника",
+                "correct": true
+              },
+              {
+                "sk": "свідоцтво про народження",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Він питає: «Kto je vlastník bytu?»",
+            "options": [
+              {
+                "sk": "Vlastníka je pán Horváth, ja som nájomca.",
+                "correct": false
+              },
+              {
+                "sk": "Vlastník je pána Horvátha, ja som nájomca.",
+                "correct": false
+              },
+              {
+                "sk": "Vlastník je pán Horváth, ja som nájomca.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Він каже: «Súhlas musí mať úradne overený podpis.» Що це означає?",
+            "options": [
+              {
+                "sk": "підпис власника має бути офіційно засвідчений",
+                "correct": true
+              },
+              {
+                "sk": "згоду маєш підписати ти сам(а)",
+                "correct": false
+              },
+              {
+                "sk": "підпис не потрібен",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш повідомити свою адресу. Далі — що ти отримуєш після подання заяви: підтвердження і рішення."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш повідомити свою адресу. Далі — що ти отримуєш після подання заяви: підтвердження і рішення.",
+        "nowYouKnow": [
+          "ohlásiť pobyt, ohlásiť zmenu adresy",
+          "vlastník ≠ nájomca",
+          "nájomná zmluva, súhlas vlastníka, list vlastníctva",
+          "presťahovať sa → ohlásiť novú adresu"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 14,
+        "xpReward": 30,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a2-u07-l07-potvrdenie",
+          "title": "Підтвердження і рішення"
+        }
+      }
+    }
+  ]
+}

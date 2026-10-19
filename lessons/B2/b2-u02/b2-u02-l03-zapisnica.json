@@ -1,0 +1,932 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u02-l03-zapisnica",
+      "sectionId": "b2-u02",
+      "level": "B2",
+      "title": "Протокол наради",
+      "topic": "Наради і робочі e-maily",
+      "description": "Як вести й читати протокол наради: структура zápisnice, ролі zapisovateľ і overovateľ, час дієслів (перебіг — минулий, uznesenie — теперішній), запис голосування та завдань із відповідальним і терміном.",
+      "order": 13,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Скласти короткий точний протокол наради з рішеннями, голосуванням і завданнями.",
+      "completionMessage": "Ти вмієш вести протокол наради. Далі — делегування завдань.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Наради і робочі e-maily",
+        "title": "Протокол наради",
+        "shortDescription": "Скласти короткий точний протокол наради з рішеннями, голосуванням і завданнями.",
+        "outcomes": [
+          "будувати структуру zápisnice: hlavička, prítomní, priebeh, uznesenia, úlohy",
+          "вживати минулий час для перебігу й теперішній для uznesenia",
+          "записувати голосування: za, proti, zdržal sa",
+          "формулювати úlohu: що, zodpovedný, termín"
+        ],
+        "newWords": [
+          "zapisovateľ",
+          "prítomný",
+          "hlasovať",
+          "zdržať sa hlasovania",
+          "overovateľ",
+          "prezenčná listina"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Структура zápisnice",
+          "text": "Протокол має сталу структуру: 1) заголовок — «Zápisnica z porady oddelenia predaja konanej dňa 20. 10. 2026» (dňa — родовий, офіційно); 2) «Prítomní» і «Neprítomní / Ospravedlnení»; присутність підтверджує «prezenčná listina» — список із підписами; 3) «Zapisovateľ» — хто пише, «Overovateľ» — хто перевіряє й засвідчує; 4) «Priebeh» — перебіг; 5) «Uznesenia» — рішення; 6) «Úlohy» — завдання. Протокол розсилають учасникам, зазвичай протягом кількох робочих днів.",
+          "examples": [
+            {
+              "sk": "Zápisnica z porady konanej dňa 20. 10. 2026.",
+              "uk": "Протокол наради, що відбулася 20.10.2026."
+            },
+            {
+              "sk": "Zapisovateľ: Mgr. Tóth, overovateľ: M. Horváth.",
+              "uk": "Протоколіст — Mgr. Tóth, перевіряє — M. Horváth."
+            }
+          ],
+          "shortRule": "hlavička · prítomní · priebeh · uznesenia · úlohy",
+          "commonMistakes": [
+            {
+              "mistake": "Zápisnica z porada",
+              "correct": "Zápisnica z porady"
+            },
+            {
+              "mistake": "konanej deň 20. 10.",
+              "correct": "konanej dňa 20. 10."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Час і стиль",
+          "text": "Перебіг наради записують у минулому часі, доконаний вид: «Predsedajúca otvorila poradu», «Riaditeľ informoval o výsledkoch», «Prítomní prerokovali návrh.» А рішення (uznesenie) — у теперішньому часі: «Porada schvaľuje plán brigád.», «Porada berie na vedomie správu.», «Porada ukladá Marekovi pripraviť podklady do piatka.» («ukladať» + давальний + інфінітив). Стиль — стислий, без розмовних слів, без оцінок: не «Šéf sa nahneval», а «Riaditeľ vyjadril nesúhlas.»",
+          "examples": [
+            {
+              "sk": "Prítomní prerokovali návrh rozpočtu.",
+              "uk": "Присутні обговорили проєкт бюджету."
+            },
+            {
+              "sk": "Porada ukladá Marekovi pripraviť správu do piatka.",
+              "uk": "Нарада доручає Маркові підготувати звіт до п’ятниці."
+            }
+          ],
+          "shortRule": "перебіг — минулий · uznesenie — теперішній",
+          "commonMistakes": [
+            {
+              "mistake": "Porada schválila by plán.",
+              "correct": "Porada schvaľuje plán."
+            },
+            {
+              "mistake": "Porada ukladá Mareka pripraviť.",
+              "correct": "Porada ukladá Marekovi pripraviť."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Голосування і завдання",
+          "text": "Голосування записуємо в трьох рубриках: «za — proti — zdržal sa»: «Hlasovanie: za 6, proti 0, zdržal sa 1.» Дієслова: «hlasovať za návrh», «hlasovať proti návrhu» (давальний!), «zdržať sa hlasovania» (родовий). Завдання записуємо як «Úloha — Z (zodpovedný) — T (termín)»: «Úloha: pripraviť zoznam brigádnikov. Z: Mgr. Tóth. T: 30. 10. 2026.» Чітка відповідальна особа і конкретна дата — головне: без них завдання не можна перевірити.",
+          "examples": [
+            {
+              "sk": "Hlasovať proti návrhu, zdržať sa hlasovania.",
+              "uk": "Голосувати проти пропозиції, утриматися від голосування."
+            },
+            {
+              "sk": "Z: Mgr. Tóth, T: 30. 10. 2026.",
+              "uk": "Відповідальний — Mgr. Tóth, термін — 30.10.2026."
+            }
+          ],
+          "shortRule": "hlasovať za + знахідний · proti + давальний · zdržať sa + родовий",
+          "commonMistakes": [
+            {
+              "mistake": "hlasovať proti návrh",
+              "correct": "hlasovať proti návrhu"
+            },
+            {
+              "mistake": "zdržať sa hlasovanie",
+              "correct": "zdržať sa hlasovania"
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u02-l03-zapisnica-w01",
+            "sk": "zapisovateľ",
+            "uk": "протоколіст, той, хто веде протокол",
+            "pronunciationUk": "запісователь",
+            "exampleSk": "Zapisovateľom dnešnej porady je Mgr. Tóth.",
+            "exampleUk": "Протокол сьогоднішньої наради веде Mgr. Tóth."
+          },
+          {
+            "wordId": "b2-u02-l03-zapisnica-w02",
+            "sk": "prítomný",
+            "uk": "присутній",
+            "pronunciationUk": "при:томни:",
+            "exampleSk": "Prítomní jednohlasne schválili návrh.",
+            "exampleUk": "Присутні одноголосно схвалили пропозицію."
+          },
+          {
+            "wordId": "b2-u02-l03-zapisnica-w03",
+            "sk": "hlasovať",
+            "uk": "голосувати",
+            "pronunciationUk": "гласовать",
+            "exampleSk": "O návrhu budeme hlasovať na konci porady.",
+            "exampleUk": "Про пропозицію ми голосуватимемо наприкінці наради."
+          },
+          {
+            "wordId": "b2-u02-l03-zapisnica-w04",
+            "sk": "zdržať sa hlasovania",
+            "uk": "утриматися від голосування",
+            "pronunciationUk": "здржать са гласованьа",
+            "exampleSk": "Jeden člen komisie sa zdržal hlasovania.",
+            "exampleUk": "Один член комісії утримався від голосування."
+          },
+          {
+            "wordId": "b2-u02-l03-zapisnica-w05",
+            "sk": "overovateľ",
+            "uk": "особа, що перевіряє й засвідчує протокол",
+            "pronunciationUk": "оверователь",
+            "exampleSk": "Overovateľ zápisnice ju podpíše do piatka.",
+            "exampleUk": "Той, хто засвідчує протокол, підпише його до п’ятниці."
+          },
+          {
+            "wordId": "b2-u02-l03-zapisnica-w06",
+            "sk": "prezenčná listina",
+            "uk": "список присутніх із підписами",
+            "pronunciationUk": "презенчна: лістіна",
+            "exampleSk": "Podpíšte sa, prosím, na prezenčnú listinu.",
+            "exampleUk": "Підпишіться, будь ласка, у списку присутніх."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u02-l03-zapisnica-w01",
+          "sk": "zapisovateľ",
+          "uk": "протоколіст, той, хто веде протокол",
+          "pronunciationUk": "запісователь",
+          "exampleSk": "Zapisovateľom dnešnej porady je Mgr. Tóth.",
+          "exampleUk": "Протокол сьогоднішньої наради веде Mgr. Tóth.",
+          "level": "B2",
+          "topic": "Наради і робочі e-maily",
+          "tags": [
+            "b2-u02",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u02-l03-zapisnica-w02",
+          "sk": "prítomný",
+          "uk": "присутній",
+          "pronunciationUk": "при:томни:",
+          "exampleSk": "Prítomní jednohlasne schválili návrh.",
+          "exampleUk": "Присутні одноголосно схвалили пропозицію.",
+          "level": "B2",
+          "topic": "Наради і робочі e-maily",
+          "tags": [
+            "b2-u02",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u02-l03-zapisnica-w03",
+          "sk": "hlasovať",
+          "uk": "голосувати",
+          "pronunciationUk": "гласовать",
+          "exampleSk": "O návrhu budeme hlasovať na konci porady.",
+          "exampleUk": "Про пропозицію ми голосуватимемо наприкінці наради.",
+          "level": "B2",
+          "topic": "Наради і робочі e-maily",
+          "tags": [
+            "b2-u02",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u02-l03-zapisnica-w04",
+          "sk": "zdržať sa hlasovania",
+          "uk": "утриматися від голосування",
+          "pronunciationUk": "здржать са гласованьа",
+          "exampleSk": "Jeden člen komisie sa zdržal hlasovania.",
+          "exampleUk": "Один член комісії утримався від голосування.",
+          "level": "B2",
+          "topic": "Наради і робочі e-maily",
+          "tags": [
+            "b2-u02",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u02-l03-zapisnica-w05",
+          "sk": "overovateľ",
+          "uk": "особа, що перевіряє й засвідчує протокол",
+          "pronunciationUk": "оверователь",
+          "exampleSk": "Overovateľ zápisnice ju podpíše do piatka.",
+          "exampleUk": "Той, хто засвідчує протокол, підпише його до п’ятниці.",
+          "level": "B2",
+          "topic": "Наради і робочі e-maily",
+          "tags": [
+            "b2-u02",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u02-l03-zapisnica-w06",
+          "sk": "prezenčná listina",
+          "uk": "список присутніх із підписами",
+          "pronunciationUk": "презенчна: лістіна",
+          "exampleSk": "Podpíšte sa, prosím, na prezenčnú listinu.",
+          "exampleUk": "Підпишіться, будь ласка, у списку присутніх.",
+          "level": "B2",
+          "topic": "Наради і робочі e-maily",
+          "tags": [
+            "b2-u02",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u02-l03-zapisnica-ex01",
+          "lessonId": "b2-u02-l03-zapisnica",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "zapisovateľ",
+              "right": "той, хто веде протокол"
+            },
+            {
+              "left": "prítomný",
+              "right": "присутній"
+            },
+            {
+              "left": "hlasovať",
+              "right": "голосувати"
+            },
+            {
+              "left": "zdržať sa hlasovania",
+              "right": "утриматися від голосування"
+            },
+            {
+              "left": "overovateľ",
+              "right": "той, хто засвідчує протокол"
+            },
+            {
+              "left": "prezenčná listina",
+              "right": "список присутніх із підписами"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u02-l03-zapisnica-w01",
+            "b2-u02-l03-zapisnica-w02",
+            "b2-u02-l03-zapisnica-w03",
+            "b2-u02-l03-zapisnica-w04",
+            "b2-u02-l03-zapisnica-w05",
+            "b2-u02-l03-zapisnica-w06"
+          ]
+        },
+        {
+          "id": "b2-u02-l03-zapisnica-ex02",
+          "lessonId": "b2-u02-l03-zapisnica",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Hlasovanie: za šesť, proti nula, "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "zdržali sa",
+                "zdržať sa",
+                "zdržal sa"
+              ],
+              "correct": "zdržal sa"
+            },
+            {
+              "text": " jeden."
+            }
+          ],
+          "explanation": "Підмет «jeden» — однина: zdržal sa.",
+          "order": 2,
+          "wordIds": [
+            "b2-u02-l03-zapisnica-w03",
+            "b2-u02-l03-zapisnica-w04"
+          ]
+        },
+        {
+          "id": "b2-u02-l03-zapisnica-ex03",
+          "lessonId": "b2-u02-l03-zapisnica",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Porada sa uskutočnila "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "dňu",
+                "deň",
+                "dňa"
+              ],
+              "correct": "dňa"
+            },
+            {
+              "text": " 20. 10. 2026."
+            }
+          ],
+          "explanation": "В офіційному стилі дату вводять родовим відмінком: dňa.",
+          "order": 3
+        },
+        {
+          "id": "b2-u02-l03-zapisnica-ex04",
+          "lessonId": "b2-u02-l03-zapisnica",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Kolega, ktorý píše zápisnicu, je ______.",
+          "acceptedAnswers": [
+            "zapisovateľ"
+          ],
+          "explanation": "zapisovateľ — той, хто веде протокол.",
+          "order": 4,
+          "wordIds": [
+            "b2-u02-l03-zapisnica-w01"
+          ]
+        },
+        {
+          "id": "b2-u02-l03-zapisnica-ex05",
+          "lessonId": "b2-u02-l03-zapisnica",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що таке «prezenčná listina»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "запис результатів голосування",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "порядок денний наради",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "список присутніх на нараді з підписами",
+              "correct": true
+            }
+          ],
+          "explanation": "Prezenčná listina — підписи присутніх як доказ участі.",
+          "order": 5
+        },
+        {
+          "id": "b2-u02-l03-zapisnica-ex06",
+          "lessonId": "b2-u02-l03-zapisnica",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Porada schvaľujú plán sezónnych brigád.",
+          "errorToken": "schvaľujú",
+          "correctToken": "schvaľuje",
+          "explanation": "Підмет «porada» — однина: schvaľuje.",
+          "order": 6
+        },
+        {
+          "id": "b2-u02-l03-zapisnica-ex07",
+          "lessonId": "b2-u02-l03-zapisnica",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перепиши у стилі протоколу — в минулому часі, доконаний вид.",
+          "source": "Predsedajúca otvára poradu a víta prítomných.",
+          "acceptedAnswers": [
+            "Predsedajúca otvorila poradu a privítala prítomných.",
+            "Predsedajúca poradu otvorila a prítomných privítala."
+          ],
+          "explanation": "Перебіг наради — минулий час доконаного виду: otvorila, privítala.",
+          "order": 7,
+          "wordIds": [
+            "b2-u02-l03-zapisnica-w02"
+          ]
+        },
+        {
+          "id": "b2-u02-l03-zapisnica-ex08",
+          "lessonId": "b2-u02-l03-zapisnica",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти (чоловік) записуєш у протоколі: «Нарада доручає Маркові підготувати звіт до 5 листопада.»",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Porada ukladá Marekovi pripraviť správu do 5. novembra.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Porada ukladá Marekovi pripravil správu do 5. novembra.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Porada ukladá Mareka pripraviť správu do 5. novembra.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Porada ukladá Marekovi pripraviť správu od 5. novembra.",
+              "correct": false
+            }
+          ],
+          "explanation": "ukladať + давальний (Marekovi) + інфінітив; «do» — крайній термін.",
+          "order": 8
+        },
+        {
+          "id": "b2-u02-l03-zapisnica-ex09",
+          "lessonId": "b2-u02-l03-zapisnica",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай витяг із протоколу.",
+          "document": {
+            "title": "Zápisnica z porady oddelenia predaja",
+            "fields": [
+              {
+                "label": "Dátum",
+                "value": "20. 10. 2026"
+              },
+              {
+                "label": "Prítomní",
+                "value": "7 zamestnancov podľa prezenčnej listiny"
+              },
+              {
+                "label": "Neprítomná",
+                "value": "Ing. Novotná (dovolenka)"
+              },
+              {
+                "label": "Zapisovateľ",
+                "value": "Mgr. Tóth"
+              },
+              {
+                "label": "Overovateľ",
+                "value": "M. Horváth"
+              },
+              {
+                "label": "Uznesenie č. 1",
+                "value": "Porada schvaľuje plán sezónnych brigád. Hlasovanie: za 6, proti 0, zdržal sa 1"
+              },
+              {
+                "label": "Úloha",
+                "value": "pripraviť zoznam brigádnikov (zodpovedný Mgr. Tóth, termín 30. 10. 2026)"
+              }
+            ]
+          },
+          "question": "Хто й до коли має підготувати список тимчасових працівників?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Ing. Novotná до 30 жовтня",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Mgr. Tóth до 30 жовтня",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "M. Horváth до 20 жовтня",
+              "correct": false
+            }
+          ],
+          "explanation": "У завданні вказано: відповідальний — Mgr. Tóth, термін — 30. 10. 2026.",
+          "order": 9,
+          "wordIds": [
+            "b2-u02-l03-zapisnica-w01",
+            "b2-u02-l03-zapisnica-w02",
+            "b2-u02-l03-zapisnica-w03",
+            "b2-u02-l03-zapisnica-w04",
+            "b2-u02-l03-zapisnica-w05",
+            "b2-u02-l03-zapisnica-w06"
+          ]
+        },
+        {
+          "id": "b2-u02-l03-zapisnica-ex10",
+          "lessonId": "b2-u02-l03-zapisnica",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Перебіг чи рішення?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Priebeh"
+            },
+            {
+              "id": "c2",
+              "title": "Uznesenie"
+            }
+          ],
+          "items": [
+            {
+              "sk": "porada schvaľuje plán",
+              "category": "c2"
+            },
+            {
+              "sk": "prítomní diskutovali o rozpočte",
+              "category": "c1"
+            },
+            {
+              "sk": "kolega predložil návrh",
+              "category": "c1"
+            },
+            {
+              "sk": "predsedajúca otvorila poradu",
+              "category": "c1"
+            },
+            {
+              "sk": "porada žiada o doplnenie",
+              "category": "c2"
+            },
+            {
+              "sk": "porada ukladá pripraviť podklady",
+              "category": "c2"
+            },
+            {
+              "sk": "riaditeľ informoval o výsledkoch",
+              "category": "c1"
+            },
+            {
+              "sk": "porada berie na vedomie správu",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Перебіг — минулий час (otvorila, informoval); рішення — теперішній (schvaľuje, berie, ukladá).",
+          "order": 10,
+          "wordIds": [
+            "b2-u02-l03-zapisnica-w02"
+          ]
+        },
+        {
+          "id": "b2-u02-l03-zapisnica-ex11",
+          "lessonId": "b2-u02-l03-zapisnica",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Ihor bol prvýkrát určený za zapisovateľa porady. Do notebooku si písal všetko, čo kolegovia hovorili, a po hodine mal päť strán textu. Kolegyňa Mária mu však vysvetlila, že zápisnica má byť stručná a presná. Priebeh sa zapisuje v minulom čase a každé uznesenie v prítomnom, napríklad: «Porada schvaľuje plán.» Pri hlasovaní si Ihor poznačil počet hlasov za a proti aj počet tých, ktorí sa zdržali. Pri každej úlohe uviedol meno zodpovedného a termín. Zápisnicu poslal predsedajúcej do dvoch dní a po kontrole overovateľom ju rozoslal všetkým. Nabudúce už vie, že dôležité nie je napísať veľa, ale napísať to, čo sa dá neskôr overiť.",
+          "questions": [
+            {
+              "question": "Čo robil Ihor zle na začiatku?",
+              "options": [
+                {
+                  "id": "a",
+                  "sk": "zapisoval všetko, takže zápisnica bola príliš dlhá",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "sk": "nezapisoval nič",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "sk": "zabudol na termíny",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "V akom čase sa píšu uznesenia?",
+              "options": [
+                {
+                  "id": "a",
+                  "sk": "v budúcom čase",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "sk": "v minulom čase",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "sk": "v prítomnom čase",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Čo uviedol Ihor pri každej úlohe?",
+              "options": [
+                {
+                  "id": "a",
+                  "sk": "meno overovateľa",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "sk": "počet strán",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "sk": "meno zodpovedného a termín",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "explanation": "Марія пояснила: протокол стислий і точний, uznesenie — у теперішньому часі, при кожному завданні — відповідальний і термін.",
+          "order": 11,
+          "wordIds": [
+            "b2-u02-l03-zapisnica-w01",
+            "b2-u02-l03-zapisnica-w02",
+            "b2-u02-l03-zapisnica-w03",
+            "b2-u02-l03-zapisnica-w04",
+            "b2-u02-l03-zapisnica-w05"
+          ]
+        },
+        {
+          "id": "b2-u02-l03-zapisnica-ex12",
+          "lessonId": "b2-u02-l03-zapisnica",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і оціни кожне твердження.",
+          "text": "Predsedajúca otvorila poradu o 14:05 a privítala prítomných. Zapisovateľom určila Mgr. Tótha a overovateľom M. Horvátha. Prítomní schválili program bez zmien. K bodu 3 sa rozvinula diskusia o počte brigádnikov. Porada schválila plán s jednou zmenou: počet brigádnikov sa znižuje z desiatich na osem. Hlasovanie: za 6, proti 0, zdržal sa 1. Úpravu plánu pripraví Mgr. Tóth do 30. 10.",
+          "statements": [
+            {
+              "sk": "Zapisovateľom je Mgr. Tóth.",
+              "correct": true
+            },
+            {
+              "sk": "Počet brigádnikov sa znižuje na osem.",
+              "correct": true
+            },
+            {
+              "sk": "Proti plánu hlasoval jeden prítomný.",
+              "correct": false
+            },
+            {
+              "sk": "Jeden prítomný sa zdržal hlasovania.",
+              "correct": true
+            },
+            {
+              "sk": "Porada plán zamietla.",
+              "correct": false
+            }
+          ],
+          "explanation": "Проти не голосував ніхто (0); план схвалили з однією зміною, а не відхилили.",
+          "order": 12,
+          "wordIds": [
+            "b2-u02-l03-zapisnica-w01",
+            "b2-u02-l03-zapisnica-w02",
+            "b2-u02-l03-zapisnica-w03",
+            "b2-u02-l03-zapisnica-w04",
+            "b2-u02-l03-zapisnica-w05"
+          ]
+        },
+        {
+          "id": "b2-u02-l03-zapisnica-ex13",
+          "lessonId": "b2-u02-l03-zapisnica",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери речення, які стилістично підходять для протоколу.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Porada schvaľuje plán brigád.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Predsedajúca otvorila poradu o 14:00.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Predsedajúca otvára poradu včera.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Porada schválila by plán.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Hlasovanie: za 6, proti 0, zdržal sa 1.",
+              "correct": true
+            }
+          ],
+          "explanation": "Перебіг — минулий час, рішення — теперішній; «schválila by» і «otvára včera» — помилки.",
+          "order": 13,
+          "wordIds": [
+            "b2-u02-l03-zapisnica-w03",
+            "b2-u02-l03-zapisnica-w04"
+          ]
+        },
+        {
+          "id": "b2-u02-l03-zapisnica-ex14",
+          "lessonId": "b2-u02-l03-zapisnica",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Porada berie na vedomie správu o plnení úloh z predchádzajúceho obdobia.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": true
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": false
+            }
+          ],
+          "explanation": "Berie na vedomie, správa o plnení — офіційний стиль протоколу.",
+          "order": 14
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Ти — протоколіст",
+        "description": "Тебе призначили вести протокол наради, і ти оформлюєш його по пунктах.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти пишеш заголовок протоколу наради, що відбулася 20.10.2026.",
+            "options": [
+              {
+                "sk": "Zápisnica z porady oddelenia konanej dňa 20. 10. 2026",
+                "correct": true
+              },
+              {
+                "sk": "Zápisnica z porada oddelenia konanej dňa 20. 10. 2026",
+                "correct": false
+              },
+              {
+                "sk": "Zápisnica z porady oddelenia konanej deň 20. 10. 2026",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти записуєш рішення: нарада схвалює план.",
+            "options": [
+              {
+                "sk": "Porada schválila by plán.",
+                "correct": false
+              },
+              {
+                "sk": "Poradu schvaľuje plán.",
+                "correct": false
+              },
+              {
+                "sk": "Porada schvaľuje plán.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти записуєш голосування: шестеро за, ніхто проти, один утримався.",
+            "options": [
+              {
+                "sk": "Za hlasovať šesť prítomných, proti nikto, jeden sa zdržal hlasovania.",
+                "correct": false
+              },
+              {
+                "sk": "Za hlasovalo šesť prítomných, proti nikto, jeden sa zdržal hlasovania.",
+                "correct": true
+              },
+              {
+                "sk": "Za hlasovalo šesť prítomných, proti nikto, jeden zdržal hlasovania.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти записуєш завдання: підготувати документи, відповідальний Марек, термін — п’ятниця.",
+            "options": [
+              {
+                "sk": "Úloha: pripraviť podklady, zodpovedný Marek, termín do piatka.",
+                "correct": true
+              },
+              {
+                "sk": "Úloha: pripraviť podklady, zodpovedného Marek, termín do piatka.",
+                "correct": false
+              },
+              {
+                "sk": "Úloha: pripravil podklady, zodpovedný Marek, termín do piatka.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш вести протокол наради. Далі — делегування завдань."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш вести протокол наради. Далі — делегування завдань.",
+        "nowYouKnow": [
+          "štruktúra: hlavička, prítomní, priebeh, uznesenia, úlohy",
+          "priebeh — minulý čas, uznesenie — prítomný čas",
+          "hlasovať za + знахідний · proti + давальний · zdržať sa + родовий",
+          "úloha + zodpovedný + termín"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u02-l04-delegovanie-uloh",
+          "title": "Делегування завдань"
+        }
+      }
+    }
+  ]
+}

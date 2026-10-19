@@ -1,0 +1,532 @@
+@unit b2-u01 | Офіційне листування | Úradná korešpondencia
+
+@lesson struktura-listu | Структура офіційного листа | Štruktúra úradného listu
+desc: Із чого складається офіційний лист словацькою: шапка відправника, адресат, місце й дата, рядок Vec, звернення, вступ, основна частина, закінчення, підпис і додатки — та який стиль до нього пасує.
+goal: Читати й складати офіційний лист із правильною структурою та стильовими формулами.
+out: називати частини листа й розташовувати їх у правильному порядку ;; формулювати рядок Vec: коротко й конкретно ;; будувати вступ формулами Obraciam sa na Vás vo veci… / V nadväznosti na… ;; витримувати офіційний стиль без розмовних слів
+done: Ти знаєш, як побудований офіційний лист. Далі — звернення й закінчення: як почати лист і чим його завершити.
+T: Частини листа || Офіційний лист має сталу будову, і словацькі установи чекають саме на неї. Угорі зліва — шапка (hlavička) з даними відправника: ім’я, адреса, контакт. Нижче — адресат: установа чи особа (ліворуч чи праворуч — залежно від шаблону). Далі місце й дата: «V Nitre 12. 3. 2026». Тоді рядок «Vec:» — тема листа, записана іменниковою фразою, а не реченням: «Vec: Žiadosť o vydanie potvrdenia». Потім звернення, текст (вступ, основна частина, закінчення), прощання, підпис і, якщо потрібно, «Príloha:» — перелік додатків. Усе, що установа має знайти в листі, називаємо словом «náležitosti» — обов’язкові елементи. || V Nitre 12. 3. 2026 = Місце й дата: у Нітрі, 12. 3. 2026 ;; Príloha: kópia pracovnej zmluvy = Додаток: копія трудового договору || hlavička → adresát → miesto a dátum → Vec → oslovenie → text → pozdrav → podpis → príloha
+mis: Vec: Pomoc! => Vec: Žiadosť o predĺženie lehoty ;; Píšem ti, lebo chcem vedieť… => Obraciam sa na Vás vo veci…
+T: Офіційний стиль || Офіційний лист не терпить розмовних слів («fakt», «no», «dík»), знаків оклику, смайлів і скорочень. Речення повні, тон спокійний і нейтральний. До однієї особи звертаємося на «Vy», а в листі форми Vy, Vás, Vám, Váš пишемо з великої букви. Офіційний стиль любить іменники: замість «Chcem, aby ste mi dali potvrdenie» кажемо «Žiadam Vás o vydanie potvrdenia». Ввічливість передають і формули: «Dovoľujem si Vás požiadať…» (+ інфінітив), «Budem Vám vďačná za rýchlu odpoveď.» || Dovoľujem si Vás požiadať o vydanie potvrdenia. = Дозволю собі попросити вас про видачу довідки. ;; Budem Vám vďačná za rýchlu odpoveď. = Буду вам вдячна за швидку відповідь. || Vy, Vás, Vám — з великої · без розмовних слів · іменникові звороти
+T: Вступ, основа, закінчення || Вступ відповідає на питання «чому я пишу»: «Obraciam sa na Vás vo veci…» (+ родовий) — звертаюся до вас у справі…; «V nadväznosti na náš telefonický rozhovor…» (+ знахідний) — на продовження нашої телефонної розмови; «Na základe Vášho listu…» (+ родовий) — на підставі вашого листа. В основній частині викладаємо факти по порядку: що сталося, коли, чого я хочу. Кожен абзац (odsek) — одна думка. Закінчення — прохання й подяка: «Vopred Vám ďakujem za vybavenie.» || Obraciam sa na Vás vo veci predĺženia pobytu. = Звертаюся до вас у справі продовження перебування. ;; V nadväznosti na náš rozhovor Vám zasielam požadované dokumenty. = На продовження нашої розмови надсилаю вам потрібні документи. || vo veci + родовий · v nadväznosti na + знахідний
+W: hlavička | шапка листа з даними відправника | главічка | V hlavičke je meno, adresa a kontakt odosielateľa. | У шапці — ім’я, адреса й контакт відправника.
+W: vo veci | у справі | во вєці | Obraciam sa na Vás vo veci predĺženia pobytu. | Звертаюся до вас у справі продовження перебування.
+W: v nadväznosti na | на продовження, у зв’язку з | в надвезності на | V nadväznosti na náš rozhovor Vám zasielam dokumenty. | На продовження нашої розмови надсилаю вам документи.
+W: odsek | абзац | одсек | Každý odsek listu má mať jednu hlavnú myšlienku. | Кожен абзац листа має містити одну головну думку.
+W: náležitosti | обов’язкові елементи, реквізити | на:лежітості | Žiadosť musí obsahovať všetky náležitosti. | Заява має містити всі обов’язкові елементи.
+X mt: З’єднай. | hlavička = шапка з даними відправника ;; vo veci = у справі ;; v nadväznosti na = на продовження ;; odsek = абзац ;; náležitosti = обов’язкові елементи ;; príloha = додаток
+X cat: Куди це належить: у вступ, основну частину чи закінчення? | Úvod: Obraciam sa na Vás vo veci vydania potvrdenia, V nadväznosti na náš rozhovor Vám píšem ;; Jadro: Potvrdenie potrebujem pre banku, Pracujem u Vás od septembra 2024 ;; Záver: Vopred Vám ďakujem za vybavenie, Teším sa na Vašu odpoveď
+= Вступ пояснює, чому пишемо; основна частина дає факти; закінчення — подяка чи очікування відповіді.
+X dd: Обери. | Obraciam sa na Vás [*vo veci/na veci/pri veci] predĺženia lehoty.
+= Формула вступу: vo veci + родовий — у справі продовження терміну.
+X dd: Обери. | V nadväznosti [*na/k/o] náš telefonický rozhovor Vám zasielam požadované dokumenty.
+= Вираз «v nadväznosti na» вимагає знахідного відмінка: na náš rozhovor.
+X fb: Допиши. | Vec: Žiadosť ___ vydanie potvrdenia o zamestnaní. (прийменник «про») | o |
+= žiadosť o + знахідний: žiadosť o vydanie.
+X sc: Яка тема листа (Vec) написана правильно? | - | *Vec: Žiadosť o vydanie potvrdenia o zamestnaní ;; Vec: Dobrý deň, potrebujem nutne nejaký papier ;; Vec: Pomoc!!! Je to veľmi urgentné!!!
+= Тема — коротка іменникова фраза без звертань, окликів і розмовних слів.
+X fe: - | Dovoľujem si Vás [požiadam>požiadať] o vydanie potvrdenia.
+= Після «dovoľujem si» стоїть інфінітив: požiadať.
+X tr: Перепиши офіційно, почни зі слів «Žiadam Vás o…» (вжий іменник vydanie). | Chcem, aby ste mi dali potvrdenie o štúdiu. | Žiadam Vás o vydanie potvrdenia o štúdiu.
+= Офіційний стиль віддає перевагу іменникам: žiadam o vydanie + родовий potvrdenia.
+X reg: - | V nadväznosti na náš telefonický rozhovor Vám zasielam požadované dokumenty. | formal
+= Формули з іменниками й Vy-форма — ознаки офіційного регістру.
+X rc: - | Oksana pracuje v Nitre ako laborantka a potrebuje potvrdenie o zamestnaní pre banku. Prvý raz napísala zamestnávateľovi krátky e-mail: «Ahoj, potrebujem papier z práce. Dík.» Personálna pracovníčka jej odpovedala až po týždni a požiadala ju, aby poslala formálnu žiadosť. Oksana si preto našla vzor. V hlavičke uviedla svoje meno a adresu, vpravo miesto a dátum. Do riadka Vec napísala: «Žiadosť o vydanie potvrdenia o zamestnaní». V úvode použila vetu: «Obraciam sa na Vás vo veci vydania potvrdenia, ktoré potrebujem pre banku.» Na záver sa poďakovala a pripojila podpis. Potvrdenie dostala do dvoch dní. Kolegyňa jej vysvetlila, že firmy vybavujú rýchlejšie žiadosti, v ktorých je hneď jasné, čo, prečo a dokedy sa žiada.
+q~: Чому Оксана потребує довідку про роботу? | *для банку ;; для оренди квартири ;; для школи доньки
+q~: Що було не так із першим листом? | *він був надто розмовний і без структури ;; він був занадто довгий ;; його надіслали не на ту адресу
+q~: Що допомогло Оксані швидко отримати довідку? | *чітка тема в рядку Vec і вступ, який пояснює, чому вона пише ;; особиста розмова з директором ;; термінова пошта
+X doc: Прочитай шапку листа. | Úradný list – záhlavie | Odosielateľ: Oksana Melnyk, Hlavná 12, 949 01 Nitra ;; Adresát: LabTest Nitra, s. r. o., personálne oddelenie ;; Miesto a dátum: V Nitre 12. 3. 2026 ;; Vec: Žiadosť o vydanie potvrdenia o zamestnaní | Що Оксана просить у листі? | *видати довідку з місця роботи ;; скасувати штраф ;; змінити адресу
+= Vec: Žiadosť o vydanie potvrdenia o zamestnaní — просить видати довідку з місця роботи.
+X msg: Прочитай відповідь відділу кадрів. | Mgr. Jana Hudáková, personálne oddelenie | Dobrý deň, pani Melnyk, ďakujem za Vašu žiadosť. V nadväznosti na ňu Vám oznamujem, že potvrdenie o zamestnaní bude pripravené v stredu. Aby bola žiadosť úplná, prosím doplňte do hlavičky svoju adresu a dátum narodenia. Potvrdenie si môžete vyzdvihnúť na personálnom oddelení alebo Vám ho pošleme e-mailom. S pozdravom Jana Hudáková | Що Оксана має зробити, щоб заява була повною? | *дописати в шапку свою адресу й дату народження ;; додати копію трудового договору ;; прийти особисто у середу
+= Aby bola žiadosť úplná — щоб заява була повною: doplniť adresu a dátum narodenia.
+X np: Ти пишеш до міського управління й починаєш лист: звертаєшся у справі продовження терміну. | *Obraciam sa na Vás vo veci predĺženia lehoty. ;; Obraciam sa na Vás vo veci predĺžiť lehotu. ;; Obraciam na Vás vo veci predĺženia lehoty. ;; Píšem ti vo veci predĺženia lehoty.
+= Obraciam sa na Vás vo veci + родовий іменника; «obracať sa» — зворотне, «ti» — неофіційно.
+X ms: Обери офіційні речення. | - | *Žiadam Vás o vydanie potvrdenia. ;; *Dovoľujem si Vás požiadať o predĺženie lehoty. ;; *V nadväznosti na náš rozhovor Vám zasielam dokumenty. ;; Ahoj, pošli mi to potvrdenie. ;; Potrebujem ten papier hneď!!!
+= Офіційні речення мають Vy-форму й формули; «Ahoj» та знаки оклику недоречні.
+F: Перший офіційний лист || Оксана просить у відділі кадрів довідку для банку й складає лист за всіма правилами.
+S: Що напишеш у рядку Vec? | *Žiadosť o vydanie potvrdenia o zamestnaní ;; Prosím rýchlo papier ;; Dobrý deň, mám otázku
+S: Як почнеш лист? | *Obraciam sa na Vás vo veci vydania potvrdenia o zamestnaní. ;; Obraciam sa na Vás vo veci vydať potvrdenie. ;; Ahoj, potrebujem potvrdenie.
+S~: Де в листі стоїть «Príloha:»? | *унизу, після підпису ;; угорі, перед датою ;; між шапкою й адресатом
+S: Яке речення найофіційніше? | *Dovoľujem si Vás požiadať o vydanie potvrdenia. ;; Chcem to potvrdenie. ;; Dajte mi potvrdenie.
+R: шапка → адресат → місце й дата → Vec → звернення → текст → підпис → додатки ;; Vec — іменникова фраза: Žiadosť o vydanie potvrdenia ;; Obraciam sa na Vás vo veci… · V nadväznosti na… ;; Vy, Vás, Vám з великої · без розмовних слів
+
+@lesson oslovenie-zaver | Звернення й закінчення листа | Oslovenie a záver
+desc: Як почати й завершити офіційний лист: Vážený pán… / Vážená pani…, звернення до невідомої особи й до групи, титули та посади, формули S pozdravom / S úctou, подяка наприкінці.
+goal: Підбирати звернення й прощання залежно від адресата та ступеня офіційності.
+out: будувати Vážený pán… / Vážená pani… з правильною формою прізвища чи посади ;; звертатися до невідомої особи й до групи ;; розрізняти S pozdravom / S úctou / S priateľským pozdravom ;; ставити коми й великі літери у зверненні та підписі
+done: Ти вмієш правильно почати й завершити лист. Далі — заява: як сформулювати прохання.
+T: Vážený pán, vážená pani || Офіційне звернення — «Vážený pán» (чоловік) або «Vážená pani» (жінка) + прізвище чи посада: «Vážený pán Novák», «Vážená pani Nováková», «Vážený pán riaditeľ», «Vážená pani riaditeľka». Слова «Vážený / Vážená» і сама посада збігаються зі статтю адресата: чоловік — riaditeľ, primátor, starosta; жінка — riaditeľka, primátorka, starostka. Після звернення ставимо кому, а текст продовжуємо з малої літери: «Vážená pani riaditeľka, obraciam sa na Vás…». Знак оклику сьогодні вживають рідко. || Vážený pán primátor, dovoľujem si Vás požiadať o stretnutie. = Шановний пане мере, дозволю собі попросити вас про зустріч. ;; Vážená pani Nováková, ďakujem za Vašu odpoveď. = Шановна пані Новакова, дякую за вашу відповідь. || Vážený pán / Vážená pani + прізвище або посада · кома · далі з малої літери
+mis: Vážený pani Nováková, => Vážená pani Nováková, ;; Vážená pani riaditeľ, => Vážená pani riaditeľka, ;; Vážený pán Novák! Obraciam sa… => Vážený pán Novák, obraciam sa…
+T: Невідомий адресат, група, титули || Коли ти не знаєш імені, пиши «Vážená pani, vážený pán,» або нейтральне «Dobrý deň,» — особливо в імейлі до установи. До групи звертаємося у множині: «Vážení kolegovia,», «Vážené kolegyne, vážení kolegovia,». До лікаря чи викладача — за званням: «Vážená pani doktorka», «Vážený pán doktor», «Vážená pani profesorka». Скорочень титулів (Ing., Mgr.) у звертанні не пишемо: в адресі — «Ing. Jana Nováková», а у звертанні — «Vážená pani Nováková» або повним словом «Vážená pani inžinierka». Скорочений титул — для адреси й підпису. || Vážené kolegyne, vážení kolegovia, pozývam Vás na poradu. = Шановні колеги, запрошую вас на нараду. ;; Vážená pani doktorka, ďakujem Vám za ošetrenie. = Шановна пані докторко, дякую вам за лікування. || невідомий адресат: Vážená pani, vážený pán, / Dobrý deň, · група: Vážení…
+T: Закінчення й підпис || Перед прощанням ставимо коротку фразу: «Vopred Vám ďakujem za vybavenie.», «Teším sa na Vašu odpoveď.», «Ďakujem Vám za ústretovosť.» Прощання: «S pozdravom» — найуніверсальніше; «S úctou» — особлива повага (посадовець, орган влади, старший за віком чи посадою); «S priateľským pozdravom» — знайомий партнер чи колега, з яким стосунки добрі. Прощання пишемо окремим рядком і за словацькою нормою без коми (кома після «S pozdravom» — вплив англійської); під ним — ім’я та прізвище. Після підпису крапки немає. || Ďakujem Vám za ústretovosť. S úctou = Дякую вам за готовність допомогти. З глибокою повагою ;; Teším sa na Vašu odpoveď. S pozdravom = Чекаю на вашу відповідь. З повагою || S pozdravom — універсально · S úctou — найповажніше · S priateľským pozdravom — свій
+W: titul | титул, науковий чи професійний ступінь | тітул | Do adresy patrí aj titul adresáta, napríklad Ing. alebo Mgr. | В адресу входить і титул адресата, наприклад Ing. чи Mgr.
+W: primátor | мер міста | пріма:тор | Vážený pán primátor, prosím o stretnutie. | Шановний пане мере, прошу про зустріч.
+W: ústretovosť | готовність піти назустріч, люб’язність | у:стретовость | Ďakujem Vám za ústretovosť a rýchle vybavenie. | Дякую вам за люб’язність і швидке вирішення.
+W: adresovať | адресувати, спрямувати | адресовать | List adresujte priamo riaditeľovi školy. | Адресуйте листа безпосередньо директорові школи.
+W: s priateľským pozdravom | з дружнім привітанням | с пріятельски:м поздравом | Dlhoročnému obchodnému partnerovi napíšeme «S priateľským pozdravom». | Багаторічному діловому партнерові напишемо «З дружнім привітанням».
+X mt: З’єднай. | Vážená pani riaditeľka = звернення до директорки ;; Vážený pán primátor = звернення до мера ;; Vážení kolegovia = звернення до групи колег ;; Dobrý deň = нейтральний початок листа невідомій особі ;; S úctou = прощання з особливою повагою ;; S priateľským pozdravom = прощання зі знайомим партнером
+X dd: Обери. | Vážená pani [*Nováková/Novák/Novákovej], ďakujem za Vašu odpoveď.
+= Прізвище жінки — Nováková; звернення стоїть у називному відмінку.
+X dd: Обери. | Vážená pani [*riaditeľka/riaditeľ/riaditeľke], dovoľujem si Vás požiadať o stretnutie.
+= Адресат — жінка, тож посада в жіночому роді: riaditeľka, називний відмінок.
+X sc: Ти пишеш e-mail у міську раду, імені адресата не знаєш. Яке звернення підійде? | - | *Dobrý deň, ;; Ahoj, ;; Vážený pán Novák,
+= Без імені адресата доречне нейтральне «Dobrý deň,» або «Vážená pani, vážený pán,».
+X fe: - | [Vážený>Vážená] pani Nováková, ďakujem Vám za rýchlu odpoveď.
+= Pani — жіночий рід, тому Vážená.
+X fb: Допиши. | Vopred Vám ___ za vybavenie. (дякую) | ďakujem ;; ďakujeme |
+= Vopred Vám ďakujem za vybavenie — типова подяка перед прощанням.
+X reg: - | Ahoj, Zuzka, ďakujem za odpoveď, maj sa! | informal
+= Ahoj і maj sa — неформальне спілкування, у листі до установи так не пишуть.
+X cz: Доповни e-mail. | {Vážená} pani riaditeľka, obraciam sa na Vás vo veci prijatia dcéry do školy. {Vopred} Vám ďakujem za vybavenie. S {úctou} | Vážená, Vopred, úctou
+X np: Ти закінчуєш лист до мера: дякуєш за люб’язність і прощаєшся з особливою повагою. | *Ďakujem Vám za ústretovosť. S úctou ;; Ďakujem za ústretovosť. Čau ;; Ďakujem Vám za ústretovosť. Maj sa
+= Розмовні «Čau» і «Maj sa» у листі до мера недоречні; «S úctou» — найповажніше прощання.
+X rc: - | Ihor pracuje v Trnave a potreboval napísať riaditeľovi firmy. Prvý e-mail začal slovami: «Ahoj pán riaditeľ, chcem sa opýtať na dovolenku.» Odpoveď nedostal. Jeho kolegyňa Marta mu vysvetlila, že oslovenie je vizitka listu. Mal napísať «Vážený pán riaditeľ,» a pokračovať malým písmenom. Na konci nestačí «Ahoj», treba použiť «S pozdravom» alebo «S úctou». Marta ho upozornila aj na ďalšiu vec: Ihor napísal «vás» s malým písmenom, hoci v liste jednej osobe sa zvyčajne píše «Vás» s veľkým V. Ihor teda napísal nový e-mail, poďakoval sa za ústretovosť a podpísal sa celým menom. Riaditeľ mu odpovedal do hodiny a dovolenku mu schválil. Ihor si uvedomil, že forma nie je formalita: ukazuje rešpekt k adresátovi.
+q~: Чому, найімовірніше, Ігор не отримав відповіді на перший лист? | *лист був занадто розмовний, зі звертанням «Ahoj» ;; лист був надто довгий ;; Ігор написав не тій особі
+q~: Яку ще пораду дала Марта? | *у листі до однієї особи писати «Vás» з великої літери ;; писати весь лист великими літерами ;; не підписувати листа
+q~: Який висновок зробив Ігор? | *форма листа виявляє повагу до адресата ;; форма не має значення, якщо зміст добрий ;; краще завжди телефонувати
+X doc: Прочитай чернетку імейлу. | E-mail do podateľne mesta | Komu: Mestský úrad – podateľňa ;; Predmet: Žiadosť o potvrdenie o pobyte ;; Oslovenie: Dobrý deň, ;; Záver: S pozdravom ;; Podpis: Oksana Melnyk | Чому в листі звернення «Dobrý deň»? | *адресата не названо на ім’я, тому звернення нейтральне ;; Оксана добре знає адресата ;; адресат — суд
+= Коли нема імені, використовуємо нейтральне «Dobrý deň,» або «Vážená pani, vážený pán,».
+X tfl: - | Vážená pani riaditeľka, dovoľujem si Vás požiadať o stretnutie. Naša dcéra Marta nastúpila do piatej triedy a chceli by sme sa poradiť o jej štúdiu. Budeme Vám vďační za Váš čas. S úctou Oksana a Taras Melnykovci | *Лист адресовано директорці школи. ;; *Батьки просять про зустріч. ;; Лист починається словом «Ahoj». ;; *Прощання «S úctou» виражає особливу повагу. ;; Лист адресовано директору-чоловікові.
+= Звернення Vážená pani riaditeľka — директорка (жінка); слова «Ahoj» у листі немає.
+X bd: - | Ти правильно почав(ла) і завершив(ла) лист до директорки!
+> Marek: Píšem riaditeľke školy, pani Novotnej. Ako ju oslovím? | *Vážená pani riaditeľka, ;; Vážený pani riaditeľka, ;; Ahoj pani Novotná,
+> Marek: A čo po oslovení? Mám pokračovať veľkým písmenom? | *Nie, po čiarke pokračuj malým písmenom: Vážená pani riaditeľka, obraciam sa na Vás… ;; Áno, po oslovení vždy pokračuj veľkým písmenom. ;; Za oslovenie nedávaj nič a hneď začni text.
+> Marek: Dobre. A ako list ukončím? Chcem sa jej poďakovať za čas. | *Ďakujem Vám za Váš čas. S úctou ;; Ďakujem za čas. Čau ;; Ďakujem ti za čas. Maj sa
+X cat: Початок чи кінець листа? | Začiatok: Vážená pani riaditeľka, Vážený pán primátor, Vážení kolegovia, Dobrý deň ;; Koniec: S pozdravom, S úctou, S priateľským pozdravom, Teším sa na Vašu odpoveď
+= Звернення стоїть на початку; прощання й подяка — наприкінці.
+X ms: Обери правильні звернення. | - | *Vážená pani doktorka, ;; *Vážený pán Novák, ;; *Vážené kolegyne, vážení kolegovia, ;; Vážený pani Nováková, ;; Ahoj pán riaditeľ,
+= Vážená + pani, Vážený + pán; «Ahoj» у зверненні в офіційному листі недоречне.
+F: Лист директорці школи || Оксана пише директорці школи пані Новотній і просить про зустріч щодо доньки.
+S: Як ти звернешся до директорки? | *Vážená pani riaditeľka, ;; Vážená pani riaditeľ, ;; Ahoj pani Novotná,
+S: Ти дякуєш наперед за час. | *Vopred Vám ďakujem za Váš čas. ;; Vopred ti ďakujem za čas. ;; Dík vopred.
+S: Яке прощання вибереш? | *S úctou ;; Maj sa ;; Papa
+S~: Директорка завершила відповідь словами «S priateľským pozdravom». Що це означає? | *вона ставиться до тебе приязно, не надто офіційно ;; вона виражає найвищу офіційну повагу ;; вона відмовляє у зустрічі
+R: Vážený pán / Vážená pani + прізвище або посада, кома, далі з малої ;; невідомий адресат: Dobrý deň, / Vážená pani, vážený pán, ;; S pozdravom · S úctou · S priateľským pozdravom ;; Vopred Vám ďakujem za vybavenie · S pozdravom без коми · підпис без крапки
+
+@lesson ziadost | Заява: як сформулювати прохання | Žiadosť
+desc: Як будувати заяву до установи: прохання з Žiadam Vás o…, обґрунтування з «z dôvodu» і «na základe», правова основа v zmysle, прохання про термін і ввічливе очікування позитивної відповіді.
+goal: Складати чітку заяву: що прошу, чому прошу й до якого терміну.
+out: просити формулами Žiadam Vás o… / Dovoľujem si Vás požiadať o… ;; обґрунтовувати прохання через z dôvodu, v zmysle, na základe ;; будувати Žiadam Vás, aby ste… + l-форма ;; завершувати заяву: Verím, že mojej žiadosti vyhoviete
+done: Ти вмієш сформулювати заяву. Далі — скарга: як висловити незгоду стримано й переконливо.
+T: Прохання: що, чому, до коли || Добра заява відповідає на три питання: що прошу, чому прошу й до якого терміну. Прохання формулюємо дієсловом «žiadať o» + знахідний: «Žiadam Vás o predĺženie lehoty.» Так само «prosiť o» («Prosím Vás o vydanie potvrdenia») і «požiadať o» («Dovoľujem si Vás požiadať o stretnutie»). Другий спосіб — підрядне речення: «Žiadam Vás, aby ste mi vydali potvrdenie» — після «aby ste» стоїть l-форма. Причину вводимо словами «z dôvodu» + родовий: «z dôvodu choroby», «z pracovných dôvodov». Номер справи (spis) пишемо в рядку Vec або у вступі: «č. spisu 1245/2026». || Žiadam Vás o predĺženie lehoty o 14 dní. = Прошу вас про продовження терміну на 14 днів. ;; Z dôvodu choroby Vás žiadam o presunutie termínu. = Через хворобу прошу вас перенести термін. || žiadať o + знахідний · aby ste + l-форма · z dôvodu + родовий
+mis: Žiadam Vás vydanie potvrdenia. => Žiadam Vás o vydanie potvrdenia. ;; Žiadam Vás, aby ste mi vydáte potvrdenie. => Žiadam Vás, aby ste mi vydali potvrdenie.
+T: Правова основа і посилання || Установа любить знати, на що ти спираєшся. «V zmysle» + родовий — відповідно до: «v zmysle zákona», «v zmysle Vašej výzvy». «Na základe» + родовий — на підставі: «Na základe Vašej výzvy Vám zasielam dokumenty.» Обидва звороти звучать офіційно й підходять до листів, рішень і договорів. Якщо відповідаєш на лист установи, одразу називай його номер чи дату та номер справи — так твій лист швидше потрапить до потрібного працівника. Не плутай: «v zmysle» стоїть перед тим, що встановлює правило чи вимогу, а «na základe» — перед підставою дії. || V zmysle Vašej výzvy Vám zasielam potvrdenie o príjme. = Відповідно до вашої вимоги надсилаю вам довідку про дохід. ;; Na základe lekárskej správy žiadam o predĺženie lehoty. = На підставі медичного висновку прошу продовжити термін. || v zmysle + родовий (відповідно до) · na základe + родовий (на підставі)
+T: Термін і ввічливий кінець || Термін показуємо чітко: «najneskôr do 30. 4. 2026», «do 15 dní» або «obratom» — негайно у відповідь. Прохання про швидку відповідь пом’якшуємо: «Prosím Vás o odpoveď obratom.» Наприкінці виражаємо надію на схвалення: «Verím, že mojej žiadosti vyhoviete.» — тут «vyhovieť» вимагає давального відмінка (komu? čomu?): vyhovieť žiadosti, а не «vyhovieť žiadosť». Якщо хочеш, щоб твою ситуацію врахували: «Prosím Vás, aby ste moju situáciu zohľadnili.» || Prosím Vás o odpoveď obratom. = Прошу вас відповісти якнайшвидше. ;; Verím, že mojej žiadosti vyhoviete. = Вірю, що ви задовольните моє прохання. || vyhovieť + давальний · obratom · zohľadniť
+mis: Verím, že moju žiadosť vyhoviete. => Verím, že mojej žiadosti vyhoviete.
+W: v zmysle | відповідно до | в змісле | V zmysle zákona máte nárok na dovolenku. | Відповідно до закону ви маєте право на відпустку.
+W: vyhovieť | задовольнити (прохання) | віговєть | Úrad našej žiadosti vyhovel. | Установа задовольнила наше прохання.
+W: zohľadniť | врахувати | зогл'адніть | Prosím Vás, aby ste moju situáciu zohľadnili. | Прошу вас, щоб ви врахували мою ситуацію.
+W: obratom | негайно у відповідь | обратом | Prosím Vás o odpoveď obratom. | Прошу вас відповісти якнайшвидше.
+W: z dôvodu | через, з причини | з дуоводу | Z dôvodu choroby nemôžem prísť. | Через хворобу я не можу прийти.
+W: spis | справа (комплект документів) | спис | Číslo spisu nájdete v hornej časti výzvy. | Номер справи ви знайдете у верхній частині вимоги.
+X mt: З’єднай. | v zmysle = відповідно до ;; vyhovieť = задовольнити прохання ;; zohľadniť = врахувати ;; obratom = негайно у відповідь ;; z dôvodu = через ;; spis = справа
+X dd: Обери. | Žiadam Vás [*o/na/za] predĺženie lehoty o 14 dní.
+= Дієслово «žiadať» вживається з прийменником «o» + знахідний: o predĺženie.
+X dd: Обери. | Verím, že mojej [*žiadosti/žiadosť/žiadosťou] vyhoviete.
+= Дієслово «vyhovieť» вимагає давального відмінка: vyhovieť žiadosti.
+X fb: Допиши. | Z ___ choroby žiadam o presunutie termínu. (через) | dôvodu |
+= «Z dôvodu» + родовий: z dôvodu choroby — через хворобу.
+X sc: Яке прохання про швидку відповідь сформульовано правильно? | - | *Prosím Vás o odpoveď obratom. ;; Prosím Vás odpoveď obratom. ;; Prosím Vás o odpovedať obratom.
+= «Prosiť o» + знахідний іменника: o odpoveď. Інфінітив після «o» не ставимо.
+X fe: - | Žiadam Vás, aby ste mi [vydáte>vydali] potvrdenie o pobyte.
+= Після «aby ste» стоїть l-форма: vydali.
+X tr: Перепиши офіційно, почни зі слів «Žiadam Vás, aby ste…». | Pošlite mi potvrdenie. | Žiadam Vás, aby ste mi poslali potvrdenie. ;; Žiadam Vás, aby ste mi zaslali potvrdenie. ;; Žiadam Vás, aby ste mi potvrdenie poslali. ;; Žiadam Vás, aby ste mi potvrdenie zaslali.
+= aby ste + l-форма (poslali / zaslali).
+X ce: Виправ речення. | Žiadam Vás vydanie potvrdenia čo najskôr. | Žiadam Vás o vydanie potvrdenia čo najskôr. ;; Žiadam Vás čo najskôr o vydanie potvrdenia.
+= Бракує прийменника «o»: žiadať o vydanie.
+X rc: - | Natália dostala z úradu výzvu, aby do desiatich dní doplnila k žiadosti o príspevok potvrdenie o príjme manžela. Manžel však pracuje na stavbe v Rakúsku a potvrdenie od jeho zamestnávateľa príde až o dva týždne. Natália preto napísala žiadosť o predĺženie lehoty. Do úvodu uviedla číslo spisu z výzvy. Potom stručne vysvetlila dôvod: potvrdenie od zahraničného zamestnávateľa sa nedá získať skôr. Požiadala o predĺženie o 14 dní a pripojila kópiu výzvy. Na záver napísala, že potvrdenie doručí hneď po jeho získaní. Úrad jej žiadosti vyhovel a lehotu predĺžil do 24. apríla. Pracovníčka jej neskôr povedala, že dôvod a konkrétny nový termín uľahčujú rozhodnutie.
+q~: Чому Наталія не могла вчасно надати довідку? | *довідку від чоловікового роботодавця з-за кордону можна отримати лише за два тижні ;; чоловік відмовився її давати ;; Наталія не знала про вимогу
+q~: Що Наталія вказала на початку листа? | *номер справи з вимоги ;; свою зарплату ;; адресу роботодавця
+q~: Що допомогло прискорити рішення? | *названо причину й конкретний новий термін ;; особиста зустріч із керівником ;; велика кількість додатків
+X doc: Прочитай заяву. | Žiadosť o uvoľnenie z vyučovania | Vec: Žiadosť o uvoľnenie z vyučovania ;; Žiačka: Marta Melnyk, 5. A ;; Dôvod: rodinná udalosť v zahraničí ;; Termín: 3. a 4. apríla 2026 ;; Prílohy: žiadne | На скільки днів батьки просять звільнити доньку від навчання? | *на два дні ;; на один день ;; на тиждень
+= Termín: 3. a 4. apríla — dva dni.
+X msg: Прочитай відповідь установи. | Úrad práce, sociálnych vecí a rodiny | Dobrý deň, pani Kovalenko, Váš spis č. 1245/2026 sme zaevidovali. Vašej žiadosti o predĺženie lehoty sme vyhoveli: potvrdenie o príjme môžete doručiť najneskôr do 24. apríla 2026. Ak ho v tomto termíne nedoručíte, konanie môže byť zastavené. S pozdravom Mgr. Dana Horváthová | Що станеться, якщо вона не надасть довідку до 24 квітня? | *провадження може бути зупинено ;; термін автоматично продовжать ;; її заяву задовольнять
+= Ak ho nedoručíte, konanie môže byť zastavené — провадження може бути зупинено.
+X np: Ти просиш установу врахувати твою ситуацію. | *Prosím Vás, aby ste moju situáciu zohľadnili. ;; Prosím Vás zohľadniť moja situácia. ;; Prosím ťa, aby si moju situáciu zohľadnil. ;; Zohľadnite to hneď!
+= Офіційна формула: Prosím Vás, aby ste + l-форма; Vy-форма й без оклику.
+X cat: Що тут прохання, а що обґрунтування? | Prosba: Žiadam Vás o predĺženie lehoty, Prosím Vás o vydanie potvrdenia, Dovoľujem si Vás požiadať o stretnutie, Žiadam o preskúmanie rozhodnutia ;; Dôvod: Z dôvodu choroby, Z pracovných dôvodov, Žiadosť odôvodňujem chorobou dcéry, Potvrdenie príde až o dva týždne
+= Прохання починається зі žiadam / prosím / požiadať; обґрунтування — z dôvodu, odôvodňujem, факти.
+X so: - | Скажи установі: «Прошу вас продовжити термін на 14 днів.» | Žiadam Vás o predĺženie lehoty o 14 dní.
+= žiadať o + знахідний (o predĺženie); тривалість — теж «o»: o 14 dní.
+X ms: Обери правильні речення із проханням. | - | *Žiadam Vás o vydanie potvrdenia. ;; *Z dôvodu choroby Vás žiadam o presunutie termínu. ;; *Verím, že mojej žiadosti vyhoviete. ;; Žiadam Vás vydanie potvrdenia. ;; Verím, že moju žiadosť vyhoviete.
+= «Žiadať o» + знахідний; «vyhovieť» + давальний.
+F: Заява про продовження терміну || Ти пишеш до установи й просиш продовжити термін, бо довідка з-за кордону ще не прийшла.
+S: Що напишеш у рядку Vec? | *Vec: Žiadosť o predĺženie lehoty, spis č. 1245/2026 ;; Vec: Predĺženie ;; Vec: Prosím pomoc
+S: Як сформулюєш прохання? | *Žiadam Vás o predĺženie lehoty o 14 dní. ;; Žiadam Vás o predĺžiť lehotu o 14 dní. ;; Predĺžte mi lehotu o 14 dní!
+S: Як обґрунтуєш? | *Z dôvodu oneskoreného doručenia potvrdenia zo zahraničia nemôžem dokumenty doložiť včas. ;; Lebo to nestíham, tak neviem. ;; Potvrdenie nie je a basta.
+S: Як завершиш заяву? | *Verím, že mojej žiadosti vyhoviete. Vopred Vám ďakujem. ;; Verím, že moja žiadosť vyhoviete. ;; Dúfam, že to bude OK, ahoj.
+R: žiadať o + знахідний · aby ste + l-форма ;; z dôvodu + родовий · v zmysle · na základe ;; obratom · najneskôr do… ;; vyhovieť žiadosti (давальний)
+
+@lesson staznost | Скарга: стримано й переконливо | Sťažnosť
+desc: Як написати скаргу, яку сприймуть серйозно: факти замість емоцій, формули Sťažujem sa na…, Nesúhlasím s…, Namietam…, вимога виправлення чи відшкодування та ввічливе попередження про наступні кроки.
+goal: Складати скаргу, яка спокійно називає факти, незгоду й конкретну вимогу.
+out: починати скаргу формулою Obraciam sa na Vás so sťažnosťou na… ;; викладати факти й виражати незгоду: Nesúhlasím s…, Namietam… ;; формулювати вимогу: Žiadam o nápravu, Domáham sa odškodnenia ;; пом’якшувати тиск: V opačnom prípade sa obrátim na…
+done: Ти вмієш написати стриману й переконливу скаргу. Далі — оскарження рішення: як подати odvolanie.
+T: Скарга: факти, оцінка, вимога || Скарга, яку розглянуть серйозно, має три частини: факти, оцінка, вимога. Починаємо формулою «Obraciam sa na Vás so sťažnosťou na…» (+ знахідний: na kvalitu služieb, na postup pracovníčky) або дієсловом: «Sťažujem sa na + знахідний». Прийменник «so» стоїть перед словом, що починається на s + приголосний: so sťažnosťou. Факти подаємо з датою, у порядку подій: «Dňa 10. januára mal prísť technik, ale neprišiel.» Оцінки й емоції мінімальні: образи («ste podvodníci») шкодять справі, бо послаблюють твою позицію. || Obraciam sa na Vás so sťažnosťou na kvalitu služieb. = Звертаюся до вас зі скаргою на якість послуг. ;; Dňa 10. januára mal prísť technik, ale neprišiel. = 10 січня мав прийти майстер, але не прийшов. || sťažovať sa na + знахідний · so sťažnosťou · факти з датами
+mis: Sťažujem sa o kvalite služieb. => Sťažujem sa na kvalitu služieb. ;; Obraciam sa na Vás s sťažnosťou. => Obraciam sa na Vás so sťažnosťou.
+T: Як виразити незгоду || Незгоду виражаємо поступово. «Nie som spokojná s + орудний» — ввічливо: «Nie som spokojná s vybavením.» «Nesúhlasím s + орудний» — виразніше: «Nesúhlasím s vyúčtovaním.» «Namietam + знахідний» — офіційне заперечення: «Namietam účtovaný poplatok.» Про помилку установи пишемо нейтрально: «Pri vybavovaní došlo k pochybeniu.» «Zistila som nezrovnalosť vo vyúčtovaní.» — тут «vo» + місцевий. «Považujem to za pochybenie» — вважаю це помилкою (považovať za + знахідний). Такі формули не звинувачують людину, а описують проблему — це переконує більше. || Nesúhlasím s vyúčtovaním a namietam účtovaný poplatok. = Не погоджуюся з розрахунком і заперечую проти нарахованої плати. ;; Zistila som nezrovnalosť vo vyúčtovaní. = Я виявила розбіжність у розрахунку. || nesúhlasiť s + орудний · namietať + знахідний · nezrovnalosť vo + місцевий
+mis: Nesúhlasím vyúčtovanie. => Nesúhlasím s vyúčtovaním.
+T: Вимога і наступний крок || Скарга без вимоги нічого не змінює. Конкретно кажемо, чого хочемо: «Žiadam o vysvetlenie a nápravu.» «Žiadam o stornovanie poplatku.» «Domáham sa odškodnenia.» — «domáhať sa» вимагає родового відмінка: domáham sa odškodnenia, domáham sa náhrady škody. Додаємо термін: «Žiadam o odpoveď do 14 dní.» Якщо потрібно, ввічливо попереджаємо про наступний крок: «V opačnom prípade sa obrátim na Slovenskú obchodnú inšpekciu.» Формулу «v opačnom prípade» (інакше, у протилежному разі) вживаємо спокійно, без погроз. || Domáham sa odškodnenia za vzniknutú škodu. = Вимагаю відшкодування за завдану шкоду. ;; Žiadam o odpoveď do 14 dní, v opačnom prípade sa obrátim na inšpekciu. = Прошу відповісти протягом 14 днів, інакше звернуся до інспекції. || domáhať sa + родовий · v opačnom prípade
+mis: Domáham sa odškodnenie. => Domáham sa odškodnenia.
+W: pochybenie | помилка, недогляд (установи чи працівника) | похибеньє | Pri vybavovaní žiadosti došlo k pochybeniu. | Під час розгляду заяви сталася помилка.
+W: nezrovnalosť | розбіжність, невідповідність | незровналость | Vo faktúre som zistila nezrovnalosť. | У рахунку-фактурі я виявила розбіжність.
+W: namietať | заперечувати, висловлювати заперечення | намієтать | Namietam účtovaný poplatok. | Я заперечую проти нарахованої плати.
+W: domáhať sa | вимагати (права, компенсації) | дома:гать са | Domáham sa odškodnenia za vzniknutú škodu. | Вимагаю відшкодування завданої шкоди.
+W: odškodnenie | відшкодування, компенсація | одшкодньєньє | Žiadam o odškodnenie za poškodený tovar. | Прошу відшкодування за пошкоджений товар.
+W: nesúhlas | незгода | несу:глас | Svoj nesúhlas s rozhodnutím vyjadrujem písomne. | Свою незгоду з рішенням висловлюю письмово.
+X mt: З’єднай. | pochybenie = помилка установи ;; nezrovnalosť = розбіжність ;; namietať = заперечувати ;; domáhať sa = вимагати (права) ;; odškodnenie = відшкодування ;; nesúhlas = незгода
+X dd: Обери. | Obraciam sa na Vás [*so/s/zo] sťažnosťou na kvalitu služieb.
+= Перед словом, що починається на s + приголосний, ставимо «so»: so sťažnosťou.
+X dd: Обери. | Sťažujem sa [*na/o/za] postup pracovníčky.
+= Sťažovať sa na + знахідний.
+X fb: Допиши. | Nie som spokojná ___ vybavením mojej reklamácie. (прийменник) | s |
+= Nie som spokojná s + орудний: s vybavením.
+X sc: Яка вимога відшкодування сформульована правильно? | - | *Domáham sa odškodnenia. ;; Domáham sa odškodnenie. ;; Domáham sa odškodnením.
+= Domáhať sa + родовий: odškodnenia.
+X fe: - | Zistila som nezrovnalosť [v>vo] vyúčtovaní, ktoré mi prišlo minulý mesiac.
+= Перед словом на v- чи f- прийменник «v» стає «vo»: vo vyúčtovaní.
+X ce: Виправ речення. | Sťažujem sa o kvalite služieb. | Sťažujem sa na kvalitu služieb.
+= Sťažovať sa na + знахідний: na kvalitu.
+X rc: - | Ihor si v januári objednal internet od nového poskytovateľa. Technik mal prísť 10. januára, ale neprišiel a nikto nezavolal. O týždeň neskôr mu strhli poplatok za aktiváciu, hoci služba nefungovala. Ihor najprv volal na zákaznícku linku, kde mu sľúbili nápravu, no nestalo sa nič. Preto napísal písomnú sťažnosť. Fakty opísal bez emócií: dátum, čo bolo dohodnuté a čo sa stalo. Uviedol, že namieta účtovaný poplatok, a požiadal o jeho stornovanie. Žiadal tiež odpoveď do 14 dní. Dodal, že sa v opačnom prípade obráti na Slovenskú obchodnú inšpekciu. Spoločnosť sa mu do týždňa ospravedlnila, poplatok stornovala a ponúkla mu zľavu na ďalší mesiac.
+q~: Що сталося 10 січня? | *майстер не прийшов і ніхто не повідомив ;; майстер зламав обладнання ;; Ігор не був удома
+q~: Що Ігор вимагав у скарзі? | *скасувати плату й відповісти протягом 14 днів ;; повернути всі гроші за рік ;; звільнити майстра
+q~: Чому лист, найімовірніше, подіяв? | *у ньому були факти, чітка вимога й термін ;; у ньому були образи на фірму ;; Ігор прийшов до офісу
+X doc: Прочитай скаргу. | Sťažnosť na vybavenie reklamácie | Vec: Sťažnosť na vybavenie reklamácie ;; Dátum reklamácie: 12. 2. 2026 ;; Opis: vadný telefón bol odoslaný na opravu, po 40 dňoch ho zákazník stále nemá ;; Požiadavka: oprava alebo výmena do 14 dní ;; Príloha: kópia reklamačného protokolu | Чого вимагає клієнт? | *ремонту або заміни телефона протягом 14 днів ;; негайного повернення грошей ;; скасування договору
+= Požiadavka: oprava alebo výmena do 14 dní.
+X msg: Прочитай відповідь компанії. | Zákaznícka podpora | Dobrý deň, pán Bondar, ďakujeme za Vašu sťažnosť. Po preverení sme zistili, že pri odosielaní opraveného telefónu došlo k pochybeniu našej kuriérskej služby. Telefón Vám odošleme znova ešte dnes a ako ospravedlnenie Vám poskytneme zľavu 10 % na ďalší nákup. S pozdravom Zákaznícka podpora | Що визнала компанія? | *що кур’єрська служба допустила помилку ;; що клієнт сам пошкодив телефон ;; що телефон не підлягає ремонту
+= došlo k pochybeniu našej kuriérskej služby — помилка кур’єрської служби.
+X np: Ти пишеш, що не погоджуєшся з розрахунком (vyúčtovanie). | *Nesúhlasím s vyúčtovaním. ;; Nesúhlasím vyúčtovanie. ;; Nesúhlasím so vyúčtovanie. ;; Nesúhlasím s vyúčtovať.
+= Nesúhlasiť s + орудний: s vyúčtovaním.
+X cat: Що тут факт, а що вимога? | Fakt: Technik neprišiel 10. januára, Poplatok mi strhli 17. januára, Na linku som volala dvakrát, Reklamáciu som podal 12. februára ;; Požiadavka: Žiadam o stornovanie poplatku, Žiadam o vysvetlenie, Domáham sa odškodnenia, Žiadam o odpoveď do 14 dní
+= Факти — що й коли сталося; вимоги починаються зі žiadam / domáham sa.
+X tfl: - | Vážení, dňa 5. marca som si v prevádzke kúpil práčku. Doma sa ukázalo, že bubon je poškodený. Predavač mi odmietol reklamáciu s tým, že škodu som spôsobil ja. S týmto tvrdením nesúhlasím, pretože som práčku ešte nespustil. Žiadam o výmenu práčky alebo vrátenie peňazí do 14 dní. V opačnom prípade sa obrátim na Slovenskú obchodnú inšpekciu. | *Zákazník tvrdí, že práčku nespustil. ;; *Zákazník žiada výmenu alebo vrátenie peňazí. ;; Predavač reklamáciu prijal. ;; *Zákazník je ochotný obrátiť sa na inšpekciu. ;; Zákazník žiada len ospravedlnenie.
+= Predavač reklamáciu odmietol; zákazník žiada výmenu alebo vrátenie peňazí.
+X ms: Обери ділові формулювання скарги. | - | *Sťažujem sa na kvalitu služieb. ;; *Nesúhlasím s vyúčtovaním. ;; *Domáham sa odškodnenia. ;; Váš servis je hrozný, ste podvodníci! ;; Chcem hneď peniaze späť, inak vás zničím!
+= Скарга має бути діловою: без образ і погроз.
+X dr: - | Pracovníčka: Čo presne Vám nevyhovuje? | *Nie som spokojná s vybavením mojej reklamácie. Žiadam o nápravu. ;; Nie som spokojná vybavenie reklamácia. Žiadam nápravu. ;; Všetko je vaša chyba, dajte mi peniaze!
+= Ввічлива й конкретна відповідь: nie som spokojná s + орудний; žiadam o + знахідний.
+F: Скарга на інтернет-провайдера || Майстер не прийшов, а гроші за підключення вже списали. Ти пишеш письмову скаргу.
+S: Як почнеш скаргу? | *Obraciam sa na Vás so sťažnosťou na nevybavenie mojej objednávky. ;; Obraciam sa na Vás s sťažnosťou na nevybavenie mojej objednávky. ;; Dobrý deň, vaša firma je katastrofa.
+S: Як опишеш факти? | *Dňa 10. januára mal prísť technik, ale neprišiel a nikto ma neinformoval. ;; Technik je určite lenivý. ;; Všetci vždy meškajú.
+S: Як сформулюєш вимогу? | *Namietam účtovaný poplatok a žiadam o jeho stornovanie. ;; Namietam účtovaný poplatok a žiadam o stornovať. ;; Namietam poplatku a žiadam stornovanie.
+S: Як завершиш? | *Žiadam o odpoveď do 14 dní, v opačnom prípade sa obrátim na Slovenskú obchodnú inšpekciu. ;; Odpovedajte hneď, inak budete ľutovať! ;; Odpoveď môže prísť kedykoľvek, nechvátam.
+R: sťažovať sa na + знахідний · so sťažnosťou ;; Nesúhlasím s + орудний · Namietam + знахідний ;; Žiadam o nápravu · Domáham sa + родовий ;; v opačnom prípade · факти без образ
+
+@lesson odvolanie | Оскарження рішення | Odvolanie
+desc: Як оскаржити рішення установи: строк і місце подання, формула Podávam odvolanie proti rozhodnutiu, аргументи, докази й прохання до органу, який розглядає оскарження.
+goal: Писати оскарження з посиланням на рішення, аргументами, доказами й чіткою вимогою.
+out: ідентифікувати рішення: rozhodnutie č. … zo dňa … ;; будувати Podávam odvolanie proti rozhodnutiu ;; аргументувати: vzhľadom na…, preukázať, napadnuté rozhodnutie ;; просити: Žiadam, aby odvolací orgán rozhodnutie zrušil
+done: Ти вмієш оскаржити рішення. Далі — вибачення: як вибачитися стримано й офіційно.
+T: Що таке odvolanie і де строк || Odvolanie — це оскарження рішення установи: ти просиш вищий орган ще раз розглянути справу. Строк і місце подання завжди вказані в поученні (poučenie) наприкінці рішення: часто це 15 днів від дня отримання, а подається оскарження зазвичай в установі, яка рішення видала. Якщо ти не оскаржиш у строк, рішення зазвичай набуде законної сили (nadobudne právoplatnosť), і змінити його стане набагато важче. Починай з ідентифікації рішення: номер і дата. Дату з номером зв’язує «zo dňa» + дата. Дієслово: «podať odvolanie proti + давальний»: «proti rozhodnutiu». || Podávam odvolanie proti rozhodnutiu č. 456/2026 zo dňa 3. 3. 2026. = Оскаржую рішення № 456/2026 від 3. 3. 2026. ;; Odvolanie treba podať do 15 dní odo dňa doručenia. = Оскарження треба подати протягом 15 днів від дня отримання. || odvolanie proti + давальний · zo dňa + дата · строк у poučení
+mis: Podávam odvolanie na rozhodnutie. => Podávam odvolanie proti rozhodnutiu.
+T: Аргументи й докази || Оскарження не повторює скаргу, воно аргументує. Спершу називаємо оскаржуване рішення («napadnuté rozhodnutie»), далі — з чим не погоджуємося й чому: «Úrad pri výpočte zohľadnil príjem, ktorý už nepoberám.» Докази вводимо дієсловом «preukázať» — довести: «Zmenu príjmu preukazuje nová pracovná zmluva.» Висновок вводимо «vzhľadom na» + знахідний — з огляду на: «Vzhľadom na uvedené skutočnosti žiadam o preskúmanie rozhodnutia.» Тон — спокійний, юридично нейтральний: ми не звинувачуємо працівника, а вказуємо, що рішення спирається на неточні дані. || Vzhľadom na uvedené skutočnosti žiadam o preskúmanie rozhodnutia. = З огляду на викладені обставини прошу переглянути рішення. ;; Zmenu príjmu preukazuje priložená pracovná zmluva. = Зміну доходу підтверджує доданий трудовий договір. || napadnuté rozhodnutie · preukázať · vzhľadom na + знахідний
+T: Вимога до органу || Наприкінці чітко формулюємо, чого хочемо. «Žiadam, aby odvolací orgán napadnuté rozhodnutie zrušil.» (aby + l-форма; орган — чоловічий рід, тому «zrušil»). Або менш радикально: «Navrhujem zmenu rozhodnutia.» «Žiadam o preskúmanie rozhodnutia.» Додаємо перелік додатків: «Prílohy: kópia rozhodnutia, nová pracovná zmluva.» Підпис і дата обов’язкові. Корисно залишити собі копію з відміткою установи про дату прийняття — це доказ, що ти вклався(лась) у строк. || Žiadam, aby odvolací orgán napadnuté rozhodnutie zrušil. = Прошу, щоб орган, який розглядає оскарження, скасував оскаржуване рішення. ;; Prílohy: kópia rozhodnutia, nová pracovná zmluva. = Додатки: копія рішення, новий трудовий договір. || aby odvolací orgán … zrušil · prílohy · копія з відміткою
+W: právoplatný | той, що набрав законної сили | пра:воплатни: | Ak sa v lehote neodvoláte, rozhodnutie sa stane právoplatným. | Якщо ви не оскаржите у строк, рішення набуде законної сили.
+W: preskúmanie | перегляд, перевірка | преску:маньє | Žiadam o preskúmanie rozhodnutia. | Прошу переглянути рішення.
+W: odvolací orgán | орган, що розглядає оскарження | одволаці: орга:н | Odvolací orgán rozhodne o odvolaní. | Орган, що розглядає оскарження, ухвалить рішення щодо оскарження.
+W: preukázať | довести, підтвердити документами | преука:зать | Zmenu príjmu preukážem pracovnou zmluvou. | Зміну доходу я доведу трудовим договором.
+W: napadnutý | оскаржуваний (про рішення) | нападнути: | Napadnuté rozhodnutie považujem za nesprávne. | Оскаржуване рішення вважаю неправильним.
+W: vzhľadom na | з огляду на | взгл'адом на | Vzhľadom na uvedené skutočnosti žiadam o zmenu rozhodnutia. | З огляду на викладені обставини прошу змінити рішення.
+X mt: З’єднай. | právoplatný = той, що набрав законної сили ;; preskúmanie = перегляд ;; odvolací orgán = орган, що розглядає оскарження ;; preukázať = довести ;; napadnutý = оскаржуваний ;; vzhľadom na = з огляду на
+X dd: Обери. | Podávam odvolanie [*proti/na/pre] rozhodnutiu č. 123/2026.
+= Odvolanie podávame proti + давальний: proti rozhodnutiu.
+X dd: Обери. | Vzhľadom [*na/o/pre] uvedené skutočnosti žiadam o preskúmanie rozhodnutia.
+= Вираз «vzhľadom na» вимагає знахідного відмінка: na uvedené skutočnosti.
+X fb: Допиши. | Ak sa v lehote neodvoláte, rozhodnutie nadobudne ___. (законну силу) | právoplatnosť |
+= Rozhodnutie nadobudne právoplatnosť — набуде законної сили.
+X sc: Яке формулювання вимоги правильне? | - | *Žiadam, aby odvolací orgán napadnuté rozhodnutie zrušil. ;; Žiadam, aby odvolací orgán napadnuté rozhodnutie zruší. ;; Žiadam, aby odvolací orgán napadnuté rozhodnutie zrušiť.
+= Після «aby» стоїть l-форма: zrušil.
+X fe: - | Podávam odvolanie [na>proti] rozhodnutiu o zamietnutí žiadosti.
+= Podať odvolanie proti + давальний: proti rozhodnutiu.
+X ce: Виправ речення. | Podávam odvolanie proti rozhodnutie č. 456/2026. | Podávam odvolanie proti rozhodnutiu č. 456/2026.
+= «Proti» вимагає давального відмінка: rozhodnutiu.
+X rc: - | Olena dostala poštou rozhodnutie, ktorým úrad zamietol jej žiadosť o príspevok na bývanie. V odôvodnení stálo, že jej príjem je vyšší ako povolená hranica. Olena však zistila, že úrad započítal aj mzdu, ktorú už od januára nedostáva, pretože zmenila zamestnanie. V poučení našla, že odvolanie môže podať do 15 dní odo dňa doručenia a že ho podáva na úrade, ktorý rozhodnutie vydal. Napísala, že proti rozhodnutiu podáva odvolanie, uviedla číslo spisu a napadnuté rozhodnutie presne označila. Zmenu príjmu preukázala: priložila novú pracovnú zmluvu a výplatnú pásku. Požiadala, aby odvolací orgán rozhodnutie zrušil. Odvolanie odovzdala na podateľni a nechala si potvrdiť dátum prijatia.
+q~: Чому Олені відмовили в допомозі? | *за розрахунком її дохід вищий за дозволену межу ;; вона не подала заяви вчасно ;; вона не живе в цьому місті
+q~: Яку помилку, на думку Олени, зробила установа? | *врахувала зарплату, якої вона вже не отримує ;; не врахувала її дітей ;; видала рішення без підпису
+q~: Як Олена довела зміну доходу? | *додала новий трудовий договір і розрахунковий листок ;; принесла лист від сусідки ;; написала, що це правда
+X doc: Прочитай витяг із рішення. | Rozhodnutie č. 456/2026 – poučenie | Výsledok: žiadosť zamietnutá ;; Poučenie: proti tomuto rozhodnutiu možno podať odvolanie do 15 dní odo dňa doručenia ;; Miesto podania: úrad, ktorý rozhodnutie vydal ;; Orgán: Mestský úrad | Куди й у який строк подається оскарження? | *протягом 15 днів від отримання, в установі, що видала рішення ;; протягом 30 днів, у суді ;; без строку, електронною поштою
+= Poučenie: do 15 dní odo dňa doručenia, na úrade, ktorý rozhodnutie vydal.
+X msg: Прочитай відповідь установи. | Mestský úrad | Dobrý deň, pani Kovalenko, Vaše odvolanie sme dostali 20. marca, teda v zákonnej lehote. Spis sme postúpili odvolaciemu orgánu, ktorý o ňom rozhodne. Ak by ste chceli doplniť ďalšie dôkazy, doručte ich čo najskôr. S pozdravom referent odboru sociálnych vecí | Що сталося зі справою після подання оскарження? | *справу передали органу, що розглядає оскарження ;; справу повернули авторці ;; оскарження відхилили через пропуск строку
+= Spis sme postúpili odvolaciemu orgánu — справу передали органу, що розглядає оскарження.
+X np: Ти починаєш оскарження: подаєш його проти рішення № 456/2026 від 3. 3. 2026. | *Podávam odvolanie proti rozhodnutiu č. 456/2026 zo dňa 3. 3. 2026. ;; Podávam odvolanie na rozhodnutie č. 456/2026 zo dňa 3. 3. 2026. ;; Podávam odvolanie proti rozhodnutie č. 456/2026 zo dňa 3. 3. 2026. ;; Podávam odvolanie proti rozhodnutiu č. 456/2026 zo dňom 3. 3. 2026.
+= Proti + давальний (rozhodnutiu); дата — «zo dňa».
+X cat: Що тут аргумент, а що прохання? | Dôvod: Úrad započítal starý príjem, Rozhodnutie nezohľadnilo moje nové zamestnanie, Zmena príjmu je preukázaná dokladmi, Mzdu už od januára nepoberám ;; Návrh: Žiadam o zrušenie rozhodnutia, Žiadam o nové posúdenie žiadosti, Navrhujem zmenu rozhodnutia, Žiadam o preskúmanie rozhodnutia
+= Аргумент пояснює, чому рішення неправильне; прохання починається зі žiadam / navrhujem.
+X tfl: - | Poučenie: Proti tomuto rozhodnutiu možno podať odvolanie do 15 dní odo dňa jeho doručenia. Odvolanie sa podáva na úrade, ktorý rozhodnutie vydal. Odvolanie má obsahovať označenie rozhodnutia, dôvody nesúhlasu a podpis odvolateľa. Ak sa odvolanie v lehote nepodá, rozhodnutie nadobudne právoplatnosť. | *Оскарження треба подати протягом 15 днів від отримання. ;; *В оскарженні мають бути причини незгоди. ;; *Після спливу строку рішення набуває законної сили. ;; Оскарження подається до суду. ;; Підпис в оскарженні не потрібен.
+= Подання — в установі, що видала рішення; підпис потрібен.
+X ms: Обери правильні формулювання. | - | *Podávam odvolanie proti rozhodnutiu. ;; *Žiadam o preskúmanie napadnutého rozhodnutia. ;; *Vzhľadom na uvedené žiadam o zrušenie rozhodnutia. ;; Podávam odvolanie na rozhodnutiu. ;; Žiadam o preskúmať rozhodnutie.
+= proti + давальний; žiadať o + іменник у знахідному.
+X tf: - | Ak sa odvolanie nepodá v lehote, rozhodnutie sa spravidla stane právoplatným. | T
+= Після спливу строку рішення набуває законної сили — змінити його вже складно.
+F: Оскарження відмови || Установа відмовила Олені в допомозі, бо врахувала старий дохід. Вона готує оскарження.
+S: Як почнеш? | *Podávam odvolanie proti rozhodnutiu č. 456/2026 zo dňa 3. 3. 2026. ;; Podávam odvolanie na rozhodnutie č. 456/2026 zo dňa 3. 3. 2026. ;; Dobrý deň, nesúhlasím a basta.
+S: Як опишеш помилку? | *Úrad pri výpočte započítal príjem, ktorý už nepoberám. ;; Úrad je nespravodlivý a zlý. ;; Nechce sa mi to platiť.
+S: Яку вимогу сформулюєш? | *Žiadam, aby odvolací orgán napadnuté rozhodnutie zrušil. ;; Žiadam, aby odvolací orgán napadnuté rozhodnutie zruší. ;; Zrušte to hneď!
+S: Коли подаси оскарження? | *Najneskôr do 15 dní odo dňa doručenia, ako sa uvádza v poučení. ;; Kedykoľvek v budúcom roku. ;; Až keď budem mať čas.
+R: odvolanie proti + давальний · zo dňa ;; napadnuté rozhodnutie · preukázať · vzhľadom na ;; Žiadam, aby odvolací orgán … zrušil ;; строк і місце — у poučení
+
+@lesson ospravedlnenie | Вибачення в офіційному листі | Ospravedlnenie
+desc: Як вибачитися стримано й переконливо: Ospravedlňujem sa Vám za…, Je mi ľúto, že…, пояснення без виправдань, подяка за розуміння, а також різниця між «ospravedlniť sa» і «ospravedlniť neprítomnosť».
+goal: Писати офіційне вибачення з чіткою структурою: жаль, пояснення, виправлення, подяка.
+out: вибачатися: Ospravedlňujem sa Vám za…, Je mi ľúto, že… ;; розрізняти ospravedlniť sa (вибачитися) і ospravedlniť + знахідний (виправдати відсутність) ;; пояснювати без звинувачень: došlo k nedopatreniu ;; закінчувати наступним кроком і подякою за розуміння
+done: Ти вмієш вибачитися стримано й офіційно. Далі — підтвердження й нагадування.
+T: Вибачитися чи виправдати || Вибачення в офіційному листі має чотири частини: жаль, пояснення, виправлення, подяка. Жаль: «Ospravedlňujem sa Vám za meškanie.» — зворотне «ospravedlniť sa» + давальний (komu?) + «za» + знахідний. Або: «Je mi veľmi ľúto, že…» Увага: без «sa» дієслово означає зовсім інше — ospravedlniť + знахідний = виправдати, прийняти чиюсь причину: «Ospravedlňujem neprítomnosť dcéry na vyučovaní.» Так пише батько в школу, щоб пояснити відсутність. «Prepáč» — для друзів, «prepáčte» — ввічливо, у листі краще «ospravedlňujem sa». || Úprimne sa Vám ospravedlňujem za nepríjemnosti. = Щиро перепрошую вас за незручності. ;; Ospravedlňujem neprítomnosť syna z dôvodu choroby. = Пояснюю відсутність сина хворобою. || ospravedlniť sa komu za + знахідний · ospravedlniť neprítomnosť
+mis: Ospravedlňujem Vás za meškanie. => Ospravedlňujem sa Vám za meškanie.
+T: Пояснення без виправдань || Після жалю пояснюємо, що сталося, але коротко й без звинувачень. Нейтральні формули: «Došlo k nedopatreniu z mojej strany.» (k + давальний), «Stalo sa to nedopatrením.» (орудний), «Urobil som to neúmyselne.» Не пиши: «Za to nemôžem», «Vy ste mi to nepovedali», «Nikto mi nič nepovedal». Такі фрази звучать як відмова нести відповідальність і зводять нанівець вибачення. Якщо вина справді твоя, скажи це прямо: «Preberám za to zodpovednosť.» || Došlo k nedopatreniu z mojej strany. = Сталася помилка з мого боку. ;; Stalo sa to nedopatrením a bez úmyslu. = Це сталося через недогляд і без наміру. || došlo k + давальний · nedopatrením · без звинувачень
+mis: Došlo k nedopatrenie. => Došlo k nedopatreniu.
+T: Виправлення і завершення || Хороше вибачення вказує, що ти робиш далі: «Podklady Vám posielam v prílohe.» «Prijal som opatrenia, aby sa to neopakovalo.» «Urobíme všetko, aby sme zabránili opakovaniu chyby.» (zabrániť + давальний). Лист закінчуємо подякою: «Ďakujem Vám za pochopenie.» — а не проханням «Nehnevajte sa» чи погрозою. У школі й на роботі коротке й конкретне вибачення цінується більше, ніж довге, емоційне. || Prijali sme opatrenia, aby sme zabránili opakovaniu chyby. = Ми вжили заходів, щоб запобігти повторенню помилки. ;; Ďakujem Vám za pochopenie. = Дякую вам за розуміння. || zabrániť + давальний · opatrenie · ďakujem za pochopenie
+W: nedopatrenie | недогляд, помилка з неуважності | недопатреньє | Došlo k nedopatreniu a faktúra bola odoslaná dvakrát. | Сталася помилка, і рахунок надіслали двічі.
+W: ľútosť | жаль, співчуття | льу:тость | S ľútosťou Vám oznamujem, že termín nestihneme. | З жалем повідомляю вам, що ми не встигнемо до терміну.
+W: nepríjemnosti | незручності | непрі:ємності | Ospravedlňujem sa za spôsobené nepríjemnosti. | Перепрошую за спричинені незручності.
+W: pochopenie | розуміння | похопеньє | Ďakujeme Vám za pochopenie. | Дякуємо вам за розуміння.
+W: opatrenie | захід, заходи | опатреньє | Firma prijala opatrenia na nápravu. | Фірма вжила заходів для виправлення.
+W: zabrániť | запобігти | забра:ніть | Chceme zabrániť opakovaniu chyby. | Ми хочемо запобігти повторенню помилки.
+X mt: З’єднай. | nedopatrenie = недогляд ;; ľútosť = жаль ;; nepríjemnosti = незручності ;; pochopenie = розуміння ;; opatrenie = захід ;; zabrániť = запобігти
+X dd: Обери. | Ospravedlňujem [*sa Vám/Vás/Vám sa] za meškanie.
+= Вибачатися — «ospravedlniť sa komu»: ospravedlňujem sa Vám.
+X dd: Обери. | Úprimne sa ospravedlňujem [*za/pre/o] nepríjemnosti.
+= Причину вибачення вводить «za» + знахідний: za nepríjemnosti.
+X fb: Допиши. | Je mi veľmi ___, že som zmeškal termín. (шкода) | ľúto |
+= Je mi ľúto — мені шкода, прикро.
+X sc: Ти — мама й пишеш до школи, щоб пояснити відсутність доньки. Яке речення правильне? | - | *Ospravedlňujem neprítomnosť dcéry na vyučovaní. ;; Ospravedlňujem sa neprítomnosť dcéry na vyučovaní. ;; Ospravedlňujem sa dcére na vyučovaní.
+= Без «sa» дієслово «ospravedlniť» означає виправдати чиюсь відсутність.
+X fe: - | Došlo k [nedopatrenie>nedopatreniu] pri odosielaní podkladov.
+= Після «k» стоїть давальний відмінок: k nedopatreniu.
+X ce: Виправ речення. | Ospravedlňujem Vás za meškanie. | Ospravedlňujem sa Vám za meškanie. ;; Ospravedlňujem sa za meškanie.
+= Без «sa» дієслово означає «виправдати», а не «вибачитися»: ospravedlňujem sa Vám — вибачаюся перед вами.
+X tr: Перепиши ввічливо на «Vy». | Prepáč, že som neodpovedal. | Prepáčte, že som neodpovedal. ;; Prepáčte, že som Vám neodpovedal. ;; Prepáčte mi, že som neodpovedal. ;; Prepáčte mi, že som Vám neodpovedal.
+= Ввічлива форма до однієї особи: prepáčte; Vám із великої літери.
+X rc: - | Marta mala v utorok poslať klientovi podklady k zmluve, ale zabudla na to. Klient zavolal jej šéfovi a ten bol nahnevaný. Marta sa najprv chcela v e-maile obhajovať tým, že zadanie dostala neskoro. Kolegyňa Jana jej však poradila, aby vynechala výhovorky. Podľa nej má dobré ospravedlnenie tri časti: úprimnú ľútosť, vysvetlenie bez obviňovania a konkrétnu nápravu. Marta teda napísala: «Úprimne sa Vám ospravedlňujem za nepríjemnosti. Došlo k nedopatreniu z mojej strany. Podklady Vám posielam v prílohe a odteraz si budem termíny zapisovať do spoločného kalendára.» Šéf jej odpovedal, že oceňuje jej otvorenosť, a klient napísal, že situáciu chápe.
+q~: Що Марта спочатку хотіла написати? | *виправдатися, що завдання отримала пізно ;; визнати провину повністю ;; нічого не писати
+q~: Яку пораду дала Яна? | *не вживати відмовок і побудувати вибачення з трьох частин ;; зателефонувати клієнтові вночі ;; написати довгий емоційний лист
+q~: Чому ситуація добре закінчилась? | *Марта чесно визнала помилку й запропонувала виправлення ;; клієнт забув про справу ;; Марта звільнилась
+X msg: Прочитай повідомлення від класної керівниці. | Mgr. Eva Šimková, triedna učiteľka | Dobrý deň, pán Kováč, ďakujem za ospravedlnenie neprítomnosti Vašej dcéry. Podľa školského poriadku je potrebné doložiť potvrdenie od lekára, ak neprítomnosť trvá viac ako tri dni. Dcéra chýbala päť dní, preto Vás prosím o doručenie potvrdenia do piatku. S pozdravom E. Šimková | Що має зробити батько? | *принести до п’ятниці довідку від лікаря ;; написати ще одне вибачення ;; прийти на зустріч у школу
+= Neprítomnosť trvala päť dní — treba potvrdenie od lekára do piatku.
+X doc: Прочитай виправдання відсутності. | Ospravedlnenie neprítomnosti | Komu: Základná škola, 5. A ;; Žiačka: Marta Melnyk ;; Neprítomnosť: 2. – 4. 3. 2026 ;; Dôvod: choroba ;; Podpis: Oksana Melnyk, zákonná zástupkyňa | Хто підписав виправдання й чим пояснена відсутність? | *мама, хворобою доньки ;; учениця, поїздкою ;; вчителька, святом
+= Podpis: Oksana Melnyk, zákonná zástupkyňa (мама); dôvod — choroba.
+X np: Ти пишеш клієнтові: щиро перепрошуєш за незручності. | *Úprimne sa Vám ospravedlňujem za nepríjemnosti. ;; Úprimne Vás ospravedlňujem za nepríjemnosti. ;; Úprimne sa ospravedlňujem Vám nepríjemnosti. ;; Prepáč za nepríjemnosti.
+= ospravedlniť sa komu za + знахідний; у листі — Vám, а не «ti».
+X reg: - | Úprimne sa Vám ospravedlňujem za vzniknuté nepríjemnosti. | formal
+= Vy-форма, іменники й формули — офіційний регістр.
+X cat: Вибачення чи відмовка? | Ospravedlnenie: Úprimne sa Vám ospravedlňujem, Došlo k nedopatreniu z mojej strany, Prijal som opatrenia na nápravu, Je mi veľmi ľúto ;; Výhovorka: Za to nemôžem, Vy ste mi to nepovedali, Nikto mi nič nepovedal, Každý robí chyby
+= Хороше вибачення визнає помилку й пропонує виправлення; відмовка перекладає провину.
+X ms: Обери формулювання щирого офіційного вибачення. | - | *Ospravedlňujem sa Vám za meškanie. ;; *Je mi veľmi ľúto, že sa to stalo. ;; *Prijali sme opatrenia, aby sa to neopakovalo. ;; Ospravedlňujem Vás za meškanie. ;; Nie je to moja vina, prepáčte.
+= Без «sa» зміст змінюється; фраза «Nie je to moja vina» знецінює вибачення.
+F: Вибачення клієнтові || Ти надіслав(ла) клієнтові документи пізніше, ніж обіцяв(ла), і пишеш офіційне вибачення.
+S: Як почнеш? | *Úprimne sa Vám ospravedlňujem za nepríjemnosti. ;; Úprimne Vás ospravedlňujem za nepríjemnosti. ;; Prepáč, no, stalo sa.
+S: Як поясниш? | *Došlo k nedopatreniu pri odosielaní podkladov. ;; Za to môže kolega. ;; Nič sa nestalo, preháňate.
+S: Яке виправлення запропонуєш? | *Podklady Vám posielam v prílohe. ;; Podklady asi niekedy pošlem. ;; Podklady si nájdite sami.
+S: Як закінчиш? | *Ďakujem Vám za pochopenie. ;; Dúfam, že sa nebudete sťažovať. ;; Ahoj a nehnevaj sa.
+R: ospravedlniť sa komu za + знахідний ;; ospravedlniť neprítomnosť (без sa) ;; došlo k nedopatreniu · без звинувачень ;; opatrenie · zabrániť · ďakujem za pochopenie
+
+@lesson potvrdenie-pripomienka | Підтвердження й нагадування | Potvrdenie a pripomienka
+desc: Як офіційно підтвердити отримання листа чи термін, як нагадати про незавершену справу крок за кроком (від м’якого нагадування до повторного прохання) і як сформулювати зауваження до документа.
+goal: Підтверджувати й нагадувати ввічливо, послідовно й без звинувачень.
+out: підтверджувати: Potvrdzujem prijatie…, Žiadosť sme zaevidovali… ;; розрізняти predbežne (попередньо) і záväzne (остаточно) ;; нагадувати поетапно: Dovoľujem si pripomenúť… → Opätovne Vás žiadam… ;; розрізняти два значення слова pripomienka — нагадування і зауваження
+done: Ти вмієш підтвердити й нагадати. Далі — звільнення з роботи: výpoveď.
+T: Підтвердження || Офіційно підтверджуємо отримання листа, реєстрацію заяви чи термін зустрічі. «Potvrdzujem prijatie Vášho listu zo dňa 5. marca.» — potvrdiť/potvrdzovať + знахідний. «Obdržať» — офіційний синонім до «dostať»: «Dňa 12. marca sme obdržali Vašu žiadosť.» Реєстрація: «Vašu žiadosť sme zaevidovali pod číslom 456/2026.» Термін: «predbežne» — попередньо, ще можна змінити: «Termín predbežne potvrdzujem.» «Záväzne» — остаточно, з зобов’язанням: «Záväzne potvrdzujem účasť.» Добре одразу сказати, коли дасиш остаточну відповідь. || Potvrdzujem prijatie Vášho listu zo dňa 5. marca. = Підтверджую отримання вашого листа від 5 березня. ;; Termín predbežne potvrdzujem, definitívnu odpoveď pošlem do piatku. = Термін попередньо підтверджую, остаточну відповідь надішлю до п’ятниці. || potvrdzovať + знахідний · obdržať · zaevidovať · predbežne × záväzne
+mis: Potvrdzujem prijatím Vášho listu. => Potvrdzujem prijatie Vášho listu.
+T: Нагадування крок за кроком || Нагадуємо поступово. Перший крок — м’який: «Dovoľujem si Vám pripomenúť moju žiadosť zo dňa 3. marca a informovať sa o stave jej vybavenia.» (pripomenúť komu čo). Другий — констатація: «Do dnešného dňa som neobdržal žiadnu odpoveď.» Третій — повторне прохання з терміном: «Opätovne Vás žiadam o vybavenie a o odpoveď najneskôr do 31. marca.» Зверни увагу: «obracať sa na + знахідний»: «Opätovne sa na Vás obraciam vo veci…» Кожен крок короткий, з датою першого листа, без докорів і без оклику. Копію можна надіслати вищому керівникові: «Na vedomie: vedúci odboru». || Do dnešného dňa som neobdržal žiadnu odpoveď. = До сьогоднішнього дня я не отримав жодної відповіді. ;; Opätovne sa na Vás obraciam vo veci mojej žiadosti. = Повторно звертаюся до вас у справі моєї заяви. || pripomenúť komu čo · do dnešného dňa · opätovne · na vedomie
+mis: Opätovne sa Vám obraciam. => Opätovne sa na Vás obraciam.
+T: Pripomienka — нагадування чи зауваження? || Слово «pripomienka» має два значення. Перше — нагадування: «Posielam Vám pripomienku termínu.» Друге, частіше в офіційному листуванні, — зауваження до проєкту чи договору: «K zmluve mám tri pripomienky.» Зауваження нумеруємо й формулюємо конкретно: що пропоную змінити і де. Закінчення: «Prosím o zapracovanie pripomienok a zaslanie upravenej verzie.» Контекст завжди показує, яке значення мається на увазі: у листі щодо проєкту договору йдеться про зауваження, у повідомленні про термін зустрічі — про нагадування. || K návrhu zmluvy mám dve pripomienky. = До проєкту договору в мене два зауваження. ;; Posielam Vám pripomienku k termínu stretnutia. = Надсилаю вам нагадування про термін зустрічі. || pripomienka = нагадування · зауваження
+W: obdržať | отримати (офіційно) | обдржать | Dňa 12. marca sme obdržali Vašu žiadosť. | 12 березня ми отримали вашу заяву.
+W: zaevidovať | зареєструвати, внести до реєстру | заевідовать | Vašu žiadosť sme zaevidovali pod číslom 456/2026. | Вашу заяву ми зареєстрували під номером 456/2026.
+W: opätovne | повторно | опєтовнє | Opätovne Vás žiadam o odpoveď. | Повторно прошу вас про відповідь.
+W: záväzne | остаточно, з гарантією | за:везнє | Záväzne potvrdzujem účasť na porade. | Остаточно підтверджую участь у нараді.
+W: predbežne | попередньо | предбежнє | Termín predbežne potvrdzujem. | Термін попередньо підтверджую.
+W: do dnešného dňa | до сьогоднішнього дня | до днєшне:го дня | Do dnešného dňa som neobdržal odpoveď. | До сьогоднішнього дня я не отримав відповіді.
+X mt: З’єднай. | obdržať = отримати (офіційно) ;; zaevidovať = зареєструвати ;; opätovne = повторно ;; záväzne = остаточно ;; predbežne = попередньо ;; do dnešného dňa = до сьогоднішнього дня
+X dd: Обери. | Potvrdzujem [*prijatie/prijať/prijatím] Vášho listu zo dňa 5. marca.
+= Potvrdzovať + знахідний іменника: prijatie.
+X dd: Обери. | Do dnešného dňa som [*neobdržal/neobdržím/neobdržať] odpoveď.
+= Події вже сталися, тому минулий час: som neobdržal.
+X fb: Допиши. | Vašu žiadosť sme ___ pod číslom 456/2026. (зареєстрували) | zaevidovali ;; zaregistrovali |
+= Zaevidovať / zaregistrovať — внести до реєстру; l-форма множини.
+X sc: Яка формула ввічливо нагадує про відповідь? | - | *Dovoľujem si Vám pripomenúť moju žiadosť zo dňa 5. marca. ;; Hneď odpovedajte na moju žiadosť! ;; Pripomínam Vám, že ste neschopní.
+= Перший крок — м’яке нагадування без докору: dovoľujem si pripomenúť.
+X fe: - | Dovoľujem si Vám [pripomenul>pripomenúť] moju žiadosť zo dňa 3. marca.
+= Після «dovoľujem si» стоїть інфінітив: pripomenúť.
+X ce: Виправ речення. | Opätovne sa Vám obraciam vo veci žiadosti. | Opätovne sa na Vás obraciam vo veci žiadosti. ;; Opätovne sa obraciam na Vás vo veci žiadosti.
+= Obracať sa na + знахідний: na Vás.
+X tr: Перепиши офіційно, вжий «do dnešného dňa» і «obdržať». | Ešte som nedostal odpoveď. | Do dnešného dňa som neobdržal odpoveď. ;; Do dnešného dňa som neobdržal žiadnu odpoveď. ;; Odpoveď som do dnešného dňa neobdržal. ;; Do dnešného dňa som odpoveď neobdržal.
+= Офіційно: do dnešného dňa + som neobdržal.
+X rc: - | Ihor poslal 3. marca dodávateľovi elektriny žiadosť o vrátenie preplatku. Potvrdenie o prijatí nedostal, a tak po dvoch týždňoch poslal pripomienku. Postupoval stupňovito. Najprv napísal pokojne: «Dovoľujem si Vám pripomenúť moju žiadosť zo dňa 3. marca a informovať sa o stave jej vybavenia.» Odpoveď neprišla ani o týždeň neskôr, a tak poslal druhý e-mail: «Do dnešného dňa som neobdržal žiadnu odpoveď. Opätovne Vás žiadam o vybavenie žiadosti a o odpoveď najneskôr do 31. marca.» Dodal, že kópiu e-mailu posiela aj zákazníckej linke. Pracovníčka sa ozvala do dvoch dní, ospravedlnila sa a potvrdila, že žiadosť zaevidovali pod číslom 7801.
+q~: Чому Ігор написав нагадування? | *не отримав підтвердження про прийняття заяви ;; постачальник надіслав йому штраф ;; хотів змінити тариф
+q~: У чому полягала поступовість його кроків? | *спершу м’яке нагадування, потім повторне прохання з терміном ;; спершу погроза, потім вибачення ;; він писав щодня
+q~: Що підтвердила працівниця? | *заяву зареєстровано під номером 7801 ;; переплату вже повернули ;; заяву відхилено
+X doc: Прочитай підтвердження. | Potvrdenie o prijatí žiadosti | Číslo spisu: 7801/2026 ;; Dátum doručenia: 5. 3. 2026 ;; Stav: zaevidovaná, v štádiu spracovania ;; Predpokladaný termín vybavenia: do 30 dní | Який статус заяви? | *зареєстрована й перебуває в обробці, відповідь очікується до 30 днів ;; відхилена ;; уже вирішена
+= Stav: zaevidovaná, v štádiu spracovania — зареєстрована, в обробці.
+X msg: Прочитай повідомлення від секретаріату. | Beáta Horváthová, sekretariát | Dobrý deň, potvrdzujem prijatie Vášho e-mailu zo dňa 12. marca. Termín stretnutia v utorok o 10:00 Vám predbežne potvrdzujem. Záväzne ho potvrdím do piatku, keď budem poznať program riaditeľa. S pozdravom Beáta Horváthová | У якому стані термін зустрічі? | *попередньо підтверджений, остаточна відповідь буде до п’ятниці ;; остаточно скасований ;; остаточно підтверджений
+= predbežne — попередньо; záväzne — остаточно, до п’ятниці.
+X np: Ти нагадуєш установі про заяву від 5 березня. | *Dovoľujem si Vám pripomenúť moju žiadosť zo dňa 5. marca. ;; Pripomínam sa Vám o žiadosť zo dňa 5. marca. ;; Pripomeň si moju žiadosť zo dňa 5. marca. ;; Dovoľujem si pripomenúť Vás moju žiadosť zo dňa 5. marca.
+= Pripomenúť komu čo: Vám (давальний) moju žiadosť (знахідний).
+X cat: М’яке чи повторне нагадування? | Jemné: Dovoľujem si pripomenúť moju žiadosť, Rád by som sa informoval o stave žiadosti, Vopred ďakujem za informáciu o stave, Dovoľujem si informovať sa o vybavení ;; Opätovné: Do dnešného dňa som neobdržal odpoveď, Opätovne Vás žiadam o vybavenie, Žiadam o odpoveď najneskôr do 31. marca, Kópiu posielam aj vedúcemu odboru
+= Повторне нагадування констатує, що відповіді немає, і ставить термін.
+X ms: Обери ввічливо-офіційні формулювання. | - | *Potvrdzujem prijatie Vášho listu. ;; *Vašu žiadosť sme zaevidovali. ;; *Opätovne Vás žiadam o vybavenie. ;; Dostal som Váš list, super. ;; Čo je s mojou žiadosťou, už mesiac čakám!!!
+= Офіційний стиль уникає розмовних слів і оклику.
+X tfl: - | Dobrý deň, k návrhu zmluvy mám tri pripomienky. Po prvé, nesúhlasím s trojmesačnou výpovednou lehotou a navrhujem dvojmesačnú. Po druhé, v bode 5 chýba dátum nástupu do práce. Po tretie, v bode 7 navrhujem doplniť možnosť práce z domu. Prosím o zapracovanie pripomienok a zaslanie upravenej verzie zmluvy. | *Автор має до договору три зауваження. ;; *Він пропонує скоротити строк попередження до двох місяців. ;; *У пункті 5 бракує дати початку роботи. ;; Автор погоджується з усіма пунктами. ;; Автор просить подовжити строк попередження.
+= Pripomienka тут — зауваження; автор пропонує dva mesiace, а не продовження.
+F: Нагадування про заяву || Ти чекаєш відповіді на заяву й пишеш нагадування, а потім читаєш відповідь установи.
+S: Як почнеш нагадування? | *Dovoľujem si Vám pripomenúť moju žiadosť zo dňa 3. marca. ;; Čo je s mojou žiadosťou? ;; Pripomínam sa o žiadosť.
+S: Як констатуєш, що відповіді немає? | *Do dnešného dňa som neobdržal žiadnu odpoveď. ;; Do dnešného dňa som neobdržať odpoveď. ;; Ešte nič neprišlo, tak píšem.
+S: Як повторно попросиш? | *Opätovne Vás žiadam o vybavenie a o odpoveď do 31. marca. ;; Odpovedajte hneď!!! ;; Opätovne sa Vás žiadam o odpoveď.
+S~: Установа відповіла: «Vašu žiadosť sme zaevidovali pod číslom 7801/2026.» Що це означає? | *заяву зареєстровано й має номер справи ;; заяву відхилено ;; заяву втрачено
+R: potvrdzovať prijatie · obdržať · zaevidovať ;; predbežne (попередньо) × záväzne (остаточно) ;; Dovoľujem si pripomenúť → Do dnešného dňa… → Opätovne… ;; pripomienka — нагадування або зауваження
+
+@lesson vypoved | Звільнення: лист-повідомлення | Výpoveď
+desc: Як написати письмове повідомлення про звільнення (výpoveď) так, щоб не зіпсувати стосунків: форма, дата завершення, строк попередження, передача речей, виплата зарплати й довідка при звільненні.
+goal: Складати коротку, коректну й юридично зрозумілу заяву про звільнення.
+out: формулювати Týmto dávam výpoveď z pracovného pomeru ;; розуміти форму й вручення: письмово, з доказом отримання ;; просити про vyplatenie mzdy і zápočtový list ;; закінчувати нейтрально й ввічливо: Ďakujem za spoluprácu
+done: Ти вмієш написати заяву про звільнення. Далі — як писати електронні листи до установ.
+T: Лист про звільнення || Звільнення з ініціативи працівника — це письмова заява (výpoveď). Пишемо коротко й нейтрально: «Týmto dávam výpoveď z pracovného pomeru.» Дієслово «dať výpoveď» + «z» + родовий: výpoveď z pracovného pomeru. У рядку Vec пишемо «Výpoveď z pracovného pomeru». Причину вказувати не обов’язково: працівник може дати výpoveď без пояснень, і це нормально. Часто додають посилання на закон, але ключове — чітка формула, дата, підпис. За словацьким трудовим правом výpoveď має бути письмовою — усне повідомлення не вважається дійсним. Вручи її особисто в кадровому відділі або поштою, а собі залиш копію з підписом і датою отримання. || Týmto dávam výpoveď z pracovného pomeru. = Цим подаю заяву про звільнення з роботи. ;; Výpoveď dávam bez uvedenia dôvodu. = Заяву про звільнення подаю без зазначення причини. || dať výpoveď z + родовий · письмово · копія з датою
+mis: Dávam výpoveď pracovného pomeru. => Dávam výpoveď z pracovného pomeru.
+T: Дата й строк попередження || Трудові відносини закінчуються після спливу výpovednej lehoty — строку попередження. Його тривалість залежить від закону й трудового договору, тому перед написанням перевір договір. Формулюємо нейтрально: «Pracovný pomer sa skončí uplynutím výpovednej lehoty.» (uplynutie в орудному). Якщо домовишся з роботодавцем про іншу дату, пиши про угоду: «Navrhujem skončiť pracovný pomer dohodou k 31. 3. 2026.» Прийменник «k» + давальний (k dátumu): «k dátumu 31. 3. 2026». Дату подання й дату завершення не плутай. || Pracovný pomer sa skončí uplynutím výpovednej lehoty. = Трудові відносини завершаться зі спливом строку попередження. ;; Navrhujem skončiť pracovný pomer dohodou k 31. 3. 2026. = Пропоную завершити трудові відносини за згодою сторін станом на 31. 3. 2026. || skončiť uplynutím lehoty · dohodou k dátumu
+mis: Pracovný pomer sa skončí uplynutie lehoty. => Pracovný pomer sa skončí uplynutím lehoty.
+T: Після звільнення: речі, зарплата, довідка || Наприкінці листа домовляємося про практичне. Речі й техніку здаємо за актом: «Pracovné pomôcky odovzdám na základe odovzdávacieho protokolu.» Зобов’язання (záväzky) — борги, аванси — закриваємо: «Všetky záväzky voči zamestnávateľovi vysporiadam.» Просимо про виплату зарплати й документ: «Prosím o vyplatenie mzdy a o vydanie zápočtového listu.» Закінчуємо подякою: «Ďakujem za spoluprácu.» Це робить звільнення спокійним і залишає двері відчиненими. Образи, скарги на керівника чи колег у такий лист не пишемо. || Prosím o vyplatenie mzdy a o vydanie zápočtového listu. = Прошу виплатити зарплату й видати довідку при звільненні. ;; Pracovné pomôcky odovzdám na základe odovzdávacieho protokolu. = Робочі засоби передам за актом приймання-передачі. || prosiť o + знахідний · odovzdať podľa protokolu · ďakujem za spoluprácu
+mis: Prosím o vydať zápočtový list. => Prosím o vydanie zápočtového listu.
+W: zápočtový list | довідка при звільненні (про стаж і заробіток) | за:почтови: лист | Zápočtový list dostanete pri skončení pracovného pomeru. | Довідку при звільненні ви отримаєте під час завершення трудових відносин.
+W: protokol | протокол, акт приймання-передачі | протокол | Prístroje odovzdáme na základe protokolu. | Прилади ми передамо за актом.
+W: záväzok | зобов’язання, борг | за:везок | Všetky záväzky voči firme som vyrovnal. | Усі зобов’язання перед фірмою я виконав.
+W: k dátumu | на дату, станом на | к да:туму | Pracovný pomer sa skončí k dátumu 31. 3. 2026. | Трудові відносини завершаться на дату 31. 3. 2026.
+W: vyplatenie | виплата | виплатєньє | Prosím o vyplatenie poslednej mzdy. | Прошу виплатити останню зарплату.
+X mt: З’єднай. | zápočtový list = довідка при звільненні ;; protokol = акт приймання-передачі ;; záväzok = зобов’язання ;; k dátumu = на дату ;; vyplatenie = виплата ;; výpoveď = заява про звільнення
+X dd: Обери. | Dávam výpoveď [*z/od/na] pracovného pomeru.
+= Výpoveď z + родовий: z pracovného pomeru.
+X dd: Обери. | Pracovný pomer sa skončí [*uplynutím/uplynúť/uplynutie] výpovednej lehoty.
+= Skončiť čím? — орудний: uplynutím.
+X fb: Допиши. | Prosím o vydanie ___ listu. (довідка при звільненні) | zápočtového |
+= Zápočtový list — родовий після vydanie: zápočtového listu.
+X sc: Яке формулювання заяви правильне? | - | *Týmto dávam výpoveď z pracovného pomeru. ;; Týmto dávam výpoveď z pracovného pomer. ;; Týmto odchádzam z práce, ahoj.
+= Офіційна формула: dávam výpoveď z pracovného pomeru; розмовне «ahoj» недоречне.
+X fe: - | Pracovné pomôcky odovzdám na základe odovzdávacieho [protokol>protokolu].
+= Na základe + родовий: protokolu.
+X ce: Виправ речення. | Prosím o vyplatenie mzdy a vydanie zápočtový list. | Prosím o vyplatenie mzdy a vydanie zápočtového listu. ;; Prosím o vyplatenie mzdy a o vydanie zápočtového listu.
+= Vydanie + родовий: zápočtového listu.
+X so: - | Скажи: «Прошу видати довідку при звільненні.» | Prosím o vydanie zápočtového listu.
+= prosiť o + знахідний: o vydanie, потім родовий.
+X rc: - | Oleksandr pracoval v nitrianskej továrni dva roky. Dostal ponuku od inej firmy a rozhodol sa odísť. V zmluve našiel, že výpovedná lehota trvá dva mesiace, a zistil, že dôvod výpovede uvádzať nemusí. Napísal preto krátky list s predmetom «Výpoveď z pracovného pomeru». Dôvody nepísal. List vytlačil, podpísal a osobne odovzdal na personálnom oddelení, kde mu na kópii potvrdili dátum prijatia. Na záver pridal vetu: «Ďakujem za spoluprácu.» V posledný pracovný deň odovzdal pomôcky podľa protokolu a dostal zápočtový list.
+q~: Скільки тривав строк попередження в Олександра? | *два місяці ;; один місяць ;; три місяці
+q~: Чому в листі не було причин звільнення? | *причину вказувати не обов’язково ;; Олександр не знав причини ;; роботодавець заборонив
+q~: Як Олександр зафіксував дату подання? | *на копії листа йому поставили дату прийняття ;; надіслав SMS ;; усно повідомив керівника
+X doc: Прочитай довідку. | Zápočtový list – výpis | Zamestnanec: Oleksandr Bondar ;; Pracovný pomer: 1. 4. 2024 – 31. 3. 2026 ;; Pozícia: operátor výroby ;; Skončenie: výpoveď daná zamestnancom ;; Vyplatená mzda: za marec 2026 | Як закінчилися трудові відносини? | *з ініціативи працівника ;; з ініціативи роботодавця ;; за вироком суду
+= Skončenie: výpoveď daná zamestnancom — працівник сам подав заяву.
+X msg: Прочитай лист від кадрового відділу. | Personálne oddelenie | Dobrý deň, pán Bondar, potvrdzujem prijatie Vašej výpovede zo dňa 12. februára. Pracovný pomer sa skončí uplynutím výpovednej lehoty. Prosím Vás, aby ste v posledný pracovný deň odovzdali služobný telefón a čipovú kartu a podpísali odovzdávací protokol. Zápočtový list a poslednú mzdu Vám vydáme v zákonnom termíne. S pozdravom Personálne oddelenie | Що має зробити Олександр в останній робочий день? | *здати службовий телефон і картку та підписати протокол ;; прийти на співбесіду ;; подати ще одну заяву
+= Aby ste odovzdali… a podpísali protokol — здати речі й підписати акт.
+X np: Ти просиш виплатити зарплату й видати довідку при звільненні. | *Prosím o vyplatenie mzdy a o vydanie zápočtového listu. ;; Prosím vyplatenie mzdy a vydanie zápočtový list. ;; Chcem mzdu aj zápočtový list hneď. ;; Prosím o vyplatiť mzdu a o vydať zápočtový list.
+= Prosiť o + знахідний іменника: o vyplatenie, o vydanie.
+X cat: Що писати, а що краще не писати? | Napísať: Týmto dávam výpoveď z pracovného pomeru, Pracovný pomer sa skončí uplynutím výpovednej lehoty, Ďakujem za spoluprácu, Prosím o vydanie zápočtového listu ;; Vynechať: Môj šéf je neschopný, Ostatní kolegovia sú leniví, Nikto ma tu nerešpektuje, Bez mňa sa firma rozpadne
+= У листі про звільнення — тільки факти й подяка, без образ.
+X tfl: - | Výpoveď musí byť písomná. Dôvod výpovede môže zamestnanec uviesť, ale nemusí. Výpoveď treba doručiť zamestnávateľovi: osobne na personálnom oddelení alebo doporučene poštou. Odporúča sa mať doklad, že zamestnávateľ výpoveď prevzal. | *Заява про звільнення має бути письмовою. ;; *Причину звільнення вказувати не обов’язково. ;; *Корисно мати доказ, що роботодавець отримав заяву. ;; Достатньо усно сказати керівникові. ;; Причину треба вказувати завжди.
+= Заява — письмова, причина необов’язкова, а доказ отримання бажаний.
+X ms: Обери правильні формулювання. | - | *Týmto dávam výpoveď z pracovného pomeru. ;; *Prosím o vydanie zápočtového listu. ;; *Ďakujem za spoluprácu. ;; Dávam výpoveď z pracovný pomer. ;; Ahoj, končím, čau.
+= Формулювання мають бути граматично правильними й офіційними.
+F: Лист про звільнення || Ти переходиш на іншу роботу й пишеш заяву про звільнення, яку подаєш у кадровому відділі.
+S: Що напишеш у рядку Vec? | *Výpoveď z pracovného pomeru ;; Ahoj šéf ;; Odchádzam
+S: Яка головна формула? | *Týmto dávam výpoveď z pracovného pomeru. ;; Dávam výpoveď z pracovný pomer. ;; Končím, lebo ma nebavíte.
+S: Що напишеш про речі? | *Pracovné pomôcky odovzdám na základe protokolu. ;; Pracovné pomôcky si nechám. ;; Odovzdať pomôcky niekedy.
+S: Як закінчиш? | *Prosím o vydanie zápočtového listu a ďakujem za spoluprácu. ;; Zápočtový list mi pošlite hneď. ;; Nech sa Vám darí bez mňa.
+R: dať výpoveď z + родовий · письмово · копія ;; skončiť uplynutím lehoty · dohodou k dátumu ;; odovzdať podľa protokolu · záväzky ;; prosiť o vyplatenie · zápočtový list
+
+@lesson email-uradu | E-mail до установи | E-mail úradu
+desc: Як писати електронні листи в установи: конкретна тема, нейтральне звернення, структура з трьох абзаців, скановані додатки, питання про електронне подання й підпис із контактами.
+goal: Складати короткий, зрозумілий e-mail, який працівник установи може швидко опрацювати.
+out: писати тему (predmet) і звернення до невідомої особи ;; будувати три абзаци: v súvislosti s…, питання, додатки ;; формулювати запитання: Rád by som sa opýtal, či… ;; додавати скановані документи й ставити підпис із контактом
+done: Ти вмієш написати e-mail до установи. Далі — підсумок: збираємо весь офіційний лист докупи.
+T: Тема, звернення, підпис || E-mail до установи має ті ж частини, що й лист, але коротший. Тема (predmet) — конкретна й коротка: «Žiadosť o vydanie potvrdenia o trvalom pobyte – Oksana Melnyk» або «Otázka k žiadosti o prídavok na dieťa». Не пиши «Pomoc», «Dobrý deň» чи «Urgentné!!!». Звернення — нейтральне, якщо не знаєш імені: «Dobrý deň,» або «Vážená pani, vážený pán,»; якщо знаєш — «Vážená pani Horváthová,». Прощання — «S pozdravom» і під ним повне ім’я та телефон. У відповіді залишай той самий predmet і початок «Re:», щоб працівник бачив історію листування. Ніяких смайлів, «ASAP» і розмовних слів. || Dobrý deň, obraciam sa na Vás s otázkou k potvrdeniu o pobyte. = Добрий день, звертаюся до вас із запитанням щодо довідки про проживання. ;; Vopred Vám ďakujem za odpoveď. S pozdravom = Наперед дякую вам за відповідь. З повагою || predmet: коротко й конкретно · Dobrý deň, · S pozdravom + ім’я + телефон
+mis: Obraciam sa na Vás s otázka. => Obraciam sa na Vás s otázkou.
+T: Три абзаци || Працівник установи читає десятки листів, тому пиши в три абзаци. Перший — вступ: хто я й чому пишу: «V súvislosti s mojou žiadosťou zo dňa 5. marca Vám píšem, lebo…» (v súvislosti s + орудний). Другий — одне чи два чіткі запитання: «Rád by som sa opýtal, aké dokumenty mám priniesť.» або «Mohli by ste mi, prosím, oznámiť, či je možné podať žiadosť elektronicky?» Третій — додатки й подяка: «V prílohe Vám zasielam oskenovaný doklad totožnosti. Vopred Vám ďakujem za odpoveď.» Хочеш отримати документ — «Chcel by som si vyžiadať potvrdenie…» (vyžiadať si + знахідний). || V súvislosti s mojou žiadosťou Vám píšem s otázkou. = У зв’язку з моєю заявою пишу вам із запитанням. ;; Chcel by som si vyžiadať potvrdenie o trvalom pobyte. = Хотів би запросити довідку про постійне місце проживання. || v súvislosti s + орудний · rád by som sa opýtal, či… · vyžiadať si + знахідний
+mis: V súvislosti mojej žiadosti => V súvislosti s mojou žiadosťou
+T: Додатки й електронне подання || Скан документа надсилай у форматі PDF, чітким, з простою назвою файла: «Melnyk_ziadost.pdf». У листі згадай додаток: «V prílohe Vám zasielam oskenovaný doklad.» Заповнений бланк (tlačivo) — теж у додатку: «Vyplnené tlačivo posielam v prílohe.» Подання «elektronicky» не завжди рівнозначне звичайному імейлу: деякі заяви потребують електронного підпису, використання електронної скриньки або письмового підтвердження. Тому спитай: «Je možné podať žiadosť elektronicky?» Це кращий спосіб не втратити строк. || V prílohe Vám zasielam oskenovaný doklad totožnosti. = У додатку надсилаю вам відсканований документ, що посвідчує особу. ;; Je možné podať žiadosť elektronicky? = Чи можна подати заяву в електронній формі? || PDF · oskenovať · tlačivo · podať elektronicky
+W: elektronický podpis | електронний підпис | електроніцки: подпіс | Na podanie žiadosti cez portál potrebujete elektronický podpis. | Щоб подати заяву через портал, вам потрібен електронний підпис.
+W: oskenovať | відсканувати | оскеновать | Doklad som oskenoval a posielam ho v prílohe. | Документ я відсканував і надсилаю його в додатку.
+W: v súvislosti s | у зв’язку з | в су:вислості с | V súvislosti s mojou žiadosťou Vám píšem. | У зв’язку з моєю заявою пишу вам.
+W: vyžiadať si | попросити видати, витребувати | віжядать сі | Chcel by som si vyžiadať potvrdenie o pobyte. | Хотів би попросити видати довідку про проживання.
+W: referentka | працівниця установи, що веде справу | референтка | Referentka mi poslala zoznam dokladov. | Працівниця установи надіслала мені перелік документів.
+W: trvalý pobyt | постійне проживання, прописка | трвалі: побит | Mám trvalý pobyt v Nitre. | Я маю постійну реєстрацію у Нітрі.
+X mt: З’єднай. | elektronický podpis = електронний підпис ;; oskenovať = відсканувати ;; v súvislosti s = у зв’язку з ;; vyžiadať si = попросити видати ;; referentka = працівниця установи ;; trvalý pobyt = постійне проживання
+X dd: Обери. | V súvislosti [*s/so/na] mojou žiadosťou zo dňa 5. marca Vám píšem.
+= V súvislosti s + орудний: s mojou žiadosťou.
+X dd: Обери. | Chcel by som si [*vyžiadať/vyžiadam/vyžiadal] potvrdenie o trvalom pobyte.
+= Після «chcel by som» стоїть інфінітив: vyžiadať.
+X fb: Допиши. | V prílohe Vám zasielam ___ doklad totožnosti. (відсканований) | oskenovaný ;; naskenovaný |
+= Oskenovaný / naskenovaný — відсканований; обидва варіанти вживаються.
+X sc: Яка тема (predmet) імейлу найкраща? | - | *Žiadosť o vydanie potvrdenia o trvalom pobyte – Oksana Melnyk ;; Dobrý deň ;; Potrebujem pomoc!!!
+= Тема має бути конкретною й короткою: що й від кого.
+X fe: - | Obraciam sa na Vás s [otázka>otázkou] k vybaveniu pobytu.
+= S + орудний: s otázkou.
+X ce: Виправ речення. | Píšem Vám v súvislosti s moja žiadosť zo dňa 5. marca. | Píšem Vám v súvislosti s mojou žiadosťou zo dňa 5. marca.
+= V súvislosti s + орудний: s mojou žiadosťou.
+X dtb: Обери правильне слово. | Vyplnené tlačivo Vám zasielam [*v prílohe/na prílohe/z prílohy].
+= Додаток до імейлу — «v prílohe».
+X rc: - | Daria potrebovala zistiť, aké doklady má priniesť na úrad pri žiadosti o prídavok na dieťa. Na webe nenašla jasnú odpoveď, a tak napísala e-mail. Do predmetu uviedla: «Otázka k žiadosti o prídavok na dieťa – Daria Kovalenko». V prvom odseku sa predstavila a vysvetlila, prečo píše. V druhom položila dve konkrétne otázky: aké doklady má priniesť a či ich môže poslať elektronicky. V treťom odseku priložila sken dokladu totožnosti, poďakovala sa a uviedla svoj telefón. Odpoveď prišla do troch dní. Referentka jej poslala zoznam dokladov a upozornila, že niektoré dokumenty bude musieť priniesť osobne.
+q~: Чому Дарія написала e-mail? | *на сайті не знайшла чіткої відповіді ;; хотіла поскаржитися ;; хотіла подякувати
+q~: Які два запитання вона поставила? | *які документи принести й чи можна надіслати їх електронно ;; скільки це коштує й коли відкрито ;; хто керівник і де установа
+q~: Що відповіла працівниця? | *надіслала перелік документів і попередила, що частину треба принести особисто ;; відмовила в прийнятті документів ;; не відповіла
+X doc: Прочитай чернетку імейлу. | E-mail úradu – koncept | Komu: Mestský úrad – podateľňa ;; Predmet: Otázka k potvrdeniu o trvalom pobyte ;; Príloha: doklad_totoznosti.pdf (oskenovaný) ;; Otázka: Je možné podať žiadosť elektronicky? ;; Podpis: Oksana Melnyk, tel. 0900 123 456 | Що Оксана хоче дізнатися? | *чи можна подати заяву електронно ;; скільки коштує довідка ;; де знаходиться установа
+= Otázka: Je možné podať žiadosť elektronicky? — чи можна подати електронно.
+X msg: Прочитай відповідь установи. | Mestský úrad, referát evidencie | Dobrý deň, pani Melnyk, žiadosť môžete podať elektronicky. Ak ju pošlete e-mailom bez elektronického podpisu, prosíme Vás o doplnenie písomného podania do troch dní. Prílohu s oskenovaným dokladom totožnosti sme dostali. S pozdravom referát evidencie | Що треба зробити, якщо надіслати заяву імейлом без електронного підпису? | *протягом трьох днів доповнити її письмовим поданням ;; нічого, e-mail достатній ;; прийти за тиждень
+= Pri e-maile bez elektronického podpisu — doplniť písomné podanie do troch dní.
+X np: Ти питаєш в імейлі, які документи треба принести. | *Rád by som sa opýtal, aké dokumenty mám priniesť. ;; Povedzte mi hneď, aké dokumenty mám priniesť! ;; Rád by som sa opýtal, aké dokumenty priniesol. ;; Ahoj, čo mám priniesť?
+= Ввічливе запитання: rád by som sa opýtal + підрядне речення; без оклику й «Ahoj».
+X cat: Тема листа чи текст листа? | Predmet: Žiadosť o potvrdenie o pobyte, Otázka k žiadosti o prídavok, Reklamácia faktúry č. 123, Zmena adresy – Oksana Melnyk ;; Text: Obraciam sa na Vás s otázkou, V prílohe Vám zasielam sken dokladu, Vopred Vám ďakujem za odpoveď, Rád by som sa opýtal na postup
+= Тема — коротка іменникова фраза; у тексті — речення зі звертанням і проханням.
+X ms: Обери доречні формулювання для імейлу в установу. | - | *Dobrý deň, obraciam sa na Vás s otázkou. ;; *V prílohe Vám zasielam oskenovaný doklad. ;; *Vopred Vám ďakujem za odpoveď. ;; Ahoj, mám otázku :) ;; Pošlite mi to ASAP!!!
+= Смайли, «ASAP» і оклики в імейлі до установи недоречні.
+X tfl: - | Žiadosť o potvrdenie o trvalom pobyte môžete podať osobne alebo elektronicky. Pri elektronickom podaní priložte oskenovaný doklad totožnosti vo formáte PDF. Tlačivo vyplňte čitateľne. Úradné hodiny sú v pondelok, v stredu a v piatok. Referentka Vám zodpovie otázky telefonicky alebo e-mailom. | *Заяву можна подати й електронно. ;; *До електронної заяви треба додати PDF-скан документа. ;; *Установа приймає відвідувачів тричі на тиждень. ;; Заяву можна подати лише особисто. ;; Бланк заповнювати не потрібно.
+= Подання — особисто або електронно; бланк треба заповнити; години — пн, ср, пт.
+F: E-mail у відділ виплат || Дарія пише в установу, щоб дізнатися, які документи потрібні для заяви про допомогу на дитину.
+S: Яку тему листа вкажеш? | *Otázka k žiadosti o prídavok na dieťa – Daria Kovalenko ;; Pomoc ;; Dobrý deň
+S: Як почнеш лист? | *Dobrý deň, ;; Ahoj, ;; Čau úrad,
+S: Як сформулюєш запитання? | *Rada by som sa opýtala, aké doklady mám priniesť. ;; Povedzte, čo mám priniesť! ;; Aké doklady mám prinesiem?
+S: Як закінчиш? | *V prílohe Vám zasielam oskenovaný doklad. Vopred ďakujem. S pozdravom ;; Doklad je v prílohe. Čau ;; Prílohu som zabudla, ale vy si poradíte.
+R: predmet: що й від кого · Dobrý deň, · S pozdravom ;; три абзаци: v súvislosti s… · питання · prílohy ;; Rád by som sa opýtal, či… · vyžiadať si ;; PDF · oskenovať · podať elektronicky: спитай про підпис
+
+@lesson suhrn-uradna-korespondencia | Підсумок: офіційне листування | Súhrn: úradná korešpondencia
+desc: Повторення всього блоку: структура листа, звернення й прощання, заява, скарга, оскарження, вибачення, підтвердження й нагадування, звільнення та e-mail до установи — із тоном, який пасує кожному жанру.
+goal: Вільно вибирати жанр, регістр і формули для будь-якого офіційного листа.
+out: впізнавати жанр листа за формулами ;; витримувати діловий тон і Vy-форму ;; правильно ставити керування: žiadať o, proti + давальний, domáhať sa + родовий ;; перевіряти структуру листа перед надсиланням
+done: Ти вмієш написати офіційний лист будь-якого типу. Далі — наради й робочі e-maily: pozvánka, program porady, zápisnica.
+T: Жанри й їхні формули || Кожен жанр має власну головну формулу. Заява: «Žiadam Vás o vydanie potvrdenia.» Скарга: «Obraciam sa na Vás so sťažnosťou na…», «Nesúhlasím s…», «Domáham sa odškodnenia.» Оскарження: «Podávam odvolanie proti rozhodnutiu č. … zo dňa…» Вибачення: «Ospravedlňujem sa Vám za…», «Došlo k nedopatreniu.» Нагадування: «Dovoľujem si Vám pripomenúť… Do dnešného dňa som neobdržal… Opätovne Vás žiadam…» Звільнення: «Týmto dávam výpoveď z pracovného pomeru.» Підтвердження: «Potvrdzujem prijatie Vášho listu.» Усі жанри мають спільний каркас: шапка, місце й дата, Vec, звернення, текст, прощання, підпис, додатки. || Žiadam Vás o vydanie potvrdenia o zamestnaní. = Прошу вас видати довідку про роботу. ;; Obraciam sa na Vás so sťažnosťou na kvalitu služieb. = Звертаюся до вас зі скаргою на якість послуг. || жанр → формула · спільний каркас листа
+T: Тон і регістр || Офіційний лист має діловий (vecný) тон: факти, дати, номери, конкретна вимога. Звертаємося на «Vy» (Vás, Vám, Váš — з великої літери), без розмовних слів, оклику й смайлів. Емоції й звинувачення послаблюють позицію: замість «Ste neschopní» пишемо «Pri vybavovaní došlo k pochybeniu.» Прощання підбираємо за адресатом: «S pozdravom» — універсальне, «S úctou» — до посадовців, «S priateľským pozdravom» — до знайомого партнера. Формальний не означає холодний: лист може бути формальним за формою й теплим за тоном: «Ďakujem Vám za ústretovosť.» || Pri vybavovaní došlo k pochybeniu. = Під час розгляду сталася помилка. ;; Ďakujem Vám za ústretovosť a pochopenie. = Дякую вам за уважність і розуміння. || діловий тон · Vy з великої · без емоцій · форма формальна, тон теплий
+T: Керування: найчастіші помилки || Найчастіші помилки — у керуванні: žiadať o + знахідний (žiadam o vydanie); sťažovať sa na + знахідний (na kvalitu); nesúhlasiť s + орудний (s vyúčtovaním); odvolanie proti + давальний (proti rozhodnutiu); domáhať sa + родовий (odškodnenia); ospravedlniť sa komu za + знахідний (ospravedlňujem sa Vám za meškanie); výpoveď z + родовий (z pracovného pomeru); vyhovieť + давальний (žiadosti); v súvislosti s + орудний (s mojou žiadosťou). Перед надсиланням перевір: мету листа, тему (Vec), адресата, обов’язкові додатки, дату, підпис і термін, якого просиш. || Žiadam o vydanie, sťažujem sa na kvalitu, nesúhlasím s vyúčtovaním. = Прошу видати, скаржусь на якість, не погоджуюся з розрахунком. ;; Podávam odvolanie proti rozhodnutiu a domáham sa odškodnenia. = Оскаржую рішення й вимагаю відшкодування. || žiadať o + знах. · proti + дав. · domáhať sa + род. · s + оруд.
+W: výhrada | застереження, заперечення | ві:града | K návrhu zmluvy nemám žiadne výhrady. | До проєкту договору я не маю жодних застережень.
+W: zrozumiteľný | зрозумілий, чіткий | зрозумітєльни: | List má byť zrozumiteľný aj pre cudzieho čitateľa. | Лист має бути зрозумілим і стороннім читачам.
+W: formálny | офіційний, формальний | форма:льни: | Formálny list má pevnú štruktúru. | Офіційний лист має сталу структуру.
+W: záverom | наприкінці, насамкінець | за:вером | Záverom Vám ďakujem za ústretovosť. | Насамкінець дякую вам за уважність.
+X mt: З’єднай вид листа з його формулою. | žiadosť = Žiadam Vás o… ;; sťažnosť = Nesúhlasím s… ;; odvolanie = Podávam odvolanie proti… ;; ospravedlnenie = Ospravedlňujem sa Vám za… ;; pripomienka = Do dnešného dňa som neobdržal… ;; výpoveď = Týmto dávam výpoveď z…
+X dd: Обери. | Domáham sa [*odškodnenia/odškodnenie/odškodnením] za poškodený tovar.
+= Domáhať sa + родовий: odškodnenia.
+X dd: Обери. | Úprimne sa [*Vám/Vás/vy] ospravedlňujem za nepríjemnosti.
+= Ospravedlniť sa komu — давальний: Vám.
+X fb: Допиши. | Vážená pani riaditeľka, ďakujem Vám za čas. S ___ (прощання з особливою повагою) | úctou |
+= S úctou — найповажніше прощання; для універсального вживаємо S pozdravom.
+X sc: Який початок підходить для офіційної скарги? | - | *Obraciam sa na Vás so sťažnosťou na kvalitu služieb. ;; Dobrý deň, mám s vami problém. ;; Hej, počujete, ste neschopní!
+= Офіційна скарга починається нейтральною формулою у Vy-формі, без образ і розмовних слів.
+X fe: - | Do dnešného dňa som [neobdržím>neobdržal] žiadnu odpoveď.
+= Дія вже відбулася: som neobdržal.
+X ce: Виправ речення. | Ospravedlňujem Vás za nedopatrenie. | Ospravedlňujem sa Vám za nedopatrenie. ;; Ospravedlňujem sa za nedopatrenie.
+= Без «sa» дієслово означає «виправдати когось»; вибачатися — ospravedlniť sa komu.
+X tr: Перепиши офіційно, іменниковим зворотом зі словом «vydanie». | Chcem, aby ste mi vydali potvrdenie. | Žiadam Vás o vydanie potvrdenia. ;; Žiadam o vydanie potvrdenia. ;; Prosím Vás o vydanie potvrdenia. ;; Prosím o vydanie potvrdenia.
+= Офіційний стиль любить іменники: žiadam / prosím o vydanie + родовий.
+X rc: - | Maryna dostala vyúčtovanie energií s nedoplatkom 380 eur, hoci zálohy platila pravidelne. Najprv napísala vecný e-mail: požiadala o kópiu odpočtov meračov a o vysvetlenie. Odpoveď neprišla, preto po týždni poslala pripomienku s dátumom prvého e-mailu. Až potom napísala formálnu sťažnosť. Neobviňovala správcu, len uviedla fakty: odpočty, zálohy a rozdiel. Namietala konkrétny údaj a požiadala o opravu vyúčtovania do 14 dní. Správca sa ospravedlnil za nedopatrenie, údaj opravil a nedoplatok klesol na 40 eur.
+q~: Що Марина зробила першим кроком? | *написала діловий e-mail із проханням про копію показників і пояснення ;; одразу подала скаргу ;; сплатила борг
+q~: Чому її скарга була переконливою? | *вона виклала факти й не звинувачувала управителя ;; вона погрожувала судом ;; вона написала дуже довгий лист
+q~: Яким був результат? | *показник виправили, борг зменшився до 40 євро ;; скаргу відхилили ;; Марина сплатила 380 євро
+X doc: Прочитай чернетку листа. | Úradný list – koncept | Odosielateľ: Ihor Bondar, Trnava ;; Adresát: Okresný úrad ;; Miesto a dátum: V Trnave 3. 4. 2026 ;; Vec: Žiadosť o predĺženie lehoty ;; Text: Žiadam Vás o predĺženie lehoty o 14 dní. ;; Záver: S pozdravom ;; Podpis: Ihor Bondar | Яка обов’язкова частина листа відсутня? | *звернення (наприклад, «Vážená pani, vážený pán,») ;; рядок Vec ;; дата й місце
+= У чернетці є шапка, адресат, дата, Vec, текст, прощання й підпис, але бракує звернення.
+X msg: Прочитай повідомлення колеги. | Marek | Ahoj, Ihor, pozrel som si tvoj list pre úrad. Mám k nemu tri pripomienky. V predmete máš «Pomoc», napíš tam radšej konkrétnu vec. V texte píšeš «chcem, aby ste mi dali papier», lepšie je «Žiadam Vás o vydanie potvrdenia». A na konci chýba pozdrav. Inak je list dobrý. | Що пропонує Марек? | *змінити тему, офіційніше сформулювати прохання й додати прощання ;; переписати лист іншою мовою ;; не надсилати лист
+= Pripomienky тут — зауваження: тема, формулювання, прощання.
+X np: Ти закінчуєш лист: наперед дякуєш і прощаєшся з повагою. | *Vopred Vám ďakujem za vybavenie. S úctou ;; Vopred ti ďakujem. Maj sa ;; Dík vopred, čau ;; Vopred Vám ďakujem, ahoj.
+= Офіційне закінчення: Vy-форма й прощання «S úctou».
+X reg: - | Dovoľujem si upozorniť na nezrovnalosť vo vyúčtovaní. | formal
+= Dovoľujem si + інфінітив і іменникові звороти — формальний регістр.
+X cat: До якого типу листа це належить? | Žiadosť: Žiadam Vás o vydanie potvrdenia, Prosím Vás o predĺženie lehoty ;; Sťažnosť: Nesúhlasím s vyúčtovaním, Domáham sa odškodnenia ;; Výpoveď: Týmto dávam výpoveď z pracovného pomeru, Pracovné pomôcky odovzdám podľa protokolu
+= Кожен жанр має свої типові формули.
+X ms: Обери доречні офіційні формулювання. | - | *Dovoľujem si Vás požiadať o stretnutie. ;; *Vzhľadom na uvedené žiadam o preskúmanie rozhodnutia. ;; *Ďakujem Vám za pochopenie. ;; Čau, potrebujem ten papier. ;; Vaša firma je podvod!!!
+= Офіційний лист — Vy-форма, діловий тон, без образ.
+F: Лист про неправильне нарахування || Ти пишеш у компанію офіційний лист про помилку в рахунку за енергію.
+S: Яке звернення вибереш, якщо не знаєш адресата? | *Vážená pani, vážený pán, ;; Ahoj, ;; Čau,
+S: Як почнеш основну частину? | *Obraciam sa na Vás so sťažnosťou na nesprávne vyúčtovanie. ;; Obraciam na Vás s sťažnosťou na vyúčtovanie. ;; Vyúčtovanie je podvod.
+S: Яку вимогу сформулюєш? | *Žiadam o opravu vyúčtovania do 14 dní. ;; Opravte to!!! ;; Žiadam o opraviť vyúčtovanie do 14 dní.
+S: Як завершиш? | *Vopred Vám ďakujem za vybavenie. S pozdravom ;; Ďakujem, čau ;; Odpovedajte, inak sa budete mať na pozore.
+R: жанр → формула · спільний каркас листа ;; діловий тон · Vy з великої · без емоцій ;; žiadať o + знах. · proti + дав. · domáhať sa + род. · ospravedlniť sa komu ;; перед надсиланням: Vec, адресат, додатки, дата, підпис, термін

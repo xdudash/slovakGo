@@ -1,0 +1,711 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u03-l08-pocet",
+      "sectionId": "a1-u03",
+      "level": "A1",
+      "title": "Скільки? Dva, päť, veľa",
+      "topic": "Рід і число іменників",
+      "description": "Як іменник змінюється після чисел: 1 — однина, 2–4 — множина, 5+ і veľa — родовий множини (kníh, ľudí).",
+      "order": 28,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Правильно поєднувати числа й кількісні слова з іменниками.",
+      "completionMessage": "Тепер ти правильно рахуєш предмети. Далі — винятки й неправильні форми.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Рід і число іменників",
+        "title": "Скільки? Dva, päť, veľa",
+        "shortDescription": "Правильно поєднувати числа й кількісні слова з іменниками.",
+        "outcomes": [
+          "казати dva zošity / tri ženy",
+          "казати päť zošitov / päť kníh",
+          "використовувати veľa, málo, niekoľko",
+          "казати žiadny / žiadna"
+        ],
+        "newWords": [
+          "kus",
+          "pár",
+          "veľa",
+          "málo",
+          "niekoľko",
+          "žiadny"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "1 — 2–4 — 5+",
+          "text": "Як з rok / roky / rokov: jeden zošit, dva zošity, päť zošitov; jedna kniha, dve knihy, päť kníh; jedno okno, dve okná, päť okien. Після 5+ — родовий множини.",
+          "examples": [
+            {
+              "sk": "päť ľudí",
+              "uk": "п’ять людей"
+            },
+            {
+              "sk": "desať minút",
+              "uk": "десять хвилин"
+            }
+          ],
+          "shortRule": "2–4: множина; 5+: родовий мн.",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Родовий множини",
+          "text": "Чол. рід: -ov (zošitov, telefónov, chlapcov). Жін. і сер.: часто без закінчення з подовженням: kníh, žien, okien, jabĺk, miest. Запам’ятовуй найчастіші.",
+          "examples": [
+            {
+              "sk": "veľa kníh",
+              "uk": "багато книжок"
+            },
+            {
+              "sk": "päť jabĺk",
+              "uk": "п’ять яблук"
+            }
+          ],
+          "shortRule": "zošitov, kníh, jabĺk",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Veľa, málo, niekoľko",
+          "text": "veľa (багато), málo (мало), niekoľko (кілька) — теж + родовий: veľa ľudí, málo času, niekoľko dní. «Žiadny / žiadna / žiadne» — жодний.",
+          "examples": [
+            {
+              "sk": "Mám málo času.",
+              "uk": "У мене мало часу."
+            },
+            {
+              "sk": "Nemám žiadne peniaze.",
+              "uk": "У мене зовсім немає грошей."
+            }
+          ],
+          "shortRule": "veľa / málo + родовий",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u03-l08-pocet-w01",
+            "sk": "kus",
+            "uk": "штука",
+            "pronunciationUk": "кус",
+            "exampleSk": "Dva kusy, prosím.",
+            "exampleUk": "Дві штуки, будь ласка."
+          },
+          {
+            "wordId": "a1-u03-l08-pocet-w02",
+            "sk": "pár",
+            "uk": "пара; кілька",
+            "pronunciationUk": "па:р",
+            "exampleSk": "Počkajte pár minút.",
+            "exampleUk": "Зачекайте кілька хвилин."
+          },
+          {
+            "wordId": "a1-u03-l08-pocet-w03",
+            "sk": "veľa",
+            "uk": "багато",
+            "pronunciationUk": "веля",
+            "exampleSk": "Mám veľa práce.",
+            "exampleUk": "У мене багато роботи."
+          },
+          {
+            "wordId": "a1-u03-l08-pocet-w04",
+            "sk": "málo",
+            "uk": "мало",
+            "pronunciationUk": "ма:ло",
+            "exampleSk": "Máme málo času.",
+            "exampleUk": "У нас мало часу."
+          },
+          {
+            "wordId": "a1-u03-l08-pocet-w05",
+            "sk": "niekoľko",
+            "uk": "кілька",
+            "pronunciationUk": "нієколько",
+            "exampleSk": "Bol som tam niekoľkokrát.",
+            "exampleUk": "Я був там кілька разів."
+          },
+          {
+            "wordId": "a1-u03-l08-pocet-w06",
+            "sk": "žiadny",
+            "uk": "жодний",
+            "pronunciationUk": "жіадні",
+            "exampleSk": "Nemám žiadny problém.",
+            "exampleUk": "У мене немає жодної проблеми."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u03-l08-pocet-w01",
+          "sk": "kus",
+          "uk": "штука",
+          "pronunciationUk": "кус",
+          "exampleSk": "Dva kusy, prosím.",
+          "exampleUk": "Дві штуки, будь ласка.",
+          "level": "A1",
+          "topic": "Рід і число іменників",
+          "tags": [
+            "a1-u03",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u03-l08-pocet-w02",
+          "sk": "pár",
+          "uk": "пара; кілька",
+          "pronunciationUk": "па:р",
+          "exampleSk": "Počkajte pár minút.",
+          "exampleUk": "Зачекайте кілька хвилин.",
+          "level": "A1",
+          "topic": "Рід і число іменників",
+          "tags": [
+            "a1-u03",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u03-l08-pocet-w03",
+          "sk": "veľa",
+          "uk": "багато",
+          "pronunciationUk": "веля",
+          "exampleSk": "Mám veľa práce.",
+          "exampleUk": "У мене багато роботи.",
+          "level": "A1",
+          "topic": "Рід і число іменників",
+          "tags": [
+            "a1-u03",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u03-l08-pocet-w04",
+          "sk": "málo",
+          "uk": "мало",
+          "pronunciationUk": "ма:ло",
+          "exampleSk": "Máme málo času.",
+          "exampleUk": "У нас мало часу.",
+          "level": "A1",
+          "topic": "Рід і число іменників",
+          "tags": [
+            "a1-u03",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u03-l08-pocet-w05",
+          "sk": "niekoľko",
+          "uk": "кілька",
+          "pronunciationUk": "нієколько",
+          "exampleSk": "Bol som tam niekoľkokrát.",
+          "exampleUk": "Я був там кілька разів.",
+          "level": "A1",
+          "topic": "Рід і число іменників",
+          "tags": [
+            "a1-u03",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u03-l08-pocet-w06",
+          "sk": "žiadny",
+          "uk": "жодний",
+          "pronunciationUk": "жіадні",
+          "exampleSk": "Nemám žiadny problém.",
+          "exampleUk": "У мене немає жодної проблеми.",
+          "level": "A1",
+          "topic": "Рід і число іменників",
+          "tags": [
+            "a1-u03",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u03-l08-pocet-ex01",
+          "lessonId": "a1-u03-l08-pocet",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Mám tri "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "zošit",
+                "zošitov",
+                "zošity"
+              ],
+              "correct": "zošity"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "2–4 → множина: zošity.",
+          "order": 1
+        },
+        {
+          "id": "a1-u03-l08-pocet-ex02",
+          "lessonId": "a1-u03-l08-pocet",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Mám päť "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "zošitov",
+                "zošity",
+                "zošit"
+              ],
+              "correct": "zošitov"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "5+ → родовий мн.: zošitov.",
+          "order": 2
+        },
+        {
+          "id": "a1-u03-l08-pocet-ex03",
+          "lessonId": "a1-u03-l08-pocet",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Na stole je veľa "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "kníh",
+                "knihy",
+                "kniha"
+              ],
+              "correct": "kníh"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "veľa + родовий мн.: kníh.",
+          "order": 3,
+          "wordIds": [
+            "a1-u03-l08-pocet-w03"
+          ]
+        },
+        {
+          "id": "a1-u03-l08-pocet-ex04",
+          "lessonId": "a1-u03-l08-pocet",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "dve knihy",
+              "right": "2 книжки"
+            },
+            {
+              "left": "päť kníh",
+              "right": "5 книжок"
+            },
+            {
+              "left": "dva telefóny",
+              "right": "2 телефони"
+            },
+            {
+              "left": "päť telefónov",
+              "right": "5 телефонів"
+            },
+            {
+              "left": "veľa ľudí",
+              "right": "багато людей"
+            }
+          ],
+          "order": 4,
+          "wordIds": [
+            "a1-u03-l08-pocet-w03"
+          ]
+        },
+        {
+          "id": "a1-u03-l08-pocet-ex05",
+          "lessonId": "a1-u03-l08-pocet",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Яка форма після числа?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Після 2–4"
+            },
+            {
+              "id": "c2",
+              "title": "Після 5+"
+            }
+          ],
+          "items": [
+            {
+              "sk": "šesť okien",
+              "category": "c2"
+            },
+            {
+              "sk": "dve ženy",
+              "category": "c1"
+            },
+            {
+              "sk": "osem stolov",
+              "category": "c2"
+            },
+            {
+              "sk": "štyri stoly",
+              "category": "c1"
+            },
+            {
+              "sk": "päť žien",
+              "category": "c2"
+            },
+            {
+              "sk": "tri okná",
+              "category": "c1"
+            }
+          ],
+          "explanation": "2–4 — множина, 5+ — родовий.",
+          "order": 5
+        },
+        {
+          "id": "a1-u03-l08-pocet-ex06",
+          "lessonId": "a1-u03-l08-pocet",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Після слова «veľa» іменник стоїть у родовому відмінку множини.",
+          "correctAnswer": true,
+          "explanation": "veľa ľudí, veľa kníh.",
+          "order": 6,
+          "wordIds": [
+            "a1-u03-l08-pocet-w03"
+          ]
+        },
+        {
+          "id": "a1-u03-l08-pocet-ex07",
+          "lessonId": "a1-u03-l08-pocet",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Počkajte ______ minút. (кілька)",
+          "acceptedAnswers": [
+            "pár",
+            "niekoľko"
+          ],
+          "explanation": "pár / niekoľko minút.",
+          "order": 7,
+          "wordIds": [
+            "a1-u03-l08-pocet-w02",
+            "a1-u03-l08-pocet-w05"
+          ]
+        },
+        {
+          "id": "a1-u03-l08-pocet-ex08",
+          "lessonId": "a1-u03-l08-pocet",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що в тебе мало часу.",
+          "tokens": [
+            ".",
+            "Mám",
+            "času",
+            "málo"
+          ],
+          "correctOrder": [
+            "Mám",
+            "málo",
+            "času",
+            "."
+          ],
+          "explanation": "málo + času.",
+          "order": 8,
+          "wordIds": [
+            "a1-u03-l08-pocet-w04"
+          ]
+        },
+        {
+          "id": "a1-u03-l08-pocet-ex09",
+          "lessonId": "a1-u03-l08-pocet",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "V triede je dvadsať študenti.",
+          "errorToken": "študenti",
+          "correctToken": "študentov",
+          "explanation": "5+ → študentov.",
+          "order": 9
+        },
+        {
+          "id": "a1-u03-l08-pocet-ex10",
+          "lessonId": "a1-u03-l08-pocet",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Nemám žiadny problém»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "У мене одна проблема",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "У мене немає жодної проблеми",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Я не знаю проблеми",
+              "correct": false
+            }
+          ],
+          "explanation": "žiadny — жодний; подвійне заперечення — норма.",
+          "order": 10
+        },
+        {
+          "id": "a1-u03-l08-pocet-ex11",
+          "lessonId": "a1-u03-l08-pocet",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "На касі ти просиш три рогалики.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Troch rožky.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Tri rožky, prosím.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Tri rožkov, prosím.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Tri rožok, prosím.",
+              "correct": false
+            }
+          ],
+          "explanation": "2–4 → rožky.",
+          "order": 11
+        },
+        {
+          "id": "a1-u03-l08-pocet-ex12",
+          "lessonId": "a1-u03-l08-pocet",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні словосполучення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "dva okna",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "päť ľudia",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "veľa jabĺk",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "päť ľudí",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "dve okná",
+              "correct": true
+            }
+          ],
+          "explanation": "5+ — родовий, 2–4 — множина.",
+          "order": 12,
+          "wordIds": [
+            "a1-u03-l08-pocet-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Організовую вечерю",
+        "description": "Ти рахуєш, що купити на вечерю для гостей.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Гостей буде вісім.",
+            "options": [
+              {
+                "sk": "Bude osem ľudí.",
+                "correct": true
+              },
+              {
+                "sk": "Bude osem ľudia.",
+                "correct": false
+              },
+              {
+                "sk": "Bude osem človek.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти просиш у магазині 6 яблук.",
+            "options": [
+              {
+                "sk": "Šesť jablká, prosím.",
+                "correct": false
+              },
+              {
+                "sk": "Šesť jabĺk, prosím.",
+                "correct": true
+              },
+              {
+                "sk": "Šesť jablko.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Тобі треба ще дві пляшки вина.",
+            "options": [
+              {
+                "sk": "Dve fľašov vína.",
+                "correct": false
+              },
+              {
+                "sk": "Dva fľaše vína.",
+                "correct": false
+              },
+              {
+                "sk": "Dve fľaše vína, prosím.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Продавець: «Máme len málo chleba.» Що це означає?",
+            "options": [
+              {
+                "sk": "хліба немає взагалі",
+                "correct": false
+              },
+              {
+                "sk": "хліба багато",
+                "correct": false
+              },
+              {
+                "sk": "хліба залишилося мало",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тепер ти правильно рахуєш предмети. Далі — винятки й неправильні форми."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тепер ти правильно рахуєш предмети. Далі — винятки й неправильні форми.",
+        "nowYouKnow": [
+          "1 — 2–4 — 5+ (родовий мн.)",
+          "zošitov, kníh, jabĺk, ľudí",
+          "veľa, málo, niekoľko, pár",
+          "žiadny"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u03-l09-nepravidelne",
+          "title": "Неправильні форми"
+        }
+      }
+    }
+  ]
+}

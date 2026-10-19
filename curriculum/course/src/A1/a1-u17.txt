@@ -1,0 +1,486 @@
+@unit a1-u17 | Минулий час | Minulý čas
+
+@lesson bol-som | Я був / я була | Bol som, bola som
+desc: Минулий час дієслова byť: bol som, bola som, bol si, Peter bol, boli sme. Де ти був?
+goal: Сказати, де ти був(ла) учора чи торік, і спитати про це інших.
+out: казати Bol som / Bola som doma ;; питати Kde si bol? / Kde ste boli? ;; знати, що в 3-й особі som/si немає: Peter bol… ;; вживати vlani, nedávno, kedysi
+done: Ти вмієш сказати, де був(ла). Далі — минулий час інших дієслів на -l.
+T: Bol som — я був || В українській «я був» — одне слово. У словацькій минулий час має дві частини: форму на -l і допоміжне слово «som / si / sme / ste». «Bol som doma» — я (ч.) був удома, «Bola som v práci» — я (ж.) була на роботі. Займенник «ja» зазвичай не вживаємо. || Včera som bol u lekára. = Учора я (ч.) був у лікаря. ;; Bola som na pošte. = Я (ж.) була на пошті. || bol / bola + som
+T: Усі особи || ja — bol som / bola som; ty — bol si / bola si; on — bol, ona — bola, ono — bolo; my — boli sme; vy — boli ste; oni / ony — boli. У 3-й особі допоміжного слова НЕМАЄ: «Peter bol v Košiciach». Множина завжди «boli» — і для чоловіків, і для жінок. || Mama bola doma. = Мама була вдома. ;; Boli sme v Tatrách. = Ми були в Татрах. || 3-я особа — без som / si
+T: Де стоїть som? || «Som / si / sme / ste» стоїть на другому місці в реченні: «Bol som doma», але «Včera som bol doma», «Kde si bol?». На початку речення — ніколи: не «Som bol doma». Ввічливо (на «ви») — завжди «boli ste», навіть до однієї людини: «Kde ste boli, pani Nováková?» || Kde ste boli cez víkend? = Де ви були на вихідних? ;; Vlani som bol na Slovensku prvýkrát. = Торік я вперше був у Словаччині. || som — на другому місці
+mis: Som bol doma. => Bol som doma. ;; Peter je bol v práci. => Peter bol v práci. ;; (жінка) Bol som v obchode. => Bola som v obchode.
+W: vlani | торік, минулого року | влані | Vlani som bol v Prahe. | Торік я був у Празі.
+W: nedávno | нещодавно | неда:вно | Nedávno som bol u zubára. | Нещодавно я був у стоматолога.
+W: kedysi | колись | кедісі | Kedysi tu bola pekáreň. | Колись тут була пекарня.
+W: dávno | давно | да:вно | To bolo veľmi dávno. | Це було дуже давно.
+W: návšteva | візит, гостина | на:вштева | V nedeľu sme boli na návšteve u babky. | У неділю ми були в гостях у бабусі.
+X mt: З’єднай. | vlani = торік ;; nedávno = нещодавно ;; kedysi = колись ;; dávno = давно ;; návšteva = візит, гостина
+X dd: Обери (говорить жінка). | [*Bola/Bol/Boli] som v obchode.
+= Жінка — bola som.
+X dd: Обери. | Kde [*si/sme/je] bol včera?
+= ty → bol si; «je bol» не буває.
+X sc~: Що означає «Boli sme na návšteve»? | - | *Ми були в гостях ;; Ми будемо в гостях ;; Ми чекали на гостей
+= boli sme — ми були; byť na návšteve — бути в гостях.
+X tf: - | - | У реченні «Peter bol doma» допоміжне слово som / si не потрібне, бо це 3-я особа. | T
+= 3-я особа: Peter bol, mama bola, deti boli.
+X fb: Допиши (говорить чоловік). | Včera ___ bol v práci. | som |
+= ja → bol som.
+X cat: Хто це? | Ja: bol som, bola som ;; Ty: bol si, bola si ;; On alebo ona: bol, bola ;; My: boli sme
+= som — я, si — ти, без допоміжного — 3-я особа.
+X so: - | Спитай пані Новакову, де вона була на вихідних. | Kde ste boli cez víkend?
+= Ввічливо — boli ste.
+X fe: - | Moja sestra [bol>bola] včera u lekára.
+= Сестра — жіночий рід: bola.
+X tr: Зміни на жіночий рід. | Bol som v Bratislave. | Bola som v Bratislave.
+= bol → bola, som залишається.
+X dr: - | Kolega: Kde si bol v pondelok? | *Bol som u lekára. ;; Som bol u lekára. ;; Bol u lekára som.
+= som — на другому місці.
+X np: Ти ввічливо питаєш сусідку, пані Новакову, де вона була в неділю. | *Kde ste boli v nedeľu? ;; Kde si bola v nedeľu? ;; Kde ste bola v nedeľu? ;; Kde boli ste v nedeľu?
+= Ввічливо — завжди boli ste.
+X msg: Прочитай повідомлення. | Mama | Ahoj, kde si bol celý deň? Volala som ti trikrát! | Що хоче знати мама? | *де ти був увесь день ;; куди ти зараз ідеш ;; коли ти прийдеш додому
+= Kde si bol — де ти був.
+X ms: Обери правильні речення. | - | *Bol som doma. ;; *Mama bola v obchode. ;; *Boli sme v Tatrách. ;; Som bol doma. ;; Mama je bola v obchode.
+= som — на другому місці; у 3-й особі без je.
+F: Понеділок на роботі || У понеділок колеги розпитують, хто де був на вихідних.
+S: Колега: «Kde si bol cez víkend?» (ти — чоловік, був у гостях у друзів) | *Bol som na návšteve u kamarátov. ;; Som bol na návšteve u kamarátov. ;; Bol na návšteve som u kamarátov.
+S: Колега: «Moja žena bola v Prahe.» Що він сказав? | *Його дружина була в Празі ;; Його дружина зараз у Празі ;; Його дружина поїде до Праги
+S: Ти ввічливо питаєш шефа, де він був. | *Kde ste boli, pán Horváth? ;; Kde si bol, pán Horváth? ;; Kde boli ste, pán Horváth?
+S: Колега: «Boli ste už v Tatrách?» (ти з родиною — так, торік) | *Áno, boli sme tam vlani. ;; Áno, boli tam vlani sme. ;; Áno, sme boli tam vlani.
+R: bol som / bola som, boli sme ;; 3-я особа без som: Peter bol, mama bola ;; Kde si bol? Kde ste boli? ;; vlani, nedávno, kedysi, dávno, návšteva
+
+@lesson minuly-cas-l | Минулий час на -l | Minulý čas: robil som
+desc: Як утворити минулий час будь-якого дієслова: robiť → robil, pracovať → pracoval, і кілька неправильних форм: išiel, jedol, mohol.
+goal: Розповісти (від імені чоловіка), що ти робив, і спитати про це друга.
+out: утворювати форму на -l від інфінітива ;; казати robil som / robil si / brat robil ;; знати išiel, jedol, mohol, prišiel, stretol ;; питати Čo si robil?
+done: Ти утворюєш минулий час. Далі — жіночий і середній рід.
+T: Як утворити || Від інфінітива відкидаємо -ť і додаємо -l: robiť → robil, pracovať → pracoval, kúpiť → kúpil, čítať → čítal, hrať → hral. Потім додаємо som / si / sme / ste, як у bol som. || Včera som pracoval do šiestej. = Учора я працював до шостої. ;; Kúpil som chlieb. = Я купив хліб. || -ť → -l
+T: Хто це зробив? || ja — robil som; ty — robil si; on — robil; my — robili sme; vy — robili ste; oni — robili. Як і з bol: у 3-й особі без допоміжного слова. Питання: «Čo si robil?» — що ти робив? «Kúpil si mlieko?» — ти купив молоко? || Brat kúpil nové auto. = Брат купив нову машину. ;; Čo si robil včera večer? = Що ти робив учора ввечері? || som / si / — / sme / ste / —
+T: Неправильні форми || Кілька частих дієслів мають особливу форму: ísť → išiel, jesť → jedol, môcť → mohol, prísť → prišiel, stretnúť → stretol, zabudnúť → zabudol. Їх треба просто запам’ятати. || Išiel som domov. = Я пішов додому. ;; Stretol som suseda. = Я зустрів сусіда. || išiel, jedol, mohol, prišiel
+mis: Ja kúpiť chlieb včera. => Včera som kúpil chlieb. ;; Brat som kúpil auto. => Brat kúpil auto. ;; Jesol som. => Jedol som.
+W: kúpiť | купити | ку:піт | Kúpil som lístky na vlak. | Я купив квитки на поїзд.
+W: stretnúť | зустріти | стретнут | Včera som stretol starého kamaráta. | Учора я зустрів старого друга.
+W: zabudnúť | забути | забуднут | Zabudol som heslo. | Я забув пароль.
+W: dostať | отримати | достат | Dostal som list z banky. | Я отримав лист із банку.
+W: navariť | зварити, приготувати | наваріт | Otec navaril guláš. | Тато зварив гуляш.
+W: upratať | прибрати | упратат | Upratal som celý byt. | Я прибрав усю квартиру.
+X mt: З’єднай. | kúpiť = купити ;; stretnúť = зустріти ;; zabudnúť = забути ;; dostať = отримати ;; navariť = зварити ;; upratať = прибрати
+X mt: З’єднай інфінітив і форму минулого часу. | robiť = robil ;; ísť = išiel ;; jesť = jedol ;; môcť = mohol ;; stretnúť = stretol
+X dd: Обери. | Včera som [*kúpil/kúpiť/kúpim] chlieb.
+= Минулий час: kúpil som.
+X dd: Обери. | Brat [*navaril/navaril som/navariť] guláš.
+= Brat — 3-я особа: без som.
+X fb: Допиши. | Čo si ___ včera večer? (робив) | robil |
+= robiť → robil.
+X fb: Допиши. | Včera som ___ suseda. (зустрів) | stretol |
+= stretnúť → stretol.
+X sc~: Що означає «Zabudol som kľúče»? | - | *Я забув ключі ;; Я загубив ключі ;; Я знайшов ключі
+= zabudnúť — забути.
+X tf: - | - | Форма минулого часу від «ísť» — «išiel». | T
+= ísť → išiel (неправильна форма).
+X fe: - | Včera som [kúpiť>kúpil] nový telefón.
+= Після som — форма на -l: kúpil.
+X so: - | Скажи, що ти забув пароль. | Zabudol som heslo.
+= zabudnúť → zabudol som.
+X tr: Перетвори в минулий час (говорить чоловік). | Pracujem v sklade. | Pracoval som v sklade.
+= pracovať → pracoval som.
+X dr: - | Kamarát: Čo si robil v sobotu? | *Upratal som byt a navaril obed. ;; Upratať som byt a navariť obed. ;; Som upratal byt a navaril obed.
+= Форма на -l, som — на другому місці.
+X np: Ти (чоловік) кажеш колезі, що отримав зарплату. | *Dostal som výplatu. ;; Dostať som výplatu. ;; Som dostal výplatu. ;; Dostal výplatu som.
+= dostať → dostal som.
+X ms: Обери правильні форми минулого часу. | - | *jedol ;; *mohol ;; *prišiel ;; jesol ;; môcol
+= Неправильні форми: jedol, mohol, prišiel.
+F: Дзвінок у неділю || Увечері тобі (чоловікові) телефонує друг і питає, як минув день.
+S: «Čo si dnes robil?» (прибрав квартиру) | *Upratal som byt. ;; Upratať som byt. ;; Som upratal byt.
+S: «A čo obed?» (ти зварив суп) | *Navaril som polievku. ;; Navariť som polievku. ;; Navaril polievku som.
+S: Друг: «Ja som stretol Mareka v obchode.» Що він зробив? | *зустрів Марека в магазині ;; працював із Мареком у магазині ;; шукав Марека в магазині
+S: Ти питаєш, чи він купив квитки на матч. | *Kúpil si lístky na zápas? ;; Kúpiť si lístky na zápas? ;; Si kúpil lístky na zápas?
+R: -ť → -l: robil, pracoval, kúpil ;; robil som, robil si, brat robil ;; išiel, jedol, mohol, prišiel, stretol ;; kúpiť, stretnúť, zabudnúť, dostať, navariť, upratať
+
+@lesson zensky-stredny-rod | Жіночий і середній рід | Robila som, bolo to
+desc: Минулий час для жінок (-la) і середнього роду (-lo): pracovala som, dieťa spalo, Čo sa stalo? Páčilo sa mi.
+goal: Розповісти від імені жінки, що ти робила, і вжити часті фрази з -lo.
+out: казати pracovala som, išla som ;; узгоджувати -l / -la / -lo з підметом ;; розуміти Čo sa stalo? Bolo to super ;; казати Auto sa pokazilo
+done: Ти розрізняєш -l, -la і -lo. Далі — множина.
+T: Жінка говорить || Жінка додає -la: robila som, pracovala som, kúpila som. Неправильні форми: išla, jedla, mohla, prišla, stretla. Як в українській: «я робила». || Včera som pracovala do noci. = Учора я працювала до ночі. ;; Išla som do mesta. = Я пішла в місто. || жінка → -la som
+T: Середній рід: -lo || Для середнього роду — -lo: «Dieťa spalo», «Auto stálo pred domom». Дуже часті фрази: «Čo sa stalo?» — що сталося? «Bolo to super» — це було супер. «Bolo mi zle» — мені було погано. «Páčilo sa mi to» — мені це сподобалося. || Dieťa celú noc plakalo. = Дитина плакала всю ніч. ;; Čo sa stalo? = Що сталося? || -lo для ono і безособових фраз
+T: Узгодження || Форма на -l залежить від роду підмета: «Otec napísal», «Mama napísala», «Auto sa pokazilo». Коли питаєш подругу: «Kde si bola?» — де ти була? || Sestra mi napísala správu. = Сестра написала мені повідомлення. ;; Auto sa pokazilo. = Машина зламалася. || рід підмета → -l / -la / -lo
+mis: (жінка) Pracoval som v hoteli. => Pracovala som v hoteli. ;; Auto sa pokazil. => Auto sa pokazilo. ;; Čo sa stal? => Čo sa stalo?
+W: napísať | написати | напі:сат | Napísala som list babke. | Я написала листа бабусі.
+W: nakúpiť | зробити покупки, закупитися | наку:піт | Mama nakúpila na celý týždeň. | Мама закупилася на весь тиждень.
+W: stať sa | статися | стат са | Čo sa stalo? | Що сталося?
+W: pokaziť sa | зламатися | показіт са | Práčka sa včera pokazila. | Пральна машина вчора зламалася.
+W: plakať | плакати | плакат | Dieťa plakalo celú noc. | Дитина плакала всю ніч.
+X mt: З’єднай. | napísať = написати ;; nakúpiť = зробити покупки ;; stať sa = статися ;; pokaziť sa = зламатися ;; plakať = плакати
+X dd: Обери (говорить жінка). | Včera som [*nakúpila/nakúpil/nakúpilo] v supermarkete.
+= Жінка — nakúpila som.
+X dd: Обери. | Dieťa celú noc [*plakalo/plakala/plakal].
+= dieťa — середній рід: plakalo.
+X cat: Хто це зробив? | Ona: písala, jedla, išla ;; Ono: písalo, jedlo, bolo ;; On: písal, jedol, išiel
+= -la — жіночий, -lo — середній, -l — чоловічий рід.
+X sc~: Що означає «Páčilo sa mi to»? | - | *Мені це сподобалося ;; Мені це подобається ;; Я цього не люблю
+= páčilo sa — минулий час, середній рід.
+X tf: - | - | Коли питаєш подругу (на «ти»), де вона була, кажеш «Kde si bola?». | T
+= ty (жінка) → bola si.
+X fb: Допиши (говорить жінка). | Včera som ___ do šiestej. (працювала) | pracovala |
+= pracovať → pracovala.
+X fe: - | Moja dcéra [napísal>napísala] list babke.
+= Донька — жіночий рід: napísala.
+X tr: Зміни на жіночий рід. | Išiel som do mesta. | Išla som do mesta.
+= išiel → išla.
+X so: - | Спитай, що сталося. | Čo sa stalo?
+= stať sa → stalo (середній рід).
+X dr: - | Kolegyňa: Prečo si dnes prišla neskoro? | *Pokazilo sa mi auto. ;; Pokazil sa mi auto. ;; Auto sa mi pokazila.
+= auto — середній рід: pokazilo.
+X msg: Прочитай повідомлення. | Správca domu | Dobrý deň, včera večer sa vo vchode pokazil výťah. Technik príde zajtra ráno. | Що сталося? | *зламався ліфт ;; прибрали під’їзд ;; зламалися двері
+= výťah — чоловічий рід: pokazil sa.
+X np: Ти (жінка) кажеш, що вчора написала e-mail шефові. | *Včera som napísala e-mail šéfovi. ;; Včera som napísal e-mail šéfovi. ;; Včera napísala som e-mail šéfovi. ;; Včera som napísalo e-mail šéfovi.
+= Жінка — napísala, som на другому місці.
+X ms: Обери правильні речення. | - | *Dieťa spalo. ;; *Mama nakúpila. ;; *Bolo to super. ;; Auto sa pokazila. ;; Dieťa spal.
+= Рід підмета визначає закінчення.
+F: Важкий день || Увечері ти (жінка) розповідаєш подрузі по телефону, як минув день.
+S: Подруга: «Ahoj, ako bolo v práci?» (було важко) | *Bolo to ťažké. ;; Bol to ťažké. ;; Bola to ťažké.
+S: «Čo sa stalo?» (зламалася машина) | *Pokazilo sa mi auto. ;; Pokazila sa mi auto. ;; Pokazil som auto.
+S: Подруга: «Ja som dnes celý deň upratovala.» Що робила подруга? | *прибирала цілий день ;; готувала цілий день ;; спала цілий день
+S: Ти кажеш, що ввечері зробила покупки. | *Večer som nakúpila. ;; Večer som nakúpil. ;; Večer nakúpila som.
+R: жінка: robila som, išla som ;; ono і безособове: bolo, Čo sa stalo? Páčilo sa mi ;; рід підмета → -l / -la / -lo ;; napísať, nakúpiť, stať sa, pokaziť sa, plakať
+
+@lesson mnozne-cislo | Множина | Boli sme, robili ste
+desc: Минулий час у множині: boli sme, robili ste, deti hrali; ввічливе «vy»: Kde ste pracovali?
+goal: Розповісти, що ви робили з родиною чи друзями, і ввічливо спитати про минуле.
+out: казати robili sme / robili ste / robili ;; знати, що -li — для всіх родів ;; питати ввічливо Kedy ste prišli? ;; говорити про переїзд і свято
+done: Ти говориш про минуле в множині. Далі — заперечення.
+T: Множина -li || my — robili sme, vy — robili ste, oni / ony — robili. Одна форма -li для всіх родів: «Chlapci hrali», «Dievčatá hrali», «Deti hrali». || Boli sme v kine. = Ми були в кіно. ;; Deti hrali futbal. = Діти грали у футбол. || -li — для всіх родів
+T: Vy — ввічливо || «Vy» — це і кілька людей, і ввічлива форма до однієї людини: «Kedy ste prišli na Slovensko?» — коли ви приїхали до Словаччини? Навіть до жінки кажемо «boli ste», «prišli ste». || Pani doktorka, kde ste pracovali predtým? = Пані лікарко, де ви працювали раніше? ;; Kedy ste prišli? = Коли ви прийшли (приїхали)? || vy + -li + ste
+T: Переїзд і свято || «Presťahovali sme sa» — ми переїхали (в інше житло, місто, країну). «Oslava» — свято, вечірка; «oslavovať» — святкувати. «Zabavili sme sa» — ми добре розважилися. Зверни увагу: sme стоїть перед sa. || Presťahovali sme sa na Slovensko v roku 2022. = Ми переїхали до Словаччини у 2022 році. ;; Na oslave sme sa výborne zabavili. = На святі ми чудово розважилися. || sme + sa
+mis: My sme bol doma. => Boli sme doma. ;; Deti hrala. => Deti hrali. ;; Presťahovali sa sme. => Presťahovali sme sa.
+W: presťahovať sa | переїхати | престяговат са | Vlani sme sa presťahovali do Žiliny. | Торік ми переїхали до Жиліни.
+W: oslava | свято, вечірка | ослава | Oslava bola u Petra doma. | Вечірка була в Петра вдома.
+W: oslavovať | святкувати | ославоват | Včera sme oslavovali narodeniny syna. | Учора ми святкували день народження сина.
+W: zabaviť sa | розважитися, добре провести час | забавіт са | Na svadbe sme sa výborne zabavili. | На весіллі ми чудово розважилися.
+W: priniesť | принести | прінієст | Hostia priniesli víno a koláč. | Гості принесли вино й пиріг.
+X mt: З’єднай. | presťahovať sa = переїхати ;; oslava = свято ;; oslavovať = святкувати ;; zabaviť sa = розважитися ;; priniesť = принести
+X dd: Обери. | My [*sme/ste/sú] boli na oslave.
+= my → sme.
+X dd: Обери. | Deti [*hrali/hrala/hral] na dvore.
+= deti — множина: hrali.
+X fb: Допиши. | Kedy ___ prišli na Slovensko? (ви) | ste |
+= vy → prišli ste.
+X cz: - | Vlani {sme} sa presťahovali do Žiliny. Susedia nás {pozvali} na oslavu. Deti {tancovali} a my {sme} sa dobre zabavili. | sme / pozvať / tancovať
+X sc~: «Pani Kováčová, kde ste pracovali predtým?» Кому це питання? | - | *одній жінці, ввічливо ;; кільком подругам, по-дружньому ;; дитині
+= Ввічливе vy + -li, навіть до однієї людини.
+X tf: - | - | У реченнях «Chlapci hrali» і «Dievčatá hrali» форма дієслова однакова. | T
+= -li — для всіх родів.
+X fe: - | Hostia [priniesol>priniesli] víno.
+= hostia — множина: priniesli.
+X tr: Зміни на «ми». | Bol som na oslave. | Boli sme na oslave.
+= bol som → boli sme.
+X so: - | Скажи, що ви добре розважилися. | Zabavili sme sa.
+= sme — перед sa.
+X do: Склади діалог. | Lucia: Ahoj, kde ste boli v sobotu? ;; Oksana: Boli sme na oslave u susedov. ;; Lucia: Super! Čo ste tam robili? ;; Oksana: Jedli sme, tancovali a spievali. ;; Lucia: Zabavili ste sa? ;; Oksana: Áno, výborne!
+= Питання → місце → що робили → враження.
+X dr: - | Šéf: Kedy ste prišli s rodinou na Slovensko? | *Prišli sme v roku 2022. ;; Prišiel sme v roku 2022. ;; Sme prišli v roku 2022.
+= my → prišli sme.
+X np: Ти розповідаєш, що сусіди запросили вас на вечерю. | *Susedia nás pozvali na večeru. ;; Susedia nás pozval na večeru. ;; Susedia sme nás pozvali na večeru. ;; Susedia nás pozvalo na večeru.
+= susedia — 3-я особа множини: pozvali, без sme.
+X ms: Обери правильні речення. | - | *Boli sme doma. ;; *Deti spali. ;; *Kde ste boli? ;; Oni boli sme doma. ;; Deti spala.
+= -li у множині; у 3-й особі без допоміжного.
+F: Нова квартира || Ви з чоловіком нещодавно переїхали. Сусідка-словачка приходить познайомитися.
+S: «Kedy ste sa presťahovali?» (минулого тижня) | *Presťahovali sme sa minulý týždeň. ;; Presťahovali sa sme minulý týždeň. ;; Presťahoval sme sa minulý týždeň.
+S: «A kde ste bývali predtým?» (у Кошицях) | *Predtým sme bývali v Košiciach. ;; Predtým sme býval v Košiciach. ;; Predtým bývali sme v Košiciach.
+S: Сусідка: «Minulý rok sme mali v dome veľkú oslavu.» Що вона розповіла? | *торік у будинку було велике свято ;; цього року буде велике свято ;; у будинку щороку святкують
+S: Ти розповідаєш, що вчора приїхали твої батьки. | *Včera prišli moji rodičia. ;; Včera prišli sme moji rodičia. ;; Včera prišiel moji rodičia.
+R: robili sme, robili ste, oni robili ;; -li для всіх родів ;; ввічливо: Kde ste boli? Kedy ste prišli? ;; presťahovať sa, oslava, oslavovať, zabaviť sa, priniesť
+
+@lesson zapor | Заперечення | Zápor: nebol som
+desc: Заперечення в минулому часі: nebol som, nerobila som, nikto neprišiel, nič som nekúpil. Як пояснити, чому ти чогось не зробив.
+goal: Сказати, чого ти не зробив(ла), і ввічливо пояснити причину.
+out: казати nebol som / nerobila som ;; ставити ne- до форми на -l, а не до som ;; вживати nikto / nič + ne- ;; пояснювати: nestihol som, nepochopil som
+done: Ти вмієш заперечувати в минулому. Далі — твій учорашній день.
+T: Ne- разом із дієсловом || Заперечне «ne-» пишемо разом із формою на -l: nebol som, nerobila som, nekúpili sme. Порівняй: «Nie som doma» (зараз), але «Nebol som doma» (учора). || Včera som nebol v práci. = Учора я не був на роботі. ;; Nekúpila som chlieb. = Я не купила хліба. || ne + форма на -l
+T: Порядок слів || Заперечена форма стоїть там, де звичайна: «Nebol som doma», «Včera som nebol doma». «Som» ніколи не отримує ne-: не «Nesom bol». Із sa: «Neučil som sa» / «Včera som sa neučil». Подвійне заперечення, як в українській: «Nikto neprišiel» — ніхто не прийшов, «Nič som nekúpil» — я нічого не купив. || Nikto mi nevolal. = Ніхто мені не дзвонив. || nikto / nič + ne-
+T: Чому ні? || «Nestihol som» — не встиг, «Zabudol som» — забув, «Stratila som kľúče» — я загубила ключі, «Nepochopil som» — не зрозумів. «Prepáčte, nestihla som to» — вибачте, я не встигла. || Prepáčte, nestihol som autobus. = Вибачте, я не встиг на автобус. || nestihol som, nepochopil som
+mis: Nie som bol doma. => Nebol som doma. ;; Nesom robil. => Nerobil som. ;; Nikto prišiel. => Nikto neprišiel.
+W: stihnúť | встигнути | стігнут | Stihol som posledný vlak. | Я встиг на останній поїзд.
+W: stratiť | загубити | стратіт | Stratila som peňaženku. | Я загубила гаманець.
+W: pochopiť | зрозуміти | похопіт | Nepochopil som otázku. | Я не зрозумів питання.
+W: dôvod | причина | дуовод | Aký bol dôvod? | Яка була причина?
+W: odpovedať | відповісти, відповідати | одповедат | Klient mi ešte neodpovedal. | Клієнт мені ще не відповів.
+X mt: З’єднай. | stihnúť = встигнути ;; stratiť = загубити ;; pochopiť = зрозуміти ;; dôvod = причина ;; odpovedať = відповісти
+X dd: Обери. | Včera som [*nebol/nie som/nebolo] v práci.
+= Минулий час: nebol som.
+X dd: Обери. | Nikto [*neprišiel/prišiel/neprišli].
+= nikto + заперечене дієслово в однині.
+X tr: Зроби речення заперечним. | Kúpila som mlieko. | Nekúpila som mlieko.
+= ne- разом із kúpila.
+X tr: Зроби речення заперечним. | Včera som sa učil. | Včera som sa neučil. ;; Neučil som sa včera.
+= ne- до форми на -l: neučil.
+X sc~: Що означає «Nič som nekúpil»? | - | *Я нічого не купив ;; Я дещо купив ;; Я купив усе
+= nič + ne- — нічого не.
+X tf: - | - | «Nesom bol doma» — правильне речення. | F
+= Правильно: Nebol som doma.
+X fb: Допиши. | Prepáčte, ___ som autobus. (не встиг) | nestihol |
+= stihnúť → nestihol.
+X fe: - | Nikto mi [volal>nevolal] celý deň.
+= Після nikto — заперечення: nevolal.
+X ce: Виправ речення. | Nesom bola v obchode. | Nebola som v obchode.
+= ne- до bola, а не до som.
+X dr: - | Šéf: Prečo ste neodpovedali na e-mail? | *Prepáčte, nepochopil som otázku. ;; Prepáčte, nie som pochopil otázku. ;; Prepáčte, pochopil som nie otázku.
+= nepochopil som.
+X msg: Прочитай повідомлення. | Kolegyňa Jana | Ahoj, dnes som nebola v práci, lebo som bola chorá. Nevieš, či šéf hovoril niečo o porade? | Чому Яни не було на роботі? | *вона хворіла ;; вона проспала ;; вона була у відпустці
+= lebo som bola chorá — бо я хворіла.
+X np: Ти (жінка) пояснюєш, чому запізнилася: не встигла на автобус. | *Prepáčte, nestihla som autobus. ;; Prepáčte, nestihol som autobus. ;; Prepáčte, nie som stihla autobus. ;; Prepáčte, som nestihla autobus.
+= Жінка — nestihla som.
+X ms: Обери правильні заперечні речення. | - | *Nebol som doma. ;; *Nikto neprišiel. ;; *Nič som nekúpila. ;; Nesom bol doma. ;; Nikto prišiel.
+= ne- до форми на -l; nikto / nič + ne-.
+F: Пропущена нарада || Ти (чоловік) не прийшов на нараду, і шеф хоче знати чому.
+S: Шеф: «Prečo ste neboli na porade?» (тобі ніхто нічого не сказав) | *Prepáčte, nikto mi nič nepovedal. ;; Prepáčte, nikto mi nič povedal. ;; Prepáčte, nikto nepovedal mi nič.
+S: «Nečítali ste e-mail?» (ти його не отримав) | *Nie, nedostal som ho. ;; Nie, nedostal ho som. ;; Nie, som nedostal ho.
+S: Шеф: «Dobre, nič sa nestalo.» Що він має на увазі? | *нічого страшного ;; нарада буде завтра ;; ти нічого не зробив
+S: Ти кажеш, що не зрозумів дату наради. | *Prepáčte, nepochopil som dátum. ;; Prepáčte, pochopil som nie dátum. ;; Prepáčte, nepochopila som dátum.
+R: ne- + форма на -l: nebol som, nerobila som ;; не «nesom», не «nie som bol» ;; nikto / nič + ne- ;; stihnúť, stratiť, pochopiť, dôvod, odpovedať
+
+@lesson vcera | Учора | Včera
+desc: Розповідь про вчорашній день по порядку і зворотні дієслова в минулому: umyl som sa, oddýchli sme si, Kedy si sa vrátil?
+goal: Розповісти, як минув твій учорашній день, правильно ставлячи som і sa.
+out: казати včera ráno, predvčerom, celý deň ;; ставити som перед sa: umyl som sa ;; казати Peter sa umyl (без som) ;; питати Kedy si sa zobudil?
+done: Ти розповідаєш про вчорашній день. Далі — минулі вихідні.
+T: Учора по порядку || «Včera ráno», «včera večer», «predvčerom» — позавчора. Порядок подій: «najprv… potom… nakoniec». «Celý deň» — увесь день. || Včera ráno som vstal o šiestej. = Учора вранці я встав о шостій. ;; Predvčerom som bola u mamy. = Позавчора я була в мами. || včera, predvčerom, celý deň
+T: Som і sa || У минулому часі спершу йде som / si / sme / ste, а потім sa / si: «Umyl som sa», «Včera som sa učila», «Oddýchli sme si». У 3-й особі лише sa: «Peter sa umyl». Ніколи не «Umyl sa som»! || Ráno som sa osprchovala. = Уранці я прийняла душ. ;; Večer sme si oddýchli. = Увечері ми відпочили. || som / sme + sa / si
+T: Ty + sa / si || Для «ty»: «Kedy si sa vrátil?» — коли ти повернувся? «Oddýchol si si?» — ти відпочив? Тут перше si — це «ти», друге si — частина дієслова oddýchnuť si. || Kedy si sa zobudil? = Коли ти прокинувся? ;; Oddýchla si si? = Ти (ж.) відпочила? || si sa / si si
+mis: Umyl sa som. => Umyl som sa. ;; Včera sa som učil. => Včera som sa učil. ;; Peter sa je umyl. => Peter sa umyl.
+W: predvčerom | позавчора | предвчером | Predvčerom som mal voľno. | Позавчора я мав вихідний.
+W: vstať | встати | встат | Dnes som vstal neskoro. | Сьогодні я встав пізно.
+W: umyť sa | помитися, вмитися | уміт са | Umyl som sa a išiel som spať. | Я помився й пішов спати.
+W: osprchovať sa | прийняти душ | оспрховат са | Po práci som sa osprchoval. | Після роботи я прийняв душ.
+W: oddýchnuť si | відпочити | одді:хнут сі | Cez víkend sme si dobre oddýchli. | На вихідних ми добре відпочили.
+W: celý deň | увесь день | целі: день | Celý deň pršalo. | Увесь день ішов дощ.
+X mt: З’єднай. | predvčerom = позавчора ;; vstať = встати ;; umyť sa = помитися ;; osprchovať sa = прийняти душ ;; oddýchnuť si = відпочити ;; celý deň = увесь день
+X dd: Обери. | Ráno [*som sa/sa som/som si] umyla.
+= Спершу som, потім sa; umyť sa.
+X dd: Обери. | Peter sa [*osprchoval/osprchoval som/osprchovali] po práci.
+= Peter — 3-я особа однини, без som.
+X so: - | Скажи (ч.), що ти вмився. | Umyl som sa.
+= som — перед sa.
+X sb: - | Спитай друга, коли він прокинувся. | Kedy si sa zobudil?
+= si (ти) + sa.
+X fb: Допиши. | Včera ___ sa učila do noci. (я) | som |
+= ja → som, потім sa.
+X sc~: Що означає «Predvčerom som mal voľno»? | - | *Позавчора я мав вихідний ;; Учора я мав вихідний ;; Післязавтра я матиму вихідний
+= predvčerom — позавчора.
+X tf: - | - | У реченні «Umyl som sa» допоміжне som стоїть перед sa. | T
+= Порядок: som → sa.
+X fe: - | Cez víkend sme [sa>si] dobre oddýchli.
+= oddýchnuť si — з si, не з sa.
+X ce: Виправ речення. | Umyl sa som a išiel som spať. | Umyl som sa a išiel som spať. ;; Umyl som sa a išiel spať.
+= som — перед sa.
+X rc: - | Včera som vstala o šiestej. Najprv som sa osprchovala a potom som raňajkovala. O siedmej som išla autobusom do práce. Pracovala som do tretej. Po práci som nakúpila a navarila večeru. Večer som si oddýchla a pozerala som film. Spať som išla o desiatej. Oksana
+q~: Що Оксана зробила найперше після того, як встала? | *прийняла душ ;; поснідала ;; поїхала на роботу
+q~: До котрої вона працювала? | *до 15:00 ;; до 10:00 ;; до 19:00
+q~: Що вона робила ввечері? | *відпочивала й дивилася фільм ;; працювала ;; прибирала квартиру
+X dr: - | Kamarát: Ako si sa mal včera? | *Dobre, celý deň som oddychoval. ;; Dobre, celý deň oddychoval som. ;; Dobre, celý deň sa som oddychoval.
+= som — на другому місці.
+X np: Ти (жінка) розповідаєш, що вчора встала о п’ятій. | *Včera som vstala o piatej. ;; Včera som vstal o piatej. ;; Včera vstala som o piatej. ;; Včera som vstala piatej.
+= Жінка — vstala; som на другому місці; o piatej.
+X ms: Обери правильні речення. | - | *Umyla som sa. ;; *Peter sa osprchoval. ;; *Oddýchli sme si. ;; Umyla sa som. ;; Peter sa je osprchoval.
+= som / sme перед sa / si; у 3-й особі лише sa.
+F: Як минув твій день? || Подруга телефонує й питає, як минув твій (ти — жінка) учорашній день.
+S: «Kedy si včera vstala?» (о п’ятій) | *Vstala som o piatej. ;; Vstala sa som o piatej. ;; Som vstala o piatej.
+S: «Oddýchla si si po práci?» (так: прийняла душ і відпочила) | *Áno, osprchovala som sa a oddýchla som si. ;; Áno, osprchovala sa som a oddýchla si som. ;; Áno, som sa osprchovala a som si oddýchla.
+S: Подруга: «Ja som predvčerom pracovala celý deň.» Що вона каже? | *позавчора вона працювала весь день ;; учора вона працювала весь день ;; завтра вона працюватиме весь день
+S: Ти питаєш, коли вона повернулася додому. | *Kedy si sa vrátila domov? ;; Kedy sa si vrátila domov? ;; Kedy si vrátila sa domov?
+R: včera ráno, predvčerom, celý deň ;; som + sa: umyl som sa, oddýchli sme si ;; 3-я особа: Peter sa umyl ;; ty: Kedy si sa vrátil? Oddýchol si si?
+
+@lesson minuly-vikend | Минулі вихідні | Minulý víkend
+desc: Розпитуємо й розповідаємо про вихідні: Aký bol víkend? Ako si strávil víkend? Pozrel som si film. Bolo to skvelé!
+goal: Розповісти колезі, як ти провів(ла) вихідні, і відреагувати на його розповідь.
+out: питати Aký bol víkend? / Ako si strávil víkend? ;; казати minulý víkend / týždeň ;; будувати розповідь najprv – potom – nakoniec ;; реагувати Bolo to skvelé! / Škoda
+done: Ти розповідаєш про вихідні. Далі — відпустка.
+T: Як минули вихідні? || «Aký bol víkend?» — які були вихідні? «Ako si strávil víkend?» — як ти провів вихідні? Зверни увагу: «víkend» — однина, тому «bol». «Minulý víkend» — минулих вихідних, «minulý týždeň» — минулого тижня. || Ako ste strávili víkend? = Як ви провели вихідні? ;; Minulý víkend sme boli na chate. = Минулих вихідних ми були на дачі. || minulý víkend = минулих вихідних
+T: Розповідь || Розповідь з’єднуємо словами «najprv… potom… nakoniec» або «v sobotu… a v nedeľu…». «Pozrel som si film» — я подивився фільм, «Stretli sme sa s kamarátmi» — ми зустрілися з друзями. || V sobotu sme upratovali a v nedeľu sme išli na výlet. = У суботу ми прибирали, а в неділю поїхали на прогулянку. ;; Pozrela som si nový seriál. = Я подивилася новий серіал. || najprv → potom → nakoniec
+T: Реакції || «To znie dobre!» — звучить добре! «Bolo to skvelé!» — це було чудово! «Bola nuda» — було нудно. «Škoda!» — шкода! «A ty?» — а ти? || Celý víkend pršalo, bola nuda. = Усі вихідні йшов дощ, було нудно. ;; Mali sme skvelý víkend. = У нас були чудові вихідні. || Bolo to skvelé! / Bola nuda.
+W: minulý | минулий | мінулі: | Minulý týždeň som mala veľa práce. | Минулого тижня я мала багато роботи.
+W: stráviť | провести (час) | стра:віт | Víkend sme strávili v horách. | Вихідні ми провели в горах.
+W: pozrieť si | подивитися | позрієт сі | V sobotu som si pozrel zápas. | У суботу я подивився матч.
+W: nuda | нудьга | нуда | Doma bola nuda. | Удома було нудно.
+W: skvelý | чудовий | сквелі: | Mali sme skvelý výlet. | У нас була чудова прогулянка.
+X mt: З’єднай. | minulý = минулий ;; stráviť = провести (час) ;; pozrieť si = подивитися ;; nuda = нудьга ;; skvelý = чудовий
+X dd: Обери. | [*Minulý/Minulá/Minulé] víkend sme boli na chate.
+= víkend — чоловічий рід: minulý.
+X dd: Обери (минулий час). | V sobotu som si [*pozrel/pozrieť/pozriem] film.
+= Минулий час: pozrel som si.
+X fb: Допиши. | Ako si ___ víkend? (провів / провела) | strávil ;; strávila |
+= stráviť → strávil / strávila.
+X sc~: Що означає «Bola nuda»? | - | *Було нудно ;; Була ніч ;; Була потреба
+= nuda — нудьга.
+X tf: Прочитай, що пише Марек. | V sobotu som pracoval a v nedeľu som bol s deťmi v zoo. | Марек у неділю працював. | F
+= У неділю він був із дітьми в зоопарку.
+X do: Склади діалог. | Peter: Ahoj, Iryna, aký si mala víkend? ;; Iryna: Skvelý! Boli sme v Banskej Štiavnici. ;; Peter: To znie dobre! Čo ste tam robili? ;; Iryna: Pozreli sme si mesto a večer sme boli v reštaurácii. ;; Peter: A aké bolo počasie? ;; Iryna: Celý víkend svietilo slnko.
+= Питання → де → що робили → погода.
+X so: - | Спитай колегу, які були вихідні. | Aký bol víkend?
+= víkend — однина: bol.
+X fe: - | Víkend sme [strávil>strávili] u babky.
+= my → strávili sme.
+X msg: Прочитай повідомлення. | Kamarátka Zuzka | Ahoj! Minulý víkend sme boli na chate pri Liptovskej Mare. V sobotu sme sa kúpali, ale v nedeľu celý deň pršalo a bola nuda. A ty, čo si robila? | Яка була погода в неділю? | *увесь день ішов дощ ;; було сонячно ;; ішов сніг
+= v nedeľu celý deň pršalo.
+X tr: Перетвори в минулий час. | V sobotu upratujeme a v nedeľu ideme na výlet. | V sobotu sme upratovali a v nedeľu sme išli na výlet. ;; V sobotu sme upratovali a v nedeľu išli na výlet.
+= upratujeme → upratovali sme, ideme → išli sme.
+X dr: - | Kolega: Ako si strávil víkend? | *Dobre, pozrel som si film a stretol som sa s kamarátmi. ;; Dobre, pozrieť film a stretnúť kamaráti. ;; Dobre, som pozrel film a som stretol kamarátov.
+= Форми на -l, som на другому місці.
+X hm: Kolega: «Víkend? Ani sa nepýtaj…» Що він має на увазі? | *вихідні були погані ;; вихідні були чудові ;; він не пам’ятає вихідних
+= «Ani sa nepýtaj» — навіть не питай: було погано.
+X ms: Обери позитивні реакції. | - | *Bolo to skvelé! ;; *To znie dobre! ;; *Super víkend! ;; Bola nuda. ;; Škoda.
+= Позитивні реакції.
+F: Понеділкова кава || У понеділок зранку колега Мірка на кухні питає тебе (ти — чоловік) про вихідні.
+S: «Aký si mal víkend?» (чудовий) | *Mal som skvelý víkend. ;; Mal som skvelá víkend. ;; Mal som skvelý víkendu.
+S: «Čo si robil?» (у суботу — гори, у неділю — фільм) | *V sobotu som bol v horách a v nedeľu som si pozrel film. ;; V sobotu bol som v horách a v nedeľu pozrel som si film. ;; V sobotu som bol v horách a v nedeľu som sa pozrel film.
+S: Мірка: «Ja som bola celý víkend doma. Bola nuda.» Як вона провела вихідні? | *удома, було нудно ;; у горах, було чудово ;; на роботі, було важко
+S: Ти співчутливо реагуєш. | *Škoda! ;; Skvelé! ;; To znie dobre!
+R: Aký bol víkend? Ako si strávil víkend? ;; minulý víkend, minulý týždeň ;; najprv – potom – nakoniec ;; skvelý, nuda, pozrieť si, stráviť
+
+@lesson dovolenka | Відпустка | Dovolenka
+desc: Розповідаємо про відпустку: Boli sme pri mori, bývali sme v hoteli, kúpali sme sa, páčilo sa nám.
+goal: Розповісти, де ти був(ла) у відпустці, що робив(ла) і що сподобалося.
+out: казати Boli sme na dovolenke pri mori ;; розповідати kúpali sme sa, opaľovali sme sa ;; казати páčilo sa mi / páčili sa mi ;; розуміти ubytovanie, zážitok
+done: Ти розповідаєш про відпустку. Далі — резюме.
+T: Kde ste boli? || «Dovolenka» — відпустка: «ísť na dovolenku», «byť na dovolenke». «Boli sme pri mori» — ми були на морі. «Bývali sme v hoteli» — ми жили в готелі. «Ubytovanie» — житло, проживання. || Na dovolenke sme boli v Taliansku. = У відпустці ми були в Італії. ;; Ubytovanie bolo blízko pláže. = Житло було близько до пляжу. || byť na dovolenke, pri mori
+T: Що робили? || «Kúpali sme sa v mori» — купалися в морі, «opaľovali sme sa na pláži» — засмагали на пляжі, «chodili sme na výlety» — їздили на екскурсії. Пам’ятай: sme стоїть перед sa. || Deti sa celý deň kúpali. = Діти цілий день купалися. ;; Opaľovala som sa na pláži. = Я засмагала на пляжі. || kúpať sa, opaľovať sa
+T: Враження || «Páčilo sa mi more» — мені сподобалося море (more — середній рід → -lo). «Páčil sa mi hotel», «Páčila sa mi pláž», «Páčili sa mi hory» — форма узгоджується з тим, що сподобалося. «Zážitok» — враження, пригода. || Najviac sa nám páčilo more. = Найбільше нам сподобалося море. ;; Bol to skvelý zážitok. = Це була чудова пригода. || páčil / páčila / páčilo / páčili sa mi
+mis: Páčilo sa mi hory. => Páčili sa mi hory. ;; Kúpali sa sme. => Kúpali sme sa. ;; Boli sme v mori. => Boli sme pri mori.
+W: hotel | готель | готел | Hotel bol čistý a lacný. | Готель був чистий і дешевий.
+W: pláž | пляж | пла:ж | Pláž bola plná ľudí. | Пляж був повний людей.
+W: ubytovanie | житло, проживання | убітованіє | Ubytovanie sme rezervovali cez internet. | Житло ми забронювали через інтернет.
+W: kúpať sa | купатися | ку:пат са | Kúpali sme sa každý deň. | Ми купалися щодня.
+W: ostrov | острів | остров | Na ostrov sme išli loďou. | На острів ми попливли човном.
+W: zážitok | враження, пригода | за:жіток | Bol to nezabudnuteľný zážitok. | Це було незабутнє враження.
+X mt: З’єднай. | hotel = готель ;; pláž = пляж ;; ubytovanie = житло ;; kúpať sa = купатися ;; ostrov = острів ;; zážitok = враження
+X dd: Обери. | Na dovolenke sme [*boli/bol/bolo] pri mori.
+= my → boli sme.
+X dd: Обери. | Najviac sa mi [*páčilo/páčil/páčila] more.
+= more — середній рід: páčilo.
+X dtb: Обери правильну форму. | Deti sa [*kúpali/kúpal/kúpalo] v mori.
+= deti — множина: kúpali.
+X fb: Допиши. | Kde ste boli na ___? (у відпустці) | dovolenke |
+= byť na dovolenke.
+X cat: Де це? | Na pláži: kúpať sa, opaľovať sa, plávať ;; V hoteli: recepcia, izba, raňajky
+= Пляж / готель.
+X sc~: Що означає «Páčili sa nám pláže»? | - | *Нам сподобалися пляжі ;; Ми були на пляжах ;; Пляжі були платні
+= páčili sa — множина, бо pláže.
+X tfl: - | Vlani sme boli na dovolenke v Chorvátsku. Bývali sme v malom hoteli blízko pláže. Každý deň sme sa kúpali a opaľovali. Raz sme išli loďou na ostrov. Najviac sa deťom páčilo more. | *Вони жили в маленькому готелі. ;; Готель був далеко від пляжу. ;; *Одного разу вони попливли човном на острів. ;; Дітям найбільше сподобалися гори.
+= blízko pláže — близько до пляжу; deťom sa páčilo more.
+X fe: - | Na pláži sme sa [opaľoval>opaľovali] celý deň.
+= my → opaľovali sme sa.
+X doc: Прочитай підтвердження бронювання. | Potvrdenie rezervácie | Hotel: Adriatic *** ;; Termín: 12. 7. – 19. 7. ;; Izba: dvojlôžková s balkónom ;; Strava: polpenzia ;; Cena: 840 € | Що входить у харчування? | *сніданок і вечеря ;; лише сніданок ;; сніданок, обід і вечеря
+= polpenzia — напівпансіон: сніданок і вечеря.
+X dr: - | Kolegyňa: Aká bola dovolenka? | *Skvelá! Boli sme pri mori a veľmi sa nám páčilo. ;; Skvelý! Boli sme pri mori a veľmi sa nám páčil. ;; Skvelá! Sme boli pri mori a páčilo sa nám veľmi.
+= dovolenka — skvelá; boli sme; páčilo sa nám.
+X np: Ти розповідаєш, що житло ви забронювали через інтернет. | *Ubytovanie sme rezervovali cez internet. ;; Ubytovanie sme rezervoval cez internet. ;; Ubytovanie rezervovali sme cez internet. ;; Ubytovanie sme rezervovať cez internet.
+= my → rezervovali sme, sme на другому місці.
+X tr: Перетвори в минулий час. | Na dovolenke sa kúpeme a opaľujeme. | Na dovolenke sme sa kúpali a opaľovali. ;; Na dovolenke sme sa kúpali a opaľovali sme sa.
+= sme + sa: kúpali sme sa.
+X ms: Обери, що роблять на пляжі. | - | *kúpať sa ;; *opaľovať sa ;; *plávať ;; lyžovať ;; upratovať byt
+= Пляжні активності.
+F: Після відпустки || Ви з родиною повернулися з моря в Хорватії, і сусідка-словачка розпитує тебе.
+S: «Kde ste boli na dovolenke?» (на морі в Хорватії) | *Boli sme pri mori v Chorvátsku. ;; Boli sme v mori v Chorvátsku. ;; Sme boli pri mori v Chorvátsku.
+S: «Kde ste bývali?» (у маленькому готелі) | *Bývali sme v malom hoteli. ;; Bývali sme v malý hotel. ;; Bývali sme na malom hoteli.
+S: Сусідка: «My sme boli vlani v Grécku, ale ubytovanie bolo hrozné.» Що вона каже? | *житло в Греції було жахливе ;; у Греції все було чудово ;; вони поїдуть до Греції наступного року
+S: «Čo sa vám najviac páčilo?» (море) | *Najviac sa nám páčilo more. ;; Najviac sa nám páčil more. ;; Najviac nám sa páčilo more.
+R: byť na dovolenke, pri mori, v hoteli ;; kúpali sme sa, opaľovali sme sa ;; páčilo sa mi more / páčili sa mi hory ;; hotel, pláž, ubytovanie, zážitok
+
+@lesson zivotopis | Резюме (основи) | Životopis
+desc: Перший словацький životopis: osobné údaje, vzdelanie, pracovné skúsenosti. Narodil som sa…, vyštudovala som…, pracoval som ako…
+goal: Коротко розповісти про свою освіту й досвід минулим часом і зрозуміти просте резюме.
+out: казати Narodil som sa / Narodila som sa ;; розповідати vyštudoval som, skončila som strednú školu ;; казати pracoval som ako… ;; розуміти частини životopisu
+done: Ти розповідаєш про свою освіту й досвід. Далі — підсумок розділу.
+T: Що таке životopis || «Životopis» — резюме (CV), документ для пошуку роботи. Частини: «osobné údaje» (особисті дані), «vzdelanie» (освіта), «pracovné skúsenosti» (досвід роботи), «jazykové znalosti» (знання мов). Про себе розповідаємо минулим часом. || Narodil som sa v roku 1990 v Charkove. = Я народився в 1990 році в Харкові. ;; Narodila som sa v Odese. = Я народилася в Одесі. || narodil som sa / narodila som sa
+T: Vzdelanie || «Vyštudoval som ekonómiu» — я здобув економічну освіту (закінчив виш). «Stredná škola» — середня школа (часто професійна): «Skončila som strednú školu v roku 2008». «Vyučil som sa za murára» — я вивчився на муляра. || Vyštudovala som pedagogiku v Kyjeve. = Я здобула педагогічну освіту в Києві. || vyštudovať, skončiť školu
+T: Pracovné skúsenosti || «Pracoval som ako vodič» — я працював водієм (після ako — називний відмінок). «V rokoch 2015 – 2022» — у 2015–2022 роках. «Zamestnanie» — робота, місце праці. На співбесіді питають: «Kde ste pracovali predtým?» || V rokoch 2015 – 2022 som pracoval ako vodič. = У 2015–2022 роках я працював водієм. || pracoval som ako + називний
+mis: Narodil sa som. => Narodil som sa. ;; Pracoval som ako vodiča. => Pracoval som ako vodič. ;; (жінка) Narodil som sa. => Narodila som sa.
+W: životopis | резюме, біографія | животопіс | Poslal som životopis do firmy. | Я надіслав резюме до фірми.
+W: narodiť sa | народитися | народіт са | Dcéra sa narodila v Bratislave. | Донька народилася в Братиславі.
+W: vzdelanie | освіта | вздєланіє | Aké máte vzdelanie? | Яка у вас освіта?
+W: vyštudovať | здобути освіту, закінчити виш | віштудоват | Brat vyštudoval medicínu. | Брат здобув медичну освіту.
+W: zamestnanie | робота, місце праці | заместнаніє | Hľadám nové zamestnanie. | Я шукаю нову роботу.
+W: stredná škola | середня школа | стредна: школа | Syn chodí na strednú školu. | Син навчається в середній школі.
+X mt: З’єднай. | životopis = резюме ;; narodiť sa = народитися ;; vzdelanie = освіта ;; vyštudovať = здобути освіту ;; zamestnanie = робота ;; stredná škola = середня школа
+X dd: Обери (говорить жінка). | [*Narodila/Narodil/Narodilo] som sa v Odese.
+= Жінка — narodila som sa.
+X dd: Обери. | V rokoch 2016 – 2021 som pracoval [*ako/za/pre] skladník.
+= pracovať ako + професія.
+X fb: Допиши. | Kde ste sa ___? (народилися) | narodili |
+= vy → narodili ste sa.
+X sc~: Що означає «Vyštudovala som ekonómiu»? | - | *Я здобула економічну освіту ;; Я зараз вивчаю економіку ;; Я викладаю економіку
+= vyštudovať — закінчити навчання.
+X tf: - | - | «Narodil som sa» — правильний порядок слів: som стоїть перед sa. | T
+= som → sa.
+X cat: Що до чого належить? | Vzdelanie: stredná škola, univerzita, vysvedčenie ;; Osobné údaje: dátum narodenia, adresa, telefón
+= Освіта / особисті дані.
+X doc: Прочитай резюме. | Životopis | Meno: Olena Kovalenko ;; Dátum narodenia: 14. 3. 1988 ;; Vzdelanie: 2005 – 2010 Kyjevská národná ekonomická univerzita ;; Prax: 2011 – 2022 účtovníčka, Kyjev; od 2023 pokladníčka, Nitra ;; Jazyky: ukrajinčina, angličtina, slovenčina (A2) | Ким Олена працювала в Україні? | *бухгалтеркою ;; касиркою ;; вчителькою
+= 2011 – 2022 účtovníčka, Kyjev.
+X fe: - | Moja žena sa [narodil>narodila] v Charkove.
+= Дружина — narodila sa.
+X tr: Перетвори в минулий час (говорить жінка). | Pracujem ako predavačka. | Pracovala som ako predavačka.
+= pracovať → pracovala som.
+X so: - | Ввічливо спитай, де людина народилася. | Kde ste sa narodili?
+= ste → sa.
+X dr: - | Personalistka: Kde ste pracovali predtým? | *Na Ukrajine som pracoval ako elektrikár. ;; Na Ukrajine pracoval som ako elektrikár. ;; Na Ukrajine som pracoval ako elektrikára.
+= som на другому місці; ako + називний.
+X np: Ти (жінка) кажеш, що закінчила середню школу у 2006 році. | *Strednú školu som skončila v roku 2006. ;; Strednú školu som skončil v roku 2006. ;; Stredná škola som skončila v roku 2006. ;; Strednú školu skončila som v roku 2006.
+= Жінка — skončila som; strednú školu — знахідний.
+X ms: Що зазвичай пишуть у životopis? | - | *vzdelanie ;; *pracovné skúsenosti ;; *jazykové znalosti ;; obľúbené jedlo ;; veľkosť topánok
+= Основні частини резюме.
+F: Співбесіда || Ти (чоловік) прийшов на співбесіду на склад. Персоналістка розпитує про твоє резюме.
+S: «Kde a kedy ste sa narodili?» (у Полтаві, 1985) | *Narodil som sa v roku 1985 v Poltave. ;; Narodil sa som v roku 1985 v Poltave. ;; Narodil som v roku 1985 v Poltave.
+S: «Aké máte vzdelanie?» (середня школа, ти — механік за професією) | *Skončil som strednú školu, som vyučený mechanik. ;; Skončil som stredná škola, som vyučený mechanik. ;; Skončil som strednú školu, som vyučil mechanik.
+S: Персоналістка: «Vo vašom životopise chýbajú pracovné skúsenosti.» Що не так? | *у резюме немає досвіду роботи ;; у резюме немає фото ;; резюме задовге
+S: Ти пояснюєш, що у 2010–2022 роках працював водієм в Україні. | *V rokoch 2010 – 2022 som pracoval ako vodič na Ukrajine. ;; V rokoch 2010 – 2022 pracoval som ako vodič na Ukrajine. ;; V rokoch 2010 – 2022 som pracoval ako vodiča na Ukrajine.
+R: životopis: osobné údaje, vzdelanie, pracovné skúsenosti ;; narodil som sa / narodila som sa ;; vyštudovať, stredná škola, zamestnanie ;; pracoval som ako + називний
+
+@lesson minuly-cas-opakovanie | Підсумок: минулий час | Opakovanie: minulý čas
+desc: Підсумок розділу: bol som, форми на -l, -la, -lo, -li, заперечення, som і sa, вихідні, відпустка, резюме.
+goal: Розповісти про своє минуле: звідки ти, що робив(ла), як потрапив(ла) до Словаччини.
+out: утворювати минулий час для всіх осіб і родів ;; ставити som / si правильно і не вживати їх у 3-й особі ;; заперечувати: nebol som ;; розповідати про вихідні, відпустку й досвід
+done: Розділ «Минулий час» завершено! Далі — майбутній час і плани.
+T: Схема || ja — robil / robila som; ty — robil / robila si; on / ona / ono — robil / robila / robilo; my — robili sme; vy — robili ste; oni — robili. Неправильні: išiel, jedol, mohol, prišiel, stretol. || Ja som pracovala, ale manžel nepracoval. = Я працювала, а чоловік не працював. || som / si / — / sme / ste / —
+T: Порядок слів || 1) som / si / sme / ste — на другому місці: «Včera som bol doma». 2) Спершу som, потім sa / si: «Narodil som sa», «Oddýchli sme si». 3) ne- разом із формою на -l: «Nebol som», «Neučil som sa». || Kedy si sa vrátila? = Коли ти повернулася? ;; Nič sa nestalo. = Нічого не сталося. || som → sa; ne- + -l
+T: Розповідь про минуле || «Spomienka» — спогад, «pamätať si» — пам’ятати, «zažiť» — пережити, відчути, «prvýkrát» — уперше. «Pamätám si, ako sme prvýkrát prišli do Bratislavy» — я пам’ятаю, як ми вперше приїхали до Братислави. || Na Slovensku sme zažili veľa nového. = У Словаччині ми пережили багато нового. || kedysi, vlani, minulý týždeň, včera
+W: pamätať si | пам’ятати | паметат сі | Pamätám si náš prvý deň na Slovensku. | Я пам’ятаю наш перший день у Словаччині.
+W: spomienka | спогад | спомієнка | Mám pekné spomienky na detstvo. | Маю гарні спогади про дитинство.
+W: zažiť | пережити, відчути | зажіт | Na Slovensku som zažil veľa nového. | У Словаччині я пережив багато нового.
+W: prvýkrát | уперше | прві:кра:т | Prvýkrát som bol v Tatrách vlani. | Уперше я був у Татрах торік.
+X rc: - | Volám sa Andrij. Narodil som sa v roku 1991 v Poltave. Vyštudoval som stavebníctvo a desať rokov som pracoval ako stavbár. Vlani sme sa s rodinou presťahovali na Slovensko. Najprv sme bývali u kamaráta v Trnave, potom sme si prenajali byt. Moja žena Natália si rýchlo našla prácu v hoteli. Ja som dlho nemohol nájsť zamestnanie, ale minulý mesiac som začal pracovať na stavbe. Minulý víkend sme boli prvýkrát v Tatrách. Bolo to skvelé!
+q~: Де родина жила спочатку? | *у друга в Трнаві ;; у готелі ;; у власній квартирі
+q~: Коли Андрій почав працювати на будові? | *минулого місяця ;; торік ;; минулих вихідних
+q~: Що родина зробила минулих вихідних? | *уперше поїхала в Татри ;; переїхала в нову квартиру ;; шукала роботу
+X cz: - | Včera {som} bola u lekára. Ty {si} bol v práci? My {sme} boli doma a deti {boli} v škole. | som / si / sme / boli
+X mt: З’єднай. | pamätať si = пам’ятати ;; spomienka = спогад ;; zažiť = пережити ;; prvýkrát = уперше
+X fe: - | Moji rodičia [prišiel>prišli] na Vianoce.
+= rodičia — множина: prišli.
+X ce: Виправ речення. | Ja som včera nie bol v práci. | Včera som nebol v práci. ;; Ja som včera nebol v práci.
+= ne- разом із формою на -l: nebol.
+X bd: - | Ти чудово розповів про своє минуле!
+> Kolega: Kedy si prišiel na Slovensko? | *Prišiel som vlani v marci. ;; Prišiel vlani v marci som. ;; Som prišiel vlani v marci.
+> Kolega: A čo si robil na Ukrajine? | *Pracoval som ako stavbár. ;; Pracoval som ako stavbára. ;; Pracovať som ako stavbár.
+> Kolega: Bol si už v Tatrách? | *Áno, minulý víkend som tam bol prvýkrát. ;; Áno, minulý víkend bol som tam prvýkrát. ;; Áno, minulý víkend som tam bola prvýkrát.
+> Kolega: A páčilo sa ti tam? | *Veľmi sa mi tam páčilo! ;; Veľmi sa mi tam páčil! ;; Veľmi mi sa tam páčilo!
+X sb: - | Спитай друга, де він народився. | Kde si sa narodil?
+= si (ти) → sa.
+X dd: Обери. | Najviac sa nám [*páčilo/páčila/páčil] mesto.
+= mesto — середній рід: páčilo.
+X tf: - | - | Речення «Mama bola som doma» правильне. | F
+= 3-я особа — без som: Mama bola doma.
+X np: Ти (жінка) кажеш, що в Словаччині пережила багато нового. | *Na Slovensku som zažila veľa nového. ;; Na Slovensku som zažil veľa nového. ;; Na Slovensku zažila som veľa nového. ;; Na Slovensku som zažila veľa nový.
+= Жінка — zažila som; som на другому місці.
+X tr: Перетвори в минулий час. | Ideme na výlet. | Išli sme na výlet.
+= ísť → išli sme.
+X cat: Теперішній чи минулий час? | Teraz: som doma, robím, idem ;; Minulosť: bol som doma, robil som, išiel som
+= Минулий час — форма на -l + som.
+X dr: - | Babka: Pamätáš si naše prvé Vianoce na Slovensku? | *Áno, bolo to krásne! ;; Áno, bol to krásne! ;; Áno, bola to krásne!
+= Bolo to… — середній рід.
+X ms: Обери правильні речення. | - | *Nebol som doma. ;; *Umyla som sa. ;; *Deti spali. ;; Nesom bol doma. ;; Umyla sa som.
+= Повторення розділу.
+F: Інтерв’ю || На святі української громади словацький журналіст бере в тебе (ти — жінка) інтерв’ю про життя в Словаччині.
+S: «Kedy ste prišli na Slovensko?» (у 2022 році) | *Prišla som v roku 2022. ;; Prišiel som v roku 2022. ;; Prišla sa som v roku 2022.
+S: «Čo ste robili na Ukrajine?» (працювала вчителькою) | *Pracovala som ako učiteľka. ;; Pracovala som ako učiteľku. ;; Pracovala som učiteľka ako.
+S: Журналіст: «Ja som tiež kedysi býval v zahraničí.» Що він каже? | *він теж колись жив за кордоном ;; він ніколи не був за кордоном ;; він хоче жити за кордоном
+S: «Čo sa vám tu najviac páčilo?» (гори) | *Najviac sa mi páčili hory. ;; Najviac sa mi páčilo hory. ;; Najviac mi sa páčili hory.
+R: bol som / bola som / boli sme ;; som / si / sme / ste на другому місці, у 3-й особі без них ;; som перед sa; ne- разом: nebol som ;; vlani, minulý víkend, dovolenka, životopis

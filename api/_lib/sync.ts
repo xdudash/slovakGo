@@ -8,7 +8,7 @@ import {
   XP_PER_PRACTICE,
   exec, queryOne, nowIso, todayKey, currentWeekId, safeJson, getDb, ensureCol,
   requireUid, respond, fail, rowToUser, ensureProgress,
-  getUserWords, checkRole
+  getUserWords, checkRole, getLessonIndex
 } from "./core";
 
 export async function handleSyncPull(req: VercelRequest, res: VercelResponse): Promise<void> {
@@ -288,7 +288,8 @@ async function mutLessonComplete(uid: string, p: Record<string, unknown>): Promi
   const reward = Math.max(0, Number(lesson.xpReward ?? 10) || 10);
   const baseXp = alreadyCompleted ? Math.max(3, Math.round(reward * 0.25)) : reward;
   const status = String(rowToUser(userRow).subscriptionStatus ?? "");
-  if (status === "free" && !alreadyCompleted && completedCount(completed) >= FREE_LESSON_LIMIT && String(userRow.role) === "student") throw new AccessDeniedError("Безкоштовні уроки завершено");
+  if (status === "free" && !alreadyCompleted && String(userRow.role) === "student"
+    && completedCount(completed, await getLessonIndex("student")) >= FREE_LESSON_LIMIT) throw new AccessDeniedError("Безкоштовні уроки завершено");
   const xpEarned = status === "plus" || status === "trial" || status === "past_due" ? Math.round(baseXp * 1.5) : baseXp;
 
   const today = todayKey();

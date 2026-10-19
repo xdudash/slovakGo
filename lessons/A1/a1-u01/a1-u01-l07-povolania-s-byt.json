@@ -1,0 +1,786 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u01-l07-povolania-s-byt",
+      "sectionId": "a1-u01",
+      "level": "A1",
+      "title": "Професії з byť",
+      "topic": "Я і ти: дієслово byť",
+      "description": "Більше професій, жіночі форми й речення «Som…», «Chcem byť…», «Pracujem ako…».",
+      "order": 7,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Розповісти про свою професію й професії родичів.",
+      "completionMessage": "Ти говориш про професії. Далі — опис людей.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Я і ти: дієслово byť",
+        "title": "Професії з byť",
+        "shortDescription": "Розповісти про свою професію й професії родичів.",
+        "outcomes": [
+          "називати 12+ професій",
+          "утворювати жіночі форми",
+          "казати Pracujem ako…",
+          "казати Chcem byť… (орудний відмінок — початок)"
+        ],
+        "newWords": [
+          "elektrikár",
+          "murár",
+          "opatrovateľka",
+          "upratovačka",
+          "účtovníčka",
+          "zdravotná sestra"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Професії",
+          "text": "elektrikár, murár (муляр), stolár (столяр), šofér / vodič, opatrovateľka (доглядальниця), upratovačka (прибиральниця), čašník / čašníčka, programátor, účtovníčka (бухгалтерка), zdravotná sestra (медсестра).",
+          "examples": [
+            {
+              "sk": "Som murár.",
+              "uk": "Я муляр."
+            },
+            {
+              "sk": "Mama je opatrovateľka.",
+              "uk": "Мама — доглядальниця."
+            }
+          ],
+          "shortRule": "Som + професія",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Жіночі форми",
+          "text": "Типові суфікси: -ár → -árka (elektrikár — elektrikárka), -teľ → -teľka (učiteľ — učiteľka), -ník → -níčka (čašník — čašníčka), -ista → -istka.",
+          "examples": [
+            {
+              "sk": "programátor",
+              "uk": "programátorka"
+            },
+            {
+              "sk": "čašník",
+              "uk": "čašníčka"
+            }
+          ],
+          "shortRule": "Жінка: -ka",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Pracujem ako… / Chcem byť…",
+          "text": "«Pracujem ako murár» — працюю мулярем (ako + називний). «Chcem byť lekárom» — хочу бути лікарем (після byť у мріях часто орудний: lekárom, učiteľkou).",
+          "examples": [
+            {
+              "sk": "Pracujem ako upratovačka.",
+              "uk": "Я працюю прибиральницею."
+            },
+            {
+              "sk": "Syn chce byť hasičom.",
+              "uk": "Син хоче бути пожежником."
+            }
+          ],
+          "shortRule": "ako + називний",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u01-l07-povolania-s-byt-w01",
+            "sk": "elektrikár",
+            "uk": "електрик",
+            "pronunciationUk": "електріка:р",
+            "exampleSk": "Elektrikár príde zajtra.",
+            "exampleUk": "Електрик прийде завтра."
+          },
+          {
+            "wordId": "a1-u01-l07-povolania-s-byt-w02",
+            "sk": "murár",
+            "uk": "муляр",
+            "pronunciationUk": "мура:р",
+            "exampleSk": "Otec robí murára.",
+            "exampleUk": "Батько працює мулярем."
+          },
+          {
+            "wordId": "a1-u01-l07-povolania-s-byt-w03",
+            "sk": "opatrovateľka",
+            "uk": "доглядальниця",
+            "pronunciationUk": "опатрователька",
+            "exampleSk": "Pracuje ako opatrovateľka v Rakúsku.",
+            "exampleUk": "Вона працює доглядальницею в Австрії."
+          },
+          {
+            "wordId": "a1-u01-l07-povolania-s-byt-w04",
+            "sk": "upratovačka",
+            "uk": "прибиральниця",
+            "pronunciationUk": "упратовачка",
+            "exampleSk": "Upratovačka prichádza ráno.",
+            "exampleUk": "Прибиральниця приходить уранці."
+          },
+          {
+            "wordId": "a1-u01-l07-povolania-s-byt-w05",
+            "sk": "účtovníčka",
+            "uk": "бухгалтерка",
+            "pronunciationUk": "у:чтовні:чка",
+            "exampleSk": "Účtovníčka má otázku.",
+            "exampleUk": "У бухгалтерки питання."
+          },
+          {
+            "wordId": "a1-u01-l07-povolania-s-byt-w06",
+            "sk": "zdravotná sestra",
+            "uk": "медсестра",
+            "pronunciationUk": "здравотна: сестра",
+            "exampleSk": "Zdravotná sestra je v ambulancii.",
+            "exampleUk": "Медсестра в амбулаторії."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u01-l07-povolania-s-byt-w01",
+          "sk": "elektrikár",
+          "uk": "електрик",
+          "pronunciationUk": "електріка:р",
+          "exampleSk": "Elektrikár príde zajtra.",
+          "exampleUk": "Електрик прийде завтра.",
+          "level": "A1",
+          "topic": "Я і ти: дієслово byť",
+          "tags": [
+            "a1-u01",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u01-l07-povolania-s-byt-w02",
+          "sk": "murár",
+          "uk": "муляр",
+          "pronunciationUk": "мура:р",
+          "exampleSk": "Otec robí murára.",
+          "exampleUk": "Батько працює мулярем.",
+          "level": "A1",
+          "topic": "Я і ти: дієслово byť",
+          "tags": [
+            "a1-u01",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u01-l07-povolania-s-byt-w03",
+          "sk": "opatrovateľka",
+          "uk": "доглядальниця",
+          "pronunciationUk": "опатрователька",
+          "exampleSk": "Pracuje ako opatrovateľka v Rakúsku.",
+          "exampleUk": "Вона працює доглядальницею в Австрії.",
+          "level": "A1",
+          "topic": "Я і ти: дієслово byť",
+          "tags": [
+            "a1-u01",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u01-l07-povolania-s-byt-w04",
+          "sk": "upratovačka",
+          "uk": "прибиральниця",
+          "pronunciationUk": "упратовачка",
+          "exampleSk": "Upratovačka prichádza ráno.",
+          "exampleUk": "Прибиральниця приходить уранці.",
+          "level": "A1",
+          "topic": "Я і ти: дієслово byť",
+          "tags": [
+            "a1-u01",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u01-l07-povolania-s-byt-w05",
+          "sk": "účtovníčka",
+          "uk": "бухгалтерка",
+          "pronunciationUk": "у:чтовні:чка",
+          "exampleSk": "Účtovníčka má otázku.",
+          "exampleUk": "У бухгалтерки питання.",
+          "level": "A1",
+          "topic": "Я і ти: дієслово byť",
+          "tags": [
+            "a1-u01",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u01-l07-povolania-s-byt-w06",
+          "sk": "zdravotná sestra",
+          "uk": "медсестра",
+          "pronunciationUk": "здравотна: сестра",
+          "exampleSk": "Zdravotná sestra je v ambulancii.",
+          "exampleUk": "Медсестра в амбулаторії.",
+          "level": "A1",
+          "topic": "Я і ти: дієслово byť",
+          "tags": [
+            "a1-u01",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u01-l07-povolania-s-byt-ex01",
+          "lessonId": "a1-u01-l07-povolania-s-byt",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "elektrikár",
+              "right": "електрик"
+            },
+            {
+              "left": "murár",
+              "right": "муляр"
+            },
+            {
+              "left": "opatrovateľka",
+              "right": "доглядальниця"
+            },
+            {
+              "left": "upratovačka",
+              "right": "прибиральниця"
+            },
+            {
+              "left": "účtovníčka",
+              "right": "бухгалтерка"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u01-l07-povolania-s-byt-w01",
+            "a1-u01-l07-povolania-s-byt-w02",
+            "a1-u01-l07-povolania-s-byt-w03",
+            "a1-u01-l07-povolania-s-byt-w04",
+            "a1-u01-l07-povolania-s-byt-w05"
+          ]
+        },
+        {
+          "id": "a1-u01-l07-povolania-s-byt-ex02",
+          "lessonId": "a1-u01-l07-povolania-s-byt",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай чоловічу і жіночу форму.",
+          "pairs": [
+            {
+              "left": "elektrikár",
+              "right": "elektrikárka"
+            },
+            {
+              "left": "učiteľ",
+              "right": "učiteľka"
+            },
+            {
+              "left": "čašník",
+              "right": "čašníčka"
+            },
+            {
+              "left": "programátor",
+              "right": "programátorka"
+            }
+          ],
+          "order": 2,
+          "wordIds": [
+            "a1-u01-l07-povolania-s-byt-w01"
+          ]
+        },
+        {
+          "id": "a1-u01-l07-povolania-s-byt-ex03",
+          "lessonId": "a1-u01-l07-povolania-s-byt",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Pracujem ako "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "čašníčka",
+                "čašník"
+              ],
+              "correct": "čašníčka"
+            },
+            {
+              "text": " (говорить жінка)."
+            }
+          ],
+          "explanation": "Жінка — čašníčka.",
+          "order": 3
+        },
+        {
+          "id": "a1-u01-l07-povolania-s-byt-ex04",
+          "lessonId": "a1-u01-l07-povolania-s-byt",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Syn chce byť "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "hasič",
+                "hasičom",
+                "hasiča"
+              ],
+              "correct": "hasičom"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Chcieť byť + орудний: hasičom.",
+          "order": 4
+        },
+        {
+          "id": "a1-u01-l07-povolania-s-byt-ex05",
+          "lessonId": "a1-u01-l07-povolania-s-byt",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Де працює ця людина?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "na stavbe"
+            },
+            {
+              "id": "c2",
+              "title": "v nemocnici"
+            },
+            {
+              "id": "c3",
+              "title": "v kancelárii"
+            }
+          ],
+          "items": [
+            {
+              "sk": "zdravotná sestra",
+              "category": "c2"
+            },
+            {
+              "sk": "murár",
+              "category": "c1"
+            },
+            {
+              "sk": "programátor",
+              "category": "c3"
+            },
+            {
+              "sk": "elektrikár",
+              "category": "c1"
+            },
+            {
+              "sk": "účtovníčka",
+              "category": "c3"
+            },
+            {
+              "sk": "lekár",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Професія → місце.",
+          "order": 5,
+          "wordIds": [
+            "a1-u01-l07-povolania-s-byt-w01",
+            "a1-u01-l07-povolania-s-byt-w02",
+            "a1-u01-l07-povolania-s-byt-w05",
+            "a1-u01-l07-povolania-s-byt-w06"
+          ]
+        },
+        {
+          "id": "a1-u01-l07-povolania-s-byt-ex06",
+          "lessonId": "a1-u01-l07-povolania-s-byt",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Хто доглядає літніх людей?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "opatrovateľka",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "účtovníčka",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "murár",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "programátorka",
+              "correct": false
+            }
+          ],
+          "explanation": "opatrovateľka — доглядальниця.",
+          "order": 6,
+          "wordIds": [
+            "a1-u01-l07-povolania-s-byt-w02",
+            "a1-u01-l07-povolania-s-byt-w03",
+            "a1-u01-l07-povolania-s-byt-w05"
+          ]
+        },
+        {
+          "id": "a1-u01-l07-povolania-s-byt-ex07",
+          "lessonId": "a1-u01-l07-povolania-s-byt",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Pracujem ako murár» означає «Я працюю мулярем».",
+          "correctAnswer": true,
+          "explanation": "ako + професія.",
+          "order": 7,
+          "wordIds": [
+            "a1-u01-l07-povolania-s-byt-w02"
+          ]
+        },
+        {
+          "id": "a1-u01-l07-povolania-s-byt-ex08",
+          "lessonId": "a1-u01-l07-povolania-s-byt",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Pracujem ______ elektrikár.",
+          "acceptedAnswers": [
+            "ako"
+          ],
+          "explanation": "Pracujem ako…",
+          "order": 8,
+          "wordIds": [
+            "a1-u01-l07-povolania-s-byt-w01"
+          ]
+        },
+        {
+          "id": "a1-u01-l07-povolania-s-byt-ex09",
+          "lessonId": "a1-u01-l07-povolania-s-byt",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що мама — медсестра.",
+          "tokens": [
+            "Moja",
+            "zdravotná",
+            "mama",
+            ".",
+            "sestra",
+            "je"
+          ],
+          "correctOrder": [
+            "Moja",
+            "mama",
+            "je",
+            "zdravotná",
+            "sestra",
+            "."
+          ],
+          "explanation": "je + професія.",
+          "order": 9,
+          "wordIds": [
+            "a1-u01-l07-povolania-s-byt-w06"
+          ]
+        },
+        {
+          "id": "a1-u01-l07-povolania-s-byt-ex10",
+          "lessonId": "a1-u01-l07-povolania-s-byt",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Agentúra",
+              "sk": "Akú prácu robíte?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Som murár, mám desať rokov praxe.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Som murárka práca.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Pracujem murár ako.",
+              "correct": false
+            }
+          ],
+          "explanation": "Som + професія.",
+          "order": 10,
+          "wordIds": [
+            "a1-u01-l07-povolania-s-byt-w02"
+          ]
+        },
+        {
+          "id": "a1-u01-l07-povolania-s-byt-ex11",
+          "lessonId": "a1-u01-l07-povolania-s-byt",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "V našej firme pracuje päť Ukrajincov. Oleh je elektrikár, Vasyl a Ihor sú murári. Halyna pracuje ako upratovačka a jej dcéra Kateryna je účtovníčka v kancelárii.",
+          "questions": [
+            {
+              "question": "Хто працює в офісі?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Галина",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "Олег",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "Катерина",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Скільки мулярів?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "двоє",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "п’ятеро",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "один",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 11,
+          "wordIds": [
+            "a1-u01-l07-povolania-s-byt-w01",
+            "a1-u01-l07-povolania-s-byt-w02",
+            "a1-u01-l07-povolania-s-byt-w04",
+            "a1-u01-l07-povolania-s-byt-w05"
+          ]
+        },
+        {
+          "id": "a1-u01-l07-povolania-s-byt-ex12",
+          "lessonId": "a1-u01-l07-povolania-s-byt",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери жіночі назви професій.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "murár",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "programátorka",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "opatrovateľka",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "upratovačka",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "elektrikár",
+              "correct": false
+            }
+          ],
+          "explanation": "Жіночі — на -ka.",
+          "order": 12,
+          "wordIds": [
+            "a1-u01-l07-povolania-s-byt-w01",
+            "a1-u01-l07-povolania-s-byt-w02",
+            "a1-u01-l07-povolania-s-byt-w03",
+            "a1-u01-l07-povolania-s-byt-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Розмова з агенцією",
+        "description": "Агентка з працевлаштування уточнює дані твоєї родини.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Akú prácu robíte?» (ти — столяр)",
+            "options": [
+              {
+                "sk": "Robím ako stolár je.",
+                "correct": false
+              },
+              {
+                "sk": "Som stolár.",
+                "correct": true
+              },
+              {
+                "sk": "Som stolárka.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«A vaša manželka?» (доглядальниця)",
+            "options": [
+              {
+                "sk": "Pracuje ako opatrovateľ.",
+                "correct": false
+              },
+              {
+                "sk": "Pracuje ako opatrovateľka.",
+                "correct": true
+              },
+              {
+                "sk": "Je opatrovať.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Čím chce byť váš syn?» (лікарем)",
+            "options": [
+              {
+                "sk": "Chce lekárka.",
+                "correct": false
+              },
+              {
+                "sk": "Chce byť lekárom.",
+                "correct": true
+              },
+              {
+                "sk": "Chce byť lekár je.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Hľadáme murára. Poznáte niekoho?»",
+            "options": [
+              {
+                "sk": "Nie, murár je.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, som murárka.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, môj brat je murár.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти говориш про професії. Далі — опис людей."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти говориш про професії. Далі — опис людей.",
+        "nowYouKnow": [
+          "elektrikár, murár, opatrovateľka, upratovačka, účtovníčka, zdravotná sestra",
+          "-ár → -árka, -ník → -níčka",
+          "Pracujem ako…",
+          "Chcem byť lekárom"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u01-l08-vlastnosti",
+          "title": "Який ти? Риси й стани"
+        }
+      }
+    }
+  ]
+}

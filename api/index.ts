@@ -1,4 +1,5 @@
 import { handleIntegrationHealth } from "./_lib/integrations";
+import { handleAdminCourse } from "./_lib/course";
 import { handleEmailPreferences, handleUnsubscribe } from "./_lib/emailPreferences";
 import { handleActivity } from "./_lib/activity";
 /**
@@ -120,6 +121,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "GET"  && route === "/admin/errors")           return await handleAdminErrors(req, res);
     if (meth === "POST" && route === "/admin/notify")           return await handleAdminNotify(req, res, body);
     if (meth === "POST" && route === "/admin/lessons/import")   return await handleAdminImportLessons(req, res, body);
+    if ((meth === "GET" || meth === "POST") && route === "/admin/course") return await handleAdminCourse(req, res, body);
     if (meth === "GET"  && route === "/admin/users")            return await handleAdminUsers(req, res);
     if (meth === "GET"  && route.startsWith("/admin/users/"))   return await handleAdminUserDetail(req, res, route.slice("/admin/users/".length));
     if (meth === "POST" && route.startsWith("/admin/users/"))   return await handleAdminUserPatch(req, res, route.slice("/admin/users/".length), body);

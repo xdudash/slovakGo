@@ -1,0 +1,912 @@
+{
+  "lessons": [
+    {
+      "id": "a2-u09-l06-poplatky",
+      "sectionId": "a2-u09",
+      "level": "A2",
+      "title": "Банківські комісії",
+      "topic": "Банк і платежі",
+      "description": "Скільки коштує рахунок: cenník, poplatok za vedenie účtu, безкоштовні й платні послуги, відсотки. Ціни й суми в євро.",
+      "order": 86,
+      "xpReward": 30,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Порівнювати тарифи банків і питати про вартість послуг.",
+      "completionMessage": "Ти вмієш порівнювати банківські тарифи. Далі — виписка з рахунку.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A2 · Банк і платежі",
+        "title": "Банківські комісії",
+        "shortDescription": "Порівнювати тарифи банків і питати про вартість послуг.",
+        "outcomes": [
+          "питати Koľko stojí vedenie účtu?",
+          "розуміти cenník, bezplatný, spoplatnený",
+          "казати poplatok za + знахідний",
+          "розуміти úrok і banka mi strhla poplatok"
+        ],
+        "newWords": [
+          "vedenie účtu",
+          "cenník",
+          "bezplatný",
+          "spoplatnený",
+          "úrok",
+          "strhnúť"
+        ],
+        "exercisesCount": 14,
+        "reward": "+30 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Poplatok za…",
+          "text": "«Poplatok za vedenie účtu» — плата за обслуговування рахунку. Після «za» — знахідний: «poplatok za výber, za prevod, za kartu». Питаємо: «Koľko stojí…?» або «Aký je poplatok za…?»",
+          "examples": [
+            {
+              "sk": "Aký je mesačný poplatok za vedenie účtu?",
+              "uk": "Яка щомісячна плата за обслуговування рахунку?"
+            },
+            {
+              "sk": "Za výber z cudzieho bankomatu platím euro.",
+              "uk": "За зняття в чужому банкоматі я плачу євро."
+            }
+          ],
+          "shortRule": "poplatok za + знахідний",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Bezplatný, spoplatnený",
+          "text": "«Cenník» — перелік цін, тарифи. «Bezplatný» — безкоштовний (офіційно: «bezplatný výber»), розмовно — «zadarmo». «Spoplatnený» — платний: «Výber na pobočke je spoplatnený.» Якщо банк зняв із рахунку комісію, кажуть: «Banka mi strhla poplatok.»",
+          "examples": [
+            {
+              "sk": "Vedenie účtu je pre študentov bezplatné.",
+              "uk": "Обслуговування рахунку для студентів безкоштовне."
+            },
+            {
+              "sk": "Banka mi strhla poplatok za výber.",
+              "uk": "Банк стягнув із мене комісію за зняття готівки."
+            }
+          ],
+          "shortRule": "bezplatný ↔ spoplatnený",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Úrok",
+          "text": "«Úrok» — відсотки: на ощадному рахунку банк платить «úrok» тобі, за кредит — ти платиш банку. «Úrok 2 % ročne» — 2 % річних. Суми: «3,90 €» читаємо «tri eurá deväťdesiat centov» або коротко «tri deväťdesiat».",
+          "examples": [
+            {
+              "sk": "Sporiaci účet má úrok 2 % ročne.",
+              "uk": "Ощадний рахунок має 2 % річних."
+            },
+            {
+              "sk": "Účet stojí 3,90 € mesačne.",
+              "uk": "Рахунок коштує 3,90 € на місяць."
+            }
+          ],
+          "shortRule": "úrok — відсотки · mesačne / ročne",
+          "commonMistakes": [
+            {
+              "mistake": "poplatok pre vedenie účtu",
+              "correct": "poplatok za vedenie účtu"
+            },
+            {
+              "mistake": "Vedenie účtu je bezplatný.",
+              "correct": "Vedenie účtu je bezplatné."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a2-u09-l06-poplatky-w01",
+            "sk": "vedenie účtu",
+            "uk": "обслуговування рахунку",
+            "pronunciationUk": "веденіє у:чту",
+            "exampleSk": "Vedenie účtu stojí 4,90 € mesačne.",
+            "exampleUk": "Обслуговування рахунку коштує 4,90 € на місяць."
+          },
+          {
+            "wordId": "a2-u09-l06-poplatky-w02",
+            "sk": "cenník",
+            "uk": "прейскурант, тарифи",
+            "pronunciationUk": "ценні:к",
+            "exampleSk": "Aktuálny cenník nájdete na webe banky.",
+            "exampleUk": "Актуальні тарифи ви знайдете на сайті банку."
+          },
+          {
+            "wordId": "a2-u09-l06-poplatky-w03",
+            "sk": "bezplatný",
+            "uk": "безкоштовний",
+            "pronunciationUk": "безплатні:",
+            "exampleSk": "Výber z našich bankomatov je bezplatný.",
+            "exampleUk": "Зняття готівки в наших банкоматах безкоштовне."
+          },
+          {
+            "wordId": "a2-u09-l06-poplatky-w04",
+            "sk": "spoplatnený",
+            "uk": "платний (за плату)",
+            "pronunciationUk": "споплатнені:",
+            "exampleSk": "Papierový výpis je spoplatnený.",
+            "exampleUk": "Паперова виписка платна."
+          },
+          {
+            "wordId": "a2-u09-l06-poplatky-w05",
+            "sk": "úrok",
+            "uk": "відсоток (банківський)",
+            "pronunciationUk": "у:рок",
+            "exampleSk": "Na sporiacom účte dostávam malý úrok.",
+            "exampleUk": "На ощадному рахунку я отримую невеликі відсотки."
+          },
+          {
+            "wordId": "a2-u09-l06-poplatky-w06",
+            "sk": "strhnúť",
+            "uk": "стягнути, списати (гроші)",
+            "pronunciationUk": "стргну:т’",
+            "exampleSk": "Banka mi strhla poplatok za vedenie účtu.",
+            "exampleUk": "Банк списав із мене плату за обслуговування рахунку."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a2-u09-l06-poplatky-w01",
+          "sk": "vedenie účtu",
+          "uk": "обслуговування рахунку",
+          "pronunciationUk": "веденіє у:чту",
+          "exampleSk": "Vedenie účtu stojí 4,90 € mesačne.",
+          "exampleUk": "Обслуговування рахунку коштує 4,90 € на місяць.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l06-poplatky-w02",
+          "sk": "cenník",
+          "uk": "прейскурант, тарифи",
+          "pronunciationUk": "ценні:к",
+          "exampleSk": "Aktuálny cenník nájdete na webe banky.",
+          "exampleUk": "Актуальні тарифи ви знайдете на сайті банку.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l06-poplatky-w03",
+          "sk": "bezplatný",
+          "uk": "безкоштовний",
+          "pronunciationUk": "безплатні:",
+          "exampleSk": "Výber z našich bankomatov je bezplatný.",
+          "exampleUk": "Зняття готівки в наших банкоматах безкоштовне.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l06-poplatky-w04",
+          "sk": "spoplatnený",
+          "uk": "платний (за плату)",
+          "pronunciationUk": "споплатнені:",
+          "exampleSk": "Papierový výpis je spoplatnený.",
+          "exampleUk": "Паперова виписка платна.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l06-poplatky-w05",
+          "sk": "úrok",
+          "uk": "відсоток (банківський)",
+          "pronunciationUk": "у:рок",
+          "exampleSk": "Na sporiacom účte dostávam malý úrok.",
+          "exampleUk": "На ощадному рахунку я отримую невеликі відсотки.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l06-poplatky-w06",
+          "sk": "strhnúť",
+          "uk": "стягнути, списати (гроші)",
+          "pronunciationUk": "стргну:т’",
+          "exampleSk": "Banka mi strhla poplatok za vedenie účtu.",
+          "exampleUk": "Банк списав із мене плату за обслуговування рахунку.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a2-u09-l06-poplatky-ex01",
+          "lessonId": "a2-u09-l06-poplatky",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "vedenie účtu",
+              "right": "обслуговування рахунку"
+            },
+            {
+              "left": "cenník",
+              "right": "тарифи"
+            },
+            {
+              "left": "bezplatný",
+              "right": "безкоштовний"
+            },
+            {
+              "left": "spoplatnený",
+              "right": "платний"
+            },
+            {
+              "left": "úrok",
+              "right": "відсоток"
+            },
+            {
+              "left": "strhnúť",
+              "right": "стягнути, списати"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a2-u09-l06-poplatky-w01",
+            "a2-u09-l06-poplatky-w02",
+            "a2-u09-l06-poplatky-w03",
+            "a2-u09-l06-poplatky-w04",
+            "a2-u09-l06-poplatky-w05",
+            "a2-u09-l06-poplatky-w06"
+          ]
+        },
+        {
+          "id": "a2-u09-l06-poplatky-ex02",
+          "lessonId": "a2-u09-l06-poplatky",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Aký je poplatok "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "pre",
+                "na",
+                "za"
+              ],
+              "correct": "za"
+            },
+            {
+              "text": " vedenie účtu?"
+            }
+          ],
+          "explanation": "poplatok za + знахідний.",
+          "order": 2,
+          "wordIds": [
+            "a2-u09-l06-poplatky-w01"
+          ]
+        },
+        {
+          "id": "a2-u09-l06-poplatky-ex03",
+          "lessonId": "a2-u09-l06-poplatky",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Výber z bankomatu našej banky je "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "bezplatný",
+                "bezplatná",
+                "bezplatné"
+              ],
+              "correct": "bezplatný"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "výber — чоловічий рід: bezplatný.",
+          "order": 3,
+          "wordIds": [
+            "a2-u09-l06-poplatky-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l06-poplatky-ex04",
+          "lessonId": "a2-u09-l06-poplatky",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Vedenie účtu je pre študentov ______. (безкоштовне)",
+          "acceptedAnswers": [
+            "bezplatné",
+            "zadarmo"
+          ],
+          "explanation": "vedenie — середній рід: bezplatné; розмовно — zadarmo.",
+          "order": 4,
+          "wordIds": [
+            "a2-u09-l06-poplatky-w01",
+            "a2-u09-l06-poplatky-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l06-poplatky-ex05",
+          "lessonId": "a2-u09-l06-poplatky",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай тарифи банку.",
+          "document": {
+            "title": "Banka Javor – cenník služieb",
+            "fields": [
+              {
+                "label": "Vedenie účtu",
+                "value": "4,90 € mesačne"
+              },
+              {
+                "label": "Vedenie účtu pre klientov do 26 rokov",
+                "value": "bezplatné"
+              },
+              {
+                "label": "Výber z bankomatu Banky Javor",
+                "value": "bezplatný"
+              },
+              {
+                "label": "Výber z bankomatu inej banky",
+                "value": "1,50 €"
+              },
+              {
+                "label": "Výber na pobočke",
+                "value": "3,00 €"
+              }
+            ]
+          },
+          "question": "Скільки коштує зняти гроші в банкоматі іншого банку?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "1,50 €",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "3,00 €",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "нічого",
+              "correct": false
+            }
+          ],
+          "explanation": "Výber z bankomatu inej banky: 1,50 €.",
+          "order": 5,
+          "wordIds": [
+            "a2-u09-l06-poplatky-w01",
+            "a2-u09-l06-poplatky-w02",
+            "a2-u09-l06-poplatky-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l06-poplatky-ex06",
+          "lessonId": "a2-u09-l06-poplatky",
+          "type": "real_schedule",
+          "skill": [
+            "reading",
+            "real_life",
+            "time"
+          ],
+          "instruction": "Порівняй рахунки.",
+          "schedule": {
+            "title": "Porovnanie účtov",
+            "rows": [
+              {
+                "day": "Účet Štart",
+                "hours": "0 € mesačne, výber z cudzieho bankomatu 2 €"
+              },
+              {
+                "day": "Účet Plus",
+                "hours": "3,50 € mesačne, všetky výbery bezplatné"
+              },
+              {
+                "day": "Účet Senior",
+                "hours": "1 € mesačne, len pre klientov nad 62 rokov"
+              }
+            ]
+          },
+          "question": "Який рахунок має безкоштовне зняття в усіх банкоматах?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Účet Senior",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Účet Štart",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Účet Plus",
+              "correct": true
+            }
+          ],
+          "explanation": "Účet Plus: všetky výbery bezplatné.",
+          "order": 6,
+          "wordIds": [
+            "a2-u09-l06-poplatky-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l06-poplatky-ex07",
+          "lessonId": "a2-u09-l06-poplatky",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Banka mi strhla poplatok»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "банк списав із мене комісію",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "банк скасував комісію",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "банк повернув мені комісію",
+              "correct": false
+            }
+          ],
+          "explanation": "strhnúť poplatok — стягнути, списати комісію.",
+          "order": 7
+        },
+        {
+          "id": "a2-u09-l06-poplatky-ex08",
+          "lessonId": "a2-u09-l06-poplatky",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Výber peňazí na pobočke je spoplatnená.",
+          "errorToken": "spoplatnená",
+          "correctToken": "spoplatnený",
+          "explanation": "výber — чоловічий рід: spoplatnený.",
+          "order": 8,
+          "wordIds": [
+            "a2-u09-l06-poplatky-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l06-poplatky-ex09",
+          "lessonId": "a2-u09-l06-poplatky",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Sporiaci účet: úrok 2 % ročne.",
+          "statement": "Клієнт отримує 2 % річних на ощадному рахунку.",
+          "correctAnswer": true,
+          "explanation": "úrok 2 % ročne — 2 % річних.",
+          "order": 9,
+          "wordIds": [
+            "a2-u09-l06-poplatky-w05"
+          ]
+        },
+        {
+          "id": "a2-u09-l06-poplatky-ex10",
+          "lessonId": "a2-u09-l06-poplatky",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай SMS від банку.",
+          "message": {
+            "sender": "Banka Javor",
+            "body": "Od 1. januára sa mení cenník. Poplatok za vedenie účtu Štart bude 1,90 € mesačne. Výber z našich bankomatov zostáva bezplatný."
+          },
+          "question": "Що зміниться з 1 січня?",
+          "options": [
+            {
+              "id": "a",
+              "text": "рахунок «Štart» коштуватиме 1,90 € на місяць",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "рахунок «Štart» стане безкоштовним",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "зняття в банкоматах банку стане платним",
+              "correct": false
+            }
+          ],
+          "explanation": "Poplatok… bude 1,90 € mesačne; výber zostáva bezplatný — зняття й далі безкоштовне.",
+          "order": 10,
+          "wordIds": [
+            "a2-u09-l06-poplatky-w01",
+            "a2-u09-l06-poplatky-w02",
+            "a2-u09-l06-poplatky-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l06-poplatky-ex11",
+          "lessonId": "a2-u09-l06-poplatky",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Oleh porovnával dva účty. V Banke Lipa platil za vedenie účtu päť eur mesačne, ale výbery z bankomatov mal bezplatné. Nová banka mu ponúkla účet bez mesačného poplatku, každý výber z bankomatu však stojí jedno euro. Oleh vyberá hotovosť asi dvakrát za mesiac, inak platí kartou alebo mobilom. Vypočítal si, že nový účet ho bude stáť asi dve eurá mesačne namiesto piatich. Preto si v novej banke založil účet a starý zrušil.",
+          "questions": [
+            {
+              "question": "Скільки Олег платив за рахунок у Banka Lipa?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "5 євро на місяць",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "1 євро на місяць",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "нічого",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Скільки коштує зняття готівки в новому банку?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "нічого",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "1 євро за кожне зняття",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "5 євро на місяць",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що Олег зробив зі старим рахунком?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "закрив його",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "переоформив на дружину",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "залишив для заощаджень",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 11,
+          "wordIds": [
+            "a2-u09-l06-poplatky-w01",
+            "a2-u09-l06-poplatky-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l06-poplatky-ex12",
+          "lessonId": "a2-u09-l06-poplatky",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти питаєш у банку, скільки коштує обслуговування рахунку.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Koľko stojí vedeniu účtu?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Koľko stojí vedenie účtu?",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Koľko stojí vedenie účet?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Koľko stoja vedenie účtu?",
+              "correct": false
+            }
+          ],
+          "explanation": "vedenie čoho? — родовий: účtu; stojí — однина.",
+          "order": 12,
+          "wordIds": [
+            "a2-u09-l06-poplatky-w01"
+          ]
+        },
+        {
+          "id": "a2-u09-l06-poplatky-ex13",
+          "lessonId": "a2-u09-l06-poplatky",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Безкоштовно чи платно?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Bezplatné"
+            },
+            {
+              "id": "c2",
+              "title": "Spoplatnené"
+            }
+          ],
+          "items": [
+            {
+              "sk": "2 € za výber",
+              "category": "c2"
+            },
+            {
+              "sk": "bez poplatku",
+              "category": "c1"
+            },
+            {
+              "sk": "0 € mesačne",
+              "category": "c1"
+            },
+            {
+              "sk": "zadarmo",
+              "category": "c1"
+            },
+            {
+              "sk": "s poplatkom",
+              "category": "c2"
+            },
+            {
+              "sk": "5 € mesačne",
+              "category": "c2"
+            }
+          ],
+          "explanation": "bez poplatku, zadarmo — безкоштовно; s poplatkom — платно.",
+          "order": 13,
+          "wordIds": [
+            "a2-u09-l06-poplatky-w03",
+            "a2-u09-l06-poplatky-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l06-poplatky-ex14",
+          "lessonId": "a2-u09-l06-poplatky",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Pracovník banky",
+              "sk": "Výber na pobočke je spoplatnený, stojí tri eurá."
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Tak si radšej vyberiem do bankomatu.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Tak si radšej vyberiem z bankomatom.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Tak si radšej vyberiem z bankomatu.",
+              "correct": true
+            }
+          ],
+          "explanation": "vybrať z + родовий: z bankomatu.",
+          "order": 14,
+          "wordIds": [
+            "a2-u09-l06-poplatky-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Вибір рахунку",
+        "description": "Ти порівнюєш тарифи двох банків перед відкриттям рахунку.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти питаєш про щомісячну плату.",
+            "options": [
+              {
+                "sk": "Aký je mesačný poplatok za vedenie účtu?",
+                "correct": true
+              },
+              {
+                "sk": "Aký je mesačný poplatok pre vedenie účtu?",
+                "correct": false
+              },
+              {
+                "sk": "Aký je mesačného poplatku za vedenie účtu?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Працівниця: «Pre klientov do 26 rokov je účet bezplatný.» Тобі 24 роки.",
+            "options": [
+              {
+                "sk": "рахунок для тебе безкоштовний",
+                "correct": true
+              },
+              {
+                "sk": "ти платиш 26 €",
+                "correct": false
+              },
+              {
+                "sk": "рахунок для тебе недоступний",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти питаєш, чи платне зняття готівки в банкоматі.",
+            "options": [
+              {
+                "sk": "Je výber do bankomatu spoplatnený?",
+                "correct": false
+              },
+              {
+                "sk": "Je výber z bankomatu spoplatnený?",
+                "correct": true
+              },
+              {
+                "sk": "Je výber z bankomatu spoplatnená?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Через місяць у застосунку: «Poplatok za výber: −1,50 €». Що сталося?",
+            "options": [
+              {
+                "sk": "ти заплатив 1,50 € у магазині",
+                "correct": false
+              },
+              {
+                "sk": "банк стягнув 1,50 € за зняття готівки",
+                "correct": true
+              },
+              {
+                "sk": "банк повернув тобі 1,50 €",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш порівнювати банківські тарифи. Далі — виписка з рахунку."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш порівнювати банківські тарифи. Далі — виписка з рахунку.",
+        "nowYouKnow": [
+          "poplatok za vedenie účtu",
+          "cenník: bezplatný ↔ spoplatnený",
+          "banka mi strhla poplatok",
+          "úrok 2 % ročne"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 30,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a2-u09-l07-vypis-z-uctu",
+          "title": "Виписка з рахунку"
+        }
+      }
+    }
+  ]
+}

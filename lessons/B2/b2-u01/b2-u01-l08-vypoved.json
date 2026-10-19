@@ -1,0 +1,920 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u01-l08-vypoved",
+      "sectionId": "b2-u01",
+      "level": "B2",
+      "title": "Звільнення: лист-повідомлення",
+      "topic": "Офіційне листування",
+      "description": "Як написати письмове повідомлення про звільнення (výpoveď) так, щоб не зіпсувати стосунків: форма, дата завершення, строк попередження, передача речей, виплата зарплати й довідка при звільненні.",
+      "order": 8,
+      "xpReward": 50,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Складати коротку, коректну й юридично зрозумілу заяву про звільнення.",
+      "completionMessage": "Ти вмієш написати заяву про звільнення. Далі — як писати електронні листи до установ.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Офіційне листування",
+        "title": "Звільнення: лист-повідомлення",
+        "shortDescription": "Складати коротку, коректну й юридично зрозумілу заяву про звільнення.",
+        "outcomes": [
+          "формулювати Týmto dávam výpoveď z pracovného pomeru",
+          "розуміти форму й вручення: письмово, з доказом отримання",
+          "просити про vyplatenie mzdy і zápočtový list",
+          "закінчувати нейтрально й ввічливо: Ďakujem za spoluprácu"
+        ],
+        "newWords": [
+          "zápočtový list",
+          "protokol",
+          "záväzok",
+          "k dátumu",
+          "vyplatenie"
+        ],
+        "exercisesCount": 15,
+        "reward": "+50 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Лист про звільнення",
+          "text": "Звільнення з ініціативи працівника — це письмова заява (výpoveď). Пишемо коротко й нейтрально: «Týmto dávam výpoveď z pracovného pomeru.» Дієслово «dať výpoveď» + «z» + родовий: výpoveď z pracovného pomeru. У рядку Vec пишемо «Výpoveď z pracovného pomeru». Причину вказувати не обов’язково: працівник може дати výpoveď без пояснень, і це нормально. Часто додають посилання на закон, але ключове — чітка формула, дата, підпис. За словацьким трудовим правом výpoveď має бути письмовою — усне повідомлення не вважається дійсним. Вручи її особисто в кадровому відділі або поштою, а собі залиш копію з підписом і датою отримання.",
+          "examples": [
+            {
+              "sk": "Týmto dávam výpoveď z pracovného pomeru.",
+              "uk": "Цим подаю заяву про звільнення з роботи."
+            },
+            {
+              "sk": "Výpoveď dávam bez uvedenia dôvodu.",
+              "uk": "Заяву про звільнення подаю без зазначення причини."
+            }
+          ],
+          "shortRule": "dať výpoveď z + родовий · письмово · копія з датою",
+          "commonMistakes": [
+            {
+              "mistake": "Dávam výpoveď pracovného pomeru.",
+              "correct": "Dávam výpoveď z pracovného pomeru."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Дата й строк попередження",
+          "text": "Трудові відносини закінчуються після спливу výpovednej lehoty — строку попередження. Його тривалість залежить від закону й трудового договору, тому перед написанням перевір договір. Формулюємо нейтрально: «Pracovný pomer sa skončí uplynutím výpovednej lehoty.» (uplynutie в орудному). Якщо домовишся з роботодавцем про іншу дату, пиши про угоду: «Navrhujem skončiť pracovný pomer dohodou k 31. 3. 2026.» Прийменник «k» + давальний (k dátumu): «k dátumu 31. 3. 2026». Дату подання й дату завершення не плутай.",
+          "examples": [
+            {
+              "sk": "Pracovný pomer sa skončí uplynutím výpovednej lehoty.",
+              "uk": "Трудові відносини завершаться зі спливом строку попередження."
+            },
+            {
+              "sk": "Navrhujem skončiť pracovný pomer dohodou k 31. 3. 2026.",
+              "uk": "Пропоную завершити трудові відносини за згодою сторін станом на 31. 3. 2026."
+            }
+          ],
+          "shortRule": "skončiť uplynutím lehoty · dohodou k dátumu",
+          "commonMistakes": [
+            {
+              "mistake": "Pracovný pomer sa skončí uplynutie lehoty.",
+              "correct": "Pracovný pomer sa skončí uplynutím lehoty."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Після звільнення: речі, зарплата, довідка",
+          "text": "Наприкінці листа домовляємося про практичне. Речі й техніку здаємо за актом: «Pracovné pomôcky odovzdám na základe odovzdávacieho protokolu.» Зобов’язання (záväzky) — борги, аванси — закриваємо: «Všetky záväzky voči zamestnávateľovi vysporiadam.» Просимо про виплату зарплати й документ: «Prosím o vyplatenie mzdy a o vydanie zápočtového listu.» Закінчуємо подякою: «Ďakujem za spoluprácu.» Це робить звільнення спокійним і залишає двері відчиненими. Образи, скарги на керівника чи колег у такий лист не пишемо.",
+          "examples": [
+            {
+              "sk": "Prosím o vyplatenie mzdy a o vydanie zápočtového listu.",
+              "uk": "Прошу виплатити зарплату й видати довідку при звільненні."
+            },
+            {
+              "sk": "Pracovné pomôcky odovzdám na základe odovzdávacieho protokolu.",
+              "uk": "Робочі засоби передам за актом приймання-передачі."
+            }
+          ],
+          "shortRule": "prosiť o + знахідний · odovzdať podľa protokolu · ďakujem za spoluprácu",
+          "commonMistakes": [
+            {
+              "mistake": "Prosím o vydať zápočtový list.",
+              "correct": "Prosím o vydanie zápočtového listu."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u01-l08-vypoved-w01",
+            "sk": "zápočtový list",
+            "uk": "довідка при звільненні (про стаж і заробіток)",
+            "pronunciationUk": "за:почтови: лист",
+            "exampleSk": "Zápočtový list dostanete pri skončení pracovného pomeru.",
+            "exampleUk": "Довідку при звільненні ви отримаєте під час завершення трудових відносин."
+          },
+          {
+            "wordId": "b2-u01-l08-vypoved-w02",
+            "sk": "protokol",
+            "uk": "протокол, акт приймання-передачі",
+            "pronunciationUk": "протокол",
+            "exampleSk": "Prístroje odovzdáme na základe protokolu.",
+            "exampleUk": "Прилади ми передамо за актом."
+          },
+          {
+            "wordId": "b2-u01-l08-vypoved-w03",
+            "sk": "záväzok",
+            "uk": "зобов’язання, борг",
+            "pronunciationUk": "за:везок",
+            "exampleSk": "Všetky záväzky voči firme som vyrovnal.",
+            "exampleUk": "Усі зобов’язання перед фірмою я виконав."
+          },
+          {
+            "wordId": "b2-u01-l08-vypoved-w04",
+            "sk": "k dátumu",
+            "uk": "на дату, станом на",
+            "pronunciationUk": "к да:туму",
+            "exampleSk": "Pracovný pomer sa skončí k dátumu 31. 3. 2026.",
+            "exampleUk": "Трудові відносини завершаться на дату 31. 3. 2026."
+          },
+          {
+            "wordId": "b2-u01-l08-vypoved-w05",
+            "sk": "vyplatenie",
+            "uk": "виплата",
+            "pronunciationUk": "виплатєньє",
+            "exampleSk": "Prosím o vyplatenie poslednej mzdy.",
+            "exampleUk": "Прошу виплатити останню зарплату."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u01-l08-vypoved-w01",
+          "sk": "zápočtový list",
+          "uk": "довідка при звільненні (про стаж і заробіток)",
+          "pronunciationUk": "за:почтови: лист",
+          "exampleSk": "Zápočtový list dostanete pri skončení pracovného pomeru.",
+          "exampleUk": "Довідку при звільненні ви отримаєте під час завершення трудових відносин.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l08-vypoved-w02",
+          "sk": "protokol",
+          "uk": "протокол, акт приймання-передачі",
+          "pronunciationUk": "протокол",
+          "exampleSk": "Prístroje odovzdáme na základe protokolu.",
+          "exampleUk": "Прилади ми передамо за актом.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l08-vypoved-w03",
+          "sk": "záväzok",
+          "uk": "зобов’язання, борг",
+          "pronunciationUk": "за:везок",
+          "exampleSk": "Všetky záväzky voči firme som vyrovnal.",
+          "exampleUk": "Усі зобов’язання перед фірмою я виконав.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l08-vypoved-w04",
+          "sk": "k dátumu",
+          "uk": "на дату, станом на",
+          "pronunciationUk": "к да:туму",
+          "exampleSk": "Pracovný pomer sa skončí k dátumu 31. 3. 2026.",
+          "exampleUk": "Трудові відносини завершаться на дату 31. 3. 2026.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l08-vypoved-w05",
+          "sk": "vyplatenie",
+          "uk": "виплата",
+          "pronunciationUk": "виплатєньє",
+          "exampleSk": "Prosím o vyplatenie poslednej mzdy.",
+          "exampleUk": "Прошу виплатити останню зарплату.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u01-l08-vypoved-ex01",
+          "lessonId": "b2-u01-l08-vypoved",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "zápočtový list",
+              "right": "довідка при звільненні"
+            },
+            {
+              "left": "protokol",
+              "right": "акт приймання-передачі"
+            },
+            {
+              "left": "záväzok",
+              "right": "зобов’язання"
+            },
+            {
+              "left": "k dátumu",
+              "right": "на дату"
+            },
+            {
+              "left": "vyplatenie",
+              "right": "виплата"
+            },
+            {
+              "left": "výpoveď",
+              "right": "заява про звільнення"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u01-l08-vypoved-w01",
+            "b2-u01-l08-vypoved-w02",
+            "b2-u01-l08-vypoved-w03",
+            "b2-u01-l08-vypoved-w04",
+            "b2-u01-l08-vypoved-w05"
+          ]
+        },
+        {
+          "id": "b2-u01-l08-vypoved-ex02",
+          "lessonId": "b2-u01-l08-vypoved",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Dávam výpoveď "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "z",
+                "na",
+                "od"
+              ],
+              "correct": "z"
+            },
+            {
+              "text": " pracovného pomeru."
+            }
+          ],
+          "explanation": "Výpoveď z + родовий: z pracovného pomeru.",
+          "order": 2
+        },
+        {
+          "id": "b2-u01-l08-vypoved-ex03",
+          "lessonId": "b2-u01-l08-vypoved",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Pracovný pomer sa skončí "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "uplynúť",
+                "uplynutie",
+                "uplynutím"
+              ],
+              "correct": "uplynutím"
+            },
+            {
+              "text": " výpovednej lehoty."
+            }
+          ],
+          "explanation": "Skončiť čím? — орудний: uplynutím.",
+          "order": 3
+        },
+        {
+          "id": "b2-u01-l08-vypoved-ex04",
+          "lessonId": "b2-u01-l08-vypoved",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Prosím o vydanie ______ listu. (довідка при звільненні)",
+          "acceptedAnswers": [
+            "zápočtového"
+          ],
+          "explanation": "Zápočtový list — родовий після vydanie: zápočtového listu.",
+          "order": 4,
+          "wordIds": [
+            "b2-u01-l08-vypoved-w01"
+          ]
+        },
+        {
+          "id": "b2-u01-l08-vypoved-ex05",
+          "lessonId": "b2-u01-l08-vypoved",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яке формулювання заяви правильне?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Týmto dávam výpoveď z pracovného pomer.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Týmto dávam výpoveď z pracovného pomeru.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Týmto odchádzam z práce, ahoj.",
+              "correct": false
+            }
+          ],
+          "explanation": "Офіційна формула: dávam výpoveď z pracovného pomeru; розмовне «ahoj» недоречне.",
+          "order": 5
+        },
+        {
+          "id": "b2-u01-l08-vypoved-ex06",
+          "lessonId": "b2-u01-l08-vypoved",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Pracovné pomôcky odovzdám na základe odovzdávacieho protokol.",
+          "errorToken": "protokol",
+          "correctToken": "protokolu",
+          "explanation": "Na základe + родовий: protokolu.",
+          "order": 6,
+          "wordIds": [
+            "b2-u01-l08-vypoved-w02"
+          ]
+        },
+        {
+          "id": "b2-u01-l08-vypoved-ex07",
+          "lessonId": "b2-u01-l08-vypoved",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Prosím o vyplatenie mzdy a vydanie zápočtový list.",
+          "acceptedAnswers": [
+            "Prosím o vyplatenie mzdy a vydanie zápočtového listu.",
+            "Prosím o vyplatenie mzdy a o vydanie zápočtového listu."
+          ],
+          "explanation": "Vydanie + родовий: zápočtového listu.",
+          "order": 7,
+          "wordIds": [
+            "b2-u01-l08-vypoved-w01",
+            "b2-u01-l08-vypoved-w05"
+          ]
+        },
+        {
+          "id": "b2-u01-l08-vypoved-ex08",
+          "lessonId": "b2-u01-l08-vypoved",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи: «Прошу видати довідку при звільненні.»",
+          "tokens": [
+            "o",
+            "vydanie",
+            "listu",
+            "Prosím",
+            "zápočtového",
+            "."
+          ],
+          "correctOrder": [
+            "Prosím",
+            "o",
+            "vydanie",
+            "zápočtového",
+            "listu",
+            "."
+          ],
+          "explanation": "prosiť o + знахідний: o vydanie, потім родовий.",
+          "order": 8,
+          "wordIds": [
+            "b2-u01-l08-vypoved-w01"
+          ]
+        },
+        {
+          "id": "b2-u01-l08-vypoved-ex09",
+          "lessonId": "b2-u01-l08-vypoved",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Oleksandr pracoval v nitrianskej továrni dva roky. Dostal ponuku od inej firmy a rozhodol sa odísť. V zmluve našiel, že výpovedná lehota trvá dva mesiace, a zistil, že dôvod výpovede uvádzať nemusí. Napísal preto krátky list s predmetom «Výpoveď z pracovného pomeru». Dôvody nepísal. List vytlačil, podpísal a osobne odovzdal na personálnom oddelení, kde mu na kópii potvrdili dátum prijatia. Na záver pridal vetu: «Ďakujem za spoluprácu.» V posledný pracovný deň odovzdal pomôcky podľa protokolu a dostal zápočtový list.",
+          "questions": [
+            {
+              "question": "Скільки тривав строк попередження в Олександра?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "два місяці",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "один місяць",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "три місяці",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Чому в листі не було причин звільнення?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "роботодавець заборонив",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "Олександр не знав причини",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "причину вказувати не обов’язково",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Як Олександр зафіксував дату подання?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "на копії листа йому поставили дату прийняття",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "надіслав SMS",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "усно повідомив керівника",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 9,
+          "wordIds": [
+            "b2-u01-l08-vypoved-w01",
+            "b2-u01-l08-vypoved-w02",
+            "b2-u01-l08-vypoved-w04"
+          ]
+        },
+        {
+          "id": "b2-u01-l08-vypoved-ex10",
+          "lessonId": "b2-u01-l08-vypoved",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай довідку.",
+          "document": {
+            "title": "Zápočtový list – výpis",
+            "fields": [
+              {
+                "label": "Zamestnanec",
+                "value": "Oleksandr Bondar"
+              },
+              {
+                "label": "Pracovný pomer",
+                "value": "1. 4. 2024 – 31. 3. 2026"
+              },
+              {
+                "label": "Pozícia",
+                "value": "operátor výroby"
+              },
+              {
+                "label": "Skončenie",
+                "value": "výpoveď daná zamestnancom"
+              },
+              {
+                "label": "Vyplatená mzda",
+                "value": "za marec 2026"
+              }
+            ]
+          },
+          "question": "Як закінчилися трудові відносини?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "за вироком суду",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "з ініціативи роботодавця",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "з ініціативи працівника",
+              "correct": true
+            }
+          ],
+          "explanation": "Skončenie: výpoveď daná zamestnancom — працівник сам подав заяву.",
+          "order": 10,
+          "wordIds": [
+            "b2-u01-l08-vypoved-w01",
+            "b2-u01-l08-vypoved-w05"
+          ]
+        },
+        {
+          "id": "b2-u01-l08-vypoved-ex11",
+          "lessonId": "b2-u01-l08-vypoved",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай лист від кадрового відділу.",
+          "message": {
+            "sender": "Personálne oddelenie",
+            "body": "Dobrý deň, pán Bondar, potvrdzujem prijatie Vašej výpovede zo dňa 12. februára. Pracovný pomer sa skončí uplynutím výpovednej lehoty. Prosím Vás, aby ste v posledný pracovný deň odovzdali služobný telefón a čipovú kartu a podpísali odovzdávací protokol. Zápočtový list a poslednú mzdu Vám vydáme v zákonnom termíne. S pozdravom Personálne oddelenie"
+          },
+          "question": "Що має зробити Олександр в останній робочий день?",
+          "options": [
+            {
+              "id": "a",
+              "text": "прийти на співбесіду",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "подати ще одну заяву",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "здати службовий телефон і картку та підписати протокол",
+              "correct": true
+            }
+          ],
+          "explanation": "Aby ste odovzdali… a podpísali protokol — здати речі й підписати акт.",
+          "order": 11,
+          "wordIds": [
+            "b2-u01-l08-vypoved-w01",
+            "b2-u01-l08-vypoved-w02"
+          ]
+        },
+        {
+          "id": "b2-u01-l08-vypoved-ex12",
+          "lessonId": "b2-u01-l08-vypoved",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти просиш виплатити зарплату й видати довідку при звільненні.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Prosím o vyplatenie mzdy a o vydanie zápočtového listu.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Chcem mzdu aj zápočtový list hneď.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Prosím o vyplatiť mzdu a o vydať zápočtový list.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Prosím vyplatenie mzdy a vydanie zápočtový list.",
+              "correct": false
+            }
+          ],
+          "explanation": "Prosiť o + знахідний іменника: o vyplatenie, o vydanie.",
+          "order": 12,
+          "wordIds": [
+            "b2-u01-l08-vypoved-w01",
+            "b2-u01-l08-vypoved-w05"
+          ]
+        },
+        {
+          "id": "b2-u01-l08-vypoved-ex13",
+          "lessonId": "b2-u01-l08-vypoved",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що писати, а що краще не писати?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Napísať"
+            },
+            {
+              "id": "c2",
+              "title": "Vynechať"
+            }
+          ],
+          "items": [
+            {
+              "sk": "Bez mňa sa firma rozpadne",
+              "category": "c2"
+            },
+            {
+              "sk": "Týmto dávam výpoveď z pracovného pomeru",
+              "category": "c1"
+            },
+            {
+              "sk": "Prosím o vydanie zápočtového listu",
+              "category": "c1"
+            },
+            {
+              "sk": "Ďakujem za spoluprácu",
+              "category": "c1"
+            },
+            {
+              "sk": "Pracovný pomer sa skončí uplynutím výpovednej lehoty",
+              "category": "c1"
+            },
+            {
+              "sk": "Ostatní kolegovia sú leniví",
+              "category": "c2"
+            },
+            {
+              "sk": "Môj šéf je neschopný",
+              "category": "c2"
+            },
+            {
+              "sk": "Nikto ma tu nerešpektuje",
+              "category": "c2"
+            }
+          ],
+          "explanation": "У листі про звільнення — тільки факти й подяка, без образ.",
+          "order": 13,
+          "wordIds": [
+            "b2-u01-l08-vypoved-w01"
+          ]
+        },
+        {
+          "id": "b2-u01-l08-vypoved-ex14",
+          "lessonId": "b2-u01-l08-vypoved",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і оціни кожне твердження.",
+          "text": "Výpoveď musí byť písomná. Dôvod výpovede môže zamestnanec uviesť, ale nemusí. Výpoveď treba doručiť zamestnávateľovi: osobne na personálnom oddelení alebo doporučene poštou. Odporúča sa mať doklad, že zamestnávateľ výpoveď prevzal.",
+          "statements": [
+            {
+              "sk": "Заява про звільнення має бути письмовою.",
+              "correct": true
+            },
+            {
+              "sk": "Причину звільнення вказувати не обов’язково.",
+              "correct": true
+            },
+            {
+              "sk": "Корисно мати доказ, що роботодавець отримав заяву.",
+              "correct": true
+            },
+            {
+              "sk": "Достатньо усно сказати керівникові.",
+              "correct": false
+            },
+            {
+              "sk": "Причину треба вказувати завжди.",
+              "correct": false
+            }
+          ],
+          "explanation": "Заява — письмова, причина необов’язкова, а доказ отримання бажаний.",
+          "order": 14,
+          "wordIds": [
+            "b2-u01-l08-vypoved-w01"
+          ]
+        },
+        {
+          "id": "b2-u01-l08-vypoved-ex15",
+          "lessonId": "b2-u01-l08-vypoved",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні формулювання.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Týmto dávam výpoveď z pracovného pomeru.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Prosím o vydanie zápočtového listu.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Ďakujem za spoluprácu.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Ahoj, končím, čau.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Dávam výpoveď z pracovný pomer.",
+              "correct": false
+            }
+          ],
+          "explanation": "Формулювання мають бути граматично правильними й офіційними.",
+          "order": 15,
+          "wordIds": [
+            "b2-u01-l08-vypoved-w01"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Лист про звільнення",
+        "description": "Ти переходиш на іншу роботу й пишеш заяву про звільнення, яку подаєш у кадровому відділі.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Що напишеш у рядку Vec?",
+            "options": [
+              {
+                "sk": "Výpoveď z pracovného pomeru",
+                "correct": true
+              },
+              {
+                "sk": "Ahoj šéf",
+                "correct": false
+              },
+              {
+                "sk": "Odchádzam",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Яка головна формула?",
+            "options": [
+              {
+                "sk": "Dávam výpoveď z pracovný pomer.",
+                "correct": false
+              },
+              {
+                "sk": "Týmto dávam výpoveď z pracovného pomeru.",
+                "correct": true
+              },
+              {
+                "sk": "Končím, lebo ma nebavíte.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Що напишеш про речі?",
+            "options": [
+              {
+                "sk": "Pracovné pomôcky odovzdám na základe protokolu.",
+                "correct": true
+              },
+              {
+                "sk": "Pracovné pomôcky si nechám.",
+                "correct": false
+              },
+              {
+                "sk": "Odovzdať pomôcky niekedy.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як закінчиш?",
+            "options": [
+              {
+                "sk": "Zápočtový list mi pošlite hneď.",
+                "correct": false
+              },
+              {
+                "sk": "Prosím o vydanie zápočtového listu a ďakujem za spoluprácu.",
+                "correct": true
+              },
+              {
+                "sk": "Nech sa Vám darí bez mňa.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш написати заяву про звільнення. Далі — як писати електронні листи до установ."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш написати заяву про звільнення. Далі — як писати електронні листи до установ.",
+        "nowYouKnow": [
+          "dať výpoveď z + родовий · письмово · копія",
+          "skončiť uplynutím lehoty · dohodou k dátumu",
+          "odovzdať podľa protokolu · záväzky",
+          "prosiť o vyplatenie · zápočtový list"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 15,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u01-l09-email-uradu",
+          "title": "E-mail до установи"
+        }
+      }
+    }
+  ]
+}

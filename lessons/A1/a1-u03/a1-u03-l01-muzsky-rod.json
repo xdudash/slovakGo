@@ -1,0 +1,740 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u03-l01-muzsky-rod",
+      "sectionId": "a1-u03",
+      "level": "A1",
+      "title": "Чоловічий рід",
+      "topic": "Рід і число іменників",
+      "description": "Як упізнати іменник чоловічого роду: закінчення на приголосний — počítač, telefón, zošit.",
+      "order": 21,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Визначати чоловічий рід за закінченням і правильно поєднувати його з прикметником.",
+      "completionMessage": "Чоловічий рід упізнаєш одразу. Далі — жіночий.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Рід і число іменників",
+        "title": "Чоловічий рід",
+        "shortDescription": "Визначати чоловічий рід за закінченням і правильно поєднувати його з прикметником.",
+        "outcomes": [
+          "упізнавати чоловічий рід за приголосним наприкінці",
+          "знати живі й неживі іменники",
+          "узгоджувати: nový telefón",
+          "називати шість предметів"
+        ],
+        "newWords": [
+          "počítač",
+          "telefón",
+          "papier",
+          "zošit",
+          "hrnček",
+          "vešiak"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Ознака — приголосний",
+          "text": "Більшість іменників чоловічого роду закінчуються на приголосний: počítač, telefón, zošit, stôl, dom. Прикметник при них — на -ý / -y: nový počítač, veľký stôl.",
+          "examples": [
+            {
+              "sk": "nový telefón",
+              "uk": "новий телефон"
+            },
+            {
+              "sk": "malý zošit",
+              "uk": "маленький зошит"
+            }
+          ],
+          "shortRule": "приголосний наприкінці → чоловічий рід",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Живі й неживі",
+          "text": "Чоловічий рід ділиться на живий (люди, тварини: brat, pes) і неживий (речі: stôl, telefón). Це важливо для відмінків і множини — побачиш у наступних уроках.",
+          "examples": [
+            {
+              "sk": "Mám brata. (живий)",
+              "uk": "У мене є брат."
+            },
+            {
+              "sk": "Mám telefón. (неживий)",
+              "uk": "У мене є телефон."
+            }
+          ],
+          "shortRule": "brat → brata, telefón → telefón",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Винятки",
+          "text": "Деякі іменники чоловічого роду закінчуються на -a: kolega, hrdina (герой), turista. На -o: dedko, Janko (зменшувальні імена). Рід видно з прикметника: dobrý kolega.",
+          "examples": [
+            {
+              "sk": "môj kolega",
+              "uk": "мій колега"
+            },
+            {
+              "sk": "starý dedko",
+              "uk": "старий дідусь"
+            }
+          ],
+          "shortRule": "kolega, turista — чоловічий рід!",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u03-l01-muzsky-rod-w01",
+            "sk": "počítač",
+            "uk": "комп’ютер",
+            "pronunciationUk": "почі:тач",
+            "exampleSk": "Počítač je pomalý.",
+            "exampleUk": "Комп’ютер повільний."
+          },
+          {
+            "wordId": "a1-u03-l01-muzsky-rod-w02",
+            "sk": "telefón",
+            "uk": "телефон",
+            "pronunciationUk": "телефо:н",
+            "exampleSk": "Môj telefón nefunguje.",
+            "exampleUk": "Мій телефон не працює."
+          },
+          {
+            "wordId": "a1-u03-l01-muzsky-rod-w03",
+            "sk": "papier",
+            "uk": "папір",
+            "pronunciationUk": "папієр",
+            "exampleSk": "Potrebujem papier a pero.",
+            "exampleUk": "Мені потрібні папір і ручка."
+          },
+          {
+            "wordId": "a1-u03-l01-muzsky-rod-w04",
+            "sk": "zošit",
+            "uk": "зошит",
+            "pronunciationUk": "зошіт",
+            "exampleSk": "Syn potrebuje nový zošit.",
+            "exampleUk": "Синові потрібен новий зошит."
+          },
+          {
+            "wordId": "a1-u03-l01-muzsky-rod-w05",
+            "sk": "hrnček",
+            "uk": "чашка (горнятко)",
+            "pronunciationUk": "грнчек",
+            "exampleSk": "Môj hrnček je na stole.",
+            "exampleUk": "Моя чашка на столі."
+          },
+          {
+            "wordId": "a1-u03-l01-muzsky-rod-w06",
+            "sk": "vešiak",
+            "uk": "вішалка",
+            "pronunciationUk": "вешіак",
+            "exampleSk": "Bunda je na vešiaku.",
+            "exampleUk": "Куртка на вішалці."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u03-l01-muzsky-rod-w01",
+          "sk": "počítač",
+          "uk": "комп’ютер",
+          "pronunciationUk": "почі:тач",
+          "exampleSk": "Počítač je pomalý.",
+          "exampleUk": "Комп’ютер повільний.",
+          "level": "A1",
+          "topic": "Рід і число іменників",
+          "tags": [
+            "a1-u03",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u03-l01-muzsky-rod-w02",
+          "sk": "telefón",
+          "uk": "телефон",
+          "pronunciationUk": "телефо:н",
+          "exampleSk": "Môj telefón nefunguje.",
+          "exampleUk": "Мій телефон не працює.",
+          "level": "A1",
+          "topic": "Рід і число іменників",
+          "tags": [
+            "a1-u03",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u03-l01-muzsky-rod-w03",
+          "sk": "papier",
+          "uk": "папір",
+          "pronunciationUk": "папієр",
+          "exampleSk": "Potrebujem papier a pero.",
+          "exampleUk": "Мені потрібні папір і ручка.",
+          "level": "A1",
+          "topic": "Рід і число іменників",
+          "tags": [
+            "a1-u03",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u03-l01-muzsky-rod-w04",
+          "sk": "zošit",
+          "uk": "зошит",
+          "pronunciationUk": "зошіт",
+          "exampleSk": "Syn potrebuje nový zošit.",
+          "exampleUk": "Синові потрібен новий зошит.",
+          "level": "A1",
+          "topic": "Рід і число іменників",
+          "tags": [
+            "a1-u03",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u03-l01-muzsky-rod-w05",
+          "sk": "hrnček",
+          "uk": "чашка (горнятко)",
+          "pronunciationUk": "грнчек",
+          "exampleSk": "Môj hrnček je na stole.",
+          "exampleUk": "Моя чашка на столі.",
+          "level": "A1",
+          "topic": "Рід і число іменників",
+          "tags": [
+            "a1-u03",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u03-l01-muzsky-rod-w06",
+          "sk": "vešiak",
+          "uk": "вішалка",
+          "pronunciationUk": "вешіак",
+          "exampleSk": "Bunda je na vešiaku.",
+          "exampleUk": "Куртка на вішалці.",
+          "level": "A1",
+          "topic": "Рід і число іменників",
+          "tags": [
+            "a1-u03",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u03-l01-muzsky-rod-ex01",
+          "lessonId": "a1-u03-l01-muzsky-rod",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "počítač",
+              "right": "комп’ютер"
+            },
+            {
+              "left": "telefón",
+              "right": "телефон"
+            },
+            {
+              "left": "papier",
+              "right": "папір"
+            },
+            {
+              "left": "zošit",
+              "right": "зошит"
+            },
+            {
+              "left": "hrnček",
+              "right": "чашка"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u03-l01-muzsky-rod-w01",
+            "a1-u03-l01-muzsky-rod-w02",
+            "a1-u03-l01-muzsky-rod-w03",
+            "a1-u03-l01-muzsky-rod-w04",
+            "a1-u03-l01-muzsky-rod-w05"
+          ]
+        },
+        {
+          "id": "a1-u03-l01-muzsky-rod-ex02",
+          "lessonId": "a1-u03-l01-muzsky-rod",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери іменники чоловічого роду.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "okno",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "počítač",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "zošit",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "kniha",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "kolega",
+              "correct": true
+            },
+            {
+              "id": "f",
+              "sk": "taška",
+              "correct": false
+            }
+          ],
+          "explanation": "Приголосний наприкінці або винятки на -a (kolega).",
+          "order": 2,
+          "wordIds": [
+            "a1-u03-l01-muzsky-rod-w01",
+            "a1-u03-l01-muzsky-rod-w04"
+          ]
+        },
+        {
+          "id": "a1-u03-l01-muzsky-rod-ex03",
+          "lessonId": "a1-u03-l01-muzsky-rod",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери прикметник.",
+          "sentenceParts": [
+            {
+              "text": "Mám "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "nové",
+                "nová",
+                "nový"
+              ],
+              "correct": "nový"
+            },
+            {
+              "text": " počítač."
+            }
+          ],
+          "explanation": "počítač — чол. рід: nový.",
+          "order": 3,
+          "wordIds": [
+            "a1-u03-l01-muzsky-rod-w01"
+          ]
+        },
+        {
+          "id": "a1-u03-l01-muzsky-rod-ex04",
+          "lessonId": "a1-u03-l01-muzsky-rod",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Якого роду слово «kolega»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "середнього",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "чоловічого",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "жіночого",
+              "correct": false
+            }
+          ],
+          "explanation": "kolega — чоловічий рід, хоча закінчується на -a.",
+          "order": 4
+        },
+        {
+          "id": "a1-u03-l01-muzsky-rod-ex05",
+          "lessonId": "a1-u03-l01-muzsky-rod",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Живий чи неживий?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Живий"
+            },
+            {
+              "id": "c2",
+              "title": "Неживий"
+            }
+          ],
+          "items": [
+            {
+              "sk": "kolega",
+              "category": "c1"
+            },
+            {
+              "sk": "počítač",
+              "category": "c2"
+            },
+            {
+              "sk": "pes",
+              "category": "c1"
+            },
+            {
+              "sk": "zošit",
+              "category": "c2"
+            },
+            {
+              "sk": "brat",
+              "category": "c1"
+            },
+            {
+              "sk": "vešiak",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Люди й тварини — живі.",
+          "order": 5,
+          "wordIds": [
+            "a1-u03-l01-muzsky-rod-w01",
+            "a1-u03-l01-muzsky-rod-w04",
+            "a1-u03-l01-muzsky-rod-w06"
+          ]
+        },
+        {
+          "id": "a1-u03-l01-muzsky-rod-ex06",
+          "lessonId": "a1-u03-l01-muzsky-rod",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Іменник «turista» — жіночого роду, бо закінчується на -a.",
+          "correctAnswer": false,
+          "explanation": "turista — чоловічий рід (людина-чоловік).",
+          "order": 6
+        },
+        {
+          "id": "a1-u03-l01-muzsky-rod-ex07",
+          "lessonId": "a1-u03-l01-muzsky-rod",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши прикметник (новий).",
+          "sentence": "Kúpil som ______ telefón.",
+          "acceptedAnswers": [
+            "nový"
+          ],
+          "hint": "Чол. рід: -ý.",
+          "explanation": "nový telefón.",
+          "order": 7,
+          "wordIds": [
+            "a1-u03-l01-muzsky-rod-w02"
+          ]
+        },
+        {
+          "id": "a1-u03-l01-muzsky-rod-ex08",
+          "lessonId": "a1-u03-l01-muzsky-rod",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що твій телефон не працює.",
+          "tokens": [
+            "nefunguje",
+            ".",
+            "telefón",
+            "Môj"
+          ],
+          "correctOrder": [
+            "Môj",
+            "telefón",
+            "nefunguje",
+            "."
+          ],
+          "explanation": "môj telefón.",
+          "order": 8,
+          "wordIds": [
+            "a1-u03-l01-muzsky-rod-w02"
+          ]
+        },
+        {
+          "id": "a1-u03-l01-muzsky-rod-ex09",
+          "lessonId": "a1-u03-l01-muzsky-rod",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Môj nová počítač je rýchly.",
+          "errorToken": "nová",
+          "correctToken": "nový",
+          "explanation": "počítač — чол. рід: nový.",
+          "order": 9,
+          "wordIds": [
+            "a1-u03-l01-muzsky-rod-w01"
+          ]
+        },
+        {
+          "id": "a1-u03-l01-muzsky-rod-ex10",
+          "lessonId": "a1-u03-l01-muzsky-rod",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Тобі треба повісити куртку в офісі.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Kde vešiak je mi?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Kde je vešiaka?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Kde je vešiak?",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Vešiak, kde je ona?",
+              "correct": false
+            }
+          ],
+          "explanation": "Kde je + називний.",
+          "order": 10,
+          "wordIds": [
+            "a1-u03-l01-muzsky-rod-w06"
+          ]
+        },
+        {
+          "id": "a1-u03-l01-muzsky-rod-ex11",
+          "lessonId": "a1-u03-l01-muzsky-rod",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери займенник.",
+          "sentenceParts": [
+            {
+              "text": "Hrnček? "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "Ono",
+                "On",
+                "Ona"
+              ],
+              "correct": "On"
+            },
+            {
+              "text": " je v kuchyni."
+            }
+          ],
+          "explanation": "hrnček — чоловічий рід: on.",
+          "order": 11,
+          "wordIds": [
+            "a1-u03-l01-muzsky-rod-w05"
+          ]
+        },
+        {
+          "id": "a1-u03-l01-muzsky-rod-ex12",
+          "lessonId": "a1-u03-l01-muzsky-rod",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kolegyňa",
+              "sk": "Máš papier?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Áno, papiera.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Áno, tu je.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Áno, tu je ona.",
+              "correct": false
+            }
+          ],
+          "explanation": "Коротка відповідь.",
+          "order": 12,
+          "wordIds": [
+            "a1-u03-l01-muzsky-rod-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перший день у школі",
+        "description": "Ти купуєш для сина шкільні речі за списком учителя.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "У списку «zošit – 5 ks». Що купити?",
+            "options": [
+              {
+                "sk": "5 книжок",
+                "correct": false
+              },
+              {
+                "sk": "5 ручок",
+                "correct": false
+              },
+              {
+                "sk": "5 зошитів",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Продавець питає «Aký zošit? Veľký alebo malý?»",
+            "options": [
+              {
+                "sk": "Veľká, prosím.",
+                "correct": false
+              },
+              {
+                "sk": "Veľké, prosím.",
+                "correct": false
+              },
+              {
+                "sk": "Veľký, prosím.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Тобі ще потрібен папір.",
+            "options": [
+              {
+                "sk": "Potrebujem ešte papiera.",
+                "correct": false
+              },
+              {
+                "sk": "Papier som.",
+                "correct": false
+              },
+              {
+                "sk": "Potrebujem ešte papier.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Kolega vám pomôže.» Хто допоможе?",
+            "options": [
+              {
+                "sk": "ніхто",
+                "correct": false
+              },
+              {
+                "sk": "колега (чоловік)",
+                "correct": true
+              },
+              {
+                "sk": "колега (жінка)",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Чоловічий рід упізнаєш одразу. Далі — жіночий."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Чоловічий рід упізнаєш одразу. Далі — жіночий.",
+        "nowYouKnow": [
+          "чоловічий рід — приголосний наприкінці",
+          "живий / неживий",
+          "kolega, turista — чол. рід",
+          "nový počítač"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u03-l02-zensky-rod",
+          "title": "Жіночий рід"
+        }
+      }
+    }
+  ]
+}

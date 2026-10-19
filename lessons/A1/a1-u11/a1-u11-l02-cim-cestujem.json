@@ -1,0 +1,683 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u11-l02-cim-cestujem",
+      "sectionId": "a1-u11",
+      "level": "A1",
+      "title": "Чим їдеш? Орудний відмінок",
+      "topic": "Транспорт",
+      "description": "Транспорт в орудному відмінку: autobusom, vlakom, električkou, autom — і слова MHD, linka, prestúpiť, konečná.",
+      "order": 102,
+      "xpReward": 25,
+      "estimatedMinutes": 18,
+      "isPublished": true,
+      "intro": "Сказати, чим ти їдеш, і розуміти маршрут із пересадкою.",
+      "completionMessage": "Ти пересуваєшся містом упевнено. Далі — квитки й розклад.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Транспорт",
+        "title": "Чим їдеш? Орудний відмінок",
+        "shortDescription": "Сказати, чим ти їдеш, і розуміти маршрут із пересадкою.",
+        "outcomes": [
+          "казати autobusom, električkou, autom",
+          "розуміти MHD і linka",
+          "казати Musím prestúpiť",
+          "розуміти konečná"
+        ],
+        "newWords": [
+          "dopravný prostriedok",
+          "MHD",
+          "linka",
+          "prestúpiť",
+          "konečná",
+          "spoj"
+        ],
+        "exercisesCount": 11,
+        "reward": "+25 XP",
+        "estimatedMinutes": 18,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Чим? — орудний",
+          "text": "Чоловічий і середній рід: -om: autobus → autobusom, vlak → vlakom, auto → autom, metro → metrom. Жіночий: -ou: električka → električkou, loď → loďou. «Pešo» — пішки.",
+          "examples": [
+            {
+              "sk": "Idem do práce vlakom.",
+              "uk": "Я їду на роботу потягом."
+            },
+            {
+              "sk": "Deti chodia do školy električkou.",
+              "uk": "Діти їздять до школи трамваєм."
+            }
+          ],
+          "shortRule": "-om / -ou",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "MHD і лінії",
+          "text": "«MHD» (mestská hromadná doprava) — міський громадський транспорт. «Linka» — маршрут: «linka 9». «Spoj» — рейс, сполучення. «Dopravný prostriedok» — транспортний засіб.",
+          "examples": [
+            {
+              "sk": "Linka 39 ide na letisko.",
+              "uk": "Маршрут 39 їде в аеропорт."
+            }
+          ],
+          "shortRule": "MHD, linka",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Пересадка",
+          "text": "«Prestúpiť» — пересісти: «Na Hlavnej stanici prestúpite na električku 4». «Prestup» — пересадка. «Konečná» — кінцева зупинка.",
+          "examples": [
+            {
+              "sk": "Musím raz prestúpiť.",
+              "uk": "Мені треба один раз пересісти."
+            },
+            {
+              "sk": "Vystúpte na konečnej.",
+              "uk": "Вийдіть на кінцевій."
+            }
+          ],
+          "shortRule": "prestúpiť, konečná",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u11-l02-cim-cestujem-w01",
+            "sk": "dopravný prostriedok",
+            "uk": "транспортний засіб",
+            "pronunciationUk": "доправні: прострієдок",
+            "exampleSk": "Aký dopravný prostriedok používaš?",
+            "exampleUk": "Яким транспортом ти користуєшся?"
+          },
+          {
+            "wordId": "a1-u11-l02-cim-cestujem-w02",
+            "sk": "MHD",
+            "uk": "міський громадський транспорт",
+            "pronunciationUk": "ем-га-де:",
+            "exampleSk": "V MHD je to pohodlné.",
+            "exampleUk": "У громадському транспорті зручно."
+          },
+          {
+            "wordId": "a1-u11-l02-cim-cestujem-w03",
+            "sk": "linka",
+            "uk": "маршрут, лінія",
+            "pronunciationUk": "лінка",
+            "exampleSk": "Ktorá linka ide do centra?",
+            "exampleUk": "Який маршрут їде в центр?"
+          },
+          {
+            "wordId": "a1-u11-l02-cim-cestujem-w04",
+            "sk": "prestúpiť",
+            "uk": "пересісти",
+            "pronunciationUk": "престу:піть",
+            "exampleSk": "Na stanici prestúpte na vlak.",
+            "exampleUk": "На вокзалі пересядьте на поїзд."
+          },
+          {
+            "wordId": "a1-u11-l02-cim-cestujem-w05",
+            "sk": "konečná",
+            "uk": "кінцева зупинка",
+            "pronunciationUk": "конечна:",
+            "exampleSk": "Vystúpim až na konečnej.",
+            "exampleUk": "Я вийду аж на кінцевій."
+          },
+          {
+            "wordId": "a1-u11-l02-cim-cestujem-w06",
+            "sk": "spoj",
+            "uk": "рейс, сполучення",
+            "pronunciationUk": "спой",
+            "exampleSk": "Posledný spoj ide o polnoci.",
+            "exampleUk": "Останній рейс о півночі."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u11-l02-cim-cestujem-w01",
+          "sk": "dopravný prostriedok",
+          "uk": "транспортний засіб",
+          "pronunciationUk": "доправні: прострієдок",
+          "exampleSk": "Aký dopravný prostriedok používaš?",
+          "exampleUk": "Яким транспортом ти користуєшся?",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l02-cim-cestujem-w02",
+          "sk": "MHD",
+          "uk": "міський громадський транспорт",
+          "pronunciationUk": "ем-га-де:",
+          "exampleSk": "V MHD je to pohodlné.",
+          "exampleUk": "У громадському транспорті зручно.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l02-cim-cestujem-w03",
+          "sk": "linka",
+          "uk": "маршрут, лінія",
+          "pronunciationUk": "лінка",
+          "exampleSk": "Ktorá linka ide do centra?",
+          "exampleUk": "Який маршрут їде в центр?",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l02-cim-cestujem-w04",
+          "sk": "prestúpiť",
+          "uk": "пересісти",
+          "pronunciationUk": "престу:піть",
+          "exampleSk": "Na stanici prestúpte na vlak.",
+          "exampleUk": "На вокзалі пересядьте на поїзд.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l02-cim-cestujem-w05",
+          "sk": "konečná",
+          "uk": "кінцева зупинка",
+          "pronunciationUk": "конечна:",
+          "exampleSk": "Vystúpim až na konečnej.",
+          "exampleUk": "Я вийду аж на кінцевій.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l02-cim-cestujem-w06",
+          "sk": "spoj",
+          "uk": "рейс, сполучення",
+          "pronunciationUk": "спой",
+          "exampleSk": "Posledný spoj ide o polnoci.",
+          "exampleUk": "Останній рейс о півночі.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u11-l02-cim-cestujem-ex01",
+          "lessonId": "a1-u11-l02-cim-cestujem",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "autobus",
+              "right": "autobusom"
+            },
+            {
+              "left": "vlak",
+              "right": "vlakom"
+            },
+            {
+              "left": "auto",
+              "right": "autom"
+            },
+            {
+              "left": "električka",
+              "right": "električkou"
+            },
+            {
+              "left": "loď",
+              "right": "loďou"
+            }
+          ],
+          "order": 1
+        },
+        {
+          "id": "a1-u11-l02-cim-cestujem-ex02",
+          "lessonId": "a1-u11-l02-cim-cestujem",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Idem do Košíc "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "vlakom",
+                "vlak",
+                "vlaku"
+              ],
+              "correct": "vlakom"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Чим — vlakom.",
+          "order": 2
+        },
+        {
+          "id": "a1-u11-l02-cim-cestujem-ex03",
+          "lessonId": "a1-u11-l02-cim-cestujem",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Jazdím "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "električkom",
+                "električka",
+                "električkou"
+              ],
+              "correct": "električkou"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Жін.: -ou.",
+          "order": 3
+        },
+        {
+          "id": "a1-u11-l02-cim-cestujem-ex04",
+          "lessonId": "a1-u11-l02-cim-cestujem",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Musím raz prestúpiť»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "мені треба вийти один раз",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "мені треба купити квиток",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "мені треба один раз пересісти",
+              "correct": true
+            }
+          ],
+          "explanation": "prestúpiť — пересісти.",
+          "order": 4
+        },
+        {
+          "id": "a1-u11-l02-cim-cestujem-ex05",
+          "lessonId": "a1-u11-l02-cim-cestujem",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Konečná» — це кінцева зупинка.",
+          "correctAnswer": true,
+          "explanation": "konečná zastávka.",
+          "order": 5,
+          "wordIds": [
+            "a1-u11-l02-cim-cestujem-w05"
+          ]
+        },
+        {
+          "id": "a1-u11-l02-cim-cestujem-ex06",
+          "lessonId": "a1-u11-l02-cim-cestujem",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Posledný ______ ide o polnoci. (рейс)",
+          "acceptedAnswers": [
+            "spoj"
+          ],
+          "explanation": "spoj — рейс.",
+          "order": 6,
+          "wordIds": [
+            "a1-u11-l02-cim-cestujem-w06"
+          ]
+        },
+        {
+          "id": "a1-u11-l02-cim-cestujem-ex07",
+          "lessonId": "a1-u11-l02-cim-cestujem",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Запитай, який маршрут їде в центр.",
+          "tokens": [
+            "linka",
+            "Ktorá",
+            "centra",
+            "ide",
+            "?",
+            "do"
+          ],
+          "correctOrder": [
+            "Ktorá",
+            "linka",
+            "ide",
+            "do",
+            "centra",
+            "?"
+          ],
+          "explanation": "Ktorá linka…?",
+          "order": 7,
+          "wordIds": [
+            "a1-u11-l02-cim-cestujem-w03"
+          ]
+        },
+        {
+          "id": "a1-u11-l02-cim-cestujem-ex08",
+          "lessonId": "a1-u11-l02-cim-cestujem",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Deti chodia do školy električkom.",
+          "errorToken": "električkom",
+          "correctToken": "električkou",
+          "explanation": "Жін.: električkou.",
+          "order": 8
+        },
+        {
+          "id": "a1-u11-l02-cim-cestujem-ex09",
+          "lessonId": "a1-u11-l02-cim-cestujem",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Z letiska do centra Bratislavy: Choďte autobusom číslo 61 na Hlavnú stanicu. Tam prestúpte na električku číslo 1 a vystúpte na zastávke Námestie SNP. Celá cesta trvá asi 40 minút.",
+          "questions": [
+            {
+              "question": "Де пересісти?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "на Головному вокзалі",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "в аеропорту",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "на площі SNP",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Скільки триває дорога?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "61 хвилину",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "1 годину",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "близько 40 хвилин",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 9,
+          "wordIds": [
+            "a1-u11-l02-cim-cestujem-w04"
+          ]
+        },
+        {
+          "id": "a1-u11-l02-cim-cestujem-ex10",
+          "lessonId": "a1-u11-l02-cim-cestujem",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти пояснюєш гостеві, як доїхати: автобусом до вокзалу, потім трамваєм.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Choď autobusu na stanicu.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Choď autobusom na stanicu a tam prestúp na električku.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Prestúp autobus.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Autobus stanica električka prestup.",
+              "correct": false
+            }
+          ],
+          "explanation": "орудний + prestúpiť.",
+          "order": 10,
+          "wordIds": [
+            "a1-u11-l02-cim-cestujem-w04"
+          ]
+        },
+        {
+          "id": "a1-u11-l02-cim-cestujem-ex11",
+          "lessonId": "a1-u11-l02-cim-cestujem",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні форми.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "autou",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "vlakom",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "autobusom",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "električkou",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "električkom",
+              "correct": false
+            }
+          ],
+          "explanation": "-om / -ou.",
+          "order": 11
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перша поїздка до нової роботи",
+        "description": "Ти з’ясовуєш маршрут у працівника MHD.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти питаєш, як дістатися до промзони.",
+            "options": [
+              {
+                "sk": "Ako sa dostanem do priemyselnej zóny?",
+                "correct": true
+              },
+              {
+                "sk": "Ako dostanem zóna?",
+                "correct": false
+              },
+              {
+                "sk": "Priemyselná zóna kde je linka?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Autobusom 22, prestúpite na Mlynoch.» Що треба зробити?",
+            "options": [
+              {
+                "sk": "їхати 22 зупинки",
+                "correct": false
+              },
+              {
+                "sk": "їхати автобусом 22 з пересадкою на Млинах",
+                "correct": true
+              },
+              {
+                "sk": "їхати трамваєм",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти уточнюєш, на що пересісти.",
+            "options": [
+              {
+                "sk": "Na čo mám prestúpiť?",
+                "correct": true
+              },
+              {
+                "sk": "Čím prestúpiť ja?",
+                "correct": false
+              },
+              {
+                "sk": "Prestúpiť na kde?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Na linku 51, vystúpite na konečnej.» Де виходити?",
+            "options": [
+              {
+                "sk": "на Млинах",
+                "correct": false
+              },
+              {
+                "sk": "на першій",
+                "correct": false
+              },
+              {
+                "sk": "на кінцевій",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти пересуваєшся містом упевнено. Далі — квитки й розклад."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти пересуваєшся містом упевнено. Далі — квитки й розклад.",
+        "nowYouKnow": [
+          "autobusom, vlakom, autom, električkou",
+          "MHD, linka, spoj",
+          "prestúpiť, konečná"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 11,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u11-l03-cestovny-poriadok",
+          "title": "Квитки й розклад"
+        }
+      }
+    }
+  ]
+}

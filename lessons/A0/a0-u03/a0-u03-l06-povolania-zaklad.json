@@ -1,0 +1,747 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u03-l06-povolania-zaklad",
+      "sectionId": "a0-u03",
+      "level": "A0",
+      "title": "Ким ти працюєш?",
+      "topic": "Знайомство",
+      "description": "Назви базових професій, питання «Čo robíš?» і «Kde pracuješ?».",
+      "order": 26,
+      "xpReward": 15,
+      "estimatedMinutes": 18,
+      "isPublished": true,
+      "intro": "Сказати, ким ти працюєш і де, і запитати про це інших.",
+      "completionMessage": "Ти вмієш говорити про роботу. Далі — як продиктувати ім’я по літерах.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Знайомство",
+        "title": "Ким ти працюєш?",
+        "shortDescription": "Сказати, ким ти працюєш і де, і запитати про це інших.",
+        "outcomes": [
+          "питати Čo robíš? / Kde pracujete?",
+          "казати Som kuchár / kuchárka",
+          "утворювати жіночі назви професій",
+          "казати Pracujem v…"
+        ],
+        "newWords": [
+          "Čo robíš?",
+          "pracovať",
+          "kuchár",
+          "predavačka",
+          "vodič",
+          "sklad"
+        ],
+        "exercisesCount": 11,
+        "reward": "+15 XP",
+        "estimatedMinutes": 18,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Čo robíš?",
+          "text": "Про роботу питають: «Čo robíš?» / «Čo robíte?» (що робиш? = ким працюєш?) або «Kde pracuješ?» (де працюєш?). Відповідь: «Som…» + професія.",
+          "examples": [
+            {
+              "sk": "Čo robíte? — Som vodič.",
+              "uk": "Ким працюєте? — Я водій."
+            },
+            {
+              "sk": "Kde pracuješ? — V hoteli.",
+              "uk": "Де працюєш? — У готелі."
+            }
+          ],
+          "shortRule": "Čo robíš? = ким працюєш",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Жінка і чоловік",
+          "text": "Більшість професій мають жіночу форму: kuchár — kuchárka, predavač — predavačka, učiteľ — učiteľka, lekár — lekárka, upratovač — upratovačka.",
+          "examples": [
+            {
+              "sk": "Som predavačka.",
+              "uk": "Я продавчиня."
+            },
+            {
+              "sk": "Môj manžel je kuchár.",
+              "uk": "Мій чоловік — кухар."
+            }
+          ],
+          "shortRule": "-ár → -árka, -teľ → -teľka",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Pracujem v… / na…",
+          "text": "«Pracujem v obchode» (у магазині), «v nemocnici» (у лікарні), «v sklade» (на складі), «na stavbe» (на будові), «v kancelárii» (в офісі).",
+          "examples": [
+            {
+              "sk": "Pracujem v sklade.",
+              "uk": "Я працюю на складі."
+            },
+            {
+              "sk": "Pracujem na stavbe.",
+              "uk": "Я працюю на будові."
+            }
+          ],
+          "shortRule": "Pracujem v / na + місце",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u03-l06-povolania-zaklad-w01",
+            "sk": "Čo robíš?",
+            "uk": "Ким працюєш? (що робиш?)",
+            "pronunciationUk": "чо робі:ш",
+            "exampleSk": "Čo robíš v práci?",
+            "exampleUk": "Що ти робиш на роботі?"
+          },
+          {
+            "wordId": "a0-u03-l06-povolania-zaklad-w02",
+            "sk": "pracovať",
+            "uk": "працювати",
+            "pronunciationUk": "працовать",
+            "exampleSk": "Pracujem v hoteli.",
+            "exampleUk": "Я працюю в готелі."
+          },
+          {
+            "wordId": "a0-u03-l06-povolania-zaklad-w03",
+            "sk": "kuchár",
+            "uk": "кухар",
+            "pronunciationUk": "куха:р",
+            "exampleSk": "Pracujem ako kuchár.",
+            "exampleUk": "Я працюю кухарем."
+          },
+          {
+            "wordId": "a0-u03-l06-povolania-zaklad-w04",
+            "sk": "predavačka",
+            "uk": "продавчиня",
+            "pronunciationUk": "предавачка",
+            "exampleSk": "Predavačka je veľmi milá.",
+            "exampleUk": "Продавчиня дуже мила."
+          },
+          {
+            "wordId": "a0-u03-l06-povolania-zaklad-w05",
+            "sk": "vodič",
+            "uk": "водій",
+            "pronunciationUk": "водзіч",
+            "exampleSk": "Môj brat je vodič autobusu.",
+            "exampleUk": "Мій брат — водій автобуса."
+          },
+          {
+            "wordId": "a0-u03-l06-povolania-zaklad-w06",
+            "sk": "sklad",
+            "uk": "склад",
+            "pronunciationUk": "склад",
+            "exampleSk": "Pracujem v sklade v noci.",
+            "exampleUk": "Я працюю на складі вночі."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u03-l06-povolania-zaklad-w01",
+          "sk": "Čo robíš?",
+          "uk": "Ким працюєш? (що робиш?)",
+          "pronunciationUk": "чо робі:ш",
+          "exampleSk": "Čo robíš v práci?",
+          "exampleUk": "Що ти робиш на роботі?",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l06-povolania-zaklad-w02",
+          "sk": "pracovať",
+          "uk": "працювати",
+          "pronunciationUk": "працовать",
+          "exampleSk": "Pracujem v hoteli.",
+          "exampleUk": "Я працюю в готелі.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l06-povolania-zaklad-w03",
+          "sk": "kuchár",
+          "uk": "кухар",
+          "pronunciationUk": "куха:р",
+          "exampleSk": "Pracujem ako kuchár.",
+          "exampleUk": "Я працюю кухарем.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l06-povolania-zaklad-w04",
+          "sk": "predavačka",
+          "uk": "продавчиня",
+          "pronunciationUk": "предавачка",
+          "exampleSk": "Predavačka je veľmi milá.",
+          "exampleUk": "Продавчиня дуже мила.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l06-povolania-zaklad-w05",
+          "sk": "vodič",
+          "uk": "водій",
+          "pronunciationUk": "водзіч",
+          "exampleSk": "Môj brat je vodič autobusu.",
+          "exampleUk": "Мій брат — водій автобуса.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u03-l06-povolania-zaklad-w06",
+          "sk": "sklad",
+          "uk": "склад",
+          "pronunciationUk": "склад",
+          "exampleSk": "Pracujem v sklade v noci.",
+          "exampleUk": "Я працюю на складі вночі.",
+          "level": "A0",
+          "topic": "Знайомство",
+          "tags": [
+            "a0-u03",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u03-l06-povolania-zaklad-ex01",
+          "lessonId": "a0-u03-l06-povolania-zaklad",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай чоловічу та жіночу форму.",
+          "pairs": [
+            {
+              "left": "kuchár",
+              "right": "kuchárka"
+            },
+            {
+              "left": "predavač",
+              "right": "predavačka"
+            },
+            {
+              "left": "učiteľ",
+              "right": "učiteľka"
+            },
+            {
+              "left": "lekár",
+              "right": "lekárka"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a0-u03-l06-povolania-zaklad-w03",
+            "a0-u03-l06-povolania-zaklad-w04"
+          ]
+        },
+        {
+          "id": "a0-u03-l06-povolania-zaklad-ex02",
+          "lessonId": "a0-u03-l06-povolania-zaklad",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери (говорить жінка).",
+          "sentenceParts": [
+            {
+              "text": "Som "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "predavačka",
+                "predavač"
+              ],
+              "correct": "predavačka"
+            },
+            {
+              "text": " v potravinách."
+            }
+          ],
+          "explanation": "Жінка — predavačka.",
+          "order": 2,
+          "wordIds": [
+            "a0-u03-l06-povolania-zaklad-w04"
+          ]
+        },
+        {
+          "id": "a0-u03-l06-povolania-zaklad-ex03",
+          "lessonId": "a0-u03-l06-povolania-zaklad",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Nová známa",
+              "sk": "Čo robíš?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Mám tridsať rokov.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Som z Kyjeva.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Som vodič, jazdím s kamiónom.",
+              "correct": true
+            }
+          ],
+          "explanation": "Čo robíš? — про роботу.",
+          "order": 3,
+          "wordIds": [
+            "a0-u03-l06-povolania-zaklad-w01",
+            "a0-u03-l06-povolania-zaklad-w05"
+          ]
+        },
+        {
+          "id": "a0-u03-l06-povolania-zaklad-ex04",
+          "lessonId": "a0-u03-l06-povolania-zaklad",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Pracujem v sklade»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Я працюю з другом",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Я працюю в школі",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Я працюю на складі",
+              "correct": true
+            }
+          ],
+          "explanation": "sklad — склад.",
+          "order": 4
+        },
+        {
+          "id": "a0-u03-l06-povolania-zaklad-ex05",
+          "lessonId": "a0-u03-l06-povolania-zaklad",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Де працюють ці люди?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "v obchode"
+            },
+            {
+              "id": "c2",
+              "title": "v kuchyni"
+            },
+            {
+              "id": "c3",
+              "title": "v nemocnici"
+            }
+          ],
+          "items": [
+            {
+              "sk": "sestra",
+              "category": "c3"
+            },
+            {
+              "sk": "lekárka",
+              "category": "c3"
+            },
+            {
+              "sk": "predavač",
+              "category": "c1"
+            },
+            {
+              "sk": "kuchár",
+              "category": "c2"
+            },
+            {
+              "sk": "pokladníčka",
+              "category": "c1"
+            },
+            {
+              "sk": "čašník",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Співвіднеси професію з місцем.",
+          "order": 5,
+          "wordIds": [
+            "a0-u03-l06-povolania-zaklad-w03",
+            "a0-u03-l06-povolania-zaklad-w04"
+          ]
+        },
+        {
+          "id": "a0-u03-l06-povolania-zaklad-ex06",
+          "lessonId": "a0-u03-l06-povolania-zaklad",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "______ v kancelárii. (я працюю)",
+          "acceptedAnswers": [
+            "Pracujem"
+          ],
+          "hint": "pracovať → pracujem.",
+          "explanation": "Pracujem v kancelárii.",
+          "order": 6
+        },
+        {
+          "id": "a0-u03-l06-povolania-zaklad-ex07",
+          "lessonId": "a0-u03-l06-povolania-zaklad",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Запитай пані, де вона працює.",
+          "tokens": [
+            "pracujete",
+            "pani",
+            "Kováčová",
+            ",",
+            "Kde",
+            "?"
+          ],
+          "correctOrder": [
+            "Kde",
+            "pracujete",
+            ",",
+            "pani",
+            "Kováčová",
+            "?"
+          ],
+          "explanation": "Kde pracujete — на «ви».",
+          "order": 7
+        },
+        {
+          "id": "a0-u03-l06-povolania-zaklad-ex08",
+          "lessonId": "a0-u03-l06-povolania-zaklad",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Čo robíš?» часто означає «Ким ти працюєш?».",
+          "correctAnswer": true,
+          "explanation": "Так, у знайомстві це питання про роботу.",
+          "order": 8,
+          "wordIds": [
+            "a0-u03-l06-povolania-zaklad-w01"
+          ]
+        },
+        {
+          "id": "a0-u03-l06-povolania-zaklad-ex09",
+          "lessonId": "a0-u03-l06-povolania-zaklad",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти представляєшся на новій роботі (ти — кухарка).",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Ahoj, som kuchár Oksana.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Dobrý deň, som Oksana, nová kuchárka.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Dobrý deň, kuchárka som ja Oksana.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Som kuchárka, a ty čo? Čau.",
+              "correct": false
+            }
+          ],
+          "explanation": "Ім’я + професія в правильному роді.",
+          "order": 9,
+          "wordIds": [
+            "a0-u03-l06-povolania-zaklad-w03"
+          ]
+        },
+        {
+          "id": "a0-u03-l06-povolania-zaklad-ex10",
+          "lessonId": "a0-u03-l06-povolania-zaklad",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Ahoj, som Serhij. Mám tridsaťpäť rokov a som z Ukrajiny. Na Slovensku pracujem ako vodič. Moja manželka Olena je kuchárka, pracuje v hoteli v centre.",
+          "questions": [
+            {
+              "question": "Ким працює Сергій?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "продавцем",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "кухарем",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "водієм",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Де працює Олена?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "на складі",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "у школі",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "у готелі",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "a0-u03-l06-povolania-zaklad-w03",
+            "a0-u03-l06-povolania-zaklad-w05"
+          ]
+        },
+        {
+          "id": "a0-u03-l06-povolania-zaklad-ex11",
+          "lessonId": "a0-u03-l06-povolania-zaklad",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери всі назви жіночих професій.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "kuchár",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "učiteľka",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "kuchárka",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "vodič",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "lekárka",
+              "correct": true
+            },
+            {
+              "id": "f",
+              "sk": "predavač",
+              "correct": false
+            }
+          ],
+          "explanation": "Жіночі форми закінчуються на -ka.",
+          "order": 11,
+          "wordIds": [
+            "a0-u03-l06-povolania-zaklad-w03",
+            "a0-u03-l06-povolania-zaklad-w04",
+            "a0-u03-l06-povolania-zaklad-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Анкета в агенції",
+        "description": "Агентка з працевлаштування розпитує тебе (ти — чоловік).",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Čo robíte?» (ти — водій)",
+            "options": [
+              {
+                "sk": "Som vodič.",
+                "correct": true
+              },
+              {
+                "sk": "Som vodička.",
+                "correct": false
+              },
+              {
+                "sk": "Robím vodič.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Kde ste pracovali na Ukrajine?» (на складі)",
+            "options": [
+              {
+                "sk": "V sklade.",
+                "correct": true
+              },
+              {
+                "sk": "Na sklade som vodič.",
+                "correct": false
+              },
+              {
+                "sk": "Sklad.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«A vaša manželka?» (вона кухарка)",
+            "options": [
+              {
+                "sk": "Je kuchárka.",
+                "correct": true
+              },
+              {
+                "sk": "Kuchárka som.",
+                "correct": false
+              },
+              {
+                "sk": "Je kuchár.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Chcete pracovať v Bratislave?»",
+            "options": [
+              {
+                "sk": "Áno, rád.",
+                "correct": true
+              },
+              {
+                "sk": "Áno, Bratislava.",
+                "correct": false
+              },
+              {
+                "sk": "Som z Bratislavy.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш говорити про роботу. Далі — як продиктувати ім’я по літерах."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш говорити про роботу. Далі — як продиктувати ім’я по літерах.",
+        "nowYouKnow": [
+          "Čo robíš? / Kde pracuješ?",
+          "Som + професія",
+          "-ár → -árka, -teľ → -teľka",
+          "Pracujem v / na…"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 11,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u03-l07-hlaskovanie",
+          "title": "Продиктуй по літерах"
+        }
+      }
+    }
+  ]
+}

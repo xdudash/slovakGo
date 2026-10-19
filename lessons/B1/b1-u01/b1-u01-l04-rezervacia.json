@@ -1,0 +1,923 @@
+{
+  "lessons": [
+    {
+      "id": "b1-u01-l04-rezervacia",
+      "sectionId": "b1-u01",
+      "level": "B1",
+      "title": "Бронювання столика",
+      "topic": "Кафе й ресторан",
+      "description": "Бронювання столика телефоном і онлайн: дата, час, кількість осіб, місце (terasa, salónik, pri okne), зміна і скасування.",
+      "order": 4,
+      "xpReward": 40,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Забронювати, змінити або скасувати столик для родини чи колективу.",
+      "completionMessage": "Ти вмієш бронювати столик. Далі — як ввічливо поскаржитися.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B1 · Кафе й ресторан",
+        "title": "Бронювання столика",
+        "shortDescription": "Забронювати, змінити або скасувати столик для родини чи колективу.",
+        "outcomes": [
+          "бронювати stôl pre štyri osoby na sobotu o siedmej",
+          "вибирати місце: na terase, v salóniku, pri okne",
+          "бронювати na meno…",
+          "переносити, скасовувати й попереджати про запізнення"
+        ],
+        "newWords": [
+          "salónik",
+          "terasa",
+          "na meno",
+          "počet osôb",
+          "pri okne"
+        ],
+        "exercisesCount": 15,
+        "reward": "+40 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Як забронювати",
+          "text": "«Chcel by som si rezervovať stôl na sobotu.» Кількість: «stôl pre + знахідний»: «pre dve osoby», «pre štyri osoby», з п’яти — родовий множини: «pre šesť osôb». День — «na + знахідний»: «na sobotu», час — «o + місцевий»: «o siedmej». Ім’я: «Na aké meno?» — «Na meno Kovalenko.»",
+          "examples": [
+            {
+              "sk": "Chcela by som si rezervovať stôl pre štyri osoby na piatok o siedmej.",
+              "uk": "Я хотіла б забронювати столик на чотирьох на п’ятницю на сьому."
+            },
+            {
+              "sk": "Na aké meno to bude?",
+              "uk": "На яке ім’я записати?"
+            }
+          ],
+          "shortRule": "stôl pre + число · na + день · o + година",
+          "commonMistakes": [
+            {
+              "mistake": "pre šesť osoby",
+              "correct": "pre šesť osôb"
+            },
+            {
+              "mistake": "na sobota",
+              "correct": "na sobotu"
+            },
+            {
+              "mistake": "o sedem",
+              "correct": "o siedmej"
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Де сісти",
+          "text": "«Máte voľný stôl na terase?» — на терасі. «Pri okne» — біля вікна. «Salónik» — окрема зала для групи: святкування, корпоративна вечеря. «Počet osôb» — кількість осіб, це поле є в кожній онлайн-формі. За salónik часто просять передоплату — «zálohu».",
+          "examples": [
+            {
+              "sk": "Na oslavu potrebujeme salónik pre dvadsať osôb.",
+              "uk": "Для святкування нам потрібна окрема зала на двадцять осіб."
+            },
+            {
+              "sk": "Sedeli by sme radšej pri okne.",
+              "uk": "Ми б краще сіли біля вікна."
+            }
+          ],
+          "shortRule": "na terase · v salóniku · pri okne",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Зміни й скасування",
+          "text": "«Mohli by sme rezerváciu presunúť na ôsmu?» — перенести на восьму. «Potrebujem zrušiť rezerváciu.» Запізнення: «Budeme asi o dvadsať minút meškať.» Заклад може написати: «Stôl vám podržíme 15 minút» — триматимемо столик 15 хвилин, після цього бронювання скасовують.",
+          "examples": [
+            {
+              "sk": "Prepáčte, budeme asi o dvadsať minút meškať.",
+              "uk": "Вибачте, ми, мабуть, запізнимося на двадцять хвилин."
+            },
+            {
+              "sk": "Chcel by som zmeniť počet osôb zo štyroch na šesť.",
+              "uk": "Я хотів би змінити кількість осіб з чотирьох на шість."
+            }
+          ],
+          "shortRule": "presunúť na · zrušiť · budeme meškať",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b1-u01-l04-rezervacia-w01",
+            "sk": "salónik",
+            "uk": "окрема зала (в ресторані)",
+            "pronunciationUk": "сало:нік",
+            "exampleSk": "Firemnú večeru máme v salóniku.",
+            "exampleUk": "Корпоративна вечеря в нас в окремій залі."
+          },
+          {
+            "wordId": "b1-u01-l04-rezervacia-w02",
+            "sk": "terasa",
+            "uk": "тераса",
+            "pronunciationUk": "тераса",
+            "exampleSk": "V lete sedíme najradšej na terase.",
+            "exampleUk": "Улітку ми найбільше любимо сидіти на терасі."
+          },
+          {
+            "wordId": "b1-u01-l04-rezervacia-w03",
+            "sk": "na meno",
+            "uk": "на ім’я",
+            "pronunciationUk": "на мено",
+            "exampleSk": "Stôl je rezervovaný na meno Hrubá.",
+            "exampleUk": "Столик заброньований на ім’я Груба."
+          },
+          {
+            "wordId": "b1-u01-l04-rezervacia-w04",
+            "sk": "počet osôb",
+            "uk": "кількість осіб",
+            "pronunciationUk": "почет осуоб",
+            "exampleSk": "Do formulára napíšte počet osôb.",
+            "exampleUk": "У формі напишіть кількість осіб."
+          },
+          {
+            "wordId": "b1-u01-l04-rezervacia-w05",
+            "sk": "pri okne",
+            "uk": "біля вікна",
+            "pronunciationUk": "прі окне",
+            "exampleSk": "Máte voľný stôl pri okne?",
+            "exampleUk": "У вас є вільний столик біля вікна?"
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b1-u01-l04-rezervacia-w01",
+          "sk": "salónik",
+          "uk": "окрема зала (в ресторані)",
+          "pronunciationUk": "сало:нік",
+          "exampleSk": "Firemnú večeru máme v salóniku.",
+          "exampleUk": "Корпоративна вечеря в нас в окремій залі.",
+          "level": "B1",
+          "topic": "Кафе й ресторан",
+          "tags": [
+            "b1-u01",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u01-l04-rezervacia-w02",
+          "sk": "terasa",
+          "uk": "тераса",
+          "pronunciationUk": "тераса",
+          "exampleSk": "V lete sedíme najradšej na terase.",
+          "exampleUk": "Улітку ми найбільше любимо сидіти на терасі.",
+          "level": "B1",
+          "topic": "Кафе й ресторан",
+          "tags": [
+            "b1-u01",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u01-l04-rezervacia-w03",
+          "sk": "na meno",
+          "uk": "на ім’я",
+          "pronunciationUk": "на мено",
+          "exampleSk": "Stôl je rezervovaný na meno Hrubá.",
+          "exampleUk": "Столик заброньований на ім’я Груба.",
+          "level": "B1",
+          "topic": "Кафе й ресторан",
+          "tags": [
+            "b1-u01",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u01-l04-rezervacia-w04",
+          "sk": "počet osôb",
+          "uk": "кількість осіб",
+          "pronunciationUk": "почет осуоб",
+          "exampleSk": "Do formulára napíšte počet osôb.",
+          "exampleUk": "У формі напишіть кількість осіб.",
+          "level": "B1",
+          "topic": "Кафе й ресторан",
+          "tags": [
+            "b1-u01",
+            "b1"
+          ]
+        },
+        {
+          "id": "b1-u01-l04-rezervacia-w05",
+          "sk": "pri okne",
+          "uk": "біля вікна",
+          "pronunciationUk": "прі окне",
+          "exampleSk": "Máte voľný stôl pri okne?",
+          "exampleUk": "У вас є вільний столик біля вікна?",
+          "level": "B1",
+          "topic": "Кафе й ресторан",
+          "tags": [
+            "b1-u01",
+            "b1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b1-u01-l04-rezervacia-ex01",
+          "lessonId": "b1-u01-l04-rezervacia",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "salónik",
+              "right": "окрема зала"
+            },
+            {
+              "left": "terasa",
+              "right": "тераса"
+            },
+            {
+              "left": "na meno",
+              "right": "на ім’я"
+            },
+            {
+              "left": "počet osôb",
+              "right": "кількість осіб"
+            },
+            {
+              "left": "pri okne",
+              "right": "біля вікна"
+            },
+            {
+              "left": "zrušiť rezerváciu",
+              "right": "скасувати бронювання"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b1-u01-l04-rezervacia-w01",
+            "b1-u01-l04-rezervacia-w02",
+            "b1-u01-l04-rezervacia-w03",
+            "b1-u01-l04-rezervacia-w04",
+            "b1-u01-l04-rezervacia-w05"
+          ]
+        },
+        {
+          "id": "b1-u01-l04-rezervacia-ex02",
+          "lessonId": "b1-u01-l04-rezervacia",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Rezervujeme stôl pre "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "štyrom",
+                "štyria",
+                "štyri"
+              ],
+              "correct": "štyri"
+            },
+            {
+              "text": " osoby."
+            }
+          ],
+          "explanation": "osoba — жіночий рід, знахідний: štyri osoby.",
+          "order": 2
+        },
+        {
+          "id": "b1-u01-l04-rezervacia-ex03",
+          "lessonId": "b1-u01-l04-rezervacia",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "V lete sedíme radi na "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "terasa",
+                "terase",
+                "terasu"
+              ],
+              "correct": "terase"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "na + місцевий (де?): na terase.",
+          "order": 3,
+          "wordIds": [
+            "b1-u01-l04-rezervacia-w02"
+          ]
+        },
+        {
+          "id": "b1-u01-l04-rezervacia-ex04",
+          "lessonId": "b1-u01-l04-rezervacia",
+          "type": "dialogue_order",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Розстав телефонну розмову.",
+          "lines": [
+            {
+              "id": "l5",
+              "sk": "Reštaurácia: Terasa je v sobotu plná, ale máme voľný stôl pri okne. Na aké meno?"
+            },
+            {
+              "id": "l4",
+              "sk": "Hosť: Pre päť osôb, o siedmej, ak sa dá, na terase."
+            },
+            {
+              "id": "l3",
+              "sk": "Reštaurácia: Pre koľko osôb a na koľkú?"
+            },
+            {
+              "id": "l1",
+              "sk": "Reštaurácia: Reštaurácia Lipa, dobrý deň, prosím."
+            },
+            {
+              "id": "l6",
+              "sk": "Hosť: Na meno Melnyk. Ďakujem."
+            },
+            {
+              "id": "l2",
+              "sk": "Hosť: Dobrý deň, chcela by som si rezervovať stôl na sobotu večer."
+            }
+          ],
+          "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5",
+            "l6"
+          ],
+          "order": 4,
+          "wordIds": [
+            "b1-u01-l04-rezervacia-w02",
+            "b1-u01-l04-rezervacia-w03",
+            "b1-u01-l04-rezervacia-w04",
+            "b1-u01-l04-rezervacia-w05"
+          ]
+        },
+        {
+          "id": "b1-u01-l04-rezervacia-ex05",
+          "lessonId": "b1-u01-l04-rezervacia",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай онлайн-підтвердження.",
+          "document": {
+            "title": "Potvrdenie rezervácie – Reštaurácia Dunaj",
+            "fields": [
+              {
+                "label": "Meno",
+                "value": "Oleh Bondar"
+              },
+              {
+                "label": "Dátum",
+                "value": "piatok 16. 10."
+              },
+              {
+                "label": "Čas",
+                "value": "18:30"
+              },
+              {
+                "label": "Počet osôb",
+                "value": "8"
+              },
+              {
+                "label": "Miesto",
+                "value": "salónik"
+              },
+              {
+                "label": "Poznámka",
+                "value": "Stôl vám podržíme 15 minút. Pri neskoršom príchode bude rezervácia zrušená."
+              }
+            ]
+          },
+          "question": "До котрої години Олег має прийти, щоб не втратити столик?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "до 18:45",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "до 19:00",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "до 18:30",
+              "correct": false
+            }
+          ],
+          "explanation": "18:30 + 15 хвилин — 18:45.",
+          "order": 5,
+          "wordIds": [
+            "b1-u01-l04-rezervacia-w01",
+            "b1-u01-l04-rezervacia-w03",
+            "b1-u01-l04-rezervacia-w04"
+          ]
+        },
+        {
+          "id": "b1-u01-l04-rezervacia-ex06",
+          "lessonId": "b1-u01-l04-rezervacia",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти хочеш перенести бронювання на восьму.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Presunúť rezervácia osem, prosím.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Mohli by sme presunúť rezerváciu na ôsma?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Mohli by sme presunúť rezerváciu o ôsmu?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Mohli by sme presunúť rezerváciu na ôsmu?",
+              "correct": true
+            }
+          ],
+          "explanation": "presunúť na + знахідний: na ôsmu.",
+          "order": 6
+        },
+        {
+          "id": "b1-u01-l04-rezervacia-ex07",
+          "lessonId": "b1-u01-l04-rezervacia",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Chcela by som si rezervovať stôl ______ dve osoby.",
+          "acceptedAnswers": [
+            "pre"
+          ],
+          "explanation": "stôl pre + знахідний: pre dve osoby.",
+          "order": 7
+        },
+        {
+          "id": "b1-u01-l04-rezervacia-ex08",
+          "lessonId": "b1-u01-l04-rezervacia",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Офіціант питає: «Na aké meno to bude?» Що він хоче знати?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Як звуть офіціанта",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "На яке ім’я записати бронювання",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Скільки буде осіб",
+              "correct": false
+            }
+          ],
+          "explanation": "na meno — на ім’я.",
+          "order": 8
+        },
+        {
+          "id": "b1-u01-l04-rezervacia-ex09",
+          "lessonId": "b1-u01-l04-rezervacia",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай SMS із ресторану.",
+          "message": {
+            "sender": "Reštaurácia Lipa",
+            "body": "Dobrý deň, pripomíname vašu rezerváciu dnes o 19:00 pre 4 osoby. Ak nemôžete prísť, prosíme, zrušte ju odpoveďou NIE. Ďakujeme."
+          },
+          "question": "Що треба зробити, якщо ви не прийдете?",
+          "options": [
+            {
+              "id": "a",
+              "text": "нічого, бронювання скасується саме",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "зателефонувати керівникові",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "відповісти на SMS словом NIE",
+              "correct": true
+            }
+          ],
+          "explanation": "zrušte ju odpoveďou NIE — скасуйте, відповівши NIE.",
+          "order": 9
+        },
+        {
+          "id": "b1-u01-l04-rezervacia-ex10",
+          "lessonId": "b1-u01-l04-rezervacia",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Prepáčte, budeme asi o desať minút meškáme.",
+          "errorToken": "meškáme",
+          "correctToken": "meškať",
+          "explanation": "Майбутній час: budeme + інфінітив — budeme meškať.",
+          "order": 10
+        },
+        {
+          "id": "b1-u01-l04-rezervacia-ex11",
+          "lessonId": "b1-u01-l04-rezervacia",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні фрази для бронювання.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Máte voľný stôl na sobota?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Potrebujeme salónik pre dvadsať osoby.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Máte voľný stôl na sobotu?",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Rezervácia je na meno Kovalenko.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Potrebujeme salónik pre dvadsať osôb.",
+              "correct": true
+            }
+          ],
+          "explanation": "na + знахідний: na sobotu; після dvadsať — родовий множини: osôb.",
+          "order": 11,
+          "wordIds": [
+            "b1-u01-l04-rezervacia-w01",
+            "b1-u01-l04-rezervacia-w03",
+            "b1-u01-l04-rezervacia-w04"
+          ]
+        },
+        {
+          "id": "b1-u01-l04-rezervacia-ex12",
+          "lessonId": "b1-u01-l04-rezervacia",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Vážený pán vedúci, dovoľujem si Vás požiadať o rezerváciu salónika pre dvadsať osôb na 12. decembra.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": true
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": false
+            }
+          ],
+          "explanation": "Vážený pán…, dovoľujem si Vás požiadať — офіційний лист.",
+          "order": 12,
+          "wordIds": [
+            "b1-u01-l04-rezervacia-w01",
+            "b1-u01-l04-rezervacia-w04"
+          ]
+        },
+        {
+          "id": "b1-u01-l04-rezervacia-ex13",
+          "lessonId": "b1-u01-l04-rezervacia",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Čašník: «Terasa je na sobotu úplne obsadená, ale vnútri ešte máme voľné stoly.»",
+          "statement": "У суботу можна сісти лише всередині.",
+          "correctAnswer": true,
+          "explanation": "Тераса зайнята, вільні столики є тільки всередині.",
+          "order": 13,
+          "wordIds": [
+            "b1-u01-l04-rezervacia-w02"
+          ]
+        },
+        {
+          "id": "b1-u01-l04-rezervacia-ex14",
+          "lessonId": "b1-u01-l04-rezervacia",
+          "type": "branching_dialogue",
+          "skill": [
+            "dialogue",
+            "real_life"
+          ],
+          "instruction": "Пройди діалог: обирай доречні відповіді.",
+          "successMessage": "Ти забронював(ла) окрему залу на день народження!",
+          "startNode": "n1",
+          "nodes": {
+            "n1": {
+              "speaker": "Reštaurácia",
+              "sk": "Reštaurácia Dunaj, dobrý deň.",
+              "choices": [
+                {
+                  "id": "n1c1",
+                  "sk": "Dobrý deň, chcel by som si rezervovať salónik na oslavu.",
+                  "next": "n2",
+                  "quality": "best"
+                },
+                {
+                  "id": "n1c3",
+                  "sk": "Ahoj, salónik oslava?",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c2",
+                  "sk": "Dobrý deň, chcel by som rezervovať salónikom oslavu.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n2": {
+              "speaker": "Reštaurácia",
+              "sk": "Na kedy a pre koľko osôb?",
+              "choices": [
+                {
+                  "id": "n2c1",
+                  "sk": "Na sobotu dvadsiateho, pre pätnásť osôb.",
+                  "next": "n3",
+                  "quality": "best"
+                },
+                {
+                  "id": "n2c2",
+                  "sk": "Na sobota dvadsať, pätnásť osoby.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c3",
+                  "sk": "V sobotu pätnásť osobami.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n3": {
+              "speaker": "Reštaurácia",
+              "sk": "Za salónik vyberáme zálohu 50 eur. Vyhovuje vám to?",
+              "choices": [
+                {
+                  "id": "n3c1",
+                  "sk": "Áno, to je v poriadku. Ako môžem zálohu zaplatiť?",
+                  "next": "n4",
+                  "quality": "best"
+                },
+                {
+                  "id": "n3c2",
+                  "sk": "Áno, záloha platiť ako?",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c3",
+                  "sk": "Nie, zálohu nikdy neplatíme, aj tak prídeme.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n4": {
+              "speaker": "Reštaurácia",
+              "sk": "Prevodom na účet. Na aké meno píšem rezerváciu?",
+              "choices": [
+                {
+                  "id": "n4c2",
+                  "sk": "Meno je Tarasom Bondarom.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n4c1",
+                  "sk": "Na meno Taras Bondar.",
+                  "next": "success",
+                  "quality": "best"
+                },
+                {
+                  "id": "n4c3",
+                  "sk": "Pre meno Taras Bondar.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            }
+          },
+          "order": 14,
+          "wordIds": [
+            "b1-u01-l04-rezervacia-w01",
+            "b1-u01-l04-rezervacia-w03",
+            "b1-u01-l04-rezervacia-w04"
+          ]
+        },
+        {
+          "id": "b1-u01-l04-rezervacia-ex15",
+          "lessonId": "b1-u01-l04-rezervacia",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перетвори на ввічливе прохання з «Mohli by ste…».",
+          "source": "Zmeňte počet osôb na šesť.",
+          "acceptedAnswers": [
+            "Mohli by ste zmeniť počet osôb na šesť?",
+            "Mohli by ste počet osôb zmeniť na šesť?"
+          ],
+          "explanation": "Mohli by ste + інфінітив — ввічливе прохання.",
+          "order": 15,
+          "wordIds": [
+            "b1-u01-l04-rezervacia-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Бронювання на мамин день народження",
+        "description": "Ти телефонуєш у ресторан, щоб забронювати столик для родини.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти кажеш, що хочеш забронювати столик на суботу.",
+            "options": [
+              {
+                "sk": "Chcel by som si rezervovať stôl na sobotu.",
+                "correct": true
+              },
+              {
+                "sk": "Rezervovať stôl sobotou chcem.",
+                "correct": false
+              },
+              {
+                "sk": "Chcel by som si rezervovať stôl na sobota.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Pre koľko osôb?» (вас шестеро)",
+            "options": [
+              {
+                "sk": "Pre šesť osoby.",
+                "correct": false
+              },
+              {
+                "sk": "Pre šesť osôb.",
+                "correct": true
+              },
+              {
+                "sk": "Na šesť osobách.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти питаєш, чи є місце на терасі.",
+            "options": [
+              {
+                "sk": "Máte voľný stôl na terasa?",
+                "correct": false
+              },
+              {
+                "sk": "Terasu máte voľnú stôl?",
+                "correct": false
+              },
+              {
+                "sk": "Máte voľný stôl na terase?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Stôl vám podržíme pätnásť minút.» Що це означає?",
+            "options": [
+              {
+                "sk": "Ви маєте поїсти за 15 хвилин",
+                "correct": false
+              },
+              {
+                "sk": "Столик буде готовий за 15 хвилин",
+                "correct": false
+              },
+              {
+                "sk": "Столик триматимуть 15 хвилин, якщо ви запізнитеся",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш бронювати столик. Далі — як ввічливо поскаржитися."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш бронювати столик. Далі — як ввічливо поскаржитися.",
+        "nowYouKnow": [
+          "stôl pre štyri osoby / pre šesť osôb na sobotu o siedmej",
+          "na terase, v salóniku, pri okne",
+          "Na aké meno? — Na meno…",
+          "presunúť na…, zrušiť, budeme meškať"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 15,
+        "xpReward": 40,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b1-u01-l05-staznost",
+          "title": "Скарга в ресторані"
+        }
+      }
+    }
+  ]
+}

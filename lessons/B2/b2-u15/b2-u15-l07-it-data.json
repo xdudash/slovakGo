@@ -1,0 +1,737 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u15-l07-it-data",
+      "sectionId": "b2-u15",
+      "level": "B2",
+      "title": "IT і дані: база, алгоритм, програма",
+      "topic": "Наука й техніка",
+      "description": "Словник IT і даних словацькою: dáta, databáza, softvér, algoritmus. Як пояснювати, що робить програма, і як говорити про обробку даних.",
+      "order": 147,
+      "xpReward": 50,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Описувати роботу з даними й програмами словацькою, точно й без зайвих технічних слів.",
+      "completionMessage": "Ти розумієш основні терміни IT і даних. Далі — етика науки: чесність, відповідальність і згода учасників.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Наука й техніка",
+        "title": "IT і дані: база, алгоритм, програма",
+        "shortDescription": "Описувати роботу з даними й програмами словацькою, точно й без зайвих технічних слів.",
+        "outcomes": [
+          "пояснювати роботу бази даних",
+          "описувати алгоритм простими словами",
+          "використовувати softvér і aplikácia правильно",
+          "відрізняти дані від висновків"
+        ],
+        "newWords": [
+          "dáta",
+          "databáza",
+          "softvér",
+          "algoritmus"
+        ],
+        "exercisesCount": 13,
+        "reward": "+50 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Дані й бази",
+          "text": "Dáta — дані (множина, але з однинним присудком у науці: «dáta sú…» або «dáta ukazujú»). Databáza — база даних. Дієслово «spracovať» — обробити: «Dáta sme spracovali v databáze.» = Дані ми обробили в базі.",
+          "examples": [
+            {
+              "sk": "Dáta ukazujú nový trend.",
+              "uk": "Дані показують нову тенденцію."
+            },
+            {
+              "sk": "Dáta sme spracovali v databáze.",
+              "uk": "Дані ми обробили в базі даних."
+            }
+          ],
+          "shortRule": "dáta · databáza · spracovať",
+          "commonMistakes": [
+            {
+              "mistake": "Dáta je veľké.",
+              "correct": "Dáta sú veľké."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Алгоритм і програма",
+          "text": "Algoritmus — послідовність кроків для розв’язання задачі; softvér — програмне забезпечення; program — програма. Побудова: «Algoritmus rieši úlohu…» = Алгоритм розв’язує завдання.",
+          "examples": [
+            {
+              "sk": "Algoritmus rieši úlohu rýchlo.",
+              "uk": "Алгоритм розв’язує завдання швидко."
+            },
+            {
+              "sk": "Softvér je nový.",
+              "uk": "Програмне забезпечення нове."
+            }
+          ],
+          "shortRule": "algoritmus · softvér · program",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Дані — не висновок",
+          "text": "Дані — це факти або цифри. Висновок робимо після аналізу. Не плутай: «Dáta ukazujú…» — дані показують; «Môžeme usúdiť…» — можемо зробити висновок.",
+          "examples": [
+            {
+              "sk": "Dáta ukazujú nárast.",
+              "uk": "Дані показують зростання."
+            },
+            {
+              "sk": "Môžeme usúdiť, že trend rastie.",
+              "uk": "Можемо зробити висновок, що тренд зростає."
+            }
+          ],
+          "shortRule": "dáta ukazujú · môžeme usúdiť",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u15-l07-it-data-w01",
+            "sk": "dáta",
+            "uk": "дані",
+            "pronunciationUk": "дата",
+            "exampleSk": "Dáta sme spracovali včera.",
+            "exampleUk": "Дані ми обробили вчора."
+          },
+          {
+            "wordId": "b2-u15-l07-it-data-w02",
+            "sk": "databáza",
+            "uk": "база даних",
+            "pronunciationUk": "датабаза",
+            "exampleSk": "Databáza obsahuje tisíce záznamov.",
+            "exampleUk": "База даних містить тисячі записів."
+          },
+          {
+            "wordId": "b2-u15-l07-it-data-w03",
+            "sk": "softvér",
+            "uk": "програмне забезпечення",
+            "pronunciationUk": "софтвер",
+            "exampleSk": "Softvér sa aktualizuje každý mesiac.",
+            "exampleUk": "Програмне забезпечення оновлюють щомісяця."
+          },
+          {
+            "wordId": "b2-u15-l07-it-data-w04",
+            "sk": "algoritmus",
+            "uk": "алгоритм",
+            "pronunciationUk": "алгоритмус",
+            "exampleSk": "Algoritmus rieši úlohu rýchlo.",
+            "exampleUk": "Алгоритм розв’язує завдання швидко."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u15-l07-it-data-w01",
+          "sk": "dáta",
+          "uk": "дані",
+          "pronunciationUk": "дата",
+          "exampleSk": "Dáta sme spracovali včera.",
+          "exampleUk": "Дані ми обробили вчора.",
+          "level": "B2",
+          "topic": "Наука й техніка",
+          "tags": [
+            "b2-u15",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u15-l07-it-data-w02",
+          "sk": "databáza",
+          "uk": "база даних",
+          "pronunciationUk": "датабаза",
+          "exampleSk": "Databáza obsahuje tisíce záznamov.",
+          "exampleUk": "База даних містить тисячі записів.",
+          "level": "B2",
+          "topic": "Наука й техніка",
+          "tags": [
+            "b2-u15",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u15-l07-it-data-w03",
+          "sk": "softvér",
+          "uk": "програмне забезпечення",
+          "pronunciationUk": "софтвер",
+          "exampleSk": "Softvér sa aktualizuje každý mesiac.",
+          "exampleUk": "Програмне забезпечення оновлюють щомісяця.",
+          "level": "B2",
+          "topic": "Наука й техніка",
+          "tags": [
+            "b2-u15",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u15-l07-it-data-w04",
+          "sk": "algoritmus",
+          "uk": "алгоритм",
+          "pronunciationUk": "алгоритмус",
+          "exampleSk": "Algoritmus rieši úlohu rýchlo.",
+          "exampleUk": "Алгоритм розв’язує завдання швидко.",
+          "level": "B2",
+          "topic": "Наука й техніка",
+          "tags": [
+            "b2-u15",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u15-l07-it-data-ex01",
+          "lessonId": "b2-u15-l07-it-data",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай слово і значення.",
+          "pairs": [
+            {
+              "left": "dáta",
+              "right": "дані"
+            },
+            {
+              "left": "databáza",
+              "right": "база даних"
+            },
+            {
+              "left": "softvér",
+              "right": "програмне забезпечення"
+            },
+            {
+              "left": "algoritmus",
+              "right": "алгоритм"
+            },
+            {
+              "left": "spracovať",
+              "right": "обробити"
+            },
+            {
+              "left": "záznam",
+              "right": "запис"
+            }
+          ],
+          "explanation": "Ключова IT-лексика.",
+          "order": 1,
+          "wordIds": [
+            "b2-u15-l07-it-data-w01",
+            "b2-u15-l07-it-data-w02",
+            "b2-u15-l07-it-data-w03",
+            "b2-u15-l07-it-data-w04"
+          ]
+        },
+        {
+          "id": "b2-u15-l07-it-data-ex02",
+          "lessonId": "b2-u15-l07-it-data",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Dáta "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "ukazuje",
+                "ukazujem",
+                "ukazujú"
+              ],
+              "correct": "ukazujú"
+            },
+            {
+              "text": " nový trend."
+            }
+          ],
+          "explanation": "Множина: ukazujú.",
+          "order": 2,
+          "wordIds": [
+            "b2-u15-l07-it-data-w01"
+          ]
+        },
+        {
+          "id": "b2-u15-l07-it-data-ex03",
+          "lessonId": "b2-u15-l07-it-data",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди помилку.",
+          "sentence": "Algoritmus rieši úlohy rýchlo.",
+          "errorToken": "úlohy",
+          "correctToken": "úloha",
+          "explanation": "Однина: úlohu — знахідний відмінок після «rieši».",
+          "order": 3,
+          "wordIds": [
+            "b2-u15-l07-it-data-w04"
+          ]
+        },
+        {
+          "id": "b2-u15-l07-it-data-ex04",
+          "lessonId": "b2-u15-l07-it-data",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Databáza ______ tisíce záznamov. (містити)",
+          "acceptedAnswers": [
+            "obsahuje"
+          ],
+          "explanation": "Однина: obsahuje.",
+          "order": 4,
+          "wordIds": [
+            "b2-u15-l07-it-data-w02"
+          ]
+        },
+        {
+          "id": "b2-u15-l07-it-data-ex05",
+          "lessonId": "b2-u15-l07-it-data",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Dáta je veľké.",
+          "acceptedAnswers": [
+            "Dáta sú veľké."
+          ],
+          "explanation": "Множина «dáta» з дієсловом «sú».",
+          "order": 5,
+          "wordIds": [
+            "b2-u15-l07-it-data-w01"
+          ]
+        },
+        {
+          "id": "b2-u15-l07-it-data-ex06",
+          "lessonId": "b2-u15-l07-it-data",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «softvér»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "апаратна частина",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "програмне забезпечення",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "сховище даних",
+              "correct": false
+            }
+          ],
+          "explanation": "Softvér — програми і системи, а не залізо.",
+          "order": 6
+        },
+        {
+          "id": "b2-u15-l07-it-data-ex07",
+          "lessonId": "b2-u15-l07-it-data",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Dáta ukazujú nárast.",
+          "statement": "Дані вже містять висновок.",
+          "correctAnswer": false,
+          "explanation": "Дані — лише факти; висновок робимо після аналізу.",
+          "order": 7,
+          "wordIds": [
+            "b2-u15-l07-it-data-w01"
+          ]
+        },
+        {
+          "id": "b2-u15-l07-it-data-ex08",
+          "lessonId": "b2-u15-l07-it-data",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення від колеги.",
+          "message": {
+            "sender": "Juraj",
+            "body": "Ahoj, databáza je hotová, ale softvér ešte neviem spustiť. Pomôžeš?"
+          },
+          "question": "Що Юрай просить?",
+          "options": [
+            {
+              "id": "a",
+              "text": "видалити базу",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "допомогти запустити програму",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "змінити дані",
+              "correct": false
+            }
+          ],
+          "explanation": "Йдеться про запуск програмного забезпечення.",
+          "order": 8,
+          "wordIds": [
+            "b2-u15-l07-it-data-w02",
+            "b2-u15-l07-it-data-w03"
+          ]
+        },
+        {
+          "id": "b2-u15-l07-it-data-ex09",
+          "lessonId": "b2-u15-l07-it-data",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Скажи, що дані обробили в базі. (ти — чоловік)",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Dáta sme spracovala v databáze.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Dáta sme spracovali v databáze.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Dáta sme spracovali v databáza.",
+              "correct": false
+            }
+          ],
+          "explanation": "Множина, місцевий відмінок: v databáze.",
+          "order": 9,
+          "wordIds": [
+            "b2-u15-l07-it-data-w01",
+            "b2-u15-l07-it-data-w02"
+          ]
+        },
+        {
+          "id": "b2-u15-l07-it-data-ex10",
+          "lessonId": "b2-u15-l07-it-data",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Розподіли слова.",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Дані й бази"
+            },
+            {
+              "id": "c2",
+              "title": "Програми й методи"
+            }
+          ],
+          "items": [
+            {
+              "sk": "databáza",
+              "category": "c1"
+            },
+            {
+              "sk": "dáta",
+              "category": "c1"
+            },
+            {
+              "sk": "softvér",
+              "category": "c2"
+            },
+            {
+              "sk": "algoritmus",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Розділ за сферою.",
+          "order": 10,
+          "wordIds": [
+            "b2-u15-l07-it-data-w01",
+            "b2-u15-l07-it-data-w02",
+            "b2-u15-l07-it-data-w03",
+            "b2-u15-l07-it-data-w04"
+          ]
+        },
+        {
+          "id": "b2-u15-l07-it-data-ex11",
+          "lessonId": "b2-u15-l07-it-data",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Dáta boli spracované podľa platných postupov a sú dostupné na žiadosť.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": true
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": false
+            }
+          ],
+          "explanation": "Формальний стиль, пасив.",
+          "order": 11,
+          "wordIds": [
+            "b2-u15-l07-it-data-w01"
+          ]
+        },
+        {
+          "id": "b2-u15-l07-it-data-ex12",
+          "lessonId": "b2-u15-l07-it-data",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Вибери правильні речення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Algoritmus rieši úlohy rýchlo?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Dáta je veľké.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Algoritmus rieši úlohu rýchlo.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Softvér sa aktualizuje každý mesiac.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Dáta sú veľké.",
+              "correct": true
+            }
+          ],
+          "explanation": "Узгодження числа.",
+          "order": 12,
+          "wordIds": [
+            "b2-u15-l07-it-data-w01",
+            "b2-u15-l07-it-data-w03",
+            "b2-u15-l07-it-data-w04"
+          ]
+        },
+        {
+          "id": "b2-u15-l07-it-data-ex13",
+          "lessonId": "b2-u15-l07-it-data",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай опис.",
+          "document": {
+            "title": "Опис системи",
+            "fields": [
+              {
+                "label": "Databáza",
+                "value": "zákazníci"
+              },
+              {
+                "label": "Záznamy",
+                "value": "5 000"
+              },
+              {
+                "label": "Softvér",
+                "value": "nová verzia"
+              }
+            ]
+          },
+          "question": "Скільки записів у базі?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "5 000",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "500",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "50 000",
+              "correct": false
+            }
+          ],
+          "explanation": "У описі вказано 5 000 записів.",
+          "order": 13,
+          "wordIds": [
+            "b2-u15-l07-it-data-w02",
+            "b2-u15-l07-it-data-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Нарада про дані",
+        "description": "Ти доповідаєш на нараді про базу даних і новий алгоритм. Треба говорити точно.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Як почнеш доповідь? (ти — чоловік)",
+            "options": [
+              {
+                "sk": "Dnes nič nepredstavím.",
+                "correct": false
+              },
+              {
+                "sk": "Dnes predstavím našu databázu a nový algoritmus.",
+                "correct": true
+              },
+              {
+                "sk": "Dnes sa nič nestane, čau.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Колега питає, чи дані вже готові. Що відповідаєш?",
+            "options": [
+              {
+                "sk": "Nie, dáta neexistujú.",
+                "correct": false
+              },
+              {
+                "sk": "Neviem, nech to niekto zistí.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, dáta sú spracované a čakajú na kontrolu.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Як опишеш висновок? (ти — чоловік)",
+            "options": [
+              {
+                "sk": "Dáta nič neukazujú.",
+                "correct": false
+              },
+              {
+                "sk": "Dáta ukazujú nárast, takže trend rastie.",
+                "correct": true
+              },
+              {
+                "sk": "Dáta ukazujú pokles, takže trend klesá.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як завершиш? (ти — чоловік)",
+            "options": [
+              {
+                "sk": "Ďakujem za pozornosť, čau.",
+                "correct": false
+              },
+              {
+                "sk": "Dúfam, že stačí.",
+                "correct": false
+              },
+              {
+                "sk": "Ďakujem za pozornosť.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш основні терміни IT і даних. Далі — етика науки: чесність, відповідальність і згода учасників."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш основні терміни IT і даних. Далі — етика науки: чесність, відповідальність і згода учасників.",
+        "nowYouKnow": [
+          "dáta · databáza",
+          "softvér · algoritmus",
+          "dáta ukazujú · môžeme usúdiť",
+          "дані ≠ висновок"
+        ],
+        "newWordsCount": 4,
+        "exercisesCompleted": 13,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u15-l08-etika-vedy",
+          "title": "Етика науки: чесність і згода"
+        }
+      }
+    }
+  ]
+}

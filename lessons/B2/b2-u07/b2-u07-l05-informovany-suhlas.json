@@ -1,0 +1,907 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u07-l05-informovany-suhlas",
+      "sectionId": "b2-u07",
+      "level": "B2",
+      "title": "Інформована згода",
+      "topic": "Система охорони здоров’я",
+      "description": "Що саме ти підписуєш перед операцією чи обстеженням: про що лікар мусить тебе повідомити, як читати бланк згоди з його пасивними дієприкметниками, як відкликати згоду й що таке negatívny revers. Окремо — згода за неповнолітню дитину.",
+      "order": 65,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Розуміти бланк інформованої згоди, ставити лікарю правильні питання й свідомо погоджуватися або відмовлятися.",
+      "completionMessage": "Ти розумієш бланк згоди й знаєш, що маєш право спитати, відкликати згоду чи відмовитися. Далі — профілактика й скринінг.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Система охорони здоров’я",
+        "title": "Інформована згода",
+        "shortDescription": "Розуміти бланк інформованої згоди, ставити лікарю правильні питання й свідомо погоджуватися або відмовлятися.",
+        "outcomes": [
+          "знати, про що пацієнта мусять поінформувати перед втручанням",
+          "розуміти формули бланка: bol som poučený o…, beriem na vedomie, súhlasím s…",
+          "вживати пасивні дієприкметники poučený, informovaný у правильному роді",
+          "розуміти, що таке odvolať súhlas і negatívny revers"
+        ],
+        "newWords": [
+          "poučiť",
+          "komplikácia",
+          "následok",
+          "odvolať súhlas",
+          "negatívny revers",
+          "maloletý"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Про що тебе мусять поінформувати",
+          "text": "Перед серйозним втручанням (операція, наркоз, інвазивне обстеження) лікар має пояснити — «poučiť» — зрозумілою мовою: мету (účel) втручання, його суть (povaha), очікувані наслідки (následky) і можливі ускладнення (komplikácie), альтернативи та що буде, якщо відмовитися. Лише після цього пацієнт дає «informovaný súhlas», для серйозних втручань — як правило письмово. Без згоди можна діяти здебільшого тоді, коли йдеться про невідкладний стан, а пацієнт не може висловитися (наприклад, непритомний). Ставити питання до підпису — нормально й правильно.",
+          "examples": [
+            {
+              "sk": "Lekár ma poučil o rizikách a možných komplikáciách.",
+              "uk": "Лікар пояснив мені ризики й можливі ускладнення."
+            },
+            {
+              "sk": "Aké sú alternatívy k operácii?",
+              "uk": "Які є альтернативи операції?"
+            }
+          ],
+          "shortRule": "účel · povaha · následky · komplikácie · alternatívy → súhlas",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Формули бланка згоди",
+          "text": "Бланк згоди написаний офіційно, з пасивними дієприкметниками: «Vyhlasujem, že som bol(a) zrozumiteľne poučený(-á) o…» — Заявляю, що мені зрозуміло пояснили… Дієприкметник узгоджується з тим, хто підписує: чоловік — poučený, informovaný; жінка — poučená, informovaná. Інші формули: «Beriem na vedomie, že…» — Беру до відома, що…; «Súhlasím s vykonaním zákroku» — Погоджуюся на проведення втручання (súhlasiť s + орудний); «Mal(a) som možnosť klásť otázky.» Керування: poučiť koho o čom (o + місцевий): poučiť pacienta o rizikách.",
+          "examples": [
+            {
+              "sk": "Bola som poučená o možných komplikáciách.",
+              "uk": "Мені пояснили можливі ускладнення."
+            },
+            {
+              "sk": "Beriem na vedomie, že zákrok môže mať aj vedľajšie následky.",
+              "uk": "Беру до відома, що втручання може мати й побічні наслідки."
+            }
+          ],
+          "shortRule": "poučený (ч.) / poučená (ж.) · súhlasiť s + орудний · poučiť o + місцевий",
+          "commonMistakes": [
+            {
+              "mistake": "Bola som poučený.",
+              "correct": "Bola som poučená."
+            },
+            {
+              "mistake": "súhlasím s vykonanie zákroku",
+              "correct": "súhlasím s vykonaním zákroku"
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Відкликання згоди, відмова, діти",
+          "text": "Згоду можна будь-коли до втручання відкликати — «odvolať súhlas», навіть якщо ти вже підписав(ла) бланк. Якщо ти відмовляєшся від рекомендованого лікування (наприклад, хочеш піти з лікарні раніше), тебе попросять підписати «negatívny revers» — письмову заяву, що тебе поінформували про наслідки й ти все одно відмовляєшся. За неповнолітню дитину (maloletý pacient) згоду, як правило, дає законний представник — найчастіше батьки; думку самої дитини лікар має взяти до уваги відповідно до її віку. Конкретні правила визначає закон.",
+          "examples": [
+            {
+              "sk": "Svoj súhlas môžete kedykoľvek odvolať.",
+              "uk": "Свою згоду ви можете будь-коли відкликати."
+            },
+            {
+              "sk": "Pacient podpísal negatívny revers a odišiel domov.",
+              "uk": "Пацієнт підписав відмову від лікування й пішов додому."
+            }
+          ],
+          "shortRule": "odvolať súhlas — будь-коли · negatívny revers — письмова відмова · maloletý — згода батьків",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u07-l05-informovany-suhlas-w01",
+            "sk": "poučiť",
+            "uk": "поінформувати, пояснити (офіційно)",
+            "pronunciationUk": "поучіть",
+            "exampleSk": "Pred narkózou Vás anesteziológ poučí o možných rizikách.",
+            "exampleUk": "Перед наркозом анестезіолог пояснить вам можливі ризики."
+          },
+          {
+            "wordId": "b2-u07-l05-informovany-suhlas-w02",
+            "sk": "komplikácia",
+            "uk": "ускладнення",
+            "pronunciationUk": "комплікаціа",
+            "exampleSk": "Komplikácie sú pri tomto zákroku zriedkavé, ale môžu nastať.",
+            "exampleUk": "Ускладнення при цьому втручанні рідкісні, але можуть виникнути."
+          },
+          {
+            "wordId": "b2-u07-l05-informovany-suhlas-w03",
+            "sk": "následok",
+            "uk": "наслідок",
+            "pronunciationUk": "на:слєдок",
+            "exampleSk": "Lekár mi vysvetlil, aké následky môže mať odmietnutie liečby.",
+            "exampleUk": "Лікар пояснив мені, які наслідки може мати відмова від лікування."
+          },
+          {
+            "wordId": "b2-u07-l05-informovany-suhlas-w04",
+            "sk": "odvolať súhlas",
+            "uk": "відкликати згоду",
+            "pronunciationUk": "одволать су:глас",
+            "exampleSk": "Pacientka odvolala súhlas deň pred operáciou.",
+            "exampleUk": "Пацієнтка відкликала згоду за день до операції."
+          },
+          {
+            "wordId": "b2-u07-l05-informovany-suhlas-w05",
+            "sk": "negatívny revers",
+            "uk": "письмова відмова від лікування",
+            "pronunciationUk": "неґативни: реверс",
+            "exampleSk": "Ak chcete odísť proti odporúčaniu lekára, podpíšte negatívny revers.",
+            "exampleUk": "Якщо хочете піти всупереч пораді лікаря, підпишіть відмову від лікування."
+          },
+          {
+            "wordId": "b2-u07-l05-informovany-suhlas-w06",
+            "sk": "maloletý",
+            "uk": "неповнолітній (до 18 років)",
+            "pronunciationUk": "малолєти:",
+            "exampleSk": "Za maloletého pacienta podpisuje súhlas zákonný zástupca.",
+            "exampleUk": "За неповнолітнього пацієнта згоду підписує законний представник."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u07-l05-informovany-suhlas-w01",
+          "sk": "poučiť",
+          "uk": "поінформувати, пояснити (офіційно)",
+          "pronunciationUk": "поучіть",
+          "exampleSk": "Pred narkózou Vás anesteziológ poučí o možných rizikách.",
+          "exampleUk": "Перед наркозом анестезіолог пояснить вам можливі ризики.",
+          "level": "B2",
+          "topic": "Система охорони здоров’я",
+          "tags": [
+            "b2-u07",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u07-l05-informovany-suhlas-w02",
+          "sk": "komplikácia",
+          "uk": "ускладнення",
+          "pronunciationUk": "комплікаціа",
+          "exampleSk": "Komplikácie sú pri tomto zákroku zriedkavé, ale môžu nastať.",
+          "exampleUk": "Ускладнення при цьому втручанні рідкісні, але можуть виникнути.",
+          "level": "B2",
+          "topic": "Система охорони здоров’я",
+          "tags": [
+            "b2-u07",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u07-l05-informovany-suhlas-w03",
+          "sk": "následok",
+          "uk": "наслідок",
+          "pronunciationUk": "на:слєдок",
+          "exampleSk": "Lekár mi vysvetlil, aké následky môže mať odmietnutie liečby.",
+          "exampleUk": "Лікар пояснив мені, які наслідки може мати відмова від лікування.",
+          "level": "B2",
+          "topic": "Система охорони здоров’я",
+          "tags": [
+            "b2-u07",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u07-l05-informovany-suhlas-w04",
+          "sk": "odvolať súhlas",
+          "uk": "відкликати згоду",
+          "pronunciationUk": "одволать су:глас",
+          "exampleSk": "Pacientka odvolala súhlas deň pred operáciou.",
+          "exampleUk": "Пацієнтка відкликала згоду за день до операції.",
+          "level": "B2",
+          "topic": "Система охорони здоров’я",
+          "tags": [
+            "b2-u07",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u07-l05-informovany-suhlas-w05",
+          "sk": "negatívny revers",
+          "uk": "письмова відмова від лікування",
+          "pronunciationUk": "неґативни: реверс",
+          "exampleSk": "Ak chcete odísť proti odporúčaniu lekára, podpíšte negatívny revers.",
+          "exampleUk": "Якщо хочете піти всупереч пораді лікаря, підпишіть відмову від лікування.",
+          "level": "B2",
+          "topic": "Система охорони здоров’я",
+          "tags": [
+            "b2-u07",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u07-l05-informovany-suhlas-w06",
+          "sk": "maloletý",
+          "uk": "неповнолітній (до 18 років)",
+          "pronunciationUk": "малолєти:",
+          "exampleSk": "Za maloletého pacienta podpisuje súhlas zákonný zástupca.",
+          "exampleUk": "За неповнолітнього пацієнта згоду підписує законний представник.",
+          "level": "B2",
+          "topic": "Система охорони здоров’я",
+          "tags": [
+            "b2-u07",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u07-l05-informovany-suhlas-ex01",
+          "lessonId": "b2-u07-l05-informovany-suhlas",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "poučiť",
+              "right": "офіційно пояснити"
+            },
+            {
+              "left": "komplikácia",
+              "right": "ускладнення"
+            },
+            {
+              "left": "následok",
+              "right": "наслідок"
+            },
+            {
+              "left": "odvolať súhlas",
+              "right": "відкликати згоду"
+            },
+            {
+              "left": "negatívny revers",
+              "right": "письмова відмова від лікування"
+            },
+            {
+              "left": "maloletý",
+              "right": "неповнолітній"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u07-l05-informovany-suhlas-w01",
+            "b2-u07-l05-informovany-suhlas-w02",
+            "b2-u07-l05-informovany-suhlas-w03",
+            "b2-u07-l05-informovany-suhlas-w04",
+            "b2-u07-l05-informovany-suhlas-w05",
+            "b2-u07-l05-informovany-suhlas-w06"
+          ]
+        },
+        {
+          "id": "b2-u07-l05-informovany-suhlas-ex02",
+          "lessonId": "b2-u07-l05-informovany-suhlas",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Lekár ma poučil "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "na",
+                "o",
+                "s"
+              ],
+              "correct": "o"
+            },
+            {
+              "text": " rizikách a ja som súhlasila "
+            },
+            {
+              "blankId": "b2",
+              "options": [
+                "s",
+                "na",
+                "o"
+              ],
+              "correct": "s"
+            },
+            {
+              "text": " vykonaním zákroku."
+            }
+          ],
+          "explanation": "poučiť o + місцевий (o rizikách); súhlasiť s + орудний (s vykonaním).",
+          "order": 2,
+          "wordIds": [
+            "b2-u07-l05-informovany-suhlas-w01",
+            "b2-u07-l05-informovany-suhlas-w04"
+          ]
+        },
+        {
+          "id": "b2-u07-l05-informovany-suhlas-ex03",
+          "lessonId": "b2-u07-l05-informovany-suhlas",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Vyhlasujem, že som bola zrozumiteľne poučený o povahe zákroku.",
+          "errorToken": "poučený",
+          "correctToken": "poučená",
+          "explanation": "Підписує жінка (som bola), тож дієприкметник жіночого роду: poučená.",
+          "order": 3,
+          "wordIds": [
+            "b2-u07-l05-informovany-suhlas-w01"
+          ]
+        },
+        {
+          "id": "b2-u07-l05-informovany-suhlas-ex04",
+          "lessonId": "b2-u07-l05-informovany-suhlas",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши формулу «Беру до відома».",
+          "sentence": "Beriem na ______, že zákrok môže mať aj vedľajšie následky.",
+          "acceptedAnswers": [
+            "vedomie"
+          ],
+          "explanation": "Brať na vedomie — брати до відома; типова формула бланків.",
+          "order": 4,
+          "wordIds": [
+            "b2-u07-l05-informovany-suhlas-w03"
+          ]
+        },
+        {
+          "id": "b2-u07-l05-informovany-suhlas-ex05",
+          "lessonId": "b2-u07-l05-informovany-suhlas",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перетвори в пасив без виконавця, почни «Bol som…» (пише чоловік).",
+          "source": "Lekár ma poučil o možných komplikáciách.",
+          "acceptedAnswers": [
+            "Bol som poučený o možných komplikáciách."
+          ],
+          "explanation": "Пасив: byť + дієприкметник poučený (чоловік); виконавця в бланку зазвичай не називають.",
+          "order": 5,
+          "wordIds": [
+            "b2-u07-l05-informovany-suhlas-w01",
+            "b2-u07-l05-informovany-suhlas-w02"
+          ]
+        },
+        {
+          "id": "b2-u07-l05-informovany-suhlas-ex06",
+          "lessonId": "b2-u07-l05-informovany-suhlas",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай бланк згоди.",
+          "document": {
+            "title": "Informovaný súhlas so zákrokom",
+            "fields": [
+              {
+                "label": "Pacient",
+                "value": "Maksym Ivanenko, nar. 12. 5. 1979"
+              },
+              {
+                "label": "Zákrok",
+                "value": "artroskopia ľavého kolena"
+              },
+              {
+                "label": "Možné komplikácie",
+                "value": "krvácanie, infekcia, opuch kĺbu"
+              },
+              {
+                "label": "Vyhlásenie",
+                "value": "Bol som zrozumiteľne poučený o účele, povahe a následkoch zákroku a mal som možnosť klásť otázky."
+              },
+              {
+                "label": "Poznámka",
+                "value": "Súhlas môžem kedykoľvek pred zákrokom odvolať."
+              }
+            ]
+          },
+          "question": "Що Максим може зробити навіть після підпису?",
+          "options": [
+            {
+              "id": "a",
+              "text": "нічого, підпис остаточний",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "відкликати згоду до початку втручання",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "вимагати іншу операцію безкоштовно",
+              "correct": false
+            }
+          ],
+          "explanation": "Súhlas môžem kedykoľvek pred zákrokom odvolať — згоду можна відкликати будь-коли до втручання.",
+          "order": 6,
+          "wordIds": [
+            "b2-u07-l05-informovany-suhlas-w01",
+            "b2-u07-l05-informovany-suhlas-w02",
+            "b2-u07-l05-informovany-suhlas-w03",
+            "b2-u07-l05-informovany-suhlas-w04"
+          ]
+        },
+        {
+          "id": "b2-u07-l05-informovany-suhlas-ex07",
+          "lessonId": "b2-u07-l05-informovany-suhlas",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Irina mala ísť na operáciu žlčníka. Večer pred zákrokom jej sestra priniesla tlačivo informovaného súhlasu a povedala: «Toto len podpíšte, to je formalita.» Irina však tlačivu celkom nerozumela, najmä časti o možných komplikáciách. Požiadala preto, aby jej ich lekár vysvetlil. Chirurg prišiel o pol hodiny, pokojne jej opísal priebeh operácie, riziká aj to, čo by sa stalo, keby operáciu odmietla. Spomenul aj alternatívu, ktorá však v jej prípade nebola vhodná. Irina potom tlačivo podpísala s pocitom, že presne vie, s čím súhlasí. Neskôr kamarátke povedala: «Informovaný súhlas nie je formalita. Je to moje právo vedieť, čo so mnou budú robiť.»",
+          "questions": [
+            {
+              "question": "Чому Ірина не підписала бланк одразу?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "вона не розуміла частини про ускладнення",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "бланк був словацькою, а вона не читає словацькою",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "вона не хотіла операції",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що зробив хірург?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "переконав її, що ризиків немає",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "переніс операцію",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "пояснив перебіг, ризики, наслідки відмови й альтернативу",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Який висновок робить Ірина?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "інформована згода — її право знати, а не формальність",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "бланк краще підписувати не читаючи",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "лікарям не варто ставити питань",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 7,
+          "wordIds": [
+            "b2-u07-l05-informovany-suhlas-w02",
+            "b2-u07-l05-informovany-suhlas-w04"
+          ]
+        },
+        {
+          "id": "b2-u07-l05-informovany-suhlas-ex08",
+          "lessonId": "b2-u07-l05-informovany-suhlas",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Хто, як правило, підписує згоду на операцію восьмирічної дитини?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "samotné dieťa",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "triedna učiteľka",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "zákonný zástupca, najčastejšie rodič",
+              "correct": true
+            }
+          ],
+          "explanation": "За неповнолітнього (maloletý) згоду дає законний представник; думку дитини лікар бере до уваги.",
+          "order": 8
+        },
+        {
+          "id": "b2-u07-l05-informovany-suhlas-ex09",
+          "lessonId": "b2-u07-l05-informovany-suhlas",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Pacient po operácii chcel odísť domov skôr, než mu lekár odporúčal. Lekár mu vysvetlil možné následky a pacient podpísal negatívny revers.",
+          "statement": "Negatívny revers je súhlas pacienta s ďalšou hospitalizáciou.",
+          "correctAnswer": false,
+          "explanation": "Negatívny revers — навпаки, письмова відмова від рекомендованого лікування після пояснення наслідків.",
+          "order": 9,
+          "wordIds": [
+            "b2-u07-l05-informovany-suhlas-w03",
+            "b2-u07-l05-informovany-suhlas-w04",
+            "b2-u07-l05-informovany-suhlas-w05"
+          ]
+        },
+        {
+          "id": "b2-u07-l05-informovany-suhlas-ex10",
+          "lessonId": "b2-u07-l05-informovany-suhlas",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти перед підписом хочеш дізнатися, чи є інший спосіб лікування.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Existuje aj nejaká alternatívu k tomuto zákroku?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Existuje aj nejaká alternatíva k tomuto zákroku?",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Načo sú tu tie papiere?",
+              "correct": false
+            }
+          ],
+          "explanation": "Alternatíva — підмет, тому називний відмінок; третій варіант — грубий і нічого не з’ясовує.",
+          "order": 10
+        },
+        {
+          "id": "b2-u07-l05-informovany-suhlas-ex11",
+          "lessonId": "b2-u07-l05-informovany-suhlas",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Sestra: «Toto len podpíšte, to je formalita, nikto to nečíta.»",
+          "options": [
+            {
+              "id": "a",
+              "text": "вона применшує значення бланка, хоча пацієнт має право на пояснення",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "вона повідомляє, що операцію скасовано",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "вона радить відмовитися від операції",
+              "correct": false
+            }
+          ],
+          "explanation": "«Formalita» — спроба пришвидшити підпис; насправді згода має сенс тільки тоді, коли пацієнт розуміє, на що погоджується.",
+          "order": 11
+        },
+        {
+          "id": "b2-u07-l05-informovany-suhlas-ex12",
+          "lessonId": "b2-u07-l05-informovany-suhlas",
+          "type": "dialogue_order",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Віднови порядок розмови.",
+          "lines": [
+            {
+              "id": "l5",
+              "sk": "Pacientka: Ďakujem, teraz tomu rozumiem a súhlas podpíšem."
+            },
+            {
+              "id": "l3",
+              "sk": "Pacientka: Aké sú najčastejšie komplikácie tohto zákroku?"
+            },
+            {
+              "id": "l4",
+              "sk": "Lekár: Najčastejšie ide o krvácanie alebo infekciu, obe sú však zriedkavé."
+            },
+            {
+              "id": "l1",
+              "sk": "Pacientka: Pán doktor, môžem sa pred podpisom ešte niečo opýtať?"
+            },
+            {
+              "id": "l2",
+              "sk": "Lekár: Samozrejme, na to tu som."
+            }
+          ],
+          "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5"
+          ],
+          "order": 12,
+          "wordIds": [
+            "b2-u07-l05-informovany-suhlas-w02",
+            "b2-u07-l05-informovany-suhlas-w04"
+          ]
+        },
+        {
+          "id": "b2-u07-l05-informovany-suhlas-ex13",
+          "lessonId": "b2-u07-l05-informovany-suhlas",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що, як правило, має пояснити лікар перед серйозним втручанням?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "možné komplikácie",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "účel zákroku",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "výšku svojho platu",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "následky odmietnutia",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "svoj súkromný telefón",
+              "correct": false
+            },
+            {
+              "id": "f",
+              "sk": "alternatívy liečby",
+              "correct": true
+            }
+          ],
+          "explanation": "Інформована згода охоплює мету, ризики, альтернативи й наслідки відмови.",
+          "order": 13,
+          "wordIds": [
+            "b2-u07-l05-informovany-suhlas-w02",
+            "b2-u07-l05-informovany-suhlas-w03"
+          ]
+        },
+        {
+          "id": "b2-u07-l05-informovany-suhlas-ex14",
+          "lessonId": "b2-u07-l05-informovany-suhlas",
+          "type": "cloze_text",
+          "skill": [
+            "grammar",
+            "reading"
+          ],
+          "instruction": "Доповни бланк.",
+          "textParts": [
+            {
+              "text": "Vyhlasujem, že som bola zrozumiteľne "
+            },
+            {
+              "blankId": "b1",
+              "acceptedAnswers": [
+                "poučená"
+              ]
+            },
+            {
+              "text": " o povahe zákroku. Beriem na "
+            },
+            {
+              "blankId": "b2",
+              "acceptedAnswers": [
+                "vedomie"
+              ]
+            },
+            {
+              "text": " možné komplikácie. Súhlasím s "
+            },
+            {
+              "blankId": "b3",
+              "acceptedAnswers": [
+                "vykonaním"
+              ]
+            },
+            {
+              "text": " zákroku. Svoj súhlas môžem kedykoľvek "
+            },
+            {
+              "blankId": "b4",
+              "acceptedAnswers": [
+                "odvolať"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ],
+          "hint": "poučená, vedomie, vykonaním, odvolať",
+          "order": 14,
+          "wordIds": [
+            "b2-u07-l05-informovany-suhlas-w01",
+            "b2-u07-l05-informovany-suhlas-w02",
+            "b2-u07-l05-informovany-suhlas-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перед операцією",
+        "description": "Ти (жінка) лягаєш на планову операцію. Медсестра приносить бланк інформованої згоди.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти хочеш, щоб тобі спершу пояснили ризики.",
+            "options": [
+              {
+                "sk": "Prosím, mohol by mi lekár pred podpisom vysvetliť rizikách?",
+                "correct": false
+              },
+              {
+                "sk": "Podpíšem to, je mi to jedno.",
+                "correct": false
+              },
+              {
+                "sk": "Prosím, mohol by mi lekár pred podpisom vysvetliť riziká?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як правильно звучить твоя заява в бланку?",
+            "options": [
+              {
+                "sk": "Bola som zrozumiteľne poučená na účel a následky zákroku.",
+                "correct": false
+              },
+              {
+                "sk": "Bola som zrozumiteľne poučená o účele a následkoch zákroku.",
+                "correct": true
+              },
+              {
+                "sk": "Bola som zrozumiteľne poučený o účele a následkoch zákroku.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Лікар каже: «Súhlas môžete kedykoľvek pred zákrokom odvolať.» Що це означає?",
+            "options": [
+              {
+                "text": "згоду треба підтвердити в суді",
+                "correct": false
+              },
+              {
+                "text": "ти можеш передумати до початку втручання",
+                "correct": true
+              },
+              {
+                "text": "згоду не можна змінити",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти все зрозуміла й погоджуєшся.",
+            "options": [
+              {
+                "sk": "Ďakujem za vysvetlenie, so zákrok súhlasím.",
+                "correct": false
+              },
+              {
+                "sk": "Dobre, ale nič nepodpíšem a operáciu chcem aj tak.",
+                "correct": false
+              },
+              {
+                "sk": "Ďakujem za vysvetlenie, so zákrokom súhlasím.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш бланк згоди й знаєш, що маєш право спитати, відкликати згоду чи відмовитися. Далі — профілактика й скринінг."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш бланк згоди й знаєш, що маєш право спитати, відкликати згоду чи відмовитися. Далі — профілактика й скринінг.",
+        "nowYouKnow": [
+          "перед втручанням: účel, povaha, následky, komplikácie, alternatívy",
+          "bol som poučený / bola som poučená · beriem na vedomie · súhlasím s vykonaním",
+          "odvolať súhlas — будь-коли до втручання · negatívny revers — письмова відмова",
+          "за maloletého pacienta — zákonný zástupca"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u07-l06-prevencia-a-skrining",
+          "title": "Профілактика й скринінг"
+        }
+      }
+    }
+  ]
+}

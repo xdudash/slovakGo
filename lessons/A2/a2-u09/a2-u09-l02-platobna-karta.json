@@ -1,0 +1,852 @@
+{
+  "lessons": [
+    {
+      "id": "a2-u09-l02-platobna-karta",
+      "sectionId": "a2-u09",
+      "level": "A2",
+      "title": "Платіжна картка",
+      "topic": "Банк і платежі",
+      "description": "Дебетова чи кредитна картка, активація, ліміти, строк дії та оплата карткою або телефоном.",
+      "order": 82,
+      "xpReward": 30,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Розуміти, яку картку пропонує банк, активувати її і питати про ліміти.",
+      "completionMessage": "Ти розумієшся на банківських картках. Далі — IBAN і банківський переказ.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A2 · Банк і платежі",
+        "title": "Платіжна картка",
+        "shortDescription": "Розуміти, яку картку пропонує банк, активувати її і питати про ліміти.",
+        "outcomes": [
+          "розрізняти debetná a kreditná karta",
+          "казати platiť kartou, platba kartou",
+          "розуміти aktivovať kartu, denný limit",
+          "питати, до коли картка дійсна"
+        ],
+        "newWords": [
+          "debetná karta",
+          "kreditná karta",
+          "platba",
+          "aktivovať",
+          "limit",
+          "zvýšiť"
+        ],
+        "exercisesCount": 14,
+        "reward": "+30 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Debetná a kreditná karta",
+          "text": "«Debetná karta» прив’язана до твого рахунку: платиш власними грошима. «Kreditná karta» — картка з грошима банку: витрачене треба потім повернути, інакше доведеться платити відсотки. Для щоденних покупок більшості людей вистачає дебетової картки.",
+          "examples": [
+            {
+              "sk": "K účtu dostanete debetnú kartu.",
+              "uk": "До рахунку ви отримаєте дебетову картку."
+            },
+            {
+              "sk": "Kreditnú kartu nepotrebujem.",
+              "uk": "Кредитна картка мені не потрібна."
+            }
+          ],
+          "shortRule": "debetná — свої гроші, kreditná — гроші банку",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Platiť kartou",
+          "text": "Чим платиш? — орудний відмінок без прийменника: «platiť kartou», «platiť mobilom». Іменник «platba» — оплата, платіж: «platba kartou», «bezkontaktná platba». Готівкою — «v hotovosti». Не кажи «platiť s kartou».",
+          "examples": [
+            {
+              "sk": "Môžem platiť kartou?",
+              "uk": "Можна заплатити карткою?"
+            },
+            {
+              "sk": "Platba kartou neprešla.",
+              "uk": "Оплата карткою не пройшла."
+            }
+          ],
+          "shortRule": "platiť kartou / mobilom / v hotovosti",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Aktivácia, limit, platnosť",
+          "text": "Нову картку треба «aktivovať» — у застосунку банку або першою операцією з PIN-кодом у банкоматі. «Limit» — максимальна сума: «denný limit na platby», «limit na výber». Ліміт можна «zvýšiť» (підвищити) або «znížiť» (знизити). Строк дії — «platnosť karty»: «Karta je platná do septembra 2029.»",
+          "examples": [
+            {
+              "sk": "Kartu si aktivujte v aplikácii.",
+              "uk": "Активуйте картку в застосунку."
+            },
+            {
+              "sk": "Môj denný limit je tisíc eur.",
+              "uk": "Мій денний ліміт — тисяча євро."
+            }
+          ],
+          "shortRule": "aktivovať kartu · zvýšiť / znížiť limit",
+          "commonMistakes": [
+            {
+              "mistake": "Platím s kartou.",
+              "correct": "Platím kartou."
+            },
+            {
+              "mistake": "Môžem platiť na kartu?",
+              "correct": "Môžem platiť kartou?"
+            },
+            {
+              "mistake": "aktivizovať kartu",
+              "correct": "aktivovať kartu"
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a2-u09-l02-platobna-karta-w01",
+            "sk": "debetná karta",
+            "uk": "дебетова картка",
+            "pronunciationUk": "дебетна: карта",
+            "exampleSk": "K účtu dostanete debetnú kartu zadarmo.",
+            "exampleUk": "До рахунку ви безкоштовно отримаєте дебетову картку."
+          },
+          {
+            "wordId": "a2-u09-l02-platobna-karta-w02",
+            "sk": "kreditná karta",
+            "uk": "кредитна картка",
+            "pronunciationUk": "кредітна: карта",
+            "exampleSk": "S kreditnou kartou míňate peniaze banky.",
+            "exampleUk": "З кредитною карткою ви витрачаєте гроші банку."
+          },
+          {
+            "wordId": "a2-u09-l02-platobna-karta-w03",
+            "sk": "platba",
+            "uk": "оплата, платіж",
+            "pronunciationUk": "платба",
+            "exampleSk": "Platba kartou neprešla, skúste to znova.",
+            "exampleUk": "Оплата карткою не пройшла, спробуйте ще раз."
+          },
+          {
+            "wordId": "a2-u09-l02-platobna-karta-w04",
+            "sk": "aktivovať",
+            "uk": "активувати",
+            "pronunciationUk": "активоват’",
+            "exampleSk": "Novú kartu si musíte najprv aktivovať.",
+            "exampleUk": "Нову картку спершу треба активувати."
+          },
+          {
+            "wordId": "a2-u09-l02-platobna-karta-w05",
+            "sk": "limit",
+            "uk": "ліміт",
+            "pronunciationUk": "ліміт",
+            "exampleSk": "Denný limit na výber je päťsto eur.",
+            "exampleUk": "Денний ліміт на зняття готівки — п’ятсот євро."
+          },
+          {
+            "wordId": "a2-u09-l02-platobna-karta-w06",
+            "sk": "zvýšiť",
+            "uk": "підвищити, збільшити",
+            "pronunciationUk": "зві:шіт’",
+            "exampleSk": "Limit si môžete zvýšiť v aplikácii.",
+            "exampleUk": "Ліміт можна підвищити в застосунку."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a2-u09-l02-platobna-karta-w01",
+          "sk": "debetná karta",
+          "uk": "дебетова картка",
+          "pronunciationUk": "дебетна: карта",
+          "exampleSk": "K účtu dostanete debetnú kartu zadarmo.",
+          "exampleUk": "До рахунку ви безкоштовно отримаєте дебетову картку.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l02-platobna-karta-w02",
+          "sk": "kreditná karta",
+          "uk": "кредитна картка",
+          "pronunciationUk": "кредітна: карта",
+          "exampleSk": "S kreditnou kartou míňate peniaze banky.",
+          "exampleUk": "З кредитною карткою ви витрачаєте гроші банку.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l02-platobna-karta-w03",
+          "sk": "platba",
+          "uk": "оплата, платіж",
+          "pronunciationUk": "платба",
+          "exampleSk": "Platba kartou neprešla, skúste to znova.",
+          "exampleUk": "Оплата карткою не пройшла, спробуйте ще раз.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l02-platobna-karta-w04",
+          "sk": "aktivovať",
+          "uk": "активувати",
+          "pronunciationUk": "активоват’",
+          "exampleSk": "Novú kartu si musíte najprv aktivovať.",
+          "exampleUk": "Нову картку спершу треба активувати.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l02-platobna-karta-w05",
+          "sk": "limit",
+          "uk": "ліміт",
+          "pronunciationUk": "ліміт",
+          "exampleSk": "Denný limit na výber je päťsto eur.",
+          "exampleUk": "Денний ліміт на зняття готівки — п’ятсот євро.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u09-l02-platobna-karta-w06",
+          "sk": "zvýšiť",
+          "uk": "підвищити, збільшити",
+          "pronunciationUk": "зві:шіт’",
+          "exampleSk": "Limit si môžete zvýšiť v aplikácii.",
+          "exampleUk": "Ліміт можна підвищити в застосунку.",
+          "level": "A2",
+          "topic": "Банк і платежі",
+          "tags": [
+            "a2-u09",
+            "a2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a2-u09-l02-platobna-karta-ex01",
+          "lessonId": "a2-u09-l02-platobna-karta",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "debetná karta",
+              "right": "дебетова картка"
+            },
+            {
+              "left": "kreditná karta",
+              "right": "кредитна картка"
+            },
+            {
+              "left": "platba",
+              "right": "оплата, платіж"
+            },
+            {
+              "left": "aktivovať",
+              "right": "активувати"
+            },
+            {
+              "left": "limit",
+              "right": "ліміт"
+            },
+            {
+              "left": "zvýšiť",
+              "right": "підвищити"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a2-u09-l02-platobna-karta-w01",
+            "a2-u09-l02-platobna-karta-w02",
+            "a2-u09-l02-platobna-karta-w03",
+            "a2-u09-l02-platobna-karta-w04",
+            "a2-u09-l02-platobna-karta-w05",
+            "a2-u09-l02-platobna-karta-w06"
+          ]
+        },
+        {
+          "id": "a2-u09-l02-platobna-karta-ex02",
+          "lessonId": "a2-u09-l02-platobna-karta",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Môžem platiť "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "s kartou",
+                "na kartu",
+                "kartou"
+              ],
+              "correct": "kartou"
+            },
+            {
+              "text": "?"
+            }
+          ],
+          "explanation": "Чим? — орудний без прийменника: kartou.",
+          "order": 2,
+          "wordIds": [
+            "a2-u09-l02-platobna-karta-w01",
+            "a2-u09-l02-platobna-karta-w02",
+            "a2-u09-l02-platobna-karta-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l02-platobna-karta-ex03",
+          "lessonId": "a2-u09-l02-platobna-karta",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Novú kartu si musíte najprv "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "aktivovať",
+                "aktivovaný",
+                "aktivácia"
+              ],
+              "correct": "aktivovať"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "musieť + інфінітив: aktivovať.",
+          "order": 3,
+          "wordIds": [
+            "a2-u09-l02-platobna-karta-w01",
+            "a2-u09-l02-platobna-karta-w02",
+            "a2-u09-l02-platobna-karta-w03",
+            "a2-u09-l02-platobna-karta-w04"
+          ]
+        },
+        {
+          "id": "a2-u09-l02-platobna-karta-ex04",
+          "lessonId": "a2-u09-l02-platobna-karta",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яка картка дає змогу платити грошима банку, які потім треба повернути?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "vernostná karta",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "kreditná karta",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "debetná karta",
+              "correct": false
+            }
+          ],
+          "explanation": "Kreditná karta — гроші банку; vernostná karta — картка лояльності магазину, нею не платять.",
+          "order": 4,
+          "wordIds": [
+            "a2-u09-l02-platobna-karta-w01",
+            "a2-u09-l02-platobna-karta-w02",
+            "a2-u09-l02-platobna-karta-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l02-platobna-karta-ex05",
+          "lessonId": "a2-u09-l02-platobna-karta",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Platba ______ neprešla. (картка)",
+          "acceptedAnswers": [
+            "kartou"
+          ],
+          "explanation": "platba čím? — орудний: kartou.",
+          "order": 5,
+          "wordIds": [
+            "a2-u09-l02-platobna-karta-w01",
+            "a2-u09-l02-platobna-karta-w02",
+            "a2-u09-l02-platobna-karta-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l02-platobna-karta-ex06",
+          "lessonId": "a2-u09-l02-platobna-karta",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Večer som v reštaurácii platila mobilu.",
+          "errorToken": "mobilu",
+          "correctToken": "mobilom",
+          "explanation": "Чим? — орудний: mobil → mobilom.",
+          "order": 6,
+          "wordIds": [
+            "a2-u09-l02-platobna-karta-w01",
+            "a2-u09-l02-platobna-karta-w02",
+            "a2-u09-l02-platobna-karta-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l02-platobna-karta-ex07",
+          "lessonId": "a2-u09-l02-platobna-karta",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Karta je platná do septembra 2029.",
+          "statement": "Картку можна використовувати до вересня 2029 року.",
+          "correctAnswer": true,
+          "explanation": "platná do — дійсна до.",
+          "order": 7,
+          "wordIds": [
+            "a2-u09-l02-platobna-karta-w01",
+            "a2-u09-l02-platobna-karta-w02",
+            "a2-u09-l02-platobna-karta-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l02-platobna-karta-ex08",
+          "lessonId": "a2-u09-l02-platobna-karta",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай лист від банку.",
+          "document": {
+            "title": "Banka Lipa – vaša nová karta",
+            "fields": [
+              {
+                "label": "Typ karty",
+                "value": "debetná, bezkontaktná"
+              },
+              {
+                "label": "Platnosť",
+                "value": "do 08/2030"
+              },
+              {
+                "label": "Denný limit na platby",
+                "value": "1 500 €"
+              },
+              {
+                "label": "Denný limit na výber z bankomatu",
+                "value": "600 €"
+              },
+              {
+                "label": "Aktivácia",
+                "value": "v aplikácii alebo prvým výberom s PIN"
+              }
+            ]
+          },
+          "question": "Скільки максимально можна зняти в банкоматі за день?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "600 €",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "1 500 €",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "2 100 €",
+              "correct": false
+            }
+          ],
+          "explanation": "Denný limit na výber — денний ліміт на зняття готівки: 600 €.",
+          "order": 8,
+          "wordIds": [
+            "a2-u09-l02-platobna-karta-w01",
+            "a2-u09-l02-platobna-karta-w02",
+            "a2-u09-l02-platobna-karta-w03",
+            "a2-u09-l02-platobna-karta-w05"
+          ]
+        },
+        {
+          "id": "a2-u09-l02-platobna-karta-ex09",
+          "lessonId": "a2-u09-l02-platobna-karta",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай SMS від банку.",
+          "message": {
+            "sender": "Banka Lipa",
+            "body": "Vaša nová karta bola odoslaná poštou. Po doručení si ju aktivujte v aplikácii. PIN nájdete v aplikácii v časti Karty."
+          },
+          "question": "Де знайти PIN-код?",
+          "options": [
+            {
+              "id": "a",
+              "text": "у застосунку, у розділі «Karty»",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "у відділенні банку",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "у конверті разом із карткою",
+              "correct": false
+            }
+          ],
+          "explanation": "PIN nájdete v aplikácii — PIN знайдете в застосунку.",
+          "order": 9,
+          "wordIds": [
+            "a2-u09-l02-platobna-karta-w01",
+            "a2-u09-l02-platobna-karta-w02",
+            "a2-u09-l02-platobna-karta-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l02-platobna-karta-ex10",
+          "lessonId": "a2-u09-l02-platobna-karta",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Predavačka",
+              "sk": "Budete platiť v hotovosti?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Nie, s kartou, prosím.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Nie, na kartu, prosím.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Nie, kartou, prosím.",
+              "correct": true
+            }
+          ],
+          "explanation": "platiť kartou — без прийменника.",
+          "order": 10,
+          "wordIds": [
+            "a2-u09-l02-platobna-karta-w01",
+            "a2-u09-l02-platobna-karta-w02",
+            "a2-u09-l02-platobna-karta-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l02-platobna-karta-ex11",
+          "lessonId": "a2-u09-l02-platobna-karta",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Заміни «v hotovosti» на оплату карткою.",
+          "source": "Nájom platím v hotovosti.",
+          "acceptedAnswers": [
+            "Nájom platím kartou."
+          ],
+          "explanation": "v hotovosti → kartou (орудний відмінок).",
+          "order": 11,
+          "wordIds": [
+            "a2-u09-l02-platobna-karta-w01",
+            "a2-u09-l02-platobna-karta-w02",
+            "a2-u09-l02-platobna-karta-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l02-platobna-karta-ex12",
+          "lessonId": "a2-u09-l02-platobna-karta",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти питаєш у банку, чи можна підвищити денний ліміт.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Môžem zvýšiť si denný limit?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Môžem si zvýšiť denného limitu?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Môžem si zvýšiť dennom limite?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Môžem si zvýšiť denný limit?",
+              "correct": true
+            }
+          ],
+          "explanation": "zvýšiť + знахідний: denný limit; si стоїть одразу після першого слова.",
+          "order": 12,
+          "wordIds": [
+            "a2-u09-l02-platobna-karta-w01",
+            "a2-u09-l02-platobna-karta-w02",
+            "a2-u09-l02-platobna-karta-w03",
+            "a2-u09-l02-platobna-karta-w05",
+            "a2-u09-l02-platobna-karta-w06"
+          ]
+        },
+        {
+          "id": "a2-u09-l02-platobna-karta-ex13",
+          "lessonId": "a2-u09-l02-platobna-karta",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Дебетова чи кредитна картка?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Debetná karta"
+            },
+            {
+              "id": "c2",
+              "title": "Kreditná karta"
+            }
+          ],
+          "items": [
+            {
+              "sk": "vlastné peniaze",
+              "category": "c1"
+            },
+            {
+              "sk": "úrok pri oneskorenej splátke",
+              "category": "c2"
+            },
+            {
+              "sk": "požičané peniaze banky",
+              "category": "c2"
+            },
+            {
+              "sk": "priamo z bežného účtu",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Дебетова — твої гроші з рахунку; кредитна — позичені гроші банку.",
+          "order": 13,
+          "wordIds": [
+            "a2-u09-l02-platobna-karta-w01",
+            "a2-u09-l02-platobna-karta-w02",
+            "a2-u09-l02-platobna-karta-w03"
+          ]
+        },
+        {
+          "id": "a2-u09-l02-platobna-karta-ex14",
+          "lessonId": "a2-u09-l02-platobna-karta",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що оплата карткою не пройшла.",
+          "tokens": [
+            "neprešla",
+            "kartou",
+            ".",
+            "Platba"
+          ],
+          "correctOrder": [
+            "Platba",
+            "kartou",
+            "neprešla",
+            "."
+          ],
+          "explanation": "platba kartou — оплата карткою; neprešla — не пройшла.",
+          "order": 14,
+          "wordIds": [
+            "a2-u09-l02-platobna-karta-w01",
+            "a2-u09-l02-platobna-karta-w02",
+            "a2-u09-l02-platobna-karta-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Нова картка",
+        "description": "Тобі прийшла поштою нова картка, і ти вперше йдеш нею платити.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "У листі: «Kartu si pred prvým použitím aktivujte.» Що треба зробити?",
+            "options": [
+              {
+                "sk": "змінити PIN-код",
+                "correct": false
+              },
+              {
+                "sk": "повернути картку в банк",
+                "correct": false
+              },
+              {
+                "sk": "активувати картку перед першим використанням",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Касирка: «Hotovosť alebo karta?»",
+            "options": [
+              {
+                "sk": "Na kartu, prosím.",
+                "correct": false
+              },
+              {
+                "sk": "Kartou, prosím.",
+                "correct": true
+              },
+              {
+                "sk": "S kartou, prosím.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Термінал показує: «Prekročený denný limit.» Що сталося?",
+            "options": [
+              {
+                "sk": "картка недійсна",
+                "correct": false
+              },
+              {
+                "sk": "перевищено денний ліміт",
+                "correct": true
+              },
+              {
+                "sk": "неправильний PIN-код",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти питаєш у банку, до коли дійсна картка.",
+            "options": [
+              {
+                "sk": "Dokedy je karta platná?",
+                "correct": true
+              },
+              {
+                "sk": "Dokedy platná je kartou?",
+                "correct": false
+              },
+              {
+                "sk": "Dokedy je karta platnosť?",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієшся на банківських картках. Далі — IBAN і банківський переказ."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієшся на банківських картках. Далі — IBAN і банківський переказ.",
+        "nowYouKnow": [
+          "debetná a kreditná karta",
+          "platiť kartou, platba kartou",
+          "aktivovať kartu, zvýšiť denný limit",
+          "karta je platná do…"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 30,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a2-u09-l03-iban-a-prevod",
+          "title": "IBAN і банківський переказ"
+        }
+      }
+    }
+  ]
+}

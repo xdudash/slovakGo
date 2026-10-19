@@ -1,0 +1,783 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u08-l04-napoje",
+      "sectionId": "a1-u08",
+      "level": "A1",
+      "title": "Напої",
+      "topic": "Їжа і знахідний відмінок",
+      "description": "Напої в кафе, вдома й у магазині: víno, kakao, limonáda, sódovka, fľaša, pohár.",
+      "order": 74,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Замовляти й купувати напої, розуміючи ємності.",
+      "completionMessage": "Напої замовлено. Далі — фрукти й овочі.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Їжа і знахідний відмінок",
+        "title": "Напої",
+        "shortDescription": "Замовляти й купувати напої, розуміючи ємності.",
+        "outcomes": [
+          "називати напої",
+          "казати pohár vína / fľaša vody",
+          "казати Dám si…",
+          "розуміти alkoholické / nealkoholické"
+        ],
+        "newWords": [
+          "víno",
+          "kakao",
+          "limonáda",
+          "sódovka",
+          "fľaša",
+          "pohár"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Що п’ємо",
+          "text": "voda, minerálka, džús, kakao, limonáda, sódovka (газована вода), čaj, káva, pivo, víno (вино: biele, červené). «Nealkoholické nápoje» — безалкогольні.",
+          "examples": [
+            {
+              "sk": "Dám si pohár bieleho vína.",
+              "uk": "Я візьму келих білого вина."
+            },
+            {
+              "sk": "Deti pijú kakao.",
+              "uk": "Діти п’ють какао."
+            }
+          ],
+          "shortRule": "alkoholické / nealkoholické",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Ємність + родовий",
+          "text": "pohár (склянка, келих), fľaša (пляшка), šálka (чашка), krabica (пакет). Після них — родовий: pohár vody, fľaša vína, šálka čaju.",
+          "examples": [
+            {
+              "sk": "Prosím si fľašu minerálky.",
+              "uk": "Мені пляшку мінералки."
+            },
+            {
+              "sk": "Šálku čaju?",
+              "uk": "Чашку чаю?"
+            }
+          ],
+          "shortRule": "pohár vody, fľaša vína",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Калімшо й «на здоров’я»",
+          "text": "Тост: «Na zdravie!» (будьмо!). Популярні напої: kofola (словацька кола), vínny strik (вино з содовою).",
+          "examples": [
+            {
+              "sk": "Na zdravie!",
+              "uk": "Будьмо!"
+            },
+            {
+              "sk": "Dám si kofolu.",
+              "uk": "Візьму кофолу."
+            }
+          ],
+          "shortRule": "Na zdravie!",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u08-l04-napoje-w01",
+            "sk": "víno",
+            "uk": "вино",
+            "pronunciationUk": "ві:но",
+            "exampleSk": "Dáte si biele alebo červené víno?",
+            "exampleUk": "Будете біле чи червоне вино?"
+          },
+          {
+            "wordId": "a1-u08-l04-napoje-w02",
+            "sk": "kakao",
+            "uk": "какао",
+            "pronunciationUk": "какао",
+            "exampleSk": "Na raňajky pijem kakao.",
+            "exampleUk": "На сніданок я п’ю какао."
+          },
+          {
+            "wordId": "a1-u08-l04-napoje-w03",
+            "sk": "limonáda",
+            "uk": "лимонад",
+            "pronunciationUk": "лімона:да",
+            "exampleSk": "Domáca limonáda je osviežujúca.",
+            "exampleUk": "Домашній лимонад освіжає."
+          },
+          {
+            "wordId": "a1-u08-l04-napoje-w04",
+            "sk": "sódovka",
+            "uk": "газована вода",
+            "pronunciationUk": "со:довка",
+            "exampleSk": "Víno so sódovkou, prosím.",
+            "exampleUk": "Вино з содовою, будь ласка."
+          },
+          {
+            "wordId": "a1-u08-l04-napoje-w05",
+            "sk": "fľaša",
+            "uk": "пляшка",
+            "pronunciationUk": "фляша",
+            "exampleSk": "Kúpim fľašu vína.",
+            "exampleUk": "Я куплю пляшку вина."
+          },
+          {
+            "wordId": "a1-u08-l04-napoje-w06",
+            "sk": "pohár",
+            "uk": "склянка, келих",
+            "pronunciationUk": "пога:р",
+            "exampleSk": "Pohár vody, prosím.",
+            "exampleUk": "Склянку води, будь ласка."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u08-l04-napoje-w01",
+          "sk": "víno",
+          "uk": "вино",
+          "pronunciationUk": "ві:но",
+          "exampleSk": "Dáte si biele alebo červené víno?",
+          "exampleUk": "Будете біле чи червоне вино?",
+          "level": "A1",
+          "topic": "Їжа і знахідний відмінок",
+          "tags": [
+            "a1-u08",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u08-l04-napoje-w02",
+          "sk": "kakao",
+          "uk": "какао",
+          "pronunciationUk": "какао",
+          "exampleSk": "Na raňajky pijem kakao.",
+          "exampleUk": "На сніданок я п’ю какао.",
+          "level": "A1",
+          "topic": "Їжа і знахідний відмінок",
+          "tags": [
+            "a1-u08",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u08-l04-napoje-w03",
+          "sk": "limonáda",
+          "uk": "лимонад",
+          "pronunciationUk": "лімона:да",
+          "exampleSk": "Domáca limonáda je osviežujúca.",
+          "exampleUk": "Домашній лимонад освіжає.",
+          "level": "A1",
+          "topic": "Їжа і знахідний відмінок",
+          "tags": [
+            "a1-u08",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u08-l04-napoje-w04",
+          "sk": "sódovka",
+          "uk": "газована вода",
+          "pronunciationUk": "со:довка",
+          "exampleSk": "Víno so sódovkou, prosím.",
+          "exampleUk": "Вино з содовою, будь ласка.",
+          "level": "A1",
+          "topic": "Їжа і знахідний відмінок",
+          "tags": [
+            "a1-u08",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u08-l04-napoje-w05",
+          "sk": "fľaša",
+          "uk": "пляшка",
+          "pronunciationUk": "фляша",
+          "exampleSk": "Kúpim fľašu vína.",
+          "exampleUk": "Я куплю пляшку вина.",
+          "level": "A1",
+          "topic": "Їжа і знахідний відмінок",
+          "tags": [
+            "a1-u08",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u08-l04-napoje-w06",
+          "sk": "pohár",
+          "uk": "склянка, келих",
+          "pronunciationUk": "пога:р",
+          "exampleSk": "Pohár vody, prosím.",
+          "exampleUk": "Склянку води, будь ласка.",
+          "level": "A1",
+          "topic": "Їжа і знахідний відмінок",
+          "tags": [
+            "a1-u08",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u08-l04-napoje-ex01",
+          "lessonId": "a1-u08-l04-napoje",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "víno",
+              "right": "вино"
+            },
+            {
+              "left": "kakao",
+              "right": "какао"
+            },
+            {
+              "left": "limonáda",
+              "right": "лимонад"
+            },
+            {
+              "left": "sódovka",
+              "right": "газована вода"
+            },
+            {
+              "left": "fľaša",
+              "right": "пляшка"
+            },
+            {
+              "left": "pohár",
+              "right": "склянка"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u08-l04-napoje-w01",
+            "a1-u08-l04-napoje-w02",
+            "a1-u08-l04-napoje-w03",
+            "a1-u08-l04-napoje-w04",
+            "a1-u08-l04-napoje-w05",
+            "a1-u08-l04-napoje-w06"
+          ]
+        },
+        {
+          "id": "a1-u08-l04-napoje-ex02",
+          "lessonId": "a1-u08-l04-napoje",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Prosím si pohár "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "vodu",
+                "voda",
+                "vody"
+              ],
+              "correct": "vody"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "pohár + родовий: vody.",
+          "order": 2,
+          "wordIds": [
+            "a1-u08-l04-napoje-w06"
+          ]
+        },
+        {
+          "id": "a1-u08-l04-napoje-ex03",
+          "lessonId": "a1-u08-l04-napoje",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Kúpim "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "fľaše",
+                "fľašu",
+                "fľaša"
+              ],
+              "correct": "fľašu"
+            },
+            {
+              "text": " vína."
+            }
+          ],
+          "explanation": "kúpim + знахідний: fľašu.",
+          "order": 3,
+          "wordIds": [
+            "a1-u08-l04-napoje-w05"
+          ]
+        },
+        {
+          "id": "a1-u08-l04-napoje-ex04",
+          "lessonId": "a1-u08-l04-napoje",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Алкогольний чи безалкогольний?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Alkoholické"
+            },
+            {
+              "id": "c2",
+              "title": "Nealkoholické"
+            }
+          ],
+          "items": [
+            {
+              "sk": "sódovka",
+              "category": "c2"
+            },
+            {
+              "sk": "vínny strik",
+              "category": "c1"
+            },
+            {
+              "sk": "kakao",
+              "category": "c2"
+            },
+            {
+              "sk": "víno",
+              "category": "c1"
+            },
+            {
+              "sk": "pivo",
+              "category": "c1"
+            },
+            {
+              "sk": "kofola",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Розподіл.",
+          "order": 4,
+          "wordIds": [
+            "a1-u08-l04-napoje-w01",
+            "a1-u08-l04-napoje-w02",
+            "a1-u08-l04-napoje-w04"
+          ]
+        },
+        {
+          "id": "a1-u08-l04-napoje-ex05",
+          "lessonId": "a1-u08-l04-napoje",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Na zdravie!» за столом із келихами?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Бажаю одужати",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Смачного",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Будьмо! (тост)",
+              "correct": true
+            }
+          ],
+          "explanation": "Тост; «Na zdravie!» кажуть і коли хтось чхнув.",
+          "order": 5
+        },
+        {
+          "id": "a1-u08-l04-napoje-ex06",
+          "lessonId": "a1-u08-l04-napoje",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Kofola» — популярний словацький безалкогольний напій.",
+          "correctAnswer": true,
+          "explanation": "Kofola — схожа на колу.",
+          "order": 6
+        },
+        {
+          "id": "a1-u08-l04-napoje-ex07",
+          "lessonId": "a1-u08-l04-napoje",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Šálku ______? (чаю)",
+          "acceptedAnswers": [
+            "čaju"
+          ],
+          "hint": "Родовий від čaj.",
+          "explanation": "šálka čaju.",
+          "order": 7
+        },
+        {
+          "id": "a1-u08-l04-napoje-ex08",
+          "lessonId": "a1-u08-l04-napoje",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Попроси склянку води.",
+          "tokens": [
+            "Pohár",
+            ",",
+            ".",
+            "vody",
+            "prosím"
+          ],
+          "correctOrder": [
+            "Pohár",
+            "vody",
+            ",",
+            "prosím",
+            "."
+          ],
+          "explanation": "pohár + vody.",
+          "order": 8,
+          "wordIds": [
+            "a1-u08-l04-napoje-w06"
+          ]
+        },
+        {
+          "id": "a1-u08-l04-napoje-ex09",
+          "lessonId": "a1-u08-l04-napoje",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Prosím si fľašu víno na stôl.",
+          "errorToken": "víno",
+          "correctToken": "vína",
+          "explanation": "fľaša + родовий: vína.",
+          "order": 9,
+          "wordIds": [
+            "a1-u08-l04-napoje-w01",
+            "a1-u08-l04-napoje-w05"
+          ]
+        },
+        {
+          "id": "a1-u08-l04-napoje-ex10",
+          "lessonId": "a1-u08-l04-napoje",
+          "type": "real_menu",
+          "skill": [
+            "reading",
+            "real_life",
+            "numbers"
+          ],
+          "instruction": "Подивись на меню напоїв.",
+          "menuData": [
+            {
+              "category": "Nealko",
+              "item": "kofola 0,5 l",
+              "price": "2,20 €"
+            },
+            {
+              "category": "Nealko",
+              "item": "minerálka 0,33 l",
+              "price": "1,80 €"
+            },
+            {
+              "category": "Víno",
+              "item": "biele víno 0,1 l",
+              "price": "2,50 €"
+            },
+            {
+              "category": "Pivo",
+              "item": "točené pivo 0,5 l",
+              "price": "2,40 €"
+            }
+          ],
+          "questions": [
+            {
+              "question": "Що найдешевше?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "пиво",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "мінералка",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "кофола",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Скільки коштують 0,2 л білого вина?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "4,80 €",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "5,00 €",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "2,50 €",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "a1-u08-l04-napoje-w01"
+          ]
+        },
+        {
+          "id": "a1-u08-l04-napoje-ex11",
+          "lessonId": "a1-u08-l04-napoje",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти за кермом і відмовляєшся від вина.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Ďakujem, šoférujem, dám si nealko.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Nie, nealko víno.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Ďakujem, víno áno.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Šoférujem víno.",
+              "correct": false
+            }
+          ],
+          "explanation": "Šoférujem — я за кермом.",
+          "order": 11,
+          "wordIds": [
+            "a1-u08-l04-napoje-w01"
+          ]
+        },
+        {
+          "id": "a1-u08-l04-napoje-ex12",
+          "lessonId": "a1-u08-l04-napoje",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні фрази.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "fľaša vína",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "fľaša víno",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "pohár vody",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "pohár voda",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "šálka čaju",
+              "correct": true
+            }
+          ],
+          "explanation": "Ємність + родовий.",
+          "order": 12,
+          "wordIds": [
+            "a1-u08-l04-napoje-w01",
+            "a1-u08-l04-napoje-w05",
+            "a1-u08-l04-napoje-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "У барі з колегами",
+        "description": "П’ятниця, ви з колегами в барі.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Офіціант: «Čo si dáte?» (кофолу)",
+            "options": [
+              {
+                "sk": "Kofola, prosím.",
+                "correct": false
+              },
+              {
+                "sk": "Kofoly.",
+                "correct": false
+              },
+              {
+                "sk": "Kofolu, prosím.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Колега: «Nedáš si pivo?» (ні, ти за кермом)",
+            "options": [
+              {
+                "sk": "Nie, ďakujem, šoférujem.",
+                "correct": true
+              },
+              {
+                "sk": "Áno, šoférujem pivo.",
+                "correct": false
+              },
+              {
+                "sk": "Nie, pivo.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти замовляєш для подруги келих червоного вина.",
+            "options": [
+              {
+                "sk": "Červené vína pohár je.",
+                "correct": false
+              },
+              {
+                "sk": "Pohár červené víno.",
+                "correct": false
+              },
+              {
+                "sk": "Pohár červeného vína pre kolegyňu, prosím.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Колеги піднімають келихи. Що кажуть?",
+            "options": [
+              {
+                "sk": "Na zdravie!",
+                "correct": true
+              },
+              {
+                "sk": "Pekný deň!",
+                "correct": false
+              },
+              {
+                "sk": "Dobrú chuť!",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Напої замовлено. Далі — фрукти й овочі."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Напої замовлено. Далі — фрукти й овочі.",
+        "nowYouKnow": [
+          "víno, kakao, limonáda, sódovka",
+          "pohár vody, fľaša vína, šálka čaju",
+          "alkoholické / nealkoholické",
+          "Na zdravie!"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u08-l05-ovocie-zelenina",
+          "title": "Фрукти й овочі"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,423 @@
+@unit c1-u02 | Академічне письмо | Akademické písanie
+
+@lesson struktura-prace | Структура наукової праці: oddiel, sekcia, kapitola | Štruktúra odbornej práce
+desc: Будова наукової праці: вступ, огляд літератури, методологія, результати, обговорення, висновки; як відрізнити розділ (kapitola) від підрозділу (oddiel) і навіщо потрібна логіка переходу між частинами.
+goal: Описувати структуру наукової праці та пояснювати функцію кожного розділу.
+out: називати основні частини праці ;; пояснювати функцію розділу ;; розрізняти kapitolu, oddiel і sekciu ;; формулювати перехід між частинами
+done: Ти розумієш, як побудована наукова праця і що має робити кожна її частина. Далі — абстракт як стиснутий зміст праці.
+T: Основні частини || Наукова праця складається з вступу (úvod), огляду літератури (prehľad literatúry), методології (metodika), результатів (výsledky), обговорення (diskusia) і висновків (záver). Кожна частина має власну функцію, і їх не можна змішувати. || Metodika opisuje postup výskumu. = Методологія описує хід дослідження. ;; Záver zhrnie hlavné zistenia. = Висновок підсумовує головні результати. || kapitola · metodika
+T: Розділ, підрозділ, sekcia || Kapitola — великий розділ, oddiel — підрозділ, sekcia — частина тексту в межах розділу. У тексті їх позначають номерами: «2.1 Metodika». Номер показує ієрархію, а не лише порядок. || Kapitola 2 má tri oddiely. = Розділ 2 має три підрозділи. ;; Táto sekcia opisuje dáta. = Цей розділ описує дані. || oddiel · sekcia
+T: Логіка переходу || Між частинами потрібні переходи, які пояснюють зв’язок: «V ďalšej časti opisujeme metódu.» = У наступній частині описуємо метод. Перехід показує, чому текст рухається далі. || V ďalšej časti opisujeme metódu. = У наступній частині описуємо метод. ;; Výsledky potvrdzujú predchádzajúci záver. = Результати підтверджують попередній висновок. || oddiel · sekcia
+mis: Záver je na začiatku práce, lebo tam sa predstavuje téma. => Záver je na konci práce a zhrnie zistenia. ;; Oddiel je väčší než kapitola. => Kapitola je väčšia než oddiel.
+W: oddiel | підрозділ | оддіел | Tento oddiel opisuje metódu zberu. | Цей підрозділ описує метод збору.
+W: sekcia | частина, розділ тексту | секція | Sekcia výsledkov je v strede práce. | Частина результатів — у середині праці.
+W: kapitola | розділ (великий) | капітола | Kapitola druhá sa venuje teórii. | Другий розділ присвячений теорії.
+W: pojednanie | трактат, розгорнутий виклад | поєднання | Pojednanie rozvíja hlavnú tézu. | Трактат розвиває головну тезу.
+X mt: З’єднай слово і значення. | kapitola = розділ ;; oddiel = підрозділ ;; sekcia = частина тексту ;; metodika = методика ;; záver = висновок
+X dd: Обери правильну форму. | V [*ďalšej/ďalší/ďalšia] časti opisujeme metódu.
+= Місцевий відмінок жіночого роду: «ďalšej».
+X fe: Знайди помилку. | Kapitola 2 má tri [oddiel>oddiely].
+= Множина «oddiely», а не однина.
+X fb: Допиши. | Výsledky ___ predchádzajúci záver. (підтверджують) | potvrdzujú
+= Множина підмета «výsledky»: «potvrdzujú».
+X ce: Виправ речення. | Záver je na začiatku práce, lebo tam sa predstavuje téma. | Záver je na konci práce, lebo zhrnie zistenia.
+= Висновок стоїть наприкінці й підсумовує.
+X sc~: Що означає «oddiel»? | - | *підрозділ ;; розділ ;; абзац
+X sc: Яке речення правильно описує функцію методології? | - | *Metodika opisuje postup výskumu. ;; Metodika zhrnie výsledky. ;; Metodika je zoznam literatúry.
+= Методологія описує спосіб дослідження.
+X tf: - | Kapitola je menšia jednotka než oddiel. | Розділ — менша одиниця, ніж підрозділ. | F
+= Розділ — вища одиниця за підрозділ.
+X cat: Розподіли частини. | Вступ і висновок: úvod, záver ;; Основна частина: metodika, výsledky ;; Структурні одиниці: kapitola, oddiel
+= Групування за роллю в праці.
+X ms: Обери всі правильні твердження. | Štruktúra práce má logiku. | *Úvod predstavuje tému ;; *Záver zhrnie zistenia ;; Výsledky sa píšu pred metódou
+X reg: - | V úvode predstavujeme tému a ciele výskumu. | formal
+= Нейтральний науковий регістр.
+F: Розподіл праці || Ти складаєш план курсової роботи. Треба розподілити частини, позначити розділи номерами й написати перехід між методологією і результатами.
+S: Керівник питає, де буде методологія. Що відповідаєш? (ti — чоловік) | *Metodika bude v druhej kapitole, v oddiele 2.1. ;; Metodika bude na konci, po záveri. ;; Metodika nebude, lebo to nie je dôležité.
+S: Керівник питає про перехід. Як відповідаєш? (ti — žena) | *V ďalšej časti opisujeme metódu zberu dát. ;; V ďalšej časti nič neopisujeme. ;; Prechod nebude, lebo text je krátky.
+S~: Керівник питає, що зробити в кінці. Що відповідаєш? | *Написати висновок, який коротко підсумує головні результати. ;; Додати ще один розділ з новими даними. ;; Нічого не писати, бо це зайве.
+S: Як закінчиш розмову? (ti — чоловік) | *Ďakujem, upravím štruktúru podľa vašich pripomienok. ;; Ďakujem, nič neupravím. ;; Dovidenia, práca nebude.
+R: kapitola · oddiel ;; metodika ;; úvod · záver ;; logika prechodu
+
+@lesson abstrakt | Абстракт: стиснутий зміст праці | Abstrakt
+desc: Абстракт наукової праці: мета, метод, результати, висновок у кількох реченнях; стандартні формули й типові помилки, як-от оцінки та зайві подробиці.
+goal: Писати абстракт наукової праці з чіткою структурою та точними формулюваннями.
+out: формулювати мету і метод в абстракті ;; стисло описувати результат ;; уникати оцінних слів ;; пояснювати, навіщо потрібен абстракт
+done: Ти вмієш написати стислий абстракт. Далі — цитування й парафраза.
+T: Що містить абстракт || Абстракт (abstrakt) передає зміст праці в кількох реченнях: мету, метод, результат, висновок. Його читають першим, тому він має бути самодостатнім. || Cieľom diela je zistiť vplyv dopravy na kvalitu vzduchu. = Метою дослідження є з’ясування впливу транспорту на якість повітря. ;; Výsledky ukazujú významný pokles. = Результати показують суттєве зниження. || abstrakt · cieľ
+T: Формули абстракта || Типові формули: «Cieľom práce je…» (Метою праці є…), «Metódou bola…» (Методом була…), «Výsledky ukazujú, že…» (Результати показують, що…). Вони задають стиль без зайвих слів. || Metódou bola analýza dotazníkov. = Методом був аналіз анкет. ;; Výsledky naznačujú možnú súvislosť. = Результати вказують на можливий зв’язок. || cieľ · metóda
+T: Уникати оцінок || В абстракті не пишуть «skvelý výsledok» (чудовий результат) чи «najlepšia metóda» (найкращий метод). Пишуть факти й межі: «Výsledky sú obmedzené na jednu oblasť.» = Результати обмежені однією областю. || Výsledky sú obmedzené na jednu oblasť. = Результати обмежені однією областю. ;; Skvelý výsledok potvrdil hypotézu. = Чудовий результат підтвердив гіпотезу. || obmedzenie · oceňovanie
+mis: Cieľom práce je, že to bolo skvelé. => Cieľom práce je zistiť vplyv dopravy na kvalitu vzduchu. ;; Abstrakt má mať desať strán. => Abstrakt má mať niekoľko viet.
+W: abstrakt | анотація, стислий зміст праці | абстракт | Abstrakt je na začiatku každej štúdie. | Абстракт є на початку кожного дослідження.
+W: empirický | емпіричний | емпіричний | Empirický výskum vychádza z dát. | Емпіричне дослідження спирається на дані.
+W: teoretický | теоретичний | теоретичний | Teoretický rámec vysvetľuje pojmy. | Теоретичні рамки пояснюють поняття.
+W: dielo | праця, твір (науковий) | дієло | Dielo porovnáva dva modely. | Праця порівнює дві моделі.
+X mt: З’єднай слово і значення. | abstrakt = абстракт ;; empirický = емпіричний ;; teoretický = теоретичний ;; dielo = праця ;; cieľ = мета
+X dd: Обери правильну форму. | Výsledky [*ukazujú/ukazuje/ukázať] pokles.
+= Множина: «výsledky ukazujú».
+X fe: Знайди помилку. | Cieľom práce je, že to bolo [skvelý>skvelé].
+= Оцінку «skvelé» в абстракті не використовують; тут помилка змістова.
+X fb: Допиши. | Metódou bola ___ dotazníkov. (аналіз) | analýza
+= Іменник жіночого роду в називному відмінку: «analýza».
+X ce: Виправ речення. | Skvelý výsledok potvrdil hypotézu. | Výsledok potvrdil hypotézu.
+= Прибрано оцінне слово «skvelý».
+X sc~: Що означає «abstrakt»? | - | *стислий зміст праці ;; список джерел ;; додаток до тексту
+X sc: Яка формула належить до абстракта? | - | *Cieľom práce je zistiť vplyv dopravy. ;; Na záver ďakujem všetkým. ;; Môj názor je taký, že to bolo super.
+= Формула мети без оцінки.
+X tf: - | V абстракті можна писати особисті враження. | В абстракті можна писати особисті враження. | F
+= Абстракт містить факти й межі, без особистих оцінок.
+X cat: Розподіли частини. | Мета і метод: cieľ, metóda ;; Результат: výsledky, zistenie ;; Обмеження: obmedzenie, limit
+= Розподіл частин абстракта.
+X ms: Обери всі правильні твердження. | Abstrakt je prvý čítaný text práce. | *Má byť samostatný ;; *Obsahuje cieľ a výsledok ;; Obsahuje dlhé citácie
+X reg: - | Výsledky naznačujú možnú súvislosť, ale ďalší výskum je potrebný. | formal
+= Формальний науковий регістр з обережним формулюванням.
+F: Анотація до статті || Ти пишеш абстракт до статті для конференції. Треба сформулювати мету, метод, результат і висновок без оцінних слів.
+S: Редактор питає, яка мета статті. Що відповідаєш? (ti — чоловік) | *Cieľom diela je zistiť vplyv dopravy na kvalitu vzduchu. ;; Cieľom diela je, že je to skvelé. ;; Cieľ nie je dôležitý.
+S: Редактор питає, який метод. Як відповідаєш? (ti — žena) | *Metódou bola analýza meraní z troch staníc. ;; Metódou bolo to, čo sa mi páčilo. ;; Metódu nemám.
+S~: Редактор питає, чи результат надійний. Що відповідаєш? | *Результат має обмеження, бо вибірка охоплює одну область. ;; Результат ідеальний, бо він мені подобається. ;; Результат неважливий.
+S: Як закінчиш абстракт? (ti — чоловік) | *Výsledky naznačujú možnú súvislosť a vyžadujú ďalší výskum. ;; Výsledky sú super a nič viac netreba. ;; Abstrakt nemá záver.
+R: abstrakt · cieľ ;; metóda ;; obmedzenie ;; naznačovať
+
+@lesson citovanie-parafraza | Цитування й парафраза: úryvok, preformulovanie, aparát | Citovanie a preformulovanie
+desc: Як чесно використовувати чужі тексти: пряма цитата, парафраза з посиланням, науковий апарат (посилання й список літератури); типові помилки, що ведуть до плагіату.
+goal: Коректно цитувати й парафразувати джерела та оформляти посилання.
+out: відрізняти пряму цитату від парафрази ;; оформлювати посилання ;; переписувати чужу думку своїми словами ;; пояснювати, навіщо потрібен науковий апарат
+done: Ти вмієш чесно використовувати чужі тексти. Далі — формулювання з обережністю (hedging).
+T: Пряма цитата || Пряма цитата передає точні слова автора в лапках і з посиланням: «Podľa Novákovej (2019) „kvalita vzduchu klesá“.» = За Новаковою (2019), «якість повітря знижується». Цитату беруть лише тоді, коли точне формулювання важливе. || Podľa Novákovej (2019) „kvalita vzduchu klesá“. = За Новаковою (2019), «якість повітря знижується». ;; Úryvok musí mať zdroj. = Цитата має мати джерело. || úryvok · aparát
+T: Парафраза || Парафраза передає чужу думку власними словами, але з посиланням: «Podľa Novákovej sa kvalita vzduchu v meste zhoršuje.» = За Новаковою, якість повітря в місті погіршується. Просто замінити слова синонімами — ще не парафраза; потрібно змінити побудову речення. || Podľa Novákovej sa kvalita vzduchu zhoršuje. = За Новаковою, якість повітря погіршується. ;; Zdroj treba uviesť aj pri preformulovaní. = Джерело треба вказати і для парафрази. || preformulovanie · literatúra
+T: Науковий апарат || Науковий апарат — це посилання в тексті й список літератури в кінці. Без нього чужі думки видаються своїми. Список літератури має бути повним і однаково оформленим. || Zoznam literatúry je na konci práce. = Список літератури є в кінці праці. ;; Bez odkazu je text neúplný. = Без посилання текст неповний. || aparát · literatúra
+mis: Podľa Novákovej je to pravda, takže to nemusím citovať. => Podľa Novákovej je to pravda, a preto to uvedieme s odkazom. ;; Stačí zmeniť pár slov a je to moja myšlienka. => Preformulovanie treba zmeniť v štruktúre a uviesť zdroj.
+W: úryvok | цитата (точно передане формулювання) | урівок | Úryvok musí byť presne označený. | Цитата має бути точно позначена.
+W: preformulovanie | парафраза, переказ своїми словами | преформулованіє | Preformulovanie prenesie myšlienku vlastnými slovami. | Парафраза передає думку власними словами.
+W: aparát | науковий апарат (посилання, список) | апарат | Vedecký aparát obsahuje odkazy a literatúru. | Науковий апарат містить посилання й літературу.
+W: literatúra | література, список джерел | література | Literatúra je uvedená na konci práce. | Література наведена наприкінці праці.
+X mt: З’єднай слово і значення. | úryvok = цитата ;; preformulovanie = парафраза ;; aparát = апарат ;; literatúra = література
+X dd: Обери правильну форму. | Podľa Novákovej [*sa/je/bol] kvalita vzduchu zhoršuje.
+= Слово «sa» з дієсловом «zhoršuje sa» — рефлексивна форма.
+X fe: Знайди помилку. | Úryvok musí mať [zdroje>zdroj] vždy.
+= Однина: «zdroj».
+X fb: Допиши. | Bez ___ je text neúplný. (посилання) | odkazu
+= Родовий відмінок після «bez»: «odkazu».
+X ce: Виправ речення. | Stačí zmeniť pár slov a je to moja myšlienka. | Preformulovanie treba zmeniť v štruktúre a uviesť zdroj.
+= Зміна кількох слів не робить парафразу власним текстом.
+X sc~: Що означає «preformulovanie»? | - | *переказ чужої думки своїми словами ;; пряма цитата ;; список джерел
+X sc: Яка форма є прямою цитатою? | - | *„kvalita vzduchu klesá“ ;; kvalita vzduchu klesá, ako tvrdí ona ;; kvalita vzduchu je horšia podľa nej
+= Пряма цитата відтворює точні слова в лапках.
+X tf: - | Парафраза не потребує посилання. | Парафраза не потребує посилання. | F
+= Парафраза також потребує посилання на джерело.
+X cat: Розподіли засоби. | Пряма передача: úryvok ;; Переказ: preformulovanie ;; Оформлення: aparát, literatúra
+= Групування засобів цитування.
+X ms: Обери всі правильні твердження. | Наукова праця має апарат. | *Посилання в тексті ;; *Список літератури ;; Апарат потрібен лише для художніх текстів
+X reg: - | Podľa autorky je kvalita vzduchu v meste nižšia. | formal
+= Нейтральне формулювання з посиланням на автора.
+F: Розділ огляду літератури || Ти пишеш огляд літератури. Треба процитувати одне точне формулювання, переказати іншу думку парафразою і оформити посилання.
+S: Керівник питає, як оформити точне формулювання. Що відповідаєш? (ti — чоловік) | *Dám ho do úvodzoviek a uvediem zdroj v zátvorke. ;; Napíšem ho bez úvodzoviek, lebo to je moja myšlienka. ;; Nedám zdroj, lebo to nie je dôležité.
+S: Керівник питає, як переказати чужу думку. Як відповідаєш? (ti — žena) | *Zmením štruktúru vety a uvediem autora s rokom vydania. ;; Zmením iba dve slová a nič neuvediem. ;; Prepíšem to slovo po slove bez zmeny.
+S~: Керівник питає, чому треба посилання і на парафразу. Що відповідаєш? | *Бо думка належить авторові, навіть якщо слова інші. ;; Бо так написано в правилах для вступу. ;; Не треба, якщо текст короткий.
+S: Як закінчиш розділ? (ti — чоловік) | *Zoznam literatúry doplním podľa citačnej normy. ;; Zoznam literatúry nedoplním, lebo to je zbytočné. ;; Literatúru nemám a nič nenapíšem.
+R: úryvok · preformulovanie ;; aparát ;; literatúra ;; uviesť zdroj
+
+@lesson hedging | Обережні формулювання: naznačovať, pripúšťať, generalizácia | Hedging a opatrné formulovanie
+desc: Hedging — мовні засоби обережності: naznačovať (вказувати), pripúšťať (допускати), obmedziť (обмежувати); як не перебільшувати висновки і формулювати результат із належною силою.
+goal: Формулювати висновки з потрібною мірою впевненості та уникати зайвих узагальнень.
+out: використовувати обережні дієслова ;; пояснювати обмеження узагальнення ;; розрізняти сильне й слабке твердження ;; формулювати висновок із належною обережністю
+done: Ти вмієш формулювати висновки обережно й точно. Далі — аргументація.
+T: Обережні дієслова || Дієслово «naznačovať» означає вказувати на можливість, а не доводити. «Výsledky naznačujú súvislosť.» = Результати вказують на зв’язок. «Pripúšťať» означає допускати: «Nemožno pripúšťať iné vysvetlenie.» = Не можна допускати іншого пояснення. || Výsledky naznačujú súvislosť. = Результати вказують на зв’язок. ;; Nemožno pripúšťať iné vysvetlenie. = Не можна допускати іншого пояснення. || naznačovať · pripúšťať
+T: Обмеження узагальнення || Узагальнення (generalizácia) — це висновок за межі даних. Його обмежують: «Výsledky sa vzťahujú na jedno mesto.» = Результати стосуються одного міста. Так читач не сприйме їх як універсальні. || Výsledky sa vzťahujú na jedno mesto. = Результати стосуються одного міста. ;; Generalizácia je možné len opatrne. = Узагальнення можливе лише обережно. || generalizácia · obmedziť
+T: Сила твердження || Сильне твердження: «Dokázali sme…» (Ми довели…). Слабке: «Naše dáta naznačujú…» (Наші дані вказують…). Вибирайте силу відповідно до доказів. || Dokázali sme vplyv dopravy. = Ми довели вплив транспорту. ;; Naše dáta naznačujú vplyv dopravy. = Наші дані вказують на вплив транспорту. || obmedziť · naznačovať
+mis: Naše dáta dokazujú, že všetci obyvatelia dýchajú zlý vzduch. => Naše dáta naznačujú, že časť obyvateľov je vystavená zlému vzduchu. ;; Generalizácia je dôkaz. => Generalizácia je tvrdenie za hranicami dát.
+W: naznačovať | вказувати, натякати (на можливість) | назначовати | Výsledky naznačujú možný vplyv. | Результати вказують на можливий вплив.
+W: pripúšťať | допускати | припуштяти | Pripúšťam aj iné vysvetlenie. | Допускаю й інше пояснення.
+W: generalizácia | узагальнення | генералізація | Generalizácia je riskantná bez ďalších dát. | Узагальнення ризиковане без додаткових даних.
+W: obmedziť | обмежити | обмедзіті | Štúdia sa obmedzila na jedno mesto. | Дослідження обмежилося одним містом.
+X mt: З’єднай слово і значення. | naznačovať = вказувати ;; pripúšťať = допускати ;; generalizácia = узагальнення ;; obmedziť = обмежити
+X dd: Обери правильну форму. | Dáta [*naznačujú/naznačuje/naznačiť] možnú súvislosť.
+= Множина: «dáta naznačujú».
+X fe: Знайди помилку. | Naše dáta [dokazujú>naznačujú] časť obyvateľov je vystavená zlému vzduchu.
+= Обережніше: «naznačujú», бо дані не доводять загального висновку.
+X fb: Допиши. | Výsledky sa ___ na jedno mesto. (стосуються) | vzťahujú
+= Зворотне дієслово «vzťahovať sa»: «vzťahujú sa».
+X ce: Виправ речення. | Generalizácia je dôkaz. | Generalizácia je tvrdenie za hranicami dát.
+= Узагальнення — це не доказ, а висновок, що виходить за межі даних.
+X sc~: Що означає «pripúšťať»? | - | *допускати ;; відкидати ;; доводити
+X sc: Яка формула є обережною? | - | *Výsledky naznačujú možný vplyv. ;; Dokázali sme absolútny vplyv. ;; Vplyv je nesporný a koniec.
+= Обережна формула з «naznačujú».
+X tf: - | Dokázali sme vplyv — це обережне формулювання. | Ми довели вплив — це обережне формулювання. | F
+= «Dokázali sme» — сильне твердження.
+X cat: Розподіли засоби. | Обережні дієслова: naznačovať, pripúšťať ;; Обмеження: obmedziť, vzťahovať sa ;; Узагальнення: generalizácia
+= Групування засобів обережності.
+X ms: Обери всі правильні твердження. | Hedging знижує силу твердження. | *Naznačujú znižuje istotu ;; *Obmedziť znižuje rozsah ;; Dokázali sme znižuje istotu
+X reg: - | Naše výsledky naznačujú možný vplyv, ale potrebujú ďalší výskum. | formal
+= Формальний науковий регістр з обережним висновком.
+F: Висновки дослідження || Ти пишеш висновки до дослідження. Треба сформулювати результат без перебільшення, обмежити узагальнення і пояснити обмеження вибірки.
+S: Керівник питає, чи дані доводять вплив. Що відповідаєш? (ti — чоловік) | *Naše dáta naznačujú vplyv, ale nedokazujú ho úplne. ;; Dokázali sme úplný vplyv bez výnimky. ;; Dáta nič nenaznačujú.
+S: Керівник питає, чи результат стосується всієї країни. Як відповідаєш? (ti — žena) | *Výsledky sa vzťahujú len na jedno mesto. ;; Výsledky platia pre celú krajinu bez výnimky. ;; Výsledky sa netýkajú nikoho.
+S~: Керівник питає, чи можна узагальнювати далі. Що відповідаєш? | *Узагальнювати можна лише обережно, бо вибірка обмежена. ;; Так, без обмежень, бо результат ідеальний. ;; Ні, узагальнювати не треба й не можна ніколи.
+S: Як закінчиш висновок? (ti — чоловік) | *Ďalší výskum môže tieto zistenia rozšíriť a spresniť. ;; Ďalší výskum nie je potrebný, lebo je to hotové. ;; Výskum je skončený bez ďalších otázok.
+R: naznačovať · pripúšťať ;; generalizácia · obmedziť ;; vzťahovať sa ;; dokázali sme · naznačujú
+
+@lesson argumentacia | Аргументація: opodstatnenie, korpus, premisa | Argumentácia
+desc: Структура аргументу в науковому тексті: твердження, обґрунтування (opodstatnenie), опора на корпус даних (korpus) і висновок; як пов’язувати аргументи логічними сполучниками.
+goal: Будувати аргумент від твердження до висновку з опорою на дані.
+out: виділяти твердження й обґрунтування ;; опиратися на корпус даних ;; використовувати логічні сполучники ;; перевіряти, чи висновок випливає з аргументу
+done: Ти вмієш будувати аргумент від твердження до висновку. Далі — термінологія.
+T: Структура аргументу || Аргумент складається з тези (твердження), опори (dôkaz або dáta) і висновку. Premisa (посилка) — початок аргументу: «Premisa je, že doprava znečisťuje vzduch.» = Посилка: транспорт забруднює повітря. Висновок має випливати з посилок. || Premisa je, že doprava znečisťuje vzduch. = Посилка: транспорт забруднює повітря. ;; Z toho vyplýva, že treba regulovať dopravu. = Звідси випливає, що транспорт треба регулювати. || premisa · opodstatnenie
+T: Опора на корпус || Корпус (korpus) — зібрана база текстів або даних. Посилання на нього додає вагу: «Podľa korpusu sa slovo používa častejšie v tlači.» = За корпусом це слово частіше вживається в пресі. Без корпусу твердження виглядає як думка. || Podľa korpusu sa slovo používa častejšie. = За корпусом це слово вживається частіше. ;; Korpus obsahuje tisíce textov. = Корпус містить тисячі текстів. || korpus · opodstatnenie
+T: Логічні сполучники || Аргумент пов’язують сполучники: «nakoľko» (оскільки), «preto» (тому), «avšak» (однак). Наприклад: «Nakoľko dáta sú obmedzené, výsledok je predbežný.» = Оскільки дані обмежені, результат попередній. || Nakoľko dáta sú obmedzené, výsledok je predbežný. = Оскільки дані обмежені, результат попередній. ;; Avšak výsledok je stabilný. = Однак результат стабільний. || nakoľko · preto
+mis: Doprava je zlá, preto je zlá. => Doprava znečisťuje vzduch, preto treba zmenšiť jej objem, o čom svedčí korpus dát. ;; Korpus je názor autora. => Korpus je zbierka textov alebo dát.
+W: opodstatnenie | обґрунтування, підстава | оподстатненіє | Opodstatnenie tvrdenia vychádza z dát. | Обґрунтування твердження спирається на дані.
+W: korpus | корпус (зібрана база даних або текстів) | корпус | Korpus obsahuje tisíce textov z tlače. | Корпус містить тисячі текстів із преси.
+W: premisa | посилка, вихідна засада | премиса | Premisa tvrdenia musí byť overená. | Посилка твердження має бути перевірена.
+W: nakoľko | оскільки, тому що | накольке | Nakoľko dáta sú málo, výsledok je predbežný. | Оскільки даних мало, результат попередній.
+X mt: З’єднай слово і значення. | premisa = посилка ;; opodstatnenie = обґрунтування ;; korpus = корпус ;; nakoľko = оскільки
+X dd: Обери правильну форму. | Nakoľko dáta sú [*obmedzené/obmedzená/obmedzený], výsledok je predbežný.
+= Множина підмета «dáta» (множина): «obmedzené».
+X fe: Знайди помилку. | Korpus [obsahujú>obsahuje] tisíce textov.
+= Підмет «korpus» однина: «obsahuje».
+X fb: Допиши. | Podľa ___ sa slovo používa častejšie. (корпусу) | korpusu
+= Родовий відмінок після «podľa»: «korpusu».
+X ce: Виправ речення. | Doprava je zlá, preto je zlá. | Doprava znečisťuje vzduch, preto treba regulovať jej objem.
+= Аргумент має спиратися на факт, а не на повтор твердження.
+X sc~: Що означає «premisa»? | - | *посилка аргументу ;; висновок ;; назва розділу
+X sc: Яке речення є висновком? | - | *Z toho vyplýva, že treba regulovať dopravu. ;; Premisa je, že doprava znečisťuje. ;; Nakoľko dáta sú obmedzené.
+= Висновок стоїть після посилки.
+X tf: - | Korpus є думкою автора. | Корпус є думкою автора. | F
+= Корпус — це зібрана база текстів або даних.
+X cat: Розподіли аргумент. | Посилка: premisa, opodstatnenie ;; Опора: korpus, dáta ;; Зв’язок: nakoľko, preto
+= Групування елементів аргументу.
+X ms: Обери всі правильні твердження. | Аргумент має висновок. | *Посилка передує висновку ;; *Nakoľko вказує на причину ;; Корпус є висновком аргументу
+X reg: - | Nakoľko korpus je veľký, môžeme sa oprieť o jeho dáta. | formal
+= Формальний регістр з логічним сполучником.
+F: Аргумент у статті || Ти пишеш аргументацію для статті. Треба сформулювати посилку, опертися на корпус і зробити висновок, який випливає з даних.
+S: Рецензент питає, на чому грунтується твій висновок. Що відповідаєш? (ti — чоловік) | *Opieram sa o korpus, nakoľko dáta potvrdzujú vzorec. ;; Opieram sa o svoj pocit, lebo je to jasné. ;; Nemám žiadnu oporu.
+S: Рецензент питає, čo z toho vyplýva. Ako odpovieš? (ti — žena) | *Z toho vyplýva, že doprava vyžaduje reguláciu. ;; Z toho vyplýva, že doprava je dobrá pre všetkých. ;; Z toho nič nevyplýva.
+S~: Рецензент питає, чи ваша посилка перевірена. Що відповідаєте? | *Так, її перевірено на корпусі даних і результат збігається. ;; Ні, вона просто моя думка. ;; Не знаю, не перевіряли.
+S: Як завершиш аргумент? (ti — чоловік) | *Avšak tento záver vyžaduje ďalšie dáta, preto je predbežný. ;; Avšak tento záver je definitívny, bez ďalších dát. ;; Záver nie je potrebný.
+R: premisa · opodstatnenie ;; korpus ;; nakoľko · preto ;; z toho vyplýva
+
+@lesson terminologia | Терміни й визначення: pojmoslovie, vysvetlenie, glosár | Terminológia a definície
+desc: Точні терміни в науковому тексті: pojmoslovie (терміносистема), vysvetlenie (визначення), ohraničenie (окреслення меж поняття) і glosár (глосарій); як вводити термін і давати визначення.
+goal: Вводити, визначати й послідовно вживати наукові терміни.
+out: вводити термін із визначенням ;; окреслювати межі поняття ;; складати глосарій ;; вживати терміни послідовно
+done: Ти вмієш вводити й визначати терміни. Далі — рецензування й оцінка праці.
+T: Визначення терміна || Науковий термін вводять визначенням: «Pod kvalitou vzduchu rozumieme…» = Під якістю повітря розуміємо… Визначення має бути коротким і однозначним. || Pod kvalitou vzduchu rozumieme koncentráciu látok. = Під якістю повітря розуміємо концентрацію речовин. ;; Vysvetlenie je presná. = Визначення точне. || vysvetlenie · pojmoslovie
+T: Окреслення поняття || Ohraničenie (окреслення) показує межі поняття: що входить у термін, а що ні. «Pojem dopravy sa vzťahuje len na mestské linky.» = Поняття транспорту стосується лише міських ліній. || Pojem dopravy sa vzťahuje len na mestské linky. = Поняття транспорту стосується лише міських ліній. ;; Ohraničenie je dôležité pre ďalší výskum. = Окреслення важливе для подальшого дослідження. || ohraničenie · pojem
+T: Глосарій || Глосарій (glosár) — список термінів з визначеннями, зазвичай наприкінці праці. Він потрібен, коли терміни мають вузьке значення. || V glosári sú definované kľúčové pojmy. = У глосарії визначено ключові поняття. ;; Glosár je na konci práce. = Глосарій є наприкінці праці. || glosár · vysvetlenie
+mis: Pojem môže mať v každej práci iný význam. => Pojem treba v práci vymedziť tak, aby mal jeden význam. ;; Glosár je len zoznam slov. => Glosár obsahuje termíny s definíciami.
+W: pojmoslovie | терміносистема, понятійний апарат | поймослове | Pojmoslovie tejto práce je presné. | Терміносистема цієї праці точна.
+W: glosár | глосарій | глосар | V glosári sú definované kľúčové pojmy. | У глосарії визначено ключові поняття.
+W: vysvetlenie | визначення (пояснення значення) | висвєтленіє | Vysvetlenie pojmu musí byť jasné. | Визначення поняття має бути ясним.
+W: ohraničenie | окреслення меж (поняття) | огранічєнє | Ohraničenie pojmu je potrebné. | Окреслення меж поняття потрібне.
+X mt: З’єднай слово і значення. | pojmoslovie = терміносистема ;; glosár = глосарій ;; vysvetlenie = визначення ;; ohraničenie = окреслення меж
+X dd: Обери правильну форму. | V [*glosári/glosár/glosáru] sú definované kľúčové pojmy.
+= Місцевий відмінок після «v»: «glosári».
+X fe: Знайди помилку. | Pod kvalitou vzduchu [rozumiem>rozumieme] koncentráciu látok.
+= Множина, «my»: «rozumieme».
+X fb: Допиши. | Pojem dopravy sa ___ na mestské linky. (стосується) | vzťahuje
+= Зворотне дієслово «vzťahovať sa»: «vzťahuje sa».
+X ce: Виправ речення. | Pojem dopravy sa vzťahuje na všetky typy vozidiel bez výnimky. | Pojem dopravy sa vzťahuje len na mestské linky.
+= Окреслення має звузити поняття, а не розширити його.
+X sc~: Що означає «glosár»? | - | *список термінів з визначеннями ;; список літератури ;; розділ з висновками
+X sc: Яке речення є визначенням? | - | *Pod kvalitou vzduchu rozumieme koncentráciu látok. ;; Kvalita vzduchu je dobrá. ;; Vysvetlenie je v tabuľke.
+= Визначення пояснює значення терміна.
+X tf: - | Glosár je zoznam bez definícií. | Глосарій — це список без визначень. | F
+= Глосарій містить терміни з визначеннями.
+X cat: Розподіли терміни. | Терміни: pojmoslovie, vysvetlenie ;; Межі: ohraničenie, pojem ;; Довідка: glosár, zoznam
+= Групування термінологічних засобів.
+X ms: Обери всі правильні твердження. | Науковий термін має мати визначення. | *Визначення має бути однозначним ;; *Окреслення визначає межі поняття ;; Визначення можна не давати ніколи
+X reg: - | Pod pojmom rozumieme súbor vlastností, ktoré odlišujú daný jav. | formal
+= Формальне визначення через «pod pojmom rozumieme».
+X fb: Допиши. | Pod kvalitou vzduchu ___ koncentráciu látok. (розуміємо) | rozumieme
+= Дієслово «rozumieť» у множині, «my».
+X dd: Обери правильну форму. | Vysvetlenie [*je/sú/sme] presná.
+= Однина: «vysvetlenie je».
+X sc: Що є правильним для визначення? | - | *Vysvetlenie uvádza význam pojmu. ;; Vysvetlenie uvádza autora knihy. ;; Vysvetlenie je vždy dlhá.
+= Визначення пояснює значення терміна, а не автора.
+X fe: Знайди помилку. | Glosár [obsahujú>obsahuje] definície pojmov.
+= Однина: «glosár obsahuje».
+F: Глосарій для роботи || Ти пишеш вступ і визначаєш ключові терміни. Треба дати визначення, окреслити межі поняття і перевірити, чи терміни вживаються однаково.
+S: Колега питає, що таке «pojmoslovie» у твоєму тексті. Що відповідаєш? (ti — žena) | *Je to súbor termínov a ich definícií v práci. ;; Je to zoznam autorov. ;; Je to nadpis tabuľky.
+S: Колега питає, навіщо ти визначаєш термін. Як відповідаєш? (ti — muž) | *Aby čitateľ rozumel, čo pojem znamená v tejto práci. ;; Aby práca bola dlhšia. ;; Aby som nemusel citovať.
+S~: Колега питає, чи потрібен глосарій, якщо терміни відомі. Що відповідаєш? | *Так, бо терміни можуть мати різні значення в різних працях. ;; Ні, глосарій ніколи не потрібен. ;; Так, але лише для художньої літератури.
+S: Як окреслиш межі поняття? (ti — muž) | *Vymedzím, čo do pojmu patrí a čo nie. ;; Nevymedzím nič, nech je to voľné. ;; Pojem bez hraníc je presnejší.
+R: pojmoslovie · glosár ;; vysvetlenie · ohraničenie ;; terminológia ;; presné termíny
+
+@lesson posudzovanie | Оцінювання праці: posudzovanie, oponentúra, posudzovateľ | Posudzovanie a oponentúra
+desc: Оцінювання наукової праці: posudzovanie (оцінювання за критеріями), oponentúra (письмовий відгук опонента), posudzovateľ (рецензент) і overovať (перевіряти); як писати обґрунтовані зауваження й відповідати на них.
+goal: Оцінювати текст за критеріями й відповідати на зауваження рецензента.
+out: писати обґрунтований відгук ;; відповідати на зауваження ;; пояснювати критерії оцінювання ;; перевіряти факти перед відповіддю
+done: Ти вмієш оцінювати роботу й відповідати на відгуки. Далі — публікація результатів.
+T: Критерії оцінювання || Posudzovanie (оцінювання) спирається на критерії: актуальність, метод, дані, аргументи. «Posudzujeme aktuálnosť témy.» = Ми оцінюємо актуальність теми. Оцінка має бути обґрунтована. || Posudzujeme aktuálnosť témy. = Ми оцінюємо актуальність теми. ;; Posudzovanie musí byť objektívne. = Оцінювання має бути об’єктивним. || posudzovanie · oponentúra
+T: Oponentúra || Oponentúra — письмовий відгук опонента про роботу. Posudzovateľ (рецензент) вказує сильні сторони й зауваження. «Posudzovateľ navrhol doplniť metódu.» = Рецензент запропонував доповнити метод. || Posudzovateľ navrhol doplniť metódu. = Рецензент запропонував доповнити метод. ;; Oponentúra je písomná. = Відгук письмовий. || oponentúra · posudzovateľ
+T: Перевірка зауважень || Overovať (перевіряти) означає звіряти твердження з даними. Перед відповіддю на зауваження його треба перевірити. «Overili sme všetky údaje.» = Ми перевірили всі дані. || Overili sme všetky údaje. = Ми перевірили всі дані. ;; Pripomienku treba overiť v dátach. = Зауваження треба перевірити в даних. || overovať · posudzovanie
+mis: Posudzovateľ sa mýli, takže ho ignorujem. => Pripomienku treba overiť a odpovedať vecne. ;; Posudzovanie je len osobný názor. => Posudzovanie má mať kritériá a dôkazy.
+W: posudzovanie | оцінювання, оцінка | посуджованє | Posudzovanie prebehne podľa kritérií. | Оцінювання відбудеться за критеріями.
+W: oponentúra | рецензування, письмовий відгук | опонентура | Oponentúra je súčasťou obhajoby. | Рецензування є частиною захисту.
+W: posudzovateľ | рецензент | посудзовател | Posudzovateľ písal kritické poznámky. | Рецензент написав критичні зауваження.
+W: overovať | перевіряти, звіряти | оверовати | Musíme overovať údaje. | Треба перевіряти дані.
+X mt: З’єднай слово і значення. | posudzovanie = оцінювання ;; oponentúra = рецензування ;; posudzovateľ = рецензент ;; overovať = перевіряти
+X dd: Обери правильну форму. | Posudzovatelia [*navrhli/navrhol/navrhla] doplniť metódu.
+= Множина: «posudzovatelia navrhli».
+X fe: Знайди помилку. | Posudzovanie [musíme>musí] byť objektívne.
+= Підмет «posudzovanie» однина: «musí».
+X fb: Допиши. | Ми ___ údaje pred odpoveďou. (перевіряємо) | overujeme
+= Дієслово «overovať», «my»: «overujeme».
+X ce: Виправ речення. | Posudzovateľ sa mýli, takže ho ignorujem. | Pripomienku treba overiť a odpovedať vecne.
+= Зауваження треба перевірити, а не ігнорувати.
+X sc~: Що означає «oponentúra»? | - | *письмовий відгук опонента ;; список джерел ;; вступ до праці
+X sc: Яке речення є обґрунтованою оцінкою? | - | *Metóda je vhodná, lebo vzorka je dostatočná. ;; Práca je zlá, lebo sa mi nepáči. ;; Práca je super a nič sa nemá meniť.
+= Обґрунтована оцінка посилається на критерій.
+X tf: - | Posudzovateľ píše len pochvalu. | Рецензент пише лише похвалу. | F
+= Рецензія містить і сильні сторони, і зауваження.
+X cat: Розподіли. | Оцінка: posudzovanie, oponentúra ;; Люди: posudzovateľ, autor ;; Дії: overovať, navrhnúť
+= Групування понять оцінювання.
+X ms: Обери всі правильні твердження. | Відгук має бути конструктивним. | *Зауваження мають бути обґрунтовані ;; *Сильні сторони варто відзначити ;; Зауваження можна писати без доказів
+X reg: - | Posudzovateľ navrhuje doplniť metódu a upresniť údaje. | formal
+= Формальний регістр рецензування.
+X fb: Допиши. | Posudzovanie musí byť ___ . (об’єктивним) | objektívne
+= Прикметник після «byť»: «objektívne».
+X dd: Обери правильну форму. | Oponentúra je [*písomná/písomné/písomný].
+= Жіночий рід: «písomná».
+X sc: Яка відповідь на зауваження є вірною? | - | *Údaje sme overili a doplníme metódu. ;; Posudzovateľ sa mýli, nič nemením. ;; Údaje nie sú dôležité.
+= Відповідь перевіряє дані й враховує зауваження.
+F: Відгук на роботу || Ти отримав рецензію на свою роботу і готуєш відповідь. Треба перевірити зауваження, обґрунтувати оцінку і відповісти ввічливо по суті.
+S: Рецензент пише зауваження щодо методу. Як відповідаєш? (ti — muž) | *Pripomienku overím a doplním metódu. ;; Posudzovateľ sa mýli, nič nemením. ;; Pripomienku ignorujem.
+S: Колега питає, як ти оцінюєш роботу. Що відповідаєш? (ti — žena) | *Posudzujem ju podľa kritérií: metóda, dáta, argumenty. ;; Posudzujem ju len podľa toho, či sa mi páči. ;; Neposudzujem ju vôbec.
+S~: Чому рецензент просить перевірити дані? Що відповідаєте? | *Бо висновок має спиратися на перевірені дані. ;; Бо дані ніколи не потрібні. ;; Бо рецензенту не подобається стиль.
+S: Як закінчиш відповідь рецензентові? (ti — muž) | *Ďakujem za pripomienky, zapracujem ich. ;; Pripomienky nezapracujem, lebo sú zlé. ;; Nič nepíšem a odídem.
+R: posudzovanie · oponentúra ;; posudzovateľ ;; overovať ;; objektívne kritériá
+
+@lesson publikacia | Публікація й постер: publikovať, poster, prezentovanie | Publikácia a poster
+desc: Публікація результатів: publikovať (публікувати), poster (постер), prezentovanie (презентація) і bádanie (дослідження); як готувати постер і текст для журналу або конференції.
+goal: Готувати публікацію і постер із чітким викладом результатів.
+out: описувати результати для публікації ;; структурувати постер ;; готувати усну презентацію ;; пояснювати, чому потрібне рецензування
+done: Ти вмієш готувати публікацію й постер. Далі — плагіат і авторство.
+T: Публікація результатів || Bádanie sa publikuje v časopise alebo na konferencii. Текст має чітку структуру: мета, метод, результати. «Výsledky publikujeme v odbornom časopise.» = Результати публікуємо в фаховому журналі. || Výsledky publikujeme v odbornom časopise. = Результати публікуємо в фаховому журналі. ;; Publikácia prešla recenziou. = Публікація пройшла рецензування. || publikovať · bádanie
+T: Постер || Poster (постер) — стислий візуальний виклад дослідження: назва, мета, метод, результати, висновок. Він має бути читабельним здалеку. «Poster obsahuje tri hlavné výsledky.» = Постер містить три головні результати. || Poster obsahuje tri hlavné výsledky. = Постер містить три головні результати. ;; Nadpis postera je krátky a jasný. = Заголовок постера короткий і ясний. || poster · prezentovanie
+T: Усна презентація || Prezentovanie (презентація) — усний виклад результатів. Вона має бути короткою й спиратися на ключові дані. «Prezentovanie trvá desať minút.» = Презентація триває десять хвилин. || Prezentovanie trvá desať minút. = Презентація триває десять хвилин. ;; Hlavný výsledok je na prvom slajde. = Головний результат на першому слайді. || prezentovanie · bádanie
+mis: Poster má obsahovať celý text práce. => Poster má obsahovať stručné hlavné body. ;; Výsledky sa publikujú bez recenzie. => Odborný text zvyčajne prechádza recenziou.
+W: poster | постер | постер | Poster je na konferencii vystavený. | Постер виставлено на конференції.
+W: prezentovanie | презентація, усний виклад | презентованіє | Prezentovanie trvá desať minút. | Презентація триває десять хвилин.
+W: publikovať | публікувати | публікувати | Výsledky publikujeme v časopise. | Результати публікуємо в журналі.
+W: bádanie | дослідження | баданіє | Bádanie trvalo dva roky. | Дослідження тривало два роки.
+X mt: З’єднай слово і значення. | poster = постер ;; prezentovanie = презентація ;; publikovať = публікувати ;; bádanie = дослідження
+X dd: Обери правильну форму. | Výsledky [*publikujeme/publikujem/publikuje] v časopise.
+= Множина «my»: «publikujeme».
+X fe: Знайди помилку. | Prezentovanie [trvajú>trvá] desať minút.
+= Однина: «prezentovanie trvá».
+X fb: Допиши. | Poster má ___ nadpis. (короткий) | krátky
+= Прикметник у чоловічому роді, бо «nadpis» — чоловічий: «krátky».
+X ce: Виправ речення. | Výsledky sa publikujú bez recenzie. | Odborný text zvyčajne prechádza recenziou.
+= Фаховий текст зазвичай проходить рецензування.
+X sc~: Що таке «prezentovanie» у науці? | - | *усний виклад результатів ;; письмовий список джерел ;; фото лабораторії
+X sc: Яке речення правильно описує постер? | - | *Poster obsahuje tri hlavné výsledky. ;; Poster obsahuje celý text práce so všetkými tabuľkami. ;; Poster treba čítať tri hodiny.
+= Постер — стислий виклад, а не повний текст.
+X tf: - | Bádanie sa publikuje vždy bez recenzie. | Дослідження завжди публікують без рецензії. | F
+= Фахові публікації зазвичай рецензуються.
+X cat: Розподіли. | Публікація: publikovať, časopis ;; Візуалізація: poster, nadpis ;; Усно: prezentovanie, bádanie
+= Групування засобів публікації.
+X ms: Обери всі правильні твердження. | Постер має бути читабельним. | *Заголовок має бути коротким ;; *Ключові результати варто виділити ;; Постер має містити весь текст
+X reg: - | Výsledky publikujeme v odbornom časopise a na konferencii. | formal
+= Формальний регістр публікації.
+X fb: Допиши. | Prezentovanie trvá ___ minút. (десять) | desať
+= Числівник «desať» з родовим відмінком «minút».
+X dd: Обери правильну форму. | Bádanie [*trvalo/trval/trvali] dva roky.
+= Середній рід: «bádanie trvalo».
+X sc: Що варто додати на постер? | - | *Cieľ, metódu a hlavné výsledky. ;; Celý zoznam literatúry na dvadsať strán. ;; Osobné údaje autora.
+= Постер містить головне, а не все.
+F: Постер для конференції || Ти готуєш постер і усну презентацію для конференції. Треба виділити головний результат, стисло описати метод і підготуватися до запитань.
+S: Колега питає, де публікуєш результати. Що відповідаєш? (ti — muž) | *V odbornom časopise a na konferencii. ;; V telefóne. ;; Nikde, lebo to nie je potrebné.
+S: Колега питає, що має бути на постері. Як відповідаєш? (ti — žena) | *Cieľ, metóda, hlavné výsledky a záver. ;; Celý text práce bez obrázkov. ;; Len názov a fotka autora.
+S~: Колега питає, чи треба рецензування перед публікацією. Що відповідаєте? | *Так, більшість фахових видань вимагає рецензування. ;; Ні, публікувати можна без жодної перевірки. ;; Лише для постерів.
+S: Як підсумуєш презентацію? (ti — muž) | *Zhrniem hlavný výsledok a odpoviem na otázky. ;; Ukončím bez zhrnutia a odídem. ;; Nič nepoviem, len zapnem video.
+R: publikovať · bádanie ;; poster · prezentovanie ;; časopis ;; konferencia
+
+@lesson plagiat | Плагіат і авторство: prisvojenie, autorstvo, originálny | Prisvojenie a autorstvo
+desc: Плагіат і авторство: prisvojenie (плагіат), plagiátorstvo (плагіатство), autorstvo (авторство), originálny (оригінальний); як розпізнати плагіат і чітко позначити авторство власного й чужого тексту.
+goal: Розпізнавати плагіат і позначати авторство.
+out: розпізнавати плагіат ;; позначати авторство ;; пояснювати, чому плагіат недопустимий ;; відрізняти оригінальний текст від запозичення
+done: Ти вмієш розпізнавати плагіат і позначати авторство. Далі — підсумок розділу.
+T: Що таке плагіат || Prisvojenie (плагіат) — присвоєння чужих слів або ідей без позначення джерела. Plagiátorstvo (плагіатство) — сама така практика. «Prisvojenie je vážne porušenie etiky.» = Плагіат — серйозне порушення етики. || Prisvojenie je vážne porušenie etiky. = Плагіат — серйозне порушення етики. ;; Plagiátorstvo je zakázané. = Плагіатство заборонене. || prisvojenie · plagiátorstvo
+T: Авторство || Autorstvo (авторство) означає, хто створив текст або ідею. Його треба позначати: «Autorstvo tejto metódy patrí Kováčovi.» = Авторство цього методу належить Ковачові. || Autorstvo tejto metódy patrí Kováčovi. = Авторство цього методу належить Ковачові. ;; Autorstvo treba uviesť. = Авторство треба вказати. || autorstvo · originálny
+T: Оригінальний текст || Originálny (оригінальний) текст містить власні думки й дані, а запозичення позначені джерелами. «Originálny príspevok je v tretej kapitole.» = Оригінальний внесок — у третьому розділі. || Originálny príspevok je v tretej kapitole. = Оригінальний внесок — у третьому розділі. ;; Text je originálny, lebo má zdroje. = Текст оригінальний, бо має джерела. || originálny · prisvojenie
+mis: Keď zmením jedno slovo, je to môj text. => Zmena niekoľkých slov nerobí text originálnym. ;; Autorstvo netreba uvádzať pri krátkej vete. => Autorstvo treba uviesť aj pri krátkej myšlienke.
+W: prisvojenie | плагіат (присвоєння чужого) | присвоєнє | Prisvojenie cudzieho textu je vážne porušenie. | Присвоєння чужого тексту — серйозне порушення.
+W: plagiátorstvo | плагіатство | плагіаторство | Plagiátorstvo je zakázané. | Плагіатство заборонене.
+W: autorstvo | авторство | авторство | Autorstvo tejto metódy patrí Kováčovi. | Авторство цього методу належить Ковачові.
+W: originálny | оригінальний | оригінальний | Originálny príspevok je v tretej kapitole. | Оригінальний внесок — у третьому розділі.
+X mt: З’єднай слово і значення. | prisvojenie = плагіат ;; autorstvo = авторство ;; originálny = оригінальний ;; plagiátorstvo = плагіатство
+X dd: Обери правильну форму. | Prisvojenie je [*vážne/vážna/vážny] porušenie etiky.
+= Середній рід «porušenie»: «vážne».
+X fe: Знайди помилку. | Autorstvo tejto metódy [patria>patrí] Kováčovi.
+= Однина: «autorstvo patrí».
+X fb: Допиши. | Originálny príspevok je v ___ kapitole. (третьому) | treťej
+= Місцевий відмінок жіночого роду: «v tretej kapitole».
+X ce: Виправ речення. | Keď zmením jedno slovo, je to môj text. | Zmena niekoľkých slov nerobí text originálnym.
+= Зміна одного слова не робить текст оригінальним.
+X sc~: Що означає «autorstvo»? | - | *хто створив текст або ідею ;; дата публікації ;; номер сторінки
+X sc: Яке речення правильне? | - | *Myšlienku treba uviesť so zdrojom. ;; Myšlienku môžem použiť bez zdroja. ;; Autorstvo sa nemusí uvádzať.
+= Чужу ідею завжди позначають джерелом.
+X tf: - | Ak je text originálny, nemá zdroje. | Якщо текст оригінальний, у нього немає джерел. | F
+= Оригінальний текст може і мусить мати посилання на джерела.
+X cat: Розподіли. | Порушення: prisvojenie, plagiátorstvo ;; Позначення: autorstvo, zdroj ;; Якість: originálny, text
+= Групування понять авторства.
+X ms: Обери всі правильні твердження. | Плагіат — порушення етики. | *Чужі слова без посилання — це плагіат ;; *Авторство треба вказувати ;; Плагіат дозволений у коротких текстах
+X reg: - | Autorstvo tejto myšlienky patrí autorovi, ktorý ju prvý publikoval. | formal
+= Формальний регістр про авторство.
+X fb: Допиши. | Prisvojenie je ___ porušenie etiky. (серйозне) | vážne
+= Прислівник / прикметник «vážne» перед іменником «porušenie».
+X dd: Обери правильну форму. | Autorstvo tejto myšlienky [*patrí/patria/patrím] Kováčovi.
+= Однина: «patrí».
+X sc: Що треба зробити з чужою ідеєю? | - | *Uviesť autora a zdroj. ;; Vydať ju za vlastnú. ;; Zmeniť jedno slovo.
+= Чужу ідею позначають автором і джерелом.
+F: Розділ про запозичення || Ти завершуєш розділ про використання джерел. Треба пояснити, як позначати цитати, парафрази й авторство, і не допустити плагіату.
+S: Колега каже, що зміна одного слова робить текст його. Що відповідаєш? (ti — muž) | *Ні, треба змінити структуру і вказати джерело. ;; Так, одне слово достатньо. ;; Це не має значення взагалі.
+S: Студент питає, чи треба вказувати автора короткої думки. Як відповідаєш? (ti — žena) | *Áno, aj krátku myšlienku treba označiť. ;; Nie, krátke myšlienky nie sú majetkom autora. ;; Len ak je dlhšia ako dve strany.
+S~: Керівник питає, чому плагіат — серйозна проблема. Що відповідаєте? | *Бо присвоєння чужої праці порушує авторство і довіру. ;; Бо він займає місце в бібліотеці. ;; Бо плагіат дозволений лише в курсових.
+S: Як завершиш розділ про запозичення? (ti — muž) | *Uvediem všetky zdroje v zozname literatúry. ;; Zdroje vynechám, lebo sú zbytočné. ;; Zdroje nahradím svojím menom.
+R: prisvojenie · plagiátorstvo ;; autorstvo ;; originálny ;; uviesť zdroj
+
+@lesson zhrnutie-rozdelu | Підсумок розділу: sumár, záver, originalita | Sumár a záver
+desc: Підсумок розділу про академічне письмо: sumár (підсумок), záver (висновок), odborný (науковий), hlavný (походження) і originalita (оригінальність); як зібрати цитування, обережність, аргументацію й авторство в один текст.
+goal: Зібрати навички академічного письма в короткий, перевірений підсумок.
+out: скласти короткий підсумок ;; формулювати обережний висновок ;; перевіряти посилання й авторство ;; позначати походження результатів
+done: Ти завершив розділ про академічне письмо. Далі — розділ «Правова та урядова мова».
+T: Науковий абзац || Науковий абзац має тезу, аргумент, посилання й обережний висновок: «Výsledky naznačujú vplyv dopravy. Podľa korpusu sa tento vzorec opakuje.» = Результати вказують на вплив транспорту. За корпусом цей зразок повторюється. || Výsledky naznačujú vplyv dopravy. = Результати вказують на вплив транспорту. ;; Podľa korpusu sa tento vzorec opakuje. = За корпусом цей зразок повторюється. || odborný · záver
+T: Зведення || Sumár (підсумок) — короткий виклад результатів без нових даних. Почни з головного результату: «Hlavný výsledok je zhrnutý v tabuľke.» = Головний результат узагальнено в таблиці. || Hlavný výsledok je zhrnutý v tabuľke. = Головний результат узагальнено в таблиці. ;; Záver je predbežný. = Висновок попередній. || sumár · hlavný
+T: Перевірка тексту || Перед здачею перевір посилання, обережність формулювань, визначення термінів і авторство. «Overili sme zdroje a definície.» = Ми перевірили джерела й визначення. || Overili sme zdroje a definície. = Ми перевірили джерела й визначення. ;; Originalita textu je jasná. = Оригінальність тексту ясна. || originalita · overovať
+mis: Vo zhrnutí uvediem nové dáta, ktoré v texte nie sú. => Sumár nemá obsahovať nové dáta. ;; Záver môže byť definitívny bez dôkazov. => Záver má byť obmedzený dátami.
+W: sumár | підсумок, резюме | сумар | Sumár je krátky a presný. | Підсумок короткий і точний.
+W: odborný | науковий | одборни | Odborný text má presné zdroje. | Науковий текст має точні джерела.
+W: hlavný | головний | гланвни | Hlavný výsledok je uvedený v tabuľke. | Головний результат наведено в таблиці.
+W: originalita | оригінальність | оригіналіта | Originalita práce sa overuje. | Оригінальність роботи перевіряють.
+X mt: З’єднай слово і значення. | sumár = підсумок ;; odborný = науковий ;; hlavný = головний ;; originalita = оригінальність
+X dd: Обери правильну форму. | Sumár [*obsahuje/obsahujú/obsahovať] hlavný výsledok.
+= Однина: «sumár obsahuje».
+X fe: Знайди помилку. | Hlavný výsledok je [zhrnutá>zhrnutý] v tabuľke.
+= Чоловічий рід «výsledok»: «zhrnutý».
+X fb: Допиши. | Záver je ___ , lebo dáta sú obmedzené. (попередній) | predbežný
+= Прикметник «predbežný» — попередній висновок.
+X ce: Виправ речення. | Sumár obsahuje nové dáta, ktoré v texte nie sú. | Sumár nemá obsahovať nové dáta.
+= Підсумок не має містити нових даних.
+X sc~: Що таке «sumár» у роботі? | - | *короткий виклад головних результатів ;; нові дані для аналізу ;; список джерел
+X sc: Яке речення є обережним? | - | *Výsledky naznačujú vplyv dopravy. ;; Dokázali sme absolútny vplyv bez výnimky. ;; Doprava je vinná na všetkom.
+= Обережне формулювання з дієсловом «naznačujú».
+X tf: - | Підсумок може містити нові дані. | Підсумок може містити нові дані. | F
+= Підсумок не містить нових даних.
+X cat: Розподіли. | Текст: sumár, záver ;; Терміни: pojem, definícia ;; Джерела: zdroj, originalita
+= Групування елементів підсумку.
+X ms: Обери всі правильні твердження. | Наукова праця має бути перевірена. | *Посилання треба перевірити ;; *Обережні формулювання знижують ризик помилки ;; Перевірка не потрібна, якщо текст гарний
+X reg: - | Z výsledkov vyplýva, že vplyv dopravy je predbežne potvrdený. | formal
+= Формальний регістр висновку.
+X fb: Допиши. | Hlavný výsledok je ___ v tabuľke. (узагальнений) | zhrnutý
+= Чоловічий рід «zhrnutý».
+X dd: Обери правильну форму. | Overili sme [*všetky/všetko/všetkých] zdroje.
+= Множина «zdroje» з відмінком «všetky».
+X sc: Що перевіряєш перед здачею? | - | *Odkazy, definície a autorstvo. ;; Farbu obálky. ;; Počet obrázkov bez obsahu.
+= Перевірка посилань, визначень і авторства.
+F: Підсумок роботи || Ти пишеш підсумок розділу. Треба коротко викласти результати, сформулювати обережний висновок і перевірити посилання перед здачею.
+S: Керівник питає, чи є в тексті обережні формулювання. Що відповідаєш? (ti — muž) | *Áno, výsledky naznačujú vplyv a nič nedokazujú. ;; Nie, všetko je dokázané úplne. ;; Obrázky sú dôležitejšie.
+S: Керівник питає, що має бути в підсумку. Як відповідаєш? (ti — žena) | *Hlavný výsledok a obmedzenie dát. ;; Úplne nové dáta, ktoré nemáme. ;; Len podpisy autorov.
+S~: Керівник питає, чи варто перевірити посилання перед здачею. Що відповідаєте? | *Так, обов’язково, бо це основа авторства. ;; Ні, посилання не важливі. ;; Лише якщо текст короткий.
+S: Як завершиш розділ? (ti — muž) | *Záver je predbežný a ďalší výskum ho môže spresniť. ;; Záver je definitívny a ďalší výskum nie je potrebný. ;; Nemám záver, lebo nie je čas.
+R: sumár · záver ;; odborný ;; originalita ;; hlavný

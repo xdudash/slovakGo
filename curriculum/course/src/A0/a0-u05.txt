@@ -1,0 +1,444 @@
+@unit a0-u05 | Виживання в місті | Prežiť v meste
+
+@lesson kde-je | Де це? | Kde je…?
+desc: Найпотрібніше питання в новому місті: Kde je…? і відповіді tu, tam, blízko, ďaleko.
+goal: Запитати, де знаходиться місце, і зрозуміти просту відповідь.
+out: питати Prepáčte, kde je…? ;; розуміти tu / tam ;; розуміти blízko / ďaleko ;; дякувати за допомогу
+done: Ти вже не загубишся! Далі — ліворуч, праворуч, прямо.
+T: Kde je…? || Найпростіше питання: «Prepáčte, kde je lekáreň?» Множина: «Kde sú toalety?» (де туалети?). Почни з «Prepáčte» — так ввічливо. || Prepáčte, kde je pošta? = Вибачте, де пошта? ;; Kde sú obchody? = Де магазини? || Kde je + однина / Kde sú + множина
+T: Tu і tam || «Tu» — тут, «tam» — там (часто з жестом). «Hneď tu» — одразу тут. «Tamto» — он те. || Pošta je tu. = Пошта тут. ;; Banka je tam. = Банк там. || tu — тут, tam — там
+T: Blízko і ďaleko || «Je to blízko?» — це близько? «Nie je to ďaleko» — це недалеко. «Päť minút pešo» — п’ять хвилин пішки. «Za rohom» — за рогом. || Je to ďaleko? = Це далеко? ;; Je to za rohom. = Це за рогом. ;; Desať minút pešo. = Десять хвилин пішки. || blízko ≠ ďaleko
+W: kde | де | гдє | Kde je stanica? | Де вокзал?
+W: tu | тут | ту | Zastávka je tu. | Зупинка тут.
+W: tam | там | там | Obchod je tam vpravo. | Магазин там праворуч.
+W: blízko | близько | бліско | Bývam blízko centra. | Я живу близько до центру.
+W: ďaleko | далеко | дялеко | Je to ďaleko odtiaľto? | Це далеко звідси?
+W: pešo | пішки | пешо | Idem do práce pešo. | Я йду на роботу пішки.
+X dd: Обери форму. | Prepáčte, kde [*sú/je] toalety?
+= toalety — множина → sú.
+X dd: Обери форму. | Prepáčte, kde [*je/sú] banka?
+= banka — однина → je.
+X mt: З’єднай. | kde = де ;; tu = тут ;; tam = там ;; blízko = близько ;; ďaleko = далеко
+X np: Ти шукаєш аптеку і бачиш перехожу. | *Prepáčte, kde je lekáreň? ;; Kde je lekáreň, čau! ;; Lekáreň! ;; Koľko je lekáreň?
+= Prepáčte + Kde je…?
+X dr: - | Ty: Je to ďaleko? | *Nie, päť minút pešo. ;; Áno, som tu. ;; Dobrú chuť.
+= Відповідь про відстань.
+X sc~: Що означає «Je to za rohom»? | - | *це за рогом ;; це на розі ;; це на площі
+= za rohom — за рогом, дуже близько.
+X cat: Близько чи далеко? | Blízko: za rohom, päť minút pešo, hneď tu ;; Ďaleko: hodinu autobusom, na druhom konci mesta
+= Порівнюй відстань.
+X tf: - | - | «Nie je to ďaleko» означає «Це недалеко». | T
+= nie je ďaleko — недалеко.
+X fb: Допиши питання. | Prepáčte, ___ je stanica? | kde | Питання про місце.
+= Kde je…?
+X so: - | Запитай, чи це далеко. | Je to ďaleko odtiaľto?
+= odtiaľto — звідси.
+X sb: - | Подякуй за допомогу. | Ďakujem pekne za pomoc.
+= za pomoc — за допомогу.
+X hm: Пані показує рукою й каже: «Tamto, tá žltá budova.» Що вона має на увазі? | *потрібне місце — он та жовта будівля ;; тобі треба повернути ліворуч ;; вона не знає
+= tamto — он те, вказує на будівлю.
+F: Перша прогулянка Братиславою || Ти щойно приїхав(ла) й шукаєш потрібні місця.
+S: Ти шукаєш вокзал. | *Prepáčte, kde je stanica? ;; Stanica, kde je, čau? ;; Prepáčte, koľko je stanica?
+S: Перехожий: «Je to ďaleko, radšej choďte električkou.» Що він радить? | *їхати трамваєм, бо далеко ;; іти пішки, бо близько ;; почекати
+S: Потім ти шукаєш туалети. | *Kde sú toalety, prosím? ;; Kde je toalety? ;; Toalety tu sú kde je?
+S: «Hneď tu, vľavo.» Де туалети? | *одразу тут ;; далеко ;; на іншому поверсі
+R: Prepáčte, kde je / kde sú…? ;; tu, tam, tamto ;; blízko, ďaleko, za rohom ;; päť minút pešo
+
+@lesson smer | Ліворуч, праворуч, прямо | Vľavo, vpravo, rovno
+desc: Розуміти пояснення дороги: vľavo, vpravo, rovno, oproti, vedľa, na križovatke.
+goal: Розуміти прості пояснення маршруту й пояснити його самому.
+out: розуміти vľavo / vpravo / rovno ;; розуміти oproti, vedľa ;; розуміти choďte, odbočte ;; розуміти na križovatke, na semafore
+done: Тепер ти розумієш, куди йти. Далі — магазини й послуги.
+T: Напрямки || «Vľavo» — ліворуч, «vpravo» — праворуч, «rovno» — прямо. «Doľava / doprava» — наліво / направо (рух). «Choďte rovno» — ідіть прямо. «Odbočte doľava» — поверніть ліворуч. || Choďte rovno. = Ідіть прямо. ;; Potom odbočte doprava. = Потім поверніть праворуч. || vľavo / vpravo — де; doľava / doprava — куди
+T: Біля чого? || «Oproti» — навпроти, «vedľa» — поруч, «za» — за, «pred» — перед. «Oproti banke» — навпроти банку, «vedľa pošty» — поруч із поштою. || Lekáreň je oproti banke. = Аптека навпроти банку. ;; Obchod je vedľa pošty. = Магазин поруч із поштою. || oproti, vedľa, pred, za
+T: Перехрестя і світлофор || «Na križovatke» — на перехресті, «na semafore» — на світлофорі, «na konci ulice» — у кінці вулиці. || Na križovatke choďte doľava. = На перехресті йдіть ліворуч. ;; Je to na konci ulice. = Це в кінці вулиці. || križovatka — перехрестя
+W: vľavo | ліворуч | вл’яво | Banka je vľavo. | Банк ліворуч.
+W: vpravo | праворуч | фправо | Lekáreň je vpravo. | Аптека праворуч.
+W: rovno | прямо | ровно | Choďte stále rovno. | Ідіть весь час прямо.
+W: oproti | навпроти | опроті | Zastávka je oproti škole. | Зупинка навпроти школи.
+W: vedľa | поруч | ведл’я | Bývam vedľa parku. | Я живу поруч із парком.
+W: križovatka | перехрестя | крижоватка | Na križovatke odbočte vpravo. | На перехресті поверніть праворуч.
+X mt: З’єднай. | vľavo = ліворуч ;; vpravo = праворуч ;; rovno = прямо ;; oproti = навпроти ;; vedľa = поруч
+X sc~: Що означає «Odbočte doľava»? | - | *Поверніть ліворуч ;; Ідіть прямо ;; Поверніть праворуч
+= odbočiť — повернути; doľava — наліво.
+X do: - | Ty: Prepáčte, kde je pošta? ;; Pán: Choďte rovno až na križovatku. ;; Pán: Potom odbočte doprava. ;; Pán: Pošta je vľavo, oproti banke. ;; Ty: Ďakujem pekne!
+= Питання → маршрут по кроках → подяка.
+X rc: - | Z hotela choďte rovno. Na prvej križovatke odbočte doľava. Lekáreň je vpravo, vedľa kaviarne, oproti parku.
+q~: Куди повернути на першому перехресті? | *ліворуч ;; праворуч ;; прямо
+q~: Що поруч з аптекою? | *кав’ярня ;; парк ;; готель
+q~: Що навпроти аптеки? | *парк ;; кав’ярня ;; перехрестя
+X tf: - | - | «Oproti» означає «поруч». | F
+= oproti — навпроти; vedľa — поруч.
+X fb: Допиши. | Choďte ___. (прямо) | rovno |
+= rovno — прямо.
+X dd: Обери. | Na križovatke odbočte [*doprava/vpravo/rovno]. (рух праворуч)
+= Рух «куди» — doprava. Vpravo — «де».
+X so: - | Поясни: банк праворуч. | Banka je vpravo.
+= Banka je + напрямок.
+X cat: Напрямок чи розташування поруч із чимось? | Напрямок: vľavo, vpravo, rovno ;; Поруч із чимось: oproti, vedľa, pred
+= Перші кажуть, куди; другі — біля чого.
+X np: Турист питає тебе, де зупинка. Вона навпроти школи. | *Je oproti škole. ;; Je vedľa škola. ;; Oproti je škola zastávka. ;; Škola, rovno.
+= oproti + škole.
+X hm: Перехожий каже: «Na semafore doprava a potom stále rovno.» Що робити? | *на світлофорі праворуч, потім весь час прямо ;; на світлофорі зупинитися ;; іти прямо до світлофора й назад
+= na semafore — на світлофорі.
+F: Дорога до лікарні || Тобі треба в лікарню, ти питаєш дорогу.
+S: Пані: «Choďte rovno až na križovatku.» Що робиш? | *іду прямо до перехрестя ;; повертаю ліворуч ;; чекаю на трамвай
+S: «Tam odbočte doľava.» | *повертаю ліворуч ;; повертаю праворуч ;; іду прямо
+S: «Nemocnica je vpravo, oproti parku.» Де лікарня? | *праворуч, навпроти парку ;; ліворуч, поруч із парком ;; у парку
+S: Ти хочеш перепитати останню частину. | *Prepáčte, oproti čomu? ;; Kde je park doprava? ;; Ďakujem, dovidenia.
+R: vľavo, vpravo, rovno ;; doľava, doprava, odbočte ;; oproti, vedľa, pred, za ;; na križovatke, na semafore
+
+@lesson obchod-a-sluzby | Магазини й установи | Obchody a inštitúcie
+desc: Назви найважливіших місць: obchod, banka, nemocnica, úrad, stanica, kaderníctvo — і що там роблять.
+goal: Знати назви основних установ і пояснити, куди ти йдеш.
+out: називати основні установи ;; казати Idem do banky / na úrad ;; розуміти, що де роблять ;; питати, де найближче місце
+done: Ти знаєш, куди піти в місті. Далі — туалети й корисні написи.
+T: Місця в місті || obchod (магазин), banka (банк), nemocnica (лікарня), úrad (установа, офіс держорганів), stanica (вокзал, станція), kaderníctvo (перукарня). || Idem do obchodu. = Я йду в магазин. ;; Kde je najbližšia banka? = Де найближчий банк? || najbližší = найближчий
+T: Idem do… / na… || Більшість місць — «do»: do obchodu, do banky, do nemocnice, do kaderníctva. Але «na»: na úrad, na poštu, na stanicu, na políciu. || Idem na úrad. = Я йду до установи. ;; Idem na stanicu. = Я йду на вокзал. || do obchodu, ale na poštu / na úrad
+T: Що там роблять? || V banke — peniaze, účet (гроші, рахунок). V nemocnici — lekár. Na úrade — dokumenty. Na stanici — vlak, autobus. V kaderníctve — strihanie (стрижка). || Na úrade vybavujem doklady. = В установі я оформлюю документи. ;; V kaderníctve sa strihám. = У перукарні я стрижуся. || місце → дія
+W: obchod | магазин | обход | Obchod je otvorený do desiatej. | Магазин відчинений до десятої.
+W: banka | банк | банка | Idem do banky. | Я йду в банк.
+W: nemocnica | лікарня | немоцніца | Nemocnica je na konci mesta. | Лікарня на краю міста.
+W: úrad | установа, урядовий офіс | у:рад | Zajtra idem na úrad. | Завтра я йду в установу.
+W: stanica | вокзал, станція | станіца | Vlak ide zo stanice o šiestej. | Поїзд іде з вокзалу о шостій.
+W: kaderníctvo | перукарня | кадерні:цтво | Kaderníctvo je na prvom poschodí. | Перукарня на першому поверсі.
+X mt: З’єднай. | obchod = магазин ;; banka = банк ;; nemocnica = лікарня ;; úrad = установа ;; stanica = вокзал
+X dd: Обери прийменник. | Idem [*na/do] poštu.
+= na poštu, na úrad, na stanicu.
+X dd: Обери прийменник. | Idem [*do/na] banky.
+= do banky.
+X cat: do чи na? | do: obchodu, banky, nemocnice, kaderníctva ;; na: poštu, úrad, stanicu, políciu
+= Запам’ятовуй групами.
+X sc: Куди піти, щоб відкрити рахунок? | - | *do banky ;; do kaderníctva ;; na stanicu ;; do nemocnice
+= účet — у банку.
+X sc: Куди піти, щоб купити квиток на поїзд? | - | *na stanicu ;; do banky ;; na úrad ;; do kaderníctva
+= Квиток на поїзд — на вокзалі.
+X tf: - | - | «Úrad» — це місце, де оформлюють документи. | T
+= úrad — державна установа.
+X fb: Допиши. | Prepáčte, kde je najbližšia ___? (банк) | banka |
+= najbližšia banka — найближчий банк.
+X so: - | Скажи, що ти йдеш до лікарні. | Idem do nemocnice.
+= do nemocnice.
+X np: Тобі треба підстригтися. Що питаєш у колеги? | *Poznáš dobré kaderníctvo? ;; Poznáš dobrú nemocnicu na vlasy? ;; Kde je úrad na strihanie? ;; Idem do banky strihať.
+= kaderníctvo — перукарня.
+X hm: Колега каже: «Musím ísť na úrad, vybaviť si papiere.» Що він робитиме? | *оформлювати документи в установі ;; купувати папір ;; лікуватися
+= vybaviť papiere — оформити документи.
+X ms: Обери всі місця, куди кажуть «na». | - | *pošta ;; *úrad ;; *stanica ;; banka ;; obchod ;; nemocnica
+= na poštu, na úrad, na stanicu.
+F: Справи на один день || Сьогодні в тебе кілька справ у місті.
+S: Тобі треба зняти гроші. Куди йдеш? | *Idem do banky. ;; Idem na banku. ;; Idem do banka.
+S: Потім — оформити документ. | *Idem na úrad. ;; Idem do úrade. ;; Idem úrad.
+S: Ти питаєш, де найближча перукарня. | *Kde je najbližšie kaderníctvo? ;; Kde je kaderníctvo najbližšia? ;; Kaderníctvo je kde blízko čo?
+S: Увечері ти зустрічаєш друга на вокзалі. | *Stretneme sa na stanici. ;; Stretneme sa do stanice. ;; Stretneme stanica.
+R: obchod, banka, nemocnica, úrad, stanica, kaderníctvo ;; do obchodu, do banky ;; na úrad, na poštu, na stanicu ;; najbližší
+
+@lesson toalety | Туалети й корисні дрібниці | Toalety
+desc: Як знайти туалет, розрізняти «чоловічий / жіночий», «зайнято / вільно» і попросити необхідне.
+goal: Знайти туалет і зрозуміти пов’язані написи.
+out: питати Kde sú toalety? ;; розуміти muži / ženy, páni / dámy ;; розуміти obsadené / voľné ;; розуміти платні туалети
+done: Тепер ти орієнтуєшся навіть у делікатних ситуаціях. Далі — квитки й транспорт.
+T: Туалет || Найчастіше: toalety, WC (vé-cé), záchod (розмовно). На дверях: MUŽI / ŽENY або PÁNI / DÁMY. Ввічливо: «Prepáčte, kde sú toalety?» || Kde je tu WC? = Де тут туалет? ;; Páni = Чоловіки ;; Dámy = Жінки || WC читається «ве-це».
+T: Зайнято чи вільно || На кабінці: OBSADENÉ (зайнято) — червоне, VOĽNÉ (вільно) — зелене. Іноді туалет платний: «Poplatok 0,50 €» (плата 50 центів). || Je obsadené. = Зайнято. ;; Je voľné? = Вільно? || obsadené ≠ voľné
+T: Корисні слова || mydlo (мило), toaletný papier (туалетний папір), umývadlo (умивальник), «nefunguje» (не працює). «Došiel papier» — закінчився папір. || Na toalete nie je papier. = У туалеті немає паперу. ;; Umývadlo nefunguje. = Умивальник не працює. || nefunguje = не працює
+W: toaleta | туалет | тоалета | Toaleta je na konci chodby. | Туалет у кінці коридору.
+W: muži | чоловіки (напис) | мужі | Muži – vľavo, ženy – vpravo. | Чоловіки — ліворуч, жінки — праворуч.
+W: ženy | жінки (напис) | жени | Ženy sú na druhom poschodí. | Жіночий туалет на другому поверсі.
+W: obsadené | зайнято | обсадзене: | Prepáčte, je obsadené. | Вибачте, зайнято.
+W: voľné | вільно | вольне: | Je tu voľné? | Тут вільно?
+W: nefunguje | не працює | нефунґує | Výťah nefunguje. | Ліфт не працює.
+X mt: З’єднай. | muži = чоловіки ;; ženy = жінки ;; obsadené = зайнято ;; voľné = вільно ;; nefunguje = не працює
+X cat: Для кого цей напис? | Для чоловіків: MUŽI, PÁNI ;; Для жінок: ŽENY, DÁMY
+= páni — панове, dámy — пані.
+X sc~: На дверях кабінки червоний напис «OBSADENÉ». Що це означає? | - | *зайнято ;; вільно ;; не працює
+= obsadené — зайнято.
+X np: Ти в ресторані й шукаєш туалет. | *Prepáčte, kde sú toalety? ;; Kde je muži? ;; Toaleta, prosím, jedna. ;; Obsadené kde?
+= Prepáčte, kde sú toalety?
+X tf: - | - | Напис «Poplatok 0,50 €» означає, що туалет платний. | T
+= poplatok — плата.
+X fb: Допиши. | Prepáčte, ___ sú toalety? | kde |
+= Kde sú toalety?
+X dr: - | Ty: Je tu voľné? | *Áno, nech sa páči. ;; Dobrý večer, áno nie. ;; Ďakujem, zaplatím.
+= Nech sa páči — прошу (заходьте).
+X so: - | Скажи, що в туалеті немає паперу. | Na toalete nie je papier.
+= nie je — немає.
+X sc~: Що означає «WC» словацькою вимовою? | - | *ве-це ;; дабл-ю-сі ;; ва-це
+= W = vé, C = cé: WC = «ве-це».
+X dd: Обери. | Výťah [*nefunguje/nepracuje/nejde voľné].
+= Про техніку — nefunguje (не працює).
+X hm: Прибиральниця каже: «Momentálne je zatvorené, choďte na druhé poschodie.» Що робити? | *піти в туалет на другому поверсі ;; почекати тут ;; заплатити
+= Тут зачинено — на іншому поверсі відчинено.
+X ms: Обери всі написи, які стосуються туалету. | - | *WC ;; *DÁMY ;; *OBSADENÉ ;; POKLADŇA ;; VCHOD
+= WC, dámy, obsadené.
+F: На вокзалі перед поїздкою || У тебе 10 хвилин до потяга, треба в туалет.
+S: Ти питаєш працівника вокзалу. | *Prepáčte, kde sú toalety? ;; Kde je dámy toaleta? ;; WC koľko?
+S: «Na konci haly, vľavo. Poplatok štyridsať centov.» Скільки платити? | *0,40 € ;; 4 € ;; 0,14 €
+S: На кабінці «OBSADENÉ». Що робиш? | *чекаю ;; заходжу ;; шукаю касу
+S: У кабінці немає паперу. Як повідомиш? | *Prepáčte, na toalete nie je papier. ;; Papier je obsadený. ;; Toaleta nefunguje papier.
+R: toalety, WC ;; muži / ženy, páni / dámy ;; obsadené / voľné ;; nefunguje, poplatok
+
+@lesson listok-doprava | Квиток і транспорт | Lístok a doprava
+desc: Основи міського транспорту: autobus, električka, vlak; купити квиток, зайти й вийти.
+goal: Купити квиток і зрозуміти основні дії в транспорті.
+out: називати види транспорту ;; купувати квиток: Jeden lístok, prosím ;; розуміти nastúpiť / vystúpiť ;; знати, що квиток треба відмітити
+done: Тепер ти можеш їздити містом. Далі — що тобі потрібно.
+T: Транспорт у місті || autobus (автобус), električka (трамвай), trolejbus (тролейбус), vlak (поїзд), MHD (міський громадський транспорт). «Idem autobusom» — їду автобусом. || Do práce idem električkou. = На роботу я їду трамваєм. ;; Vlak ide do Žiliny. = Поїзд іде в Жиліну. || MHD = громадський транспорт
+T: Квиток || «Jeden lístok, prosím» — один квиток, будь ласка. Квиток на 30 або 60 хвилин, «prestupný» — з пересадками. Паперовий квиток треба «označiť» (компостувати) у транспорті. Часто квиток купують у додатку чи SMS. || Kde kúpim lístok? = Де купити квиток? ;; Lístok si treba označiť. = Квиток треба закомпостувати. || Без квитка — штраф (pokuta)!
+T: Зайти й вийти || «Nastúpiť» — зайти (в транспорт), «vystúpiť» — вийти. «Vystupujete?» — ви виходите? (питають у тісноті). «Na znamenie» — зупинка на вимогу (натисни кнопку). || Kde mám vystúpiť? = Де мені вийти? ;; Vystupujete na ďalšej? = Ви виходите на наступній? || nastúpiť — зайти, vystúpiť — вийти
+W: lístok | квиток | лі:сток | Kúpil som si lístok v aplikácii. | Я купив квиток у додатку.
+W: autobus | автобус | аутобус | Autobus ide každých desať minút. | Автобус ходить кожні десять хвилин.
+W: električka | трамвай | електрічка | Električka číslo štyri ide na stanicu. | Трамвай номер чотири їде на вокзал.
+W: vlak | поїзд | влак | Vlak mešká desať minút. | Поїзд запізнюється на десять хвилин.
+W: nastúpiť | зайти (у транспорт) | насту:піть | Nastúpte, prosím. | Заходьте, будь ласка.
+W: vystúpiť | вийти (з транспорту) | висту:піть | Vystúpim pri nemocnici. | Я вийду біля лікарні.
+X mt: З’єднай. | lístok = квиток ;; električka = трамвай ;; vlak = поїзд ;; nastúpiť = зайти ;; vystúpiť = вийти
+X sc~: «Električka» — це… | - | *трамвай ;; електричка (приміський поїзд) ;; електросамокат
+= Хибний друг: električka — трамвай!
+X np: Ти купуєш квиток у водія. | *Jeden lístok, prosím. ;; Jeden vlak, prosím. ;; Lístok je kde vystúpiť? ;; Dobrú noc, lístok.
+= Jeden lístok, prosím.
+X dr: - | Pani v električke: Vystupujete na ďalšej? | *Nie, nech sa páči. ;; Áno, lístok. ;; Dobrý deň, električka.
+= Ти не виходиш — пропускаєш її.
+X tf: - | - | Паперовий квиток у словацькому транспорті треба закомпостувати. | T
+= označiť lístok — закомпостувати.
+X fb: Допиши питання. | Kde mám ___? (вийти) | vystúpiť |
+= vystúpiť — вийти.
+X dd: Обери. | Do práce idem [*električkou/električka/na električku].
+= Їхати чим — орудний відмінок: električkou.
+X cat: Зайти чи вийти? | Зайти: nastúpiť, Nastúpte!, nastupujem ;; Вийти: vystúpiť, Vystupujete?, vystupujem
+= nastúpiť / vystúpiť.
+X so: - | Запитай, де купити квиток. | Kde kúpim lístok?
+= Kde kúpim + що?
+X sch: - | Linka 31 – zastávka Hlavná stanica | Pracovné dni = každých 10 minút ;; Sobota = každých 20 minút ;; Nedeľa = každých 30 minút | Як часто ходить автобус у суботу? | *кожні 20 хвилин ;; кожні 10 хвилин ;; не ходить
+= Sobota: každých 20 minút.
+X hm: Контролер каже: «Váš lístok nie je označený, platíte pokutu.» Що сталося? | *квиток не закомпостовано — штраф ;; квиток прострочений на день ;; ти сів не в той трамвай
+= pokuta — штраф.
+X ms: Обери всі види транспорту. | - | *autobus ;; *vlak ;; *električka ;; lístok ;; zastávka ;; križovatka
+= lístok і zastávka — не транспорт.
+F: Їдемо до лікарні трамваєм || Ти їдеш трамваєм до лікарні вперше.
+S: На зупинці ти питаєш, який трамвай. | *Prepáčte, ktorá električka ide k nemocnici? ;; Kde je nemocnica električka? ;; Električka nemocnica koľko?
+S: Ти купуєш квиток в автоматі, потім… | *označím si lístok v električke ;; nič, lístok stačí ;; idem k vodičovi
+S: Ти питаєш сусіда, де виходити. | *Prosím vás, kde mám vystúpiť k nemocnici? ;; Kde mám nastúpiť nemocnica? ;; Vystupujete nemocnica?
+S: «Na ďalšej zastávke.» Коли виходиш? | *на наступній зупинці ;; на кінцевій ;; через дві зупинки
+R: autobus, električka, vlak, MHD ;; Jeden lístok, prosím. ;; označiť lístok ;; nastúpiť / vystúpiť
+
+@lesson potrebujem | Мені потрібно… | Potrebujem…
+desc: Як сказати, що тобі потрібно: potrebujem lekára, kľúč, peniaze, nabíjačku, heslo na Wi-Fi.
+goal: Висловити потребу й попросити про допомогу.
+out: казати Potrebujem + що ;; питати Potrebujete pomoc? ;; просити heslo na Wi-Fi ;; казати, що це терміново: súrne
+done: Тепер ти можеш сказати, що тобі потрібно. Далі — «маю / не маю».
+T: Potrebujem… || «Potrebujem» + знахідний відмінок: Potrebujem lekára. Potrebujem kľúč. Potrebujem pomoc. Жіночий рід часто змінює -a на -u: nabíjačka → nabíjačku. || Potrebujem nabíjačku. = Мені потрібен зарядний пристрій. ;; Potrebujem pomoc. = Мені потрібна допомога. || Potrebujem + -u (жін.)
+T: Питання || «Potrebujete niečo?» — Вам щось потрібно? «Potrebuješ pomoc?» — Тобі допомогти? Відповідь: «Áno, potrebujem…» або «Nie, ďakujem, nič nepotrebujem». || Potrebujete pomoc? = Вам допомогти? ;; Nič nepotrebujem. = Мені нічого не треба. || nič nepotrebujem — подвійне заперечення
+T: Терміново! || «Súrne» — терміново. «Potrebujem súrne lekára» — мені терміново потрібен лікар. «Hneď» — одразу. || Je to súrne. = Це терміново. ;; Potrebujem to hneď. = Мені це потрібно одразу. || súrne = терміново
+W: potrebovať | потребувати | потребовать | Potrebujem vašu pomoc. | Мені потрібна ваша допомога.
+W: lekár | лікар | лєка:р | Potrebujem lekára. | Мені потрібен лікар.
+W: kľúč | ключ | кл’у:ч | Nemôžem nájsť kľúč. | Не можу знайти ключ.
+W: peniaze | гроші | пеніазе | Potrebujem vybrať peniaze. | Мені треба зняти гроші.
+W: nabíjačka | зарядний пристрій | набі:ячка | Máte nabíjačku na telefón? | У вас є зарядка для телефону?
+W: heslo | пароль | гесло | Aké je heslo na Wi-Fi? | Який пароль від Wi-Fi?
+W: súrne | терміново | су:рне | Potrebujem súrne pomoc. | Мені терміново потрібна допомога.
+X dd: Обери форму. | Potrebujem [*nabíjačku/nabíjačka].
+= potrebovať + знахідний: nabíjačka → nabíjačku.
+X mt: З’єднай. | lekár = лікар ;; kľúč = ключ ;; peniaze = гроші ;; nabíjačka = зарядка ;; heslo = пароль
+X np: Ти в кав’ярні й хочеш підключитися до інтернету. | *Prepáčte, aké je heslo na Wi-Fi? ;; Potrebujem Wi-Fi heslo kde? ;; Heslo, čau. ;; Kde je internet lekár?
+= Aké je heslo na Wi-Fi?
+X dr: - | Predavačka: Potrebujete niečo? | *Nie, ďakujem, iba sa pozerám. ;; Áno, nič. ;; Potrebujem dobrý deň.
+= Iba sa pozerám — я лише дивлюся.
+X tf: - | - | «Nič nepotrebujem» означає «Мені нічого не потрібно». | T
+= Подвійне заперечення в словацькій — норма.
+X fb: Допиши. | Je to ___, potrebujem lekára hneď! | súrne | Терміново.
+= súrne — терміново.
+X so: - | Скажи, що тобі потрібна допомога. | Potrebujem pomoc.
+= Potrebujem + pomoc.
+X ce: Виправ речення. | Potrebujem nabíjačka na telefón. | Potrebujem nabíjačku na telefón. ;; Potrebujem nabíjačku na telefón
+= nabíjačka → nabíjačku.
+X sc~: Що означає «Potrebujem vybrať peniaze»? | - | *Мені треба зняти гроші ;; Мені треба вибрати подарунок ;; Мені треба заплатити гроші
+= vybrať peniaze — зняти гроші.
+X cat: Що терміново, а що може зачекати? | Súrne: lekár, záchranka, polícia ;; Môže počkať: kaderník, nová bunda, kino
+= Терміново — медицина й безпека.
+X hm: Колега питає: «Potrebuješ s tým pomôcť?», бачачи важку коробку. Що він пропонує? | *допомогти тобі нести коробку ;; купити коробку ;; щоб ти допоміг(ла) йому
+= Potrebuješ pomôcť? — пропозиція допомоги.
+X ms: Обери правильні фрази. | - | *Potrebujem kľúč. ;; *Potrebujem lekára. ;; *Nič nepotrebujem. ;; Potrebujem lekár. ;; Nič potrebujem.
+= lekár → lekára (знахідний), nič nepotrebujem.
+F: У готелі після довгої дороги || Ти заселяєшся в готель уночі.
+S: Тобі потрібен ключ від номера. | *Dobrý večer, potrebujem kľúč od izby 15. ;; Kľúč je kde, čau. ;; Potrebujem dobrú noc.
+S: Ти хочеш інтернет. | *Aké je heslo na Wi-Fi? ;; Wi-Fi je súrne. ;; Potrebujem heslo lekára.
+S: Телефон розряджений. | *Nemáte nabíjačku na požičanie? ;; Nabíjačka je hneď. ;; Potrebujem nabíjačka.
+S: Рецепціоніст: «Potrebujete ešte niečo?» | *Nie, ďakujem, to je všetko. ;; Áno, nič. ;; Dobré ráno.
+R: Potrebujem + знахідний ;; Potrebujete niečo? — Nič nepotrebujem ;; súrne, hneď ;; heslo na Wi-Fi
+
+@lesson mam-nemam | Маю / не маю | Mám, nemám
+desc: Дієслово mať у теперішньому часі й заперечення nemám — для документів, речей і проблем.
+goal: Сказати, що в тебе є чи немає, і запитати про це.
+out: відмінювати mať: mám, máš, má… ;; заперечувати: nemám ;; питати Máte…? ;; розуміти nemám pri sebe
+done: Mať — одне з найважливіших дієслів, і воно вже твоє. Далі — «хочу / не хочу».
+T: Mať — мати || ja mám, ty máš, on/ona má, my máme, vy máte, oni majú. «Máte doklad?» — у вас є документ? Відповідь: «Áno, mám» / «Nie, nemám». || Mám otázku. = У мене є питання. ;; Máte čas? = У вас є час? || mám, máš, má, máme, máte, majú
+T: Заперечення || Заперечення пишеться разом: nemám, nemáš, nemá… «Nemám čas» — не маю часу. «Nemám doklad pri sebe» — не маю документа при собі. || Nemám drobné. = У мене немає дрібних. ;; Nemáme auto. = У нас немає машини. || ne- + дієслово разом
+T: Речі при собі || doklad (документ), mobil (мобільний), taška (сумка), dáždnik (парасолька). «Mám pri sebe» — маю при собі. «Zabudol som doma…» — я забув удома. || Mám pri sebe pas. = У мене при собі паспорт. ;; Nemám dáždnik. = У мене немає парасольки. || pri sebe = при собі
+W: mať | мати | мать | Mám dve deti. | У мене двоє дітей.
+W: nemám | у мене немає, не маю | нема:м | Nemám čas. | Я не маю часу.
+W: doklad | документ | доклад | Máte doklad totožnosti? | У вас є посвідчення особи?
+W: mobil | мобільний телефон | мобіл | Zabudol som mobil doma. | Я забув мобільний удома.
+W: taška | сумка | ташка | Taška je ťažká. | Сумка важка.
+W: dáždnik | парасолька | да:ждні:к | Vonku prší a nemám dáždnik. | Надворі дощ, а в мене немає парасольки.
+X mt: З’єднай займенник із формою. | ja = mám ;; ty = máš ;; ona = má ;; my = máme ;; oni = majú
+X dd: Обери форму. | Vy [*máte/máš/majú] doklad?
+= vy → máte.
+X dd: Обери форму. | My [*nemáme/nemajú/nemám] auto.
+= my → nemáme.
+X dr: - | Policajt: Máte pri sebe doklad? | *Áno, nech sa páči, tu je pas. ;; Nie, mám. ;; Áno, nemám.
+= Áno + подаєш документ.
+X tf: - | - | Заперечення «ne» пишеться окремо: «ne mám». | F
+= Разом: nemám.
+X fb: Допиши. | Prepáčte, ___ drobné. (не маю) | nemám |
+= nemám — не маю.
+X so: - | Скажи, що не маєш часу. | Nemám čas.
+= Nemám + čas.
+X fe: - | Oni [má>majú] veľký byt v centre.
+= oni → majú.
+X cat: Маю чи не маю? | Маю: Mám mobil., Máme čas., Má dáždnik. ;; Не маю: Nemám kľúč., Nemáme auto., Nemá doklad.
+= ne- = заперечення.
+X sc~: Що означає «Mám otázku»? | - | *У мене є питання ;; Я маю відповідь ;; Я питаю тебе
+= otázka — питання.
+X np: Продавець просить дрібні, а в тебе лише 20 €. | *Prepáčte, nemám drobné, len dvadsať eur. ;; Mám drobné nemám. ;; Nie, mám dvadsať drobné. ;; Áno, nemám.
+= Nemám drobné.
+X ms: Обери всі правильні фрази. | - | *Mám otázku. ;; *Nemáme čas. ;; *Máte mobil? ;; Ja má taška. ;; Oni majú nemá.
+= Відмінювання mať і заперечення.
+F: Перевірка в поїзді || У поїзді контролер перевіряє квитки й документи.
+S: «Máte lístok?» | *Áno, mám, nech sa páči. ;; Áno, nemám. ;; Mám lístok máte.
+S: «A doklad totožnosti?» Паспорт ти забув(ла) вдома. | *Prepáčte, nemám ho pri sebe. Mám len vodičský preukaz. ;; Áno, mám ho doma. ;; Nemám, ďakujem.
+S: «To stačí.» Що він сказав? | *цього достатньо ;; цього мало ;; треба заплатити штраф
+S: Сусідка питає: «Máte dáždnik? Vonku prší.» Парасольки немає. | *Nie, nemám. Ďakujem za upozornenie. ;; Áno, prší. ;; Mám nie.
+R: mám, máš, má, máme, máte, majú ;; nemám (разом) ;; Máte…? ;; pri sebe
+
+@lesson chcem | Хочу / не хочу | Chcem, nechcem
+desc: Дієслово chcieť і перші дієслова дії: jesť, piť, spať, oddychovať.
+goal: Висловити бажання й відмовитися, використовуючи chcem / nechcem + дієслово.
+out: відмінювати chcieť: chcem, chceš, chce… ;; казати chcem + інфінітив: chcem spať ;; ввічливо: chcel(a) by som ;; заперечувати: nechcem
+done: Тепер ти кажеш, чого хочеш. Далі — допомога й екстрені ситуації.
+T: Chcieť — хотіти || ja chcem, ty chceš, on/ona chce, my chceme, vy chcete, oni chcú. Після chcieť — іменник (chcem vodu) або дієслово (chcem spať). || Chcem kávu. = Я хочу каву. ;; Chceš ísť do kina? = Хочеш піти в кіно? || chcem, chceš, chce, chceme, chcete, chcú
+T: Ввічливіше: by som || «Chcem» може звучати різко в магазині чи кафе. Ввічливіше: «Chcel by som» (чол.) / «Chcela by som» (жін.) — я хотів(ла) б. || Chcela by som jednu kávu. = Я хотіла б одну каву. ;; Chcel by som platiť. = Я хотів би розрахуватися. || У сервісі — chcel(a) by som
+T: Перші дієслова дії || jesť (їсти), piť (пити), spať (спати), oddychovať (відпочивати), ísť domov (іти додому). || Chcem jesť. = Я хочу їсти. ;; Nechcem piť alkohol. = Я не хочу пити алкоголь. ;; Chceme oddychovať. = Ми хочемо відпочити. || chcem + інфінітив (-ť)
+W: chcieť | хотіти | хцієть | Čo chceš robiť? | Що ти хочеш робити?
+W: jesť | їсти | єсть | Chcem niečo jesť. | Я хочу щось з’їсти.
+W: piť | пити | піть | Chcete niečo piť? | Хочете щось випити?
+W: spať | спати | спать | Dieťa chce spať. | Дитина хоче спати.
+W: oddychovať | відпочивати | одпочивать | Cez víkend chcem oddychovať. | На вихідних я хочу відпочивати.
+W: Chcel by som | я хотів би | хцел бі сом | Chcel by som rezervovať stôl. | Я хотів би забронювати стіл.
+X mt: З’єднай займенник і форму. | ja = chcem ;; ty = chceš ;; on = chce ;; vy = chcete ;; oni = chcú
+X dd: Обери форму. | Deti [*chcú/chce/chceme] jesť.
+= deti — вони → chcú.
+X dd: Обери (говорить жінка, ввічливо). | [*Chcela/Chcel] by som platiť.
+= Жінка — chcela by som.
+X np: Ти в ресторані й хочеш замовити воду ввічливо. | *Chcela by som vodu, prosím. ;; Chcem vodu! ;; Voda chcem. ;; Daj vodu.
+= Ввічливо — chcela by som.
+X mt: З’єднай дієслово з перекладом. | jesť = їсти ;; piť = пити ;; spať = спати ;; oddychovať = відпочивати
+X tf: - | - | «Chcel by som» звучить ввічливіше, ніж «Chcem». | T
+= by som — ввічлива умовна форма.
+X fb: Допиши. | Som unavený, ___ spať. (хочу) | chcem |
+= chcem — я хочу.
+X so: - | Скажи, що не хочеш пити алкоголь. | Nechcem piť alkohol.
+= nechcem + інфінітив.
+X dr: - | Kamarát: Chceš ísť večer von? | *Nie, dnes nechcem, som unavený. ;; Áno, nechcem. ;; Chcem nie.
+= Відмова з поясненням.
+X tr: Зроби ввічливим (говорить чоловік). | Chcem platiť. | Chcel by som platiť. ;; Chcel by som platiť
+= chcem → chcel by som.
+X hm: Офіціант питає: «Dáte si ešte niečo?», а ти кажеш: «Nie, ďakujem, chcel by som platiť.» Чого ти хочеш? | *розрахуватися ;; ще поїсти ;; піти без оплати
+= platiť — платити.
+X cat: Бажання чи відмова? | Бажання: Chcem jesť., Chcela by som čaj., Chceme ísť. ;; Відмова: Nechcem., Nechcem piť., Nechceme čakať.
+= ne- = відмова.
+F: Вечір після роботи || Ти вдома, телефонує друг.
+S: «Chceš ísť na pivo?» Ти втомлений(а). | *Dnes nie, chcem oddychovať. ;; Áno, nechcem pivo. ;; Chcem spať pivo.
+S: «A chceš ísť zajtra?» | *Áno, zajtra chcem. ;; Áno, chcú. ;; Nie, áno.
+S: Ти в піцерії, замовляєш (ти — чоловік). | *Chcel by som pizzu, prosím. ;; Chcem pizza! ;; Pizza chcieť.
+S: «Chcete niečo piť?» | *Áno, minerálku, prosím. ;; Nie, chcem piť. ;; Áno, jesť.
+R: chcem, chceš, chce, chceme, chcete, chcú ;; chcem + інфінітив ;; chcel(a) by som — ввічливо ;; jesť, piť, spať, oddychovať
+
+@lesson pomoc | Допомога й екстрені ситуації | Pomoc a núdza
+desc: Що казати в небезпеці: Pomoc!, Zavolajte záchranku!, номер 112, поліція, пожежники.
+goal: Покликати на допомогу й викликати екстрені служби.
+out: кликати Pomoc! ;; знати номер 112 (і 155, 158, 150) ;; казати Zavolajte záchranku / políciu ;; повідомити адресу й що сталося
+done: Ти знаєш найважливіші фрази для екстрених ситуацій. Далі — підсумок розділу.
+T: Pomoc! || «Pomoc!» — допоможіть! «Pomôžte mi, prosím!» — допоможіть мені, будь ласка! «Zavolajte záchranku!» — викличте швидку! «Zavolajte políciu!» — викличте поліцію! || Pomoc! = Допоможіть! ;; Zavolajte záchranku! = Викличте швидку! || Zavolajte… = Викличте…
+T: Номери || 112 — єдиний екстрений номер (оператори часто говорять англійською). 155 — záchranka (швидка), 158 — polícia, 150 — hasiči (пожежники). Дзвінок безкоштовний. || Volám 112. = Я телефоную на 112. ;; Hasiči, horí! = Пожежники, горить! || 112 — завжди працює
+T: Що сказати оператору || Головне: що сталося, де (adresa), хто ти. «Stala sa nehoda» — сталася аварія. «Je zranený» — він поранений. «Adresa je…» — адреса… || Stala sa nehoda na Hlavnej ulici. = Сталася аварія на вулиці Головній. ;; Nedýcha. = Він не дихає. || Що? Де? Хто?
+W: Pomoc! | Допоможіть! | помоц | Pomoc, zavolajte niekto lekára! | Допоможіть, хтось покличте лікаря!
+W: záchranka | швидка допомога | за:хранка | Záchranka príde o päť minút. | Швидка приїде за п’ять хвилин.
+W: polícia | поліція | полі:ція | Zavolajte políciu! | Викличте поліцію!
+W: hasiči | пожежники | гасічі | Hasiči sú na ceste. | Пожежники в дорозі.
+W: nehoda | аварія, нещасний випадок | негода | Na ceste sa stala nehoda. | На дорозі сталася аварія.
+W: zranený | поранений | зранені: | Muž je zranený. | Чоловік поранений.
+X mt: З’єднай службу з номером. | záchranka = 155 ;; polícia = 158 ;; hasiči = 150 ;; jednotné číslo = 112
+X sc~: Який номер працює для будь-якої екстреної ситуації? | - | *112 ;; 911 ;; 103
+= 112 — єдиний європейський номер.
+X np: На вулиці людині стало погано. Ти кричиш перехожим. | *Pomoc! Zavolajte záchranku! ;; Dobrý deň, záchranka. ;; Prepáčte, kde je záchranka? ;; Pomoc, dovidenia!
+= Pomoc! + Zavolajte záchranku!
+X tf: - | - | Дзвінок на 112 безкоштовний. | T
+= Так, екстрені дзвінки безкоштовні.
+X do: - | Operátor: Linka 112, čo sa stalo? ;; Ty: Stala sa nehoda, muž je zranený. ;; Operátor: Kde ste? ;; Ty: Na Hlavnej ulici, pri pošte.
+= Що сталося → де.
+X fb: Допиши. | Zavolajte ___! (поліцію) | políciu | Знахідний відмінок.
+= polícia → políciu.
+X dd: Обери. | Horí! Zavolajte [*hasičov/záchranku/políciu]!
+= Пожежа — hasiči.
+X cat: Кого викликати? | záchranka: infarkt, zlomená noha ;; polícia: krádež, bitka ;; hasiči: požiar, dym v byte
+= Медицина / злочин / вогонь.
+X so: - | Скажи, що сталася аварія. | Stala sa nehoda.
+= Stala sa + nehoda.
+X sc~: Оператор питає: «Dýcha?» Про що він питає? | - | *чи людина дихає ;; чи людина говорить ;; чи людина ходить
+= dýchať — дихати.
+X hm: Оператор каже: «Zostaňte pri ňom, záchranka je na ceste.» Що він просить? | *лишатися з потерпілим, швидка їде ;; піти до лікарні ;; покласти слухавку й чекати вдома
+= zostaňte pri ňom — лишайтеся біля нього.
+X ms: Обери фрази, які кажуть в екстреній ситуації. | - | *Pomoc! ;; *Zavolajte záchranku! ;; *Stala sa nehoda. ;; Dobrú chuť! ;; Pekný deň!
+= Інші фрази — побутові побажання.
+F: Аварія на перехресті || На твоїх очах на перехресті сталася аварія, водій поранений.
+S: Ти телефонуєш. Який номер? | *112 ;; 911 ;; 0905 112
+S: «Linka 112, čo sa stalo?» | *Stala sa nehoda, vodič je zranený. ;; Dobrý deň, ako sa máte? ;; Nehoda je kde?
+S: «Kde ste?» | *Na križovatke pri stanici, v Žiline. ;; Som z Ukrajiny. ;; Som Oleh.
+S: «Hovoríte po anglicky?» Ти говориш трохи. | *Trochu, áno. ;; Som anglicky. ;; Nie, ďakujem, dovidenia.
+R: Pomoc! Pomôžte mi! ;; 112, 155, 158, 150 ;; Zavolajte záchranku / políciu! ;; Stala sa nehoda. Je zranený.
+
+@lesson mesto-opakovanie | Підсумок: орієнтуюся в місті | Opakovanie: orientujem sa v meste
+desc: Підсумковий урок розділу: маршрут, транспорт, потреби, бажання й допомога в одній історії.
+goal: Самостійно впоратися з днем у незнайомому місті.
+out: питати й розуміти дорогу ;; користуватися транспортом ;; висловлювати потреби й бажання ;; реагувати в непередбаченій ситуації
+done: Розділ «Виживання в місті» пройдено! Далі — перші потреби й підсумок A0.
+T: Твій набір для міста || Kde je…? Vľavo / vpravo / rovno. Idem do / na… Jeden lístok, prosím. Kde mám vystúpiť? Potrebujem… Mám / nemám… Chcel(a) by som… Pomoc! || Prepáčte, ako sa dostanem na stanicu? = Вибачте, як дістатися до вокзалу? || Ako sa dostanem…? = Як дістатися…?
+T: Карта й дорога || mapa (карта), cesta (дорога), semafor (світлофор), priechod (пішохідний перехід). «Ako sa dostanem…?» — як мені дістатися…? || Prejdite cez priechod. = Перейдіть по переходу. ;; Pozrite sa na mapu. = Подивіться на карту. || priechod — перехід
+T: Якщо заблукав || «Stratil(a) som sa» — я заблукав(ла). «Môžete mi to ukázať na mape?» — можете показати на карті? «Napíšte mi to, prosím» — напишіть мені, будь ласка. || Stratila som sa. = Я заблукала. ;; Môžete mi to ukázať? = Можете мені показати? || Не соромся просити показати.
+W: mapa | карта | мапа | Mám mapu v mobile. | У мене карта в мобільному.
+W: cesta | дорога | цеста | Cesta do práce trvá pol hodiny. | Дорога на роботу займає пів години.
+W: semafor | світлофор | семафор | Na semafore svieti červená. | На світлофорі горить червоне.
+W: priechod | пішохідний перехід | прієход | Prejdite cez priechod. | Перейдіть по переходу.
+W: Ako sa dostanem…? | Як мені дістатися…? | ако са достанем | Ako sa dostanem do centra? | Як мені дістатися до центру?
+X bd: - | Ти дістався(лася) до мети!
+> Pani: Dobrý deň, môžem vám pomôcť? | *Áno, prosím. Ako sa dostanem na úrad práce? ;; Nie, mám úrad. ;; Dobrú noc.
+> Pani: Je to ďaleko. Choďte autobusom číslo 7. | *Kde je zastávka? ;; Autobus je drahý, dovidenia. ;; Chcem spať.
+> Pani: Oproti, pri semafore. Lístok kúpite v automate. | *Ďakujem. A kde mám vystúpiť? ;; Nemám lístok, pomoc! ;; Kde je semafor záchranka?
+> Pani: Pri nemocnici, to je tretia zastávka. | *Ďakujem veľmi pekne! ;; Nech sa páči. ;; Prepáčte, potrebujem.
+X rc: - | Ahoj Taras, z autobusovej stanice choď rovno k semaforu. Prejdi cez priechod a odboč doľava. Náš dom je vedľa lekárne, oproti banke, číslo 12. Kľúč je u susedky na prvom poschodí. Zavolaj, ak sa stratíš! Ivana
+q~: Куди треба повернути після переходу? | *ліворуч ;; праворуч ;; прямо
+q~: Що навпроти будинку Івани? | *банк ;; аптека ;; вокзал
+q~: Де ключ? | *у сусідки на першому поверсі ;; в аптеці ;; під дверима
+X cz: - | Prepáčte, {kde} je pošta? — Choďte {rovno} a na križovatke {odbočte} doľava. | Слова з уроків про напрямки.
+= kde, rovno, odbočte.
+X wb: - | Potrebujem [lekára]. ;; Nemám [lístok]. ;; Chcel by som [vystúpiť]. ;; Idem na [stanicu]. | stanica ;; lekár
+X fe: - | Prepáčte, kde [je>sú] toalety?
+= toalety — множина: kde sú.
+X ce: Виправ речення. | Idem do pošty a potom na banku. | Idem na poštu a potom do banky. ;; Idem na poštu a potom do banky
+= na poštu, do banky.
+X np: Ти заблукав(ла) й просиш показати на карті. | *Stratil som sa. Môžete mi to ukázať na mape? ;; Mapa je stratená, pomoc! ;; Kde je mapa vpravo? ;; Ukážte cestu dovidenia.
+= Stratil som sa + прохання показати.
+X mt: З’єднай. | mapa = карта ;; semafor = світлофор ;; priechod = пішохідний перехід ;; cesta = дорога ;; Ako sa dostanem…? = Як мені дістатися…?
+X msg: - | Dopravný podnik | Upozornenie: Od 1. 7. električka č. 3 nepremáva. Náhradná autobusová doprava – linka X3. | Що змінилося? | *трамвай №3 не ходить, замість нього автобус X3 ;; трамвай №3 ходить частіше ;; квитки подорожчали
+= nepremáva — не курсує; náhradná doprava — заміна.
+X tf: - | - | «Stratil som sa» означає «Я заблукав». | T
+= stratiť sa — загубитися.
+X sb: - | Запитай, як дістатися до центру. | Ako sa dostanem do centra?
+= Ako sa dostanem + куди?
+X dd: Обери. | Lístok [*mám/chcem/potrebujem], tu je. (квиток уже в тебе)
+= Квиток є — mám.
+F: Перший день у Кошицях || Ти приїхав(ла) в Кошиці на співбесіду. Треба з вокзалу дістатися до офісу.
+S: Ти питаєш на вокзалі. | *Prepáčte, ako sa dostanem na Hlavnú ulicu? ;; Hlavná ulica je kde chcem? ;; Pomoc! Hlavná!
+S: «Električkou číslo 6, tri zastávky.» Що робиш? | *сідаю на трамвай №6 і їду три зупинки ;; іду пішки 6 хвилин ;; чекаю 3 хвилини
+S: У трамваї тобі потрібно знати, де виходити. | *Prepáčte, kde mám vystúpiť na Hlavnú? ;; Kde mám nastúpiť? ;; Kde je električka?
+S: Біля офісу ти бачиш, що людина впала й не рухається. | *Pomoc! Zavolajte záchranku! ;; Dobrý deň, nechcem. ;; Kde je kancelária?
+R: Ako sa dostanem…? ;; mapa, cesta, semafor, priechod ;; Stratil(a) som sa. ;; весь набір фраз для міста

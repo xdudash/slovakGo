@@ -1,0 +1,878 @@
+{
+  "lessons": [
+    {
+      "id": "a2-u10-l09-adresa-spravne",
+      "sectionId": "a2-u10",
+      "level": "A2",
+      "title": "Правильна адреса",
+      "topic": "Пошта, посилки, кур’єри",
+      "description": "Як записати словацьку адресу: порядок рядків, PSČ, два номери на будинку (súpisné й orientačné), примітка для кур’єра.",
+      "order": 99,
+      "xpReward": 30,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Правильно записувати адресу й давати кур’єрові точні вказівки.",
+      "completionMessage": "Твої посилки тепер знаходять адресата. Далі — підсумок розділу.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A2 · Пошта, посилки, кур’єри",
+        "title": "Правильна адреса",
+        "shortDescription": "Правильно записувати адресу й давати кур’єрові точні вказівки.",
+        "outcomes": [
+          "записувати адресу в правильному порядку",
+          "розрізняти súpisné й orientačné číslo",
+          "писати poznámku pre kuriéra",
+          "перевіряти údaje й шукати preklep"
+        ],
+        "newWords": [
+          "súpisné číslo",
+          "orientačné číslo",
+          "poznámka",
+          "preklep",
+          "údaj"
+        ],
+        "exercisesCount": 15,
+        "reward": "+30 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Poradie v adrese",
+          "text": "Словацька адреса: 1) ім’я та прізвище; 2) вулиця й номер; 3) PSČ і місто; 4) країна (для закордону — великими літерами). PSČ — п’ять цифр, після трьох — пробіл: «949 01 Nitra». Про вулицю кажуть з «na»: «bývam na Hlavnej».",
+          "examples": [
+            {
+              "sk": "Hlavná 12, 949 01 Nitra",
+              "uk": "вулиця Головна, 12, 949 01 Нітра"
+            },
+            {
+              "sk": "Bývam na Štúrovej 5.",
+              "uk": "Я живу на вулиці Штурова, 5."
+            }
+          ],
+          "shortRule": "meno → ulica a číslo → PSČ a mesto → KRAJINA",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Dve čísla na dome",
+          "text": "На багатьох будинках два номери, наприклад «1243/15». Перше — «súpisné číslo» (реєстраційний номер будинку в громаді), друге — «orientačné číslo» (номер на вулиці). Кур’єрові для орієнтації потрібне саме orientačné. У селах без назв вулиць пишуть назву села й súpisné číslo: «Malá Ves 245».",
+          "examples": [
+            {
+              "sk": "Bývam na Hlavnej 1243/15.",
+              "uk": "Я живу на вулиці Головній, 1243/15."
+            },
+            {
+              "sk": "Bývame v obci Malá Ves, číslo 245.",
+              "uk": "Ми живемо в селі Мала Вес, номер 245."
+            }
+          ],
+          "shortRule": "súpisné / orientačné",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Byt, zvonček, poznámka",
+          "text": "У багатоквартирному будинку кур’єрові допоможе «poznámka»: поверх, номер квартири, ім’я на дзвінку. Твоє ім’я має бути й на поштовій скриньці — інакше листоноша може не знайти адресата. Перевір кожен «údaj»: один «preklep» у номері — і посилка поїде не туди.",
+          "examples": [
+            {
+              "sk": "3. poschodie, byt 12, zvonček Kovalenko.",
+              "uk": "3-й поверх, квартира 12, дзвінок «Коваленко»."
+            },
+            {
+              "sk": "V adrese je preklep.",
+              "uk": "В адресі описка."
+            }
+          ],
+          "shortRule": "adresa + poznámka pre kuriéra",
+          "commonMistakes": [
+            {
+              "mistake": "Nitra 949 01",
+              "correct": "949 01 Nitra"
+            },
+            {
+              "mistake": "Bývam v Hlavnej ulici.",
+              "correct": "Bývam na Hlavnej ulici."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a2-u10-l09-adresa-spravne-w01",
+            "sk": "súpisné číslo",
+            "uk": "реєстраційний номер будинку",
+            "pronunciationUk": "су:пісне: чі:сло",
+            "exampleSk": "Na dome je súpisné číslo 1243 a orientačné číslo 15.",
+            "exampleUk": "На будинку реєстраційний номер 1243 і номер на вулиці 15."
+          },
+          {
+            "wordId": "a2-u10-l09-adresa-spravne-w02",
+            "sk": "orientačné číslo",
+            "uk": "номер будинку на вулиці",
+            "pronunciationUk": "орієнтачне: чі:сло",
+            "exampleSk": "Kuriér hľadá orientačné číslo, nie súpisné.",
+            "exampleUk": "Кур’єр шукає номер на вулиці, а не реєстраційний."
+          },
+          {
+            "wordId": "a2-u10-l09-adresa-spravne-w03",
+            "sk": "poznámka",
+            "uk": "примітка",
+            "pronunciationUk": "позна:мка",
+            "exampleSk": "Do poznámky napíšte číslo bytu.",
+            "exampleUk": "У примітці напишіть номер квартири."
+          },
+          {
+            "wordId": "a2-u10-l09-adresa-spravne-w04",
+            "sk": "preklep",
+            "uk": "описка, друкарська помилка",
+            "pronunciationUk": "преклеп",
+            "exampleSk": "V adrese bol preklep v čísle domu.",
+            "exampleUk": "В адресі була описка в номері будинку."
+          },
+          {
+            "wordId": "a2-u10-l09-adresa-spravne-w05",
+            "sk": "údaj",
+            "uk": "дані (окремий пункт)",
+            "pronunciationUk": "у:дай",
+            "exampleSk": "Skontrolujte, prosím, všetky údaje.",
+            "exampleUk": "Перевірте, будь ласка, всі дані."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a2-u10-l09-adresa-spravne-w01",
+          "sk": "súpisné číslo",
+          "uk": "реєстраційний номер будинку",
+          "pronunciationUk": "су:пісне: чі:сло",
+          "exampleSk": "Na dome je súpisné číslo 1243 a orientačné číslo 15.",
+          "exampleUk": "На будинку реєстраційний номер 1243 і номер на вулиці 15.",
+          "level": "A2",
+          "topic": "Пошта, посилки, кур’єри",
+          "tags": [
+            "a2-u10",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u10-l09-adresa-spravne-w02",
+          "sk": "orientačné číslo",
+          "uk": "номер будинку на вулиці",
+          "pronunciationUk": "орієнтачне: чі:сло",
+          "exampleSk": "Kuriér hľadá orientačné číslo, nie súpisné.",
+          "exampleUk": "Кур’єр шукає номер на вулиці, а не реєстраційний.",
+          "level": "A2",
+          "topic": "Пошта, посилки, кур’єри",
+          "tags": [
+            "a2-u10",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u10-l09-adresa-spravne-w03",
+          "sk": "poznámka",
+          "uk": "примітка",
+          "pronunciationUk": "позна:мка",
+          "exampleSk": "Do poznámky napíšte číslo bytu.",
+          "exampleUk": "У примітці напишіть номер квартири.",
+          "level": "A2",
+          "topic": "Пошта, посилки, кур’єри",
+          "tags": [
+            "a2-u10",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u10-l09-adresa-spravne-w04",
+          "sk": "preklep",
+          "uk": "описка, друкарська помилка",
+          "pronunciationUk": "преклеп",
+          "exampleSk": "V adrese bol preklep v čísle domu.",
+          "exampleUk": "В адресі була описка в номері будинку.",
+          "level": "A2",
+          "topic": "Пошта, посилки, кур’єри",
+          "tags": [
+            "a2-u10",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u10-l09-adresa-spravne-w05",
+          "sk": "údaj",
+          "uk": "дані (окремий пункт)",
+          "pronunciationUk": "у:дай",
+          "exampleSk": "Skontrolujte, prosím, všetky údaje.",
+          "exampleUk": "Перевірте, будь ласка, всі дані.",
+          "level": "A2",
+          "topic": "Пошта, посилки, кур’єри",
+          "tags": [
+            "a2-u10",
+            "a2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a2-u10-l09-adresa-spravne-ex01",
+          "lessonId": "a2-u10-l09-adresa-spravne",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "súpisné číslo",
+              "right": "реєстраційний номер будинку"
+            },
+            {
+              "left": "orientačné číslo",
+              "right": "номер на вулиці"
+            },
+            {
+              "left": "poznámka",
+              "right": "примітка"
+            },
+            {
+              "left": "preklep",
+              "right": "описка"
+            },
+            {
+              "left": "údaj",
+              "right": "пункт даних"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a2-u10-l09-adresa-spravne-w01",
+            "a2-u10-l09-adresa-spravne-w02",
+            "a2-u10-l09-adresa-spravne-w03",
+            "a2-u10-l09-adresa-spravne-w04",
+            "a2-u10-l09-adresa-spravne-w05"
+          ]
+        },
+        {
+          "id": "a2-u10-l09-adresa-spravne-ex02",
+          "lessonId": "a2-u10-l09-adresa-spravne",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що це за рядок адреси?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Ulica a číslo"
+            },
+            {
+              "id": "c2",
+              "title": "PSČ a mesto"
+            }
+          ],
+          "items": [
+            {
+              "sk": "Štúrova 5",
+              "category": "c1"
+            },
+            {
+              "sk": "949 01 Nitra",
+              "category": "c2"
+            },
+            {
+              "sk": "Mierová 1243/15",
+              "category": "c1"
+            },
+            {
+              "sk": "040 01 Košice",
+              "category": "c2"
+            },
+            {
+              "sk": "Hlavná 12",
+              "category": "c1"
+            },
+            {
+              "sk": "811 02 Bratislava",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Спочатку вулиця й номер, нижче — PSČ і місто.",
+          "order": 2,
+          "wordIds": [
+            "a2-u10-l09-adresa-spravne-w01",
+            "a2-u10-l09-adresa-spravne-w02"
+          ]
+        },
+        {
+          "id": "a2-u10-l09-adresa-spravne-ex03",
+          "lessonId": "a2-u10-l09-adresa-spravne",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Bývam "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "na",
+                "do",
+                "v"
+              ],
+              "correct": "na"
+            },
+            {
+              "text": " Hlavnej ulici."
+            }
+          ],
+          "explanation": "Про вулицю — na + місцевий: na Hlavnej ulici.",
+          "order": 3
+        },
+        {
+          "id": "a2-u10-l09-adresa-spravne-ex04",
+          "lessonId": "a2-u10-l09-adresa-spravne",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Číslo domu na ulici je "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "orientačné",
+                "súpisné",
+                "poštové"
+              ],
+              "correct": "orientačné"
+            },
+            {
+              "text": " číslo."
+            }
+          ],
+          "explanation": "orientačné číslo — номер на вулиці.",
+          "order": 4,
+          "wordIds": [
+            "a2-u10-l09-adresa-spravne-w01",
+            "a2-u10-l09-adresa-spravne-w02"
+          ]
+        },
+        {
+          "id": "a2-u10-l09-adresa-spravne-ex05",
+          "lessonId": "a2-u10-l09-adresa-spravne",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Do ______ napíšte poschodie a číslo bytu. (примітка)",
+          "acceptedAnswers": [
+            "poznámky"
+          ],
+          "explanation": "do + родовий: poznámka → poznámky.",
+          "order": 5,
+          "wordIds": [
+            "a2-u10-l09-adresa-spravne-w01",
+            "a2-u10-l09-adresa-spravne-w02",
+            "a2-u10-l09-adresa-spravne-w03"
+          ]
+        },
+        {
+          "id": "a2-u10-l09-adresa-spravne-ex06",
+          "lessonId": "a2-u10-l09-adresa-spravne",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "V čísle domu je ______. (описка)",
+          "acceptedAnswers": [
+            "preklep"
+          ],
+          "explanation": "preklep — описка.",
+          "order": 6,
+          "wordIds": [
+            "a2-u10-l09-adresa-spravne-w01",
+            "a2-u10-l09-adresa-spravne-w02",
+            "a2-u10-l09-adresa-spravne-w04"
+          ]
+        },
+        {
+          "id": "a2-u10-l09-adresa-spravne-ex07",
+          "lessonId": "a2-u10-l09-adresa-spravne",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яка адреса записана правильно?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Hlavná 12, Olena Kovaľová, Nitra",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Olena Kovaľová, Nitra 949 01, Hlavná 12",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Olena Kovaľová, Hlavná 12, 949 01 Nitra",
+              "correct": true
+            }
+          ],
+          "explanation": "Ім’я → вулиця й номер → PSČ і місто.",
+          "order": 7
+        },
+        {
+          "id": "a2-u10-l09-adresa-spravne-ex08",
+          "lessonId": "a2-u10-l09-adresa-spravne",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Adresa: Mierová 1243/15, 821 05 Bratislava",
+          "statement": "Число 15 — це номер будинку на вулиці (orientačné číslo).",
+          "correctAnswer": true,
+          "explanation": "Друге число після скісної риски — orientačné.",
+          "order": 8,
+          "wordIds": [
+            "a2-u10-l09-adresa-spravne-w01",
+            "a2-u10-l09-adresa-spravne-w02"
+          ]
+        },
+        {
+          "id": "a2-u10-l09-adresa-spravne-ex09",
+          "lessonId": "a2-u10-l09-adresa-spravne",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Kuriér nemohol nájsť dom, lebo v adrese bol preklepu v čísle.",
+          "errorToken": "preklepu",
+          "correctToken": "preklep",
+          "explanation": "bol + називний: preklep.",
+          "order": 9,
+          "wordIds": [
+            "a2-u10-l09-adresa-spravne-w01",
+            "a2-u10-l09-adresa-spravne-w02",
+            "a2-u10-l09-adresa-spravne-w04"
+          ]
+        },
+        {
+          "id": "a2-u10-l09-adresa-spravne-ex10",
+          "lessonId": "a2-u10-l09-adresa-spravne",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай дані замовлення.",
+          "document": {
+            "title": "Doručovacie údaje",
+            "fields": [
+              {
+                "label": "Meno",
+                "value": "Taras Bondarenko"
+              },
+              {
+                "label": "Ulica",
+                "value": "Mierová 1243/15"
+              },
+              {
+                "label": "PSČ a mesto",
+                "value": "821 05 Bratislava"
+              },
+              {
+                "label": "Poznámka pre kuriéra",
+                "value": "4. poschodie, byt 17, zvonček Bondarenko"
+              },
+              {
+                "label": "Telefón",
+                "value": "+421 900 123 456"
+              }
+            ]
+          },
+          "question": "На якому поверсі живе Тарас?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "на 17-му",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "на 4-му",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "на 15-му",
+              "correct": false
+            }
+          ],
+          "explanation": "4. poschodie — четвертий поверх; 17 — номер квартири.",
+          "order": 10,
+          "wordIds": [
+            "a2-u10-l09-adresa-spravne-w03",
+            "a2-u10-l09-adresa-spravne-w05"
+          ]
+        },
+        {
+          "id": "a2-u10-l09-adresa-spravne-ex11",
+          "lessonId": "a2-u10-l09-adresa-spravne",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай SMS.",
+          "message": {
+            "sender": "Kuriér",
+            "body": "Dobrý deň, stojím pred domom Mierová 15, ale na zvončekoch ani na schránkach nevidím vaše meno. Na ktorom poschodí bývate?"
+          },
+          "question": "У чому проблема кур’єра?",
+          "options": [
+            {
+              "id": "a",
+              "text": "він не може знайти вулицю",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "будинок зачинений на ремонт",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "він не бачить твого імені ні на дзвінках, ні на скриньках",
+              "correct": true
+            }
+          ],
+          "explanation": "nevidím vaše meno — не бачу вашого імені.",
+          "order": 11
+        },
+        {
+          "id": "a2-u10-l09-adresa-spravne-ex12",
+          "lessonId": "a2-u10-l09-adresa-spravne",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kuriér",
+              "sk": "Na ktorom poschodí bývate?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Na štyri poschodie, byt číslo sedemnásť.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Na štvrtom, byt číslo sedemnásť.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Na štvrté, byt číslo sedemnásť.",
+              "correct": false
+            }
+          ],
+          "explanation": "na ktorom? — місцевий: na štvrtom.",
+          "order": 12,
+          "wordIds": [
+            "a2-u10-l09-adresa-spravne-w01",
+            "a2-u10-l09-adresa-spravne-w02"
+          ]
+        },
+        {
+          "id": "a2-u10-l09-adresa-spravne-ex13",
+          "lessonId": "a2-u10-l09-adresa-spravne",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Oksana sa minulý mesiac presťahovala z Trnavy do Nitry. V e-shope si však zabudla zmeniť adresu a nový mobil išiel na starú adresu. Našťastie jej zavolala majiteľka starého bytu a balík jej odložila. Odvtedy si Oksana pri každej objednávke kontroluje všetky údaje. Do poznámky pre kuriéra vždy napíše poschodie a číslo bytu, lebo v novom dome je šesťdesiat bytov a na zvončekoch sú len čísla.",
+          "questions": [
+            {
+              "question": "Чому мобільний поїхав на стару адресу?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "кур’єр помилився",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "Оксана забула змінити адресу в магазині",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "в адресі була описка в PSČ",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Хто допоміг Оксані?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "сусідка з Нітри",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "власниця старої квартири",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "кур’єр",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Чому Оксана пише в примітці поверх і номер квартири?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "так вимагає магазин",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "у будинку немає ліфта",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "на дзвінках у новому будинку лише номери",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 13,
+          "wordIds": [
+            "a2-u10-l09-adresa-spravne-w01",
+            "a2-u10-l09-adresa-spravne-w02",
+            "a2-u10-l09-adresa-spravne-w03",
+            "a2-u10-l09-adresa-spravne-w05"
+          ]
+        },
+        {
+          "id": "a2-u10-l09-adresa-spravne-ex14",
+          "lessonId": "a2-u10-l09-adresa-spravne",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти пишеш примітку для кур’єра.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Prosím, zazvoňte na zvončeku Koval, 2. poschodie.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Prosím, zazvoňte na zvončekom Koval, 2. poschodie.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Prosím, zazvoňte na zvonček Koval, 2. poschodie.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Prosím, zazvoňte zvonček Koval, 2. poschodie.",
+              "correct": false
+            }
+          ],
+          "explanation": "zazvoniť na + знахідний: na zvonček.",
+          "order": 14
+        },
+        {
+          "id": "a2-u10-l09-adresa-spravne-ex15",
+          "lessonId": "a2-u10-l09-adresa-spravne",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що в адресі є описка.",
+          "tokens": [
+            "preklep",
+            "V",
+            ".",
+            "je",
+            "adrese"
+          ],
+          "correctOrder": [
+            "V",
+            "adrese",
+            "je",
+            "preklep",
+            "."
+          ],
+          "explanation": "v adrese — в адресі; preklep — описка.",
+          "order": 15,
+          "wordIds": [
+            "a2-u10-l09-adresa-spravne-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Нова адреса",
+        "description": "Ти переїхала до Кошиць і оновлюєш адресу в інтернет-магазині.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Що правильно вписати в поле «PSČ a mesto»?",
+            "options": [
+              {
+                "sk": "040 01 Košice",
+                "correct": true
+              },
+              {
+                "sk": "Košice 040 01",
+                "correct": false
+              },
+              {
+                "sk": "Košice, Slovensko",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Твій будинок має номер 1243/15. Який номер головний для кур’єра?",
+            "options": [
+              {
+                "sk": "1243 — реєстраційний номер",
+                "correct": false
+              },
+              {
+                "sk": "жоден, кур’єр орієнтується за PSČ",
+                "correct": false
+              },
+              {
+                "sk": "15 — номер на вулиці",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти пишеш примітку.",
+            "options": [
+              {
+                "sk": "2. poschodie, byt 8, meno na zvončeku Koval.",
+                "correct": true
+              },
+              {
+                "sk": "2. poschodím, byt 8, meno na zvončeku Koval.",
+                "correct": false
+              },
+              {
+                "sk": "2. poschodie, byt 8, meno na zvonček Koval.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Магазин: «Skontrolujte, prosím, všetky údaje.» Що зробити?",
+            "options": [
+              {
+                "sk": "надіслати документ",
+                "correct": false
+              },
+              {
+                "sk": "заповнити все наново",
+                "correct": false
+              },
+              {
+                "sk": "перевірити всі дані",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Твої посилки тепер знаходять адресата. Далі — підсумок розділу."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Твої посилки тепер знаходять адресата. Далі — підсумок розділу.",
+        "nowYouKnow": [
+          "meno → ulica a číslo → PSČ a mesto → KRAJINA",
+          "súpisné a orientačné číslo",
+          "poznámka pre kuriéra",
+          "skontrolovať údaje, preklep"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 15,
+        "xpReward": 30,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a2-u10-l10-posta-opakovanie",
+          "title": "Підсумок: пошта й посилки"
+        }
+      }
+    }
+  ]
+}

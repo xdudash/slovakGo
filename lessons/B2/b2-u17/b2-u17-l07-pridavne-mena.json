@@ -1,0 +1,628 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u17-l07-pridavne-mena",
+      "sectionId": "b2-u17",
+      "level": "B2",
+      "title": "Прикметники: -ný, -ský, -ový, -ický",
+      "topic": "Словотвір",
+      "description": "Прикметники від іменників: mesto → mestský, škola → školský, jeseň → jesenný, technika → technický; як утворити прикметник і узгодити його з іменником.",
+      "order": 167,
+      "xpReward": 50,
+      "estimatedMinutes": 17,
+      "isPublished": true,
+      "intro": "Утворювати відносні прикметники від іменників і узгоджувати їх у роді, числі й відмінку.",
+      "completionMessage": "Ти вмієш утворювати прикметники з іменників і правильно їх узгоджувати. Далі — дієприкметники та пасивні форми.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Словотвір",
+        "title": "Прикметники: -ný, -ský, -ový, -ický",
+        "shortDescription": "Утворювати відносні прикметники від іменників і узгоджувати їх у роді, числі й відмінку.",
+        "outcomes": [
+          "утворювати прикметники з -ný, -ský, -ový, -ický",
+          "узгоджувати прикметник з іменником",
+          "розрізняти якісні й відносні прикметники",
+          "використовувати прикметник у реченні"
+        ],
+        "newWords": [
+          "mestský",
+          "školský",
+          "technický",
+          "jesenný",
+          "pracovňa"
+        ],
+        "exercisesCount": 10,
+        "reward": "+50 XP",
+        "estimatedMinutes": 17,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Відносні прикметники",
+          "text": "Від іменника утворюють відносний прикметник, що вказує на належність чи ознаку: «mesto» → «mestský» (міський), «škola» → «školský» (шкільний), «technika» → «technický» (технічний). Такі прикметники не мають ступенів порівняння.",
+          "examples": [
+            {
+              "sk": "Mestský park je veľký.",
+              "uk": "Міський парк великий."
+            },
+            {
+              "sk": "Školský rok sa začína v septembri.",
+              "uk": "Шкільний рік починається у вересні."
+            }
+          ],
+          "shortRule": "mestský · školský · technický",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Узгодження з іменником",
+          "text": "Прикметник узгоджується з іменником у роді, числі й відмінку: «mestský park» (чол. рід), «mestská kniha» (жін. рід), «mestské zariadenie» (сер. рід).",
+          "examples": [
+            {
+              "sk": "Mestská knižnica je otvorená.",
+              "uk": "Міська бібліотека відкрита."
+            },
+            {
+              "sk": "Mestské zariadenie je nové.",
+              "uk": "Міська установа нова."
+            }
+          ],
+          "shortRule": "mestský · mestská · mestské",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Якісні й відносні",
+          "text": "Якісний прикметник описує ознаку (veľký, pekný, krásny), відносний вказує на зв’язок (mestský, školský). Відносні прикметники не утворюють «mestskejší».",
+          "examples": [
+            {
+              "sk": "Veľký dom je pekný.",
+              "uk": "Великий будинок гарний."
+            },
+            {
+              "sk": "Školský autobus čaká pri bráne.",
+              "uk": "Шкільний автобус чекає біля воріт."
+            }
+          ],
+          "shortRule": "veľký · školský",
+          "commonMistakes": [
+            {
+              "mistake": "Mestský park je veľmi mestskejší.",
+              "correct": "Mestský park je veľký."
+            },
+            {
+              "mistake": "Školský rok je lepší školskejší.",
+              "correct": "Školský rok je dlhý."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u17-l07-pridavne-mena-w01",
+            "sk": "mestský",
+            "uk": "міський",
+            "pronunciationUk": "местський",
+            "exampleSk": "Mestský park je pri rieke.",
+            "exampleUk": "Міський парк біля річки."
+          },
+          {
+            "wordId": "b2-u17-l07-pridavne-mena-w02",
+            "sk": "školský",
+            "uk": "шкільний",
+            "pronunciationUk": "школьський",
+            "exampleSk": "Školský rok začína v septembri.",
+            "exampleUk": "Шкільний рік починається у вересні."
+          },
+          {
+            "wordId": "b2-u17-l07-pridavne-mena-w03",
+            "sk": "technický",
+            "uk": "технічний",
+            "pronunciationUk": "технічний",
+            "exampleSk": "Technický problém sme vyriešili rýchlo.",
+            "exampleUk": "Технічну проблему ми вирішили швидко."
+          },
+          {
+            "wordId": "b2-u17-l07-pridavne-mena-w04",
+            "sk": "jesenný",
+            "uk": "осінній",
+            "pronunciationUk": "єсенній",
+            "exampleSk": "Jesenný park je krásny v októbri.",
+            "exampleUk": "Осінній парк гарний у жовтні."
+          },
+          {
+            "wordId": "b2-u17-l07-pridavne-mena-w05",
+            "sk": "pracovňa",
+            "uk": "робочий кабінет",
+            "pronunciationUk": "працовня",
+            "exampleSk": "Pracovňa je na druhom poschodí.",
+            "exampleUk": "Робочий кабінет на другому поверсі."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u17-l07-pridavne-mena-w01",
+          "sk": "mestský",
+          "uk": "міський",
+          "pronunciationUk": "местський",
+          "exampleSk": "Mestský park je pri rieke.",
+          "exampleUk": "Міський парк біля річки.",
+          "level": "B2",
+          "topic": "Словотвір",
+          "tags": [
+            "b2-u17",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u17-l07-pridavne-mena-w02",
+          "sk": "školský",
+          "uk": "шкільний",
+          "pronunciationUk": "школьський",
+          "exampleSk": "Školský rok začína v septembri.",
+          "exampleUk": "Шкільний рік починається у вересні.",
+          "level": "B2",
+          "topic": "Словотвір",
+          "tags": [
+            "b2-u17",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u17-l07-pridavne-mena-w03",
+          "sk": "technický",
+          "uk": "технічний",
+          "pronunciationUk": "технічний",
+          "exampleSk": "Technický problém sme vyriešili rýchlo.",
+          "exampleUk": "Технічну проблему ми вирішили швидко.",
+          "level": "B2",
+          "topic": "Словотвір",
+          "tags": [
+            "b2-u17",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u17-l07-pridavne-mena-w04",
+          "sk": "jesenný",
+          "uk": "осінній",
+          "pronunciationUk": "єсенній",
+          "exampleSk": "Jesenný park je krásny v októbri.",
+          "exampleUk": "Осінній парк гарний у жовтні.",
+          "level": "B2",
+          "topic": "Словотвір",
+          "tags": [
+            "b2-u17",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u17-l07-pridavne-mena-w05",
+          "sk": "pracovňa",
+          "uk": "робочий кабінет",
+          "pronunciationUk": "працовня",
+          "exampleSk": "Pracovňa je na druhom poschodí.",
+          "exampleUk": "Робочий кабінет на другому поверсі.",
+          "level": "B2",
+          "topic": "Словотвір",
+          "tags": [
+            "b2-u17",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u17-l07-pridavne-mena-ex01",
+          "lessonId": "b2-u17-l07-pridavne-mena",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай слово і прикметник.",
+          "pairs": [
+            {
+              "left": "mesto",
+              "right": "міський"
+            },
+            {
+              "left": "škola",
+              "right": "шкільний"
+            },
+            {
+              "left": "technika",
+              "right": "технічний"
+            },
+            {
+              "left": "jeseň",
+              "right": "осінній"
+            },
+            {
+              "left": "kniha",
+              "right": "книжковий"
+            }
+          ],
+          "order": 1
+        },
+        {
+          "id": "b2-u17-l07-pridavne-mena-ex02",
+          "lessonId": "b2-u17-l07-pridavne-mena",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильну форму.",
+          "sentenceParts": [
+            {
+              "blankId": "b1",
+              "options": [
+                "Mestské",
+                "Mestský",
+                "Mestská"
+              ],
+              "correct": "Mestská"
+            },
+            {
+              "text": " knižnica je veľmi pekná."
+            }
+          ],
+          "explanation": "Жіночий рід «knižnica»: «mestská».",
+          "order": 2,
+          "wordIds": [
+            "b2-u17-l07-pridavne-mena-w01"
+          ]
+        },
+        {
+          "id": "b2-u17-l07-pridavne-mena-ex03",
+          "lessonId": "b2-u17-l07-pridavne-mena",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди помилку.",
+          "sentence": "Školský rok začína v septembri.",
+          "errorToken": "začína",
+          "correctToken": "začínajú",
+          "explanation": "Підмет «rok» однина, тому «začína».",
+          "order": 3,
+          "wordIds": [
+            "b2-u17-l07-pridavne-mena-w02"
+          ]
+        },
+        {
+          "id": "b2-u17-l07-pridavne-mena-ex04",
+          "lessonId": "b2-u17-l07-pridavne-mena",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Jesenný ______ je krásny v októbri. (парк)",
+          "acceptedAnswers": [
+            "park"
+          ],
+          "explanation": "Чоловічий рід: «jesenný park».",
+          "order": 4,
+          "wordIds": [
+            "b2-u17-l07-pridavne-mena-w04"
+          ]
+        },
+        {
+          "id": "b2-u17-l07-pridavne-mena-ex05",
+          "lessonId": "b2-u17-l07-pridavne-mena",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Technický park je pri škole.",
+          "acceptedAnswers": [
+            "Školský park je pri škole."
+          ],
+          "explanation": "Парк при школі — шкільний, а не технічний.",
+          "order": 5,
+          "wordIds": [
+            "b2-u17-l07-pridavne-mena-w02",
+            "b2-u17-l07-pridavne-mena-w03"
+          ]
+        },
+        {
+          "id": "b2-u17-l07-pridavne-mena-ex06",
+          "lessonId": "b2-u17-l07-pridavne-mena",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «technický»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "техніка",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "технічний",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "технолог",
+              "correct": false
+            }
+          ],
+          "order": 6
+        },
+        {
+          "id": "b2-u17-l07-pridavne-mena-ex07",
+          "lessonId": "b2-u17-l07-pridavne-mena",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яка форма узгоджена з «kniha»?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "školský kniha",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "školské kniha",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "školská kniha",
+              "correct": true
+            }
+          ],
+          "explanation": "Жіночий рід: «školská».",
+          "order": 7,
+          "wordIds": [
+            "b2-u17-l07-pridavne-mena-w02"
+          ]
+        },
+        {
+          "id": "b2-u17-l07-pridavne-mena-ex08",
+          "lessonId": "b2-u17-l07-pridavne-mena",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Mestský park je veľmi mestský.",
+          "statement": "Міський парк дуже міський.",
+          "correctAnswer": false,
+          "explanation": "Відносні прикметники не мають ступенів порівняння.",
+          "order": 8,
+          "wordIds": [
+            "b2-u17-l07-pridavne-mena-w01"
+          ]
+        },
+        {
+          "id": "b2-u17-l07-pridavne-mena-ex09",
+          "lessonId": "b2-u17-l07-pridavne-mena",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Розподіли прикметники.",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Відносні"
+            },
+            {
+              "id": "c2",
+              "title": "Якісні"
+            },
+            {
+              "id": "c3",
+              "title": "Сезонні"
+            }
+          ],
+          "items": [
+            {
+              "sk": "jesenný",
+              "category": "c3"
+            },
+            {
+              "sk": "veľký",
+              "category": "c2"
+            },
+            {
+              "sk": "technický",
+              "category": "c1"
+            },
+            {
+              "sk": "školský",
+              "category": "c1"
+            },
+            {
+              "sk": "pekný",
+              "category": "c2"
+            },
+            {
+              "sk": "mestský",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Розрізнення відносних і якісних прикметників.",
+          "order": 9,
+          "wordIds": [
+            "b2-u17-l07-pridavne-mena-w01",
+            "b2-u17-l07-pridavne-mena-w02",
+            "b2-u17-l07-pridavne-mena-w03",
+            "b2-u17-l07-pridavne-mena-w04"
+          ]
+        },
+        {
+          "id": "b2-u17-l07-pridavne-mena-ex10",
+          "lessonId": "b2-u17-l07-pridavne-mena",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Ten technický problém je dosť veľký, ale vyriešime ho.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": false
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": true
+            }
+          ],
+          "explanation": "Нейтральний регістр: «technický» і «veľký» вживаються і в розмові, і в тексті.",
+          "order": 10,
+          "wordIds": [
+            "b2-u17-l07-pridavne-mena-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Нова бібліотека",
+        "description": "Ти розказуєш колезі про міську бібліотеку, шкільні програми й осінній парк біля неї. Треба правильно утворити прикметники й узгодити їх.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Колега питає, що за бібліотека. Що відповідаєш? (ti — чоловік)",
+            "options": [
+              {
+                "sk": "Je to mestské knižnica pri parku.",
+                "correct": false
+              },
+              {
+                "sk": "Je to mestská knižnica pri parku.",
+                "correct": true
+              },
+              {
+                "sk": "Je to mestský knižnica pri parku.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Колега питає про рік у школі. Як відповідаєш? (ti — žena)",
+            "options": [
+              {
+                "sk": "Školský rok začína v septembri, je dlhá.",
+                "correct": false
+              },
+              {
+                "sk": "Školský rok začína v septembri, je dlhý.",
+                "correct": true
+              },
+              {
+                "sk": "Školská rok začína v septembri, je dlhý.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Колега питає, чи вирішили технічну проблему. Що відповідаєш?",
+            "options": [
+              {
+                "text": "Так, технічна проблема ще є.",
+                "correct": false
+              },
+              {
+                "text": "Так, технічну проблему ми вирішили швидко.",
+                "correct": true
+              },
+              {
+                "text": "Ні, проблем немає, я не знаю.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як завершиш розмову? (ti — чоловік)",
+            "options": [
+              {
+                "sk": "Ďakujem za info, nepríď nikdy.",
+                "correct": false
+              },
+              {
+                "sk": "Dovidenia, park nechcem.",
+                "correct": false
+              },
+              {
+                "sk": "Ďakujem za info, príď na jesenný výlet.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш утворювати прикметники з іменників і правильно їх узгоджувати. Далі — дієприкметники та пасивні форми."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш утворювати прикметники з іменників і правильно їх узгоджувати. Далі — дієприкметники та пасивні форми.",
+        "nowYouKnow": [
+          "утворювати прикметники з -ný, -ský, -ový, -ický",
+          "узгоджувати прикметник з іменником",
+          "розрізняти якісні й відносні прикметники",
+          "використовувати прикметник у реченні"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 10,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u17-l08-skratky-cudzie",
+          "title": "Скорочення й запозичення: EÚ, PC, sms"
+        }
+      }
+    }
+  ]
+}

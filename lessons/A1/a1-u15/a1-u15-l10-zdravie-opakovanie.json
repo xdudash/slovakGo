@@ -1,0 +1,890 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u15-l10-zdravie-opakovanie",
+      "sectionId": "a1-u15",
+      "level": "A1",
+      "title": "Підсумок: здоров’я",
+      "topic": "Здоров’я",
+      "description": "Підсумок розділу: тіло, біль, лікар, запис, аптека, ліки, хвороби, поради, PN — а ще профілактичний огляд і невідкладна допомога.",
+      "order": 150,
+      "xpReward": 25,
+      "estimatedMinutes": 20,
+      "isPublished": true,
+      "intro": "Пройти весь шлях: від болю до лікаря, аптеки й лікарняного.",
+      "completionMessage": "Розділ «Здоров’я» завершено! Далі — одяг і покупки.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Здоров’я",
+        "title": "Підсумок: здоров’я",
+        "shortDescription": "Пройти весь шлях: від болю до лікаря, аптеки й лікарняного.",
+        "outcomes": [
+          "описати біль і симптоми",
+          "записатися й пройти огляд",
+          "купити й правильно приймати ліки",
+          "оформити PN і повідомити роботодавця"
+        ],
+        "newWords": [
+          "zdravie",
+          "zdravotná poisťovňa",
+          "preventívna prehliadka",
+          "pohotovosť"
+        ],
+        "exercisesCount": 14,
+        "reward": "+25 XP",
+        "estimatedMinutes": 20,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Zdravie a prevencia",
+          "text": "«Zdravie» — здоров’я. «Zdravotná poisťovňa» — медична страхова компанія (VšZP, Dôvera, Union). «Preventívna prehliadka» — профілактичний огляд: у сімейного лікаря раз на два роки, без доплати.",
+          "examples": [
+            {
+              "sk": "Raz za dva roky choďte na preventívnu prehliadku.",
+              "uk": "Раз на два роки ходіть на профілактичний огляд."
+            },
+            {
+              "sk": "Som poistený vo VšZP.",
+              "uk": "Я застрахований у VšZP."
+            }
+          ],
+          "shortRule": "prevencia = профілактика",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Pohotovosť",
+          "text": "Уночі й на вихідних, коли амбулаторія зачинена, — «pohotovosť» (черговий медичний пункт). У небезпечній ситуації — «záchranka»: номер 155 або 112.",
+          "examples": [
+            {
+              "sk": "Kde je najbližšia pohotovosť?",
+              "uk": "Де найближчий черговий пункт?"
+            },
+            {
+              "sk": "Volajte 155!",
+              "uk": "Дзвоніть 155!"
+            }
+          ],
+          "shortRule": "pohotovosť / 155 / 112",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Шпаргалка",
+          "text": "Bolí ma… / Syna bolí… od včera. Idem k lekárovi / som u lekára. Chcel(a) by som sa objednať. Masť, kvapky, doplatok. Užívajte každých 8 hodín. Mám chrípku. Pite, ležte, nesmiete fajčiť. Som na PN.",
+          "examples": [
+            {
+              "sk": "Od včera ma bolí hrdlo, idem k lekárovi.",
+              "uk": "Із учора болить горло, іду до лікаря."
+            }
+          ],
+          "shortRule": "Головне",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u15-l10-zdravie-opakovanie-w01",
+            "sk": "zdravie",
+            "uk": "здоров’я",
+            "pronunciationUk": "здравіє",
+            "exampleSk": "Zdravie je najdôležitejšie.",
+            "exampleUk": "Здоров’я — найважливіше."
+          },
+          {
+            "wordId": "a1-u15-l10-zdravie-opakovanie-w02",
+            "sk": "zdravotná poisťovňa",
+            "uk": "медична страхова компанія",
+            "pronunciationUk": "здравотна: поістьовня",
+            "exampleSk": "Zdravotná poisťovňa mi poslala nový preukaz.",
+            "exampleUk": "Страхова надіслала мені нову картку."
+          },
+          {
+            "wordId": "a1-u15-l10-zdravie-opakovanie-w03",
+            "sk": "preventívna prehliadka",
+            "uk": "профілактичний огляд",
+            "pronunciationUk": "превенті:вна прегліадка",
+            "exampleSk": "Na preventívnu prehliadku sa treba objednať.",
+            "exampleUk": "На профілактичний огляд треба записатися."
+          },
+          {
+            "wordId": "a1-u15-l10-zdravie-opakovanie-w04",
+            "sk": "pohotovosť",
+            "uk": "черговий медичний пункт",
+            "pronunciationUk": "поготовость",
+            "exampleSk": "V noci sme išli s dcérou na pohotovosť.",
+            "exampleUk": "Уночі ми з донькою їздили в черговий медпункт."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u15-l10-zdravie-opakovanie-w01",
+          "sk": "zdravie",
+          "uk": "здоров’я",
+          "pronunciationUk": "здравіє",
+          "exampleSk": "Zdravie je najdôležitejšie.",
+          "exampleUk": "Здоров’я — найважливіше.",
+          "level": "A1",
+          "topic": "Здоров’я",
+          "tags": [
+            "a1-u15",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u15-l10-zdravie-opakovanie-w02",
+          "sk": "zdravotná poisťovňa",
+          "uk": "медична страхова компанія",
+          "pronunciationUk": "здравотна: поістьовня",
+          "exampleSk": "Zdravotná poisťovňa mi poslala nový preukaz.",
+          "exampleUk": "Страхова надіслала мені нову картку.",
+          "level": "A1",
+          "topic": "Здоров’я",
+          "tags": [
+            "a1-u15",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u15-l10-zdravie-opakovanie-w03",
+          "sk": "preventívna prehliadka",
+          "uk": "профілактичний огляд",
+          "pronunciationUk": "превенті:вна прегліадка",
+          "exampleSk": "Na preventívnu prehliadku sa treba objednať.",
+          "exampleUk": "На профілактичний огляд треба записатися.",
+          "level": "A1",
+          "topic": "Здоров’я",
+          "tags": [
+            "a1-u15",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u15-l10-zdravie-opakovanie-w04",
+          "sk": "pohotovosť",
+          "uk": "черговий медичний пункт",
+          "pronunciationUk": "поготовость",
+          "exampleSk": "V noci sme išli s dcérou na pohotovosť.",
+          "exampleUk": "Уночі ми з донькою їздили в черговий медпункт.",
+          "level": "A1",
+          "topic": "Здоров’я",
+          "tags": [
+            "a1-u15",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u15-l10-zdravie-opakovanie-ex01",
+          "lessonId": "a1-u15-l10-zdravie-opakovanie",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Volám sa Taras a pracujem v Košiciach na stavbe. Minulý týždeň ma začal bolieť chrbát a mal som vysokú teplotu. Zavolal som do ambulancie a objednal som sa na utorok. Lekárka ma vyšetrila a povedala, že je to chrípka. Dala mi PN na týždeň a predpísala lieky. V lekárni som zaplatil doplatok tri eurá. Šéfovi som to hneď oznámil. Teraz musím ležať a piť veľa tekutín. Na kontrolu idem v pondelok.",
+          "questions": [
+            {
+              "question": "Що сказала лікарка?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "що це ангіна",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "що це грип",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "що все гаразд",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Скільки Тарас доплатив в аптеці?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "три євро",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "нічого",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "тридцять євро",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Коли він іде на контроль?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "у вівторок",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "у понеділок",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "через місяць",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u15-l10-zdravie-opakovanie-w01"
+          ]
+        },
+        {
+          "id": "a1-u15-l10-zdravie-opakovanie-ex02",
+          "lessonId": "a1-u15-l10-zdravie-opakovanie",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "zdravie",
+              "right": "здоров’я"
+            },
+            {
+              "left": "zdravotná poisťovňa",
+              "right": "медична страхова"
+            },
+            {
+              "left": "preventívna prehliadka",
+              "right": "профілактичний огляд"
+            },
+            {
+              "left": "pohotovosť",
+              "right": "черговий медичний пункт"
+            }
+          ],
+          "order": 2,
+          "wordIds": [
+            "a1-u15-l10-zdravie-opakovanie-w01",
+            "a1-u15-l10-zdravie-opakovanie-w02",
+            "a1-u15-l10-zdravie-opakovanie-w03",
+            "a1-u15-l10-zdravie-opakovanie-w04"
+          ]
+        },
+        {
+          "id": "a1-u15-l10-zdravie-opakovanie-ex03",
+          "lessonId": "a1-u15-l10-zdravie-opakovanie",
+          "type": "cloze_text",
+          "skill": [
+            "grammar",
+            "reading"
+          ],
+          "instruction": "Заповни пропуски в тексті.",
+          "textParts": [
+            {
+              "text": "Bolí "
+            },
+            {
+              "blankId": "b1",
+              "acceptedAnswers": [
+                "ma"
+              ]
+            },
+            {
+              "text": " hrdlo. Zajtra idem "
+            },
+            {
+              "blankId": "b2",
+              "acceptedAnswers": [
+                "k"
+              ]
+            },
+            {
+              "text": " lekárovi. Lekár mi dal "
+            },
+            {
+              "blankId": "b3",
+              "acceptedAnswers": [
+                "PN"
+              ]
+            },
+            {
+              "text": " na týždeň."
+            }
+          ],
+          "hint": "особа, прийменник руху, лікарняний",
+          "explanation": "ma, k, PN.",
+          "order": 3,
+          "wordIds": [
+            "a1-u15-l10-zdravie-opakovanie-w01"
+          ]
+        },
+        {
+          "id": "a1-u15-l10-zdravie-opakovanie-ex04",
+          "lessonId": "a1-u15-l10-zdravie-opakovanie",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Dcéru bolia ucho od rána.",
+          "errorToken": "bolia",
+          "correctToken": "bolí",
+          "explanation": "ucho — однина: bolí.",
+          "order": 4,
+          "wordIds": [
+            "a1-u15-l10-zdravie-opakovanie-w01"
+          ]
+        },
+        {
+          "id": "a1-u15-l10-zdravie-opakovanie-ex05",
+          "lessonId": "a1-u15-l10-zdravie-opakovanie",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Chcem objednať u lekár.",
+          "acceptedAnswers": [
+            "Chcem sa objednať k lekárovi.",
+            "Chcem sa objednať u lekára.",
+            "Chcel by som sa objednať k lekárovi.",
+            "Chcela by som sa objednať k lekárovi."
+          ],
+          "explanation": "objednať sa k lekárovi.",
+          "order": 5,
+          "wordIds": [
+            "a1-u15-l10-zdravie-opakovanie-w01"
+          ]
+        },
+        {
+          "id": "a1-u15-l10-zdravie-opakovanie-ex06",
+          "lessonId": "a1-u15-l10-zdravie-opakovanie",
+          "type": "branching_dialogue",
+          "skill": [
+            "dialogue",
+            "real_life"
+          ],
+          "instruction": "Пройди діалог: обирай доречні відповіді.",
+          "successMessage": "Ти впорався(-лася): від аптеки до запису до лікаря!",
+          "startNode": "n1",
+          "nodes": {
+            "n1": {
+              "speaker": "Lekárnička",
+              "sk": "Dobrý deň, čo si želáte?",
+              "choices": [
+                {
+                  "id": "n1c3",
+                  "sk": "Hrdlo liek bolia.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c2",
+                  "sk": "Potrebujem hrdlo, veľmi mi bolí.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n1c1",
+                  "sk": "Potrebujem niečo na hrdlo, veľmi ma bolí.",
+                  "next": "n2",
+                  "quality": "best"
+                }
+              ]
+            },
+            "n2": {
+              "speaker": "Lekárnička",
+              "sk": "Máte aj teplotu?",
+              "choices": [
+                {
+                  "id": "n2c3",
+                  "sk": "Áno, včera od teplota.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n2c1",
+                  "sk": "Áno, od včera 38,5.",
+                  "next": "n3",
+                  "quality": "best"
+                },
+                {
+                  "id": "n2c2",
+                  "sk": "Áno, do včera 38,5.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n3": {
+              "speaker": "Lekárnička",
+              "sk": "S teplotou by ste mali ísť k lekárovi.",
+              "choices": [
+                {
+                  "id": "n3c1",
+                  "sk": "Dobre, objednám sa ešte dnes.",
+                  "next": "n4",
+                  "quality": "best"
+                },
+                {
+                  "id": "n3c3",
+                  "sk": "Dobre, objednať sa dnes som.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n3c2",
+                  "sk": "Dobre, objednám ešte dnes.",
+                  "next": "fail",
+                  "quality": "wrong"
+                }
+              ]
+            },
+            "n4": {
+              "speaker": "Lekárnička",
+              "sk": "Zatiaľ vám dám pastilky. Užívajte ich každé tri hodiny.",
+              "choices": [
+                {
+                  "id": "n4c2",
+                  "sk": "Ďakujem, rozumiem si.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n4c3",
+                  "sk": "Pastilky ja.",
+                  "next": "fail",
+                  "quality": "wrong"
+                },
+                {
+                  "id": "n4c1",
+                  "sk": "Ďakujem, rozumiem.",
+                  "next": "success",
+                  "quality": "best"
+                }
+              ]
+            }
+          },
+          "order": 6,
+          "wordIds": [
+            "a1-u15-l10-zdravie-opakovanie-w01"
+          ]
+        },
+        {
+          "id": "a1-u15-l10-zdravie-opakovanie-ex07",
+          "lessonId": "a1-u15-l10-zdravie-opakovanie",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Lekár: Tri dni "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "ležať",
+                "ležte",
+                "ležíte"
+              ],
+              "correct": "ležte"
+            },
+            {
+              "text": " a pite čaj."
+            }
+          ],
+          "explanation": "Порада лікаря — наказовий спосіб: ležte.",
+          "order": 7,
+          "wordIds": [
+            "a1-u15-l10-zdravie-opakovanie-w01"
+          ]
+        },
+        {
+          "id": "a1-u15-l10-zdravie-opakovanie-ex08",
+          "lessonId": "a1-u15-l10-zdravie-opakovanie",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Nesmiete dvíhať ťažké veci»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Вам не можна піднімати важкі речі",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Ви не можете знайти важкі речі",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Вам не обов’язково піднімати важкі речі",
+              "correct": false
+            }
+          ],
+          "explanation": "nesmiete — заборона.",
+          "order": 8,
+          "wordIds": [
+            "a1-u15-l10-zdravie-opakovanie-w01"
+          ]
+        },
+        {
+          "id": "a1-u15-l10-zdravie-opakovanie-ex09",
+          "lessonId": "a1-u15-l10-zdravie-opakovanie",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Номер швидкої допомоги у Словаччині — 155.",
+          "correctAnswer": true,
+          "explanation": "155 — záchranka, 112 — загальний екстрений номер.",
+          "order": 9,
+          "wordIds": [
+            "a1-u15-l10-zdravie-opakovanie-w01"
+          ]
+        },
+        {
+          "id": "a1-u15-l10-zdravie-opakovanie-ex10",
+          "lessonId": "a1-u15-l10-zdravie-opakovanie",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти питаєш перехожого, де найближчий черговий медпункт.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Kde pohotovosť bolí?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Pohotovosť kde najbližšia je?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Prepáčte, kde je najbližšia pohotovosť?",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Prepáčte, kde je najbližší pohotovosť?",
+              "correct": false
+            }
+          ],
+          "explanation": "pohotovosť — жіночий рід: najbližšia.",
+          "order": 10,
+          "wordIds": [
+            "a1-u15-l10-zdravie-opakovanie-w01",
+            "a1-u15-l10-zdravie-opakovanie-w04"
+          ]
+        },
+        {
+          "id": "a1-u15-l10-zdravie-opakovanie-ex11",
+          "lessonId": "a1-u15-l10-zdravie-opakovanie",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що в сина болить вухо.",
+          "tokens": [
+            "bolí",
+            "ucho",
+            ".",
+            "Syna"
+          ],
+          "correctOrder": [
+            "Syna",
+            "bolí",
+            "ucho",
+            "."
+          ],
+          "explanation": "Знахідний: syna.",
+          "order": 11,
+          "wordIds": [
+            "a1-u15-l10-zdravie-opakovanie-w01"
+          ]
+        },
+        {
+          "id": "a1-u15-l10-zdravie-opakovanie-ex12",
+          "lessonId": "a1-u15-l10-zdravie-opakovanie",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Куди піти?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Lekáreň"
+            },
+            {
+              "id": "c2",
+              "title": "Ambulancia"
+            }
+          ],
+          "items": [
+            {
+              "sk": "odber krvi",
+              "category": "c2"
+            },
+            {
+              "sk": "kvapky do nosa",
+              "category": "c1"
+            },
+            {
+              "sk": "preventívna prehliadka",
+              "category": "c2"
+            },
+            {
+              "sk": "náplasť",
+              "category": "c1"
+            },
+            {
+              "sk": "masť",
+              "category": "c1"
+            },
+            {
+              "sk": "PN",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Ліки — в аптеці, огляд і PN — у лікаря.",
+          "order": 12,
+          "wordIds": [
+            "a1-u15-l10-zdravie-opakovanie-w01",
+            "a1-u15-l10-zdravie-opakovanie-w03"
+          ]
+        },
+        {
+          "id": "a1-u15-l10-zdravie-opakovanie-ex13",
+          "lessonId": "a1-u15-l10-zdravie-opakovanie",
+          "type": "word_bank",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Склади.",
+          "wordBank": [
+            "nalačno",
+            "alergiu"
+          ],
+          "items": [
+            {
+              "sentence": "Mám ______ na penicilín.",
+              "correct": "alergiu"
+            },
+            {
+              "sentence": "Na odber krvi príďte ______.",
+              "correct": "nalačno"
+            }
+          ],
+          "extraWords": [
+            "doplatok",
+            "kontrolu"
+          ],
+          "explanation": "alergia na…; nalačno.",
+          "order": 13,
+          "wordIds": [
+            "a1-u15-l10-zdravie-opakovanie-w01"
+          ]
+        },
+        {
+          "id": "a1-u15-l10-zdravie-opakovanie-ex14",
+          "lessonId": "a1-u15-l10-zdravie-opakovanie",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні речення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Mám chrípku.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Mám chrípka.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Idem k lekárovi.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Idem u lekára.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Som na PN.",
+              "correct": true
+            }
+          ],
+          "explanation": "Повторення розділу.",
+          "order": 14,
+          "wordIds": [
+            "a1-u15-l10-zdravie-opakovanie-w01"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Важкий тиждень",
+        "description": "Ти (чоловік) захворів і проходиш увесь шлях: лікар, аптека, робота.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Медсестра по телефону: «Ste objednaný?» (ні, але маєш гострий біль)",
+            "options": [
+              {
+                "sk": "Nie, objednaný bolí.",
+                "correct": false
+              },
+              {
+                "sk": "Nie, ale mám akútne bolesti.",
+                "correct": true
+              },
+              {
+                "sk": "Nie, ale som akútny bolesť.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Лікар: «Užívajte to každých osem hodín, celé balenie.» Як приймати?",
+            "options": [
+              {
+                "sk": "8 разів на день, поки не стане краще",
+                "correct": false
+              },
+              {
+                "sk": "раз на 8 днів",
+                "correct": false
+              },
+              {
+                "sk": "кожні 8 годин, до кінця упаковки",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти повідомляєш шефові.",
+            "options": [
+              {
+                "sk": "Chorý PN piatok.",
+                "correct": false
+              },
+              {
+                "sk": "Dobrý deň, som choroba a mám PN do piatok.",
+                "correct": false
+              },
+              {
+                "sk": "Dobrý deň, som chorý a mám PN do piatku.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Шеф: «Dobre, rýchlo sa uzdravte!» Що він тобі побажав?",
+            "options": [
+              {
+                "sk": "більше ніколи не хворіти",
+                "correct": false
+              },
+              {
+                "sk": "швидше повернутися на роботу",
+                "correct": false
+              },
+              {
+                "sk": "швидше одужати",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Розділ «Здоров’я» завершено! Далі — одяг і покупки."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Розділ «Здоров’я» завершено! Далі — одяг і покупки.",
+        "nowYouKnow": [
+          "Bolí ma… od včera; idem k lekárovi",
+          "objednať sa, preukaz poistenca, ordinačné hodiny",
+          "dávka, doplatok, každých … hodín",
+          "PN, OČR, pohotovosť, 155"
+        ],
+        "newWordsCount": 4,
+        "exercisesCompleted": 14,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u16-l01-oblecenie",
+          "title": "Одяг"
+        }
+      }
+    }
+  ]
+}

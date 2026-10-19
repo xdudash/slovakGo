@@ -1,0 +1,900 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u06-l05-uctovnictvo",
+      "sectionId": "b2-u06",
+      "level": "B2",
+      "title": "Бухгалтерія й облік",
+      "topic": "Економіка і бізнес",
+      "description": "Як підприємець веде облік у Словаччині: податковий облік чи подвійний бухгалтерський облік, бухгалтерські документи, звітний період і річна звітність — і як ділово домовлятися з бухгалтером про документи та строки.",
+      "order": 55,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Розуміти основні поняття обліку й ділово спілкуватися з бухгалтером про документи, строки й звітність.",
+      "completionMessage": "Ти розумієш основи обліку й умієш домовитися з бухгалтером. Далі — маркетинг: як фірма знаходить клієнтів.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Економіка і бізнес",
+        "title": "Бухгалтерія й облік",
+        "shortDescription": "Розуміти основні поняття обліку й ділово спілкуватися з бухгалтером про документи, строки й звітність.",
+        "outcomes": [
+          "розрізняти daňovú evidenciu й podvojné účtovníctvo",
+          "пояснювати, що таке účtovný doklad і навіщо його зберігати",
+          "говорити про účtovné obdobie й účtovnú závierku",
+          "вживати: odovzdať doklady, zaúčtovať, do kedy potrebujete…"
+        ],
+        "newWords": [
+          "účtovníctvo",
+          "podvojné účtovníctvo",
+          "daňová evidencia",
+          "účtovný doklad",
+          "účtovné obdobie",
+          "účtovná závierka"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Хто як веде облік",
+          "text": "Облік залежить від форми підприємства. S. r. o. веде «podvojné účtovníctvo» — подвійний запис: кожну операцію записують на двох рахунках, тож видно не лише гроші, а й майно та зобов’язання. SZČO зазвичай може обрати простіший шлях — «daňovú evidenciu» (облік доходів, витрат і майна) або «paušálne výdavky», коли витратами вважають визначений законом відсоток доходу й окремо їх не доводять. Що вигідніше й що дозволено саме тобі, вирішуй разом із бухгалтером: правила й ліміти змінюються. Бухгалтер — «účtovník» / «účtovníčka», фірма, що веде облік за тебе, — «účtovná kancelária». Дієслово: «viesť účtovníctvo / evidenciu».",
+          "examples": [
+            {
+              "sk": "Naša s. r. o. vedie podvojné účtovníctvo.",
+              "uk": "Наше s. r. o. веде подвійний облік."
+            },
+            {
+              "sk": "Ako SZČO vediem daňovú evidenciu.",
+              "uk": "Як SZČO я веду податковий облік."
+            }
+          ],
+          "shortRule": "viesť účtovníctvo · s. r. o. → podvojné · SZČO → daňová evidencia / paušálne výdavky",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Документи — основа обліку",
+          "text": "Кожен запис спирається на документ — «účtovný doklad»: фактуру, касовий чек (pokladničný blok), банківську виписку (výpis z účtu), договір. Без документа витрату зазвичай не можна врахувати: «Bez dokladu vám to nemôžem uznať ako výdavok.» Підприємець документи «odovzdá» (передає) бухгалтерові, а той їх «zaúčtuje» (проводить в обліку). Документи треба «archivovať» — зберігати протягом строків, визначених законом; скільки років у твоєму випадку, уточни в бухгалтера. Дати в діловому мовленні — з родовим відмінком місяця: «do 10. októbra».",
+          "examples": [
+            {
+              "sk": "Doklady za september Vám odovzdám do 10. októbra.",
+              "uk": "Документи за вересень передам вам до 10 жовтня."
+            },
+            {
+              "sk": "Účtovníčka zaúčtovala všetky faktúry.",
+              "uk": "Бухгалтерка провела всі фактури."
+            }
+          ],
+          "shortRule": "odovzdať doklady · zaúčtovať faktúru · archivovať doklady · do + родовий",
+          "commonMistakes": [
+            {
+              "mistake": "Doklady Vám odovzdám do 10. október.",
+              "correct": "Doklady Vám odovzdám do 10. októbra."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Період і річна звітність",
+          "text": "«Účtovné obdobie» — звітний період, найчастіше календарний рік. Наприкінці його складають «účtovnú závierku» — річну звітність: баланс (súvaha) і звіт про доходи й витрати (výkaz ziskov a strát). Її подають разом із податковою декларацією у визначені строки; строки, формуляри й можливість продовження бери з фінансової управи чи від бухгалтера, а не з пам’яті. Мова співпраці з бухгалтером — ділова й точна: «Do kedy potrebujete podklady k daňovému priznaniu?», «Mohli by ste mi, prosím, poslať prehľad nákladov za štvrťrok?». «Podklady» — матеріали, на основі яких щось готують.",
+          "examples": [
+            {
+              "sk": "Účtovná závierka sa zostavuje ku koncu účtovného obdobia.",
+              "uk": "Річну звітність складають на кінець звітного періоду."
+            },
+            {
+              "sk": "Do kedy potrebujete podklady?",
+              "uk": "До якого часу вам потрібні матеріали?"
+            }
+          ],
+          "shortRule": "účtovné obdobie → účtovná závierka (súvaha + výkaz ziskov a strát)",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u06-l05-uctovnictvo-w01",
+            "sk": "účtovníctvo",
+            "uk": "бухгалтерський облік",
+            "pronunciationUk": "у:чтовні:цтво",
+            "exampleSk": "Účtovníctvo mi vedie účtovná kancelária.",
+            "exampleUk": "Облік за мене веде бухгалтерська фірма."
+          },
+          {
+            "wordId": "b2-u06-l05-uctovnictvo-w02",
+            "sk": "podvojné účtovníctvo",
+            "uk": "подвійний бухгалтерський облік",
+            "pronunciationUk": "подвойне: у:чтовні:цтво",
+            "exampleSk": "Naša s. r. o. vedie podvojné účtovníctvo.",
+            "exampleUk": "Наше s. r. o. веде подвійний облік."
+          },
+          {
+            "wordId": "b2-u06-l05-uctovnictvo-w03",
+            "sk": "daňová evidencia",
+            "uk": "податковий облік (для SZČO)",
+            "pronunciationUk": "даньова: евіденція",
+            "exampleSk": "Ako SZČO vediem daňovú evidenciu.",
+            "exampleUk": "Як SZČO я веду податковий облік."
+          },
+          {
+            "wordId": "b2-u06-l05-uctovnictvo-w04",
+            "sk": "účtovný doklad",
+            "uk": "бухгалтерський документ",
+            "pronunciationUk": "у:чтовни: доклад",
+            "exampleSk": "Každý nákup pre firmu musí mať účtovný doklad.",
+            "exampleUk": "Кожна закупівля для фірми мусить мати бухгалтерський документ."
+          },
+          {
+            "wordId": "b2-u06-l05-uctovnictvo-w05",
+            "sk": "účtovné obdobie",
+            "uk": "звітний період",
+            "pronunciationUk": "у:чтовне: обдобіє",
+            "exampleSk": "Účtovné obdobie je u nás kalendárny rok.",
+            "exampleUk": "Звітний період у нас — календарний рік."
+          },
+          {
+            "wordId": "b2-u06-l05-uctovnictvo-w06",
+            "sk": "účtovná závierka",
+            "uk": "річна фінансова звітність",
+            "pronunciationUk": "у:чтовна: за:вієрка",
+            "exampleSk": "Účtovnú závierku pripraví účtovná kancelária.",
+            "exampleUk": "Річну звітність підготує бухгалтерська фірма."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u06-l05-uctovnictvo-w01",
+          "sk": "účtovníctvo",
+          "uk": "бухгалтерський облік",
+          "pronunciationUk": "у:чтовні:цтво",
+          "exampleSk": "Účtovníctvo mi vedie účtovná kancelária.",
+          "exampleUk": "Облік за мене веде бухгалтерська фірма.",
+          "level": "B2",
+          "topic": "Економіка і бізнес",
+          "tags": [
+            "b2-u06",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u06-l05-uctovnictvo-w02",
+          "sk": "podvojné účtovníctvo",
+          "uk": "подвійний бухгалтерський облік",
+          "pronunciationUk": "подвойне: у:чтовні:цтво",
+          "exampleSk": "Naša s. r. o. vedie podvojné účtovníctvo.",
+          "exampleUk": "Наше s. r. o. веде подвійний облік.",
+          "level": "B2",
+          "topic": "Економіка і бізнес",
+          "tags": [
+            "b2-u06",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u06-l05-uctovnictvo-w03",
+          "sk": "daňová evidencia",
+          "uk": "податковий облік (для SZČO)",
+          "pronunciationUk": "даньова: евіденція",
+          "exampleSk": "Ako SZČO vediem daňovú evidenciu.",
+          "exampleUk": "Як SZČO я веду податковий облік.",
+          "level": "B2",
+          "topic": "Економіка і бізнес",
+          "tags": [
+            "b2-u06",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u06-l05-uctovnictvo-w04",
+          "sk": "účtovný doklad",
+          "uk": "бухгалтерський документ",
+          "pronunciationUk": "у:чтовни: доклад",
+          "exampleSk": "Každý nákup pre firmu musí mať účtovný doklad.",
+          "exampleUk": "Кожна закупівля для фірми мусить мати бухгалтерський документ.",
+          "level": "B2",
+          "topic": "Економіка і бізнес",
+          "tags": [
+            "b2-u06",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u06-l05-uctovnictvo-w05",
+          "sk": "účtovné obdobie",
+          "uk": "звітний період",
+          "pronunciationUk": "у:чтовне: обдобіє",
+          "exampleSk": "Účtovné obdobie je u nás kalendárny rok.",
+          "exampleUk": "Звітний період у нас — календарний рік.",
+          "level": "B2",
+          "topic": "Економіка і бізнес",
+          "tags": [
+            "b2-u06",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u06-l05-uctovnictvo-w06",
+          "sk": "účtovná závierka",
+          "uk": "річна фінансова звітність",
+          "pronunciationUk": "у:чтовна: за:вієрка",
+          "exampleSk": "Účtovnú závierku pripraví účtovná kancelária.",
+          "exampleUk": "Річну звітність підготує бухгалтерська фірма.",
+          "level": "B2",
+          "topic": "Економіка і бізнес",
+          "tags": [
+            "b2-u06",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u06-l05-uctovnictvo-ex01",
+          "lessonId": "b2-u06-l05-uctovnictvo",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "účtovníctvo",
+              "right": "бухгалтерський облік"
+            },
+            {
+              "left": "podvojné účtovníctvo",
+              "right": "подвійний облік"
+            },
+            {
+              "left": "daňová evidencia",
+              "right": "простіший облік доходів і витрат"
+            },
+            {
+              "left": "účtovný doklad",
+              "right": "документ для запису в облік"
+            },
+            {
+              "left": "účtovné obdobie",
+              "right": "звітний період"
+            },
+            {
+              "left": "účtovná závierka",
+              "right": "річна звітність"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u06-l05-uctovnictvo-w01",
+            "b2-u06-l05-uctovnictvo-w02",
+            "b2-u06-l05-uctovnictvo-w03",
+            "b2-u06-l05-uctovnictvo-w04",
+            "b2-u06-l05-uctovnictvo-w05",
+            "b2-u06-l05-uctovnictvo-w06"
+          ]
+        },
+        {
+          "id": "b2-u06-l05-uctovnictvo-ex02",
+          "lessonId": "b2-u06-l05-uctovnictvo",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Це бухгалтерський документ чи ні?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Účtovný doklad"
+            },
+            {
+              "id": "c2",
+              "title": "Nie je doklad"
+            }
+          ],
+          "items": [
+            {
+              "sk": "ústny sľub klienta",
+              "category": "c2"
+            },
+            {
+              "sk": "výpis z účtu",
+              "category": "c1"
+            },
+            {
+              "sk": "pokladničný blok",
+              "category": "c1"
+            },
+            {
+              "sk": "fotka tovaru v e-shope",
+              "category": "c2"
+            },
+            {
+              "sk": "kúpna zmluva",
+              "category": "c1"
+            },
+            {
+              "sk": "faktúra od dodávateľa",
+              "category": "c1"
+            },
+            {
+              "sk": "poznámka bez dátumu",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Документ для обліку має бути письмовим і фіксувати операцію; обіцянка чи фото товару ним не є.",
+          "order": 2,
+          "wordIds": [
+            "b2-u06-l05-uctovnictvo-w04",
+            "b2-u06-l05-uctovnictvo-w05",
+            "b2-u06-l05-uctovnictvo-w06"
+          ]
+        },
+        {
+          "id": "b2-u06-l05-uctovnictvo-ex03",
+          "lessonId": "b2-u06-l05-uctovnictvo",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Doklady Vám odovzdám do 10. "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "októbri",
+                "október",
+                "októbra"
+              ],
+              "correct": "októbra"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Do + родовий відмінок: do 10. októbra.",
+          "order": 3,
+          "wordIds": [
+            "b2-u06-l05-uctovnictvo-w04"
+          ]
+        },
+        {
+          "id": "b2-u06-l05-uctovnictvo-ex04",
+          "lessonId": "b2-u06-l05-uctovnictvo",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Ako SZČO vediem "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "daňovou evidenciou",
+                "daňovú evidenciu",
+                "daňová evidencia"
+              ],
+              "correct": "daňovú evidenciu"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Viesť + знахідний: vediem daňovú evidenciu.",
+          "order": 4,
+          "wordIds": [
+            "b2-u06-l05-uctovnictvo-w03"
+          ]
+        },
+        {
+          "id": "b2-u06-l05-uctovnictvo-ex05",
+          "lessonId": "b2-u06-l05-uctovnictvo",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Účtovníčka už ______ všetky faktúry za september. (провела в обліку)",
+          "acceptedAnswers": [
+            "zaúčtovala"
+          ],
+          "explanation": "Zaúčtovať — провести документ в обліку; účtovníčka — жіночий рід, минулий час zaúčtovala.",
+          "order": 5,
+          "wordIds": [
+            "b2-u06-l05-uctovnictvo-w04",
+            "b2-u06-l05-uctovnictvo-w05",
+            "b2-u06-l05-uctovnictvo-w06"
+          ]
+        },
+        {
+          "id": "b2-u06-l05-uctovnictvo-ex06",
+          "lessonId": "b2-u06-l05-uctovnictvo",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що складають наприкінці звітного періоду?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "zakladateľskú listinu",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "účtovnú závierku",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "živnostenské oprávnenie",
+              "correct": false
+            }
+          ],
+          "explanation": "Účtovná závierka підсумовує звітний період; установчий документ і живностенське право — це про заснування.",
+          "order": 6,
+          "wordIds": [
+            "b2-u06-l05-uctovnictvo-w04",
+            "b2-u06-l05-uctovnictvo-w05",
+            "b2-u06-l05-uctovnictvo-w06"
+          ]
+        },
+        {
+          "id": "b2-u06-l05-uctovnictvo-ex07",
+          "lessonId": "b2-u06-l05-uctovnictvo",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Účtovná závierka sa zostavuje ku koniec účtovného obdobia.",
+          "errorToken": "koniec",
+          "correctToken": "koncu",
+          "explanation": "Ku + давальний відмінок: ku koncu.",
+          "order": 7,
+          "wordIds": [
+            "b2-u06-l05-uctovnictvo-w04",
+            "b2-u06-l05-uctovnictvo-w05",
+            "b2-u06-l05-uctovnictvo-w06"
+          ]
+        },
+        {
+          "id": "b2-u06-l05-uctovnictvo-ex08",
+          "lessonId": "b2-u06-l05-uctovnictvo",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Спитай бухгалтерку: «До якого часу вам потрібні матеріали?»",
+          "tokens": [
+            "kedy",
+            "potrebujete",
+            "podklady",
+            "?",
+            "Do"
+          ],
+          "correctOrder": [
+            "Do",
+            "kedy",
+            "potrebujete",
+            "podklady",
+            "?"
+          ],
+          "explanation": "Do kedy — до якого часу; podklady — матеріали для роботи бухгалтера.",
+          "order": 8
+        },
+        {
+          "id": "b2-u06-l05-uctovnictvo-ex09",
+          "lessonId": "b2-u06-l05-uctovnictvo",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перепиши ввічливо, почни зі слів «Mohli by ste mi, prosím,…».",
+          "source": "Pošlite mi prehľad nákladov.",
+          "acceptedAnswers": [
+            "Mohli by ste mi, prosím, poslať prehľad nákladov?",
+            "Mohli by ste mi prosím poslať prehľad nákladov?"
+          ],
+          "explanation": "Умовний спосіб (mohli by ste) + інфінітив звучить увічливо, як прохання, а не наказ.",
+          "order": 9
+        },
+        {
+          "id": "b2-u06-l05-uctovnictvo-ex10",
+          "lessonId": "b2-u06-l05-uctovnictvo",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "Účtovníčka: «Bez dokladu vám tento nákup nemôžem uznať ako výdavok.»",
+          "target": "uznať ako výdavok",
+          "options": [
+            {
+              "id": "a",
+              "text": "врахувати як витрату",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "повернути гроші за покупку",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "продати як товар",
+              "correct": false
+            }
+          ],
+          "explanation": "Uznať ako výdavok — визнати (врахувати) витратою; без документа це неможливо.",
+          "order": 10,
+          "wordIds": [
+            "b2-u06-l05-uctovnictvo-w04",
+            "b2-u06-l05-uctovnictvo-w05",
+            "b2-u06-l05-uctovnictvo-w06"
+          ]
+        },
+        {
+          "id": "b2-u06-l05-uctovnictvo-ex11",
+          "lessonId": "b2-u06-l05-uctovnictvo",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Oksana pracuje v Banskej Bystrici ako prekladateľka na živnosť. Prvý rok si viedla daňovú evidenciu sama v tabuľke, no pri daňovom priznaní zistila, že jej chýbajú viaceré doklady: niektoré bloky vyhodila a dve faktúry si nikdy neuložila. Tieto výdavky si preto nemohla uplatniť. Na druhý rok sa obrátila na účtovnú kanceláriu. Účtovníčka jej vysvetlila, že doklady za každý mesiac má odovzdať do desiateho dňa nasledujúceho mesiaca a že všetko musí archivovať. Spolu prebrali aj to, či sa jej viac oplatí evidovať skutočné výdavky, alebo uplatniť paušálne výdavky. Oksana dnes hovorí, že účtovníčka ju síce stojí peniaze, ale ušetrí jej čas aj nervy.",
+          "questions": [
+            {
+              "question": "Чому Оксана не змогла врахувати деякі витрати?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "бухгалтерка відмовилася їх провести",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "вона подала декларацію із запізненням",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "у неї не залишилося документів до них",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "До якого строку вона тепер передає документи?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "щодня ввечері",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "раз на рік, у березні",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "до десятого числа наступного місяця",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що Оксана думає про співпрацю з бухгалтеркою?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "це марна трата грошей",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "це коштує грошей, але заощаджує час і нерви",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "бухгалтерка робить забагато помилок",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 11,
+          "wordIds": [
+            "b2-u06-l05-uctovnictvo-w03",
+            "b2-u06-l05-uctovnictvo-w04",
+            "b2-u06-l05-uctovnictvo-w05",
+            "b2-u06-l05-uctovnictvo-w06"
+          ]
+        },
+        {
+          "id": "b2-u06-l05-uctovnictvo-ex12",
+          "lessonId": "b2-u06-l05-uctovnictvo",
+          "type": "real_schedule",
+          "skill": [
+            "reading",
+            "real_life",
+            "time"
+          ],
+          "instruction": "Прочитай строки бухгалтерської фірми.",
+          "schedule": {
+            "title": "Termíny pre klientov účtovnej kancelárie (vzor)",
+            "rows": [
+              {
+                "day": "Každý mesiac",
+                "hours": "doklady za predchádzajúci mesiac do 10. dňa"
+              },
+              {
+                "day": "Do 10. marca",
+                "hours": "podklady k daňovému priznaniu"
+              },
+              {
+                "day": "Do 31. marca",
+                "hours": "podanie daňového priznania"
+              },
+              {
+                "day": "Utorok a štvrtok",
+                "hours": "konzultácie 9:00 – 12:00"
+              }
+            ]
+          },
+          "question": "До якого числа треба передати матеріали до податкової декларації?",
+          "options": [
+            {
+              "id": "a",
+              "text": "до 31 березня",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "до 10 березня",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "до 10 числа кожного місяця",
+              "correct": false
+            }
+          ],
+          "explanation": "Podklady k daňovému priznaniu — do 10. marca; 31 березня — це вже подання декларації.",
+          "order": 12,
+          "wordIds": [
+            "b2-u06-l05-uctovnictvo-w03",
+            "b2-u06-l05-uctovnictvo-w04",
+            "b2-u06-l05-uctovnictvo-w05",
+            "b2-u06-l05-uctovnictvo-w06"
+          ]
+        },
+        {
+          "id": "b2-u06-l05-uctovnictvo-ex13",
+          "lessonId": "b2-u06-l05-uctovnictvo",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Účtovníčka",
+              "sk": "Pani Melnyk, chýbajú mi doklady za september."
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Ospravedlňujem sa, pošlem Vám ich do piatku.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Ospravedlňujem sa, poslať Vám ich do piatku.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "To nie je moja starosť.",
+              "correct": false
+            }
+          ],
+          "explanation": "Ввічлива відповідь: вибачення + конкретна обіцянка з особовою формою pošlem і строком.",
+          "order": 13,
+          "wordIds": [
+            "b2-u06-l05-uctovnictvo-w04",
+            "b2-u06-l05-uctovnictvo-w05",
+            "b2-u06-l05-uctovnictvo-w06"
+          ]
+        },
+        {
+          "id": "b2-u06-l05-uctovnictvo-ex14",
+          "lessonId": "b2-u06-l05-uctovnictvo",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери граматично правильні речення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Účtovníčka zaúčtovať všetky faktúry.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Doklady Vám odovzdám do piatku.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Účtovné obdobie je u nás kalendárny rok.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Ako SZČO vediem daňovú evidenciu.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Vediem daňová evidencia.",
+              "correct": false
+            }
+          ],
+          "explanation": "Після підмета потрібна особова форма (zaúčtovala), а після «viesť» — знахідний (daňovú evidenciu).",
+          "order": 14,
+          "wordIds": [
+            "b2-u06-l05-uctovnictvo-w03",
+            "b2-u06-l05-uctovnictvo-w04",
+            "b2-u06-l05-uctovnictvo-w05",
+            "b2-u06-l05-uctovnictvo-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Оксана й бухгалтерська фірма",
+        "description": "Оксана працює як SZČO й домовляється з бухгалтерською фірмою про співпрацю.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Який облік вона, найімовірніше, вестиме як SZČO?",
+            "options": [
+              {
+                "sk": "Žiadnu, stačí pamäť",
+                "correct": false
+              },
+              {
+                "sk": "Účtovnú závierku banky",
+                "correct": false
+              },
+              {
+                "sk": "Daňovú evidenciu alebo paušálne výdavky",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Що вона передаватиме бухгалтерці щомісяця?",
+            "options": [
+              {
+                "sk": "Fotky z dovolenky",
+                "correct": false
+              },
+              {
+                "sk": "Iba ústne informácie",
+                "correct": false
+              },
+              {
+                "sk": "Účtovné doklady: faktúry, bloky a výpisy z účtu",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Як вона спитає про строк?",
+            "options": [
+              {
+                "sk": "Kedy to chceš?",
+                "correct": false
+              },
+              {
+                "sk": "Do kedy potrebovať podklady?",
+                "correct": false
+              },
+              {
+                "sk": "Do kedy potrebujete podklady k daňovému priznaniu?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Бухгалтерка нагадує про відсутній чек. Що відповість Оксана?",
+            "options": [
+              {
+                "sk": "Bloky nezbieram.",
+                "correct": false
+              },
+              {
+                "sk": "Ďakujem za upozornenie, doklad Vám pošlem ešte dnes.",
+                "correct": true
+              },
+              {
+                "sk": "Ďakujem za upozornenie, doklad Vám poslať dnes.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш основи обліку й умієш домовитися з бухгалтером. Далі — маркетинг: як фірма знаходить клієнтів."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш основи обліку й умієш домовитися з бухгалтером. Далі — маркетинг: як фірма знаходить клієнтів.",
+        "nowYouKnow": [
+          "s. r. o. → podvojné účtovníctvo · SZČO → daňová evidencia / paušálne výdavky",
+          "účtovný doklad · odovzdať · zaúčtovať · archivovať",
+          "účtovné obdobie → účtovná závierka (súvaha, výkaz ziskov a strát)",
+          "Do kedy potrebujete podklady? · do 10. októbra"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u06-l06-marketing",
+          "title": "Маркетинг і реклама"
+        }
+      }
+    }
+  ]
+}

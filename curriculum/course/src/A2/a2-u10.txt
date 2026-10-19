@@ -1,0 +1,506 @@
+@unit a2-u10 | Пошта, посилки, кур’єри | Pošta, balíky, kuriéri
+
+@lesson list-a-balik | Лист і посилка | List a balík
+desc: Які бувають відправлення: obyčajný і prioritný list, balík, zásielka. Як сказати, що, кому, куди і як ти надсилаєш, і від чого залежить ціна.
+goal: Розповідати, що, кому й куди ти надсилаєш, і розуміти, від чого залежить вартість пересилання.
+out: розрізняти list, balík і загальне слово zásielka ;; казати poslať na Ukrajinu, do Poľska ;; казати poslať poštou, kuriérom ;; питати про hmotnosť, rozmer і poštovné
+done: Ти знаєш, як говорити про листи й посилки. Далі — відправлення посилки біля віконця на пошті.
+T: List, balík, zásielka || «List» — лист у конверті, «balík» — посилка, а «zásielka» — загальне слово для будь-якого відправлення. На сайтах і в SMS ти найчастіше бачитимеш саме його: «Vaša zásielka je na ceste». Листи бувають «obyčajný» (звичайний, дешевший), «prioritný» (пріоритетний, швидший) і «doporučený» (рекомендований, із підписом одержувача). || Posielam mame balík. = Я надсилаю мамі посилку. ;; Vaša zásielka bola doručená. = Ваше відправлення доставлено. || list, balík → zásielka
+T: Poslať komu, kam, ako || Схема: «poslať» + що (знахідний) + кому (давальний) + куди + як. Куди: «na Ukrajinu, na Slovensko», але «do Poľska, do Česka, do Kyjeva». Як — орудний відмінок без прийменника: «poštou» (поштою), «kuriérom» (кур’єром), або прислівник «letecky» (авіа). || Pošlem sestre balík na Ukrajinu. = Я надішлю сестрі посилку в Україну. ;; Dokumenty pošlem kuriérom. = Документи я надішлю кур’єром. || poslať čo + komu + kam + čím
+mis: poslať na Poľsko => poslať do Poľska ;; poslať s poštou => poslať poštou ;; poslať kuriér => poslať kuriérom
+T: Hmotnosť, rozmer, poštovné || Ціна залежить від ваги, розміру й країни. «Koľko váži balík?» — скільки важить посилка? У цінниках: «do 2 kg», «do 10 kg». «Rozmery» — довжина, ширина й висота: «40 × 30 × 20 cm». «Poštovné» — вартість пересилання; в інтернет-магазинах часто пишуть «poštovné zdarma» — безкоштовна доставка. || Koľko stojí poštovné do Poľska? = Скільки коштує пересилання до Польщі? ;; Balík váži tri kilá. = Посилка важить три кілограми. || hmotnosť + rozmer + krajina → poštovné
+W: zásielka | відправлення (лист, посилка) | за:сієлка | Vaša zásielka je pripravená na vyzdvihnutie. | Ваше відправлення готове до видачі.
+W: poštovné | вартість пересилання | поштовне: | Poštovné na Ukrajinu je drahšie ako po Slovensku. | Пересилання в Україну дорожче, ніж по Словаччині.
+W: hmotnosť | вага (маса) | гмотност’ | Maximálna hmotnosť balíka je 30 kilogramov. | Максимальна вага посилки — 30 кілограмів.
+W: rozmer | розмір (габарит) | розмер | Aké rozmery má tá krabica? | Які розміри в цієї коробки?
+W: prioritný | пріоритетний, швидший | пріорітні: | Prioritný list príde zvyčajne na druhý deň. | Пріоритетний лист зазвичай приходить наступного дня.
+W: obyčajný | звичайний | обичайні: | Obyčajný list je lacnejší, ale ide dlhšie. | Звичайний лист дешевший, але йде довше.
+X mt: З’єднай. | zásielka = відправлення ;; poštovné = вартість пересилання ;; hmotnosť = вага ;; rozmer = розмір ;; prioritný = пріоритетний ;; obyčajný = звичайний
+X dd: Обери. | Tento balík posielam [*do/na/v] Poľska.
+= Із більшістю країн — do + родовий: do Poľska, do Česka.
+X dd: Обери. | List pošlem [*poštou/poštu/pošta] ešte dnes.
+= Як? — орудний без прийменника: poštou.
+X fb: Допиши. | Pošlem sestre balík na ___. (Україна) | Ukrajinu |
+= na + знахідний (куди?): na Ukrajinu.
+X fb: Допиши. | ___ list je lacnejší, ale ide dlhšie. (звичайний) | Obyčajný |
+= obyčajný — звичайний, дешевший і повільніший.
+X sc~: Що означає «poštovné zdarma» в інтернет-магазині? | - | *безкоштовна доставка ;; пошта працює без вихідних ;; марки зі знижкою
+= poštovné — вартість пересилання; zdarma — безкоштовно.
+X tf: - | - | «Zásielka» — загальне слово і для листа, і для посилки. | T
+= zásielka — будь-яке поштове відправлення.
+X fe: - | Balík pošlem [kuriér>kuriérom] ešte dnes.
+= Як? — орудний: kuriérom.
+X cat: Куди чи як? | Kam: na Ukrajinu, do Poľska, do Kyjeva, na Slovensko ;; Ako: poštou, kuriérom, letecky, doporučene
+= Куди — na / do; як — орудний відмінок або прислівник.
+X doc: Прочитай цінник на пошті. | Cenník – balík po Slovensku | Do 2 kg: 4,90 € ;; Do 5 kg: 5,90 € ;; Do 10 kg: 6,90 € ;; Do 30 kg: 8,90 € | Скільки коштує пересилання посилки вагою 7 кг? | *6,90 € ;; 5,90 € ;; 8,90 €
+= 7 кг належить до категорії «do 10 kg».
+X rc: - | Iryna chce poslať balík mame do Ľvova. V balíku sú zimné topánky, dve knihy a slovenské sladkosti. Balík váži šesť kilogramov a má rozmery 50 × 40 × 30 cm. Na pošte sa pýta, koľko stojí poštovné. Pracovníčka hovorí, že balík na Ukrajinu stojí asi tridsať eur a ide približne dva týždne. Irynu to trochu prekvapí, preto večer volá kamarátke. Kamarátka jej radí poslať balík kuriérom: príde za päť dní a stojí len o päť eur viac.
+q~: Що Ірина надсилає мамі? | *зимове взуття, книжки й солодощі ;; одяг і документи ;; лише книжки
+q~: Скільки йде посилка поштою? | *приблизно два тижні ;; п’ять днів ;; місяць
+q~: Що радить подруга? | *надіслати посилку кур’єром ;; надіслати дві менші посилки ;; почекати до свят
+X np: На пошті ти питаєш, скільки коштує надіслати посилку до Польщі. | *Koľko stojí poslať balík do Poľska? ;; Koľko stojí poslať balík na Poľsko? ;; Koľko stojí poslať balík v Poľsku? ;; Koľko stojí poslať balík Poľskom?
+= do Poľska — до Польщі (куди?).
+X so: - | Скажи, що хочеш надіслати пріоритетний лист. | Chcem poslať prioritný list.
+= poslať + знахідний: prioritný list.
+X dr: - | Pracovníčka pošty: Chcete obyčajný alebo prioritný list? | *Prioritný, prosím. Potrebujem, aby prišiel zajtra. ;; Obyčajný, prosím. Potrebujem, aby prišiel zajtra. ;; Prioritného, prosím. Potrebujem, aby prišiel zajtra.
+= Щоб лист прийшов завтра — prioritný; list неживий, тому знахідний = називний.
+X ms: Від чого залежить ціна пересилання? | - | *hmotnosť ;; *rozmer ;; *krajina adresáta ;; farba obálky ;; meno odosielateľa
+= Ціна залежить від ваги, розміру й країни призначення.
+F: Посилка додому || Ти збираєш посилку для родини в Україні й ідеш на пошту.
+S: Ти кажеш, що хочеш надіслати посилку в Україну. | *Chcem poslať balík na Ukrajinu. ;; Chcem poslať balík do Ukrajinu. ;; Chcem poslať balík v Ukrajine.
+S: Працівниця: «Balík váži osem kilogramov.» Скільки важить посилка? | *вісім кілограмів ;; вісімнадцять кілограмів ;; вісімсот грамів
+S: Ти питаєш про вартість пересилання. | *Koľko stojí poštovné? ;; Koľko stojí poštovný? ;; Koľko stoja poštovné?
+S: Працівниця: «Kuriérom to bude rýchlejšie, ale drahšie.» Що вона каже? | *кур’єром буде швидше, але дорожче ;; кур’єром буде дешевше й швидше ;; кур’єр не возить посилки в Україну
+R: list, balík, zásielka ;; poslať na Ukrajinu, do Poľska ;; poštou, kuriérom, letecky ;; hmotnosť, rozmer, poštovné
+
+@lesson podanie-balika | Відправлення посилки | Podanie balíka
+desc: Біля віконця на пошті: як увічливо сказати, що хочеш відправити посилку, що таке podací lístok і як застрахувати крихкі речі.
+goal: Самостійно відправити посилку на пошті й зрозуміти питання працівника.
+out: казати Chcel(a) by som podať balík ;; розуміти podací lístok і зберігати його ;; казати, що вміст крихкий ;; страхувати посилку: poistiť na 100 eur
+done: Ти вмієш відправити посилку. Далі — як відстежити, де вона зараз.
+T: Pri prepážke || На пошті береш номерок і чекаєш, поки тебе викличуть до «prepážky» — віконця. Увічливо почати: «Dobrý deň, chcel(a) by som podať balík». «Podať» — офіційне слово для «відправити на пошті»: «podať list, podať balík». Працівник може спитати: «Kam to bude?» — куди відправляєте? || Chcela by som podať tento balík. = Я хотіла б відправити цю посилку. ;; Kam to bude? — Do Košíc. = Куди відправляєте? — До Кошиць. || podať balík = відправити посилку на пошті
+T: Podací lístok || Ти отримуєш «podací lístok» — квитанцію з номером відправлення. Інколи треба самому заповнити бланк: «Vyplňte, prosím, adresu odosielateľa a adresáta». Квитанцію збережи: за номером можна відстежити посилку, а без неї важко подати рекламацію. || Tu je váš podací lístok. = Ось ваша квитанція. ;; Uschovajte si ho. = Збережіть її. || podací lístok = доказ, що ти відправив(ла) посилку
+T: Krehké a cenné veci || Якщо в посилці скло чи кераміка, скажи: «Je to krehké» — це крихке. На коробку наклеять позначку «Krehké». Цінні речі можна застрахувати: «poistiť zásielku na 200 eur» — на суму 200 євро. Коробку треба добре заклеїти «lepiacou páskou». || V balíku je sklo, je to krehké. = У посилці скло, це крихке. ;; Chcete zásielku poistiť? = Хочете застрахувати відправлення? || poistiť na + сума
+mis: Chcem dať balík. => Chcem podať balík. ;; poistiť za 200 eur => poistiť na 200 eur ;; krehká balík => krehký balík
+W: prepážka | віконце (на пошті, у банку) | препа:жка | Pri prepážke číslo tri je kratší rad. | Біля віконця номер три коротша черга.
+W: podací lístok | квитанція про відправлення | подаці: лі:сток | Podací lístok si dobre uschovajte. | Квитанцію добре збережіть.
+W: vážiť | важити; зважувати | ва:жит’ | Balík do Česka môže vážiť najviac 30 kilogramov. | Посилка до Чехії може важити щонайбільше 30 кілограмів.
+W: krehký | крихкий | крегкі: | Pozor, v balíku je krehký tovar. | Обережно, у посилці крихкий товар.
+W: poistiť | застрахувати | поістіт’ | Chcem zásielku poistiť na tristo eur. | Я хочу застрахувати відправлення на триста євро.
+W: lepiaca páska | скотч, клейка стрічка | лепіаца па:ска | Krabicu dobre oblepte lepiacou páskou. | Добре обклейте коробку скотчем.
+X mt: З’єднай. | prepážka = віконце ;; podací lístok = квитанція про відправлення ;; vážiť = важити ;; krehký = крихкий ;; poistiť = застрахувати ;; lepiaca páska = скотч
+X do: Склади діалог. | Pracovník: Dobrý deň, čo pre vás môžem urobiť? ;; Oksana: Dobrý deň, chcela by som podať tento balík. ;; Pracovník: Kam to bude? ;; Oksana: Do Košíc. Je v ňom sklo, je to krehké. ;; Pracovník: Dobre, nalepím nálepku Krehké. Balík váži štyri kilá. ;; Oksana: Ďakujem. Koľko to stojí?
+X dd: Обери. | Dobrý deň, chcela by som [*podať/predať/požičať] tento balík.
+= podať balík — відправити посилку на пошті.
+X dd: Обери. | Chcem zásielku poistiť [*na/za/do] tristo eur.
+= Застрахувати на суму: poistiť na tristo eur.
+X fb: Допиши. | Pozor, v balíku je ___ tovar. (крихкий) | krehký |
+= tovar — чоловічий рід: krehký tovar.
+X fb: Допиши. | Krabicu treba dobre oblepiť lepiacou ___. (стрічкою) | páskou |
+= Чим? — орудний: lepiacou páskou.
+X sc~: Навіщо зберігати podací lístok? | - | *на ньому номер відправлення, це доказ відправки ;; без нього посилку не доставлять ;; його треба віддати кур’єрові
+= За номером із квитанції можна відстежити посилку й подати рекламацію.
+X fe: - | Tento balík [vážim>váži] sedem kilogramov.
+= Посилка (вона) важить — 3-тя особа: váži.
+X tr: Зроби прохання ввічливішим (умовний спосіб). | Chcem podať balík. | Chcel by som podať balík. ;; Chcela by som podať balík.
+= Увічливе прохання: chcel(a) by som.
+X dr: - | Pracovníčka: Je v balíku niečo krehké? | *Áno, sú tam poháre. ;; Nie, sú tam poháre. ;; Áno, sú tam krehký.
+= Склянки — крихкі, тому відповідь «так».
+X doc: Прочитай квитанцію. | Podací lístok – balík | Číslo zásielky: EB 123456789 SK ;; Adresát: Petro Kovalenko, Kyjev, Ukrajina ;; Hmotnosť: 3,4 kg ;; Poistenie: 150 € ;; Cena: 27,40 € | На яку суму застраховано посилку? | *150 € ;; 27,40 € ;; 3,40 €
+= Poistenie: 150 € — сума страхування; Cena — вартість пересилання.
+X msg: Прочитай повідомлення від подруги. | Lena | Ahoj, zajtra idem na poštu podať balík pre babku. Nemáš doma nejakú krabicu a lepiacu pásku? Posielam jej aj sklenený hrnček, tak ho musím dobre zabaliť. | Чому Лена має добре запакувати посилку? | *у посилці буде скляне горнятко ;; посилка дуже важка ;; бабуся живе далеко
+= sklenený hrnček — скляне горнятко, крихка річ.
+X np: Біля віконця ти ввічливо кажеш, що хочеш застрахувати посилку. | *Chcel by som balík poistiť, prosím. ;; Chcel by som balík poistenie, prosím. ;; Chcem by som balík poistiť, prosím. ;; Chcel som by balík poistiť, prosím.
+= chcel by som + інфінітив: poistiť.
+X so: - | Працівник подає тобі квитанцію. Що він каже? | Tu je váš podací lístok.
+= Tu je… — ось…
+F: Подарунок у Кошиці || Ти відправляєш подрузі в Кошиці подарунок — скляну вазу.
+S: Працівниця: «Čo pre vás môžem urobiť?» | *Dobrý deň, chcela by som podať balík. ;; Dobrý deň, chcela by som podať balíkom. ;; Dobrý deň, chcela som by podať balík.
+S: Ти кажеш, що всередині ваза й вона крихка. | *Je tam váza, je krehká. ;; Je tam váza, je krehký. ;; Je tam váza, sú krehké.
+S: «Chcete balík poistiť?» (так, на 100 євро) | *Áno, na sto eur. ;; Áno, za sto eur. ;; Áno, do sto eur.
+S: «Tu je podací lístok, uschovajte si ho.» Що зробити? | *зберегти квитанцію ;; заповнити квитанцію ще раз ;; віддати квитанцію подрузі
+R: podať balík pri prepážke ;; Chcel(a) by som… ;; podací lístok si uschovajte ;; krehký, poistiť na 100 eur, lepiaca páska
+
+@lesson sledovanie-zasielky | Відстеження посилки | Sledovanie zásielky
+desc: Трек-номер, статуси відправлення і повідомлення інтернет-магазинів: bola odoslaná, je na ceste, v depe, bola doručená.
+goal: Розуміти статус відправлення й питати, де твоя посилка.
+out: розуміти sledovacie číslo і sledovať zásielku ;; читати статуси: podaná, odoslaná, doručená ;; узгоджувати: zásielka bola doručená / balík bol doručený ;; розуміти expedovať і predpokladaný termín
+done: Ти розумієш, де твоя посилка. Далі — розмова з кур’єром.
+T: Sledovacie číslo || Після відправлення ти отримуєш «sledovacie číslo» або «číslo zásielky» — трек-номер. На сайті перевізника вводиш його й натискаєш «Sledovať». Так можна «sledovať zásielku» — відстежувати відправлення онлайн. || Mám sledovacie číslo, ale nefunguje. = У мене є трек-номер, але він не працює. ;; Kde môžem sledovať balík? = Де я можу відстежити посилку? || sledovať zásielku podľa čísla
+T: Stav zásielky || Статуси пишуть дієприкметником, який узгоджується з іменником: «Zásielka bola podaná / odoslaná / doručená» — zásielka жіночого роду (-á). «Balík bol odoslaný» — чоловічий рід (-ý). Також: «je na ceste» (у дорозі), «v depe» (у сортувальному центрі), «u kuriéra» (у кур’єра), «pripravená na vyzdvihnutie» (готова до видачі). || Zásielka bola doručená. = Відправлення доставлено. ;; Balík je na ceste. = Посилка в дорозі. || zásielka … -á / balík … -ý
+mis: Zásielka bol doručený. => Zásielka bola doručená. ;; Balík je na cesta. => Balík je na ceste. ;; sledovať na zásielku => sledovať zásielku
+T: Kedy to príde? || Інтернет-магазини пишуть: «Objednávka bola expedovaná» — замовлення відправлено зі складу. «Predpokladaný termín doručenia: 2 – 3 pracovné dni» — орієнтовно 2–3 робочі дні, тобто без гарантії. Якщо статус довго не змінюється, напиши: «Stav zásielky sa nemení už päť dní». || Kedy príde môj balík? = Коли прийде моя посилка? ;; Doručenie trvá dva pracovné dni. = Доставка триває два робочі дні. || predpokladaný = орієнтовний, не точний
+W: sledovať | відстежувати, стежити | следоват’ | Zásielku môžete sledovať online. | Відправлення можна відстежувати онлайн.
+W: sledovacie číslo | трек-номер | следоваціє чі:сло | Sledovacie číslo nájdete v e-maile. | Трек-номер ви знайдете в електронному листі.
+W: stav | стан, статус | став | Aký je stav mojej zásielky? | Який статус мого відправлення?
+W: expedovať | відправити зі складу | експедоват’ | Objednávku expedujeme do 24 hodín. | Ми відправимо замовлення протягом 24 годин.
+W: depo | сортувальний центр, депо | депо | Balík je už v depe v Žiline. | Посилка вже в сортувальному центрі в Жиліні.
+W: predpokladaný | очікуваний, орієнтовний | предпокладані: | Predpokladaný termín doručenia je piatok. | Орієнтовна дата доставки — п’ятниця.
+X mt: З’єднай. | sledovať = відстежувати ;; sledovacie číslo = трек-номер ;; stav = статус ;; expedovať = відправити зі складу ;; depo = сортувальний центр ;; predpokladaný = орієнтовний
+X dd: Обери. | Zásielka bola [*doručená/doručený/doručené] včera o 15:20.
+= zásielka — жіночий рід: bola doručená.
+X dd: Обери. | Váš balík bol [*odoslaný/odoslaná/odoslané] z Bratislavy.
+= balík — чоловічий рід: bol odoslaný.
+X sch: Подивись на історію відправлення. | Sledovanie zásielky č. 4410 2871 | 3. 11., 9:12 = Zásielka bola podaná ;; 3. 11., 18:40 = Zásielka je v depe Bratislava ;; 4. 11., 6:05 = Zásielka je na ceste ;; 4. 11., 7:30 = Zásielka je u kuriéra ;; 4. 11., 13:15 = Zásielka bola doručená | Коли посилку доставили? | *4 листопада о 13:15 ;; 3 листопада о 18:40 ;; 4 листопада о 7:30
+= bola doručená — 4. 11. o 13:15.
+X fb: Допиши. | Aký je ___ mojej zásielky? (статус) | stav |
+= stav zásielky — статус відправлення.
+X fb: Допиши. | Zásielku môžete ___ na našej stránke. (відстежувати) | sledovať |
+= sledovať zásielku — відстежувати відправлення.
+X sc~: Що означає «Objednávka bola expedovaná»? | - | *замовлення відправили зі складу ;; замовлення скасували ;; замовлення вже доставили
+= expedovať — відправити зі складу магазину.
+X tf: - | - | «Predpokladaný termín doručenia» — це точна гарантована дата доставки. | F
+= predpokladaný — орієнтовний, без гарантії.
+X fe: - | Váš balík je teraz na [cesta>ceste] do Prešova.
+= na + місцевий: na ceste — у дорозі.
+X msg: Прочитай повідомлення від інтернет-магазину. | E-shop Domáce potreby | Dobrý deň, vaša objednávka č. 20871 bola dnes expedovaná. Sledovacie číslo: 7700 1234 5566. Predpokladaný čas doručenia: 2 – 3 pracovné dni. Kuriér vás bude kontaktovať telefonicky. | Що ти отримала в цьому повідомленні? | *номер для відстеження посилки ;; код для поштомата ;; рахунок на оплату
+= Sledovacie číslo — трек-номер.
+X rc: - | Taras si minulý utorok objednal nový mobil. Ešte v ten deň mu prišiel e-mail, že objednávka bola expedovaná. Taras si potom každý deň kontroloval stav zásielky. Od stredy je balík v depe v Žiline a stav sa nemení. Predpokladaný termín doručenia bol piatok, ale dnes je už pondelok. Taras preto napísal do e-shopu. Odpísali mu, že v depe majú teraz veľa zásielok a balík príde najneskôr vo štvrtok.
+q~: Коли замовлення відправили зі складу? | *у вівторок, у день замовлення ;; у середу ;; у п’ятницю
+q~: Де посилка від середи? | *у сортувальному центрі в Жиліні ;; у кур’єра ;; на складі магазину
+q~: Що відповів магазин? | *посилка прийде найпізніше в четвер ;; посилку загубили ;; гроші повернуть у четвер
+X ce: Виправ речення. | Zásielka bol doručený. | Zásielka bola doručená.
+= zásielka — жіночий рід: bola doručená.
+X dr: - | Kamarát: Už prišiel ten balík z e-shopu? | *Ešte nie, ale podľa stavu je už na ceste. ;; Ešte nie, ale podľa stav je už na ceste. ;; Ešte nie, ale podľa stavu je už na cesta.
+= podľa + родовий: stavu; na + місцевий: na ceste.
+X np: Ти пишеш у підтримку, що статус не змінюється вже п’ять днів. | *Stav zásielky sa nemení už päť dní. ;; Stav zásielky sa nemení už päť dni. ;; Stav zásielky nemení sa už päť dní. ;; Stav zásielku sa nemení už päť dní.
+= päť dní — родовий множини; sa стоїть на другому місці; stav zásielky — родовий.
+F: Де мої навушники? || Ти чекаєш на замовлення з інтернет-магазину й перевіряєш, де воно.
+S: Ти просиш у чаті магазину номер для відстеження. | *Môžete mi poslať sledovacie číslo? ;; Môžete mi poslať sledovacie čísla zásielka? ;; Môžete mi sledovať číslo poslať?
+S: Статус: «Zásielka je v depe Košice.» Де вона? | *у сортувальному центрі в Кошицях ;; у кур’єра в Кошицях ;; її вже доставили в Кошиці
+S: Статус: «Zásielka bola doručená», але посилки в тебе немає. Що пишеш? | *Podľa stavu bola zásielka doručená, ale ja ju nemám. ;; Podľa stavu bol zásielka doručený, ale ja ju nemám. ;; Podľa stavu bola zásielka doručená, ale ja ho nemám.
+S: Магазин: «Predpokladaný termín doručenia je streda.» Що це означає? | *посилка орієнтовно прийде в середу ;; посилка точно прийде в середу ;; посилку відправлять у середу
+R: sledovacie číslo, sledovať zásielku ;; bola podaná, odoslaná, doručená ;; na ceste, v depe, u kuriéra ;; expedovať, predpokladaný termín
+
+@lesson kurier | Кур’єр | Kuriér
+desc: Кур’єр телефонує чи пише SMS: як домовитися про час, попросити залишити посилку в сусіда чи на прохідній і що означає «Nezastihli sme vás».
+goal: Домовлятися з кур’єром про час і місце доставки.
+out: відповідати на Budete doma? ;; розуміти Nezastihli sme vás і opätovné doručenie ;; увічливо просити: Mohli by ste…? ;; просити залишити посилку u suseda, na vrátnici
+done: Ти вмієш домовитися з кур’єром. Далі — пункти видачі й поштомати.
+T: Kuriér volá || Перед доставкою кур’єр часто телефонує або пише SMS: «Dobrý deň, tu kuriér, mám pre vás balík. Budete doma medzi druhou a štvrtou?» Відповіді: «Áno, budem doma» або «Nie, budem v práci. Môžete prísť po piatej?» || Budete doma okolo obeda? = Ви будете вдома близько обіду? ;; Som v práci, domov prídem o šiestej. = Я на роботі, додому прийду о шостій. || Budete doma? — Áno, budem / Nie, nebudem
+T: Nezastihli sme vás || Якщо тебе немає вдома, кур’єр напише: «Nezastihli sme vás» — ми не застали вас. Далі: «Zásielku doručíme opätovne zajtra» — доставимо повторно завтра, або «Zásielka bola uložená na výdajnom mieste». Дієслово «zastihnúť» (застати): zastihol, zastihla; заперечення — nezastihol. || Kuriér ma nezastihol. = Кур’єр мене не застав. ;; Skúsime to znova zajtra. = Спробуємо ще раз завтра. || zastihnúť koho: ma, ťa, vás
+mis: Mohol by ste prísť zajtra? => Mohli by ste prísť zajtra? ;; Môžete nechať to na vrátnici? => Môžete to nechať na vrátnici?
+T: Iný čas, iné miesto || Увічливе прохання — умовний спосіб: «Mohli by ste prísť zajtra?», «Mohli by ste to nechať na vrátnici?», «Mohli by ste balík nechať u susedky?» «Doručovateľ» — загальне слово для того, хто доставляє: листоноші чи кур’єра. || Mohli by ste prísť až po piatej? = Могли б ви приїхати лише після п’ятої? ;; Nechajte to, prosím, u suseda. = Залиште, будь ласка, в сусіда. || mohli by ste + інфінітив
+W: doručovateľ | доставник (листоноша чи кур’єр) | доручовател’ | Doručovateľ chodí k nám okolo desiatej. | Доставник приходить до нас близько десятої.
+W: zastihnúť | застати (когось) | застігнут’ | Kuriér ma včera nezastihol doma. | Кур’єр учора не застав мене вдома.
+W: vrátnica | прохідна, вахта | вра:тніца | Balík môžete nechať na vrátnici. | Посилку можете залишити на прохідній.
+W: telefonicky | телефоном, по телефону | телефоніцкі | Kuriér vás bude kontaktovať telefonicky. | Кур’єр зв’яжеться з вами телефоном.
+W: opätovný | повторний | опетовні: | Opätovné doručenie je možné nasledujúci pracovný deň. | Повторна доставка можлива наступного робочого дня.
+X mt: З’єднай. | doručovateľ = доставник ;; zastihnúť = застати ;; vrátnica = прохідна ;; telefonicky = телефоном ;; opätovný = повторний
+X msg: Прочитай SMS. | Kuriér | Dobrý deň, dnes vám doručím balík z e-shopu. Budem u vás medzi 13:00 a 15:00. Ak nebudete doma, odpíšte, kde môžem balík nechať. | Що просить кур’єр, якщо тебе не буде вдома? | *написати, де залишити посилку ;; забрати посилку на пошті ;; подзвонити в магазин
+= Odpíšte, kde môžem balík nechať — напишіть, де залишити посилку.
+X dr: - | Kuriér: Dobrý deň, mám pre vás balík. Budete doma o druhej? | *Nie, budem v práci. Mohli by ste prísť po piatej? ;; Nie, budem v práci. Mohli by ste prísť po piata? ;; Nie, budem v práci. Mohol by ste prísť po piatej?
+= Із vy — mohli by ste; po + місцевий: po piatej.
+X dd: Обери. | Kuriér [*ma/mi/môj] včera nezastihol doma.
+= zastihnúť koho? — знахідний: ma.
+X dd: Обери. | [*Mohli/Mohol/Môžu] by ste to nechať na vrátnici?
+= vy → mohli by ste.
+X fb: Допиши. | Kuriér vás bude kontaktovať ___. (телефоном) | telefonicky |
+= telefonicky — телефоном.
+X fb: Допиши. | Balík môžete nechať na ___. (прохідна) | vrátnici |
+= na + місцевий: vrátnica → na vrátnici.
+X sc~: Що означає «Nezastihli sme vás doma»? | - | *вас не застали вдома ;; не знайшли ваш будинок ;; не встигли приїхати
+= zastihnúť — застати.
+X tf: - | - | «Doručovateľ» — це лише кур’єр приватної фірми, а не листоноша. | F
+= doručovateľ — будь-хто, хто доставляє: і листоноша, і кур’єр.
+X fe: - | Mohli by ste balík nechať u [susedka>susedky] na prvom poschodí?
+= u + родовий: susedka → u susedky.
+X do: Склади діалог. | Kuriér: Dobrý deň, tu kuriér. Mám pre vás balík, ste doma? ;; Natália: Dobrý deň, nie som, som v práci. ;; Kuriér: A kedy budete doma? ;; Natália: Až po piatej. Mohli by ste ho nechať u suseda? ;; Kuriér: Dobre. Ako sa volá? ;; Natália: Novák, býva oproti mne.
+X bd: - | Ти домовився(-лася) з кур’єром про доставку!
+> Kuriér: Dobrý deň, tu kuriér. Ste doma? | *Teraz nie, ale o hodinu budem. ;; Teraz nie, ale o hodinu som bol. ;; Teraz nie, ale o hodinu bude.
+> Kuriér: O hodinu už budem na druhom konci mesta. | *Mohli by ste teda prísť zajtra ráno? ;; Mohli by ste teda prišli zajtra ráno? ;; Môžete by ste teda prísť zajtra ráno?
+> Kuriér: Zajtra ráno to pôjde, medzi ôsmou a desiatou. | *Výborne, ďakujem, budem doma. ;; Výborne, ďakujem, bol som doma. ;; Výborne, ďakujem, budem domov.
+X np: Ти просиш залишити посилку на прохідній у фірмі. | *Mohli by ste balík nechať na vrátnici? ;; Mohli by ste balík nechať na vrátnica? ;; Mohli by ste balík nechať do vrátnice? ;; Mohli ste by balík nechať na vrátnici?
+= na + місцевий: na vrátnici; by стоїть після mohli.
+X mic: - | SMS: «Opätovné doručenie zajtra medzi 8:00 a 12:00.» | Opätovné doručenie | *повторна доставка ;; скасована доставка ;; термінова доставка
+= opätovný — повторний.
+F: Кур’єр і робочий день || Ти на роботі, а кур’єр уже їде з твоїм замовленням.
+S: Кур’єр: «Budete doma o jedenástej?» (ні, ти на роботі до четвертої) | *Nie, som v práci až do štvrtej. ;; Nie, som v práci až do štvrtá. ;; Nie, som v prácu až do štvrtej.
+S: Ти просиш привезти посилку на роботу. | *Mohli by ste mi ho doručiť do práce? ;; Mohli by ste mi ho doručiť do prácu? ;; Mohli by ste mi ho doručiť na práca?
+S: Кур’єр: «Dobre, nechám ho na vrátnici.» Де буде посилка? | *на прохідній ;; у сусіда ;; у пункті видачі
+S: Пізніше SMS: «Nezastihli sme vás. Opätovné doručenie zajtra.» Що це означає? | *тебе не застали, завтра доставлять ще раз ;; посилку повернуть відправникові ;; посилка чекає на пошті
+R: Budete doma? — Áno, budem / Nie, nebudem ;; Kuriér ma nezastihol ;; Mohli by ste to nechať na vrátnici? ;; doručovateľ, telefonicky, opätovné doručenie
+
+@lesson vydajne-miesto | Пункт видачі й поштомат | Výdajné miesto
+desc: Замість доставки додому — пункт видачі чи поштомат: код із SMS, комірка, строк зберігання.
+goal: Забирати посилки в пунктах видачі й поштоматах і розуміти інструкції.
+out: розрізняти výdajné miesto і výdajný box ;; розуміти інструкції: Zadajte kód, otvorí sa priehradka ;; розуміти úložná lehota ;; казати na výdajnom mieste, vo výdajnom boxe
+done: Тепер поштомат тобі не страшний. Далі — повідомлення в поштовій скриньці.
+T: Výdajné miesto a box || Багато інтернет-магазинів пропонують замість доставки додому «výdajné miesto» — пункт видачі (у магазині, кіоску чи на заправці) або «výdajný box» — поштомат. Під час замовлення обираєш: «Doručenie na adresu» чи «Vyzdvihnutie na výdajnom mieste». Часто це дешевше. || Vybrala som si výdajné miesto pri práci. = Я обрала пункт видачі біля роботи. ;; Box je otvorený nonstop. = Поштомат працює цілодобово. || na výdajnom mieste / vo výdajnom boxe
+T: Kód a priehradka || Коли посилка на місці, приходить SMS або e-mail із «kódom». Біля поштомата: «Zadajte kód» — введіть код, «Otvorí sa priehradka» — відкриється комірка, «Vyberte zásielku a zatvorte dvierka» — заберіть посилку й зачиніть дверцята. У пункті видачі просто покажи код працівникові. || Zadajte kód z SMS. = Введіть код з SMS. ;; Zatvorte dvierka priehradky. = Зачиніть дверцята комірки. || zadať kód → otvorí sa priehradka
+T: Úložná lehota || Посилка чекає не вічно: «Úložná lehota je 7 dní» — строк зберігання 7 днів. Якщо не забереш вчасно, «zásielka sa vráti odosielateľovi» — повернеться відправникові. Часто строк можна продовжити: «predĺžiť úložnú lehotu». || Zásielku si vyzdvihnite do piatku. = Заберіть відправлення до п’ятниці. ;; Lehotu môžete predĺžiť o tri dni. = Строк можна продовжити на три дні. || do konca úložnej lehoty
+mis: v výdajnom mieste => na výdajnom mieste ;; Zadajte kódu. => Zadajte kód. ;; vráti sa odosielateľ => vráti sa odosielateľovi
+W: výdajné miesto | пункт видачі | ві:дайне: мієсто | Balík si vyzdvihnem na výdajnom mieste pri stanici. | Посилку я заберу в пункті видачі біля вокзалу.
+W: výdajný box | поштомат | ві:дайні: бокс | Výdajný box je pred supermarketom. | Поштомат стоїть перед супермаркетом.
+W: kód | код | ко:д | Kód na vyzdvihnutie vám príde v SMS. | Код для отримання прийде вам в SMS.
+W: dvierka | дверцята | двієрка | Vyberte zásielku a zatvorte dvierka. | Заберіть відправлення й зачиніть дверцята.
+W: priehradka | комірка (у поштоматі) | прієградка | Priehradka sa otvorí automaticky. | Комірка відкриється автоматично.
+W: úložná lehota | строк зберігання | у:ложна: легота | Úložná lehota je sedem dní. | Строк зберігання — сім днів.
+X mt: З’єднай. | výdajné miesto = пункт видачі ;; výdajný box = поштомат ;; kód = код ;; dvierka = дверцята ;; priehradka = комірка ;; úložná lehota = строк зберігання
+X msg: Прочитай SMS. | Výdajné miesta | Vaša zásielka č. 52004 je pripravená na vyzdvihnutie vo výdajnom boxe Námestie SNP 3. Kód: 418 207. Úložná lehota: do 14. 11. | До якого числа треба забрати посилку? | *до 14 листопада ;; до 3 листопада ;; до 4 листопада
+= Úložná lehota: do 14. 11.
+X wb: Як забрати посилку з поштомата? | Najprv [zadajte] kód na displeji. ;; Potom sa [otvorí] priehradka. ;; [Vyberte] zásielku. ;; Nakoniec [zatvorte] dvierka. | kódu ;; priehradku
+X dd: Обери. | Balík si vyzdvihnem [*na/v/do] výdajnom mieste.
+= Як «na pošte» — na výdajnom mieste.
+X dd: Обери. | Ak si zásielku nevyzdvihnete, vráti sa [*odosielateľovi/odosielateľ/odosielateľa].
+= Кому? — давальний: odosielateľovi.
+X fb: Допиши. | ___ kód z SMS na displeji. (введіть) | Zadajte |
+= Наказовий спосіб для vy: zadajte.
+X fb: Допиши. | Úložná ___ je sedem dní. (строк) | lehota |
+= úložná lehota — строк зберігання.
+X sc~: Що таке «priehradka» у поштоматі? | - | *комірка, у якій лежить посилка ;; екран для введення коду ;; квитанція з кодом
+= priehradka — комірка з дверцятами.
+X tf: - | - | Якщо не забрати посилку до кінця строку зберігання, вона зазвичай повертається відправникові. | T
+= Zásielka sa vráti odosielateľovi.
+X sch: Подивись на години роботи пункту видачі. | Výdajné miesto – Potraviny Pod Hájom | Pondelok – piatok = 7:00 – 19:00 ;; Sobota = 8:00 – 12:00 ;; Nedeľa = zatvorené | Коли можна забрати посилку в суботу? | *з 8:00 до 12:00 ;; з 7:00 до 19:00 ;; у суботу зачинено
+= Sobota: 8:00 – 12:00.
+X fe: - | Vybrala som si výdajné miesto pri [práca>práci] na Hlavnej ulici.
+= pri + місцевий: pri práci.
+X rc: - | Andrij si objednal z e-shopu nové slúchadlá. Pri objednávke si vybral výdajný box pri obchodnom centre, lebo cez deň nie je doma. V stredu ráno mu prišla SMS s kódom. Večer po práci išiel k boxu a zadal kód na displeji, ale priehradka sa neotvorila. Andrij zavolal na zákaznícku linku. Pracovníčka mu vysvetlila, že namiesto kódu zadal číslo objednávky. Druhýkrát to už fungovalo.
+q~: Чому Андрій обрав поштомат? | *удень його немає вдома ;; це безкоштовно ;; поштомат біля його будинку
+q~: Чому комірка не відчинилася? | *він ввів номер замовлення замість коду ;; поштомат був зламаний ;; минув строк зберігання
+q~: Що сталося з другої спроби? | *усе спрацювало ;; комірка знову не відчинилася ;; посилку повернули в магазин
+X dr: - | Pracovníčka výdajného miesta: Dobrý deň, aký máte kód? | *Dobrý deň, kód je 418 207. ;; Dobrý deň, mám kódu 418 207. ;; Dobrý deň, kódom je 418 207.
+= kód je… — називний.
+X np: Ти питаєш у пункті видачі, чи можеш продовжити строк зберігання. | *Môžem si predĺžiť úložnú lehotu? ;; Môžem si predĺžiť úložná lehota? ;; Môžem predĺžiť si úložnú lehotu? ;; Môžem si predĺžiť úložnej lehoty?
+= predĺžiť čo? — знахідний: úložnú lehotu; si стоїть після môžem.
+F: Посилка в поштоматі || Ти замовила подарунок для доньки й обрала поштомат біля дому.
+S: Під час замовлення ти обираєш спосіб доставки. Який варіант правильно написаний? | *Vyzdvihnutie vo výdajnom boxe ;; Vyzdvihnutie vo výdajný box ;; Vyzdvihnutie na výdajným boxe
+S: SMS: «Zásielka je pripravená na vyzdvihnutie. Kód: 552 190.» Що робиш біля поштомата? | *вводжу код 552 190 на дисплеї ;; телефоную кур’єрові ;; показую паспорт
+S: На екрані: «Vyberte zásielku a zatvorte dvierka.» Що зробити? | *забрати посилку й зачинити дверцята ;; зачинити дверцята й чекати ;; ввести код ще раз
+S: Подруга питає, де ти забрала посилку. | *Vo výdajnom boxe pri našom dome. ;; Vo výdajnom boxe pri náš dom. ;; Na výdajný box pri našom dome.
+R: výdajné miesto, výdajný box ;; Zadajte kód → otvorí sa priehradka ;; úložná lehota, vráti sa odosielateľovi ;; na výdajnom mieste, vo výdajnom boxe
+
+@lesson oznamenie | Повідомлення в скриньці | Oznámenie o uložení
+desc: Папірець у поштовій скриньці: що таке oznámenie o uložení zásielky, з якими документами йти на пошту, що таке splnomocnenie і лист do vlastných rúk.
+goal: Розуміти поштове повідомлення й забирати відправлення на пошті — для себе або за іншу людину.
+out: читати oznámenie o uložení zásielky ;; казати Idem po balík / Prišla som po list ;; розуміти, які документи потрібні, і що таке splnomocnenie ;; розуміти лист do vlastných rúk
+done: Ти знаєш, що робити з повідомленням у скриньці. Далі — мито й митні збори.
+T: Lístok v schránke || Якщо тебе не застали вдома, у поштовій скриньці буде «Oznámenie o uložení zásielky» — повідомлення, що відправлення залишили на пошті. Там написано: хто адресат, який вид відправлення, на якій пошті й до якого числа його можна забрати. Дієслово «uložiť» — залишити на зберігання: «Zásielka je uložená na pošte do 18. 11.» || Mám v schránke oznámenie. = У мене в скриньці повідомлення. ;; List je uložený na pošte. = Лист чекає на пошті. || oznámenie + doklad → pošta
+T: Doklad a splnomocnenie || Щоб отримати відправлення, покажи документ: «občiansky preukaz», паспорт або документ про перебування. Якщо замість тебе йде інша людина, їй потрібна довіреність: «Za iného človeka môžete zásielku prevziať len so splnomocnením». Іти по посилку — «ísť po balík» (po + знахідний). || Prosím si zásielku, tu je oznámenie a pas. = Мені відправлення, ось повідомлення й паспорт. ;; Idem po balík za manžela. = Я йду по посилку замість чоловіка. || ísť po + знахідний; so splnomocnením
+mis: Mám v schránke oznámení. => Mám v schránke oznámenie. ;; Idem na poštu na balík. => Idem na poštu po balík. ;; so splnomocnenie => so splnomocnením
+T: Do vlastných rúk || Офіційні листи (з úradu, від суду, від роботодавця) часто бувають «do vlastných rúk» — особисто в руки. Їх видають самому адресатові, а іншій людині — лише зі спеціальною, офіційно засвідченою довіреністю. Такий лист не можна ігнорувати: якщо його не забрати вчасно, він може вважатися врученим. || Prišiel mi list do vlastných rúk. = Мені прийшов лист «особисто в руки». ;; Musím ísť na poštu osobne. = Мені треба йти на пошту особисто. || do vlastných rúk = особисто адресатові
+W: oznámenie | повідомлення (письмове) | озна:меніє | V schránke som mala oznámenie z pošty. | У скриньці в мене було повідомлення з пошти.
+W: uložiť | залишити на зберігання; покласти | уложит’ | Zásielku sme uložili na pošte Nitra 1. | Ми залишили відправлення на пошті Нітра 1.
+W: splnomocnenie | довіреність | сплномоцненіє | Bez splnomocnenia vám zásielku nevydáme. | Без довіреності ми вам відправлення не видамо.
+W: občiansky preukaz | посвідчення особи (ID-картка) | обчіанскі преуказ | Na prevzatie zásielky potrebujete občiansky preukaz alebo pas. | Для отримання відправлення потрібне посвідчення особи або паспорт.
+W: do vlastných rúk | особисто в руки (адресатові) | до властни:х ру:к | List do vlastných rúk vám vydáme len osobne. | Лист «особисто в руки» ми видамо вам лише особисто.
+X mt: З’єднай. | oznámenie = повідомлення ;; uložiť = залишити на зберігання ;; splnomocnenie = довіреність ;; občiansky preukaz = посвідчення особи ;; do vlastných rúk = особисто в руки
+X doc: Прочитай повідомлення з пошти. | Oznámenie o uložení zásielky | Adresát: Mykola Ivanenko ;; Druh zásielky: doporučený list do vlastných rúk ;; Odosielateľ: Okresný úrad Trnava ;; Uložené na pošte: Trnava 1 ;; Uložené do: 21. 11. | Хто може забрати цей лист? | *Микола особисто або людина з офіційно засвідченою довіреністю ;; будь-хто з родини Миколи ;; будь-хто, у кого є це повідомлення
+= do vlastných rúk — особисто адресатові.
+X dd: Обери. | Zásielka je [*uložená/uložený/uložené] na pošte do piatku.
+= zásielka — жіночий рід: uložená.
+X dd: Обери. | Bez [*splnomocnenia/splnomocnenie/splnomocnením] vám zásielku nevydáme.
+= bez + родовий: splnomocnenia.
+X fb: Допиши. | Idem na poštu ___ balík. (по) | po |
+= ísť po + знахідний — іти забрати щось.
+X fb: Допиши. | Za iného človeka môžete zásielku prevziať len so ___. (довіреністю) | splnomocnením |
+= s / so + орудний: so splnomocnením.
+X sc~: Що означає «List je uložený na pošte»? | - | *лист чекає на тебе на пошті ;; лист загубився на пошті ;; лист уже доставили додому
+= uložiť — залишити на зберігання.
+X tf: - | - | Лист «do vlastných rúk» може забрати будь-хто з членів родини, якщо в нього є повідомлення. | F
+= Такий лист видають адресатові особисто (або людині з офіційною довіреністю).
+X fe: - | Mám v schránke [oznámení>oznámenie] z pošty.
+= Знахідний однини: oznámenie.
+X dr: - | Pracovníčka pošty: Máte oznámenie a doklad? | *Áno, tu je oznámenie a môj pas. ;; Áno, tu je oznámenie a môjho pasu. ;; Áno, tu je oznámením a môj pas.
+= tu je + називний: oznámenie, môj pas.
+X msg: Прочитай повідомлення від чоловіка. | Manžel | Ahoj, v schránke je oznámenie, prišiel ti doporučený list z cudzineckej polície. Je do vlastných rúk, takže ho za teba vyzdvihnúť nemôžem. Pošta je otvorená do 18:00. | Чому чоловік не може забрати лист? | *лист «особисто в руки» — його видадуть тільки тобі ;; у нього немає паспорта ;; пошта вже зачинена
+= do vlastných rúk — особисто адресатові.
+X rc: - | Svetlana pracuje v sklade a tento týždeň má popoludňajšie zmeny. Včera našla v schránke oznámenie: na pošte je uložený balík od sestry z Charkova. Pošta je otvorená len do pol piatej a Svetlana je vtedy v práci. Preto napísala splnomocnenie pre svoju dcéru Katerynu. Dcéra má osemnásť rokov a vlastný pas. Išla na poštu s oznámením, splnomocnením a svojím pasom a balík bez problémov prevzala.
+q~: Чому Світлана не може піти на пошту сама? | *коли пошта працює, вона на роботі ;; вона хвора ;; вона поїхала до сестри
+q~: Що взяла з собою донька? | *повідомлення, довіреність і свій паспорт ;; лише повідомлення ;; мамин паспорт
+q~: Від кого посилка? | *від сестри з Харкова ;; від доньки ;; із поліції
+X ce: Виправ речення. | Idem na poštu na balík. | Idem na poštu po balík.
+= Іти забрати щось — po + знахідний: po balík.
+X np: На пошті ти пояснюєш, що прийшла по посилку замість чоловіка. | *Prišla som po balík za manžela, tu je splnomocnenie. ;; Prišla som na balík za manžela, tu je splnomocnenie. ;; Prišla som po balík za manžel, tu je splnomocnenie. ;; Prišla som po balíka za manžela, tu je splnomocnenie.
+= po balík — по посилку; za manžela — замість чоловіка (знахідний).
+F: Лист з úradu || У скриньці — повідомлення про рекомендований лист з úradu.
+S: Ти читаєш: «Uložené do: 25. 11.» Що це означає? | *лист можна забрати до 25 листопада ;; лист доставлять 25 листопада ;; лист надіслали 25 листопада
+S: Ти телефонуєш на пошту й питаєш, до котрої вони працюють. | *Dokedy máte otvorené? ;; Dokedy máte otvorená? ;; Dokedy máte otvoriť?
+S: На пошті ти кажеш, навіщо прийшла. | *Dobrý deň, prišla som po list, tu je oznámenie. ;; Dobrý deň, prišla som na list, tu je oznámenie. ;; Dobrý deň, prišla som po list, tu je oznámení.
+S: «Je to do vlastných rúk. Máte doklad totožnosti?» | *Áno, tu je môj pas. ;; Áno, tu je môjho pasu. ;; Áno, tu sú môj pas.
+R: oznámenie o uložení zásielky ;; ísť po balík, prišla som po list ;; občiansky preukaz / pas, so splnomocnením ;; do vlastných rúk — особисто адресатові
+
+@lesson colne-poplatky | Мито й митні збори | Colné poplatky
+desc: Посилки з-поза ЄС: clo, DPH, митна декларація, розмитнення. Коли подарунок проходить без мита і чому за покупку з іншої країни доводиться доплачувати.
+goal: Розуміти, коли й за що платять мито та ПДВ, і правильно реагувати на повідомлення про розмитнення.
+out: розуміти clo, DPH і preclenie ;; знати, що всередині ЄС мита немає ;; заповнювати colné vyhlásenie: obsah, hodnota, darček ;; розуміти повідомлення Zásielka čaká na preclenie
+done: Ти розумієш мито й розмитнення. Далі — що робити, якщо посилка пошкоджена чи загубилася.
+T: Mimo EÚ || Посилки з країн поза Європейським Союзом (Україна, США, Китай…) проходять «colnú kontrolu» — митну перевірку. За них можуть нарахувати «clo» — мито та «DPH» — ПДВ (daň z pridanej hodnoty). Усередині ЄС (з Польщі, Чехії, Німеччини) мита немає. || Balík z Ukrajiny ide cez colnú kontrolu. = Посилка з України проходить митну перевірку. ;; Z Česka sa clo neplatí. = За посилки з Чехії мито не платять. || mimo EÚ → clo a DPH
+T: Darček alebo tovar || Подарунок від однієї приватної особи іншій вартістю до 45 € — без мита й без ПДВ. За покупки в інтернет-магазинах поза ЄС ПДВ платять із будь-якої суми, а мито — зазвичай, якщо вартість понад 150 €. Тому в «colnom vyhlásení» важливо чесно вказати, що це: «darček» чи «tovar», і його «hodnotu». || Darček do 45 eur je bez cla. = Подарунок до 45 євро — без мита. ;; Z nákupu mimo EÚ zaplatíte DPH. = За покупку з-поза ЄС ви заплатите ПДВ. || darček / tovar + hodnota
+T: Preclenie || «Zásielka čaká na preclenie» — посилка чекає на митне оформлення. Перевізник напише, скільки заплатити: clo, DPH і часто «poplatok za preclenie» — плату за оформлення. Іноді попросять документ: «faktúru» (рахунок) за товар. Після оплати посилку доставлять. || Zaplaťte clo a DPH online. = Сплатіть мито й ПДВ онлайн. ;; Pošlite nám faktúru za tovar. = Надішліть нам рахунок за товар. || preclenie → zaplatiť → doručenie
+mis: bez clo => bez cla ;; Zásielka čaká na preclení. => Zásielka čaká na preclenie. ;; hodnota obsah => hodnota obsahu
+W: clo | мито | цло | Za tovar z Číny musíte zaplatiť clo. | За товар із Китаю треба заплатити мито.
+W: DPH | ПДВ (податок на додану вартість) | де:пе:га: | Cena je uvedená s DPH. | Ціну вказано з ПДВ.
+W: preclenie | митне оформлення, розмитнення | прецленіє | Zásielka čaká na preclenie. | Відправлення чекає на митне оформлення.
+W: hodnota | вартість, цінність | годнота | Napíšte hodnotu obsahu v eurách. | Напишіть вартість вмісту в євро.
+W: colné vyhlásenie | митна декларація | цолне: вигла:сеніє | K balíku na Ukrajinu treba vyplniť colné vyhlásenie. | До посилки в Україну треба заповнити митну декларацію.
+W: súkromná osoba | приватна особа | су:кромна: особа | Darček od súkromnej osoby do 45 eur je bez cla. | Подарунок від приватної особи до 45 євро — без мита.
+X mt: З’єднай. | clo = мито ;; DPH = ПДВ ;; preclenie = митне оформлення ;; hodnota = вартість ;; colné vyhlásenie = митна декларація ;; súkromná osoba = приватна особа
+X cat: Чи буде мито або ПДВ? | Bez cla a DPH: balík z Poľska, kniha z Česka, darček od mamy z Ukrajiny za 30 eur ;; Clo alebo DPH: slúchadlá z e-shopu v Číne, topánky z USA, darček z Ukrajiny za 200 eur
+= Усередині ЄС мита немає; подарунок до 45 € — без мита й ПДВ; покупки з-поза ЄС і дорожчі подарунки — з ПДВ, інколи й з митом.
+X dd: Обери. | Darček do 45 eur je bez [*cla/clo/clom].
+= bez + родовий: clo → cla.
+X dd: Обери. | Zásielka čaká na [*preclenie/preclení/preclenia].
+= čakať na + знахідний: na preclenie.
+X fb: Допиши. | V colnom vyhlásení napíšte ___ obsahu. (вартість) | hodnotu |
+= napíšte čo? — знахідний: hodnotu.
+X fb: Допиши. | Cena tovaru je uvedená s ___. (ПДВ) | DPH |
+= s DPH — з ПДВ; bez DPH — без ПДВ.
+X sc~: Що означає «Zásielka čaká na preclenie»? | - | *посилка чекає на митне оформлення ;; посилку вже розмитнили ;; посилку повернули відправникові
+= preclenie — митне оформлення.
+X tf: - | - | За посилку з Польщі до Словаччини мито зазвичай не платять. | T
+= Польща й Словаччина — обидві в ЄС.
+X fe: - | Za tovar z Číny musíte zaplatiť [cla>clo] a DPH.
+= zaplatiť čo? — знахідний: clo.
+X doc: Прочитай митну декларацію посилки з України. | Colné vyhlásenie | Obsah: detské oblečenie, hračka ;; Druh: darček ;; Hodnota: 40 € ;; Hmotnosť: 1,5 kg ;; Odosielateľ: súkromná osoba | Чому за цю посилку, найімовірніше, не доведеться платити мито? | *це подарунок від приватної особи вартістю до 45 € ;; посилка важить менше ніж 2 кг ;; у посилці дитячі речі
+= Darček od súkromnej osoby do 45 € je bez cla aj DPH.
+X msg: Прочитай повідомлення від перевізника. | Kuriérska spoločnosť | Dobrý deň, vaša zásielka z USA (tovar v hodnote 200 €) čaká na preclenie. Na úhradu: clo 24,00 €, DPH 51,52 €, poplatok za preclenie 5,00 €. Po zaplatení vám zásielku doručíme do 2 pracovných dní. | Скільки всього треба заплатити? | *80,52 € ;; 75,52 € ;; 51,52 €
+= 24,00 + 51,52 + 5,00 = 80,52 €.
+X rc: - | Olegova mama mu každé dva mesiace posiela balík z Ukrajiny: domáce sladkosti, ponožky a knihy. Vždy vyplní colné vyhlásenie a napíše, že je to darček. Hodnota býva asi tridsať eur, preto Oleg nikdy neplatí clo ani DPH. Minulý mesiac mu však poslala aj nový notebook pre vnuka. Hodnota balíka bola osemsto eur a Oleg musel zaplatiť DPH aj clo. Mama sa čudovala, veď to bol darček.
+q~: Як часто мама надсилає посилки? | *кожні два місяці ;; щомісяця ;; раз на рік
+q~: Чому Олег зазвичай не платить мито? | *це подарунок вартістю близько 30 € ;; посилки йдуть з ЄС ;; посилки дуже легкі
+q~: Чому минулого місяця довелося платити? | *у посилці був ноутбук і вартість становила 800 € ;; мама не заповнила декларацію ;; посилка прийшла із запізненням
+X mic: - | На сайті інтернет-магазину: «Cena je uvedená vrátane DPH a cla.» | vrátane | *включно з ;; без ;; окрім
+= vrátane — включно з.
+X np: Ти питаєш перевізника, скільки треба заплатити за розмитнення. | *Koľko mám zaplatiť za preclenie? ;; Koľko mám zaplatiť za preclenia? ;; Koľko mám zaplatiť preclením? ;; Koľko mám platiť za preclenie mám?
+= zaplatiť za + знахідний: za preclenie.
+F: Посилка з-за океану || Ти замовила взуття в інтернет-магазині в США.
+S: SMS: «Zásielka čaká na preclenie.» Що відбувається? | *посилка чекає на митне оформлення ;; посилку вже доставили ;; посилку загубили
+S: Перевізник просить: «Pošlite nám faktúru za tovar.» Що надіслати? | *рахунок за покупку ;; фото посилки ;; копію паспорта
+S: Ти питаєш, скільки треба заплатити. | *Koľko mám zaplatiť za clo a DPH? ;; Koľko mám zaplatiť za cla a DPH? ;; Koľko mám zaplatiť za clom a DPH?
+S: Подруга з Польщі питає, чи доведеться тобі платити мито за її посилку. | *Nie, v rámci EÚ sa clo neplatí. ;; Áno, vždy treba zaplatiť clo. ;; Áno, ale len za darčeky.
+R: clo, DPH, preclenie ;; darček do 45 eur je bez cla ;; colné vyhlásenie: obsah, hodnota, darček alebo tovar ;; čaká na preclenie → zaplatiť → doručenie
+
+@lesson reklamacia-zasielky | Рекламація відправлення | Reklamácia zásielky
+desc: Посилка прийшла пошкоджена або не прийшла взагалі: протокол про пошкодження, фото як доказ, рекламація й відшкодування.
+goal: Діяти правильно, коли посилка пошкоджена чи загубилася, і написати коротку рекламацію.
+out: перевіряти посилку при кур’єрові й складати záznam o poškodení ;; повідомляти про загублене відправлення: nahlásiť ;; писати рекламацію за схемою ;; офіційно просити: Žiadam o náhradu škody
+done: Ти вмієш захистити свої права, якщо з посилкою щось сталося. Далі — як правильно написати адресу.
+T: Poškodený balík || Якщо коробка м’ята, мокра чи розірвана, перевір посилку ще при кур’єрові. Можна «spísať záznam o poškodení» — скласти протокол про пошкодження. Сфотографуй усе: «odfoťte obal aj obsah» — упаковку й вміст. || Krabica je mokrá a roztrhnutá. = Коробка мокра й розірвана. ;; Chcem spísať záznam o poškodení. = Я хочу скласти протокол про пошкодження. || najprv skontrolovať, potom prevziať
+T: Stratená zásielka || Якщо статус давно не змінюється або посилка не прийшла: «Zásielka mi neprišla», «Zásielka sa stratila» — загубилася. Про проблему треба «nahlásiť» — повідомити перевізника. Рекламацію в перевізника зазвичай подає відправник; якщо ти купував(ла) в інтернет-магазині — пиши продавцеві. || Balík mi doteraz neprišiel. = Посилка мені досі не прийшла. ;; Chcem nahlásiť stratenú zásielku. = Я хочу повідомити про загублене відправлення. || neprišla / stratila sa → nahlásiť
+T: Ako napísať reklamáciu || Схема: номер відправлення → що сталося → доказ → чого ти хочеш. «Dobrý deň, podávam reklamáciu zásielky č. 5521. Balík prišiel poškodený, váza je rozbitá. V prílohe posielam fotky. Žiadam o náhradu škody.» «Žiadam o…» — офіційне «прошу» + знахідний. || Žiadam o vrátenie peňazí. = Прошу повернути гроші. ;; V prílohe posielam fotografie. = У додатку надсилаю фотографії. || žiadam o + знахідний
+mis: Zásielka sa stratil. => Zásielka sa stratila. ;; Žiadam na náhradu. => Žiadam o náhradu. ;; Balík prišiel poškodená. => Balík prišiel poškodený.
+W: reklamácia | рекламація, офіційна скарга | рекла:маціа | Reklamáciu môžete podať aj online. | Рекламацію можна подати й онлайн.
+W: poškodenie | пошкодження | пошкоденіє | Poškodenie balíka odfoťte ešte pred otvorením. | Сфотографуйте пошкодження посилки ще до відкриття.
+W: náhrada | відшкодування, компенсація | на:града | Za stratený balík dostanete náhradu. | За загублену посилку ви отримаєте відшкодування.
+W: záznam | протокол, запис | за:знам | Kuriér s vami spíše záznam o poškodení. | Кур’єр складе з вами протокол про пошкодження.
+W: dôkaz | доказ | дуоказ | Fotky sú dôkaz, že balík bol poškodený. | Фото — доказ того, що посилка була пошкоджена.
+W: obal | упаковка | обал | Obal bol mokrý a roztrhnutý. | Упаковка була мокра й розірвана.
+X mt: З’єднай. | reklamácia = рекламація ;; poškodenie = пошкодження ;; náhrada = відшкодування ;; záznam = протокол ;; dôkaz = доказ ;; obal = упаковка
+X dd: Обери. | Žiadam [*o/na/za] náhradu škody.
+= žiadať o + знахідний.
+X dd: Обери. | Balík prišiel [*poškodený/poškodená/poškodene].
+= balík — чоловічий рід: poškodený.
+X fb: Допиши. | Kuriér s vami spíše ___ o poškodení. (протокол) | záznam |
+= záznam o poškodení — протокол про пошкодження.
+X fb: Допиши. | Fotky sú ___, že krabica bola mokrá. (доказ) | dôkaz |
+= dôkaz — доказ.
+X sc~: Що найкраще зробити, якщо кур’єр приніс розірвану коробку? | - | *перевірити посилку при кур’єрові й скласти протокол ;; взяти посилку й викинути коробку ;; почекати тиждень і тоді написати магазину
+= Пошкодження треба зафіксувати одразу: záznam o poškodení, фото.
+X tf: - | - | «Zásielka sa stratila» означає, що посилку доставили за іншою адресою. | F
+= stratiť sa — загубитися.
+X fe: - | Zásielka sa [stratil>stratila] niekde v depe.
+= zásielka — жіночий рід: stratila.
+X msg: Прочитай відповідь інтернет-магазину. | Zákaznícky servis | Dobrý deň, ďakujeme za vašu reklamáciu. Aby sme ju mohli vybaviť, pošlite nám, prosím, fotky poškodeného obalu aj obsahu a záznam o poškodení od kuriéra. Reklamáciu vybavíme do 30 dní. | Що просить магазин? | *фото упаковки й вмісту та протокол від кур’єра ;; повернути товар поштою ;; прийти в магазин особисто
+= fotky obalu aj obsahu + záznam o poškodení.
+X do: Склади діалог. | Pracovníčka: Zákaznícka linka, dobrý deň, ako vám môžem pomôcť? ;; Iryna: Dobrý deň, chcela by som nahlásiť poškodený balík. ;; Pracovníčka: Aké je číslo zásielky? ;; Iryna: 5521 0387. Váza prišla rozbitá. ;; Pracovníčka: Máte fotky a záznam od kuriéra? ;; Iryna: Áno, fotky mám a záznam sme spísali pri doručení.
+X doc: Прочитай форму рекламації. | Reklamácia zásielky | Číslo zásielky: 5521 0387 ;; Dôvod: poškodenie obsahu ;; Popis: rozbitá sklenená váza ;; Požadovaná náhrada: 45 € ;; Prílohy: 4 fotky, záznam o poškodení | Чого вимагає клієнтка? | *відшкодування 45 € ;; нову вазу ;; повернення посилки
+= Požadovaná náhrada — відшкодування, якого вимагають.
+X ce: Виправ речення. | Žiadam na vrátenie peňazí. | Žiadam o vrátenie peňazí.
+= žiadať o + знахідний.
+X tr: Напиши офіційніше: почни з «Žiadam…». | Chcem peniaze späť. | Žiadam o vrátenie peňazí. ;; Žiadam vrátenie peňazí.
+= Офіційно: žiadam o vrátenie peňazí.
+X tone: - | Zákazník: Už tretíkrát píšem, že balík neprišiel, a nikto mi neodpovedá! | *роздратований ;; спокійний і задоволений ;; жартівливий
+= «Už tretíkrát…» і «nikto mi neodpovedá» — роздратування.
+X np: У рекламації ти пишеш, що надсилаєш фото в додатку. | *V prílohe posielam fotky. ;; V príloha posielam fotky. ;; Na prílohe posielam fotky. ;; V prílohe posielam fotkami.
+= v prílohe — у додатку (місцевий).
+F: Розбита ваза || Кур’єр привіз посилку з подарунком від сестри: коробка м’ята, а всередині щось дзвенить.
+S: Ти кажеш кур’єрові, що коробка пошкоджена. | *Krabica je poškodená, chcem ju skontrolovať. ;; Krabica je poškodený, chcem ju skontrolovať. ;; Krabica je poškodená, chcem ho skontrolovať.
+S: Ваза розбита. Що ти пропонуєш кур’єрові? | *Spíšme, prosím, záznam o poškodení. ;; Spíšme, prosím, záznamu o poškodení. ;; Spíšme, prosím, záznam o poškodenie.
+S: Кур’єр: «Odfoťte si to, bude to dôkaz.» Що він радить? | *сфотографувати пошкодження як доказ ;; викинути розбиту вазу ;; написати сестрі
+S: У рекламації ти просиш відшкодування. | *Žiadam o náhradu škody. ;; Žiadam na náhradu škody. ;; Žiadam o náhrady škodu.
+R: poškodený balík → záznam o poškodení ;; zásielka sa stratila → nahlásiť ;; Žiadam o náhradu / o vrátenie peňazí ;; fotky ako dôkaz, v prílohe posielam…
+
+@lesson adresa-spravne | Правильна адреса | Adresa správne
+desc: Як записати словацьку адресу: порядок рядків, PSČ, два номери на будинку (súpisné й orientačné), примітка для кур’єра.
+goal: Правильно записувати адресу й давати кур’єрові точні вказівки.
+out: записувати адресу в правильному порядку ;; розрізняти súpisné й orientačné číslo ;; писати poznámku pre kuriéra ;; перевіряти údaje й шукати preklep
+done: Твої посилки тепер знаходять адресата. Далі — підсумок розділу.
+T: Poradie v adrese || Словацька адреса: 1) ім’я та прізвище; 2) вулиця й номер; 3) PSČ і місто; 4) країна (для закордону — великими літерами). PSČ — п’ять цифр, після трьох — пробіл: «949 01 Nitra». Про вулицю кажуть з «na»: «bývam na Hlavnej». || Hlavná 12, 949 01 Nitra = вулиця Головна, 12, 949 01 Нітра ;; Bývam na Štúrovej 5. = Я живу на вулиці Штурова, 5. || meno → ulica a číslo → PSČ a mesto → KRAJINA
+T: Dve čísla na dome || На багатьох будинках два номери, наприклад «1243/15». Перше — «súpisné číslo» (реєстраційний номер будинку в громаді), друге — «orientačné číslo» (номер на вулиці). Кур’єрові для орієнтації потрібне саме orientačné. У селах без назв вулиць пишуть назву села й súpisné číslo: «Malá Ves 245». || Bývam na Hlavnej 1243/15. = Я живу на вулиці Головній, 1243/15. ;; Bývame v obci Malá Ves, číslo 245. = Ми живемо в селі Мала Вес, номер 245. || súpisné / orientačné
+T: Byt, zvonček, poznámka || У багатоквартирному будинку кур’єрові допоможе «poznámka»: поверх, номер квартири, ім’я на дзвінку. Твоє ім’я має бути й на поштовій скриньці — інакше листоноша може не знайти адресата. Перевір кожен «údaj»: один «preklep» у номері — і посилка поїде не туди. || 3. poschodie, byt 12, zvonček Kovalenko. = 3-й поверх, квартира 12, дзвінок «Коваленко». ;; V adrese je preklep. = В адресі описка. || adresa + poznámka pre kuriéra
+mis: Nitra 949 01 => 949 01 Nitra ;; Bývam v Hlavnej ulici. => Bývam na Hlavnej ulici.
+W: súpisné číslo | реєстраційний номер будинку | су:пісне: чі:сло | Na dome je súpisné číslo 1243 a orientačné číslo 15. | На будинку реєстраційний номер 1243 і номер на вулиці 15.
+W: orientačné číslo | номер будинку на вулиці | орієнтачне: чі:сло | Kuriér hľadá orientačné číslo, nie súpisné. | Кур’єр шукає номер на вулиці, а не реєстраційний.
+W: poznámka | примітка | позна:мка | Do poznámky napíšte číslo bytu. | У примітці напишіть номер квартири.
+W: preklep | описка, друкарська помилка | преклеп | V adrese bol preklep v čísle domu. | В адресі була описка в номері будинку.
+W: údaj | дані (окремий пункт) | у:дай | Skontrolujte, prosím, všetky údaje. | Перевірте, будь ласка, всі дані.
+X mt: З’єднай. | súpisné číslo = реєстраційний номер будинку ;; orientačné číslo = номер на вулиці ;; poznámka = примітка ;; preklep = описка ;; údaj = пункт даних
+X cat: Що це за рядок адреси? | Ulica a číslo: Hlavná 12, Štúrova 5, Mierová 1243/15 ;; PSČ a mesto: 949 01 Nitra, 040 01 Košice, 811 02 Bratislava
+= Спочатку вулиця й номер, нижче — PSČ і місто.
+X dd: Обери. | Bývam [*na/v/do] Hlavnej ulici.
+= Про вулицю — na + місцевий: na Hlavnej ulici.
+X dd: Обери. | Číslo domu na ulici je [*orientačné/súpisné/poštové] číslo.
+= orientačné číslo — номер на вулиці.
+X fb: Допиши. | Do ___ napíšte poschodie a číslo bytu. (примітка) | poznámky |
+= do + родовий: poznámka → poznámky.
+X fb: Допиши. | V čísle domu je ___. (описка) | preklep |
+= preklep — описка.
+X sc: Яка адреса записана правильно? | - | *Olena Kovaľová, Hlavná 12, 949 01 Nitra ;; Olena Kovaľová, Nitra 949 01, Hlavná 12 ;; Hlavná 12, Olena Kovaľová, Nitra
+= Ім’я → вулиця й номер → PSČ і місто.
+X tf: - | Adresa: Mierová 1243/15, 821 05 Bratislava | Число 15 — це номер будинку на вулиці (orientačné číslo). | T
+= Друге число після скісної риски — orientačné.
+X fe: - | Kuriér nemohol nájsť dom, lebo v adrese bol [preklepu>preklep] v čísle.
+= bol + називний: preklep.
+X doc: Прочитай дані замовлення. | Doručovacie údaje | Meno: Taras Bondarenko ;; Ulica: Mierová 1243/15 ;; PSČ a mesto: 821 05 Bratislava ;; Poznámka pre kuriéra: 4. poschodie, byt 17, zvonček Bondarenko ;; Telefón: +421 900 123 456 | На якому поверсі живе Тарас? | *на 4-му ;; на 15-му ;; на 17-му
+= 4. poschodie — четвертий поверх; 17 — номер квартири.
+X msg: Прочитай SMS. | Kuriér | Dobrý deň, stojím pred domom Mierová 15, ale na zvončekoch ani na schránkach nevidím vaše meno. Na ktorom poschodí bývate? | У чому проблема кур’єра? | *він не бачить твого імені ні на дзвінках, ні на скриньках ;; він не може знайти вулицю ;; будинок зачинений на ремонт
+= nevidím vaše meno — не бачу вашого імені.
+X dr: - | Kuriér: Na ktorom poschodí bývate? | *Na štvrtom, byt číslo sedemnásť. ;; Na štvrté, byt číslo sedemnásť. ;; Na štyri poschodie, byt číslo sedemnásť.
+= na ktorom? — місцевий: na štvrtom.
+X rc: - | Oksana sa minulý mesiac presťahovala z Trnavy do Nitry. V e-shope si však zabudla zmeniť adresu a nový mobil išiel na starú adresu. Našťastie jej zavolala majiteľka starého bytu a balík jej odložila. Odvtedy si Oksana pri každej objednávke kontroluje všetky údaje. Do poznámky pre kuriéra vždy napíše poschodie a číslo bytu, lebo v novom dome je šesťdesiat bytov a na zvončekoch sú len čísla.
+q~: Чому мобільний поїхав на стару адресу? | *Оксана забула змінити адресу в магазині ;; кур’єр помилився ;; в адресі була описка в PSČ
+q~: Хто допоміг Оксані? | *власниця старої квартири ;; кур’єр ;; сусідка з Нітри
+q~: Чому Оксана пише в примітці поверх і номер квартири? | *на дзвінках у новому будинку лише номери ;; так вимагає магазин ;; у будинку немає ліфта
+X np: Ти пишеш примітку для кур’єра. | *Prosím, zazvoňte na zvonček Koval, 2. poschodie. ;; Prosím, zazvoňte zvonček Koval, 2. poschodie. ;; Prosím, zazvoňte na zvončekom Koval, 2. poschodie. ;; Prosím, zazvoňte na zvončeku Koval, 2. poschodie.
+= zazvoniť na + знахідний: na zvonček.
+X so: - | Скажи, що в адресі є описка. | V adrese je preklep.
+= v adrese — в адресі; preklep — описка.
+F: Нова адреса || Ти переїхала до Кошиць і оновлюєш адресу в інтернет-магазині.
+S: Що правильно вписати в поле «PSČ a mesto»? | *040 01 Košice ;; Košice 040 01 ;; Košice, Slovensko
+S: Твій будинок має номер 1243/15. Який номер головний для кур’єра? | *15 — номер на вулиці ;; 1243 — реєстраційний номер ;; жоден, кур’єр орієнтується за PSČ
+S: Ти пишеш примітку. | *2. poschodie, byt 8, meno na zvončeku Koval. ;; 2. poschodie, byt 8, meno na zvonček Koval. ;; 2. poschodím, byt 8, meno na zvončeku Koval.
+S: Магазин: «Skontrolujte, prosím, všetky údaje.» Що зробити? | *перевірити всі дані ;; заповнити все наново ;; надіслати документ
+R: meno → ulica a číslo → PSČ a mesto → KRAJINA ;; súpisné a orientačné číslo ;; poznámka pre kuriéra ;; skontrolovať údaje, preklep
+
+@lesson posta-opakovanie | Підсумок: пошта й посилки | Opakovanie: pošta a zásielky
+desc: Повторюємо весь шлях відправлення — від віконця до поштомата — і всі проблеми: розмитнення, пошкодження, неправильна адреса. Нове: doručenka, medzinárodný, poštový priečinok, dodacia adresa.
+goal: Упевнено діяти на пошті, з кур’єром і з інтернет-магазином у будь-якій ситуації.
+out: відправляти листи й посилки та відстежувати їх ;; домовлятися з кур’єром і забирати посилки ;; розв’язувати проблеми: preclenie, reklamácia, adresa ;; розуміти doručenka, medzinárodný, dodacia adresa
+done: Розділ «Пошта, посилки, кур’єри» завершено! Далі — страхування й лікар: zdravotná poisťovňa, všeobecný lekár.
+T: Cesta zásielky || Весь шлях відправлення: «podať balík pri prepážke» → «podací lístok so sledovacím číslom» → «sledovať stav» → «kuriér» або «výdajné miesto, box» → «prevziať zásielku». Пам’ятай про узгодження: «zásielka bola doručená», «balík bol doručený». || Balík som podala v pondelok a v stredu bol doručený. = Посилку я відправила в понеділок, а в середу її доставили. || podať → sledovať → doručiť / vyzdvihnúť
+T: Keď niečo nejde || Проблеми й рішення: «Nezastihli sme vás» → opätovné doručenie або oznámenie o uložení. «Čaká na preclenie» → zaplatiť clo a DPH. «Poškodený / stratený» → záznam, reklamácia, náhrada. Увічливо: «Mohli by ste…?», офіційно: «Žiadam o…». || Mohli by ste balík doručiť zajtra? = Могли б ви доставити посилку завтра? ;; Žiadam o náhradu škody. = Прошу відшкодувати збитки. || Mohli by ste…? / Žiadam o…
+T: Doručenka a ďalšie || «Doručenka» — повідомлення про вручення: адресат розписується, і відправник отримує підтвердження. Це корисно для важливих листів, наприклад розірвання договору оренди. «Medzinárodný» — міжнародний. «Poštový priečinok» — абонентська скринька на пошті. «Dodacia adresa» — адреса доставки, «fakturačná adresa» — адреса для рахунку. || Výpoveď pošlem doporučene s doručenkou. = Розірвання договору надішлю рекомендованим листом із повідомленням про вручення. ;; Dodacia adresa je iná ako fakturačná. = Адреса доставки інша, ніж адреса для рахунку. || s doručenkou = із підтвердженням вручення
+W: doručenka | повідомлення про вручення | дорученка | Doporučený list s doručenkou stojí viac. | Рекомендований лист із повідомленням про вручення коштує дорожче.
+W: medzinárodný | міжнародний | медзіна:родні: | Medzinárodný balík ide dlhšie ako balík po Slovensku. | Міжнародна посилка йде довше, ніж посилка по Словаччині.
+W: poštový priečinok | абонентська скринька | поштові: прієчінок | Firma má adresu na poštový priečinok. | Фірма має адресу абонентської скриньки.
+W: dodacia adresa | адреса доставки | додаціа адреса | V e-shope som zmenila dodaciu adresu. | В інтернет-магазині я змінила адресу доставки.
+X mt: З’єднай. | doručenka = повідомлення про вручення ;; medzinárodný = міжнародний ;; poštový priečinok = абонентська скринька ;; dodacia adresa = адреса доставки
+X do: Склади діалог. | Pracovníčka: Dobrý deň, čo si želáte? ;; Mykola: Chcel by som poslať tento list doporučene. ;; Pracovníčka: S doručenkou? ;; Mykola: Áno, je to výpoveď nájomnej zmluvy. ;; Pracovníčka: Dobre, vyplňte, prosím, doručenku. ;; Mykola: Hotovo. Koľko to stojí?
+X cz: - | Balík som {podala/podal} v pondelok. Podľa {sledovacieho} čísla som videla, že v utorok bol v {depe}. V stredu ma kuriér {nezastihol}, tak zásielku {uložili} na výdajnom mieste. | podať, sledovací, depo, zastihnúť, uložiť
+= podala, sledovacieho čísla, v depe, nezastihol, uložili.
+X dd: Обери. | Pošlem to doporučene [*s/so/z] doručenkou.
+= s + орудний: s doručenkou (so — лише перед s, z, š, ž та деякими групами).
+X dd: Обери. | Mohli by ste balík nechať [*u/od/do] susedky?
+= Де? — u + родовий: u susedky.
+X fe: - | Váš balík bol [doručená>doručený] dnes o 10:15.
+= balík — чоловічий рід: bol doručený.
+X fe: - | Vyzdvihnite si zásielku na výdajnom [miesto>mieste] do piatku.
+= na + місцевий: na výdajnom mieste.
+X sc~: Як найкраще надіслати розірвання договору оренди? | - | *рекомендованим листом із повідомленням про вручення ;; звичайним листом ;; листівкою
+= Doručenka — доказ, що адресат отримав лист.
+X ms: Обери правильні речення. | - | *Zásielka bola doručená. ;; *Žiadam o náhradu škody. ;; *Mohli by ste prísť zajtra? ;; Darček je bez clo. ;; Idem na poštu na balík.
+= bez cla (родовий); ísť po balík.
+X rc: - | Ahoj Marta, musím ti napísať, aké dobrodružstvo som mala s balíkom. Mama mi poslala z Ukrajiny balík k narodeninám. Vyplnila colné vyhlásenie a napísala, že je to darček v hodnote tridsať eur, takže clo som neplatila. Kuriér ma však nezastihol, lebo som bola v práci. Poslal mi SMS, že balík nechal na výdajnom mieste v potravinách na našej ulici. Keď som si ho vyzdvihla, krabica bola mokrá a jeden pohár bol rozbitý. Hneď som všetko odfotila a podala reklamáciu. O tri týždne mi prišla náhrada dvanásť eur. Nabudúce poprosím mamu, aby poháre lepšie zabalila! Iryna
+q~: Чому Ірина не платила мито? | *це подарунок вартістю 30 € ;; посилка з ЄС ;; мама заплатила мито в Україні
+q~: Де Ірина забрала посилку? | *у пункті видачі в продуктовому магазині на її вулиці ;; на пошті ;; на прохідній на роботі
+q~: Що Ірина отримала після рекламації? | *12 € відшкодування ;; новий набір склянок ;; нічого
+X sch: Подивись на відстеження міжнародної посилки. | Sledovanie zásielky UA → SK | 2. 12. = Zásielka bola podaná, Ľviv ;; 4. 12. = Zásielka opustila Ukrajinu ;; 6. 12. = Colná kontrola ;; 9. 12. = Zásielka je pripravená na vyzdvihnutie | Що відбувалося 6 грудня? | *митна перевірка ;; відправлення посилки зі Львова ;; посилка була готова до видачі
+= Colná kontrola — митна перевірка.
+X tr: Перетвори наказ на ввічливе прохання з «Mohli by ste…». | Príďte zajtra. | Mohli by ste prísť zajtra? ;; Mohli by ste zajtra prísť?
+= Mohli by ste + інфінітив.
+X bd: - | Ти забрала лист і відправила посилку без жодної помилки!
+> Pracovníčka: Dobrý deň, čo pre vás môžem urobiť? | *Prišla som po list, tu je oznámenie a pas. ;; Prišla som na list, tu je oznámenie a pas. ;; Prišla som po list, tu je oznámení a pas.
+> Pracovníčka: Nech sa páči. Ešte niečo? | *Áno, chcela by som podať balík na Ukrajinu. ;; Áno, chcela by som podať balíkom na Ukrajinu. ;; Áno, chcela som by podať balík na Ukrajinu.
+> Pracovníčka: Je v ňom niečo krehké? | *Áno, sú tam poháre, chcem ho poistiť na sto eur. ;; Áno, sú tam poháre, chcem ho poistiť za sto eur. ;; Áno, sú tam poháre, chcem ho poistiť na sto eurá.
+X reg: - | Žiadam o náhradu škody za poškodenú zásielku. | formal
+= Žiadam o… — офіційний стиль рекламації.
+X np: Ти питаєш, чи можна надіслати лист із повідомленням про вручення. | *Môžem poslať list s doručenkou? ;; Môžem poslať list so doručenkou? ;; Môžem poslať list s doručenka? ;; Môžem poslať list doručenkou s?
+= s + орудний: s doručenkou.
+F: Важливий лист і посилка || Тобі треба надіслати розірвання договору оренди й забрати посилку з України.
+S: Біля віконця ти кажеш, як хочеш надіслати лист. | *Doporučene s doručenkou, prosím. ;; Doporučene so doručenkou, prosím. ;; Doporučene s doručenka, prosím.
+S: Статус посилки: «Zásielka čaká na preclenie.» Що робиш? | *перевіряю, чи треба заплатити мито й ПДВ ;; іду на прохідну ;; одразу пишу рекламацію
+S: SMS: «Zásielka je uložená vo výdajnom boxe, kód 730 512, úložná lehota 3 dni.» Що важливо? | *забрати посилку протягом 3 днів, ввівши код ;; чекати кур’єра 3 дні ;; подзвонити на пошту
+S: Коробка мокра, одна склянка розбита. Що пишеш продавцеві? | *Podávam reklamáciu, v prílohe posielam fotky. ;; Podávam reklamácia, v prílohe posielam fotky. ;; Podávam reklamáciu, v príloha posielam fotky.
+R: podať → sledovať → doručiť / vyzdvihnúť ;; Mohli by ste…? / Žiadam o… ;; clo, DPH, preclenie, reklamácia, náhrada ;; doporučene s doručenkou, dodacia adresa

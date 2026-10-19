@@ -1,0 +1,915 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u05-l01-pravny-system",
+      "sectionId": "b2-u05",
+      "level": "B2",
+      "title": "Правова система: закони й права",
+      "topic": "Право і права споживача",
+      "description": "Як влаштована правова система Словаччини з погляду мешканця: ієрархія актів (ústava, zákon, nariadenie, vyhláška), де знайти чинну редакцію закону, різниця між оприлюдненням і початком дії та пара «právo na» — «povinnosť».",
+      "order": 41,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Орієнтуватися в нормативних актах і розуміти посилання на закони в документах.",
+      "completionMessage": "Ти орієнтуєшся в правових актах. Далі — договори: як читати їх уважно й помічати пастки.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Право і права споживача",
+        "title": "Правова система: закони й права",
+        "shortDescription": "Орієнтуватися в нормативних актах і розуміти посилання на закони в документах.",
+        "outcomes": [
+          "розрізняти ústava, zákon, nariadenie vlády, vyhláška",
+          "знаходити чинну редакцію закону й розуміти novela та účinnosť",
+          "вживати právo na + знахідний і povinný + інфінітив",
+          "будувати посилання v súlade so zákonom, podľa zákona"
+        ],
+        "newWords": [
+          "právny predpis",
+          "ústava",
+          "vyhláška",
+          "účinnosť",
+          "Zbierka zákonov",
+          "novela"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Ієрархія актів",
+          "text": "Правова система Словаччини будується як піраміда. На вершині — ústava (конституція). Нижче — ústavné zákony та звичайні zákony, які ухвалює Národná rada Slovenskej republiky. Далі — nariadenia vlády та vyhlášky міністерств: вони розвивають закон і зазвичай не можуть йому суперечити. На місцевому рівні громада видає všeobecne záväzné nariadenia (скорочено VZN), наприклад про місцеві збори. Головний принцип: нижчий акт має узгоджуватися з вищим — «v súlade s» + орудний. Усі такі загальнообов’язкові акти разом називають словом «právny predpis».",
+          "examples": [
+            {
+              "sk": "Zákon musí byť v súlade s ústavou.",
+              "uk": "Закон має відповідати конституції."
+            },
+            {
+              "sk": "Vyhláška ministerstva nesmie byť v rozpore so zákonom.",
+              "uk": "Акт міністерства не може суперечити закону."
+            }
+          ],
+          "shortRule": "ústava → zákon → nariadenie vlády / vyhláška → VZN obce · v súlade s + орудний · v rozpore s + орудний",
+          "commonMistakes": [
+            {
+              "mistake": "Zákon musí byť v súlade z ústavou.",
+              "correct": "Zákon musí byť v súlade s ústavou."
+            },
+            {
+              "mistake": "Podľa zákonu máte právo.",
+              "correct": "Podľa zákona máte právo."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Де знайти закон і коли він діє",
+          "text": "Закони оприлюднюють у Zbierke zákonov, а читати їх зручно на офіційному порталі Slov-Lex, де зазвичай є й чинна редакція. Розрізняй дві речі: закон ухвалено й оприлюднено (platnosť) та день, з якого він реально діє (účinnosť): «Zákon nadobúda účinnosť 1. januára.» Закони змінюють часто, а зміну називають novela. Тому в посиланнях пишуть «v znení neskorších predpisov» — зі змінами, внесеними пізніше. Перш ніж довіряти пораді з інтернету чи новинам, перевір, чи це чинна редакція й чи норма вже діє.",
+          "examples": [
+            {
+              "sk": "Zákon nadobudol účinnosť od 1. januára.",
+              "uk": "Закон набув чинності з 1 січня."
+            },
+            {
+              "sk": "Novela zákona zmenila niektoré povinnosti.",
+              "uk": "Новела закону змінила деякі обов’язки."
+            }
+          ],
+          "shortRule": "Zbierka zákonov = офіційне видання · účinnosť = з якого дня діє · novela = зміна закону · v znení neskorších predpisov",
+          "commonMistakes": [
+            {
+              "mistake": "Zákon nadobudol účinnosť do 1. januára.",
+              "correct": "Zákon nadobudol účinnosť od 1. januára."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Právo і povinnosť",
+          "text": "Слово «právo» означає і «право» (що мені належить), і «право як система, закон». Для особистого права кажемо «mať právo na» + знахідний: «Mám právo na reklamáciu.» Обов’язок — «byť povinný» + інфінітив: «Som povinný zaplatiť.» (жінка про себе: «Som povinná».) Права й обов’язки йдуть парою: праву одного відповідає обов’язок іншого. Посилатися на закон можна так: «podľa zákona» (родовий), «na základe zákona», «v súlade so zákonom» (перед словом на з — «so»). Стара формула «Neznalosť zákona neospravedlňuje» нагадує: незнання закону зазвичай не звільняє від відповідальності.",
+          "examples": [
+            {
+              "sk": "Mám právo na informácie o cene.",
+              "uk": "Я маю право на інформацію про ціну."
+            },
+            {
+              "sk": "Predávajúci je povinný vydať doklad o kúpe.",
+              "uk": "Продавець зобов’язаний видати документ про купівлю."
+            }
+          ],
+          "shortRule": "právo na + знахідний · povinný + інфінітив · podľa zákona · v súlade so zákonom",
+          "commonMistakes": [
+            {
+              "mistake": "Mám právo o reklamáciu.",
+              "correct": "Mám právo na reklamáciu."
+            },
+            {
+              "mistake": "Som povinný zaplatím.",
+              "correct": "Som povinný zaplatiť."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u05-l01-pravny-system-w01",
+            "sk": "právny predpis",
+            "uk": "нормативно-правовий акт",
+            "pronunciationUk": "пра:вни: предпіс",
+            "exampleSk": "Každý všeobecne záväzný právny predpis musí byť zverejnený.",
+            "exampleUk": "Кожен загальнообов’язковий нормативно-правовий акт має бути оприлюднений."
+          },
+          {
+            "wordId": "b2-u05-l01-pravny-system-w02",
+            "sk": "ústava",
+            "uk": "конституція",
+            "pronunciationUk": "у:става",
+            "exampleSk": "Ústava je najvyšší právny predpis štátu.",
+            "exampleUk": "Конституція — найвищий нормативний акт держави."
+          },
+          {
+            "wordId": "b2-u05-l01-pravny-system-w03",
+            "sk": "vyhláška",
+            "uk": "підзаконний акт міністерства",
+            "pronunciationUk": "вигла:шка",
+            "exampleSk": "Vyhláška ministerstva podrobnejšie upravuje postup podľa zákona.",
+            "exampleUk": "Акт міністерства докладніше регулює порядок за законом."
+          },
+          {
+            "wordId": "b2-u05-l01-pravny-system-w04",
+            "sk": "účinnosť",
+            "uk": "чинність, початок дії",
+            "pronunciationUk": "у:чінность",
+            "exampleSk": "Zákon nadobudne účinnosť o pol roka.",
+            "exampleUk": "Закон набуде чинності через пів року."
+          },
+          {
+            "wordId": "b2-u05-l01-pravny-system-w05",
+            "sk": "Zbierka zákonov",
+            "uk": "збірка законів (офіційне видання)",
+            "pronunciationUk": "збєрка зако:нов",
+            "exampleSk": "Nový zákon sa najprv zverejní v Zbierke zákonov.",
+            "exampleUk": "Новий закон спершу оприлюднюється в збірці законів."
+          },
+          {
+            "wordId": "b2-u05-l01-pravny-system-w06",
+            "sk": "novela",
+            "uk": "новела, зміна закону",
+            "pronunciationUk": "новела",
+            "exampleSk": "Novela zákona mení postup pri reklamáciách.",
+            "exampleUk": "Новела закону змінює порядок розгляду рекламацій."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u05-l01-pravny-system-w01",
+          "sk": "právny predpis",
+          "uk": "нормативно-правовий акт",
+          "pronunciationUk": "пра:вни: предпіс",
+          "exampleSk": "Každý všeobecne záväzný právny predpis musí byť zverejnený.",
+          "exampleUk": "Кожен загальнообов’язковий нормативно-правовий акт має бути оприлюднений.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l01-pravny-system-w02",
+          "sk": "ústava",
+          "uk": "конституція",
+          "pronunciationUk": "у:става",
+          "exampleSk": "Ústava je najvyšší právny predpis štátu.",
+          "exampleUk": "Конституція — найвищий нормативний акт держави.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l01-pravny-system-w03",
+          "sk": "vyhláška",
+          "uk": "підзаконний акт міністерства",
+          "pronunciationUk": "вигла:шка",
+          "exampleSk": "Vyhláška ministerstva podrobnejšie upravuje postup podľa zákona.",
+          "exampleUk": "Акт міністерства докладніше регулює порядок за законом.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l01-pravny-system-w04",
+          "sk": "účinnosť",
+          "uk": "чинність, початок дії",
+          "pronunciationUk": "у:чінность",
+          "exampleSk": "Zákon nadobudne účinnosť o pol roka.",
+          "exampleUk": "Закон набуде чинності через пів року.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l01-pravny-system-w05",
+          "sk": "Zbierka zákonov",
+          "uk": "збірка законів (офіційне видання)",
+          "pronunciationUk": "збєрка зако:нов",
+          "exampleSk": "Nový zákon sa najprv zverejní v Zbierke zákonov.",
+          "exampleUk": "Новий закон спершу оприлюднюється в збірці законів.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l01-pravny-system-w06",
+          "sk": "novela",
+          "uk": "новела, зміна закону",
+          "pronunciationUk": "новела",
+          "exampleSk": "Novela zákona mení postup pri reklamáciách.",
+          "exampleUk": "Новела закону змінює порядок розгляду рекламацій.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u05-l01-pravny-system-ex01",
+          "lessonId": "b2-u05-l01-pravny-system",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "právny predpis",
+              "right": "нормативно-правовий акт"
+            },
+            {
+              "left": "ústava",
+              "right": "конституція"
+            },
+            {
+              "left": "vyhláška",
+              "right": "підзаконний акт міністерства"
+            },
+            {
+              "left": "účinnosť",
+              "right": "початок дії норми"
+            },
+            {
+              "left": "Zbierka zákonov",
+              "right": "офіційна збірка законів"
+            },
+            {
+              "left": "novela",
+              "right": "зміна закону"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u05-l01-pravny-system-w01",
+            "b2-u05-l01-pravny-system-w02",
+            "b2-u05-l01-pravny-system-w03",
+            "b2-u05-l01-pravny-system-w04",
+            "b2-u05-l01-pravny-system-w05",
+            "b2-u05-l01-pravny-system-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l01-pravny-system-ex02",
+          "lessonId": "b2-u05-l01-pravny-system",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Zákon musí byť "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "v súlade",
+                "v rozpore",
+                "na základe"
+              ],
+              "correct": "v súlade"
+            },
+            {
+              "text": " s ústavou."
+            }
+          ],
+          "explanation": "«V súlade s» означає «відповідно до»; закон має відповідати конституції.",
+          "order": 2,
+          "wordIds": [
+            "b2-u05-l01-pravny-system-w02",
+            "b2-u05-l01-pravny-system-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l01-pravny-system-ex03",
+          "lessonId": "b2-u05-l01-pravny-system",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Zákon nadobudol účinnosť "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "pre",
+                "do",
+                "od"
+              ],
+              "correct": "od"
+            },
+            {
+              "text": " 1. januára."
+            }
+          ],
+          "explanation": "Початок дії позначаємо прийменником «od» + дата.",
+          "order": 3,
+          "wordIds": [
+            "b2-u05-l01-pravny-system-w04",
+            "b2-u05-l01-pravny-system-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l01-pravny-system-ex04",
+          "lessonId": "b2-u05-l01-pravny-system",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Každý má právo ______ ochranu zdravia. (прийменник)",
+          "acceptedAnswers": [
+            "na"
+          ],
+          "explanation": "Právo na + знахідний: právo na ochranu.",
+          "order": 4,
+          "wordIds": [
+            "b2-u05-l01-pravny-system-w01"
+          ]
+        },
+        {
+          "id": "b2-u05-l01-pravny-system-ex05",
+          "lessonId": "b2-u05-l01-pravny-system",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Який акт має найвищу юридичну силу в державі?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "zákon",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "vyhláška ministerstva",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "ústava",
+              "correct": true
+            }
+          ],
+          "explanation": "Ústava стоїть на вершині піраміди; закон має відповідати їй, а vyhláška — закону.",
+          "order": 5,
+          "wordIds": [
+            "b2-u05-l01-pravny-system-w02",
+            "b2-u05-l01-pravny-system-w03",
+            "b2-u05-l01-pravny-system-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l01-pravny-system-ex06",
+          "lessonId": "b2-u05-l01-pravny-system",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Vyhláška ministerstva nesmie byť v rozpore s zákonom.",
+          "errorToken": "s",
+          "correctToken": "so",
+          "explanation": "Перед словом, що починається на з, вживаємо «so»: so zákonom.",
+          "order": 6,
+          "wordIds": [
+            "b2-u05-l01-pravny-system-w03",
+            "b2-u05-l01-pravny-system-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l01-pravny-system-ex07",
+          "lessonId": "b2-u05-l01-pravny-system",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Podľa zákonu máte právo na reklamáciu.",
+          "acceptedAnswers": [
+            "Podľa zákona máte právo na reklamáciu."
+          ],
+          "explanation": "Після «podľa» стоїть родовий відмінок: zákona.",
+          "order": 7,
+          "wordIds": [
+            "b2-u05-l01-pravny-system-w01",
+            "b2-u05-l01-pravny-system-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l01-pravny-system-ex08",
+          "lessonId": "b2-u05-l01-pravny-system",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перепиши, замінивши «je oprávnený» на «má právo».",
+          "source": "Každý je oprávnený podať sťažnosť.",
+          "acceptedAnswers": [
+            "Každý má právo podať sťažnosť.",
+            "Každý má právo na podanie sťažnosti.",
+            "Právo podať sťažnosť má každý."
+          ],
+          "explanation": "«Mať právo» + інфінітив або «mať právo na» + знахідний: právo na podanie.",
+          "order": 8,
+          "wordIds": [
+            "b2-u05-l01-pravny-system-w01"
+          ]
+        },
+        {
+          "id": "b2-u05-l01-pravny-system-ex09",
+          "lessonId": "b2-u05-l01-pravny-system",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Taras pracuje v Žiline a v správach narazil na titulok: «Nový zákon prináša zmeny pre nájomcov.» Zaujímalo ho, či sa týka aj jeho nájomnej zmluvy, a tak sa opýtal kolegyne Natálie. Vysvetlila mu, že titulky často skracujú. Odporučila mu nájsť zákon na portáli Slov-Lex a pozrieť sa na dva údaje: kedy bol zákon vyhlásený a odkedy je účinný. Zákon môže byť zverejnený v decembri, ale účinný až od januára. Taras zistil, že ide o novelu staršieho zákona, a preto si prečítal aktuálne znenie. Natália dodala, že vyhláška ministerstva len dopĺňa zákon, takže pri rozpore rozhoduje zákon. Pri sporných otázkach sa oplatí poradiť s právnikom.",
+          "questions": [
+            {
+              "question": "Що зацікавило Тараса?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "чи стосується новий закон і його договору оренди",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "скільки коштує оренда в Жиліні",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "чи можна скасувати конституцію",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Які дві дати радить перевірити Наталія?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "коли закон ухвалили й коли його скасують",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "дату народження автора й дату друку",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "коли закон оприлюднено й з якого дня він діє",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що Наталія каже про vyhlášku?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "вона завжди сильніша за закон",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "вона доповнює закон, а при суперечності має перевагу закон",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "вона не має жодного значення",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 9,
+          "wordIds": [
+            "b2-u05-l01-pravny-system-w01",
+            "b2-u05-l01-pravny-system-w03",
+            "b2-u05-l01-pravny-system-w05",
+            "b2-u05-l01-pravny-system-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l01-pravny-system-ex10",
+          "lessonId": "b2-u05-l01-pravny-system",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай запис про закон.",
+          "document": {
+            "title": "Záznam o predpise – ukážka",
+            "fields": [
+              {
+                "label": "Predpis",
+                "value": "Zákon o ochrane spotrebiteľa (ukážka)"
+              },
+              {
+                "label": "Vyhlásený v Zbierke zákonov",
+                "value": "15. 12. 2025"
+              },
+              {
+                "label": "Účinnosť od",
+                "value": "1. 1. 2026"
+              },
+              {
+                "label": "Znenie",
+                "value": "aktuálne, po poslednej novele"
+              }
+            ]
+          },
+          "question": "З якого дня нові правила реально діють?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "вони вже скасовані",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "з 15 грудня 2025",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "з 1 січня 2026",
+              "correct": true
+            }
+          ],
+          "explanation": "Дата vyhlásenia — оприлюднення; реально закон діє від дати účinnosť.",
+          "order": 10,
+          "wordIds": [
+            "b2-u05-l01-pravny-system-w01",
+            "b2-u05-l01-pravny-system-w04",
+            "b2-u05-l01-pravny-system-w05",
+            "b2-u05-l01-pravny-system-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l01-pravny-system-ex11",
+          "lessonId": "b2-u05-l01-pravny-system",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення колеги.",
+          "message": {
+            "sender": "Natália",
+            "body": "Dobrý deň, Taras, v zmluve je odkaz na zákon «v znení neskorších predpisov». To znamená, že platí aktuálne znenie, teda aj so všetkými novelami. Na portáli Slov-Lex väčšinou nájdeš aj staršie verzie, ak potrebuješ vedieť, čo platilo v deň podpisu zmluvy. Ak si nie si istý, spýtaj sa právnika."
+          },
+          "question": "Що означає формула «v znení neskorších predpisov»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "діє редакція закону з усіма пізнішими змінами",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "закон діє лише в початковому вигляді",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "закон скасовано",
+              "correct": false
+            }
+          ],
+          "explanation": "«V znení neskorších predpisov» — зі змінами, внесеними пізніше.",
+          "order": 11,
+          "wordIds": [
+            "b2-u05-l01-pravny-system-w01",
+            "b2-u05-l01-pravny-system-w05",
+            "b2-u05-l01-pravny-system-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l01-pravny-system-ex12",
+          "lessonId": "b2-u05-l01-pravny-system",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти ввічливо (на «Ви») радиш знайомій особі, де шукати чинну редакцію закону.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Aktuálne znenie zákona nájdi na portáli Slov-Lex.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Aktuálne znenie zákona nájsť na portáli Slov-Lex.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Aktuálne znenie zákon nájdete na portáli Slov-Lex.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Aktuálne znenie zákona nájdete na portáli Slov-Lex.",
+              "correct": true
+            }
+          ],
+          "explanation": "«Znenie zákona» — родовий; «nájdete» — Vy-форма; «nájdi» — неофіційна команда.",
+          "order": 12,
+          "wordIds": [
+            "b2-u05-l01-pravny-system-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l01-pravny-system-ex13",
+          "lessonId": "b2-u05-l01-pravny-system",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Хто зазвичай ухвалює або видає цей акт?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Národná rada"
+            },
+            {
+              "id": "c2",
+              "title": "Vláda a ministerstvá"
+            },
+            {
+              "id": "c3",
+              "title": "Obec"
+            }
+          ],
+          "items": [
+            {
+              "sk": "nariadenie vlády",
+              "category": "c2"
+            },
+            {
+              "sk": "ústavný zákon",
+              "category": "c1"
+            },
+            {
+              "sk": "zákon",
+              "category": "c1"
+            },
+            {
+              "sk": "VZN o miestnych poplatkoch",
+              "category": "c3"
+            },
+            {
+              "sk": "všeobecne záväzné nariadenie obce",
+              "category": "c3"
+            },
+            {
+              "sk": "vyhláška ministerstva",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Закони ухвалює парламент; nariadenia vlády й vyhlášky видають уряд і міністерства; VZN — громада.",
+          "order": 13,
+          "wordIds": [
+            "b2-u05-l01-pravny-system-w02",
+            "b2-u05-l01-pravny-system-w03",
+            "b2-u05-l01-pravny-system-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l01-pravny-system-ex14",
+          "lessonId": "b2-u05-l01-pravny-system",
+          "type": "true_false_list",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і оціни кожне твердження.",
+          "text": "Ústava je najvyšším právnym predpisom štátu. Zákony prijíma Národná rada. Vyhláška ministerstva nesmie byť v rozpore so zákonom. Zákon môže byť vyhlásený skôr, než nadobudne účinnosť. Neznalosť zákona zvyčajne neospravedlňuje.",
+          "statements": [
+            {
+              "sk": "Ústava stojí nad zákonmi.",
+              "correct": true
+            },
+            {
+              "sk": "Zákon môže byť zverejnený skôr, než začne reálne platiť.",
+              "correct": true
+            },
+            {
+              "sk": "Vyhláška ministerstva nesmie byť v rozpore so zákonom.",
+              "correct": true
+            },
+            {
+              "sk": "Vyhláška ministerstva má vždy väčšiu silu než zákon.",
+              "correct": false
+            },
+            {
+              "sk": "Zákony prijíma obecné zastupiteľstvo.",
+              "correct": false
+            }
+          ],
+          "explanation": "Закон ухвалює Národná rada; vyhláška слабша за закон; ústava стоїть вище за закони.",
+          "order": 14,
+          "wordIds": [
+            "b2-u05-l01-pravny-system-w01",
+            "b2-u05-l01-pravny-system-w02",
+            "b2-u05-l01-pravny-system-w03",
+            "b2-u05-l01-pravny-system-w04",
+            "b2-u05-l01-pravny-system-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перевірка нового правила",
+        "description": "Колега каже, що «вже діє новий закон про оренду». Ти перевіряєш, чи це так.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Де знайдеш текст закону?",
+            "options": [
+              {
+                "sk": "v starých novinách",
+                "correct": false
+              },
+              {
+                "sk": "na portáli Slov-Lex",
+                "correct": true
+              },
+              {
+                "sk": "v reklamnom letáku",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Які дві дати перевіриш?",
+            "options": [
+              {
+                "sk": "len dátum článku v správach",
+                "correct": false
+              },
+              {
+                "sk": "dátum narodenia poslanca",
+                "correct": false
+              },
+              {
+                "sk": "dátum vyhlásenia a dátum nadobudnutia účinnosti",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Яке речення правильне?",
+            "options": [
+              {
+                "sk": "Mám právo informácie cene.",
+                "correct": false
+              },
+              {
+                "sk": "Mám právo na informácie o cene.",
+                "correct": true
+              },
+              {
+                "sk": "Mám právo o informácie o cene.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Підзаконний акт суперечить закону. Що матиме перевагу?",
+            "options": [
+              {
+                "sk": "zákon",
+                "correct": true
+              },
+              {
+                "sk": "oba rovnako",
+                "correct": false
+              },
+              {
+                "sk": "vyhláška",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти орієнтуєшся в правових актах. Далі — договори: як читати їх уважно й помічати пастки."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти орієнтуєшся в правових актах. Далі — договори: як читати їх уважно й помічати пастки.",
+        "nowYouKnow": [
+          "ústava → zákon → nariadenie vlády / vyhláška → VZN",
+          "v súlade s + орудний · podľa zákona",
+          "účinnosť ≠ vyhlásenie · novela · v znení neskorších predpisov",
+          "právo na + знахідний · povinný + інфінітив"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u05-l02-zmluvy",
+          "title": "Договори: як читати й що перевіряти"
+        }
+      }
+    }
+  ]
+}

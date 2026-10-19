@@ -1,0 +1,844 @@
+{
+  "lessons": [
+    {
+      "id": "a2-u04-l01-lokal-jednotne",
+      "sectionId": "a2-u04",
+      "level": "A2",
+      "title": "Місцевий відмінок однини",
+      "topic": "Місцевий відмінок і місце",
+      "description": "Де? Про кого? Уся система закінчень місцевого відмінка однини: v dome, v parku, v hoteli, o bratovi, v meste, na námestí, v škole, v miestnosti — і узгодження прикметників.",
+      "order": 31,
+      "xpReward": 30,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Упевнено утворювати місцевий відмінок однини всіх трьох родів разом із прикметником і займенником.",
+      "completionMessage": "Ти знаєш систему місцевого відмінка однини. Далі — місцевий відмінок множини: v obchodoch, v Košiciach.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A2 · Місцевий відмінок і місце",
+        "title": "Місцевий відмінок однини",
+        "shortDescription": "Упевнено утворювати місцевий відмінок однини всіх трьох родів разом із прикметником і займенником.",
+        "outcomes": [
+          "утворювати чоловічий рід: v dome, v parku, v hoteli, o bratovi",
+          "утворювати середній рід: v meste, na Slovensku, na námestí, v múzeu",
+          "утворювати жіночий рід: v škole, na ulici, v miestnosti",
+          "узгоджувати прикметник і займенник: v novom, v novej, v mojom, v tej"
+        ],
+        "newWords": [
+          "miestnosť",
+          "peňaženka",
+          "kabelka",
+          "nechať",
+          "zadný",
+          "skrinka"
+        ],
+        "exercisesCount": 15,
+        "reward": "+30 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Чоловічий рід",
+          "text": "Неживі іменники з твердою основою мають -e: «dom → v dome», «obchod → v obchode», «stôl → na stole». Після k, g, h, ch — -u: «park → v parku», «vlak → vo vlaku», «roh → v rohu». М’яка основа і слова типу hotel мають -i: «hotel → v hoteli», «gauč → na gauči», «koberec → na koberci». Живі іменники (люди, тварини) мають -ovi: «brat → o bratovi», «kolega → o kolegovi».",
+          "examples": [
+            {
+              "sk": "Kľúče sú na stole.",
+              "uk": "Ключі на столі."
+            },
+            {
+              "sk": "Rozprávali sme sa o novom kolegovi.",
+              "uk": "Ми говорили про нового колегу."
+            }
+          ],
+          "shortRule": "-e / -u (після k, g, h, ch) / -i (м’які) / -ovi (живі)",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Середній рід",
+          "text": "На -o мають -e: «mesto → v meste», «auto → v aute», «okno → na okne». Але після k, g, h, ch — -u: «Slovensko → na Slovensku», «Česko → v Česku», «mlieko → v mlieku». На -e — -i: «more → pri mori»; на -ie — -í: «námestie → na námestí», «poschodie → na poschodí». На -eum — -u: «múzeum → v múzeu», але «centrum → v centre».",
+          "examples": [
+            {
+              "sk": "Bývame v malom meste pri Nitre.",
+              "uk": "Ми живемо в маленькому місті біля Нітри."
+            },
+            {
+              "sk": "Na námestí je trh.",
+              "uk": "На площі ринок."
+            }
+          ],
+          "shortRule": "-e / -u (k, g, h, ch) / -i, -í",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Жіночий рід і узгодження",
+          "text": "Тверда основа — -e: «škola → v škole», «banka → v banke», «Ukrajina → na Ukrajine». М’яка основа (-ca, -ňa, -ia) і іменники на приголосний — -i: «ulica → na ulici», «kuchyňa → v kuchyni», «kancelária → v kancelárii», «miestnosť → v miestnosti». Прикметник чоловічого й середнього роду має -om, жіночого — -ej: «v novom byte», «v malom meste», «na novej ulici». Займенники: «v mojom, v našom, v tom» / «v mojej, v našej, v tej».",
+          "examples": [
+            {
+              "sk": "Bývame v novom byte na tichej ulici.",
+              "uk": "Ми живемо в новій квартирі на тихій вулиці."
+            },
+            {
+              "sk": "V našej firme pracuje veľa Ukrajincov.",
+              "uk": "У нашій фірмі працює багато українців."
+            }
+          ],
+          "shortRule": "-om (чоловічий і середній) / -ej (жіночий)",
+          "commonMistakes": [
+            {
+              "mistake": "v parke",
+              "correct": "v parku"
+            },
+            {
+              "mistake": "o brat",
+              "correct": "o bratovi"
+            },
+            {
+              "mistake": "v novej byte",
+              "correct": "v novom byte"
+            },
+            {
+              "mistake": "na Slovenske",
+              "correct": "na Slovensku"
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a2-u04-l01-lokal-jednotne-w01",
+            "sk": "miestnosť",
+            "uk": "приміщення, кімната",
+            "pronunciationUk": "мієстност’",
+            "exampleSk": "V tejto miestnosti sa nefajčí.",
+            "exampleUk": "У цьому приміщенні не палять."
+          },
+          {
+            "wordId": "a2-u04-l01-lokal-jednotne-w02",
+            "sk": "peňaženka",
+            "uk": "гаманець",
+            "pronunciationUk": "пеняженка",
+            "exampleSk": "Peňaženku mám vždy v kabelke.",
+            "exampleUk": "Гаманець у мене завжди в сумочці."
+          },
+          {
+            "wordId": "a2-u04-l01-lokal-jednotne-w03",
+            "sk": "kabelka",
+            "uk": "(жіноча) сумочка",
+            "pronunciationUk": "кабелка",
+            "exampleSk": "Mobil mám v kabelke.",
+            "exampleUk": "Телефон у мене в сумочці."
+          },
+          {
+            "wordId": "a2-u04-l01-lokal-jednotne-w04",
+            "sk": "nechať",
+            "uk": "залишити",
+            "pronunciationUk": "нехат’",
+            "exampleSk": "Dáždnik som nechala v aute.",
+            "exampleUk": "Парасольку я залишила в машині."
+          },
+          {
+            "wordId": "a2-u04-l01-lokal-jednotne-w05",
+            "sk": "zadný",
+            "uk": "задній",
+            "pronunciationUk": "задни:",
+            "exampleSk": "Taška je na zadnom sedadle.",
+            "exampleUk": "Сумка на задньому сидінні."
+          },
+          {
+            "wordId": "a2-u04-l01-lokal-jednotne-w06",
+            "sk": "skrinka",
+            "uk": "шафка",
+            "pronunciationUk": "скрінка",
+            "exampleSk": "Veci si nechajte v skrinke v šatni.",
+            "exampleUk": "Речі залиште в шафці в роздягальні."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a2-u04-l01-lokal-jednotne-w01",
+          "sk": "miestnosť",
+          "uk": "приміщення, кімната",
+          "pronunciationUk": "мієстност’",
+          "exampleSk": "V tejto miestnosti sa nefajčí.",
+          "exampleUk": "У цьому приміщенні не палять.",
+          "level": "A2",
+          "topic": "Місцевий відмінок і місце",
+          "tags": [
+            "a2-u04",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-w02",
+          "sk": "peňaženka",
+          "uk": "гаманець",
+          "pronunciationUk": "пеняженка",
+          "exampleSk": "Peňaženku mám vždy v kabelke.",
+          "exampleUk": "Гаманець у мене завжди в сумочці.",
+          "level": "A2",
+          "topic": "Місцевий відмінок і місце",
+          "tags": [
+            "a2-u04",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-w03",
+          "sk": "kabelka",
+          "uk": "(жіноча) сумочка",
+          "pronunciationUk": "кабелка",
+          "exampleSk": "Mobil mám v kabelke.",
+          "exampleUk": "Телефон у мене в сумочці.",
+          "level": "A2",
+          "topic": "Місцевий відмінок і місце",
+          "tags": [
+            "a2-u04",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-w04",
+          "sk": "nechať",
+          "uk": "залишити",
+          "pronunciationUk": "нехат’",
+          "exampleSk": "Dáždnik som nechala v aute.",
+          "exampleUk": "Парасольку я залишила в машині.",
+          "level": "A2",
+          "topic": "Місцевий відмінок і місце",
+          "tags": [
+            "a2-u04",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-w05",
+          "sk": "zadný",
+          "uk": "задній",
+          "pronunciationUk": "задни:",
+          "exampleSk": "Taška je na zadnom sedadle.",
+          "exampleUk": "Сумка на задньому сидінні.",
+          "level": "A2",
+          "topic": "Місцевий відмінок і місце",
+          "tags": [
+            "a2-u04",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-w06",
+          "sk": "skrinka",
+          "uk": "шафка",
+          "pronunciationUk": "скрінка",
+          "exampleSk": "Veci si nechajte v skrinke v šatni.",
+          "exampleUk": "Речі залиште в шафці в роздягальні.",
+          "level": "A2",
+          "topic": "Місцевий відмінок і місце",
+          "tags": [
+            "a2-u04",
+            "a2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a2-u04-l01-lokal-jednotne-ex01",
+          "lessonId": "a2-u04-l01-lokal-jednotne",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "miestnosť",
+              "right": "приміщення"
+            },
+            {
+              "left": "peňaženka",
+              "right": "гаманець"
+            },
+            {
+              "left": "kabelka",
+              "right": "сумочка"
+            },
+            {
+              "left": "nechať",
+              "right": "залишити"
+            },
+            {
+              "left": "zadný",
+              "right": "задній"
+            },
+            {
+              "left": "skrinka",
+              "right": "шафка"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a2-u04-l01-lokal-jednotne-w01",
+            "a2-u04-l01-lokal-jednotne-w02",
+            "a2-u04-l01-lokal-jednotne-w03",
+            "a2-u04-l01-lokal-jednotne-w04",
+            "a2-u04-l01-lokal-jednotne-w05",
+            "a2-u04-l01-lokal-jednotne-w06"
+          ]
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-ex02",
+          "lessonId": "a2-u04-l01-lokal-jednotne",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Яке закінчення в місцевому відмінку?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "-e"
+            },
+            {
+              "id": "c2",
+              "title": "-u"
+            },
+            {
+              "id": "c3",
+              "title": "-i / -í"
+            },
+            {
+              "id": "c4",
+              "title": "-ovi"
+            }
+          ],
+          "items": [
+            {
+              "sk": "v parku",
+              "category": "c2"
+            },
+            {
+              "sk": "na ulici",
+              "category": "c3"
+            },
+            {
+              "sk": "na Slovensku",
+              "category": "c2"
+            },
+            {
+              "sk": "v meste",
+              "category": "c1"
+            },
+            {
+              "sk": "o bratovi",
+              "category": "c4"
+            },
+            {
+              "sk": "v hoteli",
+              "category": "c3"
+            },
+            {
+              "sk": "v múzeu",
+              "category": "c2"
+            },
+            {
+              "sk": "v miestnosti",
+              "category": "c3"
+            },
+            {
+              "sk": "vo vlaku",
+              "category": "c2"
+            },
+            {
+              "sk": "na stole",
+              "category": "c1"
+            },
+            {
+              "sk": "o kolegovi",
+              "category": "c4"
+            },
+            {
+              "sk": "v dome",
+              "category": "c1"
+            },
+            {
+              "sk": "v škole",
+              "category": "c1"
+            },
+            {
+              "sk": "na námestí",
+              "category": "c3"
+            }
+          ],
+          "explanation": "Тверді основи — -e; після k, g, h, ch і в múzeum — -u; м’які основи та -ie — -i / -í; живі іменники чоловічого роду — -ovi.",
+          "order": 2,
+          "wordIds": [
+            "a2-u04-l01-lokal-jednotne-w01"
+          ]
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-ex03",
+          "lessonId": "a2-u04-l01-lokal-jednotne",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Deti sa hrajú v "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "parke",
+                "parkovi",
+                "parku"
+              ],
+              "correct": "parku"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Після k — закінчення -u: v parku.",
+          "order": 3
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-ex04",
+          "lessonId": "a2-u04-l01-lokal-jednotne",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Mobil je v "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "kabelku",
+                "kabelki",
+                "kabelke"
+              ],
+              "correct": "kabelke"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Тверда основа жіночого роду: kabelka → v kabelke.",
+          "order": 4,
+          "wordIds": [
+            "a2-u04-l01-lokal-jednotne-w03"
+          ]
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-ex05",
+          "lessonId": "a2-u04-l01-lokal-jednotne",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Bývame v "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "novej",
+                "novom",
+                "nové"
+              ],
+              "correct": "novom"
+            },
+            {
+              "text": " byte na "
+            },
+            {
+              "blankId": "b2",
+              "options": [
+                "tichom",
+                "tichej",
+                "tichá"
+              ],
+              "correct": "tichej"
+            },
+            {
+              "text": " ulici."
+            }
+          ],
+          "explanation": "byt — чоловічий рід: v novom; ulica — жіночий: na tichej.",
+          "order": 5
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-ex06",
+          "lessonId": "a2-u04-l01-lokal-jednotne",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Na porade sme hovorili o novom ______. (kolega)",
+          "acceptedAnswers": [
+            "kolegovi"
+          ],
+          "explanation": "Живий іменник чоловічого роду: kolega → o kolegovi.",
+          "order": 6
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-ex07",
+          "lessonId": "a2-u04-l01-lokal-jednotne",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Dáždnik som nechala v ______. (auto)",
+          "acceptedAnswers": [
+            "aute"
+          ],
+          "explanation": "Середній рід на -o: auto → v aute.",
+          "order": 7,
+          "wordIds": [
+            "a2-u04-l01-lokal-jednotne-w04"
+          ]
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-ex08",
+          "lessonId": "a2-u04-l01-lokal-jednotne",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Як сказати «у готелі»?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "v hotele",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "v hoteli",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "v hotelu",
+              "correct": false
+            }
+          ],
+          "explanation": "hotel відмінюється як м’який тип: v hoteli.",
+          "order": 8
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-ex09",
+          "lessonId": "a2-u04-l01-lokal-jednotne",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Moja sestra tiež žije na Slovenske a pracuje v Trnave.",
+          "errorToken": "Slovenske",
+          "correctToken": "Slovensku",
+          "explanation": "Після k — -u: na Slovensku.",
+          "order": 9
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-ex10",
+          "lessonId": "a2-u04-l01-lokal-jednotne",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Taška je na zadnej sedadle v aute.",
+          "errorToken": "zadnej",
+          "correctToken": "zadnom",
+          "explanation": "sedadlo — середній рід, тому прикметник має -om: na zadnom sedadle.",
+          "order": 10,
+          "wordIds": [
+            "a2-u04-l01-lokal-jednotne-w05"
+          ]
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-ex11",
+          "lessonId": "a2-u04-l01-lokal-jednotne",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Живі іменники чоловічого роду в місцевому відмінку мають закінчення -ovi: o bratovi, o susedovi.",
+          "correctAnswer": true,
+          "explanation": "brat → o bratovi, sused → o susedovi, kolega → o kolegovi.",
+          "order": 11
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-ex12",
+          "lessonId": "a2-u04-l01-lokal-jednotne",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Утвори місцевий відмінок.",
+          "source": "v + naša kuchyňa",
+          "acceptedAnswers": [
+            "v našej kuchyni"
+          ],
+          "explanation": "naša → našej (жіночий рід), kuchyňa → kuchyni (м’яка основа).",
+          "order": 12
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-ex13",
+          "lessonId": "a2-u04-l01-lokal-jednotne",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення.",
+          "message": {
+            "sender": "Stratené a nájdené – stanica Žilina",
+            "body": "Dobrý deň, vo vlaku R 605 sme našli čiernu kabelku s Vaším menom. V kabelke je peňaženka a zväzok kľúčov. Kabelku si môžete vyzdvihnúť na stanici v Žiline, v kancelárii pri pokladniach, od 8:00 do 18:00. Prineste si doklad totožnosti."
+          },
+          "question": "Де можна забрати сумочку?",
+          "options": [
+            {
+              "id": "a",
+              "text": "у поліції в Жиліні",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "у поїзді R 605",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "на вокзалі в Жиліні, в офісі біля кас",
+              "correct": true
+            }
+          ],
+          "explanation": "na stanici, v kancelárii pri pokladniach — усе в місцевому відмінку.",
+          "order": 13,
+          "wordIds": [
+            "a2-u04-l01-lokal-jednotne-w02",
+            "a2-u04-l01-lokal-jednotne-w03"
+          ]
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-ex14",
+          "lessonId": "a2-u04-l01-lokal-jednotne",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Manžel",
+              "sk": "Nevieš, kde sú kľúče od auta?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Sú na stole v kuchyňa.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Sú na stol v kuchyni.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Sú na stole v kuchyni.",
+              "correct": true
+            }
+          ],
+          "explanation": "stôl → na stole, kuchyňa → v kuchyni.",
+          "order": 14
+        },
+        {
+          "id": "a2-u04-l01-lokal-jednotne-ex15",
+          "lessonId": "a2-u04-l01-lokal-jednotne",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти пояснюєш колезі, що залишив телефон у кабінеті.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Telefón som nechal v kancelárii.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Telefón som nechal v kanceláriu.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Telefón som nechal v kancelária.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Telefón som nechal v kancelárie.",
+              "correct": false
+            }
+          ],
+          "explanation": "kancelária → v kancelárii (-ia → -ii).",
+          "order": 15,
+          "wordIds": [
+            "a2-u04-l01-lokal-jednotne-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Де мої речі?",
+        "description": "Ти поспішаєш на роботу, але не можеш знайти свої речі. Допомагає сусідка по квартирі.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Сусідка: «Kde máš peňaženku?» (у сумочці)",
+            "options": [
+              {
+                "sk": "V kabelki.",
+                "correct": false
+              },
+              {
+                "sk": "V kabelke.",
+                "correct": true
+              },
+              {
+                "sk": "V kabelku.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«A kľúče? Nenechal si ich v aute?» Що вона питає?",
+            "options": [
+              {
+                "sk": "чи не загубив ти машину",
+                "correct": false
+              },
+              {
+                "sk": "чи не залишив ти ключі в машині",
+                "correct": true
+              },
+              {
+                "sk": "чи не купив ти нову машину",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти кажеш, що телефон, мабуть, у вітальні на дивані.",
+            "options": [
+              {
+                "sk": "Telefón je asi v obývačke na gauči.",
+                "correct": true
+              },
+              {
+                "sk": "Telefón je asi v obývačka na gauč.",
+                "correct": false
+              },
+              {
+                "sk": "Telefón je asi v obývačku na gauči.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Сусідка: «Tvoj dáždnik je na zadnom sedadle v mojom aute.» Де парасолька?",
+            "options": [
+              {
+                "sk": "на задньому сидінні в машині сусідки",
+                "correct": true
+              },
+              {
+                "sk": "біля дверей у твоїй машині",
+                "correct": false
+              },
+              {
+                "sk": "у кімнаті сусідки",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти знаєш систему місцевого відмінка однини. Далі — місцевий відмінок множини: v obchodoch, v Košiciach."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти знаєш систему місцевого відмінка однини. Далі — місцевий відмінок множини: v obchodoch, v Košiciach.",
+        "nowYouKnow": [
+          "v dome, v parku, v hoteli, o bratovi",
+          "v meste, na Slovensku, na námestí, v múzeu",
+          "v škole, na ulici, v miestnosti",
+          "v novom byte, na novej ulici, v mojom aute"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 15,
+        "xpReward": 30,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a2-u04-l02-lokal-mnozne",
+          "title": "Місцевий відмінок множини"
+        }
+      }
+    }
+  ]
+}

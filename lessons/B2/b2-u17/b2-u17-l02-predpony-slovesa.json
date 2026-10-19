@@ -1,0 +1,632 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u17-l02-predpony-slovesa",
+      "sectionId": "b2-u17",
+      "level": "B2",
+      "title": "Приставки дієслів: na-, pod-, pre-",
+      "topic": "Словотвір",
+      "description": "Як приставки змінюють значення дієслова: písať → napísať, podpísať, prepísať, zapísať; як пояснити дію з результатом чи повторенням.",
+      "order": 162,
+      "xpReward": 50,
+      "estimatedMinutes": 18,
+      "isPublished": true,
+      "intro": "Утворювати дієслова з приставками та розуміти, як приставка змінює значення дієслова.",
+      "completionMessage": "Ти вмієш утворювати дієслова з приставками. Далі — суфікси, які утворюють іменники дії.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Словотвір",
+        "title": "Приставки дієслів: na-, pod-, pre-",
+        "shortDescription": "Утворювати дієслова з приставками та розуміти, як приставка змінює значення дієслова.",
+        "outcomes": [
+          "розпізнавати найуживаніші приставки",
+          "утворювати дієслова з приставками",
+          "розуміти зміну значення",
+          "пояснювати, чи дія завершена"
+        ],
+        "newWords": [
+          "vyložiť",
+          "vyrobiť",
+          "dopísať",
+          "prepracovať",
+          "namaľovať"
+        ],
+        "exercisesCount": 11,
+        "reward": "+50 XP",
+        "estimatedMinutes": 18,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Приставка змінює значення",
+          "text": "Приставка на початку дієслова змінює його значення: «písať» (писати) → «napísať» (написати, дія завершена), «podpísať» (підписати), «zapísať» (записати), «prepísať» (переписати). Завершеність дії часто позначає приставка «na-».",
+          "examples": [
+            {
+              "sk": "Napísal som list.",
+              "uk": "Я написав листа."
+            },
+            {
+              "sk": "Podpísal dohodu.",
+              "uk": "Він підписав угоду."
+            }
+          ],
+          "shortRule": "napísať · podpísať · zapísať",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Повторення й переміщення",
+          "text": "Приставка «pre-» часто означає повторення або переміщення: «prepísať» (переписати), «preložiť» (перекласти). Приставка «pod-» означає дію знизу або додаткову дію: «podpísať» (підписати).",
+          "examples": [
+            {
+              "sk": "Prepíšem článok znova.",
+              "uk": "Я перепишу статтю знову."
+            },
+            {
+              "sk": "Preložil text do slovenčiny.",
+              "uk": "Він переклав текст словацькою."
+            }
+          ],
+          "shortRule": "prepísať · preložiť · podpísať",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Дія з приставкою й без неї",
+          "text": "Без приставки дія триває, з приставкою вона має результат. Порівняй: «Píšem list» (я пишу листа, дія триває) і «Napísal som list» (я написав листа, дія завершена).",
+          "examples": [
+            {
+              "sk": "Píšem list každý deň.",
+              "uk": "Я пишу листа щодня."
+            },
+            {
+              "sk": "Napísal som list včera.",
+              "uk": "Я написав листа вчора."
+            }
+          ],
+          "shortRule": "píšem · napísal som",
+          "commonMistakes": [
+            {
+              "mistake": "Napísal som list každý deň.",
+              "correct": "Píšem list každý deň."
+            },
+            {
+              "mistake": "Prepísať znamená podpísať.",
+              "correct": "Prepísať znamená napísať znova."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u17-l02-predpony-slovesa-w01",
+            "sk": "vyložiť",
+            "uk": "пояснити, викласти",
+            "pronunciationUk": "вилоҗіть",
+            "exampleSk": "Vyložil nám svoj názor na text.",
+            "exampleUk": "Він пояснив нам свою думку про текст."
+          },
+          {
+            "wordId": "b2-u17-l02-predpony-slovesa-w02",
+            "sk": "vyrobiť",
+            "uk": "виготовити",
+            "pronunciationUk": "виробіть",
+            "exampleSk": "Firma vyrobí nový model na jar.",
+            "exampleUk": "Фірма виготовить нову модель навесні."
+          },
+          {
+            "wordId": "b2-u17-l02-predpony-slovesa-w03",
+            "sk": "dopísať",
+            "uk": "дописати",
+            "pronunciationUk": "допісаті",
+            "exampleSk": "Dopíšem ešte dve vety do listu.",
+            "exampleUk": "Допишу ще два речення в листі."
+          },
+          {
+            "wordId": "b2-u17-l02-predpony-slovesa-w04",
+            "sk": "prepracovať",
+            "uk": "переробити",
+            "pronunciationUk": "препрацовати",
+            "exampleSk": "Text musím prepracovať od začiatku.",
+            "exampleUk": "Текст треба переробити з початку."
+          },
+          {
+            "wordId": "b2-u17-l02-predpony-slovesa-w05",
+            "sk": "namaľovať",
+            "uk": "намалювати (фарбами)",
+            "pronunciationUk": "намаляваті",
+            "exampleSk": "Namaľoval som plot na zeleno.",
+            "exampleUk": "Я пофарбував паркан у зелений колір."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u17-l02-predpony-slovesa-w01",
+          "sk": "vyložiť",
+          "uk": "пояснити, викласти",
+          "pronunciationUk": "вилоҗіть",
+          "exampleSk": "Vyložil nám svoj názor na text.",
+          "exampleUk": "Він пояснив нам свою думку про текст.",
+          "level": "B2",
+          "topic": "Словотвір",
+          "tags": [
+            "b2-u17",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u17-l02-predpony-slovesa-w02",
+          "sk": "vyrobiť",
+          "uk": "виготовити",
+          "pronunciationUk": "виробіть",
+          "exampleSk": "Firma vyrobí nový model na jar.",
+          "exampleUk": "Фірма виготовить нову модель навесні.",
+          "level": "B2",
+          "topic": "Словотвір",
+          "tags": [
+            "b2-u17",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u17-l02-predpony-slovesa-w03",
+          "sk": "dopísať",
+          "uk": "дописати",
+          "pronunciationUk": "допісаті",
+          "exampleSk": "Dopíšem ešte dve vety do listu.",
+          "exampleUk": "Допишу ще два речення в листі.",
+          "level": "B2",
+          "topic": "Словотвір",
+          "tags": [
+            "b2-u17",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u17-l02-predpony-slovesa-w04",
+          "sk": "prepracovať",
+          "uk": "переробити",
+          "pronunciationUk": "препрацовати",
+          "exampleSk": "Text musím prepracovať od začiatku.",
+          "exampleUk": "Текст треба переробити з початку.",
+          "level": "B2",
+          "topic": "Словотвір",
+          "tags": [
+            "b2-u17",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u17-l02-predpony-slovesa-w05",
+          "sk": "namaľovať",
+          "uk": "намалювати (фарбами)",
+          "pronunciationUk": "намаляваті",
+          "exampleSk": "Namaľoval som plot na zeleno.",
+          "exampleUk": "Я пофарбував паркан у зелений колір.",
+          "level": "B2",
+          "topic": "Словотвір",
+          "tags": [
+            "b2-u17",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u17-l02-predpony-slovesa-ex01",
+          "lessonId": "b2-u17-l02-predpony-slovesa",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай дієслово і значення.",
+          "pairs": [
+            {
+              "left": "napísať",
+              "right": "написати"
+            },
+            {
+              "left": "podpísať",
+              "right": "підписати"
+            },
+            {
+              "left": "zapísať",
+              "right": "записати"
+            },
+            {
+              "left": "prepísať",
+              "right": "переписати"
+            },
+            {
+              "left": "preložiť",
+              "right": "перекласти"
+            }
+          ],
+          "order": 1
+        },
+        {
+          "id": "b2-u17-l02-predpony-slovesa-ex02",
+          "lessonId": "b2-u17-l02-predpony-slovesa",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильну форму.",
+          "sentenceParts": [
+            {
+              "text": "Včera som "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "napísať",
+                "napísal",
+                "písal"
+              ],
+              "correct": "napísal"
+            },
+            {
+              "text": " list mamke."
+            }
+          ],
+          "explanation": "Минулий час, дія завершена: «napísal».",
+          "order": 2
+        },
+        {
+          "id": "b2-u17-l02-predpony-slovesa-ex03",
+          "lessonId": "b2-u17-l02-predpony-slovesa",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди помилку.",
+          "sentence": "Podpisať tu, prosím.",
+          "errorToken": "Podpisať",
+          "correctToken": "Podpíš",
+          "explanation": "Наказовий спосіб: «podpíš».",
+          "order": 3
+        },
+        {
+          "id": "b2-u17-l02-predpony-slovesa-ex04",
+          "lessonId": "b2-u17-l02-predpony-slovesa",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Včera som ______ dohodu. (виготовив)",
+          "acceptedAnswers": [
+            "vyrobil"
+          ],
+          "explanation": "Минулий час чоловічого роду: «podpísal».",
+          "order": 4,
+          "wordIds": [
+            "b2-u17-l02-predpony-slovesa-w02"
+          ]
+        },
+        {
+          "id": "b2-u17-l02-predpony-slovesa-ex05",
+          "lessonId": "b2-u17-l02-predpony-slovesa",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Prepracoval som list, lebo ho chcem poslať.",
+          "acceptedAnswers": [
+            "Preložil som list, lebo ho chcem poslať."
+          ],
+          "explanation": "«Prepísať» — переписати; «preložiť» — перекласти. Тут мова про переписування.",
+          "order": 5,
+          "wordIds": [
+            "b2-u17-l02-predpony-slovesa-w04"
+          ]
+        },
+        {
+          "id": "b2-u17-l02-predpony-slovesa-ex06",
+          "lessonId": "b2-u17-l02-predpony-slovesa",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «prepracovať»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "підписати",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "переробити",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "переписати",
+              "correct": false
+            }
+          ],
+          "order": 6
+        },
+        {
+          "id": "b2-u17-l02-predpony-slovesa-ex07",
+          "lessonId": "b2-u17-l02-predpony-slovesa",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яка форма означає «я переробив статтю»?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Písal som článok.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Prepracujem článok včera.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Prepracoval som článok.",
+              "correct": true
+            }
+          ],
+          "explanation": "Завершена дія з приставкою «pre-» у минулому часі.",
+          "order": 7,
+          "wordIds": [
+            "b2-u17-l02-predpony-slovesa-w04"
+          ]
+        },
+        {
+          "id": "b2-u17-l02-predpony-slovesa-ex08",
+          "lessonId": "b2-u17-l02-predpony-slovesa",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Napísal som list každý deň.",
+          "statement": "Я щодня писав листа.",
+          "correctAnswer": false,
+          "explanation": "Дія «napísal» завершена, тому не може означати «щодня».",
+          "order": 8
+        },
+        {
+          "id": "b2-u17-l02-predpony-slovesa-ex09",
+          "lessonId": "b2-u17-l02-predpony-slovesa",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Розподіли дієслова.",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Завершена дія"
+            },
+            {
+              "id": "c2",
+              "title": "Повторення"
+            },
+            {
+              "id": "c3",
+              "title": "Переклад"
+            }
+          ],
+          "items": [
+            {
+              "sk": "napísať",
+              "category": "c1"
+            },
+            {
+              "sk": "prepísať",
+              "category": "c2"
+            },
+            {
+              "sk": "podpísať",
+              "category": "c1"
+            },
+            {
+              "sk": "preložiť",
+              "category": "c3"
+            }
+          ],
+          "explanation": "Групування за значенням приставок.",
+          "order": 9
+        },
+        {
+          "id": "b2-u17-l02-predpony-slovesa-ex10",
+          "lessonId": "b2-u17-l02-predpony-slovesa",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери всі правильні твердження.",
+          "prompt": "Dohoda je podpísaná.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Dohoda má podpis",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Podpísal ju zástupca",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Prepísal dohodu, ako podpísal",
+              "correct": false
+            }
+          ],
+          "order": 10
+        },
+        {
+          "id": "b2-u17-l02-predpony-slovesa-ex11",
+          "lessonId": "b2-u17-l02-predpony-slovesa",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Podpíš mi to, prosím, a dík!",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": false
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": true
+            }
+          ],
+          "explanation": "«Dík» — розмовна форма подяки; «podpíš» — неформальний наказ.",
+          "order": 11
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Оформлення документа",
+        "description": "Ти в установі. Треба підписати заяву, переписати неправильний текст і записати термін на наступний тиждень.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Урядовець просить підписати заяву. Що відповідаєш? (ти — чоловік)",
+            "options": [
+              {
+                "sk": "Podpíšem ju hneď, mám pero.",
+                "correct": true
+              },
+              {
+                "sk": "Nepodpíšem, lebo som ju nečítal.",
+                "correct": false
+              },
+              {
+                "sk": "Podpisal som ju včera doma.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як попросиш переписати текст? (ti — жінка)",
+            "options": [
+              {
+                "sk": "Prelož mi text, je to slovenské.",
+                "correct": false
+              },
+              {
+                "sk": "Prepíš mi text, prosím, je tam chyba.",
+                "correct": true
+              },
+              {
+                "sk": "Napíš mi text, nič nie je zlé.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Урядовець питає, чи записав ти термін. Що відповідаєш?",
+            "options": [
+              {
+                "text": "Nie, termín je len v hlave.",
+                "correct": false
+              },
+              {
+                "text": "Áno, zapísal som si ho do kalendára.",
+                "correct": true
+              },
+              {
+                "text": "Nie, termín nemám, lebo som nič nezapísal.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як завершиш розмову? (ti — чоловік)",
+            "options": [
+              {
+                "sk": "Ďakujem, nič som nezapísal.",
+                "correct": false
+              },
+              {
+                "sk": "Ďakujem, zapísal som si všetko.",
+                "correct": true
+              },
+              {
+                "sk": "Dovidenia, nič nepodpísem.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш утворювати дієслова з приставками. Далі — суфікси, які утворюють іменники дії."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш утворювати дієслова з приставками. Далі — суфікси, які утворюють іменники дії.",
+        "nowYouKnow": [
+          "розпізнавати найуживаніші приставки",
+          "утворювати дієслова з приставками",
+          "розуміти зміну значення",
+          "пояснювати, чи дія завершена"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 11,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u17-l03-pripony-osoby",
+          "title": "Назви осіб і місць: -ník, -ka, -isko"
+        }
+      }
+    }
+  ]
+}

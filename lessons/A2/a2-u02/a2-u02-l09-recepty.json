@@ -1,0 +1,871 @@
+{
+  "lessons": [
+    {
+      "id": "a2-u02-l09-recepty",
+      "sectionId": "a2-u02",
+      "level": "A2",
+      "title": "Рецепти",
+      "topic": "Родовий відмінок",
+      "description": "Читаємо й пояснюємо рецепт: 500 g múky, dve lyžice cukru, štipka soli, päť vajec. Кількість у рецептах і родовий відмінок.",
+      "order": 19,
+      "xpReward": 30,
+      "estimatedMinutes": 22,
+      "isPublished": true,
+      "intro": "Зрозуміти словацький рецепт і пояснити свій рецепт словацькою.",
+      "completionMessage": "Ти розумієш словацькі рецепти. Далі — підсумок розділу.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A2 · Родовий відмінок",
+        "title": "Рецепти",
+        "shortDescription": "Зрозуміти словацький рецепт і пояснити свій рецепт словацькою.",
+        "outcomes": [
+          "читати список інгредієнтів із родовим",
+          "казати lyžica, lyžička, štipka + родовий",
+          "правильно казати dve vajcia, але päť vajec",
+          "розуміти інструкції: pridajte, zmiešajte, nechajte"
+        ],
+        "newWords": [
+          "múka",
+          "lyžica",
+          "lyžička",
+          "štipka",
+          "misa",
+          "cesto"
+        ],
+        "exercisesCount": 15,
+        "reward": "+30 XP",
+        "estimatedMinutes": 22,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Prísady",
+          "text": "Список інгредієнтів («prísady», «suroviny») — це майже завжди родовий: «500 g múky» (päťsto gramov múky), «250 ml mlieka», «2 lyžice cukru», «štipka soli», «kúsok masla». Скорочення: g, kg, ml, l, ks (kusy — штуки), PL — polievková lyžica (столова), ČL — čajová lyžička (чайна).",
+          "examples": [
+            {
+              "sk": "1 PL oleja",
+              "uk": "1 столова ложка олії"
+            },
+            {
+              "sk": "2 ČL soli",
+              "uk": "2 чайні ложки солі"
+            }
+          ],
+          "shortRule": "міра + родовий",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Dve vajcia, päť vajec",
+          "text": "Правило чисел діє і тут: «jedno vajce, dve / tri / štyri vajcia, päť vajec», «dva zemiaky, päť zemiakov», «tri cibule, šesť cibúľ», «dve mrkvy, päť mrkiev». Після «trochu, veľa, štipka» незлічуване — в однині: «trochu soli, veľa cesnaku».",
+          "examples": [
+            {
+              "sk": "Potrebujeme šesť vajec.",
+              "uk": "Нам потрібно шість яєць."
+            },
+            {
+              "sk": "Pridajte tri lyžice kyslej smotany.",
+              "uk": "Додайте три ложки сметани."
+            }
+          ],
+          "shortRule": "2–4 + називний мн., 5+ + родовий мн.",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Postup",
+          "text": "Інструкції в рецептах — ввічливий наказовий спосіб: «Zmiešajte múku s vajcami» (змішайте), «Pridajte štipku soli» (додайте — štipku у знахідному, soli в родовому), «Nechajte cesto odpočívať» (залиште тісто відпочити), «Pečte 30 minút». Родовий після прийменників: «do misy dajte múku», «z cesta urobte guľky», «bez cukru».",
+          "examples": [
+            {
+              "sk": "Do misy dajte múku a soľ.",
+              "uk": "У миску покладіть борошно й сіль."
+            },
+            {
+              "sk": "Z cesta vyformujte guľky.",
+              "uk": "З тіста сформуйте кульки."
+            }
+          ],
+          "shortRule": "pridajte, zmiešajte, nechajte; do misy, z cesta",
+          "commonMistakes": [
+            {
+              "mistake": "päť vajcia",
+              "correct": "päť vajec"
+            },
+            {
+              "mistake": "dve lyžice cukor",
+              "correct": "dve lyžice cukru"
+            },
+            {
+              "mistake": "štipka soľ",
+              "correct": "štipka soli"
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a2-u02-l09-recepty-w01",
+            "sk": "múka",
+            "uk": "борошно",
+            "pronunciationUk": "му:ка",
+            "exampleSk": "Na koláč potrebujeme pol kila múky.",
+            "exampleUk": "Для пирога нам потрібно пів кіло борошна."
+          },
+          {
+            "wordId": "a2-u02-l09-recepty-w02",
+            "sk": "lyžica",
+            "uk": "ложка (столова)",
+            "pronunciationUk": "лижіца",
+            "exampleSk": "Pridajte dve lyžice oleja.",
+            "exampleUk": "Додайте дві ложки олії."
+          },
+          {
+            "wordId": "a2-u02-l09-recepty-w03",
+            "sk": "lyžička",
+            "uk": "ложечка, чайна ложка",
+            "pronunciationUk": "лижічка",
+            "exampleSk": "Do čaju si dávam lyžičku medu.",
+            "exampleUk": "У чай я кладу ложечку меду."
+          },
+          {
+            "wordId": "a2-u02-l09-recepty-w04",
+            "sk": "štipka",
+            "uk": "дрібка, щіпка",
+            "pronunciationUk": "штіпка",
+            "exampleSk": "Do cesta dajte štipku soli.",
+            "exampleUk": "У тісто додайте дрібку солі."
+          },
+          {
+            "wordId": "a2-u02-l09-recepty-w05",
+            "sk": "misa",
+            "uk": "миска",
+            "pronunciationUk": "міса",
+            "exampleSk": "Vajcia vymiešajte vo veľkej mise.",
+            "exampleUk": "Збийте яйця у великій мисці."
+          },
+          {
+            "wordId": "a2-u02-l09-recepty-w06",
+            "sk": "cesto",
+            "uk": "тісто",
+            "pronunciationUk": "цесто",
+            "exampleSk": "Cesto musí odpočívať pol hodiny.",
+            "exampleUk": "Тісто має відпочивати пів години."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a2-u02-l09-recepty-w01",
+          "sk": "múka",
+          "uk": "борошно",
+          "pronunciationUk": "му:ка",
+          "exampleSk": "Na koláč potrebujeme pol kila múky.",
+          "exampleUk": "Для пирога нам потрібно пів кіло борошна.",
+          "level": "A2",
+          "topic": "Родовий відмінок",
+          "tags": [
+            "a2-u02",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u02-l09-recepty-w02",
+          "sk": "lyžica",
+          "uk": "ложка (столова)",
+          "pronunciationUk": "лижіца",
+          "exampleSk": "Pridajte dve lyžice oleja.",
+          "exampleUk": "Додайте дві ложки олії.",
+          "level": "A2",
+          "topic": "Родовий відмінок",
+          "tags": [
+            "a2-u02",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u02-l09-recepty-w03",
+          "sk": "lyžička",
+          "uk": "ложечка, чайна ложка",
+          "pronunciationUk": "лижічка",
+          "exampleSk": "Do čaju si dávam lyžičku medu.",
+          "exampleUk": "У чай я кладу ложечку меду.",
+          "level": "A2",
+          "topic": "Родовий відмінок",
+          "tags": [
+            "a2-u02",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u02-l09-recepty-w04",
+          "sk": "štipka",
+          "uk": "дрібка, щіпка",
+          "pronunciationUk": "штіпка",
+          "exampleSk": "Do cesta dajte štipku soli.",
+          "exampleUk": "У тісто додайте дрібку солі.",
+          "level": "A2",
+          "topic": "Родовий відмінок",
+          "tags": [
+            "a2-u02",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u02-l09-recepty-w05",
+          "sk": "misa",
+          "uk": "миска",
+          "pronunciationUk": "міса",
+          "exampleSk": "Vajcia vymiešajte vo veľkej mise.",
+          "exampleUk": "Збийте яйця у великій мисці.",
+          "level": "A2",
+          "topic": "Родовий відмінок",
+          "tags": [
+            "a2-u02",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u02-l09-recepty-w06",
+          "sk": "cesto",
+          "uk": "тісто",
+          "pronunciationUk": "цесто",
+          "exampleSk": "Cesto musí odpočívať pol hodiny.",
+          "exampleUk": "Тісто має відпочивати пів години.",
+          "level": "A2",
+          "topic": "Родовий відмінок",
+          "tags": [
+            "a2-u02",
+            "a2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a2-u02-l09-recepty-ex01",
+          "lessonId": "a2-u02-l09-recepty",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "múka",
+              "right": "борошно"
+            },
+            {
+              "left": "lyžica",
+              "right": "столова ложка"
+            },
+            {
+              "left": "lyžička",
+              "right": "чайна ложка"
+            },
+            {
+              "left": "štipka",
+              "right": "дрібка"
+            },
+            {
+              "left": "misa",
+              "right": "миска"
+            },
+            {
+              "left": "cesto",
+              "right": "тісто"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a2-u02-l09-recepty-w01",
+            "a2-u02-l09-recepty-w02",
+            "a2-u02-l09-recepty-w03",
+            "a2-u02-l09-recepty-w04",
+            "a2-u02-l09-recepty-w05",
+            "a2-u02-l09-recepty-w06"
+          ]
+        },
+        {
+          "id": "a2-u02-l09-recepty-ex02",
+          "lessonId": "a2-u02-l09-recepty",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Na palacinky potrebujeme dve "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "vajec",
+                "vajcia",
+                "vajce"
+              ],
+              "correct": "vajcia"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "dve + називний множини: vajcia.",
+          "order": 2
+        },
+        {
+          "id": "a2-u02-l09-recepty-ex03",
+          "lessonId": "a2-u02-l09-recepty",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Na koláč potrebujeme šesť "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "vajcia",
+                "vajec",
+                "vajce"
+              ],
+              "correct": "vajec"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "šesť + родовий множини: vajec.",
+          "order": 3
+        },
+        {
+          "id": "a2-u02-l09-recepty-ex04",
+          "lessonId": "a2-u02-l09-recepty",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Pridajte štipku ______. (сіль)",
+          "acceptedAnswers": [
+            "soli"
+          ],
+          "explanation": "štipka + родовий: soľ → soli.",
+          "order": 4,
+          "wordIds": [
+            "a2-u02-l09-recepty-w04"
+          ]
+        },
+        {
+          "id": "a2-u02-l09-recepty-ex05",
+          "lessonId": "a2-u02-l09-recepty",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Na cesto potrebujete päťsto gramov ______. (борошно)",
+          "acceptedAnswers": [
+            "múky"
+          ],
+          "explanation": "gramov + родовий: múka → múky.",
+          "order": 5,
+          "wordIds": [
+            "a2-u02-l09-recepty-w06"
+          ]
+        },
+        {
+          "id": "a2-u02-l09-recepty-ex06",
+          "lessonId": "a2-u02-l09-recepty",
+          "type": "cloze_text",
+          "skill": [
+            "grammar",
+            "reading"
+          ],
+          "instruction": "Заповни пропуски в тексті.",
+          "textParts": [
+            {
+              "text": "Na boršč potrebujeme päť "
+            },
+            {
+              "blankId": "b1",
+              "acceptedAnswers": [
+                "zemiakov"
+              ]
+            },
+            {
+              "text": ", dve cvikly, dve "
+            },
+            {
+              "blankId": "b2",
+              "acceptedAnswers": [
+                "mrkvy"
+              ]
+            },
+            {
+              "text": ", jednu cibuľu a pol kila "
+            },
+            {
+              "blankId": "b3",
+              "acceptedAnswers": [
+                "kapusty"
+              ]
+            },
+            {
+              "text": "."
+            }
+          ],
+          "hint": "zemiak, mrkva, kapusta",
+          "explanation": "päť zemiakov (родовий мн.), dve mrkvy (називний мн.), pol kila kapusty (родовий одн.).",
+          "order": 6
+        },
+        {
+          "id": "a2-u02-l09-recepty-ex07",
+          "lessonId": "a2-u02-l09-recepty",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «1 ČL cukru» в рецепті?",
+          "options": [
+            {
+              "id": "a",
+              "text": "один кілограм цукру",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "одна столова ложка цукру",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "одна чайна ложка цукру",
+              "correct": true
+            }
+          ],
+          "explanation": "ČL — čajová lyžička.",
+          "order": 7
+        },
+        {
+          "id": "a2-u02-l09-recepty-ex08",
+          "lessonId": "a2-u02-l09-recepty",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«PL» у словацькому рецепті означає столову ложку (polievková lyžica).",
+          "correctAnswer": true,
+          "explanation": "PL — polievková lyžica, ČL — čajová lyžička.",
+          "order": 8,
+          "wordIds": [
+            "a2-u02-l09-recepty-w02"
+          ]
+        },
+        {
+          "id": "a2-u02-l09-recepty-ex09",
+          "lessonId": "a2-u02-l09-recepty",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Na pizzu potrebujete dve lyžice olej a štipku soli.",
+          "errorToken": "olej",
+          "correctToken": "oleja",
+          "explanation": "lyžica + родовий: olej → oleja.",
+          "order": 9,
+          "wordIds": [
+            "a2-u02-l09-recepty-w02",
+            "a2-u02-l09-recepty-w04"
+          ]
+        },
+        {
+          "id": "a2-u02-l09-recepty-ex10",
+          "lessonId": "a2-u02-l09-recepty",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Halušky s bryndzou (pre 4 osoby). Prísady: 1 kg zemiakov, 400 g hladkej múky, soľ, 300 g bryndze, 150 g slaniny. Postup: Zemiaky ošúpte a nastrúhajte. Pridajte múku a štipku soli a urobte husté cesto. Cesto pretláčajte cez sitko na halušky do vriacej osolenej vody. Keď halušky vyplávajú na povrch, vyberte ich. Zmiešajte ich s bryndzou a navrch dajte opečenú slaninu.",
+          "questions": [
+            {
+              "question": "Скільки картоплі потрібно?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "400 грамів",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "1 кілограм",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "150 грамів",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що роблять із картоплею спочатку?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "змішують із бриндзою",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "чистять і натирають",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "варять цілою",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Коли виймають галушки з води?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "коли вода охолоне",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "коли вони спливуть на поверхню",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "через годину",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "a2-u02-l09-recepty-w04",
+            "a2-u02-l09-recepty-w06"
+          ]
+        },
+        {
+          "id": "a2-u02-l09-recepty-ex11",
+          "lessonId": "a2-u02-l09-recepty",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи (як у рецепті), що треба додати дрібку солі.",
+          "tokens": [
+            "Pridajte",
+            "soli",
+            "štipku",
+            "."
+          ],
+          "correctOrder": [
+            "Pridajte",
+            "štipku",
+            "soli",
+            "."
+          ],
+          "explanation": "štipku (знахідний) soli (родовий).",
+          "order": 11,
+          "wordIds": [
+            "a2-u02-l09-recepty-w04"
+          ]
+        },
+        {
+          "id": "a2-u02-l09-recepty-ex12",
+          "lessonId": "a2-u02-l09-recepty",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай повідомлення від сусідки.",
+          "message": {
+            "sender": "Suseda Mária",
+            "body": "Milá Oksana, posielam ti recept na moju bábovku: 4 vajcia, 200 g cukru, 250 g múky, 1 dl oleja, 1 dl mlieka a prášok do pečiva. Pečieš 45 minút pri 170 stupňoch. Nezabudni vymastiť formu!"
+          },
+          "question": "Скільки часу пекти бабку?",
+          "options": [
+            {
+              "id": "a",
+              "text": "4 години",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "170 хвилин",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "45 хвилин",
+              "correct": true
+            }
+          ],
+          "explanation": "Pečieš 45 minút — печеш 45 хвилин.",
+          "order": 12
+        },
+        {
+          "id": "a2-u02-l09-recepty-ex13",
+          "lessonId": "a2-u02-l09-recepty",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kolegyňa",
+              "sk": "Koľko vajec dávaš do palaciniek?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Na pol litra mlieka dávam tri vajec.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Na pol litra mlieko dávam tri vajcia.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Na pol litra mlieka dávam tri vajcia.",
+              "correct": true
+            }
+          ],
+          "explanation": "tri + називний: vajcia; pol litra + родовий: mlieka.",
+          "order": 13
+        },
+        {
+          "id": "a2-u02-l09-recepty-ex14",
+          "lessonId": "a2-u02-l09-recepty",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти пояснюєш колезі, що на вареники потрібно пів кіло борошна.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Na pirohy potrebuješ pol kilo múka.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Na pirohy potrebuješ pol kila múky.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Na pirohy potrebuješ pol kila múku.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Na pirohy potrebuješ pol kilom múky.",
+              "correct": false
+            }
+          ],
+          "explanation": "pol kila + родовий: múky.",
+          "order": 14,
+          "wordIds": [
+            "a2-u02-l09-recepty-w01"
+          ]
+        },
+        {
+          "id": "a2-u02-l09-recepty-ex15",
+          "lessonId": "a2-u02-l09-recepty",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні форми.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "štipka soľ",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "päť vajcia",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "štipka soli",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "päť vajec",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "dve lyžice cukru",
+              "correct": true
+            }
+          ],
+          "explanation": "5+ — родовий множини; міра + родовий.",
+          "order": 15,
+          "wordIds": [
+            "a2-u02-l09-recepty-w02",
+            "a2-u02-l09-recepty-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Український вечір",
+        "description": "Ти готуєш борщ для словацьких колег і пояснюєш рецепт.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Колега: «Koľko zemiakov?» (п’ять)",
+            "options": [
+              {
+                "sk": "Päť zemiaky.",
+                "correct": false
+              },
+              {
+                "sk": "Päť zemiakov.",
+                "correct": true
+              },
+              {
+                "sk": "Päť zemiak.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«A koľko kapusty?» (пів качана)",
+            "options": [
+              {
+                "sk": "Pol hlávky kapusty.",
+                "correct": true
+              },
+              {
+                "sk": "Pol hlávku kapustu.",
+                "correct": false
+              },
+              {
+                "sk": "Pol hlávka kapusta.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Колега читає: «Na záver pridajte lyžicu kyslej smotany.» Що треба зробити?",
+            "options": [
+              {
+                "sk": "не додавати сметану",
+                "correct": false
+              },
+              {
+                "sk": "спочатку додати ложку оцту",
+                "correct": false
+              },
+              {
+                "sk": "наприкінці додати ложку сметани",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти кажеш, що борщ без м’яса теж смачний.",
+            "options": [
+              {
+                "sk": "Boršč bez mäso je tiež dobrý.",
+                "correct": false
+              },
+              {
+                "sk": "Boršč bez mäsa je tiež dobrý.",
+                "correct": true
+              },
+              {
+                "sk": "Boršč bez mäsom je tiež dobrý.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти розумієш словацькі рецепти. Далі — підсумок розділу."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти розумієш словацькі рецепти. Далі — підсумок розділу.",
+        "nowYouKnow": [
+          "500 g múky, štipka soli, lyžica oleja",
+          "dve vajcia — päť vajec",
+          "PL і ČL",
+          "pridajte, zmiešajte, do misy, z cesta"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 15,
+        "xpReward": 30,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a2-u02-l10-genitiv-opakovanie",
+          "title": "Підсумок: родовий відмінок"
+        }
+      }
+    }
+  ]
+}

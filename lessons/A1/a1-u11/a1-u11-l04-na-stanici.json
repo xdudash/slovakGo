@@ -1,0 +1,700 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u11-l04-na-stanici",
+      "sectionId": "a1-u11",
+      "level": "A1",
+      "title": "На вокзалі",
+      "topic": "Транспорт",
+      "description": "Вокзал: čakáreň, úschovňa batožiny, batožina, informácie, koľaj, tabuľa odchodov.",
+      "order": 104,
+      "xpReward": 25,
+      "estimatedMinutes": 18,
+      "isPublished": true,
+      "intro": "Орієнтуватися на вокзалі й розуміти оголошення.",
+      "completionMessage": "Вокзал опановано. Далі — у поїзді.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Транспорт",
+        "title": "На вокзалі",
+        "shortDescription": "Орієнтуватися на вокзалі й розуміти оголошення.",
+        "outcomes": [
+          "розуміти табло й оголошення",
+          "розрізняти nástupište і koľaj",
+          "питати в informáciách",
+          "здати багаж в úschovňu"
+        ],
+        "newWords": [
+          "čakáreň",
+          "batožina",
+          "úschovňa",
+          "informácie",
+          "koľaj",
+          "tabuľa odchodov"
+        ],
+        "exercisesCount": 11,
+        "reward": "+25 XP",
+        "estimatedMinutes": 18,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "На вокзалі",
+          "text": "«Čakáreň» — зала очікування, «informácie» — довідкове бюро, «úschovňa batožiny» — камера схову, «batožina» — багаж, «tabuľa odchodov» — табло відправлень.",
+          "examples": [
+            {
+              "sk": "Kde je úschovňa batožiny?",
+              "uk": "Де камера схову?"
+            }
+          ],
+          "shortRule": "batožina = багаж",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Nástupište і koľaj",
+          "text": "«Nástupište» — платформа, «koľaj» — колія. Оголошення: «Vlak prichádza na druhú koľaj pri prvom nástupišti» — поїзд прибуває на другу колію біля першої платформи.",
+          "examples": [
+            {
+              "sk": "Vlak stojí na tretej koľaji.",
+              "uk": "Поїзд стоїть на третій колії."
+            }
+          ],
+          "shortRule": "koľaj = колія",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Оголошення",
+          "text": "«Vlak mešká približne 15 minút» — запізнюється ~15 хв. «Prosíme cestujúcich…» — просимо пасажирів… «Pozor, vlak prechádza» — увага, поїзд проходить (не зупиняється).",
+          "examples": [
+            {
+              "sk": "Prosíme cestujúcich, aby nastúpili.",
+              "uk": "Просимо пасажирів зайти у вагони."
+            }
+          ],
+          "shortRule": "cestujúci = пасажири",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u11-l04-na-stanici-w01",
+            "sk": "čakáreň",
+            "uk": "зала очікування",
+            "pronunciationUk": "чака:рень",
+            "exampleSk": "V čakárni je teplo.",
+            "exampleUk": "У залі очікування тепло."
+          },
+          {
+            "wordId": "a1-u11-l04-na-stanici-w02",
+            "sk": "batožina",
+            "uk": "багаж",
+            "pronunciationUk": "батожіна",
+            "exampleSk": "Máte veľa batožiny?",
+            "exampleUk": "У вас багато багажу?"
+          },
+          {
+            "wordId": "a1-u11-l04-na-stanici-w03",
+            "sk": "úschovňa",
+            "uk": "камера схову",
+            "pronunciationUk": "у:сховня",
+            "exampleSk": "Nechám kufor v úschovni.",
+            "exampleUk": "Залишу валізу в камері схову."
+          },
+          {
+            "wordId": "a1-u11-l04-na-stanici-w04",
+            "sk": "informácie",
+            "uk": "довідкове бюро; інформація",
+            "pronunciationUk": "інформа:ціє",
+            "exampleSk": "Spýtaj sa v informáciách.",
+            "exampleUk": "Запитай у довідковому."
+          },
+          {
+            "wordId": "a1-u11-l04-na-stanici-w05",
+            "sk": "koľaj",
+            "uk": "колія",
+            "pronunciationUk": "коляй",
+            "exampleSk": "Vlak prichádza na prvú koľaj.",
+            "exampleUk": "Поїзд прибуває на першу колію."
+          },
+          {
+            "wordId": "a1-u11-l04-na-stanici-w06",
+            "sk": "tabuľa odchodov",
+            "uk": "табло відправлень",
+            "pronunciationUk": "табуля одходоу",
+            "exampleSk": "Pozri sa na tabuľu odchodov.",
+            "exampleUk": "Подивись на табло відправлень."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u11-l04-na-stanici-w01",
+          "sk": "čakáreň",
+          "uk": "зала очікування",
+          "pronunciationUk": "чака:рень",
+          "exampleSk": "V čakárni je teplo.",
+          "exampleUk": "У залі очікування тепло.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l04-na-stanici-w02",
+          "sk": "batožina",
+          "uk": "багаж",
+          "pronunciationUk": "батожіна",
+          "exampleSk": "Máte veľa batožiny?",
+          "exampleUk": "У вас багато багажу?",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l04-na-stanici-w03",
+          "sk": "úschovňa",
+          "uk": "камера схову",
+          "pronunciationUk": "у:сховня",
+          "exampleSk": "Nechám kufor v úschovni.",
+          "exampleUk": "Залишу валізу в камері схову.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l04-na-stanici-w04",
+          "sk": "informácie",
+          "uk": "довідкове бюро; інформація",
+          "pronunciationUk": "інформа:ціє",
+          "exampleSk": "Spýtaj sa v informáciách.",
+          "exampleUk": "Запитай у довідковому.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l04-na-stanici-w05",
+          "sk": "koľaj",
+          "uk": "колія",
+          "pronunciationUk": "коляй",
+          "exampleSk": "Vlak prichádza na prvú koľaj.",
+          "exampleUk": "Поїзд прибуває на першу колію.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u11-l04-na-stanici-w06",
+          "sk": "tabuľa odchodov",
+          "uk": "табло відправлень",
+          "pronunciationUk": "табуля одходоу",
+          "exampleSk": "Pozri sa na tabuľu odchodov.",
+          "exampleUk": "Подивись на табло відправлень.",
+          "level": "A1",
+          "topic": "Транспорт",
+          "tags": [
+            "a1-u11",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u11-l04-na-stanici-ex01",
+          "lessonId": "a1-u11-l04-na-stanici",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "čakáreň",
+              "right": "зала очікування"
+            },
+            {
+              "left": "batožina",
+              "right": "багаж"
+            },
+            {
+              "left": "úschovňa",
+              "right": "камера схову"
+            },
+            {
+              "left": "koľaj",
+              "right": "колія"
+            },
+            {
+              "left": "informácie",
+              "right": "довідкове бюро"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u11-l04-na-stanici-w01",
+            "a1-u11-l04-na-stanici-w02",
+            "a1-u11-l04-na-stanici-w03",
+            "a1-u11-l04-na-stanici-w04",
+            "a1-u11-l04-na-stanici-w05"
+          ]
+        },
+        {
+          "id": "a1-u11-l04-na-stanici-ex02",
+          "lessonId": "a1-u11-l04-na-stanici",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Оголошення: «Vlak prichádza na druhú koľaj pri treťom nástupišti.» Куди йти?",
+          "options": [
+            {
+              "id": "a",
+              "text": "на 3-тю платформу, 2-га колія",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "на 3-тю колію",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "на 2-гу платформу",
+              "correct": false
+            }
+          ],
+          "explanation": "koľaj 2, nástupište 3.",
+          "order": 2
+        },
+        {
+          "id": "a1-u11-l04-na-stanici-ex03",
+          "lessonId": "a1-u11-l04-na-stanici",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Nechám kufor v "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "úschovňa",
+                "úschovni",
+                "úschovňu"
+              ],
+              "correct": "úschovni"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "v + місцевий.",
+          "order": 3,
+          "wordIds": [
+            "a1-u11-l04-na-stanici-w03"
+          ]
+        },
+        {
+          "id": "a1-u11-l04-na-stanici-ex04",
+          "lessonId": "a1-u11-l04-na-stanici",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Batožina» означає «багаж».",
+          "correctAnswer": true,
+          "explanation": "batožina.",
+          "order": 4,
+          "wordIds": [
+            "a1-u11-l04-na-stanici-w02"
+          ]
+        },
+        {
+          "id": "a1-u11-l04-na-stanici-ex05",
+          "lessonId": "a1-u11-l04-na-stanici",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Spýtaj sa v ______. (довідковому)",
+          "acceptedAnswers": [
+            "informáciách"
+          ],
+          "hint": "Місцевий мн.",
+          "explanation": "v informáciách.",
+          "order": 5,
+          "wordIds": [
+            "a1-u11-l04-na-stanici-w04"
+          ]
+        },
+        {
+          "id": "a1-u11-l04-na-stanici-ex06",
+          "lessonId": "a1-u11-l04-na-stanici",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Запитай, де камера схову.",
+          "tokens": [
+            "Kde",
+            "je",
+            "batožiny",
+            "?",
+            "úschovňa"
+          ],
+          "correctOrder": [
+            "Kde",
+            "je",
+            "úschovňa",
+            "batožiny",
+            "?"
+          ],
+          "explanation": "Kde je…?",
+          "order": 6,
+          "wordIds": [
+            "a1-u11-l04-na-stanici-w02",
+            "a1-u11-l04-na-stanici-w03"
+          ]
+        },
+        {
+          "id": "a1-u11-l04-na-stanici-ex07",
+          "lessonId": "a1-u11-l04-na-stanici",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Vlak prichádza na prvá koľaj.",
+          "errorToken": "prvá",
+          "correctToken": "prvú",
+          "explanation": "na + знахідний: prvú.",
+          "order": 7,
+          "wordIds": [
+            "a1-u11-l04-na-stanici-w05"
+          ]
+        },
+        {
+          "id": "a1-u11-l04-na-stanici-ex08",
+          "lessonId": "a1-u11-l04-na-stanici",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Оголошення: «Pozor, na štvrtú koľaj prechádza vlak.» Що робити?",
+          "options": [
+            {
+              "id": "a",
+              "text": "іти на 4-ту колію",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "сідати в поїзд",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "не підходити до краю — поїзд проходить без зупинки",
+              "correct": true
+            }
+          ],
+          "explanation": "prechádza — проходить без зупинки.",
+          "order": 8,
+          "wordIds": [
+            "a1-u11-l04-na-stanici-w05"
+          ]
+        },
+        {
+          "id": "a1-u11-l04-na-stanici-ex09",
+          "lessonId": "a1-u11-l04-na-stanici",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти не бачиш свого поїзда на табло. Питаєш у довідковому.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Nitra kde koľaj?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Dobrý deň, na ktorej koľaji je vlak do Nitry?",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Vlak Nitra koľaj je?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Koľaj Nitra, čau.",
+              "correct": false
+            }
+          ],
+          "explanation": "Na ktorej koľaji…?",
+          "order": 9,
+          "wordIds": [
+            "a1-u11-l04-na-stanici-w05"
+          ]
+        },
+        {
+          "id": "a1-u11-l04-na-stanici-ex10",
+          "lessonId": "a1-u11-l04-na-stanici",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що для чого на вокзалі?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Čakať"
+            },
+            {
+              "id": "c2",
+              "title": "Batožina"
+            },
+            {
+              "id": "c3",
+              "title": "Informácie"
+            }
+          ],
+          "items": [
+            {
+              "sk": "vozík na kufre",
+              "category": "c2"
+            },
+            {
+              "sk": "tabuľa odchodov",
+              "category": "c3"
+            },
+            {
+              "sk": "úschovňa",
+              "category": "c2"
+            },
+            {
+              "sk": "informácie",
+              "category": "c3"
+            },
+            {
+              "sk": "čakáreň",
+              "category": "c1"
+            },
+            {
+              "sk": "lavička",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Функції.",
+          "order": 10,
+          "wordIds": [
+            "a1-u11-l04-na-stanici-w01",
+            "a1-u11-l04-na-stanici-w02",
+            "a1-u11-l04-na-stanici-w03",
+            "a1-u11-l04-na-stanici-w04",
+            "a1-u11-l04-na-stanici-w06"
+          ]
+        },
+        {
+          "id": "a1-u11-l04-na-stanici-ex11",
+          "lessonId": "a1-u11-l04-na-stanici",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери частини вокзалу.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "matrika",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "pokladňa",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "čakáreň",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "úschovňa",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "radnica",
+              "correct": false
+            }
+          ],
+          "explanation": "Вокзал.",
+          "order": 11,
+          "wordIds": [
+            "a1-u11-l04-na-stanici-w01",
+            "a1-u11-l04-na-stanici-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Пересадка з валізами",
+        "description": "У тебе 3 години до пересадки в Жиліні з великою валізою.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти хочеш залишити валізу.",
+            "options": [
+              {
+                "sk": "Kde je batožina úschovňa?",
+                "correct": false
+              },
+              {
+                "sk": "Úschovni kde?",
+                "correct": false
+              },
+              {
+                "sk": "Kde je úschovňa batožiny?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Na konci haly, vpravo.» Де?",
+            "options": [
+              {
+                "sk": "у кінці залу праворуч",
+                "correct": true
+              },
+              {
+                "sk": "на другому поверсі",
+                "correct": false
+              },
+              {
+                "sk": "на платформі",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Оголошення: «Vlak do Košíc mešká 30 minút.» Що це означає?",
+            "options": [
+              {
+                "sk": "поїзд відправляється через 30 хв",
+                "correct": false
+              },
+              {
+                "sk": "поїзд до Кошиць запізнюється на 30 хв",
+                "correct": true
+              },
+              {
+                "sk": "поїзд скасовано",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти чекаєш у теплі. Де?",
+            "options": [
+              {
+                "sk": "V úschovni.",
+                "correct": false
+              },
+              {
+                "sk": "Na koľaji.",
+                "correct": false
+              },
+              {
+                "sk": "V čakárni.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Вокзал опановано. Далі — у поїзді."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Вокзал опановано. Далі — у поїзді.",
+        "nowYouKnow": [
+          "čakáreň, informácie, úschovňa batožiny",
+          "nástupište vs koľaj",
+          "tabuľa odchodov",
+          "оголошення: mešká, prechádza"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 11,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u11-l05-vo-vlaku",
+          "title": "У поїзді"
+        }
+      }
+    }
+  ]
+}

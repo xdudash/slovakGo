@@ -216,6 +216,18 @@ export async function getUserWords(uid: string): Promise<unknown[]> {
   }));
 }
 
+/**
+ * Minimal lesson index for access checks: id, level, order, published. Reading
+ * the full lesson JSON (~19 KB each, 1000+ lessons) on every completion would
+ * pull tens of megabytes from the database per request.
+ */
+export async function getLessonIndex(role: string): Promise<{ id: string; level: string; order: number; isPublished: boolean }[]> {
+  const sql = (role === "teacher" || role === "admin")
+    ? "SELECT id, json_extract(data_json, '$.level') AS level, json_extract(data_json, '$.order') AS ord, published FROM lessons ORDER BY rowid"
+    : "SELECT id, json_extract(data_json, '$.level') AS level, json_extract(data_json, '$.order') AS ord, published FROM lessons WHERE published = 1 ORDER BY rowid";
+  return (await query(sql)).map(r => ({ id: String(r.id), level: String(r.level ?? ""), order: Number(r.ord ?? 0), isPublished: Number(r.published) === 1 }));
+}
+
 export async function getLessons(role: string): Promise<unknown[]> {
   const sql = (role === "teacher" || role === "admin")
     ? "SELECT data_json FROM lessons ORDER BY rowid"

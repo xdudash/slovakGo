@@ -1,0 +1,803 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u01-l02-samohlasky",
+      "sectionId": "a0-u01",
+      "level": "A0",
+      "title": "Голосні: короткі й довгі",
+      "topic": "Абетка і звуки",
+      "description": "Шість голосних, їхні довгі пари і чому довжина звуку може змінити значення слова.",
+      "order": 2,
+      "xpReward": 15,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Чути й читати різницю між короткими та довгими голосними.",
+      "completionMessage": "Тепер ти розрізняєш короткі й довгі голосні. Далі — шиплячі звуки č, š, ž.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Абетка і звуки",
+        "title": "Голосні: короткі й довгі",
+        "shortDescription": "Чути й читати різницю між короткими та довгими голосними.",
+        "outcomes": [
+          "читати a, e, i, o, u, y та їхні довгі пари",
+          "розуміти, що довгота змінює значення",
+          "правильно читати i та y"
+        ],
+        "newWords": [
+          "pas",
+          "práca",
+          "káva",
+          "ulica",
+          "rýchlo",
+          "auto"
+        ],
+        "exercisesCount": 12,
+        "reward": "+15 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Шість голосних",
+          "text": "Короткі голосні: a, e, i, o, u, y. Вони звучать чисто, без «акання». Словацьке e — як українське «е» в слові «тепло», а не «є». Літери i та y читаються однаково — як українське «і».",
+          "examples": [
+            {
+              "sk": "pas",
+              "uk": "паспорт"
+            },
+            {
+              "sk": "ulica",
+              "uk": "вулиця"
+            },
+            {
+              "sk": "syn",
+              "uk": "син"
+            }
+          ],
+          "shortRule": "i = y = «і»",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Довгі голосні",
+          "text": "Знак ´ подовжує голосний приблизно вдвічі: á, é, í, ó, ú, ý. Довгота не означає наголосу! Наголос усе одно на першому складі.",
+          "examples": [
+            {
+              "sk": "káva",
+              "uk": "кава"
+            },
+            {
+              "sk": "práca",
+              "uk": "робота"
+            },
+            {
+              "sk": "rýchlo",
+              "uk": "швидко"
+            }
+          ],
+          "shortRule": "Довгий звук тягнемо, але наголос — на першому складі.",
+          "pronunciationRows": [
+            {
+              "letter": "á",
+              "readUk": "а:",
+              "exampleSk": "káva",
+              "exampleUk": "кава"
+            },
+            {
+              "letter": "é",
+              "readUk": "е:",
+              "exampleSk": "pekné",
+              "exampleUk": "гарне"
+            },
+            {
+              "letter": "í",
+              "readUk": "і:",
+              "exampleSk": "víno",
+              "exampleUk": "вино"
+            },
+            {
+              "letter": "ó",
+              "readUk": "о:",
+              "exampleSk": "gól",
+              "exampleUk": "гол"
+            },
+            {
+              "letter": "ú",
+              "readUk": "у:",
+              "exampleSk": "múka",
+              "exampleUk": "борошно"
+            },
+            {
+              "letter": "ý",
+              "readUk": "і:",
+              "exampleSk": "rýchlo",
+              "exampleUk": "швидко"
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Довжина змінює значення",
+          "text": "У словацькій є пари слів, які відрізняються лише довжиною звуку. Тому знак ´ — не прикраса, його треба читати.",
+          "examples": [
+            {
+              "sk": "rad",
+              "uk": "ряд"
+            },
+            {
+              "sk": "rád",
+              "uk": "радий"
+            },
+            {
+              "sk": "pas",
+              "uk": "паспорт"
+            },
+            {
+              "sk": "pás",
+              "uk": "пояс, смуга"
+            }
+          ],
+          "shortRule": "Не пропускай ´ — інакше вийде інше слово.",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u01-l02-samohlasky-w01",
+            "sk": "pas",
+            "uk": "паспорт",
+            "pronunciationUk": "пас",
+            "exampleSk": "Máte pas?",
+            "exampleUk": "У вас є паспорт?"
+          },
+          {
+            "wordId": "a0-u01-l02-samohlasky-w02",
+            "sk": "práca",
+            "uk": "робота",
+            "pronunciationUk": "пра:ца",
+            "exampleSk": "Práca je zaujímavá.",
+            "exampleUk": "Робота цікава."
+          },
+          {
+            "wordId": "a0-u01-l02-samohlasky-w03",
+            "sk": "káva",
+            "uk": "кава",
+            "pronunciationUk": "ка:ва",
+            "exampleSk": "Káva je horúca.",
+            "exampleUk": "Кава гаряча."
+          },
+          {
+            "wordId": "a0-u01-l02-samohlasky-w04",
+            "sk": "ulica",
+            "uk": "вулиця",
+            "pronunciationUk": "уліца",
+            "exampleSk": "Bývam na tejto ulici.",
+            "exampleUk": "Я живу на цій вулиці."
+          },
+          {
+            "wordId": "a0-u01-l02-samohlasky-w05",
+            "sk": "rýchlo",
+            "uk": "швидко",
+            "pronunciationUk": "рі:хло",
+            "exampleSk": "Autobus ide rýchlo.",
+            "exampleUk": "Автобус їде швидко."
+          },
+          {
+            "wordId": "a0-u01-l02-samohlasky-w06",
+            "sk": "auto",
+            "uk": "авто, машина",
+            "pronunciationUk": "ауто",
+            "exampleSk": "Auto stojí pred domom.",
+            "exampleUk": "Машина стоїть перед будинком."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u01-l02-samohlasky-w01",
+          "sk": "pas",
+          "uk": "паспорт",
+          "pronunciationUk": "пас",
+          "exampleSk": "Máte pas?",
+          "exampleUk": "У вас є паспорт?",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l02-samohlasky-w02",
+          "sk": "práca",
+          "uk": "робота",
+          "pronunciationUk": "пра:ца",
+          "exampleSk": "Práca je zaujímavá.",
+          "exampleUk": "Робота цікава.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l02-samohlasky-w03",
+          "sk": "káva",
+          "uk": "кава",
+          "pronunciationUk": "ка:ва",
+          "exampleSk": "Káva je horúca.",
+          "exampleUk": "Кава гаряча.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l02-samohlasky-w04",
+          "sk": "ulica",
+          "uk": "вулиця",
+          "pronunciationUk": "уліца",
+          "exampleSk": "Bývam na tejto ulici.",
+          "exampleUk": "Я живу на цій вулиці.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l02-samohlasky-w05",
+          "sk": "rýchlo",
+          "uk": "швидко",
+          "pronunciationUk": "рі:хло",
+          "exampleSk": "Autobus ide rýchlo.",
+          "exampleUk": "Автобус їде швидко.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u01-l02-samohlasky-w06",
+          "sk": "auto",
+          "uk": "авто, машина",
+          "pronunciationUk": "ауто",
+          "exampleSk": "Auto stojí pred domom.",
+          "exampleUk": "Машина стоїть перед будинком.",
+          "level": "A0",
+          "topic": "Абетка і звуки",
+          "tags": [
+            "a0-u01",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u01-l02-samohlasky-ex01",
+          "lessonId": "a0-u01-l02-samohlasky",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Як читається «y» у слові «syn»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "як «і»",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "як «и»",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "як «й»",
+              "correct": false
+            }
+          ],
+          "explanation": "У словацькій i та y звучать однаково — як українське «і».",
+          "order": 1
+        },
+        {
+          "id": "a0-u01-l02-samohlasky-ex02",
+          "lessonId": "a0-u01-l02-samohlasky",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери слова з довгим голосним.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "káva",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "auto",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "ulica",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "pas",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "rýchlo",
+              "correct": true
+            },
+            {
+              "id": "f",
+              "sk": "práca",
+              "correct": true
+            }
+          ],
+          "explanation": "Довгі голосні позначені знаком ´: á в káva і práca, ý в rýchlo.",
+          "order": 2,
+          "wordIds": [
+            "a0-u01-l02-samohlasky-w01",
+            "a0-u01-l02-samohlasky-w02",
+            "a0-u01-l02-samohlasky-w03",
+            "a0-u01-l02-samohlasky-w04",
+            "a0-u01-l02-samohlasky-w05",
+            "a0-u01-l02-samohlasky-w06"
+          ]
+        },
+        {
+          "id": "a0-u01-l02-samohlasky-ex03",
+          "lessonId": "a0-u01-l02-samohlasky",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай слово з перекладом.",
+          "pairs": [
+            {
+              "left": "pas",
+              "right": "паспорт"
+            },
+            {
+              "left": "práca",
+              "right": "робота"
+            },
+            {
+              "left": "káva",
+              "right": "кава"
+            },
+            {
+              "left": "ulica",
+              "right": "вулиця"
+            },
+            {
+              "left": "rýchlo",
+              "right": "швидко"
+            }
+          ],
+          "order": 3,
+          "wordIds": [
+            "a0-u01-l02-samohlasky-w01",
+            "a0-u01-l02-samohlasky-w02",
+            "a0-u01-l02-samohlasky-w03",
+            "a0-u01-l02-samohlasky-w04",
+            "a0-u01-l02-samohlasky-w05"
+          ]
+        },
+        {
+          "id": "a0-u01-l02-samohlasky-ex04",
+          "lessonId": "a0-u01-l02-samohlasky",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «rád»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "рад (порада)",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "ряд",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "радий",
+              "correct": true
+            }
+          ],
+          "explanation": "rád (довге á) — «радий». rad (коротке a) — «ряд». Довгота змінює значення.",
+          "order": 4
+        },
+        {
+          "id": "a0-u01-l02-samohlasky-ex05",
+          "lessonId": "a0-u01-l02-samohlasky",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «pas»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "паспорт",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "пес",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "пояс",
+              "correct": false
+            }
+          ],
+          "explanation": "pas (коротке a) — паспорт. pás (довге á) — пояс, смуга.",
+          "order": 5
+        },
+        {
+          "id": "a0-u01-l02-samohlasky-ex06",
+          "lessonId": "a0-u01-l02-samohlasky",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Знак ´ показує, на який склад падає наголос.",
+          "correctAnswer": false,
+          "explanation": "Ні, ´ означає довготу. Наголос у словацькій завжди на першому складі: KÁ-va, PRÁ-ca.",
+          "order": 6
+        },
+        {
+          "id": "a0-u01-l02-samohlasky-ex07",
+          "lessonId": "a0-u01-l02-samohlasky",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Як правильно прочитати «práca»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "ПРА-ка",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "пра-ЦА",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "ПРА:-ца",
+              "correct": true
+            }
+          ],
+          "explanation": "á — довге «а:», c — «ц», наголос на першому складі: PRÁ-ca.",
+          "order": 7
+        },
+        {
+          "id": "a0-u01-l02-samohlasky-ex08",
+          "lessonId": "a0-u01-l02-samohlasky",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Короткий чи довгий перший голосний?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Короткий"
+            },
+            {
+              "id": "c2",
+              "title": "Довгий"
+            }
+          ],
+          "items": [
+            {
+              "sk": "káva",
+              "category": "c2"
+            },
+            {
+              "sk": "auto",
+              "category": "c1"
+            },
+            {
+              "sk": "práca",
+              "category": "c2"
+            },
+            {
+              "sk": "víno",
+              "category": "c2"
+            },
+            {
+              "sk": "syn",
+              "category": "c1"
+            },
+            {
+              "sk": "pas",
+              "category": "c1"
+            },
+            {
+              "sk": "rýchlo",
+              "category": "c2"
+            },
+            {
+              "sk": "ulica",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Дивись на знак ´ над першим голосним.",
+          "order": 8,
+          "wordIds": [
+            "a0-u01-l02-samohlasky-w01",
+            "a0-u01-l02-samohlasky-w02",
+            "a0-u01-l02-samohlasky-w03",
+            "a0-u01-l02-samohlasky-w04",
+            "a0-u01-l02-samohlasky-w05",
+            "a0-u01-l02-samohlasky-w06"
+          ]
+        },
+        {
+          "id": "a0-u01-l02-samohlasky-ex09",
+          "lessonId": "a0-u01-l02-samohlasky",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Напиши слово «кава». Не забудь знак довготи!",
+          "sentence": "Dám si ______.",
+          "acceptedAnswers": [
+            "káva"
+          ],
+          "hint": "Довге «а» пишеться á.",
+          "explanation": "Káva — з довгим á на першому складі.",
+          "order": 9,
+          "wordIds": [
+            "a0-u01-l02-samohlasky-w03"
+          ]
+        },
+        {
+          "id": "a0-u01-l02-samohlasky-ex10",
+          "lessonId": "a0-u01-l02-samohlasky",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яке слово означає «швидко»?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "rýchlo",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "auto",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "rád",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "ulica",
+              "correct": false
+            }
+          ],
+          "explanation": "rýchlo: ý — довге «і», ch — «х».",
+          "order": 10,
+          "wordIds": [
+            "a0-u01-l02-samohlasky-w04",
+            "a0-u01-l02-samohlasky-w05",
+            "a0-u01-l02-samohlasky-w06"
+          ]
+        },
+        {
+          "id": "a0-u01-l02-samohlasky-ex11",
+          "lessonId": "a0-u01-l02-samohlasky",
+          "type": "drag_to_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери правильне слово: «Я маю паспорт».",
+          "sentence": "Mám ______.",
+          "draggable": [
+            "pas",
+            "pás",
+            "pes"
+          ],
+          "correct": "pas",
+          "explanation": "Паспорт — pas, з коротким a.",
+          "order": 11,
+          "wordIds": [
+            "a0-u01-l02-samohlasky-w01"
+          ]
+        },
+        {
+          "id": "a0-u01-l02-samohlasky-ex12",
+          "lessonId": "a0-u01-l02-samohlasky",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Скільки різних звуків дають літери i та y?",
+          "options": [
+            {
+              "id": "a",
+              "text": "один — «і»",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "два — «і» та «и»",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "три",
+              "correct": false
+            }
+          ],
+          "explanation": "i та y звучать однаково. Різниця лише в написанні.",
+          "order": 12
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "На рецепції гуртожитку",
+        "description": "Ти заселяєшся в гуртожиток. Адміністраторка говорить короткими словами — прочитай їх правильно.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Адміністраторка питає: «Pas, prosím.» Що вона хоче?",
+            "options": [
+              {
+                "text": "паспорт",
+                "correct": true
+              },
+              {
+                "text": "пояс",
+                "correct": false
+              },
+              {
+                "text": "пса",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "На дверях напис «Káva – 1 €». Що тут продають?",
+            "options": [
+              {
+                "text": "воду",
+                "correct": false
+              },
+              {
+                "text": "какао",
+                "correct": false
+              },
+              {
+                "text": "каву",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "У листку написано «ulica: Hlavná». Що це за рядок?",
+            "options": [
+              {
+                "text": "робота",
+                "correct": false
+              },
+              {
+                "text": "вулиця",
+                "correct": true
+              },
+              {
+                "text": "місто",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Колега каже «Som rád». Що він відчуває?",
+            "options": [
+              {
+                "text": "втому",
+                "correct": false
+              },
+              {
+                "text": "радість",
+                "correct": true
+              },
+              {
+                "text": "голод",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тепер ти розрізняєш короткі й довгі голосні. Далі — шиплячі звуки č, š, ž."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тепер ти розрізняєш короткі й довгі голосні. Далі — шиплячі звуки č, š, ž.",
+        "nowYouKnow": [
+          "читаю короткі й довгі голосні",
+          "i = y = «і»",
+          "довгота змінює значення: pas / pás, rad / rád",
+          "pas, práca, káva, ulica, rýchlo, auto"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u01-l03-makcen-c-s-z",
+          "title": "Шиплячі: č, š, ž, dž"
+        }
+      }
+    }
+  ]
+}

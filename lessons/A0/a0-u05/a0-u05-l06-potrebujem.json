@@ -1,0 +1,752 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u05-l06-potrebujem",
+      "sectionId": "a0-u05",
+      "level": "A0",
+      "title": "Мені потрібно…",
+      "topic": "Виживання в місті",
+      "description": "Як сказати, що тобі потрібно: potrebujem lekára, kľúč, peniaze, nabíjačku, heslo na Wi-Fi.",
+      "order": 46,
+      "xpReward": 15,
+      "estimatedMinutes": 20,
+      "isPublished": true,
+      "intro": "Висловити потребу й попросити про допомогу.",
+      "completionMessage": "Тепер ти можеш сказати, що тобі потрібно. Далі — «маю / не маю».",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Виживання в місті",
+        "title": "Мені потрібно…",
+        "shortDescription": "Висловити потребу й попросити про допомогу.",
+        "outcomes": [
+          "казати Potrebujem + що",
+          "питати Potrebujete pomoc?",
+          "просити heslo na Wi-Fi",
+          "казати, що це терміново: súrne"
+        ],
+        "newWords": [
+          "potrebovať",
+          "lekár",
+          "kľúč",
+          "peniaze",
+          "nabíjačka",
+          "heslo",
+          "súrne"
+        ],
+        "exercisesCount": 12,
+        "reward": "+15 XP",
+        "estimatedMinutes": 20,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Potrebujem…",
+          "text": "«Potrebujem» + знахідний відмінок: Potrebujem lekára. Potrebujem kľúč. Potrebujem pomoc. Жіночий рід часто змінює -a на -u: nabíjačka → nabíjačku.",
+          "examples": [
+            {
+              "sk": "Potrebujem nabíjačku.",
+              "uk": "Мені потрібен зарядний пристрій."
+            },
+            {
+              "sk": "Potrebujem pomoc.",
+              "uk": "Мені потрібна допомога."
+            }
+          ],
+          "shortRule": "Potrebujem + -u (жін.)",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Питання",
+          "text": "«Potrebujete niečo?» — Вам щось потрібно? «Potrebuješ pomoc?» — Тобі допомогти? Відповідь: «Áno, potrebujem…» або «Nie, ďakujem, nič nepotrebujem».",
+          "examples": [
+            {
+              "sk": "Potrebujete pomoc?",
+              "uk": "Вам допомогти?"
+            },
+            {
+              "sk": "Nič nepotrebujem.",
+              "uk": "Мені нічого не треба."
+            }
+          ],
+          "shortRule": "nič nepotrebujem — подвійне заперечення",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Терміново!",
+          "text": "«Súrne» — терміново. «Potrebujem súrne lekára» — мені терміново потрібен лікар. «Hneď» — одразу.",
+          "examples": [
+            {
+              "sk": "Je to súrne.",
+              "uk": "Це терміново."
+            },
+            {
+              "sk": "Potrebujem to hneď.",
+              "uk": "Мені це потрібно одразу."
+            }
+          ],
+          "shortRule": "súrne = терміново",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u05-l06-potrebujem-w01",
+            "sk": "potrebovať",
+            "uk": "потребувати",
+            "pronunciationUk": "потребовать",
+            "exampleSk": "Potrebujem vašu pomoc.",
+            "exampleUk": "Мені потрібна ваша допомога."
+          },
+          {
+            "wordId": "a0-u05-l06-potrebujem-w02",
+            "sk": "lekár",
+            "uk": "лікар",
+            "pronunciationUk": "лєка:р",
+            "exampleSk": "Potrebujem lekára.",
+            "exampleUk": "Мені потрібен лікар."
+          },
+          {
+            "wordId": "a0-u05-l06-potrebujem-w03",
+            "sk": "kľúč",
+            "uk": "ключ",
+            "pronunciationUk": "кл’у:ч",
+            "exampleSk": "Nemôžem nájsť kľúč.",
+            "exampleUk": "Не можу знайти ключ."
+          },
+          {
+            "wordId": "a0-u05-l06-potrebujem-w04",
+            "sk": "peniaze",
+            "uk": "гроші",
+            "pronunciationUk": "пеніазе",
+            "exampleSk": "Potrebujem vybrať peniaze.",
+            "exampleUk": "Мені треба зняти гроші."
+          },
+          {
+            "wordId": "a0-u05-l06-potrebujem-w05",
+            "sk": "nabíjačka",
+            "uk": "зарядний пристрій",
+            "pronunciationUk": "набі:ячка",
+            "exampleSk": "Máte nabíjačku na telefón?",
+            "exampleUk": "У вас є зарядка для телефону?"
+          },
+          {
+            "wordId": "a0-u05-l06-potrebujem-w06",
+            "sk": "heslo",
+            "uk": "пароль",
+            "pronunciationUk": "гесло",
+            "exampleSk": "Aké je heslo na Wi-Fi?",
+            "exampleUk": "Який пароль від Wi-Fi?"
+          },
+          {
+            "wordId": "a0-u05-l06-potrebujem-w07",
+            "sk": "súrne",
+            "uk": "терміново",
+            "pronunciationUk": "су:рне",
+            "exampleSk": "Potrebujem súrne pomoc.",
+            "exampleUk": "Мені терміново потрібна допомога."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u05-l06-potrebujem-w01",
+          "sk": "potrebovať",
+          "uk": "потребувати",
+          "pronunciationUk": "потребовать",
+          "exampleSk": "Potrebujem vašu pomoc.",
+          "exampleUk": "Мені потрібна ваша допомога.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l06-potrebujem-w02",
+          "sk": "lekár",
+          "uk": "лікар",
+          "pronunciationUk": "лєка:р",
+          "exampleSk": "Potrebujem lekára.",
+          "exampleUk": "Мені потрібен лікар.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l06-potrebujem-w03",
+          "sk": "kľúč",
+          "uk": "ключ",
+          "pronunciationUk": "кл’у:ч",
+          "exampleSk": "Nemôžem nájsť kľúč.",
+          "exampleUk": "Не можу знайти ключ.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l06-potrebujem-w04",
+          "sk": "peniaze",
+          "uk": "гроші",
+          "pronunciationUk": "пеніазе",
+          "exampleSk": "Potrebujem vybrať peniaze.",
+          "exampleUk": "Мені треба зняти гроші.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l06-potrebujem-w05",
+          "sk": "nabíjačka",
+          "uk": "зарядний пристрій",
+          "pronunciationUk": "набі:ячка",
+          "exampleSk": "Máte nabíjačku na telefón?",
+          "exampleUk": "У вас є зарядка для телефону?",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l06-potrebujem-w06",
+          "sk": "heslo",
+          "uk": "пароль",
+          "pronunciationUk": "гесло",
+          "exampleSk": "Aké je heslo na Wi-Fi?",
+          "exampleUk": "Який пароль від Wi-Fi?",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l06-potrebujem-w07",
+          "sk": "súrne",
+          "uk": "терміново",
+          "pronunciationUk": "су:рне",
+          "exampleSk": "Potrebujem súrne pomoc.",
+          "exampleUk": "Мені терміново потрібна допомога.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u05-l06-potrebujem-ex01",
+          "lessonId": "a0-u05-l06-potrebujem",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Potrebujem "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "nabíjačka",
+                "nabíjačku"
+              ],
+              "correct": "nabíjačku"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "potrebovať + знахідний: nabíjačka → nabíjačku.",
+          "order": 1,
+          "wordIds": [
+            "a0-u05-l06-potrebujem-w05"
+          ]
+        },
+        {
+          "id": "a0-u05-l06-potrebujem-ex02",
+          "lessonId": "a0-u05-l06-potrebujem",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "lekár",
+              "right": "лікар"
+            },
+            {
+              "left": "kľúč",
+              "right": "ключ"
+            },
+            {
+              "left": "peniaze",
+              "right": "гроші"
+            },
+            {
+              "left": "nabíjačka",
+              "right": "зарядка"
+            },
+            {
+              "left": "heslo",
+              "right": "пароль"
+            }
+          ],
+          "order": 2,
+          "wordIds": [
+            "a0-u05-l06-potrebujem-w02",
+            "a0-u05-l06-potrebujem-w03",
+            "a0-u05-l06-potrebujem-w04",
+            "a0-u05-l06-potrebujem-w05",
+            "a0-u05-l06-potrebujem-w06"
+          ]
+        },
+        {
+          "id": "a0-u05-l06-potrebujem-ex03",
+          "lessonId": "a0-u05-l06-potrebujem",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти в кав’ярні й хочеш підключитися до інтернету.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Heslo, čau.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Prepáčte, aké je heslo na Wi-Fi?",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Kde je internet lekár?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Potrebujem Wi-Fi heslo kde?",
+              "correct": false
+            }
+          ],
+          "explanation": "Aké je heslo na Wi-Fi?",
+          "order": 3,
+          "wordIds": [
+            "a0-u05-l06-potrebujem-w02",
+            "a0-u05-l06-potrebujem-w06"
+          ]
+        },
+        {
+          "id": "a0-u05-l06-potrebujem-ex04",
+          "lessonId": "a0-u05-l06-potrebujem",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Predavačka",
+              "sk": "Potrebujete niečo?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Potrebujem dobrý deň.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Áno, nič.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Nie, ďakujem, iba sa pozerám.",
+              "correct": true
+            }
+          ],
+          "explanation": "Iba sa pozerám — я лише дивлюся.",
+          "order": 4
+        },
+        {
+          "id": "a0-u05-l06-potrebujem-ex05",
+          "lessonId": "a0-u05-l06-potrebujem",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Nič nepotrebujem» означає «Мені нічого не потрібно».",
+          "correctAnswer": true,
+          "explanation": "Подвійне заперечення в словацькій — норма.",
+          "order": 5
+        },
+        {
+          "id": "a0-u05-l06-potrebujem-ex06",
+          "lessonId": "a0-u05-l06-potrebujem",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Je to ______, potrebujem lekára hneď!",
+          "acceptedAnswers": [
+            "súrne"
+          ],
+          "hint": "Терміново.",
+          "explanation": "súrne — терміново.",
+          "order": 6,
+          "wordIds": [
+            "a0-u05-l06-potrebujem-w02",
+            "a0-u05-l06-potrebujem-w07"
+          ]
+        },
+        {
+          "id": "a0-u05-l06-potrebujem-ex07",
+          "lessonId": "a0-u05-l06-potrebujem",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що тобі потрібна допомога.",
+          "tokens": [
+            ".",
+            "pomoc",
+            "Potrebujem"
+          ],
+          "correctOrder": [
+            "Potrebujem",
+            "pomoc",
+            "."
+          ],
+          "explanation": "Potrebujem + pomoc.",
+          "order": 7
+        },
+        {
+          "id": "a0-u05-l06-potrebujem-ex08",
+          "lessonId": "a0-u05-l06-potrebujem",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Potrebujem nabíjačka na telefón.",
+          "acceptedAnswers": [
+            "Potrebujem nabíjačku na telefón.",
+            "Potrebujem nabíjačku na telefón"
+          ],
+          "explanation": "nabíjačka → nabíjačku.",
+          "order": 8,
+          "wordIds": [
+            "a0-u05-l06-potrebujem-w05"
+          ]
+        },
+        {
+          "id": "a0-u05-l06-potrebujem-ex09",
+          "lessonId": "a0-u05-l06-potrebujem",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Potrebujem vybrať peniaze»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Мені треба зняти гроші",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "Мені треба заплатити гроші",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "Мені треба вибрати подарунок",
+              "correct": false
+            }
+          ],
+          "explanation": "vybrať peniaze — зняти гроші.",
+          "order": 9
+        },
+        {
+          "id": "a0-u05-l06-potrebujem-ex10",
+          "lessonId": "a0-u05-l06-potrebujem",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що терміново, а що може зачекати?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Súrne"
+            },
+            {
+              "id": "c2",
+              "title": "Môže počkať"
+            }
+          ],
+          "items": [
+            {
+              "sk": "polícia",
+              "category": "c1"
+            },
+            {
+              "sk": "kaderník",
+              "category": "c2"
+            },
+            {
+              "sk": "kino",
+              "category": "c2"
+            },
+            {
+              "sk": "lekár",
+              "category": "c1"
+            },
+            {
+              "sk": "záchranka",
+              "category": "c1"
+            },
+            {
+              "sk": "nová bunda",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Терміново — медицина й безпека.",
+          "order": 10,
+          "wordIds": [
+            "a0-u05-l06-potrebujem-w02",
+            "a0-u05-l06-potrebujem-w07"
+          ]
+        },
+        {
+          "id": "a0-u05-l06-potrebujem-ex11",
+          "lessonId": "a0-u05-l06-potrebujem",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Колега питає: «Potrebuješ s tým pomôcť?», бачачи важку коробку. Що він пропонує?",
+          "options": [
+            {
+              "id": "a",
+              "text": "купити коробку",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "щоб ти допоміг(ла) йому",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "допомогти тобі нести коробку",
+              "correct": true
+            }
+          ],
+          "explanation": "Potrebuješ pomôcť? — пропозиція допомоги.",
+          "order": 11
+        },
+        {
+          "id": "a0-u05-l06-potrebujem-ex12",
+          "lessonId": "a0-u05-l06-potrebujem",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні фрази.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Potrebujem lekára.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Nič nepotrebujem.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Potrebujem kľúč.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Potrebujem lekár.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Nič potrebujem.",
+              "correct": false
+            }
+          ],
+          "explanation": "lekár → lekára (знахідний), nič nepotrebujem.",
+          "order": 12,
+          "wordIds": [
+            "a0-u05-l06-potrebujem-w02",
+            "a0-u05-l06-potrebujem-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "У готелі після довгої дороги",
+        "description": "Ти заселяєшся в готель уночі.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Тобі потрібен ключ від номера.",
+            "options": [
+              {
+                "sk": "Dobrý večer, potrebujem kľúč od izby 15.",
+                "correct": true
+              },
+              {
+                "sk": "Potrebujem dobrú noc.",
+                "correct": false
+              },
+              {
+                "sk": "Kľúč je kde, čau.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти хочеш інтернет.",
+            "options": [
+              {
+                "sk": "Wi-Fi je súrne.",
+                "correct": false
+              },
+              {
+                "sk": "Potrebujem heslo lekára.",
+                "correct": false
+              },
+              {
+                "sk": "Aké je heslo na Wi-Fi?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Телефон розряджений.",
+            "options": [
+              {
+                "sk": "Nemáte nabíjačku na požičanie?",
+                "correct": true
+              },
+              {
+                "sk": "Potrebujem nabíjačka.",
+                "correct": false
+              },
+              {
+                "sk": "Nabíjačka je hneď.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Рецепціоніст: «Potrebujete ešte niečo?»",
+            "options": [
+              {
+                "sk": "Nie, ďakujem, to je všetko.",
+                "correct": true
+              },
+              {
+                "sk": "Áno, nič.",
+                "correct": false
+              },
+              {
+                "sk": "Dobré ráno.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тепер ти можеш сказати, що тобі потрібно. Далі — «маю / не маю»."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тепер ти можеш сказати, що тобі потрібно. Далі — «маю / не маю».",
+        "nowYouKnow": [
+          "Potrebujem + знахідний",
+          "Potrebujete niečo? — Nič nepotrebujem",
+          "súrne, hneď",
+          "heslo na Wi-Fi"
+        ],
+        "newWordsCount": 7,
+        "exercisesCompleted": 12,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u05-l07-mam-nemam",
+          "title": "Маю / не маю"
+        }
+      }
+    }
+  ]
+}

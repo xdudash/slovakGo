@@ -1,0 +1,858 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u01-l01-struktura-listu",
+      "sectionId": "b2-u01",
+      "level": "B2",
+      "title": "Структура офіційного листа",
+      "topic": "Офіційне листування",
+      "description": "Із чого складається офіційний лист словацькою: шапка відправника, адресат, місце й дата, рядок Vec, звернення, вступ, основна частина, закінчення, підпис і додатки — та який стиль до нього пасує.",
+      "order": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Читати й складати офіційний лист із правильною структурою та стильовими формулами.",
+      "completionMessage": "Ти знаєш, як побудований офіційний лист. Далі — звернення й закінчення: як почати лист і чим його завершити.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Офіційне листування",
+        "title": "Структура офіційного листа",
+        "shortDescription": "Читати й складати офіційний лист із правильною структурою та стильовими формулами.",
+        "outcomes": [
+          "називати частини листа й розташовувати їх у правильному порядку",
+          "формулювати рядок Vec: коротко й конкретно",
+          "будувати вступ формулами Obraciam sa na Vás vo veci… / V nadväznosti na…",
+          "витримувати офіційний стиль без розмовних слів"
+        ],
+        "newWords": [
+          "hlavička",
+          "vo veci",
+          "v nadväznosti na",
+          "odsek",
+          "náležitosti"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Частини листа",
+          "text": "Офіційний лист має сталу будову, і словацькі установи чекають саме на неї. Угорі зліва — шапка (hlavička) з даними відправника: ім’я, адреса, контакт. Нижче — адресат: установа чи особа (ліворуч чи праворуч — залежно від шаблону). Далі місце й дата: «V Nitre 12. 3. 2026». Тоді рядок «Vec:» — тема листа, записана іменниковою фразою, а не реченням: «Vec: Žiadosť o vydanie potvrdenia». Потім звернення, текст (вступ, основна частина, закінчення), прощання, підпис і, якщо потрібно, «Príloha:» — перелік додатків. Усе, що установа має знайти в листі, називаємо словом «náležitosti» — обов’язкові елементи.",
+          "examples": [
+            {
+              "sk": "V Nitre 12. 3. 2026",
+              "uk": "Місце й дата: у Нітрі, 12. 3. 2026"
+            },
+            {
+              "sk": "Príloha: kópia pracovnej zmluvy",
+              "uk": "Додаток: копія трудового договору"
+            }
+          ],
+          "shortRule": "hlavička → adresát → miesto a dátum → Vec → oslovenie → text → pozdrav → podpis → príloha",
+          "commonMistakes": [
+            {
+              "mistake": "Vec: Pomoc!",
+              "correct": "Vec: Žiadosť o predĺženie lehoty"
+            },
+            {
+              "mistake": "Píšem ti, lebo chcem vedieť…",
+              "correct": "Obraciam sa na Vás vo veci…"
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Офіційний стиль",
+          "text": "Офіційний лист не терпить розмовних слів («fakt», «no», «dík»), знаків оклику, смайлів і скорочень. Речення повні, тон спокійний і нейтральний. До однієї особи звертаємося на «Vy», а в листі форми Vy, Vás, Vám, Váš пишемо з великої букви. Офіційний стиль любить іменники: замість «Chcem, aby ste mi dali potvrdenie» кажемо «Žiadam Vás o vydanie potvrdenia». Ввічливість передають і формули: «Dovoľujem si Vás požiadať…» (+ інфінітив), «Budem Vám vďačná za rýchlu odpoveď.»",
+          "examples": [
+            {
+              "sk": "Dovoľujem si Vás požiadať o vydanie potvrdenia.",
+              "uk": "Дозволю собі попросити вас про видачу довідки."
+            },
+            {
+              "sk": "Budem Vám vďačná za rýchlu odpoveď.",
+              "uk": "Буду вам вдячна за швидку відповідь."
+            }
+          ],
+          "shortRule": "Vy, Vás, Vám — з великої · без розмовних слів · іменникові звороти",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Вступ, основа, закінчення",
+          "text": "Вступ відповідає на питання «чому я пишу»: «Obraciam sa na Vás vo veci…» (+ родовий) — звертаюся до вас у справі…; «V nadväznosti na náš telefonický rozhovor…» (+ знахідний) — на продовження нашої телефонної розмови; «Na základe Vášho listu…» (+ родовий) — на підставі вашого листа. В основній частині викладаємо факти по порядку: що сталося, коли, чого я хочу. Кожен абзац (odsek) — одна думка. Закінчення — прохання й подяка: «Vopred Vám ďakujem za vybavenie.»",
+          "examples": [
+            {
+              "sk": "Obraciam sa na Vás vo veci predĺženia pobytu.",
+              "uk": "Звертаюся до вас у справі продовження перебування."
+            },
+            {
+              "sk": "V nadväznosti na náš rozhovor Vám zasielam požadované dokumenty.",
+              "uk": "На продовження нашої розмови надсилаю вам потрібні документи."
+            }
+          ],
+          "shortRule": "vo veci + родовий · v nadväznosti na + знахідний",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u01-l01-struktura-listu-w01",
+            "sk": "hlavička",
+            "uk": "шапка листа з даними відправника",
+            "pronunciationUk": "главічка",
+            "exampleSk": "V hlavičke je meno, adresa a kontakt odosielateľa.",
+            "exampleUk": "У шапці — ім’я, адреса й контакт відправника."
+          },
+          {
+            "wordId": "b2-u01-l01-struktura-listu-w02",
+            "sk": "vo veci",
+            "uk": "у справі",
+            "pronunciationUk": "во вєці",
+            "exampleSk": "Obraciam sa na Vás vo veci predĺženia pobytu.",
+            "exampleUk": "Звертаюся до вас у справі продовження перебування."
+          },
+          {
+            "wordId": "b2-u01-l01-struktura-listu-w03",
+            "sk": "v nadväznosti na",
+            "uk": "на продовження, у зв’язку з",
+            "pronunciationUk": "в надвезності на",
+            "exampleSk": "V nadväznosti na náš rozhovor Vám zasielam dokumenty.",
+            "exampleUk": "На продовження нашої розмови надсилаю вам документи."
+          },
+          {
+            "wordId": "b2-u01-l01-struktura-listu-w04",
+            "sk": "odsek",
+            "uk": "абзац",
+            "pronunciationUk": "одсек",
+            "exampleSk": "Každý odsek listu má mať jednu hlavnú myšlienku.",
+            "exampleUk": "Кожен абзац листа має містити одну головну думку."
+          },
+          {
+            "wordId": "b2-u01-l01-struktura-listu-w05",
+            "sk": "náležitosti",
+            "uk": "обов’язкові елементи, реквізити",
+            "pronunciationUk": "на:лежітості",
+            "exampleSk": "Žiadosť musí obsahovať všetky náležitosti.",
+            "exampleUk": "Заява має містити всі обов’язкові елементи."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u01-l01-struktura-listu-w01",
+          "sk": "hlavička",
+          "uk": "шапка листа з даними відправника",
+          "pronunciationUk": "главічка",
+          "exampleSk": "V hlavičke je meno, adresa a kontakt odosielateľa.",
+          "exampleUk": "У шапці — ім’я, адреса й контакт відправника.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l01-struktura-listu-w02",
+          "sk": "vo veci",
+          "uk": "у справі",
+          "pronunciationUk": "во вєці",
+          "exampleSk": "Obraciam sa na Vás vo veci predĺženia pobytu.",
+          "exampleUk": "Звертаюся до вас у справі продовження перебування.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l01-struktura-listu-w03",
+          "sk": "v nadväznosti na",
+          "uk": "на продовження, у зв’язку з",
+          "pronunciationUk": "в надвезності на",
+          "exampleSk": "V nadväznosti na náš rozhovor Vám zasielam dokumenty.",
+          "exampleUk": "На продовження нашої розмови надсилаю вам документи.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l01-struktura-listu-w04",
+          "sk": "odsek",
+          "uk": "абзац",
+          "pronunciationUk": "одсек",
+          "exampleSk": "Každý odsek listu má mať jednu hlavnú myšlienku.",
+          "exampleUk": "Кожен абзац листа має містити одну головну думку.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u01-l01-struktura-listu-w05",
+          "sk": "náležitosti",
+          "uk": "обов’язкові елементи, реквізити",
+          "pronunciationUk": "на:лежітості",
+          "exampleSk": "Žiadosť musí obsahovať všetky náležitosti.",
+          "exampleUk": "Заява має містити всі обов’язкові елементи.",
+          "level": "B2",
+          "topic": "Офіційне листування",
+          "tags": [
+            "b2-u01",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u01-l01-struktura-listu-ex01",
+          "lessonId": "b2-u01-l01-struktura-listu",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "hlavička",
+              "right": "шапка з даними відправника"
+            },
+            {
+              "left": "vo veci",
+              "right": "у справі"
+            },
+            {
+              "left": "v nadväznosti na",
+              "right": "на продовження"
+            },
+            {
+              "left": "odsek",
+              "right": "абзац"
+            },
+            {
+              "left": "náležitosti",
+              "right": "обов’язкові елементи"
+            },
+            {
+              "left": "príloha",
+              "right": "додаток"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u01-l01-struktura-listu-w01",
+            "b2-u01-l01-struktura-listu-w02",
+            "b2-u01-l01-struktura-listu-w03",
+            "b2-u01-l01-struktura-listu-w04",
+            "b2-u01-l01-struktura-listu-w05"
+          ]
+        },
+        {
+          "id": "b2-u01-l01-struktura-listu-ex02",
+          "lessonId": "b2-u01-l01-struktura-listu",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Куди це належить: у вступ, основну частину чи закінчення?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Úvod"
+            },
+            {
+              "id": "c2",
+              "title": "Jadro"
+            },
+            {
+              "id": "c3",
+              "title": "Záver"
+            }
+          ],
+          "items": [
+            {
+              "sk": "Teším sa na Vašu odpoveď",
+              "category": "c3"
+            },
+            {
+              "sk": "V nadväznosti na náš rozhovor Vám píšem",
+              "category": "c1"
+            },
+            {
+              "sk": "Vopred Vám ďakujem za vybavenie",
+              "category": "c3"
+            },
+            {
+              "sk": "Potvrdenie potrebujem pre banku",
+              "category": "c2"
+            },
+            {
+              "sk": "Pracujem u Vás od septembra 2024",
+              "category": "c2"
+            },
+            {
+              "sk": "Obraciam sa na Vás vo veci vydania potvrdenia",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Вступ пояснює, чому пишемо; основна частина дає факти; закінчення — подяка чи очікування відповіді.",
+          "order": 2,
+          "wordIds": [
+            "b2-u01-l01-struktura-listu-w02",
+            "b2-u01-l01-struktura-listu-w03"
+          ]
+        },
+        {
+          "id": "b2-u01-l01-struktura-listu-ex03",
+          "lessonId": "b2-u01-l01-struktura-listu",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Obraciam sa na Vás "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "vo veci",
+                "na veci",
+                "pri veci"
+              ],
+              "correct": "vo veci"
+            },
+            {
+              "text": " predĺženia lehoty."
+            }
+          ],
+          "explanation": "Формула вступу: vo veci + родовий — у справі продовження терміну.",
+          "order": 3,
+          "wordIds": [
+            "b2-u01-l01-struktura-listu-w02"
+          ]
+        },
+        {
+          "id": "b2-u01-l01-struktura-listu-ex04",
+          "lessonId": "b2-u01-l01-struktura-listu",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "V nadväznosti "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "o",
+                "k",
+                "na"
+              ],
+              "correct": "na"
+            },
+            {
+              "text": " náš telefonický rozhovor Vám zasielam požadované dokumenty."
+            }
+          ],
+          "explanation": "Вираз «v nadväznosti na» вимагає знахідного відмінка: na náš rozhovor.",
+          "order": 4,
+          "wordIds": [
+            "b2-u01-l01-struktura-listu-w03"
+          ]
+        },
+        {
+          "id": "b2-u01-l01-struktura-listu-ex05",
+          "lessonId": "b2-u01-l01-struktura-listu",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Vec: Žiadosť ______ vydanie potvrdenia o zamestnaní. (прийменник «про»)",
+          "acceptedAnswers": [
+            "o"
+          ],
+          "explanation": "žiadosť o + знахідний: žiadosť o vydanie.",
+          "order": 5
+        },
+        {
+          "id": "b2-u01-l01-struktura-listu-ex06",
+          "lessonId": "b2-u01-l01-struktura-listu",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Яка тема листа (Vec) написана правильно?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Vec: Pomoc!!! Je to veľmi urgentné!!!",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Vec: Dobrý deň, potrebujem nutne nejaký papier",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Vec: Žiadosť o vydanie potvrdenia o zamestnaní",
+              "correct": true
+            }
+          ],
+          "explanation": "Тема — коротка іменникова фраза без звертань, окликів і розмовних слів.",
+          "order": 6
+        },
+        {
+          "id": "b2-u01-l01-struktura-listu-ex07",
+          "lessonId": "b2-u01-l01-struktura-listu",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Dovoľujem si Vás požiadam o vydanie potvrdenia.",
+          "errorToken": "požiadam",
+          "correctToken": "požiadať",
+          "explanation": "Після «dovoľujem si» стоїть інфінітив: požiadať.",
+          "order": 7
+        },
+        {
+          "id": "b2-u01-l01-struktura-listu-ex08",
+          "lessonId": "b2-u01-l01-struktura-listu",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Перепиши офіційно, почни зі слів «Žiadam Vás o…» (вжий іменник vydanie).",
+          "source": "Chcem, aby ste mi dali potvrdenie o štúdiu.",
+          "acceptedAnswers": [
+            "Žiadam Vás o vydanie potvrdenia o štúdiu."
+          ],
+          "explanation": "Офіційний стиль віддає перевагу іменникам: žiadam o vydanie + родовий potvrdenia.",
+          "order": 8
+        },
+        {
+          "id": "b2-u01-l01-struktura-listu-ex09",
+          "lessonId": "b2-u01-l01-struktura-listu",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "V nadväznosti na náš telefonický rozhovor Vám zasielam požadované dokumenty.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": true
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": false
+            }
+          ],
+          "explanation": "Формули з іменниками й Vy-форма — ознаки офіційного регістру.",
+          "order": 9,
+          "wordIds": [
+            "b2-u01-l01-struktura-listu-w03"
+          ]
+        },
+        {
+          "id": "b2-u01-l01-struktura-listu-ex10",
+          "lessonId": "b2-u01-l01-struktura-listu",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Oksana pracuje v Nitre ako laborantka a potrebuje potvrdenie o zamestnaní pre banku. Prvý raz napísala zamestnávateľovi krátky e-mail: «Ahoj, potrebujem papier z práce. Dík.» Personálna pracovníčka jej odpovedala až po týždni a požiadala ju, aby poslala formálnu žiadosť. Oksana si preto našla vzor. V hlavičke uviedla svoje meno a adresu, vpravo miesto a dátum. Do riadka Vec napísala: «Žiadosť o vydanie potvrdenia o zamestnaní». V úvode použila vetu: «Obraciam sa na Vás vo veci vydania potvrdenia, ktoré potrebujem pre banku.» Na záver sa poďakovala a pripojila podpis. Potvrdenie dostala do dvoch dní. Kolegyňa jej vysvetlila, že firmy vybavujú rýchlejšie žiadosti, v ktorých je hneď jasné, čo, prečo a dokedy sa žiada.",
+          "questions": [
+            {
+              "question": "Чому Оксана потребує довідку про роботу?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "для оренди квартири",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "для школи доньки",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "для банку",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що було не так із першим листом?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "він був занадто довгий",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "він був надто розмовний і без структури",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "його надіслали не на ту адресу",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що допомогло Оксані швидко отримати довідку?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "термінова пошта",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "особиста розмова з директором",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "чітка тема в рядку Vec і вступ, який пояснює, чому вона пише",
+                  "correct": true
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "b2-u01-l01-struktura-listu-w01",
+            "b2-u01-l01-struktura-listu-w02"
+          ]
+        },
+        {
+          "id": "b2-u01-l01-struktura-listu-ex11",
+          "lessonId": "b2-u01-l01-struktura-listu",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай шапку листа.",
+          "document": {
+            "title": "Úradný list – záhlavie",
+            "fields": [
+              {
+                "label": "Odosielateľ",
+                "value": "Oksana Melnyk, Hlavná 12, 949 01 Nitra"
+              },
+              {
+                "label": "Adresát",
+                "value": "LabTest Nitra, s. r. o., personálne oddelenie"
+              },
+              {
+                "label": "Miesto a dátum",
+                "value": "V Nitre 12. 3. 2026"
+              },
+              {
+                "label": "Vec",
+                "value": "Žiadosť o vydanie potvrdenia o zamestnaní"
+              }
+            ]
+          },
+          "question": "Що Оксана просить у листі?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "видати довідку з місця роботи",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "скасувати штраф",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "змінити адресу",
+              "correct": false
+            }
+          ],
+          "explanation": "Vec: Žiadosť o vydanie potvrdenia o zamestnaní — просить видати довідку з місця роботи.",
+          "order": 11
+        },
+        {
+          "id": "b2-u01-l01-struktura-listu-ex12",
+          "lessonId": "b2-u01-l01-struktura-listu",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай відповідь відділу кадрів.",
+          "message": {
+            "sender": "Mgr. Jana Hudáková, personálne oddelenie",
+            "body": "Dobrý deň, pani Melnyk, ďakujem za Vašu žiadosť. V nadväznosti na ňu Vám oznamujem, že potvrdenie o zamestnaní bude pripravené v stredu. Aby bola žiadosť úplná, prosím doplňte do hlavičky svoju adresu a dátum narodenia. Potvrdenie si môžete vyzdvihnúť na personálnom oddelení alebo Vám ho pošleme e-mailom. S pozdravom Jana Hudáková"
+          },
+          "question": "Що Оксана має зробити, щоб заява була повною?",
+          "options": [
+            {
+              "id": "a",
+              "text": "дописати в шапку свою адресу й дату народження",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "прийти особисто у середу",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "додати копію трудового договору",
+              "correct": false
+            }
+          ],
+          "explanation": "Aby bola žiadosť úplná — щоб заява була повною: doplniť adresu a dátum narodenia.",
+          "order": 12,
+          "wordIds": [
+            "b2-u01-l01-struktura-listu-w01",
+            "b2-u01-l01-struktura-listu-w03"
+          ]
+        },
+        {
+          "id": "b2-u01-l01-struktura-listu-ex13",
+          "lessonId": "b2-u01-l01-struktura-listu",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти пишеш до міського управління й починаєш лист: звертаєшся у справі продовження терміну.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Píšem ti vo veci predĺženia lehoty.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Obraciam sa na Vás vo veci predĺženia lehoty.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Obraciam sa na Vás vo veci predĺžiť lehotu.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Obraciam na Vás vo veci predĺženia lehoty.",
+              "correct": false
+            }
+          ],
+          "explanation": "Obraciam sa na Vás vo veci + родовий іменника; «obracať sa» — зворотне, «ti» — неофіційно.",
+          "order": 13,
+          "wordIds": [
+            "b2-u01-l01-struktura-listu-w02"
+          ]
+        },
+        {
+          "id": "b2-u01-l01-struktura-listu-ex14",
+          "lessonId": "b2-u01-l01-struktura-listu",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери офіційні речення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Ahoj, pošli mi to potvrdenie.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Potrebujem ten papier hneď!!!",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Žiadam Vás o vydanie potvrdenia.",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "V nadväznosti na náš rozhovor Vám zasielam dokumenty.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Dovoľujem si Vás požiadať o predĺženie lehoty.",
+              "correct": true
+            }
+          ],
+          "explanation": "Офіційні речення мають Vy-форму й формули; «Ahoj» та знаки оклику недоречні.",
+          "order": 14,
+          "wordIds": [
+            "b2-u01-l01-struktura-listu-w03"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Перший офіційний лист",
+        "description": "Оксана просить у відділі кадрів довідку для банку й складає лист за всіма правилами.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Що напишеш у рядку Vec?",
+            "options": [
+              {
+                "sk": "Žiadosť o vydanie potvrdenia o zamestnaní",
+                "correct": true
+              },
+              {
+                "sk": "Prosím rýchlo papier",
+                "correct": false
+              },
+              {
+                "sk": "Dobrý deň, mám otázku",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як почнеш лист?",
+            "options": [
+              {
+                "sk": "Obraciam sa na Vás vo veci vydania potvrdenia o zamestnaní.",
+                "correct": true
+              },
+              {
+                "sk": "Obraciam sa na Vás vo veci vydať potvrdenie.",
+                "correct": false
+              },
+              {
+                "sk": "Ahoj, potrebujem potvrdenie.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Де в листі стоїть «Príloha:»?",
+            "options": [
+              {
+                "text": "між шапкою й адресатом",
+                "correct": false
+              },
+              {
+                "text": "угорі, перед датою",
+                "correct": false
+              },
+              {
+                "text": "унизу, після підпису",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Яке речення найофіційніше?",
+            "options": [
+              {
+                "sk": "Dajte mi potvrdenie.",
+                "correct": false
+              },
+              {
+                "sk": "Chcem to potvrdenie.",
+                "correct": false
+              },
+              {
+                "sk": "Dovoľujem si Vás požiadať o vydanie potvrdenia.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти знаєш, як побудований офіційний лист. Далі — звернення й закінчення: як почати лист і чим його завершити."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти знаєш, як побудований офіційний лист. Далі — звернення й закінчення: як почати лист і чим його завершити.",
+        "nowYouKnow": [
+          "шапка → адресат → місце й дата → Vec → звернення → текст → підпис → додатки",
+          "Vec — іменникова фраза: Žiadosť o vydanie potvrdenia",
+          "Obraciam sa na Vás vo veci… · V nadväznosti na…",
+          "Vy, Vás, Vám з великої · без розмовних слів"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u01-l02-oslovenie-zaver",
+          "title": "Звернення й закінчення листа"
+        }
+      }
+    }
+  ]
+}

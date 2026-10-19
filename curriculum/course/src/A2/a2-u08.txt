@@ -1,0 +1,516 @@
+@unit a2-u08 | Оренда житла | Bývanie v prenájme
+
+@lesson inzerat-na-byt | Оголошення про оренду | Inzerát na byt
+desc: Як читати словацькі оголошення про оренду: prenajmem і hľadám, кількість кімнат, площа, ціна з енергіями чи без, скорочення.
+goal: Розуміти оголошення про оренду житла й коротко відповідати на нього.
+out: розрізняти prenajmem і hľadám, na prenájom і na predaj ;; розуміти garsónka, 2-izbový byt, rozloha 52 m² ;; читати скорочення й позначки: RK, bez RK, + energie, vrátane energií ;; написати перше повідомлення власникові
+done: Ти вмієш читати оголошення про оренду. Далі — огляд квартири: що подивитися й що запитати.
+T: Prenajmem чи hľadám? || Оголошення часто починається з дієслова. «Prenajmem byt» — здам квартиру (так пише власник), «Hľadám byt» — шукаю квартиру (так пише той, хто хоче винайняти житло). «Na prenájom» — в оренду, «na predaj» — на продаж. Часто пишуть і без дієслова: «Byt na prenájom, Nitra – Chrenová». || Prenajmem 2-izbový byt v centre Žiliny. = Здам двокімнатну квартиру в центрі Жиліни. ;; Mladý pár hľadá byt na dlhodobý prenájom. = Молода пара шукає квартиру в довгострокову оренду. || prenajmem — здаю · hľadám — шукаю · na prenájom — в оренду
+T: Кімнати й площа || Словаки рахують кімнати разом із вітальнею, але без кухні: «2-izbový byt» (dvojizbový) — вітальня, спальня і кухня. «3-izbový» (trojizbový) — три кімнати й кухня. «Garsónka» — одна кімната з кухонним кутом. Площа — «rozloha»: «rozloha 52 m²» читаємо «päťdesiatdva štvorcových metrov». || Garsónka má rozlohu 28 m². = Квартира-студія має площу 28 м². ;; Hľadáme trojizbový byt pre rodinu. = Ми шукаємо трикімнатну квартиру для родини. || 2-izbový — dvojizbový · 3-izbový — trojizbový · garsónka — студія
+T: Ціна і скорочення || «Cena: 650 € + energie» — 650 євро, а комунальні платежі окремо. «Vrátane energií» — включно з комунальними (vrátane + родовий). «RK» — realitná kancelária, агентство нерухомості; «bez RK» — без посередника, напряму від власника. «Provízia» — комісія агентства. «Voľný od 1. 11.» або «k dispozícii od 1. 11.» — вільна з 1 листопада. || Cena je 700 € vrátane energií. = Ціна — 700 євро включно з комунальними. ;; Byt je voľný ihneď. = Квартира вільна одразу. || + energie — окремо · vrátane energií — разом · bez RK — без агентства
+mis: Hľadám byt do prenájmu. => Hľadám byt na prenájom. ;; dva-izbový byt => dvojizbový byt ;; voľný od prvý novembra => voľný od prvého novembra
+W: inzerát | оголошення | інзера:т | Na internete som našla zaujímavý inzerát. | В інтернеті я знайшла цікаве оголошення.
+W: prenájom | оренда, найм | прена:йом | Byt je na dlhodobý prenájom. | Квартира здається в довгострокову оренду.
+W: garsónka | квартира-студія | гарсо:нка | Garsónka je malá, ale lacná. | Студія маленька, але дешева.
+W: dvojizbový | двокімнатний | двойізбові: | Bývame v dvojizbovom byte na sídlisku. | Ми живемо у двокімнатній квартирі в спальному районі.
+W: rozloha | площа | розлога | Aká je rozloha bytu? | Яка площа квартири?
+W: realitná kancelária | агентство нерухомості | реалітна: канцела:рія | Byt sme našli cez realitnú kanceláriu. | Квартиру ми знайшли через агентство нерухомості.
+W: provízia | комісія (посередника) | провізія | Provízia realitnej kancelárie je dosť vysoká. | Комісія агентства нерухомості досить висока.
+X mt: З’єднай. | inzerát = оголошення ;; prenájom = оренда ;; garsónka = квартира-студія ;; dvojizbový = двокімнатний ;; rozloha = площа ;; provízia = комісія
+X sc~: Хто пише оголошення «Prenajmem 3-izbový byt»? | - | *власник, який здає квартиру ;; людина, яка шукає квартиру ;; людина, яка продає квартиру
+= Prenajmem — здам в оренду; так пише власник житла.
+X dd: Обери. | Prenajmem [*dvojizbový/dvojizbová/dvojizbové] byt blízko stanice.
+= byt — чоловічий рід: dvojizbový byt.
+X dd: Обери. | Cena je 720 € vrátane [*energií/energiami/energiám].
+= vrátane + родовий: energie → energií.
+X fb: Допиши прийменник. | Hľadám dvojizbový byt ___ prenájom v Trnave. | na |
+= na prenájom — в оренду (na + знахідний).
+X tf: - | Inzerát: «Garsónka, 26 m², bez RK, voľná ihneď.» | Цю студію здає агентство нерухомості. | F
+= bez RK — без агентства, напряму від власника.
+X cat: Хто це пише? | Власник: Prenajmem garsónku v centre, Ponúkam byt na prenájom, Prenajmem 2-izbový byt ;; Шукач: Hľadám byt v Nitre, Mladý pár hľadá garsónku, Hľadáme 3-izbový byt
+= Prenajmem, ponúkam — здаю; hľadám, hľadá — шукаю.
+X fe: - | Mladá rodina hľadá [trojizbová>trojizbový] byt v Prešove.
+= byt — чоловічий рід: trojizbový byt.
+X doc: Прочитай оголошення. | Prenájom – 2-izbový byt, Banská Bystrica | Rozloha: 54 m² ;; Poschodie: 3. z 8, výťah ;; Cena: 590 € + energie ;; Provízia: bez RK ;; Voľný od: 1. 12. | Що з цього правда? | *за комунальні треба платити окремо ;; комунальні вже включені в ціну ;; агентству треба сплатити комісію
+= + energie — комунальні платежі окремо від 590 €; bez RK — комісії немає.
+X rc: - | Prenajmem čiastočne zariadený 3-izbový byt v Košiciach, sídlisko Terasa. Byt má rozlohu 68 m², je na 4. poschodí a dom má výťah. Kuchyňa je nová, v kúpeľni je sprchovací kút. K bytu patrí pivnica. Cena je 750 € mesačne vrátane energií. Byt je vhodný pre rodinu s deťmi, škôlka aj škola sú hneď vedľa. Domáce zvieratá nie sú povolené. Voľný od 1. januára. Bez RK, volajte po 17:00.
+q~: Скільки треба платити щомісяця? | *750 € разом із комунальними ;; 750 € і ще комунальні окремо ;; 68 € за квадратний метр
+q~: Що в цій квартирі не дозволено? | *тримати домашніх тварин ;; жити з дітьми ;; користуватися підвалом
+q~: Коли можна телефонувати власникові? | *після 17:00 ;; до 17:00 ;; лише з 1 січня
+X msg: Прочитай відповідь агентства. | Realitná kancelária DOMOV | Dobrý deň, ďakujeme za záujem. Garsónka na Dlhej ulici je už, žiaľ, prenajatá. Môžeme vám ponúknuť podobnú garsónku na Hlavnej ulici za 480 € + energie. Provízia je 200 €. | Що відповіло агентство? | *ця студія вже здана, але є схожа ;; студія ще вільна ;; агентство не бере комісії
+= je už prenajatá — уже здана в оренду; podobná garsónka — схожа студія.
+X so: - | Спитай, чи квартира ще вільна. | Je byt ešte voľný?
+= Je … ešte voľný? — чи ще вільний?
+X np: Ти пишеш власникові перше повідомлення щодо оголошення. | *Dobrý deň, píšem na váš inzerát. Je byt ešte voľný? ;; Dobrý deň, píšem do vášho inzerátu. Je byt ešte voľný? ;; Ahoj, píšem na tvoj inzerát. Je byt ešte voľný? ;; Dobrý deň, píšem na váš inzerát. Je byt ešte voľná?
+= písať na inzerát — відповідати на оголошення; незнайомій людині пишемо на «vy».
+X tr: Напиши скорочення повністю. | 3-izb. byt | trojizbový byt ;; 3-izbový byt
+= 3-izb. — trojizbový, тобто 3-izbový byt.
+F: Пошук квартири в Кошицях || Ти переїжджаєш до Кошиць на нову роботу й шукаєш житло через інтернет.
+S: Ти хочеш написати оголошення, що шукаєш студію. | *Hľadám garsónku v Košiciach. ;; Prenajmem garsónku v Košiciach. ;; Hľadám garsónka v Košiciach.
+S: В оголошенні: «Cena 520 € vrátane energií.» Скільки ти платитимеш щомісяця? | *520 € разом із комунальними ;; 520 € і ще комунальні окремо ;; 520 € лише за комунальні
+S: В оголошенні: «Bez RK.» Що це для тебе означає? | *не треба платити комісію агентству ;; квартира без меблів ;; квартира без балкона
+S: Ти пишеш власникові. | *Dobrý deň, píšem na váš inzerát. Kedy si môžem byt pozrieť? ;; Dobrý deň, píšem na váš inzerát. Kedy si môžem byt kúpiť? ;; Dobrý deň, prenajmem váš inzerát. Kedy si môžem byt pozrieť?
+R: prenajmem — hľadám, na prenájom ;; garsónka, dvojizbový a trojizbový byt, rozloha ;; + energie — vrátane energií ;; RK, bez RK, provízia
+
+@lesson prehliadka-bytu | Огляд квартири | Prehliadka bytu
+desc: Як домовитися про огляд квартири, що запитати у власника і як описати стан житла: zrekonštruovaný, v pôvodnom stave, vybavenie.
+goal: Домовитися про огляд і поставити власникові головні запитання про квартиру.
+out: домовлятися про огляд: Chcel(a) by som si pozrieť byt ;; питати про витрати, меблі й техніку ;; описувати стан: zrekonštruovaný, v pôvodnom stave ;; розуміти, що є у квартирі: vybavenie, spotrebiče
+done: Ти вмієш оглядати квартиру й ставити запитання. Далі — договір оренди: строк, обов’язки й розірвання.
+T: Домовитися про огляд || Зручно почати з умовного способу: «Chcel(a) by som si pozrieť byt» — я хотів(ла) б подивитися квартиру. Дієслово «pozrieť si» (подивитися, оглянути) вживаємо із «si» і знахідним відмінком. Час пропонуємо так: «Môžem prísť zajtra o piatej?», «Hodí sa vám sobota dopoludnia?» — вам зручно в суботу до обіду? || Chcela by som si pozrieť ten byt na Hlavnej ulici. = Я хотіла б подивитися ту квартиру на Головній вулиці. ;; Hodí sa vám štvrtok o šiestej? = Вам зручно в четвер о шостій? || pozrieť si + знахідний · Hodí sa vám…?
+T: Що запитати || Головні запитання: «Aké sú mesačné náklady?» — які щомісячні витрати? «Je byt zariadený?» — чи є меблі? «Aké spotrebiče sú v byte?» — яка є побутова техніка? «Je tu práčka?» «Môžem sa sem prihlásiť na pobyt?» — чи можна тут зареєструвати місце проживання? «Od kedy je byt voľný?» На «Je…?» відповідаємо «Áno, je» або «Nie, nie je». || Aké spotrebiče sú v kuchyni? = Яка техніка є на кухні? ;; Je v byte práčka? = У квартирі є пральна машина? || Je…? · Sú…? · Aké…? · Od kedy…?
+T: Стан квартири || «Zrekonštruovaný byt» — квартира після ремонту (нові вікна, підлога, ванна). «V pôvodnom stave» — без ремонту, як було колись. «Vybavenie» — обладнання й меблі: «kuchynská linka» (кухонний гарнітур), «spotrebiče» (побутова техніка). У розмові кажуть і «byt je po rekonštrukcii» — це те саме, що zrekonštruovaný. || Kúpeľňa je zrekonštruovaná, ale kuchyňa je v pôvodnom stave. = Ванна кімната після ремонту, а кухня — без ремонту. ;; Vybavenie bytu je nové. = Обладнання квартири нове. || zrekonštruovaný, po rekonštrukcii — після ремонту · v pôvodnom stave — без ремонту
+mis: Chcel by som pozrieť byt. => Chcel by som si pozrieť byt. ;; Je v byte pračka? => Je v byte práčka? ;; byt je v pôvodný stav => byt je v pôvodnom stave
+W: zrekonštruovaný | після ремонту, відремонтований | зреконштруовані: | Byt je kompletne zrekonštruovaný. | Квартира повністю відремонтована.
+W: rekonštrukcia | ремонт (капітальний), реконструкція | реконштрукція | Kúpeľňa je po rekonštrukcii. | Ванна кімната після ремонту.
+W: vybavenie | обладнання, оснащення | вібавеніе | Vybavenie kuchyne je úplne nové. | Обладнання кухні зовсім нове.
+W: spotrebič | побутовий прилад | спотребіч | Všetky spotrebiče v byte fungujú. | Усі побутові прилади в квартирі працюють.
+W: práčka | пральна машина | пра:чка | Práčka je v kúpeľni. | Пральна машина — у ванній.
+W: kuchynská linka | кухонний гарнітур | кухінска: лінка | Kuchynská linka je stará, ale funkčná. | Кухонний гарнітур старий, але все працює.
+X mt: З’єднай. | zrekonštruovaný = після ремонту ;; rekonštrukcia = ремонт ;; vybavenie = обладнання ;; spotrebič = побутовий прилад ;; práčka = пральна машина ;; kuchynská linka = кухонний гарнітур
+X dd: Обери. | Chcel by som [*si/sa/sebe] pozrieť váš byt.
+= pozrieť si — подивитися, оглянути (із si).
+X dd: Обери. | Kúpeľňa je zrekonštruovaná, ale kuchyňa je v pôvodnom [*stave/stav/stavu].
+= v + місцевий відмінок: stav → v pôvodnom stave.
+X fb: Допиши. | Byt má nové okná aj podlahy, je kompletne ___. (відремонтований) | zrekonštruovaný |
+= zrekonštruovaný — після ремонту; узгоджується з byt (чоловічий рід).
+X sc: Як запитати про щомісячні витрати? | - | *Aké sú mesačné náklady? ;; Aký sú mesačné náklady? ;; Aké je mesačné náklady?
+= náklady — множина: Aké sú…?
+X do: - | Olena: Dobrý deň, volám kvôli inzerátu na garsónku. Je ešte voľná? ;; Majiteľka: Áno, ešte je voľná. ;; Olena: Chcela by som si ju pozrieť. Hodí sa vám zajtra o piatej? ;; Majiteľka: O piatej nemôžem, ale o šiestej áno. ;; Olena: Dobre, tak zajtra o šiestej. Ďakujem, dovidenia.
+= Спершу питаємо, чи житло вільне, потім домовляємося про час огляду.
+X dr: - | Majiteľ: Byt je čiastočne zariadený. Máte nejaké otázky? | *Áno, aké spotrebiče sú v byte? ;; Áno, aké spotrebiče je v byte? ;; Áno, aký spotrebiče sú v byte?
+= spotrebiče — множина: aké spotrebiče sú…
+X tf: - | - | «Byt v pôvodnom stave» — це квартира після нового ремонту. | F
+= v pôvodnom stave — без ремонту; після ремонту — zrekonštruovaný.
+X fe: - | Je v kuchyni nová [kuchynský>kuchynská] linka?
+= linka — жіночий рід: kuchynská linka.
+X rc: - | Minulý týždeň sme boli s manželom na prehliadke dvojizbového bytu v Trnave. Majiteľ, pán Hudec, nám ukázal celý byt. Obývačka je veľká a svetlá, spálňa je menšia, ale tichá. Kúpeľňa je zrekonštruovaná, je v nej aj nová práčka. Kuchyňa je však v pôvodnom stave a kuchynská linka je stará. Pán Hudec povedal, že ju na jar vymení. Mesačné náklady sú 620 eur aj s energiami. Byt sa nám páči, ale ešte nevieme, či ho vezmeme, lebo je ďaleko od mojej práce.
+q~: Яка кімната після ремонту? | *ванна кімната ;; кухня ;; спальня
+q~: Що пообіцяв власник? | *навесні замінити кухонний гарнітур ;; знизити орендну плату ;; купити пральну машину
+q~: Чому подружжя ще вагається? | *квартира далеко від роботи ;; квартира надто дорога ;; спальня шумна
+X doc: Прочитай опис квартири. | Vybavenie bytu | Kuchyňa: kuchynská linka, sporák, chladnička ;; Kúpeľňa: sprchovací kút, práčka ;; Izba: posteľ, skriňa, stôl ;; Internet: nie | Чого немає в квартирі? | *інтернету ;; пральної машини ;; холодильника
+= Internet: nie — інтернету в квартирі немає.
+X np: На огляді ти хочеш дізнатися, чи можна тут зареєструвати місце проживання. | *Môžem sa tu prihlásiť na pobyt? ;; Môžem sa tu prihlásiť na pobytu? ;; Môžem tu prihlásiť sa na pobyt? ;; Môžem si tu prihlásiť na pobyt?
+= prihlásiť sa na pobyt; sa стоїть одразу після першого слова: Môžem sa…
+X so: - | Спитай, з якого часу квартира вільна. | Od kedy je byt voľný?
+= Od kedy…? — відколи, з якого часу?
+X ms: Обери граматично правильні запитання. | - | *Je v byte práčka? ;; *Aké spotrebiče sú v kuchyni? ;; *Od kedy je byt voľný? ;; Je v byte práčku? ;; Aké spotrebiče je v kuchyni?
+= Je + називний: práčka; spotrebiče — множина: sú.
+F: Огляд у Трнаві || Ти домовляєшся про огляд квартири й оглядаєш її разом із власницею.
+S: Ти телефонуєш власниці. | *Dobrý deň, chcel by som si pozrieť váš byt. ;; Dobrý deň, chcel by som pozrieť sa váš byt. ;; Dobrý deň, chcel by som si pozrieť vášho bytu.
+S: Власниця: «Hodí sa vám sobota o desiatej?» Що вона питає? | *чи тобі зручно в суботу о десятій ;; чи ти вільний десять субот поспіль ;; чи можеш ти прийти до десятої в суботу
+S: На огляді ти питаєш про техніку. | *Aké spotrebiče sú v byte? ;; Aké spotrebiče je v byte? ;; Aký spotrebič sú v byte?
+S: Власниця: «Kúpeľňa je po rekonštrukcii, kuchyňa je v pôvodnom stave.» Що це означає? | *ванна після ремонту, кухня — без ремонту ;; кухня після ремонту, ванна — без ремонту ;; ремонт ще триває в обох приміщеннях
+R: Chcel(a) by som si pozrieť byt. Hodí sa vám…? ;; Aké sú mesačné náklady? Je byt zariadený? ;; zrekonštruovaný — v pôvodnom stave ;; vybavenie, spotrebiče, práčka, kuchynská linka
+
+@lesson najomna-zmluva | Договір оренди | Nájomná zmluva
+desc: Що написано в договорі оренди: сторони, строк, обов’язки, умови й розірвання — na dobu určitú, výpoveď, výpovedná lehota.
+goal: Розуміти головні пункти договору оренди й ставити запитання, перш ніж його підписати.
+out: розрізняти na dobu určitú і na dobu neurčitú ;; розуміти výpoveď і výpovedná lehota ;; читати формули je povinný, nesmie, bez súhlasu ;; питати про умови договору
+done: Ти розумієш головне в договорі оренди. Далі — застава й орендна плата.
+T: Сторони й строк || У договорі дві «zmluvné strany» — сторони: «prenajímateľ» (хто здає) і «nájomca» (хто наймає). «Predmet nájmu» — що саме здають. Договір буває «na dobu určitú» — на визначений строк (наприклад, на рік, до конкретної дати) або «na dobu neurčitú» — безстроковий. || Zmluva sa uzatvára na dobu určitú, do 31. 8. 2027. = Договір укладається на визначений строк, до 31.08.2027. ;; Máme zmluvu na dobu neurčitú. = У нас безстроковий договір. || na dobu určitú — до дати · na dobu neurčitú — без кінцевої дати
+T: Як припинити договір || Договір можна «ukončiť» — припинити: «dohodou» (за згодою сторін) або «výpoveďou» (одностороннім повідомленням про розірвання). «Dať výpoveď» — повідомити іншу сторону, що розриваєш договір. «Výpovedná lehota» — строк від повідомлення до кінця оренди; він записаний у договорі. Výpoveď зазвичай подають «písomne» — письмово. || Nájomca dal výpoveď v marci. = Орендар повідомив про розірвання договору в березні. ;; Výpovedná lehota je podľa zmluvy dva mesiace. = Строк попередження за договором — два місяці. || ukončiť dohodou / výpoveďou · výpovedná lehota
+T: Мова договору || Обов’язки: «Nájomca je povinný…» + інфінітив — орендар зобов’язаний: «platiť nájomné včas». Заборони: «Nájomca nesmie…» — не має права: «prenajať byt ďalšej osobe». «Bez súhlasu prenajímateľa» — без згоди орендодавця (родовий). Умови договору — «podmienky». || Nájomca je povinný udržiavať byt v poriadku. = Орендар зобов’язаний утримувати квартиру в порядку. ;; Bez súhlasu prenajímateľa nájomca nesmie robiť v byte zmeny. = Без згоди орендодавця орендар не має права робити зміни в квартирі. || je povinný + інфінітив · nesmie + інфінітив · bez súhlasu + родовий
+mis: Nájomca je povinný platí nájomné. => Nájomca je povinný platiť nájomné. ;; bez súhlas prenajímateľa => bez súhlasu prenajímateľa ;; zmluva na dobu určitá => zmluva na dobu určitú
+W: výpoveď | розірвання договору (повідомлення про розірвання) | ві:повед’ | Výpoveď musíte podať písomne. | Повідомлення про розірвання треба подати письмово.
+W: výpovedná lehota | строк попередження про розірвання | ві:поведна: легота | V našej zmluve je výpovedná lehota tri mesiace. | У нашому договорі строк попередження — три місяці.
+W: na dobu určitú | на визначений строк | на добу урчіту: | Zmluvu máme na dobu určitú, na jeden rok. | Договір у нас на визначений строк — на один рік.
+W: ukončiť | припинити, завершити | укончіт’ | Zmluvu môžeme ukončiť aj dohodou. | Договір ми можемо припинити й за згодою.
+W: povinný | зобов’язаний; обов’язковий | повінні: | Nájomca je povinný platiť nájomné včas. | Орендар зобов’язаний вчасно сплачувати орендну плату.
+W: podmienka | умова | подміенка | Pred podpisom si prečítajte všetky podmienky. | Перед підписанням прочитайте всі умови.
+X mt: З’єднай. | výpoveď = розірвання договору ;; výpovedná lehota = строк попередження ;; na dobu určitú = на визначений строк ;; ukončiť = припинити ;; povinný = зобов’язаний ;; podmienka = умова
+X sc~: Що означає «zmluva na dobu neurčitú»? | - | *безстроковий договір ;; договір на один рік ;; договір, який ще не підписали
+= neurčitý — невизначений: договір без кінцевої дати.
+X dd: Обери. | Nájomca je povinný [*platiť/platí/platil] nájomné do piateho dňa v mesiaci.
+= je povinný + інфінітив: platiť.
+X dd: Обери. | Bez súhlasu [*prenajímateľa/prenajímateľ/prenajímateľovi] nesmiete chovať psa.
+= bez + родовий: prenajímateľ → prenajímateľa.
+X fb: Допиши. | Zmluvu môžeme ukončiť dohodou alebo ___. (повідомленням про розірвання) | výpoveďou |
+= ukončiť čím? — орудний відмінок: výpoveď → výpoveďou.
+X tf: - | Zmluva: «Výpovedná lehota je dva mesiace.» | Оренда закінчується в той самий день, коли ти подав výpoveď. | F
+= Після výpovede оренда триває ще весь строк попередження — тут два місяці.
+X cat: Обов’язок чи заборона? | Обов’язок: je povinný platiť nájomné, musí udržiavať byt v poriadku, je povinný hlásiť poruchy ;; Заборона: nesmie fajčiť v byte, nesmie prenajať byt ďalej, nesmie robiť zmeny bez súhlasu
+= je povinný, musí — обов’язок; nesmie — заборона.
+X fe: - | Zmluvu sme uzavreli na dobu [určitý>určitú] do konca roka.
+= na + знахідний: dobu určitú.
+X doc: Прочитай витяг із договору. | Nájomná zmluva – výpis (vzor) | Doba nájmu: na dobu určitú od 1. 9. 2026 do 31. 8. 2027 ;; Nájomné: 560 € mesačne ;; Výpovedná lehota: 2 mesiace ;; Domáce zvieratá: len so súhlasom prenajímateľa | Чи можна тримати в квартирі кота? | *лише за згодою орендодавця ;; ні, у жодному разі ;; так, без жодних умов
+= len so súhlasom prenajímateľa — лише за згодою орендодавця.
+X rc: - | Ivan a Oksana bývajú v Nitre už dva roky. Prvú zmluvu mali na dobu určitú, na jeden rok. Potom im prenajímateľka dala novú zmluvu na dobu neurčitú. Teraz Ivan dostal prácu v Bratislave a rodina sa chce presťahovať. Podľa zmluvy je výpovedná lehota dva mesiace a začína plynúť od prvého dňa nasledujúceho mesiaca. Oksana preto napísala výpoveď a 20. septembra ju odovzdala prenajímateľke. Prenajímateľka povedala, že zmluvu môžu ukončiť aj skôr dohodou, ak nájde nového nájomcu.
+q~: Який договір у родини тепер? | *безстроковий ;; на один рік ;; на два роки
+q~: Коли закінчиться оренда, якщо сторони не домовляться інакше? | *наприкінці листопада ;; 20 жовтня ;; 20 листопада
+q~: Як можна закінчити оренду раніше? | *за згодою, якщо власниця знайде нового орендаря ;; заплативши штраф ;; лише через суд
+X dr: - | Prenajímateľ: Tu je zmluva. Prečítajte si ju a podpíšte. | *Ďakujem. Ešte sa chcem opýtať: aká je výpovedná lehota? ;; Ďakujem. Ešte sa chcem opýtať: aký je výpovedná lehota? ;; Ďakujem. Ešte sa chcem opýtať: aká je výpovednú lehotu?
+= lehota — жіночий рід, називний: aká je výpovedná lehota?
+X tr: Перетвори дозвіл на заборону з «nesmie». | Nájomca môže fajčiť na balkóne. | Nájomca nesmie fajčiť na balkóne. ;; Na balkóne nájomca nesmie fajčiť.
+= môže → nesmie: не має права.
+X np: Ти хочеш спитати, на який строк укладають договір. | *Na akú dobu je zmluva? ;; Na aký doba je zmluva? ;; Na akej dobe je zmluva? ;; Do akú dobu je zmluva?
+= na + знахідний: na akú dobu.
+X mic: - | Prenajímateľ: «Zmluvu môžeme ukončiť aj dohodou, nemusíte čakať na koniec výpovednej lehoty.» | dohodou | *за взаємною згодою ;; за рішенням суду ;; через агентство
+= dohoda — домовленість; ukončiť dohodou — припинити за згодою сторін.
+F: Підписання договору || Власник приніс договір оренди, і ти уважно його читаєш.
+S: Ти питаєш, чи договір на визначений строк. | *Je zmluva na dobu určitú? ;; Je zmluva na doba určitá? ;; Je zmluva na dobe určitej?
+S: Власник: «Výpovedná lehota je tri mesiace.» Що це означає? | *після повідомлення про розірвання оренда триває ще три місяці ;; договір діє лише три місяці ;; кожні три місяці договір треба продовжувати
+S: У договорі: «Nájomca nesmie byt ďalej prenajímať.» Що це означає? | *ти не маєш права здавати квартиру іншим людям ;; ти мусиш здати квартиру ще комусь ;; власник не може здати квартиру іншим
+S: Ти просиш час, щоб прочитати договір удома. | *Môžem si zmluvu prečítať doma? ;; Môžem zmluvu si prečítať doma? ;; Môžem si zmluvou prečítať doma?
+R: zmluvné strany, predmet nájmu ;; na dobu určitú — na dobu neurčitú ;; ukončiť dohodou alebo výpoveďou, výpovedná lehota ;; je povinný, nesmie, bez súhlasu, podmienky
+
+@lesson kaucia-a-najomne | Застава й орендна плата | Kaucia a nájomné
+desc: За що і коли платить орендар: nájomné, zálohy na energie, kaucia. Як говорити про суми: vo výške, vopred, na účet — і як повертають заставу.
+goal: Розуміти, з чого складаються платежі за оренду, і домовлятися про заставу та її повернення.
+out: розрізняти nájomné, zálohy na energie і kaucia ;; казати vo výške + родовий, vopred, na účet ;; розуміти, за що можуть утримати частину застави ;; просити повернути заставу
+done: Ти розумієш платежі за оренду. Далі — енергії: лічильники, рахунки й річний перерахунок.
+T: Три різні платежі || «Nájomné» — орендна плата за саму квартиру (у розмові часто просто «nájom»). «Zálohy na energie» — щомісячні аванси за комунальні послуги. «Kaucia» — застава: її платять один раз на початку, а після закінчення оренди повертають. У договорі заставу можуть назвати «finančná zábezpeka», а в розмові іноді теж «záloha» — тому уточнюй, про що саме йдеться. || Nájomné je 550 € a zálohy na energie 150 €. = Орендна плата — 550 €, а аванси за комунальні — 150 €. ;; Kauciu platíte len raz. = Заставу ви платите лише один раз. || nájomné — щомісяця · kaucia — один раз і повертається
+T: Скільки і як || «Vo výške» — у розмірі, із родовим: «kaucia vo výške dvoch nájmov», «vo výške 600 eur». «Vopred» — наперед: «nájomné sa platí mesačne vopred». «Na účet» — на рахунок, «v hotovosti» — готівкою. «Do piateho dňa v mesiaci» — до п’ятого числа. || Kaucia je vo výške jedného nájmu. = Застава — у розмірі однієї місячної орендної плати. ;; Nájomné platím vopred na účet. = Орендну плату я сплачую наперед на рахунок. || vo výške + родовий · vopred · na účet / v hotovosti
+T: Повернення застави || Після виїзду власник має «vrátiť kauciu». Але він може «zraziť z kaucie» — утримати із застави — гроші за «poškodenie» (пошкодження), наприклад за розбиту плитку, або за несплачені рахунки. «Bežné opotrebenie» — звичайне зношення (трохи стерта підлога) — пошкодженням не вважається. Тому на початку й наприкінці оренди фотографуй стан квартири. || Prenajímateľ mi zrazil z kaucie 80 € za poškodené dvere. = Орендодавець утримав мені із застави 80 € за пошкоджені двері. ;; Bežné opotrebenie nie je poškodenie. = Звичайне зношення — це не пошкодження. || vrátiť kauciu · zraziť z kaucie · poškodenie ≠ opotrebenie
+mis: kaucia vo výške dva nájmy => kaucia vo výške dvoch nájmov ;; zraziť z kaucia => zraziť z kaucie
+W: kaucia | застава (за житло) | кауція | Kauciu vám vrátime po skončení nájmu. | Заставу ми вам повернемо після закінчення оренди.
+W: nájomné | орендна плата | на:йомне: | Nájomné platíme vždy do piateho. | Орендну плату ми завжди сплачуємо до п’ятого числа.
+W: zábezpeka | забезпечення, застава (у договорі) | за:безпека | V zmluve sa kaucia nazýva finančná zábezpeka. | У договорі застава називається фінансовим забезпеченням.
+W: poškriabaný | подряпаний | пошкріабані: | Podlaha v obývačke je trochu poškriabaná. | Підлога у вітальні трохи подряпана.
+W: opotrebenie | зношення | опотребеніе | Za bežné opotrebenie platiť nemusíte. | За звичайне зношення платити не треба.
+W: zraziť | утримати, відрахувати (суму) | зразіт’ | Prenajímateľ môže zraziť z kaucie nezaplatené účty. | Орендодавець може утримати із застави несплачені рахунки.
+X mt: З’єднай. | kaucia = застава ;; nájomné = орендна плата ;; zábezpeka = забезпечення (у договорі) ;; poškriabaný = подряпаний ;; opotrebenie = зношення ;; zraziť = утримати (суму)
+X cat: Як часто платять? | Щомісяця: nájomné, zálohy na energie, mesačný nájom ;; Один раз на початку: kaucia, provízia realitnej kancelárie, finančná zábezpeka
+= Nájomné і zálohy — щомісяця; kaucia (finančná zábezpeka) і provízia — один раз.
+X dd: Обери. | Kaucia je vo výške [*dvoch/dva/dvom] nájmov.
+= vo výške + родовий: dvoch nájmov.
+X dd: Обери. | Prenajímateľ mi zrazil z [*kaucie/kaucia/kauciu] sto eur.
+= z + родовий: kaucia → kaucie.
+X fb: Допиши. | Nájomné sa platí mesačne ___. (наперед) | vopred |
+= vopred — наперед: за місяць платять на його початку.
+X sc~: Що означає «bežné opotrebenie»? | - | *звичайне зношення від користування ;; навмисне пошкодження ;; ремонт за рахунок орендаря
+= bežné — звичайне, opotrebenie — зношення; за нього заставу не утримують.
+X tf: - | Inzerát: «Nájomné 600 €, zálohy na energie 140 €, kaucia 600 €.» | Першого місяця треба заплатити разом 1 340 €. | T
+= 600 + 140 + 600 = 1 340 €: орендна плата, аванси й застава.
+X fe: - | Kaucia je vo výške [jeden>jedného] mesačného nájmu.
+= vo výške + родовий: jedného mesačného nájmu.
+X doc: Прочитай документ. | Potvrdenie o prevzatí kaucie (vzor) | Prenajímateľ: Peter Mráz ;; Nájomca: Oleksandr Hnatiuk ;; Suma: 1 100 € (dva mesačné nájmy) ;; Spôsob platby: v hotovosti ;; Vrátenie: do 30 dní po skončení nájmu | Як була сплачена застава? | *готівкою ;; на рахунок ;; частинами
+= Spôsob platby: v hotovosti — спосіб оплати: готівкою.
+X msg: Прочитай повідомлення від власниці. | Prenajímateľka Jana | Dobrý deň, byt som skontrolovala. Všetko je v poriadku okrem prasknutého umývadla v kúpeľni. Oprava stojí 90 €, preto vám túto sumu zrazím z kaucie. Zvyšných 710 € vám pošlem na účet do piatku. | Скільки грошей повернуть орендарю? | *710 € ;; 800 € ;; 90 €
+= 90 € утримають за умивальник, решту — 710 € — повернуть на рахунок.
+X rc: - | Pred dvoma rokmi som si prenajala garsónku v Prešove. Pri podpise zmluvy som zaplatila kauciu vo výške dvoch nájmov a prvé nájomné vopred. Pred odchodom som byt dôkladne upratala a odfotila. Majiteľ chcel zraziť z kaucie 150 eur za poškriabanú podlahu. Ukázala som mu fotky z prvého dňa: podlaha bola poškriabaná už vtedy. Nakoniec uznal, že ide o bežné opotrebenie, a vrátil mi celú kauciu. Moja rada: fotografujte byt na začiatku aj na konci nájmu!
+q~: Скільки застави заплатила авторка? | *дві місячні орендні плати ;; одну місячну орендну плату ;; 150 євро
+q~: Чому власник урешті повернув усю заставу? | *фото довели, що подряпини були від початку ;; авторка сама полагодила підлогу ;; авторка окремо заплатила 150 євро
+q~: Яка порада авторки? | *фотографувати квартиру на початку й наприкінці оренди ;; не платити заставу ;; платити тільки готівкою
+X dr: - | Majiteľ: Kauciu vám vrátim, ale zrazím z nej sto eur za poškodenú stenu. | *Stena bola poškodená už vtedy, keď som sa nasťahoval. Mám fotky. ;; Stena bola poškodená už vtedy, keď som sa nasťahoval. Mám fotkami. ;; Stena bol poškodený už vtedy, keď som sa nasťahoval. Mám fotky.
+= stena — жіночий рід: bola poškodená; mám + знахідний: fotky.
+X np: Ти просиш власника повернути заставу на рахунок. | *Prosím, vráťte mi kauciu na účet. ;; Prosím, vráťte mi kaucia na účet. ;; Prosím, vráťte mi kauciou na účet. ;; Prosím, vráťte mi kauciu na účtu.
+= vrátiť + знахідний: kauciu; na + знахідний: na účet.
+X ms: Обери правильні вирази. | - | *kaucia vo výške jedného nájmu ;; *zraziť z kaucie ;; *platiť nájomné vopred ;; kaucia vo výške jeden nájom ;; zraziť z kaucia
+= vo výške і z вимагають родового: jedného nájmu, z kaucie.
+F: Перший платіж || Ти підписуєш договір і домовляєшся з власницею про платежі.
+S: Власниця: «Kaucia je vo výške dvoch nájmov.» Скільки це, якщо орендна плата — 500 €? | *1 000 € ;; 500 € ;; 250 €
+S: Ти питаєш, як платити орендну плату. | *Mám platiť nájomné na účet alebo v hotovosti? ;; Mám platiť nájomné na účtu alebo v hotovosti? ;; Mám platiť nájomného na účet alebo v hotovosti?
+S: Власниця: «Nájomné sa platí mesačne vopred.» Що це означає? | *за кожен місяць платиш на його початку, наперед ;; платиш наприкінці кожного місяця ;; платиш одразу за весь рік
+S: Ти питаєш, коли тобі повернуть заставу. | *Kedy mi vrátite kauciu? ;; Kedy mi vrátite kaucia? ;; Kedy mi vrátite kauciou?
+R: nájomné, zálohy na energie, kaucia ;; vo výške dvoch nájmov, vopred, na účet ;; zraziť z kaucie, vrátiť kauciu ;; poškodenie ≠ bežné opotrebenie
+
+@lesson energie | Комунальні послуги | Energie
+desc: Що словаки називають «energie»: електрика, газ, вода, опалення. Лічильники, показники, річний перерахунок, переплата й недоплата.
+goal: Розуміти рахунки за комунальні послуги й говорити про лічильники та перерахунок.
+out: називати elektrina, plyn, voda, kúrenie ;; розуміти stav merača і nahlásiť stav ;; розуміти ročné vyúčtovanie ;; розрізняти preplatok і nedoplatok
+done: Ти розумієш рахунки за енергії. Далі — управитель будинку та оголошення в під’їзді.
+T: Energie || У розмові про оренду «energie» — це комунальні послуги: «elektrina» (електрика), «plyn» (газ), «voda» (вода), «kúrenie» (опалення), «teplá voda» (гаряча вода). «Nájom 600 € + energie» означає, що енергії оплачуються окремо від орендної плати. Зверни увагу: електрика — «elektrina», а не «elektrika». || Koľko platíte mesačne za elektrinu? = Скільки ви платите щомісяця за електрику? ;; V byte nie je plyn, sporák je elektrický. = У квартирі немає газу, плита електрична. || energie: elektrina, plyn, voda, kúrenie
+T: Лічильники || «Merač» — лічильник: «elektromer» (електролічильник), «plynomer» (газовий), «vodomer» (водяний). «Stav merača» — показник лічильника. Його треба «odpísať» (записати) або «nahlásiť» (повідомити), наприклад, коли заселяєшся чи виїжджаєш. «Odpočet» — зняття показників. || Pri nasťahovaní si odfoťte stav meračov. = Під час заселення сфотографуйте показники лічильників. ;; Vodomer je v kúpeľni pod umývadlom. = Водяний лічильник — у ванній під умивальником. || merač · stav merača · odpočet
+T: Vyúčtovanie || Протягом року платять «zálohy» — аванси, тобто приблизні суми. Раз на рік приходить «vyúčtovanie» — перерахунок за фактичним споживанням. Якщо ти заплатив більше, ніж спожив, — це «preplatok» (переплата), гроші тобі повертають. Якщо менше — «nedoplatok» (недоплата), і треба доплатити. || Z vyúčtovania máme preplatok 85 €. = За перерахунком у нас переплата 85 €. ;; Nedoplatok treba uhradiť do konca mesiaca. = Недоплату треба сплатити до кінця місяця. || preplatok — повертають · nedoplatok — доплачуєш
+mis: Platím za elektriku. => Platím za elektrinu. ;; stav merač => stav merača ;; Máme preplatku. => Máme preplatok.
+W: elektrina | електрика, електроенергія | електріна | Elektrina je teraz drahšia ako vlani. | Електрика тепер дорожча, ніж торік.
+W: plyn | газ | плін | Kúrenie aj sporák sú na plyn. | І опалення, і плита працюють на газі.
+W: merač | лічильник | мерач | Merač elektriny je na chodbe. | Лічильник електрики — у коридорі.
+W: vyúčtovanie | перерахунок, річний розрахунок | віу:чтованіе | Vyúčtovanie za minulý rok prišlo v máji. | Перерахунок за минулий рік прийшов у травні.
+W: preplatok | переплата | преплаток | Preplatok vám pošleme na účet. | Переплату ми надішлемо вам на рахунок.
+W: nedoplatok | недоплата | недоплаток | Máme nedoplatok za vodu štyridsať eur. | У нас недоплата за воду — сорок євро.
+X mt: З’єднай. | elektrina = електрика ;; plyn = газ ;; merač = лічильник ;; vyúčtovanie = перерахунок ;; preplatok = переплата ;; nedoplatok = недоплата
+X cat: Що це? | Енергії: elektrina, plyn, teplá voda, kúrenie ;; Лічильники: elektromer, plynomer, vodomer
+= Слова на -mer — лічильники; elektrina, plyn, voda, kúrenie — самі енергії.
+X dd: Обери. | Platíme zálohy na [*elektrinu/elektrina/elektriny] a plyn.
+= na + знахідний: elektrina → elektrinu.
+X dd: Обери. | Prosím, nahláste stav [*merača/merač/meračom] do piatku.
+= stav čoho? — родовий: merač → merača.
+X fb: Допиши. | Z vyúčtovania máme ___, dostaneme späť šesťdesiat eur. (переплата) | preplatok |
+= preplatok — переплата: гроші повертають.
+X sc~: У перерахунку написано «Nedoplatok: 45 €». Що треба зробити? | - | *доплатити 45 € ;; чекати, поки повернуть 45 € ;; нічого, усе вже сплачено
+= nedoplatok — недоплата: треба доплатити.
+X tf: - | - | «Preplatok» означає, що протягом року ти заплатив менше, ніж спожив. | F
+= Навпаки: preplatok — ти заплатив більше, і різницю тобі повернуть.
+X fe: - | Tento rok máme [nedoplatku>nedoplatok] za plyn.
+= máme + знахідний: nedoplatok (неживий іменник, як у називному).
+X doc: Прочитай перерахунок. | Ročné vyúčtovanie (vzor) | Obdobie: 1. 1. – 31. 12. 2025 ;; Zaplatené zálohy: 960 € ;; Skutočná spotreba: 1 035 € ;; Výsledok: nedoplatok 75 € ;; Splatnosť: do 30. 6. 2026 | Що з цього правда? | *треба доплатити 75 € до 30 червня ;; тобі повернуть 75 € до 30 червня ;; аванси були більші за споживання
+= Spotreba 1 035 € більша за zálohy 960 €: nedoplatok 75 €.
+X msg: Прочитай повідомлення від власника. | Prenajímateľ Marek | Ahoj Oleh, zajtra ráno príde technik na odpočet vody. Ak nebudeš doma, odfoť mi, prosím, stav vodomeru v kúpeľni a pošli mi ho ešte dnes. Vďaka! | Що просить власник? | *сфотографувати показник водяного лічильника й надіслати сьогодні ;; заплатити за воду завтра зранку ;; полагодити лічильник у ванній
+= odfoť stav vodomeru — сфотографуй показник водяного лічильника.
+X rc: - | V našom byte v Trenčíne platíme nájomné 520 eur a zálohy na energie 160 eur mesačne. V zálohách je kúrenie, teplá a studená voda a upratovanie spoločných priestorov. Elektrinu platíme zvlášť: máme vlastnú zmluvu s dodávateľom a platíme mu 35 eur mesačne. Raz ročne nám správca pošle vyúčtovanie. Minulý rok sme mali preplatok 90 eur, lebo zima bola teplá. Tento rok máme nedoplatok 40 eur za vodu, lebo u nás bývala celé leto aj svokra.
+q~: За що родина платить окремо від авансів? | *за електрику ;; за опалення ;; за воду
+q~: Чому минулого року була переплата? | *зима була теплою ;; родина довго була у відпустці ;; власник знизив орендну плату
+q~: Чому цього року недоплата за воду? | *усе літо в них жила свекруха ;; зламався лічильник ;; вода подорожчала
+X dr: - | Prenajímateľ: Prosím vás, aký je teraz stav elektromera? | *Pozriem sa a pošlem vám fotku. ;; Pozriem sa a pošlem vám fotka. ;; Pozriem sa a pošlem vás fotku.
+= poslať komu? — vám; čo? — fotku (знахідний).
+X np: Ти питаєш власника, скільки щомісяця коштують енергії. | *Koľko stoja energie mesačne? ;; Koľko stojí energie mesačne? ;; Koľko stoja energiami mesačne? ;; Koľko stoja energií mesačne?
+= energie — множина: stoja.
+X ce: Виправ речення. | Mesačne platím za elektriku tridsať eur. | Mesačne platím za elektrinu tridsať eur. ;; Za elektrinu platím mesačne tridsať eur.
+= Електроенергія — elektrina; «elektrika» — розмовне слово, у рахунках його немає.
+F: Перший перерахунок || У травні ти отримуєш перерахунок за енергії та пишеш власникові.
+S: У листі: «Výsledok vyúčtovania: preplatok 60 €.» Що це означає? | *тобі повернуть 60 € ;; треба доплатити 60 € ;; аванси зростуть на 60 €
+S: Ти пишеш власникові, що маєш переплату. | *Z vyúčtovania máme preplatok šesťdesiat eur. ;; Z vyúčtovania máme preplatku šesťdesiat eur. ;; Z vyúčtovania máme preplatok šesťdesiat euro.
+S: Власник: «Pošlite mi, prosím, stav merača plynu.» Що треба зробити? | *надіслати показник газового лічильника ;; заплатити за газ ;; викликати газовика
+S: Ти питаєш, чи зміняться аванси. | *Zmenia sa zálohy na energie? ;; Zmenia sa zálohy na energiách? ;; Zmení sa zálohy na energie?
+R: energie: elektrina, plyn, voda, kúrenie ;; merač, stav merača, odpočet ;; zálohy → vyúčtovanie ;; preplatok — nedoplatok
+
+@lesson spravca-domu | Управитель будинку | Správca domu
+desc: Хто відповідає за будинок, як читати оголошення на дошці в під’їзді й що означають revízia, odstávka, upratovanie spoločných priestorov.
+goal: Розуміти оголошення управителя й звертатися до нього з питаннями щодо будинку.
+out: розрізняти, коли писати власникові, а коли управителю ;; читати оголошення: Oznamujeme obyvateľom… ;; розуміти revízia, odstávka, upratovanie ;; коротко звернутися до управителя
+done: Ти розумієш оголошення в під’їзді. Далі — поломки в квартирі: як про них повідомити.
+T: Хто такий správca || «Správca» (správca domu) — фірма або людина, яка доглядає за всім будинком: «spoločné priestory» (під’їзд, сходи, підвали, ліфт), прибирання, технічні перевірки, розрахунки за енергії. Свою квартиру ти орендуєш у власника, а за спільне відповідає správca. Звертаємося з давальним: «zavolám správcovi», «napíšem správcovi». || Výťah nefunguje, zavolám správcovi. = Ліфт не працює, я зателефоную управителю. ;; Správca sa stará o celý dom. = Управитель доглядає за всім будинком. || квартира — prenajímateľ · спільні приміщення — správca
+T: Oznam na nástenke || Оголошення («oznam») висить на «nástenka» — дошці оголошень у під’їзді. Типові формули: «Oznamujeme obyvateľom, že…» — повідомляємо мешканцям, що…; «Žiadame vás, aby ste…» — просимо вас…; «Ďakujeme za pochopenie» — дякуємо за розуміння. || Oznamujeme obyvateľom, že v piatok bude upratovanie pivníc. = Повідомляємо мешканцям, що в п’ятницю буде прибирання підвалів. ;; Žiadame vás, aby ste nenechávali bicykle na chodbe. = Просимо вас не залишати велосипеди в коридорі. || Oznamujeme… · Žiadame vás… · Ďakujeme za pochopenie.
+T: Revízia a odstávka || «Revízia» — обов’язкова технічна перевірка: «revízia plynu», «revízia komína», «revízia výťahu». Часто треба бути вдома або «sprístupniť byt» — надати доступ до квартири. «Odstávka» — планове відключення: «odstávka vody», «odstávka elektriny». || V utorok bude revízia plynových spotrebičov. = У вівторок буде перевірка газових приладів. ;; Počas odstávky nepoužívajte výťah. = Під час відключення не користуйтеся ліфтом. || revízia — перевірка · odstávka — відключення
+mis: Oznamujeme obyvatelia => Oznamujeme obyvateľom ;; zavolám správca => zavolám správcovi
+W: správca | управитель (будинку) | спра:вца | Správca domu má kanceláriu na prízemí. | Управитель будинку має кабінет на першому поверсі.
+W: oznam | оголошення, повідомлення | ознам | Na dverách vchodu visí nový oznam. | На дверях під’їзду висить нове оголошення.
+W: nástenka | дошка оголошень | на:стенка | Pozrite sa na nástenku vo vchode. | Подивіться на дошку оголошень у під’їзді.
+W: spoločné priestory | спільні приміщення (під’їзд, сходи, підвал) | сполочне: прієсторі | V spoločných priestoroch sa nefajčí. | У спільних приміщеннях не курять.
+W: upratovanie | прибирання | упратованіе | Upratovanie schodiska je každý piatok. | Прибирання сходів — щоп’ятниці.
+W: revízia | технічна перевірка | реві:зія | Revízia výťahu bude v pondelok. | Перевірка ліфта буде в понеділок.
+X mt: З’єднай. | správca = управитель ;; oznam = оголошення ;; nástenka = дошка оголошень ;; spoločné priestory = спільні приміщення ;; upratovanie = прибирання ;; revízia = технічна перевірка
+X cat: Кому про це писати? | Власникові квартири: pokazená práčka v byte, kvapká kohútik v kuchyni, otázka o nájomnom ;; Управителю: nefunguje výťah, nesvieti svetlo na chodbe, špinavé schodisko
+= Те, що в квартирі, — власникові; спільні приміщення — управителю.
+X dd: Обери. | Oznamujeme [*obyvateľom/obyvatelia/obyvateľov], že v stredu nebude fungovať výťah.
+= oznamovať komu? — давальний: obyvateľom.
+X dd: Обери. | Upratovanie [*spoločných/spoločné/spoločnými] priestorov je zahrnuté v zálohách.
+= upratovanie čoho? — родовий множини: spoločných priestorov.
+X fb: Допиши. | Nový oznam visí na ___ vo vchode. (дошка оголошень) | nástenke |
+= na + місцевий: nástenka → na nástenke.
+X sc~: Що означає «odstávka vody»? | - | *планове відключення води ;; перевірка якості води ;; рахунок за воду
+= odstávka — планове відключення.
+X tf: - | Oznam: «Revízia plynu bude 12. 11. od 8:00 do 12:00. Prosíme, sprístupnite byt.» | Мешканці мають забезпечити доступ до своєї квартири. | T
+= sprístupniť byt — надати доступ до квартири.
+X fe: - | Výťah je pokazený, napíšem [správca>správcovi] e-mail.
+= napísať komu? — давальний: správcovi.
+X msg: Прочитай оголошення. | Správca – BytServis, s. r. o. | Oznamujeme obyvateľom, že v pondelok 3. 11. od 9:00 do 15:00 bude odstávka teplej vody z dôvodu opravy potrubia. Žiadame vás, aby ste v tom čase nepúšťali teplú vodu. Ďakujeme za pochopenie. | Що станеться в понеділок? | *з 9:00 до 15:00 не буде гарячої води ;; увесь день не буде холодної води ;; почнеться ремонт ліфта
+= odstávka teplej vody od 9:00 do 15:00 — відключення гарячої води.
+X sch: Подивись на графік прибирання. | Upratovanie domu – rozpis | Schodisko a chodby = každý utorok a piatok ;; Výťah = každý piatok ;; Pivnice = raz za mesiac ;; Okolie domu = podľa potreby | Як часто прибирають сходи? | *двічі на тиждень ;; раз на тиждень ;; раз на місяць
+= každý utorok a piatok — двічі на тиждень.
+X rc: - | Bývame v paneláku v Martine. O celý dom sa stará správcovská firma. Upratovanie spoločných priestorov robí raz týždenne pani Kováčová. Na nástenke vo vchode sú vždy dôležité oznamy: kedy bude revízia, odstávka alebo upratovanie pivníc. Minulý mesiac bola revízia plynu a technik musel prísť do každého bytu. My sme neboli doma, tak sme kľúč nechali susede. Keď sa pokazí niečo v našom byte, voláme majiteľovi. Keď nefunguje výťah alebo svetlo na chodbe, voláme správcovi.
+q~: Хто прибирає спільні приміщення? | *пані Ковачова раз на тиждень ;; мешканці по черзі ;; власник квартири
+q~: Як родина вирішила проблему з перевіркою газу? | *залишила ключ сусідці ;; перенесла перевірку ;; узяла вихідний
+q~: Кому вони телефонують, коли не працює ліфт? | *управителю ;; власникові квартири ;; сусідці
+X dr: - | Suseda: Nevieš, prečo dnes nejde teplá voda? | *Na nástenke je oznam, že je odstávka do troch. ;; Na nástenke je oznam, že je odstávky do troch. ;; Na nástenku je oznam, že je odstávka do troch.
+= na nástenke (де?) — місцевий; je odstávka — однина.
+X np: Ти пишеш управителю, що на сходах не світить світло. | *Dobrý deň, na schodisku na treťom poschodí nesvieti svetlo. ;; Dobrý deň, na schodisko na treťom poschodí nesvieti svetlo. ;; Dobrý deň, na schodisku na tretie poschodie nesvieti svetlo. ;; Ahoj, na schodisku nesvieti svetlo, oprav to.
+= na čom? — місцевий: na schodisku, na treťom poschodí; до управителя — ввічливо, на «vy».
+X reg: - | Žiadame obyvateľov, aby nenechávali kočíky na chodbe. | formal
+= Žiadame obyvateľov… — офіційна формула з оголошень управителя.
+F: Оголошення в під’їзді || Ти щойно переїхав(ла) в новий будинок і читаєш дошку оголошень.
+S: «Oznamujeme obyvateľom, že vo štvrtok bude revízia výťahu.» Що буде в четвер? | *перевірка ліфта ;; ремонт квартир ;; прибирання ліфта
+S: «Žiadame vás, aby ste nenechávali kočíky na chodbe.» Про що просять? | *не залишати дитячі візки в коридорі ;; ставити візки в коридорі ;; купити нові візки
+S: Ти хочеш дізнатися в сусідки, хто управитель. | *Kto je správca nášho domu? ;; Kto je správca náš dom? ;; Kto je správcu nášho domu?
+S: Ти пишеш управителю про брудні сходи. | *Dobrý deň, schodisko už týždeň nikto neupratoval. ;; Dobrý deň, schodisko už týždeň nikto neupratovali. ;; Dobrý deň, schodisku už týždeň nikto neupratoval.
+R: správca, spoločné priestory ;; oznam na nástenke: Oznamujeme… Žiadame vás… ;; revízia, odstávka, sprístupniť byt ;; upratovanie
+
+@lesson poruchy-v-byte | Поломки в квартирі | Poruchy v byte
+desc: Як описати поломку: nefunguje, nesvieti, kvapká, zateká, je upchatý — і як повідомити про неї власникові чи викликати майстра.
+goal: Чітко описати проблему в квартирі й домовитися про ремонт.
+out: казати, що не працює: nefunguje práčka, nesvieti svetlo ;; описувати проблеми з водою: kvapká, tečie, zateká, je upchatý ;; nahlásiť poruchu: що, де, відколи ;; розуміти, що таке havária і коли кликати аварійну службу
+done: Ти вмієш повідомити про поломку. Далі — правила будинку й стосунки із сусідами.
+T: Не працює || Найчастіше кажемо «nefunguje» — не працює: «nefunguje práčka, bojler, internet». Про світло — «nesvieti»: «nesvieti svetlo v kúpeľni». Про воду й опалення розмовно — «nejde»: «nejde teplá voda», «nejde kúrenie». Про річ, що зламалася, — «je pokazený / pokazená»: «Chladnička je pokazená». Коли техніка зламалася, кажемо «nefunguje», а не «nepracuje» — це калька з української. || Od rána nefunguje bojler. = Із самого ранку не працює бойлер. ;; V kuchyni nesvieti svetlo. = На кухні не світить світло. || nefunguje · nesvieti · nejde · je pokazený
+T: Проблеми з водою || «Kvapká» — капає: «kvapká kohútik». «Tečie» — тече: «tečie voda spod práčky». «Zateká» — затікає (зверху): «zateká strop», «zateká od suseda». «Je upchatý» — засмічений: «upchatý odtok», «upchatý záchod». || Zo stropu v kúpeľni zateká. = Зі стелі у ванній затікає. ;; Odtok vo vani je upchatý. = Злив у ванні засмічений. || kvapká · tečie · zateká · je upchatý
+T: Як повідомити || «Nahlásiť poruchu» — повідомити про поломку. Скажи 1) що, 2) де, 3) відколи: «Od včera nefunguje práčka v kúpeľni.» Попроси: «Mohli by ste poslať opravára?» Якщо сильно тече вода або пахне газом — це «havária»: перекрий воду чи газ і телефонуй до аварійної служби («havarijná služba»). || Chcela by som nahlásiť poruchu. = Я хотіла б повідомити про поломку. ;; Kedy môže prísť opravár? = Коли може прийти майстер? || čo? kde? odkedy? → nahlásiť poruchu
+mis: Práčka nepracuje. => Práčka nefunguje. ;; Zateká zo strop. => Zateká zo stropu. ;; Voda tečie spod práčka. => Voda tečie spod práčky.
+W: porucha | поломка, несправність | поруха | Poruchu sme nahlásili hneď ráno. | Про поломку ми повідомили одразу вранці.
+W: nefungovať | не працювати (про техніку) | нефунговат’ | Už dva dni nefunguje internet. | Уже два дні не працює інтернет.
+W: upchatý | засмічений, забитий | упхаті: | Odtok v kuchyni je upchatý. | Злив на кухні засмічений.
+W: zatekať | затікати, протікати (зверху) | затекат’ | Keď prší, zateká nám do spálne. | Коли йде дощ, нам затікає в спальню.
+W: odtok | злив (у ванні, умивальнику) | одток | Voda z umývadla odteká cez odtok veľmi pomaly. | Вода з умивальника стікає через злив дуже повільно.
+W: opravár | майстер (з ремонту) | оправа:р | Opravár príde zajtra dopoludnia. | Майстер прийде завтра до обіду.
+W: havária | аварія (аварійна ситуація) | гава:рія | Pri havárii vody zavolajte havarijnú službu. | У разі аварії водопроводу телефонуйте до аварійної служби.
+X mt: З’єднай. | porucha = поломка ;; nefungovať = не працювати ;; upchatý = засмічений ;; zatekať = затікати ;; odtok = злив ;; opravár = майстер
+X cat: Що це за проблема? | Вода: kvapká kohútik, zateká strop, upchatý odtok ;; Електрика: nesvieti svetlo, nefunguje zásuvka, vypadávajú poistky
+= kvapká, zateká, upchatý — проблеми з водою; svetlo, zásuvka (розетка), poistky (запобіжники) — з електрикою.
+X dd: Обери. | Od včera [*nefunguje/nefungujú/nefungovať] práčka.
+= práčka — однина: nefunguje.
+X dd: Обери. | V kúpeľni [*nesvieti/nesvietia/nesvieť] svetlo.
+= svetlo — однина: nesvieti.
+X fb: Допиши. | Odtok vo vani je ___. Voda neodteká. (засмічений) | upchatý |
+= odtok — чоловічий рід: upchatý.
+X sc~: Що означає «Zo stropu zateká»? | - | *зі стелі протікає вода ;; стеля впала ;; на стелі не світить лампа
+= zatekať — затікати, протікати зверху.
+X tf: - | - | Якщо в квартирі сильно пахне газом, досить написати власникові листа й чекати відповіді. | F
+= Це havária: перекрий газ, відчини вікна й одразу телефонуй до аварійної служби.
+X fe: - | Na podlahe je voda, tečie spod [práčka>práčky].
+= spod + родовий: práčka → práčky.
+X msg: Прочитай відповідь власника. | Pán Kolár | Dobrý deň, ďakujem, že ste nahlásili poruchu bojlera. Opravár príde vo štvrtok medzi 14:00 a 16:00. Ak nebudete doma, nechajte kľúč u susedy na druhom poschodí. | Що робити, якщо тебе не буде вдома? | *залишити ключ у сусідки з другого поверху ;; перенести візит майстра ;; залишити двері відчиненими
+= nechajte kľúč u susedy — залиште ключ у сусідки.
+X do: - | Andrij: Dobrý deň, pán Kolár, chcel by som nahlásiť poruchu. ;; Pán Kolár: Dobrý deň, čo sa stalo? ;; Andrij: Od včera večera nejde teplá voda, asi je pokazený bojler. ;; Pán Kolár: Rozumiem. Pošlem vám opravára. Hodí sa vám zajtra ráno? ;; Andrij: Áno, budem doma do desiatej.
+= Спершу привітання й мета дзвінка, потім опис поломки, наприкінці — домовленість про час.
+X rc: - | Dobrý deň, pani Šimková, píšem vám, lebo v byte máme niekoľko problémov. Najväčší problém je v kúpeľni: keď sused nad nami používa sprchu, zo stropu nám zateká. Na strope je už veľký tmavý fľak. Okrem toho od pondelka kvapká kohútik v kuchyni a odtok vo vani je upchatý. Skúsili sme ho vyčistiť, ale nepomohlo to. Mohli by ste, prosím, poslať opravára? Doma sme každý deň po 16:00, v sobotu celý deň. Ďakujem, Andrij Lysenko
+q~: Яка найбільша проблема? | *у ванній затікає зі стелі, коли сусід згори приймає душ ;; на кухні повністю зламався кран ;; у ванній немає води
+q~: Що Андрій уже зробив сам? | *пробував прочистити злив ;; викликав аварійну службу ;; поговорив із сусідом
+q~: Коли майстер може прийти? | *щодня після 16:00 або в суботу ;; лише в понеділок ;; щодня до 16:00
+X dr: - | Opravár: Dobrý deň, kde je problém? | *V kúpeľni. Kvapká kohútik a odtok je upchatý. ;; V kúpeľni. Kvapká kohútik a odtok je upchatá. ;; V kúpeľňu. Kvapká kohútik a odtok je upchatý.
+= Де? — v kúpeľni (місцевий); odtok — чоловічий рід: upchatý.
+X np: У тебе затікає зі стелі, і ти йдеш до сусіда згори. | *Prepáčte, zo stropu mi zateká voda. Môžete sa pozrieť do kúpeľne? ;; Prepáčte, zo strop mi zateká voda. Môžete sa pozrieť do kúpeľne? ;; Prepáčte, na strop mi zateká voda. Môžete sa pozrieť do kúpeľne? ;; Prepáčte, zo stropu mi zatekám voda. Môžete sa pozrieť do kúpeľne?
+= zo + родовий: zo stropu; voda zateká — 3-тя особа.
+X ms: Обери природні речення. | - | *Nefunguje práčka. ;; *Nesvieti svetlo v predsieni. ;; *Kvapká kohútik. ;; Práčka nefungujú. ;; Svetlo nesvietia.
+= práčka, svetlo — однина: nefunguje, nesvieti.
+F: Субота без гарячої води || У суботу вранці ти виявляєш, що не працює бойлер, а у ванній щось капає.
+S: Ти пишеш власникові, що не працює бойлер. | *Dobrý deň, od rána nefunguje bojler. ;; Dobrý deň, od rána nefungujú bojler. ;; Dobrý deň, od ráno nefunguje bojler.
+S: Власник: «Opravára pošlem v pondelok, dovtedy bojler vypnite.» Що треба зробити? | *вимкнути бойлер до понеділка ;; самому полагодити бойлер ;; викликати аварійну службу
+S: Ти описуєш ще одну проблему. | *A v kúpeľni kvapká kohútik. ;; A v kúpeľni kvapkajú kohútik. ;; A v kúpeľňu kvapká kohútik.
+S: Увечері ти відчуваєш сильний запах газу. Що робиш? | *перекриваю газ, відчиняю вікна й телефоную до аварійної служби ;; пишу власникові повідомлення й лягаю спати ;; вмикаю світло, щоб знайти, звідки пахне
+R: nefunguje, nesvieti, nejde, je pokazený ;; kvapká, tečie, zateká, je upchatý ;; nahlásiť poruchu: čo, kde, odkedy ;; opravár, havária, havarijná služba
+
+@lesson domovy-poriadok | Правила будинку й сусіди | Susedské pravidlá
+desc: Нічний спокій, шум, сміття й заборони в будинку: як читати domový poriadok і ввічливо розв’язати проблему із сусідом.
+goal: Розуміти правила будинку й ввічливо говорити із сусідами про шум і порядок.
+out: розуміти nočný pokoj і rušiť susedov ;; читати заборони: Je zakázané…, Zákaz… ;; сортувати сміття: plast, papier, sklo ;; ввічливо попросити сусіда бути тихіше
+done: Ти знаєш правила будинку. Далі — переїзд: пакування, передача квартири й ключів.
+T: Nočný pokoj || «Domový poriadok» — правила будинку. Найважливіше — «nočný pokoj»: у цей час не можна шуміти. Точні години записані в правилах вашого будинку, найчастіше це пізній вечір і ніч. «Hluk» — шум, «rušiť» — заважати, турбувати: «rušiť susedov», «hudba ruší». Дієслово «rušiť» вимагає знахідного: «ruší nás», а не «ruší nám». || Počas nočného pokoja nevŕtajte a nepúšťajte hlasnú hudbu. = Під час нічного спокою не свердліть і не вмикайте гучну музику. ;; Prepáčte, ruší nás hluk z vášho bytu. = Вибачте, нам заважає шум із вашої квартири. || rušiť + знахідний: rušiť susedov, ruší nás
+T: Заборони || У правилах: «Je zakázané…» + інфінітив — заборонено: «Je zakázané fajčiť vo výťahu». «Zákaz…» + родовий віддієслівного іменника: «Zákaz fajčenia», «Zákaz vstupu», «Zákaz parkovania». М’якше: «Nie je dovolené…», «Prosíme, nenechávajte…». || Je zakázané nechávať bicykle na chodbe. = Заборонено залишати велосипеди в коридорі. ;; Zákaz parkovania pred vchodom. = Паркування перед під’їздом заборонено. || Je zakázané + інфінітив · Zákaz + родовий
+T: Odpad || «Odpad» — відходи, сміття (розмовно «smeti»). Словаки «triedia odpad» — сортують сміття: «plast», «papier», «sklo», «bioodpad» і «zmesový odpad» — змішані відходи. Найчастіше пластик — у жовтий контейнер, папір — у синій, скло — у зелений, але в різних містах буває по-різному, тому читай напис на «kontajner». || Plastové fľaše hádžeme do žltého kontajnera. = Пластикові пляшки ми кидаємо в жовтий контейнер. ;; Triedite odpad? = Ви сортуєте сміття? || triediť odpad: plast, papier, sklo, bioodpad
+mis: Hluk ruší nám. => Hluk nás ruší. ;; Zákaz fajčiť => Zákaz fajčenia
+W: nočný pokoj | нічний спокій, нічна тиша | ночні: покой | V našom dome začína nočný pokoj o desiatej. | У нашому будинку нічна тиша починається о десятій.
+W: hluk | шум | глук | Z ulice je počuť veľký hluk. | З вулиці чути сильний шум.
+W: rušiť | заважати, турбувати | рушіт’ | Prepáčte, nechceme vás rušiť. | Вибачте, ми не хочемо вам заважати.
+W: zákaz | заборона | за:каз | Na dverách visí zákaz fajčenia. | На дверях — табличка про заборону куріння.
+W: odpad | відходи, сміття | одпад | Odpad vynášame každý večer. | Сміття ми виносимо щовечора.
+W: triediť | сортувати | тріедіт’ | Na Slovensku ľudia triedia odpad. | У Словаччині люди сортують сміття.
+W: kontajner | контейнер | контайнер | Kontajner na sklo je za domom. | Контейнер для скла — за будинком.
+X mt: З’єднай. | nočný pokoj = нічна тиша ;; hluk = шум ;; rušiť = заважати ;; zákaz = заборона ;; triediť = сортувати ;; kontajner = контейнер
+X cat: Куди це викинути? | Plast: plastová fľaša, jogurtový téglik ;; Papier: noviny, kartónová krabica ;; Sklo: sklenená fľaša od vína, pohár od džemu
+= Пластик, папір і скло сортуємо окремо, кожне — у свій контейнер.
+X dd: Обери. | Prepáčte, ruší [*nás/nám/my] hluk z vášho bytu.
+= rušiť koho? — знахідний: nás.
+X dd: Обери. | Na dverách výťahu je zákaz [*fajčenia/fajčiť/fajčenie].
+= zákaz + родовий: fajčenie → fajčenia.
+X fb: Допиши. | Je zakázané ___ bicykle na chodbe. (залишати) | nechávať ;; nechať |
+= Je zakázané + інфінітив: nechávať.
+X sc~: Що означає табличка «Zákaz vstupu»? | - | *вхід заборонено ;; вхід вільний ;; вхід з іншого боку
+= zákaz vstupu — заборона входу.
+X tf: - | Domový poriadok: «Nočný pokoj je od 22:00 do 6:00.» | За цими правилами о пів на одинадцяту вечора можна свердлити стіну. | F
+= 22:30 — уже нічний спокій, свердлити не можна.
+X fe: - | Plastové fľaše hádžeme do [žltý>žltého] kontajnera.
+= do + родовий: žltého kontajnera.
+X doc: Прочитай правила будинку. | Domový poriadok – výpis (vzor) | Nočný pokoj: 22:00 – 6:00 ;; Odpad: triediť, vynášať do kontajnerov za domom ;; Spoločné priestory: zákaz fajčenia a nechávania vecí ;; Domáce zvieratá: venčiť mimo areálu domu | Що заборонено в спільних приміщеннях? | *курити й залишати речі ;; виносити сміття ;; тримати домашніх тварин
+= zákaz fajčenia a nechávania vecí — заборона куріння й залишення речей.
+X msg: Прочитай записку на дверях під’їзду. | Rodina Horváthová, 5. poschodie | Milí susedia, v sobotu oslavujeme narodeniny syna. Môže byť trochu hlučnejšie, ale do desiatej večer skončíme. Ospravedlňujeme sa a ďakujeme za pochopenie. | Що обіцяють сусіди? | *закінчити святкування до десятої вечора ;; святкувати без музики ;; запросити всіх сусідів
+= do desiatej večer skončíme — закінчимо до десятої вечора.
+X bd: - | Ти ввічливо розв’язав(ла) проблему із сусідом!
+> Sused: Dobrý večer, prosím? | *Dobrý večer, prepáčte, že ruším. Bývam pod vami. ;; Dobrý večer, prepáčte, že ruším. Bývam pod vás. ;; Čo si to dovoľujete? Bývam pod vami.
+> Sused: Áno, a čo potrebujete? | *Je už po desiatej a hudba je dosť hlasná. Mohli by ste ju trochu stíšiť? ;; Je už po desiatej a hudba je dosť hlasná. Mohli by ste ju trochu stíšiť sa? ;; Je už po desiatej a hudba je dosť hlasná. Okamžite to vypnite!
+> Sused: Ach, prepáčte, nevedel som, že je to až také hlasné. | *To nič, ďakujem za pochopenie. Dobrú noc. ;; To nič, ďakujem za pochopeniu. Dobrú noc. ;; Nabudúce zavolám policajtov.
+X rc: - | Keď sme sa nasťahovali do domu v Prešove, suseda nám hneď vysvetlila domový poriadok. Nočný pokoj je od desiatej večer do šiestej ráno. Vŕtať a robiť hluk sa môže len v pracovné dni do ôsmej večer, v nedeľu vôbec nie. Kočík a bicykel nesmú stáť na chodbe, máme na to miestnosť na prízemí. Odpad triedime, kontajnery sú za domom. Raz ročne je v dome brigáda: všetci spolu upratujeme okolie domu. Na začiatku nám to prišlo prísne, ale teraz sme radi, že je v dome poriadok a pokoj.
+q~: Коли можна свердлити? | *у робочі дні до восьмої вечора ;; щодня до десятої вечора ;; лише в неділю
+q~: Де мають стояти візок і велосипед? | *у спеціальному приміщенні на першому поверсі ;; у коридорі біля дверей ;; за будинком біля контейнерів
+q~: Що таке «brigáda» в цьому тексті? | *спільне прибирання території біля будинку ;; робота на будівництві ;; збори мешканців
+X np: Ти хочеш спитати нову сусідку, де контейнер для скла. | *Prepáčte, kde je kontajner na sklo? ;; Prepáčte, kde je kontajner pre sklom? ;; Prepáčte, kde je kontajner na skla? ;; Prepáčte, kde je kontajnera na sklo?
+= kontajner na + знахідний: na sklo.
+X tr: Перетвори на заборону з «Je zakázané». | Nefajčite vo výťahu. | Je zakázané fajčiť vo výťahu. ;; Vo výťahu je zakázané fajčiť.
+= Je zakázané + інфінітив: fajčiť.
+F: Перший тиждень у новому будинку || Ти знайомишся з правилами будинку й сусідами.
+S: Сусідка: «Nočný pokoj je u nás od desiatej.» Що вона каже? | *після десятої вечора треба бути тихо ;; о десятій вимикають світло в під’їзді ;; з десятої ранку не можна шуміти
+S: Ти питаєш, де контейнери для сміття. | *Kde sú kontajnery na odpad? ;; Kde je kontajnery na odpad? ;; Kde sú kontajnery na odpadu?
+S: Ти хочеш у суботу свердлити й попереджаєш сусідів. | *V sobotu budem trochu vŕtať, prepáčte za hluk. ;; V sobotu budem trochu vŕtať, prepáčte za hluku. ;; V sobotu budem trochu vŕtať, prepáčte o hluk.
+S: На дверях: «Zákaz nechávania vecí na chodbe.» Що це означає? | *у коридорі не можна залишати речі ;; речі треба залишати в коридорі ;; у коридорі можна залишати речі лише вночі
+R: domový poriadok, nočný pokoj ;; hluk, rušiť susedov — ruší nás ;; Je zakázané + інфінітив, Zákaz + родовий ;; triediť odpad: plast, papier, sklo, kontajner
+
+@lesson stahovanie | Переїзд | Sťahovanie
+desc: Як організувати переїзд: пакування, фірма з перевезень або фургон, крихкі речі — і як передати квартиру з актом, показниками лічильників і ключами.
+goal: Організувати переїзд і правильно передати квартиру власникові.
+out: розрізняти sťahovať sa і presťahovať sa ;; домовлятися про перевезення: sťahovacia firma, dodávka ;; пакувати речі: do krabíc, Pozor, krehké! ;; передавати квартиру: vypratať byt, odovzdávací protokol, kľúče
+done: Ти вмієш організувати переїзд і передати квартиру. Далі — підсумок розділу «Оренда житла».
+T: Sťahovať sa — presťahovať sa || «Sťahovať sa» — переїжджати (процес, недоконаний вид): «V sobotu sa sťahujeme». «Presťahovať sa» — переїхати (результат, доконаний вид): «Minulý mesiac sme sa presťahovali do Trnavy». Іменник — «sťahovanie»: «Sťahovanie nám trvalo celý deň». Обидва дієслова — завжди із «sa». || Kedy sa sťahujete? = Коли ви переїжджаєте? ;; Už sme sa presťahovali. = Ми вже переїхали. || sťahovať sa (процес) · presťahovať sa (результат) · sťahovanie
+T: Транспорт і пакування || Можна замовити «sťahovaciu firmu» (фірму з перевезень) або позичити «dodávku» (фургон) і перевезти все самим. Речі пакуємо «do krabíc» — у коробки (родовий множини від krabica). На коробках із посудом пишуть «Pozor, krehké!» — обережно, крихке. || Objednali sme sťahovaciu firmu na sobotu. = Ми замовили фірму з перевезень на суботу. ;; Požičiame si dodávku od kamaráta. = Ми позичимо фургон у друга. || do krabíc · krehké veci · sťahovacia firma / dodávka
+T: Передача квартири || Перед виїздом треба «vypratať byt» — вивезти всі свої речі — і прибрати. Потім разом із власником підписуєте «odovzdávací protokol» — акт передачі: стан квартири, показники лічильників, кількість ключів. На підставі акта власник повертає заставу. || Byt musíme vypratať do konca mesiaca. = Квартиру треба звільнити до кінця місяця. ;; V protokole je stav meračov a počet kľúčov. = В акті вказано показники лічильників і кількість ключів. || vypratať → upratať → podpísať protokol → odovzdať kľúče
+mis: Sťahujeme do Trnavy. => Sťahujeme sa do Trnavy. ;; Presťahovali sme do Žiliny. => Presťahovali sme sa do Žiliny.
+W: sťahovanie | переїзд | ст’агованіе | Sťahovanie je naplánované na sobotu. | Переїзд заплановано на суботу.
+W: sťahovacia firma | фірма з перевезень (переїздів) | ст’аговаціа фірма | Sťahovacia firma príde o ôsmej ráno. | Фірма з перевезень приїде о восьмій ранку.
+W: dodávka | фургон (невелика вантажівка) | дода:вка | Na sťahovanie si požičiame dodávku. | Для переїзду ми позичимо фургон.
+W: označiť | позначити | означіт’ | Krabice s krehkými vecami označte červenou fixkou. | Коробки з крихкими речами позначте червоним маркером.
+W: odovzdávací protokol | акт приймання-передачі | одовзда:ваці протокол | Odovzdávací protokol podpíšeme pri odovzdaní kľúčov. | Акт передачі ми підпишемо, коли передаватимемо ключі.
+W: vypratať | звільнити (приміщення від речей) | віпратат’ | Pivnicu musíme vypratať do piatku. | Підвал треба звільнити до п’ятниці.
+X mt: З’єднай. | sťahovanie = переїзд ;; sťahovacia firma = фірма з перевезень ;; dodávka = фургон ;; označiť = позначити ;; odovzdávací protokol = акт передачі ;; vypratať = звільнити від речей
+X dd: Обери. | V sobotu [*sa/si/se] sťahujeme do Žiliny.
+= sťahovať sa — завжди із sa.
+X dd: Обери. | Všetky veci sme zabalili do dvadsiatich [*krabíc/krabice/krabica].
+= do + родовий множини: krabica → krabíc.
+X fb: Допиши. | Minulý mesiac sme sa ___ do Trnavy. (переїхали) | presťahovali |
+= Результат у минулому — доконаний вид: presťahovali sme sa.
+X sc~: Що означає «vypratať byt»? | - | *вивезти з квартири всі свої речі ;; відремонтувати квартиру ;; здати квартиру в оренду
+= vypratať — звільнити приміщення від речей.
+X tf: - | - | В odovzdávací protokol записують показники лічильників і кількість ключів. | T
+= Акт передачі фіксує стан квартири, лічильників і кількість ключів.
+X cat: Що робимо перед переїздом, а що — під час передачі квартири? | Перед переїздом: objednať sťahovaciu firmu, zabaliť veci do krabíc, požičať si dodávku ;; Під час передачі: odovzdať kľúče, podpísať protokol, zapísať stav meračov
+= Спочатку пакування й транспорт, потім акт, лічильники й ключі.
+X fe: - | Na sťahovanie sme si požičali [dodávka>dodávku] od kamaráta.
+= požičať si čo? — знахідний: dodávku.
+X doc: Прочитай акт передачі. | Odovzdávací protokol (vzor) | Adresa bytu: Mierová 8, Trnava ;; Stav elektromera: 15 230 kWh ;; Stav vodomera: 412 m³ ;; Počet odovzdaných kľúčov: 4 ;; Poznámka: poškriabaná podlaha v obývačke | Що записали як недолік? | *подряпану підлогу у вітальні ;; зламаний лічильник ;; брак одного ключа
+= Poznámka: poškriabaná podlaha — подряпана підлога.
+X msg: Прочитай повідомлення фірми. | Sťahovacia firma Rýchlo, s. r. o. | Dobrý deň, potvrdzujeme sťahovanie v sobotu 15. 11. o 8:00. Prídu dvaja pracovníci s dodávkou. Prosíme, majte všetky veci zabalené v krabiciach a krehké veci označte. Cena: 45 € za hodinu. | Що мають зробити клієнти до приїзду фірми? | *спакувати все в коробки й позначити крихкі речі ;; позичити фургон ;; заплатити наперед
+= majte veci zabalené, krehké veci označte — спакуйте речі й позначте крихкі.
+X rc: - | Minulý mesiac sme sa presťahovali z Nitry do Bratislavy. Najprv sme chceli objednať sťahovaciu firmu, ale bola dosť drahá. Preto sme si od kolegu požičali dodávku a pomohli nám dvaja kamaráti. Veci sme balili celý týždeň, mali sme tridsať krabíc. Na krabice s pohármi a tanierami sme napísali „Pozor, krehké!“, a predsa sa jeden tanier rozbil. Starý byt sme museli vypratať do nedele. V pondelok sme s majiteľkou podpísali odovzdávací protokol a odovzdali sme jej kľúče. Kauciu nám vrátila o týždeň.
+q~: Чому родина не замовила фірму з перевезень? | *вона була задорога ;; не було вільних дат ;; у них було мало речей
+q~: Що сталося під час переїзду? | *розбилася одна тарілка ;; загубилася коробка ;; зламався фургон
+q~: Що було в понеділок? | *підписали акт передачі й віддали ключі ;; почали пакувати речі ;; знайшли нову квартиру
+X dr: - | Majiteľka: Kedy mi odovzdáte kľúče? | *Kľúče vám odovzdám v sobotu. ;; Kľúče vám odovzdám v sobotou. ;; Kľúčov vám odovzdám v sobotu.
+= odovzdať čo? — kľúče (знахідний); kedy? — v sobotu.
+X np: Ти просиш друга допомогти з переїздом. | *V sobotu sa sťahujem. Pomôžeš mi s krabicami? ;; V sobotu sťahujem. Pomôžeš mi s krabicami? ;; V sobotu sa sťahujem. Pomôžeš mi s krabice? ;; V sobotu sa sťahujem. Pomôžeš mňa s krabicami?
+= sťahovať sa — із sa; s + орудний: s krabicami; pomôcť komu? — mi.
+X ce: Виправ речення. | Minulý týždeň sme presťahovali do Košíc. | Minulý týždeň sme sa presťahovali do Košíc. ;; Do Košíc sme sa presťahovali minulý týždeň.
+= presťahovať sa — завжди із sa: sme sa presťahovali.
+F: Великий переїзд || Ти переїжджаєш у нову квартиру й передаєш стару власникові.
+S: Ти пишеш другові, що в суботу переїжджаєш. | *V sobotu sa sťahujem. ;; V sobotu sťahujem. ;; V sobotu sa sťahujú.
+S: Фірма: «Krehké veci, prosím, označte.» Що треба зробити? | *позначити крихкі речі ;; не пакувати крихкі речі ;; окремо заплатити за крихкі речі
+S: Власник: «Najprv musíte byt vypratať.» Що це означає? | *спершу треба вивезти з квартири всі свої речі ;; спершу треба пофарбувати стіни ;; спершу треба знайти нового орендаря
+S: Ти просиш записати в акт показники лічильників. | *Zapíšeme do protokolu aj stav meračov? ;; Zapíšeme do protokol aj stav meračov? ;; Zapíšeme do protokolu aj stav merače?
+R: sťahovať sa — presťahovať sa, sťahovanie ;; sťahovacia firma, dodávka, do krabíc, krehké ;; vypratať byt, odovzdávací protokol ;; stav meračov, odovzdať kľúče
+
+@lesson byvanie-opakovanie | Підсумок: оренда житла | Opakovanie: bývanie v prenájme
+desc: Повторюємо весь шлях орендаря: оголошення, огляд, договір, платежі, енергії, управитель, поломки, сусіди й переїзд.
+goal: Упевнено проходити всі етапи оренди житла словацькою.
+out: читати оголошення й домовлятися про огляд ;; розуміти договір, платежі й перерахунок ;; повідомляти про поломки й розуміти оголошення управителя ;; дотримуватися правил будинку й організувати переїзд
+done: Розділ «Оренда житла» завершено! Далі — банк і платежі: рахунок, картка, IBAN і переказ.
+T: Шлях орендаря || 1) «inzerát» → 2) «prehliadka» («Chcel by som si pozrieť byt») → 3) «nájomná zmluva» (na dobu určitú, výpovedná lehota) → 4) «kaucia» і перше «nájomné» → 5) «odovzdávací protokol» і ключі. Наприкінці оренди так само: «výpoveď» → «vypratať byt» → protokol → повернення kaucie. || Chcel by som si pozrieť byt z inzerátu. = Я хотів би подивитися квартиру з оголошення. ;; Zmluva je na dobu určitú, na rok. = Договір на визначений строк, на рік. || inzerát → prehliadka → zmluva → kaucia → protokol
+T: Гроші за житло || «Nájomné» — за квартиру, «zálohy na energie» — аванси за комунальні, «kaucia» — застава, яку повертають. Раз на рік — «vyúčtovanie»: «preplatok» тобі повертають, «nedoplatok» ти доплачуєш. Усі ці витрати разом — «náklady na bývanie». || Mesačné náklady na bývanie sú 780 €. = Щомісячні витрати на житло — 780 €. ;; Z kaucie mi zrazili 50 €. = Із застави мені утримали 50 €. || nájomné + zálohy → mesačné náklady
+T: Проблеми й правила || Поломка в квартирі — «nahlásiť poruchu» власникові: «Od včera nefunguje práčka». Проблема в під’їзді — пиши «správcovi». Читай «oznamy na nástenke»: «revízia», «odstávka». Поважай «domový poriadok»: «nočný pokoj», «triediť odpad». || Chcel by som nahlásiť poruchu. = Я хотів би повідомити про поломку. ;; V noci nerušte susedov. = Уночі не турбуйте сусідів. || byt → prenajímateľ · dom → správca
+W: bývanie | житло; проживання | бі:ваніе | Bývanie v Bratislave je drahé. | Житло в Братиславі дороге.
+W: nehnuteľnosť | нерухомість | негнутел’ност’ | Táto realitná kancelária prenajíma aj predáva nehnuteľnosti. | Це агентство нерухомості здає в оренду й продає нерухомість.
+W: náklady | витрати | на:кладі | Náklady na bývanie tvoria polovicu môjho platu. | Витрати на житло становлять половину моєї зарплати.
+W: lokalita | місцевість, розташування | локаліта | Byt je v tichej lokalite blízko parku. | Квартира в тихій місцевості біля парку.
+X mt: З’єднай. | bývanie = житло ;; nehnuteľnosť = нерухомість ;; náklady = витрати ;; lokalita = місцевість, розташування
+X rc: - | Keď som pred rokom prišla do Žiliny, hľadala som garsónku. Na internete som našla inzerát: garsónka, 30 m², tichá lokalita, 450 € vrátane energií, bez RK. Na prehliadke sa mi byt páčil: bol zrekonštruovaný a mal novú kuchynskú linku. Podpísala som zmluvu na dobu určitú, na jeden rok, a zaplatila som kauciu vo výške jedného nájmu. V zime sa pokazil bojler. Poruchu som nahlásila majiteľke a opravár prišiel hneď na druhý deň. So susedmi nemám problémy, iba raz ma v noci rušila hlasná hudba. Teraz sa sťahujem do väčšieho bytu, lebo ku mne prichádza dcéra. Výpoveď som dala včas a v sobotu podpíšeme odovzdávací protokol.
+q~: Скільки авторка платила щомісяця? | *450 € разом із комунальними ;; 450 € і ще комунальні окремо ;; 30 € за квадратний метр
+q~: Що сталося взимку? | *зламався бойлер ;; затікало зі стелі ;; сусіди шуміли щоночі
+q~: Чому авторка переїжджає? | *до неї приїжджає донька ;; власниця не продовжила договір ;; квартира надто дорога
+X cz: - | Hľadám byt {na} prenájom. Kaucia je vo výške {dvoch} nájmov. Od včera {nefunguje} práčka. V sobotu {sa} sťahujeme. | na, dvoch, nefunguje, sa
+= na prenájom; vo výške + родовий; nefunguje — про техніку; sťahovať sa.
+X dd: Обери. | Mám zmluvu na dobu [*neurčitú/neurčitá/neurčitej].
+= na + знахідний: na dobu neurčitú.
+X dd: Обери. | Z vyúčtovania máme [*nedoplatok/nedoplatku/nedoplatkom], musíme doplatiť tridsať eur.
+= máme + знахідний: nedoplatok.
+X fe: - | Správca poslal [obyvatelia>obyvateľom] oznam o odstávke vody.
+= poslať komu? — давальний: obyvateľom.
+X tr: Скажи, що переїзд уже завершився (доконаний вид, минулий час). | Sťahujeme sa do Trnavy. | Presťahovali sme sa do Trnavy. ;; Už sme sa presťahovali do Trnavy. ;; Do Trnavy sme sa presťahovali.
+= sťahujeme sa (процес) → presťahovali sme sa (результат).
+X cat: Гроші чи документ? | Гроші: nájomné, kaucia, preplatok, provízia ;; Документ: nájomná zmluva, odovzdávací protokol, domový poriadok
+= Платежі — nájomné, kaucia, provízia, preplatok; документи — zmluva, protokol, poriadok.
+X sch: Подивись на розрахунок витрат. | Mesačné náklady – byt Mierová 8 | Nájomné = 520 € ;; Zálohy na energie = 160 € ;; Internet = 15 € ;; Spolu = 695 € | Скільки становлять щомісячні витрати разом? | *695 € ;; 520 € ;; 680 €
+= Spolu — разом: 520 + 160 + 15 = 695 €.
+X msg: Прочитай оголошення управителя. | Správca domu | Vážení obyvatelia, vo štvrtok 20. 11. od 8:00 do 12:00 bude v dome revízia plynových spotrebičov. Prosíme, sprístupnite byty. Ak nebudete doma, dohodnite si iný termín na telefónnom čísle z nástenky. | Що робити, якщо тебе не буде вдома? | *домовитися про інший час за телефоном із дошки оголошень ;; залишити двері відчиненими ;; нічого, перевірка не обов’язкова
+= dohodnite si iný termín — домовтеся про інший час.
+X bd: - | Ти успішно домовився(лася) про оренду!
+> Majiteľ: Dobrý deň, vy ste sa ozvali na inzerát? | *Áno, chcel by som si pozrieť byt. ;; Áno, chcel by som pozrieť sa byt. ;; Áno, chcel by som si pozrieť bytu.
+> Majiteľ: Byt je zrekonštruovaný a zariadený. Máte nejaké otázky? | *Aké sú mesačné náklady? ;; Aký sú mesačné náklady? ;; Aké je mesačné náklady?
+> Majiteľ: Nájomné je 600 € plus energie. Kaucia je vo výške jedného nájmu. | *Rozumiem. Na akú dobu je zmluva? ;; Rozumiem. Na aký doba je zmluva? ;; Rozumiem. Na akej dobe je zmluva?
+> Majiteľ: Na rok, výpovedná lehota je dva mesiace. | *Dobre, beriem ho. Kedy môžem podpísať zmluvu? ;; Dobre, beriem ho. Kedy môžem podpísať zmluva? ;; Dobre, beriem ho. Kedy môžem podpísať zmluvou?
+X np: Ти повідомляєш власникові, що засмічений злив у ванній. | *Dobrý deň, v kúpeľni je upchatý odtok. ;; Dobrý deň, v kúpeľni je upchatá odtok. ;; Dobrý deň, v kúpeľňa je upchatý odtok. ;; Dobrý deň, v kúpeľni nepracuje odtok.
+= v kúpeľni (місцевий); odtok — чоловічий рід: upchatý.
+X tf: - | - | «Preplatok» у перерахунку — це гроші, які тобі повернуть. | T
+= preplatok — переплата, її повертають.
+X ms: Обери правильні речення. | - | *Chcel by som nahlásiť poruchu. ;; *Je zakázané fajčiť vo výťahu. ;; *V sobotu sa sťahujeme. ;; Kaucia je vo výške dva nájmy. ;; Hluk ruší nám.
+= Правильно: vo výške dvoch nájmov, hluk nás ruší.
+F: Нова квартира — від оголошення до ключів || Ти проходиш увесь шлях: від оголошення до перших місяців у новій квартирі.
+S: Оголошення: «2-izbový byt, 640 € + energie, bez RK.» Що з цього правда? | *комунальні платежі окремо, комісії агентству немає ;; комунальні включені, але є комісія ;; квартира однокімнатна
+S: Ти питаєш власника про розмір застави. | *Aká vysoká je kaucia? ;; Aký vysoký je kaucia? ;; Aká vysoká je kauciu?
+S: Через місяць не працює пральна машина. Ти пишеш власникові. | *Dobrý deň, od včera nefunguje práčka. ;; Dobrý deň, od včera práčka nefungovať. ;; Dobrý deň, od včera nefungujú práčka.
+S: Сусід: «Prosím vás, po desiatej je nočný pokoj.» Що він має на увазі? | *після десятої вечора треба бути тихо ;; о десятій він лягає спати й просить зайти раніше ;; після десятої не працює ліфт
+R: inzerát → prehliadka → nájomná zmluva → kaucia ;; nájomné, zálohy, vyúčtovanie, preplatok — nedoplatok ;; nahlásiť poruchu, správca, oznam, revízia, odstávka ;; domový poriadok, nočný pokoj, sťahovanie, odovzdávací protokol

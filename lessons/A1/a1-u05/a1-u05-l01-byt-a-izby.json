@@ -1,0 +1,798 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u05-l01-byt-a-izby",
+      "sectionId": "a1-u05",
+      "level": "A1",
+      "title": "Квартира й кімнати",
+      "topic": "Житло",
+      "description": "Кімнати в квартирі: izba, obývačka, spálňa, detská izba, chodba — і тип квартири: dvojizbový byt.",
+      "order": 41,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Описати свою квартиру за кімнатами.",
+      "completionMessage": "Тепер ти описуєш своє житло. Далі — меблі.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Житло",
+        "title": "Квартира й кімнати",
+        "shortDescription": "Описати свою квартиру за кімнатами.",
+        "outcomes": [
+          "називати кімнати",
+          "розуміти «dvojizbový / trojizbový byt»",
+          "казати V byte máme…",
+          "питати Koľko izieb má byt?"
+        ],
+        "newWords": [
+          "byt",
+          "izba",
+          "obývačka",
+          "spálňa",
+          "detská izba",
+          "chodba"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Byt і izby",
+          "text": "«Byt» — квартира, «izba» — кімната. «Obývačka» — вітальня, «spálňa» — спальня, «detská izba» — дитяча, «chodba» — коридор.",
+          "examples": [
+            {
+              "sk": "Byt má tri izby.",
+              "uk": "Квартира має три кімнати."
+            },
+            {
+              "sk": "Deti spia v detskej izbe.",
+              "uk": "Діти сплять у дитячій."
+            }
+          ],
+          "shortRule": "izba = кімната",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Типи квартир",
+          "text": "Кількість кімнат у назві: jednoizbový (1 кімната), dvojizbový (2), trojizbový (3). В оголошеннях скорочено: 1-izb., 2-izb., 3-izb. Кухня не рахується як кімната. «Garsónka» — студія / малосімейка.",
+          "examples": [
+            {
+              "sk": "Prenajmem 2-izbový byt.",
+              "uk": "Здам двокімнатну квартиру."
+            },
+            {
+              "sk": "Bývam v garsónke.",
+              "uk": "Я живу в однокімнатній студії."
+            }
+          ],
+          "shortRule": "2-izbový = 2 кімнати + кухня",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Де?",
+          "text": "«V obývačke, v spálni, v izbe, na chodbe» — у вітальні, у спальні, у кімнаті, у коридорі (na chodbe!).",
+          "examples": [
+            {
+              "sk": "Topánky sú na chodbe.",
+              "uk": "Взуття в коридорі."
+            },
+            {
+              "sk": "Televízor je v obývačke.",
+              "uk": "Телевізор у вітальні."
+            }
+          ],
+          "shortRule": "na chodbe, ale v obývačke",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u05-l01-byt-a-izby-w01",
+            "sk": "byt",
+            "uk": "квартира",
+            "pronunciationUk": "біт",
+            "exampleSk": "Bývame v malom byte.",
+            "exampleUk": "Ми живемо в маленькій квартирі."
+          },
+          {
+            "wordId": "a1-u05-l01-byt-a-izby-w02",
+            "sk": "izba",
+            "uk": "кімната",
+            "pronunciationUk": "ізба",
+            "exampleSk": "Koľko izieb má byt?",
+            "exampleUk": "Скільки кімнат у квартирі?"
+          },
+          {
+            "wordId": "a1-u05-l01-byt-a-izby-w03",
+            "sk": "obývačka",
+            "uk": "вітальня",
+            "pronunciationUk": "обі:вачка",
+            "exampleSk": "Večer sedíme v obývačke.",
+            "exampleUk": "Увечері ми сидимо у вітальні."
+          },
+          {
+            "wordId": "a1-u05-l01-byt-a-izby-w04",
+            "sk": "spálňa",
+            "uk": "спальня",
+            "pronunciationUk": "спа:лня",
+            "exampleSk": "Spálňa je tichá.",
+            "exampleUk": "Спальня тиха."
+          },
+          {
+            "wordId": "a1-u05-l01-byt-a-izby-w05",
+            "sk": "detská izba",
+            "uk": "дитяча кімната",
+            "pronunciationUk": "детска: ізба",
+            "exampleSk": "Detská izba je malá.",
+            "exampleUk": "Дитяча кімната маленька."
+          },
+          {
+            "wordId": "a1-u05-l01-byt-a-izby-w06",
+            "sk": "chodba",
+            "uk": "коридор",
+            "pronunciationUk": "ходба",
+            "exampleSk": "Kočík je na chodbe.",
+            "exampleUk": "Візочок у коридорі."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u05-l01-byt-a-izby-w01",
+          "sk": "byt",
+          "uk": "квартира",
+          "pronunciationUk": "біт",
+          "exampleSk": "Bývame v malom byte.",
+          "exampleUk": "Ми живемо в маленькій квартирі.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l01-byt-a-izby-w02",
+          "sk": "izba",
+          "uk": "кімната",
+          "pronunciationUk": "ізба",
+          "exampleSk": "Koľko izieb má byt?",
+          "exampleUk": "Скільки кімнат у квартирі?",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l01-byt-a-izby-w03",
+          "sk": "obývačka",
+          "uk": "вітальня",
+          "pronunciationUk": "обі:вачка",
+          "exampleSk": "Večer sedíme v obývačke.",
+          "exampleUk": "Увечері ми сидимо у вітальні.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l01-byt-a-izby-w04",
+          "sk": "spálňa",
+          "uk": "спальня",
+          "pronunciationUk": "спа:лня",
+          "exampleSk": "Spálňa je tichá.",
+          "exampleUk": "Спальня тиха.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l01-byt-a-izby-w05",
+          "sk": "detská izba",
+          "uk": "дитяча кімната",
+          "pronunciationUk": "детска: ізба",
+          "exampleSk": "Detská izba je malá.",
+          "exampleUk": "Дитяча кімната маленька.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u05-l01-byt-a-izby-w06",
+          "sk": "chodba",
+          "uk": "коридор",
+          "pronunciationUk": "ходба",
+          "exampleSk": "Kočík je na chodbe.",
+          "exampleUk": "Візочок у коридорі.",
+          "level": "A1",
+          "topic": "Житло",
+          "tags": [
+            "a1-u05",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u05-l01-byt-a-izby-ex01",
+          "lessonId": "a1-u05-l01-byt-a-izby",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "byt",
+              "right": "квартира"
+            },
+            {
+              "left": "izba",
+              "right": "кімната"
+            },
+            {
+              "left": "obývačka",
+              "right": "вітальня"
+            },
+            {
+              "left": "spálňa",
+              "right": "спальня"
+            },
+            {
+              "left": "chodba",
+              "right": "коридор"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u05-l01-byt-a-izby-w01",
+            "a1-u05-l01-byt-a-izby-w02",
+            "a1-u05-l01-byt-a-izby-w03",
+            "a1-u05-l01-byt-a-izby-w04",
+            "a1-u05-l01-byt-a-izby-w05",
+            "a1-u05-l01-byt-a-izby-w06"
+          ]
+        },
+        {
+          "id": "a1-u05-l01-byt-a-izby-ex02",
+          "lessonId": "a1-u05-l01-byt-a-izby",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «3-izbový byt»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "три квартири",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "квартира з трьома кімнатами (без кухні)",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "квартира на третьому поверсі",
+              "correct": false
+            }
+          ],
+          "explanation": "Кухня не рахується: 3 кімнати + кухня.",
+          "order": 2,
+          "wordIds": [
+            "a1-u05-l01-byt-a-izby-w01"
+          ]
+        },
+        {
+          "id": "a1-u05-l01-byt-a-izby-ex03",
+          "lessonId": "a1-u05-l01-byt-a-izby",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Topánky sú "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "v",
+                "na"
+              ],
+              "correct": "na"
+            },
+            {
+              "text": " chodbe."
+            }
+          ],
+          "explanation": "na chodbe.",
+          "order": 3,
+          "wordIds": [
+            "a1-u05-l01-byt-a-izby-w01",
+            "a1-u05-l01-byt-a-izby-w06"
+          ]
+        },
+        {
+          "id": "a1-u05-l01-byt-a-izby-ex04",
+          "lessonId": "a1-u05-l01-byt-a-izby",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Deti spia v "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "detskú",
+                "detská",
+                "detskej"
+              ],
+              "correct": "detskej"
+            },
+            {
+              "text": " izbe."
+            }
+          ],
+          "explanation": "v + місцевий: v detskej izbe.",
+          "order": 4,
+          "wordIds": [
+            "a1-u05-l01-byt-a-izby-w01",
+            "a1-u05-l01-byt-a-izby-w05"
+          ]
+        },
+        {
+          "id": "a1-u05-l01-byt-a-izby-ex05",
+          "lessonId": "a1-u05-l01-byt-a-izby",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Де це зазвичай буває?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "obývačka"
+            },
+            {
+              "id": "c2",
+              "title": "spálňa"
+            },
+            {
+              "id": "c3",
+              "title": "chodba"
+            }
+          ],
+          "items": [
+            {
+              "sk": "skriňa na šaty",
+              "category": "c2"
+            },
+            {
+              "sk": "vešiak",
+              "category": "c3"
+            },
+            {
+              "sk": "gauč",
+              "category": "c1"
+            },
+            {
+              "sk": "posteľ",
+              "category": "c2"
+            },
+            {
+              "sk": "topánky",
+              "category": "c3"
+            },
+            {
+              "sk": "televízor",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Меблі за кімнатами.",
+          "order": 5,
+          "wordIds": [
+            "a1-u05-l01-byt-a-izby-w01",
+            "a1-u05-l01-byt-a-izby-w03",
+            "a1-u05-l01-byt-a-izby-w04",
+            "a1-u05-l01-byt-a-izby-w06"
+          ]
+        },
+        {
+          "id": "a1-u05-l01-byt-a-izby-ex06",
+          "lessonId": "a1-u05-l01-byt-a-izby",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Garsónka» — це квартира-студія з однією кімнатою.",
+          "correctAnswer": true,
+          "explanation": "garsónka — однокімнатна студія.",
+          "order": 6,
+          "wordIds": [
+            "a1-u05-l01-byt-a-izby-w01"
+          ]
+        },
+        {
+          "id": "a1-u05-l01-byt-a-izby-ex07",
+          "lessonId": "a1-u05-l01-byt-a-izby",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Koľko ______ má váš byt? (кімнат)",
+          "acceptedAnswers": [
+            "izieb"
+          ],
+          "hint": "Родовий мн. від izba.",
+          "explanation": "Koľko izieb…?",
+          "order": 7,
+          "wordIds": [
+            "a1-u05-l01-byt-a-izby-w01"
+          ]
+        },
+        {
+          "id": "a1-u05-l01-byt-a-izby-ex08",
+          "lessonId": "a1-u05-l01-byt-a-izby",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що ви живете в маленькій квартирі.",
+          "tokens": [
+            ".",
+            "malom",
+            "Bývame",
+            "byte",
+            "v"
+          ],
+          "correctOrder": [
+            "Bývame",
+            "v",
+            "malom",
+            "byte",
+            "."
+          ],
+          "explanation": "v malom byte — місцевий.",
+          "order": 8,
+          "wordIds": [
+            "a1-u05-l01-byt-a-izby-w01"
+          ]
+        },
+        {
+          "id": "a1-u05-l01-byt-a-izby-ex09",
+          "lessonId": "a1-u05-l01-byt-a-izby",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай оголошення.",
+          "document": {
+            "title": "Prenájom",
+            "fields": [
+              {
+                "label": "Typ",
+                "value": "2-izbový byt"
+              },
+              {
+                "label": "Lokalita",
+                "value": "Košice – Terasa"
+              },
+              {
+                "label": "Plocha",
+                "value": "54 m²"
+              },
+              {
+                "label": "Poschodie",
+                "value": "3. z 8"
+              },
+              {
+                "label": "Cena",
+                "value": "590 € + energie"
+              }
+            ]
+          },
+          "question": "Скільки кімнат у квартирі?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "одна",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "три",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "дві (плюс кухня)",
+              "correct": true
+            }
+          ],
+          "explanation": "2-izbový.",
+          "order": 9,
+          "wordIds": [
+            "a1-u05-l01-byt-a-izby-w01",
+            "a1-u05-l01-byt-a-izby-w06"
+          ]
+        },
+        {
+          "id": "a1-u05-l01-byt-a-izby-ex10",
+          "lessonId": "a1-u05-l01-byt-a-izby",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Друг питає про твою нову квартиру.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Je to trojizbový byt, máme obývačku, spálňu a detskú izbu.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Mám trojizbu.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Je to tri byt izby.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Byt je tri.",
+              "correct": false
+            }
+          ],
+          "explanation": "Тип + перелік кімнат.",
+          "order": 10,
+          "wordIds": [
+            "a1-u05-l01-byt-a-izby-w01",
+            "a1-u05-l01-byt-a-izby-w03",
+            "a1-u05-l01-byt-a-izby-w04",
+            "a1-u05-l01-byt-a-izby-w05"
+          ]
+        },
+        {
+          "id": "a1-u05-l01-byt-a-izby-ex11",
+          "lessonId": "a1-u05-l01-byt-a-izby",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери назви кімнат.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "detská izba",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "vešiak",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "spálňa",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "obývačka",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "kreslo",
+              "correct": false
+            }
+          ],
+          "explanation": "kreslo, vešiak — меблі.",
+          "order": 11,
+          "wordIds": [
+            "a1-u05-l01-byt-a-izby-w01",
+            "a1-u05-l01-byt-a-izby-w02",
+            "a1-u05-l01-byt-a-izby-w03",
+            "a1-u05-l01-byt-a-izby-w04",
+            "a1-u05-l01-byt-a-izby-w05"
+          ]
+        },
+        {
+          "id": "a1-u05-l01-byt-a-izby-ex12",
+          "lessonId": "a1-u05-l01-byt-a-izby",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Realitná maklérka",
+              "sk": "Hľadáte väčší byt?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Áno, tri spálňa.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Áno, potrebujeme trojizbový.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Áno, trojizbová.",
+              "correct": false
+            }
+          ],
+          "explanation": "byt — чол.: trojizbový.",
+          "order": 12,
+          "wordIds": [
+            "a1-u05-l01-byt-a-izby-w01",
+            "a1-u05-l01-byt-a-izby-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Пошук квартири",
+        "description": "Ти телефонуєш за оголошенням.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти питаєш, скільки кімнат.",
+            "options": [
+              {
+                "sk": "Koľko izieb má byt?",
+                "correct": true
+              },
+              {
+                "sk": "Izba je koľko?",
+                "correct": false
+              },
+              {
+                "sk": "Koľko izby má byt?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Je to dvojizbový byt – obývačka a spálňa.» Яка квартира?",
+            "options": [
+              {
+                "sk": "три кімнати",
+                "correct": false
+              },
+              {
+                "sk": "дві кімнати: вітальня й спальня",
+                "correct": true
+              },
+              {
+                "sk": "одна кімната",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Тобі потрібна дитяча.",
+            "options": [
+              {
+                "sk": "Potrebujeme aj detskú izbu.",
+                "correct": true
+              },
+              {
+                "sk": "Potrebujeme aj detská izba.",
+                "correct": false
+              },
+              {
+                "sk": "Detskú izba áno.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Mám aj trojizbový o poschodie vyššie.» Що пропонують?",
+            "options": [
+              {
+                "sk": "три квартири",
+                "correct": false
+              },
+              {
+                "sk": "трикімнатну в іншому будинку",
+                "correct": false
+              },
+              {
+                "sk": "трикімнатну на поверх вище",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Тепер ти описуєш своє житло. Далі — меблі."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Тепер ти описуєш своє житло. Далі — меблі.",
+        "nowYouKnow": [
+          "byt, izba, obývačka, spálňa, detská izba, chodba",
+          "2-izbový, garsónka",
+          "v obývačke, na chodbe"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u05-l02-nabytok",
+          "title": "Меблі"
+        }
+      }
+    }
+  ]
+}

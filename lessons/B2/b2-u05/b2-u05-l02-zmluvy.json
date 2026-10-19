@@ -1,0 +1,920 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u05-l02-zmluvy",
+      "sectionId": "b2-u05",
+      "level": "B2",
+      "title": "Договори: як читати й що перевіряти",
+      "topic": "Право і права споживача",
+      "description": "Як читати договір, перш ніж його підписати: з чого він складається, що таке ustanovenie, doložka та všeobecné obchodné podmienky, які пункти перевірити першими й що значить, що певне положення не є обов’язковим для споживача.",
+      "order": 42,
+      "xpReward": 50,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Читати споживчі договори уважно, ставити питання про незрозумілі пункти й розпізнавати ризиковані положення.",
+      "completionMessage": "Ти вмієш читати договір. Далі — споживчі спори: що робити, коли продавець або надавач послуг не виконує свою частину.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Право і права споживача",
+        "title": "Договори: як читати й що перевіряти",
+        "shortDescription": "Читати споживчі договори уважно, ставити питання про незрозумілі пункти й розпізнавати ризиковані положення.",
+        "outcomes": [
+          "називати основні частини договору й типові пункти",
+          "користуватися словами ustanovenie, doložka, dojednať, záväzný",
+          "ввічливо просити пояснити пункт договору",
+          "розуміти, що про дійсність положення судить фахівець чи суд"
+        ],
+        "newWords": [
+          "ustanovenie",
+          "dojednať",
+          "doložka",
+          "neplatný",
+          "všeobecné obchodné podmienky",
+          "záväzný"
+        ],
+        "exercisesCount": 14,
+        "reward": "+50 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "З чого складається договір",
+          "text": "Договір виникає домовленістю сторін: zmluvné strany sa dohodnú na предметі, ціні та інших умовах. Типово в договорі є: сторони (хто), predmet zmluvy (про що), ціна, trvanie (на який час), спосіб припинення (výpoveď, odstúpenie) та sankcie, наприклад zmluvná pokuta. Деякі види договорів закон вимагає укладати письмово, тож завжди перевіряй форму. Окремі пункти називають словом «ustanovenie»: «V ustanovení o cene je chyba.» Домовленість про умову виражаємо дієсловом «dojednať» + знахідний: «Cena bola dojednaná vo výške…» А зворотне «dohodnúť sa na» + місцевий: «Dohodli sme sa na podmienkach.»",
+          "examples": [
+            {
+              "sk": "Zmluvné strany sa dohodli na týchto podmienkach.",
+              "uk": "Сторони домовилися про такі умови."
+            },
+            {
+              "sk": "V ustanovení o cene je chyba.",
+              "uk": "У пункті про ціну є помилка."
+            }
+          ],
+          "shortRule": "dojednať + знахідний · dohodnúť sa na + місцевий · ustanovenie = пункт, положення",
+          "commonMistakes": [
+            {
+              "mistake": "Dohodli sme sa na podmienky.",
+              "correct": "Dohodli sme sa na podmienkach."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Doložky й загальні умови",
+          "text": "Багато договорів посилаються на všeobecné obchodné podmienky (VOP) — окремий документ, який є частиною договору: «Zmluva sa riadi všeobecnými obchodnými podmienkami.» Читай і його: саме там часто ховаються правила про зміну ціни, рекламації та вирішення спорів. Doložka — застереження, наприклад про автоматичне продовження договору: «Ak zmluvu nevypoviete včas, predĺži sa.» Перш за все перевір: ціну й що в неї входить, строк і výpovednú lehotu, автоматичне продовження, штрафи, спосіб рекламації. Незрозумілий пункт не підписуй наосліп: «Nerozumiem tomuto ustanoveniu. Môžete mi ho vysvetliť?» (rozumieť + давальний).",
+          "examples": [
+            {
+              "sk": "Zmluva sa riadi všeobecnými obchodnými podmienkami.",
+              "uk": "Договір регулюється загальними умовами."
+            },
+            {
+              "sk": "Pred podpisom si zmluvu pozorne prečítajte.",
+              "uk": "Перед підписом уважно прочитайте договір."
+            }
+          ],
+          "shortRule": "VOP = частина договору · doložka = застереження · rozumieť + давальний",
+          "commonMistakes": [
+            {
+              "mistake": "Nerozumiem toto ustanovenie.",
+              "correct": "Nerozumiem tomuto ustanoveniu."
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Що, коли пункт несправедливий",
+          "text": "Договір зазвичай зобов’язує обидві сторони: «Zmluva je záväzná pre obe zmluvné strany.» Проте закон про захист споживача передбачає, що положення, яке споживача невиправдано ставить у гірше становище, для нього зазвичай не є обов’язковим. Такі положення називають нечесними чи неприйнятними умовами. Але остаточно судить про це не споживач, а фахівець (poradňa, právnik) або суд, тож не кажи «вже недійсне», а кажи обережно: «Toto ustanovenie môže byť neplatné.» або «Nie som si istý, či je toto ustanovenie pre mňa záväzné.» Зберігай договір, VOP і все листування — вони стануть доказами.",
+          "examples": [
+            {
+              "sk": "Zmluva je záväzná pre obe zmluvné strany.",
+              "uk": "Договір обов’язковий для обох сторін."
+            },
+            {
+              "sk": "Toto ustanovenie môže byť neplatné.",
+              "uk": "Це положення може бути недійсним."
+            }
+          ],
+          "shortRule": "záväzný pre + знахідний · môže byť neplatné = обережне формулювання · зберігай договір і листування",
+          "commonMistakes": [
+            {
+              "mistake": "Zmluva je záväzná na obe strany.",
+              "correct": "Zmluva je záväzná pre obe strany."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u05-l02-zmluvy-w01",
+            "sk": "ustanovenie",
+            "uk": "положення, пункт (договору, закону)",
+            "pronunciationUk": "установеньє",
+            "exampleSk": "Toto ustanovenie zmluvy mi nie je jasné.",
+            "exampleUk": "Це положення договору мені незрозуміле."
+          },
+          {
+            "wordId": "b2-u05-l02-zmluvy-w02",
+            "sk": "dojednať",
+            "uk": "домовитися про умову, узгодити",
+            "pronunciationUk": "доєднать",
+            "exampleSk": "V zmluve boli dojednané platobné podmienky.",
+            "exampleUk": "У договорі узгоджено умови оплати."
+          },
+          {
+            "wordId": "b2-u05-l02-zmluvy-w03",
+            "sk": "doložka",
+            "uk": "застереження, клаузула",
+            "pronunciationUk": "долошка",
+            "exampleSk": "Doložka o automatickom predĺžení je uvedená v bode päť.",
+            "exampleUk": "Застереження про автоматичне продовження вказане в пункті п’ять."
+          },
+          {
+            "wordId": "b2-u05-l02-zmluvy-w04",
+            "sk": "neplatný",
+            "uk": "недійсний",
+            "pronunciationUk": "неплатни",
+            "exampleSk": "Súd môže vyhlásiť ustanovenie za neplatné.",
+            "exampleUk": "Суд може визнати положення недійсним."
+          },
+          {
+            "wordId": "b2-u05-l02-zmluvy-w05",
+            "sk": "všeobecné obchodné podmienky",
+            "uk": "загальні умови (продавця чи надавача послуг)",
+            "pronunciationUk": "вшеобецне: обходне: подмієнки",
+            "exampleSk": "Všeobecné obchodné podmienky sú súčasťou zmluvy.",
+            "exampleUk": "Загальні умови є частиною договору."
+          },
+          {
+            "wordId": "b2-u05-l02-zmluvy-w06",
+            "sk": "záväzný",
+            "uk": "обов’язковий, зобов’язуючий",
+            "pronunciationUk": "за:везни",
+            "exampleSk": "Zmluva je záväzná pre obe zmluvné strany.",
+            "exampleUk": "Договір обов’язковий для обох сторін."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u05-l02-zmluvy-w01",
+          "sk": "ustanovenie",
+          "uk": "положення, пункт (договору, закону)",
+          "pronunciationUk": "установеньє",
+          "exampleSk": "Toto ustanovenie zmluvy mi nie je jasné.",
+          "exampleUk": "Це положення договору мені незрозуміле.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l02-zmluvy-w02",
+          "sk": "dojednať",
+          "uk": "домовитися про умову, узгодити",
+          "pronunciationUk": "доєднать",
+          "exampleSk": "V zmluve boli dojednané platobné podmienky.",
+          "exampleUk": "У договорі узгоджено умови оплати.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l02-zmluvy-w03",
+          "sk": "doložka",
+          "uk": "застереження, клаузула",
+          "pronunciationUk": "долошка",
+          "exampleSk": "Doložka o automatickom predĺžení je uvedená v bode päť.",
+          "exampleUk": "Застереження про автоматичне продовження вказане в пункті п’ять.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l02-zmluvy-w04",
+          "sk": "neplatný",
+          "uk": "недійсний",
+          "pronunciationUk": "неплатни",
+          "exampleSk": "Súd môže vyhlásiť ustanovenie za neplatné.",
+          "exampleUk": "Суд може визнати положення недійсним.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l02-zmluvy-w05",
+          "sk": "všeobecné obchodné podmienky",
+          "uk": "загальні умови (продавця чи надавача послуг)",
+          "pronunciationUk": "вшеобецне: обходне: подмієнки",
+          "exampleSk": "Všeobecné obchodné podmienky sú súčasťou zmluvy.",
+          "exampleUk": "Загальні умови є частиною договору.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u05-l02-zmluvy-w06",
+          "sk": "záväzný",
+          "uk": "обов’язковий, зобов’язуючий",
+          "pronunciationUk": "за:везни",
+          "exampleSk": "Zmluva je záväzná pre obe zmluvné strany.",
+          "exampleUk": "Договір обов’язковий для обох сторін.",
+          "level": "B2",
+          "topic": "Право і права споживача",
+          "tags": [
+            "b2-u05",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u05-l02-zmluvy-ex01",
+          "lessonId": "b2-u05-l02-zmluvy",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "ustanovenie",
+              "right": "пункт, положення договору"
+            },
+            {
+              "left": "dojednať",
+              "right": "домовитися про умову"
+            },
+            {
+              "left": "doložka",
+              "right": "застереження в договорі"
+            },
+            {
+              "left": "neplatný",
+              "right": "недійсний"
+            },
+            {
+              "left": "všeobecné obchodné podmienky",
+              "right": "загальні умови продавця"
+            },
+            {
+              "left": "záväzný",
+              "right": "обов’язковий для сторін"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u05-l02-zmluvy-w01",
+            "b2-u05-l02-zmluvy-w02",
+            "b2-u05-l02-zmluvy-w03",
+            "b2-u05-l02-zmluvy-w04",
+            "b2-u05-l02-zmluvy-w05",
+            "b2-u05-l02-zmluvy-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l02-zmluvy-ex02",
+          "lessonId": "b2-u05-l02-zmluvy",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Zmluva sa riadi všeobecnými "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "obchodnými",
+                "obchodných",
+                "obchodné"
+              ],
+              "correct": "obchodnými"
+            },
+            {
+              "text": " podmienkami."
+            }
+          ],
+          "explanation": "Riadiť sa + орудний множини: všeobecnými obchodnými podmienkami.",
+          "order": 2,
+          "wordIds": [
+            "b2-u05-l02-zmluvy-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l02-zmluvy-ex03",
+          "lessonId": "b2-u05-l02-zmluvy",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Nerozumiem tomuto "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "ustanovenie",
+                "ustanovením",
+                "ustanoveniu"
+              ],
+              "correct": "ustanoveniu"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Rozumieť + давальний: tomuto ustanoveniu.",
+          "order": 3,
+          "wordIds": [
+            "b2-u05-l02-zmluvy-w01"
+          ]
+        },
+        {
+          "id": "b2-u05-l02-zmluvy-ex04",
+          "lessonId": "b2-u05-l02-zmluvy",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Zmluvné ______ sa dohodli na týchto podmienkach. (сторони)",
+          "acceptedAnswers": [
+            "strany"
+          ],
+          "explanation": "Zmluvné strany — сторони договору.",
+          "order": 4,
+          "wordIds": [
+            "b2-u05-l02-zmluvy-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l02-zmluvy-ex05",
+          "lessonId": "b2-u05-l02-zmluvy",
+          "type": "cloze_text",
+          "skill": [
+            "grammar",
+            "reading"
+          ],
+          "instruction": "Доповни пораду.",
+          "textParts": [
+            {
+              "text": "Pred "
+            },
+            {
+              "blankId": "b1",
+              "acceptedAnswers": [
+                "podpisom"
+              ]
+            },
+            {
+              "text": " si zmluvu pozorne "
+            },
+            {
+              "blankId": "b2",
+              "acceptedAnswers": [
+                "prečítajte"
+              ]
+            },
+            {
+              "text": ". Ak niečomu nerozumiete, "
+            },
+            {
+              "blankId": "b3",
+              "acceptedAnswers": [
+                "požiadajte"
+              ]
+            },
+            {
+              "text": " o vysvetlenie."
+            }
+          ],
+          "hint": "podpisom, prečítajte, požiadajte",
+          "explanation": "Pred + орудний (podpisom); наказ у Vy-формі — prečítajte, požiadajte.",
+          "order": 5
+        },
+        {
+          "id": "b2-u05-l02-zmluvy-ex06",
+          "lessonId": "b2-u05-l02-zmluvy",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що найрозумніше зробити, якщо ти не розумієш пункту договору перед підписанням?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "підписати й розібратися пізніше",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "взагалі не читати договір",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "попросити пояснити пункт або показати договір юристові",
+              "correct": true
+            }
+          ],
+          "explanation": "Підпис договору — це зобов’язання; пункт, якого не розумієш, краще пояснити до підписання.",
+          "order": 6
+        },
+        {
+          "id": "b2-u05-l02-zmluvy-ex07",
+          "lessonId": "b2-u05-l02-zmluvy",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Zmluva je záväzná na obe zmluvné strany.",
+          "errorToken": "na",
+          "correctToken": "pre",
+          "explanation": "Záväzný pre + знахідний: pre obe strany.",
+          "order": 7,
+          "wordIds": [
+            "b2-u05-l02-zmluvy-w06"
+          ]
+        },
+        {
+          "id": "b2-u05-l02-zmluvy-ex08",
+          "lessonId": "b2-u05-l02-zmluvy",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Dohodli sme sa na podmienky zmluvy.",
+          "acceptedAnswers": [
+            "Dohodli sme sa na podmienkach zmluvy."
+          ],
+          "explanation": "Dohodnúť sa na + місцевий: na podmienkach.",
+          "order": 8,
+          "wordIds": [
+            "b2-u05-l02-zmluvy-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l02-zmluvy-ex09",
+          "lessonId": "b2-u05-l02-zmluvy",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Daria si v Bratislave chcela predplatiť posilňovňu. Predajca jej podal zmluvu na jeden rok a povedal: «To je len formalita.» Daria však zistila, že zmluva odkazuje na všeobecné obchodné podmienky, a prečítala si ich. V jednom ustanovení našla doložku: ak zmluvu nevypovie najneskôr mesiac pred koncom, predĺži sa o ďalší rok. Požiadala predajcu o vysvetlenie. Ten potvrdil, že doložka je súčasťou zmluvy. Daria si poznačila dátum, do ktorého by mala poslať výpoveď, a zmluvu podpísala. Doma si uložila zmluvu aj podmienky do jedného priečinka.",
+          "questions": [
+            {
+              "question": "Що вирішила Дарія перед підписанням?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "прочитати загальні умови, на які посилається договір",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "підписати лише усну домовленість",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "не читати нічого",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що вона знайшла в одному з положень?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "безкоштовну ознайомлювальну годину",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "застереження про автоматичне продовження на рік",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "штраф за запізнення",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що вона зробила після підписання?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "викинула договір",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "записала дату для відмови від договору й зберегла договір та умови разом",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "відмовилася від послуги",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 9,
+          "wordIds": [
+            "b2-u05-l02-zmluvy-w01",
+            "b2-u05-l02-zmluvy-w03",
+            "b2-u05-l02-zmluvy-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l02-zmluvy-ex10",
+          "lessonId": "b2-u05-l02-zmluvy",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай витяг із договору.",
+          "document": {
+            "title": "Výťah zo zmluvy – ukážka",
+            "fields": [
+              {
+                "label": "Predmet",
+                "value": "členstvo vo fitnescentre"
+              },
+              {
+                "label": "Doba",
+                "value": "12 mesiacov od 1. 3. 2026"
+              },
+              {
+                "label": "Cena",
+                "value": "29 eur mesačne"
+              },
+              {
+                "label": "Doložka",
+                "value": "Ak zmluvu nevypoviete aspoň 30 dní pred koncom, predlžuje sa o ďalších 12 mesiacov."
+              }
+            ]
+          },
+          "question": "Що станеться, якщо клієнт не розірве договір (výpoveď) вчасно?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "договір автоматично продовжиться ще на 12 місяців",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "договір сам закінчиться",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "ціна зменшиться",
+              "correct": false
+            }
+          ],
+          "explanation": "Doložka говорить про автоматичне продовження, якщо клієнт вчасно не розірвав договір.",
+          "order": 10,
+          "wordIds": [
+            "b2-u05-l02-zmluvy-w03"
+          ]
+        },
+        {
+          "id": "b2-u05-l02-zmluvy-ex11",
+          "lessonId": "b2-u05-l02-zmluvy",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай відповідь поради.",
+          "message": {
+            "sender": "Poradňa pre spotrebiteľov",
+            "body": "Dobrý deň, k Vašej otázke: ustanovenie, podľa ktorého môže poskytovateľ kedykoľvek jednostranne zmeniť cenu, môže byť pre spotrebiteľa problematické. Či je v konkrétnom prípade neplatné, musí posúdiť odborník alebo súd. Odporúčame Vám uschovať zmluvu, všeobecné obchodné podmienky aj celú korešpondenciu. S pozdravom Poradňa"
+          },
+          "question": "Чи стверджує порадня, що положення безумовно недійсне?",
+          "options": [
+            {
+              "id": "a",
+              "text": "так, воно недійсне автоматично",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "ні, це має оцінити фахівець або суд",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "так, але тільки якщо ціна зросла",
+              "correct": false
+            }
+          ],
+          "explanation": "Poradňa ставиться обережно: «môže byť problematické», остаточно оцінює фахівець або суд.",
+          "order": 11,
+          "wordIds": [
+            "b2-u05-l02-zmluvy-w01",
+            "b2-u05-l02-zmluvy-w04",
+            "b2-u05-l02-zmluvy-w05"
+          ]
+        },
+        {
+          "id": "b2-u05-l02-zmluvy-ex12",
+          "lessonId": "b2-u05-l02-zmluvy",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти просиш продавця (на «Ви») пояснити пункт договору.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Nerozumiem tomuto ustanoveniu. Vysvetli mi to!",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Nerozumieť ustanoveniu, vysvetlite.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Nerozumiem toto ustanovenie. Môžete mi ho vysvetliť?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Nerozumiem tomuto ustanoveniu. Môžete mi ho vysvetliť?",
+              "correct": true
+            }
+          ],
+          "explanation": "Rozumieť + давальний; ввічливе прохання на «Ви» без оклику.",
+          "order": 12,
+          "wordIds": [
+            "b2-u05-l02-zmluvy-w01"
+          ]
+        },
+        {
+          "id": "b2-u05-l02-zmluvy-ex13",
+          "lessonId": "b2-u05-l02-zmluvy",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Розподіл: на що звертати увагу перед підписом?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Cena a trvanie"
+            },
+            {
+              "id": "c2",
+              "title": "Zodpovednosť a spory"
+            }
+          ],
+          "items": [
+            {
+              "sk": "postup pri reklamácii",
+              "category": "c2"
+            },
+            {
+              "sk": "doba viazanosti",
+              "category": "c1"
+            },
+            {
+              "sk": "výpovedná lehota",
+              "category": "c1"
+            },
+            {
+              "sk": "riešenie sporov",
+              "category": "c2"
+            },
+            {
+              "sk": "automatické predĺženie",
+              "category": "c1"
+            },
+            {
+              "sk": "zmluvná pokuta",
+              "category": "c2"
+            },
+            {
+              "sk": "náhrada škody",
+              "category": "c2"
+            },
+            {
+              "sk": "mesačná cena",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Перша група — гроші й строк, друга — відповідальність і вирішення спорів.",
+          "order": 13
+        },
+        {
+          "id": "b2-u05-l02-zmluvy-ex14",
+          "lessonId": "b2-u05-l02-zmluvy",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери твердження, які зазвичай правдиві.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Ak zmluva odkazuje na všeobecné obchodné podmienky, treba si ich prečítať.",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Neprimerané ustanovenie voči spotrebiteľovi nemusí byť záväzné.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Podpis nič neznamená, zmluvu môžem ignorovať.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Neprimerané ustanovenie je vždy neplatné bez posúdenia.",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "Zmluva vzniká dohodou strán.",
+              "correct": true
+            }
+          ],
+          "explanation": "Договір зобов’язує сторони; нечесні умови для споживача зазвичай не є обов’язковими, але це оцінює фахівець чи суд.",
+          "order": 14,
+          "wordIds": [
+            "b2-u05-l02-zmluvy-w01",
+            "b2-u05-l02-zmluvy-w04",
+            "b2-u05-l02-zmluvy-w05",
+            "b2-u05-l02-zmluvy-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Підпис договору у фітнес-центрі",
+        "description": "Продавець поспішає й просить підписати договір на рік. Ти спокійно перевіряєш умови.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Що зробиш перед підписом?",
+            "options": [
+              {
+                "sk": "Prečítam zmluvu aj všeobecné obchodné podmienky.",
+                "correct": true
+              },
+              {
+                "sk": "Prečítam len nadpis.",
+                "correct": false
+              },
+              {
+                "sk": "Podpíšem hneď, lebo predajca spieša.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Як ввічливо спитаєш про застереження про продовження?",
+            "options": [
+              {
+                "sk": "Vysvetli mi to ustanovenie hneď!",
+                "correct": false
+              },
+              {
+                "sk": "Tomu ustanovenie nerozumieť.",
+                "correct": false
+              },
+              {
+                "sk": "Môžete mi vysvetliť toto ustanovenie o predĺžení zmluvy?",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Що варто записати після підписання?",
+            "options": [
+              {
+                "text": "нічого, усе й так видно",
+                "correct": false
+              },
+              {
+                "text": "лише ім’я продавця",
+                "correct": false
+              },
+              {
+                "text": "дату, до якої треба подати výpoveď, і де лежить договір",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Як правильно сказати про дивне положення?",
+            "options": [
+              {
+                "text": "воно діє завжди, бо підписано",
+                "correct": false
+              },
+              {
+                "text": "воно може бути недійсним, але це має оцінити фахівець або суд",
+                "correct": true
+              },
+              {
+                "text": "воно точно недійсне, суд не потрібен",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш читати договір. Далі — споживчі спори: що робити, коли продавець або надавач послуг не виконує свою частину."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш читати договір. Далі — споживчі спори: що робити, коли продавець або надавач послуг не виконує свою частину.",
+        "nowYouKnow": [
+          "ustanovenie · doložka · všeobecné obchodné podmienky",
+          "dojednať + знахідний · dohodnúť sa na + місцевий",
+          "záväzný pre + знахідний · môže byť neplatné",
+          "прочитати договір і VOP · зберегти листування"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 14,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u05-l03-spotrebitelske-spory",
+          "title": "Споживчі спори: сходи вирішення"
+        }
+      }
+    }
+  ]
+}

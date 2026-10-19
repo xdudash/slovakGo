@@ -1,0 +1,768 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u01-l01-ja-som-ty-si",
+      "sectionId": "a1-u01",
+      "level": "A1",
+      "title": "Ja som, ty si",
+      "topic": "Я і ти: дієслово byť",
+      "description": "Дієслово byť (бути) в однині: ja som, ty si — і чому займенник часто пропускають.",
+      "order": 1,
+      "xpReward": 25,
+      "estimatedMinutes": 20,
+      "isPublished": true,
+      "intro": "Правильно казати «я є», «ти є» і будувати перші речення з byť.",
+      "completionMessage": "Ти знаєш перші форми byť. Далі — on, ona, ono.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Я і ти: дієслово byť",
+        "title": "Ja som, ty si",
+        "shortDescription": "Правильно казати «я є», «ти є» і будувати перші речення з byť.",
+        "outcomes": [
+          "відмінювати byť: som, si",
+          "пропускати займенник: Som Olena",
+          "ставити som / si на друге місце",
+          "будувати речення «Я — студент»"
+        ],
+        "newWords": [
+          "ja",
+          "ty",
+          "byť",
+          "študent",
+          "doma",
+          "unavený"
+        ],
+        "exercisesCount": 13,
+        "reward": "+25 XP",
+        "estimatedMinutes": 20,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Byť — бути",
+          "text": "В українській «бути» в теперішньому часі майже зникло («я — студент»). У словацькій byť обов’язкове: «Ja som študent» — я (є) студент. «Ty si doma» — ти (є) вдома.",
+          "examples": [
+            {
+              "sk": "Ja som Petro.",
+              "uk": "Я — Петро."
+            },
+            {
+              "sk": "Ty si Anna?",
+              "uk": "Ти — Анна?"
+            }
+          ],
+          "shortRule": "ja som, ty si — обов’язково",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Займенник можна пропустити",
+          "text": "Форма дієслова вже показує особу, тому «ja» і «ty» часто пропускають: «Som unavený» (я втомлений), «Si doma?» (ти вдома?). Займенник лишають для наголосу: «Ja som tu, ty si tam».",
+          "examples": [
+            {
+              "sk": "Som v práci.",
+              "uk": "Я на роботі."
+            },
+            {
+              "sk": "Si Ukrajinec?",
+              "uk": "Ти українець?"
+            }
+          ],
+          "shortRule": "Som… / Si… без займенника — норма.",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Порядок слів",
+          "text": "Som і si — «слабкі» слова, вони люблять друге місце в реченні: «Dnes som doma» (а не «Dnes doma som»). Почни з одного слова — і одразу som.",
+          "examples": [
+            {
+              "sk": "Teraz som v obchode.",
+              "uk": "Зараз я в магазині."
+            },
+            {
+              "sk": "Kde si?",
+              "uk": "Де ти?"
+            }
+          ],
+          "shortRule": "som / si — на другому місці",
+          "commonMistakes": [
+            {
+              "mistake": "Ja študent.",
+              "correct": "Ja som študent."
+            },
+            {
+              "mistake": "Dnes doma som.",
+              "correct": "Dnes som doma."
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u01-l01-ja-som-ty-si-w01",
+            "sk": "ja",
+            "uk": "я",
+            "pronunciationUk": "я",
+            "exampleSk": "Ja som Taras.",
+            "exampleUk": "Я — Тарас."
+          },
+          {
+            "wordId": "a1-u01-l01-ja-som-ty-si-w02",
+            "sk": "ty",
+            "uk": "ти",
+            "pronunciationUk": "ті",
+            "exampleSk": "Ty si môj kamarát.",
+            "exampleUk": "Ти мій друг."
+          },
+          {
+            "wordId": "a1-u01-l01-ja-som-ty-si-w03",
+            "sk": "byť",
+            "uk": "бути",
+            "pronunciationUk": "біть",
+            "exampleSk": "Chcem byť lekár.",
+            "exampleUk": "Я хочу бути лікарем."
+          },
+          {
+            "wordId": "a1-u01-l01-ja-som-ty-si-w04",
+            "sk": "študent",
+            "uk": "студент",
+            "pronunciationUk": "штудент",
+            "exampleSk": "Som študent medicíny.",
+            "exampleUk": "Я студент медицини."
+          },
+          {
+            "wordId": "a1-u01-l01-ja-som-ty-si-w05",
+            "sk": "doma",
+            "uk": "удома",
+            "pronunciationUk": "дома",
+            "exampleSk": "Večer som doma.",
+            "exampleUk": "Увечері я вдома."
+          },
+          {
+            "wordId": "a1-u01-l01-ja-som-ty-si-w06",
+            "sk": "unavený",
+            "uk": "втомлений",
+            "pronunciationUk": "унавені:",
+            "exampleSk": "Dnes som veľmi unavený.",
+            "exampleUk": "Сьогодні я дуже втомлений."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-w01",
+          "sk": "ja",
+          "uk": "я",
+          "pronunciationUk": "я",
+          "exampleSk": "Ja som Taras.",
+          "exampleUk": "Я — Тарас.",
+          "level": "A1",
+          "topic": "Я і ти: дієслово byť",
+          "tags": [
+            "a1-u01",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-w02",
+          "sk": "ty",
+          "uk": "ти",
+          "pronunciationUk": "ті",
+          "exampleSk": "Ty si môj kamarát.",
+          "exampleUk": "Ти мій друг.",
+          "level": "A1",
+          "topic": "Я і ти: дієслово byť",
+          "tags": [
+            "a1-u01",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-w03",
+          "sk": "byť",
+          "uk": "бути",
+          "pronunciationUk": "біть",
+          "exampleSk": "Chcem byť lekár.",
+          "exampleUk": "Я хочу бути лікарем.",
+          "level": "A1",
+          "topic": "Я і ти: дієслово byť",
+          "tags": [
+            "a1-u01",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-w04",
+          "sk": "študent",
+          "uk": "студент",
+          "pronunciationUk": "штудент",
+          "exampleSk": "Som študent medicíny.",
+          "exampleUk": "Я студент медицини.",
+          "level": "A1",
+          "topic": "Я і ти: дієслово byť",
+          "tags": [
+            "a1-u01",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-w05",
+          "sk": "doma",
+          "uk": "удома",
+          "pronunciationUk": "дома",
+          "exampleSk": "Večer som doma.",
+          "exampleUk": "Увечері я вдома.",
+          "level": "A1",
+          "topic": "Я і ти: дієслово byť",
+          "tags": [
+            "a1-u01",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-w06",
+          "sk": "unavený",
+          "uk": "втомлений",
+          "pronunciationUk": "унавені:",
+          "exampleSk": "Dnes som veľmi unavený.",
+          "exampleUk": "Сьогодні я дуже втомлений.",
+          "level": "A1",
+          "topic": "Я і ти: дієслово byť",
+          "tags": [
+            "a1-u01",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-ex01",
+          "lessonId": "a1-u01-l01-ja-som-ty-si",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "ja som",
+              "right": "я (є)"
+            },
+            {
+              "left": "ty si",
+              "right": "ти (є)"
+            },
+            {
+              "left": "som doma",
+              "right": "я вдома"
+            },
+            {
+              "left": "si unavený?",
+              "right": "ти втомлений?"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u01-l01-ja-som-ty-si-w01",
+            "a1-u01-l01-ja-som-ty-si-w02",
+            "a1-u01-l01-ja-som-ty-si-w05",
+            "a1-u01-l01-ja-som-ty-si-w06"
+          ]
+        },
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-ex02",
+          "lessonId": "a1-u01-l01-ja-som-ty-si",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Ja "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "si",
+                "je",
+                "som"
+              ],
+              "correct": "som"
+            },
+            {
+              "text": " z Ukrajiny."
+            }
+          ],
+          "explanation": "ja → som.",
+          "order": 2,
+          "wordIds": [
+            "a1-u01-l01-ja-som-ty-si-w01",
+            "a1-u01-l01-ja-som-ty-si-w02"
+          ]
+        },
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-ex03",
+          "lessonId": "a1-u01-l01-ja-som-ty-si",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери форму.",
+          "sentenceParts": [
+            {
+              "text": "Ty "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "som",
+                "si",
+                "sú"
+              ],
+              "correct": "si"
+            },
+            {
+              "text": " doma?"
+            }
+          ],
+          "explanation": "ty → si.",
+          "order": 3,
+          "wordIds": [
+            "a1-u01-l01-ja-som-ty-si-w01",
+            "a1-u01-l01-ja-som-ty-si-w02",
+            "a1-u01-l01-ja-som-ty-si-w05"
+          ]
+        },
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-ex04",
+          "lessonId": "a1-u01-l01-ja-som-ty-si",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Som unavený»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Ти втомлений",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "Я втомлений",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "Він утомлений",
+              "correct": false
+            }
+          ],
+          "explanation": "som — перша особа: я.",
+          "order": 4,
+          "wordIds": [
+            "a1-u01-l01-ja-som-ty-si-w01",
+            "a1-u01-l01-ja-som-ty-si-w02"
+          ]
+        },
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-ex05",
+          "lessonId": "a1-u01-l01-ja-som-ty-si",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Речення «Ja študent» граматично правильне словацькою.",
+          "correctAnswer": false,
+          "explanation": "Потрібне дієслово: Ja som študent.",
+          "order": 5,
+          "wordIds": [
+            "a1-u01-l01-ja-som-ty-si-w01",
+            "a1-u01-l01-ja-som-ty-si-w02",
+            "a1-u01-l01-ja-som-ty-si-w04"
+          ]
+        },
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-ex06",
+          "lessonId": "a1-u01-l01-ja-som-ty-si",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що ти сьогодні вдома.",
+          "tokens": [
+            "som",
+            ".",
+            "Dnes",
+            "doma"
+          ],
+          "correctOrder": [
+            "Dnes",
+            "som",
+            "doma",
+            "."
+          ],
+          "explanation": "som стоїть на другому місці.",
+          "order": 6,
+          "wordIds": [
+            "a1-u01-l01-ja-som-ty-si-w01",
+            "a1-u01-l01-ja-som-ty-si-w02",
+            "a1-u01-l01-ja-som-ty-si-w05"
+          ]
+        },
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-ex07",
+          "lessonId": "a1-u01-l01-ja-som-ty-si",
+          "type": "sentence_builder",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Склади речення зі слів.",
+          "context": "Запитай друга, де він.",
+          "tokens": [
+            "Kde",
+            "si",
+            "?",
+            "teraz"
+          ],
+          "correctSentence": "Kde si teraz?",
+          "explanation": "Kde + si на другому місці.",
+          "order": 7,
+          "wordIds": [
+            "a1-u01-l01-ja-som-ty-si-w01",
+            "a1-u01-l01-ja-som-ty-si-w02"
+          ]
+        },
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-ex08",
+          "lessonId": "a1-u01-l01-ja-som-ty-si",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши форму byť.",
+          "sentence": "Ty ______ môj sused?",
+          "acceptedAnswers": [
+            "si"
+          ],
+          "hint": "Ти — si.",
+          "explanation": "Ty si…?",
+          "order": 8,
+          "wordIds": [
+            "a1-u01-l01-ja-som-ty-si-w01",
+            "a1-u01-l01-ja-som-ty-si-w02"
+          ]
+        },
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-ex09",
+          "lessonId": "a1-u01-l01-ja-som-ty-si",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Dnes je v práci do piatej.",
+          "errorToken": "je",
+          "correctToken": "som",
+          "explanation": "Про себе — som.",
+          "order": 9,
+          "wordIds": [
+            "a1-u01-l01-ja-som-ty-si-w01",
+            "a1-u01-l01-ja-som-ty-si-w02"
+          ]
+        },
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-ex10",
+          "lessonId": "a1-u01-l01-ja-som-ty-si",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення.",
+          "sentence": "Ja študent z Ukrajiny.",
+          "acceptedAnswers": [
+            "Ja som študent z Ukrajiny.",
+            "Som študent z Ukrajiny."
+          ],
+          "explanation": "Пропущено som.",
+          "order": 10,
+          "wordIds": [
+            "a1-u01-l01-ja-som-ty-si-w01",
+            "a1-u01-l01-ja-som-ty-si-w02",
+            "a1-u01-l01-ja-som-ty-si-w04"
+          ]
+        },
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-ex11",
+          "lessonId": "a1-u01-l01-ja-som-ty-si",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Із som чи з si?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "som"
+            },
+            {
+              "id": "c2",
+              "title": "si"
+            }
+          ],
+          "items": [
+            {
+              "sk": "ja",
+              "category": "c1"
+            },
+            {
+              "sk": "Kde … ?",
+              "category": "c2"
+            },
+            {
+              "sk": "Ty … doma?",
+              "category": "c2"
+            },
+            {
+              "sk": "Ja … unavený.",
+              "category": "c1"
+            },
+            {
+              "sk": "ty",
+              "category": "c2"
+            },
+            {
+              "sk": "… doma (про себе)",
+              "category": "c1"
+            }
+          ],
+          "explanation": "som — я, si — ти.",
+          "order": 11,
+          "wordIds": [
+            "a1-u01-l01-ja-som-ty-si-w01",
+            "a1-u01-l01-ja-som-ty-si-w02",
+            "a1-u01-l01-ja-som-ty-si-w05",
+            "a1-u01-l01-ja-som-ty-si-w06"
+          ]
+        },
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-ex12",
+          "lessonId": "a1-u01-l01-ja-som-ty-si",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Kolegyňa",
+              "sk": "Si unavený?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Áno, je unavený.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Áno, som veľmi unavený.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Áno, si unavený.",
+              "correct": false
+            }
+          ],
+          "explanation": "Відповідаєш про себе — som.",
+          "order": 12,
+          "wordIds": [
+            "a1-u01-l01-ja-som-ty-si-w01",
+            "a1-u01-l01-ja-som-ty-si-w02",
+            "a1-u01-l01-ja-som-ty-si-w06"
+          ]
+        },
+        {
+          "id": "a1-u01-l01-ja-som-ty-si-ex13",
+          "lessonId": "a1-u01-l01-ja-som-ty-si",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери правильні речення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Dnes doma som.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Som doma.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Ty som doma.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Dnes som v práci.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Ty si Peter?",
+              "correct": true
+            }
+          ],
+          "explanation": "Ty si; som на другому місці.",
+          "order": 13,
+          "wordIds": [
+            "a1-u01-l01-ja-som-ty-si-w01",
+            "a1-u01-l01-ja-som-ty-si-w02",
+            "a1-u01-l01-ja-som-ty-si-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Дзвінок від друга",
+        "description": "Друг Ján телефонує тобі ввечері.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Ahoj, kde si?»",
+            "options": [
+              {
+                "sk": "Si doma.",
+                "correct": false
+              },
+              {
+                "sk": "Som doma.",
+                "correct": true
+              },
+              {
+                "sk": "Doma som ja si.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Si unavený?» (так)",
+            "options": [
+              {
+                "sk": "Áno, unavený je.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, som unavený.",
+                "correct": true
+              },
+              {
+                "sk": "Áno, si unavený.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Ty si študent alebo pracuješ?» (студент)",
+            "options": [
+              {
+                "sk": "Som študent.",
+                "correct": true
+              },
+              {
+                "sk": "Študent som si.",
+                "correct": false
+              },
+              {
+                "sk": "Si študent.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«A zajtra si v škole?» (так)",
+            "options": [
+              {
+                "sk": "Áno, zajtra v škole som.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, si v škole.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, zajtra som v škole.",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти знаєш перші форми byť. Далі — on, ona, ono."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти знаєш перші форми byť. Далі — on, ona, ono.",
+        "nowYouKnow": [
+          "ja som, ty si",
+          "займенник можна пропустити",
+          "som / si на другому місці",
+          "byť обов’язкове"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 13,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u01-l02-on-ona-ono",
+          "title": "On, ona, ono — je"
+        }
+      }
+    }
+  ]
+}

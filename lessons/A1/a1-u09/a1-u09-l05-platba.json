@@ -1,0 +1,735 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u09-l05-platba",
+      "sectionId": "a1-u09",
+      "level": "A1",
+      "title": "Способи оплати",
+      "topic": "Магазин і покупки",
+      "description": "Як платити: platobná karta, PIN, bezkontaktne, hotovosť, mince, vydať — і що робити, якщо картка не проходить.",
+      "order": 85,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Розплатитися будь-яким способом і вирішити проблему з оплатою.",
+      "completionMessage": "Оплата без проблем. Далі — акції й знижки.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Магазин і покупки",
+        "title": "Способи оплати",
+        "shortDescription": "Розплатитися будь-яким способом і вирішити проблему з оплатою.",
+        "outcomes": [
+          "казати Platím kartou / v hotovosti",
+          "розуміти Zadajte PIN",
+          "розуміти bezkontaktne",
+          "реагувати: Karta neprešla"
+        ],
+        "newWords": [
+          "platobná karta",
+          "PIN",
+          "bezkontaktne",
+          "hotovosť",
+          "mince",
+          "vydať"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Картка",
+          "text": "«Platobná karta» — платіжна картка. «Bezkontaktne» — безконтактно. «Zadajte PIN» — введіть PIN. «Mobilom» — телефоном.",
+          "examples": [
+            {
+              "sk": "Môžem platiť mobilom?",
+              "uk": "Можна оплатити телефоном?"
+            },
+            {
+              "sk": "Zadajte PIN a potvrďte.",
+              "uk": "Введіть PIN і підтвердьте."
+            }
+          ],
+          "shortRule": "bezkontaktne / PIN",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Готівка",
+          "text": "«Hotovosť» — готівка, «bankovka» — банкнота, «mince» — монети. «Vydať» — дати решту: «Vydám vám päť eur». «Máte drobné?» (вже знаєш).",
+          "examples": [
+            {
+              "sk": "Nemám drobné, len päťdesiat eur.",
+              "uk": "Не маю дрібних, лише 50 євро."
+            },
+            {
+              "sk": "Vydajte mi, prosím, v minciach.",
+              "uk": "Дайте решту монетами."
+            }
+          ],
+          "shortRule": "vydať = дати решту",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Проблема",
+          "text": "«Karta neprešla» — оплата карткою не пройшла. «Skúste znova» — спробуйте знову. «Platba bola zamietnutá» — платіж відхилено.",
+          "examples": [
+            {
+              "sk": "Prepáčte, karta neprešla. Skúsim inú.",
+              "uk": "Вибачте, картка не пройшла. Спробую іншу."
+            }
+          ],
+          "shortRule": "neprešla = не пройшла",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u09-l05-platba-w01",
+            "sk": "platobná karta",
+            "uk": "платіжна картка",
+            "pronunciationUk": "платобна: карта",
+            "exampleSk": "Zabudol som platobnú kartu.",
+            "exampleUk": "Я забув платіжну картку."
+          },
+          {
+            "wordId": "a1-u09-l05-platba-w02",
+            "sk": "PIN",
+            "uk": "PIN-код",
+            "pronunciationUk": "пін",
+            "exampleSk": "Zadajte PIN.",
+            "exampleUk": "Введіть PIN."
+          },
+          {
+            "wordId": "a1-u09-l05-platba-w03",
+            "sk": "bezkontaktne",
+            "uk": "безконтактно",
+            "pronunciationUk": "безконтактне",
+            "exampleSk": "Platím bezkontaktne.",
+            "exampleUk": "Я плачу безконтактно."
+          },
+          {
+            "wordId": "a1-u09-l05-platba-w04",
+            "sk": "hotovosť",
+            "uk": "готівка",
+            "pronunciationUk": "готовост",
+            "exampleSk": "Mám len hotovosť.",
+            "exampleUk": "У мене лише готівка."
+          },
+          {
+            "wordId": "a1-u09-l05-platba-w05",
+            "sk": "mince",
+            "uk": "монети",
+            "pronunciationUk": "мінце",
+            "exampleSk": "Mám veľa mincí.",
+            "exampleUk": "У мене багато монет."
+          },
+          {
+            "wordId": "a1-u09-l05-platba-w06",
+            "sk": "vydať",
+            "uk": "дати решту; видати",
+            "pronunciationUk": "видать",
+            "exampleSk": "Vydám vám desať eur.",
+            "exampleUk": "Дам вам десять євро решти."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u09-l05-platba-w01",
+          "sk": "platobná karta",
+          "uk": "платіжна картка",
+          "pronunciationUk": "платобна: карта",
+          "exampleSk": "Zabudol som platobnú kartu.",
+          "exampleUk": "Я забув платіжну картку.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l05-platba-w02",
+          "sk": "PIN",
+          "uk": "PIN-код",
+          "pronunciationUk": "пін",
+          "exampleSk": "Zadajte PIN.",
+          "exampleUk": "Введіть PIN.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l05-platba-w03",
+          "sk": "bezkontaktne",
+          "uk": "безконтактно",
+          "pronunciationUk": "безконтактне",
+          "exampleSk": "Platím bezkontaktne.",
+          "exampleUk": "Я плачу безконтактно.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l05-platba-w04",
+          "sk": "hotovosť",
+          "uk": "готівка",
+          "pronunciationUk": "готовост",
+          "exampleSk": "Mám len hotovosť.",
+          "exampleUk": "У мене лише готівка.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l05-platba-w05",
+          "sk": "mince",
+          "uk": "монети",
+          "pronunciationUk": "мінце",
+          "exampleSk": "Mám veľa mincí.",
+          "exampleUk": "У мене багато монет.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u09-l05-platba-w06",
+          "sk": "vydať",
+          "uk": "дати решту; видати",
+          "pronunciationUk": "видать",
+          "exampleSk": "Vydám vám desať eur.",
+          "exampleUk": "Дам вам десять євро решти.",
+          "level": "A1",
+          "topic": "Магазин і покупки",
+          "tags": [
+            "a1-u09",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u09-l05-platba-ex01",
+          "lessonId": "a1-u09-l05-platba",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "platobná karta",
+              "right": "платіжна картка"
+            },
+            {
+              "left": "bezkontaktne",
+              "right": "безконтактно"
+            },
+            {
+              "left": "hotovosť",
+              "right": "готівка"
+            },
+            {
+              "left": "mince",
+              "right": "монети"
+            },
+            {
+              "left": "vydať",
+              "right": "дати решту"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u09-l05-platba-w01",
+            "a1-u09-l05-platba-w03",
+            "a1-u09-l05-platba-w04",
+            "a1-u09-l05-platba-w05",
+            "a1-u09-l05-platba-w06"
+          ]
+        },
+        {
+          "id": "a1-u09-l05-platba-ex02",
+          "lessonId": "a1-u09-l05-platba",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «Karta neprešla»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "картку не приймають у цьому магазині",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "оплата карткою не пройшла",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "картку забули",
+              "correct": false
+            }
+          ],
+          "explanation": "neprešla — не пройшла.",
+          "order": 2
+        },
+        {
+          "id": "a1-u09-l05-platba-ex03",
+          "lessonId": "a1-u09-l05-platba",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Platím "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "bezkontakt",
+                "bezkontaktne",
+                "bezkontaktný"
+              ],
+              "correct": "bezkontaktne"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "Прислівник: bezkontaktne.",
+          "order": 3,
+          "wordIds": [
+            "a1-u09-l05-platba-w03"
+          ]
+        },
+        {
+          "id": "a1-u09-l05-platba-ex04",
+          "lessonId": "a1-u09-l05-platba",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Pokladníčka",
+              "sk": "Karta neprešla."
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Neprešla som.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Karta je dobrá.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Prepáčte, skúsim to znova.",
+              "correct": true
+            }
+          ],
+          "explanation": "Спробуєш знову.",
+          "order": 4,
+          "wordIds": [
+            "a1-u09-l05-platba-w01"
+          ]
+        },
+        {
+          "id": "a1-u09-l05-platba-ex05",
+          "lessonId": "a1-u09-l05-platba",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Zadajte PIN» означає «Введіть PIN».",
+          "correctAnswer": true,
+          "explanation": "zadať — ввести.",
+          "order": 5,
+          "wordIds": [
+            "a1-u09-l05-platba-w02"
+          ]
+        },
+        {
+          "id": "a1-u09-l05-platba-ex06",
+          "lessonId": "a1-u09-l05-platba",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Mám len ______. (готівка)",
+          "acceptedAnswers": [
+            "hotovosť"
+          ],
+          "explanation": "hotovosť.",
+          "order": 6,
+          "wordIds": [
+            "a1-u09-l05-platba-w04"
+          ]
+        },
+        {
+          "id": "a1-u09-l05-platba-ex07",
+          "lessonId": "a1-u09-l05-platba",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Запитай, чи можна оплатити телефоном.",
+          "tokens": [
+            "Môžem",
+            "?",
+            "mobilom",
+            "platiť"
+          ],
+          "correctOrder": [
+            "Môžem",
+            "platiť",
+            "mobilom",
+            "?"
+          ],
+          "explanation": "platiť + mobilom.",
+          "order": 7
+        },
+        {
+          "id": "a1-u09-l05-platba-ex08",
+          "lessonId": "a1-u09-l05-platba",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Zabudol som platobný kartu.",
+          "errorToken": "platobný",
+          "correctToken": "platobnú",
+          "explanation": "karta — platobnú.",
+          "order": 8,
+          "wordIds": [
+            "a1-u09-l05-platba-w01"
+          ]
+        },
+        {
+          "id": "a1-u09-l05-platba-ex09",
+          "lessonId": "a1-u09-l05-platba",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Картка чи готівка?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Karta"
+            },
+            {
+              "id": "c2",
+              "title": "Hotovosť"
+            }
+          ],
+          "items": [
+            {
+              "sk": "výdavok",
+              "category": "c2"
+            },
+            {
+              "sk": "bezkontaktne",
+              "category": "c1"
+            },
+            {
+              "sk": "mince",
+              "category": "c2"
+            },
+            {
+              "sk": "terminál",
+              "category": "c1"
+            },
+            {
+              "sk": "bankovka",
+              "category": "c2"
+            },
+            {
+              "sk": "PIN",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Способи оплати.",
+          "order": 9,
+          "wordIds": [
+            "a1-u09-l05-platba-w01",
+            "a1-u09-l05-platba-w02",
+            "a1-u09-l05-platba-w03",
+            "a1-u09-l05-platba-w04",
+            "a1-u09-l05-platba-w05"
+          ]
+        },
+        {
+          "id": "a1-u09-l05-platba-ex10",
+          "lessonId": "a1-u09-l05-platba",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти даєш 50 € за покупку на 3 €.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Vydajte päťdesiat mince.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Mám päťdesiat drobné.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Päťdesiat, vydať.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Prepáčte, mám len päťdesiat eur. Môžete vydať?",
+              "correct": true
+            }
+          ],
+          "explanation": "Попередження + прохання.",
+          "order": 10,
+          "wordIds": [
+            "a1-u09-l05-platba-w05",
+            "a1-u09-l05-platba-w06"
+          ]
+        },
+        {
+          "id": "a1-u09-l05-platba-ex11",
+          "lessonId": "a1-u09-l05-platba",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Продавець на ринку каже: «Kartou nie, len hotovosť.» Що це означає?",
+          "options": [
+            {
+              "id": "a",
+              "text": "він приймає лише готівку",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "картка не працює",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "готівки в нього немає",
+              "correct": false
+            }
+          ],
+          "explanation": "len hotovosť — лише готівка.",
+          "order": 11,
+          "wordIds": [
+            "a1-u09-l05-platba-w01",
+            "a1-u09-l05-platba-w04"
+          ]
+        },
+        {
+          "id": "a1-u09-l05-platba-ex12",
+          "lessonId": "a1-u09-l05-platba",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери способи оплати.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "vernostnou kartou",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "košíkom",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "kartou",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "v hotovosti",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "mobilom",
+              "correct": true
+            }
+          ],
+          "explanation": "Способи оплати.",
+          "order": 12,
+          "wordIds": [
+            "a1-u09-l05-platba-w01",
+            "a1-u09-l05-platba-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Проблема з оплатою",
+        "description": "Ти купуєш продукти на 47 €, і картка не проходить.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Касирка: «Karta neprešla.»",
+            "options": [
+              {
+                "sk": "Neprešla, ďakujem.",
+                "correct": false
+              },
+              {
+                "sk": "Karta je hotovosť.",
+                "correct": false
+              },
+              {
+                "sk": "Skúsim to ešte raz.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Знову ні. Що скажеш?",
+            "options": [
+              {
+                "sk": "Môžem platiť v hotovosti?",
+                "correct": true
+              },
+              {
+                "sk": "Hotovosť je karta?",
+                "correct": false
+              },
+              {
+                "sk": "Môžem platiť košíkom?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "У тебе 50 €. Касирка: «Vydám vám tri eurá.» Що це означає?",
+            "options": [
+              {
+                "sk": "решта — 3 €",
+                "correct": true
+              },
+              {
+                "sk": "знижка 3 €",
+                "correct": false
+              },
+              {
+                "sk": "ще треба доплатити 3 €",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Ďakujem, pekný deň.»",
+            "options": [
+              {
+                "sk": "Aj vám, dovidenia.",
+                "correct": true
+              },
+              {
+                "sk": "Dobrú chuť.",
+                "correct": false
+              },
+              {
+                "sk": "Prosím si.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Оплата без проблем. Далі — акції й знижки."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Оплата без проблем. Далі — акції й знижки.",
+        "nowYouKnow": [
+          "platobná karta, PIN, bezkontaktne, mobilom",
+          "hotovosť, mince, bankovka, vydať",
+          "Karta neprešla. Skúsim znova."
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u09-l06-akcie-zlavy",
+          "title": "Акції й знижки"
+        }
+      }
+    }
+  ]
+}

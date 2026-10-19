@@ -1,0 +1,908 @@
+{
+  "lessons": [
+    {
+      "id": "a2-u08-l01-inzerat-na-byt",
+      "sectionId": "a2-u08",
+      "level": "A2",
+      "title": "Оголошення про оренду",
+      "topic": "Оренда житла",
+      "description": "Як читати словацькі оголошення про оренду: prenajmem і hľadám, кількість кімнат, площа, ціна з енергіями чи без, скорочення.",
+      "order": 71,
+      "xpReward": 30,
+      "estimatedMinutes": 21,
+      "isPublished": true,
+      "intro": "Розуміти оголошення про оренду житла й коротко відповідати на нього.",
+      "completionMessage": "Ти вмієш читати оголошення про оренду. Далі — огляд квартири: що подивитися й що запитати.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A2 · Оренда житла",
+        "title": "Оголошення про оренду",
+        "shortDescription": "Розуміти оголошення про оренду житла й коротко відповідати на нього.",
+        "outcomes": [
+          "розрізняти prenajmem і hľadám, na prenájom і na predaj",
+          "розуміти garsónka, 2-izbový byt, rozloha 52 m²",
+          "читати скорочення й позначки: RK, bez RK, + energie, vrátane energií",
+          "написати перше повідомлення власникові"
+        ],
+        "newWords": [
+          "inzerát",
+          "prenájom",
+          "garsónka",
+          "dvojizbový",
+          "rozloha",
+          "realitná kancelária",
+          "provízia"
+        ],
+        "exercisesCount": 14,
+        "reward": "+30 XP",
+        "estimatedMinutes": 21,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Prenajmem чи hľadám?",
+          "text": "Оголошення часто починається з дієслова. «Prenajmem byt» — здам квартиру (так пише власник), «Hľadám byt» — шукаю квартиру (так пише той, хто хоче винайняти житло). «Na prenájom» — в оренду, «na predaj» — на продаж. Часто пишуть і без дієслова: «Byt na prenájom, Nitra – Chrenová».",
+          "examples": [
+            {
+              "sk": "Prenajmem 2-izbový byt v centre Žiliny.",
+              "uk": "Здам двокімнатну квартиру в центрі Жиліни."
+            },
+            {
+              "sk": "Mladý pár hľadá byt na dlhodobý prenájom.",
+              "uk": "Молода пара шукає квартиру в довгострокову оренду."
+            }
+          ],
+          "shortRule": "prenajmem — здаю · hľadám — шукаю · na prenájom — в оренду",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Кімнати й площа",
+          "text": "Словаки рахують кімнати разом із вітальнею, але без кухні: «2-izbový byt» (dvojizbový) — вітальня, спальня і кухня. «3-izbový» (trojizbový) — три кімнати й кухня. «Garsónka» — одна кімната з кухонним кутом. Площа — «rozloha»: «rozloha 52 m²» читаємо «päťdesiatdva štvorcových metrov».",
+          "examples": [
+            {
+              "sk": "Garsónka má rozlohu 28 m².",
+              "uk": "Квартира-студія має площу 28 м²."
+            },
+            {
+              "sk": "Hľadáme trojizbový byt pre rodinu.",
+              "uk": "Ми шукаємо трикімнатну квартиру для родини."
+            }
+          ],
+          "shortRule": "2-izbový — dvojizbový · 3-izbový — trojizbový · garsónka — студія",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Ціна і скорочення",
+          "text": "«Cena: 650 € + energie» — 650 євро, а комунальні платежі окремо. «Vrátane energií» — включно з комунальними (vrátane + родовий). «RK» — realitná kancelária, агентство нерухомості; «bez RK» — без посередника, напряму від власника. «Provízia» — комісія агентства. «Voľný od 1. 11.» або «k dispozícii od 1. 11.» — вільна з 1 листопада.",
+          "examples": [
+            {
+              "sk": "Cena je 700 € vrátane energií.",
+              "uk": "Ціна — 700 євро включно з комунальними."
+            },
+            {
+              "sk": "Byt je voľný ihneď.",
+              "uk": "Квартира вільна одразу."
+            }
+          ],
+          "shortRule": "+ energie — окремо · vrátane energií — разом · bez RK — без агентства",
+          "commonMistakes": [
+            {
+              "mistake": "Hľadám byt do prenájmu.",
+              "correct": "Hľadám byt na prenájom."
+            },
+            {
+              "mistake": "dva-izbový byt",
+              "correct": "dvojizbový byt"
+            },
+            {
+              "mistake": "voľný od prvý novembra",
+              "correct": "voľný od prvého novembra"
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a2-u08-l01-inzerat-na-byt-w01",
+            "sk": "inzerát",
+            "uk": "оголошення",
+            "pronunciationUk": "інзера:т",
+            "exampleSk": "Na internete som našla zaujímavý inzerát.",
+            "exampleUk": "В інтернеті я знайшла цікаве оголошення."
+          },
+          {
+            "wordId": "a2-u08-l01-inzerat-na-byt-w02",
+            "sk": "prenájom",
+            "uk": "оренда, найм",
+            "pronunciationUk": "прена:йом",
+            "exampleSk": "Byt je na dlhodobý prenájom.",
+            "exampleUk": "Квартира здається в довгострокову оренду."
+          },
+          {
+            "wordId": "a2-u08-l01-inzerat-na-byt-w03",
+            "sk": "garsónka",
+            "uk": "квартира-студія",
+            "pronunciationUk": "гарсо:нка",
+            "exampleSk": "Garsónka je malá, ale lacná.",
+            "exampleUk": "Студія маленька, але дешева."
+          },
+          {
+            "wordId": "a2-u08-l01-inzerat-na-byt-w04",
+            "sk": "dvojizbový",
+            "uk": "двокімнатний",
+            "pronunciationUk": "двойізбові:",
+            "exampleSk": "Bývame v dvojizbovom byte na sídlisku.",
+            "exampleUk": "Ми живемо у двокімнатній квартирі в спальному районі."
+          },
+          {
+            "wordId": "a2-u08-l01-inzerat-na-byt-w05",
+            "sk": "rozloha",
+            "uk": "площа",
+            "pronunciationUk": "розлога",
+            "exampleSk": "Aká je rozloha bytu?",
+            "exampleUk": "Яка площа квартири?"
+          },
+          {
+            "wordId": "a2-u08-l01-inzerat-na-byt-w06",
+            "sk": "realitná kancelária",
+            "uk": "агентство нерухомості",
+            "pronunciationUk": "реалітна: канцела:рія",
+            "exampleSk": "Byt sme našli cez realitnú kanceláriu.",
+            "exampleUk": "Квартиру ми знайшли через агентство нерухомості."
+          },
+          {
+            "wordId": "a2-u08-l01-inzerat-na-byt-w07",
+            "sk": "provízia",
+            "uk": "комісія (посередника)",
+            "pronunciationUk": "провізія",
+            "exampleSk": "Provízia realitnej kancelárie je dosť vysoká.",
+            "exampleUk": "Комісія агентства нерухомості досить висока."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-w01",
+          "sk": "inzerát",
+          "uk": "оголошення",
+          "pronunciationUk": "інзера:т",
+          "exampleSk": "Na internete som našla zaujímavý inzerát.",
+          "exampleUk": "В інтернеті я знайшла цікаве оголошення.",
+          "level": "A2",
+          "topic": "Оренда житла",
+          "tags": [
+            "a2-u08",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-w02",
+          "sk": "prenájom",
+          "uk": "оренда, найм",
+          "pronunciationUk": "прена:йом",
+          "exampleSk": "Byt je na dlhodobý prenájom.",
+          "exampleUk": "Квартира здається в довгострокову оренду.",
+          "level": "A2",
+          "topic": "Оренда житла",
+          "tags": [
+            "a2-u08",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-w03",
+          "sk": "garsónka",
+          "uk": "квартира-студія",
+          "pronunciationUk": "гарсо:нка",
+          "exampleSk": "Garsónka je malá, ale lacná.",
+          "exampleUk": "Студія маленька, але дешева.",
+          "level": "A2",
+          "topic": "Оренда житла",
+          "tags": [
+            "a2-u08",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-w04",
+          "sk": "dvojizbový",
+          "uk": "двокімнатний",
+          "pronunciationUk": "двойізбові:",
+          "exampleSk": "Bývame v dvojizbovom byte na sídlisku.",
+          "exampleUk": "Ми живемо у двокімнатній квартирі в спальному районі.",
+          "level": "A2",
+          "topic": "Оренда житла",
+          "tags": [
+            "a2-u08",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-w05",
+          "sk": "rozloha",
+          "uk": "площа",
+          "pronunciationUk": "розлога",
+          "exampleSk": "Aká je rozloha bytu?",
+          "exampleUk": "Яка площа квартири?",
+          "level": "A2",
+          "topic": "Оренда житла",
+          "tags": [
+            "a2-u08",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-w06",
+          "sk": "realitná kancelária",
+          "uk": "агентство нерухомості",
+          "pronunciationUk": "реалітна: канцела:рія",
+          "exampleSk": "Byt sme našli cez realitnú kanceláriu.",
+          "exampleUk": "Квартиру ми знайшли через агентство нерухомості.",
+          "level": "A2",
+          "topic": "Оренда житла",
+          "tags": [
+            "a2-u08",
+            "a2"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-w07",
+          "sk": "provízia",
+          "uk": "комісія (посередника)",
+          "pronunciationUk": "провізія",
+          "exampleSk": "Provízia realitnej kancelárie je dosť vysoká.",
+          "exampleUk": "Комісія агентства нерухомості досить висока.",
+          "level": "A2",
+          "topic": "Оренда житла",
+          "tags": [
+            "a2-u08",
+            "a2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-ex01",
+          "lessonId": "a2-u08-l01-inzerat-na-byt",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "inzerát",
+              "right": "оголошення"
+            },
+            {
+              "left": "prenájom",
+              "right": "оренда"
+            },
+            {
+              "left": "garsónka",
+              "right": "квартира-студія"
+            },
+            {
+              "left": "dvojizbový",
+              "right": "двокімнатний"
+            },
+            {
+              "left": "rozloha",
+              "right": "площа"
+            },
+            {
+              "left": "provízia",
+              "right": "комісія"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a2-u08-l01-inzerat-na-byt-w01",
+            "a2-u08-l01-inzerat-na-byt-w02",
+            "a2-u08-l01-inzerat-na-byt-w03",
+            "a2-u08-l01-inzerat-na-byt-w04",
+            "a2-u08-l01-inzerat-na-byt-w05",
+            "a2-u08-l01-inzerat-na-byt-w07"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-ex02",
+          "lessonId": "a2-u08-l01-inzerat-na-byt",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Хто пише оголошення «Prenajmem 3-izbový byt»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "людина, яка продає квартиру",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "людина, яка шукає квартиру",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "власник, який здає квартиру",
+              "correct": true
+            }
+          ],
+          "explanation": "Prenajmem — здам в оренду; так пише власник житла.",
+          "order": 2,
+          "wordIds": [
+            "a2-u08-l01-inzerat-na-byt-w01"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-ex03",
+          "lessonId": "a2-u08-l01-inzerat-na-byt",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Prenajmem "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "dvojizbový",
+                "dvojizbové",
+                "dvojizbová"
+              ],
+              "correct": "dvojizbový"
+            },
+            {
+              "text": " byt blízko stanice."
+            }
+          ],
+          "explanation": "byt — чоловічий рід: dvojizbový byt.",
+          "order": 3,
+          "wordIds": [
+            "a2-u08-l01-inzerat-na-byt-w01",
+            "a2-u08-l01-inzerat-na-byt-w04"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-ex04",
+          "lessonId": "a2-u08-l01-inzerat-na-byt",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Cena je 720 € vrátane "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "energií",
+                "energiám",
+                "energiami"
+              ],
+              "correct": "energií"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "explanation": "vrátane + родовий: energie → energií.",
+          "order": 4,
+          "wordIds": [
+            "a2-u08-l01-inzerat-na-byt-w01"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-ex05",
+          "lessonId": "a2-u08-l01-inzerat-na-byt",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши прийменник.",
+          "sentence": "Hľadám dvojizbový byt ______ prenájom v Trnave.",
+          "acceptedAnswers": [
+            "na"
+          ],
+          "explanation": "na prenájom — в оренду (na + знахідний).",
+          "order": 5,
+          "wordIds": [
+            "a2-u08-l01-inzerat-na-byt-w01",
+            "a2-u08-l01-inzerat-na-byt-w02",
+            "a2-u08-l01-inzerat-na-byt-w04"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-ex06",
+          "lessonId": "a2-u08-l01-inzerat-na-byt",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Inzerát: «Garsónka, 26 m², bez RK, voľná ihneď.»",
+          "statement": "Цю студію здає агентство нерухомості.",
+          "correctAnswer": false,
+          "explanation": "bez RK — без агентства, напряму від власника.",
+          "order": 6,
+          "wordIds": [
+            "a2-u08-l01-inzerat-na-byt-w01",
+            "a2-u08-l01-inzerat-na-byt-w03"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-ex07",
+          "lessonId": "a2-u08-l01-inzerat-na-byt",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Хто це пише?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Власник"
+            },
+            {
+              "id": "c2",
+              "title": "Шукач"
+            }
+          ],
+          "items": [
+            {
+              "sk": "Ponúkam byt na prenájom",
+              "category": "c1"
+            },
+            {
+              "sk": "Hľadáme 3-izbový byt",
+              "category": "c2"
+            },
+            {
+              "sk": "Prenajmem garsónku v centre",
+              "category": "c1"
+            },
+            {
+              "sk": "Hľadám byt v Nitre",
+              "category": "c2"
+            },
+            {
+              "sk": "Mladý pár hľadá garsónku",
+              "category": "c2"
+            },
+            {
+              "sk": "Prenajmem 2-izbový byt",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Prenajmem, ponúkam — здаю; hľadám, hľadá — шукаю.",
+          "order": 7,
+          "wordIds": [
+            "a2-u08-l01-inzerat-na-byt-w01",
+            "a2-u08-l01-inzerat-na-byt-w02",
+            "a2-u08-l01-inzerat-na-byt-w03"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-ex08",
+          "lessonId": "a2-u08-l01-inzerat-na-byt",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Mladá rodina hľadá trojizbová byt v Prešove.",
+          "errorToken": "trojizbová",
+          "correctToken": "trojizbový",
+          "explanation": "byt — чоловічий рід: trojizbový byt.",
+          "order": 8,
+          "wordIds": [
+            "a2-u08-l01-inzerat-na-byt-w01"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-ex09",
+          "lessonId": "a2-u08-l01-inzerat-na-byt",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай оголошення.",
+          "document": {
+            "title": "Prenájom – 2-izbový byt, Banská Bystrica",
+            "fields": [
+              {
+                "label": "Rozloha",
+                "value": "54 m²"
+              },
+              {
+                "label": "Poschodie",
+                "value": "3. z 8, výťah"
+              },
+              {
+                "label": "Cena",
+                "value": "590 € + energie"
+              },
+              {
+                "label": "Provízia",
+                "value": "bez RK"
+              },
+              {
+                "label": "Voľný od",
+                "value": "1. 12."
+              }
+            ]
+          },
+          "question": "Що з цього правда?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "комунальні вже включені в ціну",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "агентству треба сплатити комісію",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "за комунальні треба платити окремо",
+              "correct": true
+            }
+          ],
+          "explanation": "+ energie — комунальні платежі окремо від 590 €; bez RK — комісії немає.",
+          "order": 9,
+          "wordIds": [
+            "a2-u08-l01-inzerat-na-byt-w01",
+            "a2-u08-l01-inzerat-na-byt-w02",
+            "a2-u08-l01-inzerat-na-byt-w05",
+            "a2-u08-l01-inzerat-na-byt-w07"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-ex10",
+          "lessonId": "a2-u08-l01-inzerat-na-byt",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Prenajmem čiastočne zariadený 3-izbový byt v Košiciach, sídlisko Terasa. Byt má rozlohu 68 m², je na 4. poschodí a dom má výťah. Kuchyňa je nová, v kúpeľni je sprchovací kút. K bytu patrí pivnica. Cena je 750 € mesačne vrátane energií. Byt je vhodný pre rodinu s deťmi, škôlka aj škola sú hneď vedľa. Domáce zvieratá nie sú povolené. Voľný od 1. januára. Bez RK, volajte po 17:00.",
+          "questions": [
+            {
+              "question": "Скільки треба платити щомісяця?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "750 € разом із комунальними",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "750 € і ще комунальні окремо",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "68 € за квадратний метр",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Що в цій квартирі не дозволено?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "тримати домашніх тварин",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "text": "користуватися підвалом",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "жити з дітьми",
+                  "correct": false
+                }
+              ]
+            },
+            {
+              "question": "Коли можна телефонувати власникові?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "до 17:00",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "після 17:00",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "лише з 1 січня",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 10,
+          "wordIds": [
+            "a2-u08-l01-inzerat-na-byt-w01",
+            "a2-u08-l01-inzerat-na-byt-w05"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-ex11",
+          "lessonId": "a2-u08-l01-inzerat-na-byt",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай відповідь агентства.",
+          "message": {
+            "sender": "Realitná kancelária DOMOV",
+            "body": "Dobrý deň, ďakujeme za záujem. Garsónka na Dlhej ulici je už, žiaľ, prenajatá. Môžeme vám ponúknuť podobnú garsónku na Hlavnej ulici za 480 € + energie. Provízia je 200 €."
+          },
+          "question": "Що відповіло агентство?",
+          "options": [
+            {
+              "id": "a",
+              "text": "студія ще вільна",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "ця студія вже здана, але є схожа",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "агентство не бере комісії",
+              "correct": false
+            }
+          ],
+          "explanation": "je už prenajatá — уже здана в оренду; podobná garsónka — схожа студія.",
+          "order": 11,
+          "wordIds": [
+            "a2-u08-l01-inzerat-na-byt-w01",
+            "a2-u08-l01-inzerat-na-byt-w03",
+            "a2-u08-l01-inzerat-na-byt-w06",
+            "a2-u08-l01-inzerat-na-byt-w07"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-ex12",
+          "lessonId": "a2-u08-l01-inzerat-na-byt",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Спитай, чи квартира ще вільна.",
+          "tokens": [
+            "ešte",
+            "byt",
+            "Je",
+            "?",
+            "voľný"
+          ],
+          "correctOrder": [
+            "Je",
+            "byt",
+            "ešte",
+            "voľný",
+            "?"
+          ],
+          "explanation": "Je … ešte voľný? — чи ще вільний?",
+          "order": 12,
+          "wordIds": [
+            "a2-u08-l01-inzerat-na-byt-w01"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-ex13",
+          "lessonId": "a2-u08-l01-inzerat-na-byt",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Ти пишеш власникові перше повідомлення щодо оголошення.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Dobrý deň, píšem na váš inzerát. Je byt ešte voľný?",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "Dobrý deň, píšem do vášho inzerátu. Je byt ešte voľný?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Ahoj, píšem na tvoj inzerát. Je byt ešte voľný?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Dobrý deň, píšem na váš inzerát. Je byt ešte voľná?",
+              "correct": false
+            }
+          ],
+          "explanation": "písať na inzerát — відповідати на оголошення; незнайомій людині пишемо на «vy».",
+          "order": 13,
+          "wordIds": [
+            "a2-u08-l01-inzerat-na-byt-w01"
+          ]
+        },
+        {
+          "id": "a2-u08-l01-inzerat-na-byt-ex14",
+          "lessonId": "a2-u08-l01-inzerat-na-byt",
+          "type": "transformation",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Напиши скорочення повністю.",
+          "source": "3-izb. byt",
+          "acceptedAnswers": [
+            "trojizbový byt",
+            "3-izbový byt"
+          ],
+          "explanation": "3-izb. — trojizbový, тобто 3-izbový byt.",
+          "order": 14,
+          "wordIds": [
+            "a2-u08-l01-inzerat-na-byt-w01"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Пошук квартири в Кошицях",
+        "description": "Ти переїжджаєш до Кошиць на нову роботу й шукаєш житло через інтернет.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти хочеш написати оголошення, що шукаєш студію.",
+            "options": [
+              {
+                "sk": "Hľadám garsónku v Košiciach.",
+                "correct": true
+              },
+              {
+                "sk": "Prenajmem garsónku v Košiciach.",
+                "correct": false
+              },
+              {
+                "sk": "Hľadám garsónka v Košiciach.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "В оголошенні: «Cena 520 € vrátane energií.» Скільки ти платитимеш щомісяця?",
+            "options": [
+              {
+                "sk": "520 € і ще комунальні окремо",
+                "correct": false
+              },
+              {
+                "sk": "520 € разом із комунальними",
+                "correct": true
+              },
+              {
+                "sk": "520 € лише за комунальні",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "В оголошенні: «Bez RK.» Що це для тебе означає?",
+            "options": [
+              {
+                "sk": "не треба платити комісію агентству",
+                "correct": true
+              },
+              {
+                "sk": "квартира без балкона",
+                "correct": false
+              },
+              {
+                "sk": "квартира без меблів",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти пишеш власникові.",
+            "options": [
+              {
+                "sk": "Dobrý deň, píšem na váš inzerát. Kedy si môžem byt pozrieť?",
+                "correct": true
+              },
+              {
+                "sk": "Dobrý deň, píšem na váš inzerát. Kedy si môžem byt kúpiť?",
+                "correct": false
+              },
+              {
+                "sk": "Dobrý deň, prenajmem váš inzerát. Kedy si môžem byt pozrieť?",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш читати оголошення про оренду. Далі — огляд квартири: що подивитися й що запитати."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш читати оголошення про оренду. Далі — огляд квартири: що подивитися й що запитати.",
+        "nowYouKnow": [
+          "prenajmem — hľadám, na prenájom",
+          "garsónka, dvojizbový a trojizbový byt, rozloha",
+          "+ energie — vrátane energií",
+          "RK, bez RK, provízia"
+        ],
+        "newWordsCount": 7,
+        "exercisesCompleted": 14,
+        "xpReward": 30,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a2-u08-l02-prehliadka-bytu",
+          "title": "Огляд квартири"
+        }
+      }
+    }
+  ]
+}

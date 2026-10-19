@@ -1,0 +1,750 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u03-l02-zensky-rod",
+      "sectionId": "a1-u03",
+      "level": "A1",
+      "title": "Жіночий рід",
+      "topic": "Рід і число іменників",
+      "description": "Жіночий рід: найчастіше на -a (kniha, lampa), але також на м’який приголосний (posteľ, kancelária… і noc).",
+      "order": 22,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Упізнавати жіночий рід, зокрема слова на приголосний.",
+      "completionMessage": "Жіночий рід розпізнано. Далі — середній.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Рід і число іменників",
+        "title": "Жіночий рід",
+        "shortDescription": "Упізнавати жіночий рід, зокрема слова на приголосний.",
+        "outcomes": [
+          "упізнавати жіночий рід на -a",
+          "знати групу на -ia (kancelária)",
+          "знати жіночі слова на приголосний (posteľ, noc)",
+          "узгоджувати: nová kniha"
+        ],
+        "newWords": [
+          "kniha",
+          "lampa",
+          "stolička",
+          "posteľ",
+          "kancelária",
+          "tabuľa"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Найчастіше -a",
+          "text": "kniha, lampa, stolička, tabuľa, mama — жіночий рід. Прикметник — на -á: nová kniha, biela lampa.",
+          "examples": [
+            {
+              "sk": "nová kniha",
+              "uk": "нова книжка"
+            },
+            {
+              "sk": "pohodlná stolička",
+              "uk": "зручний стілець"
+            }
+          ],
+          "shortRule": "-a → жіночий рід",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Слова на -ia",
+          "text": "kancelária, fotografia, informácia, televízia — жіночий рід. Як і більшість слів на -a: firma, banka. Прикметник — на -á: nová kancelária.",
+          "examples": [
+            {
+              "sk": "Kancelária je na prvom poschodí.",
+              "uk": "Кабінет на першому поверсі."
+            },
+            {
+              "sk": "Mám dôležitú informáciu.",
+              "uk": "У мене важлива інформація."
+            }
+          ],
+          "shortRule": "-ia → жіночий рід",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Пастка: жіночий рід без -a",
+          "text": "Деякі жіночі слова закінчуються на приголосний: posteľ (ліжко), noc (ніч), lekáreň (аптека), kancelária — ні. Рід видно з прикметника: veľká posteľ, tmavá noc.",
+          "examples": [
+            {
+              "sk": "veľká posteľ",
+              "uk": "велике ліжко"
+            },
+            {
+              "sk": "dobrá noc",
+              "uk": "добра ніч"
+            }
+          ],
+          "shortRule": "posteľ, noc, lekáreň — жіночий рід!",
+          "commonMistakes": [
+            {
+              "mistake": "veľký posteľ",
+              "correct": "veľká posteľ"
+            },
+            {
+              "mistake": "nový lekáreň",
+              "correct": "nová lekáreň"
+            }
+          ],
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u03-l02-zensky-rod-w01",
+            "sk": "kniha",
+            "uk": "книжка",
+            "pronunciationUk": "кніга",
+            "exampleSk": "Čítam zaujímavú knihu.",
+            "exampleUk": "Я читаю цікаву книжку."
+          },
+          {
+            "wordId": "a1-u03-l02-zensky-rod-w02",
+            "sk": "lampa",
+            "uk": "лампа",
+            "pronunciationUk": "лампа",
+            "exampleSk": "Lampa nesvieti.",
+            "exampleUk": "Лампа не світить."
+          },
+          {
+            "wordId": "a1-u03-l02-zensky-rod-w03",
+            "sk": "stolička",
+            "uk": "стілець",
+            "pronunciationUk": "столічка",
+            "exampleSk": "Táto stolička je voľná?",
+            "exampleUk": "Цей стілець вільний?"
+          },
+          {
+            "wordId": "a1-u03-l02-zensky-rod-w04",
+            "sk": "posteľ",
+            "uk": "ліжко",
+            "pronunciationUk": "постель",
+            "exampleSk": "Posteľ je veľmi pohodlná.",
+            "exampleUk": "Ліжко дуже зручне."
+          },
+          {
+            "wordId": "a1-u03-l02-zensky-rod-w05",
+            "sk": "kancelária",
+            "uk": "офіс, кабінет",
+            "pronunciationUk": "канцеля:рія",
+            "exampleSk": "Moja kancelária je malá.",
+            "exampleUk": "Мій кабінет маленький."
+          },
+          {
+            "wordId": "a1-u03-l02-zensky-rod-w06",
+            "sk": "tabuľa",
+            "uk": "дошка; табличка",
+            "pronunciationUk": "табуля",
+            "exampleSk": "Učiteľka píše na tabuľu.",
+            "exampleUk": "Учителька пише на дошці."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u03-l02-zensky-rod-w01",
+          "sk": "kniha",
+          "uk": "книжка",
+          "pronunciationUk": "кніга",
+          "exampleSk": "Čítam zaujímavú knihu.",
+          "exampleUk": "Я читаю цікаву книжку.",
+          "level": "A1",
+          "topic": "Рід і число іменників",
+          "tags": [
+            "a1-u03",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u03-l02-zensky-rod-w02",
+          "sk": "lampa",
+          "uk": "лампа",
+          "pronunciationUk": "лампа",
+          "exampleSk": "Lampa nesvieti.",
+          "exampleUk": "Лампа не світить.",
+          "level": "A1",
+          "topic": "Рід і число іменників",
+          "tags": [
+            "a1-u03",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u03-l02-zensky-rod-w03",
+          "sk": "stolička",
+          "uk": "стілець",
+          "pronunciationUk": "столічка",
+          "exampleSk": "Táto stolička je voľná?",
+          "exampleUk": "Цей стілець вільний?",
+          "level": "A1",
+          "topic": "Рід і число іменників",
+          "tags": [
+            "a1-u03",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u03-l02-zensky-rod-w04",
+          "sk": "posteľ",
+          "uk": "ліжко",
+          "pronunciationUk": "постель",
+          "exampleSk": "Posteľ je veľmi pohodlná.",
+          "exampleUk": "Ліжко дуже зручне.",
+          "level": "A1",
+          "topic": "Рід і число іменників",
+          "tags": [
+            "a1-u03",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u03-l02-zensky-rod-w05",
+          "sk": "kancelária",
+          "uk": "офіс, кабінет",
+          "pronunciationUk": "канцеля:рія",
+          "exampleSk": "Moja kancelária je malá.",
+          "exampleUk": "Мій кабінет маленький.",
+          "level": "A1",
+          "topic": "Рід і число іменників",
+          "tags": [
+            "a1-u03",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u03-l02-zensky-rod-w06",
+          "sk": "tabuľa",
+          "uk": "дошка; табличка",
+          "pronunciationUk": "табуля",
+          "exampleSk": "Učiteľka píše na tabuľu.",
+          "exampleUk": "Учителька пише на дошці.",
+          "level": "A1",
+          "topic": "Рід і число іменників",
+          "tags": [
+            "a1-u03",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u03-l02-zensky-rod-ex01",
+          "lessonId": "a1-u03-l02-zensky-rod",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "kniha",
+              "right": "книжка"
+            },
+            {
+              "left": "lampa",
+              "right": "лампа"
+            },
+            {
+              "left": "stolička",
+              "right": "стілець"
+            },
+            {
+              "left": "posteľ",
+              "right": "ліжко"
+            },
+            {
+              "left": "kancelária",
+              "right": "офіс"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u03-l02-zensky-rod-w01",
+            "a1-u03-l02-zensky-rod-w02",
+            "a1-u03-l02-zensky-rod-w03",
+            "a1-u03-l02-zensky-rod-w04",
+            "a1-u03-l02-zensky-rod-w05"
+          ]
+        },
+        {
+          "id": "a1-u03-l02-zensky-rod-ex02",
+          "lessonId": "a1-u03-l02-zensky-rod",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Якого роду «posteľ»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "середнього",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "жіночого",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "чоловічого",
+              "correct": false
+            }
+          ],
+          "explanation": "posteľ — жіночий рід, хоча закінчується на приголосний.",
+          "order": 2
+        },
+        {
+          "id": "a1-u03-l02-zensky-rod-ex03",
+          "lessonId": "a1-u03-l02-zensky-rod",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери прикметник.",
+          "sentenceParts": [
+            {
+              "text": "To je "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "veľký",
+                "veľké",
+                "veľká"
+              ],
+              "correct": "veľká"
+            },
+            {
+              "text": " posteľ."
+            }
+          ],
+          "explanation": "posteľ — жін.: veľká.",
+          "order": 3,
+          "wordIds": [
+            "a1-u03-l02-zensky-rod-w04"
+          ]
+        },
+        {
+          "id": "a1-u03-l02-zensky-rod-ex04",
+          "lessonId": "a1-u03-l02-zensky-rod",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери прикметник.",
+          "sentenceParts": [
+            {
+              "text": "Mám "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "nový",
+                "nové",
+                "novú"
+              ],
+              "correct": "novú"
+            },
+            {
+              "text": " knihu."
+            }
+          ],
+          "explanation": "kniha, знахідний: novú.",
+          "order": 4,
+          "wordIds": [
+            "a1-u03-l02-zensky-rod-w01"
+          ]
+        },
+        {
+          "id": "a1-u03-l02-zensky-rod-ex05",
+          "lessonId": "a1-u03-l02-zensky-rod",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери іменники жіночого роду.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "kniha",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "posteľ",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "počítač",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "kolega",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "noc",
+              "correct": true
+            },
+            {
+              "id": "f",
+              "sk": "okno",
+              "correct": false
+            }
+          ],
+          "explanation": "posteľ і noc — жіночі без -a; kolega — чоловічий.",
+          "order": 5,
+          "wordIds": [
+            "a1-u03-l02-zensky-rod-w01",
+            "a1-u03-l02-zensky-rod-w04"
+          ]
+        },
+        {
+          "id": "a1-u03-l02-zensky-rod-ex06",
+          "lessonId": "a1-u03-l02-zensky-rod",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Stolička» означає «столиця».",
+          "correctAnswer": false,
+          "explanation": "stolička — стілець. Столиця — hlavné mesto.",
+          "order": 6,
+          "wordIds": [
+            "a1-u03-l02-zensky-rod-w03"
+          ]
+        },
+        {
+          "id": "a1-u03-l02-zensky-rod-ex07",
+          "lessonId": "a1-u03-l02-zensky-rod",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Táto ______ je voľná? (стілець)",
+          "acceptedAnswers": [
+            "stolička"
+          ],
+          "explanation": "stolička — стілець.",
+          "order": 7,
+          "wordIds": [
+            "a1-u03-l02-zensky-rod-w03"
+          ]
+        },
+        {
+          "id": "a1-u03-l02-zensky-rod-ex08",
+          "lessonId": "a1-u03-l02-zensky-rod",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що лампа не світить.",
+          "tokens": [
+            "nesvieti",
+            "Lampa",
+            "."
+          ],
+          "correctOrder": [
+            "Lampa",
+            "nesvieti",
+            "."
+          ],
+          "explanation": "lampa + nesvieti.",
+          "order": 8,
+          "wordIds": [
+            "a1-u03-l02-zensky-rod-w02"
+          ]
+        },
+        {
+          "id": "a1-u03-l02-zensky-rod-ex09",
+          "lessonId": "a1-u03-l02-zensky-rod",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Moja nový kancelária je na druhom poschodí.",
+          "errorToken": "nový",
+          "correctToken": "nová",
+          "explanation": "kancelária — жін.: nová.",
+          "order": 9,
+          "wordIds": [
+            "a1-u03-l02-zensky-rod-w05"
+          ]
+        },
+        {
+          "id": "a1-u03-l02-zensky-rod-ex10",
+          "lessonId": "a1-u03-l02-zensky-rod",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Жіночий рід: з -a чи без?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "З -a"
+            },
+            {
+              "id": "c2",
+              "title": "Без -a"
+            }
+          ],
+          "items": [
+            {
+              "sk": "lampa",
+              "category": "c1"
+            },
+            {
+              "sk": "lekáreň",
+              "category": "c2"
+            },
+            {
+              "sk": "posteľ",
+              "category": "c2"
+            },
+            {
+              "sk": "kniha",
+              "category": "c1"
+            },
+            {
+              "sk": "noc",
+              "category": "c2"
+            },
+            {
+              "sk": "tabuľa",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Друга група — найпідступніша.",
+          "order": 10,
+          "wordIds": [
+            "a1-u03-l02-zensky-rod-w01",
+            "a1-u03-l02-zensky-rod-w02",
+            "a1-u03-l02-zensky-rod-w04",
+            "a1-u03-l02-zensky-rod-w06"
+          ]
+        },
+        {
+          "id": "a1-u03-l02-zensky-rod-ex11",
+          "lessonId": "a1-u03-l02-zensky-rod",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "У приймальні ти хочеш сісти на стілець поруч.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Je tento stolička voľný?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Stolička je voľné?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Voľná si?",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Prepáčte, je táto stolička voľná?",
+              "correct": true
+            }
+          ],
+          "explanation": "táto stolička — жіночий рід.",
+          "order": 11,
+          "wordIds": [
+            "a1-u03-l02-zensky-rod-w03"
+          ]
+        },
+        {
+          "id": "a1-u03-l02-zensky-rod-ex12",
+          "lessonId": "a1-u03-l02-zensky-rod",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Recepčná",
+              "sk": "Vaša izba má jednu veľkú posteľ."
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Veľký posteľ?",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Posteľ je on?",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Super, ďakujem.",
+              "correct": true
+            }
+          ],
+          "explanation": "Подяка.",
+          "order": 12,
+          "wordIds": [
+            "a1-u03-l02-zensky-rod-w04"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "У готелі",
+        "description": "Ти заселяєшся й перевіряєш номер.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти не бачиш лампи.",
+            "options": [
+              {
+                "sk": "Kde je lampa?",
+                "correct": true
+              },
+              {
+                "sk": "Kde je lampu?",
+                "correct": false
+              },
+              {
+                "sk": "Lampa je kde on?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Lampa je pri posteli.» Де лампа?",
+            "options": [
+              {
+                "sk": "біля ліжка",
+                "correct": true
+              },
+              {
+                "sk": "на стільці",
+                "correct": false
+              },
+              {
+                "sk": "в офісі",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти питаєш, чи ліжко велике.",
+            "options": [
+              {
+                "sk": "Je posteľ veľká?",
+                "correct": true
+              },
+              {
+                "sk": "Je posteľ veľký?",
+                "correct": false
+              },
+              {
+                "sk": "Posteľ veľké?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Kancelária je dole.» Де офіс?",
+            "options": [
+              {
+                "sk": "нагорі",
+                "correct": false
+              },
+              {
+                "sk": "надворі",
+                "correct": false
+              },
+              {
+                "sk": "унизу",
+                "correct": true
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Жіночий рід розпізнано. Далі — середній."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Жіночий рід розпізнано. Далі — середній.",
+        "nowYouKnow": [
+          "жіночий рід — зазвичай -a",
+          "posteľ, noc, lekáreň — жіночі без -a",
+          "nová kniha, veľká posteľ"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u03-l03-stredny-rod",
+          "title": "Середній рід"
+        }
+      }
+    }
+  ]
+}

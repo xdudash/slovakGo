@@ -1,0 +1,769 @@
+{
+  "lessons": [
+    {
+      "id": "a0-u05-l09-pomoc",
+      "sectionId": "a0-u05",
+      "level": "A0",
+      "title": "Допомога й екстрені ситуації",
+      "topic": "Виживання в місті",
+      "description": "Що казати в небезпеці: Pomoc!, Zavolajte záchranku!, номер 112, поліція, пожежники.",
+      "order": 49,
+      "xpReward": 15,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Покликати на допомогу й викликати екстрені служби.",
+      "completionMessage": "Ти знаєш найважливіші фрази для екстрених ситуацій. Далі — підсумок розділу.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A0 · Виживання в місті",
+        "title": "Допомога й екстрені ситуації",
+        "shortDescription": "Покликати на допомогу й викликати екстрені служби.",
+        "outcomes": [
+          "кликати Pomoc!",
+          "знати номер 112 (і 155, 158, 150)",
+          "казати Zavolajte záchranku / políciu",
+          "повідомити адресу й що сталося"
+        ],
+        "newWords": [
+          "Pomoc!",
+          "záchranka",
+          "polícia",
+          "hasiči",
+          "nehoda",
+          "zranený"
+        ],
+        "exercisesCount": 12,
+        "reward": "+15 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Pomoc!",
+          "text": "«Pomoc!» — допоможіть! «Pomôžte mi, prosím!» — допоможіть мені, будь ласка! «Zavolajte záchranku!» — викличте швидку! «Zavolajte políciu!» — викличте поліцію!",
+          "examples": [
+            {
+              "sk": "Pomoc!",
+              "uk": "Допоможіть!"
+            },
+            {
+              "sk": "Zavolajte záchranku!",
+              "uk": "Викличте швидку!"
+            }
+          ],
+          "shortRule": "Zavolajte… = Викличте…",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Номери",
+          "text": "112 — єдиний екстрений номер (оператори часто говорять англійською). 155 — záchranka (швидка), 158 — polícia, 150 — hasiči (пожежники). Дзвінок безкоштовний.",
+          "examples": [
+            {
+              "sk": "Volám 112.",
+              "uk": "Я телефоную на 112."
+            },
+            {
+              "sk": "Hasiči, horí!",
+              "uk": "Пожежники, горить!"
+            }
+          ],
+          "shortRule": "112 — завжди працює",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Що сказати оператору",
+          "text": "Головне: що сталося, де (adresa), хто ти. «Stala sa nehoda» — сталася аварія. «Je zranený» — він поранений. «Adresa je…» — адреса…",
+          "examples": [
+            {
+              "sk": "Stala sa nehoda na Hlavnej ulici.",
+              "uk": "Сталася аварія на вулиці Головній."
+            },
+            {
+              "sk": "Nedýcha.",
+              "uk": "Він не дихає."
+            }
+          ],
+          "shortRule": "Що? Де? Хто?",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a0-u05-l09-pomoc-w01",
+            "sk": "Pomoc!",
+            "uk": "Допоможіть!",
+            "pronunciationUk": "помоц",
+            "exampleSk": "Pomoc, zavolajte niekto lekára!",
+            "exampleUk": "Допоможіть, хтось покличте лікаря!"
+          },
+          {
+            "wordId": "a0-u05-l09-pomoc-w02",
+            "sk": "záchranka",
+            "uk": "швидка допомога",
+            "pronunciationUk": "за:хранка",
+            "exampleSk": "Záchranka príde o päť minút.",
+            "exampleUk": "Швидка приїде за п’ять хвилин."
+          },
+          {
+            "wordId": "a0-u05-l09-pomoc-w03",
+            "sk": "polícia",
+            "uk": "поліція",
+            "pronunciationUk": "полі:ція",
+            "exampleSk": "Zavolajte políciu!",
+            "exampleUk": "Викличте поліцію!"
+          },
+          {
+            "wordId": "a0-u05-l09-pomoc-w04",
+            "sk": "hasiči",
+            "uk": "пожежники",
+            "pronunciationUk": "гасічі",
+            "exampleSk": "Hasiči sú na ceste.",
+            "exampleUk": "Пожежники в дорозі."
+          },
+          {
+            "wordId": "a0-u05-l09-pomoc-w05",
+            "sk": "nehoda",
+            "uk": "аварія, нещасний випадок",
+            "pronunciationUk": "негода",
+            "exampleSk": "Na ceste sa stala nehoda.",
+            "exampleUk": "На дорозі сталася аварія."
+          },
+          {
+            "wordId": "a0-u05-l09-pomoc-w06",
+            "sk": "zranený",
+            "uk": "поранений",
+            "pronunciationUk": "зранені:",
+            "exampleSk": "Muž je zranený.",
+            "exampleUk": "Чоловік поранений."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a0-u05-l09-pomoc-w01",
+          "sk": "Pomoc!",
+          "uk": "Допоможіть!",
+          "pronunciationUk": "помоц",
+          "exampleSk": "Pomoc, zavolajte niekto lekára!",
+          "exampleUk": "Допоможіть, хтось покличте лікаря!",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l09-pomoc-w02",
+          "sk": "záchranka",
+          "uk": "швидка допомога",
+          "pronunciationUk": "за:хранка",
+          "exampleSk": "Záchranka príde o päť minút.",
+          "exampleUk": "Швидка приїде за п’ять хвилин.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l09-pomoc-w03",
+          "sk": "polícia",
+          "uk": "поліція",
+          "pronunciationUk": "полі:ція",
+          "exampleSk": "Zavolajte políciu!",
+          "exampleUk": "Викличте поліцію!",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l09-pomoc-w04",
+          "sk": "hasiči",
+          "uk": "пожежники",
+          "pronunciationUk": "гасічі",
+          "exampleSk": "Hasiči sú na ceste.",
+          "exampleUk": "Пожежники в дорозі.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l09-pomoc-w05",
+          "sk": "nehoda",
+          "uk": "аварія, нещасний випадок",
+          "pronunciationUk": "негода",
+          "exampleSk": "Na ceste sa stala nehoda.",
+          "exampleUk": "На дорозі сталася аварія.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        },
+        {
+          "id": "a0-u05-l09-pomoc-w06",
+          "sk": "zranený",
+          "uk": "поранений",
+          "pronunciationUk": "зранені:",
+          "exampleSk": "Muž je zranený.",
+          "exampleUk": "Чоловік поранений.",
+          "level": "A0",
+          "topic": "Виживання в місті",
+          "tags": [
+            "a0-u05",
+            "a0"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a0-u05-l09-pomoc-ex01",
+          "lessonId": "a0-u05-l09-pomoc",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай службу з номером.",
+          "pairs": [
+            {
+              "left": "záchranka",
+              "right": "155"
+            },
+            {
+              "left": "polícia",
+              "right": "158"
+            },
+            {
+              "left": "hasiči",
+              "right": "150"
+            },
+            {
+              "left": "jednotné číslo",
+              "right": "112"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a0-u05-l09-pomoc-w01",
+            "a0-u05-l09-pomoc-w02",
+            "a0-u05-l09-pomoc-w03",
+            "a0-u05-l09-pomoc-w04"
+          ]
+        },
+        {
+          "id": "a0-u05-l09-pomoc-ex02",
+          "lessonId": "a0-u05-l09-pomoc",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Який номер працює для будь-якої екстреної ситуації?",
+          "options": [
+            {
+              "id": "a",
+              "text": "103",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "911",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "112",
+              "correct": true
+            }
+          ],
+          "explanation": "112 — єдиний європейський номер.",
+          "order": 2,
+          "wordIds": [
+            "a0-u05-l09-pomoc-w01"
+          ]
+        },
+        {
+          "id": "a0-u05-l09-pomoc-ex03",
+          "lessonId": "a0-u05-l09-pomoc",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "На вулиці людині стало погано. Ти кричиш перехожим.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Pomoc, dovidenia!",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Dobrý deň, záchranka.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Pomoc! Zavolajte záchranku!",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Prepáčte, kde je záchranka?",
+              "correct": false
+            }
+          ],
+          "explanation": "Pomoc! + Zavolajte záchranku!",
+          "order": 3,
+          "wordIds": [
+            "a0-u05-l09-pomoc-w01",
+            "a0-u05-l09-pomoc-w02"
+          ]
+        },
+        {
+          "id": "a0-u05-l09-pomoc-ex04",
+          "lessonId": "a0-u05-l09-pomoc",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "Дзвінок на 112 безкоштовний.",
+          "correctAnswer": true,
+          "explanation": "Так, екстрені дзвінки безкоштовні.",
+          "order": 4,
+          "wordIds": [
+            "a0-u05-l09-pomoc-w01"
+          ]
+        },
+        {
+          "id": "a0-u05-l09-pomoc-ex05",
+          "lessonId": "a0-u05-l09-pomoc",
+          "type": "dialogue_order",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Віднови порядок реплік у діалозі.",
+          "lines": [
+            {
+              "id": "l3",
+              "sk": "Operátor: Kde ste?"
+            },
+            {
+              "id": "l1",
+              "sk": "Operátor: Linka 112, čo sa stalo?"
+            },
+            {
+              "id": "l4",
+              "sk": "Ty: Na Hlavnej ulici, pri pošte."
+            },
+            {
+              "id": "l2",
+              "sk": "Ty: Stala sa nehoda, muž je zranený."
+            }
+          ],
+          "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4"
+          ],
+          "explanation": "Що сталося → де.",
+          "order": 5,
+          "wordIds": [
+            "a0-u05-l09-pomoc-w01",
+            "a0-u05-l09-pomoc-w05",
+            "a0-u05-l09-pomoc-w06"
+          ]
+        },
+        {
+          "id": "a0-u05-l09-pomoc-ex06",
+          "lessonId": "a0-u05-l09-pomoc",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Zavolajte ______! (поліцію)",
+          "acceptedAnswers": [
+            "políciu"
+          ],
+          "hint": "Знахідний відмінок.",
+          "explanation": "polícia → políciu.",
+          "order": 6,
+          "wordIds": [
+            "a0-u05-l09-pomoc-w01",
+            "a0-u05-l09-pomoc-w03"
+          ]
+        },
+        {
+          "id": "a0-u05-l09-pomoc-ex07",
+          "lessonId": "a0-u05-l09-pomoc",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Horí! Zavolajte "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "políciu",
+                "hasičov",
+                "záchranku"
+              ],
+              "correct": "hasičov"
+            },
+            {
+              "text": "!"
+            }
+          ],
+          "explanation": "Пожежа — hasiči.",
+          "order": 7,
+          "wordIds": [
+            "a0-u05-l09-pomoc-w01",
+            "a0-u05-l09-pomoc-w02",
+            "a0-u05-l09-pomoc-w03",
+            "a0-u05-l09-pomoc-w04"
+          ]
+        },
+        {
+          "id": "a0-u05-l09-pomoc-ex08",
+          "lessonId": "a0-u05-l09-pomoc",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Кого викликати?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "záchranka"
+            },
+            {
+              "id": "c2",
+              "title": "polícia"
+            },
+            {
+              "id": "c3",
+              "title": "hasiči"
+            }
+          ],
+          "items": [
+            {
+              "sk": "dym v byte",
+              "category": "c3"
+            },
+            {
+              "sk": "infarkt",
+              "category": "c1"
+            },
+            {
+              "sk": "krádež",
+              "category": "c2"
+            },
+            {
+              "sk": "požiar",
+              "category": "c3"
+            },
+            {
+              "sk": "bitka",
+              "category": "c2"
+            },
+            {
+              "sk": "zlomená noha",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Медицина / злочин / вогонь.",
+          "order": 8,
+          "wordIds": [
+            "a0-u05-l09-pomoc-w01",
+            "a0-u05-l09-pomoc-w02",
+            "a0-u05-l09-pomoc-w03",
+            "a0-u05-l09-pomoc-w04"
+          ]
+        },
+        {
+          "id": "a0-u05-l09-pomoc-ex09",
+          "lessonId": "a0-u05-l09-pomoc",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що сталася аварія.",
+          "tokens": [
+            ".",
+            "sa",
+            "Stala",
+            "nehoda"
+          ],
+          "correctOrder": [
+            "Stala",
+            "sa",
+            "nehoda",
+            "."
+          ],
+          "explanation": "Stala sa + nehoda.",
+          "order": 9,
+          "wordIds": [
+            "a0-u05-l09-pomoc-w01",
+            "a0-u05-l09-pomoc-w05"
+          ]
+        },
+        {
+          "id": "a0-u05-l09-pomoc-ex10",
+          "lessonId": "a0-u05-l09-pomoc",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Оператор питає: «Dýcha?» Про що він питає?",
+          "options": [
+            {
+              "id": "a",
+              "text": "чи людина ходить",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "чи людина говорить",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "чи людина дихає",
+              "correct": true
+            }
+          ],
+          "explanation": "dýchať — дихати.",
+          "order": 10,
+          "wordIds": [
+            "a0-u05-l09-pomoc-w01"
+          ]
+        },
+        {
+          "id": "a0-u05-l09-pomoc-ex11",
+          "lessonId": "a0-u05-l09-pomoc",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Оператор каже: «Zostaňte pri ňom, záchranka je na ceste.» Що він просить?",
+          "options": [
+            {
+              "id": "a",
+              "text": "покласти слухавку й чекати вдома",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "піти до лікарні",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "лишатися з потерпілим, швидка їде",
+              "correct": true
+            }
+          ],
+          "explanation": "zostaňte pri ňom — лишайтеся біля нього.",
+          "order": 11,
+          "wordIds": [
+            "a0-u05-l09-pomoc-w01",
+            "a0-u05-l09-pomoc-w02"
+          ]
+        },
+        {
+          "id": "a0-u05-l09-pomoc-ex12",
+          "lessonId": "a0-u05-l09-pomoc",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери фрази, які кажуть в екстреній ситуації.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Pekný deň!",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Zavolajte záchranku!",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Pomoc!",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "Stala sa nehoda.",
+              "correct": true
+            },
+            {
+              "id": "e",
+              "sk": "Dobrú chuť!",
+              "correct": false
+            }
+          ],
+          "explanation": "Інші фрази — побутові побажання.",
+          "order": 12,
+          "wordIds": [
+            "a0-u05-l09-pomoc-w01",
+            "a0-u05-l09-pomoc-w02",
+            "a0-u05-l09-pomoc-w05"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Аварія на перехресті",
+        "description": "На твоїх очах на перехресті сталася аварія, водій поранений.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Ти телефонуєш. Який номер?",
+            "options": [
+              {
+                "sk": "911",
+                "correct": false
+              },
+              {
+                "sk": "112",
+                "correct": true
+              },
+              {
+                "sk": "0905 112",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Linka 112, čo sa stalo?»",
+            "options": [
+              {
+                "sk": "Nehoda je kde?",
+                "correct": false
+              },
+              {
+                "sk": "Dobrý deň, ako sa máte?",
+                "correct": false
+              },
+              {
+                "sk": "Stala sa nehoda, vodič je zranený.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "«Kde ste?»",
+            "options": [
+              {
+                "sk": "Na križovatke pri stanici, v Žiline.",
+                "correct": true
+              },
+              {
+                "sk": "Som Oleh.",
+                "correct": false
+              },
+              {
+                "sk": "Som z Ukrajiny.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Hovoríte po anglicky?» Ти говориш трохи.",
+            "options": [
+              {
+                "sk": "Nie, ďakujem, dovidenia.",
+                "correct": false
+              },
+              {
+                "sk": "Trochu, áno.",
+                "correct": true
+              },
+              {
+                "sk": "Som anglicky.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти знаєш найважливіші фрази для екстрених ситуацій. Далі — підсумок розділу."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти знаєш найважливіші фрази для екстрених ситуацій. Далі — підсумок розділу.",
+        "nowYouKnow": [
+          "Pomoc! Pomôžte mi!",
+          "112, 155, 158, 150",
+          "Zavolajte záchranku / políciu!",
+          "Stala sa nehoda. Je zranený."
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 15,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a0-u05-l10-mesto-opakovanie",
+          "title": "Підсумок: орієнтуюся в місті"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,738 @@
+{
+  "lessons": [
+    {
+      "id": "a1-u12-l06-zamestnavatel",
+      "sectionId": "a1-u12",
+      "level": "A1",
+      "title": "Роботодавець і договір",
+      "topic": "Робота і професії",
+      "description": "Zamestnávateľ, zamestnanec, pracovná zmluva, agentúra, personálne oddelenie — основи працевлаштування.",
+      "order": 116,
+      "xpReward": 25,
+      "estimatedMinutes": 19,
+      "isPublished": true,
+      "intro": "Розуміти базову лексику працевлаштування й договору.",
+      "completionMessage": "Основи працевлаштування — твої. Далі — зарплата.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "A1 · Робота і професії",
+        "title": "Роботодавець і договір",
+        "shortDescription": "Розуміти базову лексику працевлаштування й договору.",
+        "outcomes": [
+          "розрізняти zamestnávateľ і zamestnanec",
+          "розуміти pracovná zmluva",
+          "знати роль agentúra",
+          "звертатися на personálne oddelenie"
+        ],
+        "newWords": [
+          "zamestnávateľ",
+          "zamestnanec",
+          "pracovná zmluva",
+          "agentúra",
+          "personálne oddelenie",
+          "zamestnaný"
+        ],
+        "exercisesCount": 12,
+        "reward": "+25 XP",
+        "estimatedMinutes": 19,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Хто є хто",
+          "text": "«Zamestnávateľ» — роботодавець, «zamestnanec / zamestnankyňa» — працівник / працівниця, «zamestnanie» — робота, зайнятість. «Som zamestnaný v…» — я працевлаштований у…",
+          "examples": [
+            {
+              "sk": "Zamestnávateľ platí odvody.",
+              "uk": "Роботодавець сплачує внески."
+            },
+            {
+              "sk": "Som zamestnaná v hoteli.",
+              "uk": "Я працевлаштована в готелі."
+            }
+          ],
+          "shortRule": "zamestnávateľ ≠ zamestnanec",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Договір",
+          "text": "«Pracovná zmluva» — трудовий договір: «na dobu určitú» (на певний строк) або «na dobu neurčitú» (безстроковий). «Podpísať zmluvu» — підписати договір.",
+          "examples": [
+            {
+              "sk": "Mám zmluvu na dobu neurčitú.",
+              "uk": "У мене безстроковий договір."
+            }
+          ],
+          "shortRule": "pracovná zmluva",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Агенція й відділ кадрів",
+          "text": "«Personálna agentúra» — кадрове агентство: багато українців працюють через агенцію. «Personálne oddelenie / HR» — відділ кадрів.",
+          "examples": [
+            {
+              "sk": "S dokladmi choďte na personálne.",
+              "uk": "З документами йдіть у відділ кадрів."
+            },
+            {
+              "sk": "Pracujem cez agentúru.",
+              "uk": "Я працюю через агенцію."
+            }
+          ],
+          "shortRule": "cez agentúru",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "a1-u12-l06-zamestnavatel-w01",
+            "sk": "zamestnávateľ",
+            "uk": "роботодавець",
+            "pronunciationUk": "заместна:ватель",
+            "exampleSk": "Môj zamestnávateľ je férový.",
+            "exampleUk": "Мій роботодавець чесний."
+          },
+          {
+            "wordId": "a1-u12-l06-zamestnavatel-w02",
+            "sk": "zamestnanec",
+            "uk": "працівник",
+            "pronunciationUk": "заместнанец",
+            "exampleSk": "Firma prijala nových zamestnancov.",
+            "exampleUk": "Фірма прийняла нових працівників."
+          },
+          {
+            "wordId": "a1-u12-l06-zamestnavatel-w03",
+            "sk": "pracovná zmluva",
+            "uk": "трудовий договір",
+            "pronunciationUk": "працовна: змлува",
+            "exampleSk": "Zajtra podpíšem pracovnú zmluvu.",
+            "exampleUk": "Завтра підпишу трудовий договір."
+          },
+          {
+            "wordId": "a1-u12-l06-zamestnavatel-w04",
+            "sk": "agentúra",
+            "uk": "агентство",
+            "pronunciationUk": "аґенту:ра",
+            "exampleSk": "Prácu mi našla agentúra.",
+            "exampleUk": "Роботу мені знайшло агентство."
+          },
+          {
+            "wordId": "a1-u12-l06-zamestnavatel-w05",
+            "sk": "personálne oddelenie",
+            "uk": "відділ кадрів",
+            "pronunciationUk": "персона:лне оддєленіє",
+            "exampleSk": "Personálne oddelenie je na prvom poschodí.",
+            "exampleUk": "Відділ кадрів на другому поверсі."
+          },
+          {
+            "wordId": "a1-u12-l06-zamestnavatel-w06",
+            "sk": "zamestnaný",
+            "uk": "працевлаштований",
+            "pronunciationUk": "заместнані:",
+            "exampleSk": "Som zamestnaný v sklade.",
+            "exampleUk": "Я працевлаштований на складі."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "a1-u12-l06-zamestnavatel-w01",
+          "sk": "zamestnávateľ",
+          "uk": "роботодавець",
+          "pronunciationUk": "заместна:ватель",
+          "exampleSk": "Môj zamestnávateľ je férový.",
+          "exampleUk": "Мій роботодавець чесний.",
+          "level": "A1",
+          "topic": "Робота і професії",
+          "tags": [
+            "a1-u12",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u12-l06-zamestnavatel-w02",
+          "sk": "zamestnanec",
+          "uk": "працівник",
+          "pronunciationUk": "заместнанец",
+          "exampleSk": "Firma prijala nových zamestnancov.",
+          "exampleUk": "Фірма прийняла нових працівників.",
+          "level": "A1",
+          "topic": "Робота і професії",
+          "tags": [
+            "a1-u12",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u12-l06-zamestnavatel-w03",
+          "sk": "pracovná zmluva",
+          "uk": "трудовий договір",
+          "pronunciationUk": "працовна: змлува",
+          "exampleSk": "Zajtra podpíšem pracovnú zmluvu.",
+          "exampleUk": "Завтра підпишу трудовий договір.",
+          "level": "A1",
+          "topic": "Робота і професії",
+          "tags": [
+            "a1-u12",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u12-l06-zamestnavatel-w04",
+          "sk": "agentúra",
+          "uk": "агентство",
+          "pronunciationUk": "аґенту:ра",
+          "exampleSk": "Prácu mi našla agentúra.",
+          "exampleUk": "Роботу мені знайшло агентство.",
+          "level": "A1",
+          "topic": "Робота і професії",
+          "tags": [
+            "a1-u12",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u12-l06-zamestnavatel-w05",
+          "sk": "personálne oddelenie",
+          "uk": "відділ кадрів",
+          "pronunciationUk": "персона:лне оддєленіє",
+          "exampleSk": "Personálne oddelenie je na prvom poschodí.",
+          "exampleUk": "Відділ кадрів на другому поверсі.",
+          "level": "A1",
+          "topic": "Робота і професії",
+          "tags": [
+            "a1-u12",
+            "a1"
+          ]
+        },
+        {
+          "id": "a1-u12-l06-zamestnavatel-w06",
+          "sk": "zamestnaný",
+          "uk": "працевлаштований",
+          "pronunciationUk": "заместнані:",
+          "exampleSk": "Som zamestnaný v sklade.",
+          "exampleUk": "Я працевлаштований на складі.",
+          "level": "A1",
+          "topic": "Робота і професії",
+          "tags": [
+            "a1-u12",
+            "a1"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "a1-u12-l06-zamestnavatel-ex01",
+          "lessonId": "a1-u12-l06-zamestnavatel",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "zamestnávateľ",
+              "right": "роботодавець"
+            },
+            {
+              "left": "zamestnanec",
+              "right": "працівник"
+            },
+            {
+              "left": "pracovná zmluva",
+              "right": "трудовий договір"
+            },
+            {
+              "left": "agentúra",
+              "right": "агентство"
+            },
+            {
+              "left": "personálne oddelenie",
+              "right": "відділ кадрів"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "a1-u12-l06-zamestnavatel-w01",
+            "a1-u12-l06-zamestnavatel-w02",
+            "a1-u12-l06-zamestnavatel-w03",
+            "a1-u12-l06-zamestnavatel-w04",
+            "a1-u12-l06-zamestnavatel-w05",
+            "a1-u12-l06-zamestnavatel-w06"
+          ]
+        },
+        {
+          "id": "a1-u12-l06-zamestnavatel-ex02",
+          "lessonId": "a1-u12-l06-zamestnavatel",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "Що означає «zmluva na dobu neurčitú»?",
+          "options": [
+            {
+              "id": "a",
+              "text": "безстроковий договір",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "договір на рік",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "невизначений договір без підпису",
+              "correct": false
+            }
+          ],
+          "explanation": "doba neurčitá — безстроково.",
+          "order": 2,
+          "wordIds": [
+            "a1-u12-l06-zamestnavatel-w06"
+          ]
+        },
+        {
+          "id": "a1-u12-l06-zamestnavatel-ex03",
+          "lessonId": "a1-u12-l06-zamestnavatel",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери (говорить жінка).",
+          "sentenceParts": [
+            {
+              "text": "Som "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "zamestnaný",
+                "zamestnaná"
+              ],
+              "correct": "zamestnaná"
+            },
+            {
+              "text": " v hoteli."
+            }
+          ],
+          "explanation": "Жінка — zamestnaná.",
+          "order": 3,
+          "wordIds": [
+            "a1-u12-l06-zamestnavatel-w02",
+            "a1-u12-l06-zamestnavatel-w06"
+          ]
+        },
+        {
+          "id": "a1-u12-l06-zamestnavatel-ex04",
+          "lessonId": "a1-u12-l06-zamestnavatel",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "statement": "«Zamestnávateľ» — це той, хто наймає працівників.",
+          "correctAnswer": true,
+          "explanation": "zamestnávateľ — роботодавець.",
+          "order": 4,
+          "wordIds": [
+            "a1-u12-l06-zamestnavatel-w01",
+            "a1-u12-l06-zamestnavatel-w06"
+          ]
+        },
+        {
+          "id": "a1-u12-l06-zamestnavatel-ex05",
+          "lessonId": "a1-u12-l06-zamestnavatel",
+          "type": "fill_blank",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Допиши.",
+          "sentence": "Zajtra podpíšem pracovnú ______. (договір)",
+          "acceptedAnswers": [
+            "zmluvu"
+          ],
+          "explanation": "zmluvu.",
+          "order": 5,
+          "wordIds": [
+            "a1-u12-l06-zamestnavatel-w03",
+            "a1-u12-l06-zamestnavatel-w06"
+          ]
+        },
+        {
+          "id": "a1-u12-l06-zamestnavatel-ex06",
+          "lessonId": "a1-u12-l06-zamestnavatel",
+          "type": "sentence_order",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Розстав слова в правильному порядку.",
+          "context": "Скажи, що працюєш через агенцію.",
+          "tokens": [
+            ".",
+            "Pracujem",
+            "agentúru",
+            "cez"
+          ],
+          "correctOrder": [
+            "Pracujem",
+            "cez",
+            "agentúru",
+            "."
+          ],
+          "explanation": "cez agentúru.",
+          "order": 6,
+          "wordIds": [
+            "a1-u12-l06-zamestnavatel-w04",
+            "a1-u12-l06-zamestnavatel-w06"
+          ]
+        },
+        {
+          "id": "a1-u12-l06-zamestnavatel-ex07",
+          "lessonId": "a1-u12-l06-zamestnavatel",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Firma prijala nových zamestnanci.",
+          "errorToken": "zamestnanci",
+          "correctToken": "zamestnancov",
+          "explanation": "Знахідний мн. живих: zamestnancov.",
+          "order": 7,
+          "wordIds": [
+            "a1-u12-l06-zamestnavatel-w02",
+            "a1-u12-l06-zamestnavatel-w06"
+          ]
+        },
+        {
+          "id": "a1-u12-l06-zamestnavatel-ex08",
+          "lessonId": "a1-u12-l06-zamestnavatel",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Роботодавець чи працівник?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Zamestnávateľ"
+            },
+            {
+              "id": "c2",
+              "title": "Zamestnanec"
+            }
+          ],
+          "items": [
+            {
+              "sk": "pracuje",
+              "category": "c2"
+            },
+            {
+              "sk": "dáva prácu",
+              "category": "c1"
+            },
+            {
+              "sk": "platí mzdu",
+              "category": "c1"
+            },
+            {
+              "sk": "dostáva mzdu",
+              "category": "c2"
+            }
+          ],
+          "explanation": "Ролі.",
+          "order": 8,
+          "wordIds": [
+            "a1-u12-l06-zamestnavatel-w01",
+            "a1-u12-l06-zamestnavatel-w02",
+            "a1-u12-l06-zamestnavatel-w06"
+          ]
+        },
+        {
+          "id": "a1-u12-l06-zamestnavatel-ex09",
+          "lessonId": "a1-u12-l06-zamestnavatel",
+          "type": "dialogue_choose_reply",
+          "skill": [
+            "dialogue"
+          ],
+          "instruction": "Обери природну відповідь.",
+          "dialogue": [
+            {
+              "speaker": "Personalistka",
+              "sk": "Máte so sebou pas a povolenie na pobyt?"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "sk": "Nie, mám.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Áno, tu sú.",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "sk": "Áno, pobyt.",
+              "correct": false
+            }
+          ],
+          "explanation": "Документи.",
+          "order": 9,
+          "wordIds": [
+            "a1-u12-l06-zamestnavatel-w06"
+          ]
+        },
+        {
+          "id": "a1-u12-l06-zamestnavatel-ex10",
+          "lessonId": "a1-u12-l06-zamestnavatel",
+          "type": "natural_phrase",
+          "skill": [
+            "natural_language",
+            "pragmatics"
+          ],
+          "instruction": "Яка фраза звучить найприродніше в цій ситуації?",
+          "situation": "Тебе питають, який у тебе договір. На рік.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "Rok zmluvu.",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "sk": "Neurčitú na rok.",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "Zmluva rok určitý.",
+              "correct": false
+            },
+            {
+              "id": "d",
+              "sk": "Mám zmluvu na dobu určitú, na jeden rok.",
+              "correct": true
+            }
+          ],
+          "explanation": "doba určitá.",
+          "order": 10,
+          "wordIds": [
+            "a1-u12-l06-zamestnavatel-w03",
+            "a1-u12-l06-zamestnavatel-w06"
+          ]
+        },
+        {
+          "id": "a1-u12-l06-zamestnavatel-ex11",
+          "lessonId": "a1-u12-l06-zamestnavatel",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Колега каже: «Cez agentúru dostávam menej, ale mám istotu.» Що він має на увазі?",
+          "options": [
+            {
+              "id": "a",
+              "text": "він хоче звільнитися",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "через агенцію платять менше, але є стабільність",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "агенція платить більше",
+              "correct": false
+            }
+          ],
+          "explanation": "menej, ale istota.",
+          "order": 11,
+          "wordIds": [
+            "a1-u12-l06-zamestnavatel-w04",
+            "a1-u12-l06-zamestnavatel-w06"
+          ]
+        },
+        {
+          "id": "a1-u12-l06-zamestnavatel-ex12",
+          "lessonId": "a1-u12-l06-zamestnavatel",
+          "type": "multiple_select",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Обери слова працевлаштування.",
+          "options": [
+            {
+              "id": "a",
+              "sk": "zamestnávateľ",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "vagón",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "personálne oddelenie",
+              "correct": true
+            },
+            {
+              "id": "d",
+              "sk": "bankomat",
+              "correct": false
+            },
+            {
+              "id": "e",
+              "sk": "pracovná zmluva",
+              "correct": true
+            }
+          ],
+          "explanation": "Працевлаштування.",
+          "order": 12,
+          "wordIds": [
+            "a1-u12-l06-zamestnavatel-w01",
+            "a1-u12-l06-zamestnavatel-w03",
+            "a1-u12-l06-zamestnavatel-w05",
+            "a1-u12-l06-zamestnavatel-w06"
+          ]
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Підписання договору",
+        "description": "Ти у відділі кадрів нового роботодавця.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "«Dobrý deň, prišli ste podpísať zmluvu?»",
+            "options": [
+              {
+                "sk": "Áno, dobrý deň, som nový zamestnanec.",
+                "correct": true
+              },
+              {
+                "sk": "Podpísať som.",
+                "correct": false
+              },
+              {
+                "sk": "Áno, zmluvu.",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "«Zmluva je na dobu určitú, na šesť mesiacov.» Який договір?",
+            "options": [
+              {
+                "sk": "безстроковий",
+                "correct": false
+              },
+              {
+                "sk": "на 6 років",
+                "correct": false
+              },
+              {
+                "sk": "строковий на 6 місяців",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Ти питаєш, що буде після.",
+            "options": [
+              {
+                "sk": "Šesť mesiacov potom?",
+                "correct": false
+              },
+              {
+                "sk": "Čo bude po šiestich mesiacoch?",
+                "correct": true
+              },
+              {
+                "sk": "Potom je kedy?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "«Ak budete dobrý, dostanete zmluvu na dobu neurčitú.» Що обіцяють?",
+            "options": [
+              {
+                "sk": "безстроковий договір, якщо будеш добре працювати",
+                "correct": true
+              },
+              {
+                "sk": "звільнення",
+                "correct": false
+              },
+              {
+                "sk": "підвищення зарплати",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Основи працевлаштування — твої. Далі — зарплата."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Основи працевлаштування — твої. Далі — зарплата.",
+        "nowYouKnow": [
+          "zamestnávateľ, zamestnanec, zamestnaný",
+          "pracovná zmluva: na dobu určitú / neurčitú",
+          "agentúra, personálne oddelenie"
+        ],
+        "newWordsCount": 6,
+        "exercisesCompleted": 12,
+        "xpReward": 25,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "a1-u12-l07-plat",
+          "title": "Зарплата"
+        }
+      }
+    }
+  ]
+}

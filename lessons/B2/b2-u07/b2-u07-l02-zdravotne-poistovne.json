@@ -1,0 +1,834 @@
+{
+  "lessons": [
+    {
+      "id": "b2-u07-l02-zdravotne-poistovne",
+      "sectionId": "b2-u07",
+      "level": "B2",
+      "title": "Медичні страхові компанії",
+      "topic": "Система охорони здоров’я",
+      "description": "Чим відрізняються словацькі медичні страхові, що в них однакове за законом, як і коли змінити страхову, хто наглядає за страховими й куди подати скаргу на неякісне лікування.",
+      "order": 62,
+      "xpReward": 50,
+      "estimatedMinutes": 20,
+      "isPublished": true,
+      "intro": "Порівнювати страхові за критеріями, розуміти листи страхової й офіційно повідомляти про зміну страхової.",
+      "completionMessage": "Ти вмієш порівняти страхові й знаєш, як змінити страхову. Далі — черги й терміни очікування на лікування.",
+      "updatedAt": "2026-10-01T00:00:00+02:00",
+      "localization": {
+        "uiLanguages": [
+          "uk"
+        ],
+        "targetLanguage": "sk",
+        "fallbackUiLanguage": "uk"
+      },
+      "startScreen": {
+        "screenType": "lesson_start",
+        "eyebrow": "B2 · Система охорони здоров’я",
+        "title": "Медичні страхові компанії",
+        "shortDescription": "Порівнювати страхові за критеріями, розуміти листи страхової й офіційно повідомляти про зміну страхової.",
+        "outcomes": [
+          "пояснювати, що страхові мають однаковий базовий обсяг допомоги, а різняться мережею лікарів і бонусами",
+          "знати порядок і строки зміни страхової",
+          "вживати prepoistiť sa z… do…, mať zmluvu s…",
+          "розуміти, що робить Úrad pre dohľad nad zdravotnou starostlivosťou"
+        ],
+        "newWords": [
+          "prepoistiť sa",
+          "zmluvný lekár",
+          "dohľad",
+          "nadštandardný",
+          "benefitný program"
+        ],
+        "exercisesCount": 13,
+        "reward": "+50 XP",
+        "estimatedMinutes": 20,
+        "button": "Почати урок →"
+      },
+      "theoryScreens": [
+        {
+          "id": "theory-1",
+          "screenType": "theory",
+          "order": 1,
+          "title": "Три страхові — одні правила",
+          "text": "Наразі у Словаччині діють три медичні страхові: державна Všeobecná zdravotná poisťovňa (VšZP) і приватні Dôvera та Union. Обсяг основної допомоги, яку вони мусять оплачувати, визначає закон, тож базово він однаковий. Відрізняються вони насамперед мережею лікарів і лікарень, з якими мають договір (zmluvní lekári, zmluvné nemocnice), бонусними програмами (benefity: внески на щеплення, дентальну гігієну тощо) і сервісом. Важливо: якщо твій лікар не має договору з твоєю страховою, страхова його послуги, як правило, не оплатить. Дані про страхові й бонуси змінюються — перевіряй їх на сайтах страхових.",
+          "examples": [
+            {
+              "sk": "Môj kardiológ má zmluvu so všetkými tromi poisťovňami.",
+              "uk": "Мій кардіолог має договір з усіма трьома страховими."
+            },
+            {
+              "sk": "Poisťovne sa líšia najmä benefitmi a sieťou zmluvných lekárov.",
+              "uk": "Страхові різняться переважно бонусами й мережею договірних лікарів."
+            }
+          ],
+          "shortRule": "základ rovnaký zo zákona · rozdiely: zmluvní lekári, benefity, servis",
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-2",
+          "screenType": "theory",
+          "order": 2,
+          "title": "Як змінити страхову",
+          "text": "Змінити страхову — «prepoistiť sa» — зазвичай можна раз на рік. Заяву (prihláška) подаєш лише в НОВУ страхову, як правило до 30 вересня; новою страховою вона стає з 1 січня наступного року. Стару страхову повідомляти не треба — дані передаються між страховими. До 1 січня ти й далі застрахований у старій. Керування: prepoistiť sa z + родовий (звідки) do + родовий (куди): «Prepoistila som sa z jednej poisťovne do druhej.» Договір лікаря: «mať zmluvu s + орудний»: «Lekár má zmluvu s mojou poisťovňou.»",
+          "examples": [
+            {
+              "sk": "Prihlášku treba podať do 30. septembra.",
+              "uk": "Заяву треба подати до 30 вересня."
+            },
+            {
+              "sk": "Od 1. januára budem poistený v novej poisťovni.",
+              "uk": "З 1 січня я буду застрахований у новій страховій."
+            }
+          ],
+          "shortRule": "prihláška do 30. 9. → nová poisťovňa od 1. 1. · prepoistiť sa z… do… · mať zmluvu s…",
+          "commonMistakes": [
+            {
+              "mistake": "Prepoistil som do inej poisťovne.",
+              "correct": "Prepoistil som sa do inej poisťovne."
+            },
+            {
+              "mistake": "lekár má zmluvu s mojej poisťovne",
+              "correct": "lekár má zmluvu s mojou poisťovňou"
+            }
+          ],
+          "button": "Далі →"
+        },
+        {
+          "id": "theory-3",
+          "screenType": "theory",
+          "order": 3,
+          "title": "Нагляд і скарги",
+          "text": "За страховими й за правильністю лікування наглядає «Úrad pre dohľad nad zdravotnou starostlivosťou» (ÚDZS) — Управління з нагляду за медичною допомогою. Якщо вважаєш, що страхова неправильно відмовила в оплаті або лікування було проведене неправильно, можна подати туди «podnet» — звернення з проханням перевірити (prešetriť) випадок. Зазвичай спершу варто звернутися до самого закладу чи страхової, а до ÚDZS — коли відповідь не задовольнила. Офіційні формули: «podať podnet na prešetrenie», «domáhať sa nápravy» (домагатися виправлення).",
+          "examples": [
+            {
+              "sk": "Podal som podnet na Úrad pre dohľad nad zdravotnou starostlivosťou.",
+              "uk": "Я подав звернення до Управління з нагляду за медичною допомогою."
+            },
+            {
+              "sk": "Žiadam o prešetrenie postupu poskytovateľa.",
+              "uk": "Прошу перевірити дії надавача допомоги."
+            }
+          ],
+          "shortRule": "ÚDZS — нагляд · podať podnet na prešetrenie · domáhať sa nápravy",
+          "button": "Далі →"
+        }
+      ],
+      "wordsScreen": {
+        "screenType": "lesson_words",
+        "title": "Нові слова й фрази",
+        "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
+        "items": [
+          {
+            "wordId": "b2-u07-l02-zdravotne-poistovne-w01",
+            "sk": "prepoistiť sa",
+            "uk": "змінити медичну страхову",
+            "pronunciationUk": "препоістіть са",
+            "exampleSk": "Minulý rok som sa prepoistila, lebo nová poisťovňa má zmluvu s mojím lekárom.",
+            "exampleUk": "Торік я змінила страхову, бо нова має договір з моїм лікарем."
+          },
+          {
+            "wordId": "b2-u07-l02-zdravotne-poistovne-w02",
+            "sk": "zmluvný lekár",
+            "uk": "лікар, що має договір зі страховою",
+            "pronunciationUk": "змлувни: лєкар",
+            "exampleSk": "Skôr než sa objednáte, overte si, či ide o zmluvného lekára Vašej poisťovne.",
+            "exampleUk": "Перш ніж записатися, перевірте, чи це договірний лікар вашої страхової."
+          },
+          {
+            "wordId": "b2-u07-l02-zdravotne-poistovne-w03",
+            "sk": "dohľad",
+            "uk": "нагляд",
+            "pronunciationUk": "догльад",
+            "exampleSk": "Úrad pre dohľad nad zdravotnou starostlivosťou kontroluje aj poisťovne.",
+            "exampleUk": "Управління з нагляду за медичною допомогою контролює і страхові."
+          },
+          {
+            "wordId": "b2-u07-l02-zdravotne-poistovne-w04",
+            "sk": "nadštandardný",
+            "uk": "понадстандартний (понад те, що оплачує страхування)",
+            "pronunciationUk": "надштандардни:",
+            "exampleSk": "Nadštandardnú izbu si pacient musí doplatiť.",
+            "exampleUk": "За палату підвищеного комфорту пацієнт мусить доплатити."
+          },
+          {
+            "wordId": "b2-u07-l02-zdravotne-poistovne-w05",
+            "sk": "benefitný program",
+            "uk": "бонусна програма (страхової)",
+            "pronunciationUk": "бенефітни: проґрам",
+            "exampleSk": "Benefitný program poisťovne prispieva napríklad na dentálnu hygienu.",
+            "exampleUk": "Бонусна програма страхової робить внесок, наприклад, на професійну гігієну зубів."
+          }
+        ],
+        "button": "До вправ →"
+      },
+      "words": [
+        {
+          "id": "b2-u07-l02-zdravotne-poistovne-w01",
+          "sk": "prepoistiť sa",
+          "uk": "змінити медичну страхову",
+          "pronunciationUk": "препоістіть са",
+          "exampleSk": "Minulý rok som sa prepoistila, lebo nová poisťovňa má zmluvu s mojím lekárom.",
+          "exampleUk": "Торік я змінила страхову, бо нова має договір з моїм лікарем.",
+          "level": "B2",
+          "topic": "Система охорони здоров’я",
+          "tags": [
+            "b2-u07",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u07-l02-zdravotne-poistovne-w02",
+          "sk": "zmluvný lekár",
+          "uk": "лікар, що має договір зі страховою",
+          "pronunciationUk": "змлувни: лєкар",
+          "exampleSk": "Skôr než sa objednáte, overte si, či ide o zmluvného lekára Vašej poisťovne.",
+          "exampleUk": "Перш ніж записатися, перевірте, чи це договірний лікар вашої страхової.",
+          "level": "B2",
+          "topic": "Система охорони здоров’я",
+          "tags": [
+            "b2-u07",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u07-l02-zdravotne-poistovne-w03",
+          "sk": "dohľad",
+          "uk": "нагляд",
+          "pronunciationUk": "догльад",
+          "exampleSk": "Úrad pre dohľad nad zdravotnou starostlivosťou kontroluje aj poisťovne.",
+          "exampleUk": "Управління з нагляду за медичною допомогою контролює і страхові.",
+          "level": "B2",
+          "topic": "Система охорони здоров’я",
+          "tags": [
+            "b2-u07",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u07-l02-zdravotne-poistovne-w04",
+          "sk": "nadštandardný",
+          "uk": "понадстандартний (понад те, що оплачує страхування)",
+          "pronunciationUk": "надштандардни:",
+          "exampleSk": "Nadštandardnú izbu si pacient musí doplatiť.",
+          "exampleUk": "За палату підвищеного комфорту пацієнт мусить доплатити.",
+          "level": "B2",
+          "topic": "Система охорони здоров’я",
+          "tags": [
+            "b2-u07",
+            "b2"
+          ]
+        },
+        {
+          "id": "b2-u07-l02-zdravotne-poistovne-w05",
+          "sk": "benefitný program",
+          "uk": "бонусна програма (страхової)",
+          "pronunciationUk": "бенефітни: проґрам",
+          "exampleSk": "Benefitný program poisťovne prispieva napríklad na dentálnu hygienu.",
+          "exampleUk": "Бонусна програма страхової робить внесок, наприклад, на професійну гігієну зубів.",
+          "level": "B2",
+          "topic": "Система охорони здоров’я",
+          "tags": [
+            "b2-u07",
+            "b2"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "id": "b2-u07-l02-zdravotne-poistovne-ex01",
+          "lessonId": "b2-u07-l02-zdravotne-poistovne",
+          "type": "matching",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "З’єднай.",
+          "pairs": [
+            {
+              "left": "prepoistiť sa",
+              "right": "змінити страхову"
+            },
+            {
+              "left": "zmluvný lekár",
+              "right": "лікар із договором зі страховою"
+            },
+            {
+              "left": "dohľad",
+              "right": "нагляд"
+            },
+            {
+              "left": "nadštandardný",
+              "right": "понад те, що оплачує страхування"
+            },
+            {
+              "left": "benefitný program",
+              "right": "бонуси для клієнтів страхової"
+            },
+            {
+              "left": "prihláška",
+              "right": "заява про вступ (до нової страхової)"
+            }
+          ],
+          "order": 1,
+          "wordIds": [
+            "b2-u07-l02-zdravotne-poistovne-w01",
+            "b2-u07-l02-zdravotne-poistovne-w02",
+            "b2-u07-l02-zdravotne-poistovne-w03",
+            "b2-u07-l02-zdravotne-poistovne-w04",
+            "b2-u07-l02-zdravotne-poistovne-w05"
+          ]
+        },
+        {
+          "id": "b2-u07-l02-zdravotne-poistovne-ex02",
+          "lessonId": "b2-u07-l02-zdravotne-poistovne",
+          "type": "single_choice",
+          "skill": [
+            "vocabulary",
+            "grammar"
+          ],
+          "instruction": "До якої дати, як правило, треба подати заяву, щоб змінити страхову з 1 січня?",
+          "options": [
+            {
+              "id": "a",
+              "sk": "do 30. septembra",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "sk": "do 31. decembra",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "sk": "kedykoľvek, zmena platí v ten istý deň",
+              "correct": false
+            }
+          ],
+          "explanation": "Заява — зазвичай до 30 вересня, нова страхова діє з 1 січня наступного року.",
+          "order": 2
+        },
+        {
+          "id": "b2-u07-l02-zdravotne-poistovne-ex03",
+          "lessonId": "b2-u07-l02-zdravotne-poistovne",
+          "type": "dropdown_blank",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Обери.",
+          "sentenceParts": [
+            {
+              "text": "Prepoistil som sa "
+            },
+            {
+              "blankId": "b1",
+              "options": [
+                "do",
+                "k",
+                "na"
+              ],
+              "correct": "do"
+            },
+            {
+              "text": " inej poisťovne, pretože môj lekár má zmluvu "
+            },
+            {
+              "blankId": "b2",
+              "options": [
+                "so",
+                "s",
+                "k"
+              ],
+              "correct": "s"
+            },
+            {
+              "text": " ňou."
+            }
+          ],
+          "explanation": "prepoistiť sa do + родовий; mať zmluvu s + орудний (s ňou).",
+          "order": 3,
+          "wordIds": [
+            "b2-u07-l02-zdravotne-poistovne-w01",
+            "b2-u07-l02-zdravotne-poistovne-w02"
+          ]
+        },
+        {
+          "id": "b2-u07-l02-zdravotne-poistovne-ex04",
+          "lessonId": "b2-u07-l02-zdravotne-poistovne",
+          "type": "find_error",
+          "skill": [
+            "grammar"
+          ],
+          "instruction": "Знайди слово з помилкою.",
+          "sentence": "Väčšina mojich lekárov má zmluvu s inú poisťovňou.",
+          "errorToken": "inú",
+          "correctToken": "inou",
+          "explanation": "Після «s» (з ким) — орудний відмінок: s inou poisťovňou.",
+          "order": 4,
+          "wordIds": [
+            "b2-u07-l02-zdravotne-poistovne-w02"
+          ]
+        },
+        {
+          "id": "b2-u07-l02-zdravotne-poistovne-ex05",
+          "lessonId": "b2-u07-l02-zdravotne-poistovne",
+          "type": "correct_error",
+          "skill": [
+            "grammar",
+            "writing"
+          ],
+          "instruction": "Виправ речення повністю.",
+          "sentence": "Minulý rok som prepoistila do inej poisťovne.",
+          "acceptedAnswers": [
+            "Minulý rok som sa prepoistila do inej poisťovne.",
+            "Minulý rok som sa do inej poisťovne prepoistila."
+          ],
+          "explanation": "Дієслово prepoistiť sa — зворотне, «sa» обов’язкове.",
+          "order": 5,
+          "wordIds": [
+            "b2-u07-l02-zdravotne-poistovne-w01"
+          ]
+        },
+        {
+          "id": "b2-u07-l02-zdravotne-poistovne-ex06",
+          "lessonId": "b2-u07-l02-zdravotne-poistovne",
+          "type": "true_false",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай і виріши: правда чи неправда.",
+          "text": "Všetky zdravotné poisťovne musia hradiť rovnaký rozsah základnej starostlivosti, ktorý určuje zákon. Líšia sa najmä benefitmi a sieťou zmluvných lekárov.",
+          "statement": "Súkromná poisťovňa smie odmietnuť hradiť bežnú operáciu, ktorú hradí štátna poisťovňa.",
+          "correctAnswer": false,
+          "explanation": "Базовий обсяг однаковий за законом; різниця — у бонусах і договірних лікарях.",
+          "order": 6,
+          "wordIds": [
+            "b2-u07-l02-zdravotne-poistovne-w02",
+            "b2-u07-l02-zdravotne-poistovne-w05"
+          ]
+        },
+        {
+          "id": "b2-u07-l02-zdravotne-poistovne-ex07",
+          "lessonId": "b2-u07-l02-zdravotne-poistovne",
+          "type": "reading_comprehension",
+          "skill": [
+            "reading"
+          ],
+          "instruction": "Прочитай текст і дай відповіді.",
+          "text": "Marko pracuje v Prešove ako elektrikár a už tri roky je poistený v tej istej poisťovni. Tento rok si všimol, že jeho nový kardiológ nemá s jeho poisťovňou zmluvu, takže by si vyšetrenia musel platiť sám. Začal preto porovnávať poisťovne. Zistil, že základnú starostlivosť hradia všetky rovnako, ale líšia sa benefitmi, napríklad príspevkom na dentálnu hygienu alebo na očkovanie. Pre Marka však bolo najdôležitejšie, aby mal jeho kardiológ zmluvu s novou poisťovňou. Prihlášku podal v septembri priamo v novej poisťovni. Starú poisťovňu informovať nemusel. Nový preukaz poistenca mu prišiel poštou v decembri a od januára chodí ku kardiológovi bez problémov.",
+          "questions": [
+            {
+              "question": "Чому Марко почав порівнювати страхові?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "стара страхова підвищила внески",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "він переїхав в інше місто",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "його новий кардіолог не мав договору з його страховою",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що для Марка було найважливіше?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "найбільший внесок на дентальну гігієну",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "відділення страхової біля дому",
+                  "correct": false
+                },
+                {
+                  "id": "c",
+                  "text": "щоб кардіолог мав договір із новою страховою",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "question": "Що Марко мусив зробити зі старою страховою?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "подати їй письмову відмову",
+                  "correct": false
+                },
+                {
+                  "id": "b",
+                  "text": "нічого, повідомляти її не треба було",
+                  "correct": true
+                },
+                {
+                  "id": "c",
+                  "text": "особисто повернути стару картку",
+                  "correct": false
+                }
+              ]
+            }
+          ],
+          "order": 7,
+          "wordIds": [
+            "b2-u07-l02-zdravotne-poistovne-w02",
+            "b2-u07-l02-zdravotne-poistovne-w05"
+          ]
+        },
+        {
+          "id": "b2-u07-l02-zdravotne-poistovne-ex08",
+          "lessonId": "b2-u07-l02-zdravotne-poistovne",
+          "type": "real_message",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Прочитай лист від нової страхової.",
+          "message": {
+            "sender": "Zákaznícke centrum poisťovne",
+            "body": "Vážený pán Bondarenko, Vaša prihláška bola prijatá. Poistencom našej poisťovne sa stanete 1. 1. 2027. Do tohto dátumu zostávate poistený v súčasnej poisťovni a používate jej preukaz. Nový preukaz poistenca Vám pošleme poštou do konca decembra. S pozdravom Zákaznícke centrum"
+          },
+          "question": "Яку картку пан Бондаренко має використовувати в листопаді?",
+          "options": [
+            {
+              "id": "a",
+              "text": "нову картку, хоча вона ще не прийшла",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "стару картку теперішньої страхової",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "жодної, він тимчасово не застрахований",
+              "correct": false
+            }
+          ],
+          "explanation": "Do 1. 1. 2027 zostávate poistený v súčasnej poisťovni — до 1 січня діє стара страхова й стара картка.",
+          "order": 8
+        },
+        {
+          "id": "b2-u07-l02-zdravotne-poistovne-ex09",
+          "lessonId": "b2-u07-l02-zdravotne-poistovne",
+          "type": "real_document",
+          "skill": [
+            "reading",
+            "real_life"
+          ],
+          "instruction": "Порівняй страхові.",
+          "document": {
+            "title": "Porovnanie poisťovní – výber pre Marka",
+            "fields": [
+              {
+                "label": "Poisťovňa A – zmluva s jeho kardiológom",
+                "value": "áno"
+              },
+              {
+                "label": "Poisťovňa A – príspevok na dentálnu hygienu",
+                "value": "20 €"
+              },
+              {
+                "label": "Poisťovňa B – zmluva s jeho kardiológom",
+                "value": "nie"
+              },
+              {
+                "label": "Poisťovňa B – príspevok na dentálnu hygienu",
+                "value": "40 €"
+              }
+            ]
+          },
+          "question": "Марко регулярно ходить до кардіолога. Яка страхова для нього розумніша?",
+          "options": [
+            {
+              "id": "a",
+              "text": "A, бо там його кардіолог договірний",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "text": "байдуже, страхові однакові в усьому",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "B, бо там більший внесок на гігієну",
+              "correct": false
+            }
+          ],
+          "explanation": "Без договору страхова кардіолога не оплатить — це важить більше за 20 € бонусу.",
+          "order": 9,
+          "wordIds": [
+            "b2-u07-l02-zdravotne-poistovne-w02"
+          ]
+        },
+        {
+          "id": "b2-u07-l02-zdravotne-poistovne-ex10",
+          "lessonId": "b2-u07-l02-zdravotne-poistovne",
+          "type": "meaning_in_context",
+          "skill": [
+            "vocabulary",
+            "nuance"
+          ],
+          "instruction": "Що означає виділена фраза саме в цьому контексті?",
+          "context": "Táto izba je nadštandardná, preto si ju pacient dopláca z vlastného vrecka.",
+          "target": "nadštandardná",
+          "options": [
+            {
+              "id": "a",
+              "text": "особливо якісна й безкоштовна",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "заборонена для звичайних пацієнтів",
+              "correct": false
+            },
+            {
+              "id": "c",
+              "text": "понад те, що оплачує страхування",
+              "correct": true
+            }
+          ],
+          "explanation": "Nadštandardný — послуга понад стандарт, за яку доплачує пацієнт.",
+          "order": 10,
+          "wordIds": [
+            "b2-u07-l02-zdravotne-poistovne-w04"
+          ]
+        },
+        {
+          "id": "b2-u07-l02-zdravotne-poistovne-ex11",
+          "lessonId": "b2-u07-l02-zdravotne-poistovne",
+          "type": "drag_to_category",
+          "skill": [
+            "vocabulary"
+          ],
+          "instruction": "Що в страхових однакове, а що різне?",
+          "categories": [
+            {
+              "id": "c1",
+              "title": "Rovnaké zo zákona"
+            },
+            {
+              "id": "c2",
+              "title": "Rôzne"
+            }
+          ],
+          "items": [
+            {
+              "sk": "rozsah základnej starostlivosti",
+              "category": "c1"
+            },
+            {
+              "sk": "zákaznícky servis",
+              "category": "c2"
+            },
+            {
+              "sk": "benefitné programy",
+              "category": "c2"
+            },
+            {
+              "sk": "sieť zmluvných lekárov",
+              "category": "c2"
+            },
+            {
+              "sk": "sadzba odvodov zo mzdy",
+              "category": "c1"
+            },
+            {
+              "sk": "mobilná aplikácia",
+              "category": "c2"
+            },
+            {
+              "sk": "povinnosť byť poistený",
+              "category": "c1"
+            }
+          ],
+          "explanation": "Закон визначає основний обсяг і внески; конкурують страхові бонусами, мережею лікарів і сервісом.",
+          "order": 11,
+          "wordIds": [
+            "b2-u07-l02-zdravotne-poistovne-w02",
+            "b2-u07-l02-zdravotne-poistovne-w05"
+          ]
+        },
+        {
+          "id": "b2-u07-l02-zdravotne-poistovne-ex12",
+          "lessonId": "b2-u07-l02-zdravotne-poistovne",
+          "type": "hidden_meaning",
+          "skill": [
+            "nuance",
+            "pragmatics"
+          ],
+          "instruction": "Що людина насправді має на увазі?",
+          "context": "Kolega: «Ja som sa kedysi prepoisťoval kvôli benefitom. Ale vieš, čo nakoniec rozhoduje? Či tam má zmluvu tvoj lekár.»",
+          "options": [
+            {
+              "id": "a",
+              "text": "він радить змінювати страхову щороку заради бонусів",
+              "correct": false
+            },
+            {
+              "id": "b",
+              "text": "бонуси менш важливі, ніж договір твого лікаря зі страховою",
+              "correct": true
+            },
+            {
+              "id": "c",
+              "text": "він вважає, що лікарі страховими не цікавляться",
+              "correct": false
+            }
+          ],
+          "explanation": "«Nakoniec rozhoduje» — зрештою вирішує; колега підказує, що головне — договірний лікар.",
+          "order": 12,
+          "wordIds": [
+            "b2-u07-l02-zdravotne-poistovne-w02",
+            "b2-u07-l02-zdravotne-poistovne-w05"
+          ]
+        },
+        {
+          "id": "b2-u07-l02-zdravotne-poistovne-ex13",
+          "lessonId": "b2-u07-l02-zdravotne-poistovne",
+          "type": "register",
+          "skill": [
+            "register"
+          ],
+          "instruction": "Визнач стиль (регістр) фрази.",
+          "phrase": "Žiadam o prešetrenie postupu poskytovateľa zdravotnej starostlivosti.",
+          "options": [
+            {
+              "id": "formal",
+              "text": "Формальний",
+              "correct": true
+            },
+            {
+              "id": "neutral",
+              "text": "Нейтральний",
+              "correct": false
+            },
+            {
+              "id": "informal",
+              "text": "Неформальний",
+              "correct": false
+            }
+          ],
+          "explanation": "Žiadam o prešetrenie + родовий — офіційна формула звернення до органу нагляду.",
+          "order": 13
+        }
+      ],
+      "finalSituation": {
+        "id": "final-situation",
+        "type": "interactive_scenario",
+        "title": "Час змінити страхову",
+        "description": "Ти (чоловік) хочеш змінити страхову, бо твій лікар не має договору з теперішньою. Телефонуєш у нову страхову.",
+        "steps": [
+          {
+            "id": "f1",
+            "prompt": "Як почнеш розмову?",
+            "options": [
+              {
+                "sk": "Čau, idem k vám, jasné?",
+                "correct": false
+              },
+              {
+                "sk": "Dobrý deň, chcel by som prepoistiť do Vašej poisťovne.",
+                "correct": false
+              },
+              {
+                "sk": "Dobrý deň, chcel by som sa prepoistiť do Vašej poisťovne.",
+                "correct": true
+              }
+            ]
+          },
+          {
+            "id": "f2",
+            "prompt": "Ти хочеш перевірити договір лікаря.",
+            "options": [
+              {
+                "sk": "Je MUDr. Novák Váš lekár alebo nie?",
+                "correct": false
+              },
+              {
+                "sk": "Mohli by ste mi overiť, či má MUDr. Novák zmluvu s Vašou poisťovňou?",
+                "correct": true
+              },
+              {
+                "sk": "Mohli by ste mi overiť, či má MUDr. Novák zmluva s Vašou poisťovňou?",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f3",
+            "prompt": "Оператор каже: «Prihlášku treba podať do 30. septembra, poistenie vznikne od 1. januára.» Що це означає?",
+            "options": [
+              {
+                "text": "заява до кінця вересня, нова страхова діє з нового року",
+                "correct": true
+              },
+              {
+                "text": "страхова почне діяти 30 вересня",
+                "correct": false
+              },
+              {
+                "text": "заява подається в січні",
+                "correct": false
+              }
+            ]
+          },
+          {
+            "id": "f4",
+            "prompt": "Ти питаєш, чи треба повідомити стару страхову.",
+            "options": [
+              {
+                "sk": "Musím o tom informovať aj súčasná poisťovňa?",
+                "correct": false
+              },
+              {
+                "sk": "Musím o tom informovať aj súčasnú poisťovňu?",
+                "correct": true
+              },
+              {
+                "sk": "Stará poisťovňa mi je jedno.",
+                "correct": false
+              }
+            ]
+          }
+        ],
+        "passRequirement": "3/4",
+        "successMessage": "Ситуацію вирішено! Ти вмієш порівняти страхові й знаєш, як змінити страхову. Далі — черги й терміни очікування на лікування."
+      },
+      "resultScreen": {
+        "screenType": "lesson_result",
+        "title": "Урок завершено!",
+        "text": "Ти вмієш порівняти страхові й знаєш, як змінити страхову. Далі — черги й терміни очікування на лікування.",
+        "nowYouKnow": [
+          "основний обсяг допомоги однаковий за законом; різниця — zmluvní lekári, benefity, servis",
+          "prihláška do 30. 9. → nová poisťovňa od 1. 1.",
+          "prepoistiť sa z… do… · mať zmluvu s + орудний",
+          "ÚDZS — нагляд · podať podnet na prešetrenie"
+        ],
+        "newWordsCount": 5,
+        "exercisesCompleted": 13,
+        "xpReward": 50,
+        "mistakesMessage": "Повторити помилки",
+        "buttons": [
+          "Продовжити",
+          "Пройти ще раз",
+          "Повторити помилки"
+        ],
+        "nextLesson": {
+          "id": "b2-u07-l03-cakacie-lehoty",
+          "title": "Черги й терміни очікування"
+        }
+      }
+    }
+  ]
+}
