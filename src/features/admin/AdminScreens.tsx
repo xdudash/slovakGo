@@ -131,7 +131,7 @@ interface AdminServerUser {
   activeSeconds: number; sessionCount: number; visits: number; marketingConsent: boolean;
 }
 
-const LEVEL_ORDER: UserLevel[] = ["A0", "A1", "A2", "B1", "B2", "C1"];
+const LEVEL_ORDER: UserLevel[] = ["A0", "A1", "A2", "B1", "B2", "C1", "C2"];
 
 function LevelPill({ level }: { level: UserLevel }) {
   return <span className={`level-pill level-pill--${level.toLowerCase()}`}>{level}</span>;
@@ -1220,7 +1220,7 @@ function Stats() {
         <div className="stats-col">
           <h3 className="admin-section-title">За рівнями</h3>
           <Card>
-            {["A0","A1","A2","B1","B2","C1"].map((lvl) => (
+            {LEVEL_ORDER.map((lvl) => (
               <div key={lvl} className="admin-detail-row">
                 <LevelPill level={lvl as UserLevel} />
                 <div className="admin-bar-wrap">

@@ -2,7 +2,7 @@
 export const FREE_LESSON_LIMIT = 10;
 export interface AccessLesson { id: string; level: string; order: number; isPublished: boolean }
 export function previewLessons<T extends AccessLesson>(lessons: T[], level: string): T[] {
-  const levels = ["A0", "A1", "A2", "B1", "B2", "C1"];
+  const levels = ["A0", "A1", "A2", "B1", "B2", "C1", "C2"];
   const start = levels.indexOf(level);
   return lessons.filter(l => l.isPublished && levels.indexOf(l.level) >= start)
     .sort((a, b) => levels.indexOf(a.level) - levels.indexOf(b.level) || a.order - b.order || a.id.localeCompare(b.id))

@@ -1,5 +1,5 @@
 export type UserRole = "student" | "teacher" | "admin";
-export type UserLevel = "A0" | "A1" | "A2" | "B1" | "B2" | "C1";
+export type UserLevel = "A0" | "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 export type Locale = "uk" | "ru" | "sk" | "en";
 /** Either a plain legacy string, or a per-locale map for newer multilingual lesson content. */
 export type LocalizedText = string | Partial<Record<Locale, string>>;

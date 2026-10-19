@@ -66,7 +66,7 @@ describe("writing and combined result", () => {
   it("requires writing to confirm C2", () => {
     expect(combineResults("C2_candidate", "C2")).toBe("C2");
     expect(combineResults("C2_candidate", "C1")).toBe("C1+");
-    expect(toCourseLevel("C2")).toBe("C1");
+    expect(toCourseLevel("C2")).toBe("C2");
   });
 
   it("does not award a language level for lorem ipsum", () => {
