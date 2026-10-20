@@ -18,10 +18,11 @@ process.env.JWT_SECRET          = "vitest-secret-key-do-not-use-in-prod-abc123";
 process.env.NODE_ENV            = "test";
 
 // Stub Stripe network calls while asserting real checkout parameters.
-const stripeChecks = vi.hoisted(() => ({ price: vi.fn(), checkout: vi.fn().mockResolvedValue({ url: "https://checkout.stripe.com/test" }) }));
+const stripeChecks = vi.hoisted(() => ({ price: vi.fn(), checkout: vi.fn().mockResolvedValue({ id: "cs_test_checkout", url: "https://checkout.stripe.com/test" }), session: vi.fn(), subscription: vi.fn() }));
 vi.mock("stripe", () => ({
   default: vi.fn(function () { return {
-    checkout: { sessions: { create: stripeChecks.checkout } },
+    checkout: { sessions: { create: stripeChecks.checkout, retrieve: stripeChecks.session } },
+    subscriptions: { retrieve: stripeChecks.subscription },
     prices: { retrieve: stripeChecks.price },
     billingPortal:{ sessions: { create: vi.fn().mockResolvedValue({ url: "https://billing.stripe.com/test" }) } },
     webhooks:     { constructEvent: vi.fn() },
@@ -1031,12 +1032,43 @@ describe("growth and access regressions", () => {
     expect(stripeChecks.checkout).not.toHaveBeenCalled();
     expect((await call("POST",["billing","checkout"],{cookie,body:{acceptTerms:true}})).status).toBe(200);
     expect(stripeChecks.checkout.mock.calls[0][0].subscription_data.trial_period_days).toBe(3);
+    expect(stripeChecks.checkout.mock.calls[0][0].success_url).toContain("session_id={CHECKOUT_SESSION_ID}");
     stripeChecks.price.mockResolvedValue({...price,unit_amount:999});
     expect((await call("POST",["billing","checkout"],{cookie,body:{acceptTerms:true}})).status).toBe(503);
     expect(stripeChecks.checkout).toHaveBeenCalledTimes(1);
     const row = (await db.execute("SELECT sub_status,trial_ends FROM users WHERE id='preview-user'")).rows[0];
     expect(row.sub_status).toBe("free"); expect(row.trial_ends).toBeNull();
     delete process.env.STRIPE_PRICE_ID;
+  });
+  it("verifies checkout ownership and does not turn trials or test checkouts into purchases", async () => {
+    const trial = { id: "sub_live_trial", livemode: true, status: "trialing", latest_invoice: { id: "in_zero", paid: true, status: "paid", amount_paid: 0, currency: "eur", livemode: true } };
+    const session = { client_reference_id: "preview-user", livemode: true, mode: "subscription", status: "complete", subscription: trial };
+    const query = { session_id: "cs_live_test" };
+    stripeChecks.session.mockResolvedValue(session);
+    expect((await call("GET", ["billing", "conversions"], { query })).status).toBe(401);
+    expect((await call("GET", ["billing", "conversions"], { cookie, query: { session_id: "bad" } })).status).toBe(422);
+    const result = await call("GET", ["billing", "conversions"], { cookie, query });
+    expect(result.body.events).toEqual([{ id: "trial:sub_live_trial", name: "StartTrial", params: { value: 0, currency: "EUR", content_name: "SlovakGO Plus" } }]);
+    stripeChecks.session.mockResolvedValue({ ...session, client_reference_id: "someone-else" });
+    expect((await call("GET", ["billing", "conversions"], { cookie, query })).status).toBe(404);
+    for (const patch of [{ livemode: false }, { status: "open" }, { mode: "setup" }]) {
+      stripeChecks.session.mockResolvedValue({ ...session, ...patch });
+      expect((await call("GET", ["billing", "conversions"], { cookie, query })).body.events).toEqual([]);
+    }
+  });
+  it("reports only recent paid invoices with their actual amount and stable deduplication ID", async () => {
+    const invoice = { id: "in_live_paid", status: "paid", amount_paid: 250, currency: "eur", livemode: true, status_transitions: { paid_at: Math.floor(Date.now() / 1000) } };
+    const subscription = { id: "sub_live", livemode: true, status: "active", latest_invoice: invoice };
+    await db.execute("UPDATE users SET stripe_sub_id='sub_live' WHERE id='preview-user'");
+    stripeChecks.subscription.mockResolvedValue(subscription);
+    const expected = [{ id: "purchase:in_live_paid", name: "Purchase", params: { value: 2.5, currency: "EUR", content_name: "SlovakGO Plus", num_items: 1 } }];
+    expect((await call("GET", ["billing", "conversions"], { cookie })).body.events).toEqual(expected);
+    expect((await call("GET", ["billing", "conversions"], { cookie })).body.events).toEqual(expected);
+    for (const patch of [{ status: "open" }, { amount_paid: 0 }, { livemode: false }, { status_transitions: { paid_at: 1 } }]) {
+      stripeChecks.subscription.mockResolvedValue({ ...subscription, latest_invoice: { ...invoice, ...patch } });
+      expect((await call("GET", ["billing", "conversions"], { cookie })).body.events).toEqual([]);
+    }
+    await db.execute("UPDATE users SET stripe_sub_id=NULL WHERE id='preview-user'");
   });
   it("persists opt-in separately and supports a signed unsubscribe without login", async () => {
     expect((await call("GET",["user","email-preferences"],{cookie})).body.marketingConsent).toBe(false);

@@ -77,7 +77,7 @@ export async function handleBillingCheckout(req: VercelRequest, res: VercelRespo
     mode: "subscription",
     client_reference_id: uid,
     line_items: [{ price: priceId, quantity: 1 }],
-    success_url: `${base}/payment/success`,
+    success_url: `${base}/payment/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url:  `${base}/payment/cancel`,
     allow_promotion_codes: true,
     metadata: { app_user_id: uid },
@@ -109,7 +109,40 @@ export async function handleBillingCheckout(req: VercelRequest, res: VercelRespo
   }
   
   const session = await getStripe().checkout.sessions.create(params);
-  respond(res, { url: session.url });
+  respond(res, { url: session.url, sessionId: session.id, value: price.unit_amount! / 100, currency: price.currency.toUpperCase() });
+}
+
+/** Browser conversion signals come from Stripe, never from a success URL alone. */
+export async function handleBillingConversions(req: VercelRequest, res: VercelResponse): Promise<void> {
+  const uid = await requireUid(req, res); if (!uid) return;
+  const row = await queryOne("SELECT role, stripe_sub_id FROM users WHERE id = ? LIMIT 1", [uid]);
+  if (row?.role !== "student") return respond(res, { events: [] });
+  const sessionId = req.query.session_id;
+  let subscription: Stripe.Subscription | null = null;
+  if (sessionId !== undefined) {
+    if (typeof sessionId !== "string" || !/^cs_[a-zA-Z0-9_]{1,240}$/.test(sessionId)) return fail(res, "Invalid checkout session", 422);
+    const session = await getStripe().checkout.sessions.retrieve(sessionId, { expand: ["subscription.latest_invoice"] });
+    if (session.client_reference_id !== uid) return fail(res, "Checkout session not found", 404);
+    if (!session.livemode || session.status !== "complete" || session.mode !== "subscription") return respond(res, { events: [] });
+    if (session.subscription && typeof session.subscription !== "string") subscription = session.subscription;
+  } else if (row.stripe_sub_id) {
+    subscription = await getStripe().subscriptions.retrieve(String(row.stripe_sub_id), { expand: ["latest_invoice"] });
+  }
+  if (!subscription?.livemode) return respond(res, { events: [] });
+  const events: { id: string; name: string; params: Record<string, unknown> }[] = [];
+  // A trial is a distinct conversion, never a €3 purchase with no money collected.
+  if (subscription.status === "trialing") {
+    events.push({ id: `trial:${subscription.id}`, name: "StartTrial", params: { value: 0, currency: "EUR", content_name: "SlovakGO Plus" } });
+  }
+  const invoice = subscription.latest_invoice;
+  // Also reconcile the latest payment when a learner returns after their trial.
+  // Invoice IDs keep page refreshes, checkout returns and repeated visits deduplicated.
+  const paidAt = invoice && typeof invoice !== "string" ? invoice.status_transitions?.paid_at : null;
+  const recentPayment = paidAt && paidAt * 1000 > Date.now() - 24 * 60 * 60 * 1000;
+  if (invoice && typeof invoice !== "string" && invoice.status === "paid" && invoice.amount_paid > 0 && invoice.livemode && recentPayment) {
+    events.push({ id: `purchase:${invoice.id}`, name: "Purchase", params: { value: invoice.amount_paid / 100, currency: invoice.currency.toUpperCase(), content_name: "SlovakGO Plus", num_items: 1 } });
+  }
+  respond(res, { events });
 }
 
 export async function handleBillingPortal(req: VercelRequest, res: VercelResponse): Promise<void> {
