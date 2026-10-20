@@ -154,6 +154,7 @@ export function Register() {
       });
 
       if (user) {
+        track("register", { referred: Boolean(refParam) });
         useAppStore.getState().updateUser({ settings: { ...user.settings, language: lang } });
         const savedDemoXp = localStorage.getItem("slovakgo.demo-xp");
         if (savedDemoXp) {
@@ -164,7 +165,6 @@ export function Register() {
         }
 
         if (refParam) apiClient.claimReferral(refParam).catch(() => undefined);
-        track("register", { referred: Boolean(refParam) });
         navigate("/onboarding", { replace: true });
       }
     } finally {
@@ -343,6 +343,7 @@ export function GoogleDone() {
       }
 
       const pendingReferral = localStorage.getItem("slovakgo.pending-referral");
+      if (isNew) track("register", { method: "google", referred: Boolean(pendingReferral) });
       if (pendingReferral) {
         await apiClient.claimReferral(pendingReferral).catch(() => undefined);
         localStorage.removeItem("slovakgo.pending-referral");
@@ -364,7 +365,6 @@ export function GoogleDone() {
       }
 
       if (isNew || !user.onboardingDone) {
-        if (isNew) track("register", { method: "google", referred: Boolean(pendingReferral) });
         navigate("/onboarding", { replace: true });
       } else {
         navigate(roleHome(user.role), { replace: true });
