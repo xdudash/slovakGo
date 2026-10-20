@@ -180,10 +180,15 @@ export const apiClient = {
   },
 
   createCheckoutSession(planType: "monthly" | "yearly" = "monthly") {
-    return apiRequest<{ url: string }>('/billing/checkout', { 
+    return apiRequest<{ url: string; existingSubscription?: boolean; sessionId?: string; value?: number; currency?: string }>('/billing/checkout', {
       method: 'POST',
       body: JSON.stringify({ planType, acceptTerms: true })
     });
+  },
+
+  billingConversions(sessionId?: string) {
+    const query = sessionId ? `?session_id=${encodeURIComponent(sessionId)}` : "";
+    return apiRequest<{ events: { id: string; name: "Purchase" | "StartTrial"; params: Record<string, unknown> }[] }>(`/billing/conversions${query}`);
   },
 
   openCustomerPortal() {

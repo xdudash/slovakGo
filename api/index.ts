@@ -22,7 +22,7 @@ import {
   handleAdminUserDetail, handleAdminUserPatch, handleAdminImportLessons, handleAdminLessonsExport
 } from "./_lib/admin";
 
-import { handleBillingCheckout, handleBillingPortal, handleBillingWebhook } from "./_lib/stripe";
+import { handleBillingCheckout, handleBillingConversions, handleBillingPortal, handleBillingWebhook } from "./_lib/stripe";
 
 import {
   handleUserEmail, handleUserPassword, handleFcmToken, handleUserReminder,
@@ -112,6 +112,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "POST" && route === "/events")            return await handlePostEvents(req, res, isJson ? body : safeJson(rawBody.toString(), {}));
     
     // Stripe Routes
+    if (meth === "GET" && route === "/billing/conversions") return await handleBillingConversions(req, res);
     if (meth === "POST" && route === "/billing/checkout")  return await handleBillingCheckout(req, res, body);
     if (meth === "POST" && route === "/billing/portal")    return await handleBillingPortal(req, res);
     if (meth === "POST" && (route === "/billing/webhook" || route === "/stripe/webhook")) return await handleBillingWebhook(req, res, rawBody);

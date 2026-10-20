@@ -364,6 +364,7 @@ export function GoogleDone() {
       }
 
       if (isNew || !user.onboardingDone) {
+        if (isNew) track("register", { method: "google", referred: Boolean(pendingReferral) });
         navigate("/onboarding", { replace: true });
       } else {
         navigate(roleHome(user.role), { replace: true });

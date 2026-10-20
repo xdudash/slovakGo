@@ -7,8 +7,10 @@ import { apiClient } from "./services/apiClient";
 import { initAnalytics } from "./services/analytics";
 import { syncService } from "./services/syncService";
 import { useAppStore } from "./store/useAppStore";
+import { initMetaPixel } from "../shared/metaPixel";
 
 initAnalytics();
+initMetaPixel();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

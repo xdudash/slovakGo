@@ -7,6 +7,8 @@ import { roleHome, selectCurrentUser, useAppStore } from "../store/useAppStore";
 import { Suspense, lazy, useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import type { UserRole } from "../types";
+import { trackMetaPage } from "../../shared/metaPixel";
+import { syncMetaBilling } from "../services/metaConversions";
 import "../styles/globals.css";
 import "../styles/student-experience.css";
 
@@ -60,6 +62,20 @@ function AppLoadingScreen({ message = "Готуємо твій навчальн�
 export function App() {
   const location = useLocation();
   const activityUserId = useAppStore(s => s.currentUserId);
+  useEffect(() => { trackMetaPage(); }, [location.pathname]);
+  useEffect(() => {
+    if (!activityUserId) return;
+    const sync = () => {
+      if (document.visibilityState !== "hidden") void syncMetaBilling();
+    };
+    sync();
+    window.addEventListener("slovakgo:marketing-consent", sync);
+    window.addEventListener("focus", sync);
+    return () => {
+      window.removeEventListener("slovakgo:marketing-consent", sync);
+      window.removeEventListener("focus", sync);
+    };
+  }, [activityUserId]);
   useEffect(() => {
     if (activityUserId && !localStorage.getItem("slovakgo.admin-return")) return startActivityTracking();
   }, [activityUserId]);

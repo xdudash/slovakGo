@@ -21,6 +21,8 @@ export type FunnelEvent =
   | "notifications_enabled";
 
 import { API_BASE_URL } from "./apiClient";
+import { trackMeta } from "../../shared/metaPixel";
+import { selectCurrentUser, useAppStore } from "../store/useAppStore";
 
 interface QueuedEvent {
   name: FunnelEvent;
@@ -61,6 +63,17 @@ export function flush(useBeacon = false): void {
 /** Fire-and-forget. Never throws and never blocks the caller. */
 export function track(name: FunnelEvent, props: Record<string, unknown> = {}): void {
   try {
+    if (typeof window !== "undefined" && !localStorage.getItem("slovakgo.admin-return")) {
+      const state = useAppStore.getState();
+      const user = selectCurrentUser(state.data, state.currentUserId);
+      if (user?.role === "student") {
+        if (name === "register") trackMeta("CompleteRegistration", { content_name: "SlovakGO account", status: true }, `registration:${user.id}`);
+        if (name === "paywall_view") trackMeta("ViewContent", { content_name: "SlovakGO Plus", content_category: "subscription" });
+        if (name === "onboarding_done") trackMeta("OnboardingComplete", {}, `onboarding:${user.id}`, true);
+        if (name === "lesson_complete" && props.first === true) trackMeta("FirstLessonComplete", {}, `first-lesson:${user.id}`, true);
+        if (name === "section_complete") trackMeta("FreeSectionComplete", {}, `free-section:${user.id}`, true);
+      }
+    }
     queue.push({ name, props });
     if (timer) return;
     timer = setTimeout(() => flush(), FLUSH_DELAY_MS);

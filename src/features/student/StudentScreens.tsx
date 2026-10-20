@@ -1,4 +1,6 @@
 import { CompanionNote, GuideCharacter } from "../../components/LearningCompanion";
+import { trackMeta } from "../../../shared/metaPixel";
+import { syncMetaBilling } from "../../services/metaConversions";
 import { EmailPreferences } from "../../components/EmailPreferences";
 import { useCallback, useEffect, useRef, useState, useMemo } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
@@ -3065,7 +3067,8 @@ export function PaywallScreen() {
     setError(null);
     try {
       track("checkout_start", { from: "paywall" });
-      const { url } = await apiClient.createCheckoutSession();
+      const { url, existingSubscription, sessionId, value, currency } = await apiClient.createCheckoutSession();
+      if (!existingSubscription && sessionId) trackMeta("InitiateCheckout", { content_name: "SlovakGO Plus", value, currency, num_items: 1 }, `checkout:${sessionId}`);
       window.location.href = url;
     } catch (err: any) {
       setError(err.message || "Не вдалося почати оформлення підписки.");
@@ -3213,7 +3216,8 @@ function ShopScreen() {
     setError(null);
     try {
       track("checkout_start", { from: "shop", planType });
-      const { url } = await apiClient.createCheckoutSession(planType);
+      const { url, existingSubscription, sessionId, value, currency } = await apiClient.createCheckoutSession(planType);
+      if (!existingSubscription && sessionId) trackMeta("InitiateCheckout", { content_name: "SlovakGO Plus", value, currency, num_items: 1 }, `checkout:${sessionId}`);
       window.location.href = url;
     } catch (err: any) {
       setError(err.message || "Не вдалося почати оформлення підписки. Спробуйте пізніше.");
@@ -3327,6 +3331,13 @@ export function PaymentSuccess() {
   const { user } = useStudentData();
   const [checks, setChecks] = useState(0);
   const [checking, setChecking] = useState(true);
+  useEffect(() => {
+    const sessionId = new URLSearchParams(window.location.search).get("session_id");
+    const sync = () => { if (sessionId) void syncMetaBilling(sessionId); };
+    sync();
+    window.addEventListener("slovakgo:marketing-consent", sync);
+    return () => window.removeEventListener("slovakgo:marketing-consent", sync);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
