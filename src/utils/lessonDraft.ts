@@ -6,12 +6,14 @@ import type { AnswerRecord } from "../types";
  * stopped instead of restarting from the first screen.
  */
 export type LessonDraftPhase = "theory" | "words" | "exercise";
+export const LESSON_ATTEMPTS = 5;
 
 export interface LessonDraft {
   phase: LessonDraftPhase;
   theoryIndex: number;
   index: number;
   records: AnswerRecord[];
+  attemptsRemaining?: number;
   savedAt: number;
 }
 
@@ -71,6 +73,8 @@ export function loadLessonDraft(
       theoryIndex: draft.phase === "theory" ? draft.theoryIndex as number : 0,
       index: draft.phase === "exercise" ? draft.index as number : 0,
       records: records!,
+      attemptsRemaining: Number.isInteger(draft.attemptsRemaining) && draft.attemptsRemaining! >= 0 && draft.attemptsRemaining! <= LESSON_ATTEMPTS
+        ? draft.attemptsRemaining : LESSON_ATTEMPTS,
       savedAt: draft.savedAt as number,
     };
   } catch {

@@ -918,7 +918,7 @@ function UserDetail() {
         <Card className="admin-stat-card"><strong>{p.streakDays}🔥</strong><span>Серія</span></Card>
         <Card className="admin-stat-card"><strong>{p.completedLessons.length}</strong><span>Уроків</span></Card>
         <Card className="admin-stat-card"><strong>{completionPct}%</strong><span>Прогрес рівня</span></Card>
-        <Card className="admin-stat-card"><strong>{p.hearts}/{p.maxHearts}</strong><span>Серця</span></Card>
+        <Card className="admin-stat-card"><strong>{p.xpWeekly}</strong><span>XP цього тижня</span></Card>
         <Card className="admin-stat-card"><strong>{(p.mistakes as unknown[]).length}</strong><span>Помилок</span></Card>
       </div>
 
@@ -1349,7 +1349,7 @@ function NotifyScreen() {
     { label: "🔥 Стрік",      title: "Не забудь про стрік!",       body: "Пройди урок сьогодні, щоб зберегти свою серію 🔥" },
     { label: "📚 Нові уроки", title: "З'явились нові уроки!",       body: "Перевір що нового у твоєму рівні 👀" },
     { label: "🏆 Тиждень",    title: "Підсумки тижня",              body: "Подивись скільки XP ти заробив цього тижня 🏆" },
-    { label: "⭐ Plus",        title: "Спробуй Plus безкоштовно",   body: "Отримай +50% XP та необмежені серця 💜" },
+    { label: "⭐ Plus",        title: "Спробуй Plus безкоштовно",   body: "Відкрий усі рівні й тренування та отримуй +50% XP 💜" },
   ];
 
   async function send() {
