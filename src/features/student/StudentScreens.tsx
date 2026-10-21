@@ -4,7 +4,7 @@ import { syncMetaBilling } from "../../services/metaConversions";
 import { EmailPreferences } from "../../components/EmailPreferences";
 import { useCallback, useEffect, useRef, useState, useMemo } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { AlertCircle, Bell, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, ChevronRight, Download, Flame, Heart, Layers, Link2, LogOut, Medal, MessageSquare, Play, RefreshCw, Search, Settings, Share2, ShoppingBag, Star, Trophy, Users, Volume2, Zap } from "lucide-react";
+import { AlertCircle, Bell, BookOpen, Camera, CheckCircle2, ChevronDown, ChevronLeft, ChevronRight, Download, Flame, Layers, Link2, LogOut, Medal, MessageSquare, Play, RefreshCw, Search, Settings, Share2, ShoppingBag, Star, Trophy, Users, Volume2, Zap } from "lucide-react";
 import { AppShell } from "../../components/AppShell";
 import { Button, Card, EmptyState, Field, Modal, PageHeader, ProgressBar } from "../../components/ui";
 import { PageSkeleton } from "../../components/Skeleton";
@@ -30,7 +30,7 @@ import { resolveText, resolveWordExampleTranslation, resolveWordTranslation } fr
 import { useLessonLocale } from "../../hooks/useLessonLocale";
 import { formatCorrectAnswer, isLegacyCorrectOption } from "../../services/exerciseChecking";
 import { soundService } from "../../services/soundService";
-import { clearLessonDraft, loadLessonDraft, saveLessonDraft } from "../../utils/lessonDraft";
+import { clearLessonDraft, LESSON_ATTEMPTS, loadLessonDraft, saveLessonDraft } from "../../utils/lessonDraft";
 import { OptionListExercise } from "./exercises/OptionListExercise";
 import { TrueFalseExercise } from "./exercises/TrueFalseExercise";
 import { BlankFillExercise } from "./exercises/BlankFillExercise";
@@ -99,7 +99,6 @@ function TopStats() {
     <div className="sticky-stats">
       <div className="level-badge">{progress.currentLevel}</div>
       <div className="stat-chip xp" aria-label={`${progress.xpTotal} XP`}><Zap size={14} /> {new Intl.NumberFormat(lang, { notation: "compact", maximumFractionDigits: 1 }).format(progress.xpTotal)} XP</div>
-      <div className="stat-chip hearts"><Heart size={14} /> {progress.hearts}/{progress.maxHearts}</div>
       <div className={`stat-chip streak${streakAtRisk ? " at-risk" : ""}`}>
         <Flame size={14} /> {progress.streakDays}
         {progress.streakFreezeCount > 0 && <span className="freeze-badge">❄</span>}
@@ -854,7 +853,7 @@ function LessonScreen() {
 function LessonPlayer() {
   const navigate = useNavigate();
   const { lessonId } = useParams();
-  const { data, user, progress, completeLesson, recordWrongAnswer, restoreHearts } = useStudentData();
+  const { data, user, progress, completeLesson, recordWrongAnswer } = useStudentData();
   const { t } = useT();
   const lesson = data.lessons.find((item) => item.id === lessonId);
   const { tx, asset } = useLessonLocale(lesson);
@@ -877,6 +876,9 @@ function LessonPlayer() {
   const [answer, setAnswer] = useState<string | string[]>("");
   const [feedback, setFeedback] = useState<"correct" | "wrong" | null>(null);
   const [records, setRecords] = useState<AnswerRecord[]>(draft?.records ?? []);
+  // Lesson-local UI budget: background sync of legacy account hearts cannot
+  // interrupt this lesson or carry mistakes into the next one.
+  const [attemptsRemaining, setAttemptsRemaining] = useState(draft?.attemptsRemaining ?? LESSON_ATTEMPTS);
   const [finalAnswer, setFinalAnswer] = useState<string>("");
   const [finalFeedback, setFinalFeedback] = useState<"correct" | "wrong" | null>(null);
   const [finalStepIndex, setFinalStepIndex] = useState(0);
@@ -888,9 +890,6 @@ function LessonPlayer() {
   const [sharing, setSharing] = useState(false);
   useEffect(() => {
     if (lesson) track("lesson_start", { lessonId: lesson.id, level: lesson.level });
-    // Hearts are a per-lesson allowance: every lesson starts with a full set, so
-    // mistakes from earlier lessons never block a beginner from the next one.
-    if (lesson && progress && progress.hearts < progress.maxHearts) restoreHearts();
     // Only on entering a lesson, not on every re-render inside it.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lessonId]);
@@ -907,10 +906,10 @@ function LessonPlayer() {
   useEffect(() => {
     if (!lesson || !user || lesson.contentLocked || celebration || completionData) return;
     if (phase === "theory" || phase === "words" || phase === "exercise") {
-      saveLessonDraft(user.id, lesson.id, { phase, theoryIndex, index, records });
+      saveLessonDraft(user.id, lesson.id, { phase, theoryIndex, index, records, attemptsRemaining });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase, theoryIndex, index, records, lesson?.id, lesson?.contentLocked, user?.id, celebration, completionData]);
+  }, [phase, theoryIndex, index, records, attemptsRemaining, lesson?.id, lesson?.contentLocked, user?.id, celebration, completionData]);
 
   useEffect(() => {
     if (lesson?.contentLocked) void useAppStore.getState().refreshLessons();
@@ -1019,6 +1018,7 @@ function LessonPlayer() {
 
   function check() {
     const correct = progressService.check(exercise, answer);
+    if (!correct) setAttemptsRemaining(remaining => Math.max(0, (remaining || LESSON_ATTEMPTS) - 1));
     const record = { exerciseId: exercise.id, answer, correct, answeredAt: new Date().toISOString() };
     setRecords((items) => [...items.filter((item) => item.exerciseId !== exercise.id), record]);
     setFeedback(correct ? "correct" : "wrong");
@@ -1027,6 +1027,7 @@ function LessonPlayer() {
   }
 
   function next() {
+    if (attemptsRemaining === 0) setAttemptsRemaining(LESSON_ATTEMPTS);
     const nextIndex = index + 1;
     const finalRecords = [...records.filter((item) => item.exerciseId !== exercise.id), { exerciseId: exercise.id, answer, correct: feedback === "correct", answeredAt: new Date().toISOString() }];
     if (nextIndex >= lesson!.exercises.length) {
@@ -1043,6 +1044,7 @@ function LessonPlayer() {
       const step = sit.steps[finalStepIndex];
       const chosen = step.options.find((o) => (o.sk ?? tx(o.text)) === finalAnswer);
       const correct = !!chosen?.correct;
+      if (!correct) setAttemptsRemaining(remaining => Math.max(0, (remaining || LESSON_ATTEMPTS) - 1));
       setFinalAttemptFailed(false);
       setFinalFeedback(correct ? "correct" : "wrong");
       soundService.play(correct ? "correct" : "wrong", user!.settings.soundEnabled);
@@ -1050,11 +1052,13 @@ function LessonPlayer() {
     }
     const correctIdx = parseInt(sit.correctAnswer, 10) - 1;
     const correct = finalAnswer === sit.options[correctIdx];
+    if (!correct) setAttemptsRemaining(remaining => Math.max(0, (remaining || LESSON_ATTEMPTS) - 1));
     setFinalFeedback(correct ? "correct" : "wrong");
     soundService.play(correct ? "correct" : "wrong", user!.settings.soundEnabled);
   }
 
   function advanceFinal() {
+    if (attemptsRemaining === 0) setAttemptsRemaining(LESSON_ATTEMPTS);
     const sit = lesson!.finalSituation!;
     if (isInteractiveFinal(sit)) {
       const results = [...finalStepResults, finalFeedback === "correct"];
@@ -1127,9 +1131,19 @@ function LessonPlayer() {
         <ProgressBar value={percent} />
         <div className="lesson-top-right">
           <span className="question-counter">{questionLabel}</span>
-          <span className="lesson-hearts-chip"><Heart size={15} /> {progress.hearts}</span>
+          <span className="lesson-attempts-chip" title={t("student.lesson.attempts_hint")} aria-label={`${t("student.lesson.attempts_label")}: ${attemptsRemaining} / ${LESSON_ATTEMPTS}`}>
+            <RefreshCw size={15} aria-hidden="true" /> {t("student.lesson.attempts_label")} {attemptsRemaining}/{LESSON_ATTEMPTS}
+          </span>
         </div>
       </div>
+
+      {phase === "start" && <p className="lesson-attempts-intro">{t("student.lesson.attempts_hint")}</p>}
+      {attemptsRemaining === 0 && phase !== "result" && !celebration && !completionData && (
+        <section className="lesson-attempts-note" aria-live="polite">
+          <div><strong>{t("student.lesson.attempts_renew_title")}</strong><p>{t("student.lesson.attempts_renew_text")}</p></div>
+          <Button variant="secondary" onClick={() => setAttemptsRemaining(LESSON_ATTEMPTS)}>{t("student.lesson.attempts_continue")}</Button>
+        </section>
+      )}
 
       {phase === "start" && (
         lesson.startScreen ? (
@@ -1482,25 +1496,12 @@ function LessonPlayer() {
             <Button autoFocus onClick={() => navigate(completionDestination)}>
               {opensTrialAfterLesson ? `${t("student.lesson.open_full_access")} →` : lesson.resultScreen.buttons?.[0] ?? t("student.lesson.continue")}
             </Button>
-            <Button variant="secondary" onClick={() => { restoreHearts(); setIndex(0); setTheoryIndex(0); setRecords([]); setFinalAnswer(""); setFinalFeedback(null); setFinalStepIndex(0); setFinalStepResults([]); setFinalStepAnswers([]); setFinalAttemptFailed(false); setCompletionData(null); setPhase(lesson.startScreen ? "start" : theories.length > 0 ? "theory" : "wordsScreen" in lesson && lesson.wordsScreen ? "words" : "exercise"); }}>{lesson.resultScreen.buttons?.[1] ?? t("student.lesson.repeat_lesson")}</Button>
+            <Button variant="secondary" onClick={() => { setAttemptsRemaining(LESSON_ATTEMPTS); setAnswer(""); setFeedback(null); setIndex(0); setTheoryIndex(0); setRecords([]); setFinalAnswer(""); setFinalFeedback(null); setFinalStepIndex(0); setFinalStepResults([]); setFinalStepAnswers([]); setFinalAttemptFailed(false); setCompletionData(null); setPhase(lesson.startScreen || hasLegacyIntro ? "start" : theories.length > 0 ? "theory" : "wordsScreen" in lesson && lesson.wordsScreen ? "words" : "exercise"); }}>{lesson.resultScreen.buttons?.[1] ?? t("student.lesson.repeat_lesson")}</Button>
             {completionData.wrong.length > 0 && <Button variant="ghost" onClick={() => navigate("/app/practice")}>{lesson.resultScreen.mistakesMessage ?? lesson.resultScreen.buttons?.[2] ?? t("student.lesson.practice_mistakes")}</Button>}
           </div>
         </div>
       )}
 
-      {progress.hearts <= 0 ? (
-        <Modal className="student-modal" label={t("student.experience.dialog_title")}>
-          <Card className="modal-card">
-            <Heart size={40} color="var(--red)" />
-            <h1>{t("student.lesson.no_hearts_title")}</h1>
-            <p>{t("student.lesson.no_hearts_text")}</p>
-            {accessService.hasFullAccess(user?.subscriptionStatus ?? "free") && <Button onClick={() => navigate("/app/practice")}>{t("student.practice.recover_hearts")}</Button>}
-            <Button onClick={() => navigate("/app/path")}>{t("student.lesson.back_to_path")}</Button>
-            <Button variant="secondary" onClick={restoreHearts}>{t("student.lesson.try_again")}</Button>
-            <Button variant="ghost" onClick={() => navigate("/app/shop")}>{t("student.lesson.go_plus")}</Button>
-          </Card>
-        </Modal>
-      ) : null}
       {celebration && (
         <div className="lesson-celebrate">
           {Array.from({ length: 22 }, (_, i) => (
@@ -1778,7 +1779,7 @@ function PracticeScreen() {
   const [sessionAnswers, setSessionAnswers] = useState<{ wordId: string; correct: boolean }[]>([]);
   const feedbackRef = useRef<"correct" | "wrong" | null>(null);
   const sessionFinishedRef = useRef(false);
-  const [sessionResult, setSessionResult] = useState<{ completedAt: string; heartsRestored: number } | null>(null);
+  const [sessionResult, setSessionResult] = useState<{ completedAt: string } | null>(null);
   const timerIdRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => { feedbackRef.current = feedback; }, [feedback]);
@@ -1804,7 +1805,6 @@ function PracticeScreen() {
 
   if (!user || !progress) return <PageSkeleton />;
 
-  const heartsToRestore = progress.hearts < progress.maxHearts ? 1 : 0;
   const hasXpBonus = ["trial", "plus", "past_due"].includes(user.subscriptionStatus);
   const xpEarned = hasXpBonus ? 8 : 5;
   const allWords = vocabularyService.build(data.lessons, data.userWords[user.id]);
@@ -1912,9 +1912,7 @@ function PracticeScreen() {
               </button>
             )}
 
-            <CompanionNote title={t("student.experience.practice_title")} text={t("student.practice.hearts_reward_hint")}>
-              <span className="companion-heart-count"><Heart size={15} /> {progress.hearts}/{progress.maxHearts}</span>
-            </CompanionNote>
+            <CompanionNote title={t("student.experience.practice_title")} text={t("student.practice.mistakes_welcome")} />
 
             {/* Plus XP bonus card */}
             {hasXpBonus && (
@@ -2001,7 +1999,7 @@ function PracticeScreen() {
       if (isLast) {
         if (sessionFinishedRef.current || sessionAnswers.length !== exercises.length) return;
         sessionFinishedRef.current = true;
-        setSessionResult({ completedAt: new Date().toISOString(), heartsRestored: heartsToRestore });
+        setSessionResult({ completedAt: new Date().toISOString() });
         finishPracticeSession(sessionAnswers);
         setPhase("results");
       } else {
@@ -2058,7 +2056,7 @@ function PracticeScreen() {
           {hasXpBonus && <span className="plus-xp-chip">{t("student.practice.plus_bonus")}</span>}
         </div>
         {sessionResult && <>
-          <p className="practice-recovery-result"><Heart size={18} /> {sessionResult.heartsRestored > 0 ? t("student.practice.hearts_restored") : t("student.practice.hearts_full")} · {progress.hearts}/{progress.maxHearts}</p>
+          <p className="practice-recovery-result"><CheckCircle2 size={18} /> {t("student.practice.session_complete")}</p>
           <p>{t("student.practice.completed_on")} {new Date(sessionResult.completedAt).toLocaleDateString(lang === "uk" ? "uk-UA" : lang, { timeZone: "Europe/Bratislava", day: "numeric", month: "long" })}</p>
         </>}
         <p>{correctCount} / {total} {t("student.practice.results_correct")} · {accuracy}%</p>
@@ -2280,9 +2278,9 @@ function buildDailyXp(xpDailyHistory: Record<string, number> | undefined): { lab
 
 function ProfileScreen() {
   const navigate = useNavigate();
-  const { user, progress, data, logout, updateUser, restoreHearts } = useStudentData();
+  const { user, progress, data, logout, updateUser } = useStudentData();
   const { t } = useT();
-  const [modal, setModal] = useState<"streak" | "hearts" | "avatar" | "logout" | null>(null);
+  const [modal, setModal] = useState<"streak" | "avatar" | "logout" | null>(null);
   const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
   const [referralCopied, setReferralCopied] = useState(false);
   const [sharingProgress, setSharingProgress] = useState(false);
@@ -2350,10 +2348,10 @@ function ProfileScreen() {
             <strong>{progress.streakDays}</strong>
             <span>{t("student.profile.stat_streak")}</span>
           </Card>
-          <Card className="stat-card" onClick={() => setModal("hearts")}>
-            <Heart size={22} color="var(--red)" />
-            <strong>{progress.hearts}/{progress.maxHearts}</strong>
-            <span>{t("student.profile.stat_hearts")}</span>
+          <Card className="stat-card">
+            <Zap size={22} color="var(--purple)" />
+            <strong>{progress.xpTotal}</strong>
+            <span>{t("student.profile.stat_xp")}</span>
           </Card>
           <Card className="stat-card" onClick={() => navigate("/app/path")}>
             <BookOpen size={22} color="var(--purple)" />
@@ -2497,20 +2495,6 @@ function ProfileScreen() {
             <Flame size={44} color="var(--orange)" />
             <strong className="modal-big-num">{progress.streakDays}</strong>
             <p>{t("student.profile.streak_modal_text")}</p>
-            <Button variant="ghost" onClick={() => setModal(null)}>{t("student.profile.avatar_cancel")}</Button>
-          </Card>
-        </Modal>
-      )}
-
-      {modal === "hearts" && (
-        <Modal className="student-modal" label={t("student.experience.dialog_title")} onClose={() => setModal(null)}>
-          <Card className="profile-modal">
-            <Heart size={44} color="var(--red)" />
-            <strong className="modal-big-num">{progress.hearts}/{progress.maxHearts}</strong>
-            <p>{t("student.profile.hearts_modal_title")}</p>
-            {progress.hearts < progress.maxHearts && (
-              <Button onClick={() => { restoreHearts(); setModal(null); }}>{t("student.profile.hearts_restore")}</Button>
-            )}
             <Button variant="ghost" onClick={() => setModal(null)}>{t("student.profile.avatar_cancel")}</Button>
           </Card>
         </Modal>

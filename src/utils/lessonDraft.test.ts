@@ -18,7 +18,25 @@ describe("lessonDraft", () => {
   it("resumes an exercise position with its answer records", () => {
     const s = memoryStorage();
     saveLessonDraft("u1", "l1", { phase: "exercise", theoryIndex: 0, index: 3, records: [record] }, 1000, s);
-    expect(loadLessonDraft("u1", "l1", shape, 2000, s)).toEqual({ phase: "exercise", theoryIndex: 0, index: 3, records: [record], savedAt: 1000 });
+    expect(loadLessonDraft("u1", "l1", shape, 2000, s)).toEqual({ phase: "exercise", theoryIndex: 0, index: 3, records: [record], attemptsRemaining: 5, savedAt: 1000 });
+  });
+
+  it("restores lesson-local attempts, including zero, without affecting another lesson", () => {
+    const s = memoryStorage();
+    saveLessonDraft("u1", "l1", { phase: "exercise", theoryIndex: 0, index: 3, records: [record], attemptsRemaining: 0 }, 1000, s);
+    saveLessonDraft("u1", "l2", { phase: "exercise", theoryIndex: 0, index: 0, records: [], attemptsRemaining: 5 }, 1000, s);
+    expect(loadLessonDraft("u1", "l1", shape, 2000, s)?.attemptsRemaining).toBe(0);
+    expect(loadLessonDraft("u1", "l1", shape, 2000, s)?.index).toBe(3);
+    expect(loadLessonDraft("u1", "l2", shape, 2000, s)?.attemptsRemaining).toBe(5);
+  });
+
+  it("replaces invalid attempt counts while preserving a valid lesson position", () => {
+    const s = memoryStorage();
+    for (const attemptsRemaining of [-1, 6, 2.5]) {
+      saveLessonDraft("u1", "l1", { phase: "exercise", theoryIndex: 0, index: 2, records: [], attemptsRemaining }, 1000, s);
+      expect(loadLessonDraft("u1", "l1", shape, 2000, s)?.attemptsRemaining).toBe(5);
+      expect(loadLessonDraft("u1", "l1", shape, 2000, s)?.index).toBe(2);
+    }
   });
 
   it("keeps drafts separate per user and lesson", () => {
