@@ -1,4 +1,11 @@
-import copy from "../data/home.json";
+import baseCopy from "../data/home.json";
+import offerCopy from "../../../shared/offerCopy.json";
+const copy = Object.fromEntries(Object.entries(baseCopy).map(([lang, strings]) => [lang, {
+  ...strings,
+  freeText: offerCopy[lang].free,
+  trialNoticeText: offerCopy[lang].trial,
+  faqA5: `${offerCopy[lang].free} ${offerCopy[lang].trial}`,
+}]));
 const supported = Object.keys(copy);
 let currentLang = document.documentElement.lang;
 let step = 0,

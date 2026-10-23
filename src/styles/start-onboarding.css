@@ -1,0 +1,151 @@
+.start-onboarding {
+  min-height: 100dvh;
+  padding: 28px 24px 40px;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.start-onboarding-header,
+.start-onboarding-body {
+  width: min(100%, 720px);
+  margin-inline: auto;
+}
+
+.start-onboarding-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.start-onboarding-body { margin-top: 40px; }
+.start-heading { margin-bottom: 28px; }
+.start-heading h1 {
+  margin: 0 0 12px;
+  font-size: 2.25rem;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+.start-heading h1:focus { outline: none; }
+.start-heading p {
+  max-width: 58ch;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.start-choices { display: grid; gap: 16px; }
+.start-choice {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) 22px;
+  align-items: start;
+  gap: 18px;
+  padding: 24px;
+  text-align: left;
+  font: inherit;
+  color: var(--fg);
+  background: var(--surface, #fff);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+.start-choice:hover { border-color: var(--accent); background: #f7f5ff; }
+.start-choice:active { background: #eeeaff; }
+.start-choice > svg { margin-top: 14px; color: var(--accent); }
+.start-choice-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  color: #5741c8;
+  background: #efebff;
+  border-radius: 12px;
+}
+.start-choice-copy { display: grid; gap: 8px; }
+.start-choice-copy strong { font-size: 1.25rem; line-height: 1.3; }
+.start-choice-copy > span { color: var(--muted); line-height: 1.5; }
+.start-choice-copy .start-choice-action { margin-top: 6px; color: #5741c8; font-weight: 750; }
+
+.start-back,
+.start-text-link {
+  min-height: 44px;
+  padding: 8px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  background: transparent;
+  color: #5741c8;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+.start-back { margin-bottom: 18px; }
+.start-text-link { text-decoration: underline; text-underline-offset: 4px; }
+.start-text-link:hover { color: var(--fg); }
+.start-onboarding button:focus-visible,
+.start-onboarding input:focus-visible,
+.start-onboarding select:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.start-levels { display: grid; gap: 8px; margin: 0; padding: 0; border: 0; min-width: 0; }
+.start-level {
+  display: grid;
+  grid-template-columns: 20px 34px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  min-height: 68px;
+  padding: 14px 18px;
+  background: var(--surface, #fff);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+}
+.start-level:hover { border-color: var(--accent); }
+.start-level.selected { border-color: var(--accent); background: #f2eeff; }
+.start-level input { margin: 0; width: 18px; height: 18px; accent-color: #5741c8; }
+.start-level span { line-height: 1.45; }
+.start-level-continue { margin-top: 20px; width: 100%; min-height: 50px; }
+.start-test-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 28px;
+}
+.start-test-option > svg { flex-shrink: 0; margin-top: 2px; color: var(--accent); }
+.start-test-option p { margin: 6px 0 0; line-height: 1.5; color: var(--muted); }
+.start-goal { display: grid; gap: 10px; margin-top: 32px; font-size: .9rem; }
+.start-goal select {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface, #fff);
+  color: var(--fg);
+  font: inherit;
+}
+.start-free-note { display: flex; align-items: flex-start; gap: 8px; margin: 22px 0 0; font-size: .9rem; line-height: 1.5; }
+.start-free-note svg { color: #386748; flex-shrink: 0; margin-top: 2px; }
+
+@media (max-width: 540px) {
+  .start-onboarding { padding: 20px 16px 32px; }
+  .start-onboarding-body { margin-top: 28px; }
+  .start-heading h1 { font-size: 1.85rem; }
+  .start-choice { padding: 18px 16px; gap: 12px; grid-template-columns: 40px minmax(0, 1fr) 18px; }
+  .start-choice-icon { width: 40px; height: 44px; }
+  .start-choice-icon svg { width: 24px; height: 24px; }
+  .start-choice > svg { width: 18px; }
+  .start-choice-copy strong { font-size: 1.125rem; }
+  .start-level { gap: 10px; padding: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .start-choice { transition: none; }
+}

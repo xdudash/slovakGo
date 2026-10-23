@@ -18,7 +18,7 @@ const GoogleDone = lazy(() => import("../features/auth/AuthScreens").then(m => (
 const Login = lazy(() => import("../features/auth/AuthScreens").then(m => ({ default: m.Login })));
 const Register = lazy(() => import("../features/auth/AuthScreens").then(m => ({ default: m.Register })));
 const ResetPassword = lazy(() => import("../features/auth/AuthScreens").then(m => ({ default: m.ResetPassword })));
-const Onboarding = lazy(() => import("../features/student/StudentScreens").then(m => ({ default: m.Onboarding })));
+const Onboarding = lazy(() => import("../features/student/Onboarding").then(m => ({ default: m.Onboarding })));
 const PaymentCancel = lazy(() => import("../features/student/StudentScreens").then(m => ({ default: m.PaymentCancel })));
 const PaymentSuccess = lazy(() => import("../features/student/StudentScreens").then(m => ({ default: m.PaymentSuccess })));
 const PlacementTest = lazy(() => import("../features/student/PlacementTest").then(m => ({ default: m.PlacementTest })));

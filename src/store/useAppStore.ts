@@ -362,7 +362,12 @@ export const useAppStore = create<AppStore>((set, get) => ({
       users: get().data.users.map((user) => (user.id === currentUserId ? { ...user, goal, level, onboardingDone: true } : user)),
       progress: {
         ...get().data.progress,
-        [currentUserId]: { ...progress, currentLevel: level, currentLessonId, updatedAt: new Date().toISOString() }
+        [currentUserId]: {
+          ...progress, currentLevel: level, currentLessonId,
+          freePreviewLevel: get().data.users.find((user) => user.id === currentUserId)?.onboardingDone
+            ? progress.freePreviewLevel ?? progress.currentLevel : level,
+          updatedAt: new Date().toISOString()
+        }
       }
     };
     data = withSync(data, currentUserId, "profile.update", { goal, level, onboardingDone: true });

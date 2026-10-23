@@ -8,6 +8,7 @@ import { track } from "../../services/analytics";
 import { setGuestLanguage, useT } from "../../i18n";
 import type { User } from "../../types";
 import { checkEmail } from "../../../shared/email";
+import offerCopy from "../../../shared/offerCopy.json";
 
 function postAuthRoute(user: User): string {
   if (user.role === "student" && !user.onboardingDone) {
@@ -177,6 +178,7 @@ export function Register() {
       title={t("auth.register_title")}
       text={t("auth.register_subtitle")}
     >
+      <p className="auth-free-note">{offerCopy[lang].free}</p>
       {demoDoneParam && (
         <div className="referred-banner" style={{ background: "#ecfdf5", border: "1px solid #10b981", color: "#065f46" }}>
           🎉 {t("auth.demo_completed")}

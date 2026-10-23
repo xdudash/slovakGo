@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useT } from "../../i18n";
 import { CheckCircle2, Clock3, FileText, RotateCcw, ShieldCheck } from "lucide-react";
 import { Button, Card, ProgressBar } from "../../components/ui";
 import { selectCurrentUser, useAppStore } from "../../store/useAppStore";
@@ -33,6 +34,7 @@ const confidenceLabels = {
 
 export function PlacementTest() {
   const navigate = useNavigate();
+  const { t, lang } = useT();
   const data = useAppStore((state) => state.data);
   const currentUserId = useAppStore((state) => state.currentUserId);
   const completeOnboarding = useAppStore((state) => state.completeOnboarding);
@@ -167,10 +169,12 @@ export function PlacementTest() {
   if (!draft) {
     return (
       <main className="placement-page placement-intro">
+        {!user.onboardingDone ? <Link to="/onboarding?start=known">{t("student.onboarding.test_back")}</Link> : null}
         <Card className="placement-intro-card">
           <div className="placement-intro-icon"><FileText size={34} /></div>
           <h1>{test.startScreen.title_ua}</h1>
           <p className="placement-subtitle">{test.subtitle_ua}</p>
+          {lang !== "uk" ? <p className="placement-note">{t("student.onboarding.test_language")}</p> : null}
           <div className="placement-meta">
             <span><Clock3 size={17} /> {test.estimatedMinutes.min}–{test.estimatedMinutes.max} хвилин</span>
             <span><ShieldCheck size={17} /> Результат зберігається</span>

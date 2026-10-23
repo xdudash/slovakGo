@@ -1,5 +1,6 @@
 import { CompanionNote, GuideCharacter } from "../../components/LearningCompanion";
 import { trackMeta } from "../../../shared/metaPixel";
+import offerCopy from "../../../shared/offerCopy.json";
 import { syncMetaBilling } from "../../services/metaConversions";
 import { EmailPreferences } from "../../components/EmailPreferences";
 import { useCallback, useEffect, useRef, useState, useMemo } from "react";
@@ -151,104 +152,6 @@ export function StudentLayout() {
   );
 }
 
-export function Onboarding() {
-  const navigate = useNavigate();
-  const { user, completeOnboarding } = useStudentData();
-  const { t, ta } = useT();
-  const goals = ta("student.goals");
-  const [step, setStep] = useState(0);
-  const [goal, setGoal] = useState(user?.goal || goals[0]);
-  if (!user) return <Navigate to="/login" replace />;
-
-  // Notification permission is deliberately NOT requested here. Asking before the
-  // learner has seen any value gets a permanent "Block", which also kills the
-  // well-timed request that runs after the first finished lesson (useAppStore.completeLesson).
-
-  // Two steps only (goal → start), then straight into the first lesson:
-  // every extra screen between sign-up and the first exercise loses learners.
-  const cards = [
-    <Card className="onboarding-card onboarding-card-anim" key="goal">
-      <div className="onboarding-visual onboarding-visual--goal">
-        <div className="onboarding-product-shot onboarding-product-shot--goal">
-          <img src="/app-onboarding.png" alt="Налаштування навчального шляху SlovakGO" width="390" height="844" decoding="async" fetchPriority="high" />
-        </div>
-        <div className="onboarding-visual-badge"><Trophy size={22} /> Твоя ціль</div>
-      </div>
-      <div className="onboarding-content">
-        <div className="onboarding-copy">
-          <span className="onboarding-step-label">{t("student.onboarding.welcome_title")} 👋</span>
-          <h1>{t("student.onboarding.goal_title")}</h1>
-        </div>
-        <div className="onboarding-chip-list">
-          {goals.map((item) => (
-            <button
-              className={`onboarding-chip ${goal === item ? "active" : ""}`}
-              key={item}
-              type="button"
-              onClick={() => {
-                setGoal(item);
-                setStep(1);
-              }}
-            >
-              <CheckCircle2 size={18} className="check-icon" />
-              <span>{item}</span>
-            </button>
-          ))}
-        </div>
-        <div className="onboarding-actions" style={{ marginTop: "1.5rem" }}>
-          <Button className="onboarding-btn-primary" onClick={() => setStep(1)}>
-            {t("student.onboarding.next")}
-          </Button>
-        </div>
-      </div>
-    </Card>,
-    <Card className="onboarding-card onboarding-card-anim" key="start">
-      <div className="onboarding-visual onboarding-visual--start">
-        <div className="onboarding-product-shot onboarding-product-shot--start">
-          <img src="/app-exercise.png" alt="Повноцінна вправа словацької мови SlovakGO" width="390" height="844" loading="lazy" decoding="async" />
-        </div>
-      </div>
-      <div className="onboarding-content">
-        <div className="onboarding-copy">
-          <span className="onboarding-step-label">Обери свій старт</span>
-          <h1>{t("student.onboarding.start_title")}</h1>
-          <p className="onboarding-text">Спочатку отримай результат: перші 10 уроків доступні без оплати. Повний доступ запропонуємо лише після їх завершення.</p>
-        </div>
-        <div className="onboarding-actions">
-          <Button className="onboarding-btn-primary" onClick={() => {
-            track("onboarding_done", { goal, start: "A0" });
-            completeOnboarding(goal, "A0");
-            const state = useAppStore.getState();
-            const lessonId = state.currentUserId ? state.data.progress[state.currentUserId]?.currentLessonId : undefined;
-            const first = lessonId ? state.data.lessons.find((l) => l.id === lessonId) : undefined;
-            navigate(first && !first.contentLocked ? `/app/lesson/${first.id}` : "/app/path", { replace: true });
-          }}>
-            {t("student.onboarding.start_a0")}
-          </Button>
-          <Button variant="secondary" onClick={() => navigate("/placement-test")}>
-            {t("student.onboarding.placement")}
-          </Button>
-        </div>
-      </div>
-    </Card>
-  ];
-
-  return (
-    <main className="auth-screen onboarding-screen">
-      <div className="onboarding-nav">
-        {step > 0 && (
-          <button type="button" className="back-btn" onClick={() => setStep((s) => s - 1)} aria-label="Назад">
-            <ChevronLeft size={18} />
-          </button>
-        )}
-        <div className="step-dots">
-          {cards.map((_, i) => <span key={i} className={`step-dot${i === step ? " active" : i < step ? " done" : ""}`} />)}
-        </div>
-      </div>
-      {cards[step]}
-    </main>
-  );
-}
 
 function PathScreen() {
   const { data, user, progress } = useStudentData();
@@ -339,8 +242,8 @@ function PathScreen() {
       {previewMode && (
         <div className="preview-access-banner">
           <div>
-            <strong>Перші 10 уроків — без оплати</strong>
-            <span>Пройди 10 справжніх уроків, а потім відкрий 3 дні повного доступу.</span>
+            <strong>{offerCopy[lang].free}</strong>
+            <span>{t("student.onboarding.access_later")}</span>
           </div>
           <span className="preview-access-progress">{previewCompleted}/10</span>
         </div>
@@ -3009,6 +2912,7 @@ function SettingsScreen() {
 
 export function PaywallScreen() {
   const { data, user, progress } = useStudentData();
+  const { lang } = useT();
   const navigate = useNavigate();
   const adminPreview = Boolean(localStorage.getItem("slovakgo.admin-return"));
   const [loading, setLoading] = useState(false);
@@ -3037,7 +2941,7 @@ export function PaywallScreen() {
           <img src="/app-exercise.png" alt="Вправа SlovakGO" width="390" height="844" decoding="async" />
         </div>
         <h1>Спочатку заверши перші 10 уроків</h1>
-        <p>Ми запропонуємо 3 дні пробного доступу лише після того, як ти перевіриш SlovakGO на справжніх уроках.</p>
+        <p>{offerCopy[lang].free}</p>
         <div className="preview-locked-counter">{completed} з 10 уроків уже пройдено</div>
         <Button onClick={() => navigate("/app/path")}>Продовжити навчання</Button>
         <Button variant="ghost" onClick={() => navigate("/app/profile")}>Профіль</Button>
@@ -3068,7 +2972,7 @@ export function PaywallScreen() {
           Перші 10 уроків пройдено 🎉
         </h1>
         <p style={{ color: "var(--muted)", fontSize: "0.95rem", margin: 0 }}>
-          Ти вже спробував SlovakGO на практиці. Тепер відкрий усі рівні та функції на 3 дні.
+          {offerCopy[lang].trial}
         </p>
       </div>
 
@@ -3177,7 +3081,7 @@ function LevelsScreen() {
 }
 
 function ShopScreen() {
-  const { t } = useT();
+  const { t, lang } = useT();
   const { user, isPlus } = useStudentData();
   const [searchParams, setSearchParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
@@ -3295,7 +3199,7 @@ function ShopScreen() {
               <Button variant="secondary" disabled={loading} onClick={() => handleSubscribe("yearly")} className="shop-btn-buy">
                 {loading ? t("student.shop.btn_loading") : t("student.shop.yearly_plan")}
               </Button>
-              <p className="muted text-center sm">{t("student.shop.trial_terms")}</p>
+              <p className="muted text-center sm">{offerCopy[lang].trial}</p>
             </div>
         }
       </Card>
