@@ -1,9 +1,16 @@
 ---
 import copy from "../data/home.json";
+import offerCopy from "../../../shared/offerCopy.json";
 import Icon from "./LineIcon.astro";
 import "../styles/home-premium.css";
 const { lang = "uk" } = Astro.props;
-const strings = copy[lang as keyof typeof copy] || copy.uk;
+const locale = lang in copy ? lang as keyof typeof copy : "uk";
+const strings = {
+  ...copy[locale],
+  freeText: offerCopy[locale].free,
+  trialNoticeText: offerCopy[locale].trial,
+  faqA5: `${offerCopy[locale].free} ${offerCopy[locale].trial}`,
+};
 const t = (key: string): string =>
   (strings as unknown as Record<string, string>)[key] || "";
 const arr = (key: string): string[] =>

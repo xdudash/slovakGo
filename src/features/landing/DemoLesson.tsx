@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Flame, ShieldCheck, Sparkles, Star, Trophy, XCircle } from "lucide-react";
 import { getGuestLanguage, setGuestLanguage } from "../../i18n";
+import offerCopy from "../../../shared/offerCopy.json";
 import "../../styles/globals.css";
 
 interface Question {
@@ -214,10 +215,7 @@ export function DemoLesson() {
                 <ShieldCheck size={24} color="#10b981" />
               </div>
               <p>
-                {isRu
-                  ? "Сохраните результат за 10 секунд, чтобы открыть полный доступ к 3 дням бесплатного обучения."
-                  : "Збережи результат за 10 секунд, щоб відкрити 3 дні безкоштовного навчання."
-                }
+                {offerCopy[isRu ? "ru" : "uk"].free}
               </p>
               <button className="btn btn-primary btn-xl full-width-btn" onClick={handleSaveProgress}>
                 {isRu ? "Сохранить прогресс и продолжить" : "Зберегти прогрес та продовжити"}
