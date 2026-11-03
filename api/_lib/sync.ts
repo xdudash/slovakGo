@@ -357,7 +357,6 @@ async function mutPracticeComplete(uid: string, p: Record<string, unknown>): Pro
 
   await ensureCol("progress", "practice_awarded_at", "TEXT");
   const status = String(rowToUser(userRow).subscriptionStatus ?? "");
-  if (!["plus", "trial", "past_due"].includes(status) && !["admin", "teacher"].includes(String(userRow.role))) throw new AccessDeniedError("Практика потребує підписки");
   const xpEarned = status === "plus" || status === "trial" || status === "past_due"
     ? Math.round(XP_PER_PRACTICE * 1.5)
     : XP_PER_PRACTICE;

@@ -6,6 +6,8 @@ import { progressService } from "../services/progressService";
 import { storageService } from "../services/storage";
 import { syncService } from "../services/syncService";
 import { apiClient } from "../services/apiClient";
+import { initialLocale } from '../services/localePreference';
+import { isNativeApp } from '../services/platform';
 import type { AnswerRecord, AppData, Lesson, User, UserLevel, UserRole, UserWord } from "../types";
 
 interface AppStore {
@@ -254,6 +256,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
       localStorage.setItem(sessionKey, userId);
       set({ data, currentUserId: userId, authError: undefined });
 
+      get().updateUser({ settings: { ...data.users.find(u => u.id === userId)!.settings, language: initialLocale() } });
       get().refreshLessons().catch(() => undefined);
       get().drainSync().catch(() => undefined);
       return data.users.find((u) => u.id === userId) ?? null;
@@ -333,7 +336,10 @@ export const useAppStore = create<AppStore>((set, get) => ({
 
   logout() {
     localStorage.removeItem(sessionKey);
-    apiClient.logout().catch(() => undefined);
+    if (isNativeApp) {
+      void import('../services/nativeRemotePush').then(({ disconnectNativePush }) => disconnectNativePush())
+        .finally(() => apiClient.logout()).catch(() => undefined);
+    } else apiClient.logout().catch(() => undefined);
     set({ currentUserId: undefined });
   },
 

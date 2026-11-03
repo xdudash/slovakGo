@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Download, X } from "lucide-react";
 import { Button } from "./ui";
 import { useT } from "../i18n";
+import { isNativeApp } from "../services/platform";
 
 type InstallPrompt = Event & {
   prompt: () => Promise<void>;
@@ -44,7 +45,7 @@ export function PWAInstallBanner() {
       window.removeEventListener("pwa-install-available", handlePrompt);
   }, []);
 
-  if (dismissed || isStandalone || (!deferredPrompt && !isIOS)) return null;
+  if (isNativeApp || dismissed || isStandalone || (!deferredPrompt && !isIOS)) return null;
 
   async function install() {
     if (!deferredPrompt) return;

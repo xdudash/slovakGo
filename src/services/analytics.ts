@@ -23,6 +23,7 @@ export type FunnelEvent =
 import { API_BASE_URL } from "./apiClient";
 import { trackMeta } from "../../shared/metaPixel";
 import { selectCurrentUser, useAppStore } from "../store/useAppStore";
+import { isNativeApp } from "./platform";
 
 interface QueuedEvent {
   name: FunnelEvent;
@@ -40,7 +41,7 @@ function send(events: QueuedEvent[], useBeacon: boolean): void {
   const payload = JSON.stringify({ events });
 
   // On pagehide only sendBeacon is guaranteed to survive the unload.
-  if (useBeacon && typeof navigator !== "undefined" && navigator.sendBeacon) {
+  if (!isNativeApp && useBeacon && typeof navigator !== "undefined" && navigator.sendBeacon) {
     navigator.sendBeacon(url, new Blob([payload], { type: "application/json" }));
     return;
   }

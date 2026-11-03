@@ -1,7 +1,8 @@
 import type { Progress, SyncMutation, User, UserWord } from "../types";
+import { isNativeApp, PUBLIC_APP_ORIGIN } from "./platform";
 
 const configuredBase = import.meta.env.VITE_API_BASE_URL as string | undefined;
-export const API_BASE_URL = (configuredBase || `${import.meta.env.BASE_URL}api`).replace(/\/$/, "");
+export const API_BASE_URL = (configuredBase || (isNativeApp ? `${PUBLIC_APP_ORIGIN}/api` : `${import.meta.env.BASE_URL}api`)).replace(/\/$/, "");
 
 export class ApiError extends Error {
   status: number;
@@ -140,6 +141,12 @@ export const apiClient = {
     });
   },
 
+  saveNativePushToken(token: string, environment: 'sandbox' | 'production', enabled: boolean) {
+    return apiRequest<{ ok: boolean }>('/user/native-push-token', {
+      method: 'POST', body: JSON.stringify({ token, environment, enabled }),
+    });
+  },
+
   saveReminder(time: string | null) {
     return apiRequest<{ ok: boolean }>("/user/reminder", {
       method: "POST",
@@ -180,6 +187,9 @@ export const apiClient = {
   },
 
   createCheckoutSession(planType: "monthly" | "yearly" = "monthly") {
+    if (isNativeApp) {
+      return Promise.reject(new ApiError("Покупки ще не підключені в тестовій iOS-версії. Наявна підписка працює після входу.", 501));
+    }
     return apiRequest<{ url: string; existingSubscription?: boolean; sessionId?: string; value?: number; currency?: string }>('/billing/checkout', {
       method: 'POST',
       body: JSON.stringify({ planType, acceptTerms: true })
@@ -193,6 +203,18 @@ export const apiClient = {
 
   openCustomerPortal() {
     return apiRequest<{ url: string }>('/billing/portal', { method: 'POST' });
+  },
+
+  appleAccount() {
+    return apiRequest<{ appAccountToken: string; productIds: string[] }>("/billing/apple/account");
+  },
+
+  /** Signed App Store transactions; the server verifies them with Apple and grants access. */
+  submitAppleTransactions(signedTransactions: string[]) {
+    return apiRequest<{ ok: boolean; accepted: string[]; user: User | null }>("/billing/apple/transactions", {
+      method: "POST",
+      body: JSON.stringify({ signedTransactions })
+    }, 20_000);
   },
 
   claimDemoCompletion() {

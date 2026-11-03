@@ -34,6 +34,8 @@ export interface User {
   subscriptionStatus: SubscriptionStatus;
   trialEndsAt?: string;
   subExpiresAt?: string;
+  /** Where the active paid access is billed; manage it there. */
+  billingProvider?: "app_store" | "stripe" | null;
   /** End of referral bonus access, if any. While in the future, access is full. */
   bonusUntil?: string;
   onboardingDone: boolean;

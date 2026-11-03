@@ -27,8 +27,18 @@ function injectFcmConfig() {
   };
 }
 
-export default defineConfig({
-  plugins: [react(), injectFcmConfig()],
+export default defineConfig(({ mode }) => ({
+  plugins: [react(), injectFcmConfig(), {
+    name: 'isolated-native-ui-fixture',
+    transformIndexHtml: {
+      order: 'pre',
+      handler(html) {
+        const nativeHtml = mode.startsWith('native')
+          ? html.replace(/<link\b[^>]*(?:fonts\.googleapis\.com|fonts\.gstatic\.com)[^>]*>/g, '') : html;
+        return mode === 'native-test' ? nativeHtml.replace('/src/main.tsx', '/src/testing/nativeTestMain.ts') : nativeHtml;
+      },
+    },
+  }],
   server: {
     proxy: {
       '/api': {
@@ -41,4 +51,4 @@ export default defineConfig({
     environment: 'node',
     include: ['src/**/*.test.ts'],
   },
-});
+}));

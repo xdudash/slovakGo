@@ -8,9 +8,19 @@ import { initAnalytics } from "./services/analytics";
 import { syncService } from "./services/syncService";
 import { useAppStore } from "./store/useAppStore";
 import { initMetaPixel } from "../shared/metaPixel";
+import { isNativeApp } from "./services/platform";
+import { initNativeRuntime } from "./services/nativeRuntime";
 
 initAnalytics();
-initMetaPixel();
+if (!isNativeApp) initMetaPixel();
+void initNativeRuntime(() => {
+  void useAppStore.getState().drainSync();
+  window.dispatchEvent(new Event('slovakgo:native-resume'));
+}).catch((error: unknown) => console.error('[native] initialization failed', error));
+if (isNativeApp) {
+  void import('./services/appStoreBilling').then(({ initAppStoreTransactions }) => initAppStoreTransactions(() => void useAppStore.getState().refreshUser()));
+  void import('./services/nativeNotificationCoordinator').then(({ initNativeNotificationSync }) => initNativeNotificationSync());
+}
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -86,9 +96,11 @@ function showInAppPush(title: string, body: string) {
 
 window.addEventListener("load", async () => {
   // Foreground push notification handler (when app is open in browser)
-  import("./services/fcmService").then(({ listenForeground }) => {
-    listenForeground(showInAppPush);
-  });
+  if (!isNativeApp) {
+    import("./services/fcmService").then(({ listenForeground }) => {
+      listenForeground(showInAppPush);
+    });
+  }
 
   const store = useAppStore.getState();
 
@@ -117,7 +129,7 @@ window.addEventListener("load", async () => {
     }
   });
 
-  if ("serviceWorker" in navigator && import.meta.env.PROD) {
+  if (!isNativeApp && "serviceWorker" in navigator && import.meta.env.PROD) {
     try {
       // Snapshot before registration — if already controlled, a later controllerchange is an update
       const hadController = !!navigator.serviceWorker.controller;

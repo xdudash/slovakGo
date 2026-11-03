@@ -1,4 +1,5 @@
 import { handleIntegrationHealth } from "./_lib/integrations";
+import { handleNativePushToken } from './_lib/nativePush';
 import { handleAdminCourse } from "./_lib/course";
 import { handleLessonGet } from "./_lib/access";
 import { handleEmailPreferences, handleUnsubscribe } from "./_lib/emailPreferences";
@@ -22,6 +23,7 @@ import {
   handleAdminUserDetail, handleAdminUserPatch, handleAdminImportLessons, handleAdminLessonsExport
 } from "./_lib/admin";
 
+import { handleAppleAccount, handleAppleNotification, handleAppleTransactions } from "./_lib/apple";
 import { handleBillingCheckout, handleBillingConversions, handleBillingPortal, handleBillingWebhook } from "./_lib/stripe";
 
 import {
@@ -103,6 +105,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "POST" && route === "/user/email")        return await handleUserEmail(req, res, body);
     if (meth === "POST" && route === "/user/password")     return await handleUserPassword(req, res, body);
     if (meth === "POST" && route === "/user/fcm-token")    return await handleFcmToken(req, res, body);
+    if (meth === "POST" && route === "/user/native-push-token") return await handleNativePushToken(req, res, body);
     if (meth === "POST" && route === "/user/reminder")     return await handleUserReminder(req, res, body);
     if (meth === "POST" && route === "/user/referral")     return await handleUserReferral(req, res, body);
     if (meth === "POST" && route === "/user/demo-complete") return await handleDemoComplete(req, res);
@@ -117,6 +120,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "POST" && route === "/billing/portal")    return await handleBillingPortal(req, res);
     if (meth === "POST" && (route === "/billing/webhook" || route === "/stripe/webhook")) return await handleBillingWebhook(req, res, rawBody);
     
+    // App Store Routes
+    if (meth === "GET"  && route === "/billing/apple/account")       return await handleAppleAccount(req, res);
+    if (meth === "POST" && route === "/billing/apple/transactions")  return await handleAppleTransactions(req, res, body);
+    if (meth === "POST" && route === "/billing/apple/notifications") return await handleAppleNotification(req, res, body);
+
     if (meth === "GET" && route === "/admin/integrations") return await handleIntegrationHealth(req, res);
     // Admin Routes
     if (meth === "GET"  && route === "/teacher/stats")          return await handleTeacherStats(req, res);

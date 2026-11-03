@@ -1,6 +1,6 @@
 import { GuideCharacter } from "../components/LearningCompanion";
 import { startActivityTracking } from "../services/activityService";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { roleHome, selectCurrentUser, useAppStore } from "../store/useAppStore";
@@ -9,8 +9,11 @@ import type { ReactNode } from "react";
 import type { UserRole } from "../types";
 import { trackMetaPage } from "../../shared/metaPixel";
 import { syncMetaBilling } from "../services/metaConversions";
+import { isNativeApp } from "../services/platform";
+import { useT } from "../i18n";
 import "../styles/globals.css";
 import "../styles/student-experience.css";
+import "../styles/native.css";
 
 const AdminLayout = lazy(() => import("../features/admin/AdminScreens").then(m => ({ default: m.AdminLayout })));
 const ForgotPassword = lazy(() => import("../features/auth/AuthScreens").then(m => ({ default: m.ForgotPassword })));
@@ -39,7 +42,7 @@ function RequireRole({ roles, children }: { roles: UserRole[]; children: ReactNo
 function EntryRedirect() {
   const { data, currentUserId } = useAppStore();
   const user = selectCurrentUser(data, currentUserId);
-  if (!user) return <LandingPage />;
+  if (!user) return isNativeApp ? <Navigate to="/login" replace /> : <LandingPage />;
   if (user.role === "student" && !user.onboardingDone) {
     return <Navigate to="/onboarding" replace />;
   }
@@ -61,6 +64,18 @@ function AppLoadingScreen({ message = "Готуємо твій навчальн�
 
 export function App() {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { lang } = useT();
+  useEffect(() => { document.documentElement.lang = lang; }, [lang]);
+  useEffect(() => {
+    if (!isNativeApp) return;
+    const openNotification = (event: Event) => {
+      const route: unknown = (event as CustomEvent).detail;
+      if (route === '/app/path' || route === '/app/settings') navigate(route);
+    };
+    window.addEventListener('slovakgo:native-route', openNotification);
+    return () => window.removeEventListener('slovakgo:native-route', openNotification);
+  }, [navigate]);
   const activityUserId = useAppStore(s => s.currentUserId);
   useEffect(() => { trackMetaPage(); }, [location.pathname]);
   useEffect(() => {
@@ -104,8 +119,8 @@ export function App() {
 
   return (
     <>
-    <Analytics />
-    <SpeedInsights />
+    {!isNativeApp && <Analytics />}
+    {!isNativeApp && <SpeedInsights />}
     <Suspense fallback={<AppLoadingScreen message="Відкриваємо SlovakGO…" />}>
       <Routes>
         <Route path="/" element={<EntryRedirect />} />

@@ -227,7 +227,12 @@ export async function handleDeleteAccount(req: VercelRequest, res: VercelRespons
   await exec("DELETE FROM user_words WHERE user_id = ?", [uid]);
   await exec("DELETE FROM progress WHERE user_id = ?", [uid]);
   await exec("DELETE FROM fcm_tokens WHERE user_id = ?", [uid]);
+  const { ensureNativePushTable } = await import('./nativePush');
+  await ensureNativePushTable();
+  await exec('DELETE FROM native_push_tokens WHERE user_id = ?', [uid]);
   await exec("DELETE FROM sync_log WHERE user_id = ?", [uid]);
+  const { deleteAppleSubscriptions } = await import("./apple");
+  await deleteAppleSubscriptions(uid);
   await ensureActivity();
   await ensureEmailPreferences();
   await exec("DELETE FROM activity_sessions WHERE user_id = ?", [uid]);

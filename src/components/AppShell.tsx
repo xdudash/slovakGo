@@ -1,11 +1,11 @@
 import { GuideCharacter } from "./LearningCompanion";
-import { BookOpen, Dumbbell, House, LockKeyhole, Medal, Settings, ShoppingBag, Trophy, UserRound, UsersRound } from "lucide-react";
+import { BookOpen, Dumbbell, House, Medal, Settings, ShoppingBag, Trophy, UserRound, UsersRound } from "lucide-react";
 import { NavLink, Outlet, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState, type ReactNode } from "react";
 import type { UserRole } from "../types";
 import { useT } from "../i18n";
 import { useAppStore } from "../store/useAppStore";
-import { accessService } from "../services/accessService";
+import { isNativeApp } from "../services/platform";
 
 const navConfig = {
   student: [
@@ -33,7 +33,7 @@ const navConfig = {
 const adminReturnKey = "slovakgo.admin-return";
 
 export function AppShell({ role, children }: { role: UserRole; children?: ReactNode }) {
-  const { t } = useT();
+  const { t, lang } = useT();
   const items = navConfig[role];
   const syncMessage = useAppStore((s) => s.syncMessage);
   const pendingCount = useAppStore((s) => s.data.syncQueue.length);
@@ -46,6 +46,10 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
   const [adminReturnId, setAdminReturnId] = useState<string | null>(() => localStorage.getItem(adminReturnKey));
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    if (isNativeApp) window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [location.pathname]);
 
   useEffect(() => {
     const on = () => {
@@ -67,19 +71,9 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
   }, [currentUserId]);
 
   const currentUserName = users.find((u) => u.id === currentUserId)?.name ?? "";
-  const currentUser = users.find((u) => u.id === currentUserId);
-  const currentProgress = currentUserId ? data.progress[currentUserId] : undefined;
-  const previewOpen = !!(currentUser && currentProgress && accessService.canUsePreview(data.lessons, currentProgress, currentUser.subscriptionStatus));
-  const shouldLockStudentItem = (to: string) =>
-    role === "student"
-    && !!currentUser
-    && !accessService.hasFullAccess(currentUser.subscriptionStatus)
-    && to !== "/app/profile"
-    && !(to === "/app/path" && previewOpen);
-  const showNav = location.pathname !== "/app/paywall";
 
   return (
-    <div className={`app-frame app-frame--${role}`}>
+    <div className={`app-frame app-frame--${role}`} data-screen={location.pathname.startsWith('/app/lesson/') ? 'lesson' : location.pathname.split('/').at(-1)}>
       {!isOnline && (
         <div className="offline-banner">
           Офлайн{pendingCount > 0 ? ` · ${pendingCount} дій в черзі` : ""}
@@ -96,25 +90,22 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
         )}
         <main className="app-main">{children || <Outlet />}</main>
       </div>
-      {showNav && (
-        <nav className="bottom-nav" aria-label={t("nav.aria")}>
+      <nav className="bottom-nav" aria-label={t("nav.aria")}>
           <div className="nav-brand">
             <img src="/brand-avatar-v1.webp" alt="SlovakGO" className="nav-logo" width={36} height={36} /><span className="nav-wordmark">Slovak<b>GO</b></span>
           </div>
           {items.map((item) => {
             const Icon = item.icon;
-            const locked = shouldLockStudentItem(item.to);
-            const destination = locked ? "/app/paywall" : item.to;
             return (
               <NavLink
                 key={item.to}
-                to={destination}
-                className={({ isActive }) => `bottom-nav-item ${isActive && !locked ? "active" : ""}${locked ? " locked" : ""}`}
+                to={item.to}
+                className={({ isActive }) => `bottom-nav-item ${isActive ? "active" : ""}`}
                 end={item.to === "/teacher" || item.to === "/admin"}
-                aria-label={locked ? `${t(item.key)} — ${t("student.experience.subscription_required")}` : t(item.key)}
+                aria-label={t(item.key)}
               >
-                {locked ? <LockKeyhole size={18} /> : <Icon size={20} />}
-                <span>{t(item.key)}</span>
+                <Icon size={20} />
+                <span>{isNativeApp && item.to === '/app/leaderboard' ? ({ uk: 'Рейтинг', ru: 'Рейтинг', sk: 'Rebríček', en: 'Ranking' })[lang] : t(item.key)}</span>
               </NavLink>
             );
           })}
@@ -124,8 +115,7 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
               <span className="sidebar-avatar">{currentUserName.slice(0, 1).toUpperCase()}</span><span className="sidebar-profile-copy"><strong>{currentUserName}</strong><small>{t("student.experience.your_profile")}</small></span>
             </button>
           </>}
-        </nav>
-      )}
+      </nav>
       {syncMessage && <div className="sync-toast">{syncMessage}</div>}
     </div>
   );

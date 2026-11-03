@@ -29,6 +29,26 @@ vi.mock("stripe", () => ({
   }; }),
 }));
 
+// App Store JWS stand-in: "signed" payloads are base64url JSON; "bad." tokens fail
+// verification and a verifier only accepts its own environment, like Apple's.
+vi.mock("@apple/app-store-server-library", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@apple/app-store-server-library")>();
+  class SignedDataVerifier {
+    private environment: string;
+    constructor(_roots: Buffer[], _online: boolean, environment: string) { this.environment = environment; }
+    private decode(jws: string, env: (p: Record<string, any>) => unknown = (p) => p.environment) {
+      if (jws.startsWith("bad.")) throw new actual.VerificationException(actual.VerificationStatus.VERIFICATION_FAILURE);
+      const payload = JSON.parse(Buffer.from(jws.split(".")[1], "base64url").toString());
+      if (env(payload) !== this.environment) throw new actual.VerificationException(actual.VerificationStatus.INVALID_ENVIRONMENT);
+      return payload;
+    }
+    async verifyAndDecodeTransaction(jws: string) { return this.decode(jws); }
+    async verifyAndDecodeRenewalInfo(jws: string) { return this.decode(jws); }
+    async verifyAndDecodeNotification(jws: string) { return this.decode(jws, (p) => p.data?.environment); }
+  }
+  return { ...actual, SignedDataVerifier };
+});
+
 // Handler is imported AFTER env vars are set
 import handler from "../../api/index";
 
@@ -584,11 +604,11 @@ describe("POST /sync/push", () => {
     expect(word!.status).toBe("practicing");
   });
 
-  it("rejects paid practice for a free account", async () => {
+  it("saves practice and awards standard XP for a free account", async () => {
     const { body: before } = await call("GET", ["sync", "pull"], { cookie });
     const xpBefore = Number((before.progress as Record<string, unknown>).xpTotal);
 
-    await call("POST", ["sync", "push"], {
+    const saved = await call("POST", ["sync", "push"], {
       cookie,
       body: {
         mutations: [{
@@ -605,7 +625,10 @@ describe("POST /sync/push", () => {
     });
 
     const { body: after } = await call("GET", ["sync", "pull"], { cookie });
-    expect(Number((after.progress as Record<string, unknown>).xpTotal)).toBe(xpBefore);
+    expect(saved.status).toBe(200);
+    expect(saved.body.applied).toBe(1);
+    expect(Number((after.progress as Record<string, unknown>).xpTotal)).toBe(xpBefore + 5);
+    expect((after.user as Record<string, unknown>).subscriptionStatus).toBe("free");
   });
 
   it("applies hearts.restore — resets hearts to max", async () => {
@@ -1358,5 +1381,160 @@ describe("admin course deploy", () => {
     const current = [{ id: "a0-u01-l01-abeceda" }, { id: "a0-u01-l02-samohlasky" }];
     expect(completedCount(["old-1", "old-2", "a0-u01-l01-abeceda"], current)).toBe(1);
     expect(completedCount(["old-1", "old-2", "a0-u01-l01-abeceda"])).toBe(3);
+  });
+});
+
+// APNs registrations are separate from FCM and belong to the authenticated
+// account, never to a user id supplied by the device.
+describe('Native iOS push registration', () => {
+  const db = createClient({ url: `file:${TEST_DB}` });
+  const token = 'ab'.repeat(32);
+  const names = ['APNS_KEY_ID', 'APNS_TEAM_ID', 'APNS_PRIVATE_KEY', 'APNS_TOPIC'] as const;
+  const previous = Object.fromEntries(names.map(name => [name, process.env[name]]));
+  beforeAll(async () => {
+    for (const name of names) process.env[name] = 'isolated-test-configuration';
+    for (const id of ['native-push-a', 'native-push-b']) {
+      await db.execute({ sql: `INSERT INTO users(id,email,name_text,settings_j,created_at,updated_at) VALUES(?,?,?,?,?,?)`,
+        args: [id, `${id}@example.test`, id, '{"notificationsEnabled":true}', '2026-10-26T12:00:00Z', '2026-10-26T12:00:00Z'] });
+    }
+  });
+  afterAll(() => {
+    for (const name of names) {
+      if (previous[name] === undefined) delete process.env[name]; else process.env[name] = previous[name];
+    }
+    db.close();
+  });
+  it('requires an authenticated session', async () => {
+    expect((await call('POST', ['user', 'native-push-token'], { body: { token, environment: 'sandbox', enabled: true } })).status).toBe(401);
+  });
+  it('rejects malformed tokens and unknown APNs environments', async () => {
+    const cookie = await makeCookie('native-push-a');
+    expect((await call('POST', ['user', 'native-push-token'], { cookie, body: { token: 'not-a-device-token', environment: 'sandbox', enabled: true } })).status).toBe(422);
+    expect((await call('POST', ['user', 'native-push-token'], { cookie, body: { token, environment: 'unknown', enabled: true } })).status).toBe(422);
+  });
+  it('stores APNs separately and ignores a forged account id', async () => {
+    const result = await call('POST', ['user', 'native-push-token'], { cookie: await makeCookie('native-push-a'), body: { token, environment: 'sandbox', enabled: true, userId: 'native-push-b' } });
+    expect(result.status).toBe(200);
+    expect((await db.execute({ sql: 'SELECT user_id FROM native_push_tokens WHERE token=?', args: [token] })).rows[0].user_id).toBe('native-push-a');
+    expect((await db.execute({ sql: 'SELECT token FROM fcm_tokens WHERE token=?', args: [token] })).rows).toHaveLength(0);
+  });
+  it('does not let another account delete this device registration', async () => {
+    await call('POST', ['user', 'native-push-token'], { cookie: await makeCookie('native-push-b'), body: { token, environment: 'sandbox', enabled: false } });
+    expect((await db.execute({ sql: 'SELECT user_id FROM native_push_tokens WHERE token=?', args: [token] })).rows[0].user_id).toBe('native-push-a');
+  });
+  it('rebinds a shared phone on account switch and rejects stale cleanup from the former owner', async () => {
+    await call('POST', ['user', 'native-push-token'], { cookie: await makeCookie('native-push-b'), body: { token, environment: 'sandbox', enabled: true } });
+    await call('POST', ['user', 'native-push-token'], { cookie: await makeCookie('native-push-a'), body: { token, environment: 'sandbox', enabled: false } });
+    expect((await db.execute({ sql: 'SELECT user_id FROM native_push_tokens WHERE token=?', args: [token] })).rows[0].user_id).toBe('native-push-b');
+    await call('POST', ['user', 'native-push-token'], { cookie: await makeCookie('native-push-b'), body: { token, environment: 'sandbox', enabled: false } });
+    expect((await db.execute({ sql: 'SELECT token FROM native_push_tokens WHERE token=?', args: [token] })).rows).toHaveLength(0);
+  });
+  it('reports unavailable push configuration honestly', async () => {
+    const configured = process.env.APNS_KEY_ID;
+    process.env.APNS_KEY_ID = '';
+    try {
+      expect((await call('POST', ['user', 'native-push-token'], { cookie: await makeCookie('native-push-a'), body: { token, environment: 'sandbox', enabled: true } })).status).toBe(503);
+    } finally { process.env.APNS_KEY_ID = configured; }
+  });
+  it('removes device registrations when the account is deleted', async () => {
+    const cookie = await makeCookie('native-push-a');
+    await call('POST', ['user', 'native-push-token'], { cookie, body: { token, environment: 'sandbox', enabled: true } });
+    expect((await call('POST', ['auth', 'delete'], { cookie, body: { confirmEmail: 'native-push-a@example.test' } })).status).toBe(200);
+    expect((await db.execute({ sql: 'SELECT token FROM native_push_tokens WHERE user_id=?', args: ['native-push-a'] })).rows).toHaveLength(0);
+  });
+});
+
+describe("App Store subscriptions", () => {
+  const jws = (payload: object) => `h.${Buffer.from(JSON.stringify(payload)).toString("base64url")}.s`;
+  const DAY = 24 * 60 * 60 * 1000;
+  const tx = (over: Record<string, unknown> = {}) => ({
+    bundleId: "sk.slovakgo.app", productId: "sk.slovakgo.app.plus.monthly", environment: "Sandbox",
+    transactionId: `t-${Math.random()}`, originalTransactionId: "orig-1",
+    expiresDate: Date.now() + 30 * DAY, signedDate: Date.now(), ...over,
+  });
+  async function student(id: string) {
+    const db = createClient({ url: `file:${TEST_DB}` });
+    await db.execute({ sql: "INSERT INTO users (id, email, pw_hash, name_text, sub_status, created_at, updated_at) VALUES (?, ?, 'DEV:skip', 'S', 'free', datetime('now'), datetime('now'))", args: [id, `${id}@test.com`] });
+    return makeCookie(id);
+  }
+  const upload = (cookie: string, ...signedTransactions: string[]) => call("POST", ["billing", "apple", "transactions"], { cookie, body: { signedTransactions } });
+  const me = async (cookie: string) => (await call("GET", ["sync", "pull"], { cookie })).body.user as Record<string, unknown>;
+
+  it("issues one stable account token per learner", async () => {
+    const cookie = await student("apple-token");
+    const first = await call("GET", ["billing", "apple", "account"], { cookie });
+    const second = await call("GET", ["billing", "apple", "account"], { cookie });
+    expect(first.body.appAccountToken).toMatch(/^[0-9a-f-]{36}$/);
+    expect(second.body.appAccountToken).toBe(first.body.appAccountToken);
+    expect(first.body.productIds).toEqual(["sk.slovakgo.app.plus.monthly", "sk.slovakgo.app.plus.yearly"]);
+  });
+
+  it("grants Plus from a verified purchase and reports App Store as the billing provider", async () => {
+    const cookie = await student("apple-buyer");
+    const { status, body } = await upload(cookie, jws(tx({ originalTransactionId: "orig-buyer" })));
+    expect(status).toBe(200);
+    const user = body.user as Record<string, unknown>;
+    expect(user.subscriptionStatus).toBe("plus");
+    expect(user.billingProvider).toBe("app_store");
+    expect(Date.parse(String(user.subExpiresAt))).toBeGreaterThan(Date.now());
+  });
+
+  it("reports an introductory free trial as trial", async () => {
+    const cookie = await student("apple-trial");
+    const { body } = await upload(cookie, jws(tx({ originalTransactionId: "orig-trial", offerType: 1, offerDiscountType: "FREE_TRIAL", expiresDate: Date.now() + 3 * DAY })));
+    expect((body.user as Record<string, unknown>).subscriptionStatus).toBe("trial");
+    expect((body.user as Record<string, unknown>).trialEndsAt).toBeTruthy();
+  });
+
+  it("does not let a second account claim the same Apple subscription", async () => {
+    const owner = await student("apple-owner");
+    const other = await student("apple-other");
+    expect((await upload(owner, jws(tx({ originalTransactionId: "orig-shared" })))).status).toBe(200);
+    const { status } = await upload(other, jws(tx({ originalTransactionId: "orig-shared" })));
+    expect(status).toBe(409);
+  });
+
+  it("rejects a purchase made under another account's token", async () => {
+    const owner = await student("apple-token-owner");
+    const ownerToken = (await call("GET", ["billing", "apple", "account"], { cookie: owner })).body.appAccountToken;
+    const other = await student("apple-token-other");
+    await call("GET", ["billing", "apple", "account"], { cookie: other });
+    const { status } = await upload(other, jws(tx({ originalTransactionId: "orig-token", appAccountToken: ownerToken })));
+    expect(status).toBe(409);
+  });
+
+  it("rejects unverifiable, foreign and local Xcode transactions", async () => {
+    const cookie = await student("apple-invalid");
+    expect((await upload(cookie, "bad.payload.sig")).status).toBe(422);
+    expect((await upload(cookie, jws(tx({ originalTransactionId: "orig-x1", bundleId: "com.other.app" })))).status).toBe(422);
+    expect((await upload(cookie, jws(tx({ originalTransactionId: "orig-x2", productId: "sk.slovakgo.app.coins" })))).status).toBe(422);
+    expect((await upload(cookie, jws(tx({ originalTransactionId: "orig-x3", environment: "Xcode" })))).status).toBe(422);
+    expect((await upload(cookie, jws(tx({ originalTransactionId: "orig-x4", expiresDate: Date.now() - DAY })))).body.user).toMatchObject({ subscriptionStatus: "free" });
+  });
+
+  it("follows renewals and refunds from App Store Server Notifications", async () => {
+    const cookie = await student("apple-notified");
+    await upload(cookie, jws(tx({ originalTransactionId: "orig-notify", expiresDate: Date.now() + DAY, signedDate: Date.now() - 1000 })));
+    const notify = (notificationType: string, transaction: object) => call("POST", ["billing", "apple", "notifications"], {
+      body: { signedPayload: jws({ notificationType, data: { environment: "Sandbox", signedTransactionInfo: jws(transaction) } }) },
+    });
+
+    const renewedUntil = Date.now() + 31 * DAY;
+    expect((await notify("DID_RENEW", tx({ originalTransactionId: "orig-notify", expiresDate: renewedUntil }))).status).toBe(200);
+    expect(Date.parse(String((await me(cookie)).subExpiresAt))).toBeGreaterThan(Date.now() + 30 * DAY);
+
+    // A delayed, older notification must not roll the renewal back.
+    await notify("DID_RENEW", tx({ originalTransactionId: "orig-notify", expiresDate: Date.now() + DAY, signedDate: Date.now() - 60_000 }));
+    expect(Date.parse(String((await me(cookie)).subExpiresAt))).toBeGreaterThan(Date.now() + 30 * DAY);
+
+    await notify("REFUND", tx({ originalTransactionId: "orig-notify", expiresDate: renewedUntil, revocationDate: Date.now() }));
+    expect((await me(cookie)).subscriptionStatus).toBe("free");
+  });
+
+  it("acknowledges test notifications and refuses forged ones", async () => {
+    const test = await call("POST", ["billing", "apple", "notifications"], { body: { signedPayload: jws({ notificationType: "TEST", data: { environment: "Sandbox" } }) } });
+    expect(test.status).toBe(200);
+    const forged = await call("POST", ["billing", "apple", "notifications"], { body: { signedPayload: "bad.payload.sig" } });
+    expect(forged.status).toBe(400);
   });
 });

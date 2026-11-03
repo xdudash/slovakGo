@@ -9,6 +9,7 @@ import { setGuestLanguage, useT } from "../../i18n";
 import type { User } from "../../types";
 import { checkEmail } from "../../../shared/email";
 import offerCopy from "../../../shared/offerCopy.json";
+import { isNativeApp } from "../../services/platform";
 
 function postAuthRoute(user: User): string {
   if (user.role === "student" && !user.onboardingDone) {
@@ -100,16 +101,18 @@ export function Login() {
         </Button>
       )}
       <form onSubmit={submit} className="form-stack" noValidate>
-        <Field label={t("auth.email")} type="email" value={email} autoComplete="email" autoFocus onChange={(event) => setEmail(event.target.value)} />
+        <Field label={t("auth.email")} type="email" value={email} autoComplete="email" autoFocus={!isNativeApp} onChange={(event) => setEmail(event.target.value)} />
         <Field label={t("auth.password")} type="password" value={password} autoComplete="current-password" onChange={(event) => setPassword(event.target.value)} />
         {authError ? <p className="error-text">{authError}</p> : null}
         <Button type="submit" disabled={loading}>{loading ? "…" : t("auth.sign_in")}</Button>
       </form>
+      {!isNativeApp && <>
       <div className="auth-divider"><span>{t("auth.or")}</span></div>
       <button type="button" className="btn btn-google" onClick={() => { window.location.href = "/api/auth/google/start"; }}>
         <GoogleIcon />
         {t("auth.google_sign_in")}
       </button>
+      </>}
       <p className="auth-link">{t("auth.no_account")} <Link to="/register">{t("auth.register_link")}</Link></p>
       <p className="auth-link"><Link to="/forgot-password" className="auth-forgot-link">{t("auth.forgot_link")}</Link></p>
     </AuthShell>
@@ -215,6 +218,7 @@ export function Register() {
           }
         </Button>
       </form>
+      {!isNativeApp && <>
       <div className="auth-divider"><span>{t("auth.or")}</span></div>
       <button type="button" className="btn btn-google" onClick={() => {
         if (refParam) localStorage.setItem("slovakgo.pending-referral", refParam);
@@ -223,6 +227,7 @@ export function Register() {
         <GoogleIcon />
         {t("auth.google_register")}
       </button>
+      </>}
       <p className="auth-link">{t("auth.has_account")} <Link to="/login">{t("auth.sign_in")}</Link></p>
     </AuthShell>
   );

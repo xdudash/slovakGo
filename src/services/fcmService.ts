@@ -1,5 +1,6 @@
 import { getApps, getApp, initializeApp } from 'firebase/app';
 import { getMessaging, getToken, onMessage, deleteToken } from 'firebase/messaging';
+import { isNativeApp } from './platform';
 
 const VAPID_KEY    = import.meta.env.VITE_FIREBASE_VAPID_KEY as string | undefined;
 
@@ -26,6 +27,7 @@ function app() {
  * Returns null if Firebase is not configured or permission is denied.
  */
 export async function requestFcmToken(): Promise<{ token?: string; error?: string }> {
+  if (isNativeApp) return { error: "Нагадування ще не підключені в тестовій iOS-версії." };
   if (!isConfigured()) return { error: "Firebase ключі не знайдено (перевірте Vercel env та зробіть Redeploy)" };
   if (!('Notification' in window)) return { error: "Браузер не підтримує Notification API" };
   if (!('serviceWorker' in navigator)) return { error: "Браузер не підтримує Service Workers" };
@@ -51,6 +53,7 @@ export async function requestFcmToken(): Promise<{ token?: string; error?: strin
 
 /** Unsubscribes from push notifications (called when user disables notifications in settings). */
 export async function revokeFcmToken(): Promise<void> {
+  if (isNativeApp) return;
   if (!isConfigured()) return;
   try {
     await deleteToken(getMessaging(app()));
