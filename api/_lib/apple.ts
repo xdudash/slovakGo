@@ -8,6 +8,8 @@ import { APPLE_ROOT_CA_G3 } from "./appleRootCa";
 import { ensureCol, exec, fail, logEvent, nowIso, query, queryOne, requireUid, respond, rowToUser } from "./core";
 
 export const APPLE_BUNDLE_ID = "sk.slovakgo.app";
+/** App Store Connect → App Information → Apple ID. Public; APPLE_APP_ID overrides it. */
+export const APPLE_APP_ID = 6830364262;
 /** Must match the auto-renewable subscriptions created in App Store Connect. */
 export const APPLE_PRODUCT_IDS = ["sk.slovakgo.app.plus.monthly", "sk.slovakgo.app.plus.yearly"] as const;
 
@@ -35,8 +37,7 @@ function verifierFor(environment: string): SignedDataVerifier {
   }
   let verifier = verifiers.get(environment);
   if (!verifier) {
-    const appAppleId = Number(process.env.APPLE_APP_ID ?? "") || undefined;
-    if (environment === Environment.PRODUCTION && !appAppleId) throw new Error("APPLE_APP_ID not configured");
+    const appAppleId = Number(process.env.APPLE_APP_ID ?? "") || APPLE_APP_ID;
     verifier = new SignedDataVerifier([Buffer.from(APPLE_ROOT_CA_G3, "base64")], true, environment as Environment, APPLE_BUNDLE_ID, appAppleId);
     verifiers.set(environment, verifier);
   }

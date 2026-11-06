@@ -1268,6 +1268,13 @@ p { margin: 0; }
   border-radius: 5px;
 }
 
+/* ─── Legal pages ────────────────────────────────────────────────────────── */
+.legal-page { max-width: 720px; }
+.legal-page h2 { font-size: 1.25rem; font-weight: 800; color: var(--fg); margin: 36px 0 12px; }
+.legal-page p, .legal-page li { color: var(--fg); line-height: 1.65; }
+.legal-page ul { padding-left: 1.2rem; display: grid; gap: 8px; margin: 0 0 12px; }
+.legal-page a { color: var(--accent); }
+
 /* ─── FAQ page ───────────────────────────────────────────────────────────── */
 .faq-page {
   padding: 64px 0 96px;

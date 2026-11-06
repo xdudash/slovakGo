@@ -25,10 +25,10 @@
 3. **Monetization → Subscriptions:** группа подписок «SlovakGO Plus» с двумя автопродлеваемыми подписками. ID должны совпадать в точности:
    - `sk.slovakgo.app.plus.monthly` — 1 месяц;
    - `sk.slovakgo.app.plus.yearly` — 1 год.
-   Задать цены (на сайте сейчас €3 и €20; ближайшие ценовые точки Apple — €2.99 и €19.99), локализованные название и описание, скриншот для review. Пробный период — Introductory Offer «Free», 3 дня, для обеих подписок, если хотим сохранить то же предложение, что на сайте.
+   Настроено 7 ноября 2026: цены €3.99 в месяц и €29.99 в год (базовая страна Словакия, остальные пересчитаны Apple). Это выше, чем €3 и €20 на сайте: разница покрывает комиссию Apple. Пробный период — Introductory Offer «Free», 3 дня, у обеих подписок. Названия на украинском, английском (U.K., текст на украинском), русском и словацком. Осталось добавить скриншот экрана покупки для review.
 4. **App Information → App Store Server Notifications:** Version 2, URL для Production и Sandbox:
    `https://app.slovakgo.sk/api/billing/apple/notifications`
-5. На Vercel задать переменную `APPLE_APP_ID` (числовой Apple ID приложения со страницы App Information) и сделать redeploy. Без неё сервер принимает только sandbox-покупки.
+5. Apple ID приложения (`6830364262`) прописан в `api/_lib/apple.ts`. Переменная `APPLE_APP_ID` на Vercel нужна, только если приложение пересоздадут с другим ID.
 6. **Users and Access → Sandbox Testers:** создать тестовый Apple ID для проверки покупок.
 
 ## Проверка
