@@ -4,7 +4,7 @@
 
 ## Коротко
 
-SlovakGO — React/Vite PWA (уроки словацкого для украинцев), обёрнутое в iOS-приложение на Capacitor 8. В iOS подписка Plus продаётся только через App Store In-App Purchase (StoreKit 2); веб продолжает продавать через Stripe. Код готов и проверен тестами. Страница в App Store Connect заполнена. Осталось: юридические и финансовые пункты владельца аккаунта, подпись сборки правильной командой, загрузка сборки в TestFlight, тест покупки, деплой сервера и отправка на review.
+SlovakGO — React/Vite PWA (уроки словацкого для украинцев), обёрнутое в iOS-приложение на Capacitor 8. В iOS подписка Plus продаётся только через App Store In-App Purchase (StoreKit 2); веб продолжает продавать через Stripe. Код готов и проверен тестами. Страница в App Store Connect заполнена. Сборка 1.0 (1) загружена в App Store Connect 7 ноября 2026, загрузчик подтвердил `Upload succeeded` и начало обработки. Осталось: обработка сборки Apple, юридические и финансовые пункты владельца аккаунта, тест покупки, деплой сервера и отправка на review.
 
 ## Репозиторий и ветка
 
@@ -70,15 +70,19 @@ SlovakGO — React/Vite PWA (уроки словацкого для украин
 ### Для агента
 1. Иконка и документ передачи добавлены в `feat/ios-in-app-purchases`; проверить результаты CI после push.
 2. **Деплой:** проверить Vercel preview PR #28 (`/privacy` на лендинге, `GET /api/ping`, `GET /api/billing/apple/account` → 401 без сессии), затем с согласия владельца влить PR в `main`.
-3. **Подпись сборки — главный блокер.** На этом Mac единственный сертификат — `Apple Development: tatherroyale@gmail.com`, а `ios/Signing.local.xcconfig` (в .gitignore) указывает на команду `QRA…`. Приложение принадлежит команде **World Work `6TU82NKL53`**. Владелец должен войти в Xcode → Settings → Accounts Apple ID с доступом к этой команде. Затем выставить `DEVELOPMENT_TEAM = 6TU82NKL53` в `ios/Signing.local.xcconfig` (или в Xcode → Signing & Capabilities) и включить capability Push Notifications (`App/Push.entitlements`, `aps-environment`).
-4. **Сборка и TestFlight:**
+3. **Подпись сборки исправлена 7 ноября 2026.** В Xcode добавлен Apple ID с командой World Work `6TU82NKL53` (Admin, доступ Certificates, Identifiers & Profiles). Локальный `ios/Signing.local.xcconfig` указывает на эту команду. Экспортирован `ios-build/app-store/App.ipa`, версия 1.0 (1): подпись проверена `codesign --verify --deep --strict`, TeamIdentifier `6TU82NKL53`, App Store provisioning profile для `sk.slovakgo.app`. Push в приложении по-прежнему выключен.
+4. **Сборка и TestFlight:** сборка 1.0 (1) успешно загружена 7 ноября 2026, ожидается обработка Apple. Лог загрузки на этом Mac: `/tmp/slovakgo-upload.log`. Следующая загрузка должна иметь build number 2 или выше.
+
+   Команды для повторной сборки:
    ```sh
    npm ci && npm run ios:sync
    xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Release \
      -destination 'generic/platform=iOS' -archivePath ios-build/SlovakGO.xcarchive \
      -allowProvisioningUpdates archive
    ```
-   Затем загрузить через Xcode Organizer (Distribute App → App Store Connect) или `xcodebuild -exportArchive` с `method app-store-connect` и `destination upload`. Перед каждой новой загрузкой увеличивать `CURRENT_PROJECT_VERSION` (build number; сейчас 1, `MARKETING_VERSION` 1.0).
+   Обычный archive с automatic development signing сейчас требует зарегистрированное устройство (у World Work их 0). Проверенный путь без устройства: добавить к команде archive `DEVELOPMENT_TEAM=6TU82NKL53 CODE_SIGNING_ALLOWED=NO`, затем подписать при `xcodebuild -exportArchive` с `method=app-store-connect`, `signingStyle=automatic`, `teamID=6TU82NKL53`, `destination=export` или `upload`. Экспорт IPA успешно проверен.
+
+   Затем загрузить через Xcode Organizer (Distribute App → App Store Connect) или `xcodebuild -exportArchive` с `method app-store-connect` и `destination upload`. Перед каждой новой загрузкой увеличивать `CURRENT_PROJECT_VERSION` (build number; уже загружен 1, `MARKETING_VERSION` 1.0).
 5. **Тест покупки** (после пункта 1 у владельца и деплоя): TestFlight на iPhone, sandbox Apple ID, купить Plus. Проверить, что сервер выдал доступ (`users.apple_status`), что работает «Восстановить покупки» и что второй аккаунт получает 409.
 6. **Отправка:** на странице версии 1.0 выбрать сборку, в In-App Purchases and Subscriptions добавить обе подписки, Add for Review → Submit.
 
