@@ -61,17 +61,17 @@ html.native-app {
   background: var(--surface); color: var(--fg); border: 1px solid var(--border);
   border-radius: 16px; padding: 18px; box-shadow: none;
 }
-.native-app :is(.app-frame--student, .modal-dialog) .btn {
+.native-app :is(.app-frame--student, .modal-dialog, .plus-intro) .btn {
   min-height: 48px; font-size: 1rem; line-height: 1.3; padding: 13px 18px;
   border-radius: 12px; box-shadow: none; font-weight: 600; letter-spacing: normal;
 }
 .native-app .btn-primary { color: var(--action-ink); background: var(--action); }
-.native-app :is(.app-frame--student, .modal-dialog) .btn-primary { color: var(--action-ink); background: var(--action); border-color: transparent; box-shadow: none; }
-.native-app :is(.app-frame--student, .modal-dialog) .btn-secondary { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
-.native-app :is(.app-frame--student, .modal-dialog) .btn-ghost { color: var(--accent); background: transparent; border-color: var(--border); }
-.native-app :is(.app-frame--student, .modal-dialog) .btn-danger { background: var(--error-soft); color: var(--error); border: 1px solid var(--error); }
-.native-app :is(.app-frame--student, .modal-dialog) .btn:not(:disabled):hover { transform: none; box-shadow: none; }
-.native-app :is(.app-frame--student, .modal-dialog) .btn:not(:disabled):active { opacity: .78; transform: scale(.99); }
+.native-app :is(.app-frame--student, .modal-dialog, .plus-intro) .btn-primary { color: var(--action-ink); background: var(--action); border-color: transparent; box-shadow: none; }
+.native-app :is(.app-frame--student, .modal-dialog, .plus-intro) .btn-secondary { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+.native-app :is(.app-frame--student, .modal-dialog, .plus-intro) .btn-ghost { color: var(--accent); background: transparent; border-color: var(--border); }
+.native-app :is(.app-frame--student, .modal-dialog, .plus-intro) .btn-danger { background: var(--error-soft); color: var(--error); border: 1px solid var(--error); }
+.native-app :is(.app-frame--student, .modal-dialog, .plus-intro) .btn:not(:disabled):hover { transform: none; box-shadow: none; }
+.native-app :is(.app-frame--student, .modal-dialog, .plus-intro) .btn:not(:disabled):active { opacity: .78; transform: scale(.99); }
 .native-app :is(.icon-button, .back-btn, .lesson-top > button) { min-width: 44px; min-height: 44px; }
 .native-app .app-frame--student .field input,
 .native-app .app-frame--student .search-box {
@@ -272,7 +272,7 @@ html.native-app {
 .native-app .app-frame--student .companion-note { grid-template-columns: minmax(0, 1fr); }
 .native-app :is(.app-frame--student, .modal-dialog) :is(.word-detail-example, .shop-comparison, .lesson-intro-figure, .lesson-start-icon, .option-marker) { background: var(--surface-soft); color: var(--fg); }
 .native-app .app-frame--student .progress-fill { background: var(--accent); }
-.native-app :is(.app-frame--student, .modal-dialog) .btn-primary:not(:disabled):hover { background: var(--action); }
+.native-app :is(.app-frame--student, .modal-dialog, .plus-intro) .btn-primary:not(:disabled):hover { background: var(--action); }
 .native-app .app-frame--student .option:hover:not(:disabled):not(.option--correct):not(.option--wrong) { background: var(--surface-soft); border-color: var(--accent); }
 .native-app .app-frame--student .option.active::before { background-color: var(--accent); border-color: var(--accent); }
 /* Legacy answer states use !important shadows; keep their semantics, drop the ledge. */
@@ -306,22 +306,29 @@ html.native-app {
 .native-app .app-frame--student .heatmap-cell.level-3 { background: color-mix(in srgb, var(--accent) 72%, var(--surface-soft)); }
 .native-app .app-frame--student .heatmap-cell.level-4 { background: var(--accent); }
 @media (prefers-reduced-motion: reduce) {
-  .native-app :is(.app-frame--student, .modal-dialog) .btn { transition: none; }
-  .native-app :is(.app-frame--student, .modal-dialog) .btn:not(:disabled):active { transform: none; }
+  .native-app :is(.app-frame--student, .modal-dialog, .plus-intro) .btn { transition: none; }
+  .native-app :is(.app-frame--student, .modal-dialog, .plus-intro) .btn:not(:disabled):active { transform: none; }
 }
 
 /* App Store subscription offer */
 .app-store-offer { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
 .app-store-plans { display: flex; flex-direction: column; gap: 10px; }
 .app-store-plan {
-  display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
-  width: 100%; min-height: 64px; padding: 14px 16px; text-align: left;
-  border: 1.5px solid var(--border); border-radius: 14px;
+  position: relative; display: flex; flex-direction: column; align-items: stretch; gap: 4px;
+  width: 100%; min-height: 64px; padding: 16px; text-align: left;
+  border: 1.5px solid var(--border); border-radius: 16px;
   background: var(--surface); color: var(--fg); font: inherit; cursor: pointer;
 }
-.app-store-plan:first-child { border-color: var(--accent); background: var(--accent-soft); }
+.app-store-plan--best { border: 2px solid var(--accent); background: var(--accent-soft); padding-top: 20px; }
+.app-store-plan-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
 .app-store-plan strong { font-size: 1.05rem; }
-.app-store-plan span { color: var(--muted); font-size: 0.92rem; }
+.app-store-plan-row b { font-size: 1.15rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.app-store-plan > span:not(.app-store-plan-row) { color: var(--muted); font-size: 0.9rem; line-height: 1.4; }
+.app-store-plan small { color: var(--accent); font-size: .85rem; font-weight: 600; }
+.app-store-plan-badge {
+  position: absolute; top: -11px; left: 14px; padding: 3px 10px; border-radius: 999px;
+  background: var(--action); color: var(--action-ink); font-style: normal; font-size: .75rem; font-weight: 700;
+}
 .app-store-plan:disabled { opacity: 0.6; }
 .app-store-plan--loading { pointer-events: none; animation: app-store-pulse 1.2s ease-in-out infinite alternate; }
 @keyframes app-store-pulse { from { opacity: 0.45; } to { opacity: 0.9; } }
@@ -357,3 +364,115 @@ html.native-app {
 .native-app .btn-apple { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 50px; border-radius: 12px; border: 0; background: #000; color: #fff; font: inherit; font-size: 1.05rem; font-weight: 600; }
 .native-app .btn-apple:disabled { opacity: .6; }
 @media (prefers-color-scheme: dark) { .native-app .btn-apple { background: #fff; color: #000; } }
+
+/* Lesson screens: every inner surface follows the theme (web uses fixed light tints). */
+.native-app .app-frame--student :is(.theory-example, .theory-group, .theory-sign-card, .theory-mistake-row, .theory-dialogue-line, .words-screen-item, .lesson-word-item, .lesson-result-stat) {
+  background: var(--surface-soft); border-color: transparent;
+}
+.native-app .app-frame--student :is(.theory-ex-sk, .ws-item-sk, .theory-group-title, .theory-main-sk, .ws-item-example .sk, .theory-dialogue-sk, .theory-sign-name, .theory-pr-read) { color: var(--fg); }
+.native-app .app-frame--student :is(.theory-group-note, .ws-item-pron, .ws-item-example .uk, .theory-pr-example .uk) { color: var(--muted); }
+.native-app .app-frame--student .ws-item-example { border-top-color: var(--border); }
+.native-app .app-frame--student .theory-letter { background: var(--accent-soft); color: var(--accent); }
+.native-app .app-frame--student .theory-pronunciation-table { border-color: var(--border); }
+.native-app .app-frame--student .theory-pr-header { background: var(--surface-soft); color: var(--muted); }
+.native-app .app-frame--student .theory-mistake-wrong { color: var(--error); }
+.native-app .app-frame--student .theory-mistake-correct { color: var(--success); }
+.native-app .app-frame--student :is(.theory-short-rule, .exercise-mode--response) {
+  background: var(--accent-soft); color: var(--fg); border-left: 4px solid var(--accent);
+  border-radius: 12px; font-weight: 600;
+}
+.native-app .app-frame--student .lesson-result-xp { background: var(--action); color: var(--action-ink); }
+.native-app .app-frame--student :is(.lesson-result-header, .lesson-result-words, .lesson-result-next, .reminder-optin) { background: var(--surface); border-color: var(--border); box-shadow: none; }
+.native-app .app-frame--student :is(.lesson-start-card, .theory-body, .lesson-words-screen, .final-situation-card) { border-color: var(--border); box-shadow: none; }
+/* The sticky "Next" bar sits inside the lesson card, so it takes the card colour and fades in. */
+.native-app .app-frame--student :is(.theory-body, .lesson-words-screen, .lesson-start-card, .final-situation-card) .lesson-bottom {
+  background: linear-gradient(to bottom, transparent, var(--surface) 14px);
+  margin-inline: -4px; padding-inline: 4px; padding-top: 18px;
+}
+/* Exercises */
+.native-app .app-frame--student .exercise-skills { display: none; } /* internal skill tags, not learner copy */
+.native-app .app-frame--student .lesson-topic { background: transparent; color: var(--accent); padding: 0; font-weight: 600; }
+.native-app .app-frame--student .option::before { background-color: var(--surface); border-color: var(--border); }
+.native-app .app-frame--student .option.active::before { background-color: var(--accent); border-color: var(--accent); }
+.native-app .app-frame--student .exercise-text-block { background: var(--surface-soft); border-color: transparent; color: var(--fg); }
+.native-app .app-frame--student .exercise-statement { border-left-color: var(--accent); }
+.native-app .app-frame--student .exercise-mode--context { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+/* Disabled primary: neutral fill instead of a muddy half-transparent yellow. */
+.native-app :is(.app-frame--student, .modal-dialog, .plus-intro) .btn-primary:disabled { opacity: 1; background: var(--surface-soft); color: var(--muted); }
+/* Tabs and sheets: chips, pills, badges and avatars use theme tokens. */
+.native-app :is(.word-mini-list span, .status-pill, .badge, .podium-avatar, .leader-avatar, .sub-badge--free, .sub-badge--cancelled, .blank-slot) {
+  background: var(--accent-soft); color: var(--accent); border-color: transparent; box-shadow: none;
+}
+.native-app .word-mini-list span { font-weight: 600; }
+.native-app .word-mini-list .sr-due-word { background: var(--orange-soft); color: var(--orange); }
+.native-app .blank-slot { border: 2px dashed color-mix(in srgb, var(--accent) 55%, transparent); }
+.native-app .sub-badge--trial { background: color-mix(in srgb, var(--action) 18%, var(--surface)); color: var(--fg); }
+.native-app .sub-badge--expired { background: var(--error-soft); color: var(--error); }
+.native-app .league-badge { background: var(--surface-soft); }
+.native-app .league-bar-wrap { background: var(--surface-soft); box-shadow: none; }
+.native-app .referral-link-row { background: var(--surface-soft); border-color: transparent; }
+.native-app :is(.referral-copy-btn, .share-progress-btn) { background: var(--accent); color: #fff; }
+.native-app .referral-share-btn { color: var(--accent); border-color: var(--accent); }
+.native-app .shop-price-tag { background: var(--accent); color: #fff; box-shadow: none; }
+.native-app .companion-speech { background: #fff; color: #211946; }
+.native-app .tag.green { background: var(--success-soft); color: var(--success); }
+.native-app .tag.yellow { background: var(--orange-soft); color: var(--orange); }
+@media (prefers-color-scheme: dark) {
+  /* Lighter accent reads on dark, so pair white text with the deeper brand purple. */
+  .native-app :is(.referral-copy-btn, .share-progress-btn, .shop-price-tag) { background: #5a45d6; }
+}
+
+/* Plus offer (onboarding + free-lessons card) */
+.plus-intro {
+  position: relative; display: flex; flex-direction: column; gap: 18px; width: 100%; max-width: 480px; min-height: 100dvh; margin: 0 auto;
+  padding: calc(env(safe-area-inset-top, 0px) + 20px) max(20px, env(safe-area-inset-right, 0px)) calc(28px + env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px));
+  background: var(--bg); color: var(--fg);
+}
+.plus-intro-close { align-self: flex-end; min-height: 44px; padding: 0 4px; border: 0; background: none; color: var(--muted); font: inherit; font-size: .95rem; font-weight: 500; }
+.plus-intro-head {
+  display: grid; justify-items: center; gap: 8px; padding: 24px 20px 22px; text-align: center;
+  border-radius: 24px; background: var(--hero); color: var(--hero-ink);
+}
+.plus-intro-mascot { width: 132px; height: auto; margin-top: -8px; animation: plus-mascot-float 3.2s ease-in-out infinite; }
+.plus-intro-kicker { padding: 4px 12px; border-radius: 999px; background: rgba(255,255,255,.16); font-size: .8rem; font-weight: 600; letter-spacing: .02em; }
+.plus-intro-head h1 { margin: 4px 0 0; font-size: 1.65rem; line-height: 1.2; letter-spacing: -.02em; text-wrap: balance; }
+.plus-intro-head p { margin: 0; color: var(--hero-muted); font-size: .95rem; line-height: 1.45; text-wrap: pretty; }
+.plus-intro-perks { list-style: none; margin: 0; padding: 4px 2px; display: grid; gap: 12px; }
+.plus-intro-perks li { display: flex; gap: 10px; align-items: center; font-size: 1rem; line-height: 1.35; }
+.plus-intro-perks svg { flex: none; color: var(--success); }
+.plus-intro .app-store-offer { margin-top: 0; }
+.plus-intro-skip { min-height: 50px; border-radius: 12px; border: 1.5px solid var(--border); background: var(--surface); color: var(--fg); font: inherit; font-weight: 600; font-size: 1rem; }
+.plus-intro-note { margin: -6px 0 0; text-align: center; color: var(--muted); font-size: .85rem; }
+@keyframes plus-mascot-float { 50% { transform: translateY(-6px) rotate(-2deg); } }
+
+.native-app .free-lessons-card {
+  display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 14px; align-items: center;
+  padding: 14px 16px; border-radius: 18px; background: var(--surface); border: 1px solid var(--border);
+}
+.native-app .free-lessons-card img { width: 64px; height: auto; }
+.native-app .free-lessons-copy { display: grid; gap: 8px; min-width: 0; }
+.native-app .free-lessons-copy strong { font-size: 1rem; font-weight: 600; color: var(--fg); }
+.native-app .free-lessons-track { height: 6px; border-radius: 999px; background: var(--surface-soft); overflow: hidden; }
+.native-app .free-lessons-track span { display: block; height: 100%; border-radius: inherit; background: var(--action); }
+.native-app .free-lessons-copy button { justify-self: start; display: inline-flex; align-items: center; gap: 2px; min-height: 36px; padding: 0; border: 0; background: none; color: var(--accent); font: inherit; font-size: .92rem; font-weight: 600; }
+
+/* Mascot moments */
+.native-app .learning-hero-mascot { width: 100%; height: auto; filter: drop-shadow(0 6px 10px rgba(0,0,0,.18)); animation: plus-mascot-float 3.6s ease-in-out infinite; }
+.native-app .lesson-start-card { position: relative; }
+.native-app .lesson-start-mascot { justify-self: center; width: 96px; height: auto; margin-bottom: -6px; }
+.native-app .lesson-result-emoji img { width: 120px; height: auto; animation: plus-mascot-float 3s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .plus-intro-mascot, .native-app .learning-hero-mascot, .native-app .lesson-result-emoji img { animation: none; }
+}
+/* Onboarding */
+.native-app .start-choice:is(:hover, :active) { background: var(--surface-soft); }
+.native-app .start-choice-icon { background: var(--accent-soft); color: var(--accent); }
+.native-app :is(.start-choice-copy .start-choice-action, .start-back, .start-text-link) { color: var(--accent); }
+.native-app .start-level.selected { background: var(--accent-soft); }
+.native-app .start-level input { accent-color: var(--accent); }
+.native-app .start-free-note svg { color: var(--success); }
+.native-app .start-mascot { display: block; width: 112px; height: auto; margin: 0 0 4px -6px; animation: plus-mascot-float 3.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .native-app .start-mascot { animation: none; } }
+.native-app .app-loading-screen { background: var(--bg); color: var(--fg); }
+.native-app .app-loading-screen p { color: var(--muted); }
+.native-app .app-loading-bar { background: var(--surface-soft); }

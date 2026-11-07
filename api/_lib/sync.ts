@@ -232,6 +232,11 @@ async function mutRestoreHearts(uid: string): Promise<void> {
   );
 }
 
+const AVATAR_PHOTO_MAX = 64 * 1024;
+export function isAvatarPhoto(value: string): boolean {
+  return value.length <= AVATAR_PHOTO_MAX && /^data:image\/(?:jpeg|png|webp);base64,[A-Za-z0-9+/]+={0,2}$/.test(value);
+}
+
 async function mutProfileUpdate(uid: string, p: Record<string, unknown>): Promise<void> {
   await ensureCol("users", "free_preview_level", "TEXT");
   await exec("UPDATE users SET free_preview_level=level WHERE id=? AND ob_done=1 AND free_preview_level IS NULL", [uid]);
@@ -240,8 +245,13 @@ async function mutProfileUpdate(uid: string, p: Record<string, unknown>): Promis
   if ("goal" in p)           { sets.push("goal = ?");       vals.push(p.goal ? String(p.goal).trim().slice(0, 200) : null); }
   if ("level" in p)          { sets.push("level = ?");      vals.push(String(p.level)); }
   if ("avatar" in p) {
-    const av = String(p.avatar ?? "").slice(0, 100);
-    if (!av || !/https?:|data:|javascript:/i.test(av)) { sets.push("avatar = ?"); vals.push(av || null); }
+    const raw = String(p.avatar ?? "");
+    // A photo is the client's 128x128 JPEG crop (~5–15 KB); anything else is initials/emoji.
+    if (isAvatarPhoto(raw)) { sets.push("avatar = ?"); vals.push(raw); }
+    else {
+      const av = raw.slice(0, 100);
+      if (!av || !/https?:|data:|javascript:/i.test(av)) { sets.push("avatar = ?"); vals.push(av || null); }
+    }
   }
   if ("country" in p)        { sets.push("country = ?");    vals.push(String(p.country)); }
   if ("onboardingDone" in p) {

@@ -492,6 +492,28 @@ describe("POST /sync/push", () => {
     expect(replay.body.applied).toBe(0);
   });
 
+  it("stores a cropped photo avatar and keeps it out of the leaderboard", async () => {
+    const photo = "data:image/jpeg;base64," + "A".repeat(8000);
+    const push = await call("POST", ["sync", "push"], {
+      cookie,
+      body: { mutations: [{ id: "mut-avatar-photo", type: "profile.update", payload: { avatar: photo } }] },
+    });
+    expect(push.status).toBe(200);
+    const { body: pulled } = await call("GET", ["sync", "pull"], { cookie });
+    expect((pulled.user as Record<string, unknown>).avatar).toBe(photo);
+
+    const { body: board } = await call("GET", ["leaderboard"], { cookie });
+    const entries = (board.entries ?? []) as Array<Record<string, unknown>>;
+    expect(entries.every((e) => !String(e.avatar ?? "").startsWith("data:"))).toBe(true);
+
+    await call("POST", ["sync", "push"], {
+      cookie,
+      body: { mutations: [{ id: "mut-avatar-bad", type: "profile.update", payload: { avatar: "data:text/html;base64,PHNjcmlwdD4=" } }] },
+    });
+    const { body: after } = await call("GET", ["sync", "pull"], { cookie });
+    expect((after.user as Record<string, unknown>).avatar).toBe(photo);
+  });
+
   it("applies profile.update mutation", async () => {
     const { body } = await call("POST", ["sync", "push"], {
       cookie,
