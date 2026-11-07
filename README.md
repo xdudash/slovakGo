@@ -4,6 +4,9 @@
 
 ## Запуск
 
+Для запуска на iPhone см. [инструкцию iOS](docs/IOS-DEVICE.md). Быстрый старт: `npm run ios:open`.
+Изменения интерфейса iPhone и настройка уведомлений: [iPhone experience](docs/IOS-EXPERIENCE.md).
+
 ```bash
 npm install
 npm run dev -- --host 127.0.0.1 --port 5173

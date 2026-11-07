@@ -1,4 +1,5 @@
 import { CompanionNote, GuideCharacter } from "../../components/LearningCompanion";
+import { LearningIcon } from '../../components/LearningIcons';
 import { trackMeta } from "../../../shared/metaPixel";
 import offerCopy from "../../../shared/offerCopy.json";
 import { syncMetaBilling } from "../../services/metaConversions";
@@ -11,6 +12,11 @@ import { Button, Card, EmptyState, Field, Modal, PageHeader, ProgressBar } from 
 import { PageSkeleton } from "../../components/Skeleton";
 import { PWAInstallBanner } from "../../components/PWAInstallBanner";
 import { apiClient } from "../../services/apiClient";
+import { isNativeApp, openExternalUrl, PUBLIC_APP_ORIGIN } from "../../services/platform";
+import { AppStoreOffer, AppStorePaywall } from "../../components/AppStoreOffer";
+import { manageAppStoreSubscription } from "../../services/appStoreBilling";
+
+const webSubscriptionNote = "Підписку оформлено на сайті app.slovakgo.sk. Керувати нею можна там, увійшовши в той самий акаунт.";
 import { leaderboardService } from "../../services/leaderboardService";
 import { lessonService } from "../../services/lessonService";
 import { practiceService, type PracticeExercise, type PracticeType } from "../../services/practiceService";
@@ -18,8 +24,10 @@ import { srService } from "../../services/spacedRepetitionService";
 import { progressService } from "../../services/progressService";
 import { vocabularyService, type VocabularyWord } from "../../services/vocabularyService";
 import { selectCurrentUser, selectIsPlus, useAppStore } from "../../store/useAppStore";
-import { useT } from "../../i18n";
-import type { AnswerRecord, Exercise, ExerciseType, LeaderboardEntry, Lesson, LocalizedText, TheoryScreen, UserLevel } from "../../types";
+import { setGuestLanguage, useT } from "../../i18n";
+import { NativeNotificationSettings } from "../../components/NativeNotificationSettings";
+import { nativeCopy } from "../../locales/native";
+import type { AnswerRecord, Exercise, ExerciseType, LeaderboardEntry, Lesson, LocalizedText, TheoryScreen, UserLevel, UserSettings } from "../../types";
 import { getDailyPhrases, getScenarioForGoal } from "../../data/scenarios";
 import { downloadCertificate } from "../../services/certificateService";
 import { generateShareCard, shareOrDownloadCard } from "../../services/shareService";
@@ -99,10 +107,10 @@ function TopStats() {
   return (
     <div className="sticky-stats">
       <div className="level-badge">{progress.currentLevel}</div>
-      <div className="stat-chip xp" aria-label={`${progress.xpTotal} XP`}><Zap size={14} /> {new Intl.NumberFormat(lang, { notation: "compact", maximumFractionDigits: 1 }).format(progress.xpTotal)} XP</div>
+      <div className="stat-chip xp" aria-label={`${progress.xpTotal} XP`}><LearningIcon name="xp" size={14} /> {new Intl.NumberFormat(lang, { notation: "compact", maximumFractionDigits: 1 }).format(progress.xpTotal)} XP</div>
       <div className={`stat-chip streak${streakAtRisk ? " at-risk" : ""}`}>
-        <Flame size={14} /> {progress.streakDays}
-        {progress.streakFreezeCount > 0 && <span className="freeze-badge">❄</span>}
+        <LearningIcon name="streak" size={14} /> {progress.streakDays}
+        {progress.streakFreezeCount > 0 && <span className="freeze-badge"><LearningIcon name="freeze" size={14} /></span>}
       </div>
       <Link to="/app/levels" className="stat-chip level-link">{t("student.top_stats_level")}</Link>
     </div>
@@ -122,7 +130,7 @@ export function StudentLayout() {
   }
 
   if (user && progress && user.role === "student" && !accessService.hasFullAccess(user.subscriptionStatus)) {
-    const alwaysAllowed = ["/app/profile", "/app/paywall", "/app/settings", "/app/levels"];
+    const alwaysAllowed = ["/app/profile", "/app/paywall", "/app/settings", "/app/levels", "/app/vocabulary", "/app/practice", "/app/leaderboard", "/app/shop"];
     const isPath = location.pathname === "/app" || location.pathname === "/app/path";
     const lessonId = location.pathname.startsWith("/app/lesson/") ? location.pathname.slice("/app/lesson/".length) : "";
     const canPreview = accessService.canUsePreview(data.lessons, progress, user.subscriptionStatus);
@@ -134,7 +142,7 @@ export function StudentLayout() {
 
   return (
     <AppShell role="student">
-      {location.pathname !== "/app/profile" && location.pathname !== "/app/paywall" ? <TopStats /> : null}
+      {location.pathname !== "/app/profile" && location.pathname !== "/app/paywall" && !(isNativeApp && (location.pathname === '/app/settings' || location.pathname.startsWith('/app/lesson/'))) ? <TopStats /> : null}
       <Routes>
         <Route path="/" element={<Navigate to="path" replace />} />
         <Route path="path" element={<PathScreen />} />
@@ -235,7 +243,7 @@ function PathScreen() {
   return (
     <main className="page-content path-page">
       <PageHeader
-        title={`${t("student.experience.hello")}, ${user.name.split(" ")[0]}!`}
+        title={isNativeApp ? t('nav.student.path') : `${t("student.experience.hello")}, ${user.name.split(" ")[0]}!`}
         subtitle={`${progress.currentLevel} · ${t(`student.level_desc.${progress.currentLevel}`)}`}
       />
 
@@ -545,7 +553,7 @@ const CONFETTI_COLORS = ["#6f57e8", "#ffd21f", "#2fba7f", "#e93d45", "#ff5a2e", 
 const DEFAULT_REMINDER_TIME = "19:00";
 
 /** Invite link. `?ref` is claimed on registration (AuthScreens → apiClient.claimReferral). */
-const referralUrl = (userId: string) => `${window.location.origin}/register?ref=${userId}`;
+const referralUrl = (userId: string) => `${isNativeApp ? PUBLIC_APP_ORIGIN : window.location.origin}/register?ref=${encodeURIComponent(userId)}`;
 
 type LessonPhase = "start" | "theory" | "words" | "exercise" | "final" | "result";
 type WrongItem = { question: string; userAnswer: string; correctAnswer: string };
@@ -875,7 +883,7 @@ function LessonPlayer() {
     // The free preview ends here — this is the conversion moment worth watching.
     if (opensTrialAfterLesson) track("section_complete", { level: lesson!.level });
     const cd: CompletionData = { xp, correct, total: finalRecords.length, wrong: buildWrong(finalRecords) };
-    soundService.play("complete", user!.settings.soundEnabled);
+    soundService.play("complete", user!.settings.soundEnabled, user!.settings.hapticsEnabled);
     if (lesson!.resultScreen) {
       setCompletionData(cd);
       setPhase("result");
@@ -925,7 +933,7 @@ function LessonPlayer() {
     const record = { exerciseId: exercise.id, answer, correct, answeredAt: new Date().toISOString() };
     setRecords((items) => [...items.filter((item) => item.exerciseId !== exercise.id), record]);
     setFeedback(correct ? "correct" : "wrong");
-    soundService.play(correct ? "correct" : "wrong", user!.settings.soundEnabled);
+    soundService.play(correct ? "correct" : "wrong", user!.settings.soundEnabled, user!.settings.hapticsEnabled);
     if (!correct) recordWrongAnswer(lesson!, exercise.id, String(answer));
   }
 
@@ -950,14 +958,14 @@ function LessonPlayer() {
       if (!correct) setAttemptsRemaining(remaining => Math.max(0, (remaining || LESSON_ATTEMPTS) - 1));
       setFinalAttemptFailed(false);
       setFinalFeedback(correct ? "correct" : "wrong");
-      soundService.play(correct ? "correct" : "wrong", user!.settings.soundEnabled);
+      soundService.play(correct ? "correct" : "wrong", user!.settings.soundEnabled, user!.settings.hapticsEnabled);
       return;
     }
     const correctIdx = parseInt(sit.correctAnswer, 10) - 1;
     const correct = finalAnswer === sit.options[correctIdx];
     if (!correct) setAttemptsRemaining(remaining => Math.max(0, (remaining || LESSON_ATTEMPTS) - 1));
     setFinalFeedback(correct ? "correct" : "wrong");
-    soundService.play(correct ? "correct" : "wrong", user!.settings.soundEnabled);
+    soundService.play(correct ? "correct" : "wrong", user!.settings.soundEnabled, user!.settings.hapticsEnabled);
   }
 
   function advanceFinal() {
@@ -1361,7 +1369,7 @@ function LessonPlayer() {
       {phase === "result" && completionData && lesson.resultScreen && (
         <div className="lesson-result-screen">
           <div className="lesson-result-header">
-            <div className="lesson-result-emoji">{completionData.wrong.length === 0 ? "🏆" : "🎉"}</div>
+            <div className="lesson-result-emoji">{isNativeApp ? <Trophy size={40} aria-hidden="true" /> : completionData.wrong.length === 0 ? "🏆" : "🎉"}</div>
             {lesson.resultScreen.title ? <h2 className="lesson-result-title">{tx(lesson.resultScreen.title)}</h2> : null}
             {(lesson.resultScreen.text || lesson.resultScreen.subtitle) ? <p className="lesson-result-text">{tx(lesson.resultScreen.text ?? lesson.resultScreen.subtitle)}</p> : null}
             <div className="lesson-result-xp">+{completionData.xp} XP</div>
@@ -2303,7 +2311,8 @@ function ProfileScreen() {
             </div>
             {user.subscriptionStatus === "plus"
               ? <Button variant="secondary" onClick={async () => {
-                try { const { url } = await apiClient.openCustomerPortal(); window.location.href = url; } catch { return; }
+                if (isNativeApp) { if (user.billingProvider === "app_store") await manageAppStoreSubscription().catch(() => undefined); else navigate("/app/shop"); return; }
+                try { const { url } = await apiClient.openCustomerPortal(); await openExternalUrl(url); } catch { return; }
               }}>Управляти</Button>
               : <Button variant="secondary" onClick={() => navigate("/app/shop")}>Plus →</Button>
             }
@@ -2517,13 +2526,13 @@ function SupportWidget({ variant = "secondary" }: { variant?: "primary" | "secon
 function SettingsScreen() {
   const { user, updateUser, logout } = useStudentData();
   const navigate = useNavigate();
-  const { t } = useT();
+  const { t, lang } = useT();
   const [name, setName] = useState(user?.name || "");
   const [email, setEmail] = useState(user?.email || "");
   const [goal, setGoal] = useState(user?.goal || "");
   const [notifications, setNotifications] = useState(user?.settings.notificationsEnabled ?? true);
-  const [sound, setSound] = useState(user?.settings.soundEnabled ?? true);
-  const [haptics, setHaptics] = useState(user?.settings.hapticsEnabled ?? true);
+  const sound = user?.settings.soundEnabled ?? true;
+  const haptics = user?.settings.hapticsEnabled ?? true;
   const [reminderTime, setReminderTime] = useState(user?.settings.reminderTime ?? "");
   const [reminderSaved, setReminderSaved] = useState(false);
   const [profileSaved, setProfileSaved] = useState(false);
@@ -2574,11 +2583,10 @@ function SettingsScreen() {
   }
 
   if (!user) return <PageSkeleton />;
-  const lang = (user.settings.language || "uk") as "uk" | "ru" | "sk" | "en";
 
   async function saveProfile() {
     const trimmedEmail = email.trim().toLowerCase();
-    if (user!.authProvider === "google" && trimmedEmail !== user!.email.toLowerCase()) {
+    if ((user!.authProvider === "google" || user!.authProvider === "apple") && trimmedEmail !== user!.email.toLowerCase()) {
       setEmailError("Email Google-акаунта змінюється в налаштуваннях Google.");
       return;
     }
@@ -2594,21 +2602,28 @@ function SettingsScreen() {
         setEmailError("");
         setEmailPassword("");
         setTimeout(() => setEmailSaved(false), 2500);
-        updateUser({ email: trimmedEmail, name, goal, settings: { ...user!.settings, notificationsEnabled: notifications, soundEnabled: sound, hapticsEnabled: haptics } });
+        updateUser({ email: trimmedEmail, name, goal });
       } catch (err: unknown) {
         const e = err as { status?: number };
         setEmailError(e.status === 409 ? t("student.settings.email_taken") : t("student.settings.email_invalid"));
         return;
       }
     } else {
-      updateUser({ name, goal, settings: { ...user!.settings, notificationsEnabled: notifications, soundEnabled: sound, hapticsEnabled: haptics } });
+      updateUser({ name, goal });
       setProfileSaved(true);
       setTimeout(() => setProfileSaved(false), 2500);
     }
   }
 
   function changeLanguage(code: "uk" | "ru" | "sk" | "en") {
-    updateUser({ settings: { ...user!.settings, language: code } });
+    setGuestLanguage(code);
+    saveSettings({ language: code });
+  }
+
+  function saveSettings(patch: Partial<UserSettings>) {
+    const state = useAppStore.getState();
+    const current = selectCurrentUser(state.data, state.currentUserId);
+    if (current) updateUser({ settings: { ...current.settings, ...patch } });
   }
 
   async function submitPasswordChange() {
@@ -2661,7 +2676,7 @@ function SettingsScreen() {
       <PageHeader
         title={t("student.settings.title")}
         action={
-          <button type="button" className="back-btn" onClick={() => navigate("/app/profile")} aria-label="Назад">
+          <button type="button" className="back-btn" onClick={() => navigate("/app/profile")} aria-label={nativeCopy[lang].back}>
             <ChevronLeft size={20} />
           </button>
         }
@@ -2675,11 +2690,11 @@ function SettingsScreen() {
             <Field
               label={t("student.settings.email")}
               value={email}
-              disabled={user.authProvider === "google"}
+              disabled={user.authProvider === "google" || user.authProvider === "apple"}
               onChange={(e) => { setEmail(e.target.value); setEmailError(""); setEmailSaved(false); }}
             />
-            {user.authProvider === "google" && <p className="muted sm">Email керується через Google.</p>}
-            {user.authProvider !== "google" && email.trim().toLowerCase() !== user.email.toLowerCase() && (
+            {(user.authProvider === "google" || user.authProvider === "apple") && <p className="muted sm">Email керується через {user.authProvider === "apple" ? "Apple" : "Google"}.</p>}
+            {user.authProvider !== "google" && user.authProvider !== "apple" && email.trim().toLowerCase() !== user.email.toLowerCase() && (
               <Field type="password" label={t("student.settings.password_current")} value={emailPassword} onChange={(e) => setEmailPassword(e.target.value)} />
             )}
             {emailError && <p className="field-error">{emailError}</p>}
@@ -2701,18 +2716,22 @@ function SettingsScreen() {
                 key={code}
                 type="button"
                 className={`lang-btn${lang === code ? " lang-btn--active" : ""}`}
+                aria-pressed={lang === code}
                 onClick={() => changeLanguage(code)}
               >
                 {t(`student.settings.lang_${code}`)}
               </button>
             ))}
           </div>
+          {isNativeApp && <p className="native-setting-note">{nativeCopy[lang].languageHint}</p>}
         </Card>
       </section>
 
+      {isNativeApp && <NativeNotificationSettings user={user} onChange={saveSettings} />}
       <section className="settings-section">
-        <h3 className="settings-section-title">{t("student.settings.section_notifications")}</h3>
+        <h3 className="settings-section-title">{isNativeApp ? nativeCopy[lang].appearance : t("student.settings.section_notifications")}</h3>
         <Card className="form-stack">
+          {!isNativeApp && <>
           <label className="toggle-row">
             <input
               type="checkbox"
@@ -2788,18 +2807,20 @@ function SettingsScreen() {
               </div>
             </div>
           )}
+          </>}
           <label className="toggle-row">
-            <input type="checkbox" checked={sound} onChange={(e) => setSound(e.target.checked)} />
+            <input type="checkbox" role="switch" checked={sound} onChange={(e) => saveSettings({ soundEnabled: e.target.checked })} />
             {t("student.settings.sound")}
           </label>
           <label className="toggle-row">
-            <input type="checkbox" checked={haptics} onChange={(e) => setHaptics(e.target.checked)} />
+            <input type="checkbox" role="switch" checked={haptics} onChange={(e) => saveSettings({ hapticsEnabled: e.target.checked })} />
             {t("student.settings.haptics")}
           </label>
+          {isNativeApp && <p className="native-setting-note">{nativeCopy[lang].appearanceHint}</p>}
         </Card>
       </section>
 
-      {(!isStandalone && (deferredPrompt || isIOS)) && (
+      {(!isNativeApp && !isStandalone && (deferredPrompt || isIOS)) && (
         <section className="settings-section">
           <h3 className="settings-section-title">{t("student.settings.install")}</h3>
           <Card className="form-stack">
@@ -2949,6 +2970,17 @@ export function PaywallScreen() {
     );
   }
 
+  if (isNativeApp) {
+    return (
+      <AppStorePaywall
+        adminPreview={adminPreview}
+        onActivated={() => navigate("/app/path")}
+        onProfile={() => navigate("/app/profile")}
+        onLogout={() => { useAppStore.getState().logout(); navigate("/login"); }}
+      />
+    );
+  }
+
   async function handleSubscribe() {
     if (adminPreview) return;
     setLoading(true);
@@ -2957,7 +2989,7 @@ export function PaywallScreen() {
       track("checkout_start", { from: "paywall" });
       const { url, existingSubscription, sessionId, value, currency } = await apiClient.createCheckoutSession();
       if (!existingSubscription && sessionId) trackMeta("InitiateCheckout", { content_name: "SlovakGO Plus", value, currency, num_items: 1 }, `checkout:${sessionId}`);
-      window.location.href = url;
+      await openExternalUrl(url);
     } catch (err: any) {
       setError(err.message || "Не вдалося почати оформлення підписки.");
       setLoading(false);
@@ -3106,7 +3138,7 @@ function ShopScreen() {
       track("checkout_start", { from: "shop", planType });
       const { url, existingSubscription, sessionId, value, currency } = await apiClient.createCheckoutSession(planType);
       if (!existingSubscription && sessionId) trackMeta("InitiateCheckout", { content_name: "SlovakGO Plus", value, currency, num_items: 1 }, `checkout:${sessionId}`);
-      window.location.href = url;
+      await openExternalUrl(url);
     } catch (err: any) {
       setError(err.message || "Не вдалося почати оформлення підписки. Спробуйте пізніше.");
       setLoading(false);
@@ -3117,10 +3149,17 @@ function ShopScreen() {
     setLoading(true);
     setError(null);
     try {
+      if (isNativeApp) {
+        // A web (Stripe) subscription is managed on the website, never from the app.
+        if (user?.billingProvider === "app_store") await manageAppStoreSubscription();
+        else setError(webSubscriptionNote);
+        return;
+      }
       const { url } = await apiClient.openCustomerPortal();
-      window.location.href = url;
+      await openExternalUrl(url);
     } catch (err: any) {
       setError(err.message || "Не вдалося відкрити кабінет. Спробуйте пізніше.");
+    } finally {
       setLoading(false);
     }
   }
@@ -3149,7 +3188,7 @@ function ShopScreen() {
       <Card className="shop-card shop-card--main">
         <div className="shop-card-header">
           <Trophy size={48} className="shop-icon-main" />
-          <div className="shop-price-tag">€3<span>/міс</span></div>
+          {!isNativeApp && <div className="shop-price-tag">€3<span>/міс</span></div>}
         </div>
         <h2>{t("student.shop.product")}</h2>
         <p>{t("student.shop.desc")}</p>
@@ -3167,12 +3206,12 @@ function ShopScreen() {
           </div>
           <div className="shop-comp-row">
             <span>Практика</span>
-            <span>Ні</span>
+            <span>Так</span>
             <span className="comp-check"><CheckCircle2 size={14} /> Так</span>
           </div>
           <div className="shop-comp-row">
             <span>Словник</span>
-            <span>Ні</span>
+            <span>Так</span>
             <span className="comp-check"><CheckCircle2 size={14} /> Так</span>
           </div>
           <div className="shop-comp-row">
@@ -3192,6 +3231,7 @@ function ShopScreen() {
               {loading ? t("student.shop.btn_loading") : t("student.shop.btn_manage")}
             </Button>
           </div>
+          : isNativeApp ? <AppStoreOffer />
           : <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "24px" }}>
               <Button variant="primary" disabled={loading} onClick={() => handleSubscribe("monthly")} className="shop-btn-buy">
                 {loading ? t("student.shop.btn_loading") : t(user?.hasUsedTrial ? "student.shop.monthly_plan" : "student.shop.trial_monthly")}
@@ -3204,11 +3244,13 @@ function ShopScreen() {
         }
       </Card>
 
-      <div className="shop-faq">
-        <p className="muted text-center sm">
-          Ти можеш скасувати підписку в будь-який момент через кабінет Stripe.
-        </p>
-      </div>
+      {!isNativeApp && (
+        <div className="shop-faq">
+          <p className="muted text-center sm">
+            Ти можеш скасувати підписку в будь-який момент через кабінет Stripe.
+          </p>
+        </div>
+      )}
     </main>
   );
 }

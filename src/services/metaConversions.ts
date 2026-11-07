@@ -1,10 +1,11 @@
 import { trackMeta, marketingAllowed } from "../../shared/metaPixel";
 import { apiClient } from "./apiClient";
 import { selectCurrentUser, useAppStore } from "../store/useAppStore";
+import { isNativeApp } from "./platform";
 
 export async function syncMetaBilling(sessionId?: string): Promise<void> {
   try {
-    if (!marketingAllowed() || localStorage.getItem("slovakgo.admin-return")) return;
+    if (isNativeApp || !marketingAllowed() || localStorage.getItem("slovakgo.admin-return")) return;
     const state = useAppStore.getState();
     const user = selectCurrentUser(state.data, state.currentUserId);
     if (user?.role !== "student") return;

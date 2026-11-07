@@ -1,4 +1,5 @@
 import { closeIdleSessions, ensureActivity } from "./activity";
+import { sendNativeBroadcast } from './nativePush';
 export { handleAdminUsers } from "./adminUsers";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { Arg } from "./core";
@@ -215,6 +216,8 @@ export async function handleAdminNotify(req: VercelRequest, res: VercelResponse,
   const target = String(body.target ?? "all");
   if (!title || !msg) return fail(res, "title і body обов'язкові", 422);
 
+  const native = await sendNativeBroadcast(title, msg, target);
+
   let sql = "SELECT ft.token FROM users u JOIN fcm_tokens ft ON ft.user_id = u.id WHERE u.is_blocked = 0";
   const args: Arg[] = [];
   if (target === "students")          { sql += " AND u.role = 'student'"; }
@@ -222,18 +225,18 @@ export async function handleAdminNotify(req: VercelRequest, res: VercelResponse,
   else if (target.startsWith("level:")) { sql += " AND u.level = ?"; args.push(target.slice(6)); }
 
   const rows = await query(sql, args);
-  if (!rows.length) return respond(res, { ok: true, sent: 0, warning: "No FCM tokens found" });
+  if (!rows.length) return respond(res, { ok: true, sent: native.sent, warning: native.warning || (native.sent ? undefined : 'No push recipients found') });
 
   // FCM V1 API with Service Account
   const saJson = (process.env.FIREBASE_SERVICE_ACCOUNT_JSON ?? "").trim();
   if (!saJson) {
     console.error("[admin-notify] FIREBASE_SERVICE_ACCOUNT_JSON not set");
-    return respond(res, { ok: true, sent: 0, warning: "Push not configured (FIREBASE_SERVICE_ACCOUNT_JSON missing)" });
+    return respond(res, { ok: true, sent: native.sent, warning: "Web push not configured (FIREBASE_SERVICE_ACCOUNT_JSON missing)" });
   }
 
   let sa: { project_id: string; client_email: string; private_key: string };
   try { sa = JSON.parse(saJson); } catch {
-    return respond(res, { ok: true, sent: 0, warning: "Invalid FIREBASE_SERVICE_ACCOUNT_JSON" });
+    return respond(res, { ok: true, sent: native.sent, warning: "Invalid FIREBASE_SERVICE_ACCOUNT_JSON" });
   }
 
   // Get OAuth2 access token
@@ -260,13 +263,13 @@ export async function handleAdminNotify(req: VercelRequest, res: VercelResponse,
   const tokenData = await tokenRes.json() as { access_token?: string };
   if (!tokenData.access_token) {
     console.error("[admin-notify] Failed to get FCM access token");
-    return respond(res, { ok: true, sent: 0, warning: "Could not authenticate with Firebase" });
+    return respond(res, { ok: true, sent: native.sent, warning: "Could not authenticate with Firebase" });
   }
 
   const accessToken = tokenData.access_token;
   const fcmUrl = `https://fcm.googleapis.com/v1/projects/${sa.project_id}/messages:send`;
   const tokens = rows.map(r => String(r.token));
-  let sent = 0;
+  let sent = native.sent;
 
   await Promise.all(tokens.map(async (token) => {
     try {
@@ -287,7 +290,7 @@ export async function handleAdminNotify(req: VercelRequest, res: VercelResponse,
     } catch (e) { console.error("[fcm-v1] error:", e); }
   }));
 
-  respond(res, { ok: true, sent });
+  respond(res, { ok: true, sent, ...(native.warning ? { warning: native.warning } : {}) });
 }
 
 

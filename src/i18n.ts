@@ -5,6 +5,8 @@ import skData from './locales/sk.json';
 import enData from './locales/en.json';
 import { useAppStore } from './store/useAppStore';
 import type { Locale } from './types';
+import { initialLocale } from './services/localePreference';
+import { isNativeApp } from './services/platform';
 
 export type { Locale };
 
@@ -22,7 +24,7 @@ function dig(dict: Record<string, unknown>, key: string): unknown {
   return v;
 }
 
-let guestLanguageFallback: Locale = "uk";
+let guestLanguageFallback: Locale = initialLocale();
 
 export function getGuestLanguage(): Locale {
   let saved: string | null = null;
@@ -60,7 +62,7 @@ function subscribeGuestLanguage(onChange: () => void) {
 export function useT() {
   const guestLanguage = useSyncExternalStore(subscribeGuestLanguage, getGuestLanguage, () => "uk" as Locale);
   const userLanguage = useAppStore((s) => s.data.users.find((u) => u.id === s.currentUserId)?.settings?.language);
-  const lang = (userLanguage ?? guestLanguage) as Locale;
+  const lang = (isNativeApp ? guestLanguage : userLanguage ?? guestLanguage) as Locale;
 
   const dict = locales[lang] ?? locales.uk;
   const fallback = locales.uk;

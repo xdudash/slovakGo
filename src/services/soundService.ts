@@ -1,4 +1,5 @@
 export type SoundCue = "correct" | "wrong" | "complete";
+import { playHaptic } from './hapticsService';
 
 type Tone = { frequency: number; delay: number; duration: number; gain: number };
 
@@ -27,7 +28,8 @@ function audioContext(): AudioContext | undefined {
 }
 
 export const soundService = {
-  play(cue: SoundCue, enabled = true): void {
+  play(cue: SoundCue, enabled = true, hapticsEnabled = false): void {
+    playHaptic(cue, hapticsEnabled);
     if (!enabled) return;
     const ctx = audioContext();
     if (!ctx) return;

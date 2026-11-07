@@ -8,9 +8,19 @@ import { initAnalytics } from "./services/analytics";
 import { syncService } from "./services/syncService";
 import { useAppStore } from "./store/useAppStore";
 import { initMetaPixel } from "../shared/metaPixel";
+import { isNativeApp } from "./services/platform";
+import { initNativeRuntime } from "./services/nativeRuntime";
 
 initAnalytics();
-initMetaPixel();
+if (!isNativeApp) initMetaPixel();
+void initNativeRuntime(() => {
+  void useAppStore.getState().drainSync();
+  window.dispatchEvent(new Event('slovakgo:native-resume'));
+}).catch((error: unknown) => console.error('[native] initialization failed', error));
+if (isNativeApp) {
+  void import('./services/appStoreBilling').then(({ initAppStoreTransactions }) => initAppStoreTransactions(() => void useAppStore.getState().refreshUser()));
+  void import('./services/nativeNotificationCoordinator').then(({ initNativeNotificationSync }) => initNativeNotificationSync());
+}
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -21,6 +31,15 @@ createRoot(document.getElementById("root")!).render(
     </ErrorBoundary>
   </StrictMode>
 );
+
+// Let the mascot finish one bounce, then fade the iOS boot splash into the app.
+const bootSplash = document.getElementById("boot-splash");
+if (bootSplash) {
+  window.setTimeout(() => {
+    bootSplash.classList.add("boot-splash--hide");
+    window.setTimeout(() => bootSplash.remove(), 450);
+  }, Math.max(0, 1200 - performance.now()));
+}
 
 // Global error reporter — catches JS errors outside React tree (network errors, promise rejections, etc.)
 // Throttled to max 1 report per 5 s to prevent flooding the server.
@@ -86,9 +105,11 @@ function showInAppPush(title: string, body: string) {
 
 window.addEventListener("load", async () => {
   // Foreground push notification handler (when app is open in browser)
-  import("./services/fcmService").then(({ listenForeground }) => {
-    listenForeground(showInAppPush);
-  });
+  if (!isNativeApp) {
+    import("./services/fcmService").then(({ listenForeground }) => {
+      listenForeground(showInAppPush);
+    });
+  }
 
   const store = useAppStore.getState();
 
@@ -117,7 +138,7 @@ window.addEventListener("load", async () => {
     }
   });
 
-  if ("serviceWorker" in navigator && import.meta.env.PROD) {
+  if (!isNativeApp && "serviceWorker" in navigator && import.meta.env.PROD) {
     try {
       // Snapshot before registration — if already controlled, a later controllerchange is an update
       const hadController = !!navigator.serviceWorker.controller;

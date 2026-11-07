@@ -178,11 +178,21 @@ function effectiveSubStatus(r: Row): string {
   if (stored === "trial" && !(Date.parse(String(r.trial_ends)) > Date.now())) stored = "expired";
   if (stored === "plus" && r.sub_expires_at && !(Date.parse(String(r.sub_expires_at)) > Date.now())) stored = "expired";
   if (stored === "plus" || stored === "trial" || stored === "past_due") return stored;
+  const apple = appleAccess(r);
+  if (apple) return apple.status;
   const bonusUntil = String(r.bonus_until ?? "");
   return bonusUntil && Date.parse(bonusUntil) > Date.now() ? "plus" : stored;
 }
 
+/** App Store access lives in its own columns so Stripe webhooks never overwrite it. */
+function appleAccess(r: Row): { status: string; expiresAt: string } | null {
+  const status = String(r.apple_status ?? "");
+  const expiresAt = String(r.apple_expires_at ?? "");
+  return (status === "plus" || status === "trial") && Date.parse(expiresAt) > Date.now() ? { status, expiresAt } : null;
+}
+
 export function rowToUser(r: Row): Record<string, unknown> {
+  const apple = appleAccess(r);
   return {
     id:                 String(r.id),
     email:              String(r.email),
@@ -194,12 +204,13 @@ export function rowToUser(r: Row): Record<string, unknown> {
     country:            r.country ?? null,
     subscriptionStatus: effectiveSubStatus(r),
     bonusUntil:         r.bonus_until ?? null,
-    trialEndsAt:        r.trial_ends ?? null,
-    subExpiresAt:       r.sub_expires_at ?? null,
+    trialEndsAt:        r.trial_ends ?? (apple?.status === "trial" ? apple.expiresAt : null),
+    subExpiresAt:       r.sub_expires_at ?? (apple?.status === "plus" ? apple.expiresAt : null),
+    billingProvider:    apple ? "app_store" : r.stripe_sub_id ? "stripe" : null,
     onboardingDone:     Boolean(r.ob_done),
     settings:           safeJson(String(r.settings_j ?? "{}"), {}),
     hasUsedTrial:       Boolean(r.trial_used) || Boolean(r.stripe_customer_id),
-    authProvider:       r.google_sub && !String(r.pw_hash ?? "") ? "google" : "password",
+    authProvider:       String(r.pw_hash ?? "") ? "password" : r.apple_sub ? "apple" : r.google_sub ? "google" : "password",
     createdAt:          String(r.created_at),
     lastActiveAt:       r.last_active_at ?? null,
     updatedAt:          String(r.updated_at),
