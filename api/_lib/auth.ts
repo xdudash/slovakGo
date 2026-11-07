@@ -224,6 +224,14 @@ export async function handleDeleteAccount(req: VercelRequest, res: VercelRespons
     return fail(res, "Не вдалося скасувати активну підписку. Спробуй ще раз або звернися в підтримку.", 502);
   }
 
+  try {
+    const { revokeAppleSignIn } = await import("./appleSignIn");
+    await revokeAppleSignIn(uid);
+  } catch (err) {
+    console.error("[account-delete] Apple sign-in revocation failed:", err);
+    return fail(res, "Не вдалося відключити вхід через Apple. Спробуй ще раз або звернися в підтримку.", 502);
+  }
+
   await exec("DELETE FROM user_words WHERE user_id = ?", [uid]);
   await exec("DELETE FROM progress WHERE user_id = ?", [uid]);
   await exec("DELETE FROM fcm_tokens WHERE user_id = ?", [uid]);

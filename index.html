@@ -84,6 +84,31 @@
         }
       });
     </script>
+    <!-- iOS app only: continues the native launch screen with a short mascot animation. -->
+    <div id="boot-splash" aria-hidden="true" hidden>
+      <div class="boot-splash-mascot"><img src="%BASE_URL%brand/mascot-white.png" alt="" width="180" height="185" /></div>
+      <span class="boot-splash-spark"></span>
+    </div>
+    <style>
+      #boot-splash { position: fixed; inset: 0; z-index: 10000; display: grid; place-items: center; background: #5a45d6; transition: opacity .38s ease, visibility .38s; }
+      #boot-splash[hidden] { display: none; }
+      #boot-splash.boot-splash--hide { opacity: 0; visibility: hidden; }
+      .boot-splash-mascot { width: 180px; animation: boot-pop .55s cubic-bezier(.2, 1.4, .4, 1) both, boot-float 1.6s ease-in-out .55s infinite; transform-origin: 50% 90%; }
+      .boot-splash-mascot img { display: block; width: 100%; height: auto; }
+      .boot-splash-spark { position: absolute; left: calc(50% + 78px); top: calc(50% - 118px); width: 34px; height: 34px; background: #ffd21f;
+        clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); animation: boot-spark 1.2s ease-in-out .35s infinite both; }
+      @keyframes boot-pop { from { transform: scale(.4) translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+      @keyframes boot-float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-10px) rotate(-4deg); } }
+      @keyframes boot-spark { 0%, 100% { transform: scale(.5) rotate(0); opacity: .3; } 50% { transform: scale(1) rotate(20deg); opacity: 1; } }
+      @media (prefers-reduced-motion: reduce) { .boot-splash-mascot, .boot-splash-spark { animation: none; } }
+    </style>
+    <script>
+      (function () {
+        var el = document.getElementById("boot-splash");
+        var native = window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform();
+        if (native) el.hidden = false; else el.remove();
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -106,7 +106,7 @@ export function Login() {
         {authError ? <p className="error-text">{authError}</p> : null}
         <Button type="submit" disabled={loading}>{loading ? "…" : t("auth.sign_in")}</Button>
       </form>
-      {!isNativeApp && <>
+      {isNativeApp ? <AppleSignInBlock /> : <>
       <div className="auth-divider"><span>{t("auth.or")}</span></div>
       <button type="button" className="btn btn-google" onClick={() => { window.location.href = "/api/auth/google/start"; }}>
         <GoogleIcon />
@@ -218,7 +218,7 @@ export function Register() {
           }
         </Button>
       </form>
-      {!isNativeApp && <>
+      {isNativeApp ? <AppleSignInBlock /> : <>
       <div className="auth-divider"><span>{t("auth.or")}</span></div>
       <button type="button" className="btn btn-google" onClick={() => {
         if (refParam) localStorage.setItem("slovakgo.pending-referral", refParam);
@@ -322,6 +322,41 @@ export function ResetPassword() {
   );
 }
 
+/** iOS: Sign in with Apple, styled per Apple's button guidelines (black / white in dark mode). */
+function AppleSignInBlock() {
+  const { t } = useT();
+  const navigate = useNavigate();
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+
+  async function start() {
+    setBusy(true);
+    setError("");
+    try {
+      const { signInWithApple } = await import("../../services/appleSignIn");
+      const result = await signInWithApple();
+      if (result) navigate(`/auth/google/done?method=apple${result.isNew ? "&new=1" : ""}`, { replace: true });
+    } catch {
+      setError(t("auth.apple_failed"));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return (
+    <>
+      <div className="auth-divider"><span>{t("auth.or")}</span></div>
+      <button type="button" className="btn btn-apple" onClick={() => void start()} disabled={busy}>
+        <svg viewBox="0 0 17 20" width="17" height="20" aria-hidden="true" fill="currentColor">
+          <path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2.1-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.8 1.2 1.8 2.6 3.1 2.5 1.3-.1 1.7-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.2-1.2 3-2.5 1-1.4 1.4-2.8 1.4-2.8 0-.1-2.4-1-2.4-4.1zM11.6 3c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.5-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.4z" />
+        </svg>
+        {t("auth.apple_continue")}
+      </button>
+      {error ? <p className="error-text">{error}</p> : null}
+    </>
+  );
+}
+
 function GoogleIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -337,6 +372,7 @@ export function GoogleDone() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const isNew = searchParams.get("new") === "1";
+  const method = searchParams.get("method") === "apple" ? "apple" : "google";
   const autoRestoreSession = useAppStore((state) => state.autoRestoreSession);
 
   useEffect(() => {
@@ -345,12 +381,12 @@ export function GoogleDone() {
     async function finishGoogleLogin() {
       const restored = await autoRestoreSession();
       if (!restored || cancelled) {
-        if (!cancelled) navigate("/login?error=google_failed", { replace: true });
+        if (!cancelled) navigate(`/login?error=${method}_failed`, { replace: true });
         return;
       }
 
       const pendingReferral = localStorage.getItem("slovakgo.pending-referral");
-      if (isNew) track("register", { method: "google", referred: Boolean(pendingReferral) });
+      if (isNew) track("register", { method, referred: Boolean(pendingReferral) });
       if (pendingReferral) {
         await apiClient.claimReferral(pendingReferral).catch(() => undefined);
         localStorage.removeItem("slovakgo.pending-referral");
@@ -367,7 +403,7 @@ export function GoogleDone() {
       const state = useAppStore.getState();
       const user = state.data.users.find((item) => item.id === state.currentUserId);
       if (!user) {
-        navigate("/login?error=google_failed", { replace: true });
+        navigate(`/login?error=${method}_failed`, { replace: true });
         return;
       }
 
@@ -380,7 +416,7 @@ export function GoogleDone() {
 
     finishGoogleLogin();
     return () => { cancelled = true; };
-  }, [autoRestoreSession, isNew, navigate]);
+  }, [autoRestoreSession, isNew, method, navigate]);
 
   return (
     <main className="auth-screen auth-screen--refined">

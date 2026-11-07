@@ -1,6 +1,9 @@
 import UIKit
 import Capacitor
 
+/// Brand purple shared by the launch screen and the web boot splash.
+let launchPurple = UIColor(red: 90 / 255, green: 69 / 255, blue: 214 / 255, alpha: 1)
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
@@ -8,6 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
 
         window = UIWindow(windowScene: windowScene)
+        window?.backgroundColor = launchPurple
         window?.rootViewController = NativeViewController()
         window?.makeKeyAndVisible()
 
@@ -26,13 +30,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 class NativeViewController: CAPBridgeViewController {
     override func capacitorDidLoad() {
         bridge?.registerPluginInstance(StorePlugin())
+        bridge?.registerPluginInstance(AppleSignInPlugin())
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         webView?.allowsBackForwardNavigationGestures = true
         webView?.scrollView.keyboardDismissMode = .interactive
-        webView?.backgroundColor = .systemGroupedBackground
+        // Purple shows through until the page paints its boot splash, so launch
+        // never flashes black or grey. Overscroll uses the page's own background.
+        view.backgroundColor = launchPurple
+        webView?.backgroundColor = .clear
+        webView?.scrollView.backgroundColor = .clear
         webView?.isOpaque = false
         if #available(iOS 26.0, *) {
             // The web layout already protects status/tab bars with safe-area insets.

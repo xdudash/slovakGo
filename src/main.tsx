@@ -32,6 +32,15 @@ createRoot(document.getElementById("root")!).render(
   </StrictMode>
 );
 
+// Let the mascot finish one bounce, then fade the iOS boot splash into the app.
+const bootSplash = document.getElementById("boot-splash");
+if (bootSplash) {
+  window.setTimeout(() => {
+    bootSplash.classList.add("boot-splash--hide");
+    window.setTimeout(() => bootSplash.remove(), 450);
+  }, Math.max(0, 1200 - performance.now()));
+}
+
 // Global error reporter — catches JS errors outside React tree (network errors, promise rejections, etc.)
 // Throttled to max 1 report per 5 s to prevent flooding the server.
 let _lastReportedAt = 0;

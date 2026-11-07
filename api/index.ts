@@ -24,6 +24,7 @@ import {
 } from "./_lib/admin";
 
 import { handleAppleAccount, handleAppleNotification, handleAppleTransactions } from "./_lib/apple";
+import { handleAppleSignIn } from "./_lib/appleSignIn";
 import { handleBillingCheckout, handleBillingConversions, handleBillingPortal, handleBillingWebhook } from "./_lib/stripe";
 
 import {
@@ -92,6 +93,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "POST" && route === "/auth/delete")       return await handleDeleteAccount(req, res, body);
     if (meth === "POST" && route === "/auth/deactivate")   return await handleDeactivate(req, res);
     if (meth === "GET"  && route === "/auth/google/start") return await handleGoogleStart(req, res);
+    if (meth === "POST" && route === "/auth/apple")        return await handleAppleSignIn(req, res, body);
     if (meth === "GET"  && route === "/auth/google/callback") return await handleGoogleCallback(req, res);
     
     // Sync Routes

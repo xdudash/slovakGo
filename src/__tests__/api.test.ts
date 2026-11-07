@@ -49,6 +49,24 @@ vi.mock("@apple/app-store-server-library", async (importOriginal) => {
   return { ...actual, SignedDataVerifier };
 });
 
+// Sign in with Apple: tokens issued by the fake remote key set are base64url JSON;
+// every other jose call (session cookies) keeps the real implementation.
+const APPLE_JWKS = vi.hoisted(() => Symbol("apple-jwks"));
+vi.mock("jose", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("jose")>();
+  return {
+    ...actual,
+    createRemoteJWKSet: () => APPLE_JWKS,
+    jwtVerify: async (token: string, key: unknown, options?: { audience?: string }) => {
+      if (key !== APPLE_JWKS) return actual.jwtVerify(token, key as Parameters<typeof actual.jwtVerify>[1], options);
+      if (token.startsWith("bad.")) throw new Error("signature verification failed");
+      const payload = JSON.parse(Buffer.from(token.split(".")[1], "base64url").toString());
+      if (payload.aud !== options?.audience) throw new Error("unexpected audience");
+      return { payload, protectedHeader: { alg: "RS256" } };
+    },
+  };
+});
+
 // Handler is imported AFTER env vars are set
 import handler from "../../api/index";
 
@@ -1536,5 +1554,41 @@ describe("App Store subscriptions", () => {
     expect(test.status).toBe(200);
     const forged = await call("POST", ["billing", "apple", "notifications"], { body: { signedPayload: "bad.payload.sig" } });
     expect(forged.status).toBe(400);
+  });
+});
+
+describe("Sign in with Apple", () => {
+  const token = (claims: Record<string, unknown>) => `h.${Buffer.from(JSON.stringify({ iss: "https://appleid.apple.com", aud: "sk.slovakgo.app", ...claims })).toString("base64url")}.s`;
+  const signIn = (body: Record<string, unknown>) => call("POST", ["auth", "apple"], { body });
+
+  it("creates a learner on first sign-in and opens a session", async () => {
+    const { status, body, headers } = await signIn({ identityToken: token({ sub: "apple-new", email: "new@privaterelay.appleid.com", email_verified: true }), givenName: "Olena", familyName: "K" });
+    expect(status).toBe(200);
+    expect(body.isNew).toBe(true);
+    expect(body.user).toMatchObject({ email: "new@privaterelay.appleid.com", name: "Olena K", authProvider: "apple" });
+    expect(String(headers["Set-Cookie"] ?? "")).toContain("sl_session=");
+  });
+
+  it("signs the same Apple ID back into the same account", async () => {
+    const first = await signIn({ identityToken: token({ sub: "apple-repeat", email: "repeat@example.com", email_verified: true }) });
+    const again = await signIn({ identityToken: token({ sub: "apple-repeat" }) });
+    expect(again.status).toBe(200);
+    expect(again.body.isNew).toBe(false);
+    expect((again.body.user as Record<string, unknown>).id).toBe((first.body.user as Record<string, unknown>).id);
+  });
+
+  it("links an existing email account instead of creating a duplicate", async () => {
+    const db = createClient({ url: `file:${TEST_DB}` });
+    await db.execute("INSERT INTO users (id, email, pw_hash, name_text, sub_status, created_at, updated_at) VALUES ('user-pw', 'pw@example.com', 'hash', 'Petro', 'free', datetime('now'), datetime('now'))");
+    const { body } = await signIn({ identityToken: token({ sub: "apple-link", email: "pw@example.com", email_verified: true }) });
+    expect(body.isNew).toBe(false);
+    expect((body.user as Record<string, unknown>).id).toBe("user-pw");
+  });
+
+  it("rejects forged tokens, other apps' tokens and new accounts without email", async () => {
+    expect((await signIn({ identityToken: "bad.token.sig" })).status).toBe(401);
+    expect((await signIn({ identityToken: token({ sub: "x", aud: "com.other.app", email: "x@example.com" }) })).status).toBe(401);
+    expect((await signIn({ identityToken: token({ sub: "apple-noemail" }) })).status).toBe(422);
+    expect((await signIn({})).status).toBe(422);
   });
 });

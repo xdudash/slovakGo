@@ -4,7 +4,7 @@
 
 ## Коротко
 
-SlovakGO — React/Vite PWA (уроки словацкого для украинцев), обёрнутое в iOS-приложение на Capacitor 8. В iOS подписка Plus продаётся только через App Store In-App Purchase (StoreKit 2); веб продолжает продавать через Stripe. Код готов и проверен тестами. Страница в App Store Connect заполнена. Сборка 1.0 (1) загружена в App Store Connect 7 ноября 2026, загрузчик подтвердил `Upload succeeded` и начало обработки. Сборка обработана и готова к внутреннему тестированию. Осталось: юридические и финансовые пункты владельца аккаунта, тест покупки, деплой сервера и отправка на review.
+SlovakGO — React/Vite PWA (уроки словацкого для украинцев), обёрнутое в iOS-приложение на Capacitor 8. В iOS подписка Plus продаётся только через App Store In-App Purchase (StoreKit 2); веб продолжает продавать через Stripe. Код готов и проверен тестами. Страница в App Store Connect заполнена. В TestFlight сборки 1.0 (1) и 1.0 (2), обе готовы к тестированию. Договор Paid Apps активен. Осталось: влить PR #28 (деплой сервера покупок и страницы политики), App Privacy, скриншоты подписок для review, тест покупки, переключить версию на build 2 и отправить на review.
 
 ## Репозиторий и ветка
 
@@ -63,7 +63,7 @@ SlovakGO — React/Vite PWA (уроки словацкого для украин
 
 ### Только владелец (агенту нельзя: юридические заявления, финансы, пароли)
 Готовое письмо: `output/app-store-business-todo.md`.
-1. **Business → Paid Apps Agreement**: статус «Pending User Info» подтверждён 7 ноября. Банк уже добавлен, обрабатывается Apple (до 24 часов по сообщению интерфейса); DSA активно; U.S. Certificate of Foreign Status активно; U.S. Substitute Form W-8BEN-E — налоговая информация ещё не указана. Финансовые поля заполняет ответственный владелец.
+1. **Business → Paid Apps Agreement**: **Active** (проверено 7 ноября, позже в тот же день). Банк Active, W-8BEN-E и Certificate of Foreign Status Active, DSA и DAC7 Active. Пункт закрыт; sandbox-покупки теперь возможны.
 2. **App Information → Content Rights**: выполнено, ответ «No» подтверждён на странице.
 3. **App Privacy**: проверить и опубликовать ответы из `docs/APP-PRIVACY-DRAFT.md` и URL политики после деплоя. Старый список в письме неполон; в коде есть маркетинговые письма по согласию, персонализация, страна профиля и диагностика.
 4. **App Review Information**: заполнено; проверить вход демо-аккаунта на устройстве.
@@ -74,7 +74,9 @@ SlovakGO — React/Vite PWA (уроки словацкого для украин
 1. Иконка и документ передачи добавлены в `feat/ios-in-app-purchases`; проверить результаты CI после push.
 2. **Деплой:** проверить Vercel preview PR #28 (`/privacy` на лендинге, `GET /api/ping`, `GET /api/billing/apple/account` → 401 без сессии), затем с согласия владельца влить PR в `main`.
 3. **Подпись сборки исправлена 7 ноября 2026.** В Xcode добавлен Apple ID с командой World Work `6TU82NKL53` (Admin, доступ Certificates, Identifiers & Profiles). Локальный `ios/Signing.local.xcconfig` указывает на эту команду. Экспортирован `ios-build/app-store/App.ipa`, версия 1.0 (1): подпись проверена `codesign --verify --deep --strict`, TeamIdentifier `6TU82NKL53`, App Store provisioning profile для `sk.slovakgo.app`. Push в приложении по-прежнему выключен.
-4. **Сборка и TestFlight:** сборка 1.0 (1) успешно загружена 7 ноября 2026, обработка Apple завершена, сборка готова к тестированию. Лог загрузки на этом Mac: `/tmp/slovakgo-upload.log`. Следующая загрузка должна иметь build number 2 или выше.
+4. **Сборка и TestFlight:** в TestFlight две сборки, обе «Ready to Submit» и в группе `SlovakGO Internal`: **1.0 (1)** (загружена 02:28) и **1.0 (2)** (загружена 04:06, с доработками дизайна из коммита `49c318d`; архив `ios-build/SlovakGO-2-final-signed.xcarchive`). Загрузка build 2 через `xcodebuild -exportArchive` упала с «You do not have required role or permission» (`/tmp/slovakgo-build2-upload.log`); затем её загрузили вручную через Xcode. **В версии 1.0 выбрана сборка 1, перед отправкой на review переключить на 2.** Следующая загрузка — build number 3 или выше.
+   - Боевой сервер ещё без кода PR #28: `https://app.slovakgo.sk/api/billing/apple/account` → 404, `https://www.slovakgo.sk/privacy` → 404. Пока PR не влит, покупка в TestFlight не будет засчитана сервером, а URL политики для App Privacy не работает.
+   - Подписки в статусе «Prepare for Submission»: не хватает скриншота экрана покупки (Review Information → Screenshot) у каждой.
 
    Команды для повторной сборки:
    ```sh

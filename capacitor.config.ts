@@ -7,7 +7,7 @@ const config: CapacitorConfig = {
   webDir: 'dist-native',
   ios: {
     contentInset: 'never',
-    backgroundColor: '#f4f4f2',
+    backgroundColor: '#5a45d6',
     preferredContentMode: 'mobile',
   },
   plugins: {

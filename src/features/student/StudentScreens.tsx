@@ -13,7 +13,7 @@ import { PageSkeleton } from "../../components/Skeleton";
 import { PWAInstallBanner } from "../../components/PWAInstallBanner";
 import { apiClient } from "../../services/apiClient";
 import { isNativeApp, openExternalUrl, PUBLIC_APP_ORIGIN } from "../../services/platform";
-import { AppStoreOffer } from "../../components/AppStoreOffer";
+import { AppStoreOffer, AppStorePaywall } from "../../components/AppStoreOffer";
 import { manageAppStoreSubscription } from "../../services/appStoreBilling";
 
 const webSubscriptionNote = "Підписку оформлено на сайті app.slovakgo.sk. Керувати нею можна там, увійшовши в той самий акаунт.";
@@ -2586,7 +2586,7 @@ function SettingsScreen() {
 
   async function saveProfile() {
     const trimmedEmail = email.trim().toLowerCase();
-    if (user!.authProvider === "google" && trimmedEmail !== user!.email.toLowerCase()) {
+    if ((user!.authProvider === "google" || user!.authProvider === "apple") && trimmedEmail !== user!.email.toLowerCase()) {
       setEmailError("Email Google-акаунта змінюється в налаштуваннях Google.");
       return;
     }
@@ -2690,11 +2690,11 @@ function SettingsScreen() {
             <Field
               label={t("student.settings.email")}
               value={email}
-              disabled={user.authProvider === "google"}
+              disabled={user.authProvider === "google" || user.authProvider === "apple"}
               onChange={(e) => { setEmail(e.target.value); setEmailError(""); setEmailSaved(false); }}
             />
-            {user.authProvider === "google" && <p className="muted sm">Email керується через Google.</p>}
-            {user.authProvider !== "google" && email.trim().toLowerCase() !== user.email.toLowerCase() && (
+            {(user.authProvider === "google" || user.authProvider === "apple") && <p className="muted sm">Email керується через {user.authProvider === "apple" ? "Apple" : "Google"}.</p>}
+            {user.authProvider !== "google" && user.authProvider !== "apple" && email.trim().toLowerCase() !== user.email.toLowerCase() && (
               <Field type="password" label={t("student.settings.password_current")} value={emailPassword} onChange={(e) => setEmailPassword(e.target.value)} />
             )}
             {emailError && <p className="field-error">{emailError}</p>}
@@ -2970,6 +2970,17 @@ export function PaywallScreen() {
     );
   }
 
+  if (isNativeApp) {
+    return (
+      <AppStorePaywall
+        adminPreview={adminPreview}
+        onActivated={() => navigate("/app/path")}
+        onProfile={() => navigate("/app/profile")}
+        onLogout={() => { useAppStore.getState().logout(); navigate("/login"); }}
+      />
+    );
+  }
+
   async function handleSubscribe() {
     if (adminPreview) return;
     setLoading(true);
@@ -2992,11 +3003,9 @@ export function PaywallScreen() {
         <h1 style={{ fontSize: "1.8rem", fontWeight: 900, color: "var(--fg)", marginBottom: "8px" }}>
           Перші 10 уроків пройдено 🎉
         </h1>
-        {!isNativeApp && (
-          <p style={{ color: "var(--muted)", fontSize: "0.95rem", margin: 0 }}>
-            {offerCopy[lang].trial}
-          </p>
-        )}
+        <p style={{ color: "var(--muted)", fontSize: "0.95rem", margin: 0 }}>
+          {offerCopy[lang].trial}
+        </p>
       </div>
 
       {error && (
@@ -3034,7 +3043,7 @@ export function PaywallScreen() {
         </ul>
       </section>
 
-      {isNativeApp ? <AppStoreOffer onActivated={() => navigate("/app/path")} /> : <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
         {!user.hasUsedTrial ? (
           <>
             <Button onClick={handleSubscribe} disabled={loading || adminPreview} style={{ width: "100%" }}>
@@ -3054,14 +3063,12 @@ export function PaywallScreen() {
             </Button>
           </>
         )}
-      </div>}
+      </div>
 
       <div style={{ textAlign: "center", marginTop: "24px" }}>
-        {!isNativeApp && (
-          <p style={{ fontSize: "0.8rem", color: "var(--muted)", margin: "0 0 16px 0" }}>
-            Після пробного періоду — €3/місяць. Скасувати можна в будь-який момент через кабінет Stripe.
-          </p>
-        )}
+        <p style={{ fontSize: "0.8rem", color: "var(--muted)", margin: "0 0 16px 0" }}>
+          Після пробного періоду — €3/місяць. Скасувати можна в будь-який момент через кабінет Stripe.
+        </p>
         <div style={{ display: "flex", justifyContent: "center", gap: "16px" }}>
           <button
             type="button"

@@ -205,6 +205,13 @@ export const apiClient = {
     return apiRequest<{ url: string }>('/billing/portal', { method: 'POST' });
   },
 
+  appleSignIn(payload: { identityToken: string; authorizationCode?: string; givenName?: string; familyName?: string }) {
+    return apiRequest<{ ok: boolean; isNew: boolean; user: User }>("/auth/apple", {
+      method: "POST",
+      body: JSON.stringify(payload)
+    }, 20_000);
+  },
+
   appleAccount() {
     return apiRequest<{ appAccountToken: string; productIds: string[] }>("/billing/apple/account");
   },
