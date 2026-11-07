@@ -1,4 +1,5 @@
 import { CompanionNote, GuideCharacter } from "../../components/LearningCompanion";
+import { LearningIcon } from '../../components/LearningIcons';
 import { trackMeta } from "../../../shared/metaPixel";
 import offerCopy from "../../../shared/offerCopy.json";
 import { syncMetaBilling } from "../../services/metaConversions";
@@ -106,10 +107,10 @@ function TopStats() {
   return (
     <div className="sticky-stats">
       <div className="level-badge">{progress.currentLevel}</div>
-      <div className="stat-chip xp" aria-label={`${progress.xpTotal} XP`}><Zap size={14} /> {new Intl.NumberFormat(lang, { notation: "compact", maximumFractionDigits: 1 }).format(progress.xpTotal)} XP</div>
+      <div className="stat-chip xp" aria-label={`${progress.xpTotal} XP`}><LearningIcon name="xp" size={14} /> {new Intl.NumberFormat(lang, { notation: "compact", maximumFractionDigits: 1 }).format(progress.xpTotal)} XP</div>
       <div className={`stat-chip streak${streakAtRisk ? " at-risk" : ""}`}>
-        <Flame size={14} /> {progress.streakDays}
-        {progress.streakFreezeCount > 0 && <span className="freeze-badge">❄</span>}
+        <LearningIcon name="streak" size={14} /> {progress.streakDays}
+        {progress.streakFreezeCount > 0 && <span className="freeze-badge"><LearningIcon name="freeze" size={14} /></span>}
       </div>
       <Link to="/app/levels" className="stat-chip level-link">{t("student.top_stats_level")}</Link>
     </div>
@@ -242,7 +243,7 @@ function PathScreen() {
   return (
     <main className="page-content path-page">
       <PageHeader
-        title={`${t("student.experience.hello")}, ${user.name.split(" ")[0]}!`}
+        title={isNativeApp ? t('nav.student.path') : `${t("student.experience.hello")}, ${user.name.split(" ")[0]}!`}
         subtitle={`${progress.currentLevel} · ${t(`student.level_desc.${progress.currentLevel}`)}`}
       />
 
@@ -1368,7 +1369,7 @@ function LessonPlayer() {
       {phase === "result" && completionData && lesson.resultScreen && (
         <div className="lesson-result-screen">
           <div className="lesson-result-header">
-            <div className="lesson-result-emoji">{completionData.wrong.length === 0 ? "🏆" : "🎉"}</div>
+            <div className="lesson-result-emoji">{isNativeApp ? <Trophy size={40} aria-hidden="true" /> : completionData.wrong.length === 0 ? "🏆" : "🎉"}</div>
             {lesson.resultScreen.title ? <h2 className="lesson-result-title">{tx(lesson.resultScreen.title)}</h2> : null}
             {(lesson.resultScreen.text || lesson.resultScreen.subtitle) ? <p className="lesson-result-text">{tx(lesson.resultScreen.text ?? lesson.resultScreen.subtitle)}</p> : null}
             <div className="lesson-result-xp">+{completionData.xp} XP</div>

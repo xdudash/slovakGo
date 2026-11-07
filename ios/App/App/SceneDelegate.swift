@@ -34,5 +34,10 @@ class NativeViewController: CAPBridgeViewController {
         webView?.scrollView.keyboardDismissMode = .interactive
         webView?.backgroundColor = .systemGroupedBackground
         webView?.isOpaque = false
+        if #available(iOS 26.0, *) {
+            // The web layout already protects status/tab bars with safe-area insets.
+            webView?.scrollView.topEdgeEffect.isHidden = true
+            webView?.scrollView.bottomEdgeEffect.isHidden = true
+        }
     }
 }

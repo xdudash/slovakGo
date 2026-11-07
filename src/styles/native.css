@@ -4,15 +4,26 @@ html.native-app {
   font: -apple-system-body;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-text-size-adjust: 100%;
-  --bg: #f2f2f7;
+  --bg: #f4f4f2;
   --surface: #fff;
-  --surface-soft: #f4f1ff;
-  --fg: #211946;
-  --muted: #645f76;
-  --border: #e0dfe7;
-  --accent: #6246d5;
-  --accent-soft: #eee9ff;
-  --native-tab-height: 64px;
+  --surface-soft: #eaeae6;
+  --fg: #242624;
+  --muted: #646862;
+  --border: #d9dcd6;
+  --accent: #805b16;
+  --accent-soft: #f5ead3;
+  --native-tab-height: 52px;
+  --action: #e9bb66; --action-ink: #282111;
+  --success: #347454; --success-soft: #e5f1e9;
+  --error: #a43b43; --error-soft: #f9e9eb;
+  --yellow: var(--action); --yellow-dark: var(--action);
+  --yellow-soft: var(--accent-soft);
+  --orange: #935321; --orange-soft: #f5e9df;
+  --x-face: var(--surface); --x-face-accent: var(--accent-soft);
+  --x-face-pick: var(--accent-soft); --x-face-ok: var(--success-soft); --x-face-no: var(--error-soft);
+  --x-edge: var(--border); --x-edge-accent: var(--accent); --x-edge-pick: var(--accent);
+  --x-edge-ok: var(--success); --x-edge-no: var(--error);
+  --x-ink-ok: var(--success); --x-ink-no: var(--error); --x-ink-pick: var(--fg);
   background: var(--bg);
 }
 .native-app body { background: var(--bg); }
@@ -24,16 +35,18 @@ html.native-app {
 .native-app :is(input:not([type=checkbox]), textarea, select) {
   min-width: 0; font-size: max(1rem, 16px); color: var(--fg); background: var(--surface);
 }
-.native-app input::placeholder { color: var(--muted); opacity: 1; }
+.native-app input::placeholder,
+.native-app .app-frame--student input::placeholder,
+.native-app .app-frame--student .search-box input::placeholder { color: var(--muted); opacity: 1; }
 .native-app :is(.app-frame, .app-frame--student) {
   width: 100%; max-width: none; min-height: 100dvh; height: auto;
   display: block; margin: 0; border: 0; border-radius: 0;
   box-shadow: none; background: var(--bg); overflow: visible;
 }
 .native-app .app-content { overflow: visible; min-height: 100dvh; }
-.native-app .app-main {
+.native-app .app-frame .app-main {
   min-height: 100dvh; overflow: visible;
-  padding-bottom: calc(var(--native-tab-height) + env(safe-area-inset-bottom, 0px) + 20px);
+  padding-bottom: calc(var(--native-tab-height) + env(safe-area-inset-bottom, 0px) + 12px);
 }
 .native-app .app-frame--student .page-content {
   width: 100%; max-width: 800px; margin-inline: auto;
@@ -41,22 +54,23 @@ html.native-app {
   gap: 22px;
 }
 .native-app .app-main > .page-content:first-child { padding-top: calc(env(safe-area-inset-top, 0px) + 18px); }
-.native-app .page-header h1 { font-size: 1.75rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.025em; }
+.native-app .app-frame--student .page-header h1 { font-size: 1.6rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.025em; }
 .native-app .page-header p { font-size: .94rem; line-height: 1.5; color: var(--muted); }
-.native-app .app-frame--student .card {
+.native-app :is(.app-frame--student, .modal-dialog) .card {
   background: var(--surface); color: var(--fg); border: 1px solid var(--border);
   border-radius: 16px; padding: 18px; box-shadow: none;
 }
-.native-app .app-frame--student .btn {
+.native-app :is(.app-frame--student, .modal-dialog) .btn {
   min-height: 48px; font-size: 1rem; line-height: 1.3; padding: 13px 18px;
-  border-radius: 12px; box-shadow: none;
+  border-radius: 12px; box-shadow: none; font-weight: 600; letter-spacing: normal;
 }
-.native-app .btn-primary { color: #211946; }
-.native-app .app-frame--student .btn-primary { border-color: transparent; box-shadow: none; }
-.native-app .app-frame--student .btn-secondary { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
-.native-app .app-frame--student .btn-ghost { color: var(--accent); }
-.native-app .app-frame--student .btn:not(:disabled):hover { transform: none; box-shadow: none; }
-.native-app .app-frame--student .btn:not(:disabled):active { opacity: .78; transform: scale(.99); }
+.native-app .btn-primary { color: var(--action-ink); background: var(--action); }
+.native-app :is(.app-frame--student, .modal-dialog) .btn-primary { color: var(--action-ink); background: var(--action); border-color: transparent; box-shadow: none; }
+.native-app :is(.app-frame--student, .modal-dialog) .btn-secondary { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+.native-app :is(.app-frame--student, .modal-dialog) .btn-ghost { color: var(--accent); background: transparent; border-color: var(--border); }
+.native-app :is(.app-frame--student, .modal-dialog) .btn-danger { background: var(--error-soft); color: var(--error); border: 1px solid var(--error); }
+.native-app :is(.app-frame--student, .modal-dialog) .btn:not(:disabled):hover { transform: none; box-shadow: none; }
+.native-app :is(.app-frame--student, .modal-dialog) .btn:not(:disabled):active { opacity: .78; transform: scale(.99); }
 .native-app :is(.icon-button, .back-btn, .lesson-top > button) { min-width: 44px; min-height: 44px; }
 .native-app .app-frame--student .field input,
 .native-app .app-frame--student .search-box {
@@ -70,10 +84,14 @@ html.native-app {
 }
 .native-app .stat-chip.level-link { color: var(--accent); background: var(--accent-soft); }
 .native-app :is(.level-badge, .stat-chip) { font-size: .76rem; }
-.native-app .learning-hero { grid-template-columns: minmax(0, 1fr) 94px; padding: 22px; gap: 14px; border-radius: 20px; }
-.native-app .learning-hero h2 { font-size: 1.5rem; line-height: 1.2; }
-.native-app .learning-hero p { font-size: .94rem; line-height: 1.5; }
-.native-app .learning-hero .btn { font-size: .94rem; margin-top: 18px; }
+.native-app .learning-hero { grid-template-columns: minmax(0, 1fr); padding: 20px; gap: 16px; border-radius: 16px; background: var(--surface); color: var(--fg); border: 1px solid var(--border); }
+.native-app .learning-hero-friend { display: none; }
+.native-app .learning-hero-level { display: none; }
+.native-app .learning-hero-progress { background: var(--surface-soft); width: 100%; height: 4px; }
+.native-app .learning-hero-progress > span { background: var(--accent); }
+.native-app .learning-hero h2 { margin: 12px 0 8px; font-size: 1.5rem; line-height: 1.25; letter-spacing: -.02em; color: var(--fg); }
+.native-app .learning-hero p { font-size: .9rem; line-height: 1.5; color: var(--muted); }
+.native-app .learning-hero .btn { width: 100%; justify-content: space-between; font-size: 1rem; margin-top: 20px; }
 .native-app .companion-speech { font-size: .72rem; }
 .native-app .next-lesson-summary { min-width: 0; background: var(--surface); color: var(--fg); border-color: var(--border); }
 .native-app .next-lesson-summary strong { font-size: .9rem; overflow-wrap: anywhere; }
@@ -87,19 +105,19 @@ html.native-app {
   position: fixed; inset: auto 0 0; z-index: 30; transform: none;
   width: 100%; height: auto; min-height: 0; margin: 0;
   display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
-  padding: 5px max(6px, env(safe-area-inset-right, 0px)) calc(5px + env(safe-area-inset-bottom, 0px)) max(6px, env(safe-area-inset-left, 0px));
-  gap: 2px; background: var(--surface); border: 0; border-top: 1px solid var(--border);
+  padding: 0 max(4px, env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(4px, env(safe-area-inset-left, 0px));
+  gap: 0; align-items: start; align-content: start; background: var(--surface); border: 0; border-top: 1px solid var(--border);
   border-radius: 0; box-shadow: none;
 }
 .native-app .app-frame--student .bottom-nav-item {
-  min-width: 0; min-height: 54px; height: auto; display: grid;
-  align-content: center; justify-items: center; gap: 4px; padding: 6px 2px;
-  font-size: clamp(11px, .65rem, 13px); line-height: 1.15; font-weight: 500; color: var(--muted); border-radius: 10px;
+  min-width: 0; min-height: var(--native-tab-height); height: var(--native-tab-height); display: grid;
+  align-content: center; justify-items: center; gap: 4px; padding: 4px 2px;
+  font-size: 11px; line-height: 1.15; font-weight: 500; color: var(--muted); border-radius: 10px;
 }
-.native-app .bottom-nav-item svg { width: 23px; height: 23px; }
+.native-app .bottom-nav-item svg { width: 24px; height: 24px; }
 .native-app .app-frame--student .bottom-nav-item span { white-space: nowrap; overflow-wrap: normal; line-height: 1.15; }
 .native-app .app-frame--student .bottom-nav-item.active { color: var(--accent); background: transparent; }
-.native-app .app-frame--student .bottom-nav-item.active svg { color: var(--accent); stroke-width: 2.5; }
+.native-app .app-frame--student .bottom-nav-item.active svg { color: var(--accent); stroke-width: 2; }
 .native-app .app-frame--student :is(.nav-brand, .sidebar-companion, .sidebar-profile) { display: none; }
 .native-keyboard-open .app-frame--student .bottom-nav { display: none; }
 .native-keyboard-open .app-main { padding-bottom: 20px; }
@@ -117,7 +135,7 @@ html.native-app {
 .native-app .app-frame--student .lesson-copy { font-size: 1rem; line-height: 1.65; overflow-wrap: anywhere; }
 .native-app .app-frame--student .option { font-size: 1rem; min-height: 52px; padding: 13px 15px; line-height: 1.4; background: var(--surface); color: var(--fg); border-color: var(--border); }
 .native-app .app-frame--student .option.active { background: var(--accent-soft); border-color: var(--accent); }
-.native-app .lesson-bottom { position: sticky; bottom: 0; padding-block: 10px; background: var(--bg); z-index: 5; }
+.native-app .lesson-bottom { position: sticky; bottom: 0; padding: 12px 0 calc(12px + env(safe-area-inset-bottom, 0px)); background: var(--bg); z-index: 5; }
 .native-app .app-frame--student .profile-hero { margin: 0; padding: calc(env(safe-area-inset-top, 0px) + 16px) 18px 18px; background: var(--bg); border: 0; border-radius: 0; }
 .native-app .profile-hero-info { min-width: 0; }
 .native-app .app-frame--student .profile-hero-info h1 { font-size: 1.35rem; line-height: 1.3; overflow-wrap: anywhere; white-space: normal; overflow: visible; }
@@ -139,6 +157,7 @@ html.native-app {
 .native-app .settings-page .page-header h1 { font-size: 1.6rem; }
 .native-app .settings-page .back-btn { background: var(--surface); color: var(--accent); border: 0; border-radius: 12px; }
 .native-app .lang-picker { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding: 0; }
+.native-app.native-large-text .lang-picker { grid-template-columns: minmax(0, 1fr); }
 .native-app .lang-btn { min-width: 0; min-height: 48px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--fg); box-shadow: none; font-size: .94rem; font-weight: 500; }
 .native-app .lang-btn--active { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
 .native-app .toggle-row { min-height: 52px; padding-block: 10px; font-size: 1rem; font-weight: 400; border-color: var(--border); cursor: pointer; }
@@ -164,11 +183,11 @@ html.native-app {
   padding: calc(env(safe-area-inset-top, 0px) + 24px) max(20px, env(safe-area-inset-right, 0px)) calc(24px + env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px));
   gap: 24px; background: var(--bg);
 }
-.native-app .auth-screen .brand-panel { display: grid; grid-template-columns: minmax(0, 1fr) 72px; align-items: center; width: 100%; min-height: 0; padding: 20px; gap: 10px 16px; border-radius: 16px; box-shadow: none; background: #5840c5; color: #fff; }
+.native-app .auth-screen .brand-panel { display: grid; grid-template-columns: minmax(0, 1fr) 72px; align-items: center; width: 100%; min-height: 0; padding: 20px; gap: 10px 16px; border-radius: 16px; box-shadow: none; background: var(--surface); color: var(--fg); border: 1px solid var(--border); }
 .native-app .auth-screen .brand-panel::after { display: none; }
 .native-app .auth-screen .brand-panel > * { max-width: 100%; }
 .native-app .auth-screen .brand-panel h1 { grid-column: 1; grid-row: 1; font-size: 1.6rem; margin: 0; letter-spacing: -0.025em; }
-.native-app .auth-screen .brand-panel p { grid-column: 1; grid-row: 2; font-size: .85rem; line-height: 1.45; color: #eeeaff; }
+.native-app .auth-screen .brand-panel p { grid-column: 1; grid-row: 2; font-size: .85rem; line-height: 1.45; color: var(--muted); }
 .native-app .auth-screen .auth-companion { grid-column: 2; grid-row: 1 / 3; width: 72px; height: 72px; position: static; transform: none; }
 .native-app .auth-card { background: var(--surface); color: var(--fg); border: 0; border-radius: 16px; padding: 20px; box-shadow: none; gap: 18px; }
 .native-app .auth-card-heading h2 { font-size: 1.5rem; }
@@ -177,12 +196,12 @@ html.native-app {
 .native-app .auth-link a { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent); font-weight: 600; }
 .native-app .auth-card .field input { min-height: 48px; background: var(--surface); color: var(--fg); border: 1px solid var(--border); border-radius: 10px; }
 .native-app .auth-card .btn-primary { min-height: 50px; box-shadow: none; font-size: 1rem; }
-.native-app .modal-overlay { padding: calc(env(safe-area-inset-top, 0px) + 16px) max(16px, env(safe-area-inset-right, 0px)) calc(env(safe-area-inset-bottom, 0px) + 16px) max(16px, env(safe-area-inset-left, 0px)); }
+.native-app .modal-overlay { background: rgba(0, 0, 0, .52); padding: calc(env(safe-area-inset-top, 0px) + 16px) max(16px, env(safe-area-inset-right, 0px)) calc(env(safe-area-inset-bottom, 0px) + 16px) max(16px, env(safe-area-inset-left, 0px)); }
 .native-app .modal-dialog { max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 32px); }
 .native-app .sync-toast { max-width: calc(100% - 32px); white-space: normal; background: var(--fg); color: var(--surface); }
 @media (max-width: 359px) {
   .native-app .app-frame--student .page-content { padding-inline: 12px; }
-  .native-app .learning-hero { grid-template-columns: minmax(0, 1fr) 68px; padding: 18px; gap: 10px; }
+  .native-app .learning-hero { padding: 16px; gap: 12px; }
   .native-app .learning-hero h2 { font-size: 1.3rem; }
   .native-app .learning-hero-friend .guide-character { width: 68px; }
   .native-app .auth-screen { padding-inline: 14px; }
@@ -195,29 +214,98 @@ html.native-app {
 }
 @media (prefers-color-scheme: dark) {
   html.native-app {
-    --bg: #15131c; --surface: #24212e; --surface-soft: #302a42;
-    --fg: #f1edf9; --muted: #bbb4cc; --border: #494252;
-    --accent: #b5a1ff; --accent-soft: #39304f;
-    --success: #70d3a4; --error: #ff929d; --orange: #ffb28b;
+    --bg: #171918; --surface: #222522; --surface-soft: #2d312d;
+    --fg: #f0f1ed; --muted: #b0b7ae; --border: #3a4039;
+    --accent: #e4ba70; --accent-soft: #373124;
+    --action: #e4ba70; --action-ink: #242116;
+    --success: #9ac9ad; --success-soft: #24372c;
+    --error: #edaaae; --error-soft: #40292d;
+    --orange: #dbb28f; --orange-soft: #382e25;
   }
-  .native-app :is(.level-badge, .stat-chip.level-link, .lesson-topic, .question-counter, .lesson-attempts-chip) { background: var(--accent-soft); color: var(--accent); }
-  .native-app .stat-chip.xp { background: #3b321d; color: #ffe08b; }
-  .native-app .stat-chip.streak { background: #402b25; color: #ffbd9e; }
-  .native-app .streak-risk-banner { background: #402b25; color: #ffbd9e; border-color: #80533d; box-shadow: none; }
-  .native-app .streak-risk-text :is(strong, span) { color: inherit; }
-  .native-app .app-frame--student :is(.scenario-card, .league-card, .result-card, .profile-hero, .xp-chart-card, .word-card, .practice-result-word, .empty, .lesson-attempts-note) { background: var(--surface); color: var(--fg); border-color: var(--border); }
-  .native-app :is(.scenario-badge, .practice-types, .leader-row.me, .practice-controls, .progress-track) { background: var(--surface-soft); color: var(--fg); }
-  .native-app :is(.phrase-sk, .leader-name, .leader-xp, .word-group-header, .lesson-attempts-intro, .stat-card strong, .profile-name) { color: var(--fg); }
-  .native-app :is(.phrase-uk, .profile-hero p, .stat-card > span) { color: var(--muted); }
-  .native-app .app-frame--student :is(.option.option--correct, .lesson-feedback.correct) { color: #a4eac6; background: #183a2a; border-color: #397b58; }
-  .native-app .app-frame--student :is(.option.option--wrong, .lesson-feedback.wrong) { color: #ffbac3; background: #482730; border-color: #945363; }
-  .native-app .profile-avatar { color: #211946; }
-  .native-app .auth-languages button { color: var(--muted); }
-  .native-app .auth-languages button.active { color: var(--accent); background: var(--accent-soft); border-color: var(--border); }
 }
+
+/* Native surfaces share tokens; no light-only colors leak in from web cards. */
+.native-app .app-frame--student :is(.scenario-card, .league-card, .result-card, .xp-chart-card, .word-card, .practice-result-word, .empty, .lesson-attempts-note, .practice-controls, .stat-card, .word-detail-card, .companion-note) {
+  background: var(--surface); color: var(--fg); border-color: var(--border); box-shadow: none;
+}
+.native-app .app-frame--student :is(.scenario-badge, .practice-types, .leader-row.me, .progress-track, .practice-type-chip, .preview-access-banner) {
+  background: var(--surface-soft); color: var(--fg); border-color: var(--border);
+}
+.native-app .app-frame--student :is(.phrase-sk, .leader-name, .leader-xp, .lesson-attempts-intro, .stat-card strong, .profile-name, .topic-header h3, .lesson-node-label h3, .settings-page .card h3) { color: var(--fg); }
+.native-app .app-frame--student :is(.phrase-uk, .profile-hero p, .stat-card > span, .word-group-header, .lesson-node-label p, .topic-header p, .companion-note-copy p) { color: var(--muted); }
+.native-app .app-frame--student :is(.level-badge, .stat-chip) { background: transparent; color: var(--muted); border-radius: 8px; }
+.native-app .app-frame--student .level-badge { background: var(--surface-soft); color: var(--fg); }
+.native-app .app-frame--student .stat-chip.level-link { color: var(--accent); background: transparent; }
+.native-app .app-frame--student .stat-chip.streak { color: var(--orange); box-shadow: none; }
+.native-app .app-frame--student .stat-chip.streak.at-risk { background: transparent; animation: none; box-shadow: none; }
+.native-app .freeze-badge { display: inline-flex; color: var(--muted); }
+.native-app .streak-risk-banner { background: var(--orange-soft); color: var(--orange); border: 1px solid var(--border); box-shadow: none; }
+.native-app .streak-risk-text :is(strong, span) { color: inherit; }
+.native-app .app-frame--student :is(.lesson-topic, .question-counter, .lesson-attempts-chip) { background: var(--surface-soft); color: var(--muted); }
+.native-app .app-frame--student .lesson-node { box-shadow: none; border-radius: 14px; }
+.native-app .app-frame--student .lesson-node.active { background: var(--action); color: var(--action-ink); border-color: var(--action); }
+.native-app .app-frame--student .lesson-node.available { background: var(--surface-soft); color: var(--fg); border-color: var(--border); }
+.native-app .app-frame--student .lesson-node.completed { background: var(--success-soft); color: var(--success); border-color: transparent; }
+.native-app .app-frame--student .lesson-node.locked { background: var(--surface-soft); color: var(--muted); border-color: var(--border); }
+.native-app .app-frame--student .connector { background: var(--border); }
+.native-app .app-frame--student .connector.done { background: var(--success); }
+.native-app .app-frame--student .topic-locked-overlay { background: var(--surface-soft); border-color: var(--border); }
+.native-app .app-frame--student .topic-locked-overlay h3 { color: var(--muted); }
+.native-app .app-frame--student :is(.xp-bar, .league-bar, .daily-goal-fill) { background: var(--accent); box-shadow: none; }
+.native-app .app-frame--student :is(.daily-goal-track, .league-track) { background: var(--surface-soft); }
+.native-app .app-frame--student :is(.option.option--correct, .lesson-feedback.correct) { color: var(--success); background: var(--success-soft); border-color: var(--success); }
+.native-app .app-frame--student :is(.option.option--wrong, .lesson-feedback.wrong) { color: var(--error); background: var(--error-soft); border-color: var(--error); }
+.native-app .app-frame--student :is(.option.active, .word-token.selected, .blank-slot.active) { background: var(--accent-soft); color: var(--fg); border-color: var(--accent); }
+.native-app .profile-avatar { background: var(--surface-soft); color: var(--accent); box-shadow: none; }
+.native-app .auth-languages button { color: var(--muted); }
+.native-app .auth-languages button.active { color: var(--accent); background: var(--accent-soft); border-color: var(--border); }
+.native-app .app-frame--student :is(button, a, input, select, summary):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.native-app .bottom-nav { backdrop-filter: none; -webkit-backdrop-filter: none; }
+.native-app .app-frame--student .word-card:hover { box-shadow: none; transform: none; }
+.native-app .app-frame--student .page-header h1 { text-wrap: pretty; }
+.native-app .app-frame--student .bottom-nav-item span { display: block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+.native-app .app-frame--student .stat-chip { font-variant-numeric: tabular-nums; }
+.native-app .app-frame--student .practice-controls { border-color: var(--border); }
+.native-app .app-frame--student :is(.companion-note, .empty--companion) > .guide-character { display: none; }
+.native-app .app-frame--student .companion-note { grid-template-columns: minmax(0, 1fr); }
+.native-app :is(.app-frame--student, .modal-dialog) :is(.word-detail-example, .shop-comparison, .lesson-intro-figure, .lesson-start-icon, .option-marker) { background: var(--surface-soft); color: var(--fg); }
+.native-app .app-frame--student .progress-fill { background: var(--accent); }
+.native-app :is(.app-frame--student, .modal-dialog) .btn-primary:not(:disabled):hover { background: var(--action); }
+.native-app .app-frame--student .option:hover:not(:disabled):not(.option--correct):not(.option--wrong) { background: var(--surface-soft); border-color: var(--accent); }
+.native-app .app-frame--student .option.active::before { background-color: var(--accent); border-color: var(--accent); }
+/* Legacy answer states use !important shadows; keep their semantics, drop the ledge. */
+.native-app .app-frame--student :is(.option--correct, .option--wrong) { box-shadow: none !important; }
+.native-app .app-frame--student :is(.match-item, .tf-list-row, .word-token, .blank-slot, .answer-build) { box-shadow: none; }
+.native-app .app-frame--student :is(.audio-banner, .practice-timer-chip) { background: var(--surface-soft); color: var(--fg); }
+.native-app .audio-bars i { background: var(--accent); }
+.native-app .app-frame--student .shop-error-banner { background: var(--error-soft); color: var(--error); }
+.native-app .app-frame--student .shop-success-card { background: var(--success-soft); }
+.native-app .app-frame--student .lesson-result-emoji { color: var(--accent); }
+.native-app .app-frame--student .lesson-result-emoji svg { margin-inline: auto; }
+.native-app .app-frame--student :is(.field span, .word-meta, .hint-text) { color: var(--muted); }
+.native-app .app-frame--student .toggle-row input[type=checkbox]:checked { background: var(--success); }
+.native-app .app-frame--student .category-bucket .chip--placed { background: var(--surface-soft); color: var(--fg); }
+.native-app .app-frame--student :is(.category-bucket-title, .option-list--binary .option) { text-transform: none; letter-spacing: normal; font-weight: 600; }
+.native-app .app-frame--student :is(.plus-xp-banner, .plus-xp-chip, .status-pill) { background: var(--surface-soft); color: var(--accent); border-color: var(--border); font-weight: 500; box-shadow: none; }
+.native-app .app-frame--student :is(.companion-note-copy > strong, .lesson-word-sk) { color: var(--fg); }
+.native-app .app-frame--student :is(.next-lesson-summary > div > span, .next-lesson-duration, .lesson-word-example) { color: var(--muted); }
+.native-app .app-frame--student .next-lesson-summary { background: transparent; }
+.native-app .app-frame--student .next-lesson-summary > svg { color: var(--muted); }
+.native-app .app-frame--student .lesson-word-item { background: var(--surface-soft); border-color: var(--border); }
+.native-app .app-frame--student .lesson-word-uk { color: var(--accent); }
+.native-app .app-frame--student :is(.chip, .chip.active, .chip:hover, .chip:active) { box-shadow: none; animation: none; transform: none; }
+.native-app .app-frame--student .icon-button { background: var(--surface); color: var(--muted); border: 1px solid var(--border); box-shadow: none; }
+.native-app .app-frame--student .avatar:not(.avatar--photo) { background: var(--surface-soft); color: var(--fg); box-shadow: none; border: 1px solid var(--border); }
+.native-app .app-frame--student .avatar-edit { background: var(--surface); color: var(--accent); border: 1px solid var(--border); box-shadow: none; }
+.native-app .app-frame--student .heatmap-cell { box-shadow: none; }
+.native-app .app-frame--student .heatmap-cell.level-0 { background: var(--surface-soft); }
+.native-app .app-frame--student .heatmap-cell.level-1 { background: color-mix(in srgb, var(--accent) 24%, var(--surface-soft)); }
+.native-app .app-frame--student .heatmap-cell.level-2 { background: color-mix(in srgb, var(--accent) 48%, var(--surface-soft)); }
+.native-app .app-frame--student .heatmap-cell.level-3 { background: color-mix(in srgb, var(--accent) 72%, var(--surface-soft)); }
+.native-app .app-frame--student .heatmap-cell.level-4 { background: var(--accent); }
 @media (prefers-reduced-motion: reduce) {
-  .native-app .app-frame--student .btn { transition: none; }
-  .native-app .app-frame--student .btn:not(:disabled):active { transform: none; }
+  .native-app :is(.app-frame--student, .modal-dialog) .btn { transition: none; }
+  .native-app :is(.app-frame--student, .modal-dialog) .btn:not(:disabled):active { transform: none; }
 }
 
 /* App Store subscription offer */

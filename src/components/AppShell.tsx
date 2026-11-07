@@ -6,6 +6,12 @@ import type { UserRole } from "../types";
 import { useT } from "../i18n";
 import { useAppStore } from "../store/useAppStore";
 import { isNativeApp } from "../services/platform";
+import { LearningIcon, type LearningIconName } from './LearningIcons';
+
+const nativeNavIcons: Record<string, LearningIconName> = {
+  '/app/path': 'path', '/app/vocabulary': 'words', '/app/practice': 'practice',
+  '/app/leaderboard': 'ranking', '/app/profile': 'profile',
+};
 
 const navConfig = {
   student: [
@@ -104,7 +110,7 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
                 end={item.to === "/teacher" || item.to === "/admin"}
                 aria-label={t(item.key)}
               >
-                <Icon size={20} />
+                {isNativeApp && nativeNavIcons[item.to] ? <LearningIcon name={nativeNavIcons[item.to]} /> : <Icon size={20} />}
                 <span>{isNativeApp && item.to === '/app/leaderboard' ? ({ uk: 'Рейтинг', ru: 'Рейтинг', sk: 'Rebríček', en: 'Ranking' })[lang] : t(item.key)}</span>
               </NavLink>
             );
