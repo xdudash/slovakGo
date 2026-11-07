@@ -137,7 +137,8 @@ export async function handleLeaderboard(req: VercelRequest, res: VercelResponse)
   const entries = rows.map((r, idx) => ({
     userId:   String(r.id),
     name:     String(r.name_text),
-    avatar:   r.avatar ? String(r.avatar) : null,
+    // Photos stay on the profile; the 50-row leaderboard shows initials instead.
+    avatar:   r.avatar && !String(r.avatar).startsWith("data:") ? String(r.avatar) : null,
     country:  r.country ? String(r.country) : null,
     xpWeekly: String(r.week_id) === weekId ? Number(r.xp_weekly) : 0,
     rank:     idx + 1,

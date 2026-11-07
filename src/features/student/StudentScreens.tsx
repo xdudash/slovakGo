@@ -13,7 +13,7 @@ import { PageSkeleton } from "../../components/Skeleton";
 import { PWAInstallBanner } from "../../components/PWAInstallBanner";
 import { apiClient } from "../../services/apiClient";
 import { isNativeApp, openExternalUrl, PUBLIC_APP_ORIGIN } from "../../services/platform";
-import { AppStoreOffer, AppStorePaywall } from "../../components/AppStoreOffer";
+import { AppStoreOffer, AppStorePaywall, PlusIntro } from "../../components/AppStoreOffer";
 import { manageAppStoreSubscription } from "../../services/appStoreBilling";
 
 const webSubscriptionNote = "Підписку оформлено на сайті app.slovakgo.sk. Керувати нею можна там, увійшовши в той самий акаунт.";
@@ -130,7 +130,7 @@ export function StudentLayout() {
   }
 
   if (user && progress && user.role === "student" && !accessService.hasFullAccess(user.subscriptionStatus)) {
-    const alwaysAllowed = ["/app/profile", "/app/paywall", "/app/settings", "/app/levels", "/app/vocabulary", "/app/practice", "/app/leaderboard", "/app/shop"];
+    const alwaysAllowed = ["/app/profile", "/app/paywall", "/app/settings", "/app/levels", "/app/vocabulary", "/app/practice", "/app/leaderboard", "/app/shop", "/app/plus"];
     const isPath = location.pathname === "/app" || location.pathname === "/app/path";
     const lessonId = location.pathname.startsWith("/app/lesson/") ? location.pathname.slice("/app/lesson/".length) : "";
     const canPreview = accessService.canUsePreview(data.lessons, progress, user.subscriptionStatus);
@@ -155,6 +155,7 @@ export function StudentLayout() {
         <Route path="settings" element={<SettingsScreen />} />
         <Route path="levels" element={<LevelsScreen />} />
         <Route path="paywall" element={<PaywallScreen />} />
+        <Route path="plus" element={<PlusScreen />} />
       </Routes>
     </AppShell>
   );
@@ -247,7 +248,17 @@ function PathScreen() {
         subtitle={`${progress.currentLevel} · ${t(`student.level_desc.${progress.currentLevel}`)}`}
       />
 
-      {previewMode && (
+      {previewMode && isNativeApp && (
+        <section className="free-lessons-card" aria-label={nativeFreeCopy[lang].label}>
+          <img src="/brand/mascot-wink.webp" alt="" width="64" height="50" />
+          <div className="free-lessons-copy">
+            <strong>{nativeFreeCopy[lang].title(Math.min(previewCompleted, 10))}</strong>
+            <div className="free-lessons-track" role="progressbar" aria-valuemin={0} aria-valuemax={10} aria-valuenow={Math.min(previewCompleted, 10)}><span style={{ width: `${Math.min(previewCompleted, 10) * 10}%` }} /></div>
+            <button type="button" onClick={() => navigate("/app/plus")}>{nativeFreeCopy[lang].cta} <ChevronRight size={16} aria-hidden="true" /></button>
+          </div>
+        </section>
+      )}
+      {previewMode && !isNativeApp && (
         <div className="preview-access-banner">
           <div>
             <strong>{offerCopy[lang].free}</strong>
@@ -266,7 +277,7 @@ function PathScreen() {
           <div className="learning-hero-progress" role="progressbar" aria-label={t("student.experience.level_progress")} aria-valuemin={0} aria-valuemax={100} aria-valuenow={levelProgress}><span style={{ width: `${levelProgress}%` }} /></div>
           {current && <Button onClick={() => navigate(`/app/lesson/${current.id}`)}>{t("student.path.continue")} <ChevronRight size={18} /></Button>}
         </div>
-        <div className="learning-hero-friend"><span className="companion-speech" lang="sk">Dobrý deň! <span aria-hidden="true">✦</span></span><GuideCharacter /></div>
+        <div className="learning-hero-friend"><span className="companion-speech" lang="sk">Dobrý deň! <span aria-hidden="true">✦</span></span>{isNativeApp ? <img className="learning-hero-mascot" src="/brand/mascot-wave.webp" alt="" width="104" height="96" /> : <GuideCharacter />}</div>
       </section>
       {current && <div className="next-lesson-summary"><BookOpen size={20} /><div><span>{t("student.experience.next_lesson")}</span><strong>{resolveText(current.title, lang)}</strong></div><span className="next-lesson-duration">{current.estimatedMinutes} {t("student.experience.minutes")}</span></div>}
 
@@ -1062,6 +1073,7 @@ function LessonPlayer() {
             {lesson.startScreen.imageRef && asset(lesson.startScreen.imageRef, "images") && (
               <img className="lesson-start-image" src={asset(lesson.startScreen.imageRef, "images")!.src} alt={asset(lesson.startScreen.imageRef, "images")!.alt ?? ""} loading="lazy" />
             )}
+            {isNativeApp && !lesson.startScreen.imageRef && <img className="lesson-start-mascot" src="/brand/mascot-wave.webp" alt="" width="96" height="88" />}
             {lesson.startScreen.iconEmoji && <div className="lesson-start-icon">{lesson.startScreen.iconEmoji}</div>}
             {lesson.startScreen.eyebrow && <span className="badge">{tx(lesson.startScreen.eyebrow)}</span>}
             <h1 className="lesson-start-title">{tx(lesson.startScreen.title) || tx(lesson.title)}</h1>
@@ -1369,7 +1381,7 @@ function LessonPlayer() {
       {phase === "result" && completionData && lesson.resultScreen && (
         <div className="lesson-result-screen">
           <div className="lesson-result-header">
-            <div className="lesson-result-emoji">{isNativeApp ? <Trophy size={40} aria-hidden="true" /> : completionData.wrong.length === 0 ? "🏆" : "🎉"}</div>
+            <div className="lesson-result-emoji">{isNativeApp ? <img src="/brand/mascot-wink.webp" alt="" width="120" height="95" /> : completionData.wrong.length === 0 ? "🏆" : "🎉"}</div>
             {lesson.resultScreen.title ? <h2 className="lesson-result-title">{tx(lesson.resultScreen.title)}</h2> : null}
             {(lesson.resultScreen.text || lesson.resultScreen.subtitle) ? <p className="lesson-result-text">{tx(lesson.resultScreen.text ?? lesson.resultScreen.subtitle)}</p> : null}
             <div className="lesson-result-xp">+{completionData.xp} XP</div>
@@ -2929,6 +2941,24 @@ function SettingsScreen() {
 
     </main>
   );
+}
+
+const nativeFreeCopy: Record<"uk" | "ru" | "sk" | "en", { label: string; title: (n: number) => string; cta: string; back: string }> = {
+  uk: { label: "Безкоштовні уроки", title: (n) => `Безкоштовно: ${n} з 10 уроків`, cta: "Що дає Plus", back: "Продовжити безкоштовні уроки" },
+  ru: { label: "Бесплатные уроки", title: (n) => `Бесплатно: ${n} из 10 уроков`, cta: "Что даёт Plus", back: "Продолжить бесплатные уроки" },
+  sk: { label: "Lekcie zadarmo", title: (n) => `Zadarmo: ${n} z 10 lekcií`, cta: "Čo prináša Plus", back: "Pokračovať v lekciách zadarmo" },
+  en: { label: "Free lessons", title: (n) => `Free: ${n} of 10 lessons`, cta: "What Plus gives you", back: "Continue free lessons" },
+};
+
+/** iOS: the Plus offer outside onboarding, e.g. from the free-lessons card. */
+function PlusScreen() {
+  const navigate = useNavigate();
+  const { user } = useStudentData();
+  const { lang } = useT();
+  if (!isNativeApp) return <Navigate to="/app/shop" replace />;
+  if (user && accessService.hasFullAccess(user.subscriptionStatus)) return <Navigate to="/app/path" replace />;
+  const back = () => navigate("/app/path", { replace: true });
+  return <PlusIntro onSkip={back} onActivated={back} skipLabel={nativeFreeCopy[lang].back} />;
 }
 
 export function PaywallScreen() {

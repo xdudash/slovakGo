@@ -2,8 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import { ArrowRight, BookOpen, CheckCircle2, ChevronLeft, FileText, MessageSquare } from "lucide-react";
 import { Button } from "../../components/ui";
+import { PlusIntro } from "../../components/AppStoreOffer";
+import { isNativeApp } from "../../services/platform";
 import { useT } from "../../i18n";
 import { lessonService } from "../../services/lessonService";
+import { accessService } from "../../services/accessService";
 import { track } from "../../services/analytics";
 import { selectCurrentUser, useAppStore } from "../../store/useAppStore";
 import type { UserLevel } from "../../types";
@@ -21,6 +24,8 @@ export function Onboarding() {
   const [goal, setGoal] = useState(user?.goal || goals[0]);
   const [showLevels, setShowLevels] = useState(params.get("start") === "known");
   const [level, setLevel] = useState<UserLevel | null>(null);
+  // iOS: the Plus offer sits between choosing a start and the first lesson.
+  const [offerFor, setOfferFor] = useState<UserLevel | null>(null);
   const heading = useRef<HTMLHeadingElement>(null);
   const levels = lessonService.levels.filter((value) => value !== "A0" && lessonService.byLevel(data.lessons, value).length > 0);
 
@@ -30,6 +35,15 @@ export function Onboarding() {
   if (user.onboardingDone) return <Navigate to="/app/path" replace />;
 
   function start(selectedLevel: UserLevel) {
+    if (isNativeApp && user!.role === "student" && !accessService.hasFullAccess(user!.subscriptionStatus)) {
+      track("paywall_view", { from: "onboarding" });
+      setOfferFor(selectedLevel);
+      return;
+    }
+    finish(selectedLevel);
+  }
+
+  function finish(selectedLevel: UserLevel) {
     track("onboarding_done", { goal, start: selectedLevel, via: selectedLevel === "A0" ? "beginner" : "self_selected" });
     useAppStore.getState().completeOnboarding(goal, selectedLevel);
     const state = useAppStore.getState();
@@ -41,6 +55,10 @@ export function Onboarding() {
     // The test can finish onboarding later, so persist the optional goal first.
     useAppStore.getState().updateUser({ goal });
     navigate("/placement-test");
+  }
+
+  if (offerFor) {
+    return <PlusIntro onSkip={() => finish(offerFor)} onActivated={() => finish(offerFor)} />;
   }
 
   return (
@@ -56,6 +74,7 @@ export function Onboarding() {
           </button>
         ) : null}
         <div className="start-heading">
+          {isNativeApp && !showLevels ? <img className="start-mascot" src="/brand/mascot-wave.webp" alt="" width="112" height="103" /> : null}
           <h1 id="start-heading" ref={heading} tabIndex={-1}>
             {t(`student.onboarding.${showLevels ? "level_title" : "start_title"}`)}
           </h1>
