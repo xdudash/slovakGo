@@ -6,6 +6,7 @@ const store = vi.hoisted(() => ({
   restore: vi.fn(),
   finish: vi.fn().mockResolvedValue(undefined),
   manageSubscriptions: vi.fn(),
+  requestReview: vi.fn().mockResolvedValue(undefined),
   addListener: vi.fn(),
 }));
 vi.mock('@capacitor/core', () => ({

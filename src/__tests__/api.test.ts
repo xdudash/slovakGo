@@ -1330,6 +1330,8 @@ describe("lesson catalog for full access stays small", () => {
       const one = await call("GET", ["lessons", "lesson-1"], { cookie });
       expect(one.status).toBe(200);
       expect(((one.body.lesson as Record<string, unknown>).exercises as unknown[]).length).toBe(3);
+      // Clients keep loaded content only while this matches the catalog.
+      expect((one.body.lesson as Record<string, unknown>).updatedAt).toBe(shell.updatedAt);
     }
   });
 

@@ -250,7 +250,7 @@ export const LESSON_CONTENT_FIELDS = ["exercises", "theoryScreens", "wordsScreen
 export async function getLessonShells(role: string): Promise<Record<string, unknown>[]> {
   const strip = LESSON_CONTENT_FIELDS.map((f) => `'$.${f}'`).join(", ");
   const where = (role === "teacher" || role === "admin") ? "" : " WHERE published = 1";
-  return (await query(`SELECT json_remove(data_json, ${strip}) AS j FROM lessons${where} ORDER BY rowid`))
+  return (await query(`SELECT json_set(json_remove(data_json, ${strip}), '$.updatedAt', updated_at) AS j FROM lessons${where} ORDER BY rowid`))
     .map(r => safeJson<Record<string, unknown> | null>(String(r.j), null))
     .filter((l): l is Record<string, unknown> => Boolean(l));
 }

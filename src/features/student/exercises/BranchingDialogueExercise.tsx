@@ -1,3 +1,4 @@
+import { useT } from "../../../i18n";
 import { useState } from "react";
 import type { Exercise, Lesson } from "../../../types";
 import { useLessonLocale } from "../../../hooks/useLessonLocale";
@@ -15,6 +16,7 @@ interface Props {
  * "best"-quality path is submitted as the answer.
  */
 export function BranchingDialogueExercise({ exercise, lesson, setAnswer, disabled }: Props) {
+  const { t } = useT();
   const { tx } = useLessonLocale(lesson);
   const nodes = exercise.nodes ?? {};
   const startNode = exercise.startNode ?? Object.keys(nodes)[0];
@@ -57,8 +59,8 @@ export function BranchingDialogueExercise({ exercise, lesson, setAnswer, disable
   if (failed) {
     return (
       <div className="card branching-fail">
-        <p>Ця відповідь веде в глухий кут у розмові.</p>
-        <button type="button" className="chip" onClick={retry}>Спробувати знову</button>
+        <p>{t("student.app.dead_end")}</p>
+        <button type="button" className="chip" onClick={retry}>{t("student.app.try_again")}</button>
       </div>
     );
   }

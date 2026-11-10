@@ -1,3 +1,4 @@
+import { useT } from "../../../i18n";
 import { useState } from "react";
 import type { Exercise, Lesson } from "../../../types";
 import { useLessonLocale } from "../../../hooks/useLessonLocale";
@@ -19,6 +20,7 @@ function joinTokens(tokens: string[]): string {
 
 /** Covers sentence_builder and sentence_order — tap tokens into place, in order. */
 export function SentenceBuilderExercise({ exercise, lesson, setAnswer, disabled }: Props) {
+  const { t } = useT();
   const { tx } = useLessonLocale(lesson);
   const tokens = exercise.tokens ?? [];
   const [picked, setPicked] = useState<number[]>([]);
@@ -41,7 +43,7 @@ export function SentenceBuilderExercise({ exercise, lesson, setAnswer, disabled 
     <>
       {exercise.context && <div className="card exercise-text-block">{tx(exercise.context)}</div>}
       <div className="answer-build" onClick={() => undo(Math.max(0, picked.length - 1))}>
-        {picked.length > 0 ? joinTokens(picked.map((i) => tokens[i])) : "Обери слова нижче"}
+        {picked.length > 0 ? joinTokens(picked.map((i) => tokens[i])) : t("student.app.pick_words")}
       </div>
       <div className="chip-grid">
         {tokens.map((token, idx) => (

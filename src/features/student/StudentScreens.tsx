@@ -14,9 +14,8 @@ import { PWAInstallBanner } from "../../components/PWAInstallBanner";
 import { apiClient } from "../../services/apiClient";
 import { isNativeApp, openExternalUrl, PUBLIC_APP_ORIGIN } from "../../services/platform";
 import { AppStoreOffer, AppStorePaywall, PlusIntro } from "../../components/AppStoreOffer";
-import { manageAppStoreSubscription } from "../../services/appStoreBilling";
+import { manageAppStoreSubscription, maybeRequestAppReview } from "../../services/appStoreBilling";
 
-const webSubscriptionNote = "Підписку оформлено на сайті app.slovakgo.sk. Керувати нею можна там, увійшовши в той самий акаунт.";
 import { leaderboardService } from "../../services/leaderboardService";
 import { lessonService } from "../../services/lessonService";
 import { practiceService, type PracticeExercise, type PracticeType } from "../../services/practiceService";
@@ -27,7 +26,7 @@ import { selectCurrentUser, selectIsPlus, useAppStore } from "../../store/useApp
 import { setGuestLanguage, useT } from "../../i18n";
 import { NativeNotificationSettings } from "../../components/NativeNotificationSettings";
 import { nativeCopy } from "../../locales/native";
-import type { AnswerRecord, Exercise, ExerciseType, LeaderboardEntry, Lesson, LocalizedText, TheoryScreen, UserLevel, UserSettings } from "../../types";
+import type { AnswerRecord, Exercise, ExerciseType, LeaderboardEntry, Lesson, LocalizedText, Locale, TheoryScreen, UserLevel, UserSettings } from "../../types";
 import { getDailyPhrases, getScenarioForGoal } from "../../data/scenarios";
 import { downloadCertificate } from "../../services/certificateService";
 import { generateShareCard, shareOrDownloadCard } from "../../services/shareService";
@@ -268,7 +267,7 @@ function PathScreen() {
         </div>
       )}
 
-      {previewMode && nextPreview && nextPreview.level !== progress.currentLevel && <Card><p>Продовжити безкоштовні уроки на рівні {nextPreview.level}</p><Button onClick={() => useAppStore.getState().setLevel(nextPreview.level)}>До наступного уроку</Button></Card>}
+      {previewMode && nextPreview && nextPreview.level !== progress.currentLevel && <Card><p>{t("student.app.next_preview").replace("{level}", nextPreview.level)}</p><Button onClick={() => useAppStore.getState().setLevel(nextPreview.level)}>{t("student.app.next_lesson")}</Button></Card>}
       <section className="learning-hero">
         <div className="learning-hero-copy">
           <span className="learning-hero-level">{progress.currentLevel} · {t("student.experience.your_journey")}</span>
@@ -285,7 +284,7 @@ function PathScreen() {
       <div className={`daily-goal${goalDone ? " daily-goal--done" : ""}`}>
         <div className="daily-goal-label">
           <Zap size={13} />
-          <span>{goalDone ? "Ціль дня досягнута! 🎯" : `${todayXp} / ${dailyGoal} XP сьогодні`}</span>
+          <span>{goalDone ? t("student.app.goal_done") : t("student.app.xp_today").replace("{done}", String(todayXp)).replace("{goal}", String(dailyGoal))}</span>
         </div>
         <div className="daily-goal-track">
           <div className="daily-goal-fill" style={{ width: `${goalPct}%` }} />
@@ -297,10 +296,10 @@ function PathScreen() {
         <div className="streak-risk-banner">
           <Flame size={16} />
           <div className="streak-risk-text">
-            <strong>{progress.streakDays}-денний стрік під загрозою!</strong>
+            <strong>{t("student.app.streak_risk").replace("{days}", String(progress.streakDays))}</strong>
             {progress.streakFreezeCount > 0
-              ? <span>Є заморозка ×{progress.streakFreezeCount} — пройди урок до кінця дня</span>
-              : <span>Пройди будь-який урок щоб зберегти стрік</span>
+              ? <span>{t("student.app.streak_freeze").replace("{n}", String(progress.streakFreezeCount))}</span>
+              : <span>{t("student.app.streak_keep")}</span>
             }
           </div>
         </div>
@@ -316,7 +315,7 @@ function PathScreen() {
               <div key={group.topicName + groupIndex} className="topic-group topic-locked-overlay">
                 <div className="topic-header">
                   <h3>{group.topicName}</h3>
-                  <p>🔒 Пройдіть тему «{prevGroup ? prevGroup.topicName : "попередню"}», щоб відкрити цю.</p>
+                  <p>{t("student.app.topic_locked").replace("{topic}", prevGroup ? prevGroup.topicName : t("student.app.topic_previous"))}</p>
                 </div>
               </div>
             );
@@ -353,7 +352,7 @@ function PathScreen() {
                         </button>
                         <div className="lesson-node-label">
                           <h3>{resolveText(lesson.title, lang)}{!lesson.isPublished && isAdmin && <span style={{ fontSize: "0.65rem", marginLeft: 4, color: "var(--muted)", fontWeight: 400 }}>чернетка</span>}</h3>
-                          <p>{lesson.xpReward} XP · {lesson.estimatedMinutes} хв</p>
+                          <p>{lesson.xpReward} XP · {lesson.estimatedMinutes} {t("student.app.minutes")}</p>
                         </div>
                       </div>
                     </div>
@@ -575,6 +574,7 @@ function isInteractiveFinal(sit: Lesson["finalSituation"]): sit is Extract<NonNu
 }
 
 function TheoryView({ screen, onNext, tx, t }: { screen: TheoryScreen; onNext: () => void; tx: (v: LocalizedText | undefined) => string; t: (key: string) => string }) {
+  const { t: ui } = useT();
   return (
     <div className="theory-body">
       {screen.title && <h2 className="theory-title">{tx(screen.title)}</h2>}
@@ -625,7 +625,7 @@ function TheoryView({ screen, onNext, tx, t }: { screen: TheoryScreen; onNext: (
       {(screen.pronunciationRows?.length ?? 0) > 0 && (
         <div className="theory-pronunciation-table">
           <div className="theory-pr-header">
-            <span>Літера</span><span>Читання</span><span>Приклад</span>
+            <span>{ui("student.app.letter")}</span><span>{ui("student.app.reading")}</span><span>{ui("student.app.example")}</span>
           </div>
           {screen.pronunciationRows!.map((r, i) => (
             <div key={i} className="theory-pr-row">
@@ -648,7 +648,7 @@ function TheoryView({ screen, onNext, tx, t }: { screen: TheoryScreen; onNext: (
                 <span className="theory-sign-name">{s.nameSk}</span>
               </div>
               <p className="theory-sign-meaning">{s.meaningUk}</p>
-              <p className="theory-sign-examples">Напр: {s.examples.join(", ")}</p>
+              <p className="theory-sign-examples">{ui("student.app.for_example")} {s.examples.join(", ")}</p>
             </div>
           ))}
         </div>
@@ -691,6 +691,7 @@ function TheoryView({ screen, onNext, tx, t }: { screen: TheoryScreen; onNext: (
  * a blocked origin can never be asked again.
  */
 function ReminderOptIn() {
+  const { t } = useT();
   const { user, updateUser } = useStudentData();
   const [state, setState] = useState<"idle" | "pending" | "done" | "failed">("idle");
 
@@ -716,7 +717,7 @@ function ReminderOptIn() {
   if (state === "done") {
     return (
       <div className="reminder-optin reminder-optin--done">
-        <Bell size={16} /> Нагадаємо о {user!.settings.reminderTime ?? DEFAULT_REMINDER_TIME} — змінити можна в налаштуваннях.
+        <Bell size={16} /> {t("student.app.reminder_set").replace("{time}", user!.settings.reminderTime ?? DEFAULT_REMINDER_TIME)}
       </div>
     );
   }
@@ -725,11 +726,11 @@ function ReminderOptIn() {
     <div className="reminder-optin">
       <Bell size={18} className="reminder-optin-icon" />
       <div className="reminder-optin-text">
-        <strong>Не втрать серію</strong>
-        <span>Нагадаємо о {DEFAULT_REMINDER_TIME}, коли час для наступного уроку.</span>
+        <strong>{t("student.app.reminder_title")}</strong>
+        <span>{t("student.app.reminder_text").replace("{time}", DEFAULT_REMINDER_TIME)}</span>
       </div>
       <Button variant="secondary" disabled={state === "pending"} onClick={enable}>
-        {state === "pending" ? "…" : "Увімкнути"}
+        {state === "pending" ? "…" : t("student.app.turn_on")}
       </Button>
     </div>
   );
@@ -741,6 +742,7 @@ function ReminderOptIn() {
  * (phase, resume position) is computed from the real lesson.
  */
 function LessonScreen() {
+  const { t } = useT();
   const { lessonId } = useParams();
   const navigate = useNavigate();
   const lesson = useAppStore((s) => s.data.lessons.find((l) => l.id === lessonId));
@@ -763,9 +765,9 @@ function LessonScreen() {
   if (deferred && failed) {
     return (
       <main className="page-content">
-        <EmptyState title="Не вдалося завантажити урок" text="Перевір з'єднання та спробуй ще раз." />
-        <Button onClick={() => setAttempt((n) => n + 1)}>Спробувати ще раз</Button>
-        <Button variant="secondary" onClick={() => navigate("/app/path")}>До шляху</Button>
+        <EmptyState title={t("student.app.lesson_load_failed")} text={t("student.app.check_connection")} />
+        <Button onClick={() => setAttempt((n) => n + 1)}>{t("student.app.retry")}</Button>
+        <Button variant="secondary" onClick={() => navigate("/app/path")}>{t("student.app.to_path")}</Button>
       </main>
     );
   }
@@ -895,6 +897,10 @@ function LessonPlayer() {
     if (opensTrialAfterLesson) track("section_complete", { level: lesson!.level });
     const cd: CompletionData = { xp, correct, total: finalRecords.length, wrong: buildWrong(finalRecords) };
     soundService.play("complete", user!.settings.soundEnabled, user!.settings.hapticsEnabled);
+    if (isNativeApp) {
+      const finished = new Set([...progress!.completedLessons, lesson!.id]).size;
+      window.setTimeout(() => void maybeRequestAppReview(finished), 1500);
+    }
     if (lesson!.resultScreen) {
       setCompletionData(cd);
       setPhase("result");
@@ -1038,7 +1044,7 @@ function LessonPlayer() {
   })();
 
   const questionLabel = (() => {
-    if (phase === "start") return hasLegacyIntro ? `${lesson!.words.length} слів` : "";
+    if (phase === "start") return hasLegacyIntro ? t("student.app.words_count").replace("{n}", String(lesson!.words.length)) : "";
     if (phase === "theory") return `${theoryIndex + 1} / ${theories.length}`;
     if (phase === "words") return t("student.lesson.words");
     if (phase === "exercise") return exercise ? `${index + 1} / ${lesson.exercises.length}` : "";
@@ -1049,7 +1055,7 @@ function LessonPlayer() {
   return (
     <main className={`lesson-screen${phase === "final" ? " lesson-screen--final" : ""}`}>
       <div className="lesson-top">
-        <button type="button" onClick={() => navigate("/app/path")} aria-label="Назад"><ChevronLeft /></button>
+        <button type="button" onClick={() => navigate("/app/path")} aria-label={t("student.app.back")}><ChevronLeft /></button>
         <ProgressBar value={percent} />
         <div className="lesson-top-right">
           <span className="question-counter">{questionLabel}</span>
@@ -1249,13 +1255,13 @@ function LessonPlayer() {
             {exercise.type === "multiple_choice_context" && (
               <div className="exercise-mode exercise-mode--context">
                 <MessageSquare size={18} aria-hidden="true" />
-                <span><strong>Зрозумій намір</strong> · обери значення репліки в контексті</span>
+                <span><strong>{t("student.app.intent_title")}</strong> · {t("student.app.intent_text")}</span>
               </div>
             )}
             {exercise.type === "choose_response" && (
               <div className="exercise-mode exercise-mode--response">
                 <MessageSquare size={18} aria-hidden="true" />
-                <span><strong>Обери репліку</strong> · знайди найприроднішу відповідь для ситуації</span>
+                <span><strong>{t("student.app.reply_title")}</strong> · {t("student.app.reply_text")}</span>
               </div>
             )}
             <h1>{tx(exercise.instruction ?? exercise.question)}</h1>
@@ -1299,7 +1305,7 @@ function LessonPlayer() {
             )}
             {finalAttemptFailed && (
               <div className="lesson-feedback wrong">
-                {sit.passRequirement ? `Потрібно виконати щонайменше ${sit.passRequirement} кроків правильно. Спробуй фінальну ситуацію ще раз.` : "Спробуй фінальну ситуацію ще раз."}
+                {sit.passRequirement ? t("student.app.final_retry_required").replace("{n}", String(sit.passRequirement)) : t("student.app.final_retry")}
               </div>
             )}
             <div className="final-situation-card">
@@ -1829,8 +1835,8 @@ function PracticeScreen() {
               <button type="button" className="mistake-mode-card" onClick={startMistakeSession}>
                 <div className="mistake-mode-icon"><AlertCircle size={20} /></div>
                 <div className="mistake-mode-info">
-                  <strong>Повтори помилки</strong>
-                  <span>{recentMistakeExercises.length} вправ де ти помилявся</span>
+                  <strong>{t("student.app.mistakes_title")}</strong>
+                  <span>{t("student.app.mistakes_count").replace("{n}", String(recentMistakeExercises.length))}</span>
                 </div>
               </button>
             )}
@@ -1938,7 +1944,7 @@ function PracticeScreen() {
     return (
       <main className="lesson-screen">
         <div className="lesson-top">
-          <button type="button" onClick={() => setPhase("landing")} aria-label="Назад"><ChevronLeft /></button>
+          <button type="button" onClick={() => setPhase("landing")} aria-label={t("student.app.back")}><ChevronLeft /></button>
           <ProgressBar value={percent} />
           <div className="lesson-top-right">
             <span className="question-counter">{practiceLabel}</span>
@@ -2115,7 +2121,7 @@ function LeaderboardScreen() {
             ? [...data.leaderboard.history].reverse().map((snapshot) => (
               <details key={snapshot.weekId} className="history-week">
                 <summary className="history-week-summary">
-                  {snapshot.weekId} · {snapshot.entries.length} учасників
+                  {snapshot.weekId} · {t("student.app.participants").replace("{n}", String(snapshot.entries.length))}
                 </summary>
                 <Card>
                   {snapshot.entries.slice(0, 5).map((entry) => (
@@ -2163,6 +2169,7 @@ function LeaderboardScreen() {
 }
 
 function StudyHeatmap({ xpHistory }: { xpHistory: Record<string, number> | undefined }) {
+  const { t } = useT();
   const today = new Date();
   const cells = Array.from({ length: 56 }, (_, i) => {
     const d = new Date(today);
@@ -2175,7 +2182,7 @@ function StudyHeatmap({ xpHistory }: { xpHistory: Record<string, number> | undef
   return (
     <Card className="heatmap-card">
       <div className="heatmap-header">
-        <strong>Активність (8 тижнів)</strong>
+        <strong>{t("student.app.activity_weeks")}</strong>
         <span className="heatmap-legend">
           {[0, 1, 2, 3, 4].map((l) => <span key={l} className={`heatmap-cell level-${l}`} />)}
         </span>
@@ -2189,12 +2196,14 @@ function StudyHeatmap({ xpHistory }: { xpHistory: Record<string, number> | undef
   );
 }
 
-function buildDailyXp(xpDailyHistory: Record<string, number> | undefined): { label: string; value: number }[] {
+const dateLocale: Record<Locale, string> = { uk: "uk-UA", ru: "ru-RU", sk: "sk-SK", en: "en-IE" };
+
+function buildDailyXp(xpDailyHistory: Record<string, number> | undefined, locale: string): { label: string; value: number }[] {
   return Array.from({ length: 7 }, (_, i) => {
     const d = new Date();
     d.setDate(d.getDate() - (6 - i));
     const key = d.toISOString().slice(0, 10);
-    const label = d.toLocaleDateString("uk-UA", { weekday: "short" });
+    const label = d.toLocaleDateString(locale, { weekday: "short" });
     return { label, value: xpDailyHistory?.[key] ?? 0 };
   });
 }
@@ -2202,7 +2211,7 @@ function buildDailyXp(xpDailyHistory: Record<string, number> | undefined): { lab
 function ProfileScreen() {
   const navigate = useNavigate();
   const { user, progress, data, logout, updateUser } = useStudentData();
-  const { t } = useT();
+  const { t, lang } = useT();
   const [modal, setModal] = useState<"streak" | "avatar" | "logout" | null>(null);
   const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
   const [referralCopied, setReferralCopied] = useState(false);
@@ -2213,7 +2222,7 @@ function ProfileScreen() {
   const levelLessons = lessonService.byLevel(data.lessons, user.level);
   const isLevelComplete = levelLessons.length > 0 && levelLessons.every((l) => progress.completedLessons.includes(l.id));
   const masteredCount = words.filter((w) => w.status === "mastered").length;
-  const dailyXp = buildDailyXp(progress.xpDailyHistory);
+  const dailyXp = buildDailyXp(progress.xpDailyHistory, dateLocale[lang]);
   const maxXp = Math.max(...dailyXp.map((d) => d.value), 1);
 
   function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -2314,10 +2323,10 @@ function ProfileScreen() {
               <div className="sub-meta">
                 <span className={`sub-badge sub-badge--${user.subscriptionStatus}`}>{t(`student.subscription.${user.subscriptionStatus}`)}</span>
                 {user.subscriptionStatus === "trial" && user.trialEndsAt && (
-                  <span className="sub-date">до {new Date(user.trialEndsAt).toLocaleDateString("uk-UA")}</span>
+                  <span className="sub-date">до {new Date(user.trialEndsAt).toLocaleDateString(dateLocale[lang])}</span>
                 )}
                 {user.subscriptionStatus === "plus" && user.subExpiresAt && (
-                  <span className="sub-date">до {new Date(user.subExpiresAt).toLocaleDateString("uk-UA", { day: "2-digit", month: "2-digit", year: "numeric" })}</span>
+                  <span className="sub-date">до {new Date(user.subExpiresAt).toLocaleDateString(dateLocale[lang], { day: "2-digit", month: "2-digit", year: "numeric" })}</span>
                 )}
               </div>
             </div>
@@ -2325,13 +2334,13 @@ function ProfileScreen() {
               ? <Button variant="secondary" onClick={async () => {
                 if (isNativeApp) { if (user.billingProvider === "app_store") await manageAppStoreSubscription().catch(() => undefined); else navigate("/app/shop"); return; }
                 try { const { url } = await apiClient.openCustomerPortal(); await openExternalUrl(url); } catch { return; }
-              }}>Управляти</Button>
+              }}>{t("student.app.manage")}</Button>
               : <Button variant="secondary" onClick={() => navigate("/app/shop")}>Plus →</Button>
             }
           </div>
         </Card>
 
-        <Card className="referral-card">
+        {!isNativeApp && <Card className="referral-card">
           <div className="referral-card-header">
             <div className="referral-card-icon"><Users size={20} /></div>
             <div>
@@ -2364,12 +2373,12 @@ function ProfileScreen() {
           }}>
             <Share2 size={15} /> {t("student.profile.referral_share_link")}
           </button>
-        </Card>
+        </Card>}
 
         <Card className="settings-section support-section-card">
-          <h3 className="settings-section-title" style={{ marginTop: 0, marginBottom: "12px", fontSize: "1.1rem" }}>Підтримка</h3>
+          <h3 className="settings-section-title" style={{ marginTop: 0, marginBottom: "12px", fontSize: "1.1rem" }}>{t("student.app.support")}</h3>
           <p style={{ margin: "0 0 16px", fontSize: "0.875rem", color: "var(--muted)", lineHeight: 1.5 }}>
-            Виник баг або є питання? Напиши нам — відповідаємо протягом 24 год.
+            {t("student.app.support_text")}
           </p>
           <SupportWidget />
         </Card>
@@ -2463,14 +2472,14 @@ function SupportWidget({ variant = "secondary" }: { variant?: "primary" | "secon
   const [supportError, setSupportError] = useState("");
 
   async function submitSupport() {
-    if (!supportMsg.trim()) { setSupportError("Напиши повідомлення"); return; }
+    if (!supportMsg.trim()) { setSupportError(t("student.app.support_empty")); return; }
     setSupportLoading(true); setSupportError("");
     try {
       await apiClient.sendSupportMessage(supportTopic, supportMsg.trim());
       setSupportSent(true);
       setTimeout(() => { setSupportOpen(false); setSupportSent(false); setSupportMsg(""); setSupportTopic("question"); }, 3000);
     } catch (err: unknown) {
-      setSupportError((err as { message?: string }).message || "Не вдалося надіслати. Спробуй пізніше.");
+      setSupportError((err as { message?: string }).message || t("student.app.support_failed"));
     } finally {
       setSupportLoading(false);
     }
@@ -2479,7 +2488,7 @@ function SupportWidget({ variant = "secondary" }: { variant?: "primary" | "secon
   return (
     <>
       <Button variant={variant} onClick={() => { setSupportOpen(true); setSupportSent(false); setSupportError(""); }}>
-        <MessageSquare size={16} /> Написати в підтримку
+        <MessageSquare size={16} /> {t("student.app.support_write")}
       </Button>
 
       {supportOpen && (
@@ -2487,33 +2496,33 @@ function SupportWidget({ variant = "secondary" }: { variant?: "primary" | "secon
           <Card className="profile-modal support-modal">
             <h2 className="support-modal-title">
               <MessageSquare size={20} />
-              Написати в підтримку
+              {t("student.app.support_write")}
             </h2>
             {supportSent ? (
               <div className="support-sent">
                 <CheckCircle2 size={36} color="var(--green)" />
-                <p>Повідомлення надіслано! Перевір свою пошту — ми надіслали підтвердження.</p>
+                <p>{t("student.app.support_sent")}</p>
               </div>
             ) : (
               <>
                 <div className="support-field">
-                  <label className="support-label">Тема</label>
+                  <label className="support-label">{t("student.app.support_topic")}</label>
                   <select
                     className="support-select"
                     value={supportTopic}
                     onChange={e => setSupportTopic(e.target.value)}
                   >
-                    <option value="bug">🐛 Баг / помилка</option>
-                    <option value="question">❓ Питання</option>
-                    <option value="other">💬 Інше</option>
+                    <option value="bug">{t("student.app.support_bug")}</option>
+                    <option value="question">{t("student.app.support_question")}</option>
+                    <option value="other">{t("student.app.support_other")}</option>
                   </select>
                 </div>
                 <div className="support-field">
-                  <label className="support-label">Повідомлення</label>
+                  <label className="support-label">{t("student.app.support_message")}</label>
                   <textarea
                     className="support-textarea"
                     rows={5}
-                    placeholder="Опиши своє питання або проблему..."
+                    placeholder={t("student.app.support_placeholder")}
                     value={supportMsg}
                     onChange={e => { setSupportMsg(e.target.value); setSupportError(""); }}
                   />
@@ -2521,10 +2530,10 @@ function SupportWidget({ variant = "secondary" }: { variant?: "primary" | "secon
                 </div>
                 {supportError && <p className="field-error">{supportError}</p>}
                 <Button onClick={submitSupport} disabled={supportLoading || !supportMsg.trim()}>
-                  {supportLoading ? "Надсилаємо…" : "Надіслати"}
+                  {supportLoading ? t("student.app.sending") : t("student.app.send")}
                 </Button>
                 <Button variant="ghost" onClick={() => { setSupportOpen(false); setSupportError(""); }}>
-                  Скасувати
+                  {t("student.app.cancel")}
                 </Button>
               </>
             )}
@@ -2599,7 +2608,7 @@ function SettingsScreen() {
   async function saveProfile() {
     const trimmedEmail = email.trim().toLowerCase();
     if ((user!.authProvider === "google" || user!.authProvider === "apple") && trimmedEmail !== user!.email.toLowerCase()) {
-      setEmailError("Email Google-акаунта змінюється в налаштуваннях Google.");
+      setEmailError(t("student.app.email_google"));
       return;
     }
     if (trimmedEmail !== user!.email.toLowerCase()) {
@@ -2649,7 +2658,7 @@ function SettingsScreen() {
       setTimeout(() => { setPwSuccess(false); setPwExpanded(false); }, 2500);
     } catch (err: unknown) {
       const e = err as { status?: number; message?: string };
-      setPwError(e.status === 422 ? t("student.settings.password_wrong") : (e.message || "Помилка"));
+      setPwError(e.status === 422 ? t("student.settings.password_wrong") : (e.message || t("student.app.error")));
     } finally {
       setPwLoading(false);
     }
@@ -2663,7 +2672,7 @@ function SettingsScreen() {
       await apiClient.deactivateAccount();
       logout();
     } catch (err: unknown) {
-      setActionError((err as { message?: string }).message || "Помилка");
+      setActionError((err as { message?: string }).message || t("student.app.error"));
       setActionLoading(false);
     }
   }
@@ -2678,7 +2687,7 @@ function SettingsScreen() {
       await apiClient.deleteAccount(deleteEmail.trim());
       logout();
     } catch (err: unknown) {
-      setActionError((err as { message?: string }).message || "Помилка");
+      setActionError((err as { message?: string }).message || t("student.app.error"));
       setActionLoading(false);
     }
   }
@@ -2705,7 +2714,7 @@ function SettingsScreen() {
               disabled={user.authProvider === "google" || user.authProvider === "apple"}
               onChange={(e) => { setEmail(e.target.value); setEmailError(""); setEmailSaved(false); }}
             />
-            {(user.authProvider === "google" || user.authProvider === "apple") && <p className="muted sm">Email керується через {user.authProvider === "apple" ? "Apple" : "Google"}.</p>}
+            {(user.authProvider === "google" || user.authProvider === "apple") && <p className="muted sm">{t("student.app.email_managed").replace("{provider}", user.authProvider === "apple" ? "Apple" : "Google")}</p>}
             {user.authProvider !== "google" && user.authProvider !== "apple" && email.trim().toLowerCase() !== user.email.toLowerCase() && (
               <Field type="password" label={t("student.settings.password_current")} value={emailPassword} onChange={(e) => setEmailPassword(e.target.value)} />
             )}
@@ -2891,10 +2900,10 @@ function SettingsScreen() {
       </section>
 
       <section className="settings-section">
-        <h3 className="settings-section-title">Підтримка</h3>
+        <h3 className="settings-section-title">{t("student.app.support")}</h3>
         <Card>
           <p style={{ margin: "0 0 12px", fontSize: "0.875rem", color: "var(--muted)", lineHeight: 1.5 }}>
-            Виник баг або є питання? Напиши нам — відповідаємо протягом 24 год.
+            {t("student.app.support_text")}
           </p>
           <SupportWidget />
         </Card>
@@ -2963,7 +2972,7 @@ function PlusScreen() {
 
 export function PaywallScreen() {
   const { data, user, progress } = useStudentData();
-  const { lang } = useT();
+  const { lang, t } = useT();
   const navigate = useNavigate();
   const adminPreview = Boolean(localStorage.getItem("slovakgo.admin-return"));
   const [loading, setLoading] = useState(false);
@@ -2991,11 +3000,11 @@ export function PaywallScreen() {
         <div className="preview-locked-visual">
           <img src="/app-exercise.png" alt="Вправа SlovakGO" width="390" height="844" decoding="async" />
         </div>
-        <h1>Спочатку заверши перші 10 уроків</h1>
+        <h1>{t("student.app.finish_first")}</h1>
         <p>{offerCopy[lang].free}</p>
-        <div className="preview-locked-counter">{completed} з 10 уроків уже пройдено</div>
-        <Button onClick={() => navigate("/app/path")}>Продовжити навчання</Button>
-        <Button variant="ghost" onClick={() => navigate("/app/profile")}>Профіль</Button>
+        <div className="preview-locked-counter">{t("student.app.free_progress").replace("{n}", String(completed))}</div>
+        <Button onClick={() => navigate("/app/path")}>{t("student.app.keep_learning")}</Button>
+        <Button variant="ghost" onClick={() => navigate("/app/profile")}>{t("student.app.profile")}</Button>
       </main>
     );
   }
@@ -3182,7 +3191,7 @@ function ShopScreen() {
       if (isNativeApp) {
         // A web (Stripe) subscription is managed on the website, never from the app.
         if (user?.billingProvider === "app_store") await manageAppStoreSubscription();
-        else setError(webSubscriptionNote);
+        else setError(t("student.app.web_subscription"));
         return;
       }
       const { url } = await apiClient.openCustomerPortal();
@@ -3226,28 +3235,28 @@ function ShopScreen() {
         <div className="shop-comparison">
           <div className="shop-comp-header">
             <span></span>
-            <span className="comp-free">Перші 10 уроків</span>
+            <span className="comp-free">{t("student.app.first_10")}</span>
             <span className="comp-plus">Plus</span>
           </div>
           <div className="shop-comp-row">
-            <span>Уроки</span>
-            <span>10 уроків</span>
-            <span className="comp-check"><CheckCircle2 size={14} /> Усі рівні</span>
+            <span>{t("student.app.lessons")}</span>
+            <span>{t("student.app.ten_lessons")}</span>
+            <span className="comp-check"><CheckCircle2 size={14} /> {t("student.app.all_levels")}</span>
           </div>
           <div className="shop-comp-row">
-            <span>Практика</span>
-            <span>Так</span>
+            <span>{t("student.app.practice")}</span>
+            <span>{t("student.app.yes")}</span>
             <span className="comp-check"><CheckCircle2 size={14} /> Так</span>
           </div>
           <div className="shop-comp-row">
-            <span>Словник</span>
-            <span>Так</span>
+            <span>{t("student.app.vocabulary")}</span>
+            <span>{t("student.app.yes")}</span>
             <span className="comp-check"><CheckCircle2 size={14} /> Так</span>
           </div>
           <div className="shop-comp-row">
-            <span>Статистика</span>
-            <span>Базова</span>
-            <span className="comp-check"><CheckCircle2 size={14} /> Повна</span>
+            <span>{t("student.app.statistics")}</span>
+            <span>{t("student.app.basic")}</span>
+            <span className="comp-check"><CheckCircle2 size={14} /> {t("student.app.full")}</span>
           </div>
         </div>
 
@@ -3255,7 +3264,7 @@ function ShopScreen() {
           ? <div className="shop-active-status">
             <div className="status-label">
               <Star size={16} fill="var(--yellow-strong)" color="var(--yellow-strong)" />
-              <span>У тебе активований Plus</span>
+              <span>{t("student.app.plus_active")}</span>
             </div>
             <Button variant="secondary" disabled={loading} onClick={handlePortal}>
               {loading ? t("student.shop.btn_loading") : t("student.shop.btn_manage")}

@@ -23,6 +23,7 @@ interface SlovakGoStorePlugin {
   restore(): Promise<{ transactions: SignedTransaction[] }>;
   finish(options: { transactionId: string }): Promise<void>;
   manageSubscriptions(): Promise<void>;
+  requestReview(): Promise<void>;
   addListener(event: "transaction", listener: (transaction: SignedTransaction) => void): Promise<{ remove: () => Promise<void> }>;
 }
 const Store = registerPlugin<SlovakGoStorePlugin>("SlovakGoStore");
@@ -66,6 +67,20 @@ export async function restoreAppStorePurchases(): Promise<boolean> {
 
 export function manageAppStoreSubscription(): Promise<void> {
   return Store.manageSubscriptions();
+}
+
+const REVIEW_MILESTONES = [15, 3];
+const REVIEW_MILESTONE_KEY = "slovakgo.review-milestone";
+
+/** Asks after a finished lesson, once per milestone. Never blocks the lesson flow. */
+export async function maybeRequestAppReview(completedLessons: number): Promise<void> {
+  const milestone = REVIEW_MILESTONES.find((value) => completedLessons >= value);
+  if (!milestone) return;
+  try {
+    if (Number(localStorage.getItem(REVIEW_MILESTONE_KEY) ?? 0) >= milestone) return;
+    localStorage.setItem(REVIEW_MILESTONE_KEY, String(milestone));
+    await Store.requestReview();
+  } catch { /* a rating prompt is never worth an error */ }
 }
 
 /**

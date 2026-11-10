@@ -1,3 +1,4 @@
+import { useT } from "../../../i18n";
 import { useState } from "react";
 import type { Exercise } from "../../../types";
 
@@ -9,6 +10,7 @@ interface Props {
 
 /** dialogue_order — tap dialogue lines into the correct order. */
 export function DialogueOrderExercise({ exercise, setAnswer, disabled }: Props) {
+  const { t } = useT();
   const lines = exercise.lines ?? [];
   const [picked, setPicked] = useState<string[]>([]);
 
@@ -31,7 +33,7 @@ export function DialogueOrderExercise({ exercise, setAnswer, disabled }: Props) 
   return (
     <>
       <div className="dialogue-order-list">
-        {picked.length === 0 && <p className="hint-text">Обери репліки в правильному порядку</p>}
+        {picked.length === 0 && <p className="hint-text">{t("student.app.order_hint")}</p>}
         {picked.map((id, i) => (
           <div key={id} className="dialogue-order-picked" onClick={() => undoTo(i)}>
             <span className="dialogue-order-num">{i + 1}</span>

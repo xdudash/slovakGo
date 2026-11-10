@@ -1,3 +1,4 @@
+import { useT } from "../../../i18n";
 import type { Exercise, Lesson } from "../../../types";
 import { useLessonLocale } from "../../../hooks/useLessonLocale";
 
@@ -11,6 +12,7 @@ interface Props {
 
 /** Covers find_error (tap the wrong word), correct_error and transformation (free text). */
 export function TextEditExercise({ exercise, lesson, answer, setAnswer, disabled }: Props) {
+  const { t } = useT();
   const { tx } = useLessonLocale(lesson);
   const chosen = Array.isArray(answer) ? answer[0] ?? "" : answer;
 
@@ -45,7 +47,7 @@ export function TextEditExercise({ exercise, lesson, answer, setAnswer, disabled
         className="blank-text-input"
         value={chosen}
         disabled={disabled}
-        placeholder="Введи виправлений варіант…"
+        placeholder={t("student.app.type_fixed")}
         onChange={(e) => setAnswer(e.target.value)}
       />
     </div>

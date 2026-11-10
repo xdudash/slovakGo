@@ -20,6 +20,7 @@ export type FunnelEvent =
   | "checkout_start"
   | "notifications_enabled";
 
+import { getAttribution } from "./attribution";
 import { API_BASE_URL } from "./apiClient";
 import { trackMeta } from "../../shared/metaPixel";
 import { selectCurrentUser, useAppStore } from "../store/useAppStore";
@@ -75,7 +76,7 @@ export function track(name: FunnelEvent, props: Record<string, unknown> = {}): v
         if (name === "section_complete") trackMeta("FreeSectionComplete", {}, `free-section:${user.id}`, true);
       }
     }
-    queue.push({ name, props });
+    queue.push({ name, props: { ...getAttribution(), ...props } });
     if (timer) return;
     timer = setTimeout(() => flush(), FLUSH_DELAY_MS);
   } catch { /* analytics must never break the app */ }

@@ -15,6 +15,7 @@ public class StorePlugin: CAPPlugin, CAPBridgedPlugin {
         CAPPluginMethod(name: "restore", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "finish", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "manageSubscriptions", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "requestReview", returnType: CAPPluginReturnPromise),
     ]
 
     private var updatesTask: Task<Void, Never>?
@@ -103,6 +104,20 @@ public class StorePlugin: CAPPlugin, CAPBridgedPlugin {
         Task {
             for await result in Transaction.unfinished where result.unsafePayloadValue.id == id {
                 await result.unsafePayloadValue.finish()
+            }
+            call.resolve()
+        }
+    }
+
+    /// iOS decides whether the rating sheet actually appears (at most 3 times a year).
+    @objc func requestReview(_ call: CAPPluginCall) {
+        Task { @MainActor in
+            if let scene = self.bridge?.viewController?.view.window?.windowScene {
+                if #available(iOS 16.0, *) {
+                    AppStore.requestReview(in: scene)
+                } else {
+                    SKStoreReviewController.requestReview(in: scene)
+                }
             }
             call.resolve()
         }
