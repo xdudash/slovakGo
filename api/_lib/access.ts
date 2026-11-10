@@ -57,10 +57,11 @@ export async function handleLessonGet(req: VercelRequest, res: VercelResponse, i
   const uid = await requireUid(req, res); if (!uid) return;
   const { canRead } = await lessonAccess(uid);
   if (!canRead(id)) return fail(res, "Потрібна підписка для цього уроку", 403);
-  const row = await queryOne("SELECT data_json FROM lessons WHERE id = ? LIMIT 1", [id]);
+  const row = await queryOne("SELECT data_json, updated_at FROM lessons WHERE id = ? LIMIT 1", [id]);
   const lesson = row ? safeJson<Record<string, unknown> | null>(String(row.data_json), null) : null;
   if (!lesson) return fail(res, "Урок не знайдено", 404);
-  respond(res, { ok: true, lesson });
+  // The column, not the JSON, changes on every publish; clients compare it to spot edited lessons.
+  respond(res, { ok: true, lesson: { ...lesson, updatedAt: row!.updated_at } });
 }
 export async function assertLessonAccess(uid: string, id: string): Promise<void> {
   if (!(await lessonAccess(uid)).canRead(id)) throw new AccessDeniedError("Потрібна підписка для цього уроку");

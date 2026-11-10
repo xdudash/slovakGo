@@ -1,3 +1,4 @@
+import { useT } from "../../../i18n";
 import type { Exercise, Lesson } from "../../../types";
 import { AudioBanner } from "./AudioBanner";
 import { OptionListExercise } from "./OptionListExercise";
@@ -15,6 +16,7 @@ interface Props {
 
 /** Covers listen_choice, listen_true_false, listen_fill, dictation — audio banner + a delegated answer UI. */
 export function ListeningExercise({ exercise, lesson, answer, setAnswer, disabled, soundEnabled }: Props) {
+  const { t } = useT();
   const chosen = Array.isArray(answer) ? answer[0] ?? "" : answer;
 
   return (
@@ -29,7 +31,7 @@ export function ListeningExercise({ exercise, lesson, answer, setAnswer, disable
             className="blank-text-input"
             value={chosen}
             disabled={disabled}
-            placeholder="Надрукуй почуте речення…"
+            placeholder={t("student.app.type_heard")}
             onChange={(e) => setAnswer(e.target.value)}
           />
         </div>

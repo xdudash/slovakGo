@@ -82,7 +82,7 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
     <div className={`app-frame app-frame--${role}`} data-screen={location.pathname.startsWith('/app/lesson/') ? 'lesson' : location.pathname.split('/').at(-1)}>
       {!isOnline && (
         <div className="offline-banner">
-          Офлайн{pendingCount > 0 ? ` · ${pendingCount} дій в черзі` : ""}
+          {t("student.app.offline")}{pendingCount > 0 ? t("student.app.offline_queue").replace("{n}", String(pendingCount)) : ""}
         </div>
       )}
       <div className="app-content">

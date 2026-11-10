@@ -1,3 +1,4 @@
+import { isNativeApp, PUBLIC_APP_ORIGIN } from "../services/platform";
 import { useCallback } from "react";
 import { useT } from "../i18n";
 import type { Lesson, LocalizedText } from "../types";
@@ -19,8 +20,11 @@ export function useLessonLocale(lesson: Lesson | undefined) {
   );
 
   const asset = useCallback(
-    (ref: string | undefined, kind: "images" | "audio") =>
-      resolveAsset(lesson, ref, kind, lang, fallbackLang),
+    (ref: string | undefined, kind: "images" | "audio") => {
+      const found = resolveAsset(lesson, ref, kind, lang, fallbackLang);
+      // Lessons change on the server; a relative file may not exist in the installed app.
+      return found && isNativeApp && found.src.startsWith("/") ? { ...found, src: `${PUBLIC_APP_ORIGIN}${found.src}` } : found;
+    },
     [lesson, lang, fallbackLang]
   );
 

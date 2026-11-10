@@ -307,3 +307,18 @@ const initial = supported.includes(requested)
     ? saved
     : currentLang;
 setLang(initial, initial !== document.documentElement.lang);
+
+// Campaign tags live on this domain; hand them over when the visitor continues to the app.
+document.addEventListener(
+  "click",
+  (event) => {
+    const link = event.target instanceof Element ? event.target.closest('a[href^="https://app.slovakgo.sk"]') : null;
+    if (!link) return;
+    const url = new URL(link.href);
+    for (const [key, value] of new URLSearchParams(location.search)) {
+      if (key.startsWith("utm_")) url.searchParams.set(key, value);
+    }
+    link.href = url.href;
+  },
+  true,
+);

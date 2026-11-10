@@ -1,3 +1,4 @@
+import { captureAttribution } from "./services/attribution";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
@@ -11,10 +12,12 @@ import { initMetaPixel } from "../shared/metaPixel";
 import { isNativeApp } from "./services/platform";
 import { initNativeRuntime } from "./services/nativeRuntime";
 
+captureAttribution();
 initAnalytics();
 if (!isNativeApp) initMetaPixel();
 void initNativeRuntime(() => {
   void useAppStore.getState().drainSync();
+  void useAppStore.getState().refreshLessons();
   window.dispatchEvent(new Event('slovakgo:native-resume'));
 }).catch((error: unknown) => console.error('[native] initialization failed', error));
 if (isNativeApp) {
