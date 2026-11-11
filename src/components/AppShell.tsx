@@ -122,7 +122,7 @@ export function AppShell({ role, children }: { role: UserRole; children?: ReactN
             </button>
           </>}
       </nav>
-      {syncMessage && <div className="sync-toast">{syncMessage}</div>}
+      {syncMessage && <div className="sync-toast">{syncMessage === "synced" ? `✓ ${t("student.app.synced")}` : syncMessage}</div>}
     </div>
   );
 }

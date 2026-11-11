@@ -601,7 +601,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
       syncQueue: latest.syncQueue.filter((mutation) => !removedIds.has(mutation.id)),
     });
     const now = new Date().toISOString();
-    set({ data, syncMessage: "✓ Синхронізовано", lastSyncedAt: now });
+    set({ data, syncMessage: "synced", lastSyncedAt: now });
     setTimeout(() => set({ syncMessage: undefined }), 3000);
     if (!get().data.syncQueue.some(m => m.userId === currentUserId)) await get().refreshUser();
   },
