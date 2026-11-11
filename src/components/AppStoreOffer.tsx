@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { AlertCircle, CheckCircle2 } from "lucide-react";
 import { Button } from "./ui";
 import { useT } from "../i18n";
@@ -97,7 +97,7 @@ function monthlyEquivalent(product: StoreProduct, lang: Lang): string {
 }
 
 /** Subscription offer for the iOS app. Prices and trial eligibility come from the App Store. */
-export function AppStoreOffer({ onActivated, disabled = false }: { onActivated?: () => void; disabled?: boolean }) {
+export function AppStoreOffer({ onActivated, onLoaded, disabled = false }: { onActivated?: () => void; onLoaded?: (offer: Offer) => void; disabled?: boolean }) {
   const { lang: rawLang } = useT();
   const lang = (rawLang in copy ? rawLang : "uk") as Lang;
   const c = copy[lang];
@@ -110,10 +110,11 @@ export function AppStoreOffer({ onActivated, disabled = false }: { onActivated?:
   function load() {
     setLoadFailed(false);
     loadAppStoreOffer()
-      .then((next) => { setOffer(next); setLoadFailed(next.products.length === 0); })
+      .then((next) => { setOffer(next); setLoadFailed(next.products.length === 0);  })
       .catch(() => setLoadFailed(true));
   }
   useEffect(load, []);
+  useEffect(() => { if (offer) onLoaded?.(offer); }, [offer, onLoaded]);
 
   async function activated() {
     await refreshUser();
@@ -267,47 +268,87 @@ export function AppStorePaywall({ adminPreview, onActivated, onProfile, onLogout
   );
 }
 
-const introCopy: Record<Lang, { title: string; text: string; perks: string[]; skip: string; skipNote: string; later: string }> = {
+type TrialStep = [string, string];
+const introCopy: Record<Lang, {
+  title: string; text: string; perks: string[]; skip: string; skipNote: string; later: string;
+  winTitle: string; winText: string; winSkip: string; trialTitle: string;
+  trialSteps: (length: string, price: string, renewal: string) => TrialStep[];
+}> = {
   uk: {
     title: "Увесь словацький — з Plus", text: "Перші 10 уроків безкоштовні. Plus відкриває весь курс без обмежень.",
     perks: ["Усі рівні від A0 до C2", "Житло, робота, лікар, документи", "Повторення слів і помилок", "Повна статистика прогресу"],
     skip: "Почати з 10 безкоштовних уроків", skipNote: "Оформити Plus можна будь-коли в профілі.", later: "Не зараз",
+    winTitle: "Перший урок пройдено!", winText: "Так тримати. Наступні безкоштовні уроки вже чекають, а Plus одразу відкриває весь курс — від A0 до C2.",
+    winSkip: "Продовжити безкоштовно", trialTitle: "Як працює пробний період",
+    trialSteps: (l, p, r) => [["Сьогодні", "Увесь курс відкрито — безкоштовно"], [`Через ${l}`, `Оплата ${p} / ${r}, якщо не скасуєш`], ["Будь-коли", "Скасування в налаштуваннях Apple ID, без дзвінків і листів"]],
   },
   ru: {
     title: "Весь словацкий — с Plus", text: "Первые 10 уроков бесплатные. Plus открывает весь курс без ограничений.",
     perks: ["Все уровни от A0 до C2", "Жильё, работа, врач, документы", "Повторение слов и ошибок", "Полная статистика прогресса"],
     skip: "Начать с 10 бесплатных уроков", skipNote: "Оформить Plus можно в любой момент в профиле.", later: "Не сейчас",
+    winTitle: "Первый урок пройден!", winText: "Так держать. Следующие бесплатные уроки уже ждут, а Plus сразу открывает весь курс — от A0 до C2.",
+    winSkip: "Продолжить бесплатно", trialTitle: "Как работает пробный период",
+    trialSteps: (l, p, r) => [["Сегодня", "Весь курс открыт — бесплатно"], [`Через ${l}`, `Оплата ${p} / ${r}, если не отменишь`], ["В любой момент", "Отмена в настройках Apple ID, без звонков и писем"]],
   },
   sk: {
     title: "Celá slovenčina s Plus", text: "Prvých 10 lekcií je zadarmo. Plus odomkne celý kurz bez obmedzení.",
     perks: ["Všetky úrovne od A0 po C2", "Bývanie, práca, lekár, úrady", "Opakovanie slov a chýb", "Úplná štatistika pokroku"],
     skip: "Začať 10 lekciami zadarmo", skipNote: "Plus si môžeš aktivovať kedykoľvek v profile.", later: "Teraz nie",
+    winTitle: "Prvá lekcia je hotová!", winText: "Len tak ďalej. Ďalšie lekcie zadarmo už čakajú a Plus hneď odomkne celý kurz — od A0 po C2.",
+    winSkip: "Pokračovať zadarmo", trialTitle: "Ako funguje skúšobné obdobie",
+    trialSteps: (l, p, r) => [["Dnes", "Celý kurz je odomknutý — zadarmo"], [`O ${l}`, `Platba ${p} / ${r}, ak nezrušíš`], ["Kedykoľvek", "Zrušíš v nastaveniach Apple ID, bez telefonátov a e-mailov"]],
   },
   en: {
     title: "All of Slovak with Plus", text: "Your first 10 lessons are free. Plus unlocks the whole course.",
     perks: ["Every level from A0 to C2", "Housing, work, doctor, paperwork", "Word and mistake review", "Full progress statistics"],
     skip: "Start with 10 free lessons", skipNote: "You can get Plus any time from your profile.", later: "Not now",
+    winTitle: "First lesson done!", winText: "Nice work. More free lessons are waiting, and Plus unlocks the whole course right away — A0 to C2.",
+    winSkip: "Continue for free", trialTitle: "How the free trial works",
+    trialSteps: (l, p, r) => [["Today", "The whole course unlocks — free"], [`In ${l}`, `You pay ${p} / ${r} unless you cancel`], ["Any time", "Cancel in your Apple ID settings — no calls, no emails"]],
   },
 };
 
-/** Soft offer shown after onboarding and from the free-lessons banner. Always skippable. */
-export function PlusIntro({ onSkip, onActivated, skipLabel }: { onSkip: () => void; onActivated: () => void; skipLabel?: string }) {
+/** Soft offer shown after the first lesson and from the free-lessons banner. Always skippable. */
+export function PlusIntro({ onSkip, onActivated, skipLabel, variant = "default" }: {
+  onSkip: () => void; onActivated: () => void; skipLabel?: string; variant?: "default" | "first-lesson";
+}) {
   const { lang: rawLang } = useT();
-  const c = introCopy[(rawLang in introCopy ? rawLang : "uk") as Lang];
+  const lang = (rawLang in introCopy ? rawLang : "uk") as Lang;
+  const c = introCopy[lang];
+  const [trial, setTrial] = useState<TrialStep[] | null>(null);
+  const win = variant === "first-lesson";
+
+  const showTrial = useCallback((offer: Offer) => {
+    const product = sortPlans(offer.products).find((p) => p.introOffer?.paymentMode === "freeTrial" && p.period);
+    const intro = product?.introOffer;
+    if (!product || !intro || !product.period) return;
+    setTrial(c.trialSteps(periodText(lang, { unit: intro.period.unit, value: intro.period.value * intro.periodCount }), product.displayPrice, periodText(lang, product.period)));
+  }, [c, lang]);
+
   return (
     <main className="plus-intro">
       <button type="button" className="plus-intro-close" onClick={onSkip}>{c.later}</button>
       <header className="plus-intro-head">
-        <img src="/brand/mascot-wink.webp" alt="" width="132" height="104" className="plus-intro-mascot" />
+        {win
+          ? <img src="/brand/mascot-cheer.webp" alt="" width="132" height="129" className="plus-intro-mascot" />
+          : <img src="/brand/mascot-wink.webp" alt="" width="132" height="104" className="plus-intro-mascot" />}
         <span className="plus-intro-kicker">SlovakGO Plus</span>
-        <h1>{c.title}</h1>
-        <p>{c.text}</p>
+        <h1>{win ? c.winTitle : c.title}</h1>
+        <p>{win ? c.winText : c.text}</p>
       </header>
       <ul className="plus-intro-perks">
         {c.perks.map((perk) => <li key={perk}><CheckCircle2 size={18} aria-hidden="true" />{perk}</li>)}
       </ul>
-      <AppStoreOffer onActivated={onActivated} />
-      <button type="button" className="plus-intro-skip" onClick={onSkip}>{skipLabel ?? c.skip}</button>
+      {trial && (
+        <section className="plus-trial" aria-labelledby="plus-trial-title">
+          <h2 id="plus-trial-title">{c.trialTitle}</h2>
+          <ol>
+            {trial.map(([when, what]) => <li key={when}><strong>{when}</strong><span>{what}</span></li>)}
+          </ol>
+        </section>
+      )}
+      <AppStoreOffer onActivated={onActivated} onLoaded={showTrial} />
+      <button type="button" className="plus-intro-skip" onClick={onSkip}>{skipLabel ?? (win ? c.winSkip : c.skip)}</button>
       <p className="plus-intro-note">{c.skipNote}</p>
     </main>
   );

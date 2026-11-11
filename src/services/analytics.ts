@@ -11,6 +11,8 @@
 
 export type FunnelEvent =
   | "register"
+  | "onboarding_goal"
+  | "onboarding_pace"
   | "onboarding_done"
   | "placement_test_done"
   | "lesson_start"

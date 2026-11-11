@@ -232,7 +232,7 @@ function PathScreen() {
 
   const today = todayKey();
   const todayXp = progress.xpDailyHistory?.[today] ?? 0;
-  const dailyGoal = 20;
+  const dailyGoal = user.settings.dailyGoal ?? 20;
   const goalPct = Math.min(100, Math.round(todayXp / dailyGoal * 100));
   const goalDone = todayXp >= dailyGoal;
   const streakAtRisk = progress.streakDays > 0 && todayXp === 0;
@@ -810,6 +810,7 @@ function LessonPlayer() {
   const [finalStepAnswers, setFinalStepAnswers] = useState<string[]>([]);
   const [finalAttemptFailed, setFinalAttemptFailed] = useState(false);
   const [celebration, setCelebration] = useState<CompletionData | null>(null);
+  const [firstWin, setFirstWin] = useState(false);
   const [completionData, setCompletionData] = useState<CompletionData | null>(null);
   const [sharing, setSharing] = useState(false);
   useEffect(() => {
@@ -847,7 +848,9 @@ function LessonPlayer() {
   const alreadyDone = progress.completedLessons.includes(lesson.id);
   const opensTrialAfterLesson = user.role === "student"
     && accessService.isFinalPreviewLesson(lesson.id, data.lessons, progress, user.subscriptionStatus);
-  const completionDestination = opensTrialAfterLesson ? "/app/paywall" : "/app/path";
+  // iOS: the first finished lesson is the moment to introduce Plus, not the signup screen.
+  const offersPlusAfterFirstLesson = firstWin && isNativeApp && user.role === "student" && !accessService.hasFullAccess(user.subscriptionStatus);
+  const completionDestination = opensTrialAfterLesson ? "/app/paywall" : offersPlusAfterFirstLesson ? "/app/plus?from=first-lesson" : "/app/path";
 
   if (!exercise && !celebration && !completionData && phase === "exercise") return <Navigate to="/app/path" replace />;
 
@@ -888,6 +891,7 @@ function LessonPlayer() {
 
   function finishLesson(finalRecords: AnswerRecord[]) {
     const isFirst = progress!.completedLessons.length === 0;
+    if (isFirst) setFirstWin(true);
     clearLessonDraft(user!.id, lesson!.id);
     completeLesson(lesson!, finalRecords);
     const xp = computeXp();
@@ -2962,11 +2966,15 @@ const nativeFreeCopy: Record<"uk" | "ru" | "sk" | "en", { label: string; title: 
 /** iOS: the Plus offer outside onboarding, e.g. from the free-lessons card. */
 function PlusScreen() {
   const navigate = useNavigate();
+  const [params] = useSearchParams();
+  const firstLesson = params.get("from") === "first-lesson";
   const { user } = useStudentData();
   const { lang } = useT();
+  useEffect(() => { if (isNativeApp) track("paywall_view", { from: firstLesson ? "first_lesson" : "free_card" }); }, [firstLesson]);
   if (!isNativeApp) return <Navigate to="/app/shop" replace />;
   if (user && accessService.hasFullAccess(user.subscriptionStatus)) return <Navigate to="/app/path" replace />;
   const back = () => navigate("/app/path", { replace: true });
+  if (firstLesson) return <PlusIntro variant="first-lesson" onSkip={back} onActivated={back} />;
   return <PlusIntro onSkip={back} onActivated={back} skipLabel={nativeFreeCopy[lang].back} />;
 }
 

@@ -428,6 +428,8 @@ html.native-app {
   padding: calc(env(safe-area-inset-top, 0px) + 20px) max(20px, env(safe-area-inset-right, 0px)) calc(28px + env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px));
   background: var(--bg); color: var(--fg);
 }
+/* Inside the app shell the header already clears the status bar. */
+.app-frame[data-screen="plus"] .plus-intro { min-height: 0; padding-top: 4px; }
 .plus-intro-close { align-self: flex-end; min-height: 44px; padding: 0 4px; border: 0; background: none; color: var(--muted); font: inherit; font-size: .95rem; font-weight: 500; }
 .plus-intro-head {
   display: grid; justify-items: center; gap: 8px; padding: 24px 20px 22px; text-align: center;
@@ -443,6 +445,15 @@ html.native-app {
 .plus-intro .app-store-offer { margin-top: 0; }
 .plus-intro-skip { min-height: 50px; border-radius: 12px; border: 1.5px solid var(--border); background: var(--surface); color: var(--fg); font: inherit; font-weight: 600; font-size: 1rem; }
 .plus-intro-note { margin: -6px 0 0; text-align: center; color: var(--muted); font-size: .85rem; }
+.plus-trial { padding: 16px 18px; border-radius: 18px; background: var(--surface); border: 1px solid var(--border); }
+.plus-trial h2 { margin: 0 0 12px; font-size: 1rem; }
+.plus-trial ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.plus-trial li { position: relative; display: grid; gap: 2px; padding: 0 0 14px 26px; line-height: 1.35; }
+.plus-trial li:last-child { padding-bottom: 0; }
+.plus-trial li::before { content: ""; position: absolute; left: 3px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: var(--action); }
+.plus-trial li:not(:last-child)::after { content: ""; position: absolute; left: 7px; top: 17px; bottom: 2px; width: 2px; background: var(--border); }
+.plus-trial strong { font-size: .95rem; }
+.plus-trial span { color: var(--muted); font-size: .9rem; }
 @keyframes plus-mascot-float { 50% { transform: translateY(-6px) rotate(-2deg); } }
 
 .native-app .free-lessons-card {
@@ -465,13 +476,13 @@ html.native-app {
   .plus-intro-mascot, .native-app .learning-hero-mascot, .native-app .lesson-result-emoji img { animation: none; }
 }
 /* Onboarding */
-.native-app .start-choice:is(:hover, :active) { background: var(--surface-soft); }
+.native-app .start-choice:active { background: var(--surface-soft); }
 .native-app .start-choice-icon { background: var(--accent-soft); color: var(--accent); }
 .native-app :is(.start-choice-copy .start-choice-action, .start-back, .start-text-link) { color: var(--accent); }
 .native-app .start-level.selected { background: var(--accent-soft); }
 .native-app .start-level input { accent-color: var(--accent); }
 .native-app .start-free-note svg { color: var(--success); }
-.native-app .start-mascot { display: block; width: 112px; height: auto; margin: 0 0 4px -6px; animation: plus-mascot-float 3.4s ease-in-out infinite; }
+.native-app .start-mascot { animation: plus-mascot-float 3.4s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) { .native-app .start-mascot { animation: none; } }
 .native-app .app-loading-screen { background: var(--bg); color: var(--fg); }
 .native-app .app-loading-screen p { color: var(--muted); }
