@@ -13,12 +13,15 @@ const firstRun = flow === 'onboarding' || flow === 'first-lesson';
 // first-lesson: the Plus offer a free learner sees after finishing lesson one.
 user.subscriptionStatus = firstRun ? 'free' : 'plus';
 user.onboardingDone = flow !== 'onboarding';
-user.settings = { ...user.settings, language: 'en', notificationsEnabled: false, reminderTime: '19:00' };
+// ?lang=uk|ru|sk|en picks the interface language (English by default).
+const requestedLang = new URLSearchParams(location.search).get('lang');
+const lang = requestedLang && ['uk', 'ru', 'sk', 'en'].includes(requestedLang) ? requestedLang as 'uk' | 'ru' | 'sk' | 'en' : 'en';
+user.settings = { ...user.settings, language: lang, notificationsEnabled: false, reminderTime: '19:00' };
 data.progress[user.id] = { ...data.progress['user-student'], userId: user.id, lastPracticeDate: undefined };
 if (firstRun) data.progress[user.id] = { ...data.progress[user.id], completedLessons: [], xpDailyHistory: {}, streakDays: 0 };
 data.userWords[user.id] = data.userWords['user-student'] ?? [];
 data.users = [user];
-localStorage.setItem('slovakgo.guest-lang', 'en');
+localStorage.setItem('slovakgo.guest-lang', lang);
 localStorage.setItem('slovakgo.current-user', user.id);
 useAppStore.setState({ data, currentUserId: user.id });
 document.documentElement.dataset.uiTest = 'native-ui-fixture';
@@ -34,7 +37,7 @@ window.fetch = async (input, init) => {
   if (url.pathname === '/api/lessons') return respond({ ok: true, unchanged: false, version: `published:${state.data.lessons.length}:native-ui-fixture`, lessons: state.data.lessons });
   if (url.pathname.startsWith('/api/lessons/')) return respond({ ok: true, lesson: state.data.lessons.find(l => l.id === decodeURIComponent(url.pathname.split('/').at(-1)!)) });
   if (url.pathname === '/api/sync/push') return respond({ ok: true, applied: JSON.parse(String(init?.body || '{}')).mutations?.length ?? 0 });
-  if (url.pathname === '/api/billing/apple/account') return respond({ appAccountToken: '00000000-0000-4000-8000-000000000000', productIds: ['sk.slovakgo.plus.monthly', 'sk.slovakgo.plus.yearly'] });
+  if (url.pathname === '/api/billing/apple/account') return respond({ appAccountToken: '00000000-0000-4000-8000-000000000000', productIds: ['sk.slovakgo.app.plus.monthly', 'sk.slovakgo.app.plus.yearly'] });
   if (url.pathname === '/api/user/email-preferences') return respond({ marketingConsent: false });
   if (url.pathname === '/api/leaderboard') return respond({ entries: state.data.leaderboard.entries });
   if (['/api/user/activity', '/api/events', '/api/errors', '/api/ping'].includes(url.pathname)) return respond({ ok: true, updatedAt: new Date().toISOString() });
@@ -48,8 +51,8 @@ if (cap?.nativePromise) {
   const trial = { paymentMode: 'freeTrial', displayPrice: '0,00 €', period: { unit: 'day', value: 3 }, periodCount: 1 };
   cap.nativePromise = (plugin, method, options) => plugin === 'SlovakGoStore' && method === 'getProducts'
     ? Promise.resolve({ products: [
-      { id: 'sk.slovakgo.plus.monthly', displayName: 'Plus', displayPrice: '3,99 €', price: 3.99, currencyCode: 'EUR', period: { unit: 'month', value: 1 }, introOffer: trial },
-      { id: 'sk.slovakgo.plus.yearly', displayName: 'Plus', displayPrice: '29,99 €', price: 29.99, currencyCode: 'EUR', period: { unit: 'year', value: 1 }, introOffer: trial },
+      { id: 'sk.slovakgo.app.plus.monthly', displayName: 'Plus', displayPrice: '3,99 €', price: 3.99, currencyCode: 'EUR', period: { unit: 'month', value: 1 }, introOffer: trial },
+      { id: 'sk.slovakgo.app.plus.yearly', displayName: 'Plus', displayPrice: '29,99 €', price: 29.99, currencyCode: 'EUR', period: { unit: 'year', value: 1 }, introOffer: trial },
     ] })
     : nativePromise(plugin, method, options);
 }

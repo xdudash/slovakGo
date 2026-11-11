@@ -3242,7 +3242,8 @@ function ShopScreen() {
 
   return (
     <main className="page-content shop-page">
-      <PageHeader title={t("student.shop.title")} subtitle={t("student.shop.subtitle")} />
+      {/* The web price is Stripe's; in the app the App Store price is shown on the offer itself. */}
+      <PageHeader title={t("student.shop.title")} subtitle={t(isNativeApp ? "student.shop.subtitle_app" : "student.shop.subtitle")} />
 
       {didSubscribe && (
         <Card className="shop-success-card">
