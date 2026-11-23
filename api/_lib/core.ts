@@ -184,6 +184,38 @@ function effectiveSubStatus(r: Row): string {
   return bonusUntil && Date.parse(bonusUntil) > Date.now() ? "plus" : stored;
 }
 
+/**
+ * SQL twin of effectiveSubStatus() for admin lists, filters and counts, which
+ * cannot call JS per row. Needs the columns added by ensureSubscriptionColumns().
+ */
+export function effectiveSubSql(u = "u"): string {
+  const live = (col: string) => `julianday(${u}.${col}) > julianday('now')`;
+  return `(CASE
+    WHEN ${u}.sub_status = 'trial' AND ${live("trial_ends")} THEN 'trial'
+    WHEN ${u}.sub_status = 'plus' AND (COALESCE(${u}.sub_expires_at, '') = '' OR ${live("sub_expires_at")}) THEN 'plus'
+    WHEN ${u}.sub_status = 'past_due' THEN 'past_due'
+    WHEN ${u}.apple_status IN ('plus', 'trial') AND ${live("apple_expires_at")} THEN ${u}.apple_status
+    WHEN ${live("bonus_until")} THEN 'plus'
+    WHEN ${u}.sub_status IN ('plus', 'trial') THEN 'expired'
+    ELSE ${u}.sub_status END)`;
+}
+
+/** SQL for "this row's access comes from the App Store right now"; mirrors appleAccess(). */
+export function appleActiveSql(u = "u"): string {
+  return `(${u}.apple_status IN ('plus', 'trial') AND julianday(${u}.apple_expires_at) > julianday('now'))`;
+}
+
+/** Lazily added users columns that effectiveSubSql() reads. */
+let subscriptionColumns: Promise<void> | null = null;
+export function ensureSubscriptionColumns(): Promise<void> {
+  subscriptionColumns ??= (async () => {
+    for (const col of ["trial_ends", "sub_expires_at", "stripe_sub_id", "bonus_until", "apple_account_token", "apple_status", "apple_expires_at"]) {
+      await ensureCol("users", col, "TEXT");
+    }
+  })().catch((err) => { subscriptionColumns = null; throw err; });
+  return subscriptionColumns;
+}
+
 /** App Store access lives in its own columns so Stripe webhooks never overwrite it. */
 function appleAccess(r: Row): { status: string; expiresAt: string } | null {
   const status = String(r.apple_status ?? "");

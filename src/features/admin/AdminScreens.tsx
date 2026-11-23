@@ -125,7 +125,7 @@ async function exportJson(fallback: Lesson[]) {
 interface AdminServerUser {
   id: string; email: string; name: string; avatar: string | null;
   role: string; level: string; country: string;
-  subscriptionStatus: string; isBlocked: boolean;
+  subscriptionStatus: string; billingProvider: "app_store" | "stripe" | null; isBlocked: boolean;
   createdAt: string; lastSeenAt: string | null;
   xpTotal: number; streakDays: number; completedCount: number;
   activeSeconds: number; sessionCount: number; visits: number; marketingConsent: boolean;
@@ -807,6 +807,8 @@ function UsersScreen() {
             <div className="admin-user-badges">
               <span className={`admin-role-badge role-${u.role}`}>{u.role}</span>
               {u.subscriptionStatus === "plus" && <Crown size={14} color="var(--yellow-dark)" />}
+              {u.subscriptionStatus === "trial" && <span className="sub-badge sub-badge--trial">trial</span>}
+              {u.billingProvider === "app_store" && <span className="admin-role-badge" title="Оплата через App Store">App Store</span>}
               {u.isBlocked && <span className="admin-blocked-badge">заблок.</span>}
             </div>
             <div className="admin-user-stats">
@@ -820,8 +822,9 @@ function UsersScreen() {
                 {u.role}
               </button>
               <button type="button" className={`chip chip--sm ${u.subscriptionStatus === "plus" ? "active" : ""}`}
+                disabled={u.billingProvider === "app_store"}
                 onClick={() => patchUser(u.id, { subscriptionStatus: u.subscriptionStatus === "plus" ? "free" : "plus" })}
-                title="Перемкнути Plus">
+                title={u.billingProvider === "app_store" ? "Підпискою керує App Store" : "Перемкнути Plus"}>
                 <Crown size={12} /> Plus
               </button>
               <button type="button" className={`chip chip--sm ${u.isBlocked ? "active" : ""}`}
@@ -950,7 +953,7 @@ function UserDetail() {
       <Card>
         <div className="admin-detail-row"><span>Роль</span><strong>{u.role}</strong></div>
         <div className="admin-detail-row"><span>Рівень</span><LevelPill level={u.level as UserLevel} /></div>
-        <div className="admin-detail-row"><span>Підписка</span><strong>{u.subscriptionStatus}</strong></div>
+        <div className="admin-detail-row"><span>Підписка</span><strong>{u.subscriptionStatus}{u.billingProvider === "app_store" ? " · App Store" : u.billingProvider === "stripe" ? " · Stripe" : ""}</strong></div>
         <div className="admin-detail-row"><span>Країна</span><strong>{u.country || "—"}</strong></div>
         <div className="admin-detail-row"><span>Реєстрація</span><strong>{new Date(u.createdAt).toLocaleDateString("uk-UA")}</strong></div>
         <div className="admin-detail-row"><span>Остання активність</span><strong>{u.lastActiveAt ? new Date(u.lastActiveAt).toLocaleDateString("uk-UA") : "—"}</strong></div>
@@ -985,7 +988,8 @@ function UserDetail() {
         <Button variant="secondary" onClick={() => patchUser({ role: u.role === "student" ? "teacher" : "student" })}>
           Роль → {u.role === "student" ? "teacher" : "student"}
         </Button>
-        <Button variant="secondary" onClick={() => patchUser({ subscriptionStatus: u.subscriptionStatus === "plus" ? "free" : "plus" })}>
+        <Button variant="secondary" disabled={u.billingProvider === "app_store"} title={u.billingProvider === "app_store" ? "Підпискою керує App Store" : undefined}
+          onClick={() => patchUser({ subscriptionStatus: u.subscriptionStatus === "plus" ? "free" : "plus" })}>
           <Crown size={15} /> {u.subscriptionStatus === "plus" ? "Скасувати Plus" : "Видати Plus"}
         </Button>
         <Button variant={u.isBlocked ? "secondary" : "danger"} onClick={() => patchUser({ isBlocked: !u.isBlocked })}>
@@ -1064,9 +1068,11 @@ function Subscriptions() {
             <div className="admin-user-avatar">{u.avatar || u.name.slice(0, 2).toUpperCase()}</div>
             <div className="admin-user-info"><strong>{u.name}</strong><span>{u.email}</span></div>
             <span className={`sub-badge sub-badge--${u.subscriptionStatus}`}>{u.subscriptionStatus}</span>
-            <Button variant="secondary" onClick={() => patchUser(u.id, { subscriptionStatus: u.subscriptionStatus === "plus" ? "free" : "plus" })}>
-              {u.subscriptionStatus === "plus" ? "Скасувати" : "Дати Plus"}
-            </Button>
+            {u.billingProvider === "app_store"
+              ? <span className="admin-role-badge" title="Підпискою керує App Store">App Store</span>
+              : <Button variant="secondary" onClick={() => patchUser(u.id, { subscriptionStatus: u.subscriptionStatus === "plus" ? "free" : "plus" })}>
+                  {u.subscriptionStatus === "plus" ? "Скасувати" : "Дати Plus"}
+                </Button>}
           </div>
         ))}
       </div>

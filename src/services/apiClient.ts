@@ -274,7 +274,7 @@ export const apiClient = {
       users: Array<{
         id: string; email: string; name: string; avatar: string | null;
         role: string; level: string; country: string;
-        subscriptionStatus: string; isBlocked: boolean;
+        subscriptionStatus: string; billingProvider: "app_store" | "stripe" | null; isBlocked: boolean;
         createdAt: string; lastSeenAt: string | null;
         xpTotal: number; streakDays: number; completedCount: number;
         activeSeconds: number; sessionCount: number; visits: number; marketingConsent: boolean;

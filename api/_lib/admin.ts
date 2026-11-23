@@ -5,7 +5,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { Arg } from "./core";
 import { normalizeLessonPayload } from "./lessonValidation";
 import {
-  exec, query, queryOne, nowIso, safeJson, ensureCol,
+  exec, query, queryOne, nowIso, safeJson, ensureCol, effectiveSubSql, ensureSubscriptionColumns,
   requireUid, respond, fail, rowToUser, ensureProgress, getUserWords, checkRole
 } from "./core";
 
@@ -62,6 +62,7 @@ export async function activationFunnel(now: number) {
        user_id TEXT, name TEXT NOT NULL,
        props_j TEXT NOT NULL DEFAULT '{}', created_at TEXT NOT NULL)`
   );
+  await ensureSubscriptionColumns();
   const cohort = `SELECT id FROM users WHERE role = 'student' AND is_blocked = 0 AND created_at >= ? AND email NOT LIKE '%@example.com'`;
   const done = (min: number) => queryOne(
     `SELECT COUNT(*) as c FROM progress WHERE user_id IN (${cohort}) AND json_array_length(completed_j) >= ?`, [since, min]);
@@ -74,7 +75,7 @@ export async function activationFunnel(now: number) {
          UNION SELECT user_id FROM progress WHERE json_array_length(completed_j) >= 1 AND user_id IN (${cohort}))`,
       [since, since]),
     done(1), done(3), done(10),
-    queryOne(`SELECT COUNT(*) as c FROM users WHERE sub_status IN ('plus', 'trial', 'past_due') AND id IN (${cohort})`, [since]),
+    queryOne(`SELECT COUNT(*) as c FROM users u WHERE ${effectiveSubSql("u")} IN ('plus', 'trial', 'past_due') AND u.id IN (${cohort})`, [since]),
   ]);
   const n = (r: Record<string, unknown> | null | undefined) => Number(r?.c ?? 0);
   const steps = [
@@ -110,7 +111,7 @@ export async function handleAdminStats(req: VercelRequest, res: VercelResponse):
   const uid = await requireUid(req, res); if (!uid) return;
   if (!(await checkRole(uid, "admin"))) return fail(res, "Недостатньо прав", 403);
 
-  await closeIdleSessions();
+  await closeIdleSessions(); await ensureSubscriptionColumns();
   const now  = Date.now();
   const day  = new Date(now - 86400_000).toISOString().replace(/\.\d{3}Z$/, "Z");
   const week = new Date(now - 7 * 86400_000).toISOString().replace(/\.\d{3}Z$/, "Z");
@@ -119,7 +120,7 @@ export async function handleAdminStats(req: VercelRequest, res: VercelResponse):
     queryOne("SELECT COUNT(*) as c FROM users"),
     queryOne("SELECT COUNT(DISTINCT user_id) as c FROM activity_sessions WHERE last_active_at > ?", [day]),
     queryOne("SELECT COUNT(DISTINCT user_id) as c FROM activity_sessions WHERE last_active_at > ?", [week]),
-    queryOne("SELECT COUNT(*) as c FROM users WHERE sub_status = 'plus'"),
+    queryOne(`SELECT COUNT(*) as c FROM users u WHERE ${effectiveSubSql("u")} = 'plus'`),
     queryOne("SELECT AVG(xp_total) as v FROM progress"),
     queryOne("SELECT AVG(streak_days) as v FROM progress"),
   ]);
@@ -221,7 +222,7 @@ export async function handleAdminNotify(req: VercelRequest, res: VercelResponse,
   let sql = "SELECT ft.token FROM users u JOIN fcm_tokens ft ON ft.user_id = u.id WHERE u.is_blocked = 0";
   const args: Arg[] = [];
   if (target === "students")          { sql += " AND u.role = 'student'"; }
-  else if (target === "plus")         { sql += " AND u.sub_status = 'plus'"; }
+  else if (target === "plus")         { await ensureSubscriptionColumns(); sql += ` AND ${effectiveSubSql("u")} IN ('plus', 'trial', 'past_due')`; }
   else if (target.startsWith("level:")) { sql += " AND u.level = ?"; args.push(target.slice(6)); }
 
   const rows = await query(sql, args);
