@@ -5,7 +5,7 @@ import {
   type JWSRenewalInfoDecodedPayload, type JWSTransactionDecodedPayload,
 } from "@apple/app-store-server-library";
 import { APPLE_ROOT_CA_G3 } from "./appleRootCa";
-import { ensureCol, exec, fail, logEvent, nowIso, query, queryOne, requireUid, respond, rowToUser } from "./core";
+import { ensureSubscriptionColumns, exec, fail, logEvent, nowIso, query, queryOne, requireUid, respond, rowToUser } from "./core";
 
 export const APPLE_BUNDLE_ID = "sk.slovakgo.app";
 /** App Store Connect → App Information → Apple ID. Public; APPLE_APP_ID overrides it. */
@@ -62,9 +62,7 @@ async function ensureAppleTables(): Promise<void> {
     updated_at TEXT NOT NULL
   )`);
   await exec("CREATE INDEX IF NOT EXISTS apple_subscriptions_user ON apple_subscriptions (user_id)");
-  await ensureCol("users", "apple_account_token", "TEXT");
-  await ensureCol("users", "apple_status", "TEXT");
-  await ensureCol("users", "apple_expires_at", "TEXT");
+  await ensureSubscriptionColumns();
 }
 
 export class AppleOwnershipError extends Error {}

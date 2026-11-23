@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { connect } from 'node:http2';
 import { importPKCS8, SignJWT } from 'jose';
-import { exec, query, requireUid, respond, fail, nowIso, safeJson, type Arg } from './core';
+import { exec, query, requireUid, respond, fail, nowIso, safeJson, effectiveSubSql, ensureSubscriptionColumns, type Arg } from './core';
 
 export async function ensureNativePushTable(): Promise<void> {
   await exec(`CREATE TABLE IF NOT EXISTS native_push_tokens (
@@ -86,7 +86,7 @@ export async function sendNativeBroadcast(title: string, body: string, target: s
   let sql = 'SELECT nt.*, u.settings_j FROM native_push_tokens nt JOIN users u ON u.id = nt.user_id WHERE u.is_blocked = 0';
   const args: Arg[] = [];
   if (target === 'students') sql += " AND u.role = 'student'";
-  else if (target === 'plus') sql += " AND u.sub_status = 'plus'";
+  else if (target === 'plus') { await ensureSubscriptionColumns(); sql += ` AND ${effectiveSubSql('u')} IN ('plus', 'trial', 'past_due')`; }
   else if (target.startsWith('level:')) { sql += ' AND u.level = ?'; args.push(target.slice(6)); }
   const rows = (await query(sql, args)).filter(row => safeJson<{ notificationsEnabled?: boolean }>(String(row.settings_j), {}).notificationsEnabled === true);
   if (!rows.length) return { sent: 0 };

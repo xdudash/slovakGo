@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { Arg } from "./core";
-import { query, queryOne, requireUid, checkRole, fail, respond } from "./core";
+import { query, queryOne, requireUid, checkRole, fail, respond, effectiveSubSql, appleActiveSql, ensureSubscriptionColumns } from "./core";
 import { closeIdleSessions } from "./activity";
 import { ensureEmailPreferences } from "./emailPreferences";
 
@@ -10,12 +10,15 @@ const joins = `FROM users u LEFT JOIN progress p ON p.user_id=u.id
  LEFT JOIN email_preferences ep ON ep.user_id=u.id`;
 const lastActive = "MAX(COALESCE(a.last_active_at,''),COALESCE(p.last_prac,''),u.created_at)";
 const completed = "COALESCE(json_array_length(p.completed_j),0)";
+// What the learner actually has now, App Store included; u.sub_status alone is only Stripe/manual.
+const subStatus = effectiveSubSql("u");
+const billing = `CASE WHEN ${appleActiveSql("u")} THEN 'app_store' WHEN COALESCE(u.stripe_sub_id,'') <> '' THEN 'stripe' ELSE NULL END`;
 export function userFilters(params: Record<string, unknown>) {
   const clauses: string[] = [];
   const args: Arg[] = [];
   const search = String(params.search ?? "").trim();
   if (search) { clauses.push("(u.email LIKE ? OR u.name_text LIKE ?)"); args.push(`%${search}%`, `%${search}%`); }
-  for (const [key, col] of [["role", "u.role"], ["sub", "u.sub_status"], ["level", "u.level"]]) {
+  for (const [key, col] of [["role", "u.role"], ["sub", subStatus], ["level", "u.level"]]) {
     const value = String(params[key] ?? "");
     if (value && value !== "all") { clauses.push(`${col} = ?`); args.push(value); }
   }
@@ -38,10 +41,10 @@ export function csvCell(value: unknown): string {
 export async function handleAdminUsers(req: VercelRequest, res: VercelResponse): Promise<void> {
   const uid = await requireUid(req, res); if (!uid) return;
   if (!(await checkRole(uid, "admin"))) return fail(res, "Недостатньо прав", 403);
-  await closeIdleSessions(); await ensureEmailPreferences();
+  await closeIdleSessions(); await ensureEmailPreferences(); await ensureSubscriptionColumns();
   const { where, args } = userFilters(req.query);
   const select = `SELECT u.id, u.email, u.name_text, u.role, u.level, u.avatar, u.country,
-    u.sub_status, u.is_blocked, u.created_at, u.updated_at,
+    ${subStatus} AS sub_status, ${billing} AS billing_provider, u.is_blocked, u.created_at, u.updated_at,
     COALESCE(p.xp_total,0) AS xp_total, COALESCE(p.streak_days,0) AS streak_days,
     ${completed} AS completed_count, COALESCE(a.active_seconds,0) AS active_seconds,
     COALESCE(a.session_count,0) AS session_count, COALESCE(a.visits,0) AS visits,
@@ -50,12 +53,12 @@ export async function handleAdminUsers(req: VercelRequest, res: VercelResponse):
     res.setHeader("Content-Type", "text/csv; charset=utf-8");
     res.setHeader("Content-Disposition", 'attachment; filename="slovakgo-users.csv"');
     res.setHeader("Cache-Control", "no-store");
-    res.write("\uFEFF" + ["Email", "Ім'я", "Роль", "Рівень", "Підписка", "XP", "Уроків завершено", "Активний час (с)", "Сеансів", "Відвідувань", "Остання активність", "Згода на маркетинг", "Заблоковано"].map(csvCell).join(",") + "\r\n");
+    res.write("\uFEFF" + ["Email", "Ім'я", "Роль", "Рівень", "Підписка", "Оплата", "XP", "Уроків завершено", "Активний час (с)", "Сеансів", "Відвідувань", "Остання активність", "Згода на маркетинг", "Заблоковано"].map(csvCell).join(",") + "\r\n");
     let afterId = "";
     for (;;) {
       const rows = await query(`${select} ${where ? where + " AND" : "WHERE"} u.id > ? ORDER BY u.id LIMIT 500`, [...args, afterId]);
       for (const r of rows) {
-        const line = [r.email, r.name_text, r.role, r.level, r.sub_status, r.xp_total, r.completed_count, r.active_seconds, r.session_count, r.visits, r.last_active_at, r.marketing_consent, r.is_blocked];
+        const line = [r.email, r.name_text, r.role, r.level, r.sub_status, r.billing_provider === "app_store" ? "App Store" : r.billing_provider === "stripe" ? "Stripe" : "", r.xp_total, r.completed_count, r.active_seconds, r.session_count, r.visits, r.last_active_at, r.marketing_consent, r.is_blocked];
         if (!res.write(line.map(csvCell).join(",") + "\r\n")) await new Promise<void>(resolve => res.once("drain", resolve));
       }
       if (rows.length < 500) break;
@@ -72,6 +75,7 @@ export async function handleAdminUsers(req: VercelRequest, res: VercelResponse):
   respond(res, { ok: true, total: Number(total?.c ?? 0), users: rows.map(r => ({
     id: String(r.id), email: String(r.email), name: String(r.name_text), role: String(r.role), level: String(r.level),
     avatar: r.avatar ? String(r.avatar) : null, country: String(r.country ?? ""), subscriptionStatus: String(r.sub_status),
+    billingProvider: r.billing_provider ? String(r.billing_provider) : null,
     isBlocked: Boolean(r.is_blocked), createdAt: String(r.created_at), updatedAt: String(r.updated_at),
     lastSeenAt: r.last_active_at ? String(r.last_active_at) : null, xpTotal: Number(r.xp_total), streakDays: Number(r.streak_days),
     completedCount: Number(r.completed_count), activeSeconds: Number(r.active_seconds), sessionCount: Number(r.session_count),

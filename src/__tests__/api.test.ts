@@ -1528,6 +1528,28 @@ describe("App Store subscriptions", () => {
     expect((body.user as Record<string, unknown>).trialEndsAt).toBeTruthy();
   });
 
+  it("shows App Store trials and subscriptions in the admin panel", async () => {
+    const admin = await makeCookie("admin-1");
+    const statsBefore = (await call("GET", ["admin", "stats"], { cookie: admin })).body;
+    const paying = (b: Record<string, unknown>) => (b.funnel as { steps: { key: string; count: number }[] }).steps.find(s => s.key === "paying")!.count;
+    const plusCount = (b: Record<string, unknown>) => Number((b.summary as Record<string, unknown>).plusUsers);
+
+    await upload(await student("apple-admin-trial"), jws(tx({ originalTransactionId: "orig-admin-trial", offerType: 1, offerDiscountType: "FREE_TRIAL", expiresDate: Date.now() + 3 * DAY })));
+    await upload(await student("apple-admin-plus"), jws(tx({ originalTransactionId: "orig-admin-plus" })));
+
+    const list = await call("GET", ["admin", "users"], { cookie: admin, query: { search: "apple-admin-", limit: "50" } });
+    const users = list.body.users as { id: string; subscriptionStatus: string; billingProvider: string | null }[];
+    expect(users.find(u => u.id === "apple-admin-trial")).toMatchObject({ subscriptionStatus: "trial", billingProvider: "app_store" });
+    expect(users.find(u => u.id === "apple-admin-plus")).toMatchObject({ subscriptionStatus: "plus", billingProvider: "app_store" });
+
+    const trials = await call("GET", ["admin", "users"], { cookie: admin, query: { search: "apple-admin-", sub: "trial" } });
+    expect((trials.body.users as { id: string }[]).map(u => u.id)).toEqual(["apple-admin-trial"]);
+
+    const statsAfter = (await call("GET", ["admin", "stats"], { cookie: admin })).body;
+    expect(paying(statsAfter)).toBe(paying(statsBefore) + 2);
+    expect(plusCount(statsAfter)).toBe(plusCount(statsBefore) + 1);
+  });
+
   it("does not let a second account claim the same Apple subscription", async () => {
     const owner = await student("apple-owner");
     const other = await student("apple-other");
