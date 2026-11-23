@@ -2,6 +2,8 @@
 import copy from "../data/home.json";
 import offerCopy from "../../../shared/offerCopy.json";
 import Icon from "./LineIcon.astro";
+import AppStoreBadge from "./AppStoreBadge.astro";
+import appInfo from "../data/app.json";
 import "../styles/home-premium.css";
 const { lang = "uk" } = Astro.props;
 const locale = lang in copy ? lang as keyof typeof copy : "uk";
@@ -47,7 +49,48 @@ const faqs = [
   ["faqQ3", "faqA3"],
   ["faqLevelQ", "faqLevelA"],
 ];
-const canonical = new URL(Astro.url.pathname, "https://www.slovakgo.sk");
+// Ukrainian is the default locale: "/" is its canonical URL and "/uk/" is an alias.
+const site = "https://www.slovakgo.sk";
+const localePath = (code: string) => (code === "uk" ? "/" : `/${code}/`);
+const canonical = `${site}${localePath(locale)}`;
+const homeHref = localePath(locale);
+const plainText = (html: string) => html.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+const ogImage = `${site}/og-slovakgo.png`;
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${site}/#organization`,
+    name: "SlovakGO",
+    url: `${site}/`,
+    logo: `${site}/pwa-512-v1.png`,
+    email: "support@slovakgo.sk",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    name: "SlovakGO",
+    description: plainText(t("lead")),
+    operatingSystem: "iOS",
+    applicationCategory: "EducationalApplication",
+    url: appInfo.appStoreUrl,
+    installUrl: appInfo.appStoreUrl,
+    image: ogImage,
+    inLanguage: locale,
+    publisher: { "@id": `${site}/#organization` },
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    inLanguage: locale,
+    mainEntity: faqs.map(([q, a]) => ({
+      "@type": "Question",
+      name: plainText(t(q)),
+      acceptedAnswer: { "@type": "Answer", text: plainText(t(a)) },
+    })),
+  },
+];
 ---
 
 <!doctype html>
@@ -56,14 +99,15 @@ const canonical = new URL(Astro.url.pathname, "https://www.slovakgo.sk");
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="theme-color" content="#f4f7ff" />
-    <title>SlovakGO — {t('eyebrow')}</title>
+    <title>{t("metaTitle")}</title>
     <meta name="description" content={t("lead")} />
+    <meta name="apple-itunes-app" content={`app-id=${appInfo.appStoreId}`} />
     <link rel="canonical" href={canonical} />
-    {["uk", "ru", "en", "sk"].map((locale) => (
+    {["uk", "ru", "en", "sk"].map((code) => (
       <link
         rel="alternate"
-        hreflang={locale}
-        href={`https://www.slovakgo.sk/${locale}/`}
+        hreflang={code}
+        href={`${site}${localePath(code)}`}
       />
     ))}
     <link
@@ -79,14 +123,17 @@ const canonical = new URL(Astro.url.pathname, "https://www.slovakgo.sk");
     />
     <link rel="icon" href="/favicon-32-v1.png" type="image/png" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-icon.png?v=mascot-1" sizes="180x180" />
-    <meta property="og:title" content={`SlovakGO — ${t("eyebrow")}`} />
+    <meta property="og:title" content={t("metaTitle")} />
     <meta property="og:description" content={t("lead")} />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SlovakGO" />
     <meta property="og:url" content={canonical} />
-    <meta
-      property="og:image"
-      content="https://www.slovakgo.sk/slovakgo-preview.png"
-    />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     <meta
       name="google-site-verification"
       content="wBZHPUxYu-Q_LV0xj7pKp3HmUNIwB2J38CFUxphUx_s"
@@ -97,7 +144,7 @@ const canonical = new URL(Astro.url.pathname, "https://www.slovakgo.sk");
       {t("skip")}
     </a>
     <header class="nav shell">
-      <a class="brand" href={`/${lang}/`} aria-label="SlovakGO">
+      <a class="brand" href={homeHref} aria-label="SlovakGO">
         <img class="brand-avatar" src="/brand-avatar-v1.webp" alt="" width="40" height="40" />
         <span>
           Slovak<span class="brand-go">GO</span>
@@ -138,6 +185,14 @@ const canonical = new URL(Astro.url.pathname, "https://www.slovakgo.sk");
           data-t="login"
         >
           {t("login")}
+        </a>
+        <a
+          class="button yellow nav-signup"
+          href={app}
+          data-register
+          data-source="header"
+        >
+          <span data-t="sticky">{t("sticky")}</span>
         </a>
       </div>
     </header>
@@ -203,6 +258,11 @@ const canonical = new URL(Astro.url.pathname, "https://www.slovakgo.sk");
               <span data-t="try">{t("try")}</span>
               <Icon name="arrow" size={20} />
             </a>
+            <AppStoreBadge
+              topText={t("badgeTop")}
+              label={t("appStoreAlt")}
+              source="hero"
+            />
             <a class="text-link" href="#how" data-t="heroSecondary">
               {t("heroSecondary")}
             </a>
@@ -605,6 +665,14 @@ const canonical = new URL(Astro.url.pathname, "https://www.slovakgo.sk");
             </a>
           </article>
         </div>
+        <div class="app-store-row">
+          <p data-t="appStoreNote">{t("appStoreNote")}</p>
+          <AppStoreBadge
+            topText={t("badgeTop")}
+            label={t("appStoreAlt")}
+            source="pricing"
+          />
+        </div>
         <aside class="billing">
           <Icon name="docs" size={24} />
           <div>
@@ -640,6 +708,12 @@ const canonical = new URL(Astro.url.pathname, "https://www.slovakgo.sk");
             <span data-t="try">{t("try")}</span>
             <Icon name="arrow" size={20} />
           </a>
+          <AppStoreBadge
+            topText={t("badgeTop")}
+            label={t("appStoreAlt")}
+            source="final"
+            class="final-badge"
+          />
           <p class="final-helper" data-t="trial">
             {t("trial")}
           </p>
@@ -682,8 +756,17 @@ const canonical = new URL(Astro.url.pathname, "https://www.slovakgo.sk");
         </svg>
       </section>
     </main>
+    <div class="sticky-cta is-hidden" data-sticky-cta>
+      <a class="button yellow" href={app} data-register data-source="sticky">
+        <span class="sticky-cta-text">
+          <strong data-t="sticky">{t("sticky")}</strong>
+          <small data-t="stickySmall">{t("stickySmall")}</small>
+        </span>
+        <Icon name="arrow" size={18} />
+      </a>
+    </div>
     <footer class="footer shell">
-      <a class="brand" href={`/${lang}/`}>
+      <a class="brand" href={homeHref}>
         <img class="brand-avatar" src="/brand-avatar-v1.webp" alt="" width="40" height="40" />
         <span>Slovak<span class="brand-go">GO</span></span>
       </a>

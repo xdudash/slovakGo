@@ -7353,3 +7353,28 @@ textarea:focus,
 .course-deploy-card {
   margin-bottom: 1.5rem;
 }
+
+/* Web Plus offer after onboarding (WebPlusOffer). Reuses the .plus-intro layout from
+   native.css; the hero tokens only exist on iOS, so set web equivalents here. */
+.plus-intro--web {
+  --hero: #5a45d6; --hero-ink: #fff; --hero-muted: rgba(255, 255, 255, .8);
+  --border: var(--line, #e3e0ef);
+  min-height: 0;
+}
+.web-plus-plans { display: grid; gap: 10px; }
+.web-plus-plan {
+  position: relative; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px;
+  min-height: 64px; padding: 14px 16px; border: 2px solid var(--line); border-radius: 16px;
+  background: var(--surface); cursor: pointer;
+}
+.web-plus-plan.is-selected { border-color: var(--purple); box-shadow: 0 0 0 3px color-mix(in srgb, var(--purple) 18%, transparent); }
+.web-plus-plan input { width: 20px; height: 20px; margin: 0; accent-color: var(--purple); }
+.web-plus-plan:has(input:focus-visible) { outline: 3px solid var(--purple); outline-offset: 2px; }
+.web-plus-plan-name { display: grid; gap: 2px; }
+.web-plus-plan-name strong { font-size: 1rem; }
+.web-plus-plan-name small { color: var(--muted); font-size: .85rem; }
+.web-plus-plan b { font-size: 1rem; white-space: nowrap; }
+.web-plus-plan-badge {
+  position: absolute; top: -10px; right: 14px; padding: 2px 8px; border-radius: 999px;
+  background: var(--success); color: #fff; font-size: .75rem; font-style: normal; font-weight: 700;
+}

@@ -1,5 +1,6 @@
 import baseCopy from "../data/home.json";
 import offerCopy from "../../../shared/offerCopy.json";
+import appInfo from "../data/app.json";
 const copy = Object.fromEntries(Object.entries(baseCopy).map(([lang, strings]) => [lang, {
   ...strings,
   freeText: offerCopy[lang].free,
@@ -34,6 +35,8 @@ const levelKeys = [
   "levelAdvancedText",
 ];
 const s = (key) => copy[currentLang][key];
+// Ukrainian is the default locale and lives at "/"; other locales at "/xx/".
+const localePath = (lang) => (lang === "uk" ? "/" : `/${lang}/`);
 function track(name, detail = {}) {
   const payload = { lang: currentLang, ...detail };
   window.dispatchEvent(
@@ -143,7 +146,7 @@ function setLang(lang, updateUrl = false) {
   stopAudio();
   currentLang = supported.includes(lang) ? lang : "uk";
   document.documentElement.lang = currentLang;
-  const title = `SlovakGO — ${s("eyebrow")}`;
+  const title = s("metaTitle");
   document.title = title;
   $('meta[name="description"]').content = s("lead");
   $('meta[property="og:title"]').content = title;
@@ -164,14 +167,14 @@ function setLang(lang, updateUrl = false) {
     url.searchParams.set("lang", currentLang);
     a.href = url.toString();
   });
-  $$(".brand").forEach((a) => (a.href = `/${currentLang}/`));
+  $$(".brand").forEach((a) => (a.href = localePath(currentLang)));
   if (updateUrl) {
     const url = new URL(location.href);
-    url.pathname = `/${currentLang}/`;
+    url.pathname = localePath(currentLang);
     url.searchParams.delete("lang");
     history.replaceState(null, "", url);
   }
-  const canonical = `https://www.slovakgo.sk/${currentLang}/`;
+  const canonical = `https://www.slovakgo.sk${localePath(currentLang)}`;
   $('link[rel="canonical"]').href = canonical;
   $('meta[property="og:url"]').content = canonical;
   try {
@@ -244,11 +247,13 @@ $(".restart").addEventListener("click", () => {
   $(".lesson-option").focus({ preventScroll: true });
 });
 $$("[data-register]").forEach((link) =>
-  link.addEventListener("click", () =>
-    track("registration_click", {
-      source: link.dataset.plan || (finished ? "demo" : "page"),
-    }),
-  ),
+  link.addEventListener("click", () => {
+    const source = link.dataset.plan || link.dataset.source || (finished ? "demo" : "page");
+    // On iOS these links open the App Store. registration_click feeds Meta's
+    // RegistrationClick, so App Store taps get their own event instead.
+    if (link.dataset.destination === "app_store") track("app_store_click", { source });
+    else track("registration_click", { source });
+  }),
 );
 $("[data-placement]").addEventListener("click", () => track("placement_click"));
 $(".audio").addEventListener("click", () => {
@@ -294,6 +299,57 @@ $(".audio").addEventListener("click", () => {
 if ("speechSynthesis" in window)
   window.speechSynthesis.addEventListener("voiceschanged", syncAudio);
 window.addEventListener("pagehide", stopAudio);
+$$("[data-app-store]").forEach((link) =>
+  link.addEventListener("click", () =>
+    track("app_store_click", { source: link.dataset.appStore }),
+  ),
+);
+
+// iOS visitors get the native app: registration CTAs point to the App Store.
+// iPadOS Safari reports itself as "Macintosh", so touch support tells it apart.
+const ua = navigator.userAgent || "";
+const isIOS =
+  /iPhone|iPad|iPod/i.test(ua) ||
+  (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
+const isAndroid = /Android/i.test(ua);
+document.documentElement.dataset.platform = isIOS
+  ? "ios"
+  : isAndroid
+    ? "android"
+    : "other";
+if (isIOS) {
+  $$("[data-register]").forEach((link) => {
+    link.href = appInfo.appStoreUrl;
+    link.rel = "noopener";
+    link.dataset.destination = "app_store";
+    // Swap the copy key so setLang() keeps the label localized.
+    const label = link.querySelector(
+      '[data-t="footerCta"], [data-t="trialCta"], [data-t="sticky"]',
+    );
+    if (label) label.dataset.t = "getApp";
+    const small = link.querySelector('[data-t="stickySmall"]');
+    if (small) small.dataset.t = "getAppSmall";
+  });
+}
+
+// Mobile sticky CTA: hidden while the hero buttons, final CTA or footer are on screen.
+const sticky = $("[data-sticky-cta]");
+if (sticky && !("IntersectionObserver" in window))
+  sticky.classList.remove("is-hidden");
+else if (sticky) {
+  const visible = new Set();
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) visible.add(entry.target);
+      else visible.delete(entry.target);
+    });
+    sticky.classList.toggle("is-hidden", visible.size > 0);
+  });
+  [$(".hero-actions"), $(".final"), $(".footer")]
+    .filter(Boolean)
+    .forEach((el) => observer.observe(el));
+}
+
 const requested = new URLSearchParams(location.search).get("lang");
 let saved;
 try {

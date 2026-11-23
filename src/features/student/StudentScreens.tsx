@@ -14,6 +14,8 @@ import { PWAInstallBanner } from "../../components/PWAInstallBanner";
 import { apiClient } from "../../services/apiClient";
 import { isNativeApp, openExternalUrl, PUBLIC_APP_ORIGIN } from "../../services/platform";
 import { AppStoreOffer, AppStorePaywall, PlusIntro } from "../../components/AppStoreOffer";
+import { WebPlusOffer } from "../../components/WebPlusOffer";
+import { plusOfferSeen, safeNextPath } from "../../services/plusOffer";
 import { manageAppStoreSubscription, maybeRequestAppReview } from "../../services/appStoreBilling";
 
 import { leaderboardService } from "../../services/leaderboardService";
@@ -813,7 +815,9 @@ function LessonPlayer() {
   const [firstWin, setFirstWin] = useState(false);
   const [completionData, setCompletionData] = useState<CompletionData | null>(null);
   const [sharing, setSharing] = useState(false);
+  const startedAt = useRef(0);
   useEffect(() => {
+    startedAt.current = Date.now();
     if (lesson) track("lesson_start", { lessonId: lesson.id, level: lesson.level });
     // Only on entering a lesson, not on every re-render inside it.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -849,7 +853,7 @@ function LessonPlayer() {
   const opensTrialAfterLesson = user.role === "student"
     && accessService.isFinalPreviewLesson(lesson.id, data.lessons, progress, user.subscriptionStatus);
   // iOS: the first finished lesson is the moment to introduce Plus, not the signup screen.
-  const offersPlusAfterFirstLesson = firstWin && isNativeApp && user.role === "student" && !accessService.hasFullAccess(user.subscriptionStatus);
+  const offersPlusAfterFirstLesson = firstWin && isNativeApp && user.role === "student" && !accessService.hasFullAccess(user.subscriptionStatus) && !plusOfferSeen(user.id);
   const completionDestination = opensTrialAfterLesson ? "/app/paywall" : offersPlusAfterFirstLesson ? "/app/plus?from=first-lesson" : "/app/path";
 
   if (!exercise && !celebration && !completionData && phase === "exercise") return <Navigate to="/app/path" replace />;
@@ -1059,7 +1063,7 @@ function LessonPlayer() {
   return (
     <main className={`lesson-screen${phase === "final" ? " lesson-screen--final" : ""}`}>
       <div className="lesson-top">
-        <button type="button" onClick={() => navigate("/app/path")} aria-label={t("student.app.back")}><ChevronLeft /></button>
+        <button type="button" onClick={() => { track("lesson_exit", { lessonId: lesson.id, phase, index, elapsedSec: Math.round((Date.now() - startedAt.current) / 1000) }); navigate("/app/path"); }} aria-label={t("student.app.back")}><ChevronLeft /></button>
         <ProgressBar value={percent} />
         <div className="lesson-top-right">
           <span className="question-counter">{questionLabel}</span>
@@ -2968,11 +2972,25 @@ function PlusScreen() {
   const navigate = useNavigate();
   const [params] = useSearchParams();
   const firstLesson = params.get("from") === "first-lesson";
+  const onboarding = params.get("from") === "onboarding";
+  const next = safeNextPath(params.get("next"));
   const { user } = useStudentData();
   const { lang } = useT();
-  useEffect(() => { if (isNativeApp) track("paywall_view", { from: firstLesson ? "first_lesson" : "free_card" }); }, [firstLesson]);
+  const hasAccess = !!user && accessService.hasFullAccess(user.subscriptionStatus);
+  useEffect(() => {
+    if (hasAccess || !(isNativeApp || onboarding)) return;
+    track("paywall_view", { from: onboarding ? "onboarding" : firstLesson ? "first_lesson" : "free_card" });
+  }, [firstLesson, onboarding, hasAccess]);
+  if (onboarding) {
+    if (hasAccess) return <Navigate to={next} replace />;
+    const go = () => navigate(next, { replace: true });
+    const skip = () => { track("paywall_dismiss", { from: "onboarding" }); go(); };
+    return isNativeApp
+      ? <PlusIntro variant="onboarding" onSkip={skip} onActivated={go} />
+      : <WebPlusOffer from="onboarding" onSkip={skip} />;
+  }
   if (!isNativeApp) return <Navigate to="/app/shop" replace />;
-  if (user && accessService.hasFullAccess(user.subscriptionStatus)) return <Navigate to="/app/path" replace />;
+  if (hasAccess) return <Navigate to="/app/path" replace />;
   const back = () => navigate("/app/path", { replace: true });
   if (firstLesson) return <PlusIntro variant="first-lesson" onSkip={back} onActivated={back} />;
   return <PlusIntro onSkip={back} onActivated={back} skipLabel={nativeFreeCopy[lang].back} />;

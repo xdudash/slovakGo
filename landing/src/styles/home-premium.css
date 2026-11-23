@@ -1983,3 +1983,166 @@ h2 {
 
 .brand-avatar { width: 40px; height: 40px; flex-shrink: 0; border-radius: 13px; object-fit: cover; }
 @media (max-width: 380px) { .nav .brand { gap: 7px; } .nav .brand-avatar { width: 32px; height: 32px; border-radius: 10px; } }
+
+/* App Store badge, header sign-up and mobile sticky CTA. */
+.app-store-badge .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.app-store-badge {
+  display: inline-flex;
+  border-radius: 10px;
+  line-height: 0;
+  transition: transform 0.2s;
+}
+.app-store-badge:hover {
+  transform: translateY(-2px);
+}
+.app-store-badge svg {
+  width: auto;
+  height: 48px;
+  font-family: -apple-system, BlinkMacSystemFont, "Rubik", sans-serif;
+}
+.app-store-badge:focus-visible {
+  outline: 3px solid var(--purple-dark);
+  outline-offset: 3px;
+}
+.hero-copy .app-store-badge:focus-visible {
+  outline-color: var(--yellow);
+}
+[data-platform="android"] .app-store-badge,
+[data-platform="android"] .app-store-row {
+  display: none;
+}
+.app-store-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  margin-top: 27px;
+}
+.app-store-row p {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.final .final-badge {
+  display: flex;
+  width: max-content;
+  margin-top: 14px;
+}
+.nav-signup.button {
+  min-height: 44px;
+  padding: 11px 18px;
+  font-size: 14px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+.sticky-cta {
+  display: none;
+}
+@media (max-width: 1100px) {
+  .nav-signup.button {
+    padding-inline: 14px;
+    font-size: 13px;
+  }
+}
+/* Tablets: make room for the sign-up button in the header. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav {
+    gap: 16px;
+  }
+  .nav-actions {
+    gap: 12px;
+  }
+  .desktop-nav {
+    gap: 18px;
+    white-space: nowrap;
+  }
+  .language > span {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 919px) {
+  .desktop-nav {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  /* The sticky bar replaces the header button on phones. */
+  .nav-signup.button {
+    display: none;
+  }
+  body {
+    padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+  .sticky-cta {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.94);
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -8px 24px rgba(33, 25, 70, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition:
+      transform 0.25s ease,
+      visibility 0.25s;
+  }
+  .sticky-cta.is-hidden {
+    transform: translateY(110%);
+    visibility: hidden;
+  }
+  /* Keep the consent settings button clear of the sticky bar (position only). */
+  body:has(.sticky-cta:not(.is-hidden)) #slovakgo-cookie-settings {
+    bottom: calc(90px + env(safe-area-inset-bottom));
+  }
+  .sticky-cta .button {
+    width: 100%;
+    min-height: 54px;
+    padding: 9px 18px;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .sticky-cta-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    line-height: 1.3;
+  }
+  .sticky-cta-text strong {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .sticky-cta-text small {
+    font-size: 11px;
+    font-weight: 400;
+    color: #4a4069;
+  }
+  .app-store-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .app-store-row p {
+    font-size: 13px;
+    text-align: center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sticky-cta {
+    transition: none;
+  }
+}

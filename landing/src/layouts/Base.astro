@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import appInfo from '../data/app.json';
 
 interface Props {
   title: string;
@@ -37,6 +38,7 @@ const currentPath  = Astro.url.pathname;
     <meta name="keywords" content={keywords.join(', ')} />
   )}
   <link rel="canonical" href={canonicalURL} />
+  <meta name="apple-itunes-app" content={`app-id=${appInfo.appStoreId}`} />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />

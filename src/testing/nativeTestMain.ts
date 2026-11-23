@@ -43,7 +43,7 @@ window.fetch = async (input, init) => {
 };
 // StoreKit has no products in a CLI-launched Simulator, so serve the real price points.
 const cap = (window as unknown as { Capacitor?: { nativePromise: (plugin: string, method: string, options?: unknown) => Promise<unknown> } }).Capacitor;
-if (cap) {
+if (cap?.nativePromise) {
   const nativePromise = cap.nativePromise.bind(cap);
   const trial = { paymentMode: 'freeTrial', displayPrice: '0,00 €', period: { unit: 'day', value: 3 }, periodCount: 1 };
   cap.nativePromise = (plugin, method, options) => plugin === 'SlovakGoStore' && method === 'getProducts'

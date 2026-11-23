@@ -8,6 +8,8 @@ import { Button } from "../../components/ui";
 import { useT } from "../../i18n";
 import { lessonService } from "../../services/lessonService";
 import { track } from "../../services/analytics";
+import { accessService } from "../../services/accessService";
+import { markPlusOfferSeen } from "../../services/plusOffer";
 import { selectCurrentUser, useAppStore } from "../../store/useAppStore";
 import type { UserLevel } from "../../types";
 import offerCopy from "../../../shared/offerCopy.json";
@@ -46,12 +48,16 @@ export function Onboarding() {
   const [showLevels, setShowLevels] = useState(params.get("start") === "known");
   const [level, setLevel] = useState<UserLevel | null>(null);
   const [startLevel, setStartLevel] = useState<UserLevel | null>(null);
+  // finish() navigates itself; without this flag the onboardingDone redirect below
+  // renders first and wins over that navigation.
+  const [finished, setFinished] = useState(false);
   const heading = useRef<HTMLHeadingElement>(null);
   const levels = lessonService.levels.filter((value) => value !== "A0" && lessonService.byLevel(data.lessons, value).length > 0);
 
   useEffect(() => { heading.current?.focus(); }, [step, showLevels]);
 
   if (!user) return <Navigate to="/login" replace />;
+  if (finished) return null;
   if (user.onboardingDone) return <Navigate to="/app/path" replace />;
 
   const goal = goals[goalIndex ?? goals.length - 1];
@@ -77,12 +83,21 @@ export function Onboarding() {
 
   function finish() {
     if (!startLevel) return;
+    setFinished(true);
     savePreferences();
     track("onboarding_done", { goal, minutes, start: startLevel, via: startLevel === "A0" ? "beginner" : "self_selected" });
     useAppStore.getState().completeOnboarding(goal, startLevel);
     const state = useAppStore.getState();
     const first = state.data.lessons.find((lesson) => lesson.id === state.data.progress[userId!]?.currentLessonId);
-    navigate(first && !first.contentLocked ? `/app/lesson/${first.id}` : "/app/path", { replace: true });
+    const lessonPath = first && !first.contentLocked ? `/app/lesson/${first.id}` : "/app/path";
+    const me = selectCurrentUser(state.data, state.currentUserId);
+    // Most trials start on install day, so the plan screen leads into a skippable Plus offer.
+    if (me?.role === "student" && !accessService.hasFullAccess(me.subscriptionStatus)) {
+      markPlusOfferSeen(me.id);
+      navigate(`/app/plus?from=onboarding&next=${encodeURIComponent(lessonPath)}`, { replace: true });
+      return;
+    }
+    navigate(lessonPath, { replace: true });
   }
 
   function openTest() {

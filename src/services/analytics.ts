@@ -19,7 +19,12 @@ export type FunnelEvent =
   | "lesson_complete"
   | "section_complete"
   | "paywall_view"
+  | "paywall_dismiss"
   | "checkout_start"
+  | "purchase_tap"
+  | "purchase_result"
+  | "restore_tap"
+  | "lesson_exit"
   | "notifications_enabled";
 
 import { getAttribution } from "./attribution";
@@ -78,7 +83,8 @@ export function track(name: FunnelEvent, props: Record<string, unknown> = {}): v
         if (name === "section_complete") trackMeta("FreeSectionComplete", {}, `free-section:${user.id}`, true);
       }
     }
-    queue.push({ name, props: { ...getAttribution(), ...props } });
+    // Every event says where it happened, so iOS and web funnels can be told apart.
+    queue.push({ name, props: { ...getAttribution(), platform: isNativeApp ? "ios" : "web", ...props } });
     if (timer) return;
     timer = setTimeout(() => flush(), FLUSH_DELAY_MS);
   } catch { /* analytics must never break the app */ }
