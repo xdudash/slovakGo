@@ -109,3 +109,21 @@ export function clearLessonDraft(
     // ignore
   }
 }
+
+/** Where an unfinished lesson stands, for the path card ("resume at exercise N"). */
+export function peekLessonDraft(
+  userId: string | undefined,
+  lessonId: string | undefined,
+  storage: KV | undefined = defaultStorage(),
+  now = Date.now(),
+): { phase: LessonDraftPhase; index: number } | null {
+  if (!userId || !lessonId || !storage) return null;
+  try {
+    const draft = JSON.parse(storage.getItem(key(userId, lessonId)) ?? "null") as Partial<LessonDraft> | null;
+    if (!draft || typeof draft.savedAt !== "number" || now - draft.savedAt > LESSON_DRAFT_MAX_AGE_MS) return null;
+    if (draft.phase !== "theory" && draft.phase !== "words" && draft.phase !== "exercise") return null;
+    return { phase: draft.phase, index: Number.isInteger(draft.index) ? draft.index as number : 0 };
+  } catch {
+    return null;
+  }
+}

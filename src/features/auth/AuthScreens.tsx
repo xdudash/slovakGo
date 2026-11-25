@@ -100,13 +100,14 @@ export function Login() {
           {t("auth.try_demo")}
         </Button>
       )}
+      {isNativeApp ? <AppleSignInBlock first /> : null}
       <form onSubmit={submit} className="form-stack" noValidate>
         <Field label={t("auth.email")} type="email" value={email} autoComplete="email" autoFocus={!isNativeApp} onChange={(event) => setEmail(event.target.value)} />
         <Field label={t("auth.password")} type="password" value={password} autoComplete="current-password" onChange={(event) => setPassword(event.target.value)} />
         {authError ? <p className="error-text">{authError}</p> : null}
         <Button type="submit" disabled={loading}>{loading ? "…" : t("auth.sign_in")}</Button>
       </form>
-      {isNativeApp ? <AppleSignInBlock /> : <>
+      {isNativeApp ? null : <>
       <div className="auth-divider"><span>{t("auth.or")}</span></div>
       <button type="button" className="btn btn-google" onClick={() => { window.location.href = "/api/auth/google/start"; }}>
         <GoogleIcon />
@@ -192,8 +193,9 @@ export function Register() {
           👋 {t("auth.referred_banner")}
         </div>
       )}
+      {isNativeApp ? <AppleSignInBlock first /> : null}
       <form onSubmit={submit} className="form-stack" noValidate>
-        <Field label={t("auth.email")} type="email" value={form.email} autoComplete="email" autoFocus onChange={(event) => { setForm({ ...form, email: event.target.value }); setEmailIssue(null); }} />
+        <Field label={t("auth.email")} type="email" value={form.email} autoComplete="email" autoFocus={!isNativeApp} onChange={(event) => { setForm({ ...form, email: event.target.value }); setEmailIssue(null); }} />
         {emailIssue ? (
           <p className="error-text" role="alert">
             {emailIssue.error}{" "}
@@ -218,7 +220,7 @@ export function Register() {
           }
         </Button>
       </form>
-      {isNativeApp ? <AppleSignInBlock /> : <>
+      {isNativeApp ? null : <>
       <div className="auth-divider"><span>{t("auth.or")}</span></div>
       <button type="button" className="btn btn-google" onClick={() => {
         if (refParam) localStorage.setItem("slovakgo.pending-referral", refParam);
@@ -323,7 +325,11 @@ export function ResetPassword() {
 }
 
 /** iOS: Sign in with Apple, styled per Apple's button guidelines (black / white in dark mode). */
-function AppleSignInBlock() {
+/**
+ * On iOS, Sign in with Apple is the one-tap path, so it sits above the email form
+ * (about a third of installs never got past the email/password screen).
+ */
+function AppleSignInBlock({ first = false }: { first?: boolean }) {
   const { t } = useT();
   const navigate = useNavigate();
   const [busy, setBusy] = useState(false);
@@ -332,6 +338,7 @@ function AppleSignInBlock() {
   async function start() {
     setBusy(true);
     setError("");
+    track("apple_tap");
     try {
       const { signInWithApple } = await import("../../services/appleSignIn");
       const result = await signInWithApple();
@@ -343,9 +350,10 @@ function AppleSignInBlock() {
     }
   }
 
+  const divider = <div className="auth-divider"><span>{t("auth.or")}</span></div>;
   return (
     <>
-      <div className="auth-divider"><span>{t("auth.or")}</span></div>
+      {first ? null : divider}
       <button type="button" className="btn btn-apple" onClick={() => void start()} disabled={busy}>
         <svg viewBox="0 0 17 20" width="17" height="20" aria-hidden="true" fill="currentColor">
           <path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2.1-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.8 1.2 1.8 2.6 3.1 2.5 1.3-.1 1.7-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.2-1.2 3-2.5 1-1.4 1.4-2.8 1.4-2.8 0-.1-2.4-1-2.4-4.1zM11.6 3c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.5-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.4z" />
@@ -353,6 +361,7 @@ function AppleSignInBlock() {
         {t("auth.apple_continue")}
       </button>
       {error ? <p className="error-text">{error}</p> : null}
+      {first ? divider : null}
     </>
   );
 }

@@ -42,7 +42,8 @@ function RequireRole({ roles, children }: { roles: UserRole[]; children: ReactNo
 function EntryRedirect() {
   const { data, currentUserId } = useAppStore();
   const user = selectCurrentUser(data, currentUserId);
-  if (!user) return isNativeApp ? <Navigate to="/login" replace /> : <LandingPage />;
+  // New iPhone users land on sign-up (Apple first); "Увійти" is one tap away there.
+  if (!user) return isNativeApp ? <Navigate to="/register" replace /> : <LandingPage />;
   if (user.role === "student" && !user.onboardingDone) {
     return <Navigate to="/onboarding" replace />;
   }

@@ -16,6 +16,8 @@ import { isNativeApp, openExternalUrl, PUBLIC_APP_ORIGIN } from "../../services/
 import { AppStoreOffer, AppStorePaywall, PlusIntro } from "../../components/AppStoreOffer";
 import { WebPlusOffer } from "../../components/WebPlusOffer";
 import { plusOfferSeen, safeNextPath } from "../../services/plusOffer";
+import { ReminderPrime } from "../../components/ReminderPrime";
+import { shouldPrimeReminders } from "../../services/reminderPrime";
 import { manageAppStoreSubscription, maybeRequestAppReview } from "../../services/appStoreBilling";
 
 import { leaderboardService } from "../../services/leaderboardService";
@@ -40,7 +42,7 @@ import { resolveText, resolveWordExampleTranslation, resolveWordTranslation } fr
 import { useLessonLocale } from "../../hooks/useLessonLocale";
 import { formatCorrectAnswer, isLegacyCorrectOption } from "../../services/exerciseChecking";
 import { soundService } from "../../services/soundService";
-import { clearLessonDraft, LESSON_ATTEMPTS, loadLessonDraft, saveLessonDraft } from "../../utils/lessonDraft";
+import { clearLessonDraft, LESSON_ATTEMPTS, loadLessonDraft, peekLessonDraft, saveLessonDraft } from "../../utils/lessonDraft";
 import { OptionListExercise } from "./exercises/OptionListExercise";
 import { TrueFalseExercise } from "./exercises/TrueFalseExercise";
 import { BlankFillExercise } from "./exercises/BlankFillExercise";
@@ -131,7 +133,7 @@ export function StudentLayout() {
   }
 
   if (user && progress && user.role === "student" && !accessService.hasFullAccess(user.subscriptionStatus)) {
-    const alwaysAllowed = ["/app/profile", "/app/paywall", "/app/settings", "/app/levels", "/app/vocabulary", "/app/practice", "/app/leaderboard", "/app/shop", "/app/plus"];
+    const alwaysAllowed = ["/app/profile", "/app/paywall", "/app/settings", "/app/levels", "/app/vocabulary", "/app/practice", "/app/leaderboard", "/app/shop", "/app/plus", "/app/remind"];
     const isPath = location.pathname === "/app" || location.pathname === "/app/path";
     const lessonId = location.pathname.startsWith("/app/lesson/") ? location.pathname.slice("/app/lesson/".length) : "";
     const canPreview = accessService.canUsePreview(data.lessons, progress, user.subscriptionStatus);
@@ -157,6 +159,7 @@ export function StudentLayout() {
         <Route path="levels" element={<LevelsScreen />} />
         <Route path="paywall" element={<PaywallScreen />} />
         <Route path="plus" element={<PlusScreen />} />
+        <Route path="remind" element={<RemindScreen />} />
       </Routes>
     </AppShell>
   );
@@ -229,6 +232,11 @@ function PathScreen() {
   }, [data.lessons, progress, isAdmin, adminStatus, t, lang]);
   const scenario = getScenarioForGoal(user?.goal);
   const dailyPhrases = getDailyPhrases(user?.goal, 3);
+  // Read once per lesson: a learner who left mid-lesson sees where they will resume.
+  const resumeAt = useMemo(() => {
+    const draft = peekLessonDraft(user?.id, current?.id);
+    return draft?.phase === "exercise" && draft.index > 0 && current && draft.index < current.exercises.length ? draft : null;
+  }, [user?.id, current]);
 
   if (!user || !progress) return <PageSkeleton />;
 
@@ -280,7 +288,7 @@ function PathScreen() {
         </div>
         <div className="learning-hero-friend"><span className="companion-speech" lang="sk">Dobrý deň! <span aria-hidden="true">✦</span></span>{isNativeApp ? <img className="learning-hero-mascot" src="/brand/mascot-wave.webp" alt="" width="104" height="96" /> : <GuideCharacter />}</div>
       </section>
-      {current && <div className="next-lesson-summary"><BookOpen size={20} /><div><span>{t("student.experience.next_lesson")}</span><strong>{resolveText(current.title, lang)}</strong></div><span className="next-lesson-duration">{current.estimatedMinutes} {t("student.experience.minutes")}</span></div>}
+      {current && <div className="next-lesson-summary"><BookOpen size={20} /><div><span>{t("student.experience.next_lesson")}</span><strong>{resolveText(current.title, lang)}</strong>{resumeAt && <small className="next-lesson-resume">{t("student.path.resume_at").replace("{n}", String(resumeAt.index + 1)).replace("{total}", String(current.exercises.length))}</small>}</div><span className="next-lesson-duration">{current.estimatedMinutes} {t("student.experience.minutes")}</span></div>}
 
       {/* Daily goal bar */}
       <div className={`daily-goal${goalDone ? " daily-goal--done" : ""}`}>
@@ -854,7 +862,12 @@ function LessonPlayer() {
     && accessService.isFinalPreviewLesson(lesson.id, data.lessons, progress, user.subscriptionStatus);
   // iOS: the first finished lesson is the moment to introduce Plus, not the signup screen.
   const offersPlusAfterFirstLesson = firstWin && isNativeApp && user.role === "student" && !accessService.hasFullAccess(user.subscriptionStatus) && !plusOfferSeen(user.id);
-  const completionDestination = opensTrialAfterLesson ? "/app/paywall" : offersPlusAfterFirstLesson ? "/app/plus?from=first-lesson" : "/app/path";
+  // iOS reminders only work after the one-time system prompt, so prime it after lesson 1 (and 3).
+  const primesReminders = isNativeApp && user.role === "student"
+    && shouldPrimeReminders(user.id, new Set([...progress.completedLessons, lesson.id]).size);
+  const completionDestination = opensTrialAfterLesson ? "/app/paywall"
+    : offersPlusAfterFirstLesson ? "/app/plus?from=first-lesson"
+    : primesReminders ? "/app/remind" : "/app/path";
 
   if (!exercise && !celebration && !completionData && phase === "exercise") return <Navigate to="/app/path" replace />;
 
@@ -905,9 +918,11 @@ function LessonPlayer() {
     if (opensTrialAfterLesson) track("section_complete", { level: lesson!.level });
     const cd: CompletionData = { xp, correct, total: finalRecords.length, wrong: buildWrong(finalRecords) };
     soundService.play("complete", user!.settings.soundEnabled, user!.settings.hapticsEnabled);
-    if (isNativeApp) {
+    // Ask for a rating only after a lesson that went well, and never next to an offer,
+    // the paywall or the reminder primer (5.6.1: system prompt only, no incentives).
+    if (isNativeApp && completionDestination === "/app/path" && finalRecords.length > 0 && correct / finalRecords.length >= 0.8) {
       const finished = new Set([...progress!.completedLessons, lesson!.id]).size;
-      window.setTimeout(() => void maybeRequestAppReview(finished), 1500);
+      window.setTimeout(() => { void maybeRequestAppReview(finished).then((asked) => { if (asked) track("review_requested", { finished }); }); }, 1500);
     }
     if (lesson!.resultScreen) {
       setCompletionData(cd);
@@ -1067,19 +1082,8 @@ function LessonPlayer() {
         <ProgressBar value={percent} />
         <div className="lesson-top-right">
           <span className="question-counter">{questionLabel}</span>
-          <span className="lesson-attempts-chip" title={t("student.lesson.attempts_hint")} aria-label={`${t("student.lesson.attempts_label")}: ${attemptsRemaining} / ${LESSON_ATTEMPTS}`}>
-            <RefreshCw size={15} aria-hidden="true" /> {t("student.lesson.attempts_label")} {attemptsRemaining}/{LESSON_ATTEMPTS}
-          </span>
         </div>
       </div>
-
-      {phase === "start" && <p className="lesson-attempts-intro">{t("student.lesson.attempts_hint")}</p>}
-      {attemptsRemaining === 0 && phase !== "result" && !celebration && !completionData && (
-        <section className="lesson-attempts-note" aria-live="polite">
-          <div><strong>{t("student.lesson.attempts_renew_title")}</strong><p>{t("student.lesson.attempts_renew_text")}</p></div>
-          <Button variant="secondary" onClick={() => setAttemptsRemaining(LESSON_ATTEMPTS)}>{t("student.lesson.attempts_continue")}</Button>
-        </section>
-      )}
 
       {phase === "start" && (
         lesson.startScreen ? (
@@ -2968,6 +2972,13 @@ const nativeFreeCopy: Record<"uk" | "ru" | "sk" | "en", { label: string; title: 
 };
 
 /** iOS: the Plus offer outside onboarding, e.g. from the free-lessons card. */
+function RemindScreen() {
+  const navigate = useNavigate();
+  const done = useCallback(() => navigate("/app/path", { replace: true }), [navigate]);
+  if (!isNativeApp) return <Navigate to="/app/path" replace />;
+  return <ReminderPrime onDone={done} />;
+}
+
 function PlusScreen() {
   const navigate = useNavigate();
   const [params] = useSearchParams();
