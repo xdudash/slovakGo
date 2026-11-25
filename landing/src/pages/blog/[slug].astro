@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import AppStoreBadge from '../../components/AppStoreBadge.astro';
 import offerCopy from '../../../../shared/offerCopy.json';
 
 export async function getStaticPaths() {
@@ -13,8 +14,13 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-const { title, description, pubDate, updatedDate, keywords } = post.data;
+const { title, seoTitle, description, pubDate, updatedDate, keywords, image } = post.data;
 const slug = post.id;
+const pageTitle = seoTitle ?? `${title} — SlovakGO`;
+const postUrl = `https://www.slovakgo.sk/blog/${slug}/`;
+const ogImage = image ?? 'https://www.slovakgo.sk/og-slovakgo.png';
+// Each article tags its sign-up link so the web app can attribute the visit.
+const webAppUrl = `https://app.slovakgo.sk/register?utm_source=blog&utm_medium=article&utm_campaign=${slug}`;
 
 const dateStr = pubDate.toLocaleDateString('uk-UA', {
   year: 'numeric', month: 'long', day: 'numeric',
@@ -25,6 +31,9 @@ const schema = {
   "@type": "BlogPosting",
   "headline": title,
   "description": description,
+  "inLanguage": "uk",
+  "url": postUrl,
+  "image": ogImage,
   "datePublished": pubDate.toISOString(),
   "dateModified": (updatedDate ?? pubDate).toISOString(),
   "keywords": keywords?.join(', '),
@@ -40,12 +49,12 @@ const schema = {
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": `https://www.slovakgo.sk/blog/${slug}`,
+    "@id": postUrl,
   },
 };
 ---
 
-<Base title={`${title} — SlovakGO`} {description} {keywords} schema={schema}>
+<Base title={pageTitle} {description} {keywords} image={ogImage} ogType="article" schema={schema}>
   <main>
     <div class="container">
       <article class="post-page">
@@ -64,13 +73,16 @@ const schema = {
         <div class="post-cta">
           <div class="post-cta-inner">
             <p class="post-cta-label">Вчи словацьку прямо зараз</p>
-            <h2>Спробуй перші 10 уроків SlovakGO</h2>
+            <h2>Спробуй перший урок безкоштовно</h2>
             <p>{offerCopy.uk.free}</p>
             <p>{offerCopy.uk.trial}</p>
-            <a href="https://app.slovakgo.sk/register" class="btn btn-primary btn-lg" rel="noopener">
-              Почати навчання
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
+            <div class="post-cta-actions">
+              <a href={webAppUrl} class="btn btn-primary btn-lg" rel="noopener">
+                Почати перший урок
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <AppStoreBadge topText="Завантажте в" label="Завантажити SlovakGO в App Store" source={`blog-${slug}`} />
+            </div>
           </div>
         </div>
       </article>

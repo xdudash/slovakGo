@@ -3009,3 +3009,7 @@ details.faq-accordion-item[open] summary::after {
 }
 
 .post-cta .btn { max-width: 100%; white-space: normal; text-align: center; }
+.post-cta-actions { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; align-items: center; }
+.post-cta .app-store-badge { display: inline-flex; line-height: 0; border-radius: 10px; }
+.post-cta .app-store-badge svg { width: auto; height: 52px; }
+.post-cta .app-store-badge:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
