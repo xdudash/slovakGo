@@ -5,14 +5,14 @@
       "sectionId": "a0-u02",
       "level": "A0",
       "title": "Як справи?",
-      "topic": "Привітання і ввічливість",
+      "topic": "Перші кроки: фрази й звуки",
       "description": "Запитати, як справи, і відповісти чесно, але коротко: dobre, výborne, ujde to, nič moc, zle.",
-      "order": 18,
+      "order": 10,
       "xpReward": 15,
-      "estimatedMinutes": 19,
+      "estimatedMinutes": 7,
       "isPublished": true,
       "intro": "Вести мінімальну розмову про самопочуття.",
-      "completionMessage": "Ти вже підтримуєш коротку розмову! Далі — що робити, коли не розумієш.",
+      "completionMessage": "Ти вже підтримуєш коротку розмову! Далі — шиплячі звуки č, š, ž.",
       "updatedAt": "2026-10-01T00:00:00+02:00",
       "localization": {
         "uiLanguages": [
@@ -23,7 +23,7 @@
       },
       "startScreen": {
         "screenType": "lesson_start",
-        "eyebrow": "A0 · Привітання і ввічливість",
+        "eyebrow": "A0 · Перші кроки: фрази й звуки",
         "title": "Як справи?",
         "shortDescription": "Вести мінімальну розмову про самопочуття.",
         "outcomes": [
@@ -42,7 +42,7 @@
         ],
         "exercisesCount": 12,
         "reward": "+15 XP",
-        "estimatedMinutes": 19,
+        "estimatedMinutes": 7,
         "button": "Почати урок →"
       },
       "theoryScreens": [
@@ -50,31 +50,12 @@
           "id": "theory-1",
           "screenType": "theory",
           "order": 1,
-          "title": "Як запитати",
-          "text": "«Ako sa máš?» (ти) / «Ako sa máte?» (ви). Розмовно: «Ako sa darí?» (як ведеться?), «Čo nové?» (що нового?). Це не завжди справжнє запитання — часто просто частина привітання.",
+          "title": "Як запитати й відповісти",
+          "text": "Другові кажуть «Ako sa máš?» (ти), незнайомим і старшим — «Ako sa máte?» (ви), як prepáč і prepáčte. Розмовно: «Ako sa darí?» (як ведеться?), «Čo nové?» (що нового?). Часто це просто частина привітання. Відповідь за шкалою: výborne (чудово) → dobre (добре) → ujde to (так собі) → nič moc (не дуже) → zle (погано). Потім поверни питання: «A ty?» / «A vy?».",
           "examples": [
             {
-              "sk": "Ako sa darí?",
-              "uk": "Як ведеться?"
-            },
-            {
-              "sk": "Čo nové?",
-              "uk": "Що нового?"
-            }
-          ],
-          "shortRule": "Ako sa máš? — частина привітання.",
-          "button": "Далі →"
-        },
-        {
-          "id": "theory-2",
-          "screenType": "theory",
-          "order": 2,
-          "title": "Як відповісти",
-          "text": "Шкала: výborne (чудово) → dobre (добре) → ujde to (так собі, нормально) → nič moc (не дуже) → zle (погано). Потім поверни питання: «A ty?» / «A vy?».",
-          "examples": [
-            {
-              "sk": "Mám sa dobre, ďakujem. A vy?",
-              "uk": "Добре, дякую. А ви?"
+              "sk": "Ako sa máte? — Mám sa dobre, ďakujem. A vy?",
+              "uk": "Як справи? — Добре, дякую. А ви?"
             },
             {
               "sk": "Ujde to.",
@@ -83,15 +64,19 @@
             {
               "sk": "Nič moc, som unavený.",
               "uk": "Не дуже, я втомлений."
+            },
+            {
+              "sk": "Ako sa darí?",
+              "uk": "Як ведеться?"
             }
           ],
           "shortRule": "Відповідь + ďakujem + A ty / A vy?",
           "button": "Далі →"
         },
         {
-          "id": "theory-3",
+          "id": "theory-2",
           "screenType": "theory",
-          "order": 3,
+          "order": 2,
           "title": "Співчуття і радість",
           "text": "Якщо людина каже «zle», ввічливо відповісти «To ma mrzí» (мені шкода). Якщо «výborne» — «To som rád / rada» (я радий / рада). Rád — каже чоловік, rada — жінка.",
           "examples": [
@@ -666,7 +651,7 @@
           },
           {
             "id": "f2",
-            "prompt": "Вона каже: «Ale bolí ma noha.»",
+            "prompt": "Вона каже: «Ale bolí ma noha.» (У мене болить нога.)",
             "options": [
               {
                 "sk": "Výborne!",
@@ -720,12 +705,12 @@
           }
         ],
         "passRequirement": "3/4",
-        "successMessage": "Ситуацію вирішено! Ти вже підтримуєш коротку розмову! Далі — що робити, коли не розумієш."
+        "successMessage": "Ситуацію вирішено! Ти вже підтримуєш коротку розмову! Далі — шиплячі звуки č, š, ž."
       },
       "resultScreen": {
         "screenType": "lesson_result",
         "title": "Урок завершено!",
-        "text": "Ти вже підтримуєш коротку розмову! Далі — що робити, коли не розумієш.",
+        "text": "Ти вже підтримуєш коротку розмову! Далі — шиплячі звуки č, š, ž.",
         "nowYouKnow": [
           "Ako sa máš / máte? Ako sa darí?",
           "výborne, dobre, ujde to, nič moc, zle",
@@ -742,8 +727,8 @@
           "Повторити помилки"
         ],
         "nextLesson": {
-          "id": "a0-u02-l09-nerozumiem",
-          "title": "Коли не розумієш"
+          "id": "a0-u01-l03-makcen-c-s-z",
+          "title": "Шиплячі: č, š, ž, dž"
         }
       }
     }

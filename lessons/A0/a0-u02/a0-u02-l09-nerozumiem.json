@@ -5,14 +5,14 @@
       "sectionId": "a0-u02",
       "level": "A0",
       "title": "Коли не розумієш",
-      "topic": "Привітання і ввічливість",
+      "topic": "Вимова і ввічлива розмова",
       "description": "Рятівні фрази для початківця: nerozumiem, pomalšie, ešte raz, čo to znamená, ako sa povie.",
-      "order": 19,
+      "order": 16,
       "xpReward": 15,
-      "estimatedMinutes": 19,
+      "estimatedMinutes": 7,
       "isPublished": true,
       "intro": "Керувати розмовою, коли щось незрозуміло.",
-      "completionMessage": "Тепер жодна розмова не зайде в глухий кут. Далі — підсумок розділу.",
+      "completionMessage": "Тепер жодна розмова не зайде в глухий кут. Далі — особливі голосні ä, ô та дифтонги.",
       "updatedAt": "2026-10-01T00:00:00+02:00",
       "localization": {
         "uiLanguages": [
@@ -23,7 +23,7 @@
       },
       "startScreen": {
         "screenType": "lesson_start",
-        "eyebrow": "A0 · Привітання і ввічливість",
+        "eyebrow": "A0 · Вимова і ввічлива розмова",
         "title": "Коли не розумієш",
         "shortDescription": "Керувати розмовою, коли щось незрозуміло.",
         "outcomes": [
@@ -33,7 +33,6 @@
           "запитати, як щось сказати словацькою"
         ],
         "newWords": [
-          "nerozumiem",
           "pomalšie",
           "ešte raz",
           "Čo to znamená?",
@@ -42,7 +41,7 @@
         ],
         "exercisesCount": 12,
         "reward": "+15 XP",
-        "estimatedMinutes": 19,
+        "estimatedMinutes": 7,
         "button": "Почати урок →"
       },
       "theoryScreens": [
@@ -110,14 +109,6 @@
         "subtitle": "Прочитай кожне слово з прикладом — далі вони будуть у вправах.",
         "items": [
           {
-            "wordId": "a0-u02-l09-nerozumiem-w01",
-            "sk": "nerozumiem",
-            "uk": "я не розумію",
-            "pronunciationUk": "нерозумієм",
-            "exampleSk": "Prepáčte, nerozumiem.",
-            "exampleUk": "Вибачте, я не розумію."
-          },
-          {
             "wordId": "a0-u02-l09-nerozumiem-w02",
             "sk": "pomalšie",
             "uk": "повільніше",
@@ -161,20 +152,6 @@
         "button": "До вправ →"
       },
       "words": [
-        {
-          "id": "a0-u02-l09-nerozumiem-w01",
-          "sk": "nerozumiem",
-          "uk": "я не розумію",
-          "pronunciationUk": "нерозумієм",
-          "exampleSk": "Prepáčte, nerozumiem.",
-          "exampleUk": "Вибачте, я не розумію.",
-          "level": "A0",
-          "topic": "Привітання і ввічливість",
-          "tags": [
-            "a0-u02",
-            "a0"
-          ]
-        },
         {
           "id": "a0-u02-l09-nerozumiem-w02",
           "sk": "pomalšie",
@@ -282,7 +259,6 @@
           "explanation": "Попроси говорити повільніше.",
           "order": 1,
           "wordIds": [
-            "a0-u02-l09-nerozumiem-w01",
             "a0-u02-l09-nerozumiem-w02"
           ]
         },
@@ -321,7 +297,6 @@
           "explanation": "Попроси повторити — zopakovať.",
           "order": 2,
           "wordIds": [
-            "a0-u02-l09-nerozumiem-w01",
             "a0-u02-l09-nerozumiem-w04"
           ]
         },
@@ -360,7 +335,6 @@
           "explanation": "Питання про значення — Čo znamená…?",
           "order": 3,
           "wordIds": [
-            "a0-u02-l09-nerozumiem-w01",
             "a0-u02-l09-nerozumiem-w02",
             "a0-u02-l09-nerozumiem-w03",
             "a0-u02-l09-nerozumiem-w04"
@@ -398,7 +372,6 @@
           ],
           "order": 4,
           "wordIds": [
-            "a0-u02-l09-nerozumiem-w01",
             "a0-u02-l09-nerozumiem-w02",
             "a0-u02-l09-nerozumiem-w03",
             "a0-u02-l09-nerozumiem-w04",
@@ -430,10 +403,7 @@
             }
           ],
           "explanation": "Жінка — nerozumela som; чоловік — nerozumel som.",
-          "order": 5,
-          "wordIds": [
-            "a0-u02-l09-nerozumiem-w01"
-          ]
+          "order": 5
         },
         {
           "id": "a0-u02-l09-nerozumiem-ex06",
@@ -461,7 +431,6 @@
           "explanation": "Hovorte — «говоріть».",
           "order": 6,
           "wordIds": [
-            "a0-u02-l09-nerozumiem-w01",
             "a0-u02-l09-nerozumiem-w02"
           ]
         },
@@ -482,7 +451,6 @@
           "explanation": "Ako sa povie po slovensky…?",
           "order": 7,
           "wordIds": [
-            "a0-u02-l09-nerozumiem-w01",
             "a0-u02-l09-nerozumiem-w05",
             "a0-u02-l09-nerozumiem-w06"
           ]
@@ -500,7 +468,6 @@
           "explanation": "pomalšie — повільніше.",
           "order": 8,
           "wordIds": [
-            "a0-u02-l09-nerozumiem-w01",
             "a0-u02-l09-nerozumiem-w02"
           ]
         },
@@ -538,7 +505,6 @@
           "explanation": "Якщо не зрозумів — чесно скажи й попроси повторити повільніше. Не кажи «так» навмання!",
           "order": 9,
           "wordIds": [
-            "a0-u02-l09-nerozumiem-w01",
             "a0-u02-l09-nerozumiem-w02"
           ]
         },
@@ -560,10 +526,7 @@
           ],
           "correctSentence": "Hovoríte po ukrajinsky?",
           "explanation": "Hovoríte po + мова?",
-          "order": 10,
-          "wordIds": [
-            "a0-u02-l09-nerozumiem-w01"
-          ]
+          "order": 10
         },
         {
           "id": "a0-u02-l09-nerozumiem-ex11",
@@ -593,10 +556,7 @@
             }
           ],
           "explanation": "Ти питаєш, чи можна говорити англійською.",
-          "order": 11,
-          "wordIds": [
-            "a0-u02-l09-nerozumiem-w01"
-          ]
+          "order": 11
         },
         {
           "id": "a0-u02-l09-nerozumiem-ex12",
@@ -633,7 +593,6 @@
           "explanation": "Питання про значення → пояснення → подяка.",
           "order": 12,
           "wordIds": [
-            "a0-u02-l09-nerozumiem-w01",
             "a0-u02-l09-nerozumiem-w04"
           ]
         }
@@ -718,19 +677,19 @@
           }
         ],
         "passRequirement": "3/4",
-        "successMessage": "Ситуацію вирішено! Тепер жодна розмова не зайде в глухий кут. Далі — підсумок розділу."
+        "successMessage": "Ситуацію вирішено! Тепер жодна розмова не зайде в глухий кут. Далі — особливі голосні ä, ô та дифтонги."
       },
       "resultScreen": {
         "screenType": "lesson_result",
         "title": "Урок завершено!",
-        "text": "Тепер жодна розмова не зайде в глухий кут. Далі — підсумок розділу.",
+        "text": "Тепер жодна розмова не зайде в глухий кут. Далі — особливі голосні ä, ô та дифтонги.",
         "nowYouKnow": [
           "nerozumiem / nerozumel(a) som",
           "pomalšie, ešte raz, zopakovať",
           "Čo to znamená?",
           "Ako sa povie po slovensky…?"
         ],
-        "newWordsCount": 6,
+        "newWordsCount": 5,
         "exercisesCompleted": 12,
         "xpReward": 15,
         "mistakesMessage": "Повторити помилки",
@@ -740,8 +699,8 @@
           "Повторити помилки"
         ],
         "nextLesson": {
-          "id": "a0-u02-l10-prvy-rozhovor",
-          "title": "Підсумок: перша розмова"
+          "id": "a0-u01-l06-dvojhlasky",
+          "title": "Особливі голосні ä, ô та дифтонги"
         }
       }
     }

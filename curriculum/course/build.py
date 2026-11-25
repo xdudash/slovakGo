@@ -10,6 +10,10 @@ deterministic shuffling of tokens/lines/options, wordIds, skills, start/words/
 result screens, next-lesson links, XP and time estimates — is generated here so
 that it is always consistent with the runtime contract.
 
+Path order is unit/lesson order, except where `curriculum/course/order.txt` lists
+lessons explicitly (e.g. the A0 opening that interleaves phrases and phonetics);
+that file can also override the path topic group of the listed lessons.
+
 Usage:  python3 curriculum/course/build.py [--check]
 Source syntax: see curriculum/course/AUTHORING.md
 """
@@ -74,6 +78,61 @@ DEFAULT_INSTR = {
 REGISTER_OPTS = [("formal", "Формальний"), ("neutral", "Нейтральний"), ("informal", "Неформальний"), ("slang", "Сленг / фамільярний")]
 # option lists whose default language is Ukrainian (meaning/interpretation answers)
 UK_OPTS_DEFAULT = {"mic", "tone", "hm", "msg"}
+
+# Minimum lesson density per `format:` (default "standard"). "opening" is for the very
+# first lessons of the course: one short theory screen and a handful of exercises.
+FORMATS = {
+    "standard": {"theory": 2, "exercises": 10},
+    "opening": {"theory": 1, "exercises": 6},
+}
+# Lessons placed in an `| opening` group of order.txt may show at most this many
+# theory screens before the first exercise (all theory precedes the exercises).
+OPENING_MAX_THEORY = 2
+ORDER_FILE = ROOT / "curriculum" / "course" / "order.txt"
+
+# --- time estimate ---------------------------------------------------------------
+# Seconds an A0–C2 learner typically needs per mechanic on a phone: read the task,
+# answer, glance at feedback. Long texts add reading time on top (READ_CPS below).
+EX_SECONDS = {
+    "true_false": 10, "single_choice": 15, "dialogue_choose_reply": 15, "natural_phrase": 15,
+    "register": 12, "tone": 15, "hidden_meaning": 20, "meaning_in_context": 20,
+    "multiple_select": 20, "drag_to_blank": 15, "dropdown_blank": 20, "fill_blank": 25,
+    "find_error": 25, "matching": 30, "collocation": 30, "drag_to_category": 35,
+    "sentence_builder": 25, "sentence_order": 25, "dialogue_order": 30, "word_bank": 35,
+    "cloze_text": 40, "correct_error": 35, "transformation": 35, "true_false_list": 35,
+    "branching_dialogue": 45, "reading_comprehension": 50, "real_document": 30,
+    "real_message": 30, "real_schedule": 30, "real_menu": 45,
+}
+READ_CPS = 20          # characters per second when reading support text + examples
+EX_FREE_CHARS = 150    # an exercise's own reading is included in EX_SECONDS up to this
+WORD_SECONDS = 5       # one vocabulary card (word, pronunciation, example)
+THEORY_BASE = 15       # orienting on a theory screen, plus its reading time
+STEP_SECONDS = 15      # one final-situation step
+OVERHEAD_SECONDS = 15  # start + result screens
+NOT_SHOWN = {"id", "lessonId", "type", "screenType", "skill", "order", "button", "blankId", "category",
+             "next", "quality", "difficulty", "wordIds", "correct", "explanation", "hint", "correctOrder",
+             "correctSentence", "acceptedAnswers", "startNode", "successMessage", "passRequirement"}
+
+
+def shown_chars(v) -> int:
+    """Characters the learner actually reads in a screen/exercise object."""
+    if isinstance(v, str):
+        return len(v)
+    if isinstance(v, list):
+        return sum(shown_chars(x) for x in v)
+    if isinstance(v, dict):
+        return sum(shown_chars(x) for k, x in v.items() if k not in NOT_SHOWN)
+    return 0
+
+
+def estimate_minutes(theory: list[dict], words: list[dict], exercises: list[dict], final: dict) -> int:
+    secs = OVERHEAD_SECONDS
+    secs += sum(THEORY_BASE + shown_chars(t) / READ_CPS for t in theory)
+    secs += WORD_SECONDS * len(words)
+    for ex in exercises:
+        secs += EX_SECONDS.get(ex["type"], 25) + max(0, shown_chars(ex) - EX_FREE_CHARS) / READ_CPS
+    secs += shown_chars({"d": final["description"]}) / READ_CPS + STEP_SECONDS * len(final["steps"])
+    return max(3, round(secs / 60))
 
 
 class SourceError(Exception):
@@ -525,6 +584,10 @@ def parse_file(path: Path) -> dict:
                 continue
             if head in ("desc", "goal", "done", "intro"):
                 cur[head] = rest.strip()
+            elif head == "format":
+                if rest.strip() not in FORMATS:
+                    raise SourceError(f"format must be one of {sorted(FORMATS)}")
+                cur["format"] = rest.strip()
             elif head == "out":
                 cur["out"] = split_list(rest)
             elif head == "R":
@@ -574,6 +637,10 @@ def parse_file(path: Path) -> dict:
                     th["alphabetGroups"] = gs
                 elif head == "fp":
                     th["focusPoints"] = split_list(rest)
+            elif head == "W-":
+                # Retired vocabulary slot: the word is now owned by another lesson. The slot
+                # keeps every later word id stable (learners' word progress is keyed by id).
+                cur["words"].append(None)
             elif head == "W":
                 w = fields(rest)
                 if len(w) != 5:
@@ -640,17 +707,20 @@ def assemble_lesson(unit: dict, L: dict, lid: str, li: int) -> dict:
     for k in ("desc", "goal", "out", "done"):
         if k not in L:
             raise SourceError(f"missing {k}:")
-    if len(L["theory"]) < 2:
-        raise SourceError("needs >=2 theory screens")
-    if len(L["words"]) < 4:
+    fmt = FORMATS[L.get("format", "standard")]
+    if len(L["theory"]) < fmt["theory"]:
+        raise SourceError(f"needs >={fmt['theory']} theory screens")
+    if sum(w is not None for w in L["words"]) < 4:
         raise SourceError("needs >=4 words")
-    if len(L["ex"]) < 10:
-        raise SourceError(f"needs >=10 exercises (has {len(L['ex'])})")
+    if len(L["ex"]) < fmt["exercises"]:
+        raise SourceError(f"needs >={fmt['exercises']} exercises (has {len(L['ex'])})")
     if len(L["steps"]) < 3 or "final" not in L:
         raise SourceError("needs F: and >=3 S: steps")
 
     words = []
     for wi, w in enumerate(L["words"], 1):
+        if w is None:
+            continue
         words.append({
             "id": f"{lid}-w{wi:02d}", "sk": w["sk"], "uk": w["uk"], "pronunciationUk": w["pron"],
             "exampleSk": w["exSk"], "exampleUk": w["exUk"], "level": RUNTIME_LEVEL[lvl],
@@ -683,10 +753,12 @@ def assemble_lesson(unit: dict, L: dict, lid: str, li: int) -> dict:
             raise SourceError(f"final step {si} duplicate labels")
         steps.append({"id": f"f{si}", "prompt": s["prompt"], "options": shuffled(opts, f"{lid}-f{si}", False)})
     n = len(steps)
+    # one slip is allowed in 4+ step situations, and in the short opening lessons
+    lenient = n >= 4 or (L.get("format") == "opening" and n >= 3)
     final = {
         "id": "final-situation", "type": "interactive_scenario",
         "title": L["final"]["title"], "description": L["final"]["description"],
-        "steps": steps, "passRequirement": f"{n - 1 if n >= 4 else n}/{n}",
+        "steps": steps, "passRequirement": f"{n - 1 if lenient else n}/{n}",
         "successMessage": "Ситуацію вирішено! " + L["done"],
     }
 
@@ -700,7 +772,7 @@ def assemble_lesson(unit: dict, L: dict, lid: str, li: int) -> dict:
         theory.append(th)
 
     xp = XP[lvl]
-    minutes = max(8, round(len(theory) * 1.2 + len(words) * 0.4 + len(exercises) * 0.9 + n * 0.6))
+    minutes = estimate_minutes(theory, words, exercises, final)
     eyebrow = f"{lvl} · {unit['topic']}"
     stray = re.findall(r'"([^"]*\|[^"]*)"', json.dumps([exercises, steps, theory, words], ensure_ascii=False))
     if stray:
@@ -749,8 +821,62 @@ def assemble_lesson(unit: dict, L: dict, lid: str, li: int) -> dict:
     return lesson
 
 
-def finalize(lessons: list[dict]) -> list[dict]:
-    lessons.sort(key=lambda l: (LEVEL_ORDER.index(l["_meta"]["cefr"]), l["_meta"]["unit"], l["_meta"]["index"]))
+def load_order(path: Path = ORDER_FILE) -> list[dict]:
+    """Parse order.txt: explicit path order and topic groups (see the file header)."""
+    entries: list[dict] = []
+    if not path.exists():
+        return entries
+    level, topic, opening = None, None, False
+    seen = set()
+    for ln, raw in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+        s = raw.strip()
+        if not s or s.startswith("//"):
+            continue
+        if s.startswith("@level "):
+            level, topic, opening = s[7:].strip(), None, False
+            if level not in LEVEL_ORDER:
+                raise SourceError(f"{relpath(path)}:{ln}: unknown level {level!r}")
+        elif s.startswith("@topic "):
+            f = fields(s[7:])
+            topic = f[0]
+            opening = len(f) > 1 and f[1] == "opening"
+            if len(f) > 2 or (len(f) == 2 and not opening):
+                raise SourceError(f"{relpath(path)}:{ln}: '@topic <name>' or '@topic <name> | opening'")
+        else:
+            if level is None:
+                raise SourceError(f"{relpath(path)}:{ln}: lesson id before @level")
+            if s in seen:
+                raise SourceError(f"{relpath(path)}:{ln}: {s} listed twice")
+            seen.add(s)
+            entries.append({"id": s, "level": level, "topic": topic, "opening": opening, "line": ln})
+    return entries
+
+
+def finalize(lessons: list[dict], order: list[dict] | None = None) -> list[dict]:
+    """Sort into path order, apply order.txt overrides, number `order` per runtime level.
+
+    Lessons listed in order.txt come first in their level, in the listed order; every other
+    lesson of that level follows in unit/lesson order. Ids never change — only order/topic.
+    Listed ids that were not built (e.g. check_unit.py on a single unit) are ignored here;
+    main() reports them as errors for a full build.
+    """
+    order = load_order() if order is None else order
+    rank = {e["id"]: i for i, e in enumerate(order)}
+    by_id = {e["id"]: e for e in order}
+    lessons.sort(key=lambda l: (LEVEL_ORDER.index(l["_meta"]["cefr"]), 0 if l["id"] in rank else 1,
+                                rank.get(l["id"], 0), l["_meta"]["unit"], l["_meta"]["index"]))
+    for l in lessons:
+        e = by_id.get(l["id"])
+        if not e:
+            continue
+        if e["level"] != l["_meta"]["cefr"]:
+            raise SourceError(f"order.txt:{e['line']}: {l['id']} is {l['_meta']['cefr']}, listed under {e['level']}")
+        if e["topic"]:
+            l["topic"] = e["topic"]
+            l["startScreen"]["eyebrow"] = f"{l['_meta']['cefr']} · {e['topic']}"
+        if e["opening"] and len(l["theoryScreens"]) > OPENING_MAX_THEORY:
+            raise SourceError(f"{l['id']}: opening lesson has {len(l['theoryScreens'])} theory screens "
+                              f"(max {OPENING_MAX_THEORY} before the first exercise)")
     counters: dict[str, int] = {}
     for l in lessons:
         rl = l["level"]
@@ -793,7 +919,12 @@ def cross_checks(lessons: list[dict]) -> list[str]:
 def main() -> int:
     files = sorted(SRC.rglob("*.txt"))
     units = [parse_file(p) for p in files]
-    lessons = finalize(assemble(units))
+    order = load_order()
+    lessons = finalize(assemble(units), order)
+    built_ids = {l["id"] for l in lessons}
+    missing = [e["id"] for e in order if e["id"] not in built_ids]
+    if missing:
+        raise SourceError(f"order.txt lists lessons that do not exist: {missing}")
     warns = cross_checks(lessons)
     check = "--check" in sys.argv
     written = set()

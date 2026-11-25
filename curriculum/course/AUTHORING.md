@@ -17,7 +17,9 @@ out: outcome ;; outcome ;; outcome
 T: title || text || sk = uk ;; sk = uk || short rule        (theory screen)
   mis: wrong => right ;; …     dlg: Spk: sk = uk ;; …     fp: point ;; …
   pr: letter | read | exSk | exUk ;; …    grp: title | l1 l2 | note ;; …
+format: opening   (optional: short opening lesson — ≥1 theory screen, ≥6 exercises; default ≥2 / ≥10)
 W: sk | uk | pronunciationUk | exampleSk | exampleUk
+W-: <note>        (retired word slot: the word moved to another lesson; keeps later word ids stable)
 X <kind>: <instruction|-> | fields…      followed by optional
   = explanation      h: hint      q: …   > node…
 F: final title || description
@@ -54,6 +56,18 @@ Exercise kinds (`~` after kind = options are Ukrainian; `^` = force Slovak for m
 | msg | real_message | sender | body | question | *opt ;; opt (uk) |
 | sch | real_schedule | title | day = hours ;; … | question | *opt ;; opt |
 | menu | real_menu | Cat: item = price ;; …; then q: lines |
+
+**Path order.** By default lessons follow unit/lesson order. `curriculum/course/order.txt` can list
+lessons of a level explicitly (they come first, in that order) and set their path topic group with
+`@topic <name>`; `@topic <name> | opening` also enforces ≤2 theory screens per lesson. Lesson ids are
+derived from unit + position in the source file, so never reorder lessons inside a source file —
+reorder them in `order.txt`. Remember to update `done:` ("Далі — …") when the next lesson changes.
+
+**Time estimate** (`estimatedMinutes`, see `estimate_minutes` in build.py): seconds per mechanic
+(`EX_SECONDS`, e.g. true/false 10 s, single choice 15 s, matching 30 s, dialogue order 30 s) plus
+reading time for long exercise texts (20 chars/s beyond 150 chars), 15 s + reading time per theory
+screen, 5 s per vocabulary card, 15 s per final-situation step and 15 s for start/result screens;
+rounded to minutes, minimum 3.
 
 Runtime facts the builder relies on (verified in src/): tokens/lines/options are displayed in JSON
 order, so the builder shuffles them deterministically; `find_error` tokens are whitespace-split and

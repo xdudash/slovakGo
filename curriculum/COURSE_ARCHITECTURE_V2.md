@@ -1,7 +1,7 @@
 # SlovakGO — Course Architecture v2 (A0 → C2)
 
 **Status:** canonical plan for the generated course in `lessons/` (sources: `curriculum/course/src`).
-**Size:** 102 units × 10 lessons = **1020 lessons**.
+**Size:** 102 units × 10 lessons + 1 A0 opening lesson (unit a0-u00) = **1021 lessons**.
 **Learner:** Ukrainian speaker living/moving to Slovakia; support language Ukrainian, target Slovak.
 **Principle:** every unit is a real-life domain + a grammar/function spine. Lesson 10 of each unit
 is an integrative review (new vocabulary limited to 4–6 items).
@@ -13,15 +13,17 @@ is an integrative review (new vocabulary limited to 4–6 items).
 | A0 lessons use `level: "A0"` | `UserLevel` and `lessonService.levels` start at A0; new users start at A0 (`api/_lib/auth.ts`). **The JSON Schema `level` enum lacks `A0`** — A0 files are validated with that enum widened (see `validate.py`). Recommended one-line schema fix: add `"A0"` to the enum. |
 | C2 lessons use `level: "C1"`, `sectionId: c2-uXX`, eyebrow `C2 · …` | The app has no C2 track; `placementTestService.toCourseLevel("C2") === "C1"`. C2 lessons follow the C1 lessons in `order`. |
 | No listening mechanics | No audio assets and no TTS in runtime (`useAudioPlayer` plays files only). |
-| `topic` = unit topic | `PathScreen` groups consecutive lessons by `topic` and locks topic groups. |
+| `topic` = unit topic, unless `curriculum/course/order.txt` sets a path group | `PathScreen` groups consecutive lessons by `topic` and locks topic groups, so interleaved lessons share one group topic. |
+| Path order = unit/lesson order, unless listed in `order.txt` | `lessonService.byLevel` sorts by `order`; `isLessonUnlocked` needs the previous lesson by `order`; `shared/access.ts previewLessons` makes the **first 10 lessons by `order`** the free preview. Lesson ids never change when the order does. |
 | Ukrainian only (`localization.uiLanguages: ["uk"]`) | Contract: learner-facing support language is Ukrainian. |
-| Exercise density | A0 12–13, A1–A2 13–15, B1+ 14–16 exercises + 4-step final situation. |
+| Exercise density | A0 12–13, A1–A2 13–15, B1+ 14–16 exercises + 4-step final situation. **Exception: opening lessons** (`format: opening`, currently a0-u00-l01) are 4–5-minute lessons with 1 theory screen, 6–8 exercises and a 3-step final situation (2/3 to pass). The first 10 A0 lessons show at most 2 theory screens. |
+| `estimatedMinutes` from content | Per-mechanic seconds + reading time (see `curriculum/course/AUTHORING.md`); the old flat formula claimed 19–21 min for every A0 lesson. |
 
 ## Level map
 
 | Level | Units | Lessons | Focus |
 |---|---|---|---|
-| A0 | 6 | 60 | sounds, reading, survival phrases, numbers, first needs |
+| A0 | 6 + opening | 61 | survival phrases first, sounds & reading woven in, numbers, first needs |
 | A1 | 18 | 180 | be/have, gender, present tense, accusative/locative basics, daily life, past & future intro |
 | A2 | 20 | 200 | all cases in practice, aspect intro, imperative, conditional, bureaucracy & services |
 | B1 | 20 | 200 | work, housing, health, complaints; relative/conditional clauses, reported speech, passive |
@@ -32,6 +34,25 @@ is an integrative review (new vocabulary limited to 4–6 items).
 ## Units and lesson plans
 
 ### A0 — Перші кроки
+**Path order (phrases first).** 80% of learners start at A0 and the first 10 lessons are the free
+preview, so A0 opens with real phrases and weaves phonetics in; the alphabet comes 4th. Units a0-u01
+and a0-u02 are interleaved by `curriculum/course/order.txt` (ids unchanged); a0-u03… follow in unit order.
+
+| # | Lesson | Path group |
+|---|---|---|
+| 1 | a0-u00-l01 Перші фрази: Dobrý deň, prosím, ďakujem, prepáčte, nerozumiem, dovidenia (opening, owns these six) | Перші кроки: фрази й звуки |
+| 2 | a0-u02-l01 Dobrý deň чи Ahoj? | 〃 |
+| 3 | a0-u02-l04 Prosím, ďakujem, nech sa páči | 〃 |
+| 4 | a0-u01-l01 Абетка («ти вже кажеш ці фрази — тепер читай їх») | 〃 |
+| 5 | a0-u02-l03 Прощання | 〃 |
+| 6 | a0-u01-l09 Числа 0–10 | 〃 |
+| 7 | a0-u02-l05 Prepáčte, pardon | 〃 |
+| 8 | a0-u01-l02 Голосні й довгота | 〃 |
+| 9 | a0-u02-l02 Привітання за часом доби | 〃 |
+| 10 | a0-u02-l08 Ako sa máš? | 〃 |
+| 11–21 | u01-l03 č š ž → u02-l06 áno/nie → u01-l04 ď ť ň ľ → u02-l07 ty/vy → u01-l05 h/ch → u02-l09 nerozumiem → u01-l06 ä ô → u01-l07 r l → u01-l08 вивіски → u01-l10 читаю місто → u02-l10 перша розмова | Вимова і ввічлива розмова |
+
+- **a0-u00 Перші фрази** — одна стартова фраза-урок (format: opening): шість фраз виживання, наголос на першому складі, ˇ = м’якше, ´ = довше; фінал — аптека.
 - **a0-u01 Абетка і звуки** — абетка; голосні й довгота; č š ž dž; ď ť ň ľ і правило м’якості; h/ch/dz; ä ô і дифтонги; складові r l, i/y; вивіски; числа 0–10; підсумок: читаю місто.
 - **a0-u02 Привітання і ввічливість** — dobrý deň / ahoj; привітання за часом доби; прощання; prosím / ďakujem / nech sa páči; prepáčte / pardon; áno / nie / možno; ty чи vy; ako sa máte; nerozumiem / pomalšie; підсумок: перша розмова.
 - **a0-u03 Знайомство** — volám sa; som z Ukrajiny; národnosť; kde bývaš; hovorím po…; koľko máš rokov (0–10+); профеcії-базово; hláskovanie mena; kontakt: telefón, e-mail; підсумок: анкета й знайомство.
