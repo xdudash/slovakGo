@@ -4,7 +4,11 @@ import { accessibleLessons, assertLessonAccess, AccessDeniedError } from "./acce
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import type { Arg } from "./core";
 import { normalizeLessonPayload } from "./lessonValidation";
-import { MAX_FREEZES, canWearFrame, isPerfectRun, itemPrice, lessonCrowns, practiceCrowns } from "../../shared/economy";
+import {
+  MAX_FREEZES, MAX_REFERRAL_PAYOUTS, REFERRAL_CROWNS, canWearFrame, chestReady, chestReward, dailyFor, isPerfectRun, itemPrice,
+  lessonCrowns, liveStreak, practiceCrowns, streakMilestone, type DailyState,
+} from "../../shared/economy";
+import { settleLeague, type LeagueReward } from "./league";
 import {
   XP_PER_PRACTICE,
   exec, queryOne, nowIso, todayKey, currentWeekId, safeJson, getDb, ensureCol,
@@ -35,6 +39,7 @@ export async function handleSyncPull(req: VercelRequest, res: VercelResponse): P
   }
 
   await ensureEconomyColumns();
+  await settleLeague();
   const prog  = await seedCrowns(uid, await ensureProgress(uid));
   const words = await getUserWords(uid);
   const url = new URL(req.url ?? "/sync/pull", "http://localhost");
@@ -62,6 +67,8 @@ export async function handleSyncPull(req: VercelRequest, res: VercelResponse): P
       streakFreezeCount: Number(prog.freeze_cnt),
       coins:             Number(prog.coins),
       ownedItems:        safeJson(String(prog.owned_j ?? "[]"), []),
+      daily:             dailyFor(safeJson<Partial<DailyState> | null>(String(prog.daily_j ?? "null"), null), todayKey()),
+      leagueRewards:     safeJson<LeagueReward[]>(String(prog.league_j ?? "[]"), []),
       mistakes:          safeJson(String(prog.mistakes_j ?? "[]"), []),
       achievements:      [],
       updatedAt:         String(prog.updated_at),
@@ -114,7 +121,7 @@ export async function handleSyncPush(req: VercelRequest, res: VercelResponse, bo
   if (!uid) return;
   const muts = Array.isArray(body.mutations) ? body.mutations as Record<string, unknown>[] : [];
   if (muts.length > 100) return fail(res, "Забагато мутацій", 413);
-  const supported = new Set(["profile.update", "lesson.complete", "exercise.wrong", "word.update", "practice.complete", "hearts.restore", "shop.buy", "lesson.upsert", "lesson.delete", "admin.user.update"]);
+  const supported = new Set(["profile.update", "lesson.complete", "exercise.wrong", "word.update", "practice.complete", "hearts.restore", "shop.buy", "chest.claim", "lesson.upsert", "lesson.delete", "admin.user.update"]);
   if (muts.some(mut => !supported.has(String(mut.type ?? "")))) return fail(res, "Непідтримувана мутація", 422);
   if (muts.some(mut => mut.userId !== undefined && String(mut.userId) !== uid)) {
     return fail(res, "Мутація належить іншому користувачу", 403);
@@ -168,6 +175,7 @@ async function processMutation(uid: string, mut: Record<string, unknown>): Promi
     case "practice.complete": await mutPracticeComplete(uid, p); break;
     case "hearts.restore":    await mutRestoreHearts(uid); break;
     case "shop.buy":          await mutShopBuy(uid, p); break;
+    case "chest.claim":       await mutChestClaim(uid); break;
     case "lesson.upsert":
       if (!(await checkRole(uid, "teacher", "admin"))) throw new Error("Insufficient role");
       await mutLessonUpsert(uid, p);
@@ -230,6 +238,9 @@ export function ensureEconomyColumns(): Promise<void> {
     await ensureCol("progress", "owned_j", "TEXT NOT NULL DEFAULT '[]'");
     await ensureCol("progress", "crowns_seeded", "INTEGER NOT NULL DEFAULT 0");
     await ensureCol("users", "frame", "TEXT");
+    await ensureCol("progress", "daily_j", "TEXT");
+    await ensureCol("progress", "league_j", "TEXT NOT NULL DEFAULT '[]'");
+    await ensureCol("users", "referral_crowns", "INTEGER NOT NULL DEFAULT 0");
   })().catch((err) => { economyColumns = null; throw err; });
   return economyColumns;
 }
@@ -252,9 +263,9 @@ async function seedCrowns(uid: string, prog: Record<string, unknown>): Promise<R
 async function mutShopBuy(uid: string, p: Record<string, unknown>): Promise<void> {
   await ensureEconomyColumns();
   const item = String(p.item ?? "");
-  const price = itemPrice(item);
-  if (price === null) throw new StaleMutationError("Unknown shop item");
   const prog = await seedCrowns(uid, await ensureProgress(uid));
+  const price = itemPrice(item, liveStreak(Number(prog.streak_days), String(prog.last_prac ?? ""), todayKey()));
+  if (price === null) throw new StaleMutationError("Unknown shop item");
   const owned = safeJson<string[]>(String(prog.owned_j ?? "[]"), []);
   if (item === "freeze" && Number(prog.freeze_cnt) >= MAX_FREEZES) throw new StaleMutationError("Freeze limit reached");
   if (item !== "freeze" && owned.includes(item.slice("frame:".length))) throw new StaleMutationError("Already owned");
@@ -266,6 +277,48 @@ async function mutShopBuy(uid: string, p: Record<string, unknown>): Promise<void
     args: [price, item === "freeze" ? 1 : 0, JSON.stringify(nextOwned), nowIso(), uid, price, String(prog.owned_j ?? "[]")],
   });
   if (!saved.rowsAffected) throw new StaleMutationError("Not enough crowns");
+}
+
+async function mutChestClaim(uid: string): Promise<void> {
+  await ensureEconomyColumns();
+  const prog = await ensureProgress(uid);
+  const today = todayKey();
+  const daily = dailyFor(safeJson<Partial<DailyState> | null>(String(prog.daily_j ?? "null"), null), today);
+  const xpToday = Number(safeJson<Record<string, number>>(String(prog.xp_daily_j ?? "{}"), {})[today] ?? 0);
+  if (!chestReady(daily, xpToday)) throw new StaleMutationError("Chest is not ready");
+  const saved = await getDb().execute({
+    sql: "UPDATE progress SET coins = coins + ?, daily_j = ?, updated_at = ? WHERE user_id = ? AND COALESCE(daily_j, '') = ?",
+    args: [chestReward(uid, today), JSON.stringify({ ...daily, claimed: true }), nowIso(), uid, String(prog.daily_j ?? "")],
+  });
+  if (!saved.rowsAffected) throw new ConcurrentMutationError("Concurrent chest claim; retry sync");
+}
+
+/**
+ * Rewards that ride on any learning session: the streak milestone crossed today
+ * (30 days also unlocks the Comet frame) and today's chest counters.
+ */
+function sessionExtras(prog: Record<string, unknown>, before: number, after: number, kind: "lesson" | "practice", today: string) {
+  const milestone = streakMilestone(before, after);
+  const owned = safeJson<string[]>(String(prog.owned_j ?? "[]"), []);
+  if (milestone?.days === 30 && !owned.includes("comet")) owned.push("comet");
+  const daily = dailyFor(safeJson<Partial<DailyState> | null>(String(prog.daily_j ?? "null"), null), today);
+  if (kind === "lesson") daily.lessons += 1; else daily.practices += 1;
+  return { crowns: milestone?.crowns ?? 0, owned: JSON.stringify(owned), daily: JSON.stringify(daily) };
+}
+
+/** The inviter earns crowns once, when an invited friend finishes a first lesson. */
+async function payReferralCrowns(userRow: Record<string, unknown>): Promise<void> {
+  const referrerId = String(userRow.referred_by ?? "");
+  if (!referrerId || Number(userRow.referral_crowns ?? 0)) return;
+  // Capped, so throwaway sign-ups cannot become a crowns farm.
+  const paid = await queryOne("SELECT COUNT(*) AS n FROM users WHERE referred_by = ? AND referral_crowns = 1", [referrerId]);
+  if (Number(paid?.n ?? 0) >= MAX_REFERRAL_PAYOUTS) return;
+  const claim = await getDb().execute({
+    sql: "UPDATE users SET referral_crowns = 1 WHERE id = ? AND referral_crowns = 0",
+    args: [String(userRow.id)],
+  });
+  if (!claim.rowsAffected) return;
+  await exec("UPDATE progress SET coins = coins + ?, updated_at = ? WHERE user_id = ?", [REFERRAL_CROWNS, nowIso(), referrerId]);
 }
 
 async function mutRestoreHearts(uid: string): Promise<void> {
@@ -348,11 +401,14 @@ async function mutLessonComplete(uid: string, p: Record<string, unknown>): Promi
     throw new Error("Too many lesson answers");
   }
 
+  await ensureEconomyColumns();
+  await settleLeague();
   const prog = await ensureProgress(uid);
   const userRow = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [uid]);
   if (!userRow) throw new Error("Unknown user");
 
   const completed: string[] = safeJson(String(prog.completed_j ?? "[]"), []);
+  const firstEver = completed.length === 0;
   const alreadyCompleted = completed.includes(lessonId);
   const reward = Math.max(0, Number(lesson.xpReward ?? 10) || 10);
   const baseXp = alreadyCompleted ? Math.max(3, Math.round(reward * 0.25)) : reward;
@@ -382,14 +438,18 @@ async function mutLessonComplete(uid: string, p: Record<string, unknown>): Promi
   const xpDaily: Record<string, number> = safeJson(String(prog.xp_daily_j ?? "{}"), {});
   xpDaily[today] = (xpDaily[today] ?? 0) + xpEarned;
   if (!alreadyCompleted) completed.push(lessonId);
-  const crowns = lessonCrowns({ firstTime: !alreadyCompleted, perfect: isPerfectRun(submittedAnswers), newDay: lastP !== today, status });
+  const extras = sessionExtras(prog, Number(prog.streak_days), streak, "lesson", today);
+  const crowns = lessonCrowns({ firstTime: !alreadyCompleted, perfect: isPerfectRun(submittedAnswers), newDay: lastP !== today, status }) + extras.crowns;
 
   const saved = await getDb().execute({
     sql: `UPDATE progress SET xp_total = xp_total + ?, xp_weekly = ?, xp_daily_j = ?, week_id = ?,
-       streak_days = ?, last_prac = ?, freeze_cnt = ?, completed_j = ?, coins = coins + ?, updated_at = ? WHERE user_id = ? AND completed_j = ?`,
-    args: [xpEarned, xpW + xpEarned, JSON.stringify(xpDaily), weekId, streak, today, freeze, JSON.stringify(completed), crowns, nowIso(), uid, String(prog.completed_j ?? "[]")]
+       streak_days = ?, last_prac = ?, freeze_cnt = ?, completed_j = ?, coins = coins + ?, owned_j = ?, daily_j = ?, updated_at = ?
+       WHERE user_id = ? AND completed_j = ?`,
+    args: [xpEarned, xpW + xpEarned, JSON.stringify(xpDaily), weekId, streak, today, freeze, JSON.stringify(completed), crowns,
+      extras.owned, extras.daily, nowIso(), uid, String(prog.completed_j ?? "[]")]
   });
   if (!saved.rowsAffected) throw new ConcurrentMutationError("Concurrent completion; retry sync");
+  if (firstEver) await payReferralCrowns(userRow);
 
   const words = Array.isArray(lesson.words) ? lesson.words as Record<string, unknown>[] : [];
   for (const word of words) {
@@ -421,6 +481,8 @@ async function mutPracticeComplete(uid: string, p: Record<string, unknown>): Pro
   const results = Array.isArray(p.results) ? p.results as Record<string, unknown>[] : [];
   // An empty or malformed session earns neither XP nor hearts.
   if (results.length === 0 || results.some(r => !r || typeof r.correct !== "boolean" || typeof r.wordId !== "string")) return;
+  await ensureEconomyColumns();
+  await settleLeague();
   const prog = await ensureProgress(uid);
   const userRow = await queryOne("SELECT * FROM users WHERE id = ? LIMIT 1", [uid]);
   if (!userRow) throw new Error("Unknown user");
@@ -452,12 +514,13 @@ async function mutPracticeComplete(uid: string, p: Record<string, unknown>): Pro
   const xpDaily: Record<string, number> = safeJson(String(prog.xp_daily_j ?? "{}"), {});
   xpDaily[today] = (xpDaily[today] ?? 0) + xpEarned;
 
-  const crowns = practiceCrowns({ newDay: lastP !== today, status });
+  const extras = sessionExtras(prog, Number(prog.streak_days), streak, "practice", today);
+  const crowns = practiceCrowns({ newDay: lastP !== today, status }) + extras.crowns;
   await exec(
     `UPDATE progress SET xp_total = xp_total + ?, xp_weekly = ?, xp_daily_j = ?, week_id = ?,
        streak_days = ?, last_prac = ?, freeze_cnt = ?, hearts = MIN(max_hearts, hearts + 1),
-       coins = coins + ?, practice_awarded_at = ?, updated_at = ? WHERE user_id = ?`,
-    [xpEarned, xpW + xpEarned, JSON.stringify(xpDaily), weekId, streak, today, freeze, crowns, nowIso(), nowIso(), uid]
+       coins = coins + ?, owned_j = ?, daily_j = ?, practice_awarded_at = ?, updated_at = ? WHERE user_id = ?`,
+    [xpEarned, xpW + xpEarned, JSON.stringify(xpDaily), weekId, streak, today, freeze, crowns, extras.owned, extras.daily, nowIso(), nowIso(), uid]
   );
 
   for (const r of results) {

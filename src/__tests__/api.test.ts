@@ -637,6 +637,88 @@ describe("POST /sync/push", () => {
     expect((await call("GET", ["avatar", "nobody"])).status).toBe(404);
   });
 
+  it("opens the daily chest only after a lesson, a practice and 30 XP today", async () => {
+    const pull = async (c = cookie) => (await call("GET", ["sync", "pull"], { cookie: c })).body as Record<string, any>;
+    const push = (id: string, type: string, payload: Record<string, unknown>) =>
+      call("POST", ["sync", "push"], { cookie, body: { mutations: [{ id, type, payload }] } });
+    const db = createClient({ url: `file:${TEST_DB}` });
+    const uid = String((await pull()).user.id);
+
+    // Lessons done earlier today already count; no practice yet, so the chest stays shut.
+    expect((await push("mut-chest-early", "chest.claim", {})).body.skipped).toBe(1);
+    await push("mut-chest-practice", "practice.complete", { results: [{ wordId: "lesson-word", correct: true }] });
+    const daily = (await pull()).progress.daily;
+    expect(daily.lessons).toBeGreaterThanOrEqual(1);
+    expect(daily.practices).toBe(1);
+    expect(daily.claimed).toBe(false);
+
+    const today = String(daily.day);
+    await db.execute({ sql: "UPDATE progress SET xp_daily_j = ?, coins = 0 WHERE user_id = ?", args: [JSON.stringify({ [today]: 40 }), uid] });
+    expect((await push("mut-chest-open", "chest.claim", {})).body.applied).toBe(1);
+    const opened = await pull();
+    expect(opened.progress.daily.claimed).toBe(true);
+    expect(Number(opened.progress.coins)).toBeGreaterThanOrEqual(20);
+    expect(Number(opened.progress.coins)).toBeLessThanOrEqual(40);
+    // Once a day.
+    expect((await push("mut-chest-again", "chest.claim", {})).body.skipped).toBe(1);
+  });
+
+  it("pays streak milestones, unlocks the Comet frame at 30 days and discounts the shop", async () => {
+    const pull = async () => (await call("GET", ["sync", "pull"], { cookie })).body as Record<string, any>;
+    const push = (id: string, type: string, payload: Record<string, unknown>) =>
+      call("POST", ["sync", "push"], { cookie, body: { mutations: [{ id, type, payload }] } });
+    const db = createClient({ url: `file:${TEST_DB}` });
+    const start = await pull();
+    const uid = String(start.user.id);
+    const yesterday = new Date(Date.parse(`${start.progress.daily.day}T12:00:00Z`) - 86400_000).toISOString().slice(0, 10);
+
+    await db.execute({ sql: "UPDATE progress SET streak_days = 2, last_prac = ?, coins = 0 WHERE user_id = ?", args: [yesterday, uid] });
+    await push("mut-streak-3", "lesson.complete", { lessonId: "lesson-1", answers: [] });
+    let p = (await pull()).progress;
+    expect(Number(p.streakDays)).toBe(3);
+    // Repeat lesson 2 + first of the day 5 + 3-day milestone 20.
+    expect(Number(p.coins)).toBe(27);
+
+    await db.execute({ sql: "UPDATE progress SET streak_days = 29, last_prac = ?, coins = 0 WHERE user_id = ?", args: [yesterday, uid] });
+    await push("mut-streak-30", "practice.complete", { results: [{ wordId: "lesson-word", correct: true }] });
+    p = (await pull()).progress;
+    expect(Number(p.streakDays)).toBe(30);
+    expect(Number(p.coins)).toBe(3 + 5 + 200);
+    expect(p.ownedItems).toContain("comet");
+    await push("mut-wear-comet", "profile.update", { frame: "comet" });
+    expect((await pull()).user.frame).toBe("comet");
+    // The Comet frame is never for sale.
+    expect((await push("mut-buy-comet", "shop.buy", { item: "frame:comet" })).body.skipped).toBe(1);
+
+    // A 30-day streak takes 20% off: Violet 150 → 120.
+    await push("mut-buy-violet-discount", "shop.buy", { item: "frame:violet" });
+    expect(Number((await pull()).progress.coins)).toBe(208 - 120);
+  });
+
+  it("gives the inviter crowns once their friend finishes a first lesson", async () => {
+    const db = createClient({ url: `file:${TEST_DB}` });
+    const inviter = (await call("GET", ["sync", "pull"], { cookie })).body as Record<string, any>;
+    const inviterId = String(inviter.user.id);
+    await db.execute({ sql: "UPDATE progress SET coins = 0 WHERE user_id = ?", args: [inviterId] });
+
+    const { headers } = await call("POST", ["auth", "register"], {
+      body: { email: "invited-friend@example.com", password: "Secret123", name: "Friend" },
+    });
+    const friend = String(headers["Set-Cookie"] ?? "").split(";")[0];
+    await call("POST", ["user", "referral"], { cookie: friend, body: { referrerId: inviterId } });
+    const lesson = (id: string) => call("POST", ["sync", "push"], {
+      cookie: friend, body: { mutations: [{ id, type: "lesson.complete", payload: { lessonId: "lesson-1", answers: [] } }] },
+    });
+    // The test lesson is A1, so the friend picks A1 during onboarding.
+    await call("POST", ["sync", "push"], {
+      cookie: friend, body: { mutations: [{ id: "mut-friend-level", type: "profile.update", payload: { level: "A1", onboardingDone: true } }] },
+    });
+    expect((await lesson("mut-friend-first")).body.applied).toBe(1);
+    await lesson("mut-friend-repeat");
+    const after = (await call("GET", ["sync", "pull"], { cookie })).body as Record<string, any>;
+    expect(Number(after.progress.coins)).toBe(100);
+  });
+
   it("credits earlier lessons once when crowns launch for an existing learner", async () => {
     const db = createClient({ url: `file:${TEST_DB}` });
     const { headers } = await call("POST", ["auth", "register"], {
@@ -1701,5 +1783,25 @@ describe("Sign in with Apple", () => {
     expect((await signIn({ identityToken: token({ sub: "x", aud: "com.other.app", email: "x@example.com" }) })).status).toBe(401);
     expect((await signIn({ identityToken: token({ sub: "apple-noemail" }) })).status).toBe(422);
     expect((await signIn({})).status).toBe(422);
+  });
+});
+
+describe("weekly league rewards", () => {
+  it("pays places 1-3 of the finished week exactly once", async () => {
+    const { settleLeague } = await import("../../api/_lib/league");
+    const { learningWeek, shiftLearningDay } = await import("../../shared/learningCalendar");
+    const later = new Date(Date.UTC(2031, 0, 15, 12));
+    const finished = shiftLearningDay(learningWeek(later), -7);
+    const db = createClient({ url: `file:${TEST_DB}` });
+    const ids = ["league-a", "league-b", "league-c", "league-d"];
+    for (const [i, id] of ids.entries()) {
+      await db.execute({ sql: `INSERT INTO users (id, email, name_text, role, created_at, updated_at) VALUES (?, ?, ?, 'student', datetime('now'), datetime('now'))`, args: [id, `${id}@example.com`, id] });
+      await db.execute({ sql: `INSERT INTO progress (user_id, xp_weekly, week_id, coins, updated_at) VALUES (?, ?, ?, 0, datetime('now'))`, args: [id, 400 - i * 100, finished] });
+    }
+    await settleLeague(later);
+    await settleLeague(later);
+    const rows = await db.execute(`SELECT user_id, coins, league_j FROM progress WHERE user_id IN ('league-a','league-b','league-c','league-d') ORDER BY user_id`);
+    expect(rows.rows.map((r) => Number(r.coins))).toEqual([100, 60, 30, 0]);
+    expect(JSON.parse(String(rows.rows[0].league_j))).toEqual([{ weekId: finished, rank: 1, crowns: 100 }]);
   });
 });

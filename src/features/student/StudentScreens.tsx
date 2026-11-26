@@ -19,6 +19,9 @@ import { plusOfferSeen, safeNextPath } from "../../services/plusOffer";
 import { ReminderPrime } from "../../components/ReminderPrime";
 import { CrownIcon, UserAvatar } from "../../components/UserAvatar";
 import { CrownShop } from "../../components/CrownShop";
+import { DailyChest, LeagueRewardBanner } from "../../components/DailyChest";
+import { rewardsCopy, rewardsLang } from "../../components/rewardsCopy";
+import { streakMilestone } from "../../../shared/economy";
 import { shouldPrimeReminders } from "../../services/reminderPrime";
 import { manageAppStoreSubscription, maybeRequestAppReview } from "../../services/appStoreBilling";
 
@@ -281,6 +284,7 @@ function PathScreen() {
       )}
 
       {previewMode && nextPreview && nextPreview.level !== progress.currentLevel && <Card><p>{t("student.app.next_preview").replace("{level}", nextPreview.level)}</p><Button onClick={() => useAppStore.getState().setLevel(nextPreview.level)}>{t("student.app.next_lesson")}</Button></Card>}
+      <LeagueRewardBanner />
       <section className="learning-hero">
         <div className="learning-hero-copy">
           <span className="learning-hero-level">{progress.currentLevel} · {t("student.experience.your_journey")}</span>
@@ -292,6 +296,8 @@ function PathScreen() {
         <div className="learning-hero-friend"><span className="companion-speech" lang="sk">Dobrý deň! <span aria-hidden="true">✦</span></span>{isNativeApp ? <img className="learning-hero-mascot" src="/brand/mascot-wave.webp" alt="" width="104" height="96" /> : <GuideCharacter />}</div>
       </section>
       {current && <div className="next-lesson-summary"><BookOpen size={20} /><div><span>{t("student.experience.next_lesson")}</span><strong>{resolveText(current.title, lang)}</strong>{resumeAt && <small className="next-lesson-resume">{t("student.path.resume_at").replace("{n}", String(resumeAt.index + 1)).replace("{total}", String(current.exercises.length))}</small>}</div><span className="next-lesson-duration">{current.estimatedMinutes} {t("student.experience.minutes")}</span></div>}
+
+      <DailyChest />
 
       {/* Daily goal bar */}
       <div className={`daily-goal${goalDone ? " daily-goal--done" : ""}`}>
@@ -580,7 +586,7 @@ const referralUrl = (userId: string) => `${isNativeApp ? PUBLIC_APP_ORIGIN : win
 
 type LessonPhase = "start" | "theory" | "words" | "exercise" | "final" | "result";
 type WrongItem = { question: string; userAnswer: string; correctAnswer: string };
-type CompletionData = { xp: number; crowns: number; correct: number; total: number; wrong: WrongItem[] };
+type CompletionData = { xp: number; crowns: number; milestone: { days: number; crowns: number } | null; correct: number; total: number; wrong: WrongItem[] };
 
 function isInteractiveFinal(sit: Lesson["finalSituation"]): sit is Extract<NonNullable<Lesson["finalSituation"]>, { type: "interactive_scenario" }> {
   return !!sit && "type" in sit && sit.type === "interactive_scenario";
@@ -791,7 +797,7 @@ function LessonPlayer() {
   const navigate = useNavigate();
   const { lessonId } = useParams();
   const { data, user, progress, completeLesson, recordWrongAnswer } = useStudentData();
-  const { t } = useT();
+  const { t, lang } = useT();
   const lesson = data.lessons.find((item) => item.id === lessonId);
   const { tx, asset } = useLessonLocale(lesson);
   const resolvedIntroImage = lesson?.introImageRef ? asset(lesson.introImageRef, "images") : undefined;
@@ -914,14 +920,17 @@ function LessonPlayer() {
     if (isFirst) setFirstWin(true);
     clearLessonDraft(user!.id, lesson!.id);
     // Read before completeLesson: the reward depends on the progress before this lesson.
-    const crowns = progressService.lessonCrowns(progress!, lesson!.id, finalRecords, user!.subscriptionStatus);
+    const lessonCrowns = progressService.lessonCrowns(progress!, lesson!.id, finalRecords, user!.subscriptionStatus);
+    const streakBefore = progress!.streakDays;
     completeLesson(lesson!, finalRecords);
+    const milestone = streakMilestone(streakBefore, useAppStore.getState().data.progress[user!.id]?.streakDays ?? streakBefore);
+    const crowns = lessonCrowns + (milestone?.crowns ?? 0);
     const xp = computeXp();
     const correct = finalRecords.filter((r) => r.correct).length;
     track("lesson_complete", { lessonId: lesson!.id, level: lesson!.level, first: isFirst, correct, total: finalRecords.length });
     // The free preview ends here — this is the conversion moment worth watching.
     if (opensTrialAfterLesson) track("section_complete", { level: lesson!.level });
-    const cd: CompletionData = { xp, crowns, correct, total: finalRecords.length, wrong: buildWrong(finalRecords) };
+    const cd: CompletionData = { xp, crowns, milestone, correct, total: finalRecords.length, wrong: buildWrong(finalRecords) };
     soundService.play("complete", user!.settings.soundEnabled, user!.settings.hapticsEnabled);
     // Ask for a rating only after a lesson that went well, and never next to an offer,
     // the paywall or the reminder primer (5.6.1: system prompt only, no incentives).
@@ -1411,6 +1420,12 @@ function LessonPlayer() {
               <div className="lesson-result-xp">+{completionData.xp} XP</div>
               {completionData.crowns > 0 && <Link to="/app/shop" className="lesson-result-crowns"><CrownIcon size={18} /> +{completionData.crowns}</Link>}
             </div>
+            {completionData.milestone && (
+              <div className="streak-milestone" role="status">
+                <Flame size={22} aria-hidden="true" />
+                <span>{rewardsCopy[rewardsLang(lang)].milestone(completionData.milestone.days, completionData.milestone.crowns)}{completionData.milestone.days === 30 ? ` ${rewardsCopy[rewardsLang(lang)].comet}` : ""}</span>
+              </div>
+            )}
             <div className="lesson-result-stats">
               <div className="lesson-result-stat">
                 <span className="lesson-result-stat-n">{lesson.resultScreen.newWordsCount ?? lesson.words.length}</span>
@@ -1468,6 +1483,7 @@ function LessonPlayer() {
           <div className="celebrate-card">
             <div className="celebrate-icon"><GuideCharacter mood="celebrate" /></div>
             <div className="celebrate-xp">+{celebration.xp} XP{celebration.crowns > 0 && <span className="celebrate-crowns"><CrownIcon size={20} /> +{celebration.crowns}</span>}</div>
+            {celebration.milestone && <p className="streak-milestone"><Flame size={20} aria-hidden="true" /> {rewardsCopy[rewardsLang(lang)].milestone(celebration.milestone.days, celebration.milestone.crowns)}</p>}
             <p className="celebrate-sub">
               {celebration.correct} / {celebration.total} {t("student.lesson.correct_label")}
               {celebration.wrong.length === 0 && ` · ${t("student.lesson.perfect")}`}
@@ -2036,7 +2052,7 @@ function PracticeScreen() {
 
 function LeaderboardScreen() {
   const { data, user, progress } = useStudentData();
-  const { t } = useT();
+  const { t, lang } = useT();
   const weekSeconds = useWeekTimer();
   const [tab, setTab] = useState<"all" | "ua" | "history">("all");
   const [flashIds, setFlashIds] = useState<Map<string, "up" | "down">>(new Map());
@@ -2124,6 +2140,7 @@ function LeaderboardScreen() {
         <p className="league-hint">
           {xpToNext !== null ? `${t("student.leaderboard.league_up")}: ${xpToNext} XP` : t("student.leaderboard.league_top")}
         </p>
+        <p className="league-crowns-hint"><CrownIcon size={14} /> {rewardsCopy[rewardsLang(lang)].leagueHint}</p>
       </Card>
 
       {/* Tabs */}

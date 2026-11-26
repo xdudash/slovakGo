@@ -10,6 +10,9 @@ const uk = {
   testBody: 'Так виглядатимуть твої нагадування про навчання.',
   reminderTitle: 'Час для словацької',
   reminderBody: 'Продовжимо? Кілька хвилин практики — ще один крок уперед.',
+  streakTitle: (n: number) => `🔥 Серія ${n} дн. згорить опівночі`,
+  streakBody: 'Один короткий урок — і вона жива. А ще тебе чекає скриня дня.',
+  chestBody: 'Скриня дня чекає: урок, трохи слів — і корони твої.',
   notificationError: 'Не вдалося налаштувати сповіщення. Спробуй ще раз.',
   pushLabel: 'Повідомлення від SlovakGO',
   pushReady: 'Новини й корисні повідомлення надходитимуть сюди.',
@@ -23,7 +26,7 @@ const uk = {
   back: 'Назад',
 };
 
-type NativeCopy = Record<keyof typeof uk, string>;
+type NativeCopy = typeof uk;
 export const nativeCopy: Record<'uk' | 'ru' | 'sk' | 'en', NativeCopy> = {
   uk,
   ru: {
@@ -38,6 +41,9 @@ export const nativeCopy: Record<'uk' | 'ru' | 'sk' | 'en', NativeCopy> = {
     testBody: 'Так будут выглядеть твои напоминания об учёбе.',
     reminderTitle: 'Время для словацкого',
     reminderBody: 'Продолжим? Несколько минут практики — ещё один шаг вперёд.',
+    streakTitle: (n: number) => `🔥 Серия ${n} дн. сгорит в полночь`,
+    streakBody: 'Один короткий урок — и она жива. А ещё тебя ждёт сундук дня.',
+    chestBody: 'Сундук дня ждёт: урок, немного слов — и короны твои.',
     notificationError: 'Не удалось настроить уведомления. Попробуй ещё раз.',
     pushLabel: 'Сообщения от SlovakGO',
     pushReady: 'Новости и полезные сообщения будут приходить сюда.',
@@ -62,6 +68,9 @@ export const nativeCopy: Record<'uk' | 'ru' | 'sk' | 'en', NativeCopy> = {
     testBody: 'Takto budú vyzerať tvoje pripomienky učenia.',
     reminderTitle: 'Čas na slovenčinu',
     reminderBody: 'Pokračujeme? Pár minút precvičovania je ďalší krok vpred.',
+    streakTitle: (n: number) => `🔥 Séria ${n} dní o polnoci zhorí`,
+    streakBody: 'Jedna krátka lekcia a séria žije. A čaká ťa aj truhlica dňa.',
+    chestBody: 'Truhlica dňa čaká: lekcia, pár slov a koruny sú tvoje.',
     notificationError: 'Hlásenia sa nepodarilo nastaviť. Skús to znova.',
     pushLabel: 'Správy od SlovakGO',
     pushReady: 'Novinky a užitočné správy ti prídu sem.',
@@ -86,6 +95,9 @@ export const nativeCopy: Record<'uk' | 'ru' | 'sk' | 'en', NativeCopy> = {
     testBody: 'This is how your study reminders will look.',
     reminderTitle: 'Time for Slovak',
     reminderBody: 'Ready to continue? A few minutes of practice is another step forward.',
+    streakTitle: (n: number) => `🔥 Your ${n}-day streak ends at midnight`,
+    streakBody: 'One short lesson keeps it alive. Your daily chest is waiting too.',
+    chestBody: 'Your daily chest is waiting: a lesson, a few words and the crowns are yours.',
     notificationError: 'Couldn’t set up notifications. Please try again.',
     pushLabel: 'Messages from SlovakGO',
     pushReady: 'News and helpful updates will arrive here.',

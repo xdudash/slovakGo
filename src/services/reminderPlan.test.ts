@@ -26,6 +26,12 @@ describe('native study reminders', () => {
     expect(plan[0]).toMatchObject({ id: REMINDER_ID, title: 'Время для словацкого', extra: { userId: 'learner-a' }, schedule: { on: { year: 2026, month: 10, day: 26, hour: 19, minute: 30 } } });
     expect(plan[0].schedule?.at).toBeUndefined();
   });
+  it('names a live streak in the next reminder only, then points at the daily chest', () => {
+    const plan = reminderPlan('learner-a', '19:30', 'uk', undefined, now, 6);
+    expect(plan[0].title).toBe('🔥 Серія 6 дн. згорить опівночі');
+    expect(plan[1].title).toBe('Час для словацької');
+    expect(plan[2].body).toContain('Скриня дня');
+  });
   it('skips today after practice but keeps future reminders', () => {
     const plan = reminderPlan('learner-a', '19:00', 'en', '2026-10-26', now);
     expect(plan).toHaveLength(REMINDER_DAYS - 1);

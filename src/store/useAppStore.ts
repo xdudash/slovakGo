@@ -30,6 +30,8 @@ interface AppStore {
   restoreHearts: () => void;
   /** Spends crowns on "freeze" or "frame:<id>"; false when it cannot be bought. */
   buyItem: (item: string) => boolean;
+  /** Opens today's chest; returns the crowns won, or null when it is not ready. */
+  claimChest: () => number | null;
   upsertLesson: (lesson: Lesson) => void;
   bulkSetLessons: (lessons: Lesson[]) => void;
   deleteLesson: (lessonId: string) => void;
@@ -504,6 +506,20 @@ export const useAppStore = create<AppStore>((set, get) => ({
     set({ data });
     get().drainSync().catch(() => undefined);
     return true;
+  },
+
+  claimChest() {
+    if (isAdminPreview()) return null;
+    const currentUserId = get().currentUserId;
+    if (!currentUserId) return null;
+    const result = progressService.claimChest(get().data.progress[currentUserId]);
+    if (!result) return null;
+    let data: AppData = { ...get().data, progress: { ...get().data.progress, [currentUserId]: result.progress } };
+    data = withSync(data, currentUserId, "chest.claim", {});
+    save(data);
+    set({ data });
+    get().drainSync().catch(() => undefined);
+    return result.crowns;
   },
 
   restoreHearts() {

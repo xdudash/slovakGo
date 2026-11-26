@@ -21,11 +21,11 @@ export async function cancelStudyReminders(): Promise<void> {
   if (owned.length) await LocalNotifications.cancel({ notifications: owned.map(n => ({ id: n.id })) });
 }
 
-export async function syncStudyReminders(user: User | undefined, lastPracticeDate?: string): Promise<void> {
+export async function syncStudyReminders(user: User | undefined, lastPracticeDate?: string, streakDays = 0): Promise<void> {
   if (!isNativeApp) return;
   await cancelStudyReminders();
   if (!user?.settings.notificationsEnabled || await notificationPermission() !== 'granted') return;
-  const notifications = reminderPlan(user.id, user.settings.reminderTime || '19:00', user.settings.language, lastPracticeDate);
+  const notifications = reminderPlan(user.id, user.settings.reminderTime || '19:00', user.settings.language, lastPracticeDate, new Date(), streakDays);
   if (notifications.length) await LocalNotifications.schedule({ notifications });
 }
 

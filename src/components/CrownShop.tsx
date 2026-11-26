@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { BookOpen, Check, Flame, Lock, Snowflake, Sparkles } from "lucide-react";
-import { CROWNS, FRAMES, FREEZE_PRICE, MAX_FREEZES, canWearFrame, type FrameRarity } from "../../shared/economy";
+import { BookOpen, Check, Flame, Gift, Lock, Snowflake, Sparkles, Trophy, UserPlus } from "lucide-react";
+import { CROWNS, FRAMES, MAX_FREEZES, REFERRAL_CROWNS, canWearFrame, itemPrice, streakDiscount, type FrameRarity } from "../../shared/economy";
+import { progressService } from "../services/progressService";
+import { rewardsCopy, rewardsLang } from "./rewardsCopy";
 import { useT } from "../i18n";
 import { track } from "../services/analytics";
 import { selectCurrentUser, useAppStore } from "../store/useAppStore";
@@ -19,7 +21,7 @@ const copy: Record<Lang, {
     earnLesson: "Пройти новий урок", earnPerfect: "Урок без помилок", earnDay: "Перше заняття дня", earnPractice: "Практика слів", plusBonus: "З Plus корон на 50% більше",
     freezeTitle: "Заморозка серії", freezeText: "Пропустиш день — серія не згорить.", freezeHave: (n) => `Є: ${n} з ${MAX_FREEZES}`, buy: "Купити", full: "Максимум",
     framesTitle: "Рамки аватара", framesText: "Видно в профілі й у рейтингу.", wear: "Вдягнути", worn: "Вдягнуто", plusOnly: "Plus", short: (n) => `Ще ${n}`,
-    names: { simple: "Проста", lime: "Лайм", violet: "Фіолетова", ice: "Крижана", gold: "Золота", fire: "Вогонь" },
+    names: { simple: "Проста", lime: "Лайм", violet: "Фіолетова", ice: "Крижана", gold: "Золота", fire: "Вогонь", comet: "Комета" },
     rarity: { common: "Звичайна", rare: "Рідкісна", epic: "Епічна", legendary: "Легендарна" },
   },
   ru: {
@@ -27,7 +29,7 @@ const copy: Record<Lang, {
     earnLesson: "Пройти новый урок", earnPerfect: "Урок без ошибок", earnDay: "Первое занятие дня", earnPractice: "Практика слов", plusBonus: "С Plus корон на 50% больше",
     freezeTitle: "Заморозка серии", freezeText: "Пропустишь день — серия не сгорит.", freezeHave: (n) => `Есть: ${n} из ${MAX_FREEZES}`, buy: "Купить", full: "Максимум",
     framesTitle: "Рамки аватара", framesText: "Видно в профиле и в рейтинге.", wear: "Надеть", worn: "Надета", plusOnly: "Plus", short: (n) => `Ещё ${n}`,
-    names: { simple: "Простая", lime: "Лайм", violet: "Фиолетовая", ice: "Ледяная", gold: "Золотая", fire: "Огонь" },
+    names: { simple: "Простая", lime: "Лайм", violet: "Фиолетовая", ice: "Ледяная", gold: "Золотая", fire: "Огонь", comet: "Комета" },
     rarity: { common: "Обычная", rare: "Редкая", epic: "Эпическая", legendary: "Легендарная" },
   },
   sk: {
@@ -35,7 +37,7 @@ const copy: Record<Lang, {
     earnLesson: "Nová lekcia", earnPerfect: "Lekcia bez chyby", earnDay: "Prvé učenie dňa", earnPractice: "Precvičovanie slov", plusBonus: "S Plus o 50 % viac korún",
     freezeTitle: "Zmrazenie série", freezeText: "Vynecháš deň a séria nezhorí.", freezeHave: (n) => `Máš: ${n} z ${MAX_FREEZES}`, buy: "Kúpiť", full: "Maximum",
     framesTitle: "Rámčeky avatara", framesText: "Vidno ich v profile aj v rebríčku.", wear: "Nasadiť", worn: "Nasadený", plusOnly: "Plus", short: (n) => `Ešte ${n}`,
-    names: { simple: "Jednoduchý", lime: "Limetka", violet: "Fialový", ice: "Ľadový", gold: "Zlatý", fire: "Oheň" },
+    names: { simple: "Jednoduchý", lime: "Limetka", violet: "Fialový", ice: "Ľadový", gold: "Zlatý", fire: "Oheň", comet: "Kométa" },
     rarity: { common: "Bežný", rare: "Vzácny", epic: "Epický", legendary: "Legendárny" },
   },
   en: {
@@ -43,14 +45,14 @@ const copy: Record<Lang, {
     earnLesson: "Finish a new lesson", earnPerfect: "Lesson with no mistakes", earnDay: "First session of the day", earnPractice: "Word practice", plusBonus: "Plus earns 50% more crowns",
     freezeTitle: "Streak freeze", freezeText: "Miss a day and your streak survives.", freezeHave: (n) => `You have ${n} of ${MAX_FREEZES}`, buy: "Buy", full: "Maxed out",
     framesTitle: "Avatar frames", framesText: "Shown on your profile and the leaderboard.", wear: "Wear", worn: "Worn", plusOnly: "Plus", short: (n) => `${n} more`,
-    names: { simple: "Simple", lime: "Lime", violet: "Violet", ice: "Ice", gold: "Gold", fire: "Fire" },
+    names: { simple: "Simple", lime: "Lime", violet: "Violet", ice: "Ice", gold: "Gold", fire: "Fire", comet: "Comet" },
     rarity: { common: "Common", rare: "Rare", epic: "Epic", legendary: "Legendary" },
   },
 };
 
 function useEconomyCopy() {
   const { lang } = useT();
-  return copy[(lang in copy ? lang : "uk") as Lang];
+  return { ...copy[(lang in copy ? lang : "uk") as Lang], ...rewardsCopy[rewardsLang(lang)] };
 }
 
 /** Crowns wallet, streak freezes and avatar frames: the free half of the shop. */
@@ -66,6 +68,9 @@ export function CrownShop() {
   const coins = progress.coins ?? 0;
   const owned = progress.ownedItems ?? [];
   const worn = user.frame ?? "simple";
+  const streak = progressService.liveStreak(progress);
+  const discount = streakDiscount(streak);
+  const freezePrice = itemPrice("freeze", streak) ?? 0;
 
   function buy(item: string, price: number) {
     if (buyItem(item)) {
@@ -80,6 +85,10 @@ export function CrownShop() {
     { icon: <Check size={18} />, label: c.earnPerfect, value: `+${CROWNS.perfect}` },
     { icon: <Flame size={18} />, label: c.earnDay, value: `+${CROWNS.streakDay}` },
     { icon: <Sparkles size={18} />, label: c.earnPractice, value: `+${CROWNS.practice}` },
+    { icon: <Gift size={18} />, label: c.earnChest, value: "+20–40" },
+    { icon: <Flame size={18} />, label: c.earnStreak, value: "+20–200" },
+    { icon: <Trophy size={18} />, label: c.earnLeague, value: "+30–100" },
+    { icon: <UserPlus size={18} />, label: c.earnInvite, value: `+${REFERRAL_CROWNS}` },
   ];
 
   return (
@@ -89,6 +98,7 @@ export function CrownShop() {
         <strong className="crown-wallet-n">{coins}</strong>
         <span>{c.balance}</span>
       </div>
+      {discount > 0 && <p className="crown-discount"><Flame size={16} aria-hidden="true" /> {c.discount(discount, streak)}</p>}
 
       <h2 className="crown-shop-h">{c.framesTitle}</h2>
       <p className="crown-shop-sub">{c.framesText}</p>
@@ -96,7 +106,9 @@ export function CrownShop() {
         {FRAMES.map((frame) => {
           const wearable = canWearFrame(frame.id, owned, user.subscriptionStatus);
           const isWorn = worn === frame.id;
-          const short = frame.price - coins;
+          const price = itemPrice(`frame:${frame.id}`, streak) ?? frame.price;
+          const short = price - coins;
+          const priceLabel = <>{discount > 0 && <s className="frame-old-price">{frame.price}</s>}{price}</>;
           return (
             <div key={frame.id} className={`frame-card${isWorn ? " is-worn" : ""}${justBought === `frame:${frame.id}` ? " is-new" : ""}`}>
               <UserAvatar name={user.name} avatar={user.avatar} frame={frame.id} size={56} />
@@ -105,8 +117,9 @@ export function CrownShop() {
               {isWorn ? <span className="frame-action is-worn"><Check size={14} /> {c.worn}</span>
                 : wearable ? <button type="button" className="frame-action" onClick={() => updateUser({ frame: frame.id })}>{c.wear}</button>
                 : frame.plusOnly ? <span className="frame-action is-locked"><Lock size={13} /> {c.plusOnly}</span>
-                : short > 0 ? <span className="frame-action is-locked" title={c.short(short)} aria-label={c.short(short)}><CrownIcon size={13} /> {frame.price}</span>
-                : <button type="button" className="frame-action is-buy" onClick={() => buy(`frame:${frame.id}`, frame.price)}><CrownIcon size={13} /> {frame.price}</button>}
+                : frame.unlock ? <span className="frame-action is-locked"><Flame size={13} /> {c.cometLock}</span>
+                : short > 0 ? <span className="frame-action is-locked" title={c.short(short)} aria-label={c.short(short)}><CrownIcon size={13} /> {priceLabel}</span>
+                : <button type="button" className="frame-action is-buy" onClick={() => buy(`frame:${frame.id}`, price)}><CrownIcon size={13} /> {priceLabel}</button>}
             </div>
           );
         })}
@@ -118,9 +131,9 @@ export function CrownShop() {
           <strong>{c.freezeTitle}</strong>
           <span>{c.freezeText} {c.freezeHave(progress.streakFreezeCount)}</span>
         </div>
-        <button type="button" className="frame-action is-buy" disabled={progress.streakFreezeCount >= MAX_FREEZES || coins < FREEZE_PRICE}
-          onClick={() => buy("freeze", FREEZE_PRICE)}>
-          {progress.streakFreezeCount >= MAX_FREEZES ? c.full : <><CrownIcon size={13} /> {FREEZE_PRICE}</>}
+        <button type="button" className="frame-action is-buy" disabled={progress.streakFreezeCount >= MAX_FREEZES || coins < freezePrice}
+          onClick={() => buy("freeze", freezePrice)}>
+          {progress.streakFreezeCount >= MAX_FREEZES ? c.full : <><CrownIcon size={13} /> {freezePrice}</>}
         </button>
       </div>
 
