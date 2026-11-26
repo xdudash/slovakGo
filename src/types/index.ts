@@ -26,6 +26,8 @@ export interface User {
   email: string;
   role: UserRole;
   avatar?: string;
+  /** Worn avatar frame id (see shared/economy FRAMES). */
+  frame?: string | null;
   level: UserLevel;
   goal?: string;
   country?: string;
@@ -508,7 +510,10 @@ export interface Progress {
   streakDays: number;
   lastPracticeDate?: string;
   streakFreezeCount: number;
+  /** Crowns: earned by learning, spent in the shop. */
   coins: number;
+  /** Bought cosmetic ids (avatar frames). */
+  ownedItems?: string[];
   mistakes: Mistake[];
   achievements: Achievement[];
   xpDailyHistory?: Record<string, number>;
@@ -530,6 +535,9 @@ export interface LeaderboardEntry {
   userId: string;
   name: string;
   avatar?: string;
+  /** Photo URL relative to the API base, when the learner set a photo. */
+  photo?: string | null;
+  frame?: string | null;
   country?: string;
   xpWeekly: number;
   rank: number;

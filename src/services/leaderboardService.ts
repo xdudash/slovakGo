@@ -38,6 +38,7 @@ export const leaderboardService = {
         userId: u.id,
         name: u.name,
         avatar: u.avatar,
+        frame: u.frame,
         country: u.country,
         xpWeekly: progress[u.id]?.xpWeekly ?? 0,
         rank: 0,

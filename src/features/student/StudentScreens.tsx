@@ -17,6 +17,8 @@ import { AppStoreOffer, AppStorePaywall, PlusIntro } from "../../components/AppS
 import { WebPlusOffer } from "../../components/WebPlusOffer";
 import { plusOfferSeen, safeNextPath } from "../../services/plusOffer";
 import { ReminderPrime } from "../../components/ReminderPrime";
+import { CrownIcon, UserAvatar } from "../../components/UserAvatar";
+import { CrownShop } from "../../components/CrownShop";
 import { shouldPrimeReminders } from "../../services/reminderPrime";
 import { manageAppStoreSubscription, maybeRequestAppReview } from "../../services/appStoreBilling";
 
@@ -115,6 +117,7 @@ function TopStats() {
         <LearningIcon name="streak" size={14} /> {progress.streakDays}
         {progress.streakFreezeCount > 0 && <span className="freeze-badge"><LearningIcon name="freeze" size={14} /></span>}
       </div>
+      <Link to="/app/shop" className="stat-chip crowns" aria-label={`${progress.coins ?? 0}`}><CrownIcon size={15} /> {progress.coins ?? 0}</Link>
       <Link to="/app/levels" className="stat-chip level-link">{t("student.top_stats_level")}</Link>
     </div>
   );
@@ -577,7 +580,7 @@ const referralUrl = (userId: string) => `${isNativeApp ? PUBLIC_APP_ORIGIN : win
 
 type LessonPhase = "start" | "theory" | "words" | "exercise" | "final" | "result";
 type WrongItem = { question: string; userAnswer: string; correctAnswer: string };
-type CompletionData = { xp: number; correct: number; total: number; wrong: WrongItem[] };
+type CompletionData = { xp: number; crowns: number; correct: number; total: number; wrong: WrongItem[] };
 
 function isInteractiveFinal(sit: Lesson["finalSituation"]): sit is Extract<NonNullable<Lesson["finalSituation"]>, { type: "interactive_scenario" }> {
   return !!sit && "type" in sit && sit.type === "interactive_scenario";
@@ -910,13 +913,15 @@ function LessonPlayer() {
     const isFirst = progress!.completedLessons.length === 0;
     if (isFirst) setFirstWin(true);
     clearLessonDraft(user!.id, lesson!.id);
+    // Read before completeLesson: the reward depends on the progress before this lesson.
+    const crowns = progressService.lessonCrowns(progress!, lesson!.id, finalRecords, user!.subscriptionStatus);
     completeLesson(lesson!, finalRecords);
     const xp = computeXp();
     const correct = finalRecords.filter((r) => r.correct).length;
     track("lesson_complete", { lessonId: lesson!.id, level: lesson!.level, first: isFirst, correct, total: finalRecords.length });
     // The free preview ends here — this is the conversion moment worth watching.
     if (opensTrialAfterLesson) track("section_complete", { level: lesson!.level });
-    const cd: CompletionData = { xp, correct, total: finalRecords.length, wrong: buildWrong(finalRecords) };
+    const cd: CompletionData = { xp, crowns, correct, total: finalRecords.length, wrong: buildWrong(finalRecords) };
     soundService.play("complete", user!.settings.soundEnabled, user!.settings.hapticsEnabled);
     // Ask for a rating only after a lesson that went well, and never next to an offer,
     // the paywall or the reminder primer (5.6.1: system prompt only, no incentives).
@@ -1402,7 +1407,10 @@ function LessonPlayer() {
             <div className="lesson-result-emoji">{isNativeApp ? <img src="/brand/mascot-wink.webp" alt="" width="120" height="95" /> : completionData.wrong.length === 0 ? "🏆" : "🎉"}</div>
             {lesson.resultScreen.title ? <h2 className="lesson-result-title">{tx(lesson.resultScreen.title)}</h2> : null}
             {(lesson.resultScreen.text || lesson.resultScreen.subtitle) ? <p className="lesson-result-text">{tx(lesson.resultScreen.text ?? lesson.resultScreen.subtitle)}</p> : null}
-            <div className="lesson-result-xp">+{completionData.xp} XP</div>
+            <div className="lesson-result-rewards">
+              <div className="lesson-result-xp">+{completionData.xp} XP</div>
+              {completionData.crowns > 0 && <Link to="/app/shop" className="lesson-result-crowns"><CrownIcon size={18} /> +{completionData.crowns}</Link>}
+            </div>
             <div className="lesson-result-stats">
               <div className="lesson-result-stat">
                 <span className="lesson-result-stat-n">{lesson.resultScreen.newWordsCount ?? lesson.words.length}</span>
@@ -1459,7 +1467,7 @@ function LessonPlayer() {
           ))}
           <div className="celebrate-card">
             <div className="celebrate-icon"><GuideCharacter mood="celebrate" /></div>
-            <div className="celebrate-xp">+{celebration.xp} XP</div>
+            <div className="celebrate-xp">+{celebration.xp} XP{celebration.crowns > 0 && <span className="celebrate-crowns"><CrownIcon size={20} /> +{celebration.crowns}</span>}</div>
             <p className="celebrate-sub">
               {celebration.correct} / {celebration.total} {t("student.lesson.correct_label")}
               {celebration.wrong.length === 0 && ` · ${t("student.lesson.perfect")}`}
@@ -2083,7 +2091,7 @@ function LeaderboardScreen() {
         className={`leader-row${entry.userId === user?.id ? " me" : ""}${flash ? ` movement-flash--${flash}` : ""}`}
       >
         <span className="leader-rank">{entry.rank}</span>
-        <div className="leader-avatar">{(entry.avatar ?? entry.name).slice(0, 2).toUpperCase()}</div>
+        <UserAvatar className="leader-avatar" name={entry.name} avatar={entry.avatar} photo={entry.photo} frame={entry.frame} size={36} />
         <span className="leader-name">
           {entry.name}
           {entry.country === "UA" && <span className="country-flag"> 🇺🇦</span>}
@@ -2139,7 +2147,7 @@ function LeaderboardScreen() {
                   {snapshot.entries.slice(0, 5).map((entry) => (
                     <div className={`leader-row${entry.userId === user?.id ? " me" : ""}`} key={entry.userId}>
                       <span className="leader-rank">{entry.rank}</span>
-                      <div className="leader-avatar">{(entry.avatar ?? entry.name).slice(0, 2).toUpperCase()}</div>
+                      <UserAvatar className="leader-avatar" name={entry.name} avatar={entry.avatar} photo={entry.photo} frame={entry.frame} size={36} />
                       <span className="leader-name">{entry.name}</span>
                       <span className="leader-xp">{entry.xpWeekly} XP</span>
                       {entry.movement && (
@@ -2162,7 +2170,7 @@ function LeaderboardScreen() {
             {podiumOrder.map((entry) => (
               <Card key={entry.userId} className={`podium-card rank-${entry.rank}${entry.userId === user?.id ? " me" : ""}`}>
                 <div className={`podium-medal medal--${entry.rank === 1 ? "gold" : entry.rank === 2 ? "silver" : "bronze"}`}><Medal size={22} /></div>
-                <div className="podium-avatar">{(entry.avatar ?? entry.name).slice(0, 2).toUpperCase()}</div>
+                <UserAvatar className="podium-avatar" name={entry.name} avatar={entry.avatar} photo={entry.photo} frame={entry.frame} size={44} />
                 <strong className="podium-name">{entry.name}</strong>
                 <span className="podium-xp">{entry.xpWeekly} XP</span>
                 {entry.leagueChange && (
@@ -2265,10 +2273,7 @@ function ProfileScreen() {
       <div className="profile-hero">
         <div className="profile-hero-info">
           <button className="avatar-wrap" type="button" onClick={() => fileRef.current?.click()} aria-label={t("student.profile.avatar_title")}>
-            {user.avatar?.startsWith("data:") || user.avatar?.startsWith("http")
-              ? <img className="avatar avatar--photo" src={user.avatar} alt={user.name} />
-              : <div className="avatar">{(user.avatar || user.name).slice(0, 2).toUpperCase()}</div>
-            }
+            <UserAvatar className="profile-avatar" name={user.name} avatar={user.avatar} frame={user.frame} size={68} />
             <span className="avatar-edit"><Camera size={13} /></span>
           </button>
           <input ref={fileRef} type="file" accept="image/*" className="sr-only" onChange={handleFileChange} />
@@ -3261,6 +3266,8 @@ function ShopScreen() {
           <span>{error}</span>
         </div>
       )}
+
+      <CrownShop />
 
       <Card className="shop-card shop-card--main">
         <div className="shop-card-header">

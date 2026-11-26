@@ -121,12 +121,35 @@ export async function handleUserReferral(req: VercelRequest, res: VercelResponse
   respond(res, { ok: true });
 }
 
+/** Short content hash so a changed photo gets a new, cacheable URL. */
+function photoVersion(value: string): string {
+  let h = 2166136261;
+  for (let i = 0; i < value.length; i += 7) h = Math.imul(h ^ value.charCodeAt(i), 16777619);
+  return (h >>> 0).toString(36) + value.length.toString(36);
+}
+
+/**
+ * A learner's profile photo as an image, so the leaderboard can show photos
+ * without putting 50 base64 blobs in its JSON. Served by id (ids are random UUIDs
+ * already visible to other learners on the leaderboard).
+ */
+export async function handleAvatarImage(res: VercelResponse, userId: string): Promise<void> {
+  const row = userId ? await queryOne("SELECT avatar FROM users WHERE id = ? AND is_blocked = 0 LIMIT 1", [userId]) : null;
+  const match = /^data:(image\/(?:jpeg|png|webp));base64,([A-Za-z0-9+/]+={0,2})$/.exec(String(row?.avatar ?? ""));
+  if (!match) { res.status(404).end(); return; }
+  res.setHeader("Content-Type", match[1]);
+  res.setHeader("Cache-Control", "public, max-age=604800, immutable");
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  res.status(200).end(Buffer.from(match[2], "base64"));
+}
+
 export async function handleLeaderboard(req: VercelRequest, res: VercelResponse): Promise<void> {
   const uid = await requireUid(req, res); if (!uid) return;
   const weekId = currentWeekId();
+  await ensureCol("users", "frame", "TEXT");
 
   const rows = await query(
-    `SELECT u.id, u.name_text, u.avatar, u.country, p.xp_weekly, p.week_id
+    `SELECT u.id, u.name_text, u.avatar, u.frame, u.country, p.xp_weekly, p.week_id
      FROM progress p JOIN users u ON u.id = p.user_id
      WHERE u.is_blocked = 0 AND u.role = 'student'
      ORDER BY CASE WHEN p.week_id = ? THEN p.xp_weekly ELSE 0 END DESC, u.id ASC
@@ -137,8 +160,9 @@ export async function handleLeaderboard(req: VercelRequest, res: VercelResponse)
   const entries = rows.map((r, idx) => ({
     userId:   String(r.id),
     name:     String(r.name_text),
-    // Photos stay on the profile; the 50-row leaderboard shows initials instead.
     avatar:   r.avatar && !String(r.avatar).startsWith("data:") ? String(r.avatar) : null,
+    photo:    String(r.avatar ?? "").startsWith("data:") ? `/avatar/${String(r.id)}?v=${photoVersion(String(r.avatar))}` : null,
+    frame:    r.frame ? String(r.frame) : null,
     country:  r.country ? String(r.country) : null,
     xpWeekly: String(r.week_id) === weekId ? Number(r.xp_weekly) : 0,
     rank:     idx + 1,
