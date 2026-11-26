@@ -10,6 +10,7 @@ interface Props {
   bodyClass?: string;
   keywords?: string[];
   lang?: string;
+  ogType?: 'website' | 'article';
 }
 
 const {
@@ -20,6 +21,7 @@ const {
   bodyClass = '',
   keywords,
   lang = 'uk',
+  ogType = 'website',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -41,7 +43,7 @@ const currentPath  = Astro.url.pathname;
   <meta name="apple-itunes-app" content={`app-id=${appInfo.appStoreId}`} />
 
   <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
+  <meta property="og:type"        content={ogType} />
   <meta property="og:url"         content={canonicalURL} />
   <meta property="og:title"       content={title} />
   <meta property="og:description" content={description} />
