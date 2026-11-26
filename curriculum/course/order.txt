@@ -1,0 +1,41 @@
+// SlovakGO learning-path order overrides (read by build.py).
+//
+// Lessons listed under `@level X` come first in that level, in the listed order; every
+// other lesson of the level follows in unit/lesson order. Lesson ids NEVER change here —
+// completed lessons and word progress of existing learners stay valid.
+//
+// `@topic <name>` sets lesson.topic (the path's topic group header) and the start-screen
+// eyebrow for the lessons below it. Words keep their unit topic.
+// `@topic <name> | opening` additionally enforces at most 2 theory screens per lesson
+// (all theory is shown before the first exercise).
+//
+// Why: the first 10 lessons of a level are the free preview (shared/access.ts
+// previewLessons). A0 used to open with ten alphabet/phonetics lessons; real phrases
+// started at lesson 11. A0 now opens with survival phrases and weaves phonetics in.
+
+@level A0
+
+@topic Перші кроки: фрази й звуки | opening
+a0-u00-l01-prve-frazy
+a0-u02-l01-dobry-den-ahoj
+a0-u02-l04-prosim-dakujem
+a0-u01-l01-abeceda
+a0-u02-l03-rozlucka
+a0-u01-l09-cisla-0-10
+a0-u02-l05-prepacte
+a0-u01-l02-samohlasky
+a0-u02-l02-pozdravy-cez-den
+a0-u02-l08-ako-sa-mas
+
+@topic Вимова і ввічлива розмова
+a0-u01-l03-makcen-c-s-z
+a0-u02-l06-ano-nie
+a0-u01-l04-makke-spoluhlasky
+a0-u02-l07-ty-alebo-vy
+a0-u01-l05-h-ch-dz
+a0-u02-l09-nerozumiem
+a0-u01-l06-dvojhlasky
+a0-u01-l07-slabicne-r-l
+a0-u01-l08-napisy
+a0-u01-l10-citame-mesto
+a0-u02-l10-prvy-rozhovor

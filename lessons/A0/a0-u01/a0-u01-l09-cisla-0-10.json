@@ -5,14 +5,14 @@
       "sectionId": "a0-u01",
       "level": "A0",
       "title": "Числа від 0 до 10",
-      "topic": "Абетка і звуки",
+      "topic": "Перші кроки: фрази й звуки",
       "description": "Числа, які знадобляться щодня: номер квартири, зупинка, кількість, ціна.",
-      "order": 9,
+      "order": 6,
       "xpReward": 15,
-      "estimatedMinutes": 21,
+      "estimatedMinutes": 7,
       "isPublished": true,
       "intro": "Розуміти й писати числа від 0 до 10.",
-      "completionMessage": "Числа 0–10 твої! Далі — підсумковий урок: читаємо місто.",
+      "completionMessage": "Числа 0–10 твої! Далі — як вибачитися й звернутися до незнайомця.",
       "updatedAt": "2026-10-01T00:00:00+02:00",
       "localization": {
         "uiLanguages": [
@@ -23,7 +23,7 @@
       },
       "startScreen": {
         "screenType": "lesson_start",
-        "eyebrow": "A0 · Абетка і звуки",
+        "eyebrow": "A0 · Перші кроки: фрази й звуки",
         "title": "Числа від 0 до 10",
         "shortDescription": "Розуміти й писати числа від 0 до 10.",
         "outcomes": [
@@ -46,7 +46,7 @@
         ],
         "exercisesCount": 12,
         "reward": "+15 XP",
-        "estimatedMinutes": 21,
+        "estimatedMinutes": 7,
         "button": "Почати урок →"
       },
       "theoryScreens": [
@@ -54,72 +54,61 @@
           "id": "theory-1",
           "screenType": "theory",
           "order": 1,
-          "title": "Від нуля до п’яти",
-          "text": "Перші числа схожі на українські. Зверни увагу на вимову: štyri = «штирі», päť = «петь».",
+          "title": "Від нуля до десяти",
+          "text": "Більшість чисел схожі на українські. Зверни увагу на вимову: štyri = «штирі», päť = «петь» (ä тут звучить як «е», ť — м’яке «ть»). І не плутай sedem (7) та osem (8)!",
           "examples": [
             {
               "sk": "nula",
-              "uk": "нуль"
+              "uk": "0"
             },
             {
               "sk": "jeden",
-              "uk": "один"
+              "uk": "1"
             },
             {
               "sk": "dva",
-              "uk": "два"
+              "uk": "2"
             },
             {
               "sk": "tri",
-              "uk": "три"
+              "uk": "3"
             },
             {
               "sk": "štyri",
-              "uk": "чотири"
+              "uk": "4"
             },
             {
               "sk": "päť",
-              "uk": "п’ять"
-            }
-          ],
-          "shortRule": "0–5: nula, jeden, dva, tri, štyri, päť",
-          "button": "Далі →"
-        },
-        {
-          "id": "theory-2",
-          "screenType": "theory",
-          "order": 2,
-          "title": "Від шести до десяти",
-          "text": "Далі: šesť, sedem, osem, deväť, desať. Не плутай sedem (7) і osem (8)!",
-          "examples": [
+              "uk": "5"
+            },
             {
               "sk": "šesť",
-              "uk": "шість"
+              "uk": "6"
             },
             {
               "sk": "sedem",
-              "uk": "сім"
+              "uk": "7"
             },
             {
               "sk": "osem",
-              "uk": "вісім"
+              "uk": "8"
             },
             {
               "sk": "deväť",
-              "uk": "дев’ять"
+              "uk": "9"
             },
             {
               "sk": "desať",
-              "uk": "десять"
+              "uk": "10"
             }
           ],
           "shortRule": "sedem = 7, osem = 8",
           "button": "Далі →"
         },
         {
-          "id": "theory-3",
+          "id": "theory-2",
           "screenType": "theory",
-          "order": 3,
+          "order": 2,
           "title": "Один і два змінюються",
           "text": "Як і в українській, «один» і «два» мають форми за родом: jeden muž (один чоловік), jedna žena (одна жінка), jedno auto (одне авто); dva muži, ale dve ženy, dve autá.",
           "examples": [
@@ -857,12 +846,12 @@
           }
         ],
         "passRequirement": "3/4",
-        "successMessage": "Ситуацію вирішено! Числа 0–10 твої! Далі — підсумковий урок: читаємо місто."
+        "successMessage": "Ситуацію вирішено! Числа 0–10 твої! Далі — як вибачитися й звернутися до незнайомця."
       },
       "resultScreen": {
         "screenType": "lesson_result",
         "title": "Урок завершено!",
-        "text": "Числа 0–10 твої! Далі — підсумковий урок: читаємо місто.",
+        "text": "Числа 0–10 твої! Далі — як вибачитися й звернутися до незнайомця.",
         "nowYouKnow": [
           "числа 0–10",
           "sedem = 7, osem = 8",
@@ -879,8 +868,8 @@
           "Повторити помилки"
         ],
         "nextLesson": {
-          "id": "a0-u01-l10-citame-mesto",
-          "title": "Підсумок: читаю місто"
+          "id": "a0-u02-l05-prepacte",
+          "title": "Вибачте, перепрошую"
         }
       }
     }

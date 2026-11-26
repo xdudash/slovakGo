@@ -5,14 +5,14 @@
       "sectionId": "a0-u02",
       "level": "A0",
       "title": "Привітання за часом доби",
-      "topic": "Привітання і ввічливість",
+      "topic": "Перші кроки: фрази й звуки",
       "description": "Dobré ráno, dobrý večer, dobrú noc і побажання, які словаки кажуть щодня: dobrú chuť, pekný deň.",
-      "order": 12,
+      "order": 9,
       "xpReward": 15,
-      "estimatedMinutes": 19,
+      "estimatedMinutes": 7,
       "isPublished": true,
       "intro": "Вітатися залежно від часу доби й бажати гарного дня, смачного, на добраніч.",
-      "completionMessage": "Тепер ти звучиш природно з ранку до ночі. Далі — як прощатися.",
+      "completionMessage": "Тепер ти звучиш природно з ранку до ночі. Далі — як запитати «Як справи?».",
       "updatedAt": "2026-10-01T00:00:00+02:00",
       "localization": {
         "uiLanguages": [
@@ -23,7 +23,7 @@
       },
       "startScreen": {
         "screenType": "lesson_start",
-        "eyebrow": "A0 · Привітання і ввічливість",
+        "eyebrow": "A0 · Перші кроки: фрази й звуки",
         "title": "Привітання за часом доби",
         "shortDescription": "Вітатися залежно від часу доби й бажати гарного дня, смачного, на добраніч.",
         "outcomes": [
@@ -42,7 +42,7 @@
         ],
         "exercisesCount": 12,
         "reward": "+15 XP",
-        "estimatedMinutes": 19,
+        "estimatedMinutes": 7,
         "button": "Почати урок →"
       },
       "theoryScreens": [
@@ -69,32 +69,13 @@
           "id": "theory-2",
           "screenType": "theory",
           "order": 2,
-          "title": "Побажання, а не привітання",
-          "text": "«Dobrú noc» — на добраніч (коли йдуть спати, не для зустрічі!). «Dobrú chuť» — смачного. «Pekný deň» — гарного дня. У цих побажаннях знахідний відмінок: dobrú, pekný.",
+          "title": "Побажання і як на них відповідати",
+          "text": "«Dobrú noc» — на добраніч (коли йдуть спати, не для зустрічі!). «Dobrú chuť» — смачного. «Pekný deň» — гарного дня. Форма dobrú — бо це побажання, як «бажаю добру ніч». Відповідь на побажання: «Ďakujem, aj vám / aj tebe» (дякую, і вам / і тобі) або «Ďakujem, podobne» (дякую, навзаєм).",
           "examples": [
             {
               "sk": "Dobrú noc!",
               "uk": "На добраніч!"
             },
-            {
-              "sk": "Dobrú chuť!",
-              "uk": "Смачного!"
-            },
-            {
-              "sk": "Pekný deň!",
-              "uk": "Гарного дня!"
-            }
-          ],
-          "shortRule": "Dobrú noc — лише прощання перед сном.",
-          "button": "Далі →"
-        },
-        {
-          "id": "theory-3",
-          "screenType": "theory",
-          "order": 3,
-          "title": "Як відповідати",
-          "text": "На «Dobrú chuť» відповідають «Ďakujem, aj vám / aj tebe» (дякую, і вам). На «Pekný deň» — «Aj vám» або «Ďakujem, podobne» (дякую, навзаєм).",
-          "examples": [
             {
               "sk": "Dobrú chuť! — Ďakujem, aj vám.",
               "uk": "Смачного! — Дякую, і вам."
@@ -104,7 +85,7 @@
               "uk": "Гарного дня! — Навзаєм."
             }
           ],
-          "shortRule": "Aj vám / aj tebe / podobne = і вам, навзаєм.",
+          "shortRule": "Dobrú noc — лише перед сном. Відповідь: aj vám / podobne.",
           "button": "Далі →"
         }
       ],
@@ -117,7 +98,7 @@
             "wordId": "a0-u02-l02-pozdravy-cez-den-w01",
             "sk": "Dobré ráno",
             "uk": "доброго ранку",
-            "pronunciationUk": "до:бре: ра:но",
+            "pronunciationUk": "добре: ра:но",
             "exampleSk": "Dobré ráno, ako ste sa vyspali?",
             "exampleUk": "Доброго ранку, як спалося?"
           },
@@ -125,7 +106,7 @@
             "wordId": "a0-u02-l02-pozdravy-cez-den-w02",
             "sk": "Dobrý večer",
             "uk": "добрий вечір",
-            "pronunciationUk": "до:брі: вечер",
+            "pronunciationUk": "добрі: вечер",
             "exampleSk": "Dobrý večer, máte rezerváciu?",
             "exampleUk": "Добрий вечір, у вас є бронювання?"
           },
@@ -133,7 +114,7 @@
             "wordId": "a0-u02-l02-pozdravy-cez-den-w03",
             "sk": "Dobrú noc",
             "uk": "на добраніч",
-            "pronunciationUk": "до:бру: ноц",
+            "pronunciationUk": "добру: ноц",
             "exampleSk": "Dobrú noc, deti!",
             "exampleUk": "На добраніч, діти!"
           },
@@ -141,7 +122,7 @@
             "wordId": "a0-u02-l02-pozdravy-cez-den-w04",
             "sk": "Dobrú chuť",
             "uk": "смачного",
-            "pronunciationUk": "до:бру: хуть",
+            "pronunciationUk": "добру: хуть",
             "exampleSk": "Dobrú chuť, pani Horváthová!",
             "exampleUk": "Смачного, пані Горватова!"
           },
@@ -169,7 +150,7 @@
           "id": "a0-u02-l02-pozdravy-cez-den-w01",
           "sk": "Dobré ráno",
           "uk": "доброго ранку",
-          "pronunciationUk": "до:бре: ра:но",
+          "pronunciationUk": "добре: ра:но",
           "exampleSk": "Dobré ráno, ako ste sa vyspali?",
           "exampleUk": "Доброго ранку, як спалося?",
           "level": "A0",
@@ -183,7 +164,7 @@
           "id": "a0-u02-l02-pozdravy-cez-den-w02",
           "sk": "Dobrý večer",
           "uk": "добрий вечір",
-          "pronunciationUk": "до:брі: вечер",
+          "pronunciationUk": "добрі: вечер",
           "exampleSk": "Dobrý večer, máte rezerváciu?",
           "exampleUk": "Добрий вечір, у вас є бронювання?",
           "level": "A0",
@@ -197,7 +178,7 @@
           "id": "a0-u02-l02-pozdravy-cez-den-w03",
           "sk": "Dobrú noc",
           "uk": "на добраніч",
-          "pronunciationUk": "до:бру: ноц",
+          "pronunciationUk": "добру: ноц",
           "exampleSk": "Dobrú noc, deti!",
           "exampleUk": "На добраніч, діти!",
           "level": "A0",
@@ -211,7 +192,7 @@
           "id": "a0-u02-l02-pozdravy-cez-den-w04",
           "sk": "Dobrú chuť",
           "uk": "смачного",
-          "pronunciationUk": "до:бру: хуть",
+          "pronunciationUk": "добру: хуть",
           "exampleSk": "Dobrú chuť, pani Horváthová!",
           "exampleUk": "Смачного, пані Горватова!",
           "level": "A0",
@@ -753,12 +734,12 @@
           }
         ],
         "passRequirement": "3/4",
-        "successMessage": "Ситуацію вирішено! Тепер ти звучиш природно з ранку до ночі. Далі — як прощатися."
+        "successMessage": "Ситуацію вирішено! Тепер ти звучиш природно з ранку до ночі. Далі — як запитати «Як справи?»."
       },
       "resultScreen": {
         "screenType": "lesson_result",
         "title": "Урок завершено!",
-        "text": "Тепер ти звучиш природно з ранку до ночі. Далі — як прощатися.",
+        "text": "Тепер ти звучиш природно з ранку до ночі. Далі — як запитати «Як справи?».",
         "nowYouKnow": [
           "Dobré ráno, Dobrý deň, Dobrý večer",
           "Dobrú noc — перед сном",
@@ -775,8 +756,8 @@
           "Повторити помилки"
         ],
         "nextLesson": {
-          "id": "a0-u02-l03-rozlucka",
-          "title": "Як попрощатися"
+          "id": "a0-u02-l08-ako-sa-mas",
+          "title": "Як справи?"
         }
       }
     }
