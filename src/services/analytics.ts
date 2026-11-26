@@ -18,6 +18,7 @@ export type FunnelEvent =
   | "lesson_start"
   | "lesson_complete"
   | "section_complete"
+  | "apple_tap"
   | "paywall_view"
   | "paywall_dismiss"
   | "checkout_start"
@@ -25,7 +26,11 @@ export type FunnelEvent =
   | "purchase_result"
   | "restore_tap"
   | "lesson_exit"
-  | "notifications_enabled";
+  | "notifications_enabled"
+  | "notif_prime_view"
+  | "notif_prime_dismiss"
+  | "notif_permission"
+  | "review_requested";
 
 import { getAttribution } from "./attribution";
 import { API_BASE_URL } from "./apiClient";

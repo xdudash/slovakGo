@@ -69,18 +69,21 @@ export function manageAppStoreSubscription(): Promise<void> {
   return Store.manageSubscriptions();
 }
 
-const REVIEW_MILESTONES = [15, 3];
+// Apple shows the prompt at most three times a year, so spend it on early, good moments:
+// free learners stop at 10 lessons, so a 15-lesson milestone only ever reached payers.
+const REVIEW_MILESTONES = [7, 3];
 const REVIEW_MILESTONE_KEY = "slovakgo.review-milestone";
 
 /** Asks after a finished lesson, once per milestone. Never blocks the lesson flow. */
-export async function maybeRequestAppReview(completedLessons: number): Promise<void> {
+export async function maybeRequestAppReview(completedLessons: number): Promise<boolean> {
   const milestone = REVIEW_MILESTONES.find((value) => completedLessons >= value);
-  if (!milestone) return;
+  if (!milestone) return false;
   try {
-    if (Number(localStorage.getItem(REVIEW_MILESTONE_KEY) ?? 0) >= milestone) return;
+    if (Number(localStorage.getItem(REVIEW_MILESTONE_KEY) ?? 0) >= milestone) return false;
     localStorage.setItem(REVIEW_MILESTONE_KEY, String(milestone));
     await Store.requestReview();
-  } catch { /* a rating prompt is never worth an error */ }
+    return true;
+  } catch { return false; /* a rating prompt is never worth an error */ }
 }
 
 /**
