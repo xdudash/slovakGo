@@ -587,6 +587,71 @@ describe("POST /sync/push", () => {
     expect(Number((after.progress as Record<string, unknown>).xpTotal)).toBe(xpBefore + 3);
   });
 
+  it("earns crowns by learning and spends them on frames and streak freezes", async () => {
+    const pull = async () => (await call("GET", ["sync", "pull"], { cookie })).body as Record<string, any>;
+    const push = (id: string, type: string, payload: Record<string, unknown>) =>
+      call("POST", ["sync", "push"], { cookie, body: { mutations: [{ id, type, payload }] } });
+
+    // lesson-1 earned 10 + 5 (first of the day) and one repeat (+2) earlier today; a repeat earns 2.
+    const start = await pull();
+    expect(Number(start.progress.coins)).toBe(17);
+    await push("mut-crowns-repeat", "lesson.complete", { lessonId: "lesson-1", answers: [] });
+    expect(Number((await pull()).progress.coins)).toBe(19);
+
+    // A frame the balance cannot cover is dropped without charging anything.
+    const { body: tooDear } = await push("mut-buy-gold", "shop.buy", { item: "frame:gold" });
+    expect(tooDear.skipped).toBe(1);
+    // Plus-only and unknown items cannot be bought with crowns.
+    expect((await push("mut-buy-fire", "shop.buy", { item: "frame:fire" })).body.skipped).toBe(1);
+    expect((await push("mut-buy-junk", "shop.buy", { item: "hearts" })).body.skipped).toBe(1);
+    // Wearing a frame you do not own is ignored.
+    await push("mut-wear-unowned", "profile.update", { frame: "violet" });
+    expect((await pull()).user.frame).toBeNull();
+
+    const uid = String(start.user.id);
+    const db = createClient({ url: `file:${TEST_DB}` });
+    await db.execute({ sql: "UPDATE progress SET coins = 120 WHERE user_id = ?", args: [uid] });
+
+    expect((await push("mut-buy-lime", "shop.buy", { item: "frame:lime" })).body.applied).toBe(1);
+    // Buying the same frame twice never charges twice.
+    expect((await push("mut-buy-lime-again", "shop.buy", { item: "frame:lime" })).body.skipped).toBe(1);
+    await push("mut-wear-lime", "profile.update", { frame: "lime" });
+    expect((await push("mut-buy-freeze", "shop.buy", { item: "freeze" })).body.applied).toBe(1);
+
+    const after = await pull();
+    expect(Number(after.progress.coins)).toBe(120 - 60 - 50);
+    expect(after.progress.ownedItems).toEqual(["lime"]);
+    expect(Number(after.progress.streakFreezeCount)).toBe(1);
+    expect(after.user.frame).toBe("lime");
+
+    // The leaderboard shows the frame, and a photo by URL instead of base64.
+    await db.execute({ sql: "UPDATE users SET avatar = ? WHERE id = ?", args: ["data:image/jpeg;base64,/9j/AAEC", uid] });
+    const { body: board } = await call("GET", ["leaderboard"], { cookie });
+    const me = (board.entries as Record<string, any>[]).find((entry) => entry.userId === uid)!;
+    expect(me.frame).toBe("lime");
+    expect(me.avatar).toBeNull();
+    expect(me.photo).toMatch(new RegExp(`^/avatar/${uid}\\?v=`));
+    const image = await call("GET", ["avatar", uid]);
+    expect(image.status).toBe(200);
+    expect(image.headers["Content-Type"]).toBe("image/jpeg");
+    expect((await call("GET", ["avatar", "nobody"])).status).toBe(404);
+  });
+
+  it("credits earlier lessons once when crowns launch for an existing learner", async () => {
+    const db = createClient({ url: `file:${TEST_DB}` });
+    const { headers } = await call("POST", ["auth", "register"], {
+      body: { email: "crowns-seed@example.com", password: "Secret123", name: "Seed" },
+    });
+    const seedCookie = String(headers["Set-Cookie"] ?? "").split(";")[0];
+    const first = (await call("GET", ["sync", "pull"], { cookie: seedCookie })).body as Record<string, any>;
+    const uid = String(first.user.id);
+    await db.execute({ sql: "UPDATE progress SET completed_j = ?, crowns_seeded = 0, coins = 0 WHERE user_id = ?", args: ['["a","b","c"]', uid] });
+    const seeded = (await call("GET", ["sync", "pull"], { cookie: seedCookie })).body as Record<string, any>;
+    expect(Number(seeded.progress.coins)).toBe(30);
+    const again = (await call("GET", ["sync", "pull"], { cookie: seedCookie })).body as Record<string, any>;
+    expect(Number(again.progress.coins)).toBe(30);
+  });
+
   it("applies exercise.wrong — decrements hearts", async () => {
     // Get baseline hearts
     const { body: before } = await call("GET", ["sync", "pull"], { cookie });

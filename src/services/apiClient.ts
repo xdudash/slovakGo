@@ -313,7 +313,7 @@ export const apiClient = {
       ok: boolean;
       weekId: string;
       myRank: number | null;
-      entries: Array<{ userId: string; name: string; avatar: string | null; country: string; xpWeekly: number; rank: number }>;
+      entries: Array<{ userId: string; name: string; avatar: string | null; photo?: string | null; frame?: string | null; country: string; xpWeekly: number; rank: number }>;
     }>("/leaderboard");
   },
 

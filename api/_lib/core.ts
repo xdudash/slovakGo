@@ -233,6 +233,7 @@ export function rowToUser(r: Row): Record<string, unknown> {
     level:              String(r.level),
     goal:               r.goal ?? null,
     avatar:             r.avatar ?? null,
+    frame:              r.frame ?? null,
     country:            r.country ?? null,
     subscriptionStatus: effectiveSubStatus(r),
     bonusUntil:         r.bonus_until ?? null,

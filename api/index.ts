@@ -29,7 +29,7 @@ import { handleBillingCheckout, handleBillingConversions, handleBillingPortal, h
 
 import {
   handleUserEmail, handleUserPassword, handleFcmToken, handleUserReminder,
-  handleUserReferral, handleDemoComplete, handleLeaderboard, handlePostErrors, handlePostEvents, handleSupportSend
+  handleUserReferral, handleDemoComplete, handleLeaderboard, handleAvatarImage, handlePostErrors, handlePostEvents, handleSupportSend
 } from "./_lib/user";
 
 export const config = { api: { bodyParser: false } };
@@ -112,6 +112,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (meth === "POST" && route === "/user/referral")     return await handleUserReferral(req, res, body);
     if (meth === "POST" && route === "/user/demo-complete") return await handleDemoComplete(req, res);
     if (meth === "GET"  && route === "/leaderboard")       return await handleLeaderboard(req, res);
+    if (meth === "GET"  && route.startsWith("/avatar/"))   return await handleAvatarImage(res, decodeURIComponent(route.slice("/avatar/".length)));
     if (meth === "POST" && route === "/support/send")      return await handleSupportSend(req, res, body);
     if (meth === "POST" && route === "/errors")            return await handlePostErrors(req, res, isJson ? body : safeJson(rawBody.toString(), {}));
     if (meth === "POST" && route === "/events")            return await handlePostEvents(req, res, isJson ? body : safeJson(rawBody.toString(), {}));

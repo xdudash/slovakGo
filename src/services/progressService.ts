@@ -2,6 +2,7 @@ import type { AnswerRecord, Exercise, Lesson, Progress, SubscriptionStatus, User
 import { currentWeekId, isToday, isYesterday, todayKey } from "../utils/date";
 import { srService } from "./spacedRepetitionService";
 import { checkNewExercise, formatCorrectAnswer } from "./exerciseChecking";
+import { FREEZE_PRICE, MAX_FREEZES, isPerfectRun, itemPrice, lessonCrowns, practiceCrowns } from "../../shared/economy";
 
 function sameAnswer(expected: string | string[] | boolean | undefined, answer: string | string[]): boolean {
   const normalize = (value: string) => value.trim().toLowerCase().replace(/[.!?]/g, "");
@@ -97,9 +98,11 @@ export const progressService = {
     ).length;
     const baseXp = alreadyCompleted ? Math.max(3, Math.round(lesson.xpReward * 0.25)) : lesson.xpReward;
     const xpEarned = xpWithBonus(baseXp, subscriptionStatus);
+    const crowns = this.lessonCrowns(p, lesson.id, answers, subscriptionStatus);
     const updated = addDailyXp(updateStreak(p), xpEarned);
     return {
       ...updated,
+      coins: (updated.coins ?? 0) + crowns,
       completedLessons: alreadyCompleted ? p.completedLessons : [...p.completedLessons, lesson.id],
       currentLessonId: lesson.id,
       xpTotal: updated.xpTotal + xpEarned,
@@ -157,12 +160,38 @@ export const progressService = {
     return { ...progress, hearts: progress.maxHearts, updatedAt: new Date().toISOString() };
   },
 
+  /** Crowns a lesson completion earns, mirroring the server (shared/economy). */
+  lessonCrowns(progress: Progress, lessonId: string, answers: AnswerRecord[], subscriptionStatus?: SubscriptionStatus): number {
+    return lessonCrowns({
+      firstTime: !progress.completedLessons.includes(lessonId),
+      perfect: isPerfectRun(answers),
+      newDay: !isToday(progress.lastPracticeDate),
+      status: subscriptionStatus,
+    });
+  },
+
+  /** Spends crowns on a shop item; returns null when it cannot be bought. */
+  buy(progress: Progress, item: string): Progress | null {
+    const price = itemPrice(item);
+    if (price === null || (progress.coins ?? 0) < price) return null;
+    const owned = progress.ownedItems ?? [];
+    if (item === "freeze") {
+      if (progress.streakFreezeCount >= MAX_FREEZES) return null;
+      return { ...progress, coins: progress.coins - FREEZE_PRICE, streakFreezeCount: progress.streakFreezeCount + 1, updatedAt: new Date().toISOString() };
+    }
+    const id = item.slice("frame:".length);
+    if (owned.includes(id)) return null;
+    return { ...progress, coins: progress.coins - price, ownedItems: [...owned, id], updatedAt: new Date().toISOString() };
+  },
+
   practiceDone(progress: Progress, subscriptionStatus?: SubscriptionStatus): Progress {
     const xpEarned = xpWithBonus(5, subscriptionStatus);
     const p = resetWeeklyIfNeeded(progress);
+    const crowns = practiceCrowns({ newDay: !isToday(p.lastPracticeDate), status: subscriptionStatus });
     const updated = addDailyXp(updateStreak(p), xpEarned);
     return {
       ...updated,
+      coins: (updated.coins ?? 0) + crowns,
       xpTotal: updated.xpTotal + xpEarned,
       xpWeekly: updated.xpWeekly + xpEarned,
       hearts: Math.min(updated.maxHearts, updated.hearts + 1),

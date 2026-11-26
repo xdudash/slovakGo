@@ -1,5 +1,5 @@
 import { getApps, getApp, initializeApp } from 'firebase/app';
-import { getMessaging, getToken, onMessage, deleteToken } from 'firebase/messaging';
+import { getMessaging, getToken, onMessage, deleteToken, isSupported } from 'firebase/messaging';
 import { isNativeApp } from './platform';
 
 const VAPID_KEY    = import.meta.env.VITE_FIREBASE_VAPID_KEY as string | undefined;
@@ -31,6 +31,7 @@ export async function requestFcmToken(): Promise<{ token?: string; error?: strin
   if (!isConfigured()) return { error: "Firebase ключі не знайдено (перевірте Vercel env та зробіть Redeploy)" };
   if (!('Notification' in window)) return { error: "Браузер не підтримує Notification API" };
   if (!('serviceWorker' in navigator)) return { error: "Браузер не підтримує Service Workers" };
+  if (!(await isSupported().catch(() => false))) return { error: "Браузер не підтримує web-push" };
 
   try {
     const permission = await Notification.requestPermission();
@@ -56,6 +57,7 @@ export async function revokeFcmToken(): Promise<void> {
   if (isNativeApp) return;
   if (!isConfigured()) return;
   try {
+    if (!(await isSupported())) return;
     await deleteToken(getMessaging(app()));
   } catch { /* no-op */ }
 }
@@ -63,9 +65,12 @@ export async function revokeFcmToken(): Promise<void> {
 /** Handles push messages when the app tab is open (foreground). */
 export function listenForeground(handler: (title: string, body: string) => void): void {
   if (!isConfigured()) return;
-  try {
+  // iOS Safari outside the home screen, in-app browsers and some privacy modes have no
+  // web push: getMessaging() then throws, which filled the error log with noise.
+  void isSupported().then((supported) => {
+    if (!supported) return;
     onMessage(getMessaging(app()), (payload) => {
       handler(payload.notification?.title || 'SlovakGO', payload.notification?.body || '');
     });
-  } catch { /* Firebase not configured or messaging not supported */ }
+  }).catch(() => undefined);
 }

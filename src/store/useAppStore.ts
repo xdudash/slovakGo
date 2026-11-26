@@ -28,6 +28,8 @@ interface AppStore {
   toggleFavorite: (wordId: string) => void;
   finishPracticeSession: (results: { wordId: string; correct: boolean }[]) => void;
   restoreHearts: () => void;
+  /** Spends crowns on "freeze" or "frame:<id>"; false when it cannot be bought. */
+  buyItem: (item: string) => boolean;
   upsertLesson: (lesson: Lesson) => void;
   bulkSetLessons: (lessons: Lesson[]) => void;
   deleteLesson: (lessonId: string) => void;
@@ -488,6 +490,20 @@ export const useAppStore = create<AppStore>((set, get) => ({
     save(data);
     set({ data });
     get().drainSync().catch(() => undefined);
+  },
+
+  buyItem(item) {
+    if (isAdminPreview()) return false;
+    const currentUserId = get().currentUserId;
+    if (!currentUserId) return false;
+    const next = progressService.buy(get().data.progress[currentUserId], item);
+    if (!next) return false;
+    let data: AppData = { ...get().data, progress: { ...get().data.progress, [currentUserId]: next } };
+    data = withSync(data, currentUserId, "shop.buy", { item });
+    save(data);
+    set({ data });
+    get().drainSync().catch(() => undefined);
+    return true;
   },
 
   restoreHearts() {
