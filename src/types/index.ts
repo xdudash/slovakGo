@@ -514,6 +514,10 @@ export interface Progress {
   coins: number;
   /** Bought cosmetic ids (avatar frames). */
   ownedItems?: string[];
+  /** Today's lessons/practices for the daily chest. */
+  daily?: { day: string; lessons: number; practices: number; claimed: boolean };
+  /** Weekly leaderboard places that paid crowns (latest last). */
+  leagueRewards?: { weekId: string; rank: number; crowns: number }[];
   mistakes: Mistake[];
   achievements: Achievement[];
   xpDailyHistory?: Record<string, number>;

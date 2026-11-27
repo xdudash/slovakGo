@@ -10,7 +10,11 @@ export function localDateKey(date: Date): string {
   return [date.getFullYear(), String(date.getMonth() + 1).padStart(2, '0'), String(date.getDate()).padStart(2, '0')].join('-');
 }
 
-export function reminderPlan(userId: string, time: string, language: Locale, lastPracticeDate?: string, now = new Date()): LocalNotificationSchema[] {
+/**
+ * The first upcoming reminder names the streak that is about to end; later ones
+ * (when that streak is already gone) point at the daily chest instead.
+ */
+export function reminderPlan(userId: string, time: string, language: Locale, lastPracticeDate?: string, now = new Date(), streakDays = 0): LocalNotificationSchema[] {
   if (!/^([01]\d|2[0-3]):[0-5]\d$/.test(time)) return [];
   const [hour, minute] = time.split(':').map(Number);
   const copy = nativeCopy[language];
@@ -22,8 +26,12 @@ export function reminderPlan(userId: string, time: string, language: Locale, las
     date.setDate(now.getDate() + day);
     date.setHours(hour, minute, 0, 0);
     if (date <= now || (day === 0 && practicedToday)) continue;
+    const first = notifications.length === 0;
+    const streakAlive = first && streakDays > 0 && day <= 1;
     notifications.push({
-      id: REMINDER_ID + day, title: copy.reminderTitle, body: copy.reminderBody,
+      id: REMINDER_ID + day,
+      title: streakAlive ? copy.streakTitle(streakDays) : copy.reminderTitle,
+      body: streakAlive ? copy.streakBody : day % 2 === 0 ? copy.chestBody : copy.reminderBody,
       // Calendar components follow the iPhone time zone, including DST changes.
       schedule: { on: { year: date.getFullYear(), month: date.getMonth() + 1, day: date.getDate(), hour, minute, second: 0 } },
       extra: { kind: 'study-reminder', userId, route: '/app/path' },

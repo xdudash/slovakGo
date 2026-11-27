@@ -10,7 +10,7 @@ export function addDays(date: Date, days: number): string {
   return next.toISOString();
 }
 
-function dateDay(value: string): string {
+export function dateDay(value: string): string {
   return /^\d{4}-\d{2}-\d{2}$/.test(value) ? value : todayKey(new Date(value));
 }
 

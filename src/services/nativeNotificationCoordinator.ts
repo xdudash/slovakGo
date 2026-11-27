@@ -23,7 +23,7 @@ export function initNativeNotificationSync(): void {
           const account = selectCurrentUser(state.data, state.currentUserId);
           const user = account ? { ...account, settings: { ...account.settings, language: initialLocale() } } : undefined;
           try {
-            await syncStudyReminders(user, user ? state.data.progress[user.id]?.lastPracticeDate : undefined);
+            await syncStudyReminders(user, user ? state.data.progress[user.id]?.lastPracticeDate : undefined, user ? state.data.progress[user.id]?.streakDays ?? 0 : 0);
           } catch (error) {
             console.error('[native] reminders could not be updated', error);
             window.dispatchEvent(new Event('slovakgo:notification-sync-error'));
@@ -37,7 +37,7 @@ export function initNativeNotificationSync(): void {
   const fingerprint = (state: ReturnType<typeof useAppStore.getState>) => {
     const user = selectCurrentUser(state.data, state.currentUserId);
     return JSON.stringify([user?.id, user?.settings.language, user?.settings.notificationsEnabled, user?.settings.reminderTime,
-      user ? state.data.progress[user.id]?.lastPracticeDate : undefined]);
+      user ? state.data.progress[user.id]?.lastPracticeDate : undefined, user ? state.data.progress[user.id]?.streakDays : undefined]);
   };
   useAppStore.subscribe((state, previous) => {
     if (fingerprint(state) !== fingerprint(previous)) refresh();

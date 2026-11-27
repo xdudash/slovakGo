@@ -2,6 +2,7 @@ import { checkEmail } from "../../shared/email";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import bcrypt from "bcryptjs";
 import { randomUUID } from "node:crypto";
+import { settleLeague } from "./league";
 import {
   exec, query, queryOne, nowIso, safeJson, clientIp, currentWeekId, ensureCol,
   requireUid, getUid, respond, fail
@@ -147,6 +148,7 @@ export async function handleLeaderboard(req: VercelRequest, res: VercelResponse)
   const uid = await requireUid(req, res); if (!uid) return;
   const weekId = currentWeekId();
   await ensureCol("users", "frame", "TEXT");
+  await settleLeague();
 
   const rows = await query(
     `SELECT u.id, u.name_text, u.avatar, u.frame, u.country, p.xp_weekly, p.week_id

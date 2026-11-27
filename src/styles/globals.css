@@ -7525,3 +7525,61 @@ textarea:focus,
 .celebrate-crowns { display: inline-flex; align-items: center; gap: 4px; margin-left: 10px; }
 .native-app .stat-chip.crowns,
 .native-app .lesson-result-crowns { background: color-mix(in srgb, #FFD21F 20%, var(--surface)); color: var(--fg); }
+
+/* ── Daily chest, streak milestones, league rewards ─────────────────────── */
+.user-avatar--comet { background: conic-gradient(#22d3ee, #a855f7, #f472b6, #22d3ee); box-shadow: 0 0 18px #a855f788; }
+@media (prefers-reduced-motion: no-preference) {
+  .user-avatar--comet { animation: ua-spin 6s linear infinite; }
+  .user-avatar--comet :is(.user-avatar-img, .user-avatar-initials) { animation: ua-spin 6s linear infinite reverse; }
+}
+@keyframes ua-spin { to { transform: rotate(360deg); } }
+
+.daily-chest {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0;
+  padding: 14px;
+  border-radius: 18px;
+  background: var(--surface, #fff);
+  border: 1.5px solid var(--border);
+}
+.daily-chest.is-ready { border-color: #E0A800; background: linear-gradient(160deg, rgba(255, 210, 31, 0.18), var(--surface, #fff)); }
+.daily-chest-head { display: flex; align-items: center; gap: 12px; }
+.daily-chest-head > div { display: grid; gap: 2px; }
+.daily-chest-head strong { font-size: 1rem; font-weight: 850; color: var(--fg); }
+.daily-chest-head span { font-size: 0.85rem; color: var(--muted); font-weight: 700; }
+.chest-art { flex-shrink: 0; overflow: visible; }
+.chest-lid { transform-origin: 6px 22px; transition: transform 0.5s cubic-bezier(.2, 1.4, .4, 1); }
+.chest-art.is-open .chest-lid { transform: rotate(-24deg) translate(-2px, -4px); }
+@media (prefers-reduced-motion: no-preference) {
+  .daily-chest.is-ready .chest-art { animation: chest-wiggle 1.6s ease-in-out infinite; }
+}
+@keyframes chest-wiggle { 0%, 70%, 100% { transform: rotate(0); } 78% { transform: rotate(-6deg); } 86% { transform: rotate(6deg); } 94% { transform: rotate(-3deg); } }
+.daily-chest-tasks { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.daily-chest-tasks li { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 700; color: var(--fg); }
+.daily-chest-tasks li.is-done { color: var(--muted); text-decoration: line-through; }
+.daily-chest-check { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--border); display: grid; place-items: center; flex-shrink: 0; }
+.daily-chest-tasks li.is-done .daily-chest-check { background: var(--green, #2fba7f); border-color: var(--green, #2fba7f); color: #fff; }
+.daily-chest-go { margin-left: auto; font-size: 0.78rem; font-weight: 850; color: var(--accent, #6f57e8); text-decoration: none; }
+.daily-chest-open {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  min-height: 44px; border: 0; border-radius: 14px; font: inherit; font-weight: 900;
+  background: #FFD21F; color: #3d2c00; cursor: pointer;
+}
+
+.league-reward {
+  display: flex; align-items: center; gap: 10px; margin: 12px 0; padding: 12px 14px; border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 210, 31, 0.28), rgba(255, 159, 67, 0.16)); color: var(--fg);
+}
+.league-reward svg { color: #E0A800; flex-shrink: 0; }
+.league-reward strong { flex: 1; font-size: 0.95rem; }
+.league-reward button { border: 0; background: transparent; color: var(--muted); cursor: pointer; padding: 4px; }
+.league-crowns-hint { display: flex; align-items: center; gap: 6px; margin: 6px 0 0; font-size: 0.8rem; color: var(--muted); }
+
+.streak-milestone {
+  display: flex; align-items: center; justify-content: center; gap: 8px; margin: 4px 0 0; padding: 10px 14px; border-radius: 14px;
+  background: rgba(255, 90, 46, 0.12); color: #c2410c; font-weight: 850; font-size: 0.95rem;
+}
+.crown-discount { display: flex; align-items: center; gap: 6px; margin: -4px 0 0; padding: 8px 12px; border-radius: 12px; background: rgba(255, 90, 46, 0.1); color: #c2410c; font-weight: 800; font-size: 0.85rem; }
+.frame-old-price { margin-right: 4px; opacity: 0.55; font-weight: 700; }
+.native-app :is(.daily-chest-tasks li, .daily-chest-head strong) { color: var(--fg); }

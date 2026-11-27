@@ -1,8 +1,21 @@
 import type { AnswerRecord, Exercise, Lesson, Progress, SubscriptionStatus, UserWord } from "../types";
-import { currentWeekId, isToday, isYesterday, todayKey } from "../utils/date";
+import { currentWeekId, dateDay, isToday, isYesterday, todayKey } from "../utils/date";
 import { srService } from "./spacedRepetitionService";
 import { checkNewExercise, formatCorrectAnswer } from "./exerciseChecking";
-import { FREEZE_PRICE, MAX_FREEZES, isPerfectRun, itemPrice, lessonCrowns, practiceCrowns } from "../../shared/economy";
+import { MAX_FREEZES, chestReady, chestReward, dailyFor, isPerfectRun, itemPrice, lessonCrowns, liveStreak, practiceCrowns, streakMilestone } from "../../shared/economy";
+
+/** Streak milestone crowns, the Comet frame at 30 days and today's chest counters. */
+function withSessionExtras(before: Progress, after: Progress, kind: "lesson" | "practice"): Progress {
+  const milestone = streakMilestone(before.streakDays, after.streakDays);
+  const owned = after.ownedItems ?? [];
+  const daily = dailyFor(after.daily, todayKey());
+  return {
+    ...after,
+    coins: (after.coins ?? 0) + (milestone?.crowns ?? 0),
+    ownedItems: milestone?.days === 30 && !owned.includes("comet") ? [...owned, "comet"] : owned,
+    daily: { ...daily, lessons: daily.lessons + (kind === "lesson" ? 1 : 0), practices: daily.practices + (kind === "practice" ? 1 : 0) },
+  };
+}
 
 function sameAnswer(expected: string | string[] | boolean | undefined, answer: string | string[]): boolean {
   const normalize = (value: string) => value.trim().toLowerCase().replace(/[.!?]/g, "");
@@ -99,7 +112,7 @@ export const progressService = {
     const baseXp = alreadyCompleted ? Math.max(3, Math.round(lesson.xpReward * 0.25)) : lesson.xpReward;
     const xpEarned = xpWithBonus(baseXp, subscriptionStatus);
     const crowns = this.lessonCrowns(p, lesson.id, answers, subscriptionStatus);
-    const updated = addDailyXp(updateStreak(p), xpEarned);
+    const updated = withSessionExtras(p, addDailyXp(updateStreak(p), xpEarned), "lesson");
     return {
       ...updated,
       coins: (updated.coins ?? 0) + crowns,
@@ -170,25 +183,39 @@ export const progressService = {
     });
   },
 
+  /** The streak as it stands today (0 once a day was missed). */
+  liveStreak(progress: Progress): number {
+    return liveStreak(progress.streakDays, progress.lastPracticeDate ? dateDay(progress.lastPracticeDate) : null, todayKey());
+  },
+
   /** Spends crowns on a shop item; returns null when it cannot be bought. */
   buy(progress: Progress, item: string): Progress | null {
-    const price = itemPrice(item);
+    const price = itemPrice(item, this.liveStreak(progress));
     if (price === null || (progress.coins ?? 0) < price) return null;
     const owned = progress.ownedItems ?? [];
     if (item === "freeze") {
       if (progress.streakFreezeCount >= MAX_FREEZES) return null;
-      return { ...progress, coins: progress.coins - FREEZE_PRICE, streakFreezeCount: progress.streakFreezeCount + 1, updatedAt: new Date().toISOString() };
+      return { ...progress, coins: progress.coins - price, streakFreezeCount: progress.streakFreezeCount + 1, updatedAt: new Date().toISOString() };
     }
     const id = item.slice("frame:".length);
     if (owned.includes(id)) return null;
     return { ...progress, coins: progress.coins - price, ownedItems: [...owned, id], updatedAt: new Date().toISOString() };
   },
 
+  /** Opens today's chest when its three tasks are done; null otherwise. */
+  claimChest(progress: Progress): { progress: Progress; crowns: number } | null {
+    const today = todayKey();
+    const daily = dailyFor(progress.daily, today);
+    if (!chestReady(daily, progress.xpDailyHistory?.[today] ?? 0)) return null;
+    const crowns = chestReward(progress.userId, today);
+    return { crowns, progress: { ...progress, coins: (progress.coins ?? 0) + crowns, daily: { ...daily, claimed: true }, updatedAt: new Date().toISOString() } };
+  },
+
   practiceDone(progress: Progress, subscriptionStatus?: SubscriptionStatus): Progress {
     const xpEarned = xpWithBonus(5, subscriptionStatus);
     const p = resetWeeklyIfNeeded(progress);
     const crowns = practiceCrowns({ newDay: !isToday(p.lastPracticeDate), status: subscriptionStatus });
-    const updated = addDailyXp(updateStreak(p), xpEarned);
+    const updated = withSessionExtras(p, addDailyXp(updateStreak(p), xpEarned), "practice");
     return {
       ...updated,
       coins: (updated.coins ?? 0) + crowns,

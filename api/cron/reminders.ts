@@ -57,6 +57,18 @@ export interface ReminderSettings {
  * once-a-day schedule, so only users who had manually picked the cron's hour
  * ever received anything.
  */
+/** Names a streak that ends tonight; otherwise points at the daily chest. */
+export function reminderCopy(streakDays: number, lastPractice: string, today: string): { title: string; body: string } {
+  const yesterday = new Date(Date.parse(`${today}T12:00:00Z`) - 86400_000).toISOString().slice(0, 10);
+  if (streakDays > 0 && lastPractice.slice(0, 10) === yesterday) {
+    return {
+      title: `🔥 Серія ${streakDays} дн. згорить опівночі`,
+      body: "Один короткий урок — і вона жива. А ще тебе чекає скриня дня.",
+    };
+  }
+  return { title: "SlovakGO — час практики! 🇸🇰", body: "Скриня дня чекає: урок, трохи слів — і корони твої." };
+}
+
 export function shouldRemind(settings: ReminderSettings, currentHour: number, hourly: boolean): boolean {
   if (!settings.notificationsEnabled) return false;
   if (!hourly) return true;
@@ -200,7 +212,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
   // Users who haven't practiced and haven't been reminded today
   const candidates = await query(
-    `SELECT u.id, u.settings_j
+    `SELECT u.id, u.settings_j, p.streak_days, p.last_prac
      FROM users u JOIN progress p ON p.user_id = u.id
      WHERE u.is_blocked = 0
        AND (p.last_prac     IS NULL OR p.last_prac     != ?)
@@ -223,13 +235,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     const tokens = tokenRows.map(t => String(t.token));
     if (!tokens.length) continue;
 
-    const sent = await sendFcmV1(
-      tokens,
-      "SlovakGO — час практики! 🇸🇰",
-      "Не забудь про свій урок сьогодні — тримай серію! 🔥",
-      sa.project_id,
-      accessToken,
-    );
+    const copy = reminderCopy(Number(user.streak_days ?? 0), String(user.last_prac ?? ""), today);
+    const sent = await sendFcmV1(tokens, copy.title, copy.body, sa.project_id, accessToken);
 
     if (sent > 0) {
       await exec(

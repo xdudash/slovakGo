@@ -31,7 +31,8 @@ export type FunnelEvent =
   | "notif_prime_dismiss"
   | "notif_permission"
   | "review_requested"
-  | "shop_buy";
+  | "shop_buy"
+  | "chest_open";
 
 import { getAttribution } from "./attribution";
 import { API_BASE_URL } from "./apiClient";
